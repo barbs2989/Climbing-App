@@ -12,6 +12,10 @@
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
       button { touch-action: manipulation; }
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
+      /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
+      button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
+      /* Tappable cards & chips (not just <button>) press in on tap */
+      [style*="cursor: pointer"]:active { transform: scale(0.985); }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
@@ -22,6 +26,8 @@
       .cm-shimmer { background:linear-gradient(90deg,#161b22 25%,#222a35 50%,#161b22 75%); background-size:560px 100%; animation: cm-shimmer 1.25s linear infinite; }
       @keyframes cm-spin { to{transform:rotate(360deg)} }
       .cm-spin { animation: cm-spin .7s linear infinite; }
+      @keyframes cm-nudge { 0%{transform:scale(1)} 35%{transform:scale(1.25)} 100%{transform:scale(1)} }
+      .cm-nudge { animation: cm-nudge .34s cubic-bezier(.2,.8,.2,1); }
       .cm-note::placeholder { font-size: 10.5px; opacity: 0.6; }
       /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
       :focus-visible { outline: 2px solid #2f81f7; outline-offset: 2px; border-radius: 5px; }
@@ -31,6 +37,11 @@
       .cm-slideup { animation: cm-slideup .26s ease both; }
       .cm-fadein { animation: cm-fadein .22s ease both; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      /* Staggered list entrance — children rise in one after another */
+      .cm-stagger > * { animation: cm-slideup .3s ease both; }
+      .cm-stagger > *:nth-child(2){animation-delay:.04s} .cm-stagger > *:nth-child(3){animation-delay:.08s}
+      .cm-stagger > *:nth-child(4){animation-delay:.12s} .cm-stagger > *:nth-child(5){animation-delay:.16s}
+      .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
       @media (prefers-reduced-motion: reduce) {
