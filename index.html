@@ -11,7 +11,21 @@
       body { overscroll-behavior-y: none; }
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
       button { touch-action: manipulation; }
-      button:not(:disabled):active { opacity: 0.82; }
+      button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
+      /* Motion — subtle life. Respect reduced-motion. */
+      @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
+      @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
+      @keyframes cm-slideup { from{transform:translateY(14px);opacity:0} to{transform:translateY(0);opacity:1} }
+      @keyframes cm-fadein { from{opacity:0} to{opacity:1} }
+      @keyframes cm-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(63,185,80,.45)} 70%{box-shadow:0 0 0 7px rgba(63,185,80,0)} }
+      .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
+      .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
+      .cm-slideup { animation: cm-slideup .26s ease both; }
+      .cm-fadein { animation: cm-fadein .22s ease both; }
+      .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        *, button:not(:disabled):active { animation: none !important; transform: none !important; }
+      }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
       /* Route/area cover photos hidden for now (pairs with SHOW_COVERS in ClimbMatch.jsx).
