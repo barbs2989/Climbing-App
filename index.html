@@ -18,6 +18,10 @@
       @keyframes cm-slideup { from{transform:translateY(14px);opacity:0} to{transform:translateY(0);opacity:1} }
       @keyframes cm-fadein { from{opacity:0} to{opacity:1} }
       @keyframes cm-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(63,185,80,.45)} 70%{box-shadow:0 0 0 7px rgba(63,185,80,0)} }
+      @keyframes cm-shimmer { 0%{background-position:-280px 0} 100%{background-position:280px 0} }
+      .cm-shimmer { background:linear-gradient(90deg,#161b22 25%,#222a35 50%,#161b22 75%); background-size:560px 100%; animation: cm-shimmer 1.25s linear infinite; }
+      @keyframes cm-spin { to{transform:rotate(360deg)} }
+      .cm-spin { animation: cm-spin .7s linear infinite; }
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
       .cm-slideup { animation: cm-slideup .26s ease both; }
