@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>ClimbMatch</title>
+    <style>
+      /* Mobile baseline */
+      html { -webkit-text-size-adjust: 100%; }
+      * { -webkit-tap-highlight-color: transparent; }
+      body { overscroll-behavior-y: none; }
+      /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
+      button { touch-action: manipulation; }
+      button:not(:disabled):active { opacity: 0.82; }
+      /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
+      input, textarea, select { font-size: 16px !important; }
+    </style>
   </head>
   <body style="margin:0;background:#0d1117;">
     <div id="root"></div>
