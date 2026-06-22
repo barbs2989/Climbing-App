@@ -23,6 +23,8 @@
       .cm-slideup { animation: cm-slideup .26s ease both; }
       .cm-fadein { animation: cm-fadein .22s ease both; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      /* Bottom sheets (rounded-top containers) slide up when they open */
+      [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
       @media (prefers-reduced-motion: reduce) {
         *, button:not(:disabled):active { animation: none !important; transform: none !important; }
       }
