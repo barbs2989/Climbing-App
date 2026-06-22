@@ -37,6 +37,11 @@
       .cm-slideup { animation: cm-slideup .26s ease both; }
       .cm-fadein { animation: cm-fadein .22s ease both; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      /* Staggered list entrance — children rise in one after another */
+      .cm-stagger > * { animation: cm-slideup .3s ease both; }
+      .cm-stagger > *:nth-child(2){animation-delay:.04s} .cm-stagger > *:nth-child(3){animation-delay:.08s}
+      .cm-stagger > *:nth-child(4){animation-delay:.12s} .cm-stagger > *:nth-child(5){animation-delay:.16s}
+      .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
       @media (prefers-reduced-motion: reduce) {
