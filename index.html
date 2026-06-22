@@ -12,6 +12,10 @@
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
       button { touch-action: manipulation; }
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
+      /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
+      button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
+      /* Tappable cards & chips (not just <button>) press in on tap */
+      [style*="cursor: pointer"]:active { transform: scale(0.985); }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
