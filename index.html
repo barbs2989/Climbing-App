@@ -23,6 +23,9 @@
       @keyframes cm-spin { to{transform:rotate(360deg)} }
       .cm-spin { animation: cm-spin .7s linear infinite; }
       .cm-note::placeholder { font-size: 12px; opacity: 0.7; }
+      /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
+      :focus-visible { outline: 2px solid #2f81f7; outline-offset: 2px; border-radius: 5px; }
+      button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
       .cm-slideup { animation: cm-slideup .26s ease both; }
