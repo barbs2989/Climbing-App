@@ -1584,7 +1584,7 @@ function AreaView({area,onBack,onOpenArea,countIn,filtersActive,onOpenReport,boo
   </div>;
 }
 const crewMax=r=>{const d=r&&r.discipline;return (d==="hiking"||d==="scrambling"||d==="bouldering")?6:4;};
-function CrewCard({crew,onAck,onAccept,onDisband,onLeave,onOpenClimb,onMessage,onAddMember,onInviteMember,connections,onSafety,onViewMember,onRemoveMember,onSetDate,onSetFloatPlan,onUpdateCrew,onMeAgree,joinReqs,onAcceptJoin,onDeclineJoin,meRisk,collapsed:collapsedProp,onToggle,accordion,onFindPartners}){
+function CrewCard({crew,onAck,onAccept,onDisband,onLeave,onOpenClimb,onMessage,onAddMember,onInviteMember,connections,onSafety,onViewMember,onRemoveMember,onSetDate,onSetFloatPlan,onUpdateCrew,onMeAgree,joinReqs,onAcceptJoin,onDeclineJoin,meRisk,collapsed:collapsedProp,onToggle,accordion,onFindPartners,onNudge}){
   const [showAdd,setShowAdd]=useState(false);const [invQ,setInvQ]=useState("");
   const [collapsedLocal,setCollapsedLocal]=useState(false);
   const collapsed=collapsedProp!==undefined?collapsedProp:collapsedLocal;
