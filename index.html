@@ -26,6 +26,8 @@
       .cm-shimmer { background:linear-gradient(90deg,#161b22 25%,#222a35 50%,#161b22 75%); background-size:560px 100%; animation: cm-shimmer 1.25s linear infinite; }
       @keyframes cm-spin { to{transform:rotate(360deg)} }
       .cm-spin { animation: cm-spin .7s linear infinite; }
+      @keyframes cm-nudge { 0%{transform:scale(1)} 35%{transform:scale(1.25)} 100%{transform:scale(1)} }
+      .cm-nudge { animation: cm-nudge .34s cubic-bezier(.2,.8,.2,1); }
       .cm-note::placeholder { font-size: 10.5px; opacity: 0.6; }
       /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
       :focus-visible { outline: 2px solid #2f81f7; outline-offset: 2px; border-radius: 5px; }
