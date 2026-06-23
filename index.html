@@ -37,6 +37,9 @@
       .cm-slideup { animation: cm-slideup .26s ease both; }
       .cm-fadein { animation: cm-fadein .22s ease both; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      /* Horizontal sliders: smooth touch scroll, no visible scrollbar */
+      .cm-hscroll { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .cm-hscroll::-webkit-scrollbar { display: none; }
       /* Staggered list entrance — children rise in one after another */
       .cm-stagger > * { animation: cm-slideup .3s ease both; }
       .cm-stagger > *:nth-child(2){animation-delay:.04s} .cm-stagger > *:nth-child(3){animation-delay:.08s}
