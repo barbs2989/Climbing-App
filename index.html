@@ -28,6 +28,10 @@
       .cm-spin { animation: cm-spin .7s linear infinite; }
       @keyframes cm-nudge { 0%{transform:scale(1)} 35%{transform:scale(1.25)} 100%{transform:scale(1)} }
       @keyframes cm-burst { 0%{transform:translate(-50%,0) scale(.5);opacity:0} 20%{opacity:1} 100%{transform:translate(-50%,-34px) scale(1.5);opacity:0} }
+      @keyframes cm-glow { 0%,100%{box-shadow:0 0 0 0 rgba(227,179,65,0)} 50%{box-shadow:0 0 16px 1px rgba(227,179,65,.40)} }
+      @keyframes cm-ring { 0%,55%,100%{transform:rotate(0)} 62%{transform:rotate(16deg)} 70%{transform:rotate(-13deg)} 78%{transform:rotate(9deg)} 86%{transform:rotate(-5deg)} }
+      @keyframes cm-puff { 0%{transform:translate(-50%,0) scale(.4);opacity:.65} 100%{transform:translate(-50%,-14px) scale(2.4);opacity:0} }
+      @keyframes cm-countpop { 0%{transform:translateY(2px);opacity:.4} 100%{transform:translateY(0);opacity:1} }
       .cm-nudge { animation: cm-nudge .34s cubic-bezier(.2,.8,.2,1); }
       .cm-note::placeholder { font-size: 10.5px; opacity: 0.6; }
       /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
@@ -39,6 +43,10 @@
       .cm-slideup { animation: cm-slideup .26s ease both; }
       .cm-fadein { animation: cm-fadein .22s ease both; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
+      .cm-glow { animation: cm-glow 2.4s ease-in-out infinite; }
+      .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
+      .cm-puff { animation: cm-puff .6s ease-out forwards; }
+      .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
       /* Horizontal sliders: smooth touch scroll, no visible scrollbar */
       .cm-hscroll { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .cm-hscroll::-webkit-scrollbar { display: none; }
