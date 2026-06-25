@@ -62,6 +62,7 @@
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
+      .cm-fsm { font-size: 13px !important; }
       /* Route/area cover photos hidden for now (pairs with SHOW_COVERS in ClimbMatch.jsx).
          Hide the image, and collapse boxes whose only child is the image so cards don't
          leave an empty gap. Banner/header overlays (back button, badges) are preserved. */
@@ -69,7 +70,7 @@
       *:has(> .cover-x:only-child) { display: none !important; }
     </style>
   </head>
-  <body style="margin:0;background:#0d1117;">
+  <body style="margin:0;background:#0d1117;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
     <div id="root"></div>
     <script type="module" src="/main.jsx"></script>
   </body>
