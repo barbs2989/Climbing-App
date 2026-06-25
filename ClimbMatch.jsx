@@ -1331,6 +1331,7 @@ function sortRoutes(arr,by){
 }
 function TopoOverlay({topo,routeName}){
   const [show,setShow]=useState(true);
+  useEffect(function(){setShow(true);},[topo&&topo.photo]);
   if(!topo||!topo.photo)return null;
   const lines=topo.lines||[];
   const dot=(x,y,bg,brd,sz)=>({position:"absolute",left:(x*100)+"%",top:(y*100)+"%",width:sz,height:sz,marginLeft:-(sz/2),marginTop:-(sz/2),borderRadius:"50%",background:bg,border:"1.5px solid "+brd,boxSizing:"border-box",boxShadow:"0 0 3px rgba(0,0,0,0.6)"});
