@@ -2248,7 +2248,7 @@ function MiniCalendar({selected,onToggle}){
 }
 function RouteFinder({scope,onOpen,onBack}){
   const DEF={sort:"popular",types:[],gMin:null,gMax:null,minStars:0,minPitches:0,groupArea:false,length:"any"};
-  const [q,setQ]=useState("");const [af,setAf]=useState(DEF);const [df,setDf]=useState(DEF);const [sheet,setSheet]=useState(false);
+  const [q,setQ]=useState("");const [af,setAf]=useState(function(){return scope&&new Set(ROUTES.filter(function(r){return inArea(r.mountainId,scope.id);}).map(function(r){return r.mountainId;})).size>1?Object.assign({},DEF,{groupArea:true}):DEF;});const [df,setDf]=useState(DEF);const [sheet,setSheet]=useState(false);
   const cragNm=r=>{const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m?m.name:"";};
   const starsOf=r=>{const a=r.activity||[];return a.length?a.reduce((s,x)=>s+(x.stars||0),0)/a.length:0;};
   const popOf=r=>(r.activity||[]).length;
