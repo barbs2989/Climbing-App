@@ -2409,12 +2409,12 @@ export default function App(){
   const sendMsg=async(pid,text)=>{
     if(!text.trim())return;
     const partner=connections.find(c=>c.id===pid),prev=msgs[pid]||[],updated=[...prev,{from:"me",text,ts:Date.now()}];
-    setMsgs(m=>({...m,[pid]:updated}));setMsgInput("");setAiTyping(true);
+    setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),{from:"me",text,ts:Date.now()}]}));setMsgInput("");setAiTyping(true);
     try{
       const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,system:`You are ${partner.name}, a ${partner.level} climber. Bio: "${partner.bio}". Philosophy: "${partner.philosophy}". Be friendly, brief (1-3 sentences), climbing-focused.`,messages:updated.map(m=>({role:m.from==="me"?"user":"assistant",content:m.text}))})});
       const d=await res.json();
-      setMsgs(m=>({...m,[pid]:[...updated,{from:"them",text:(d.content||[]).map(b=>b.text||"").join("")||"Stoked to connect!",ts:Date.now()}]}));
-    }catch{setMsgs(m=>({...m,[pid]:[...updated,{from:"them",text:"Can't wait to climb!"}]}));}
+      setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),{from:"them",text:(d.content||[]).map(b=>b.text||"").join("")||"Stoked to connect!",ts:Date.now()}]}));
+    }catch{setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),{from:"them",text:"Can't wait to climb!"}]}));}
     setAiTyping(false);
   };
   
