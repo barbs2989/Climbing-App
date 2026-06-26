@@ -10,7 +10,6 @@ const muted = { color: "#8b949e", fontSize: 12 };
 
 export default function DbAreaBrowser({ onOpenRoute }) {
   const [stack, setStack] = useState([]); // [{id,name}] drill path; [] = root
-  const [openId, setOpenId] = useState(null); // expanded route (inline detail; the rich page needs fields the DB lacks)
   const current = stack.length ? stack[stack.length - 1] : null;
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(current?.id || null);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(current?.id || null);
@@ -53,19 +52,12 @@ export default function DbAreaBrowser({ onOpenRoute }) {
       {/* routes (leaf crag) */}
       {!loading && !error && isLeaf && (
         routes && routes.length > 0 ? routes.map((r) => (
-          <div key={r.id} style={box} onClick={() => setOpenId(openId === r.id ? null : r.id)}>
+          <div key={r.id} style={box} onClick={() => onOpenRoute && onOpenRoute(r)}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 15 }}>{r.name}</span>
               <span style={{ ...muted }}>{r.grade}</span>
             </div>
             <div style={{ ...muted, marginTop: 2 }}>{r.discipline}{r.sort_order != null ? " · #" + r.sort_order + " on the cliff" : ""}</div>
-            {openId === r.id && (
-              <div style={{ marginTop: 8, paddingTop: 8, borderTop: "1px solid #30363d", fontSize: 12.5, lineHeight: 1.7 }}>
-                {[["Grade", r.grade], ["Type", r.discipline], ["Pitches", r.pitches || "—"], ["Length", r.length_m ? r.length_m + " m" : "—"], ["Aspect", r.aspect || "—"], ["Season", r.season || "—"], ["FA", r.fa || "—"], ["Source", r.source || "—"]].map(([k, v]) => (
-                  <div key={k}><span style={{ color: "#6e7681" }}>{k}: </span><span style={{ color: "#e6edf3" }}>{String(v)}</span></div>
-                ))}
-              </div>
-            )}
           </div>
         )) : <div style={muted}>No routes in this crag yet.</div>
       )}
