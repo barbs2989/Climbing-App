@@ -29,4 +29,14 @@ node validate-catalog.mjs catalog/utah/little_cottonwood_areas.json catalog/utah
 ```
 
 It must print **PASS** (no blocking errors) before the data is safe to import.
-Once all regions pass, they get merged into one Utah catalog (the shared `utah` root is de-duplicated by id).
+
+## When all regions pass — build the download pack
+
+```
+node build-pack.mjs utah
+```
+
+This merges every `catalog/utah/*_areas.json` + `*_routes.json` into a single **`catalog/utah.json`**
+(`{ state, areas, routes }`), de-duplicating the shared `utah` root by id and refusing to write if two
+files disagree on the same id. That one file is the **per-state download pack** the app fetches when a
+user downloads "Utah" — so the app ships small and pulls in only the state(s) each user wants.
