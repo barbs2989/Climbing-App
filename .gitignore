@@ -1,7 +1,9 @@
-node_modules/
-dist/
-*.local
-.DS_Store
 
 # local visual-audit tooling
+*.local
+.DS_Store
 .shots/
+dist/
+node_modules/
+.env.local
+.env
