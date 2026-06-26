@@ -2287,7 +2287,7 @@ function RouteFinder({scope,onOpen,onBack}){
 function AreaTree({selArea,onNavigate,onClose}){
   const stateRoot=(()=>{let r=selArea;while(r){if(r.areaType==="state")return r;if(!r.parentId)break;const par=MOUNTAINS.find(m=>m.id===r.parentId);if(!par)break;r=par;}return r||selArea;})();
   const pathIds=(()=>{const ids=[];let m=selArea;while(m){ids.push(m.id);if(m.id===stateRoot.id)break;m=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null;}return ids;})();
-  const [exp,setExp]=useState(()=>new Set(pathIds));const [q,setQ]=useState("");
+  const [exp,setExp]=useState(()=>{var s=new Set();(function add(id){s.add(id);MOUNTAINS.filter(function(m){return m.parentId===id;}).forEach(function(k){add(k.id);});})(stateRoot.id);return s;});const [q,setQ]=useState("");
   const toggle=id=>setExp(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
   const kidsOf=id=>MOUNTAINS.filter(m=>m.parentId===id).slice().sort((a,b)=>(a.name||"").localeCompare(b.name||""));
   const ct=id=>ROUTES.filter(r=>inArea(r.mountainId,id)).length;
