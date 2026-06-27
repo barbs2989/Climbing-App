@@ -39,7 +39,7 @@ function mapClimb(c, mid) {
   o.routeFt = (c.length > 0) ? Math.round(c.length * 3.28084) : null;
   o.gainFt = null; o.distKm = null; o.season = null; o.aspect = null;
   o.bolts = (c.boltsCount > 0) ? c.boltsCount : null;
-  o.fa = c.fa || null; o.verified = false;
+  o.disciplines=(function(){var d=[];if(t.trad)d.push("trad");if(t.sport)d.push("sport");if(t.bouldering)d.push("bouldering");if(t.alpine)d.push("alpine");if(t.ice)d.push("ice");if(t.mixed)d.push("mixed");if(t.aid)d.push("aid");if(t.tr)d.push("tr");return d.length?d:[discipline];})(); o.fa = c.fa || null; o.verified = false;
   routes.push(o);
 }
 
