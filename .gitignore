@@ -10,3 +10,7 @@ node_modules/
 
 # local-only service key for catalog loads (never commit)
 .env.load
+
+# regenerable catalog data — lives in Supabase, re-pull via etl-state.mjs
+catalog/**/*.json
+supabase/seed-utah.sql
