@@ -65,7 +65,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
             <span style={{ fontWeight: 700, fontSize: 15 }}>{a.name}</span>
             <span style={{ color: "#58a6ff", fontSize: 12, fontWeight: 600 }}>{a.route_count} climb{a.route_count !== 1 ? "s" : ""} ›</span>
           </div>
-          {a.area_type && <div style={{ ...muted, marginTop: 2 }}>{a.area_type}{a.region ? " · " + a.region : ""}</div>}
+          
         </div>
       ))}
 
