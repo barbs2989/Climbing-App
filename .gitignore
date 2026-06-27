@@ -7,3 +7,6 @@ dist/
 node_modules/
 .env.local
 .env
+
+# local-only service key for catalog loads (never commit)
+.env.load

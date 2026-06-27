@@ -39,7 +39,7 @@ function mapClimb(c, mid) {
   o.routeFt = (c.length > 0) ? Math.round(c.length * 3.28084) : null;
   o.gainFt = null; o.distKm = null; o.season = null; o.aspect = null;
   o.bolts = (c.boltsCount > 0) ? c.boltsCount : null;
-  o.source = "community"; o.verified = false;
+  o.verified = false;
   routes.push(o);
 }
 
