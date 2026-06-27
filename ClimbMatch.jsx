@@ -402,13 +402,13 @@ const DISC_RACK={
  aid:["Full trad rack + offset cams/nuts","Aiders/etriers ×2, daisy chains, ascenders","Lead rope + haul line","Belay device, harness, helmet, gloves"]
 };
 const DISC_GEAR={
- sport:["Rope","Quickdraws","Helmet","Footwear (shoes / boots)"],
- trad:["Rope","Trad rack / protection","Quickdraws","Helmet","Footwear (shoes / boots)"],
- bouldering:["Crash pad(s)","Footwear (shoes / boots)"],
- hiking:["Footwear (shoes / boots)","Navigation (map / GPS)","Water / filter","Insulating layers & shell"],
- scrambling:["Footwear (shoes / boots)","Helmet","Navigation (map / GPS)","Water / filter"],
- alpine:["Rope","Helmet","Ice axe / tools","Crampons","Footwear (shoes / boots)","Insulating layers & shell","Navigation (map / GPS)"],
- mountaineering:["Ice axe / tools","Crampons","Footwear (shoes / boots)","Rope","Helmet","Glacier / crevasse kit","Insulating layers & shell","Navigation (map / GPS)"],
+ sport:["Rope","Quickdraws","Helmet"],
+ trad:["Rope","Trad rack / protection","Quickdraws","Helmet"],
+ bouldering:["Crash pad(s)"],
+ hiking:["Navigation (map / GPS)","Water / filter","Insulating layers & shell"],
+ scrambling:["Helmet","Navigation (map / GPS)","Water / filter"],
+ alpine:["Rope","Helmet","Ice axe / tools","Crampons","Insulating layers & shell","Navigation (map / GPS)"],
+ mountaineering:["Ice axe / tools","Crampons","Rope","Helmet","Glacier / crevasse kit","Insulating layers & shell","Navigation (map / GPS)"],
  ice:["Ice axe / tools","Crampons","Ice screws","Rope","Helmet"],
  mixed:["Ice axe / tools","Crampons","Ice screws","Trad rack / protection","Rope","Helmet"],
  aid:["Trad rack / protection","Aiders / ascenders","Rope","Helmet"]
