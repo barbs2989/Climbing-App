@@ -1490,7 +1490,7 @@ function SuggestFix({route,onClose,onSubmit}){
             <div onClick={function(){setOpen(function(o){return Object.assign({},o,{[f.k]:!o[f.k]});});}} style={{display:"flex",alignItems:"center",gap:8,cursor:"pointer",userSelect:"none"}}>
               <span style={{fontSize:12.5,fontWeight:700,color:C.text,flexShrink:0}}>{f.label}</span>
               <span style={{flex:1,minWidth:0,textAlign:"right",fontSize:11.5,color:filled?acc[0]:(dim?C.textMuted:C.textSub),fontWeight:filled?700:400,fontStyle:dim?"italic":"normal",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{shown}</span>
-              <span style={{flexShrink:0,fontSize:11,color:C.textMuted,transform:isOpen?"rotate(180deg)":"none",transition:"transform .15s"}}>{"▾"}</span>
+              <span style={{flexShrink:0,width:24,height:24,borderRadius:"50%",background:isOpen?C.blue:C.blueBg,border:"1px solid "+C.blueDim,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:800,color:isOpen?"#fff":C.blue,transform:isOpen?"rotate(180deg)":"none",transition:"transform .15s, background .15s"}}>{"▾"}</span>
             </div>
             {isOpen?<div style={{marginTop:8}}>{help?<div style={{fontSize:11,color:C.textMuted,lineHeight:1.4,marginBottom:7}}>{help}</div>:null}{renderInput(f)}</div>:null}
           </div>;})}
