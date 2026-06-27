@@ -70,7 +70,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
       ))}
 
       {/* routes (leaf crag) */}
-      {!loading && !error && isLeaf && (
+      {!loading && !error && (isLeaf || (routes && routes.length > 0)) && (
         routes && routes.length > 0 ? routes.map((r) => (
           <div key={r.id} style={box} onClick={() => onOpenRoute && onOpenRoute(r)}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
