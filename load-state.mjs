@@ -30,7 +30,7 @@ function emit(a) { if (seen.has(a.id)) return; if (a.parentId && byId[a.parentId
 areas.forEach(emit);
 
 const aRow = a => ({ id: a.id, name: a.name, parent_id: a.parentId, area_type: a.areaType, region: a.region, lat: a.lat, lng: a.lng });
-const rRow = r => { const disc = r.discipline === "rock" ? (r.style ? r.style.toLowerCase() : "rock") : r.discipline; const sys = gradeSystem(disc); return { id: r.id, area_id: r.mountainId, name: r.name, discipline: disc, grade: r.grade, grade_system: sys, grade_num: gradeNum(r.grade, sys), pitches: r.pitches, length_m: r.routeFt != null ? Math.round(r.routeFt / 3.28084) : null, aspect: null, season: null }; };
+const rRow = r => { const disc = r.discipline === "rock" ? (r.style ? r.style.toLowerCase() : "rock") : r.discipline; const sys = gradeSystem(disc); return { id: r.id, area_id: r.mountainId, name: r.name, discipline: disc, grade: r.grade, grade_system: sys, grade_num: gradeNum(r.grade, sys), pitches: r.pitches, length_m: r.routeFt != null ? Math.round(r.routeFt / 3.28084) : null, aspect: null, season: null, fa: r.fa ?? null }; };
 
 async function up(table, rows, size) {
   for (let i = 0; i < rows.length; i += size) {

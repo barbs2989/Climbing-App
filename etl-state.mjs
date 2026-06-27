@@ -39,11 +39,11 @@ function mapClimb(c, mid) {
   o.routeFt = (c.length > 0) ? Math.round(c.length * 3.28084) : null;
   o.gainFt = null; o.distKm = null; o.season = null; o.aspect = null;
   o.bolts = (c.boltsCount > 0) ? c.boltsCount : null;
-  o.verified = false;
+  o.fa = c.fa || null; o.verified = false;
   routes.push(o);
 }
 
-const CLIMB = `climbs{ name type{trad sport bouldering aid tr alpine ice mixed} grades{yds vscale} length boltsCount pitches{pitchNumber} }`;
+const CLIMB = `climbs{ name fa type{trad sport bouldering aid tr alpine ice mixed} grades{yds vscale} length boltsCount pitches{pitchNumber} }`;
 const af = d => `area_name uuid metadata{lat lng leaf} ${CLIMB} ` + (d > 0 ? `children{ ${af(d - 1)} }` : `children{ uuid }`);
 
 async function walkArea(uuid, parentId) {
