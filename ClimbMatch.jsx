@@ -1503,7 +1503,7 @@ function SuggestFix({route,onClose,onSubmit}){
   </div>;
 }
 function Contributions({items,onClose}){
-  const ST={review:{lbl:"In review",icon:"",col:C.amber,bg:C.amberBg},community:{lbl:"Confirming",icon:"",col:C.blue,bg:C.blueBg},verified:{lbl:"Live & verified",icon:"✓",col:C.green,bg:C.greenBg}};
+  const ST={review:{lbl:"In review",icon:"⚠",col:C.amber,bg:C.amberBg},community:{lbl:"Confirming",icon:"👥",col:C.blue,bg:C.blueBg},verified:{lbl:"Live & verified",icon:"✓",col:C.green,bg:C.greenBg}};
   return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Your contributions" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:900,display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"16px 12px",overflowY:"auto"}}>
     <div onClick={function(e){e.stopPropagation();}} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:460,border:"1px solid "+C.border,overflow:"hidden",display:"flex",flexDirection:"column",maxHeight:"92vh"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border,flexShrink:0}}><div style={{fontSize:16,fontWeight:700}}>Your contributions</div><button onClick={onClose} aria-label="Close" style={{background:C.borderLight,border:"none",color:C.textSub,borderRadius:8,width:36,height:36,fontSize:20,cursor:"pointer"}}>{"✕"}</button></div>
