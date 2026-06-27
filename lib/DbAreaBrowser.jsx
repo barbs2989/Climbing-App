@@ -3,10 +3,29 @@
 // Rendered only when USE_DB is on. Deliberately separate from the bundle browser so
 // it can't regress the working app. Styling is minimal/inline (no dependency on C).
 import { useState } from "react";
-import { useAreaChildren, useAreaRoutes } from "./db";
+import { useAreaChildren, useAreaRoutes, useAreaTopContributors } from "./db";
 
 const box = { background: "#161b22", border: "1px solid #30363d", borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", color: "#e6edf3" };
 const muted = { color: "#8b949e", fontSize: 12 };
+
+function DbTopContributors({ areaId }) {
+  const { data } = useAreaTopContributors(areaId, 3);
+  if (!data || !data.length) return null;
+  const medal = ["🥇", "🥈", "🥉"];
+  return (
+    <div style={{ background: "#161b22", border: "1px solid #30363d", borderRadius: 12, padding: "10px 12px", marginBottom: 10 }}>
+      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, color: "#58a6ff", textTransform: "uppercase", marginBottom: 8 }}>Top Contributors</div>
+      {data.map((c, i) => (
+        <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 8, marginTop: i ? 7 : 0 }}>
+          <span style={{ width: 18, textAlign: "center" }}>{medal[i]}</span>
+          <span style={{ flex: 1, minWidth: 0, fontSize: 13, fontWeight: 700, color: "#e6edf3", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{c.contributor}</span>
+          {i === 0 ? <span style={{ fontSize: 10, fontWeight: 700, color: "#d29922", background: "rgba(210,153,34,0.15)", padding: "1px 7px", borderRadius: 8 }}>★ Top</span> : null}
+          <span style={{ fontSize: 12, fontWeight: 700, color: "#8b949e" }}>{c.n}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function DbAreaBrowser({ onOpenRoute }) {
   const [stack, setStack] = useState([]); // [{id,name}] drill path; [] = root
@@ -35,6 +54,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
         ))}
       </div>
 
+      {current && <DbTopContributors areaId={current.id} />}
       {loading && <div style={muted}>Loading…</div>}
       {error && <div style={{ color: "#f85149", fontSize: 12.5, lineHeight: 1.5 }}>DB error: {error.message}. Did you apply the migration + seed and set VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY?</div>}
 
