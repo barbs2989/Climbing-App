@@ -52,8 +52,8 @@ async function walkArea(uuid, parentId) {
   if (!root) return;
   async function proc(n, pid, level) {
     const id = uniq(PREFIX + "_" + slug(n.area_name), usedA);
-    areas.push({ id, name: n.area_name, areaType: n.metadata?.leaf ? "crag" : "region", parentId: pid, lat: n.metadata?.lat ?? null, lng: n.metadata?.lng ?? null, region: STATE });
-    (n.climbs || []).forEach(c => mapClimb(c, id));
+    areas.push({ id, name: n.area_name, areaType: (n.children && n.children.length) ? "region" : "crag", parentId: pid, lat: n.metadata?.lat ?? null, lng: n.metadata?.lng ?? null, region: STATE });
+    (function(){var ks=n.children||[],cs=n.climbs||[];if(!cs.length)return;var cid=id;if(ks.length){cid=uniq(id+"_climbs",usedA);areas.push({id:cid,name:n.area_name,areaType:"crag",parentId:id,lat:n.metadata?.lat??null,lng:n.metadata?.lng??null,region:STATE});}cs.forEach(function(c){mapClimb(c,cid);});})();
     const kids = n.children || [];
     if (level < CHUNK) { for (const ch of kids) await proc(ch, id, level + 1); }
     else { for (const ch of kids) await walkArea(ch.uuid, id); }
