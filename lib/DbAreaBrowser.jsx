@@ -54,7 +54,6 @@ export default function DbAreaBrowser({ onOpenRoute }) {
         ))}
       </div>
 
-      {current && <DbTopContributors areaId={current.id} />}
       {loading && <div style={muted}>Loading…</div>}
       {error && <div style={{ color: "#f85149", fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
 
@@ -81,6 +80,8 @@ export default function DbAreaBrowser({ onOpenRoute }) {
           </div>
         )) : <div style={muted}>No routes in this crag yet.</div>
       )}
+
+      {current && <DbTopContributors areaId={current.id} />}
     </div>
   );
 }
