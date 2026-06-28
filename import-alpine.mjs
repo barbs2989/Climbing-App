@@ -27,7 +27,7 @@ const Ha = { apikey: AK, Authorization: "Bearer " + AK };
 const afs = readdirSync(dir).filter(f => /area/i.test(f) && f.endsWith(".json"));
 const rfs = readdirSync(dir).filter(f => /route/i.test(f) && f.endsWith(".json"));
 if (!afs.length || !rfs.length) { console.error("Need at least one *areas*.json and one *routes*.json in " + dir); process.exit(1); }
-const loadJ = f => { const x = JSON.parse(readFileSync(dir + f, "utf8")); return Array.isArray(x) ? x : (x.areas || x.routes || x.data || []); };
+const loadJ = f => { try { const x = JSON.parse(readFileSync(dir + f, "utf8")); return Array.isArray(x) ? x : (x.areas || x.routes || x.data || []); } catch (e) { throw new Error("Malformed JSON in " + dir + f + "  ->  " + e.message + "\n  (open that file, or ask Claude to re-check its brackets, then re-run)"); } };
 const dedupe = arr => { const s = new Set(); return arr.filter(o => o && o.id && !s.has(o.id) && s.add(o.id)); };
 let A = dedupe(afs.flatMap(loadJ)), R = dedupe(rfs.flatMap(loadJ));
 console.log("  merged " + afs.length + " area file(s) + " + rfs.length + " route file(s) -> " + A.length + " areas, " + R.length + " routes");
