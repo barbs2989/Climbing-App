@@ -24,11 +24,13 @@ if (!url || !SK) { console.error("Need VITE_SUPABASE_URL in .env.local and SUPAB
 const Hs = { apikey: SK, Authorization: "Bearer " + SK, "Content-Type": "application/json" };
 const Ha = { apikey: AK, Authorization: "Bearer " + AK };
 
-const af = readdirSync(dir).find(f => /area/i.test(f) && f.endsWith(".json"));
-const rf = readdirSync(dir).find(f => /route/i.test(f) && f.endsWith(".json"));
-if (!af || !rf) { console.error("Need an *areas*.json and *routes*.json in " + dir); process.exit(1); }
+const afs = readdirSync(dir).filter(f => /area/i.test(f) && f.endsWith(".json"));
+const rfs = readdirSync(dir).filter(f => /route/i.test(f) && f.endsWith(".json"));
+if (!afs.length || !rfs.length) { console.error("Need at least one *areas*.json and one *routes*.json in " + dir); process.exit(1); }
 const loadJ = f => { const x = JSON.parse(readFileSync(dir + f, "utf8")); return Array.isArray(x) ? x : (x.areas || x.routes || x.data || []); };
-let A = loadJ(af), R = loadJ(rf);
+const dedupe = arr => { const s = new Set(); return arr.filter(o => o && o.id && !s.has(o.id) && s.add(o.id)); };
+let A = dedupe(afs.flatMap(loadJ)), R = dedupe(rfs.flatMap(loadJ));
+console.log("  merged " + afs.length + " area file(s) + " + rfs.length + " route file(s) -> " + A.length + " areas, " + R.length + " routes");
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const region = (A.find(a => a.region) || {}).region || "";
 const stateNode = slug(region);
