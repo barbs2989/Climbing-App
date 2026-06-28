@@ -56,7 +56,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
 
       {current && <DbTopContributors areaId={current.id} />}
       {loading && <div style={muted}>Loading…</div>}
-      {error && <div style={{ color: "#f85149", fontSize: 12.5, lineHeight: 1.5 }}>DB error: {error.message}. Did you apply the migration + seed and set VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY?</div>}
+      {error && <div style={{ color: "#f85149", fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
 
       {/* child areas */}
       {!loading && !error && children && children.length > 0 && children.map((a) => (
