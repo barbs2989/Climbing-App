@@ -24,21 +24,49 @@ if (!url || !SK) { console.error("Need VITE_SUPABASE_URL in .env.local and SUPAB
 const Hs = { apikey: SK, Authorization: "Bearer " + SK, "Content-Type": "application/json" };
 const Ha = { apikey: AK, Authorization: "Bearer " + AK };
 
-const af = readdirSync(dir).find(f => /area/i.test(f) && f.endsWith(".json"));
-const rf = readdirSync(dir).find(f => /route/i.test(f) && f.endsWith(".json"));
-if (!af || !rf) { console.error("Need an *areas*.json and *routes*.json in " + dir); process.exit(1); }
-const loadJ = f => { const x = JSON.parse(readFileSync(dir + f, "utf8")); return Array.isArray(x) ? x : (x.areas || x.routes || x.data || []); };
-let A = loadJ(af), R = loadJ(rf);
+const afs = readdirSync(dir).filter(f => /area/i.test(f) && f.endsWith(".json"));
+const rfs = readdirSync(dir).filter(f => /route/i.test(f) && f.endsWith(".json"));
+if (!afs.length || !rfs.length) { console.error("Need at least one *areas*.json and one *routes*.json in " + dir); process.exit(1); }
+const loadJ = f => { try { const x = JSON.parse(readFileSync(dir + f, "utf8")); return Array.isArray(x) ? x : (x.areas || x.routes || x.data || []); } catch (e) { throw new Error("Malformed JSON in " + dir + f + "  ->  " + e.message + "\n  (open that file, or ask Claude to re-check its brackets, then re-run)"); } };
+const dedupe = arr => { const s = new Set(); return arr.filter(o => o && o.id && !s.has(o.id) && s.add(o.id)); };
+let A = dedupe(afs.flatMap(loadJ)), R = dedupe(rfs.flatMap(loadJ));
+console.log("  merged " + afs.length + " area file(s) + " + rfs.length + " route file(s) -> " + A.length + " areas, " + R.length + " routes");
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const region = (A.find(a => a.region) || {}).region || "";
 const stateNode = slug(region);
+
+// ── pre-flight: catch common data mistakes before any upsert ──
+(function preflight() {
+  const ids = new Set(A.map(a => a.id));
+  const DISC = new Set(["alpine","mountaineering","scrambling","ice","mixed","rock","trad","sport","aid","bouldering","tr"]);
+  const issues = [];
+  A.forEach(a => {
+    if (!a.id || !a.name) issues.push("MISSING area id/name: " + JSON.stringify(a).slice(0, 70));
+    if (a.lat != null && (a.lat < 45 || a.lat > 49.5)) issues.push("area " + a.id + " lat outside WA: " + a.lat);
+    if (a.lng != null && (a.lng < -125 || a.lng > -116)) issues.push("area " + a.id + " lng outside WA: " + a.lng);
+  });
+  R.forEach(r => {
+    if (!r.id || !r.name) issues.push("MISSING route id/name: " + JSON.stringify(r).slice(0, 70));
+    if (!ids.has(r.mountainId) && r.mountainId !== stateNode) issues.push("ORPHAN route " + r.id + " -> mountainId '" + r.mountainId + "' (no matching area)");
+    if (r.discipline && !DISC.has(r.discipline)) issues.push("route " + r.id + " unknown discipline: " + r.discipline);
+    if (Array.isArray(r.disciplines) && r.disciplines.some(d => !DISC.has(d))) issues.push("route " + r.id + " unknown discipline in array: " + JSON.stringify(r.disciplines));
+  });
+  if (!issues.length) { console.log("  pre-flight: data clean"); return; }
+  console.log("\n!! PRE-FLIGHT found " + issues.length + " issue(s):");
+  issues.slice(0, 40).forEach(s => console.log("   - " + s));
+  if (issues.length > 40) console.log("   ... +" + (issues.length - 40) + " more");
+  const fatal = issues.filter(s => s.startsWith("ORPHAN") || s.startsWith("MISSING"));
+  if (fatal.length) { console.error("\nABORT: " + fatal.length + " fatal (orphan/missing) — fix these or ask Claude to, then re-run."); process.exit(1); }
+  console.log("   (all non-fatal — proceeding)\n");
+})();
+
 
 const get = async p => (await fetch(url + "/rest/v1/" + p, { headers: Ha })).json();
 const inB = async (ids, fn) => { let o = []; for (let i = 0; i < ids.length; i += 80) { const d = await fn(ids.slice(i, i + 80)); if (Array.isArray(d)) o.push(...d); } return o; };
 function gradeSystem(d) { if (d === "bouldering") return "v"; if (["scrambling", "mountaineering"].includes(d)) return "class"; if (["trad", "sport", "alpine", "rock"].includes(d)) return "yds"; if (d === "ice") return "wi"; if (d === "mixed") return "m"; if (d === "aid") return "aid"; return null; }
 function gradeNum(g, s) { if (!g) return null; let m; if (s === "yds") { m = g.match(/5\.(\d+)([a-d]?)/); return m ? parseInt(m[1]) + ("abcd".indexOf(m[2]) + 1) / 4 : null; } if (s === "v") { m = g.match(/V(\d+)/); return m ? parseInt(m[1]) : null; } if (s === "wi") { m = g.match(/WI(\d+)/); return m ? parseInt(m[1]) : null; } if (s === "m") { m = g.match(/M(\d+)/); return m ? parseInt(m[1]) : null; } if (s === "class") { m = g.match(/Class\s*(\d)/i); return m ? parseInt(m[1]) : null; } if (s === "aid") { m = g.match(/[AC](\d)/); return m ? parseInt(m[1]) : null; } if (s === "alpine") { const ag = { TD: 5, PD: 2, AD: 3, ED: 6, D: 4, F: 1 }; m = g.match(/(TD|PD|AD|ED|D|F)/); return m ? ag[m[1]] : null; } return null; }
 const aRow = a => ({ id: a.id, name: a.name, parent_id: a.parentId, area_type: a.areaType, region: a.region, lat: a.lat, lng: a.lng, elevation_ft: a.elevationFt ?? null, prominence_ft: a.prominenceFt ?? null, parent_peak: a.parentPeak ?? null, source: a.source ?? null });
-const rRow = r => { const disc = r.discipline === "rock" ? (r.style ? r.style.toLowerCase() : "rock") : r.discipline; const sys = r.gradeSystem || gradeSystem(disc); return { id: r.id, area_id: r.mountainId, name: r.name, discipline: disc, grade: r.grade, grade_system: sys, grade_num: gradeNum(r.grade, sys), pitches: r.pitches, length_m: r.routeFt != null ? Math.round(r.routeFt / 3.28084) : null, aspect: r.aspect ?? null, season: r.season ?? null, fa: r.fa ?? null, gain_ft: r.gainFt ?? null, loss_ft: r.lossFt ?? null, dist_km: r.distKm ?? null, max_angle: r.maxAngle ?? null, rappels: r.rappels ?? null, commitment: r.commitment ?? null, face: r.face ?? null, permit: r.permit ?? null, comms: r.comms ?? null, descent: r.descent ?? null, obj_haz: r.objHaz ?? null, waypoints: r.waypoints ?? null, gpx: r.gpxPts ?? null, elev_pts: r.elevPts ?? null, overview: r.overview ?? null, beta: r.beta ?? null, turnaround: r.turnaround ?? null, auto_generated: r.autoGenerated ?? false, source: r.source ?? null, alpine_grade: r.alpineGrade ?? null, rock_grade: r.rockGrade ?? null, ice_grade: r.iceGrade ?? null, disciplines: r.disciplines ?? null }; };
+const rRow = r => { const disc = r.discipline === "rock" ? (r.style ? r.style.toLowerCase() : "rock") : r.discipline; const sys = r.gradeSystem || gradeSystem(disc); return { id: r.id, area_id: r.mountainId, name: r.name, discipline: disc, grade: r.grade, grade_system: sys, grade_num: gradeNum(r.grade, sys), pitches: r.pitches, length_m: r.routeFt != null ? Math.round(r.routeFt / 3.28084) : null, aspect: r.aspect ?? null, season: r.season ?? null, fa: r.fa ?? null, gain_ft: r.gainFt ?? null, loss_ft: r.lossFt ?? null, dist_km: r.distKm ?? null, max_angle: r.maxAngle ?? null, rappels: r.rappels ?? null, commitment: r.commitment ?? null, face: r.face ?? null, permit: r.permit ?? null, comms: r.comms ?? null, descent: r.descent ?? null, obj_haz: r.objHaz ?? null, waypoints: r.waypoints ?? null, gpx: r.gpxPts ?? null, elev_pts: r.elevPts ?? null, overview: r.overview ?? null, beta: r.beta ?? null, turnaround: r.turnaround ?? null, auto_generated: r.autoGenerated ?? false, source: r.source ?? null, alpine_grade: r.alpineGrade ?? null, rock_grade: r.rockGrade ?? null, ice_grade: r.iceGrade ?? null, disciplines: r.disciplines ?? null, high_point_ft: r.highPointFt ?? null, aid_grade: r.aidGrade ?? null, gear: r.gear ?? null, approach: r.approach ?? null, descent_text: r.descentText ?? null, bail: r.bail ?? null, pitch_detail: r.pitchDetail ?? null, itinerary: r.itinerary ?? null, access: r.access ?? null, road: r.road ?? null, climate: r.climate ?? null, emergency: r.emergency ?? null }; };
 
 async function up(table, rows, size, extra = "") {
   for (let i = 0; i < rows.length; i += size) {
