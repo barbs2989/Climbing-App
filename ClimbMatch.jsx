@@ -1802,7 +1802,7 @@ function Leaderboards({onView,onClimb,meLogged,connections,crewMates,friendState
   const scopeRoutes=ROUTES.filter(r=>{const mt=MOUNTAINS.find(m=>m.id===r.mountainId);return (scope==="area"?inArea(r.mountainId,areaId):scope==="near"?!!(mt&&distMiles(ME,mt)<=120):true)&&discMatch(r);});
   const peopleForBoard=scopePeople.filter(pp=>pp.id===0||disc==="all"||(pp.disciplines||[]).includes(disc));
   const SCOPES=[["overall","Overall"],["friends","Friends"],["area","By area"]];
-  const DISCS=[["all","All"],["rock","Sport & Trad"],["bouldering","Bouldering"],["mountaineering","Mountaineering"],["alpine","Alpine"],["ice","Ice"]];
+  const DISCS=[["all","All"],["rock","Sport & Trad"],["bouldering","Bouldering"],["mountaineering","Mountaineering"],["scrambling","Scrambling"],["alpine","Alpine"],["ice","Ice"]];
   const dn=disc;
   const PEAK=["mountaineering","alpine","scrambling"];
   const H=(t)=>{let h=2166136261;const z=(t||"")+"";for(let q=0;q<z.length;q++){h^=z.charCodeAt(q);h=Math.imul(h,16777619);}return (h>>>0);};
@@ -1993,7 +1993,7 @@ function Guides({notify,onDash,onInquire}){
   const [msg,setMsg]=useState("");
   const [sent,setSent]=useState(false);
   const GSTATES={Utah:["Wasatch","Cottonwoods","Uintas","Zion","Indian Creek"],Colorado:["Colorado"],California:["Yosemite/Sierra"],Washington:["North Cascades","Mount Baker"]};
-  const DISCS=[["all","All"],["sport","Sport"],["trad","Trad"],["bouldering","Bouldering"],["alpine","Alpine"],["mountaineering","Mtn"],["ice","Ice"]];
+  const DISCS=[["all","All"],["sport","Sport"],["trad","Trad"],["bouldering","Bouldering"],["alpine","Alpine"],["mountaineering","Mtn"],["scrambling","Scramble"],["ice","Ice"]];
   const ql=q.trim().toLowerCase();
   let list=GUIDES.filter(g=>(distF==="all"||distMiles(ME,g)<=Number(distF))&&(disc==="all"||g.disciplines.includes(disc))&&(stateF==="all"||(GSTATES[stateF]||[]).some(rg=>g.regions.includes(rg)))&&(region==="all"||g.regions.includes(region))&&(!ql||fuzzyMatch(q,g.name)||fuzzyMatch(q,g.specialty)||fuzzyMatch(q,g.regions.join(" "))||fuzzyMatch(q,g.disciplines.join(" "))||fuzzyMatch(q,g.title)||fuzzyMatch(q,g.base))&&(certF==="all"||g.certs.some(c=>c.indexOf(certF)>=0))&&(priceF==="all"||(priceF==="lt400"?g.rate<400:priceF==="400_550"?(g.rate>=400&&g.rate<=550):g.rate>550))&&(langF==="all"||(gm(g).languages||["English"]).includes(langF))&&(partyF==="all"||g.groupMax>=parseInt(partyF))&&(ratingF==="all"||g.rating>=parseFloat(ratingF)));
   list=[...list].sort((a,b)=>sort==="price"?a.rate-b.rate:sort==="reviews"?b.reviews-a.reviews:b.rating-a.rating);
