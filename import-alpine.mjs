@@ -35,6 +35,32 @@ const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(
 const region = (A.find(a => a.region) || {}).region || "";
 const stateNode = slug(region);
 
+// ── pre-flight: catch common data mistakes before any upsert ──
+(function preflight() {
+  const ids = new Set(A.map(a => a.id));
+  const DISC = new Set(["alpine","mountaineering","scrambling","ice","mixed","rock","trad","sport","aid","bouldering","tr"]);
+  const issues = [];
+  A.forEach(a => {
+    if (!a.id || !a.name) issues.push("MISSING area id/name: " + JSON.stringify(a).slice(0, 70));
+    if (a.lat != null && (a.lat < 45 || a.lat > 49.5)) issues.push("area " + a.id + " lat outside WA: " + a.lat);
+    if (a.lng != null && (a.lng < -125 || a.lng > -116)) issues.push("area " + a.id + " lng outside WA: " + a.lng);
+  });
+  R.forEach(r => {
+    if (!r.id || !r.name) issues.push("MISSING route id/name: " + JSON.stringify(r).slice(0, 70));
+    if (!ids.has(r.mountainId) && r.mountainId !== stateNode) issues.push("ORPHAN route " + r.id + " -> mountainId '" + r.mountainId + "' (no matching area)");
+    if (r.discipline && !DISC.has(r.discipline)) issues.push("route " + r.id + " unknown discipline: " + r.discipline);
+    if (Array.isArray(r.disciplines) && r.disciplines.some(d => !DISC.has(d))) issues.push("route " + r.id + " unknown discipline in array: " + JSON.stringify(r.disciplines));
+  });
+  if (!issues.length) { console.log("  pre-flight: data clean"); return; }
+  console.log("\n!! PRE-FLIGHT found " + issues.length + " issue(s):");
+  issues.slice(0, 40).forEach(s => console.log("   - " + s));
+  if (issues.length > 40) console.log("   ... +" + (issues.length - 40) + " more");
+  const fatal = issues.filter(s => s.startsWith("ORPHAN") || s.startsWith("MISSING"));
+  if (fatal.length) { console.error("\nABORT: " + fatal.length + " fatal (orphan/missing) — fix these or ask Claude to, then re-run."); process.exit(1); }
+  console.log("   (all non-fatal — proceeding)\n");
+})();
+
+
 const get = async p => (await fetch(url + "/rest/v1/" + p, { headers: Ha })).json();
 const inB = async (ids, fn) => { let o = []; for (let i = 0; i < ids.length; i += 80) { const d = await fn(ids.slice(i, i + 80)); if (Array.isArray(d)) o.push(...d); } return o; };
 function gradeSystem(d) { if (d === "bouldering") return "v"; if (["scrambling", "mountaineering"].includes(d)) return "class"; if (["trad", "sport", "alpine", "rock"].includes(d)) return "yds"; if (d === "ice") return "wi"; if (d === "mixed") return "m"; if (d === "aid") return "aid"; return null; }
