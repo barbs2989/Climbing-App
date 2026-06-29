@@ -40,8 +40,8 @@ export default function DbAreaBrowser({ onOpenRoute }) {
   return (
     <div style={{ border: "1px solid #1f6feb", borderRadius: 14, padding: 12, marginBottom: 14, background: "rgba(31,111,235,0.06)" }}>
       <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, color: "#58a6ff", textTransform: "uppercase", marginBottom: 8 }}>
-        ⚡ DB mode — areas served from Supabase
-      </div>
+        Explore by area
+</div>
 
       {/* breadcrumb */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", marginBottom: 10, fontSize: 13 }}>
