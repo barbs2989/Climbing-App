@@ -92,7 +92,7 @@ A.forEach(a => { if (renameMap[a.id]) a.id = renameMap[a.id]; if (a.parentId && 
 R.forEach(r => { if (renameMap[r.mountainId]) r.mountainId = renameMap[r.mountainId]; });
 
 // ── 3. ranges -> existing state node; stamp region; keep crag-collisions (routes attach) ──
-A.forEach(a => { if (!a.region) a.region = region; if (a.areaType === "range") a.parentId = stateNode; });
+A.forEach(a => { if (!a.region) a.region = region; });
 const cragColl = new Set([...exIds].filter(id => !parents.has(id)));   // existing leaves
 const Ains = A.filter(a => !cragColl.has(a.id));
 
