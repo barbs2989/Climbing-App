@@ -1679,7 +1679,7 @@ function CrewCard({crew,onAck,onAccept,onDisband,onLeave,onOpenClimb,onLog,onMes
   const risks=tp.modules.includes("align")?roster.map(p=>p.riskTolerance).filter(Boolean):[];
   const mixedRisk=new Set(risks).size>1;
   const addable=(connections||[]).filter(c=>!crew.members.some(m=>m.climberId===c.id));
-  const planMonth=crew.date?parseInt(crew.date.slice(5,7),10)-1:null;
+  var _agd=agreedDate(crew)||crew.date;const planMonth=_agd?parseInt(_agd.slice(5,7),10)-1:null;
   let avInfo=null;
   if(tp.tier==="Backcountry"&&mtn.avyZone){const z=mtn.avyZone;if(planMonth===null)avInfo={bg:C.amberBg,color:C.amber,msg:`${z} — set a planned date below and I'll flag the season. Either way, check UAC by conditions, not the calendar.`};else if(planMonth>=11||planMonth<=2)avInfo={bg:C.redBg,color:C.red,msg:`${z} — mid-winter: danger is frequently Considerable or higher. Check UAC daily and carry beacon · probe · shovel.`};else if(planMonth>=3&&planMonth<=5)avInfo={bg:C.redBg,color:C.red,msg:`${z} — spring: warming drives wet-snow and glide cycles, and danger lingers well into late spring. Don't write it off by the calendar — check UAC.`};else avInfo={bg:C.amberBg,color:C.amber,msg:`${z} — summer/fall: lower avalanche risk, but lingering snowfields and early-season storms can still slide. Verify current conditions.`};}
   return <div style={{background:C.card,borderRadius:16,padding:14,marginBottom:12,border:`1px solid ${ready?C.green:C.amber}`,boxShadow:"0 1px 3px rgba(0,0,0,0.25)"}}>
