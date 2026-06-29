@@ -113,7 +113,7 @@ for (let i = 0; i < cragArr.length; i += 60) await patch(`areas?id=in.(${cragArr
 // ── 5. backfill elevation/prominence onto every matching area (idempotent) ──
 const elev = A.filter(a => a.elevationFt != null || a.prominenceFt != null);
 let bf = 0;
-for (const a of elev) { try { await patch(`areas?id=eq.${a.id}`, { elevation_ft: a.elevationFt ?? null, prominence_ft: a.prominenceFt ?? null }); bf++; } catch {} }
+for (const a of elev) { try { await patch(`areas?id=eq.${a.id}`, { elevation_ft: ri(a.elevationFt), prominence_ft: ri(a.prominenceFt) }); bf++; } catch {} }
 
 console.log(`  retyped ${cragColl.size} summits crag->peak; backfilled elevation on ${bf} areas`);
 console.log(`DONE — ${PREFIX}-alpine merged. Summits consistent, routes attached, hierarchy intact.\n`);
