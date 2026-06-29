@@ -75,7 +75,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
           <div key={r.id} style={box} onClick={() => onOpenRoute && onOpenRoute(r)}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 15 }}>{r.name}</span>
-              <span style={{ ...muted }}>{r.grade}</span>
+              <span style={{ ...muted }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || ""}</span>
             </div>
             <div style={{ ...muted, marginTop: 2 }}>{r.discipline}{r.sort_order != null ? " · #" + r.sort_order + " on the cliff" : ""}</div>
           </div>
