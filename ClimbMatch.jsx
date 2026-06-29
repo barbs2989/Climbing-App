@@ -18,7 +18,7 @@ const uDist=km=>uImp()?(km*0.621371).toFixed(1)+" mi":km+" km";
 const uDistMi=mi=>uImp()?mi+" mi":(mi*1.60934).toFixed(1)+" km";
 const uLen=m=>uImp()?Math.round(m*3.28084)+" ft":m+" m";
 const uMass=lb=>uImp()?lb+" lb":Math.round(lb*0.4536)+" kg";
-function catOf(r){return r.discipline==="rock"?(r.style||"Trad").toLowerCase():r.discipline;} function rDiscs(r){return r.disciplines&&r.disciplines.length?r.disciplines:[catOf(r)];} function gradeLabel(r){return r.grade||r.commitment||r.alpineGrade||r.alpine_grade||r.iceGrade||r.ice_grade||r.rockGrade||r.rock_grade||"";}
+function catOf(r){return r.discipline==="rock"?(r.style||"Trad").toLowerCase():r.discipline;} function rDiscs(r){return r.disciplines&&r.disciplines.length?r.disciplines:[catOf(r)];} function gradeLabel(r){return r.rockGrade||r.rock_grade||r.iceGrade||r.ice_grade||r.alpineGrade||r.alpine_grade||r.grade||r.commitment||"";}
 const TRIP={
  bouldering:{tier:"Session",accent:"#f0883e",ready:["confirm"],modules:["meet"],why:"Short problems, no rope — spotters and crash pads. Just get everyone there."},
  sport:{tier:"Roped climb",accent:"#39d353",ready:["confirm"],modules:["meet"],why:"Pre-bolted and roped. The trust that matters here is the belay, not a gear list."},
