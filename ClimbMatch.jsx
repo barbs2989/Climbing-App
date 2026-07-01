@@ -423,7 +423,7 @@ const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["R
 function datesAgreed(c){if(!c)return false;const ds=(c.dates&&c.dates.length)?c.dates:(c.date?[c.date]:[]);if(!ds.length)return false;const need=[...new Set([0,...(c.members||[]).filter(m=>m.status==="confirmed").map(m=>m.climberId)])];if(c.dayAcks){return ds.some(d=>{const a=c.dayAcks[d]||[];return need.every(id=>a.includes(id));});}const a=c.dateAcks||[];return need.every(id=>a.includes(id));}
 function relTime(ts){if(!ts)return "";var d=Date.now()-ts;var m=Math.floor(d/60000);if(m<1)return "now";if(m<60)return m+"m";var h=Math.floor(m/60);if(h<24)return h+"h";var dy=Math.floor(h/24);if(dy===1)return "yesterday";if(dy<7)return dy+"d";return new Date(ts).toLocaleDateString(undefined,{month:"short",day:"numeric"});}
 function agreedDate(c){if(!c)return null;const ds=(c.dates&&c.dates.length)?c.dates:(c.date?[c.date]:[]);if(!ds.length)return null;const need=[...new Set([0,...(c.members||[]).filter(m=>m.status==="confirmed").map(m=>m.climberId)])];if(c.dayAcks){const g=ds.find(d=>{const a=c.dayAcks[d]||[];return need.every(id=>a.includes(id));});return g||null;}const a=c.dateAcks||[];return need.every(id=>a.includes(id))?ds[0]:null;}
-function daysUntil(ds){if(!ds)return null;try{const t=new Date();t.setHours(0,0,0,0);const d=new Date(ds+"T12:00:00");return Math.round((d-t)/86400000);}catch(e){return null;}}
+function daysUntil(ds){if(!ds)return null;try{const t=new Date();t.setHours(12,0,0,0);const d=new Date(ds+"T12:00:00");return Math.round((d-t)/86400000);}catch(e){return null;}}
 function futLabel(ds){const n=daysUntil(ds);if(n==null)return "";return n<0?"past":n===0?"today":n===1?"tomorrow":"in "+n+" days";}
 function gearReadout(route,owners){
   const disc=catOf(route);const base=(DISC_GEAR[disc]||[]).slice();
@@ -2473,7 +2473,7 @@ export default function App(){
     const route=ROUTES.find(r=>r.id===crew.routeId)||{};
     const members=crew.members.map(m=>CLIMBERS.find(x=>x.id===m.climberId)).filter(Boolean);
     const prev=crewMsgs[cid]||[],updated=[...prev,{from:"me",name:"You",text,ts:Date.now()}];
-    setCrewMsgs(m=>({...m,[cid]:updated}));setMsgInput("");setCrewTyping(members.length?members[Math.floor(Math.random()*members.length)].name.split(" ")[0]:"A climber");
+    setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),{from:"me",name:"You",text,ts:Date.now()}]}));setMsgInput("");setCrewTyping(members.length?members[Math.floor(Math.random()*members.length)].name.split(" ")[0]:"A climber");
     try{
       const personas=members.map(c=>`${c.name.split(" ")[0]} (${c.level} ${c.disciplines.join("/")}): ${c.bio} Philosophy: ${c.philosophy}`).join("\n");
       const transcript=updated.map(m=>`${m.name}: ${m.text}`).join("\n");
@@ -2483,16 +2483,16 @@ export default function App(){
       let arr=[];try{arr=JSON.parse(raw.replace(/```json|```/g,"").trim());}catch(e){arr=[];}
       if(!Array.isArray(arr)||!arr.length)arr=[{name:members[0]?members[0].name.split(" ")[0]:"Crew",text:"Stoked — let's lock in a weekend."}];
       const replies=arr.slice(0,3).map(r=>{const mem=members.find(c=>c.name.split(" ")[0]===r.name)||members[0]||{};return {from:mem.id||"x",name:((mem.name||r.name||"Crew")+"").split(" ")[0],avatar:mem.avatar,text:r.text,ts:Date.now()};});
-      setCrewMsgs(m=>({...m,[cid]:[...updated,...replies]}));
+      setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),...replies]}));
     }catch(e){
       const mem=members[0]||{};
-      setCrewMsgs(m=>({...m,[cid]:[...updated,{from:mem.id||"x",name:((mem.name||"Crew")+"").split(" ")[0],avatar:mem.avatar,text:"Can't wait — let's pick a date."}]}));
+      setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),{from:mem.id||"x",name:((mem.name||"Crew")+"").split(" ")[0],avatar:mem.avatar,text:"Can't wait — let's pick a date."}]}));
     }
     setCrewTyping(false);
   };
   const sendMsg=async(pid,text)=>{
     if(!text.trim())return;
-    const partner=connections.find(c=>c.id===pid),prev=msgs[pid]||[],updated=[...prev,{from:"me",text,ts:Date.now()}];
+    const partner=connections.find(c=>c.id===pid)||ALL_CLIMBERS.find(c=>c.id===pid)||{name:"a climber",level:"intermediate",bio:"",philosophy:""},prev=msgs[pid]||[],updated=[...prev,{from:"me",text,ts:Date.now()}];
     setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),{from:"me",text,ts:Date.now()}]}));setMsgInput("");setAiTyping(true);
     try{
       const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,system:`You are ${partner.name}, a ${partner.level} climber. Bio: "${partner.bio}". Philosophy: "${partner.philosophy}". Be friendly, brief (1-3 sentences), climbing-focused.`,messages:updated.map(m=>({role:m.from==="me"?"user":"assistant",content:m.text}))})});
