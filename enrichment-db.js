@@ -2,8 +2,8 @@
 // Schema: all fields optional, but when present must follow structure
 
 export const enrichmentTiers = {
-  FULL: ['peakMetadata', 'seasonalGuidance', 'hazards', 'crowds', 'permitInfo', 'partnerRequirements', 'dataQuality'],
-  ALPINE: ['peakMetadata', 'seasonalGuidance', 'seasonalHazards', 'permitInfo', 'crowds', 'partnerRequirements', 'dataQuality'],
+  FULL: ['peakMetadata', 'seasonalGuidance', 'hazards', 'crowds', 'partnerRequirements', 'dataQuality'],
+  ALPINE: ['peakMetadata', 'seasonalGuidance', 'seasonalHazards', 'crowds', 'partnerRequirements', 'dataQuality'],
   ROCK: ['peakMetadata', 'partnerRequirements', 'crowds', 'dataQuality'],
   MINIMAL: ['peakMetadata', 'dataQuality'],
 };
@@ -26,9 +26,6 @@ export const validateEnrichmentData = (route) => {
   }
   if (route.crowds) {
     if (typeof route.crowds !== 'object') issues.push(`${route.id}: crowds must be object`);
-  }
-  if (route.permitInfo) {
-    if (typeof route.permitInfo !== 'object') issues.push(`${route.id}: permitInfo must be object`);
   }
   if (route.partnerRequirements) {
     if (typeof route.partnerRequirements !== 'object') issues.push(`${route.id}: partnerRequirements must be object`);
@@ -96,11 +93,8 @@ export const enrichedRoutes = {
       peakTraffic: 'July weekends: 10–30 simultaneous parties',
       solitudeRating: 2,
     },
-    permitInfo: {
-      type: 'Self-issued',
-      cost: 'Free',
-      regulations: 'Northwest Forest Pass required for parking',
-    },
+    // Permit/access info lives in ROUTE_EXTRAS[route.id].access in ClimbMatch.jsx
+    // (ACCESS & REGULATIONS panel) — not duplicated here.
     partnerRequirements: {
       experienceLevel: 'Beginner-friendly',
       fitnessSpec: { hiking: '1,000–1,200 ft/hr', packWeight: '30–40 lb' },
@@ -127,15 +121,14 @@ export const determineTier = (route) => {
     seasonalGuidance: !!route.seasonalGuidance,
     seasonalHazards: !!route.seasonalHazards,
     crowds: !!route.crowds,
-    permitInfo: !!route.permitInfo,
     partnerRequirements: !!route.partnerRequirements,
     dataQuality: !!route.dataQuality,
   };
 
   const fieldCount = Object.values(hasFields).filter(Boolean).length;
 
-  if (fieldCount >= 7 || (hasFields.seasonalHazards && hasFields.seasonalGuidance)) return 'FULL';
-  if (hasFields.seasonalHazards || (hasFields.seasonalGuidance && hasFields.permitInfo)) return 'ALPINE';
+  if (fieldCount >= 6 || (hasFields.seasonalHazards && hasFields.seasonalGuidance)) return 'FULL';
+  if (hasFields.seasonalHazards || hasFields.seasonalGuidance) return 'ALPINE';
   if (hasFields.peakMetadata && hasFields.partnerRequirements) return 'ROCK';
   return 'MINIMAL';
 };
