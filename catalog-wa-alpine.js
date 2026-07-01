@@ -1578,6 +1578,42 @@ export const CATALOG_WA_ALPINE_AREAS = [
   "lng": -120.9022
  },
  {
+  "id": "wa_jaberwocky_tower",
+  "name": "Jaberwocky Tower",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.49097,
+  "lng": -120.82587
+ },
+ {
+  "id": "wa_ingalls_peak",
+  "name": "Ingalls Peak",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.47234,
+  "lng": -120.94655
+ },
+ {
+  "id": "wa_flagpole_the",
+  "name": "Flagpole, The",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.48743,
+  "lng": -120.85814
+ },
+ {
+  "id": "wa_dragontail_peak",
+  "name": "Dragontail Peak",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.4789,
+  "lng": -120.83318
+ },
+ {
   "id": "wa_crystal_lake_tower",
   "name": "Crystal Lake Tower",
   "region": "Washington",
@@ -1612,6 +1648,60 @@ export const CATALOG_WA_ALPINE_AREAS = [
   "parentId": "wa_stuart_enchantments",
   "lat": 47.4701,
   "lng": -120.8615
+ },
+ {
+  "id": "wa_aasgard_sentinel",
+  "name": "Aasgard Sentinel",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.48368,
+  "lng": -120.82188
+ },
+ {
+  "id": "wa_lake_ingalls_outcrop",
+  "name": "Lake Ingalls Outcrop",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_headlight_basin",
+  "lat": 47.46673,
+  "lng": -120.94115
+ },
+ {
+  "id": "wa_headlight_basin",
+  "name": "Headlight Basin",
+  "region": "Washington",
+  "areaType": "region",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.46396,
+  "lng": -120.939735
+ },
+ {
+  "id": "wa_headlight_playground",
+  "name": "Headlight Playground",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_headlight_basin",
+  "lat": 47.46119,
+  "lng": -120.93832
+ },
+ {
+  "id": "wa_split_personality_boulder",
+  "name": "Split Personality Boulder",
+  "region": "Washington",
+  "areaType": "crag",
+  "parentId": "wa_enchantments_bouldering",
+  "lat": 47.47926,
+  "lng": -120.81935
+ },
+ {
+  "id": "wa_enchantments_bouldering",
+  "name": "** Enchantments Bouldering",
+  "region": "Washington",
+  "areaType": "region",
+  "parentId": "wa_stuart_enchantments",
+  "lat": 47.47926,
+  "lng": -120.81935
  },
  {
   "id": "wa_hook_creek_drainage",
@@ -7085,6 +7175,23 @@ export const CATALOG_WA_ALPINE_ROUTES = [
   "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
  },
  {
+  "id": "wa_girth_pillar",
+  "name": "Girth Pillar",
+  "mountainId": "wa_mt_stuart",
+  "grade": "5.11-",
+  "discipline": "ice",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "1984 Lewis & Nelson",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
   "id": "wa_gorillas_direct",
   "name": "Gorillas Direct",
   "mountainId": "wa_mt_stuart",
@@ -7095,6 +7202,176 @@ export const CATALOG_WA_ALPINE_ROUTES = [
   "season": null,
   "aspect": null,
   "fa": "Sol Wertkin, Jens Holsten, Mark Westman - August 2011",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_east_face_9",
+  "name": "East Face",
+  "mountainId": "wa_jaberwocky_tower",
+  "grade": "5.6",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Dave Beckstead and Paul Myhre (1970)",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_south_ridge_7",
+  "name": "South Ridge",
+  "mountainId": "wa_ingalls_peak",
+  "grade": "5.4",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Keith Rankin and Ken Solberg, May 30, 1941.",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_east_ridge_9",
+  "name": "East Ridge",
+  "mountainId": "wa_ingalls_peak",
+  "grade": "5.7",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Don Jones and Barry Prather in June 1957",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_west_face_6",
+  "name": "West Face",
+  "mountainId": "wa_flagpole_the",
+  "grade": "5.7",
+  "discipline": "aid",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Fred Beckey and Pete Schoening 1950   First Winter Ascent John Plotz and Kyle Flick, 2/7/2009",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_gerber_sink",
+  "name": "Gerber-Sink",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.7",
+  "discipline": "ice",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Gerber-Sink",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_serpentine_arete",
+  "name": "Serpentine Arete",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.8",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Tom Hargis and Jay Ossiander, 1973",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_dragons_of_eden",
+  "name": "Dragons of Eden",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.12a",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "FA Wayne Wallace, Bob McGown, FFA Jens Holsten, Sol Wertkin",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_this_my_friend",
+  "name": "This, My Friend",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.9+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Andy Wyatt, Chris Potts, August 2020",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_der_dihedral",
+  "name": "Der Dihedral",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.9+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Layton/Wolfe 2006",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_backbone_ridge",
+  "name": "Backbone Ridge",
+  "mountainId": "wa_dragontail_peak",
+  "grade": "5.9",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "weigelt+bonnerville aug 1970  with fin Cruver+Lewis Jul 1975",
   "verified": false,
   "features": [
    "alpine"
@@ -7153,6 +7430,91 @@ export const CATALOG_WA_ALPINE_ROUTES = [
   "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
  },
  {
+  "id": "wa_the_tipping_point",
+  "name": "The Tipping Point",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.12",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Kerwin Loukusa and Luke Stefurak 2017",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_west_face_7",
+  "name": "West Face",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.11+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Tom Boley, Jack Lewis (1980)",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_the_balanced_rock",
+  "name": "The Balanced Rock",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "V2",
+  "discipline": "bouldering",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": null,
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+  "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "3rd",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Various",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_scarface_3",
+  "name": "Scarface",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.10+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Colin B., Nate F.",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
   "id": "wa_nw_ridge_2",
   "name": "NW Ridge",
   "mountainId": "wa_colchuck_balanced_rock",
@@ -7163,6 +7525,142 @@ export const CATALOG_WA_ALPINE_ROUTES = [
   "season": null,
   "aspect": null,
   "fa": null,
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_the_scoop_2",
+  "name": "The Scoop",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.11c",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Matt Clifton, Evan Cabodi, Stewart Matthiesen",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_let_it_burn",
+  "name": "Let it Burn",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.12-",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Jens Holsten, Max Hasson",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_full_tilt_tempest_wall_free_version",
+  "name": "Full Tilt (Tempest Wall Free Version)",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.12",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Seth Angivine, John Berry, Evelyn Cheng, Jared Otto, Megan Polk, Thomas Ramier, Craig Rankin, Tim Stedman, Abe Traven",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_the_tempest",
+  "name": "The Tempest",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.12+",
+  "discipline": "aid",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": null,
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_milk_n_honey",
+  "name": "Milk n' Honey",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.11-",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Thomas Ramier, Craig Rankin, Abe Traven",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_rikki_tikki_tavi",
+  "name": "Rikki Tikki Tavi",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.11",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Tom Ramier, Abe Traven",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_leche_la_vaca",
+  "name": "Leche La Vaca",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.10a/b",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Tom Ramier, Abe Traven, Craig Rankin",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_accendo_lunae_lib_west_face_var",
+  "name": "Accendo Lunae (LiB/West Face Var.)",
+  "mountainId": "wa_colchuck_balanced_rock",
+  "grade": "5.12-",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Blake Harrington, Scott Bennet and Graham Zimmerman, 2012",
   "verified": false,
   "features": [
    "alpine"
@@ -7197,6 +7695,108 @@ export const CATALOG_WA_ALPINE_ROUTES = [
   "season": null,
   "aspect": null,
   "fa": null,
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_acid_baby",
+  "name": "Acid Baby",
+  "mountainId": "wa_aasgard_sentinel",
+  "grade": "5.10+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Mike Layton, Dan Cappellini, Rolf Larson (July 2005)",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_the_valkyrie",
+  "name": "The Valkyrie",
+  "mountainId": "wa_aasgard_sentinel",
+  "grade": "5.10",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Blake Herrington, Scott and Graham, June 2012",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_got_your_nuts",
+  "name": "Got your nuts",
+  "mountainId": "wa_lake_ingalls_outcrop",
+  "grade": "5.7+",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Brian McFarlane",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_my_daily_shame",
+  "name": "My Daily Shame",
+  "mountainId": "wa_lake_ingalls_outcrop",
+  "grade": "5.10a",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "Alexander Cruikshank",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_more_fun_than_i_thought",
+  "name": "More Fun Than I Thought",
+  "mountainId": "wa_headlight_playground",
+  "grade": "5.2",
+  "discipline": "rock",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "First recorded ascent: Celeste G. & Joe M, 3 October 2020",
+  "verified": false,
+  "features": [
+   "alpine"
+  ],
+  "cover": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=300&fit=crop"
+ },
+ {
+  "id": "wa_heartbroken",
+  "name": "Heartbroken",
+  "mountainId": "wa_split_personality_boulder",
+  "grade": "V4-",
+  "discipline": "bouldering",
+  "pitches": 0,
+  "routeFt": null,
+  "season": null,
+  "aspect": null,
+  "fa": "David Schafer ('87 or '88)",
   "verified": false,
   "features": [
    "alpine"
