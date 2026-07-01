@@ -1,10 +1,13 @@
-// Usage: node apply_enrich.mjs <findings.json>
+// Usage: SUPABASE_SERVICE_KEY="<service_role key>" node apply_enrich.mjs <findings.json>
 // FACTUAL fields (grades, FA, pitches, stats): always override — research wins, old value logged.
 // PROSE/OBJECT fields (beta, approach, timing, etc.): gap-fill only — only write if currently empty.
+// The service_role key is a SECRET (Supabase Dashboard > Project Settings > API > service_role).
+// It bypasses RLS — never hardcode it in this file; pass it via env only.
 import { readFileSync, writeFileSync } from "node:fs";
 const env = readFileSync("/Users/nathanbarber/dev/Climbing-App/.env.local","utf8");
 const url = (env.match(/VITE_SUPABASE_URL=(.+)/)||[])[1].trim().replace(/\/$/,"");
-const SK = "sb_secret_gaxDbSOA-44NvkTiDLOoiA_qB4R62aP";
+const SK = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!SK) { console.error("Need SUPABASE_SERVICE_KEY (the service_role secret) set in the environment."); process.exit(1); }
 const H = { apikey:SK, Authorization:"Bearer "+SK, "Content-Type":"application/json" };
 const RF = "/Users/nathanbarber/dev/Climbing-App/catalog/wa-alpine/routes.json";
 const AF = "/Users/nathanbarber/dev/Climbing-App/catalog/wa-alpine/areas.json";
