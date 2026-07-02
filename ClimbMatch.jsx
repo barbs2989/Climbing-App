@@ -537,10 +537,12 @@ function TechStats({route,sunReports,onSuggestSun}){
   const maxEl=hasElevPts?Math.max(...route.elevPts):(route.highPointFt||0),minEl=hasElevPts?Math.min(...route.elevPts):0,relief=maxEl-minEl;
   const avgGrade=route.distKm?((route.gainM/(route.distKm*1000))*100):0;
   const waterCount=(route.waypoints||[]).filter(w=>w.type==="Water").length;
-  const climbDisp=route.pitchDetail&&route.pitchDetail.length?uLen(route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0)):uElev(route.routeFt);
+  const climbLenRaw=route.pitchDetail&&route.pitchDetail.length?route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0):route.routeFt;
+  const climbDisp=climbLenRaw?(route.pitchDetail&&route.pitchDetail.length?uLen(climbLenRaw):uElev(climbLenRaw)):null;
   let stats,note;
   if(disc==="bouldering"){
-    stats=[["Boulder height",uElev(route.routeFt),C.orange],["Approach",uDist(route.distKm),C.blue],["Crux grade",route.cruxGrade||route.grade,C.amber]];
+    stats=[["Approach",uDist(route.distKm),C.blue],["Crux grade",route.cruxGrade||route.grade,C.amber]];
+    if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
     note="Height is the boulder itself. The approach is just the walk in — there is no meaningful elevation gain to a single boulder.";
   }else if(disc==="hiking"||disc==="mountaineering"){
     stats=[["Total ascent","↑ "+uGain(route.gainM),C.green],["Distance",uDist(route.distKm),C.blue],["High point",uElev(maxEl),C.amber],["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]];
@@ -549,23 +551,24 @@ function TechStats({route,sunReports,onSuggestSun}){
     if(waterCount)stats.push(["Water sources",waterCount,C.blue]);
     note="For a summit objective, total ascent from the trailhead is the number that matters most.";
   }else if(disc==="alpine"){
-    stats=[["Total ascent","↑ "+uGain(route.gainM),C.green],["Climb length",climbDisp,C.teal]];
+    stats=[["Total ascent","↑ "+uGain(route.gainM),C.green]];
+    if(climbDisp)stats.push(["Climb length",climbDisp,C.teal]);
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     stats.push(["Distance",uDist(route.distKm),C.blue]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     stats.push(["Crux grade",route.cruxGrade||route.grade,C.amber]);
     stats.push(["High point",uElev(maxEl),C.purple]);
-    if(route.rappels)stats.push(["Rappels",route.rappels,C.red]);
+    if(route.pitches>0&&route.rappels)stats.push(["Rappels",route.rappels,C.red]);
     note="Total ascent is the whole day from the trailhead; climb length is just the technical climbing within it.";
   }else{
     const climbLabel=disc==="aid"?"Wall height":disc==="scrambling"?"Scramble section":"Route length";
-    stats=[[climbLabel,climbDisp,C.teal]];
+    stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     stats.push(["Approach gain","↑ "+uGain(route.gainM),C.green]);
     stats.push(["Approach dist",uDist(route.distKm),C.blue]);
     stats.push(["Crux grade",route.cruxGrade||route.grade,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    
+
     if(route.rappels)stats.push(["Rappels",route.rappels,C.red]);
     note=climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers.";
   }
@@ -1253,7 +1256,8 @@ function ItineraryView({route,onSeeReports,onContribute}){
   const stat=(ic,val,col)=>val==null||val===""?null:<div key={ic} style={{display:"flex",alignItems:"center",gap:4,background:C.surface,borderRadius:8,padding:"5px 9px"}}><span style={{fontSize:12}}>{ic}</span><span style={{fontSize:12,fontWeight:700,color:col||C.text}}>{val}</span></div>;
   return <div>
     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6,flexWrap:"wrap"}}><span style={{fontSize:15,fontWeight:700}}>Trip plan</span></div>
-    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span onClick={()=>onSeeReports&&onSeeReports()} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+route.season,C.teal):null}</div>{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}{(route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textMuted,margin:"6px 0 0",lineHeight:1.5,fontStyle:"italic"}}>Full month-by-month seasonal guidance is on the Details tab.</div>:null}
+    {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
+    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span onClick={()=>onSeeReports&&onSeeReports()} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+route.season,C.teal):null}</div>{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}{(route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textMuted,margin:"6px 0 0",lineHeight:1.5,fontStyle:"italic"}}>Full month-by-month seasonal guidance is further down this tab.</div>:null}
     {it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
     {it&&it.totalNote?<div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{it.totalNote}</div>:<div style={{marginBottom:12}}/>}
     {days.map((d,i)=><div key={i} style={{display:"flex",gap:10,marginBottom:11}}>
