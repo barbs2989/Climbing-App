@@ -10,7 +10,23 @@
 //   3. peaks/ranges colliding with an existing PARENT area (region): renamed
 //      <prefix>_alp_* so they don't fight the existing hierarchy
 //   4. elevation_ft / prominence_ft backfilled onto every matching area
+//   5. non-fatal duplicate-route warning: flags routes in the pull whose name
+//      (after stripping filler words like "route"/"standard"/"trail") matches
+//      an existing route already in that area, or another route in this same
+//      pull — catches the same physical route getting re-imported under a
+//      different generated id (e.g. "Monitor Ridge" vs "Monitor Ridge Route").
+//      Review and manually merge/delete before re-running if it fires.
 // Safe to re-run. Writes nothing to disk.
+//
+// route.itinerary shape: when the pull has real day-by-day trip data, write
+// it as a structured object, not a prose string — the app's ItineraryView
+// renders this directly into day cards with a timeline:
+//   { days: [{ n, title, objective, gainFt, lossFt, hours, miles, packLb,
+//              note, schedule: [{ time, label, detail }] }],
+//     cal, totalNote }
+// (only days[].note is required; everything else is optional). A plain
+// string still works as a fallback (the UI parses "Day 1: ... Day 2: ..."
+// prose into cards), but the structured shape renders far better.
 import { readFileSync, readdirSync } from "node:fs";
 
 const PREFIX = process.argv[2];
@@ -78,6 +94,37 @@ async function up(table, rows, size, extra = "") {
 async function patch(q, body) { const r = await fetch(`${url}/rest/v1/${q}`, { method: "PATCH", headers: { ...Hs, Prefer: "return=minimal" }, body: JSON.stringify(body) }); if (!r.ok) throw new Error(`patch ${q}: ${r.status} ${(await r.text()).slice(0, 200)}`); }
 
 console.log(`\nImporting ${PREFIX}-alpine: ${A.length} areas + ${R.length} routes  ->  state node "${stateNode}" (${region})`);
+
+// ── duplicate-route check (non-fatal): same area + same name (modulo filler
+// words) as an existing DB route, or another route in this same pull. Catches
+// the same physical route getting a second, differently-generated id across
+// two pulls (this is how "Monitor Ridge" / "Monitor Ridge Route" both ended
+// up on Mount St. Helens) — a plain exact-id upsert can't see this. ──
+await (async function dupeCheck() {
+  const FILLER = new Set(["the", "route", "standard", "trail", "climb", "via"]);
+  const normName = s => (s || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(w => w && !FILLER.has(w)).sort().join(" ");
+  const areaIds = [...new Set(R.map(r => r.mountainId).filter(Boolean))];
+  const existing = await inB(areaIds, c => get(`routes?area_id=in.(${c.join(",")})&select=id,name,area_id`));
+  const byAreaExisting = {};
+  existing.forEach(e => { (byAreaExisting[e.area_id] ??= []).push(e); });
+  const warn = [];
+  const seenInPull = {};
+  R.forEach(r => {
+    const key = normName(r.name);
+    if (!key) return;
+    (byAreaExisting[r.mountainId] || []).forEach(e => {
+      if (e.id !== r.id && normName(e.name) === key) warn.push(`"${r.name}" (${r.id}, this pull) looks like existing route "${e.name}" (${e.id}) already in area ${r.mountainId}`);
+    });
+    const bucket = (seenInPull[r.mountainId] ??= {});
+    if (bucket[key] && bucket[key] !== r.id) warn.push(`"${r.name}" (${r.id}) looks like "${bucket[key].name}" (${bucket[key].id}), both new in area ${r.mountainId} this pull`);
+    else bucket[key] = { id: r.id, name: r.name };
+  });
+  if (!warn.length) { console.log("  duplicate-route check: clean"); return; }
+  console.log(`\n!! POSSIBLE DUPLICATE ROUTES (${warn.length}) — same area, same name once filler words are stripped:`);
+  warn.slice(0, 40).forEach(w => console.log("   - " + w));
+  if (warn.length > 40) console.log(`   ... +${warn.length - 40} more`);
+  console.log("   (non-fatal — proceeding; review and merge/delete the duplicate manually if confirmed)\n");
+})();
 
 // ── 1. detect collisions + which existing areas are PARENTS (have children) ──
 const exRows = await inB(A.map(a => a.id), c => get(`areas?id=in.(${c.join(",")})&select=id`));
