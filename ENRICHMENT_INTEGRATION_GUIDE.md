@@ -2,6 +2,24 @@
 
 This guide explains the refactored enrichment system and how to add new enriched routes.
 
+## Two data sources feed the same panels
+
+There are now two places enrichment data can come from, both merged by `enrichRoute()` in
+`ClimbMatch.jsx` and rendered by the same components below:
+
+1. **`enrichment-db.js`** (this guide) — a small, hand-maintained set of hardcoded routes
+   (Baker, Adams, St. Helens). Use this workflow for one-off manually-researched routes
+   outside the DB-backed catalog.
+2. **Supabase `routes` columns** (the primary path for the WA catalog) — `seasonal_hazards`,
+   `data_quality`, `crowds`, `permits`, `partner_requirements`, `seasonal_guidance` are stored
+   directly as JSONB columns on the DB row and mapped to the same camelCase shape by
+   `dbRouteToCamel()` in `lib/db.js`. Most routes on the app today get their enrichment this
+   way, not through this file. If you're bulk-enriching DB-backed routes (WA or otherwise),
+   write directly to these Supabase columns instead of following the steps below.
+
+The rest of this guide (schema, tiers, panels) still applies to both paths — the shape the
+panels expect is identical either way.
+
 ## Architecture Overview
 
 The enrichment system is now organized into:
@@ -215,10 +233,11 @@ enrichment-db.js
 1. ✅ Components extracted to EnrichmentPanels.jsx
 2. ✅ Data layer created in enrichment-db.js
 3. ✅ Validation schema in place
-4. 🔲 Test Mount Baker enrichment in browser (should work!)
-5. 🔲 Add 10-15 more routes following this guide
+4. ✅ Mount Baker (and Adams, St. Helens) enrichment verified in browser
+5. ✅ The WA catalog's enrichment now comes from Supabase columns directly (see above),
+   not from bulk-adding to `enrichment-db.js` — that file stays small/manual going forward
 6. 🔲 Implement mobile collapsible panels (optional UX improvement)
-7. 🔲 Add freshness timestamps and update prompts
+7. 🔲 Add freshness timestamps and update prompts (partially covered by the `data_quality.lastVerified` field already written on DB-backed routes)
 
 ## Common Issues
 

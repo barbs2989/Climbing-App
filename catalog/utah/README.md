@@ -1,8 +1,15 @@
-# Catalog data (scraped, factual)
+# Catalog data (scraped, factual) — Utah pipeline
 
 Staging area for the factual climbing catalog that feeds the app's backend.
 **Not part of the app build** — these JSON files live here, separate from `src`/`ClimbMatch.jsx`,
 so they don't get bundled into the web app.
+
+**Note:** this staging → validate → build-pack flow is only used for Utah so far.
+Washington's catalog (the app's largest, most enriched dataset) was imported directly into
+Supabase via `import-alpine.mjs`/`load-wa-rock-safe.mjs` at the repo root instead — there's
+no `catalog/wa/` folder. Both are legitimate pipelines; pick whichever fits when adding a new
+state (this staged JSON approach if you want a reviewable/offline-packable intermediate file,
+direct-to-Supabase if you're importing once and don't need the intermediate artifact).
 
 ## Layout — one folder per state, two files per region
 
