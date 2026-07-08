@@ -63,7 +63,7 @@ export default function DbAreaBrowser({ onOpenRoute }) {
         <div key={a.id} style={box} onClick={() => setStack([...stack, { id: a.id, name: a.name }])}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span style={{ fontWeight: 700, fontSize: 15 }}>{a.name}</span>
-            <span style={{ color: "#58a6ff", fontSize: 12, fontWeight: 600 }}>{a.route_count} climb{a.route_count !== 1 ? "s" : ""} ›</span>
+            <span style={{ color: "#58a6ff", fontSize: 12, fontWeight: 600 }}>{a.area_type === "country" ? "›" : `${a.route_count} climb${a.route_count !== 1 ? "s" : ""} ›`}</span>
           </div>
           
         </div>
