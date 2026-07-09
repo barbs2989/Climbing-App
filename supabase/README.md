@@ -1,20 +1,29 @@
-# Supabase — Phase 0 (areas + routes)
+# Supabase — schema + seed history
 
-This is the first real backend artifact: the schema for the geographic tree, with
-Mountain-Project hierarchy rules enforced in the database, plus a seed ported 1:1
-from the current in-memory `MOUNTAINS`/`ROUTES` in `ClimbMatch.jsx`.
+The schema for the geographic tree (`areas`/`routes`), with Mountain-Project hierarchy
+rules enforced in the database. Started as a small seed ported 1:1 from the in-memory
+`MOUNTAINS`/`ROUTES` in `ClimbMatch.jsx`; the schema has since grown across 14 migrations
+(composite grades, multi-discipline, alpine-specific fields, auth profiles, contributions,
+route lists — see `migrations/` for the current authoritative shape) and the DB now holds
+Washington's full alpine + rock catalog (thousands of routes), loaded separately via
+`import-alpine.mjs` / `load-wa-rock-safe.mjs` at the repo root — **not** through
+`gen-seed.cjs`/`seed.sql` below, which only cover the original small Utah/LCC seed.
 
-It does **not** touch the running prototype — the app still reads its bundle today.
-This just makes the DB ready so we can migrate the area→route flow to fetch-on-demand.
+The app reads from this DB today behind the `USE_DB` flag (see `lib/supabase.js`) — this
+is not just a staging area anymore.
 
 ## Files
-- `migrations/0001_areas_routes.sql` — `areas` + `routes` tables, the 3 hierarchy
-  triggers (path, leaf-only routes, leaf-XOR-parent), route-count aggregation,
-  indexes, and RLS public-read policies.
-- `gen-seed.cjs` — regenerates `seed.sql` from `ClimbMatch.jsx`. Run after editing
-  the seed data: `node supabase/gen-seed.cjs`.
-- `seed.sql` — generated INSERTs (24 areas, 14 routes), topologically ordered so the
-  path trigger always finds the parent first.
+- `migrations/0001_areas_routes.sql` … `migrations/0014_partner_and_conditions_panels.sql`
+  — `areas` + `routes` tables, the 3 hierarchy triggers (path, leaf-only routes,
+  leaf-XOR-parent), route-count aggregation, indexes, RLS public-read policies, and all
+  schema growth since (auth profiles, contributions, alpine fields, route lists, etc.).
+  Apply in order; this is the authoritative schema reference.
+- `gen-seed.cjs` / `gen-seed-utah.cjs` / `gen-seed-lcc.cjs` — regenerate the small demo
+  seeds from `ClimbMatch.jsx`'s in-memory data. Only relevant for the original toy seed,
+  not the WA catalog.
+- `seed.sql` / `seed-lcc.sql` — generated INSERTs for that small demo seed (originally 24
+  areas, 14 routes), topologically ordered so the path trigger always finds the parent
+  first.
 
 ## Apply it
 ```bash
@@ -32,12 +41,14 @@ psql "$DATABASE_URL" -f supabase/seed.sql
 ```
 
 ## Verify it worked
+This originally verified the tiny demo seed (world => 14 total routes, utah => 11). Against
+the current DB (WA catalog loaded), use these to sanity-check the tree instead:
 ```sql
--- route counts aggregated up the whole tree (root should equal total routes = 14)
-select id, route_count from areas where parent_id is null;        -- world => 14
+-- route counts aggregated up the whole tree
+select id, route_count from areas where parent_id is null;        -- world => total across all loaded states
 
 -- a state rolls up its descendants
-select route_count from areas where id = 'utah';                  -- => 11
+select route_count from areas where id = 'wa';                    -- => WA's total route count
 
 -- breadcrumb for a crag (ancestors, root → leaf)
 select id, name from areas
@@ -61,12 +72,9 @@ insert into areas(id,name,parent_id) values ('y','Y','lcc_egg');   -- lcc_egg ha
 - `route_count` and `path` are maintained automatically by triggers — never set them
   by hand.
 
-## Next step (needs your Supabase project URL + anon key)
-Migrate **one flow** to the DB behind a flag, proving the architecture end-to-end:
-1. `npm i @supabase/supabase-js @tanstack/react-query`
-2. Add a tiny data layer: `useArea(id)`, `useAreaChildren(id)`, `useAreaRoutes(id)`.
-3. Behind a `USE_DB` flag, have the Climbs tab's area browser + route list read from
-   those hooks instead of `MOUNTAINS`/`ROUTES`. Everything else keeps using the bundle.
-
-Hand me the project URL + anon key (or just say "go") and I'll write that data layer
-and the flag-gated area-browse fetch.
+## Status: done, and beyond
+The "migrate one flow behind a flag" step this section used to describe is complete —
+`lib/supabase.js` (client + `USE_DB` flag), `lib/db.js` (`useAreaRoutes`,
+`submitContribution`), and `lib/DbAreaBrowser.jsx` are live and wired into `ClimbMatch.jsx`'s
+Climbs tab. See `BACKEND.md` for what's built vs. still pending (social tables, offline,
+national scale).
