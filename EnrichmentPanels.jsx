@@ -1,15 +1,17 @@
 // Enrichment data display components
 // Used on route detail page, Details and Safety tabs
 
-export function PeakMetadataPanel({route, C, MOUNTAINS}) {
+export function PeakMetadataPanel({route, C, MOUNTAINS, uElev}) {
   if (!route.peakMetadata) return null;
-  const {elevation, prominence, county, range, geology, firstAscent} = route.peakMetadata;
+  const {prominence, county, range, geology, firstAscent} = route.peakMetadata;
+  const fmtElev = uElev || (ft => ft.toLocaleString()+" ft");
   // Only surface facts that actually have data — county in particular is populated
   // for a handful of hand-curated peaks but has no DB source for most of the catalog,
   // so a permanent "—" placeholder there was misleading rather than informative.
+  // Elevation itself is intentionally omitted here — TechStats' "High point" stat
+  // right above already shows the same figure for peak routes.
   const stats = [
-    elevation ? ["Elevation", elevation.toLocaleString()+" ft"] : null,
-    prominence ? ["Prominence", prominence.toLocaleString()+" ft"] : null,
+    prominence ? ["Prominence", fmtElev(prominence)] : null,
   ].filter(Boolean);
   const meta = [
     range ? ["Range", range] : null,
