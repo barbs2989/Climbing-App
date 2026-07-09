@@ -7,14 +7,36 @@ export function PeakMetadataPanel({route, C, MOUNTAINS}) {
   // Only surface facts that actually have data — county in particular is populated
   // for a handful of hand-curated peaks but has no DB source for most of the catalog,
   // so a permanent "—" placeholder there was misleading rather than informative.
-  const facts = [
-    elevation ? ["Elevation", elevation.toLocaleString()+" ft", true] : null,
-    prominence ? ["Prominence", prominence.toLocaleString()+" ft", true] : null,
-    range ? ["Range", range, false] : null,
-    county ? ["County", county, false] : null,
+  const stats = [
+    elevation ? ["Elevation", elevation.toLocaleString()+" ft"] : null,
+    prominence ? ["Prominence", prominence.toLocaleString()+" ft"] : null,
   ].filter(Boolean);
-  if (!facts.length && !geology && !firstAscent) return null;
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><div style={{fontSize:14,fontWeight:700,color:C.text,marginBottom:10,display:"flex",alignItems:"center",gap:7}}><span style={{fontSize:16}}>📍</span><span>PEAK</span></div>{facts.length?<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,marginBottom:(firstAscent||geology)?12:0}}>{facts.map(([label,val,strong])=><div key={label}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>{label}</div><div style={{fontSize:strong?14:13,fontWeight:strong?700:400,color:strong?C.text:C.textSub}}>{val}</div></div>)}</div>:null}{firstAscent?<div style={{marginBottom:geology?12:0}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>First Ascent</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{firstAscent.date||""}{ firstAscent.date?" by ":""}{(firstAscent.climbers||[]).join(", ")}{firstAscent.notes?<div style={{marginTop:4,fontSize:12,color:C.textMuted,fontStyle:"italic"}}>{firstAscent.notes}</div>:null}</div></div>:null}{geology?<div><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>About this peak</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{geology}</div></div>:null}</div>;
+  const meta = [
+    range ? ["Range", range] : null,
+    county ? ["County", county] : null,
+  ].filter(Boolean);
+  if (!stats.length && !meta.length && !geology && !firstAscent) return null;
+  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}>
+    <div style={{fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6,marginBottom:11,display:"flex",alignItems:"center",gap:6}}><span style={{fontSize:13}}>📍</span><span>Peak</span></div>
+    {stats.length?<div style={{display:"flex",gap:8,marginBottom:meta.length?10:(firstAscent||geology)?12:0}}>{stats.map(([label,val])=><div key={label} style={{flex:1,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"8px 11px"}}><div style={{fontSize:10,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>{label}</div><div style={{fontSize:16,fontWeight:700,color:C.text}}>{val}</div></div>)}</div>:null}
+    {meta.length?<div style={{display:"flex",flexWrap:"wrap",gap:14,marginBottom:(firstAscent||geology)?12:0}}>{meta.map(([label,val])=><div key={label} style={{fontSize:12.5,color:C.textSub}}><span style={{color:C.textMuted}}>{label}: </span>{val}</div>)}</div>:null}
+    {firstAscent?<div style={{marginBottom:geology?12:0,paddingTop:(stats.length||meta.length)?11:0,borderTop:(stats.length||meta.length)?"1px solid "+C.borderLight:"none"}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>First Ascent</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{firstAscent.date||""}{ firstAscent.date?" by ":""}{(firstAscent.climbers||[]).join(", ")}{firstAscent.notes?<div style={{marginTop:4,fontSize:12,color:C.textMuted,fontStyle:"italic"}}>{firstAscent.notes}</div>:null}</div></div>:null}
+    {geology?<div style={{paddingTop:(stats.length||meta.length||firstAscent)?11:0,borderTop:(stats.length||meta.length||firstAscent)?"1px solid "+C.borderLight:"none"}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:4}}>About this peak</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.6}}>{splitParagraphs(geology).map((p,i)=><p key={i} style={{margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div></div>:null}
+  </div>;
+}
+
+// Long hand-written/generated blurbs (peak geology blurbs, approach/descent narrative, etc.)
+// are stored as one dense paragraph. Break them into readable paragraphs on 2-4 sentence
+// boundaries rather than rendering a single unbroken wall of text.
+export function splitParagraphs(text) {
+  if (!text) return [];
+  const sentences = String(text).match(/[^.!?]+[.!?]+(?:\s+|$)/g) || [String(text)];
+  const perPara = sentences.length > 6 ? 3 : 2;
+  const paras = [];
+  for (let i = 0; i < sentences.length; i += perPara) {
+    paras.push(sentences.slice(i, i + perPara).join("").trim());
+  }
+  return paras.filter(Boolean);
 }
 
 function monthRank(name){
