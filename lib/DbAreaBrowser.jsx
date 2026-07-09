@@ -13,14 +13,14 @@ function DbTopContributors({ areaId }) {
   if (!data || !data.length) return null;
   const medal = ["🥇", "🥈", "🥉"];
   return (
-    <div style={{ background: "#161b22", border: "1px solid #30363d", borderRadius: 12, padding: "10px 12px", marginBottom: 10 }}>
-      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, color: "#58a6ff", textTransform: "uppercase", marginBottom: 8 }}>Top Contributors</div>
+    <div style={{ background: "#161b22", border: "1px solid #30363d", borderRadius: 10, padding: "8px 10px", marginTop: 10 }}>
+      <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: 0.5, color: "#58a6ff", textTransform: "uppercase", marginBottom: 6 }}>Top Contributors</div>
       {data.map((c, i) => (
-        <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 8, marginTop: i ? 7 : 0 }}>
-          <span style={{ width: 18, textAlign: "center" }}>{medal[i]}</span>
-          <span style={{ flex: 1, minWidth: 0, fontSize: 13, fontWeight: 700, color: "#e6edf3", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{c.contributor}</span>
-          {i === 0 ? <span style={{ fontSize: 10, fontWeight: 700, color: "#d29922", background: "rgba(210,153,34,0.15)", padding: "1px 7px", borderRadius: 8 }}>★ Top Contributor</span> : null}
-          <span style={{ fontSize: 12, fontWeight: 700, color: "#8b949e" }}>{c.n}</span>
+        <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 7, marginTop: i ? 5 : 0 }}>
+          <span style={{ width: 16, textAlign: "center", fontSize: 12 }}>{medal[i]}</span>
+          <span style={{ flex: 1, minWidth: 0, fontSize: 12, fontWeight: 600, color: "#c9d1d9", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{c.contributor}</span>
+          {i === 0 ? <span style={{ fontSize: 9.5, fontWeight: 700, color: "#d29922", background: "rgba(210,153,34,0.15)", padding: "1px 6px", borderRadius: 8 }}>★ Top Contributor</span> : null}
+          <span style={{ fontSize: 11, fontWeight: 700, color: "#8b949e" }}>{c.n}</span>
         </div>
       ))}
     </div>
@@ -54,7 +54,6 @@ export default function DbAreaBrowser({ onOpenRoute }) {
         ))}
       </div>
 
-      {current && <DbTopContributors areaId={current.id} />}
       {loading && <div style={muted}>Loading…</div>}
       {error && <div style={{ color: "#f85149", fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
 
@@ -81,6 +80,8 @@ export default function DbAreaBrowser({ onOpenRoute }) {
           </div>
         )) : <div style={muted}>No routes in this crag yet.</div>
       )}
+
+      {current && <DbTopContributors areaId={current.id} />}
     </div>
   );
 }
