@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, Suspense, lazy } from "react";
 import { USE_DB, supabase } from "./lib/supabase";
 import {submitContribution, useRouteContributions, dbRouteToCamel, useAreaRoutes} from "./lib/db";
-import DbAreaBrowser from "./lib/DbAreaBrowser";
+const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 import { useSession, signOut } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
 import AuthModal from "./lib/AuthModal";
