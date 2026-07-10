@@ -78,6 +78,7 @@ const SCHEMA = {
         waypoints: { type: ["array", "null"], items: { type: "object", additionalProperties: false,
           properties: { type: S("string"), name: { type: "string" }, lat: S("number"), lng: S("number"),
             elevFt: S("integer"), distMi: S("number") }, required: ["name"] } },
+        gpx: { type: ["array", "null"], items: { type: "array", items: S("number") } },
         emergency: { type: ["object", "null"], additionalProperties: false, properties: {
           county: S("string"), sheriffDispatch: S("string"), rangerStation: S("string"),
           nearestHospital: S("string"), notes: S("string") } },
@@ -116,6 +117,7 @@ function prompt(p) {
     "- access: {landManager, fees, permit, passRequired, closures}.",
     "- timing: {recommendedStart, approachTimeHrs, summitTimeHrs, descentTimeHrs, totalHrs, sectionBreakdown:[{section,fromTo,hrs,note}]}.",
     "- waypoints: array of {type, name, lat, lng, elevFt, distMi}. ONLY include a waypoint if you have its REAL coordinates from a reputable source (peakbagger, caltopo, gaiagps, summitpost, gov data); NEVER invent or estimate lat/lng — omit the waypoint (or the whole array) rather than guess coordinates.",
+    "- gpx: array of [lat,lng] pairs tracing the standard approach/route line, ONLY if you found a REAL recorded track (an actual downloadable/embeddable GPX or KML file, or a digitized track on peakbagger/caltopo/gaiagps/hikingproject/alltrails/wta) — extract real points FROM that track. NEVER interpolate, sketch, or estimate a line between waypoints; if no real recorded track exists for this route, omit gpx entirely (leave it null) rather than approximate one.",
     "- emergency: {county, sheriffDispatch, rangerStation, nearestHospital, notes}.",
     "",
     "HARD RULES:",
