@@ -155,31 +155,59 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
   );
 }
 
-// ── Route finder: search + discipline filter, paged via routes_in_subtree (0015) ──
+// ── Route finder: search + Filters sheet (discipline, sort, stars, pitches,
+// length), paged via routes_in_subtree (0015; filters added in 0018). Grade
+// range is deliberately NOT offered here: grade_num is only comparable
+// within a single grading system (a YDS 5.9 and a V9 boulder problem both
+// have grade_num≈9 but mean nothing alike), and for alpine routes the
+// static catalog's own display grades ("Grade I", "Class 3") don't match
+// the import pipeline's grade_num parser, so a range filter there could
+// silently exclude routes it shouldn't. Sorting by grade still works safely
+// since unparsed routes just sort last, so it's offered once a single
+// discipline is picked (where the comparison is at least meaningful). ──
+const LEN_BUCKETS = [["any", "Any", null, null], ["u200", "< 200 ft", null, 61], ["200", "200–600 ft", 61, 183], ["600", "600–1500 ft", 183, 457], ["1500", "1500+ ft", 457, null]];
 function RouteFinderPanel({ scope, onOpen, onBack, C }) {
+  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any" };
   const [q, setQ] = useState("");
-  const [disc, setDisc] = useState("");
+  const [af, setAf] = useState(DEF);
+  const [df, setDf] = useState(DEF);
+  const [sheet, setSheet] = useState(false);
   const [page, setPage] = useState(0);
   const [all, setAll] = useState([]);
-  const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, { q, disc, page });
-  const { data: total } = useSubtreeRouteCount(scope.id, { q, disc });
+  const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
+  const queryArgs = { q, disc: af.disc, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[2], maxLengthM: lenRange[3], sortBy: af.sortBy, page };
+  const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
+  const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
 
-  useEffect(() => { setPage(0); setAll([]); }, [q, disc, scope.id]);
+  useEffect(() => { setPage(0); setAll([]); }, [q, af, scope.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
   }, [batch, page]);
 
+  const nF = (af.disc ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
+  const afChips = [];
+  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
+  if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
+  if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
+  if (af.len !== "any") afChips.push({ k: "len", label: lenRange[1], clear: () => setAf(a => ({ ...a, len: "any" })) });
+  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
+
+  const chip = (label, on, fn) => <button key={label} onClick={fn} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const lab = s => <div style={{ fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, margin: "20px 0 8px", borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{s}</div>;
+
   return (
     <div>
       {backRow(onBack, "Route finder" + (scope ? " · " + scope.name : ""), C)}
       <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search routes…" style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
-      <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 9 }}>
-        {DISCIPLINES.map(([v, label]) => (
-          <button key={v} onClick={() => setDisc(v)} style={{ flexShrink: 0, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (disc === v ? C.blue : C.border), background: disc === v ? C.blueBg : C.surface, color: disc === v ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{label}</button>
-        ))}
-      </div>
-      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by name"}</div>
+      <button onClick={() => { setDf(af); setSheet(true); }} style={{ width: "100%", padding: 13, borderRadius: 10, border: "1px solid " + (nF ? C.blue : C.border), background: nF ? C.blueBg : C.surface, color: nF ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer", marginBottom: 10 }}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
+      {afChips.length ? (
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 9 }}>
+          {afChips.map(c => <button key={c.k} onClick={c.clear} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", borderRadius: 16, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{c.label}<span style={{ opacity: 0.7 }}>✕</span></button>)}
+          <button onClick={() => setAf(DEF)} style={{ padding: "5px 8px", background: "none", border: "none", color: C.textMuted, fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}>Clear all</button>
+        </div>
+      ) : null}
+      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
       {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div>}
       {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
@@ -187,6 +215,37 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
         <button onClick={() => setPage(p => p + 1)} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", marginTop: 4 }}>Load more</button>
       )}
       {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px" }}>No routes match these filters.</div>}
+
+      {sheet ? (
+        <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", padding: "16px 16px 18px", maxHeight: "88vh", overflowY: "auto" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
+              <button onClick={() => setSheet(false)} aria-label="Close" style={{ background: C.borderLight, border: "none", color: C.textSub, borderRadius: 8, width: 34, height: 34, fontSize: 20, cursor: "pointer" }}>×</button>
+            </div>
+            {lab("Discipline")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
+            </div>
+            {lab("Sort by")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
+              {df.disc ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
+            </div>
+            {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade — grades aren't comparable across climbing types.</div> : null}
+            {lab("Minimum stars")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]].map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
+            {lab("Pitches")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
+            {lab("Length")}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(o[1], df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
+            <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
+              <button onClick={() => setDf(DEF)} style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Clear all</button>
+              <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
