@@ -48,7 +48,7 @@ async function count(table) {
 console.log(`Upserting ${ordered.length} areas (additive — keeps existing states)...`);
 await up("areas", ordered.map(aRow), 500);
 console.log(`Upserting ${R.length} routes...`);
-await up("routes", R.map(rRow), 1000);
+await up("routes", R.map(rRow), 250);
 
 const ac = await count("areas"), rc = await count("routes");
 const usa = await (await fetch(`${url}/rest/v1/areas?id=eq.usa&select=route_count`, { headers: H })).json();
