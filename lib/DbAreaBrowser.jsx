@@ -7,13 +7,13 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, fetchAreaBreadcrumb } from "./db";
+import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
 const ATYPE = { world: "World", country: "Country", state: "State", range: "Range", canyon: "Canyon", peak: "Peak", crag: "Crag", region: "Region", wall: "Wall" };
 const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ranges", region: "Areas", wall: "Areas", state: "States", country: "Countries" };
-const DISCIPLINES = [["", "All"], ["sport", "Sport"], ["trad", "Trad"], ["bouldering", "Boulder"], ["alpine", "Alpine"], ["ice", "Ice"], ["mountaineering", "Mtneering"], ["aid", "Aid"], ["scrambling", "Scramble"]];
+const DISCIPLINES = [["", "All"], ["sport", "Sport"], ["trad", "Trad"], ["bouldering", "Boulder"], ["alpine", "Alpine"], ["ice", "Ice"], ["mountaineering", "Mountaineering"], ["aid", "Aid"], ["scrambling", "Scramble"]];
 
 function haversineMi(a, b) {
   const R = 3958.8, toRad = d => d * Math.PI / 180;
@@ -55,9 +55,9 @@ function DbTopContributors({ areaId, C, ActionIcon }) {
   );
 }
 
-function RouteRow({ r, onOpen, C }) {
+function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " on the cliff" : null].filter(Boolean).join(" · ");
+  const sub = [areaName || null, r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " on the cliff" : null].filter(Boolean).join(" · ");
   return (
     <div onClick={() => onOpen(r)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -242,6 +242,8 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
   }, [batch, page]);
+  const areaIds = useMemo(() => [...new Set(all.map(r => r.area_id).filter(Boolean))], [all]);
+  const { data: areaNames } = useAreaNamesByIds(areaIds);
 
   const nF = (af.disc ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
   const afChips = [];
@@ -249,7 +251,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
   if (af.len !== "any") afChips.push({ k: "len", label: lenRange[1], clear: () => setAf(a => ({ ...a, len: "any" })) });
-  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
+  if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
 
   const chip = (label, on, fn) => <button key={label} onClick={fn} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = s => <div style={{ fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, margin: "20px 0 8px", borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{s}</div>;
@@ -265,9 +267,9 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
           <button onClick={() => setAf(DEF)} style={{ padding: "5px 8px", background: "none", border: "none", color: C.textMuted, fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
-      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
+      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
       {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div>}
-      {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}
+      {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={areaNames && areaNames[r.area_id]} />)}
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {!isLoading && all.length > 0 && total != null && all.length < total && (
         <button onClick={() => setPage(p => p + 1)} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", marginTop: 4 }}>Load more</button>
@@ -287,7 +289,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
             </div>
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
+              {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["area", "By area"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
               {df.disc ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
             {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade — grades aren't comparable across climbing types.</div> : null}
@@ -328,6 +330,23 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 // pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
 // re-fetches (mirrors the static OverviewMap's moveend/zoomend re-render), so
 // the map never gets stuck showing only what was near the very first center. ──
+// Curved name-around-the-circle pin, matching the same technique used for
+// the static catalog's map circle markers — text follows the top arc inside
+// the circle instead of floating as an adjacent label, so it can't overlap
+// a neighboring marker's label the way free-floating text can.
+const curvedPinHtml = (nm, n, d, color, brd) => {
+  const r = d / 2, rt = r - Math.max(5, d * 0.11), id = "cp" + Math.random().toString(36).slice(2, 10);
+  const safe = (nm || "").replace(/[<>&]/g, "");
+  const fs = Math.max(7, Math.min(11, Math.round(d * 0.17)));
+  const maxChars = Math.max(3, Math.floor((Math.PI * rt) / (fs * 0.56)));
+  const lbl = safe.length > maxChars ? safe.slice(0, Math.max(1, maxChars - 1)) + "…" : safe;
+  const numFs = Math.round(d * 0.32);
+  const sw = 2.5, cr = r - sw / 2 - 0.5;
+  return "<svg width='" + d + "' height='" + d + "' viewBox='0 0 " + d + " " + d + "' style='overflow:visible;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.45))' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><path id='" + id + "' d='M " + (r - rt) + " " + r + " A " + rt + " " + rt + " 0 1 1 " + (r + rt) + " " + r + "'/></defs><circle cx='" + r + "' cy='" + r + "' r='" + cr + "' fill='" + color + "' stroke='" + brd + "' stroke-width='" + sw + "'/>" +
+    (n != null ? "<text x='" + r + "' y='" + (r + d * 0.16) + "' text-anchor='middle' dominant-baseline='central' font-weight='800' font-size='" + numFs + "' fill='#fff'>" + n + "</text>" : "") +
+    "<text font-size='" + fs + "' font-weight='700' fill='#fff' stroke='rgba(0,0,0,0.85)' stroke-width='2.5' paint-order='stroke fill' style='stroke-linejoin:round'><textPath href='#" + id + "' xlink:href='#" + id + "' startOffset='50%' text-anchor='middle'>" + lbl + "</textPath></text></svg>";
+};
+
 function NearMePanel({ center0, onBack, onOpenArea, C }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -401,12 +420,9 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
       }
       if (group.length === 1) {
         const a = group[0].a;
-        const safeName = (a.name || "").replace(/[<>&]/g, "");
-        const html = "<div style='display:flex;align-items:center;gap:5px;transform:translate(-3px,-3px)'>" +
-          "<div style='width:12px;height:12px;border-radius:50%;background:" + C.blue + ";border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.5);flex-shrink:0'></div>" +
-          "<div style='background:rgba(13,17,23,0.88);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px;box-shadow:0 1px 3px rgba(0,0,0,0.45)'>" + safeName + "</div>" +
-          "</div>";
-        const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [166, 20], iconAnchor: [6, 10] }) });
+        const sz = 34;
+        const html = curvedPinHtml(a.name, null, sz, C.blue, "#ffffff");
+        const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
         mk.on("click", () => onOpenArea(a));
         grp.addLayer(mk);
