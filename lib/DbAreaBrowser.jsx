@@ -284,7 +284,12 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
       }
       if (group.length === 1) {
         const a = group[0].a;
-        const mk = L.circleMarker([a.lat, a.lng], { radius: 7, color: "#ffffff", weight: 2, fillColor: C.blue, fillOpacity: 0.9 });
+        const safeName = (a.name || "").replace(/[<>&]/g, "");
+        const html = "<div style='display:flex;align-items:center;gap:5px;transform:translate(-3px,-3px)'>" +
+          "<div style='width:12px;height:12px;border-radius:50%;background:" + C.blue + ";border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.5);flex-shrink:0'></div>" +
+          "<div style='background:rgba(13,17,23,0.88);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px;box-shadow:0 1px 3px rgba(0,0,0,0.45)'>" + safeName + "</div>" +
+          "</div>";
+        const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [166, 20], iconAnchor: [6, 10] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
         mk.on("click", () => onOpenArea(a));
         grp.addLayer(mk);
@@ -347,7 +352,7 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
       ) : null}
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
         <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
-        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} style={{ position: "absolute", top: 10, right: 10, zIndex: 10, background: "rgba(13,17,23,0.85)", border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{fullscreen ? "✕ Exit full screen" : "⤢ Full screen"}</button>
+        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} style={{ position: "absolute", top: 10, right: 10, zIndex: 1000, background: "rgba(13,17,23,0.85)", border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{fullscreen ? "✕ Exit full screen" : "⤢ Full screen"}</button>
       </div>
       {!fullscreen ? (
         <>
