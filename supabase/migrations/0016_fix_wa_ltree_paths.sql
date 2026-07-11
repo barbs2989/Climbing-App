@@ -47,4 +47,6 @@ end $$;
 
 -- Verify afterward:
 --   select path from areas where id = 'wa_northwest';  -- expect usa.washington.wa_northwest
---   select routes_in_subtree_count('washington', null, null);  -- expect 9117
+--   select routes_in_subtree_count('washington', null, null);  -- expect 9099 (not
+--   washington's cached route_count of 9117 — that field has its own, unrelated
+--   18-route drift, fixed separately in 0017_recount_wa.sql).
