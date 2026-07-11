@@ -89,8 +89,64 @@ function StatePicker({ onPick, C }) {
   );
 }
 
+// ── in-page area/route search — the DB-catalog equivalent of the static
+// catalog's SearchSplit, embedded on any non-leaf area page so you can jump
+// straight to a sub-area or route anywhere in this subtree instead of
+// drilling down one level at a time. Area hits can be at any depth, so they
+// navigate via onJumpToArea (rebuilds the real breadcrumb from the area's
+// path) rather than onDrill (which assumes a direct child). ──
+function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
+  const [mode, setMode] = useState("areas");
+  const [q, setQ] = useState("");
+  const qq = q.trim();
+  const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
+  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  const tab = on => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blue : "transparent", color: on ? "#fff" : C.textSub });
+  const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <SL C={C}>{"Search " + scope.name}</SL>
+      <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
+        <div onClick={() => setMode("areas")} style={tab(mode === "areas")}>Areas</div>
+        <div onClick={() => setMode("routes")} style={tab(mode === "routes")}>Routes</div>
+      </div>
+      <input value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      {qq ? (
+        <div style={{ marginTop: 6, maxHeight: "46vh", overflowY: "auto" }}>
+          {mode === "areas" ? (
+            la ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
+            : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
+            : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No areas match.</div>
+            : areaHits.map(a => (
+              <div key={a.id} onClick={() => onJumpToArea(a)} style={row}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
+                  <div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
+                </div>
+                {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
+              </div>
+            ))
+          ) : (
+            lr ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
+            : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
+            : !routeHits || !routeHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No routes match.</div>
+            : routeHits.map(r => (
+              <div key={r.id} onClick={() => onOpenRoute(r)} style={row}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
+                </div>
+                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || ""}</span>
+              </div>
+            ))
+          )}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
-function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, C, ActionIcon }) {
+function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon }) {
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -126,6 +182,8 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
+
+      {!loading && !error && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} /> : null}
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {error && <div style={{ color: C.red, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
@@ -570,7 +628,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} C={C} ActionIcon={ActionIcon} />
+        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
