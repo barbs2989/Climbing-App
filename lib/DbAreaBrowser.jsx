@@ -67,7 +67,7 @@ function RouteRow({ r, onOpen, C, areaName }) {
           <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub}</span>
         </div>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || ""}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "—"}</span>
     </div>
   );
 }
@@ -135,7 +135,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
                 </div>
-                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || ""}</span>
+                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "—"}</span>
               </div>
             ))
           )}
