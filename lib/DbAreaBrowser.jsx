@@ -135,11 +135,10 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
           <SL C={C}>{childNoun(children)}</SL>
           {children.map(a => (
             <div key={a.id} onClick={() => onDrill(a)} style={{ background: C.card, borderRadius: 12, padding: "12px 14px", marginBottom: 11, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: a.blurb ? 5 : 0 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: C.text }}>{a.name}</span>
                 <span style={{ fontSize: 12, color: a.route_count > 0 ? C.blue : C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>{a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + " →"}</span>
               </div>
-              {a.blurb ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5 }}>{a.blurb}</div> : null}
             </div>
           ))}
         </div>
@@ -219,6 +218,16 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
   const [center, setCenter] = useState(center0 || null);
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
+  const [fullscreen, setFullscreen] = useState(false);
+
+  // Full screen just resizes the same Leaflet instance in place (same map div,
+  // same markers, same zoom/pan) rather than tearing it down and rebuilding it
+  // elsewhere — collapsing back drops you exactly where you were, no reload.
+  useEffect(() => {
+    if (!mapRef.current) return;
+    const t = setTimeout(() => { try { mapRef.current.invalidateSize(); } catch (e) {} }, 220);
+    return () => clearTimeout(t);
+  }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearby = data && data.rows;
 
@@ -252,18 +261,48 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
     return () => { cancelled = true; if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; userRef.current = null; } };
   }, []);
 
+  // Screen-space clustering: at national/state scale a single viewport can hold
+  // hundreds of crags, and one dot per area (the first version of this map) is
+  // unreadable and gives no sense of "zoom in to see more" the way the static
+  // map's own zoom-keyed clustering did. Bucket by on-screen proximity — cheap,
+  // needs no extra dependency, and naturally uncluster as you zoom in since
+  // pixel distances between the same two areas grow with zoom.
   useEffect(() => {
     if (!ready || !nearby) return;
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
     grp.clearLayers();
-    nearby.forEach(a => {
-      if (a.lat == null || a.lng == null) return;
-      const mk = L.circleMarker([a.lat, a.lng], { radius: 7, color: "#ffffff", weight: 2, fillColor: C.blue, fillOpacity: 0.9 });
-      mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
-      mk.on("click", () => onOpenArea(a));
-      grp.addLayer(mk);
-    });
+    const CLUSTER_PX = 44;
+    const pts = nearby.filter(a => a.lat != null && a.lng != null).map(a => ({ a, pt: map.latLngToContainerPoint([a.lat, a.lng]) }));
+    const used = new Array(pts.length).fill(false);
+    for (let i = 0; i < pts.length; i++) {
+      if (used[i]) continue;
+      const group = [pts[i]]; used[i] = true;
+      for (let j = i + 1; j < pts.length; j++) {
+        if (used[j]) continue;
+        if (Math.hypot(pts[i].pt.x - pts[j].pt.x, pts[i].pt.y - pts[j].pt.y) < CLUSTER_PX) { group.push(pts[j]); used[j] = true; }
+      }
+      if (group.length === 1) {
+        const a = group[0].a;
+        const mk = L.circleMarker([a.lat, a.lng], { radius: 7, color: "#ffffff", weight: 2, fillColor: C.blue, fillOpacity: 0.9 });
+        mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
+        mk.on("click", () => onOpenArea(a));
+        grp.addLayer(mk);
+      } else {
+        const areas = group.map(g => g.a);
+        const n = areas.length;
+        const climbs = areas.reduce((s, a) => s + (a.route_count || 0), 0);
+        const avgLat = areas.reduce((s, a) => s + a.lat, 0) / n, avgLng = areas.reduce((s, a) => s + a.lng, 0) / n;
+        const sz = Math.min(22 + n, 44);
+        const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blue + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
+        const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
+        mk.bindTooltip(n + " areas · " + climbs + " climbs — tap to zoom in", { direction: "top" });
+        mk.on("click", () => {
+          try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) {}
+        });
+        grp.addLayer(mk);
+      }
+    }
   }, [ready, nearby]);
 
   const locate = () => {
@@ -286,30 +325,46 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
     }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 });
   };
 
+  // Sort the list by distance from the CURRENT viewport center, not the fixed
+  // point the map opened at — otherwise, once you've panned somewhere else, the
+  // "closest" areas at the top of the list stop matching what's actually
+  // showing on screen, which reads as broken.
+  const viewCenter = bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center;
   const sorted = useMemo(() => {
     if (!nearby) return [];
-    const withDist = center ? nearby.map(a => ({ ...a, _mi: haversineMi(center, a) })) : nearby.map(a => ({ ...a, _mi: null }));
+    const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
-  }, [nearby, center]);
+  }, [nearby, bounds, center]);
 
   return (
     <div>
-      {backRow(onBack, "View map", C)}
-      <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locating ? "Locating…" : "Use my location"}</button>
-      {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
-      <div ref={mapDiv} style={{ width: "100%", height: 260, borderRadius: 12, overflow: "hidden", background: C.surface, marginBottom: 8 }} />
-      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
-      {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
-      {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div>}
-      {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
-      {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
-      {sorted.map(a => (
-        <div key={a.id} onClick={() => onOpenArea(a)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
-          <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? a._mi.toFixed(1) + " mi · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
-        </div>
-      ))}
-      {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs in view — pan or zoom out to see more.</div> : null}
+      {!fullscreen ? backRow(onBack, "View map", C) : null}
+      {!fullscreen ? (
+        <>
+          <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locating ? "Locating…" : "Use my location"}</button>
+          {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
+        </>
+      ) : null}
+      <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
+        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
+        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} style={{ position: "absolute", top: 10, right: 10, zIndex: 10, background: "rgba(13,17,23,0.85)", border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{fullscreen ? "✕ Exit full screen" : "⤢ Full screen"}</button>
+      </div>
+      {!fullscreen ? (
+        <>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
+          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
+          {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div>}
+          {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
+          {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {sorted.map(a => (
+            <div key={a.id} onClick={() => onOpenArea(a)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
+              <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? a._mi.toFixed(1) + " mi · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+            </div>
+          ))}
+          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs in view — pan or zoom out to see more.</div> : null}
+        </>
+      ) : null}
     </div>
   );
 }
@@ -426,7 +481,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
 
   return (
     <div>
-      {crumbs.length ? (
+      {crumbs.length && screen === "areas" ? (
         <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 7, marginBottom: 12, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px" }}>
           <button onClick={back} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "5px 11px", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginRight: 4 }}>{"← Back"}</button>
           {[null, ...crumbs].map((c, i) => {
