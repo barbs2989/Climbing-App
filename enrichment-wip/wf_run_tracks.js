@@ -9,7 +9,6 @@ export const meta = {
 // findings can be persisted to disk between batches (the workflow sandbox has no
 // filesystem access of its own).
 const PEAKS = [];
-
 const S = t => ({ type: [t, "null"] });
 const STRARR = { type: ["array", "null"], items: { type: "string" } };
 
