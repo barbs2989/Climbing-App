@@ -6,7 +6,8 @@
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, fetchAreaBreadcrumb } from "./db";
+import { createPortal } from "react-dom";
+import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, fetchAreaBreadcrumb } from "./db";
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
@@ -89,7 +90,7 @@ function StatePicker({ onPick, C }) {
 }
 
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
-function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onOpenRoute, C, ActionIcon }) {
+function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, C, ActionIcon }) {
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -120,10 +121,11 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
         </button>
       ) : null}
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
-        <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Near me</button>
+        <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>View map</button>
         <button onClick={onFinder} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Route finder</button>
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
+      <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {error && <div style={{ color: C.red, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
@@ -207,14 +209,25 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 }
 
 // ── Near me: real Leaflet map (same CDN as the static OverviewMap), geolocated,
-// pins from useNearbyAreas (a lat/lng box query, no PostGIS needed at this scale) ──
+// pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
+// re-fetches (mirrors the static OverviewMap's moveend/zoomend re-render), so
+// the map never gets stuck showing only what was near the very first center. ──
 function NearMePanel({ center0, onBack, onOpenArea, C }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null);
   const [ready, setReady] = useState(false);
+  const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
-  const { data: nearby, isLoading, error } = useNearbyAreas(center);
+  const { data, isLoading, error } = useNearbyAreas(bounds);
+  const nearby = data && data.rows;
+
+  const readBounds = map => {
+    try {
+      const b = map.getBounds();
+      setBounds({ minLat: b.getSouth(), maxLat: b.getNorth(), minLng: b.getWest(), maxLng: b.getEast() });
+    } catch (e) {}
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -226,7 +239,8 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
       markRef.current = L.layerGroup().addTo(map);
       mapRef.current = map;
       setReady(true);
-      setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 150);
+      map.on("moveend", () => readBounds(map));
+      setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
     };
     if (window.L) { init(); }
     else {
@@ -264,6 +278,7 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
         if (userRef.current) userRef.current.setLatLng([la, ln]);
         else userRef.current = L.circleMarker([la, ln], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
         map.setView([la, ln], 10);
+        setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
       }
     }, err => {
       setLocating(false);
@@ -279,21 +294,102 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
 
   return (
     <div>
-      {backRow(onBack, "Near me", C)}
+      {backRow(onBack, "View map", C)}
       <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locating ? "Locating…" : "Use my location"}</button>
       {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
-      <div ref={mapDiv} style={{ width: "100%", height: 260, borderRadius: 12, overflow: "hidden", background: C.surface, marginBottom: 12 }} />
-      {!center ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
+      <div ref={mapDiv} style={{ width: "100%", height: 260, borderRadius: 12, overflow: "hidden", background: C.surface, marginBottom: 8 }} />
+      <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
+      {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
       {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div>}
-      {isLoading && center ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
+      {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
+      {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
       {sorted.map(a => (
         <div key={a.id} onClick={() => onOpenArea(a)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
           <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? a._mi.toFixed(1) + " mi · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
         </div>
       ))}
-      {!isLoading && center && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs found within range — try a bigger area.</div> : null}
+      {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs in view — pan or zoom out to see more.</div> : null}
     </div>
+  );
+}
+
+// ── All areas: full-screen expandable tree, DB-catalog equivalent of the static
+// AreaTree. Only WA's hierarchy is deep enough to matter here, and even a single
+// state can run to thousands of areas, so unlike the static version (which
+// preloads and expands the whole subtree from the in-memory MOUNTAINS array)
+// this fetches each node's children only once it's actually expanded. ──
+function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate, C }) {
+  const isOpen = expanded.has(area.id);
+  const { data: children, isLoading } = useAreaChildren(area.id, { enabled: isOpen });
+  const cur = area.id === currentId;
+  const n = area.route_count;
+  const pad = 14 + depth * 22;
+  return (
+    <div>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
+        <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
+        <button onClick={() => onNavigate(area)} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
+          <div style={{ fontSize: 14.5, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+        </button>
+        {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
+        <span onClick={() => onNavigate(area)} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
+      </div>
+      {isOpen ? (
+        isLoading
+          ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
+          : children && children.length
+            ? children.map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
+            : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
+      ) : null}
+    </div>
+  );
+}
+
+function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C }) {
+  const [expanded, setExpanded] = useState(() => new Set([stateRoot.id, ...(ancestorIds || [])]));
+  const [q, setQ] = useState("");
+  const { data: results, isLoading: searching, error: searchError } = useAreaSearch(stateRoot.id, q.trim());
+  const toggle = id => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
+
+  // Portal to <body> — this component mounts deep inside the tab content tree,
+  // and an ancestor there creates its own stacking context, which traps a plain
+  // position:fixed child under the app's own sticky top nav despite a higher
+  // z-index. Escaping to <body> sidesteps that entirely.
+  return createPortal(
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 400, display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
+        <button onClick={onClose} aria-label="Back" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, padding: "9px 13px", fontSize: 14, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{"← Back"}</button>
+        <div style={{ minWidth: 0, flex: 1 }}>
+          <div style={{ color: C.text, fontSize: 17, fontWeight: 800, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>All areas</div>
+          <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{stateRoot.name + " — tap a name to jump, ▸ to expand"}</div>
+        </div>
+        <button onClick={onClose} aria-label="Close" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, width: 38, height: 38, fontSize: 18, cursor: "pointer" }}>{"×"}</button>
+      </div>
+      <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
+        <input value={q} onChange={e => setQ(e.target.value)} placeholder="Filter areas & crags…" style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+      </div>
+      <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
+        {q.trim() ? (
+          searching ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>Loading…</div>
+          : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
+          : !results || !results.length ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>{'No areas match "' + q.trim() + '"'}</div>
+          : results.map(m => (
+            <div key={m.id} onClick={() => onNavigate(m)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
+                <div style={{ fontSize: 11.5, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.parent_name || ""}</div>
+              </div>
+              {m.route_count > 0 ? <span style={{ fontSize: 11, fontWeight: 700, color: C.textSub }}>{m.route_count}</span> : null}
+              <span style={{ color: C.textMuted, fontSize: 16 }}>{"›"}</span>
+            </div>
+          ))
+        ) : (
+          <DbAreaTreeNode area={stateRoot} depth={0} currentId={current.id} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
+        )}
+      </div>
+    </div>,
+    document.body
   );
 }
 
@@ -301,6 +397,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
+  const [treeOpen, setTreeOpen] = useState(false);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
@@ -314,9 +411,11 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   const back = () => jump(crumbs.length - 2);
   const drill = a => { setScreen("areas"); setStack(s => [...s, a]); };
   const pickState = s => { setStateNode(s); setStack([]); setScreen("areas"); };
-  const openFromNear = async a => {
-    // Near-me pins can land anywhere in the country; rebuild the real state/region
-    // breadcrumb from the area's own ltree path instead of just dropping in flat.
+  // Jump straight to any area reached by something other than drilling — a
+  // near-me map pin, a tree-search hit, or a tree-node tap — by rebuilding its
+  // real state/region breadcrumb from the area's own ltree path.
+  const jumpToArea = async a => {
+    setTreeOpen(false);
     setStateNode(a); setStack([]); setScreen("areas");
     const ancestors = await fetchAreaBreadcrumb(a).catch(() => []);
     const state = ancestors.find(x => x.area_type === "state");
@@ -350,10 +449,13 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} />
       ) : screen === "near" ? (
-        <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} onBack={() => setScreen("areas")} onOpenArea={openFromNear} C={C} />
+        <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onOpenRoute={onOpenRoute} C={C} ActionIcon={ActionIcon} />
+        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} C={C} ActionIcon={ActionIcon} />
       )}
+      {treeOpen && stateNode ? (
+        <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
+      ) : null}
     </div>
   );
 }
