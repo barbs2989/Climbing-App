@@ -2955,12 +2955,17 @@ function WeatherPanel({waypoints}){
     });
   },[key]);
   if(!points.length)return null;
+  const WPT_COLOR={Trailhead:C.green,Campsite:C.purple,Summit:C.orange};
+  const WPT_ICON={Trailhead:"◈",Campsite:"⌂",Summit:"▲"};
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
     <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Raw forecast via Open-Meteo (elevation-aware), broken into AM/PM/Night with an hourly view on tap, as far out as the forecast goes at each waypoint — cross-checked against NWS and MET Norway where they overlap. Read it yourself, this isn't a go/no-go call. Mountain terrain can differ sharply from what's forecast, and forecast sources can legitimately disagree.</div>
-    <div style={{display:"flex",flexDirection:"column",gap:8}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px"}}>
-      <div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:6}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
-      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:7,overflowX:"auto",paddingBottom:2}}>{d.days.map(function(dy,di){
+    <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const wCol=WPT_COLOR[w.type]||C.textSub;return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
+      <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
+        <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{WPT_ICON[w.type]||"●"}</div>
+        <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
+      </div>
+      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
         const dt=new Date(dy.date+"T12:00:00");
         const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
         const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});
@@ -2973,21 +2978,34 @@ function WeatherPanel({waypoints}){
         const metMid=dy.met?(dy.met.hi+dy.met.lo)/2:null;
         const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
         const isExpanded=expDate===dy.date;
-        return <div key={dy.date} style={{flexShrink:0,minWidth:232,background:C.surface,borderRadius:10,padding:"9px 10px",textAlign:"center",border:"1px solid "+C.border}}>
-          <div style={{fontSize:11.5,fontWeight:700,color:C.text}}>{lbl}</div>
-          <div style={{fontSize:10.5,color:C.textMuted,marginBottom:2}}>{sub}</div>
-          {dy.wx?<div style={{fontSize:11,fontWeight:600,color:C.blue,marginBottom:5}}>{dy.wx}</div>:null}
-          <div style={{fontSize:14,fontWeight:800}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+dy.tempHi+"°"}</span><span style={{color:C.textMuted,fontWeight:600}}>{" · "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+dy.tempLo+"°"}</span></div>
-          <div style={{fontSize:10.5,color:chilly?C.blue:C.textMuted,marginTop:1,marginBottom:6}}>{"Feels like: High "+dy.feelsHi+"° · Low "+dy.feelsLo+"°"+(chilly?" (wind chill)":"")}</div>
-          {dy.parts.length?<div style={{marginBottom:6,borderTop:"1px solid "+C.border,borderBottom:"1px solid "+C.border,padding:"4px 0"}}>{dy.parts.map(function(p){return <div key={p.label} style={{display:"flex",alignItems:"center",gap:6,padding:"2px 0"}}><span style={{width:34,flexShrink:0,fontSize:10,fontWeight:700,color:C.textMuted,textAlign:"left"}}>{p.label}</span><span style={{flex:1,fontSize:10,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.wx||"—"}</span><span style={{fontSize:11,fontWeight:700,color:wxTempColor(p.temp),flexShrink:0}}>{p.temp+"°"}</span><span style={{fontSize:10,color:wxWindColor(p.wind),flexShrink:0,minWidth:58,textAlign:"right"}}>{p.wind+" mph"+(p.dir?" "+p.dir:"")}</span></div>;})}</div>:null}
-          <div style={{fontSize:10.5,color:wxWindColor(dy.windMax),textAlign:"left"}}>{"Wind "+dy.windMax+" mph"+(dy.gustMax>dy.windMax?" (gusts to "+dy.gustMax+")":"")}</div>
-          <div style={{fontSize:10.5,color:dy.popMax>=50?C.blue:C.textSub,textAlign:"left"}}>{"Precip chance "+dy.popMax+"%"+(hasRain?" · "+dy.precipIn.toFixed(2)+`" expected`:"")}</div>
-          {hasSnow?<div style={{fontSize:10.5,color:C.blue,fontWeight:700,textAlign:"left"}}>{"Snow "+dy.snowIn.toFixed(1)+`" expected`}</div>:null}
-          <div style={{fontSize:10.5,color:C.textSub,textAlign:"left"}}>{"Freezing level "+dy.freezeMax.toLocaleString()+" ft"}</div>
-          {dy.nws?<div style={{fontSize:10,color:diverges?C.amber:C.textMuted,textAlign:"left",marginTop:5,paddingTop:5,borderTop:"1px solid "+C.border}}>{"NWS: High "+dy.nws.hi+"° · Low "+dy.nws.lo+"°"+(dy.nws.wind!=null?" · Wind "+dy.nws.wind+" mph":"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(diverges?" — sources differ by "+Math.round(Math.abs(nwsMid-omMid))+"°":"")}</div>:null}
-          {dy.met?<div style={{fontSize:10,color:metDiverges?C.amber:C.textMuted,textAlign:"left",marginTop:2}}>{"MET Norway: High "+dy.met.hi+"° · Low "+dy.met.lo+"°"+(dy.met.wind!=null?" · Wind "+dy.met.wind+" mph":"")+(dy.met.wx?" · "+dy.met.wx:"")+(metDiverges?" — sources differ by "+Math.round(Math.abs(metMid-omMid))+"°":"")}</div>:null}
-          {dy.hours&&dy.hours.length?<button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",marginTop:8,padding:"6px",borderRadius:8,border:"1px solid "+C.border,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:10.5,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>:null}
-          {isExpanded?<div style={{marginTop:7,maxHeight:220,overflowY:"auto",border:"1px solid "+C.border,borderRadius:8}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph);return <div key={hi} style={{display:"flex",alignItems:"center",gap:6,padding:"4px 8px",borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none",fontSize:10}}><span style={{width:44,flexShrink:0,color:C.textMuted,textAlign:"left"}}>{hourLabel(hh.hr)}</span><span style={{flex:1,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontWeight:700,color:wxTempColor(t),flexShrink:0}}>{t+"°"}</span><span style={{color:wxWindColor(wm),flexShrink:0,minWidth:60,textAlign:"right"}}>{wm+" mph "+(degToCompass(hh.dir)||"")}</span></div>;})}</div>:null}
+        return <div key={dy.date} style={{flexShrink:0,width:272,background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:9}}>
+            <div>
+              <div style={{fontSize:13.5,fontWeight:800,color:C.text}}>{lbl}</div>
+              <div style={{fontSize:10.5,color:C.textMuted}}>{sub}</div>
+            </div>
+            {dy.wx?<span style={{fontSize:10,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"3px 9px",whiteSpace:"nowrap",flexShrink:0,marginLeft:8}}>{dy.wx}</span>:null}
+          </div>
+          <div style={{fontSize:17,fontWeight:800,marginBottom:3}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+dy.tempHi+"°"}</span><span style={{color:C.textMuted,fontWeight:600}}>{"  ·  "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+dy.tempLo+"°"}</span></div>
+          <div style={{fontSize:11,color:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+dy.feelsHi+"° · Low "+dy.feelsLo+"°"+(chilly?" (wind chill)":"")}</div>
+          {dy.parts.length?<div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:10}}>{dy.parts.map(function(p){return <div key={p.label} style={{background:C.card,borderRadius:9,padding:"7px 6px",border:"1px solid "+C.border}}>
+            <div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>{p.label}</div>
+            <div style={{fontSize:9.5,color:C.textSub,marginBottom:5,minHeight:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.wx||"—"}</div>
+            <div style={{fontSize:13.5,fontWeight:800,color:wxTempColor(p.temp)}}>{p.temp+"°"}</div>
+            <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{p.wind+" mph"+(p.dir?" "+p.dir:"")}</div>
+          </div>;})}</div>:null}
+          <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:dy.nws||dy.met?10:0}}>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{dy.windMax+" mph"}</div>{dy.gustMax>dy.windMax?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+dy.gustMax}</div>:null}</div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.popMax>=50?C.blue:C.text}}>{dy.popMax+"%"}</div>{hasRain?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.precipIn.toFixed(2)+`" expected`}</div>:null}</div>
+            <div style={{gridColumn:hasSnow?"auto":"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",flexDirection:hasSnow?"column":"row",alignItems:hasSnow?"flex-start":"center",justifyContent:hasSnow?"flex-start":"space-between",gap:hasSnow?2:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{dy.freezeMax.toLocaleString()+" ft"}</div></div>
+            {hasSnow?<div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Snow</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{dy.snowIn.toFixed(1)+`"`}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>expected</div></div>:null}
+          </div>
+          {dy.nws||dy.met?<div style={{display:"flex",flexDirection:"column",gap:5}}>
+            {dy.nws?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:diverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+dy.nws.hi+"° · Low "+dy.nws.lo+"°"+(dy.nws.wind!=null?" · Wind "+dy.nws.wind+" mph":"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(diverges?" — differs "+Math.round(Math.abs(nwsMid-omMid))+"°":"")}</span></div>:null}
+            {dy.met?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>MET</span><span style={{color:metDiverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+dy.met.hi+"° · Low "+dy.met.lo+"°"+(dy.met.wind!=null?" · Wind "+dy.met.wind+" mph":"")+(dy.met.wx?" · "+dy.met.wx:"")+(metDiverges?" — differs "+Math.round(Math.abs(metMid-omMid))+"°":"")}</span></div>:null}
+          </div>:null}
+          {dy.hours&&dy.hours.length?<button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",marginTop:10,padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>:null}
+          {isExpanded?<div style={{marginTop:8,maxHeight:230,overflowY:"auto",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph);return <div key={hi} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none",fontSize:10.5}}><span style={{width:46,flexShrink:0,color:C.textMuted,textAlign:"left"}}>{hourLabel(hh.hr)}</span><span style={{flex:1,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontWeight:700,color:wxTempColor(t),flexShrink:0}}>{t+"°"}</span><span style={{color:wxWindColor(wm),flexShrink:0,minWidth:64,textAlign:"right"}}>{wm+" mph "+(degToCompass(hh.dir)||"")}</span></div>;})}</div>:null}
         </div>;
       })}</div>}
     </div>;})}</div>
