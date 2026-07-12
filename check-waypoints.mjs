@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { createClient } from '@supabase/supabase-js';
+import ws from 'ws';
 
 const url = process.env.VITE_SUPABASE_URL;
 const key = process.env.VITE_SUPABASE_ANON_KEY;
@@ -9,7 +10,9 @@ if (!url || !key) {
   process.exit(1);
 }
 
-const supabase = createClient(url, key);
+const supabase = createClient(url, key, {
+  realtime: { transport: ws }
+});
 
 async function checkWaypoints() {
   console.log('Checking waypoint status of all routes...\n');

@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import ws from 'ws';
 
 // Get Supabase credentials from environment
 const url = process.env.VITE_SUPABASE_URL;
@@ -12,7 +13,7 @@ if (!url || !key) {
   process.exit(1);
 }
 
-const supabase = createClient(url, key);
+const supabase = createClient(url, key, { realtime: { transport: ws } });
 
 async function fetchRoutesNeedingWaypoints() {
   console.log('Fetching routes with missing waypoints...');
@@ -24,7 +25,7 @@ async function fetchRoutesNeedingWaypoints() {
   for (;;) {
     const { data, error } = await supabase
       .from('routes')
-      .select('id, name, area_id, lat, lng, elevation_ft, start_lat, start_lng')
+      .select('id, name, area_id, lat, lng, high_point_ft, waypoints')
       .range(from, from + PAGE - 1);
 
     if (error) {
@@ -34,33 +35,16 @@ async function fetchRoutesNeedingWaypoints() {
 
     if (!data || !data.length) break;
 
-    // Filter routes without waypoints by checking if waypoints column is null/empty
-    // (we'll need to check this field exists and is null/empty)
-    const routesBatch = await Promise.all(
-      data.map(async r => {
-        const { data: fullRoute } = await supabase
-          .from('routes')
-          .select('waypoints')
-          .eq('id', r.id)
-          .single();
+    // Filter routes with null/empty waypoints
+    const routesNeedingWaypoints = data.filter(r => {
+      const waypoints = r.waypoints;
+      const isEmpty = !waypoints ||
+        (Array.isArray(waypoints) && waypoints.length === 0) ||
+        (typeof waypoints === 'string' && (waypoints === '[]' || waypoints === ''));
+      return isEmpty;
+    });
 
-        if (!fullRoute) return null;
-
-        const waypoints = fullRoute.waypoints;
-        const isEmpty = !waypoints ||
-          (Array.isArray(waypoints) && waypoints.length === 0) ||
-          (typeof waypoints === 'string' && (waypoints === '[]' || waypoints === ''));
-
-        if (isEmpty) {
-          return r;
-        }
-        return null;
-      })
-    );
-
-    allRoutesNeedingWaypoints = allRoutesNeedingWaypoints.concat(
-      routesBatch.filter(Boolean)
-    );
+    allRoutesNeedingWaypoints = allRoutesNeedingWaypoints.concat(routesNeedingWaypoints);
 
     if (data.length < PAGE) break;
     from += PAGE;
@@ -72,40 +56,33 @@ async function fetchRoutesNeedingWaypoints() {
 function generateWaypoints(route) {
   const waypoints = [];
 
-  // Use start coords if available, otherwise use peak coords as fallback
-  const trailheadLat = route.start_lat || route.lat;
-  const trailheadLng = route.start_lng || route.lng;
-  const trailheadElev = route.elevation_ft || 0;
+  // Use peak coords for both trailhead and summit (better than nothing)
+  const trailheadLat = route.lat;
+  const trailheadLng = route.lng;
+  const elevation = route.high_point_ft || 0;
 
-  // Add Trailhead waypoint (use peak location if start location missing)
+  // Add Trailhead waypoint if we have coordinates
   if (trailheadLat && trailheadLng) {
     waypoints.push({
       type: 'Trailhead',
       name: `${route.name} Trailhead`,
       lat: trailheadLat,
       lng: trailheadLng,
-      elev: Math.min(trailheadElev, route.elevation_ft || trailheadElev),
+      elev: elevation,
       distMi: 0,
-      note: 'Route trailhead or starting point'
+      note: 'Route starting point'
     });
-  }
 
-  // Add Summit waypoint if we have peak coordinates
-  if (route.lat && route.lng && route.elevation_ft) {
-    // Only add if different from trailhead
-    if (!waypoints.length ||
-        Math.abs(route.lat - waypoints[0].lat) > 0.001 ||
-        Math.abs(route.lng - waypoints[0].lng) > 0.001) {
-      waypoints.push({
-        type: 'Summit',
-        name: `${route.name} Summit`,
-        lat: route.lat,
-        lng: route.lng,
-        elev: route.elevation_ft,
-        distMi: waypoints.length > 0 ? null : 0,
-        note: 'Route objective or summit'
-      });
-    }
+    // Add Summit waypoint as well (at same location, but labeled as summit)
+    waypoints.push({
+      type: 'Summit',
+      name: `${route.name} Summit`,
+      lat: trailheadLat,
+      lng: trailheadLng,
+      elev: elevation,
+      distMi: 0,
+      note: 'Route objective'
+    });
   }
 
   return waypoints;

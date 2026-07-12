@@ -9,7 +9,7 @@ if (!url || !key) {
   process.exit(1);
 }
 
-const supabase = createClient(url, key);
+const supabase = createClient(url, key, { realtime: { mode: 'off' } });
 
 async function findRoutesWithoutWaypoints() {
   console.log('Fetching all routes...');
