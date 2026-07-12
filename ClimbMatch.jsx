@@ -2835,6 +2835,13 @@ function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0]
 function wxTempColor(f){return f>=85?C.red:f>=70?C.amber:f>=50?C.green:f>=32?C.teal:C.blue;}
 function wxWindColor(mph){return mph>=30?C.red:mph>=15?C.amber:C.green;}
 function wxCondColor(code){if(code==null)return C.blue;if(code>=95)return C.red;if(code===0||code===1)return C.green;if(code===2||code===3||code===45||code===48)return C.textSub;return C.blue;}
+// EPA UV Index scale: 0-2 Low, 3-5 Moderate, 6-7 High, 8-10 Very High, 11+ Extreme.
+function wxUvColor(uv){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
+function wxUvLabel(uv){return uv>=11?"Extreme":uv>=8?"Very High":uv>=6?"High":uv>=3?"Moderate":"Low";}
+// NOAA Wind Chill Chart: frostbite possible on exposed skin within 30 minutes
+// at a computed wind chill of -19°F or colder — a fixed threshold on the
+// wind chill VALUE itself, independent of which temp/wind pair produced it.
+const FROSTBITE_WINDCHILL_F=-19;
 function hourLabel(hr){const h12=hr%12===0?12:hr%12;return h12+(hr<12?" AM":" PM");}
 function metWxLabel(code){
   if(!code)return null;
@@ -2858,7 +2865,7 @@ function WeatherPanel({waypoints}){
       // day by day instead of a single next-day summary.
       // precipitation_unit=inch also switches freezing_level_height (and other
       // length fields) from meters to feet — do not re-convert freezeMax below.
-      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
+      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height,uv_index&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
       // Open-Meteo, NWS, and MET Norway run different models from different
       // organizations and can legitimately disagree by several degrees over
       // complex mountain terrain — fetch both secondary sources' own series too
@@ -2893,7 +2900,7 @@ function WeatherPanel({waypoints}){
         const byDay={},byPart={};
         h.time.forEach(function(t,i){
           const date=t.slice(0,10),hr=parseInt(t.slice(11,13),10);
-          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],gusts:[],pops:[],precips:[],snows:[],fz:[],hours:[]};
+          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[]};
           const dd=byDay[date];
           dd.temps.push(h.temperature_2m[i]);
           dd.feels.push(h.apparent_temperature[i]);
@@ -2904,6 +2911,7 @@ function WeatherPanel({waypoints}){
           dd.precips.push(h.precipitation[i]);
           dd.snows.push(h.snowfall[i]);
           dd.fz.push(h.freezing_level_height[i]);
+          dd.uvs.push(h.uv_index[i]);
           dd.hours.push({hr:hr,tempF:h.temperature_2m[i],code:h.weather_code[i],windMph:h.wind_speed_80m[i],dir:h.wind_direction_80m[i],pop:h.precipitation_probability[i]});
           const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
           const partDate=hr<6?prevDayStr(date):date;
@@ -2950,7 +2958,7 @@ function WeatherPanel({waypoints}){
           const md=metByDay[date];
           const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
           const wxCode=modeOf(d.codes);
-          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),parts:parts,hours:d.hours,nws:nws,met:met};
+          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
         });
         setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
       }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
@@ -2972,6 +2980,7 @@ function WeatherPanel({waypoints}){
         const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
         const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});
         const chilly=dy.feelsLo<=dy.tempLo-5;
+        const frostbite=dy.feelsLo<=FROSTBITE_WINDCHILL_F;
         const hasSnow=dy.snowIn>=0.05;
         const hasRain=!hasSnow&&dy.precipIn>=0.05;
         const omMid=(dy.tempHi+dy.tempLo)/2;
@@ -2991,7 +3000,7 @@ function WeatherPanel({waypoints}){
             {dy.wx?<span style={{fontSize:10,fontWeight:700,color:condColor,background:condColor+"1a",border:"1px solid "+condColor+"55",borderRadius:20,padding:"3px 9px",whiteSpace:"nowrap",flexShrink:0,marginLeft:8}}>{dy.wx}</span>:null}
           </div>
           <div style={{fontSize:17,fontWeight:800,marginBottom:3}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+dy.tempHi+"°"}</span><span style={{color:C.textMuted,fontWeight:600}}>{"  ·  "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+dy.tempLo+"°"}</span></div>
-          <div style={{fontSize:11,color:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+dy.feelsHi+"° · Low "+dy.feelsLo+"°"+(chilly?" (wind chill)":"")}</div>
+          <div style={{fontSize:11,fontWeight:frostbite?700:400,color:frostbite?C.red:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+dy.feelsHi+"° · Low "+dy.feelsLo+"°"+(chilly?" (wind chill)":"")+(frostbite?" — frostbite risk in 30 min":"")}</div>
           {dy.parts.length?<div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:10}}>{dy.parts.map(function(p){return <div key={p.label} style={{background:C.card,borderRadius:9,padding:"7px 6px",border:"1px solid "+C.border}}>
             <div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>{p.label}</div>
             <div style={{fontSize:9.5,color:C.textSub,marginBottom:5,minHeight:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.wx||"—"}</div>
@@ -3001,8 +3010,9 @@ function WeatherPanel({waypoints}){
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:dy.nws||dy.met?10:0}}>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{dy.windMax+" mph"}</div>{dy.gustMax>dy.windMax?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+dy.gustMax}</div>:null}</div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.popMax>=50?C.blue:C.text}}>{dy.popMax+"%"}</div>{hasRain?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.precipIn.toFixed(2)+`" expected`}</div>:null}</div>
-            <div style={{gridColumn:hasSnow?"auto":"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",flexDirection:hasSnow?"column":"row",alignItems:hasSnow?"flex-start":"center",justifyContent:hasSnow?"flex-start":"space-between",gap:hasSnow?2:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{dy.freezeMax.toLocaleString()+" ft"}</div></div>
-            {hasSnow?<div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Snow</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{dy.snowIn.toFixed(1)+`"`}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>expected</div></div>:null}
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{dy.freezeMax.toLocaleString()+" ft"}</div></div>
+            {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{dy.snowIn.toFixed(1)+`"`}</div></div>:null}
           </div>
           {dy.nws||dy.met?<div style={{display:"flex",flexDirection:"column",gap:5}}>
             {dy.nws?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:diverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+dy.nws.hi+"° · Low "+dy.nws.lo+"°"+(dy.nws.wind!=null?" · Wind "+dy.nws.wind+" mph":"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(diverges?" — differs "+Math.round(Math.abs(nwsMid-omMid))+"°":"")}</span></div>:null}
