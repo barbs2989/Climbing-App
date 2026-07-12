@@ -78,9 +78,9 @@ function StatePicker({ onPick, C }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>Pick a state</SL>
-      <select value="" onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: "pointer" }}>
-        <option value="">Select a state…</option>
-        {(states || []).map(s => <option key={s.id} value={s.id}>{s.name + " · " + s.route_count + " climb" + (s.route_count !== 1 ? "s" : "")}</option>)}
+      <select value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
+        <option value="">{isLoading || !states ? "Loading states…" : "Select a state…"}</option>
+        {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Use a route or crag Route finder to filter and search by type, grade, stars and more.</div>
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
@@ -337,8 +337,8 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 const curvedPinHtml = (nm, n, d, color, brd) => {
   const r = d / 2, rt = r - Math.max(5, d * 0.11), id = "cp" + Math.random().toString(36).slice(2, 10);
   const safe = (nm || "").replace(/[<>&]/g, "");
-  const fs = Math.max(7, Math.min(11, Math.round(d * 0.17)));
-  const maxChars = Math.max(3, Math.floor((Math.PI * rt) / (fs * 0.56)));
+  const fs = Math.max(8, Math.min(12, Math.round(d * 0.17)));
+  const maxChars = Math.max(3, Math.floor((Math.PI * rt) / (fs * 0.54)));
   const lbl = safe.length > maxChars ? safe.slice(0, Math.max(1, maxChars - 1)) + "…" : safe;
   const numFs = Math.round(d * 0.32);
   const sw = 2.5, cr = r - sw / 2 - 0.5;
@@ -347,7 +347,13 @@ const curvedPinHtml = (nm, n, d, color, brd) => {
     "<text font-size='" + fs + "' font-weight='700' fill='#fff' stroke='rgba(0,0,0,0.85)' stroke-width='2.5' paint-order='stroke fill' style='stroke-linejoin:round'><textPath href='#" + id + "' xlink:href='#" + id + "' startOffset='50%' text-anchor='middle'>" + lbl + "</textPath></text></svg>";
 };
 
-function NearMePanel({ center0, onBack, onOpenArea, C }) {
+// Initial zoom keyed to how big a footprint each area_type actually covers —
+// a whole state needs a far wider view than a single crag, and using one
+// fixed zoom for every level (the old behavior) zoomed a state-scale "View
+// map" in absurdly tight since it centered on the state's single lat/lng
+// point at the same zoom used for a crag.
+const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
+function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [bounds, setBounds] = useState(null);
@@ -379,7 +385,7 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
-      const map = L.map(mapDiv.current, { attributionControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? 10 : 4);
+      const map = L.map(mapDiv.current, { attributionControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18 }).addTo(map);
       markRef.current = L.layerGroup().addTo(map);
       mapRef.current = map;
@@ -408,7 +414,7 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
     grp.clearLayers();
-    const CLUSTER_PX = 44;
+    const CLUSTER_PX = 62;
     const pts = nearby.filter(a => a.lat != null && a.lng != null).map(a => ({ a, pt: map.latLngToContainerPoint([a.lat, a.lng]) }));
     const used = new Array(pts.length).fill(false);
     for (let i = 0; i < pts.length; i++) {
@@ -420,7 +426,11 @@ function NearMePanel({ center0, onBack, onOpenArea, C }) {
       }
       if (group.length === 1) {
         const a = group[0].a;
-        const sz = 34;
+        // Bigger circles for longer names — a fixed 34px pin only ever fits ~9
+        // characters before ellipsis, so a name like "Index Town Walls" reads
+        // as "Index To…". Growing the circle with name length buys more arc
+        // length for the curved label without blowing up short names.
+        const sz = Math.max(38, Math.min(60, 30 + (a.name || "").length * 1.6));
         const html = curvedPinHtml(a.name, null, sz, C.blue, "#ffffff");
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
@@ -642,7 +652,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} />
       ) : screen === "near" ? (
-        <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
+        <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
         <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} />
       )}

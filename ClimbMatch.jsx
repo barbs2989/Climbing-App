@@ -788,7 +788,7 @@ function TechStats({route,sunReports,onSuggestSun}){
     stats.push(["Crux grade",route.cruxGrade||route.grade,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(fmtRappels(route.rappels))stats.push(["Rappels",fmtRappels(route.rappels),C.red]);
-    note=climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers.";
+    note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers."):null;
   }
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:10}}>TECHNICAL STATS</div>{(function(){var ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment;var P=[];if(cm)P.push(["Commitment",cm]);if(ag)P.push(["Alpine",ag]);if(rg)P.push(["Rock",rg]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1)return null;var cmExp=cm?COMMITMENT_EXPLAINERS[String(cm).replace(/^Grade\s*/i,"").trim()]:null;var bailWps=(route.waypoints||[]).filter(function(w){return w.type==="Bailout"&&w.distMi!=null;}).sort(function(a,b){return a.distMi-b.distMi;});var nearBail=bailWps[0];return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{fontSize:11,color:C.textMuted,fontWeight:700,textTransform:"uppercase",letterSpacing:0.4,marginBottom:7}}>Composite Grade</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.textMuted,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{p[1]}</span>;})}</div>{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{nearBail?("Committing — nearest bail point is "+(nearBail.timeToSafety||(uDistMi(nearBail.distMi)+" away"))+"."):cmExp}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{background:C.surface,borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.textMuted,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>First Ascent</span>{" · "+route.fa}</div>:null}{note?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8,lineHeight:1.5}}>{note}</div>:null}</div>;
 }
@@ -2830,26 +2830,51 @@ function WeatherPanel({waypoints}){
     if(!points.length)return;
     points.forEach(function(w){
       const k=w.type+"_"+w.name;
-      const url="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,wind_speed_80m,freezing_level_height&forecast_days=2&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto";
+      // forecast_days=16 is Open-Meteo's max — pulls the full range it forecasts
+      // out to, not just the next 24 hours, so the panel below can lay it out
+      // day by day instead of a single next-day summary.
+      const url="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,wind_speed_80m,freezing_level_height&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto";
       fetch(url).then(function(r){return r.json();}).then(function(json){
         const h=json&&json.hourly;
-        if(!h||!h.temperature_2m)throw new Error("no data");
-        const n=24;const temps=h.temperature_2m.slice(0,n);const winds=h.wind_speed_80m.slice(0,n);const fz=h.freezing_level_height.slice(0,n);
-        setData(function(p){return Object.assign({},p,{[k]:{tempLo:Math.round(Math.min.apply(null,temps)),tempHi:Math.round(Math.max.apply(null,temps)),windMax:Math.round(Math.max.apply(null,winds)),freezeNow:Math.round(fz[0]*3.28084),freezeMax:Math.round(Math.max.apply(null,fz)*3.28084)}});});
+        if(!h||!h.temperature_2m||!h.time)throw new Error("no data");
+        // Group hourly samples by the local calendar date Open-Meteo returns
+        // (timezone=auto) rather than by 24-hour blocks from fetch time, so
+        // "today" lines up with the site's own day instead of drifting with
+        // whatever hour the request happened to go out.
+        const byDay={};
+        h.time.forEach(function(t,i){
+          const day=t.slice(0,10);
+          if(!byDay[day])byDay[day]={temps:[],winds:[],fz:[]};
+          byDay[day].temps.push(h.temperature_2m[i]);
+          byDay[day].winds.push(h.wind_speed_80m[i]);
+          byDay[day].fz.push(h.freezing_level_height[i]);
+        });
+        const days=Object.keys(byDay).sort().map(function(date){
+          const d=byDay[date];
+          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),windMax:Math.round(Math.max.apply(null,d.winds)),freezeMax:Math.round(Math.max.apply(null,d.fz)*3.28084)};
+        });
+        setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
       }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
     });
   },[key]);
   if(!points.length)return null;
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Raw forecast via Open-Meteo (elevation-aware), next 24 hours at each waypoint — read it yourself, this isn't a go/no-go call. Mountain terrain can differ sharply from what's forecast.</div>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Raw forecast via Open-Meteo (elevation-aware), day by day as far out as the forecast goes at each waypoint — read it yourself, this isn't a go/no-go call. Mountain terrain can differ sharply from what's forecast.</div>
     <div style={{display:"flex",flexDirection:"column",gap:8}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px"}}>
-      <div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:4}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
-      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{fontSize:12,color:C.textSub,lineHeight:1.6}}>
-        <div>{"Temp: "+d.tempLo+"–"+d.tempHi+"°F"}</div>
-        <div>{"Max wind (80m): "+d.windMax+" mph"}</div>
-        <div>{"Freezing level: "+d.freezeNow.toLocaleString()+" ft now, up to "+d.freezeMax.toLocaleString()+" ft"}</div>
-      </div>}
+      <div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:6}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
+      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:6,overflowX:"auto",paddingBottom:2}}>{d.days.map(function(dy,di){
+        const dt=new Date(dy.date+"T12:00:00");
+        const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
+        const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});
+        return <div key={dy.date} style={{flexShrink:0,minWidth:72,background:C.surface,borderRadius:9,padding:"7px 8px",textAlign:"center",border:"1px solid "+C.border}}>
+          <div style={{fontSize:11,fontWeight:700,color:C.text}}>{lbl}</div>
+          <div style={{fontSize:10,color:C.textMuted,marginBottom:5}}>{sub}</div>
+          <div style={{fontSize:12.5,fontWeight:700,color:C.text}}>{dy.tempHi+"°/"+dy.tempLo+"°"}</div>
+          <div style={{fontSize:10.5,color:C.textSub,marginTop:4}}>{dy.windMax+" mph"}</div>
+          <div style={{fontSize:10.5,color:C.textSub}}>{"FL "+dy.freezeMax.toLocaleString()+"ft"}</div>
+        </div>;
+      })}</div>}
     </div>;})}</div>
   </div>;
 }
