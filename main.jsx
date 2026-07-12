@@ -9,3 +9,11 @@ createRoot(document.getElementById("root")).render(
     <App />
   </QueryClientProvider>
 );
+
+// Registered only in production builds so it never interferes with Vite's
+// dev-server module graph / HMR.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(import.meta.env.BASE_URL + "sw.js").catch(() => {});
+  });
+}
