@@ -2827,9 +2827,26 @@ function QuickMatch({scope,onOpen,onBack}){
     </div>;}):<div style={{fontSize:13,color:C.textMuted,textAlign:"center",padding:"26px 12px"}}>{"Nothing fits those constraints yet — try widening time or distance."}</div>}
   </div>;
 }
+const WX_CODE_LABEL={0:"Clear",1:"Mostly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Rime fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",56:"Freezing drizzle",57:"Freezing drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",66:"Freezing rain",67:"Freezing rain",71:"Light snow",73:"Snow",75:"Heavy snow",77:"Snow grains",80:"Light rain showers",81:"Rain showers",82:"Heavy rain showers",85:"Snow showers",86:"Heavy snow showers",95:"Thunderstorms",96:"Thunderstorms",99:"Thunderstorms"};
+const WX_COMPASS=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+function degToCompass(deg){if(deg==null||isNaN(deg))return null;return WX_COMPASS[Math.round((((deg%360)+360)%360)/22.5)%16];}
+function circMeanDeg(arr){if(!arr||!arr.length)return null;let sx=0,sy=0;arr.forEach(function(d){const r=d*Math.PI/180;sx+=Math.cos(r);sy+=Math.sin(r);});return (Math.atan2(sy,sx)*180/Math.PI+360)%360;}
+function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0],bc=0;arr.forEach(function(v){c[v]=(c[v]||0)+1;if(c[v]>bc){bc=c[v];best=v;}});return best;}
+function wxTempColor(f){return f>=85?C.red:f>=70?C.amber:f>=50?C.green:f>=32?C.teal:C.blue;}
+function wxWindColor(mph){return mph>=30?C.red:mph>=15?C.amber:C.green;}
+function hourLabel(hr){const h12=hr%12===0?12:hr%12;return h12+(hr<12?" AM":" PM");}
+function metWxLabel(code){
+  if(!code)return null;
+  const s=code.replace(/_(day|night|polartwilight)$/,"");
+  const MAP={clearsky:"Clear",fair:"Fair",partlycloudy:"Partly cloudy",cloudy:"Cloudy",fog:"Fog",rain:"Rain",lightrain:"Light rain",heavyrain:"Heavy rain",rainshowers:"Rain showers",lightrainshowers:"Light rain showers",heavyrainshowers:"Heavy rain showers",sleet:"Sleet",lightsleet:"Light sleet",heavysleet:"Heavy sleet",sleetshowers:"Sleet showers",lightsleetshowers:"Light sleet showers",heavysleetshowers:"Heavy sleet showers",snow:"Snow",lightsnow:"Light snow",heavysnow:"Heavy snow",snowshowers:"Snow showers",lightsnowshowers:"Light snow showers",heavysnowshowers:"Heavy snow showers"};
+  if(MAP[s])return MAP[s];
+  if(s.indexOf("thunder")>=0)return "Thunderstorms";
+  return s;
+}
 function WeatherPanel({waypoints}){
   const points=(waypoints||[]).filter(function(w){return ["Trailhead","Campsite","Summit"].indexOf(w.type)>=0&&w.lat!=null&&w.lng!=null;});
   const [data,setData]=useState({});
+  const [expandedDay,setExpandedDay]=useState({});
   const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
   useEffect(function(){
     if(!points.length)return;
@@ -2840,60 +2857,98 @@ function WeatherPanel({waypoints}){
       // day by day instead of a single next-day summary.
       // precipitation_unit=inch also switches freezing_level_height (and other
       // length fields) from meters to feet — do not re-convert freezeMax below.
-      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,wind_speed_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
-      // Open-Meteo and NWS run different models and can legitimately disagree by
-      // several degrees over complex mountain terrain — fetch NWS's own gridpoint
-      // series too so the panel can flag divergence instead of presenting one
-      // number as gospel. NWS coverage is short-range (~7 days); Open-Meteo alone
-      // still drives the full 16-day view.
+      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
+      // Open-Meteo, NWS, and MET Norway run different models from different
+      // organizations and can legitimately disagree by several degrees over
+      // complex mountain terrain — fetch both secondary sources' own series too
+      // so the panel can flag divergence instead of presenting one number as
+      // gospel. Both secondary sources are short-range (~4-7 days); Open-Meteo
+      // alone still drives the full 16-day view and is the only one broken into
+      // AM/PM/Night + hourly detail — the secondary sources stay lighter (a
+      // high/low, wind, and one weather label) by design, not full parity.
       const nwsPromise=fetch("https://api.weather.gov/points/"+w.lat.toFixed(4)+","+w.lng.toFixed(4)).then(function(r){return r.ok?r.json():null;}).then(function(pj){return pj?fetch(pj.properties.forecastGridData).then(function(r){return r.ok?r.json():null;}):null;}).catch(function(){return null;});
-      Promise.all([fetch(omUrl).then(function(r){return r.json();}),nwsPromise]).then(function(res){
-        const json=res[0],nwsJson=res[1];
+      // MET Norway (api.met.no) — an independent forecast from a different
+      // national weather service (ECMWF-derived outside the Nordics), not
+      // affiliated with NOAA. Browsers won't let JS set a custom User-Agent
+      // (a forbidden fetch header), so this relies on the browser's own UA —
+      // fine at this request volume, but MET Norway's own guidance prefers an
+      // identifying one for high-traffic server-side use.
+      const metPromise=fetch("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="+w.lat.toFixed(4)+"&lon="+w.lng.toFixed(4)+(w.elev!=null?"&altitude="+Math.round(w.elev/3.28084):"")).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
+      Promise.all([fetch(omUrl).then(function(r){return r.json();}),nwsPromise,metPromise]).then(function(res){
+        const json=res[0],nwsJson=res[1],metJson=res[2];
         const h=json&&json.hourly;
         if(!h||!h.temperature_2m||!h.time)throw new Error("no data");
         const offsetSec=json.utc_offset_seconds||0;
+        const toLocalDay=function(utcIso){return new Date(new Date(utcIso).getTime()+offsetSec*1000).toISOString().slice(0,10);};
+        const prevDayStr=function(dateStr){return new Date(new Date(dateStr+"T00:00:00Z").getTime()-86400000).toISOString().slice(0,10);};
         // Group hourly samples by the local calendar date Open-Meteo returns
         // (timezone=auto) rather than by 24-hour blocks from fetch time, so
         // "today" lines up with the site's own day instead of drifting with
-        // whatever hour the request happened to go out.
-        const PART_NAMES=["Night","Morning","Afternoon","Evening"];
-        const partOf=function(hr){return hr<6?0:hr<12?1:hr<18?2:3;};
-        const byDay={};
+        // whatever hour the request happened to go out. AM/PM/Night parts are
+        // bucketed separately: pre-dawn hours (0-5) join the PRECEDING day's
+        // "Night" bucket rather than starting a new one, since the coldest
+        // part of an overnight is usually just before dawn — matching how
+        // mountain-forecast sites group an alpine-start overnight window.
+        const byDay={},byPart={};
         h.time.forEach(function(t,i){
-          const day=t.slice(0,10);
-          if(!byDay[day])byDay[day]={temps:[],feels:[],winds:[],gusts:[],pops:[],precips:[],snows:[],fz:[],parts:[[],[],[],[]]};
-          byDay[day].temps.push(h.temperature_2m[i]);
-          byDay[day].feels.push(h.apparent_temperature[i]);
-          byDay[day].winds.push(h.wind_speed_80m[i]);
-          byDay[day].gusts.push(h.wind_gusts_10m[i]);
-          byDay[day].pops.push(h.precipitation_probability[i]);
-          byDay[day].precips.push(h.precipitation[i]);
-          byDay[day].snows.push(h.snowfall[i]);
-          byDay[day].fz.push(h.freezing_level_height[i]);
-          byDay[day].parts[partOf(parseInt(t.slice(11,13),10))].push(h.temperature_2m[i]);
+          const date=t.slice(0,10),hr=parseInt(t.slice(11,13),10);
+          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],gusts:[],pops:[],precips:[],snows:[],fz:[],hours:[]};
+          const dd=byDay[date];
+          dd.temps.push(h.temperature_2m[i]);
+          dd.feels.push(h.apparent_temperature[i]);
+          dd.codes.push(h.weather_code[i]);
+          dd.winds.push(h.wind_speed_80m[i]);
+          dd.gusts.push(h.wind_gusts_10m[i]);
+          dd.pops.push(h.precipitation_probability[i]);
+          dd.precips.push(h.precipitation[i]);
+          dd.snows.push(h.snowfall[i]);
+          dd.fz.push(h.freezing_level_height[i]);
+          dd.hours.push({hr:hr,tempF:h.temperature_2m[i],code:h.weather_code[i],windMph:h.wind_speed_80m[i],dir:h.wind_direction_80m[i],pop:h.precipitation_probability[i]});
+          const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
+          const partDate=hr<6?prevDayStr(date):date;
+          const pk=partDate+"_"+partKey;
+          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[]};
+          byPart[pk].temps.push(h.temperature_2m[i]);
+          byPart[pk].codes.push(h.weather_code[i]);
+          byPart[pk].winds.push(h.wind_speed_80m[i]);
+          byPart[pk].dirs.push(h.wind_direction_80m[i]);
         });
-        // Bucket NWS's raw gridpoint temperature series into the same local
-        // calendar days by shifting each UTC instant by Open-Meteo's own
-        // utc_offset_seconds for this location, then reading the UTC date —
-        // a standard trick to get local-calendar-date bucketing without a
-        // timezone library.
-        const nwsByDay={};
-        if(nwsJson&&nwsJson.properties&&nwsJson.properties.temperature&&nwsJson.properties.temperature.values){
-          nwsJson.properties.temperature.values.forEach(function(v){
-            if(typeof v.value!=="number")return;
-            const startUtc=new Date(v.validTime.split("/")[0]);
-            const day=new Date(startUtc.getTime()+offsetSec*1000).toISOString().slice(0,10);
-            if(!nwsByDay[day])nwsByDay[day]=[];
-            nwsByDay[day].push(v.value*9/5+32);
+        const sum=function(arr){return arr.reduce(function(s,v){return s+(v||0);},0);};
+        const avg=function(arr){return arr.length?sum(arr)/arr.length:0;};
+        const buildPart=function(label,pk){const b=byPart[pk];if(!b||!b.temps.length)return null;return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[modeOf(b.codes)]||null,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs))};};
+        // Secondary-source extras (wind + one weather label per day) — a
+        // lighter read than Open-Meteo's per-part/hourly breakdown, by design.
+        const nwsByDay={},nwsWindByDay={},nwsWxByDay={};
+        if(nwsJson&&nwsJson.properties){
+          const tvals=nwsJson.properties.temperature&&nwsJson.properties.temperature.values;
+          if(tvals)tvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsByDay[day])nwsByDay[day]=[];nwsByDay[day].push(v.value*9/5+32);});
+          const wvals=nwsJson.properties.windSpeed&&nwsJson.properties.windSpeed.values;
+          if(wvals)wvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsWindByDay[day])nwsWindByDay[day]=[];nwsWindByDay[day].push(v.value*0.621371);});
+          const xvals=nwsJson.properties.weather&&nwsJson.properties.weather.values;
+          if(xvals)xvals.forEach(function(v){const w0=v.value&&v.value[0]&&v.value[0].weather;if(!w0)return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsWxByDay[day])nwsWxByDay[day]=[];nwsWxByDay[day].push(w0);});
+        }
+        const metByDay={},metWindByDay={},metWxByDay={};
+        if(metJson&&metJson.properties&&metJson.properties.timeseries){
+          metJson.properties.timeseries.forEach(function(e){
+            const det=e&&e.data&&e.data.instant&&e.data.instant.details;
+            if(!det||typeof det.air_temperature!=="number")return;
+            const day=toLocalDay(e.time);
+            if(!metByDay[day])metByDay[day]=[];
+            metByDay[day].push(det.air_temperature*9/5+32);
+            if(typeof det.wind_speed==="number"){if(!metWindByDay[day])metWindByDay[day]=[];metWindByDay[day].push(det.wind_speed*2.23694);}
+            const sym=(e.data.next_1_hours&&e.data.next_1_hours.summary&&e.data.next_1_hours.summary.symbol_code)||(e.data.next_6_hours&&e.data.next_6_hours.summary&&e.data.next_6_hours.summary.symbol_code);
+            if(sym){if(!metWxByDay[day])metWxByDay[day]=[];metWxByDay[day].push(sym);}
           });
         }
-        const sum=arr=>arr.reduce(function(s,v){return s+(v||0);},0);
+        const cap=function(s){return s?s.charAt(0).toUpperCase()+s.slice(1):null;};
         const days=Object.keys(byDay).sort().map(function(date){
           const d=byDay[date];
-          const parts=d.parts.map(function(arr,pi){return arr.length?{label:PART_NAMES[pi],avg:Math.round(sum(arr)/arr.length)}:null;});
+          const parts=[buildPart("AM",date+"_am"),buildPart("PM",date+"_pm"),buildPart("Night",date+"_night")].filter(Boolean);
           const nd=nwsByDay[date];
-          const nws=(nd&&nd.length>=3)?{lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd))}:null;
-          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),windMax:Math.round(Math.max.apply(null,d.winds)),gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),parts:parts,nws:nws};
+          const nws=(nd&&nd.length>=3)?{lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:cap(modeOf(nwsWxByDay[date]))}:null;
+          const md=metByDay[date];
+          const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
+          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[modeOf(d.codes)]||null,windMax:Math.round(Math.max.apply(null,d.winds)),gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),parts:parts,hours:d.hours,nws:nws,met:met};
         });
         setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
       }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
@@ -2902,8 +2957,8 @@ function WeatherPanel({waypoints}){
   if(!points.length)return null;
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Raw forecast via Open-Meteo (elevation-aware), broken into night/morning/afternoon/evening, as far out as the forecast goes at each waypoint — cross-checked against NWS where the two overlap. Read it yourself, this isn't a go/no-go call. Mountain terrain can differ sharply from what's forecast, and forecast sources can legitimately disagree.</div>
-    <div style={{display:"flex",flexDirection:"column",gap:8}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px"}}>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Raw forecast via Open-Meteo (elevation-aware), broken into AM/PM/Night with an hourly view on tap, as far out as the forecast goes at each waypoint — cross-checked against NWS and MET Norway where they overlap. Read it yourself, this isn't a go/no-go call. Mountain terrain can differ sharply from what's forecast, and forecast sources can legitimately disagree.</div>
+    <div style={{display:"flex",flexDirection:"column",gap:8}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px"}}>
       <div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:6}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
       {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:7,overflowX:"auto",paddingBottom:2}}>{d.days.map(function(dy,di){
         const dt=new Date(dy.date+"T12:00:00");
@@ -2915,17 +2970,24 @@ function WeatherPanel({waypoints}){
         const omMid=(dy.tempHi+dy.tempLo)/2;
         const nwsMid=dy.nws?(dy.nws.hi+dy.nws.lo)/2:null;
         const diverges=nwsMid!=null&&Math.abs(nwsMid-omMid)>=6;
-        return <div key={dy.date} style={{flexShrink:0,minWidth:152,background:C.surface,borderRadius:10,padding:"9px 10px",textAlign:"center",border:"1px solid "+C.border}}>
+        const metMid=dy.met?(dy.met.hi+dy.met.lo)/2:null;
+        const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
+        const isExpanded=expDate===dy.date;
+        return <div key={dy.date} style={{flexShrink:0,minWidth:232,background:C.surface,borderRadius:10,padding:"9px 10px",textAlign:"center",border:"1px solid "+C.border}}>
           <div style={{fontSize:11.5,fontWeight:700,color:C.text}}>{lbl}</div>
-          <div style={{fontSize:10.5,color:C.textMuted,marginBottom:6}}>{sub}</div>
-          <div style={{fontSize:14,fontWeight:800,color:C.text}}>{dy.tempHi+"°/"+dy.tempLo+"°"}</div>
-          <div style={{fontSize:10.5,color:chilly?C.blue:C.textMuted,marginTop:1,marginBottom:6}}>{"Feels "+dy.feelsHi+"°/"+dy.feelsLo+"°"+(chilly?" · wind chill":"")}</div>
-          {dy.parts.some(Boolean)?<div style={{display:"flex",gap:3,marginBottom:6,borderTop:"1px solid "+C.border,borderBottom:"1px solid "+C.border,padding:"5px 0"}}>{dy.parts.map(function(p,pi){return p?<div key={pi} style={{flex:1}}><div style={{fontSize:9,color:C.textMuted}}>{p.label.slice(0,2)}</div><div style={{fontSize:11,fontWeight:700,color:C.text}}>{p.avg+"°"}</div></div>:null;})}</div>:null}
-          <div style={{fontSize:10.5,color:C.textSub,textAlign:"left"}}>{"Wind "+dy.windMax+" mph"+(dy.gustMax>dy.windMax?" (g"+dy.gustMax+")":"")}</div>
-          <div style={{fontSize:10.5,color:dy.popMax>=50?C.blue:C.textSub,textAlign:"left"}}>{"Precip "+dy.popMax+"%"+(hasRain?" · "+dy.precipIn.toFixed(2)+`"`:"")}</div>
-          {hasSnow?<div style={{fontSize:10.5,color:C.blue,fontWeight:700,textAlign:"left"}}>{"Snow "+dy.snowIn.toFixed(1)+`"`}</div>:null}
-          <div style={{fontSize:10.5,color:C.textSub,textAlign:"left"}}>{"FL "+dy.freezeMax.toLocaleString()+"ft"}</div>
-          {dy.nws?<div style={{fontSize:10,color:diverges?C.amber:C.textMuted,textAlign:"left",marginTop:5,paddingTop:5,borderTop:"1px solid "+C.border}}>{"NWS "+dy.nws.hi+"°/"+dy.nws.lo+"°"+(diverges?" · differs "+Math.round(Math.abs(nwsMid-omMid))+"°":"")}</div>:null}
+          <div style={{fontSize:10.5,color:C.textMuted,marginBottom:2}}>{sub}</div>
+          {dy.wx?<div style={{fontSize:11,fontWeight:600,color:C.blue,marginBottom:5}}>{dy.wx}</div>:null}
+          <div style={{fontSize:14,fontWeight:800}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+dy.tempHi+"°"}</span><span style={{color:C.textMuted,fontWeight:600}}>{" · "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+dy.tempLo+"°"}</span></div>
+          <div style={{fontSize:10.5,color:chilly?C.blue:C.textMuted,marginTop:1,marginBottom:6}}>{"Feels like: High "+dy.feelsHi+"° · Low "+dy.feelsLo+"°"+(chilly?" (wind chill)":"")}</div>
+          {dy.parts.length?<div style={{marginBottom:6,borderTop:"1px solid "+C.border,borderBottom:"1px solid "+C.border,padding:"4px 0"}}>{dy.parts.map(function(p){return <div key={p.label} style={{display:"flex",alignItems:"center",gap:6,padding:"2px 0"}}><span style={{width:34,flexShrink:0,fontSize:10,fontWeight:700,color:C.textMuted,textAlign:"left"}}>{p.label}</span><span style={{flex:1,fontSize:10,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.wx||"—"}</span><span style={{fontSize:11,fontWeight:700,color:wxTempColor(p.temp),flexShrink:0}}>{p.temp+"°"}</span><span style={{fontSize:10,color:wxWindColor(p.wind),flexShrink:0,minWidth:58,textAlign:"right"}}>{p.wind+" mph"+(p.dir?" "+p.dir:"")}</span></div>;})}</div>:null}
+          <div style={{fontSize:10.5,color:wxWindColor(dy.windMax),textAlign:"left"}}>{"Wind "+dy.windMax+" mph"+(dy.gustMax>dy.windMax?" (gusts to "+dy.gustMax+")":"")}</div>
+          <div style={{fontSize:10.5,color:dy.popMax>=50?C.blue:C.textSub,textAlign:"left"}}>{"Precip chance "+dy.popMax+"%"+(hasRain?" · "+dy.precipIn.toFixed(2)+`" expected`:"")}</div>
+          {hasSnow?<div style={{fontSize:10.5,color:C.blue,fontWeight:700,textAlign:"left"}}>{"Snow "+dy.snowIn.toFixed(1)+`" expected`}</div>:null}
+          <div style={{fontSize:10.5,color:C.textSub,textAlign:"left"}}>{"Freezing level "+dy.freezeMax.toLocaleString()+" ft"}</div>
+          {dy.nws?<div style={{fontSize:10,color:diverges?C.amber:C.textMuted,textAlign:"left",marginTop:5,paddingTop:5,borderTop:"1px solid "+C.border}}>{"NWS: High "+dy.nws.hi+"° · Low "+dy.nws.lo+"°"+(dy.nws.wind!=null?" · Wind "+dy.nws.wind+" mph":"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(diverges?" — sources differ by "+Math.round(Math.abs(nwsMid-omMid))+"°":"")}</div>:null}
+          {dy.met?<div style={{fontSize:10,color:metDiverges?C.amber:C.textMuted,textAlign:"left",marginTop:2}}>{"MET Norway: High "+dy.met.hi+"° · Low "+dy.met.lo+"°"+(dy.met.wind!=null?" · Wind "+dy.met.wind+" mph":"")+(dy.met.wx?" · "+dy.met.wx:"")+(metDiverges?" — sources differ by "+Math.round(Math.abs(metMid-omMid))+"°":"")}</div>:null}
+          {dy.hours&&dy.hours.length?<button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",marginTop:8,padding:"6px",borderRadius:8,border:"1px solid "+C.border,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:10.5,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>:null}
+          {isExpanded?<div style={{marginTop:7,maxHeight:220,overflowY:"auto",border:"1px solid "+C.border,borderRadius:8}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph);return <div key={hi} style={{display:"flex",alignItems:"center",gap:6,padding:"4px 8px",borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none",fontSize:10}}><span style={{width:44,flexShrink:0,color:C.textMuted,textAlign:"left"}}>{hourLabel(hh.hr)}</span><span style={{flex:1,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontWeight:700,color:wxTempColor(t),flexShrink:0}}>{t+"°"}</span><span style={{color:wxWindColor(wm),flexShrink:0,minWidth:60,textAlign:"right"}}>{wm+" mph "+(degToCompass(hh.dir)||"")}</span></div>;})}</div>:null}
         </div>;
       })}</div>}
     </div>;})}</div>
