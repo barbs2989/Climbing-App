@@ -3076,8 +3076,28 @@ function metWxLabel(code){
   if(s.indexOf("thunder")>=0)return "Thunderstorms";
   return s;
 }
+function pickForecastWaypoints(waypoints){
+  const wps=(waypoints||[]).filter(function(w){return w&&w.lat!=null&&w.lng!=null;});
+  const trailhead=wps.find(function(w){return w.type==="Trailhead";})||null;
+  const summit=wps.find(function(w){return w.type==="Summit"||w.type==="Topout";})||null;
+  const rest=wps.filter(function(w){return w!==trailhead&&w!==summit;});
+  const camps=rest.filter(function(w){return w.type==="Campsite";});
+  var mid=null;
+  if(camps.length){
+    mid=camps.slice().sort(function(a,b){return (b.elev||0)-(a.elev||0);})[0]; // the highest camp is the most useful mid-mountain read
+  }else if(rest.length){
+    const midElev=(trailhead&&trailhead.elev!=null&&summit&&summit.elev!=null)?(trailhead.elev+summit.elev)/2:null;
+    const midDist=(trailhead&&trailhead.distMi!=null&&summit&&summit.distMi!=null)?(trailhead.distMi+summit.distMi)/2:null;
+    mid=rest.slice().sort(function(a,b){
+      const sa=midElev!=null&&a.elev!=null?Math.abs(a.elev-midElev):(midDist!=null&&a.distMi!=null?Math.abs(a.distMi-midDist)*1000:99999);
+      const sb=midElev!=null&&b.elev!=null?Math.abs(b.elev-midElev):(midDist!=null&&b.distMi!=null?Math.abs(b.distMi-midDist)*1000:99999);
+      return sa-sb;
+    })[0]; // no camp on the route — fall back to whichever waypoint sits closest to the trailhead/summit midpoint
+  }
+  return [trailhead,mid,summit].filter(Boolean);
+}
 function WeatherPanel({waypoints}){
-  const points=(waypoints||[]).filter(function(w){return ["Trailhead","Campsite","Summit"].indexOf(w.type)>=0&&w.lat!=null&&w.lng!=null;});
+  const points=pickForecastWaypoints(waypoints);
   const [data,setData]=useState({});
   const [expandedDay,setExpandedDay]=useState({});
   const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
