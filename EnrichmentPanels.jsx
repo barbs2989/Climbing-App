@@ -41,7 +41,7 @@ export function splitParagraphs(text) {
   return paras.filter(Boolean);
 }
 
-function monthRank(name){
+export function monthRank(name){
   const n=String(name).trim().toLowerCase();
   const full=["january","february","march","april","may","june","july","august","september","october","november","december"];
   let i=full.indexOf(n);
@@ -56,12 +56,6 @@ export function SeasonalGuidancePanel({route, C, ActionIcon}) {
   const {optimalWindow, monthBreakdown} = route.seasonalGuidance;
   const sortedMonths = monthBreakdown ? Object.entries(monthBreakdown).sort((a,b)=>monthRank(a[0])-monthRank(b[0])) : [];
   return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><div style={{fontSize:14,fontWeight:700,color:C.text,marginBottom:10,display:"flex",alignItems:"center",gap:7}}><ActionIcon name="calendar" size={16} color={C.text}/><span>SEASONAL GUIDANCE</span></div>{optimalWindow?<div style={{background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"10px 12px",marginBottom:12}}><div style={{fontSize:11.5,fontWeight:700,color:C.green,marginBottom:3}}>Optimal window</div><div style={{fontSize:13,color:C.text}}>{optimalWindow}</div></div>:null}{sortedMonths.length?<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>{sortedMonths.map(([month,info])=>{const colors={optimal:[C.green,C.greenBg],good:[C.blue,C.blueBg],marginal:[C.amber,C.amberBg],risky:[C.red,C.redBg]};const [col,bg]=colors[info.status]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:12,fontWeight:700,color:col}}>{month}</div><div style={{fontSize:11,color:C.textSub,marginTop:2}}>{info.status}</div></div>;})}</div>:null}</div>;
-}
-
-export function HazardsDetailPanel({route, C, ActionIcon}) {
-  if (!route.seasonalHazards) return null;
-  const {avalanche, weather, crevasses, exposure} = route.seasonalHazards;
-  return <div style={{background:C.card,border:"1px solid "+C.redDim,borderRadius:12,padding:"13px 15px",marginBottom:13}}><div style={{fontSize:14,fontWeight:700,color:C.red,marginBottom:3,display:"flex",alignItems:"center",gap:7}}><ActionIcon name="alert" size={16} color={C.red}/><span>SEASONAL AVALANCHE & WEATHER OUTLOOK</span></div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:10}}>Month-by-month planning reference — see Known Hazards above for live, community-reported conditions.</div>{avalanche?<div style={{marginBottom:14}}><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:3,display:"flex",alignItems:"center",gap:6}}><ActionIcon name="mountain" size={14} color={C.text}/><span>Avalanche</span></div>{avalanche.zone?<div style={{fontSize:12,color:C.textMuted,marginBottom:8}}>Zone: {avalanche.zone}</div>:null}<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>{Object.entries(avalanche.byMonth||{}).sort((a,b)=>monthRank(a[0])-monthRank(b[0])).map(([month,level])=>{const colors={Considerable:[C.red,C.redBg],Moderate:[C.amber,C.amberBg],Low:[C.green,C.greenBg]};const [col,bg]=colors[level]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:8,padding:"6px 8px"}}><div style={{fontSize:11.5,fontWeight:700,color:col}}>{month}</div><div style={{fontSize:10.5,color:C.textSub}}>{level}</div></div>;})}</div></div>:null}{weather?<div><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:3,display:"flex",alignItems:"center",gap:6}}><ActionIcon name="alert" size={14} color={C.text}/><span>Weather</span></div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:3}}>{weather.typical}</div>{weather.probability?<div style={{fontSize:12,color:C.amber,fontWeight:700,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"6px 10px"}}>{weather.probability}</div>:null}</div>:null}</div>;
 }
 
 export function CrowdsPanel({route, C, ActionIcon}) {
