@@ -1,0 +1,1131 @@
+{
+  "routes": [
+    {
+      "id": "constance-finger-traverse",
+      "peak_name": "Mount Constance",
+      "region": "Olympic Mountains, Washington",
+      "elevation_ft": 7743,
+      "route_name": "Finger Traverse",
+      "route_grade": "Grade III",
+      "rock_grade": "Class 3",
+      "gps_coordinates": {
+        "latitude": 47.77,
+        "longitude": -123.13
+      },
+      "trailhead": {
+        "name": "Dosewallips River Road",
+        "location": "~11 miles south from Brinnon on US-101",
+        "elevation_ft": 1400,
+        "gps_coordinates": {
+          "latitude": 47.82,
+          "longitude": -123.10
+        }
+      },
+      "lake_camp": {
+        "name": "Lake Constance",
+        "elevation_ft": 4665
+      },
+      "approach": {
+        "total_distance_miles": 10,
+        "total_time_hours": 2.5,
+        "segments": [
+          {
+            "type": "Abandoned road (bikeable)",
+            "distance_miles": 5,
+            "terrain": "Abandoned road"
+          },
+          {
+            "type": "Trail and scramble to lake",
+            "distance_miles": 2.2,
+            "terrain": "Talus, scree, scrambling through Avalanche Canyon"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": "Multiple with belay stations",
+        "crux_grade": "Class 3",
+        "crux_description": "Downsloping ledge with fingers jammed in horizontal crack",
+        "key_feature": "Exposed ledge traverse with significant commitment",
+        "rock_type": "Mixed rock, good holds on slab",
+        "rock_snow_ice_mix": {
+          "rock_percent": 80,
+          "snow_percent": 15,
+          "ice_percent": 5
+        }
+      },
+      "hazards": [
+        {
+          "type": "Exposure",
+          "severity": "Severe",
+          "description": "Cliff below ledge, fatal fall potential"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "High",
+          "description": "From dislodged rocks and other climbers"
+        },
+        {
+          "type": "Route-finding",
+          "severity": "Moderate",
+          "description": "Complexity in poor visibility"
+        },
+        {
+          "type": "Avalanche",
+          "severity": "Moderate",
+          "description": "Potential in snow conditions"
+        }
+      ],
+      "gear_requirements": [
+        "50m rope (essential)",
+        "Ice axe",
+        "Crampons",
+        "Small to medium rock rack (pitons, chocks available on route)",
+        "The ten essentials",
+        "Bivy gear"
+      ],
+      "time_estimates": {
+        "approach_hours": 2.5,
+        "climbing_hours": 4.5,
+        "descent_hours": 1.75,
+        "total_hours": 8.75,
+        "total_hours_with_return": 12
+      },
+      "descent": {
+        "name": "South Chute descent",
+        "type": "Scree descent",
+        "destination": "Avalanche Canyon",
+        "time_hours": 1.75
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September",
+        "peak_months": ["August", "September"]
+      }
+    },
+    {
+      "id": "constance-west-arete",
+      "peak_name": "Mount Constance",
+      "region": "Olympic Mountains, Washington",
+      "elevation_ft": 7743,
+      "route_name": "West Arête",
+      "route_grade": "Grade III",
+      "rock_grade": "5.4",
+      "gps_coordinates": {
+        "latitude": 47.77,
+        "longitude": -123.13
+      },
+      "trailhead": {
+        "name": "Dosewallips River Road",
+        "location": "~11 miles south from Brinnon on US-101",
+        "elevation_ft": 1400
+      },
+      "lake_camp": {
+        "name": "Lake Constance",
+        "elevation_ft": 4665
+      },
+      "approach": {
+        "total_distance_miles": 10,
+        "total_time_hours": 2.5,
+        "segments": [
+          {
+            "type": "Abandoned road (bikeable)",
+            "distance_miles": 5
+          },
+          {
+            "type": "Trail to Lake Constance",
+            "distance_miles": 2.2,
+            "terrain": "Talus, scree, scrambling"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": "Multi-pitch",
+        "crux_grade": "5.4",
+        "crux_description": "Traversing up and right on a groove",
+        "crux_time_of_day": "~10:30 AM start typical",
+        "route_type": "Arete climb, mostly Class 2-3 with occasional 4th/low 5th steps",
+        "key_feature": "Multi-pitch arete with established belay anchors",
+        "belay_stations": "Two pitons and chock stone available at main belay",
+        "rock_type": "Solid granite",
+        "rock_snow_ice_mix": {
+          "rock_percent": 85,
+          "snow_percent": 10,
+          "ice_percent": 5
+        }
+      },
+      "hazards": [
+        {
+          "type": "Route-finding",
+          "severity": "High",
+          "description": "Map nearly useless, complex navigation"
+        },
+        {
+          "type": "Exposure",
+          "severity": "Moderate-High",
+          "description": "Exposed ridge sections with scree"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "Moderate",
+          "description": "Potential on shared terrain"
+        }
+      ],
+      "gear_requirements": [
+        "50m rope",
+        "Small to medium traditional rack (trad)",
+        "Ice axe",
+        "Crampons",
+        "Bivy gear"
+      ],
+      "time_estimates": {
+        "approach_hours": 2.5,
+        "climbing_hours": 3.5,
+        "descent_hours": 1.5,
+        "total_hours": 7.5,
+        "range_hours": "9-11"
+      },
+      "descent": {
+        "name": "South Chute scree descent",
+        "type": "Scree descent",
+        "time_hours": 1.5
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September"
+      }
+    },
+    {
+      "id": "constance-terrible-traverse",
+      "peak_name": "Mount Constance",
+      "region": "Olympic Mountains, Washington",
+      "elevation_ft": 7743,
+      "route_name": "Terrible Traverse",
+      "route_grade": "Grade III",
+      "rock_grade": "Class 2-3",
+      "gps_coordinates": {
+        "latitude": 47.77,
+        "longitude": -123.13
+      },
+      "trailhead": {
+        "name": "Dosewallips River Road",
+        "elevation_ft": 1400
+      },
+      "lake_camp": {
+        "name": "Lake Constance",
+        "elevation_ft": 4665
+      },
+      "approach": {
+        "total_distance_miles": 10,
+        "total_time_hours": 2.5
+      },
+      "route_beta": {
+        "pitches": "Single long traverse",
+        "crux_grade": "Class 2-3",
+        "crux_description": "Precipitous snow cirque crossing",
+        "route_type": "Snow/ice traverse",
+        "key_feature": "Severe exposure, directly above 500+ foot cliff",
+        "exposure_rating": "Severe",
+        "rock_snow_ice_mix": {
+          "rock_percent": 5,
+          "snow_percent": 60,
+          "ice_percent": 35
+        }
+      },
+      "hazards": [
+        {
+          "type": "Avalanche",
+          "severity": "Critical",
+          "description": "Severe risk in poor snow conditions"
+        },
+        {
+          "type": "Exposure",
+          "severity": "Fatal",
+          "description": "Directly above 500+ foot cliff, fatal fall potential"
+        },
+        {
+          "type": "Snow quality",
+          "severity": "High",
+          "description": "Highly variable - can be icy, slushy, or unstable"
+        },
+        {
+          "type": "Weather",
+          "severity": "Moderate-High",
+          "description": "Exposure on open cirque"
+        }
+      ],
+      "gear_requirements": [
+        "50m rope",
+        "Ice axe",
+        "Crampons",
+        "Avalanche beacon, shovel, probe (essential in snow season)",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "traverse_hours": 1,
+        "total_hours": "Variable based on snow conditions"
+      },
+      "alternatives": [
+        {
+          "route": "Finger Traverse",
+          "reason": "Class 3 on rock, more exposed but safer than snow traverse"
+        },
+        {
+          "route": "North Chute bypass",
+          "reason": "Scramble around traverse"
+        }
+      ],
+      "descent": {
+        "name": "South Chute or reverse",
+        "type": "Scree or snow descent"
+      },
+      "season": {
+        "start_month": "August",
+        "end_month": "September",
+        "note": "Snow conditions critical - avoid if avalanche-prone"
+      }
+    },
+    {
+      "id": "shuksan-fisher-chimneys",
+      "peak_name": "Mount Shuksan",
+      "region": "North Cascades, Washington",
+      "elevation_ft": 9127,
+      "route_name": "Fisher Chimneys",
+      "route_grade": "Grade III Alpine",
+      "rock_grade": "4th Class YDS, 5.2-5.3",
+      "gps_coordinates": {
+        "latitude": 48.83109,
+        "longitude": -121.60294
+      },
+      "trailhead": {
+        "name": "Lake Ann Trail",
+        "location": "Above Mt. Baker Ski Resort",
+        "elevation_ft": 1800,
+        "gps_coordinates": {
+          "latitude": 48.74,
+          "longitude": -121.71
+        }
+      },
+      "high_camp": {
+        "name": "Baker Pass or Lake Camp",
+        "elevation_ft": 6500
+      },
+      "approach": {
+        "total_distance_miles": 8,
+        "total_time_hours": 2.5,
+        "elevation_gain_ft": 4000,
+        "segments": [
+          {
+            "type": "Lake trail",
+            "terrain": "Well-established alpine trail"
+          },
+          {
+            "type": "Alpine meadow to glacier",
+            "terrain": "Tundra, talus, glacier approach"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": "Multiple pitches through chimney sections",
+        "crux_grade": "5.3",
+        "crux_description": "Steep, exposed chimney system",
+        "route_type": "Trad, ice, snow, alpine multi-pitch",
+        "climbing_type": "Mixed rock scrambling (3rd-4th class) with exposed chimneys",
+        "glaciers_crossed": ["White Salmon Glacier", "Upper Curtis Glacier", "Sulphide Glacier"],
+        "rock_snow_ice_mix": {
+          "rock_percent": 30,
+          "snow_percent": 40,
+          "ice_percent": 30
+        }
+      },
+      "hazards": [
+        {
+          "type": "Crevasse fields",
+          "severity": "High",
+          "description": "Multiple glacier crossings"
+        },
+        {
+          "type": "Moat crossings",
+          "severity": "Moderate-High",
+          "description": "At glacier margins"
+        },
+        {
+          "type": "Route-finding",
+          "severity": "Moderate",
+          "description": "Difficult despite straightforward appearance"
+        },
+        {
+          "type": "Exposure",
+          "severity": "Moderate-High",
+          "description": "Narrow traverses in chimney sections"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "Moderate",
+          "description": "From loose rock"
+        },
+        {
+          "type": "Ice conditions",
+          "severity": "Moderate",
+          "description": "Winnie's Slide becomes icy late season"
+        }
+      ],
+      "gear_requirements": [
+        "Crampons",
+        "Ice axe",
+        "50-60m rope (glacier travel, rappels)",
+        "Ice screws",
+        "Second ice tool (if icy conditions)",
+        "Full traditional rock climbing rack",
+        "Crevasse rescue kit",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "approach_hours": 2.5,
+        "high_camp_approach_hours": "6-8",
+        "climbing_hours": 5,
+        "descent_hours": 3.5,
+        "total_hours": "12-14",
+        "recommended_days": "2-3"
+      },
+      "descent": {
+        "name": "Reverse ascent with rappels",
+        "type": "Established rappel stations through chimneys",
+        "time_hours": 3.5
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September",
+        "peak_months": ["August"]
+      }
+    },
+    {
+      "id": "forbidden-west-ridge",
+      "peak_name": "Forbidden Peak",
+      "region": "North Cascades National Park, Washington",
+      "elevation_ft": 8815,
+      "route_name": "West Ridge",
+      "route_grade": "Grade III",
+      "rock_grade": "5.6",
+      "gps_coordinates": {
+        "latitude": 48.47,
+        "longitude": -121.31
+      },
+      "trailhead": {
+        "name": "Boston Basin area",
+        "region": "North Cascades National Park"
+      },
+      "high_camp": {
+        "name": "Boston Glacier Camp",
+        "elevation_ft": 7200
+      },
+      "approach": {
+        "total_time_hours": "6-8",
+        "terrain": "Glacier and snow gully approach",
+        "elevation_gain_ft": 2000,
+        "segments": [
+          {
+            "type": "Trail to Boston Basin",
+            "terrain": "Alpine meadow, talus"
+          },
+          {
+            "type": "Glacier approach",
+            "terrain": "Boston Glacier travel"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": "Multiple 5th class sections",
+        "crux_grade": "5.6",
+        "route_type": "Rock, snow, ice alpine",
+        "climbing_profile": "Low 5th class rock with 40-50 degree snow/ice sections",
+        "crux_terrain": "West Ridge Couloir with exposed rock",
+        "rock_snow_ice_mix": {
+          "rock_percent": 35,
+          "snow_percent": 40,
+          "ice_percent": 25
+        }
+      },
+      "hazards": [
+        {
+          "type": "Weather",
+          "severity": "High",
+          "description": "Incoming afternoon weather typical"
+        },
+        {
+          "type": "Exposure",
+          "severity": "High",
+          "description": "On rock ridge sections"
+        },
+        {
+          "type": "Snow/ice conditions",
+          "severity": "Moderate-High",
+          "description": "Highly variable"
+        },
+        {
+          "type": "Commitment",
+          "severity": "High",
+          "description": "Long day with high commitment"
+        }
+      ],
+      "gear_requirements": [
+        "Rock climbing rack (traditional)",
+        "Ice axe",
+        "Crampons",
+        "50m rope",
+        "Protection for 5.6 climbing",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "approach_hours": 2.5,
+        "climbing_hours": 4.5,
+        "descent_hours": 2.5,
+        "total_hours": "10-12",
+        "start_time": "Pre-dawn start typical"
+      },
+      "descent": {
+        "name": "Reverse route descent",
+        "type": "Down-climb 5th class and rappels",
+        "time_hours": 2.5
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September",
+        "peak_months": ["August", "September"]
+      }
+    },
+    {
+      "id": "goode-northeast-buttress",
+      "peak_name": "Mount Goode",
+      "region": "North Cascades National Park, Washington",
+      "elevation_ft": 9200,
+      "designation": "Highest peak in North Cascades NP",
+      "notable_feature": "Cannot be viewed from any road",
+      "route_name": "Northeast Buttress",
+      "route_grade": "Grade III-IV",
+      "rock_grade": "5.4-5.5",
+      "gps_coordinates": {
+        "latitude": 48.51,
+        "longitude": -121.18
+      },
+      "trailhead": {
+        "name": "Bridge Creek Trailhead",
+        "location": "North Cascades Highway, Bridge Creek area",
+        "elevation_ft": 2000
+      },
+      "high_camp": {
+        "name": "Upper Bridge Creek Basin",
+        "elevation_ft": 6500
+      },
+      "approach": {
+        "total_distance_miles": 13,
+        "total_time_hours": "10-12",
+        "elevation_gain_ft": 4500,
+        "terrain": "Flat and gradual downhill hiking to alpine basin",
+        "description": "Long approach on good trail"
+      },
+      "route_beta": {
+        "pitches": "2000+ feet of climbing",
+        "crux_grade": "5.4-5.5",
+        "climbing_type": "Mostly 3rd-4th class with 5th class mixed sections",
+        "route_type": "Alpine rock multi-pitch",
+        "rock_quality": "Alpine rock, varied quality",
+        "rock_snow_ice_mix": {
+          "rock_percent": 70,
+          "snow_percent": 20,
+          "ice_percent": 10
+        }
+      },
+      "hazards": [
+        {
+          "type": "Remoteness",
+          "severity": "High",
+          "description": "Difficult rescue"
+        },
+        {
+          "type": "Route-finding",
+          "severity": "Moderate-High",
+          "description": "Complex alpine terrain navigation"
+        },
+        {
+          "type": "Weather exposure",
+          "severity": "Moderate-High",
+          "description": "High altitude exposure"
+        },
+        {
+          "type": "Loose rock",
+          "severity": "Moderate",
+          "description": "Potential hazard on alpine terrain"
+        }
+      ],
+      "gear_requirements": [
+        "Full rock climbing rack",
+        "Alpine gear (crampons, ice axe if snow)",
+        "50-60m rope",
+        "Protection for 5.4-5.5 climbing",
+        "Comprehensive ten essentials",
+        "Bivvy sack"
+      ],
+      "time_estimates": {
+        "approach_day_hours": "10-12",
+        "summit_day_hours": "6-8",
+        "total_hours": "16-20",
+        "recommended_days": "3-4"
+      },
+      "descent": {
+        "type": "Reverse route or alternate descent",
+        "terrain": "3rd-4th class down-climb"
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September"
+      }
+    },
+    {
+      "id": "eldorado-peak",
+      "peak_name": "Eldorado Peak",
+      "region": "North Cascades National Park, Washington",
+      "elevation_ft": 8868,
+      "route_name": "Standard Route via Eldorado Lake",
+      "route_grade": "Grade II-III",
+      "rock_grade": "Class 3-4",
+      "gps_coordinates": {
+        "latitude": 48.43,
+        "longitude": -121.26
+      },
+      "trailhead": {
+        "name": "Eldorado Lake Trail",
+        "elevation_ft": 3500
+      },
+      "high_camp": {
+        "name": "Eldorado Lake",
+        "elevation_ft": 5400
+      },
+      "approach": {
+        "total_distance_miles": 4,
+        "total_time_hours": "5-7",
+        "elevation_gain_ft": 4000,
+        "to_camp": "5-7 hours to high camp",
+        "terrain": "Trail to lake, then talus and boulders"
+      },
+      "route_beta": {
+        "grade": "Grade II-III (easy alpine)",
+        "climbing_type": "Glacier and rock terrain",
+        "final_pitch": "Rock scramble to summit (100 ft)",
+        "crux_grade": "Class 3-4 rock",
+        "notable_feature": "Spectacular knife-edge summit ridge (snow-covered)",
+        "route_profile": "From 5,400 ft camp, climb slabs to 5,800 ft col, drop 150 ft into basin, cross Colonial Glacier, final ridge scramble",
+        "rock_snow_ice_mix": {
+          "rock_percent": 20,
+          "snow_percent": 30,
+          "ice_percent": 50
+        }
+      },
+      "hazards": [
+        {
+          "type": "Weather",
+          "severity": "High",
+          "description": "Highly variable, afternoon thunderstorms common"
+        },
+        {
+          "type": "Route-finding",
+          "severity": "Moderate-High",
+          "description": "Critical to success"
+        },
+        {
+          "type": "Loose rock",
+          "severity": "Moderate",
+          "description": "On ridge, helmets recommended"
+        },
+        {
+          "type": "Crevasses",
+          "severity": "Moderate",
+          "description": "Glacier hazards if snow-covered"
+        },
+        {
+          "type": "Physical strain",
+          "severity": "Moderate",
+          "description": "Grueling terrain, uneven boulder scramble"
+        }
+      ],
+      "gear_requirements": [
+        "Crampons",
+        "Ice axe",
+        "50m rope (glacier travel)",
+        "Helmet",
+        "Light rock rack (optional)",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "approach_to_camp_hours": "5-7",
+        "camp_to_summit_hours": "3-5",
+        "descent_hours": "2-3",
+        "total_hours": "10-15",
+        "recommended_days": "1-2"
+      },
+      "descent": {
+        "type": "Reverse route",
+        "terrain": "Talus, boulder, glacier descent",
+        "time_hours": "2-3"
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "October"
+      }
+    },
+    {
+      "id": "mixup-east-face",
+      "peak_name": "Mixup Peak",
+      "region": "North Cascades, Washington (Cascade Pass area)",
+      "elevation_ft": 7440,
+      "location_detail": "1 mile south of Cascade Pass, North Cascades NP / Glacier Peak Wilderness border",
+      "route_name": "East Face",
+      "route_grade": "Grade III",
+      "rock_grade": "3rd-Mid-5th Class",
+      "gps_coordinates": {
+        "latitude": 48.54,
+        "longitude": -121.21
+      },
+      "trailhead": {
+        "name": "Cascade River Road (Forest Road 15) / Cascade Pass Trailhead",
+        "location": "Cascade River Road",
+        "elevation_ft": 3600,
+        "distance_to_pass_miles": 22.3,
+        "gps_coordinates": {
+          "latitude": 48.5,
+          "longitude": -121.26
+        }
+      },
+      "pass_location": {
+        "name": "Cascade Pass",
+        "elevation_ft": 5392
+      },
+      "approach": {
+        "total_distance_miles": 7,
+        "total_time_hours": "3-4",
+        "to_cascade_pass_miles": 3.5,
+        "to_cascade_pass_hours": "1.5-2",
+        "to_mixup_arm_miles": 3.5,
+        "to_mixup_arm_hours": "2-2.5",
+        "elevation_gain_ft": 2000,
+        "terrain": "Well-traveled trail to Cascade Pass, then traverse to Mixup Arm",
+        "segments": [
+          {
+            "type": "Cascade Pass Trail",
+            "distance_miles": 3.5,
+            "elevation_gain_ft": 1792,
+            "time_hours": "1.5-2"
+          },
+          {
+            "type": "Traverse to Mixup Arm",
+            "distance_miles": 3.5,
+            "terrain": "Alpine traverse, glacier/snow travel"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": "Multiple short pitches",
+        "crux_grade": "Mid-5th class",
+        "route_type": "Rock scramble from glacier",
+        "climbing_profile": "Bench at ~6,000 ft southeast to glacier/snow field, then rock scramble to summit",
+        "route_finding": "Complex alpine route-finding",
+        "rock_snow_ice_mix": {
+          "rock_percent": 40,
+          "snow_percent": 35,
+          "ice_percent": 25
+        }
+      },
+      "hazards": [
+        {
+          "type": "Route-finding",
+          "severity": "High",
+          "description": "Complex alpine navigation"
+        },
+        {
+          "type": "Weather exposure",
+          "severity": "Moderate-High",
+          "description": "Open face exposure"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "Moderate",
+          "description": "Potential on rock sections"
+        },
+        {
+          "type": "Snow/ice conditions",
+          "severity": "Moderate",
+          "description": "Seasonal hazards on glacier approach"
+        }
+      ],
+      "gear_requirements": [
+        "Rock rack (minimal - mostly scrambling)",
+        "Crampons (seasonal)",
+        "Ice axe (seasonal)",
+        "50m rope (optional for glacier)",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "approach_to_pass_hours": 1.75,
+        "pass_to_summit_hours": "3-5",
+        "total_hours": "7-9",
+        "total_day": "Full day from trailhead"
+      },
+      "descent": {
+        "type": "Reverse route",
+        "terrain": "Alpine traverse and trail descent",
+        "time_hours": "2-3"
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September"
+      }
+    },
+    {
+      "id": "sahale-mountain",
+      "peak_name": "Sahale Mountain",
+      "region": "North Cascades National Park, Washington",
+      "elevation_ft": 8680,
+      "location_detail": "Cascade Pass area",
+      "route_name": "Standard Route via Cascade Pass and Sahale Glacier",
+      "route_grade": "Grade III",
+      "rock_grade": "Class 3",
+      "gps_coordinates": {
+        "latitude": 48.54,
+        "longitude": -121.22
+      },
+      "trailhead": {
+        "name": "Cascade Pass Trailhead",
+        "elevation_ft": 3600
+      },
+      "pass_location": {
+        "name": "Cascade Pass",
+        "elevation_ft": 5400
+      },
+      "high_camp": {
+        "name": "Sahale Glacier Camp",
+        "elevation_ft": 7600
+      },
+      "approach": {
+        "total_distance_miles": 6,
+        "total_time_hours": "8-9",
+        "to_cascade_pass_miles": 3.7,
+        "to_pass_time_hours": "2-2.5",
+        "pass_to_camp_miles": 2.2,
+        "camp_approach_time_hours": "1.5-2",
+        "elevation_gain_ft": 3300,
+        "total_elevation_gain_to_camp_ft": 3300,
+        "segments": [
+          {
+            "type": "Trail to Cascade Pass",
+            "distance_miles": 3.7,
+            "terrain": "Well-established alpine trail"
+          },
+          {
+            "type": "Cascade Pass to Sahale Glacier Camp",
+            "distance_miles": 2.2,
+            "terrain": "Ridge, glacier, rock"
+          }
+        ]
+      },
+      "route_beta": {
+        "grade": "III (beginner alpine)",
+        "climbing_type": "3rd class rock scramble (final 100 ft)",
+        "route_profile": "Sahale Glacier ascent to ridge west of summit",
+        "final_push": "Short rock scramble to summit",
+        "rock_quality": "Solid granite",
+        "rock_snow_ice_mix": {
+          "rock_percent": 30,
+          "snow_percent": 35,
+          "ice_percent": 35
+        }
+      },
+      "hazards": [
+        {
+          "type": "Weather variability",
+          "severity": "Moderate-High",
+          "description": "Highly changeable conditions"
+        },
+        {
+          "type": "Crevasses",
+          "severity": "Moderate",
+          "description": "Glacier crevasses, rope recommended"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "Moderate",
+          "description": "On ridge section"
+        },
+        {
+          "type": "Exposure",
+          "severity": "Moderate",
+          "description": "On ridge near summit"
+        }
+      ],
+      "gear_requirements": [
+        "Crampons",
+        "Ice axe",
+        "50m rope (glacier travel essential)",
+        "Light rock rack (optional)",
+        "The ten essentials",
+        "Crevasse rescue kit"
+      ],
+      "time_estimates": {
+        "approach_to_cascade_pass_hours": 2.25,
+        "pass_to_camp_hours": 1.75,
+        "total_approach_hours": "5-6",
+        "camp_to_summit_hours": "2-3",
+        "descent_hours": "1.5-2",
+        "total_hours": "10-14",
+        "recommended_days": "1-2",
+        "notes": "Day hike possible with early start, overnight recommended"
+      },
+      "descent": {
+        "type": "Reverse route",
+        "terrain": "Glacier and ridge descent",
+        "time_hours": "1.5-2"
+      },
+      "permits_required": {
+        "day_hike": "No permit needed",
+        "overnight": "Backcountry permit required"
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "October",
+        "peak_months": ["August", "September"]
+      }
+    },
+    {
+      "id": "stuart-north-ridge",
+      "peak_name": "Mount Stuart",
+      "region": "Central-East Cascades, Washington",
+      "elevation_ft": 9415,
+      "designation": "Highest non-volcanic peak in Washington",
+      "route_name": "North Ridge",
+      "route_grade": "Grade III-IV",
+      "rock_grade": "Solid 5.9",
+      "overall_grade_range": "5.5-5.9",
+      "gps_coordinates": {
+        "latitude": 47.9,
+        "longitude": -121.1
+      },
+      "trailhead": {
+        "name": "Stuarts Lake/Goat Pass area",
+        "elevation_ft": 4000
+      },
+      "high_camp": {
+        "name": "Goat Pass Camp",
+        "elevation_ft": 6500
+      },
+      "approach": {
+        "total_distance_miles": 5,
+        "total_time_hours": "5-6",
+        "elevation_gain_ft": 2500,
+        "terrain": "Trail and scramble to high camp",
+        "segments": [
+          {
+            "type": "Trail to Goat Pass",
+            "terrain": "Established trail, some scrambling"
+          }
+        ]
+      },
+      "route_beta": {
+        "pitches": 15,
+        "crux_grade": "5.9",
+        "crux_section": "Great Gendarme at ~2/3 height",
+        "crux_pitches": 2,
+        "crux_description": "Two pitches of solid 5.9 rock",
+        "route_type": "Knife-edge ridge, exposed alpine multi-pitch",
+        "climbing_profile": "Knife-edge terrain with 5.5-5.6 approach pitches, crux gendarme, then exposed ridge scrambling",
+        "rock_quality": "High-quality granite, mostly solid",
+        "rock_snow_ice_mix": {
+          "rock_percent": 85,
+          "snow_percent": 10,
+          "ice_percent": 5
+        }
+      },
+      "hazards": [
+        {
+          "type": "Exposure",
+          "severity": "High",
+          "description": "Knife-edge terrain, fatal fall potential"
+        },
+        {
+          "type": "Weather",
+          "severity": "High",
+          "description": "High altitude exposure to storms"
+        },
+        {
+          "type": "Rockfall",
+          "severity": "Moderate",
+          "description": "From upper sections"
+        },
+        {
+          "type": "Rope management",
+          "severity": "Moderate",
+          "description": "Rope drag on ridge sections"
+        }
+      ],
+      "gear_requirements": [
+        "Full traditional rock climbing rack (medium to large pieces)",
+        "60m rope recommended (two ropes for descents)",
+        "Ice axe (seasonal)",
+        "Crampons (seasonal)",
+        "Second tool for ice climbing (if conditions warrant)",
+        "The ten essentials",
+        "Bivvy sack"
+      ],
+      "time_estimates": {
+        "approach_to_camp_hours": "5-6",
+        "climbing_hours": "6-8",
+        "descent_hours": "2-3",
+        "total_hours": "13-17",
+        "recommended_days": "2 minimum",
+        "notes": "Most ascents require 2 days; experienced teams might do it in 1"
+      },
+      "descent": {
+        "type": "Down-climb 4th class terrain on southwest side with rappels",
+        "terrain": "Exposed 4th class down-climbing",
+        "time_hours": "2-3"
+      },
+      "season": {
+        "start_month": "June",
+        "end_month": "October",
+        "peak_months": ["July", "August", "September"]
+      }
+    },
+    {
+      "id": "snowfield-peak",
+      "peak_name": "Snowfield Peak",
+      "region": "North Cascades National Park, Washington",
+      "elevation_ft": 7551,
+      "route_name": "Standard Route via Colonial Glacier",
+      "route_grade": "Grade III",
+      "rock_grade": "Class 3-4",
+      "gps_coordinates": {
+        "latitude": 48.39,
+        "longitude": -121.32
+      },
+      "trailhead": {
+        "name": "Pyramid Lake Trail",
+        "elevation_ft": 3400
+      },
+      "high_camp": {
+        "name": "Pyramid Lake Camp",
+        "elevation_ft": 5400
+      },
+      "approach": {
+        "total_distance_miles": 2.5,
+        "total_time_hours": "3-4",
+        "to_lake_miles": 2,
+        "to_lake_hours": "1.5-2",
+        "lake_elevation_ft": 5400,
+        "terrain": "Trail, alpine meadow, glacier",
+        "segments": [
+          {
+            "type": "Trail to Pyramid Lake",
+            "distance_miles": 2,
+            "terrain": "Established trail"
+          },
+          {
+            "type": "Lake to high camp",
+            "terrain": "Alpine meadow and talus"
+          }
+        ]
+      },
+      "route_beta": {
+        "grade": "Grade III (alpine)",
+        "climbing_type": "Glacier and rock scramble",
+        "route_profile": "From 5,400 ft camp: climb slabs to 5,800 ft col, drop 150 ft into basin, cross Colonial Glacier to 6,800+ ft pass, cross Névé Glacier to ridge west of summit",
+        "final_push": "100 ft to summit (class 3-4 rock, can be class 5 depending on line)",
+        "glacier_features": "Colonial Glacier, Névé Glacier crossing",
+        "rock_snow_ice_mix": {
+          "rock_percent": 20,
+          "snow_percent": 30,
+          "ice_percent": 50
+        }
+      },
+      "hazards": [
+        {
+          "type": "Crevasse fields",
+          "severity": "High",
+          "description": "Extensive on both glaciers"
+        },
+        {
+          "type": "Moat hazards",
+          "severity": "Moderate-High",
+          "description": "At glacier margins, worse in late season"
+        },
+        {
+          "type": "Loose rock",
+          "severity": "Moderate",
+          "description": "On final scramble"
+        },
+        {
+          "type": "Weather exposure",
+          "severity": "Moderate-High",
+          "description": "Open glacier terrain"
+        },
+        {
+          "type": "Route-finding",
+          "severity": "Moderate",
+          "description": "Navigating between glaciers and terrain"
+        }
+      ],
+      "gear_requirements": [
+        "Crampons",
+        "Ice axe",
+        "50m rope (glacier travel essential)",
+        "Crevasse rescue kit",
+        "Light rock rack (optional)",
+        "Helmet",
+        "The ten essentials"
+      ],
+      "time_estimates": {
+        "approach_to_lake_hours": "1.5-2",
+        "lake_to_camp_hours": "1.5-2",
+        "total_approach_hours": "4-6",
+        "camp_to_summit_hours": "4-6",
+        "descent_hours": "3-4",
+        "total_hours": "13-16",
+        "recommended_days": "2"
+      },
+      "descent": {
+        "type": "Reverse route through glaciers",
+        "terrain": "Glacier descent with crevasse hazards",
+        "time_hours": "3-4"
+      },
+      "season": {
+        "start_month": "July",
+        "end_month": "September"
+      }
+    }
+  ],
+  "metadata": {
+    "total_routes": 11,
+    "regions_covered": [
+      "Olympic Mountains",
+      "North Cascades National Park",
+      "North Cascades Wilderness",
+      "Glacier Peak Wilderness"
+    ],
+    "elevation_range_ft": {
+      "min": 7440,
+      "max": 9415
+    },
+    "grade_range": [
+      "Grade II-III",
+      "Grade III",
+      "Grade III-IV"
+    ],
+    "compilation_date": "2026-07-15",
+    "data_sources": [
+      "Mountain Project",
+      "The Mountaineers Foundation",
+      "Washington Trails Association",
+      "SummitPost",
+      "Alpine climbing guidebooks",
+      "Trip reports and first-hand accounts"
+    ],
+    "accuracy_notes": "Data compiled from multiple sources; field conditions vary seasonally. Always verify current conditions before ascending. Elevations approximate. GPS coordinates accurate to 0.01 degrees (~1 km). Hazard assessments reflect typical conditions; conditions vary with season and weather.",
+    "usage_recommendation": "This data is suitable for route planning, equipment lists, and time estimates. Always consult current guidebooks, weather forecasts, and condition reports before attempting any route. Some technical descriptions may require field verification."
+  }
+}

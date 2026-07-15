@@ -1,0 +1,102 @@
+{
+  "audit_date": "2026-07-15",
+  "verified_sources": {
+    "northwest_forest_pass": "https://www.fs.usda.gov/r06/passes",
+    "enchantment_lottery": "https://www.recreation.gov/permits/233273",
+    "okanogan_wenatchee_nf": "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes",
+    "wta_permits": "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+  },
+  "current_2026_fees_verified": {
+    "northwest_forest_pass_daily": {
+      "price": "$5",
+      "type": "Day pass",
+      "valid_where": "All USFS recreation sites in Oregon and Washington",
+      "current_ok": true
+    },
+    "northwest_forest_pass_annual": {
+      "price": "$30",
+      "type": "Annual pass",
+      "valid_where": "All USFS recreation sites in Oregon and Washington",
+      "note": "Valid for one year through end of month purchased",
+      "current_ok": true
+    },
+    "enchantment_lakes_overnight": {
+      "permit_fee": "$5/person/day",
+      "season": "May 15 - October 31",
+      "application_fee": "$6.00 (non-refundable)",
+      "group_limit": "8 people maximum",
+      "current_ok": true
+    },
+    "enchantment_lakes_dayuse": {
+      "price": "Free",
+      "permit_type": "Self-issued",
+      "locations": "Available at any of three trailheads",
+      "current_ok": true
+    }
+  },
+  "routes_audit_results": {
+    "Mt_Baker_Coleman_Glacier": {
+      "route_id": "baker_cd",
+      "current_ok": false,
+      "issues": [
+        "Fee description says 'Northwest Forest Pass (about $5/day or annual)' - missing specific annual price of $30",
+        "Should clarify the exact pricing structure for visitor clarity"
+      ],
+      "2026_corrected": {
+        "fees": "Northwest Forest Pass required: $5/day or $30/annual to park at Heliotrope Ridge"
+      }
+    }
+  },
+  "common_issues_found": {
+    "outdated_pricing": {
+      "description": "Some routes list 'about $5/day or annual' without specifying the $30 annual rate",
+      "impact": "Users may be uncertain about total pass cost for multi-day trips"
+    },
+    "missing_specific_limits": {
+      "description": "Enchantment Lakes group size (8 person max) should be emphasized in route descriptions",
+      "impact": "Parties larger than 8 may be turned away at lottery application"
+    }
+  },
+  "non_existent_fees": {
+    "ten_dollar_per_person_structure": {
+      "pattern_searched": "$10/person plus $6 non-refundable reservation",
+      "found": false,
+      "note": "This fee structure does not appear in official Wenatchee RD, Enchantments, or Alpine Lakes USFS fee schedules for 2026. This may have been historical pricing or a misrecording."
+    }
+  },
+  "alpine_lakes_area_verified_fees": {
+    "enchantments_overnight": {
+      "official_price": "$5/person/day + $6 lottery application fee (non-refundable)",
+      "season": "May 15 - Oct 31",
+      "lottery_dates_2026": "February 15 - March 1, 2026",
+      "current_ok": true,
+      "notes": "Day-use permits are FREE and self-issued"
+    },
+    "most_alpine_lakes_dayhikes": {
+      "pass_required": "Northwest Forest Pass",
+      "price": "$5/day or $30/annual",
+      "current_ok": true
+    }
+  },
+  "recommendations": {
+    "immediate_fixes": [
+      "Update Mt. Baker fee text from 'about $5/day or annual' to '$5/day or $30/annual'",
+      "For any Enchantment Lakes routes, clearly state: '$5/person/day + $6 non-refundable lottery application fee' with group size limit of 8"
+    ],
+    "verification_checklist": [
+      "Confirm all USFS routes specify $30 annual pass price (not just 'annual')",
+      "Remove any references to $10/person fees (not a current USFS rate)",
+      "Add lottery dates for Enchantments (Feb 15 - Mar 1 for current year)",
+      "Clarify day-use vs overnight permit differences"
+    ],
+    "research_gaps": [
+      "If $10/person fees appear in database routes, these should be verified against historical WTA archives or recreation.gov history",
+      "Some camp-specific fees (like certain campgrounds in the range) may have individual rates - verify site-by-site for accuracy"
+    ]
+  },
+  "data_quality_notes": {
+    "source_priority": "Official USFS and Recreation.gov websites are authoritative; WTA provides summaries for WA-specific context",
+    "update_frequency": "Fee schedules can change annually - recommend reviewing each January for spring updates",
+    "next_audit_recommended": "January 2027 for 2027 season fee verification"
+  }
+}
