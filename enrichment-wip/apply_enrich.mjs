@@ -94,6 +94,17 @@ async function patch(path, body){
   return r.status;
 }
 
+// Discipline for a brand-new route we're about to insert -- best-effort guess from the
+// grades the research actually found, since the routes table has no default.
+function guessDiscipline(rf) {
+  if (!empty(rf.alpineGrade)) return "alpine";
+  if (!empty(rf.iceGrade) && empty(rf.rockGrade)) return "ice";
+  if (!empty(rf.rockGrade) && empty(rf.iceGrade)) return "trad";
+  return "mountaineering";
+}
+
+let newRoutes=0, insertErrs=0, hierarchyFlags=0;
+
 const run = async () => {
  const peakIds = findings.map(f => f.peakId);
  const routeIds = findings.flatMap(f => (f.routes||[]).map(r => r.routeId));
@@ -105,9 +116,24 @@ const run = async () => {
    // peak blurb — gap-fill only
    const a = aById[pk.peakId];
    if (!a) { report.push("  ?? unknown/unfetched peakId "+pk.peakId); continue; }
+   if (pk.hierarchyCheck && pk.hierarchyCheck.nameMatchesCoords === false) {
+     hierarchyFlags++;
+     report.push("  !!! HIERARCHY FLAG "+pk.peakId+" ("+a.name+"): "+(pk.hierarchyCheck.note||"agent flagged a mismatch -- review before trusting this peak's data"));
+   }
    if (empty(a.blurb) && pk.blurb && pk.blurb.trim()) { const newBlurb=pk.blurb.trim(); await patch("areas?id=eq."+pk.peakId,{blurb:newBlurb}); a.blurb=newBlurb; blurbs++; }
    for (const rf of (pk.routes||[])) {
-     const r = rById[rf.routeId]; if (!r) { report.push("  ?? unknown/unfetched routeId "+rf.routeId); continue; }
+     let r = rById[rf.routeId];
+     if (!r && rf.isNewRoute && rf.routeName) {
+       // Brand-new route on an existing, already-correctly-placed peak area -- pure insert,
+       // nothing pre-existing is touched or overwritten.
+       const insertBody = { id: rf.routeId, area_id: pk.peakId, name: rf.routeName, discipline: guessDiscipline(rf), source: "wa-enrich-batch" };
+       const res = await fetch(url+"/rest/v1/routes", { method:"POST", headers:{...H, Prefer:"return=representation"}, body: JSON.stringify(insertBody) });
+       if (!res.ok) { insertErrs++; report.push("  !! INSERT FAILED "+rf.routeId+": "+res.status+" "+(await res.text()).slice(0,300)); continue; }
+       const [created] = await res.json();
+       r = created; rById[rf.routeId] = r;
+       newRoutes++; report.push("  + NEW ROUTE "+r.name+" ("+r.id+") on "+a.name);
+     }
+     if (!r) { report.push("  ?? unknown/unfetched routeId "+rf.routeId); continue; }
      const body = {}; const filled=[];
      for (const [cf, m] of Object.entries(MAP)) {
        const val = rf[cf];
@@ -137,8 +163,8 @@ const run = async () => {
  // refresh local staging snapshot from what we now believe is true, for reference only
  writeFileSync(RF, JSON.stringify({ routes: Object.values(rById) }, null, 1));
  writeFileSync(AF, JSON.stringify({ areas: Object.values(aById) }, null, 1));
- console.log("=== APPLIED (factual=override, prose=gap-fill, decisions based on LIVE data fetched just now) ===");
- console.log("peaks with new blurb:",blurbs,"| routes touched:",filledRoutes,"| fields written:",filledFields,"| DB errors:",dbErrs);
+ console.log("=== APPLIED (factual=override, prose=gap-fill, new routes=pure insert, decisions based on LIVE data fetched just now) ===");
+ console.log("peaks with new blurb:",blurbs,"| new routes created:",newRoutes,"| routes touched:",filledRoutes,"| fields written:",filledFields,"| DB errors:",dbErrs,"| insert errors:",insertErrs,"| hierarchy flags:",hierarchyFlags);
  console.log("\n=== fields written (by field) ===");
  Object.entries(fieldCount).sort((a,b)=>b[1]-a[1]).forEach(([k,n])=>console.log("  "+k.padEnd(14)+n));
  console.log("\n=== per-route (first 80) ===");
