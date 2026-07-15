@@ -40,14 +40,15 @@ update areas set parent_id = 'wa_chilliwack_range' where id in (
 
 -- ── 3. Pasayten Wilderness was split into two peak-bearing area rows under
 --      two different parents. Merge wa_pasayten_wilderness_region into the
---      canonical wa_pasayten. (A third "Pasayten Wilderness" row,
---      wa_pasayten_wilderness, holds only rock-climbing crags and is
---      intentionally left alone.)
---      wa_pasayten_wilderness_region is now empty (0 routes, 0 children) but
---      deliberately NOT deleted here — left for a separate explicit decision
---      since it's the one step in this fix that removes an area row rather
---      than just reparenting one.
+--      canonical wa_pasayten, then remove the now-empty duplicate. (A third
+--      "Pasayten Wilderness" row, wa_pasayten_wilderness, holds only
+--      rock-climbing crags and is intentionally left alone.)
+--      The delete was held back initially pending explicit user confirmation
+--      (checked: 0 routes, 0 children immediately before deleting) since it's
+--      the one step in this fix that removes an area row rather than just
+--      reparenting one -- confirmed by the user, applied live afterward.
 update areas set parent_id = 'wa_pasayten' where id = 'wa_blizzard_peak';
+delete from areas where id = 'wa_pasayten_wilderness_region';
 
 -- ── 4. Castle Peak (Pasayten) was misfiled under Picket Range — 25+ miles
 --      away geographically; it belongs in Pasayten Wilderness (confirmed by
