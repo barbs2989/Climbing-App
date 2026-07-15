@@ -98,7 +98,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
   return createPortal((
     <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" }}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "11px 14px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>

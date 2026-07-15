@@ -113,7 +113,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
   if (!session) {
     return createPortal((
       <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", padding: 16 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "11px 14px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
         <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to apply as a guide — this application creates a legally-relevant, timestamped record tied to your identity.</div>
       </div>
     ), document.body);
@@ -122,7 +122,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
   if (existing && existing.status !== "draft" && existing.status !== "rejected") {
     return createPortal((
       <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", padding: 16 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "11px 14px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
         <div style={{ marginTop: 24, fontSize: 14.5, fontWeight: 700, color: C.text }}>{"Application status: " + existing.status}</div>
         <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>
           {existing.status === "submitted" ? "We're reviewing your credentials — check back soon, or open your guide dashboard for details." : "Your listing is live."}
@@ -139,7 +139,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
   return createPortal((
     <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto" }}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2, display: "flex", alignItems: "center", gap: 10 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "11px 14px", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
         <div style={{ fontSize: 15, fontWeight: 700 }}>Apply to guide on ClimbMatch</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
