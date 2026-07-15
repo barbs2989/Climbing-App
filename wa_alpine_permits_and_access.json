@@ -1,0 +1,1181 @@
+{
+  "research_date": "2026-07-15",
+  "research_status": "comprehensive",
+  "peaks": [
+    {
+      "peak_id": "wa_mount_rainier",
+      "name": "Mount Rainier",
+      "elevation_ft": 14411,
+      "land_manager": {
+        "agency": "National Park Service",
+        "unit": "Mount Rainier National Park",
+        "contact_phone": "360-569-2211",
+        "website": "https://www.nps.gov/mora/",
+        "main_office": "55210 238th Avenue East, Ashford, WA 98304"
+      },
+      "ranger_stations": [
+        {
+          "name": "White River Ranger Station",
+          "phone": "360-569-2211",
+          "location": "White River entrance"
+        }
+      ],
+      "permits": [
+        {
+          "type": "Climbing/Glacier Travel Permit",
+          "name": "Mount Rainier Climbing Permit",
+          "description": "Required for all climbers traveling above 10,000 ft or on glaciers. Mandatory year-round.",
+          "cost_per_person": 82,
+          "group_size_limits": {
+            "min_unguided": 2,
+            "max_unguided": 8,
+            "max_guided": null,
+            "solo_requires_special_approval": true
+          },
+          "where_to_obtain": {
+            "method": "Online registration via Pay.gov",
+            "url": "https://pay.gov",
+            "alt_method": "In-person at ranger stations",
+            "advance_days_required": 0,
+            "reservation_required": false,
+            "payment_method": "Credit card only (no cash)"
+          },
+          "duration": "Valid for permit date + 1 calendar day",
+          "notes": "2/3 of permits available for advance reservation May-September; 1/3 first-come, first-served at ranger stations"
+        },
+        {
+          "type": "Wilderness/Backcountry Permit",
+          "name": "Mount Rainier Wilderness Permit",
+          "description": "Required for all overnight backcountry stays",
+          "cost_per_person_per_night": 12,
+          "reservation_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov for advance reservations",
+            "url": "https://recreation.gov/permits/4675317",
+            "advance_days_required": 2,
+            "reservation_required": true,
+            "lottery": "Early-access lottery in February; general reservations April 25 for June 1-Oct 10",
+            "walk_up_available": true,
+            "walk_up_percentage": "approximately 33%"
+          },
+          "max_consecutive_nights": 13,
+          "notes": "Peak season (June-Sept) highly competitive. Walk-up permits available at ranger stations same day or day before"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Mount Rainier National Park Vehicle Pass",
+          "cost_per_day": 30,
+          "cost_annual": 55,
+          "covers": "Vehicle entrance to Mount Rainier National Park for 7 consecutive days",
+          "where_to_buy": "Entrance gates, online at recreation.gov, major retail locations",
+          "notes": "Covers vehicle and all passengers. Motorcycle $25/day or $50/year"
+        },
+        {
+          "type": "America the Beautiful Interagency Pass",
+          "cost_per_day": null,
+          "cost_annual": 80,
+          "covers": "Entrance to all federal recreation sites including Mount Rainier NP",
+          "where_to_buy": "https://www.recreation.gov/pass/",
+          "notes": "Valid 12 months from purchase. Digital option available since January 2026"
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - September 30",
+        "peak_season": "July - August",
+        "peak_season_notes": "Climbing permits fill quickly in summer",
+        "spring_access": "Limited, avalanche hazard high",
+        "spring_recommended": "Late June recommended to avoid avalanche danger",
+        "fall_access": "Possible but weather deteriorates rapidly",
+        "winter_access": "Technical winter climbing only; hazardous",
+        "road_closures": [
+          {
+            "location": "Stevens Canyon Road (east side)",
+            "typical_close": "November 1",
+            "typical_open": "Late May/Early June",
+            "notes": "Closes due to snow; check NPS website for current status"
+          },
+          {
+            "location": "SR-410 Chinook Pass and SR-123 Cayuse Pass",
+            "open_date": "May 22, 2026",
+            "close_date": "November (approximate)",
+            "notes": "Subject to weather; 2026 construction 2.8 miles April-October with 30 min delays possible"
+          }
+        ]
+      },
+      "group_limits": {
+        "max_unguided_group": 8,
+        "max_guided_party": null,
+        "commercial_guide_restrictions": "Only authorized NPS concessioners",
+        "notes": "Large groups may require special coordination"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": true,
+        "crevasse_rescue_equipment": "Required (rope, harness, self-rescue knowledge)",
+        "avalanche_forecasting": "NWAC forecasts available; some routes may close",
+        "technical_requirements": "Rope skills, glacier travel proficiency, excellent physical condition",
+        "guiding_recommendation": "Strongly recommended for first-timers",
+        "rope_team_requirement": "Minimum 2-person team for most routes"
+      },
+      "camping": {
+        "backcountry_camping": "Designated campsites only",
+        "campfire_restrictions": "Prohibited in most high-elevation areas",
+        "water_source_requirements": "Use designated water sources",
+        "sanitation": "Pack out all waste"
+      },
+      "notes": "Mount Rainier is the most heavily regulated peak in Washington. Permits fill quickly in summer. The park uses proven traffic and parking management strategies. No timed entry reservations required in 2026.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_adams",
+      "name": "Mount Adams",
+      "elevation_ft": 12276,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Gifford Pinchot National Forest",
+        "ranger_district": "Mt. Adams Ranger District",
+        "contact_phone": "509-395-3402",
+        "website": "https://www.fs.usda.gov/r06/giffordpinchot/",
+        "district_address": "2455 Hwy 141, Trout Lake, WA 98650",
+        "district_hours": "Monday, Wednesday, Friday 9am-4pm (closed 12-1pm lunch); Closed Tue-Thu, Sat-Sun",
+        "note": "Limited staffing; call before visit"
+      },
+      "permits": [
+        {
+          "type": "Mount Adams Climbing Pass",
+          "name": "Mt. Adams Climbing Activity Pass",
+          "description": "Required for anyone 16+ traveling above 7,000 ft elevation May 1-Sept 30",
+          "cost_per_person": 20,
+          "cost_under_16": "Free",
+          "where_to_obtain": {
+            "method": "Online at Recreation.gov",
+            "url": "https://www.recreation.gov/activitypass/4280e9ae-d010-11ea-8e82-82c0c22bed90",
+            "alt_method": "Self-issue at trailhead",
+            "advance_days_required": 0,
+            "reservation_required": false
+          },
+          "duration": "Valid for single climbing trip only",
+          "notes": "Pass is required even if not attempting summit; applies to any travel above 7,000 ft"
+        },
+        {
+          "type": "Wilderness Permit",
+          "name": "Gifford Pinchot Wilderness Permit",
+          "description": "Required to enter Mount Adams Wilderness; self-issued",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "advance_days_required": 0,
+            "reservation_required": false
+          },
+          "notes": "Always required; carries year-round"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "covers": "Day-use parking at National Forest recreation sites",
+          "where_to_buy": "Recreation.gov, ranger stations, select retail locations",
+          "required_at_trailheads": true
+        },
+        {
+          "type": "America the Beautiful Interagency Pass",
+          "cost_annual": 80,
+          "covers": "All federal recreation sites",
+          "where_to_buy": "https://www.recreation.gov/pass/"
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "May 1 - September 30",
+        "peak_season": "July - August",
+        "spring_access": "Limited; snow typically remains until June",
+        "fall_access": "Possible through September, weather variable",
+        "winter_access": "Not recommended; severe avalanche and weather hazards",
+        "special_closures": [
+          {
+            "location": "Upper State Route 504",
+            "status": "Closed at milepost 45.2 due to large slide",
+            "notes": "Check current road conditions before trip"
+          }
+        ]
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18,
+        "combined_limit": "12 people OR 18 pack/saddle animals",
+        "notes": "Exceeding group size prohibited"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": true,
+        "mountaineering_permit_required": false,
+        "crevasse_rescue_equipment": "Recommended for glacier travel",
+        "avalanche_forecasting": "NWAC forecasts available",
+        "technical_requirements": "Moderate alpine climbing skills",
+        "hazard_waste_requirement": "Pack out human waste in carry-out bags"
+      },
+      "camping": {
+        "backcountry_camping": "Dispersed camping allowed with restrictions",
+        "campfire_restrictions": "Prohibited in certain high-elevation areas",
+        "water_sources": "Limited; filter water from streams",
+        "sanitation": "Pack out human waste in carry-out bags"
+      },
+      "notes": "Mount Adams Climbing Pass required May 1-Sept 30 for ages 16+. Free wilderness permits self-issued at trailheads. Popular summer destination with good climbing window.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_baker",
+      "name": "Mount Baker",
+      "elevation_ft": 10781,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Mount Baker-Snoqualmie National Forest",
+        "ranger_district": "Mt. Baker Ranger District",
+        "contact_phone": "360-854-2553",
+        "website": "https://www.fs.usda.gov/r06/mbs/",
+        "glacier_public_service_center": "360-599-2714"
+      },
+      "permits": [
+        {
+          "type": "Climbing Permit",
+          "name": "Mount Baker Climbing",
+          "description": "No specific climbing permit required by USFS",
+          "cost": "Free",
+          "notes": "USFS does not require permits; however, recreation passes required at trailheads"
+        },
+        {
+          "type": "Backcountry Permit",
+          "name": "Wilderness Permit (if in protected area)",
+          "description": "May be required depending on access route and destination",
+          "cost": "Free if required",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "alt_method": "In-person at ranger station"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "required_trailheads": [
+            "Heliotrope Ridge Trailhead",
+            "Artist Point (Ptarmigan Ridge) Trailhead",
+            "Park Butte Trailhead"
+          ],
+          "where_to_buy": "Must purchase online or download Recreation.gov Scan and Pay app; NOT available onsite",
+          "notes": "Passes not available at trailhead kiosks"
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June - September",
+        "peak_season": "July - August",
+        "spring_access": "Limited; heavy snow",
+        "fall_access": "Possible through September",
+        "winter_access": "Technical winter climbing only"
+      },
+      "group_limits": {
+        "standard_groups": "No specific limit listed",
+        "notes": "Check with Mt. Baker Ranger District for group size recommendations"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": false,
+        "crevasse_rescue_equipment": "Required for glacier travel",
+        "technical_requirements": "Glacier travel skills, rope work",
+        "route_complexity": "Multiple route options ranging from moderate to technical"
+      },
+      "camping": {
+        "backcountry_camping": "Dispersed camping with restrictions",
+        "campfire_restrictions": "Check current restrictions",
+        "water_sources": "Use filtered water sources"
+      },
+      "notes": "Mount Baker lies primarily on USFS land (Mt. Baker-Snoqualmie NF). Main issue: Recreation passes required at popular trailheads and must be purchased in advance (online) or via mobile app - NOT available at trailhead.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_shuksan",
+      "name": "Mount Shuksan",
+      "elevation_ft": 9127,
+      "land_manager": {
+        "agency": "National Park Service",
+        "unit": "North Cascades National Park",
+        "contact_phone": "360-854-7200",
+        "website": "https://www.nps.gov/noca/",
+        "main_office": "810 State Route 20, Sedro-Woolley, WA 98284"
+      },
+      "permits": [
+        {
+          "type": "Backcountry Permit",
+          "name": "North Cascades Backcountry Permit",
+          "description": "Required for overnight backcountry stays; free for day-use",
+          "cost_per_person": 10,
+          "reservation_fee": 6,
+          "youth_15_and_under": "Free",
+          "where_to_obtain": {
+            "method": "Recreation.gov for advance reservations",
+            "url": "https://www.recreation.gov/permits/",
+            "alt_method": "In-person at Glacier Public Service Center (Thurs-Fri June 25-Sept 25)",
+            "alt_method_2": "Email noca_wilderness@nps.gov no more than 3 days before trip",
+            "advance_days_required": 3,
+            "walk_up_available": true,
+            "walk_up_percentage": "40% of campsites held for walk-ups"
+          },
+          "seasonal_note": "Wilderness Information Center open mid-May to mid-October"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "North Cascades National Park Vehicle Pass",
+          "cost_per_day": 30,
+          "cost_annual": null,
+          "covers": "Vehicle entrance to North Cascades NP for 7 days",
+          "where_to_buy": "Entrance stations, recreation.gov"
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80,
+          "covers": "All federal recreation sites"
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "spring_access": "Limited; heavy snow until June",
+        "fall_access": "Possible through October",
+        "winter_access": "Severe hazard; technical winter climbing only",
+        "road_closures": [
+          {
+            "location": "SR-20 North Cascades Highway",
+            "close_date": "December 4, 2025",
+            "reopen_date": "June 14, 2026",
+            "reason": "Washout damage from December 2025 storm; emergency repairs completed June 2026"
+          }
+        ]
+      },
+      "group_limits": {
+        "max_group_size": "Varies by campsite",
+        "notes": "Check specific site limits when reserving"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": false,
+        "crevasse_rescue_equipment": "Required for glacier and technical terrain",
+        "avalanche_forecasting": "NWAC forecasts available",
+        "technical_requirements": "Alpine climbing experience; rope skills recommended"
+      },
+      "camping": {
+        "backcountry_camping": "Designated campsites only",
+        "bear_canister_requirement": "Required at certain camps; must borrow in-person",
+        "campfire_restrictions": "Prohibited",
+        "water_sources": "Use designated water sources"
+      },
+      "notes": "Mount Shuksan located in North Cascades NP. Lake Ann Trailhead (popular access) requires Recreation Pass. Free day-use permits; overnight permits $10/person + $6 reservation fee. Popular area; midweek or post-Labor Day visits less crowded.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_stuart",
+      "name": "Mount Stuart",
+      "elevation_ft": 9415,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Wenatchee River Ranger District",
+        "contact_phone": "509-548-2550",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/",
+        "district_address": "600 Sherbourne, Leavenworth, WA 98826",
+        "district_hours": "Mon, Tue, Thu, Fri 9am-12pm and 1-3:30pm (closed 12-1pm lunch, closed Wed)"
+      },
+      "permits": [
+        {
+          "type": "Alpine Lakes Wilderness Day-Use Permit",
+          "name": "Free Self-Issue Day Permit",
+          "description": "Required for day-use; free self-issuing permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "advance_days_required": 0
+          }
+        },
+        {
+          "type": "Enchantment Permit Area Overnight Permit",
+          "name": "Enchantment Overnight Permit",
+          "description": "Required May 15-Oct 31 for overnight camping in Enchantments/Alpine Lakes",
+          "cost_per_person_per_day": 5,
+          "lottery_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov lottery system",
+            "url": "https://www.recreation.gov/permits/233273",
+            "advance_days_required": 0,
+            "lottery": true,
+            "lottery_type": "Advanced lottery (apply in spring for summer dates)"
+          },
+          "seasonal": "May 15 - October 31 only",
+          "max_stay": "3-5 nights depending on zone"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "required_trailheads": [
+            "Stuart Lake Trailhead",
+            "Colchuck Lake Trailhead"
+          ],
+          "where_to_buy": "Recreation.gov, ranger stations"
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "May 15 - October 31",
+        "peak_season": "July - August",
+        "spring_access": "May 15 open date for overnight permits",
+        "fall_access": "Through October 31",
+        "winter_access": "Not recommended; heavy snow"
+      },
+      "group_limits": {
+        "max_group_size": 8,
+        "dog_restrictions": "Dogs prohibited on Colchuck Lake trail, Stuart Lake trail, and within Enchantment Permit Area",
+        "notes": "Group limit strictly enforced in permit area"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": false,
+        "crevasse_rescue_equipment": "Recommended for glacier and steep terrain",
+        "technical_requirements": "Class 3-4 scrambling; rock climbing skills recommended"
+      },
+      "camping": {
+        "backcountry_camping": "Designated campsites in Enchantments",
+        "campfire_restrictions": "Prohibited",
+        "water_sources": "Use designated sources",
+        "sanitation": "Pack out all waste"
+      },
+      "notes": "Mount Stuart accessed via Alpine Lakes Wilderness, often through Enchantments. Overnight permits highly competitive (lottery); demand far exceeds availability. Advanced reservations strongly recommended. Dogs prohibited in Enchantments.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_glacier_peak",
+      "name": "Glacier Peak",
+      "elevation_ft": 10541,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest (primary) / North Cascades National Park (partial)",
+        "ranger_district": "Wenatchee River Ranger District (primary)",
+        "contact_phone": "509-548-2550",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/",
+        "district_address": "600 Sherbourne, Leavenworth, WA 98826"
+      },
+      "permits": [
+        {
+          "type": "Glacier Peak Wilderness Permit",
+          "name": "Self-Issue Wilderness Permit",
+          "description": "Free self-issuing permit required for all wilderness use",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "alt_method": "May be available at ranger stations",
+            "advance_days_required": 0,
+            "reservation_required": false
+          },
+          "notes": "Some trailheads may require recreation pass; always available at trailhead"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "covers": "Day-use at trailheads",
+          "where_to_buy": "Recreation.gov, ranger stations",
+          "required_at_most_glacier_peak_trailheads": true
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "spring_access": "Limited by snow; June possible on lower elevation routes",
+        "fall_access": "Possible through October",
+        "winter_access": "Technical climbing only; extreme hazard",
+        "trail_access_status": "As of April 2026, access extremely limited due to December 2025 storm damage; check current conditions"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "notes": "Standard USFS wilderness group limit"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": false,
+        "crevasse_rescue_equipment": "Required for glacier travel",
+        "avalanche_forecasting": "NWAC forecasts available",
+        "technical_requirements": "Alpine climbing skills; glacier travel proficiency"
+      },
+      "camping": {
+        "backcountry_camping": "Dispersed camping with restrictions",
+        "campfire_restrictions": "Prohibited in high-elevation areas",
+        "water_sources": "Use filtered water",
+        "sanitation": "Pack out all waste"
+      },
+      "notes": "Glacier Peak is centerpiece of 566,057-acre wilderness. Permits are free and self-issued. CRITICAL: Trail access severely limited as of April 2026 due to December 2025 atmospheric river damage. Check current conditions with Wenatchee River Ranger District before trip planning.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_dragontail_peak",
+      "name": "Dragontail Peak",
+      "elevation_ft": 8839,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Wenatchee River Ranger District",
+        "contact_phone": "509-548-2550",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Alpine Lakes Wilderness Day Permit",
+          "name": "Free Self-Issue Day Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        },
+        {
+          "type": "Enchantment Permit Area Overnight Permit",
+          "name": "Enchantment Overnight Permit",
+          "description": "Dragontail Peak accessed via Colchuck Lake in Enchantments; overnight permits required May 15-Oct 31",
+          "cost_per_person_per_day": 5,
+          "lottery_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov lottery system",
+            "url": "https://www.recreation.gov/permits/233273",
+            "lottery": true
+          },
+          "notes": "Demand far exceeds availability; advanced reservations essential"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "required_trailheads": [
+            "Stuart Lake Trailhead",
+            "Colchuck Lake Trailhead"
+          ]
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "May 15 - October 31",
+        "peak_season": "July - August",
+        "notes": "Dragontail Peak rises 3,000 ft above south end of Colchuck Lake"
+      },
+      "group_limits": {
+        "max_group_size": 8,
+        "dog_restrictions": "Dogs prohibited on Colchuck Lake trail and in Enchantment Permit Area"
+      },
+      "climbing_specific": {
+        "alpine_climbing_pass": false,
+        "mountaineering_permit_required": false,
+        "technical_requirements": "Class 3-4 scrambling; experienced alpine skills needed",
+        "crevasse_rescue_equipment": "Not typically required"
+      },
+      "camping": {
+        "designated_campsites": true,
+        "campfire_restrictions": "Prohibited",
+        "water_sources": "Use designated sources"
+      },
+      "notes": "Dragontail is accessed from Enchantments area (Stuart Lake access). Rising 3,000 feet above Colchuck Lake, it's a notable scrambling peak. Lottery system highly competitive. Contact Wenatchee River Ranger District at 509-548-2550 for permit availability and lottery dates.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_triumph",
+      "name": "Mount Triumph",
+      "elevation_ft": 7025,
+      "land_manager": {
+        "agency": "National Park Service",
+        "unit": "North Cascades National Park",
+        "contact_phone": "360-854-7200",
+        "website": "https://www.nps.gov/noca/"
+      },
+      "permits": [
+        {
+          "type": "Backcountry Permit",
+          "name": "North Cascades Backcountry Permit",
+          "description": "Required for overnight backcountry use",
+          "cost_per_person": 10,
+          "reservation_fee": 6,
+          "youth_15_and_under": "Free",
+          "where_to_obtain": {
+            "method": "Recreation.gov or in-person",
+            "url": "https://www.recreation.gov/permits/",
+            "advance_days_required": 3,
+            "walk_up_available": true
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "North Cascades National Park Vehicle Pass",
+          "cost_per_day": 30,
+          "covers": "Park entrance for 7 days"
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "winter_access": "Technical climbing only; severe hazard",
+        "road_closures": [
+          {
+            "location": "SR-20 North Cascades Highway",
+            "close_date": "December 4, 2025",
+            "reopen_date": "June 14, 2026"
+          }
+        ]
+      },
+      "group_limits": {
+        "max_group_size": "Varies by site"
+      },
+      "climbing_specific": {
+        "technical_requirements": "Class 3-4 scrambling; alpine experience recommended",
+        "crevasse_rescue_equipment": "May be needed depending on route"
+      },
+      "notes": "Mount Triumph is located within North Cascades National Park. Requires backcountry permits for overnight stays ($10/person + $6 fee). Day-use free permits available. Contact park at 360-854-7200 for detailed access and route information.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_formidable",
+      "name": "Mount Formidable",
+      "elevation_ft": 8325,
+      "land_manager": {
+        "agency": "National Park Service",
+        "unit": "North Cascades National Park",
+        "contact_phone": "360-854-7200",
+        "website": "https://www.nps.gov/noca/"
+      },
+      "permits": [
+        {
+          "type": "Backcountry Permit",
+          "name": "North Cascades Backcountry Permit",
+          "description": "Required for overnight backcountry use in park",
+          "cost_per_person": 10,
+          "reservation_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov or in-person at Glacier Public Service Center (Thurs-Fri June 25-Sept 25)",
+            "url": "https://www.recreation.gov/permits/"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "North Cascades National Park Vehicle Pass",
+          "cost_per_day": 30
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "winter_access": "Severe hazard; technical climbing only"
+      },
+      "climbing_specific": {
+        "technical_requirements": "Class 4 climbing; significant alpine climbing experience required"
+      },
+      "notes": "Mount Formidable within North Cascades National Park. Overnight backcountry permits required ($10/person + $6 reservation fee). Permits available through Recreation.gov. Contact park at 360-854-7200 for specific route and access information.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_liberty_bell_group",
+      "name": "Liberty Bell Group",
+      "elevation_ft": 7700,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/",
+        "district_address": "24 West Chewuch Road, Winthrop, WA 98862",
+        "district_hours": "Monday-Friday 8am-4pm (closed 12:30-1:30pm lunch)"
+      },
+      "permits": [
+        {
+          "type": "Wilderness Permit",
+          "name": "North Cascades Wilderness Permit (if applicable)",
+          "description": "May be required depending on specific access route",
+          "cost": "Free if required",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "required_at_washington_pass": true,
+          "where_to_buy": "Recreation.gov, ranger stations"
+        },
+        {
+          "type": "America the Beautiful Pass",
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "winter_access": "Possible but hazardous",
+        "road_status": "SR-20 North Cascades Highway: closed Dec 4, 2025; reopened June 14, 2026"
+      },
+      "group_limits": {
+        "max_group_size": 12
+      },
+      "climbing_specific": {
+        "technical_requirements": "Class 3-4 rock climbing; excellent scrambling skills required",
+        "crevasse_rescue_equipment": "Not typically required"
+      },
+      "notes": "Liberty Bell Group (Liberty Bell Mountain and Early Winters Spires) located near Washington Pass area. Washington Pass Observation Site provides views of Liberty Bell. Permits not typically required for day-use scrambling, but Northwest Forest Pass needed at trailheads. Access via SR-20 which fully reopened June 14, 2026 after storm damage repairs.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_mount_lago",
+      "name": "Mount Lago",
+      "elevation_ft": 8748,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Pasayten Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "description": "Required to enter Pasayten Wilderness",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "advance_days_required": 0,
+            "reservation_required": false
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "covers": "Day-use at trailheads"
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - September 30",
+        "peak_season": "July - August"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18,
+        "combined_limit": "12 people OR 18 pack/saddle animals"
+      },
+      "camping": {
+        "campfire_restrictions": "Check current restrictions with ranger district"
+      },
+      "notes": "Mount Lago located within Pasayten Wilderness, Okanogan-Wenatchee NF. Free wilderness permits self-issued at trailhead. Group size limit 12 persons maximum. Contact Methow Valley Ranger District at 509-996-4000 for access and trail conditions.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_robinson_mountain",
+      "name": "Robinson Mountain",
+      "elevation_ft": 8729,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Pasayten Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - September 30",
+        "peak_season": "July - August"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18
+      },
+      "notes": "Robinson Mountain in Pasayten Wilderness. Free self-issued permits. Major stock route into Remmel-Cathedral area. Access via Robinson Creek-Middle Fork Trail. Contact Methow Valley Ranger District for trail conditions and access details.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_remmel_mountain",
+      "name": "Remmel Mountain",
+      "elevation_ft": 8688,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Pasayten Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - September 30",
+        "peak_season": "July - August"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18
+      },
+      "notes": "Remmel Mountain in Pasayten Wilderness. Free permits self-issued at trailhead. Part of Remmel-Cathedral area accessible via major stock route from Robinson Creek area. Contact Methow Valley Ranger District for current trail and access conditions.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_ruby_mountain",
+      "name": "Ruby Mountain",
+      "elevation_ft": 7426,
+      "land_manager": {
+        "agency": "National Park Service / U.S. Forest Service",
+        "unit": "North Cascades National Park or adjacent wilderness",
+        "contact_phone": "360-854-7200",
+        "website": "https://www.nps.gov/noca/"
+      },
+      "permits": [
+        {
+          "type": "Backcountry Permit",
+          "name": "North Cascades Backcountry Permit (if within park)",
+          "cost_per_person": 10,
+          "reservation_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov",
+            "url": "https://www.recreation.gov/permits/"
+          },
+          "notes": "Permit requirements depend on specific access route and location within North Cascades complex"
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "North Cascades National Park Vehicle Pass or Northwest Forest Pass",
+          "cost_per_day": 30,
+          "cost_annual": 80
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August"
+      },
+      "notes": "Ruby Mountain in North Cascades area. Exact permit requirements depend on specific access route. Contact North Cascades National Park at 360-854-7200 for detailed permit and access information.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_elephant_butte",
+      "name": "Elephant Butte",
+      "elevation_ft": 7384,
+      "land_manager": {
+        "agency": "National Park Service / U.S. Forest Service",
+        "unit": "North Cascades National Park or adjacent wilderness",
+        "contact_phone": "360-854-7200",
+        "website": "https://www.nps.gov/noca/"
+      },
+      "permits": [
+        {
+          "type": "Backcountry Permit",
+          "name": "North Cascades Backcountry Permit (if within park)",
+          "cost_per_person": 10,
+          "reservation_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov",
+            "url": "https://www.recreation.gov/permits/"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "North Cascades National Park Vehicle Pass or Northwest Forest Pass",
+          "cost_per_day": 30
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August"
+      },
+      "notes": "Elephant Butte in North Cascades area. Permit requirements depend on specific access. Contact North Cascades National Park at 360-854-7200 for access details and permit information.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_castle_peak",
+      "name": "Castle Peak",
+      "elevation_ft": 6469,
+      "land_manager": {
+        "agency": "National Park Service",
+        "unit": "Mount Rainier National Park (Tatoosh Range)",
+        "contact_phone": "360-569-2211",
+        "website": "https://www.nps.gov/mora/"
+      },
+      "permits": [
+        {
+          "type": "Wilderness Permit",
+          "name": "Mount Rainier Wilderness Permit",
+          "description": "Required for overnight backcountry camping",
+          "cost_per_person_per_night": 12,
+          "reservation_fee": 6,
+          "where_to_obtain": {
+            "method": "Recreation.gov",
+            "url": "https://recreation.gov/permits/4675317",
+            "advance_days_required": 2
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Mount Rainier National Park Vehicle Pass",
+          "cost_per_day": 30,
+          "cost_annual": 55
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 31",
+        "peak_season": "July - August"
+      },
+      "climbing_specific": {
+        "technical_requirements": "Class 3 scrambling; moderate alpine skills"
+      },
+      "notes": "Castle Peak located in Tatoosh Range within Mount Rainier National Park. Overnight permits required ($12/person/night + $6 fee). Day-use is free. Contact Mount Rainier NP at 360-569-2211 for specific access and trail information.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_indian_head_peak",
+      "name": "Indian Head Peak",
+      "elevation_ft": 7447,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest (primary) / North Cascades National Park (partial)",
+        "ranger_district": "Wenatchee River Ranger District",
+        "contact_phone": "509-548-2550",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Glacier Peak Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead",
+            "advance_days_required": 0
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "special_note": "Trail access may be limited due to 2025 storm damage; check current conditions"
+      },
+      "group_limits": {
+        "max_group_size": 12
+      },
+      "notes": "Indian Head Peak located in Glacier Peak Wilderness. Free self-issued permits at trailhead. Trail access severely limited as of April 2026 due to December 2025 atmospheric river damage. Contact Wenatchee River Ranger District at 509-548-2550 for current conditions before trip.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_big_snagtooth",
+      "name": "Big Snagtooth",
+      "elevation_ft": 8379,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Pasayten Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30,
+          "required_at": "Washington Pass area trailheads"
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - October 15",
+        "peak_season": "July - August",
+        "road_status": "SR-20 North Cascades Highway: closed Dec 4, 2025; reopened June 14, 2026"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18
+      },
+      "notes": "Big Snagtooth located in Pasayten Wilderness area near Washington Pass. Free self-issued permits at trailhead. Access via SR-20 which fully reopened June 14, 2026 after storm repairs. Contact Methow Valley Ranger District for current trail conditions.",
+      "last_updated": "2026-07-15"
+    },
+    {
+      "peak_id": "wa_amphitheater_mountain",
+      "name": "Amphitheater Mountain",
+      "elevation_ft": 8374,
+      "land_manager": {
+        "agency": "U.S. Forest Service",
+        "unit": "Okanogan-Wenatchee National Forest",
+        "ranger_district": "Methow Valley Ranger District",
+        "contact_phone": "509-996-4000",
+        "website": "https://www.fs.usda.gov/r06/okanogan-wenatchee/"
+      },
+      "permits": [
+        {
+          "type": "Pasayten Wilderness Permit",
+          "name": "Free Self-Issue Wilderness Permit",
+          "cost": "Free",
+          "where_to_obtain": {
+            "method": "Self-issue at trailhead"
+          }
+        }
+      ],
+      "parking_passes": [
+        {
+          "type": "Northwest Forest Pass",
+          "cost_per_day": 5,
+          "cost_annual": 30
+        }
+      ],
+      "seasonal": {
+        "typical_access_window": "June 1 - September 30",
+        "peak_season": "July - August"
+      },
+      "group_limits": {
+        "max_group_size": 12,
+        "pack_animal_limit": 18
+      },
+      "notes": "Amphitheater Mountain in Pasayten Wilderness. Free wilderness permits self-issued at trailhead. Group size limit 12 persons maximum. Contact Methow Valley Ranger District at 509-996-4000 for access information and trail conditions.",
+      "last_updated": "2026-07-15"
+    }
+  ],
+  "summary": {
+    "total_peaks_researched": 19,
+    "priority_peaks": 10,
+    "secondary_peaks": 9,
+    "research_completeness": "Comprehensive for priority peaks; moderate detail for secondary peaks. All major permit systems, parking passes, contact information, and seasonal access documented.",
+    "key_findings": {
+      "nps_peaks": [
+        "Mount Rainier NP: $82/person climbing permit + $12/person/night wilderness camping",
+        "North Cascades NP: $10/person + $6 fee for backcountry permits (covers Shuksan, Triumph, Formidable)"
+      ],
+      "usfs_peaks": [
+        "Gifford Pinchot (Mount Adams): $20 Mount Adams Climbing Pass (ages 16+) + free wilderness permit",
+        "Okanogan-Wenatchee (Stuart, Glacier Peak, etc.): Alpine Lakes Enchantments $5/person/day + $6 lottery fee; Pasayten/Glacier Peak free self-issued permits",
+        "Mount Baker-Snoqualmie: No climbing permit required, but Northwest Forest Pass ($5/day or $30/annual) required at trailheads"
+      ],
+      "parking_passes_required": [
+        "Northwest Forest Pass ($5/day, $30/annual): Required at USFS trailheads",
+        "America the Beautiful Pass ($80/annual): Covers all federal sites",
+        "Mount Rainier NP vehicle pass ($30/day, $55/annual): Mount Rainier access",
+        "North Cascades NP vehicle pass ($30/day): North Cascades access"
+      ],
+      "seasonal_closures": [
+        "SR-20 North Cascades Highway: Closed Dec 4, 2025; Reopened June 14, 2026 (post-storm repairs)",
+        "Mount Rainier passes: Typically close Nov 1; reopen late May (Chinook Pass reopened May 22, 2026)",
+        "Alpine Lakes Enchantments: Permits May 15 - Oct 31 only (lottery-based)"
+      ],
+      "special_alerts": [
+        "December 2025 atmospheric river caused significant trail damage in Glacier Peak and surrounding areas; access limited as of April 2026",
+        "Upper SR-504 near Mount Adams closed due to large slide; check current status",
+        "Mount Rainier no timed-entry reservations required in 2026"
+      ],
+      "ranger_district_contacts": {
+        "Mt_Adams_Ranger_District_Gifford_Pinchot": "509-395-3402",
+        "Methow_Valley_Ranger_District_Okanogan_Wenatchee": "509-996-4000",
+        "Wenatchee_River_Ranger_District_Okanogan_Wenatchee": "509-548-2550",
+        "Mt_Baker_Ranger_District_Mount_Baker_Snoqualmie": "360-854-2553",
+        "North_Cascades_National_Park": "360-854-7200",
+        "Mount_Rainier_National_Park": "360-569-2211"
+      }
+    },
+    "sources_used": [
+      "nps.gov (Mount Rainier and North Cascades)",
+      "fs.usda.gov (Gifford Pinchot, Okanogan-Wenatchee, Mount Baker-Snoqualmie National Forests)",
+      "recreation.gov (Permits, passes, reservations)",
+      "wsdot.wa.gov (Road closures and pass status)",
+      "nwac.us (Avalanche forecasting information)"
+    ],
+    "next_steps_for_app_import": [
+      "Parse this JSON into database schema matching climbing app's peak/permit structure",
+      "Create permit lookup function: peak_id -> applicable permits with current costs",
+      "Implement ranger district contact info display on each peak detail view",
+      "Add seasonal access window widget showing typical open/close dates",
+      "Link parking pass requirements to pass provider websites (recreation.gov)",
+      "Set up alert system for road closures and trail access updates from WSDOT/NWAC",
+      "Consider data refresh schedule for 2027 permit costs and contact info (likely annual update)"
+    ]
+  },
+  "data_quality_notes": {
+    "high_confidence": "All 10 priority peaks have complete permit, parking, and contact information",
+    "moderate_confidence": "Secondary peaks have general permit info; specific trailhead details may vary",
+    "research_date_note": "Data reflects 2026 regulations and fees current as of July 15, 2026",
+    "update_frequency_recommended": "Annual (permits/fees typically change yearly)"
+  }
+}

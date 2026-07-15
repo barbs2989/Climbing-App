@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "database": "ClimbMatch WA Ice Climbing Routes Hazard Database",
+    "version": "2.0",
+    "created": "2026-07-15",
+    "updated": "2026-07-15",
+    "total_routes": 0,
+    "documentation_status": "in_progress",
+    "quality_gates": [
+      "Minimum 2 independent sources per route",
+      "Specific, actionable hazard language (not vague)",
+      "Citation of data: elevation, aspect, slope angles, incident counts",
+      "Confidence levels: high (3+ sources), medium (2 sources), low (1 source)"
+    ],
+    "geographic_coverage": {
+      "Banks Lake": {
+        "target": 25,
+        "documented": 1,
+        "gap": 24,
+        "priority": "HIGH"
+      },
+      "Snoqualmie Pass": {
+        "target": 22,
+        "documented": 0,
+        "gap": 22,
+        "priority": "HIGH"
+      },
+      "Icicle Creek": {
+        "target": 12,
+        "documented": 8,
+        "gap": 4,
+        "priority": "MEDIUM"
+      },
+      "North Cascades Alpine": {
+        "target": 20,
+        "documented": 5,
+        "gap": 15,
+        "priority": "HIGH"
+      },
+      "Tumwater Canyon + Other": {
+        "target": 30,
+        "documented": 2,
+        "gap": 28,
+        "priority": "MEDIUM"
+      }
+    }
+  },
+  "routes": [
+    {
+      "id": "wa_example_route_id",
+      "name": "Example Route Name",
+      "alternate_names": ["Local name variant", "alternate beta name"],
+      "area": "Geographic cluster (e.g., Banks Lake, Snoqualmie Pass)",
+      "region": "Washington",
+      "sub_area": "Specific drainage or peak",
+      "grade": "WI3-4 or AI2-3 or M2",
+      "grade_details": {
+        "ice_grade": "WI3",
+        "alpine_grade": "AI2",
+        "mixed_grade": "M2",
+        "rock_grade": "5.6",
+        "overall_commitment": "Grade II"
+      },
+      "height": "300 ft",
+      "pitch_count": 2,
+      "elevation_range": {
+        "base": 2500,
+        "summit": 3200,
+        "unit": "feet"
+      },
+      "location": {
+        "aspect": "North-facing",
+        "slope_angle_degrees": "40-50",
+        "coordinates": {
+          "lat": 47.123,
+          "lon": -120.456
+        }
+      },
+      "approach": {
+        "distance_miles": 2.5,
+        "elevation_gain_ft": 1200,
+        "difficulty": "moderate",
+        "snow_access_required": true,
+        "avalanche_prone": true,
+        "hazards": [
+          "Approach avalanche terrain: 30-40 degree slopes, north-facing aspect, wind slab development"
+        ]
+      },
+      "watch_out": [
+        "Avalanche terrain: 40-50 degree north-facing slope; soft slab formation in wind-loaded sections; seasonal trigger pattern: March-April during freeze-thaw cycles",
+        "Serac/icefall hazard: Upper pitch exposure to overhead ice flows; afternoon sun warming March+ creates falling ice risk; morning ascent essential during warm months",
+        "Ice quality: Formation season Dec-Feb; February best conditions with well-bonded ice; March onward becomes thinner and water-affected; years with low precipitation may see formation failure",
+        "Crevasse fields (if applicable): Random crevasses in approach glacier; late season (June+) with significant bridge collapse risk; probe continuously and rope up",
+        "Weather/wind: Summit winds 50-70 mph typical; afternoon storms build 2-4pm; whiteout visibility risk; wind slab development in surrounding terrain above 3,500 ft",
+        "Descent hazards: 2-pitch rappel to fixed anchors on rock ledge; inspect anchor quality before committing full weight (older slings may have reduced holding capacity); alternative down-climb option on climber's left if anchors compromised",
+        "Seasonal window: Best Jan-Feb when stable conditions; shoulder season (Dec early, March late) carries higher risk; April+ not recommended due to sun and instability"
+      ],
+      "hazard_tags": [
+        "Avalanche above",
+        "Icefall / falling ice",
+        "Serac fall",
+        "Wind slab",
+        "Rockfall observed"
+      ],
+      "ice_conditions": {
+        "formation_season": "December - February",
+        "melt_susceptibility": "Sun-driven warming February+",
+        "bonding": "Well-bonded mid-winter; detached/hollow March+",
+        "water_dependency": "Waterfall-dependent; low precipitation years may fail",
+        "year_to_year_variability": "High variability; lean years thin and difficult; fat years offer lower-angle sections"
+      },
+      "seasonal_analysis": {
+        "december": {
+          "condition": "Forming, often thin",
+          "risk_level": "High (route-finding with thin ice)",
+          "recommendation": "Not recommended for beginners"
+        },
+        "january": {
+          "condition": "Optimal",
+          "risk_level": "Moderate",
+          "recommendation": "Best climbing window"
+        },
+        "february": {
+          "condition": "Excellent",
+          "risk_level": "Moderate",
+          "recommendation": "Peak season"
+        },
+        "march": {
+          "condition": "Deteriorating",
+          "risk_level": "High (sun warming, thin sections)",
+          "recommendation": "Early morning ascents only"
+        },
+        "april_plus": {
+          "condition": "Melted out or very thin",
+          "risk_level": "Very High or Not in condition",
+          "recommendation": "Not recommended"
+        }
+      },
+      "weather_patterns": {
+        "wind_exposure": "Fully exposed to westerly winds; summit-level wind funneling",
+        "afternoon_storms": "Thunderstorm development 2-4pm common June-September; less common Dec-Feb",
+        "visibility": "Whiteout risk in cloud cover; north-facing aspect often clear when valley fogged",
+        "freeze_thaw": "Good overnight freeze typical Jan-Feb; mid-day re-thaw March+"
+      },
+      "descent": {
+        "type": "Rappel descent",
+        "pitch_count": 2,
+        "anchor_locations": "Fixed anchors on rock ledge above main flow; backup bolts on exposed rock to right",
+        "anchor_quality_notes": "Inspect slings before committing; weather-worn slings should be backed up with new webbing",
+        "alternative_options": "Down-climb option on climber's left if anchors compromised; walk-off upper ridge possible in good conditions",
+        "route_finding_complexity": "Straightforward in daytime; whiteout descent requires GPS/compass"
+      },
+      "access": {
+        "trailhead": "Trailhead name and location",
+        "road_conditions": "Paved to X mile marker; may require 4WD after snowfall",
+        "parking": "50 car lot; fills on weekends",
+        "permit_required": false,
+        "seasonal_closure": "None",
+        "access_notes": "Raptor closure: Bridge Creek Wall area (1/2-mile buffer) closed January 1 - August 15 for golden eagle nesting"
+      },
+      "sources": {
+        "mountain_project": {
+          "url": "https://www.mountainproject.com/route/...",
+          "trip_reports": 15,
+          "most_recent_report": "2026-02-14",
+          "confidence": "high"
+        },
+        "the_crag": {
+          "url": "https://www.thecrag.com/route/...",
+          "ascents_last_season": 8,
+          "confidence": "medium"
+        },
+        "cascade_climbers": {
+          "url": "https://cascadeclimbers.com/forum/...",
+          "posts_found": 12,
+          "date_range": "2020-2026",
+          "confidence": "high"
+        },
+        "nwac": {
+          "forecasts_covering_area": true,
+          "incident_database": false,
+          "confidence": "high"
+        },
+        "guide_services": {
+          "guides": ["Local guide service mentions"],
+          "confidence": "medium"
+        }
+      },
+      "incident_history": [
+        {
+          "type": "Crevasse fall",
+          "date": "2019-03-15",
+          "fatal": false,
+          "source": "Mountain Project trip report"
+        },
+        {
+          "type": "Falling ice injury",
+          "date": "2023-02-10",
+          "fatal": false,
+          "source": "Cascade Climbers forum post"
+        }
+      ],
+      "confidence": "high",
+      "last_updated": "2026-07-15",
+      "researcher": "Research agent / Manual review",
+      "notes": "Route is well-documented with multiple recent sources. Hazards verified by 3+ independent reports."
+    }
+  ],
+  "summary_statistics": {
+    "total_routes_documented": 0,
+    "routes_by_area": {},
+    "routes_by_grade": {
+      "WI2": 0,
+      "WI3": 0,
+      "WI4": 0,
+      "WI5": 0,
+      "AI2": 0,
+      "AI3": 0,
+      "AI4": 0,
+      "Mixed": 0
+    },
+    "confidence_distribution": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "hazard_tag_frequency": {},
+    "gaps_remaining": [
+      "Banks Lake: 24+ routes",
+      "Snoqualmie Pass: 20+ routes",
+      "North Cascades Alpine: 15+ routes",
+      "Tumwater + Other: 28+ routes"
+    ]
+  }
+}
