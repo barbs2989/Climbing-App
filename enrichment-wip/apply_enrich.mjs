@@ -116,14 +116,14 @@ const run = async () => {
    // peak blurb — gap-fill only
    const a = aById[pk.peakId];
    if (!a) { report.push("  ?? unknown/unfetched peakId "+pk.peakId); continue; }
-   if (pk.hierarchyCheck && pk.hierarchyCheck.nameMatchesCoords === false) {
+   if (!empty(pk.hierarchyNote)) {
      hierarchyFlags++;
-     report.push("  !!! HIERARCHY FLAG "+pk.peakId+" ("+a.name+"): "+(pk.hierarchyCheck.note||"agent flagged a mismatch -- review before trusting this peak's data"));
+     report.push("  !!! HIERARCHY FLAG "+pk.peakId+" ("+a.name+"): "+pk.hierarchyNote);
    }
    if (empty(a.blurb) && pk.blurb && pk.blurb.trim()) { const newBlurb=pk.blurb.trim(); await patch("areas?id=eq."+pk.peakId,{blurb:newBlurb}); a.blurb=newBlurb; blurbs++; }
    for (const rf of (pk.routes||[])) {
      let r = rById[rf.routeId];
-     if (!r && rf.isNewRoute && rf.routeName) {
+     if (!r && rf.routeName) {
        // Brand-new route on an existing, already-correctly-placed peak area -- pure insert,
        // nothing pre-existing is touched or overwritten.
        const insertBody = { id: rf.routeId, area_id: pk.peakId, name: rf.routeName, discipline: guessDiscipline(rf), source: "wa-enrich-batch" };

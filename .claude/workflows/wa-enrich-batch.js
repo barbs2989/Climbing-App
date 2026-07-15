@@ -14,9 +14,13 @@ export const meta = {
 // uses its own generated wf_run.js (built by enrichment-wip/next_batch.mjs from
 // enrichment-wip/wf_batch.js) — keep that pipeline's prompt in sync with this one when you
 // change either.
-const PEAKS = Array.isArray(args) ? args : (args && Array.isArray(args.peaks) ? args.peaks : []);
+let _args = args;
+if (typeof _args === "string") {
+  try { _args = JSON.parse(_args); } catch { _args = null; }
+}
+const PEAKS = Array.isArray(_args) ? _args : (_args && Array.isArray(_args.peaks) ? _args.peaks : []);
 if (!PEAKS.length) {
-  throw new Error("wa-enrich-batch: no peaks provided via args. Pass args as an array of {id, name, ...}.");
+  throw new Error("wa-enrich-batch: no peaks provided via args. Pass args as an array of {id, name, ...}. (got typeof args=" + typeof args + ")");
 }
 
 const S = t => ({ type: [t, "null"] });
@@ -26,21 +30,16 @@ const SCHEMA = {
   type: "object", additionalProperties: false,
   properties: {
     peakId: { type: "string" },
-    // Sanity-check: does the given peakId/name/coords actually correspond to a real,
-    // singular, identifiable mountain, and is it plausible that the given parent area is
-    // correct? This is a cheap guard against silently enriching the wrong peak or writing
-    // routes onto a mis-hierarchied area.
-    hierarchyCheck: { type: "object", additionalProperties: false, properties: {
-      nameMatchesCoords: { type: "boolean" },
-      note: S("string"),
-    }, required: ["nameMatchesCoords"] },
+    // Cheap guard against silently enriching the wrong peak or writing routes onto a
+    // mis-hierarchied area: non-null ONLY if the given name/coords/parent area don't
+    // plausibly match one real mountain -- explain the mismatch. Leave null when it looks fine.
+    hierarchyNote: S("string"),
     blurb: S("string"),
     routes: { type: "array", items: {
       type: "object", additionalProperties: false,
       properties: {
         routeId: { type: "string" },
         routeName: { type: "string" },
-        isNewRoute: { type: "boolean" },
         // structured climbing facts
         fa: S("string"),
         rockGrade: S("string"), iceGrade: S("string"), alpineGrade: S("string"), aidGrade: S("string"),
@@ -81,23 +80,21 @@ const SCHEMA = {
           properties: { pitch: { type: "string" }, grade: S("string"), notes: S("string") },
           required: ["pitch"],
         }},
-        // structured beta objects
+        // structured beta objects -- kept intentionally shallow (one level, no nested
+        // arrays-of-objects) after the schema tripped the workflow's output-schema safety
+        // classifier ("too large to classify safely") at greater nesting depth.
         road: { type: ["object", "null"], additionalProperties: false, properties: {
           name: S("string"), status: S("string"), seasonalGate: S("string"), driveNote: S("string") } },
         climate: { type: ["object", "null"], additionalProperties: false, properties: {
-          forecastZone: S("string"), typical: S("string"), bySeason: { type: ["object", "null"], additionalProperties: false,
-            properties: { spring: S("string"), summer: S("string"), fall: S("string"), winter: S("string") } } } },
+          forecastZone: S("string"), typical: S("string"), spring: S("string"), summer: S("string"), fall: S("string"), winter: S("string") } },
         access: { type: ["object", "null"], additionalProperties: false, properties: {
           landManager: S("string"), fees: S("string"), permit: S("string"), passRequired: S("string"), closures: S("string") } },
         timing: { type: ["object", "null"], additionalProperties: false, properties: {
           recommendedStart: S("string"), approachTimeHrs: S("number"), summitTimeHrs: S("number"),
-          descentTimeHrs: S("number"), totalHrs: S("number"),
-          sectionBreakdown: { type: ["array", "null"], items: { type: "object", additionalProperties: false,
-            properties: { section: S("string"), fromTo: S("string"), hrs: S("number"), note: S("string") } } } } },
+          descentTimeHrs: S("number"), totalHrs: S("number") } },
         waypoints: { type: ["array", "null"], items: { type: "object", additionalProperties: false,
           properties: { type: S("string"), name: { type: "string" }, lat: S("number"), lng: S("number"),
             elevFt: S("integer"), distMi: S("number") }, required: ["name"] } },
-        gpx: { type: ["array", "null"], items: { type: "array", items: S("number") } },
         emergency: { type: ["object", "null"], additionalProperties: false, properties: {
           county: S("string"), sheriffDispatch: S("string"), rangerStation: S("string"),
           nearestHospital: S("string"), notes: S("string") } },
@@ -105,11 +102,11 @@ const SCHEMA = {
         corrections: S("string"),
         sources: { type: "array", items: { type: "string" } },
       },
-      required: ["routeId", "routeName", "isNewRoute"],
+      required: ["routeId", "routeName"],
     }},
     sources: { type: "array", items: { type: "string" } },
   },
-  required: ["peakId", "hierarchyCheck", "routes"],
+  required: ["peakId", "routes"],
 };
 
 function slugify(s) {
@@ -129,11 +126,11 @@ function prompt(p) {
     "CURRENT PEAK DATA (JSON) — this area row ALREADY EXISTS in the database at this id, with this parent hierarchy already placed; you are enriching it, not creating a new area:",
     JSON.stringify(p),
     "",
-    "STEP 0 — HIERARCHY SANITY CHECK (do this first): confirm that the given peak name, coordinates, and elevation genuinely refer to one real, identifiable mountain, and that the described parent area (region/range/wilderness) is geographically plausible for it. Set hierarchyCheck.nameMatchesCoords=false and explain in hierarchyCheck.note if anything looks wrong (e.g. the name is ambiguous with another peak, or the coordinates don't match the named peak) — do NOT silently proceed with mismatched data; still return your best research under the given id, but flag the concern.",
+    "STEP 0 — HIERARCHY SANITY CHECK (do this first): confirm that the given peak name, coordinates, and elevation genuinely refer to one real, identifiable mountain, and that the described parent area (region/range/wilderness) is geographically plausible for it. Fill hierarchyNote (else leave it null) if anything looks wrong (e.g. the name is ambiguous with another peak, or the coordinates don't match the named peak) — do NOT silently proceed with mismatched data; still return your best research under the given id, but flag the concern.",
     "",
     hasKnownRoutes
-      ? "This peak already has known route(s) listed below — use the given 'routeId' EXACTLY as provided for each, set isNewRoute=false, and include EVERY route listed."
-      : "This peak currently has NO routes in the database. Research and identify its standard / most commonly climbed route(s) to the summit (there may be just one standard route, or several named lines — include all you can find real data for). For EACH route you identify: invent routeId as this peak's id + '_' + a lowercase-underscore slug of the route name (e.g. peakId 'wa_example_peak' + route 'West Ridge' -> 'wa_example_peak_west_ridge'), set routeName to the real route name (use 'Standard Route' or '<Peak Name> Standard Route' if sources don't give it a specific name), and set isNewRoute=true. Do not invent a route that isn't attested by a real source — if you can only find one standard route, return just that one.",
+      ? "This peak already has known route(s) listed below — use the given 'routeId' EXACTLY as provided for each and its real name as 'routeName', and include EVERY route listed."
+      : "This peak currently has NO routes in the database. Research and identify its standard / most commonly climbed route(s) to the summit (there may be just one standard route, or several named lines — include all you can find real data for). For EACH route you identify: invent routeId as this peak's id + '_' + a lowercase-underscore slug of the route name (e.g. peakId 'wa_example_peak' + route 'West Ridge' -> 'wa_example_peak_west_ridge'), and set routeName to the real route name (use 'Standard Route' or '<Peak Name> Standard Route' if sources don't give it a specific name). Do not invent a route that isn't attested by a real source — if you can only find one standard route, return just that one.",
     "",
     "GOAL: return values for AS MANY route-page fields as reputable sources support — leave nothing null that you can genuinely source. Attempt every field below for every route. Leave a field null ONLY when you truly cannot source it after checking the required primary sources.",
     "",
@@ -148,11 +145,10 @@ function prompt(p) {
     "- Sentence arrays: proTips (insider tips), watchOut (hazard call-outs), knownHazards (objective-hazard sentences).",
     "- pitchDetail: array of {pitch, grade, notes} pitch-by-pitch (or section-by-section for glacier/scramble routes).",
     "- road: {name, status, seasonalGate, driveNote} for the access road/drive.",
-    "- climate: {forecastZone, typical, bySeason:{spring,summer,fall,winter}}.",
+    "- climate: {forecastZone, typical, spring, summer, fall, winter}.",
     "- access: {landManager, fees, permit, passRequired, closures}.",
-    "- timing: {recommendedStart, approachTimeHrs, summitTimeHrs, descentTimeHrs, totalHrs, sectionBreakdown:[{section,fromTo,hrs,note}]}.",
+    "- timing: {recommendedStart, approachTimeHrs, summitTimeHrs, descentTimeHrs, totalHrs}.",
     "- waypoints: array of {type, name, lat, lng, elevFt, distMi}. ONLY include a waypoint if you have its REAL coordinates from a reputable source (peakbagger, caltopo, gaiagps, summitpost, gov data); NEVER invent or estimate lat/lng — omit the waypoint (or the whole array) rather than guess coordinates.",
-    "- gpx: array of [lat,lng] pairs tracing the standard approach/route line, ONLY if you found a REAL recorded track (an actual downloadable/embeddable GPX or KML file, or a digitized track on peakbagger/caltopo/gaiagps/hikingproject/alltrails/wta) — extract real points FROM that track. NEVER interpolate, sketch, or estimate a line between waypoints; if no real recorded track exists for this route, omit gpx entirely (leave it null) rather than approximate one.",
     "- emergency: {county, sheriffDispatch, rangerStation, nearestHospital, notes}.",
     "",
     "HARD RULES:",
