@@ -2,9 +2,18 @@
 // Usage: SUPABASE_SERVICE_KEY="<service_role key>" node update-goode-waypoints.mjs
 // The routes table only has a public-read RLS policy (see supabase/migrations/0001_areas_routes.sql) —
 // writes need the service_role key, which bypasses RLS. Never hardcode it; pass via env only.
-const url = process.env.VITE_SUPABASE_URL;
+import { readFileSync } from "node:fs";
+function envUrl() {
+  if (process.env.VITE_SUPABASE_URL) return process.env.VITE_SUPABASE_URL;
+  try {
+    const env = readFileSync("/Users/nathanbarber/dev/Climbing-App/.env.local", "utf8");
+    const m = env.match(/VITE_SUPABASE_URL=(.+)/);
+    return m ? m[1].trim().replace(/\/$/, "") : null;
+  } catch { return null; }
+}
+const url = envUrl();
 const key = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!url || !key) { console.error('Error: Set VITE_SUPABASE_URL and SUPABASE_SERVICE_KEY (service_role secret)'); process.exit(1); }
+if (!url || !key) { console.error('Error: Set SUPABASE_SERVICE_KEY (service_role secret) — VITE_SUPABASE_URL is auto-read from .env.local if not set'); process.exit(1); }
 
 const waypoints = [
   {type:"Trailhead", name:"Bridge Creek / Rainy Pass PCT Trailhead", lat:48.5049, lng:-120.7191, elev:4500, distMi:0,
