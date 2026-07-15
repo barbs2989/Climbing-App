@@ -9,7 +9,7 @@ export const meta = {
 }
 
 phase('Fetch routes')
-const anon_key = process.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5'
+const anon_key = 'sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5'
 const base_url = 'https://ofuofhojhbcrcahuotya.supabase.co/rest/v1'
 
 const routesRes = await fetch(`${base_url}/routes?discipline=in.(alpine,mountaineering)&select=id,name,area_id&limit=700`, {
@@ -93,11 +93,8 @@ const allEnhanced = enhancedBatches
 
 log(`Compiled ${allEnhanced.length} routes; ready for database application`)
 
-// Save for apply script
-const results = {
-  timestamp: new Date().toISOString(),
+// Return results (workflow harness will save to transcript)
+return {
   total_processed: allEnhanced.length,
   routes: allEnhanced
 }
-
-return results
