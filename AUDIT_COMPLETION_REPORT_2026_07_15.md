@@ -171,7 +171,7 @@ All spot checks pass: data is accurate, sourced, and internally consistent.
 
 ### To-Do for Next Session
 
-1. **Verify service key** → Still valid from this session (sb_secret_SQgG_ctJaZQ2HblK1rRxBA_HR23-Zjp)
+1. **Verify service key** → Get a fresh one from the Supabase dashboard (do not paste keys into this file — the previous key here was leaked and rotated)
 2. **Check budget reset** → Confirm API monthly limit refreshed (~2026-08-15)
 3. **Resume from manifest** → Start with `remaining_166_peak_ids.json`
 4. **Re-run wa-enrich-batch** → 4 batches × ~50 peaks each

@@ -7,7 +7,7 @@
 ## Pre-Launch Checklist
 
 - [ ] Verify API monthly budget has reset (check Claude dashboard at claude.ai/settings/usage)
-- [ ] Confirm Supabase service key still valid: `sb_secret_SQgG_ctJaZQ2HblK1rRxBA_HR23-Zjp`
+- [ ] Confirm Supabase service key still valid (get a fresh one from the Supabase dashboard — do not paste keys into this file; the previous key here was leaked and rotated)
 - [ ] Clone/pull `elevation-approach-audit` branch (or start fresh from main)
 - [ ] Verify batch files exist: `enrichment-wip/phase2_batch_{1,2,3,4}.json`
 - [ ] Confirm `enrichment-wip/apply_enrich_thin.mjs` is present and unchanged
@@ -96,7 +96,7 @@ PYTHON_EOF
 ### Step 5: Apply to Supabase (15 min)
 
 ```bash
-SUPABASE_SERVICE_KEY="sb_secret_SQgG_ctJaZQ2HblK1rRxBA_HR23-Zjp" \
+SUPABASE_SERVICE_KEY="<paste your current service key here — never commit it>" \
 node enrichment-wip/apply_enrich_thin.mjs enrichment-wip/findings_phase2_2026_08_15.json
 ```
 
