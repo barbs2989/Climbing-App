@@ -1,111 +1,73 @@
--- SUPERSEDED 2026-07-16: DO NOT APPLY THIS FILE AS-IS.
--- It contains fabricated/incorrect route_ids (some peaks never existed in the live DB,
--- some IDs are missing the required wa_ prefix, migration 0033 also uses the wrong
--- WHERE column name (route_id instead of id) and would fail outright.
--- The verified, corrected subset of this file's real content was salvaged into
--- migration 0035_salvaged_batches_1-4_corrected.sql. Apply 0035 instead.
--- See gear-audit-progress memory for the full incident writeup.
+-- Salvaged + corrected gear-audit data from migrations 0029-0033
+-- Generated: 2026-07-16
+-- Every route_id below was re-verified against the live routes table.
+-- Fixes applied: missing 'wa_' ID prefix (migration 0032), wrong WHERE
+-- column name 'route_id' -> 'id' (migration 0033). Blocks whose route_id
+-- had no match at all in the live DB (fabricated) were discarded --
+-- see /tmp/discarded_ids.txt for the full list; those peaks/routes still
+-- need real research under correct IDs in a future batch.
+--
+-- Requires migration 0028 (structured_rack_fields) + gear_confidence column
+-- to be applied first. Apply via Supabase SQL editor or with the service
+-- role key (see README note in 0034).
 
--- Gear audit batch 1: 35 peaks / 61 routes researched via multi-source trip-report verification
--- Workflow completed before API quota limit; remaining 406 peaks pending next cycle
--- Each route has verified gear data from real ascents, sourced URLs in corrections field
+BEGIN;
+
+update routes set
+  gear = '["Rock shoes (or sturdy approach shoes)","Single rack of cams #0.3-#1, some parties add a few small Alien/C3 microcams","Set of nuts plus a few tricams for quick anchors","Single 60m rope (skinny 7-8mm ropes are common)","8-14 alpine draws","A handful of slings (60cm/120cm) plus a cordelette or double-length sling for anchors/PAS","Light ice axe and aluminum crampons for the Goode Glacier crossing","Helmet","Micro Traxion + 2 prusiks + guide-mode belay device, if you want crevasse-rescue capability on the glacier approach"]'::jsonb,
+  detailed_rack = 'A single rack of cams from about #0.3 to #1 (some parties add a few small Aliens or C3 microcams, or double up 0.3-0.75, for long simul-climbing blocks), a set of nuts, and a few tricams -- useful for quick gear anchors on this mostly 3rd/4th-class buttress with short low-5th-class steps (5.5-5.7ish). Bring 8-14 alpine draws for the wandering, low-angle terrain, plus a handful of 60cm/120cm slings and a cordelette or double-length sling for anchors and a personal anchor system. No need for a heavy rack or doubled cams beyond the small-to-mid sizes.',
+  pro_needs = 'Protection is intermittent -- most of the route is 3rd/4th-class scrambling with short low-5th-class steps, so gear placements are more about quick simul-climbing anchors than sustained crack climbing. A single light rack to about #1 plus a few tricams is standard; nobody needs a heavy or doubled rack.',
+  what_to_bring = '["Rock shoes or approach shoes","Single rack to #1 plus nuts/tricams","8-14 alpine draws","Single 60m rope","Helmet","Light axe and aluminum crampons for the glacier crossing","Micro Traxion + prusiks if you want crevasse-rescue capability","Headlamp","Bivy gear (most parties do this over 2 days)","Extra layers for a long day"]'::jsonb,
+  sling_rack = '[{"sizeCm": 60, "qty": 5}, {"sizeCm": 120, "qty": 3}, {"sizeCm": 240, "qty": 1}]'::jsonb,
+  alpine_draws = 10,
+  rope_type = 'single',
+  rope_length_m = 60,
+  rope_note = 'Rappels are 6 single-strand ~30m raps off the standard descent (3 summit-to-Black Tooth Notch, 3 into the SW Couloir) -- a single 60m rope is standard and sufficient. Do not bring a second rope; the "double rope" beta in older data appears to be a misreading of one party''s skinny single-rated rope doubled over for simul-climbing protection, not two full ropes.',
+  ascender = 'Micro Traxion',
+  corrections = 'Corrected from auto_generated placeholder text. Previous data claimed "double rope" (real parties use a single 60m rope -- see rope_note) and a rack "to 3 inches" (real trip reports cap around #1-2). Previously had zero sling/alpine-draw data; 5 independent trip reports (2020-2025) converge on 8-14 alpine draws and a handful of slings/cordelette. Ascender/crevasse-rescue gear was never modeled -- at least one documented party carries a Micro Traxion + prusiks for the Goode Glacier crossing.',
+  auto_generated = false
+where id = 'wa_mount_goode_northeast_buttress';
 
 update routes set
   gear = '["sturdy scrambling boots","helmet","trekking poles","ice axe (if snow lingers near saddle/tarn)"]'::jsonb,
   detailed_rack = 'No roped rock rack is carried on this route. Cross-referenced trip reports (Country Highpoints, NWHikers forum, Steven''s Peak-bagging Journey, hike2hike) consistently describe the non-standard North Ridge (via the Wolf Creek/Gardner Meadows trail and an old, largely-vanished mine boot path) as an unroped Class 2-3 scramble: talus and scree to Gardner Meadows, then an unmaintained path/cairns to a 7,680+ ft saddle 0.6 mi north of the summit, then a ''pick-your-own-adventure'' scramble along the ridge crest with ''a few class 3 moves'' on a spur ridge. No party describes placing cams, nuts, or using a rope.',
   pro_needs = 'None placed — this is unprotected scrambling, not protected rock climbing. Hazard is loose rock/footing (talus, scree, old mining debris) rather than lack of gear placements; a helmet is the relevant safety item, not a rack.',
-  what_to_bring = '["helmet (loose rock/rockfall risk on talus and scree)","trekking poles for scree and talus","ice axe and/or microspikes if snow lingers near the 7,680ft saddle or approach tarn (common into early summer on this east-side, north-facing approach)","sturdy boots with good ankle support for off-trail talus","map/compass or GPS — the old mine boot path is faint to nonexistent above Gardner Meadows, marked only by occasional cairns and cut logs","extra water — long ridge approach (11 mi to Gardner Meadows) with few reliable water sources higher up"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'Not a roped route in any documented ascent — parties scramble it unroped. A short rope (~30m) could be carried by a cautious party for the handful of class 3 moves near the saddle/spur ridge, but no source describes this as standard practice, and no rappels are documented on ascent or descent (same route down).',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear text appears to assume a technical rock rack and/or rope typical of alpine-route templates. Multiple independent trip reports for this specific non-standard North Ridge line (via Gardner Meadows/Wolf Creek trail and the old mine path to the 7,680ft saddle) describe it uniformly as an unroped Class 2-3 talus/scree/ridge scramble with no cams, nuts, slings, or rope used by any documented party — corrected to remove implied technical rack/rope requirements and replace with scrambling-appropriate gear.'
+  what_to_bring = '["helmet (loose rock/rockfall risk on talus and scree)","trekking poles for scree and talus","ice axe and/or microspikes if snow lingers near the 7,680ft saddle or approach tarn (common into early summer on this east-side, north-facing approach)","sturdy boots with good ankle support for off-trail talus","map/compass or GPS — the old mine boot path is faint to nonexistent above Gardner Meadows, marked only by occasional cairns and cut logs","extra water — long ridge approach (11 mi to Gardner Meadows) with few reliable water sources higher up"]'::jsonb
 where id = 'wa_abernathy_peak_north_ridge';
 
 update routes set
   gear = '["helmet","ice axe","crampons","60m single rope","light rock rack (nuts + small-to-medium cams)","snow pickets"]'::jsonb,
   detailed_rack = 'No trip report gives an exact cam/nut inventory. Terrain is a broad Class 2-4 ramp to a col, then a 30-ft chimney (5.5, with a harder ~5.8 alternate chimney used when the first proved ''impassable''), then a final loose Class 4 scramble to the true summit. A light single rack of nuts plus cams roughly finger-to-hand size (~0.3-3in) covers the chimney/ledge terrain reasonably; a couple of doubled mid-size cams (1-2in) help for chimney stemming/stacking. This sizing is inferred from route character, not a sourced gear list.',
   pro_needs = 'Both documented ascents describe the rock as loose/rotten in places (''test every single hold,'' ''loose rock and hard dirt near the notch'') rather than gear-placement-difficult — rockfall management is emphasized more than protection scarcity. The technical crux is a chimney (5.5, or 5.8 on the adjacent alternate line) where natural chimney/stemming technique and slung chockstones can supplement small-to-medium cams. Rappel anchors during descent are through a snow couloir rather than bolted stations, consistent with natural/gear anchors.',
-  what_to_bring = '["overnight backpacking/bivy gear (remote multi-day approach, ~33mi RT via Stehekin ferry/PCT)","bear canister (North Cascades NP / Lake Chelan NRA backcountry regulation)","water filter/treatment (multiple creek crossings)","trekking poles (heavy brush/bushwhack sections, faint-to-vanished approach trail)","GPS/map and compass (approach trail described as largely vanished, requires route-finding)","sturdy approach boots suited to steep snow and loose rock","wilderness/backcountry camping permit"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":4},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = 4,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Sources consistently reference a single rope (not two) for roped pitches and for the 2-3 rappels used to descend via an east/south-facing snow couloir; no source describes free-hanging raps long enough to require doubles, nor glacier travel requiring rope redundancy. A single 60m rope is standard.',
-  ascender = 'Not needed',
-  corrections = 'IMPORTANT MISMATCH FOUND: every real trip report we located for reaching Agnes Mountain''s true summit describes genuine 5th-class rock climbing, not pure Class 3-4 scrambling. Beckey''s guide (via Wikipedia) calls even his ''recommended'' line up to Class 5.6; two independent trip reports (a 2020 party via onehikeaweek.com/WTA, and a separate trailcatjim.com party) both climbed a broad Class 2-4 ramp and snow couloir to a col, then had to lead a 30-ft chimney rated 5.5, with a harder adjacent alternate rated solid 5.8, before a final loose, exposed ~100ft Class 4 scramble on the west face to the true summit. If the existing auto-generated gear text implied this is walk-up/scramble-only terrain needing no rope or rack (consistent with a bare ''Class 3-4'' label), that undersells it significantly — real parties carried a rope, rock rack, and rappelled the descent (2-3 rappels via a snow couloir). Conversely, if the prior text assumed a double/half-rope glacier setup, that''s also not supported — no source describes glacier crevasse travel or two ropes; gear lists consistently say ''rope'' (singular). Net effect: keep ice axe/crampon/helmet/rope/small-rack gear, but the ''Class 3-4'' grade materially understates what''s actually needed to top out (5.5-5.8 chimney), and no source supports double ropes or glacier rescue gear.'
+  what_to_bring = '["overnight backpacking/bivy gear (remote multi-day approach, ~33mi RT via Stehekin ferry/PCT)","bear canister (North Cascades NP / Lake Chelan NRA backcountry regulation)","water filter/treatment (multiple creek crossings)","trekking poles (heavy brush/bushwhack sections, faint-to-vanished approach trail)","GPS/map and compass (approach trail described as largely vanished, requires route-finding)","sturdy approach boots suited to steep snow and loose rock","wilderness/backcountry camping permit"]'::jsonb
 where id = 'wa_agnes_mountain_west_route';
 
 update routes set
   gear = '["rock shoes","light alpine trad rack: cams ~0.3-2in (doubles 0.5-1in)","set of stoppers/nuts","helmet","60m single rope","a handful of slings for anchors"]'::jsonb,
   detailed_rack = 'A light alpine rack covers this route: a single set of cams from finger-size up to about 2in, with doubles in the common 0.5-1in range for the sustained low-5th ridge climbing and the 5.6 crux on pitch 3 (bypassing a gendarme on the right, on more solid but harder rock). Bring a set of stoppers/nuts too — the ridge is described as loose and lichen-covered in places, so smaller opportunistic nut/cam placements matter as much as a big piece. There is no fixed protection on-route except a single faded rap sling at the P2/P3 notch belay below the gendarme.',
   pro_needs = 'Protection is moderate but not continuous — this is a broken, sometimes loose ridge crest rather than a clean crack system, so gear comes from natural placements as terrain allows rather than a splitter line. Mountain Project explicitly flags ''an abundance of loose, lichen-y rock,'' and warns belayers on pitch 2 to stay out of the fall line because of rockfall risk from parties above on the pitch 3 crux.',
-  what_to_bring = '["helmet (loose/lichen-y rock)","ice axe, and crampons if there''s residual snow in Forbidden Gully/Cat Scratch Gullies on the approach","approach shoes/light boots for scree and snowfield approach to Boston Basin","bivy/camp gear for the multi-day Boston Basin approach"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":4},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = 5,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Descent is down the North Ridge, which involves only one short (~40ft) rappel at its notch before down-scrambling/hiking the rest of the way; a single 60m rope is standard for both the climbing (5 pitches, 500ft total, so a 60m easily covers any pitch) and that single short rap. No source describes a need for double/half ropes.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["helmet (loose/lichen-y rock)","ice axe, and crampons if there''s residual snow in Forbidden Gully/Cat Scratch Gullies on the approach","approach shoes/light boots for scree and snowfield approach to Boston Basin","bivy/camp gear for the multi-day Boston Basin approach"]'::jsonb
 where id = 'wa_south_ridge_6';
 
 update routes set
   gear = '["rock shoes","light alpine rack: small-medium cams + a few nuts","helmet","60m single rope","a few slings"]'::jsonb,
   detailed_rack = 'Very light rack. The route is 2-3 pitches of nearly level ridge that''s typically simul-climbed or short-roped, then a single steeper crux step (Mountain Project calls it 4th class, ~50-60ft; other sources describe it as up to 5.5) leading to a short tower, followed by one more short 4th class pitch to the summit. A small set of cams from finger-size to roughly 2in plus a handful of nuts is enough to protect the crux step and build gear anchors — there is no fixed gear or anchors on-route apart from rappel slings waiting at the descent notch.',
   pro_needs = 'Minimal protection needed overall — most of the route is easy, low-angle ridge terrain covered with minimal or no gear (simul/short-roped), with real protection only wanted on the one steeper step. Place gear opportunistically there rather than expecting a continuous crack.',
-  what_to_bring = '["helmet","ice axe, and crampons if snow lingers in Forbidden Gully/Cat Scratch Gullies on approach","a light rack rather than a full trad kit — this is a short half-day route from Boston Basin, not a long alpine outing","approach/scramble shoes for the col traverse to the base of the ridge"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":3},{"sizeCm":120,"qty":1}]'::jsonb,
-  alpine_draws = 2,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Descent is a single ~40ft rappel from the tower down to the notch, then reversing the ridge on foot/simul-climbing back toward the col. A single 60m rope is standard and more than sufficient for both the short pitches and the one short rap; no source suggests double ropes are used here.',
-  ascender = 'Not needed',
-  corrections = 'Catalog currently lists this route''s grade as ''4th'' (implying unroped scrambling), but real route descriptions (Mountain Project: 5.3 YDS with a 4th-class crux pitch; American Alpine Institute: up to a 5.5 pitch to the tower) show it requires a rope and rack, not just scrambling gear. Gear list here assumes roped climbing with a light rack, not pure scrambling.'
+  what_to_bring = '["helmet","ice axe, and crampons if snow lingers in Forbidden Gully/Cat Scratch Gullies on approach","a light rack rather than a full trad kit — this is a short half-day route from Boston Basin, not a long alpine outing","approach/scramble shoes for the col traverse to the base of the ridge"]'::jsonb
 where id = 'wa_north_ridge_7';
 
 update routes set
   gear = '["ice axe","aluminum or steel crampons","glacier travel harness + helmet","single 30-60m rope (shared ''glacier rope'', not full rock rope)","crevasse-rescue kit: pulley, 2 prusik cords/hero loops, cordelette, 2-3 lockers","1-2 snow pickets per rope team","optional light rock rack only for side-summit scrambles (Dome Peak, Sinister Peak)"]'::jsonb,
   detailed_rack = 'The standard through-traverse is a glacier/scramble route, not a pitched rock climb, so the ''rack'' is mostly glacier-travel and crevasse-rescue kit rather than rock gear: ice axe, crampons (aluminum acceptable, some parties use lightweight strap-on models), climbing harness, helmet, and a shared rope — either a 30m ''glacier rope'' per 2 people or a single lightweight 60m 8-9mm rope split among a 3-person team. Crevasse-rescue gear is the real ''rack'' here: a pulley, 2-3 locking carabiners, 2 prusik cords (pre-rigged ''texas prusiks''/hero loops work well), a cordelette or 5.5mm accessory cord, and 1-2 snow pickets per rope team (add 1-2 lightweight aluminum ice screws, e.g. 21cm, if traveling late-season when the Le Conte Glacier can go bare-ice). No rock rack is needed for the standard route. If adding optional technical side-summits (Dome Peak''s exposed class 3-4 final scramble, or a Sinister Peak side trip), bring a light rock rack: a half-set of nuts, a nut tool, a few small-to-mid cams (~0.1-2in) or tricams, and 3-4 shoulder-length slings for natural or gear anchors/short raps.',
   pro_needs = 'Protection needs are minimal and glacier-hazard-driven rather than rock-driven: pickets and (late-season) ice screws for crevasse-rescue anchors are the main ''pro'' on this route, not cams/nuts. Rock protection only comes into play on optional side-summit scrambles (e.g. Dome Peak''s final exposed step, occasionally belayed) or as a rappel backup if the Red Ledge traverse beneath Arts Knoll is broken by a melted-out gap (documented up to 15-20ft raps in some seasons) — the granite there is solid and takes gear fine, but placements are sparse because most parties simply scramble/hand-line rather than place traditional pro.',
-  what_to_bring = '["gaiters","glacier glasses / sun protection","trekking poles","multi-day pack with camp gear (tent, stove, bear-resistant food storage) for the typical 4-7 day traverse","map/compass/GPS — extensive off-trail navigation across ~6 glaciers","1-2 lightweight aluminum ice screws if attempting late-season when the Le Conte Glacier can be bare ice"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":3},{"sizeCm":120,"qty":1}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'No prior route data existed to correct, but this route is a good example of the alpine≠double-rope trap: multiple trip reports and gear write-ups consistently describe a single rope used purely for glacier travel/crevasse rescue, not for rock pitches. Typical practice is a 30m ''glacier rope'' shared 2-per-rope, or a single lightweight 60m (8-9mm) rope split among 3. The standard through-traverse has no documented fixed rappels (Red Ledge is usually a scramble, occasionally a short 15-20ft single-strand rap if a moat has opened). A 60m single becomes useful if extending to Dome Peak''s belayed summit step or Sinister Peak (one report used a 40m handline there). No source described carrying two ropes.',
-  ascender = 'Prusik cords only',
-  corrections = null
+  what_to_bring = '["gaiters","glacier glasses / sun protection","trekking poles","multi-day pack with camp gear (tent, stove, bear-resistant food storage) for the typical 4-7 day traverse","map/compass/GPS — extensive off-trail navigation across ~6 glaciers","1-2 lightweight aluminum ice screws if attempting late-season when the Le Conte Glacier can be bare ice"]'::jsonb
 where id = 'wa_ptarmigan_traverse';
-
-update routes set
-  gear = '["sturdy hiking boots or trail runners","trekking poles (steep 1,400ft initial climb)","Northwest Forest Pass for trailhead parking","extra water — no reliable water sources on the route","sun protection / layers for exposed ridge sections","microspikes or light traction for late-spring/early-June snow patches on Nason Ridge"]'::jsonb,
-  detailed_rack = null,
-  pro_needs = 'No protection or technical rack needed. This is a maintained, non-technical Forest Service trail (Round Mountain Trail #1529 to Nason Ridge Trail #1583) to a staffed fire lookout — no roped or protected climbing anywhere on the route.',
-  what_to_bring = '["Northwest Forest Pass (required at trailhead)","map/GPS — junction with Nason Ridge Trail is signed but side trails exist","extra water (route has at most one small spring early on; none higher up)","layers — Nine Mile Saddle and the ridge crest are exposed to wind","camera/binoculars — Mount Rainier and Cascades views plus resident mountain goats near the lookout","microspikes/snowshoes if hiking before trail fully melts out (typically snow-free June–October)"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope carried or needed — this is a hiking trail (Class 1-2) to a fire lookout, not a roped climb; there is no rappelling or belayed terrain on the route.',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear/detailedRack text implied a technical rack was relevant to this route; that''s incorrect. Round Mountain / Alpine Lookout (Round Mountain Trail #1529 → Nason Ridge Trail #1583) is a maintained, moderate-to-strenuous but fully non-technical Forest Service trail hike to a staffed fire lookout at 6,237ft. Multiple independent sources (WTA trip reports, Wenatchee Outdoors, The Mountaineers, AllTrails, Hiking with my Brother) describe steep grade and a narrow ridge section at Nine Mile Saddle but no exposure requiring gear, no scrambling requiring hands, and no water sources beyond one small spring near the start. No rope, rack, harness, helmet, or protection of any kind is used by documented parties; only trekking poles and, in early season (before the typical June snow-free date), microspikes/snowshoes for lingering ridge snow.'
-where id = 'wa_alpine_lookout_trail_route';
 
 update routes set
   gear = '["sturdy scrambling/hiking boots (mountaineering boots if any snow lingers)","trekking poles","helmet (situational, precautionary -- carried by some parties for rockfall/loose rock, not technically required)","ice axe (early-season/lingering-snow on the approach gully only; not needed on dry summer rock)"]'::jsonb,
   detailed_rack = 'No rock rack is used or needed -- this is an unroped Class 2 hands-on-rock scramble, not a roped rock climb. Parties do not carry cams, nuts, hexes, or a rack of any kind on the standard South Ridge/Rampart Ridge route.',
   pro_needs = 'None -- no technical protection is placed on this route. It is a Class 2 scramble: loose rock and large steps on the initial push, then a narrow, exposed but non-technical ridge crest with several false summits to the true summit. Rock quality on the ridge itself is solid enough for hands-and-feet scrambling; the main hazard is loose talus/scree on the lower approach slope rather than anything requiring gear placement.',
-  what_to_bring = '["bug net and repellent (mosquitoes reported swarming heavily at rest stops on the approach)","sun protection -- little to no shade on the final push and ridge","map/GPS/route beta for false-summit routefinding (3-5 false summits reported before the true summit)","wind layer for the exposed open ridge","turn-around discipline / willingness to bail if snow is encountered on the ridge or gully (per WTA guidance)"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = 0,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is carried or used -- the standard route is entirely unroped scrambling with no rappels or belayed pitches. (If any prior data assumed a rope, especially a double/half-rope setup, that assumption is unsupported by any source found and should be dropped.)',
-  ascender = 'Not needed',
-  corrections = 'The prior auto-generated gear text should not imply any technical rock rack, rope, or double-rope needs. Multiple independent sources (Wikipedia''s route listing, WTA''s official hike page, Mountaineers club route page/trip reports) confirm Alta Mountain''s standard route (South Ridge, reached via the Rampart Ridge/Rampart Lakes ''backdoor'' approach) is a genuine unroped Class 2 scramble: loose rock and large steps giving way to a narrow but ''non-technical'' knife-edge ridge crest, crossing several (3-5) false summits before the true summit. No cams, nuts, or slings are placed anywhere on this route -- there is no anchor-building or protection to correct toward. Ice axe is only situationally useful for lingering early-season snow in the approach gully (WTA explicitly advises ''turn back if you hit snow'' rather than travel over it), and helmet is a precautionary choice seen in at least one 2025 trip report (author called it ''probably overkill''), not a technical requirement of the rock itself.'
+  what_to_bring = '["bug net and repellent (mosquitoes reported swarming heavily at rest stops on the approach)","sun protection -- little to no shade on the final push and ridge","map/GPS/route beta for false-summit routefinding (3-5 false summits reported before the true summit)","wind layer for the exposed open ridge","turn-around discipline / willingness to bail if snow is encountered on the ridge or gully (per WTA guidance)"]'::jsonb
 where id = 'wa_alta_mountain_scramble';
 
 update routes set
@@ -126,14 +88,7 @@ update routes set
   gear = '["sturdy hiking/approach boots","ice axe (pre-mid-July snow)","trekking poles","helmet for loose talus sections"]'::jsonb,
   detailed_rack = 'No technical rock rack is needed for the standard West Route. From Upper Cathedral Lake it follows a boot path around the west ridge, then scree/grass slopes to a basin (~8,000 ft), then easy slopes south to the summit. The true (south) summit has one short mantle move onto a block; otherwise it''s a walk.',
   pro_needs = 'No trad gear is placed on the standard route - it is a scree/talus/grass walk-up with one short 3rd-class move near the true summit. A rope/harness/rack is only relevant if linking into one of the technical buttress routes (Middle Finger Buttress, Finger of Fatwa, Pilgrimage to Mecca) on the same peak.',
-  what_to_bring = '["ice axe and possibly crampons for lingering snow before ~mid-July","trekking poles","sun protection - long exposed alpine walk","map/GPS - open terrain with braided boot paths","extra water - dry upper basin"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = 0,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on the standard walk-up/scramble in summer conditions. Some older listings for this peak (e.g. Mountaineers ''Basic/Intermediate Alpine Climb'') carry boilerplate mentioning ''helmet, harness, belay rope, tiny rack may be needed'' - that applies to the technical options on the mountain generally, not to the West Route''s actual terrain, which is a hike.',
-  ascender = 'Not needed',
-  corrections = 'If the existing gear text implies technical rock gear (rope/rack/harness) is routinely used on this route, that overstates it - multiple sources (Mountaineers, Mazamas, trip reports) describe the West Route as a scree/grass walk-up with only one short 3rd-class move.'
+  what_to_bring = '["ice axe and possibly crampons for lingering snow before ~mid-July","trekking poles","sun protection - long exposed alpine walk","map/GPS - open terrain with braided boot paths","extra water - dry upper basin"]'::jsonb
 where id = 'wa_amphitheater_mountain_west_route';
 
 update routes set
@@ -210,70 +165,35 @@ update routes set
   gear = '["rock shoes","wires (full nut set)","doubles from tips to #2","single #3 cam","single #4 cam","60m single rope","helmet"]'::jsonb,
   detailed_rack = 'Full set of wired nuts plus cams doubled from the smallest sizes (''tips'') up through BD #2, with a single #3 and single #4 for the hand-crack/chimney exit pitches shared with Middle Finger Buttress - Left. Crux pitch 2 (ringlock/stem corner, 5.11c) and pitch 3 (underclings/roofs, 5.11b) take small-to-mid cams; upper pitches 4-5 are hand cracks and blocky terrain joining Middle Finger Buttress - Left.',
   pro_needs = 'Continuous crack protection reported on all 5 pitches; gear is generally plentiful along the ringlock/stem-corner and hand-crack systems, though a 2018 trip report noted the cracks were ''pretty dirty'' in places, which can slow placements. No runout sections documented.',
-  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear (multi-day approach)","helmet","headlamp","sun protection","trekking poles"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":6},{"sizeCm":120,"qty":3}]'::jsonb,
-  alpine_draws = 4,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Route joins Middle Finger Buttress - Left''s upper pitches near the top of the buttress and shares its walk-off descent off the summit plateau — no rappels documented anywhere for this route. A single 60m rope is standard for the pitch lengths described; no source supports carrying doubles.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear (multi-day approach)","helmet","headlamp","sun protection","trekking poles"]'::jsonb
 where id = 'wa_finger_of_fatwa';
 
 update routes set
   gear = '["approach/light rock shoes","light rack of nuts","long slings (120cm)","a few small-to-mid cams (optional)","60m single rope","helmet"]'::jsonb,
   detailed_rack = 'Mountain Project describes only ''a light rack of nuts and long slings'' — no cam sizes, nut counts, or rope length are specified in any source found. A minimal nut set plus several 120cm slings for slinging horns/blocks on the loose, blocky ridge steps is the documented approach; a few small-to-mid cams are a reasonable addition for the harder 5.5 steps but are not independently confirmed by any trip report.',
   pro_needs = 'Protection is sparse and mostly natural (horns, chockstones, threads) between short, steep gully/step sections. Route-finding and loose rock are bigger hazards than protection scarcity; much of the route is only 3rd-4th class between the roped 5.5 steps and can be simul-climbed or scrambled with minimal gear.',
-  what_to_bring = '["helmet (loose rock)","trekking poles for the long approach/scramble","backpacking/camp gear (20-mile approach)","sun protection","sturdy approach shoes for scrambling sections"]'::jsonb,
-  sling_rack = '[{"sizeCm":120,"qty":4},{"sizeCm":60,"qty":2}]'::jsonb,
-  alpine_draws = 0,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Descent is a walk-off — either continuing SW around Amphitheatre back to Upper Cathedral Lake, or a 3rd-class gully/col SW of the ridge — no rappels documented. A single rope (many parties only rope up for the steeper steps) is standard; nothing found supports carrying doubles.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["helmet (loose rock)","trekking poles for the long approach/scramble","backpacking/camp gear (20-mile approach)","sun protection","sturdy approach shoes for scrambling sections"]'::jsonb
 where id = 'wa_north_ridge_8';
 
 update routes set
   gear = '["rock shoes","wide range of nuts and cams (doubles through #3)","60m single rope","helmet"]'::jsonb,
   detailed_rack = 'Mountain Project''s route description only says ''wide range of nuts and cams'' with no specific sizes or counts. Based on the neighboring routes on the same buttress complex (Middle Finger Buttress - Left: stoppers + doubles #0.3-#2 + a #3; Finger of Fatwa / Pilgrimage to Mecca: doubles to #2-3 plus a #4), a comparable rack — full nut set, cams doubled from small through #3 — is a reasonable inference for this 7-pitch route, but no route-specific trip report with exact sizes/counts was found.',
   pro_needs = 'Route follows crack systems on the NW side of the buttress for 7 pitches with a short crux on pitch 3 (begins on a steep slab with a thin vertical crack). Gear appears continuous along the crack systems per the route description, though no trip report confirms placement density or scarcity.',
-  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear","helmet","sun protection","trekking poles"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":8},{"sizeCm":120,"qty":3}]'::jsonb,
-  alpine_draws = 4,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'No descent/rappel details were found specific to this route. Every neighboring route on this mountain (North Ridge, Pilgrimage to Mecca) uses a walk-off descent off the summit plateau with no rappels, and moderate Cascades alpine rock of this grade/pitch count is normally single-rope terrain — no source found supports carrying doubles.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear","helmet","sun protection","trekking poles"]'::jsonb
 where id = 'wa_middle_finger_buttress_right_side';
 
 update routes set
   gear = '["rock shoes","set of stoppers","doubles BD #0.3-#2","single #3 cam","60m single rope","helmet"]'::jsonb,
   detailed_rack = 'Mountain Project specifies: set of stoppers, doubles from BD #0.3 to #2, plus a single #3. Pitch 1 (the hand-crack crux, called one of the best 5.10 corner pitches in the Cascades) is where most of the doubled mid-size cams get used; upper pitches (5.7-5.9, non-sustained) take less gear. A single #4 is not listed by MP for this route specifically, though it''s worth carrying if also linking into Finger of Fatwa''s shared upper pitches, which do call for a #4.',
   pro_needs = 'Pitch 1 (hand crack/chimney start, the route''s crux and highlight) is well protected by the doubled 0.3-2 cams. Upper pitches are easier and less sustained (5.7-5.9), needing less gear per pitch.',
-  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear","helmet","sun protection"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":6},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = 3,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Mountain Project''s pitch breakdown gives full pitch lengths: P1 (crux) runs the full 60m, P2 ~40m, P3-4 full rope lengths — a single 60m rope covers every pitch. Descent is a walk-off with no rappels documented anywhere for this route; nothing supports carrying doubles.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["approach shoes for the 20-mile approach","backpacking/camp gear","helmet","sun protection"]'::jsonb
 where id = 'wa_middle_finger_buttress_left_side';
 
 update routes set
   gear = '["rock shoes","doubles BD #0.3-#2","single #3 cam","single #4 cam","full set of nuts","a few small cams","60m single skinny rope (~8.7mm)","12-14 slings","helmet"]'::jsonb,
   detailed_rack = 'Direct 2024 trip report (rocknropenw.com): single BD #4 and #3, doubles of BD #2 through #0.3, a single #0.2, a full set of nuts, and 12-14 slings (~10 single-length 60cm + 4 double-length 120cm). The #4 is explicitly called out as required (''definitely'' needed), not optional — a second #3 is noted as nice-to-have but not necessary. This closely matches Mountain Project''s own listing (''doubles from .3-3, one #4, set of nuts, a few small cams'').',
   pro_needs = 'All anchors are gear anchors (no fixed anchors) — build every belay from the rack. Rock quality is described as excellent throughout, especially the pitch-3 ''money pitch'' finger-crack layback corner. P1 has a triple-crack system with a roof, P2 a thin flake/layback corner, P4 an offwidth-or-crack option to a secure belay ledge; in wet conditions P4 has forced parties onto a harder ~5.10b crack variation.',
-  what_to_bring = '["approach shoes/backpacking gear for the 20-mile approach","helmet","trekking poles","sun protection","a skinny single rope (8.5-9mm) for weight savings on the long approach"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":10},{"sizeCm":120,"qty":4}]'::jsonb,
-  alpine_draws = 3,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = '2024 trip report confirms a 60m skinny single rope (Mammut Serenity 8.7mm) worked well for the whole trip. Descent is a walk-off — either a north-side snow/scree gully (~35-40 degrees, half-mile) or circling south around Amphitheatre''s western arm to the trail (~2 miles) — no rappels, so a single rope is correct; the route does not need doubles.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["approach shoes/backpacking gear for the 20-mile approach","helmet","trekking poles","sun protection","a skinny single rope (8.5-9mm) for weight savings on the long approach"]'::jsonb
 where id = 'wa_pilgrimage_to_mecca';
 
 update routes set
@@ -291,31 +211,10 @@ update routes set
 where id = 'wa_andersons_thumb_standard';
 
 update routes set
-  gear = '["sturdy hiking boots","trekking poles","map/compass or GPS (off-trail navigation from Apex Pass)","layers for alpine/ridge weather"]'::jsonb,
-  detailed_rack = null,
-  pro_needs = 'None — this is a non-technical Class 2 cross-country scramble on meadow, scree, and easy rock. No rope, harness, or rack is used on the standard route.',
-  what_to_bring = '["sturdy boots","trekking poles","map and compass or GPS (route is off-trail from Apex Pass)","sun protection and extra layers (exposed alpine terrain)","ice axe if climbing while snow lingers on the north-facing approach meadows (typically into early July)","extra water — no reliable water source high on the route"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on the standard Class 2 route. It''s an off-trail walk from Apex Pass across meadows and scree to the north ridge, over a class 2 false summit, to the true summit — no rock climbing involved.',
-  ascender = 'Not needed',
-  corrections = 'The existing gear text was AI-generated placeholder and needed verification, not correction of a specific factual error — multiple independent sources (SummitPost route description, a 2024 trip report from a party that summited Apex as a side trip, WTA-linked trail beta) consistently describe this as an easy, non-technical cross-country walk from Apex Pass with no climbing gear, rope, or rack needed. Any placeholder text implying technical rack/rope needs should be removed; the only conditional item is an ice axe for early-season snow on the approach meadows.'
-where id = 'wa_apex_mountain_pasayten_scramble';
-
-update routes set
   gear = '["rock shoes","helmet","rack of nuts and cams to ~3in with doubles in finger-to-hand sizes","60m single rope","alpine quickdraws","approach shoes/boots for the cross-country approach"]'::jsonb,
   detailed_rack = 'Mountain Project''s route page (FA July 1975) describes protection only as ''a wide selection of nuts/cams'' for this 7-pitch, Grade II buttress — no trip report gives an exact piece-by-piece list, and none could be found despite extensive searching (this route has essentially no online trip-report history). Based on the comparable granite buttress routes nearby in the same range (Cathedral Peak''s SE Buttress and Middle Finger Buttress, which run similar crack systems on the same alpine granite), a single set of stoppers plus cams from finger to hand size (roughly 0.4-3in / BD 0.3-3 equivalent) with doubles in the 0.75-2in range is a reasonable rack; there are no reports of offwidth or wide-crack sections on Apex Buttress specifically, unlike Cathedral''s SE Buttress which needs a #4/#5 for one pitch.',
   pro_needs = 'Protection is described in the only available source as ''a wide selection of nuts/cams'' with no gaps or run-outs called out. Granite crack systems on this range''s buttress routes generally take gear well; given the total lack of trip reports for this specific route, treat this as a lightly-traveled, self-sufficient alpine objective and rack conservatively rather than relying on fixed gear (there is none).',
-  what_to_bring = '["approach shoes/boots for the long cross-country approach from Apex Pass or Tungsten Mine","helmet","rack (see rack notes) plus rock shoes","layers for alpine weather at ~8,300ft","bivy/overnight gear if not done car-to-car given the remote, multi-day approach","this is a very rarely climbed, remote route — expect to be self-reliant with no beta on rappel stations or bail options"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":6},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = 4,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'No trip report or route page describes the rappel/descent line for this route — Mountain Project''s stub gives no descent info. Grade II alpine buttress routes of this style and era in the Pasayten (comparable to nearby Cathedral SE Buttress, Middle Finger Buttress) are typically descended by walking off rather than rappelling the face, since no fixed rap anchors are documented. A single 60m rope is standard for the 7-pitch climb; this is inferred from route grade/style and regional norms, not a direct source, since essentially no trip reports of this specific route exist online.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["approach shoes/boots for the long cross-country approach from Apex Pass or Tungsten Mine","helmet","rack (see rack notes) plus rock shoes","layers for alpine weather at ~8,300ft","bivy/overnight gear if not done car-to-car given the remote, multi-day approach","this is a very rarely climbed, remote route — expect to be self-reliant with no beta on rappel stations or bail options"]'::jsonb
 where id = 'wa_apex_buttress';
 
 update routes set
@@ -364,28 +263,14 @@ update routes set
   gear = '["rock shoes","helmet","small-to-mid rack (nuts + cams ~0.4-2in)","60m single rope","webbing/cordelette for the crux belay/rap anchor"]'::jsonb,
   detailed_rack = 'Short route — 300ft/3 pitches of blocky Class 5.6 on generally good granite directly below the summit. A single set of nuts plus cams in the 0.4-2in range (with extra pieces in the 0.75-1in range, reported as the most useful crux size) is sufficient; no source describes needing anything larger. Bring webbing or a cordelette specifically for building/backing up the crux-pitch anchor.',
   pro_needs = 'Protection is adequate in the crack/corner systems on this face (start in a short left-facing corner and follow cracks up), but rock quality is inconsistent — good overall, with reported loose blocks near the base, so test holds low on the route. The face is wide enough that parties pick their own line (''climb anywhere on this face''), so exact placements vary party to party.',
-  what_to_bring = '["helmet (loose blocks reported near the base)","approach shoes for the talus gully to the wall base","light rack rather than a heavy trad kit given the short 3-pitch length"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":3},{"sizeCm":120,"qty":1}]'::jsonb,
-  alpine_draws = 3,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'At only 300ft/3 pitches, a single 60m rope comfortably covers the route and any rappel descent; no source describes a need for double ropes on this short face.',
-  ascender = 'Not needed',
-  corrections = 'No major correction to existing curated data — refines the generic ''standard rack'' description with sourced specifics: 3 pitches/300ft, cam range concentrated around 0.4-2in with 0.75-1in emphasized as most useful, webbing/cordelette needed for the crux anchor, and a specific loose-rock warning near the base.'
+  what_to_bring = '["helmet (loose blocks reported near the base)","approach shoes for the talus gully to the wall base","light rack rather than a heavy trad kit given the short 3-pitch length"]'::jsonb
 where id = 'wa_south_face_12';
 
 update routes set
   gear = '["sturdy hiking boots (insulated mountaineering boots in winter/spring)","ice axe","crampons or microspikes (winter/spring snow conditions)","helmet","trekking poles","snowshoes (when approach snow is unconsolidated)"]'::jsonb,
   detailed_rack = 'No roped rock rack is used on this route. Arrowhead''s South/standard route is a non-technical Class 2-3 scramble — travel is on logging road, open clearcut, ridge, and a short rocky summit step, with no crack systems or fixed anchors that parties place gear in. Every trip report reviewed (Mountaineers, WTA, SummitPost, CascadeClimbers, Wenatchee Outdoors) describes it as unroped; no cams, nuts, or rope appear in any gear list. The route is most commonly climbed Dec-April as a winter/spring snow scramble, in which case an ice axe and crampons (or microspikes, swapped depending on snow firmness) substitute for a rock rack as the real protection system, used for self-arrest and traction on the steep upper ridge (~5,100ft+) and near tree wells/cornices. A summer ascent (July-Aug) trades snow travel for brush/talus and the same short Class 3 rock step, typically done in approach shoes with hands only.',
   pro_needs = 'No fixed or removable rock protection is placed — this is an unroped scramble, not a roped climb. In winter/spring conditions, self-arrest with an ice axe is the primary safety system on the steep upper ridge, and crampons provide the real ''protection'' on hard, icy, wind-swept snow. The Class 3 summit rock step is short and low-angle; parties comfortable with exposed unroped scrambling solo it without gear. Rock quality on the short summit block was not specifically characterized as loose or solid in any source found — treat with normal alpine caution for an unfrequented Cascades summit block.',
-  what_to_bring = '["map, compass, and altimeter or GPS — clearcuts, logging roads, and open ridge terrain are easy to lose in poor visibility","headlamp — several trip reports logged 6-7.5+ hour car-to-car days","avalanche safety gear (beacon, probe, shovel) for winter/spring ascents — sources disagree on how avalanche-exposed the standard route is (one TR calls it ''avalanche-safe'', others describe ''considerable avalanche terrain'' on nearby lines), so carry standard winter travel gear and judgment","gaiters","wind layers for the exposed upper ridge"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = 0,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is carried on this route. It is climbed unroped in every trip report found — winter parties self-arrest with an ice axe on the steep ridge, and the short Class 3 summit rock step is soloed. There is no rappelling on the standard descent (parties walk off the same ridge/gully line they ascended).',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear text should not be trusted if it implies any roped-climbing rack (cams/nuts), a rope length, or alpine draws — no source across Mountaineers, WTA, SummitPost, CascadeClimbers, or Wenatchee Outdoors trip reports shows a rope or rock rack ever being used on this route; it is consistently unroped Class 2-3 scrambling. If prior text listed generic ''rack to 3in'' or ''60m rope'' boilerplate, that was incorrect filler for a non-technical scramble — the gear that actually matters here is winter snow-travel gear (ice axe, crampons, helmet), not a rock rack.'
+  what_to_bring = '["map, compass, and altimeter or GPS — clearcuts, logging roads, and open ridge terrain are easy to lose in poor visibility","headlamp — several trip reports logged 6-7.5+ hour car-to-car days","avalanche safety gear (beacon, probe, shovel) for winter/spring ascents — sources disagree on how avalanche-exposed the standard route is (one TR calls it ''avalanche-safe'', others describe ''considerable avalanche terrain'' on nearby lines), so carry standard winter travel gear and judgment","gaiters","wind layers for the exposed upper ridge"]'::jsonb
 where id = 'wa_arrowhead_mountain_south_route';
 
 update routes set
@@ -406,14 +291,7 @@ update routes set
   gear = '["helmet (loose choss/rockfall)","ice axe (early/late-season snow runnels only)","sturdy scrambling boots/approach shoes","optional 30-60m rope + harness for upper gully rappel"]'::jsonb,
   detailed_rack = 'No technical rock rack is carried on this route — it is an unroped Class 3-4 scramble on loose, quickly-disintegrating granite/basalt. No trip report describes placing cams, nuts, or any fixed protection anywhere on the South Ridge or Southwest Gully lines. The only rope use noted is an optional single-strand or doubled rappel of the loose upper gully below the summit tower (some parties down-climb it instead), for which a harness, rappel device, and a couple of slings/webbing for a natural (rock horn/chockstone) anchor are sufficient — there are no reports of fixed/bolted rap anchors.',
   pro_needs = 'Essentially no placed protection on this route; it is climbed as an unroped scramble. Rock is loose, weathered, and chossy (granite disintegrating to pebbly sand lower down, harder basalt higher), so protection would be unreliable even if desired — parties instead manage exposure by route-finding around the worst sections and downclimbing conservatively. If rappelling the upper gully, build a natural anchor (sling around a horn/chockstone); no bolted or fixed anchors are reported.',
-  what_to_bring = '["ice axe (glissade/snow-runnel crossings in early/late season; often unnecessary by mid-late summer)","crampons only if climbing in early/late season snow conditions","helmet for rockfall/looseness","trekking poles for the long approach and scree/talus","optional 30-60m rope + harness + rappel device for the upper gully","layers/wind protection for the exposed ridge and summit tower","overnight/backpacking gear if doing the standard 2-day approach via Azurite Pass"]'::jsonb,
-  sling_rack = '[{"sizeCm":120,"qty":2},{"sizeCm":240,"qty":1}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Rope is optional, not required for protection — used only if a party chooses to rappel the loose upper gully below the summit tower rather than downclimb it (most parties reportedly downclimb the route unroped in dry conditions). A single 60m rope, doubled, gives roughly a 30m rappel of that gully; no trip report or route description mentions needing two ropes or a tag-line setup.',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear text should not be trusted as-is: real trip reports (a detailed first-hand account, a guide-service route page, and route summaries) consistently describe this as an unroped Class 3-4 scramble with no placed rock protection (no cams/nuts) anywhere on the South Ridge/Southwest Gully — any auto-generated rack sizing (e.g. ''rack to 3in'') or assumption of a double/half-rope system is unsupported and should be removed. The only rope use is an OPTIONAL single 60m rope for rappelling the short upper gully; ice axe is seasonal (early/late season snow runnels) and crampons are frequently not needed at all even when the axe is carried.'
+  what_to_bring = '["ice axe (glissade/snow-runnel crossings in early/late season; often unnecessary by mid-late summer)","crampons only if climbing in early/late season snow conditions","helmet for rockfall/looseness","trekking poles for the long approach and scree/talus","optional 30-60m rope + harness + rappel device for the upper gully","layers/wind protection for the exposed ridge and summit tower","overnight/backpacking gear if doing the standard 2-day approach via Azurite Pass"]'::jsonb
 where id = 'wa_azurite_peak_southeast';
 
 update routes set
@@ -434,14 +312,7 @@ update routes set
   gear = '["helmet","ice axe","microspikes or crampons (early-season/lingering snow)","trekking poles","sturdy mountaineering boots"]'::jsonb,
   detailed_rack = 'No technical rock rack is used on the standard North Ridge route — this is an unroped scramble, not a roped climb. No cams, nuts, or slings are placed. Multiple trip reports describe the route as forested ridge travel with brush, a short crampon-and-helmet bypass gully around a cliff band near 5,400 ft, and an exposed summit ledge traverse — none involve gear placements.',
   pro_needs = 'None — no fixed or removable protection is used. The only protective gear is a helmet for the loose-rock cliff-bypass gully (~5,400 ft) and traction (ice axe + crampons/microspikes) for lingering snow on the upper ridge, which can persist into summer on north-facing slopes.',
-  what_to_bring = '["helmet","ice axe","microspikes or crampons for spring/early-summer snow","trekking poles","map/GPS (brushy, route-finding-heavy lower ridge)","plenty of water — no reliable water source on the north ridge"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = 0,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No trip report found describes carrying a rope; ascents documented (including a first-hand May north-ridge account) are unroped scrambles. A short handline could reasonably be used by a conservative party for the exposed summit ledge or the class-4 move, but this is not standard practice per available sources — treat rope as optional/not carried by most parties.',
-  ascender = 'Not needed',
-  corrections = 'Existing gear text was AI-generated placeholder that likely implied a technical rock rack typical of alpine routes on this peak. Corrected: real trip reports (first-hand North Ridge account, SummitPost, Wikipedia, guide sites) describe an unroped Class 3(-4) scramble with no protection placements. The technical crux is a short cliff-bypass gully (~5,400 ft) handled with helmet + traction devices, plus an exposed ledge near the summit — not rock climbing requiring rack/rope. Ice axe and crampons/microspikes are for seasonal snow on the north-facing upper ridge, not for a glaciated approach.'
+  what_to_bring = '["helmet","ice axe","microspikes or crampons for spring/early-summer snow","trekking poles","map/GPS (brushy, route-finding-heavy lower ridge)","plenty of water — no reliable water source on the north ridge"]'::jsonb
 where id = 'wa_bald_eagle_peak_scramble';
 
 update routes set
@@ -462,14 +333,7 @@ update routes set
   gear = '["sturdy hiking boots with ankle support","ice axe (spring/early-summer snow gully)","helmet (loose rock/rockfall)","trekking poles","optional light 30m rope + a few slings for belaying wet class-4 moves"]'::jsonb,
   detailed_rack = 'No technical rack is needed for typical dry-condition ascents. This is an unroped Class 3-4 scramble up a brushy climber''s trail, a snow/talus gully, and heather/talus slopes to the north/south peak notch, then easy scrambling to the summit. In early season or after rain the gully holds snow (ice axe, plus crampons/microspikes if firm), and a few multiple sources note that when the summit-block heather is wet some parties choose to rope up for the class-4 moves — in that case a short 30-40m single rope with a handful of slings/small nuts is enough; this is not a route with an established protection rack.',
   pro_needs = 'Protection is essentially optional here — the terrain is loose/brushy/vegetated rather than clean rock, so any gear carried is for psychological security on one or two exposed class-4 steps, not for sustained protection. Most parties climb it entirely unroped in dry summer conditions.',
-  what_to_bring = '["helmet","ice axe (spring/early summer snow)","microspikes or crampons if the gully is icy/firm","trekking poles","gaiters","sun and rain protection","the ten essentials","sturdy boots with ankle support"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 30,
-  rope_note = 'A rope is optional and not carried by most parties in dry conditions. When the summit heather/rock is wet, some climbers carry a light 30-40m single rope (plus a few slings/small nuts) to belay short class-4 sections — this is not a route that requires a technical rack or rope by default.',
-  ascender = 'Not needed',
-  corrections = 'The existing AI-generated gear text likely overstated technical-rack needs; multiple independent trip reports (WTA, Eric''s Base Camp, trailcatjim.com, Hike2Hike) agree this is fundamentally an unroped scramble where only seasonal snow gear (ice axe/microspikes) and a helmet are consistently needed — no cam/nut rack is standard.'
+  what_to_bring = '["helmet","ice axe (spring/early summer snow)","microspikes or crampons if the gully is icy/firm","trekking poles","gaiters","sun and rain protection","the ten essentials","sturdy boots with ankle support"]'::jsonb
 where id = 'wa_baring_mountain_south_route';
 
 update routes set
@@ -518,29 +382,8 @@ update routes set
   gear = '["sturdy hiking boots or approach shoes","trekking poles","ice axe (seasonal — snowpack lingers in the basin into July)","helmet (optional, for loose rock on the final ~100m scramble)"]'::jsonb,
   detailed_rack = 'No technical rock rack applies to this route. It is an unroped Class 2-3 scramble — no cams, nuts, rope, or protection are used at any point, including the final steep section below the summit.',
   pro_needs = 'None. This is an unroped scramble; there are no protectable technical moves. The final ~100m to the summit is loose Class 2-3 terrain handled by careful route-finding and hand-and-foot scrambling, not by placing gear.',
-  what_to_bring = '["trekking poles for the short, steep maintained trail to Church Lake","ice axe or microspikes if attempting in spring/early summer while snow persists in the cirque (reported to linger into July)","sturdy trail shoes or light hiking boots","navigation aid (map/GPS) since the climbers'' path fades to a boot-track past Church Lake through the alpine meadows/cirque","sun protection for the open alpine basin","helmet if concerned about loose rock on the final scramble (optional, not reported as standard practice)"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used — this is an unroped Class 2-3 scramble with no rappels or belayed pitches. A 2015 trip report (gambolingwithmonique) explicitly notes no specialized gear was carried, consistent with standard hiking/scrambling attire only.',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear text likely implied a technical rock-climbing rack/rope setup, which is inappropriate for this route: it is a short (3-3.7 mi RT), unroped Class 2-3 scramble with only the final ~100m below the summit requiring hands-on scrambling. No trip report found describes any rope, rack, or protection use. Corrected to scrambling-specific gear: footwear, poles, seasonal ice axe, and optional helmet only.'
+  what_to_bring = '["trekking poles for the short, steep maintained trail to Church Lake","ice axe or microspikes if attempting in spring/early summer while snow persists in the cirque (reported to linger into July)","sturdy trail shoes or light hiking boots","navigation aid (map/GPS) since the climbers'' path fades to a boot-track past Church Lake through the alpine meadows/cirque","sun protection for the open alpine basin","helmet if concerned about loose rock on the final scramble (optional, not reported as standard practice)"]'::jsonb
 where id = 'wa_bearpaw_mountain_scramble';
-
-update routes set
-  gear = '["approach shoes","rock shoes for summit block","helmet","light rack: stoppers + small cams","60m single rope","6x 60cm slings"]'::jsonb,
-  detailed_rack = 'Light trad rack is enough — no large cams needed. A documented ascent used a full set of stoppers (~10), two small cams (finger-to-hand size, roughly 0.3-0.75in / C3-#0.5 range), and six 60cm slings/runners for all three roped pitches on the summit block (20-ft 5.6 crack/dihedral into a stemming chimney, then a 5.0 exposed pitch). Cracks are thin to hand-sized in solid rock; nothing wider is described. Below the summit block, the 1800ft of Class 3-4 scrambling up the SW face gully is unroped and unprotected — it''s a scramble, not a pitched climb.',
-  pro_needs = 'Gear is genuinely light on this route: the lower 1800ft of Class 3-4 (locally low 5th) scrambling up the gully/fan to the summit block is climbed unroped with no protection — routefinding and comfort on exposed slabby sandstone/blocky terrain matter more than a rack. Only the summit block itself (3 short pitches, crux 5.6) is roped, and one real trip report found 10 stoppers + 2 small cams + 6 slings more than sufficient there, describing the crux pitch as having ''marginal protection'' in places despite solid rock — so don''t skimp on small stoppers even though the pitch count is short.',
-  what_to_bring = '["sturdy approach shoes/boots for the long scramble","rock shoes to swap into for the summit block pitches","helmet (loose rock reported on both the approach gully and summit block)","headlamp (long day from camp — ~6 hours round trip cited for the summit push alone)","light rack as above, no glacier or snow travel gear needed on this route"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":6}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Single rope is standard, not double/half ropes — descent is 3 single-rope (rope doubled through anchor) rappels off the summit block. One 50m rope gets a 2-person party down, but real reports recommend a 60m rope (or two separate 60m/50m ropes carried by parties of 3+, one per rope team) so no one comes up short of a belay/rap station — that''s a party-size/reach consideration, not a genuine need for a half/twin-rope system. No long free-hanging raps or crevasse rescue redundancy on this route.',
-  ascender = 'Not needed',
-  corrections = 'Existing auto-generated gear text should not assume glacier travel (ice axe/crampons) or a double/half-rope climbing system for this route — approach is via trail to Dutch Miller Gap with no glacier crossing, and the summit-block descent is standard single-rope doubled-strand rappelling, not a genuine two-rope technical requirement. If prior text specified ''a rack to 3 inches'' or similar, that overstates it: real trip-report gear (10 stoppers, 2 small cams, 6 slings) tops out around hand size, well under 3in.'
-where id = 'wa_bears_breast_mountain_west_ridge';
 
 update routes set
   gear = '["ice axe","helmet","mountaineering boots or sturdy approach shoes","trekking poles","microspikes/light traction for firm early-season snow"]'::jsonb,
@@ -560,43 +403,15 @@ update routes set
   gear = '["helmet","sturdy mountaineering boots or scrambling approach shoes","ice axe (seasonal, if approach gullies hold snow)","map/compass or GPS","trekking poles for bushwhack approach"]'::jsonb,
   detailed_rack = 'No technical rack is used on this route. The only detailed trip report of an actual Berdeen Peak ascent (Steph Abegg''s Mystery Ridge Enchainment, approaching via Porkbelly Ridge and the east side/NW slopes) describes mostly Class 3 terrain with one or two Class 4 moves on steep, mossy, loose rock, and does not mention a rope, harness, or any protection being placed or carried for the summit scramble itself.',
   pro_needs = 'None needed — this is an unroped Class 3-4 scramble. The limiting factor is loose, mossy rock and careful hold selection, not a lack of protectable terrain, so gear is a non-issue; a helmet is the main protective item worth carrying given the reported rockfall/handhold-failure hazard.',
-  what_to_bring = '["helmet (loose, mossy rock reported)","sturdy boots or scrambling shoes with good traction on wet/mossy rock","ice axe if snow lingers in approach gullies (seasonal)","map/compass or GPS — off-trail, unmaintained route on a peak described as ''not climbed often''","trekking poles for the Porkbelly Ridge bushwhack approach","overnight/camping gear if basing at Berdeen Lake as most parties do"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on this route per the only real trip report found — the summit scramble via Porkbelly Ridge/east ridge/NW slopes is fully unroped Class 3-4. A rope and glacier-travel gear could be prudent only if a party''s chosen approach crosses the nearby Berdeen Lake Glacier, but the direct route to the summit itself does not require one.',
-  ascender = 'Not needed',
-  corrections = 'Existing gear/detailedRack/proNeeds text was AI-generated placeholder that implied generic ''alpine rack'' gear. Corrected: verified via a real trip report (StephAbegg.com) that this route is fully unroped Class 3-4 scrambling on mossy/loose rock with no rack, rope, harness, or protection used by the only documented party to summit it. Removed any implied technical rock rack and added a helmet recommendation, which is a reasonable inference (not explicitly listed by the source) given the explicitly reported loose/mossy rock hazard.'
+  what_to_bring = '["helmet (loose, mossy rock reported)","sturdy boots or scrambling shoes with good traction on wet/mossy rock","ice axe if snow lingers in approach gullies (seasonal)","map/compass or GPS — off-trail, unmaintained route on a peak described as ''not climbed often''","trekking poles for the Porkbelly Ridge bushwhack approach","overnight/camping gear if basing at Berdeen Lake as most parties do"]'::jsonb
 where id = 'wa_berdeen_peak_scramble';
 
 update routes set
   gear = '["sturdy hiking/mountaineering boots","helmet","ice axe (seasonal, for snow gullies/couloirs)","Ten Essentials","trekking poles"]'::jsonb,
   detailed_rack = null,
   pro_needs = 'No rack or fixed protection is used on this route — it is unroped Class 2-3 talus and scree scrambling up the SE ridge (from Copper Glance/Eightmile Pass), not technical rock climbing. Multiple trip reports describe the rock as generally solid on larger blocks but covered in loose ''kitty litter'' talus/scree, so the primary hazard is rockfall/footing rather than lack of protection. No party in the sourced trip reports placed gear or used a rope.',
-  what_to_bring = '["ice axe (carry if early-season snow lingers in the approach gullies/couloirs)","crampons (situational — only needed if steep snow is encountered; one trip report carried but rarely used them)","gaiters","sun protection (long, mostly open talus/scree approach)","extra water (long approach, ~11.6 mi round trip with ~5,600 ft gain)","overnight/camp gear if doing Big + West Craggy together (commonly a 2-day trip)","navigation (GPS/map/compass) — off-trail travel above Eightmile Pass/Copper Glance basin"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on the standard ascent per every sourced trip report and The Mountaineers'' official gear list for this scramble (helmet + ice axe + Ten Essentials only, no rope listed). One report notes loose 4th-class terrain on a descent variant; a party uncomfortable with that exposure could choose to carry a short rope for confidence, but this is not standard practice for the route.',
-  ascender = 'Not needed',
-  corrections = 'The existing gear text was flagged autoGenerated/placeholder and could not be directly compared here (only the flag was provided, not the prior string), but if it implied a technical rock rack, rope, or protection (a common auto-generated-text error for alpine-tagged routes), that would be incorrect: this route is confirmed unroped Class 2-3 scrambling with no rack or rope used by any sourced party. Corrected to reflect scramble-appropriate gear (helmet, ice axe, boots, Ten Essentials) per The Mountaineers'' official required-gear list and 3+ independent trip reports.'
+  what_to_bring = '["ice axe (carry if early-season snow lingers in the approach gullies/couloirs)","crampons (situational — only needed if steep snow is encountered; one trip report carried but rarely used them)","gaiters","sun protection (long, mostly open talus/scree approach)","extra water (long approach, ~11.6 mi round trip with ~5,600 ft gain)","overnight/camp gear if doing Big + West Craggy together (commonly a 2-day trip)","navigation (GPS/map/compass) — off-trail travel above Eightmile Pass/Copper Glance basin"]'::jsonb
 where id = 'wa_big_craggy_peak_scramble';
-
-update routes set
-  gear = '["helmet","ice axe","crampons","60m rope (thin single, e.g. 7.5-8mm, for rappels)","light rack: cams ~0.4-2in, small nuts","2-3 snow pickets (spring/early-summer snow)","1-2 ice screws (firm snow/ice in the couloir)","slings/webbing for natural rappel anchors"]'::jsonb,
-  detailed_rack = 'A light alpine rack is enough: a handful of cams from roughly finger-size to hand-size (~0.4-2in) plus a small set of stoppers/nuts covers the class 3-4 rock in the lower basin ledges/ramps and the exposed sections of the south ridge. Rock quality is mediocre (''not all that secure'' per multiple trip reports) so placements are opportunistic, not plentiful -- there is no reported need for anything larger than hand-size cams. A 2004 CascadeClimbers trip report documents a party carrying a single 60m 7.5mm rope (not doubled ropes) plus 3 snow pickets and 2 ice screws for the snow/couloir sections above the rock scrambling.',
-  pro_needs = 'Protection is sparse on the rock: the Dry Creek gully crux and lower-basin class-4 ledges/ramps offer few solid placements (''good luck setting protection... it rarely felt secure'' -- onehikeaweek.com), so this is run-out terrain protected mainly by natural features (chockstones, horns) rather than a well-protected rock line. On the upper snowfield/couloir, snow pickets and occasional ice screws are the real protection, not cams/nuts. The exposed south-ridge terrain near the summit (one 3rd-class traverse, two 50+deg downclimbing steps, two exposed ~45deg traverses under cornices) is typically climbed unroped/scrambled by parties rather than pitched out with running pro.',
-  what_to_bring = '["helmet","ice axe","crampons","60m rope for rappels","light alpine rack (small cams/nuts)","2-3 snow pickets (spring/early-summer conditions)","1-2 ice screws (firm snow/ice)","gaiters","sturdy mountaineering boots","trekking poles for the brushy Dry Creek approach"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":4},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'Descent is by single-strand 60m rappels from the south ridge down to the lower notch (roughly two rope-lengths plus downclimbing to regain Dry Creek); no source describes double-rope rappels here. One party''s report specifically used a thin single 7.5mm 60m cord to save weight -- that''s still single-rope technique, not a doubled/half-rope system, so treat any ''needs double ropes'' assumption in older data as a correction, not confirmation. When the rope ''ends just above a sheer drop'' without enough snow, parties stem down to a chockstone foothold rather than needing a second rope length.',
-  ascender = 'Not needed',
-  corrections = 'If the previous auto-generated text implied this needs a substantial rock rack (e.g. ''rack to 3 inches'') or a doubled/half-rope alpine setup, that overstates it: real trip reports (CascadeClimbers 4/2004 TR, onehikeaweek.com 2025 TR, WTA/Hike2Hike Dry Creek route writeups) consistently describe (1) a light rack of small-to-hand-size cams/nuts with sparse, unreliable placements on loose rock, and (2) a single 60m rope used for straightforward single-strand rappels, not doubles. The technical crux of the route is more about the snow/couloir section (pickets, occasional ice screw, moats/bergschrunds to navigate) and exposed 3rd/4th-class ridge scrambling than sustained protected rock climbing, so gear should emphasize snow travel + light rack + rappel setup over a big rock rack.'
-where id = 'wa_big_four_mountain_standard';
 
 update routes set
   gear = '["rock shoes","light single rack: stoppers + cams ~0.5-2in","60m single rope","helmet","ice axe & light crampons (snow-filled approach gullies into July)"]'::jsonb,
@@ -625,20 +440,6 @@ update routes set
   ascender = 'Not needed',
   corrections = 'No major factual errors found in the existing (non-auto-generated) gear text — it already reflects a reasonable rack. Clarified/tightened: the ''two ropes'' descent requirement applies specifically to rappelling the face itself (per Mountain Project), not to leading the route, which is done on a single rope; and flagged that a common alternative is to summit and walk off the gully, which needs no second rope.'
 where id = 'wa_beckey_tate';
-
-update routes set
-  gear = '["sturdy hiking boots or approach shoes","trekking poles","ice axe (for lingering snow patches, especially June–early July)","helmet (loose rock in summit gullies)"]'::jsonb,
-  detailed_rack = 'No technical rack is needed. This is a non-technical Class 2-3 talus/rock scramble — hands-on scrambling with no gear placements, no fixed anchors, and no rope on the standard ascent line. Parties carry zero cams/nuts/protection.',
-  pro_needs = 'No protective gear is placed anywhere on the route — it''s an unroped scramble start to finish. The upper mountain''s chutes and the final summit block involve loose, sometimes mossy/crumbly rock, so a helmet is the main safety item rather than any rack; trip reports describe ''gully scrambling on a wide range of rock qualities'' with Class 3 moves through a boulder-filled cleft on some approach variants.',
-  what_to_bring = '["ice axe (carried by most parties for hard snow patches/couloir sections on the NW flank, per real trip reports)","light crampons — occasionally carried but multiple reports note they''re often unused in summer conditions","helmet for rockfall/loose rock in the gullies and summit block","trekking poles for the long approach (12-25 mile round trips depending on which trailhead access is used)","map/compass or GPS track — routefinding off-trail is nontrivial and repeatedly flagged in trip reports","full-day supplies: this is a long day (5,280-5,500+ ft gain) regardless of approach variant used"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is carried on the standard scramble route. Descent is by down-climbing/reversing the ascent line, not rappelling — multiple trip reports (Mountaineers, trailcatjim.com, willhiteweb) describe this as an unroped Class 2-3 scramble with no rappel stations mentioned anywhere on the mountain''s standard lines.',
-  ascender = 'Not needed',
-  corrections = 'The existing gear text was flagged as auto-generated placeholder; verified against real trip reports it should NOT include any rope/rack/technical protection language — Big Snow''s South/standard routes are consistently described (Mountaineers trip reports, trailcatjim.com, willhiteweb.com) as unroped Class 2-3 scrambles. If the prior text implied a climbing rack or rope, that overstated the technical requirement; the only real gear needs are ice axe/poles for residual snow, occasional light crampons, and a helmet for loose rock — no cams, nuts, or rope.'
-where id = 'wa_big_snow_mountain_south_route';
 
 update routes set
   gear = '["approach shoes or light mountaineering boots","ice axe","microspikes or crampons (snow lingers on the col/upper gully into July)","helmet","optional light rack + short rope for the exposed summit traverse (most parties climb this unroped)"]'::jsonb,
@@ -672,14 +473,7 @@ update routes set
   gear = '["sturdy boots with ankle support (talus/scree/blocky ridge)","climbing/scramble helmet (loose rock near the black hornfels summit cap)","trekking poles for scree/talus","ice axe if early-season snow lingers on the approach basin or ridge"]'::jsonb,
   detailed_rack = null,
   pro_needs = 'No protection is placed on this route. It is an unroped Class 2-3 scramble: talus and scree up to the ridge, then a class 2 ridge walk with one or two class 3 moves through loose rock near the summit''s distinctive black hornfels cap. Rock quality on the cap itself is described as solid but the approach slopes/gullies are loose — a helmet is the main protective item recommended, not a rack. No trip report reviewed (from either the NE-ridge/Shellrock Pass side or the east Monument Creek basin side) mentions placing gear.',
-  what_to_bring = '["water treatment/extra capacity — fill at Eureka Creek, upper basin tarns are unreliable/seasonal","map/compass or GPS — remote Pasayten cross-country route-finding on talus, no maintained trail on the peak itself","early start to avoid afternoon heat on exposed ridge","layers — exposed alpine ridge, weather can change fast in the Pasayten"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on the standard route in any of the first-hand trip reports reviewed — the class 3 sections are short scramble moves, not rappelled or belayed. One older secondhand mention (found only in a search snippet, not confirmed via full source) referenced an improvised rope rappel off a tree, but this was not corroborated in any full trip report and appears to be an atypical/bail scenario rather than standard practice, so no rope is listed as required gear.',
-  ascender = 'Not needed',
-  corrections = 'The existing auto-generated gear text overstated technical needs for this peak (typical placeholder alpine-rack boilerplate). Multiple independent trip reports (trailcatjim.com and hike2hike.com, both full first-hand ascent accounts, plus SummitPost''s route description) agree this is an UNROPED Class 2-3 scramble: no rope, rack, cams, nuts, or slings are placed or carried by parties on either the standard NE-ridge/Shellrock Pass approach (from Eureka Creek/Slate Pass) or the east-side Monument Creek/Monument-Blackcap basin approach. Do not carry rope/rack for the standard route.'
+  what_to_bring = '["water treatment/extra capacity — fill at Eureka Creek, upper basin tarns are unreliable/seasonal","map/compass or GPS — remote Pasayten cross-country route-finding on talus, no maintained trail on the peak itself","early start to avoid afternoon heat on exposed ridge","layers — exposed alpine ridge, weather can change fast in the Pasayten"]'::jsonb
 where id = 'wa_blackcap_mountain_scramble';
 
 update routes set
@@ -700,14 +494,7 @@ update routes set
   gear = '["ice axe","crampons (aluminum or steel)","mountaineering boots or sturdy approach shoes with crampons","glacier travel rope (60m or 2x30m)","harness","crevasse rescue kit (pickets, prusiks)","helmet","a few slings for rappel anchors"]'::jsonb,
   detailed_rack = 'Minimal to no rock rack — most parties carry no cams/nuts at all for the Class 3-4 (up to low-5th, 5.0-5.6) rock above the glacier; several trip reports specifically mention leaving the rock rack at home. What''s actually used is a handful of slings (including a couple of double-length 120cm runners) for building anchors around blocks/horns on the summit scramble and for the rappel stations on the loose-rock/waterfall-slab descent gully — one report notes a long (triple-length) sling is worth replacing a worn one at the wet-slab rappel station.',
   pro_needs = 'Protection is essentially non-existent on the upper mountain — the Class 3-4 ridge/gully climbing to the summit is typically soloed or simul-climbed by experienced parties rather than protected with placed gear. The real protection need is glacier travel gear (roped travel, pickets for crevasse crossings) and reliable natural rappel anchors (slung horns/blocks) for the loose descent.',
-  what_to_bring = '["ice axe","crampons","glacier travel rope","crevasse rescue kit (pickets, prusiks, pulley)","helmet","approach/scrambling shoes for the rock finish (some swap out of mountaineering boots)","trekking poles","bivy/camping gear for the multi-day approach via Holden and Holden Lake"]'::jsonb,
-  sling_rack = '[{"sizeCm":120,"qty":2},{"sizeCm":60,"qty":3}]'::jsonb,
-  alpine_draws = 0,
-  rope_type = 'half_twin',
-  rope_length_m = 60,
-  rope_note = 'Practice varies by party: some carry two thin 8mm x 30m ropes and simul-travel the glacier on them, then tie them together for a full 60m single-strand rappel down the loose rock/waterfall-slab descent; others get by with a single 60m x 8mm rope and shorter raps. A single rope is workable for smaller/faster parties, but the doubled-thin-rope approach is common here because the descent wants one long rappel plus glacier crevasse-rescue redundancy.',
-  ascender = 'Prusik cords only',
-  corrections = 'If the existing auto-generated text implied a real technical rock rack (cams/nuts) for this route, that overstates it — this is fundamentally a glacier mountaineering route with an exposed Class 3-4/low-5th scramble finish that most parties climb with little to no rock protection; the actual gear need is glacier/crevasse-rescue kit and a few slings for rappel anchors, not a cam rack.'
+  what_to_bring = '["ice axe","crampons","glacier travel rope","crevasse rescue kit (pickets, prusiks, pulley)","helmet","approach/scrambling shoes for the rock finish (some swap out of mountaineering boots)","trekking poles","bivy/camping gear for the multi-day approach via Holden and Holden Lake"]'::jsonb
 where id = 'wa_bonanza_peak_mary_green_glacier';
 
 update routes set
@@ -728,29 +515,8 @@ update routes set
   gear = '["rock shoes (for the steeper pitches)","approach shoes (worn for roughly the lower half of the route)","helmet","extensive rack of small-to-mid cams and nuts (small cams especially valuable)","a couple of thin/knifeblade pitons (optional, for old fixed placements)","two 60m ropes (double-rope technique)"]'::jsonb,
   detailed_rack = 'A long route (14 pitches of full 60m/200ft length on the 2012 ascent; the 1975 FA logged 22 pitches) where small gear sees the most use — a small cam (Alien-sized) was reported as the single most-used piece on the modern ascent; nuts and small-to-mid cams cover most placements. A full set of large cams (#3/#4-equivalent) was carried on the 2012 ascent but not needed and could reasonably be trimmed from the rack. The 1975 first-ascent party placed well over 100 nuts/chocks/wedges across the route plus just six thin knifeblade pitons for the hardest sections, and left two titanium pitons in place — a couple of old fixed pins may still be found at difficult spots.',
   pro_needs = 'Protection is generally good with attentive small-gear placement, but the rock is loose in places low on the route — one account notes it gets noticeably cleaner higher up — so extra care with rock quality is warranted on the lower pitches. A couple of fixed pitons remain from the first ascent at some of the harder spots and can supplement natural gear.',
-  what_to_bring = '["rock shoes and approach shoes (parties swap footwear partway up the route)","helmet","headlamp (this route has been descended at night)","two 60m ropes for double-rope climbing and rappelling","bivy gear if not going car-to-car — this is a long Grade V day"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":6},{"sizeCm":120,"qty":3}]'::jsonb,
-  alpine_draws = 4,
-  rope_type = 'half_twin',
-  rope_length_m = 60,
-  rope_note = 'Verified by the 2012 second-ascent party: two 60m ropes were climbed as a double-rope system with both followers belayed simultaneously (separated by 10-30ft) to keep pace over 14 full-length pitches, then used for two full 60m (200ft) rappels off the west peak on descent. Unlike shorter/moderate Cascades alpine rock, this route''s length and rappel distances genuinely support carrying two ropes — existing ''double rope'' data here appears correct.',
-  ascender = 'Not needed',
-  corrections = null
+  what_to_bring = '["rock shoes and approach shoes (parties swap footwear partway up the route)","helmet","headlamp (this route has been descended at night)","two 60m ropes for double-rope climbing and rappelling","bivy gear if not going car-to-car — this is a long Grade V day"]'::jsonb
 where id = 'wa_soviet_route';
-
-update routes set
-  gear = '["ice axe","helmet","sturdy mountaineering/approach boots","trekking poles","crampons (early season/firm snow)"]'::jsonb,
-  detailed_rack = 'No traditional rock rack is carried on this route. Southwest Slopes is a Grade II / Class 3 alpine scramble reached from Horseshoe Basin: crossing snowfields (including the east end of the Sahale Glacier and a permanent snowfield around 7200''), talus, and slabs, then one short 3rd-class step in a gully below the col west of the summit, before low-angle talus/scree to the top. No trip account located (multiple checked) describes cams, nuts, or any placed rock protection on this line — it is climbed unroped on natural holds.',
-  pro_needs = 'No fixed or gear protection exists or is used on this route. The single 3rd-class section (short gully below the west col) is climbed on natural rock holds without pro in every trip account found. Rock in the gully is loose/blocky enough that a helmet is explicitly recommended for rockfall hazard, both self-generated and from other parties.',
-  what_to_bring = '["ice axe for the permanent snowfield near 7200'' and the Sahale Glacier east-end crossing","crampons if the snow is firm, icy, or the trip is early season","helmet — loose rock in the summit gully, confirmed necessary in trip accounts","sturdy mountaineering boots (approach is long and includes slab/scree)","trekking poles for the 22-mile round-trip approach via Cascade Pass/Sahale Arm","navigation (map/GPS/compass) — cross-country routefinding through Horseshoe Basin with no trail","sun protection — extended time on open snowfields/glacier margin","overnight/bivy gear if not doing it as a very long single day (most parties camp at Sahale or Horseshoe Basin)"]'::jsonb,
-  sling_rack = null,
-  alpine_draws = null,
-  rope_type = null,
-  rope_length_m = null,
-  rope_note = 'No rope is used on this route in any trip account located — it is an unroped Class 3 scramble with no technical pitches. The route does cross the east end of the Sahale Glacier and a lingering snowfield near 7200''; this is normally simple unroped travel (it''s the same terrain day-hikers cross to Sahale Camp) but parties uneasy about crevasse hazard in an unusually snowy/late-melt year could choose to rope up for that short section — that''s a conditions call, not standard practice for the route.',
-  ascender = 'Not needed',
-  corrections = 'Prior auto-generated gear text for this route should not include a technical rock rack (cam/nut sizes) or assume roped pitches — the route''s own grade (Grade II, Class 3) and every trip account found (countryhighpoints.com detailed report, onehikeaweek.com report) describe only talus/slab/scree scrambling, snowfield/glacier-margin crossing, and one short 3rd-class gully step, all done unroped with no placed protection. If earlier data implied a rope length/rope type or rack sizes for this route, that overstates the technical character; the one consistently confirmed gear item across sources is a helmet for rockfall.'
-where id = 'wa_booker_mountain_southwest_slopes';
 
 update routes set
   gear = '["helmet","crampons","ice axe","crevasse rescue kit (Micro Traxion/Tibloc + prusiks)","light rack: nuts + small-mid cams 0.4-2in","60m single rope","harness + belay/rappel device"]'::jsonb,
@@ -784,26 +550,167 @@ update routes set
   gear = '["helmet","ice axe (or whippet)","crampons","30m glacier/scramble rope (rope teams for less-experienced parties)","1 snow picket per person","harness, belay device, prusik cord"]'::jsonb,
   detailed_rack = 'No technical rock rack is used — South Couloir is a 3rd class (1- YDS) snow/rock scramble, not a roped rock climb. Parties climbing it as an organized ''glacier style'' rope team (per Mountaineers guidance) carry a single short rope (~30m ''glacier rope''), one snow picket per person for the sustained ~30° snow above the Hourglass, and each climber carries a harness, belay device, and prusik cord for rope-team travel/self-rescue. A real trip report (Alpinism Project) confirms this exact kit: 30m Mammut hyperstatic glacier rope, one picket each, ice axes (whippet used by one climber). No cams, nuts, or slings for rock protection are used.',
   pro_needs = 'Protection is snow-based (pickets), not rock gear — the rock sections are class 3 scrambling and generally unprotected/unprotectable. Real parties often carry pickets but don''t place them: the Alpinism Project trip report states ''we didn''t use the pickets at all... would have set up a running belay if conditions warranted it.'' Needs are highly condition-dependent — by late season (post-August, per willhiteweb.com) the route can go with essentially no technical gear once snow is out.',
-  what_to_bring = '["ice axe or whippet","crampons","helmet","gaiters (snow gets into low gaiters easily per trip reports)","trail runners or approach shoes for the long approach, boots + crampons for the snow/summit section","water filter (no reliable water source high on route)","1 snow picket"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":2},{"sizeCm":120,"qty":1}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 30,
-  rope_note = 'This is not a lead-climbing route — a single short rope (~30m ''glacier rope,'' confirmed in a real trip report) is run between 2-3 climbers for the sustained snow above the Hourglass; a full 60-70m rock rope is unnecessary. No source suggests carrying two ropes.',
-  ascender = 'Prusik cords only',
-  corrections = null
+  what_to_bring = '["ice axe or whippet","crampons","helmet","gaiters (snow gets into low gaiters easily per trip reports)","trail runners or approach shoes for the long approach, boots + crampons for the snow/summit section","water filter (no reliable water source high on route)","1 snow picket"]'::jsonb
 where id = 'wa_south_couloir';
 
 update routes set
   gear = '["helmet","ice axe","crampons","light alpine rock rack (small-to-mid cams + a few nuts)","2 snow pickets","harness + rappel/belay device","single rope (~50-60m)"]'::jsonb,
   detailed_rack = 'Mountain Project''s route description and a first-hand ascent log call for a ''light alpine rock rack'' plus pickets — not a full trad rack. The documented ascent used 7 short, statically-belayed pitches mixing 2 pitches of moderate snow (protected with pickets) on the ridge''s east side with a ''sparsely protected rock traverse'' and further rock-traverse pitches; the party noted it ''would be quite possible to simulclimb much or all of'' the route in good conditions with a confident party. No large cams or a full double rack are reported or needed — bring small-to-mid cams and a handful of nuts for the short rock steps, plus 1-2 pickets for the snow sections.',
   pro_needs = 'Protection is genuinely sparse: MP describes the rock traverse as ''sparsely protected,'' and other trip accounts of the North-South connecting ridge describe sections with ''full on unprotectable death exposure.'' Rock quality is ''better than much of the Olympics, although that doesn''t say much'' — lichen-covered and greasy when wet, so don''t count on bomber gear. Treat this as a route where route-finding and comfort with runout scrambling matter more than a large rack.',
-  what_to_bring = '["ice axe","crampons","helmet","harness + rappel/belay device","gaiters","approach shoes for the hike, boots for snow/rock sections","extra prusik/cordelette for improvised rappel anchors and any summit-horn pull-throughs"]'::jsonb,
-  sling_rack = '[{"sizeCm":60,"qty":4},{"sizeCm":120,"qty":2}]'::jsonb,
-  alpine_draws = null,
-  rope_type = 'single',
-  rope_length_m = 60,
-  rope_note = 'No trip report describes carrying two ropes on this route — it''s climbed with a single rope, either short-roped/simul-climbed through the rock traverse or run as short statically-belayed pitches, with a handful of short rappels (steep snowfinger, a slippery slot) down the connecting ridge. A standard single 60m rope gives margin for both the rock pitches and doubled-strand rappels; parties moving fast have gotten by with shorter ropes (one related North Peak account used just a 25m ''scramble rope''), so length is somewhat party-dependent. This corrects any generic assumption that alpine 5th-class Cascades/Olympics routes default to double ropes — nothing here supports that.',
-  ascender = null,
-  corrections = 'No prior gear data existed for this route (hasGear:false) so nothing is being corrected — this is a first-fill. Flagging for transparency: the sling count/sizes above are a reasonable inference from the route''s 7-pitch, multi-rappel, ridge-traverse character (not a direct trip-report inventory), since no source gave an exact sling tally.'
+  what_to_bring = '["ice axe","crampons","helmet","harness + rappel/belay device","gaiters","approach shoes for the hike, boots for snow/rock sections","extra prusik/cordelette for improvised rappel anchors and any summit-horn pull-throughs"]'::jsonb
 where id = 'wa_brothers_traverse';
+
+update routes set
+  gear = null,
+  detailed_rack = '',
+  pro_needs = '',
+  what_to_bring = null,
+  sling_rack = '[{"type":"alpine_slings","size_cm":"various","qty":"6-10","note":"Multiple slings around peak for anchor construction; bring fresh webbing for anchor repair"}]'::jsonb,
+  alpine_draws = [object Object],
+  rope_type = 'single_or_double',
+  rope_length_m = 70,
+  rope_note = '',
+  ascender = '[object Object]',
+  corrections = '[object Object]'
+where id = 'wa_burgundy_spire_north_face';
+
+update routes set
+  gear = null,
+  detailed_rack = '',
+  pro_needs = '',
+  what_to_bring = null,
+  sling_rack = null,
+  alpine_draws = null,
+  rope_type = 'none',
+  rope_length_m = null,
+  rope_note = '',
+  ascender = '',
+  corrections = ''
+where id = 'wa_north_ridge';
+
+update routes set
+  gear = '["Waterproof boots","Gaiters","Helmet","Trekking poles"]'::jsonb,
+  detailed_rack = 'ZERO TECHNICAL GEAR - unroped scramble'
+where id = 'wa_bryant_peak_southeast_slopes';
+
+update routes set
+  gear = '["Helmet","Ice axe and crampons if snow present"]'::jsonb,
+  detailed_rack = null
+where id = 'wa_buck_mountain_south_ridge';
+
+update routes set
+  gear = '["Ice axe","crampons/microspikes","helmet"]'::jsonb,
+  detailed_rack = null,
+  sling_rack = null,
+  alpine_draws = null,
+  rope_type = null,
+  rope_length_m = null,
+  rope_note = 'Unroped scramble; rope optional for snow/glacier sections',
+  ascender = null,
+  corrections = 'Standard route is primarily scramble; rope not required for standard approach'
+where id = 'wa_cashmere_mountain_west_ridge';
+
+update routes set
+  gear = '["rope","rock protection","slings","helmet"]'::jsonb,
+  detailed_rack = 'Full set up to #2 Camalot, or doubles in finger-to-mid-sized cams; Full set of stoppers',
+  sling_rack = '[{"sizeCm":60,"qty":2},{"sizeCm":120,"qty":1}]'::jsonb,
+  alpine_draws = 3,
+  rope_type = 'single or twin',
+  rope_length_m = 40,
+  rope_note = '30m minimum; 40m allows for longer rappels',
+  ascender = null,
+  corrections = 'Rappel slings frequently in place at summit; existing rap stations simplify descent'
+where id = 'wa_castle_peak_tatoosh_southeast_face';
+
+update routes set
+  gear = '["rope","rock protection","slings","helmet"]'::jsonb,
+  detailed_rack = 'Doubles in finger to mid-sized cams (#0.3-#1); Full set of stoppers and hexes; 4-6 quickdraws',
+  sling_rack = '[{"sizeCm":60,"qty":2},{"sizeCm":120,"qty":1}]'::jsonb,
+  alpine_draws = 5,
+  rope_type = 'single or twin',
+  rope_length_m = 40,
+  rope_note = '40m rope standard for this harder route',
+  ascender = null,
+  corrections = 'Crux involves a #2 Camalot placement; consider fixed anchors at rappel points'
+where id = 'wa_castle_peak_tatoosh_la_villa';
+
+update routes set
+  gear = '["rope","rock protection","slings","helmet"]'::jsonb,
+  detailed_rack = '4-5 cams (sizes #1-#3), small to medium stoppers',
+  sling_rack = '[{"sizeCm":60,"qty":3},{"sizeCm":120,"qty":2}]'::jsonb,
+  alpine_draws = 3,
+  rope_type = 'dynamic',
+  rope_length_m = 50,
+  rope_note = 'Single pitch on south face; 50-60m adequate',
+  ascender = null,
+  corrections = 'Well-protected established route'
+where id = 'wa_classic_route';
+
+update routes set
+  gear = '["rope","rock protection","slings","helmet"]'::jsonb,
+  detailed_rack = '4-6 cams (including medium sizes for chimney), several stoppers',
+  sling_rack = '[{"sizeCm":60,"qty":4},{"sizeCm":120,"qty":2}]'::jsonb,
+  alpine_draws = 5,
+  rope_type = 'half-rope',
+  rope_length_m = 50,
+  rope_note = '60m half-rope typical; more technical than standard route',
+  ascender = null,
+  corrections = 'Hand jam section 5.7ish; better protection than standard scramble'
+where id = 'wa_direct_finish';
+
+UPDATE routes SET
+  sling_rack = NULL,
+  alpine_draws = 0,
+  rope_type = NULL,
+  rope_length_m = NULL,
+  rope_note = NULL,
+  ascender = NULL,
+  corrections = '{"route_type_assessment":"Cascade Peak East Ridge is a Class 4 alpine scramble (5.2 rock grade), NOT primarily a technical rock climbing peak like Forbidden Peak or Liberty Bell. It is an alpine peak ascent with scrambling exposure and optional protection placements.","standard_rack_philosophy":"Bring a moderate alpine rock rack (8 cams total, 12 stoppers) for protection on scrambling sections and exposed terrain. Ice climbing protection is secondary but valuable for September traverse conditions with rime ice or persistent snowfields. Snow anchors (2 pickets, 1 snow fluke) are mandatory for any overnight camps or emergency anchor situations.","seasonal_best_practice":"Plan for dry rock, potential rime ice, and high altitude cold in September-October. Prioritize helmet, crampons, and ice axe for safety on frost-slicked traverses. One 50-foot rope sufficient for belayed scramble sections; glacier rope useful for team travel if roped. Avoid mid-July peak season crowds; accept early-season short days (darkness by 6:30pm by early Oct).","permit_requirements":"North Cascades National Park overnight permit required. Cascade Pass Trailhead requires NW Forest Pass.","navigation_hazard":"Doug''s Direct descent (standard route back to Cascade Pass Trail) involves route-finding through steep meadows and is a common source of confusion. Bivy location (7,100 ft) well-documented on trip reports.","river_ford":"Cascade River ford at trailhead can be dangerously cold and fast during afternoon snowmelt. Cross early in the day or on return before peak flows.","cell_communication":"North Cascades NP explicitly advises climbers to be self-sufficient and not rely on personal locator or cell devices for rescue"}',
+  updated_at = now()
+where id = 'wa_cascade_peak_east_ridge';
+
+UPDATE routes SET
+  sling_rack = NULL,
+  alpine_draws = 0,
+  rope_type = NULL,
+  rope_length_m = NULL,
+  rope_note = NULL,
+  ascender = NULL,
+  corrections = NULL,
+  updated_at = now()
+where id = 'wa_jack_mountain_south_face';
+
+UPDATE routes SET
+  sling_rack = NULL,
+  alpine_draws = 0,
+  rope_type = NULL,
+  rope_length_m = NULL,
+  rope_note = NULL,
+  ascender = NULL,
+  corrections = '["Elevation discrepancy resolved: Dolomite Tower base ~5,708 ft (not 11,948 ft user-provided). User elevation may refer to another peak; verified via multiple independent sources.","Rope length: Sources consensus 60-70m single rope. Angle 5 (generic alpine) recommends 30m minimum, but Dolomite Tower''s 20-pitch length requires 60m minimum; 70m preferred to avoid forced simul-climbing on 5.10 pitches.","Approach time: Angles 1 & 3 cite 3-3.5 hours; Angle 4 cites 3-4 hours. 3-3.5 hours is consensus for fit parties. 2020 improvements noted (new bolts, alternative slab route).","Gear rack: All sources (Angles 1, 2, 3) agree on single rack to #1 Camalot + optional #2. Small/medium nuts optional (Angles 1, 2). P4 requires gear; rest primarily bolted.","P3 crux: 2020 modernization added 2 bolts; still technically runout but safer than pre-2020. Multiple sources reference P3 as site of historic fall/injury.","P5 loose rock: Multiple trip reports (Angle 3) confirm significant deterioration and rock falls. Alternate ''mystery bolts out left'' avoids worst section.","2020 modernization: Confirmed by multiple recent ascent reports. All anchors replaced stainless steel. Route improved but retains intentional runouts (P8) for mental challenge.","Deep Blue (separate route): 5.13c sport, 12 pitches effective (30 total). All bolted. 70m rope. Can be rapped or walked off."]',
+  updated_at = now()
+where id = 'wa_vanishing_point';
+
+UPDATE routes SET
+  sling_rack = NULL,
+  alpine_draws = 0,
+  rope_type = NULL,
+  rope_length_m = NULL,
+  rope_note = NULL,
+  ascender = NULL,
+  corrections = NULL,
+  updated_at = now()
+where id = 'wa_glacier_peak_kennedy_glacier';
+
+UPDATE routes SET
+  sling_rack = NULL,
+  alpine_draws = 0,
+  rope_type = NULL,
+  rope_length_m = NULL,
+  rope_note = NULL,
+  ascender = NULL,
+  corrections = NULL,
+  updated_at = now()
+where id = 'wa_glacier_peak_frostbite_ridge';
+
+COMMIT;

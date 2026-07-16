@@ -1,3 +1,11 @@
+-- SUPERSEDED 2026-07-16: DO NOT APPLY THIS FILE AS-IS.
+-- It contains fabricated/incorrect route_ids (some peaks never existed in the live DB,
+-- some IDs are missing the required wa_ prefix, migration 0033 also uses the wrong
+-- WHERE column name (route_id instead of id) and would fail outright.
+-- The verified, corrected subset of this file's real content was salvaged into
+-- migration 0035_salvaged_batches_1-4_corrected.sql. Apply 0035 instead.
+-- See gear-audit-progress memory for the full incident writeup.
+
 -- Gear audit batch 3: 8 peaks / 14 routes verified via comprehensive multi-source research
 -- Expanded research: guidebooks (Beckey), guide services (AAI, IMG), manufacturers (Petzl, BD),
 -- climbing media (YouTube, blogs), forums (MP, local), terrain analysis, seasonal/weather data
@@ -177,4 +185,3 @@ update routes set
   ascender = null,
   corrections = 'Unroped option with high exposure variation; terrain-savvy parties only'
 where id = 'scramble_only';
-

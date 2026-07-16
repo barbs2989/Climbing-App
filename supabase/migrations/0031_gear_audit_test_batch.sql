@@ -1,3 +1,11 @@
+-- SUPERSEDED 2026-07-16: DO NOT APPLY THIS FILE AS-IS.
+-- It contains fabricated/incorrect route_ids (some peaks never existed in the live DB,
+-- some IDs are missing the required wa_ prefix, migration 0033 also uses the wrong
+-- WHERE column name (route_id instead of id) and would fail outright.
+-- The verified, corrected subset of this file's real content was salvaged into
+-- migration 0035_salvaged_batches_1-4_corrected.sql. Apply 0035 instead.
+-- See gear-audit-progress memory for the full incident writeup.
+
 -- Gear audit batch 2: test batch (6 peaks) verified via workflow research
 
 update routes set
@@ -97,4 +105,3 @@ update routes set
   ascender = '',
   corrections = ''
 where id = 'north_ridge';
-
