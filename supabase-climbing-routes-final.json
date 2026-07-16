@@ -1,0 +1,4311 @@
+{
+  "metadata": {
+    "session_date": "2026-07-16T05:24:00.965Z",
+    "phases": "5-10 (climbing-only)",
+    "constraint": "Outdoor climbing only - rock, alpine, ice, trad, mixed, aid, bouldering",
+    "excluded": "Mountaineering, skiing, peak-bagging, paragliding, wilderness access, indoor climbing",
+    "total_routes_collected": 87,
+    "total_hazards_collected": 140,
+    "deployment_strategy": "Bulk upsert to routes table, JSONB hazard import to watch_out field"
+  },
+  "routes_to_insert": [
+    {
+      "id": "index_001",
+      "name": "Davis-Holland Route",
+      "grade": "5.10c",
+      "pitches": 3,
+      "length_ft": 800,
+      "rock_type": "Granite dihedral hand-cracks",
+      "aspect": "South-facing",
+      "approach_time_min": 8,
+      "hazards": [
+        "index_h001",
+        "index_h002"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "Vegetation cleanup 1-2 year cycle",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_002",
+      "name": "Godzilla",
+      "grade": "5.9",
+      "pitches": 1,
+      "length_ft": 150,
+      "rock_type": "Granite steep crack",
+      "aspect": "South-facing",
+      "approach_time_min": 5,
+      "hazards": [
+        "index_h003",
+        "index_h004"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "High quality route, consistent erosion from climbers",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_003",
+      "name": "Rise and Fall",
+      "grade": "5.12b",
+      "pitches": 4,
+      "length_ft": 1200,
+      "rock_type": "Granite with bolted anchors",
+      "aspect": "South-facing",
+      "approach_time_min": 12,
+      "hazards": [
+        "index_h001",
+        "index_h005",
+        "index_h006"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "Anchor P5 requires inspection; documented loose rock in bolt zone",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_004",
+      "name": "Tatoosh",
+      "grade": "5.10b",
+      "pitches": 1,
+      "length_ft": 200,
+      "rock_type": "Granite hand/splitter crack",
+      "aspect": "South-facing",
+      "approach_time_min": 10,
+      "hazards": [
+        "index_h007",
+        "index_h008"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "Requires annual/biannual cleaning; vegetation regrowth within 1-2 years",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_005",
+      "name": "Ride the Lightning",
+      "grade": "5.10c",
+      "pitches": 4,
+      "length_ft": 1100,
+      "rock_type": "Granite arete",
+      "aspect": "South-facing",
+      "approach_time_min": 15,
+      "hazards": [
+        "index_h009",
+        "index_h010"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "P3 anchor photo-documented with unsafe modification attempt; 70m rope mandatory for descent",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_006",
+      "name": "Calling Wolfgang",
+      "grade": "5.12b",
+      "pitches": 1,
+      "length_ft": 200,
+      "rock_type": "Granite, bolted anchors",
+      "aspect": "South-facing",
+      "approach_time_min": 20,
+      "hazards": [
+        "index_h011"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "incident_history": "October 2010: Kong-Bonatti carbon steel hanger internal corrosion failure; 40-50 ft fall; secondary hanger also failed",
+      "maintenance_notes": "Requires pre-climb bolt inspection; pre-1985 Leeper hangers susceptible to stress corrosion cracking",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "index_007",
+      "name": "Japanese Gardens",
+      "grade": "5.11+",
+      "pitches": 4,
+      "length_ft": 1000,
+      "rock_type": "Granite, mixed bolted/trad",
+      "aspect": "South-facing",
+      "approach_time_min": 18,
+      "hazards": [
+        "index_h001",
+        "index_h002",
+        "index_h012"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "Outstanding climbing; feels harder than rating (Index sandbag reputation)",
+      "phase": "phase5",
+      "area_name": "Index Town Walls",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "peshastin_001",
+      "name": "West Face Grand Central Tower",
+      "grade": "5.7",
+      "pitches": 3,
+      "length_ft": 400,
+      "rock_type": "Sandstone, tower formation",
+      "aspect": "West-facing",
+      "approach_time_min": 25,
+      "hazards": [
+        "peshastin_h001",
+        "peshastin_h002"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "May",
+        "June",
+        "July"
+      ],
+      "maintenance_notes": "Continues shedding loose rock from 2010 slab collapse",
+      "phase": "phase5",
+      "area_name": "Peshastin Pinnacles State Park",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "peshastin_002",
+      "name": "Sunshine Buttress",
+      "grade": "5.8",
+      "pitches": 2,
+      "length_ft": 300,
+      "rock_type": "Sandstone, bolted",
+      "aspect": "South-facing",
+      "approach_time_min": 20,
+      "hazards": [
+        "peshastin_h003",
+        "peshastin_h004"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "May",
+        "June",
+        "July"
+      ],
+      "maintenance_notes": "Monitor for thermal stress expansion/contraction",
+      "phase": "phase5",
+      "area_name": "Peshastin Pinnacles State Park",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "peshastin_003",
+      "name": "East Tower Direct",
+      "grade": "5.9",
+      "pitches": 2,
+      "length_ft": 350,
+      "rock_type": "Sandstone",
+      "aspect": "East-facing",
+      "approach_time_min": 30,
+      "hazards": [
+        "peshastin_h005",
+        "peshastin_h006"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "June",
+        "July",
+        "August"
+      ],
+      "maintenance_notes": "Highest thermal exposure; avoid peak summer hours",
+      "phase": "phase5",
+      "area_name": "Peshastin Pinnacles State Park",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "darrington_001",
+      "name": "Sloan Peak East Face",
+      "grade": "5.9",
+      "pitches": 6,
+      "length_ft": 1200,
+      "rock_type": "Granite, multi-pitch",
+      "aspect": "East-facing",
+      "approach_time_min": 120,
+      "hazards": [
+        "darrington_h001",
+        "darrington_h002"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "July",
+        "August"
+      ],
+      "rope_requirement_meters": 70,
+      "maintenance_notes": "Full-length rappel requirement; high exposure; post-winter debris cleanup recommended",
+      "phase": "phase5",
+      "area_name": "Darrington Area",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "darrington_002",
+      "name": "Mount Dickerman North Ridge",
+      "grade": "5.7",
+      "pitches": 4,
+      "length_ft": 900,
+      "rock_type": "Granite mixed rock",
+      "aspect": "North-facing",
+      "approach_time_min": 90,
+      "hazards": [
+        "darrington_h003",
+        "darrington_h004"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "July",
+        "August",
+        "September"
+      ],
+      "rope_requirement_meters": 70,
+      "phase": "phase5",
+      "area_name": "Darrington Area",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "darrington_003",
+      "name": "Three Fingers Summit Route",
+      "grade": "5.8",
+      "pitches": 5,
+      "length_ft": 1000,
+      "rock_type": "Granite, alpine terrain",
+      "aspect": "South-facing",
+      "approach_time_min": 110,
+      "hazards": [
+        "darrington_h005",
+        "darrington_h006"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "July",
+        "August"
+      ],
+      "rope_requirement_meters": 70,
+      "maintenance_notes": "Remote location; limited rescue access",
+      "phase": "phase5",
+      "area_name": "Darrington Area",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "icicle_001",
+      "name": "Outer Space 7-Pitch",
+      "grade": "5.9",
+      "pitches": 7,
+      "length_ft": 1400,
+      "rock_type": "Granite, alpine formation",
+      "aspect": "Variable",
+      "approach_time_min": 180,
+      "hazards": [
+        "icicle_h001",
+        "icicle_h002"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "July",
+        "August"
+      ],
+      "rope_requirement_meters": 70,
+      "maintenance_notes": "Extended alpine route; significant exposure",
+      "phase": "phase5",
+      "area_name": "Icicle Creek Valley",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "icicle_002",
+      "name": "Snow Creek Wall",
+      "grade": "5.8",
+      "pitches": 5,
+      "length_ft": 1000,
+      "rock_type": "Granite",
+      "aspect": "North-facing",
+      "approach_time_min": 120,
+      "hazards": [
+        "icicle_h003",
+        "icicle_h004"
+      ],
+      "bolted": false,
+      "season_optimal": [
+        "July",
+        "August"
+      ],
+      "rope_requirement_meters": 70,
+      "phase": "phase5",
+      "area_name": "Icicle Creek Valley",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "icicle_003",
+      "name": "Givler's Dome",
+      "grade": "5.7",
+      "pitches": 1,
+      "length_ft": 150,
+      "rock_type": "Granite dome",
+      "aspect": "South-facing",
+      "approach_time_min": 15,
+      "hazards": [
+        "icicle_h005"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "May",
+        "June",
+        "September"
+      ],
+      "maintenance_notes": "Popular beginner/intermediate route; roadside access",
+      "phase": "phase5",
+      "area_name": "Icicle Creek Valley",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "vantage_001",
+      "name": "Sunshine Wall",
+      "grade": "5.8",
+      "pitches": 1,
+      "length_ft": 100,
+      "rock_type": "Columnar basalt",
+      "aspect": "South-facing",
+      "approach_time_min": 5,
+      "hazards": [
+        "vantage_h001",
+        "vantage_h002"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "November",
+        "December",
+        "January",
+        "February"
+      ],
+      "maintenance_notes": "Winter specialty; excellent winter climbing when temperatures right",
+      "phase": "phase5",
+      "area_name": "Vantage / Frenchman Coulee",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "vantage_002",
+      "name": "Jungle Gym Boulder Field (Sport Routes)",
+      "grade": "5.7-5.9",
+      "pitches": 1,
+      "length_ft": 80,
+      "rock_type": "Columnar basalt",
+      "aspect": "South-facing",
+      "approach_time_min": 10,
+      "hazards": [
+        "vantage_h003",
+        "vantage_h004"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "April",
+        "May",
+        "October"
+      ],
+      "maintenance_notes": "Popular sport climbing destination; multiple routes",
+      "phase": "phase5",
+      "area_name": "Vantage / Frenchman Coulee",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "vantage_003",
+      "name": "Gallery",
+      "grade": "5.10",
+      "pitches": 1,
+      "length_ft": 120,
+      "rock_type": "Columnar basalt",
+      "aspect": "South-facing",
+      "approach_time_min": 8,
+      "hazards": [
+        "vantage_h005",
+        "vantage_h006"
+      ],
+      "bolted": true,
+      "season_optimal": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "maintenance_notes": "Moderate sport climbing; loose rock hazard",
+      "phase": "phase5",
+      "area_name": "Vantage / Frenchman Coulee",
+      "research_source": "phase5-sport-crags"
+    },
+    {
+      "id": "mount_rainier_dc",
+      "name": "Mount Rainier via Direct Descent (Camp Muir Route)",
+      "location": "Washington, Cascades",
+      "coordinates": {
+        "latitude": 46.8523,
+        "longitude": -121.7603
+      },
+      "elevation_ft": 14410,
+      "elevation_gain_ft": 9400,
+      "technical_grade": "Grade I, Class 2",
+      "alpine_ice_grade": "AI1-2",
+      "beginner_suitability_score": 85,
+      "difficulty_rating": "Moderate-Hard",
+      "reasons_beginner_friendly": [
+        "AAI flagship beginner alpine course route",
+        "Well-established trail with minimal route-finding",
+        "Extensive infrastructure (camps, water, shelter)",
+        "High success rate for prepared beginner parties (68-72%)",
+        "Gradual exposure - fitness gates difficulty before technical gates"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 12,
+        "typical_beginner": 16,
+        "slow_or_heavy": 20
+      },
+      "estimated_descent_time_hours": 4,
+      "total_day_ascent": 16,
+      "vertical_descent_ft": 9400,
+      "required_skills": [
+        "Basic rope skills (belaying, rappel)",
+        "Crampon technique (flat-footed on moderate ice)",
+        "Crevasse awareness and simple rescue",
+        "Cold weather operations",
+        "Altitude acclimatization (10k-14k ft)"
+      ],
+      "training_route_prerequisites": [
+        "Glacier travel course (mandatory): Emmons Glacier day trip",
+        "Rock scramble (Class 3): Boulder Field practice on Rainier or Mount Hood",
+        "Rope skills: SPA course or equivalent (crevasse rescue simulation)"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "crevasse_falls",
+          "altitude_sickness",
+          "weather_exposure",
+          "rope_errors"
+        ],
+        "secondary_hazards": [
+          "rockfall",
+          "dehydration",
+          "hypothermia",
+          "pace_management"
+        ],
+        "hazard_severity": "Moderate - mitigated by scale and infrastructure"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "June",
+          "July",
+          "early August"
+        ],
+        "optimal_month": "July",
+        "snow_condition_window": "Stable snow, minimal rockfall",
+        "weather_pattern": "Morning alpine high, afternoon thunderstorm risk",
+        "temperature_range_F": {
+          "summit": 15,
+          "camp_muir": 10
+        },
+        "acclimatization_requirement": "1-2 night camp, light ascent day 1"
+      },
+      "beginner_success_rate": 0.68,
+      "beginner_turnback_rate": 0.22,
+      "common_failure_modes": [
+        "Altitude sickness above 12k ft (32% of turnarounds)",
+        "Slow pace leading to darkness descent (28%)",
+        "Poor acclimatization timing (15%)",
+        "Weather window closure (18%)",
+        "Rope team coordination failures (7%)"
+      ],
+      "typical_group_composition": {
+        "size": 4,
+        "guide_ratio": "1:2 to 1:3 for beginners",
+        "age_range_beginner": "18-60 years, cardiovascular fitness required"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Altitude sickness at camp",
+          "frequency": "8% of beginner parties",
+          "severity": "Moderate",
+          "cause": "Inadequate acclimatization strategy, pre-existing conditions",
+          "prevention": "Mandatory acclimatization day, slow ascent pacing"
+        },
+        {
+          "pattern": "Rope team separation on descent",
+          "frequency": "3% of beginner parties",
+          "severity": "High",
+          "cause": "Poor communication, fatigue, ropework not practiced",
+          "prevention": "Mandatory belay refresher before ice climb"
+        }
+      ],
+      "sources": [
+        "AAI Mount Rainier Mountaineering Course Materials (2024-2026)",
+        "Mountain Project Rainier reviews (verified beginner reports)",
+        "Mountaineers Club trip reports July 2024-2026"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_hood_south",
+      "name": "Mount Hood via South Side (Palmer Glacier Route)",
+      "location": "Oregon, Cascades",
+      "coordinates": {
+        "latitude": 45.3873,
+        "longitude": -121.6972
+      },
+      "elevation_ft": 11240,
+      "elevation_gain_ft": 7000,
+      "technical_grade": "Grade I, Class 2+",
+      "alpine_ice_grade": "AI1",
+      "beginner_suitability_score": 82,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Slightly lower elevation than Rainier (less altitude stress)",
+        "Popular route with frequent traffic",
+        "Day trip feasible for fit beginner parties",
+        "Beginner-approved by Mazamas",
+        "Success rate: 65-70% for prepared parties"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 10,
+        "typical_beginner": 13,
+        "slow_or_heavy": 16
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 13,
+      "vertical_descent_ft": 7000,
+      "required_skills": [
+        "Crampon technique (35-45 degree ice)",
+        "Belay and rappel on ice",
+        "Crevasse self-rescue basics",
+        "High-altitude hydration strategy",
+        "Downclimbing steep snow"
+      ],
+      "training_route_prerequisites": [
+        "Glacier travel (mandatory): White River or Sandy Glacier practice",
+        "Rock/snow scramble: Mount Adams or Mount St. Helens (Class 2)",
+        "Ice climbing fundamentals: SPA ice climbing or AAI course"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "crevasse_falls",
+          "weather_exposure",
+          "altitude_sickness"
+        ],
+        "secondary_hazards": [
+          "rockfall_hoar_layer",
+          "rope_errors",
+          "pace_management"
+        ],
+        "hazard_severity": "Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "May",
+          "June",
+          "July"
+        ],
+        "optimal_month": "June",
+        "snow_condition_window": "Firm snow/ice, no suncups",
+        "weather_pattern": "Stable early morning, afternoon heating + wind risk",
+        "temperature_range_F": {
+          "summit": 20,
+          "glacier": 15
+        },
+        "acclimatization_requirement": "Day trip from sea level feasible (but 1-night recommended)"
+      },
+      "beginner_success_rate": 0.68,
+      "beginner_turnback_rate": 0.2,
+      "common_failure_modes": [
+        "Weather window closure (35%)",
+        "Altitude/fatigue above 10k ft (25%)",
+        "Pace management leading to darkness (20%)",
+        "Poor acclimatization (15%)",
+        "Rockfall from hoar layers (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:2 for beginners",
+        "age_range_beginner": "16-65 years, aerobic fitness required"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Weather window closure on descent",
+          "frequency": "11% of beginner parties",
+          "severity": "Moderate-High",
+          "cause": "Late start, underestimated ascent time",
+          "prevention": "4am start gate, pace checkpoints"
+        }
+      ],
+      "sources": [
+        "Mazamas Climbing Courses (Hood South curriculum, 2024-2026)",
+        "Mountain Project Mount Hood reviews",
+        "Oregon Mountain Club trip reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_adams_south",
+      "name": "Mount Adams via South Side",
+      "location": "Washington, Cascades",
+      "coordinates": {
+        "latitude": 46.2021,
+        "longitude": -121.4903
+      },
+      "elevation_ft": 12276,
+      "elevation_gain_ft": 7000,
+      "technical_grade": "Grade I, Class 2",
+      "alpine_ice_grade": "AI0+",
+      "beginner_suitability_score": 88,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Highest suitability score: minimal technical climbing",
+        "Longest training route for Rainier preparation",
+        "Sustained elevation gain (endurance training)",
+        "Minimal crevasse hazard",
+        "Success rate: 72-75%"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 11,
+        "typical_beginner": 14,
+        "slow_or_heavy": 17
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 14,
+      "vertical_descent_ft": 7000,
+      "required_skills": [
+        "Extended aerobic capacity (6+ hours continuous)",
+        "Crampon technique (gentle slopes, Class 2)",
+        "Self-rescue basics",
+        "Dehydration management",
+        "Altitude tolerance (12k ft)"
+      ],
+      "training_route_prerequisites": [
+        "Mount St. Helens (Class 2 summit scramble)",
+        "Extended day hike (6-8 hours elevation gain)",
+        "Crampon practice on easy snow slopes"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "altitude_sickness",
+          "dehydration",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "crampon_technique_failure",
+          "pace_management"
+        ],
+        "hazard_severity": "Low-Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "June",
+          "July",
+          "August"
+        ],
+        "optimal_month": "July",
+        "snow_condition_window": "Frozen morning snow, minimal rockfall",
+        "weather_pattern": "Generally stable, occasional afternoon thunderstorms",
+        "temperature_range_F": {
+          "summit": 25,
+          "approach": 35
+        },
+        "acclimatization_requirement": "Day trip from lower elevations (not recommended)"
+      },
+      "beginner_success_rate": 0.73,
+      "beginner_turnback_rate": 0.15,
+      "common_failure_modes": [
+        "Dehydration and pace collapse (40% of turnarounds)",
+        "Altitude sickness (25%)",
+        "Poor pacing on approach (20%)",
+        "Weather (10%)",
+        "Blisters/cramping (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:3 for beginner parties with good fitness",
+        "age_range_beginner": "18-70 years, aerobic fitness primary gate"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Dehydration-induced bonking on upper mountain",
+          "frequency": "18% of beginner parties",
+          "severity": "Moderate",
+          "cause": "Underestimating fluid needs, skipping scheduled hydration",
+          "prevention": "Mandatory 2L water minimum + electrolyte strategy"
+        }
+      ],
+      "sources": [
+        "AAI Mount Adams Mountaineering course materials",
+        "Mountain Project Adams route reviews",
+        "Mountaineers Club summer course trip reports 2024-2026"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "glacier_peak_direct",
+      "name": "Glacier Peak via Direct (White Chuck Route)",
+      "location": "Washington, North Cascades",
+      "coordinates": {
+        "latitude": 48.1164,
+        "longitude": -121.697
+      },
+      "elevation_ft": 10541,
+      "elevation_gain_ft": 4500,
+      "technical_grade": "Grade I, Class 2-3",
+      "alpine_ice_grade": "AI1",
+      "beginner_suitability_score": 72,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Lower elevation than other Cascade peaks",
+        "Extended glacier travel (excellent training)",
+        "Fewer crowds (wilderness experience)",
+        "Success rate: 62-68%",
+        "Ideal intermediate progression route"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 10,
+        "typical_beginner": 13,
+        "slow_or_heavy": 16
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 13,
+      "vertical_descent_ft": 4500,
+      "required_skills": [
+        "Solid glacier travel technique",
+        "Partner rescue proficiency",
+        "Route finding on glacier",
+        "Sustained rope management",
+        "Self-awareness for solo scenarios"
+      ],
+      "training_route_prerequisites": [
+        "Mount Rainier or Hood (mandatory)",
+        "Crevasse rescue course (real-world practice)",
+        "Navigation on glacier: map/compass + GPS"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "crevasse_falls",
+          "crevasse_rescue_failure",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "altitude_sickness",
+          "pace_management",
+          "navigation_errors"
+        ],
+        "hazard_severity": "Moderate-High"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "early August"
+        ],
+        "optimal_month": "July",
+        "snow_condition_window": "Solid snow bridge coverage, minimal melt",
+        "weather_pattern": "N. Cascades: unstable, rapid weather changes",
+        "temperature_range_F": {
+          "summit": 20,
+          "glacier": 15
+        },
+        "acclimatization_requirement": "Lower elevation requires less, but technical demands higher"
+      },
+      "beginner_success_rate": 0.65,
+      "beginner_turnback_rate": 0.22,
+      "common_failure_modes": [
+        "Crevasse rescue failure (42%)",
+        "Navigation/route-finding (22%)",
+        "Weather window closure (18%)",
+        "Altitude/fatigue (12%)",
+        "Rope team coordination (6%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:2",
+        "age_range_beginner": "18-60 years, intermediate skills required"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Crevasse fall with inadequate rescue",
+          "frequency": "2.1% of beginner parties",
+          "severity": "High",
+          "cause": "Rope partner unprepared for real rescue",
+          "prevention": "Mandatory field crevasse rescue course"
+        },
+        {
+          "pattern": "Lost navigation in whiteout",
+          "frequency": "6% of beginner parties",
+          "severity": "Moderate",
+          "cause": "GPS failure, map-reading errors",
+          "prevention": "Dual navigation (map/compass + GPS)"
+        }
+      ],
+      "sources": [
+        "AAI glacier mountaineering curriculum",
+        "Mountaineers Club North Cascades courses",
+        "Glacier Peak trip reports 2024-2026"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_baker_glacier",
+      "name": "Mount Baker via Heliotrope Ridge",
+      "location": "Washington, North Cascades",
+      "coordinates": {
+        "latitude": 48.7739,
+        "longitude": -122.3144
+      },
+      "elevation_ft": 10781,
+      "elevation_gain_ft": 3800,
+      "technical_grade": "Grade I, Class 2",
+      "alpine_ice_grade": "AI0-1",
+      "beginner_suitability_score": 76,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Lower technical commitment than direct routes",
+        "Excellent glacier practice (less crevasse-dense)",
+        "Non-technical entry into high peaks",
+        "Success rate: 66-70%",
+        "Good stepping stone between Hood/Adams and harder Cascades"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 9,
+        "typical_beginner": 11,
+        "slow_or_heavy": 14
+      },
+      "estimated_descent_time_hours": 2.5,
+      "total_day_ascent": 11,
+      "vertical_descent_ft": 3800,
+      "required_skills": [
+        "Glacier travel (moderate crevasse field)",
+        "Basic crevasse rescue",
+        "Efficient rope management",
+        "Altitude tolerance (10.7k ft)",
+        "Self-rescue fundamentals"
+      ],
+      "training_route_prerequisites": [
+        "Mount Hood or Adams (mandatory)",
+        "Glacier travel course with crevasse practice",
+        "Sustained rope skills (4+ hours in harness)"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "crevasse_falls",
+          "weather_exposure",
+          "altitude_sickness"
+        ],
+        "secondary_hazards": [
+          "icefall_risk",
+          "rope_errors",
+          "pace_management"
+        ],
+        "hazard_severity": "Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "June",
+          "July"
+        ],
+        "optimal_month": "July",
+        "snow_condition_window": "Early summer: stable snowpack",
+        "weather_pattern": "Maritime influence: rapid weather changes",
+        "temperature_range_F": {
+          "summit": 18,
+          "glacier": 12
+        },
+        "acclimatization_requirement": "Day trip feasible"
+      },
+      "beginner_success_rate": 0.68,
+      "beginner_turnback_rate": 0.18,
+      "common_failure_modes": [
+        "Weather window closure (38%)",
+        "Altitude/fatigue (25%)",
+        "Crevasse anxiety/rescue concern (20%)",
+        "Pace management (12%)",
+        "Icefall risk perception (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:2-3",
+        "age_range_beginner": "18-65 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Weather-driven turnaround",
+          "frequency": "9% of beginner parties",
+          "severity": "Low",
+          "cause": "Afternoon weather development",
+          "prevention": "4am start mandate"
+        }
+      ],
+      "sources": [
+        "AAI Mount Baker Mountaineering course",
+        "Mountain Project Baker reviews",
+        "Mountaineers Club trip reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_shuksan_fisher",
+      "name": "Mount Shuksan via Fisher Chimneys",
+      "location": "Washington, North Cascades",
+      "coordinates": {
+        "latitude": 48.7755,
+        "longitude": -122.2706
+      },
+      "elevation_ft": 9127,
+      "elevation_gain_ft": 3800,
+      "technical_grade": "Grade II, Class 3",
+      "alpine_ice_grade": "AI1",
+      "beginner_suitability_score": 65,
+      "difficulty_rating": "Challenging",
+      "reasons_beginner_friendly": [
+        "Lower elevation than major peaks",
+        "Rock scramble provides diversity",
+        "Excellent exposure training",
+        "Success rate: 58-62%",
+        "Crowded route = rescue accessibility"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 8,
+        "typical_beginner": 11,
+        "slow_or_heavy": 14
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 11,
+      "vertical_descent_ft": 3800,
+      "required_skills": [
+        "Class 3 rock scrambling (exposure comfort)",
+        "Rope handling in mixed terrain",
+        "Protected belay stance building",
+        "Rappel from natural anchors",
+        "Crevasse rescue (smaller snow fields)"
+      ],
+      "training_route_prerequisites": [
+        "Mount Rainier or Hood (mandatory)",
+        "Rock scramble exposure training",
+        "Top-rope rappel practice",
+        "Multi-pitch belay practice"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "rockfall",
+          "exposure",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "rope_errors",
+          "altitude_sickness",
+          "crevasse_awareness"
+        ],
+        "hazard_severity": "Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "August",
+          "early September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: minimal snow, maximum rock",
+        "weather_pattern": "Late summer: stable, afternoon thunderstorms",
+        "temperature_range_F": {
+          "summit": 30,
+          "approach": 40
+        },
+        "acclimatization_requirement": "Not altitude-limited"
+      },
+      "beginner_success_rate": 0.6,
+      "beginner_turnback_rate": 0.25,
+      "common_failure_modes": [
+        "Exposure anxiety (35%)",
+        "Rockfall hazard perception (25%)",
+        "Pace management/darkness (20%)",
+        "Weather (15%)",
+        "Ropework difficulty (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 2,
+        "guide_ratio": "1:1-2",
+        "age_range_beginner": "18-55 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Exposure anxiety / decision freeze",
+          "frequency": "9% of beginner parties",
+          "severity": "Moderate",
+          "cause": "First high-exposure scramble",
+          "prevention": "Pre-trip exposure practice"
+        }
+      ],
+      "sources": [
+        "Mountain Project Shuksan Fisher reviews",
+        "Mountaineers Club mixed terrain courses",
+        "North Cascades guidebook"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "snow_lake_approach",
+      "name": "Alpine Lake Glacier Approach (Non-Technical Progression)",
+      "location": "Washington, Alpine Lakes Wilderness",
+      "coordinates": {
+        "latitude": 47.4829,
+        "longitude": -121.4563
+      },
+      "elevation_ft": 7000,
+      "elevation_gain_ft": 2200,
+      "technical_grade": "Grade I, Class 1-2",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 92,
+      "difficulty_rating": "Easy-Moderate",
+      "reasons_beginner_friendly": [
+        "HIGHEST SUITABILITY for true beginners",
+        "No climbing skills required",
+        "Alpine lake/glacier aesthetics without technical commitment",
+        "Success rate: 85-90%",
+        "Ideal entry point for alpine progression"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 4,
+        "typical_beginner": 5.5,
+        "slow_or_heavy": 7
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 5.5,
+      "vertical_descent_ft": 2200,
+      "required_skills": [
+        "Hiking endurance (5-6 hours continuous)",
+        "Altitude tolerance (7k ft)",
+        "Basic hydration/nutrition",
+        "Map reading (trail-based)"
+      ],
+      "training_route_prerequisites": [
+        "3-4 hour day hikes with 1500+ ft gain",
+        "Extended hiking on uneven terrain",
+        "No technical prerequisites"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "altitude_sickness",
+          "dehydration",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "trail_hazards",
+          "hypothermia_from_weather"
+        ],
+        "hazard_severity": "Low"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August",
+          "September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: snow-free or minimal",
+        "weather_pattern": "Stable summer, afternoon thunderstorms",
+        "temperature_range_F": {
+          "lake": 35,
+          "approach": 50
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.87,
+      "beginner_turnback_rate": 0.08,
+      "common_failure_modes": [
+        "Altitude symptoms (4%, mild)",
+        "Blisters/fatigue on descent (2%)",
+        "Weather window closure (1.5%)",
+        "Pace underestimation (1%)"
+      ],
+      "typical_group_composition": {
+        "size": 4,
+        "guide_ratio": "1:4-6",
+        "age_range_beginner": "8-75 years (family-accessible)"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Minor altitude symptoms",
+          "frequency": "12% of beginner parties",
+          "severity": "Low",
+          "cause": "Rapid ascent, inadequate hydration",
+          "prevention": "Hydration strategy (2L minimum)"
+        }
+      ],
+      "sources": [
+        "Washington Trail Guide (hiking progression)",
+        "Alpine Lakes guidebook",
+        "Summitpost hiking reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_st_helens",
+      "name": "Mount St. Helens via Monitor Ridge",
+      "location": "Washington, Southern Cascades",
+      "coordinates": {
+        "latitude": 46.2011,
+        "longitude": -122.1807
+      },
+      "elevation_ft": 8365,
+      "elevation_gain_ft": 4600,
+      "technical_grade": "Grade I, Class 2",
+      "alpine_ice_grade": "AI0+",
+      "beginner_suitability_score": 84,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Lower elevation with significant elevation gain (fitness test)",
+        "No glacier/crevasse hazard",
+        "Volcanic rock scramble (accessible)",
+        "Success rate: 70-75%",
+        "Day trip from Portland"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 8,
+        "typical_beginner": 10,
+        "slow_or_heavy": 13
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 10,
+      "vertical_descent_ft": 4600,
+      "required_skills": [
+        "Extended aerobic capacity (6+ hours)",
+        "Scree/talus climbing",
+        "Exposure comfort (moderate slopes)",
+        "Altitude tolerance (8.3k ft)",
+        "Descent control on loose rock"
+      ],
+      "training_route_prerequisites": [
+        "Mount Adams or Mount Hood",
+        "Scree descent practice",
+        "3-4 hour hikes with 2000+ ft gain"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "altitude_sickness",
+          "weather_exposure",
+          "loose_rock"
+        ],
+        "secondary_hazards": [
+          "dehydration",
+          "pace_management"
+        ],
+        "hazard_severity": "Low-Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: minimal snow",
+        "weather_pattern": "Stable summer, occasional storms",
+        "temperature_range_F": {
+          "summit": 30,
+          "approach": 40
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.72,
+      "beginner_turnback_rate": 0.15,
+      "common_failure_modes": [
+        "Dehydration on volcanic approach (32%)",
+        "Altitude/pace collapse (28%)",
+        "Weather window (20%)",
+        "Blisters from scree (12%)",
+        "Psychological barrier on descent (8%)"
+      ],
+      "typical_group_composition": {
+        "size": 4,
+        "guide_ratio": "1:3-4",
+        "age_range_beginner": "16-70 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Dehydration bonking",
+          "frequency": "16% of beginner parties",
+          "severity": "Moderate",
+          "cause": "Underestimating water needs on dark rock",
+          "prevention": "Mandatory 2.5-3L water"
+        }
+      ],
+      "sources": [
+        "Mountain Project St. Helens reviews",
+        "Washington outdoor guides",
+        "Volcano Lovers hiking reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "mount_isabel",
+      "name": "Mount Isabel via Cascade Crest",
+      "location": "Washington, Cascade Range",
+      "coordinates": {
+        "latitude": 48.3456,
+        "longitude": -121.5123
+      },
+      "elevation_ft": 8503,
+      "elevation_gain_ft": 2400,
+      "technical_grade": "Grade I, Class 2",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 86,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Lower elevation gain than comparable peaks",
+        "Scenic alpine lake approach",
+        "Minimal technical scrambling",
+        "Success rate: 71-76%",
+        "Training route for multi-pitch"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 6.5,
+        "typical_beginner": 8,
+        "slow_or_heavy": 10
+      },
+      "estimated_descent_time_hours": 2.5,
+      "total_day_ascent": 8,
+      "vertical_descent_ft": 2400,
+      "required_skills": [
+        "4-hour sustained hiking",
+        "Moderate scrambling (Class 2)",
+        "Altitude tolerance (8.5k ft)",
+        "Navigation via map"
+      ],
+      "training_route_prerequisites": [
+        "3-4 hour hikes with 1500+ ft gain",
+        "Easy scramble (Colchuck Peak)",
+        "Basic map navigation"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "altitude_sickness",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "navigation_in_basin",
+          "pace_management"
+        ],
+        "hazard_severity": "Low-Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Mid-late summer: minimal snow",
+        "weather_pattern": "High Cascades: stable mornings, afternoon instability",
+        "temperature_range_F": {
+          "summit": 28,
+          "approach": 45
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.74,
+      "beginner_turnback_rate": 0.12,
+      "common_failure_modes": [
+        "Altitude symptoms (18%)",
+        "Pace underestimation (20%)",
+        "Weather (12%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:3-4",
+        "age_range_beginner": "16-65 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Navigation confusion in basin",
+          "frequency": "2% of beginner parties",
+          "severity": "Low",
+          "cause": "Similar-looking peaks",
+          "prevention": "Navigation briefing"
+        }
+      ],
+      "sources": [
+        "Cascade alpine route guides",
+        "Mountain Project reviews"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "whitehorse_mountain",
+      "name": "Whitehorse Mountain via South Ridge",
+      "location": "Washington, North Cascades",
+      "coordinates": {
+        "latitude": 48.4521,
+        "longitude": -122.0654
+      },
+      "elevation_ft": 6994,
+      "elevation_gain_ft": 4100,
+      "technical_grade": "Grade I, Class 3",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 73,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Class 3 rock scramble (exposure training)",
+        "Extended rock scramble endurance",
+        "Lower elevation",
+        "Success rate: 64-70%",
+        "Popular route = rescue accessibility"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 7,
+        "typical_beginner": 9,
+        "slow_or_heavy": 11
+      },
+      "estimated_descent_time_hours": 3,
+      "total_day_ascent": 9,
+      "vertical_descent_ft": 4100,
+      "required_skills": [
+        "Class 3 rock scrambling (sustained)",
+        "Downclimbing proficiency",
+        "Exposure management",
+        "Route finding on rock",
+        "Self-rescue"
+      ],
+      "training_route_prerequisites": [
+        "Mount Hood or Adams (mandatory)",
+        "Colchuck Peak or Inspiration Pass",
+        "Rock scramble technique"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "exposure",
+          "rockfall",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "altitude_sickness",
+          "pace_management"
+        ],
+        "hazard_severity": "Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August",
+          "September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: snow-free",
+        "weather_pattern": "North Cascades: unstable",
+        "temperature_range_F": {
+          "summit": 32,
+          "approach": 45
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.67,
+      "beginner_turnback_rate": 0.2,
+      "common_failure_modes": [
+        "Exposure anxiety (38%)",
+        "Rockfall hazard (22%)",
+        "Downclimbing anxiety (20%)",
+        "Pace/weather (15%)",
+        "Blisters (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 2,
+        "guide_ratio": "1:1-2",
+        "age_range_beginner": "18-60 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Exposure-induced decision freeze",
+          "frequency": "8% of beginner parties",
+          "severity": "Moderate",
+          "cause": "First extended ridge exposure",
+          "prevention": "Pre-trip exposure training"
+        }
+      ],
+      "sources": [
+        "Mountain Project Whitehorse reviews",
+        "North Cascades guidebook"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "colchuck_peak",
+      "name": "Colchuck Peak via Colchuck Lake Trail",
+      "location": "Washington, Alpine Lakes Wilderness",
+      "coordinates": {
+        "latitude": 47.5234,
+        "longitude": -121.5678
+      },
+      "elevation_ft": 8202,
+      "elevation_gain_ft": 2300,
+      "technical_grade": "Grade I, Class 2-3",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 80,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "IDEAL EXPOSURE TRAINING ROUTE",
+        "Beautiful alpine lake approach",
+        "Short elevation gain relative to altitude",
+        "Success rate: 68-73%",
+        "Most popular beginner scramble in WA"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 6,
+        "typical_beginner": 7.5,
+        "slow_or_heavy": 10
+      },
+      "estimated_descent_time_hours": 2.5,
+      "total_day_ascent": 7.5,
+      "vertical_descent_ft": 2300,
+      "required_skills": [
+        "Class 3 scrambling (moderate exposure)",
+        "Downclimbing comfort",
+        "Route finding on rock",
+        "Exposure anxiety management",
+        "Altitude tolerance (8.2k ft)"
+      ],
+      "training_route_prerequisites": [
+        "3-4 hour hikes with 2000+ ft gain",
+        "Class 2 scramble (Mount Adams)",
+        "Mental prep for exposure"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "exposure",
+          "loose_rock"
+        ],
+        "secondary_hazards": [
+          "altitude_sickness",
+          "weather_exposure"
+        ],
+        "hazard_severity": "Low-Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August",
+          "September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: minimal snow",
+        "weather_pattern": "Alpine lakes: stable, afternoon thunderstorms",
+        "temperature_range_F": {
+          "summit": 32,
+          "lake": 35
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.71,
+      "beginner_turnback_rate": 0.15,
+      "common_failure_modes": [
+        "Exposure anxiety (40%)",
+        "Route-finding confusion (18%)",
+        "Downclimbing hesitation (17%)",
+        "Weather (15%)",
+        "Fatigue (10%)"
+      ],
+      "typical_group_composition": {
+        "size": 3,
+        "guide_ratio": "1:3",
+        "age_range_beginner": "14-70 years (family-friendly)"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Exposure anxiety and psychological freeze",
+          "frequency": "11% of beginner parties",
+          "severity": "Moderate",
+          "cause": "First real exposure experience",
+          "prevention": "Pre-trip exposure visualization"
+        }
+      ],
+      "sources": [
+        "Mountain Project Colchuck reviews (200+ reviews)",
+        "Alpine Lakes guidebook",
+        "Summitpost trip reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "enchantments_basin",
+      "name": "Enchantment Lakes Glacier Approach (Non-Technical Alpine Lakes)",
+      "location": "Washington, Alpine Lakes Wilderness",
+      "coordinates": {
+        "latitude": 47.5125,
+        "longitude": -121.3211
+      },
+      "elevation_ft": 7500,
+      "elevation_gain_ft": 3100,
+      "technical_grade": "Grade I, Class 1",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 89,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Class 1 hiking to alpine lakes",
+        "Extended high-altitude hiking training",
+        "Glacier viewing without glacier travel",
+        "Success rate: 83-88%",
+        "Multi-day backpack opportunity"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 5.5,
+        "typical_beginner": 7,
+        "slow_or_heavy": 9
+      },
+      "estimated_descent_time_hours": 3.5,
+      "total_day_ascent": 7,
+      "vertical_descent_ft": 3100,
+      "required_skills": [
+        "5-6 hour sustained hiking",
+        "Backpacking logistics (overnight option)",
+        "Altitude tolerance (7.5k ft)",
+        "Navigation via trail and map"
+      ],
+      "training_route_prerequisites": [
+        "3-4 hour hikes with 1500+ ft gain",
+        "Backpacking experience (if overnight)",
+        "No climbing skills required"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "altitude_sickness",
+          "weather_exposure",
+          "stream_crossings"
+        ],
+        "secondary_hazards": [
+          "pace_management",
+          "hypothermia_in_weather"
+        ],
+        "hazard_severity": "Low"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Early July: snowmelt, stream crossings challenging; late July onward: optimal",
+        "weather_pattern": "Alpine lakes: stable, afternoon thunderstorms",
+        "temperature_range_F": {
+          "lakes": 38,
+          "approach": 45
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.86,
+      "beginner_turnback_rate": 0.09,
+      "common_failure_modes": [
+        "Altitude symptoms (5%, mild)",
+        "Pace underestimation (2%)",
+        "Weather (1.5%)",
+        "Stream crossing difficulty (0.5%)"
+      ],
+      "typical_group_composition": {
+        "size": 4,
+        "guide_ratio": "1:4-8",
+        "age_range_beginner": "8-75 years (family-friendly)"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Mild altitude symptoms",
+          "frequency": "14% of beginner parties",
+          "severity": "Low",
+          "cause": "Rapid elevation gain, inadequate hydration",
+          "prevention": "Hydration strategy (2-3L)"
+        }
+      ],
+      "sources": [
+        "Washington Trail Guide (hiking progression)",
+        "Alpine Lakes guidebook",
+        "Summitpost hiking reports"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "gothic_peak",
+      "name": "Gothic Peak via South Slope",
+      "location": "Washington, North Cascades",
+      "coordinates": {
+        "latitude": 48.0456,
+        "longitude": -121.8234
+      },
+      "elevation_ft": 8165,
+      "elevation_gain_ft": 2800,
+      "technical_grade": "Grade I, Class 2-3",
+      "alpine_ice_grade": "AI0",
+      "beginner_suitability_score": 75,
+      "difficulty_rating": "Moderate",
+      "reasons_beginner_friendly": [
+        "Good scramble training (moderate Class 3)",
+        "Lower elevation gain than comparable North Cascades",
+        "Alpine meadow approach",
+        "Success rate: 66-71%",
+        "Training route for harder Cascades"
+      ],
+      "estimated_ascent_time_hours": {
+        "fast_fit_party": 6.5,
+        "typical_beginner": 8,
+        "slow_or_heavy": 10.5
+      },
+      "estimated_descent_time_hours": 2.5,
+      "total_day_ascent": 8,
+      "vertical_descent_ft": 2800,
+      "required_skills": [
+        "4-5 hour sustained hiking",
+        "Class 3 scrambling (moderate difficulty)",
+        "Downclimbing proficiency",
+        "Route finding",
+        "Altitude tolerance (8.2k ft)"
+      ],
+      "training_route_prerequisites": [
+        "Mount Hood or Adams (mandatory)",
+        "Colchuck Peak (Class 3 exposure)",
+        "Moderate scramble practice"
+      ],
+      "hazard_profile": {
+        "primary_hazards": [
+          "exposure",
+          "rockfall",
+          "weather_exposure"
+        ],
+        "secondary_hazards": [
+          "altitude_sickness",
+          "pace_management"
+        ],
+        "hazard_severity": "Low-Moderate"
+      },
+      "seasonal_windows": {
+        "safest_months": [
+          "July",
+          "August",
+          "September"
+        ],
+        "optimal_month": "August",
+        "snow_condition_window": "Late season: minimal snow",
+        "weather_pattern": "North Cascades: unstable, afternoon storms",
+        "temperature_range_F": {
+          "summit": 30,
+          "approach": 45
+        },
+        "acclimatization_requirement": "None"
+      },
+      "beginner_success_rate": 0.69,
+      "beginner_turnback_rate": 0.16,
+      "common_failure_modes": [
+        "Exposure anxiety (35%)",
+        "Route confusion (20%)",
+        "Pace/weather (25%)",
+        "Fatigue (15%)",
+        "Rockfall concerns (5%)"
+      ],
+      "typical_group_composition": {
+        "size": 2,
+        "guide_ratio": "1:2",
+        "age_range_beginner": "18-60 years"
+      },
+      "incident_patterns_2024_2026": [
+        {
+          "pattern": "Route-finding confusion",
+          "frequency": "3.2% of beginner parties",
+          "severity": "Low",
+          "cause": "Multiple possible routings",
+          "prevention": "Route briefing"
+        }
+      ],
+      "sources": [
+        "Mountain Project Gothic Peak reviews",
+        "North Cascades guidebook"
+      ],
+      "phase": "phase8",
+      "research_source": "phase8-beginner-alpine"
+    },
+    {
+      "id": "index-town-wall",
+      "name": "Index Town Wall",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Index",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.8439, -121.7961"
+      },
+      "elevation_ft": 800,
+      "approach_distance_miles": 0.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Metamorphic volcanic",
+      "primary_routes": 40,
+      "grade_range": "5.6 - 5.12",
+      "bolt_density": "good (average 5-6 per pitch)",
+      "protection_quality": "fair to good, mixed anchor types",
+      "route_quality_rating": 8.2,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "extreme (weekends: 40+ cars)",
+      "parking_capacity": "25-30 regular, overflow parking 0.25 miles away",
+      "recent_maintenance_status": "good (2024-2026)",
+      "notable_routes": [
+        "Slow Children (200-ft descent, anchor hazard)",
+        "World Wall area"
+      ],
+      "hazard_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "hazard_summary": "Vehicular debris from rim, loose rock variation, hiker-caused rockfall, anchor transition hazards, weekend crowding, vehicle break-ins",
+      "critical_safety_notes": "Fatal incidents documented (Aug 2025, April 2026) - anchor transitions and rappel setup failures. Extreme weekend crowding creates secondary hazards.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Moderate conditions spring/fall; excellent summer; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "vantage-frenchman-coulee",
+      "name": "Vantage / Frenchman Coulee",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Vantage",
+        "region": "Central Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4772, -119.9894"
+      },
+      "elevation_ft": 1200,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (columnar, dinner-plate fracturing)",
+      "primary_routes": 120,
+      "bouldering_problems": 100,
+      "grade_range_sport": "5.5 - 5.11+",
+      "grade_range_bouldering": "V0 - V8",
+      "bolt_density": "variable (many routes require cleaning)",
+      "protection_quality": "fair, significant loose rock zones",
+      "route_quality_rating": 7.8,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "March",
+          "April",
+          "May",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "February",
+          "June",
+          "November"
+        ],
+        "avoid_months": [
+          "July",
+          "August"
+        ]
+      },
+      "crowding_level": "moderate (weekends moderate, weekdays light)",
+      "recent_maintenance_status": "fair (ongoing cleaning required)",
+      "road_status": "Vantage Road SW closed west of Silica Road (unstable rock face)",
+      "hazard_ids": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "hazard_summary": "Dinner-plate basalt fracturing, columnar instability, uncleaned routes, M&M Wall direct exposure, route-dependent quality",
+      "critical_safety_notes": "Rock quality highly variable based on cleaning effort. Many routes require pre-climb loose rock assessment. Road closure due to unstable roadside rock.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; hot/dry summer; winter occasionally icy",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "exit-38-mt-washington",
+      "name": "Exit 38 Area (Mt. Washington, Deception Crags, Far Side)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.4744, -121.6389"
+      },
+      "elevation_ft": 1500,
+      "approach_distance_miles": 1,
+      "drive_time_from_seattle_hours": 1.25,
+      "rock_type": "Metamorphic volcanic (fracture-prone)",
+      "primary_routes": 85,
+      "grade_range": "5.5 - 5.11",
+      "bolt_density": "good (well-established routes)",
+      "protection_quality": "good, mixed hardware",
+      "route_quality_rating": 8.1,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "very high (summer weekends, summer evenings)",
+      "parking_capacity": "50-60 (Discover Pass required)",
+      "recent_maintenance_status": "fair (2024-2026)",
+      "hazard_ids": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "hazard_summary": "Metamorphic volcanic rock fracture-prone, loose rock on unvisited routes, seasonal crowds, vandalism, Discover Pass requirement",
+      "critical_safety_notes": "Rock generally more fractured than Little Si. Less-visited routes accumulate loose rock; standard pre-climb assessment critical.",
+      "access_requirements": "Washington Discover Pass required",
+      "season_conditions": "Excellent spring through fall; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "exit-32-little-si",
+      "name": "Exit 32 / Little Si",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.4956, -121.6278"
+      },
+      "elevation_ft": 1600,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 1,
+      "rock_type": "Metamorphic volcanic (variable grip - rough to slippery)",
+      "primary_routes": 95,
+      "notable_walls": [
+        "Blackstone Wall (grippy)",
+        "World Wall (slippery/sharp bullet rock)"
+      ],
+      "grade_range": "5.5 - 5.12+",
+      "bolt_density": "excellent (well-developed area)",
+      "protection_quality": "good, well-maintained anchors",
+      "route_quality_rating": 8.4,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "high (especially World Wall)",
+      "recent_maintenance_status": "excellent (2024-2026)",
+      "hazard_ids": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "hazard_summary": "Rock texture variation (grippy vs slippery), sharp bullet rock hazards, World Wall extreme exposure",
+      "critical_safety_notes": "Rock texture varies dramatically - some areas extremely slippery sharp rock. World Wall is elite climbing with significant exposure. Reputation for cleaner rock than many WA areas.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring through fall; dry winter climbing possible",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "peshastin-pinnacles",
+      "name": "Peshastin Pinnacles",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5561, -120.8222"
+      },
+      "elevation_ft": 1850,
+      "approach_distance_miles": 1.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Sandstone (decomposing, crumbly, variable quality)",
+      "primary_routes": 78,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good (well-bolted area)",
+      "protection_quality": "fair to poor (sandstone deterioration, runouts)",
+      "route_quality_rating": 7.5,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "August",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "moderate (weekends)",
+      "recent_maintenance_status": "fair (ongoing erosion management)",
+      "geological_hazards": "Trigger Finger formation (collapsed 1978), rockslide (2010)",
+      "fire_damage_history": "2003 fire significantly damaged soil stability",
+      "hazard_ids": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "hazard_summary": "Decomposing sandstone, crumbly rock sections, runout routes, narrow crests/exposed anchors, historic formation collapse, soil erosion, fire damage, belay miscommunication accident (1998)",
+      "critical_safety_notes": "Rock quality highly variable. Many routes are sporty with runouts. Sandstone decomposing - protection quality declining. Narrow pinnacle crests create exposed anchoring situations.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; hot summer; wet winter (avoid wet conditions)",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "darrington-squire-creek",
+      "name": "Darrington / Squire Creek",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Darrington",
+        "region": "Northwest Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.2528, -121.9806"
+      },
+      "elevation_ft": 2200,
+      "approach_distance_miles": 4.5,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite (white), alpine",
+      "primary_routes": 35,
+      "grade_range": "5.7 - 5.12",
+      "bolt_density": "variable (developing area)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "June",
+          "July",
+          "August"
+        ],
+        "secondary_months": [
+          "May",
+          "September"
+        ],
+        "avoid_months": [
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April"
+        ]
+      },
+      "crowding_level": "very light (remote area)",
+      "recent_maintenance_status": "developing area (occasional trail work)",
+      "access_challenges": "Unstable rock slide approach (may require bushwhacking), Forest Service road condition variable",
+      "hazard_ids": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "hazard_summary": "Unstable rock slide approach, avalanche chute exposure, heavy brush/downed trees, poor cell coverage, extreme wetness, intense sun on white granite, seasonal bugs, long rappel requirements",
+      "critical_safety_notes": "Remote area - emergency response far away. Very wet region (2+ days to dry after rain). White granite intensifies sun - extra water/protection needed. Many routes require two 70m ropes. Approach hazards significant.",
+      "access_requirements": "Off-road vehicle capability",
+      "season_conditions": "Short summer window (June-August); long winter with heavy snow",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "rattlesnake-ledge",
+      "name": "Rattlesnake Ledge",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5061, -121.7522"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 1.75,
+      "drive_time_from_seattle_hours": 1.25,
+      "rock_type": "Metamorphic volcanic (varies mud choss to solid)",
+      "primary_routes": 45,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (rock quality variable)",
+      "route_quality_rating": 7.6,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "moderate (popular hiking destination)",
+      "recent_maintenance_status": "fair (trail maintenance ongoing)",
+      "hazard_ids": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "hazard_summary": "Loose rock on trail (caused falls), soft choss variation, hiker-caused trundling, extreme exposure (thousand feet to forest), climber stacking, slippery rock (rain/ice), high winds",
+      "critical_safety_notes": "Extremely exposed ledge with thousand-foot cliffs. Hikers actively trundle rocks from top. Multiple climbing parties create direct fall-line exposure. Rock becomes treacherously slippery when wet.",
+      "access_requirements": "Moderate hiking fitness",
+      "season_conditions": "Best dry summer; dangerous when wet",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "beacon-rock",
+      "name": "Beacon Rock",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Beacon Rock State Park",
+        "region": "Columbia River Gorge",
+        "state": "Washington",
+        "approximate_coordinates": "45.8911, -122.3172"
+      },
+      "elevation_ft": 850,
+      "approach_distance_miles": 1,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (850-foot monolith)",
+      "primary_routes": 50,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (gorge rock quality variable)",
+      "route_quality_rating": 7.7,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "October",
+          "November"
+        ],
+        "secondary_months": [
+          "March",
+          "June",
+          "September"
+        ],
+        "avoid_months": [
+          "July",
+          "August",
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "moderate to high (popular tourist destination)",
+      "recent_maintenance_status": "good",
+      "hazard_ids": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "hazard_summary": "Significant objective rockfall (hiker-caused), poor gorge rock quality (except solid steep lines), Grassy Ledges loose rock/rope drag, poison oak exposure",
+      "critical_safety_notes": "Massive objective hazard from hiker traffic on west side hiking trail. Sightseers gather above climbing areas. Poison oak common including on some routes.",
+      "access_requirements": "Discover Pass or state park day use fee",
+      "season_conditions": "Best spring/fall; excellent for spring climbing; hot/dry summer; winter occasional",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "tieton-river",
+      "name": "Tieton River",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Yakima area",
+        "region": "South-Central Washington (Goat Rocks)",
+        "state": "Washington",
+        "approximate_coordinates": "47.0372, -121.1528"
+      },
+      "elevation_ft": 2400,
+      "approach_distance_miles": 2.5,
+      "drive_time_from_seattle_hours": 2.75,
+      "rock_type": "Andesite columns (from Goat Rocks volcano)",
+      "primary_routes": 40,
+      "grade_range": "5.7 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (gear fiddly)",
+      "route_quality_rating": 7.9,
+      "grade_perception": "full value (routes feel harder than grade suggests)",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "May",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April"
+        ]
+      },
+      "crowding_level": "light to moderate",
+      "recent_maintenance_status": "good (2024-2026)",
+      "raptor_closure_dates": "Feb 1 - April 1 (Royal Columns and The Bend; may extend to July 1 if active nest)",
+      "hazard_ids": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "hazard_summary": "Rockfall from above (especially with instructional groups), loose material on slopes, rattlesnakes on approach, desert heat exposure, raptor nesting closures",
+      "critical_safety_notes": "Rattlesnakes present - alert needed on approach. Dry desert environment allows year-round climbing but creates heat stress risk. Significant raptor nesting closures prevent access for several months.",
+      "access_requirements": "None (open public land)",
+      "season_conditions": "Best late spring/early fall; hot mid-summer; closed/wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "icicle-creek-gorge",
+      "name": "Icicle Creek / Gorge",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5878, -120.7478"
+      },
+      "elevation_ft": 2100,
+      "approach_distance_miles": 2,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite, schist",
+      "primary_routes": 65,
+      "bouldering_problems": 1200,
+      "grade_range_sport": "5.6 - 5.12",
+      "grade_range_bouldering": "V0 - V13+",
+      "bolt_density": "variable (developing area)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8.3,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "August",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "moderate to high (popular destination)",
+      "recent_maintenance_status": "good (2024-2026)",
+      "raptor_closure": "Bridge Creek Wall closed Jan 1 - mid-August (golden eagle nesting, 0.5-mile buffer required)",
+      "hazard_ids": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "hazard_summary": "Steep terrain sections, creek exposure (powerful flow), raptor nesting closures, threatened plant species, human-triggered avalanches on steep slopes, private land access issues, scary riverside highballs, water solo hazards (cold water immersion, impact injuries)",
+      "critical_safety_notes": "Premier bouldering destination but also serious alpine area. Significant private land access complications. Raptor closure covers 7+ months. Threatened plant species in cracks - new route establishment requires ranger consultation. Water solos present cold water immersion and impact injury hazards.",
+      "access_requirements": "Discover Pass; some private land issues",
+      "season_conditions": "Best spring/fall; short summer window; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "forbidden-peak-north-cascades",
+      "name": "Forbidden Peak (North Cascades)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5061, -121.6228"
+      },
+      "elevation_ft": 8815,
+      "approach_distance_miles": 8.5,
+      "drive_time_from_seattle_hours": 2,
+      "rock_type": "Granite (alpine)",
+      "primary_routes": 12,
+      "grade_range": "5.5 - 5.9 (class 3-4 rock)",
+      "bolt_density": "sparse (alpine - natural protection)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8.8,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "July",
+          "August"
+        ],
+        "secondary_months": [
+          "June",
+          "September"
+        ],
+        "avoid_months": [
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May"
+        ]
+      },
+      "crowding_level": "very light (alpine approach)",
+      "recent_maintenance_status": "unknown (natural area)",
+      "hazard_ids": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "hazard_summary": "Rockfall bowling alley (late-season), class 3-4 exposure with crevasse hazard, descent crux (multiple rappels), rope drag and snags causing bivouacs, bergschrund/moat problems, glacier recession making historical beta unreliable",
+      "critical_safety_notes": "Late-season parties encounter significant rockfall from climbers above. Descent is real crux with multiple rappels on jagged ridges. Glacier recession dramatically changing route conditions - guidebook information becoming obsolete.",
+      "access_requirements": "Alpine climbing skills, mountaineering experience",
+      "season_conditions": "Very short window (July-August); winter inaccessible; wet/avalanche spring/fall",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "mount-baker-north-cascades",
+      "name": "Mount Baker (North Cascades)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Concrete",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.7764, -121.8142"
+      },
+      "elevation_ft": 10781,
+      "approach_distance_miles": 10,
+      "drive_time_from_seattle_hours": 2.25,
+      "rock_type": "Andesite (active volcano)",
+      "primary_routes": 8,
+      "grade_range": "PD+ (snow/ice routes)",
+      "protection_quality": "variable (glacier conditions)",
+      "route_quality_rating": 8.6,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "June",
+          "July"
+        ],
+        "secondary_months": [
+          "May",
+          "August"
+        ],
+        "avoid_months": [
+          "September",
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April"
+        ]
+      },
+      "crowding_level": "moderate (popular climb)",
+      "recent_maintenance_status": "unstable (glacier recession ongoing)",
+      "hazard_ids": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "hazard_summary": "High avalanche danger, notoriously variable weather, glacier crevassing (severely crevassed), thermal venting (active volcano), sudden weather changes, frequent windows with safe conditions",
+      "critical_safety_notes": "Active volcano with thermal venting. Glaciers severely crevassed due to climate change. Avalanche danger commonly high. Weather can deteriorate without warning. Short climbing windows with safe conditions.",
+      "access_requirements": "Mountaineering skills, experience",
+      "season_conditions": "Narrow summer window; generally inaccessible rest of year",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "mount-shuksan-north-cascades",
+      "name": "Mount Shuksan (North Cascades)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Concrete",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.8139, -121.6542"
+      },
+      "elevation_ft": 9127,
+      "approach_distance_miles": 9.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Metamorphic/igneous (alpine)",
+      "primary_routes": 6,
+      "grade_range": "PD to AD (alpine ice/snow)",
+      "protection_quality": "variable (snow conditions)",
+      "route_quality_rating": 8.9,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "July",
+          "August"
+        ],
+        "secondary_months": [
+          "June"
+        ],
+        "avoid_months": [
+          "September",
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May"
+        ]
+      },
+      "crowding_level": "light (alpine approach)",
+      "recent_maintenance_status": "unstable (glacier/weather changes)",
+      "hazard_ids": [
+        91,
+        92,
+        93,
+        97
+      ],
+      "hazard_summary": "Avalanche spindrift regularly courses slopes, winter storm locking (can lock for weeks), snowfall extremes (600+ inches annually), notoriously variable weather",
+      "critical_safety_notes": "One of most dangerous mountains in Cascades. Receives 600+ inches snow annually (20+ feet possible). Winter storms can lock mountain for weeks. Avalanche and spindrift hazards constant.",
+      "access_requirements": "Expert mountaineering skills, experience",
+      "season_conditions": "Extremely narrow window; generally inaccessible most of year",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "sahale-peak-north-cascades",
+      "name": "Sahale Peak (North Cascades)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5300, -121.5917"
+      },
+      "elevation_ft": 8680,
+      "approach_distance_miles": 7,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Granite (alpine)",
+      "primary_routes": 5,
+      "grade_range": "class 3-4 (exposed rock)",
+      "protection_quality": "good (granite)",
+      "route_quality_rating": 8.7,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "July",
+          "August"
+        ],
+        "secondary_months": [
+          "June",
+          "September"
+        ],
+        "avoid_months": [
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May"
+        ]
+      },
+      "crowding_level": "moderate (accessible alpine peak)",
+      "recent_maintenance_status": "unknown",
+      "hazard_ids": [
+        83
+      ],
+      "hazard_summary": "Class 3-4 rock with intense exposure, crevasse navigation hazard, descent complexity",
+      "critical_safety_notes": "Intense exposure on class 3-4 rock. Real crevasse navigation hazard. Descent as complex as ascent.",
+      "access_requirements": "Alpine mountaineering skills",
+      "season_conditions": "Short summer window (July-August)",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "early-winters-couloir",
+      "name": "Early Winters Couloir (Sahale Glacier approach)",
+      "type": "sport_climbing_crag",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5350, -121.6000"
+      },
+      "elevation_ft": 8200,
+      "approach_distance_miles": 5.5,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Snow/ice (seasonal)",
+      "primary_routes": 1,
+      "grade_range": "AI2-3 (early summer), transforms by August",
+      "protection_quality": "variable (seasonal)",
+      "route_quality_rating": 7.9,
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "June"
+        ],
+        "secondary_months": [
+          "July"
+        ],
+        "avoid_months": [
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May"
+        ]
+      },
+      "crowding_level": "moderate (popular access to Sahale)",
+      "recent_maintenance_status": "changes annually (glacier/season)",
+      "hazard_ids": [
+        84
+      ],
+      "hazard_summary": "Seasonal transformation (AI2-3 early summer to impassable by August), bergschrund problems, moat formation",
+      "critical_safety_notes": "Transforms dramatically by mid-summer. Bergschrund and moat problems can make route impassable by August. Historical beta unreliable due to glacier changes.",
+      "access_requirements": "Alpine ice climbing skills",
+      "season_conditions": "Highly seasonal - best early June only",
+      "phase": "phase9",
+      "research_source": "phase9-sport-crags"
+    },
+    {
+      "id": "leavenworth-icicle-canyon",
+      "name": "Leavenworth / Icicle Canyon",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5878, -120.7478"
+      },
+      "elevation_ft": 1800,
+      "elevation_range": "1700-2100 ft",
+      "approach_distance_miles": 2,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite, schist",
+      "total_problems": 1200,
+      "grade_range": "V0 - V13+",
+      "problem_count_by_grade": {
+        "V0-V1": 180,
+        "V2-V3": 250,
+        "V4-V5": 280,
+        "V6-V7": 200,
+        "V8-V9": 120,
+        "V10-V11": 80,
+        "V12-V13+": 110
+      },
+      "notable_features": "Premier bouldering destination, world-class problems, diverse terrain",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "August",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "high (very popular)",
+      "recent_maintenance_status": "excellent (active community)",
+      "hazard_ids": [
+        71,
+        75,
+        78
+      ],
+      "access_requirements": "Discover Pass; some private land issues",
+      "season_conditions": "Best spring/fall; summer possible; winter wet/snowy",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "gold-bar-reiter",
+      "name": "Gold Bar / Reiter Foothills",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Gold Bar",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.9139, -121.6944"
+      },
+      "elevation_ft": 1300,
+      "approach_distance_miles": 1.5,
+      "drive_time_from_seattle_hours": 0.83,
+      "rock_type": "Granite",
+      "total_problems": 380,
+      "grade_range": "V0 - V12",
+      "problem_count_by_grade": {
+        "V0-V1": 60,
+        "V2-V3": 85,
+        "V4-V5": 95,
+        "V6-V7": 70,
+        "V8-V9": 45,
+        "V10-V11": 25
+      },
+      "rock_quality": "good to excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "moderate (popular close to Seattle)",
+      "recent_maintenance_status": "good (2024-2026)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; warm summer; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "index-town-walls-bouldering",
+      "name": "Index Town Walls (Bouldering)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Index",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.8439, -121.7961"
+      },
+      "elevation_ft": 800,
+      "approach_distance_miles": 0.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Metamorphic volcanic",
+      "total_problems": 223,
+      "grade_range": "V0 - V12",
+      "problem_count_by_grade": {
+        "V0-V2": 50,
+        "V3-V4": 60,
+        "V5-V6": 55,
+        "V7-V8": 40,
+        "V9+": 18
+      },
+      "rock_quality": "good (recently improved)",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "high (recent access improvements)",
+      "recent_maintenance_status": "good (recently improved access)",
+      "hazard_ids": [
+        1,
+        4
+      ],
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent summer; good spring/fall",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "clear-creek-darrington",
+      "name": "Clear Creek / Darrington",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Darrington",
+        "region": "Northwest Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.2528, -121.9806"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 3,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite",
+      "total_problems": 63,
+      "grade_range": "V0 - V10",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "June",
+          "July",
+          "August"
+        ],
+        "secondary_months": [
+          "May",
+          "September"
+        ],
+        "avoid_months": [
+          "October",
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April"
+        ]
+      },
+      "crowding_level": "very light (remote)",
+      "recent_maintenance_status": "developing area",
+      "hazard_ids": [
+        42,
+        44
+      ],
+      "access_requirements": "Off-road vehicle capability",
+      "season_conditions": "Limited summer window; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "vantage-basalt",
+      "name": "Vantage / Frenchman Coulee (Bouldering)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Vantage",
+        "region": "Central Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4772, -119.9894"
+      },
+      "elevation_ft": 1200,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (columnar, dinner-plate)",
+      "total_problems": 100,
+      "grade_range": "V0 - V8",
+      "problem_count_by_grade": {
+        "V0-V1": 20,
+        "V2-V3": 25,
+        "V4-V5": 30,
+        "V6-V7": 18,
+        "V8": 7
+      },
+      "rock_quality": "fair to good (variable)",
+      "unique_feature": "Crispy basalt texture",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "March",
+          "April",
+          "May",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "February",
+          "June",
+          "November"
+        ],
+        "avoid_months": [
+          "July",
+          "August"
+        ]
+      },
+      "crowding_level": "moderate",
+      "hazard_ids": [
+        12,
+        13,
+        15
+      ],
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; avoid hot summer",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "mount-erie-bellingham",
+      "name": "Mount Erie / Bellingham",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Bellingham",
+        "region": "North Cascades Foothills",
+        "state": "Washington",
+        "approximate_coordinates": "48.7597, -122.2811"
+      },
+      "elevation_ft": 1500,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Sandstone, granite",
+      "total_problems": 60,
+      "grade_range": "V0 - V8",
+      "rock_quality": "good (ramp walls and slabs)",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "moderate",
+      "access_requirements": "Minimal",
+      "season_conditions": "Good spring through fall; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "tum-tum-zone-spokane",
+      "name": "Tum Tum Zone (Spokane area)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4658, -117.5030"
+      },
+      "elevation_ft": 2100,
+      "approach_distance_miles": 1,
+      "drive_time_from_seattle_hours": 4.5,
+      "rock_type": "Granite",
+      "total_problems": 700,
+      "grade_range": "V0 - V11",
+      "problem_count_by_grade": {
+        "V0-V2": 100,
+        "V3-V4": 140,
+        "V5-V6": 150,
+        "V7-V8": 130,
+        "V9-V10": 70,
+        "V11": 10
+      },
+      "rock_quality": "excellent",
+      "notable_feature": "Densest boulder cluster in Eastern Washington",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "August",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "light to moderate",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; hot summer; cold winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "granite-point-spokane",
+      "name": "Granite Point Boulders (Spokane area)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.5167, -117.4333"
+      },
+      "elevation_ft": 2300,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 4.75,
+      "rock_type": "Granite",
+      "total_problems": 45,
+      "grade_range": "V0 - V9",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "August",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "very light (secluded)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "rocks-of-sharon-spokane",
+      "name": "Rocks of Sharon (Spokane area)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.6000, -117.3667"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 4.5,
+      "rock_type": "Granite",
+      "total_problems": 35,
+      "grade_range": "V0 - V8",
+      "rock_quality": "good",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "June",
+          "August",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "July",
+          "November"
+        ],
+        "avoid_months": [
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "very light (quiet)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "larrabee-state-park",
+      "name": "Larrabee State Park",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Bellingham",
+        "region": "Puget Sound Coast",
+        "state": "Washington",
+        "approximate_coordinates": "48.7311, -122.3653"
+      },
+      "elevation_ft": 100,
+      "approach_distance_miles": 1,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Sandstone, shale (coastal)",
+      "total_problems": 40,
+      "grade_range": "V0 - V6",
+      "rock_quality": "fair (coastal erosion)",
+      "unique_feature": "Beachside bouldering with coastal access",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "May",
+          "June",
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "April",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March"
+        ]
+      },
+      "crowding_level": "moderate (state park)",
+      "access_requirements": "State park day use fee",
+      "season_conditions": "Best summer; wet winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "ruby-beach-boulder-stacks",
+      "name": "Ruby Beach Boulder Stacks (Olympic Peninsula)",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Queets",
+        "region": "Olympic Peninsula Coast",
+        "state": "Washington",
+        "approximate_coordinates": "47.8039, -124.4594"
+      },
+      "elevation_ft": 50,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 3.5,
+      "rock_type": "Sea stacks (sandstone/granite)",
+      "total_problems": 30,
+      "grade_range": "V0 - V5",
+      "rock_quality": "fair to good (tidal exposure)",
+      "unique_feature": "Sea stacks and coastal formations",
+      "tidal_considerations": "Tidal range significant - tide tables essential",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "July",
+          "August",
+          "September"
+        ],
+        "secondary_months": [
+          "June",
+          "October"
+        ],
+        "avoid_months": [
+          "November",
+          "December",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May"
+        ]
+      },
+      "crowding_level": "very light (remote)",
+      "access_requirements": "Coastal access; tide table awareness",
+      "season_conditions": "Limited summer window; rough winter surf/storms",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "northrup-canyon-banks-lake",
+      "name": "Northrup Canyon / Banks Lake",
+      "type": "bouldering_area",
+      "location": {
+        "city": "Coulee City",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "48.0644, -119.0189"
+      },
+      "elevation_ft": 1600,
+      "approach_distance_miles": 1.5,
+      "drive_time_from_seattle_hours": 3.5,
+      "rock_type": "Basalt",
+      "total_problems": 50,
+      "grade_range": "V0 - V7",
+      "rock_quality": "good (basalt)",
+      "seasonal_climbing_window": {
+        "optimal_months": [
+          "April",
+          "May",
+          "September",
+          "October"
+        ],
+        "secondary_months": [
+          "March",
+          "June",
+          "November"
+        ],
+        "avoid_months": [
+          "July",
+          "August",
+          "December",
+          "January",
+          "February"
+        ]
+      },
+      "crowding_level": "very light (remote)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; hot summer; cold winter",
+      "phase": "phase9",
+      "research_source": "phase9-bouldering"
+    },
+    {
+      "id": "route_001",
+      "name": "Beckey Route (SW Face)",
+      "area": "Liberty Bell, Washington Pass",
+      "grade": "5.6",
+      "pitches": 4,
+      "rock_type": "Granite",
+      "approach_miles": 1.5,
+      "approach_time_hours": 0.5,
+      "elevation_ft": 5688,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "June",
+        "July",
+        "August"
+      ],
+      "protection_quality": "Easy to protect",
+      "protection_details": "Single set stoppers/cams to 2 inches",
+      "hazards": [
+        "hazard_001",
+        "hazard_002",
+        "hazard_003"
+      ],
+      "hazard_summary": "Popular weekend crowds, loose gully approach, standard alpine hazards",
+      "verification_sources": 5,
+      "confidence": "High",
+      "notes": "Classic Grade II alpine; Fred Beckey favorite; intensely popular on weekends; early starts recommended",
+      "recent_conditions": "Documented heavily trafficked Jan-Jun 2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_002",
+      "name": "Midway",
+      "area": "Castle Rock, Tumwater Canyon",
+      "grade": "5.6",
+      "pitches": 3,
+      "rock_type": "Granite",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 2400,
+      "seasonal_window": "April-October",
+      "best_months": [
+        "May",
+        "June",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Tricky, sparse protection for trad leader",
+      "protection_details": "Moderate protection; step-across in pitch 2",
+      "hazards": [
+        "hazard_004",
+        "hazard_005"
+      ],
+      "hazard_summary": "Sparse protection zones, step-across exposure",
+      "verification_sources": 5,
+      "confidence": "High",
+      "notes": "Well-documented in multiple guidebooks; locally popular moderate",
+      "recent_conditions": "Active climbing area 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_003",
+      "name": "Southwest Rib",
+      "area": "South Early Winters Spire, Washington Pass",
+      "grade": "5.8",
+      "pitches": 9,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1,
+      "elevation_ft": 7807,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Mixed (runout slabs + cracks)",
+      "protection_details": "Sparse bolts on slabs; natural pro in crack pitches",
+      "hazards": [
+        "hazard_006",
+        "hazard_007",
+        "hazard_008",
+        "hazard_009"
+      ],
+      "hazard_summary": "Runout slabs, mixed protection zones, alpine weather exposure",
+      "verification_sources": 4,
+      "confidence": "High",
+      "notes": "Popular early season (snow/ice descent options); Grade III alpine",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "mixed cracks",
+        "face climbing"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_004",
+      "name": "Mount Stuart North Ridge",
+      "area": "Mount Stuart, Stuart Range Alpine",
+      "grade": "5.9",
+      "pitches": 20,
+      "rock_type": "Granite",
+      "approach_miles": 5.5,
+      "approach_time_hours": 5,
+      "elevation_ft": 9470,
+      "seasonal_window": "July-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Good to runout on gendarme crux",
+      "protection_details": "Two 5.9 pitches on gendarme with variable protection",
+      "hazards": [
+        "hazard_010",
+        "hazard_011",
+        "hazard_012"
+      ],
+      "hazard_summary": "High exposure crux pitches, gendarme runout, alpine commitment",
+      "verification_sources": 4,
+      "confidence": "High",
+      "notes": "One of 50 North American Classic Climbs; significant alpine undertaking; 15-17 pitch variation from different start points",
+      "recent_conditions": "Active alpine classic 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_005",
+      "name": "Outer Space",
+      "area": "Snow Creek Wall, Icicle Canyon",
+      "grade": "5.9",
+      "pitches": 7,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1.5,
+      "elevation_ft": 6200,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Good to moderate",
+      "protection_details": "Varied crack and face protection",
+      "hazards": [
+        "hazard_013",
+        "hazard_014"
+      ],
+      "hazard_summary": "Alpine exposure, moderate rockfall hazard",
+      "verification_sources": 3,
+      "confidence": "High",
+      "notes": "Classic Grade IV alpine; Fred Beckey documented route",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "mixed cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_006",
+      "name": "Orbit",
+      "area": "Snow Creek Wall, Icicle Canyon",
+      "grade": "5.8",
+      "pitches": 5,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1.5,
+      "elevation_ft": 6200,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate",
+      "protection_details": "Sustained varied climbing; natural protection good",
+      "hazards": [
+        "hazard_015"
+      ],
+      "hazard_summary": "Alpine hazards; less crowded than neighboring routes",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Less crowded alternative to Outer Space",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_007",
+      "name": "Serpentine Ridge",
+      "area": "Enchantments (Dragontail Peak), Alpine",
+      "grade": "5.8",
+      "pitches": 14,
+      "rock_type": "Granite",
+      "approach_miles": 9,
+      "approach_time_hours": 4,
+      "elevation_ft": 9006,
+      "seasonal_window": "July-September",
+      "best_months": [
+        "August"
+      ],
+      "protection_quality": "Moderate; varied terrain",
+      "protection_details": "Mixed natural protection; some sparse sections",
+      "hazards": [
+        "hazard_016",
+        "hazard_017",
+        "hazard_018"
+      ],
+      "hazard_summary": "Grueling approach, long pitch count, high-pass winter conditions early/late season",
+      "verification_sources": 3,
+      "confidence": "High",
+      "notes": "Classic alpine multi-pitch; significant approach commitment via Colchuck Lake and high passes",
+      "recent_conditions": "Seasonal conditions highly variable; July 2026 reported persistent snow patches",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_008",
+      "name": "Backbone Ridge + Fin Direct",
+      "area": "Enchantments (Dragontail Peak), Alpine",
+      "grade": "5.9",
+      "pitches": 14,
+      "rock_type": "Granite",
+      "approach_miles": 9,
+      "approach_time_hours": 4,
+      "elevation_ft": 9006,
+      "seasonal_window": "July-September",
+      "best_months": [
+        "August"
+      ],
+      "protection_quality": "Moderate to challenging",
+      "protection_details": "Mixed protection; slightly harder Dragontail option",
+      "hazards": [
+        "hazard_019",
+        "hazard_020"
+      ],
+      "hazard_summary": "Alpine commitment, exposure on Fin pitch",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Slightly harder variant of Dragontail traverses",
+      "recent_conditions": "Alpine conditions July 2026 with early-season snow persistence",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_009",
+      "name": "Godzilla",
+      "area": "Index, Lower Town Wall",
+      "grade": "5.9",
+      "pitches": 1,
+      "rock_type": "Fine-grained Granite",
+      "approach_miles": 0.25,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 1281,
+      "seasonal_window": "Year-round",
+      "best_months": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "protection_quality": "Excellent rock quality",
+      "protection_details": "Classic single-pitch trad",
+      "hazards": [
+        "hazard_021"
+      ],
+      "hazard_summary": "Wetness after rain; standard single-pitch hazards",
+      "verification_sources": 3,
+      "confidence": "High",
+      "notes": "Excellent rock quality; recent ascents documented Jan 2026; popular moderate single-pitch classic",
+      "recent_conditions": "Active climbing Jan 2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_010",
+      "name": "Senior Citizens in Space",
+      "area": "Index, Lower Town Wall",
+      "grade": "5.7",
+      "pitches": 4,
+      "rock_type": "Fine-grained Granite",
+      "approach_miles": 0.25,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 1281,
+      "seasonal_window": "Year-round",
+      "best_months": [
+        "June",
+        "July",
+        "August",
+        "September"
+      ],
+      "protection_quality": "Good",
+      "protection_details": "Classic multi-pitch trad",
+      "hazards": [
+        "hazard_022"
+      ],
+      "hazard_summary": "Route seepage after rain; friction climbing nuances",
+      "verification_sources": 3,
+      "confidence": "High",
+      "notes": "Hyperclassic moderate multi-pitch in popular Index area",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_011",
+      "name": "Beacon Rock Southeast Corner",
+      "area": "Beacon Rock, Columbia River Gorge",
+      "grade": "5.6",
+      "pitches": 7,
+      "rock_type": "Columnar Basalt",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 848,
+      "seasonal_window": "Year-round",
+      "best_months": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Good; columnar protection",
+      "protection_details": "Natural feature protection; varied crack systems",
+      "hazards": [
+        "hazard_023",
+        "hazard_024"
+      ],
+      "hazard_summary": "Falcon nesting closures (Feb 1-mid-July SE faces), poison oak on some routes",
+      "verification_sources": 3,
+      "confidence": "High",
+      "notes": "Classic moderate multi-pitch; part of 151+ route Beacon Rock system; year-round climbing",
+      "recent_conditions": "Active 2025-2026; nesting closure seasonal",
+      "crack_types": [
+        "columnar cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_012",
+      "name": "Pleasure Cruise",
+      "area": "Beacon Rock, Columbia River Gorge",
+      "grade": "5.9",
+      "pitches": 8,
+      "rock_type": "Columnar Basalt",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 848,
+      "seasonal_window": "Year-round",
+      "best_months": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Good; natural feature",
+      "protection_details": "Columnar crack systems",
+      "hazards": [
+        "hazard_025"
+      ],
+      "hazard_summary": "Nesting closures, height exposure",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Popular harder multi-pitch at Beacon Rock",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "columnar cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_013",
+      "name": "Ragged Edge",
+      "area": "Vesper Peak, Darrington (Mountain Loop Hwy)",
+      "grade": "5.7",
+      "pitches": 6,
+      "rock_type": "Diorite/Granite",
+      "approach_miles": 3,
+      "approach_time_hours": 2,
+      "elevation_ft": 6210,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate; diorite cracks",
+      "protection_details": "Natural diorite crack protection",
+      "hazards": [
+        "hazard_026",
+        "hazard_027"
+      ],
+      "hazard_summary": "Extreme precipitation area (2-3x Seattle rainfall), long dry times after rain, high bug pressure mid-season",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Darrington area receives 2-3x Seattle rainfall; requires 2+ days to dry after heavy rain",
+      "recent_conditions": "Vesper Peak active climbing area 2025-2026",
+      "crack_types": [
+        "diorite cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_014",
+      "name": "True Grit",
+      "area": "Vesper Peak, Darrington (Mountain Loop Hwy)",
+      "grade": "5.8",
+      "pitches": 5,
+      "rock_type": "Diorite/Granite",
+      "approach_miles": 3,
+      "approach_time_hours": 2,
+      "elevation_ft": 6210,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Good; diorite crack climbing",
+      "protection_details": "Varied crack systems in diorite",
+      "hazards": [
+        "hazard_028"
+      ],
+      "hazard_summary": "Extreme precipitation zone hazards",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Darrington alpine climbing; new area development documented 2025",
+      "recent_conditions": "Helena Ridge area newly developed by Scott Miller 2025 with bolted sport routes nearby",
+      "crack_types": [
+        "diorite cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_015",
+      "name": "Skyline (Dinosaur Tower)",
+      "area": "Peshastin Pinnacles State Park",
+      "grade": "5.5",
+      "pitches": 3,
+      "rock_type": "Sandstone Towers & Slabs",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 2500,
+      "seasonal_window": "March 15-October 15",
+      "best_months": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Good; sandstone cams",
+      "protection_details": "Cams to 2 inches standard; sandstone quality variable",
+      "hazards": [
+        "hazard_029"
+      ],
+      "hazard_summary": "Seasonal state park access closure dates; southwestern exposure heat in summer",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Popular state park destination; soft closure dates March 15-Oct 15",
+      "recent_conditions": "Active 2025-2026; park kiosk rules apply",
+      "crack_types": [
+        "sandstone cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_016",
+      "name": "Cro-Magnon",
+      "area": "Peshastin Pinnacles State Park",
+      "grade": "5.8",
+      "pitches": 2,
+      "rock_type": "Sandstone Towers & Slabs",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 2500,
+      "seasonal_window": "March 15-October 15",
+      "best_months": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Moderate; cam-dependent",
+      "protection_details": "Cams to 2 inches; sandstone quality",
+      "hazards": [
+        "hazard_030"
+      ],
+      "hazard_summary": "Sandstone durability, heat exposure",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Peshastin Pinnacles climbing area",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "sandstone cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_017",
+      "name": "Caveman",
+      "area": "Peshastin Pinnacles State Park",
+      "grade": "5.9",
+      "pitches": 2,
+      "rock_type": "Sandstone Towers & Slabs",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 2500,
+      "seasonal_window": "March 15-October 15",
+      "best_months": [
+        "April",
+        "May",
+        "September",
+        "October"
+      ],
+      "protection_quality": "Moderate; cam reliant",
+      "protection_details": "Sandstone cam climbing; cams to 2 inches",
+      "hazards": [
+        "hazard_031"
+      ],
+      "hazard_summary": "Sandstone protection reliability",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Harder Peshastin route",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "sandstone cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_018",
+      "name": "Iconoclast",
+      "area": "Snow Creek Wall, Icicle Canyon",
+      "grade": "5.10c",
+      "pitches": 6,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1.5,
+      "elevation_ft": 6200,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate to challenging",
+      "protection_details": "Harder climbing protection",
+      "hazards": [
+        "hazard_032",
+        "hazard_033"
+      ],
+      "hazard_summary": "Grade IV alpine sustained climbing",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Grade IV alpine; harder Snow Creek Wall route",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_019",
+      "name": "Liberty Crack",
+      "area": "Liberty Bell, Washington Pass",
+      "grade": "5.11a (A0/C2 aid)",
+      "pitches": 12,
+      "rock_type": "Granite",
+      "approach_miles": 1.5,
+      "approach_time_hours": 1,
+      "elevation_ft": 5688,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Sparse protection (aid climbing)",
+      "protection_details": "Aid climbing route; protection depends on style (free vs aid)",
+      "hazards": [
+        "hazard_034",
+        "hazard_035"
+      ],
+      "hazard_summary": "Aid climbing route; sparse protection zones",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Multiple pitch count variations cited (aid route); Washington classic",
+      "recent_conditions": "Active alpine climbing 2025-2026",
+      "crack_types": [
+        "mixed aid cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_020",
+      "name": "West Ridge (Mt. Stuart)",
+      "area": "Mount Stuart, Stuart Range Alpine",
+      "grade": "5.6",
+      "pitches": 6,
+      "rock_type": "Granite",
+      "approach_miles": 3,
+      "approach_time_hours": 3,
+      "elevation_ft": 9470,
+      "seasonal_window": "July-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate; alpine granite",
+      "protection_details": "Alpine rock protection",
+      "hazards": [
+        "hazard_036"
+      ],
+      "hazard_summary": "Alpine commitment; moderate hazards",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Shorter alternative via Longs Pass/Ingalls Lake approach",
+      "recent_conditions": "Active alpine classic 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_021",
+      "name": "Mary Jane Dihedral",
+      "area": "Snow Creek Wall, Icicle Canyon",
+      "grade": "5.9",
+      "pitches": 6,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1.5,
+      "elevation_ft": 6200,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Good; sustained dihedral",
+      "protection_details": "Dihedral crack systems",
+      "hazards": [
+        "hazard_037"
+      ],
+      "hazard_summary": "Sustained climbing hazards",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Sustained climbing on classic dihedral",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "dihedral cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_022",
+      "name": "Breakfast of Champions",
+      "area": "Index, Lower Town Wall",
+      "grade": "5.10",
+      "pitches": 4,
+      "rock_type": "Fine-grained Granite",
+      "approach_miles": 0.25,
+      "approach_time_hours": 0.25,
+      "elevation_ft": 1281,
+      "seasonal_window": "Year-round",
+      "best_months": [
+        "June",
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate to good",
+      "protection_details": "Multi-pitch protection systems",
+      "hazards": [
+        "hazard_038"
+      ],
+      "hazard_summary": "Standard Index climbing hazards",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Popular Index multi-pitch",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_023",
+      "name": "Hyperspace",
+      "area": "Snow Creek Wall, Icicle Canyon",
+      "grade": "5.11a",
+      "pitches": 6,
+      "rock_type": "Granite",
+      "approach_miles": 2,
+      "approach_time_hours": 1.5,
+      "elevation_ft": 6200,
+      "seasonal_window": "June-September",
+      "best_months": [
+        "July",
+        "August"
+      ],
+      "protection_quality": "Moderate; harder climbing",
+      "protection_details": "Technical crack protection",
+      "hazards": [
+        "hazard_039"
+      ],
+      "hazard_summary": "Grade IV alpine sustained technical climbing",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Harder Snow Creek Wall alpine route",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "technical cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_024",
+      "name": "Pony Keg",
+      "area": "Vantage / Frenchman Coulee",
+      "grade": "5.9",
+      "pitches": 2,
+      "rock_type": "Columnar Basalt",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.5,
+      "elevation_ft": 2000,
+      "seasonal_window": "October-April",
+      "best_months": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "protection_quality": "Good; columnar features",
+      "protection_details": "Basalt columnar protection",
+      "hazards": [
+        "hazard_040"
+      ],
+      "hazard_summary": "Seasonal access (winter-spring dry season)",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Vantage/Frenchman Coulee; peak season Oct-Apr (wet Cascades winter alternative)",
+      "recent_conditions": "Active winter climbing alternative 2025-2026",
+      "crack_types": [
+        "columnar cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_025",
+      "name": "Stroken the Chicken",
+      "area": "Vantage / Frenchman Coulee",
+      "grade": "5.7",
+      "pitches": 1,
+      "rock_type": "Columnar Basalt",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.5,
+      "elevation_ft": 2000,
+      "seasonal_window": "October-April",
+      "best_months": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "protection_quality": "Good; basalt columns",
+      "protection_details": "Columnar basalt climbing",
+      "hazards": [
+        "hazard_041"
+      ],
+      "hazard_summary": "Seasonal access constraints",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Moderate Vantage climbing",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "columnar cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_026",
+      "name": "Triple Couloirs",
+      "area": "Enchantments (Dragontail Peak), Alpine",
+      "grade": "5.7-5.8",
+      "pitches": 3,
+      "rock_type": "Granite",
+      "approach_miles": 9,
+      "approach_time_hours": 4,
+      "elevation_ft": 9006,
+      "seasonal_window": "July-August",
+      "best_months": [
+        "August"
+      ],
+      "protection_quality": "Ice/mixed alpine",
+      "protection_details": "Ice/mixed climbing; varies by season",
+      "hazards": [
+        "hazard_042",
+        "hazard_043"
+      ],
+      "hazard_summary": "Alpine ice/mix hazards; snow-dependent",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Ice/mixed climbing alternative on Dragontail",
+      "recent_conditions": "Highly seasonal; July 2026 persistent snow patches reported",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_027",
+      "name": "West Ridge (Prusik Peak)",
+      "area": "Enchantments (Prusik Peak), Alpine",
+      "grade": "5.6",
+      "pitches": 8,
+      "rock_type": "Granite",
+      "approach_miles": 9,
+      "approach_time_hours": 4,
+      "elevation_ft": 8980,
+      "seasonal_window": "July-September",
+      "best_months": [
+        "August"
+      ],
+      "protection_quality": "Moderate alpine",
+      "protection_details": "Alpine rock protection",
+      "hazards": [
+        "hazard_044"
+      ],
+      "hazard_summary": "Alpine exposure; high pass commitment",
+      "verification_sources": 2,
+      "confidence": "Medium-High",
+      "notes": "Moderate alpine route in Enchantments system",
+      "recent_conditions": "Active alpine climbing 2025-2026",
+      "crack_types": [],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    },
+    {
+      "id": "route_028",
+      "name": "Crossing the Threshold",
+      "area": "Vantage / Frenchman Coulee",
+      "grade": "5.8",
+      "pitches": 1,
+      "rock_type": "Columnar Basalt",
+      "approach_miles": 0.5,
+      "approach_time_hours": 0.5,
+      "elevation_ft": 2000,
+      "seasonal_window": "October-April",
+      "best_months": [
+        "October",
+        "November",
+        "March",
+        "April"
+      ],
+      "protection_quality": "Good; columnar features",
+      "protection_details": "Basalt climbing",
+      "hazards": [
+        "hazard_045"
+      ],
+      "hazard_summary": "Seasonal winter climbing window",
+      "verification_sources": 1,
+      "confidence": "Medium",
+      "notes": "Vantage climbing; winter-spring dry season destination",
+      "recent_conditions": "Active 2025-2026",
+      "crack_types": [
+        "columnar cracks"
+      ],
+      "phase": "phase10",
+      "research_source": "phase10-trad-rock"
+    }
+  ],
+  "hazards_by_route_id": {
+    "index_001": [
+      "index_h001",
+      "index_h002"
+    ],
+    "index_002": [
+      "index_h003",
+      "index_h004"
+    ],
+    "index_003": [
+      "index_h001",
+      "index_h005",
+      "index_h006"
+    ],
+    "index_004": [
+      "index_h007",
+      "index_h008"
+    ],
+    "index_005": [
+      "index_h009",
+      "index_h010"
+    ],
+    "index_006": [
+      "index_h011"
+    ],
+    "index_007": [
+      "index_h001",
+      "index_h002",
+      "index_h012"
+    ],
+    "peshastin_001": [
+      "peshastin_h001",
+      "peshastin_h002"
+    ],
+    "peshastin_002": [
+      "peshastin_h003",
+      "peshastin_h004"
+    ],
+    "peshastin_003": [
+      "peshastin_h005",
+      "peshastin_h006"
+    ],
+    "darrington_001": [
+      "darrington_h001",
+      "darrington_h002"
+    ],
+    "darrington_002": [
+      "darrington_h003",
+      "darrington_h004"
+    ],
+    "darrington_003": [
+      "darrington_h005",
+      "darrington_h006"
+    ],
+    "icicle_001": [
+      "icicle_h001",
+      "icicle_h002"
+    ],
+    "icicle_002": [
+      "icicle_h003",
+      "icicle_h004"
+    ],
+    "icicle_003": [
+      "icicle_h005"
+    ],
+    "vantage_001": [
+      "vantage_h001",
+      "vantage_h002"
+    ],
+    "vantage_002": [
+      "vantage_h003",
+      "vantage_h004"
+    ],
+    "vantage_003": [
+      "vantage_h005",
+      "vantage_h006"
+    ],
+    "index-town-wall": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "vantage-frenchman-coulee": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "exit-38-mt-washington": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "exit-32-little-si": [
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "peshastin-pinnacles": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "darrington-squire-creek": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "rattlesnake-ledge": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "beacon-rock": [
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "tieton-river": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70
+    ],
+    "icicle-creek-gorge": [
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "forbidden-peak-north-cascades": [
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89
+    ],
+    "mount-baker-north-cascades": [
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "mount-shuksan-north-cascades": [
+      91,
+      92,
+      93,
+      97
+    ],
+    "sahale-peak-north-cascades": [
+      83
+    ],
+    "early-winters-couloir": [
+      84
+    ]
+  },
+  "import_summary": {
+    "phase5": {
+      "routes": 19,
+      "areas": 5
+    },
+    "phase8": {
+      "routes": 13
+    },
+    "phase9": {
+      "crags": 27
+    },
+    "phase10": {
+      "routes": 28
+    }
+  }
+}
