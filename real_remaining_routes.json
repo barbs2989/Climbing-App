@@ -1,0 +1,5229 @@
+[
+  {
+    "id": "wa_a_little_something",
+    "name": "A Little Something",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_a_servant_to_liberty",
+    "name": "A Servant To Liberty",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.13-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_abernathy_peak_north_ridge",
+    "name": "North Ridge",
+    "area_id": "wa_abernathy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_accidental_discharge_east_face",
+    "name": "Accidental Discharge (East Face)",
+    "area_id": "wa_south_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_agnes_mountain_west_route",
+    "name": "West Route",
+    "area_id": "wa_agnes_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe",
+      "crampons",
+      "helmet",
+      "rope",
+      "light alpine rock rack (small-medium cams, few nuts, slings)"
+    ],
+    "pro_needs": "Rope and a light alpine rock rack for the roped 5.6-5.8 climbing on the south ridge/summit block; crampons for snow sections."
+  },
+  {
+    "id": "wa_ahoot",
+    "name": "Ahoot",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_alta_mountain_scramble",
+    "name": "Rampart Ridge Scramble",
+    "area_id": "wa_alta_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "None required — non-technical Class 2 scramble; no rope or protection needed, though trekking poles help on the loose upper section."
+  },
+  {
+    "id": "wa_amphitheater_mountain_west_route",
+    "name": "West Route",
+    "area_id": "wa_amphitheater_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "gear": [
+      "Helmet (loose rock)",
+      "Trekking poles",
+      "Ice axe (early-season snow in the basin/gullies)",
+      "Map and compass or GPS",
+      "Bear canister (recommended in the Pasayten backcountry)"
+    ],
+    "pro_needs": "None required for the standard scramble; a helmet is recommended given loose rock on the upper slopes."
+  },
+  {
+    "id": "wa_apex_buttress",
+    "name": "Apex Buttress",
+    "area_id": "wa_apex_mountain_pasayten",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_arrowhead_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_arrowhead_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_artic_rose",
+    "name": "Artic Rose",
+    "area_id": "wa_half_moon_crag",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_astral_projection",
+    "name": "Astral Projection",
+    "area_id": "wa_half_moon_crag",
+    "discipline": "alpine",
+    "grade": "5.9-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_astroglide",
+    "name": "Astroglide",
+    "area_id": "wa_half_moon_crag",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_asymptotic",
+    "name": "Asymptotic",
+    "area_id": "wa_half_moon_crag",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_azurite_peak_southeast",
+    "name": "South Ridge / Southwest Gully",
+    "area_id": "wa_azurite_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bachelor_party",
+    "name": "Bachelor Party",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bald_eagle_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_bald_eagle_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (recommended into early summer for lingering snow)",
+      "microspikes or crampons (steep duff/scree and snow patches)",
+      "trekking poles"
+    ],
+    "pro_needs": "None – standard route is unroped Class 3-4 scrambling; no technical rock or ice protection is placed"
+  },
+  {
+    "id": "wa_baring_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_baring_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "rope (recommended)",
+      "light rock rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bearpaw_mountain_scramble",
+    "name": "Church Lake Scramble",
+    "area_id": "wa_bearpaw_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_beckey_davis",
+    "name": "Beckey-Davis",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_berdeen_peak_scramble",
+    "name": "Berdeen Peak Scramble",
+    "area_id": "wa_berdeen_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_beyond_redlining",
+    "name": "Beyond Redlining",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "alpine",
+    "grade": "5.10+",
+    "gear": [
+      "17 quickdraws",
+      "3-6 alpine draws (optional, reduces drag)",
+      "60m rope (a 70m is helpful if retreat becomes necessary)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_big_craggy_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_big_craggy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early-season snow)",
+      "trekking poles"
+    ],
+    "pro_needs": "Class 3 scramble on notably loose rock, worst in the final 500 ft below the summit; a helmet is important, and an ice axe/crampons plus a short rope for less-experienced parties are worthwhile in early season (May-June) when snow still covers the couloirs."
+  },
+  {
+    "id": "wa_black_systems_solar",
+    "name": "Black Systems Solar",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_blackcap_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_blackcap_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_blood_sport",
+    "name": "Blood Sport",
+    "area_id": "wa_summer_fall_rock_2",
+    "discipline": "alpine",
+    "grade": "5.11b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_blue_s_buttress",
+    "name": "Blue's Buttress",
+    "area_id": "wa_poster_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bonanza_peak_mary_green_glacier",
+    "name": "Mary Green Glacier (Standard Route)",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "alpine",
+    "grade": "Class 5.0-5.6",
+    "gear": [
+      "rope (60m; a lighter/skinnier rope is fine for rappels)",
+      "crampons (aluminum/hybrid fine by midsummer)",
+      "ice axe",
+      "glacier travel kit (pickets, prussiks, crevasse-rescue gear)",
+      "light rock rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_boving_christensen",
+    "name": "Boving-Christensen",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_boving_roofs",
+    "name": "Boving Roofs",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bowling_alley_aka_regular_route",
+    "name": "Bowling Alley (aka Regular Route)",
+    "area_id": "wa_south_face_3",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_brothers_traverse",
+    "name": "Brothers Traverse",
+    "area_id": "wa_brothers_south_peak_the",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_bryant_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_bryant_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet (loose rock in the gully)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_buck_mountain_south_ridge",
+    "name": "South Ridge",
+    "area_id": "wa_buck_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_buckhorn_marmot_pass",
+    "name": "Southwest Slope via Marmot Pass",
+    "area_id": "wa_buckhorn_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2 (off-trail talus/scree)",
+    "gear": [
+      "Trekking poles",
+      "Ice axe (recommended into early-mid July while snow lingers near Marmot Pass and on the summit slope)",
+      "Microspikes/traction for early-season snow",
+      "Sturdy boots for loose talus",
+      "3+ liters of water — little to none is available above Camp Mystery",
+      "Sun protection/layers — trail is exposed above treeline near the pass",
+      "Northwest Forest Pass for trailhead parking"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_buckskin_mountain_southwest_slopes",
+    "name": "Southwest Slopes",
+    "area_id": "wa_buckskin_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "crampons (May-June ascents)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_burnt_boot_peak_north_route",
+    "name": "North Route",
+    "area_id": "wa_burnt_boot_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "trekking poles or water shoes for the river ford"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cadet_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_cadet_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "crampons (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cardinal_peak_se_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_cardinal_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (essential through June on the summit gully)",
+      "crampons (recommended May–June for 40–50° snow)",
+      "helmet",
+      "sturdy boots suited to firm snow if climbing before mid-July"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_carne_mountain_trail_route",
+    "name": "Carne Mountain Trail",
+    "area_id": "wa_carne_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 1-2",
+    "gear": [
+      "trekking poles",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_castle_peak_pasayten_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_castle_peak_pasayten",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required. The north face holds separate technical routes (up to IV 5.10+ A1) that are outside the scope of this standard scramble route."
+  },
+  {
+    "id": "wa_chikamin_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_chikamin_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles for the long approach"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_chimney_rock_west_face",
+    "name": "West Face / South Summit (Standard)",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "Class 5.6",
+    "gear": [
+      "rope (single 50m sufficient)",
+      "standard rack of nuts/stoppers",
+      "cams (helpful for parallel-sided cracks on P1-P2)",
+      "glacier kit (axe, crampons or microspikes late-season)",
+      "helmet",
+      "rappel gear/slings for tat"
+    ],
+    "pro_needs": "A standard rack of nuts/stoppers plus cams for the parallel-sided cracks on the lower two pitches; a single 50m rope covers the route and the rappels from the northwest-shoulder station."
+  },
+  {
+    "id": "wa_chockstone_route",
+    "name": "Chockstone Route",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": [
+      "Single rack to 2\"",
+      "Extra slings/draws for fixed pitons",
+      "Ice axe and crampons if snow/ice lingers in the gully (common into early summer)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cinderella_peak_scramble",
+    "name": "Twin Sisters Olivine Scramble",
+    "area_id": "wa_cinderella_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "optional rope for exposed steps"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_clark_mountain_west_ridge",
+    "name": "West Ridge / Walrus Glacier",
+    "area_id": "wa_clark_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "crampons",
+      "glacier kit (if crossing Walrus Glacier)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_classic_route_2",
+    "name": "Classic Route",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "gear": [
+      "30-35m rope",
+      "a handful of slings/runners for natural anchors",
+      "a few small-to-mid cams and nuts"
+    ],
+    "pro_needs": "Minimal rack — small-to-mid cams/nuts and slings for a short crack plus natural horn/boulder anchors; no bolts on route."
+  },
+  {
+    "id": "wa_classic_route_3",
+    "name": "Classic Route",
+    "area_id": "wa_lane_peak",
+    "discipline": "alpine",
+    "grade": "3rd-4th class",
+    "gear": [
+      "helmet (loose rock and rockfall potential in the gully)",
+      "short rope or sling useful for the optional/fixed rappel near the summit",
+      "ice axe if snow lingers in the gully (common into early summer)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_clast_from_the_past",
+    "name": "Clast from the Past",
+    "area_id": "wa_north_side",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_clean_break",
+    "name": "Clean Break",
+    "area_id": "wa_juno_tower",
+    "discipline": "alpine",
+    "grade": "5.10b/c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cloudy_peak_southwest_slopes",
+    "name": "Southwest Slopes",
+    "area_id": "wa_cloudy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cobbles_101",
+    "name": "Cobbles 101",
+    "area_id": "wa_south_face_3",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_columbia_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_columbia_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "microspikes (useful for the lingering snow patch ~6,300-6,350 ft)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_complete_south_buttress",
+    "name": "Complete South Buttress",
+    "area_id": "wa_cutthroat_peak",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": [
+      "light-to-moderate rock rack",
+      "helmet",
+      "rope (for two half-rope rappels on the lower ridge, plus standard-route gear)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_copper_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_copper_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe and crampons (glacier/snowfield crossing)",
+      "helmet",
+      "harness and 30m rope for the glacier crossing and optional rappel of the class 4 step",
+      "light rack (slings, a few small cams/nuts) for the exposed step"
+    ],
+    "pro_needs": "A light rack (a few slings and small cams/nuts) covers the short exposed class 4 step; most parties otherwise scramble the class 3 sections unroped in good conditions and only rope up for the glacier/snowfield crossing."
+  },
+  {
+    "id": "wa_cordwood",
+    "name": "Cordwood",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_cosho_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_cosho_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Typically scrambled unroped on 3rd-class rock; a rope/light rack is rarely carried but can help on the exposed 4th-class Kimtah–Cosho connecting ridge if linking the two peaks."
+  },
+  {
+    "id": "wa_courtney_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_courtney_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles (unstable log creek crossing)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_crescendo_of_the_sarcophagus_breathing",
+    "name": "Crescendo of the Sarcophagus Breathing",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.11c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_crooked_thumb_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_crooked_thumb_peak",
+    "discipline": "alpine",
+    "grade": "Grade III-IV, 5.6",
+    "gear": [
+      "alpine rock rack (small rack to 5.8+, some thin/A1 gear for the summit headwall crack)",
+      "two thin glacier/rappel ropes (e.g. ~30m + 40m, 6.9mm-class)",
+      "crampons",
+      "ice axe",
+      "snow flukes and pickets",
+      "glacier kit (harness, crevasse rescue gear)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_czech_it_out",
+    "name": "Czech it Out",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_davis_peak_nc_southwest",
+    "name": "Southwest Route / Standard Scramble",
+    "area_id": "wa_davis_peak_nc",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "Class 2-3 scrambling on the approach and upper mountain, with brief Class 4 moves on wet or snow-covered slab reported by some parties near the top; no fixed rock protection is placed on the standard summer route. A helmet is worth carrying for the loose, broken terrain and for moat/cornice sections when snow lingers."
+  },
+  {
+    "id": "wa_denny_mountain_north_slopes",
+    "name": "North Slopes",
+    "area_id": "wa_denny_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "trekking poles",
+      "ice axe (early season)",
+      "helmet (loose rock and the short exposed summit step)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_devore_peak_west_ridge",
+    "name": "Southeast Ridge",
+    "area_id": "wa_devore_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (essential into July for the approach snowfield)",
+      "crampons (early/mid-season)",
+      "helmet",
+      "light rock rack (a few small-to-mid cams/nuts) and 30-60m rope for the exposed summit crux/optional rappel",
+      "sturdy mountain boots",
+      "bear canister or approved food storage for camp"
+    ],
+    "pro_needs": "A light rock rack (a few small-to-mid cams and nuts) plus a 30-60m rope is worth carrying for the short, exposed low-5th-class crux move and optional rappel near the true summit; unnecessary for the rest of the Class 3-4 scramble."
+  },
+  {
+    "id": "wa_diamond_in_the_rough",
+    "name": "Diamond In The Rough",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_direct_finish",
+    "name": "Direct Finish",
+    "area_id": "wa_steeple_rock",
+    "discipline": "alpine",
+    "grade": "5.2",
+    "gear": [
+      "Standard trad rack (small-to-mid stoppers and cams)",
+      "Helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_direct_southwest_buttress",
+    "name": "Direct Southwest Buttress",
+    "area_id": "wa_dorado_needle",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_direct_west_face",
+    "name": "Direct West Face",
+    "area_id": "wa_pernod_spire",
+    "discipline": "alpine",
+    "grade": "5.10+ R",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_dirty_sanchez",
+    "name": "Dirty Sanchez",
+    "area_id": "wa_goose_egg_mountain",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_dolphin_chimney",
+    "name": "Dolphin Chimney",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": [
+      "standard rack light on small/medium cams — chimney technique matters more than gear here"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_dot_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_dot_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": "Class 2 talus/ridge scramble with occasional Class 3 sidehilling; a helmet is recommended for the loose-rock ridge traverse between Lago and Dot. No rope or technical protection normally needed."
+  },
+  {
+    "id": "wa_drilling_me_softly",
+    "name": "Drilling Me Softly",
+    "area_id": "wa_sofa_king_buttress",
+    "discipline": "alpine",
+    "grade": "5.10b/c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_e_se_face",
+    "name": "E/SE Face",
+    "area_id": "wa_witches_tower",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": [
+      "Ice axe (crampons if climbed early season)",
+      "Light rock rack for occasional protection",
+      "Helmet — looser rock than the other lines"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_eagle_rock_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_eagle_rock",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "50 ft handline (optional, for the Class 3 downclimb)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_face",
+    "name": "East Face",
+    "area_id": "wa_middle_peak",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_face_2",
+    "name": "East Face",
+    "area_id": "wa_chablis_spire",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_face_6",
+    "name": "East Face",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "5.3",
+    "gear": [
+      "rope (single 50–60m)",
+      "stoppers/nuts",
+      "cams 0.5–1 inch for parallel cracks",
+      "several slings for rap-station tat",
+      "helmet",
+      "glacier axe and crampons (or microspikes if the glacier has consolidated to hard ice late season)"
+    ],
+    "pro_needs": "A moderate trad rack (stoppers plus cams roughly 0.5–1 inch) covers the crux chimney and ledge systems; bring extra slings for tat at rappel anchors."
+  },
+  {
+    "id": "wa_east_mcmillan_spire_west_ridge",
+    "name": "West Ridge / Southwest Face",
+    "area_id": "wa_east_mcmillan_spire",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_ridge",
+    "name": "East Ridge",
+    "area_id": "wa_steeple_rock",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_ridge_3",
+    "name": "East Ridge",
+    "area_id": "wa_silver_star_mountain_okanogan",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": [
+      "Light alpine rock rack",
+      "Single 9mm rope or thin tag line (for the two short rappels near Varden Col)",
+      "Helmet",
+      "Headlamp for a pre-dawn start"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_ridge_4",
+    "name": "East Ridge",
+    "area_id": "wa_inspiration_peak",
+    "discipline": "alpine",
+    "grade": "IV, 5.9",
+    "gear": [
+      "single 70m rope",
+      "one set of nuts",
+      "cams .2-3in with doubled 2in and 3in sizes",
+      "crampons + ice axe for the glacier",
+      "extra cord for rappel anchors",
+      "helmet",
+      "breathable approach shoes (glacier + rock day)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_ridge_6",
+    "name": "East Ridge",
+    "area_id": "wa_mount_thomson",
+    "discipline": "alpine",
+    "grade": "Class 3-4",
+    "gear": [
+      "30-35m rappel rope",
+      "Helmet",
+      "Small rack or slings for backing up rappel anchors"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_ridge_direct",
+    "name": "East Ridge Direct",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "alpine",
+    "grade": "5.8-",
+    "gear": [
+      "single rack of cams to 2 inches",
+      "set of nuts",
+      "alpine draws",
+      "60m rope",
+      "helmet",
+      "ice axe and crampons for approach snow",
+      "extra tat/webbing for rappel anchors"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_slope",
+    "name": "East Slope",
+    "area_id": "wa_primus_peak",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": [
+      "Glacier rope (30m+), harness, crevasse-rescue kit, pickets",
+      "Ice axe and crampons",
+      "Helmet",
+      "Approach shoes or light boots for the Class 3 rock finish"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_east_twin_needle_south_route",
+    "name": "South Route",
+    "area_id": "wa_east_twin_needle",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.7",
+    "gear": [
+      "alpine rock rack",
+      "2x60m ropes (for rappelling the descent gully)",
+      "helmet",
+      "ice axe (early-season snow in the gullies)",
+      "multi-day/overnight kit for the approach"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_elephant_butte_standard_route",
+    "name": "Elephant Butte Standard Route (Stetattle/Sourdough Ridge)",
+    "area_id": "wa_elephant_butte",
+    "discipline": "mountaineering",
+    "grade": null,
+    "gear": [
+      "Ice axe (early-season snow)",
+      "Sturdy boots with good ankle support",
+      "Trekking poles",
+      "Topo map, compass, and/or GPS (extensive off-trail route-finding)",
+      "Bug repellent/head net"
+    ],
+    "pro_needs": "No fixed or placed protection is used on this route — it is off-trail hiking/scrambling rather than roped climbing. An ice axe is useful for lingering early-season snow patches on the ridge; some parties carry light rope/webbing for confidence on the class 3 step, though it is not standard practice."
+  },
+  {
+    "id": "wa_emerald_peak_se_ridge",
+    "name": "Southeast Ridge",
+    "area_id": "wa_emerald_peak_entiat",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (recommended into June for lingering snow in the summit gullies)",
+      "helmet (loose rock in the gullies)",
+      "trekking poles for the long approach",
+      "sturdy approach shoes with good scree traction",
+      "crampons if climbing before the gullies melt out (May-June)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_energizer_bunny",
+    "name": "Energizer Bunny",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10+ C1",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_esmeralda_peaks_scramble",
+    "name": "Standard Scramble (Esmeralda Basin)",
+    "area_id": "wa_esmeralda_peaks",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early season, if the headwall gully is still snow-filled)",
+      "trekking poles (creek crossings, scree)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ez_way",
+    "name": "EZ Way",
+    "area_id": "wa_shark_rock",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_face_farce",
+    "name": "Face Farce",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_fifth_of_july_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_fifth_of_july_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "ice axe (early season, typically through late June/early July)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_finger_of_fatwa",
+    "name": "Finger of Fatwa",
+    "area_id": "wa_amphitheatre_mountain",
+    "discipline": "alpine",
+    "grade": "5.11c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_fire_on_the_mountain",
+    "name": "Fire on the Mountain",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": [
+      "Doubles #0.3-#2 Camalot",
+      "Single #3 Camalot",
+      "Set of stoppers",
+      "Extra alpine draws/long slings (double up) — cruxes are well protected but P2 and P5 have runouts"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_firearms",
+    "name": "Firearms",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_first_amendment",
+    "name": "First Amendment",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.11a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_flycatcher_buttress",
+    "name": "Flycatcher Buttress",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": [
+      "Gear to #3 Camalot with a single #4",
+      "Optional #5 for wider crack sections (per SuperTopo)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_foggy_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_foggy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe (essential into June while the approach gully still holds snow)",
+      "helmet (loose, down-sloping rock high on the south face — rockfall is a real hazard)",
+      "mountain bike (optional but strongly recommended for the 4-mile gated road to Monte Cristo townsite)",
+      "light rope/rack (optional — most parties solo the class 3-4 terrain unroped, but it adds security for less-experienced climbers near the exposed summit notch)"
+    ],
+    "pro_needs": "Rope and a light rock rack are optional — most parties solo the Class 3-4 terrain unroped, but the exposed ledges near the summit notch may justify protection for less-experienced climbers."
+  },
+  {
+    "id": "wa_four_brothers_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_four_brothers",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_free_mojo",
+    "name": "Free Mojo",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_frenzel_spitz_south_route",
+    "name": "South Route",
+    "area_id": "wa_frenzel_spitz",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "gear": [
+      "light alpine rock rack to ~3 in with extra slings (protection in loose rock is often marginal)",
+      "60m rope for rappels",
+      "ice axe and crampons, especially early season for the Ottohorn–Himmelhorn col approach",
+      "helmet — mandatory given chronic rockfall",
+      "sturdy approach footwear suited to brushy, off-trail travel and Class 3 scrambling"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_gardner_mountain_west_ridge",
+    "name": "West Ridge / Saddle Traverse",
+    "area_id": "wa_gardner_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "crampons (early-season snow on the ridge and north-facing gullies)",
+      "helmet",
+      "trekking poles",
+      "extra water (the 2021 burn-scar approach has little shade and gets hot)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_garfield_mountain_scramble",
+    "name": "Multi-Summit Scramble",
+    "area_id": "wa_garfield_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet (mandatory — rockfall is common in the gully systems)",
+      "rope and full rack mandatory on every established line, not optional as previously listed — a single rack to 2\" suffices for the easiest documented route (Southwest Ledges, 5.3), but the classic South Route needs a full trad rack, extra slings/cordage for tat-covered rap anchors, and two 60m ropes",
+      "sturdy brush-resistant clothing (extensive slide alder and devil's club bushwhacking low on approach)",
+      "headlamp — car-to-car days of 12–15+ hours are common and many parties finish in the dark"
+    ],
+    "pro_needs": "Single rack to 2\" plus slings suffices for the easiest documented line (Southwest Ledges, 5.3); the classic South Route wants a fuller trad rack, extra webbing/cordage for weathered rap anchors, and two 60m ropes for the six double-rope rappels on descent."
+  },
+  {
+    "id": "wa_gato_negro",
+    "name": "Gato Negro",
+    "area_id": "wa_whine_spire",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ghost_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_ghost_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, Class 4",
+    "gear": [
+      "ice axe",
+      "crampons",
+      "rope",
+      "small rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_glacier_view_temple",
+    "name": "Glacier View Temple",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.9-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_gorillas_direct",
+    "name": "Gorillas Direct",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_gray_wolf_ridge_se_slopes",
+    "name": "Southeast Slopes (Standard Scramble)",
+    "area_id": "wa_gray_wolf_ridge",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "trekking poles",
+      "ice axe (through early July, north-facing gullies and upper ridge)",
+      "helmet (loose rock along the ridge crest)",
+      "map & compass or GPS (extensive off-trail ridge navigation above treeline)",
+      "bear canister (required for overnight camping within Olympic National Park)",
+      "gaiters (scree/talus and lingering snow)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_grotto_mountain_e_route",
+    "name": "East Ridge Scramble",
+    "area_id": "wa_grotto_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe early season",
+      "trekking poles for brush and talus",
+      "sturdy boots or gaiters (brush and loose talus)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_gunn_peak_southeast_route",
+    "name": "Southeast Route",
+    "area_id": "wa_gunn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "rope (recommended)",
+      "light rock rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_gunrunner",
+    "name": "Gunrunner",
+    "area_id": "wa_middle_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_hagan_mountain_south",
+    "name": "South Slopes",
+    "area_id": "wa_hagan_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles",
+      "map and compass or GPS (route is mostly cross-country and unmarked past Diobsud Lakes)",
+      "insect repellent/head net (blackflies and mosquitoes reported in mid-to-late summer)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_half_fast",
+    "name": "Half Fast",
+    "area_id": "wa_half_moon_crag",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_half_moon_southwest_slopes",
+    "name": "Southwest Slopes / Standard Scramble",
+    "area_id": "wa_half_moon",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "approach shoes or light boots",
+      "optional light rock rack"
+    ],
+    "pro_needs": "Mostly unroped Class 3-4; a short rope and a few small cams/slings are useful for the exposed summit blocks."
+  },
+  {
+    "id": "wa_heinous_thing",
+    "name": "Heinous Thing",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_henpecked",
+    "name": "Henpecked",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_himmelhorn_southeast_route",
+    "name": "Southeast Route",
+    "area_id": "wa_himmelhorn",
+    "discipline": "alpine",
+    "grade": "Grade IV, 5.8",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "crampons (early season, for the approach gully and Barrier crossing)",
+      "helmet",
+      "rappel/tat material for retreat anchors"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_honeymoon_route",
+    "name": "Honeymoon Route",
+    "area_id": "wa_mount_deception",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_hoodoo_peak_sawtooth_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_hoodoo_peak_sawtooth",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet (loose rock in the talus/boulder sections)",
+      "ice axe (through June; carry crampons too in early season for the approach gully/pass)",
+      "trekking poles (helpful on the talus)",
+      "map/GPS — the route above the old trapper's cabin is an unmarked, user-path scramble through a boulder field"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_horseshoe_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_horseshoe_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "harness",
+      "30m rope (minimum; more useful if rappelling from a higher start in snow/ice)",
+      "small rock rack: stoppers + finger-to-hand cams (~0.3-0.75) for the crux",
+      "ice axe (early season snow on Sahale Arm / Horseshoe Basin)",
+      "crampons (early season)"
+    ],
+    "pro_needs": "A few small cams (~0.3-0.75) and a set of stoppers protect the short 5.2 crux near the summit notch; good small cam placements and solid stopper constrictions have both been reported. No fixed anchors — use a slung horn or chockstone for the rappel/lower."
+  },
+  {
+    "id": "wa_hourglass_gully_winter",
+    "name": "Hourglass Gully (Winter)",
+    "area_id": "wa_main_peak_2",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_huckleberry_mountain_west_route",
+    "name": "West Route",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season, into July)",
+      "trekking poles",
+      "60m rope for rappelling the summit block",
+      "light rack/slings for the rappel anchor",
+      "helmet (rockfall in the summit gully)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_improbable_traverse",
+    "name": "Improbable Traverse",
+    "area_id": "wa_summer_fall_rock_2",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_incoming",
+    "name": "Incoming",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_indian_mountain_baker_scramble",
+    "name": "Indian Mountain Scramble",
+    "area_id": "wa_indian_mountain_baker",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season, on approach slopes)",
+      "helmet",
+      "sturdy boots for off-trail talus/heather",
+      "gaiters (brush and blowdown sections)",
+      "map + compass/GPS (no trail to summit; route-finding required)",
+      "hard-sided bear canister (recommended food storage in this drainage)",
+      "NCNP backcountry permit and itinerary",
+      "gloves (for the cable car crossing of the Chilliwack River)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ingalls_peak_south_scramble",
+    "name": "South Peak Scramble",
+    "area_id": "wa_ingalls_peak_south",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season, through ~July)",
+      "microspikes/light traction (early-season snow and ice on shaded gully sections)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_internal_combustion",
+    "name": "Internal Combustion",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_iron_cap_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_iron_cap_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles (multiple creek crossings on approach)",
+      "map/GPS track (cairns are sparse through the boulder fields and it's easy to wander off-route)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_iron_peak_teanaway_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_iron_peak_teanaway",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "helmet",
+      "ice axe (early season, before mid-July snow melts out)",
+      "trekking poles for the steep switchbacks",
+      "sun protection — most of the trail is exposed with little shade"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ives_peak_r1",
+    "name": "Northeast Slopes / Goat Rocks crest",
+    "area_id": "wa_ives_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "microspikes or light crampons (recommended into at least mid-July for snow/moat crossings near the col)",
+      "trekking poles (talus and scree)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_j_tnar",
+    "name": "Jötnar",
+    "area_id": "wa_j_tunheim",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_joe_s_route",
+    "name": "Joe's Route",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_junior_s_farm",
+    "name": "Junior's Farm",
+    "area_id": "wa_full_montey_the",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_just_enough",
+    "name": "Just Enough",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_just_for_fun",
+    "name": "Just For Fun",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_kaleetan_peak_south_ridge",
+    "name": "South Ridge",
+    "area_id": "wa_kaleetan_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (recommended into July while snow lingers in the summit gully)",
+      "helmet (loose rock on White Ledges and in the summit gully)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_katsuk_peak_gully",
+    "name": "Southwest Gully",
+    "area_id": "wa_katsuk_peak",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "gear": [
+      "helmet",
+      "ice axe (mandatory before August; useful even later for the snow moat beside the summit block)",
+      "crampons (early season or if lingering snow is reported)",
+      "trekking poles (loose scree on the approach and lower gully)"
+    ],
+    "pro_needs": "Most parties scramble unroped; a short rope is reassuring for the class 4 crux and for less-experienced partners."
+  },
+  {
+    "id": "wa_kimtah_peak_scramble",
+    "name": "Southwest Slopes / Gully",
+    "area_id": "wa_kimtah_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early/mid-season; the Easy Pass Trail's north-facing switchbacks often hold steep snow into July)",
+      "trekking poles (for the cross-country sidehill traverse)",
+      "sturdy scrambling/approach boots"
+    ],
+    "pro_needs": "Usually scrambled unroped; carry a short rope for the exposed class 3-4 sections if the party wants a belay."
+  },
+  {
+    "id": "wa_king_kong_gorillas_direct_direct",
+    "name": "King Kong - Gorillas Direct Direct",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "5.11d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_koala_krack",
+    "name": "Koala Krack",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_kyes_peak_glaciated_scramble",
+    "name": "Glaciated Scramble (Standard)",
+    "area_id": "wa_kyes_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + snow/glacier",
+    "gear": [
+      "ice axe",
+      "crampons or microspikes (microspikes are often adequate on consolidated summer snow; full crampons and rope/crevasse-rescue kit recommended early season)",
+      "rope and glacier kit (early season or if crossing the Columbia Glacier)",
+      "helmet",
+      "trekking poles (outlet stream crossing, moraine/talus)",
+      "sturdy approach shoes with good rubber for scrambling on loose 'kitty litter' rock"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_la_bohn_peak_southwest_slopes",
+    "name": "Southwest Slopes",
+    "area_id": "wa_la_bohn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (snow/ice can linger in the summit gully into August)",
+      "trekking poles",
+      "helmet (loose talus/rockfall on the final scramble)",
+      "sturdy scrambling boots"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_labor_pains",
+    "name": "Labor Pains",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11a",
+    "gear": [
+      "Standard trad rack to 3\" plus an extra half set (bring roughly one and a half sets total)",
+      "Tiny cams and small stoppers/brassies for thin protection on P2-P3",
+      "60m rope"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lady_slipper",
+    "name": "Lady Slipper",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lake_mountain_pasayten_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_lake_mountain_pasayten",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early/late season or lingering snow)",
+      "trekking poles (useful on talus and the brushy, blowdown-choked approach trail)",
+      "sturdy boots for off-trail talus and scree",
+      "map/compass or GPS track (route-finding is cross-country above the trail system)"
+    ],
+    "pro_needs": "Easy class 2 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_lane_peak_r1",
+    "name": "The Zipper (couloir)",
+    "area_id": "wa_lane_peak",
+    "discipline": "alpine",
+    "grade": "Alpine ice/mixed couloir",
+    "gear": [
+      "ice axe",
+      "second tool",
+      "crampons",
+      "ice/snow protection",
+      "helmet",
+      "rope"
+    ],
+    "pro_needs": "Screws and pickets per conditions; rock pro for belays"
+  },
+  {
+    "id": "wa_lemah_mountain_east_route",
+    "name": "East Route (Main Peak)",
+    "area_id": "wa_lemah_mountain",
+    "discipline": "alpine",
+    "grade": "Class 4-5.0",
+    "gear": [
+      "rope",
+      "light rock rack",
+      "ice axe (early season)",
+      "helmet",
+      "crampons (early/high-snow years)",
+      "map and compass/GPS (route-finding among the five summits is easy to get wrong)",
+      "trekking poles (Lemah Creek ford)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lemah_two_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_lemah_two",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "gear": [
+      "ice axe (glacier remnant and permanent snow near the col make this needed in every season, not just early season)",
+      "crampons",
+      "helmet",
+      "light rock rack",
+      "30m rope (optional, for the crux band or a rappel if conditions warrant)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lena_lake_to_mt_stone_traverse",
+    "name": "Lena Lake to Mt Stone traverse",
+    "area_id": "wa_mount_stone",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (semi-permanent snow/ice field near St. Peter's Gate)",
+      "Sturdy boots for loose moraine and way-trail travel",
+      "Map/GPS — much of the route is unmarked way-trail"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lewis_creek_route",
+    "name": "Lewis Creek Route",
+    "area_id": "wa_gunn_peak",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": [
+      "helmet",
+      "ten essentials",
+      "light rack (optional, for the exposed summit scramble)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_liberty_and_injustice_for_all",
+    "name": "Liberty and Injustice for All",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.12b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_liberty_crack_free",
+    "name": "Liberty Crack (Free)",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.13b",
+    "gear": [
+      "single rack from purple C3 to #3 Camalot with extra tips-to-fingers pieces (roughly red C3 to .4)",
+      "stoppers",
+      "eight long slings plus one triple-length runner for the slab-pitch belay (all belays are fixed)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_liberty_traverse",
+    "name": "Liberty Traverse",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lichtenberg_mountain_se_route",
+    "name": "Southeast Slopes Scramble",
+    "area_id": "wa_lichtenberg_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "ice axe early season",
+      "trekking poles",
+      "map & compass or GPS (no maintained trail above Lake Valhalla; easy to get cliffed out)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lincoln_peak_standard",
+    "name": "Southeast Approach (Standard)",
+    "area_id": "wa_lincoln_peak",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "two ice tools",
+      "two 60m glacier ropes",
+      "6 pickets",
+      "small rack of nuts and cams (4 small cams)",
+      "snowshoes",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Pickets and a light rack; much of the rock is too loose to protect well"
+  },
+  {
+    "id": "wa_little_big_chief_mountain_west_route",
+    "name": "West Route",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles (for the Waptus River ford)",
+      "optional 30m rope and light rack for parties uncomfortable soloing the exposed summit notch"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_little_mac_spire_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_little_mac_spire",
+    "discipline": "alpine",
+    "grade": "Grade II-III, 5.4",
+    "gear": [
+      "alpine rock rack (small cams/nuts to ~2 in)",
+      "30-60m rope (for the short rappel off the horn if continuing the traverse)",
+      "ice axe / microspikes for early-season snow near Terror Basin",
+      "helmet (mandatory — loose rock throughout)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_little_sister_scramble",
+    "name": "Twin Sisters Olivine Scramble",
+    "area_id": "wa_little_sister",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "optional rope for exposed steps"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lizard_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_lizard_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "sturdy scrambling boots",
+      "rope and crevasse-rescue gear for the glaciated approach (Cache, Middle Cascade, and/or South Cascade Glaciers)",
+      "map/compass or GPS for off-trail, unmarked high-route navigation"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lone_wolf",
+    "name": "Lone Wolf",
+    "area_id": "wa_obelisk_the",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_lost_peak_pasayten_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_lost_peak_pasayten",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season, for lingering snow/gullies)",
+      "map and compass or GPS/satellite communicator for cross-country navigation",
+      "trekking poles for creek fords",
+      "bear-resistant food storage (Ursack or hang) — the Pasayten lies within the North Cascades Grizzly Bear Recovery Zone"
+    ],
+    "pro_needs": "Easy class 2 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_luahna_peak_east_slopes",
+    "name": "East Slopes",
+    "area_id": "wa_luahna_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "crampons (early season, or for the Richardson/Pilz Glacier variant)",
+      "light rope for the short rappel/downclimb step (optional, route-dependent)",
+      "trekking poles (creek crossings, sidehill scree)",
+      "gaiters (bushwhacking, scree)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_luna_glacier",
+    "name": "Luna Glacier",
+    "area_id": "wa_phantom_peak",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": [
+      "Glacier travel kit (rope, crevasse-rescue hardware)",
+      "Crampons and ice axe",
+      "A few snow pickets or flukes for the glacier crux",
+      "Light rack of runners/small pro for the rock step and summit block",
+      "Helmet",
+      "Rope for rappelling/downclimbing off the summit block"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_luna_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_luna_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "microspikes or crampons — snow lingers in the Access Col/Luna Pass gullies well into July",
+      "optional 30–35m rope and a few slings/light pro for parties wanting a running belay across the false-to-true-summit traverse (most parties solo this unroped in normal summer conditions)",
+      "bear canister (free loaner available at the Wilderness Information Center in Marblemount)",
+      "insect head net — mosquitoes and ground-nesting bees are common in the forested approach"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_martin_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "area_id": "wa_martin_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe (early-season snow lingers in the gully/upper ridge into July in above-average years)",
+      "helmet (rockfall is common in the crux gully)",
+      "light rope (~30m) and a few slings/rap gear — many parties use this for the short exposed step near the summit and the existing fixed anchor",
+      "sturdy boots with good edging for loose Class 3-4 rock",
+      "trekking poles for the loose scree traverse below the ridge crest",
+      "insect repellent/head net for black flies (3,000-4,000 ft) and mosquitoes near Holden Lake"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_marvin_s_ear",
+    "name": "Marvin's Ear",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": [
+      "quickdraws plus several alpine draws",
+      "70m rope (required — anchors are ~30m apart)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_massie_peak_west_route",
+    "name": "West Route",
+    "area_id": "wa_massie_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet (loose rock, short exposed class 3 moves on the ridge crest)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mcgregor_mountain_scramble",
+    "name": "Summit Block Scramble (from Stehekin)",
+    "area_id": "wa_mcgregor_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early season, for lingering snowfields on the upper mountain)",
+      "sturdy approach shoes/boots with good traction for loose talus and slab"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_merchant_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_merchant_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe and traction (early season, snow lingers into June)",
+      "helmet (mandatory - loose rock and waterfall chimney)",
+      "sturdy scrambling boots/approach shoes",
+      "30m rope recommended for the crux waterfall downclimb/optional rappel",
+      "ten essentials"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mesahchie_peak_west_ridge",
+    "name": "West Ridge / Southwest Gully",
+    "area_id": "wa_mesahchie_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (needed for the trail's north side and approach gullies into early-mid July)",
+      "crampons (the steep snowfield traverse below Kitling Peak can hold hard snow well into summer)",
+      "30m rope or a few slings if you prefer to rappel the crux chockstone in the summit gully (a fixed sling has been reported there)"
+    ],
+    "pro_needs": "Generally unroped scramble; a short rope and minimal protection useful for the exposed class 4 step in marginal conditions."
+  },
+  {
+    "id": "wa_middle_finger_buttress_left_side",
+    "name": "Middle Finger Buttress - Left Side",
+    "area_id": "wa_amphitheatre_mountain",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_middle_finger_buttress_right_side",
+    "name": "Middle Finger Buttress - Right Side",
+    "area_id": "wa_amphitheatre_mountain",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mile_high_club",
+    "name": "Mile High Club",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": [
+      "12 quickdraws",
+      "a few alpine draws (optional, reduces rope drag)",
+      "60m rope (fully bolted — no trad rack needed)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_moe",
+    "name": "Moe",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mojo_rising",
+    "name": "Mojo Rising",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_monkey_on_a_woodpile",
+    "name": "Monkey On A Woodpile",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_monte_cristo_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_monte_cristo_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early-mid season)",
+      "helmet",
+      "rope (30m sufficient for the short technical pitch)",
+      "harness",
+      "small rack/slings for the chimney (bolts reported but unconfirmed — bring backup protection)",
+      "crampons (steep snow to the North Col, early-mid season)",
+      "mountain bike (optional, speeds the 4-mile roadbed approach from Barlow Pass)"
+    ],
+    "pro_needs": "A few small-to-medium cams and/or slings for the ~30-75 ft chimney (reported as three roped moves: 5.6, 5.2, 5.6); a 30m rope is sufficient for the short technical section. Fixed bolts have been reported in recent years but should not be solely relied upon."
+  },
+  {
+    "id": "wa_monument_peak_pasayten_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_monument_peak_pasayten",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (recommended into July for lingering summit snowfields)",
+      "crampons or microspikes (trip reports as late as June 30-July 2 found summit-area snow firm enough to require them)",
+      "trekking poles (for the Eureka Creek ford)",
+      "sturdy boots for miles of talus"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_morning_thunder",
+    "name": "Morning Thunder",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_moss_out_for_harambe",
+    "name": "Moss Out For Harambe",
+    "area_id": "wa_mossy_loaf",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_adams_lava_glacier_headwall",
+    "name": "Lava Glacier Headwall",
+    "area_id": "wa_mount_adams",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets for the steep headwall"
+  },
+  {
+    "id": "wa_mount_adams_lyman_glacier",
+    "name": "Lyman Glacier",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "III",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "glacier rope",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Glacier kit and pickets for steeper sections"
+  },
+  {
+    "id": "wa_mount_adams_northwest_ridge",
+    "name": "Northwest Ridge",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "glacier rope",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Glacier kit and pickets for the steeper snow"
+  },
+  {
+    "id": "wa_mount_adams_south_spur",
+    "name": "South Spur Route",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "Grade I",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_adams_wilson_glacier_headwall",
+    "name": "Wilson Glacier Headwall",
+    "area_id": "wa_mount_adams",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets for the steep headwall"
+  },
+  {
+    "id": "wa_mount_angeles_standard",
+    "name": "Standard Scramble (Switchback / Klahhane Ridge approach)",
+    "area_id": "wa_mount_angeles",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "sturdy, stiff-soled scrambling boots (approach shoes/trail runners are frequently described as inadequate for the summit block)",
+      "trekking poles",
+      "ice axe (recommended if snow lingers, typically before mid-July)"
+    ],
+    "pro_needs": "No technical rock pro on the standard line; the crux is a short exposed Class 3 scramble."
+  },
+  {
+    "id": "wa_mount_ann_scramble",
+    "name": "Lake Ann Approach Scramble",
+    "area_id": "wa_mount_ann",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (essential through at least early August — snow lingers on approach slopes below the saddle)",
+      "helmet (loose rock on the ridge and near Peak 5681)",
+      "trekking poles for talus and boulder sections"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_appleton_standard",
+    "name": "Standard Scramble (Appleton Pass / Boulder Lake approach)",
+    "area_id": "wa_mount_appleton",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "sturdy footwear / approach shoes with good grip for talus and heather",
+      "ice axe (recommended by NPS for the trail approach in early season / on residual snow)",
+      "trekking poles",
+      "bear canister (required for any overnight stay in Olympic Wilderness)",
+      "map/compass or GPS — the scramble route above Appleton Pass is an unmarked climbers' path",
+      "helmet recommended given loose rock at the step near 5,800 ft"
+    ],
+    "pro_needs": "No technical pro; an ice axe helps with any lingering snow near the pass early season."
+  },
+  {
+    "id": "wa_mount_arriva_scramble",
+    "name": "Southwest Slopes",
+    "area_id": "wa_mount_arriva",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet (rockfall)",
+      "ice axe (useful into July, especially on Easy Pass's north side and the Silent Lakes headwall)",
+      "crampons (early/mid-season for the Silent Lakes approach couloir)",
+      "trekking poles (cross-country travel through Fisher Creek Basin talus and heather)"
+    ],
+    "pro_needs": "Generally an unroped class 3 scramble; rope optional for the exposed summit area."
+  },
+  {
+    "id": "wa_mount_ballard_south",
+    "name": "South Slopes",
+    "area_id": "wa_mount_ballard",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early-season snow, can linger into July)",
+      "helmet",
+      "trekking poles",
+      "gaiters/brush pants (heavy slide-alder bushwhacking on approach)",
+      "map/compass or GPS (unmaintained trail, unmarked scramble route above the pass)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_barnes_scramble",
+    "name": "Elwha Basin Scramble",
+    "area_id": "wa_mount_barnes",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "microspikes (Elwha snow hump / lingering snow)",
+      "gaiters (brush)",
+      "map, compass, and GPS track (unmarked, off-trail terrain)",
+      "satellite communicator or PLB (no cell coverage)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_berge_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_mount_berge",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "map/GPS track (route-finding through pathless basins above trail's end)",
+      "trekking poles (creek crossings)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_bigelow_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_bigelow",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_mount_blum_south_ridge",
+    "name": "South Ridge / Southeast Slopes",
+    "area_id": "wa_mount_blum",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (required into July most years; useful longer in high-snow years)",
+      "crampons (early season, on the snow gully/couloir)",
+      "helmet",
+      "trekking poles",
+      "bear canister (required for overnight camping in the Blum Cross-Country Zone)",
+      "gaiters and brush-resistant pants (devil's club and slide alder on the lower approach)",
+      "map/compass or a GPS track (the climber's path is unmarked and easy to lose)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_carrie_se_route",
+    "name": "Southeast Route via Hurricane Ridge / Cat Basin",
+    "area_id": "wa_mount_carrie",
+    "discipline": "scrambling",
+    "grade": "Class 2–3 with steep snow early season",
+    "gear": [
+      "ice axe",
+      "crampons (early season)",
+      "helmet",
+      "trekking poles",
+      "bear canister (required in Sol Duc/Seven Lakes Basin)",
+      "map & compass or GPS (route beyond High Divide is unsigned)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_carru_scramble",
+    "name": "South Slopes Scramble",
+    "area_id": "wa_mount_carru",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_mount_chaval_scramble",
+    "name": "South Side Scramble",
+    "area_id": "wa_mount_chaval",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season, for the snow gullies below the west ramp)",
+      "trekking poles (steep sidehilling and stream crossings)",
+      "sturdy approach boots",
+      "bug spray (trip reports describe severe insect pressure in late summer)",
+      "optional hand line/short rope for less-experienced parties on the exposed Class 3 step near the summit"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_dana_scramble",
+    "name": "Mount Dana Scramble",
+    "area_id": "wa_mount_dana",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (if snow/ice present on the Snow Finger or approach gullies)",
+      "map, compass, and GPS for extensive off-trail navigation",
+      "sturdy footwear suited to river fords"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_deception_standard",
+    "name": "Standard Scramble (Royal Basin)",
+    "area_id": "wa_mount_deception",
+    "discipline": "scrambling",
+    "grade": "Class 2 (steep and exposed)",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "crampons (early season)",
+      "sturdy boots"
+    ],
+    "pro_needs": "Largely an unroped scramble; parties may want a rope and minimal gear for protecting or belaying short exposed steps depending on conditions and comfort."
+  },
+  {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_mount_degenhardt",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "crampons",
+      "helmet",
+      "extra slings/cord for rappel anchors"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_duckabush_standard",
+    "name": "Standard Scramble (Marmot Lake / O'Neil Pass approach)",
+    "area_id": "wa_mount_duckabush",
+    "discipline": "scrambling",
+    "grade": "Class 2-3 (steep snow early season)",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No technical rock pro on the standard line; an ice axe helps on early-season snow slopes."
+  },
+  {
+    "id": "wa_mount_ellinor_standard",
+    "name": "Standard Trail (Upper Trailhead, NFR 24)",
+    "area_id": "wa_mount_ellinor",
+    "discipline": "scrambling",
+    "grade": "Class 2 (Class 3 / steep snow early season)",
+    "gear": [
+      "sturdy boots",
+      "ice axe (early season)",
+      "trekking poles",
+      "microspikes (early season)",
+      "sun protection (south/southeast aspect, little shade above treeline)"
+    ],
+    "pro_needs": "No technical protection needed; early season an ice axe and the skill to self-arrest are strongly recommended for the snow chute."
+  },
+  {
+    "id": "wa_mount_fernow_southeast_face",
+    "name": "Southeast Face / Leroy Basin",
+    "area_id": "wa_mount_fernow",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "sturdy boots",
+      "trekking poles (creek crossings, scree)",
+      "30m rope/light rack optional for belaying or hand-lining the exposed class 4-5 summit block"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_ferry_standard",
+    "name": "South Slopes (Bailey Range)",
+    "area_id": "wa_mount_ferry",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "crampons (early-season snow on the cols and the Catwalk)",
+      "helmet",
+      "trekking poles",
+      "bear canister (mandatory in Olympic National Park backcountry)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_fricaba_standard",
+    "name": "Standard Scramble (Constance Pass / Home Lake)",
+    "area_id": "wa_mount_fricaba",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No technical rock protection required on the standard line; an ice axe is useful for early-season snow in the approach basins."
+  },
+  {
+    "id": "wa_mount_fury_east_mongo_ridge",
+    "name": "Mongo Ridge (Southwest Buttress)",
+    "area_id": "wa_mount_fury_east",
+    "discipline": "alpine",
+    "grade": "Grade VI, 5.10",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "crampons",
+      "ice axe",
+      "helmet",
+      "minimal bivy kit",
+      "tag line or twin/double ropes recommended for the numerous gendarme rappels"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_fury_east_southeast_glaciers",
+    "name": "Southeast Glaciers (Standard)",
+    "area_id": "wa_mount_fury_east",
+    "discipline": "mountaineering",
+    "grade": "Class 4, Glacier",
+    "gear": [
+      "rope",
+      "crampons",
+      "ice axe",
+      "glacier rescue kit",
+      "small alpine rock rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_hardy_snow_scramble",
+    "name": "Southwest Slopes (Snow/Scramble)",
+    "area_id": "wa_mount_hardy",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 + snow",
+    "gear": [
+      "ice axe",
+      "crampons (early season/snow gully)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_herman_standard_scramble",
+    "name": "Standard Scramble (South/East Slopes)",
+    "area_id": "wa_mount_herman",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "sturdy boots",
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_hopper_standard",
+    "name": "Standard Scramble (First Divide / Marmot Lake approach)",
+    "area_id": "wa_mount_hopper",
+    "discipline": "scrambling",
+    "grade": "Class 2 (steep snow early season)",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles",
+      "bear canister (NPS-required for overnight food storage)",
+      "map/compass or GPS track (travel above First Divide/Home Sweet Home is off-trail)"
+    ],
+    "pro_needs": "No technical pro; an ice axe is useful for early-season snow on the approach slopes."
+  },
+  {
+    "id": "wa_mount_index_north_peak_traverse",
+    "name": "Main Peak via North Approach",
+    "area_id": "wa_mount_index",
+    "discipline": "alpine",
+    "grade": "Class 5.0-5.6",
+    "gear": [
+      "rope",
+      "rock rack to 2 inches",
+      "helmet",
+      "rappel gear",
+      "double ropes (recommended — eases rope drag and rappel descent through vegetated gullies)",
+      "bivy gear (many parties are overnight; the full traverse in particular commonly runs 15+ hours)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_la_crosse_scramble",
+    "name": "Mount La Crosse Scramble",
+    "area_id": "wa_mount_la_crosse",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Map/compass or GPS",
+      "Bear canister",
+      "Ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_lawson_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_lawson",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (early-season snow in the ascent chute, typically lingers through June)",
+      "Sturdy boots with aggressive tread for wet rock and timber",
+      "Gaiters (brush, mud, talus)",
+      "Trekking poles (river ford)",
+      "Helmet recommended for the loose ascent chute",
+      "Bear canister (mandatory for any overnight stay in Olympic Wilderness)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_lincoln_standard",
+    "name": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+    "area_id": "wa_mount_lincoln",
+    "discipline": "scrambling",
+    "grade": "Class 3 (steep snow early season)",
+    "gear": [
+      "Helmet (loose rock/pillow basalt on the ridge and summit gully)",
+      "Microspikes or light traction (snow lingers in the approach gullies into June/July)",
+      "Ice axe if climbing before mid-July",
+      "30m rope + a few slings for the low-5th/4th-class chockstone move near the summit if not comfortable soloing it",
+      "Sturdy scrambling boots rather than approach shoes",
+      "Bear canister (required for overnight camping at Flapjack Lakes)",
+      "GPS/offline map or a recent GPX track — route-finding off the Flapjack Lakes trail is the main crux",
+      "Satellite communicator (no cell coverage)",
+      "3+ liters water capacity per person; the upper mountain is dry"
+    ],
+    "pro_needs": "No technical rock pro on the standard line; an ice axe is useful for early-season snow in the approach gullies."
+  },
+  {
+    "id": "wa_mount_lyall_south_route",
+    "name": "Southwest Ridge Route",
+    "area_id": "wa_mount_lyall",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_mastiff_south_route",
+    "name": "South Route",
+    "area_id": "wa_mount_mastiff",
+    "discipline": "scrambling",
+    "grade": "Class 2-3 scramble",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_mathias_scramble",
+    "name": "Bailey Range Scramble",
+    "area_id": "wa_mount_mathias",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "gear": [
+      "Ice axe",
+      "Crampons",
+      "30m glacier-travel rope",
+      "Crevasse rescue kit (tibloc/microtraxion, pulley, prusiks or slings)",
+      "Helmet (loose rock on the ridge/gullies)",
+      "Bear-resistant canister (mandatory for overnight stays)",
+      "Satellite communicator (no cell coverage)",
+      "Map/compass/GPS for extensive off-trail navigation"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_mccausland_n_route",
+    "name": "North Slopes from Lake Valhalla",
+    "area_id": "wa_mount_mccausland",
+    "discipline": "scrambling",
+    "grade": "Class 2 scramble",
+    "gear": [
+      "trekking poles",
+      "ice axe early season"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_mystery_standard",
+    "name": "Standard Scramble (Deception Creek / Royal Basin)",
+    "area_id": "wa_mount_mystery",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "crampons (early/mid-season snow and glacier travel)",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No technical rock pro required on the standard line; a short rope and a light alpine rack are sometimes carried for the exposed Class 3 summit moves and for belaying less-experienced partners."
+  },
+  {
+    "id": "wa_mount_norton_scramble",
+    "name": "Mount Norton Scramble",
+    "area_id": "wa_mount_norton",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_noyes_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_noyes",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_olson_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_olson",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "trekking poles",
+      "map, compass, and altimeter (unmarked/primitive trail beyond Sundown Pass)",
+      "multi-day backpacking/overnight kit (this is not a day trip for most parties)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_pershing_standard",
+    "name": "Standard Scramble (Jefferson Creek / Hamma Hamma approach)",
+    "area_id": "wa_mount_pershing",
+    "discipline": "scrambling",
+    "grade": "Class 3 (steep snow early season)",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No fixed technical rock protection on the standard line, but the short Class 4 step and 45–50° snow gully lead most parties to carry an ice axe and crampons, and some carry a short rope for the crux step."
+  },
+  {
+    "id": "wa_mount_price_north_route",
+    "name": "North Route",
+    "area_id": "wa_mount_price",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_prophet_east",
+    "name": "South Ridge / Southeast Ridge",
+    "area_id": "wa_mount_prophet",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (required into midsummer)",
+      "crampons (early-season snow on the upper ridge/cirque)",
+      "helmet",
+      "trekking poles",
+      "rope + 1-2 pickets (optional, for early-season snow or a Southwest Rib descent)",
+      "sturdy boots for brush and talus",
+      "insect repellent (heavy mosquitoes in the Big Beaver valley in July)"
+    ],
+    "pro_needs": "No technical rack needed for the standard Class 2-3 ridge line; a rope with one or two snow pickets is worth carrying early season for the south ridge snow, or if planning a Southwest Rib descent through its ~6,900 ft cliff-band snow ramp."
+  },
+  {
+    "id": "wa_mount_pulitzer_standard",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_pulitzer",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "trekking poles",
+      "crampons (early-season snowfields)",
+      "bear canister (required)",
+      "map, compass, and GPS or satellite communicator (extensive off-trail navigation, no cell coverage)",
+      "full multi-day backpacking kit (only reached via a several-day wilderness approach)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_queets_south",
+    "name": "South Slopes",
+    "area_id": "wa_mount_queets",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe",
+      "microspikes",
+      "helmet",
+      "trekking poles"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_rainier_curtis_ridge",
+    "name": "Curtis Ridge",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "IV-V",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "light rock rack",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws, pickets, and a light rock rack for mixed sections"
+  },
+  {
+    "id": "wa_mount_rainier_fuhrer_finger",
+    "name": "Fuhrer Finger",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "glacier rope",
+      "crevasse rescue kit",
+      "pickets"
+    ],
+    "pro_needs": "Glacier travel gear; pickets for the steeper snow"
+  },
+  {
+    "id": "wa_mount_rainier_gibraltar_ledges",
+    "name": "Gibraltar Ledges",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "glacier rope",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Pickets; the ledge traverse can require care when icy"
+  },
+  {
+    "id": "wa_mount_rainier_kautz_headwall",
+    "name": "Kautz Headwall",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets for the steep headwall"
+  },
+  {
+    "id": "wa_mount_rainier_mowich_face",
+    "name": "Mowich Face",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws, pickets; full steep-ice alpine kit"
+  },
+  {
+    "id": "wa_mount_rainier_nisqually_icefall",
+    "name": "Nisqually Icefall",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "III-IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets; efficient serac/crevasse navigation"
+  },
+  {
+    "id": "wa_mount_rainier_ptarmigan_ridge",
+    "name": "Ptarmigan Ridge",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets for steep ice/snow; full alpine ice kit"
+  },
+  {
+    "id": "wa_mount_rainier_sunset_ridge",
+    "name": "Sunset Ridge",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws and pickets; full alpine ice kit for the headwall"
+  },
+  {
+    "id": "wa_mount_rainier_tahoma_glacier",
+    "name": "Tahoma Glacier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "III",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "ice axe",
+      "glacier rope",
+      "crevasse rescue kit",
+      "pickets"
+    ],
+    "pro_needs": "Full glacier kit; pickets and possibly a second tool for the steep sickle"
+  },
+  {
+    "id": "wa_mount_rainier_willis_wall",
+    "name": "Willis Wall",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "V",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Full steep alpine ice kit; speed is the primary safety tool"
+  },
+  {
+    "id": "wa_mount_saul_se_route",
+    "name": "Southeast Slopes",
+    "area_id": "wa_mount_saul",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_seattle_south",
+    "name": "South Slopes (Standard)",
+    "area_id": "wa_mount_seattle",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Sturdy boots for scree/talus",
+      "Ice axe (useful for lingering snow patches into early summer)",
+      "Approved hard-sided bear canister (required for overnight stays)",
+      "Map, compass, and altimeter — NPS stresses constant position-tracking given the lack of any marked route",
+      "Gaiters (brush on the Seattle Creek/Noyes Basin bushwhack approaches)",
+      "Helmet recommended on the looser scree/talus sections"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_shuksan_hanging_glacier",
+    "name": "Hanging Glacier",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "alpine",
+    "grade": "IV",
+    "gear": [
+      "Ice screws for the steep (up to ~65 degree) ice section",
+      "A small rock rack for the 5.6 finish on the east ridge"
+    ],
+    "pro_needs": "Ice screws and pickets for steep ice and serac terrain"
+  },
+  {
+    "id": "wa_mount_shuksan_northeast_ridge",
+    "name": "Northeast Ridge",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "alpine",
+    "grade": "IV",
+    "gear": [
+      "mountaineering boots",
+      "crampons",
+      "two ice tools",
+      "glacier rope",
+      "ice screws",
+      "pickets",
+      "light rock rack",
+      "crevasse rescue kit"
+    ],
+    "pro_needs": "Ice screws, pickets, light rack for the mixed ridge"
+  },
+  {
+    "id": "wa_mount_shuksan_price_glacier",
+    "name": "Price Glacier",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "alpine",
+    "grade": "IV-V",
+    "gear": [
+      "Pickets",
+      "Ice screws",
+      "A small rock rack for the bergschrund/rock variations"
+    ],
+    "pro_needs": "Ice screws, pickets, and a light rack for the summit pyramid"
+  },
+  {
+    "id": "wa_mount_shuksan_white_salmon_glacier",
+    "name": "White Salmon Glacier",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "alpine",
+    "grade": "Grade II, Easy Snow",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_skokomish_standard",
+    "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+    "area_id": "wa_mount_skokomish",
+    "discipline": "scrambling",
+    "grade": "Class 3 (steep snow early season)",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No technical rock pro on the standard line; an ice axe is useful for early-season snow in the gullies."
+  },
+  {
+    "id": "wa_mount_steel_standard",
+    "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+    "area_id": "wa_mount_steel",
+    "discipline": "scrambling",
+    "grade": "Class 2-3 (steep snow early season)",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "trekking poles"
+    ],
+    "pro_needs": "No technical rock pro on the standard line; an ice axe helps on early-season snow slopes."
+  },
+  {
+    "id": "wa_mount_stickney_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_mount_stickney",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_stone_lake_of_angels",
+    "name": "South Route via Lake of the Angels",
+    "area_id": "wa_mount_stone",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (recommended into July for the St. Peter's Gate saddle and headwall snow)",
+      "Helmet (loose rock in the gully/headwall and near the summit block)",
+      "Sturdy boots for the steep, root/rock Putvin Trail",
+      "Trekking poles for the steep descent"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_stone_putvin",
+    "name": "Putvin Trail / Lake of the Angels Scramble",
+    "area_id": "wa_mount_stone",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "sturdy boots"
+    ],
+    "pro_needs": "Normally an unroped class 3 scramble; a short rope can help protect the summit-block moves or the winter mixed crux."
+  },
+  {
+    "id": "wa_mount_terror_north_face",
+    "name": "North Face / North Buttress",
+    "area_id": "wa_mount_terror",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.7",
+    "gear": [
+      "Rock rack to 3in",
+      "60m rope",
+      "Glacier travel gear (axe, crampons, thin rope) for the Terror Glacier remnant",
+      "Helmet",
+      "Bivy/carry-over gear for a multi-day approach"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_terror_southeast_face",
+    "name": "East Ridge",
+    "area_id": "wa_mount_terror",
+    "discipline": "alpine",
+    "grade": "Grade III-IV, 5.6",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "crampons",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_tom_scramble",
+    "name": "Glacier/Scramble Route",
+    "area_id": "wa_mount_tom",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + glacier",
+    "gear": [
+      "rope",
+      "ice axe",
+      "crampons",
+      "glacier travel/crevasse rescue kit",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_townsend_standard",
+    "name": "Mount Townsend Trail (standard)",
+    "area_id": "wa_mount_townsend",
+    "discipline": "scrambling",
+    "grade": "Class 1-2 (maintained trail)",
+    "gear": [
+      "sturdy footwear",
+      "trekking poles",
+      "wind/rain layers"
+    ],
+    "pro_needs": "None; this is a hiking/scrambling trail with no technical climbing."
+  },
+  {
+    "id": "wa_mount_walkinshaw_scramble",
+    "name": "The Needles Scramble",
+    "area_id": "wa_mount_walkinshaw",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "rope (for exposed steps)",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Standard route is unroped Class 3-4 scrambling for confident parties; a rope, harness, and a few slings/small rack add security on the short steeper steps for less-experienced scramblers."
+  },
+  {
+    "id": "wa_mount_washington_olympic_standard",
+    "name": "Standard Scramble (above Lake Cushman)",
+    "area_id": "wa_mount_washington_olympic",
+    "discipline": "scrambling",
+    "grade": "Class 3 (steep snow early season)",
+    "gear": [
+      "Helmet (required — loose rock and short rock-face climbing throughout)",
+      "Ice axe for early-season snow on the gullies/saddle",
+      "Light rope or hand line for the catwalk crux (optional, useful for mixed-ability groups)",
+      "3+ liters of water (upper mountain has little shade and can be hot/muggy in summer)",
+      "Headlamp (round trips commonly run 10-11 hours)"
+    ],
+    "pro_needs": "No technical rock pro required on the standard line; early season an ice axe and snow-travel skills are important for the upper gully."
+  },
+  {
+    "id": "wa_mount_watson_scramble",
+    "name": "South/East Scramble",
+    "area_id": "wa_mount_watson",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mount_wilder_scramble",
+    "name": "Mount Wilder Scramble",
+    "area_id": "wa_mount_wilder",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_mutchler_peak_scramble",
+    "name": "Mutchler Peak Scramble",
+    "area_id": "wa_mutchler_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (recommended into early summer for north-facing snow)",
+      "Sturdy boots with good tread for steep heather and slab",
+      "Trekking poles for the brushy approach",
+      "Map/compass or GPS — travel is cross-country with no maintained trail",
+      "Satellite communicator (InReach/Zoleo) given unreliable cell coverage"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ne_ridge",
+    "name": "NE Ridge",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.3",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_needle_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_needle_peak",
+    "discipline": "scrambling",
+    "grade": "Class 4 (5.0 crux)",
+    "gear": [
+      "Helmet (essential — loose rock throughout)",
+      "Light rope (~30m) and a few slings for the crux notch/downclimb",
+      "Rock shoes or sticky-soled approach shoes for the polished slab and summit moves",
+      "Bear canister (recommended/required for NPS backcountry camping)"
+    ],
+    "pro_needs": "Minimal rack — a light rope plus a few slings/small pieces to back up or replace the crux notch anchor; this is a scramble with a short technical crux, not a pitched rock climb."
+  },
+  {
+    "id": "wa_nest_route",
+    "name": "Nest Route",
+    "area_id": "wa_west_face_6",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_neve_glacier_west_ridge",
+    "name": "Neve Glacier / West Ridge",
+    "area_id": "wa_snowfield_peak",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": [
+      "Ice axe",
+      "Crampons",
+      "Glacier rope and crevasse-rescue kit (pickets, prusiks)",
+      "Helmet",
+      "Sturdy boots for talus and bushwhacking",
+      "Blue bags/WAG bags (no toilets in the Colonial/Snowfield zones)",
+      "Extra water capacity for a dry camp"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_face_3",
+    "name": "North Face",
+    "area_id": "wa_lexington_tower",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": [
+      "light rack of small-to-medium cams and stoppers",
+      "a few long slings for horn-anchor rappels on descent"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_face_left_buttress",
+    "name": "North Face (Left Buttress)",
+    "area_id": "wa_castle_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_face_of_the_mole",
+    "name": "North Face of The Mole",
+    "area_id": "wa_hook_creek_drainage",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_face_var_right_directisimo",
+    "name": "North Face Var. Right (Directisimo)",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": [
+      "single rack to 3 in",
+      "stoppers",
+      "slings"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_gardner_mountain_southwest",
+    "name": "Southwest Slopes / South Ridge",
+    "area_id": "wa_north_gardner_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Ice axe (early-season snow in the basin/bowl, typically lingers into June-early July)",
+      "Sturdy boots with good ankle support for extended scree/talus travel",
+      "Trekking poles (creek crossings near Gardner Meadows, loose scree)",
+      "Sun protection - hat, sunscreen, sun shirt (minimal shade through the 2021 Cedar Creek Fire burn scar)",
+      "Map/compass or GPS (off-trail navigation from Gardner Meadows through Wolf Creek Basin)",
+      "Extra water capacity (unreliable water sources in the burned sections and on the scree slopes above Gardner Meadows)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge",
+    "name": "North Ridge",
+    "area_id": "wa_steeple_rock",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_2",
+    "name": "North Ridge",
+    "area_id": "wa_whatcom_peak",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": [
+      "Ice axe (snow patches on the ridge and approach persist into midsummer)",
+      "Helmet (loose rock in the final approach to the summit)",
+      "Microspikes/traction useful into July",
+      "Light rack optional only if straying onto 4th-class terrain"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_3",
+    "name": "North Ridge",
+    "area_id": "wa_cutthroat_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": [
+      "light-to-moderate rock rack",
+      "stoppers",
+      "slings",
+      "helmet",
+      "rope"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_4",
+    "name": "North Ridge",
+    "area_id": "wa_primus_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": [
+      "Small-to-mid rock rack (nuts + cams to roughly 2 in) for the crux notch",
+      "30-60m rope for the technical step",
+      "Slings for natural/block anchors",
+      "Helmet — mandatory given the loose rock"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_5",
+    "name": "North Ridge",
+    "area_id": "wa_main_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": [
+      "Standard alpine rack",
+      "Crampons",
+      "Ice axe",
+      "Pickets",
+      "Glacier travel gear"
+    ],
+    "pro_needs": "Standard alpine protection for 5.7 terrain; exact rack size not documented in available trip reports."
+  },
+  {
+    "id": "wa_north_ridge_7",
+    "name": "North Ridge",
+    "area_id": "wa_aiguille_de_l_m",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_8",
+    "name": "North Ridge",
+    "area_id": "wa_amphitheatre_mountain",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_ridge_west_side",
+    "name": "North Ridge - West Side",
+    "area_id": "wa_molar_tooth",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_star_mountain_east_route",
+    "name": "East Route",
+    "area_id": "wa_north_star_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_tower_ridge_route",
+    "name": "North Tower Ridge Route",
+    "area_id": "wa_north_face_tiffany_mountain",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_twin_sister_scramble",
+    "name": "North Twin Sister Olivine Scramble",
+    "area_id": "wa_north_twin_sister",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Approach shoes with sticky rubber for the olivine scrambling",
+      "Helmet",
+      "Ice axe (and possibly crampons) if the line passes near residual snow/glacier terrain on the saddle"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_north_twin_sister_west_ridge",
+    "name": "West Ridge",
+    "area_id": "wa_north_twin_sister",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "approach shoes with sticky rubber",
+      "trekking poles",
+      "optional mountain bike for the lower logging-road approach",
+      "optional light rope for a hand line near the summit (rarely needed)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_northeast_face_direct",
+    "name": "Northeast Face Direct",
+    "area_id": "wa_mount_formidable",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_northeast_ridge_1963_route",
+    "name": "Northeast Ridge (1963 Route)",
+    "area_id": "wa_johannesburg_mountain",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_northwest_buttress",
+    "name": "Northwest Buttress",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "IV 5.9+",
+    "gear": [
+      "Medium alpine rack to 3in, including a #4 Camalot for pitch 1",
+      "8-10 shoulder-length runners",
+      "Helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_northwest_face_2",
+    "name": "Northwest Face",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_northwest_face_boving_pollock",
+    "name": "Northwest Face (Boving-Pollock)",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11a/b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_notta_slab",
+    "name": "Notta Slab",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_nw_face_var_remsberg_variation",
+    "name": "NW Face Var. (Remsberg Variation)",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_nw_ridge",
+    "name": "NW Ridge",
+    "area_id": "wa_mt_remmel",
+    "discipline": "alpine",
+    "grade": "5.2",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_nw_ridge_2",
+    "name": "NW Ridge",
+    "area_id": "wa_colchuck_balanced_rock",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": [
+      "light trad rack",
+      "a single 25-30m rope is sufficient for the descent rappel"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_old_snowy_mountain_r1",
+    "name": "South Ridge / PCT approach",
+    "area_id": "wa_old_snowy_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "gear": [
+      "Ice axe (often needed into July for the PCT snowfield below the summit)",
+      "Helmet (loose rock/talus on the final scramble)",
+      "Trekking poles",
+      "Sturdy boots with ankle support",
+      "Microspikes or lightweight crampons for early-season or early-morning hardpack snow",
+      "Wind/shell layer — the crest is fully exposed"
+    ],
+    "pro_needs": "No technical protection is used on the standard route — it is a trail hike to a Class 2–3 scramble finish. Trekking poles are commonly carried for the snowfields and loose talus."
+  },
+  {
+    "id": "wa_olympus_blue_glacier_east_ramps",
+    "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "alpine",
+    "grade": "Grade III; Class 4 with a Class 5 step",
+    "gear": [
+      "rope",
+      "crampons",
+      "ice axe",
+      "glacier/crevasse rescue kit",
+      "harness",
+      "3-4 small-medium cams",
+      "slings",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_olympus_traverse",
+    "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "alpine",
+    "grade": "Grade III; glacier with Class 4-5 summit work",
+    "gear": [
+      "rope",
+      "crampons",
+      "ice axe",
+      "glacier/crevasse rescue kit",
+      "small rock rack",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_open_book_2",
+    "name": "Open Book",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": [
+      "30-35m rope",
+      "a few slings for natural anchors",
+      "light rack optional — many parties climb it without placing much gear"
+    ],
+    "pro_needs": "Light rack; a rope and a few runners for the natural anchor and belay/rappel are the main requirement — approach shoes are fine, rock shoes not required."
+  },
+  {
+    "id": "wa_osceola_peak_scramble",
+    "name": "West Slopes Scramble",
+    "area_id": "wa_osceola_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_ottohorn_southeast_route",
+    "name": "Southeast Route",
+    "area_id": "wa_ottohorn",
+    "discipline": "alpine",
+    "grade": "Grade III-IV, 5.7",
+    "gear": [
+      "Light alpine rock rack (small-to-mid cams and a few nuts) for low-5th to 5.7 pitches",
+      "30-60m rope",
+      "Helmet",
+      "Ice axe for early-season snow"
+    ],
+    "pro_needs": "A light alpine rock rack is sufficient for the scattered low-5th-class to 5.7 moves; belays are typically natural gear anchors rather than fixed stations."
+  },
+  {
+    "id": "wa_oval_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_oval_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Easy class 2 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_painted_mountain_scramble",
+    "name": "Painted Mountain Scramble",
+    "area_id": "wa_painted_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Helmet",
+      "Trekking poles",
+      "Map/compass or GPS track",
+      "Sun protection",
+      "Northwest Forest Pass"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_phantom_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_phantom_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, Class 4",
+    "gear": [
+      "Glacier travel kit (rope, crevasse-rescue hardware)",
+      "3-4 snow pickets or flukes for the pocket glacier and bergschrund crossing",
+      "Crampons and ice axe",
+      "Light rack for the Class 4 sections (a few slings and small cams/nuts)",
+      "Helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_philadelphia_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_philadelphia_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_pilgrimage_to_mecca",
+    "name": "Pilgrimage to Mecca",
+    "area_id": "wa_amphitheatre_mountain",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_pinnacle_mountain_entiat_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_pinnacle_mountain_entiat",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Generally an unroped class 3 scramble; rope optional for the exposed summit block."
+  },
+  {
+    "id": "wa_pinnacle_peak_tatoosh_r1",
+    "name": "Pinnacle Saddle / North Gully",
+    "area_id": "wa_pinnacle_peak_tatoosh",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_plan_9_from_outer_space",
+    "name": "Plan 9 from Outer Space",
+    "area_id": "wa_ed_wood_memorial_buttress",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_playing_not_spraying",
+    "name": "Playing Not Spraying",
+    "area_id": "wa_silver_horn_the",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_plummer_peak_r1",
+    "name": "Pinnacle Saddle / Southeast Slopes",
+    "area_id": "wa_plummer_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "Sturdy hiking boots for loose talus and heather",
+      "Trekking poles for the switchbacking approach trail",
+      "Microspikes or a light ice axe if attempting before mid-July",
+      "Sun protection - fully exposed above treeline",
+      "Rain shell/layers - afternoon storms build quickly"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_poltergeist_pinnacle",
+    "name": "Poltergeist Pinnacle",
+    "area_id": "wa_mount_challenger",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_preacher_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_preacher_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Map/compass or GPS track (unofficial, unsigned path above Rainy Lake)",
+      "Sturdy boots for talus and brush",
+      "Ice axe and traction (microspikes/crampons) for early-season or winter ascents",
+      "Northwest Forest Pass, America the Beautiful pass, or $5 day-use pass for trailhead parking",
+      "Self-issue wilderness permit (fill out at the trailhead)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_project_crack",
+    "name": "Project Crack",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ptarmigan_peak_pasayten_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_ptarmigan_peak_pasayten",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_ptarmigan_traverse",
+    "name": "Ptarmigan Traverse",
+    "area_id": "wa_alpine_and_technical_traverses",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_pyramid_peak_colonial_standard",
+    "name": "Standard Route / Southeast Scramble",
+    "area_id": "wa_pyramid_peak_colonial",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (snow lingers near the summit into midsummer)",
+      "Helmet (loose rock on the ridge and gully)",
+      "Sturdy boots with ankle support for scree/talus",
+      "Trekking poles for the brushy lower bootpath",
+      "Map/compass or GPS track — the false-summit ridge is easy to misjudge",
+      "Standard 10 essentials",
+      "Bear-resistant food storage if camping overnight (canisters loanable free at the Marblemount Wilderness Information Center)"
+    ],
+    "pro_needs": "Mostly Class 3-4 scrambling; a short rope and a few slings are optional for the exposed summit steps."
+  },
+  {
+    "id": "wa_ragged_edge",
+    "name": "Ragged Edge",
+    "area_id": "wa_vesper_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": [
+      "Standard rock rack to 2-3 inches",
+      "A few pitons/beaks may remain in place from the FA (belays were originally marginal, since improved by route cleaning)",
+      "Extra long slings for the wandering P4/P5 terrain"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ragged_ridge",
+    "name": "Ragged Ridge",
+    "area_id": "wa_red_mountain_snoqualmie",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_rampage",
+    "name": "Rampage",
+    "area_id": "wa_paisano_pinnacle",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_rapple_grapple",
+    "name": "Rapple Grapple",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": [
+      "rack to 3 inches",
+      "set of nuts",
+      "50-60m rope"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_red_zinger",
+    "name": "Red Zinger",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_redtail_arete",
+    "name": "Redtail Arete",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_reynolds_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_reynolds_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "Ice axe and crampons for snow-covered approaches (spring, early summer, and winter ascents)",
+      "Trekking poles for off-trail travel in the South Fork Reynolds Creek basin",
+      "Skis with skins and ski crampons for winter ski-mountaineering ascents, plus crampons/axe for the final gully"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_ride_the_lightning_2",
+    "name": "Ride the Lightning",
+    "area_id": "wa_goose_egg_mountain",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ridge_traverse_from_east_fury",
+    "name": "Ridge Traverse from East Fury",
+    "area_id": "wa_west_peak",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_rimrock_ridge_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_rimrock_ridge",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "sturdy scrambling boots"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_rock_mountain_west_route",
+    "name": "West Route (Rock Mountain Trail)",
+    "area_id": "wa_rock_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "3+ liters of water (no reliable sources on route)",
+      "Trekking poles (steep, loose switchbacks)",
+      "Sun hat, sunscreen, sun shirt — the lower trail has almost no shade",
+      "Sturdy boots with good ankle support (loose rock underfoot)",
+      "Layers for wind and exposure on the ridge",
+      "Microspikes / light ice axe for early-season snow on north-facing terrain (Rock Lake basin, upper ridge)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ruth_icy_traverse",
+    "name": "Ruth-Icy Traverse",
+    "area_id": "wa_ruth_mountain",
+    "discipline": "alpine",
+    "grade": "Grade II, 4th class",
+    "gear": [
+      "Rope",
+      "2-3 snow pickets and a crevasse-rescue kit for the Ruth Glacier portion",
+      "Crampons and ice axe",
+      "Climbing helmet (mandatory — active rockfall on Icy)",
+      "Harness plus a few slings/rap rings or tat for an optional rappel off Icy's summit gully",
+      "30m+ rope is adequate for a single-strand rappel of the ~100 ft gully"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_ruth_peak_olympics_scramble",
+    "name": "Ruth Peak Scramble",
+    "area_id": "wa_ruth_peak_olympics",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Ice axe (for lingering snow on the Catwalk and Ruth's slopes into early July)",
+      "Bear canister (required in the Seven Lakes Basin/Bailey Range cross-country zone)",
+      "Topo map and compass or GPS (essential for off-trail travel)",
+      "Trekking poles (talus/scree slopes and stream fords)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_safety_dance",
+    "name": "Safety Dance",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_saska_peak_emerald_saska_col",
+    "name": "South Slopes via Emerald-Saska Col",
+    "area_id": "wa_saska_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_scramble_route",
+    "name": "Scramble Route",
+    "area_id": "wa_eagle_peak",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_seven_fingered_jack_southwest_slopes",
+    "name": "Southwest Slopes",
+    "area_id": "wa_seven_fingered_jack",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Helmet — loose rock/scree, especially with other parties above or below",
+      "Trekking poles for the scree and talus",
+      "Ice axe and crampons if snow lingers in the entry gully/summit ravine (common through June, sometimes into July)",
+      "Sturdy boots with good ankle support",
+      "Water treatment — last reliable water is Leroy Creek / the 6,100 ft basin",
+      "Sun protection — the southwest slope is fully exposed with essentially no shade",
+      "Bug repellent for camp in Leroy Basin (mosquitoes common June-July)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_sheep_gap_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_sheep_gap_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "Ice axe — the ridge traverse and upper basin commonly hold snow into early September",
+      "Helmet — loose, brushy class 3-4 rock near the summit",
+      "30m rope (100-150 ft is reported as sufficient) for the short roped step and rappel below the summit",
+      "Rappel anchor material (sling/rap ring) and a rappel device",
+      "Sturdy boots suited to brush, talus, and scrambling"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_sherpa_glacier",
+    "name": "Sherpa Glacier",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_sidewinder_4",
+    "name": "Sidewinder",
+    "area_id": "wa_north_side",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_sinister_peak_southwest_route",
+    "name": "Southwest Route",
+    "area_id": "wa_sinister_peak",
+    "discipline": "alpine",
+    "grade": "Class 4, Glacier",
+    "gear": [
+      "Glacier travel kit: harness, crevasse-rescue gear, rope for the team",
+      "Ice axe and crampons for the Dome Glacier crossing",
+      "Helmet (rockfall in the SW gully)",
+      "1-2 pickets or ice screws for the glacier crossing"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_skookum_peak_twinsisters_scramble",
+    "name": "Twin Sisters Olivine Scramble",
+    "area_id": "wa_skookum_peak_twinsisters",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "ice axe (early season)",
+      "optional rope for exposed steps"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_sky_mountain_s_route",
+    "name": "South Slopes Scramble",
+    "area_id": "wa_sky_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "trekking poles",
+      "ice axe early season"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_slippery_slab_tower_ne_face",
+    "name": "Slippery Slab Tower NE Face",
+    "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_smears_jugs_and_rock_roll",
+    "name": "Smears, Jugs, and Rock & Roll",
+    "area_id": "wa_viviane_campsite",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_snoqualmie_mountain_standard_route",
+    "name": "Standard Route (Southwest Slopes)",
+    "area_id": "wa_snoqualmie_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_arete",
+    "name": "South Arete",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_couloir",
+    "name": "South Couloir",
+    "area_id": "wa_brothers_south_peak_the",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face",
+    "name": "South Face",
+    "area_id": "wa_vasiliki_tower",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_10",
+    "name": "South Face",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_12",
+    "name": "South Face",
+    "area_id": "wa_argonaut_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": [
+      "standard rack of nuts and cams (a few pieces in the 0.75-1in range plus webbing/cordelette are enough for the crux)",
+      "helmet",
+      "approach shoes"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_2",
+    "name": "South Face",
+    "area_id": "wa_pernod_spire",
+    "discipline": "alpine",
+    "grade": "5.9 A0",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_4",
+    "name": "South Face",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_5",
+    "name": "South Face",
+    "area_id": "wa_inspiration_peak",
+    "discipline": "alpine",
+    "grade": "III, 5.8",
+    "gear": [
+      "light alpine rack — many placements take nuts",
+      "a few medium cams (roughly 0.5-2in) for the upper pitches",
+      "helmet",
+      "crampons can be useful for late-season glacier/moat crossing"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_face_center",
+    "name": "South Face Center",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": [
+      "standard rack to 3 in",
+      "stoppers",
+      "a few small cams/RPs for thin sections inherited from the original aid line"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_gully_south_spur",
+    "name": "South Gully/South Spur",
+    "area_id": "wa_summer_fall_rock_2",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_headwall",
+    "name": "South Headwall",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_rib",
+    "name": "South Rib",
+    "area_id": "wa_summer_fall_rock_2",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_ridge",
+    "name": "South Ridge",
+    "area_id": "wa_south_peak",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_ridge_2",
+    "name": "South Ridge",
+    "area_id": "wa_luna_peak",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": [
+      "ice axe",
+      "crampons or microspikes for lingering snow/ice in the approach gullies and on Luna Col (persists into July)",
+      "helmet",
+      "optional light rack (a few slings/small cams) and a 30–35m rope for parties wanting a running belay across the false-to-true-summit traverse — not needed by most parties in normal summer conditions"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_ridge_6",
+    "name": "South Ridge",
+    "area_id": "wa_aiguille_de_l_m",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_south_spur",
+    "name": "South Spur",
+    "area_id": "wa_whatcom_peak",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": [
+      "Ice axe and traction for the Impasse moats and south-face snowfields",
+      "Rope and a small rack as backup for the Impasse's 4th-class bypass",
+      "Helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_southeast_face",
+    "name": "Southeast Face",
+    "area_id": "wa_sharkfin_tower",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_southeast_face_2",
+    "name": "Southeast Face",
+    "area_id": "wa_castle_the",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_southeast_ridge_se_corner",
+    "name": "Southeast Ridge (SE Corner)",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "alpine",
+    "grade": "5.3",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_southern_man",
+    "name": "Southern Man",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11d",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_southwest_ridge",
+    "name": "Southwest Ridge",
+    "area_id": "wa_west_mcmillan_spire",
+    "discipline": "alpine",
+    "grade": "5.8-",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "medium alpine rock rack",
+      "8-10 runners"
+    ],
+    "pro_needs": "Medium alpine rock rack with 8-10 runners, a helmet, and one ice axe (per Mountain Project route page)."
+  },
+  {
+    "id": "wa_southwest_scramble",
+    "name": "Southwest Scramble",
+    "area_id": "wa_pinnacle_peak_tatoosh",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": [
+      "helmet",
+      "a few slings for backup anchors on horns/trees near the top"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_soviet_route",
+    "name": "Soviet Route",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "alpine",
+    "grade": "V, 5.9-5.10a",
+    "gear": [
+      "two 60m ropes (double-rope system)",
+      "small-to-mid cam rack (doubles in finger-to-hand sizes; blue aliens see the most use)",
+      "nuts",
+      "rock shoes plus approach shoes",
+      "helmet",
+      "standard glacier/approach gear for the hike to camp"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spectacle_buttes_west_route",
+    "name": "West Route",
+    "area_id": "wa_spectacle_buttes",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Helmet (loose rock on the ridge and scree ramp)",
+      "Sturdy approach shoes or light boots with good edging for the ledges near the summit block",
+      "Trekking poles for the scree ramp and cross-country traverse",
+      "Ice axe (and crampons in early season, roughly through mid-July) for the Freezer Pass traverse if snow lingers",
+      "Optional 30m rope, harness, and a few slings for parties wanting protection on the Class 3/4 exposure near the summit block",
+      "Map/compass or GPS — the traverse and cairned sections are easy to lose in poor visibility"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spectacle_route",
+    "name": "Spectacle Route",
+    "area_id": "wa_west_face_6",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spectre_peak_south_route",
+    "name": "South Route",
+    "area_id": "wa_spectre_peak",
+    "discipline": "alpine",
+    "grade": "IV 5.9",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "helmet"
+    ],
+    "pro_needs": "No detailed rack has been published. The FA account notes loose rock requiring 'creative anchor construction,' so plan on a standard alpine rock rack with extra small-to-mid cams and slings for improvised gear anchors rather than relying on fixed protection."
+  },
+  {
+    "id": "wa_spinnaker_peak_s_route",
+    "name": "South Slopes Scramble",
+    "area_id": "wa_spinnaker_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "Ice axe (needed for the Point 5261 ridge variant; not strictly required for the direct col route)",
+      "Snowshoes for winter/spring approach through the basin",
+      "Map, compass/GPS — route is entirely off-trail"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spire_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_spire_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "helmet",
+      "rope optional for the summit blocks",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "No rack needed for a typical ascent — a short hand line or a light 30m rope is enough to protect the one Class 5 step near 6,100 ft."
+  },
+  {
+    "id": "wa_spire_point_southwest_face",
+    "name": "Southwest Face",
+    "area_id": "wa_spire_point",
+    "discipline": "alpine",
+    "grade": "Grade II-III, 5.6",
+    "gear": [
+      "Helmet",
+      "Two 60m ropes (or one 60m doubled) for the summit rappels",
+      "Light rack of small-to-medium cams/nuts plus slings for rap-anchor building",
+      "Ice axe (crampons if lingering snow) for the Itswoot Ridge/Cub Lake approach in June-early July"
+    ],
+    "pro_needs": "Light gear only — the technical difficulty is short (5.6) and mostly about managing exposure and loose rock rather than sustained protection; a few cams/nuts and sling material for rappel anchors is sufficient."
+  },
+  {
+    "id": "wa_spontaneity_arete",
+    "name": "Spontaneity Arete",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spontaneous_distraction",
+    "name": "Spontaneous Distraction",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_spraying_mantis",
+    "name": "Spraying Mantis",
+    "area_id": "wa_sofa_king_buttress",
+    "discipline": "alpine",
+    "grade": "5.10b/c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_stanley_burgner",
+    "name": "Stanley-Burgner",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_star_peak_sawtooth_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_star_peak_sawtooth",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Helmet (loose rock near the summit)",
+      "Trekking poles (extended scree/talus travel)",
+      "Map/compass or GPS track (route above Star Lake is unmaintained/off-trail)",
+      "Bear-resistant food storage (wilderness requirement)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_summit_chief_mountain_south_route",
+    "name": "South Route",
+    "area_id": "wa_summit_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "Ice axe",
+      "Crampons (early-season snow/ice in the approach gully)",
+      "Helmet (loose rock on the face and summit gullies)",
+      "Trekking poles for the long approach and stream crossings"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_switchback_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_switchback_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": "Unroped class 2-3 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_table_mountain_standard_scramble",
+    "name": "Table Mountain Trail (Standard)",
+    "area_id": "wa_table_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "hiking boots",
+      "ice axe (early season)",
+      "microspikes (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_tailgunner_peak_w_route",
+    "name": "West Ridge Scramble",
+    "area_id": "wa_tailgunner",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "gear": [
+      "ice axe",
+      "crampons (early season)",
+      "helmet",
+      "30m rope for occasional short rappel",
+      "slings"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_cave_route",
+    "name": "The Cave Route",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8 R",
+    "gear": [
+      "standard rack to 3 in",
+      "stoppers",
+      "slings (expect sparse to nonexistent placements at the crux)"
+    ],
+    "pro_needs": "Marginal to nonexistent protection at the crux highstep; not a route to rely on gear."
+  },
+  {
+    "id": "wa_the_chalice",
+    "name": "The Chalice",
+    "area_id": "wa_silver_horn_the",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_chopping_block_south_route",
+    "name": "South Route",
+    "area_id": "wa_the_chopping_block",
+    "discipline": "alpine",
+    "grade": "Grade II-III, 5.4",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "helmet"
+    ],
+    "pro_needs": "A light alpine rack sufficient for scattered low-5th-class rock protection (the terrain is closer to 3rd/4th class scrambling with a short 5.4 crux) plus rappel gear for the descent; exact route-specific rack recommendations were not found for this named line."
+  },
+  {
+    "id": "wa_the_devils_club",
+    "name": "The Devils Club",
+    "area_id": "wa_southeast_mox_peak",
+    "discipline": "alpine",
+    "grade": "5.11",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_direct_north_ridge_w_gendarme",
+    "name": "The Direct North Ridge w/ Gendarme",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_fin_scramble",
+    "name": "Sawtooth Range Scramble",
+    "area_id": "wa_the_fin",
+    "discipline": "scrambling",
+    "grade": "5.4",
+    "gear": [
+      "Standard trad rack to ~3\" plus a few small pins/nuts for thin approach moves",
+      "Single 60m rope typical for the tower itself; parties continuing along the ridge often carry two ropes",
+      "Extra webbing/cord for rappel anchors — little to no fixed gear on Sawtooth Ridge"
+    ],
+    "pro_needs": "Medium trad rack (small to ~3\"), a few small pins/nuts, and extra sling/cord material — anchors on Sawtooth Ridge are almost entirely slung horns and blocks rather than bolts or fixed rap rings."
+  },
+  {
+    "id": "wa_the_hitchhiker",
+    "name": "The Hitchhiker",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_horn_scramble",
+    "name": "Sawtooth Range Scramble",
+    "area_id": "wa_the_horn",
+    "discipline": "scrambling",
+    "grade": "5.5 R",
+    "gear": [
+      "Rack to 3 inches (doubles in common finger/hand sizes useful)",
+      "A few small pitons and tat/cord for aging fixed anchors",
+      "Two ropes, for a double-rope rappel off the summit notch",
+      "Helmet — loose rock increases in frequency near Sawtooth Pass",
+      "Full overnight backpacking kit — the approach is a multi-day undertaking, not a day trip"
+    ],
+    "pro_needs": "Rack to 3in; both the SE and SW routes are R-rated (runout/sparsely protected), so plan on a mix of small-to-medium cams/nuts plus a few pitons and tat for anchors — this is not a well-protected or bolted route."
+  },
+  {
+    "id": "wa_the_incisor_scramble",
+    "name": "The Needles Scramble",
+    "area_id": "wa_the_incisor",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "Helmet",
+      "Bear canister",
+      "30m rope (optional, for exposed sections)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_monk_le_gibet",
+    "name": "The Monk - Le Gibet",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_monk_odine",
+    "name": "The Monk - Odine",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_monk_scabo",
+    "name": "The Monk - Scabo",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_monk_west_cracks_left_crack",
+    "name": "The Monk - West Cracks - Left Crack",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_monk_west_cracks_right_crack",
+    "name": "The Monk - West Cracks - Right Crack",
+    "area_id": "wa_cathedral_peak_pasayten",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_pillar_under_pale_streaks",
+    "name": "The Pillar Under Pale Streaks",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.10c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_pleiades_scramble",
+    "name": "Glacier/Scramble Route",
+    "area_id": "wa_the_pleiades",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "gear": [
+      "Helmet (mandatory given rockfall risk)",
+      "30-40m rope and a few slings for Peak 1's short roped section",
+      "Sturdy boots with good edging for scree and rock",
+      "Trekking poles for the scree slopes below High Pass"
+    ],
+    "pro_needs": "This is a scramble, not a technical rock route — no traditional rack needed. Bring a single 30-40m rope and a few slings/rap rings for the short roped section most parties end up using on Peak 1 (the hardest, westernmost peak); the other peaks are typically climbed unroped by confident, rope-experienced scramblers in dry conditions."
+  },
+  {
+    "id": "wa_the_rake_traverse_route",
+    "name": "Ridge Traverse Route",
+    "area_id": "wa_the_rake",
+    "discipline": "alpine",
+    "grade": "IV, 5.9",
+    "gear": [
+      "alpine rock rack",
+      "rope",
+      "ice axe",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_the_roof",
+    "name": "The Roof",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "gear": [
+      "30-35m rope",
+      "slings/runners",
+      "small-to-mid cams and nuts"
+    ],
+    "pro_needs": "Small rack (nuts/small-mid cams) plus slings for natural anchors; helmet recommended given loose rock near the top of the block."
+  },
+  {
+    "id": "wa_the_west_face",
+    "name": "The West Face",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "gear": [
+      "Doubles from 0.1\"-3\"",
+      "Consider triples of finger/tips-size cams if climbing near your limit",
+      "Small wires/stoppers useful on the crux and upper pitches"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_three_fingers_r1",
+    "name": "North Peak (Lookout route)",
+    "area_id": "wa_three_fingers",
+    "discipline": "scrambling",
+    "grade": "Class 4 (5.4 var.)",
+    "gear": [
+      "Rope and a small rack (slings, small cams/nuts) for the chimney and rappels",
+      "Ice axe and crampons for the glacier approach",
+      "Extra webbing for building 2 rappel anchors",
+      "Helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_tooth_and_claw",
+    "name": "Tooth and Claw",
+    "area_id": "wa_lexington_tower",
+    "discipline": "alpine",
+    "grade": "5.12a",
+    "gear": [
+      "doubles rack to 0.75\" cams",
+      "single #1, #2, and #3 cams",
+      "70 m lead line and 70 m tag line recommended for both the route and the rap descent"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_top_gun",
+    "name": "Top Gun",
+    "area_id": "wa_north_side",
+    "discipline": "alpine",
+    "grade": "5.10a/b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_tower_arete",
+    "name": "Tower Arete",
+    "area_id": "wa_north_face_tiffany_mountain",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_traverse_of_mount_index",
+    "name": "Traverse of Mount Index",
+    "area_id": "wa_north_peak_2",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_treen_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_treen_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Ice axe",
+      "Crampons (seasonal)",
+      "Map/compass or GPS track",
+      "Sturdy scrambling boots"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_tupshin_peak_scramble",
+    "name": "South Ridge",
+    "area_id": "wa_tupshin_peak",
+    "discipline": "scrambling",
+    "grade": "Class 4 / low 5th",
+    "gear": [
+      "Helmet (loose rock/rockfall is a real hazard on the summit pyramid)",
+      "30 m rope for rappelling the crux and upper pyramid",
+      "Light rack (a few small cams/nuts) for optional protection on the crux",
+      "Sturdy brush pants/long sleeves and gaiters for the Bird Creek bushwhack"
+    ],
+    "pro_needs": "A short rope and a light rack are advisable for the exposed class 4 / low-5th crux; many parties belay the steepest step."
+  },
+  {
+    "id": "wa_tye_peak_e_route",
+    "name": "East Slopes Scramble",
+    "area_id": "wa_tye_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "trekking poles",
+      "ice axe early season"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unicorn_peak_r1",
+    "name": "Snow Lake / Unicorn Creek approach",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4 summit block",
+    "gear": [
+      "ice axe",
+      "helmet",
+      "short rope for summit block"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_union_peak_se_route",
+    "name": "Southeast Slopes Scramble",
+    "area_id": "wa_union_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "trekking poles",
+      "ice axe early season"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unknown_climb_up_the_castle",
+    "name": "Unknown Climb Up the Castle",
+    "area_id": "wa_dikes_the",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unnamed_2",
+    "name": "Unnamed  2",
+    "area_id": "wa_spire_gully_right_alpenkuhl",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unnamed_3",
+    "name": "Unnamed  3",
+    "area_id": "wa_spire_gully_right_alpenkuhl",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unnamed_4",
+    "name": "Unnamed  4",
+    "area_id": "wa_spire_gully_right_alpenkuhl",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unnamed_5",
+    "name": "Unnamed  5",
+    "area_id": "wa_spire_gully_right_alpenkuhl",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_unnamed_6",
+    "name": "Unnamed 6",
+    "area_id": "wa_spire_gully_right_alpenkuhl",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_upper_north_ridge_w_great_gendarme",
+    "name": "Upper North Ridge w/Great Gendarme",
+    "area_id": "wa_mount_stuart",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_vanishing_point",
+    "name": "Vanishing Point",
+    "area_id": "wa_dolomite_tower",
+    "discipline": "alpine",
+    "grade": "5.12b",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_wallaby_peak_standard",
+    "name": "Standard Route / Southwest Side",
+    "area_id": "wa_wallaby_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "Helmet — repeatedly called out in trip reports for the loose summit gully",
+      "Sturdy boots with good edging/traction for scree, slab, and blocky rock",
+      "Trekking poles, useful for the loose scree on the descent"
+    ],
+    "pro_needs": "Predominantly Class 3-4 scrambling; a short rope and minimal protection handle the exposed summit moves."
+  },
+  {
+    "id": "wa_washington_ellinor_traverse_ridge",
+    "name": "Washington Ellinor Traverse (Ridge)",
+    "area_id": "wa_mount_washington_olympic",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "gear": [
+      "Helmet (loose rock throughout, especially at the crux gendarme downclimb)",
+      "Sturdy approach shoes/boots suitable for exposed Class 4/low-5th scrambling",
+      "Some parties carry a short hand line or a few slings to protect the loose crux downclimb",
+      "3+ liters of water and a headlamp for a long traverse day"
+    ],
+    "pro_needs": "No fixed protection on route; a short handline or a few slings are sometimes used by parties to protect the loose crux gendarme downclimb, but the traverse is typically done unroped by experienced parties in dry conditions."
+  },
+  {
+    "id": "wa_west_face",
+    "name": "West Face",
+    "area_id": "wa_south_peak",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_west_face_2",
+    "name": "West Face",
+    "area_id": "wa_north_peak",
+    "discipline": "alpine",
+    "grade": "5.11+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_west_ridge_2",
+    "name": "West Ridge",
+    "area_id": "wa_paisano_pinnacle",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_west_ridge_4",
+    "name": "West Ridge",
+    "area_id": "wa_south_twin",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_west_ridge_5",
+    "name": "West Ridge",
+    "area_id": "wa_north_twin",
+    "discipline": "alpine",
+    "grade": "4th",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_whistler_mountain_scramble",
+    "name": "Southeast Slopes / Standard Scramble",
+    "area_id": "wa_whistler_mountain_okanogan",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "gear": [
+      "ice axe (early season)",
+      "helmet",
+      "sturdy boots"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_white_mountain_olympics_scramble",
+    "name": "White Mountain Scramble",
+    "area_id": "wa_white_mountain_olympics",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "helmet",
+      "ice axe (early season)"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_wild_wild_west",
+    "name": "Wild Wild West",
+    "area_id": "wa_west_face_6",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_wilmans_peak_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_wilmans_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "gear": [
+      "ice axe (early season)",
+      "helmet"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_windy_peak_trail",
+    "name": "Windy Peak Trail (Standard Walk-up)",
+    "area_id": "wa_windy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 1 (trail)",
+    "gear": [
+      "trekking poles",
+      "layers for the exposed, often windy summit ridge",
+      "map & compass or GPS (trail junctions among the Long Swamp/Windy Creek/Iron Gate options can be confusing)",
+      "insect repellent (mosquitoes are heavy in the burned/regrowth sections early season)"
+    ],
+    "pro_needs": "None — this is a non-technical maintained-trail walk-up. No climbing gear required."
+  },
+  {
+    "id": "wa_wings",
+    "name": "Wings",
+    "area_id": "wa_steeple_rock",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "gear": [
+      "Standard trad rack (small-to-mid stoppers and cams)",
+      "Helmet — loose rock reported above the first belay"
+    ],
+    "pro_needs": null
+  },
+  {
+    "id": "wa_with_love_lie_ancients_nestled_within",
+    "name": "With Love Lie Ancients Nestled Within",
+    "area_id": "wa_east_face",
+    "discipline": "alpine",
+    "grade": "5.10c",
+    "gear": null,
+    "pro_needs": null
+  },
+  {
+    "id": "wa_wolframite_mountain_scramble",
+    "name": "Standard Scramble",
+    "area_id": "wa_wolframite_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "gear": [
+      "Bear canister or hang system for food storage",
+      "Water treatment (last reliable water is generally at creek crossings well below the summit)",
+      "Green Trails Map #20 (Coleman Peak, WA) and compass/GPS for the off-trail summit slopes",
+      "Sturdy boots for talus/scree",
+      "Layers for sudden alpine weather, even in summer"
+    ],
+    "pro_needs": "Easy class 2 scramble; no technical gear normally required."
+  },
+  {
+    "id": "wa_you_moss_be_joking",
+    "name": "You Moss Be Joking",
+    "area_id": "wa_mossy_loaf",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "gear": null,
+    "pro_needs": null
+  }
+]
