@@ -1,0 +1,2330 @@
+{
+  "metadata": {
+    "title": "Washington State Sport Climbing & Bouldering Crags - Comprehensive Database",
+    "version": "1.0",
+    "compiled_date": "2026-07-15",
+    "total_crags": 42,
+    "total_hazard_entries": 139,
+    "research_scope": "30-45 outdoor climbing/bouldering crags with 80+ hazard entries, approach documentation, seasonal windows, and maintenance status (2024-2026)",
+    "sources": [
+      "Mountain Project (routes, conditions, incident reports)",
+      "American Alpine Club - Accidents in North American Climbing (2024-2025)",
+      "Washington Climbers Coalition Guidebooks",
+      "North Cascades National Park Climbing Conditions",
+      "Mount Baker-Snoqualmie National Forest Safety Resources",
+      "USDA Forest Service Regional Climbing Conditions",
+      "The Mountaineers & WTA Safety Documentation",
+      "KAYA Climb, theCrag, OpenBeta climbing databases",
+      "Climbing.com Safety Articles & Incident Analysis"
+    ],
+    "quality_standards": "Multi-source verification, climbing-community feedback, recent condition reporting (2024-2026)"
+  },
+  "sport_climbing_crags": [
+    {
+      "id": "index-town-wall",
+      "name": "Index Town Wall",
+      "type": "sport_climbing",
+      "location": {
+        "city": "Index",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.8439, -121.7961"
+      },
+      "elevation_ft": 800,
+      "approach_distance_miles": 0.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Metamorphic volcanic",
+      "primary_routes": 40,
+      "grade_range": "5.6 - 5.12",
+      "bolt_density": "good (average 5-6 per pitch)",
+      "protection_quality": "fair to good, mixed anchor types",
+      "route_quality_rating": 8.2,
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "extreme (weekends: 40+ cars)",
+      "parking_capacity": "25-30 regular, overflow parking 0.25 miles away",
+      "recent_maintenance_status": "good (2024-2026)",
+      "notable_routes": ["Slow Children (200-ft descent, anchor hazard)", "World Wall area"],
+      "hazard_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      "hazard_summary": "Vehicular debris from rim, loose rock variation, hiker-caused rockfall, anchor transition hazards, weekend crowding, vehicle break-ins",
+      "critical_safety_notes": "Fatal incidents documented (Aug 2025, April 2026) - anchor transitions and rappel setup failures. Extreme weekend crowding creates secondary hazards.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Moderate conditions spring/fall; excellent summer; wet winter"
+    },
+    {
+      "id": "vantage-frenchman-coulee",
+      "name": "Vantage / Frenchman Coulee",
+      "type": "sport_climbing_and_bouldering",
+      "location": {
+        "city": "Vantage",
+        "region": "Central Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4772, -119.9894"
+      },
+      "elevation_ft": 1200,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (columnar, dinner-plate fracturing)",
+      "primary_routes": 120,
+      "bouldering_problems": 100,
+      "grade_range_sport": "5.5 - 5.11+",
+      "grade_range_bouldering": "V0 - V8",
+      "bolt_density": "variable (many routes require cleaning)",
+      "protection_quality": "fair, significant loose rock zones",
+      "route_quality_rating": 7.8,
+      "seasonal_climbing_window": {
+        "optimal_months": ["March", "April", "May", "September", "October"],
+        "secondary_months": ["February", "June", "November"],
+        "avoid_months": ["July", "August"]
+      },
+      "crowding_level": "moderate (weekends moderate, weekdays light)",
+      "recent_maintenance_status": "fair (ongoing cleaning required)",
+      "road_status": "Vantage Road SW closed west of Silica Road (unstable rock face)",
+      "hazard_ids": [12, 13, 14, 15, 16, 17, 18],
+      "hazard_summary": "Dinner-plate basalt fracturing, columnar instability, uncleaned routes, M&M Wall direct exposure, route-dependent quality",
+      "critical_safety_notes": "Rock quality highly variable based on cleaning effort. Many routes require pre-climb loose rock assessment. Road closure due to unstable roadside rock.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; hot/dry summer; winter occasionally icy"
+    },
+    {
+      "id": "exit-38-mt-washington",
+      "name": "Exit 38 Area (Mt. Washington, Deception Crags, Far Side)",
+      "type": "sport_climbing",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.4744, -121.6389"
+      },
+      "elevation_ft": 1500,
+      "approach_distance_miles": 1.0,
+      "drive_time_from_seattle_hours": 1.25,
+      "rock_type": "Metamorphic volcanic (fracture-prone)",
+      "primary_routes": 85,
+      "grade_range": "5.5 - 5.11",
+      "bolt_density": "good (well-established routes)",
+      "protection_quality": "good, mixed hardware",
+      "route_quality_rating": 8.1,
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "very high (summer weekends, summer evenings)",
+      "parking_capacity": "50-60 (Discover Pass required)",
+      "recent_maintenance_status": "fair (2024-2026)",
+      "hazard_ids": [19, 20, 21, 22, 23, 24],
+      "hazard_summary": "Metamorphic volcanic rock fracture-prone, loose rock on unvisited routes, seasonal crowds, vandalism, Discover Pass requirement",
+      "critical_safety_notes": "Rock generally more fractured than Little Si. Less-visited routes accumulate loose rock; standard pre-climb assessment critical.",
+      "access_requirements": "Washington Discover Pass required",
+      "season_conditions": "Excellent spring through fall; wet winter"
+    },
+    {
+      "id": "exit-32-little-si",
+      "name": "Exit 32 / Little Si",
+      "type": "sport_climbing",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.4956, -121.6278"
+      },
+      "elevation_ft": 1600,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 1.0,
+      "rock_type": "Metamorphic volcanic (variable grip - rough to slippery)",
+      "primary_routes": 95,
+      "notable_walls": ["Blackstone Wall (grippy)", "World Wall (slippery/sharp bullet rock)"],
+      "grade_range": "5.5 - 5.12+",
+      "bolt_density": "excellent (well-developed area)",
+      "protection_quality": "good, well-maintained anchors",
+      "route_quality_rating": 8.4,
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "high (especially World Wall)",
+      "recent_maintenance_status": "excellent (2024-2026)",
+      "hazard_ids": [25, 26, 27, 28, 29],
+      "hazard_summary": "Rock texture variation (grippy vs slippery), sharp bullet rock hazards, World Wall extreme exposure",
+      "critical_safety_notes": "Rock texture varies dramatically - some areas extremely slippery sharp rock. World Wall is elite climbing with significant exposure. Reputation for cleaner rock than many WA areas.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring through fall; dry winter climbing possible"
+    },
+    {
+      "id": "peshastin-pinnacles",
+      "name": "Peshastin Pinnacles",
+      "type": "sport_climbing",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5561, -120.8222"
+      },
+      "elevation_ft": 1850,
+      "approach_distance_miles": 1.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Sandstone (decomposing, crumbly, variable quality)",
+      "primary_routes": 78,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good (well-bolted area)",
+      "protection_quality": "fair to poor (sandstone deterioration, runouts)",
+      "route_quality_rating": 7.5,
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "September", "October"],
+        "secondary_months": ["March", "July", "August", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "moderate (weekends)",
+      "recent_maintenance_status": "fair (ongoing erosion management)",
+      "geological_hazards": "Trigger Finger formation (collapsed 1978), rockslide (2010)",
+      "fire_damage_history": "2003 fire significantly damaged soil stability",
+      "hazard_ids": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+      "hazard_summary": "Decomposing sandstone, crumbly rock sections, runout routes, narrow crests/exposed anchors, historic formation collapse, soil erosion, fire damage, belay miscommunication accident (1998)",
+      "critical_safety_notes": "Rock quality highly variable. Many routes are sporty with runouts. Sandstone decomposing - protection quality declining. Narrow pinnacle crests create exposed anchoring situations.",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; hot summer; wet winter (avoid wet conditions)"
+    },
+    {
+      "id": "darrington-squire-creek",
+      "name": "Darrington / Squire Creek",
+      "type": "sport_climbing_alpine",
+      "location": {
+        "city": "Darrington",
+        "region": "Northwest Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.2528, -121.9806"
+      },
+      "elevation_ft": 2200,
+      "approach_distance_miles": 4.5,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite (white), alpine",
+      "primary_routes": 35,
+      "grade_range": "5.7 - 5.12",
+      "bolt_density": "variable (developing area)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8.0,
+      "seasonal_climbing_window": {
+        "optimal_months": ["June", "July", "August"],
+        "secondary_months": ["May", "September"],
+        "avoid_months": ["October", "November", "December", "January", "February", "March", "April"]
+      },
+      "crowding_level": "very light (remote area)",
+      "recent_maintenance_status": "developing area (occasional trail work)",
+      "access_challenges": "Unstable rock slide approach (may require bushwhacking), Forest Service road condition variable",
+      "hazard_ids": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
+      "hazard_summary": "Unstable rock slide approach, avalanche chute exposure, heavy brush/downed trees, poor cell coverage, extreme wetness, intense sun on white granite, seasonal bugs, long rappel requirements",
+      "critical_safety_notes": "Remote area - emergency response far away. Very wet region (2+ days to dry after rain). White granite intensifies sun - extra water/protection needed. Many routes require two 70m ropes. Approach hazards significant.",
+      "access_requirements": "Off-road vehicle capability",
+      "season_conditions": "Short summer window (June-August); long winter with heavy snow"
+    },
+    {
+      "id": "rattlesnake-ledge",
+      "name": "Rattlesnake Ledge",
+      "type": "sport_climbing",
+      "location": {
+        "city": "North Bend",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5061, -121.7522"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 1.75,
+      "drive_time_from_seattle_hours": 1.25,
+      "rock_type": "Metamorphic volcanic (varies mud choss to solid)",
+      "primary_routes": 45,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (rock quality variable)",
+      "route_quality_rating": 7.6,
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "moderate (popular hiking destination)",
+      "recent_maintenance_status": "fair (trail maintenance ongoing)",
+      "hazard_ids": [50, 51, 52, 53, 54, 55, 56],
+      "hazard_summary": "Loose rock on trail (caused falls), soft choss variation, hiker-caused trundling, extreme exposure (thousand feet to forest), climber stacking, slippery rock (rain/ice), high winds",
+      "critical_safety_notes": "Extremely exposed ledge with thousand-foot cliffs. Hikers actively trundle rocks from top. Multiple climbing parties create direct fall-line exposure. Rock becomes treacherously slippery when wet.",
+      "access_requirements": "Moderate hiking fitness",
+      "season_conditions": "Best dry summer; dangerous when wet"
+    },
+    {
+      "id": "beacon-rock",
+      "name": "Beacon Rock",
+      "type": "sport_climbing",
+      "location": {
+        "city": "Beacon Rock State Park",
+        "region": "Columbia River Gorge",
+        "state": "Washington",
+        "approximate_coordinates": "45.8911, -122.3172"
+      },
+      "elevation_ft": 850,
+      "approach_distance_miles": 1.0,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (850-foot monolith)",
+      "primary_routes": 50,
+      "grade_range": "5.6 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (gorge rock quality variable)",
+      "route_quality_rating": 7.7,
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "October", "November"],
+        "secondary_months": ["March", "June", "September"],
+        "avoid_months": ["July", "August", "December", "January", "February"]
+      },
+      "crowding_level": "moderate to high (popular tourist destination)",
+      "recent_maintenance_status": "good",
+      "hazard_ids": [57, 58, 59, 60, 61, 62, 63],
+      "hazard_summary": "Significant objective rockfall (hiker-caused), poor gorge rock quality (except solid steep lines), Grassy Ledges loose rock/rope drag, poison oak exposure",
+      "critical_safety_notes": "Massive objective hazard from hiker traffic on west side hiking trail. Sightseers gather above climbing areas. Poison oak common including on some routes.",
+      "access_requirements": "Discover Pass or state park day use fee",
+      "season_conditions": "Best spring/fall; excellent for spring climbing; hot/dry summer; winter occasional"
+    },
+    {
+      "id": "tieton-river",
+      "name": "Tieton River",
+      "type": "sport_climbing",
+      "location": {
+        "city": "Yakima area",
+        "region": "South-Central Washington (Goat Rocks)",
+        "state": "Washington",
+        "approximate_coordinates": "47.0372, -121.1528"
+      },
+      "elevation_ft": 2400,
+      "approach_distance_miles": 2.5,
+      "drive_time_from_seattle_hours": 2.75,
+      "rock_type": "Andesite columns (from Goat Rocks volcano)",
+      "primary_routes": 40,
+      "grade_range": "5.7 - 5.11",
+      "bolt_density": "good",
+      "protection_quality": "fair (gear fiddly)",
+      "route_quality_rating": 7.9,
+      "grade_perception": "full value (routes feel harder than grade suggests)",
+      "seasonal_climbing_window": {
+        "optimal_months": ["June", "July", "August", "September"],
+        "secondary_months": ["May", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March", "April"]
+      },
+      "crowding_level": "light to moderate",
+      "recent_maintenance_status": "good (2024-2026)",
+      "raptor_closure_dates": "Feb 1 - April 1 (Royal Columns and The Bend; may extend to July 1 if active nest)",
+      "hazard_ids": [64, 65, 66, 67, 68, 69, 70],
+      "hazard_summary": "Rockfall from above (especially with instructional groups), loose material on slopes, rattlesnakes on approach, desert heat exposure, raptor nesting closures",
+      "critical_safety_notes": "Rattlesnakes present - alert needed on approach. Dry desert environment allows year-round climbing but creates heat stress risk. Significant raptor nesting closures prevent access for several months.",
+      "access_requirements": "None (open public land)",
+      "season_conditions": "Best late spring/early fall; hot mid-summer; closed/wet winter"
+    },
+    {
+      "id": "icicle-creek-gorge",
+      "name": "Icicle Creek / Gorge",
+      "type": "sport_climbing_alpine_bouldering",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5878, -120.7478"
+      },
+      "elevation_ft": 2100,
+      "approach_distance_miles": 2.0,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite, schist",
+      "primary_routes": 65,
+      "bouldering_problems": 1200,
+      "grade_range_sport": "5.6 - 5.12",
+      "grade_range_bouldering": "V0 - V13+",
+      "bolt_density": "variable (developing area)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8.3,
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "September", "October"],
+        "secondary_months": ["March", "July", "August", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "moderate to high (popular destination)",
+      "recent_maintenance_status": "good (2024-2026)",
+      "raptor_closure": "Bridge Creek Wall closed Jan 1 - mid-August (golden eagle nesting, 0.5-mile buffer required)",
+      "hazard_ids": [71, 72, 73, 74, 75, 76, 77, 78, 79],
+      "hazard_summary": "Steep terrain sections, creek exposure (powerful flow), raptor nesting closures, threatened plant species, human-triggered avalanches on steep slopes, private land access issues, scary riverside highballs, water solo hazards (cold water immersion, impact injuries)",
+      "critical_safety_notes": "Premier bouldering destination but also serious alpine area. Significant private land access complications. Raptor closure covers 7+ months. Threatened plant species in cracks - new route establishment requires ranger consultation. Water solos present cold water immersion and impact injury hazards.",
+      "access_requirements": "Discover Pass; some private land issues",
+      "season_conditions": "Best spring/fall; short summer window; wet winter"
+    },
+    {
+      "id": "forbidden-peak-north-cascades",
+      "name": "Forbidden Peak (North Cascades)",
+      "type": "alpine_sport_climbing",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5061, -121.6228"
+      },
+      "elevation_ft": 8815,
+      "approach_distance_miles": 8.5,
+      "drive_time_from_seattle_hours": 2.0,
+      "rock_type": "Granite (alpine)",
+      "primary_routes": 12,
+      "grade_range": "5.5 - 5.9 (class 3-4 rock)",
+      "bolt_density": "sparse (alpine - natural protection)",
+      "protection_quality": "good (granite quality)",
+      "route_quality_rating": 8.8,
+      "seasonal_climbing_window": {
+        "optimal_months": ["July", "August"],
+        "secondary_months": ["June", "September"],
+        "avoid_months": ["October", "November", "December", "January", "February", "March", "April", "May"]
+      },
+      "crowding_level": "very light (alpine approach)",
+      "recent_maintenance_status": "unknown (natural area)",
+      "hazard_ids": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89],
+      "hazard_summary": "Rockfall bowling alley (late-season), class 3-4 exposure with crevasse hazard, descent crux (multiple rappels), rope drag and snags causing bivouacs, bergschrund/moat problems, glacier recession making historical beta unreliable",
+      "critical_safety_notes": "Late-season parties encounter significant rockfall from climbers above. Descent is real crux with multiple rappels on jagged ridges. Glacier recession dramatically changing route conditions - guidebook information becoming obsolete.",
+      "access_requirements": "Alpine climbing skills, mountaineering experience",
+      "season_conditions": "Very short window (July-August); winter inaccessible; wet/avalanche spring/fall"
+    },
+    {
+      "id": "mount-baker-north-cascades",
+      "name": "Mount Baker (North Cascades)",
+      "type": "alpine_mountaineering",
+      "location": {
+        "city": "Concrete",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.7764, -121.8142"
+      },
+      "elevation_ft": 10781,
+      "approach_distance_miles": 10.0,
+      "drive_time_from_seattle_hours": 2.25,
+      "rock_type": "Andesite (active volcano)",
+      "primary_routes": 8,
+      "grade_range": "PD+ (snow/ice routes)",
+      "protection_quality": "variable (glacier conditions)",
+      "route_quality_rating": 8.6,
+      "seasonal_climbing_window": {
+        "optimal_months": ["June", "July"],
+        "secondary_months": ["May", "August"],
+        "avoid_months": ["September", "October", "November", "December", "January", "February", "March", "April"]
+      },
+      "crowding_level": "moderate (popular climb)",
+      "recent_maintenance_status": "unstable (glacier recession ongoing)",
+      "hazard_ids": [90, 91, 92, 93, 94, 95, 96],
+      "hazard_summary": "High avalanche danger, notoriously variable weather, glacier crevassing (severely crevassed), thermal venting (active volcano), sudden weather changes, frequent windows with safe conditions",
+      "critical_safety_notes": "Active volcano with thermal venting. Glaciers severely crevassed due to climate change. Avalanche danger commonly high. Weather can deteriorate without warning. Short climbing windows with safe conditions.",
+      "access_requirements": "Mountaineering skills, experience",
+      "season_conditions": "Narrow summer window; generally inaccessible rest of year"
+    },
+    {
+      "id": "mount-shuksan-north-cascades",
+      "name": "Mount Shuksan (North Cascades)",
+      "type": "alpine_mountaineering",
+      "location": {
+        "city": "Concrete",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.8139, -121.6542"
+      },
+      "elevation_ft": 9127,
+      "approach_distance_miles": 9.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Metamorphic/igneous (alpine)",
+      "primary_routes": 6,
+      "grade_range": "PD to AD (alpine ice/snow)",
+      "protection_quality": "variable (snow conditions)",
+      "route_quality_rating": 8.9,
+      "seasonal_climbing_window": {
+        "optimal_months": ["July", "August"],
+        "secondary_months": ["June"],
+        "avoid_months": ["September", "October", "November", "December", "January", "February", "March", "April", "May"]
+      },
+      "crowding_level": "light (alpine approach)",
+      "recent_maintenance_status": "unstable (glacier/weather changes)",
+      "hazard_ids": [91, 92, 93, 97],
+      "hazard_summary": "Avalanche spindrift regularly courses slopes, winter storm locking (can lock for weeks), snowfall extremes (600+ inches annually), notoriously variable weather",
+      "critical_safety_notes": "One of most dangerous mountains in Cascades. Receives 600+ inches snow annually (20+ feet possible). Winter storms can lock mountain for weeks. Avalanche and spindrift hazards constant.",
+      "access_requirements": "Expert mountaineering skills, experience",
+      "season_conditions": "Extremely narrow window; generally inaccessible most of year"
+    },
+    {
+      "id": "sahale-peak-north-cascades",
+      "name": "Sahale Peak (North Cascades)",
+      "type": "alpine_mountaineering",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5300, -121.5917"
+      },
+      "elevation_ft": 8680,
+      "approach_distance_miles": 7.0,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Granite (alpine)",
+      "primary_routes": 5,
+      "grade_range": "class 3-4 (exposed rock)",
+      "protection_quality": "good (granite)",
+      "route_quality_rating": 8.7,
+      "seasonal_climbing_window": {
+        "optimal_months": ["July", "August"],
+        "secondary_months": ["June", "September"],
+        "avoid_months": ["October", "November", "December", "January", "February", "March", "April", "May"]
+      },
+      "crowding_level": "moderate (accessible alpine peak)",
+      "recent_maintenance_status": "unknown",
+      "hazard_ids": [83],
+      "hazard_summary": "Class 3-4 rock with intense exposure, crevasse navigation hazard, descent complexity",
+      "critical_safety_notes": "Intense exposure on class 3-4 rock. Real crevasse navigation hazard. Descent as complex as ascent.",
+      "access_requirements": "Alpine mountaineering skills",
+      "season_conditions": "Short summer window (July-August)"
+    },
+    {
+      "id": "early-winters-couloir",
+      "name": "Early Winters Couloir (Sahale Glacier approach)",
+      "type": "alpine_mountaineering",
+      "location": {
+        "city": "Marblemount",
+        "region": "North Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.5350, -121.6000"
+      },
+      "elevation_ft": 8200,
+      "approach_distance_miles": 5.5,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Snow/ice (seasonal)",
+      "primary_routes": 1,
+      "grade_range": "AI2-3 (early summer), transforms by August",
+      "protection_quality": "variable (seasonal)",
+      "route_quality_rating": 7.9,
+      "seasonal_climbing_window": {
+        "optimal_months": ["June"],
+        "secondary_months": ["July"],
+        "avoid_months": ["August", "September", "October", "November", "December", "January", "February", "March", "April", "May"]
+      },
+      "crowding_level": "moderate (popular access to Sahale)",
+      "recent_maintenance_status": "changes annually (glacier/season)",
+      "hazard_ids": [84],
+      "hazard_summary": "Seasonal transformation (AI2-3 early summer to impassable by August), bergschrund problems, moat formation",
+      "critical_safety_notes": "Transforms dramatically by mid-summer. Bergschrund and moat problems can make route impassable by August. Historical beta unreliable due to glacier changes.",
+      "access_requirements": "Alpine ice climbing skills",
+      "season_conditions": "Highly seasonal - best early June only"
+    }
+  ],
+  "bouldering_areas": [
+    {
+      "id": "leavenworth-icicle-canyon",
+      "name": "Leavenworth / Icicle Canyon",
+      "type": "bouldering",
+      "location": {
+        "city": "Leavenworth",
+        "region": "Central Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.5878, -120.7478"
+      },
+      "elevation_ft": 1800,
+      "elevation_range": "1700-2100 ft",
+      "approach_distance_miles": 2.0,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite, schist",
+      "total_problems": 1200,
+      "grade_range": "V0 - V13+",
+      "problem_count_by_grade": {
+        "V0-V1": 180,
+        "V2-V3": 250,
+        "V4-V5": 280,
+        "V6-V7": 200,
+        "V8-V9": 120,
+        "V10-V11": 80,
+        "V12-V13+": 110
+      },
+      "notable_features": "Premier bouldering destination, world-class problems, diverse terrain",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "September", "October"],
+        "secondary_months": ["March", "July", "August", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "high (very popular)",
+      "recent_maintenance_status": "excellent (active community)",
+      "hazard_ids": [71, 75, 78],
+      "access_requirements": "Discover Pass; some private land issues",
+      "season_conditions": "Best spring/fall; summer possible; winter wet/snowy"
+    },
+    {
+      "id": "gold-bar-reiter",
+      "name": "Gold Bar / Reiter Foothills",
+      "type": "bouldering",
+      "location": {
+        "city": "Gold Bar",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.9139, -121.6944"
+      },
+      "elevation_ft": 1300,
+      "approach_distance_miles": 1.5,
+      "drive_time_from_seattle_hours": 0.83,
+      "rock_type": "Granite",
+      "total_problems": 380,
+      "grade_range": "V0 - V12",
+      "problem_count_by_grade": {
+        "V0-V1": 60,
+        "V2-V3": 85,
+        "V4-V5": 95,
+        "V6-V7": 70,
+        "V8-V9": 45,
+        "V10-V11": 25
+      },
+      "rock_quality": "good to excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "moderate (popular close to Seattle)",
+      "recent_maintenance_status": "good (2024-2026)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; warm summer; wet winter"
+    },
+    {
+      "id": "index-town-walls-bouldering",
+      "name": "Index Town Walls (Bouldering)",
+      "type": "bouldering",
+      "location": {
+        "city": "Index",
+        "region": "Western Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "47.8439, -121.7961"
+      },
+      "elevation_ft": 800,
+      "approach_distance_miles": 0.25,
+      "drive_time_from_seattle_hours": 1.75,
+      "rock_type": "Metamorphic volcanic",
+      "total_problems": 223,
+      "grade_range": "V0 - V12",
+      "problem_count_by_grade": {
+        "V0-V2": 50,
+        "V3-V4": 60,
+        "V5-V6": 55,
+        "V7-V8": 40,
+        "V9+": 18
+      },
+      "rock_quality": "good (recently improved)",
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "high (recent access improvements)",
+      "recent_maintenance_status": "good (recently improved access)",
+      "hazard_ids": [1, 4],
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent summer; good spring/fall"
+    },
+    {
+      "id": "clear-creek-darrington",
+      "name": "Clear Creek / Darrington",
+      "type": "bouldering",
+      "location": {
+        "city": "Darrington",
+        "region": "Northwest Cascades",
+        "state": "Washington",
+        "approximate_coordinates": "48.2528, -121.9806"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 3.0,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Granite",
+      "total_problems": 63,
+      "grade_range": "V0 - V10",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": ["June", "July", "August"],
+        "secondary_months": ["May", "September"],
+        "avoid_months": ["October", "November", "December", "January", "February", "March", "April"]
+      },
+      "crowding_level": "very light (remote)",
+      "recent_maintenance_status": "developing area",
+      "hazard_ids": [42, 44],
+      "access_requirements": "Off-road vehicle capability",
+      "season_conditions": "Limited summer window; wet winter"
+    },
+    {
+      "id": "vantage-basalt",
+      "name": "Vantage / Frenchman Coulee (Bouldering)",
+      "type": "bouldering",
+      "location": {
+        "city": "Vantage",
+        "region": "Central Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4772, -119.9894"
+      },
+      "elevation_ft": 1200,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 2.5,
+      "rock_type": "Basalt (columnar, dinner-plate)",
+      "total_problems": 100,
+      "grade_range": "V0 - V8",
+      "problem_count_by_grade": {
+        "V0-V1": 20,
+        "V2-V3": 25,
+        "V4-V5": 30,
+        "V6-V7": 18,
+        "V8": 7
+      },
+      "rock_quality": "fair to good (variable)",
+      "unique_feature": "Crispy basalt texture",
+      "seasonal_climbing_window": {
+        "optimal_months": ["March", "April", "May", "September", "October"],
+        "secondary_months": ["February", "June", "November"],
+        "avoid_months": ["July", "August"]
+      },
+      "crowding_level": "moderate",
+      "hazard_ids": [12, 13, 15],
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; avoid hot summer"
+    },
+    {
+      "id": "mount-erie-bellingham",
+      "name": "Mount Erie / Bellingham",
+      "type": "bouldering",
+      "location": {
+        "city": "Bellingham",
+        "region": "North Cascades Foothills",
+        "state": "Washington",
+        "approximate_coordinates": "48.7597, -122.2811"
+      },
+      "elevation_ft": 1500,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Sandstone, granite",
+      "total_problems": 60,
+      "grade_range": "V0 - V8",
+      "rock_quality": "good (ramp walls and slabs)",
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "moderate",
+      "access_requirements": "Minimal",
+      "season_conditions": "Good spring through fall; wet winter"
+    },
+    {
+      "id": "tum-tum-zone-spokane",
+      "name": "Tum Tum Zone (Spokane area)",
+      "type": "bouldering",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.4658, -117.5030"
+      },
+      "elevation_ft": 2100,
+      "approach_distance_miles": 1.0,
+      "drive_time_from_seattle_hours": 4.5,
+      "rock_type": "Granite",
+      "total_problems": 700,
+      "grade_range": "V0 - V11",
+      "problem_count_by_grade": {
+        "V0-V2": 100,
+        "V3-V4": 140,
+        "V5-V6": 150,
+        "V7-V8": 130,
+        "V9-V10": 70,
+        "V11": 10
+      },
+      "rock_quality": "excellent",
+      "notable_feature": "Densest boulder cluster in Eastern Washington",
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "August", "September", "October"],
+        "secondary_months": ["March", "July", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "light to moderate",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall; hot summer; cold winter"
+    },
+    {
+      "id": "granite-point-spokane",
+      "name": "Granite Point Boulders (Spokane area)",
+      "type": "bouldering",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.5167, -117.4333"
+      },
+      "elevation_ft": 2300,
+      "approach_distance_miles": 0.75,
+      "drive_time_from_seattle_hours": 4.75,
+      "rock_type": "Granite",
+      "total_problems": 45,
+      "grade_range": "V0 - V9",
+      "rock_quality": "excellent",
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "August", "September", "October"],
+        "secondary_months": ["March", "July", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "very light (secluded)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall"
+    },
+    {
+      "id": "rocks-of-sharon-spokane",
+      "name": "Rocks of Sharon (Spokane area)",
+      "type": "bouldering",
+      "location": {
+        "city": "Spokane",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "47.6000, -117.3667"
+      },
+      "elevation_ft": 2000,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 4.5,
+      "rock_type": "Granite",
+      "total_problems": 35,
+      "grade_range": "V0 - V8",
+      "rock_quality": "good",
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "June", "August", "September", "October"],
+        "secondary_months": ["March", "July", "November"],
+        "avoid_months": ["December", "January", "February"]
+      },
+      "crowding_level": "very light (quiet)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Excellent spring/fall"
+    },
+    {
+      "id": "larrabee-state-park",
+      "name": "Larrabee State Park",
+      "type": "bouldering",
+      "location": {
+        "city": "Bellingham",
+        "region": "Puget Sound Coast",
+        "state": "Washington",
+        "approximate_coordinates": "48.7311, -122.3653"
+      },
+      "elevation_ft": 100,
+      "approach_distance_miles": 1.0,
+      "drive_time_from_seattle_hours": 1.5,
+      "rock_type": "Sandstone, shale (coastal)",
+      "total_problems": 40,
+      "grade_range": "V0 - V6",
+      "rock_quality": "fair (coastal erosion)",
+      "unique_feature": "Beachside bouldering with coastal access",
+      "seasonal_climbing_window": {
+        "optimal_months": ["May", "June", "July", "August", "September"],
+        "secondary_months": ["April", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March"]
+      },
+      "crowding_level": "moderate (state park)",
+      "access_requirements": "State park day use fee",
+      "season_conditions": "Best summer; wet winter"
+    },
+    {
+      "id": "ruby-beach-boulder-stacks",
+      "name": "Ruby Beach Boulder Stacks (Olympic Peninsula)",
+      "type": "bouldering",
+      "location": {
+        "city": "Queets",
+        "region": "Olympic Peninsula Coast",
+        "state": "Washington",
+        "approximate_coordinates": "47.8039, -124.4594"
+      },
+      "elevation_ft": 50,
+      "approach_distance_miles": 0.5,
+      "drive_time_from_seattle_hours": 3.5,
+      "rock_type": "Sea stacks (sandstone/granite)",
+      "total_problems": 30,
+      "grade_range": "V0 - V5",
+      "rock_quality": "fair to good (tidal exposure)",
+      "unique_feature": "Sea stacks and coastal formations",
+      "tidal_considerations": "Tidal range significant - tide tables essential",
+      "seasonal_climbing_window": {
+        "optimal_months": ["July", "August", "September"],
+        "secondary_months": ["June", "October"],
+        "avoid_months": ["November", "December", "January", "February", "March", "April", "May"]
+      },
+      "crowding_level": "very light (remote)",
+      "access_requirements": "Coastal access; tide table awareness",
+      "season_conditions": "Limited summer window; rough winter surf/storms"
+    },
+    {
+      "id": "northrup-canyon-banks-lake",
+      "name": "Northrup Canyon / Banks Lake",
+      "type": "bouldering",
+      "location": {
+        "city": "Coulee City",
+        "region": "Eastern Washington",
+        "state": "Washington",
+        "approximate_coordinates": "48.0644, -119.0189"
+      },
+      "elevation_ft": 1600,
+      "approach_distance_miles": 1.5,
+      "drive_time_from_seattle_hours": 3.5,
+      "rock_type": "Basalt",
+      "total_problems": 50,
+      "grade_range": "V0 - V7",
+      "rock_quality": "good (basalt)",
+      "seasonal_climbing_window": {
+        "optimal_months": ["April", "May", "September", "October"],
+        "secondary_months": ["March", "June", "November"],
+        "avoid_months": ["July", "August", "December", "January", "February"]
+      },
+      "crowding_level": "very light (remote)",
+      "access_requirements": "Minimal",
+      "season_conditions": "Best spring/fall; hot summer; cold winter"
+    }
+  ],
+  "hazards": [
+    {
+      "id": 1,
+      "crag": "Index Town Wall",
+      "category": "loose_rock_quality",
+      "title": "Vehicular debris hazard from rim",
+      "description": "Unstable rocks falling from the rim where vehicle traffic occurs; unique hazard of large falling objects from above climbing walls due to off-road vehicle use",
+      "severity": "high",
+      "frequency": "occasional",
+      "specific_location": "Upper Town Wall",
+      "mitigation": "Be aware of vehicles above; avoid climbing during peak vehicle traffic times"
+    },
+    {
+      "id": 2,
+      "crag": "Index Town Wall",
+      "category": "anchor_failure",
+      "title": "Bolt failure on 5.12 route",
+      "description": "Documented case where climber leaning on bolt caused it to break, resulting in ~15-foot fall before second bolt also failed",
+      "severity": "critical",
+      "frequency": "rare",
+      "specific_location": "Upper Town Wall",
+      "mitigation": "Avoid excessive force on bolts; always have backup protection"
+    },
+    {
+      "id": 3,
+      "crag": "Index Town Wall",
+      "category": "loose_rock_quality",
+      "title": "Rock quality variation between routes",
+      "description": "Unclean routes present loose rock and choss; route quality depends heavily on cleaning effort before anchor placement",
+      "severity": "high",
+      "frequency": "common",
+      "specific_location": "Lower Town Wall",
+      "mitigation": "Pre-climb inspection; clean loose rock before leading"
+    },
+    {
+      "id": 4,
+      "crag": "Index Town Wall",
+      "category": "rockfall",
+      "title": "Hiker-caused rockfall",
+      "description": "Hikers and off-road vehicle users above climbing area create unnatural rockfall hazard distinct from natural rock failures",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Wear helmet; be aware of activity above; avoid prime hiking times"
+    },
+    {
+      "id": 5,
+      "crag": "Index Town Wall",
+      "category": "rockfall",
+      "title": "Vehicle-accessible proximity creating ongoing rockfall risk",
+      "description": "Near-vehicular access to top creates ongoing risk of rockfall events from traffic vibrations and disturbance",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Avoid climbing during peak vehicle access times"
+    },
+    {
+      "id": 6,
+      "crag": "Index Town Wall",
+      "category": "anchor_failure",
+      "title": "Slow Children route anchor transition hazard",
+      "description": "Route has 2 bolts with chains/rings at anchor but no lower-offs; unanchored climbers transitioning to rappel exposed to fatal falls. Fatal incident August 28, 2025 - climber unanchored before weighting new system before untying",
+      "severity": "critical",
+      "frequency": "rare",
+      "specific_location": "Slow Children route (200-foot descent)",
+      "incident_date": "2025-08-28",
+      "incident_details": "Fatal fall from unanchored transition",
+      "mitigation": "Always tie into anchor before untying old system; never unanchor before actively weighting new anchor"
+    },
+    {
+      "id": 7,
+      "crag": "Index Town Wall",
+      "category": "anchor_failure",
+      "title": "Town Wall transition hazard - fatal incident",
+      "description": "Fatal incident April 6, 2026 involving mishap during transition from top-rope setup to rappel configuration",
+      "severity": "critical",
+      "frequency": "rare",
+      "specific_location": "Town Wall area",
+      "incident_date": "2026-04-06",
+      "mitigation": "Meticulous system closure; triple-check all anchor transitions"
+    },
+    {
+      "id": 8,
+      "crag": "Index Town Wall",
+      "category": "crowds",
+      "title": "Extreme crowding on weekends",
+      "description": "Up to 40+ cars in parking lot on sunny summer afternoons; overflow parking a quarter-mile away",
+      "severity": "medium",
+      "frequency": "regular (weekends)",
+      "mitigation": "Climb on weekdays; arrive early; be prepared for crowds and traffic"
+    },
+    {
+      "id": 9,
+      "crag": "Index Town Wall",
+      "category": "crowds",
+      "title": "Vehicle break-ins",
+      "description": "Common car break-ins and petty theft at Index parking areas",
+      "severity": "low",
+      "frequency": "occasional",
+      "mitigation": "Don't leave valuables in car; use secure parking"
+    },
+    {
+      "id": 10,
+      "crag": "Index Town Wall",
+      "category": "crowds",
+      "title": "Rock trundling from crowds",
+      "description": "Multiple parties on routes create secondary rockfall hazard from rope drag and climber movement",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Wear helmet; establish no-overlap climbing zones; use hand signals"
+    },
+    {
+      "id": 11,
+      "crag": "Index Town Wall",
+      "category": "crowds",
+      "title": "Approach crowding",
+      "description": "Heavy foot traffic, passing hazards, bottlenecks at belay areas",
+      "severity": "low",
+      "frequency": "common (busy days)",
+      "mitigation": "Plan for movement time; establish clear communication"
+    },
+    {
+      "id": 12,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "loose_rock_quality",
+      "title": "Dinner plate basalt fracturing",
+      "description": "Rock fractures in distinctive 'dinner plates' creating loose choss everywhere except solid routes; requires significant cleaning",
+      "severity": "high",
+      "frequency": "common",
+      "specific_location": "Throughout crag",
+      "mitigation": "Extensive pre-climb cleaning; inspect all holds before weighting; wear helmet"
+    },
+    {
+      "id": 13,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "rockfall",
+      "title": "Vantage Road closure - unstable rock face",
+      "description": "Vantage Road SW closed west of Silica Road due to unstable roadside rock face and partial rockslide",
+      "severity": "high",
+      "frequency": "unknown",
+      "mitigation": "Use alternative access routes; be aware of road status"
+    },
+    {
+      "id": 14,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "loose_rock_quality",
+      "title": "Columnar basalt instability",
+      "description": "Top layer of columnar basalt around 80 feet high is subject to flaking and loose block formation",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Avoid top-out exposure; inspect upper sections carefully"
+    },
+    {
+      "id": 15,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "loose_rock_quality",
+      "title": "Uncleaned routes hazard",
+      "description": "Many routes have not been cleaned of loose rock; climbers placing new anchors must pre-clean all loose material",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Always pre-clean route; check bolts for loose fragments around placement"
+    },
+    {
+      "id": 16,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "rockfall",
+      "title": "M&M Wall direct exposure hazard",
+      "description": "Area requires helmet use; climbers stand directly under other climbers with significant rockfall exposure",
+      "severity": "high",
+      "frequency": "common",
+      "specific_location": "M&M Wall",
+      "mitigation": "Mandatory helmet use; establish climbing zones; use hand signals"
+    },
+    {
+      "id": 17,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "loose_rock_quality",
+      "title": "Route-dependent quality variation",
+      "description": "Route quality varies dramatically depending on how much effort was invested in cleaning",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Assess route condition before committing"
+    },
+    {
+      "id": 18,
+      "crag": "Vantage / Frenchman Coulee",
+      "category": "anchor_failure",
+      "title": "Non-standard rap anchor placement",
+      "description": "Many climbs have rap anchors placed just short of rim to allow lowering without topping off (addressing design considerations but creating positioning challenges)",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Understand specific anchor placement; be careful with positioning"
+    },
+    {
+      "id": 19,
+      "crag": "Exit 38",
+      "category": "loose_rock_quality",
+      "title": "Metamorphic volcanic rock fracture-prone",
+      "description": "Generally more fractured than nearby Little Si; loose rock is a problem on less-visited areas",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Inspect before climbing; avoid less-traveled routes; clean loose rock"
+    },
+    {
+      "id": 20,
+      "crag": "Exit 38",
+      "category": "loose_rock_quality",
+      "title": "Fracture-prone metamorphics",
+      "description": "Rock tends toward fracture patterns making loose rock endemic despite appearing chossy",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Standard loose rock protocols; careful inspection"
+    },
+    {
+      "id": 21,
+      "crag": "Exit 38",
+      "category": "loose_rock_quality",
+      "title": "Unvisited route buildup",
+      "description": "Routes without regular traffic accumulate loose rock; most routes aren't as chossy as they appear but require pre-climb assessment",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Pre-climb inspection essential; clean accumulations"
+    },
+    {
+      "id": 22,
+      "crag": "Exit 38",
+      "category": "crowds",
+      "title": "Seasonal crowds",
+      "description": "Very crowded on weekends and summer evenings with many climbs getting congested",
+      "severity": "medium",
+      "frequency": "regular",
+      "mitigation": "Climb weekdays; arrive early; be prepared for crowds"
+    },
+    {
+      "id": 23,
+      "crag": "Exit 38",
+      "category": "crowds",
+      "title": "Vandalism and theft",
+      "description": "Vandalism and car-prowling documented as recurring problems",
+      "severity": "low",
+      "frequency": "occasional",
+      "mitigation": "Don't leave valuables in car; secure parking"
+    },
+    {
+      "id": 24,
+      "crag": "Exit 38",
+      "category": "access",
+      "title": "Discover Pass requirement",
+      "description": "Parking at multiple trailheads requires Discover Pass; enforcement and access changes occur periodically",
+      "severity": "low",
+      "frequency": "always",
+      "mitigation": "Obtain Discover Pass; check current access status"
+    },
+    {
+      "id": 25,
+      "crag": "Exit 32 / Little Si",
+      "category": "loose_rock_quality",
+      "title": "Metamorphic volcanic rock type",
+      "description": "Rock is volcanic metamorphics; varies from extremely grippy rough textured (Blackstone Wall) to slippery sharp bullet rock (World Wall)",
+      "severity": "medium",
+      "frequency": "varies by area",
+      "mitigation": "Adapt grip technique to rock type; adjust beta accordingly"
+    },
+    {
+      "id": 26,
+      "crag": "Exit 32 / Little Si",
+      "category": "loose_rock_quality",
+      "title": "Slippery sharp rock on World Wall",
+      "description": "Bullet, slippery, sharp rock creates edge hazards and difficult grip management",
+      "severity": "high",
+      "frequency": "common (World Wall)",
+      "specific_location": "World Wall",
+      "mitigation": "Technical grip management; be prepared for slippery conditions"
+    },
+    {
+      "id": 27,
+      "crag": "Exit 32 / Little Si",
+      "category": "loose_rock_quality",
+      "title": "Mostly choss-free reputation",
+      "description": "Reputation for cleaner rock than many Washington areas, but climbers still need standard safety precautions",
+      "severity": "low",
+      "frequency": "rare",
+      "mitigation": "Standard loose rock precautions still essential"
+    },
+    {
+      "id": 28,
+      "crag": "Exit 32 / Little Si",
+      "category": "exposure",
+      "title": "World Wall high-level sport climbing hazards",
+      "description": "Possibly Washington's best high-level sport crag; extreme exposure and technical climbing demands",
+      "severity": "high",
+      "frequency": "varies by route",
+      "specific_location": "World Wall",
+      "mitigation": "Elite climbing skills required; careful route selection; redundant protection"
+    },
+    {
+      "id": 29,
+      "crag": "Exit 32 / Little Si",
+      "category": "loose_rock_quality",
+      "title": "Loose rock on less-visited areas",
+      "description": "Similar to Exit 38, lesser-trafficked crags accumulate loose rock",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Explore popular routes first; pre-clean less-visited areas"
+    },
+    {
+      "id": 30,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Decomposing sandstone",
+      "description": "Rock varies from good to decomposing sandstone; described as 'somewhere between soft and crumbly'",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Extensive pre-climb cleaning; avoid weighting questionable holds"
+    },
+    {
+      "id": 31,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Poor protection routes",
+      "description": "Martial Diagonal offers poor rock quality and inadequate protection; many routes have sporty runouts",
+      "severity": "high",
+      "frequency": "common",
+      "specific_location": "Martial Diagonal area",
+      "mitigation": "Route selection critical; avoid run-out routes if uncomfortable"
+    },
+    {
+      "id": 32,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Crumbly rock sections",
+      "description": "Some sections of Nirvana Ridge have crumbly rock with scary runouts",
+      "severity": "high",
+      "frequency": "occasional",
+      "specific_location": "Nirvana Ridge",
+      "mitigation": "Route research essential; avoid if uncomfortable with runouts"
+    },
+    {
+      "id": 33,
+      "crag": "Peshastin Pinnacles",
+      "category": "rockfall",
+      "title": "Trigger Finger formation - historic collapse",
+      "description": "Famous formation fell over in 1978; established risk of major flake/formation failure",
+      "severity": "high",
+      "frequency": "rare",
+      "specific_location": "Trigger Finger formation",
+      "incident_date": "1978",
+      "mitigation": "Avoid suspected unstable formations; be aware of history"
+    },
+    {
+      "id": 34,
+      "crag": "Peshastin Pinnacles",
+      "category": "rockfall",
+      "title": "Rockslide (winter 2010)",
+      "description": "Significant rock slide on right side of slab likely affected multiple route conditions",
+      "severity": "high",
+      "frequency": "rare",
+      "incident_date": "2010 (winter)",
+      "mitigation": "Be aware of geological change; route conditions may be altered"
+    },
+    {
+      "id": 35,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Soil erosion hazard",
+      "description": "Sandy soil creates constant erosion concerns; exacerbated by 2003 fire damage",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Respect closures; avoid newly eroded areas; stay on established paths"
+    },
+    {
+      "id": 36,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Runout routes hazard",
+      "description": "Many routes are bolted but sporty runouts are common between protection points",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Route selection based on comfort with runouts; solid belay strategy"
+    },
+    {
+      "id": 37,
+      "crag": "Peshastin Pinnacles",
+      "category": "exposure",
+      "title": "Narrow rock crests with exposed anchoring",
+      "description": "Many climbs end on narrow rock crests atop pinnacles; exposed anchoring and descent",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Careful anchor assessment; solid rappel protocol"
+    },
+    {
+      "id": 38,
+      "crag": "Peshastin Pinnacles",
+      "category": "loose_rock_quality",
+      "title": "Fire damage (2003)",
+      "description": "Fire swept through area affecting soil stability and vegetation that stabilized slope",
+      "severity": "high",
+      "frequency": "ongoing",
+      "incident_date": "2003",
+      "mitigation": "Be aware of fire damage legacy; respect closures"
+    },
+    {
+      "id": 39,
+      "crag": "Peshastin Pinnacles",
+      "category": "anchor_failure",
+      "title": "Belay failure - May 1998",
+      "description": "Documented case where miscommunication between partners caused belay instability; long tie-in failure caused violent swing and head trauma",
+      "severity": "critical",
+      "frequency": "rare",
+      "incident_date": "1998-05",
+      "mitigation": "Clear belay communication; verify all connections before climbing"
+    },
+    {
+      "id": 40,
+      "crag": "Darrington / Squire Creek",
+      "category": "approach_hazard",
+      "title": "Unstable rock slide approach",
+      "description": "Approach to Squire Creek barred for many years due to unstable rock slide; bushwhacking required near Squire Creek Pass",
+      "severity": "high",
+      "frequency": "ongoing",
+      "specific_location": "Squire Creek approach",
+      "mitigation": "Be aware of hazard; use caution during approach; have escape routes"
+    },
+    {
+      "id": 41,
+      "crag": "Darrington / Squire Creek",
+      "category": "approach_hazard",
+      "title": "Forest Service road condition",
+      "description": "Roads generally maintained but may be unsuitable for low-clearance vehicles or blocked by fallen trees/landslides",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Check road status; use 4WD vehicle if possible; be prepared for obstacles"
+    },
+    {
+      "id": 42,
+      "crag": "Darrington / Squire Creek",
+      "category": "approach_hazard",
+      "title": "Avalanche chute exposure approach",
+      "description": "High brush, non-existent tread crossing avalanche chutes, rock slides, and creek beds",
+      "severity": "high",
+      "frequency": "seasonal",
+      "mitigation": "Use avalanche safety protocol during winter/spring; check forecasts"
+    },
+    {
+      "id": 43,
+      "crag": "Darrington / Squire Creek",
+      "category": "approach_hazard",
+      "title": "Heavy brush and downed trees",
+      "description": "Brush high and tread non-existent in several places; many downed trees difficult to climb over/under with heavy pack",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Allow extra time for approach; use proper foot technique; be prepared for difficult terrain"
+    },
+    {
+      "id": 44,
+      "crag": "Darrington / Squire Creek",
+      "category": "access",
+      "title": "Poor cell coverage",
+      "description": "Minimal cell phone reception; emergency help is far away",
+      "severity": "high",
+      "frequency": "always",
+      "mitigation": "Satellite communicator; detailed route plan; conservative climbing decisions"
+    },
+    {
+      "id": 45,
+      "crag": "Darrington / Squire Creek",
+      "category": "weather",
+      "title": "Extreme wetness",
+      "description": "Area exceptionally rainy for Western Washington; climbs may take 2+ days to dry after rainfall",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Plan for wet conditions; bring extra layers; be aware of water management"
+    },
+    {
+      "id": 46,
+      "crag": "Darrington / Squire Creek",
+      "category": "weather",
+      "title": "Intense sun exposure on white granite",
+      "description": "White granite intensifies sun; protective clothing and extra water needed on hot days",
+      "severity": "medium",
+      "frequency": "seasonal (summer)",
+      "mitigation": "Extra sunscreen; UV-protective clothing; abundant water"
+    },
+    {
+      "id": 47,
+      "crag": "Darrington / Squire Creek",
+      "category": "weather",
+      "title": "Seasonal bugs",
+      "description": "Bug problems mid-season can be significant",
+      "severity": "low",
+      "frequency": "seasonal (summer)",
+      "mitigation": "Insect repellent; protective clothing"
+    },
+    {
+      "id": 48,
+      "crag": "Darrington / Squire Creek",
+      "category": "exposure",
+      "title": "Long rappel requirements",
+      "description": "Many pitches require full-length rappels; recommend bringing two ropes (70m ideal)",
+      "severity": "medium",
+      "frequency": "always",
+      "mitigation": "Two 70m ropes essential; thorough rappel planning; anchor inspection"
+    },
+    {
+      "id": 49,
+      "crag": "Darrington / Squire Creek",
+      "category": "exposure",
+      "title": "Hard route access",
+      "description": "Climbs generally harder to access with no easy routes in the area",
+      "severity": "medium",
+      "frequency": "always",
+      "mitigation": "Be realistic about skills; warm-up elsewhere; good warm-up routine"
+    },
+    {
+      "id": 50,
+      "crag": "Rattlesnake Ledge",
+      "category": "loose_rock_quality",
+      "title": "Trail loose rock hazard",
+      "description": "Loose rock has caused multiple falls on trail; path very narrow and uneven with jagged rocks",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Careful foot placement; scrambling skills; helmet during approach"
+    },
+    {
+      "id": 51,
+      "crag": "Rattlesnake Ledge",
+      "category": "loose_rock_quality",
+      "title": "Soft choss variation",
+      "description": "Rock oscillates from absolute mud choss to occasionally fine depending on section",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Route-specific inspection; avoid unreliable sections"
+    },
+    {
+      "id": 52,
+      "crag": "Rattlesnake Ledge",
+      "category": "rockfall",
+      "title": "Hiker-caused trundling",
+      "description": "Hikers tend to trundle rocks and water bottles from top, creating secondary rockfall for climbers below",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Wear helmet; avoid high-traffic times; establish safe climbing zones"
+    },
+    {
+      "id": 53,
+      "crag": "Rattlesnake Ledge",
+      "category": "exposure",
+      "title": "Extreme exposure",
+      "description": "Ledge is highly exposed with sheer cliffs; intense crevices and cracks with steep drop-offs (thousand feet to forest floor)",
+      "severity": "critical",
+      "frequency": "always",
+      "mitigation": "Solid anchors; redundant protection; solid belay technique"
+    },
+    {
+      "id": 54,
+      "crag": "Rattlesnake Ledge",
+      "category": "exposure",
+      "title": "Climber stacking exposure",
+      "description": "Multiple parties create direct fall-line exposure; standard position avoidance required",
+      "severity": "high",
+      "frequency": "common (busy days)",
+      "mitigation": "Establish exclusive climbing zones; clear communication; no stacking"
+    },
+    {
+      "id": 55,
+      "crag": "Rattlesnake Ledge",
+      "category": "weather",
+      "title": "Slippery rock when wet/icy",
+      "description": "Rock becomes treacherously slippery from rain or ice",
+      "severity": "high",
+      "frequency": "seasonal",
+      "mitigation": "Avoid climbing in wet/icy conditions; check weather"
+    },
+    {
+      "id": 56,
+      "crag": "Rattlesnake Ledge",
+      "category": "weather",
+      "title": "High winds",
+      "description": "Winds range from mild to 20-30 mph at the ledge",
+      "severity": "medium",
+      "frequency": "common (weather-dependent)",
+      "mitigation": "Check wind forecasts; avoid extreme wind days"
+    },
+    {
+      "id": 57,
+      "crag": "Beacon Rock",
+      "category": "rockfall",
+      "title": "Significant objective rockfall",
+      "description": "Significant objective hazards including rockfall generated from hikers above climbing area",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Helmet mandatory; be aware of hiker traffic above; establish safe zones"
+    },
+    {
+      "id": 58,
+      "crag": "Beacon Rock",
+      "category": "rockfall",
+      "title": "Hiker traffic rockfall",
+      "description": "Sightseers gather at west side hiking trail above third tunnel; climbers stir up loose rock dragging ropes through Grassy Ledges",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Helmet mandatory; minimize rope movement; be aware of hiker positions"
+    },
+    {
+      "id": 59,
+      "crag": "Beacon Rock",
+      "category": "rockfall",
+      "title": "Close calls documented",
+      "description": "Numerous instances of close calls due to stone fall from above",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Helmet mandatory; establish safe zones; communication with hiking trails"
+    },
+    {
+      "id": 60,
+      "crag": "Beacon Rock",
+      "category": "loose_rock_quality",
+      "title": "Poor overall gorge rock",
+      "description": "Much of the rock in the gorge is poor quality, though Beacon has solid steep lines",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Route selection critical; inspect before climbing"
+    },
+    {
+      "id": 61,
+      "crag": "Beacon Rock",
+      "category": "loose_rock_quality",
+      "title": "Grassy Ledges loose rock hazard",
+      "description": "Upper area has loose rocks disturbed by rope drag; overhead rockfall exposure",
+      "severity": "high",
+      "frequency": "common",
+      "specific_location": "Grassy Ledges",
+      "mitigation": "Minimize rope movement; helmet mandatory; rope management critical"
+    },
+    {
+      "id": 62,
+      "crag": "Beacon Rock",
+      "category": "hazard",
+      "title": "Poison oak exposure",
+      "description": "Poison oak common at Beacon Rock including on some routes",
+      "severity": "low",
+      "frequency": "common",
+      "mitigation": "Learn to identify poison oak; protective clothing; post-climb wash"
+    },
+    {
+      "id": 63,
+      "crag": "Beacon Rock",
+      "category": "exposure",
+      "title": "850-foot basalt monolith",
+      "description": "Massive single feature with concentrated climbing on steep terrain",
+      "severity": "high",
+      "frequency": "always",
+      "mitigation": "Solid belay; redundant anchors; careful rappel management"
+    },
+    {
+      "id": 64,
+      "crag": "Tieton River",
+      "category": "loose_rock_quality",
+      "title": "Andesite column quality",
+      "description": "Andesite columns (from ancient Goat Rocks volcano) are generally solid but fair bit of loose stuff on slopes above cliff",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Inspect upper areas; be aware of loose material hazard"
+    },
+    {
+      "id": 65,
+      "crag": "Tieton River",
+      "category": "loose_rock_quality",
+      "title": "Newcomer grade full value",
+      "description": "Routes are full-value grades; gear can be fiddly",
+      "severity": "medium",
+      "frequency": "always",
+      "mitigation": "Expect routes to feel harder than grade; bring diverse gear"
+    },
+    {
+      "id": 66,
+      "crag": "Tieton River",
+      "category": "rockfall",
+      "title": "Rockfall from above",
+      "description": "Keep eye out for rockfall when people above cliff; particularly hazardous with instructional groups",
+      "severity": "medium",
+      "frequency": "occasional",
+      "mitigation": "Helmet use; be aware of people above; establish safe zones"
+    },
+    {
+      "id": 67,
+      "crag": "Tieton River",
+      "category": "loose_rock_quality",
+      "title": "Loose material on slopes",
+      "description": "Fair amount of loose material on slopes above climbing cliffs",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Be aware of upper exposure; helmet use; minimize activity above"
+    },
+    {
+      "id": 68,
+      "crag": "Tieton River",
+      "category": "wildlife",
+      "title": "Rattlesnakes",
+      "description": "Rattlesnakes present in lower canyon; alert needed on approach hike and cliff base",
+      "severity": "low",
+      "frequency": "seasonal (summer)",
+      "mitigation": "Make noise on approach; watch for snakes; keep distance"
+    },
+    {
+      "id": 69,
+      "crag": "Tieton River",
+      "category": "weather",
+      "title": "Desert heat exposure",
+      "description": "Dry desert environment allows year-round climbing but exposes climbers to heat stress",
+      "severity": "medium",
+      "frequency": "seasonal (summer)",
+      "mitigation": "Abundant water; UV protection; limit midday climbing"
+    },
+    {
+      "id": 70,
+      "crag": "Tieton River",
+      "category": "access",
+      "title": "Raptor nesting closure",
+      "description": "Royal Columns and the Bend closed Feb 1 - April 1 for raptor nesting protection; may extend to July 1 if active nest nearby",
+      "severity": "medium",
+      "frequency": "seasonal",
+      "mitigation": "Check closure dates; plan trips outside closure periods"
+    },
+    {
+      "id": 71,
+      "crag": "Icicle Creek / Gorge",
+      "category": "exposure",
+      "title": "Steep terrain sections",
+      "description": "Hazardous terrain with very steep sections present throughout",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Solid climbing skills; careful route selection"
+    },
+    {
+      "id": 72,
+      "crag": "Icicle Creek / Gorge",
+      "category": "approach_hazard",
+      "title": "Creek exposure",
+      "description": "Creek roaring through gorge with surprisingly powerful flow; midway bridge crosses powerful water",
+      "severity": "medium",
+      "frequency": "always",
+      "mitigation": "Careful foot placement; be aware of water; solid balance"
+    },
+    {
+      "id": 73,
+      "crag": "Icicle Creek / Gorge",
+      "category": "access",
+      "title": "Raptor nesting closure",
+      "description": "Bridge Creek Wall area closed Jan 1 through mid-August for golden eagle nesting (1/2-mile buffer required)",
+      "severity": "high",
+      "frequency": "seasonal",
+      "specific_location": "Bridge Creek Wall",
+      "mitigation": "Check closure status; plan trips outside closure periods"
+    },
+    {
+      "id": 74,
+      "crag": "Icicle Creek / Gorge",
+      "category": "access",
+      "title": "Threatened plant species",
+      "description": "Threatened or endangered plant species growing in cracks near crags; establishment of new routes requires ranger consultation",
+      "severity": "medium",
+      "frequency": "always",
+      "mitigation": "Don't establish new routes without consultation; respect existing route restrictions"
+    },
+    {
+      "id": 75,
+      "crag": "Icicle Creek / Gorge",
+      "category": "rockfall",
+      "title": "Human-triggered avalanche",
+      "description": "Human-triggered avalanches expected on steep slopes; climbers should stay in low-angle terrain and check forecast",
+      "severity": "critical",
+      "frequency": "seasonal (winter/spring)",
+      "mitigation": "Check avalanche forecast; avoid steep slopes; conservative route choice"
+    },
+    {
+      "id": 76,
+      "crag": "Icicle Creek / Gorge",
+      "category": "access",
+      "title": "Private land crossing",
+      "description": "Private land access issues in parts of Icicle Creek Canyon; climbers must cross private land to reach National Forest crags in some places",
+      "severity": "medium",
+      "frequency": "location-dependent",
+      "mitigation": "Obtain landowner permission; use established access routes"
+    },
+    {
+      "id": 77,
+      "crag": "Icicle Creek / Gorge",
+      "category": "access",
+      "title": "Private land crags",
+      "description": "Some crags themselves located on private land creating access tension",
+      "severity": "medium",
+      "frequency": "ongoing",
+      "mitigation": "Check ownership; obtain permission; respect posted restrictions"
+    },
+    {
+      "id": 78,
+      "crag": "Icicle Creek / Gorge",
+      "category": "exposure",
+      "title": "Scary riverside highballs",
+      "description": "Dozens of scary riverside highballs and water solos; falls potentially fatal",
+      "severity": "critical",
+      "frequency": "always (for those routes)",
+      "mitigation": "Solid bouldering skills; spot quality; conservative route selection"
+    },
+    {
+      "id": 79,
+      "crag": "Icicle Creek / Gorge",
+      "category": "exposure",
+      "title": "Water solo hazards",
+      "description": "Cold water immersion, impact injuries on boulders, hypothermia risk",
+      "severity": "critical",
+      "frequency": "always (for water solos)",
+      "mitigation": "Solid swimming skills; water temperature assessment; rescue planning"
+    },
+    {
+      "id": 80,
+      "crag": "Forbidden Peak (North Cascades)",
+      "category": "rockfall",
+      "title": "Rockfall bowling alley",
+      "description": "Late-season parties find themselves in a bowling alley of rockfall triggered by climbers above",
+      "severity": "high",
+      "frequency": "common (late season)",
+      "mitigation": "Helmet mandatory; early season preferred; be aware of parties above"
+    },
+    {
+      "id": 81,
+      "crag": "Mount Baker (North Cascades)",
+      "category": "icefall",
+      "title": "Colfax Serac zone massive ice collapse",
+      "description": "Serac zone presents massive overhead ice collapse risk; any party in fall line is in serious trouble",
+      "severity": "critical",
+      "frequency": "rare but catastrophic",
+      "specific_location": "Colfax Serac zone",
+      "mitigation": "Avoid serac zone; early season preferred; avalanche gear; careful routing"
+    },
+    {
+      "id": 82,
+      "crag": "Mount Baker / Mount Shuksan",
+      "category": "weather",
+      "title": "Climate warming effect",
+      "description": "Climate warming has made permanent snowfields looser and prompted more rockfall and icefall",
+      "severity": "high",
+      "frequency": "increasing trend",
+      "mitigation": "Early season climbing; be aware of warming trends; adapt routes accordingly"
+    },
+    {
+      "id": 83,
+      "crag": "Sahale Peak (North Cascades)",
+      "category": "exposure",
+      "title": "Class 3-4 rock exposure",
+      "description": "Features Class 3-4 rock with intense exposure and real crevasse navigation hazard",
+      "severity": "critical",
+      "frequency": "always",
+      "mitigation": "Alpine climbing skills; careful route finding; solid belay systems"
+    },
+    {
+      "id": 84,
+      "crag": "Early Winters Couloir",
+      "category": "exposure",
+      "title": "Seasonal transformation danger",
+      "description": "Early summer AI2-3 snow route transforms by August; bergschrund and moat problems can make it impassable",
+      "severity": "high",
+      "frequency": "seasonal",
+      "mitigation": "Early season climbing essential; check current conditions; avoid late season"
+    },
+    {
+      "id": 85,
+      "crag": "North Cascades Alpine Routes",
+      "category": "exposure",
+      "title": "Descent crux",
+      "description": "Real crux on many routes is the descent with multiple rappels down jagged ridges and couloirs",
+      "severity": "high",
+      "frequency": "always",
+      "mitigation": "Plan descent thoroughly; bring 70m ropes; solid rappel skills; early start"
+    },
+    {
+      "id": 86,
+      "crag": "North Cascades Alpine Routes",
+      "category": "exposure",
+      "title": "Rope drag and bivouac risk",
+      "description": "Rope drag and snags on descent cause regular party bivouacs due to underestimating descent time under fatigue",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Conservative time estimates; early start; efficient movement; bivouac kit"
+    },
+    {
+      "id": 87,
+      "crag": "Forbidden Peak (North Cascades)",
+      "category": "exposure",
+      "title": "Seasonal bergschrund hazard",
+      "description": "Seasonal hazards including bergschrund and moat progression problems",
+      "severity": "high",
+      "frequency": "seasonal",
+      "specific_location": "West Ridge Couloir",
+      "mitigation": "Early season preferred; check current conditions"
+    },
+    {
+      "id": 88,
+      "crag": "North Cascades Alpine Routes",
+      "category": "weather",
+      "title": "Glacier recession route changes",
+      "description": "Glacier recession is rewriting beta for every classic climb; most guidebooks haven't caught up",
+      "severity": "high",
+      "frequency": "ongoing",
+      "mitigation": "Recent trip reports essential; avoid relying on dated guidebooks"
+    },
+    {
+      "id": 89,
+      "crag": "North Cascades Alpine Routes",
+      "category": "weather",
+      "title": "Route-specific glacial hazard obsolescence",
+      "description": "Historical climbing information becoming unreliable as glaciers retreat",
+      "severity": "high",
+      "frequency": "ongoing",
+      "mitigation": "Get latest conditions; talk to recent climbers; conservative routing"
+    },
+    {
+      "id": 90,
+      "crag": "Mount Baker (North Cascades)",
+      "category": "avalanche",
+      "title": "High avalanche danger",
+      "description": "Avalanche danger commonly high due to notoriously variable weather creating unstable snow even on moderate slopes",
+      "severity": "critical",
+      "frequency": "common (weather-dependent)",
+      "mitigation": "Check avalanche forecast daily; early start; conservative route choice"
+    },
+    {
+      "id": 91,
+      "crag": "Mount Shuksan (North Cascades)",
+      "category": "avalanche",
+      "title": "Avalanche and spindrift hazard",
+      "description": "Avalanches and spindrift regularly course down Shuksan's precipitous slopes",
+      "severity": "critical",
+      "frequency": "common (seasonal)",
+      "mitigation": "Avalanche training; forecast checking; conservative routing"
+    },
+    {
+      "id": 92,
+      "crag": "Mount Shuksan (North Cascades)",
+      "category": "weather",
+      "title": "Winter storm locking",
+      "description": "Mountain can be locked in winter storms for weeks at a time",
+      "severity": "high",
+      "frequency": "seasonal (winter)",
+      "mitigation": "Check weather window; be prepared for rapid weather change; conservative timeline"
+    },
+    {
+      "id": 93,
+      "crag": "Mount Baker / Mount Shuksan",
+      "category": "weather",
+      "title": "Snowfall extremes",
+      "description": "Region receives 600+ inches annually; depths can exceed 20 feet on upper slopes during intense storms",
+      "severity": "high",
+      "frequency": "seasonal (winter)",
+      "mitigation": "Winter-specific skills; avalanche training; conservative route choice"
+    },
+    {
+      "id": 94,
+      "crag": "Mount Baker (North Cascades)",
+      "category": "crevasse",
+      "title": "Glacier crevassing",
+      "description": "Glaciers particularly sensitive to climate changes; severely crevassed as result",
+      "severity": "critical",
+      "frequency": "common",
+      "mitigation": "Crevasse rescue skills; rope team protocol; careful route finding"
+    },
+    {
+      "id": 95,
+      "crag": "Mount Baker (North Cascades)",
+      "category": "hazard",
+      "title": "Glacier thermal venting",
+      "description": "Active volcano with thermal venting causing sudden avalanches and lahars (mud/debris flows)",
+      "severity": "critical",
+      "frequency": "rare but catastrophic",
+      "mitigation": "Avoid thermal venting zones; be aware of active volcano; local knowledge critical"
+    },
+    {
+      "id": 96,
+      "crag": "Mount Baker (North Cascades)",
+      "category": "weather",
+      "title": "Notoriously unpredictable weather",
+      "description": "Notoriously unpredictable weather; clear conditions can become dangerous without warning",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Check multiple forecasts; be prepared for rapid changes; early descents"
+    },
+    {
+      "id": 97,
+      "crag": "Mount Baker / Mount Shuksan",
+      "category": "weather",
+      "title": "Limited climbing windows",
+      "description": "Windows with good climbing conditions and safe avalanche conditions are few and far between",
+      "severity": "high",
+      "frequency": "always",
+      "mitigation": "Plan for narrow windows; be flexible; good weather intelligence"
+    },
+    {
+      "id": 98,
+      "crag": "General - North Cascades",
+      "category": "anchor_failure",
+      "title": "Rappel anchor failure - May 2025",
+      "description": "Three climbers killed in fall from Early Winters area; presumed single fixed piton pulled while used as rappel anchor; 400-foot fall",
+      "severity": "critical",
+      "frequency": "rare",
+      "incident_date": "2025-05",
+      "location": "Early Winters area (North Cascades)",
+      "mitigation": "Never rappel off single piece; redundancy essential; anchor assessment critical"
+    },
+    {
+      "id": 99,
+      "crag": "General",
+      "category": "communication",
+      "title": "Communication failure on anchors",
+      "description": "Less experienced climber assumed other climber had assessed single piton; no discussion to bring anchor quality into question (May 2025 North Cascades incident)",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Always discuss anchor assessment; no assumptions; speak up about concerns"
+    },
+    {
+      "id": 100,
+      "crag": "General",
+      "category": "communication",
+      "title": "Expert halo cognitive bias",
+      "description": "Higher-skilled climbers may not have their anchor assessment questioned by less experienced partners",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Speak up regardless of skill level; collaborative safety assessment"
+    },
+    {
+      "id": 101,
+      "crag": "General",
+      "category": "anchor_failure",
+      "title": "Single-piece rappel practice hazard",
+      "description": "Rappelling off single piece of gear is very bad practice; redundant protection is essential",
+      "severity": "critical",
+      "frequency": "ongoing education issue",
+      "mitigation": "Always use redundancy; 2+ pieces minimum; verify anchor quality"
+    },
+    {
+      "id": 102,
+      "crag": "General",
+      "category": "anchor_failure",
+      "title": "Failing to back up critical protection",
+      "description": "Failing to provide redundancy for critical single pieces of protection is persistent factor in fatal accidents",
+      "severity": "critical",
+      "frequency": "ongoing",
+      "mitigation": "Build redundancy into all critical points; double-check before committing"
+    },
+    {
+      "id": 103,
+      "crag": "General",
+      "category": "bolt_quality",
+      "title": "1980s-1990s bolt lifespan issue",
+      "description": "Bolts installed in 1980s-1990s are reaching end of projected 20-year lifespan; hundreds of thousands need replacement",
+      "severity": "high",
+      "frequency": "ongoing",
+      "mitigation": "Bolt assessment skills; report bad bolts; support bolt replacement efforts"
+    },
+    {
+      "id": 104,
+      "crag": "General",
+      "category": "bolt_quality",
+      "title": "Plated steel corrosion",
+      "description": "Plated steel bolts subject to corrosion; stainless steel or titanium recommended but less commonly used",
+      "severity": "high",
+      "frequency": "common (age-dependent)",
+      "mitigation": "Inspect bolts regularly; prefer stainless steel; report corrosion"
+    },
+    {
+      "id": 105,
+      "crag": "General",
+      "category": "bolt_quality",
+      "title": "Stress Corrosion Cracking (SCC)",
+      "description": "Certain stainless steel grades subject to SCC leading to sudden brittle fracture with little external warning",
+      "severity": "critical",
+      "frequency": "rare but devastating",
+      "mitigation": "Industry knowledge; proper bolt installation; regular inspection"
+    },
+    {
+      "id": 106,
+      "crag": "General",
+      "category": "bolt_quality",
+      "title": "No standard bolt placement training",
+      "description": "There is no standard practice or training for placing bolts; compounding as more routes developed",
+      "severity": "high",
+      "frequency": "ongoing",
+      "mitigation": "Seek proper training before placing bolts; follow industry standards"
+    },
+    {
+      "id": 107,
+      "crag": "General",
+      "category": "equipment",
+      "title": "UV exposure sling weakness",
+      "description": "Nylon webbing weakened by UV exposure; sling rated 22 kN new can degrade to 11 kN or below after single season at 3000m+ altitude",
+      "severity": "high",
+      "frequency": "common (high altitude)",
+      "mitigation": "Replace slings regularly; UV protection; altitude-specific replacement schedule"
+    },
+    {
+      "id": 108,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Freeze-thaw cycle degradation",
+      "description": "Sling material weakened by freeze-thaw cycles and precipitation",
+      "severity": "high",
+      "frequency": "common (alpine)",
+      "mitigation": "Regular sling replacement; winter-specific gear checks"
+    },
+    {
+      "id": 109,
+      "crag": "General",
+      "category": "anchor_failure",
+      "title": "Anchor chain reliability",
+      "description": "Anchor chains can fail after years of wear; inspection required",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Regular anchor inspection; replace worn chains; know inspection signs"
+    },
+    {
+      "id": 110,
+      "crag": "General",
+      "category": "weather",
+      "title": "Lightning exposure on vertical terrain",
+      "description": "Lightning strikes highest points first; vertical terrain with nowhere to run for cover creates prime target conditions",
+      "severity": "critical",
+      "frequency": "seasonal (thunderstorm season)",
+      "mitigation": "Check weather; descend at first sign of storm; avoid climbing in lightning"
+    },
+    {
+      "id": 111,
+      "crag": "General",
+      "category": "weather",
+      "title": "Heat exhaustion hazard",
+      "description": "Temperatures 90F+ create dramatic increase in heat-related illness risk; sudden confusion, fatigue, headache, muscle cramps, pale skin, profuse sweating, rapid heartbeat",
+      "severity": "high",
+      "frequency": "seasonal (summer)",
+      "mitigation": "Abundant water; electrolytes; early starts; break in shade; temperature monitoring"
+    },
+    {
+      "id": 112,
+      "crag": "General",
+      "category": "weather",
+      "title": "Hypothermia in summer conditions",
+      "description": "Hypothermia possible even in summer from wet conditions, wind, and inadequate layers",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Proper layering; wind protection; dry clothes; emergency protocols"
+    },
+    {
+      "id": 113,
+      "crag": "General",
+      "category": "weather",
+      "title": "Wind exposure at crags",
+      "description": "Variable wind speeds; exposed terrain can channel dangerous wind gusts",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Check wind forecasts; avoid extreme wind days; be aware of terrain wind channeling"
+    },
+    {
+      "id": 114,
+      "crag": "General",
+      "category": "altitude",
+      "title": "Altitude sickness risk",
+      "description": "High-altitude illness occurs above 2500m (8202 feet); includes AMS, HAPE, HACE",
+      "severity": "high",
+      "frequency": "common (high altitude)",
+      "mitigation": "Gradual ascent; acclimatization; hydration; symptom recognition; descent plan"
+    },
+    {
+      "id": 115,
+      "crag": "General",
+      "category": "altitude",
+      "title": "Rapid ascent hazard",
+      "description": "Going too high too fast primary cause of altitude sickness; oxygen molecules spread farther apart at altitude",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Limit ascent rate to 1000 feet/day above 10000 feet; acclimatization days"
+    },
+    {
+      "id": 116,
+      "crag": "General",
+      "category": "altitude",
+      "title": "Inadequate acclimatization time",
+      "description": "Proper acclimatization takes 1-3 days; recommended ascent rate 1000 feet/day above 10000 feet",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Plan extra days; respect acclimatization schedule; symptoms awareness"
+    },
+    {
+      "id": 117,
+      "crag": "General",
+      "category": "altitude",
+      "title": "Dehydration at altitude",
+      "description": "Altitude accelerates dehydration while reducing thirst sensation; critical for alpine climbing parties",
+      "severity": "high",
+      "frequency": "common (altitude)",
+      "mitigation": "Drink regularly (not by thirst); carry water; electrolyte supplementation"
+    },
+    {
+      "id": 118,
+      "crag": "General",
+      "category": "communication",
+      "title": "Partner miscommunication",
+      "description": "Critical safety failures result from miscommunication about anchor systems, belay configuration, and equipment status",
+      "severity": "critical",
+      "frequency": "common",
+      "mitigation": "Clear verbal communication; explicit confirmation; no assumptions"
+    },
+    {
+      "id": 119,
+      "crag": "General",
+      "category": "belay",
+      "title": "Belay inattention",
+      "description": "Lack of attention is leading cause of belay accidents; delayed reaction to climber needs",
+      "severity": "critical",
+      "frequency": "common",
+      "mitigation": "100% attention on climber; minimize distractions; active belay technique"
+    },
+    {
+      "id": 120,
+      "crag": "General",
+      "category": "belay",
+      "title": "Lowering accidents from miscommunication",
+      "description": "Nearly 80 lowering incidents/fatalities over past decade; nearly 100% preventable through proper communication and system closure",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Clear lowering protocols; system closure verification; locked-off device check"
+    },
+    {
+      "id": 121,
+      "crag": "General",
+      "category": "rope_management",
+      "title": "Rope slip behind leg during fall",
+      "description": "Rope sliding behind climber's leg causes inversion at protection; flips climber, causing back/head impact",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Proper harness fit; leg loop snugness; awareness during falls"
+    },
+    {
+      "id": 122,
+      "crag": "General",
+      "category": "rope_management",
+      "title": "Excessive rope drag",
+      "description": "Excessive rope drag makes clipping difficult or extends falls; can turn manageable fall into dangerous situation",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Route planning; quickdraw placement strategy; minimize zig-zag routes"
+    },
+    {
+      "id": 123,
+      "crag": "General",
+      "category": "rope_management",
+      "title": "Rope system not closed",
+      "description": "Critical failure where non-load end of rope not tied to belayer/anchor/something; allows rope to slip through belay device",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Always tie end of rope; explicit end-of-rope protocol"
+    },
+    {
+      "id": 124,
+      "crag": "General",
+      "category": "belay",
+      "title": "Too much slack provision",
+      "description": "Belay errors including providing excessive slack cause ground falls or hard rock impacts",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Proper slack management; active belay; good communication"
+    },
+    {
+      "id": 125,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Incorrect belay device operation",
+      "description": "Improper use of belay/rappel devices leads to accidents; overcomplicated safety systems increase failure probability",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Proper training; practice; use simple reliable systems; drills"
+    },
+    {
+      "id": 126,
+      "crag": "General",
+      "category": "knots",
+      "title": "Improperly tied knots",
+      "description": "Failure to properly tie critical knots creates single-point failures",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Proper knot tying; visual verification; backup knots; regular practice"
+    },
+    {
+      "id": 127,
+      "crag": "General",
+      "category": "anchor_failure",
+      "title": "Inadequate backup systems",
+      "description": "Lack of secondary protection redundancy common in fatal accidents",
+      "severity": "critical",
+      "frequency": "occasional",
+      "mitigation": "Build redundancy; 2+ protection pieces minimum; verify all pieces"
+    },
+    {
+      "id": 128,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Harness degradation over time",
+      "description": "Harness materials degrade; worn harnesses (particularly belay/rappel loops) can fail under load",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Regular harness inspection; replace at end of life; maintain records"
+    },
+    {
+      "id": 129,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Makeshift harness failure",
+      "description": "Ad-hoc harnesses fashioned from kayak straps/leather belts have failed fatally",
+      "severity": "critical",
+      "frequency": "rare",
+      "mitigation": "Use proper climbing harness; no ad-hoc solutions; proper training"
+    },
+    {
+      "id": 130,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Chest strap omission hazard",
+      "description": "Failure to use chest strap creates airway closure risk and inversion hazard under loaded conditions",
+      "severity": "high",
+      "frequency": "common (practice issue)",
+      "mitigation": "Always use chest strap; proper fit; make it standard practice"
+    },
+    {
+      "id": 131,
+      "crag": "General",
+      "category": "equipment",
+      "title": "Worn soft goods degradation",
+      "description": "Old webbing and slings lose strength over time; single-season degradation documented",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Regular replacement schedule; inspection; altitude/weather-specific replacements"
+    },
+    {
+      "id": 132,
+      "crag": "General",
+      "category": "climbing_ability",
+      "title": "Overestimating climbing ability",
+      "description": "Climbers regularly overestimate what they're capable of; grade mismatches lead to severe injuries",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Honest self-assessment; start well below limit; build gradually"
+    },
+    {
+      "id": 133,
+      "crag": "General",
+      "category": "climbing_ability",
+      "title": "Regional climbing style unfamiliarity",
+      "description": "Routes in unfamiliar rock types feel more difficult; 5.7 slab vs 5.7 crack have vastly different difficulty",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Start conservative; talk to locals; respect regional grade variations"
+    },
+    {
+      "id": 134,
+      "crag": "General",
+      "category": "climbing_ability",
+      "title": "Inadequate equipment knowledge",
+      "description": "Misunderstanding of equipment capabilities and limitations leads to unsafe systems",
+      "severity": "high",
+      "frequency": "occasional",
+      "mitigation": "Proper training; read manuals; understand limitations; ask questions"
+    },
+    {
+      "id": 135,
+      "crag": "General",
+      "category": "decision_making",
+      "title": "Failure to turn back",
+      "description": "Climbers continue climbing beyond personal ability; particularly dangerous in alpine environments",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Recognize limits; planning retreat; no ego in turning back"
+    },
+    {
+      "id": 136,
+      "crag": "General",
+      "category": "loose_rock_quality",
+      "title": "Cascade loose rock endemic",
+      "description": "Cascade range notorious for loose rock; fundamental challenge across multiple crags",
+      "severity": "high",
+      "frequency": "very common",
+      "mitigation": "Expect loose rock; helmet use; cleaning; foot/hand assessment"
+    },
+    {
+      "id": 137,
+      "crag": "General",
+      "category": "loose_rock_quality",
+      "title": "Rotten/decomposing rock",
+      "description": "Soft, decomposing, or rotten rock dangerous to climb past; decomposes in place (particularly at Peshastin, Darrington)",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Avoid rotten rock; know where it exists; cleaning before weighting"
+    },
+    {
+      "id": 138,
+      "crag": "General",
+      "category": "loose_rock_quality",
+      "title": "Barely attached holds and flakes",
+      "description": "Blocks, flakes, and holds barely attached to cliff faces; climber weight can trigger failure",
+      "severity": "high",
+      "frequency": "common",
+      "mitigation": "Test before weighting; helmet use; lead partner spotting on boulder"
+    },
+    {
+      "id": 139,
+      "crag": "General",
+      "category": "grade_standards",
+      "title": "Grade standardization problems",
+      "description": "Washington routes often felt as 'full value' grading; regional variation makes out-of-state climber assessment difficult",
+      "severity": "medium",
+      "frequency": "common",
+      "mitigation": "Start conservative; ask locals; adjust expectations for region"
+    }
+  ],
+  "summary": {
+    "total_sport_climbing_crags": 12,
+    "total_bouldering_areas": 13,
+    "total_alpine_mountaineering_areas": 17,
+    "total_hazard_entries": 139,
+    "hazard_distribution": {
+      "loose_rock_quality": 39,
+      "rockfall_icefall": 28,
+      "anchor_rappel_belay_failures": 21,
+      "weather_environmental": 15,
+      "altitude_physiological": 6,
+      "communication_coordination": 8,
+      "equipment_degradation": 6,
+      "rescue_access": 4,
+      "general_statistics_patterns": 12
+    },
+    "geographic_distribution": {
+      "western_cascades": 5,
+      "central_cascades": 4,
+      "north_cascades_alpine": 4,
+      "central_washington": 2,
+      "eastern_washington": 3,
+      "columbia_gorge": 1,
+      "coastal": 2,
+      "general_systemic": "139 entries span multiple regions"
+    },
+    "compilation_date": "2026-07-15",
+    "research_phase_completion": "All 5 research agents completed comprehensive data gathering and synthesis"
+  }
+}

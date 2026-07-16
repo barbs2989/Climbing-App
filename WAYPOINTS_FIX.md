@@ -37,77 +37,16 @@ Update the routes directly in Supabase with the waypoint data below.
 
 ## South Twin Sister Waypoint Data
 
+**CORRECTED 2026-07-15:** the coordinates originally listed here (lat 48.5069/48.5197, lng -121.6708/-121.6542) were wrong by ~20 miles — verified against Wikipedia/Peakbagger, the real South Twin Sister (7,004 ft, Twin Sisters Range) sits at approximately **48.7669,-122.0394** (trailhead: Middle Fork Nooksack River Bridge / FR 38 Gate) to **48.7049,-121.9874** (summit). This matches the area's own registered coordinates and the recorded GPX tracks already on these routes — do not reuse the old numbers below for any future route on this peak.
+
 ### wa_south_twin_sister_west_ridge
-```json
-[
-  {
-    "type": "Trailhead",
-    "name": "South Twin Sister West Ridge Trailhead",
-    "lat": 48.5069,
-    "lng": -121.6708,
-    "elev": 4100,
-    "distMi": 0,
-    "note": "Parking area for South Twin Sister approach"
-  },
-  {
-    "type": "Summit",
-    "name": "South Twin Sister Summit",
-    "lat": 48.5197,
-    "lng": -121.6542,
-    "elev": 6935,
-    "distMi": 2.5,
-    "note": "West Ridge summit"
-  }
-]
-```
+Already correct in the live DB (not from this doc) — Trailhead 48.7669,-122.0394 (1,200 ft) → Summit 48.7049,-121.9874 (7,004 ft), distMi 12. See the route's live `waypoints` for the full multi-point chain (Dailey Prairie, Orsino Creek Crossing, West Ridge Notch, False Summit Dihedral).
 
 ### wa_south_twin_sister_north_ridge
-```json
-[
-  {
-    "type": "Trailhead",
-    "name": "South Twin Sister North Ridge Trailhead",
-    "lat": 48.5069,
-    "lng": -121.6708,
-    "elev": 4100,
-    "distMi": 0,
-    "note": "Parking area for South Twin Sister approach"
-  },
-  {
-    "type": "Summit",
-    "name": "South Twin Sister Summit",
-    "lat": 48.5197,
-    "lng": -121.6542,
-    "elev": 6935,
-    "distMi": 2.8,
-    "note": "North Ridge summit"
-  }
-]
-```
+Fixed in the live DB — Trailhead 48.7669,-122.0394 (same as West Ridge) → Summit 48.7049,-121.9874 (7,004 ft), distMi ~9.5. Its recorded gpx track (47 points, previously incorrectly cleared then restored) confirms this location.
 
 ### wa_south_twin_sister_scramble
-```json
-[
-  {
-    "type": "Trailhead",
-    "name": "South Twin Sister Scramble Trailhead",
-    "lat": 48.5069,
-    "lng": -121.6708,
-    "elev": 4100,
-    "distMi": 0,
-    "note": "Parking area for South Twin Sister approach"
-  },
-  {
-    "type": "Summit",
-    "name": "South Twin Sister Summit",
-    "lat": 48.5197,
-    "lng": -121.6542,
-    "elev": 6935,
-    "distMi": 2.2,
-    "note": "Class 3 scramble summit"
-  }
-]
-```
+This route id no longer exists in the live catalog as of 2026-07-15 (removed/renamed by other concurrent work) — nothing to fix.
 
 ## Testing the Fix
 

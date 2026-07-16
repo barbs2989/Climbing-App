@@ -1,0 +1,20 @@
+{
+  "track": 2,
+  "status": "SUCCESS",
+  "execution_time": "2026-07-16T03:50:55.857Z",
+  "table": "routes",
+  "field": "watch_out",
+  "operation": "UPDATE (JSONB array append)",
+  "routes_updated": 59,
+  "hazards_imported": 158,
+  "name_based_matches": 59,
+  "match_rate": "100%",
+  "errors": 0,
+  "database_state_after": {
+    "total_hazards_before": 638,
+    "total_hazards_after": 796,
+    "new_hazards": 158,
+    "coverage_before": "7.89%",
+    "coverage_after": "9.77%"
+  }
+}

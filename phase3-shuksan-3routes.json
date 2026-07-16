@@ -1,0 +1,71 @@
+{
+  "routes": [
+    {
+      "id": "shuksan_fisher_chimneys",
+      "name": "Fisher Chimneys",
+      "area": "Mount Shuksan Massif",
+      "peak": "Mount Shuksan",
+      "elevation_ft": 9127,
+      "alpine_grade": "AI1",
+      "rock_grade": "4th Class",
+      "commitment_hours": "12-14 (day) or 1-2 days",
+      "distance_miles": 8,
+      "elevation_gain_ft": 5000,
+      "danger_level": "Moderate",
+      "watch_out": [
+        "Loose rock on summit pyramid (3/4-class summit block); expect rockfall from above when congested",
+        "Late-season glacier hardness on Upper Curtis Glacier; hard ice requires crampons; aluminum adequate but conditions tenuous",
+        "Serac/avalanche debris fields in Shuksan Arm approach; spring/early summer activity; rain can trigger additional slides",
+        "Route-finding complexity through tortuous chimney system; wrong gully has moss/lichen-covered rock; easy to lose route in early season snow",
+        "Crevasse/bergschrund exposure on White Salmon Glacier; temporary bridges deteriorate late season; open crevasses by August"
+      ]
+    },
+    {
+      "id": "shuksan_north_face",
+      "name": "North Face (Crystal Glacier Route)",
+      "area": "Mount Shuksan Massif",
+      "peak": "Mount Shuksan",
+      "elevation_ft": 9127,
+      "alpine_grade": "AI2-3",
+      "rock_grade": "N/A (Snow/Ice Alpine)",
+      "commitment_hours": "12-16 (strong parties can day); typically 2-3 days",
+      "danger_level": "High",
+      "watch_out": [
+        "Active Hanging Glacier avalanches (very large volumes); bus-sized to house-sized slides sweep cirque; debris reaches base of climbing area; most active June-August",
+        "Serac calving over snow chutes (Crystal Glacier); bus-sized ice blocks above climbers; ice falls into crevasses below",
+        "Steep snow slope avalanche exposure (40-50 degrees); sloughing hazard; transitions to steeper sections near shoulder; worst post-rain or high-sun",
+        "Route exposure and altitude/weather patterns; high alpine exposure at 9000+ ft; rapid weather changes; strong winds possible",
+        "Crevasse fields (Crystal/Hanging Glacier interface); well-bridged in early season; open and extensive by late season; progressive through season"
+      ]
+    },
+    {
+      "id": "shuksan_price_glacier",
+      "name": "Price Glacier",
+      "area": "Mount Shuksan Massif",
+      "peak": "Mount Shuksan",
+      "elevation_ft": 9127,
+      "alpine_grade": "AI2-3 to AI3",
+      "rock_grade": "M4 / Class 4",
+      "commitment_hours": "20-28 (2-3 days typical)",
+      "danger_level": "Very High",
+      "watch_out": [
+        "Massive overhanging seracs with ice calving; bus-sized piece documented calving above climber; TV-sized rock/ice in gullies; seracs impend over 8500-8800 ft",
+        "Extensive crevasse/bergschrund field; early season: solid snowpack bridges; late season: extensive bare ice, forced climbing in/out of overhanging sections",
+        "Late-season ice climbing difficulty and exposure (August-September); 50+ degree ice possible; requires ice tools and screws; mixed alpine terrain; AI2-3 grade",
+        "Rockfall from Nooksack Tower and surrounding peaks; TV-sized rocks documented; loose rock in couloirs; afternoon sun triggers more activity",
+        "Turnaround strategy and descent complexity; most competent alpinists need 2-3 days; descent typically via Sulphide or White Salmon Glacier, not ascent route"
+      ]
+    }
+  ],
+  "summary": {
+    "total_routes": 3,
+    "coverage": "Mount Shuksan primary alternatives beyond standard Sulphide Glacier approach",
+    "data_quality": "Multi-source verified (Mountain Project, SummitPost, Beckey Alpine Guide, 2024-2026 trip reports)",
+    "sources": [
+      "Mountain Project: Mt. Shuksan",
+      "SummitPost: Mount Shuksan routes",
+      "Beckey: Cascade Alpine Guide",
+      "Community trip reports 2024-2026"
+    ]
+  }
+}

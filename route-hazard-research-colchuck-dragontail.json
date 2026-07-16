@@ -1,0 +1,598 @@
+{
+  "metadata": {
+    "region": "Enchantments - Alpine Lakes Wilderness",
+    "location": "Central-East Cascades, Washington",
+    "research_date": "2026-07-15",
+    "sources": [
+      "Mountain Project",
+      "SummitPost",
+      "American Alpine Club Publications",
+      "The Mountaineers",
+      "Recent trip reports 2024-2026",
+      "Alpine guiding services and climbing blogs"
+    ]
+  },
+  "routes": [
+    {
+      "id": "colchuck-northeast-buttress",
+      "name": "Northeast Buttress",
+      "peak": "Colchuck Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade III-IV",
+        "rock": "5.8+",
+        "commitment": "10-12 hours car to car"
+      },
+      "height_ft": 8705,
+      "route_type": "Rock alpine with glacier approach",
+      "pitches": 18,
+      "watch_out": [
+        {
+          "hazard": "Rockfall",
+          "description": "Continuous rockfall hazard on descent, especially late season when steep rock is exposed. Multiple documented incidents of rockfall debris.",
+          "frequency": "Occasional to frequent in afternoon",
+          "severity": "Moderate to high",
+          "timing": "Late season (July-August), afternoon hours"
+        },
+        {
+          "hazard": "Glacier travel hazard",
+          "description": "Colchuck Glacier becomes icy by mid-season; requires crampons and ice axe. Approach crosses pocket glacier. Late season descent is extremely icy (bare ice in August).",
+          "frequency": "Consistent throughout season",
+          "severity": "High",
+          "seasonal_note": "Best in July when glacier has snow cover; dangerous in August when fully iced"
+        },
+        {
+          "hazard": "Weather exposure",
+          "description": "8,705 ft altitude, exposed ridge. Rapid alpine weather changes common in afternoon. Thunderstorms build quickly, especially mid-summer.",
+          "frequency": "Daily afternoon potential",
+          "severity": "Moderate",
+          "altitude_ft": 8705
+        },
+        {
+          "hazard": "Route-finding complexity",
+          "description": "Route not always obvious, especially on descent. Requires route-finding experience. Multiple variations (Beckey route vs. Kearney route). Numerous rappel anchors require coordination with parties and location finding.",
+          "complexity": "Moderate-high",
+          "error_exposure": "High on descent; wrong route leads into dangerous terrain"
+        },
+        {
+          "hazard": "Exposure and scrambling",
+          "description": "4th class scrambling sections mixed with 5.8 climbing. Sustained vertical with continuous significant exposure.",
+          "severity": "Moderate",
+          "terrain": "Solid rock in most areas but some loose sections reported on descent"
+        }
+      ],
+      "descent": {
+        "route": "Descent Colchuck Glacier to approach",
+        "difficulty": "Icy and dangerous late season (August+); requires excellent crampon technique",
+        "hazards": "Bare ice runout, avalanche terrain on approach, rockfall",
+        "time_hours": "4-6",
+        "notes": "Descent is most dangerous section; ice conditions critical"
+      },
+      "time_estimates": {
+        "approach_hours": "2",
+        "climbing_hours": "8-10",
+        "descent_hours": "4-6",
+        "total_car_to_car": "10-12"
+      },
+      "seasonal_recommendations": {
+        "best_window": "July (mid-month preferred)",
+        "optimal_months": ["July"],
+        "avoid": "August+ (dangerous ice), June (too much snow/ice)"
+      },
+      "turnaround_strategy": "Aim to be off Colchuck Glacier by early afternoon to avoid afternoon rockfall and weather. Consider turnaround time 2pm latest."
+    },
+    {
+      "id": "colchuck-northeast-couloir",
+      "name": "Northeast Couloir",
+      "peak": "Colchuck Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade II-III (winter)",
+        "snow_ice": "WI2-3, steep snow 50-60 degrees",
+        "commitment": "8-10 hours car to car"
+      },
+      "height_ft": 8705,
+      "vertical_feet": 1200,
+      "route_type": "Snow/ice couloir",
+      "watch_out": [
+        {
+          "hazard": "Avalanche exposure - PRIMARY DANGER",
+          "description": "Narrow couloir (10-50 ft width) with slopes 35-45 degrees, prime avalanche terrain. 1200 ft vertical drop with terrain traps and cliffs. February 2023 avalanche killed 3 climbers when small wet slide (1.5 D-scale) created long traumatic fall through rocks and narrow walled chokes.",
+          "frequency": "Human-triggered possible in moderate stability (Feb 2023 incident)",
+          "severity": "EXTREME - potential fatal fall due to terrain features",
+          "specific_terrain": "Narrow gully with frequent cliffs (10-50 ft bands), rocks, and tight chokes create terrain traps",
+          "exposure_rating": "Highest on peak"
+        },
+        {
+          "hazard": "Steep snow/ice conditions",
+          "description": "Entry and exit can be difficult with snow or ice to 60 degrees. Icy crux in first 1000 ft. Late season ice is dangerous and requires 2+ tools, ice screws, rope.",
+          "conditions_dependent": "Highly variable - can be moderate snow climb or thin ice/mixed",
+          "timing": "Usually retains continuous snow until late May/early June"
+        },
+        {
+          "hazard": "Ice fall and serac",
+          "description": "Rime formations on exit. Ice can break off couloir walls. Wet avalanche debris (boulders and car-sized ice blocks) documented.",
+          "frequency": "Spring/early summer when wet conditions occur"
+        },
+        {
+          "hazard": "Route-finding in couloir",
+          "description": "Navigating narrow gully, especially in whiteout. No obvious exit route.",
+          "complexity": "Moderate-high",
+          "visibility_impact": "Dangerous in poor visibility"
+        },
+        {
+          "hazard": "Exposure to afternoon weather",
+          "description": "South-facing couloir, afternoon sun increases wet-slide risk in spring/early summer.",
+          "timing": "Critical to climb early in day and in cool conditions"
+        }
+      ],
+      "descent": {
+        "route": "Same couloir or adjacent terrain",
+        "difficulty": "Very dangerous descent; high avalanche risk with new sloughs",
+        "hazards": "Avalanche, steep icy slopes, terrain traps",
+        "notes": "Expert-only descent; many parties rappel or traverse out"
+      },
+      "time_estimates": {
+        "approach_hours": "2",
+        "climbing_hours": "4-6",
+        "descent_hours": "3-4",
+        "total_car_to_car": "8-10"
+      },
+      "seasonal_recommendations": {
+        "best_window": "Late May-early June (before continuous snow melts)",
+        "optimal_months": ["May-June"],
+        "note": "Winter-only technical route per Mountain Project; must have stable freezing",
+        "avoid": "Spring when wet avalanche risk elevated; late season when exposed ice"
+      },
+      "turnaround_strategy": "Climb early morning in cold, stable conditions. Turnaround hard stop 10am at latest due to afternoon warming and avalanche risk. If avalanche conditions rated moderate or higher, avoid entirely."
+    },
+    {
+      "id": "colchuck-north-buttress-couloir",
+      "name": "North Buttress Couloir",
+      "peak": "Colchuck Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade III",
+        "commitment": "10-12 hours"
+      },
+      "height_ft": 8705,
+      "vertical_feet": 3500,
+      "route_type": "Snow/ice couloir with rock sections",
+      "watch_out": [
+        {
+          "hazard": "Avalanche risk - SERIOUS",
+          "description": "Wet avalanche hazard documented. May 2018: massive wet snow avalanche consumed descent route for 10+ minutes, carrying boulders and human-sized ice blocks. Route requires cool freeze conditions.",
+          "frequency": "Common in spring/early summer",
+          "severity": "High - documented large avalanche",
+          "conditions": "Wet snow avalanches likely in warm conditions; most dangerous spring/early summer"
+        },
+        {
+          "hazard": "Steep descent exposure",
+          "description": "Fall on steepest sections leads to long slide back toward lake with potential collision with rocks.",
+          "severity": "High",
+          "slope_angle": "Very steep in upper section"
+        },
+        {
+          "hazard": "Icy crux section",
+          "description": "First 1000 ft has icy crux requiring 2+ tools, rope, and ice screws.",
+          "frequency": "Consistent through season",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Mixed conditions",
+          "description": "Route transitions from snow/ice lower to rock/snow higher. Unconsolidated snow covering moderate rock presents mixed climbing hazards.",
+          "terrain": "Unstable snow, moderate rock"
+        },
+        {
+          "hazard": "Weather exposure",
+          "description": "3500 ft of elevation gain to notch exposes climbers to weather. Rapid alpine afternoon buildups.",
+          "severity": "Moderate"
+        }
+      ],
+      "descent": {
+        "route": "East Route (standard) to Colchuck Glacier",
+        "difficulty": "Serious ski descent; couloir remains steep throughout",
+        "hazards": "Avalanche, ice, rockfall",
+        "severity": "High - considered serious ski descent"
+      },
+      "time_estimates": {
+        "approach_hours": "2",
+        "climbing_hours": "6-8",
+        "descent_hours": "3-4",
+        "total_car_to_car": "10-12"
+      },
+      "seasonal_recommendations": {
+        "best_window": "Cool, stable freeze periods",
+        "optimal_months": ["Late April-May", "September-October"],
+        "note": "Winter route; requires excellent freeze conditions",
+        "avoid": "Warm spring/early summer (wet avalanche risk), mid-summer (exposed ice)"
+      },
+      "turnaround_strategy": "Only climb in cool conditions with good freeze forecast. Climb early; turnaround by 10am. Abandon if conditions show warming."
+    },
+    {
+      "id": "colchuck-holsten-hilden",
+      "name": "Holsten-Hilden",
+      "peak": "Colchuck Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade IV",
+        "mixed": "M6",
+        "ice": "AI3+",
+        "commitment": "12+ hours (winter established route)"
+      },
+      "height_ft": 8705,
+      "route_type": "Mixed alpine - ice, snow, rock",
+      "first_ascent": "January 2011 (Dan Hilden, Jens Holsten)",
+      "watch_out": [
+        {
+          "hazard": "Mixed climbing crux",
+          "description": "M6 chimney pitches with unconsolidated snow covering moderate rock. Requires advanced ice/mixed climbing skills. Tricky wide crack (M6) near summit adds technical difficulty.",
+          "pitches": "2 pitches M6 chimney, 1 pitch M6 wide crack",
+          "severity": "High - technical protection placement"
+        },
+        {
+          "hazard": "Ice climbing on exposed face",
+          "description": "Two pitches of AI3+ ice on northeast face. Conditions-dependent for quality and protection. Established in January favorable conditions.",
+          "severity": "Moderate to high",
+          "conditions_dependent": "Ice quality critical"
+        },
+        {
+          "hazard": "Unconsolidated snow over rock",
+          "description": "Snow sections covering moderate rock present unstable climbing and poor protection. Several hundred feet of 50-60 degree snow/snow-covered terrain.",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Avalanche/serac exposure",
+          "description": "Multiple snow fields and ice sections. Right-side approach to Northeast Couloir zone carries avalanche exposure.",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Weather and darkness",
+          "description": "First ascent team encountered darkness requiring headlamp navigation for final pitches. Wind exposure significant on summit. Rime-covered conditions documented.",
+          "timing": "Winter route - extremely limited daylight",
+          "severity": "High in winter"
+        },
+        {
+          "hazard": "Route-finding",
+          "description": "New route with limited ascent history. Navigation between ice, snow, and rock sections not obvious. Traverse left required in middle section.",
+          "complexity": "High",
+          "error_exposure": "High potential for off-route climbing"
+        }
+      ],
+      "descent": {
+        "route": "East Route (standard) to Colchuck Glacier",
+        "difficulty": "High exposure descent; mixed terrain",
+        "hazards": "Ice, rock, avalanche",
+        "time_hours": "4-5",
+        "notes": "Requires reversing mixed sections or finding alternate descent"
+      },
+      "time_estimates": {
+        "approach_hours": "2",
+        "climbing_hours": "8-10",
+        "descent_hours": "4-5",
+        "total_car_to_car": "12+"
+      },
+      "seasonal_recommendations": {
+        "best_window": "January-February during high pressure (winter only)",
+        "optimal_months": ["January", "February"],
+        "note": "Winter/early spring only; requires uncommon stable/dry conditions",
+        "conditions": "Established in 'uncommonly long period of high pressure'"
+      },
+      "turnaround_strategy": "Expert climbers only. Climb early morning to maximize daylight. Have headlamp ready for descent. Monitor weather strictly - first sign of deterioration requires immediate descent."
+    },
+    {
+      "id": "dragontail-backbone-ridge",
+      "name": "Backbone Ridge (with Fin Direct)",
+      "peak": "Dragontail Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade IV",
+        "rock": "5.9",
+        "commitment": "18 hours car to car",
+        "pitches": 12
+      },
+      "height_ft": 9010,
+      "route_type": "Alpine rock with mixed snow/ice passages",
+      "watch_out": [
+        {
+          "hazard": "Crux offwidth pitch - 5.9 climbing",
+          "description": "Notorious 70-foot, 6-inch-wide offwidth crack. First business pitch at 5.9. Technical challenge requiring offwidth technique.",
+          "pitches": "Single 70-ft pitch",
+          "severity": "High - technical crux",
+          "quality": "Good protection but difficult climbing"
+        },
+        {
+          "hazard": "Loose rock - throughout route",
+          "description": "Loose rock on many sections reported by multiple sources. Vague route and inconsistent steepness. Loose material on descent rappels. Rock quality varies significantly.",
+          "frequency": "Common throughout",
+          "severity": "Moderate to high",
+          "impact": "Delicate footwork required; rockfall hazard above climbers"
+        },
+        {
+          "hazard": "The Fin - extreme exposure section",
+          "description": "Upper section features exposed pitches on The Fin with fearsome exposure - views straight down thousands of feet to Colchuck Lake. Rotten rock adjacent to 45-degree snow gully. Lowered off positions from poorly directed slings on tiny flakes.",
+          "pitches": "3 pitches on Fin",
+          "exposure": "EXTREME - vertical exposure thousands of feet",
+          "rock_quality": "Most rotten rock possible, short of total scree",
+          "severity": "EXTREME - mental and physical difficulty"
+        },
+        {
+          "hazard": "Route-finding complexity",
+          "description": "Vague route prominence. Not well-defined line. Multiple variations exist. Finding rappel anchors requires coordination and location finding.",
+          "complexity": "High",
+          "error_exposure": "High - wrong route leads into exposed terrain"
+        },
+        {
+          "hazard": "Snow/ice conditions in gully",
+          "description": "Gully behind fin features soft 45-degree snow pasted over rotten rock. Late-season ice conditions.",
+          "seasonal": "Highly condition-dependent"
+        },
+        {
+          "hazard": "Weather exposure",
+          "description": "9,010 ft altitude with sustained exposure. Afternoon thunderstorms common in summer.",
+          "altitude_ft": 9010,
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Injury history",
+          "description": "Multiple documented climber injuries on this route 'under various circumstances' per experienced guides.",
+          "frequency": "Multiple incidents documented",
+          "severity": "High - noted as injury-prone"
+        }
+      ],
+      "descent": {
+        "route": "Rappel descent requiring finding and coordinating anchors",
+        "difficulty": "Complex, exposed rappelling",
+        "hazards": "Loose rock on rappels, poor anchor placement, exposure",
+        "time_hours": "4-6",
+        "notes": "Most dangerous section; requires excellent coordination"
+      },
+      "time_estimates": {
+        "approach_hours": "<2",
+        "climbing_hours": "8-10",
+        "descent_hours": "6-8",
+        "total_car_to_car": "18 (described as 'civilized day' for 12-pitch route)"
+      },
+      "seasonal_recommendations": {
+        "best_window": "July-August",
+        "optimal_months": ["July", "August"],
+        "avoid": "Early season (snow/ice on Fin), late season (loose rock, poor conditions)"
+      },
+      "turnaround_strategy": "Break route into 2-3 parts mentally. Aim to be off Fin by 2pm. Late-season ice on descent snow field requires specialized gear - consider turnaround if conditions not known."
+    },
+    {
+      "id": "dragontail-triple-couloirs",
+      "name": "Triple Couloirs",
+      "peak": "Dragontail Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade III",
+        "ice": "WI3",
+        "mixed": "M3+",
+        "commitment": "12-14 hours",
+        "pitches": "20 pitches, 2500 vertical feet"
+      },
+      "height_ft": 9010,
+      "vertical_feet": 2500,
+      "route_type": "Ice/snow couloir system",
+      "watch_out": [
+        {
+          "hazard": "Avalanche exposure - SIGNIFICANT",
+          "description": "Three separate couloirs with rock bands between. Deep couloirs contain exposure but avalanche risk still present. Second couloir described as 'straight up middle of peak with exposure that makes anyone question sanity of ski descent.' Spring climbing season brings wet slide potential.",
+          "terrain": "3 narrow gullies separated by short steep rock bands",
+          "avalanche_risk": "Moderate to high depending on conditions",
+          "severity": "High",
+          "seasonal": "Highest spring when wet slides possible"
+        },
+        {
+          "hazard": "Ice climbing difficulty",
+          "description": "70-80 degree water ice on all three couloirs. WI3 rating. Sustained ice climbing over 2500 vertical feet. Conditions-dependent; ice quality varies.",
+          "ice_quality": "Water ice - good protection but exposed",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Rock band passages",
+          "description": "Short steep rock bands between couloirs. M3+ mixed ground requires rock protection and mixed climbing skills.",
+          "pitches": "Multiple M3+ pitches",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Weather exposure - sustained",
+          "description": "20-pitch route on north face of 9010 ft peak. Afternoon weather buildup common. Long exposure window increases weather risk.",
+          "duration": "Full climbing day on exposed face"
+        },
+        {
+          "hazard": "Descent options limited",
+          "description": "Return via same couloirs (descent avalanche risk) or traverse out. Most parties descend route. Some have skied descent (noted as questionable judgment).",
+          "options": "Limited to difficult"
+        },
+        {
+          "hazard": "Nighttime route exposure",
+          "description": "Route length may push into evening hours. Darkness in couloir, limited light for finding rappel anchors.",
+          "timing": "Long objective"
+        }
+      ],
+      "descent": {
+        "route": "Reverse route or traverse out",
+        "difficulty": "Avalanche risk on descent. Second couloir particularly exposed.",
+        "hazards": "Avalanche, ice, loose rock",
+        "notes": "Ski descent noted as questionable despite documented attempts"
+      },
+      "time_estimates": {
+        "approach_hours": "1-2",
+        "climbing_hours": "8-10",
+        "descent_hours": "3-5",
+        "total_car_to_car": "12-14"
+      },
+      "seasonal_recommendations": {
+        "best_window": "Late spring (May-early June) or fall (September-October)",
+        "optimal_months": ["May", "June", "September", "October"],
+        "avoid": "Mid-summer (afternoon thunderstorms, wet ice), winter (extreme cold)"
+      },
+      "turnaround_strategy": "Climb early morning. Aim to be off second couloir by 1pm to avoid afternoon weather. If above-timberline weather building, descend immediately. Route length precludes fast retreat."
+    },
+    {
+      "id": "dragontail-east-ridge-aasgard-pass",
+      "name": "East Ridge via Aasgard Pass Route",
+      "peak": "Dragontail Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade II-III (Class 2-3)",
+        "scramble": "3rd class with airy sections",
+        "commitment": "12.5 miles, 5600 ft gain, 8-10 hours",
+        "difficulty_rating": "T2-E2-S2-R2"
+      },
+      "height_ft": 9010,
+      "vertical_feet": 5600,
+      "route_type": "Snow scramble with boulder fields",
+      "watch_out": [
+        {
+          "hazard": "Steep snow slope to Aasgard Pass - avalanche potential",
+          "description": "35-degree snow slope, 700 ft climb to 8500 ft saddle. Beware of avalanche danger if snow covered. Choice of route up slope affects safety.",
+          "slope_angle": "35 degrees",
+          "height": "700 vertical feet to pass",
+          "frequency": "High in early/mid season snow"
+        },
+        {
+          "hazard": "Late-season ice on snow slope",
+          "description": "Snow slope turns to ice in late season, significantly increasing difficulty. Crampons, ice axe required. Slipping hazard high.",
+          "seasonal": "June onwards (increasing ice danger)",
+          "severity": "High late season"
+        },
+        {
+          "hazard": "Glissading accidents - SERIOUS HAZARD",
+          "description": "Documented serious accidents from glissading descent from Aasgard Pass. High-speed fall potential on steep icy slope with crevasse/waterfall hazards at base.",
+          "frequency": "Multiple documented incidents",
+          "severity": "EXTREME if uncontrolled descent occurs",
+          "season": "Late season (ice) and early season (moderate angle snow)"
+        },
+        {
+          "hazard": "Moats and run-out zones",
+          "description": "Steep snow, firm runouts below Aasgard Pass. Moats (gaps between snow and rocks) create fall hazards and route-finding confusion.",
+          "season": "All season but worst late summer"
+        },
+        {
+          "hazard": "Late-season rockfall",
+          "description": "Above Aasgard Pass, late-season rockfall increases as snow recedes. Documented incidents of climbers hit by rockfall on Colchuck Glacier.",
+          "frequency": "Common late season",
+          "timing": "July-September"
+        },
+        {
+          "hazard": "Route-finding in upper basin",
+          "description": "Route-finding from pass up to summit via loose talus and boulder fields. No obvious line. Cairns primary guide but shift year-to-year with snowfield recession. 'Distinctive boulders' and landmarks key to return route.",
+          "complexity": "Moderate-high",
+          "visibility_impact": "Dangerous in whiteout; loose talus cascades underfoot"
+        },
+        {
+          "hazard": "Descent terrain trap risk",
+          "description": "Upper descent must not drift 'too far climber's right (West) into steep cliffed-out terrain near waterfall complex.' Significant drop-off exposure with fatal consequences.",
+          "severity": "HIGH - wrong direction leads to cliffs",
+          "landmarks": "Must identify waterfall complex and avoid western drifting"
+        },
+        {
+          "hazard": "Rapid alpine weather",
+          "description": "Fast-building thunderstorms common. Whiteout navigation in Core Enchantments zone. 9010 ft altitude, sustained exposure.",
+          "frequency": "Daily afternoon potential mid-summer",
+          "visibility_impact": "Whiteout disorientation in upper basin common"
+        },
+        {
+          "hazard": "Loose talus descent",
+          "description": "Final descent via loose talus/scree that 'can cascade beneath your feet.' Low angle but unstable.",
+          "terrain": "Unstable scree"
+        }
+      ],
+      "descent": {
+        "route": "Reverse route - retrace to Aasgard Pass, down snow slope",
+        "difficulty": "Glissading descent is dangerous; many control descent",
+        "hazards": "Avalanche, ice, glissading accidents, crevasse fall, waterfall holes",
+        "time_hours": "2-3",
+        "notes": "Descent most dangerous section - avoid glissading if any doubt about control"
+      },
+      "time_estimates": {
+        "distance_miles": 12.5,
+        "elevation_gain_ft": 5600,
+        "requires": "Pre-dawn start, efficient transitions",
+        "total_time": "8-10 hours",
+        "fitness": "Full big-day fitness required"
+      },
+      "seasonal_recommendations": {
+        "best_window": "July-September",
+        "optimal_months": ["July", "August", "September"],
+        "early_season": "April-June - consequential snow/ice, moats, glissading danger",
+        "late_season": "October+ - loose scree, icy passages, shorter daylight"
+      },
+      "turnaround_strategy": "Non-negotiable turnaround: If Aasgard Pass not reached by 10am, descend immediately. Afternoon thunderstorms mandatory turn-around signal. If snow icy or glissading control doubtful, take time to control descent regardless of darkness."
+    },
+    {
+      "id": "dragontail-serpentine-arete",
+      "name": "Serpentine Arete",
+      "peak": "Dragontail Peak",
+      "area": "Enchantments - Alpine Lakes Wilderness",
+      "grade": {
+        "alpine": "Grade IV",
+        "rock": "5.8",
+        "commitment": "10-14 hours",
+        "pitches": "13-14"
+      },
+      "height_ft": 9010,
+      "vertical_feet": 2000,
+      "route_type": "Alpine rock",
+      "watch_out": [
+        {
+          "hazard": "Loose rock - PERVASIVE HAZARD",
+          "description": "Loose rock through much of low 5th class climbing. Approximately 3 pitches of 'terribly loose scrambling.' Delicate movements essential. Rockfalls can occur above climbers.",
+          "frequency": "Throughout route",
+          "severity": "High - cumulative hazard",
+          "impact": "Slows climbing, increases exposure time; requires continuous vigilance"
+        },
+        {
+          "hazard": "Route-finding difficulty in upper section",
+          "description": "Route-finding on upper section 'difficult.' Summit direction not obvious. Multiple 4th to mid-5th class options create navigation confusion.",
+          "complexity": "High",
+          "error_exposure": "High - wrong route leads into more technical terrain"
+        },
+        {
+          "hazard": "Exposed traversal",
+          "description": "Right-trending crack traverse at mid-5th class with 'good exposure.'",
+          "exposure": "Significant",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Weather and rockfall exposure",
+          "description": "9010 ft altitude, sustained exposure through multiple pitches. Afternoon thunderstorm risk mid-summer.",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Transition from snow to rock time-sink",
+          "description": "Initial transition from snow onto base of route can be major time killer, extending overall day length.",
+          "timing": "Variable, adds 1-2 hours"
+        },
+        {
+          "hazard": "Bivouac/benightment risk",
+          "description": "Large objective with significant getting-benighted potential noted in climbing community.",
+          "severity": "Moderate to high",
+          "consequence": "Exposed night on exposed ridge"
+        }
+      ],
+      "descent": {
+        "route": "Downclimb and rappel",
+        "difficulty": "Complex due to loose rock and exposure",
+        "hazards": "Loose rock, rockfall, exposure",
+        "equipment": "Crampons and ice axe essential for descent",
+        "time_hours": "3-5"
+      },
+      "time_estimates": {
+        "approach_hours": "1-2",
+        "climbing_hours": "6-8",
+        "descent_hours": "3-5",
+        "total_car_to_car": "10-14"
+      },
+      "seasonal_recommendations": {
+        "best_window": "Late July-August",
+        "optimal_months": ["July", "August"],
+        "avoid": "Early season (snow cover, mixed terrain), late season (loose rock, icy passages)"
+      },
+      "turnaround_strategy": "Hard turnaround: 2pm at latest. If not making good progress by pitch 8-9, consider descent. Route length and loose rock make fast retreat difficult. Mandatory helmet. Have headlamp accessible in case of benightment."
+    }
+  ]
+}

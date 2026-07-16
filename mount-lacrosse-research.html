@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mount LaCrosse Climbing Research</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f9fafb;
+        }
+        @media (prefers-color-scheme: dark) {
+            body { color: #e5e7eb; background: #0f1419; }
+            .card { background: #1f2937; border-color: #374151; }
+            .header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+            .confidence { color: #d1d5db; }
+            code { background: #374151; color: #f3f4f6; }
+            a { color: #60a5fa; }
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .header {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #0f172a;
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.85; }
+        .card {
+            background: #fff;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .card h2 {
+            color: #1e40af;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .card h3 {
+            color: #1e3a8a;
+            font-size: 1.1em;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+        .data-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
+            align-items: start;
+        }
+        .label {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 0.95em;
+        }
+        .value {
+            color: #374151;
+        }
+        .confidence {
+            display: inline-block;
+            font-size: 0.85em;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-top: 4px;
+        }
+        .high { background: #dcfce7; color: #166534; }
+        .medium { background: #fef3c7; color: #92400e; }
+        .low { background: #fee2e2; color: #991b1b; }
+        @media (prefers-color-scheme: dark) {
+            .label { color: #f3f4f6; }
+            .value { color: #d1d5db; }
+            .high { background: #064e3b; color: #d1fae5; }
+            .medium { background: #78350f; color: #fef3c7; }
+            .low { background: #7f1d1d; color: #fecaca; }
+        }
+        .section-title {
+            font-size: 1.3em;
+            color: #0f172a;
+            font-weight: 600;
+            margin-top: 22px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .route-card {
+            background: #f0f9ff;
+            border-left: 4px solid #06b6d4;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .route-card { background: #082f49; border-left-color: #06b6d4; }
+        }
+        .route-card h3 {
+            color: #0369a1;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .gear-list, .hazard-list {
+            background: #f9fafb;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+        }
+        .gear-list ul, .hazard-list ul {
+            margin-left: 20px;
+            color: #374151;
+        }
+        .gear-list li, .hazard-list li {
+            margin-bottom: 6px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .gear-list, .hazard-list { background: #1f2937; }
+            .gear-list ul, .hazard-list ul { color: #d1d5db; }
+        }
+        .conflict-box {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin: 12px 0;
+            font-size: 0.9em;
+        }
+        @media (prefers-color-scheme: dark) {
+            .conflict-box { background: #7f1d1d; border-left-color: #f87171; color: #fecaca; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mount LaCrosse</h1>
+            <p>Olympic Range, Washington • 6,417 ft (1,956 m) • Jefferson County</p>
+            <p style="margin-top: 8px; font-size: 0.95em;">Comprehensive climbing data with source verification</p>
+        </div>
+
+        <!-- PEAK OVERVIEW -->
+        <div class="card">
+            <h2>Peak Overview</h2>
+
+            <div class="section-title">Essential Peak Data</div>
+            <div class="data-row">
+                <div class="label">Elevation</div>
+                <div class="value">6,417 feet (1,956 meters) <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Prominence</div>
+                <div class="value">977 feet (298 m) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">GPS Coordinates</div>
+                <div class="value">47°41′05″N 123°18′44″W (47.6847°N, 123.3122°W) <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Location</div>
+                <div class="value">Dosewallips Group, Olympic Mountains, Olympic National Park, Jefferson County, WA <span class="confidence high">HIGH</span></div>
+            </div>
+
+            <div class="section-title">Nearby Peaks & Reference Points</div>
+            <div class="data-row">
+                <div class="label">Parent Peak</div>
+                <div class="value">Mount Elk Lick (2.54 miles / 4.09 km east) <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Adjacent Massifs</div>
+                <div class="value">Anderson Massif (2.67 miles / 4.30 km north); White Mountain (0.95 miles / 1.53 km southwest) <span class="confidence high">HIGH</span></div>
+            </div>
+
+            <div class="section-title">Naming & History</div>
+            <div class="data-row">
+                <div class="label">Name Origin</div>
+                <div class="value">Named after nearby Lake LaCrosse <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Lake Naming History</div>
+                <div class="value">Originally called "Lake of the Holy Cross" by Lieutenant Joseph P. O'Neil's 1890 expedition (a large tree with cross-shaped branches guarded the lake); later simplified to "Lake LaCrosse" <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">First Ascent</div>
+                <div class="value">1928 by Richard Paulson, William Ryer, Paul Wiseman, and Frank Woodworth <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Geological Composition</div>
+                <div class="value">Eocene-era basalt (oceanic crust obduction) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+        </div>
+
+        <!-- APPROACH ROUTES -->
+        <div class="card">
+            <h2>Approach Routes</h2>
+
+            <div class="route-card">
+                <h3>Primary Route: Dosewallips River Trail</h3>
+                <div class="data-row">
+                    <div class="label">Trailhead</div>
+                    <div class="value">Dosewallips Ranger Station (off Highway 101) <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Distance to LaCrosse Basin</div>
+                    <div class="value">~20.4 miles one-way (includes 6.5 mile road closure walk; original distance 14.9 miles to Hayden Pass) <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Elevation Gain</div>
+                    <div class="value">2,650 to 5,847 feet (ranger station to Hayden Pass/LaCrosse Basin) <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Trip Duration</div>
+                    <div class="value">Multi-day backpack (2–3 days typical to reach LaCrosse Basin from trailhead) <span class="confidence medium">MEDIUM</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Road Status</div>
+                    <div class="value">Dosewallips Road washed out; adds 6.5 miles of hiking (washout ~2002, recent repairs limited) <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Major Waypoints</div>
+                    <div class="value">Dose Forks → Deception Creek → Bear Camp → Dose Meadows → Hayden Pass (5,800 ft) → LaCrosse Basin <span class="confidence medium">MEDIUM</span></div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <h3>Alternative: Enchanted Valley Approach</h3>
+                <div class="data-row">
+                    <div class="label">Route Description</div>
+                    <div class="value">Via Enchanted Valley to O'Neil Pass to Duckabush Trail to Marmot Lake to Lake LaCrosse <span class="confidence medium">MEDIUM</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Total Distance</div>
+                    <div class="value">~52 miles (83 km) for full loop; ~13 miles to Enchanted Valley + ~13 miles over O'Neil Pass <span class="confidence medium">MEDIUM</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label">Elevation Gain</div>
+                    <div class="value">~10,170 feet (3,100 m) for full loop <span class="confidence medium">MEDIUM</span></div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <h3>Historic Route: North Fork Skokomish</h3>
+                <div class="data-row">
+                    <div class="label">Notes</div>
+                    <div class="value">Route used by O'Neil Expedition (1890); less commonly used today; requires North Fork Skokomish River access <span class="confidence low">LOW</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROUTE GRADES & TECHNICAL -->
+        <div class="card">
+            <h2>Route Grades & Technical Difficulty</h2>
+
+            <div class="section-title">Climbing Grade</div>
+            <div class="data-row">
+                <div class="label">Route Grade</div>
+                <div class="value">Class 2–3 (inferred from similar Olympic peaks; not explicitly documented in sources) <span class="confidence low">LOW</span></div>
+            </div>
+            <div class="conflict-box">
+                ⚠ Note: Mount LaCrosse's specific scramble grade (Class 2 vs 3) is not documented in available climbing guidebooks. Inference based on (1) typical Dosewallips Group peaks, (2) 1928 first ascent by non-technical party, and (3) nearby Mount Anderson (7,321 ft) being Class 3–4 with glacier approach.
+            </div>
+
+            <div class="section-title">Rock/Alpine Character</div>
+            <div class="data-row">
+                <div class="label">Rock Type & Quality</div>
+                <div class="value">Loose, fragmented Eocene basalt; poor crack placements; rockfall hazard common on exposed sections <span class="confidence medium">MEDIUM</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Snow/Glacier</div>
+                <div class="value">Approach and lower sections cross snowfields early season; hanging glaciers exist on cliffs south of Anderson Pass on Mount LaCrosse; no active glacier on summit proper (inferred) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+
+            <div class="section-title">Relative Difficulty Tier</div>
+            <div class="data-row">
+                <div class="label">Compared to Mount Olympus</div>
+                <div class="value">Likely similar or slightly more technical than Mount Olympus (7,980 ft); both require glacier travel, crevasse rescue, ice axe/crampons <span class="confidence low">LOW</span></div>
+            </div>
+        </div>
+
+        <!-- HAZARDS -->
+        <div class="card">
+            <h2>Hazards & Objective Dangers</h2>
+
+            <div class="section-title">Primary Hazards</div>
+            <div class="hazard-list">
+                <ul>
+                    <li><strong>Avalanche:</strong> Wet, heavy maritime snow; avalanche danger highest March–June; exposed snow chutes above LaCrosse Basin <span class="confidence high">HIGH</span></li>
+                    <li><strong>Rockfall:</strong> Loose, fragmented basalt; summit blocks and scree fields; unstable talus <span class="confidence high">HIGH</span></li>
+                    <li><strong>Crevasses:</strong> Hanging glaciers south of Anderson Pass; adjacent Anderson & Eel glaciers have active crevasses (though Anderson Glacier mostly moribund) <span class="confidence high">HIGH</span></li>
+                    <li><strong>Weather:</strong> Rapid weather deterioration; hurricane-force winds; marine west coast climate delivers rain/snow from Pacific; high annual precipitation <span class="confidence high">HIGH</span></li>
+                    <li><strong>Navigation:</strong> Snow obscures trail at all elevations early/late season; map & compass navigation essential <span class="confidence high">HIGH</span></li>
+                    <li><strong>Exposure & Terrain:</strong> Steep, exposed alpine terrain; potential for long falls on loose rock <span class="confidence medium">MEDIUM</span></li>
+                </ul>
+            </div>
+
+            <div class="section-title">Glacier & Crevasse Context</div>
+            <div class="data-row">
+                <div class="label">Anderson Glacier Status</div>
+                <div class="value">Largely extinct; no significant crevasses; mostly boulder field and terminal moraine lake; has shrunk dramatically <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Eel Glacier Status</div>
+                <div class="value">Still active (opposite Anderson); late-summer bergschrund difficult to cross; large crevasses on eastern slopes <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Mount LaCrosse Hanging Glaciers</div>
+                <div class="value">Cliffs and hanging glaciers exist south of Anderson Pass on Mount LaCrosse; potential ice/rock hazard from above <span class="confidence medium">MEDIUM</span></div>
+            </div>
+        </div>
+
+        <!-- GEAR & REQUIREMENTS -->
+        <div class="card">
+            <h2>Gear Requirements & Training</h2>
+
+            <div class="section-title">Essential Gear</div>
+            <div class="gear-list">
+                <strong>Alpine/Climbing Gear:</strong>
+                <ul>
+                    <li>Ice axe (essential for self-belay on snow slopes) <span class="confidence high">HIGH</span></li>
+                    <li>Crampons (required for steep snow/glacier approach) <span class="confidence high">HIGH</span></li>
+                    <li>Mountaineering helmet (mandatory for rock/rockfall/crevasse hazard) <span class="confidence high">HIGH</span></li>
+                    <li>Rope (for crevasse rescue on adjacent glaciers; bring if glacier approach required) <span class="confidence medium">MEDIUM</span></li>
+                    <li>Crevasse rescue gear: carabiners, harness, anchors for self-rescue <span class="confidence high">HIGH</span></li>
+                    <li>USGS 7.5-minute topographic map (compass, altimeter) <span class="confidence high">HIGH</span></li>
+                </ul>
+            </div>
+
+            <div class="gear-list">
+                <strong>Backpacking Essentials:</strong>
+                <ul>
+                    <li>Bear canister (required per NPS; bear canisters mandatory in Dosewallips zone) <span class="confidence high">HIGH</span></li>
+                    <li>Water treatment system (Giardia risk on streams) <span class="confidence high">HIGH</span></li>
+                    <li>4-season tent (heavy snow/rain/wind common) <span class="confidence medium">MEDIUM</span></li>
+                    <li>Sleeping bag rated –10°C or colder <span class="confidence medium">MEDIUM</span></li>
+                    <li>Headlamp with extra batteries <span class="confidence high">HIGH</span></li>
+                </ul>
+            </div>
+
+            <div class="section-title">Required Skills & Training</div>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li>Crevasse self-rescue techniques (demonstrated) <span class="confidence high">HIGH</span></li>
+                <li>Self-arrest techniques on steep snow <span class="confidence high">HIGH</span></li>
+                <li>Route-finding under snow (map/compass/altimeter navigation) <span class="confidence high">HIGH</span></li>
+                <li>Alpine rock scrambling (Class 2–3) <span class="confidence medium">MEDIUM</span></li>
+                <li>Weather assessment & rapid descent decision-making <span class="confidence high">HIGH</span></li>
+                <li>Backcountry camping & bear safety <span class="confidence high">HIGH</span></li>
+            </ul>
+        </div>
+
+        <!-- SEASONAL WINDOWS -->
+        <div class="card">
+            <h2>Seasonal Climbing Windows & Snow Conditions</h2>
+
+            <div class="section-title">Optimal Climbing Season</div>
+            <div class="data-row">
+                <div class="label">Best Months</div>
+                <div class="value">June through September <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Peak Window</div>
+                <div class="value">July and August (driest months, minimal precipitation, warm temperatures) <span class="confidence high">HIGH</span></div>
+            </div>
+
+            <div class="section-title">Seasonal Melt-Out Timeline</div>
+            <div class="data-row">
+                <div class="label">Hayden Pass Melt-Out</div>
+                <div class="value">Typically mid-July (average); varies year to year <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Snow Melt-Out (Conditions-Dependent)</div>
+                <div class="value">May (dry years) to August (heavy snowpack years); 100% normal snowpack melts by late July; high snowpack (>100%) can persist to August <span class="confidence medium">MEDIUM</span></div>
+            </div>
+
+            <div class="section-title">Month-by-Month Conditions</div>
+            <div style="margin-left: 0;">
+                <div class="data-row" style="margin-bottom: 8px;">
+                    <div class="label"><strong>May–June</strong></div>
+                    <div class="value">High snow coverage; avalanche danger peak; rain/snow mix; unpredictable weather; trails often snow-covered <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row" style="margin-bottom: 8px;">
+                    <div class="label"><strong>July</strong></div>
+                    <div class="value">Driest month; snow mostly melted by mid-July at Hayden Pass; warm temperatures; long daylight; ideal window <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row" style="margin-bottom: 8px;">
+                    <div class="label"><strong>August</strong></div>
+                    <div class="value">Second-driest month; warm, stable weather; alpine routes mostly clear; thunderstorms possible in afternoons <span class="confidence high">HIGH</span></div>
+                </div>
+                <div class="data-row" style="margin-bottom: 8px;">
+                    <div class="label"><strong>September</strong></div>
+                    <div class="value">Cooling trend; rain increases; snow can emerge in high country by late September; still climbable but conditions deteriorating <span class="confidence medium">MEDIUM</span></div>
+                </div>
+                <div class="data-row">
+                    <div class="label"><strong>October–April</strong></div>
+                    <div class="value">Heavy precipitation (rain/snow); high avalanche danger; Hurricane Ridge averages 30–35 feet snow annually; Olympic interior heavily snow-covered; not recommended <span class="confidence high">HIGH</span></div>
+                </div>
+            </div>
+
+            <div class="section-title">Precipitation & Maritime Influence</div>
+            <div class="data-row">
+                <div class="label">Annual Precipitation Pattern</div>
+                <div class="value">Marine west coast climate; Pacific fronts forced upward by Olympic barrier; wet, heavy snow winter; high avalanche risk <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Western Slope (LaCrosse Area)</div>
+                <div class="value">100–170 inches annual precipitation; higher snowfall accumulation; rain/snow mix above ~3,500 ft <span class="confidence high">HIGH</span></div>
+            </div>
+        </div>
+
+        <!-- TIME ESTIMATES -->
+        <div class="card">
+            <h2>Time Estimates</h2>
+
+            <div class="section-title">Approach Phase</div>
+            <div class="data-row">
+                <div class="label">Dosewallips Trailhead to LaCrosse Basin (via Hayden Pass)</div>
+                <div class="value">Day 1: Trailhead → Dose Meadows/Bear Camp (~13 miles, 6–8 hours); Day 2: Bear Camp → LaCrosse Basin (~7 miles, 4–6 hours, 3,000+ ft gain) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Total Approach with Road Closure</div>
+                <div class="value">~20.4 miles one-way (added 6.5 mile road walk); 2–3 days to establish camp at LaCrosse Basin <span class="confidence medium">MEDIUM</span></div>
+            </div>
+
+            <div class="section-title">Summit Day</div>
+            <div class="data-row">
+                <div class="label">Camp to Summit to Camp</div>
+                <div class="value">Unknown; likely 8–12 hours (inferred from similar Mount Olympus ascent ~8–10 hrs); dependent on route choice and group pace <span class="confidence low">LOW</span></div>
+            </div>
+
+            <div class="section-title">Total Trip Duration</div>
+            <div class="data-row">
+                <div class="label">Minimum Alpine Trip</div>
+                <div class="value">5–6 days (2 days approach + 1 summit day + 2 descent/exit days) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Comfort Trip</div>
+                <div class="value">6–8 days (allows for weather buffer, acclimatization, leisurely pace) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+        </div>
+
+        <!-- DESCENT OPTIONS -->
+        <div class="card">
+            <h2>Descent Routes & Exit Options</h2>
+
+            <div class="section-title">Primary Descent</div>
+            <div class="data-row">
+                <div class="label">Standard Descent</div>
+                <div class="value">Reverse approach route (Dosewallips River Trail back out) <span class="confidence high">HIGH</span></div>
+            </div>
+
+            <div class="section-title">Alternative Exit Routes</div>
+            <div class="data-row">
+                <div class="label">Enchanted Valley Loop Exit</div>
+                <div class="value">Continue west via LaCrosse Basin → Marmot Lake → Duckabush Trail → Enchanted Valley Chalet → exit via Quinault River Trail (one-way traverse; requires shuttle or second vehicle) <span class="confidence medium">MEDIUM</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">Anderson Pass Traverse</div>
+                <div class="value">If attempting adjacent Mount Anderson, can traverse Anderson Pass and descend via West Fork Dosewallips (advanced, high-elevation pass) <span class="confidence low">LOW</span></div>
+            </div>
+
+            <div class="section-title">Bail-Out / Emergency Descent</div>
+            <div class="data-row">
+                <div class="label">Lower Elevation Escape</div>
+                <div class="value">Reverse to Dosewallips trailhead at any point; lower elevations relatively accessible for emergency descent <span class="confidence high">HIGH</span></div>
+            </div>
+            <div class="data-row">
+                <div class="label">NPS Ranger Contacts</div>
+                <div class="value">Wilderness Information Center: (360) 565-3100 for emergency, conditions, guide referrals <span class="confidence high">HIGH</span></div>
+            </div>
+        </div>
+
+        <!-- RESEARCH SUMMARY -->
+        <div class="card" style="border-left-color: #8b5cf6;">
+            <h2 style="color: #7c3aed;">Research Summary & Data Quality Notes</h2>
+
+            <div class="section-title">Data Confidence Levels</div>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li><strong>HIGH (✓✓✓):</strong> Corroborated by 2–3 independent sources; considered definitive</li>
+                <li><strong>MEDIUM (✓✓):</strong> Single strong source or inferred from analogous peaks/routes; reasonable confidence but not independently verified</li>
+                <li><strong>LOW (✓):</strong> Single source, inferred from distant analogs, or explicitly unavailable; use with caution</li>
+            </ul>
+
+            <div class="section-title">Key Information Gaps</div>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li><strong>Route Grade:</strong> Specific Class grade for Mount LaCrosse not found in available guides. Inference (Class 2–3) based on (1) 1928 first ascent by non-technical party, (2) typical Dosewallips Group scrambles, (3) nearby Mount Anderson being 3–4 with glacier.</li>
+                <li><strong>Summit Day Time Estimate:</strong> No documented time from camp to summit for Mount LaCrosse specifically. Estimate of 8–12 hours is inferred from Mount Olympus (similar elevation, glacier approach).</li>
+                <li><strong>Active Climbing Routes:</strong> No guidebook (print or online) documents distinct named routes on Mount LaCrosse summit proper. All references point to approaches via LaCrosse Basin and surrounding traverses.</li>
+                <li><strong>First Ascent Route:</strong> 1928 first ascent party (Paulson, Ryer, Wiseman, Woodworth) route not documented; likely via Dosewallips or Skokomish approach.</li>
+            </ul>
+
+            <div class="section-title">Sources Consulted</div>
+            <p style="color: #374151; margin-bottom: 8px;"><strong>Primary Academic/Authority:</strong></p>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li>Wikipedia (Mount LaCrosse article) — elevation, first ascent, naming, coordinates</li>
+                <li>U.S. National Park Service — NPS Climbing guidelines, weather, Dosewallips trail conditions, avalanche safety</li>
+                <li>Washington Trails Association (WTA) — trail access, approach data, trip reports</li>
+                <li>The Mountaineers — alpine climbing standards, route guides, course materials</li>
+                <li>Peakbagger.com — peak listing, coordinates, prominence</li>
+                <li>ProTrails, AllTrails, OnX Maps — trail distance/elevation data</li>
+            </ul>
+
+            <p style="color: #374151; margin-top: 12px;"><strong>Secondary Sources (Blogs, Trip Reports, Photo Guides):</strong></p>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li>Oregon Hikers Forum, NW Hikers Forum — user trip reports, conditions notes</li>
+                <li>Personal climbing blogs (Jason Hummel Photography, The Wild Outsiders, etc.) — photo documentation, firsthand accounts</li>
+                <li>OpenSnow, Experience Olympic — seasonal weather patterns</li>
+            </ul>
+
+            <div class="section-title">Conflicts / Unresolved Issues</div>
+            <div class="conflict-box">
+                <strong>Elevation Discrepancy:</strong> User query listed Mount LaCrosse as 5,939 ft. All authoritative sources (Wikipedia, Peakbagger, ProTrails, NPS materials) confirm 6,417 ft. The 5,939 ft figure may refer to nearby Mount Washington (Olympic peak), which is 5,944 ft. This report uses 6,417 ft as the correct elevation.
+            </div>
+
+            <div class="section-title">Recommended Next Steps for Route Database</div>
+            <ul style="margin-left: 20px; color: #374151;">
+                <li>Contact NPS Wilderness Information Center (360-565-3100) for route-specific grade, time estimates, and current climbing party data</li>
+                <li>Reach out to The Mountaineers Seattle Branch (alpine committee) — likely have detailed route notes and trip data from past ascents</li>
+                <li>Consult "Climbers Guide to the Olympic Mountains" website (climbersguideolympics.com) for user-submitted route beta (site had access restrictions during research)</li>
+                <li>Search recent (2020–2026) trip reports on WTA and mountaineers.org for current conditions, time estimates, hazard updates</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
