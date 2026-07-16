@@ -1,10 +1,15 @@
 -- Feedback Loop Phase 2: Climb Logs & Trip Reports Persistence
 -- Stores logged climbs with discipline-specific metrics and crew references
+--
+-- route_id is a loose text reference, not a FK to routes(id) - same reasoning as
+-- 0031_objectives.sql/0036_crews_persistence.sql: a logged climb can be either a
+-- real DB route or a seed-only ROUTES id, and a hard FK breaks the latter case
+-- (most of this app's catalog).
 
 create table if not exists climb_logs (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
-  route_id uuid not null references routes(id) on delete cascade,
+  route_id text not null,
   crew_id uuid references crews(id) on delete set null,
   discipline text not null, -- rock_climbing, alpine, ice_climbing, aid_climbing, trad, sport, bouldering
   date_climbed date not null,
@@ -61,7 +66,7 @@ create policy "view crew logs" on climb_logs for select
   using (
     trip_report_visibility = 'public'
     or (trip_report_visibility = 'crew' and crew_id in (
-      select id from crews where members @> jsonb_build_array(jsonb_build_object('id', auth.uid()::text))
+      select crew_id from crew_members where user_id = auth.uid() and status = 'confirmed'
     ))
   );
 
@@ -83,7 +88,7 @@ create trigger climb_logs_timestamp before update on climb_logs
   for each row execute function update_climb_logs_timestamp();
 
 -- Function: Get recent trip reports for a route (for consensus building)
-create or replace function get_trip_reports_for_consensus(route_id uuid)
+create or replace function get_trip_reports_for_consensus(route_id text)
 returns table(
   id uuid, user_id uuid, stars int, cond_tags text[],
   date_climbed date, discipline text, created_at timestamptz
