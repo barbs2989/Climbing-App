@@ -10,7 +10,7 @@ const key = process.env.SUPABASE_SERVICE_KEY;
 if (!key) { console.error("Set SUPABASE_SERVICE_KEY env var"); process.exit(1); }
 const supabase = createClient(url, key, { auth: { persistSession: false }, realtime: { transport: ws } });
 
-const content = fs.readFileSync('supabase/migrations/0035_salvaged_batches_1-4_corrected.sql', 'utf8');
+const content = fs.readFileSync('supabase/migrations/0043_salvaged_batches_1-4_corrected.sql', 'utf8');
 
 // Split into UPDATE blocks
 const blocks = content.split(/(?=^update routes set$)/im).filter(b => /^update routes set/i.test(b.trim()));

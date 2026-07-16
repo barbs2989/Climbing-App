@@ -93,7 +93,7 @@ ${updates.join('\n')}
 COMMIT;
 `;
 
-const outPath = path.join(__dirname, 'supabase/migrations/0036_gear_audit_batch_6_real.sql');
+const outPath = path.join(__dirname, 'supabase/migrations/0044_gear_audit_batch_6_real.sql');
 fs.writeFileSync(outPath, migrationContent);
 console.log(`\nMigration written: ${outPath}`);
 console.log(`Size: ${(migrationContent.length / 1024).toFixed(1)} KB`);

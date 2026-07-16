@@ -3,7 +3,7 @@
 -- some IDs are missing the required wa_ prefix, migration 0033 also uses the wrong
 -- WHERE column name (route_id instead of id) and would fail outright.
 -- The verified, corrected subset of this file's real content was salvaged into
--- migration 0035_salvaged_batches_1-4_corrected.sql. Apply 0035 instead.
+-- migration 0043_salvaged_batches_1-4_corrected.sql. Apply 0043 instead.
 -- See gear-audit-progress memory for the full incident writeup.
 
 -- Gear audit batch 4: 4 peaks / 37 routes

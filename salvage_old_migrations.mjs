@@ -13,7 +13,7 @@ const supabase = createClient(url, key, { auth: { persistSession: false }, realt
 const FILES = [
   { path: "supabase/migrations/0029_goode_ne_buttress_gear_fix.sql", whereCol: "id" },
   { path: "supabase/migrations/0030_gear_audit_batch_1.sql", whereCol: "id" },
-  { path: "supabase/migrations/0031_gear_audit_test_batch.sql", whereCol: "id" },
+  { path: "supabase/migrations/0042_gear_audit_test_batch.sql", whereCol: "id" },
   { path: "supabase/migrations/0032_gear_audit_batch_3_comprehensive.sql", whereCol: "id" },
   { path: "supabase/migrations/0033_gear_audit_batch_4_comprehensive.sql", whereCol: "route_id" },
 ];
@@ -155,9 +155,9 @@ ${validBlocks.map(b => b.sql).join('\n\n')}
 COMMIT;
 `;
 
-  fs.writeFileSync('supabase/migrations/0035_salvaged_batches_1-4_corrected.sql', out);
+  fs.writeFileSync('supabase/migrations/0043_salvaged_batches_1-4_corrected.sql', out);
   fs.writeFileSync('/tmp/discarded_ids.txt', discarded.map(d => `${d.rawId}\t(${d.file})`).join('\n'));
-  console.log(`\nWritten: supabase/migrations/0035_salvaged_batches_1-4_corrected.sql`);
+  console.log(`\nWritten: supabase/migrations/0043_salvaged_batches_1-4_corrected.sql`);
   console.log(`Discarded IDs list: /tmp/discarded_ids.txt`);
 }
 
