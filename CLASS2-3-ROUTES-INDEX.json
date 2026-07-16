@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "total_routes": 20,
+    "regions": 10,
+    "elevation_range": {
+      "min_ft": 5029,
+      "max_ft": 10541
+    },
+    "season_range": {
+      "earliest_month": "July",
+      "latest_month": "October"
+    },
+    "grade_distribution": {
+      "class_2": 11,
+      "class_2_plus": 3,
+      "class_2_3": 4,
+      "class_2_3_complex": 2
+    }
+  },
+  "regions": [
+    {
+      "name": "Wenatchee Mountains",
+      "peaks": ["Bonanza Peak"],
+      "route_count": 2,
+      "avg_elevation_ft": 9511,
+      "typical_gain_ft": 4000,
+      "character": "Volcanic rock, loose talus, ridge exposure, afternoon storms"
+    },
+    {
+      "name": "Chelan-Sawtooth",
+      "peaks": ["Chelan Butte", "Magic Mountain", "Source Lake Peak"],
+      "route_count": 3,
+      "avg_elevation_ft": 8070,
+      "typical_gain_ft": 3700,
+      "character": "Stable talus, loose scree descent, trail hazards"
+    },
+    {
+      "name": "East Cascades",
+      "peaks": ["Keller Mountain", "Miners Ridge Pass Peak"],
+      "route_count": 2,
+      "avg_elevation_ft": 7738,
+      "typical_gain_ft": 2600,
+      "character": "Granite rock, stream crossings, wet sections"
+    },
+    {
+      "name": "Enchantments",
+      "peaks": ["Denny Mountain", "Cathedral Peak", "Leprechaun Lake Peak"],
+      "route_count": 3,
+      "avg_elevation_ft": 8263,
+      "typical_gain_ft": 2167,
+      "character": "Notably loose talus, weather isolation, alpine terrain"
+    },
+    {
+      "name": "North Cascades Foothills",
+      "peaks": ["Jack Mountain", "Mount Pilchuck", "Whitehorse Mountain"],
+      "route_count": 3,
+      "avg_elevation_ft": 6722,
+      "typical_gain_ft": 3267,
+      "character": "Lower elevation, afternoon storms, popularity varies"
+    },
+    {
+      "name": "Stuart Range",
+      "peaks": ["Colchuck Peak"],
+      "route_count": 1,
+      "avg_elevation_ft": 8705,
+      "typical_gain_ft": 2800,
+      "character": "Non-technical alternatives to technical alpine routes"
+    },
+    {
+      "name": "Pasayten Wilderness",
+      "peaks": ["Matterhorn Pass Peak"],
+      "route_count": 1,
+      "avg_elevation_ft": 7834,
+      "typical_gain_ft": 2800,
+      "character": "Remote wilderness, sparse route markers, avalanche terrain"
+    },
+    {
+      "name": "Alpine Lakes Wilderness",
+      "peaks": ["Crest Lake Peak"],
+      "route_count": 1,
+      "avg_elevation_ft": 7540,
+      "typical_gain_ft": 2100,
+      "character": "Long approach, alpine lake basins, navigation critical"
+    },
+    {
+      "name": "Central Cascades",
+      "peaks": ["Independence Peak", "Snoqualmie Peak"],
+      "route_count": 2,
+      "avg_elevation_ft": 6822,
+      "typical_gain_ft": 3000,
+      "character": "Moderate exposure, mixed hazard profiles"
+    },
+    {
+      "name": "North Cascades (High Alpine)",
+      "peaks": ["Glacier Peak"],
+      "route_count": 1,
+      "avg_elevation_ft": 10541,
+      "typical_gain_ft": 6500,
+      "character": "CRITICAL: Crevasses, altitude, limited season (1-2 weeks)"
+    }
+  ],
+  "routes_by_difficulty": {
+    "class_2": [
+      "Bonanza Peak - North Ridge",
+      "Chelan Butte - Standard Route",
+      "Magic Mountain - South Slope",
+      "Denny Mountain - Standard",
+      "Leprechaun Lake Peak - Northeast Slope",
+      "Jack Mountain - North Cascades Foothills",
+      "Mount Pilchuck - Classic Route",
+      "Teneriffe Mountain - East Slope",
+      "Crest Lake Peak - East Side Scramble",
+      "Source Lake Peak - Northeast Ridge Route",
+      "Snoqualmie Peak - West Slope Scramble"
+    ],
+    "class_2_plus": [
+      "Keller Mountain - Northeast Ridge",
+      "Cathedral Peak - West Slope Scramble",
+      "Matterhorn Pass Peak - East Slope Approach"
+    ],
+    "class_2_3": [
+      "Bonanza Peak - West Ridge Approach",
+      "Colchuck Peak - East Ridge (Non-Technical)",
+      "Independence Peak - North Ridge Route",
+      "Glacier Peak - Cool Glacier Non-Technical Approach"
+    ]
+  },
+  "routes_by_elevation": [
+    {
+      "rank": 1,
+      "name": "Glacier Peak - Cool Glacier Non-Technical Approach",
+      "elevation_ft": 10541,
+      "gain_ft": 6500,
+      "difficulty": "Class 2-3",
+      "season": "Aug-Sep"
+    },
+    {
+      "rank": 2,
+      "name": "Colchuck Peak - East Ridge (Non-Technical)",
+      "elevation_ft": 8705,
+      "gain_ft": 2800,
+      "difficulty": "Class 2-3",
+      "season": "Jul-Oct"
+    },
+    {
+      "rank": 3,
+      "name": "Leprechaun Lake Peak - Northeast Slope",
+      "elevation_ft": 8401,
+      "gain_ft": 1900,
+      "difficulty": "Class 2",
+      "season": "Aug-Oct"
+    },
+    {
+      "rank": 4,
+      "name": "Cathedral Peak - West Slope Scramble",
+      "elevation_ft": 8300,
+      "gain_ft": 2400,
+      "difficulty": "Class 2+",
+      "season": "Aug-Oct"
+    },
+    {
+      "rank": 5,
+      "name": "Denny Mountain - Standard Approach",
+      "elevation_ft": 8088,
+      "gain_ft": 2200,
+      "difficulty": "Class 2",
+      "season": "Aug-Sep"
+    },
+    {
+      "rank": 6,
+      "name": "Magic Mountain - South Slope Route",
+      "elevation_ft": 8067,
+      "gain_ft": 3800,
+      "difficulty": "Class 2",
+      "season": "Jul-Sep"
+    },
+    {
+      "rank": 7,
+      "name": "Source Lake Peak - Northeast Ridge Route",
+      "elevation_ft": 7987,
+      "gain_ft": 3100,
+      "difficulty": "Class 2",
+      "season": "Jul-Oct"
+    },
+    {
+      "rank": 8,
+      "name": "Keller Mountain - Northeast Ridge",
+      "elevation_ft": 8020,
+      "gain_ft": 3500,
+      "difficulty": "Class 2+",
+      "season": "Jul-Oct"
+    }
+  ],
+  "routes_by_season": {
+    "may_june": ["Mount Pilchuck - Classic Route (possible early)"],
+    "july": ["All routes accessible, early summer conditions"],
+    "august": ["Peak season for all routes, best rock conditions"],
+    "september": ["Excellent conditions, some high peaks getting early snow"],
+    "october": ["Late season possible for lower peaks"],
+    "november": ["Mount Pilchuck only (elevation allows)"
+    ]
+  },
+  "hazard_summary": {
+    "most_common": [
+      "Talus/scree rockfall (18 routes)",
+      "Afternoon thunderstorms (15 routes)",
+      "Ridge/slope exposure (13 routes)",
+      "Route-finding challenges (11 routes)",
+      "Stream crossings (8 routes)",
+      "Loose rock/volcanic rock (7 routes)"
+    ],
+    "most_dangerous": [
+      "Glacier Peak crevasses (CRITICAL - requires rope skills despite 'scrambling' classification)",
+      "Steep ridge exposure (Independence Peak, Colchuck Peak, cathedral Peak)",
+      "Remote wilderness rescue impossibility (Pasayten, Glacier Peak)",
+      "Weather window extreme limitation (Glacier Peak - 1-2 weeks only)"
+    ],
+    "most_common_descent_hazard": "Talus/scree requiring controlled descent with trekking poles"
+  },
+  "usage_categories": {
+    "beginner_alpine_scramblers": {
+      "description": "Pure Class 2, minimal exposure, good training",
+      "recommended": [
+        "Mount Pilchuck - Classic Route",
+        "Teneriffe Mountain - East Slope Route",
+        "Crest Lake Peak - East Side Scramble",
+        "Leprechaun Lake Peak - Northeast Slope",
+        "Jack Mountain - North Cascades Foothills Route"
+      ]
+    },
+    "intermediate_alpine_scramblers": {
+      "description": "Class 2-3 terrain, moderate exposure, hands required",
+      "recommended": [
+        "Bonanza Peak - North Ridge",
+        "Keller Mountain - Northeast Ridge",
+        "Denny Mountain - Standard Approach",
+        "Cathedral Peak - West Slope Scramble",
+        "Miners Ridge Pass Peak - West Face Scramble"
+      ]
+    },
+    "advanced_alpine_scramblers": {
+      "description": "Class 2-3 with significant exposure, steep terrain, routefinding challenge",
+      "recommended": [
+        "Bonanza Peak - West Ridge Approach",
+        "Colchuck Peak - East Ridge (Non-Technical)",
+        "Independence Peak - North Ridge Route",
+        "Matterhorn Pass Peak - East Slope Approach",
+        "Glacier Peak - Cool Glacier Non-Technical (CRITICAL SKILLS: ROPE + GLACIER)"
+      ]
+    },
+    "crowded_avoidance": {
+      "description": "Less-visited peaks with good training value",
+      "recommended": [
+        "Keller Mountain - Northeast Ridge",
+        "Source Lake Peak - Northeast Ridge Route",
+        "Matterhorn Pass Peak - East Slope Approach (very remote)",
+        "Miners Ridge Pass Peak - West Face Scramble"
+      ]
+    },
+    "early_season": {
+      "description": "Lower elevation, south-facing, snow melt early",
+      "recommended": [
+        "Mount Pilchuck - Classic Route (5,324 ft)",
+        "Teneriffe Mountain - East Slope Route (5,029 ft)",
+        "Whitehorse Mountain - South Ridge Route (6,994 ft)",
+        "Snoqualmie Peak - West Slope Scramble (6,278 ft)"
+      ]
+    }
+  }
+}
