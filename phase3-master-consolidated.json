@@ -1,0 +1,343 @@
+{
+  "phase": 3,
+  "timestamp": "2026-07-16T03:43:42.723Z",
+  "consolidation": {
+    "agents_processed": 3,
+    "total_routes": 5,
+    "total_hazards": 0,
+    "deployment_ready": true
+  },
+  "routes": [
+    {
+      "id": "formidable_south_route",
+      "name": "Mount Formidable - South Route (Chasm Route)",
+      "peak": "Mount Formidable",
+      "area": "North Cascades National Park, Cascade Pass",
+      "elevation": 8325,
+      "grade": {
+        "alpine": "Alpine I",
+        "technical": "Class 3-4"
+      },
+      "commitment": "Multi-day (2-3 days)",
+      "approach_distance": "20 miles roundtrip",
+      "elevation_gain": 6100,
+      "watch_out": [
+        {
+          "hazard": "Extremely Loose Rock",
+          "description": "Route characterized as 'chossy mess' and 'formidable class 3 choss' with poor rock quality throughout. Climbers report 'very loose' rock in critical areas. Rock quality worsens toward summit.",
+          "frequency": "Continuous hazard",
+          "severity": "High - contributes to fall risk throughout"
+        },
+        {
+          "hazard": "Chasm/Exposure Crossing",
+          "description": "Notable exposed traverse involving a large chasm near summit requires protection. August 2025 report: 'chasm crossing was not trivial and should be treated with respect.' Party used rope with camming protection despite appearing straightforward. Exposed scrambling required.",
+          "terrain": "Steep, loose rock across exposed ledge",
+          "severity": "High - requires belay/rope protection"
+        },
+        {
+          "hazard": "Difficult Route-Finding",
+          "description": "Correct gully leading to summit is difficult to locate. Multiple trip reports note wrong gully entries leading to nearby peaklets instead of true summit. No consistent cairns or markers.",
+          "risk": "Wrong-turn exposure; climbers have settled for false summits",
+          "severity": "Critical - navigation errors common"
+        },
+        {
+          "hazard": "Class 4 Southwest Face",
+          "description": "Final approach involves steep, airy slabs and ledges with high exposure. Requires protection and solid scrambling skills.",
+          "terrain": "Steep rock faces with limited protection options",
+          "severity": "High"
+        },
+        {
+          "hazard": "Cache Glacier Hazards (Early Season)",
+          "description": "Cache Glacier approach may have crevasses early in season. One geologist reported sketchy alcove above chasm difficult in early season.",
+          "seasonal": "Primary hazard May-July",
+          "severity": "Moderate to high depending on season"
+        },
+        {
+          "hazard": "Extreme Isolation &amp; No Cell Reception",
+          "description": "Remote wilderness setting with no cell service and unlikely to encounter another party within a week. One fatality has occurred on this route. Heat exposure on return descent (August reports 'oppressive heat' through Box Canyon).",
+          "mitigation": "Tell someone your itinerary, carry emergency communication, plan for heat stress",
+          "severity": "Critical for rescue logistics"
+        },
+        {
+          "hazard": "Weather &amp; Altitude Exposure",
+          "description": "High alpine exposure at 8,325 ft. Variable mountain weather with potential afternoon storms. Alpine zone hazards: wind, lightning, temperature swings.",
+          "seasonal": "Weather deterioration mid-afternoon common",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Descent Difficulty",
+          "description": "South route is only practical descent and involves the same difficult route-finding, constant exposure, and loose rock traversing downhill (higher fall risk).",
+          "severity": "Critical - same hazards as ascent, heightened by fatigue"
+        }
+      ],
+      "time_estimates": {
+        "approach": "6+ hours from trailhead to base",
+        "climbing_day": "Full day of scrambling/climbing",
+        "descent": "Multiple hours traversing exposed terrain",
+        "total": "2-3 days recommended"
+      },
+      "turnaround_strategy": "Cache Col area (~7,300 ft) serves as psychological turnaround point. Recommend turning back if chasm crossing hasn't been reached by mid-afternoon due to descent hazard and light.",
+      "season": "July-September (snow melt above 7,400 ft)",
+      "recent_conditions": "August 2025: Chasm crossing exposed but manageable with protection. June 2025: Up to 1 foot of snow possible."
+    },
+    {
+      "id": "formidable_ptarmigan_north",
+      "name": "Mount Formidable - North Route via Ptarmigan Traverse",
+      "peak": "Mount Formidable",
+      "area": "North Cascades National Park, Cascade Pass",
+      "elevation": 8325,
+      "grade": {
+        "alpine": "Alpine I-II",
+        "technical": "Class 2-3"
+      },
+      "commitment": "Multi-day (3-5 days for full traverse)",
+      "approach": "Via Cascade Pass trailhead, part of 35-mile Ptarmigan Traverse",
+      "watch_out": [
+        {
+          "hazard": "Red Ledges Exposure",
+          "description": "Known for exposure with Class 3 scrambling. Loose or steep snow may require short Class 4 scrambles to bypass poor snow conditions.",
+          "frequency": "Consistent obstacle",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Glacier Travel on Mix-Up Arm",
+          "description": "Mix-Up Arm traverse involves heather, talus, and snow travel. Early season presents loose or steep snow conditions.",
+          "seasonal": "July-August for optimal conditions",
+          "severity": "Moderate - route-finding dependent on snow melt"
+        },
+        {
+          "hazard": "Multi-Glacier Crossing (Ptarmigan Traverse)",
+          "description": "Full traverse crosses five glaciers with crevasse exposure and required glacier travel skills.",
+          "mitigation": "Rope team glacier travel skills essential",
+          "severity": "High for multi-day option"
+        },
+        {
+          "hazard": "Weather Exposure &amp; Lightning Risk",
+          "description": "High alpine ridge traverse exposed to rapid weather changes and afternoon thunderstorms.",
+          "seasonal": "Storm frequency increases afternoon hours",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Loose Rock Throughout",
+          "description": "Typical Cascades rock with loose sections throughout ridge traverse.",
+          "severity": "Moderate"
+        }
+      ],
+      "time_estimates": {
+        "summit_day": "Variable depending on full traverse vs out-and-back",
+        "descent": "Same day or multi-day for full traverse"
+      },
+      "turnaround_strategy": "Flexible out-and-back allows turnaround at any point along Red Ledges or Mix-Up Arm based on conditions and party fitness."
+    },
+    {
+      "id": "eldorado_east_ridge",
+      "name": "Eldorado Peak - East Ridge (Standard Route)",
+      "peak": "Eldorado Peak",
+      "area": "North Cascades National Park, Inspiration Glacier",
+      "elevation": 8876,
+      "grade": {
+        "alpine": "Alpine I",
+        "technical": "Easy Snow/Alpine",
+        "skill_level": "Beginner (with glacier experience)"
+      },
+      "commitment": "1-3 days",
+      "approach_distance": "10 miles roundtrip",
+      "elevation_gain": 6716,
+      "watch_out": [
+        {
+          "hazard": "Crevasse Field on Inspiration-McAllister-Klawatti Icecap",
+          "description": "Heavily crevassed glacier system below East Ridge. Late-season hazard: 'glacier is pretty much melted out and heavily crevassed.' Climbers must 'zickzack our way up and cross some pretty unstable looking snow bridges.' Early season (June): glide cracks forming on steep sections.",
+          "seasonal": "Worsens June-September as temperatures warm",
+          "locations": "Inspiration Glacier approach and lower East Ridge",
+          "severity": "High - requires rope team and crevasse rescue skills"
+        },
+        {
+          "hazard": "Exposed Summit Knife-Edge",
+          "description": "Famous knife-edge summit ridge with up to 1,000+ feet of exposure on both sides. Ridge becomes extremely thin in late summer melt conditions. 'Knife's edge has one part with 1000+ ft exposure, so don't miss the boot path.' Crampons essential.",
+          "terrain": "Steep snow/ice on both sides; boot penetration and crampons provide critical security",
+          "severity": "High - fall consequences severe"
+        },
+        {
+          "hazard": "Snow Bridge Instability (Summer/Late Season)",
+          "description": "Crevasse crossings rely on snow bridges that deteriorate with temperature and sun exposure. Late-summer conditions make bridges 'less secure.' May 2025 reports: breakable crust and sloppy snow. Late April conditions: 30.5 feet snow accumulation.",
+          "seasonal": "July-August most hazardous; May-June better conditions",
+          "mitigation": "Night climbing recommended to exploit frozen conditions",
+          "severity": "High - affects all glacier travel"
+        },
+        {
+          "hazard": "Weather Volatility &amp; Afternoon Storms",
+          "description": "North Cascades weather highly variable. 'Clear mornings quickly turning into afternoon storms.' Rapid temperature swings affect rock/ice conditions and visibility. Smoke from nearby wildfires reported reducing visibility 180+ degrees.",
+          "frequency": "Predictable afternoon deterioration",
+          "severity": "Moderate to high - affects turnaround timing"
+        },
+        {
+          "hazard": "Rockfall &amp; Loose Rock (Final Descent)",
+          "description": "Final scramble to summit and descent portions contain loose rock. Temperature-dependent: 'by late summer crevasses may open and glacier travel becomes more complex. Everything is safer at night when temperatures are cold and the sun has not begun to melt the snow and ice, as the terrain is firmer for easier climbing... rock fall is less of a hazard.'",
+          "temporal": "Rockfall increases with sun exposure and warming",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Rapid Elevation Gain &amp; Altitude Effects",
+          "description": "6,716 feet of gain in 2 days from trailhead to summit. Altitude hazard: 8,876 ft summit with rapid ascent increases risk of acute mountain sickness and compromised judgment.",
+          "mitigation": "High camp acclimatization important",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Nocturnal Descent Navigation",
+          "description": "Descending in darkness requires careful navigation. Planted wands 'pretty useless at night.' Late-season trip starting at 5:15 PM required uncertain nighttime descent in new moon darkness.",
+          "seasonal": "Critical concern during summer solstice and warm-season alpine parties",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "River Crossing (Cascade River)",
+          "description": "Initial approach crosses Cascade River which can be 'very difficult depending on the time of year' (melt-driven swelling).",
+          "seasonal": "July-August peak runoff; early June easier",
+          "severity": "Moderate (approach hazard)"
+        }
+      ],
+      "time_estimates": {
+        "approach_to_high_camp": "5-7 hours (3,500-5,500 ft gain)",
+        "summit_day": "5-7 hours climbing time from high camp",
+        "descent_to_trailhead": "2-4 hours",
+        "total": "1-3 days depending on parties; most fit climbers 1 day"
+      },
+      "turnaround_strategy": "Professional guides implement firm turnaround policies. 'Cannot guarantee that you will reach the summit due to weather, fitness, or route conditions.' Typical turnaround: if not at East Ridge crest by 9-10 AM, descend. Weather windows critical: turn back for afternoon storm development.",
+      "required_skills": "Glacier travel experience, rope team movement, self-arrest, basic crevasse rescue, ice axe and crampon proficiency",
+      "season": "Peak: June-September (May and late September marginal)",
+      "recent_conditions": "April 2026: 30.5 feet snow accumulation since September 2025, elevation 8,892.8 ft. June 2024: Mixed early summer below 6,000 ft, late winter above with sloppy conditions and glide cracks."
+    },
+    {
+      "id": "eldorado_west_arete",
+      "name": "Eldorado Peak - West Arete",
+      "peak": "Eldorado Peak",
+      "area": "North Cascades, West Face",
+      "elevation": 8876,
+      "grade": {
+        "alpine": "Alpine IV",
+        "technical": "5.8",
+        "rock_grade": "Sustained 5.6-5.7, crux 5.8"
+      },
+      "commitment": "2-4 days, often with unplanned bivouac",
+      "vertical_gain": "3000 feet of continuous rock climbing",
+      "description": "Perhaps the most spectacular alpine rock climb in the North Cascades. Rises nearly 3,000 feet from glacier to summit. Only climbed a few times per season by very competent parties.",
+      "watch_out": [
+        {
+          "hazard": "Dangerously Loose Rock Throughout",
+          "description": "The route is 'generally pretty loose, dangerous, and stressful.' Early pitches feature 'unbelievably loose 5.6 terrain' and 'the loosest pitch either of us had ever climbed.' Upper pitches remain 'dangerously loose' despite reaching better-quality sections in the tower. Final 1,000 feet to summit involves loose rock.",
+          "zones": "Entire route; worse on lower and upper sections",
+          "severity": "Critical - protection reliability questionable; falling rock hazard significant"
+        },
+        {
+          "hazard": "Tower/Gendarme Complex with Extreme Exposure",
+          "description": "Prominent tower section (crux area) requires navigation 'up, through or around the towers with relentless exposure on each side.' Passage involves multiple towers, 70-meter rappel, and complex route decisions. 'Old-school 5.8 face traverse' features only 'an in-situ piton' for protection while 'delicately' crossing with 'tremendous exposure.'",
+          "terrain": "Vertical rock faces, thin protection, high slab exposure",
+          "severity": "Critical - minimal protection, psychological pressure extreme"
+        },
+        {
+          "hazard": "Confusing Route-Finding",
+          "description": "Route-finding 'proved constant' throughout with pitches 'blending together' and no clear passages. Multiple tower sections require decision-making on ascent direction. Descending from upper sections 'would be a dangerous nightmare.'",
+          "consequence": "Once past towers, climbers are committed; retreat becomes near-impossible",
+          "severity": "High - commitment hazard"
+        },
+        {
+          "hazard": "Variable Rock Quality",
+          "description": "Rock quality unpredictable and variable throughout. Sections improve in tower area then degrade again toward summit.",
+          "protection_impact": "Reliable anchor placement difficult; protection expectations low",
+          "severity": "High"
+        },
+        {
+          "hazard": "Exposure &amp; Fall Severity",
+          "description": "Exposure on both sides of towers and thin ridge sections. 'Tremendous exposure' on face traverse sections. Ground-fall potential from most pitches.",
+          "severity": "Critical - falls likely to be fatal"
+        },
+        {
+          "hazard": "Physical Commitment &amp; Fatigue",
+          "description": "Extended multi-pitch climbing over 17+ hours from base camp (19 pitches documented). Physical and mental fatigue increase with climb length. Unplanned bivouacs common due to route complexity and climbing time.",
+          "frequency": "Significant percentage of ascents experience bivouac or retreat",
+          "severity": "High - fatigue error hazard"
+        },
+        {
+          "hazard": "Weather Exposure",
+          "description": "3,000 feet of exposed rock climbing with minimal shelter. High alpine weather volatility affects afternoon stability and visibility.",
+          "seasonal": "Afternoon storms pose serious hazard",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Descent via Mixed Terrain",
+          "description": "Descent likely via other routes or complicated rappel sequences. Loose rock and navigation challenges on descent.",
+          "severity": "Moderate to high"
+        }
+      ],
+      "time_estimates": {
+        "approach": "Long and strenuous approach to base",
+        "climbing": "17+ hours for 19 pitches documented",
+        "total": "2-4 days common; unplanned bivouacs frequent"
+      },
+      "skill_requirements": "Ability to climb 5.8 competently, ability to move quickly and efficiently on lower 5th class terrain, excellent ice axe and crampon skills, solid belaying and rappelling. Climbers should be in excellent physical condition.",
+      "party_size": "Parties should have 2-3 experienced rock climbers; larger parties move too slow",
+      "season": "July-September (rock climbing season)",
+      "hazard_summary": "This is a serious, dangerous alpine rock climb with loose rock throughout, minimal protection opportunities, extreme exposure, and complex route-finding. Not for typical alpine climbers—requires rock climbing competence and commitment tolerance."
+    },
+    {
+      "id": "eldorado_nw_couloir",
+      "name": "Eldorado Peak - Northwest Ice Couloir",
+      "peak": "Eldorado Peak",
+      "area": "North Cascades, Marble Creek Cirque",
+      "elevation": 8876,
+      "grade": {
+        "alpine": "Alpine II-III",
+        "technical": "AI2-3, mixed climbing"
+      },
+      "commitment": "Multi-day (2-3 days)",
+      "description": "Excellent mixed climb in scenic wild Marble Creek Cirque. Less common than East Ridge but offers superior ice climbing experience.",
+      "watch_out": [
+        {
+          "hazard": "Complicated Approach",
+          "description": "Route 'guarded by a long, somewhat complicated approach' through Marble Creek Cirque. Navigation to couloir base required.",
+          "mitigation": "Require route beta from recent ascents",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Ice Climbing on Steep Terrain",
+          "description": "Steep ice conditions requiring ice climbing skills. 'Fat ice' conditions in winter/early spring. January 2026 report: excellent soft fat ice conditions making for 'excellent climbing.'",
+          "seasonal": "Best January-March for optimal ice",
+          "severity": "Moderate - requires ice climbing proficiency"
+        },
+        {
+          "hazard": "Rockfall in Couloir",
+          "description": "Typical couloir rockfall hazard, particularly during warming or afternoon hours.",
+          "mitigation": "Early-morning start essential",
+          "severity": "Moderate to high"
+        },
+        {
+          "hazard": "Weather &amp; Rapidly Changing Conditions",
+          "description": "Exposed high alpine climbing with North Cascades weather volatility. Afternoon storms and rapid temperature changes.",
+          "frequency": "Predictable afternoon deterioration",
+          "severity": "Moderate"
+        },
+        {
+          "hazard": "Rappel-Based Descent",
+          "description": "Descent involves rappelling. Trip report notes: 'recommend bringing more ice screws' (had only 3 total) and 'a 60-meter rappel would be preferable to 40 meters for the descent off Inspiration.' Rappel anchor reliability critical.",
+          "mitigation": "Carry 4-6 ice screws, bring 60m rope for longer rappels",
+          "severity": "Moderate to high - rappel hazard"
+        },
+        {
+          "hazard": "Altitude Exposure",
+          "description": "8,876 ft summit with rapid elevation gain introduces altitude hazard.",
+          "severity": "Moderate"
+        }
+      ],
+      "time_estimates": {
+        "approach_to_couloir_base": "~5 hours",
+        "climbing": "~90 minutes from couloir base to summit",
+        "descent_rappels": "Multiple rappels to exit couloir",
+        "total": "2-3 days recommended"
+      },
+      "required_skills": "Ice climbing (AI2-3), ice axe/crampon proficiency, rappelling, route-finding, glacier navigation for approach",
+      "equipment_notes": "Bring 4-6 ice screws minimum. 60-meter rope recommended for descent rappels. Standard alpine rack for mixed sections.",
+      "season": "Winter-early spring (January-March) for optimal fat ice",
+      "recent_conditions": "February 2026: Excellent conditions with soft fat ice. Strong snowpack despite lean winter."
+    }
+  ],
+  "hazards": []
+}
