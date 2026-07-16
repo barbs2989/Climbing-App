@@ -777,8 +777,9 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
   const hasDist=route.distKm!=null&&route.distKm>0;
   const avgGrade=(hasDist&&hasAscent)?((totalAscentFt/3.28084/(route.distKm*1000))*100):null;
   const waterCount=(route.waypoints||[]).filter(w=>w.type==="Water").length;
-  const climbLenRaw=route.pitchDetail&&route.pitchDetail.length?route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0):route.routeFt;
-  const climbDisp=climbLenRaw?(route.pitchDetail&&route.pitchDetail.length?uLen(climbLenRaw):uElev(climbLenRaw)):null;
+  const usePitchSumForLen=!route.routeFt&&route.pitchDetail&&route.pitchDetail.length;
+  const climbLenRaw=route.routeFt||(route.pitchDetail&&route.pitchDetail.length?route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0):null);
+  const climbDisp=climbLenRaw?(usePitchSumForLen?uLen(climbLenRaw):uElev(climbLenRaw)):null;
   let stats,note;
   if(disc==="bouldering"){
     stats=[["Crux grade",route.cruxGrade||route.grade,C.amber]];
