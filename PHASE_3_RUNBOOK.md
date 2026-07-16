@@ -1,4 +1,16 @@
 # Phase 3 Runbook: Final 19-Peak Enrichment
+
+> **⚠️ STALE — DO NOT RUN AS-IS (2026-07-16).** This plan's 19 target peak IDs no
+> longer match the live DB: 6 were merged/renamed during a later hierarchy-dedup
+> pass, and the other 13 were already enriched by unrelated later work. The
+> elevation/approach gap this runbook was meant to close has since been
+> completed against a freshly re-audited target list — see PR #243 and the
+> `wa-elevation-approach-audit-complete-2026-07-16` memory. The companion
+> findings file has been renamed to
+> `enrichment-wip/STALE_DO_NOT_APPLY_findings_phase3_final.json` to prevent
+> accidental application. If picking this up again, re-verify the target
+> peak/route IDs against the live catalog first — don't trust this file.
+
 **Target Date:** ~2026-08-15 (when monthly API budget resets)  
 **Peaks:** 19 remaining WA alpine/scramble/mountaineering  
 **Routes:** ~64 routes  

@@ -1,5 +1,12 @@
 # Phase 3 Remaining Work — 13 Peaks (Post-Spend Limit)
 
+> **⚠️ STALE (2026-07-16).** These 13 peak IDs no longer reflect a real gap —
+> most were already enriched by later work, and this list predates a hierarchy
+> cleanup that renamed/merged several peaks. The elevation/approach audit this
+> was tracking is now complete via a freshly re-audited target list; see
+> PR #243 and the `wa-elevation-approach-audit-complete-2026-07-16` memory.
+> Do not resume from this list without re-checking the live catalog first.
+
 **Status:** Blocked by API spend limit (hit during workflow w7zvvw9lt)  
 **Trigger:** Budget reset (~2026-08-15) OR raise limit at claude.ai/settings/usage  
 **Timeline:** 1-2 hours hands-on when budget available
