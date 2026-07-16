@@ -50,9 +50,16 @@ declare
   result json;
 begin
   -- Merge crews (secondary user's crews become primary user's crews)
-  update crews set user_id = primary_id
+  update crews set created_by = primary_id
+  where created_by = secondary_id and not exists (
+    select 1 from crews c2 where c2.route_id = crews.route_id and c2.created_by = primary_id
+  );
+  merged_count := merged_count + found;
+
+  -- Merge crew memberships (secondary user's memberships become primary's)
+  update crew_members set user_id = primary_id
   where user_id = secondary_id and not exists (
-    select 1 from crews c2 where c2.route_id = crews.route_id and c2.user_id = primary_id
+    select 1 from crew_members cm2 where cm2.crew_id = crew_members.crew_id and cm2.user_id = primary_id
   );
   merged_count := merged_count + found;
 
