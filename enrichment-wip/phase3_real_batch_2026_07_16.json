@@ -1,0 +1,492 @@
+[
+  {
+    "id": "wa_amphitheater_mountain",
+    "name": "Amphitheater Mountain",
+    "elevationFt": 8374,
+    "lat": 48.97566,
+    "lng": -120.192342,
+    "hierarchyPath": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+    "region": "Pasayten/Okanogan",
+    "routes": [
+      "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+      "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+      "wa_amphitheater_mountain_pilgrimage_to_mecca",
+      "wa_amphitheater_mountain_west_route",
+      "wa_amphitheater_mountain_north_ridge",
+      "wa_amphitheater_mountain_finger_of_fatwa"
+    ],
+    "knownGaps": [
+      "wa_amphitheater_mountain_middle_finger_buttress_left_side: gain_ft MISSING, approach currently 92 chars",
+      "wa_amphitheater_mountain_middle_finger_buttress_right_side: gain_ft MISSING, approach currently 126 chars",
+      "wa_amphitheater_mountain_pilgrimage_to_mecca: gain_ft MISSING, approach currently 239 chars",
+      "wa_amphitheater_mountain_west_route: gain_ft MISSING, approach currently 635 chars",
+      "wa_amphitheater_mountain_north_ridge: gain_ft MISSING, approach currently 130 chars",
+      "wa_amphitheater_mountain_finger_of_fatwa: gain_ft MISSING, approach currently 122 chars"
+    ]
+  },
+  {
+    "id": "wa_north_early_winters_spire",
+    "name": "North Early Winters Spire",
+    "elevationFt": 7760,
+    "lat": 48.512935,
+    "lng": -120.655465,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_sub_wapass.wa_north_early_winters_spire",
+    "region": "Washington",
+    "routes": [
+      "wa_flycatcher_buttress",
+      "wa_news_nw_corner",
+      "wa_labor_pains",
+      "wa_chockstone_route",
+      "wa_the_west_face",
+      "wa_early_winter_couloir"
+    ],
+    "knownGaps": [
+      "wa_flycatcher_buttress: gain_ft=2400 (ok), approach currently 161 chars",
+      "wa_labor_pains: gain_ft=2400 (ok), approach currently 203 chars",
+      "wa_chockstone_route: gain_ft=2350 (ok), approach currently 193 chars",
+      "wa_the_west_face: gain_ft=2400 (ok), approach currently 170 chars",
+      "wa_early_winter_couloir: gain_ft=2400 (ok), approach currently 197 chars"
+    ]
+  },
+  {
+    "id": "wa_concord_tower",
+    "name": "Concord Tower",
+    "elevationFt": 7611,
+    "lat": 48.514505,
+    "lng": -120.658265,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_sub_wapass.wa_liberty_bell_group.wa_concord_tower",
+    "region": "Washington",
+    "routes": [
+      "wa_the_cave_route",
+      "wa_north_face_var_right_directisimo",
+      "wa_south_face_center",
+      "wa_south_face_3",
+      "wa_concord_tower_north_face"
+    ],
+    "knownGaps": [
+      "wa_the_cave_route: gain_ft=2300 (ok), approach currently 287 chars",
+      "wa_north_face_var_right_directisimo: gain_ft=2300 (ok), approach currently 275 chars",
+      "wa_south_face_center: gain_ft=2300 (ok), approach currently 278 chars"
+    ]
+  },
+  {
+    "id": "wa_west_face_6",
+    "name": "West Face",
+    "elevationFt": null,
+    "lat": 46.32448,
+    "lng": -121.92476,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_pinto_rock.wa_west_face_6",
+    "region": "Washington",
+    "routes": [
+      "wa_nest_route",
+      "wa_wild_wild_west",
+      "wa_spectacle_route"
+    ],
+    "knownGaps": [
+      "wa_nest_route: gain_ft=700 (ok), approach currently 251 chars",
+      "wa_wild_wild_west: gain_ft=700 (ok), approach currently 251 chars",
+      "wa_spectacle_route: gain_ft=700 (ok), approach currently 251 chars"
+    ]
+  },
+  {
+    "id": "wa_north_side",
+    "name": "North Side",
+    "elevationFt": null,
+    "lat": 46.32448,
+    "lng": -121.92476,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_pinto_rock.wa_north_side",
+    "region": "Washington",
+    "routes": [
+      "wa_sidewinder_4",
+      "wa_clast_from_the_past",
+      "wa_top_gun"
+    ],
+    "knownGaps": [
+      "wa_sidewinder_4: gain_ft=250 (ok), approach currently 251 chars",
+      "wa_clast_from_the_past: gain_ft=250 (ok), approach currently 251 chars",
+      "wa_top_gun: gain_ft=250 (ok), approach currently 251 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_shuksan",
+    "name": "Mount Shuksan",
+    "elevationFt": 9131,
+    "lat": 48.8315,
+    "lng": -121.6032,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan",
+    "region": "Washington",
+    "routes": [
+      "wa_southeast_ridge_se_corner",
+      "wa_mount_shuksan_white_salmon_glacier",
+      "wa_mount_shuksan_beckey_schmidtke",
+      "wa_mount_shuksan_north_face",
+      "wa_mount_shuksan_northeast_ridge",
+      "wa_mount_shuksan_hanging_glacier",
+      "wa_mount_shuksan_sulphide_glacier",
+      "wa_mount_shuksan_fisher_chimneys",
+      "wa_sw_couloir_and_face",
+      "wa_mount_shuksan_price_glacier"
+    ],
+    "knownGaps": [
+      "wa_southeast_ridge_se_corner: gain_ft=6600 (ok), approach currently 219 chars",
+      "wa_mount_shuksan_white_salmon_glacier: gain_ft MISSING, approach currently 0 chars",
+      "wa_sw_couloir_and_face: gain_ft=6600 (ok), approach currently 184 chars"
+    ]
+  },
+  {
+    "id": "wa_south_face_3",
+    "name": "South Face",
+    "elevationFt": null,
+    "lat": 46.32649,
+    "lng": -121.92365,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_pinto_rock.wa_south_face_3",
+    "region": "Washington",
+    "routes": [
+      "wa_cobbles_101",
+      "wa_bowling_alley_aka_regular_route"
+    ],
+    "knownGaps": [
+      "wa_cobbles_101: gain_ft=550 (ok), approach currently 251 chars",
+      "wa_bowling_alley_aka_regular_route: gain_ft=550 (ok), approach currently 251 chars"
+    ]
+  },
+  {
+    "id": "wa_pinnacle_peak_tatoosh",
+    "name": "Pinnacle Peak",
+    "elevationFt": 6562,
+    "lat": 46.757915,
+    "lng": -121.732575,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_tatoosh_range.wa_pinnacle_peak_tatoosh",
+    "region": "Goat Rocks / Tatoosh",
+    "routes": [
+      "wa_pinnacle_peak_tatoosh_r1",
+      "wa_southwest_scramble",
+      "wa_east_ridge_8"
+    ],
+    "knownGaps": [
+      "wa_southwest_scramble: gain_ft=2150 (ok), approach currently 202 chars",
+      "wa_east_ridge_8: gain_ft=2150 (ok), approach currently 110 chars"
+    ]
+  },
+  {
+    "id": "wa_shuksan_crag",
+    "name": "Shuksan Crag",
+    "elevationFt": null,
+    "lat": 48.90581,
+    "lng": -121.6776,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_baker_crags.wa_shuksan_crag",
+    "region": "Washington",
+    "routes": [
+      "wa_excavation_aka_the_crack",
+      "wa_last_chance_for_gas_aka_tricky_start"
+    ],
+    "knownGaps": [
+      "wa_excavation_aka_the_crack: gain_ft=100 (ok), approach currently 0 chars",
+      "wa_last_chance_for_gas_aka_tricky_start: gain_ft=100 (ok), approach currently 0 chars"
+    ]
+  },
+  {
+    "id": "wa_winter_spring_ice_snow_mixed",
+    "name": "Winter-Spring (ice, snow, mixed)",
+    "elevationFt": null,
+    "lat": 47.44572,
+    "lng": -121.45471,
+    "hierarchyPath": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_tooth_the.wa_winter_spring_ice_snow_mixed",
+    "region": "Washington",
+    "routes": [
+      "wa_northeast_slabs",
+      "wa_east_face_variation"
+    ],
+    "knownGaps": [
+      "wa_northeast_slabs: gain_ft=2500 (ok), approach currently 0 chars",
+      "wa_east_face_variation: gain_ft=2500 (ok), approach currently 0 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_baker",
+    "name": "Mount Baker",
+    "elevationFt": 10781,
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+    "region": "Washington",
+    "routes": [
+      "wa_mount_baker_cockscomb_ridge",
+      "wa_mount_baker_easton_glacier",
+      "wa_mount_baker_coleman_deming",
+      "wa_mount_baker_boulder_park_cleaver",
+      "wa_mount_baker_coleman_headwall",
+      "wa_mount_baker_north_ridge",
+      "wa_mount_baker_park_glacier_headwall",
+      "wa_mount_baker_boulder_glacier"
+    ],
+    "knownGaps": [
+      "wa_mount_baker_boulder_park_cleaver: gain_ft MISSING, approach currently 0 chars",
+      "wa_mount_baker_park_glacier_headwall: gain_ft=6300 (ok), approach currently 260 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_mccausland",
+    "name": "Mount McCausland",
+    "elevationFt": 5747,
+    "lat": 47.7975661,
+    "lng": -121.1034346,
+    "hierarchyPath": "usa.washington.wa_centraleast.wa_stevens_pass_lake_valhalla.wa_mount_mccausland",
+    "region": "Washington",
+    "routes": [
+      "wa_mount_mccausland_n_route"
+    ],
+    "knownGaps": [
+      "wa_mount_mccausland_n_route: gain_ft=1800 (ok), approach currently 265 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_pugh",
+    "name": "Mount Pugh",
+    "elevationFt": 7201,
+    "lat": 48.143139,
+    "lng": -121.374399,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_mount_pugh",
+    "region": "Mountain Loop Highway",
+    "routes": [
+      "wa_mount_pugh_stujack"
+    ],
+    "knownGaps": [
+      "wa_mount_pugh_stujack: gain_ft=5300 (ok), approach currently 134 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_mathias",
+    "name": "Mount Mathias",
+    "elevationFt": 7156,
+    "lat": 47.80522,
+    "lng": -123.676932,
+    "hierarchyPath": "usa.washington.wa_olympics.wa_olympic_np.wa_bailey_range.wa_mount_mathias",
+    "region": "Olympic Mountains",
+    "routes": [
+      "wa_mount_mathias_scramble"
+    ],
+    "knownGaps": [
+      "wa_mount_mathias_scramble: gain_ft=6130 (ok), approach currently 137 chars"
+    ]
+  },
+  {
+    "id": "wa_south_early_winters_spire",
+    "name": "South Early Winters Spire",
+    "elevationFt": 7807,
+    "lat": 48.512275,
+    "lng": -120.655395,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_sub_wapass.wa_south_early_winters_spire",
+    "region": "Washington",
+    "routes": [
+      "wa_south_arete",
+      "wa_south_early_winter_spire_east_buttress",
+      "wa_boving_roofs",
+      "wa_sews_sw_rib",
+      "wa_mojo_rising",
+      "wa_the_hitchhiker",
+      "wa_free_mojo",
+      "wa_dolphin_chimney",
+      "wa_southern_man",
+      "wa_northwest_face_boving_pollock",
+      "wa_south_early_winter_spire_passenger",
+      "wa_south_early_winter_spire_direct_east_buttress"
+    ],
+    "knownGaps": [
+      "wa_south_early_winter_spire_east_buttress: gain_ft=2400 (ok), approach currently 263 chars"
+    ]
+  },
+  {
+    "id": "wa_ed_wood_memorial_buttress",
+    "name": "Ed Wood Memorial Buttress",
+    "elevationFt": null,
+    "lat": 48.7716,
+    "lng": -121.28356,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_picket_range.wa_southern_pickets.wa_ed_wood_memorial_buttress",
+    "region": "Washington",
+    "routes": [
+      "wa_plan_9_from_outer_space"
+    ],
+    "knownGaps": [
+      "wa_plan_9_from_outer_space: gain_ft MISSING, approach currently 793 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_washington_olympic",
+    "name": "Mount Washington",
+    "elevationFt": 6255,
+    "lat": 47.531349,
+    "lng": -123.246118,
+    "hierarchyPath": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_washington_olympic",
+    "region": "Olympic Mountains",
+    "routes": [
+      "wa_mount_washington_olympic_standard",
+      "wa_washington_ellinor_traverse_ridge",
+      "wa_se_ridge_aka_shield_wall"
+    ],
+    "knownGaps": [
+      "wa_washington_ellinor_traverse_ridge: gain_ft=3200 (ok), approach currently 201 chars"
+    ]
+  },
+  {
+    "id": "wa_cutthroat_peak",
+    "name": "Cutthroat Peak",
+    "elevationFt": 8065,
+    "lat": 48.526495,
+    "lng": -120.703655,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_sub_wapass.wa_cutthroat_peak",
+    "region": "Washington",
+    "routes": [
+      "wa_cutthroat_south_buttress",
+      "wa_cutthroat_west_ridge",
+      "wa_complete_south_buttress",
+      "wa_north_ridge_3",
+      "wa_cutthroat_peak_r1"
+    ],
+    "knownGaps": [
+      "wa_cutthroat_west_ridge: gain_ft=3200 (ok), approach currently 262 chars"
+    ]
+  },
+  {
+    "id": "wa_castle_peak_pasayten",
+    "name": "Castle Peak",
+    "elevationFt": 8343,
+    "lat": 48.981991,
+    "lng": -120.862054,
+    "hierarchyPath": "usa.washington.wa_okanogan.wa_pasayten.wa_castle_peak_pasayten",
+    "region": "Pasayten Wilderness/Hozomeen",
+    "routes": [
+      "wa_north_face_left_buttress",
+      "wa_castle_peak_pasayten_scramble"
+    ],
+    "knownGaps": [
+      "wa_north_face_left_buttress: gain_ft=6500 (ok), approach currently 298 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_adams",
+    "name": "Mount Adams",
+    "elevationFt": 12276,
+    "lat": 46.202494,
+    "lng": -121.490746,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+    "region": "Washington",
+    "routes": [
+      "wa_mount_adams_northwest_ridge",
+      "wa_mount_adams_south_spur",
+      "wa_mount_adams_lava_glacier_headwall",
+      "wa_mount_adams_lyman_glacier",
+      "adams_avalanche_glacier",
+      "adams_northwest_ridge",
+      "wa_mount_adams_north_ridge",
+      "wa_mount_adams_adams_glacier",
+      "wa_mount_adams_wilson_glacier_headwall"
+    ],
+    "knownGaps": [
+      "wa_mount_adams_north_ridge: gain_ft=3500 (ok), approach currently 296 chars"
+    ]
+  },
+  {
+    "id": "wa_forbidden_peak",
+    "name": "Forbidden Peak",
+    "elevationFt": 8815,
+    "lat": 48.5115,
+    "lng": -121.0579,
+    "hierarchyPath": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_boston_basin.wa_forbidden_peak",
+    "region": "Washington",
+    "routes": [
+      "wa_forbidden_peak_east_ridge",
+      "wa_east_ridge_direct",
+      "wa_forbidden_peak_east_face_catscratch",
+      "wa_forbidden_peak_north_ridge",
+      "wa_forbidden_peak_northwest_face",
+      "wa_forbidden_peak_west_ridge",
+      "wa_forbidden_peak_east_ledges",
+      "wa_forbidden_peak_northeast_face"
+    ],
+    "knownGaps": [
+      "wa_forbidden_peak_east_ledges: gain_ft=0 (ok), approach currently 286 chars"
+    ]
+  },
+  {
+    "id": "wa_mount_rainier",
+    "name": "Mount Rainier",
+    "elevationFt": 14406,
+    "lat": 46.851731,
+    "lng": -121.760395,
+    "hierarchyPath": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+    "region": "Washington",
+    "routes": [
+      "wa_mount_rainier_kautz_headwall",
+      "wa_mount_rainier_ptarmigan_ridge",
+      "wa_mount_rainier_ingraham_direct",
+      "wa_mount_rainier_nisqually_icefall",
+      "wa_bread_loaf",
+      "wa_mount_rainier_curtis_ridge",
+      "wa_mount_rainier_liberty_ridge",
+      "wa_mount_rainier_emmons_glacier",
+      "rainier_willis_wall",
+      "rainier_north_mowich_headwall",
+      "wa_mount_rainier_fuhrer_finger",
+      "rainier_central_mowich_face",
+      "wa_mount_rainier_kautz_glacier",
+      "wa_mount_rainier_gibraltar_ledges",
+      "wa_mount_rainier_tahoma_glacier",
+      "wa_mount_rainier_disappointment_cleaver",
+      "wa_mount_rainier_mowich_face",
+      "wa_mount_rainier_willis_wall",
+      "wa_mount_rainier_sunset_ridge"
+    ],
+    "knownGaps": [
+      "wa_mount_rainier_disappointment_cleaver: gain_ft=9000 (ok), approach currently 148 chars"
+    ]
+  },
+  {
+    "id": "wa_winter_spring_ice_snow_mixed_2",
+    "name": "Winter-Spring (ice, snow, mixed)",
+    "elevationFt": null,
+    "lat": 47.44195,
+    "lng": -121.40883,
+    "hierarchyPath": "usa.washington.wa_centralwest.wa_snoqualmie_i90_region.wa_winter_spring_ice_snow_mixed_2",
+    "region": "Washington",
+    "routes": [
+      "wa_northeast_buttress_3"
+    ],
+    "knownGaps": [
+      "wa_northeast_buttress_3: gain_ft=3100 (ok), approach currently 0 chars"
+    ]
+  },
+  {
+    "id": "wa_north_face_tiffany_mountain",
+    "name": "North Face Tiffany Mountain",
+    "elevationFt": null,
+    "lat": 48.67089,
+    "lng": -119.9321,
+    "hierarchyPath": "usa.washington.wa_okanogan.wa_se_pasaytens.wa_north_face_tiffany_mountain",
+    "region": "Washington",
+    "routes": [
+      "wa_north_tower_ridge_route",
+      "wa_tower_arete",
+      "wa_ne_couloir"
+    ],
+    "knownGaps": [
+      "wa_ne_couloir: gain_ft=1500 (ok), approach currently 281 chars"
+    ]
+  },
+  {
+    "id": "wa_north_peak_2",
+    "name": "North Peak",
+    "elevationFt": null,
+    "lat": 47.77453,
+    "lng": -121.58093,
+    "hierarchyPath": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_north_peak_2",
+    "region": "Washington",
+    "routes": [
+      "wa_traverse_of_mount_index",
+      "wa_north_face_6"
+    ],
+    "knownGaps": [
+      "wa_north_face_6: gain_ft=4100 (ok), approach currently 293 chars"
+    ]
+  }
+]
