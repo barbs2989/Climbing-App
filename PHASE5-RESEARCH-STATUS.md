@@ -64,3 +64,30 @@
 - Agent a7b5adf9d9a4172e9: Washington Pass + North Cascades (15-20 routes, 50+ hazards) — status pending
 - Agent a95b6cb0ba65b571d: Enchantments/Alpine Lakes (12-16 routes, 45+ hazards) — status pending
 
+
+---
+
+## Sub-Agent Research Cascade
+
+### Ragged Ridge (Washington Pass Region)
+- Sub-agent a54fd84d4e51a5e6f: Approach/descent/bailout strategy research (in progress)
+- Sub-agent a7b1d5b3f4e918cbf: Seasonal windows & access research (in progress)
+- Skill: wa-enrich-batch running for comprehensive approach/descent data
+
+### Research Angle Decomposition
+Each Phase 5 primary agent has spawned hierarchical sub-agents for:
+- Specific peak research (Triumph, Eldorado, Liberty Cap)
+- Regional approach/descent strategies
+- Seasonal pattern analysis
+- Hazard specificity research
+- Multi-source verification workflows
+
+### Completion Status (Latest)
+- Agent 1 (ac3a9b0517731a9ce): Workflows running ✓
+- Agent 2 (a7b5adf9d9a4172e9): Sub-agents active (Ragged Ridge) ✓
+- Agent 3 (a6bc12bf2fdb8d7d1): Deep-research in progress ✓
+- Agent 4 (aecd505b937ef38bc): Deep-research in progress ✓
+- Agent 5 (a95b6cb0ba65b571d): Pending completion
+
+**Expected Consolidation Time**: 04:55Z (ongoing research workflows)
+
