@@ -21,8 +21,7 @@ UPDATE routes SET
   alpine_draws = 3,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Verified via direct fetches of spokalpine.com and climberkyle.com trip reports for the ''Triple Couloirs'' line that Hidden Couloir is the technical entry gully of: real parties carried 2-4 pickets, ~4 ice screws (10cm proved most useful in thin conditions), a small cam set (.2-1in), small-medium nuts, and 1-2 optional pitons. Exact rope length wasn''t confirmed on any source directly accessible (mountaineers.org and a cascadeclimbers.com thread both 403''d), so 30m is a convention-based estimate, not a quoted spec.',
-  updated_at = now()
+  corrections = 'Verified via direct fetches of spokalpine.com and climberkyle.com trip reports for the ''Triple Couloirs'' line that Hidden Couloir is the technical entry gully of: real parties carried 2-4 pickets, ~4 ice screws (10cm proved most useful in thin conditions), a small cam set (.2-1in), small-medium nuts, and 1-2 optional pitons. Exact rope length wasn''t confirmed on any source directly accessible (mountaineers.org and a cascadeclimbers.com thread both 403''d), so 30m is a convention-based estimate, not a quoted spec.'
 WHERE id = 'wa_dragontail_peak_r1';
 
 UPDATE routes SET
@@ -33,8 +32,7 @@ UPDATE routes SET
   alpine_draws = 8,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Verified directly: Mountain Project''s Gerber-Sink page and a jeffreyjhebert.com trip report both confirm a 70m rope and the season-split rack (''medium rack to 3in'' summer vs. ''4+ ice screws/single rack/pitons'' winter) already reflected in this route''s DB gear array. Alpine-draw count and sling composition are extrapolated from the 10-pitch, ~2,000ft mixed profile since no source itemized them.',
-  updated_at = now()
+  corrections = 'Verified directly: Mountain Project''s Gerber-Sink page and a jeffreyjhebert.com trip report both confirm a 70m rope and the season-split rack (''medium rack to 3in'' summer vs. ''4+ ice screws/single rack/pitons'' winter) already reflected in this route''s DB gear array. Alpine-draw count and sling composition are extrapolated from the 10-pitch, ~2,000ft mixed profile since no source itemized them.'
 WHERE id = 'wa_dragontail_peak_r2';
 
 UPDATE routes SET
@@ -45,8 +43,7 @@ UPDATE routes SET
   alpine_draws = 0,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Directly confirmed via engineeredforadventure.com''s firsthand account: parties climb Pandora''s Box unroped with only ice axe and crampons (one party used strap-on crampons), no rack — independently corroborating this route''s existing DB correction away from a fabricated M4-M5 mixed description. The optional rope/picket for the summit traverse isn''t itemized in any source found, so that detail is inferred from the existing DB note.',
-  updated_at = now()
+  corrections = 'Directly confirmed via engineeredforadventure.com''s firsthand account: parties climb Pandora''s Box unroped with only ice axe and crampons (one party used strap-on crampons), no rack — independently corroborating this route''s existing DB correction away from a fabricated M4-M5 mixed description. The optional rope/picket for the summit traverse isn''t itemized in any source found, so that detail is inferred from the existing DB note.'
 WHERE id = 'wa_dragontail_peak_r3';
 
 UPDATE routes SET
@@ -57,8 +54,7 @@ UPDATE routes SET
   alpine_draws = 8,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Rack composition and descent (60m rope, 5 single-rope raps down the north face) verified via the Mountain Project route page and independent trip reports (stephabegg.com, Wayne Wallace''s blog). Alpine-draw count and cordelette recommendation are extrapolated from standard convention for a 6-pitch sustained crack route since no source itemizes exact draw counts.',
-  updated_at = now()
+  corrections = 'Rack composition and descent (60m rope, 5 single-rope raps down the north face) verified via the Mountain Project route page and independent trip reports (stephabegg.com, Wayne Wallace''s blog). Alpine-draw count and cordelette recommendation are extrapolated from standard convention for a 6-pitch sustained crack route since no source itemizes exact draw counts.'
 WHERE id = 'wa_prusik_peak_der_sportsman';
 
 UPDATE routes SET
@@ -69,8 +65,7 @@ UPDATE routes SET
   alpine_draws = 7,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Rack (doubles fingertip-#2 plus one #3) and the single 60m north-side rappel are verified via Mountain Project and a stephabegg.com trip report. Alpine-draw count and cordelette note are extrapolated from route length/character since sources describe the rack but not draw counts.',
-  updated_at = now()
+  corrections = 'Rack (doubles fingertip-#2 plus one #3) and the single 60m north-side rappel are verified via Mountain Project and a stephabegg.com trip report. Alpine-draw count and cordelette note are extrapolated from route length/character since sources describe the rack but not draw counts.'
 WHERE id = 'wa_prusik_peak_solid_gold';
 
 UPDATE routes SET
@@ -81,8 +76,7 @@ UPDATE routes SET
   alpine_draws = 6,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Rack (doubles .75-2in + #3/#4) and descent (5 single-rope raps off slung stations, ~30m spacing) verified via Mountain Project and two independent trip reports (climberkyle.com, stephabegg.com). Alpine-draw count is extrapolated from standard convention for a 6-pitch moderate route since no source gives an exact draw count.',
-  updated_at = now()
+  corrections = 'Rack (doubles .75-2in + #3/#4) and descent (5 single-rope raps off slung stations, ~30m spacing) verified via Mountain Project and two independent trip reports (climberkyle.com, stephabegg.com). Alpine-draw count is extrapolated from standard convention for a 6-pitch moderate route since no source gives an exact draw count.'
 WHERE id = 'wa_prusik_peak_south_face_burgner_stanley';
 
 UPDATE routes SET
@@ -93,8 +87,7 @@ UPDATE routes SET
   alpine_draws = 5,
   ascender = NULL,
   gear_confidence = 'verified',
-  corrections = 'Rack (single rack .3-2in, nuts, optional hexes) and descent (4 single-rope raps, 60m rope confirmed sufficient) verified via Mountain Project and two independent trip reports (climberkyle.com, spokalpine.com). Alpine-draw count is extrapolated from the route''s easy, 4-pitch character since sources don''t itemize draw counts.',
-  updated_at = now()
+  corrections = 'Rack (single rack .3-2in, nuts, optional hexes) and descent (4 single-rope raps, 60m rope confirmed sufficient) verified via Mountain Project and two independent trip reports (climberkyle.com, spokalpine.com). Alpine-draw count is extrapolated from the route''s easy, 4-pitch character since sources don''t itemize draw counts.'
 WHERE id = 'wa_prusik_peak_west_ridge';
 
 UPDATE routes SET
@@ -105,8 +98,7 @@ UPDATE routes SET
   alpine_draws = 0,
   ascender = 'Prusik cords (2 per climber) for crevasse self-rescue',
   gear_confidence = 'verified',
-  corrections = 'Ice axe/crampons and the 40-degree snow step near the Dragontail-Colchuck saddle are directly confirmed by Mountain Project''s route description. Rope length and crevasse-rescue-kit specifics are standard glacier-travel practice extrapolated from general references, not from a route-specific itemized gear list, since MP itself notes the glacier is ''not crevassed but can be icy.''',
-  updated_at = now()
+  corrections = 'Ice axe/crampons and the 40-degree snow step near the Dragontail-Colchuck saddle are directly confirmed by Mountain Project''s route description. Rope length and crevasse-rescue-kit specifics are standard glacier-travel practice extrapolated from general references, not from a route-specific itemized gear list, since MP itself notes the glacier is ''not crevassed but can be icy.'''
 WHERE id = 'wa_colchuck_peak_colchuck_glacier';
 
 UPDATE routes SET
@@ -117,8 +109,7 @@ UPDATE routes SET
   alpine_draws = 4,
   ascender = 'Not standard for the couloir itself (crux pitches are led/belayed, not jugged); still worth carrying a couple of prusik cords for crevasse self-rescue since the route is accessed via the upper Colchuck Glacier.',
   gear_confidence = 'verified',
-  corrections = 'The steep 60+ degree snow finish, small rock rack/cams/pins at the exit, and T-slotted picket belay anchors are corroborated by multiple independent real sources (a first-person trip report, Wenatchee Outdoors, SummitPost) plus the NWAC/AAC accident writeups for the documented Feb 19, 2023 fatal avalanche, which confirm the route''s terrain and character. Exact screw/draw counts are extrapolated from general alpine-mixed rack conventions, not a single itemized source.',
-  updated_at = now()
+  corrections = 'The steep 60+ degree snow finish, small rock rack/cams/pins at the exit, and T-slotted picket belay anchors are corroborated by multiple independent real sources (a first-person trip report, Wenatchee Outdoors, SummitPost) plus the NWAC/AAC accident writeups for the documented Feb 19, 2023 fatal avalanche, which confirm the route''s terrain and character. Exact screw/draw counts are extrapolated from general alpine-mixed rack conventions, not a single itemized source.'
 WHERE id = 'wa_colchuck_peak_northeast_couloir';
 
 COMMIT;
