@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy } fro
 import { createPortal } from "react-dom";
 import { USE_DB, supabase } from "./lib/supabase";
 import {submitContribution, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective} from "./lib/db";
+import { usePersistentCrews, persistCreateCrew, persistUpdateCrew, persistArchiveCrew, persistCreateLog, persistDeleteLog, dbCrewToLocal, dbLogToLocal, isCrewReady, shouldAutoArchiveCrew, fetchTrustScore } from "./lib/feedbackLoop";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
 const DbGuideApply = lazy(() => import("./lib/DbGuideApply"));
