@@ -22,6 +22,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createClient } from '@supabase/supabase-js';
+import ws from 'ws';
 
 // Load environment
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
@@ -33,7 +34,9 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
   process.exit(1);
 }
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  realtime: { transport: ws }
+});
 const WORKTREE = '/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints';
 const deploymentFile = `${WORKTREE}/supabase-climbing-routes-final.json`;
 
