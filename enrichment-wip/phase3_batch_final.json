@@ -1,0 +1,218 @@
+[
+  {
+    "id": "wa_mount_goode",
+    "name": "Mount Goode",
+    "elevation": 9200,
+    "priority": "critical",
+    "routes": [
+      "wa_mount_goode_gunsight_pass",
+      "wa_mount_goode_north_ridge",
+      "wa_mount_goode_southeast_ridge",
+      "wa_mount_goode_direct_north_face",
+      "wa_mount_goode_west_face"
+    ]
+  },
+  {
+    "id": "wa_mount_shuksan",
+    "name": "Mount Shuksan",
+    "elevation": 9131,
+    "priority": "high",
+    "routes": [
+      "wa_shuksan_cont_divide",
+      "wa_shuksan_nisqually_glacier",
+      "wa_shuksan_summit_pyramid",
+      "wa_shuksan_crystal_traverse",
+      "wa_shuksan_north_face"
+    ]
+  },
+  {
+    "id": "wa_nooksack_tower",
+    "name": "Nooksack Tower",
+    "elevation": 9050,
+    "priority": "high",
+    "routes": [
+      "wa_nooksack_tower_north_face",
+      "wa_nooksack_tower_west_ridge",
+      "wa_nooksack_tower_standard"
+    ]
+  },
+  {
+    "id": "wa_mount_terror",
+    "name": "Mount Terror",
+    "elevation": 8601,
+    "priority": "high",
+    "routes": [
+      "wa_terror_north_ridge",
+      "wa_terror_south_face",
+      "wa_terror_east_ridge",
+      "wa_terror_standard_approach"
+    ]
+  },
+  {
+    "id": "wa_mount_hinman",
+    "name": "Mount Hinman",
+    "elevation": 8494,
+    "priority": "high",
+    "routes": [
+      "wa_hinman_standard_route",
+      "wa_hinman_east_ridge",
+      "wa_hinman_west_face",
+      "wa_hinman_north_approach"
+    ]
+  },
+  {
+    "id": "wa_bonanza_peak",
+    "name": "Bonanza Peak",
+    "elevation": 9511,
+    "priority": "high",
+    "routes": [
+      "wa_bonanza_standard",
+      "wa_bonanza_north_ridge",
+      "wa_bonanza_east_face",
+      "wa_bonanza_west_gully"
+    ]
+  },
+  {
+    "id": "wa_mount_jefferson",
+    "name": "Mount Jefferson",
+    "elevation": 10495,
+    "priority": "high",
+    "routes": [
+      "wa_jefferson_standard",
+      "wa_jefferson_north_ridge",
+      "wa_jefferson_northeast_gully",
+      "wa_jefferson_east_ridge",
+      "wa_jefferson_south_face",
+      "wa_jefferson_west_approach"
+    ]
+  },
+  {
+    "id": "wa_dome_peak",
+    "name": "Dome Peak",
+    "elevation": 8386,
+    "priority": "medium",
+    "routes": [
+      "wa_dome_standard",
+      "wa_dome_north_face",
+      "wa_dome_east_ridge",
+      "wa_dome_glacier_approach"
+    ]
+  },
+  {
+    "id": "wa_colonial_peak",
+    "name": "Colonial Peak",
+    "elevation": 8804,
+    "priority": "medium",
+    "routes": [
+      "wa_colonial_standard",
+      "wa_colonial_north_ridge",
+      "wa_colonial_east_face"
+    ]
+  },
+  {
+    "id": "wa_mount_challenger",
+    "name": "Mount Challenger",
+    "elevation": 8236,
+    "priority": "medium",
+    "routes": [
+      "wa_challenger_standard",
+      "wa_challenger_north_face",
+      "wa_challenger_south_ridge",
+      "wa_challenger_west_gully",
+      "wa_challenger_northeast_approach"
+    ]
+  },
+  {
+    "id": "wa_mount_fury",
+    "name": "Mount Fury",
+    "elevation": 8268,
+    "priority": "medium",
+    "routes": [
+      "wa_fury_standard",
+      "wa_fury_north_ridge",
+      "wa_fury_east_face",
+      "wa_fury_south_approach"
+    ]
+  },
+  {
+    "id": "wa_ingalls_peak",
+    "name": "Ingalls Peak",
+    "elevation": 7662,
+    "priority": "medium",
+    "routes": [
+      "wa_ingalls_standard",
+      "wa_ingalls_north_ridge",
+      "wa_ingalls_east_face"
+    ]
+  },
+  {
+    "id": "wa_three_fingered_jack",
+    "name": "Three Fingered Jack",
+    "elevation": 7841,
+    "priority": "medium",
+    "routes": [
+      "wa_jack_standard",
+      "wa_jack_north_ridge",
+      "wa_jack_south_face"
+    ]
+  },
+  {
+    "id": "wa_mount_washington",
+    "name": "Mount Washington",
+    "elevation": 7689,
+    "priority": "medium",
+    "routes": [
+      "wa_washington_standard",
+      "wa_washington_north_ridge"
+    ]
+  },
+  {
+    "id": "wa_crooked_thumb_peak",
+    "name": "Crooked Thumb Peak",
+    "elevation": 8109,
+    "priority": "low",
+    "routes": [
+      "wa_crooked_thumb_standard",
+      "wa_crooked_thumb_north_face"
+    ]
+  },
+  {
+    "id": "wa_north_twin_sister",
+    "name": "North Twin Sister",
+    "elevation": 7582,
+    "priority": "low",
+    "routes": [
+      "wa_north_twin_standard",
+      "wa_north_twin_east_ridge"
+    ]
+  },
+  {
+    "id": "wa_south_twin_sister",
+    "name": "South Twin Sister",
+    "elevation": 7460,
+    "priority": "low",
+    "routes": [
+      "wa_south_twin_standard",
+      "wa_south_twin_west_ridge"
+    ]
+  },
+  {
+    "id": "wa_mount_brunswick",
+    "name": "Mount Brunswick",
+    "elevation": 8645,
+    "priority": "low",
+    "routes": [
+      "wa_brunswick_standard",
+      "wa_brunswick_north_approach"
+    ]
+  },
+  {
+    "id": "wa_cabin_creek_peak",
+    "name": "Cabin Creek Peak",
+    "elevation": 8316,
+    "priority": "low",
+    "routes": [
+      "wa_cabin_creek_standard"
+    ]
+  }
+]
