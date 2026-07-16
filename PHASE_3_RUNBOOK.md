@@ -14,7 +14,7 @@ All batch files and workflow script are **pre-generated and ready to launch**.
 ## Pre-Launch Checklist
 
 - [ ] Verify API monthly budget has reset (check Claude dashboard at claude.ai/settings/usage)
-- [ ] Confirm Supabase service key still valid: `sb_secret_SQgG_ctJaZQ2HblK1rRxBA_HR23-Zjp`
+- [ ] Confirm Supabase service key still valid (get a fresh one from the Supabase dashboard — do not paste keys into this file; the previous key here was leaked and rotated)
 - [ ] Verify files exist:
   - [ ] `enrichment-wip/phase3_batch_final.json` (19 peaks)
   - [ ] `enrichment-wip/wf_run_phase3_final.js` (generated workflow)
@@ -97,7 +97,7 @@ PYTHON_EOF
 ### Step 3: Apply to Supabase
 
 ```bash
-SUPABASE_SERVICE_KEY="sb_secret_SQgG_ctJaZQ2HblK1rRxBA_HR23-Zjp" \
+SUPABASE_SERVICE_KEY="<paste your current service key here — never commit it>" \
 node enrichment-wip/apply_enrich_thin.mjs enrichment-wip/findings_phase3_final.json
 ```
 
