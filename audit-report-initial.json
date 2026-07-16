@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-16T03:02:09.020Z",
+  "phase1_hazards": {
+    "checked": 50,
+    "high_quality": 26,
+    "needs_enhancement": 24,
+    "average_depth_score": 2.84,
+    "key_findings": "48% of sampled hazards lack specific location information. 48% lack actionable guidance. Average depth score of 2.84/5 indicates many hazards need enhancement with: (1) specific location markers (glacier names, pitch locations, exact features), (2) seasonal/timing windows, (3) condition-triggering factors."
+  },
+  "phase2_access": {
+    "checked": 34,
+    "without_issues": 0,
+    "with_issues": 34,
+    "key_findings": "100% of permit entries are missing key 2026 verification data. Common issues: No fee amounts specified (requires 2026 verification), no pickup/contact location details, missing website/phone for ranger stations, references to older year data."
+  },
+  "phase3_gps": {
+    "checked": 20,
+    "accurate": 20,
+    "needs_review": 0,
+    "key_findings": "All sampled GPS coordinates pass basic validity checks. Coordinates are within WA state bounds and elevation consistency checks pass. High confidence in coordinate accuracy for this sample."
+  },
+  "phase4_peaks_for_incident_research": [
+    "Mount Rainier",
+    "Mount Baker",
+    "Mount Stuart",
+    "Mount Shuksan",
+    "North Cascades peaks"
+  ]
+}
