@@ -72,6 +72,39 @@ function RouteRow({ r, onOpen, C, areaName }) {
   );
 }
 
+// Suggested Climbs: mirrors the static catalog's SuggestedClimbs (ClimbMatch.jsx)
+// — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
+// instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
+// are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
+// this file doesn't import — see its own header comment on why) and passed down.
+function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, C }) {
+  const [open, setOpen] = useState(false);
+  const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
+  const { data: pool } = useSubtreeRoutes(area.id, { disc: profile ? profile.disc : "", sortBy: "name", pageSize: 30 });
+  const objectives = (objRoutes || []).filter(r => !completedIds.has(r.id));
+  const candidates = (pool || []).filter(r => !completedIds.has(r.id) && !(wishlist || []).includes(r.id));
+  const similar = profile ? rankSuggested(candidates, profile, { limit: 5 }) : [];
+  const popular = (!objectives.length && !similar.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
+  const total = objectives.length + similar.length + popular.length;
+  if (!total) return null;
+  const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
+  return (
+    <div style={{ marginTop: 14 }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
+        <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
+        <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open ? (
+        <div style={{ marginTop: 9 }}>
+          {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {similar.length ? <div><div style={lbl}>{"Because you've been climbing " + (DISCIPLINES.find(d => d[0] === profile.disc) || [, profile.disc])[1]}</div>{similar.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {popular.length ? <div><div style={lbl}>Popular in this area</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 // ── state picker: exact match for the static "Pick a state" AreaBrowse ──
 function StatePicker({ onPick, C }) {
   const { data: states, isLoading, error } = useStates();
@@ -146,7 +179,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
 }
 
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
-function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon }) {
+function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -209,6 +242,8 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
       )}
 
       <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
+
+      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} C={C} />
     </div>
   );
 }
@@ -596,7 +631,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -654,7 +689,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} />
+        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
