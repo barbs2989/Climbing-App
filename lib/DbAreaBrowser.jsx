@@ -631,11 +631,12 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [treeOpen, setTreeOpen] = useState(false);
+  const handledJumpId = useRef(null);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
@@ -649,6 +650,14 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   const back = () => jump(crumbs.length - 2);
   const drill = a => { setScreen("areas"); setStack(s => [...s, a]); };
   const pickState = s => { setStateNode(s); setStack([]); setScreen("areas"); };
+
+  // Lets a parent screen (e.g. the "Manage areas" list) jump straight into a
+  // state from outside this component's own drill-down navigation.
+  useEffect(() => {
+    if (!jumpToStateReq || handledJumpId.current === jumpToStateReq.id) return;
+    handledJumpId.current = jumpToStateReq.id;
+    pickState(jumpToStateReq.state);
+  }, [jumpToStateReq]);
   // Jump straight to any area reached by something other than drilling — a
   // near-me map pin, a tree-search hit, or a tree-node tap — by rebuilding its
   // real state/region breadcrumb from the area's own ltree path.
