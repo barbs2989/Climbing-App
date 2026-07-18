@@ -165,6 +165,12 @@ const run = async () => {
  corrections.forEach(c=>console.log(c));
  console.log("\n=== HIERARCHY FLAGS (not auto-applied -- for manual review) ===");
  hierarchyFlagsList.forEach(f=>console.log("  "+f.peakId+" ("+f.name+"): "+f.note));
- writeFileSync("enrichment-wip/hierarchy_flags_batch1.json", JSON.stringify(hierarchyFlagsList,null,2));
+ // Named from the input findings file, not hardcoded -- a prior version always wrote
+ // hierarchy_flags_batch1.json regardless of input, silently clobbering batch1's flags
+ // the first time this script was re-run on a batch2 findings file.
+ const inputBase = process.argv[2].split("/").pop().replace(/\.json$/, "");
+ const flagsOutPath = "enrichment-wip/hierarchy_flags_" + inputBase.replace(/^findings_/, "") + ".json";
+ writeFileSync(flagsOutPath, JSON.stringify(hierarchyFlagsList,null,2));
+ console.log("\nHierarchy flags written to", flagsOutPath);
 };
 run();
