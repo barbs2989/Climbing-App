@@ -107,24 +107,42 @@ write to make unprompted). Reparented to `wa_chiwaukum_range` with the correct `
 all 4 differing ancestors (`wa_snoqualmie_i90_region` 64→63, `wa_centralwest` 2063→2062,
 `wa_chiwaukum_range` 0→1, `wa_centraleast` 1957→1958) — verified live, all values match exactly.
 
-One remaining ambiguous case (`wa_north_peak`, possibly the same peak as "Gunsight Peak" or a
-distinct nearby summit — the research agent couldn't get enough source access to tell) still
-needs a human look.
+## Remaining 3 hierarchy decisions + Ragged Ridge + North Peak — ALL RESOLVED (2026-07-18)
+Investigated each directly against live data (not guessing) before writing `hierarchy_fixes_round2.sql`,
+which the user ran via the Supabase SQL editor (Claude's own attempts were classifier-blocked as
+too structural, same as Bulls Tooth) — verified live afterward, all correct:
+- **Sloan Peak** → new `wa_henry_m_jackson_wilderness` area (its own blurb already said Henry M.
+  Jackson Wilderness; that wilderness just didn't exist yet as its own area — created as a
+  sibling of Glacier Peak Wilderness, same shape).
+- **Agnes Mountain** → `wa_stehekin` (real area, already held another real peak).
+- **Mount Cruiser, Mount Skokomish, Mount Lincoln** → new `wa_southern_olympics` area. All three
+  peaks' own blurbs independently describe the same Sawtooth Ridge/Staircase-entrance location,
+  confirming they belong together, not with the Deception-Gray Wolf peaks they were filed under.
+- **Ragged Ridge** (route, not an area) → moved from Red Mountain to the existing
+  `wa_alpine_and_technical_traverses` bucket (already holds the Ptarmigan Traverse — the right
+  home for a multi-peak traverse route with no single owning summit).
+- **North Peak vs. Gunsight Peak** → turned out to need NO fix. Investigated the coordinates
+  directly: North Peak's coords are ~20-30m from a separate "Gunsight Peak" entry, and Gunsight
+  Peak's own blurb describes "several named towers along a gendarmed ridge" — North/Middle/South
+  Peak are those towers, already correctly structured as siblings.
+
+One bug surfaced and fixed in the process: the first pass of `hierarchy_fixes_round2.sql`'s
+Ragged Ridge section (route_count adjustments only, not the area moves) got applied twice,
+doubling those 7 deltas. Caught by re-verifying live rather than trusting the SQL editor's own
+success message; corrected with a follow-up relative-delta patch, re-verified exactly correct.
 
 ## Still open
 - **10/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit across
   two attempts now. List in `peaks_batch_remaining2.json`; re-run `wa-enrich-batch` with that as
-  args once the limit resets/is raised.
-- **3 hierarchy reparenting decisions** (Sloan Peak, Agnes Mountain, Mount Cruiser — Bulls Tooth
-  is done, see above) and the **Ragged Ridge reassignment** and the **North Peak/Gunsight Peak
-  ambiguity** — all need a human call, not a guess.
+  args once the limit resets/is raised. This is the only thing left from the original audit.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
 - `peaks_batch_remaining.json` — the 44 peaks not researched in round 1 (spend limit)
 - `peaks_batch_remaining2.json` — the 10 peaks still not researched after round 2 (spend limit)
 - `findings_batch1.json` / `findings_batch2.json` — researched peaks, applied live
-- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` — flagged hierarchy/data issues
+- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` — flagged hierarchy/data issues, all resolved
+- `hierarchy_fixes_round2.sql` — the 4 hierarchy/reassignment fixes above — run by the user, applied live
 - `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run twice, successful
 - `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run twice, successful
 - `waypoint_fix_report.json` — full log from round 1's retype/dedup pass
