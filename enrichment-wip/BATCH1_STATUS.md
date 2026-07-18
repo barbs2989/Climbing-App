@@ -97,23 +97,27 @@ cross-peak contamination like the Sharkfin/Torment issue found.
 done, 10 remain**, blocked on the same account-level spend limit.
 
 Round 2 also flagged 6 more hierarchy notes (`hierarchy_flags_batch2.json`), mostly informational
-or already-correct. One genuine, clear mismatch: **Bulls Tooth** is filed under "Snoqualmie Pass"
-but every source places it in the Chiwaukum Mountains near Stevens Pass, ~45 miles away — a
-correctly-named `wa_chiwaukum_range` area already exists in the DB as the right destination.
-**Deliberately left unfixed anyway**, for the same reason as the round-1 reparenting flags:
-moving a peak between parents needs a `route_count` recount up both branches of the tree, which
-this pass doesn't do, so a bare `parent_id` update alone could leave the counts more wrong than
-before. One more ambiguous case (`wa_north_peak`, possibly the same peak as "Gunsight Peak" or a
-distinct nearby summit — the research agent couldn't get enough source access to tell) also needs
-a human look.
+or already-correct. One genuine, clear mismatch: **Bulls Tooth** was filed under "Snoqualmie
+Pass" but every source places it in the Chiwaukum Mountains near Stevens Pass, ~45 miles away.
+
+**Bulls Tooth reparent — DONE, LIVE (2026-07-18):** user ran the SQL directly via the Supabase
+SQL editor (Claude's own attempt was blocked by the auto-mode classifier as too structural a
+write to make unprompted). Reparented to `wa_chiwaukum_range` with the correct `path`
+(`usa.washington.wa_centraleast.wa_chiwaukum_range.wa_bulls_tooth`) and `route_count` adjusted on
+all 4 differing ancestors (`wa_snoqualmie_i90_region` 64→63, `wa_centralwest` 2063→2062,
+`wa_chiwaukum_range` 0→1, `wa_centraleast` 1957→1958) — verified live, all values match exactly.
+
+One remaining ambiguous case (`wa_north_peak`, possibly the same peak as "Gunsight Peak" or a
+distinct nearby summit — the research agent couldn't get enough source access to tell) still
+needs a human look.
 
 ## Still open
 - **10/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit across
   two attempts now. List in `peaks_batch_remaining2.json`; re-run `wa-enrich-batch` with that as
   args once the limit resets/is raised.
-- **4 hierarchy reparenting decisions** (Sloan Peak, Agnes Mountain, Mount Cruiser, Bulls Tooth)
-  and the **Ragged Ridge reassignment** and the **North Peak/Gunsight Peak ambiguity** — all need
-  a human call, not a guess.
+- **3 hierarchy reparenting decisions** (Sloan Peak, Agnes Mountain, Mount Cruiser — Bulls Tooth
+  is done, see above) and the **Ragged Ridge reassignment** and the **North Peak/Gunsight Peak
+  ambiguity** — all need a human call, not a guess.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
