@@ -3073,9 +3073,9 @@ function Challenges({logs,onOpen,who,onOpenReport,userLists,setUserLists,givenVo
   const isSum=r=>sumD.includes(r.discipline);const isWin=r=>winD.includes(r.discipline);
   const discsSent=Array.from(new Set(uniq.map(r=>catOf(r))));const allDiscs=Array.from(new Set(ROUTES.map(r=>catOf(r))));
   const inList=k=>{const seedR=ROUTES.filter(r=>(r.lists||[]).includes(k));const dbR=uniq.filter(r=>(r.lists||[]).includes(k)&&!seedR.some(s=>s.id===r.id));return seedR.concat(dbR);};
-  const cDone=ROUTES.filter(r=>r.classic).filter(r=>got(r.id)).length;
+  const classicRoutes=ROUTES.filter(r=>r.classic).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id)));const cDone=classicRoutes.filter(r=>got(r.id)).length;
   const lists=[
-    {key:"classics",icon:"🏆",label:"Regional Classics",col:C.amber,scope:"Your region",routes:ROUTES.filter(r=>r.classic)},
+    {key:"classics",icon:"🏆",label:"Regional Classics",col:C.amber,scope:"Your region",routes:classicRoutes},
     {key:"quiver",icon:"🎯",label:"Discipline Quiver",col:C.blue,scope:"Your region",quiver:true},
     {key:"summits",icon:"🏔️",label:"Peaks & Summits",col:C.green,scope:"Your region",routes:ROUTES.filter(isSum).concat(uniq.filter(r=>isSum(r)&&!ROUTES.some(s=>s.id===r.id)))},
     {key:"winter",icon:"❄️",label:"Winter Season",col:C.teal,scope:"Your region",routes:ROUTES.filter(isWin).concat(uniq.filter(r=>isWin(r)&&!ROUTES.some(s=>s.id===r.id)))},{key:"crag_lcc",icon:"🧗",label:"Little Cottonwood — full tick",col:C.purple,scope:"Your region",routes:ROUTES.filter(r=>r.id.indexOf("lcc_")===0)},
