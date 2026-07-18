@@ -1,0 +1,878 @@
+[
+  {
+    "id": "wa_cannon_mountain",
+    "name": "Cannon Mountain",
+    "elevationFt": 8652,
+    "lat": 47.502801,
+    "lng": -120.802476,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_cannon_mountain_south_slopes",
+        "routeName": "South Slopes"
+      }
+    ]
+  },
+  {
+    "id": "wa_buckhorn_mountain",
+    "name": "Buckhorn Mountain",
+    "elevationFt": 6988,
+    "lat": 47.825501,
+    "lng": -123.121713,
+    "parentArea": "Eastern Olympic Mountains",
+    "routes": [
+      {
+        "routeId": "wa_buckhorn_marmot_pass",
+        "routeName": "Southwest Slope via Marmot Pass"
+      }
+    ]
+  },
+  {
+    "id": "wa_cashmere_mountain",
+    "name": "Cashmere Mountain",
+    "elevationFt": 8514,
+    "lat": 47.558611,
+    "lng": -120.847222,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_cashmere_mountain_west_ridge",
+        "routeName": "West Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_west_face_6",
+    "name": "West Face",
+    "elevationFt": null,
+    "lat": 46.32448,
+    "lng": -121.92476,
+    "parentArea": "Pinto Rock",
+    "routes": [
+      {
+        "routeId": "wa_nest_route",
+        "routeName": "Nest Route"
+      },
+      {
+        "routeId": "wa_wild_wild_west",
+        "routeName": "Wild Wild West"
+      },
+      {
+        "routeId": "wa_spectacle_route",
+        "routeName": "Spectacle Route"
+      }
+    ]
+  },
+  {
+    "id": "wa_enchantment_peak",
+    "name": "Enchantment Peak",
+    "elevationFt": 8538,
+    "lat": 47.4875,
+    "lng": -120.806389,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_enchantment_peak_southwest_scramble",
+        "routeName": "Southwest Scramble"
+      }
+    ]
+  },
+  {
+    "id": "wa_eldorado_peak",
+    "name": "Eldorado Peak",
+    "elevationFt": 8872,
+    "lat": 48.5374,
+    "lng": -121.1345,
+    "parentArea": "North Cascades",
+    "routes": [
+      {
+        "routeId": "wa_eldorado_peak_east_ridge",
+        "routeName": "East Ridge (Inspiration Glacier)"
+      },
+      {
+        "routeId": "wa_eldorado_peak_eldorado_glacier_nw",
+        "routeName": "Northwest Couloir / Eldorado Glacier"
+      },
+      {
+        "routeId": "wa_eldorado_peak_east_face",
+        "routeName": "Northeast Face"
+      }
+    ]
+  },
+  {
+    "id": "wa_little_annapurna",
+    "name": "Little Annapurna",
+    "elevationFt": 8485,
+    "lat": 47.468226,
+    "lng": -120.814335,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_little_annapurna_south_slopes",
+        "routeName": "South Slopes"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_anderson",
+    "name": "Mount Anderson",
+    "elevationFt": 7323,
+    "lat": 47.721165,
+    "lng": -123.331655,
+    "parentArea": "North-Central Olympic Mountains (Deception–Gray Wolf)",
+    "routes": [
+      {
+        "routeId": "wa_mount_anderson_eel_glacier",
+        "routeName": "Eel Glacier / Flypaper Pass"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_carrie",
+    "name": "Mount Carrie",
+    "elevationFt": 6995,
+    "lat": 47.894273,
+    "lng": -123.649285,
+    "parentArea": "Bailey Range",
+    "routes": [
+      {
+        "routeId": "wa_mount_carrie_se_route",
+        "routeName": "Southeast Route via Hurricane Ridge / Cat Basin"
+      },
+      {
+        "routeId": "wa_mount_carrie_standard",
+        "routeName": "Standard Route (Carrie Glacier / High Divide)"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_baker",
+    "name": "Mount Baker",
+    "elevationFt": 10781,
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "parentArea": "Bellingham and Mt Baker Hwy",
+    "routes": [
+      {
+        "routeId": "wa_mount_baker_cockscomb_ridge",
+        "routeName": "Cockscomb Ridge"
+      },
+      {
+        "routeId": "wa_mount_baker_easton_glacier",
+        "routeName": "Easton Glacier"
+      },
+      {
+        "routeId": "wa_mount_baker_coleman_deming",
+        "routeName": "Coleman–Deming Glacier"
+      },
+      {
+        "routeId": "wa_mount_baker_boulder_park_cleaver",
+        "routeName": "Boulder–Park Cleaver"
+      },
+      {
+        "routeId": "wa_mount_baker_coleman_headwall",
+        "routeName": "Coleman Headwall"
+      },
+      {
+        "routeId": "wa_mount_baker_north_ridge",
+        "routeName": "North Ridge"
+      },
+      {
+        "routeId": "wa_mount_baker_park_glacier_headwall",
+        "routeName": "Park Glacier Headwall"
+      },
+      {
+        "routeId": "wa_mount_baker_boulder_glacier",
+        "routeName": "Boulder Glacier / Boulder Cleaver"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_ellinor",
+    "name": "Mount Ellinor",
+    "elevationFt": 5944,
+    "lat": 47.521635,
+    "lng": -123.260675,
+    "parentArea": "Eastern Olympic Mountains",
+    "routes": [
+      {
+        "routeId": "wa_mount_ellinor_standard",
+        "routeName": "Standard Trail (Upper Trailhead, NFR 24)"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_noyes",
+    "name": "Mount Noyes",
+    "elevationFt": 6173,
+    "lat": 47.739785,
+    "lng": -123.594945,
+    "parentArea": "Central Olympic Mountains",
+    "routes": [
+      {
+        "routeId": "wa_mount_noyes_standard",
+        "routeName": "Standard Scramble"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_olympus",
+    "name": "Mount Olympus (West Peak)",
+    "elevationFt": 7980,
+    "lat": 47.801305,
+    "lng": -123.710855,
+    "parentArea": "Central Olympic Mountains",
+    "routes": [
+      {
+        "routeId": "wa_olympus_traverse",
+        "routeName": "Mount Olympus Traverse (West–Middle–East Peaks)"
+      },
+      {
+        "routeId": "wa_olympus_blue_glacier_east_ramps",
+        "routeName": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)"
+      },
+      {
+        "routeId": "wa_olympus_summit_block_north_face",
+        "routeName": "Summit Block — North Face Direct Finish (variation)"
+      },
+      {
+        "routeId": "wa_mount_olympus_blue_glacier",
+        "routeName": "Blue Glacier (Standard Route)"
+      },
+      {
+        "routeId": "wa_mount_olympus_west_ridge",
+        "routeName": "West Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_sherpa_peak",
+    "name": "Sherpa Peak",
+    "elevationFt": 8630,
+    "lat": 47.471944,
+    "lng": -120.888889,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_sherpa_peak_east_ridge",
+        "routeName": "East Ridge"
+      },
+      {
+        "routeId": "wa_sherpa_peak_west_ridge",
+        "routeName": "West Ridge"
+      },
+      {
+        "routeId": "wa_sherpa_peak_north_ridge",
+        "routeName": "North Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_the_temple",
+    "name": "The Temple",
+    "elevationFt": 8295,
+    "lat": 47.490433,
+    "lng": -120.769569,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_the_temple_south_ridge",
+        "routeName": "South Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_adams",
+    "name": "Mount Adams",
+    "elevationFt": 12276,
+    "lat": 46.202494,
+    "lng": -121.490746,
+    "parentArea": "Southwest Cascades",
+    "routes": [
+      {
+        "routeId": "wa_mount_adams_south_spur",
+        "routeName": "South Spur Route"
+      },
+      {
+        "routeId": "wa_mount_adams_lava_glacier_headwall",
+        "routeName": "Lava Glacier Headwall"
+      },
+      {
+        "routeId": "wa_mount_adams_lyman_glacier",
+        "routeName": "Lyman Glacier"
+      },
+      {
+        "routeId": "adams_northwest_ridge",
+        "routeName": "Northwest Ridge (North Face of Northwest Ridge)"
+      },
+      {
+        "routeId": "wa_mount_adams_north_ridge",
+        "routeName": "North Ridge"
+      },
+      {
+        "routeId": "wa_mount_adams_adams_glacier",
+        "routeName": "Adams Glacier"
+      },
+      {
+        "routeId": "wa_mount_adams_wilson_glacier_headwall",
+        "routeName": "Wilson Glacier Headwall"
+      },
+      {
+        "routeId": "adams_avalanche_glacier",
+        "routeName": "Avalanche Glacier"
+      },
+      {
+        "routeId": "wa_mount_adams_northwest_ridge",
+        "routeName": "Northwest Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_shuksan",
+    "name": "Mount Shuksan",
+    "elevationFt": 9131,
+    "lat": 48.8315,
+    "lng": -121.6032,
+    "parentArea": "Bellingham and Mt Baker Hwy",
+    "routes": [
+      {
+        "routeId": "wa_southeast_ridge_se_corner",
+        "routeName": "Southeast Ridge (SE Corner)"
+      },
+      {
+        "routeId": "wa_mount_shuksan_white_salmon_glacier",
+        "routeName": "White Salmon Glacier"
+      },
+      {
+        "routeId": "wa_mount_shuksan_beckey_schmidtke",
+        "routeName": "Beckey–Schmidtke"
+      },
+      {
+        "routeId": "wa_mount_shuksan_north_face",
+        "routeName": "North Face"
+      },
+      {
+        "routeId": "wa_mount_shuksan_northeast_ridge",
+        "routeName": "Northeast Ridge"
+      },
+      {
+        "routeId": "wa_mount_shuksan_hanging_glacier",
+        "routeName": "Hanging Glacier"
+      },
+      {
+        "routeId": "wa_mount_shuksan_sulphide_glacier",
+        "routeName": "Sulphide Glacier"
+      },
+      {
+        "routeId": "wa_mount_shuksan_fisher_chimneys",
+        "routeName": "Fisher Chimneys"
+      },
+      {
+        "routeId": "wa_sw_couloir_and_face",
+        "routeName": "SW Couloir and Face"
+      },
+      {
+        "routeId": "wa_mount_shuksan_price_glacier",
+        "routeName": "Price Glacier"
+      }
+    ]
+  },
+  {
+    "id": "wa_whitehorse_mountain",
+    "name": "Whitehorse Mountain",
+    "elevationFt": 6851,
+    "lat": 48.210935,
+    "lng": -121.677415,
+    "parentArea": "Darrington and Mountain Loop Hwy",
+    "routes": [
+      {
+        "routeId": "wa_whitehorse_mountain_nw_shoulder",
+        "routeName": "Northwest Shoulder"
+      },
+      {
+        "routeId": "wa_whitehorse_mountain_r1",
+        "routeName": "Northwest Shoulder / Northwest Face (ice/snow)"
+      }
+    ]
+  },
+  {
+    "id": "wa_forbidden_peak",
+    "name": "Forbidden Peak",
+    "elevationFt": 8815,
+    "lat": 48.5115,
+    "lng": -121.0579,
+    "parentArea": "Boston Basin",
+    "routes": [
+      {
+        "routeId": "wa_forbidden_peak_north_ridge",
+        "routeName": "North Ridge"
+      },
+      {
+        "routeId": "wa_forbidden_peak_northwest_face",
+        "routeName": "Northwest Face"
+      },
+      {
+        "routeId": "wa_forbidden_peak_west_ridge",
+        "routeName": "West Ridge"
+      },
+      {
+        "routeId": "wa_forbidden_peak_east_ledges",
+        "routeName": "East Ledges"
+      },
+      {
+        "routeId": "wa_forbidden_peak_northeast_face",
+        "routeName": "Northeast Face"
+      },
+      {
+        "routeId": "wa_forbidden_peak_east_ridge",
+        "routeName": "East Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_index",
+    "name": "Mount Index",
+    "elevationFt": 5991,
+    "lat": 47.7745488,
+    "lng": -121.5809415,
+    "parentArea": "Skykomish Valley",
+    "routes": [
+      {
+        "routeId": "wa_mount_index_north_norwegian_buttress",
+        "routeName": "North Norwegian Buttress"
+      },
+      {
+        "routeId": "wa_mount_index_north_peak_traverse",
+        "routeName": "Main Peak via North Approach"
+      }
+    ]
+  },
+  {
+    "id": "wa_three_fingers",
+    "name": "Three Fingers",
+    "elevationFt": 6865,
+    "lat": 48.169895,
+    "lng": -121.687865,
+    "parentArea": "Darrington and Mountain Loop Hwy",
+    "routes": [
+      {
+        "routeId": "wa_three_fingers_r2",
+        "routeName": "Middle Peak (South Face)"
+      },
+      {
+        "routeId": "wa_three_fingers_south_peak_lookout",
+        "routeName": "South Peak via Lookout"
+      },
+      {
+        "routeId": "wa_three_fingers_r1",
+        "routeName": "North Peak (Lookout route)"
+      }
+    ]
+  },
+  {
+    "id": "wa_bulls_tooth",
+    "name": "Bulls Tooth",
+    "elevationFt": 6849,
+    "lat": 47.682624,
+    "lng": -121.003708,
+    "parentArea": "Snoqualmie Pass",
+    "routes": [
+      {
+        "routeId": "wa_bulls_tooth_standard",
+        "routeName": "Standard Scramble"
+      }
+    ]
+  },
+  {
+    "id": "wa_gothic_peak",
+    "name": "Gothic Peak",
+    "elevationFt": 6214,
+    "lat": 47.983615,
+    "lng": -121.476675,
+    "parentArea": "Darrington and Mountain Loop Hwy",
+    "routes": [
+      {
+        "routeId": "wa_gothic_peak_standard",
+        "routeName": "Standard Scramble (from Foggy Lake)"
+      }
+    ]
+  },
+  {
+    "id": "wa_hibox_mountain",
+    "name": "Hibox Mountain",
+    "elevationFt": 6548,
+    "lat": 47.431745,
+    "lng": -121.300825,
+    "parentArea": "Snoqualmie Pass",
+    "routes": [
+      {
+        "routeId": "wa_hibox_mountain_standard",
+        "routeName": "Standard Scramble"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_fury_west",
+    "name": "Mount Fury (West Peak)",
+    "elevationFt": 8303,
+    "lat": 48.8119818,
+    "lng": -121.3233201,
+    "parentArea": "Picket Range",
+    "routes": [
+      {
+        "routeId": "wa_mount_fury_east_mongo_ridge",
+        "routeName": "Mongo Ridge (Southwest Buttress)"
+      },
+      {
+        "routeId": "wa_mount_fury_west_west_ridge",
+        "routeName": "West Ridge / Northwest Route"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_daniel",
+    "name": "Mount Daniel",
+    "elevationFt": 7977,
+    "lat": 47.565031,
+    "lng": -121.180891,
+    "parentArea": "Snoqualmie Pass",
+    "routes": [
+      {
+        "routeId": "wa_mount_daniel_daniel_glacier",
+        "routeName": "Daniel Glacier / Southeast Slopes"
+      }
+    ]
+  },
+  {
+    "id": "wa_north_peak",
+    "name": "North Peak",
+    "elevationFt": null,
+    "lat": 48.3068,
+    "lng": -120.994,
+    "parentArea": "Gunsight Range, The",
+    "routes": [
+      {
+        "routeId": "wa_west_face_2",
+        "routeName": "West Face"
+      }
+    ]
+  },
+  {
+    "id": "wa_boston_peak",
+    "name": "Boston Peak",
+    "elevationFt": 8894,
+    "lat": 48.4954,
+    "lng": -121.0362,
+    "parentArea": "Boston Basin",
+    "routes": [
+      {
+        "routeId": "wa_northwest_ridge_2",
+        "routeName": "Northwest Ridge"
+      },
+      {
+        "routeId": "wa_boston_peak_southwest_face",
+        "routeName": "Southeast Face"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_deception",
+    "name": "Mount Deception",
+    "elevationFt": 7788,
+    "lat": 47.813335,
+    "lng": -123.233255,
+    "parentArea": "North-Central Olympic Mountains (Deception–Gray Wolf)",
+    "routes": [
+      {
+        "routeId": "wa_mount_deception_standard",
+        "routeName": "Standard Scramble (Royal Basin)"
+      },
+      {
+        "routeId": "wa_honeymoon_route",
+        "routeName": "Honeymoon Route"
+      }
+    ]
+  },
+  {
+    "id": "wa_castle_the",
+    "name": "Castle, The",
+    "elevationFt": null,
+    "lat": 46.75745,
+    "lng": -121.72859,
+    "parentArea": "Tatoosh Range",
+    "routes": [
+      {
+        "routeId": "wa_southeast_face_2",
+        "routeName": "Southeast Face"
+      }
+    ]
+  },
+  {
+    "id": "wa_silver_star_mountain_okanogan",
+    "name": "Silver Star Mountain",
+    "elevationFt": 8876,
+    "lat": 48.547945,
+    "lng": -120.585127,
+    "parentArea": "Washington Pass",
+    "routes": [
+      {
+        "routeId": "wa_silver_star_glacier",
+        "routeName": "Silver Star Glacier"
+      },
+      {
+        "routeId": "wa_silver_star_ne_ridge",
+        "routeName": "Northeast Ridge"
+      },
+      {
+        "routeId": "wa_east_ridge_3",
+        "routeName": "East Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_constance",
+    "name": "Mount Constance",
+    "elevationFt": 7756,
+    "lat": 47.772826,
+    "lng": -123.127336,
+    "parentArea": "Eastern Olympic Mountains",
+    "routes": [
+      {
+        "routeId": "wa_mount_constance_north_chimney",
+        "routeName": "North Chimney (Standard Route)"
+      },
+      {
+        "routeId": "wa_mount_constance_finger_traverse",
+        "routeName": "Finger Traverse"
+      },
+      {
+        "routeId": "wa_mount_constance_west_arete",
+        "routeName": "West Arête"
+      },
+      {
+        "routeId": "wa_mount_constance_terrible_traverse",
+        "routeName": "Terrible Traverse"
+      }
+    ]
+  },
+  {
+    "id": "wa_dragontail_peak",
+    "name": "Dragontail Peak",
+    "elevationFt": 8840,
+    "lat": 47.47873,
+    "lng": -120.833421,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_backbone_ridge",
+        "routeName": "Backbone Ridge"
+      },
+      {
+        "routeId": "wa_der_dihedral",
+        "routeName": "Der Dihedral"
+      },
+      {
+        "routeId": "wa_this_my_friend",
+        "routeName": "This, My Friend"
+      },
+      {
+        "routeId": "wa_dragontail_peak_r2",
+        "routeName": "Gerber-Sink"
+      },
+      {
+        "routeId": "wa_dragontail_peak_r1",
+        "routeName": "Hidden Couloir"
+      },
+      {
+        "routeId": "wa_dragontail_peak_r3",
+        "routeName": "Pandora's Box (W Couloir)"
+      },
+      {
+        "routeId": "wa_dragontail_peak_r4",
+        "routeName": "Triple Couloirs"
+      }
+    ]
+  },
+  {
+    "id": "wa_mcclellan_peak",
+    "name": "McClellan Peak",
+    "elevationFt": 8367,
+    "lat": 47.470169,
+    "lng": -120.785833,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_mcclellan_peak_southwest_scramble",
+        "routeName": "Southwest Scramble"
+      }
+    ]
+  },
+  {
+    "id": "wa_alpine_and_technical_traverses",
+    "name": "Alpine and Technical Traverses",
+    "elevationFt": null,
+    "lat": 48.64649,
+    "lng": -121.20827,
+    "parentArea": "North Cascades",
+    "routes": [
+      {
+        "routeId": "wa_ptarmigan_traverse",
+        "routeName": "Ptarmigan Traverse"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_terror",
+    "name": "Mount Terror",
+    "elevationFt": 8151,
+    "lat": 48.7748,
+    "lng": -121.2993,
+    "parentArea": "Picket Range",
+    "routes": [
+      {
+        "routeId": "wa_mount_terror_north_face",
+        "routeName": "North Face / North Buttress"
+      },
+      {
+        "routeId": "wa_mount_terror_southeast_face",
+        "routeName": "East Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_north_gardner_mountain",
+    "name": "North Gardner Mountain",
+    "elevationFt": 8956,
+    "lat": 48.515229,
+    "lng": -120.501667,
+    "parentArea": "Washington Pass",
+    "routes": [
+      {
+        "routeId": "wa_north_gardner_mountain_southwest",
+        "routeName": "Southwest Slopes / South Ridge"
+      }
+    ]
+  },
+  {
+    "id": "wa_argonaut_peak",
+    "name": "Argonaut Peak",
+    "elevationFt": 8457,
+    "lat": 47.470119,
+    "lng": -120.861477,
+    "parentArea": "Stuart-Enchantments",
+    "routes": [
+      {
+        "routeId": "wa_south_face_12",
+        "routeName": "South Face"
+      },
+      {
+        "routeId": "wa_argonaut_peak_east_ridge",
+        "routeName": "Southeast Ridge"
+      },
+      {
+        "routeId": "wa_argonaut_peak_northeast_ridge",
+        "routeName": "Northeast Ridge"
+      },
+      {
+        "routeId": "wa_northwest_arete",
+        "routeName": "Northwest Arete"
+      }
+    ]
+  },
+  {
+    "id": "wa_bear_mountain_chilliwack",
+    "name": "Bear Mountain",
+    "elevationFt": 7931,
+    "lat": 48.930628,
+    "lng": -121.341156,
+    "parentArea": "Chilliwack Range",
+    "routes": [
+      {
+        "routeId": "wa_bear_mountain_chilliwack_north_buttress",
+        "routeName": "North Buttress"
+      },
+      {
+        "routeId": "wa_direct_north_buttress",
+        "routeName": "Direct North Buttress"
+      }
+    ]
+  },
+  {
+    "id": "wa_mount_chaval",
+    "name": "Mount Chaval",
+    "elevationFt": 7127,
+    "lat": 48.376055,
+    "lng": -121.325415,
+    "parentArea": "North Cascades Core",
+    "routes": [
+      {
+        "routeId": "wa_mount_chaval_scramble",
+        "routeName": "West Route"
+      }
+    ]
+  },
+  {
+    "id": "wa_guye_peak",
+    "name": "Guye Peak",
+    "elevationFt": 5168,
+    "lat": 47.442945,
+    "lng": -121.409145,
+    "parentArea": "Central-East Cascades, Wenatchee, & Leavenworth",
+    "routes": [
+      {
+        "routeId": "wa_guye_peak_r1",
+        "routeName": "West Face"
+      },
+      {
+        "routeId": "wa_guye_peak_r2",
+        "routeName": "North Route (\"Hidden Ridge\" variation)"
+      }
+    ]
+  },
+  {
+    "id": "wa_ed_wood_memorial_buttress",
+    "name": "Ed Wood Memorial Buttress",
+    "elevationFt": null,
+    "lat": 48.7716,
+    "lng": -121.28356,
+    "parentArea": "Southern Pickets",
+    "routes": [
+      {
+        "routeId": "wa_plan_9_from_outer_space",
+        "routeName": "Plan 9 from Outer Space"
+      }
+    ]
+  },
+  {
+    "id": "wa_lincoln_peak",
+    "name": "Lincoln Peak",
+    "elevationFt": 9085,
+    "lat": 48.768354,
+    "lng": -121.858532,
+    "parentArea": "Bellingham and Mt Baker Hwy",
+    "routes": [
+      {
+        "routeId": "wa_lincoln_peak_north_ridge",
+        "routeName": "North Ridge / Standard"
+      },
+      {
+        "routeId": "wa_lincoln_peak_standard",
+        "routeName": "X Couloir (Southwest Face) / Standard Route"
+      }
+    ]
+  },
+  {
+    "id": "wa_the_triad",
+    "name": "The Triad",
+    "elevationFt": 7520,
+    "lat": 48.5196,
+    "lng": -121.1628,
+    "parentArea": "North Cascades Core",
+    "routes": [
+      {
+        "routeId": "wa_the_triad_east_peak",
+        "routeName": "East Peak (Standard Route)"
+      }
+    ]
+  }
+]
