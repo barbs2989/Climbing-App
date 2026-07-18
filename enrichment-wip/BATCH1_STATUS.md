@@ -131,18 +131,42 @@ Ragged Ridge section (route_count adjustments only, not the area moves) got appl
 doubling those 7 deltas. Caught by re-verifying live rather than trusting the SQL editor's own
 success message; corrected with a follow-up relative-delta patch, re-verified exactly correct.
 
+## Round 3 (wf_05b2a016-1bd): final 10 peaks researched + applied live — AUDIT COMPLETE
+The spend limit cleared; re-ran the last 10 peaks and **all 10/10 succeeded**. This means **all
+87 of the originally-flagged peaks have now been researched and applied live** — 17 more routes
+touched, 142 fields written, 13 waypoints merged. Same type-normalization bug hit a third time
+(same root cause, still not fixed at the prompt source) — fixed the same way: 37 waypoints
+retyped, 16 duplicates dropped across 15 routes, no cross-peak contamination on spot-check.
+
+Reviewed round 3's 3 hierarchy notes: **Guye Peak's flag was a false alarm** — its live
+`parent_id` was already correct (`wa_snoqualmie_i90_region`); the "wrong" parent name in this
+session's own generated input data was stale, not a real DB issue. **Ed Wood Memorial Buttress**
+needs no fix (a buttress feature, not a summit, already correctly parented). **North Gardner
+Mountain** is a real, clean mismatch — filed under "Washington Pass" but it's actually 6-7 miles
+away in the Lake Chelan-Sawtooth Wilderness; a real `wa_sawtooth_chelan` area already exists
+holding 17 peaks of the same character. Fix SQL in `hierarchy_fix_north_gardner.sql`, not yet run.
+
+**Final result across the ORIGINAL 163 flagged routes** (re-audited directly against that exact
+list, not the broader/growing WA pool other concurrent sessions are also adding to):
+missing-all-stats is **0** (was the whole point of the "technical stats" half of the original
+ask), no-waypoints-at-all dropped from the original set to **6**, missing-Trailhead to **19**,
+missing-Summit/Topout to **26**. The remaining gaps are almost entirely single-pitch crag/sector
+routes (The Dikes, Keechelus Ridge, Pinto Rock, Mossy Loaf, The Obelisk, Sofa King Buttress) where
+research itself flagged that a "trailhead-to-summit" concept doesn't cleanly apply — these were
+never going to close the same way a real alpine objective does.
+
 ## Still open
-- **10/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit across
-  two attempts now. List in `peaks_batch_remaining2.json`; re-run `wa-enrich-batch` with that as
-  args once the limit resets/is raised. This is the only thing left from the original audit.
+- **North Gardner Mountain reparent** — SQL ready in `hierarchy_fix_north_gardner.sql`, not yet
+  run by the user.
+- That's it. The spend-limit block that was the last open item is now cleared; all 87 peaks are done.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
-- `peaks_batch_remaining.json` — the 44 peaks not researched in round 1 (spend limit)
-- `peaks_batch_remaining2.json` — the 10 peaks still not researched after round 2 (spend limit)
-- `findings_batch1.json` / `findings_batch2.json` — researched peaks, applied live
-- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` — flagged hierarchy/data issues, all resolved
-- `hierarchy_fixes_round2.sql` — the 4 hierarchy/reassignment fixes above — run by the user, applied live
-- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run twice, successful
-- `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run twice, successful
-- `waypoint_fix_report.json` — full log from round 1's retype/dedup pass
+- `peaks_batch_remaining.json` / `peaks_batch_remaining2.json` — historical spend-limit retry lists (both now fully researched)
+- `findings_batch1.json` / `findings_batch2.json` / `findings_batch3.json` — all 87 researched peaks, applied live
+- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` / `hierarchy_flags_batch3.json` — flagged hierarchy/data issues, all resolved or ready
+- `hierarchy_fixes_round2.sql` — 4 hierarchy/reassignment fixes — run by the user, applied live
+- `hierarchy_fix_north_gardner.sql` — 1 more hierarchy fix — ready, not yet run
+- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run 3x, successful
+- `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run 3x, successful
+- `waypoint_fix_report_batch1.json` / `waypoint_fix_report_batch3.json` — retype/dedup logs

@@ -127,6 +127,11 @@ const run = async () => {
   retypeLog.forEach(l=>console.log("  "+l));
   console.log("\n=== duplicates dropped ===");
   dropLog.forEach(l=>console.log("  "+l));
-  writeFileSync("enrichment-wip/waypoint_fix_report.json", JSON.stringify({routesTouched,waypointsRetyped,duplicatesDropped,retypeLog,dropLog},null,2));
+  // Named from the input route-ids file, not hardcoded -- same class of bug fixed in
+  // apply_enrich_merge_waypoints.mjs (a fixed filename silently clobbers the previous run's report).
+  const inputBase = process.argv[2].split("/").pop().replace(/\.json$/, "");
+  const reportPath = "enrichment-wip/waypoint_fix_report_" + inputBase + ".json";
+  writeFileSync(reportPath, JSON.stringify({routesTouched,waypointsRetyped,duplicatesDropped,retypeLog,dropLog},null,2));
+  console.log("\nReport written to", reportPath);
 };
 run();

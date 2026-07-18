@@ -1,0 +1,2481 @@
+[
+  {
+    "peakId": "wa_alpine_and_technical_traverses",
+    "blurb": "The Ptarmigan Traverse is a roughly 30-mile, off-trail alpine route along the North Cascades crest in Washington, running from Cascade Pass (North Cascades National Park) south to Dome Peak and out via Downey Creek (Glacier Peak Wilderness). It crosses five major glaciers (Cache, Middle Cascade, South Cascade, Le Conte, and Dana) and threads granodiorite/gneiss peaks including Formidable, Sentinel, Old Guard, and Spire Point, typically taking 4-8 days. First completed in July 1938 by four members of the Ptarmigan Climbing Club (Bill Cox, Calder Bressler, Ray W. Clough, and Tom Myers) over 13 days, it went unrepeated for 15 years before an 1953 reversal popularized it, and it remains one of the defining classic mountaineering routes of the range.",
+    "hierarchyNote": "This entry is not a single summit: \"Alpine and Technical Traverses\" mirrors a Mountain Project grouping area (MP area id 116969335) for multi-day North Cascades traverse routes, and \"Ptarmigan Traverse\" (MP route id 116969398) is correctly filed under it — the \"North Cascades\" parent placement is geographically valid. However, the supplied coordinate (48.64649, -121.20827) is only a generic area-level pin: it matches Mountain Project's own coordinate for that area page and sits close to North Cascades National Park's general park-level coordinate (~48.71, -121.21), not any specific point on the actual ~30-mile route corridor, which runs from Cascade Pass (48.4683, -121.0600, 5,392 ft) south to Dome Peak (48.3034, -121.0295, 8,920+ ft) / the Downey Creek exit. No single elevationFt applies since this isn't one mountain.",
+    "routes": [
+      {
+        "routeId": "wa_ptarmigan_traverse",
+        "routeName": "Ptarmigan Traverse",
+        "fa": "Bill Cox, Calder Bressler, Ray W. Clough, and Tom Myers (Ptarmigan Climbing Club) — first full traverse, July 1938, 13 days",
+        "rockGrade": "Class 3-4 scrambling with occasional optional low-5th-class variations; no sustained technical rock climbing on the standard line",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": null,
+        "routeFt": null,
+        "rappels": null,
+        "objHaz": [
+          "Crevasses on 5 glaciers",
+          "Bergschrund/moat problems (early season)",
+          "Rockfall / loose rock",
+          "Whiteout navigation on featureless glaciers",
+          "Avalanche hazard (off-season/early-season snow)",
+          "Remoteness — no cell service, long self-rescue"
+        ],
+        "season": "Jul-Sep (most reliable late Jul-early Sep)",
+        "aspect": null,
+        "face": null,
+        "gainFt": 11000,
+        "lossFt": 11000,
+        "distKm": 48.3,
+        "maxAngle": null,
+        "highPointFt": 8264,
+        "overview": "A remote, off-trail alpine traverse along the North Cascades crest from Cascade Pass to Dome Peak/Downey Creek, linking five glaciers, alpine lake basins, and a few exposed rock steps rather than following any single summit line.",
+        "beta": "The Ptarmigan links Cascade Pass to the Suiattle River drainage by staying high along the crest, crossing Cache Col, dropping to Kool-Aid Lake, traversing exposed 'red ledges' below Old Guard/Sentinel, crossing the Spider-Formidable col, then working south across the Middle Cascade and South Cascade Glaciers to Yang-Yang and White Rock Lakes, over Le Conte/Dana Glacier terrain past Dome Peak (optional summit) and Sinister Peak, and finally down Itswoot Ridge to Cub Lake and out the Bachelor Creek/Downey Creek Trail. Most parties go north to south and take 4-8 days; a 2025 solo single push has been done in under 17 hours.",
+        "approach": "Drive Cascade River Road east from Marblemount (paved ~10 miles, then gravel, then a narrow high-clearance shelf road past Eldorado at mile 20) to its end at mile 23.1, the Cascade Pass Trailhead. Hike the maintained Cascade Pass Trail roughly 3.7 miles and ~1,800 ft to Cascade Pass (5,392 ft), which is the last maintained trail and the start of the off-trail traverse.",
+        "descent": "Exit south via Itswoot Ridge and the Bachelor Creek/Downey Creek Trail to the Downey Creek Trailhead on the Suiattle River Road (FSR 26).",
+        "descentText": "From White Rock Lakes/Dome Peak, the route continues south across the Dana/Chickamin Glacier basin, over or around Dome Peak (optional class 3-4 summit) and Sinister Peak, then drops onto Itswoot Ridge. From Itswoot Ridge, a climbers' path descends steeply (~500+ ft to Cub Lake) and continues down through forest on the Bachelor Creek use-trail to its junction with the maintained Downey Creek Trail #768, following Downey Creek roughly 4-5 miles out to the Downey Creek Trailhead on the Suiattle River Road. As of 2026, this trailhead is only reachable by foot or bike beyond a washout closure a few miles up FSR 26, adding significant road-walking mileage to the standard exit.",
+        "itinerary": "Standard 5-7 day plan (per multiple trip reports): Day 1 - Cascade Pass Trailhead to Kool-Aid Lake (via Cache Col). Day 2 - Kool-Aid Lake to Yang-Yang Lakes (via the red ledges and Spider-Formidable col). Day 3 - Yang-Yang Lakes to White Rock Lakes (South Cascade Glacier). Day 4 - optional rest/weather day at White Rock Lakes. Day 5 - White Rock Lakes to Itswoot Ridge (Le Conte/Dana Glaciers, Dome Peak environs). Day 6 - Itswoot Ridge out to the Downey Creek Trailhead via Bachelor Creek/Downey Creek Trail. Fit parties compress this to 4 days; an unsupported single push has been done in under 17 hours.",
+        "bail": "In the first day or two (through Cache Col/Kool-Aid Lake), the simplest retreat is back over Cache Col to Cascade Pass and out the Cascade River Road trailhead. Beyond the Spider-Formidable col there is no easy short bail — parties generally must either continue south to the Downey Creek exit or reverse the glacier and col sections already crossed; a historical alternate has been descending old mining-road remnants near the South Cascade Glacier research station toward the Downey Creek drainage.",
+        "turnaround": "Because the crux terrain is multi-day glacier travel and exposed traversing rather than a single summit push, the key safety discipline is committing to a multi-day weather window before starting and being willing to hole up or reverse a day's progress on the glaciers/cols in poor visibility or lightning risk, rather than push on to a fixed clock time.",
+        "bestSeason": "Late July through early September is the reliable window: Cascade River Road is open, the worst early-season snow/avalanche hazard has passed, and the glaciers are consolidated enough for efficient travel, though bergschrunds and moats widen as the season progresses. Heavy-snow years can push a safe start later into July; by mid-to-late September the glaciers are at their iciest/most crevassed and the access road may face early storm closures.",
+        "comms": "No reliable cell service anywhere along the route, which lies deep in North Cascades National Park and the Glacier Peak Wilderness; a satellite communicator (e.g., Garmin inReach) plus a filed itinerary and backcountry permit are the main safety net.",
+        "detailedRack": "A light glacier/alpine rack rather than a rock rack: one rope per rope team (30m per 2 climbers, or a 60m single shared by 3), 1+ snow picket per 3 people (more early season), 2+ ice screws per rope team (seasonally dependent), full crevasse-rescue kits (harness, prusiks/mechanical ascenders, locking biners, pulley) for every person, plus a small token rock rack (nuts and a few small-to-mid cams) for the occasional exposed step.",
+        "proNeeds": "Protection needs are glacier-travel-oriented rather than rock-climbing-oriented: a crevasse-rescue kit and a shared rope per rope team are the priority, with pickets/screws sized to conditions (more needed in early/high-snow years, less by late summer); rock protection is a minor, optional addition.",
+        "gear": [
+          "Glacier rope (30m or 60m, shared per rope team)",
+          "Crampons",
+          "Ice axe",
+          "Snow pickets",
+          "Ice screws",
+          "Harness + crevasse-rescue kit",
+          "Small rack: nuts + a few cams",
+          "Helmet"
+        ],
+        "whatToBring": [
+          "4-8 days of food",
+          "Bear canister (may be required/loanable via NPS)",
+          "Lightweight backpacking tent/bivy",
+          "Water treatment",
+          "Beckey's Cascade Alpine Guide (Stevens Pass to Rainy Pass) or equivalent route notes",
+          "GPS with a downloaded track",
+          "Satellite communicator",
+          "Sun protection for glacier travel",
+          "Trekking poles",
+          "Camp shoes for stream crossings"
+        ],
+        "proTips": [
+          "Go north-to-south (Cascade Pass to Downey Creek) — it's the standard direction most route descriptions and beta assume.",
+          "Carry Fred Beckey's Cascade Alpine Guide (Stevens Pass to Rainy Pass) for route-finding; the traverse is unsigned and unmaintained beyond Cascade Pass.",
+          "Cross the glaciers early in the morning while the snow is firm; afternoon softening raises both crevasse-fall and rockfall risk.",
+          "Confirm Cascade River Road and Suiattle River Road/Downey Creek trailhead status with NPS/USFS before you go — both have had recent closures and washouts."
+        ],
+        "watchOut": [
+          "Cache Col's steep snow/ice slope can be firm and exposed in early season; some parties place a hand line.",
+          "The exposed 'red ledges' traverse below Old Guard/Sentinel is narrow, exposed scrambling with real fall consequences.",
+          "Late season (Aug-Sept) can expose bare glacier ice and open crevasses/bergschrunds, complicating travel.",
+          "Whiteout conditions on the broad, featureless Middle Cascade and South Cascade Glaciers can make navigation very difficult without a GPS track or strong map/compass skills."
+        ],
+        "knownHazards": [
+          "Crevasses on five glaciers (Cache, Middle Cascade, South Cascade, Le Conte, Dana) require roped travel and crevasse-rescue competence.",
+          "Bergschrunds/moats can be difficult or impassable at several cols in early season.",
+          "Loose rock and class 3-4 scrambling on sections like the Spider-Formidable col and Dome Peak's summit ridge add rockfall and fall risk.",
+          "The route is remote, off-trail, and multi-day with no cell coverage — an injury or storm can mean a long, technical self-rescue or evacuation."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Cascade Pass TH to Cache Col",
+            "grade": "Trail, then class 2-3 snow/talus",
+            "notes": "Last maintained trail ends at Cascade Pass; climb north/east toward Cache Col, often on snow into midsummer."
+          },
+          {
+            "pitch": "Cache Col to Kool-Aid Lake",
+            "grade": "Class 2-3",
+            "notes": "Descend from the col into the Kool-Aid Lake basin, the traverse's first common bivy."
+          },
+          {
+            "pitch": "Kool-Aid Lake to Yang-Yang Lakes",
+            "grade": "Class 3-4, exposed",
+            "notes": "Crosses the narrow, exposed 'red ledges' and the Spider-Formidable col; a crux navigation/exposure section."
+          },
+          {
+            "pitch": "Yang-Yang Lakes to White Rock Lakes",
+            "grade": "Glacier travel (roped)",
+            "notes": "Crosses the Middle Cascade and South Cascade Glaciers; crevasse hazard, whiteout risk on featureless snow."
+          },
+          {
+            "pitch": "White Rock Lakes to Itswoot Ridge",
+            "grade": "Glacier travel + class 2-4",
+            "notes": "Crosses Le Conte/Dana Glacier terrain past Dome Peak (optional class 3-4 summit) and Sinister Peak."
+          },
+          {
+            "pitch": "Itswoot Ridge to Downey Creek TH",
+            "grade": "Steep trail/use-path, forested",
+            "notes": "Steep descent to Cub Lake, then the Bachelor Creek use-trail and Downey Creek Trail #768 out to the road."
+          }
+        ],
+        "road": {
+          "name": "Cascade River Road (north access, from Marblemount) / Suiattle River Road FSR 26 (south exit, from Darrington)",
+          "status": "Cascade River Road is open seasonally to the Cascade Pass Trailhead (road-end, mile 23.1). Suiattle River Road is closed to vehicles at mile 4 (closure order in effect through at least Jan 1, 2028) after Dec 2025 flood damage, so the Downey Creek/Suiattle trailheads that form the traverse's standard southern exit are currently reachable only on foot or bike.",
+          "seasonalGate": "Cascade River Road is gated in winter and typically opens by late June, sometimes not until early July after heavy-snow years; it can close early after fall storm damage.",
+          "driveNote": "From Marblemount, Cascade River Road is paved for about 10 miles, then rough gravel to mile 20 (Eldorado), then a narrow, rutted, high-clearance-recommended shelf road to the mile-23.1 Cascade Pass Trailhead; trailers/RVs over 22 ft are prohibited past mile 18. On the south side, reaching Downey Creek Trailhead currently requires walking or biking several extra miles of closed road past the FSR 26 washout."
+        },
+        "climate": {
+          "forecastZone": "NWAC West Slopes North (avalanche); NWS Zone Area Forecast for West Slopes North Cascades and Passes (weather)",
+          "typical": "Cool nights and warm, often sunny days once the summer high-pressure pattern sets in; afternoon thunderstorm risk increases through August.",
+          "spring": "Deep, unconsolidated snowpack with hidden crevasses; Cascade River Road is typically still closed.",
+          "summer": "Primary season (Jul-Aug): firm morning snow/glacier travel that softens by afternoon; occasional thunderstorms and wildfire smoke by late summer.",
+          "fall": "Shortening weather windows and possible first snow by late Sept/Oct; Cascade River Road can close early after storms.",
+          "winter": "Not a winter route — heavy snowpack, high avalanche hazard, and closed access roads make it impractical and unsafe."
+        },
+        "access": {
+          "landManager": "North Cascades National Park (NPS) on the northern half; Glacier Peak Wilderness within the Mount Baker-Snoqualmie National Forest, Darrington Ranger District (USFS) on the southern half",
+          "fees": "$10/person plus a $6 reservation fee for the NPS wilderness permit; a Northwest Forest Pass or interagency pass is required for parking at the USFS Downey Creek trailhead",
+          "permit": "An NPS backcountry/wilderness permit is required for all overnight camping in North Cascades National Park — reserve via Recreation.gov (permit ID 4675322), watch the mandatory safety video, and pick up the permit by email or in person at the Wilderness Information Center in Marblemount.",
+          "passRequired": "Northwest Forest Pass at the Downey Creek trailhead (USFS); no day-use pass is required at the Cascade Pass trailhead inside the national park.",
+          "closures": "Suiattle River Road (FSR 26) closed to vehicles at mile 4 (through at least Jan 1, 2028) following Dec 2025 flood damage, blocking vehicle access to the Downey Creek/Suiattle trailheads that form the traverse's standard southern exit. Cascade River Road has routine winter closures and typically doesn't open to the Cascade Pass trailhead until late June."
+        },
+        "timing": {
+          "recommendedStart": "Move early each day and cross glaciated/snow sections before afternoon sun softens them; commit to the route only after checking a multi-day forecast.",
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "trailhead/pass (route start)",
+            "name": "Cascade Pass",
+            "lat": 48.4683,
+            "lng": -121.06,
+            "elevFt": 5392,
+            "distMi": 3.7
+          },
+          {
+            "type": "summit (optional side-trip)",
+            "name": "Dome Peak",
+            "lat": 48.3034,
+            "lng": -121.0295,
+            "elevFt": 8920,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Skagit County (northern half, including Cascade Pass/Cache Col); Snohomish County (southern half, including Downey Creek/Suiattle drainage, Darrington Ranger District)",
+          "sheriffDispatch": "Call 911 for emergencies; Skagit County Sheriff's Office non-emergency (360) 416-1911",
+          "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount, WA — (360) 854-7200; Darrington Ranger District, Mount Baker-Snoqualmie National Forest — (360) 436-1155",
+          "nearestHospital": "Skagit Valley Hospital, 1415 E. Kincaid St, Mount Vernon, WA — (360) 424-4111",
+          "notes": "Remote, multi-day, off-trail traverse with no cell service. Rescue coordination for the NPS (northern) half runs through North Cascades National Park; for the Glacier Peak Wilderness/Downey Creek (southern) half it runs through the Snohomish County Sheriff and the Darrington Ranger District. A satellite communicator and a filed permit/itinerary are the primary way to trigger help."
+        },
+        "corrections": "The given area-level coordinate (48.64649, -121.20827) is a generic North Cascades pin (matches Mountain Project's own coordinate for the 'Alpine and Technical Traverses' area, and sits near NOCA's general park coordinate) rather than a point on the actual route, which runs from Cascade Pass (48.4683, -121.0600) to Dome Peak (48.3034, -121.0295)/Downey Creek — see hierarchyNote. Mountain Project's route page also lists a technical 'Grade II' for this route, which conflicts with independent sources describing a 4-8 day, multi-glacier commitment; no reliable authoritative commitment grade (I-VI) could be sourced, so 'commitment' is left null rather than using the likely-erroneous MP value. Distance is reported inconsistently across sources (roughly 30-35+ miles); gainFt/lossFt (11,000 ft each way) and highPointFt (8,264 ft, Spire Point col on the standard route) follow the most detailed sourced trip-report data (stephabegg.com), noting Dome Peak's optional summit is higher (8,920+ ft).",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Ptarmigan_Traverse",
+          "https://www.mountainproject.com/route/116969398/ptarmigan-traverse",
+          "https://www.mountainproject.com/area/116969335/alpine-and-technical-traverses",
+          "https://www.summitpost.org/ptarmigan-traverse/154644",
+          "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+          "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/",
+          "https://en.wikipedia.org/wiki/Dome_Peak",
+          "https://en.wikipedia.org/wiki/Cascade_Pass",
+          "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+          "https://www.nps.gov/noca/planyourvisit/permits.htm",
+          "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+          "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+          "https://nwac.avy-fx.org/forecasts/avalanche/west-slopes-north",
+          "https://www.skagitcounty.net/Departments/Sheriff/searchRescue.htm",
+          "https://www.fs.usda.gov/r06/mbs/offices/darrington-ranger-station"
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ptarmigan_Traverse",
+      "https://www.mountainproject.com/route/116969398/ptarmigan-traverse",
+      "https://www.mountainproject.com/area/116969335/alpine-and-technical-traverses",
+      "https://www.summitpost.org/ptarmigan-traverse/154644",
+      "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+      "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/",
+      "https://en.wikipedia.org/wiki/Dome_Peak",
+      "https://en.wikipedia.org/wiki/Cascade_Pass",
+      "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+      "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+      "https://nwac.avy-fx.org/forecasts/avalanche/west-slopes-north",
+      "https://www.skagitcounty.net/Departments/Sheriff/searchRescue.htm",
+      "https://www.fs.usda.gov/r06/mbs/offices/darrington-ranger-station"
+    ]
+  },
+  {
+    "peakId": "wa_mount_terror",
+    "blurb": "Mount Terror (8,151 ft) is the highest summit of the Southern Pickets, a subrange of the Picket Range in North Cascades National Park, Whatcom County, Washington, about 16 miles south of the Canadian border. Built of glacially-sculpted gneiss and granite, it is one of the range's most remote and committing objectives, with a gentler south/west aspect rising ~1,000 ft from Crescent Creek Basin and a dramatic 2,500-ft north face dropping into the McMillan Creek cirque. The peak was first climbed via its south side in 1932 by William Degenhardt and Herbert Strandberg of the Seattle Mountaineers; the steep north face was not climbed until 1961.",
+    "hierarchyNote": null,
+    "routes": [
+      {
+        "routeId": "wa_mount_terror_north_face",
+        "routeName": "North Face / North Buttress",
+        "fa": "Original North Face: Charles Bell, Ed Cooper, Dave Hiser, Mike Swayne, July 8-11, 1961 (III 5.7, right of the buttress crest). Harder buttress-crest variant ('Stoddard Buttress'): John Stoddard, solo, July 16, 1984 (IV 5.8).",
+        "rockGrade": "5.8 (Stoddard Buttress crest variant); 5.7 (original 1961 line)",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": "III-IV",
+        "pitches": null,
+        "routeFt": 2500,
+        "rappels": "Descend via the West Ridge to the Blob-Terror notch (rappel off fixed but reportedly 'sketchy' pitons), then down the gully to Crescent Creek Cirque; number of rappels depends on snow/rock conditions. The original 1961 party descended via four steep rappels down the east corner when off-route.",
+        "objHaz": [
+          "rockfall / loose rock (documented serious fall accident)",
+          "crevasses crossing the Mustard Glacier approach",
+          "remote, highly committing approach",
+          "difficult route-finding",
+          "bergschrund/moat at the base of the face"
+        ],
+        "season": "Jul-Sep; early season (Jul) favors an easier, snow-covered glacier crossing to the base",
+        "aspect": "N",
+        "face": "North Face / North Buttress",
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": null,
+        "maxAngle": null,
+        "highPointFt": 8151,
+        "overview": "A serious alpine rock line up the imposing 2,500-ft north side of Mount Terror above the McMillan Creek/Mustard Glacier cirque. The original 1961 route takes the line of least resistance to the right of the buttress crest; the harder, more sustained 'Stoddard Buttress' (1984) follows the crest itself in bold style, finishing on an exposed 5.8+ knife-edge ridge to a false summit.",
+        "beta": "From Crescent Creek Basin, cross the Ottohorn-Himmelhorn col and traverse the Mustard Glacier (easiest early-season) to reach 3rd/4th-class scrambling that gains the snow patch below the face, where roping up begins. The Stoddard line starts at the toe of the buttress, traverses ledges left, then climbs solid rock straight up the crest through sustained 5.7-5.8 terrain (much of it simulclimbable) to a false summit and a blocky 5.8+ knife-edge ridge. An alternative, more direct but brushier approach follows Stetattle Ridge into the upper McMillan Creek cirque.",
+        "approach": "Approach via Goodell Creek trailhead (across SR-20 from Newhalem) to Terror Basin/Crescent Creek Basin (multi-day, off-trail, ~19 mi round trip to the peak's south side). From a high camp in Crescent Creek Basin, cross the Ottohorn-Himmelhorn col and traverse the Mustard Glacier to the base of the north face; even fast parties need roughly 2-3 hours from Crescent Creek camp to the base of the route. An alternate approach reaches the McMillan Creek cirque directly via Stetattle Ridge - described as brush-free on the way in but with a reportedly brutal, six-hour bushwhack exit back to the Goodell Creek trail.",
+        "descent": "Down the West Ridge to the Blob-Terror notch, then rappel/downclimb the gully into Crescent Creek Cirque.",
+        "descentText": "From the summit, scramble/downclimb the West Ridge to the Blob-Terror notch. A rappel (historically off worn/sketchy fixed pitons) drops into the gully leading back to Crescent Creek Cirque; multiple rappels may be needed depending on snow cover. In early season this can be a quick ~20-minute descent to camp; late season with more exposed rock it is slower and looser.",
+        "itinerary": "Day 1: hike/bushwhack from Goodell Creek trailhead to Terror Basin or Crescent Creek Basin camp (5-8 hrs). Day 2: cross to a high camp near the Otto-Himmel col or upper McMillan cirque. Day 3: climb the north face/buttress and descend to camp. Day 4-5: exit via Goodell Creek trail.",
+        "bail": "Retreat is difficult once well established on the upper buttress. The safest bail is to reverse the route below the midway ledges before committing to the crest; the 1961 first-ascent party bivouacked mid-route and down-climbed via steep rappels off the east corner after getting off-route.",
+        "turnaround": "Given the multi-day, off-trail approach and lack of any quick escape from the upper face, set a firm turnaround time before starting the technical climbing and honor it - being caught overnight unprepared on the buttress, or crossing the glacier approach in deteriorating visibility, are the principal risks.",
+        "bestSeason": "Best climbed July through early September, once the Mustard Glacier approach has consolidated snow bridges but before late-season melt-out exposes crevasses and loosens rock on the upper buttress; late August into September brings drier rock but shortening days and increasing fall-snow risk.",
+        "comms": "No cell coverage in the Southern Pickets backcountry; this is remote, multi-day terrain far from any maintained trail, so a satellite messenger/PLB is strongly advised.",
+        "detailedRack": "A standard alpine rock rack (small-to-large cams, set of stoppers), extra slings for the knife-edge sections, plus full glacier-travel gear (rope, crevasse-rescue kit, axe and crampons) for the Mustard Glacier crossing on approach.",
+        "proNeeds": "Alpine rock rack plus glacier gear; described by one source simply as needing 'alpine rock rack, glacier gear, perhaps a machete' for the brushy approach options.",
+        "gear": [
+          "rope",
+          "alpine rock rack (cams/stoppers)",
+          "glacier travel gear (axe, crampons, crevasse-rescue kit)",
+          "helmet",
+          "approach/mountaineering boots"
+        ],
+        "whatToBring": [
+          "multi-day bivy/camp gear",
+          "extra fuel and water capacity",
+          "satellite communicator/PLB",
+          "loppers or willingness to bushwhack on alternate approaches"
+        ],
+        "proTips": [
+          "Cross the Mustard Glacier early in the season while snow bridges are intact - a late-season crossing is notably harder and more exposed to crevasse hazard.",
+          "The 'Stoddard Buttress' crest line (1984 solo FA) is the cleaner, more popular modern objective; the original 1961 line to its right is easier (5.7) but less aesthetic.",
+          "The approach is frequently harder than the climbing itself - budget real time and energy for it."
+        ],
+        "watchOut": [
+          "Rockfall/loose rock on the buttress has caused at least one serious documented fall accident - wear a helmet and move carefully through simulclimbed terrain.",
+          "The Stetattle Ridge approach variant has a reportedly brutal bushwhacking exit if you can't retrace your inbound line."
+        ],
+        "knownHazards": [
+          "Loose, sometimes large detached blocks on the buttress that can fail underfoot (documented AAC incident).",
+          "Crevasse hazard crossing the Mustard Glacier, more pronounced later in the season.",
+          "Difficult, brush-choked terrain on the Stetattle Ridge/McMillan Creek approach alternative."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Lower buttress",
+            "grade": "5.4-5.7",
+            "notes": "Ledge traverse left of the toe of the buttress, then onto solid rock on the ridge crest"
+          },
+          {
+            "pitch": "Mid buttress",
+            "grade": "5.7-5.8",
+            "notes": "Sustained, largely simulclimbable rock up the crest"
+          },
+          {
+            "pitch": "Upper knife-edge",
+            "grade": "5.8+",
+            "notes": "Blocky, exposed ridge crest to a false summit (Stoddard variant)"
+          },
+          {
+            "pitch": "Original 1961 line",
+            "grade": "5.7 (III)",
+            "notes": "Line of least resistance right of the buttress crest; steep névé and firm weathered granite"
+          }
+        ],
+        "road": {
+          "name": "North Cascades Highway (SR-20) to Goodell Creek Road",
+          "status": "SR-20 is open year-round at this western stretch near Newhalem",
+          "seasonalGate": "None at this location - SR-20's seasonal winter closure gate is well east of here, near Diablo/Washington Pass, and does not affect access to Newhalem/Goodell Creek",
+          "driveNote": "From Newhalem, cross Goodell Creek and take the unpaved Goodell Creek Road spur (across SR-20 from the Newhalem campground) to the trailhead/parking area."
+        },
+        "climate": {
+          "forecastZone": "North Cascades National Park backcountry / Washington Pass region",
+          "typical": "Wet, snowy marine-influenced alpine climate with heavy winter snowpack and a short, generally reliable summer climbing window",
+          "spring": "Deep snowpack persists into June/July; approach trails and cols often still snow-covered",
+          "summer": "Primary climbing season (Jul-Aug); afternoon thunderstorms possible, otherwise the most settled weather of the year",
+          "fall": "Climbable into September with care for early-season snow and rapidly shortening daylight",
+          "winter": "Effectively inaccessible for technical climbing due to heavy snow and avalanche hazard"
+        },
+        "access": {
+          "landManager": "National Park Service - North Cascades National Park (Stephen Mather Wilderness)",
+          "fees": "No climbing fee; a backcountry/wilderness permit is required for overnight stays",
+          "permit": "Backcountry permit for the relevant cross-country zone (e.g. Crescent Creek Basin) from the Wilderness Information Center in Marblemount",
+          "passRequired": null,
+          "closures": "Park-wide moratorium on new fixed anchors (bolts/hangers) in wilderness areas - clean-climbing techniques only"
+        },
+        "emergency": {
+          "county": "Whatcom County (summit); accessed via Skagit County (Marblemount/Newhalem)",
+          "sheriffDispatch": "Skagit County Sheriff's Office / Search and Rescue - call 911 for emergencies",
+          "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount - (360) 854-7200",
+          "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA (Level III Emergency Dept., (360) 424-4111); smaller Skagit Regional facility in Sedro-Woolley is somewhat closer geographically",
+          "notes": "Extremely remote alpine terrain; any rescue likely requires a helicopter or multi-day ground team - file your itinerary with the Wilderness Information Center before departing."
+        },
+        "corrections": "Wikipedia and some secondary sources describe the north face first ascent only as 'thirty years' after the 1932 peak FA (implying 1962); the primary AAC Journal account gives the precise date as July 8-11, 1961 (Charles Bell, Ed Cooper, Dave Hiser, Mike Swayne), which is used here as the better-sourced figure. The 'North Buttress'/'North Face' naming in this DB entry appears to conflate the original 1961 line with the harder, more popular 1984 'Stoddard Buttress' crest variant that later parties commonly climb; both are described here.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+          "https://www.summitpost.org/mount-terror/155359",
+          "http://publications.americanalpineclub.org/articles/12196206500/",
+          "http://publications.americanalpineclub.org/articles/12198518501/North-America-United-States-Washington-Cascade-Mountains-Mount-Terror-Norh-Face-Left-Side",
+          "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+          "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+          "https://cascadeclimbers.com/forum/topic/60931-tr-mt-terror-north-face-buttress-stoddard-route-7202008/",
+          "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror",
+          "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+          "https://www.nps.gov/noca/planyourvisit/climbing.htm"
+        ]
+      },
+      {
+        "routeId": "wa_mount_terror_southeast_face",
+        "routeName": "East Ridge",
+        "fa": null,
+        "rockGrade": null,
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": 4,
+        "routeFt": null,
+        "rappels": "Optional rappel from an established station on the West Ridge - faster and safer than downclimbing the 3rd/4th-class descent terrain.",
+        "objHaz": [
+          "loose rock on the south-face traverse",
+          "route-finding difficulty (sparsely documented)",
+          "remote, off-trail multi-day approach"
+        ],
+        "season": "Jul-Sep, consistent with the range's short summer climbing window",
+        "aspect": "E, crossing onto S/SE",
+        "face": "East Ridge (also described as the east edge of the Southeast Face)",
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": null,
+        "maxAngle": null,
+        "highPointFt": 8151,
+        "overview": "Called 'probably the least popular route on the mountain,' this line climbs slabs to the saddle between Mount Terror and Mount Degenhardt, then follows a short, steep ridge - partly on the crest and partly wrapping onto the south/southeast face - to the summit.",
+        "beta": "Ascend slabs to the Terror-Degenhardt saddle, then climb the short but steep ridge above. The route goes up two pitches, traverses onto loose rock on the south (southeast) face, then regains the ridge for two more pitches with some 5th-class climbing mixed with easier scrambling - moderate enough that some parties climb it in mountaineering boots rather than rock shoes. Documented in Fred Beckey's Cascade Alpine Guide, Vol. 3, 2nd ed. (pp. 106-107).",
+        "approach": "As for the West Ridge/standard approach: Goodell Creek trailhead to Terror Basin/Crescent Creek Basin (multi-day, off-trail), then up slabs toward the Terror-Degenhardt col to gain the start of the ridge.",
+        "descent": "Descend via the West Ridge (3rd-4th class terrain), with an optional rappel from a fixed station for a faster, safer descent.",
+        "descentText": "From the summit, downclimb or scramble the West Ridge's 3rd-4th class terrain back toward Crescent Creek Cirque. Rappelling from an established station on the West Ridge is reported to be faster and safer than downclimbing the full length in marginal conditions.",
+        "itinerary": "Day 1-2: approach from Goodell Creek trailhead to a high camp in Crescent Creek Basin. Day 3: climb slabs to the Terror-Degenhardt saddle, ascend the East Ridge, descend via the West Ridge. Day 4-5: exit to trailhead.",
+        "bail": "Retreat down the ridge the way you came from either pitch pair; if already near the summit it may be quicker to continue and descend via the West Ridge line instead.",
+        "turnaround": "Given the remote, multi-day approach and sparse documentation of this line, set a conservative turnaround time and be prepared to reverse the route rather than push into unfamiliar terrain in poor visibility.",
+        "bestSeason": "Summer (Jul-Aug) offers the most settled weather and driest rock for the loose south-face traverse section; September remains feasible with care for early snow.",
+        "comms": "No cell coverage in this backcountry area; carry a satellite messenger/PLB.",
+        "detailedRack": "A light rack suffices given the low 5th-class difficulty - small-to-medium cams and stoppers plus a few slings; some parties climb the route largely in sturdy mountaineering boots.",
+        "proNeeds": "Minimal technical protection is needed; the primary challenges are route-finding and loose rock on the south-face traverse rather than hard climbing.",
+        "gear": [
+          "light rock rack (small-medium cams/stoppers)",
+          "rope for the short technical pitches and descent rappel",
+          "mountaineering boots"
+        ],
+        "whatToBring": [
+          "multi-day bivy/camp gear for the approach",
+          "route photos/beta in advance, since this line is sparsely documented"
+        ],
+        "proTips": [
+          "This is the least-documented, least-popular of Terror's routes - expect route-finding challenges and to rely on Beckey's guidebook description rather than online trip reports.",
+          "Because the difficulty stays in the low 5th class, many parties get by in mountaineering boots rather than swapping to rock shoes."
+        ],
+        "watchOut": [
+          "Loose rock on the traverse section where the route crosses from the ridge crest onto the south/southeast face."
+        ],
+        "knownHazards": [
+          "Loose rock underfoot during the south-face traverse between the two ridge sections.",
+          "The same remote, off-trail, multi-day approach shared by all of Terror's routes."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "1-2",
+            "grade": "3rd-4th class / low 5th",
+            "notes": "Slabs to the Terror-Degenhardt saddle, then the initial steep ridge section"
+          },
+          {
+            "pitch": "Traverse",
+            "grade": "loose scrambling",
+            "notes": "Move onto the south/southeast face on loose rock to bypass a ridge obstacle"
+          },
+          {
+            "pitch": "3-4",
+            "grade": "low 5th class",
+            "notes": "Regain the ridge crest for the final two pitches to the summit"
+          }
+        ],
+        "road": {
+          "name": "North Cascades Highway (SR-20) to Goodell Creek Road",
+          "status": "SR-20 is open year-round at this western stretch near Newhalem",
+          "seasonalGate": "None at this location - the SR-20 winter closure gate is well east, near Diablo/Washington Pass",
+          "driveNote": "From Newhalem, cross Goodell Creek and take the unpaved Goodell Creek Road spur to the trailhead/parking area."
+        },
+        "climate": {
+          "forecastZone": "North Cascades National Park backcountry / Washington Pass region",
+          "typical": "Wet, snowy marine-influenced alpine climate with a short, generally reliable summer climbing window",
+          "spring": "Deep snowpack persists into June/July on the approach",
+          "summer": "Primary climbing season (Jul-Aug), most settled weather of the year",
+          "fall": "Climbable into September with care for early snow and shortening days",
+          "winter": "Effectively inaccessible for technical climbing"
+        },
+        "access": {
+          "landManager": "National Park Service - North Cascades National Park (Stephen Mather Wilderness)",
+          "fees": "No climbing fee; wilderness permit required for overnight stays",
+          "permit": "Backcountry permit for the relevant cross-country zone (e.g. Crescent Creek Basin) from the Wilderness Information Center in Marblemount",
+          "passRequired": null,
+          "closures": "Park-wide moratorium on new fixed anchors (bolts/hangers) in wilderness areas"
+        },
+        "emergency": {
+          "county": "Whatcom County (summit); accessed via Skagit County (Marblemount/Newhalem)",
+          "sheriffDispatch": "Skagit County Sheriff's Office / Search and Rescue - call 911 for emergencies",
+          "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount - (360) 854-7200",
+          "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA (Level III Emergency Dept., (360) 424-4111)",
+          "notes": "Extremely remote terrain; file your itinerary with the Wilderness Information Center before departing, as any rescue would likely require a helicopter or multi-day ground team."
+        },
+        "corrections": "None found - the 'East Ridge' name for routeId 'wa_mount_terror_southeast_face' is consistent with sources: this line is also described as 'the east edge of the Southeast Face,' so the routeId and routeName both correctly refer to the same route, not a mismatch.",
+        "sources": [
+          "https://www.summitpost.org/mount-terror-east-ridge/871460",
+          "https://www.summitpost.org/mount-terror/155359",
+          "https://www.nwhikers.net/forums/viewtopic.php?p=634790",
+          "https://www.nps.gov/noca/planyourvisit/climbing.htm"
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+      "https://www.summitpost.org/mount-terror/155359",
+      "https://www.summitpost.org/mount-terror-east-ridge/871460",
+      "http://publications.americanalpineclub.org/articles/12196206500/",
+      "http://publications.americanalpineclub.org/articles/12198518501/North-America-United-States-Washington-Cascade-Mountains-Mount-Terror-Norh-Face-Left-Side",
+      "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror",
+      "https://www.mountainproject.com/area/119741550/mount-terror",
+      "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+      "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+      "https://cascadeclimbers.com/forum/topic/60931-tr-mt-terror-north-face-buttress-stoddard-route-7202008/",
+      "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+      "https://fastestknowntime.com/route/mount-terror-wa",
+      "https://www.nwhikers.net/forums/viewtopic.php?p=634790",
+      "https://www.nps.gov/noca/planyourvisit/climbing.htm",
+      "https://www.peakbagger.com/peak.aspx?pid=1657"
+    ]
+  },
+  {
+    "peakId": "wa_north_gardner_mountain",
+    "blurb": "North Gardner Mountain (8,956 ft) is the highest point in Okanogan County and in the Lake Chelan-Sawtooth Wilderness, standing in the Methow Mountains, a subrange of the North Cascades east of the Cascade Crest. It is joined by a high connecting ridge to neighboring Gardner Mountain (8,898 ft) about a mile to the southeast; both peaks were named by Winthrop founder Guy Waring after Isabella Gardner of Boston. The mountain is not a technical rock climb but a long, remote backcountry scramble reached via a 10+ mile approach up the Wolf Creek valley to subalpine Gardner Meadows.",
+    "hierarchyNote": "Name, coordinates (48.515°N/-120.502°W) and elevation (8,956 ft) are confirmed correct and cross-checked (Wikipedia, PeakVisor, SummitPost, Peakbagger all agree). However, the parent grouping \"Washington Pass\" is geographically loose: North Gardner Mountain sits roughly 10-11 km (6-7 mi) east-southeast of Washington Pass itself, in the separate Lake Chelan-Sawtooth Wilderness / Methow Mountains subrange, and is reached via the Wolf Creek Trailhead near Winthrop — not from the Washington Pass highway corridor that gives access to the granite spires (Liberty Bell Group, Silver Star, Early Winters Spires) the \"Washington Pass\" climbing area name usually denotes. This peak's one route is also an unroped Class 2-3 scramble/mountaineering objective, not technical rock climbing. Worth a hierarchy review, but returning full research under the given id as instructed.",
+    "routes": [
+      {
+        "routeId": "wa_north_gardner_mountain_southwest",
+        "routeName": "Southwest Slopes / South Ridge",
+        "overview": "A long, remote Class 2-3 alpine scramble approached from the south via the Wolf Creek valley and Gardner Meadows, gaining the summit ridge through a bowl below Point 8487 rather than via any technical rock line.",
+        "beta": "From a backcountry camp at Gardner Meadows (or, for a combined trip with Gardner Mountain, a high bivy near Point 8487), climbers work up scree and talus into the bowl below Point 8487, then make an exposed but sub-Class-3 traverse across to the North Gardner summit block. The line is entirely off-trail cross-country travel with no fixed protection, no established cairned route, and route-finding around cliff bands required. Most parties combine it with Gardner Mountain in a single overnight or two-night trip.",
+        "approach": "Drive to the signed Wolf Creek Trailhead (FS Trail #527) in the Lake Chelan-Sawtooth Wilderness: from Winthrop, cross the Methow River bridge on the south end of town and turn onto Twin Lakes Road (county road 9120); after 1.5 mi turn onto Wolf Creek Road (county road 1131); after 4.5 mi turn onto gravel Left Fork Wolf Creek Road (county road 1145); after 0.25 mi continue straight onto gravel Forest Service Road 5505 for about 4.5 mi to the signed trailhead. From the trailhead (~2,923 ft), follow Wolf Creek Trail #527 roughly 10.3 miles up the valley — through extensive standing dead timber from the 2021 Cedar Creek Fire for much of the first 8 miles — to subalpine Gardner Meadows (~5,700 ft). Leave the trail on the west side of the small stream draining Gardner Mountain and climb cross-country, staying west of the stream, to a small meadow basin at about 6,200 ft, then work up and around cliff bands toward the ridge and the bowl below Point 8487; this adds roughly 1.5-2 additional miles and ~3,000+ ft of gain beyond the trail end.",
+        "descent": "Reverse the ascent line: back down through the bowl below Point 8487 to Gardner Meadows and out the Wolf Creek Trail.",
+        "descentText": "Downclimb the same Class 2-3 terrain used on ascent back into the bowl below Point 8487, staying well back from cliff bands on the way down to the meadow basin at ~6,200 ft. From there descend cross-country back to Gardner Meadows and rejoin Wolf Creek Trail #527 for the ~10.3-mile hike out to the trailhead. Parties traversing between Gardner Mountain and North Gardner can either stay on the connecting ridge (the 'Gardner Traverse,' reported to involve tricky exposed scrambling) or take the safer option of dropping to about 7,400 ft below the cliff bands to bypass the harder ridge section.",
+        "itinerary": "Typically done as an overnight (2-day) or two-night backpack: Day 1 — drive to Wolf Creek Trailhead and hike ~10.3 miles up Wolf Creek Trail #527 to camp at Gardner Meadows. Day 2 — climb cross-country to the bowl below Point 8487 (often summiting Gardner Mountain first), traverse/bivy near Point 8487 (a flattened-scree bivy site), then continue to the North Gardner summit before returning to camp or hiking out. Strong parties sometimes combine the whole round trip, reported at up to ~27 miles and ~8,100 ft of cumulative gain when both Gardner and North Gardner are climbed together, into a very long single push.",
+        "bail": "Retreat is straightforward and non-technical: reverse course down the bowl/scree below Point 8487 back to the meadow basin and Gardner Meadows, then follow the maintained Wolf Creek Trail back to the trailhead. No fixed ropes, rappels, or technical rock moves are required to bail from any point on the route.",
+        "turnaround": "Given the long, remote approach (20+ miles round trip car-to-car with no cell coverage in the Wolf Creek valley), set a firm turnaround time based on remaining daylight and weather rather than pushing for the summit — North Cascades east-slope afternoon thunderstorms are a real factor in summer, and the cross-country bowl/ridge terrain is much harder to navigate safely in the dark or in a storm than the maintained trail sections.",
+        "bestSeason": "Prime conditions run July through September, once seasonal snow has cleared from the upper basin and ridge; the approach trail's wildflowers (arrowleaf balsamroot, lupine, avalanche lilies) peak in late spring/early summer just after snowmelt. Earlier-season attempts can encounter lingering snow on the upper mountain's north-facing terrain.",
+        "comms": null,
+        "season": "Jul-Sep",
+        "aspect": "SW/S",
+        "face": "Southwest Slopes / South Ridge, gained via the bowl below Point 8487",
+        "rockGrade": null,
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": null,
+        "routeFt": null,
+        "rappels": null,
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": 16.6,
+        "maxAngle": null,
+        "highPointFt": 8956,
+        "fa": null,
+        "objHaz": [
+          "standing dead timber/snags (2021 Cedar Creek Fire burn)",
+          "loose scree and talus",
+          "route-finding around cliff bands",
+          "exposed Class 2-3 ridge traverse",
+          "limited water in the upper basin"
+        ],
+        "detailedRack": "No technical rock rack is used on this route — it is climbed as an unroped Class 2-3 scramble. Trekking poles are widely recommended for the steep, loose scree sections; an ice axe may be prudent if lingering snow remains on north-facing terrain earlier in the season.",
+        "proNeeds": "None — parties do not typically place protection or use a rope on this line; it is treated as advanced scrambling terrain throughout.",
+        "gear": [
+          "trekking poles",
+          "sturdy mountaineering/hiking boots",
+          "helmet (loose rock)",
+          "map and compass or GPS with route track",
+          "ice axe (early season only)"
+        ],
+        "whatToBring": [
+          "overnight backpacking/camping gear for the Gardner Meadows or Point 8487 bivy",
+          "extra water and a filter/treatment (little to no reliable water above Gardner Meadows)",
+          "layers for cold, exposed ridge conditions and sudden weather changes",
+          "headlamp (navigation through the burned lower trail is reported to be difficult after dark)",
+          "bear spray (black bear activity reported in the valley)"
+        ],
+        "proTips": [
+          "Camp at Gardner Meadows (or bivy near Point 8487, described as having flattened scree suitable for sleeping) to break the long approach into a manageable multi-day trip and allow an early climb on summit day.",
+          "Gardner Mountain and North Gardner are commonly climbed together in one push from a Gardner Meadows camp.",
+          "Take the safer traverse option that drops to about 7,400 ft below the cliff bands rather than the exposed 'Gardner Traverse' ridge crest when moving between the two summits.",
+          "Do the final scree/talus slopes in the cool of morning — the loose, marble-sized rock underfoot is easier to manage with firmer overnight conditions."
+        ],
+        "watchOut": [
+          "Extensive standing dead timber from the 2021 Cedar Creek Fire along the first ~8 miles of the Wolf Creek Trail — falling snags are a real hazard, especially in wind.",
+          "The final approach slope below the summit ridge is described as a 'brutal' scree slope of loose, marble-sized rock with poor footing.",
+          "The Wolf Creek Trail becomes hard to follow through burned, regrowing terrain after dark.",
+          "No dependable water sources in the upper basin — carry enough for a long summit day.",
+          "Wildlife encounters (black bear, cougar, and reports of wolves/coyotes) have been noted in the valley."
+        ],
+        "knownHazards": [
+          "Approach travels 8+ miles through severely fire-damaged forest (2021 Cedar Creek Fire, ~90% intense burn) with ongoing snag-fall risk.",
+          "The summit scramble crosses loose scree/talus and involves route-finding around cliff bands with no cairned trail.",
+          "The ridge traverse connecting Gardner and North Gardner has an exposed 'harder' option along the crest and a longer but safer option dropping below cliffs near 7,400 ft.",
+          "This is a very long, remote day with no cell coverage — self-rescue capability is required."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Trailhead to Gardner Meadows",
+            "grade": "Trail (Class 1)",
+            "notes": "~10.3 mi one-way on maintained Wolf Creek Trail #527, ~2,900 ft to ~5,700 ft, through extensive fire-damaged forest for the first 8 miles."
+          },
+          {
+            "pitch": "Gardner Meadows to meadow basin / ridge approach",
+            "grade": "Class 2",
+            "notes": "Off-trail, staying west of the stream draining Gardner Mountain, reaching a small meadow basin at ~6,200 ft before working around cliff bands toward the ridge."
+          },
+          {
+            "pitch": "Bowl below Point 8487 to North Gardner summit",
+            "grade": "Class 2-3",
+            "notes": "Traverse from the bowl below Point 8487 to the summit looks harder from a distance but tops out around Class 2-3; loose rock and exposure require care."
+          }
+        ],
+        "road": {
+          "name": "Twin Lakes Rd (county 9120) / Wolf Creek Rd (county 1131) / Left Fork Wolf Creek Rd (county 1145) / FS Road 5505",
+          "status": "Gravel forest road, generally passable to standard passenger vehicles in dry conditions",
+          "seasonalGate": null,
+          "driveNote": "From Winthrop, cross the Methow River bridge on the south side of town, then follow Twin Lakes Rd 1.5 mi, Wolf Creek Rd 4.5 mi, Left Fork Wolf Creek Rd 0.25 mi, then FS Road 5505 about 4.5 mi to the signed Wolf Creek Trailhead; be prepared for mud or lingering snow during spring melt-out."
+        },
+        "climate": {
+          "forecastZone": null,
+          "typical": "East of the Cascade Crest, the Methow Valley/Sawtooth area has a drier, more continental climate than the west-side Cascades, with sunnier summers and colder, snowier winters.",
+          "spring": "Snow lingers into June on the upper mountain and approach trail; wildflowers peak on lower Wolf Creek Trail in late spring as snow recedes.",
+          "summer": "The main climbing season (Jul-Sep); generally dry and warm, though afternoon thunderstorms can build over the Cascade Crest and East Slopes.",
+          "fall": "Cools quickly by late September with the first snow possible on the upper peak; good early-fall window with settled weather and fewer bugs.",
+          "winter": "Heavy snow and full winter mountaineering conditions; access road may be snowed in well below the trailhead."
+        },
+        "access": {
+          "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Lake Chelan-Sawtooth Wilderness)",
+          "fees": "$5 per vehicle for day use or $30 annually at the Wolf Creek Trailhead",
+          "permit": "No permit required for day use or overnight camping; standard Wilderness regulations apply (Leave No Trace, group size limits) inside the Lake Chelan-Sawtooth Wilderness",
+          "passRequired": "Northwest Forest Pass or Interagency (America the Beautiful) Recreation Pass, or Recreation.gov Digital Day Pass/Scan & Pay",
+          "closures": "Check current Okanogan-Wenatchee National Forest conditions before going — Stage 2 fire restrictions have been in effect in recent seasons and road/trail damage from the 2021 Cedar Creek Fire persists."
+        },
+        "timing": {
+          "recommendedStart": "Most parties camp at Gardner Meadows (or bivy near Point 8487) rather than attempt this car-to-car in a single day, given the 20+ mile round-trip approach",
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Wolf Creek Trailhead (Trail #527)",
+            "lat": 48.4841,
+            "lng": -120.2992,
+            "elevFt": 2923,
+            "distMi": 0
+          },
+          {
+            "type": "summit",
+            "name": "North Gardner Mountain Summit",
+            "lat": 48.515229,
+            "lng": -120.501667,
+            "elevFt": 8956,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Okanogan County, Washington",
+          "sheriffDispatch": "Okanogan County Sheriff non-emergency dispatch: (509) 422-7232 (or 1-800-572-6604 within the 509 area code); 911 for emergencies",
+          "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA 98862 — (509) 996-4000",
+          "nearestHospital": "Three Rivers Hospital, 507/415 Hospital Way, Brewster, WA — (509) 689-2517 (Mid-Valley Hospital in Omak, WA — (509) 826-1760 — is a similar-distance alternative)",
+          "notes": "No cell coverage should be expected once in the Wolf Creek valley; this is a remote self-rescue objective — carry a satellite communicator/PLB and leave a detailed trip plan."
+        },
+        "corrections": null,
+        "sources": [
+          "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+          "https://hike2hike.com/scrambling/north-gardner-mountain-winthrop-bulger-peaks/",
+          "https://www.scott-kranz.com/wa100-climbs/gardner-and-north-gardner",
+          "https://www.wta.org/go-hiking/hikes/wolf-creek",
+          "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/wolf-creek-trailhead",
+          "https://www.summitpost.org/north-gardner-mountain/150471",
+          "https://www.peakbagger.com/peak.aspx?pid=1926",
+          "https://en.wikipedia.org/wiki/North_Gardner_Mountain",
+          "https://listsofjohn.com/peak/48674",
+          "https://www.okanogancounty.gov/163/Sheriffs-Office"
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/North_Gardner_Mountain",
+      "https://peakvisor.com/peak/north-gardner-mountain.html",
+      "https://www.summitpost.org/north-gardner-mountain/150471",
+      "https://www.peakbagger.com/peak.aspx?pid=1926",
+      "https://listsofjohn.com/peak/48674",
+      "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+      "https://hike2hike.com/scrambling/north-gardner-mountain-winthrop-bulger-peaks/",
+      "https://www.scott-kranz.com/wa100-climbs/gardner-and-north-gardner",
+      "https://www.wta.org/go-hiking/hikes/wolf-creek",
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/wolf-creek-trailhead",
+      "https://www.okanogancounty.gov/163/Sheriffs-Office",
+      "https://cascadeclimbers.com/forum/fawiki/mountain/gardner-mountain"
+    ]
+  },
+  {
+    "peakId": "wa_argonaut_peak",
+    "blurb": "Argonaut Peak (8,457 ft) is a granite summit on the crest of the Stuart Range in the Alpine Lakes Wilderness (Okanogan-Wenatchee National Forest), sitting on the ridgeline between Colchuck Peak and Sherpa Peak, about 1.7 miles west of Isolation Lake and 1.8 miles east of Mount Stuart. The peak is a large bastion of clean granite belonging to the Mount Stuart batholith, with a west (true) and southeast summit of nearly identical height, and offers several moderate alpine rock lines on its south, southeast, northeast, and northwest sides. It was first climbed in September 1955 via the south route by Lex Maxwell, Bob McCall, and Bill Prater.",
+    "hierarchyNote": "None — coordinates (47.470119, -120.861477) and elevation (8,457 ft, confirmed against Wikipedia's 8,457 ft NAVD88 figure at 47°28'12\"N 120°51'41\"W) match Argonaut Peak exactly, and the Stuart Range/Enchantments parent area is correct (peak sits between Colchuck and Sherpa Peaks). Note some sources (Peakbagger-derived aggregations) cite 8,453 ft, likely an older NGVD29 datum figure — 8,457 ft is retained as the better-sourced value.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Argonaut_Peak",
+      "https://www.summitpost.org/argonaut-peak/152581",
+      "https://www.mountainproject.com/area/114795615/argonaut-peak",
+      "https://www.peakbagger.com/peak.aspx?pid=2185"
+    ],
+    "routes": [
+      {
+        "routeId": "wa_south_face_12",
+        "routeName": "South Face",
+        "overview": "A direct, sustained 300-foot 5.6 line up clean granite on the south face, immediately below the main (west) summit — the most technical way to reach the top from the south side.",
+        "beta": "Start in the rightmost and larger of two short left-facing corners on the wall base; follow blocky, generally solid rock 'to the summit' with several viable variations up the face. Watch for a few loose blocks low on the route. The grade (5.6) is an old-school rating and climbs sustained, comparable to roughly 5.9-5.10- by modern gym standards.",
+        "rockGrade": "5.6",
+        "commitment": "III",
+        "pitches": 3,
+        "routeFt": 300,
+        "face": "South Face",
+        "aspect": "S",
+        "season": "Jun-Sep",
+        "bestSeason": "South-facing and quick to dry out, but the approach gully/creek crossings can still hold snow into early-mid July in a heavy snow year; driest and most reliable conditions are July-September.",
+        "approach": "Approached from the south via Beverly Creek Trailhead (Teanaway/North Fork Teanaway Road, FS 9737): follow Beverly Creek Trail to a pass into the Fourth Creek drainage, then descend Fourth Creek Trail to Ingalls Creek, cross the creek, and bushwhack/scramble up talus and open slopes on the peak's south side directly to the base of the wall.",
+        "gear": [
+          "Standard alpine trad rack to 3 in",
+          "Helmet",
+          "Approach shoes or light mountaineering boots"
+        ],
+        "whatToBring": [
+          "Ten essentials",
+          "Extra water for the long, exposed south-side approach"
+        ],
+        "watchOut": [
+          "Potentially loose blocks near the bottom of the face",
+          "Long, strenuous, partly bushwhack approach from Ingalls Creek"
+        ],
+        "knownHazards": [
+          "Loose rock low on the route",
+          "Extended off-trail travel through brush and talus on approach"
+        ],
+        "access": {
+          "landManager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District), Alpine Lakes Wilderness",
+          "fees": "Northwest Forest Pass or $5 day-use at Beverly Creek/Ingalls Creek trailheads",
+          "permit": "Free self-issue wilderness permit at trailhead; no overnight quota on this (south) side",
+          "passRequired": "Northwest Forest Pass / America the Beautiful pass",
+          "closures": null
+        },
+        "road": {
+          "name": "North Fork Teanaway Road / FS 9737",
+          "status": "Gravel forest road, seasonally snowbound",
+          "seasonalGate": "Generally inaccessible in winter under snow",
+          "driveNote": "From Cle Elum: WA-970 to Teanaway Road, then North Fork Teanaway Road to FS 9737 and spur 9737-112 to Beverly Turnpike Trailhead (~3,650 ft)."
+        },
+        "emergency": {
+          "county": "Kittitas County (trailhead); Chelan County (summit)",
+          "sheriffDispatch": "Kittitas County Sheriff non-emergency (509) 962-7525; dial 911 for emergencies",
+          "rangerStation": "Wenatchee River Ranger District, Leavenworth, (509) 548-2550",
+          "nearestHospital": "Kittitas Valley Healthcare, 603 S Chestnut St, Ellensburg, WA, (509) 962-9841",
+          "notes": "Cell coverage is unreliable to absent throughout the Ingalls Creek/Teanaway backcountry; carry a satellite communicator."
+        },
+        "waypoints": [
+          {
+            "type": "summit",
+            "name": "Argonaut Peak",
+            "lat": 47.470119,
+            "lng": -120.861477,
+            "elevFt": 8457
+          }
+        ],
+        "corrections": null,
+        "sources": [
+          "https://www.mountainproject.com/route/114795630/south-face",
+          "https://www.summitpost.org/argonaut-peak/152581",
+          "http://www.ericsbasecamp.net/trips/Argonaut/Argonaut.htm",
+          "https://en.wikipedia.org/wiki/Argonaut_Peak"
+        ]
+      },
+      {
+        "routeId": "wa_argonaut_peak_east_ridge",
+        "routeName": "Southeast Ridge",
+        "overview": "A long, mostly-solid alpine rock ridge climbing to Argonaut's southeast spire (a false summit of nearly equal height), requiring a rappel into the notch to continue to the true (west) summit.",
+        "beta": "An interesting, less-traveled rock route up the SE ridge to the SE spire and, via a rappel into the intervening notch, on to the true summit. The lower pitches are blocky, somewhat awkward, and lichen-covered, making protection tricky in spots; upper pitches improve on cleaner rock.",
+        "rockGrade": "5.6",
+        "pitches": 8,
+        "face": "Southeast Ridge / Southeast Spire",
+        "aspect": "SE",
+        "season": "Jul-Sep",
+        "bestSeason": "Best once the approach snow and moat below the ridge have melted out, typically mid-July through September.",
+        "approach": "Best reached via Colchuck Col from the Stuart Lake/Colchuck Lake Trailhead (Eightmile Creek Road/FS 7601) and Colchuck Lake, traversing to gain the base of the southeast ridge — this is preferred over the long, strenuous Ingalls Creek bushwhack approach from the south, which is not recommended.",
+        "rappels": "2 single-rope rappels (or 1 double-rope rappel) into the notch between the southeast spire and the true summit",
+        "watchOut": [
+          "Lower pitches are blocky, awkward, and hard to protect",
+          "Heavy lichen coverage reduces friction and gear placements",
+          "SE spire is a false summit — a rappel into the notch is required to reach the true summit"
+        ],
+        "gear": [
+          "Standard alpine trad rack",
+          "Extra slings for lichen-covered/awkward placements",
+          "Rope(s) for the notch rappel"
+        ],
+        "access": {
+          "landManager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District), Alpine Lakes Wilderness",
+          "fees": "Northwest Forest Pass or $5 day-use at Stuart Lake Trailhead",
+          "permit": "Free self-issue day permit; overnight camping in the Colchuck Zone requires an Enchantment Permit Area lottery permit (May 15-Oct 31)",
+          "passRequired": "Northwest Forest Pass",
+          "closures": "FS 7601 access road typically gated/snowbound November-May"
+        },
+        "road": {
+          "name": "Icicle Creek Road / FS 7601",
+          "status": "Paved then dirt/gravel, steep and washboarded",
+          "seasonalGate": "Closed to vehicles roughly November-May",
+          "driveNote": "From Leavenworth, follow Icicle Creek Road ~8.4 miles, left onto FS 7601, ~3.7 miles of dirt road to Stuart Lake Trailhead; high-clearance recommended."
+        },
+        "emergency": {
+          "county": "Chelan County",
+          "sheriffDispatch": "Chelan County Sheriff non-emergency (509) 667-6851 (RiverCom 911 dispatch); dial 911 for emergencies",
+          "rangerStation": "Wenatchee River Ranger District, Leavenworth, (509) 548-2550",
+          "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA, (509) 548-5815",
+          "notes": "Cell service is generally absent in the Colchuck Lake/Enchantments backcountry."
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Stuart Lake / Colchuck Lake Trailhead",
+            "lat": 47.5278,
+            "lng": -120.8205,
+            "elevFt": 3400
+          },
+          {
+            "type": "landmark",
+            "name": "Colchuck Lake",
+            "lat": 47.4919578,
+            "lng": -120.8335801,
+            "elevFt": 5570
+          },
+          {
+            "type": "summit",
+            "name": "Argonaut Peak",
+            "lat": 47.470119,
+            "lng": -120.861477,
+            "elevFt": 8457
+          }
+        ],
+        "corrections": null,
+        "sources": [
+          "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+          "https://www.summitpost.org/argonaut-peak/152581",
+          "https://www.mountainproject.com/area/114795615/argonaut-peak"
+        ]
+      },
+      {
+        "routeId": "wa_argonaut_peak_northeast_ridge",
+        "routeName": "Northeast Ridge",
+        "overview": "A mixed rock-and-snow ridge/gully line gained from Colchuck Col, climbing exposed ledges and a snow-filled couloir to the northeast ridge before short technical rock and snow slopes lead to the summit block.",
+        "beta": "From Colchuck Col, traverse an exposed ridge and rock ledges to a narrow, snow-filled ~50-degree couloir; a short section of easy 5th-class rock (about two moves of 5.4) with a 4th-class scramble gains the northeast ridge/gully system, followed by a steep (~55-degree) snow finger and lower-angle snow on the northeast face to the summit blocks.",
+        "rockGrade": "5.4",
+        "maxAngle": 55,
+        "gainFt": 7200,
+        "distKm": 25.7,
+        "highPointFt": 8457,
+        "face": "Northeast Ridge / Northeast Face",
+        "aspect": "NE",
+        "season": "Jun-Jul",
+        "bestSeason": "Climbed as a snow-and-rock route; best when the couloir and northeast face still hold consolidated snow (June into early July) rather than late-season scree and bare rock.",
+        "approach": "From the Stuart Lake/Colchuck Lake Trailhead (FS 7601), hike to Colchuck Lake and climb to Colchuck Col (~8,050 ft), then traverse toward Argonaut Peak along the connecting ridge to gain the route.",
+        "descent": "Retrace the ascent route back over Colchuck Col to Colchuck Lake and the trailhead.",
+        "descentText": "Downclimb the summit blocks and northeast face snow/rock back to the couloir and ridge, re-cross to Colchuck Col, then descend past Colchuck Lake to the Stuart Lake Trailhead; expect roughly 5-6 hours for the descent.",
+        "timing": {
+          "approachTimeHrs": 4.2,
+          "summitTimeHrs": 9.2,
+          "descentTimeHrs": 5.5,
+          "totalHrs": 14.7,
+          "recommendedStart": "Pre-dawn/alpine start to be off avalanche-prone snow slopes and rockfall terrain before it warms"
+        },
+        "watchOut": [
+          "1,000+ ft of exposure along the ridge traverse from Colchuck Col",
+          "Avalanche-prone snow terrain, especially in the couloir",
+          "Route-finding difficulty on the ridge/ledge traverse",
+          "Rockfall as snow melts out on the northeast face"
+        ],
+        "knownHazards": [
+          "Steep, avalanche-capable snow couloir",
+          "Sustained exposure along exposed ledges",
+          "Loose rubble in the final summit gully"
+        ],
+        "gear": [
+          "Ice axe and crampons",
+          "A few pickets or a light rack for the snow/rock transitions",
+          "30-60m rope for short technical sections"
+        ],
+        "access": {
+          "landManager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District), Alpine Lakes Wilderness",
+          "fees": "Northwest Forest Pass or $5 day-use at Stuart Lake Trailhead",
+          "permit": "Free self-issue day permit; overnight camping in the Colchuck Zone requires an Enchantment Permit Area lottery permit (May 15-Oct 31)",
+          "passRequired": "Northwest Forest Pass",
+          "closures": "FS 7601 access road typically gated/snowbound November-May"
+        },
+        "road": {
+          "name": "Icicle Creek Road / FS 7601",
+          "status": "Paved then dirt/gravel, steep and washboarded",
+          "seasonalGate": "Closed to vehicles roughly November-May",
+          "driveNote": "From Leavenworth, follow Icicle Creek Road ~8.4 miles, left onto FS 7601, ~3.7 miles of dirt road to Stuart Lake Trailhead; high-clearance recommended."
+        },
+        "climate": {
+          "forecastZone": "NWAC Stevens Pass zone",
+          "typical": "Alpine granite terrain with lingering snow into midsummer on north/northeast aspects",
+          "spring": "Deep, often unstable snow; couloir climbable but avalanche hazard highest",
+          "summer": "Snow recedes on the ridge/face by July, exposing loose rock and scree",
+          "fall": "Early snow can return by late September, adding hazard to the exposed ridge",
+          "winter": "Road access closed; route is a serious avalanche-prone winter objective"
+        },
+        "emergency": {
+          "county": "Chelan County",
+          "sheriffDispatch": "Chelan County Sheriff non-emergency (509) 667-6851 (RiverCom 911 dispatch); dial 911 for emergencies",
+          "rangerStation": "Wenatchee River Ranger District, Leavenworth, (509) 548-2550",
+          "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA, (509) 548-5815",
+          "notes": "Cell service is generally absent in the Colchuck Lake/Enchantments backcountry."
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Stuart Lake / Colchuck Lake Trailhead",
+            "lat": 47.5278,
+            "lng": -120.8205,
+            "elevFt": 3400
+          },
+          {
+            "type": "landmark",
+            "name": "Colchuck Lake",
+            "lat": 47.4919578,
+            "lng": -120.8335801,
+            "elevFt": 5570
+          },
+          {
+            "type": "summit",
+            "name": "Argonaut Peak",
+            "lat": 47.470119,
+            "lng": -120.861477,
+            "elevFt": 8457
+          }
+        ],
+        "corrections": "The given route name 'Northeast Ridge' does not correspond to a distinctly named route on Mountain Project (which lists 'Northeast Couloir' as the technical snow/ice line on this side); it is documented in multiple trip reports as a moderate mixed ridge/gully scramble reached via Colchuck Col, distinct from the harder Northeast Couloir. Stats above (gain/distance/timing) are round-trip totals from a specific documented ascent, not one-way approach figures.",
+        "sources": [
+          "https://trailcatjim.com/argonaut-peak-via-northeast-gully-northeast-face/",
+          "https://trailcatjim.com/argonaut-peak-attempt-via-fourth-creek-south-slope-northeast-ridge-2024/",
+          "https://www.summitpost.org/argonaut-peak/152581"
+        ]
+      },
+      {
+        "routeId": "wa_northwest_arete",
+        "routeName": "Northwest Arete",
+        "overview": "A 6-8 pitch alpine rock climb up the blocky northwest arete of Argonaut Peak, gained via a snow finger from the north basin, with generally solid but lichen-covered granite near the crest.",
+        "beta": "From the north basin below the peak, climb a snow finger (loose/dirty rock in late season) to a notch at the base of the northwest arete, then follow straightforward route-finding up blocky, generally solid Class 4 to 5.6 rock; a standout pitch 5 climbs a steep corner on good holds, with a choice of corner systems higher up (the right-hand option is easier). Black lichen on the granite becomes extremely slick when wet.",
+        "rockGrade": "5.6",
+        "commitment": "II",
+        "pitches": 7,
+        "routeFt": 700,
+        "face": "Northwest Arete",
+        "aspect": "NW",
+        "season": "Jun-Sep",
+        "bestSeason": "Best once the north-basin snow finger has firmed up or melted out, typically July-August; September ascents report looser late-season snow, mud, and moat issues.",
+        "approach": "From the Stuart Lake/Colchuck Lake Trailhead (FS 7601), follow the Stuart Lake trail about 2 miles to a junction, continue to a meadow, then follow Mountaineer Creek (east fork) through brush and a large boulder field to the north basin below the peak, staying low and right through slide-alder to minimize bushwhacking.",
+        "descent": "Descend east from the summit through a notch and down the northeast face via a series of rappels to the Argonaut-Colchuck col.",
+        "descentText": "From the summit, downclimb/traverse east through a notch onto the northeast face; make one single-rope rappel to the east, traverse skier's left (north) through a loose gully, then two more single-rope rappels to reach the slopes near the Argonaut-Colchuck col, from which parties descend to Colchuck Lake and the trailhead. Expect roughly 4 hours off the summit to the col.",
+        "gear": [
+          "Single alpine trad rack",
+          "Single 60m rope",
+          "Helmet"
+        ],
+        "whatToBring": [
+          "Overnight/bivy gear in case of weather delay",
+          "Extra layers — conditions can shift quickly to graupel/snow/rain"
+        ],
+        "proTips": [
+          "Stay low and traverse right (skier's right) through the boulder field/slide alder on approach to minimize bushwhacking",
+          "Expect to pitch out more sections (7-8 pitches) rather than the 5 an efficient party might use, to manage rope drag and communication in variable weather"
+        ],
+        "watchOut": [
+          "Black lichen-covered granite is extremely slick when wet ('climbing on rock covered in wet lettuce')",
+          "Rapid weather changes bring graupel, snow, and rain even in summer",
+          "Late-season snow finger can be loose, dirty, or moated out",
+          "Pack rats reported on cliff bands around 8,500 ft"
+        ],
+        "knownHazards": [
+          "Slick lichen in wet conditions",
+          "Fast-moving alpine weather",
+          "Loose rock in the late-season snow finger"
+        ],
+        "access": {
+          "landManager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District), Alpine Lakes Wilderness",
+          "fees": "Northwest Forest Pass or $5 day-use at Stuart Lake Trailhead",
+          "permit": "Free self-issue day permit; overnight camping in the Colchuck Zone requires an Enchantment Permit Area lottery permit (May 15-Oct 31)",
+          "passRequired": "Northwest Forest Pass",
+          "closures": "FS 7601 access road typically gated/snowbound November-May"
+        },
+        "road": {
+          "name": "Icicle Creek Road / FS 7601",
+          "status": "Paved then dirt/gravel, steep and washboarded",
+          "seasonalGate": "Closed to vehicles roughly November-May",
+          "driveNote": "From Leavenworth, follow Icicle Creek Road ~8.4 miles, left onto FS 7601, ~3.7 miles of dirt road to Stuart Lake Trailhead; high-clearance recommended."
+        },
+        "climate": {
+          "forecastZone": "NWAC Stevens Pass zone",
+          "typical": "Granite alpine rock route with a persistent north-basin snow finger into midsummer",
+          "spring": "Snow finger firm but couloir/basin approach still largely snow-covered",
+          "summer": "Prime season once the finger consolidates or melts, July-August",
+          "fall": "Looser rock and moat issues reported by September",
+          "winter": "Road access closed; not a winter objective"
+        },
+        "emergency": {
+          "county": "Chelan County",
+          "sheriffDispatch": "Chelan County Sheriff non-emergency (509) 667-6851 (RiverCom 911 dispatch); dial 911 for emergencies",
+          "rangerStation": "Wenatchee River Ranger District, Leavenworth, (509) 548-2550",
+          "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA, (509) 548-5815",
+          "notes": "Cell service is generally absent in the Colchuck Lake/Enchantments backcountry."
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Stuart Lake / Colchuck Lake Trailhead",
+            "lat": 47.5278,
+            "lng": -120.8205,
+            "elevFt": 3400
+          },
+          {
+            "type": "summit",
+            "name": "Argonaut Peak",
+            "lat": 47.470119,
+            "lng": -120.861477,
+            "elevFt": 8457
+          }
+        ],
+        "corrections": null,
+        "sources": [
+          "https://www.mountainproject.com/route/119339605/northwest-arete",
+          "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/",
+          "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+          "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak"
+        ]
+      }
+    ]
+  },
+  {
+    "peakId": "wa_bear_mountain_chilliwack",
+    "blurb": "Bear Mountain (7,931 ft) is a remote summit in the Chilliwack Range (grouped within the broader Skagit Range) of the North Cascades, inside North Cascades National Park near the US/Canada border in Whatcom County. Its roughly 2,000-foot north face, cut from Skagit gneiss and granodiorite, holds some of the most committing and least-visited alpine rock climbing in the Cascades. Fred Beckey and Mark Fielding made the first ascent of the north buttress in July 1967 via a glacier couloir; Alan Kearney and Bobby Knight added a harder, fully-direct line up the entire buttress in September 1980.",
+    "hierarchyNote": null,
+    "routes": [
+      {
+        "routeId": "wa_bear_mountain_chilliwack_north_buttress",
+        "routeName": "North Buttress",
+        "fa": "Fred Beckey & Mark Fielding, July 14-15, 1967 (crux originally aided at A4; freed by later parties)",
+        "rockGrade": "5.10a",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": "IV",
+        "pitches": 7,
+        "routeFt": 2200,
+        "rappels": "None — 3rd/4th class walk-off descent",
+        "objHaz": [
+          "rockfall in the approach glacier couloir",
+          "crevasses on the approach glacier",
+          "loose rock",
+          "wet/slick slabs when rock is damp"
+        ],
+        "season": "Jul-Sep",
+        "aspect": "N",
+        "face": "North Buttress / North Face",
+        "gainFt": 4500,
+        "lossFt": null,
+        "highPointFt": 7931,
+        "distKm": 14.5,
+        "maxAngle": null,
+        "overview": "Gains the upper north buttress via a steep glacier couloir left of the rock, then climbs seven sustained pitches of cracks, corners and an airy face to the top of the buttress.",
+        "beta": "The original 1967 Beckey-Fielding line, catalogued as the 'North Face Buttress' in the Cascade Alpine Guide (or 'North Face' in Beckey's Alpine Select). Parties gain the buttress crest via a roughly 1,100-ft glacier couloir left of the rock (about 3.5 hrs, dodging rockfall and crossing exposed pebble-strewn slabs), then climb seven pitches: a steep 5.9 corner, 5.6 crest climbing, a 5.8 pitch with an off-width to a ledge (the 1967 party's bivy site), the 5.10a off-width crux, 5.7 blocks and cracks, airy 5.9 face climbing on twin cracks, and a final 5.7 blocky pitch to the buttress top. The FA party used aid (A4) through the crux; it has since been freed at 5.10a.",
+        "approach": "From the Chilliwack Lake Road trailhead in British Columbia (historically reached by boat across Chilliwack Lake), or via the longer Hannegan Pass Trail on the US side to avoid the border crossing, follow the Chilliwack River Trail toward Bear Creek (about 5 hrs from the BC trailhead), then leave the trail and climb the steep, brushy Bear Creek 'high route' through timber and huckleberry to meadows below Bear Mountain's north side, reaching a saddle camp at roughly 6,480 ft — about 9 miles and 4,500 ft of gain, ~9 hours from the BC trailhead.",
+        "descent": "3rd/4th class walk-off down the west side of the south ridge back to the saddle-camp basin, about 1 hour.",
+        "descentText": "From the top of the buttress, descend westward on easier ground along the south-ridge side of the peak, working down through a gully system back to the basin beneath the saddle camp; roughly 1 hour, no rappels required.",
+        "itinerary": "Day 1: hike in via the Chilliwack River Trail to Bear Creek and up the high route to saddle camp (~6,480 ft). Day 2: climb the glacier couloir and seven-pitch buttress to the top, then descend to camp. Day 3: hike out.",
+        "bail": "Retreat becomes difficult once established on the buttress crest above the couloir; the easiest bail is back down the glacier couloir before committing to the upper rock pitches.",
+        "turnaround": "Given the remote, multi-day approach and limited retreat once on the upper buttress, set a firm turnaround time based on weather and remaining daylight to ensure a safe descent to the couloir before dark.",
+        "bestSeason": "Best climbed in mid-to-late summer (July-September) once the approach couloir/glacier has consolidated and the brushy Bear Creek approach has dried out; the first ascent and known repeat climbs were all done between mid-July and early September.",
+        "comms": "No reliable cell coverage in the Bear Creek drainage or on the peak; this is a remote wilderness area abutting the Canadian border.",
+        "detailedRack": "A single rack of nuts and cams to about 3 inches (doubles in mid-size cams), plus extra slings; a 60m single rope is sufficient.",
+        "proNeeds": "Standard rack to roughly 3 inches covers the crack and corner systems; the crux off-width pitch wants larger gear.",
+        "gear": [
+          "60m single rope",
+          "rack of cams to 3in",
+          "set of nuts",
+          "extra slings",
+          "ice axe",
+          "crampons"
+        ],
+        "whatToBring": [
+          "glacier travel gear",
+          "multi-day camping/bivy gear for the approach",
+          "approach shoes for brush",
+          "passport if approaching via Canada"
+        ],
+        "proTips": [
+          "Freeing the crux off-width at 5.10a avoids the historic A4 aid used on the first ascent",
+          "Camping at the ~6,480 ft saddle sets up a single long summit day"
+        ],
+        "watchOut": [
+          "Rockfall and crevasses in the approach glacier couloir",
+          "Wet, slick rock is common in this weather-exposed range",
+          "Long, brushy, multi-day approach with no easy bail once on the buttress"
+        ],
+        "knownHazards": [
+          "Loose rock and occasional rockfall in the glacier couloir approach",
+          "Crevasse hazard crossing the approach glacier",
+          "Very remote setting far from any rescue access"
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Couloir approach",
+            "grade": null,
+            "notes": "~1,100 ft glacier couloir left of the buttress crest, ~3.5 hrs, exposed to rockfall"
+          },
+          {
+            "pitch": "P1",
+            "grade": "5.9",
+            "notes": "Steep corner gaining the buttress crest"
+          },
+          {
+            "pitch": "P2",
+            "grade": "5.6",
+            "notes": "Crest climbing"
+          },
+          {
+            "pitch": "P3",
+            "grade": "5.8",
+            "notes": "Rock left of the crest to a ledge below an off-width (1967 party's bivy ledge)"
+          },
+          {
+            "pitch": "P4",
+            "grade": "5.10a",
+            "notes": "Crux off-width crack with positive, crimpy holds"
+          },
+          {
+            "pitch": "P5",
+            "grade": "5.7",
+            "notes": "Blocks and cracks on the crest below a steep step"
+          },
+          {
+            "pitch": "P6",
+            "grade": "5.9",
+            "notes": "Airy, exposed face climbing on the crest to a set of twin cracks"
+          },
+          {
+            "pitch": "P7",
+            "grade": "5.7",
+            "notes": "Blocky climbing to the top of the buttress"
+          }
+        ],
+        "road": {
+          "name": "Hannegan Pass Road #32 (US side) / Chilliwack Lake Road (BC side)",
+          "status": "Hannegan Pass Rd has limited access for larger vehicles due to flood damage",
+          "seasonalGate": null,
+          "driveNote": "From Glacier, WA, take SR 542 east 12.5 mi, turn onto Hannegan Pass Rd #32, and continue 5.3 mi to the trailhead at 3,100 ft; alternatively approach via Chilliwack Lake, BC, Canada."
+        },
+        "climate": {
+          "forecastZone": "NWS Cascades of Whatcom and Skagit Counties",
+          "typical": "Wet, weather-exposed North Cascades alpine climate",
+          "spring": "Heavy snowpack lingers, avalanche hazard into June",
+          "summer": "Best climbing window, though thunderstorms and wet rock are possible",
+          "fall": "Shortening weather windows; early-season snow possible by late September",
+          "winter": "Deep snowpack; essentially inaccessible for climbing"
+        },
+        "access": {
+          "landManager": "North Cascades National Park Service Complex (NPS)",
+          "fees": "NPS backcountry permit $10/person + $6 reservation fee; day-use fee at some WA trailheads",
+          "permit": "NPS wilderness backcountry permit required for overnight camping",
+          "passRequired": null,
+          "closures": null
+        },
+        "timing": {
+          "recommendedStart": "Alpine start from saddle camp to climb the couloir and buttress in one long day",
+          "approachTimeHrs": 9,
+          "summitTimeHrs": null,
+          "descentTimeHrs": 1,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Hannegan Trailhead",
+            "lat": 48.9101,
+            "lng": -121.5927,
+            "elevFt": 3100,
+            "distMi": null
+          },
+          {
+            "type": "summit",
+            "name": "Bear Mountain summit",
+            "lat": 48.930628,
+            "lng": -121.341156,
+            "elevFt": 7931,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Whatcom County, WA",
+          "sheriffDispatch": null,
+          "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount — (360) 854-7245",
+          "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA (Level II trauma center)",
+          "notes": "Very remote area abutting the US/Canada border; rescue response times are long. NPS general line: (360) 854-7200."
+        },
+        "corrections": null,
+        "sources": [
+          "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+          "http://publications.americanalpineclub.org/articles/12196806700/The-North-Face-of-Bear-Mountain",
+          "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+          "https://www.mountainproject.com/area/112828230/bear-mountain",
+          "https://en.wikipedia.org/wiki/Bear_Mountain_(North_Cascades)",
+          "https://www.nps.gov/noca/planyourvisit/permits.htm",
+          "https://www.fs.usda.gov/r06/mbs/recreation/hannegan-trailhead",
+          "https://cascadeclimbers.com/forum/topic/102138-tr-bear-mountain-north-buttress-beckey-route-07152018/"
+        ]
+      },
+      {
+        "routeId": "wa_direct_north_buttress",
+        "routeName": "Direct North Buttress",
+        "fa": "Alan Kearney & Bobby Knight, September 1980 (entire buttress, ~2.5 days); free ascent by Bryan Burdo & Yann Merrand, 1985",
+        "rockGrade": "5.10-",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": "V",
+        "pitches": 21,
+        "routeFt": 2200,
+        "rappels": "None — walk-off descent, single rope sufficient",
+        "objHaz": [
+          "rockfall near the buttress toe",
+          "loose ice blocks in the ice moat at the base",
+          "sparse protection on traversing pitches",
+          "unstable, glacially-scoured rock low on the route"
+        ],
+        "season": "Jul-Sep",
+        "aspect": "N",
+        "face": "North Buttress (direct line up the full/lower buttress)",
+        "gainFt": 4500,
+        "lossFt": null,
+        "highPointFt": 7931,
+        "distKm": 14.5,
+        "maxAngle": null,
+        "overview": "A more direct and sustained line than the original Beckey route, climbing the entire north buttress from its toe on the glacier's edge in 21 pitches, joining and finishing on the classic upper buttress.",
+        "beta": "Established by Alan Kearney and Bobby Knight over 2.5 days in September 1980, the Direct North Buttress adds roughly seven difficult 5.10 pitches up the previously-unclimbed lower buttress before joining Beckey and Fielding's 1967 line on the upper buttress. Standout lower-buttress features include a 300-ft dihedral with a roof, a 130-ft hand-and-fist crack, and an off-width; the route finishes via the shared upper-buttress pitches to the crest.",
+        "approach": "Same multi-day approach as the North Buttress — via the Chilliwack River Trail/Bear Creek high route (or the longer Hannegan Pass Trail on the US side) to a saddle camp on Bear Mountain's northwest side at about 6,480 ft. From the saddle, descend steep scree/snow toward the approach glacier; the Direct North Buttress toe sits on the glacier's right side — locate slabs feeding into the lower corner system (crampons and axe helpful for the 60-90 ft down from the col).",
+        "descent": "Reverse the approach: descend snow slopes and pick through cliff bands back to the basin beneath the saddle; single-rope walk-off, no rappels required.",
+        "descentText": "From the top of the buttress, downclimb and walk snow/talus slopes on the peak's west side, navigating cliff bands back down to the basin below the col and saddle camp.",
+        "itinerary": "Day 1: approach to saddle camp (~6,480 ft). Days 2-3: climb the 21-pitch buttress (historically done in about 2.5 days with a bivy), then descend to camp. Day 4: hike out.",
+        "bail": "The lower seven pitches offer limited retreat with sparse protection; the easiest bail is before committing above the roof/dihedral section low on the route.",
+        "turnaround": "Because the route is long (21 pitches) and rescue is far away, set a clear turnaround based on pace through the lower pitches to avoid finishing the upper buttress after dark or in worsening weather.",
+        "bestSeason": "Mid-to-late summer (July-September), once the approach glacier is stable and ice/snow has cleared the base slabs; the first ascent was climbed in early September.",
+        "comms": "No reliable cell coverage; a remote wilderness setting abutting the Canadian border.",
+        "detailedRack": "A full rack with cams up to BD #4, doubles of mid-range cams, and numerous slings for the traversing and sparsely-protected pitches; a single rope is acceptable since the descent is a walk-off.",
+        "proNeeds": "Doubles of mid-size cams cover the crack systems on the lower buttress; a #4-size cam protects the wider sections and off-width.",
+        "gear": [
+          "60m single rope",
+          "rack of cams to BD #4 (doubles of mid-range sizes)",
+          "set of nuts",
+          "numerous slings",
+          "ice axe",
+          "crampons"
+        ],
+        "whatToBring": [
+          "glacier travel gear",
+          "multi-day camping/bivy gear",
+          "approach shoes for brush and scree",
+          "passport if approaching via Canada"
+        ],
+        "proTips": [
+          "The lower seven 5.10 pitches are the technical crux — many parties still opt for the easier glacier-couloir start of the original route instead",
+          "Doubles in mid-size cams speed progress on the traversing, sparsely-protected pitches"
+        ],
+        "watchOut": [
+          "Loose ice blocks and rockfall near the buttress toe",
+          "Sparse protection on several traversing pitches",
+          "Weather can turn quickly — cirrus clouds have preceded storms on past ascents"
+        ],
+        "knownHazards": [
+          "Rockfall near the toe of the buttress and the ice moat at its base",
+          "Loose, glacially-scoured rock low on the route",
+          "Long, remote approach with difficult retreat"
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "P1-2",
+            "grade": "5.8",
+            "notes": "Slabby terrain with cracks"
+          },
+          {
+            "pitch": "P3",
+            "grade": "5.10-",
+            "notes": "Roof crux"
+          },
+          {
+            "pitch": "P4-5",
+            "grade": null,
+            "notes": "Chimney system"
+          },
+          {
+            "pitch": "P6-8",
+            "grade": null,
+            "notes": "Traversing terrain, sparse protection"
+          },
+          {
+            "pitch": "P9-12",
+            "grade": null,
+            "notes": "Ridge ascent toward the snowpack, joins the original Beckey North Buttress line"
+          },
+          {
+            "pitch": "P13-15",
+            "grade": null,
+            "notes": "Ridge crest climbing"
+          },
+          {
+            "pitch": "P16a-16b",
+            "grade": "5.10-",
+            "notes": "Off-width, with a 5.8 bypass option"
+          },
+          {
+            "pitch": "P17-21",
+            "grade": null,
+            "notes": "Upper buttress on easier ground to the top"
+          }
+        ],
+        "road": {
+          "name": "Hannegan Pass Road #32 (US side) / Chilliwack Lake Road (BC side)",
+          "status": "Hannegan Pass Rd has limited access for larger vehicles due to flood damage",
+          "seasonalGate": null,
+          "driveNote": "From Glacier, WA, take SR 542 east 12.5 mi, turn onto Hannegan Pass Rd #32, and continue 5.3 mi to the trailhead at 3,100 ft; alternatively approach via Chilliwack Lake, BC, Canada."
+        },
+        "climate": {
+          "forecastZone": "NWS Cascades of Whatcom and Skagit Counties",
+          "typical": "Wet, weather-exposed North Cascades alpine climate",
+          "spring": "Heavy snowpack lingers, avalanche hazard into June",
+          "summer": "Best climbing window, though thunderstorms and wet rock are possible",
+          "fall": "Shortening weather windows; early-season snow possible by late September",
+          "winter": "Deep snowpack; essentially inaccessible for climbing"
+        },
+        "access": {
+          "landManager": "North Cascades National Park Service Complex (NPS)",
+          "fees": "NPS backcountry permit $10/person + $6 reservation fee; day-use fee at some WA trailheads",
+          "permit": "NPS wilderness backcountry permit required for overnight camping",
+          "passRequired": null,
+          "closures": null
+        },
+        "timing": {
+          "recommendedStart": "Alpine start from saddle camp; historically climbed over ~2.5 days including a bivy",
+          "approachTimeHrs": 9,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Hannegan Trailhead",
+            "lat": 48.9101,
+            "lng": -121.5927,
+            "elevFt": 3100,
+            "distMi": null
+          },
+          {
+            "type": "summit",
+            "name": "Bear Mountain summit",
+            "lat": 48.930628,
+            "lng": -121.341156,
+            "elevFt": 7931,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Whatcom County, WA",
+          "sheriffDispatch": null,
+          "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount — (360) 854-7245",
+          "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA (Level II trauma center)",
+          "notes": "Very remote area abutting the US/Canada border; rescue response times are long. NPS general line: (360) 854-7200."
+        },
+        "corrections": null,
+        "sources": [
+          "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+          "http://publications.americanalpineclub.org/articles/12198112000/Bear-Mountains-Forgotten-Face",
+          "https://www.mountainproject.com/area/112828230/bear-mountain",
+          "https://en.wikipedia.org/wiki/Bear_Mountain_(North_Cascades)",
+          "https://www.nps.gov/noca/planyourvisit/permits.htm",
+          "https://www.fs.usda.gov/r06/mbs/recreation/hannegan-trailhead"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.mountainproject.com/area/112828230/bear-mountain",
+      "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "https://www.mountainproject.com/area/106363445/chilliwack-range",
+      "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+      "http://publications.americanalpineclub.org/articles/12196806700/The-North-Face-of-Bear-Mountain",
+      "http://publications.americanalpineclub.org/articles/12198112000/Bear-Mountains-Forgotten-Face",
+      "https://en.wikipedia.org/wiki/Bear_Mountain_(North_Cascades)",
+      "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "https://www.fs.usda.gov/r06/mbs/recreation/hannegan-trailhead",
+      "https://cascadeclimbers.com/forum/topic/102138-tr-bear-mountain-north-buttress-beckey-route-07152018/"
+    ]
+  },
+  {
+    "peakId": "wa_mount_chaval",
+    "hierarchyNote": null,
+    "blurb": "Mount Chaval (7,127 ft) is a craggy, remote summit in the Glacier Peak Wilderness of the North Cascades, roughly 15 miles northeast of Darrington in Skagit County, WA, just southwest of Snowking Mountain. It is built of the Chaval pluton, a Late Cretaceous pyroxene-bearing diorite/tonalite, and carries two subsidiary summits (East Peak and Middle Peak, both 7,040 ft). Despite modest technical difficulty on its standard line, it is one of the more rarely-visited Cascade peaks because of its long, brushy, arduous approach; it was first climbed on September 20, 1946 by Richard Merritt with Keith and Ruth Rankin.",
+    "routes": [
+      {
+        "routeId": "wa_mount_chaval_scramble",
+        "routeName": "West Route",
+        "overview": "The West Route follows the Jug Creek drainage past Bluff and Cliff Lakes to Mount Chaval's west ridge, then climbs steep heather, talus, and a snow ramp/gully to the summit pyramid — the peak's easiest and most commonly used line, though the long, brushy approach makes it feel harder than its Class 2-3 rating suggests.",
+        "beta": "Classified a 'Basic Alpine' climb by The Mountaineers, roughly 10 miles round trip with about 4,600 ft of elevation gain from the historic Grade Creek Road trailhead; a detailed trip report covering a camp-based west-ridge/northwest-face variation logged 14 miles and 6,400 ft round trip. The crux is not technical difficulty but the arduous, often overgrown approach; the final few hundred feet to the summit involve a steep snow ramp/gully flanked by rock bands, commonly climbed with an ice axe and crampons in early-to-mid season.",
+        "rockGrade": "Class 2-3",
+        "iceGrade": null,
+        "alpineGrade": "Grade II (Basic Alpine)",
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": null,
+        "routeFt": null,
+        "rappels": null,
+        "objHaz": [
+          "Long, brushy, poorly-marked approach through the Jug Creek/Bluff Lake basin",
+          "Loose, moss- and heather-covered rock",
+          "Steep snow/ice on the summit gully and ramp",
+          "Afternoon thunderstorms",
+          "Heavy insect pressure in summer",
+          "Currently no vehicle access via Suiattle River Road/Grade Creek Road (washout closure)"
+        ],
+        "season": "Jun-Sep",
+        "aspect": "W",
+        "face": "West Ridge / West Face",
+        "gainFt": 4600,
+        "lossFt": null,
+        "distKm": 8,
+        "maxAngle": null,
+        "highPointFt": 7127,
+        "fa": null,
+        "corrections": null,
+        "road": {
+          "name": "Suiattle River Road (FSR 26) to Grade Creek Road (FSR 2640)",
+          "status": "Closed",
+          "seasonalGate": "Closed by Forest Service order effective April 2, 2026 through January 1, 2028 (or until rescinded), due to atmospheric river flood damage beginning Feb 25, 2026",
+          "driveNote": "Normal access: from Darrington, drive SR 530 east/north, cross the Sauk River onto FSR 26 (Suiattle River Road), then FSR 2640 (Grade Creek Road) to its junction with spur road FSR 2643 (historic trailhead, ~2,250 ft). As of 2026, FSR 26 is closed to vehicles at MP 4 and FSR 2640 is closed along its entire length (to Lake Tupso Trailhead), so this approach currently requires substantial extra road-walking/biking distance beyond the historic trailhead."
+        },
+        "climate": {
+          "forecastZone": "NWAC West Slopes North / NWS zone WAZ567 (West Slopes North Cascades and Vicinity)",
+          "typical": "Wet, cool maritime climate typical of the west-slope North Cascades, with a heavy winter snowpack and a brief, drier summer climbing window",
+          "spring": "Deep snowpack often persists into June on the approach and upper route",
+          "summer": "July-August is driest and most stable; afternoon thunderstorms possible",
+          "fall": "Snow returns quickly by October, shortening the weather window",
+          "winter": "Heavy snowfall and avalanche-prone approach slopes; road access is typically gated/impassable even without the current washout closure"
+        },
+        "access": {
+          "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Glacier Peak Wilderness)",
+          "fees": null,
+          "permit": "Free self-issue wilderness permit required for entry into Glacier Peak Wilderness",
+          "passRequired": "Northwest Forest Pass at the trailhead (when the road is open)",
+          "closures": "FSR 26 (Suiattle River Road) closed at MP 4 and FSR 2640 (Grade Creek Road) closed in its entirety, effective April 2, 2026 through January 1, 2028, due to atmospheric-river flood damage (Mt. Baker-Snoqualmie NF alert)."
+        },
+        "timing": {
+          "recommendedStart": "Early/pre-dawn start given the long approach and the need to climb the summit snow ramp before afternoon sun softens it",
+          "approachTimeHrs": 8.5,
+          "summitTimeHrs": 1,
+          "descentTimeHrs": 5,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "summit",
+            "name": "Mount Chaval Summit",
+            "lat": 48.376055,
+            "lng": -121.325415,
+            "elevFt": 7127,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Skagit County, WA",
+          "sheriffDispatch": "Skagit County Sheriff non-emergency (360) 416-1911; dial 911 for emergencies",
+          "rangerStation": "Darrington Ranger District, 1405 Emens Ave N, Darrington, WA 98241, (360) 436-1155",
+          "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), 330 S Stillaguamish Ave, Arlington, WA 98223, (360) 435-2133 (Level IV Emergency Department)",
+          "notes": "Remote approach through the Jug Creek/Bluff Lake basin with minimal to no cell coverage; self-rescue capability and/or a satellite communicator are strongly advised."
+        },
+        "approach": "From Darrington, drive SR 530 east/north and cross the Sauk River onto Suiattle River Road (FSR 26); continue to Grade Creek Road (FSR 2640) and its junction with spur road FSR 2643 (historic trailhead, ~2,250 ft). Hike the abandoned spur road roughly 2 miles to a sharp switchback (~3,150 ft), where a rough fisherman's path leaves the roadbed, crosses several branches of Jug (Found) Creek, and climbs the west bank to a small basin near 3,700 ft. From there, ascend snow-covered or brushy slopes past Bluff Lake (~4,237 ft) and Cliff Lake to a saddle on Chaval's west ridge (roughly 5,400-5,900 ft depending on variation). NOTE: as of 2026, FSR 26 is closed to vehicles at MP 4 and FSR 2640 (Grade Creek Road) is closed in its entirety through at least January 2028 due to flood damage — this adds significant road-walking distance to the approach; verify current Forest Service closure status before attempting.",
+        "descent": "Reverse the west ridge/heather-slope ascent route back through the Jug Creek basin to the trailhead.",
+        "descentText": "From the summit, downclimb the snow ramp/gully and the heather-and-talus slopes back to the west-ridge saddle, then drop back into the Jug Creek basin past Cliff and Bluff Lakes, retracing the fisherman's path to the old spur road and out to the Grade Creek Road trailhead. Trip reports note the descent is markedly faster once the route through the brush is known (roughly 5 hours versus 8-9 hours on the way in).",
+        "itinerary": "Typically done as a 2-day trip: Day 1 — drive to the (currently closed/extended) trailhead and hike in via the Jug Creek basin, Bluff Lake, and Cliff Lake to a camp on a heather bench near 6,100 ft below the west ridge (roughly 8.5 hours car-to-camp per trip reports); Day 2 — climb the west ridge to the summit (about 1 hour from camp on the easy scramble section) and return to the car (roughly 5 hours). Strong parties have also done it car-to-car in a long single day.",
+        "bail": "There are no fixed rappel stations on the standard line; retreat is by reversing the ascent. From the summit pyramid, downclimb the snow ramp/gully before it softens in afternoon sun; from the west ridge, the heather slopes provide a walk-off in most conditions. Once committed to the Jug Creek basin there is no shorter bail option — retreat means re-descending the full approach.",
+        "turnaround": "Because the summit snow ramp/gully softens and becomes hazardous in afternoon sun, and both approach and descent take many hours through remote, trailless terrain, parties should set a firm turnaround time based on that day's conditions and remaining daylight, and commit to it regardless of proximity to the summit.",
+        "bestSeason": "Best climbed roughly June through August, when a stable snowpack still covers the approach basin and the final gully, easing travel on terrain that is otherwise slow, brushy, and moss-covered; later in summer the snow ramp can bare out to unstable talus and heather. An ice axe and crampons are typically needed for much of the season.",
+        "comms": "No reliable cell coverage is reported through the Jug Creek/Bluff Lake approach basin or on the summit ridge; a satellite communicator is recommended.",
+        "detailedRack": "No technical rock rack is needed for the standard West Route scramble. Carry an ice axe and crampons for the snow ramp/gully sections below the summit pyramid, especially in early-mid season. A helmet is recommended given loose, moss-covered rock. Trekking poles help on the long brushy/heather approach. Parties attempting the harder North Ridge alternate (a distinct, separate line, not this route) should bring a light rack of cams and nuts for low-5th-class rock.",
+        "proNeeds": "Standard scramble protection only: ice axe and crampons for the snow sections, no fixed rock protection required on the normal west-ridge/west-face line.",
+        "gear": [
+          "Ice axe",
+          "Crampons",
+          "Helmet",
+          "Trekking poles",
+          "Map/GPS for route-finding"
+        ],
+        "whatToBring": [
+          "Insect repellent (heavy bug pressure reported in the Jug Creek basin)",
+          "Extra water (limited reliable sources along the ridge)",
+          "Brush-clearing tool (loppers/saw) for overgrown sections",
+          "Detailed map/GPS track for the Jug Creek basin, where route-finding is difficult",
+          "Overnight camping gear if splitting the trip into two days"
+        ],
+        "proTips": [
+          "Go with significant snowcover on the upper mountain (typically June) to bury the loose talus/heather and make the final snowfields straightforward rather than fighting moss-covered rock.",
+          "Budget a full day (or an overnight) for the approach alone — the Jug Creek/Bluff Lake basin brush and boulder-hopping is notoriously slow.",
+          "Camp on the heather bench near 6,100 ft below the west ridge to split the trip into a manageable two-day outing.",
+          "Check current Forest Service road-closure status before you go — the 2026 Suiattle River Road/Grade Creek Road washout closures have significantly lengthened the approach."
+        ],
+        "watchOut": [
+          "Steep, side-hilling traverse sections with real exposure that are easy to underestimate given the 'Class 2-3' rating.",
+          "Afternoon sun turns the summit snow ramp mushy and unstable — climb it early.",
+          "Heavy insect activity reported in the Jug Creek basin in summer.",
+          "Poor, unmarked route-finding through brush and boulder fields; parties have gotten off-route."
+        ],
+        "knownHazards": [
+          "Long, arduous, brushy approach through the Jug Creek/Bluff Lake basin with minimal trail.",
+          "Steep snow/ice on the final summit pyramid gully and ramp, often above exposed rock bands.",
+          "Afternoon thunderstorms are common in summer.",
+          "No current vehicle access via Suiattle River Road/Grade Creek Road due to 2026 flood damage, greatly lengthening the approach."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Approach",
+            "grade": "Class 1-2",
+            "notes": "Trailhead/spur road to Bluff Lake and Cliff Lake via brushy Jug (Found) Creek basin path"
+          },
+          {
+            "pitch": "West Ridge",
+            "grade": "Class 2-3",
+            "notes": "Ridge crest/heather-slope traverse from the Cliff Lake saddle to the base of the summit pyramid"
+          },
+          {
+            "pitch": "Summit Pyramid",
+            "grade": "Class 3-4 / steep snow",
+            "notes": "Snow ramp, or heather-and-rock band to the left of the ramp, to the summit; crampons/axe typically needed"
+          }
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Mount_Chaval",
+          "https://www.peakbagger.com/peak.aspx?pid=19111",
+          "https://www.mountaineers.org/activities/routes-places/mount-chaval-west-route",
+          "https://www.summitpost.org/mount-chaval/152047",
+          "https://trailcatjim.com/mt-chaval-via-west-ridge-northwest-face/",
+          "https://evagabond.wordpress.com/2009/07/28/mount-chaval-via-west-ridge-north-ridge-attempt/",
+          "https://cascadeclimbers.com/forum/topic/102164-tr-mount-chaval-standard-western-ramp-09282018/",
+          "https://www.nwhikers.net/forums/viewtopic.php?t=8037585",
+          "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+          "https://www.fs.usda.gov/r06/mbs/recreation/suiattle-river-road-forest-service-road-26",
+          "https://www.fs.usda.gov/r06/mbs/recreation/darrington-ranger-district",
+          "https://www.skagitregionalhealth.org/location-details/cascade-valley-hospital",
+          "https://www.skagitcounty.net/Departments/sheriff/dept.htm",
+          "https://nwac.us/",
+          "https://peakery.com/mount-chaval-washington/",
+          "https://listsofjohn.com/peak/49459"
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mount_Chaval",
+      "https://www.peakbagger.com/peak.aspx?pid=19111",
+      "https://www.mountaineers.org/activities/routes-places/mount-chaval-west-route",
+      "https://www.summitpost.org/mount-chaval/152047",
+      "https://trailcatjim.com/mt-chaval-via-west-ridge-northwest-face/",
+      "https://evagabond.wordpress.com/2009/07/28/mount-chaval-via-west-ridge-north-ridge-attempt/",
+      "https://cascadeclimbers.com/forum/topic/102164-tr-mount-chaval-standard-western-ramp-09282018/",
+      "https://www.nwhikers.net/forums/viewtopic.php?t=8037585",
+      "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+      "https://www.fs.usda.gov/r06/mbs/recreation/suiattle-river-road-forest-service-road-26",
+      "https://www.fs.usda.gov/r06/mbs/recreation/darrington-ranger-district",
+      "https://www.skagitregionalhealth.org/location-details/cascade-valley-hospital",
+      "https://www.skagitcounty.net/Departments/sheriff/dept.htm",
+      "https://nwac.us/",
+      "https://peakery.com/mount-chaval-washington/",
+      "https://listsofjohn.com/peak/49459"
+    ]
+  },
+  {
+    "peakId": "wa_guye_peak",
+    "blurb": "Guye Peak (5,168 ft) is a small, steep summit of highly fractured, crumbly rhyolite rising directly above I-90 at Snoqualmie Pass in the Washington Cascades, within the Alpine Lakes Wilderness roughly 50 miles east of Seattle. Its west face — plainly visible from the interstate — and north ridge give some of the most accessible multi-pitch rock climbing and class 3-4 scrambling near Seattle, though the rock is notoriously loose outside a few solid sections (rockfall/breakage has caused documented injuries and fatalities on the peak). Guye Peak was first climbed on October 6, 1912 by Charles Hazlehurst, Hector Abel, Paul Dubuar, and Mary Hard.",
+    "hierarchyNote": "The peak's own data (name/coords/elevation) checks out and is internally consistent across Mountain Project, SummitPost, Wikipedia, and Peakbagger. However, the given parentArea \"Central-East Cascades, Wenatchee, & Leavenworth\" looks geographically mismatched: Guye Peak sits in King County on the WEST side of Snoqualmie Pass (I-90 Exit 52), and Mountain Project itself files it under \"Central-West Cascades & Seattle,\" not the east-side Wenatchee/Leavenworth region (Chelan/Kittitas county area well to the northeast). Recommend re-parenting under a west-side/Snoqualmie Pass Cascades bucket rather than Wenatchee/Leavenworth.",
+    "routes": [
+      {
+        "routeId": "wa_guye_peak_r1",
+        "routeName": "West Face",
+        "fa": "Dave Hiser and Mike Borghoff, 1960 (first winter ascent by Kit Lewis, 1975)",
+        "rockGrade": "5.8",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": "III",
+        "pitches": 6,
+        "routeFt": 800,
+        "rappels": "Rappel from a tree anchor on the east side, then a short gully to bypass the true summit (single-rope rap; length depends on tree used)",
+        "objHaz": [
+          "Loose/crumbly rock (except the traverse pitch)",
+          "Rockfall",
+          "Ski-area avalanche control blasting nearby in winter"
+        ],
+        "season": "Jun-Oct",
+        "aspect": "W",
+        "face": "West Face",
+        "overview": "A 6-pitch, Grade III line up Guye Peak's obvious west face, climbing low-quality slabs to 'Lunch Ledge,' then the exposed 5.8 'Improbable Traverse' pitch (the route's namesake and best rock), before finishing up a 4th-class ramp.",
+        "beta": "Also known as 'Improbable Traverse' (its Mountain Project name) — the two names describe the same climb. Rock is generally poor except on the signature traverse pitch, which offers the route's only solid climbing. A November 2021 rockfall collapsed a 30x40 ft section of the traverse; as of a July 2022 trip report the pitch requires an unprotected 5.9-10- downclimb roughly 20-30+ ft from an old pin, and was assessed as 'not recommended' in that state — check current conditions before attempting.",
+        "approach": "Park considerately along Ober Strasse Road in the small Snoqualmie Pass community (off I-90 Exit 52) and walk up through the neighborhood — this crosses private property, so be discreet and respectful of residents, some of whom have objected to climber traffic. Continue up the talus cone beneath the west face, then scramble a couple hundred feet of loose, mossy, dirty slabs to the start of the roped climbing.",
+        "descent": "Rappel from a tree on the east side and downclimb a short gully to bypass the true summit's exposed, poor-rock final ridge.",
+        "descentText": "From the top of the route, traverse north over two subsummits rather than continuing over the loose, exposed final ridge to the true summit. Most parties rappel from a tree anchor on the east side of the peak, then descend a short gully that bypasses the true summit before regaining the standard descent trail toward the Guye-Snoqualmie saddle.",
+        "itinerary": null,
+        "bail": "Retreat is straightforward on the lower pitches by rappelling/downclimbing back toward the talus cone from natural (tree) anchors. Once committed across the crux traverse pitch, it is generally easier to continue to the tree-rappel/gully descent on the east side than to reverse the exposed traverse.",
+        "turnaround": "Because the crux traverse pitch is currently degraded by 2021 rockfall damage and the descent requires downclimbing exposed, loose terrain, turn back if the rock is wet, if daylight is limited, or if any party member is not confident downclimbing loose 5th-class terrain — Cascade afternoon thunderstorms are common in summer and this route has no quick retreat once past the traverse.",
+        "bestSeason": "Prime season runs roughly June through October once the approach slabs have dried out; the route is best attempted in the June-September window. The west-facing wall gets intense afternoon sun, so many parties start early; avoid climbing when the rock is wet, since the already-loose rock becomes significantly more hazardous.",
+        "comms": null,
+        "detailedRack": "A standard medium-sized alpine rack (small-to-mid cams and nuts) covers most of the route. Carry a small nut or cam specifically for building the anchor at the far (north) end of the Improbable Traverse pitch. Old fixed pitons protect part of the traverse but should not be trusted as bomber protection given the loose rock and 2021 rockfall damage.",
+        "proNeeds": "Mid-size alpine rack; small nut/cam reserved for the traverse-pitch anchor; old fixed pins exist on the traverse but are unreliable.",
+        "gear": [
+          "Mid-size alpine rack (small-to-mid cams and nuts)",
+          "Small nut/cam for the traverse-pitch anchor",
+          "60m rope",
+          "5 double-length runners",
+          "Helmet",
+          "Rock shoes"
+        ],
+        "whatToBring": [
+          "Sunscreen (intense afternoon sun on this west-facing wall)",
+          "Approach shoes for the talus/slab scramble",
+          "Water (none available on route)",
+          "Light rain shell"
+        ],
+        "proTips": [
+          "Start early to beat the intense afternoon sun on this west-facing wall.",
+          "Wear a helmet for the entire route — rockfall is a real, documented hazard here.",
+          "Bring a small nut/cam specifically for the anchor at the far end of the traverse pitch.",
+          "Descend by rappelling from the tree anchor on the east side and skirting the true summit via a short gully rather than continuing over exposed, poor-quality ridge rock."
+        ],
+        "watchOut": [
+          "Rock quality is generally poor and 'very loose' except on the traverse pitch — expect loose blocks and dirty, mossy slabs on the approach and lower pitches.",
+          "A November 2021 rockfall collapsed a 30x40 ft section of the traverse pitch; a July 2022 trip report found the pitch now requires an unprotected 5.9-10- downclimb and assessed the route as 'not recommended' in that condition.",
+          "Ski-area avalanche control blasting can occur on nearby terrain in winter — contact Summit at Snoqualmie/Alpental if climbing in that season.",
+          "The approach via Ober Strasse Road crosses private residential property; some residents have reported friction with climbers."
+        ],
+        "knownHazards": [
+          "Loose, fractured rhyolite rock throughout most of the route.",
+          "Documented rockfall/breakage hazard on Guye Peak, including fatalities attributed to rockfall on the peak historically.",
+          "The crux traverse pitch has been structurally degraded since a November 2021 rockfall event."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "1-3",
+            "grade": "4th-5th class",
+            "notes": "Roughly 300 ft of low-quality, low-angle slab/4th-5th class terrain leading to the 'Lunch Ledge' belay."
+          },
+          {
+            "pitch": "4 (Improbable Traverse)",
+            "grade": "5.8",
+            "notes": "The route's namesake pitch and best rock; climb ~5.8 moves out right, protected by old fixed pitons. Since a Nov 2021 rockfall, the far end now involves an unprotected 5.9-10- downclimb — verify current condition before committing."
+          },
+          {
+            "pitch": "5-6",
+            "grade": "4th class",
+            "notes": "Downclimb off the far end of the traverse to a 4th-class ramp, then ascend the ramp toward the summit approach; many parties bypass the loose, exposed true-summit ridge."
+          }
+        ],
+        "road": {
+          "name": "Community roads off I-90 Exit 52 (Ober Strasse)",
+          "status": "Paved neighborhood streets in the Snoqualmie Pass community; roadside parking only",
+          "seasonalGate": null,
+          "driveNote": "From I-90 take Exit 52 (Snoqualmie Pass/Alpental) into the small Snoqualmie Pass residential community; park considerately along Ober Strasse and walk up through the neighborhood to reach the base of the talus cone below the west face. This crosses private property — be respectful of residents."
+        },
+        "climate": {
+          "forecastZone": "Snoqualmie Pass (NWAC)",
+          "typical": "Snoqualmie Pass sits directly on the Cascade crest and receives some of the heaviest precipitation/snowfall of any highway pass in the Lower 48; summers are comparatively dry and mild, winters wet and snowy.",
+          "spring": "Often still wet with lingering snow into June; approach slabs may still be damp/mossy.",
+          "summer": "Driest and most reliable season for rock; the west face bakes in intense afternoon sun.",
+          "fall": "Generally stable through September-October before fall storms return; days shorten quickly.",
+          "winter": "Heavy snow and avalanche hazard; this is a rock route not typically climbed in winter conditions."
+        },
+        "access": {
+          "landManager": "USDA Forest Service (Mt. Baker-Snoqualmie National Forest); the upper peak lies within/adjacent to the Alpine Lakes Wilderness",
+          "fees": null,
+          "permit": null,
+          "passRequired": null,
+          "closures": "Approach crosses private residential streets (Ober Strasse) in the Snoqualmie Pass community — respect no-parking/no-trespassing requests from homeowners."
+        },
+        "timing": {
+          "recommendedStart": "Early morning, to beat intense afternoon sun on the west-facing wall",
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "summit",
+            "name": "Guye Peak Summit",
+            "lat": 47.442945,
+            "lng": -121.409145,
+            "elevFt": 5168
+          },
+          {
+            "type": "route_start",
+            "name": "West Face / Improbable Traverse — base of technical climbing (top of talus cone)",
+            "lat": 47.44195,
+            "lng": -121.40882,
+            "elevFt": null
+          }
+        ],
+        "emergency": {
+          "county": "King County, WA",
+          "sheriffDispatch": "King County Sheriff's Office non-emergency: 206-296-3311 (911 for emergencies)",
+          "rangerStation": "Snoqualmie Ranger District (Mt. Baker-Snoqualmie NF), 902 SE North Bend Way Bldg 1, North Bend, WA — (425) 888-1421",
+          "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA (critical access hospital, ~25 miles by road)",
+          "notes": "Seattle Mountain Rescue (volunteer, based in North Bend) and King County Search and Rescue respond to backcountry incidents in this area; Alpental ski patrol conducts avalanche control within the ski area boundary during winter operating season."
+        },
+        "corrections": "Commonly referenced elsewhere (Mountain Project, most trip reports, guidebooks) as 'Improbable Traverse' rather than 'West Face' — same route, alternate/more common name.",
+        "sources": [
+          "https://www.mountainproject.com/area/107316329/guye-peak",
+          "https://www.mountainproject.com/route/107316713/improbable-traverse",
+          "http://cnmtstuartclimbproject.blogspot.com/2017/11/route-guye-peak-improbable-traverse.html",
+          "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+          "https://cascadeclimbers.com/forum/topic/104492-tr-guye-peak-a-slightly-more-improbable-than-usual-ascent-of-the-improbable-traverse-07222022/",
+          "https://www.summitpost.org/guye-peak/150942"
+        ]
+      },
+      {
+        "routeId": "wa_guye_peak_r2",
+        "routeName": "North Route (\"Hidden Ridge\" variation)",
+        "fa": null,
+        "rockGrade": "5.4 (max move on the Hidden Ridge variation; otherwise class 3-4)",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": null,
+        "routeFt": null,
+        "rappels": "One ~30 ft rappel off a slung horn (Hidden Ridge variation) down into the notch between the north and middle summits",
+        "objHaz": [
+          "Loose rock typical of Guye Peak",
+          "Steep, snow/ice-filled gullies in winter/spring",
+          "Exposure near the summit ridge and notches"
+        ],
+        "season": "Jul-Sep for a snow-free class 3 scramble; also climbed as a winter/spring snow route with an ice axe",
+        "aspect": "N",
+        "face": "North Ridge / North Summit",
+        "overview": "The technically easiest way up Guye Peak, gaining the north summit via a ridge scramble from the Cave Ridge/Guye saddle; the 'Hidden Ridge' is an undocumented-until-recently variation that swaps the standard descent gully for a short, more direct class 4/low-5th ridge behind a hidden outcropping.",
+        "beta": "Park at Alpental near the Snow Lake Trailhead and start up the unsigned Cave Ridge/Snoqualmie Mountain climbers' trail beginning about 100 ft south of the Snow Lake Trail. From a large clearing around 4000-4200 ft, climb to the saddle between Cave Ridge and Guye Peak, then turn right (north) and follow the ridge to Guye's north summit — class 3 in summer. The 'Hidden Ridge' variation continues from the north summit around an outcropping to a hidden ridge with one 5.4 move (otherwise class 4), rappelling ~30 ft off a slung horn to the notch between the north and middle summits; this was found to be a more direct, more enjoyable line than the standard gully descent in winter/spring conditions.",
+        "approach": "From the Alpental parking lot (Snow Lake Trailhead), walk toward the Snow Lake Trail and pick up an unsigned climbers' trail into the slide alder roughly 50-100 ft downhill/south of the signed trailhead. Follow this steep climbers' trail up toward Cave Ridge/Snoqualmie Mountain terrain to a clearing around 4000-4200 ft, then continue to the saddle between Cave Ridge and Guye Peak.",
+        "descent": "Standard: from the north summit, descend a gully ~60 ft below the summit to the left (east), continue down ~70 ft to the next gully, then follow it up to the notch between the north and middle summits, and reverse the ascent ridge back to the saddle and trailhead.",
+        "descentText": "From the north summit there are two ways down to the notch below: (1) the standard gully route — descend a steep gully beginning about 60 ft below the summit, down roughly 70 ft until reaching a second gully, then follow that gully up to the notch between the north and middle summits; or (2) the 'Hidden Ridge' — traverse around the summit to the west for about 100 ft to an outcropping, sling a horn, and rappel about 30 ft down to the same notch. From the notch, either continue toward the middle/south summits or reverse the ridge back to the Cave Ridge/Guye saddle and descend the climbers' trail to Alpental.",
+        "itinerary": null,
+        "bail": "Reverse the ridge back to the Cave Ridge/Guye saddle and descend the climbers' trail to the Alpental trailhead; existing rappel rings in the notch between the north and middle summits allow a quick rappel if needed instead of downclimbing.",
+        "turnaround": "In winter/spring, turn back if the gullies show fresh wind-loaded snow or unstable conditions per the NWAC forecast; year-round, turn back if the party is not comfortable with exposed class 3-4 scrambling or if weather is deteriorating, since the ridge offers little shelter.",
+        "bestSeason": "Snow-free class 3 conditions are typical roughly July through September. The route is also a popular winter/spring scramble objective, but then the gullies fill with snow/ice and the climb becomes steeper and more serious, requiring an ice axe and check of the NWAC Snoqualmie Pass avalanche forecast beforehand.",
+        "comms": null,
+        "detailedRack": "No technical gear is required in mid-to-late summer once the snow has melted — it's a class 3 scramble. In winter/spring conditions, carry an ice axe and a 30m light/glacier rope for the gullies, plus webbing to sling trees (and optionally 1-2 pickets). For the 'Hidden Ridge' variation, bring one long sling/webbing to sling the summit-block horn for the ~30 ft rappel, plus a couple of extra slings to extend the rappel to the pitch's edge.",
+        "proNeeds": "None needed in dry summer conditions; winter/spring parties should carry an ice axe, a light rope, and slings for tree/horn anchors.",
+        "gear": [
+          "Ice axe (winter/spring)",
+          "30m light/glacier rope (winter/spring)",
+          "Long sling/webbing for the horn rappel (Hidden Ridge variation)",
+          "A few extra slings",
+          "Helmet"
+        ],
+        "whatToBring": [
+          "Trekking poles for the climbers' trail approach",
+          "Traction device (microspikes) for icy shoulder-season sections",
+          "Sun protection — open ridge with little shade",
+          "Sturdy scrambling shoes"
+        ],
+        "proTips": [
+          "In mid-to-late summer after the snow melts, the standard North Route gullies require no technical gear — just careful class-3 scrambling.",
+          "The 'Hidden Ridge' variation, hidden behind an outcropping just below and west of the north summit, is a fun, more direct class 4/low-5th alternative to the standard gully descent, with only one 5.4 move.",
+          "In winter/spring the gullies fill with snow and become notably steeper and more intimidating — carry an ice axe and a light rope.",
+          "Rappel rings already exist in the notch between the north and middle summits from prior parties."
+        ],
+        "watchOut": [
+          "Class 3 terrain becomes considerably more serious in winter/spring when the gullies fill with snow — carry an ice axe and consider a rope.",
+          "Loose rock typical of Guye Peak is present in places.",
+          "Significant exposure exists near the summit ridge and the notches between summits; the standard gully descent is steep."
+        ],
+        "knownHazards": [
+          "Loose rock typical of Guye Peak's fractured rhyolite.",
+          "Steep, snow-filled gullies in winter/spring create fall hazard and some avalanche potential.",
+          "Exposed ridge terrain connecting the north, middle, and south summits."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Approach",
+            "grade": "Trail / class 2",
+            "notes": "Climbers' trail from Alpental past the Snow Lake TH turnoff, up to a ~4000-4200 ft clearing, then to the Cave Ridge/Guye saddle."
+          },
+          {
+            "pitch": "Ridge to North Summit",
+            "grade": "Class 3 (summer)",
+            "notes": "From the saddle, turn right and follow the ridge to Guye's north summit; steep but only class 3 when snow-free. In winter/spring the terrain is icier and more serious."
+          },
+          {
+            "pitch": "Hidden Ridge variation",
+            "grade": "Class 4, one 5.4 move",
+            "notes": "From the north summit, traverse ~100 ft west around to an outcropping below the summit, sling the horn, and rappel ~30 ft to the notch between the north and middle summits."
+          },
+          {
+            "pitch": "Standard gully alternative",
+            "grade": "Class 3-4 (steeper snow in winter)",
+            "notes": "Descend a gully ~60 ft below the north summit, down ~70 ft, then up the next gully to the same notch between north and middle summits."
+          }
+        ],
+        "road": {
+          "name": "Alpental Road (I-90 Exit 52)",
+          "status": "Paved, maintained year-round to the Alpental ski area/Snow Lake Trailhead parking lot",
+          "seasonalGate": "No permanent gate on Alpental Rd itself; I-90 over Snoqualmie Pass can require chains/traction tires roughly Nov-Apr per WSDOT, and avalanche-control closures may affect terrain within the Alpental ski area boundary during winter operating season.",
+          "driveNote": "From Seattle or North Bend, take I-90 to Exit 52 (Snoqualmie Pass/Alpental), turn north onto Alpental Rd, and continue about 1.5 miles to the large gravel parking lot; the Snow Lake Trailhead is on the right."
+        },
+        "climate": {
+          "forecastZone": "Snoqualmie Pass (NWAC)",
+          "typical": "Snoqualmie Pass sits directly on the Cascade crest and receives some of the heaviest precipitation/snowfall of any highway pass in the Lower 48; summers are comparatively dry and mild, winters wet and snowy.",
+          "spring": "Snow often lingers in the north-facing gullies into June; still a popular snow-climb season for this route.",
+          "summer": "Driest, most reliable season for the class-3 scramble.",
+          "fall": "Generally stable through September-October before storms return; days shorten quickly.",
+          "winter": "A recognized winter scramble objective at Snoqualmie Pass, but gullies become steep, icy, and avalanche-prone — check NWAC before going."
+        },
+        "access": {
+          "landManager": "USDA Forest Service (Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District); Alpine Lakes Wilderness",
+          "fees": "$5/day or $30 annual day-use fee at the Snow Lake/Alpental trailhead; Northwest Forest Pass and Interagency passes accepted (WA Discover Pass is NOT valid here).",
+          "permit": "Self-issued wilderness permit required at the trailhead.",
+          "passRequired": "Northwest Forest Pass / Interagency Recreation Pass, or pay the day-use fee on site.",
+          "closures": "No route-specific closures documented beyond standard winter avalanche caution near the Alpental ski area boundary."
+        },
+        "timing": {
+          "recommendedStart": "Morning start recommended, especially for winter/spring ascents when the gullies hold snow/ice",
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Alpental / Snow Lake Trailhead parking",
+            "lat": 47.44565,
+            "lng": -121.42365,
+            "elevFt": 3100
+          },
+          {
+            "type": "summit",
+            "name": "Guye Peak Summit (north summit / continuing to true summit)",
+            "lat": 47.442945,
+            "lng": -121.409145,
+            "elevFt": 5168
+          }
+        ],
+        "emergency": {
+          "county": "King County, WA",
+          "sheriffDispatch": "King County Sheriff's Office non-emergency: 206-296-3311 (911 for emergencies)",
+          "rangerStation": "Snoqualmie Ranger District (Mt. Baker-Snoqualmie NF), 902 SE North Bend Way Bldg 1, North Bend, WA — (425) 888-1421",
+          "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA (critical access hospital, ~25 miles by road)",
+          "notes": "Seattle Mountain Rescue (volunteer, based in North Bend) and King County Search and Rescue respond to backcountry incidents in this area; Alpental ski patrol conducts avalanche control within the ski area boundary during winter operating season."
+        },
+        "corrections": "Also referred to as the 'North Ridge' route in some trip reports (e.g. CascadeClimbers.com); same line as this catalog's 'North Route (\"Hidden Ridge\" variation)'.",
+        "sources": [
+          "https://www.summitpost.org/north-route-hidden-ridge/899226",
+          "https://www.summitpost.org/guye-peak/150942",
+          "https://cascadeclimbers.com/forum/topic/94485-tr-guye-peak-north-ridge-route-4122014/",
+          "https://cascadeclimbers.com/forum/fawiki/mountain/guye-peak/",
+          "https://www.mountaineers.org/activities/routes-places/guye-peak-snoqualmie-mountain-cave-ridge-alpental",
+          "https://www.fs.usda.gov/r06/mbs/recreation/snow-lake-trailhead",
+          "https://www.wta.org/go-hiking/hikes/guye-peak"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.mountainproject.com/area/107316329/guye-peak",
+      "https://www.mountainproject.com/route/107316713/improbable-traverse",
+      "https://www.summitpost.org/guye-peak/150942",
+      "https://www.summitpost.org/north-route-hidden-ridge/899226",
+      "https://www.peakbagger.com/peak.aspx?pid=2112",
+      "https://en.wikipedia.org/wiki/Guye_Peak",
+      "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "https://www.fs.usda.gov/r06/mbs/recreation/snow-lake-trailhead",
+      "http://cnmtstuartclimbproject.blogspot.com/2017/11/route-guye-peak-improbable-traverse.html",
+      "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "https://www.mountaineers.org/activities/routes-places/guye-peak-snoqualmie-mountain-cave-ridge-alpental",
+      "https://cascadeclimbers.com/forum/fawiki/mountain/guye-peak/",
+      "https://cascadeclimbers.com/forum/topic/104492-tr-guye-peak-a-slightly-more-improbable-than-usual-ascent-of-the-improbable-traverse-07222022/",
+      "https://cascadeclimbers.com/forum/topic/94485-tr-guye-peak-north-ridge-route-4122014/",
+      "https://www.mountaineers.org/blog/the-scariest-day-of-my-life-a-leader-fall-on-guye-peak",
+      "https://ngmdb.usgs.gov/Geolex/UnitRefs/GuyeRefs_5478.html",
+      "https://kingcounty.gov/en/dept/sheriff/about-king-county/about-sheriff-office/about-kcso/contact",
+      "https://snoqualmievalleyhealth.org/"
+    ]
+  },
+  {
+    "peakId": "wa_ed_wood_memorial_buttress",
+    "blurb": "Ed Wood Memorial Buttress is an informally named rock buttress in the Southern Pickets of the North Cascades (North Cascades National Park), sitting just north of the Himmelhorn on the northwest side of \"The Blob\" (also called The Rake). Like the rest of the Pickets it is composed of biotite gneiss, and rather than being a distinct summit it is a long committing ridge-line feature leading to The Blob's summit ridge. The one recorded route and several of its features (Bela Lugosi Traverse) carry a tongue-in-cheek Ed Wood horror-movie naming theme established by the 2006 first-ascent party.",
+    "hierarchyNote": "Ed Wood Memorial Buttress is not a separately named, independent summit in USGS/Peakbagger data — it is an informally named rock buttress/sub-feature on the northwest (left) side of \"The Blob\" (aka The Rake), located just north of Himmelhorn in the Southern Pickets. The parent area \"Southern Pickets\" and the given coordinates (48.7716, -121.28356) are correct and match Mountain Project's area listing exactly. Because this is a buttress feature rather than a true summit, there is no single sourced \"peak elevation\" — Mountain Project lists 7,337 ft as the area's GPS reference point, while the ridge the route tops out on (The Blob) has a summit around 7,840 ft per StephAbegg.com. No red flags beyond this naming/classification nuance; proceed with the given id.",
+    "routes": [
+      {
+        "routeId": "wa_plan_9_from_outer_space",
+        "routeName": "Plan 9 from Outer Space",
+        "fa": "Mark Layton and E. Wolfe, 2006",
+        "rockGrade": "5.9+",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": 16,
+        "routeFt": 1400,
+        "rappels": null,
+        "objHaz": [
+          "No fixed anchors anywhere on route",
+          "Loose/complex alpine rock typical of the Pickets",
+          "Rapid alpine weather changes",
+          "Remote, committing position far from any quick escape"
+        ],
+        "season": "Jul-Sep",
+        "aspect": null,
+        "face": "Right edge of Ed Wood Memorial Buttress, on the northwest side of The Blob, just north of the Himmelhorn",
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": null,
+        "maxAngle": null,
+        "highPointFt": 7840,
+        "overview": "A long, moderate-but-committing 16-pitch alpine rock line up the right edge of Ed Wood Memorial Buttress, finishing via the 'Bela Lugosi Traverse' along the ridge crest to the top of The Blob.",
+        "beta": "Fun, varied 5.9+ trad climbing over roughly 1,400 ft and 16 pitches up a prominent buttress in the Southern Pickets, just north of the Himmelhorn on the left (northwest) side of The Blob. The line climbs a steep dihedral partway up before joining the ridge (the 'Bela Lugosi Traverse') to reach The Blob's summit; exact difficulty and pitch count vary somewhat with the precise line chosen through the lower buttress.",
+        "approach": "Reached via the standard Southern Pickets approach: from the Goodell Creek trailhead/Upper Goodell Creek Group Camp area off SR 20 near Newhalem, follow the unmaintained climbers' path paralleling Goodell/Terror Creek for roughly 4-4.5 miles to a cairned junction, then climb steep, brushy, sometimes class-3 terrain up heather benches to a base camp in Terror Basin (about 6,000 ft of gain from the road; commonly a 7-8+ hour day to establish camp). From Terror Basin, parties cross toward the Himmelhorn/Crescent Creek Basin side of the divide to reach the buttress, found just north of the Himmelhorn on the left side of The Blob — look for a large gully with a prominent buttress on its right.",
+        "descent": "Traverse The Blob's summit ridge north to the Blob-Terror col, then rappel from webbing anchors and scramble down.",
+        "descentText": "From the top of the route on The Blob's summit ridge, traverse the ridge north to the Blob/Terror col. From the col, rappel using existing webbing anchors (carry extra tat/webbing, as there is no fixed hardware), then scramble down the remaining terrain, passing tarns/pools on the way back toward the Terror Basin/Crescent Creek side.",
+        "itinerary": null,
+        "bail": "Because this is a long ridge-style route with no fixed rappel stations on the buttress itself, retreat from the climb is best done by rappelling the line of ascent off gear anchors built from the rack; the only established rappel anchors (webbing) are found at the Blob/Terror col reached after topping out, not partway up the route.",
+        "turnaround": "Given the route's length (16 pitches), its remote position, and the lack of fixed protection or rappel stations on the buttress itself, parties should set a firm turnaround based on daylight, weather, and the multi-hour approach/descent required to regain camp — North Cascades alpine weather can deteriorate quickly with no fast escape from the ridge.",
+        "bestSeason": "Typical for the Southern Pickets: mid-summer through early fall, roughly July through September, once seasonal snow has cleared from the approach benches and the buttress itself. Recorded ascents and trip reports in this part of the range cluster in late July through August.",
+        "comms": "No reliable cell coverage in this remote interior part of North Cascades National Park; a satellite communicator or PLB is strongly advised.",
+        "detailedRack": "A standard alpine rock rack up to 3 inches — a single set of cams with doubles in common crack sizes, plus a set of nuts. No fixed anchors exist anywhere on the route, so carry extra slings/webbing for building gear belays and for backing up or replacing the rappel anchors at the Blob-Terror col.",
+        "proNeeds": "Gear to 3 inches; no fixed protection or bolted anchors anywhere on the route — every belay and the descent rappels are built from carried gear and webbing.",
+        "gear": [
+          "Single rack of cams to 3 inches (doubled in common sizes)",
+          "Set of nuts",
+          "Extra slings/webbing for anchors",
+          "Cordelette",
+          "Single rope"
+        ],
+        "whatToBring": [
+          "Multi-day bivy/camping gear for the Terror Basin approach camp",
+          "Bear canister (required in many North Cascades NP backcountry zones)",
+          "Sturdy approach shoes for brushy, class-3 terrain",
+          "Extra webbing for anchor building/backup",
+          "Satellite communicator (no cell coverage)",
+          "NPS wilderness/backcountry permit"
+        ],
+        "proTips": [
+          "Difficulty and pitch count vary somewhat depending on exactly which line is taken through the lower buttress, per multiple route reports.",
+          "Camp in Terror Basin and cross toward the Himmelhorn/Crescent Creek side to shorten the push to the buttress's base."
+        ],
+        "watchOut": [
+          "No fixed anchors on route — be ready to build every belay and rappel anchor from your own gear and carried webbing.",
+          "Remote, committing position with a long, brushy, multi-hour approach; retreat is slow."
+        ],
+        "knownHazards": [
+          "Loose rock typical of Pickets alpine terrain.",
+          "Rapid weather changes common to North Cascades alpine ridges.",
+          "No fixed rappel or belay hardware anywhere on the route."
+        ],
+        "pitchDetail": null,
+        "road": {
+          "name": "North Cascades Highway (SR 20) to Newhalem / Goodell Creek",
+          "status": "Paved highway access to the trailhead area; no unpaved or gated road is required for this trailhead itself",
+          "seasonalGate": "SR 20's seasonal closure gate (over Washington Pass, further east) does not block access to Newhalem/Goodell Creek, which lies west of that closure and is reachable year-round from Sedro-Woolley/Marblemount",
+          "driveNote": "Approach via SR 20 to the Goodell Creek/Upper Goodell Creek Group Camp area near Newhalem, WA."
+        },
+        "climate": {
+          "forecastZone": "NWAC West Slopes North (avalanche forecast zone); North Cascades National Park interior for NWS mountain weather",
+          "typical": "Cool, changeable alpine weather typical of the North Cascades interior; storms can arrive suddenly even in summer.",
+          "spring": "Still largely snow-covered; approach benches and the buttress are not typically climbable in spring.",
+          "summer": "The primary climbing season — long, mostly dry days with a snow-free approach and route, though afternoon thunderstorms and sudden weather changes remain possible.",
+          "fall": "Shortening weather windows and increasing storm frequency by September; a viable but narrowing season.",
+          "winter": "Heavy snowpack and high avalanche hazard; not a climbing season for this route."
+        },
+        "access": {
+          "landManager": "National Park Service - North Cascades National Park",
+          "fees": "NPS wilderness/backcountry camping permit fee applies for overnight stays (recent NPS fee schedule: roughly $10/person plus a $6 reservation fee).",
+          "permit": "A backcountry/wilderness permit is required for any overnight stay in North Cascades National Park, reservable via Recreation.gov or arranged through the park's Wilderness Information Center.",
+          "passRequired": null,
+          "closures": null
+        },
+        "timing": {
+          "recommendedStart": null,
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "route base / buttress",
+            "name": "Ed Wood Memorial Buttress",
+            "lat": 48.7716,
+            "lng": -121.28356,
+            "elevFt": 7337,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Whatcom County, Washington",
+          "sheriffDispatch": "Whatcom County Sheriff's Office (dispatches Whatcom County Search & Rescue) — call 911",
+          "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267",
+          "nearestHospital": "Skagit Valley Hospital, 300 Hospital Pkwy, Mount Vernon, WA (Level III Emergency Department); PeaceHealth United General Hospital in Sedro-Woolley is a smaller/closer option",
+          "notes": "Deep, cross-country North Cascades National Park wilderness with no cell coverage and a multi-hour approach; carry a satellite communicator/PLB and file a trip plan with the park's Wilderness Information Center."
+        },
+        "corrections": "The peak's given elevationFt is correctly left null: Ed Wood Memorial Buttress is not an independently named summit. Mountain Project lists 7,337 ft as the area's GPS reference point (used here as the route-base waypoint elevation), but the route's actual topping-out point is The Blob's true summit, cited at about 7,840 ft by StephAbegg.com — used here as highPointFt.",
+        "sources": [
+          "https://www.mountainproject.com/area/116791466/ed-wood-memorial-buttress",
+          "https://www.mountainproject.com/route/116791489/plan-9-from-outer-space",
+          "https://www.mountainproject.com/area/108154526/southern-pickets",
+          "https://stephabegg.com/trip-reports/washington/pickets/",
+          "https://en.wikipedia.org/wiki/Picket_Range",
+          "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+          "https://www.topozone.com/washington/whatcom-wa/summit/mount-terror/",
+          "https://www.nps.gov/noca/planyourvisit/permits.htm",
+          "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+          "https://www.wcsar.org/contact/",
+          "https://www.skagitregionalhealth.org/location-details/skagit-valley-hospital",
+          "https://nwac.avy-fx.org/forecasts/avalanche/west-slopes-north"
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.mountainproject.com/area/116791466/ed-wood-memorial-buttress",
+      "https://www.mountainproject.com/route/116791489/plan-9-from-outer-space",
+      "https://www.mountainproject.com/area/108154526/southern-pickets",
+      "https://www.mountainproject.com/area/108154517/picket-range",
+      "https://stephabegg.com/trip-reports/washington/pickets/",
+      "https://www.summitpost.org/picket-range/171088",
+      "https://en.wikipedia.org/wiki/Picket_Range",
+      "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+      "https://www.topozone.com/washington/whatcom-wa/summit/mount-terror/",
+      "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+      "https://www.wcsar.org/contact/",
+      "https://www.skagitregionalhealth.org/location-details/skagit-valley-hospital",
+      "https://nwac.avy-fx.org/forecasts/avalanche/west-slopes-north",
+      "http://publications.americanalpineclub.org/articles/12196206500/"
+    ]
+  },
+  {
+    "peakId": "wa_lincoln_peak",
+    "blurb": "Lincoln Peak (9,085 ft), also called West Butte, is the westernmost and most technically difficult of the three Black Buttes, eroded remnants of an older stratovolcano perched on the southwest shoulder of Mount Baker in Washington's North Cascades. Built of loose, unstable volcanic rock mantled in permanent snow and ice, it presents a 1,000-ft north face and a 1,500-ft east face, and even its easiest line is considered one of the hardest standard routes in the Cascades. It was first climbed by Fred Beckey, Wesley Grande, John Rupley, and Herb Staley on July 22, 1956.",
+    "hierarchyNote": null,
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lincoln_Peak_(Washington)",
+      "https://en.wikipedia.org/wiki/Black_Buttes",
+      "https://www.peakbagger.com/peak.aspx?pid=1637",
+      "https://www.lemkeclimbs.com/lincoln-peak.html",
+      "https://www.countryhighpoints.com/lincoln-peak/",
+      "https://onehikeaweek.com/2020/05/29/lincoln-peak/"
+    ],
+    "routes": [
+      {
+        "routeId": "wa_lincoln_peak_standard",
+        "routeName": "X Couloir (Southwest Face) / Standard Route",
+        "overview": "Lincoln Peak's only reasonably feasible line to the summit: a serpentine series of steep snow and ice chutes and faces on the southwest side of the peak, broken by a guarding serac and bergschrund, that only comes into safe condition for a few weeks each spring.",
+        "beta": "Known as the X Couloir or 'Emancipation Proclamation,' this is the standard (and only remotely feasible) route on Lincoln Peak, first climbed by Fred Beckey's party in 1956. It is less a single couloir than a connected series of steep snow/ice chutes and faces up the SW side of the peak, guarded by a bergschrund/serac crux around 7,400-7,600 ft, followed by narrow gullies, a knife-edge snow arete, and a final short scramble past crumbling rime-ice features to the summit. Only about a dozen-plus ascents are documented since 1956; it is climbable only in a narrow spring weather window before the route deteriorates into loose rock and open crevasses.",
+        "approach": "Historically reached via Forest Service Road 38 (Middle Fork Nooksack Road), gated in a normal year near milepost 9.9; parties drove to around the 2nd-3rd switchback (~2,650-2,780 ft) and continued by mountain bike or on foot along the decommissioned road toward the 6th-7th switchback (~3,700-3,740 ft). From there the route bushwhacks west across the shoulder of point 4481 through slide alder toward Rankin Creek, traverses into the Rankin Creek/Rankin Lake basin, and establishes high camp near treeline (roughly 5,100-6,100 ft). From camp, traverse below Lincoln Peak's southwest buttress (~6,200 ft) to gain the base of the X Couloir.",
+        "descent": "Reverse the X Couloir: a mix of downclimbing and rappelling, roughly 10 rappels when the route is icy.",
+        "descentText": "Parties generally descend the same line they climbed. One documented descent used 10 double-rope rappels: 4 off pickets placed on the way down, one off a sling placed on rock, and the remaining 5 off existing slings around rock horns left by prior parties. In soft spring snow the route has also been descended largely by downclimbing/glissading, and has even been skied top to bottom in favorable coverage.",
+        "itinerary": "Typically a 2-3 day trip: Day 1 - drive/bike/hike in to a high camp near the Rankin Creek basin/treeline (~6,000-6,100 ft); Day 2 - alpine start, climb the X Couloir to the summit and descend the same day, returning to camp; Day 3 - hike/bike out.",
+        "bail": "Retreat is down the same couloir. Below the crux serac/bergschrund, parties can generally downclimb or build rappel anchors off pickets or rock horns to reverse the route back to the Rankin Creek basin; above the crux, retreat is more committing.",
+        "turnaround": "Set a hard turnaround time based on overnight freeze quality - this route depends on the snow, ice, and rock staying frozen together, and conditions deteriorate quickly once the sun is on the face, sharply increasing rockfall and wet-slide hazard on both the ascent and the descent.",
+        "bestSeason": "Late April through June is the accepted window, when cold overnight temperatures still lock the snow, ice, and loose rock together. Climb too early and the route may be under-formed or avalanche-prone; climb after the window closes (typically by mid-summer) and the bergschrund opens fully, ice cover thins, and rockfall/wet-slide hazard rises sharply.",
+        "comms": null,
+        "fa": "Fred Beckey, Wesley Grande, John Rupley, and Herb Staley, July 22, 1956",
+        "rockGrade": null,
+        "iceGrade": "AI3+",
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": 2,
+        "routeFt": null,
+        "rappels": "~10 double-rope rappels in icy conditions (4 off placed pickets, 1 off a rock sling, 5 off existing slings around rock horns)",
+        "objHaz": [
+          "bergschrund",
+          "guarding serac",
+          "rockfall",
+          "loose volcanic rock (choss)",
+          "crevasses",
+          "avalanche/wet-slide",
+          "narrow runnel crossings"
+        ],
+        "season": "late Apr-Jun",
+        "aspect": "SW",
+        "face": "Southwest Face (X Couloir)",
+        "gainFt": 6500,
+        "lossFt": null,
+        "distKm": 11.3,
+        "maxAngle": 85,
+        "highPointFt": 9085,
+        "detailedRack": "Two ice tools per climber; 5-6 pickets; a small rack of nuts and 3-4 small cams for rock-horn anchors; a few ice screws for firm ice sections; two 60m ropes (a half rope plus a tag line has also been used) for the rappel descent.",
+        "proNeeds": "Pickets are the primary protection through the snow/ice gullies and bergschrund; carry a small nut/cam rack for building anchors off rock horns on the descent, plus a couple of ice screws for firmer ice pitches.",
+        "gear": [
+          "2 ice tools per climber",
+          "crampons",
+          "5-6 pickets",
+          "small rack of nuts",
+          "3-4 small cams",
+          "2x 60m ropes",
+          "helmet",
+          "a few ice screws"
+        ],
+        "whatToBring": [
+          "snowshoes or skis for the approach",
+          "overnight camping gear for a high camp near Rankin Creek/treeline",
+          "bivy or tent",
+          "sun protection for glacier/snow travel",
+          "satellite communicator (no reliable cell coverage)"
+        ],
+        "proTips": [
+          "Climb during a hard, cold overnight freeze (typically late April-early June) so the snow, ice, and loose rock are locked together for both the ascent and descent.",
+          "An early alpine start (pre-dawn) lets you tag the summit and start down before the upper gullies and the serac crux soften in the sun.",
+          "Scout rock horns on the way up - they're commonly used as rappel anchors on the way down."
+        ],
+        "watchOut": [
+          "A guarding serac and bergschrund around 7,400-7,600 ft require direct 70-85 degree snow/ice climbing to pass.",
+          "The route's rock is loose, chossy volcanic material typical of the Black Buttes; rockfall increases sharply once the sun hits the gullies.",
+          "Crumbling, corniced rime-ice features guard the final short scramble to the summit."
+        ],
+        "knownHazards": [
+          "Bergschrund crossing over a snow bridge below a roughly 50-ft serac.",
+          "Rockfall and wet-slide risk rise sharply once the route goes out of overnight-freeze condition.",
+          "A narrow, exposed snow-arete traverse partway up the route."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Approach slopes",
+            "grade": "30-40 deg snow",
+            "notes": "From the SW buttress base, ascend snow slopes toward the first bergschrund."
+          },
+          {
+            "pitch": "Bergschrund/serac crux",
+            "grade": "AI3+ (70-85 deg)",
+            "notes": "Cross a snow bridge and climb directly up the face of a ~50-ft serac."
+          },
+          {
+            "pitch": "Steep gullies",
+            "grade": "50-60 deg snow/ice",
+            "notes": "Two roped 60m pitches through narrow gullies with runnel crossings."
+          },
+          {
+            "pitch": "Snow arete",
+            "grade": "Exposed traverse",
+            "notes": "Knife-edge arete requiring careful tool and crampon placement."
+          },
+          {
+            "pitch": "Summit gully",
+            "grade": "Scramble",
+            "notes": "Final ~20 ft of scrambling on loose rock past crumbling rime-ice features to the summit."
+          }
+        ],
+        "road": {
+          "name": "Forest Service Road 38 (Middle Fork Nooksack Road)",
+          "status": "Washed out in the December 2025 floods; no repair timeline announced by the Forest Service as of mid-2026",
+          "seasonalGate": "In a normal year, gated near milepost 9.9",
+          "driveNote": "Historically drivable in a standard car to around the 2nd-3rd switchback (~2,650-2,780 ft), with mountain bike or foot travel required beyond that; the current washout may block vehicle access much lower on the road - check Mount Baker-Snoqualmie NF alerts before attempting."
+        },
+        "climate": {
+          "forecastZone": "West Slopes North (Mount Baker area) - Northwest Avalanche Center",
+          "typical": "Maritime snowpack with heavy precipitation; the route is climbable only in a narrow spring window before wet-slide and rockfall season sets in.",
+          "spring": "Best climbing window (late Apr-Jun) when overnight freezes hold snow, ice, and rock together.",
+          "summer": "Route condition degrades rapidly by mid-summer as the bergschrund opens further and rockfall increases.",
+          "fall": "Typically out of condition - bare, loose rock and open crevasses.",
+          "winter": "Heavy snow loading and high avalanche hazard; rarely attempted."
+        },
+        "access": {
+          "landManager": "Mount Baker-Snoqualmie National Forest / Mount Baker Wilderness (USFS)",
+          "fees": "Northwest Forest Pass typically required at the trailhead",
+          "permit": null,
+          "passRequired": "Northwest Forest Pass",
+          "closures": "FS Road 38 washed out in the December 2025 floods with no repair timeline as of mid-2026, which may add significant approach distance/time."
+        },
+        "timing": {
+          "recommendedStart": "Pre-dawn alpine start from high camp so the summit and descent are completed before the snow and rock soften.",
+          "approachTimeHrs": null,
+          "summitTimeHrs": 3,
+          "descentTimeHrs": 3.5,
+          "totalHrs": null
+        },
+        "waypoints": [
+          {
+            "type": "summit",
+            "name": "Lincoln Peak Summit",
+            "lat": 48.768354,
+            "lng": -121.858532,
+            "elevFt": 9085
+          }
+        ],
+        "emergency": {
+          "county": "Whatcom County, WA",
+          "sheriffDispatch": "911 / Whatcom County Sheriff's Office (dispatches Whatcom County Search & Rescue)",
+          "rangerStation": "Glacier Public Service Center, 10091 Mt. Baker Hwy, Glacier, WA - (360) 599-2714",
+          "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA - (360) 734-5400 (Level II trauma center; only hospital in Whatcom County)",
+          "notes": "Remote alpine terrain with no reliable cell coverage in the Rankin Creek basin; carry a satellite communicator."
+        },
+        "corrections": null,
+        "sources": [
+          "https://en.wikipedia.org/wiki/Lincoln_Peak_(Washington)",
+          "https://www.lemkeclimbs.com/lincoln-peak.html",
+          "https://www.countryhighpoints.com/lincoln-peak/",
+          "https://onehikeaweek.com/2020/05/29/lincoln-peak/",
+          "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+          "https://cascadeclimbers.com/forum/topic/60363-tr-lincoln-peak-the-emancipation-proclimbation/",
+          "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/"
+        ]
+      },
+      {
+        "routeId": "wa_lincoln_peak_north_ridge",
+        "routeName": "Northwest Face (Wilkes-Booth Route)",
+        "overview": "Wilkes-Booth is a rarely-repeated ice line up Lincoln Peak's steep Northwest Face, established in a single 18.5-hour car-to-car push from the Heliotrope Ridge trailhead in March 2015 - only the second documented route on the peak.",
+        "beta": "First climbed by Daniel Coltrane and Michal Rynkiewicz on March 13, 2015, this Grade IV WI4 route takes roughly 2,000 vertical feet of ice up Lincoln Peak's Northwest Face via a crux 60m pitch of WI4 followed by about four more roped pitches on steepening ice and snowfields up to 70 degrees, finishing on a rime-covered ridge and an icy summit chimney. It remains one of only two known lines on the peak (alongside the SW-Face X Couloir standard route) and has seen very few repeats.",
+        "approach": "Approached in a single push from the Heliotrope Ridge Trailhead (Mount Baker's standard Coleman-Deming approach), crossing onto Mount Baker's upper glacier terrain to reach the base of Lincoln Peak's Northwest Face; the first-ascent party's full round trip took 18.5 hours.",
+        "descent": "The first-ascent party descended via Lincoln Peak's standard Southwest Face (X Couloir) route rather than reversing the climb.",
+        "descentText": "Rather than rappel the Northwest Face, the first-ascent party downclimbed the SW Face standard route, including sections of snow and ice up to 65 degrees, back toward the Heliotrope Ridge side.",
+        "itinerary": "The only documented ascent was a single 18.5-hour car-to-car push; given the objective hazard of glacier travel in the dark, most parties would instead plan an overnight approach or a very early alpine start.",
+        "bail": "No established bail points are documented; retreat from this steep, rarely-climbed ice face would be difficult above the lower pitches, so parties should treat it as a committing line once established on the route.",
+        "turnaround": "Given the lack of a proven descent line off this face, set a conservative turnaround time and be prepared to descend via the separate SW Face route rather than reversing the climb.",
+        "bestSeason": "Only one ascent is documented, climbed in mid-March; the route's WI4 ice likely requires sustained cold winter/early-spring conditions to form and would be expected to deteriorate by summer.",
+        "comms": null,
+        "fa": "Daniel Coltrane and Michal Rynkiewicz, March 13, 2015",
+        "rockGrade": null,
+        "iceGrade": "WI4",
+        "alpineGrade": "IV",
+        "aidGrade": null,
+        "commitment": "IV",
+        "pitches": 5,
+        "routeFt": 2000,
+        "rappels": null,
+        "objHaz": [
+          "avalanche (winter/early-spring conditions)",
+          "loose volcanic rock (choss)",
+          "steep ice",
+          "rime-covered ridge",
+          "icy summit chimney"
+        ],
+        "season": "winter-early spring (narrow ice window; only documented ascent was mid-March)",
+        "aspect": "NW",
+        "face": "Northwest Face",
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": null,
+        "maxAngle": 70,
+        "highPointFt": 9085,
+        "detailedRack": null,
+        "proNeeds": null,
+        "gear": null,
+        "whatToBring": null,
+        "proTips": [
+          "This route has essentially no repeat/beta history and no established descent line off the face itself - be prepared to build your own protection and to descend via the separate SW Face route instead of rappelling back down the line."
+        ],
+        "watchOut": [
+          "The route sees very few ascents and has no established descent - the first-ascent party downclimbed the standard SW Face route instead of rappelling this line.",
+          "Rock quality is poor volcanic choss typical of the Black Buttes.",
+          "A rime-covered ridge and an icy chimney guard the summit just below the top."
+        ],
+        "knownHazards": [
+          "Avalanche hazard under the winter/early-spring conditions this route has been climbed in.",
+          "Loose rock throughout the face.",
+          "A rimed, icy chimney just below the summit."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "P1 (crux)",
+            "grade": "WI4",
+            "notes": "60m of water ice, the technical crux."
+          },
+          {
+            "pitch": "P2-P4",
+            "grade": "steep ice/snow to 70 deg",
+            "notes": "Roughly four additional roped pitches on steepening ice and snowfields."
+          },
+          {
+            "pitch": "Final section",
+            "grade": "mixed/rime",
+            "notes": "Rime-covered ridge and an icy chimney lead to the summit."
+          }
+        ],
+        "road": {
+          "name": "Glacier Creek Road (FS-39)",
+          "status": "Flood-damaged; under repair, with Forest Service expecting reopening by end of September per a mid-2026 report",
+          "seasonalGate": "Typically gated seasonally at lower elevation outside summer",
+          "driveNote": "Provides access to the Heliotrope Ridge Trailhead used for this route's approach; check current Mount Baker-Snoqualmie NF alerts before attempting."
+        },
+        "climate": {
+          "forecastZone": "West Slopes North (Mount Baker area) - Northwest Avalanche Center",
+          "typical": "Only one documented ascent, made in March under cold, icy winter/early-spring conditions.",
+          "spring": "Early spring may hold the best ice per the first ascent's timing, but conditions are unproven beyond that single climb.",
+          "summer": null,
+          "fall": null,
+          "winter": "Likely needed to form the WI4 ice, but comes with elevated avalanche hazard on the approach."
+        },
+        "access": {
+          "landManager": "Mount Baker-Snoqualmie National Forest / Mount Baker Wilderness (USFS)",
+          "fees": "Northwest Forest Pass typically required at the trailhead",
+          "permit": null,
+          "passRequired": "Northwest Forest Pass",
+          "closures": "Glacier Creek Road (FS-39) flood-damaged and under repair as of mid-2026; check current status before approaching via Heliotrope Ridge."
+        },
+        "timing": {
+          "recommendedStart": null,
+          "approachTimeHrs": null,
+          "summitTimeHrs": null,
+          "descentTimeHrs": null,
+          "totalHrs": 18.5
+        },
+        "waypoints": [
+          {
+            "type": "summit",
+            "name": "Lincoln Peak Summit",
+            "lat": 48.768354,
+            "lng": -121.858532,
+            "elevFt": 9085
+          }
+        ],
+        "emergency": {
+          "county": "Whatcom County, WA",
+          "sheriffDispatch": "911 / Whatcom County Sheriff's Office (dispatches Whatcom County Search & Rescue)",
+          "rangerStation": "Glacier Public Service Center, 10091 Mt. Baker Hwy, Glacier, WA - (360) 599-2714",
+          "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA - (360) 734-5400 (Level II trauma center; only hospital in Whatcom County)",
+          "notes": "Remote, glaciated alpine terrain; carry a satellite communicator."
+        },
+        "corrections": "No route named 'North Ridge' is documented on Lincoln Peak in any source checked (Peakbagger, SummitPost, Mountain Project, AAC Publications, Cascade Climbers, Lemke Climbs). 'North Ridge' is instead the name of a separate, well-known route on Mount Baker itself (a different, much larger peak nearby) - almost certainly the source of this mislabel. The only other documented route on Lincoln Peak besides the SW-Face 'X Couloir' standard route is a 2015 first-ascent ice line on the Northwest Face named 'Wilkes-Booth' (Grade IV WI4, 2,000'). Renamed this route entry and filled its fields using that route's real data; recommend verifying this routeId/routeName against its intended source before treating it as confirmed.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Lincoln_Peak_(Washington)",
+          "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+          "https://www.peakbagger.com/peak.aspx?pid=1637",
+          "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/"
+        ]
+      }
+    ]
+  },
+  {
+    "peakId": "wa_the_triad",
+    "blurb": "The Triad is a rugged, three-summited peak in the North Cascades National Park Complex, sitting on the southwest ridge extension of Eldorado Peak about 12 miles east of Marblemount, WA, in the Cascade River drainage. Built of North Cascades gneiss/orthogneiss and carrying a small hanging glacier on its south flank, it offers class 3-4 scrambling from the east side and harder climbing from the west-middle notch. It was first climbed in 1949 by Dick Eilertsen, Dick Lowery, Dick Scales, and Don Wilde, who jokingly called it \"Three Dicks\" for their shared first name before the fitting name \"Triad\" stuck.",
+    "hierarchyNote": "None needed — verified real peak. Wikipedia (48°31'11\"N 121°09'47\"W), Natural Atlas (48.5196482558094, -121.162903582653), and PeakVisor (48.519499, -121.163023) all place The Triad within a few meters of the given coordinates, and all three cite 7,520+ ft, matching the given elevationFt exactly. It sits inside North Cascades National Park near Eldorado Peak/Cascade River, consistent with a \"North Cascades Core\" parent bucket.",
+    "routes": [
+      {
+        "routeId": "wa_the_triad_east_peak",
+        "routeName": "East Peak (Standard Route)",
+        "overview": "The East Ridge / East Peak line is The Triad's standard route: a cross-country approach from the Hidden Lake Trail over a heather ridge, a descent and re-ascent of a loose gully to reach a small pocket glacier, and a short, exposed low-5th-class pitch that gains the summit ridge before an easy scramble to the top.",
+        "beta": "From the Hidden Lake Trailhead, follow the maintained trail up through forest and meadow, then leave it to traverse cross-country toward The Triad's east side. The route drops into and climbs back out of a steep, loose drainage before crossing a small glacier on the peak's south side to reach a high saddle. From the saddle, a wide ledge system leads toward the east ridge; gaining the ridge from this ledge is the technical crux — a single pitch of stiff 4th to low-5th class climbing (accounts vary by party and conditions) — after which class 3-4 scrambling leads to the summit. Most parties complete the route car-to-car in one long day.",
+        "approach": "Drive Cascade River Road roughly 9.5-10.2 miles east from Marblemount, then turn onto Forest Service Road 1540 (signed for Hidden Lake Trail / Sibley Creek Road) and continue about 4.5-5 miles of rough, washout-prone gravel to its end at the Hidden Lake Trailhead (~3,600 ft; high-clearance/4WD recommended). Follow Hidden Lake Trail #745 uphill through forest and into wildflower meadows and heather; roughly an hour's hiking from the trailhead, leave the maintained trail and traverse cross-country east and up onto a ridge leading toward The Triad. Follow this ridge, then descend into a steep, loose gully/drainage (nicknamed the 'Drainage of Despair' in one trip report) and climb back out the other side to reach a small pocket glacier on the peak's south flank. Cross the glacier to a high saddle beneath the east ridge.",
+        "descent": "Reverse the ascent line: downclimb or rappel the crux pitch (commonly two ~30m rappels), re-cross the pocket glacier, then climb back through the loose drainage and over the approach ridge to regain the Hidden Lake Trail.",
+        "descentText": "From the summit, downclimb the class 3-4 terrain back to the top of the crux pitch. Most parties rappel this section — commonly two rappels of roughly 30m off anchors/stations, so a rope with a tagline (or one longer single rope) is useful — though some downclimb it instead. Re-cross the pocket glacier (crampons/axe still useful here, especially once the snow softens in the afternoon), then re-descend into and climb back out of the loose drainage crossed on the approach. Regain the approach ridge and follow it back down to rejoin the Hidden Lake Trail for the hike out. Bear activity has been reported on the lower trail during the hike out.",
+        "itinerary": "Single long day, car-to-car: a pre-dawn start from the trailhead, roughly 6 hours to the summit via the trail, ridge, drainage, glacier, and crux pitch, then a similar or somewhat longer descent — reported round trips run approximately 10-11 hours total. Some parties instead camp near the base and split the climb over two days to reduce single-day exposure.",
+        "bail": "The technical crux has rappel anchors/stations allowing retreat back down to the glacier and ledge system below it. Below the crux the route is downclimbable scrambling; the main constraint on bailing is re-crossing the pocket glacier and the loose drainage, both easier and safer in cooler morning conditions than in afternoon heat.",
+        "turnaround": "Because the return crosses a glacier that softens through the day and a loose, unstable gully, parties should set a firm, conditions-based turnaround time rather than pushing for the crux late in the day — retreating with daylight and firmer snow/rock conditions in hand is safer than continuing into the afternoon.",
+        "bestSeason": "Climbed roughly July through September, with documented ascents into early-to-mid October in good years. Early-season snow on the approach ridge and glacier can ease travel but increases avalanche/wet-slab hazard on slopes below the west-middle notch; by mid-to-late summer the glacier is more likely to show bare ice, which can call for crampons and a tool even when the rock itself is dry.",
+        "comms": "No reliable cell coverage should be expected in this remote, glaciated terrain — NPS notes coverage is unreliable/fickle throughout the park backcountry. If a signal is found, calling North Cascades NP Dispatch at (360) 873-4500 ext. 37 is preferred over 911, which routes through the county and takes longer to reach park rescue resources.",
+        "rockGrade": "Low 5th class (crux pitch)",
+        "iceGrade": null,
+        "alpineGrade": null,
+        "aidGrade": null,
+        "commitment": null,
+        "pitches": 1,
+        "routeFt": null,
+        "rappels": "Commonly 2 rappels of roughly 30m off anchors near the crux (rope + tagline useful); some parties downclimb instead",
+        "objHaz": [
+          "Loose rock/talus",
+          "Crevasses on the pocket glacier",
+          "Bare ice on the glacier late-season",
+          "Wet-slab avalanche hazard below the west-middle notch in spring"
+        ],
+        "season": "Jul-Sep (documented ascents into Oct)",
+        "aspect": "E",
+        "face": "East Ridge",
+        "gainFt": null,
+        "lossFt": null,
+        "distKm": null,
+        "maxAngle": null,
+        "highPointFt": 7520,
+        "fa": null,
+        "detailedRack": "A light rack suffices for the route's single technical pitch: a small set of stoppers, a handful of small-to-mid cams, a couple of slings, and one 30m+ rope shared among the party. Full glacier-travel gear (harness, crampons, axe or light tool, and a means of crevasse rescue) is needed for the pocket glacier crossing on the south side.",
+        "proNeeds": "Only one short pitch of low-5th-class climbing needs protection; a light rack of small-to-mid cams and stoppers is adequate. The rest of the route is unroped scrambling and glacier travel.",
+        "gear": [
+          "Helmet",
+          "Harness",
+          "30m+ rope",
+          "Light rack (stoppers, small-to-mid cams)",
+          "Crampons (aluminum adequate in season)",
+          "Ice axe or light ice tool",
+          "Crevasse-rescue kit"
+        ],
+        "whatToBring": [
+          "Approach shoes or light mountaineering boots",
+          "Gaiters",
+          "Sun protection (sunscreen, glacier glasses)",
+          "Extra water — long, exposed approach",
+          "Bear awareness (noise discipline) on the approach trail",
+          "Headlamp for an early alpine start"
+        ],
+        "proTips": [
+          "The crux ledge/pitch is protectable but sparse — a few small-to-mid cams and stoppers cover it rather than a full rack.",
+          "Aluminum crampons and a light axe/tool are typically sufficient for the pocket glacier in normal summer conditions.",
+          "Some parties downclimb the technical pitch unroped; roping up for the single exposed move is still common practice.",
+          "Start early — reported car-to-car times run roughly 10-11 hours even for efficient parties."
+        ],
+        "watchOut": [
+          "Bear activity has been reported along the Hidden Lake approach trail.",
+          "The gully descent/re-ascent (the 'Drainage of Despair') is loose, dirty, and slow going.",
+          "Wet-slab avalanches have been observed releasing from slopes below the west-middle notch in spring — avoid that terrain when snow is warming."
+        ],
+        "knownHazards": [
+          "Loose rock and unstable talus on the approach ridge and gully sections.",
+          "Crevasse hazard on the small glacier traversed on the peak's south side.",
+          "Bare, exposed ice on the glacier in late season can require crampons and an ice tool.",
+          "Avalanche and wet-slab hazard on snow slopes below the west-middle notch, especially in spring."
+        ],
+        "pitchDetail": [
+          {
+            "pitch": "Approach ridge & drainage",
+            "grade": "Class 2-3",
+            "notes": "Heather ridge from the Hidden Lake Trail area, then a descent into and re-ascent out of a steep, loose drainage."
+          },
+          {
+            "pitch": "Glacier crossing",
+            "grade": null,
+            "notes": "Cross a small pocket glacier on the peak's south side to reach the high saddle below the east ridge; bare ice possible."
+          },
+          {
+            "pitch": "Crux pitch",
+            "grade": "Low 5th class (stiff 4th class per some parties)",
+            "notes": "Roped pitch gaining the east ridge from a ledge system; short, exposed, but with good holds throughout."
+          },
+          {
+            "pitch": "Summit scramble",
+            "grade": "Class 3-4",
+            "notes": "Final scrambling along the east ridge to the summit."
+          }
+        ],
+        "road": {
+          "name": "Cascade River Road + Forest Service Road 1540 (Sibley Creek Road)",
+          "status": "Gravel, rough, prone to washouts",
+          "seasonalGate": "FS Road 1540 is typically impassable in winter/spring due to snow and washout damage; check current Mt. Baker-Snoqualmie NF conditions before driving",
+          "driveNote": "From Marblemount, cross the Skagit River and drive Cascade River Road roughly 9.5-10.2 miles, then turn onto FS Road 1540 (signed Hidden Lake Trail) and continue about 4.5-5 miles to its end at the trailhead; high-clearance/4WD strongly recommended."
+        },
+        "climate": {
+          "forecastZone": "NWAC 'West Slopes North' zone",
+          "typical": "Cool, wet winters with a heavy snowpack; a short, drier alpine climbing window from roughly July to September",
+          "spring": "Deep snowpack often persists into June/July, with wet-slab avalanche hazard reported on slopes below the west-middle notch",
+          "summer": "The main climbing window; the pocket glacier can show bare ice by mid-to-late summer and softens in afternoon sun",
+          "fall": "Climbable into September and sometimes October in dry years, with shorter days and possible early snow",
+          "winter": "Heavy snow and avalanche terrain make this a ski-mountaineering objective rather than a rock climb; approach road generally closed"
+        },
+        "access": {
+          "landManager": "North Cascades National Park (NPS) for the peak; Mt. Baker-Snoqualmie National Forest for the approach road and lower Hidden Lake Trail",
+          "fees": "No North Cascades NP entrance fee; overnight backcountry permits cost $10/person plus a $6 transaction fee",
+          "permit": "A wilderness/backcountry permit from the NPS Wilderness Information Center in Marblemount is required for overnight stays; day climbs do not require a permit",
+          "passRequired": "Sources conflict on whether a Northwest Forest Pass is needed at the Hidden Lake trailhead (it sits in Mt. Baker-Snoqualmie NF just outside the park boundary) — verify current trailhead signage before relying on this",
+          "closures": "FS Road 1540 is seasonally closed/impassable in winter and spring due to snow and washouts"
+        },
+        "timing": {
+          "recommendedStart": "Pre-dawn (roughly 4-5am) given the long day",
+          "approachTimeHrs": null,
+          "summitTimeHrs": 6,
+          "descentTimeHrs": 4.5,
+          "totalHrs": 10.5
+        },
+        "waypoints": [
+          {
+            "type": "trailhead",
+            "name": "Hidden Lake Trailhead (FS Road 1540 terminus)",
+            "lat": 48.5141,
+            "lng": -121.2219,
+            "elevFt": 3600,
+            "distMi": 0
+          },
+          {
+            "type": "summit",
+            "name": "The Triad summit",
+            "lat": 48.5196,
+            "lng": -121.1628,
+            "elevFt": 7520,
+            "distMi": null
+          }
+        ],
+        "emergency": {
+          "county": "Skagit County, WA",
+          "sheriffDispatch": "Skagit 911 — 911 for emergencies, (360) 428-3211 non-emergency; Skagit County Sheriff's Office coordinates backcountry Search and Rescue",
+          "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount — (360) 854-7245",
+          "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA",
+          "notes": "For backcountry emergencies within the park, NPS recommends calling Park Dispatch at (360) 873-4500 ext. 37 if a signal is available, since routing through 911/county dispatch takes longer to reach park rescue resources. State your location and callback number immediately in case the call drops."
+        },
+        "corrections": "The peak's overall 1949 first ascent (Eilertsen, Lowery, Scales, Wilde) is well documented, but no source specifies which of the three summits (east/middle/west) or which line that party climbed, so it is NOT attributed here as this route's FA. Sources also disagree slightly on the crux's difficulty — Wikipedia/older accounts call it 'stiff 4th class' while a 2022 trip report rates the same pitch 'low 5th class'; both characterizations are preserved above since it likely varies by conditions and party judgment.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/The_Triad_(mountain)",
+          "https://www.peakbagger.com/peak.aspx?pid=18997",
+          "https://peakvisor.com/peak/the-triad.html",
+          "https://naturalatlas.com/summits/the-triad-1665538",
+          "https://cascadeclimbers.com/forum/topic/104555-tr-the-triad-east-ridge-to-main-summit-08062022/",
+          "https://www.jeffreyjhebert.com/adventures/the-triad",
+          "https://stevensong.com/usa/washington/the-triad/",
+          "http://www.ericsbasecamp.net/trips/SibleyCrk/SibleyCrk.htm",
+          "https://www.nps.gov/noca/planyourvisit/permits.htm",
+          "https://www.nps.gov/noca/planyourvisit/fees.htm",
+          "https://www.fs.usda.gov/r06/mbs/recreation/trails/hidden-lake-trail-745",
+          "https://www.skagitcounty.net/Departments/Sheriff/searchRescue.htm",
+          "https://skagit911.us/"
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Triad_(mountain)",
+      "https://www.peakbagger.com/peak.aspx?pid=18997",
+      "https://peakvisor.com/peak/the-triad.html",
+      "https://naturalatlas.com/summits/the-triad-1665538",
+      "https://cascadeclimbers.com/forum/topic/104555-tr-the-triad-east-ridge-to-main-summit-08062022/",
+      "https://www.jeffreyjhebert.com/adventures/the-triad",
+      "https://stevensong.com/usa/washington/the-triad/",
+      "http://www.ericsbasecamp.net/trips/SibleyCrk/SibleyCrk.htm",
+      "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "https://www.nps.gov/noca/planyourvisit/fees.htm",
+      "https://www.fs.usda.gov/r06/mbs/recreation/trails/hidden-lake-trail-745",
+      "https://www.skagitcounty.net/Departments/Sheriff/searchRescue.htm",
+      "https://skagit911.us/"
+    ]
+  }
+]
