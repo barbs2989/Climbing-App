@@ -42,22 +42,50 @@ Fixed with `fix_waypoint_types.mjs` (run against the live DB, see `waypoint_fix_
 normalized 278 waypoint types to the canonical enum and dropped 59 duplicate Trailhead/Summit
 entries (kept whichever twin had richer data — a `note`, elevation, etc.), across 120 routes.
 
-### Known issue found, NOT auto-fixed
-`wa_southeast_face` (Sharkfin Tower's "Southeast Face" route) has a Summit waypoint pointing to
-**"Mount Torment summit"** — clearly wrong, Mount Torment is a different, neighboring peak. This
-predates my dedup pass (it was one of two summit-type entries already in conflict) and needs
-someone to determine which peak this route actually belongs to before it's touched further.
+### Known issue found — FIXED
+`wa_southeast_face` (Sharkfin Tower's "Southeast Face" route) had a Summit waypoint pointing to
+"Mount Torment summit" — a different, neighboring peak, contradicted by the route's own
+overview/beta/approach/FA text (all clearly describe Sharkfin Tower, matching the real documented
+1990 FA by Nelson/Martin/Lewis/Liddell/Bale). Corrected live to the same "Sharkfin Tower summit"
+coordinates already used by the route's sibling "Southeast Ridge".
+
+## Hierarchy flags — reviewed, 2 fixed, 3 left for manual review
+Of the 14 flags in `hierarchy_flags_batch1.json`, most were either false positives (research
+double-checked itself and found no issue) or informational-only. Two were clear, single-field,
+low-risk corrections and are now live:
+- **Amphitheater Mountain elevation**: 8,374 ft → 8,358 ft (Wikipedia/Mountain Project/Mazamas/
+  Peakbagger all converge on 8,358).
+- **Mount Pulitzer name**: dropped the incorrect "(Wellesley Peak)" alias — Wellesley Peak is a
+  separate, real peak ~14 miles away; Mount Pulitzer's actual alternate name is "Snagtooth".
+
+Three flags are genuine hierarchy (parent-area) mismatches that were **deliberately left
+unfixed** — reparenting an area is a bigger structural change than a field correction (past WA
+hierarchy audits treated this as its own dedicated pass, since it affects `route_count` caches
+and breadcrumbs), and in two of the three cases the "correct" target area doesn't exist yet in
+the DB, so fixing it means creating new hierarchy nodes, not just repointing `parent_id`:
+- **Sloan Peak** — filed under "Glacier Peak Wilderness"; should be "Henry M. Jackson Wilderness"
+  per USFS/PeakVisor, but that wilderness area doesn't exist in the DB yet.
+- **Agnes Mountain** — filed under "Darrington and Mountain Loop Hwy" (a west-side Snohomish
+  County region); every source places it in the Stehekin/Lake Chelan drainage on the east side,
+  50+ miles away. A `wa_stehekin` area already exists — this one may just need repointing, but
+  wasn't touched without confirming that's the intended bucket.
+- **Mount Cruiser** — filed under "North-Central Olympic Mountains (Deception–Gray Wolf)"; every
+  source places it in the southern Olympics (Mount Skokomish Wilderness / Sawtooth Range,
+  Staircase entrance). Notably, `wa_mount_skokomish` — a real, distinct peak — is filed under the
+  *same* wrong-sounding parent, suggesting this may be a broader, pre-existing miscategorization
+  rather than a one-off, so a single reparent might not be the right fix on its own.
+
+Also flagged but not touched: **Red Mountain's "Ragged Ridge" route** doesn't belong to that peak
+at all (Ragged Ridge is a distinct North Cascades traverse 50+ miles north) — but no single
+correct target peak was identified (Ragged Ridge spans Katsuk/Kimtah/Cosho Peaks), so this needs
+a human call on where it should actually live rather than a guessed reassignment.
 
 ## Still open
-- **44/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit, list
-  in `peaks_batch_remaining.json`. Re-run `wa-enrich-batch` with that as args once the limit
-  resets/is raised, then apply with `apply_enrich_merge_waypoints.mjs` + `fix_waypoint_types.mjs`
-  the same way.
-- **14 hierarchy/data-quality flags** from research need manual review — `hierarchy_flags_batch1.json`
-  (e.g. Sloan Peak's parent should be Henry M. Jackson Wilderness not Glacier Peak Wilderness,
-  Mount Cruiser is filed under the wrong Olympics sub-region, Amphitheater Mountain's elevation is
-  off by 16 ft, Red Mountain's "Ragged Ridge" route doesn't belong to it at all).
-- **The Sharkfin Tower / Mount Torment summit mismatch** above.
+- **44/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit as of
+  the first attempt; a second attempt was launched after the key started working again (see
+  `wf_a9789cb6-4b3`). Check `/workflows` or this file's next revision for the outcome.
+- **The 3 hierarchy reparenting decisions and the Ragged Ridge reassignment** above — need a
+  human call, not a guess.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
