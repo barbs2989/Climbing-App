@@ -21,30 +21,49 @@ skill's full-page-enrichment convention).
   conflated with a different peak, etc.) — NOT auto-applied, needs manual review. See
   `hierarchy_flags_batch1.json`.
 
-## Apply (BLOCKED — dead service key)
-`enrichment-wip/apply_enrich_merge_waypoints.mjs` is written and ready — it's a variant of the
-existing `apply_enrich.mjs` that MERGES waypoints (adds a missing Trailhead/Summit into an
-existing non-empty array) instead of skip-if-non-empty gap-fill, since that's what this batch
-specifically needs. All other fields use the same factual-override / prose-gap-fill rules as
-the existing script.
+## Apply — DONE, LIVE (as of 2026-07-17)
+The `.env` service key was refreshed by the user mid-session; `apply_enrich_merge_waypoints.mjs`
+ran successfully against the live DB:
+- 172/175 routes touched, 1,825 fields written, 85 routes got a waypoint merged in.
+- Of the 175 routes in this batch: waypoint-less routes dropped from ~most to 10, routes still
+  missing a Trailhead dropped to 16, still missing a Summit/Topout dropped to 28, missing-all-stats
+  dropped to **0**. (The remaining gaps are largely crag/dike sub-areas and traverse routes where
+  a single trailhead/summit concept doesn't cleanly apply — see per-route notes in the apply log.)
 
-Running it against the live DB fails with `401 Unregistered API key` — the `.env`
-`SUPABASE_SERVICE_KEY` is stale/revoked (already flagged in memory `pending-user-actions.md` on
-2026-07-16, reconfirmed here). **Zero writes have been made to the live database this session.**
-Anon/read access still works fine (that's how the audit numbers above were gathered).
+### Bug found + fixed: waypoint type mismatch
+The wa-enrich-batch research prompt never specified the app's canonical waypoint `type` enum
+(`Trailhead`/`Junction`/`Water`/`Campsite`/`Summit`/`Topout`/`Hazard` — see `WP_TYPES` in
+ClimbMatch.jsx), so agents wrote freeform lowercase strings (`"trailhead"`, `"summit"`,
+`"trailhead_turnoff"`, `"waypoint"`, etc.). The merge script's single-type dedup check was
+case-sensitive, so on routes that already had a canonical `"Trailhead"`/`"Summit"` it failed to
+recognize the match and wrote a second, differently-cased duplicate instead of skipping it.
 
-## To finish this once a valid service key is available
-```
-cd enrichment-wip
-SUPABASE_SERVICE_KEY="<current service_role key>" node apply_enrich_merge_waypoints.mjs findings_batch1.json
-```
-Then, once the monthly spend limit resets/is raised, re-run wa-enrich-batch with
-`peaks_batch_remaining.json` as args for the other 44 peaks, and apply those findings the same
-way.
+Fixed with `fix_waypoint_types.mjs` (run against the live DB, see `waypoint_fix_report.json`):
+normalized 278 waypoint types to the canonical enum and dropped 59 duplicate Trailhead/Summit
+entries (kept whichever twin had richer data — a `note`, elevation, etc.), across 120 routes.
+
+### Known issue found, NOT auto-fixed
+`wa_southeast_face` (Sharkfin Tower's "Southeast Face" route) has a Summit waypoint pointing to
+**"Mount Torment summit"** — clearly wrong, Mount Torment is a different, neighboring peak. This
+predates my dedup pass (it was one of two summit-type entries already in conflict) and needs
+someone to determine which peak this route actually belongs to before it's touched further.
+
+## Still open
+- **44/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit, list
+  in `peaks_batch_remaining.json`. Re-run `wa-enrich-batch` with that as args once the limit
+  resets/is raised, then apply with `apply_enrich_merge_waypoints.mjs` + `fix_waypoint_types.mjs`
+  the same way.
+- **14 hierarchy/data-quality flags** from research need manual review — `hierarchy_flags_batch1.json`
+  (e.g. Sloan Peak's parent should be Henry M. Jackson Wilderness not Glacier Peak Wilderness,
+  Mount Cruiser is filed under the wrong Olympics sub-region, Amphitheater Mountain's elevation is
+  off by 16 ft, Red Mountain's "Ragged Ridge" route doesn't belong to it at all).
+- **The Sharkfin Tower / Mount Torment summit mismatch** above.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
 - `peaks_batch_remaining.json` — the 44 peaks NOT yet researched (spend limit)
-- `findings_batch1.json` — 43 researched peaks, ready to apply
+- `findings_batch1.json` — 43 researched peaks (applied live)
 - `hierarchy_flags_batch1.json` — 14 flagged hierarchy/data issues for manual review
-- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant), not yet run successfully
+- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run, successful
+- `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run, successful
+- `waypoint_fix_report.json` — full log of every retype and every duplicate dropped
