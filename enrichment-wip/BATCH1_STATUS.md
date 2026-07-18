@@ -80,18 +80,47 @@ at all (Ragged Ridge is a distinct North Cascades traverse 50+ miles north) — 
 correct target peak was identified (Ragged Ridge spans Katsuk/Kimtah/Cosho Peaks), so this needs
 a human call on where it should actually live rather than a guessed reassignment.
 
+## Round 2 (wf_a9789cb6-4b3): 34 more peaks researched + applied live
+Re-ran the remaining 44 peaks once the service key started working again. **34/44 succeeded**
+(real sources, same rules) and were applied live the same way: 86 routes touched, 634 fields
+written, 55 routes got a waypoint merged in. Waypoint-less routes in this batch dropped to 0,
+still-missing-Trailhead to 8, still-missing-Summit/Topout to 3, missing-all-stats to 0. Same
+type-normalization bug hit again (the underlying research prompt still doesn't specify the
+canonical enum) — fixed the same way: 222 waypoints retyped, 59 duplicates dropped across 78
+routes. Spot-checked every Summit waypoint's name against its own peak this round — no
+cross-peak contamination like the Sharkfin/Torment issue found.
+
+**10/44 still failed on the spend limit again** (`wa_alpine_and_technical_traverses`,
+`wa_mount_terror`, `wa_north_gardner_mountain`, `wa_argonaut_peak`, `wa_bear_mountain_chilliwack`,
+`wa_mount_chaval`, `wa_guye_peak`, `wa_ed_wood_memorial_buttress`, `wa_lincoln_peak`,
+`wa_the_triad`) — saved in `peaks_batch_remaining2.json`. Total across both rounds: **77/87 peaks
+done, 10 remain**, blocked on the same account-level spend limit.
+
+Round 2 also flagged 6 more hierarchy notes (`hierarchy_flags_batch2.json`), mostly informational
+or already-correct. One genuine, clear mismatch: **Bulls Tooth** is filed under "Snoqualmie Pass"
+but every source places it in the Chiwaukum Mountains near Stevens Pass, ~45 miles away — a
+correctly-named `wa_chiwaukum_range` area already exists in the DB as the right destination.
+**Deliberately left unfixed anyway**, for the same reason as the round-1 reparenting flags:
+moving a peak between parents needs a `route_count` recount up both branches of the tree, which
+this pass doesn't do, so a bare `parent_id` update alone could leave the counts more wrong than
+before. One more ambiguous case (`wa_north_peak`, possibly the same peak as "Gunsight Peak" or a
+distinct nearby summit — the research agent couldn't get enough source access to tell) also needs
+a human look.
+
 ## Still open
-- **44/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit as of
-  the first attempt; a second attempt was launched after the key started working again (see
-  `wf_a9789cb6-4b3`). Check `/workflows` or this file's next revision for the outcome.
-- **The 3 hierarchy reparenting decisions and the Ragged Ridge reassignment** above — need a
-  human call, not a guess.
+- **10/87 peaks not yet researched** — blocked on the account's monthly Claude spend limit across
+  two attempts now. List in `peaks_batch_remaining2.json`; re-run `wa-enrich-batch` with that as
+  args once the limit resets/is raised.
+- **4 hierarchy reparenting decisions** (Sloan Peak, Agnes Mountain, Mount Cruiser, Bulls Tooth)
+  and the **Ragged Ridge reassignment** and the **North Peak/Gunsight Peak ambiguity** — all need
+  a human call, not a guess.
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
-- `peaks_batch_remaining.json` — the 44 peaks NOT yet researched (spend limit)
-- `findings_batch1.json` — 43 researched peaks (applied live)
-- `hierarchy_flags_batch1.json` — 14 flagged hierarchy/data issues for manual review
-- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run, successful
-- `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run, successful
-- `waypoint_fix_report.json` — full log of every retype and every duplicate dropped
+- `peaks_batch_remaining.json` — the 44 peaks not researched in round 1 (spend limit)
+- `peaks_batch_remaining2.json` — the 10 peaks still not researched after round 2 (spend limit)
+- `findings_batch1.json` / `findings_batch2.json` — researched peaks, applied live
+- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` — flagged hierarchy/data issues
+- `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run twice, successful
+- `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run twice, successful
+- `waypoint_fix_report.json` — full log from round 1's retype/dedup pass
