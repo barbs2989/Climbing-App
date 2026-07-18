@@ -1,18 +1,19 @@
 // Minimal discipline color/icon lookup for the DB-backed map (NearMePanel).
 // lib/DbAreaBrowser.jsx is lazy-loaded and deliberately never imports from
 // ClimbMatch.jsx (see that file's header comment), so this duplicates just the
-// handful of discipline glyphs/colors map pins need — not a full port of
-// ClimbMatch.jsx's CAT/DiscIcon, which also cover trad/sport (a rock/style
-// split the routes table doesn't track: DB rows only carry `discipline`, no
-// `style` column, so "trad" vs "sport" isn't representable here).
+// handful of discipline glyphs/colors map pins need — mirrors ClimbMatch.jsx's
+// CAT (not just DISC): unlike the in-memory seed catalog, the live Supabase
+// `routes.discipline` column stores "trad"/"sport" as direct values (verified
+// live: ~180 trad + ~135 sport areas), not a "rock" + separate `style` split —
+// both need their own color/icon here or crag routes fall back to plain blue.
 import { renderToStaticMarkup } from "react-dom/server";
 
 export const DISC_COLORS = {
-  rock: "#2f81f7", scrambling: "#e3a008", alpine: "#56d4dd", mountaineering: "#f85149",
+  rock: "#2f81f7", trad: "#a371f7", sport: "#39d353", scrambling: "#e3a008", alpine: "#56d4dd", mountaineering: "#f85149",
   hiking: "#b07d3a", bouldering: "#f0883e", ice: "#79c0ff", mixed: "#f778ba", aid: "#9aa4b2",
 };
 export const DISC_LABELS = {
-  rock: "Rock", scrambling: "Scrambling", alpine: "Alpine", mountaineering: "Mountaineering",
+  rock: "Rock", trad: "Trad", sport: "Sport", scrambling: "Scrambling", alpine: "Alpine", mountaineering: "Mountaineering",
   hiking: "Hiking", bouldering: "Bouldering", ice: "Ice", mixed: "Mixed", aid: "Aid",
 };
 
@@ -20,6 +21,8 @@ function DiscGlyph({ d, size, color }) {
   const sz = size || 16, col = color || "#fff", dk = "rgba(0,0,0,0.42)";
   const G = {
     rock: <g><path fillRule="evenodd" d="M12 2C8.7 2 6 5 6 9V15C6 19 8.7 22 12 22C15.3 22 18 19 18 15V9C18 5 15.3 2 12 2ZM12 5C10 5 8.7 6.9 8.7 9V15C8.7 17.1 10 19 12 19C14 19 15.3 17.1 15.3 15V9C15.3 6.9 14 5 12 5Z" /><rect x="8.4" y="10.6" width="7.2" height="1.7" rx="0.8" /></g>,
+    trad: <g><path d="M11.6 9L11.6 3.2A6.2 6.2 0 0 0 5.6 9.5C7.5 8.5 9.8 8.6 11.6 9Z" /><path d="M12.4 9L12.4 3.2A6.2 6.2 0 0 1 18.4 9.5C16.5 8.5 14.2 8.6 12.4 9Z" /><circle cx="12" cy="8.8" r="1.3" /><rect x="11.2" y="9" width="1.6" height="8.6" rx="0.6" /><rect x="9.6" y="14.6" width="4.8" height="1.5" rx="0.7" /></g>,
+    sport: <g><path fillRule="evenodd" d="M9 3.5C13.6 3.5 18.5 7.4 18.5 12.3C18.5 16.4 15.4 19.5 11.3 19.5C8.3 19.5 6.3 17.4 6.3 14.5C6.3 9.5 6.5 5.5 9 3.5ZM13 8.3A2.5 2.5 0 1 0 13 13.3A2.5 2.5 0 1 0 13 8.3Z" stroke={dk} strokeWidth="0.9" /><path d="M6.4 6C5.1 9 5.2 14 7 17.5C5.9 14 5.9 9.5 6.9 6.3Z" fill={dk} /></g>,
     scrambling: <g><ellipse cx="12" cy="19" rx="6" ry="2.4" /><ellipse cx="12" cy="14.5" rx="4.6" ry="2.1" /><ellipse cx="12" cy="10.6" rx="3.3" ry="1.8" /><ellipse cx="12" cy="7.2" rx="2.2" ry="1.5" /></g>,
     alpine: <g><path d="M1 21L6 10L9 15L12 7L15 14L18 9L23 21Z" /></g>,
     mountaineering: <g><path d="M2 21L12 6L22 21Z" /><rect x="11.4" y="2.6" width="1.1" height="5" /><path d="M12.5 2.9L16.2 4.4L12.5 5.9Z" /></g>,
