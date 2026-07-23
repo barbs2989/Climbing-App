@@ -8,6 +8,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
+import { discIconMarkup, DISC_COLORS } from "./disciplines";
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
@@ -68,6 +70,39 @@ function RouteRow({ r, onOpen, C, areaName }) {
         </div>
       </div>
       <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "—"}</span>
+    </div>
+  );
+}
+
+// Suggested Climbs: mirrors the static catalog's SuggestedClimbs (ClimbMatch.jsx)
+// — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
+// instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
+// are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
+// this file doesn't import — see its own header comment on why) and passed down.
+function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, C }) {
+  const [open, setOpen] = useState(false);
+  const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
+  const { data: pool } = useSubtreeRoutes(area.id, { disc: profile ? profile.disc : "", sortBy: "name", pageSize: 30 });
+  const objectives = (objRoutes || []).filter(r => !completedIds.has(r.id));
+  const candidates = (pool || []).filter(r => !completedIds.has(r.id) && !(wishlist || []).includes(r.id));
+  const similar = profile ? rankSuggested(candidates, profile, { limit: 5 }) : [];
+  const popular = (!objectives.length && !similar.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
+  const total = objectives.length + similar.length + popular.length;
+  if (!total) return null;
+  const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
+  return (
+    <div style={{ marginTop: 14 }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
+        <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
+        <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open ? (
+        <div style={{ marginTop: 9 }}>
+          {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {similar.length ? <div><div style={lbl}>{"Because you've been climbing " + (DISCIPLINES.find(d => d[0] === profile.disc) || [, profile.disc])[1]}</div>{similar.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {popular.length ? <div><div style={lbl}>Popular in this area</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -146,7 +181,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
 }
 
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
-function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon }) {
+function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -209,6 +244,8 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
       )}
 
       <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
+
+      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} C={C} />
     </div>
   );
 }
@@ -330,22 +367,9 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 // pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
 // re-fetches (mirrors the static OverviewMap's moveend/zoomend re-render), so
 // the map never gets stuck showing only what was near the very first center. ──
-// Curved name-around-the-circle pin, matching the same technique used for
-// the static catalog's map circle markers — text follows the top arc inside
-// the circle instead of floating as an adjacent label, so it can't overlap
-// a neighboring marker's label the way free-floating text can.
-const curvedPinHtml = (nm, n, d, color, brd) => {
-  const r = d / 2, rt = r - Math.max(5, d * 0.11), id = "cp" + Math.random().toString(36).slice(2, 10);
-  const safe = (nm || "").replace(/[<>&]/g, "");
-  const fs = Math.max(8, Math.min(12, Math.round(d * 0.17)));
-  const maxChars = Math.max(3, Math.floor((Math.PI * rt) / (fs * 0.54)));
-  const lbl = safe.length > maxChars ? safe.slice(0, Math.max(1, maxChars - 1)) + "…" : safe;
-  const numFs = Math.round(d * 0.32);
-  const sw = 2.5, cr = r - sw / 2 - 0.5;
-  return "<svg width='" + d + "' height='" + d + "' viewBox='0 0 " + d + " " + d + "' style='overflow:visible;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.45))' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><path id='" + id + "' d='M " + (r - rt) + " " + r + " A " + rt + " " + rt + " 0 1 1 " + (r + rt) + " " + r + "'/></defs><circle cx='" + r + "' cy='" + r + "' r='" + cr + "' fill='" + color + "' stroke='" + brd + "' stroke-width='" + sw + "'/>" +
-    (n != null ? "<text x='" + r + "' y='" + (r + d * 0.16) + "' text-anchor='middle' dominant-baseline='central' font-weight='800' font-size='" + numFs + "' fill='#fff'>" + n + "</text>" : "") +
-    "<text font-size='" + fs + "' font-weight='700' fill='#fff' stroke='rgba(0,0,0,0.85)' stroke-width='2.5' paint-order='stroke fill' style='stroke-linejoin:round'><textPath href='#" + id + "' xlink:href='#" + id + "' startOffset='50%' text-anchor='middle'>" + lbl + "</textPath></text></svg>";
-};
+// Pin markup now comes from the shared lib/mapKit.jsx `pinHtml` (same curved
+// name-around-the-circle technique, promoted from the static catalog's map so
+// both maps render identical-looking pins from one implementation).
 
 // Initial zoom keyed to how big a footprint each area_type actually covers —
 // a whole state needs a far wider view than a single crag, and using one
@@ -353,11 +377,14 @@ const curvedPinHtml = (nm, n, d, color, brd) => {
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
-  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null);
+function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C }) {
+  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null), tileRef = useRef(null);
   const [ready, setReady] = useState(false);
+  const [mapFail, setMapFail] = useState(false);
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
+  const [baseLayer, setBaseLayer] = useState("sat");
+  const [sel, setSel] = useState(null);
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
@@ -386,22 +413,19 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
       const map = L.map(mapDiv.current, { attributionControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18 }).addTo(map);
+      applyBaseLayer(map, tileRef, baseLayer);
       markRef.current = L.layerGroup().addTo(map);
       mapRef.current = map;
       setReady(true);
       map.on("moveend", () => readBounds(map));
+      map.on("movestart", () => setSel(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
     };
-    if (window.L) { init(); }
-    else {
-      if (!document.getElementById("leaflet-css")) { const lk = document.createElement("link"); lk.id = "leaflet-css"; lk.rel = "stylesheet"; lk.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.appendChild(lk); }
-      let sc = document.getElementById("leaflet-js");
-      if (!sc) { sc = document.createElement("script"); sc.id = "leaflet-js"; sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; sc.onload = init; document.body.appendChild(sc); }
-      else sc.addEventListener("load", init);
-    }
-    return () => { cancelled = true; if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; userRef.current = null; } };
+    loadLeaflet(init, () => setMapFail(true));
+    const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
+    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; userRef.current = null; tileRef.current = null; } };
   }, []);
+  useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
   // Screen-space clustering: at national/state scale a single viewport can hold
   // hundreds of crags, and one dot per area (the first version of this map) is
@@ -413,8 +437,11 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
     if (!ready || !nearby) return;
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
+    setSel(s => (s && nearby.some(a => a.id === s.id)) ? s : null);
     grp.clearLayers();
-    const CLUSTER_PX = 62;
+    // Kept comfortably above the max single-pin size below (52px) so tightly
+    // spaced but distinct areas cluster instead of visually overlapping.
+    const CLUSTER_PX = 56;
     const pts = nearby.filter(a => a.lat != null && a.lng != null).map(a => ({ a, pt: map.latLngToContainerPoint([a.lat, a.lng]) }));
     const used = new Array(pts.length).fill(false);
     for (let i = 0; i < pts.length; i++) {
@@ -430,11 +457,12 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
         // characters before ellipsis, so a name like "Index Town Walls" reads
         // as "Index To…". Growing the circle with name length buys more arc
         // length for the curved label without blowing up short names.
-        const sz = Math.max(38, Math.min(60, 30 + (a.name || "").length * 1.6));
-        const html = curvedPinHtml(a.name, null, sz, C.blue, "#ffffff");
+        const sz = Math.max(36, Math.min(52, 28 + (a.name || "").length * 1.4));
+        const color = DISC_COLORS[a.dominant_discipline] || C.blue;
+        const html = pinHtml(a.name, null, sz, color, "#ffffff", discIconMarkup(a.dominant_discipline, 18));
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
-        mk.on("click", () => onOpenArea(a));
+        mk.on("click", () => setSel({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null }));
         grp.addLayer(mk);
       } else {
         const areas = group.map(g => g.a);
@@ -486,7 +514,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
 
   return (
     <div>
-      {!fullscreen ? backRow(onBack, "View map", C) : null}
+      {!fullscreen ? <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} /> : null}
       {!fullscreen ? (
         <>
           <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locating ? "Locating…" : "Use my location"}</button>
@@ -495,7 +523,19 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C }) {
       ) : null}
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
         <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
+        {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
+        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
         <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} style={{ position: "absolute", top: 10, right: 10, zIndex: 1000, background: "rgba(13,17,23,0.85)", border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{fullscreen ? "✕ Exit full screen" : "⤢ Full screen"}</button>
+        {sel ? (
+          <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{sel.name}</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + sel._mi.toFixed(1) + " mi" : "")}</div>
+            </div>
+            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blue, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
+            <button onClick={() => setSel(null)} title="Close" style={{ background: "none", border: "none", color: C.textMuted, fontSize: 17, cursor: "pointer", padding: "0 4px", flexShrink: 0 }}>×</button>
+          </div>
+        ) : null}
       </div>
       {!fullscreen ? (
         <>
@@ -596,11 +636,12 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [treeOpen, setTreeOpen] = useState(false);
+  const handledJumpId = useRef(null);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
@@ -614,6 +655,14 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   const back = () => jump(crumbs.length - 2);
   const drill = a => { setScreen("areas"); setStack(s => [...s, a]); };
   const pickState = s => { setStateNode(s); setStack([]); setScreen("areas"); };
+
+  // Lets a parent screen (e.g. the "Manage areas" list) jump straight into a
+  // state from outside this component's own drill-down navigation.
+  useEffect(() => {
+    if (!jumpToStateReq || handledJumpId.current === jumpToStateReq.id) return;
+    handledJumpId.current = jumpToStateReq.id;
+    pickState(jumpToStateReq.state);
+  }, [jumpToStateReq]);
   // Jump straight to any area reached by something other than drilling — a
   // near-me map pin, a tree-search hit, or a tree-node tap — by rebuilding its
   // real state/region breadcrumb from the area's own ltree path.
@@ -654,7 +703,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} />
+        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
