@@ -142,9 +142,15 @@ Reviewed round 3's 3 hierarchy notes: **Guye Peak's flag was a false alarm** —
 `parent_id` was already correct (`wa_snoqualmie_i90_region`); the "wrong" parent name in this
 session's own generated input data was stale, not a real DB issue. **Ed Wood Memorial Buttress**
 needs no fix (a buttress feature, not a summit, already correctly parented). **North Gardner
-Mountain** is a real, clean mismatch — filed under "Washington Pass" but it's actually 6-7 miles
+Mountain** was a real, clean mismatch — filed under "Washington Pass" but it's actually 6-7 miles
 away in the Lake Chelan-Sawtooth Wilderness; a real `wa_sawtooth_chelan` area already exists
-holding 17 peaks of the same character. Fix SQL in `hierarchy_fix_north_gardner.sql`, not yet run.
+holding 17 peaks of the same character.
+
+**North Gardner Mountain fix — DONE, LIVE (2026-07-22).** User ran `hierarchy_fix_north_gardner.sql`
+via the Supabase SQL editor; verified live directly afterward — `parent_id`, `path`, and all 5
+affected `route_count` values (`wa_sub_wapass` 126→125, `wa_hwy20_ncnp` 404→403, `wa_northwest`
+1026→1025, `wa_sawtooth_chelan` 17→18, `wa_centraleast` 1959→1960) all exact, no doubling this
+time. **This was the last open item in the entire audit — everything is now done.**
 
 **Final result across the ORIGINAL 163 flagged routes** (re-audited directly against that exact
 list, not the broader/growing WA pool other concurrent sessions are also adding to):
@@ -156,17 +162,17 @@ research itself flagged that a "trailhead-to-summit" concept doesn't cleanly app
 never going to close the same way a real alpine objective does.
 
 ## Still open
-- **North Gardner Mountain reparent** — SQL ready in `hierarchy_fix_north_gardner.sql`, not yet
-  run by the user.
-- That's it. The spend-limit block that was the last open item is now cleared; all 87 peaks are done.
+Nothing. The audit is complete: all 87 flagged peaks researched and applied live, all 6
+hierarchy/data-quality mismatches found and fixed live, all verified directly against the DB
+(and, for one route, against the actual rendered live app).
 
 ## Files in this directory
 - `peaks_batch.json` — full 87-peak target list (with all routes per peak)
 - `peaks_batch_remaining.json` / `peaks_batch_remaining2.json` — historical spend-limit retry lists (both now fully researched)
 - `findings_batch1.json` / `findings_batch2.json` / `findings_batch3.json` — all 87 researched peaks, applied live
-- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` / `hierarchy_flags_batch3.json` — flagged hierarchy/data issues, all resolved or ready
+- `hierarchy_flags_batch1.json` / `hierarchy_flags_batch2.json` / `hierarchy_flags_batch3.json` — flagged hierarchy/data issues, all resolved
 - `hierarchy_fixes_round2.sql` — 4 hierarchy/reassignment fixes — run by the user, applied live
-- `hierarchy_fix_north_gardner.sql` — 1 more hierarchy fix — ready, not yet run
+- `hierarchy_fix_north_gardner.sql` — 1 more hierarchy fix — run by the user, applied live
 - `apply_enrich_merge_waypoints.mjs` — the apply script (waypoint-merge variant) — run 3x, successful
 - `fix_waypoint_types.mjs` — corrective pass for the type-normalization bug — run 3x, successful
 - `waypoint_fix_report_batch1.json` / `waypoint_fix_report_batch3.json` — retype/dedup logs
