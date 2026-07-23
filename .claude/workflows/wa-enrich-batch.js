@@ -148,7 +148,7 @@ function prompt(p) {
     "- climate: {forecastZone, typical, spring, summer, fall, winter}.",
     "- access: {landManager, fees, permit, passRequired, closures}.",
     "- timing: {recommendedStart, approachTimeHrs, summitTimeHrs, descentTimeHrs, totalHrs}.",
-    "- waypoints: array of {type, name, lat, lng, elevFt, distMi}. ONLY include a waypoint if you have its REAL coordinates from a reputable source (peakbagger, caltopo, gaiagps, summitpost, gov data); NEVER invent or estimate lat/lng — omit the waypoint (or the whole array) rather than guess coordinates.",
+    "- waypoints: array of {type, name, lat, lng, elevFt, distMi}. type MUST be exactly one of: Trailhead, Junction, Water, Campsite, Summit, Topout, Hazard (this exact capitalization -- the app's UI matches on these literal strings, e.g. to render a 'directions to trailhead' button and to enforce one Trailhead/one Summit per route; any other casing or a made-up type like 'trailhead_turnoff' or 'waypoint' silently fails to match and breaks that behavior). A route should have AT MOST ONE Trailhead and AT MOST ONE Summit -- pick the single best one rather than listing several candidates; use Junction for any other point-of-interest along the way (a fork, a notch, a campsite-adjacent landmark, etc.) instead of inventing a new type. ONLY include a waypoint if you have its REAL coordinates from a reputable source (peakbagger, caltopo, gaiagps, summitpost, gov data); NEVER invent or estimate lat/lng — omit the waypoint (or the whole array) rather than guess coordinates.",
     "- emergency: {county, sheriffDispatch, rangerStation, nearestHospital, notes}.",
     "",
     "HARD RULES:",
