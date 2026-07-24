@@ -10,7 +10,7 @@
       * { -webkit-tap-highlight-color: transparent; }
       body { overscroll-behavior-y: none; }
       /* Buttons: kill the 300ms tap delay + double-tap zoom, add press feedback */
-      button { touch-action: manipulation; }
+      button { touch-action: manipulation; font-family: inherit; }
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
       /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
       button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
