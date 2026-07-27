@@ -101,3 +101,68 @@ Kearney/Knight 1980 21-pitch "Direct North Buttress"? AAJ records for both confi
   are plausible and corroborated by secondary sources.
 
 Next batch will continue alphabetically from `wa_beckey_tate` (see progress file).
+
+---
+
+## 2026-07-27 — Pass 1, Batch 3
+
+Checked 8 routes across 6 peaks, continuing alphabetically: Vega North Tower/Eros Tower (Beyond
+Redlining), Big Four Mountain (Northwest Ridge, Spindrift Couloir), Big Kangaroo (West
+Face/West Route), Big Snow Mountain (East Ridge/Hardscrabble Route, North Slope/Dingford
+Route), Black Peak (Northeast Ridge), Guye Peak (Blood Sport).
+
+**Confirmed errors → fixes in `sql/2026-07-27-batch-3.sql`:**
+- Beyond Redlining: FA month "July 2020" → "May 2020" (AAC Publications, Mountain Project, and
+  an independent trip report all place the FA in May, not July; exact day unconfirmed).
+- Beyond Redlining: access data wrongly named Glacier Peak Wilderness as the governing
+  wilderness area and misattributed a Dec 2025 storm closure to this route's access road. The
+  route's actual approach (Sunrise Mine Trail/FR-4065) is nowhere near Glacier Peak Wilderness
+  (separated by the entire Henry M. Jackson Wilderness) and sits in/adjacent to WA DNR's Morning
+  Star NRCA and Wild Sky Wilderness instead; the real storm damage was on the Suiattle River
+  Road, Glacier Peak Wilderness's own access corridor, not this route's.
+- Big Kangaroo West Face/West Route: high_point_ft 8323 ft → 8326 ft — matched none of the
+  three figures already documented in this row's own data_quality dispute (8326/8318/8280) and
+  contradicted the row's own overview text, which already says 8,326 ft.
+- Black Peak Northeast Ridge: overview and summit waypoint both said "8,970 ft," contradicting
+  this same row's own high_point_ft (8975) and the authoritative Wikipedia/NAVD88 figure of
+  8,975 ft — fixed both to 8,975 ft for internal consistency.
+- Big Snow Mountain East Ridge/Hardscrabble Route: the row's own `corrections` text claimed
+  "gainFt is left null," but gain_ft was actually populated with 5200 — rewrote `corrections`
+  to describe 5,200 ft honestly as a working estimate instead of contradicting the stored value.
+- Blood Sport (Guye Peak): access._raw said "Unknown" in nine sub-fields, directly
+  contradicting the sibling access.* fields on the same row which already carry real,
+  corroborated data from a later enrichment pass — replaced the stale _raw block with a note
+  pointing at the good data.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- **Big Kangaroo West Face/West Route — flagged as the most significant open issue.** The
+  row's own `id` (`wa_big_kangaroo_southwest_rib`) implies a route called "Southwest Rib," but
+  no such route exists on Big Kangaroo — "Southwest Rib" is the real, distinct name of a
+  different 5.8 route on South Early Winter Spire, a different peak nearby. The row's actual
+  content correctly describes Big Kangaroo's real route (West Face/West Route); only the `id`
+  is wrong. Not renamed here given the broader blast radius of changing an id. Same category as
+  batch 1's Apex Buttress and batch 2's Argonaut Peak NE Ridge flags.
+- Beyond Redlining: exact FA day unconfirmed (source's own internal date reference doesn't
+  cleanly reconcile); a discrepancy between this row's descent beta (8 raps, 60m rope) and one
+  independent trip report (7 raps, 70m rope) needs a human with Mountain Project access to
+  settle, since MP itself was blocked from direct fetch this session. The specific numeric
+  wilderness rules (group size, campfire elevation) were carried over from the wrong wilderness
+  area along with the naming fixed above — whether Morning Star NRCA has the same numbers is
+  unconfirmed.
+- Big Four Mountain Spindrift Couloir: AAJ's own publications disagree on the FA climber's
+  surname ("Bart Pauli" in the new-route index vs. "Bart Paull" in the same volume's
+  first-person trip report) — needs a human with direct AAJ archive access.
+- Black Peak Northeast Ridge: whether the standard Wing Lake basecamp itinerary actually
+  crosses onto North Cascades NP land (triggering the stored NPS permit fee) or stays on
+  National Forest land (free) is ambiguous across sources.
+- Blood Sport (Guye Peak): `discipline` is stored as "alpine," but every available description
+  (the row's own text and an indexed MP snippet) depicts a 50ft single-pitch bolted sport/mixed
+  crag pitch with no alpine character — same misclassification pattern as batch 1's "Alpine
+  Lookout." Left to a human as a categorization call. Grade/FA/length couldn't be confirmed or
+  refuted (MP page blocked from direct fetch); a claimed "2021 access dispute" also unconfirmed.
+- Big Snow Mountain (both routes): the claimed FSR 56 washout at milepost 17.3 is corroborated
+  by search results citing a USFS alerts page, but that page itself was blocked from direct
+  fetch — treat as well-corroborated but not primary-source-verified (same caveat as batch 2's
+  Bacon Peak flag).
+
+Next batch will continue alphabetically from `wa_blood_sport` (see progress file).
