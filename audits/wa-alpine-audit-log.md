@@ -56,3 +56,48 @@ Amphitheater Mountain (North Ridge), Anderson's Thumb (Standard Route), Apex Mou
   recommend a human review whether this route entry should exist at all.
 
 Next batch will continue alphabetically from `wa_apex_buttress` (see progress file).
+
+---
+
+## 2026-07-27 — Pass 1, Batch 2
+
+Checked 8 routes across 7 peaks, continuing alphabetically: Argonaut Peak (Southeast Ridge,
+Northeast Ridge), Austera Peak (Southwest Ridge/McAllister Glacier), Bacon Peak (Diobsud
+Creek/Green Lake Glacier), Baring Mountain (North Face), Bear Mountain/Chilliwack (North
+Buttress), Prusik Peak (Beckey-Davis), Big Kangaroo (Beckey-Tate).
+
+**Confirmed errors → fixes in `sql/2026-07-27-batch-2.sql`:**
+- Argonaut Peak Southeast Ridge: the route's own `corrections`/`rope_note` fields asserted
+  single-rope rappels only, while `descent_text` asserted double-rope rappels only — a real
+  internal contradiction. Mountaineers.org (the source both claim to draw from) actually
+  documents both as standard options ("two single, or 1 double rope rappel"); rewrote
+  `descent_text` to match.
+- Prusik Peak Beckey-Davis: the route's own approach text names Stuart Lake Trailhead/Aasgard
+  Pass as the standard access, with Snow Lakes Trail only as a wildfire-closure fallback — but
+  the primary "Trailhead"-type waypoint was labeled plain "Snow Lakes Trailhead" with no
+  indication it's the fallback. Clarified the waypoint's note rather than guess new coordinates.
+
+**Notable resolution (no fix needed):** Bear Mountain North Buttress's own `data_quality.gaps`
+flagged an unresolved question — is this the Beckey/Fielding 1967 7-pitch route or the
+Kearney/Knight 1980 21-pitch "Direct North Buttress"? AAJ records for both confirm this entry
+(7 pitches, IV, ~2,200 ft) correctly represents the 1967 line, distinct from the 1980 one.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- Argonaut Peak Northeast Ridge: no source found documents a "Northeast Ridge" matching the
+  stored PD/Class 4-low 5th/5.4/3-pitch spec — the real named NE-side lines are "Northeast
+  Buttress" and "Northeast Couloir," neither matching. Same category of issue as batch 1's Apex
+  Buttress flag — possible route-identity conflation, needs a human call.
+- Baring Mountain North Face: Fred Beckey's presence on the actual 1960 summit FA (vs. an
+  earlier 1959 attempt with the same partners) is ambiguous in available sources; the grade and
+  the walk-off descent claim (vs. the FA account's own "long rappels down the upper walls")
+  couldn't be independently confirmed either way.
+- Bacon Peak: FR-1107's washout closure at MP 3.8 is corroborated as of a Dec 2025 event, but
+  current (mid-2026) status couldn't be confirmed live.
+- Austera Peak: "aspect: Northeast" on a route named "Southwest Ridge" is plausible (likely
+  describes the summit-block crux face, not the overall line) but unconfirmed against a primary
+  source.
+- Big Kangaroo Beckey-Tate: exact FA day (5/29/1967) and the source page for the claimed "2023
+  theodolite survey" elevation (8,326 ft) couldn't be directly fetched to confirm, though both
+  are plausible and corroborated by secondary sources.
+
+Next batch will continue alphabetically from `wa_beckey_tate` (see progress file).
