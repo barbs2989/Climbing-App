@@ -1,0 +1,28 @@
+{
+  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "pass": 1,
+  "last_processed_id": "wa_apex_buttress",
+  "total_in_scope_last_count": 422,
+  "total_wa_alpine_or_mountaineering_tagged": 557,
+  "batches": [
+    {
+      "batch_number": 1,
+      "date": "2026-07-27",
+      "route_ids": [
+        "wa_a_servant_to_liberty",
+        "wa_action_potential",
+        "wa_agnes_mountain_west_route",
+        "wa_alpine_lookout_round_mountain_trail",
+        "wa_american_border_peak_southeast_face",
+        "wa_amphitheater_mountain_north_ridge",
+        "wa_andersons_thumb_standard",
+        "wa_apex_buttress"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 6,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-27-batch-1.sql"
+    }
+  ]
+}
