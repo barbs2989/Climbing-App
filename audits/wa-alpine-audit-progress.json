@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_diamond_in_the_rough",
+  "last_processed_id": "wa_dragontail_peak_r2",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -144,6 +144,27 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-07-28-batch-7.sql",
       "note": "Fixed a repeated 8050-vs-8066 elevation contradiction across four Cutthroat Peak routes (three had a stale high_point_ft, one had a stale summit waypoint), all now aligned to Wikipedia's 8,066 ft and the area's own elevation_ft. Also fixed a stale elevation typo in Sloan Peak's area blurb (7,839 -> 7,835 ft, matching its own elevation_ft/prominence_ft columns). New pattern this batch: wa_cutthroat_peak_r1 ('South Buttress Direct') and wa_cutthroat_south_buttress ('South Buttress') appear to be the same real Beckey/Gordon-1958 route entered twice under different IDs -- flagged as a likely duplicate needing a human merge/rename decision, not auto-fixed. Also flagged a 3-way grade conflict on Crooked Thumb Peak's South Route and a 3-way elevation conflict on Dark Peak (8518 area / 8507 route / 8504 waypoint) where sourcing couldn't confirm which figure is right."
+    },
+    {
+      "batch_number": 8,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_direct_north_buttress",
+        "wa_direct_southwest_buttress",
+        "wa_direct_west_face",
+        "wa_dolphin_chimney",
+        "wa_dome_peak_dome_glacier",
+        "wa_dorado_needle_east_ridge",
+        "wa_dragontail_peak_backbone_ridge",
+        "wa_dragontail_peak_east_ridge_aasgard_pass",
+        "wa_dragontail_peak_r1",
+        "wa_dragontail_peak_r2"
+      ],
+      "confirmed_errors_fixed": 12,
+      "flagged_for_human_review": 8,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-07-28-batch-8.sql",
+      "note": "Bear Mountain's Direct North Buttress (wa_direct_north_buttress) had the most significant errors found this pass: fa/pitches/length_m/commitment/season all conflicted with the row's own overview/beta text and external sources -- looked like data pasted in from a different route/ascent record (stored a 2016 repeat ascent as the FA instead of the real 1980 Kearney/Knight FA; stored 5 pitches/274m/Grade IV/winter-ice season instead of the real 21 pitches/~670m/Grade V/summer-rock). Also fixed a mislabeled NPS entrance-fee claim there (North Cascades NP charges none; the real requirement is a Forest Service Northwest Forest Pass at the trailhead). Two more copy-paste artifacts fixed on Dome Peak's Dome Glacier route (wrong county in a hazard note, wrong trailhead corridor in a parking-pass note) and two internal gain_ft-vs-itinerary self-contradictions fixed on wa_direct_southwest_buttress (Dorado Needle) and wa_dolphin_chimney (SEWS). New duplicate-ID pattern found on Dragontail Peak, same family as prior batches' id/name-mismatch flags but this time full duplicate rows: wa_dragontail_peak_backbone_ridge appears to duplicate the separate row wa_backbone_ridge (same route, same FA), and wa_dragontail_peak_r4 appears to duplicate wa_dragontail_peak_triple_couloirs (both 'Triple Couloirs', same FA) -- both flagged for a human merge/delete decision, not auto-fixed. Also flagged: Dome Peak's own high_point_ft (8920) vs its area elevation_ft (8926) -- genuine source conflict (LiDAR vs older figures), not resolved; an ambiguous III/III+ grade text on wa_direct_southwest_buttress that appears copy-pasted from the standard (non-Direct) route it's a variant of; and several 'needs human verification' items (Bear Mountain's 'Gerber-Sink' face note and WI5+ ice_grade on what sources show as a summer rock route; Dolphin Chimney's descent/rappel sourcing and gain-vs-waypoint-implied-minimum gap)."
     }
   ]
 }
