@@ -325,3 +325,53 @@ available sources (Wikipedia, Mountain Project/SummitPost search snippets, and p
 already on file) with no further issues this pass.
 
 Next batch will continue alphabetically from `wa_classic_route_3` (see progress file).
+
+---
+
+## 2026-07-28 — Pass 1, Batch 6
+
+Checked 10 routes: Colchuck Peak (Colchuck Glacier, Holsten-Hilden, North Buttress Couloir),
+Colfax Peak (Cosley-Houston Couloir, Kimchi Suicide Volcano, Polish Route), Colonial Peak (West
+Ridge/Colonial Glacier), Cutthroat Peak (Complete South Buttress), Concord Tower (North Face),
+Corteo Peak (Southwest Ridge/Standard Route).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-28-batch-6.sql`):**
+- Kimchi Suicide Volcano: top-level `grade`/`grade_system` were null despite this row's own
+  `ice_grade` (AI4+) and `rock_grade` (M5) already being populated and verified (Colin Haley's
+  trip report and AAC Publications both give "M5 R AI4+" for this exact route, and its length_m
+  of 300 matches the sourced 300m/1,000 ft exactly). Every sibling route on Colfax Peak has a
+  populated top-level grade built from its own ice/rock fields; Kimchi was the sole outlier.
+  Filled `grade` from the row's own already-verified sub-fields.
+- Colonial Peak West Ridge/Colonial Glacier: `corrections` claimed the parent area's elevation
+  was still null and needed filling in, but `wa_colonial_peak.elevation_ft` is already 7771
+  (matches Wikipedia/Peakbagger/PeakVisor and this route's own summit waypoint) — stale, already
+  resolved. Removed that part of the note; kept the still-valid id/name-mismatch observation.
+- Complete South Buttress (Cutthroat Peak): row's own `high_point_ft` (8066, Wikipedia's
+  USGS-derived figure) contradicted its own summit waypoint (elevFt 8050, the older WTA/
+  SummitPost figure) — same row, two elevations for the same summit. Aligned the waypoint to
+  `high_point_ft`, matching the pattern of every other route in this batch where summit
+  waypoint, `high_point_ft`, and the parent area's `elevation_ft` all agree.
+
+**Flagged for human review (not auto-fixed — structural, not a field patch):**
+- Colonial Peak: route id `wa_colonial_peak_northeast` doesn't match the route it actually
+  documents — name, overview, `face`, and waypoints all consistently describe the "West Ridge /
+  Colonial Glacier" line (the peak's standard/easiest route per Beckey), not a northeast-side
+  line. The row already carried a self-flag noting this; left as-is per the same precedent set
+  for `wa_big_kangaroo_southwest_rib` in batch 3 — an id rename needs a human decision, not a
+  content-field fix.
+- Corteo Peak: route id `wa_corteo_peak_southeast_face` has the same problem — name, overview,
+  and beta all describe the "Southwest Ridge / Standard Route" (confirmed as the peak's standard
+  line by the area's own blurb and Wikipedia's FA account), not a southeast face. Same
+  id-rename-needs-a-human pattern as above; not auto-fixed.
+
+**Clean (no errors found):** Colchuck Glacier, Holsten-Hilden, North Buttress Couloir (all three
+Colchuck Peak routes — FA parties/dates for all three independently corroborated via SummitPost,
+AAC Publications, and Mountain Project), Cosley-Houston Couloir and Polish Route on Colfax Peak,
+and Concord Tower North Face (FA, grade, and elevation all check out; the peak's own
+elevation-ambiguity note already covers the 7,560–7,612 ft source spread). Complete South
+Buttress's 22-pitch count (vs. ~12–16 for the standard South Buttress it extends) is already
+well-documented and cited in the row's own `data_quality`/`itinerary.sourceNote` fields
+(SuperTopo's 22-pitch breakdown of the full/extended line) — not an error, despite initially
+looking like an outlier against sources describing the shorter standard route.
+
+Next batch will continue alphabetically from `wa_corteo_peak_southeast_face` (see progress file).
