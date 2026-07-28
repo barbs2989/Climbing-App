@@ -247,3 +247,81 @@ Face), Burgundy Spire (North Face), Cascade Peak (East Ridge).
   doesn't correspond to anything else in the row.
 
 Next batch will continue alphabetically from `wa_cascade_peak_east_ridge` (see progress file).
+
+---
+
+## 2026-07-28 — Pass 1, Batch 5
+
+Checked 10 routes across 9 peaks, continuing alphabetically: Cathedral Peak/Pasayten (Southeast
+Buttress), Chair Peak (North Face, Northeast Buttress), Chelan Butte (Chelan Butte Trail),
+Chianti Spire (East Face/Rebel Yell), Chimney Rock (West Face/South Summit), Chiwawa Mountain
+(Southwest Route), North Early Winters Spire (Chockstone Route), Unicorn Peak (Classic Route),
+Lane Peak (Classic Route).
+
+**Confirmed errors → fixes in `sql/2026-07-28-batch-5.sql`:**
+- Chianti Spire East Face/Rebel Yell: `data_quality.gaps` still listed the `fa` and `rock_grade`
+  fields as unresolved discrepancies "not editable via this schema" — but both fields on this
+  same row already carry the corrected values (fa: Bebie/Nelson 1986, confirmed via Mountain
+  Project/StephAbegg; rock_grade: 5.10b). Cleared the two stale gap entries.
+- Chianti Spire East Face: `comms` named "Marblemount or North Bend" as closest services — both
+  are far on the wrong side of the state; the row's own emergency section already correctly
+  names Winthrop/Mazama (Methow Valley). Fixed to match.
+- Chianti Spire East Face: `dist_km` (2.4) contradicted the row's own itinerary day-by-day
+  mileage (7.8 mi round trip ≈ 12.55 km) by roughly 5x. Fixed to 12.55.
+- Chianti Spire East Face: Burgundy Col waypoint had no elevation; the row's own itinerary text
+  gives "~7,900 ft" for the same camp. Filled in.
+- Chiwawa Mountain Southwest Route: `access.land_manager` named a nonexistent "Chiwawa/Entiat
+  Ranger Districts" — the exact same error found and fixed for Bonanza Peak in batch 4. This
+  row's own `emergency.rangerStation` and the real USFS alert page for this route's current road
+  closure both correctly name the Wenatchee River Ranger District. Fixed to match.
+- Chimney Rock West Face/South Summit: `descent_text` still claimed the Rappel Chimney bolts
+  "were reportedly replaced for safety in 2001" — the row's own `rappel_detail`/
+  `rappel_count_note` fields already flag this exact claim as unsupported for this Washington
+  peak and likely misattributed from an unrelated, same-named Chimney Rock in North Idaho, and
+  say it "should be dropped." Removed it from `descent_text`.
+- Chimney Rock West Face/South Summit: `high_point_ft` (7,727 ft) matched the sibling East Face
+  route's main/central-summit elevation, but this route's own name, waypoints, and approach text
+  ("...the south peak rather than the main-summit gully used by the East Face") describe
+  climbing Chimney Rock's separate, lower South Summit — confirmed via Wikipedia at 7,440 ft,
+  matching this row's own summit waypoint exactly. Fixed `high_point_ft` and a conflated
+  itinerary schedule label ("Main/South Summit at 7,727 ft") to 7,440 ft.
+- Chimney Rock West Face/South Summit: `climate.forecastZone` ("NWAC Snoqualmie Pass zone")
+  contradicted this same row's own `seasonal_hazards.avalanche.zone` ("Stevens Pass/East Slopes
+  Central boundary... no NWAC zone precisely covers this peak"). Aligned the two.
+- Unicorn Peak Classic Route: summit waypoint elevation (6,867 ft) contradicted the row's own
+  `high_point_ft` (6,971 ft), Wikipedia's confirmed Unicorn Peak elevation, and all three other
+  routes on the same peak in this catalog (cross-checked directly against the DB) — this route
+  was the sole outlier. Fixed to 6,971 ft.
+- Unicorn Peak Classic Route: `corrections`/`rope_note` flagged a "5.6 vs 5.4" grade discrepancy;
+  checked directly against Mountain Project, which grades the Classic Route 5.4, matching this
+  row's own `grade` field. Cleared the stale discrepancy note on both fields.
+- Lane Peak Classic Route: itinerary day-1 note described a "saddle between Lane and Pinnacle,"
+  but the row's own overview, approach text, and waypoint name ("Lane-Denman saddle") all
+  consistently say Lane and Denman — Pinnacle Peak is a different, unrelated Tatoosh summit.
+  Fixed the stray reference.
+- Lane Peak Classic Route: `approach` claimed "roughly 2,000-2,400 ft of gain," contradicting the
+  row's own `gain_ft` (1,400), itinerary `gainFt` (1,400), and its own waypoint elevations (net
+  ~1,400-1,500 ft). Fixed the approach text to match.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- Chianti Spire East Face: a "Chianti Spire / East Face (Rebel Yell) area" campsite/base
+  waypoint shares byte-identical coordinates with the "Chianti Spire Summit" waypoint — clearly
+  wrong (a route's base can't sit at its own summit), but no independent source was found for
+  the true separate coordinates, so left for a human with a GPS track or topo.
+- Chimney Rock West Face/South Summit: `access.notes` claims "avalanche control closures on
+  I-90 affect access" — identical boilerplate to the Chair Peak/Alpental routes (I-90 Exit 52),
+  but this route's actual trailhead (Pete Lake, via Cle Elum/Salmon La Sac Road/FR-46) is well
+  east of the Snoqualmie Pass avalanche-control corridor. Likely template contamination but not
+  fixed here since I-90 does technically reach Cle Elum; a human with local knowledge should
+  confirm before rewording.
+- Chair Peak North Face: `fa` credits a 4-person 1975 party (Kit Lewis, Charlie Hampson, Rob
+  Harris, Greg Jacobson); available secondary sources (primary pages blocked from direct fetch
+  this session) corroborate Kit Lewis and Robert Harris but don't mention Hampson or Jacobson —
+  couldn't confirm or refute the full party without a primary source.
+
+**Clean (no errors found):** Cathedral Peak Southeast Buttress, Chair Peak Northeast Buttress,
+Chelan Butte Trail, and Chockstone Route (North Early Winters Spire) all checked out against
+available sources (Wikipedia, Mountain Project/SummitPost search snippets, and prior enrichment
+already on file) with no further issues this pass.
+
+Next batch will continue alphabetically from `wa_classic_route_3` (see progress file).
