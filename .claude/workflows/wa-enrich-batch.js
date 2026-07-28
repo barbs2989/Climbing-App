@@ -77,7 +77,7 @@ const SCHEMA = {
         // pitch-by-pitch
         pitchDetail: { type: ["array", "null"], items: {
           type: "object", additionalProperties: false,
-          properties: { pitch: { type: "string" }, grade: S("string"), notes: S("string") },
+          properties: { pitch: { type: "string" }, grade: S("string"), notes: S("string"), lengthM: S("number") },
           required: ["pitch"],
         }},
         // structured beta objects -- kept intentionally shallow (one level, no nested
@@ -129,10 +129,12 @@ function prompt(p) {
     "STEP 0 — HIERARCHY SANITY CHECK (do this first): confirm that the given peak name, coordinates, and elevation genuinely refer to one real, identifiable mountain, and that the described parent area (region/range/wilderness) is geographically plausible for it. Fill hierarchyNote (else leave it null) if anything looks wrong (e.g. the name is ambiguous with another peak, or the coordinates don't match the named peak) — do NOT silently proceed with mismatched data; still return your best research under the given id, but flag the concern.",
     "",
     hasKnownRoutes
-      ? "This peak already has known route(s) listed below — use the given 'routeId' EXACTLY as provided for each and its real name as 'routeName', and include EVERY route listed."
+      ? "This peak already has known route(s) listed below — use the given 'routeId' EXACTLY as provided for each and its real name as 'routeName', and include EVERY route listed. ADDITIONALLY: search for other real, well-documented named routes on this SAME peak that are NOT in the list below (e.g. a distinct buttress/face/couloir line covered by MP/SummitPost/a guidebook) and include them too, following the same routeId convention as below. Do not invent a route that isn't attested by a real source — only add ones you can actually find real beta for."
       : "This peak currently has NO routes in the database. Research and identify its standard / most commonly climbed route(s) to the summit (there may be just one standard route, or several named lines — include all you can find real data for). For EACH route you identify: invent routeId as this peak's id + '_' + a lowercase-underscore slug of the route name (e.g. peakId 'wa_example_peak' + route 'West Ridge' -> 'wa_example_peak_west_ridge'), and set routeName to the real route name (use 'Standard Route' or '<Peak Name> Standard Route' if sources don't give it a specific name). Do not invent a route that isn't attested by a real source — if you can only find one standard route, return just that one.",
     "",
     "GOAL: return values for AS MANY route-page fields as reputable sources support — leave nothing null that you can genuinely source. Attempt every field below for every route. Leave a field null ONLY when you truly cannot source it after checking the required primary sources.",
+    "",
+    "PRIORITY FIELD FOR THIS PASS — routeFt (the app displays this as 'Climb length' / 'Scramble section' and it is currently wrong or missing on most routes): routeFt must be the TOTAL length, in feet, of the technical portion of the route as a whole — every roped pitch PLUS any significant unroped scrambling/4th-class terrain that guidebooks and trip reports describe as part of getting through the climb itself (NOT the flat trail approach to the base). If a source says e.g. 'the route climbs 6 pitches of 5.8 then finishes with 800 ft of 3rd/4th class scrambling to the summit', routeFt must include that 800 ft, not just the roped pitches. This is the single most important number to get right this pass — cross-check it against at least 2 sources when possible. If you also fill pitchDetail, give every pitch/section (including scrambling sections) a lengthM (length in meters) so the per-pitch total is consistent with routeFt — do not leave lengthM off some pitches and not others.",
     "",
     "PEAK:",
     "- blurb: 2-3 factual sentences (location, range/group, rock type, character, notable first-ascent history). null if unsourceable.",
