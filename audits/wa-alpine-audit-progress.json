@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_dragontail_peak_r2",
+  "last_processed_id": "wa_east_ridge_4",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -165,6 +165,27 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-07-28-batch-8.sql",
       "note": "Bear Mountain's Direct North Buttress (wa_direct_north_buttress) had the most significant errors found this pass: fa/pitches/length_m/commitment/season all conflicted with the row's own overview/beta text and external sources -- looked like data pasted in from a different route/ascent record (stored a 2016 repeat ascent as the FA instead of the real 1980 Kearney/Knight FA; stored 5 pitches/274m/Grade IV/winter-ice season instead of the real 21 pitches/~670m/Grade V/summer-rock). Also fixed a mislabeled NPS entrance-fee claim there (North Cascades NP charges none; the real requirement is a Forest Service Northwest Forest Pass at the trailhead). Two more copy-paste artifacts fixed on Dome Peak's Dome Glacier route (wrong county in a hazard note, wrong trailhead corridor in a parking-pass note) and two internal gain_ft-vs-itinerary self-contradictions fixed on wa_direct_southwest_buttress (Dorado Needle) and wa_dolphin_chimney (SEWS). New duplicate-ID pattern found on Dragontail Peak, same family as prior batches' id/name-mismatch flags but this time full duplicate rows: wa_dragontail_peak_backbone_ridge appears to duplicate the separate row wa_backbone_ridge (same route, same FA), and wa_dragontail_peak_r4 appears to duplicate wa_dragontail_peak_triple_couloirs (both 'Triple Couloirs', same FA) -- both flagged for a human merge/delete decision, not auto-fixed. Also flagged: Dome Peak's own high_point_ft (8920) vs its area elevation_ft (8926) -- genuine source conflict (LiDAR vs older figures), not resolved; an ambiguous III/III+ grade text on wa_direct_southwest_buttress that appears copy-pasted from the standard (non-Direct) route it's a variant of; and several 'needs human verification' items (Bear Mountain's 'Gerber-Sink' face note and WI5+ ice_grade on what sources show as a summer rock route; Dolphin Chimney's descent/rappel sourcing and gain-vs-waypoint-implied-minimum gap)."
+    },
+    {
+      "batch_number": 9,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_dragontail_peak_r3",
+        "wa_dragontail_peak_r4",
+        "wa_dragontail_peak_serpentine_arete",
+        "wa_dragontail_peak_triple_couloirs",
+        "wa_e_se_face",
+        "wa_east_face_6",
+        "wa_east_mcmillan_spire_west_ridge",
+        "wa_east_ridge_2",
+        "wa_east_ridge_3",
+        "wa_east_ridge_4"
+      ],
+      "confirmed_errors_fixed": 19,
+      "flagged_for_human_review": 33,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-28-batch-9.sql",
+      "note": "Pandora's Box (wa_dragontail_peak_r3) was this batch's biggest find: a prior 2026-07-15 enrichment pass rewrote the route's prose to correctly describe it as a moderate unroped SW-facing snow/scramble couloir, but left 8 structured fields (grade_system/grade_num, disciplines, pitches, pitch_detail, rappels, obj_haz, climate, approach/timing/itinerary text) still describing the debunked fabricated WI6 ice/mixed route, self-contradicting the row's own corrected prose -- all 8 fixed to match. Confirmed the wa_dragontail_peak_r4 / wa_dragontail_peak_triple_couloirs duplicate flagged in batch 8 (identical FA/pitches/length across both rows) -- still needs a human merge/delete decision, not auto-fixed; also fixed 3 'Asgard'->'Aasgard' misspellings on r4 and one bad Aasgard Pass coordinate on wa_dragontail_peak_serpentine_arete (its own waypoints/gpx arrays carried two conflicting entries for the same named point). One review-agent proposed changing alpine_grade from 'D' to 'IV' on wa_dragontail_peak_triple_couloirs, citing NCCS-grade sources -- rejected after checking supabase/migrations/0006_composite_grades.sql, which defines alpine_grade as the French adjectival scale (F/PD/AD/D/TD/ED), not the commitment grade; applied the corrected fix in the other direction instead (r4's alpine_grade 'IV' -> 'D', matching both the schema's intent and its duplicate sibling's existing value). wa_east_ridge_2 (Snowking Mountain) had the same North-Cascades-NP-vs-Forest-Service copy-paste pattern as batch 8's Bear Mountain fix: access.land_manager and access.notes/rules wrongly carried NPS Boston-Basin-lottery boilerplate on a Mt. Baker-Snoqualmie NF route, plus a beta/pitch_detail text contradiction claiming a glacier crossing on a route whose own overview calls itself the 'non-glaciated' line. wa_e_se_face (Witches Tower) had likely cross-route contamination: its descent/itinerary describe a mandatory roped 5.6 pitch that contradicts its own 4th-class grade fields, apparently bled in from a separate, real 'Southeast Face' 5.6 route on the same peak -- flagged for a human rewrite/split, not patched. wa_east_ridge_3 (Silver Star Mountain) returned no confirmed fixes at all: its own approach/beta text names a different trailhead (Cedar Creek) than its own waypoints (Silver Star Creek), suggesting a two-route merge, but every verification source (SummitPost, Mountain Project, NWMJ) 403'd during this run -- entirely flagged for a human with guidebook/primary-source access. wa_east_face_6 (Chimney Rock) audited clean -- correctly avoided the summit-mismatch error found on its sibling West Face route in batch 5."
     }
   ]
 }
