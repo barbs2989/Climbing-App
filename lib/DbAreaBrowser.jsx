@@ -269,6 +269,8 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   const [af, setAf] = useState(DEF);
   const [df, setDf] = useState(DEF);
   const [sheet, setSheet] = useState(false);
+  const [savedSearches, setSavedSearches] = useState([]);
+  const [showSaved, setShowSaved] = useState(false);
   const [page, setPage] = useState(0);
   const [all, setAll] = useState([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
@@ -276,6 +278,21 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
 
+  const saveSearch = () => {
+    const name = q.trim() || "Untitled search";
+    const newSearch = { id: Date.now(), name, q, filters: af };
+    setSavedSearches(prev => [newSearch, ...prev]);
+  };
+  const loadSearch = (search) => {
+    setQ(search.q);
+    setAf(search.filters);
+    setShowSaved(false);
+    setPage(0);
+    setAll([]);
+  };
+  const deleteSearch = (id) => {
+    setSavedSearches(prev => prev.filter(s => s.id !== id));
+  };
   useEffect(() => { setPage(0); setAll([]); }, [q, af, scope.id]);
   useEffect(() => {
     if (!batch) return;
@@ -299,7 +316,21 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
     <div>
       {backRow(onBack, "Route finder" + (scope ? " · " + scope.name : ""), C)}
       <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search routes…" style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
-      <button onClick={() => { setDf(af); setSheet(true); }} style={{ width: "100%", padding: 13, borderRadius: 10, border: "1px solid " + (nF ? C.blue : C.border), background: nF ? C.blueBg : C.surface, color: nF ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer", marginBottom: 10 }}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
+      <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>
+        <button onClick={() => { setDf(af); setSheet(true); }} style={{ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + (nF ? C.blue : C.border), background: nF ? C.blueBg : C.surface, color: nF ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer" }}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
+        <button onClick={saveSearch} style={{ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer" }}>Save search</button>
+        {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={{ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer" }}>{savedSearches.length} saved</button>}
+      </div>
+      {showSaved && savedSearches.length > 0 && (
+        <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, marginBottom: 10, maxHeight: 200, overflowY: "auto" }}>
+          {savedSearches.map(s => (
+            <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} onClick={() => loadSearch(s)}>
+              <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
+              <button onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={{ background: "none", border: "none", color: C.textMuted, fontSize: 16, cursor: "pointer", padding: 4 }}>×</button>
+            </div>
+          ))}
+        </div>
+      )}
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 9 }}>
           {afChips.map(c => <button key={c.k} onClick={c.clear} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", borderRadius: 16, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{c.label}<span style={{ opacity: 0.7 }}>✕</span></button>)}
