@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-07-27",
+  "goode": {
+    "routeName": "Mount Goode - Northeast Buttress",
+    "trailheadName": "Bridge Creek Trailhead (Rainy Pass)",
+    "trailheadLat": 48.5075,
+    "trailheadLng": -120.7312,
+    "peakLat": 48.48291,
+    "peakLng": -120.9108,
+    "trailheadDirection": "South-southeast via Pacific Crest Trail (PCT) descent, then east up North Fork Bridge Creek",
+    "approachTimeHrs": 6,
+    "approachDistanceKm": 22,
+    "elevationGainM": 1829,
+    "routeDescription": "Grade III-IV alpine rock route with 5.4-5.5 climbing. Approach via 10-mile PCT descent to Bridge Creek junction, then 3-4 miles up North Fork Bridge Creek to base camp. Route ascends the Northeast Buttress with glacier travel, scrambling (3rd-4th class), and rock pitches up to 5.5. Total trip: 3-4 days recommended. Note: Mount Goode has no documented 'Northwest Buttress' route; this is the main and most popular alpine route.",
+    "accessInfo": "Backcountry permit required ($10 + $6 fee) from North Cascades Visitor Center in Marblemount. Best climbing season: late July through September (early season has dangerous water crossings at Grizzly Creek and North Fork Bridge Creek). Located within North Cascades National Park. Large paved parking available at trailhead.",
+    "sources": [
+      "https://www.mountainproject.com/area/110103756/mt-goode",
+      "https://en.wikipedia.org/wiki/Goode_Mountain",
+      "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/",
+      "https://explore.pcta.org/trailheads/bridge-creek-trailhead",
+      "https://www.recreation.gov/permits/4675322"
+    ],
+    "dbRouteId": "LOOKUP_NEEDED",
+    "notes": "Research confirmed Northeast Buttress is the main/documented route; no Northwest Buttress variant exists. Excellent approach beta available from multiple sources."
+  },
+  "thinRoutes": {
+    "status": "PENDING - awaiting second agent completion",
+    "expectedFields": [
+      "routeName",
+      "peakName",
+      "missingFields",
+      "priority"
+    ]
+  }
+}

@@ -130,12 +130,13 @@ function StatePicker({ onPick, C }) {
 // drilling down one level at a time. Area hits can be at any depth, so they
 // navigate via onJumpToArea (rebuilds the real breadcrumb from the area's
 // path) rather than onDrill (which assumes a direct child). ──
-function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
+function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   const [mode, setMode] = useState("areas");
   const [q, setQ] = useState("");
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
   const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
   const tab = on => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blue : "transparent", color: on ? "#fff" : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
   return (
@@ -182,6 +183,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C }) {
 
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
 function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
+  const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
@@ -218,12 +220,12 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
 
-      {!loading && !error && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} /> : null}
+      {!loading && !error && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {error && <div style={{ color: C.red, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
 
-      {!loading && !error && children && children.length > 0 ? (
+      {!loading && !error && children && children.length > 0 && searchMode === "areas" ? (
         <div style={{ marginBottom: 10 }}>
           <SL C={C}>{childNoun(children)}</SL>
           {children.map(a => (

@@ -1,0 +1,212 @@
+{
+  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "pass": 1,
+  "last_processed_id": "wa_elephant_butte_standard_route",
+  "total_in_scope_last_count": 428,
+  "total_wa_alpine_or_mountaineering_tagged": 549,
+  "batches": [
+    {
+      "batch_number": 1,
+      "date": "2026-07-27",
+      "route_ids": [
+        "wa_a_servant_to_liberty",
+        "wa_action_potential",
+        "wa_agnes_mountain_west_route",
+        "wa_alpine_lookout_round_mountain_trail",
+        "wa_american_border_peak_southeast_face",
+        "wa_amphitheater_mountain_north_ridge",
+        "wa_andersons_thumb_standard",
+        "wa_apex_buttress"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 6,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-27-batch-1.sql"
+    },
+    {
+      "batch_number": 2,
+      "date": "2026-07-27",
+      "route_ids": [
+        "wa_argonaut_peak_east_ridge",
+        "wa_argonaut_peak_northeast_ridge",
+        "wa_austera_peak_southwest_ridge",
+        "wa_bacon_peak_diobsud",
+        "wa_baring_mountain_r1",
+        "wa_bear_mountain_chilliwack_north_buttress",
+        "wa_beckey_davis",
+        "wa_beckey_tate"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 7,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-27-batch-2.sql"
+    },
+    {
+      "batch_number": 3,
+      "date": "2026-07-27",
+      "route_ids": [
+        "wa_beyond_redlining",
+        "wa_big_four_mountain_northwest_ridge",
+        "wa_big_four_mountain_spindrift_couloir",
+        "wa_big_kangaroo_southwest_rib",
+        "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+        "wa_big_snow_mountain_north_slope_dingford_route",
+        "wa_black_peak_northeast_ridge",
+        "wa_blood_sport"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 6,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-27-batch-3.sql",
+      "note": "wa_big_kangaroo_southwest_rib flagged: its own id implies a route ('Southwest Rib') that belongs to a different peak entirely; row content is correct for Big Kangaroo's real 'West Face/West Route' but the id itself needs a human rename decision, not auto-fixed."
+    },
+    {
+      "batch_number": 4,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_bonanza_peak_mary_green_glacier",
+        "wa_bonanza_peak_northeast_buttress",
+        "wa_boston_peak_southeast_face",
+        "wa_boston_peak_southwest_face",
+        "wa_boving_christensen",
+        "wa_boving_roofs",
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_burgundy_spire_north_face",
+        "wa_cascade_peak_east_ridge"
+      ],
+      "confirmed_errors_fixed": 21,
+      "flagged_for_human_review": 15,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-28-batch-4.sql",
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+    },
+    {
+      "batch_number": 5,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_cathedral_peak_pasayten_se_buttress",
+        "wa_chair_peak_north_face",
+        "wa_chair_peak_northeast_buttress",
+        "wa_chelan_butte_chelan_butte_trail",
+        "wa_chianti_spire_east_face",
+        "wa_chimney_rock_west_face",
+        "wa_chiwawa_mountain_southwest",
+        "wa_chockstone_route",
+        "wa_classic_route_2",
+        "wa_classic_route_3"
+      ],
+      "confirmed_errors_fixed": 14,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-07-28-batch-5.sql",
+      "note": "Cross-referenced sibling routes on the same peak (Unicorn Peak, Chimney Rock) directly from the DB to confirm two elevation errors: wa_classic_route_2's summit waypoint (6,867 ft) was the sole outlier against 3 other Unicorn Peak routes and Wikipedia (all 6,971 ft); wa_chimney_rock_west_face's high_point_ft (7,727 ft) matched its sibling East Face route but actually belongs to Chimney Rock's separate main/central summit, not the lower South Summit (7,440 ft, confirmed via Wikipedia) that this specific route's own name/waypoints/approach text describe climbing. Also repeated the exact 'Chiwawa/Entiat Ranger Districts' nonexistent-district error found and fixed for Bonanza Peak in batch 4, this time on wa_chiwawa_mountain_southwest -- same fix applied (Wenatchee River Ranger District)."
+    },
+    {
+      "batch_number": 6,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_colchuck_peak_colchuck_glacier",
+        "wa_colchuck_peak_holsten_hilden",
+        "wa_colchuck_peak_north_buttress_couloir",
+        "wa_colfax_peak_cosley_houston",
+        "wa_colfax_peak_kimchi_suicide_volcano",
+        "wa_colfax_peak_polish_route",
+        "wa_colonial_peak_northeast",
+        "wa_complete_south_buttress",
+        "wa_concord_tower_north_face",
+        "wa_corteo_peak_southeast_face"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-07-28-batch-6.sql",
+      "note": "Two more id/name-mismatch cases in the same family as batch 3's wa_big_kangaroo_southwest_rib: wa_colonial_peak_northeast's id says 'northeast' but the row (name, overview, face, waypoints) consistently describes the peak's real standard route, 'West Ridge / Colonial Glacier'; wa_corteo_peak_southeast_face's id says 'southeast_face' but the row describes the real standard 'Southwest Ridge / Standard Route'. Both flagged for a human rename decision, not auto-fixed. Also found and fixed a new pattern: Kimchi Suicide Volcano (Colfax Peak) had a null top-level grade despite already having verified ice_grade (AI4+) and rock_grade (M5) on file -- filled from the row's own verified sub-fields rather than external data."
+    },
+    {
+      "batch_number": 7,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_crater_mountain_standard_route",
+        "wa_crooked_thumb_peak_south_route",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir",
+        "wa_cutthroat_peak_northeast_face",
+        "wa_cutthroat_peak_r1",
+        "wa_cutthroat_peak_southeast_buttress",
+        "wa_cutthroat_south_buttress",
+        "wa_cutthroat_west_ridge",
+        "wa_dark_peak_dark_glacier_route",
+        "wa_diamond_in_the_rough"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 4,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-28-batch-7.sql",
+      "note": "Fixed a repeated 8050-vs-8066 elevation contradiction across four Cutthroat Peak routes (three had a stale high_point_ft, one had a stale summit waypoint), all now aligned to Wikipedia's 8,066 ft and the area's own elevation_ft. Also fixed a stale elevation typo in Sloan Peak's area blurb (7,839 -> 7,835 ft, matching its own elevation_ft/prominence_ft columns). New pattern this batch: wa_cutthroat_peak_r1 ('South Buttress Direct') and wa_cutthroat_south_buttress ('South Buttress') appear to be the same real Beckey/Gordon-1958 route entered twice under different IDs -- flagged as a likely duplicate needing a human merge/rename decision, not auto-fixed. Also flagged a 3-way grade conflict on Crooked Thumb Peak's South Route and a 3-way elevation conflict on Dark Peak (8518 area / 8507 route / 8504 waypoint) where sourcing couldn't confirm which figure is right."
+    },
+    {
+      "batch_number": 8,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_direct_north_buttress",
+        "wa_direct_southwest_buttress",
+        "wa_direct_west_face",
+        "wa_dolphin_chimney",
+        "wa_dome_peak_dome_glacier",
+        "wa_dorado_needle_east_ridge",
+        "wa_dragontail_peak_backbone_ridge",
+        "wa_dragontail_peak_east_ridge_aasgard_pass",
+        "wa_dragontail_peak_r1",
+        "wa_dragontail_peak_r2"
+      ],
+      "confirmed_errors_fixed": 12,
+      "flagged_for_human_review": 8,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-07-28-batch-8.sql",
+      "note": "Bear Mountain's Direct North Buttress (wa_direct_north_buttress) had the most significant errors found this pass: fa/pitches/length_m/commitment/season all conflicted with the row's own overview/beta text and external sources -- looked like data pasted in from a different route/ascent record (stored a 2016 repeat ascent as the FA instead of the real 1980 Kearney/Knight FA; stored 5 pitches/274m/Grade IV/winter-ice season instead of the real 21 pitches/~670m/Grade V/summer-rock). Also fixed a mislabeled NPS entrance-fee claim there (North Cascades NP charges none; the real requirement is a Forest Service Northwest Forest Pass at the trailhead). Two more copy-paste artifacts fixed on Dome Peak's Dome Glacier route (wrong county in a hazard note, wrong trailhead corridor in a parking-pass note) and two internal gain_ft-vs-itinerary self-contradictions fixed on wa_direct_southwest_buttress (Dorado Needle) and wa_dolphin_chimney (SEWS). New duplicate-ID pattern found on Dragontail Peak, same family as prior batches' id/name-mismatch flags but this time full duplicate rows: wa_dragontail_peak_backbone_ridge appears to duplicate the separate row wa_backbone_ridge (same route, same FA), and wa_dragontail_peak_r4 appears to duplicate wa_dragontail_peak_triple_couloirs (both 'Triple Couloirs', same FA) -- both flagged for a human merge/delete decision, not auto-fixed. Also flagged: Dome Peak's own high_point_ft (8920) vs its area elevation_ft (8926) -- genuine source conflict (LiDAR vs older figures), not resolved; an ambiguous III/III+ grade text on wa_direct_southwest_buttress that appears copy-pasted from the standard (non-Direct) route it's a variant of; and several 'needs human verification' items (Bear Mountain's 'Gerber-Sink' face note and WI5+ ice_grade on what sources show as a summer rock route; Dolphin Chimney's descent/rappel sourcing and gain-vs-waypoint-implied-minimum gap)."
+    },
+    {
+      "batch_number": 9,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_dragontail_peak_r3",
+        "wa_dragontail_peak_r4",
+        "wa_dragontail_peak_serpentine_arete",
+        "wa_dragontail_peak_triple_couloirs",
+        "wa_e_se_face",
+        "wa_east_face_6",
+        "wa_east_mcmillan_spire_west_ridge",
+        "wa_east_ridge_2",
+        "wa_east_ridge_3",
+        "wa_east_ridge_4"
+      ],
+      "confirmed_errors_fixed": 19,
+      "flagged_for_human_review": 33,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-28-batch-9.sql",
+      "note": "Pandora's Box (wa_dragontail_peak_r3) was this batch's biggest find: a prior 2026-07-15 enrichment pass rewrote the route's prose to correctly describe it as a moderate unroped SW-facing snow/scramble couloir, but left 8 structured fields (grade_system/grade_num, disciplines, pitches, pitch_detail, rappels, obj_haz, climate, approach/timing/itinerary text) still describing the debunked fabricated WI6 ice/mixed route, self-contradicting the row's own corrected prose -- all 8 fixed to match. Confirmed the wa_dragontail_peak_r4 / wa_dragontail_peak_triple_couloirs duplicate flagged in batch 8 (identical FA/pitches/length across both rows) -- still needs a human merge/delete decision, not auto-fixed; also fixed 3 'Asgard'->'Aasgard' misspellings on r4 and one bad Aasgard Pass coordinate on wa_dragontail_peak_serpentine_arete (its own waypoints/gpx arrays carried two conflicting entries for the same named point). One review-agent proposed changing alpine_grade from 'D' to 'IV' on wa_dragontail_peak_triple_couloirs, citing NCCS-grade sources -- rejected after checking supabase/migrations/0006_composite_grades.sql, which defines alpine_grade as the French adjectival scale (F/PD/AD/D/TD/ED), not the commitment grade; applied the corrected fix in the other direction instead (r4's alpine_grade 'IV' -> 'D', matching both the schema's intent and its duplicate sibling's existing value). wa_east_ridge_2 (Snowking Mountain) had the same North-Cascades-NP-vs-Forest-Service copy-paste pattern as batch 8's Bear Mountain fix: access.land_manager and access.notes/rules wrongly carried NPS Boston-Basin-lottery boilerplate on a Mt. Baker-Snoqualmie NF route, plus a beta/pitch_detail text contradiction claiming a glacier crossing on a route whose own overview calls itself the 'non-glaciated' line. wa_e_se_face (Witches Tower) had likely cross-route contamination: its descent/itinerary describe a mandatory roped 5.6 pitch that contradicts its own 4th-class grade fields, apparently bled in from a separate, real 'Southeast Face' 5.6 route on the same peak -- flagged for a human rewrite/split, not patched. wa_east_ridge_3 (Silver Star Mountain) returned no confirmed fixes at all: its own approach/beta text names a different trailhead (Cedar Creek) than its own waypoints (Silver Star Creek), suggesting a two-route merge, but every verification source (SummitPost, Mountain Project, NWMJ) 403'd during this run -- entirely flagged for a human with guidebook/primary-source access. wa_east_face_6 (Chimney Rock) audited clean -- correctly avoided the summit-mismatch error found on its sibling West Face route in batch 5."
+    },
+    {
+      "batch_number": 10,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_east_ridge_6",
+        "wa_east_ridge_8",
+        "wa_east_slope",
+        "wa_east_twin_needle_south_route",
+        "wa_east_twin_needle_thread_of_ice",
+        "wa_eldorado_peak_east_ridge",
+        "wa_eldorado_peak_eldorado_glacier_nw",
+        "wa_eldorado_peak_northeast_face",
+        "wa_eldorado_peak_west_arete",
+        "wa_elephant_butte_standard_route"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 3,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-07-28-batch-10.sql",
+      "note": "Elephant Butte's area row (elevation_ft/prominence_ft) was the sole outlier against Wikipedia and its own route/waypoint data -- fixed. Eldorado Peak East Ridge's high_point_ft (8876) was the sole outlier against 3 sibling Eldorado routes plus a prior batch's own corrections note settling on 8872 -- fixed. Thread of Ice had a null top-level grade despite verified grade_num/rock_grade on file, same pattern as batch 6's Kimchi fix -- filled. Biggest open flag: East Twin Needle South Route's top-level grade text (5.7) contradicts its own rock_grade/commitment/beta-quoted source grade (II 5.10a) -- left flagged per the established route-identity-conflation precedent rather than guessed."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+[
+  {
+    "name": "High Route (Cascade Crest full traverse)",
+    "area": "North Cascades",
+    "discipline": "alpine_rock",
+    "route_type": "multi-day traverse",
+    "region": "North Cascades (Mount Redoubt to Mount Shuksan area)",
+    "expedition_profile": "5-7 days, 30+ miles, 10,000+ ft cumulative gain",
+    "approach_miles": 6,
+    "approach_hours": 3,
+    "climb_hours": "35-45",
+    "altitude_feet": 8500,
+    "best_season": "Jul-Aug optimal; spring/fall: variable snow cover and bridge stability",
+    "hazards": [
+      "Crevasse fields across multiple glaciers (Peat, Cascade, Chickamin) — bergschrund crossings critical early season; rope rescue proficiency and probe technique essential; June-August most hazardous with bridge collapse risk",
+      "Navigation complexity through remote terrain with frequent whiteout conditions — multiple high passes with confusing routefinding; GPS/map mandatory; incorrect pass selection leads to major rerouting or scramble into worse terrain",
+      "Rapid alpine weather shifts with afternoon thunderstorms common Jul-Aug — exposed ridgeline position creates lightning hazard; summit storms typically develop 1-3pm; start alpine sections pre-dawn",
+      "Glacial meltwater stream crossings increase dramatically in afternoon — melt intensity varies by time of day; early morning crossing essential; rope belay required for major water hazards",
+      "Exposed camp sites on alpine terrain — avalanche exposure from >35° slopes above camp locations; wind cornice formation on ridge camps; lightning exposure during afternoon storms",
+      "Sustained multi-day high altitude (8,000+ ft) exertion — altitude sickness risk on repeated climbing days; cumulative fatigue increases navigation and camp-hazard errors; descent time criticality increases with party fatigue",
+      "Remote evacuation logistics — 15+ miles from nearest road; helicopter rescue difficult in alpine basin terrain; party must be self-sufficient for crevasse rescue and emergency medical response",
+      "Fixed rope and anchoring on steep glacier sections — anchor quality variable on ice and snow; ice-screw placement critical; party size must support rope management and multi-pitch glacier travel"
+    ],
+    "sources": [
+      "Cascade Alpine Guide (Beckey)",
+      "Mountain Project High Route descriptions and trip reports (2024-2026)",
+      "NWAC avalanche zone research",
+      "Recent Supertopo discussions (2024-2026)",
+      "RMI guide company alpine traverse resources"
+    ],
+    "seasonal_window": "Jul-Aug optimal with minimal snow; Jun-Sep marginal; spring: variable glacier conditions; fall: early storms"
+  },
+  {
+    "name": "Enchantments Loop (North Cascades)",
+    "area": "Enchantments / Snow Lakes area",
+    "discipline": "alpine_rock",
+    "route_type": "multi-day traverse",
+    "region": "North Cascades (Stuart Range area)",
+    "expedition_profile": "3-4 days, 20 miles, 5,000+ ft gain",
+    "approach_miles": 9,
+    "approach_hours": "4-5",
+    "climb_hours": "15-20",
+    "altitude_feet": 8700,
+    "best_season": "Aug-Sep optimal; Jul: lingering snow on high passes; spring/early summer: unstable glacier conditions",
+    "hazards": [
+      "Colchuck Glacier crevasse field — multiple crevasses with variable snow bridges; mid-season (Jul-Aug) highest risk with bridge collapse; rope mandatory; bergschrund crossing complex; glacier rope rescue knowledge essential",
+      "High-altitude navigation through alpine basin with multiple peak options — whiteout conditions common; terrain traps and gullies create navigation hazard; GPS/topo map required; turnaround time critical",
+      "Colchuck and Dragontail Peak objective hazards from above — rockfall from warming peaks in afternoon; serac collapse risk from hanging glaciers; stay out of fall lines; early morning exit from peak zone",
+      "Extreme altitude exposure on summit ridge — Dragontail Peak summit section has 40+ knot winds typical; one-hand-off belay standard; exposure consequence is fatal; helmet essential",
+      "Camp site avalanche exposure — suitable camp locations limited; must avoid slopes >30° above camps; cornice formation on ridge camps; wind loads accumulate overnight",
+      "Stream crossings and glacial meltwater hazards — Colchuck Lake outlet and Enchantment Lakes drainage increase melt rate in afternoon; early morning crossing essential; current hazard increases temperature dependent",
+      "Exposed scrambling sections with rockfall hazard — Cashmere Col and Pawnee Pass approaches have loose rock; multiple parties create rockfall hazard; compact party and helmet required; stay vigilant for rocks from above"
+    ],
+    "sources": [
+      "Cascade Alpine Guide (Beckey) - Enchantments section",
+      "Mountain Project Enchantments Loop trip reports (2024-2026)",
+      "NWAC Snoqualmie Pass area avalanche research",
+      "Recent climbing forum discussions of Colchuck Glacier conditions"
+    ],
+    "seasonal_window": "Aug-Sep optimal with stable conditions; Jul: lingering snow on Col/Pass crossings; Jun-Jul: ice tools may be needed"
+  },
+  {
+    "name": "Ptarmigan Traverse",
+    "area": "North Cascades (Mount Shuksan to Mount Baker area)",
+    "discipline": "alpine_ice",
+    "route_type": "multi-day traverse",
+    "region": "North Cascades",
+    "expedition_profile": "3 days, 17 miles, 7,000+ ft gain",
+    "approach_miles": 8,
+    "approach_hours": "3-4",
+    "climb_hours": "20-25",
+    "altitude_feet": 8700,
+    "best_season": "Aug-Sep optimal; Jul: lingering winter conditions, ice tools likely needed; Jun and earlier: deep snow, crevasses dangerously hidden",
+    "hazards": [
+      "Crevasse fields on multiple glaciers (Easton, Curtis, Squak glaciers) — most dangerous Jun-Jul with concealed crevasses under thin snow bridges; rope rescue mandatory; hazmat rescue is difficult in remote area",
+      "Steep icefall sections — Shuksan Arm ice cliffs and Curtis Glacier headwall create active icefall zones; afternoon warming increases ice/rock fall risk; early morning passage critical",
+      "Winter/spring variant avalanche exposure — early season route can have significant avalanche hazard on >35° approaches; wind-loaded aspects particularly risky; NWAC forecast essential; party must assess stability actively",
+      "Navigation complexity through interconnected glacier system — whiteout conditions eliminate visual landmarks; multiple pass options exist; wrong glacier selection leads to major rerouting; GPS/compass/map mandatory",
+      "Extreme altitude combined with exposed camp sites — sustained high altitude (8,000+ ft) over 3 days; camp locations limited and exposed; weather exposure significant; descent time criticality essential",
+      "Ice tool proficiency requirement for summer variant — even in late summer, Curtis Glacier sections can have blue ice or thin ice; microspikes insufficient; ice tools and mixed climbing skill required",
+      "Remote rescue logistics — far from help; party must be self-sufficient; evacuation helicopter rescue difficult due to terrain; 6+ person party recommended for crevasse rescue proficiency"
+    ],
+    "sources": [
+      "Cascade Alpine Guide (Beckey) - Ptarmigan Traverse section",
+      "Mountain Project Ptarmigan Traverse trip reports",
+      "Recent Supertopo discussions (2024-2026)",
+      "NWAC mountain weather archives for Mount Baker area"
+    ],
+    "seasonal_window": "Aug-Sep optimal with minimal snow; Jul: winter conditions linger, ice tools needed; Jun and earlier: deep snow, hidden crevasses, very hazardous"
+  }
+]
