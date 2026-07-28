@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy } from "react";
 import { createPortal } from "react-dom";
 import { USE_DB, supabase } from "./lib/supabase";
-import {submitContribution, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, verifyRecord, useVerificationRecords} from "./lib/db";
+import {submitContribution, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, verifyRecord, useVerificationRecords, sendCrewMessage, useCrewMessages, sendDirectMessage, useDirectMessages, markMessageAsRead} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
@@ -3593,36 +3593,18 @@ export default function App(){
     const isImage=!!(opts&&opts.image);
     if(!isImage&&!text.trim())return;
     const crew=crews.find(c=>c.id===cid);if(!crew)return;
-    const members=crew.members.filter(m=>m.status==="confirmed").map(m=>CLIMBERS.find(x=>x.id===m.climberId)).filter(Boolean);
     const myMsg=isImage?{from:"me",name:"You",image:text,ts:Date.now()}:{from:"me",name:"You",text,ts:Date.now()};
     setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),myMsg]}));setMsgInput("");
     if(notifPrefs.messages&&chatCrewRef.current!==cid)setCrewUnread(u=>({...u,[cid]:(u[cid]||0)+1}));
-    const repliers=members.filter(()=>Math.random()<0.35);
-    if(!repliers.length)return;
-    setCrewTyping(t=>({...t,[cid]:[...new Set([...((t&&t[cid])||[]),...repliers.map(mem=>mem.name.split(" ")[0])])]}));
-    repliers.forEach((mem,i)=>{
-      setTimeout(()=>{
-        const line=isImage?pickImageReplyLine(mem):pickReplyLine(mem,text);
-        setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),{from:mem.id,name:mem.name.split(" ")[0],avatar:mem.avatar,text:line,ts:Date.now()}]}));
-        if(notifPrefs.messages&&chatCrewRef.current!==cid)setCrewUnread(u=>({...u,[cid]:(u[cid]||0)+1}));
-        setCrewTyping(t=>({...t,[cid]:((t&&t[cid])||[]).filter(n=>n!==mem.name.split(" ")[0])}));
-      },700+i*900+Math.random()*400);
-    });
+    if(uid&&crew._dbId){sendCrewMessage(crew._dbId,uid,text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
   };
   const sendMsg=(pid,text,opts)=>{
     const isImage=!!(opts&&opts.image);
     if(!isImage&&!text.trim())return;
-    const partner=connections.find(c=>c.id===pid)||ALL_CLIMBERS.find(c=>c.id===pid)||{name:"a climber",disciplines:[]};
     const myMsg=isImage?{from:"me",image:text,ts:Date.now()}:{from:"me",text,ts:Date.now()};
     setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),myMsg]}));setMsgInput("");
     if(notifPrefs.messages&&chatWithRef.current!==pid)setDmUnread(u=>({...u,[pid]:(u[pid]||0)+1}));
-    setAiTyping(t=>({...t,[pid]:true}));
-    setTimeout(()=>{
-      const line=isImage?pickImageReplyLine(partner):pickReplyLine(partner,text);
-      setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),{from:pid,text:line,ts:Date.now()}]}));
-      if(notifPrefs.messages&&chatWithRef.current!==pid)setDmUnread(u=>({...u,[pid]:(u[pid]||0)+1}));
-      setAiTyping(t=>({...t,[pid]:false}));
-    },900+Math.random()*700);
+    if(uid){sendDirectMessage(pid,uid,text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
   };
   
   const countMatch=(o)=>{o=o||{};const dl=o.disc!==undefined?(o.disc==="All"?[]:[o.disc]):discSel;const ff={features:o.features!==undefined?o.features:filters.features,aspect:o.aspect!==undefined?o.aspect:filters.aspect,gradeMin:o.gradeMin!==undefined?o.gradeMin:filters.gradeMin,gradeMax:o.gradeMax!==undefined?o.gradeMax:filters.gradeMax,maxMi:filters.maxMi,minStars:o.minStars!==undefined?o.minStars:filters.minStars,minReports:o.minReports!==undefined?o.minReports:filters.minReports,pitches:o.pitches!==undefined?o.pitches:filters.pitches,month:o.month!==undefined?o.month:filters.month,verifiedOnly:o.verifiedOnly!==undefined?o.verifiedOnly:filters.verifiedOnly,permitFree:o.permitFree!==undefined?o.permitFree:filters.permitFree,classicOnly:o.classicOnly!==undefined?o.classicOnly:filters.classicOnly,cellOnly:o.cellOnly!==undefined?o.cellOnly:filters.cellOnly,rock:o.rock!==undefined?o.rock:filters.rock,descent:o.descent!==undefined?o.descent:filters.descent,commit:o.commit!==undefined?o.commit:filters.commit,approach:o.approach!==undefined?o.approach:filters.approach,length:o.length!==undefined?o.length:filters.length,gain:o.gain!==undefined?o.gain:filters.gain,shape:o.shape!==undefined?o.shape:filters.shape,steep:o.steep!==undefined?o.steep:filters.steep,exposure:o.exposure!==undefined?o.exposure:filters.exposure,trs:o.trs!==undefined?o.trs:filters.trs,sun:o.sun!==undefined?o.sun:filters.sun,mine:o.mine!==undefined?o.mine:filters.mine};const sq=search.toLowerCase();return ROUTES.filter(r=>inArea(r.mountainId,selArea&&selArea.id)&&(!dl.length||dl.some(_d=>rDiscs(r).includes(_d)))&&(!search||fuzzyMatch(search,r.name)||fuzzyMatch(search,areaPathNames(r.mountainId)))&&passesFilters(r,ff)&&mineMatch(r,ff.mine)).length;};
