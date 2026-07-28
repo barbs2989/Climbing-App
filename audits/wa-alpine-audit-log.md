@@ -429,3 +429,74 @@ details all internally consistent and consistent with area data) and Cutthroat P
 and all elevation fields agree at 8066).
 
 Next batch will continue alphabetically from `wa_diamond_in_the_rough` (see progress file).
+
+## 2026-07-28 — Pass 1, Batch 8
+
+Checked 10 routes across 6 peaks: Bear Mountain (Direct North Buttress), Dorado Needle (Direct
+Southwest Buttress, East Ridge/Inspiration Glacier), Pernod Spire (Direct West Face), South Early
+Winters Spire (Dolphin Chimney), Dome Peak (Dome Glacier), Dragontail Peak (Backbone Ridge, East
+Ridge via Aasgard Pass, Hidden Couloir, Gerber-Sink).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-28-batch-8.sql`):**
+- Bear Mountain's Direct North Buttress had the most significant errors this pass: `fa`,
+  `pitches`, `length_m`, `commitment`, and `season` all conflicted with the row's own
+  `overview`/`beta` prose and with AAC Publications/Steph Abegg/Mountain Project — the row looks
+  like it was populated with data from a different route or ascent record. It stored a 2016
+  party as the FA (that's a repeat ascent — the real FA was Alan Kearney and Bobby Knight,
+  September 1980, freed by Bryan Burdo and Yann Merrand in 1985) and stored 5 pitches/274m/Grade
+  IV/winter-ice season instead of the real 21 pitches/~670m/Grade V/summer-rock (Jul-Sep). Also
+  fixed a mislabeled entrance-fee claim on the same row — North Cascades NP charges no entrance
+  fee; the real requirement there is a USFS Northwest Forest Pass at the Hannegan Pass trailhead.
+- Dome Peak's Dome Glacier route had two copy-paste artifacts: a hazard note naming "Chelan
+  County" (Dome Peak is actually in Skagit County, confirmed via Wikipedia and the row's own
+  `emergency.county` field) and a parking-pass note naming the "Mountain Loop Highway" corridor
+  (the route's own `access.fees` field already correctly names Downey Creek Trailhead, a
+  different Darrington-RD corridor).
+- Two internal self-contradictions: Dorado Needle's Direct Southwest Buttress had a top-level
+  `gain_ft`/`loss_ft` of 7000/7000 that disagreed with its own `itinerary.days` breakdown and
+  `totalNote` (~7,200 ft) — aligned to the more granular figure. Dolphin Chimney (SEWS) had a
+  top-level `gain_ft` of 2100 that disagreed with its own nested `itinerary.days[0].gainFt`
+  (2200) for the identical day — aligned to the nested figure.
+- Dorado Needle's East Ridge/Inspiration Glacier had a stale "permit is free" claim; NPS now
+  charges a $10/person + $6 reservation fee for backcountry permits park-wide, already correctly
+  reflected on the sibling Direct Southwest Buttress route on the same peak.
+- Pernod Spire's Direct West Face had `commitment` = "III" contradicting its own `overview` text
+  ("an 8-pitch III/IV 5.10+ R line"); the FA report (AAJ, Bentley/Peritore 2006) also gives
+  III/IV.
+- Dragontail Peak's Gerber-Sink had its own summit waypoint stamped 8,841 ft, one foot off from
+  its own `high_point_ft` (8,840), the parent area's `elevation_ft` (8,840), and every sibling
+  route's summit waypoint (also 8,840) — aligned to 8,840.
+
+**New pattern — likely duplicate route rows (not auto-fixed, flagged for human merge/delete):**
+- `wa_dragontail_peak_backbone_ridge` and the separate row `wa_backbone_ridge` appear to be the
+  same real route (Backbone Ridge, Dragontail Peak) entered twice under two different IDs — same
+  name, same FA (Bonneville/Weigelt 1970, Fin Direct variation Cruver/Lewis 1975) worded almost
+  identically in both rows; one is a thin stub, the other fully enriched.
+- Same pattern: `wa_dragontail_peak_r4` and `wa_dragontail_peak_triple_couloirs`, both named
+  "Triple Couloirs" with the identical FA (Joiner/Nelson/Seman, May 1974).
+- This is distinct from (but the same family as) the id/name-mismatch flags in earlier batches
+  (`wa_big_kangaroo_southwest_rib`, `wa_colonial_peak_northeast`, `wa_corteo_peak_southeast_face`,
+  `wa_cutthroat_peak_r1`/`wa_cutthroat_south_buttress`) — here the rows are full duplicates of
+  each other, not a single mislabeled id.
+
+**Flagged for human review (not auto-fixed):**
+- Bear Mountain Direct North Buttress: a `face` note referencing "Gerber-Sink" (no such named
+  feature found near Bear Mountain in any source) and an `ice_grade` of WI5+ on what every source
+  confirms is a summer rock route — both look like further contamination from another route's
+  data, but no source was found to confirm a correct replacement value.
+- Dome Peak: the route's own `high_point_ft` (8,920) vs. the parent area's `elevation_ft` (8,926)
+  — a genuine source conflict (Wikipedia/Mountaineers.org/peakery say ~8,920+ vs. listsofjohn.com
+  LiDAR at 8,926), not a two-summit height difference; couldn't confirm which figure is right.
+- Dorado Needle's Direct Southwest Buttress: a `rope_note` describing "Grade III+" that appears
+  copy-pasted from the standard (non-Direct) Southwest Buttress it's a harder variant of, while
+  `alpine_grade`/`commitment` say "III" — unclear which grade belongs to which line.
+- Dolphin Chimney (SEWS): descent/rappel detail (via "Rabbit Ears," 3 raps) only weakly
+  corroborated, and even the corrected `gain_ft` (2200) is still below the ~2,607 ft implied by
+  the route's own trailhead/summit waypoints — flagging for a human to re-derive from a GPX/topo
+  rather than guessing further.
+
+**Clean (no errors found):** Dragontail Peak's Backbone Ridge (aside from the duplicate-ID flag
+above), East Ridge via Aasgard Pass, and Hidden Couloir (FA, grades, coordinates, permit/lottery
+details, and approach descriptions all corroborated against USFS/Mountaineers/guidebook sources).
+
+Next batch will continue alphabetically from `wa_dragontail_peak_r2` (see progress file).
