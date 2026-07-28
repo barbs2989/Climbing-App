@@ -2401,7 +2401,7 @@ function RetryReminder({logs,routes,onOpen,compact}){
   var show=compact?u.filter(function(x){return x.inSeason;}):u;
   if(!show.length)return null;
   return <div>
-    <div style={{fontSize:13,fontWeight:700,letterSpacing:0.5,textTransform:"uppercase",color:C.amber,borderLeft:"3px solid "+C.amber,paddingLeft:9,margin:"2px 0 9px"}}>{compact?"Back in season":"Unfinished business"}</div>
+    <div style={{fontSize:13,fontWeight:700,letterSpacing:0.5,textTransform:"uppercase",color:C.text,borderLeft:"3px solid "+C.blue,paddingLeft:9,margin:"2px 0 9px"}}>{compact?"Back in season":"Unfinished business"}</div>
     <div style={{background:C.card,borderRadius:14,padding:12,marginBottom:14,border:"1px solid "+C.border}}>
     <div style={{fontSize:12,color:C.textMuted,marginBottom:8}}>{compact?"You turned around — it's worth another go now":"Climbs you attempted but haven't topped out"}</div>
     {show.map(function(x,ix){return <div key={x.r.id} onClick={function(){onOpen(x.r);}} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"9px 0",cursor:"pointer",borderTop:ix?"1px solid "+C.border:"none"}}>
