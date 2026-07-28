@@ -499,4 +499,85 @@ Ridge via Aasgard Pass, Hidden Couloir, Gerber-Sink).
 above), East Ridge via Aasgard Pass, and Hidden Couloir (FA, grades, coordinates, permit/lottery
 details, and approach descriptions all corroborated against USFS/Mountaineers/guidebook sources).
 
-Next batch will continue alphabetically from `wa_dragontail_peak_r2` (see progress file).
+---
+
+## 2026-07-28 — Pass 1, Batch 9
+
+Checked 10 routes: Dragontail Peak's Pandora's Box, Triple Couloirs (r4), Serpentine Arête, and
+the separate Triple Couloirs row (`wa_dragontail_peak_triple_couloirs`); Witches Tower (E/SE
+Face); Chimney Rock (East Face); East McMillan Spire (West Ridge/Southwest Face); Snowking
+Mountain (East Ridge); Silver Star Mountain/Okanogan (East Ridge); Inspiration Peak (East Ridge).
+
+**Confirmed errors → fixes in `sql/2026-07-28-batch-9.sql`:**
+- **Pandora's Box** (`wa_dragontail_peak_r3`) — the biggest find this batch. A prior 2026-07-15
+  enrichment pass rewrote the route's *prose* to correctly describe it as a moderate, unroped,
+  SW-facing snow/scramble couloir, but never touched the *structured* fields, which still
+  described the debunked fabricated WI6 ice/mixed route it replaced. Fixed 8 self-contradicting
+  fields: grade_system/grade_num (was asserting WI6), disciplines (dropped ice/mixed), pitches
+  and pitch_detail (dropped an invented 7-pitch "M5 R" crux), rappels (dropped a rappel that
+  contradicted the route's own bail/descent_text fields), obj_haz (dropped a fabricated "R-rated
+  crux"), climate (was framed as a primary winter ice route, contradicting its own May-Jul
+  season), and approach/timing/itinerary text (dropped a self-contradictory "Northeast Couloir"
+  label on what its own `aspect` field already correctly calls SW-facing).
+- **Triple Couloirs** (`wa_dragontail_peak_r4`) — fixed 3 "Asgard Pass" → "Aasgard Pass"
+  misspellings (descent/descent_text/bail), and fixed `alpine_grade` "IV" → "D" to match the
+  column's documented French-adjectival format (see note below).
+- **Serpentine Arête** — its own waypoints/gpx arrays carried two conflicting entries for
+  "Aasgard Pass"; fixed the one used in the primary route line to match Wikipedia/GNIS
+  coordinates, which the record's *other* (unused) Aasgard Pass entry already matched.
+- **E/SE Face** (Witches Tower) — dist_km and gain_ft both contradicted the record's own
+  itinerary block; corrected to match (24.14 km / 5,700 ft, per the record's own day-by-day
+  breakdown and totalNote).
+- **East McMillan Spire** (West Ridge/Southwest Face) — gain_ft (5,835) didn't match loss_ft
+  (8,500) despite being a car-to-car out-and-back; corrected to 8,500.
+- **Snowking Mountain** (East Ridge) — same NPS-vs-Forest-Service copy-paste pattern as batch 8's
+  Bear Mountain fix: `access.land_manager`/`notes`/`rules` wrongly carried North Cascades NP
+  boilerplate (Boston Basin lottery, bear canisters) on a Mount Baker-Snoqualmie NF route,
+  contradicting this same record's own `access.landManager` and `emergency.notes` fields. Also
+  fixed a beta/pitch_detail claim that the route crosses the Snowking Glacier, contradicting the
+  record's own overview (which three times calls this the "non-glaciated" line), and two stale
+  "7,439 ft" itinerary mentions that were never updated after the record's own corrections field
+  resolved the summit to 7,433 ft.
+- **Inspiration Peak** (East Ridge) — `fa` said "...1959"; the record's own overview/corrections
+  fields already state the climb happened in October 1958 (the AAJ report was merely *published*
+  in 1959), confirmed via AAC Publications/Peak of the Week — only the `fa` field itself was
+  never updated.
+
+**One proposed fix reviewed and rejected:** an audit agent recommended changing
+`wa_dragontail_peak_triple_couloirs.alpine_grade` from "D" to "IV," citing sources that grade the
+route "Grade IV" — but that's the NCCS commitment grade, and `alpine_grade` is documented in
+`supabase/migrations/0006_composite_grades.sql` as the French adjectival scale (F/PD/AD/D/TD/ED).
+"D" is the schema-correct value; the fix was applied in the opposite direction instead, to r4
+(see above), whose alpine_grade wrongly held "IV".
+
+**Duplicate confirmed, still unresolved:** `wa_dragontail_peak_r4` and
+`wa_dragontail_peak_triple_couloirs` — flagged as a likely duplicate in batch 8 — were both
+directly audited this batch and independently reconfirmed as the same real route (identical FA,
+pitch count, length) stored under two IDs from what look like two separate enrichment passes.
+Still needs a human merge/delete decision, not an automated fix.
+
+**Flagged, not fixed:**
+- **E/SE Face** (Witches Tower) — descent_text/itinerary describe a mandatory roped "5.6" pitch
+  that contradicts the record's own grade fields ("4th class"). The record's own sourceNote
+  admits no trip report exists for "E/SE Face" by that name and that timing was extrapolated in
+  part from Witches Tower's separate, real "Southeast Face" route (a documented one-pitch 5.6
+  line) — content from that different route appears to have bled into this one. Needs a human
+  rewrite or a route split, not a value patch.
+- **Silver Star Mountain/Okanogan** (East Ridge) — no confirmed fixes at all. The record's own
+  `approach`/`beta` text names a Cedar Creek trailhead near Mazama, but its own `waypoints` start
+  at a different, named Silver Star Creek trailhead — a strong internal inconsistency suggesting
+  two distinct real routes (an easier Cedar-Creek-approached "SE Face & E Ridge" vs. the harder,
+  Silver-Star-Creek-approached full ridge line) were merged into one record. Every verification
+  source (SummitPost, Mountain Project, the Northwest Mountaineering Journal) returned HTTP 403
+  during this run, so this is entirely flagged for a human with guidebook/primary-source access
+  rather than resolved from search snippets.
+- Also flagged, lower priority: pitch-count ambiguities on Serpentine Arête, both Triple
+  Couloirs rows, and Inspiration Peak (guidebook sources vary and don't clearly contradict the
+  stored value); an FA-attribution gap on East McMillan Spire (sources confirm the Beckeys'
+  1940 McMillan-group activity but not an East-summit-specific FA); and a Cyclone Lake camp
+  elevation mismatch on Snowking Mountain.
+
+**Clean (no errors found):** Chimney Rock's East Face — correctly avoided the
+summit/sub-peak-elevation mismatch found on its sibling West Face route back in batch 5.
+
+Next batch will continue alphabetically from `wa_east_ridge_4` (see progress file).
