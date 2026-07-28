@@ -2639,7 +2639,7 @@ function Leaderboards({onView,onClimb,logs,connections,crewMates,friendState,onF
     if(disc==="rock")return Math.round(onsightsOf(pp,"rock","life")*rockW);
     return Math.round(onsightsOf(pp,"rock","life")*rockW+onsightsOf(pp,"bouldering","life")*boulderW);
   };
-  const perfPts=pp=>{const gi=disc==="bouldering"?vv(pp.boulderGrade):disc==="ice"?wv(pp.iceGrade):Math.max(gv(pp.sportGrade),gv(pp.tradGrade));const vol=disc==="all"?(pp.routesLogged||0):(sendsOf(pp,dn,"life")||pp.routesLogged||0);return Math.round(vol*(8+Math.max(0,gi)*Math.max(0,gi)*0.35));};
+  const perfPts=pp=>{const gi=disc==="bouldering"?vv(pp.boulderGrade):disc==="ice"?wv(pp.iceGrade):Math.max(gv(pp.sportGrade),gv(pp.tradGrade));let vol;if(disc==="all"){const sends=pp.stats&&pp.stats.sends||{};vol=(sends.rock&&sends.rock.life||0)+(sends.bouldering&&sends.bouldering.life||0)+(sends.alpine&&sends.alpine.life||0)+(sends.ice&&sends.ice.life||0)+(sends.scrambling&&sends.scrambling.life||0)+(sends.mountaineering&&sends.mountaineering.life||0);}else{vol=sendsOf(pp,dn,"life")||pp.routesLogged||0;}return Math.round(vol*(8+Math.max(0,gi)*Math.max(0,gi)*0.35));};
   const B={
     trust:{id:"trust",icon:"🛡️",label:"Trusted",val:pp=>vScore(pp),suffix:"trust",note:"Verified identity, peer vouches, and a clean safety record — what partners look at first."},
     catches:{id:"catches",icon:"🤝",label:"Belay",val:pp=>pp.catchLedger.totalCatches+(catchCredits&&catchCredits[pp.id]||0),suffix:"catches",note:"Falls safely caught. A track record of dependable belaying."},vouched:{id:"vouched",icon:"✍️",label:"Vouched",val:pp=>(pp.vouches?pp.vouches.length:0),suffix:"vouches",note:"Peer references from partners they’ve climbed with — reputation in their partners’ own words."},
