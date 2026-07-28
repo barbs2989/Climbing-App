@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "phase": 3,
+    "tier": "2",
+    "batch": "partial",
+    "agents_included": ["Agent 1: Alpine Volcanoes", "Agent 3: Leavenworth Rock"],
+    "timestamp": "2026-07-28T14:30:00Z",
+    "status": "QA_APPROVED_READY_FOR_SUPABASE_IMPORT"
+  },
+  "summary": {
+    "total_routes": 46,
+    "total_hazards": 72,
+    "by_agent": {
+      "alpine_volcanoes": {
+        "routes": 16,
+        "hazards": 42,
+        "coverage": "Rainier (8), Baker (3), Adams (3), Glacier Peak (2)"
+      },
+      "leavenworth_rock": {
+        "routes": 30,
+        "hazards": 30,
+        "coverage": "Snow Creek, Peshastin, Colchuck, Icicle, Tumwater canyons"
+      }
+    },
+    "hazard_types": {
+      "Crevasse": 12,
+      "Icefall": 10,
+      "Rockfall": 11,
+      "Glacier Hazard": 8,
+      "Loose Rock": 8,
+      "Weather": 2,
+      "Exposure": 1
+    },
+    "confidence_distribution": {
+      "medium": 45,
+      "medium-low": 23,
+      "low": 4
+    },
+    "estimated_coverage_impact": "10.82% → 11.7% (partial Tier 2)"
+  },
+  "quality_gates_met": [
+    "✓ All routes verified to exist in Supabase",
+    "✓ 2+ sources per hazard minimum (most have 3+)",
+    "✓ Seasonal variation documented",
+    "✓ Recent trip reports (2024-2026) included",
+    "✓ Incident/accident data sourced",
+    "✓ Confidence levels justified by source count",
+    "✓ No duplicate entries",
+    "✓ Schema compliance verified"
+  ],
+  "notes": {
+    "tier2_partial": "Agent 1 (Alpine Volcanoes) and Agent 3 (Leavenworth Rock) complete and QA-approved. Agents 5 & 6 (Secondary Peaks, Seasonal Routes) running in background; Phase 2 deployment to follow.",
+    "critical_findings": [
+      "Rainier Ingraham Direct abandoned by all guide services (AAI, RMI, IMG) in 2025",
+      "Mount Baker snow bridge collapse documented June 2025",
+      "Icicle Buttress documented fatalities (Leavenworth)",
+      "Camp Muir seasonal crevasse/rockfall profile well-documented"
+    ]
+  },
+  "deployment_status": "READY_FOR_IMMEDIATE_DEPLOYMENT"
+}
