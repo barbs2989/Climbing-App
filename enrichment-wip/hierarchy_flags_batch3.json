@@ -1,0 +1,22 @@
+[
+  {
+    "peakId": "wa_alpine_and_technical_traverses",
+    "name": "Alpine and Technical Traverses",
+    "note": "This entry is not a single summit: \"Alpine and Technical Traverses\" mirrors a Mountain Project grouping area (MP area id 116969335) for multi-day North Cascades traverse routes, and \"Ptarmigan Traverse\" (MP route id 116969398) is correctly filed under it — the \"North Cascades\" parent placement is geographically valid. However, the supplied coordinate (48.64649, -121.20827) is only a generic area-level pin: it matches Mountain Project's own coordinate for that area page and sits close to North Cascades National Park's general park-level coordinate (~48.71, -121.21), not any specific point on the actual ~30-mile route corridor, which runs from Cascade Pass (48.4683, -121.0600, 5,392 ft) south to Dome Peak (48.3034, -121.0295, 8,920+ ft) / the Downey Creek exit. No single elevationFt applies since this isn't one mountain."
+  },
+  {
+    "peakId": "wa_north_gardner_mountain",
+    "name": "North Gardner Mountain",
+    "note": "Name, coordinates (48.515°N/-120.502°W) and elevation (8,956 ft) are confirmed correct and cross-checked (Wikipedia, PeakVisor, SummitPost, Peakbagger all agree). However, the parent grouping \"Washington Pass\" is geographically loose: North Gardner Mountain sits roughly 10-11 km (6-7 mi) east-southeast of Washington Pass itself, in the separate Lake Chelan-Sawtooth Wilderness / Methow Mountains subrange, and is reached via the Wolf Creek Trailhead near Winthrop — not from the Washington Pass highway corridor that gives access to the granite spires (Liberty Bell Group, Silver Star, Early Winters Spires) the \"Washington Pass\" climbing area name usually denotes. This peak's one route is also an unroped Class 2-3 scramble/mountaineering objective, not technical rock climbing. Worth a hierarchy review, but returning full research under the given id as instructed."
+  },
+  {
+    "peakId": "wa_guye_peak",
+    "name": "Guye Peak",
+    "note": "The peak's own data (name/coords/elevation) checks out and is internally consistent across Mountain Project, SummitPost, Wikipedia, and Peakbagger. However, the given parentArea \"Central-East Cascades, Wenatchee, & Leavenworth\" looks geographically mismatched: Guye Peak sits in King County on the WEST side of Snoqualmie Pass (I-90 Exit 52), and Mountain Project itself files it under \"Central-West Cascades & Seattle,\" not the east-side Wenatchee/Leavenworth region (Chelan/Kittitas county area well to the northeast). Recommend re-parenting under a west-side/Snoqualmie Pass Cascades bucket rather than Wenatchee/Leavenworth."
+  },
+  {
+    "peakId": "wa_ed_wood_memorial_buttress",
+    "name": "Ed Wood Memorial Buttress",
+    "note": "Ed Wood Memorial Buttress is not a separately named, independent summit in USGS/Peakbagger data — it is an informally named rock buttress/sub-feature on the northwest (left) side of \"The Blob\" (aka The Rake), located just north of Himmelhorn in the Southern Pickets. The parent area \"Southern Pickets\" and the given coordinates (48.7716, -121.28356) are correct and match Mountain Project's area listing exactly. Because this is a buttress feature rather than a true summit, there is no single sourced \"peak elevation\" — Mountain Project lists 7,337 ft as the area's GPS reference point, while the ridge the route tops out on (The Blob) has a summit around 7,840 ft per StephAbegg.com. No red flags beyond this naming/classification nuance; proceed with the given id."
+  }
+]
