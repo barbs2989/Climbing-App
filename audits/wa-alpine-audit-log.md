@@ -581,3 +581,62 @@ Still needs a human merge/delete decision, not an automated fix.
 summit/sub-peak-elevation mismatch found on its sibling West Face route back in batch 5.
 
 Next batch will continue alphabetically from `wa_east_ridge_4` (see progress file).
+
+---
+
+## 2026-07-28 — Pass 1, Batch 10
+
+Checked 10 routes across 6 peaks: Mount Thomson (East Ridge), Pinnacle Peak/Tatoosh (East
+Ridge), Primus Peak (East Slope), East Twin Needle (South Route, Thread of Ice), Eldorado Peak
+(East Ridge/Inspiration Glacier, Northwest Couloir/Eldorado Glacier, Northeast Face, West
+Arete), Elephant Butte (Standard Route/Stetattle-Sourdough Ridge).
+
+**Confirmed errors → fixes in `sql/2026-07-28-batch-10.sql`:**
+- Elephant Butte (area row): `elevation_ft` (7384) and `prominence_ft` (1122) both disagreed
+  with Wikipedia (7,380 ft / 1,060 ft) — the area's own blurb text already correctly describes
+  "about 5,200 ft of relief in roughly one mile" above McMillan Creek, matching Wikipedia's
+  prominence writeup, and the route on this peak already stores the correct 7,380 ft in its own
+  `high_point_ft` and summit waypoint. The area row was the sole outlier; fixed
+  `elevation_ft`/`prominence_ft` and a stale "7,384-foot" figure in the blurb to match.
+- Eldorado Peak East Ridge/Inspiration Glacier: `high_point_ft` (8876) was the sole outlier
+  against Wikipedia's 8,872.9 ft figure, this peak's own `area.elevation_ft` (8872), and all
+  three other Eldorado Peak routes audited this batch (all already 8872) — one of which
+  (Northeast Face) already carries a `corrections` note settling this exact 8872/8876/8868
+  source spread. Fixed to 8872.
+- Thread of Ice (East Twin Needle): top-level `grade` was null despite `grade_system`/`grade_num`
+  (yds/7) already matching this row's own `rock_grade` (5.7) — same pattern as batch 6's Kimchi
+  Suicide Volcano fix. Filled `grade` = '5.7' to match the row's own verified sub-fields and the
+  "5.X" convention used by every other yds-graded route in this catalog.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- **East Twin Needle South Route — most significant open issue.** The row's own top-level
+  `grade` ("Grade III, 5.7") self-contradicts its own `rock_grade` (5.10a), `commitment` (II),
+  and even its own `beta` text, which quotes the FA account directly: "It is graded II 5.10a."
+  A web search turned up only one documented technical line on this peak from the cited 2003
+  Wallace/Haley/Bunker enchainment — a Southeast Ridge/Face rated II 5.10a — and no
+  independently-documented, distinctly-named 5.7 "South Route." This matches the row's own
+  pre-existing `corrections`/`data_quality` self-flags (already present before this audit) that
+  call the 5.7-vs-5.10a naming a genuine unresolved question. Left unfixed rather than guessing
+  which value should win, following the same precedent as prior batches' route-identity flags
+  (Apex Buttress, Argonaut Peak NE Ridge, Colonial Peak, Corteo Peak, Cutthroat Peak r1).
+- Thread of Ice: `ice_grade` (AI2) vs. a secondary source snippet referencing "AI3" for the same
+  route — couldn't confirm either figure directly; SummitPost, the AAC Publications page, and
+  the original CascadeClimbers.com trip report all returned HTTP 403 on direct fetch this
+  session. FA (Steph Abegg and Wayne Wallace, June 27, 2009) and the route's general
+  description (north-side couloir between the Twin Needles) were independently corroborated via
+  search snippets of those same blocked sources.
+- Mount Thomson East Ridge: `gain_ft` (3600) and `loss_ft` (4900) disagree by ~1,300 ft for what
+  the row describes as a straightforward out-and-back (ascend and descend the same East Ridge/
+  Bumblebee Pass line) — cumulative gain and loss should be equal on a retraced out-and-back.
+  No authoritative source with a precise track was found to determine which figure (if either)
+  is correct, so left flagged rather than guessed.
+
+**Clean (no errors found):** Pinnacle Peak East Ridge (elevation, grade, and the row's own
+pre-existing id-vs-grade correction note all check out), Primus Peak East Slope (elevation
+matches Wikipedia/Bulger-list figures and the area's own data), and three of the four Eldorado
+Peak routes — Northwest Couloir/Eldorado Glacier (its 8-pitch/480m stats match a SummitPost
+description of "eight 60m pitches" almost exactly), Northeast Face (elevation already correctly
+fixed in a prior pass), and West Arete (pitch count/length already reconciled via its own
+`corrections` note).
+
+Next batch will continue alphabetically from `wa_elephant_head_standard` (see progress file).
