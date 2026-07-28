@@ -145,35 +145,47 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     setSubmitting(true)
 
     try {
-      // For now, just show success (backend integration comes in Phase C)
-      // In production, this would POST to Supabase edge function
+      // Call Supabase edge function for validation
+      const SUPABASE_URL = 'https://ofuofhojhbcrcahuotya.supabase.co'
+      const response = await fetch(`${SUPABASE_URL}/functions/v1/validate-gps`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          routeId,
+          gpxData: parsed,
+          climberEmail: climbEmail || undefined,
+          climberName: climbName || undefined,
+          deviceType,
+          climbDate,
+          notes: notes || undefined
+        })
+      })
 
-      const submission = {
-        routeId,
-        gpxData: parsed,
-        climberEmail: climbEmail,
-        climberName: climbName,
-        deviceType,
-        climbDate,
-        notes,
-        qualityScore: qualityScore || 0
+      const result = await response.json()
+
+      if (!response.ok) {
+        setError(result.error || 'Submission failed')
+        return
       }
 
-      console.log('GPS Submission:', submission)
+      if (!result.success) {
+        setError(result.message || 'GPS validation failed')
+        return
+      }
 
-      // Simulate backend validation
-      await new Promise(r => setTimeout(r, 500))
-
+      // Success - update modal with actual quality score from server
+      setQualityScore(result.qualityScore)
       setShowSuccess(true)
       if (onSuccess) {
         onSuccess({
-          valid: true,
-          qualityScore: qualityScore || 0,
-          message: 'Track submitted successfully'
+          valid: result.valid,
+          qualityScore: result.qualityScore,
+          message: result.message,
+          submissionId: result.submissionId
         })
       }
     } catch (err) {
-      setError('Submission failed: ' + err.message)
+      setError('Submission failed: ' + (err instanceof Error ? err.message : 'Network error'))
     } finally {
       setSubmitting(false)
     }
