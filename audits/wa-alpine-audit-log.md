@@ -375,3 +375,57 @@ well-documented and cited in the row's own `data_quality`/`itinerary.sourceNote`
 looking like an outlier against sources describing the shorter standard route.
 
 Next batch will continue alphabetically from `wa_corteo_peak_southeast_face` (see progress file).
+
+---
+
+## 2026-07-28 — Pass 1, Batch 7
+
+Checked 10 routes across 6 peaks: Crater Mountain (Standard Route), Crooked Thumb Peak (South
+Route), Cutthroat Peak (Cauthorn-Wilson Couloir, Northeast Face, South Buttress Direct,
+Southeast Buttress, South Buttress, West Ridge), Dark Peak (Dark Glacier Route), Sloan Peak
+(Diamond In The Rough).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-28-batch-7.sql`):**
+- Three Cutthroat Peak routes (Cauthorn-Wilson Couloir, Northeast Face, Southeast Buttress) had
+  `high_point_ft` = 8050, an outlier matching no source found and contradicting each row's own
+  summit waypoint (already 8066) and Wikipedia's 8,066 ft figure for the peak. A fourth route,
+  South Buttress Direct, had the inverse mismatch — correct `high_point_ft` (8066) but a summit
+  waypoint stamped 8050. All four aligned to 8066, matching the parent area's own elevation_ft
+  (8065) and the two other Cutthroat routes in this batch (South Buttress, West Ridge) that were
+  already internally consistent.
+- Sloan Peak's area row blurb text read "Sloan Peak (7,839 ft)", contradicting its own
+  `elevation_ft` column (7835) — which matches Wikipedia's figure exactly, and matches the area's
+  own `prominence_ft` (3875) against Wikipedia too. Corrected the blurb's stale figure to 7,835 ft.
+
+**Flagged for human review (not auto-fixed):**
+- Crooked Thumb Peak South Route: three conflicting grades for the same summit headwall crux
+  within a single row — `grade` says "5.8+ (or 5.2 A1)", `rock_grade` repeats that, but the
+  summit waypoint's own note says "a 5.6 headwall," and `corrections` separately references a
+  "Grade III-IV/5.6" rating. Sourcing for this remote, rarely-repeated Picket Range route
+  (2 recorded ascents 18 years apart per the area's own blurb) is too sparse online to resolve
+  which figure is right — the row's own `corrections` field already acknowledges thin sourcing.
+- South Buttress Direct (`wa_cutthroat_peak_r1`) and South Buttress (`wa_cutthroat_south_buttress`)
+  both appear to be the same real Beckey/Gordon-1958 route (5.8, III, ~850 ft, 12 pitches, per
+  Mountain Project) entered twice under different route IDs and names — `r1`'s own `corrections`
+  field admits it was "matched" to the same MP "South Buttress" listing the other row also
+  describes, and no independent source for a separately-named "South Buttress Direct" was found.
+  Flagging as a likely duplicate for a human merge/rename decision, not auto-fixed. (Distinct
+  from Southeast Buttress, confirmed via Mountain Project/Mountaineers.org as a genuinely
+  different line — twin-gully approach to a separate notch, not the same route under another name.)
+- Dark Peak Dark Glacier Route: elevation given three different ways in three places — parent
+  area `elevation_ft` = 8518, route `high_point_ft` = 8507, and the summit waypoint's own
+  `elevFt` = 8504. External sources support both 8504 (Peakbagger, via search snippet) and 8507
+  (a metric-to-feet conversion elsewhere), but no source was found supporting 8518, and
+  Peakbagger's own page returned a 403 on direct fetch this session — flagging rather than
+  guessing which of the three is authoritative.
+- Cutthroat Peak Northeast Face: re-reviewed the row's pre-existing self-flagged note (no
+  primary source uses "Northeast Face" for a Cutthroat Peak route; the data is borrowed from the
+  well-documented "East Face" line) — still unresolved, still needs a human check against a
+  Beckey guidebook or the original AAJ report before renaming.
+
+**Clean (no errors found):** Crater Mountain Standard Route (elevation, waypoints, and approach
+details all internally consistent and consistent with area data) and Cutthroat Peak West Ridge
+(FA — Adam/Bedayn/Davis, July 22, 1937 — matches the parent area's own blurb almost verbatim,
+and all elevation fields agree at 8066).
+
+Next batch will continue alphabetically from `wa_diamond_in_the_rough` (see progress file).

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_corteo_peak_southeast_face",
+  "last_processed_id": "wa_diamond_in_the_rough",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -123,6 +123,27 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-07-28-batch-6.sql",
       "note": "Two more id/name-mismatch cases in the same family as batch 3's wa_big_kangaroo_southwest_rib: wa_colonial_peak_northeast's id says 'northeast' but the row (name, overview, face, waypoints) consistently describes the peak's real standard route, 'West Ridge / Colonial Glacier'; wa_corteo_peak_southeast_face's id says 'southeast_face' but the row describes the real standard 'Southwest Ridge / Standard Route'. Both flagged for a human rename decision, not auto-fixed. Also found and fixed a new pattern: Kimchi Suicide Volcano (Colfax Peak) had a null top-level grade despite already having verified ice_grade (AI4+) and rock_grade (M5) on file -- filled from the row's own verified sub-fields rather than external data."
+    },
+    {
+      "batch_number": 7,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_crater_mountain_standard_route",
+        "wa_crooked_thumb_peak_south_route",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir",
+        "wa_cutthroat_peak_northeast_face",
+        "wa_cutthroat_peak_r1",
+        "wa_cutthroat_peak_southeast_buttress",
+        "wa_cutthroat_south_buttress",
+        "wa_cutthroat_west_ridge",
+        "wa_dark_peak_dark_glacier_route",
+        "wa_diamond_in_the_rough"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 4,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-28-batch-7.sql",
+      "note": "Fixed a repeated 8050-vs-8066 elevation contradiction across four Cutthroat Peak routes (three had a stale high_point_ft, one had a stale summit waypoint), all now aligned to Wikipedia's 8,066 ft and the area's own elevation_ft. Also fixed a stale elevation typo in Sloan Peak's area blurb (7,839 -> 7,835 ft, matching its own elevation_ft/prominence_ft columns). New pattern this batch: wa_cutthroat_peak_r1 ('South Buttress Direct') and wa_cutthroat_south_buttress ('South Buttress') appear to be the same real Beckey/Gordon-1958 route entered twice under different IDs -- flagged as a likely duplicate needing a human merge/rename decision, not auto-fixed. Also flagged a 3-way grade conflict on Crooked Thumb Peak's South Route and a 3-way elevation conflict on Dark Peak (8518 area / 8507 route / 8504 waypoint) where sourcing couldn't confirm which figure is right."
     }
   ]
 }
