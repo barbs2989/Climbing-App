@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_blood_sport",
-  "total_in_scope_last_count": 422,
-  "total_wa_alpine_or_mountaineering_tagged": 557,
+  "last_processed_id": "wa_cascade_peak_east_ridge",
+  "total_in_scope_last_count": 428,
+  "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
     {
       "batch_number": 1,
@@ -60,6 +60,27 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-07-27-batch-3.sql",
       "note": "wa_big_kangaroo_southwest_rib flagged: its own id implies a route ('Southwest Rib') that belongs to a different peak entirely; row content is correct for Big Kangaroo's real 'West Face/West Route' but the id itself needs a human rename decision, not auto-fixed."
+    },
+    {
+      "batch_number": 4,
+      "date": "2026-07-28",
+      "route_ids": [
+        "wa_bonanza_peak_mary_green_glacier",
+        "wa_bonanza_peak_northeast_buttress",
+        "wa_boston_peak_southeast_face",
+        "wa_boston_peak_southwest_face",
+        "wa_boving_christensen",
+        "wa_boving_roofs",
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_burgundy_spire_north_face",
+        "wa_cascade_peak_east_ridge"
+      ],
+      "confirmed_errors_fixed": 21,
+      "flagged_for_human_review": 15,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-28-batch-4.sql",
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     }
   ]
 }

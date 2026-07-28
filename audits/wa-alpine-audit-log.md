@@ -166,3 +166,84 @@ Route), Black Peak (Northeast Ridge), Guye Peak (Blood Sport).
   Bacon Peak flag).
 
 Next batch will continue alphabetically from `wa_blood_sport` (see progress file).
+
+---
+
+## 2026-07-28 — Pass 1, Batch 4
+
+Checked 10 routes across 8 peaks, continuing alphabetically: Bonanza Peak (Mary Green Glacier,
+Northeast Buttress), Boston Peak (Southeast Face, Southwest Face), Prusik Peak (Boving-
+Christensen), South Early Winters Spire (Boving Roofs), Buckner Mountain (North Face, Southwest
+Face), Burgundy Spire (North Face), Cascade Peak (East Ridge).
+
+**Confirmed errors → fixes in `sql/2026-07-28-batch-4.sql`:**
+- Bonanza Peak (both routes): `access.land_manager` named a nonexistent "Chiwawa/Entiat Ranger
+  Districts" — corrected to Chelan Ranger District, matching the rows' own other fields and USFS.
+- Bonanza Peak Mary Green Glacier: FA climber misspelled "Curtis I. James" → "Curtis Ijames"
+  (Mazamas' own 100-Year Index); a summit waypoint's rappel count ("three") contradicted the rest
+  of the row ("four"); two waypoints had geometrically impossible coordinates, fixed using the
+  sibling Northeast Buttress route's correct values for the same landmarks.
+- Bonanza Peak Northeast Buttress: `rock_grade` "5.7" understated the route vs. its own overview
+  ("5.7/5.8") and AAC sourcing.
+- Boston Peak Southeast Face: `approach` described Sahale Peak's approach (Cascade Pass/Sahale
+  Arm/Sahale Glacier Camp), not this route's — rewritten to match the row's own already-correct
+  beta/itinerary/waypoints (direct Boston Basin approach from Cascade River Road).
+- Boston Peak Southwest Face: wrong NPS entrance-pass claim (North Cascades charges none) and an
+  unrealistic "45 minutes to hospital" figure, both corrected to match the sibling SE Face route.
+- Prusik Peak Boving-Christensen: first waypoint's name/elevation was Snow Lakes Trailhead's data
+  attached to Stuart Lake Trailhead's coordinates; summit waypoint elevation (7,916) contradicted
+  the row's own high_point_ft (8,008); itinerary total-gain note (4,500 ft) contradicted its own
+  day-by-day sum (5,200 ft).
+- South Early Winters Spire Boving Roofs: `face` said "West face" against the row's own "SW"
+  aspect; `rope_note` named the wrong descent (SW Couloir instead of the row's own documented
+  South Arete/Rabbit Ears line).
+- Buckner Mountain North Face: `commitment` "III" contradicted the row's own "Grade II" and
+  Mountaineers.org.
+- Buckner Mountain Southwest Face: `dist_km`/`gain_ft`/`loss_ft` (9.4/3000/3000) all contradicted
+  the row's own itinerary sourcing and day-by-day sums (32.19 km / 7,400 ft); `obj_haz` listed a
+  crevasse hazard the row's own (more recent) `seasonal_hazards` explicitly rules out.
+- Burgundy Spire North Face: `pitches`/`length_m` (6/183) undercounted vs. the row's own 7-pitch
+  detail array (sum 244m); a Northwest Forest Pass requirement was wrongly applied to a pullout
+  the row's own access narrative doesn't include; `high_point_ft` (8,483) was corrected to 8,400
+  to match the row's own waypoint and climbing-literature sourcing; a stale `corrections` note
+  described a rack-size inconsistency that no longer exists in the row.
+- Cascade Peak East Ridge: two waypoint elevations contradicted the row's own high_point_ft/
+  approach text; top-level `grade` ("Class 4") contradicted the row's own "5.8" rock_grade.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- **Cascade Peak East Ridge — most significant open issue.** The row's own `overview` says it
+  was rewritten to describe Cascade Peak's real route (NW Chimney) after discovering the
+  previous content actually described Johannesburg Mountain's East Ridge — but `aspect`, `face`,
+  part of `approach`, the stale `corrections` blob, and a `seasonal_guidance` block were never
+  updated to match. A half-corrected row; needs a human rewrite or split, not a field patch.
+- **Boston Peak Southwest Face — second major issue.** Named/aspected as a Southwest Face route
+  but its beta duplicates the sibling SE Face route almost verbatim, while its own `fa`/
+  `corrections` fields describe the real West Face route (aspect W, 1956 FA, 2024 first winter
+  ascent). Internally incoherent about which route it documents; needs a human rewrite or
+  retirement decision.
+- Boston Peak Southeast Face: an unverified "real fatality history" claim, and two minor (≤100
+  ft) elevation/col discrepancies across sources.
+- Bonanza Peak Mary Green Glacier: one waypoint ("Moat crossing") already self-flagged as
+  corrupted; confirmed geometrically impossible but no authoritative replacement found.
+- Bonanza Peak Northeast Buttress: possible `discipline`/`ice_grade` misclassification (no actual
+  ice climbing described) — same pattern as prior batches' Alpine Lookout/Blood Sport flags.
+- Prusik Peak Boving-Christensen: a pitch-length sum vs. total-length contradiction (can't tell
+  which pitch is wrong); a 30%-vs-25% lottery walk-up figure conflict; a 12-vs-8 group-size figure
+  that may describe two different legitimate scopes rather than an error; a 1-day lottery-season
+  date discrepancy.
+- South Early Winters Spire Boving Roofs: the route's `itinerary`/`timing` fields describe
+  rappelling off after 3 pitches, contradicting the row's own descent fields (continue to the
+  true summit) — direction confirmed and partly fixed above, but the full narrative/numeric
+  rewrite needs human-researched replacement hours/mileage, not a guess. FA year, a trailhead
+  elevation conflict, and one pitch length also unconfirmed.
+- Buckner Mountain North Face: `approach`/itinerary narrative and `waypoints`/`gpx` describe two
+  different, both-legitimate approaches to the same route — needs a human to pick one and align
+  the row.
+- Buckner Mountain Southwest Face: an "11th on the Bulger list" ranking and an "August 2025
+  washout" claim couldn't be independently confirmed.
+- Burgundy Spire North Face: elevation sourcing splits between climbing literature (8,400 ft,
+  used above) and peak-database/LIDAR figures (8,492 ft) — a human should pick the convention.
+  A waypoint note also contains leftover analyst commentary about an unrelated trailhead that
+  doesn't correspond to anything else in the row.
+
+Next batch will continue alphabetically from `wa_cascade_peak_east_ridge` (see progress file).
