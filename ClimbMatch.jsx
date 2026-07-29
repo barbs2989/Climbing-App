@@ -81,11 +81,19 @@ let UNITS="imperial";let VOUCH_BOOST={};let MY_STARS={};let RESPONSE_RATES={};
 function computeResponseRates(msgs,crewMsgs,crews){function rateFor(threads,triggerFn,replyFn){var total=0,responded=0;threads.forEach(function(arr){var lastIdx=-1;arr.forEach(function(m,i){if(triggerFn(m))lastIdx=i;});if(lastIdx<0)return;total++;if(arr.slice(lastIdx+1).some(replyFn))responded++;});return total?Math.round(responded/total*100):null;}var mine=function(m){return m.from==="me";};var rates={};var allThreads=Object.keys(msgs||{}).map(function(k){return msgs[k];}).concat(Object.keys(crewMsgs||{}).map(function(k){return crewMsgs[k];}));var meRate=rateFor(allThreads,function(m){return !mine(m);},mine);if(meRate!=null)rates[0]=meRate;var ids=new Set();Object.keys(msgs||{}).forEach(function(k){ids.add(Number(k));});(crews||[]).forEach(function(cr){(cr.members||[]).forEach(function(m){if(m.climberId!==0)ids.add(m.climberId);});});ids.forEach(function(id){var threads=[];if(msgs&&msgs[id])threads.push(msgs[id]);(crews||[]).forEach(function(cr){if((cr.members||[]).some(function(m){return m.climberId===id;})&&crewMsgs&&crewMsgs[cr.id])threads.push(crewMsgs[cr.id]);});var r=rateFor(threads,mine,function(m){return m.from===id;});if(r!=null)rates[id]=r;});return rates;}function protOf(r){if(!r)return null;var c=catOf(r);return (c==="trad"||c==="sport")?c:null;}function gradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(r.grade);return i<0?-1:i/gl.length;}function avgStars(r){var a=(r&&r.activity)||[];return a.length?Math.round(a.reduce(function(s,x){return s+(x.stars||0);},0)/a.length):Math.round((r&&r.stars)||0);}function vScore(c){if(!c)return 50;var tf=trustFactors(c);var sum=0,max=0;tf.forEach(function(f){sum+=f.pts;max+=f.max;});return max?Math.min(99,Math.round(sum/max*99)):0;}
 const uImp=()=>UNITS!=="metric";
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
-const uElev=ft=>uImp()?Math.round(ft).toLocaleString()+" ft":Math.round(ft/3.28084).toLocaleString()+" m";
-const uDist=km=>uImp()?(km*0.621371).toFixed(1)+" mi":km+" km";
+// Absent-value guard for every unit formatter below. Without it these helpers do
+// bare arithmetic on whatever they are handed: an undefined elevation rendered
+// "NaN ft" in the waypoint list (183 routes), an undefined distance "NaN mi", and
+// -- quieter and worse -- a null distance rendered a confident "0 mi", claiming a
+// summit sits zero miles from the trailhead. 0 is a real measurement and is kept;
+// only genuinely missing values become a dash.
+const NOVAL="—";
+const _uNum=v=>(v===null||v===undefined||v===""||isNaN(+v))?null:+v;
+const uElev=ft=>{const n=_uNum(ft);return n===null?NOVAL:(uImp()?Math.round(n).toLocaleString()+" ft":Math.round(n/3.28084).toLocaleString()+" m");};
+const uDist=km=>{const n=_uNum(km);return n===null?NOVAL:(uImp()?(n*0.621371).toFixed(1)+" mi":n+" km");};
 const effDistKm=route=>{const days=route&&route.itinerary&&route.itinerary.days;const totMi=(days&&days.length)?days.reduce((a,d)=>a+(d.miles||0),0):null;return totMi?(totMi*1.60934)/2:(route&&route.distKm);};
-const uDistMi=mi=>uImp()?(Math.round(mi*100)/100)+" mi":(mi*1.60934).toFixed(1)+" km";
-const uLen=m=>uImp()?Math.round(m*3.28084)+" ft":m+" m";
+const uDistMi=mi=>{const n=_uNum(mi);return n===null?NOVAL:(uImp()?(Math.round(n*100)/100)+" mi":(n*1.60934).toFixed(1)+" km");};
+const uLen=m=>{const n=_uNum(m);return n===null?NOVAL:(uImp()?Math.round(n*3.28084)+" ft":n+" m");};
 const routeAscentFt=route=>{if(route.gainFt!=null&&route.gainFt>0)return route.gainFt;const itin=(route.itinerary&&route.itinerary.days&&route.itinerary.days.length)?route.itinerary.days.reduce((a,d)=>a+(d.gainFt||0),0):0;return itin||route.gainFt||null;};
 const uMass=lb=>uImp()?lb+" lb":Math.round(lb*0.4536)+" kg";
 function catOf(r){return r.discipline==="rock"?(r.style||"Trad").toLowerCase():r.discipline;} function rDiscs(r){return r.disciplines&&r.disciplines.length?r.disciplines:[catOf(r)];} function gradeLabelRaw(r){return r.rockGrade||r.rock_grade||r.iceGrade||r.ice_grade||r.alpineGrade||r.alpine_grade||r.grade||r.commitment||"";}
@@ -845,7 +853,7 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
     if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
     if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
+    if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(route.pitches>0&&rappelCount(route)!=null)stats.push(["Rappels",rappelCount(route)+"x",C.red]);
@@ -857,7 +865,7 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
     if(hasAscent)stats.push(["Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(hasDist)stats.push(["Approach dist",uDist(distKm),C.blue]);
     if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
-    stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
+    if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(rappelCount(route)!=null)stats.push(["Rappels",rappelCount(route)+"x",C.red]);
@@ -958,6 +966,11 @@ function Calculator({route,fit:fitProp,setFit:setFitProp}){
   const hasPublishedSummitH=route.timing&&route.timing.summitTimeHrs!=null;
   const derivedSummitH=(!hasPublishedSummitH&&route.timing&&route.timing.totalHrs!=null)?Math.max(0,route.timing.totalHrs-(route.timing.approachTimeHrs||0)-(route.timing.descentTimeHrs||0)):null;
   const hasDerivedSummitH=derivedSummitH!=null&&derivedSummitH>0;
+  // scarfHrs() coerces a missing distance or gain to 0, so a route with neither
+  // reported "0.0hr Approach / 0.0hr Total" and a return time equal to the
+  // departure minute -- a multi-day Olympic approach shown as summiting at 6:00 AM.
+  const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
+  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
   const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade),15),totalH=hikeH+techH+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=sumH+(route.pitches>0?techH*0.7:hikeH*0.75);
   const fmt=h=>{let total=Math.round(h*60);const day=Math.floor(total/1440);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   const late=retH>18.5,sumLate=sumH>13,multiDay=route.campOptions&&route.campOptions.some(c=>c.stars>0);
@@ -974,14 +987,14 @@ function Calculator({route,fit:fitProp,setFit:setFitProp}){
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{hikeH.toFixed(1)}hr</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{hasHikeInputs?hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{(hasPublishedSummitH||hasDerivedSummitH||route.pitches)?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Climbing</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{totalH.toFixed(1)}hr</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
       </div>
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
-        <div style={{textAlign:"center",background:sumLate?C.redBg:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:C.green}}>{fmt(sumH)}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>Leave earlier</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:C.green}}>{fmt(retH)}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>After dark</div>:null}</div>
+        <div style={{textAlign:"center",background:sumLate?C.redBg:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:C.green}}>{hasAnyEstimate?fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>Leave earlier</div>:null}</div>
+        <div style={{textAlign:"center",background:late?C.redBg:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:C.green}}>{hasAnyEstimate?fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>After dark</div>:null}</div>
       </div>
     </div>
     {(route.segments||[]).map((seg,i)=>{
