@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-schema-drift.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-schema-drift.mjs && vite build",
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
+    "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs"
   },

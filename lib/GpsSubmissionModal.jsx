@@ -27,6 +27,10 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
   const [validationIssues, setValidationIssues] = useState([])
   const [confirmations, setConfirmations] = useState({ climbed: false, isRoute: false })
   const [showSuccess, setShowSuccess] = useState(false)
+  // Whether a receipt email actually reached the climber. Starts false and is only
+  // set true if notify-gps-climber reports a real send, so the success screen never
+  // promises an email that a missing/failing mail provider will not deliver.
+  const [emailed, setEmailed] = useState(false)
 
   const handlePaste = (e) => {
     const text = e.target.value
@@ -173,15 +177,48 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         return
       }
 
+      // Trigger Phase C notifications asynchronously
+      const submissionId = result.submissionId
+      const qualityScore = result.qualityScore
+
+      // Notify climber. Email is optional on this form, and the function rejects a
+      // blank one — skip the round-trip rather than fire a request that 400s.
+      if (climbEmail) fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submissionId,
+          climberEmail: climbEmail,
+          climberName: climbName || 'Climber',
+          routeName,
+          qualityScore
+        })
+      }).then(r => r.json())
+        .then(d => { if (d && d.emailed) setEmailed(true) })
+        .catch(err => console.error('Climber notification failed:', err))
+
+      // Notify admin
+      fetch(`${SUPABASE_URL}/functions/v1/notify-gps-admin`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submissionId,
+          routeName,
+          qualityScore,
+          climberName: climbName,
+          climberEmail: climbEmail
+        })
+      }).catch(err => console.error('Admin notification failed:', err))
+
       // Success - update modal with actual quality score from server
-      setQualityScore(result.qualityScore)
+      setQualityScore(qualityScore)
       setShowSuccess(true)
       if (onSuccess) {
         onSuccess({
           valid: result.valid,
-          qualityScore: result.qualityScore,
+          qualityScore: qualityScore,
           message: result.message,
-          submissionId: result.submissionId
+          submissionId: submissionId
         })
       }
     } catch (err) {
@@ -206,6 +243,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             </div>
             <p style={{...styles.textSmall, color: C.text70}}>
               Once it's approved your track shows up on this route's page. Thank you for helping the climbing community!
+              {emailed ? " We've emailed you a receipt." : ""}
             </p>
             <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>
               Done
