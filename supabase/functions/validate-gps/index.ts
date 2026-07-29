@@ -185,7 +185,11 @@ serve(async (req) => {
         climb_date: climbDate,
         notes: notes,
         quality_score: validation.score,
-        status: validation.score >= 90 ? "approved" : "pending",
+        // Always pending. This endpoint is unauthenticated, so it must never
+        // be able to mark a submission approved -- approval is the admin-only
+        // job of approve-gps-submission, which is what merges GPX into the
+        // route. A high score only *recommends* approval (see `recommendation`).
+        status: "pending",
         issues: validation.issues
       })
       .select()
@@ -213,7 +217,7 @@ serve(async (req) => {
       submissionId: submission.id,
       message:
         validation.score >= 90
-          ? "Excellent track! Will be auto-approved soon."
+          ? "Excellent track! Queued for review — it should clear quickly."
           : validation.score >= 70
             ? "Good track! Will be reviewed within 24 hours."
             : "Track needs improvement. Please provide more waypoints or check coordinates."
