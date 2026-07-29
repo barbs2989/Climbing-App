@@ -3577,16 +3577,14 @@ export default function App(){
     const crew=crews.find(c=>c.id===cid);if(!crew)return;
     const myMsg=isImage?{from:"me",name:"You",image:text,ts:Date.now()}:{from:"me",name:"You",text,ts:Date.now()};
     setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),myMsg]}));setMsgInput("");
-    if(notifPrefs.messages&&chatCrewRef.current!==cid)setCrewUnread(u=>({...u,[cid]:(u[cid]||0)+1}));
-    if(uid&&crew._dbId){sendCrewMessage(crew._dbId,uid,text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
+    if(uid&&crew._dbId){sendCrewMessage(crew._dbId,uid,isImage?"":text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
   };
   const sendMsg=(pid,text,opts)=>{
     const isImage=!!(opts&&opts.image);
     if(!isImage&&!text.trim())return;
     const myMsg=isImage?{from:"me",image:text,ts:Date.now()}:{from:"me",text,ts:Date.now()};
     setMsgs(m=>({...m,[pid]:[...(m[pid]||[]),myMsg]}));setMsgInput("");
-    if(notifPrefs.messages&&chatWithRef.current!==pid)setDmUnread(u=>({...u,[pid]:(u[pid]||0)+1}));
-    if(uid){sendDirectMessage(pid,uid,text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
+    if(uid){sendDirectMessage(pid,uid,isImage?"":text,isImage?text:null).catch(function(){showToast("Message failed to send — check your connection and retry");});}
   };
   
   const countMatch=(o)=>{o=o||{};const dl=o.disc!==undefined?(o.disc==="All"?[]:[o.disc]):discSel;const ff={features:o.features!==undefined?o.features:filters.features,aspect:o.aspect!==undefined?o.aspect:filters.aspect,gradeMin:o.gradeMin!==undefined?o.gradeMin:filters.gradeMin,gradeMax:o.gradeMax!==undefined?o.gradeMax:filters.gradeMax,maxMi:filters.maxMi,minStars:o.minStars!==undefined?o.minStars:filters.minStars,minReports:o.minReports!==undefined?o.minReports:filters.minReports,pitches:o.pitches!==undefined?o.pitches:filters.pitches,month:o.month!==undefined?o.month:filters.month,verifiedOnly:o.verifiedOnly!==undefined?o.verifiedOnly:filters.verifiedOnly,permitFree:o.permitFree!==undefined?o.permitFree:filters.permitFree,classicOnly:o.classicOnly!==undefined?o.classicOnly:filters.classicOnly,cellOnly:o.cellOnly!==undefined?o.cellOnly:filters.cellOnly,rock:o.rock!==undefined?o.rock:filters.rock,descent:o.descent!==undefined?o.descent:filters.descent,commit:o.commit!==undefined?o.commit:filters.commit,approach:o.approach!==undefined?o.approach:filters.approach,length:o.length!==undefined?o.length:filters.length,gain:o.gain!==undefined?o.gain:filters.gain,shape:o.shape!==undefined?o.shape:filters.shape,steep:o.steep!==undefined?o.steep:filters.steep,exposure:o.exposure!==undefined?o.exposure:filters.exposure,trs:o.trs!==undefined?o.trs:filters.trs,sun:o.sun!==undefined?o.sun:filters.sun,mine:o.mine!==undefined?o.mine:filters.mine};const sq=search.toLowerCase();return ROUTES.filter(r=>inArea(r.mountainId,selArea&&selArea.id)&&(!dl.length||dl.some(_d=>rDiscs(r).includes(_d)))&&(!search||fuzzyMatch(search,r.name)||fuzzyMatch(search,areaPathNames(r.mountainId)))&&passesFilters(r,ff)&&mineMatch(r,ff.mine)).length;};
