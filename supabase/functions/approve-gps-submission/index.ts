@@ -85,13 +85,14 @@ serve(async (req) => {
         const existingGpx = route.gpx || [];
         const mergedGpx = [...existingGpx, ...submission.gpx_data];
 
+        // routes has no gps_contributor_email or updated_at column — writing
+        // unknown columns makes PostgREST reject the whole PATCH (42703), so
+        // the merge would silently never happen. Verified against live schema.
         await supabase
           .from("routes")
           .update({
             gpx: mergedGpx,
             gps_contributor_name: submission.climber_name,
-            gps_contributor_email: submission.climber_email,
-            updated_at: new Date().toISOString(),
           })
           .eq("id", submission.route_id);
 

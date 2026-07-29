@@ -41,7 +41,7 @@ const GLOBALS = new Set([
   // DOM / browser
   "AbortController","AbortSignal","Blob","CanvasRenderingContext2D","CustomEvent","DOMParser","Document",
   "Element","Event","EventTarget","File","FileReader","FormData","HTMLElement","Headers","Image","Audio",
-  "IntersectionObserver","MutationObserver","Node","Notification","ReadableStream","Request","ResizeObserver",
+  "IDBKeyRange","IntersectionObserver","MutationObserver","Node","Notification","ReadableStream","Request","ResizeObserver",
   "Response","Storage","TextDecoder","TextEncoder","URL","URLSearchParams","WebSocket","Window","Worker",
   "XMLHttpRequest","alert","atob","btoa","cancelAnimationFrame","clearInterval","clearTimeout","confirm",
   "console","crypto","document","fetch","getComputedStyle","history","indexedDB","localStorage","location",
