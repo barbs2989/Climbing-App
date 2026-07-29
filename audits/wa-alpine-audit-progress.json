@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_elephant_butte_standard_route",
+  "last_processed_id": "wa_forbidden_peak_north_ridge",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -207,6 +207,27 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-07-28-batch-10.sql",
       "note": "Elephant Butte's area row (elevation_ft/prominence_ft) was the sole outlier against Wikipedia and its own route/waypoint data -- fixed. Eldorado Peak East Ridge's high_point_ft (8876) was the sole outlier against 3 sibling Eldorado routes plus a prior batch's own corrections note settling on 8872 -- fixed. Thread of Ice had a null top-level grade despite verified grade_num/rock_grade on file, same pattern as batch 6's Kimchi fix -- filled. Biggest open flag: East Twin Needle South Route's top-level grade text (5.7) contradicts its own rock_grade/commitment/beta-quoted source grade (II 5.10a) -- left flagged per the established route-identity-conflation precedent rather than guessed."
+    },
+    {
+      "batch_number": 11,
+      "date": "2026-07-29",
+      "route_ids": [
+        "wa_elephant_head_standard",
+        "wa_energizer_bunny",
+        "wa_fire_on_the_mountain",
+        "wa_fish_whistle",
+        "wa_flora_mountain_southwest_slope",
+        "wa_flycatcher_buttress",
+        "wa_forbidden_peak_east_face_catscratch",
+        "wa_forbidden_peak_east_ridge",
+        "wa_forbidden_peak_east_ridge_direct",
+        "wa_forbidden_peak_north_ridge"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 4,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-07-29-batch-11.sql",
+      "note": "Forbidden Peak North Ridge had a wildly wrong high_point_ft (10781, not Forbidden Peak at all -- real summit is 8815, confirmed by its own waypoint + area row + 3 sibling routes) and a grade_num (3) that looks like the \"III\" commitment token misread instead of the 5.6 YDS grade -- both fixed. Biggest open flag: wa_forbidden_peak_east_ridge is very likely a duplicate of wa_forbidden_peak_east_ridge_direct (same FA party/year, same grade/pitch count, and the row's own data_quality note already says so) -- left flagged rather than auto-merged/deleted per guardrails. Also flagged: East Face/Catscratch's own corrections note says the route name conflates two unrelated Forbidden Peak features and its 5.9 grade fields don't match the class-4 terrain described; Fire on the Mountain has three disagreeing length/pitch-count figures (pitch_detail sum 380m vs beta 333m vs stored length_m 457m); Elephant Head Standard's FA (\"Jim Nelson 1982, Northwest Ridge\") doesn't match the Dana Glacier line this row actually describes."
     }
   ]
 }
