@@ -640,3 +640,122 @@ fixed in a prior pass), and West Arete (pitch count/length already reconciled vi
 `corrections` note).
 
 Next batch will continue alphabetically from `wa_elephant_head_standard` (see progress file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 11
+
+Checked 10 routes across 7 peaks: Elephant Head (Standard Route), Prusik Peak (Energizer
+Bunny), Sloan Peak (Fire on the Mountain), Vesper Peak (Fish & Whistle), Flora Mountain
+(Southwest Slope), North Early Winters Spire (Flycatcher Buttress), Forbidden Peak (East
+Face/Catscratch, East Ridge, East Ridge Direct, North Ridge).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-11.sql`:**
+- Forbidden Peak North Ridge: `high_point_ft` stored 10,781 ft, which isn't Forbidden Peak at
+  all — the route's own summit waypoint (8,815 ft), the parent area row, and all three other
+  Forbidden Peak routes in this batch agree on 8,815 ft. Fixed to 8,815.
+- Forbidden Peak North Ridge: `grade_num` stored 3 against its own `grade` ("Grade III, 5.6")
+  and `rock_grade` ("5.6") — looks like the "III" commitment token got read as the number
+  instead of the YDS grade, inconsistent with how every other route in this batch populates
+  `grade_num` (digits after "5."). Fixed to 6.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- **Forbidden Peak East Ridge vs. East Ridge Direct — likely duplicate routes.** Same FA party
+  (Beckey/Hieb/Cooper/Claunch, 1958), same grade (5.8/5.8-), same pitch count (6), and East
+  Ridge's own `overview` text literally opens with "This is Forbidden's East Ridge Direct...".
+  East Ridge's own `data_quality` field already states: "no separate, easier 'East Ridge'
+  (non-direct) named route on Forbidden could be verified... the two catalog entries should
+  probably be reconciled/deduplicated." Left unfixed — merging/deleting a duplicate route row
+  is a human decision, and outside this audit's guardrails (no deletes).
+- Forbidden Peak East Face/Catscratch: this row's own `corrections` field already documents
+  that the name conflates two unrelated Forbidden Peak features — "Catscratch" (Cat Scratch
+  Gullies) is a class-4 approach to the **West** Ridge notch, not an east-side route, while the
+  content actually describes the "East Ledges" line. The stored technical grade fields
+  (`rock_grade` 5.9, `grade_num` 9, `alpine_grade` D) also don't match the class-4 terrain the
+  row's own `beta` describes. Needs a human call on renaming/re-grading/splitting rather than a
+  single-field fix.
+- Fire on the Mountain (Sloan Peak): three disagreeing length/pitch figures on one row —
+  `pitch_detail` entries sum to 380 m, `beta` text says "1,100 ft (333 m)", and the stored
+  `length_m` is 457 m; `pitches` is 8 but the `overview` text says 7. Already partly
+  self-flagged in `data_quality` ("some sources cite 8 pitches instead of 7"). No authoritative
+  source found to settle which figure is right, so left flagged rather than guessed.
+- Elephant Head Standard Route: `fa` reads "Jim Nelson, August 6, 1982 (Northwest Ridge)", but
+  this row's `beta`/`overview`/`approach` describe a Dana Glacier line, not a Northwest Ridge —
+  and the row's own `data_quality` gap says no FA history was actually found for Elephant Head
+  itself. The FA looks like it may belong to a different line/peak. Left flagged; no reliable
+  source found to confirm or replace it.
+
+**Clean (no errors found):** Energizer Bunny (Prusik Peak — FA, grade, and rack details
+cross-check against the route's own trip-report-sourced data with no contradictions), Fish &
+Whistle (Vesper Peak), Flora Mountain Southwest Slope (elevation already correctly fixed in a
+prior pass, per its own `corrections` note), Flycatcher Buttress (North Early Winters Spire —
+rack/grade/pitch count verified against Mountain Project per its own `corrections` field), and
+Forbidden Peak East Ridge Direct (internally consistent on its own; the duplication concern
+above is attributed to the sibling `wa_forbidden_peak_east_ridge` row, not this one).
+
+Next batch will continue alphabetically from `wa_forbidden_peak_northeast_face` (see progress
+file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 12
+
+Checked 10 routes across 5 peaks: Forbidden Peak (Northeast Face, Northwest Face, West Ridge),
+Fortress Mountain (East Ridge, Northeast Face, Southwest Face), Fortune Peak (East Slope,
+Standard Route), South Early Winters Spire (Free Mojo), Frenzel Spitz (South Route).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-12.sql`:**
+- Forbidden Peak Northeast Face: `fa` stored the FA party/year of a completely different route
+  (Beckey/Burgner/Nephew, 1972 — confirmed via Mountain Project/SummitPost/stephabegg.com to be
+  Dragontail Peak's Northeast Buttress, 1971). This row's own account is the 1961 AAJ report by
+  Ed Cooper and Stuart Ferguson, whose pitch-by-pitch description (300 ft grade III to a 300 ft
+  50° ice patch, then 600 ft of easier upslab rock) matches this row's own `pitch_detail` almost
+  verbatim. Fixed to Cooper/Ferguson; exact year (1960 vs 1961) is inferred from the AAJ volume's
+  publication cycle and noted as not independently reconfirmed to the day.
+- Forbidden Peak Northeast Face: `grade_num` (7, implying 5.7 YDS) contradicted its own
+  `rock_grade` ("Class 3-4", no 5th-class rock at all) — 7 exactly matches the misattributed
+  Dragontail route's own YDS grade (5.7), confirming it's the same contamination as the FA fix
+  above rather than a real value. Cleared to null; no sourced YDS class exists to fill in its
+  place.
+- Fortress Mountain: elevation is a genuine two-source conflict (Wikipedia 8,679 ft vs.
+  Peakbagger/ListsOfJohn 8,684 ft). The East Ridge route's own `corrections` field already
+  researched this and settled on 8,679 ft, but the area row and all three routes actually stored
+  8,684 ft, contradicting that already-recorded decision. Fixed `areas.elevation_ft` and all
+  three routes' `high_point_ft` (plus two stale waypoint elevations) to 8,679 ft to match.
+- Fortress Mountain, all three routes: `access.land_manager` named a nonexistent "Chiwawa/Entiat
+  Ranger Districts" — the same repeated error already fixed for neighboring Bonanza Peak (batch
+  4) and Chiwawa Mountain (batch 5), both on the same Trinity Trailhead corridor. Each row's own
+  `access.landManager` (camelCase) field already correctly said "Wenatchee River Ranger
+  District"; aligned `land_manager` to match.
+- Fortune Peak, both routes: `access.land_manager` named "Mt. Baker-Snoqualmie National Forest
+  (Snoqualmie Ranger District)" — wrong forest entirely. USFS trail pages for the Esmeralda
+  Basin/Ingalls Way approach confirm Okanogan-Wenatchee National Forest, Cle Elum Ranger
+  District, matching each row's own `landManager` field already on file. Fixed to match.
+- Fortune Peak East Slope: `corrections` claimed the area's parent was mismatched as "Snoqualmie
+  Pass" and referenced a nonexistent `hierarchyNote` field — but the area's actual parent/path is
+  already correctly Teanaway/Ingalls (confirmed via Wikipedia), so the claim is a stale leftover
+  describing an already-resolved problem. Trimmed the note so it no longer contradicts the row's
+  own (correct) area placement.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- Fortress Mountain Northeast Face: this row's own `corrections` field already documents that
+  every source found (SummitPost, CascadeClimbers, Country Highpoints) calls this line the
+  "Northeast Ridge," not a standalone "Northeast Face" — same id/name-conflation pattern flagged
+  for other peaks in prior batches (Big Kangaroo, Colonial Peak, Corteo Peak). Left unfixed; a
+  rename is a human decision, not a field patch.
+- Frenzel Spitz South Route: top-level `grade` reads "Grade III, 5.6" but the separate
+  `commitment` field stores "II" — an internal conflict this audit couldn't resolve. Sourcing for
+  this very remote Southern Pickets route is thin (this row's own `data_quality` already flags
+  "no route-specific... writeup... found"); the FA party/date (Cooper, Denny, Firey, Firey,
+  Whitmore — Sept 10, 1961) checked out exactly against an independent source, but no source with
+  a specific commitment grade for this line was found. Left flagged rather than guessed.
+
+**Clean (no errors found):** Forbidden Peak Northwest Face (FA, pitch-by-pitch description, and
+IV 5.8 grade all independently confirmed against Beckey's own account and multiple trip
+reports), Forbidden Peak West Ridge (already high-confidence per its own `data_quality`, no
+contradictions found), Free Mojo / South Early Winters Spire (FA confirmed as Blake Herrington
+and Graham Zimmerman via Herrington's own blog), Fortune Peak Standard Route (elevation,
+approach, and hazards all internally consistent and match Wikipedia/WTA).
+
+Next batch will continue alphabetically from `wa_frying_pan_whitman_glaciers` (see progress
+file).
