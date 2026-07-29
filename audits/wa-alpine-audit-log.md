@@ -955,3 +955,83 @@ exactly).
 
 Next batch will continue alphabetically from `wa_icy_peak_southwest_route` (see progress
 file).
+
+## Batch 16 — 2026-07-29
+
+Checked: Ingalls Peak (East Peak Southwest Face, South Ridge), Inner Constance (Northwest
+Buttress, Standard Route), Inspiration Peak (West Ridge), Jack Mountain (Northeast
+Glacier), Johannesburg Mountain (Cascade-Johannesburg Couloir, Northeast Buttress), Mount
+Stuart (King Kong / Gorillas Direct Direct), and Klawatti Peak (Southeast Face).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-16.sql`:**
+- `wa_ingalls_peak_east_route` had three separate self-contradictions between a stored
+  field and this same row's own other fields: `fa` misspelled "Butchart" as "Butcharc"
+  (the row's own `overview` already spells it correctly); `grade_num` (5) broke the
+  DB-wide YDS-digit convention for its "5.3" grade (should be 3, confirmed against the
+  sibling South Ridge route's correct `grade_num=4` for "5.4"); and `gain_ft`/`loss_ft`
+  (4200/4200) contradicted the row's own `itinerary`, which had already recomputed
+  3300/3300 in a `sourceNote` but never had that value copied up to the top-level
+  columns. All three fixed from the row's own already-correct data.
+- `wa_ingalls_peak_south_ridge`: `fa` misnamed the second 1941 first-ascent climber "Ken
+  Colbert" — external sources (SummitPost, Wikipedia's Ingalls Peak article, Mountain
+  Madness) consistently agree on "Ken Solberg." Also had a populated `gain_ft` (3500)
+  but a null `loss_ft` for a car-to-car day climb that returns to the same trailhead —
+  filled from the row's own gain figure.
+- Both in-scope Inner Constance routes (`wa_inner_constance_northwest_buttress`,
+  `wa_inner_constance_standard`) had `high_point_ft` = 7,670 ft, a systematic offset from
+  the area's own `elevation_ft` (7,672 ft) and the Standard route's own overview text,
+  which explicitly cites "7,672 ft, Peakbagger LiDAR" — fixed both to 7,672. A third
+  sibling route on the same peak, `wa_inner_constance_seans_route`, carries the identical
+  error but is tagged discipline `trad`, out of this audit's scope — flagged instead of
+  fixed (same out-of-scope-sibling precedent as batch 14's Gunsight Peak East Face note).
+- `wa_johannesburg_mountain_northeast_buttress` had two errors: `high_point_ft` (9220) was
+  wildly wrong for a peak whose real summit is 8,200 ft — contradicted by the area row,
+  Wikipedia, and this same row's own "Johannesburg summit" waypoint (elevFt 8200), plus
+  every sibling route on the peak; and `pitches` (30) contradicted three of this row's own
+  internal citations of "20-pitch(es)" (in `overview`, `watch_out`, and `itinerary.cal`),
+  with its own `pitch_detail` array only enumerating 12 discrete pitches. Both fixed to
+  match the row's own already-correct internal narrative (no external source pinned an
+  exact modern pitch count beyond "~20," so a human with a firmer guidebook figure should
+  prefer that over 20 if found).
+- `wa_king_kong_gorillas_direct_direct` (Mount Stuart) had its `approach` field copy-pasted
+  wholesale from a *north-side* Stuart route (Stuart Lake Trailhead / Icicle Creek Road) —
+  but this row's own `waypoints` (Esmeralda Basin Trailhead, Ingalls Pass) and `face` field
+  ("West Face Wall, between Goat Pass and Stuart Pass") describe the *south-side*
+  approach shared with its sibling `wa_gorillas_direct`, whose own verified approach text
+  was used to rewrite this field. Also filled a null `high_point_ft` from the row's own
+  "Mount Stuart summit area" waypoint (elev 9415), matching the area and every other
+  summit-topping sibling route.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_jack_mountain_northeast_glacier` (+ area, + 5 other Jack Mountain routes outside this
+  batch): `high_point_ft`=9075 is unanimous across all 6 of the peak's own routes but
+  conflicts with the area's own `elevation_ft`=9069 — a genuine external datum split
+  (9,075 ft per Wikipedia/AllTrails/FKT vs. ~9,066-9,069 ft per peakery.com/older USGS
+  sources). Affects the whole peak, not one route — needs a human to pick a value/datum
+  and apply it consistently rather than a single-row patch.
+- `wa_johannesburg_mountain_northeast_buttress`: `fa`/`beta` disagree on Tom Miller's
+  unnamed 1951 climbing partner, and a separate sibling row
+  (`wa_johannesburg_mountain_northeast_rib_1951_route`) carries an undated/unattributed
+  "1951" FA that may document the same historical climb under a different ID — a possible
+  duplicate-route-identity split, same family as prior batches' Dragontail Peak flags.
+  Needs a human with Beckey's guide or the full AAC account.
+- `wa_king_kong_gorillas_direct_direct`: `fa` says "Sol Wertkin & Tyree Johnson, 2016
+  (freed by Sol Wertkin)" while `beta` says "First ascent...by Sol Wertkin and Jon
+  Gleason" — likely an FA-vs-FFA mixup between two different partners, but which field
+  should say what couldn't be resolved from the sources checked.
+- `wa_klawatti_peak_southeast_face`: a "Bergschrund" waypoint's latitude sits ~6.3 km from
+  the very next (summit) waypoint despite `distMi` implying they're only ~0.2 mi apart —
+  almost certainly a coordinate typo, but no source was found to confirm the intended
+  value.
+- `wa_inner_constance_standard`: this row's own `corrections` field already documents an
+  unresolved route-identity conflict between its name/approach text (the long Crystal Pass
+  line) and its own `overview`/`waypoints` (the shorter South Gully/"Route 2A" line) — a
+  human rewrite/split decision, not a single-field patch.
+
+**Clean (no errors found):** Johannesburg Mountain's Cascade-Johannesburg Couloir
+(FA/elevation/length all corroborated and internally consistent) and Inspiration Peak's
+West Ridge (FA, elevation, grade_num, and gain/loss all check out against external sources
+and the row's own waypoint-derived profile).
+
+Next batch will continue alphabetically from `wa_klawatti_peak_southeast_face` (see
+progress file).

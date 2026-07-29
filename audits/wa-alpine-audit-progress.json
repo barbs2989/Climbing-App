@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_icy_peak_southwest_route",
+  "last_processed_id": "wa_klawatti_peak_southeast_face",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -321,6 +321,35 @@
         "wa_hozomeen_mountain_southeast_face: its own `corrections` field is a detailed self-audit stating this route's name/id ('Southeast Face (Standard)') doesn't correspond to any documented route on Hozomeen's main (North, 8,071 ft) summit -- every source checked describes the standard/easiest route there as the Northeast Ridge/Buttress (1904 FA, class 4), which is what this entry's fields (fa, aspect=E-SE vs corrected NE, gain/loss, etc.) actually document under a mismatched name. A real 'Southeast Buttress' exists (FA 1988, III 5.6) but on a separate sub-summit (South Peak, 8,003 ft) about a mile away. This audit's external checks corroborate the corrections field's account (1904 Tatum/Loudon FA, 8,071 ft) but the row's own name/id vs. content mismatch is a rename/split decision for a human, not a field patch -- left as flagged rather than auto-fixed, consistent with the same conflation pattern flagged in prior batches (Big Kangaroo, Cascade Peak East Ridge, Goat Mountain, etc.).",
         "wa_hadley_peak (area + both routes, elevation_ft/high_point_ft = 7522): external sources disagree with each other (7,470 / 7,513 / 7,515 / 7,516 ft depending on source) and none exactly match the on-file 7,522 ft, so this wasn't fixed -- but the area's stored lat/lng (48.814065, -121.822285) matched an independently found GPS reading (48.8140103, -121.8223671) to five decimal places, which is a stronger corroboration signal than the noisy elevation figures and argues against blindly averaging the external numbers. Left as-is; flagging so a future pass with topo/LIDAR access can resolve the elevation cleanly.",
         "wa_honeymoon_route: FA claim ('1965 Arnie & Diane Bloomer') could not be corroborated by this run's external searches, consistent with the route's own data_quality.gaps note already flagging it as 'unverified/single-source'. Also noticed gain_ft (7861) is markedly higher than loss_ft (5400) for what the route's own descent text describes as an out-and-back via Royal Basin -- an out-and-back should have gain roughly equal to loss; worth a human recheck of whether gain_ft was miscomputed or copied from a different itinerary."
+      ]
+    },
+    {
+      "batch_number": 16,
+      "date": "2026-07-29",
+      "route_ids": [
+        "wa_ingalls_peak_east_route",
+        "wa_ingalls_peak_south_ridge",
+        "wa_inner_constance_northwest_buttress",
+        "wa_inner_constance_standard",
+        "wa_inspiration_peak_west_ridge",
+        "wa_jack_mountain_northeast_glacier",
+        "wa_johannesburg_mountain_cj_couloir",
+        "wa_johannesburg_mountain_northeast_buttress",
+        "wa_king_kong_gorillas_direct_direct",
+        "wa_klawatti_peak_southeast_face"
+      ],
+      "confirmed_errors_fixed": 11,
+      "flagged_for_human_review": 6,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-29-batch-16.sql",
+      "note": "Ingalls Peak's two routes each had a self-contradiction between a field and the row's own overview/itinerary text, same pattern as many prior batches: East Peak's fa misspelled 'Butchart' as 'Butcharc' (overview already had it right), its grade_num (5) didn't match the DB-wide YDS-digit convention for '5.3' (should be 3), and its gain_ft/loss_ft (4200/4200) contradicted the row's own itinerary, which had already recomputed 3300/3300 in a sourceNote but never propagated it to the top-level columns; South Ridge's fa misnamed the second 1941 climber 'Ken Colbert' (external sources agree on 'Ken Solberg') and was missing loss_ft entirely despite a populated gain_ft/itinerary. Both Inner Constance routes in scope carried the same stale 7670-vs-7672 elevation offset already flagged and corrected in earlier batches' similar cases -- fixed to match the area row and the routes' own LiDAR-sourced overview text (a third sibling, wa_inner_constance_seans_route, has the identical error but is tagged discipline 'trad' and out of scope, flagged instead per the batch-14 precedent for out-of-scope siblings). Johannesburg Mountain's Northeast Buttress had a badly wrong high_point_ft (9220, not even close to the peak's real 8,200 ft summit -- contradicted by the row's own waypoints) and a pitches count (30) that contradicted three of its own internal citations of '20 pitches'; both fixed from the row's own already-correct internal data. King Kong (Mount Stuart) had an approach field copy-pasted wholesale from a north-side Stuart route (Stuart Lake/Icicle Creek) while its own waypoints and face field describe the south-side Esmeralda/Goat Pass approach shared with its sibling wa_gorillas_direct -- rewrote using the verified sibling's approach text; also filled a null high_point_ft from the row's own summit waypoint. Johannesburg's CJ Couloir and Inspiration Peak's West Ridge both audited clean. New pattern this batch, not seen before: Jack Mountain's high_point_ft (9075) agrees across all 6 of its own routes but conflicts with its own area row's elevation_ft (9069) -- a real external datum split (NAVD88 vs NGVD29 sources), flagged for a human to standardize across the whole peak rather than patched piecemeal on one route.",
+      "flags": [
+        "wa_jack_mountain_northeast_glacier (+ area, + 5 other Jack Mountain routes out of batch scope): high_point_ft=9075 is unanimous across all 6 of the peak's routes but conflicts with the area's own elevation_ft=9069; both figures are independently attested externally (9075 per Wikipedia/AllTrails/FKT, ~9066-9069 per peakery.com/older USGS datum) -- needs a human to pick one value/datum and apply it consistently across the whole peak rather than a single-route patch.",
+        "wa_johannesburg_mountain_northeast_buttress: fa/beta disagree on Tom Miller's unnamed 1951 partner, and a separate sibling row (wa_johannesburg_mountain_northeast_rib_1951_route) carries an undated/unattributed '1951' FA that may document the same historical climb -- possible duplicate-route-identity split (same family as prior batches' Dragontail Peak r3/r4 flags), needs a human with guidebook/AAC archive access.",
+        "wa_king_kong_gorillas_direct_direct: fa says 'Sol Wertkin & Tyree Johnson, 2016 (freed by Sol Wertkin)' while beta says 'First ascent...by Sol Wertkin and Jon Gleason' -- likely an FA-vs-FFA (first free ascent) mixup between two different partners/sub-events, couldn't be resolved to which field should say what from available sources.",
+        "wa_klawatti_peak_southeast_face: a 'Bergschrund' waypoint's latitude is ~6.3 km off from the very next (summit) waypoint despite distMi implying they're ~0.2 mi apart -- almost certainly a coordinate typo, but no source found to confirm the intended value.",
+        "wa_inner_constance_standard: the row's own `corrections` field already documents an unresolved route-identity conflict between its name/approach text (long Crystal Pass line) and its own overview/waypoints (shorter South Gully/Route 2A line) -- needs a human rewrite/split decision, not a field patch.",
+        "wa_inner_constance_seans_route: same 7670-vs-7672 elevation slip as this batch's two Inner Constance fixes, but discipline='trad', out of this audit's scope -- flagged only."
       ]
     }
   ]
