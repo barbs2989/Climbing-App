@@ -141,6 +141,35 @@ serve(async (req) => {
       )
     }
 
+    // Rate limits, enforced server-side so they can't be bypassed:
+    // 10 submissions per email per 24h, 5 per route per week.
+    const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+    const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+    if (climberEmail) {
+      const { count: emailCount } = await supabase
+        .from("gps_submissions")
+        .select("*", { count: "exact", head: true })
+        .eq("climber_email", climberEmail)
+        .gte("submitted_at", oneDayAgo)
+      if ((emailCount ?? 0) >= 10) {
+        return new Response(
+          JSON.stringify({ error: "Rate limit exceeded: max 10 submissions per day. Try again tomorrow." }),
+          { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "86400" } }
+        )
+      }
+    }
+    const { count: routeCount } = await supabase
+      .from("gps_submissions")
+      .select("*", { count: "exact", head: true })
+      .eq("route_id", routeId)
+      .gte("submitted_at", oneWeekAgo)
+    if ((routeCount ?? 0) >= 5) {
+      return new Response(
+        JSON.stringify({ error: "This route already has several recent submissions under review. Please check back next week." }),
+        { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "604800" } }
+      )
+    }
+
     // Validate quality
     const validation = validateGpsQuality(gpxData)
 
