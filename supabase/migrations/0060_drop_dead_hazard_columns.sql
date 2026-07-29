@@ -1,8 +1,17 @@
 -- Remove the two decoy hazard stores.
 --
 -- The app reads exactly one hazard field: `routes.hazards`. dbRouteToCamel maps
--- `hazards: toArr(r.hazards)` (lib/db.js). Neither of the objects dropped below is
--- referenced by any .jsx/.js in the repo — verified by grep across the whole tree.
+-- `hazards: toArr(r.hazards)` (lib/db.js).
+--
+-- CORRECTION (2026-07-29, after this migration was applied): the original wording
+-- here claimed neither dropped object was referenced by any .jsx/.js in the repo.
+-- That was true when written, but PR #372 ("Surface hazard_tags research on the
+-- route Safety tab") merged shortly afterwards and added exactly such a reference —
+-- `hazardTags: toArr(r.hazard_tags)` in lib/db.js, rendered as Safety-tab chips in
+-- ClimbMatch.jsx. Because the column was already dropped, that feature was dead on
+-- arrival: PostgREST's `select("*")` omits a column that does not exist and
+-- toArr(undefined) returns [], so it rendered nothing and raised no error. Those
+-- readers were reverted. Do not re-add a reader for either object.
 --
 -- Keeping them has been actively harmful. Because they look like the hazard store,
 -- enrichment work has repeatedly been aimed at them and then reported as shipped:
