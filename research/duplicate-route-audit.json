@@ -1,0 +1,134 @@
+{
+ "generated": "2026-07-29",
+ "waPeakAreas": 397,
+ "routesExamined": 8394,
+ "nameCollisions": [
+  {
+   "area": "The Tooth",
+   "a": "wa_the_tooth_fairy",
+   "b": "wa_the_tooth_tooth_fairy",
+   "aName": "The Tooth Fairy",
+   "bName": "The Tooth Fairy",
+   "aPop": 18,
+   "bPop": 16,
+   "aDist": 4.8,
+   "bDist": 4.8,
+   "distRatio": 1
+  },
+  {
+   "area": "Mount Stuart",
+   "a": "wa_mount_stuart_cascadian_couloir",
+   "b": "stuart_cascadian_couloir",
+   "aName": "Cascadian Couloir",
+   "bName": "Cascadian Couloir",
+   "aPop": 17,
+   "bPop": 12,
+   "aDist": 19.3,
+   "bDist": 9.6,
+   "distRatio": 2.01
+  },
+  {
+   "area": "Mount Stuart",
+   "a": "wa_mount_stuart_west_ridge",
+   "b": "stuart_west_ridge",
+   "aName": "West Ridge",
+   "bName": "West Ridge",
+   "aPop": 18,
+   "bPop": 11,
+   "aDist": 32.2,
+   "bDist": null,
+   "distRatio": null
+  },
+  {
+   "area": "Martin Peak",
+   "a": "wa_martin_peak_southeast_slopes",
+   "b": "wa_martin_peak_west_ridge",
+   "aName": "West Ridge",
+   "bName": "West Ridge",
+   "aPop": 17,
+   "bPop": 11,
+   "aDist": 25.75,
+   "bDist": null,
+   "distRatio": null
+  },
+  {
+   "area": "Spider Mountain",
+   "a": "wa_spider_mountain_north_ridge",
+   "b": "wa_spider_mountain_southeast_gully",
+   "aName": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+   "bName": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+   "aPop": 15,
+   "bPop": 18,
+   "aDist": 15.3,
+   "bDist": 28.3,
+   "distRatio": 1.85
+  }
+ ],
+ "idConventionSplits": [
+  {
+   "area": "Dragontail Peak",
+   "a": "wa_dragontail_peak_serpentine_arete",
+   "b": "wa_serpentine_arete",
+   "aName": "Serpentine Arête",
+   "bName": "Serpentine Arete"
+  }
+ ],
+ "stubRows": [
+  {
+   "area": "Mount Rainier",
+   "id": "wa_mount_rainier_camp_muir_standard",
+   "name": "Mount Rainier - Camp Muir Standard",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Rainier",
+   "id": "wa_mount_rainier_gibraltar_ledge",
+   "name": "Mount Rainier - Gibraltar Ledge",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Rainier",
+   "id": "wa_mount_rainier_nisqually_glacier",
+   "name": "Mount Rainier - Nisqually Glacier",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Rainier",
+   "id": "wa_mount_rainier_puyallup_glacier",
+   "name": "Mount Rainier - Puyallup Glacier",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Rainier",
+   "id": "wa_mount_rainier_winthrop_glacier",
+   "name": "Mount Rainier - Winthrop Glacier",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Glacier Peak",
+   "id": "wa_glacier_peak_white_chuck",
+   "name": "Glacier Peak - White Chuck",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Baker",
+   "id": "wa_mount_baker_crevasse_glacier_route",
+   "name": "Mount Baker - Crevasse Glacier Route",
+   "populated": 1,
+   "areaMedian": 17
+  },
+  {
+   "area": "Mount Baker",
+   "id": "wa_mount_baker_southwest_ridge",
+   "name": "Mount Baker - Southwest Ridge",
+   "populated": 1,
+   "areaMedian": 17
+  }
+ ]
+}
