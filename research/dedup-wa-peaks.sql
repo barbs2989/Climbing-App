@@ -8,10 +8,13 @@
 -- Everything else on the four was either redundant with the keeper or worse than it.
 --
 --   KEEP                                    DELETE                        why the keeper wins
---   wa_mount_stuart_cascadian_couloir       stuart_cascadian_couloir      55 vs 37 fields; 19.3 km
---                                                                        round trip vs a 9.6 km
---                                                                        one-way figure (ratio 2.01,
---                                                                        the same tell as Adams)
+--   wa_mount_stuart_cascadian_couloir       stuart_cascadian_couloir      55 vs 37 fields
+--        NB the distance disagreement here (19.3 vs 9.6) is NOT evidence for the keeper, and
+--        the surviving 19.3 is probably wrong. dist_km is the ONE-WAY distance — the route
+--        page doubles it (roundTripKm = distKm * 2, ClimbMatch.jsx) — so 19.3 renders as a
+--        24 mi round trip on Stuart's descent scramble. The deleted row's 9.6 may well have
+--        been the better figure. Flagged for a guidebook check rather than guessed at, having
+--        already got this convention backwards once on Adams.
 --   wa_mount_stuart_west_ridge              stuart_west_ridge             56 vs 39 fields; loser has
 --                                                                        no distance or gain at all
 --   wa_the_tooth_fairy                      wa_the_tooth_tooth_fairy      54 vs 45 fields, 2 gpx pts

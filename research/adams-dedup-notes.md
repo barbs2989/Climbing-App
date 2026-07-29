@@ -18,10 +18,19 @@ Area `wa_mount_adams` held 12 routes with a cached `route_count` of 12.
 Adams' standard, non-technical route"* — the same line under its other name. `south_side`
 had no discipline, grade, distance, gain, hazards or track: a stub.
 
-**Keeper: `south_climb`.** Its 19.3 km matches the real round trip — sources put the South
-Climb at 12.5–14 mi with 6,600–6,750 ft gain from Cold Springs (5,600 ft) — where
-`south_spur`'s 9.2 km is a one-way figure. It also carries a genuine 166-point GPX track
-against `south_spur`'s 5.
+**Keeper: `south_climb`** — but on the GPX track, not on the distance. It carries a genuine
+166-point track against `south_spur`'s 5, and after the merge it holds every field
+`south_spur` had.
+
+> **Correction.** An earlier version of this file argued for `south_climb` because "19.3 km
+> matches the real ~12.5 mi round trip, where `south_spur`'s 9.2 km is a one-way figure".
+> That reasoning was wrong, and backwards. `dist_km` **is** the one-way distance: the route
+> page derives round trip from it with `roundTripKm = distKm * 2` (`ClimbMatch.jsx`). So
+> 9.2 km one-way renders as 11.4 mi round trip, which is right for a climb guidebooks put at
+> 12.5–14 mi; 19.3 km would render as 12 mi one-way and **24 mi round trip**, nearly double
+> the real thing. `dist_km` on the surviving row is 9.2 and should stay there. I changed it
+> to 19.3 at one point — that introduced the error rather than fixing one, and it has since
+> been set back.
 
 ### Done: the merge (applied)
 

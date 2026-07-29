@@ -12,9 +12,15 @@
 --
 -- south_spur's own overview reads "The South Spur (also called the South Climb) is Mount
 -- Adams' standard, non-technical route", so it is the same line under its other name.
--- south_climb survives because 19.3 km matches the real ~12.5 mi round trip (south_spur's
--- 9.2 km is a one-way figure) and because it carries a genuine 166-point GPX track against
--- south_spur's 5. south_side had 3 of 22 fields populated and no discipline, grade,
+-- south_climb survives because it carries a genuine 166-point GPX track against south_spur's
+-- 5, and because the merge moved south_spur's 18 unique fields onto it.
+--
+-- NOT because of its distance. An earlier version of this comment claimed 19.3 km was the
+-- right figure "because it matches the real ~12.5 mi round trip". That is backwards:
+-- dist_km IS the one-way distance, and the route page doubles it (roundTripKm = distKm * 2,
+-- ClimbMatch.jsx). 9.2 km one-way renders as 11.4 mi round trip, correct for a climb quoted
+-- at 12.5-14 mi. 19.3 would render as 24 mi round trip. dist_km on the keeper is 9.2 and
+-- belongs there. south_side had 3 of 22 fields populated and no discipline, grade,
 -- distance, gain, hazards or track — a stub.
 --
 -- These DELETEs are deliberately left for a human. A wrong DELETE in this table destroyed
