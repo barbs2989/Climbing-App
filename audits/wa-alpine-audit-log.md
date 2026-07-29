@@ -1035,3 +1035,45 @@ and the row's own waypoint-derived profile).
 
 Next batch will continue alphabetically from `wa_klawatti_peak_southeast_face` (see
 progress file).
+
+## Batch 17 — 2026-07-29
+
+Checked: Klawatti Peak SW Buttress, Koala Krack (Kangaroo Temple), Kololo Peaks Standard
+Route, Kyes Peak Glaciated Scramble, Labor Pains (North Early Winters Spire), and all
+three of Lane Peak's north-face couloirs (The Zipper, The Fly, Lover's Lane).
+
+**Confirmed error fixed:**
+- `wa_kyes_peak` (area row): `elevation_ft` was 7282, a 2 ft outlier against both of the
+  peak's own routes (7280, unanimous, including the in-scope Glaciated Scramble) and
+  external sources (Wikipedia/Peakbagger: "7,280+ ft, NGVD 29"). Fixed the area row to
+  7280 — same systematic-offset pattern as batch 16's Inner Constance fix, just with the
+  area (not the routes) as the wrong value this time.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_koala_krack`: already self-flagged in its own `corrections` field as unconfirmable
+  (no MP/SuperTopo page found). This pass additionally checked whether "Koala Rock" —
+  which does exist on Mountain Project — might be the real location; it turned out to be
+  an unrelated Smith Rock, Oregon formation ("The Marsupials" area), just a name
+  collision. Doesn't resolve the original uncertainty either way.
+- `wa_kololo_peaks_standard`: `gain_ft`/`loss_ft` (6120/7000) violate the gain-loss =
+  net-elevation-change identity that holds elsewhere in the dataset (verified on this
+  batch's own Kyes Peak route). The route's own trailhead waypoint (2050 ft) and
+  `high_point_ft` (8240 ft) imply a net one-way climb of +6190 ft; `gain_ft` is
+  plausible but `loss_ft` (7000 ft) has no support in the route's own approach/descent
+  text and no external source pins a correct replacement figure.
+- `wa_lane_peak_r3` (Lover's Lane): `grade`/`grade_system`/`grade_num` are all null,
+  unlike its two siblings on the same face (Zipper WI3, Fly WI2), despite its own
+  `watch_out` text referencing "the moderate AI1 rating" as a baseline that never made it
+  into the grade fields — and AI1 sits oddly next to this row's own overview calling it
+  the steepest/narrowest of the three couloirs. A Mountain Project page exists but its
+  exact grade couldn't be retrieved this pass.
+
+**Clean (no errors found):** Klawatti Peak SW Buttress (FA/elevation/pitch-count all
+corroborated), Labor Pains (FA/pitch-count/length all corroborated against SummitPost/AAC
+sources), and Lane Peak's Zipper and Fly couloirs (elevation and route descriptions check
+out; no confirmed FA on file for either, consistent with sources). Also checked but not
+flagged: Kololo Peaks' elevation (8240) diverges from Wikipedia's rounded "8,200 ft" but
+matches peakery.com exactly and is internally consistent between the area and route rows
+— left alone as ordinary source variance for an unofficial/unsurveyed summit.
+
+Next batch will continue alphabetically from `wa_lane_peak_r3` (see progress file).
