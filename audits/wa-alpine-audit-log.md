@@ -759,3 +759,60 @@ approach, and hazards all internally consistent and match Wikipedia/WTA).
 
 Next batch will continue alphabetically from `wa_frying_pan_whitman_glaciers` (see progress
 file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 13
+
+Checked 10 routes across 4 peaks: Little Tahoma (Frying Pan/Whitman Glaciers), Ghost Peak
+(South Route), Gilbert Peak (Meade Glacier, West Route), and Glacier Peak (Cool Glacier/Gerdine
+Ridge, Disappointment Cleaver/Sitkum Glacier, Disappointment Peak Cleaver, Frostbite Ridge,
+Kennedy Glacier, Sitkum Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-13.sql`:**
+- Glacier Peak's own area blurb notes the White Chuck Road (FR-23) has been closed since
+  December 2024 flood damage, and three of this peak's five routes correctly say the same —
+  but `wa_glacier_peak_disappointment_cleaver` said the closure was "since Dec 2025," an outlier
+  against those three sibling rows. Confirmed via the real USFS closure order (fsr-23-and-fsr-27
+  -closure-order, effective March 19 2025 – Dec 31 2025 for flood damage from the *preceding*
+  December, i.e. 2024) that the correct year is 2024; fixed `access.closures` and
+  `road.driveNote`. Note for whoever reviews this: a real, separate, much bigger storm did hit
+  the North Cascades in December 2025 and washed out the Suiattle River Road (FSR 26) at MP 4.5
+  — that's the correct basis for this same route's *other*, unrelated "extremely limited access
+  as of April 2026" note elsewhere in the row, which was left alone since it checks out. Only
+  the White-Chuck-Road-specific date was wrong.
+- Two Glacier Peak routes (Cool Glacier/Gerdine Ridge, Disappointment Peak Cleaver) misspelled
+  1897 first-ascent USGS surveyor A. H. Dubor's name as "Dubois" — Wikipedia's Glacier Peak
+  article and this peak's other two routes in this same batch both spell it "Dubor" correctly.
+  Fixed both to match.
+- Frostbite Ridge's own summit waypoint stored 10,550 ft for Glacier Peak, while its own
+  `high_point_ft`, the area's `elevation_ft`, and every other Glacier Peak route's summit
+  waypoint in this batch all say 10,541 ft — sole outlier, fixed.
+- Gilbert Peak Meade Glacier's own `corrections` field claimed the route used the 8,201 ft
+  benchmark elevation, but the actual stored `high_point_ft` is 8,184 ft (correctly matching
+  Wikipedia/USGS and the area's own `elevation_ft`) — the note didn't describe what was actually
+  stored. Rewrote the note to say 8,184 ft was used, keeping the benchmark discrepancy on record
+  for reference; did not change the elevation itself since it already matches the
+  higher-confidence source.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_glacier_peak_disappointment_cleaver`'s own `corrections` field already documents that this
+  listing's name conflates two distinct, separately-cataloged routes ("Disappointment (Peak)
+  Cleaver" and "Sitkum Glacier") and recommends a rename/split — a naming decision, not a fact
+  to patch, left as-is per guardrails.
+
+**Independently confirmed (already self-flagged, not new):** `wa_frying_pan_whitman_glaciers`'s
+own `data_quality` note already flags it as a likely duplicate of the separate
+`wa_little_tahoma_east_shoulder` row; pulled that row directly and confirmed identical FA and
+summit elevation, corroborating the existing flag rather than raising a new one.
+
+**Clean (no errors found):** Ghost Peak South Route (elevation ~8,000 ft and FA party/date both
+confirmed against Wikipedia; the route's own low-confidence self-rating and thin sourcing were
+already honestly disclosed in its own `data_quality`/`corrections` fields), Gilbert Peak West
+Route (elevation and area placement check out; its own ambiguity note about which trailhead
+"West Route" refers to was already flagged and is a judgment call, not a factual error), Glacier
+Peak's 1897 Gerdine-party FA date/personnel (Wikipedia confirms 1897, matching every route on
+the peak).
+
+Next batch will continue alphabetically from `wa_goat_mountain_south_ridge` (see progress
+file).

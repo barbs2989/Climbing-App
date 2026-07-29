@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_frenzel_spitz_south_route",
+  "last_processed_id": "wa_glacier_peak_sitkum_glacier",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -249,6 +249,27 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-07-29-batch-12.sql",
       "note": "Forbidden Peak Northeast Face had its fa (and, tied to it, grade_num) contaminated with a different peak's FA data entirely -- Beckey/Burgner/Nephew 1972 is documented elsewhere as Dragontail Peak's Northeast Buttress FA (1971), not this route; the row's own pitch_detail matches a 1961 AAJ account by Ed Cooper and Stuart Ferguson almost verbatim, so fa was fixed to that party and the orphaned grade_num (7, matching Dragontail's own 5.7 grade) was cleared since this row's rock_grade is Class 3-4, not 5th class. Fortress Mountain's own East Ridge route had already researched and settled an elevation conflict (Wikipedia 8679 vs Peakbagger 8684) in its corrections note but the actual stored elevation/high_point_ft/waypoints across the area and all 3 routes still said 8684 -- fixed to match the row's own recorded decision. Also repeated two error patterns from earlier batches: the same nonexistent 'Chiwawa/Entiat Ranger Districts' land_manager error (Bonanza Peak batch 4, Chiwawa Mountain batch 5) on all 3 Fortress Mountain routes, and a wrong-forest land_manager (Mt. Baker-Snoqualmie instead of Okanogan-Wenatchee/Cle Elum) on both Fortune Peak routes -- both fixed from each row's own correct landManager field. Flagged rather than fixed: Fortress Mountain's 'Northeast Face' is called 'Northeast Ridge' by every source per its own corrections note (name/id conflation, same family as prior batches' Big Kangaroo/Colonial Peak/Corteo Peak flags); Frenzel Spitz South Route's top-level grade ('Grade III') conflicts with its own commitment field ('II') with no source found specific enough to resolve it."
+    },
+    {
+      "batch_number": 13,
+      "date": "2026-07-29",
+      "route_ids": [
+        "wa_frying_pan_whitman_glaciers",
+        "wa_ghost_peak_south_route",
+        "wa_gilbert_peak_meade_glacier",
+        "wa_gilbert_peak_west_route",
+        "wa_glacier_peak_cool_glacier_gerdine",
+        "wa_glacier_peak_disappointment_cleaver",
+        "wa_glacier_peak_disappointment_peak_cleaver",
+        "wa_glacier_peak_frostbite_ridge",
+        "wa_glacier_peak_kennedy_glacier",
+        "wa_glacier_peak_sitkum_glacier"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-07-29-batch-13.sql",
+      "note": "Glacier Peak's own area blurb and three of its five routes agree the White Chuck Road (FR-23) closure is due to December 2024 flood damage, confirmed against the real USFS closure order (effective Mar 2025, responding to the preceding December's damage); wa_glacier_peak_disappointment_cleaver was the sole outlier claiming 'Dec 2025' and was fixed. A real, separate, larger December 2025 storm did hit the North Cascades (confirmed via UW Climate Impacts Group/Cascade Backcountry Alliance reporting) and washed out the Suiattle River Road (FSR 26) -- that's the correct, left-alone basis for this same route's other 'extremely limited access as of April 2026' note; only the White-Chuck-Road-specific year was wrong. Also fixed a repeated FA misspelling ('Dubois' -> 'Dubor' for 1897 USGS surveyor A. H. Dubor) on 2 of Glacier Peak's 5 routes, an outlier summit-elevation waypoint (10550 -> 10541 ft) on Frostbite Ridge, and a self-contradicting corrections note on Gilbert Peak Meade Glacier that claimed a 8,201 ft benchmark elevation was used when the row's actual stored high_point_ft (8,184 ft, matching Wikipedia/USGS) was never changed to match that claim. One item left flagged: wa_glacier_peak_disappointment_cleaver's own corrections field already documents its name conflating two distinct routes and recommends a rename/split, a human decision not auto-fixed. wa_frying_pan_whitman_glaciers's existing likely-duplicate flag against wa_little_tahoma_east_shoulder was independently confirmed (identical FA/elevation) but is not new."
     }
   ]
 }
