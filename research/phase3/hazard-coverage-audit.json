@@ -40,7 +40,7 @@
    "routes": 30,
    "clean": 2,
    "miss": {
-    "crevasse": 10,
+    "crevasse": 9,
     "rock": 10,
     "remote": 25
    },
@@ -105,7 +105,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "rockfall / loose rock",
     "remoteness / rescue"
    ],
@@ -124,31 +124,12 @@
     "rock"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "icefall / serac",
     "rockfall / loose rock"
    ],
    "entries": 2,
    "sample": "Exposed, featureless slopes offer no shelter from lightning or wind."
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_southeast_ridge_se_corner",
-   "name": "Southeast Ridge (SE Corner)",
-   "area": "Mount Shuksan",
-   "missing": [
-    "crevasse",
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / snow bridge",
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 2,
-   "sample": "Descent rappel traverses a gully that can drop rock onto parties below."
   },
   {
    "zone": "nc-glaciated",
@@ -161,7 +142,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 4,
@@ -178,7 +159,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 3,
@@ -348,7 +329,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 1,
@@ -365,7 +346,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 5,
@@ -399,7 +380,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 4,
@@ -603,7 +584,7 @@
     "ice_hazard"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "icefall / serac"
    ],
    "entries": 2,
@@ -620,7 +601,7 @@
     "ice_hazard"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "icefall / serac"
    ],
    "entries": 3,
@@ -705,7 +686,7 @@
     "rock"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "rockfall / loose rock"
    ],
    "entries": 3,
@@ -739,7 +720,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 3,
@@ -756,7 +737,7 @@
     "remote"
    ],
    "missingLabels": [
-    "crevasse / snow bridge",
+    "crevasse / glacier travel",
     "remoteness / rescue"
    ],
    "entries": 3,
@@ -999,6 +980,23 @@
    ],
    "entries": 3,
    "sample": "sustained hard free climbing"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_southeast_ridge_se_corner",
+   "name": "Southeast Ridge (SE Corner)",
+   "area": "Mount Shuksan",
+   "missing": [
+    "rock",
+    "remote"
+   ],
+   "missingLabels": [
+    "rockfall / loose rock",
+    "remoteness / rescue"
+   ],
+   "entries": 2,
+   "sample": "Descent rappel traverses a gully that can drop rock onto parties below."
   },
   {
    "zone": "wa-pass-spires",
@@ -1393,7 +1391,7 @@
     "crevasse"
    ],
    "missingLabels": [
-    "crevasse / snow bridge"
+    "crevasse / glacier travel"
    ],
    "entries": 3,
    "sample": "Rockfall/loose-rock hazard along the full length of the arête."
@@ -1918,7 +1916,7 @@
     "crevasse"
    ],
    "missingLabels": [
-    "crevasse / snow bridge"
+    "crevasse / glacier travel"
    ],
    "entries": 3,
    "sample": "Sustained steep ice/snow with multiple line options"
@@ -1963,7 +1961,7 @@
     "crevasse"
    ],
    "missingLabels": [
-    "crevasse / snow bridge"
+    "crevasse / glacier travel"
    ],
    "entries": 3,
    "sample": "Extreme objective hazard from the hanging Willis Wall icecap seracs"
