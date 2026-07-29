@@ -816,3 +816,77 @@ the peak).
 
 Next batch will continue alphabetically from `wa_goat_mountain_south_ridge` (see progress
 file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 14
+
+Checked 10 routes across 7 peaks: Goat Mountain (South Ridge), Golden Horn (North Face),
+Mount Goode (Megalodon Ridge, Northeast Face, Southwest Couloir), Mount Stuart (Gorillas
+Direct), Gunnshy Peak (Standard Route), Gunsight Peak (Standard Route), and Guye Peak
+(Improbable Traverse, West Face/r1).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-14.sql`:**
+- Megalodon Ridge's own `fa` field claimed a 2008 first-ascent date ("primary AAC/Alpinist
+  coverage confirms 2008"), contradicting its own `overview`/`beta` text and the Mount Goode
+  area blurb, both of which correctly say 2007. Verified externally (Alpinist's contemporaneous
+  2007 newswire piece and Climbing.com's "Megalodon Man" account) that the climb happened
+  September 6, 2007 — the "2008" on file was the American Alpine Journal's publication year for
+  its writeup (AAJ annuals report on the prior season), not the ascent year. Fixed the `fa`
+  field to match the row's own already-correct overview/beta and the area blurb.
+- The Mount Goode area blurb misspelled 1936 first-ascent party member Phil Dickert's surname as
+  "Dickett" — this same area's own Southwest Couloir route (the 1936 FA route) already spells it
+  correctly ("Dickert") in its own `fa` field, and external sources (Mountaineers.org's Wolf
+  Bauer history) confirm "Dickert." Fixed.
+- Southwest Couloir's own `itinerary.sourceNote` already states "on-file gainFt was corrected to
+  8,400 ft to match WTA.org's cited total" — but the actual stored `gain_ft` column was never
+  updated and still read 5,300 ft (while `loss_ft`, at 8,400 ft, does match the note's claimed
+  figure). Applied the correction the row itself already described.
+- Gunsight Peak's area `elevation_ft`/`prominence_ft` (8,185 ft / 546 ft) conflicted with its own
+  Standard Route's summit waypoint (8,198 ft) and a prominence discrepancy that route's own
+  `data_quality.gaps` note already flagged as unresolved ("518 ft per Wikipedia/Wikidata vs. 546
+  ft previously on file"). Verified externally (summit data for Gunsight Peak, Chelan County —
+  Dome Peak massif) that 8,198 ft / 518 ft prominence is correct; fixed the area row and the
+  Standard Route's `high_point_ft` to match.
+- Goat Mountain's area `elevation_ft` (6,892 ft) was the sole outlier against its own South Ridge
+  route's overview, hazards list, and true-summit waypoint (all 6,891 ft), the sibling East Peak
+  route's `high_point_ft` (also 6,891 ft), and SummitPost's East-Peak-specific figure (6,891 ft
+  vs. the West Peak's 6,721 ft). Fixed the area plus two stray "6,892 ft" mentions buried inside
+  the South Ridge route's own `itinerary` JSON (an objective line and a schedule entry).
+
+**Flagged for human review (not auto-fixed):**
+- `wa_goat_mountain_south_ridge`'s own `high_point_ft` (6,721 ft, the West Peak) doesn't match
+  its own overview/itinerary narrative, which describes continuing on to tag the true East Peak
+  summit (6,891 ft) — content that properly belongs to the separate sibling route
+  `wa_goat_mountain_east_peak`. Same route-identity-conflation pattern flagged repeatedly in
+  earlier batches (Big Kangaroo, Colonial Peak, Corteo Peak, Cascade Peak East Ridge, etc.) — a
+  human rename/split decision, not a fact to patch.
+- `wa_guye_peak_improbable_traverse` vs. `wa_guye_peak_r1` (West Face): both document the same
+  1960 Guye Peak first ascent but spell the climbers' names differently — "Dave Hisser and Mike
+  Borgoff" vs. "Dave Hiser and Mike Borghoff." Couldn't confirm the correct spelling from
+  accessible sources this run (Mountain Project, SummitPost, CascadeClimbers' First Ascents wiki,
+  and the likely relevant NWMJ archive page all returned errors); one weak signal (a different
+  NWMJ page mentioning a "Dave Hiser" on an unrelated Mount Terror climb) isn't specific enough
+  to settle it. Left flagged.
+- `wa_goode_mountain_northeast_face`'s own `fa` field states a specific, confident first ascent
+  ("Fred Beckey and John Parrott, 1954"), but its own `data_quality.gaps` field says "No
+  confirmed first-ascent party/date found for this specific line" — a direct internal
+  contradiction this run couldn't resolve externally (no dedicated source found distinct from
+  the well-documented Northeast Buttress). Needs a human with guidebook access.
+
+**Noted but out of scope (not fixed):** Sibling route `wa_gunsight_peak_east_face` carries the
+same elevation slip as Gunsight Peak's Standard Route did (`high_point_ft` 8,200 vs. the now-
+corrected 8,198 ft), but it's tagged discipline `trad`, not `alpine`/`mountaineering` — outside
+this audit's scope and outside this batch's selected routes, so left untouched. Noting it here
+since its discipline tag means it won't otherwise come up in this recurring audit's normal
+rotation.
+
+**Clean (no errors found):** Golden Horn North Face (elevation and land-manager fields check
+out; already-resolved `corrections` note on the peak's own elevation matches Wikipedia/
+Peakbagger), Gorillas in the Mist's sibling Gorillas Direct (Mount Stuart) (FA, grade, and
+approach details corroborated, `corrections` field already sourced directly from Mountain
+Project), Gunnshy Peak Standard Route (elevation matches area; access/land-manager fields
+correct for Wild Sky Wilderness).
+
+Next batch will continue alphabetically from `wa_guye_peak_r2` (see progress
+file).
