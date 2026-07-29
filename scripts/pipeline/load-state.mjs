@@ -45,10 +45,63 @@ async function count(table) {
   const cr = r.headers.get("content-range"); return cr ? cr.split("/")[1] : "?";
 }
 
+// The upsert resolves duplicates on the PRIMARY KEY, so it only updates a route whose id
+// already matches. If a route's id ever changes shape — as it did when route ids became
+// peak-scoped (`wa_mount_baker_north_ridge`) instead of state-scoped (`wa_north_ridge_2`)
+// — the same climb arrives under a new id and INSERTS a second copy rather than updating
+// the first. On WA that is 8,000+ silent duplicates, catalog-wide 200,000.
+//
+// So before writing, check the identity that actually means "the same climb": the pair
+// (area_id, name). Any incoming route matching an existing row on that pair but carrying a
+// different id is a rename-in-disguise, and loading it would duplicate.
+async function preflight(rows) {
+  const areaIds = new Set(rows.map(r => r.area_id).filter(Boolean));
+  const existing = new Map();          // "area_id|lowername" -> existing id
+  let last = "";
+  for (let guard = 0; guard < 5000; guard++) {
+    const q = `${url}/rest/v1/routes?select=id,area_id,name&id=like.${PREFIX}\\_*` +
+      `${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&order=id.asc&limit=1000`;
+    const res = await fetch(q, { headers: H });
+    if (!res.ok) throw new Error("preflight: " + res.status + " " + (await res.text()).slice(0, 200));
+    const page = await res.json();
+    if (!page.length) break;
+    for (const e of page) {
+      if (areaIds.has(e.area_id)) existing.set(`${e.area_id}|${(e.name || "").trim().toLowerCase()}`, e.id);
+    }
+    last = page[page.length - 1].id;
+    if (page.length < 1000) break;
+  }
+  const clashes = [];
+  for (const r of rows) {
+    const prior = existing.get(`${r.area_id}|${(r.name || "").trim().toLowerCase()}`);
+    if (prior && prior !== r.id) clashes.push({ incoming: r.id, existing: prior, area: r.area_id, name: r.name });
+  }
+  if (!clashes.length) { console.log(`  preflight OK — no (area_id, name) already held under a different id`); return; }
+  console.error(`\nREFUSING TO LOAD: ${clashes.length} route(s) already exist on the same area with the same name under a DIFFERENT id.`);
+  console.error("Loading would insert a second copy of each rather than updating it.\n");
+  for (const c of clashes.slice(0, 15)) {
+    console.error(`  ${c.area}  "${c.name}"`);
+    console.error(`      incoming id: ${c.incoming}`);
+    console.error(`      existing id: ${c.existing}`);
+  }
+  if (clashes.length > 15) console.error(`  ... and ${clashes.length - 15} more`);
+  console.error(`\nEither migrate the existing ids to the new scheme first, or re-run with`);
+  console.error(`--allow-duplicate-names if you have confirmed these really are distinct climbs.`);
+  process.exit(1);
+}
+
+const routeRows = R.map(rRow);
+if (process.argv.includes("--allow-duplicate-names")) {
+  console.log("WARNING: --allow-duplicate-names — skipping the (area_id, name) collision check.");
+} else {
+  console.log("Preflight: checking for the same climb already stored under a different id...");
+  await preflight(routeRows);
+}
+
 console.log(`Upserting ${ordered.length} areas (additive — keeps existing states)...`);
 await up("areas", ordered.map(aRow), 500);
-console.log(`Upserting ${R.length} routes...`);
-await up("routes", R.map(rRow), 250);
+console.log(`Upserting ${routeRows.length} routes...`);
+await up("routes", routeRows, 250);
 
 const ac = await count("areas"), rc = await count("routes");
 const usa = await (await fetch(`${url}/rest/v1/areas?id=eq.usa&select=route_count`, { headers: H })).json();

@@ -170,3 +170,23 @@ copies of one route. **Peak names live on `areas.name`; route names are just the
 - `id like 'wa_%'` is the reflex filter and it misses legacy ids like
   `stuart_west_ridge` — 6 WA routes today. Filter by the area subtree when a coverage
   percentage matters.
+
+**The origin was one line in `scripts/pipeline/etl-state.mjs`**, which minted route ids as
+`PREFIX + "_" + slug(route name)` while the crag id (`mid`) sat unused in the same
+expression. `uniq()` then appended `_2`, `_3` in walk order, so the counter records nothing
+but the order OpenBeta happened to be crawled. It now emits `mid + "_" + slug(name)`, and
+`uniq` only fires for a genuine same-name-same-crag clash. `load-state.mjs` was never at
+fault — it passes `r.id` straight through from `catalog/`.
+
+> **Re-importing a legacy state would duplicate it, not update it.** `load-state.mjs`
+> upserts with `Prefer: resolution=merge-duplicates`, which resolves on the PRIMARY KEY.
+> Every route in an already-loaded state is stored under an old state-scoped id, so a
+> re-run after the ETL fix hands PostgREST a *new* peak-scoped id and it INSERTs a second
+> copy — 8,000+ rows for WA, ~200,000 catalog-wide.
+>
+> `load-state.mjs` now runs a preflight that fails closed: it looks up existing routes by
+> `(area_id, name)` — the identity that actually means "the same climb" — and refuses to
+> load if any incoming route matches one under a different id, printing both ids.
+> `--allow-duplicate-names` overrides it, and should only be used once you have confirmed
+> the rows really are distinct climbs. Before re-importing any state loaded under the old
+> scheme, migrate its ids first.
