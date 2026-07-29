@@ -97,8 +97,13 @@ const page = await browser.newPage({ viewport: { width: 390, height: 900 }, devi
 const pageErrors = [];
 page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 
+// Exact text, never a substring. Playwright's bare `text=Safety` also matches the
+// phrase "safety-critical" inside a paragraph, and `text=Plan` matches a route
+// titled "Plan 9 from Outer Space" -- in both cases the click "succeeds", the tab
+// never opens, and the previous screen gets captured a second time. The
+// identical-screen rule below is what surfaced this; the quoting is the fix.
 const tap = async (text, i = 0) => {
-  const els = await page.$$(`text=${text}`);
+  const els = await page.$$(`text="${text}"`);
   if (!els[i]) return false;
   await els[i].click({ timeout: 8000 }).catch(() => {});
   await page.waitForTimeout(1600);
