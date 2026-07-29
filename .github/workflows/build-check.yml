@@ -4,6 +4,14 @@ on:
   pull_request:
     branches: [main, master]
 
+# A new push to the same PR makes an in-flight run obsolete.
+concurrency:
+  group: build-check-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,8 +20,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run build
+          cache: npm
+      # package-lock.json is committed, so install exactly what it pins.
+      - run: npm ci
+
+      # `npm run build` already chains both guards, but running them as their own
+      # steps means a guard failure reads as "Rules of hooks failed" in the checks
+      # list instead of hiding inside a build log.
+      - name: Undefined references
+        run: npm run check:refs
+      - name: Rules of hooks
+        run: npm run check:hooks
+
+      # The bundler step on its own — the two guards above already ran.
+      - name: Build
+        run: npx vite build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
