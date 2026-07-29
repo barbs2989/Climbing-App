@@ -34,12 +34,32 @@ const ENRICHED = ["approach", "descent_text", "emergency", "permit", "comms",
 
 // Values that legitimately repeat verbatim across unrelated peaks. Boilerplate like
 // "Reverse the route." is not contamination, and flagging it buries the real hits.
+// The test for whether repeated prose is boilerplate: it names no place. Generic advice
+// ("Descend open slopes toward camp") is legitimately shared by unrelated peaks;
+// contamination carries a specific — a trailhead, a ranger district, a phone number.
 const BOILERPLATE = [
   /^reverse the (route|scramble)/i, /^retreat down/i, /^limited bail/i,
   /^no cell (coverage|service)/i, /^same as approach/i, /^descend the (route|ascent)/i,
+  /^descend open slopes/i, /^reversible at any point/i, /^reversible throughout/i,
+  /^no fixed anchors/i, /^walk off/i,
 ];
 // Placeholder route names that repeat within one crag by design (OpenBeta import).
-const PLACEHOLDER = /^\s*(unknown|unnamed|project|route|no name|nameless|tbd|n\/?a|\?+|open project|wa|[\d\W]*)\s*$/i;
+// Import-artifact names that legitimately repeat within one crag. Widened after a full-
+// catalog run showed 16 of 17 "real" duplicate-name collisions were actually these:
+// "unnamed route", "unknown route", "unnamed v0", "unnamed 5.10", "5.12 face", "v2",
+// "closed project", "un-named", "_delete". Deliberately anchored so a genuine route
+// name that merely CONTAINS one of these words is still treated as real.
+const PLACEHOLDER = new RegExp([
+  '^\\s*$',                                   // blank
+  '^_?delete$',                               // al_delete scaffolding
+  '^un-?named(\\s+(route|climb|problem|boulder|line|prow|arete|crack|slab|face|corner|dihedral|lfc|v\\d+|5\\.\\d+[a-d]?|\\d+))?$',   // unnamed / unnamed route / unnamed v0 / unnamed prow / unnamed lfc
+  '^unknown(\\s+(route|climb|problem|boulder|line|prow|arete|crack|slab|face|corner|dihedral|lfc|v\\d+|5\\.\\d+[a-d]?|\\d+))?$',     // unknown / unknown route -- but NOT "Unknown Soldier"
+  '^(open|closed) project$',
+  '^project$', '^route$', '^no name$', '^nameless$', '^tbd$', '^n/?a$', '^\\?+$',
+  '^v\\d+[+-]?$',                             // v2
+  '^5\\.\\d+[a-d]?(\\s+(face|slab|crack|prow|arete|dihedral|corner))?$',   // 5.12 face
+  '^[\\d\\W]+$',                              // punctuation/number-only
+].join('|'), 'i');
 
 const norm = s => (s || "").trim().toLowerCase();
 const slug = s => norm(s).replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
@@ -137,7 +157,11 @@ for (const col of ENRICHED) {
     new Set(rs.map(r => r.area_id)).size > 1 && new Set(rs.map(r => regionOf(r.area_id))).size > 1);
   const routesInvolved = susp.reduce((n, [, rs]) => n + rs.length, 0);
   console.log(`   ${col.padEnd(14)} ${String(susp.length).padStart(3)} blob(s)  ${String(routesInvolved).padStart(4)} route(s)`);
-  for (const [h, rs] of susp.sort((a, b) => b[1].length - a[1].length).slice(0, 3)) {
+  // EVERY suspicious blob goes into the report — the console listing below is truncated
+  // for readability, but `--json` is used as a work list and must be complete. Recording
+  // only the top 3 per column is how a cleanup pass missed 12 contaminated routes
+  // (Mount Tom / North Cascades text on Mt. Lyell, Mt. Jefferson, Kagevah Peak...).
+  for (const [h, rs] of susp.sort((a, b) => b[1].length - a[1].length)) {
     contamination.push({ column: col, blob: h, routes: rs.map(r => r.id),
                          names: [...new Set(rs.map(r => r.name))],
                          regions: [...new Set(rs.map(r => regionOf(r.area_id)))] });
@@ -188,14 +212,53 @@ if (STATE) {
   console.log("");
 }
 
+// ------------------------------------------- 5. one state's place names on another's routes
+// A stronger, blob-independent version of check 2. Contamination that reached only ONE
+// route in a region produces no duplicate blob at all, and a blob ranked below the listing
+// cutoff is easy to skim past — but "Mount Tom area, North Cascades" on Mt. Lyell in
+// California is wrong on its face, whatever it is or isn't duplicated with. This is the
+// check that would have caught all 122 routes cleaned on 2026-07-29 in one pass.
+//
+// Only state-EXCLUSIVE names qualify. "Northwest Forest Pass" is valid in Oregon too,
+// there is a Mount Adams in New Hampshire, and bare "Cascade" matches Cascade Canyon in
+// the Tetons — none of those can carry the inference.
+const STATE_ONLY = [
+  ["Washington", /North Cascades|Gifford Pinchot|Okanogan-?Wenatchee|Alpine Lakes Wilderness|Mount Index|Methow|Washington Pass|Baker-?Snoqualmie|Snoqualmie Ranger|Rainy Pass trailhead|Mount Tom area/i],
+  ["California", /Yosemite|Inyo National Forest|Tuolumne|High Sierra Ranger|Mount Whitney Ranger/i],
+  ["Colorado",   /Rocky Mountain National Park|San Isabel National Forest|Arapaho.{0,24}Roosevelt/i],
+  ["Wyoming",    /Grand Teton National Park|Bridger-?Teton|Wind River Ranger/i],
+];
+const leaks = [];
+for (const r of scoped) {
+  const st = (stateOf(r.area_id) || "").toLowerCase();
+  for (const col of ENRICHED) {
+    const v = r[col];
+    if (v == null || v === "") continue;
+    const txt = JSON.stringify(v);
+    for (const [owner, re] of STATE_ONLY) {
+      if (owner.toLowerCase() !== st && re.test(txt)) {
+        leaks.push({ id: r.id, name: r.name, state: stateOf(r.area_id), column: col, claims: owner });
+        break;
+      }
+    }
+  }
+}
+console.log(`5. OUT-OF-STATE PLACE NAMES  (${leaks.length} field(s))`);
+for (const l of leaks.slice(0, 20)) {
+  console.log(`   ${l.id.padEnd(42)} in ${l.state.padEnd(12)} ${l.column} claims ${l.claims}`);
+}
+if (leaks.length > 20) console.log(`   ... ${leaks.length - 20} more`);
+console.log("");
+
 const report = {
   examined: scoped.length,
   idScoping: { peakScoped: scoped.length - orphan.length, nameDerived: orphan.length,
                collisionFamilies: collisions.map(([b, rs]) => ({ base: b, ids: rs.map(r => r.id) })) },
   contamination,
   duplicateRoutes: realDupes.map(([k, rs]) => ({ areaId: k.split(" ")[0], name: k.split(" ")[1], ids: rs.map(r => r.id) })),
+  outOfStatePlaceNames: leaks,
 };
 if (OUT) { fs.writeFileSync(OUT, JSON.stringify(report, null, 1)); console.log(`wrote ${OUT}`); }
 
-const problems = contamination.length + realDupes.length;
+const problems = contamination.length + realDupes.length + leaks.length;
 console.log(problems ? `FOUND ${problems} thing(s) to look at.` : "Clean.");
