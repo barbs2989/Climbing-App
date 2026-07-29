@@ -5,7 +5,7 @@ The audit (`scripts/audit-hazard-coverage.mjs`) flagged 16 WA glacier routes who
 each. Six are filled in `crevasse-gap-fills.sql`; the rest are deliberately not, for
 reasons that differ per route.
 
-## Filled — 6 routes, each researched individually
+## Filled — 8 routes, each researched individually (6 first pass + 2 in batch 2 below)
 
 `crevasse-gap-fills.sql` appends one glacier-travel warning per route. Each is written from
 route-specific research, not from a zone template, and each names the actual glacier and
