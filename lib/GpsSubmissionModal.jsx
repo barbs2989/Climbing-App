@@ -173,45 +173,15 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         return
       }
 
-      // Trigger Phase C notifications asynchronously
-      const submissionId = result.submissionId
-      const qualityScore = result.qualityScore
-
-      // Notify climber
-      fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          submissionId,
-          climberEmail: climbEmail,
-          climberName: climbName || 'Climber',
-          routeName,
-          qualityScore
-        })
-      }).catch(err => console.error('Climber notification failed:', err))
-
-      // Notify admin
-      fetch(`${SUPABASE_URL}/functions/v1/notify-gps-admin`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          submissionId,
-          routeName,
-          qualityScore,
-          climberName: climbName,
-          climberEmail: climbEmail
-        })
-      }).catch(err => console.error('Admin notification failed:', err))
-
       // Success - update modal with actual quality score from server
-      setQualityScore(qualityScore)
+      setQualityScore(result.qualityScore)
       setShowSuccess(true)
       if (onSuccess) {
         onSuccess({
           valid: result.valid,
-          qualityScore: qualityScore,
+          qualityScore: result.qualityScore,
           message: result.message,
-          submissionId: submissionId
+          submissionId: result.submissionId
         })
       }
     } catch (err) {
@@ -235,7 +205,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
               </div>
             </div>
             <p style={{...styles.textSmall, color: C.text70}}>
-              We'll send you an email when your submission is approved. Thank you for helping the climbing community!
+              Once it's approved your track shows up on this route's page. Thank you for helping the climbing community!
             </p>
             <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>
               Done
@@ -434,7 +404,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             <option>Other</option>
           </select>
 
-          <label style={{...styles.label}}>Email (optional, for follow-up)</label>
+          <label style={{...styles.label}}>Email (optional)</label>
           <input
             type="email"
             value={climbEmail}
