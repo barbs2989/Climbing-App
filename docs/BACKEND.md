@@ -102,11 +102,25 @@ routes(
   season        text,
   description   text,
   gear          jsonb,                  -- cams/rack/etc.
-  hazards       text[],
+  hazards       text[],                 -- THE hazard field. See the note below.
   verif         jsonb,                  -- {status, source, updated, confirms}
   source        text                    -- "openbeta:<id>"
 )
 ```
+
+> **Route hazards live in `routes.hazards`, and nowhere else.** `dbRouteToCamel` maps
+> `hazards: toArr(r.hazards)` (`lib/db.js`); that is the only hazard field the app reads.
+> Two decoys used to sit alongside it and repeatedly attracted enrichment work that then
+> displayed nothing — `route_hazard_research` (a table nothing referenced) and
+> `routes.hazard_tags` (a column nothing referenced, whose contents turned out to be
+> largely misapplied: glacier hazards sprayed onto desert sport and bouldering routes).
+> Migration `0060` drops both. If you are adding hazard data, target `routes.hazards`,
+> resolve route ids by joining through `areas` rather than matching peak names against
+> `routes.name`, and check whether the route already has hazards before appending.
+>
+> Unrelated, despite the name: the `hazard_tags` *reference table* and the `hazard_tags`
+> column on trip reports (below) are a different, live concept — user-supplied condition
+> tags feeding the consensus engine. Only `routes.hazard_tags` was dropped.
 
 Since this sketch, `routes` has grown substantially (see migrations 0006-0014): composite
 grades, multi-discipline support, `gain_ft`/`loss_ft`/`dist_km`/`max_angle`/`commitment`,
