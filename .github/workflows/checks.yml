@@ -1,0 +1,50 @@
+name: Checks
+
+# deploy.yml only runs on pushes to main, so until now nothing verified a branch
+# before it merged — the static guards and the build were both merge-time checks.
+# This runs them on every pull request and every non-main push instead.
+#
+# Deliberately separate from deploy.yml: adding pull_request there would try to
+# publish a PR to GitHub Pages.
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main, master]
+  workflow_dispatch:
+
+# A new push to the same branch/PR makes an in-flight run obsolete.
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # Identifiers referenced but never bound. Blank-screened production twice
+      # (PRs #317, #359) because the bundler builds them without complaint.
+      - name: Undefined references
+        run: npm run check:refs
+
+      # Hooks called conditionally, after an early return, or from an event
+      # handler. A hook in a handler throws at click time without unmounting,
+      # so the control silently does nothing (PR #377).
+      - name: Rules of hooks
+        run: npm run check:hooks
+
+      # The bundler step on its own — `npm run build` would re-run both guards
+      # above. No VITE_* secrets needed just to prove it compiles, and they are
+      # unavailable to forked PRs anyway.
+      - name: Build
+        run: npx vite build
