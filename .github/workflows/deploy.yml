@@ -27,6 +27,10 @@ jobs:
       # blank-screened production twice (PRs #317, #359). No linter here, and the
       # bundler happily builds them.
       - run: npm run check:refs
+      # Catches hooks called conditionally, after an early return, or from an
+      # event handler. A hook in a handler throws at click time without
+      # unmounting, so the control silently does nothing (PR #377).
+      - run: npm run check:hooks
       - run: npm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
