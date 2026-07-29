@@ -15,6 +15,11 @@ CREATE TABLE IF NOT EXISTS gps_notifications (
   action_url text,
   climber_name text,
   climber_email text,
+  -- Whether an email actually left the building. The row is written first and is
+  -- the system of record even when the mail provider is unconfigured or failing,
+  -- so `sent_at` alone would overstate what happened — these two say which.
+  email_sent boolean NOT NULL DEFAULT false,
+  email_error text,
   sent_at timestamptz NOT NULL DEFAULT now(),
   created_at timestamptz NOT NULL DEFAULT now()
 );

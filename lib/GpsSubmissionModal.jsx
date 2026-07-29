@@ -27,6 +27,10 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
   const [validationIssues, setValidationIssues] = useState([])
   const [confirmations, setConfirmations] = useState({ climbed: false, isRoute: false })
   const [showSuccess, setShowSuccess] = useState(false)
+  // Whether a receipt email actually reached the climber. Starts false and is only
+  // set true if notify-gps-climber reports a real send, so the success screen never
+  // promises an email that a missing/failing mail provider will not deliver.
+  const [emailed, setEmailed] = useState(false)
 
   const handlePaste = (e) => {
     const text = e.target.value
@@ -189,7 +193,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           routeName,
           qualityScore
         })
-      }).catch(err => console.error('Climber notification failed:', err))
+      }).then(r => r.json())
+        .then(d => { if (d && d.emailed) setEmailed(true) })
+        .catch(err => console.error('Climber notification failed:', err))
 
       // Notify admin
       fetch(`${SUPABASE_URL}/functions/v1/notify-gps-admin`, {
@@ -237,6 +243,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             </div>
             <p style={{...styles.textSmall, color: C.text70}}>
               Once it's approved your track shows up on this route's page. Thank you for helping the climbing community!
+              {emailed ? " We've emailed you a receipt." : ""}
             </p>
             <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>
               Done
