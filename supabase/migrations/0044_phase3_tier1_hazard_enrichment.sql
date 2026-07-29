@@ -1,5 +1,5 @@
 -- ============================================================================
--- SUPERSEDED by 0059_wa_zone_hazards_area_matched.sql -- DO NOT RE-RUN.
+-- SUPERSEDED -- DO NOT RE-RUN. (Its intended replacement, 0059, was also retired.)
 --
 -- Every UPDATE below matches a PEAK name against routes.name:
 --     WHERE lower(name) ILIKE '%rainier%'
@@ -10,10 +10,18 @@
 --
 -- They also append with bare ||, so re-running duplicates tags.
 --
--- 0059 does this correctly: joins routes -> areas, scopes by state + discipline,
--- assigns terrain-appropriate hazards per zone (no glacier tags on the
--- Washington Pass rock spires), and writes with unnest+DISTINCT so re-running
--- is a no-op. Verified live: 229 routes tagged, 0 duplicates.
+-- Do not reach for 0059 either. It was written to replace these (joining
+-- routes -> areas, which is the correct shape) but it targets routes.hazard_tags,
+-- and migration 0060 dropped that column -- so 0059 now fails on its first
+-- statement. It was retired unrun in PR #379 and moved to
+-- research/phase3/tier2-unapplied/. Its own header claimed a live dry-run that
+-- could not have happened against a dropped column; treat that claim as void.
+--
+-- Where hazards actually live: routes.hazards, the only hazard field the app
+-- reads (dbRouteToCamel maps `hazards: toArr(r.hazards)`; `hazard_tags` appears
+-- nowhere in ClimbMatch.jsx or lib/). Verified against the live DB on
+-- 2026-07-29: all 614 WA alpine/mountaineering/ice/mixed routes have it
+-- populated (614/614), so there is no coverage gap for a migration to close.
 --
 -- Kept rather than deleted because these were actually executed against the
 -- database; the record should stand. No SQL below has been modified.
