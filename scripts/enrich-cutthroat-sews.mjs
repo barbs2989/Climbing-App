@@ -1,16 +1,12 @@
 // One-off enrichment writer for 10 WA routes (Cutthroat Peak + South Early Winters Spire).
 // GET -> merge -> PATCH -> verify(re-GET) per route. Run with: node scripts/enrich-cutthroat-sews.mjs
-import fs from "fs";
+// Was reading SUPABASE_SERVICE_ROLE_KEY out of .env.local, where that name has
+// never existed — so every request went out unauthenticated. The shared loader
+// reads both env files and throws when the service key is absent.
+import { SUPABASE_URL, requireServiceKey, headers } from "./lib/supabase-env.mjs";
 
-const env = Object.fromEntries(
-  fs.readFileSync(new URL("../.env.local", import.meta.url), "utf8")
-    .split("\n")
-    .filter(l => l.includes("=") && !l.trim().startsWith("#"))
-    .map(l => { const i = l.indexOf("="); return [l.slice(0, i).trim(), l.slice(i + 1).trim().replace(/^"|"$/g, "")]; })
-);
-const URL_BASE = env.VITE_SUPABASE_URL;
-const KEY = env.SUPABASE_SERVICE_ROLE_KEY;
-const H = { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" };
+const URL_BASE = SUPABASE_URL;
+const H = headers(requireServiceKey(), { "Content-Type": "application/json" });
 
 const AVAL_NA = (months) => ({ zone: "NWAC — North Cascades (forecast program runs mid-Nov–mid-Apr only; no product exists during the summer rock season)", byMonth: Object.fromEntries(months.map(m => [m, "N/A"])) });
 const WEATHER = { typical: "Standard North Cascades convective pattern — afternoon thunderstorms build over the Cascade Crest in summer; standard guidance is an early start and being off exposed terrain by early/mid-afternoon." };
@@ -497,7 +493,13 @@ async function patchRoute(id, body) {
   }
 }
 
-(async () => {
+// This file writes to the live database as a side effect of being loaded, so
+// importing it — to read `routes`, to syntax-check it — used to fire 10 PATCHes
+// at production. Applied 2026-07-29; re-running is a no-op re-write of the same
+// values, but nothing should reach the DB without someone asking for it.
+if (process.argv[2] !== "--run") {
+  console.log("enrich-cutthroat-sews: writer script, not run by default (already applied 2026-07-29).\nPass --run to execute against the live database.");
+} else (async () => {
   for (const [id, spec] of Object.entries(routes)) {
     console.log(`\n=== ${id} ===`);
     const current = await getRoute(id);
