@@ -42,7 +42,50 @@ where id in (
 )
 order by name, id;
 
--- 2. Delete the four duplicates.
+-- 2. PRE-FLIGHT GUARD, then the deletes — one transaction, so a failed guard rolls the whole
+--    thing back. Same guard as adams-dedup.sql, for the same reason: deleting a route reaches
+--    well beyond the routes table.
+--
+--      contributions.route_id     on delete cascade   -- user-submitted fixes, DESTROYED
+--      topo_lines.route_id        on delete cascade   -- user-drawn topo lines, DESTROYED
+--      gps_submissions.route_id   on delete cascade   -- submitted GPS tracks, DESTROYED
+--      objectives.route_id        loose text, no FK   -- saved objective, ORPHANED
+--      crews.route_id             loose text, no FK   -- trip party, ORPHANED
+--      climb_logs.route_id        loose text, no FK   -- logged ascent, ORPHANED
+--
+--    These four ids are more exposed than the Adams pair was: The Tooth Fairy and Serpentine
+--    Arête are popular Cascade classics, so a wishlist tap or a logged ascent against the
+--    losing id is entirely plausible. The guard checks at run time rather than trusting a
+--    count taken when the file was written.
+--
+--    It runs INSIDE the transaction deliberately: raising there aborts it and turns COMMIT
+--    into a rollback. Outside, an editor that autocommits per statement would run the deletes
+--    anyway after the guard complained.
+begin;
+
+do $$
+declare
+  n_contrib int; n_topo int; n_gps int; n_obj int; n_crew int; n_logs int; n_total int;
+  doomed text[] := array['stuart_cascadian_couloir','stuart_west_ridge',
+                         'wa_the_tooth_tooth_fairy','wa_serpentine_arete'];
+begin
+  select count(*) into n_contrib from contributions   where route_id = any(doomed);
+  select count(*) into n_topo    from topo_lines      where route_id = any(doomed);
+  select count(*) into n_gps     from gps_submissions where route_id = any(doomed);
+  select count(*) into n_obj     from objectives      where route_id = any(doomed);
+  select count(*) into n_crew    from crews           where route_id = any(doomed);
+  select count(*) into n_logs    from climb_logs      where route_id = any(doomed);
+  n_total := n_contrib + n_topo + n_gps + n_obj + n_crew + n_logs;
+
+  if n_total > 0 then
+    raise exception
+      'ABORTED — % row(s) still reference these duplicates. Would be DESTROYED: contributions=%, topo_lines=%, gps_submissions=%. Would be ORPHANED: objectives=%, crews=%, climb_logs=%. Re-point them at the surviving id before deleting.',
+      n_total, n_contrib, n_topo, n_gps, n_obj, n_crew, n_logs;
+  end if;
+
+  raise notice 'Pre-flight OK — nothing references the four duplicate rows.';
+end $$;
+
 delete from routes where id = 'stuart_cascadian_couloir';
 delete from routes where id = 'stuart_west_ridge';
 delete from routes where id = 'wa_the_tooth_tooth_fairy';
@@ -53,6 +96,8 @@ delete from routes where id = 'wa_serpentine_arete';
 update areas a
 set route_count = (select count(*) from routes r where r.area_id = a.id)
 where a.id in ('wa_mount_stuart','wa_the_tooth','wa_dragontail_peak');
+
+commit;
 
 -- 4. VERIFY: expect 4 rows (the keepers only), and sane route_counts.
 -- If these result tables don't appear, your paste was truncated.
