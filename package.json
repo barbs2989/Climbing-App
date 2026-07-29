@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-schema-drift.mjs && vite build",
     "preview": "vite preview",
-    "check:refs": "node scripts/check-undefined-refs.mjs"
+    "check:refs": "node scripts/check-undefined-refs.mjs",
+    "check:schema": "node scripts/check-schema-drift.mjs",
+    "schema:refresh": "node scripts/refresh-schema-snapshot.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
