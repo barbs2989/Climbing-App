@@ -122,6 +122,32 @@ table — the default 60 means ~3,400 round trips and takes over ten minutes.
 
 After any batch write, re-read the affected ids and reconcile counts. A 200 is not evidence the data changed.
 
+### Hand-written SQL pasted into the Supabase SQL Editor
+
+`patchRow` only guards writes that go through a script. Structural changes here are
+routinely handed to the user as copy-paste SQL, and that path has no such guard: the
+SQL Editor reports **success for an UPDATE or DELETE that matched zero rows**. Success
+means the statement parsed, not that anything changed.
+
+**Run `npm run check:sql -- fix.sql` before handing any .sql file over.** It reads the
+live DB and fails on:
+
+- target ids that do not exist — the statement would report success and do nothing
+- a `DELETE` removing the last row with that name on its peak — the only copy
+- files or statements large enough to be truncated on paste
+
+On 2026-07-28 five fixes were reported applied that had matched nothing, because their
+ids were composed from route display names instead of looked up. One of them caused data
+loss: `wa_dragontail_peak_r4` and `wa_dragontail_peak_triple_couloirs` were flagged as a
+duplicate pair, so the plan was "keep r4, delete triple_couloirs" — but r4 was not in the
+live DB, so triple_couloirs was the only copy, and Triple Couloirs was destroyed. It was
+rebuilt from `catalog/wa-alpine/routes.json`.
+
+Two habits that follow from it: a duplicate flag is a hypothesis, so confirm **both** ids
+return rows before deleting either half; and when anything may be writing concurrently,
+write `col = coalesce(col, <value>)` so a restore can only fill blanks — a plain
+assignment overwrote a richer `hazards` enrichment during that recovery.
+
 ### Route identity — why one peak's data keeps landing on another
 
 Only ~9% of WA route ids are peak-scoped (`wa_mount_baker_north_ridge`, i.e. the id
