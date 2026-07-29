@@ -41,22 +41,45 @@ glacier-travel language, which drops the North Cascades count from 10 to 9.
 Buckner's glacier is the Boston, on the north side. Demanding a crevasse warning on the SW
 face is the zone assuming something about a line it can't see. Left alone.
 
-## Blocked on dedup — 3 duplicate Mount Adams rows
+## Resolved by dedup — Mount Adams, and both were false positives
 
-The live database has three rows for what is one route, the standard South Climb:
+**Deduped 2026-07-29** (`research/phase3/adams-dedup.sql`, applied and verified):
+`wa_mount_adams_south_side` was a bare stub and `wa_mount_adams_south_spur`
+collapsed into `wa_mount_adams_south_climb`, which kept south_spur's accurate
+figures (9.2 km one-way, 6,676 ft = 12,276 − 5,600 from Cold Springs). Mount
+Adams went 12 routes → 10.
 
-| id | name | dist_km | gain_ft |
-|---|---|---|---|
-| `wa_mount_adams_south_climb` | South Climb (South Spur) | 19.3 | 6700 |
-| `wa_mount_adams_south_spur` | South Spur Route | 9.2 | 6676 |
-| `wa_mount_adams_south_side` | Mount Adams - South Side | null | null |
+**No hazard was written, because the survivor does not need one.** South Climb's
+`face` is "South Spur / Suksdorf Ridge", its overview and approach contain zero
+glacier mentions, and it is Adams' non-technical snow route — not crevassed
+glacier terrain. Its one genuine crevasse-adjacent risk is already recorded, in
+`obj_haz`: *"Glissade runouts onto rock or open crevasses/moats late season."*
+Same category as Buckner SW Face.
 
-Two of these were in the flagged 16. Writing hazards onto duplicates would multiply the
-problem, so nothing was written. This needs a dedup decision first: 19.3 km matches the
-standard ~12 mi round trip, so `south_climb` looks like the keeper, `south_spur`'s 9.2 km
-looks like a one-way or bad figure, and `south_side` is an empty stub. Related known
-duplicates on the same peak: `adams_avalanche_glacier` / `wa_mount_adams_avalanche_glacier`
-and `adams_northwest_ridge` / `wa_mount_adams_northwest_ridge`.
+The audit had scored it a gap only because it read `routes.hazards` and never
+`obj_haz`. Fixed in `scripts/audit-hazard-coverage.mjs` — see below.
+
+**Not a duplicate after all:** the Northwest Ridge pair was left intact.
+`adams_northwest_ridge` (FA Givler/LeBlond/McGowan 1967, NW Ridge right of the
+Adams Glacier, II, AI2-3, 3 pitches) and `wa_mount_adams_northwest_ridge`
+(FA Molenaar/Johnson/Ostro/Startzell 1960, West Face of the North Ridge, III,
+AI1-2, 5 pitches) are different climbs. The earlier claim of an Avalanche
+Glacier duplicate pair was also wrong — only `adams_avalanche_glacier` exists.
+
+## Audit blind spot — obj_haz was never read
+
+`audit-hazard-coverage.mjs` scored coverage from `routes.hazards` alone. A hazard
+recorded in `obj_haz` is still documented, so the audit reported gaps that were
+not gaps. Across WA alpine/mountaineering/ice/mixed, 28 routes carry crevasse
+language in `obj_haz` but not in `hazards`.
+
+After including `obj_haz`, total core gaps fell 146 → 124 and crevasse-concept
+gaps 15 → 2. Attribution of the 13 crevasse removals:
+
+- **8** were real fills from the applied crevasse SQL (now in `hazards`)
+- **4** were false positives this fix corrects: Buckner SW Face, Forbidden East
+  Ridge, Adams South Climb, Shuksan Northwest Arete
+- **1** was `wa_mount_adams_south_spur`, deleted by the dedup
 
 ## Still needs research — 4 routes
 

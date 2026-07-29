@@ -1,24 +1,24 @@
 {
  "generated": "2026-07-29",
  "scope": {
-  "inScope": 614,
-  "zoned": 185
+  "inScope": 613,
+  "zoned": 184
  },
  "zones": [
   {
    "zone": "Glaciated volcanoes",
    "key": "glaciated-volcano",
-   "routes": 41,
-   "clean": 10,
+   "routes": 40,
+   "clean": 19,
    "miss": {
-    "crevasse": 6,
-    "ice_hazard": 17,
-    "rock": 19
+    "crevasse": 1,
+    "ice_hazard": 15,
+    "rock": 10
    },
    "softMiss": {
-    "routefinding": 24,
-    "weather": 35,
-    "altitude": 38
+    "routefinding": 18,
+    "weather": 34,
+    "altitude": 34
    }
   },
   {
@@ -30,7 +30,7 @@
     "rock": 1
    },
    "softMiss": {
-    "weather": 1,
+    "weather": 0,
     "routefinding": 0
    }
   },
@@ -38,133 +38,61 @@
    "zone": "North Cascades glaciated peaks",
    "key": "nc-glaciated",
    "routes": 30,
-   "clean": 2,
+   "clean": 5,
    "miss": {
-    "crevasse": 9,
-    "rock": 10,
-    "remote": 25
+    "crevasse": 1,
+    "rock": 4,
+    "remote": 23
    },
    "softMiss": {
-    "routefinding": 26,
-    "weather": 21
+    "routefinding": 25,
+    "weather": 15
    }
   },
   {
    "zone": "Stuart Range / Enchantments",
    "key": "stuart-enchantments",
    "routes": 43,
-   "clean": 13,
+   "clean": 15,
    "miss": {
-    "rock": 8,
-    "descent": 28
+    "rock": 6,
+    "descent": 26
    },
    "softMiss": {
-    "routefinding": 38,
-    "weather": 22
+    "routefinding": 37,
+    "weather": 17
    }
   },
   {
    "zone": "Washington Pass spires",
    "key": "wa-pass-spires",
    "routes": 53,
-   "clean": 9,
+   "clean": 15,
    "miss": {
-    "rock": 24,
-    "descent": 40
+    "rock": 9,
+    "descent": 36
    },
    "softMiss": {
-    "routefinding": 53,
-    "weather": 31
+    "routefinding": 52,
+    "weather": 28
    }
   },
   {
    "zone": "Olympics",
    "key": "olympics",
    "routes": 16,
-   "clean": 4,
+   "clean": 5,
    "miss": {
-    "remote": 12,
-    "rock": 6
+    "remote": 11,
+    "rock": 0
    },
    "softMiss": {
-    "routefinding": 12,
-    "water": 15
+    "routefinding": 11,
+    "water": 14
    }
   }
  ],
  "coreGaps": [
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_forbidden_peak_northwest_face",
-   "name": "Northwest Face",
-   "area": "Forbidden Peak",
-   "missing": [
-    "crevasse",
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 3,
-   "sample": "mixed snow/ice/rock"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_adams_south_spur",
-   "name": "South Spur Route",
-   "area": "Mount Adams",
-   "missing": [
-    "crevasse",
-    "ice_hazard",
-    "rock"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "icefall / serac",
-    "rockfall / loose rock"
-   ],
-   "entries": 2,
-   "sample": "Exposed, featureless slopes offer no shelter from lightning or wind."
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_boston_peak_southeast_face",
-   "name": "Southeast Face",
-   "area": "Boston Peak",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 4,
-   "sample": "notoriously loose and rotten rock"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_buckner_mountain_southwest_face",
-   "name": "Southwest Face / Southwest Slopes",
-   "area": "Buckner Mountain",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 3,
-   "sample": "loose scree"
-  },
   {
    "zone": "stuart-enchantments",
    "zoneLabel": "Stuart Range / Enchantments",
@@ -202,57 +130,6 @@
   {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
-   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
-   "name": "Cauthorn-Wilson Couloir",
-   "area": "Cutthroat Peak",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 2,
-   "sample": "Avalanche danger on the approach and lower couloir, particularly later in the day or later in the season as solar input increases."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_cutthroat_peak_southeast_buttress",
-   "name": "Southeast Buttress",
-   "area": "Cutthroat Peak",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 1,
-   "sample": "Overall route length can force a late, headlamp-assisted return, especially outside peak summer daylight."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_cutthroat_west_ridge",
-   "name": "West Ridge",
-   "area": "Cutthroat Peak",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "The upper west ridge is exposed and has loose sections requiring care."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
    "id": "wa_dolphin_chimney",
    "name": "Dolphin Chimney",
    "area": "South Early Winters Spire",
@@ -266,23 +143,6 @@
    ],
    "entries": 1,
    "sample": "Rated R — minimal protection for most of the pitch per Mountain Project's own route description"
-  },
-  {
-   "zone": "stuart-enchantments",
-   "zoneLabel": "Stuart Range / Enchantments",
-   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
-   "name": "East Ridge via Aasgard Pass Route",
-   "area": "Dragontail Peak",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "Moats and thin snow bridges develop near boulders on the pass as the season progresses"
   },
   {
    "zone": "nc-glaciated",
@@ -336,57 +196,6 @@
    "sample": "Loose, rockfall-prone terrain typical of all the gully variations on Forbidden's south side"
   },
   {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_forbidden_peak_east_ridge",
-   "name": "East Ridge Direct",
-   "area": "Forbidden Peak",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 5,
-   "sample": "loose rock on the gendarmes and long crest"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_forbidden_peak_north_ridge",
-   "name": "North Ridge",
-   "area": "Forbidden Peak",
-   "missing": [
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 5,
-   "sample": "long exposed ridge"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_forbidden_peak_west_ridge",
-   "name": "West Ridge",
-   "area": "Forbidden Peak",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 4,
-   "sample": "serious exposure on the knife-edge crest"
-  },
-  {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
    "id": "wa_glacier_peak_cool_glacier_gerdine",
@@ -404,40 +213,6 @@
    "sample": "crevasses"
   },
   {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_glacier_peak_disappointment_cleaver",
-   "name": "Disappointment Cleaver / Sitkum Glacier",
-   "area": "Glacier Peak",
-   "missing": [
-    "ice_hazard",
-    "rock"
-   ],
-   "missingLabels": [
-    "icefall / serac",
-    "rockfall / loose rock"
-   ],
-   "entries": 1,
-   "sample": "Crevasses on the Sitkum Glacier, generally minor but present."
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_glacier_peak_frostbite_ridge",
-   "name": "Frostbite Ridge",
-   "area": "Glacier Peak",
-   "missing": [
-    "ice_hazard",
-    "rock"
-   ],
-   "missingLabels": [
-    "icefall / serac",
-    "rockfall / loose rock"
-   ],
-   "entries": 4,
-   "sample": "Long, committing ridge in a very remote setting"
-  },
-  {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
    "id": "wa_liberty_and_injustice_for_all",
@@ -453,91 +228,6 @@
    ],
    "entries": 1,
    "sample": "FA account describes \"long pitches with adequate yet not always abundant protection\" — expect some runout above gear even on a repeat ascent."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_liberty_bell_east_face",
-   "name": "East Face",
-   "area": "Liberty Bell Mountain",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "moderate exposed rock"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_liberty_bell_independence_route",
-   "name": "The Independence Route",
-   "area": "Liberty Bell Mountain",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "sustained face and crack climbing"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_liberty_bell_overexposure",
-   "name": "Overexposure",
-   "area": "Liberty Bell Mountain",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "sustained hard face/crack climbing"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_liberty_bell_serpentine_crack",
-   "name": "Serpentine Crack",
-   "area": "Liberty Bell Mountain",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "sustained crack climbing"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_liberty_bell_thin_red_line",
-   "name": "Thin Red Line",
-   "area": "Liberty Bell Mountain",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "sustained thin crack climbing"
   },
   {
    "zone": "wa-pass-spires",
@@ -593,23 +283,6 @@
   {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_adams_south_climb",
-   "name": "South Climb (South Spur)",
-   "area": "Mount Adams",
-   "missing": [
-    "crevasse",
-    "ice_hazard"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "icefall / serac"
-   ],
-   "entries": 3,
-   "sample": "Whiteout navigation on the featureless upper snow slopes"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
    "id": "wa_mount_baker_easton_glacier",
    "name": "Easton Glacier",
    "area": "Mount Baker",
@@ -642,57 +315,6 @@
    "sample": "Late-season bergschrund formation is the route's main technical obstacle."
   },
   {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_mount_constance_north_chute",
-   "name": "North Chute",
-   "area": "Mount Constance",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 1,
-   "sample": "Avalanche hazard in Avalanche Canyon and its chutes is explicitly called out by regional trip reports in May-June conditions."
-  },
-  {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_mount_olympus_west_ridge",
-   "name": "West Ridge",
-   "area": "Mount Olympus (West Peak)",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 4,
-   "sample": "loose class 5.6-5.7 rock if off route"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_ptarmigan_ridge",
-   "name": "Ptarmigan Ridge",
-   "area": "Mount Rainier",
-   "missing": [
-    "crevasse",
-    "rock"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "Serac hazard threatening sections of the ridge"
-  },
-  {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
    "id": "wa_mount_shuksan_north_face",
@@ -708,57 +330,6 @@
    ],
    "entries": 4,
    "sample": "Avalanche/serac fall from the Hanging Glacier above the route"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_mount_shuksan_northwest_arete",
-   "name": "Northwest Arete",
-   "area": "Mount Shuksan",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 3,
-   "sample": "Staying on the arête crest is used deliberately to minimize icefall exposure from the glaciers on either side"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_mount_shuksan_price_glacier",
-   "name": "Price Glacier",
-   "area": "Mount Shuksan",
-   "missing": [
-    "crevasse",
-    "remote"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel",
-    "remoteness / rescue"
-   ],
-   "entries": 3,
-   "sample": "Significant serac fall hazard - the icefall above the route has calved large blocks onto climbers' lines in past seasons"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_mount_shuksan_white_salmon_glacier",
-   "name": "White Salmon Glacier",
-   "area": "Mount Shuksan",
-   "missing": [
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 2,
-   "sample": "Avalanches off the Hanging Glacier onto the approach/glacier."
   },
   {
    "zone": "stuart-enchantments",
@@ -797,108 +368,6 @@
   {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
-   "id": "wa_northwest_face_boving_pollock",
-   "name": "Northwest Face (Boving-Pollock)",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 2,
-   "sample": "Dirty/lichenous rock on lower pitches typical of a low-traffic line"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_northwest_ridge_2",
-   "name": "Northwest Ridge",
-   "area": "Boston Peak",
-   "missing": [
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 6,
-   "sample": "notoriously rotten, 'feta cheese' rock quality, worse than the standard Southeast Face route"
-  },
-  {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_olympus_blue_glacier_east_ramps",
-   "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
-   "area": "Mount Olympus (West Peak)",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "AAC-documented fatal accident, 1993: an unroped fall near Snow Dome."
-  },
-  {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_olympus_summit_block_west_edge",
-   "name": "Summit Block — Northwest Edge Finish (variation)",
-   "area": "Mount Olympus (West Peak)",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 1,
-   "sample": "The northwest edge offers more solid rock than the East Face ramps but is steeper and more exposed, requiring good climbing ability and protection skills"
-  },
-  {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_olympus_traverse",
-   "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
-   "area": "Mount Olympus (West Peak)",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "This is an advanced alpine objective requiring strong fitness, solid rock scrambling ability, and excellent weather judgment"
-  },
-  {
-   "zone": "stuart-enchantments",
-   "zoneLabel": "Stuart Range / Enchantments",
-   "id": "wa_prusik_peak_der_sportsman",
-   "name": "Der Sportsman",
-   "area": "Prusik Peak",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 4,
-   "sample": "sustained hard crack climbing"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
    "id": "wa_silver_star_northwest_face",
    "name": "Northwest Face",
    "area": "Silver Star Mountain",
@@ -912,57 +381,6 @@
    ],
    "entries": 2,
    "sample": "A serious, remote mixed/ice route that depends on rare conditions coalescing (thin/technical ice)"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_south_arete",
-   "name": "South Arete",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 2,
-   "sample": "Airy, exposed knife-edge ridge sections carry real fall consequence despite the low technical grade"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_south_early_winter_spire_direct_east_buttress",
-   "name": "Direct East Buttress",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "sustained hard crack and face pitches"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_south_early_winter_spire_east_buttress",
-   "name": "East Buttress",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "popular route with parties above"
   },
   {
    "zone": "wa-pass-spires",
@@ -982,57 +400,6 @@
    "sample": "sustained hard free climbing"
   },
   {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_southeast_ridge_se_corner",
-   "name": "Southeast Ridge (SE Corner)",
-   "area": "Mount Shuksan",
-   "missing": [
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 2,
-   "sample": "Descent rappel traverses a gully that can drop rock onto parties below."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_southern_man",
-   "name": "Southern Man",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "rock",
-    "descent"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "descent / retreat"
-   ],
-   "entries": 2,
-   "sample": "Shared lower pitches (1–2) with Direct East Buttress have documented loose 'kitty litter' rock"
-  },
-  {
-   "zone": "nc-glaciated",
-   "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_sw_couloir_and_face",
-   "name": "SW Couloir and Face",
-   "area": "Mount Shuksan",
-   "missing": [
-    "rock",
-    "remote"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock",
-    "remoteness / rescue"
-   ],
-   "entries": 2,
-   "sample": "Route crosses two large transverse crevasses directly on the Lower Curtis Glacier icefall, in addition to the standard Fisher Chimneys glacier crossings used on descent."
-  },
-  {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
    "id": "wa_the_hitchhiker",
@@ -1048,23 +415,6 @@
    ],
    "entries": 1,
    "sample": "Sustained, mentally demanding exposure per a first-person trip report — the route requires composure over a long, committing pitch sequence"
-  },
-  {
-   "zone": "olympics",
-   "zoneLabel": "Olympics",
-   "id": "wa_washington_ellinor_traverse_ridge",
-   "name": "Washington Ellinor Traverse (Ridge)",
-   "area": "Mount Washington",
-   "missing": [
-    "remote",
-    "rock"
-   ],
-   "missingLabels": [
-    "remoteness / rescue",
-    "rockfall / loose rock"
-   ],
-   "entries": 1,
-   "sample": "The ridge crosses fractured, weathered pillow basalt; the crux gendarme downclimb has notably poor rock and severe exposure -- guides often recommend an alternate route instead of downclimbing it"
   },
   {
    "zone": "wa-pass-spires",
@@ -1112,34 +462,19 @@
    "sample": "loose rock on the towers"
   },
   {
-   "zone": "stuart-enchantments",
-   "zoneLabel": "Stuart Range / Enchantments",
-   "id": "wa_beckey_davis",
-   "name": "Beckey-Davis",
-   "area": "Prusik Peak",
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_boston_peak_southeast_face",
+   "name": "Southeast Face",
+   "area": "Boston Peak",
    "missing": [
-    "descent"
+    "remote"
    ],
    "missingLabels": [
-    "descent / retreat"
+    "remoteness / rescue"
    ],
-   "entries": 2,
-   "sample": "Some loose rock reported in the chimney-gully sections."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_big_kangaroo_west_face",
-   "name": "West Face / West Route",
-   "area": "Big Kangaroo",
-   "missing": [
-    "descent"
-   ],
-   "missingLabels": [
-    "descent / retreat"
-   ],
-   "entries": 4,
-   "sample": "loose rock typical of Kangaroo Ridge"
+   "entries": 5,
+   "sample": "notoriously loose and rotten rock"
   },
   {
    "zone": "nc-glaciated",
@@ -1202,6 +537,21 @@
    "sample": "bergschrund crossing"
   },
   {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_buckner_mountain_southwest_face",
+   "name": "Southwest Face / Southwest Slopes",
+   "area": "Buckner Mountain",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 3,
+   "sample": "loose scree"
+  },
+  {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
    "id": "wa_burgundy_spire_north_face",
@@ -1262,6 +612,36 @@
    "sample": "avalanche in the confined couloir"
   },
   {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "name": "Cauthorn-Wilson Couloir",
+   "area": "Cutthroat Peak",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 2,
+   "sample": "Avalanche danger on the approach and lower couloir, particularly later in the day or later in the season as solar input increases."
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_cutthroat_west_ridge",
+   "name": "West Ridge",
+   "area": "Cutthroat Peak",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "The upper west ridge is exposed and has loose sections requiring care."
+  },
+  {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
    "id": "wa_dome_peak_dome_glacier",
@@ -1275,6 +655,21 @@
    ],
    "entries": 3,
    "sample": "crevasses"
+  },
+  {
+   "zone": "stuart-enchantments",
+   "zoneLabel": "Stuart Range / Enchantments",
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "name": "East Ridge via Aasgard Pass Route",
+   "area": "Dragontail Peak",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "Moats and thin snow bridges develop near boulders on the pass as the season progresses"
   },
   {
    "zone": "stuart-enchantments",
@@ -1337,21 +732,6 @@
    "sample": "Rockfall from parties above or from the loose upper gully"
   },
   {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_early_winter_couloir",
-   "name": "Early Winter Couloir",
-   "area": "North Early Winters Spire",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 1,
-   "sample": "No established rappel stations exist on this descent, forcing ad hoc anchors in poor rock -- a fatal accident (May 2025) occurred when an old rusted piton anchor failed, killing 3 climbers; inspect any in-place anchor thoroughly and consider building fresh anchors rather than trusting fixed gear"
-  },
-  {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
    "id": "wa_eldorado_peak_eldorado_glacier_nw",
@@ -1384,17 +764,17 @@
   {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_eldorado_peak_west_arete",
-   "name": "West Arete",
-   "area": "Eldorado Peak",
+   "id": "wa_forbidden_peak_east_ridge",
+   "name": "East Ridge Direct",
+   "area": "Forbidden Peak",
    "missing": [
-    "crevasse"
+    "remote"
    ],
    "missingLabels": [
-    "crevasse / glacier travel"
+    "remoteness / rescue"
    ],
-   "entries": 3,
-   "sample": "Rockfall/loose-rock hazard along the full length of the arête."
+   "entries": 5,
+   "sample": "loose rock on the gendarmes and long crest"
   },
   {
    "zone": "nc-glaciated",
@@ -1410,6 +790,36 @@
    ],
    "entries": 5,
    "sample": "steep firm ice and mixed terrain"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_forbidden_peak_northwest_face",
+   "name": "Northwest Face",
+   "area": "Forbidden Peak",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 4,
+   "sample": "mixed snow/ice/rock"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_forbidden_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Forbidden Peak",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 5,
+   "sample": "serious exposure on the knife-edge crest"
   },
   {
    "zone": "wa-pass-spires",
@@ -1429,6 +839,21 @@
   {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
+   "id": "wa_glacier_peak_disappointment_cleaver",
+   "name": "Disappointment Cleaver / Sitkum Glacier",
+   "area": "Glacier Peak",
+   "missing": [
+    "ice_hazard"
+   ],
+   "missingLabels": [
+    "icefall / serac"
+   ],
+   "entries": 1,
+   "sample": "Crevasses on the Sitkum Glacier, generally minor but present."
+  },
+  {
+   "zone": "glaciated-volcano",
+   "zoneLabel": "Glaciated volcanoes",
    "id": "wa_glacier_peak_disappointment_peak_cleaver",
    "name": "Disappointment Peak Cleaver (Cool Glacier)",
    "area": "Glacier Peak",
@@ -1440,6 +865,21 @@
    ],
    "entries": 6,
    "sample": "Long remote approach: ~9 mi to White Pass and ~12 mi to the Glacier Gap high camp via the North Fork Sauk River Trail (south side); a separate eastern approach via the Little Wenatchee River Trail (13.8 mi to White Pass from the Little Wenatchee Ford Trailhead) also reaches this route from the Lake Wenatchee side"
+  },
+  {
+   "zone": "glaciated-volcano",
+   "zoneLabel": "Glaciated volcanoes",
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "name": "Frostbite Ridge",
+   "area": "Glacier Peak",
+   "missing": [
+    "ice_hazard"
+   ],
+   "missingLabels": [
+    "icefall / serac"
+   ],
+   "entries": 4,
+   "sample": "Long, committing ridge in a very remote setting"
   },
   {
    "zone": "glaciated-volcano",
@@ -1594,6 +1034,81 @@
   {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
+   "id": "wa_liberty_bell_east_face",
+   "name": "East Face",
+   "area": "Liberty Bell Mountain",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "moderate exposed rock"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_liberty_bell_independence_route",
+   "name": "The Independence Route",
+   "area": "Liberty Bell Mountain",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "sustained face and crack climbing"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_liberty_bell_overexposure",
+   "name": "Overexposure",
+   "area": "Liberty Bell Mountain",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "sustained hard face/crack climbing"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_liberty_bell_serpentine_crack",
+   "name": "Serpentine Crack",
+   "area": "Liberty Bell Mountain",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "sustained crack climbing"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_liberty_bell_thin_red_line",
+   "name": "Thin Red Line",
+   "area": "Liberty Bell Mountain",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "sustained thin crack climbing"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
    "id": "wa_liberty_crack",
    "name": "Liberty Crack",
    "area": "Liberty Bell Mountain",
@@ -1654,21 +1169,6 @@
   {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_adams_lyman_glacier",
-   "name": "Lyman Glacier",
-   "area": "Mount Adams",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "Crevasse and serac navigation on the Lyman Glacier"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
    "id": "wa_mount_adams_north_ridge",
    "name": "North Ridge",
    "area": "Mount Adams",
@@ -1680,6 +1180,21 @@
    ],
    "entries": 4,
    "sample": "Steep, sustained snow on the upper ridge with rockfall from the ridge crest"
+  },
+  {
+   "zone": "glaciated-volcano",
+   "zoneLabel": "Glaciated volcanoes",
+   "id": "wa_mount_adams_south_climb",
+   "name": "South Climb (South Spur)",
+   "area": "Mount Adams",
+   "missing": [
+    "ice_hazard"
+   ],
+   "missingLabels": [
+    "icefall / serac"
+   ],
+   "entries": 5,
+   "sample": "Whiteout navigation on the featureless upper snow slopes"
   },
   {
    "zone": "glaciated-volcano",
@@ -1727,21 +1242,6 @@
    "sample": "Loose, exposed rock on the ridge crest, worst later in the season"
   },
   {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_baker_park_glacier_headwall",
-   "name": "Park Glacier Headwall",
-   "area": "Mount Baker",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "Steep ice headwall with serac hazard"
-  },
-  {
    "zone": "olympics",
    "zoneLabel": "Olympics",
    "id": "wa_mount_constance_finger_traverse",
@@ -1755,6 +1255,21 @@
    ],
    "entries": 4,
    "sample": "highly exposed narrow ledge traverse (the 'Finger Traverse')"
+  },
+  {
+   "zone": "olympics",
+   "zoneLabel": "Olympics",
+   "id": "wa_mount_constance_north_chute",
+   "name": "North Chute",
+   "area": "Mount Constance",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 1,
+   "sample": "Avalanche hazard in Avalanche Canyon and its chutes is explicitly called out by regional trip reports in May-June conditions."
   },
   {
    "zone": "olympics",
@@ -1787,6 +1302,21 @@
    "sample": "loose rock on the arete"
   },
   {
+   "zone": "olympics",
+   "zoneLabel": "Olympics",
+   "id": "wa_mount_olympus_west_ridge",
+   "name": "West Ridge",
+   "area": "Mount Olympus (West Peak)",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 4,
+   "sample": "loose class 5.6-5.7 rock if off route"
+  },
+  {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
    "id": "wa_mount_rainier_emmons_glacier",
@@ -1800,21 +1330,6 @@
    ],
    "entries": 5,
    "sample": "Large open crevasses and ladder crossings, especially mid-to-late season"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_fuhrer_finger",
-   "name": "Fuhrer Finger",
-   "area": "Mount Rainier",
-   "missing": [
-    "ice_hazard"
-   ],
-   "missingLabels": [
-    "icefall / serac"
-   ],
-   "entries": 3,
-   "sample": "Rockfall funneling through the couloir, worse in warm afternoons"
   },
   {
    "zone": "glaciated-volcano",
@@ -1864,66 +1379,6 @@
   {
    "zone": "glaciated-volcano",
    "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_kautz_glacier",
-   "name": "Kautz Glacier",
-   "area": "Mount Rainier",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 5,
-   "sample": "The Kautz ice chute — firm alpine ice, usually one to two short steep pitches that can be bare and hard late season"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_kautz_headwall",
-   "name": "Kautz Headwall",
-   "area": "Mount Rainier",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "Steep ice headwall above the Kautz Glacier"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_liberty_ridge",
-   "name": "Liberty Ridge",
-   "area": "Mount Rainier",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 5,
-   "sample": "Constant rock and icefall — Liberty Ridge is statistically one of the deadliest routes on the mountain"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_mowich_face",
-   "name": "Mowich Face",
-   "area": "Mount Rainier",
-   "missing": [
-    "crevasse"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel"
-   ],
-   "entries": 3,
-   "sample": "Sustained steep ice/snow with multiple line options"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
    "id": "wa_mount_rainier_nisqually_icefall",
    "name": "Nisqually Icefall",
    "area": "Mount Rainier",
@@ -1950,21 +1405,6 @@
    ],
    "entries": 3,
    "sample": "Complex crevasse navigation"
-  },
-  {
-   "zone": "glaciated-volcano",
-   "zoneLabel": "Glaciated volcanoes",
-   "id": "wa_mount_rainier_willis_wall",
-   "name": "Willis Wall",
-   "area": "Mount Rainier",
-   "missing": [
-    "crevasse"
-   ],
-   "missingLabels": [
-    "crevasse / glacier travel"
-   ],
-   "entries": 3,
-   "sample": "Extreme objective hazard from the hanging Willis Wall icecap seracs"
   },
   {
    "zone": "nc-glaciated",
@@ -1999,6 +1439,36 @@
   {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_mount_shuksan_northwest_arete",
+   "name": "Northwest Arete",
+   "area": "Mount Shuksan",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 3,
+   "sample": "Staying on the arête crest is used deliberately to minimize icefall exposure from the glaciers on either side"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_mount_shuksan_price_glacier",
+   "name": "Price Glacier",
+   "area": "Mount Shuksan",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 4,
+   "sample": "Significant serac fall hazard - the icefall above the route has calved large blocks onto climbers' lines in past seasons"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
    "id": "wa_mount_shuksan_sulphide_glacier",
    "name": "Sulphide Glacier",
    "area": "Mount Shuksan",
@@ -2010,6 +1480,21 @@
    ],
    "entries": 6,
    "sample": "Increasingly open crevasses on the Sulphide Glacier as the season progresses"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "name": "White Salmon Glacier",
+   "area": "Mount Shuksan",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 2,
+   "sample": "Avalanches off the Hanging Glacier onto the approach/glacier."
   },
   {
    "zone": "volcanic-nonglaciated",
@@ -2074,21 +1559,6 @@
   {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
-   "id": "wa_news_nw_corner",
-   "name": "Northwest Corner (Boving-Pollack Route)",
-   "area": "North Early Winters Spire",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 3,
-   "sample": "The route includes wide flake and offwidth pitches that require big gear; running low on large cams is a real risk."
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
    "id": "wa_north_ridge_3",
    "name": "North Ridge",
    "area": "Cutthroat Peak",
@@ -2100,21 +1570,6 @@
    ],
    "entries": 4,
    "sample": "unprotected, runout climbing low on the route (the 5.6 slab out of the notch)"
-  },
-  {
-   "zone": "stuart-enchantments",
-   "zoneLabel": "Stuart Range / Enchantments",
-   "id": "wa_northeast_buttress_4",
-   "name": "Northeast Buttress",
-   "area": "Colchuck Peak",
-   "missing": [
-    "rock"
-   ],
-   "missingLabels": [
-    "rockfall / loose rock"
-   ],
-   "entries": 4,
-   "sample": "loose and occasionally mossy rock throughout the route"
   },
   {
    "zone": "stuart-enchantments",
@@ -2147,19 +1602,79 @@
    "sample": "Runout, R-rated protection on pitches 1 and 3."
   },
   {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_northwest_face_boving_pollock",
+   "name": "Northwest Face (Boving-Pollock)",
+   "area": "South Early Winters Spire",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 2,
+   "sample": "Dirty/lichenous rock on lower pitches typical of a low-traffic line"
+  },
+  {
    "zone": "nc-glaciated",
    "zoneLabel": "North Cascades glaciated peaks",
-   "id": "wa_poltergeist_pinnacle",
-   "name": "Poltergeist Pinnacle",
-   "area": "Mount Challenger",
+   "id": "wa_northwest_ridge_2",
+   "name": "Northwest Ridge",
+   "area": "Boston Peak",
    "missing": [
     "remote"
    ],
    "missingLabels": [
     "remoteness / rescue"
    ],
+   "entries": 6,
+   "sample": "notoriously rotten, 'feta cheese' rock quality, worse than the standard Southeast Face route"
+  },
+  {
+   "zone": "olympics",
+   "zoneLabel": "Olympics",
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+   "area": "Mount Olympus (West Peak)",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 3,
+   "sample": "AAC-documented fatal accident, 1993: an unroped fall near Snow Dome."
+  },
+  {
+   "zone": "olympics",
+   "zoneLabel": "Olympics",
+   "id": "wa_olympus_summit_block_west_edge",
+   "name": "Summit Block — Northwest Edge Finish (variation)",
+   "area": "Mount Olympus (West Peak)",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 1,
+   "sample": "The northwest edge offers more solid rock than the East Face ramps but is steeper and more exposed, requiring good climbing ability and protection skills"
+  },
+  {
+   "zone": "stuart-enchantments",
+   "zoneLabel": "Stuart Range / Enchantments",
+   "id": "wa_prusik_peak_der_sportsman",
+   "name": "Der Sportsman",
+   "area": "Prusik Peak",
+   "missing": [
+    "rock"
+   ],
+   "missingLabels": [
+    "rockfall / loose rock"
+   ],
    "entries": 4,
-   "sample": "Underprotected 5.9+ R crux pitch with groundfall potential"
+   "sample": "sustained hard crack climbing"
   },
   {
    "zone": "wa-pass-spires",
@@ -2220,21 +1735,6 @@
    ],
    "entries": 3,
    "sample": "Generally poor rock quality for much of the route, with limited gear-placement opportunities on some pitches"
-  },
-  {
-   "zone": "wa-pass-spires",
-   "zoneLabel": "Washington Pass spires",
-   "id": "wa_sews_sw_rib",
-   "name": "Southwest Rib",
-   "area": "South Early Winters Spire",
-   "missing": [
-    "descent"
-   ],
-   "missingLabels": [
-    "descent / retreat"
-   ],
-   "entries": 3,
-   "sample": "Some slab sections are runout (notably the delicate 5.6+ slab and the arete pitch with little pro)."
   },
   {
    "zone": "stuart-enchantments",
@@ -2314,6 +1814,51 @@
   {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
+   "id": "wa_south_arete",
+   "name": "South Arete",
+   "area": "South Early Winters Spire",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 2,
+   "sample": "Airy, exposed knife-edge ridge sections carry real fall consequence despite the low technical grade"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "name": "Direct East Buttress",
+   "area": "South Early Winters Spire",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "sustained hard crack and face pitches"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "name": "East Buttress",
+   "area": "South Early Winters Spire",
+   "missing": [
+    "descent"
+   ],
+   "missingLabels": [
+    "descent / retreat"
+   ],
+   "entries": 3,
+   "sample": "popular route with parties above"
+  },
+  {
+   "zone": "wa-pass-spires",
+   "zoneLabel": "Washington Pass spires",
    "id": "wa_south_early_winter_spire_southwest_couloir",
    "name": "Southwest Couloir",
    "area": "South Early Winters Spire",
@@ -2372,19 +1917,49 @@
    "sample": "The approach gains the headwall via loose, sandy 3rd-class scree"
   },
   {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_southeast_ridge_se_corner",
+   "name": "Southeast Ridge (SE Corner)",
+   "area": "Mount Shuksan",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 2,
+   "sample": "Descent rappel traverses a gully that can drop rock onto parties below."
+  },
+  {
    "zone": "wa-pass-spires",
    "zoneLabel": "Washington Pass spires",
-   "id": "wa_the_west_face",
-   "name": "The West Face",
-   "area": "North Early Winters Spire",
+   "id": "wa_southern_man",
+   "name": "Southern Man",
+   "area": "South Early Winters Spire",
    "missing": [
     "descent"
    ],
    "missingLabels": [
     "descent / retreat"
    ],
-   "entries": 1,
-   "sample": "Standard North Cascades alpine hazards: rockfall, rapid weather changes, and no quick bail once established above the crux without a rope."
+   "entries": 2,
+   "sample": "Shared lower pitches (1–2) with Direct East Buttress have documented loose 'kitty litter' rock"
+  },
+  {
+   "zone": "nc-glaciated",
+   "zoneLabel": "North Cascades glaciated peaks",
+   "id": "wa_sw_couloir_and_face",
+   "name": "SW Couloir and Face",
+   "area": "Mount Shuksan",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 2,
+   "sample": "Route crosses two large transverse crevasses directly on the Lower Curtis Glacier icefall, in addition to the standard Fisher Chimneys glacier crossings used on descent."
   },
   {
    "zone": "wa-pass-spires",
@@ -2400,6 +1975,21 @@
    ],
    "entries": 4,
    "sample": "loose blocks near the start, about 60 ft up P1"
+  },
+  {
+   "zone": "olympics",
+   "zoneLabel": "Olympics",
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "name": "Washington Ellinor Traverse (Ridge)",
+   "area": "Mount Washington",
+   "missing": [
+    "remote"
+   ],
+   "missingLabels": [
+    "remoteness / rescue"
+   ],
+   "entries": 1,
+   "sample": "The ridge crosses fractured, weathered pillow basalt; the crux gendarme downclimb has notably poor rock and severe exposure -- guides often recommend an alternate route instead of downclimbing it"
   }
  ],
  "warnsAboutNothing": [
@@ -2409,16 +1999,6 @@
    "area": "Prusik Peak",
    "entries": [
     "Dirt/lichen reported on the lower pitches given the route's relative obscurity."
-   ]
-  },
-  {
-   "id": "wa_forbidden_peak_northwest_face",
-   "name": "Northwest Face",
-   "area": "Forbidden Peak",
-   "entries": [
-    "mixed snow/ice/rock",
-    "route-finding on a big face",
-    "shaded, cold aspect"
    ]
   }
  ]

@@ -94,7 +94,7 @@ async function main() {
   // and < 'wa`' ('`' is the byte after '_'). Discipline is filtered client-side for the
   // same reason — it isn't indexed either.
   process.stdout.write("fetching WA routes by key range… ");
-  const all = await selectAll("routes", "id,name,area_id,discipline,hazards",
+  const all = await selectAll("routes", "id,name,area_id,discipline,hazards,obj_haz",
     "id=gte.wa_&id=lt.wa%60", { pageSize: 500 });
   const routes = all.filter(r => DISCIPLINES.includes(r.discipline));
   process.stdout.write(`${all.length} WA routes -> ${routes.length} in scope\nfetching areas… `);
@@ -127,7 +127,13 @@ async function main() {
     let clean = 0;
 
     for (const r of inZone) {
-      const prose = (r.hazards || []).join("  ");
+      // Read obj_haz as well as hazards. A hazard recorded in obj_haz IS
+      // documented -- scoring only `hazards` reported 28 WA routes as missing a
+      // crevasse warning when they carried one in obj_haz (e.g. Adams South
+      // Climb: "Glissade runouts onto rock or open crevasses/moats late
+      // season"). Those false positives invite writing a duplicate, or worse a
+      // fabricated one onto a route that isn't actually glaciated.
+      const prose = [...(r.hazards || []), ...(r.obj_haz || [])].join("  ");
       const missing = z.core.filter(c => !CONCEPT[c].re.test(prose));
       z.soft.forEach(c => { if (!CONCEPT[c].re.test(prose)) softMiss[c]++; });
       missing.forEach(c => miss[c]++);
