@@ -62,9 +62,30 @@ update routes set hazards = coalesce(hazards, '{}'::text[]) || array[
 ] where id = 'wa_eldorado_peak_west_arete'
   and not (coalesce(hazards, '{}'::text[]) @> array['The approach traverses the Eldorado and Inspiration glaciers to reach the foot of the arête, and those crevasses open through the summer — by late season the traverse is genuinely more complex than the climbing grade suggests. Roped glacier travel and crevasse rescue are needed before the rock starts.']);
 
+-- ---------------------------------------------------------------------------
+-- Batch 2 — researched after the first six. Safe to re-run the whole file: every
+-- statement above and below appends only if its text is absent.
+-- ---------------------------------------------------------------------------
+
+-- Forbidden Peak — Northwest Face. Two glaciers before the face, and the way in commits
+-- you: a rappel off Sharkfin Col drops onto the Boston Glacier, so retreat means
+-- re-climbing it. Was the worst case in the audit — its only hazard entries were "mixed
+-- snow/ice/rock", "route-finding on a big face", "shaded, cold aspect".
+update routes set hazards = coalesce(hazards, '{}'::text[]) || array[
+  'Two crevassed glaciers before the climbing starts: up the west edge of the Quien Sabe to about 7,500 ft, then a 150 ft rappel down a loose gully off Sharkfin Col onto the Boston Glacier and an ascending traverse across it. A large crevasse opens around 7,600 ft in many seasons and can cost real time. The rappel is the commitment — retreat means re-climbing to the col — and the face tops out at a cornice near 8,375 ft.'
+] where id = 'wa_forbidden_peak_northwest_face'
+  and not (coalesce(hazards, '{}'::text[]) @> array['Two crevassed glaciers before the climbing starts: up the west edge of the Quien Sabe to about 7,500 ft, then a 150 ft rappel down a loose gully off Sharkfin Col onto the Boston Glacier and an ascending traverse across it. A large crevasse opens around 7,600 ft in many seasons and can cost real time. The rappel is the commitment — retreat means re-climbing to the col — and the face tops out at a cornice near 8,375 ft.']);
+
+-- Boston Peak — Southeast Face. Quien Sabe Glacier approach out of Boston Basin; the
+-- direct line through the lower glacier is the crevassed one.
+update routes set hazards = coalesce(hazards, '{}'::text[]) || array[
+  'Crevassed glacier approach up the Quien Sabe from Boston Basin — the big crevasses are low on the glacier, and the direct line through them runs to about 45° and is very exposed, so most parties take the left side and traverse in beneath Sharkfin Tower. The snow traverse on the col to the summit block is short but exposed, and wants axe and crampons.'
+] where id = 'wa_boston_peak_southeast_face'
+  and not (coalesce(hazards, '{}'::text[]) @> array['Crevassed glacier approach up the Quien Sabe from Boston Basin — the big crevasses are low on the glacier, and the direct line through them runs to about 45° and is very exposed, so most parties take the left side and traverse in beneath Sharkfin Tower. The snow traverse on the col to the summit block is short but exposed, and wants axe and crampons.']);
+
 commit;
 
--- VERIFY: expect exactly 6 rows, each with a crevasse/bergschrund/moat mention.
+-- VERIFY: expect exactly 8 rows, each with a crevasse/bergschrund/moat mention.
 -- If this result table does not appear, your paste was truncated.
 select id,
        array_length(hazards, 1) as entries,
@@ -77,6 +98,8 @@ where id in (
   'wa_mount_rainier_ptarmigan_ridge',
   'wa_mount_rainier_willis_wall',
   'wa_forbidden_peak_west_ridge',
-  'wa_eldorado_peak_west_arete'
+  'wa_eldorado_peak_west_arete',
+  'wa_forbidden_peak_northwest_face',
+  'wa_boston_peak_southeast_face'
 )
 order by id;

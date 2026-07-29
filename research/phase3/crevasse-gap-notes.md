@@ -20,6 +20,15 @@ the actual seasonal behaviour.
 | `wa_forbidden_peak_west_ridge` | glacier crossing out of Boston Basin; lower bergschrund stepped across, upper turned on the left; late-season moat where snow pulls off the rock |
 | `wa_eldorado_peak_west_arete` | Eldorado and Inspiration glacier traverse to the base, opening through summer — harder than the rock grade implies |
 
+### Batch 2 — researched after the first six
+
+| route | what the warning says |
+|---|---|
+| `wa_forbidden_peak_northwest_face` | Quien Sabe to ~7,500 ft, then a 150 ft rappel off Sharkfin Col onto the Boston Glacier and an ascending traverse; large crevasse near 7,600 ft; the rappel is the commitment, retreat means re-climbing to the col; cornice near 8,375 ft |
+| `wa_boston_peak_southeast_face` | big crevasses low on the Quien Sabe; the direct line through them hits ~45° and is very exposed, so most take the left side in beneath Sharkfin Tower; short exposed col traverse to the summit block |
+
+That brings the filled total to **8**.
+
 ## Reclassified — 2 routes were audit false positives
 
 **`wa_southeast_ridge_se_corner`** (Mount Shuksan — Southeast Ridge) already warns:
@@ -49,25 +58,21 @@ looks like a one-way or bad figure, and `south_side` is an empty stub. Related k
 duplicates on the same peak: `adams_avalanche_glacier` / `wa_mount_adams_avalanche_glacier`
 and `adams_northwest_ridge` / `wa_mount_adams_northwest_ridge`.
 
-## Still needs research — 5 routes
+## Still needs research — 4 routes
 
-Genuine gaps, but I didn't find route-specific sourcing good enough to write a warning I'd
-defend. Each needs someone to answer a concrete question rather than infer from the peak:
+Genuine gaps where I couldn't source a warning I'd defend. Each needs someone to answer a
+concrete question rather than infer from the peak:
 
-- `wa_forbidden_peak_northwest_face` — **highest priority.** Its whole hazard list is
-  "mixed snow/ice/rock", "route-finding on a big face", "shaded, cold aspect": three
-  statements of terrain type, no warning of any kind, on a serious glaciated face. It is
-  also one of only two routes in WA whose hazard entries warn about nothing at all.
 - `wa_forbidden_peak_east_ridge` — approached across the Boston Glacier; the entry covers
   gendarmes, exposure and anchors but nothing about getting there.
 - `wa_forbidden_peak_east_face_catscratch` — a single hazard entry in total.
 - `wa_mount_shuksan_northwest_arete` — mentions staying on the crest to limit icefall
   exposure from the glaciers either side, but not the glacier travel to gain the arête.
-- `wa_boston_peak_southeast_face` — reached from Boston Basin over the Quien Sabe; four
-  entries, all about rock quality.
+  Searching mostly returns Price Glacier and Nooksack Cirque material rather than anything
+  specific to this arête, so it needs a guidebook rather than the web.
 - `wa_mount_adams_northwest_ridge` — borders the Adams Glacier, but how much glacier the
-  ridge proper crosses is exactly the question, and it's also entangled with the duplicate
-  rows above.
+  ridge proper crosses is exactly the question, and it's entangled with the duplicate rows
+  above.
 
 ## Ground rules used here
 
