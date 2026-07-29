@@ -33,7 +33,16 @@ function mapClimb(c, mid) {
   const style = discipline === "rock" ? (t.trad ? "Trad" : t.sport ? "Sport" : null) : null;
   const grade = discipline === "bouldering" ? (c.grades?.vscale || c.grades?.yds) : (c.grades?.yds || c.grades?.vscale);
   if (!grade) { dropped++; return; }
-  const o = { id: uniq(PREFIX + "_" + slug(c.name), usedR), mountainId: mid, name: c.name, grade, discipline };
+  // Route ids are scoped to their crag/peak (`mid`), NOT to the state alone. Using
+  // PREFIX + route name produced ids like wa_north_ridge / wa_north_ridge_2 /
+  // wa_north_face_3, where the counter is assigned in walk order and carries no meaning.
+  // That made "the North Ridge route" ambiguous across peaks — wa_north_ridge spanned
+  // Steeple Rock, Whatcom, Cutthroat, Primus and Main Peak — and every later pass that
+  // resolved a route by name or by a name-shaped id could land on the wrong peak. It is
+  // the root cause of migrations 0044-0046 hitting nothing, of a Mount Adams permit block
+  // appearing on Mount Baker and Forbidden, and of several duplicate route rows.
+  // With `mid` in the id, `uniq` now only fires for a genuine same-name-same-crag clash.
+  const o = { id: uniq(mid + "_" + slug(c.name), usedR), mountainId: mid, name: c.name, grade, discipline };
   if (style) o.style = style;
   o.pitches = (c.pitches && c.pitches.length) ? c.pitches.length : 0;
   o.routeFt = (c.length > 0) ? Math.round(c.length * 3.28084) : null;
