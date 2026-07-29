@@ -11,7 +11,8 @@
     "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
-    "schema:refresh": "node scripts/refresh-schema-snapshot.mjs"
+    "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
+    "audit:identity": "node scripts/audit-route-identity.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

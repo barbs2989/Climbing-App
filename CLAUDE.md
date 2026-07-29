@@ -113,8 +113,34 @@ way: PostgREST accepts a PATCH sent with the anon key and returns **200 with an
 empty array**, because RLS rejected every row. The write reports success and
 changes nothing.
 
+Pass `{ pageSize: 1000 }` to `selectAll` for anything scanning the whole `routes`
+table — the default 60 means ~3,400 round trips and takes over ten minutes.
+
 - `requireServiceKey()` throws instead of degrading to the anon key. Use it for anything that writes.
 - `patchRow(table, id, body)` throws unless exactly one row came back, so a wrong id or an RLS rejection can't read as success.
 - `selectAll(table, select, filter)` paginates by keyset. Offset paging over a filtered, unindexed column times out on the 200k-row `routes` table, and an unordered `.range()` silently skips/duplicates rows.
 
 After any batch write, re-read the affected ids and reconcile counts. A 200 is not evidence the data changed.
+
+### Route identity — why one peak's data keeps landing on another
+
+Only ~9% of WA route ids are peak-scoped (`wa_mount_baker_north_ridge`, i.e. the id
+starts with its `area_id`). The other ~91% are derived from the **route name** plus a
+counter: `wa_north_ridge`, `wa_north_ridge_2`, `wa_north_face_3`, `wa_south_face`. So
+"the North Ridge route" does not identify a peak — `wa_north_ridge*` spans Steeple Rock,
+Whatcom, Cutthroat, Primus and Main Peak, and `wa_south_face` spans ten unrelated
+formations.
+
+That is the shared root cause of migrations 0044–0046 writing to nothing, of a Mount
+Adams permit block appearing on Mount Baker and Forbidden, and of Guye Peak carrying two
+copies of one route. **Peak names live on `areas.name`; route names are just the line.**
+
+- Resolve route ids by joining through `areas`, and assert the target row's `area_id`
+  is the peak you meant **before** writing. Never trust a name-shaped id.
+- `npm run audit:identity -- --state wa` reports id-collision families, cross-region
+  duplicate field values (the contamination fingerprint), and duplicate route rows.
+  Run it after any enrichment or import batch.
+- Migration `0062` adds the `route_duplicate_names` view; it should return zero rows.
+- `id like 'wa_%'` is the reflex filter and it misses legacy ids like
+  `stuart_west_ridge` — 6 WA routes today. Filter by the area subtree when a coverage
+  percentage matters.
