@@ -69,6 +69,8 @@ serve(async (req) => {
           .update({
             gpx: mergedGpx,
             gps_contributor_name: submission.climber_name,
+            gps_contributor_email: submission.climber_email,
+            updated_at: new Date().toISOString(),
           })
           .eq("id", submission.route_id);
 

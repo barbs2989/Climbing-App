@@ -173,15 +173,46 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         return
       }
 
+      // Trigger Phase C notifications asynchronously
+      const submissionId = result.submissionId
+      const qualityScore = result.qualityScore
+
+      // Notify climber. Email is optional on this form, and the function rejects a
+      // blank one — skip the round-trip rather than fire a request that 400s.
+      if (climbEmail) fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submissionId,
+          climberEmail: climbEmail,
+          climberName: climbName || 'Climber',
+          routeName,
+          qualityScore
+        })
+      }).catch(err => console.error('Climber notification failed:', err))
+
+      // Notify admin
+      fetch(`${SUPABASE_URL}/functions/v1/notify-gps-admin`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submissionId,
+          routeName,
+          qualityScore,
+          climberName: climbName,
+          climberEmail: climbEmail
+        })
+      }).catch(err => console.error('Admin notification failed:', err))
+
       // Success - update modal with actual quality score from server
-      setQualityScore(result.qualityScore)
+      setQualityScore(qualityScore)
       setShowSuccess(true)
       if (onSuccess) {
         onSuccess({
           valid: result.valid,
-          qualityScore: result.qualityScore,
+          qualityScore: qualityScore,
           message: result.message,
-          submissionId: result.submissionId
+          submissionId: submissionId
         })
       }
     } catch (err) {
