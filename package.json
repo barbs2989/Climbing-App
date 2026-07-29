@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
+    "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs"
   },

@@ -1,10 +1,11 @@
--- Crevasse / glacier-travel warnings for six glacier routes that had none.
+-- Crevasse / glacier-travel warnings for eight glacier routes that had none.
 --
 -- Source: the audit in scripts/audit-hazard-coverage.mjs found 16 WA glacier routes whose
--- routes.hazards prose never mentioned crevasses or snow bridges. Six of those are filled
--- here, each from route-specific research. The other ten are NOT in this file — see
--- crevasse-gap-notes.md for why (two were audit false positives, three are duplicate rows
--- needing dedup first, five still need research).
+-- routes.hazards prose never mentioned crevasses or snow bridges. Eight of those are filled
+-- here, each from route-specific research (six in the first pass, two more in batch 2 --
+-- Forbidden NW Face and Boston Peak SE Face). The remaining eight are NOT in this file --
+-- see crevasse-gap-notes.md for why (two were audit false positives, three duplicate Mount
+-- Adams rows needing dedup first of which two were flagged, four still need research).
 --
 -- Targets routes.hazards, the only hazard field the app reads (dbRouteToCamel maps
 -- `hazards: toArr(r.hazards)`, lib/db.js). NOT hazard_tags, NOT route_hazard_research —
