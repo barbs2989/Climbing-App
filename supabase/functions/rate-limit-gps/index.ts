@@ -7,11 +7,12 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Rate limit configuration
+// Rate limit configuration.
+// No per-IP limit: gps_submissions has no IP column and a client-supplied
+// address can't be trusted anyway. Add it server-side if spam shows up.
 const RATE_LIMITS = {
   per_email: { limit: 10, window_hours: 24 }, // 10 submissions per 24 hours per email
   per_route: { limit: 5, window_hours: 7 * 24 }, // 5 submissions per week per route
-  per_ip: { limit: 20, window_hours: 24 }, // 20 submissions per 24 hours per IP
 };
 
 serve(async (req) => {
@@ -20,7 +21,7 @@ serve(async (req) => {
   }
 
   try {
-    const { email, routeId, ipAddress } = await req.json();
+    const { email, routeId } = await req.json();
 
     if (!email || !routeId) {
       return new Response(
@@ -71,26 +72,6 @@ serve(async (req) => {
         }),
         { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json", "Retry-After": "604800" } }
       );
-    }
-
-    // Check submissions per IP (24 hours)
-    if (ipAddress) {
-      const { count: ipCount } = await supabase
-        .from("gps_submissions")
-        .select("*", { count: "exact", head: true })
-        .eq("submitted_from_ip", ipAddress)
-        .gte("submitted_at", oneDay.toISOString());
-
-      if (ipCount >= RATE_LIMITS.per_ip.limit) {
-        return new Response(
-          JSON.stringify({
-            allowed: false,
-            reason: `Rate limit exceeded: ${ipCount}/${RATE_LIMITS.per_ip.limit} submissions from this IP in 24 hours`,
-            retryAfter: 86400,
-          }),
-          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json", "Retry-After": "86400" } }
-        );
-      }
     }
 
     // All checks passed
