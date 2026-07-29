@@ -68,6 +68,35 @@ const LANDMARKS = {
   "route:Plan": ["GETTING THERE", "APPROACH", "ASPECT & SUN", "RACK"],
 };
 
+// Disclosure affordances: controls that reveal more of the screen they are on.
+// Safe to click blind -- they add content, they never submit, send or delete.
+//
+// Everything above only ever sees a screen in its DEFAULT state, which is where
+// this repo's bugs are NOT. Collapsed Home is ~570 chars; all three defects found
+// in the Home audit (#381) lived inside these accordions or in a click handler:
+//
+//   #371  clicking a name in the activity feed -> onViewProfile is not defined
+//   #377  crew chat "load older messages"      -> invalid hook call in onClick
+//   #381  alerts list capped at 8 silently, feed count overstated 5.5x
+//
+// A handler that throws does NOT unmount React, so the app never blanks and the
+// control just silently does nothing. capture() already asserts on pageErrors,
+// so clicking a control and capturing is what turns that silence into a failure.
+const DISCLOSURE = [
+  /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
+  /^Alerts( · \d+ new)?\s*[▾▸]?$/,
+  /^Unfinished business( · \d+)?\s*[▾▸]?$/,
+  /^View all \d+ \w+$/,                   // "View all 14 alerts"
+  /^View \d+ more suggestions?$/,
+  /^Suggested climbs( · \d+)?\s*[▾▸]?$/,
+  /^\d+ (updates|reports|climbs)\s*[▾▸]$/,
+];
+
+// How many disclosures to exercise per screen. Bounds runtime; the screen is
+// re-entered before each one so a control that navigates away cannot poison the
+// rest of the sweep.
+const MAX_DISCLOSURES = 4;
+
 const log = (...a) => console.log(...a);
 const fails = [];
 const fail = (screen, msg) => fails.push(`${screen}: ${msg}`);
@@ -105,7 +134,101 @@ const tap = async (text, i = 0) => {
   return true;
 };
 
+// Leaf elements whose trimmed text matches a DISCLOSURE pattern, in DOM order.
+//
+// Requires the element or a near ancestor to be genuinely interactive. Without
+// that, a plain caption matching one of the patterns gets clicked, changes
+// nothing because it was never clickable, and is reported as a dead control.
+const findDisclosures = () => page.evaluate((pats) => {
+  const clickable = (el) => {
+    for (let e = el, i = 0; e && i < 3; e = e.parentElement, i++) {
+      if (e.tagName === "BUTTON" || getComputedStyle(e).cursor === "pointer") return true;
+    }
+    return false;
+  };
+  const res = [];
+  for (const el of document.querySelectorAll("div,span,button,b")) {
+    if (el.children.length !== 0) continue;
+    const t = (el.textContent || "").trim();
+    if (!t || t.length > 60) continue;
+    if (!pats.some((p) => new RegExp(p).test(t))) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) continue;
+    if (!clickable(el)) continue;
+    res.push(t);
+  }
+  return res;
+}, DISCLOSURE.map((r) => r.source));
+
+// Click by text, scrolling first and dispatching in-page.
+//
+// Do NOT click by viewport coordinate here: most of these controls sit below the
+// fold on a 390x900 phone viewport, and a coordinate click then lands on whatever
+// happens to be at that position -- or nothing. That reads back as "the control
+// changed nothing", i.e. a working toggle reported as dead.
+const clickText = (text) => page.evaluate((text) => {
+  const el = [...document.querySelectorAll("div,span,button,b")]
+    .find((e) => e.children.length === 0 && (e.textContent || "").trim() === text);
+  if (!el) return false;
+  el.scrollIntoView({ block: "center" });
+  el.click();
+  return true;
+}, text);
+
+// Names in a feed are rendered as <b> with cursor:pointer. Tapping one opens a
+// profile -- the interaction that was dead for who knows how long in #371.
+const tapAName = () => page.evaluate(() => {
+  const b = [...document.querySelectorAll("b")].find((e) =>
+    e.children.length === 0 && getComputedStyle(e).cursor === "pointer" && (e.textContent || "").trim().length > 1);
+  if (!b) return null;
+  const t = (b.textContent || "").trim();
+  b.click();
+  return t;
+});
+
 const screens = {};
+
+// Expand each disclosure on `tab` and assert the revealed content is sane. Two
+// invariants beyond the per-screen ones: the click must not raise an uncaught
+// error, and it must actually change what is rendered -- a disclosure that
+// changes nothing is a dead control, which is this repo's signature failure.
+// Identified by TEXT, never by index. Accordion state is React state on App and
+// survives tab switches, so the candidate list changes as the sweep opens things;
+// indexing into a re-queried list clicks the wrong control and then reports a
+// perfectly good toggle as dead.
+async function sweepInteractive(tab) {
+  const done = [];
+  for (let i = 0; i < MAX_DISCLOSURES; i++) {
+    // Start from a pristine reload every time. Some of these controls open a
+    // modal, and an undismissed overlay swallows every later click -- which
+    // reports working toggles as dead AND leaves the app wedged for the phases
+    // after this one. A reload is the only reset that is actually total.
+    await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await page.waitForTimeout(2500);
+    await tap(tab);
+    // Replay what we already opened, so disclosures nested inside another one
+    // (e.g. "View all N alerts", which only exists once Alerts is expanded)
+    // are still reachable from a clean start.
+    for (const label of done) {
+      if (await clickText(label)) await page.waitForTimeout(1200);
+    }
+    const target = (await findDisclosures()).find((t) => !done.includes(t));
+    if (!target) return;
+    done.push(target);
+    const before = await page.innerText("body");
+    pageErrors.length = 0;
+    if (!(await clickText(target))) continue;
+    await page.waitForTimeout(1800);
+    const label = target.replace(/[^\w]+/g, "-").replace(/^-|-$/g, "").slice(0, 32);
+    const after = await page.innerText("body");
+    if (after.trim() === before.trim()) {
+      fail(`${tab}:${label}`, `tapping ${JSON.stringify(target)} changed nothing — the control is dead`);
+      continue;
+    }
+    await capture(`${tab}:${label}`);
+  }
+}
+
 async function capture(name) {
   pageErrors.length = 0;
   await page.waitForTimeout(900);
@@ -136,6 +259,37 @@ try {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
+
+  // Everything above checked default state. This walks one interaction deep,
+  // where the last three sessions' worth of real bugs actually were.
+  log("interactive state:");
+  for (const tab of ["Home", "Crew", "Logbook", "Ranks", "Profile"]) {
+    await sweepInteractive(tab);
+  }
+
+  // Tapping a person's name in the Home activity feed: dead from #371 until it
+  // was found by a static scan, because a throwing handler is invisible.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.waitForTimeout(2500);
+  await tap("Home");
+  const feed = (await findDisclosures()).find((t) => /updates?/.test(t));
+  if (feed) {
+    await clickText(feed);
+    await page.waitForTimeout(1600);
+    pageErrors.length = 0;
+    const who = await tapAName();
+    if (!who) {
+      log("  (no tappable name in the activity feed — profile-open path unchecked)");
+    } else {
+      await page.waitForTimeout(1600);
+      await capture(`Home:profile-of-${who.split(" ")[0]}`);
+    }
+  }
+
+  // The sweep above deliberately opens things. Reload so the route phase starts
+  // from a known state rather than inheriting an open modal.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.waitForTimeout(3000);
 
   log("route detail:");
   await tap("Climbs");
