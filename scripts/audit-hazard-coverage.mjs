@@ -23,7 +23,10 @@ const DISCIPLINES = ["alpine", "mountaineering", "ice", "mixed"];
 // prose. Patterns are deliberately generous: the question is "does this write-up warn
 // about this at all", not "does it use our vocabulary".
 const CONCEPT = {
-  crevasse:   { label: "crevasse / snow bridge", re: /crevass|snow ?bridge|schrund|bergschrund|moat/i },
+  // Also credits explicit glacier-travel language. Mount Shuksan's SE Ridge warns "Route
+  // crosses glaciers three times; conditions worsen late in the season" — a real glacier
+  // warning that the crevasse vocabulary alone scored as absent.
+  crevasse:   { label: "crevasse / glacier travel", re: /crevass|snow ?bridge|schrund|bergschrund|moat|cross(es|ing|ed)? (the )?glacier|glacier (cross|travel)|roped (glacier )?travel|glaciated approach/i },
   ice_hazard: { label: "icefall / serac",        re: /icefall|ice ?fall|serac|séracs?|hanging glacier|ice ?cliff|ice ?block/i },
   // "loose rock" is not enough on its own: real entries say "loose/dirty rock",
   // "loose scree", "loose blocks". Allow filler between "loose" and the noun, and
