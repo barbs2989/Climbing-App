@@ -31,7 +31,57 @@ from routes
 where id in ('wa_mount_adams_south_climb','wa_mount_adams_south_spur','wa_mount_adams_south_side')
 order by id;
 
--- 2. Delete the two duplicates.
+-- 2. PRE-FLIGHT GUARD, then the deletes — one transaction, so a failed guard rolls the
+--    whole thing back.
+--
+--    Deleting a route is not confined to the routes table. Three tables cascade off
+--    routes(id), so their rows are DESTROYED silently:
+--
+--      contributions.route_id     on delete cascade   -- user-submitted fixes
+--      topo_lines.route_id        on delete cascade   -- user-drawn topo lines
+--      gps_submissions.route_id   on delete cascade   -- submitted GPS tracks
+--
+--    Three more hold route_id as a loose text column with no FK (deliberately — see
+--    0031/0036/0037), so their rows SURVIVE but are left pointing at an id that no longer
+--    exists:
+--
+--      objectives.route_id        -- someone's saved objective
+--      crews.route_id             -- a trip party organised around this route
+--      climb_logs.route_id        -- a logged ascent
+--
+--    All six were 0 when this was written, so the deletes were safe then. That is a
+--    point-in-time fact, not a property of the data: one wishlist tap or GPS submission
+--    against south_spur between then and now changes it, and step 4's verify inspects only
+--    routes and route_count, so it would pass either way. Hence a guard that checks at run
+--    time rather than a note trusting that someone checked once.
+--
+--    The guard runs INSIDE the transaction on purpose: raising in there aborts it, every
+--    statement after it fails, and COMMIT becomes a rollback. Outside, a SQL editor that
+--    autocommits per statement would happily run the deletes after the guard complained.
+begin;
+
+do $$
+declare
+  n_contrib int; n_topo int; n_gps int; n_obj int; n_crew int; n_logs int; n_total int;
+  doomed text[] := array['wa_mount_adams_south_spur','wa_mount_adams_south_side'];
+begin
+  select count(*) into n_contrib from contributions   where route_id = any(doomed);
+  select count(*) into n_topo    from topo_lines      where route_id = any(doomed);
+  select count(*) into n_gps     from gps_submissions where route_id = any(doomed);
+  select count(*) into n_obj     from objectives      where route_id = any(doomed);
+  select count(*) into n_crew    from crews           where route_id = any(doomed);
+  select count(*) into n_logs    from climb_logs      where route_id = any(doomed);
+  n_total := n_contrib + n_topo + n_gps + n_obj + n_crew + n_logs;
+
+  if n_total > 0 then
+    raise exception
+      'ABORTED — % row(s) still reference the duplicates. Would be DESTROYED: contributions=%, topo_lines=%, gps_submissions=%. Would be ORPHANED: objectives=%, crews=%, climb_logs=%. Re-point these at wa_mount_adams_south_climb (or remove them) before deleting.',
+      n_total, n_contrib, n_topo, n_gps, n_obj, n_crew, n_logs;
+  end if;
+
+  raise notice 'Pre-flight OK — nothing references the duplicate rows.';
+end $$;
+
 delete from routes where id = 'wa_mount_adams_south_spur';
 delete from routes where id = 'wa_mount_adams_south_side';
 
@@ -40,6 +90,8 @@ delete from routes where id = 'wa_mount_adams_south_side';
 update areas a
 set route_count = (select count(*) from routes r where r.area_id = a.id)
 where a.id = 'wa_mount_adams';
+
+commit;
 
 -- 4. VERIFY: expect one row (the keeper), and route_count = 10.
 -- If these result tables don't appear, your paste was truncated.
