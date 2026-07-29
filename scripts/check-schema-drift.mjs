@@ -20,18 +20,6 @@ const src = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
 const lineOf = (i) => src.slice(0, i).split("\n").length;
 const problems = [];
 
-// Already-known drift, reported loudly every run but not build-breaking, so the
-// check can start guarding against NEW drift today.
-//
-// crews_messages / messages: created by supabase/migrations/0042_crew_and_direct
-// _messaging.sql, which has never been applied — both return PGRST205 from the
-// live API. Every crew-chat and DM read/write throws, so messaging has never
-// persisted; it lives in React state for the session only.
-//
-// Apply 0042, run scripts/refresh-schema-snapshot.mjs, and delete this list —
-// the entries then resolve on their own and any remaining drift fails the build.
-const KNOWN_MISSING = new Set(["crews_messages", "messages"]);
-const known = [];
 
 // Body of a function, by brace matching from its opening "{".
 function bodyOf(name) {
@@ -64,8 +52,7 @@ else {
 // 2. Table names in .from("x").
 for (const m of src.matchAll(/\.from\(\s*["'`]([A-Za-z_][A-Za-z0-9_]*)["'`]\s*\)/g)) {
   if (TABLES[m[1]]) continue;
-  const entry = { line: lineOf(m.index), msg: `.from("${m[1]}") — no such table` };
-  (KNOWN_MISSING.has(m[1]) ? known : problems).push(entry);
+  problems.push({ line: lineOf(m.index), msg: `.from("${m[1]}") — no such table` });
 }
 
 // 3. Explicit column lists in .select("a,b"), scoped to the nearest preceding
@@ -88,11 +75,6 @@ for (const m of src.matchAll(/\.from\(\s*["'`]([A-Za-z_][A-Za-z0-9_]*)["'`]\s*\)
   }
 }
 
-if (known.length) {
-  console.warn(`\ncheck-schema: ${known.length} KNOWN unapplied-migration reference(s) — tracked, not build-breaking:`);
-  for (const p of known.sort((a, b) => a.line - b.line)) console.warn(`  lib/db.js:${p.line}  ${p.msg}`);
-  console.warn(`  -> apply supabase/migrations/0042_crew_and_direct_messaging.sql, then refresh the snapshot.\n`);
-}
 if (problems.length) {
   console.error(`\nSchema drift — lib/db.js references ${problems.length} thing(s) the database does not have:\n`);
   for (const p of problems.sort((a, b) => a.line - b.line)) console.error(`  lib/db.js:${p.line}  ${p.msg}`);

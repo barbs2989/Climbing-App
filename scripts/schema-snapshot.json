@@ -125,6 +125,15 @@
       "meet_time",
       "route_id"
     ],
+    "crews_messages": [
+      "body",
+      "created_at",
+      "crew_id",
+      "id",
+      "image_url",
+      "updated_at",
+      "user_id"
+    ],
     "gps_submissions": [
       "admin_notes",
       "approved_at",
@@ -216,6 +225,15 @@
       "party_size",
       "requested_dates",
       "status"
+    ],
+    "messages": [
+      "body",
+      "created_at",
+      "id",
+      "image_url",
+      "read",
+      "recipient_id",
+      "sender_id"
     ],
     "objectives": [
       "created_at",
