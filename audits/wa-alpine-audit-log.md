@@ -890,3 +890,68 @@ correct for Wild Sky Wilderness).
 
 Next batch will continue alphabetically from `wa_guye_peak_r2` (see progress
 file).
+
+## 2026-07-29 — Pass 1, Batch 15
+
+Checked 10 routes across 8 peaks: Guye Peak (North Route "Hidden Ridge", South Gully/Spur),
+Hadley Peak (Cougar Divide, Skyline Divide), Helmet Butte (Standard Route), Himmelhorn
+(Southeast Route), Mount Deception (Honeymoon Route), Hozomeen Mountain (Southeast Face),
+Hurry-Up Peak (South Ridge), and Icy Peak (Southwest Route/Icy Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-15.sql`:**
+- `wa_guye_peak_south_gully` and `wa_icy_peak_southwest_route` both had `access.notes`
+  stamped with a false location clause naming an unrelated peak — "Whatcom Peak area, North
+  Cascades" on the Guye Peak (Snoqualmie Pass) route, and "Mount Tom area, North Cascades" on
+  the Icy Peak (Mt. Baker) route. Confirmed this is copy-paste boilerplate junk, not a
+  per-route fact, by finding the identical "Mount Tom area, North Cascades" string on 35
+  routes DB-wide — including `wy_gooseneck_glacier_route` (Gannett Peak, **Wyoming**), which
+  has no possible connection to the North Cascades. Stripped the false clause from this
+  batch's two affected routes rather than fabricate a replacement location. The other 33
+  affected routes are outside this batch's scope — worth a dedicated future pass since it's a
+  widespread pattern, not a one-off.
+- Hozomeen Mountain's area `elevation_ft` (8,072 ft) was a 1-ft outlier against its own
+  Southeast Face route's `high_point_ft` (8,071 ft, already correct) and external sources
+  (Wikipedia cites 8,071 ft NAVD 88, corroborated independently while checking the 1904 FA).
+  Fixed the area to match.
+- Helmet Butte's area `elevation_ft` and its Standard Route's `high_point_ft` both read 7,372
+  ft, but the route's own `corrections` field already documents a prior research pass that
+  concluded "research supports 7,400 ft (Wikipedia, most consistently corroborated topo/USGS
+  figure)" — the finding was written into `corrections` but never applied to the actual
+  elevation columns. Independently corroborated externally (Wikipedia and peakery.com both
+  cite 7,400 ft) and applied to both rows.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_hozomeen_mountain_southeast_face`: its own `corrections` field is a detailed self-audit
+  stating this route's name/id ("Southeast Face (Standard)") doesn't correspond to any
+  documented route on Hozomeen's main (North, 8,071 ft) summit — every source checked
+  describes the standard/easiest route there as the Northeast Ridge/Buttress (1904 FA, class
+  4), and that's what this entry's fields actually document under a mismatched name. A real
+  "Southeast Buttress" exists (FA 1988, III 5.6) but on a separate sub-summit (South Peak,
+  8,003 ft) about a mile away. This run's external checks corroborate the `corrections`
+  field's account, but the name/id-vs-content mismatch is a rename/split decision for a
+  human, not a field patch — same conflation pattern flagged repeatedly in prior batches (Big
+  Kangaroo, Cascade Peak East Ridge, Goat Mountain, etc.).
+- `wa_hadley_peak` (area + both routes, 7,522 ft): external sources disagree with each other
+  (7,470 / 7,513 / 7,515 / 7,516 ft depending on source) and none exactly match the on-file
+  figure, so nothing was changed — but the area's stored coordinates matched an independently
+  found GPS reading to five decimal places, a stronger signal than the noisy elevation
+  figures. Flagging for a future pass with topo/LIDAR access rather than picking one of the
+  conflicting numbers.
+- `wa_honeymoon_route`: the FA claim ("1965 Arnie & Diane Bloomer") couldn't be corroborated
+  externally this run, consistent with the route's own `data_quality.gaps` note already
+  flagging it as unverified/single-source. Also noticed `gain_ft` (7,861) is markedly higher
+  than `loss_ft` (5,400) for what the route's own descent text describes as an out-and-back —
+  gain should roughly equal loss for a round trip. Worth a human recheck of whether `gain_ft`
+  was miscomputed or copied from a different itinerary.
+
+**Clean (no errors found):** Guye Peak North Route/"Hidden Ridge" (elevation matches area;
+own `data_quality` already flags the technical-grade uncertainty appropriately), Hadley
+Peak's two routes beyond the elevation question above (access/road/permit fields check out,
+including the FS-37 washout closure), Himmelhorn Southeast Route (FA fully corroborated
+externally: Cooper/Denny/Firey/Firey/Whitmore, Sept 8 1961; elevation 7,880+ ft matches),
+Hurry-Up Peak South Ridge (elevation 7,821 ft matches Wikipedia/ListsOfJohn exactly), Icy
+Peak Southwest Route beyond the boilerplate-notes fix (elevation 7,073 ft matches Wikipedia
+exactly).
+
+Next batch will continue alphabetically from `wa_icy_peak_southwest_route` (see progress
+file).

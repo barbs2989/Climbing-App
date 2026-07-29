@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_guye_peak_r1",
+  "last_processed_id": "wa_icy_peak_southwest_route",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -295,6 +295,32 @@
         "wa_goat_mountain_south_ridge: its own high_point_ft (6721, the West Peak) doesn't match its own overview/itinerary narrative, which describes continuing on to tag the true East Peak summit (6891 ft) -- content that properly belongs to the separate sibling route wa_goat_mountain_east_peak. Looks like the same route-identity-conflation pattern flagged repeatedly in earlier batches (Big Kangaroo, Colonial Peak, Corteo Peak, Cascade Peak East Ridge, etc.) -- a human rename/split decision, not a fact to patch.",
         "wa_guye_peak_improbable_traverse vs wa_guye_peak_r1 (West Face): both document the same 1960 Guye Peak FA party but spell the climbers' names differently -- 'Dave Hisser and Mike Borgoff' vs 'Dave Hiser and Mike Borghoff'. Could not confirm the correct spelling from accessible sources (Mountain Project, SummitPost, CascadeClimbers' First Ascents wiki, and the relevant NWMJ archive page were all inaccessible to this run); one weak signal (a different NWMJ page mentioning a 'Dave Hiser' on an unrelated Mount Terror climb) is not specific enough to settle it. Left flagged rather than guessed.",
         "wa_goode_mountain_northeast_face: its own fa field states a specific, confident first ascent ('Fred Beckey and John Parrott, 1954'), but its own data_quality.gaps field says 'No confirmed first-ascent party/date found for this specific line' -- a direct internal contradiction this run could not resolve externally (no dedicated source found distinct from the well-documented Northeast Buttress). Needs a human with guidebook access to confirm one way or the other."
+      ]
+    },
+    {
+      "batch_number": 15,
+      "date": "2026-07-29",
+      "route_ids": [
+        "wa_guye_peak_r2",
+        "wa_guye_peak_south_gully",
+        "wa_hadley_peak_cougar_divide",
+        "wa_hadley_peak_skyline_divide",
+        "wa_helmet_butte_standard_route",
+        "wa_himmelhorn_southeast_route",
+        "wa_honeymoon_route",
+        "wa_hozomeen_mountain_southeast_face",
+        "wa_hurry_up_peak_south_ridge",
+        "wa_icy_peak_southwest_route"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 3,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-07-29-batch-15.sql",
+      "note": "Two routes (wa_guye_peak_south_gully, wa_icy_peak_southwest_route) had access.notes stamped with a false location clause naming an unrelated peak ('Whatcom Peak area' / 'Mount Tom area, North Cascades') -- confirmed as copy-paste boilerplate junk by finding the identical 'Mount Tom area, North Cascades' string on 35 routes DB-wide, including a Wyoming route (wy_gooseneck_glacier_route, Gannett Peak) with no possible North Cascades connection; stripped the false clause from both of this batch's routes rather than fabricate a replacement (35 total affected routes DB-wide is out of this batch's scope but worth a dedicated future pass). Hozomeen Mountain's area elevation_ft (8072) was a 1-ft outlier against its own Southeast Face route's high_point_ft (8071, already correct) and external sources (Wikipedia: 8,071 ft NAVD 88); fixed. Helmet Butte's area elevation_ft and its Standard Route's high_point_ft both read 7372, but the route's own `corrections` field already documents a prior research pass concluding 'research supports 7,400 ft (Wikipedia, most consistently corroborated topo/USGS figure)' -- the correction was written down but never applied to the actual columns; independently corroborated (Wikipedia, peakery.com) and applied to both rows.",
+      "flags": [
+        "wa_hozomeen_mountain_southeast_face: its own `corrections` field is a detailed self-audit stating this route's name/id ('Southeast Face (Standard)') doesn't correspond to any documented route on Hozomeen's main (North, 8,071 ft) summit -- every source checked describes the standard/easiest route there as the Northeast Ridge/Buttress (1904 FA, class 4), which is what this entry's fields (fa, aspect=E-SE vs corrected NE, gain/loss, etc.) actually document under a mismatched name. A real 'Southeast Buttress' exists (FA 1988, III 5.6) but on a separate sub-summit (South Peak, 8,003 ft) about a mile away. This audit's external checks corroborate the corrections field's account (1904 Tatum/Loudon FA, 8,071 ft) but the row's own name/id vs. content mismatch is a rename/split decision for a human, not a field patch -- left as flagged rather than auto-fixed, consistent with the same conflation pattern flagged in prior batches (Big Kangaroo, Cascade Peak East Ridge, Goat Mountain, etc.).",
+        "wa_hadley_peak (area + both routes, elevation_ft/high_point_ft = 7522): external sources disagree with each other (7,470 / 7,513 / 7,515 / 7,516 ft depending on source) and none exactly match the on-file 7,522 ft, so this wasn't fixed -- but the area's stored lat/lng (48.814065, -121.822285) matched an independently found GPS reading (48.8140103, -121.8223671) to five decimal places, which is a stronger corroboration signal than the noisy elevation figures and argues against blindly averaging the external numbers. Left as-is; flagging so a future pass with topo/LIDAR access can resolve the elevation cleanly.",
+        "wa_honeymoon_route: FA claim ('1965 Arnie & Diane Bloomer') could not be corroborated by this run's external searches, consistent with the route's own data_quality.gaps note already flagging it as 'unverified/single-source'. Also noticed gain_ft (7861) is markedly higher than loss_ft (5400) for what the route's own descent text describes as an out-and-back via Royal Basin -- an out-and-back should have gain roughly equal to loss; worth a human recheck of whether gain_ft was miscomputed or copied from a different itinerary."
       ]
     }
   ]
