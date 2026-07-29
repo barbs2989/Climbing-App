@@ -11,7 +11,7 @@
 -- ClimbMatch.jsx. Because the column was already dropped, that feature was dead on
 -- arrival: PostgREST's `select("*")` omits a column that does not exist and
 -- toArr(undefined) returns [], so it rendered nothing and raised no error. Those
--- readers were reverted. Do not re-add a reader for either object.
+-- readers were reverted in PR #375. Do not re-add a reader for either object.
 --
 -- Keeping them has been actively harmful. Because they look like the hazard store,
 -- enrichment work has repeatedly been aimed at them and then reported as shipped:
