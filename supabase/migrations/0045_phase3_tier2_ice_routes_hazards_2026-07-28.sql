@@ -1,3 +1,24 @@
+-- ============================================================================
+-- SUPERSEDED by 0059_wa_zone_hazards_area_matched.sql -- DO NOT RE-RUN.
+--
+-- Every UPDATE below matches a PEAK name against routes.name:
+--     WHERE lower(name) ILIKE '%rainier%'
+-- But WA route names are the LINE ("South Ridge", "West Route", "Liberty
+-- Ridge"). The peak lives in areas.name (Argonaut Peak, Liberty Bell Mountain).
+-- These statements therefore match almost nothing -- live hazard coverage moved
+-- 410 -> 420 routes out of ~205k across all of them combined.
+--
+-- They also append with bare ||, so re-running duplicates tags.
+--
+-- 0059 does this correctly: joins routes -> areas, scopes by state + discipline,
+-- assigns terrain-appropriate hazards per zone (no glacier tags on the
+-- Washington Pass rock spires), and writes with unnest+DISTINCT so re-running
+-- is a no-op. Verified live: 229 routes tagged, 0 duplicates.
+--
+-- Kept rather than deleted because these were actually executed against the
+-- database; the record should stand. No SQL below has been modified.
+-- ============================================================================
+
 -- Phase 3 Tier 2: Ice Routes Hazard Enrichment
 -- Agent 4 - Ice & Mixed Alpine Climbing
 -- Generated 2026-07-28
