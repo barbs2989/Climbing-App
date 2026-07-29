@@ -915,6 +915,15 @@ function PitchTable({route,focus,onEdit,comments,onCommentAdd}){
     </div>;})}
   </div>;
 }
+function RouteStages({route}){
+  if(!route.pitchDetail||!route.pitchDetail.length)return null;
+  const stages=route.pitchDetail.map((p,i)=>({...p,_n:p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1),_note:p.note!=null?p.note:(p.notes||"")})).sort((a,b)=>a._n-b._n);
+  const hasLengths=stages.some(s=>s.lengthM!=null);
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
+    <div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:8}}>{"ROUTE STAGES · "+stages.length}</div>
+    {stages.map((s,idx)=><div key={s._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}><div style={{width:26,height:26,borderRadius:7,background:s.crux?C.amberBg:C.surface,border:`1px solid ${s.crux?C.amber:C.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:s.crux?C.amber:C.textSub}}>{"S"+s._n}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:4,gap:8,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.amber,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{s.grade||"—"}{s.crux?<span style={{color:C.red,fontSize:12,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>{hasLengths?<span style={{fontSize:12,color:C.textMuted,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",marginLeft:"auto"}}>{s.lengthM!=null?uLen(s.lengthM):"—"}<span style={{opacity:0.6}}>{" · "+uLen(stages.slice(0,idx+1).reduce((a,ss)=>a+(ss.lengthM||0),0))+" up"}</span></span>:null}</div>{s._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"anywhere"}}>{s._note}</div>:null}</div></div>)}
+  </div>;
+}
 function RappelTable({route,onEdit}){
   if(!route.rappelDetail||!route.rappelDetail.length)return null;
   const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);

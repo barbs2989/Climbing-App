@@ -1,0 +1,16 @@
+{
+  "note": "Known undefined references awaiting a fix. Shrink this list; never grow it.",
+  "allowed": [
+    "ClimbMatch.jsx :: _multiDay :: RouteGearCheck",
+    "ClimbMatch.jsx :: cams :: (anonymous)",
+    "ClimbMatch.jsx :: cams :: RouteGearCheck",
+    "ClimbMatch.jsx :: gearTier :: (anonymous)",
+    "ClimbMatch.jsx :: items :: RouteGearCheck",
+    "ClimbMatch.jsx :: onViewProfile :: (anonymous)",
+    "ClimbMatch.jsx :: rackEdit :: (anonymous)",
+    "ClimbMatch.jsx :: rackEdit :: RouteGearCheck",
+    "ClimbMatch.jsx :: rw :: RouteGearCheck",
+    "ClimbMatch.jsx :: setGearTier :: (anonymous)",
+    "ClimbMatch.jsx :: setRackEdit :: (anonymous)"
+  ]
+}
