@@ -13,6 +13,31 @@ serve(async (req) => {
   }
 
   try {
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Admin guard. The gateway's JWT check passes for the public anon key,
+    // so this endpoint additionally requires a logged-in user whose email is
+    // on the admin list (ADMIN_EMAILS secret, comma-separated).
+    const adminEmails = (Deno.env.get("ADMIN_EMAILS") ?? "barbs2989@gmail.com")
+      .split(",").map((e) => e.trim().toLowerCase()).filter(Boolean);
+    const token = (req.headers.get("Authorization") ?? "").replace(/^Bearer\s+/i, "");
+    const { data: userData, error: userError } = await supabase.auth.getUser(token);
+    const callerEmail = userData?.user?.email?.toLowerCase();
+    if (userError || !callerEmail) {
+      return new Response(
+        JSON.stringify({ error: "Sign in required" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    if (!adminEmails.includes(callerEmail)) {
+      return new Response(
+        JSON.stringify({ error: "Admin access required" }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { submissionId, action, adminNotes } = await req.json();
 
     if (!submissionId || !["approve", "reject"].includes(action)) {
@@ -21,10 +46,6 @@ serve(async (req) => {
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-
-    const supabaseUrl = Deno.env.get("SUPABASE_URL");
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-    const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Fetch the submission
     const { data: submission, error: fetchError } = await supabase
@@ -47,7 +68,7 @@ serve(async (req) => {
         .update({
           status: "approved",
           approved_at: new Date().toISOString(),
-          approved_by: "admin@climbmatch.app",
+          approved_by: callerEmail,
           admin_notes: adminNotes,
         })
         .eq("id", submissionId);

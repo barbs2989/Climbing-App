@@ -76,3 +76,19 @@ Four functions do the real work; everything else is UI around them. The code is 
 - When adding a feature, follow the existing pattern: add seed data to the relevant top-level `const`, add `useState` in `App`, and add a `tab===...`/sub-view branch in the render tree. Match the dense, inline-style formatting of surrounding code.
 - Styling is always inline `style={{...}}` referencing the `C` palette — do not introduce CSS files or a styling library.
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.
+
+### One-off scripts that touch Supabase
+
+Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
+credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
+`.env`, the `VITE_*` url/anon key in `.env.local`), so a script that reads only
+one file gets `undefined` for the other half. That fails silently in the worst
+way: PostgREST accepts a PATCH sent with the anon key and returns **200 with an
+empty array**, because RLS rejected every row. The write reports success and
+changes nothing.
+
+- `requireServiceKey()` throws instead of degrading to the anon key. Use it for anything that writes.
+- `patchRow(table, id, body)` throws unless exactly one row came back, so a wrong id or an RLS rejection can't read as success.
+- `selectAll(table, select, filter)` paginates by keyset. Offset paging over a filtered, unindexed column times out on the 200k-row `routes` table, and an unordered `.range()` silently skips/duplicates rows.
+
+After any batch write, re-read the affected ids and reconcile counts. A 200 is not evidence the data changed.

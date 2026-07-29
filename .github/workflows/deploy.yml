@@ -23,6 +23,10 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+      # Catches identifiers referenced but never bound — the bug class that has
+      # blank-screened production twice (PRs #317, #359). No linter here, and the
+      # bundler happily builds them.
+      - run: npm run check:refs
       - run: npm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}

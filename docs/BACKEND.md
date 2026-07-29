@@ -30,7 +30,30 @@ alongside the original in-memory bundle:
 What's still genuinely pending: national scale (only WA is loaded), offline packs (§7),
 topos (§9), and finishing the auth unification. The rest of this document is the original
 architecture plan/reference — schema sketches below are the **starting design**, not the
-current schema; treat `supabase/migrations/` as authoritative for what's actually in the DB.
+current schema; `supabase/migrations/` is closer to the truth than the sketches below.
+
+### But a migration file is not proof the migration ran
+
+There is no migration-tracking table here — migrations are applied by hand-pasting SQL — so
+`supabase/migrations/` records what was *written*, not what was *applied*. The two have
+already diverged in both directions:
+
+- **Merged but never run.** `0059_wa_zone_hazards_area_matched.sql` landed on main via #374
+  and was never applied; #379 moved it to `research/phase3/tier2-unapplied/` once it turned
+  out every statement targeted `routes.hazard_tags`, a column `0060` had just dropped.
+- **Numbers have gaps, and they are not chronological.** `0056`/`0057` were quarantined
+  unapplied (#366), `0059` was retired unrun (#379), and `0060` *is* applied — so a lower
+  number can be unapplied while a higher one is live. Do not infer order or state from the
+  filename.
+- **Object existence does not prove the migration ran.** A migration that only adds RLS
+  policies leaves no new table behind. `0058_verification_records_write_policies.sql` adds
+  insert/update policies to a table `0038` already created, so seeing `verification_records`
+  respond over PostgREST tells you `0038` ran and says nothing about `0058`. Confirming a
+  policy migration needs an authenticated write attempt, not a read.
+
+Before relying on a column, table or policy, probe the live database for it. A `42703`
+(undefined column) or `PGRST205` (table not found) is the authoritative answer; the file
+tree is not.
 
 ---
 
@@ -102,11 +125,25 @@ routes(
   season        text,
   description   text,
   gear          jsonb,                  -- cams/rack/etc.
-  hazards       text[],
+  hazards       text[],                 -- THE hazard field. See the note below.
   verif         jsonb,                  -- {status, source, updated, confirms}
   source        text                    -- "openbeta:<id>"
 )
 ```
+
+> **Route hazards live in `routes.hazards`, and nowhere else.** `dbRouteToCamel` maps
+> `hazards: toArr(r.hazards)` (`lib/db.js`); that is the only hazard field the app reads.
+> Two decoys used to sit alongside it and repeatedly attracted enrichment work that then
+> displayed nothing — `route_hazard_research` (a table nothing referenced) and
+> `routes.hazard_tags` (a column nothing referenced, whose contents turned out to be
+> largely misapplied: glacier hazards sprayed onto desert sport and bouldering routes).
+> Migration `0060` drops both. If you are adding hazard data, target `routes.hazards`,
+> resolve route ids by joining through `areas` rather than matching peak names against
+> `routes.name`, and check whether the route already has hazards before appending.
+>
+> Unrelated, despite the name: the `hazard_tags` *reference table* and the `hazard_tags`
+> column on trip reports (below) are a different, live concept — user-supplied condition
+> tags feeding the consensus engine. Only `routes.hazard_tags` was dropped.
 
 Since this sketch, `routes` has grown substantially (see migrations 0006-0014): composite
 grades, multi-discipline support, `gain_ft`/`loss_ft`/`dist_km`/`max_angle`/`commitment`,
