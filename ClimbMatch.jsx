@@ -826,6 +826,7 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
     if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
     if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.amber]);
+    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(avgGrade!=null)stats.push(["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]);
     if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.purple]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
@@ -853,6 +854,7 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
     if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     stats.push(["Crux grade",route.cruxGrade||route.grade,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
+    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(rappelCount(route)!=null)stats.push(["Rappels",rappelCount(route)+"x",C.red]);
     note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers. Round trip assumes the same trail back to the trailhead."):null;
   }
