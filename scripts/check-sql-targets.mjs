@@ -65,7 +65,17 @@ for (const stmt of statements) {
   const isDelete = /^\s*delete\s+from/i.test(stmt);
   const isUpdate = /^\s*update\s/i.test(stmt);
   if (!isDelete && !isUpdate) continue;
-  if (!new RegExp(`\\b${TABLE}\\b`, "i").test(stmt)) continue;
+
+  // Read the table this statement actually writes to, rather than testing whether
+  // TABLE appears anywhere in it. A mere mention matches subqueries: every dedup file
+  // in research/ ends with
+  //     update areas a set route_count = (select count(*) from routes r where ...)
+  // which mentions `routes`, so the loose test let it through and then checked the AREA
+  // ids against the routes table — reporting three confident failures for rows that were
+  // never routes. A guard that cries wolf is a guard people stop reading.
+  const tableMatch = stmt.match(/^\s*(?:delete\s+from|update)\s+([a-z_][a-z0-9_]*)/i);
+  const stmtTable = tableMatch ? tableMatch[1].toLowerCase() : null;
+  if (stmtTable !== TABLE.toLowerCase()) continue;
 
   const ids = new Set();
   for (const m of stmt.matchAll(/\bid\s*=\s*'([^']+)'/gi)) ids.add(m[1]);
