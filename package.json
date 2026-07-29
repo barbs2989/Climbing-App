@@ -12,7 +12,8 @@
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
-    "audit:identity": "node scripts/audit-route-identity.mjs"
+    "audit:identity": "node scripts/audit-route-identity.mjs",
+    "check:sql": "node scripts/check-sql-targets.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
