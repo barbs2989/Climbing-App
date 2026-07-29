@@ -10,6 +10,12 @@ import { createPortal } from "react-dom";
 import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
+import { shortGrade } from "./grade";
+
+// Grade for a compact row. Catalog grades often carry a qualifier inline
+// ("Class 3 (short 4th-class crux)"); shortGrade drops it here, and the route
+// page's Composite Grade panel shows it instead.
+function rowGrade(r) { return shortGrade(r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "") || "—"; }
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
@@ -69,7 +75,7 @@ function RouteRow({ r, onOpen, C, areaName }) {
           <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub}</span>
         </div>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "—"}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{rowGrade(r)}</span>
     </div>
   );
 }
@@ -171,7 +177,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
                 </div>
-                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "—"}</span>
+                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{rowGrade(r)}</span>
               </div>
             ))
           )}
