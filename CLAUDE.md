@@ -7,11 +7,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm install        # install deps (React 18 + Vite)
 npm run dev        # local dev server with HMR
-npm run build      # production build to dist/
+npm run build      # production build to dist/ (runs check:refs + check:hooks first)
 npm run preview    # serve the built dist/ locally
+npm run check:refs # identifiers referenced but never bound (runs in build + CI)
+npm run check:hooks# React hooks-rules violations (runs in build + CI)
+npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 ```
 
-There is no test suite, linter, or type checker configured. Pushing to `main` (or `master`) triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages at https://barbs2989.github.io/Climbing-App/. `vite.config.js` sets `base: "/Climbing-App/"` to match the repo name — this must stay in sync with the repo name or asset links break on Pages.
+There is no unit test suite, linter, or type checker. The three `check:` scripts are
+what stands in for one, and they target the failure mode this codebase actually
+ships: not a build error, but a screen that renders wrong or not at all.
+
+- **`check:refs`** parses with Babel and fails on any identifier with no binding in
+  an enclosing scope — the bug that blank-screened production in #317 and #359.
+  It runs inside `npm run build`, so it gates CI too. Keep
+  `scripts/undefined-refs-baseline.json` empty.
+- **`check:hooks`** catches hooks called outside a component body — the #377 bug
+  (an invalid hook call inside a click handler). Also gated by `npm run build`.
+- **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
+  asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
+  `[object Object]` in rendered copy, and named sections still present. It is
+  **not** wired into `deploy.yml` — browser automation is too slow and flaky to
+  sit in front of production deploys. Run it by hand before merging anything that
+  touches the render tree. `--snapshot before.json` / `--snapshot after.json` dumps
+  per-screen text so you can prove a refactor is behaviour-neutral; only the clock
+  inside ASPECT & SUN should differ between two runs.
+
+Landmark assertions in `check:ui` match whole lines, never substrings — a
+substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
+how a live section gets deleted while the check stays green.
+
+Pushing to `main` (or `master`) triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages at https://barbs2989.github.io/Climbing-App/. `vite.config.js` sets `base: "/Climbing-App/"` to match the repo name — this must stay in sync with the repo name or asset links break on Pages.
 
 ## Architecture
 
