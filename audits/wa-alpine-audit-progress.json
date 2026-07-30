@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_maude_r1",
+  "last_processed_id": "wa_mount_price_hester_lake_route",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 589,
   "batches": [
@@ -619,6 +619,25 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-07-30-batch-27.sql",
       "note": "Six peaks, 8 routes (Mount Logan carries 3). Recurring waypoint/trailhead-coordinate bug showed up on three separate peaks this batch: Mount Index's two waypoints were both ~19km west of the real Lake Serene trailhead/lake; Mount Lago's approach_logistics named a real but wrong trailhead (Monument Creek instead of Robinson Creek); Mount Larrabee's trailhead waypoint was a byte-for-byte duplicate of its own 'Twin Lakes' waypoint 2 miles up-route, and its approach_logistics trailhead coords instead matched its own 'High Pass' waypoint 3.3 miles up-route -- three variants of the same underlying pattern (a real coordinate pair copied onto the wrong named point in the same row). Mount Logan's Banded Glacier (r1) had the batch's deepest structural find: its approach/approach_logistics described an Easy Pass/Fisher Basin approach and a 'Rainy Pass PCT North Trailhead', but its own stored GPX track starts at the Thunder Creek trailhead (matching sibling route Fremont Glacier's GPX) -- i.e. this route's beta text was contaminated with its sibling Douglas Glacier (r2)'s real Easy-Pass approach. Fixed only the top-level approach/trailhead fields; left beta/descent_text/road/access.closures/itinerary/pitch_detail/seasonal_guidance/partner_requirements/data_quality flagged since rewriting a multi-day itinerary from scratch would itself risk fabrication. gain_ft/loss_ft-vs-itinerary mismatches recurred on 4 of the 8 routes (Mount Logan x3, Mount Larrabee) and were fixed only where a single row-internal source clearly settled it (Mount Johnson); the rest flagged, several noting the same underlying dist_km one-way/half-round-trip convention issue called out in CLAUDE.md."
+    },
+    {
+      "batch_number": 28,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_mount_maude_r2",
+        "wa_mount_olympus_blue_glacier",
+        "wa_mount_olympus_west_ridge",
+        "wa_mount_persis_the_hexorcist",
+        "wa_mount_persis_west_ridge",
+        "wa_mount_pilchuck_east_ridge",
+        "wa_mount_pilchuck_standard_route",
+        "wa_mount_price_hester_lake_route"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 3,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-30-batch-28.sql",
+      "note": "Five peaks, 8 routes (Mount Olympus and Mount Persis and Mount Pilchuck each carry 2). Two confirmed waypoint-elevation typos, both the same pattern as prior batches: a route's own waypoints summit entry disagreeing with that same row's own high_point_ft field (Olympus Blue Glacier: 7973 vs 7980; Pilchuck Standard Route: 5341 vs 5324), both resolved in favor of the row's own high_point_ft plus external confirmation (NPS/USGS). No coordinate-contamination pattern found in this batch -- all 5 peaks' summit coordinates check out. Flagged: Olympus West Ridge's 1964 FA claim is unverifiable either way; Persis Hexorcist's fa field references '(see corrections)' but the corrections field doesn't address the FA, a dangling pointer left over from an earlier partial fix; Pilchuck East Ridge has no waypoints/gpx at all, unlike its sibling and every other route this batch, so its own line couldn't be coordinate-checked. Persis West Ridge and Price Hester Lake Route were fully clean."
     }
   ]
 }

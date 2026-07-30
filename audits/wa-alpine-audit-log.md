@@ -1872,3 +1872,47 @@ an open flag (Mount Logan Douglas Glacier/`r2` had no confirmed errors, but its 
 inconsistency was already self-flagged in the data).
 
 Next batch will continue alphabetically after `wa_mount_maude_r1` (see progress file).
+
+## Batch 28 — 2026-07-30 (Pass 1)
+
+Checked 8 routes across 5 peaks, `wa_mount_maude_r2` through `wa_mount_price_hester_lake_route`
+(continuing alphabetically after `wa_mount_maude_r1`): Mount Maude (Entiat Ice Fall/`r2`), Mount
+Olympus (Blue Glacier, West Ridge), Mount Persis (The Hexorcist, West Ridge), Mount Pilchuck (East
+Ridge, Standard Route), Mount Price (Hester Lake Route).
+
+**Confirmed fixes (2):**
+- Mount Olympus Blue Glacier: the row's own `waypoints` summit entry stored `elevFt` 7973 for
+  "Mount Olympus (West Peak)", contradicting this same row's own `high_point_ft` (7980), the
+  sibling `wa_mount_olympus_west_ridge` row's summit waypoint (7980), and the externally-confirmed
+  NPS/USGS figure of 7,980 ft. Fixed the waypoint to 7980.
+- Mount Pilchuck Standard Route: the row's own `waypoints` summit/lookout entry stored `elevFt`
+  5341, contradicting this same row's own `high_point_ft` (5324), the sibling
+  `wa_mount_pilchuck_east_ridge` row's `high_point_ft` (also 5324), and the externally-confirmed
+  USGS figure of 5,324 ft. Fixed the waypoint to 5324.
+
+**Coordinates/peak sanity checks:** all 5 peaks' stored summit lat/lng (Maude, Olympus, Persis,
+Pilchuck, Price) fall within a plausible bounding box for the named peak and match published
+coordinates — no contamination pattern found in this batch, unlike several recent batches.
+
+**Flagged for human review (3):**
+- Mount Olympus West Ridge: `fa` ("1964, Gary Maykut, Len Miller, and Joe Witte") could not be
+  independently corroborated this pass — no guidebook/archive source found confirming this specific
+  route first ascent (as opposed to the peak's 1907 first ascent, which is well documented and
+  matches the Blue Glacier row). Not fixed or removed since it also can't be refuted.
+- Mount Persis The Hexorcist: `fa` reads "Likely Bryan Burdo & Bill Enger, 1985 (see corrections)"
+  but this row's own `corrections` field only documents the `high_point_ft` fix and says nothing
+  about the FA — a dangling, unresolved pointer. Bryan Burdo's authorship as route developer is
+  corroborated (Mountain Project), but the 1985 date and Bill Enger's involvement could not be
+  independently confirmed this pass, so left as-is rather than guessing at a rewrite.
+- Mount Pilchuck East Ridge: has no `waypoints`/`gpx` data on file at all (unlike every other route
+  in this batch), so the trailhead/summit coordinates for this specific line can't be sanity-checked
+  against the peak's own summit fix above — a data gap, not something to fabricate.
+
+**Clean:** Mount Persis West Ridge (`fa` 1917/Hinman independently corroborated by multiple
+sources; elevation, coordinates, access/permit and hazard text all check out) and Mount Price
+Hester Lake Route (elevation 5,587 ft corroborated by secondary sources despite one topo-service
+outlier of 5,535 ft; approach/hazard text plausible) had no confirmed errors or open flags this
+pass.
+
+Next batch will continue alphabetically after `wa_mount_price_hester_lake_route` (see progress
+file).
