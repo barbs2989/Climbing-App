@@ -44,19 +44,31 @@ $$;
 COMMENT ON FUNCTION route_name_is_placeholder(text) IS
   'True for import-artifact route names ("unknown", "unnamed v0", "closed project", "_delete") that legitimately repeat within one area. Excluded from duplicate detection. Kept in sync with PLACEHOLDER in scripts/audit-route-identity.mjs -- if you change one, change both.';
 
--- REBUILD THE PARTIAL INDEX. 0063 created routes_area_name_dedup_idx with
--- "WHERE ... NOT route_name_is_placeholder(name)" in its predicate. Postgres does
--- NOT re-evaluate an index predicate when the function inside it is replaced, so
--- rows whose classification just flipped (_delete, un-named, closed project) would
--- stay indexed while the planner assumes the new predicate -- wrong answers from a
--- stale index. Rebuilding re-applies the predicate as it now reads.
+-- REBUILD THE PARTIAL INDEX -- and it must be DROP + CREATE, not REINDEX.
+-- 0063 created routes_area_name_dedup_idx with
+-- "WHERE ... NOT route_name_is_placeholder(name)" in its predicate. Postgres
+-- stores an index predicate as a parsed expression tree in pg_index.indpred, and
+-- an IMMUTABLE SQL function is INLINED when the index is created -- so the old
+-- regex is frozen into the stored predicate. REINDEX rebuilds using that stored
+-- predicate and therefore changes nothing: verified on 2026-07-29, the view still
+-- returned all four rows after a successful REINDEX, under every query plan,
+-- because a partial index's predicate is assumed true for its entries and the
+-- planner never re-calls the function.
 --
--- Guarded because 0063 may not be applied here; a plain REINDEX would abort.
+-- Dropping and recreating re-parses the predicate against the function as it now
+-- reads. Guarded because 0063 may not be applied here.
+--
+-- CREATE INDEX takes a brief SHARE lock on routes. To avoid it, run this block's
+-- CREATE as "CREATE INDEX CONCURRENTLY ..." on its own -- CONCURRENTLY cannot run
+-- inside a transaction block, so it cannot live in this DO.
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_class WHERE relname = 'routes_area_name_dedup_idx' AND relkind = 'i') THEN
-    REINDEX INDEX routes_area_name_dedup_idx;
-    RAISE NOTICE 'Rebuilt routes_area_name_dedup_idx against the new predicate.';
+    DROP INDEX routes_area_name_dedup_idx;
+    CREATE INDEX routes_area_name_dedup_idx
+      ON routes (area_id, lower(btrim(name)))
+      WHERE area_id IS NOT NULL AND NOT route_name_is_placeholder(name);
+    RAISE NOTICE 'Recreated routes_area_name_dedup_idx so its predicate re-parses against the new function.';
   ELSE
     RAISE NOTICE 'routes_area_name_dedup_idx absent (0063 not applied) -- nothing to rebuild.';
   END IF;
