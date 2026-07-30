@@ -1,4 +1,5 @@
--- Route discussion + per-pitch comments. The last feature still living only in
+-- Route discussion + per-pitch comments. (Numbered 0069 per migrations/README-numbering.md;
+-- 0065 was already taken twice.) The last feature still living only in
 -- React state: `useState(COMMENTS)` in App, seeded from a module constant, so a
 -- climber writes route beta, refreshes, and it is gone. The Comments component is
 -- mounted in six places (route Overview, Conditions, Planner, Partners, Safety,
