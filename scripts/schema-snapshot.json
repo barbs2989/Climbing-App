@@ -135,6 +135,11 @@
       "status",
       "user_id"
     ],
+    "crew_reads": [
+      "crew_id",
+      "last_read_at",
+      "user_id"
+    ],
     "crews": [
       "cap",
       "created_at",
