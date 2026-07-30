@@ -80,6 +80,10 @@ const isBoilerplate = v =>
   (typeof v === "string" && BOILERPLATE.some(re => re.test(v.trim()))) ||
   isPlaceholderObj(v) || isGenericTags(v);
 
+// Comparative or referential mentions are not jurisdiction claims: "unlike Mount Rainier",
+// "nearest ranger station", "no climbing fee like Mount Adams".
+const COMPARATIVE = /\b(not|unlike|other than|rather than|as opposed to|compared to|versus|vs\.?|nearest|nearby|closest|no\b[^.]{0,30}\bfee\b[^.]{0,10}like)\b[^.]{0,40}$/i;
+
 // Big pages: the default 60 would be ~3,400 round trips over the 200k-row routes table.
 const PAGE = { pageSize: 1000 };
 
@@ -250,6 +254,61 @@ for (const l of leaks.slice(0, 20)) {
 if (leaks.length > 20) console.log(`   ... ${leaks.length - 20} more`);
 console.log("");
 
+// ------------------------- 6. a jurisdiction's permit text on land it does not govern
+// Check 5 compares STATES, so contamination staying inside one is invisible to it: Olympic
+// National Park text on a North Cascades peak is both-in-Washington and slips through, and
+// check 2 misses it too unless the text is duplicated across regions. Live risk, not
+// hypothetical — Steeple Rock is in Olympic NP while Whatcom, Cutthroat and Primus are in
+// the North Cascades, yet all four share the id family `wa_north_ridge*`.
+//
+// Judged by GEOGRAPHY, deliberately not by area-tree branch names. Two earlier attempts
+// failed: resolving place names against the area tree flagged correct data (the tree is not
+// a gazetteer — route text names real places like "Hurricane Ridge" that aren't areas), and
+// a hand-written map of which branches each jurisdiction covers produced 299 false
+// positives because the real tree vocabulary differs from what I guessed. A centre and a
+// generous radius needs no vocabulary and no maintenance.
+const R_EARTH = 3958.8;
+const milesBetween = (a, b) => { const p1 = a.lat*Math.PI/180, p2 = b.lat*Math.PI/180, dp = p2-p1, dl = (b.lng-a.lng)*Math.PI/180;
+  return 2*R_EARTH*Math.asin(Math.sqrt(Math.sin(dp/2)**2 + Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2)); };
+function coordOf(areaId) { for (const a of ancestry(areaId)) if (a.lat != null && a.lng != null) return { lat: a.lat, lng: a.lng }; return null; }
+// Radii exceed each real boundary so a route merely near the edge is never flagged.
+const JURISDICTION = [
+  ["Olympic National Park",        { lat: 47.80, lng: -123.60 },  60],
+  ["Gifford Pinchot",             { lat: 46.20, lng: -121.70 },  70],
+  ["Adams Climbing",              { lat: 46.20, lng: -121.49 },  40],
+  ["North Cascades National Park",{ lat: 48.70, lng: -121.20 },  70],
+  ["Okanogan-?Wenatchee",         { lat: 47.80, lng: -120.60 }, 110],
+  ["Alpine Lakes Wilderness",     { lat: 47.50, lng: -121.15 },  50],
+  ["Mount Rainier National Park", { lat: 46.85, lng: -121.76 },  40],
+  ["Mount Baker-?Snoqualmie",     { lat: 47.90, lng: -121.60 }, 130],
+];
+const wrongJuris = [];
+for (const r of scoped) {
+  const own = coordOf(r.area_id);
+  if (!own) continue;
+  for (const col of ENRICHED) {
+    const v = r[col];
+    if (v == null || v === "") continue;
+    const txt = JSON.stringify(v);
+    for (const [cue, centre, radius] of JURISDICTION) {
+      const m = txt.match(new RegExp(cue, "i"));
+      if (!m) continue;
+      if (COMPARATIVE.test(txt.slice(Math.max(0, m.index - 60), m.index))) continue;
+      const d = milesBetween(own, centre);
+      if (d <= radius) continue;
+      wrongJuris.push({ id: r.id, column: col, cites: m[0], miles: Math.round(d),
+                        area: (areas.get(r.area_id) || {}).name });
+      break;
+    }
+  }
+}
+console.log(`6. PERMIT TEXT FROM THE WRONG JURISDICTION  (${wrongJuris.length} field(s))`);
+for (const w of wrongJuris.slice(0, 20)) {
+  console.log(`   ${w.id.padEnd(40)} on ${String(w.area).slice(0, 22).padEnd(22)} ${w.column} cites ${w.cites} (${w.miles} mi away)`);
+}
+if (wrongJuris.length > 20) console.log(`   ... ${wrongJuris.length - 20} more`);
+console.log("");
+
 const report = {
   examined: scoped.length,
   idScoping: { peakScoped: scoped.length - orphan.length, nameDerived: orphan.length,
@@ -257,8 +316,9 @@ const report = {
   contamination,
   duplicateRoutes: realDupes.map(([k, rs]) => ({ areaId: k.split(" ")[0], name: k.split(" ")[1], ids: rs.map(r => r.id) })),
   outOfStatePlaceNames: leaks,
+  wrongJurisdiction: wrongJuris,
 };
 if (OUT) { fs.writeFileSync(OUT, JSON.stringify(report, null, 1)); console.log(`wrote ${OUT}`); }
 
-const problems = contamination.length + realDupes.length + leaks.length;
+const problems = contamination.length + realDupes.length + leaks.length + wrongJuris.length;
 console.log(problems ? `FOUND ${problems} thing(s) to look at.` : "Clean.");
