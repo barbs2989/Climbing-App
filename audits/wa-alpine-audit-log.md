@@ -1365,3 +1365,63 @@ Face/East Buttress — FA, elevation, grade, and area placement all independentl
 confirmed with no contradictions found.
 
 Next batch will continue alphabetically after `wa_mojo_rising` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 22
+
+Checked 10 routes across 3 peaks: Mount Adams (Adams Glacier, Lava Glacier Headwall, Lyman
+Glacier, Mazama Glacier Headwall, North Ridge, Northwest Ridge, South Climb, Wilson Glacier
+Headwall), Mount Anderson (Eel Glacier/Flypaper Pass), Mount Baker (Boulder Glacier/Boulder
+Cleaver).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-22.sql`:**
+- Adams Glacier: `high_point_ft` (12281) contradicted its own `watch_out` text ("...high
+  elevation (12,276 ft)"), the parent area's `elevation_ft` (12276), and all 7 other Mount
+  Adams routes in this batch (all 12276) — fixed to 12276.
+- Wilson Glacier Headwall: summit waypoint `elevFt` (12280) contradicted this same row's own
+  `high_point_ft` (12276) and every sibling route — fixed to 12276.
+- Wilson Glacier Headwall: `access.notes` carried the exact "Mount Tom area, North Cascades"
+  boilerplate contamination documented DB-wide in batch 15 (35 affected routes, 2 already
+  fixed) — stripped, same fix pattern as the batch 15 precedent.
+
+**Flagged for human review (not auto-fixed):**
+- Adams Glacier: Wikipedia's current infobox lists Mount Adams at 12,281 ft NAVD88 while
+  USGS and every other on-file record for this peak use 12,276 ft — a genuine external datum
+  split (same family as batch 16's Jack Mountain flag). Fixed to the unanimous internal value
+  above, but the peak-wide datum choice is still an open question for a human.
+- Wilson Glacier Headwall: internal land-manager contradiction — `access.landManager` says
+  "Yakama Nation (Tract D...)" while `access.land_manager` says "U.S. Forest Service" and the
+  top-level `permit` field describes only a USFS Recreation.gov pass, with no mention of the
+  tribal permit that `rope_note`/`access.closures` separately describe. Also, its own
+  `waypoints` trailhead entry uses Killen Creek Trailhead (self-flagged in its own note as "no
+  source names this trailhead for Wilson specifically") while `approach`/`descent_text`/`road`/
+  `approach_logistics` all consistently describe the Cold Springs/South Climb trailhead instead
+  — same waypoint-vs-approach-text mismatch pattern as many prior batches, but this row's own
+  `corrections` field already admits "sourcing is thin and partly ambiguous... treat as a
+  low-confidence, expert-review-required entry," so left to a human rather than guessed.
+- Two legacy, non-`wa_`-prefixed rows exist for Mount Adams outside this audit's `id LIKE
+  'wa_%'` scope filter: `adams_northwest_ridge` and `adams_avalanche_glacier`.
+  `adams_northwest_ridge` shares the same route name and a similar length (610m) as this
+  batch's `wa_mount_adams_northwest_ridge`, but a different FA party (Givler/LeBlond/McGowan
+  1967 vs. Molenaar/Johnson/Ostro/Startzell 1960) and pitch count (3 vs. 5) — possibly two
+  distinct historical ascents of the same line, or a duplicate entered under two ID schemes
+  (same family as the Dragontail Peak duplicates found in batch 8). Out of this audit's scope
+  to fix/merge (id doesn't match `wa_%`, and no delete authority regardless) — flagging for a
+  human to check.
+- Northwest Ridge: its own `overview` and `beta` text describe the route as "the west face of
+  Mount Adams's North Ridge" / "the northwest face of the North Ridge" without ever using the
+  route's own name — worth a human check on whether this is legitimate geographic description
+  (Northwest Ridge sits adjacent to North Ridge) or a mild route-identity mix-up; not auto-fixed
+  since unclear which framing is right.
+
+**Clean (no errors found):** Lava Glacier Headwall, Lyman Glacier, Mazama Glacier Headwall,
+North Ridge (FA — A.G. Aiken/Edward Allen/Andrew Burge, 1854 — independently confirmed as
+Mount Adams's first ascent), South Climb (FA framing and elevation both externally verified),
+Mount Anderson Eel Glacier/Flypaper Pass (FA — Fairman B. Lee, 1920 — confirmed; the route's
+own already-disclosed 7,323–7,330 ft elevation range matches the area blurb, not a new issue),
+and Mount Baker Boulder Glacier/Boulder Cleaver (1891 LaConnor Expedition FA independently
+corroborated via John Miles's *Koma Kulshan*, matching this row's own already-hedged phrasing).
+
+Next batch will continue alphabetically after `wa_mount_baker_boulder_glacier` (see progress
+file).
