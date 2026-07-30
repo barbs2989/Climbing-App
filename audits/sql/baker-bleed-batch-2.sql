@@ -1,9 +1,9 @@
--- Batch 2. Run AFTER audits/sql/baker-bleed-national.sql. Kept as a separate
--- paste because the two together exceed the size at which the Supabase SQL
--- Editor has silently truncated input before.
+-- Batch 2 of 3. Run AFTER audits/sql/baker-bleed-national.sql.
+-- Split into small pastes on purpose: the SQL Editor has silently truncated
+-- large ones before, and a truncated paste still reports success.
 --
 -- Two more numeric bleeds of the same shape as the Baker one, both surfaced only
--- after the roundness fix stopped burying them under unit-conversion noise.
+-- once the roundness fix stopped burying them under unit-conversion noise.
 
 -- ---------------------------------------------------------------- Mount Goode
 -- high_point_ft 9220 is Mount Goode's real summit elevation and belongs on its
@@ -25,11 +25,9 @@ where gain_ft = 5800 and high_point_ft = 9220
 -- -------------------------------------------------------- Sherpa Balanced Rock
 -- All three routes on Sherpa Balanced Rock carry high_point_ft 8630, which is
 -- SHERPA PEAK's summit. Their own area is 8605 ft. The two are genuinely
--- distinct formations about 93 m apart -- this is a wrong number on a legitimate
--- pair, not a duplicate area -- so the fix is to their own area's elevation
--- rather than a deletion.
--- Ids listed explicitly rather than filtering on area_id alone, so check:sql can
--- confirm each target exists instead of warning that the predicate is opaque.
+-- distinct formations about 93 m apart -- a wrong number on a legitimate pair,
+-- not a duplicate area -- so the fix is their own area's elevation, not a delete.
+-- Ids listed explicitly so check:sql can confirm each target exists.
 update routes set high_point_ft = 8605
 where high_point_ft = 8630
   and id in ('wa_sherpa_balanced_rock_ne_couloir',
