@@ -169,6 +169,45 @@ for (const [base, rs, peaks] of collisions.slice(0, 10)) {
 console.log("");
 
 // ------------------------------------------------- 2. cross-region duplicate values
+// A permit rule is SUPPOSED to be identical on every route in its land unit, and land
+// units cross the app's geographic region buckets freely — Alpine Lakes Wilderness spans
+// two, the Northwest Forest Pass spans six. Flagging those as contamination put 408
+// routes on the work list, none of them wrong.
+//
+// What made the real bug real was different: a Mount Adams permit block sitting on 18
+// peaks that are not Mount Adams. So the test is whether the text names a specific PEAK
+// that the carrying route does not belong to. A wilderness/park/forest designation names
+// a container, and a container legitimately holds many peaks.
+const LAND_UNIT_SUFFIX = /\s+(wilderness|national\s+park|national\s+forest|state\s+park|np\b|nf\b)/i;
+// Multi-word names only, and long enough to be distinctive: matching a bare "Baker" or
+// "The Fin" against prose would fire constantly on ordinary words.
+const peakNames = [...new Set(areasList
+  .filter(a => a.area_type === "peak" && a.name && a.name.length >= 8 && /\s/.test(a.name))
+  .map(a => a.name.trim()))];
+const peakByName = new Map(areasList.filter(a => a.area_type === "peak" && a.name)
+  .map(a => [a.name.trim().toLowerCase(), a.id]));
+const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const PEAK_RE = peakNames.length
+  ? new RegExp(`\\b(${peakNames.map(esc).sort((a, b) => b.length - a.length).join("|")})\\b`, "gi")
+  : null;
+
+// True when the value names a peak that is NOT this route's own area or an ancestor of it.
+function namesForeignPeak(value, route) {
+  if (!PEAK_RE) return false;
+  const txt = typeof value === "string" ? value : JSON.stringify(value);
+  const own = new Set(ancestry(route.area_id).map(a => a.id));
+  own.add(route.area_id);
+  PEAK_RE.lastIndex = 0;
+  let m;
+  while ((m = PEAK_RE.exec(txt))) {
+    // "Glacier Peak Wilderness" is a land unit even though "Glacier Peak" is a summit.
+    if (LAND_UNIT_SUFFIX.test(txt.slice(m.index + m[0].length, m.index + m[0].length + 24))) continue;
+    const id = peakByName.get(m[0].toLowerCase());
+    if (id && !own.has(id)) return true;
+  }
+  return false;
+}
+
 console.log("2. CROSS-REGION DUPLICATE FIELD VALUES  (the contamination fingerprint)");
 const contamination = [];
 for (const col of ENRICHED) {
@@ -182,7 +221,10 @@ for (const col of ENRICHED) {
     blobs.get(h).push(r);
   }
   const susp = [...blobs.entries()].filter(([, rs]) =>
-    new Set(rs.map(r => r.area_id)).size > 1 && new Set(rs.map(r => regionOf(r.area_id))).size > 1);
+    new Set(rs.map(r => r.area_id)).size > 1 && new Set(rs.map(r => regionOf(r.area_id))).size > 1 &&
+    // Keep the blob only if at least one carrier is somewhere the text does not describe.
+    // A shared value that names no foreign peak is shared vocabulary, not a mis-target.
+    rs.some(r => namesForeignPeak(rs[0][col], r)));
   const routesInvolved = susp.reduce((n, [, rs]) => n + rs.length, 0);
   console.log(`   ${col.padEnd(14)} ${String(susp.length).padStart(3)} blob(s)  ${String(routesInvolved).padStart(4)} route(s)`);
   // EVERY suspicious blob goes into the report — the console listing below is truncated
