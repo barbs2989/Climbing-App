@@ -15,5 +15,11 @@ node_modules/
 catalog/**/*.json
 supabase/seed-utah.sql
 
+# Supabase CLI scratch state — written by `supabase link` / `functions deploy`,
+# holds this machine's project-ref and the remote's component versions. Purely
+# local and regenerated on demand; committing it would hand every clone one
+# developer's linked project.
+supabase/.temp/
+
 # local Claude Code permissions — personal, not shared across clones
 .claude/settings.json
