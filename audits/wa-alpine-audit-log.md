@@ -1173,3 +1173,82 @@ all check out).
 
 Next batch will continue alphabetically after `wa_liberty_bell_independence_route` (see
 progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 19
+
+Checked 10 routes: Liberty Bell Mountain (Northwest Face, Serpentine Crack, Thin Red
+Line, Liberty Crack, Liberty Crack (Free), Liberty Traverse), Liberty Cap / Mount
+Rainier (via Liberty Ridge, via Ptarmigan Ridge), Lichtenberg Mountain (West Face -
+West Rib).
+
+**Fixed:**
+- Northwest Face: `alpine_grade` stored 'III' — a plain copy of this row's own
+  `commitment` field, i.e. an NCCS Roman-numeral grade sitting in the column the schema
+  (`migrations/0006_composite_grades.sql`) defines as the French adjectival scale
+  (F/PD/AD/D/TD/ED). Same bug fixed on Dragontail Peak's Triple Couloirs in batch 9.
+  Every other rock route on Liberty Bell audited this batch already stores `D` here —
+  aligned Northwest Face to match.
+- Serpentine Crack: `waypoints[0].note` contained a leaked meta-comment — "Reused
+  coordinate from this session's own Liberty Bell area research (same real
+  trailhead)." — describing an authoring process rather than the route. Replaced with
+  the same trailhead description already used verbatim on this route's own siblings.
+- Thin Red Line: `fa` credited the free ascent to "Mikey Schaefer, 2008" alone,
+  dropping Kate Rutherford — who this row's own overview already names as co-first-
+  freer. Confirmed via Climbing.com's FA account (Rutherford & Schaefer, 5.12c,
+  September 15, 2008); both climbers added to `fa`.
+- Liberty Crack: summit waypoint elevation read 7,746 ft, the sole outlier against the
+  Liberty Bell area row's own canonical 7,720 ft (whose blurb explicitly flags 7,745-
+  7,750 as an outdated USGS-derived figure) and against all five other Liberty Bell
+  routes audited this batch, which already store 7,720 — fixed to match.
+- Liberty Crack (Free): `fa` dated the fully-free bolt-ladder-bypass variation
+  (Schaefer/Lee/Herrington/Hadley) to 2017. Blake Herrington's own trip-report blog
+  (dated July 1, 2016) and a CascadeClimbers.com report titled "6/28/2016" both place
+  the actual ascent in June/July 2016 — this row's own overview already hedged
+  "2016-2017"; fixed `fa` to the confirmed year.
+- Liberty Ridge finish (Liberty Cap): `fa` misspelled the third 1935 first-ascensionist
+  as "Jim Burrow" — this row's own overview already spells it "Jim Borrow" correctly,
+  and the AAC's own publication title for the FA account corroborates both the
+  spelling and the September 28-October 1, 1935 date range already on file. Also
+  updated `overview`: it cited Liberty Cap at a stale "14,112 ft" (vs. this route's own
+  area row, already correctly researched to 14,097 ft / ~14,095 ft per an Aug 2025 GPS
+  survey) and named Columbia Crest, at a stale "14,411 ft", as Rainier's "true high
+  point." A GPS survey conducted August 28, 2024 (widely reported: Seattle Met, Seattle
+  Times, Newsweek, GPS World) found the crater's southwest rim, about 440 ft south of
+  Columbia Crest, now stands higher (~14,400 ft) than the faster-thinning Columbia
+  Crest icecap (~14,389 ft) — Columbia Crest has not been the true summit since roughly
+  2014. Overview rewritten to match both this route's own area data and the 2024
+  resurvey.
+- Ptarmigan Ridge finish (Liberty Cap): top-level `grade` was NULL despite
+  `alpine_grade`/`rock_grade`/`ice_grade` all already populated ('IV'/'5.6'/'AI2-3')
+  and `grade_num` (6) already matching the rock grade digit — filled from the row's own
+  sub-fields, same pattern as batch 6/10's null-grade fixes. Also fixed the same stale
+  Liberty Cap (14,112 ft) and Columbia Crest "true summit" (14,409 ft) figures as the
+  Liberty Ridge route above, in this route's own waypoints array.
+
+**Flagged for human review (not auto-fixed):**
+- Liberty Ridge finish / Ptarmigan Ridge finish: `alpine_grade` stores 'IV' on both —
+  the same commitment-grade-in-the-adjectival-column bug fixed on Northwest Face above,
+  but Liberty Cap has only these two routes and both share the identical bug, so there's
+  no correctly-typed in-DB sibling to copy from. Sources found (International Mountain
+  Guides, Mountaineers.org, SummitPost) describe Liberty Ridge as "Grade V" (a
+  commitment grade) but none states a French adjectival rating — needs a human with a
+  guidebook (e.g. Nelson/Potterfield *Selected Climbs*) to supply the correct D/TD-class
+  value.
+- Northwest Face: `fa` (Hans Kraus & John Rupley, 1956; free FA Sandy Bill, Ron Burgner,
+  Ian Martin & Frank Tarver, 1966) could be neither corroborated nor contradicted by
+  this run's sources — left as-is.
+- Liberty Traverse: `fa` is 'unknown'; the stored summit order (Liberty Bell → Concord
+  Tower → Lexington Tower → North Early Winters Spire → South Early Winters Spire)
+  matches the Liberty Bell Group's documented layout, but no source was found to confirm
+  the specific 26-pitch count or overall 5.9 grade for a single continuous traverse —
+  left as-is.
+
+**Clean (no errors found):** Overexposure (FA, route character, and its role as the
+group's standard rappel line all independently corroborated) and Lichtenberg Mountain's
+West Face - West Rib (this row already self-describes as sparsely documented; nothing
+found online to confirm or refute it, consistent with that self-assessment).
+
+Next batch will continue alphabetically after `wa_lichtenberg_mountain_west_face_west_rib`
+(see progress file).

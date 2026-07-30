@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_liberty_bell_independence_route",
+  "last_processed_id": "wa_lichtenberg_mountain_west_face_west_rib",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -405,6 +405,32 @@
         "wa_lewis_creek_route: row's own verif.status/corrections already flag it may be a name-derived duplicate of the standard Gunn Peak route rather than a distinct line; also even the internally-corrected gain/loss (5200/5200) runs higher than any external source found (~3,937-4,380 ft).",
         "wa_lexington_tower_east_face: notch waypoint elevation (7,621 ft) exceeds the peak's own confirmed summit elevation (7,560 ft) despite the route's text saying it tops out below the true summit -- internally consistent but geometrically impossible; can't isolate which field is wrong without a topo.",
         "wa_liberty_bell_east_face / wa_liberty_and_injustice_for_all: both routes' own approach/road fields describe an SR-20 pullout approach while their own waypoints/gpx point to Blue Lake Trailhead -- internally split, no independent beta found to arbitrate."
+      ]
+    },
+    {
+      "batch_number": 19,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_liberty_bell_nw_face",
+        "wa_liberty_bell_overexposure",
+        "wa_liberty_bell_serpentine_crack",
+        "wa_liberty_bell_thin_red_line",
+        "wa_liberty_cap_liberty_ridge_finish",
+        "wa_liberty_cap_ptarmigan_ridge_finish",
+        "wa_liberty_crack",
+        "wa_liberty_crack_free",
+        "wa_liberty_traverse",
+        "wa_lichtenberg_mountain_west_face_west_rib"
+      ],
+      "confirmed_errors_fixed": 8,
+      "flagged_for_human_review": 3,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-30-batch-19.sql",
+      "note": "Northwest Face's alpine_grade held 'III', a plain copy of its own commitment field (NCCS Roman numeral) sitting in the column migrations/0006_composite_grades.sql defines as the French adjectival scale -- same bug as batch 9's Triple Couloirs fix; aligned to 'D' matching every other Liberty Bell rock route in this batch. Serpentine Crack had a leaked meta-comment in a waypoint note ('Reused coordinate from this session's own Liberty Bell area research') -- replaced with the standard trailhead text used on its siblings. Thin Red Line's fa dropped Kate Rutherford from the FFA credit despite the row's own overview already naming her; Liberty Crack's summit waypoint elevation (7746) was the sole outlier against the area row and five sibling routes' 7720; Liberty Crack (Free)'s fa dated the Schaefer/Lee/Herrington/Hadley free variation to 2017 when Herrington's own blog and a CascadeClimbers TR date it 6/28/2016 -- all three fixed. Liberty Ridge finish's fa misspelled 'Jim Burrow' for 'Jim Borrow' (confirmed via AAC publication + the row's own correct overview spelling). Biggest find: both Liberty Cap routes cited stale Rainier summit facts -- Liberty Cap at 14,112 ft (vs. the area row's already-researched 14,097/~14,095 ft) and Columbia Crest as the 'true summit' at 14,411/14,409 ft, when a widely-reported Aug 28, 2024 GPS survey (Seattle Met, Seattle Times, Newsweek, GPS World) found the crater's southwest rim now stands higher (~14,400 ft) than the faster-thinning Columbia Crest (~14,389 ft) -- Columbia Crest hasn't been the true high point since ~2014. Fixed both routes' elevation figures and the 'true summit' framing. Ptarmigan Ridge finish also had a null top-level grade despite populated alpine_grade/rock_grade/ice_grade sub-fields -- filled, same pattern as batches 6/10. Flagged rather than fixed: both Liberty Cap routes' alpine_grade='IV' (same commitment-vs-adjectival bug as Northwest Face, but no correctly-typed sibling exists on this 2-route peak to copy from, and no source found states a French adjectival grade for Liberty Ridge); Northwest Face's FA (Kraus/Rupley 1956) could be neither corroborated nor refuted; Liberty Traverse's pitch count/grade for the full 5-summit link-up had no dedicated source to confirm.",
+      "flags": [
+        "wa_liberty_cap_liberty_ridge_finish / wa_liberty_cap_ptarmigan_ridge_finish: alpine_grade stores 'IV' on both -- a Roman-numeral commitment grade in the column the schema defines as French adjectival (F/PD/AD/D/TD/ED). No correctly-typed sibling exists on this 2-route peak to copy from, and no source found (IMG, Mountaineers.org, SummitPost) states a French adjectival rating for Liberty Ridge -- needs a human with a guidebook (e.g. Nelson/Potterfield Selected Climbs).",
+        "wa_liberty_bell_nw_face: fa (Hans Kraus & John Rupley, 1956; free FA Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966) could be neither corroborated nor contradicted by this run's sources -- left as-is.",
+        "wa_liberty_traverse: fa is 'unknown'; the stored 5-summit order matches the Liberty Bell Group's documented layout, but no source was found to confirm the specific 26-pitch count or overall 5.9 grade for the full continuous traverse -- left as-is."
       ]
     }
   ]
