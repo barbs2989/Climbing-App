@@ -37,6 +37,15 @@ const ENRICHED = ["approach", "descent_text", "emergency", "permit", "comms",
 const BOILERPLATE = [
   /^reverse the (route|scramble)/i, /^retreat down/i, /^limited bail/i,
   /^no cell (coverage|service)/i, /^same as approach/i, /^descend the (route|ascent)/i,
+  // Generic retreat phrasings that carry no place-specific content. Measured
+  // 2026-07-29: these were the ONLY two cross-region `bail` blobs in the whole
+  // catalog (5 WA routes) -- "Reversible at any point on the nontechnical
+  // terrain." on Earl Peak + Goat Mountain, and "Descend open slopes toward
+  // camp" on Blizzard, Claywood and Worthington. Both are true of any
+  // non-technical scramble, so they are shared vocabulary, not a mis-targeted
+  // write. Kept deliberately narrow: real contamination names a place, a number
+  // or a trailhead, and a looser "short string" rule would hide it.
+  /^reversible\b/i, /^descend (open|easy|low.angle|broad) slopes/i,
 ];
 // Placeholder route names that repeat within one crag by design (OpenBeta import).
 const PLACEHOLDER = /^\s*(unknown|unnamed|project|route|no name|nameless|tbd|n\/?a|\?+|open project|wa|[\d\W]*)\s*$/i;
@@ -56,8 +65,20 @@ const isPlaceholderObj = v => v && typeof v === "object" && !Array.isArray(v) &&
 const GENERIC_TAG = /^(loose ?rock|rock ?fall|exposure|route ?finding|routefinding|avalanche|crevasse|serac|icefall|cornice|weather|scree|talus|moat|whiteout|altitude|remoteness|afternoon weather|verglas|wet rock)$/i;
 const isGenericTags = v => Array.isArray(v) && v.length > 0 && v.length <= 4 &&
   v.every(x => typeof x === "string" && GENERIC_TAG.test(x.trim()));
+// A BOILERPLATE prefix only earns an exemption if the WHOLE value stays generic.
+// Prefix-anchored patterns alone are a masking risk: "Reverse the route." is shared
+// vocabulary, but "Reverse the route to Dinner Ledge, then rappel the Kor Roof."
+// is peak-specific beta and must still be compared across regions. Contamination
+// always carries specifics -- a proper noun, a number, a trailhead -- so a value
+// with an interior capitalised word or any digit is never boilerplate.
+const GENERIC_PROSE = s => {
+  const t = s.trim();
+  if (t.length > 120 || /\d/.test(t)) return false;
+  // Skip the leading word: a sentence legitimately starts with a capital.
+  return !t.split(/\s+/).slice(1).some(w => /^[A-Z][a-z]{2,}/.test(w));
+};
 const isBoilerplate = v =>
-  (typeof v === "string" && BOILERPLATE.some(re => re.test(v.trim()))) ||
+  (typeof v === "string" && BOILERPLATE.some(re => re.test(v.trim())) && GENERIC_PROSE(v)) ||
   isPlaceholderObj(v) || isGenericTags(v);
 
 // Big pages: the default 60 would be ~3,400 round trips over the 200k-row routes table.
