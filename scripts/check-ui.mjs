@@ -370,6 +370,9 @@ try {
     await tap("Partners");
     const found = await countOf(FOUND);
     if (found == null) throw new Error("no 'N climbers found' count on the Partners tab");
+    // The footer only renders above ~40 results, so its absence is normal on a small
+    // result set -- it appeared the moment DEMO_FILLERS was turned off and the count
+    // dropped to 5. Check it when it is there; never require it.
     const m = (await page.innerText("body")).match(/Showing\s+([\d,]+)\s+of\s+([\d,]+)/);
     // The app renders that footer only when the match list exceeds PAGED_OVER
     // ("filtered.length>40"), so its absence on a short list is correct, not a bug.
@@ -380,8 +383,7 @@ try {
     if (!m) {
       if (found > PAGED_OVER) throw new Error(`${found} climbers found but no "Showing X of N" footer — the paging footer is missing above ${PAGED_OVER}`);
       return;   // short list, no footer expected — nothing left to cross-check
-    }
-    const shown = Number(m[1].replace(/,/g, "")), total = Number(m[2].replace(/,/g, ""));
+    }    const shown = Number(m[1].replace(/,/g, "")), total = Number(m[2].replace(/,/g, ""));
     if (shown > total) throw new Error(`"Showing ${shown} of ${total}" is impossible`);
     if (total !== found) throw new Error(`header says ${found} climbers found but the footer says "of ${total}"`);
     if (shown === 0 && total > 0) throw new Error(`${total} climbers found but none are shown`);
