@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_price_hester_lake_route",
+  "last_processed_id": "wa_mount_rainier_kautz_glacier",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 589,
   "batches": [
@@ -638,6 +638,32 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-07-30-batch-28.sql",
       "note": "Five peaks, 8 routes (Mount Olympus and Mount Persis and Mount Pilchuck each carry 2). Two confirmed waypoint-elevation typos, both the same pattern as prior batches: a route's own waypoints summit entry disagreeing with that same row's own high_point_ft field (Olympus Blue Glacier: 7973 vs 7980; Pilchuck Standard Route: 5341 vs 5324), both resolved in favor of the row's own high_point_ft plus external confirmation (NPS/USGS). No coordinate-contamination pattern found in this batch -- all 5 peaks' summit coordinates check out. Flagged: Olympus West Ridge's 1964 FA claim is unverifiable either way; Persis Hexorcist's fa field references '(see corrections)' but the corrections field doesn't address the FA, a dangling pointer left over from an earlier partial fix; Pilchuck East Ridge has no waypoints/gpx at all, unlike its sibling and every other route this batch, so its own line couldn't be coordinate-checked. Persis West Ridge and Price Hester Lake Route were fully clean."
+    },
+    {
+      "batch_number": 29,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_mount_rahm_standard",
+        "wa_mount_rainier_curtis_ridge",
+        "wa_mount_rainier_disappointment_cleaver",
+        "wa_mount_rainier_edmunds_headwall",
+        "wa_mount_rainier_emmons_glacier",
+        "wa_mount_rainier_fuhrer_finger",
+        "wa_mount_rainier_fuhrer_thumb",
+        "wa_mount_rainier_gibraltar_ledges",
+        "wa_mount_rainier_ingraham_direct",
+        "wa_mount_rainier_kautz_glacier"
+      ],
+      "confirmed_errors_fixed": 10,
+      "flagged_for_human_review": 3,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-30-batch-29.sql",
+      "note": "Two peaks, 10 routes (Mount Rainier carries 9 of them). Six Rainier summit routes (DC, Emmons, Fuhrer Finger, Gibraltar Ledges, Ingraham Direct, Kautz Glacier) stored high_point_ft=14410, the stale pre-2024-survey figure, contradicting the area row's already-corrected 14406 ft (matching the Aug 2024 GPS survey finding that the true summit shifted from icecapped Columbia Crest to the rocky Southwest Rim at 14,406.2 ft NAVD88) -- fixed all six, three of which (Fuhrer Finger, Gibraltar Ledges, Ingraham Direct) had already had their own waypoints corrected to 14406 in a prior pass but not high_point_ft, a self-contradiction. Kautz Glacier's fa also claimed the route was 'proven practicable by Joe Hazard...in 1921 and 1924', contradicted by three independent sources (AAI route history, a primary 1920 Roger Toll letter in UW's digital collection, general climbing-history summaries) agreeing the first full ascent via this route was June 26-28 1920 by Hans Fuhrer, Heinie Fuhrer, Roger Toll, and Harry Myers -- fixed. Emmons Glacier's fa misnamed two of its three 1884 FA party members ('Warner Forbes, Jones' for the real J. Warner Fobes and George James) -- fixed via NPS/Snohomish-history corroboration. Fuhrer Thumb's gain_ft (3599) contradicted its own waypoints (Paradise 5,400 ft -> summit 14,406 ft implies ~9,006 ft) and its own loss_ft (9000) -- fixed to 9000. Mount Rahm's trailhead waypoint had a leaked internal research comment in its note field (coordinates correct) -- same pattern fixed on Mount Constance/Liberty Bell in prior batches -- reworded.",
+      "flags": [
+        "wa_mount_rainier_curtis_ridge: has a 'Columbia Crest'/type=Summit waypoint with no elevFt at all, while the route's own high_point_ft (13800) implies it does NOT reach the true summit -- unclear whether this route actually continues to the top (joining Liberty Ridge/upper mountain) or tops out around 13,800 ft and the waypoint is mislabeled; Mountain Project's dedicated route page 403'd this pass and no other source with route-specific topout info was found. Needs a human with page access or a guidebook (Nelson/Potterfield).",
+        "Recurring alpine_grade-holds-an-NCCS-Roman-numeral-instead-of-a-French-adjectival-letter bug (same one flagged and partially fixed in batches 9/19/21/23/25) affects 8 of this batch's 10 routes (Rahm, Curtis Ridge, DC, Emmons, Fuhrer Finger, Gibraltar Ledges, Ingraham Direct, Kautz Glacier) -- checked sources for the two most technical candidates (Fuhrer Finger, Kautz Glacier) and found only NCCS/YDS grades cited (Mountaineers.org, AAI, Mountain Project), no French adjectival letter for any of them; consistent with batch 23's finding that mellow/moderate PNW glacier routes usually aren't assigned an adjectival grade at all. Left unfixed rather than guess.",
+        "wa_mount_rahm_standard: on-file elevation (8,485 ft) sits between two conflicting external figures found this pass (8,480 ft vs. Wikipedia's 8,486 ft) -- not an outlier against either, left as-is; noting only in case a future pass finds a definitive source. Its own prominence_ft (280) matches Wikipedia's figure exactly."
+      ]
     }
   ]
 }

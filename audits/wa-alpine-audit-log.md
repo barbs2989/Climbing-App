@@ -1916,3 +1916,78 @@ pass.
 
 Next batch will continue alphabetically after `wa_mount_price_hester_lake_route` (see progress
 file).
+
+## Batch 29 — 2026-07-30 (Pass 1)
+
+Checked 10 routes across 2 peaks, `wa_mount_rahm_standard` through `wa_mount_rainier_kautz_glacier`
+(continuing alphabetically after `wa_mount_price_hester_lake_route`): Mount Rahm (Standard Route)
+and Mount Rainier (Curtis Ridge, Disappointment Cleaver, Edmunds Headwall, Emmons-Winthrop Glacier,
+Fuhrer Finger, Fuhrer Thumb, Gibraltar Ledges, Ingraham Direct, Kautz Glacier).
+
+**Confirmed fixes (10):**
+- Six Rainier summit routes (Disappointment Cleaver, Emmons-Winthrop Glacier, Fuhrer Finger,
+  Gibraltar Ledges, Ingraham Direct, Kautz Glacier) stored `high_point_ft` 14410, the stale
+  pre-2024-survey figure — contradicting this same peak's own `area` row, which an earlier pass
+  had already corrected to 14406 ft (NAVD88), matching the August 2024 GPS survey (Gilbertson et
+  al., "Mount Rainier Elevation Survey 2024") that found Mount Rainier's true high point shifted
+  from the melting, icecapped Columbia Crest to the rocky Southwest Rim, now measured at
+  14,399.6 ft NGVD29 / 14,406.2 ft NAVD88. Three of the six (Fuhrer Finger, Gibraltar Ledges,
+  Ingraham Direct) had already had their own `waypoints` summit entries corrected to 14406 in a
+  prior pass but never had `high_point_ft` updated to match — a self-contradiction within the same
+  row. Fixed `high_point_ft` on all six, plus the still-stale `waypoints` summit entries on
+  Disappointment Cleaver, Emmons, and Kautz Glacier.
+- Kautz Glacier's `fa` claimed the route "to the true summit [was] proven practicable by Joe Hazard
+  of the Seattle Mountaineers in 1921 and 1924" — this claim doesn't match any source found. Three
+  independent sources (American Alpine Institute's route history, a July 11 1920 letter from Roger
+  Toll to Harry Myers held in UW's Pacific Northwest Historical Documents Collection responding to
+  Myers's own published account of the climb, and general Rainier climbing-history summaries) agree
+  the Kautz Glacier route's first full ascent to the summit was June 26–28, 1920, by Hans Fuhrer,
+  Heinie Fuhrer, Roger Toll, and Harry Myers. Fixed to the corroborated history, keeping the
+  existing (and accurate) note about Kautz's non-summiting 1857 attempt.
+- Emmons-Winthrop Glacier's `fa` named "Warner Forbes, Jones, and Wells, August 1884" — two of the
+  three names are wrong. Multiple sources (NPS Nature Notes history, SummitPost, and Snohomish
+  local-history accounts) agree the actual Aug 20, 1884 first-ascent party was Rev. J. Warner
+  Fobes, George James, and Richard O. Wells — "Forbes" is a misspelling of "Fobes," and "Jones" is
+  simply the wrong name (it was James). Fixed; also added the specific date since every source
+  agreed on it.
+- Fuhrer Thumb's `gain_ft` (3599) contradicted its own `waypoints` (Paradise trailhead 5,400 ft →
+  Columbia Crest summit 14,406 ft implies ~9,006 ft of gain) and its own `loss_ft` (9000, via a
+  different descent line) — no other field in the row supports 3599. Fixed to 9000, matching the
+  row's own elevation data.
+- Mount Rahm Standard Route's trailhead waypoint had a leaked internal research comment sitting in
+  its `note` field ("Reused coordinate from this session's own Devil's Club (Southeast Mox Peak)
+  research...") instead of normal descriptive text — same leaked-audit-commentary pattern already
+  fixed on Mount Constance West Arete (batch 24) and Liberty Bell Serpentine Crack (batch 19).
+  Coordinates were already correct and untouched; only the note text was reworded.
+
+**Coordinates/peak sanity checks:** Mount Rahm and Mount Rainier's stored summit lat/lng both fall
+within a plausible bounding box for the named peak and match published coordinates.
+
+**Flagged for human review (3):**
+- Curtis Ridge has a `waypoints` entry named "Columbia Crest" typed `Summit` with no `elevFt` at
+  all, while the route's own `high_point_ft` (13800) implies the route does *not* reach the true
+  summit. Unclear whether Curtis Ridge actually continues to the top (joining Liberty Ridge/the
+  upper mountain, as some general route descriptions suggest) or tops out around 13,800 ft with a
+  mislabeled waypoint — Mountain Project's dedicated route page 403'd this pass and no other
+  route-specific topout source was found. Needs a human with page access or a guidebook.
+- The recurring `alpine_grade`-holds-an-NCCS-Roman-numeral-instead-of-a-French-adjectival-letter
+  bug (flagged and partially fixed in batches 9/19/21/23/25) affects 8 of this batch's 10 routes
+  (Rahm, Curtis Ridge, Disappointment Cleaver, Emmons, Fuhrer Finger, Gibraltar Ledges, Ingraham
+  Direct, Kautz Glacier). Checked sources for the two most technical candidates (Fuhrer Finger,
+  Kautz Glacier) and found only NCCS/YDS grades cited anywhere (Mountaineers.org, AAI, Mountain
+  Project) — no French adjectival letter for any of them, consistent with batch 23's finding that
+  moderate PNW glacier routes usually aren't assigned an adjectival grade at all. Left unfixed
+  rather than guess a letter.
+- Mount Rahm's on-file elevation (8,485 ft) sits between two conflicting external figures found
+  this pass (8,480 ft vs. Wikipedia's 8,486 ft) — not an outlier against either, so left as-is;
+  noted only in case a future pass finds a definitive source. Its own `prominence_ft` (280) matches
+  Wikipedia's figure exactly.
+
+**Clean:** Gibraltar Ledges' FA (Hazard Stevens & P.B. Van Trump, Aug 17 1870) was independently
+corroborated by multiple sources. Fuhrer Finger's FA party (Hans Fuhrer, Heine Fuhrer, Joseph
+Hazard, Thomas Hermans, July 2 1920) matches external sources for 4 of the 5 documented climbers —
+one source also credits a fifth participant (Peyton Farrer) not present in this row, a minor
+completeness gap rather than an error, not worth a SQL patch. Edmunds Headwall's `alpine_grade`
+('D') was already correctly typed — no issue.
+
+Next batch will continue alphabetically after `wa_mount_rainier_kautz_glacier` (see progress file).
