@@ -1252,3 +1252,62 @@ found online to confirm or refute it, consistent with that self-assessment).
 
 Next batch will continue alphabetically after `wa_lichtenberg_mountain_west_face_west_rib`
 (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 20
+
+Checked 8 routes across 5 peaks: Lincoln Peak (North Ridge, X Couloir/Standard), Little
+Mac Spire (Southwest Route), Little Sister (North Face, West Face), Little Tahoma
+(Cowlitz/Ingraham Glaciers, East Shoulder), Luahna Peak (Southwest Slope-Southeast
+Ridge).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-30-batch-20.sql`):**
+- Lincoln Peak North Ridge and X Couloir/Standard (both routes on this peak):
+  `high_point_ft` stored 9,085 ft, matching neither this route's own summit waypoint in
+  the same row (9,101 ft, cited to GNIS Feature ID 1522127) nor ListsOfJohn.com's
+  surveyed figure — a bad transcription from a prior pass. Fixed both to 9,101.
+- Little Tahoma East Shoulder: `approach_logistics.trailhead`/`trailheadLat`/
+  `trailheadLng`/`trailheadDirection` were an exact copy of Luahna Peak's trailhead
+  (White River Trailhead near Lake Wenatchee, ~130 mi away) — cross-route contamination,
+  same pattern as prior batches' Mount Tom/Dome Peak mixups. This row's own
+  approach/descent/GPX text already correctly named Fryingpan Creek Trailhead
+  (confirmed via NPS's "Summerland Trailhead" page, Mountaineers.org,
+  trailcatjim.com); propagated that into the contaminated field.
+- Little Tahoma Cowlitz/Ingraham Glaciers: `access.notes` read "Northwest Forest Pass...
+  Mount Tom area, North Cascades" — USFS-language contamination on a route entirely
+  inside Mount Rainier NP (per this same row's own `landManager` field). Replaced with
+  NPS's actual policy: no NW Forest Pass, $82/yr climbing registration for glacier/
+  10,000ft+ travel, separate overnight wilderness permit.
+
+**Flagged for human review (not auto-fixed):**
+- Little Mac Spire Southwest Route: `fa` ("1969") and `grade` ("II-III, 5.4") are
+  already self-flagged as unconfirmed in the row's own `data_quality.gaps`; no
+  route-specific source found this pass to confirm or refute either. Separately, its
+  `corrections` narrative field contains a stale, self-contradictory note placing the
+  peak "near Mac Peak in the Deception Lakes area" (Alpine Lakes Wilderness) —
+  contradicts the rest of the row and the area table (actual parent: Southern
+  Pickets/North Cascades NP). Reads like leftover text from an earlier bad research
+  pass; needs a human to clean it out.
+- Little Sister West Face: `fa` ("Darin Berdinka, June 21, 2013") is broadly
+  corroborated, but sources describe the line as "Northwest" rather than confirming the
+  exact name "West Face" — not a clear enough mismatch to fix outright; worth checking
+  the live Mountain Project listing directly.
+- Little Sister (both routes): `access.closures` cites a specific "FR 12 closing from
+  MP 4.6 starting Aug 2026" — plausible given ongoing Middle Fork Nooksack Rd washout
+  closures, but this pass couldn't independently confirm the exact date/mile-marker
+  with the Mount Baker Ranger District; time-sensitive, left as-is.
+- Little Tahoma (both routes): a shared rounded waypoint coordinate (46.8884, -121.611)
+  is used for two different named features (Summerland campsite vs. the Fryingpan
+  Creek/Summerland Trailhead) — each individually correct in elevation/description, so
+  likely a rounding artifact rather than a wrong location; a human with a precise GPS
+  track could tighten it to match the route's own cited GPX start exactly.
+
+**Clean (no errors found):** Little Sister North Face (no FA on file — an honest null —
+and the Elbow Lake Trailhead approach confirmed correct) and Luahna Peak Southwest
+Slope-Southeast Ridge (elevation, land manager, and trailhead all independently
+confirmed — this route turned out to be the *source* of the Little Tahoma East Shoulder
+contamination above).
+
+Next batch will continue alphabetically after `wa_luahna_peak_southwest_slope_southeast_ridge`
+(see progress file).
