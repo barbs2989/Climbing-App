@@ -1656,3 +1656,118 @@ project's convention of not renaming ids/names via SQL.
 
 Next batch will continue alphabetically after `wa_mount_formidable_north_ptarmigan` (see progress
 file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 26
+
+Checked 10 routes across 8 peaks: Mount Formidable (South Face), Mount Fury West (Mongo Ridge,
+West Ridge), Mount Fury East (Southeast Glaciers), Mount Goode (Northeast Buttress), Mount Hardy
+(Southwest Slopes), Mount Hinman (Hinman Glacier), Mount Howard (South Slope), Mount Index (North
+Norwegian Buttress, North Peak Traverse).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-26.sql`:**
+- Mount Formidable South Face: `fa` misspelled two of the four 1938 FA climbers' names ("Calder
+  Bessler, Ralph Clough") — the row's own area blurb already spells them correctly ("Bressler,
+  Ray Clough"), confirmed via the Alpine Institute's Ptarmigan Traverse history and a UC Academic
+  Senate in-memoriam for Ray W. Clough. Also fixed two stale approach-text elevations (Cascade
+  Pass 5,560→5,392 ft; Cache Col ~6,600→~6,903 ft) that contradicted the row's own waypoints and
+  Wikipedia.
+- Mount Goode Northeast Buttress: `fa` dated the first winter ascent "March 3-5, 1985" — that's
+  the AAJ's *publication* year; the Pilling/Mascioli climb itself was March 1984, confirmed via
+  AAC Publications and independent trip-report summaries. Fixed.
+- Mount Fury East's own area row (`elevation_ft`=8326) was a stale outlier against its own blurb
+  (which already settles on the 2022 Gilbertson theodolite survey's 8,356±8 ft for East Fury) and
+  its own Southeast Glaciers route (`high_point_ft`=8356) — fixed the area, plus a matching stale
+  8326 summit-waypoint figure on the route itself, both to 8356.
+- Three Mount Fury routes had gain_ft/loss_ft contradicting their own itinerary day-by-day sums
+  and totalNote prose (Mongo Ridge 11000/4000 → 10000/10700; West Ridge 7000/6640 → 9100/9100;
+  Hinman Glacier 3500/7800 → 6100/6300) — all fixed to match each row's own more granular data.
+- Mount Hinman Glacier: `access.land_manager` said "Snoqualmie Ranger District," contradicting
+  the row's own `emergency.rangerStation` ("Skykomish Ranger District") — the Necklace Valley
+  approach used by this route is entirely on the US-2/Skykomish side, confirmed via the USFS
+  Necklace Valley Trailhead page. Fixed.
+- Mount Hinman's own area blurb opened by calling it "the second-highest summit in the Alpine
+  Lakes Wilderness" — false; Mount Stuart (9,415 ft) and several Stuart Range summits exceed it,
+  confirmed via Wikipedia/SummitPost. Removed the false superlative rather than guess a specific
+  rank.
+- Mount Howard South Slope: `grade`/`grade_system`/`grade_num`/`alpine_grade`/`disciplines` were
+  all null despite the row's own overview text and the area's own blurb already describing it as
+  a "Class 2-3" non-technical scramble — filled from the row's own prose plus SummitPost/
+  Mountaineers.org corroboration, matching the sibling `wa_mount_hardy_snow_scramble` field for
+  field. A genuine enrichment gap, not a fabricated fact.
+- Mount Index North Norwegian Buttress: `high_point_ft` stored Mount Index's Main Peak elevation
+  (5991), but this route tops out on the separate Middle Peak — confirmed externally (Mountain
+  Project pages for both the Jötnar and Bluebell lines on this buttress state the route reaches
+  Middle Peak) and internally (the row's own `waypoints` already correctly lists "Mount Index
+  Middle Peak" at 5,527 ft as the Summit waypoint, and its own overview says the buttress is
+  separated from Main Peak "by a deep cleft"). Fixed `high_point_ft` to 5527. Also fixed
+  gain_ft/loss_ft (2200/5000 → 5000/5491, matching the row's own itinerary — the old loss_ft
+  value exactly equaled the itinerary's gain total, a likely copy/swap bug).
+- Mount Index North Peak Traverse: `commitment` stored "I" for a 3-day, bivy-required, roped 5.7
+  three-summit traverse — directly contradicted by the row's own `access.notes` ("a serious Grade
+  III+ alpine objective") and SummitPost/Beckey-sourced descriptions rating the North Face segment
+  alone "Grade III, 5.7." Fixed to III as a floor (the full traverse may warrant higher; not
+  guessed further). Also fixed `gain_ft` (3991 → 5800, matching the row's own itinerary sum,
+  which already matched the row's own correct `loss_ft`).
+
+**Flagged for human review (not auto-fixed):**
+- Mount Fury Mongo Ridge (`wa_mount_fury_east_mongo_ridge`): same id/content-mismatch pattern as
+  many prior batches — the route's own id says "fury_east" but its `area_id`, `face`, and content
+  are unambiguously about West Peak (matching the area blurb: "West Fury, reached only via the
+  serious Mongo Ridge"). Also, this row's own `data_quality.gaps` text claims the route is "filed
+  under the East Peak area entry," which is itself wrong — the row's actual `area_id` is
+  `wa_mount_fury_west`. Two distinct self-contradictions about the same underlying id mixup; not
+  renamed here per this audit's standing no-rename guardrail.
+- Mount Fury West Ridge (`wa_mount_fury_west_west_ridge`): the row's own `corrections` field says
+  "no FA record for this connecting-ridge line could be sourced, so `fa` is left null" — but `fa`
+  is *not* null; it holds a 1958 FA party/date that, per the `corrections` text's own reasoning,
+  belongs to the peak's original ascent line, not this modern route. Also, `pitch_detail`
+  describes an entirely different (1958-era, Hannegan-Pass-approached) route than every other
+  field on the row (which describes the modern Ross Lake/Access Creek/Luna Col approach) —
+  apparent two-route conflation, needs a human rewrite/split.
+- Mount Fury Southeast Glaciers (`wa_mount_fury_east_southeast_glaciers`): gain_ft/loss_ft
+  (6200/13000) don't reconcile three ways — neither with each other, nor with the row's own
+  itinerary day-sum (6900/7200), nor with the row's own totalNote ("~13,000 ft of cumulative
+  gain/loss," implying both should be ~13,000). Unlike this batch's other two Fury gain/loss
+  fixes, no single source in the row settles which figure is right — left flagged.
+- Two of three Mount Fury routes (West Ridge, Southeast Glaciers) have a Northwest Forest Pass
+  requirement stamped on a waypoint note, contradicting the row's own `access.passRequired` (none
+  needed, this is NPS land) — a new boilerplate-contamination pattern not seen in prior batches;
+  sources needed to confirm/deny were 403'd this pass.
+- Mount Fury East Southeast Glaciers: FA ("Don Keller, Joan Firey, and Joe Firey, 1960") could not
+  be independently corroborated this pass (AAC Publications/SummitPost 403'd); general sourcing
+  confirms the Fireys' documented Picket Range FA activity in this era but not this specific climb.
+- Mount Goode Northeast Buttress: `alpine_grade` holds "Grade III-IV," the same recurring
+  NCCS-Roman-numeral-in-the-French-adjectival-column bug flagged repeatedly in prior batches — no
+  source found gives a specific French-scale (F/PD/AD/D/TD/ED) rating for this route, so left
+  as-is rather than guessed. Also, `pitches` (7) conflicts with sourcing that suggests closer to
+  14, and The Mountaineers.org gives "Grade III-IV, 5.4" vs. the on-file "Grade IV, 5.5" (AAC/MP) —
+  sources split, on-file value has the stronger two-source backing but isn't unanimous.
+- Mount Formidable South Face: Kool-Aid Lake's elevation appears as four different values across
+  four fields in the same row (6,320/6,100/~6,200/6,120 ft) — no independent source found to
+  settle which is right. `length_m` (183) doesn't match the row's own pitch_detail sum (75m) or
+  the col-to-summit relief (~306m) — unclear what the field represents.
+- Mount Howard South Slope: `length_m`=91 has no support anywhere in the row's own text (which
+  explicitly says no technical rack/rope is needed) and looks like contamination from an unrelated
+  technical route, matching a known bug pattern in this DB — recommend nulling (to match sibling
+  Mount Hardy's null value for an equivalent scramble) but left flagged since no source justifies
+  any specific replacement and this audit doesn't guess-null without one more corroborating look.
+  Also flagged: `gain_ft` (4600) undercounts vs. the row's own turnaround/itinerary text
+  (5,000-6,400 ft); no external source pins down an exact figure.
+- Mount Index North Norwegian Buttress: `grade`="V" (yds) conflicts with `commitment`="VI" —
+  sources consistently cite Grade VI for the Jötnar line described in this row. `pitches`=16
+  matches Jötnar specifically but the row's `fa`/`overview` also describe the 21-pitch Bluebell
+  ascent — ambiguous which line the summary fields represent.
+- Mount Index North Peak Traverse: FA party name "Bill (Wolf) Schoening" could not be corroborated
+  — the only Schoening independently documented as a Beckey Cascades partner in this era is Pete
+  Schoening (of 1953 K2 "Belay" fame); no source found for a "Bill"/"Wolf" Schoening. AAC
+  Publications was 403'd this pass; needs a human with primary-source access.
+
+**Clean (no errors found):** Mount Hardy Southwest Slopes (Class 2-3 scramble, FA, land manager,
+and gain/loss all independently corroborated and internally consistent) audited fully clean —
+including a re-check of the 8,099 vs. 8,097 ft summit/waypoint gap, which the row's own overview
+already explains as normal survey variance and not a new issue.
+
+Next batch will continue alphabetically after `wa_mount_index_north_peak_traverse` (see progress
+file).

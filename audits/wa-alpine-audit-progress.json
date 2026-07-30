@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_formidable_north_ptarmigan",
-  "total_in_scope_last_count": 544,
-  "total_wa_alpine_or_mountaineering_tagged": 549,
+  "last_processed_id": "wa_mount_index_north_peak_traverse",
+  "total_in_scope_last_count": 469,
+  "total_wa_alpine_or_mountaineering_tagged": 589,
   "batches": [
     {
       "batch_number": 1,
@@ -579,6 +579,27 @@
         "wa_mount_custer_standard: dist_km has the same one-way-vs-round-trip ambiguity as Fernow, left alone; an overview/rest-of-row contradiction about how much glacier travel this route actually involves, not confirmed strongly enough to rewrite.",
         "wa_mount_formidable_north_ptarmigan: own naming ('North Route via Ptarmigan Traverse') vs. every current source calling this line the 'South Route' -- flagged only, per the project's convention of not renaming ids/names via SQL."
       ]
+    },
+    {
+      "batch_number": 26,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_mount_formidable_south_face",
+        "wa_mount_fury_east_mongo_ridge",
+        "wa_mount_fury_east_southeast_glaciers",
+        "wa_mount_fury_west_west_ridge",
+        "wa_mount_goode_northeast_buttress",
+        "wa_mount_hardy_snow_scramble",
+        "wa_mount_hinman_hinman_glacier",
+        "wa_mount_howard_south_slope",
+        "wa_mount_index_north_norwegian_buttress",
+        "wa_mount_index_north_peak_traverse"
+      ],
+      "confirmed_errors_fixed": 15,
+      "flagged_for_human_review": 13,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-30-batch-26.sql",
+      "note": "Mount Fury massif (3 routes) had the batch's most interesting structural find: wa_mount_fury_east_mongo_ridge's id says 'fury_east' but its area_id/content are entirely West Peak (Mongo Ridge is West Fury's route per the area's own blurb) -- flagged, not renamed -- and its own data_quality.gaps note compounds the error by claiming it's filed under East Peak, which is itself wrong. wa_mount_fury_west_west_ridge has a deeper problem: its own corrections field says fa was deliberately left null for lack of a source, but fa is actually populated with what looks like the peak's original-ascent FA misattributed to this modern route, and pitch_detail describes a different (1958-era) approach than every other field on the row -- apparent two-route conflation, flagged for a human rewrite/split. Fixed 3 gain_ft/loss_ft self-contradictions across the Fury routes (matching itinerary day-sums) but left a 4th (Southeast Glaciers) flagged since its itinerary sum, top-level fields, and totalNote prose disagree three ways with no clear anchor. Mount Index North Norwegian Buttress had a genuine high_point_ft error: stored Main Peak's elevation (5991) but the route's own waypoints/overview already correctly identify it as topping out on the separate Middle Peak (5527) -- confirmed via Mountain Project. Mount Howard South Slope had a clean enrichment-gap fill (grade/alpine_grade/disciplines all null despite the row's own prose already describing a Class 2-3 scramble, matching sibling Mount Hardy field-for-field) plus a flagged length_m=91 that looks like contamination from an unrelated technical route. Mount Hinman's area blurb had a false 'second-highest in the Alpine Lakes Wilderness' claim (Mount Stuart and several Stuart Range peaks are taller) -- removed rather than guess a specific correct rank."
     }
   ]
 }
