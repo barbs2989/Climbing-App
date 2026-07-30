@@ -1592,3 +1592,67 @@ maintains the checker tooling.
 
 Next batch will continue alphabetically after `wa_mount_cruiser_south_corner` (see progress
 file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 25
+
+Checked 10 routes across 10 distinct peaks: Mount Custer (Standard), Mount Daniel (Daniel
+Glacier), Mount Deception (Standard), Mount Degenhardt (Southwest Route), Mount Despair (East
+Route), Mount Duckabush (Standard), Mount Ellinor (Standard), Mount Fairchild (Standard), Mount
+Fernow (Southeast Face), Mount Formidable (North/Ptarmigan).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-25.sql`:** 22 fixes across all 10 routes,
+none audited fully clean. The dominant pattern this batch was top-level `gain_ft`/`loss_ft`
+disagreeing with the route's own `itinerary.days` sums — found and fixed on 6 of the 10 routes
+(Daniel, Deception, Despair, Duckabush, Fairchild, Fernow), all corroborated by the row's own
+itinerary totalNote/sourceNote text, not just the day-by-day arithmetic. Also fixed: two more
+instances of the area-elevation/route-elevation drift seen in many prior batches (Daniel
+7977→7960 ft, Despair 7299→7296 ft — Despair's own `corrections` field had already decided on
+7296 but never applied it to the area row); a cross-route land-manager contamination on Daniel
+(Mt. Baker-Snoqualmie copied in where the row's own `emergency.rangerStation` already said
+Okanogan-Wenatchee/Cle Elum, confirmed via USFS/WTA); a cross-route trailhead contamination on
+Duckabush (the Dosewallips Road washout parking — a different Olympics trailhead entirely —
+copied into `approach_logistics`, contradicting the row's own waypoints/approach/road fields);
+a wrong ranger-station address on Degenhardt (NPS Sedro-Woolley HQ contact info mislabeled as
+the Marblemount Wilderness Information Center); a contradicted top-level `permit` claim on
+Ellinor (claimed a wilderness self-issue permit the row's own `access.permit` and WTA/USFS both
+say isn't required); a contradicted top-level `grade` on Formidable (rock-class understated
+against the row's own `rock_grade` and a Steph Abegg trip report title); a data_quality.gaps
+entry on Custer falsely claiming no GPS/waypoint data exists despite 8 populated waypoints/gpx
+points on the same row; a null `alpine_grade` fix on Deception (held a copy of `commitment`,
+violating the French-adjectival-scale schema — nulled rather than guessed, no source gives a
+letter grade for an unroped scramble); missing top-level `lat`/`lng` backfilled on Degenhardt
+from the row's own already-correct area/approach_logistics coordinates; and two more stale
+prose-elevation mentions (Daniel's Peggy's Pond ~5300→~5,560 ft, Duckabush's trailhead ~900→~440
+ft) that contradicted the same row's own waypoints.
+
+**Flagged for human review (not auto-fixed):** Fairchild's `itinerary` appears to blend two
+genuinely different, separately-documented approaches to the same peak (Sol Duc/Appleton
+Pass/Mount Carrie vs. Whiskey Bend/Long Ridge/Mount Fitzhenry) across different sub-fields of one
+row — the gain/loss fix above only patches the numeric symptom, not this root cause. Degenhardt's
+own name/id ("Southwest Route") vs. sources that only document an "East Ridge" and a "Corkscrew
+Route" for this peak — another instance of the id/name-conflation pattern flagged since batch 3 —
+plus an FA-year conflict (1931 vs. 1932) across otherwise-agreeing sources. Duckabush has a
+genuine three-way summit elevation conflict (area 6232 ft vs. route high_point_ft 6254 ft vs.
+external sources ranging 5741-6254 ft) and an unresolved question of which side of the peak the
+"standard route" actually follows (south/southeast per `aspect`/approach text vs. north/northwest
+per the itinerary and schedule) — the one definitive print guidebook source was login-walled.
+Ellinor has two genuine cross-source elevation/prominence disagreements (5944 vs. 5952 ft;
+538 vs. 440 ft) neither resolvable from sources reachable this pass. Six routes (Custer, Daniel,
+Despair, Duckabush's sibling pattern, Fernow, Formidable) still carry the recurring
+alpine_grade-holds-an-NCCS-numeral-instead-of-a-French-letter bug, but none had a source giving a
+specific correct French grade to substitute, so all were left as-is (Deception's was the one
+exception with clean grounds to null it, since its sub-fields already show it's an unroped
+scramble). Despair's itinerary day-by-day gain/loss split still only sums to 6,000/6,000 even
+after the top-level total was corrected to 12,000/12,000 — needs a human re-derivation once the
+cited trailcatjim.com trip report is reachable (403'd this pass). Fernow has a very recent (Jul
+28 2026) USFS trail closure not yet reflected in `access.closures`, and an ambiguous `dist_km`
+that may or may not already be a round-trip figure per this repo's known dual-convention issue —
+left alone per the standing guidance not to bulk-normalize that column. Custer's `dist_km` has
+the same one-way-vs-round-trip ambiguity. Formidable's own naming ("North Route via Ptarmigan
+Traverse") vs. every current source calling this line the "South Route" — flagged only, per the
+project's convention of not renaming ids/names via SQL.
+
+Next batch will continue alphabetically after `wa_mount_formidable_north_ptarmigan` (see progress
+file).
