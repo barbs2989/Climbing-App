@@ -1771,3 +1771,104 @@ already explains as normal survey variance and not a new issue.
 
 Next batch will continue alphabetically after `wa_mount_index_north_peak_traverse` (see progress
 file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 27
+
+Checked 8 routes across 6 peaks: Mount Index (Northeast Buttress), Mount Johnson (Standard
+Route), Mount Lago (South Slope-South Face), Mount Larrabee (South Ridge), Mount Logan (Fremont
+Glacier, Banded Glacier/r1, Douglas Glacier/r2), Mount Maude (North Face/r1).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-27.sql`:**
+- Mount Index Northeast Buttress: both `waypoints` entries (and matching `gpx`) had longitudes
+  ~0.24-0.25° (~19 km) too far west of the real Lake Serene Trailhead/Lake Serene, contradicted by
+  WTA/Trailforks/Wikipedia and by this row's own (correct) `approach_logistics.trailheadLat/Lng`.
+  Fixed. Also `rock_grade`/`grade_num` stored "5.8"/8, contradicting this row's own `corrections`
+  field and `pitch_detail`, both of which already settle the crux at "5.6-5.7" — fixed to 5.7/7.
+- Mount Johnson Standard Route: `gain_ft`/`loss_ft` (3150/3150) didn't match this row's own
+  `high_point_ft` minus trailhead elevation (5180), which also equals the sum of every
+  consecutive waypoint elevation step in the row's own data — fixed to 5180/5180. Also `approach`
+  text gave Upper Royal Basin's elevation as "~5,200 ft", contradicting its own sentence's math
+  and the row's own waypoint (elev 5600) — fixed to "~5,600 ft".
+- Mount Lago: area `elevation_ft` (8748) contradicted the peak's own route `high_point_ft` (8745)
+  and external sources (Wikipedia/Peakbagger/PeakVisor all give 8,745 ft) — fixed. The route's
+  `approach_logistics` named the trailhead "Monument Creek Trailhead" at that trailhead's real,
+  distinct coordinates — a different drainage unrelated to this route, contradicting the row's own
+  `waypoints[0]`, `approach` text, and `road`, which all agree the real start is Robinson Creek
+  Trailhead. Fixed to match the row's own correct fields.
+- Mount Larrabee South Ridge: `waypoints[0]` ("Twin Lakes Trailhead") held coordinates and
+  elevation byte-for-byte identical to `waypoints[1]` ("Twin Lakes") despite the row itself saying
+  they're 2 road-miles apart — evidently copy-pasted. Wikipedia confirms waypoint[1] is the real
+  Twin Lakes; the row's own beta places the real trailhead (end of FS-3065) about 2 miles before
+  it, externally sourced at ~48.9435, -121.6625, ~3,700 ft — fixed. `approach_logistics.trailheadLat/Lng`
+  were likewise near-identical to the row's own "High Pass" waypoint (a landmark 3.3 mi up-route,
+  not a trailhead) — fixed to the same corrected trailhead coordinates.
+- Mount Logan Fremont Glacier: `access.notes` ended with "Mount Tom area, North Cascades." —
+  boilerplate contamination from an unrelated peak; this row's own `area.name`/`overview` and both
+  sibling Logan routes confirm this is Mount Logan. Removed the contaminated tail.
+- Mount Logan Banded Glacier (`r1`): `approach`/`approach_logistics` described an Easy Pass/Fisher
+  Basin approach and a "Rainy Pass PCT North Trailhead" start, but this route's real approach
+  (Beckey's Cascade Alpine Guide via Mountaineers.org, an independent trip report, and this row's
+  own stored GPX track starting at 48.685,-121.093 — matching sibling route Fremont Glacier's own
+  Thunder Creek GPX) is Thunder Creek Trail + Fisher Creek Trail from Colonial Creek Campground.
+  Fixed the top-level `approach` summary and trailhead fields only — see flagged item below for
+  what wasn't touched.
+- Mount Maude North Face (`r1`): `length_m` (533, ~1,750 ft) and an `overview` line ("rises about
+  1,000 vertical feet") both undercounted this route's true scale ~2.5-4x. AAC Publications' 1957
+  FA account and independent route-beta summaries describe "the 4,000-foot wall on the north side
+  of Mount Maude", corroborated in-row by this peak's own `area.blurb`, which already
+  independently says "the 4,000-foot North Face." Fixed both fields to match.
+
+**Flagged for human review (not auto-fixed):**
+- Mount Logan Banded Glacier (`r1`): the Easy-Pass-approach contamination above runs much deeper
+  than the two fields fixed — `beta`, `descent_text`, `road`, `access.closures`, `itinerary`,
+  `pitch_detail`, `seasonal_guidance`, `partner_requirements`, and `data_quality` all still
+  describe the wrong Easy Pass/Fisher Basin approach (which belongs to sibling route Douglas
+  Glacier/`r2`, confirmed correct for that route). Rewriting a multi-day itinerary and
+  pitch-by-pitch narrative with fabricated mileage/timing would itself be a fabrication risk, so
+  this needs a human enrichment pass, not an audit-script fix.
+- Mount Index Northeast Buttress: `dist_km` (4.5) is inconsistent with the row's own waypoint
+  distance to Lake Serene alone (3.6 mi = 5.79 km, before the route even starts) but no source
+  gives a confident replacement figure. `ice_grade` ("WI3-") has no support in gear/pitch_detail/
+  overview (only axe/crampons for early-season snow, no ice tools) and may be fabricated, but a
+  brief unlisted ice step can't be ruled out. `alpine_grade` ("D", French scale) is unsupported by
+  any source and duplicates the row's own Roman-numeral `commitment` field ("III") in a different
+  scale. Which Mount Index summit (Main vs. North Peak) this route's `high_point_ft` (5991, Main
+  Peak) should reflect is unclear given historical FA sourcing points to North Peak.
+- Mount Johnson Standard Route: the row's "Corkscrew ledge" beta (waypoint name, `pitch_detail`,
+  descent text) closely mirrors independent trip-report language describing a "Corkscrew Route" —
+  but those sources attribute it to neighboring Mount Clark, not Mount Johnson, matching the
+  shared-col contamination pattern this audit has flagged before. Primary sources 403'd this pass.
+  Also: three different permit-season windows appear across `approach`, `itinerary.cal`, and
+  external sources; and the itinerary's day-by-day gain/loss splits don't reconcile with the
+  corrected 5180 total (already self-flagged as "estimated" in the row).
+- Mount Lago: `fa` ("Hermann Ulrichs and Dick Alt, 1933") could not be independently corroborated
+  this pass. `gain_ft`/`loss_ft` (2800) is ambiguous — unclear if it's meant as full trailhead-to-
+  summit gain (~6,245 ft) or just the summit-day push from an unstored camp elevation.
+- Mount Larrabee South Ridge: `gain_ft`/`loss_ft` (3900) vs. the itinerary's day sum (4225) vs. the
+  `sourceNote`'s implied baseline (3,640 ft) don't reconcile — likely downstream of the corrected
+  trailhead waypoint above; recommend recomputing after that fix lands rather than guessing now.
+  Also `dist_km` (6.4) doesn't reconcile against waypoint-summed one-way distance or the stated
+  round trip — a known cross-table convention issue per CLAUDE.md, not normalized here.
+- Mount Logan Fremont Glacier: `gain_ft`/`loss_ft` (8900/9600) don't match the itinerary's
+  symmetric day-sum (8200/8200); same mismatch pattern on both sibling Logan routes suggests a
+  differing accounting convention rather than a one-off error, needs a guidebook total to resolve.
+- Mount Logan Banded Glacier (`r1`): `gain_ft`/`loss_ft` (7027/13000) disagree with both the
+  itinerary's day-sum (8100/8100) and its own `totalNote` ("~12,500 ft") — three different figures
+  in one row, none independently verifiable from available sources.
+- Mount Logan Douglas Glacier (`r2`): the row's own `itinerary.sourceNote` already admits mileage
+  inconsistency across sources; its cited "6,800 ft" gain doesn't match stored `gain_ft` (7000) or
+  the itinerary day-sum (9200) either — pre-existing, self-flagged ambiguity.
+- Mount Maude North Face (`r1`): `dist_km` (6.4) undercounts the row's own waypoint-implied one-way
+  distance (~8 mi/12.9 km) and itinerary total (~14 mi round trip) — the known one-way/half-round-
+  trip convention issue per CLAUDE.md, not bulk-normalized here. `loss_ft` (400) vs. the
+  itinerary's day-level loss (6000) may reflect different intended scopes (one-way climb vs. a
+  full loop day with a different descent) rather than a contradiction — flagged rather than
+  guessed.
+
+**Clean:** No route in this batch was fully clean — every route had at least one confirmed fix or
+an open flag (Mount Logan Douglas Glacier/`r2` had no confirmed errors, but its own itinerary
+inconsistency was already self-flagged in the data).
+
+Next batch will continue alphabetically after `wa_mount_maude_r1` (see progress file).
