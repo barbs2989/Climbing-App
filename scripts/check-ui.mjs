@@ -40,8 +40,16 @@ const argOf = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i +
 const PORT = 5190;
 const URL_ARG = argOf("--url");
 const SNAPSHOT = argOf("--snapshot");
-const ROUTE = argOf("--route") || "North Ridge (Complete)";
-const STATE = argOf("--state") || "Washington";
+// The sample route must exist in whichever catalog the dev server will actually
+// serve. With DB creds the app searches Supabase; without them (worktrees, CI,
+// fresh clones) it searches the seed ROUTES, where no DB route name exists — so
+// mirror lib/supabase.js's USE_DB gate against the same env files vite loads.
+const envFile = (f) => { try { return fs.readFileSync(path.join(ROOT, f), "utf8"); } catch { return ""; } };
+const envText = envFile(".env") + "\n" + envFile(".env.local");
+const envVal = (k) => process.env[k] ?? (envText.match(new RegExp("^\\s*" + k + "\\s*=\\s*(\\S+)", "m")) || [])[1];
+const USE_DB = envVal("VITE_USE_DB") === "true" && !!envVal("VITE_SUPABASE_URL") && !!envVal("VITE_SUPABASE_ANON_KEY");
+const ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs");
+const STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
 const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300 };
@@ -308,11 +316,21 @@ try {
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
   await page.waitForTimeout(3000);
 
-  log("route detail:");
+  log(`route detail (${USE_DB ? "DB" : "seed"} catalog, sample: ${ROUTE}):`);
   await tap("Climbs");
   for (let i = 0; i < 25; i++) { if (!/Loading climbs/.test(await page.innerText("body"))) break; await page.waitForTimeout(1500); }
-  const sel = await page.$("select");
-  if (sel) { await sel.selectOption({ label: STATE }).catch(() => {}); await page.waitForTimeout(3000); }
+  // The seed state picker labels its options "Utah · 10 climbs" while the DB one
+  // uses plain "Washington" — match by prefix so both drill in, and dispatch a real
+  // change event so React's controlled select actually updates.
+  await page.evaluate((state) => {
+    const sel = document.querySelector("select");
+    if (!sel) return;
+    const opt = [...sel.options].find((o) => o.label === state || o.label.startsWith(state + " "));
+    if (!opt) return;
+    sel.value = opt.value;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+  }, STATE);
+  await page.waitForTimeout(3000);
   await tap("Routes");
   const input = await page.$('input[type="text"], input:not([type])');
   if (input) { await input.fill(ROUTE); await page.waitForTimeout(3000); }
