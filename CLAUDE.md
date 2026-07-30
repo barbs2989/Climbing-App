@@ -166,6 +166,15 @@ copies of one route. **Peak names live on `areas.name`; route names are just the
 - `npm run audit:identity -- --state wa` reports id-collision families, cross-region
   duplicate field values (the contamination fingerprint), and duplicate route rows.
   Run it after any enrichment or import batch.
+- `npm run audit:distances -- --state wa` audits `routes.dist_km`. Read-only. It exists
+  because **that column holds two conventions at once**: the app renders round trip as
+  `distKm * 2`, so values are meant to be one-way, but 61 WA rows store *half a round
+  trip* instead (the tell: only the doubled figure lands on a whole number of miles).
+  Both populations display correctly, so **never normalize this column in bulk** — a
+  blanket transform breaks as many rows as it fixes. The script also flags non-alpine
+  routes filed under a peak's `area_id`; all 6 WA hits have `source: null`. A wide
+  per-peak min/max spread is printed as context only: Rainier's 25x is legitimate, since
+  Camp Muir and the Carbon River are different trailheads on one mountain.
 - `route_duplicate_names` should return zero rows. As of `0065` it is a **materialized
   view**, so it is stale until refreshed — call `refresh_route_duplicate_names()` with the
   service key first, then read, or you will get a clean answer about yesterday's data.
