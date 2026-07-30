@@ -423,22 +423,24 @@ if (wrongJuris.length > 20) console.log(`   ... ${wrongJuris.length - 20} more`)
 // ------------------------------------- 9. gain that cannot fit in the distance recorded
 // Checks 6 and 7 compare a value against other rows. This one needs no comparison: a
 // route's own gain_ft and dist_km can be impossible together. Johannesburg's NE Buttress
-// held 4,720 ft over a 1.6 km round trip — 1.6 km is exactly 1.0 mile, the length of the
-// CLIMB, sitting in a column every other route uses for the round trip. Neither number
-// looks wrong on its own; the pair is.
-// Averaging the gain over the one-way distance keeps this conservative: real alpine
-// routes reach 0.5 on the climbing pitch alone, so the threshold only fires when the
-// APPROACH would also have to average that grade, which no walk-in does.
+// held 4,720 ft against a 1.6 km approach — 1.6 km is exactly 1.0 mile, the length of the
+// CLIMB, in a column that holds the one-way distance. Neither number looks wrong on its
+// own; the pair is.
+//
+// dist_km is ONE-WAY. The app is unambiguous about it — ClimbMatch.jsx computes
+// `roundTripKm = distKm * 2`, and its own average-grade readout divides the ascent by
+// `distKm * 1000`, the full value. Use the same denominator here. Halving it as well (as
+// this check first shipped) doubles every grade and flagged 25 routes where 3 qualify.
 const GRADE_LIMIT = 0.7;
 const steep = [];
 for (const r of scoped) {
   if (!(r.gain_ft > 1500) || !(r.dist_km > 0)) continue;
-  const grade = (r.gain_ft * 0.3048) / ((r.dist_km * 1000) / 2);
+  const grade = (r.gain_ft * 0.3048) / (r.dist_km * 1000);
   if (grade > GRADE_LIMIT) steep.push({ id: r.id, gain: r.gain_ft, dist: r.dist_km, grade,
                                         area: (areas.get(r.area_id) || {}).name });
 }
 steep.sort((a, b) => b.grade - a.grade);
-console.log(`9. GAIN TOO LARGE FOR THE DISTANCE  (${steep.length} route(s) — usually dist_km holding the climb, not the round trip)`);
+console.log(`9. GAIN TOO LARGE FOR THE DISTANCE  (${steep.length} route(s) — usually dist_km holding one leg, not the whole one-way approach)`);
 for (const s of steep.slice(0, 20)) {
   console.log(`   ${s.id.padEnd(44)} ${String(s.area).slice(0, 20).padEnd(20)} ${s.gain} ft over ${s.dist} km  → avg grade ${s.grade.toFixed(2)}`);
 }
