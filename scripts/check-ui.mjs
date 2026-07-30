@@ -361,6 +361,10 @@ try {
   };
   const countOf = async (re) => { const m = (await page.innerText("body")).match(re); return m ? Number(m[1].replace(/,/g, "")) : null; };
   const FOUND = /([\d,]+)\s+climbers found/;
+  // Mirrors the app's own threshold for showing the "Showing X of N" paging footer
+  // (ClimbMatch.jsx: `filtered.length>40`). Kept as a named constant so the coupling
+  // is visible if that number ever changes.
+  const PAGED_OVER = 40;
 
   await flow("partners-count-self-consistent", async () => {
     await tap("Partners");
@@ -370,8 +374,16 @@ try {
     // result set -- it appeared the moment DEMO_FILLERS was turned off and the count
     // dropped to 5. Check it when it is there; never require it.
     const m = (await page.innerText("body")).match(/Showing\s+([\d,]+)\s+of\s+([\d,]+)/);
-    if (!m) return;
-    const shown = Number(m[1].replace(/,/g, "")), total = Number(m[2].replace(/,/g, ""));
+    // The app renders that footer only when the match list exceeds PAGED_OVER
+    // ("filtered.length>40"), so its absence on a short list is correct, not a bug.
+    // Partner matching keys off availability overlap, so the count moves with the
+    // calendar -- prod showed 5 climbers on 2026-07-30 and no footer, which failed
+    // this check for the wrong reason. Turn the absence into its own assertion
+    // instead: with more than PAGED_OVER matches the footer MUST be there.
+    if (!m) {
+      if (found > PAGED_OVER) throw new Error(`${found} climbers found but no "Showing X of N" footer — the paging footer is missing above ${PAGED_OVER}`);
+      return;   // short list, no footer expected — nothing left to cross-check
+    }    const shown = Number(m[1].replace(/,/g, "")), total = Number(m[2].replace(/,/g, ""));
     if (shown > total) throw new Error(`"Showing ${shown} of ${total}" is impossible`);
     if (total !== found) throw new Error(`header says ${found} climbers found but the footer says "of ${total}"`);
     if (shown === 0 && total > 0) throw new Error(`${total} climbers found but none are shown`);
