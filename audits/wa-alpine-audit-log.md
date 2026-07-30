@@ -1311,3 +1311,57 @@ contamination above).
 
 Next batch will continue alphabetically after `wa_luahna_peak_southwest_slope_southeast_ridge`
 (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 21
+
+Checked 10 routes across 9 peaks: Phantom Peak (Luna Glacier), Luna Peak (Southeast
+Slopes), Lundin Peak (South Face Left), Magic Mountain (South Ridge/Southeast Slopes),
+Martin Peak (West Ridge), Morning Star Peak (Marvin's Ear), McMillan Spire West
+(Southwest Ridge, West Ridge/Southwest Approach), Mix-up Peak (East Face/East
+Buttress), South Early Winters Spire (Mojo Rising).
+
+6 confirmed errors → fixes in `audits/sql/2026-07-30-batch-21.sql`:
+- Luna Peak Southeast Slopes: `gain_ft`/`loss_ft` (6700/6711) didn't match the row's own
+  itinerary-day gain/loss sums (8700/8700), and `dist_km` (16.1) was far short of the
+  itinerary's own "~48 mi round trip" note (≈77.2 km) — same top-level-equals-itinerary
+  convention verified on this batch's sibling Luna Glacier route.
+- Magic Mountain South Ridge: `fa` (and the area's own `blurb`) named the 1938 FA party's
+  fourth climber "Ralph Clough," contradicting this same route's own `overview` field,
+  which already correctly says "Ray Clough" — confirmed via independent sources on the
+  1938 Ptarmigan Traverse party.
+- Martin Peak West Ridge: `fa` credited a solo "Ida Zacher Darr" ascent; per alpenglow.org's
+  Dwight Watson historical notes, Everett Darr and Ida Zacker made this first ascent as a
+  two-person party in July 1936 (after an unsuccessful Bonanza Peak attempt) — the two
+  names had been merged into one. Also fixed this same row's trailhead waypoint, which sat
+  ~4 mi from Holden Village's real location while the row's own `approach_logistics`
+  already had the correct coordinate.
+- McMillan Spire (West) area: `prominence_ft` (737) contradicted the row's own blurb,
+  which already cites "600 ft of clean prominence" per Wikipedia — fixed to 600.
+- McMillan Spire (West) — West Ridge/Southwest Approach: top-level `grade` ("Grade III,
+  5.6") contradicted this row's own `alpine_grade`/`commitment` ("II") and `rock_grade`
+  ("4th class"); every external source describes Class 2-3 scrambling with an occasional
+  low-5th variation, not sustained 5.6 — cleared the orphaned YDS grade fields to match
+  the row's own already-correct class rating, same pattern as an earlier batch's
+  Dragontail Peak Northeast Face fix.
+
+8 items flagged for human review (see SQL file's "NOT fixed" section for full detail):
+Luna Glacier's nonstandard "M1c" rock-grade notation and a possible duplicate-FA overlap
+with sibling Phantom Peak South Route; a likely Mountain-Project-ID duplicate between
+Lundin Peak South Face Left and its out-of-scope sibling "South Face (2001 Variation)";
+Martin Peak West Ridge's own itinerary describing a "Southeast Slopes" scree-gully summit
+day under a route named "West Ridge" (already self-flagged in the row's own
+`data_quality.gaps`); McMillan Spire West's disputed area elevation (8038 vs. two
+already-disclosed competing sources); McMillan Spire West's Southwest Ridge route, whose
+stored 6-pitch 5.8 Grade III alpine-rock description conflicts with every external source
+describing that line as a snow-climb scramble variant, compounded by thin/synthesized-
+looking data (no data_quality block, a straight-line GPX); and on Mojo Rising, a
+Blue Lake Trailhead elevation contradiction (5200 vs. ~5400 ft) plus a rack-size
+inconsistency between `sling_rack` and the route's other gear fields.
+
+2 routes audited clean: Marvin's Ear (Morning Star Peak) and Mix-up Peak's East
+Face/East Buttress — FA, elevation, grade, and area placement all independently
+confirmed with no contradictions found.
+
+Next batch will continue alphabetically after `wa_mojo_rising` (see progress file).
