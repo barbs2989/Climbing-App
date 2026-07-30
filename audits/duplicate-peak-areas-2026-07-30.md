@@ -58,6 +58,8 @@ once as a `crag` with `elevation_ft = null` under a different parent. The routes
 across the two copies, and the crag copy carries the real peak's numbers, which is why a
 name-and-value scan surfaced them.
 
+Likely duplicates — same summit under two ids, one of them elevation-less:
+
 | peak copy | duplicate crag copy | apart |
 | --- | --- | --- |
 | `wa_little_big_chief_mountain` (7225) | `wa_little_big_chief` | 4 m |
@@ -65,25 +67,39 @@ name-and-value scan surfaced them.
 | `wa_chair_peak` (6238) | `wa_summer_fall_rock_3` | 11 m |
 | `wa_mcmillan_spire_west` (8038) | `wa_west_mcmillan_spire` | 9 m |
 | `wa_garfield_mountain` (5519) | `wa_mount_garfield` | 20 m |
-| `wa_eldorado_peak` (8872) | `wa_main_peak` | 20 m |
-| `wa_mount_fury_west` (8303) | `wa_west_peak` | 112 m |
-| `wa_baring_mountain` (6127) | `wa_dolomite_tower` | 18 m |
-| `wa_the_brothers` (6868) | `wa_brothers_south_peak_the` | 4 m |
+| `wa_mount_fury_west` (8303) | `wa_west_peak` (parent `wa_mt_fury`) | 112 m |
+| `wa_baring_mountain` (6127) | `wa_dolomite_tower` (parent `wa_mount_baring`) | 18 m |
 | `wa_castle_peak_tatoosh` (6469) | `wa_castle_the` | 30 m |
-| `wa_mount_index` (5991) | `wa_main_peak_2`, `wa_north_peak_2` | 2 m |
-| `wa_gunsight_peak` (8185) | `wa_north_peak`, `wa_middle_peak`, `wa_south_peak` | 34–94 m |
 
 Some of these pairs have duplicated **parents** too: `wa_pasayten` / `wa_pasayten_wilderness`,
 `wa_mount_baring` / `wa_baring_mountain`, `wa_picket_range` / `wa_southern_pickets`.
 
-Not acted on. Merging areas is structural, needs a survivor chosen per column rather than
-per row, and the last time a duplicate was resolved on suspicion it cost us Triple
-Couloirs. Handing this over as a list, not a patch.
+`wa_gunsight_peak` vs `wa_middle_peak` (under `wa_gunsight_range_the`) is the same class
+and was already identified independently, with the stronger evidence of overlapping route
+names — see the hierarchy-cleanup notes.
 
-**Not duplicates**, checked and cleared: `wa_ingalls_peak` / `wa_ingalls_peak_east`
-(distinct summits, 7662 vs 7480), `wa_sherpa_peak` / `wa_sherpa_balanced_rock` (distinct
-formations ~93 m apart — though `wa_sherpa_balanced_rock_north_ridge` wrongly carries
-Sherpa Peak's 8630 instead of its own 8605).
+Not acted on. The user deferred hierarchy cleanup on 2026-07-30. Merging areas is
+structural, needs a survivor chosen per column rather than per row, and the last time a
+duplicate was resolved on suspicion it cost us Triple Couloirs. This is a list, not a patch.
+
+### Proximity flagged these, and they are NOT duplicates
+
+A separate live inventory checked several of these directly. Recording them so the
+proximity signal does not get re-litigated into a destructive merge:
+
+- **`wa_main_peak` / `wa_eldorado_peak`** (20 m) — `wa_main_peak` is a correctly-parented
+  sub-area of the Eldorado massif holding Tepeh Towers, not a copy of Eldorado Peak.
+- **`wa_main_peak_2`, `wa_north_peak_2` / `wa_mount_index`** (2 m) — Mount Index genuinely
+  has Main, North and Middle summits. Real sub-peaks.
+- **`wa_brothers_south_peak_the` / `wa_the_brothers`** (4 m) — The Brothers has two real
+  summits.
+- **`wa_ingalls_peak` / `wa_ingalls_peak_east`** — distinct summits, 7662 vs 7480.
+- **`wa_sherpa_peak` / `wa_sherpa_balanced_rock`** — distinct formations ~93 m apart. But
+  `wa_sherpa_balanced_rock_north_ridge` does wrongly carry Sherpa Peak's 8630 instead of
+  its own 8605 — a real numeric bug on a legitimate pair.
+
+That is five of thirteen candidates: **proximity plus a shared name is roughly a coin
+flip.** Treat every row above the fold as unverified until its route lists are diffed.
 
 ### Caveat on the proximity scan
 
