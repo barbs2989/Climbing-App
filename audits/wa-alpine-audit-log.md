@@ -1425,3 +1425,76 @@ corroborated via John Miles's *Koma Kulshan*, matching this row's own already-he
 
 Next batch will continue alphabetically after `wa_mount_baker_boulder_glacier` (see progress
 file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 23
+
+Checked 10 routes across 3 peaks: Mount Baker (Boulder-Park Cleaver, Cockscomb Ridge,
+Coleman-Deming Glacier, Coleman Headwall, Easton Glacier, North Ridge, Park Glacier Headwall,
+Squak Glacier), Mount Buckindy (Glacier/Scramble Route), Mount Carrie (Standard Route /
+Carrie Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-23.sql`:**
+- North Ridge: `alpine_grade` held "Grade III" — an NCCS commitment-grade string in the column
+  the schema (`migrations/0006_composite_grades.sql`) defines as the French adjectival scale
+  (F/PD/AD/D/TD/ED) — the same bug fixed on Dragontail Peak's Triple Couloirs (batch 9) and
+  McMillan Spire West Ridge (batch 21). Externally corroborated (RMI Expeditions, Mooney
+  Mountain Guides both independently cite "AD, AI2-3" for this exact route) and fixed to "AD".
+- Park Glacier Headwall: top-level `gain_ft` (1,840) contradicted this same row's own itinerary
+  day-by-day breakdown (day 1: 1,800 ft to the Portals camp; day 2: 5,000 ft camp-to-summit,
+  summing to 6,800 ft) — off by roughly 5,000 ft, far outside the ~100–300 ft rounding gaps seen
+  on every other Baker route audited this batch (all of which track their own itinerary sums
+  closely). Fixed to 6,800 to match the row's own itinerary.
+- Mount Carrie Standard Route: top-level `gain_ft`/`loss_ft` (4,995/9,800) contradicted this same
+  row's own detailed 4-day itinerary (2800/0, 1800/600, 2650/2650, 200/4400), which sums to
+  7,450 ft gain / 7,650 ft loss — appropriately near-symmetric for a route that returns to the
+  same Sol Duc trailhead. Fixed both to match the itinerary sum.
+- **Mount Buckindy Glacier/Scramble Route — the batch's biggest find.** Its `access` block turned
+  out to be a patchwork: legitimate USFS/Glacier Peak Wilderness content (fees, permit, closures)
+  spliced together with boilerplate lifted wholesale from an NPS North Cascades permit-zone
+  route. `access.land_manager` named "National Park Service — North Cascades National Park"
+  outright, directly contradicting this same row's own `access.landManager` field ("Mount
+  Baker-Snoqualmie National Forest ... within the Glacier Peak Wilderness"), the parent area's
+  own blurb, and the row's own approach text (Green Mountain Trailhead / FR-1570 Kindy Creek
+  Road — both Forest Service roads, nowhere near North Cascades NP). `access.notes` described the
+  NPS North Cascades Boston Basin/Eldorado/Sulphide Glacier Recreation.gov lottery split, which
+  has nothing to do with this peak. `access.rules` and `group_limit` (6) described the NPS
+  6-off-trail/12-on-trail group-size split and named NPS-specific designated Boston Basin
+  campsites; confirmed externally (wilderness.net/USFS) that Glacier Peak Wilderness's actual
+  Forest Service group-size limit is a flat 12, matching every other route in this batch.
+  `access.seasonal` named "Cascade River Road" (the NPS Boston Basin/Eldorado access corridor) as
+  this route's access road, when the row's own `access.closures` field already correctly names
+  the real one (Suiattle River Road/FR 26 via FR 2680 to the Green Mountain Trailhead). All four
+  fields fixed to match the row's own correct fields and external sourcing.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- Boulder-Park Cleaver, Cockscomb Ridge, Coleman Headwall, Easton Glacier, and Squak Glacier all
+  carry the same `alpine_grade` "Grade `<Roman numeral>`" bug fixed on North Ridge above — but
+  unlike North Ridge, no source found this pass states a specific French adjectival grade for any
+  of these five. Coleman Headwall's own sources consistently cite the NCCS "Grade III+" rating,
+  not an adjectival letter; Easton Glacier, Squak Glacier, and Boulder-Park Cleaver are mellow
+  glacier/scramble routes not typically assigned an adjectival grade at all in the sources
+  checked. Left unfixed rather than guess a letter, per the precedent set for Liberty Cap's
+  routes in batch 19.
+- Squak Glacier: `itinerary`, `gain_ft`, `loss_ft`, `max_angle`, `grade`, and `grade_system` are
+  all null. This looks like thin/incomplete data rather than a factual error, and — unlike the
+  null-grade fixes on Kimchi Suicide Volcano/Thread of Ice/Ptarmigan Ridge Finish in batches
+  6/10/19 — there's no populated sibling sub-field on this row to safely derive a top-level grade
+  from. Worth a dedicated enrichment pass rather than an audit fix.
+- Cockscomb Ridge: `fa`'s third climber name ("E. Vielbig") could not be independently confirmed
+  this pass. The AAC Publications first-ascent account names Chuck Murley, John Musser, and the
+  report's own (unnamed in available excerpts) author as the third climber; the direct AAC page
+  403'd this session and web-search snippets don't surface the author's byline.
+
+**Clean (no errors found):** Coleman-Deming Glacier — FA (Edmund Coleman's 1868 first ascent of
+Mount Baker), `alpine_grade` ("PD", correctly in the French adjectival scale), itinerary sums, and
+access fields all checked out with no contradictions.
+
+**No action needed:** Mount Baker's own `elevation_ft`/`prominence_ft` (10,781/8,810) sit a few
+feet below Wikipedia's current NAVD88 infobox figures (10,786/8,812), but 10,781 ft is itself
+directly attested in Wikipedia's own introductory prose, and all 9 Mount Baker routes plus the
+area row agree on it internally — not treated as an error, consistent with how similar
+sub-10-ft datum spreads have been handled in prior batches (e.g. batch 17's Kyes Peak).
+
+Next batch will continue alphabetically after `wa_mount_carrie_standard` (see progress file).

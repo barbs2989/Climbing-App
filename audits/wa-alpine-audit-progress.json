@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_baker_boulder_glacier",
+  "last_processed_id": "wa_mount_carrie_standard",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -493,6 +493,32 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-07-30-batch-22.sql",
       "note": "Adams Glacier's high_point_ft (12281) contradicted its own watch_out text (12,276 ft), the area row, and all 7 other Mount Adams routes in this batch -- fixed to 12276, though Wikipedia's current infobox (12,281 ft NAVD88) vs. USGS/on-file consensus (12,276 ft) is a genuine open datum question, flagged rather than resolved peak-wide. Wilson Glacier Headwall had two fixes: a summit waypoint elevFt (12280) contradicting its own high_point_ft/siblings, and the exact 'Mount Tom area, North Cascades' access.notes contamination already documented DB-wide in batch 15 -- same fix pattern applied. Wilson Glacier Headwall also has unresolved internal land-manager (Yakama Nation vs. USFS) and trailhead (Killen Creek vs. Cold Springs/South Climb) contradictions, left flagged per its own self-disclosed low-confidence corrections note. Two legacy non-wa_-prefixed rows (adams_northwest_ridge, adams_avalanche_glacier) sit outside this audit's id-scope filter; adams_northwest_ridge looks like a possible duplicate/second-ascent-record of wa_mount_adams_northwest_ridge under a different FA and pitch count -- flagged, out of scope to merge. Northwest Ridge's own overview/beta text describes itself as 'the North Ridge' rather than using its own name -- flagged as a minor possible identity mix-up. Lava Glacier Headwall, Lyman Glacier, Mazama Glacier Headwall, North Ridge, South Climb, Mount Anderson Eel Glacier, and Mount Baker Boulder Glacier all audited clean (FA claims for North Ridge, Eel Glacier, and Boulder Glacier all independently corroborated externally)."
+    },
+    {
+      "batch_number": 23,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_mount_baker_boulder_park_cleaver",
+        "wa_mount_baker_cockscomb_ridge",
+        "wa_mount_baker_coleman_deming",
+        "wa_mount_baker_coleman_headwall",
+        "wa_mount_baker_easton_glacier",
+        "wa_mount_baker_north_ridge",
+        "wa_mount_baker_park_glacier_headwall",
+        "wa_mount_baker_squak_glacier",
+        "wa_mount_buckindy_scramble",
+        "wa_mount_carrie_standard"
+      ],
+      "confirmed_errors_fixed": 7,
+      "flagged_for_human_review": 7,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-30-batch-23.sql",
+      "note": "North Ridge's alpine_grade held 'Grade III', an NCCS commitment-grade string in the column migrations/0006_composite_grades.sql defines as the French adjectival scale -- the same bug fixed on Dragontail Peak Triple Couloirs (batch 9) and McMillan Spire West Ridge (batch 21); externally corroborated (RMI Expeditions, Mooney Mountain Guides both cite 'AD, AI2-3') and fixed to 'AD'. Park Glacier Headwall's top-level gain_ft (1840) contradicted its own itinerary day-sum (6,800 ft) by roughly 5,000 ft, far outside the ~100-300 ft rounding gaps seen on every other Baker route this batch -- fixed to match. Mount Carrie Standard Route's top-level gain_ft/loss_ft (4995/9800) likewise contradicted its own detailed 4-day itinerary (which sums to 7,450/7,650, appropriately near-symmetric for an out-and-back) -- fixed to match. Mount Buckindy's Glacier/Scramble Route had the batch's biggest find: its access block was a patchwork of legitimate USFS/Glacier Peak Wilderness content (fees, permit, closures) spliced with boilerplate lifted from an NPS North Cascades permit-zone route -- access.land_manager named North Cascades NP outright (contradicting the row's own access.landManager field, the area's own blurb, and its own approach text), access.notes described the Boston Basin/Eldorado/Sulphide Glacier Recreation.gov lottery, access.rules and group_limit (6) described the NPS 6-off-trail/12-on-trail split and named NPS-specific designated campsites, and access.seasonal named Cascade River Road (the NPS Boston Basin corridor) instead of this route's actual access road. Confirmed externally (wilderness.net/USFS) that Glacier Peak Wilderness's actual group-size limit is a flat 12; all four fields fixed to match the row's own correct fields (landManager, permit, closures) and external sourcing.",
+      "flags": [
+        "wa_mount_baker_boulder_park_cleaver / wa_mount_baker_cockscomb_ridge / wa_mount_baker_coleman_headwall / wa_mount_baker_easton_glacier / wa_mount_baker_squak_glacier: alpine_grade holds a 'Grade <Roman numeral>' NCCS-style string instead of the French adjectival scale (same bug fixed on North Ridge above and in batches 9/21) -- but unlike North Ridge, no source found this pass states a specific French adjectival grade for these five routes (Coleman Headwall's own sources consistently cite the NCCS 'Grade III+', not an adjectival letter; Easton/Squak/Boulder-Park Cleaver are mellow glacier routes not typically assigned an adjectival grade at all). Left unfixed rather than guess a letter, per the batch-19 Liberty Cap precedent.",
+        "wa_mount_baker_squak_glacier: itinerary, gain_ft, loss_ft, max_angle, grade, and grade_system are all null -- thin/incomplete rather than factually wrong, but worth a dedicated enrichment pass; no populated sub-field (unlike the Kimchi/Thread-of-Ice null-grade fixes in batches 6/10) exists to safely derive a top-level grade from.",
+        "wa_mount_baker_cockscomb_ridge: fa's third climber name ('E. Vielbig') could not be independently confirmed -- the AAC Publications first-ascent account names Chuck Murley, John Musser, and the report's own author as the third climber, but the direct AAC page 403'd this session and search snippets don't surface the author's name. Left as-is."
+      ]
     }
   ]
 }
