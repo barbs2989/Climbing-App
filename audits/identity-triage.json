@@ -1,0 +1,85 @@
+{
+  "_comment": [
+    "Findings from `npm run audit:identity` that have been investigated and do not need",
+    "action. Without this, the audit reports the same ten settled items every run and the",
+    "next person re-derives all of them — which is how a guard stops being read.",
+    "",
+    "`verdict` is either:",
+    "  real-and-correct  the data is right; the check is doing its job by surfacing an",
+    "                    extreme or a legitimate repeat. Nothing to do, ever.",
+    "  deferred          the finding IS a defect, but fixing it was consciously postponed.",
+    "                    Still counted separately so it cannot quietly become permanent.",
+    "",
+    "Anything not listed here is a NEW finding and is what the exit summary counts.",
+    "Removing an entry makes the finding reappear — that is the intended way to reopen one."
+  ],
+
+  "steep": [
+    {
+      "key": "wa_johannesburg_mountain_northeast_buttress",
+      "verdict": "real-and-correct",
+      "date": "2026-07-30",
+      "why": "4,720 ft over a 1.6 km one-way approach really is a 0.90 average grade. Johannesburg's NE buttress rises straight off the Cascade Pass road. Confirmed by a dedicated audit of all 749 WA dist_km values, and re-confirmed after two incorrect 'corrections' of mine (14.2, then 7.1) were reverted."
+    },
+    {
+      "key": "wa_big_four_mountain_spindrift_couloir",
+      "verdict": "real-and-correct",
+      "date": "2026-07-30",
+      "why": "Big Four's north face is 4,200 ft tall and the Spindrift Couloir is 4,000 ft of climbing (matching its own length_m of 1219), rising off a 1-mile approach trail. One of the steepest faces in the Cascades."
+    }
+  ],
+
+  "duplicateRoutes": [
+    {
+      "key": "az_split_rock_area|lost in space (var)",
+      "verdict": "real-and-correct",
+      "date": "2026-07-30",
+      "why": "Three rows share the name but carry different grades (V3-4 / V2 / V3) with the same FA (Flying Zebra) — a variation set, not one climb entered three times. The rows' own `corrections` field records the same conclusion."
+    }
+  ],
+
+  "numericContamination": [
+    {
+      "key": "length_m|arete left|3",
+      "verdict": "real-and-correct",
+      "date": "2026-07-30",
+      "why": "Two 3-metre boulder problems on different blocs sharing a common name. A 3 m height is not a shared measurement, it is what a boulder problem is."
+    },
+    {
+      "key": "gain_ft|east face|3138",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "Chair Peak's value on wa_summer_fall_rock_3, which is a duplicate area whose name is a copy of the season field. Resolving it means merging areas, which is structural and was deferred."
+    },
+    {
+      "key": "gain_ft|northwest ridge|3138",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "Same duplicate area as gain_ft|east face|3138."
+    },
+    {
+      "key": "high_point_ft|east face|6238",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "Same duplicate area as gain_ft|east face|3138."
+    },
+    {
+      "key": "high_point_ft|northwest ridge|6238",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "Same duplicate area as gain_ft|east face|3138."
+    },
+    {
+      "key": "high_point_ft|northeast face|7225",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "wa_little_big_chief duplicates wa_little_big_chief_mountain (4 m apart, crag copy with null elevation). Area merge, deferred."
+    },
+    {
+      "key": "high_point_ft|nw ridge|8685",
+      "verdict": "deferred",
+      "date": "2026-07-30",
+      "why": "wa_mt_remmel duplicates wa_remmel_mountain (259 m apart, crag copy with null elevation). Area merge, deferred."
+    }
+  ]
+}

@@ -503,5 +503,54 @@ const report = {
 };
 if (OUT) { fs.writeFileSync(OUT, JSON.stringify(report, null, 1)); console.log(`wrote ${OUT}`); }
 
-const problems = contamination.length + realDupes.length + leaks.length + impossible.length + strong.length + wrongJuris.length + steep.length;
-console.log(problems ? `FOUND ${problems} thing(s) to look at.` : "Clean.");
+// ------------------------------------------------------------------------------ triage
+// Some findings are permanent by nature. Big Four's Spindrift Couloir really does gain
+// 4,450 ft off a one-mile approach, and three Arizona boulder problems really do share
+// one name. Others are genuine defects whose fix was consciously postponed. Reporting
+// all of them on every run trains the reader to skim the section that matters — the same
+// failure mode as a suite with permanently red tests.
+//
+// audits/identity-triage.json records the verdict for each. Deleting an entry there is
+// how a finding is reopened. Anything absent is NEW, and that is what the exit line
+// counts, so an unexpected finding still stands out on a routine run.
+const TRIAGE_PATH = new URL("../audits/identity-triage.json", import.meta.url);
+let triage = {};
+try { triage = JSON.parse(fs.readFileSync(TRIAGE_PATH, "utf8")); }
+catch (e) { if (e.code !== "ENOENT") console.log(`   (could not read identity-triage.json: ${e.message})`); }
+const triaged = k => new Set((triage[k] || []).map(e => e.key));
+const verdictOf = (k, key) => (triage[k] || []).find(e => e.key === key);
+
+const NUL = String.fromCharCode(0);
+const buckets = [
+  ["steep", steep, s => s.id],
+  // realDupes keys join area_id and route name with a NUL, because route names contain
+  // spaces and a space-joined key cannot be split apart again.
+  ["duplicateRoutes", realDupes, ([k]) => `${k.split(NUL)[0]}|${norm(k.split(NUL)[1])}`],
+  ["numericContamination", strong, n => `${n.column}|${n.name}|${n.value}`],
+];
+let known = 0, deferredCount = 0;
+const fresh = [];
+for (const [bucket, items, keyOf] of buckets) {
+  const accepted = triaged(bucket);
+  for (const it of items) {
+    const key = keyOf(it);
+    if (!accepted.has(key)) { fresh.push(`${bucket}: ${key}`); continue; }
+    known++;
+    if (verdictOf(bucket, key).verdict === "deferred") deferredCount++;
+  }
+}
+// Checks with no triage bucket contribute everything they find.
+const untriaged = contamination.length + leaks.length + impossible.length + wrongJuris.length;
+
+if (known) {
+  console.log(`TRIAGED  ${known} finding(s) already ruled on in audits/identity-triage.json` +
+              (deferredCount ? ` — ${deferredCount} of them deferred defects, not clean data` : ""));
+}
+const problems = untriaged + fresh.length;
+if (problems) {
+  console.log(`FOUND ${problems} new thing(s) to look at.`);
+  for (const f of fresh.slice(0, 20)) console.log(`   ${f}`);
+  if (fresh.length > 20) console.log(`   ... ${fresh.length - 20} more`);
+} else {
+  console.log("Clean — nothing new.");
+}
