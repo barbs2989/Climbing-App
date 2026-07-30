@@ -40,7 +40,15 @@ const ENRICHED = ["approach", "descent_text", "emergency", "permit", "comms",
 const BOILERPLATE = [
   /^reverse the (route|scramble)/i, /^retreat down/i, /^limited bail/i,
   /^no cell (coverage|service)/i, /^same as approach/i, /^descend the (route|ascent)/i,
-  /^descend open slopes/i, /^reversible at any point/i, /^reversible throughout/i,
+  // Generic retreat phrasings that carry no place-specific content. Measured
+  // 2026-07-29: these were the ONLY two cross-region `bail` blobs in the whole
+  // catalog (5 WA routes) -- "Reversible at any point on the nontechnical
+  // terrain." on Earl Peak + Goat Mountain, and "Descend open slopes toward
+  // camp" on Blizzard, Claywood and Worthington. Both are true of any
+  // non-technical scramble, so they are shared vocabulary, not a mis-targeted
+  // write. Kept deliberately narrow: real contamination names a place, a number
+  // or a trailhead, and a looser "short string" rule would hide it.
+  /^reversible\b/i, /^descend (open|easy|low.angle|broad) slopes/i,
   /^no fixed anchors/i, /^walk off/i,
 ];
 // Placeholder route names that repeat within one crag by design (OpenBeta import).
@@ -76,8 +84,20 @@ const isPlaceholderObj = v => v && typeof v === "object" && !Array.isArray(v) &&
 const GENERIC_TAG = /^(loose ?rock|rock ?fall|exposure|route ?finding|routefinding|avalanche|crevasse|serac|icefall|cornice|weather|scree|talus|moat|whiteout|altitude|remoteness|afternoon weather|verglas|wet rock)$/i;
 const isGenericTags = v => Array.isArray(v) && v.length > 0 && v.length <= 4 &&
   v.every(x => typeof x === "string" && GENERIC_TAG.test(x.trim()));
+// A BOILERPLATE prefix only earns an exemption if the WHOLE value stays generic.
+// Prefix-anchored patterns alone are a masking risk: "Reverse the route." is shared
+// vocabulary, but "Reverse the route to Dinner Ledge, then rappel the Kor Roof."
+// is peak-specific beta and must still be compared across regions. Contamination
+// always carries specifics -- a proper noun, a number, a trailhead -- so a value
+// with an interior capitalised word or any digit is never boilerplate.
+const GENERIC_PROSE = s => {
+  const t = s.trim();
+  if (t.length > 120 || /\d/.test(t)) return false;
+  // Skip the leading word: a sentence legitimately starts with a capital.
+  return !t.split(/\s+/).slice(1).some(w => /^[A-Z][a-z]{2,}/.test(w));
+};
 const isBoilerplate = v =>
-  (typeof v === "string" && BOILERPLATE.some(re => re.test(v.trim()))) ||
+  (typeof v === "string" && BOILERPLATE.some(re => re.test(v.trim())) && GENERIC_PROSE(v)) ||
   isPlaceholderObj(v) || isGenericTags(v);
 
 // Comparative or referential mentions are not jurisdiction claims: "unlike Mount Rainier",
@@ -87,7 +107,7 @@ const COMPARATIVE = /\b(not|unlike|other than|rather than|as opposed to|compared
 // Big pages: the default 60 would be ~3,400 round trips over the 200k-row routes table.
 const PAGE = { pageSize: 1000 };
 
-const areasList = await selectAll("areas", "id,name,parent_id,area_type", null, PAGE);
+const areasList = await selectAll("areas", "id,name,parent_id,area_type,elevation_ft", null, PAGE);
 const areas = new Map(areasList.map(a => [a.id, a]));
 
 function ancestry(id) {
@@ -112,7 +132,11 @@ function stateOf(areaId) {
   return ch.length > 1 ? ch[ch.length - 2] : (ch[0] || "?");
 }
 
-const routes = await selectAll("routes", ["id", "name", "area_id", ...ENRICHED].join(","), null, PAGE);
+// NUMERIC is fetched alongside ENRICHED: checks 6 and 7 read those columns, and a select
+// that omits them yields undefined for every row — which reads as "clean" rather than as
+// an error. Both checks silently reported 0 findings until this list was widened.
+const NUMERIC = ["gain_ft", "loss_ft", "dist_km", "length_m", "high_point_ft"];
+const routes = await selectAll("routes", ["id", "name", "area_id", ...ENRICHED, ...NUMERIC].join(","), null, PAGE);
 const scoped = STATE
   ? routes.filter(r => stateOf(r.area_id).startsWith(STATE) || String(r.id).startsWith(`${STATE}_`))
   : routes;
@@ -254,7 +278,76 @@ for (const l of leaks.slice(0, 20)) {
 if (leaks.length > 20) console.log(`   ... ${leaks.length - 20} more`);
 console.log("");
 
-// ------------------------- 6. a jurisdiction's permit text on land it does not govern
+// ------------------------------------------------- 6. impossible summit elevations
+// A route cannot top out higher than the peak it is on. Unlike "lower than the summit"
+// (legitimate — the route ends at a sub-summit), an overshoot is unambiguously wrong,
+// and in practice it is the contamination fingerprint in numeric form: on 2026-07-29
+// eleven WA routes carried another mountain's elevation because they shared its route
+// NAME — Mount Baker's 10781 on five unrelated "North Ridge" routes, Mount Goode's 9220
+// on four "Northeast Buttress" routes, Mount Adams' 12281 on Whatcom Peak's South Spur.
+//
+// Traverses are exempt: a traverse legitimately tops out on the higher peak it crosses,
+// which is why Torment-Forbidden (8815 = Forbidden) and Tooth-Chair (6238 = Chair) are
+// correct as stored and must not be "fixed".
+const SUMMIT_TOL = 50; // summit-block / datum spread
+const impossible = [];
+for (const r of scoped) {
+  const peak = areas.get(r.area_id);
+  if (!peak || peak.area_type !== "peak" || !peak.elevation_ft || !r.high_point_ft) continue;
+  if (/traverse|enchainment|link-?up/i.test(r.name || "")) continue;
+  if (r.high_point_ft > peak.elevation_ft + SUMMIT_TOL)
+    impossible.push({ id: r.id, name: r.name, peak: peak.name,
+                      stored: r.high_point_ft, peakElev: peak.elevation_ft,
+                      over: r.high_point_ft - peak.elevation_ft });
+}
+impossible.sort((a, b) => b.over - a.over);
+console.log(`6. IMPOSSIBLE SUMMIT ELEVATIONS  (${impossible.length} route(s) claim a summit above their own peak)`);
+for (const i of impossible.slice(0, 20)) {
+  console.log(`   ${i.id.padEnd(44)} ${String(i.stored).padStart(6)} vs peak ${String(i.peakElev).padStart(6)} on ${i.peak}  (+${i.over})`);
+}
+if (impossible.length > 20) console.log(`   ... ${impossible.length - 20} more`);
+console.log("");
+
+// --------------------------------------- 7. numeric contamination by shared route name
+// Check 2 inspects only prose columns, so the same bug hiding in the numbers went unseen:
+// "North Ridge" carries gain_ft 7150 on seven unrelated peaks and "Northeast Buttress"
+// carries 5800 on six. Exact-value matching alone is too noisy here — round figures
+// coincide honestly — so this additionally requires the ROUTE NAME to match, which is the
+// mechanism by which the value travelled in the first place.
+// 7150 or 12.55 is a measurement; 4500 or 10 is a guess many peaks can share honestly.
+// Round figures are still reported, but ranked below the specific ones.
+const isRound = v => (Number.isInteger(v) ? v % 100 === 0 : Number.isInteger(v * 10));
+const numericContam = [];
+for (const col of NUMERIC) {
+  const groups = new Map();
+  for (const r of scoped) {
+    const v = r[col];
+    if (v == null || v === 0) continue;
+    const k = `${norm(r.name)} ${v}`;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(r);
+  }
+  for (const [k, rs] of groups) {
+    if (new Set(rs.map(r => r.area_id)).size < 2) continue;
+    const [nm, val] = k.split(" ");
+    if (PLACEHOLDER.test(nm)) continue;
+    numericContam.push({ column: col, name: nm, value: Number(val),
+                         peaks: new Set(rs.map(r => r.area_id)).size,
+                         round: isRound(Number(val)), routes: rs.map(r => r.id),
+                         peakNames: [...new Set(rs.map(r => (areas.get(r.area_id) || {}).name))] });
+  }
+}
+// specific values first, then breadth — a non-round figure on 7 peaks is the strong signal
+numericContam.sort((a, b) => (a.round - b.round) || (b.peaks - a.peaks));
+const strong = numericContam.filter(n => !n.round);
+console.log(`7. NUMERIC CONTAMINATION  (${numericContam.length} value(s) shared by a same-named route across peaks; ${strong.length} non-round)`);
+for (const n of numericContam.slice(0, 12)) {
+  console.log(`   ${n.column.padEnd(14)} "${n.name}" = ${n.value}${n.round ? "   (round — may be coincidence)" : ""}`);
+  console.log(`      ${n.peaks} peaks: ${n.peakNames.slice(0, 6).join(", ")}`);
+}
+if (numericContam.length > 12) console.log(`   ... ${numericContam.length - 12} more`);
+
+// ------------------------- 8. a jurisdiction's permit text on land it does not govern
 // Check 5 compares STATES, so contamination staying inside one is invisible to it: Olympic
 // National Park text on a North Cascades peak is both-in-Washington and slips through, and
 // check 2 misses it too unless the text is duplicated across regions. Live risk, not
@@ -302,12 +395,11 @@ for (const r of scoped) {
     }
   }
 }
-console.log(`6. PERMIT TEXT FROM THE WRONG JURISDICTION  (${wrongJuris.length} field(s))`);
+console.log(`8. PERMIT TEXT FROM THE WRONG JURISDICTION  (${wrongJuris.length} field(s))`);
 for (const w of wrongJuris.slice(0, 20)) {
   console.log(`   ${w.id.padEnd(40)} on ${String(w.area).slice(0, 22).padEnd(22)} ${w.column} cites ${w.cites} (${w.miles} mi away)`);
 }
-if (wrongJuris.length > 20) console.log(`   ... ${wrongJuris.length - 20} more`);
-console.log("");
+if (wrongJuris.length > 20) console.log(`   ... ${wrongJuris.length - 20} more`);console.log("");
 
 const report = {
   examined: scoped.length,
@@ -316,9 +408,11 @@ const report = {
   contamination,
   duplicateRoutes: realDupes.map(([k, rs]) => ({ areaId: k.split(" ")[0], name: k.split(" ")[1], ids: rs.map(r => r.id) })),
   outOfStatePlaceNames: leaks,
+  impossibleSummits: impossible,
+  numericContamination: numericContam,
   wrongJurisdiction: wrongJuris,
 };
 if (OUT) { fs.writeFileSync(OUT, JSON.stringify(report, null, 1)); console.log(`wrote ${OUT}`); }
 
-const problems = contamination.length + realDupes.length + leaks.length + wrongJuris.length;
+const problems = contamination.length + realDupes.length + leaks.length + impossible.length + strong.length + wrongJuris.length;
 console.log(problems ? `FOUND ${problems} thing(s) to look at.` : "Clean.");

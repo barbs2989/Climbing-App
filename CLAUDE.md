@@ -166,7 +166,14 @@ copies of one route. **Peak names live on `areas.name`; route names are just the
 - `npm run audit:identity -- --state wa` reports id-collision families, cross-region
   duplicate field values (the contamination fingerprint), and duplicate route rows.
   Run it after any enrichment or import batch.
-- Migration `0062` adds the `route_duplicate_names` view; it should return zero rows.
+- `route_duplicate_names` should return zero rows. As of `0065` it is a **materialized
+  view**, so it is stale until refreshed — call `refresh_route_duplicate_names()` with the
+  service key first, then read, or you will get a clean answer about yesterday's data.
+  It was a plain view (`0062`, reworked in `0064`) until the live aggregate over 201k
+  routes was measured at ~6s, which exceeds the 3s `statement_timeout` on the anon role:
+  every read from the app returned `57014` while the same query looked healthy in the SQL
+  editor, where the `postgres` role has no timeout. A guard that always errors is a guard
+  you do not have.
 - `id like 'wa_%'` is the reflex filter and it misses legacy ids like
   `stuart_west_ridge` — 6 WA routes today. Filter by the area subtree when a coverage
   percentage matters.
