@@ -48,8 +48,12 @@ A field-by-field diff against Baker's row confirmed only those two columns trave
 `grade`, `pitches` and `fa` vary per row and are worth keeping.
 
 Same mechanism, smaller blast radius: `high_point_ft` 9220 is **Mount Goode's** real
-elevation, and sits on three unrelated CA areas (Flatiron Butte, Mount Cotter, Torre De
-Mierda). Not yet fixed.
+elevation and sits on three unrelated CA areas (Flatiron Butte, Mount Cotter, Torre De
+Mierda) — which each *also* carry the contaminated `gain_ft` 5800, so again two fields
+travelled together. And all three routes on Sherpa Balanced Rock carry Sherpa Peak's 8630
+instead of their own area's 8605. Both are in `audits/sql/baker-bleed-batch-2.sql`,
+**not applied** — run it after the national one; they are separate pastes because together
+they exceed the size at which the SQL editor has silently truncated input before.
 
 ## 3. Six findings are duplicate AREAS, not bad numbers
 
@@ -100,6 +104,31 @@ proximity signal does not get re-litigated into a destructive merge:
 
 That is five of thirteen candidates: **proximity plus a shared name is roughly a coin
 flip.** Treat every row above the fold as unverified until its route lists are diffed.
+
+## 4. Two WA areas were built out of the wrong column
+
+`wa_summer_fall_rock_3` is named **"Summer-Fall (rock)"**. Its routes carry
+`season = "Summer-Fall (rock)"` — the area name is a copy of the season field, verbatim.
+It is not a crag. It sits 11 m from Chair Peak, and two of its three routes duplicate
+Chair Peak's, down to the same `gain_ft` 3138 and `high_point_ft` 6238:
+
+| on `wa_summer_fall_rock_3` | duplicates |
+| --- | --- |
+| `wa_east_face_8` "East Face" | `wa_chair_peak_east_face` |
+| `wa_northwest_ridge_3` "Northwest Ridge" | `wa_chair_peak_northwest_ridge` |
+| `wa_chair_bryant_traverse` "Chair-Bryant Traverse" | *nothing — a real route with no home* |
+
+The third one matters: the Chair-Bryant traverse is a genuine route that exists **only**
+here. Deleting this area wholesale would destroy it. It wants reparenting to
+`wa_chair_peak`, not deletion.
+
+`wa_winter_spring_ice_snow_mixed_2` — "Winter-Spring (ice, snow, mixed)" — is the same
+construction, 113 m from Guye Peak, but currently holds no routes.
+
+Left alone, on the same deferral. Worth knowing that a scan for areas whose name matches
+another column's value is cheap and found these two immediately; the rest of the
+season-shaped names across other states ("Winter Wall", "Spring Boulder", the Devil's Lake
+`5.1 - …` series) are legitimate and were checked.
 
 ### Caveat on the proximity scan
 
