@@ -759,3 +759,1015 @@ approach, and hazards all internally consistent and match Wikipedia/WTA).
 
 Next batch will continue alphabetically from `wa_frying_pan_whitman_glaciers` (see progress
 file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 13
+
+Checked 10 routes across 4 peaks: Little Tahoma (Frying Pan/Whitman Glaciers), Ghost Peak
+(South Route), Gilbert Peak (Meade Glacier, West Route), and Glacier Peak (Cool Glacier/Gerdine
+Ridge, Disappointment Cleaver/Sitkum Glacier, Disappointment Peak Cleaver, Frostbite Ridge,
+Kennedy Glacier, Sitkum Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-13.sql`:**
+- Glacier Peak's own area blurb notes the White Chuck Road (FR-23) has been closed since
+  December 2024 flood damage, and three of this peak's five routes correctly say the same —
+  but `wa_glacier_peak_disappointment_cleaver` said the closure was "since Dec 2025," an outlier
+  against those three sibling rows. Confirmed via the real USFS closure order (fsr-23-and-fsr-27
+  -closure-order, effective March 19 2025 – Dec 31 2025 for flood damage from the *preceding*
+  December, i.e. 2024) that the correct year is 2024; fixed `access.closures` and
+  `road.driveNote`. Note for whoever reviews this: a real, separate, much bigger storm did hit
+  the North Cascades in December 2025 and washed out the Suiattle River Road (FSR 26) at MP 4.5
+  — that's the correct basis for this same route's *other*, unrelated "extremely limited access
+  as of April 2026" note elsewhere in the row, which was left alone since it checks out. Only
+  the White-Chuck-Road-specific date was wrong.
+- Two Glacier Peak routes (Cool Glacier/Gerdine Ridge, Disappointment Peak Cleaver) misspelled
+  1897 first-ascent USGS surveyor A. H. Dubor's name as "Dubois" — Wikipedia's Glacier Peak
+  article and this peak's other two routes in this same batch both spell it "Dubor" correctly.
+  Fixed both to match.
+- Frostbite Ridge's own summit waypoint stored 10,550 ft for Glacier Peak, while its own
+  `high_point_ft`, the area's `elevation_ft`, and every other Glacier Peak route's summit
+  waypoint in this batch all say 10,541 ft — sole outlier, fixed.
+- Gilbert Peak Meade Glacier's own `corrections` field claimed the route used the 8,201 ft
+  benchmark elevation, but the actual stored `high_point_ft` is 8,184 ft (correctly matching
+  Wikipedia/USGS and the area's own `elevation_ft`) — the note didn't describe what was actually
+  stored. Rewrote the note to say 8,184 ft was used, keeping the benchmark discrepancy on record
+  for reference; did not change the elevation itself since it already matches the
+  higher-confidence source.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_glacier_peak_disappointment_cleaver`'s own `corrections` field already documents that this
+  listing's name conflates two distinct, separately-cataloged routes ("Disappointment (Peak)
+  Cleaver" and "Sitkum Glacier") and recommends a rename/split — a naming decision, not a fact
+  to patch, left as-is per guardrails.
+
+**Independently confirmed (already self-flagged, not new):** `wa_frying_pan_whitman_glaciers`'s
+own `data_quality` note already flags it as a likely duplicate of the separate
+`wa_little_tahoma_east_shoulder` row; pulled that row directly and confirmed identical FA and
+summit elevation, corroborating the existing flag rather than raising a new one.
+
+**Clean (no errors found):** Ghost Peak South Route (elevation ~8,000 ft and FA party/date both
+confirmed against Wikipedia; the route's own low-confidence self-rating and thin sourcing were
+already honestly disclosed in its own `data_quality`/`corrections` fields), Gilbert Peak West
+Route (elevation and area placement check out; its own ambiguity note about which trailhead
+"West Route" refers to was already flagged and is a judgment call, not a factual error), Glacier
+Peak's 1897 Gerdine-party FA date/personnel (Wikipedia confirms 1897, matching every route on
+the peak).
+
+Next batch will continue alphabetically from `wa_goat_mountain_south_ridge` (see progress
+file).
+
+---
+
+## 2026-07-29 — Pass 1, Batch 14
+
+Checked 10 routes across 7 peaks: Goat Mountain (South Ridge), Golden Horn (North Face),
+Mount Goode (Megalodon Ridge, Northeast Face, Southwest Couloir), Mount Stuart (Gorillas
+Direct), Gunnshy Peak (Standard Route), Gunsight Peak (Standard Route), and Guye Peak
+(Improbable Traverse, West Face/r1).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-14.sql`:**
+- Megalodon Ridge's own `fa` field claimed a 2008 first-ascent date ("primary AAC/Alpinist
+  coverage confirms 2008"), contradicting its own `overview`/`beta` text and the Mount Goode
+  area blurb, both of which correctly say 2007. Verified externally (Alpinist's contemporaneous
+  2007 newswire piece and Climbing.com's "Megalodon Man" account) that the climb happened
+  September 6, 2007 — the "2008" on file was the American Alpine Journal's publication year for
+  its writeup (AAJ annuals report on the prior season), not the ascent year. Fixed the `fa`
+  field to match the row's own already-correct overview/beta and the area blurb.
+- The Mount Goode area blurb misspelled 1936 first-ascent party member Phil Dickert's surname as
+  "Dickett" — this same area's own Southwest Couloir route (the 1936 FA route) already spells it
+  correctly ("Dickert") in its own `fa` field, and external sources (Mountaineers.org's Wolf
+  Bauer history) confirm "Dickert." Fixed.
+- Southwest Couloir's own `itinerary.sourceNote` already states "on-file gainFt was corrected to
+  8,400 ft to match WTA.org's cited total" — but the actual stored `gain_ft` column was never
+  updated and still read 5,300 ft (while `loss_ft`, at 8,400 ft, does match the note's claimed
+  figure). Applied the correction the row itself already described.
+- Gunsight Peak's area `elevation_ft`/`prominence_ft` (8,185 ft / 546 ft) conflicted with its own
+  Standard Route's summit waypoint (8,198 ft) and a prominence discrepancy that route's own
+  `data_quality.gaps` note already flagged as unresolved ("518 ft per Wikipedia/Wikidata vs. 546
+  ft previously on file"). Verified externally (summit data for Gunsight Peak, Chelan County —
+  Dome Peak massif) that 8,198 ft / 518 ft prominence is correct; fixed the area row and the
+  Standard Route's `high_point_ft` to match.
+- Goat Mountain's area `elevation_ft` (6,892 ft) was the sole outlier against its own South Ridge
+  route's overview, hazards list, and true-summit waypoint (all 6,891 ft), the sibling East Peak
+  route's `high_point_ft` (also 6,891 ft), and SummitPost's East-Peak-specific figure (6,891 ft
+  vs. the West Peak's 6,721 ft). Fixed the area plus two stray "6,892 ft" mentions buried inside
+  the South Ridge route's own `itinerary` JSON (an objective line and a schedule entry).
+
+**Flagged for human review (not auto-fixed):**
+- `wa_goat_mountain_south_ridge`'s own `high_point_ft` (6,721 ft, the West Peak) doesn't match
+  its own overview/itinerary narrative, which describes continuing on to tag the true East Peak
+  summit (6,891 ft) — content that properly belongs to the separate sibling route
+  `wa_goat_mountain_east_peak`. Same route-identity-conflation pattern flagged repeatedly in
+  earlier batches (Big Kangaroo, Colonial Peak, Corteo Peak, Cascade Peak East Ridge, etc.) — a
+  human rename/split decision, not a fact to patch.
+- `wa_guye_peak_improbable_traverse` vs. `wa_guye_peak_r1` (West Face): both document the same
+  1960 Guye Peak first ascent but spell the climbers' names differently — "Dave Hisser and Mike
+  Borgoff" vs. "Dave Hiser and Mike Borghoff." Couldn't confirm the correct spelling from
+  accessible sources this run (Mountain Project, SummitPost, CascadeClimbers' First Ascents wiki,
+  and the likely relevant NWMJ archive page all returned errors); one weak signal (a different
+  NWMJ page mentioning a "Dave Hiser" on an unrelated Mount Terror climb) isn't specific enough
+  to settle it. Left flagged.
+- `wa_goode_mountain_northeast_face`'s own `fa` field states a specific, confident first ascent
+  ("Fred Beckey and John Parrott, 1954"), but its own `data_quality.gaps` field says "No
+  confirmed first-ascent party/date found for this specific line" — a direct internal
+  contradiction this run couldn't resolve externally (no dedicated source found distinct from
+  the well-documented Northeast Buttress). Needs a human with guidebook access.
+
+**Noted but out of scope (not fixed):** Sibling route `wa_gunsight_peak_east_face` carries the
+same elevation slip as Gunsight Peak's Standard Route did (`high_point_ft` 8,200 vs. the now-
+corrected 8,198 ft), but it's tagged discipline `trad`, not `alpine`/`mountaineering` — outside
+this audit's scope and outside this batch's selected routes, so left untouched. Noting it here
+since its discipline tag means it won't otherwise come up in this recurring audit's normal
+rotation.
+
+**Clean (no errors found):** Golden Horn North Face (elevation and land-manager fields check
+out; already-resolved `corrections` note on the peak's own elevation matches Wikipedia/
+Peakbagger), Gorillas in the Mist's sibling Gorillas Direct (Mount Stuart) (FA, grade, and
+approach details corroborated, `corrections` field already sourced directly from Mountain
+Project), Gunnshy Peak Standard Route (elevation matches area; access/land-manager fields
+correct for Wild Sky Wilderness).
+
+Next batch will continue alphabetically from `wa_guye_peak_r2` (see progress
+file).
+
+## 2026-07-29 — Pass 1, Batch 15
+
+Checked 10 routes across 8 peaks: Guye Peak (North Route "Hidden Ridge", South Gully/Spur),
+Hadley Peak (Cougar Divide, Skyline Divide), Helmet Butte (Standard Route), Himmelhorn
+(Southeast Route), Mount Deception (Honeymoon Route), Hozomeen Mountain (Southeast Face),
+Hurry-Up Peak (South Ridge), and Icy Peak (Southwest Route/Icy Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-15.sql`:**
+- `wa_guye_peak_south_gully` and `wa_icy_peak_southwest_route` both had `access.notes`
+  stamped with a false location clause naming an unrelated peak — "Whatcom Peak area, North
+  Cascades" on the Guye Peak (Snoqualmie Pass) route, and "Mount Tom area, North Cascades" on
+  the Icy Peak (Mt. Baker) route. Confirmed this is copy-paste boilerplate junk, not a
+  per-route fact, by finding the identical "Mount Tom area, North Cascades" string on 35
+  routes DB-wide — including `wy_gooseneck_glacier_route` (Gannett Peak, **Wyoming**), which
+  has no possible connection to the North Cascades. Stripped the false clause from this
+  batch's two affected routes rather than fabricate a replacement location. The other 33
+  affected routes are outside this batch's scope — worth a dedicated future pass since it's a
+  widespread pattern, not a one-off.
+- Hozomeen Mountain's area `elevation_ft` (8,072 ft) was a 1-ft outlier against its own
+  Southeast Face route's `high_point_ft` (8,071 ft, already correct) and external sources
+  (Wikipedia cites 8,071 ft NAVD 88, corroborated independently while checking the 1904 FA).
+  Fixed the area to match.
+- Helmet Butte's area `elevation_ft` and its Standard Route's `high_point_ft` both read 7,372
+  ft, but the route's own `corrections` field already documents a prior research pass that
+  concluded "research supports 7,400 ft (Wikipedia, most consistently corroborated topo/USGS
+  figure)" — the finding was written into `corrections` but never applied to the actual
+  elevation columns. Independently corroborated externally (Wikipedia and peakery.com both
+  cite 7,400 ft) and applied to both rows.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_hozomeen_mountain_southeast_face`: its own `corrections` field is a detailed self-audit
+  stating this route's name/id ("Southeast Face (Standard)") doesn't correspond to any
+  documented route on Hozomeen's main (North, 8,071 ft) summit — every source checked
+  describes the standard/easiest route there as the Northeast Ridge/Buttress (1904 FA, class
+  4), and that's what this entry's fields actually document under a mismatched name. A real
+  "Southeast Buttress" exists (FA 1988, III 5.6) but on a separate sub-summit (South Peak,
+  8,003 ft) about a mile away. This run's external checks corroborate the `corrections`
+  field's account, but the name/id-vs-content mismatch is a rename/split decision for a
+  human, not a field patch — same conflation pattern flagged repeatedly in prior batches (Big
+  Kangaroo, Cascade Peak East Ridge, Goat Mountain, etc.).
+- `wa_hadley_peak` (area + both routes, 7,522 ft): external sources disagree with each other
+  (7,470 / 7,513 / 7,515 / 7,516 ft depending on source) and none exactly match the on-file
+  figure, so nothing was changed — but the area's stored coordinates matched an independently
+  found GPS reading to five decimal places, a stronger signal than the noisy elevation
+  figures. Flagging for a future pass with topo/LIDAR access rather than picking one of the
+  conflicting numbers.
+- `wa_honeymoon_route`: the FA claim ("1965 Arnie & Diane Bloomer") couldn't be corroborated
+  externally this run, consistent with the route's own `data_quality.gaps` note already
+  flagging it as unverified/single-source. Also noticed `gain_ft` (7,861) is markedly higher
+  than `loss_ft` (5,400) for what the route's own descent text describes as an out-and-back —
+  gain should roughly equal loss for a round trip. Worth a human recheck of whether `gain_ft`
+  was miscomputed or copied from a different itinerary.
+
+**Clean (no errors found):** Guye Peak North Route/"Hidden Ridge" (elevation matches area;
+own `data_quality` already flags the technical-grade uncertainty appropriately), Hadley
+Peak's two routes beyond the elevation question above (access/road/permit fields check out,
+including the FS-37 washout closure), Himmelhorn Southeast Route (FA fully corroborated
+externally: Cooper/Denny/Firey/Firey/Whitmore, Sept 8 1961; elevation 7,880+ ft matches),
+Hurry-Up Peak South Ridge (elevation 7,821 ft matches Wikipedia/ListsOfJohn exactly), Icy
+Peak Southwest Route beyond the boilerplate-notes fix (elevation 7,073 ft matches Wikipedia
+exactly).
+
+Next batch will continue alphabetically from `wa_icy_peak_southwest_route` (see progress
+file).
+
+## Batch 16 — 2026-07-29
+
+Checked: Ingalls Peak (East Peak Southwest Face, South Ridge), Inner Constance (Northwest
+Buttress, Standard Route), Inspiration Peak (West Ridge), Jack Mountain (Northeast
+Glacier), Johannesburg Mountain (Cascade-Johannesburg Couloir, Northeast Buttress), Mount
+Stuart (King Kong / Gorillas Direct Direct), and Klawatti Peak (Southeast Face).
+
+**Confirmed errors → fixes in `sql/2026-07-29-batch-16.sql`:**
+- `wa_ingalls_peak_east_route` had three separate self-contradictions between a stored
+  field and this same row's own other fields: `fa` misspelled "Butchart" as "Butcharc"
+  (the row's own `overview` already spells it correctly); `grade_num` (5) broke the
+  DB-wide YDS-digit convention for its "5.3" grade (should be 3, confirmed against the
+  sibling South Ridge route's correct `grade_num=4` for "5.4"); and `gain_ft`/`loss_ft`
+  (4200/4200) contradicted the row's own `itinerary`, which had already recomputed
+  3300/3300 in a `sourceNote` but never had that value copied up to the top-level
+  columns. All three fixed from the row's own already-correct data.
+- `wa_ingalls_peak_south_ridge`: `fa` misnamed the second 1941 first-ascent climber "Ken
+  Colbert" — external sources (SummitPost, Wikipedia's Ingalls Peak article, Mountain
+  Madness) consistently agree on "Ken Solberg." Also had a populated `gain_ft` (3500)
+  but a null `loss_ft` for a car-to-car day climb that returns to the same trailhead —
+  filled from the row's own gain figure.
+- Both in-scope Inner Constance routes (`wa_inner_constance_northwest_buttress`,
+  `wa_inner_constance_standard`) had `high_point_ft` = 7,670 ft, a systematic offset from
+  the area's own `elevation_ft` (7,672 ft) and the Standard route's own overview text,
+  which explicitly cites "7,672 ft, Peakbagger LiDAR" — fixed both to 7,672. A third
+  sibling route on the same peak, `wa_inner_constance_seans_route`, carries the identical
+  error but is tagged discipline `trad`, out of this audit's scope — flagged instead of
+  fixed (same out-of-scope-sibling precedent as batch 14's Gunsight Peak East Face note).
+- `wa_johannesburg_mountain_northeast_buttress` had two errors: `high_point_ft` (9220) was
+  wildly wrong for a peak whose real summit is 8,200 ft — contradicted by the area row,
+  Wikipedia, and this same row's own "Johannesburg summit" waypoint (elevFt 8200), plus
+  every sibling route on the peak; and `pitches` (30) contradicted three of this row's own
+  internal citations of "20-pitch(es)" (in `overview`, `watch_out`, and `itinerary.cal`),
+  with its own `pitch_detail` array only enumerating 12 discrete pitches. Both fixed to
+  match the row's own already-correct internal narrative (no external source pinned an
+  exact modern pitch count beyond "~20," so a human with a firmer guidebook figure should
+  prefer that over 20 if found).
+- `wa_king_kong_gorillas_direct_direct` (Mount Stuart) had its `approach` field copy-pasted
+  wholesale from a *north-side* Stuart route (Stuart Lake Trailhead / Icicle Creek Road) —
+  but this row's own `waypoints` (Esmeralda Basin Trailhead, Ingalls Pass) and `face` field
+  ("West Face Wall, between Goat Pass and Stuart Pass") describe the *south-side*
+  approach shared with its sibling `wa_gorillas_direct`, whose own verified approach text
+  was used to rewrite this field. Also filled a null `high_point_ft` from the row's own
+  "Mount Stuart summit area" waypoint (elev 9415), matching the area and every other
+  summit-topping sibling route.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_jack_mountain_northeast_glacier` (+ area, + 5 other Jack Mountain routes outside this
+  batch): `high_point_ft`=9075 is unanimous across all 6 of the peak's own routes but
+  conflicts with the area's own `elevation_ft`=9069 — a genuine external datum split
+  (9,075 ft per Wikipedia/AllTrails/FKT vs. ~9,066-9,069 ft per peakery.com/older USGS
+  sources). Affects the whole peak, not one route — needs a human to pick a value/datum
+  and apply it consistently rather than a single-row patch.
+- `wa_johannesburg_mountain_northeast_buttress`: `fa`/`beta` disagree on Tom Miller's
+  unnamed 1951 climbing partner, and a separate sibling row
+  (`wa_johannesburg_mountain_northeast_rib_1951_route`) carries an undated/unattributed
+  "1951" FA that may document the same historical climb under a different ID — a possible
+  duplicate-route-identity split, same family as prior batches' Dragontail Peak flags.
+  Needs a human with Beckey's guide or the full AAC account.
+- `wa_king_kong_gorillas_direct_direct`: `fa` says "Sol Wertkin & Tyree Johnson, 2016
+  (freed by Sol Wertkin)" while `beta` says "First ascent...by Sol Wertkin and Jon
+  Gleason" — likely an FA-vs-FFA mixup between two different partners, but which field
+  should say what couldn't be resolved from the sources checked.
+- `wa_klawatti_peak_southeast_face`: a "Bergschrund" waypoint's latitude sits ~6.3 km from
+  the very next (summit) waypoint despite `distMi` implying they're only ~0.2 mi apart —
+  almost certainly a coordinate typo, but no source was found to confirm the intended
+  value.
+- `wa_inner_constance_standard`: this row's own `corrections` field already documents an
+  unresolved route-identity conflict between its name/approach text (the long Crystal Pass
+  line) and its own `overview`/`waypoints` (the shorter South Gully/"Route 2A" line) — a
+  human rewrite/split decision, not a single-field patch.
+
+**Clean (no errors found):** Johannesburg Mountain's Cascade-Johannesburg Couloir
+(FA/elevation/length all corroborated and internally consistent) and Inspiration Peak's
+West Ridge (FA, elevation, grade_num, and gain/loss all check out against external sources
+and the row's own waypoint-derived profile).
+
+Next batch will continue alphabetically from `wa_klawatti_peak_southeast_face` (see
+progress file).
+
+## Batch 17 — 2026-07-29
+
+Checked: Klawatti Peak SW Buttress, Koala Krack (Kangaroo Temple), Kololo Peaks Standard
+Route, Kyes Peak Glaciated Scramble, Labor Pains (North Early Winters Spire), and all
+three of Lane Peak's north-face couloirs (The Zipper, The Fly, Lover's Lane).
+
+**Confirmed error fixed:**
+- `wa_kyes_peak` (area row): `elevation_ft` was 7282, a 2 ft outlier against both of the
+  peak's own routes (7280, unanimous, including the in-scope Glaciated Scramble) and
+  external sources (Wikipedia/Peakbagger: "7,280+ ft, NGVD 29"). Fixed the area row to
+  7280 — same systematic-offset pattern as batch 16's Inner Constance fix, just with the
+  area (not the routes) as the wrong value this time.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_koala_krack`: already self-flagged in its own `corrections` field as unconfirmable
+  (no MP/SuperTopo page found). This pass additionally checked whether "Koala Rock" —
+  which does exist on Mountain Project — might be the real location; it turned out to be
+  an unrelated Smith Rock, Oregon formation ("The Marsupials" area), just a name
+  collision. Doesn't resolve the original uncertainty either way.
+- `wa_kololo_peaks_standard`: `gain_ft`/`loss_ft` (6120/7000) violate the gain-loss =
+  net-elevation-change identity that holds elsewhere in the dataset (verified on this
+  batch's own Kyes Peak route). The route's own trailhead waypoint (2050 ft) and
+  `high_point_ft` (8240 ft) imply a net one-way climb of +6190 ft; `gain_ft` is
+  plausible but `loss_ft` (7000 ft) has no support in the route's own approach/descent
+  text and no external source pins a correct replacement figure.
+- `wa_lane_peak_r3` (Lover's Lane): `grade`/`grade_system`/`grade_num` are all null,
+  unlike its two siblings on the same face (Zipper WI3, Fly WI2), despite its own
+  `watch_out` text referencing "the moderate AI1 rating" as a baseline that never made it
+  into the grade fields — and AI1 sits oddly next to this row's own overview calling it
+  the steepest/narrowest of the three couloirs. A Mountain Project page exists but its
+  exact grade couldn't be retrieved this pass.
+
+**Clean (no errors found):** Klawatti Peak SW Buttress (FA/elevation/pitch-count all
+corroborated), Labor Pains (FA/pitch-count/length all corroborated against SummitPost/AAC
+sources), and Lane Peak's Zipper and Fly couloirs (elevation and route descriptions check
+out; no confirmed FA on file for either, consistent with sources). Also checked but not
+flagged: Kololo Peaks' elevation (8240) diverges from Wikipedia's rounded "8,200 ft" but
+matches peakery.com exactly and is internally consistent between the area and route rows
+— left alone as ordinary source variance for an unofficial/unsurveyed summit.
+
+Next batch will continue alphabetically from `wa_lane_peak_r3` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 18
+
+Checked 10 routes across 7 peaks: Le Conte Mountain (Northern Aspect), Lemah Mountain
+(East Route) and Lemah Two (Goatshead Spire), Mount Stone (Lena Lake to Mt Stone
+traverse), Gunn Peak (Lewis Creek Route), Lexington Tower (East Face), and all four
+in-scope Liberty Bell Mountain routes (Liberty and Injustice for All, Beckey Route, East
+Face, Independence Route).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-30-batch-18.sql`):**
+- Le Conte Mountain Northern Aspect: `access.land_manager`/`parking_pass`/`passRequired`
+  all carried Darrington Ranger District / Mountain Loop Highway / Downey Creek
+  Trailhead references — the Suiattle River drainage corridor used for Dome Peak, not
+  this route's actual Cascade River Road/Marblemount approach. Same contamination family
+  as batch 8's Dome Peak fix. Also fixed `climate.forecastZone` ("Washington Pass East
+  Slopes zone", an unrelated east-of-crest location) to the correct West Slopes North.
+- Mount Stone traverse: `access._raw.special_requirements` stated the standard
+  Putvin-only route's ~5,000 ft gain figure instead of this full traverse's own
+  ~9,000 ft (matching its own `gain_ft` and Mountain Project's page for this exact
+  route); `parking_pass`/`_raw.parking_pass_required` omitted the Northwest Forest Pass
+  needed at Lena Lake Trailhead (the route's actual start), even though the row's own
+  waypoint #1 already had it right.
+- Gunn Peak Lewis Creek Route: two waypoint elevations (trailhead 2400→2200,
+  summit 6240→6244) contradicted the row's own approach text/`high_point_ft`/area row;
+  `gain_ft` (4900) contradicted `loss_ft` and the row's own itinerary (both 5200);
+  `access.notes` claimed Gunn Peak "sits outside designated wilderness," directly
+  contradicting this same row's own `wilderness_zone_name` field and overview text —
+  Gunn Peak is the Wild Sky Wilderness's highest point.
+- Lexington Tower East Face: `alpine_grade`/`commitment` said III, should be IV per
+  multiple independent sources (Mountaineers.org, SummitPost, Mountain Project,
+  chossclimbers) all citing "Grade IV... eight pitches"; `rappels` described a
+  non-standard 7-rap descent as if standard, contradicting the row's own `descent_text`;
+  a stale `data_quality.gaps` entry said the 1966 FA year was unverified when `fa`
+  already had it; `access._raw.seasonal_closures` said SR-20 typically closes
+  "mid-November," contradicting the row's own `access.seasonal` field and WSDOT data
+  (early December).
+- **Liberty Bell East Face — most significant find this batch.** The row's own `face`
+  field literally read "East Face (Lexington Tower)", and its `fa`/`pitches`/
+  `rock_grade`/`grade_num` were a verbatim copy of Lexington Tower's East Face (Marts &
+  McPherson, June 1966, 5.9+, ~10 pitches) — a different, neighboring formation. This
+  row's own `pitch_detail` (4 pitches summing to 125m, crux 5.6), `descent_text`, and
+  `itinerary` all consistently describe a shorter, easier line that actually stays on
+  Liberty Bell. Fixed the header fields to match the row's own already-correct
+  pitch-by-pitch data; `fa` left NULL (no source found for this specific short line)
+  rather than guessed, with a `corrections` note and `data_quality` gap added to explain.
+- Liberty Bell (3 routes): `emergency.county` disagreed both with the area row/Beckey
+  Route (which correctly say the summit straddles Chelan/Okanogan) and, on two of the
+  three, with the row's own `emergency.notes` field, which already admitted the
+  straddle. Aligned East Face, Independence Route, and Liberty and Injustice for All to
+  the confirmed county straddle.
+- Liberty Bell Independence Route and Liberty and Injustice for All: both had
+  `itinerary`/`timing` day-1 notes describing the wrong face/descent — Independence
+  Route's said "west face" against its own `face`/`aspect`/overview (all East Face);
+  Liberty and Injustice's said a generic "Beckey descent" against its own specific
+  two-rope P3→P1 rappel description in `descent_text`/`rappel_detail`. Both rewritten to
+  match each row's own already-correct structured fields.
+
+**Flagged for human review (not auto-fixed):**
+- Lexington Tower's own `parent_peak` is stored as Liberty Bell, but Wikipedia's
+  infobox lists Early Winters Spires — no "Early Winters Spires" area row was available
+  this batch to confirm the target id, and per this repo's documented history of
+  id-shaped guesses causing damage, left for a human to confirm the id first.
+- Le Conte Mountain: an incomplete-looking `waypoints` array (two near-duplicate
+  "Cascade Pass" entries with no return-leg points between them).
+- Lemah Mountain East Route: two waypoints appear geographically displaced ~5-6 miles
+  from the actual route line, contradicting the row's own beta text; no confident
+  replacement coordinates found (cited CalTopo source not fetchable this pass).
+- Lemah Two (area): its coordinates sit just north of Lemah Mountain's main summit,
+  but route descriptions place Lemah Two south/southwest of Main Peak — possibly the
+  same kind of USGS-quad mislabeling this massif has a documented history of.
+- Mount Stone traverse: a waypoint leg's stored `distMi` (0.5 mi) is geometrically
+  impossible against the two waypoints' own coordinates (~1.02 mi straight-line) — can't
+  tell whether the coordinate or the distance is the actual error without map access.
+- Gunn Peak: the row's own `verif.status`/`corrections` fields already flag that "Lewis
+  Creek Route" may not be a distinct line from the modern standard Gunn Peak approach —
+  possible name-derived duplicate, needs a human check. Also, even the corrected
+  gain/loss (5200/5200) runs higher than any external source's reported figure
+  (~3,937-4,380 ft) for this peak.
+- Lexington Tower: a notch waypoint elevation (7,621 ft) exceeds the peak's own
+  confirmed summit elevation (7,560 ft) despite the route's own text saying it tops out
+  below the true summit — internally self-consistent (trailhead + gain_ft = notch elev)
+  but geometrically impossible; can't tell which single field is wrong without a topo.
+- Liberty Bell East Face and Liberty and Injustice for All: both routes' own
+  `approach`/`road` fields describe an SR-20 pullout approach while their own
+  `waypoints`/`gpx` point to Blue Lake Trailhead — internally split, no independent beta
+  found online for either obscure line to arbitrate.
+
+**Clean (no errors found):** Lemah Two Goatshead Spire (FA, elevation, and approach all
+independently corroborated, correctly kept distinct from the massif's Main Peak) and
+Liberty Bell's Beckey Route (FA, grade, pitch data, county note, and permit/closure info
+all check out).
+
+Next batch will continue alphabetically after `wa_liberty_bell_independence_route` (see
+progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 19
+
+Checked 10 routes: Liberty Bell Mountain (Northwest Face, Serpentine Crack, Thin Red
+Line, Liberty Crack, Liberty Crack (Free), Liberty Traverse), Liberty Cap / Mount
+Rainier (via Liberty Ridge, via Ptarmigan Ridge), Lichtenberg Mountain (West Face -
+West Rib).
+
+**Fixed:**
+- Northwest Face: `alpine_grade` stored 'III' — a plain copy of this row's own
+  `commitment` field, i.e. an NCCS Roman-numeral grade sitting in the column the schema
+  (`migrations/0006_composite_grades.sql`) defines as the French adjectival scale
+  (F/PD/AD/D/TD/ED). Same bug fixed on Dragontail Peak's Triple Couloirs in batch 9.
+  Every other rock route on Liberty Bell audited this batch already stores `D` here —
+  aligned Northwest Face to match.
+- Serpentine Crack: `waypoints[0].note` contained a leaked meta-comment — "Reused
+  coordinate from this session's own Liberty Bell area research (same real
+  trailhead)." — describing an authoring process rather than the route. Replaced with
+  the same trailhead description already used verbatim on this route's own siblings.
+- Thin Red Line: `fa` credited the free ascent to "Mikey Schaefer, 2008" alone,
+  dropping Kate Rutherford — who this row's own overview already names as co-first-
+  freer. Confirmed via Climbing.com's FA account (Rutherford & Schaefer, 5.12c,
+  September 15, 2008); both climbers added to `fa`.
+- Liberty Crack: summit waypoint elevation read 7,746 ft, the sole outlier against the
+  Liberty Bell area row's own canonical 7,720 ft (whose blurb explicitly flags 7,745-
+  7,750 as an outdated USGS-derived figure) and against all five other Liberty Bell
+  routes audited this batch, which already store 7,720 — fixed to match.
+- Liberty Crack (Free): `fa` dated the fully-free bolt-ladder-bypass variation
+  (Schaefer/Lee/Herrington/Hadley) to 2017. Blake Herrington's own trip-report blog
+  (dated July 1, 2016) and a CascadeClimbers.com report titled "6/28/2016" both place
+  the actual ascent in June/July 2016 — this row's own overview already hedged
+  "2016-2017"; fixed `fa` to the confirmed year.
+- Liberty Ridge finish (Liberty Cap): `fa` misspelled the third 1935 first-ascensionist
+  as "Jim Burrow" — this row's own overview already spells it "Jim Borrow" correctly,
+  and the AAC's own publication title for the FA account corroborates both the
+  spelling and the September 28-October 1, 1935 date range already on file. Also
+  updated `overview`: it cited Liberty Cap at a stale "14,112 ft" (vs. this route's own
+  area row, already correctly researched to 14,097 ft / ~14,095 ft per an Aug 2025 GPS
+  survey) and named Columbia Crest, at a stale "14,411 ft", as Rainier's "true high
+  point." A GPS survey conducted August 28, 2024 (widely reported: Seattle Met, Seattle
+  Times, Newsweek, GPS World) found the crater's southwest rim, about 440 ft south of
+  Columbia Crest, now stands higher (~14,400 ft) than the faster-thinning Columbia
+  Crest icecap (~14,389 ft) — Columbia Crest has not been the true summit since roughly
+  2014. Overview rewritten to match both this route's own area data and the 2024
+  resurvey.
+- Ptarmigan Ridge finish (Liberty Cap): top-level `grade` was NULL despite
+  `alpine_grade`/`rock_grade`/`ice_grade` all already populated ('IV'/'5.6'/'AI2-3')
+  and `grade_num` (6) already matching the rock grade digit — filled from the row's own
+  sub-fields, same pattern as batch 6/10's null-grade fixes. Also fixed the same stale
+  Liberty Cap (14,112 ft) and Columbia Crest "true summit" (14,409 ft) figures as the
+  Liberty Ridge route above, in this route's own waypoints array.
+
+**Flagged for human review (not auto-fixed):**
+- Liberty Ridge finish / Ptarmigan Ridge finish: `alpine_grade` stores 'IV' on both —
+  the same commitment-grade-in-the-adjectival-column bug fixed on Northwest Face above,
+  but Liberty Cap has only these two routes and both share the identical bug, so there's
+  no correctly-typed in-DB sibling to copy from. Sources found (International Mountain
+  Guides, Mountaineers.org, SummitPost) describe Liberty Ridge as "Grade V" (a
+  commitment grade) but none states a French adjectival rating — needs a human with a
+  guidebook (e.g. Nelson/Potterfield *Selected Climbs*) to supply the correct D/TD-class
+  value.
+- Northwest Face: `fa` (Hans Kraus & John Rupley, 1956; free FA Sandy Bill, Ron Burgner,
+  Ian Martin & Frank Tarver, 1966) could be neither corroborated nor contradicted by
+  this run's sources — left as-is.
+- Liberty Traverse: `fa` is 'unknown'; the stored summit order (Liberty Bell → Concord
+  Tower → Lexington Tower → North Early Winters Spire → South Early Winters Spire)
+  matches the Liberty Bell Group's documented layout, but no source was found to confirm
+  the specific 26-pitch count or overall 5.9 grade for a single continuous traverse —
+  left as-is.
+
+**Clean (no errors found):** Overexposure (FA, route character, and its role as the
+group's standard rappel line all independently corroborated) and Lichtenberg Mountain's
+West Face - West Rib (this row already self-describes as sparsely documented; nothing
+found online to confirm or refute it, consistent with that self-assessment).
+
+Next batch will continue alphabetically after `wa_lichtenberg_mountain_west_face_west_rib`
+(see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 20
+
+Checked 8 routes across 5 peaks: Lincoln Peak (North Ridge, X Couloir/Standard), Little
+Mac Spire (Southwest Route), Little Sister (North Face, West Face), Little Tahoma
+(Cowlitz/Ingraham Glaciers, East Shoulder), Luahna Peak (Southwest Slope-Southeast
+Ridge).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-30-batch-20.sql`):**
+- Lincoln Peak North Ridge and X Couloir/Standard (both routes on this peak):
+  `high_point_ft` stored 9,085 ft, matching neither this route's own summit waypoint in
+  the same row (9,101 ft, cited to GNIS Feature ID 1522127) nor ListsOfJohn.com's
+  surveyed figure — a bad transcription from a prior pass. Fixed both to 9,101.
+- Little Tahoma East Shoulder: `approach_logistics.trailhead`/`trailheadLat`/
+  `trailheadLng`/`trailheadDirection` were an exact copy of Luahna Peak's trailhead
+  (White River Trailhead near Lake Wenatchee, ~130 mi away) — cross-route contamination,
+  same pattern as prior batches' Mount Tom/Dome Peak mixups. This row's own
+  approach/descent/GPX text already correctly named Fryingpan Creek Trailhead
+  (confirmed via NPS's "Summerland Trailhead" page, Mountaineers.org,
+  trailcatjim.com); propagated that into the contaminated field.
+- Little Tahoma Cowlitz/Ingraham Glaciers: `access.notes` read "Northwest Forest Pass...
+  Mount Tom area, North Cascades" — USFS-language contamination on a route entirely
+  inside Mount Rainier NP (per this same row's own `landManager` field). Replaced with
+  NPS's actual policy: no NW Forest Pass, $82/yr climbing registration for glacier/
+  10,000ft+ travel, separate overnight wilderness permit.
+
+**Flagged for human review (not auto-fixed):**
+- Little Mac Spire Southwest Route: `fa` ("1969") and `grade` ("II-III, 5.4") are
+  already self-flagged as unconfirmed in the row's own `data_quality.gaps`; no
+  route-specific source found this pass to confirm or refute either. Separately, its
+  `corrections` narrative field contains a stale, self-contradictory note placing the
+  peak "near Mac Peak in the Deception Lakes area" (Alpine Lakes Wilderness) —
+  contradicts the rest of the row and the area table (actual parent: Southern
+  Pickets/North Cascades NP). Reads like leftover text from an earlier bad research
+  pass; needs a human to clean it out.
+- Little Sister West Face: `fa` ("Darin Berdinka, June 21, 2013") is broadly
+  corroborated, but sources describe the line as "Northwest" rather than confirming the
+  exact name "West Face" — not a clear enough mismatch to fix outright; worth checking
+  the live Mountain Project listing directly.
+- Little Sister (both routes): `access.closures` cites a specific "FR 12 closing from
+  MP 4.6 starting Aug 2026" — plausible given ongoing Middle Fork Nooksack Rd washout
+  closures, but this pass couldn't independently confirm the exact date/mile-marker
+  with the Mount Baker Ranger District; time-sensitive, left as-is.
+- Little Tahoma (both routes): a shared rounded waypoint coordinate (46.8884, -121.611)
+  is used for two different named features (Summerland campsite vs. the Fryingpan
+  Creek/Summerland Trailhead) — each individually correct in elevation/description, so
+  likely a rounding artifact rather than a wrong location; a human with a precise GPS
+  track could tighten it to match the route's own cited GPX start exactly.
+
+**Clean (no errors found):** Little Sister North Face (no FA on file — an honest null —
+and the Elbow Lake Trailhead approach confirmed correct) and Luahna Peak Southwest
+Slope-Southeast Ridge (elevation, land manager, and trailhead all independently
+confirmed — this route turned out to be the *source* of the Little Tahoma East Shoulder
+contamination above).
+
+Next batch will continue alphabetically after `wa_luahna_peak_southwest_slope_southeast_ridge`
+(see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 21
+
+Checked 10 routes across 9 peaks: Phantom Peak (Luna Glacier), Luna Peak (Southeast
+Slopes), Lundin Peak (South Face Left), Magic Mountain (South Ridge/Southeast Slopes),
+Martin Peak (West Ridge), Morning Star Peak (Marvin's Ear), McMillan Spire West
+(Southwest Ridge, West Ridge/Southwest Approach), Mix-up Peak (East Face/East
+Buttress), South Early Winters Spire (Mojo Rising).
+
+6 confirmed errors → fixes in `audits/sql/2026-07-30-batch-21.sql`:
+- Luna Peak Southeast Slopes: `gain_ft`/`loss_ft` (6700/6711) didn't match the row's own
+  itinerary-day gain/loss sums (8700/8700), and `dist_km` (16.1) was far short of the
+  itinerary's own "~48 mi round trip" note (≈77.2 km) — same top-level-equals-itinerary
+  convention verified on this batch's sibling Luna Glacier route.
+- Magic Mountain South Ridge: `fa` (and the area's own `blurb`) named the 1938 FA party's
+  fourth climber "Ralph Clough," contradicting this same route's own `overview` field,
+  which already correctly says "Ray Clough" — confirmed via independent sources on the
+  1938 Ptarmigan Traverse party.
+- Martin Peak West Ridge: `fa` credited a solo "Ida Zacher Darr" ascent; per alpenglow.org's
+  Dwight Watson historical notes, Everett Darr and Ida Zacker made this first ascent as a
+  two-person party in July 1936 (after an unsuccessful Bonanza Peak attempt) — the two
+  names had been merged into one. Also fixed this same row's trailhead waypoint, which sat
+  ~4 mi from Holden Village's real location while the row's own `approach_logistics`
+  already had the correct coordinate.
+- McMillan Spire (West) area: `prominence_ft` (737) contradicted the row's own blurb,
+  which already cites "600 ft of clean prominence" per Wikipedia — fixed to 600.
+- McMillan Spire (West) — West Ridge/Southwest Approach: top-level `grade` ("Grade III,
+  5.6") contradicted this row's own `alpine_grade`/`commitment` ("II") and `rock_grade`
+  ("4th class"); every external source describes Class 2-3 scrambling with an occasional
+  low-5th variation, not sustained 5.6 — cleared the orphaned YDS grade fields to match
+  the row's own already-correct class rating, same pattern as an earlier batch's
+  Dragontail Peak Northeast Face fix.
+
+8 items flagged for human review (see SQL file's "NOT fixed" section for full detail):
+Luna Glacier's nonstandard "M1c" rock-grade notation and a possible duplicate-FA overlap
+with sibling Phantom Peak South Route; a likely Mountain-Project-ID duplicate between
+Lundin Peak South Face Left and its out-of-scope sibling "South Face (2001 Variation)";
+Martin Peak West Ridge's own itinerary describing a "Southeast Slopes" scree-gully summit
+day under a route named "West Ridge" (already self-flagged in the row's own
+`data_quality.gaps`); McMillan Spire West's disputed area elevation (8038 vs. two
+already-disclosed competing sources); McMillan Spire West's Southwest Ridge route, whose
+stored 6-pitch 5.8 Grade III alpine-rock description conflicts with every external source
+describing that line as a snow-climb scramble variant, compounded by thin/synthesized-
+looking data (no data_quality block, a straight-line GPX); and on Mojo Rising, a
+Blue Lake Trailhead elevation contradiction (5200 vs. ~5400 ft) plus a rack-size
+inconsistency between `sling_rack` and the route's other gear fields.
+
+2 routes audited clean: Marvin's Ear (Morning Star Peak) and Mix-up Peak's East
+Face/East Buttress — FA, elevation, grade, and area placement all independently
+confirmed with no contradictions found.
+
+Next batch will continue alphabetically after `wa_mojo_rising` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 22
+
+Checked 10 routes across 3 peaks: Mount Adams (Adams Glacier, Lava Glacier Headwall, Lyman
+Glacier, Mazama Glacier Headwall, North Ridge, Northwest Ridge, South Climb, Wilson Glacier
+Headwall), Mount Anderson (Eel Glacier/Flypaper Pass), Mount Baker (Boulder Glacier/Boulder
+Cleaver).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-22.sql`:**
+- Adams Glacier: `high_point_ft` (12281) contradicted its own `watch_out` text ("...high
+  elevation (12,276 ft)"), the parent area's `elevation_ft` (12276), and all 7 other Mount
+  Adams routes in this batch (all 12276) — fixed to 12276.
+- Wilson Glacier Headwall: summit waypoint `elevFt` (12280) contradicted this same row's own
+  `high_point_ft` (12276) and every sibling route — fixed to 12276.
+- Wilson Glacier Headwall: `access.notes` carried the exact "Mount Tom area, North Cascades"
+  boilerplate contamination documented DB-wide in batch 15 (35 affected routes, 2 already
+  fixed) — stripped, same fix pattern as the batch 15 precedent.
+
+**Flagged for human review (not auto-fixed):**
+- Adams Glacier: Wikipedia's current infobox lists Mount Adams at 12,281 ft NAVD88 while
+  USGS and every other on-file record for this peak use 12,276 ft — a genuine external datum
+  split (same family as batch 16's Jack Mountain flag). Fixed to the unanimous internal value
+  above, but the peak-wide datum choice is still an open question for a human.
+- Wilson Glacier Headwall: internal land-manager contradiction — `access.landManager` says
+  "Yakama Nation (Tract D...)" while `access.land_manager` says "U.S. Forest Service" and the
+  top-level `permit` field describes only a USFS Recreation.gov pass, with no mention of the
+  tribal permit that `rope_note`/`access.closures` separately describe. Also, its own
+  `waypoints` trailhead entry uses Killen Creek Trailhead (self-flagged in its own note as "no
+  source names this trailhead for Wilson specifically") while `approach`/`descent_text`/`road`/
+  `approach_logistics` all consistently describe the Cold Springs/South Climb trailhead instead
+  — same waypoint-vs-approach-text mismatch pattern as many prior batches, but this row's own
+  `corrections` field already admits "sourcing is thin and partly ambiguous... treat as a
+  low-confidence, expert-review-required entry," so left to a human rather than guessed.
+- Two legacy, non-`wa_`-prefixed rows exist for Mount Adams outside this audit's `id LIKE
+  'wa_%'` scope filter: `adams_northwest_ridge` and `adams_avalanche_glacier`.
+  `adams_northwest_ridge` shares the same route name and a similar length (610m) as this
+  batch's `wa_mount_adams_northwest_ridge`, but a different FA party (Givler/LeBlond/McGowan
+  1967 vs. Molenaar/Johnson/Ostro/Startzell 1960) and pitch count (3 vs. 5) — possibly two
+  distinct historical ascents of the same line, or a duplicate entered under two ID schemes
+  (same family as the Dragontail Peak duplicates found in batch 8). Out of this audit's scope
+  to fix/merge (id doesn't match `wa_%`, and no delete authority regardless) — flagging for a
+  human to check.
+- Northwest Ridge: its own `overview` and `beta` text describe the route as "the west face of
+  Mount Adams's North Ridge" / "the northwest face of the North Ridge" without ever using the
+  route's own name — worth a human check on whether this is legitimate geographic description
+  (Northwest Ridge sits adjacent to North Ridge) or a mild route-identity mix-up; not auto-fixed
+  since unclear which framing is right.
+
+**Clean (no errors found):** Lava Glacier Headwall, Lyman Glacier, Mazama Glacier Headwall,
+North Ridge (FA — A.G. Aiken/Edward Allen/Andrew Burge, 1854 — independently confirmed as
+Mount Adams's first ascent), South Climb (FA framing and elevation both externally verified),
+Mount Anderson Eel Glacier/Flypaper Pass (FA — Fairman B. Lee, 1920 — confirmed; the route's
+own already-disclosed 7,323–7,330 ft elevation range matches the area blurb, not a new issue),
+and Mount Baker Boulder Glacier/Boulder Cleaver (1891 LaConnor Expedition FA independently
+corroborated via John Miles's *Koma Kulshan*, matching this row's own already-hedged phrasing).
+
+Next batch will continue alphabetically after `wa_mount_baker_boulder_glacier` (see progress
+file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 23
+
+Checked 10 routes across 3 peaks: Mount Baker (Boulder-Park Cleaver, Cockscomb Ridge,
+Coleman-Deming Glacier, Coleman Headwall, Easton Glacier, North Ridge, Park Glacier Headwall,
+Squak Glacier), Mount Buckindy (Glacier/Scramble Route), Mount Carrie (Standard Route /
+Carrie Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-23.sql`:**
+- North Ridge: `alpine_grade` held "Grade III" — an NCCS commitment-grade string in the column
+  the schema (`migrations/0006_composite_grades.sql`) defines as the French adjectival scale
+  (F/PD/AD/D/TD/ED) — the same bug fixed on Dragontail Peak's Triple Couloirs (batch 9) and
+  McMillan Spire West Ridge (batch 21). Externally corroborated (RMI Expeditions, Mooney
+  Mountain Guides both independently cite "AD, AI2-3" for this exact route) and fixed to "AD".
+- Park Glacier Headwall: top-level `gain_ft` (1,840) contradicted this same row's own itinerary
+  day-by-day breakdown (day 1: 1,800 ft to the Portals camp; day 2: 5,000 ft camp-to-summit,
+  summing to 6,800 ft) — off by roughly 5,000 ft, far outside the ~100–300 ft rounding gaps seen
+  on every other Baker route audited this batch (all of which track their own itinerary sums
+  closely). Fixed to 6,800 to match the row's own itinerary.
+- Mount Carrie Standard Route: top-level `gain_ft`/`loss_ft` (4,995/9,800) contradicted this same
+  row's own detailed 4-day itinerary (2800/0, 1800/600, 2650/2650, 200/4400), which sums to
+  7,450 ft gain / 7,650 ft loss — appropriately near-symmetric for a route that returns to the
+  same Sol Duc trailhead. Fixed both to match the itinerary sum.
+- **Mount Buckindy Glacier/Scramble Route — the batch's biggest find.** Its `access` block turned
+  out to be a patchwork: legitimate USFS/Glacier Peak Wilderness content (fees, permit, closures)
+  spliced together with boilerplate lifted wholesale from an NPS North Cascades permit-zone
+  route. `access.land_manager` named "National Park Service — North Cascades National Park"
+  outright, directly contradicting this same row's own `access.landManager` field ("Mount
+  Baker-Snoqualmie National Forest ... within the Glacier Peak Wilderness"), the parent area's
+  own blurb, and the row's own approach text (Green Mountain Trailhead / FR-1570 Kindy Creek
+  Road — both Forest Service roads, nowhere near North Cascades NP). `access.notes` described the
+  NPS North Cascades Boston Basin/Eldorado/Sulphide Glacier Recreation.gov lottery split, which
+  has nothing to do with this peak. `access.rules` and `group_limit` (6) described the NPS
+  6-off-trail/12-on-trail group-size split and named NPS-specific designated Boston Basin
+  campsites; confirmed externally (wilderness.net/USFS) that Glacier Peak Wilderness's actual
+  Forest Service group-size limit is a flat 12, matching every other route in this batch.
+  `access.seasonal` named "Cascade River Road" (the NPS Boston Basin/Eldorado access corridor) as
+  this route's access road, when the row's own `access.closures` field already correctly names
+  the real one (Suiattle River Road/FR 26 via FR 2680 to the Green Mountain Trailhead). All four
+  fields fixed to match the row's own correct fields and external sourcing.
+
+**Flagged for human review (not auto-fixed — judgment calls or unverifiable):**
+- Boulder-Park Cleaver, Cockscomb Ridge, Coleman Headwall, Easton Glacier, and Squak Glacier all
+  carry the same `alpine_grade` "Grade `<Roman numeral>`" bug fixed on North Ridge above — but
+  unlike North Ridge, no source found this pass states a specific French adjectival grade for any
+  of these five. Coleman Headwall's own sources consistently cite the NCCS "Grade III+" rating,
+  not an adjectival letter; Easton Glacier, Squak Glacier, and Boulder-Park Cleaver are mellow
+  glacier/scramble routes not typically assigned an adjectival grade at all in the sources
+  checked. Left unfixed rather than guess a letter, per the precedent set for Liberty Cap's
+  routes in batch 19.
+- Squak Glacier: `itinerary`, `gain_ft`, `loss_ft`, `max_angle`, `grade`, and `grade_system` are
+  all null. This looks like thin/incomplete data rather than a factual error, and — unlike the
+  null-grade fixes on Kimchi Suicide Volcano/Thread of Ice/Ptarmigan Ridge Finish in batches
+  6/10/19 — there's no populated sibling sub-field on this row to safely derive a top-level grade
+  from. Worth a dedicated enrichment pass rather than an audit fix.
+- Cockscomb Ridge: `fa`'s third climber name ("E. Vielbig") could not be independently confirmed
+  this pass. The AAC Publications first-ascent account names Chuck Murley, John Musser, and the
+  report's own (unnamed in available excerpts) author as the third climber; the direct AAC page
+  403'd this session and web-search snippets don't surface the author's byline.
+
+**Clean (no errors found):** Coleman-Deming Glacier — FA (Edmund Coleman's 1868 first ascent of
+Mount Baker), `alpine_grade` ("PD", correctly in the French adjectival scale), itinerary sums, and
+access fields all checked out with no contradictions.
+
+**No action needed:** Mount Baker's own `elevation_ft`/`prominence_ft` (10,781/8,810) sit a few
+feet below Wikipedia's current NAVD88 infobox figures (10,786/8,812), but 10,781 ft is itself
+directly attested in Wikipedia's own introductory prose, and all 9 Mount Baker routes plus the
+area row agree on it internally — not treated as an error, consistent with how similar
+sub-10-ft datum spreads have been handled in prior batches (e.g. batch 17's Kyes Peak).
+
+Next batch will continue alphabetically after `wa_mount_carrie_standard` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 24
+
+Checked 10 routes across 4 peaks (Mount Challenger, Mount Constance x5, Mount Crowder x2, Mount
+Cruiser x2), the next in scope alphabetically after `wa_mount_carrie_standard`.
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-24.sql`:**
+- Mount Challenger area row: `elevation_ft` 8238 → 8207 — its own route's `high_point_ft`,
+  corrected summit waypoint, and `prominence_ft` (567, which is only consistent with an 8,207 ft
+  summit) all already agreed on 8207; the area row alone hadn't been updated. Also on the
+  Challenger Glacier route: stripped the "Mount Tom area, North Cascades" contamination string
+  from `access.notes` (same DB-wide boilerplate bug flagged in batch 15) and fixed `dist_km`
+  (48 → 59.55) plus a mileage figure in `itinerary.totalNote` (21 mi → 37 mi) — the row's own
+  `itinerary.sourceNote` already asserted the corrected 59.55 km/37 mi figure "is consistent with
+  this profile," but the actual `dist_km` column and a separate summary sentence were never
+  updated to match; corroborated independently by the row's own waypoints (19.5 mi one-way to
+  summit) and external Hannegan/Whatcom Pass trip reports.
+- Mount Constance: two routes (Finger Traverse, Terrible Traverse) had `grade` = "Grade III"
+  contradicting their own `alpine_grade`/`commitment` ("II") — the mismatched value exactly
+  matched sibling West Arête's own correct "III", suggesting cross-row copy contamination; fixed
+  both to "Grade II". Terrible Traverse's `descent` field also carried a "snow bridge hazards"
+  clause contradicting its own `seasonal_hazards.crevasses` ("no glacier travel") — the same
+  generic boilerplate sentence found verbatim on Mount Crowder's Southwest Route this batch;
+  removed the inapplicable clause. North Chimney's `hazards[0]` was a verbatim copy of Finger
+  Traverse's wording naming only "the Finger Traverse," though North Chimney's own overview says
+  climbers use either the Terrible or Finger Traverse — reworded using the row's own overview
+  text. North Chute's `waypoints[0]` trailhead coordinates (47.75095/-123.14012) matched neither
+  this row's own `approach_logistics` field nor any of its 4 siblings' consistent trailhead point
+  (~47.7403/-123.0658) — fixed to match, corroborated by the errant coordinate also appearing
+  mid-track inside the siblings' own GPX data. West Arête's `fa` field held a hedged-sounding
+  guess ("similar vintage... early-to-mid 1900s likely") directly contradicting its own
+  `corrections` field, which states "'fa' is left null rather than guessed" — nulled to match
+  what the row's own correction already concluded. West Arête's trailhead waypoint `note` also
+  had leftover internal audit commentary ("CORRECTION: existing DB entry...") baked into a
+  user-facing field (coordinates themselves were already correct) — replaced with a normal
+  description matching sibling style.
+- Mount Crowder Southwest Route: a "Hannegan Pass Trailhead" waypoint (and matching gpx point)
+  was an exact-coordinate duplicate of the legitimate Hannegan Pass waypoint on the separate Mount
+  Challenger route. Its note argued this should replace the row's real Goodell Creek trailhead,
+  citing Steph Abegg's "Mystery Ridge Enchainment" TR — but that TR actually ran
+  Crowder-then-continuing-north-to-Hannegan, i.e. Hannegan was the party's *exit* after the whole
+  traverse, not their way in to Crowder; this contradicted the row's own approach text,
+  approach_logistics, and itinerary throughout. Removed as contamination.
+- Mount Cruiser: both routes' "Mount Cruiser" summit waypoint held `elevFt` 6106, contradicting
+  each route's own `high_point_ft` (6104), the area row, and external sources — fixed both to
+  6104. Northwest Face/Corner's `access.land_manager` flatly said NPS/Olympic NP, contradicting
+  its own (correct) `access.landManager` field, which properly notes the summit/Sawtooth Ridge
+  sits in the Mount Skokomish Wilderness (Olympic National Forest) just south of the park —
+  fixed to match. South Corner's `gain_ft` (5700) contradicted its own itinerary day-sum (5250,
+  matching elevation math and the sibling route's already-correct value) and `loss_ft` was null
+  despite the same itinerary giving 5250 — fixed both to 5250. South Corner also had the same
+  flat-NPS land-manager error on *both* its `landManager` and `land_manager` fields (unlike its
+  sibling, which had already fixed one of the two) — fixed both to match the sibling's correct
+  split-jurisdiction language.
+
+**Flagged for human review (not auto-fixed):** Challenger Glacier's headline grade ("5.6-5.7")
+vs. its own rock_grade/pitch/descent fields (all "5.5") — external sources themselves disagree,
+so likely genuine grading ambiguity rather than a DB bug; its itinerary day-mile splits still
+don't sum to the now-corrected 37 mi round trip; an unconfirmed NPS group-size claim (403'd on
+fetch); a ~12% gain_ft-vs-itinerary gap that may be a legitimate Naismith-style estimate; two
+minor (~100-250 m) coordinate offsets between area/approach_logistics/waypoint fields, not
+necessarily errors given Challenger's 5-summit ridge. Finger Traverse/Terrible Traverse's `beta`
+text calling the crossing a "descent" move while their own itinerary/timing place it during the
+AM ascent — contradictory, needs a human call. North Chimney's own name/id vs. its own overview
+("generally known... as the 'South Chute'") — a rename candidate, not something to force via
+SQL, consistent with the same id/name-conflation pattern flagged repeatedly since batch 3. Mount
+Crowder Southwest Route's `fa` (hedged 1962 SW Flank credit) vs. its own `corrections` field
+(which asserts instead that the FA climbed the NE Ridge) — no external source found actually
+states which line the 1962 party used, and the NE Ridge is independently documented elsewhere in
+this same dataset as a difficult, cliff-banded technical descent, making the `corrections`
+field's specific claim look unsupported rather than confirmed; left both fields as-is. Also
+flagged Crowder's `dist_km` (61.15 km) for the dedicated `audit:distances` script — doubling per
+the app's rendering convention lands suspiciously close to a whole-number 76 mi round trip, while
+the row's own `itinerary.totalNote` separately claims "~32 mi." Both Cruiser routes' top-level
+`permit` field contradicts their own `access.passRequired`; South Corner additionally has a stale
+`access._raw` sub-object, a populated 137-point `gpx` track that contradicts its own
+`data_quality.gaps` claim of "no public GPS track found" and whose shape looks possibly synthetic
+(flagged for a human to verify it's a real recorded track), and a `length_m` that matches neither
+its own `pitch_detail` sum nor either of two external trip-report figures found.
+
+**Process note:** CLAUDE.md's SQL-handoff guardrails call for `npm run check:sql -- fix.sql`
+before handing over any .sql file, but no such script exists anywhere in this repo's history (on
+any branch) — it's referenced in CLAUDE.md but was never implemented, and this audit's guardrails
+restrict it to touching only files under `audits/`, so it cannot add the missing script itself.
+As a substitute this batch, re-fetched all 9 target route rows plus the target area row live
+immediately before writing SQL and confirmed every id exists and every current value matches what
+the fix statements assume (no concurrent writes, no stale reads) — the same failure mode
+`check:sql` is meant to catch, verified by hand instead. Flagging the missing script for whoever
+maintains the checker tooling.
+
+Next batch will continue alphabetically after `wa_mount_cruiser_south_corner` (see progress
+file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 25
+
+Checked 10 routes across 10 distinct peaks: Mount Custer (Standard), Mount Daniel (Daniel
+Glacier), Mount Deception (Standard), Mount Degenhardt (Southwest Route), Mount Despair (East
+Route), Mount Duckabush (Standard), Mount Ellinor (Standard), Mount Fairchild (Standard), Mount
+Fernow (Southeast Face), Mount Formidable (North/Ptarmigan).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-25.sql`:** 22 fixes across all 10 routes,
+none audited fully clean. The dominant pattern this batch was top-level `gain_ft`/`loss_ft`
+disagreeing with the route's own `itinerary.days` sums — found and fixed on 6 of the 10 routes
+(Daniel, Deception, Despair, Duckabush, Fairchild, Fernow), all corroborated by the row's own
+itinerary totalNote/sourceNote text, not just the day-by-day arithmetic. Also fixed: two more
+instances of the area-elevation/route-elevation drift seen in many prior batches (Daniel
+7977→7960 ft, Despair 7299→7296 ft — Despair's own `corrections` field had already decided on
+7296 but never applied it to the area row); a cross-route land-manager contamination on Daniel
+(Mt. Baker-Snoqualmie copied in where the row's own `emergency.rangerStation` already said
+Okanogan-Wenatchee/Cle Elum, confirmed via USFS/WTA); a cross-route trailhead contamination on
+Duckabush (the Dosewallips Road washout parking — a different Olympics trailhead entirely —
+copied into `approach_logistics`, contradicting the row's own waypoints/approach/road fields);
+a wrong ranger-station address on Degenhardt (NPS Sedro-Woolley HQ contact info mislabeled as
+the Marblemount Wilderness Information Center); a contradicted top-level `permit` claim on
+Ellinor (claimed a wilderness self-issue permit the row's own `access.permit` and WTA/USFS both
+say isn't required); a contradicted top-level `grade` on Formidable (rock-class understated
+against the row's own `rock_grade` and a Steph Abegg trip report title); a data_quality.gaps
+entry on Custer falsely claiming no GPS/waypoint data exists despite 8 populated waypoints/gpx
+points on the same row; a null `alpine_grade` fix on Deception (held a copy of `commitment`,
+violating the French-adjectival-scale schema — nulled rather than guessed, no source gives a
+letter grade for an unroped scramble); missing top-level `lat`/`lng` backfilled on Degenhardt
+from the row's own already-correct area/approach_logistics coordinates; and two more stale
+prose-elevation mentions (Daniel's Peggy's Pond ~5300→~5,560 ft, Duckabush's trailhead ~900→~440
+ft) that contradicted the same row's own waypoints.
+
+**Flagged for human review (not auto-fixed):** Fairchild's `itinerary` appears to blend two
+genuinely different, separately-documented approaches to the same peak (Sol Duc/Appleton
+Pass/Mount Carrie vs. Whiskey Bend/Long Ridge/Mount Fitzhenry) across different sub-fields of one
+row — the gain/loss fix above only patches the numeric symptom, not this root cause. Degenhardt's
+own name/id ("Southwest Route") vs. sources that only document an "East Ridge" and a "Corkscrew
+Route" for this peak — another instance of the id/name-conflation pattern flagged since batch 3 —
+plus an FA-year conflict (1931 vs. 1932) across otherwise-agreeing sources. Duckabush has a
+genuine three-way summit elevation conflict (area 6232 ft vs. route high_point_ft 6254 ft vs.
+external sources ranging 5741-6254 ft) and an unresolved question of which side of the peak the
+"standard route" actually follows (south/southeast per `aspect`/approach text vs. north/northwest
+per the itinerary and schedule) — the one definitive print guidebook source was login-walled.
+Ellinor has two genuine cross-source elevation/prominence disagreements (5944 vs. 5952 ft;
+538 vs. 440 ft) neither resolvable from sources reachable this pass. Six routes (Custer, Daniel,
+Despair, Duckabush's sibling pattern, Fernow, Formidable) still carry the recurring
+alpine_grade-holds-an-NCCS-numeral-instead-of-a-French-letter bug, but none had a source giving a
+specific correct French grade to substitute, so all were left as-is (Deception's was the one
+exception with clean grounds to null it, since its sub-fields already show it's an unroped
+scramble). Despair's itinerary day-by-day gain/loss split still only sums to 6,000/6,000 even
+after the top-level total was corrected to 12,000/12,000 — needs a human re-derivation once the
+cited trailcatjim.com trip report is reachable (403'd this pass). Fernow has a very recent (Jul
+28 2026) USFS trail closure not yet reflected in `access.closures`, and an ambiguous `dist_km`
+that may or may not already be a round-trip figure per this repo's known dual-convention issue —
+left alone per the standing guidance not to bulk-normalize that column. Custer's `dist_km` has
+the same one-way-vs-round-trip ambiguity. Formidable's own naming ("North Route via Ptarmigan
+Traverse") vs. every current source calling this line the "South Route" — flagged only, per the
+project's convention of not renaming ids/names via SQL.
+
+Next batch will continue alphabetically after `wa_mount_formidable_north_ptarmigan` (see progress
+file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 26
+
+Checked 10 routes across 8 peaks: Mount Formidable (South Face), Mount Fury West (Mongo Ridge,
+West Ridge), Mount Fury East (Southeast Glaciers), Mount Goode (Northeast Buttress), Mount Hardy
+(Southwest Slopes), Mount Hinman (Hinman Glacier), Mount Howard (South Slope), Mount Index (North
+Norwegian Buttress, North Peak Traverse).
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-26.sql`:**
+- Mount Formidable South Face: `fa` misspelled two of the four 1938 FA climbers' names ("Calder
+  Bessler, Ralph Clough") — the row's own area blurb already spells them correctly ("Bressler,
+  Ray Clough"), confirmed via the Alpine Institute's Ptarmigan Traverse history and a UC Academic
+  Senate in-memoriam for Ray W. Clough. Also fixed two stale approach-text elevations (Cascade
+  Pass 5,560→5,392 ft; Cache Col ~6,600→~6,903 ft) that contradicted the row's own waypoints and
+  Wikipedia.
+- Mount Goode Northeast Buttress: `fa` dated the first winter ascent "March 3-5, 1985" — that's
+  the AAJ's *publication* year; the Pilling/Mascioli climb itself was March 1984, confirmed via
+  AAC Publications and independent trip-report summaries. Fixed.
+- Mount Fury East's own area row (`elevation_ft`=8326) was a stale outlier against its own blurb
+  (which already settles on the 2022 Gilbertson theodolite survey's 8,356±8 ft for East Fury) and
+  its own Southeast Glaciers route (`high_point_ft`=8356) — fixed the area, plus a matching stale
+  8326 summit-waypoint figure on the route itself, both to 8356.
+- Three Mount Fury routes had gain_ft/loss_ft contradicting their own itinerary day-by-day sums
+  and totalNote prose (Mongo Ridge 11000/4000 → 10000/10700; West Ridge 7000/6640 → 9100/9100;
+  Hinman Glacier 3500/7800 → 6100/6300) — all fixed to match each row's own more granular data.
+- Mount Hinman Glacier: `access.land_manager` said "Snoqualmie Ranger District," contradicting
+  the row's own `emergency.rangerStation` ("Skykomish Ranger District") — the Necklace Valley
+  approach used by this route is entirely on the US-2/Skykomish side, confirmed via the USFS
+  Necklace Valley Trailhead page. Fixed.
+- Mount Hinman's own area blurb opened by calling it "the second-highest summit in the Alpine
+  Lakes Wilderness" — false; Mount Stuart (9,415 ft) and several Stuart Range summits exceed it,
+  confirmed via Wikipedia/SummitPost. Removed the false superlative rather than guess a specific
+  rank.
+- Mount Howard South Slope: `grade`/`grade_system`/`grade_num`/`alpine_grade`/`disciplines` were
+  all null despite the row's own overview text and the area's own blurb already describing it as
+  a "Class 2-3" non-technical scramble — filled from the row's own prose plus SummitPost/
+  Mountaineers.org corroboration, matching the sibling `wa_mount_hardy_snow_scramble` field for
+  field. A genuine enrichment gap, not a fabricated fact.
+- Mount Index North Norwegian Buttress: `high_point_ft` stored Mount Index's Main Peak elevation
+  (5991), but this route tops out on the separate Middle Peak — confirmed externally (Mountain
+  Project pages for both the Jötnar and Bluebell lines on this buttress state the route reaches
+  Middle Peak) and internally (the row's own `waypoints` already correctly lists "Mount Index
+  Middle Peak" at 5,527 ft as the Summit waypoint, and its own overview says the buttress is
+  separated from Main Peak "by a deep cleft"). Fixed `high_point_ft` to 5527. Also fixed
+  gain_ft/loss_ft (2200/5000 → 5000/5491, matching the row's own itinerary — the old loss_ft
+  value exactly equaled the itinerary's gain total, a likely copy/swap bug).
+- Mount Index North Peak Traverse: `commitment` stored "I" for a 3-day, bivy-required, roped 5.7
+  three-summit traverse — directly contradicted by the row's own `access.notes` ("a serious Grade
+  III+ alpine objective") and SummitPost/Beckey-sourced descriptions rating the North Face segment
+  alone "Grade III, 5.7." Fixed to III as a floor (the full traverse may warrant higher; not
+  guessed further). Also fixed `gain_ft` (3991 → 5800, matching the row's own itinerary sum,
+  which already matched the row's own correct `loss_ft`).
+
+**Flagged for human review (not auto-fixed):**
+- Mount Fury Mongo Ridge (`wa_mount_fury_east_mongo_ridge`): same id/content-mismatch pattern as
+  many prior batches — the route's own id says "fury_east" but its `area_id`, `face`, and content
+  are unambiguously about West Peak (matching the area blurb: "West Fury, reached only via the
+  serious Mongo Ridge"). Also, this row's own `data_quality.gaps` text claims the route is "filed
+  under the East Peak area entry," which is itself wrong — the row's actual `area_id` is
+  `wa_mount_fury_west`. Two distinct self-contradictions about the same underlying id mixup; not
+  renamed here per this audit's standing no-rename guardrail.
+- Mount Fury West Ridge (`wa_mount_fury_west_west_ridge`): the row's own `corrections` field says
+  "no FA record for this connecting-ridge line could be sourced, so `fa` is left null" — but `fa`
+  is *not* null; it holds a 1958 FA party/date that, per the `corrections` text's own reasoning,
+  belongs to the peak's original ascent line, not this modern route. Also, `pitch_detail`
+  describes an entirely different (1958-era, Hannegan-Pass-approached) route than every other
+  field on the row (which describes the modern Ross Lake/Access Creek/Luna Col approach) —
+  apparent two-route conflation, needs a human rewrite/split.
+- Mount Fury Southeast Glaciers (`wa_mount_fury_east_southeast_glaciers`): gain_ft/loss_ft
+  (6200/13000) don't reconcile three ways — neither with each other, nor with the row's own
+  itinerary day-sum (6900/7200), nor with the row's own totalNote ("~13,000 ft of cumulative
+  gain/loss," implying both should be ~13,000). Unlike this batch's other two Fury gain/loss
+  fixes, no single source in the row settles which figure is right — left flagged.
+- Two of three Mount Fury routes (West Ridge, Southeast Glaciers) have a Northwest Forest Pass
+  requirement stamped on a waypoint note, contradicting the row's own `access.passRequired` (none
+  needed, this is NPS land) — a new boilerplate-contamination pattern not seen in prior batches;
+  sources needed to confirm/deny were 403'd this pass.
+- Mount Fury East Southeast Glaciers: FA ("Don Keller, Joan Firey, and Joe Firey, 1960") could not
+  be independently corroborated this pass (AAC Publications/SummitPost 403'd); general sourcing
+  confirms the Fireys' documented Picket Range FA activity in this era but not this specific climb.
+- Mount Goode Northeast Buttress: `alpine_grade` holds "Grade III-IV," the same recurring
+  NCCS-Roman-numeral-in-the-French-adjectival-column bug flagged repeatedly in prior batches — no
+  source found gives a specific French-scale (F/PD/AD/D/TD/ED) rating for this route, so left
+  as-is rather than guessed. Also, `pitches` (7) conflicts with sourcing that suggests closer to
+  14, and The Mountaineers.org gives "Grade III-IV, 5.4" vs. the on-file "Grade IV, 5.5" (AAC/MP) —
+  sources split, on-file value has the stronger two-source backing but isn't unanimous.
+- Mount Formidable South Face: Kool-Aid Lake's elevation appears as four different values across
+  four fields in the same row (6,320/6,100/~6,200/6,120 ft) — no independent source found to
+  settle which is right. `length_m` (183) doesn't match the row's own pitch_detail sum (75m) or
+  the col-to-summit relief (~306m) — unclear what the field represents.
+- Mount Howard South Slope: `length_m`=91 has no support anywhere in the row's own text (which
+  explicitly says no technical rack/rope is needed) and looks like contamination from an unrelated
+  technical route, matching a known bug pattern in this DB — recommend nulling (to match sibling
+  Mount Hardy's null value for an equivalent scramble) but left flagged since no source justifies
+  any specific replacement and this audit doesn't guess-null without one more corroborating look.
+  Also flagged: `gain_ft` (4600) undercounts vs. the row's own turnaround/itinerary text
+  (5,000-6,400 ft); no external source pins down an exact figure.
+- Mount Index North Norwegian Buttress: `grade`="V" (yds) conflicts with `commitment`="VI" —
+  sources consistently cite Grade VI for the Jötnar line described in this row. `pitches`=16
+  matches Jötnar specifically but the row's `fa`/`overview` also describe the 21-pitch Bluebell
+  ascent — ambiguous which line the summary fields represent.
+- Mount Index North Peak Traverse: FA party name "Bill (Wolf) Schoening" could not be corroborated
+  — the only Schoening independently documented as a Beckey Cascades partner in this era is Pete
+  Schoening (of 1953 K2 "Belay" fame); no source found for a "Bill"/"Wolf" Schoening. AAC
+  Publications was 403'd this pass; needs a human with primary-source access.
+
+**Clean (no errors found):** Mount Hardy Southwest Slopes (Class 2-3 scramble, FA, land manager,
+and gain/loss all independently corroborated and internally consistent) audited fully clean —
+including a re-check of the 8,099 vs. 8,097 ft summit/waypoint gap, which the row's own overview
+already explains as normal survey variance and not a new issue.
+
+Next batch will continue alphabetically after `wa_mount_index_north_peak_traverse` (see progress
+file).
