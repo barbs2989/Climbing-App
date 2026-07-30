@@ -1498,3 +1498,97 @@ area row agree on it internally — not treated as an error, consistent with how
 sub-10-ft datum spreads have been handled in prior batches (e.g. batch 17's Kyes Peak).
 
 Next batch will continue alphabetically after `wa_mount_carrie_standard` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 24
+
+Checked 10 routes across 4 peaks (Mount Challenger, Mount Constance x5, Mount Crowder x2, Mount
+Cruiser x2), the next in scope alphabetically after `wa_mount_carrie_standard`.
+
+**Confirmed errors → fixes in `sql/2026-07-30-batch-24.sql`:**
+- Mount Challenger area row: `elevation_ft` 8238 → 8207 — its own route's `high_point_ft`,
+  corrected summit waypoint, and `prominence_ft` (567, which is only consistent with an 8,207 ft
+  summit) all already agreed on 8207; the area row alone hadn't been updated. Also on the
+  Challenger Glacier route: stripped the "Mount Tom area, North Cascades" contamination string
+  from `access.notes` (same DB-wide boilerplate bug flagged in batch 15) and fixed `dist_km`
+  (48 → 59.55) plus a mileage figure in `itinerary.totalNote` (21 mi → 37 mi) — the row's own
+  `itinerary.sourceNote` already asserted the corrected 59.55 km/37 mi figure "is consistent with
+  this profile," but the actual `dist_km` column and a separate summary sentence were never
+  updated to match; corroborated independently by the row's own waypoints (19.5 mi one-way to
+  summit) and external Hannegan/Whatcom Pass trip reports.
+- Mount Constance: two routes (Finger Traverse, Terrible Traverse) had `grade` = "Grade III"
+  contradicting their own `alpine_grade`/`commitment` ("II") — the mismatched value exactly
+  matched sibling West Arête's own correct "III", suggesting cross-row copy contamination; fixed
+  both to "Grade II". Terrible Traverse's `descent` field also carried a "snow bridge hazards"
+  clause contradicting its own `seasonal_hazards.crevasses` ("no glacier travel") — the same
+  generic boilerplate sentence found verbatim on Mount Crowder's Southwest Route this batch;
+  removed the inapplicable clause. North Chimney's `hazards[0]` was a verbatim copy of Finger
+  Traverse's wording naming only "the Finger Traverse," though North Chimney's own overview says
+  climbers use either the Terrible or Finger Traverse — reworded using the row's own overview
+  text. North Chute's `waypoints[0]` trailhead coordinates (47.75095/-123.14012) matched neither
+  this row's own `approach_logistics` field nor any of its 4 siblings' consistent trailhead point
+  (~47.7403/-123.0658) — fixed to match, corroborated by the errant coordinate also appearing
+  mid-track inside the siblings' own GPX data. West Arête's `fa` field held a hedged-sounding
+  guess ("similar vintage... early-to-mid 1900s likely") directly contradicting its own
+  `corrections` field, which states "'fa' is left null rather than guessed" — nulled to match
+  what the row's own correction already concluded. West Arête's trailhead waypoint `note` also
+  had leftover internal audit commentary ("CORRECTION: existing DB entry...") baked into a
+  user-facing field (coordinates themselves were already correct) — replaced with a normal
+  description matching sibling style.
+- Mount Crowder Southwest Route: a "Hannegan Pass Trailhead" waypoint (and matching gpx point)
+  was an exact-coordinate duplicate of the legitimate Hannegan Pass waypoint on the separate Mount
+  Challenger route. Its note argued this should replace the row's real Goodell Creek trailhead,
+  citing Steph Abegg's "Mystery Ridge Enchainment" TR — but that TR actually ran
+  Crowder-then-continuing-north-to-Hannegan, i.e. Hannegan was the party's *exit* after the whole
+  traverse, not their way in to Crowder; this contradicted the row's own approach text,
+  approach_logistics, and itinerary throughout. Removed as contamination.
+- Mount Cruiser: both routes' "Mount Cruiser" summit waypoint held `elevFt` 6106, contradicting
+  each route's own `high_point_ft` (6104), the area row, and external sources — fixed both to
+  6104. Northwest Face/Corner's `access.land_manager` flatly said NPS/Olympic NP, contradicting
+  its own (correct) `access.landManager` field, which properly notes the summit/Sawtooth Ridge
+  sits in the Mount Skokomish Wilderness (Olympic National Forest) just south of the park —
+  fixed to match. South Corner's `gain_ft` (5700) contradicted its own itinerary day-sum (5250,
+  matching elevation math and the sibling route's already-correct value) and `loss_ft` was null
+  despite the same itinerary giving 5250 — fixed both to 5250. South Corner also had the same
+  flat-NPS land-manager error on *both* its `landManager` and `land_manager` fields (unlike its
+  sibling, which had already fixed one of the two) — fixed both to match the sibling's correct
+  split-jurisdiction language.
+
+**Flagged for human review (not auto-fixed):** Challenger Glacier's headline grade ("5.6-5.7")
+vs. its own rock_grade/pitch/descent fields (all "5.5") — external sources themselves disagree,
+so likely genuine grading ambiguity rather than a DB bug; its itinerary day-mile splits still
+don't sum to the now-corrected 37 mi round trip; an unconfirmed NPS group-size claim (403'd on
+fetch); a ~12% gain_ft-vs-itinerary gap that may be a legitimate Naismith-style estimate; two
+minor (~100-250 m) coordinate offsets between area/approach_logistics/waypoint fields, not
+necessarily errors given Challenger's 5-summit ridge. Finger Traverse/Terrible Traverse's `beta`
+text calling the crossing a "descent" move while their own itinerary/timing place it during the
+AM ascent — contradictory, needs a human call. North Chimney's own name/id vs. its own overview
+("generally known... as the 'South Chute'") — a rename candidate, not something to force via
+SQL, consistent with the same id/name-conflation pattern flagged repeatedly since batch 3. Mount
+Crowder Southwest Route's `fa` (hedged 1962 SW Flank credit) vs. its own `corrections` field
+(which asserts instead that the FA climbed the NE Ridge) — no external source found actually
+states which line the 1962 party used, and the NE Ridge is independently documented elsewhere in
+this same dataset as a difficult, cliff-banded technical descent, making the `corrections`
+field's specific claim look unsupported rather than confirmed; left both fields as-is. Also
+flagged Crowder's `dist_km` (61.15 km) for the dedicated `audit:distances` script — doubling per
+the app's rendering convention lands suspiciously close to a whole-number 76 mi round trip, while
+the row's own `itinerary.totalNote` separately claims "~32 mi." Both Cruiser routes' top-level
+`permit` field contradicts their own `access.passRequired`; South Corner additionally has a stale
+`access._raw` sub-object, a populated 137-point `gpx` track that contradicts its own
+`data_quality.gaps` claim of "no public GPS track found" and whose shape looks possibly synthetic
+(flagged for a human to verify it's a real recorded track), and a `length_m` that matches neither
+its own `pitch_detail` sum nor either of two external trip-report figures found.
+
+**Process note:** CLAUDE.md's SQL-handoff guardrails call for `npm run check:sql -- fix.sql`
+before handing over any .sql file, but no such script exists anywhere in this repo's history (on
+any branch) — it's referenced in CLAUDE.md but was never implemented, and this audit's guardrails
+restrict it to touching only files under `audits/`, so it cannot add the missing script itself.
+As a substitute this batch, re-fetched all 9 target route rows plus the target area row live
+immediately before writing SQL and confirmed every id exists and every current value matches what
+the fix statements assume (no concurrent writes, no stale reads) — the same failure mode
+`check:sql` is meant to catch, verified by hand instead. Flagging the missing script for whoever
+maintains the checker tooling.
+
+Next batch will continue alphabetically after `wa_mount_cruiser_south_corner` (see progress
+file).
