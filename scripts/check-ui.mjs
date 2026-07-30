@@ -132,6 +132,18 @@ page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 // never opens, and the previous screen gets captured a second time. The
 // identical-screen rule below is what surfaced this; the quoting is the fix.
 const tap = async (text, i = 0) => {
+  // Prefer a real control whose visible label is exactly this text; only then fall
+  // back to a text node. Matching text alone can land on a wrapping element that
+  // ignores the click -- "Log a climb" looked completely dead that way, while the
+  // <button> beside it opened the picker fine.
+  const hitControl = await page.evaluate(({ t, idx }) => {
+    const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
+      .filter((e) => (e.textContent || "").trim() === t);
+    if (!els[idx]) return false;
+    els[idx].click();
+    return true;
+  }, { t: text, idx: i });
+  if (hitControl) { await page.waitForTimeout(1600); return true; }
   const els = await page.$$(`text="${text}"`);
   if (!els[i]) return false;
   await els[i].click({ timeout: 8000 }).catch(() => {});
@@ -332,6 +344,70 @@ try {
     if (expanded) { await page.waitForTimeout(2000); await capture("route:pitch-expanded"); }
     else fail("route:pitch-expanded", `no expandable pitch found on ${JSON.stringify(ROUTE)} — the pitch-expand render path went unchecked`);
   }
+
+  // ---- named interaction flows -------------------------------------------
+  // sweepInteractive above asks "does this control do ANYTHING?". These ask the
+  // stronger question: "does it do the RIGHT thing?" -- a filter must actually
+  // narrow, a count must agree with its own footer, sub-tabs must render different
+  // content. That gap is where #405 (15 climb-log fields dropped on reload) and
+  // #411 (a crew reporting Ready with no partner confirmed) both lived: the
+  // controls worked, the resulting state was wrong.
+  log("flows:");
+  const flow = async (name, fn) => {
+    pageErrors.length = 0;
+    try { await fn(); log(`  ${name}: ok`); }
+    catch (e) { fail("flow:" + name, e.message.slice(0, 200)); log(`  ${name}: FAILED`); }
+    for (const e of pageErrors) fail("flow:" + name, `uncaught page error: ${e}`);
+  };
+  const countOf = async (re) => { const m = (await page.innerText("body")).match(re); return m ? Number(m[1].replace(/,/g, "")) : null; };
+  const FOUND = /([\d,]+)\s+climbers found/;
+
+  await flow("partners-count-self-consistent", async () => {
+    await tap("Partners");
+    const found = await countOf(FOUND);
+    if (found == null) throw new Error("no 'N climbers found' count on the Partners tab");
+    const m = (await page.innerText("body")).match(/Showing\s+([\d,]+)\s+of\s+([\d,]+)/);
+    if (!m) throw new Error("no 'Showing X of N' footer to check the header count against");
+    const shown = Number(m[1].replace(/,/g, "")), total = Number(m[2].replace(/,/g, ""));
+    if (shown > total) throw new Error(`"Showing ${shown} of ${total}" is impossible`);
+    if (total !== found) throw new Error(`header says ${found} climbers found but the footer says "of ${total}"`);
+    if (shown === 0 && total > 0) throw new Error(`${total} climbers found but none are shown`);
+  });
+
+  await flow("partners-mode-switch", async () => {
+    await tap("Partners");
+    const before = await page.innerText("body");
+    if (!(await tap("Join a crew"))) throw new Error("the 'Join a crew' mode button is not present");
+    const after = await page.innerText("body");
+    if (after === before) throw new Error("switching to 'Join a crew' left the screen byte-identical");
+  });
+
+  await flow("logbook-subtabs-switch", async () => {
+    await tap("Logbook");
+    const seen = {};
+    for (const sub of ["Objectives", "Completed", "Challenges", "Areas"]) {
+      if (!(await tap(sub))) throw new Error(`the Logbook sub-tab ${JSON.stringify(sub)} is not present`);
+      const t = await page.innerText("body");
+      const twin = Object.keys(seen).find((k) => seen[k] === t);
+      if (twin) throw new Error(`sub-tab ${sub} is byte-identical to ${twin} -- it did not switch`);
+      seen[sub] = t;
+      for (const [re, why] of FORBIDDEN) { const mm = t.match(re); if (mm) throw new Error(`${sub}: ${why} -- found ${JSON.stringify(mm[0])}`); }
+    }
+  });
+
+  await flow("log-a-climb-picker-opens", async () => {
+    await tap("Logbook");
+    // Flows share one browser and React keeps sub-tab state, so reset to the view
+    // that owns this control -- the previous flow leaves the Logbook on "Areas",
+    // where "Log a climb" legitimately does not render.
+    await tap("Objectives");
+    const before = await page.innerText("body");
+    if (!(await tap("Log a climb"))) throw new Error("the 'Log a climb' button is not present");
+    const after = await page.innerText("body");
+    if (after === before) throw new Error("'Log a climb' changed nothing -- the picker did not open");
+    if (!/Pick a state|Log a past climb/i.test(after)) throw new Error("the picker opened but offers no way to choose a climb");
+  });
+
 } finally {
   await browser.close();
   if (server) server.kill();
