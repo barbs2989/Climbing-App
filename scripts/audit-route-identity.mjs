@@ -316,7 +316,26 @@ console.log("");
 // mechanism by which the value travelled in the first place.
 // 7150 or 12.55 is a measurement; 4500 or 10 is a guess many peaks can share honestly.
 // Round figures are still reported, but ranked below the specific ones.
-const isRound = v => (Number.isInteger(v) ? v % 100 === 0 : Number.isInteger(v * 10));
+//
+// Roundness has to be judged in the unit the figure was WRITTEN in, not the unit it
+// happens to be stored in. length_m and dist_km hold metric values converted from
+// imperial sources, so "1,000 ft" is stored as 305 and "25 mi" as 40.23 — both of which
+// look like precise measurements to a metric-only test. That mislabelled 36 of 41
+// findings as high-signal and buried the two that were real. Two routes both described
+// as "about 1,000 ft" is a coincidence, not contamination.
+const nearMultiple = (v, step, tol) => Math.abs(v / step - Math.round(v / step)) * step <= tol;
+// Only the metric columns need the second opinion; gain_ft, loss_ft and high_point_ft
+// are already stored in the unit they were written in.
+const ROUND_AS_SOURCED = {
+  length_m: v => nearMultiple(v * 3.28084, 50, 2),        // whole 50 ft, ±2 ft of rounding slop
+  // Whole/half miles, and whole/half kilometres — dist_km is small enough that the
+  // %100 rule below (calibrated for feet) never fires on a legitimately round figure.
+  dist_km: v => nearMultiple(v / 1.609344, 0.5, 0.05) || nearMultiple(v, 0.5, 0.02),
+};
+const isRound = (v, col) => {
+  if (Number.isInteger(v) ? v % 100 === 0 : Number.isInteger(v * 10)) return true;
+  return ROUND_AS_SOURCED[col] ? ROUND_AS_SOURCED[col](v) : false;
+};
 const numericContam = [];
 for (const col of NUMERIC) {
   const groups = new Map();
@@ -333,7 +352,7 @@ for (const col of NUMERIC) {
     if (PLACEHOLDER.test(nm)) continue;
     numericContam.push({ column: col, name: nm, value: Number(val),
                          peaks: new Set(rs.map(r => r.area_id)).size,
-                         round: isRound(Number(val)), routes: rs.map(r => r.id),
+                         round: isRound(Number(val), col), routes: rs.map(r => r.id),
                          peakNames: [...new Set(rs.map(r => (areas.get(r.area_id) || {}).name))] });
   }
 }
