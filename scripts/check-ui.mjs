@@ -30,6 +30,7 @@
 
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
+import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -117,13 +118,53 @@ async function waitForServer(url, tries = 60) {
   return false;
 }
 
+// Claim a port we can actually bind, rather than assuming 5190 is ours.
+//
+// This check used to spawn vite with --strictPort on a hardcoded 5190 and then poll
+// the URL until *something* answered. When another process already held the port,
+// vite exited and the poll was satisfied by the squatter -- so the run silently drove
+// a different checkout. That is how it happened: a leaked dev server from a parallel
+// background job's worktree, running with .env present, served its own branch in DB
+// mode while this check believed it was testing seed data here. It failed on a route
+// name that only differs between the two catalogs ("West Slabs" vs "The West Slabs"),
+// which reads as a real defect and is not one.
+//
+// A false failure is the benign half. The same squatter can serve a page that passes,
+// and then the check reports green for code it never loaded.
+//
+// Several jobs run in this repo at once, so refusing to start on a busy port would
+// just move the problem. Take the next free one instead.
+async function claimPort(start, span = 40) {
+  for (let p = start; p < start + span; p++) {
+    const free = await new Promise((resolve) => {
+      const probe = net.createServer();
+      probe.once("error", () => resolve(false));
+      probe.once("listening", () => probe.close(() => resolve(true)));
+      probe.listen(p, "127.0.0.1");
+    });
+    if (free) return p;
+  }
+  return null;
+}
+
 let server = null;
 let base = URL_ARG;
 if (!base) {
-  base = `http://127.0.0.1:${PORT}/Climbing-App/`;
-  log(`starting dev server on ${PORT}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
-  if (!(await waitForServer(base))) { console.error("dev server never came up"); server.kill(); process.exit(1); }
+  const port = await claimPort(PORT);
+  if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
+  if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
+  base = `http://127.0.0.1:${port}/Climbing-App/`;
+  log(`starting dev server on ${port}...`);
+  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
+  // --strictPort means vite exits rather than sliding to another port. If it dies,
+  // whatever answers our URL is not ours, so treat its exit as fatal instead of
+  // letting waitForServer be satisfied by a stranger.
+  let died = false;
+  server.on("exit", () => { died = true; });
+  if (!(await waitForServer(base)) || died) {
+    console.error(died ? "the dev server exited during startup — port taken, or vite failed to boot" : "dev server never came up");
+    server.kill(); process.exit(1);
+  }
   // First request compiles a ~1.5MB module; give it room before the browser asks.
   await fetch(base + "ClimbMatch.jsx").catch(() => {});
 }
