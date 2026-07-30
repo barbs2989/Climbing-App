@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_lane_peak_r3",
+  "last_processed_id": "wa_liberty_bell_independence_route",
   "total_in_scope_last_count": 428,
   "total_wa_alpine_or_mountaineering_tagged": 549,
   "batches": [
@@ -374,6 +374,37 @@
         "wa_koala_krack: this row's own `corrections` field already flags that no Mountain Project/SuperTopo page named 'Koala Krack' could be found on Kangaroo Temple; this pass additionally confirmed a same-named 'Koala Rock' formation does exist on Mountain Project but is an unrelated Smith Rock, Oregon crag ('The Marsupials' area) -- a name collision, not evidence of a misplaced route. Grade/FA/area placement left unverified either way.",
         "wa_kololo_peaks_standard: gain_ft (6120) and loss_ft (7000) fail the gain-loss = net-elevation-change identity that holds on this batch's own Kyes Peak route (gain 6023 - loss 707 = 5316 vs actual net 5330) -- here gain-loss = -880 against an implied net one-way climb of +6190 ft (trailhead 2050 ft to high_point_ft 8240 ft). gain_ft is plausible; loss_ft (7000) has no support in the route's own approach/descent text (only minor basin dips described) and no external source states a specific correct figure, so flagged rather than guessed.",
         "wa_lane_peak_r3 (Lover's Lane): grade/grade_system/grade_num are all null unlike its two siblings (Zipper wi3, Fly wi2), despite its own watch_out text referencing 'the moderate AI1 rating' as a baseline that never made it into the grade fields -- and AI1 sits oddly next to this row's own overview calling it the steepest/narrowest of the three couloirs. A Mountain Project page for 'Lover's Lane' exists but its exact grade could not be retrieved this pass -- needs a human with page access or a guidebook."
+      ]
+    },
+    {
+      "batch_number": 18,
+      "date": "2026-07-30",
+      "route_ids": [
+        "wa_le_conte_mountain_northern_aspect",
+        "wa_lemah_mountain_east_route",
+        "wa_lemah_two_goatshead_spire",
+        "wa_lena_lake_to_mt_stone_traverse",
+        "wa_lewis_creek_route",
+        "wa_lexington_tower_east_face",
+        "wa_liberty_and_injustice_for_all",
+        "wa_liberty_bell_beckey_route",
+        "wa_liberty_bell_east_face",
+        "wa_liberty_bell_independence_route"
+      ],
+      "confirmed_errors_fixed": 7,
+      "flagged_for_human_review": 1,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-30-batch-18.sql",
+      "note": "Liberty Bell East Face was the standout find: its header facts (FA, pitches, grade) were a verbatim copy of neighboring Lexington Tower East Face (the row's own face field literally said \"East Face (Lexington Tower)\"), while its own pitch_detail/descent_text/itinerary consistently described a different, shorter 4-pitch 5.6 line that actually stays on Liberty Bell -- fixed the header fields to match the row's own correct pitch data, left fa NULL rather than guess. Le Conte Mountain and Mount Stone traverse both had the same Dome-Peak-family contamination pattern from batch 8 (wrong ranger district/trailhead/corridor bleeding into access sub-fields from an unrelated nearby drainage). Gunn Peak and Lexington Tower each had internal waypoint/gain-loss/rappel-vs-descent-text self-contradictions resolved from the rows' own other fields. Three Liberty Bell routes had a county-straddle field disagreeing with the area row and, on two of them, with the row's own emergency.notes.",
+      "flags": [
+        "wa_lexington_tower (area): Wikipedia lists parent peak as Early Winters Spires, not the stored Liberty Bell -- no Early Winters Spires area row available this batch to confirm the target id; needs a human to confirm before writing per this repo's documented id-guessing incident history.",
+        "wa_le_conte_mountain_northern_aspect: waypoints array looks incomplete (two near-duplicate \"Cascade Pass\" entries, no return-leg points between them).",
+        "wa_lemah_mountain_east_route: two waypoints appear geographically displaced ~5-6 miles from the route line; cited CalTopo source not fetchable this pass.",
+        "wa_lemah_two (area): coordinates sit just north of Lemah Mountain's main summit, but sources place Lemah Two south/southwest of it -- possible USGS-quad mislabeling, this massif has a documented history of exactly that.",
+        "wa_lena_lake_to_mt_stone_traverse: a waypoint leg's stored distMi is geometrically impossible (shorter than the two points' own straight-line distance) -- can't tell if the coordinate or the distance is wrong without map access.",
+        "wa_lewis_creek_route: row's own verif.status/corrections already flag it may be a name-derived duplicate of the standard Gunn Peak route rather than a distinct line; also even the internally-corrected gain/loss (5200/5200) runs higher than any external source found (~3,937-4,380 ft).",
+        "wa_lexington_tower_east_face: notch waypoint elevation (7,621 ft) exceeds the peak's own confirmed summit elevation (7,560 ft) despite the route's text saying it tops out below the true summit -- internally consistent but geometrically impossible; can't isolate which field is wrong without a topo.",
+        "wa_liberty_bell_east_face / wa_liberty_and_injustice_for_all: both routes' own approach/road fields describe an SR-20 pullout approach while their own waypoints/gpx point to Blue Lake Trailhead -- internally split, no independent beta found to arbitrate."
       ]
     }
   ]

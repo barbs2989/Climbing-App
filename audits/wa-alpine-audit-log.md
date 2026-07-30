@@ -1077,3 +1077,99 @@ matches peakery.com exactly and is internally consistent between the area and ro
 — left alone as ordinary source variance for an unofficial/unsurveyed summit.
 
 Next batch will continue alphabetically from `wa_lane_peak_r3` (see progress file).
+
+---
+
+## 2026-07-30 — Pass 1, Batch 18
+
+Checked 10 routes across 7 peaks: Le Conte Mountain (Northern Aspect), Lemah Mountain
+(East Route) and Lemah Two (Goatshead Spire), Mount Stone (Lena Lake to Mt Stone
+traverse), Gunn Peak (Lewis Creek Route), Lexington Tower (East Face), and all four
+in-scope Liberty Bell Mountain routes (Liberty and Injustice for All, Beckey Route, East
+Face, Independence Route).
+
+**Confirmed errors fixed (see `audits/sql/2026-07-30-batch-18.sql`):**
+- Le Conte Mountain Northern Aspect: `access.land_manager`/`parking_pass`/`passRequired`
+  all carried Darrington Ranger District / Mountain Loop Highway / Downey Creek
+  Trailhead references — the Suiattle River drainage corridor used for Dome Peak, not
+  this route's actual Cascade River Road/Marblemount approach. Same contamination family
+  as batch 8's Dome Peak fix. Also fixed `climate.forecastZone` ("Washington Pass East
+  Slopes zone", an unrelated east-of-crest location) to the correct West Slopes North.
+- Mount Stone traverse: `access._raw.special_requirements` stated the standard
+  Putvin-only route's ~5,000 ft gain figure instead of this full traverse's own
+  ~9,000 ft (matching its own `gain_ft` and Mountain Project's page for this exact
+  route); `parking_pass`/`_raw.parking_pass_required` omitted the Northwest Forest Pass
+  needed at Lena Lake Trailhead (the route's actual start), even though the row's own
+  waypoint #1 already had it right.
+- Gunn Peak Lewis Creek Route: two waypoint elevations (trailhead 2400→2200,
+  summit 6240→6244) contradicted the row's own approach text/`high_point_ft`/area row;
+  `gain_ft` (4900) contradicted `loss_ft` and the row's own itinerary (both 5200);
+  `access.notes` claimed Gunn Peak "sits outside designated wilderness," directly
+  contradicting this same row's own `wilderness_zone_name` field and overview text —
+  Gunn Peak is the Wild Sky Wilderness's highest point.
+- Lexington Tower East Face: `alpine_grade`/`commitment` said III, should be IV per
+  multiple independent sources (Mountaineers.org, SummitPost, Mountain Project,
+  chossclimbers) all citing "Grade IV... eight pitches"; `rappels` described a
+  non-standard 7-rap descent as if standard, contradicting the row's own `descent_text`;
+  a stale `data_quality.gaps` entry said the 1966 FA year was unverified when `fa`
+  already had it; `access._raw.seasonal_closures` said SR-20 typically closes
+  "mid-November," contradicting the row's own `access.seasonal` field and WSDOT data
+  (early December).
+- **Liberty Bell East Face — most significant find this batch.** The row's own `face`
+  field literally read "East Face (Lexington Tower)", and its `fa`/`pitches`/
+  `rock_grade`/`grade_num` were a verbatim copy of Lexington Tower's East Face (Marts &
+  McPherson, June 1966, 5.9+, ~10 pitches) — a different, neighboring formation. This
+  row's own `pitch_detail` (4 pitches summing to 125m, crux 5.6), `descent_text`, and
+  `itinerary` all consistently describe a shorter, easier line that actually stays on
+  Liberty Bell. Fixed the header fields to match the row's own already-correct
+  pitch-by-pitch data; `fa` left NULL (no source found for this specific short line)
+  rather than guessed, with a `corrections` note and `data_quality` gap added to explain.
+- Liberty Bell (3 routes): `emergency.county` disagreed both with the area row/Beckey
+  Route (which correctly say the summit straddles Chelan/Okanogan) and, on two of the
+  three, with the row's own `emergency.notes` field, which already admitted the
+  straddle. Aligned East Face, Independence Route, and Liberty and Injustice for All to
+  the confirmed county straddle.
+- Liberty Bell Independence Route and Liberty and Injustice for All: both had
+  `itinerary`/`timing` day-1 notes describing the wrong face/descent — Independence
+  Route's said "west face" against its own `face`/`aspect`/overview (all East Face);
+  Liberty and Injustice's said a generic "Beckey descent" against its own specific
+  two-rope P3→P1 rappel description in `descent_text`/`rappel_detail`. Both rewritten to
+  match each row's own already-correct structured fields.
+
+**Flagged for human review (not auto-fixed):**
+- Lexington Tower's own `parent_peak` is stored as Liberty Bell, but Wikipedia's
+  infobox lists Early Winters Spires — no "Early Winters Spires" area row was available
+  this batch to confirm the target id, and per this repo's documented history of
+  id-shaped guesses causing damage, left for a human to confirm the id first.
+- Le Conte Mountain: an incomplete-looking `waypoints` array (two near-duplicate
+  "Cascade Pass" entries with no return-leg points between them).
+- Lemah Mountain East Route: two waypoints appear geographically displaced ~5-6 miles
+  from the actual route line, contradicting the row's own beta text; no confident
+  replacement coordinates found (cited CalTopo source not fetchable this pass).
+- Lemah Two (area): its coordinates sit just north of Lemah Mountain's main summit,
+  but route descriptions place Lemah Two south/southwest of Main Peak — possibly the
+  same kind of USGS-quad mislabeling this massif has a documented history of.
+- Mount Stone traverse: a waypoint leg's stored `distMi` (0.5 mi) is geometrically
+  impossible against the two waypoints' own coordinates (~1.02 mi straight-line) — can't
+  tell whether the coordinate or the distance is the actual error without map access.
+- Gunn Peak: the row's own `verif.status`/`corrections` fields already flag that "Lewis
+  Creek Route" may not be a distinct line from the modern standard Gunn Peak approach —
+  possible name-derived duplicate, needs a human check. Also, even the corrected
+  gain/loss (5200/5200) runs higher than any external source's reported figure
+  (~3,937-4,380 ft) for this peak.
+- Lexington Tower: a notch waypoint elevation (7,621 ft) exceeds the peak's own
+  confirmed summit elevation (7,560 ft) despite the route's own text saying it tops out
+  below the true summit — internally self-consistent (trailhead + gain_ft = notch elev)
+  but geometrically impossible; can't tell which single field is wrong without a topo.
+- Liberty Bell East Face and Liberty and Injustice for All: both routes' own
+  `approach`/`road` fields describe an SR-20 pullout approach while their own
+  `waypoints`/`gpx` point to Blue Lake Trailhead — internally split, no independent beta
+  found online for either obscure line to arbitrate.
+
+**Clean (no errors found):** Lemah Two Goatshead Spire (FA, elevation, and approach all
+independently corroborated, correctly kept distinct from the massif's Main Peak) and
+Liberty Bell's Beckey Route (FA, grade, pitch data, county note, and permit/closure info
+all check out).
+
+Next batch will continue alphabetically after `wa_liberty_bell_independence_route` (see
+progress file).
