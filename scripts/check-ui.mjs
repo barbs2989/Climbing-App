@@ -270,6 +270,7 @@ async function sweepInteractive(tab) {
     // reports working toggles as dead AND leaves the app wedged for the phases
     // after this one. A reload is the only reset that is actually total.
     await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await waitForApp(60000);
     await page.waitForTimeout(2500);
     await tap(tab);
     // Replay what we already opened, so disclosures nested inside another one
@@ -316,9 +317,29 @@ async function capture(name) {
   log(`  ${name}: ${text.length} chars`);
 }
 
+// A fixed sleep after goto is not always enough: on a cold or heavily loaded
+// machine (several parallel jobs each running their own vite), the first
+// transform can outlast it, and tap() fails fast with no retry — so a page that
+// is still blank at the first tap reports every screen "unreachable" within
+// seconds, twelve failures deep, when the real story is one line: the app never
+// rendered. Poll for the bottom nav before any phase proceeds, and say that one
+// line if it never shows.
+async function waitForApp(timeoutMs) {
+  const t0 = Date.now();
+  while (Date.now() - t0 < timeoutMs) {
+    const up = await page.evaluate(() =>
+      [...document.querySelectorAll('button,[role="button"]')].some((e) => (e.textContent || "").trim() === "Home")
+    ).catch(() => false);
+    if (up) return true;
+    await page.waitForTimeout(1000);
+  }
+  return false;
+}
+
 try {
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
-  await page.waitForTimeout(3500);
+  if (!(await waitForApp(120000))) { console.error("the app never rendered its nav bar — nothing below can be checked"); if (server) server.kill(); process.exit(1); }
+  await page.waitForTimeout(2500);
 
   log("main tabs:");
   for (const tab of ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]) {
@@ -336,6 +357,7 @@ try {
   // Tapping a person's name in the Home activity feed: dead from #371 until it
   // was found by a static scan, because a throwing handler is invisible.
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await waitForApp(60000);
   await page.waitForTimeout(2500);
   await tap("Home");
   const feed = (await findDisclosures()).find((t) => /updates?/.test(t));
@@ -355,6 +377,7 @@ try {
   // The sweep above deliberately opens things. Reload so the route phase starts
   // from a known state rather than inheriting an open modal.
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await waitForApp(60000);
   await page.waitForTimeout(3000);
 
   log(`route detail (${USE_DB ? "DB" : "seed"} catalog, sample: ${ROUTE}):`);

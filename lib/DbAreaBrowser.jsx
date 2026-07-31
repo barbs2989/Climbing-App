@@ -21,7 +21,15 @@ const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
 const ATYPE = { world: "World", country: "Country", state: "State", range: "Range", canyon: "Canyon", peak: "Peak", crag: "Crag", region: "Region", wall: "Wall" };
 const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ranges", region: "Areas", wall: "Areas", state: "States", country: "Countries" };
-const DISCIPLINES = [["", "All"], ["sport", "Sport"], ["trad", "Trad"], ["bouldering", "Boulder"], ["alpine", "Alpine"], ["ice", "Ice"], ["mountaineering", "Mountaineering"], ["aid", "Aid"], ["scrambling", "Scramble"]];
+// These keys are sent verbatim to routes_in_subtree, which filters on the raw
+// `routes.discipline` column (`r.discipline = disc`) — so a discipline with no
+// entry here is unreachable by any filter, however well the rest of the app
+// understands it. "rock" (7,444 rows) and "mixed" (59) were both missing:
+// "rock" is what the catalog stores when the source never split sport from trad,
+// and the route rows already title-case it to "Rock", so filtering by Rock now
+// matches the label the list shows. It is deliberately not folded into Trad —
+// there is no `style` column in the DB to tell the two apart.
+const DISCIPLINES = [["", "All"], ["sport", "Sport"], ["trad", "Trad"], ["rock", "Rock"], ["bouldering", "Boulder"], ["alpine", "Alpine"], ["ice", "Ice"], ["mixed", "Mixed"], ["mountaineering", "Mountaineering"], ["aid", "Aid"], ["scrambling", "Scramble"]];
 
 function haversineMi(a, b) {
   const R = 3958.8, toRad = d => d * Math.PI / 180;
