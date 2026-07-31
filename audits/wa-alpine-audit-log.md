@@ -2481,3 +2481,107 @@ Ridge/PCT route (elevation, approach, Cowlitz Valley RD land manager, and the De
   still open this pass, left as a standing (not new) flag.
 
 Next batch will continue alphabetically after `wa_olympus_traverse` (see progress file).
+
+## 2026-07-31 — Pass 1, Batch 38
+
+Seven peaks, 8 routes: Open Book (Unicorn Peak); Southeast Route and West Ridge
+(Ottohorn); Southeast Route (Overcoat Peak); Standard Rock Route (Pernod Spire); South
+Route (Phantom Peak); Point Success via Success Cleaver (Point Success); and the route
+literally named "Poltergeist Pinnacle," which turns out to be filed under Mount
+Challenger's `area_id` rather than the separate Poltergeist Pinnacle area.
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-38.sql` (5, touching 3 routes):**
+- Ottohorn Southeast Route: `fa` credited Twin Needles' August 17, 1932 first ascent
+  (Degenhardt/Martin/Strandberg) — a different Southern Pickets formation entirely. This
+  same row's own `overview` field and the `wa_ottohorn` area's own `blurb` already
+  correctly describe Ottohorn's real FA (Cooper/Denny/J. Firey/G. Firey/Whitmore, Sept 10
+  1961, via the east ridge from the Ottohorn-Himmelhorn col), independently corroborated
+  by AAC Publications and an Alpinist obituary for George Whitmore. Corrected to match.
+- Ottohorn Southeast Route: the "Ottohorn summit" waypoint's `elevFt` (7640) was the sole
+  outlier against this same row's own `high_point_ft`, the area's `elevation_ft`, and
+  external corroboration (all 7840). Fixed to 7840.
+- Overcoat Peak Southeast Route: `access.land_manager` named Okanogan-Wenatchee NF,
+  which has no jurisdiction over this route's Dingford Creek/Middle Fork Snoqualmie
+  approach — contradicted by this row's own more specific `access.landManager`/
+  `emergency.rangerStation` (both correctly Mt. Baker-Snoqualmie NF, Snoqualmie RD) and
+  USFS's own trailhead page. Same wrong-ranger-district pattern as batches 4/5/8/12/37.
+- Overcoat Peak Southeast Route: `access.parking_pass` cited Salmon La Sac, Pete Lake and
+  Necklace Valley — three unrelated east-side/Skykomish trailheads this route never
+  uses — contradicting this row's own `access.fees`, which correctly discusses only the
+  Dingford Creek Trailhead. Boilerplate copy-paste from unrelated trailheads; replaced.
+- Pernod Spire Standard Rock Route: the "Burgundy Col" waypoint's `note` was a leaked
+  internal-research artifact ("Reused coordinate from this session's own Vasiliki Tower
+  research...") — the same session-leak pattern already fixed on Northwest Mox Peak
+  (batch 36) and Dragontail's Serpentine Arete (batch 19). The coordinate itself was
+  already correct (matches the same real col on sibling route `wa_south_face` under
+  `wa_vasiliki_tower`); only the note text was replaced.
+
+**No confirmed errors, but not fully clean — one flag apiece (see below):** Unicorn
+Peak's Open Book (elevation, grade, pitch length, and the route's own correct Rainier
+Climbing Cost Recovery Fee exemption — non-glaciated, below 10,000 ft — all
+independently corroborated; only the trailhead elevation is unresolved). Ottohorn's West
+Ridge (a sparsely-documented 2017 FA line; the thread title/date citation matches the
+real Cascade Climbers thread found via search, and every shared field agrees with the
+sibling Southeast Route; only the underlying trip report itself was unreachable to
+confirm no further beta exists). Point Success via Success Cleaver ($82 Climbing Cost
+Recovery Fee and current NPS parking rates confirmed correct, and — unlike the Unicorn
+Peak/Tatoosh routes audited alongside it this batch — correctly triggered since Point
+Success sits above the glacier/10,000 ft threshold; only the stored GPX/trailhead
+mismatch is unresolved). No route this batch was 100% issue-free.
+
+**Not fixed — flagged findings downgraded after direct verification:** two of this
+batch's research findings did not survive a second look against the live data and were
+NOT applied, which is itself worth recording. Phantom Peak's South Route was proposed to
+have its `approach_logistics.trailhead` corrected from "Nooksack Cirque Trailhead" to
+Hannegan Pass — but the row's own `waypoints`/`gpx`/most of its `approach` text actually
+describe a *third*, different approach (Ross Lake water taxi → Big Beaver Trail → Luna
+Camp → Luna Creek bushwhack), while only the `itinerary` and part of the `approach` text
+describe Hannegan Pass. The row genuinely mixes three approach narratives across four
+fields; patching just `approach_logistics` to Hannegan Pass would have "fixed" one
+contradiction by creating a new one against the waypoints/GPX track. Left flagged, not
+patched. Separately, `wa_poltergeist_pinnacle`'s `pitches`/`length_m` (6/445) were
+proposed to be changed to match its duplicate stub `wa_poltergeist_pinnacle_north_route`
+(4/421) — but the stub's own itemized `pitch_detail` lengths (55+60+60+270m) sum to 445,
+not 421, meaning 445 is actually the internally-consistent figure and the *stub* is the
+one carrying the error. No fix applied to either row this batch (the stub is out of this
+batch's audited-id list); worth a dedicated pass.
+
+**Flagged for human review (7):**
+- Unicorn Peak's Open Book: the "Snow Lake Trailhead" waypoint's `elev` (4400 ft) has
+  genuinely conflicting external sourcing (~4,000 ft per several hiking guides vs. "just
+  above 4,400 ft" per another) — no authoritative NPS figure found, left unresolved.
+- Ottohorn Southeast Route: the route's own "Goodell Creek Trailhead" waypoint/GPX
+  coordinate sits ~0.28 mi from `approach_logistics`' trailhead coordinate — may be two
+  legitimately distinct points on the same short access road rather than an error; no
+  source precise enough to confirm which.
+- Ottohorn West Ridge: the row's central claim (no route beta beyond the 2017 Cascade
+  Climbers trip-report title/date is publicly available) could not be independently
+  confirmed or refuted — the source thread is blocked at this environment's outbound
+  proxy, with no working archive fallback.
+- Pernod Spire Standard Rock Route: `rock_grade`/`grade`/`beta`/`corrections` describe
+  Pernod's easier line, but `overview`/`pitch_detail`/`rappel_count_note` all describe
+  the harder historic FA "South Face (5.9 A0)" line instead — apparent cross-
+  contamination between two distinct routes on the same spire (a sibling `wa_south_face_2`
+  row already exists). Could not find a pitch-by-pitch source to determine which fields
+  belong on which row; left unresolved rather than guess.
+- Pernod Spire Standard Rock Route: `dist_km` (9.66) appears to already be a round-trip
+  figure (matches the row's own itinerary mileage almost exactly) rather than the
+  one-way convention the app is documented to double for display — per standing
+  guidance, not normalized on a single row without a DB-wide pass.
+- Point Success via Success Cleaver: the row's prose (`approach`, `itinerary.sourceNote`)
+  describes the Longmire/Wonderland Trail approach — the only remaining approach per an
+  outside source, since the Tahoma Creek Trail closed — but the stored `gpx` track and
+  final `waypoints` entry both start from the closed Tahoma Creek/Westside Road gate
+  instead, with a waypoint note that contradicts the rest of the row. Needs a real
+  Longmire-based GPX track, not a one-field patch.
+- `wa_poltergeist_pinnacle` (route on Mount Challenger's `area_id`): strong evidence
+  (matching FA, matching grade, and the separate `wa_poltergeist_pinnacle` area's own
+  blurb naming this exact FA/grade as its "sole recorded technical route") suggests this
+  route belongs under the distinct `wa_poltergeist_pinnacle` area instead, where a
+  thinner duplicate (`wa_poltergeist_pinnacle_north_route`) already exists for the same
+  climb. Not fixed: moving `area_id` would collide with the existing duplicate rather
+  than resolve it, and needs a human merge decision (which record is canonical, whether
+  the surviving row needs a peak-scoped id) rather than a single UPDATE — see CLAUDE.md's
+  Triple Couloirs precedent for why area_id changes aren't made on inference alone.
+
+Next batch will continue alphabetically after `wa_poltergeist_pinnacle` (see progress file).

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_olympus_traverse",
+  "last_processed_id": "wa_poltergeist_pinnacle",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -842,6 +842,34 @@
       "flags": [
         "wa_nw_ridge_2 (Colchuck Balanced Rock, NW Ridge): pitches is stored as 0, contradicting the row's own overview/hazards text describing 'a few pitches of low 5th class... up to 5.6' plus a documented rappel on descent -- real roped multi-pitch climbing, not an unroped scramble. The cited source (Steph Abegg's trip report) 403'd on fetch this pass and no Mountain Project page with an exact pitch count was found; 'a few' isn't specific enough to assign a number, so left flagged rather than guessed.",
         "wa_old_guard_peak_southwest_route: the row's own data_quality.gaps field already documents an unresolved route-naming ambiguity between its name/approach text ('Southwest Route' / 'southwest side') and its own face/aspect fields (both NW) -- re-confirmed still open this pass, left as-is per the row's own existing flag rather than re-flagged as new."
+      ]
+    },
+    {
+      "batch_number": 38,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_open_book_2",
+        "wa_ottohorn_southeast_route",
+        "wa_ottohorn_west_ridge",
+        "wa_overcoat_peak_southeast_route",
+        "wa_pernod_spire_standard",
+        "wa_phantom_peak_south_route",
+        "wa_point_success_south_side",
+        "wa_poltergeist_pinnacle"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 7,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-31-batch-38.sql",
+      "note": "Seven peaks, 8 routes (Unicorn Peak, Ottohorn x2, Overcoat Peak, Pernod Spire, Phantom Peak, Point Success, and the route literally named 'Poltergeist Pinnacle' filed under Mount Challenger's area_id). Fixed 5 issues across 3 routes: Ottohorn Southeast Route's fa field credited Twin Needles' 1932 FA instead of Ottohorn's own well-documented 1961 FA (already correctly stated in this row's own overview/area blurb) -- corrected; its summit waypoint elevFt (7640) was the sole outlier against high_point_ft/area elevation_ft (7840) -- fixed. Overcoat Peak's access.land_manager and access.parking_pass both carried wrong-ranger-district/wrong-trailhead contamination (Okanogan-Wenatchee NF and Salmon La Sac/Pete Lake/Necklace Valley, none applicable to this Dingford Creek route) contradicting the row's own more specific fields -- same pattern as batches 4/5/8/12/37, both fixed. Pernod Spire's Burgundy Col waypoint note was a leaked internal-research artifact referencing 'this session's own Vasiliki Tower research' -- same leak class as batches 19/36, note replaced (coordinate was already correct). Two other proposed fixes were investigated further and NOT applied after direct re-verification: Phantom Peak's approach_logistics.trailhead (proposed Nooksack Cirque -> Hannegan Pass) turned out incomplete -- the row's waypoints/gpx actually describe a third, different approach (Ross Lake/Big Beaver/Luna Creek) not reflected in either candidate value, so patching just one field would trade one contradiction for another; left flagged for a full approach-beta rewrite. wa_poltergeist_pinnacle's pitches/length_m (6/445) were proposed to match its duplicate stub wa_poltergeist_pinnacle_north_route (4/421), but the stub's own itemized pitch_detail lengths (55+60+60+270m) sum to 445 -- meaning 445 is the internally-consistent figure and the stub itself carries the error, not this row; no fix applied to either row this batch. No route this batch was fully issue-free -- every one of the 8 carries at least one open flag.",
+      "flags": [
+        "wa_open_book_2 (Unicorn Peak, Open Book): the 'Snow Lake Trailhead' waypoint elev (4400 ft) has genuinely conflicting external sourcing (~4,000 ft per several hiking guides vs. 'just above 4,400 ft' per another) -- no authoritative NPS figure found.",
+        "wa_ottohorn_southeast_route: the 'Goodell Creek Trailhead' waypoint/GPX coordinate sits ~0.28 mi from approach_logistics' trailhead coordinate -- may be two legitimately distinct points on the same short access road rather than an error.",
+        "wa_ottohorn_west_ridge: the row's central claim (no route beta beyond the 2017 Cascade Climbers trip-report title/date is publicly available) could not be independently confirmed or refuted -- source thread blocked at this environment's outbound proxy, no working archive fallback.",
+        "wa_pernod_spire_standard: rock_grade/grade/beta/corrections describe Pernod's easier line, but overview/pitch_detail/rappel_count_note all describe the harder historic FA 'South Face (5.9 A0)' line instead -- apparent cross-contamination with sibling wa_south_face_2; no pitch-by-pitch source found to resolve which fields belong where.",
+        "wa_pernod_spire_standard: dist_km (9.66) appears to already be round-trip (matches the row's own itinerary mileage almost exactly) rather than the one-way convention the app doubles for display -- not normalized on a single row without a DB-wide pass, per standing guidance.",
+        "wa_point_success_south_side: approach/itinerary.sourceNote describe the Longmire/Wonderland Trail approach (the only remaining approach per an outside source, since Tahoma Creek Trail closed), but the stored gpx track and final waypoints entry both start from the closed Tahoma Creek/Westside Road gate instead, with a waypoint note that contradicts the rest of the row. Needs a real Longmire-based GPX track, not a one-field patch.",
+        "wa_poltergeist_pinnacle (route on Mount Challenger's area_id): strong evidence (matching FA, matching grade, and the separate wa_poltergeist_pinnacle area's own blurb naming this exact FA/grade as its 'sole recorded technical route') suggests this route belongs under the distinct wa_poltergeist_pinnacle area instead, where a thinner duplicate (wa_poltergeist_pinnacle_north_route) already exists for the same climb. Not fixed -- moving area_id would collide with the existing duplicate rather than resolve it; needs a human merge decision, not a single UPDATE."
       ]
     }
   ]
