@@ -698,6 +698,78 @@ file).
 
 ---
 
+## 2026-07-31 — Pass 1, Batch 31
+
+Checked 10 routes across 3 peaks: Mount Seattle (Seattle Creek Basin Route), Mount Sefrit
+(Bloody Head Couloir, Southwest Ridge), Mount Shuksan (Beckey-Schmidtke, Fisher Chimneys,
+Hanging Glacier, North Face, Northwest Arete, Price Glacier, Sulphide Glacier).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-31.sql` (8):**
+- **North Face and Price Glacier (Mount Shuksan)** both had the batch's biggest find: a
+  "Heliotrope Ridge Trailhead" waypoint (48.795,-121.66) — externally confirmed (WTA/USFS)
+  that this is Mount **Baker's** Coleman/Deming Glacier trailhead, an entirely different
+  mountain, contradicting each route's own `approach`/`approach_logistics`/`road` text.
+  Fixed both using already-correct sibling waypoints on the same peak: Hanging Glacier's
+  own prior-corrected "White Salmon Road (hairpin) TH" for North Face, and
+  Beckey-Schmidtke's "Nooksack Cirque Trailhead" for Price Glacier (Beckey-Schmidtke's own
+  approach text explicitly says it shares Price Glacier's trailhead).
+- **Fisher Chimneys** had the same pattern one route over: its "Lake Ann Trailhead" waypoint
+  (48.805,-121.66, 2800 ft) didn't match its own already-correct `approach_logistics`
+  coordinates/elevation (48.8500241,-121.6861633, 4,770 ft) or the externally-confirmed real
+  Lake Ann Trailhead (~4,700 ft, Austin Pass on SR 542) — fixed to match.
+- **Northwest Arete's** `approach`/`approach_logistics` prose described the wrong side of the
+  mountain entirely (Nooksack Cirque Trail, the side shared by Price Glacier/Beckey-Schmidtke)
+  contradicting its own `face`/`road`/`waypoints` fields (all White Salmon side). Confirmed via
+  SummitPost's Northwest Arete page ("begin by parking at the lower White Salmon lodge...
+  following a dirt road up the White Salmon drainage") and rewrote the approach text plus the
+  structured trailhead fields to match.
+- **Fisher Chimneys** also had a real rendering bug, not just a data error: `watch_out` was
+  stored as one newline-joined string instead of a JSON array like every other route.
+  `lib/db.js`'s `toArr()` only splits strings on commas, not newlines (confirmed by reading the
+  app's own parsing code — read-only, no app code touched), so the app would have rendered all
+  12 items as a single run-on bullet. Converted to a proper 12-item JSON array.
+- Confirmed the "Mount Tom area, North Cascades" DB-wide junk clause (first identified in batch
+  15, affecting 35 routes) on 3 more routes this batch (Hanging Glacier, Price Glacier, Sulphide
+  Glacier `access.notes`) and stripped it from all three.
+- **Mount Sefrit Southwest Ridge**: `fa` stored the mountain's 1930 FA (Jim Irving & Brick
+  Spouse), but the row's own `corrections` field already explains this route-level `fa` should
+  be left null since no source confirms the 1930 ascent was specifically this line — the
+  decision was written down but never applied to the column. Cleared to match, same
+  never-propagated-correction pattern as batches 12/15/30.
+- **Mount Seattle Seattle Creek Basin Route**: `grade`/`grade_system`/`grade_num`/`disciplines`
+  were all null despite its own beta text already citing "Route 3, Grade I, Class 3" — the same
+  bug already fixed on this peak's own sibling Noyes Basin Route in batch 30. Filled the same
+  way.
+
+**Externally corroborated, left untouched:** Beckey-Schmidtke's FA (Fred Beckey & Clifford
+Schmidtke, July 5 1946) and Price Glacier's FA (Beckey, Jack Schwabland, Bill Granston, 1945)
+were both independently confirmed (AAC/Alpine Journal 1947 account, Wikipedia). Mount Shuksan
+(9,131 ft) and Nooksack Tower (8,285 ft) elevations both check out exactly against Wikipedia.
+
+**Flagged for human review (3):**
+- Mount Seattle's area `prominence_ft` (758) sits between two external figures found this pass
+  (Wikipedia 726 ft vs. PeakVisor ~768 ft) — not a clear outlier against either and no
+  DB-internal contradiction, so left as-is.
+- `grade_num` handling for Class-4-labeled routes is inconsistent within this single batch:
+  Sefrit's Southwest Ridge stores `grade_num=4` for "Class 4" while Fisher Chimneys and Sulphide
+  Glacier both store `grade_num=0` for their own "Class 4" component. No schema documentation
+  settles which convention is correct, and it isn't a self-contradiction within any one row —
+  left unfixed, worth a dedicated pass to establish the intended DB-wide convention.
+- The recurring alpine_grade-holds-a-Roman-numeral-instead-of-a-French-adjectival-letter bug
+  (flagged in batches 9/19/21/23/25/29) affects 3 of this batch's routes (Beckey-Schmidtke "IV",
+  Price Glacier "IV", North Face "II-III"). Checked available sources for Price Glacier
+  specifically (SummitPost, search snippets of Nelson/Potterfield) and found only NCCS/YDS/ice
+  grades cited, no French adjectival letter — consistent with batch 29's finding that PNW
+  glacier/alpine routes usually aren't assigned one. Left unfixed rather than guess.
+
+**Clean (no errors found):** Bloody Head Couloir (Mount Sefrit) — FA, grades, hazards, and
+approach beta all internally consistent and consistent with available sources.
+
+Next batch will continue alphabetically after `wa_mount_shuksan_sulphide_glacier` (see progress
+file).
+
+---
+
 ## 2026-07-29 — Pass 1, Batch 12
 
 Checked 10 routes across 5 peaks: Forbidden Peak (Northeast Face, Northwest Face, West Ridge),

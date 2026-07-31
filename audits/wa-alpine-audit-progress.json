@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_seattle_noyes_basin",
+  "last_processed_id": "wa_mount_shuksan_sulphide_glacier",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -690,6 +690,32 @@
         "wa_mount_rainier_kautz_headwall: no source found (Mountaineers.org, SummitPost, AAC, NPS) documents a distinct first-ascent party/date for this ice-headwall variation, separate from the standard Kautz Glacier route -- fa left NULL rather than guess.",
         "wa_mount_rainier_liberty_ridge: gain_ft (9708) runs a bit higher than a straight Mowich Lake (4,800 ft) to Liberty Cap (14,112 ft, post-fix) delta (~9,312 ft) would suggest -- plausibly explained by camp-to-camp elevation ups/downs on the approach, but not independently confirmed against a source with a specific gain figure; left as-is.",
         "wa_mount_redoubt_south_face: the route's own `corrections` field (used to source this batch's area elevation fix) also notes a competing 2020s LiDAR re-survey figure of 8,958 ft and calls Mountain Project's listed 8,603 ft implausible -- 8,969 ft (Wikipedia, Peakbagger, PeakVisor, and the route's own high_point_ft) was used as the best-corroborated figure this pass, but a future pass should recheck if the LiDAR figure becomes the more commonly cited one."
+      ]
+    },
+    {
+      "batch_number": 31,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_mount_seattle_seattle_creek",
+        "wa_mount_sefrit_bloody_head_couloir",
+        "wa_mount_sefrit_southwest_ridge",
+        "wa_mount_shuksan_beckey_schmidtke",
+        "wa_mount_shuksan_fisher_chimneys",
+        "wa_mount_shuksan_hanging_glacier",
+        "wa_mount_shuksan_north_face",
+        "wa_mount_shuksan_northwest_arete",
+        "wa_mount_shuksan_price_glacier",
+        "wa_mount_shuksan_sulphide_glacier"
+      ],
+      "confirmed_errors_fixed": 10,
+      "flagged_for_human_review": 3,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-07-31-batch-31.sql",
+      "note": "Three peaks, 10 routes (Mount Shuksan carries 7). Biggest find: a 'Heliotrope Ridge Trailhead' waypoint (48.795,-121.66) contaminated both the North Face and Price Glacier routes -- externally confirmed that's Mount BAKER's Coleman/Deming trailhead, an entirely different mountain, contradicting each route's own approach/approach_logistics/road text. Fixed both using already-correct sibling waypoints on the same peak (Hanging Glacier's corrected White Salmon TH for North Face; Beckey-Schmidtke's Nooksack Cirque TH for Price Glacier, which explicitly states it shares Price Glacier's trailhead). Fisher Chimneys had the same pattern one route over: its 'Lake Ann Trailhead' waypoint (48.805,-121.66, 2800 ft) didn't match its own already-correct approach_logistics coordinates/elevation (48.8500241,-121.6861633, 4770 ft) or the externally-confirmed real Lake Ann TH (~4,700 ft, Austin Pass) -- fixed to match. Northwest Arete's approach/approach_logistics prose described the wrong side of the mountain entirely (Nooksack Cirque Trail, shared with Price Glacier/Beckey-Schmidtke) contradicting its own face/road/waypoints fields (all White Salmon side) -- confirmed via SummitPost's Northwest Arete page ('parking at the lower White Salmon lodge... following a dirt road up the White Salmon drainage') and rewrote the approach text plus fixed the structured trailhead fields. Also fixed a real rendering bug on Fisher Chimneys: watch_out was stored as one newline-joined string instead of a JSON array; lib/db.js's toArr() only splits on commas, not newlines, so the app would render all 12 items as a single run-on bullet -- converted to a proper array, verified by reading the app's own parsing code (read-only; no app code touched). Confirmed the 'Mount Tom area, North Cascades' DB-wide junk clause (first found in batch 15) on 3 more routes (Hanging Glacier, Price Glacier, Sulphide Glacier access.notes) and stripped it. Mount Sefrit's Southwest Ridge had a familiar never-propagated-correction bug: its own `corrections` field already explains fa should be left null since the mountain's 1930 FA isn't confirmed as this specific line, but the fa column still held it -- cleared to match. Mount Seattle's Seattle Creek Basin Route had the same null-top-level-grade-despite-populated-beta bug fixed on its own sibling Noyes Basin in batch 30 -- filled the same way. FA history for Beckey-Schmidtke (Beckey/Schmidtke, July 5 1946) and Price Glacier (Beckey/Schwabland/Granston, 1945) were both independently corroborated externally (AAC/Alpine Journal, Wikipedia) and left untouched.",
+      "flags": [
+        "wa_mount_seattle (area): prominence_ft=758 sits between two external figures found this pass (Wikipedia 726 ft vs. PeakVisor ~768 ft) -- not a clear outlier against either and no DB-internal contradiction found, so left as-is; noting only in case a future pass finds a definitive source.",
+        "wa_mount_sefrit_southwest_ridge / wa_mount_shuksan_fisher_chimneys / wa_mount_shuksan_sulphide_glacier: grade_num handling for Class-4-labeled routes is inconsistent within this single batch -- Southwest Ridge stores grade_num=4 for 'Class 4' while Fisher Chimneys and Sulphide Glacier both store grade_num=0 for their own 'Class 4' component. No schema documentation found settling which convention is correct, and it's not a self-contradiction within any one row, so left unfixed; worth a dedicated pass to establish the intended convention DB-wide.",
+        "wa_mount_shuksan_beckey_schmidtke / wa_mount_shuksan_price_glacier / wa_mount_shuksan_north_face: alpine_grade stores a Roman-numeral NCCS commitment grade ('IV', 'IV', 'II-III') duplicating the `commitment` field, in the column the schema defines as French adjectival (F/PD/AD/D/TD/ED) -- same recurring bug flagged in batches 9/19/21/23/25/29. Checked available sources (Nelson/Potterfield via search, SummitPost) for Price Glacier specifically and found only NCCS/YDS/ice grades cited, no French adjectival letter -- consistent with batch 29's finding that PNW glacier/alpine routes usually aren't assigned one. Left unfixed rather than guess."
       ]
     }
   ]
