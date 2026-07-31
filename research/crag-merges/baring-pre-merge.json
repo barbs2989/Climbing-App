@@ -1,0 +1,2721 @@
+{
+  "fetched_for": [
+    "wa_baring_mountain",
+    "wa_dolomite_tower"
+  ],
+  "areas": [
+    {
+      "id": "wa_baring_mountain",
+      "name": "Baring Mountain",
+      "parent_id": "wa_stevens_pass_region",
+      "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_baring_mountain",
+      "area_type": "peak",
+      "region": "Washington",
+      "lat": 47.779291,
+      "lng": -121.435814,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "One of the steepest peaks in the Cascades, Baring Mountain rises abruptly above the Skykomish River valley near the town of Baring, its immense, notoriously brushy and rotten north-facing wall resisting a completed route to the top until 1960.",
+      "route_count": 4,
+      "source": null,
+      "elevation_ft": 6127,
+      "prominence_ft": 2444,
+      "parent_peak": null,
+      "dominant_discipline": "trad"
+    },
+    {
+      "id": "wa_dolomite_tower",
+      "name": "Dolomite Tower",
+      "parent_id": "wa_mount_baring",
+      "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_baring.wa_dolomite_tower",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 47.77918,
+      "lng": -121.43599,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Dolomite Tower is a roughly 1,300-1,400 ft pillar of compact, fine-grained metamorphic rock jutting off the north side of Mount Baring in the Skykomish River valley of the North Cascades, near Index, WA. It holds several serious Grade IV-VI big-wall-style free routes established mostly in the early-to-late 1990s (Peter Doorish, Bryan Burdo, and partners), of which Bryan Burdo's Vanishing Point (VI 5.12b) is the tower's best-known and most sought-after line. The approach itself is notoriously consequential — steep forested ribs, fixed lines, and roped slab climbing — giving the whole massif a reputation (echoed by Fred Beckey-era accounts) for being as dangerous to approach/descend as it is to climb.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_baring_mountain_oatmeal_man",
+      "area_id": "wa_baring_mountain",
+      "name": "Oatmeal Man",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 11,
+      "pitches": 14,
+      "length_m": 792,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Paul Woodrum and Peter Doorish, September 1992",
+      "lat": null,
+      "lng": null,
+      "aspect": "N",
+      "season": null,
+      "description": null,
+      "gear": null,
+      "hazards": null,
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A 14-pitch, Grade V 5.11c line up a roughly 2,600-ft section of Baring's north face, established in September 1992.",
+      "beta": "Established by Paul Woodrum and Peter Doorish in September 1992, Oatmeal Man was one of several routes put up on Baring's north face and the neighboring Dolomite Tower that same year (alongside Doorish's solo Right Rib, the Dolomite Tower East Corner, and the Dolomite Tower North Face route). Detailed pitch-by-pitch beta beyond the AAC's brief first-ascent notice was not found.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.11c",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": "V",
+      "face": "North Face",
+      "permit": null,
+      "comms": null,
+      "descent": null,
+      "obj_haz": null,
+      "waypoints": [
+        {
+          "lat": 47.7884,
+          "lng": -121.4482,
+          "name": "Barclay Lake Trailhead",
+          "type": "trailhead",
+          "distMi": 0,
+          "elevFt": 2200
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": null,
+      "what_to_bring": null,
+      "pro_tips": null,
+      "watch_out": null,
+      "pro_needs": null,
+      "best_season": null,
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": null,
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": "$5/vehicle/day or $30/year day-use fee at the Barclay Lake Trailhead",
+        "permit": "No formal climbing permit; a day-use fee or valid pass is required at the trailhead",
+        "closures": "Barclay Creek Road (FS 6024) had a significant washout reported roughly 2 miles before the trailhead in January 2026; verify current road status before driving in.",
+        "landManager": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+        "passRequired": "Northwest Forest Pass or Interagency Recreation Pass accepted (WA Discover Pass is NOT valid here)"
+      },
+      "road": {
+        "name": "Barclay Creek Road / FS Road 6024",
+        "status": "Generally drivable to the trailhead, but a significant washout roughly 2 miles before the trailhead was reported in January 2026; confirm current conditions with the Skykomish Ranger District.",
+        "driveNote": "From US-2 milepost 42 in Baring, turn north onto Barclay Creek Road (FS 6024, across from 'Der Baring Store'), cross the railroad tracks, and continue about 4.3-4.5 miles to the trailhead.",
+        "seasonalGate": null
+      },
+      "climate": null,
+      "emergency": {
+        "notes": null,
+        "county": "Snohomish County, WA",
+        "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288, (360) 677-2414",
+        "nearestHospital": "Providence Regional Medical Center Everett is the nearest full-service hospital",
+        "sheriffDispatch": "911 (emergency); Snohomish County non-emergency 425-407-3999"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_baring_mountain_r1",
+      "area_id": "wa_baring_mountain",
+      "name": "North Face",
+      "discipline": "alpine",
+      "grade": "Grade IV-V, steep alpine rock/mixed",
+      "grade_system": "yds",
+      "grade_num": 10,
+      "pitches": 4,
+      "length_m": 1067,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Don Gordon (Claunch) and Ed Cooper, July 9-13, 1960, with Fred Beckey on the final summit team; built on attempts dating to Pete Schoening and Richard Berge in 1951",
+      "lat": null,
+      "lng": null,
+      "aspect": "N",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "rock shoes (carried for the technical headwall pitches)",
+        "helmet",
+        "single alpine trad rack to 3in with extra small-to-medium cams (0.5-1.5in)",
+        "single 60m rope",
+        "sturdy approach shoes/boots for ~1000ft of brush and heather below the rock",
+        "a few slings for anchors — do not trust old fixed pitons in place"
+      ],
+      "hazards": [
+        "serious routefinding",
+        "long committing face",
+        "retreat difficult"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "Baring Mountain's North Face is one of the largest and most serious rock walls in the Cascades, rising roughly 3,000 feet above Barclay Lake. It is a committing, infrequently climbed alpine rock and mixed objective with significant loose rock and routefinding.",
+      "beta": "The route involves four major vertical steps. The lower approach consists of approximately 2,300 feet of brush fighting up steep cliffs through dense vegetation (slide alder, vine maple, devil's club). Establish Dolomite Camp at the base of the first step. The climbing involves vertical, delicate mixed terrain with roof sections requiring stirrup aid climbing on unusually hard rock (no specific rock type has been reliably sourced for this face) with poor natural protection. The crux is on the second step (400 feet) which features 120-degree roof sections and extremely delicate vertical climbing. On the lower brush sections, the first-ascent party fixed hundreds of feet of light ¼-inch rope hung from the brush to assist with load-hauling, with separate lengths of full-diameter climbing rope fixed at the most hazardous spots; double fixed ropes were placed specifically on the first step for hauling loads. Multiple attempts from 1951-1959 failed before the successful first ascent in 1960.",
+      "turnaround": "Plan a turnaround time in early afternoon to ensure safe rappel descent before dark. Stopping early is critical given the complex multi-rope rappel descent required.",
+      "auto_generated": true,
+      "alpine_grade": "IV-V",
+      "rock_grade": "5.10c (crux, per later free/repeat ascents)",
+      "ice_grade": null,
+      "gain_ft": 3925,
+      "loss_ft": 3500,
+      "dist_km": 7.89,
+      "max_angle": 85,
+      "rappels": "0",
+      "commitment": "V",
+      "face": "North Face",
+      "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+      "comms": "Cell service is unreliable in the Barclay Lake/Baring Mountain drainage.",
+      "descent": "Descend a non-technical route off the back/south side",
+      "obj_haz": [
+        "loose/rotten rock in places",
+        "dense brush",
+        "route-finding difficulty",
+        "rockfall",
+        "rapid weather changes on an exposed face"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.7923,
+          "lng": -121.4592,
+          "elev": 2280,
+          "name": "Barclay Lake Trailhead",
+          "note": "NW Forest Pass required at the self-issue kiosk; boot path for the mountain starts behind the outhouse rather than on the main Barclay Lake trail.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 47.789027,
+          "lng": -121.457746,
+          "elev": 2450,
+          "name": "Climber's-trail cairn off old logging road",
+          "note": "Leave the abandoned logging road (walked ~1/3 mile from the lot) at a cairn where a rough, unmaintained boot path splits off toward the mountain's base.",
+          "type": "Junction",
+          "distMi": 0.3
+        },
+        {
+          "lat": 47.784636,
+          "lng": -121.458091,
+          "elev": 3100,
+          "name": "Creek-side ascent gully",
+          "note": "Boot path climbs steep, loose dirt slopes and crosses the small creek several times on the way toward the base of the north wall — stay near the water to keep the path.",
+          "type": "Water",
+          "distMi": 0.8
+        },
+        {
+          "lat": 47.778811,
+          "lng": -121.447443,
+          "elev": 4300,
+          "name": "Couloir Camp",
+          "note": "Standard bivy for the multi-day face route, reached after ~1000 ft of steep forested/brushy hillside above the wall's base; historically fixed with rope to haul loads.",
+          "type": "Campsite",
+          "distMi": 1.4
+        },
+        {
+          "lat": 47.777464,
+          "lng": -121.440235,
+          "elev": 5500,
+          "name": "Snow-filled summit couloir",
+          "note": "The next 1300 ft climbs two parallel rock ribs separated by a large couloir that holds snow into August; four ~300-400 ft rock steps here demand sustained grade V-VI climbing on loose, vegetated rock.",
+          "type": "Hazard",
+          "distMi": 1.8
+        },
+        {
+          "lat": 47.779273,
+          "lng": -121.4356595,
+          "elev": 6127,
+          "name": "Baring Mountain summit",
+          "note": "True summit at the top of the face; descend the non-technical south/back side (west-ridge/talus basin) rather than reversing the wall.",
+          "type": "Summit",
+          "distMi": 2.2
+        }
+      ],
+      "gpx": [
+        [
+          47.792294,
+          -121.459266
+        ],
+        [
+          47.792243,
+          -121.459269
+        ],
+        [
+          47.792215,
+          -121.459155
+        ],
+        [
+          47.792035,
+          -121.459015
+        ],
+        [
+          47.79199,
+          -121.458954
+        ],
+        [
+          47.7919,
+          -121.458756
+        ],
+        [
+          47.79181,
+          -121.458602
+        ],
+        [
+          47.791652,
+          -121.458339
+        ],
+        [
+          47.791537,
+          -121.458074
+        ],
+        [
+          47.791485,
+          -121.457806
+        ],
+        [
+          47.791444,
+          -121.457582
+        ],
+        [
+          47.791314,
+          -121.457345
+        ],
+        [
+          47.791165,
+          -121.457192
+        ],
+        [
+          47.791022,
+          -121.457055
+        ],
+        [
+          47.790918,
+          -121.456875
+        ],
+        [
+          47.790668,
+          -121.456797
+        ],
+        [
+          47.790511,
+          -121.45661
+        ],
+        [
+          47.790452,
+          -121.456461
+        ],
+        [
+          47.790256,
+          -121.456529
+        ],
+        [
+          47.790098,
+          -121.45653
+        ],
+        [
+          47.78996,
+          -121.456612
+        ],
+        [
+          47.789848,
+          -121.456604
+        ],
+        [
+          47.789767,
+          -121.456716
+        ],
+        [
+          47.789674,
+          -121.456714
+        ],
+        [
+          47.789548,
+          -121.456904
+        ],
+        [
+          47.789681,
+          -121.457064
+        ],
+        [
+          47.789559,
+          -121.457303
+        ],
+        [
+          47.789333,
+          -121.457465
+        ],
+        [
+          47.789323,
+          -121.457676
+        ],
+        [
+          47.789125,
+          -121.45772
+        ],
+        [
+          47.788906,
+          -121.457778
+        ],
+        [
+          47.788845,
+          -121.457906
+        ],
+        [
+          47.788729,
+          -121.457855
+        ],
+        [
+          47.788583,
+          -121.457879
+        ],
+        [
+          47.788487,
+          -121.458008
+        ],
+        [
+          47.788406,
+          -121.457997
+        ],
+        [
+          47.788498,
+          -121.458168
+        ],
+        [
+          47.7885,
+          -121.458208
+        ],
+        [
+          47.788383,
+          -121.458292
+        ],
+        [
+          47.78825,
+          -121.45843
+        ],
+        [
+          47.788078,
+          -121.458536
+        ],
+        [
+          47.787933,
+          -121.458548
+        ],
+        [
+          47.787947,
+          -121.458743
+        ],
+        [
+          47.787716,
+          -121.45896
+        ],
+        [
+          47.787575,
+          -121.459165
+        ],
+        [
+          47.787373,
+          -121.45935
+        ],
+        [
+          47.787531,
+          -121.459611
+        ],
+        [
+          47.787473,
+          -121.46001
+        ],
+        [
+          47.787428,
+          -121.460246
+        ],
+        [
+          47.787272,
+          -121.460376
+        ],
+        [
+          47.787177,
+          -121.460329
+        ],
+        [
+          47.787063,
+          -121.46034
+        ],
+        [
+          47.787014,
+          -121.460535
+        ],
+        [
+          47.786977,
+          -121.460724
+        ],
+        [
+          47.786865,
+          -121.460836
+        ],
+        [
+          47.786843,
+          -121.460971
+        ],
+        [
+          47.786914,
+          -121.461271
+        ],
+        [
+          47.786829,
+          -121.461496
+        ],
+        [
+          47.786717,
+          -121.461483
+        ],
+        [
+          47.786675,
+          -121.461659
+        ],
+        [
+          47.786457,
+          -121.461874
+        ],
+        [
+          47.786165,
+          -121.461697
+        ],
+        [
+          47.786126,
+          -121.461246
+        ],
+        [
+          47.786061,
+          -121.460961
+        ],
+        [
+          47.785967,
+          -121.460652
+        ],
+        [
+          47.785917,
+          -121.460324
+        ],
+        [
+          47.78577,
+          -121.460106
+        ],
+        [
+          47.785636,
+          -121.459873
+        ],
+        [
+          47.785449,
+          -121.459618
+        ],
+        [
+          47.785257,
+          -121.459369
+        ],
+        [
+          47.78508,
+          -121.459181
+        ],
+        [
+          47.784904,
+          -121.45875
+        ],
+        [
+          47.784808,
+          -121.458515
+        ],
+        [
+          47.784684,
+          -121.45824
+        ],
+        [
+          47.784579,
+          -121.457913
+        ],
+        [
+          47.784431,
+          -121.457602
+        ],
+        [
+          47.784239,
+          -121.457418
+        ],
+        [
+          47.784131,
+          -121.45716
+        ],
+        [
+          47.784019,
+          -121.45681
+        ],
+        [
+          47.783818,
+          -121.456526
+        ],
+        [
+          47.783415,
+          -121.456126
+        ],
+        [
+          47.783095,
+          -121.455633
+        ],
+        [
+          47.78294,
+          -121.4553
+        ],
+        [
+          47.782498,
+          -121.454883
+        ],
+        [
+          47.782303,
+          -121.45447
+        ],
+        [
+          47.782235,
+          -121.45425
+        ],
+        [
+          47.782154,
+          -121.454015
+        ],
+        [
+          47.782047,
+          -121.453649
+        ],
+        [
+          47.781921,
+          -121.453385
+        ],
+        [
+          47.781794,
+          -121.452802
+        ],
+        [
+          47.781649,
+          -121.452579
+        ],
+        [
+          47.781626,
+          -121.452196
+        ],
+        [
+          47.781529,
+          -121.452089
+        ],
+        [
+          47.781423,
+          -121.45186
+        ],
+        [
+          47.781235,
+          -121.451566
+        ],
+        [
+          47.781096,
+          -121.451421
+        ],
+        [
+          47.781074,
+          -121.451142
+        ],
+        [
+          47.780993,
+          -121.4508
+        ],
+        [
+          47.780831,
+          -121.450627
+        ],
+        [
+          47.78065,
+          -121.450459
+        ],
+        [
+          47.780551,
+          -121.450091
+        ],
+        [
+          47.780479,
+          -121.449825
+        ],
+        [
+          47.780335,
+          -121.449636
+        ],
+        [
+          47.780187,
+          -121.449438
+        ],
+        [
+          47.780095,
+          -121.449167
+        ],
+        [
+          47.779888,
+          -121.448871
+        ],
+        [
+          47.779724,
+          -121.448718
+        ],
+        [
+          47.779685,
+          -121.448346
+        ],
+        [
+          47.779559,
+          -121.448045
+        ],
+        [
+          47.77929,
+          -121.447999
+        ],
+        [
+          47.779103,
+          -121.447828
+        ],
+        [
+          47.778988,
+          -121.447673
+        ],
+        [
+          47.778932,
+          -121.447709
+        ],
+        [
+          47.778797,
+          -121.447412
+        ],
+        [
+          47.778623,
+          -121.447211
+        ],
+        [
+          47.778685,
+          -121.446971
+        ],
+        [
+          47.778555,
+          -121.446853
+        ],
+        [
+          47.778541,
+          -121.446605
+        ],
+        [
+          47.778432,
+          -121.446542
+        ],
+        [
+          47.778377,
+          -121.446311
+        ],
+        [
+          47.778647,
+          -121.446107
+        ],
+        [
+          47.778846,
+          -121.446085
+        ],
+        [
+          47.779071,
+          -121.445943
+        ],
+        [
+          47.779087,
+          -121.44561
+        ],
+        [
+          47.779027,
+          -121.445509
+        ],
+        [
+          47.778927,
+          -121.445377
+        ],
+        [
+          47.778846,
+          -121.445225
+        ],
+        [
+          47.778915,
+          -121.444978
+        ],
+        [
+          47.778922,
+          -121.444803
+        ],
+        [
+          47.778897,
+          -121.444642
+        ],
+        [
+          47.778851,
+          -121.444439
+        ],
+        [
+          47.778744,
+          -121.444235
+        ],
+        [
+          47.778721,
+          -121.444037
+        ],
+        [
+          47.778611,
+          -121.443843
+        ],
+        [
+          47.778485,
+          -121.4437
+        ],
+        [
+          47.778408,
+          -121.443462
+        ],
+        [
+          47.778294,
+          -121.443301
+        ],
+        [
+          47.778216,
+          -121.443121
+        ],
+        [
+          47.778155,
+          -121.442845
+        ],
+        [
+          47.778079,
+          -121.442632
+        ],
+        [
+          47.778049,
+          -121.442641
+        ],
+        [
+          47.777936,
+          -121.442508
+        ],
+        [
+          47.77778,
+          -121.442455
+        ],
+        [
+          47.777736,
+          -121.442108
+        ],
+        [
+          47.777664,
+          -121.441961
+        ],
+        [
+          47.777689,
+          -121.441601
+        ],
+        [
+          47.777679,
+          -121.441375
+        ],
+        [
+          47.777679,
+          -121.441063
+        ],
+        [
+          47.777695,
+          -121.440884
+        ],
+        [
+          47.777599,
+          -121.440843
+        ],
+        [
+          47.777664,
+          -121.440319
+        ],
+        [
+          47.777519,
+          -121.440262
+        ],
+        [
+          47.777413,
+          -121.44021
+        ],
+        [
+          47.777484,
+          -121.439902
+        ],
+        [
+          47.777331,
+          -121.439878
+        ],
+        [
+          47.777226,
+          -121.43946
+        ],
+        [
+          47.777228,
+          -121.439117
+        ],
+        [
+          47.77712,
+          -121.439186
+        ],
+        [
+          47.77716,
+          -121.438901
+        ],
+        [
+          47.77705,
+          -121.438702
+        ],
+        [
+          47.776919,
+          -121.438609
+        ],
+        [
+          47.776809,
+          -121.43849
+        ],
+        [
+          47.77675,
+          -121.438277
+        ],
+        [
+          47.77671,
+          -121.438245
+        ],
+        [
+          47.776668,
+          -121.438056
+        ],
+        [
+          47.7766,
+          -121.437988
+        ],
+        [
+          47.776686,
+          -121.437588
+        ],
+        [
+          47.776645,
+          -121.437448
+        ],
+        [
+          47.77661,
+          -121.4373
+        ],
+        [
+          47.776721,
+          -121.437105
+        ],
+        [
+          47.776804,
+          -121.437042
+        ],
+        [
+          47.776999,
+          -121.436972
+        ],
+        [
+          47.777069,
+          -121.436864
+        ],
+        [
+          47.777256,
+          -121.436765
+        ],
+        [
+          47.777417,
+          -121.436776
+        ],
+        [
+          47.777551,
+          -121.43667
+        ],
+        [
+          47.777696,
+          -121.436598
+        ],
+        [
+          47.777912,
+          -121.436678
+        ],
+        [
+          47.778131,
+          -121.43679
+        ],
+        [
+          47.778248,
+          -121.436762
+        ],
+        [
+          47.778328,
+          -121.436611
+        ],
+        [
+          47.778472,
+          -121.436559
+        ],
+        [
+          47.778537,
+          -121.436479
+        ],
+        [
+          47.778619,
+          -121.436395
+        ],
+        [
+          47.778755,
+          -121.436418
+        ],
+        [
+          47.778736,
+          -121.436246
+        ],
+        [
+          47.778609,
+          -121.436093
+        ],
+        [
+          47.778743,
+          -121.436006
+        ],
+        [
+          47.778832,
+          -121.435993
+        ],
+        [
+          47.778947,
+          -121.435897
+        ],
+        [
+          47.778938,
+          -121.435736
+        ],
+        [
+          47.779005,
+          -121.435624
+        ],
+        [
+          47.779097,
+          -121.435716
+        ],
+        [
+          47.779225,
+          -121.435821
+        ],
+        [
+          47.779263,
+          -121.435854
+        ],
+        [
+          47.779279,
+          -121.435872
+        ],
+        [
+          47.779404,
+          -121.435914
+        ],
+        [
+          47.779521,
+          -121.435879
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "rock",
+        "mixed"
+      ],
+      "timing": {
+        "totalHrs": 15,
+        "summitTimeHrs": 8,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 7,
+        "recommendedStart": "6:00 AM from camp",
+        "sectionBreakdown": [
+          {
+            "hrs": 7,
+            "note": "Leave the Barclay Lake trail at the first bridge and follow the creek bed upstream to a cairn marking the base of the face. Fight through steep brush and forest for the first ~1,00…",
+            "fromTo": "Approach and climb to a bivy",
+            "section": "Approach"
+          },
+          {
+            "hrs": 8,
+            "note": "From the bivy, finish the upper two steps (220 ft and 250 ft) of grade V/VI climbing to the summit ridge, topping out through the final scrambling section. Descend the back (south)…",
+            "fromTo": "Finish the face and descend the south side",
+            "section": "Climb"
+          }
+        ]
+      },
+      "detailed_rack": "No published trip report gives an exact cam-by-cam list for this specific route, so this is a reasoned inference from route character rather than a direct source: unusually hard rock (the AAC first-ascent account describes it only as \"unusually hard rock\" with piton cracks that \"virtually disappear\" higher up — a 2013 trip report informally nicknames it \"Rhino Stone\" but gives no mineral composition, so it should not be assumed to be granodiorite, rhyolite, or any other named rock type), a single ~5.10c crux headwall pitch, with the rest of the roughly 1000ft of technical climbing more moderate (5.6-5.9). A single alpine rack from small nuts through 3in cams, doubled in the 0.5-1.5in hand/finger range.",
+      "what_to_bring": [
+        "alpine rock rack",
+        "helmet",
+        "ropes",
+        "approach shoes/boots"
+      ],
+      "pro_tips": [
+        "Treat this as a serious, committing big-wall alpine objective, not a casual climb",
+        "Study existing route descriptions carefully—routefinding is a major challenge"
+      ],
+      "watch_out": [
+        "rockfall",
+        "loose and vegetated rock",
+        "routefinding",
+        "weather on the exposed face"
+      ],
+      "pro_needs": "Comprehensive rack; the face is large and protection varies. Some old fixed pins on the route are unreliable — back them up rather than trust them.",
+      "best_season": "July to September",
+      "high_point_ft": 6127,
+      "aid_grade": "C1-C2",
+      "approach": "Park at the Barclay Lake Trailhead (~2,280 ft, end of gravel Forest Road 6024/Barclay Creek Road off US-2 near the town of Baring); a Northwest Forest Pass is required at the self-issue kiosk. This is the same trailhead used for the Barclay Lake day-hike and for Baring's easier South/West Ridge route, but for the North Face, leave the signed Barclay Lake trail immediately — the climbers' boot path starts behind the outhouse rather than on the main trail. Follow an old, abandoned logging road for about 1/3 mile to a cairn (~2,450 ft) where a rough, unmaintained climbers' path splits off toward the base of the mountain — this is easy to miss and is not marked by any trail sign. From the cairn, the boot path climbs steep, loose dirt slopes and crosses the creek draining the face several times; stay close to the water to keep the correct line, since the tread is faint and frequently lost in the brush. At roughly 4,300 ft — about 2,000 ft of gain and 1.4 miles from the car — the path reaches Couloir Camp, the historic base camp used during the decade-long siege that produced the first ascent; it remains a reasonable first-night bivy for parties who want to break the approach into two shorter days. Above Couloir Camp, the route continues up between two precipitous, brush-and-cliff-covered rock ribs that flank a large couloir (snow often lingers here into August, so early-season parties may want an axe for this section) to reach the base of the North Face's first rock step at roughly 5,500 ft, about 1.8 miles from the trailhead. In total, the lower approach involves fighting through approximately 2,300 vertical feet of dense brush (slide alder, vine maple, devil's club) and forest before any technical rock climbing begins — expect around 7 hours from the trailhead to the base of the wall, and wear sturdy approach shoes or boots rather than carrying rock shoes for this section.",
+      "descent_text": "Do not plan to reverse the technical wall — virtually every account of climbing Baring's north face describes descending a separate walk-off line rather than rappelling the route from top to bottom. From the top of the wall, traverse west/climber's-left (some parties describe following an old 'base-jumper' boot path) around to a talus field and the notch between Baring's summits, then drop roughly 700 vertical feet through boulders and meadow to pick up a heather trail on skier's left. This connects to a game trail switchbacking down through old-growth forest, a roughly one-mile traverse along the ridgecrest, and then a steep switchbacking trail (~1,500 vertical ft) down to a clearing and old logging road that returns to the Barclay Lake Trailhead — about 3 hours car-to-summit-to-car for the descent leg on the routes this has been documented for. This walk-off is a scramble/hike, not a rappel descent, and no fixed rappel stations are established on it. That said, treat this as route- and finish-dependent: Baring's north face has multiple independent lines topping out at different points, some of which may not connect cleanly to the walk-off gully without downclimbing or short rope work, and the original 1961 first-ascent account explicitly describes 'long rappels down the upper walls' to retreat/descend in fog when the walk-off wasn't known or reachable. If you retreat mid-route, or finish on a line that doesn't top out near the notch, be prepared to rappel — carry a 60m rope and rack for building anchors, since fixed/bolted rappel stations should not be assumed on this poorly-protected, historically loose-rock alpine wall; natural anchors (trees, horns, gear) are the norm. Given this uncertainty, treat rappel count as route-specific and unknown rather than fixed.",
+      "bail": "Retreat from high on the face is difficult and committing",
+      "pitch_detail": [
+        {
+          "grade": "V",
+          "notes": "300 feet; vertical step requiring Grade V climbing to first ledge",
+          "pitch": "Step 1 (Lower)"
+        },
+        {
+          "grade": "V-VI",
+          "notes": "400 feet; most difficult section with vertical, delicate climbing on unusually hard rock (no specific rock type reliably sourced). Features 120-degree roof sections requiring stirrup aid climbing (C1-C2). Poor natural protection; climbers resort to bolts.",
+          "pitch": "Step 2 (Crux)"
+        },
+        {
+          "grade": "V",
+          "notes": "220 feet; Grade V climbing to upper ledge",
+          "pitch": "Step 3"
+        },
+        {
+          "grade": "V",
+          "notes": "250 feet; final vertical step to summit ridge",
+          "pitch": "Step 4 (Upper)"
+        }
+      ],
+      "itinerary": {
+        "cal": "The couloir flanking the approach and the snow-holding gully near the top of the wall often carry snow into August; the historic camps (Couloir Camp ~4,300 ft and a bivy atop the crux step) may require carrying more water in a dry year than the first-ascent party needed, since the AAC account describes relying on a nearby snow patch for water.",
+        "days": [
+          {
+            "n": 1,
+            "note": "From the Barclay Lake Trailhead, follow the old logging road to the climbers'-trail cairn, then the boot path and creek bed upstream through steep brush, forest, and loose dirt to Couloir Camp (~4,300 ft). Continue between the two parallel rock ribs flanking the summit couloir to the base of the wall, then climb Step 1 (300 ft, Grade V) and Step 2 (400 ft, Grade V-VI, the crux, with its roof section and poor natural protection) to a bivy ledge atop the crux step.",
+            "hours": 7,
+            "miles": 1.8,
+            "title": "Approach and climb the lower two steps to a high bivy",
+            "gainFt": 3220,
+            "lossFt": 0,
+            "packLb": null,
+            "schedule": [
+              {
+                "time": "6:00 AM",
+                "label": "Leave Barclay Lake Trailhead",
+                "detail": "Northwest Forest Pass at the kiosk; start on the boot path behind the outhouse, not the main Barclay Lake trail."
+              },
+              {
+                "time": "6:20 AM",
+                "label": "Climbers'-trail cairn (~2,450 ft)",
+                "detail": "Leave the old logging road here for the unmarked climbers' path."
+              },
+              {
+                "time": "7:15 AM",
+                "label": "Creek-side ascent gully (~3,100 ft)",
+                "detail": "Steep, loose dirt; cross the creek repeatedly, staying near the water to hold the boot path."
+              },
+              {
+                "time": "8:45 AM",
+                "label": "Couloir Camp (~4,300 ft)",
+                "detail": "Historic base camp of the first-ascent siege; gear up for technical climbing here."
+              },
+              {
+                "time": "9:30 AM",
+                "label": "Base of Step 1",
+                "detail": "Reached via the twin rock ribs flanking the summit couloir."
+              },
+              {
+                "time": "11:00 AM",
+                "label": "Top of Step 1 (300 ft, Grade V)",
+                "detail": "Begin Step 2."
+              },
+              {
+                "time": "1:00 PM",
+                "label": "Bivy atop Step 2, the crux (400 ft, Grade V-VI)",
+                "detail": "Roof sections and stirrup aid climbing; set up camp for the night."
+              }
+            ],
+            "objective": "Hike in from Barclay Lake Trailhead, climb Steps 1 and 2 (including the crux), and bivy atop the crux step"
+          },
+          {
+            "n": 2,
+            "note": "From the high bivy, climb Step 3 (220 ft, Grade V) and Step 4 (250 ft, Grade V, the final vertical step) to the summit ridge, then finish easier terrain to Baring's true summit. Descend the non-technical south-side walk-off (see descent_text) back to the Barclay Lake Trailhead, carrying a rope and rack in case a rappel is needed if you finish on a line that doesn't connect cleanly to the walk-off.",
+            "hours": 8,
+            "miles": 3.1,
+            "title": "Finish the face and descend the south side",
+            "gainFt": 630,
+            "lossFt": 3850,
+            "packLb": null,
+            "schedule": [
+              {
+                "time": "6:00 AM",
+                "label": "Leave the bivy atop Step 2",
+                "detail": "Recommended start per on-file timing data."
+              },
+              {
+                "time": "7:30 AM",
+                "label": "Top of Step 3 (220 ft, Grade V)",
+                "detail": ""
+              },
+              {
+                "time": "9:00 AM",
+                "label": "Top of Step 4 (250 ft, Grade V)",
+                "detail": "Gain the summit ridge."
+              },
+              {
+                "time": "9:30 AM",
+                "label": "Baring Mountain summit (6,127 ft)",
+                "detail": ""
+              },
+              {
+                "time": "2:00 PM",
+                "label": "Back at Barclay Lake Trailhead",
+                "detail": "Descend the non-technical south-side walk-off; do not assume fixed rappel stations."
+              }
+            ],
+            "objective": "Climb Steps 3 and 4 to the summit, then descend the non-technical walk-off"
+          }
+        ],
+        "totalNote": "Historically this was a multi-year siege climb with fixed ropes and multiple camps; the modern standard plan is a 2-day round trip with one bivy atop the crux step — roughly 7 hours of approach/lower climbing plus 8 hours to finish and descend (15 hours of combined movement, per on-file timing data). Very strong, fast parties have compressed the whole route into a single long day car-to-car (documented in a 2013 trip report), but this requires exceptional fitness, dry/stable conditions, and prior route knowledge; most parties should plan for 2 days minimum given the loose rock and difficult retreat.",
+        "sourceNote": "AAC Publications 'The North Face of Mount Baring' (Beckey/Cooper's first-hand account of the 1960 first ascent and the 1951-1959 siege that preceded it); a 2013 trip report ('Blue Collar Bash,' jensholsten.blogspot.com) describing a modern single-day car-to-car ascent; day-by-day hour/mileage/elevation splits are reasoned estimates built from the route's on-file waypoints, gain_ft, and timing fields rather than a single published itinerary."
+      },
+      "access": {
+        "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+        "rules": "Standard national forest regulations",
+        "permit": "None required.",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+        "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+        "passRequired": "Northwest Forest Pass at the trailhead"
+      },
+      "road": {
+        "name": "Barclay Lake Road (FR 6024)",
+        "status": null,
+        "driveNote": "Gravel forest road off US 2 near Baring to the Barclay Lake trailhead",
+        "seasonalGate": null
+      },
+      "climate": {
+        "typical": "West-slope Cascade weather; the north face stays cold and damp",
+        "bySeason": {
+          "fall": "Short window before wet weather returns",
+          "spring": "Wet, snowy on the face; not in season",
+          "summer": "Best window once the face dries",
+          "winter": "Snowbound; not a rock season"
+        },
+        "forecastZone": "Washington West Slopes Central Cascades"
+      },
+      "emergency": {
+        "county": "King County — per USGS GNIS and its derivatives (topozone.com, hometownlocator.com, mountainzone.com), the Baring Mountain summit is in King County. Wikipedia's infobox lists the peak as bordering both King and Snohomish counties, but GNIS is the more authoritative source for the summit itself. The Barclay Lake trailhead and approach are also within King County (the unincorporated community of Baring and neighboring Skykomish are both King County, policed under King County Sheriff's Precinct 2).",
+        "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest — (360) 677-2414, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288",
+        "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), 14701 179th Ave SE, Monroe, WA 98272 — 24-hour ER, Level IV Trauma Center, (360) 794-7497; roughly 30 miles west of the trailhead via US-2",
+        "sheriffDispatch": "911 for emergencies; King County Sheriff's Office non-emergency line (206) 296-3311 — King County Sheriff/SAR has jurisdiction for this summit and trailhead"
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "No defined peak season - this is one of the most rarely attempted serious rock walls in the Cascades",
+        "solitudeRating": 5,
+        "estimatePerSeason": "Often zero ascents in a given year; historically the wall has gone years at a time without any recorded attempt"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "Excellent fitness for carrying overnight/bivy gear up roughly 2,000+ ft of steep brush, forest, and loose dirt before any technical climbing begins",
+          "packWeight": "Moderate-to-heavy — bivy gear, rack, and rope(s) for a multi-day ascent (historically climbers also fixed rope on the lower steps to haul loads)"
+        },
+        "approachTime": "Roughly 7 hours from the Barclay Lake Trailhead to a high bivy near the crux step, per on-file timing data — not a fast approach",
+        "requiredSkills": [
+          "Grade V-VI multi-pitch trad/aid climbing on loose, poorly-protected rock",
+          "aid/stirrup climbing technique for the crux roof section (C1-C2)",
+          "building solid anchors on natural gear — do not rely on old, degraded fixed pitons in place",
+          "serious routefinding on a large, complex alpine wall",
+          "multi-day self-sufficiency and bivouac skills",
+          "sound turnaround/retreat judgment given how difficult rescue would be high on the face"
+        ],
+        "experienceLevel": "Experienced alpine/big-wall climbers only. This is a historically serious, rarely repeated Cascades testpiece — first climbed in 1960 after a decade of attempts (1951-1959) — and it has claimed at least one life: Richard Berge, killed in a fall during a 1952 attempt while descending after caching supplies. Not appropriate for climbers without prior Grade IV-V alpine rock experience."
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Mid-July through August — a slightly narrower window than the broader July-to-September range for this peak, since the shaded north face is slow to dry",
+        "monthBreakdown": {
+          "July": {
+            "reason": "Start of the on-file best-season window as the face begins to dry, though early July can still be damp",
+            "status": "good"
+          },
+          "June": {
+            "reason": "Not yet in season per on-file best_season; face likely still wet, snowy, or holding early-season ice per on-file climate",
+            "status": "marginal"
+          },
+          "August": {
+            "reason": "Driest and most reliable period for the face per on-file climate summary",
+            "status": "optimal"
+          },
+          "September": {
+            "reason": "End of the on-file best-season window; the cold, damp north face is quick to be affected by returning fall weather",
+            "status": "risky"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "West-slope Cascade weather that keeps the shaded north face cold and damp per on-file climate data, even during the best-season window",
+          "probability": "Weather on the exposed face is explicitly flagged in on-file watch_out; sudden changes are a major concern high on a long, committing route with difficult retreat"
+        },
+        "exposure": "Extreme - a roughly 3,000-foot committing wall with serious rockfall, loose and vegetated rock, and difficult routefinding per on-file hazards; the on-file emergency notes flag that retreat is difficult and rescue in this position would be a major undertaking (the route's approach history includes a 1951 fatality during an early attempt)",
+        "avalanche": {
+          "zone": "N/A - non-glaciated summer alpine rock route (nearest NWAC forecast zone is Stevens Pass, not directly applicable to this July-September climbing window)",
+          "byMonth": {
+            "July": "N/A",
+            "June": "N/A",
+            "August": "N/A",
+            "September": "N/A"
+          }
+        },
+        "crevasses": "N/A - no glacier travel"
+      },
+      "data_quality": {
+        "gaps": [
+          "No public tracking of exact ascent frequency beyond general accounts that the wall 'often goes years without any attempts'",
+          "No NWAC avalanche zone directly covers this peak",
+          "Pitch-by-pitch grade breakdown beyond the overall Grade IV-V rating was not verified this session",
+          "GPS track sourced from public CalTopo map: https://caltopo.com/m/0ESB",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026 research pass"
+      },
+      "difficulty": {
+        "exposure": 5,
+        "physical": 3,
+        "technical": 4,
+        "commitment": 2,
+        "routefinding": 5
+      },
+      "approach_logistics": {
+        "peakLat": 47.779291,
+        "peakLng": -121.435814,
+        "trailhead": "Barclay Lake Trailhead (FR-6024)",
+        "trailheadLat": 47.7923,
+        "trailheadLng": -121.4592,
+        "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_baring_mountain_south_route",
+      "area_id": "wa_baring_mountain",
+      "name": "South Route",
+      "discipline": "scrambling",
+      "grade": "Class 3-4",
+      "grade_system": "class",
+      "grade_num": 3,
+      "pitches": 1,
+      "length_m": 168,
+      "sort_order": null,
+      "stars": null,
+      "fa": "John Charlton & Albert H. Sylvester, July 28, 1897 (first recorded ascent of the peak, via the south-side line this route follows)",
+      "lat": null,
+      "lng": null,
+      "aspect": "W",
+      "season": "Jun-Sep",
+      "description": null,
+      "gear": [
+        "sturdy hiking boots with ankle support",
+        "ice axe (spring/early-summer snow gully)",
+        "helmet (loose rock/rockfall)",
+        "trekking poles",
+        "optional light 30m rope + a few slings for belaying wet class-4 moves"
+      ],
+      "hazards": [
+        "extremely steep brush",
+        "loose rock",
+        "exposure",
+        "underestimated difficulty"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "Baring Mountain is the dramatic, steep-sided peak rising directly above the town of Baring on US-2, famous for its sheer north face. The standard south route is a notoriously brushy and steep climb with exposed scrambling to a small summit far harder than its elevation suggests.",
+      "beta": "A popular mountaineering route requiring moderate off-trail navigation skills. A fairly well-used climber's trail ascends approximately one mile to the ridge, then continues east to the notch between north and south peaks. Pink tape and cairns occasionally mark sections but are unreliable. An ice axe is recommended in spring and summer. Navigation can be challenging in bad weather; GPX/map recommended.",
+      "turnaround": "This is a full-day objective. Establish a turnaround time in early afternoon to ensure descent before dark, especially on descents.",
+      "auto_generated": true,
+      "alpine_grade": "II",
+      "rock_grade": "Class 3-4",
+      "ice_grade": null,
+      "gain_ft": 3925,
+      "loss_ft": 3847,
+      "dist_km": 5.6,
+      "max_angle": null,
+      "rappels": "1",
+      "commitment": "I",
+      "face": "Northwest Ridge / South notch",
+      "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+      "comms": "Cell service is unreliable in the Barclay Lake/Baring Mountain drainage; download maps and directions before leaving cell coverage.",
+      "descent": "Reverse the route with possible rappel",
+      "obj_haz": [
+        "loose rock",
+        "steep off-trail brush on the ridge approach",
+        "exposed scrambling near the summit",
+        "possible lingering snow/ice at the notch"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.7923,
+          "lng": -121.4592,
+          "elev": 2280,
+          "name": "Barclay Lake Trailhead",
+          "note": "Parking for ~20 cars plus a privy; the Baring climbers' path begins behind the outhouse rather than on the signed Barclay Lake trail.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 47.789638,
+          "lng": -121.457149,
+          "elev": 2450,
+          "name": "Old road / climbers'-trail split",
+          "note": "Follow the overgrown logging road about 1/3 mile to a cairn marking where the unmarked, brushy climbers' path breaks off toward the ridge.",
+          "type": "Junction",
+          "distMi": 0.3
+        },
+        {
+          "lat": 47.785961,
+          "lng": -121.46061,
+          "elev": 3200,
+          "name": "Steep dirt-and-creek ascent gully",
+          "note": "Path climbs a steep, muddy/loose-dirt gully next to a small creek with repeated crossings; poorly marked and the crux of routefinding in fog or after rain.",
+          "type": "Hazard",
+          "distMi": 0.8
+        },
+        {
+          "lat": 47.781846,
+          "lng": -121.45304,
+          "elev": 4000,
+          "name": "West ridge crest",
+          "note": "Boot path tops out on Baring's west ridge; follow the ridge crest roughly the next mile through slide alder and forest.",
+          "type": "Junction",
+          "distMi": 1.3
+        },
+        {
+          "lat": 47.778157,
+          "lng": -121.442853,
+          "elev": 4400,
+          "name": "Cliff-band bypass gully",
+          "note": "Cliffs block the ridge crest — drop briefly into a wooded gully on the south side to get around them, then regain the ridge/basin above.",
+          "type": "Hazard",
+          "distMi": 2
+        },
+        {
+          "lat": 47.776793,
+          "lng": -121.438432,
+          "elev": 5200,
+          "name": "Summit basin",
+          "note": "Boulder- and heather-filled basin beneath the twin summit gap; flattish talus here is used as an informal bivy by parties splitting the day.",
+          "type": "Campsite",
+          "distMi": 2.3
+        },
+        {
+          "lat": 47.778256,
+          "lng": -121.436746,
+          "elev": 5900,
+          "name": "North/south summit saddle",
+          "note": "Ascend the talus/boulder gully to the notch between Baring's north and south summit humps, then go left (north) for the true summit.",
+          "type": "Junction",
+          "distMi": 2.5
+        },
+        {
+          "lat": 47.779273,
+          "lng": -121.4356595,
+          "elev": 6127,
+          "name": "Baring Mountain summit (Class 3-4 finish)",
+          "note": "Final scramble is easy hiking on heather giving way to blocky Class 3-4 rock to the true (north) summit; reverse the same brushy route to descend, with an optional rappel off the summit block.",
+          "type": "Summit",
+          "distMi": 2.65
+        }
+      ],
+      "gpx": [
+        [
+          47.79229,
+          -121.4592
+        ],
+        [
+          47.791958,
+          -121.45895
+        ],
+        [
+          47.79164,
+          -121.45846
+        ],
+        [
+          47.791447,
+          -121.45784
+        ],
+        [
+          47.791206,
+          -121.45724
+        ],
+        [
+          47.791042,
+          -121.457
+        ],
+        [
+          47.79083,
+          -121.45672
+        ],
+        [
+          47.790485,
+          -121.45634
+        ],
+        [
+          47.79039,
+          -121.456
+        ],
+        [
+          47.790436,
+          -121.45649
+        ],
+        [
+          47.79034,
+          -121.45635
+        ],
+        [
+          47.78977,
+          -121.45647
+        ],
+        [
+          47.78948,
+          -121.45737
+        ],
+        [
+          47.78882,
+          -121.45776
+        ],
+        [
+          47.788147,
+          -121.45818
+        ],
+        [
+          47.787853,
+          -121.45907
+        ],
+        [
+          47.78739,
+          -121.45981
+        ],
+        [
+          47.78719,
+          -121.46077
+        ],
+        [
+          47.78688,
+          -121.4611
+        ],
+        [
+          47.786526,
+          -121.46183
+        ],
+        [
+          47.786064,
+          -121.461
+        ],
+        [
+          47.78565,
+          -121.45982
+        ],
+        [
+          47.785107,
+          -121.45904
+        ],
+        [
+          47.78462,
+          -121.45805
+        ],
+        [
+          47.784203,
+          -121.45707
+        ],
+        [
+          47.783665,
+          -121.4562
+        ],
+        [
+          47.78309,
+          -121.45547
+        ],
+        [
+          47.782417,
+          -121.45482
+        ],
+        [
+          47.782036,
+          -121.45361
+        ],
+        [
+          47.781803,
+          -121.45253
+        ],
+        [
+          47.781654,
+          -121.45183
+        ],
+        [
+          47.7811,
+          -121.45109
+        ],
+        [
+          47.780766,
+          -121.45009
+        ],
+        [
+          47.780567,
+          -121.44929
+        ],
+        [
+          47.78018,
+          -121.44841
+        ],
+        [
+          47.779545,
+          -121.44816
+        ],
+        [
+          47.779224,
+          -121.44745
+        ],
+        [
+          47.77927,
+          -121.44659
+        ],
+        [
+          47.779106,
+          -121.44562
+        ],
+        [
+          47.778824,
+          -121.44455
+        ],
+        [
+          47.7785,
+          -121.44338
+        ],
+        [
+          47.778088,
+          -121.4426
+        ],
+        [
+          47.77791,
+          -121.44145
+        ],
+        [
+          47.777523,
+          -121.44041
+        ],
+        [
+          47.777393,
+          -121.43924
+        ],
+        [
+          47.776993,
+          -121.43804
+        ],
+        [
+          47.776943,
+          -121.437
+        ],
+        [
+          47.777664,
+          -121.43677
+        ],
+        [
+          47.778263,
+          -121.43645
+        ],
+        [
+          47.77895,
+          -121.43626
+        ],
+        [
+          47.779324,
+          -121.43605
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "scrambling",
+        "alpine"
+      ],
+      "timing": {
+        "totalHrs": 9,
+        "summitTimeHrs": 9,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "5:30 AM from the trailhead",
+        "sectionBreakdown": [
+          {
+            "hrs": 9,
+            "note": "From the Barclay Lake trailhead, follow the old logging road then a climbers' path up the right side of the creek, alternating banks before gaining the ridge near 4,000 ft. Travers…",
+            "fromTo": "Car-to-car scramble",
+            "section": "Climb"
+          }
+        ]
+      },
+      "detailed_rack": "No technical rack is needed for typical dry-condition ascents. This is an unroped Class 3-4 scramble up a brushy climber's trail, a snow/talus gully, and heather/talus slopes to the north/south peak notch, then easy scrambling to the summit. In early season or after rain the gully holds snow (ice axe, plus crampons/microspikes if firm), and a few multiple sources note that when the summit-block heather is wet some parties choose to rope up for the class-4 moves — in that case a short 30-40m single rope with a handful of slings/small nuts is enough; this is not a route with an established protection rack.",
+      "what_to_bring": [
+        "helmet",
+        "ice axe (spring/early summer snow)",
+        "microspikes or crampons if the gully is icy/firm",
+        "trekking poles",
+        "gaiters",
+        "sun and rain protection",
+        "the ten essentials",
+        "sturdy boots with ankle support"
+      ],
+      "pro_tips": [
+        "Far harder than its elevation suggests",
+        "Expect a long, brushy battle on the approach"
+      ],
+      "watch_out": [
+        "dense brush",
+        "exposure and loose rock near the top"
+      ],
+      "pro_needs": "Protection is essentially optional here — the terrain is loose/brushy/vegetated rather than clean rock, so any gear carried is for psychological security on one or two exposed class-4 steps, not for sustained protection. Most parties climb it entirely unroped in dry summer conditions.",
+      "best_season": "August",
+      "high_point_ft": 6127,
+      "aid_grade": null,
+      "approach": "Park at the Barclay Lake Trailhead (~2,200 ft, end of FS Road 6024/Barclay Creek Road, 4WD recommended for the last stretch), which is shared parking for the Barclay Lake hike and the unofficial Baring/Gunn Peak climbers' paths. From the trailhead, go around the outhouse/toilet and pick up an old, overgrown logging-road grade for a few hundred yards before it turns sharply uphill into a steep, muddy, eroded gully — this is the start of the unmaintained climbers' trail (look for cairns and a boot path; it is not a maintained WTA trail and is easy to lose). The tread is very steep and often slick from the first steps, with no reliable water past the initial creek crossing, so carry what you need from the trailhead. After roughly 1 mile and about 1,800 ft of gain, the path tops out on Baring's west ridge (~4,000 ft). Follow the ridge crest generally east/southeast; recent reports note a 2022 burn scar on the south-facing slope here, which adds loose ash and dirt underfoot and can obscure the tread — one party noted staying too long on the crest and having to downclimb back to the correct line, so watch for where the path dips slightly below cliff bands into a wooded gully before regaining the ridge. The route then drops into a talus/boulder basin, crosses it, and climbs the main gully/talus slope up to the notch (~5,550 ft) between South Baring and the main (true) summit — this gully and basin hold snow late into the season, so an ice axe (and possibly crampons) are recommended into mid-summer; the step right at the notch is sometimes called the 'vertical snow wall,' and its difficulty varies year to year with snowpack. From the notch, scramble up and right a short distance, break out onto an open slope, then trend left/north across class 2-3 boulder and heather terrain toward the base of the summit block. Climb the summit block on its left (west) side via class 3-4 moves to reach the true 6,127 ft summit. A helmet is recommended from the boulder field onward given loose rock, and the whole outing is a long day (allow 8-12+ hours car-to-car).",
+      "descent_text": "Descend by reversing the ascent line: downclimb the summit block (some parties report a short, wet class-3 crux move here rejoining the main path), cross back down to the notch, and descend the gully and basin back toward the west ridge — tedious and loose but faster than the climb up. This is a walk-off/downclimb for most parties in typical late-summer conditions, when the gully is mostly talus and scree and can be down-climbed or plunge-stepped. However, in higher-snow years or when the notch's 'vertical snow wall' step is icy or awkward, parties do rig a short rappel rather than downclimb it: one documented spring trip report describes building a rappel off natural anchors — 'a small rappel to a tree, then a single-strand rappel' — using a 30m rope, to get past the steepest part of the gully/notch step. Treat this as conditional and optional rather than mandatory: it depends on the year's snowpack and the party's comfort downclimbing steep snow/ice with an axe. If you bring a rope for this contingency, a 30m single-strand rope anchored to trees is sufficient based on the documented account; no bolted or fixed anchors exist on this route — expect natural gear (trees, boulders) only. Below the ridge, retrace the west-ridge trail back down the steep, eroded, occasionally ash-covered climbers' path to the Barclay Lake Trailhead, moving carefully on the loose, muddy tread, especially through the 2022 burn-scar section.",
+      "bail": "If conditions deteriorate or party is moving slowly, return down the same route before dark. There are no bailout routes on the ridge; commitment is required.",
+      "pitch_detail": [
+        {
+          "grade": "Class 3-4",
+          "notes": "~550 ft of exposed scrambling up ledges from the ~5,550-5,600 ft notch between the south and true summits to the 6,127-ft true summit; a firm snow/ice wall is often present at the notch in early season.",
+          "pitch": "Notch to summit",
+          "lengthM": 168
+        }
+      ],
+      "itinerary": {
+        "cal": "Snow can linger in the summit gully/notch into early summer - carry an ice axe through June.",
+        "days": [
+          {
+            "n": 1,
+            "note": "From the Barclay Lake trailhead, follow the old logging road then a climbers' path up the right side of the creek, alternating banks before gaining the ridge near 4,000 ft. Traverse below cliff bands, drop into the upper basin, and scramble Class 3 terrain to the summit (a short rappel may be needed at the notch on descent if wet). Round trip is roughly 5.3 miles with about 3,847 ft of gain, done comfortably in a day by fit parties.",
+            "hours": 9,
+            "miles": 5.3,
+            "title": "Car-to-car scramble",
+            "gainFt": 3847,
+            "lossFt": 3847,
+            "packLb": 0,
+            "schedule": [
+              {
+                "time": "5:30 AM",
+                "label": "Leave Barclay Lake trailhead",
+                "detail": "Start on the old logging road before the creek crossing."
+              },
+              {
+                "time": "7:00 AM",
+                "label": "Gain the ridge near 4,000 ft",
+                "detail": "Steep, brushy climbers' trail through the woods is the crux of the route-finding."
+              },
+              {
+                "time": "9:30 AM",
+                "label": "Reach the upper basin and saddle",
+                "detail": "Traverse below cliff bands, then climb into the basin below the twin summits."
+              },
+              {
+                "time": "10:30 AM",
+                "label": "Summit",
+                "detail": "Class 3 scrambling to the true (north) summit; aim for the right high point."
+              },
+              {
+                "time": "2:30 PM",
+                "label": "Back at trailhead",
+                "detail": "Reverse the route; a short rappel may be needed at the notch if wet."
+              }
+            ],
+            "objective": "Summit via the South Route and return the same day"
+          }
+        ],
+        "totalNote": "A single long day car-to-car: about 9 hours, 5.3 miles round trip, 3,847 ft gain - no camping required.",
+        "sourceNote": "Willhiteweb.com and Hike2Hike route descriptions for the South Route (9 hrs, 5.3 mi, 3,847 ft gain car-to-car); SummitPost/CascadeClimbers confirm this is treated as a single-day scramble, not an overnight."
+      },
+      "access": {
+        "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+        "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+        "rules": "Leave No Trace; respect private land near Baring",
+        "permit": "None required.",
+        "closures": null,
+        "landManager": "Mt. Baker-Snoqualmie National Forest",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+        "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+        "passRequired": "Northwest Forest Pass at Barclay Lake trailhead"
+      },
+      "road": {
+        "name": "US-2 / Barclay Lake Road",
+        "status": null,
+        "driveNote": "Access via US-2 and the Barclay Lake Road near the town of Baring",
+        "seasonalGate": null
+      },
+      "climate": {
+        "typical": "Very wet maritime climate with dense vegetation; driest mid- to late summer.",
+        "bySeason": {
+          "fall": "Short window before wet weather",
+          "spring": "Wet, very brushy, snow up high",
+          "summer": "Best window with drier rock",
+          "winter": "Snowy and serious"
+        },
+        "forecastZone": "West Slopes North Cascades / US-2"
+      },
+      "emergency": {
+        "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest, (360) 677-2414",
+        "sheriffDispatch": "911"
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "Weekends in August; the Barclay Lake trail itself is heavily used, but very few of those hikers continue past the lake onto the mountain",
+        "solitudeRating": 4,
+        "estimatePerSeason": "Likely a few dozen scramble parties per season (rough estimate) - the lake sees 50+ hikers/day on busy weekends, but the brushy summit push filters out nearly all of them"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "Strong, sustained fitness for steep, trail-less bushwhacking with significant elevation gain beyond the Barclay Lake approach",
+          "packWeight": "Light day pack preferred - dense brush and slide alder punish extra bulk"
+        },
+        "approachTime": "Barclay Lake trail is roughly 2-3 hours one-way to the lake; the steep, brushy ascent to the upper mountain and summit adds substantial additional time beyond that",
+        "requiredSkills": [
+          "route-finding through dense brush and talus",
+          "exposed class 3-4 scrambling",
+          "loose rock management",
+          "sound turnaround judgment given the underestimated difficulty"
+        ],
+        "experienceLevel": "Intermediate-to-experienced scrambler comfortable with sustained class 3-4 exposure and route-finding in thick brush; not a beginner objective despite the modest elevation"
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Late July through August",
+        "monthBreakdown": {
+          "July": {
+            "reason": "Brush and rock drying out, though early July can still hold snow up high",
+            "status": "good"
+          },
+          "June": {
+            "reason": "Late-June start of the season; lingering snow patches and very wet, brushy terrain are likely",
+            "status": "marginal"
+          },
+          "August": {
+            "reason": "Driest, most reliable conditions per on-file best_season and climate summary",
+            "status": "optimal"
+          },
+          "September": {
+            "reason": "Still climbable but the wet-weather window is closing as fall approaches",
+            "status": "good"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "Very wet maritime West Slopes North Cascades / US-2 climate per on-file climate data; conditions are driest and rock is most reliable mid-to-late summer",
+          "probability": "Afternoon showers and unsettled weather are possible even in the summer window; brush stays wet longer than the forecast suggests after any rain"
+        },
+        "exposure": "Serious exposure and loose rock near the small summit block per on-file watch_out/hazards; a slip on the exposed class 3-4 terrain, combined with the extremely steep brushy approach, would make self-extraction or rescue difficult",
+        "avalanche": {
+          "zone": "N/A - non-glaciated summer scramble route (nearest NWAC forecast zone is Stevens Pass, but it does not meaningfully apply to this June-September route)",
+          "byMonth": {
+            "July": "N/A",
+            "June": "N/A",
+            "August": "N/A",
+            "September": "N/A"
+          }
+        },
+        "crevasses": "N/A - no glacier travel"
+      },
+      "data_quality": {
+        "gaps": [
+          "No official party-count or summit-register data exists to distinguish scramble attempts from the much larger volume of Barclay Lake day-hikers",
+          "No NWAC avalanche zone maps directly onto this exact peak",
+          "GPS track sourced from public CalTopo map: https://caltopo.com/m/0ESB",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026 research pass"
+      },
+      "difficulty": {
+        "exposure": 4,
+        "physical": 3,
+        "technical": 2,
+        "commitment": 1,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 47.779291,
+        "peakLng": -121.435814,
+        "trailhead": "Barclay Lake Trailhead (FR-6024)",
+        "trailheadLat": 47.7923,
+        "trailheadLng": -121.4592,
+        "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+      },
+      "sling_rack": null,
+      "alpine_draws": 0,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": "Unprotected scramble; Mountain Project lists protection as 'None'. Crux is ~8 ft of exposed 5th-class rock with no gear placed by parties climbing it. Ice axe recommended for the snow-holding gully in spring/early summer.",
+      "ascender": null,
+      "corrections": "None — brushy, dirty Class 3-4 gully to south (true) summit; not a standalone recommended objective but gear needs confirmed via Mountain Project route page and multiple trip reports.",
+      "gear_confidence": "verified",
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": [],
+      "features": [
+        "Exposed",
+        "Adventurous"
+      ],
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_baring_mountain_vanishing_point",
+      "area_id": "wa_baring_mountain",
+      "name": "Vanishing Point",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 12,
+      "pitches": 14,
+      "length_m": 427,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Bryan Burdo, 1999",
+      "lat": null,
+      "lng": null,
+      "aspect": "N",
+      "season": "Jun-Sep",
+      "description": null,
+      "gear": [
+        "single rack nuts + cams to #1 Camalot (doubles in finger/hand sizes)",
+        "15-16 quickdraws including long runners",
+        "60m rope",
+        "rock shoes",
+        "approach shoes for the gully/creek approach",
+        "means to ascend/clip fixed ropes on approach"
+      ],
+      "hazards": [
+        "Steep, loose rockslide/washout gully on approach, partially mitigated by fixed ropes.",
+        "Extreme exposure high on the tower."
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A sustained, multi-pitch 5.12b testpiece up the steep prow of Dolomite Tower, a subsidiary rock tower within Baring's north-face amphitheater, widely regarded as one of the most continuously difficult free rock climbs in the Cascades.",
+      "beta": "First climbed by Bryan Burdo in 1999, Vanishing Point takes a ~400m overhanging prow with essentially no moderate pitches -- nearly every pitch is 5.10 or harder, including several 5.11-5.12 roof, arete, and dihedral sections. Mountain Project lists the route at 20 pitches; the most detailed pitch-by-pitch trip report found breaks the same climbing into 14 pitches, likely reflecting a different pitch-splitting convention.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.12b (7b/26/VIII+/E5 6b R)",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": "V",
+      "face": "North Face (Dolomite Tower)",
+      "permit": null,
+      "comms": null,
+      "descent": "A long walk-off: follow the 'BASE jumper trail' down and around the tower, cross Baring's flank, descend talus to the saddle between the peaks, then switchback through old-growth forest back to the ridge and down to the trailhead.",
+      "obj_haz": [
+        "sustained runout sections",
+        "loose/wet rock low on the approach gully",
+        "extreme exposure high on the tower"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.7884,
+          "lng": -121.4482,
+          "name": "Barclay Lake Trailhead",
+          "type": "trailhead",
+          "distMi": 0,
+          "elevFt": 2200
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": 3,
+        "approachTimeHrs": 3,
+        "recommendedStart": "Pre-dawn (long approach plus a full day of hard climbing)"
+      },
+      "detailed_rack": "Single rack of nuts and cams up to a #1 Camalot, with duplicate finger-to-hand-size cams; 15-16 quickdraws including several longer runners for rope-drag management on the wandering line; a 60m rope is sufficient for the pitch lengths described.",
+      "what_to_bring": [
+        "headlamp (descent commonly finishes after dark)",
+        "approach shoes for the wet gully/creek approach",
+        "harness usable with fixed ropes/slings on approach"
+      ],
+      "pro_tips": [
+        "The approach gully has fixed ropes at its steepest sections -- bring a sling or prusik to use them rather than free-climbing wet, loose rock.",
+        "Several pitches have variation options; review a topo or recent trip report before committing to a given line."
+      ],
+      "watch_out": [
+        "No moderate pitches -- sustained difficulty from bottom to top with several 5.11-5.12 sections and limited rests.",
+        "A wet 5.8 slab low on the approach has seen recent rockfall."
+      ],
+      "pro_needs": "Protection is generally adequate but with some runout sections (reportedly up to ~25 ft on 5.7-5.9 terrain); small-to-medium nuts are optional but not essential.",
+      "best_season": "Documented ascents have taken place in September; dry-rock conditions in the core Cascades climbing season (roughly June-September) are needed given the route's sustained, technical nature.",
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": "From the Barclay Lake Trailhead, follow the Barclay Lake trail about 1.5 miles to the first bridge, then leave the trail into the creek bed. Follow the creek briefly to a cairn, then travel through woods roughly parallel to the creek for 200-300 ft before reaching a large rockslide/washout. Ascend the washout/gully system (fixed ropes protect the steepest sections, including a bolt-protected chockstone), climb a wet 5.8 slab (~200 ft), traverse a ledge, climb a groove system (more fixed ropes), then cross third-class slabs to the talus bench beneath the route. Roughly 3 hours from the car.",
+      "descent_text": "Follow the BASE jumper trail down and west from the top of the route, circling counter-clockwise around the tower after about 5 minutes. Aim for the talus field and the notch between the peaks, then descend west through boulders and meadows (~700 vertical ft). Pick up a climbers' trail on skier's left through heather, descend a steep switchback trail through old-growth forest (~600 vertical ft), regain the ridge crest, follow the ridge trail for about a mile, then descend a steep final stretch (~1,500 vertical ft) to an old logging road leading back to the Barclay Lake Trailhead. Roughly 3 hours from the summit.",
+      "bail": "Fixed anchors/chains exist on at least some upper pitches (e.g., the exit pitches to chains), allowing a multi-rappel retreat back down the route in an emergency; below the route, the fixed-rope-protected approach gully can also be downclimbed with care.",
+      "pitch_detail": [
+        {
+          "grade": "5.10c",
+          "notes": "Can be combined into a single 60m pitch.",
+          "pitch": "P1-2",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11b",
+          "notes": "Mixed protection.",
+          "pitch": "P3",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11c",
+          "notes": "Thin hand crack; belay left of a roof.",
+          "pitch": "P4",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11b",
+          "notes": "Through the left edge of a roof.",
+          "pitch": "P5",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11c",
+          "notes": "Near/on the arete.",
+          "pitch": "P6",
+          "lengthM": null
+        },
+        {
+          "grade": "5.12+",
+          "notes": "Steep arete; a crux section of the route.",
+          "pitch": "P7",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11a",
+          "notes": "Arete/dihedral with runouts of roughly 25 ft.",
+          "pitch": "P8",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11d/5.12a",
+          "notes": "Through a roof; multiple variation options.",
+          "pitch": "P9",
+          "lengthM": null
+        },
+        {
+          "grade": "5.11-",
+          "notes": "Right through a roof.",
+          "pitch": "P10",
+          "lengthM": null
+        },
+        {
+          "grade": "5.12b",
+          "notes": "Back left through a roof; a short pitch.",
+          "pitch": "P11",
+          "lengthM": null
+        },
+        {
+          "grade": "5.10c",
+          "notes": "Steep climbing on a short pitch.",
+          "pitch": "P12",
+          "lengthM": null
+        },
+        {
+          "grade": "5.9",
+          "notes": "Left along an arete to chain anchors.",
+          "pitch": "P13",
+          "lengthM": null
+        },
+        {
+          "grade": "5.9",
+          "notes": "Dirty slab to the route's exit.",
+          "pitch": "P14",
+          "lengthM": null
+        }
+      ],
+      "itinerary": "A long single-day outing: roughly 3 hours approach, a full day of climbing across 14-20 pitches, and roughly 3 hours of descent -- an early start is essential.",
+      "access": {
+        "fees": "$5/vehicle/day or $30/year day-use fee at the Barclay Lake Trailhead",
+        "permit": "No formal climbing permit; a day-use fee or valid pass is required at the trailhead",
+        "closures": "Barclay Creek Road (FS 6024) had a significant washout reported roughly 2 miles before the trailhead in January 2026; verify current road status before driving in.",
+        "landManager": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+        "passRequired": "Northwest Forest Pass or Interagency Recreation Pass accepted (WA Discover Pass is NOT valid here)"
+      },
+      "road": {
+        "name": "Barclay Creek Road / FS Road 6024",
+        "status": "Generally drivable to the trailhead, but a significant washout roughly 2 miles before the trailhead was reported in January 2026; confirm current conditions with the Skykomish Ranger District.",
+        "driveNote": "From US-2 milepost 42 in Baring, turn north onto Barclay Creek Road (FS 6024, across from 'Der Baring Store'), cross the railroad tracks, and continue about 4.3-4.5 miles to the trailhead.",
+        "seasonalGate": "Not gated on a fixed seasonal schedule, but subject to closure from winter storm damage/washouts."
+      },
+      "climate": {
+        "fall": "Shortening weather windows and increasing rain.",
+        "spring": "Wet rock and swollen approach creek crossings are likely.",
+        "summer": "The main season; warmest and driest conditions for the sustained free climbing this route demands.",
+        "winter": "Not a realistic season for this route.",
+        "typical": "Wet, mild winters and warmer, drier summers typical of the west-slope Cascades; the shaded north-face amphitheater holds moisture longer than sunnier crags.",
+        "forecastZone": "NWAC Stevens Pass / West Slopes Central Cascades zone; NWS Everett/Stevens Pass corridor"
+      },
+      "emergency": {
+        "notes": "Cell coverage is unreliable in this area.",
+        "county": "Snohomish County, WA",
+        "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288, (360) 677-2414",
+        "nearestHospital": "Providence Regional Medical Center Everett is the nearest full-service hospital; Snoqualmie Valley Hospital (Snoqualmie, WA) is a smaller facility further south",
+        "sheriffDispatch": "911 (emergency); Snohomish County non-emergency 425-407-3999"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_deep_blue",
+      "area_id": "wa_dolomite_tower",
+      "name": "Deep Blue",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 13,
+      "pitches": 12,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Nathan Hadley, a multi-year project completed in 2020 with help from Mike Kerzhner, Blake Herrington, Luke Stefurak, Matt Carroll, Jasna Hodzic, and Liz Hadley.",
+      "lat": null,
+      "lng": null,
+      "aspect": "NE",
+      "season": "Jul-Sep (same approach-condition constraints as Vanishing Point)",
+      "description": null,
+      "gear": [
+        "single cam set .2-.75 (small/medium sizes)",
+        "~16 quickdraws (2-4 alpine draws)",
+        "rope long enough for the bolted rappel descent",
+        "helmet",
+        "approach shoes for 4th-class approach terrain"
+      ],
+      "hazards": [
+        "Same approach hazards as Vanishing Point (steep brush/gully, fixed-line forested rib, loose rock).",
+        "High commitment/exposure on a remote alpine rock tower once established above the lower pitches."
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A 12-pitch, fully-bolted 5.13c testpiece on Dolomite Tower's northeast face, starting about 100 ft left of Vanishing Point and climbing steep, technical rock through several roof systems to a 5.13 crux high on the wall.",
+      "beta": "Deep Blue begins on a fin-like flake right off the ground — mount the flake and pull a small bulge into easier climbing. Lower/mid pitches include an overhang leading into face climbing to a small ledge below a roof, a pitch through a roof with technical edges to a ledge, and a stretch of 5.11 climbing to a higher ledge below the crux. Higher up, steep 5.10+ lieback flakes lead to an alcove, then a roof with a bouldery V6 crux on perfect edges (~25m pitch), before steep, sequential climbing on good holds leads toward the 5.13c crux pitch itself (~35m, sustained overhanging climbing to a vertical-face crux) and a further 5.12 pitch (~35m) through another roof. The route was developed over several years and finished in 2020; it climbs in 12 pitches with link-up options for parties wanting to move faster, and multiple parties have completed it car-to-car in a day without simul-climbing.",
+      "turnaround": "As with Vanishing Point, the approach and descent both traverse exposed, technical terrain best done in daylight — plan a start early enough that the technical approach, all 12 pitches, and the rappel descent finish before dark.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.13c",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Fully bolted anchors top to bottom allow the route to be rappelled directly (per Mountain Project, \"all anchors are bolted\").",
+      "commitment": "V",
+      "face": "Northeast face of Dolomite Tower, starting roughly 100 ft left of Vanishing Point",
+      "permit": null,
+      "comms": "Same remote valley as Vanishing Point — no reliable cell coverage expected; carry a satellite communicator or PLB.",
+      "descent": "Rappel the route directly on its bolted anchors (fully bolted top to bottom).",
+      "obj_haz": [
+        "shares Vanishing Point's difficult, exposed approach (steep gullies, fixed lines, loose rock)",
+        "sustained hard free climbing low on the route with no easy warm-up",
+        "committing once established on the upper pitches",
+        "extreme exposure high on the tower"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.7954,
+          "lng": -121.46434,
+          "name": "Barclay Lake Trailhead",
+          "type": "trailhead",
+          "distMi": 0,
+          "elevFt": null
+        },
+        {
+          "lat": 47.77918,
+          "lng": -121.43599,
+          "name": "Dolomite Tower (area pin / route top-out vicinity)",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 5708
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 3.5,
+        "recommendedStart": "Pre-dawn from the trailhead, as with Vanishing Point."
+      },
+      "detailed_rack": "The technical pitches are fully bolted (essentially a big-wall sport route); a single BD cam set from #0.2 to #0.75 plus roughly 16 quickdraws (including 2-4 alpine draws for wandering pitches) covers the route. Cams are needed only on the roped approach pitches below the true start, not on the bolted climbing itself.",
+      "what_to_bring": [
+        "helmet",
+        "headlamp for an early start/possible late finish",
+        "extra water (long approach + long route)",
+        "tape for lieback/crack sections",
+        "sun protection"
+      ],
+      "pro_tips": [
+        "The route starts on a distinctive fin-like flake about 100 ft left of Vanishing Point's start — don't confuse the two lines at the base.",
+        "Because it's fully bolted, cams are only needed for the shared approach pitches; you can climb the route itself with just draws.",
+        "Multiple link-up options exist between pitches for parties wanting to move quickly; it has been done car-to-car in a day without simul-climbing."
+      ],
+      "watch_out": [
+        "Sustained hard climbing starts essentially at the ground — there's no easy pitch to warm up on before things get technical.",
+        "Shares Vanishing Point's notoriously tricky, semi-technical approach, so approach beta matters as much as route beta."
+      ],
+      "pro_needs": "Almost entirely bolt-protected; the small cam rack exists mainly for the shared roped approach pitches rather than the route proper.",
+      "best_season": "Same window as Vanishing Point: roughly late June/July through September, once the approach gully has cleared of snow and running water; the shared NE aspect keeps the wall relatively cool/shaded through most of the day.",
+      "high_point_ft": 5708,
+      "aid_grade": null,
+      "approach": "Identical to Vanishing Point's approach from the Barclay Lake Trailhead (see that route) — Barclay Creek Trail to the wash/gully system, fixed-line forested rib, and roped approach slabs to the base of the tower; Deep Blue's start is about 100 ft left of Vanishing Point's first pitch.",
+      "descent_text": "Because every anchor on Deep Blue is bolted, parties descend by rappelling the route itself rather than walking off; bring a rope long enough (and doubled rap tat/rings as needed) to link the bolted stations back to the ground.",
+      "bail": "Bolted anchors at every belay allow retreat by rappel from essentially any point on the route.",
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": "$5/day or $30/year day-use fee at Barclay Lake Trailhead.",
+        "permit": "No climbing-specific permit required.",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District; approach is adjacent to Wild Sky Wilderness.",
+        "passRequired": "Northwest Forest Pass or equivalent Interagency pass."
+      },
+      "road": {
+        "name": "Forest Service Road 6024 (Barclay Creek Road)",
+        "status": "Open, gravel; 4WD recommended for the final stretch",
+        "driveNote": "From US Hwy 2 milepost 42 in Baring, turn north onto FS 6024 directly across from the former Der Baring Store, cross the railroad tracks, and continue 4.3 miles to the Barclay Lake Trailhead.",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Good conditions into September; early snow can return to the approach by October.",
+        "spring": "Approach gully/creek typically running high with snowmelt into July.",
+        "summer": "Prime season; NE aspect gets only morning direct sun, keeping the wall relatively cool through the day.",
+        "winter": "Not a winter objective.",
+        "typical": "Wet, heavily forested west-slope Cascades valley; Wild Sky Wilderness receives roughly 150-200 inches of precipitation annually, mostly as snow at higher elevations.",
+        "forecastZone": "Not covered by NWAC's winter avalanche zones in climbing season; nearest NWAC winter forecast zone is Stevens Pass/West Slopes Central Cascades."
+      },
+      "emergency": {
+        "notes": "Remote, technical rescue terrain with no cell coverage — self-rescue capability and a satellite communicator/PLB are strongly recommended.",
+        "county": "Snohomish County, WA",
+        "rangerStation": "Skykomish Ranger Station, Mount Baker-Snoqualmie National Forest, (360) 677-2414.",
+        "nearestHospital": "Providence Regional Medical Center, Everett, WA (roughly 40-45 miles); EvergreenHealth Monroe is a closer, smaller facility in Monroe, WA.",
+        "sheriffDispatch": "911 for emergencies; Snohomish County Sheriff non-emergency (425) 407-3999 (east county); Snohomish County Volunteer Search & Rescue (425) 388-3328."
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_vanishing_point",
+      "area_id": "wa_dolomite_tower",
+      "name": "Vanishing Point",
+      "discipline": "alpine",
+      "grade": "5.12b",
+      "grade_system": "yds",
+      "grade_num": 12,
+      "pitches": 14,
+      "length_m": 427,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Bryan Burdo, established/bolted over several seasons in the late 1990s (route completed and first freed ~1998-1999); substantially rebolted and reworked in summer 2020 by Dan Kluskiewicz and Matt Carroll (with Luke Stefurak improving the approach fixed lines/rap anchors).",
+      "lat": null,
+      "lng": null,
+      "aspect": "NE",
+      "season": "Late Jun-Sep (approach gully typically wet/snowy until early-mid Aug)",
+      "description": null,
+      "gear": [
+        "Single rack of nuts and cams to #1 (finger to mid-hand)",
+        "15 draws (including 6 single runners)",
+        "60-meter single rope",
+        "Helmet (essential for rockfall hazard)",
+        "Alpine rock shoes",
+        "Harness",
+        "Quickdraws",
+        "Carabiners",
+        "Belay/rappel device",
+        "Anchor-building kit"
+      ],
+      "hazards": [
+        "Objective rockfall hazard on upper pitches and roof sections, exacerbated by weathering and freeze–thaw cycles.",
+        "Runout sections on pitch 8 (intentional) create exposure and mental difficulty.",
+        "Approach gully waterfall is chossy and exposed; loose rock is common.",
+        "The 60–70° forested rib with fixed lines presents scrambling hazard if weather or darkness arrives.",
+        "Summer thunderstorms can develop rapidly; lightning exposure is significant on the tower.",
+        "Lichen and moisture on bolts and slab sections create slipping hazard after rain."
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A nearly 1,500-foot overhanging prow of very sustained alpine climbing at 5.11+/5.12, featuring multiple roof systems, technical arete climbing, and serious exposure throughout. One of the most demanding alpine climbs in the Cascades.",
+      "beta": "Vanishing Point is approximately as steep a route as one could find on the mountain—nearly every pitch involves relentless overhanging terrain at 5.11–5.12. The route was established over several years and fully modernized in 2020 with new stainless-steel anchors and improved protection. Notable features include pitch 5 (crux, 5.12+), a collapsed roof section, and several intentionally runout pitches. The approach involves 800 feet of mostly roped-up slab climbing with fixed lines and bolts.",
+      "turnaround": "If not making good time by mid-afternoon (typically by 12–1 pm depending on start time and climbing speed), seriously consider rappelling off rather than pushing through darkness. The descent is long and can be hazardous with exposure in poor light.",
+      "auto_generated": false,
+      "alpine_grade": "VI",
+      "rock_grade": "5.12b",
+      "ice_grade": null,
+      "gain_ft": 2100,
+      "loss_ft": 2100,
+      "dist_km": 5,
+      "max_angle": 70,
+      "rappels": "After the 2020 rebolt the route can be rappelled top to bottom on a single 70m rope (double-rope raps down the line); most parties instead descend via the talus/game-trail walk-off to the west (see descent).",
+      "commitment": "V",
+      "face": "Main overhanging prow on the northeast side of Dolomite Tower",
+      "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+      "comms": "Cell phone coverage is unreliable or absent in the Skykomish drainage and on the tower. A satellite communicator (Garmin inReach, PLB, or similar) is strongly recommended for emergency communication and trip reporting. Notify the Skykomish Ranger Station before your climb if possible.",
+      "descent": "Walk off via the heather descent to a BASE jumper trail system, then follow well-worn switchbacks through forested ridge system back to the Barclay Lake trailhead parking area. Approximately 3 hours car-to-car from summit.",
+      "obj_haz": [
+        "loose/choss rock on some pitches (esp. lower gully and P6)",
+        "long runout sections on easier terrain (P3, P8)",
+        "extreme exposure high on the tower",
+        "difficult, injury-prone approach (steep forested rib, fixed lines, wet gully)",
+        "committing retreat once above the lower pitches",
+        "old fixed gear/\"death flake\" anchor on pre-2020 topo (re-routed in 2020)"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.784586,
+          "lng": -121.426684,
+          "elev": 2422,
+          "name": "Barclay Lake",
+          "note": "Trail continues past the lake toward Baring's north side.",
+          "type": "Water",
+          "distMi": 2.2
+        },
+        {
+          "lat": 47.7805,
+          "lng": -121.429,
+          "elev": 5200,
+          "name": "Dolomite Tower Base",
+          "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+          "type": "Junction",
+          "distMi": 3.8
+        },
+        {
+          "lat": 47.781,
+          "lng": -121.43,
+          "elev": 5900,
+          "name": "Vanishing Point Topout",
+          "note": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete.",
+          "type": "Topout",
+          "distMi": 4
+        },
+        {
+          "lat": 47.77918,
+          "lng": -121.43599,
+          "name": "Dolomite Tower / Vanishing Point (top of route)",
+          "type": "Route/summit",
+          "distMi": null,
+          "elevFt": null
+        },
+        {
+          "lat": 47.7954,
+          "lng": -121.46434,
+          "name": "Barclay Lake Trailhead",
+          "note": "USFS-listed coordinate for the Barclay Lake Trailhead parking area, matching the existing DB entry exactly; confirmed as the correct approach start for Dolomite Tower/Vanishing Point by Mountain Project's route/area pages and Blake Herrington's trip report, which both describe following the Barclay Lake trail before leaving it off-trail toward the tower.",
+          "type": "Trailhead",
+          "elevFt": 2280
+        },
+        {
+          "lat": 47.77918,
+          "lng": -121.43599,
+          "name": "Dolomite Tower",
+          "type": "Summit",
+          "elevFt": 5708
+        }
+      ],
+      "gpx": [
+        [
+          47.784586,
+          -121.426684
+        ],
+        [
+          47.7805,
+          -121.429
+        ],
+        [
+          47.781,
+          -121.43
+        ],
+        [
+          47.77918,
+          -121.43599
+        ],
+        [
+          47.7954,
+          -121.46434
+        ],
+        [
+          47.77918,
+          -121.43599
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 13,
+        "summitTimeHrs": 7,
+        "descentTimeHrs": 3,
+        "approachTimeHrs": 3,
+        "recommendedStart": "4:00 AM–5:00 AM from trailhead"
+      },
+      "detailed_rack": "Single rack to #1 with a few duplicates in the finger sizes. Recommended: 2–3 nuts in fingers, 2–3 mid-hand nuts, 2–3 hand-sized cams, 1–2 #1 cams. Approach climbing may require ice axe (early season). Small to medium nuts and slings optional but not required. 15 draws (mix of singles and doubles) recommended; 6 of these can be single runners.",
+      "what_to_bring": [
+        "Rock climbing shoes (alpine)",
+        "Helmet (essential for rockfall hazard)",
+        "Layers (fleece, wind jacket, rain shell)",
+        "Headlamp with extra batteries",
+        "Water or hydration system (2–3L for dry/late-season)",
+        "High-calorie food (energy bars, nuts, nut butter)",
+        "First aid kit (blood stoppers, pain relief, blister treatment)",
+        "Knife/multitool",
+        "Sunscreen and lip balm",
+        "Toilet paper and trowel",
+        "Map and compass (GPS unreliable in dense forest)",
+        "Satellite communicator or PLB",
+        "Rappel backup device (if retreating)",
+        "Rain cover for pack",
+        "Insulation bivy layer (in case of unplanned bivy; caves reported near route start)"
+      ],
+      "pro_tips": [
+        "Pitch 5 is the crux at 5.12+ (graded 5.11c on FA, but climbers report it as significantly harder). Scout the line on approach if possible.",
+        "The collapsed roof section on pitch 9/10 (rerouted in 2020) demonstrates route changes since FA—the route may still undergo evolution as weathering continues.",
+        "Pitch 8 is intentionally left with significant runout as a mental challenge; this is by design. Know your comfort level.",
+        "Start very early (4–5 am from trailhead) to maximize light on the climb and descent.",
+        "Water is usually available in the approach gully until early August; carry extra capacity if climbing later in season.",
+        "Bring a satellite communicator or PLB—cell service is unreliable in the Skykomish drainage.",
+        "The 2020 modernization improved the approach significantly; older trip reports may reference less secure sections.",
+        "Ben Gilkison's 2012 onsight of most pitches is impressive but not representative of typical climbing here—this is a serious, committing alpine route."
+      ],
+      "watch_out": [
+        "Rockfall risk is real, especially on pitch 5 area where the roof has partially collapsed since 1999 FA.",
+        "Loose rock throughout approach and on tower—wear helmet at all times.",
+        "Multiple runout sections—not all are bolted; know the line before committing.",
+        "Serious exposure on most pitches—not a beginner alpine climb.",
+        "Approach is technical and hard to navigate even with beta; parties have gotten lost.",
+        "Weather can change rapidly in the Cascades—be prepared to descend or bivy.",
+        "Fixed lines on approach may be weathered or absent in some years—do not rely solely on them."
+      ],
+      "pro_needs": "Primarily bolted sport climbing with some trad pitches. Anchors are bolted throughout; the bolts were replaced with stainless steel and upgraded during 2020 modernization. Climbers must be comfortable with self-rescue, anchor building, and transitioning between bolted and trad protection. The route involves high commitment and serious altitude—turnaround decisions should be made early.",
+      "best_season": "June through early July offers the most stable weather and water availability. September conditions are drier but snow risk increases toward October. Spring (May) and late fall have significant snow hazard on approach gullies.",
+      "high_point_ft": 5708,
+      "aid_grade": null,
+      "approach": "Start at Barclay Lake trailhead (74920 NE Stevens Pass Hwy, Skykomish, WA 98288). Follow the pleasant level main trail for about 20 minutes to a bridge crossing a large creek (~1 mile). Before the bridge, break right into forest around a large boulder, then walk through relatively open forest or along the creek bed until reaching an open boulder field. Continue through the boulder field to reach steep gullies. Ascend a 60–70° forested rib with fixed lines and natural protection. Climb around the right side of a chossy waterfall (exposed scrambling). Continue up the wash to a ramp with hand lines, then ascend approximately 800 feet of mostly roped-up slab via bolted sections and natural features. Total approach time: 2.5–3.5 hours for competent parties.",
+      "descent_text": "From the summit, descend via the established BASE jumper trail system (marked on climbing area maps). The descent is non-technical but lengthy. Follow the forested ridge and switchback trail through old-growth forest back down to the Barclay Lake trailhead. The descent can be muddy and root-strewn; allow 3 hours total for descent and return to parking.",
+      "bail": "Retreat is possible via rappel using anchor bolts throughout the route. The approach anchors added in 2020 are now reversible with a single 70-meter rope, allowing full retreat from the approach slab if weather or other factors necessitate turning back.",
+      "pitch_detail": [
+        {
+          "grade": "5.10",
+          "notes": "Slab approach, bolted",
+          "pitch": "1"
+        },
+        {
+          "grade": "5.10b",
+          "notes": "Slab; follows bolts leftward, finger gear optional",
+          "pitch": "2"
+        },
+        {
+          "grade": "5.11a",
+          "notes": "Slab; 2 bolts added in 2020 to reduce runout",
+          "pitch": "3"
+        },
+        {
+          "grade": "5.11b",
+          "notes": "Face climbing; mix of bolts and natural gear",
+          "pitch": "4"
+        },
+        {
+          "grade": "5.11c",
+          "notes": "CRUX: Roof pitch, graded 5.11c FA but often felt as 5.12+; roof section has partially collapsed since 1999",
+          "pitch": "5"
+        },
+        {
+          "grade": "5.11b",
+          "notes": "Arete climbing; technical, exposed",
+          "pitch": "6"
+        },
+        {
+          "grade": "5.11a",
+          "notes": "Face; mix of bolts and cams",
+          "pitch": "7"
+        },
+        {
+          "grade": "5.11+",
+          "notes": "Runout section intentionally left with minimal protection as mental challenge",
+          "pitch": "8"
+        },
+        {
+          "grade": "5.11",
+          "notes": "Rerouted in 2020 to eliminate 'death flake'; now avoids the collapsed section",
+          "pitch": "9"
+        },
+        {
+          "grade": "5.10d",
+          "notes": "Easier terrain; good rest",
+          "pitch": "10"
+        },
+        {
+          "grade": "5.11",
+          "notes": "Arete; likely second crux of route",
+          "pitch": "11"
+        },
+        {
+          "grade": "5.10c",
+          "notes": "Sustained overhanging terrain",
+          "pitch": "12"
+        },
+        {
+          "grade": "5.11",
+          "notes": "Roof; technical",
+          "pitch": "13"
+        },
+        {
+          "grade": "5.10b",
+          "notes": "Sustained",
+          "pitch": "14"
+        },
+        {
+          "grade": "5.11a",
+          "notes": "Face climbing",
+          "pitch": "15"
+        },
+        {
+          "grade": "5.10d",
+          "notes": "Overhanging terrain",
+          "pitch": "16"
+        },
+        {
+          "grade": "5.11",
+          "notes": "Sustained pitch near summit",
+          "pitch": "17"
+        },
+        {
+          "grade": "5.10c",
+          "notes": "Top out terrain",
+          "pitch": "18"
+        },
+        {
+          "grade": "5.10",
+          "notes": "Final pitches to summit block",
+          "pitch": "19"
+        },
+        {
+          "grade": "5.9",
+          "notes": "Summit terrain; walk-off",
+          "pitch": "20"
+        }
+      ],
+      "itinerary": "Typically climbed as a 2-3 day trip mirroring the original ascent style: Day 1 — hike in and complete the ~3-3.5 hour technical approach (forested rib with fixed lines, roped slab) to the bivy caves below the tower; Day 2 — climb the full 18-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches); Day 3 (or same-day if fast) — descend via the ~3-hour descent route back to the trailhead.",
+      "access": {
+        "_raw": {
+          "note": "Confirm specific permit requirements with Skykomish Ranger District",
+          "location": "Wild Sky Wilderness, Mt. Baring massif near Index",
+          "permit_type": "Wilderness permit (free self-issue for day use; overnight permits required)",
+          "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Skykomish Ranger District",
+          "parking_pass": "Northwest Forest Pass ($30 annual or $5 day pass)",
+          "cost_structure": {
+            "parking_pass": "$30 annual Northwest Forest Pass or $5 day pass"
+          },
+          "permit_location": "Ranger stations and trailheads",
+          "ranger_district": "Skykomish Ranger District - (360) 677-2414",
+          "special_hazards": [
+            "Steep granite climbing",
+            "Avalanche terrain in winter"
+          ],
+          "wilderness_zone": "Wild Sky Wilderness",
+          "group_size_limit": "Varies by area - typically 6 people max",
+          "seasonal_closures": {
+            "typical": "Winter snowpack and access restrictions"
+          }
+        },
+        "fees": "N/A",
+        "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+        "permit": "Wilderness permit (free self-issue for day use; overnight permits required)",
+        "closures": "N/A",
+        "permitZone": "Wild Sky Wilderness",
+        "landManager": "USFS Mount Baker-Snoqualmie National Forest - Skykomish Ranger District",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+        "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+        "passRequired": "None"
+      },
+      "road": {
+        "name": "Barclay Lake Trailhead (via Barclay Creek Road/FR-6024), off US-2 at Baring",
+        "status": "Gravel forest road, generally passable to standard cars in season; the actual Dolomite Tower approach beyond the maintained Barclay Lake trail is unmaintained/off-trail scrambling.",
+        "driveNote": "Roughly 1-1.5 hours from Seattle via US-2 to Baring."
+      },
+      "climate": {
+        "fall": "September: Cooling nights, shorter days, lower crowds. Early September resembles summer; late September sees increasing snow risk. October can have early snow on high terrain.",
+        "spring": "April–May: Snow lingers on approach gullies above 3,500 ft through May; ice axe often needed. Spring runoff swells creeks. Approach is technical and avalanche-hazardous early in season.",
+        "summer": "June–August: Most reliable climbing window. June is typically drier than July–August. Expect afternoon clouds and occasional thunderstorms. July–August can be humid and buggy. Water is abundant in approach gullies.",
+        "winter": "November–March: Route is snow and ice-covered; winter alpine climbing required. Approach is avalanche-hazardous. Not recommended for most climbers.",
+        "typical": "The Central-West Cascades are maritime-influenced with mild summers and wet winters. Expect rapidly changing weather, afternoon thunderstorms (especially July–August), and cool nights. Afternoon clouds and rain are common even in summer."
+      },
+      "emergency": {
+        "notes": "Rescue response time is long due to remote location and steep approach. Self-rescue skills and party discipline are essential. Notify ranger station before climbing. Carry a satellite communicator.",
+        "county": "Snohomish County",
+        "rangerStation": "Skykomish Ranger Station, Mount Baker-Snoqualmie National Forest, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288. Hours: Wed–Fri 9:00 AM–12:00 PM, 1:00 PM–4:00 PM. Phone: (360) 677-2414.",
+        "nearestHospital": "Snoqualmie Valley Health (Snoqualmie, WA), approximately 30+ miles southwest. Airlift via helicopter (SAR) likely required from route for serious injury.",
+        "sheriffDispatch": "Snohomish County Sheriff: 911 (emergency) or (425) 407-3999 (non-emergency)"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 4,
+        "physical": 2,
+        "technical": 5,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 47.77918,
+        "peakLng": -121.43599,
+        "trailhead": "Barclay Lake Trailhead (FR-6024)",
+        "trailheadLat": 47.7923,
+        "trailheadLng": -121.4592,
+        "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+      },
+      "sling_rack": null,
+      "alpine_draws": 0,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": "[\"Elevation discrepancy resolved: Dolomite Tower base ~5,708 ft (not 11,948 ft user-provided). User elevation may refer to another peak; verified via multiple independent sources.\",\"Rope length: Sources consensus 60-70m single rope. Angle 5 (generic alpine) recommends 30m minimum, but Dolomite Tower's 20-pitch length requires 60m minimum; 70m preferred to avoid forced simul-climbing on 5.10 pitches.\",\"Approach time: Angles 1 & 3 cite 3-3.5 hours; Angle 4 cites 3-4 hours. 3-3.5 hours is consensus for fit parties. 2020 improvements noted (new bolts, alternative slab route).\",\"Gear rack: All sources (Angles 1, 2, 3) agree on single rack to #1 Camalot + optional #2. Small/medium nuts optional (Angles 1, 2). P4 requires gear; rest primarily bolted.\",\"P3 crux: 2020 modernization added 2 bolts; still technically runout but safer than pre-2020. Multiple sources reference P3 as site of historic fall/injury.\",\"P5 loose rock: Multiple trip reports (Angle 3) confirm significant deterioration and rock falls. Alternate 'mystery bolts out left' avoids worst section.\",\"2020 modernization: Confirmed by multiple recent ascent reports. All anchors replaced stainless steel. Route improved but retains intentional runouts (P8) for mental challenge.\",\"Deep Blue (separate route): 5.13c sport, 12 pitches effective (30 total). All bolted. 70m rope. Can be rapped or walked off.\"]",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}

@@ -1,0 +1,2071 @@
+{
+  "fetched_for": [
+    "wa_garfield_mountain",
+    "wa_mount_garfield"
+  ],
+  "areas": [
+    {
+      "id": "wa_garfield_mountain",
+      "name": "Garfield Mountain",
+      "parent_id": "wa_snoqualmie_i90_region",
+      "path": "usa.washington.wa_centralwest.wa_snoqualmie_i90_region.wa_garfield_mountain",
+      "area_type": "peak",
+      "region": "Alpine Lakes / I-90",
+      "lat": 47.552695,
+      "lng": -121.493635,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Garfield Mountain is a rugged, five-summited granodiorite massif that dominates the Middle Fork Snoqualmie River valley, rising more than 4,400 ft above the river in barely a mile — one of the steepest, most relief-dense peaks in the western Cascades. It has a strong local reputation for brushy, punishing approaches and loose rock, and despite sometimes being called a 'scramble,' every one of its summits (Main/East Peak, West Peak, North Peak, and the Leaning Spire) actually requires roped technical climbing to complete, with routes ranging from 5.3 to the 23-pitch 5.10c sport line Infinite Bliss.",
+      "route_count": 5,
+      "source": null,
+      "elevation_ft": 5519,
+      "prominence_ft": 839,
+      "parent_peak": null,
+      "dominant_discipline": "trad"
+    },
+    {
+      "id": "wa_mount_garfield",
+      "name": "Mount Garfield",
+      "parent_id": "wa_exit_34_middle_fork_amp_taylor_river",
+      "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_mount_garfield",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 47.55277,
+      "lng": -121.49339,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": null,
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "trad"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_garfield_mountain_infinite_bliss",
+      "area_id": "wa_garfield_mountain",
+      "name": "Infinite Bliss",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 10,
+      "pitches": 23,
+      "length_m": 792,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Leland Windham and Steve Martin, August 2003",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": "Jul-Aug",
+      "description": null,
+      "gear": [
+        "17-30 quickdraws",
+        "Two 60m ropes",
+        "Light trad rack (optional nuts)"
+      ],
+      "hazards": [
+        "Multiple bent hangers on lower pitches indicate a history of rockfall damage",
+        "Fair rock quality with limited protection through pitches 13-18"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A long, mostly bolt-protected trad/slab line up 23 pitches on Garfield's West Peaks (Infinite Peak), one of the longest sport-oriented routes in the Cascades foothills.",
+      "beta": "Low-angle, runout slab climbing for the first ~12 pitches (soloable for confident 5.8 climbers early on), a very runout, fair-quality middle section (pitches 13-18, with 15-17 hard to protect), and a harder, well-bolted finish (pitches 19-23) with two 5.10 pitches.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.10c",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Rappel from the summit; exact number/length of raps not documented in available sources",
+      "commitment": null,
+      "face": "West Peaks (Infinite Peak sub-summit)",
+      "permit": null,
+      "comms": null,
+      "descent": "Rappel from the summit of Infinite Peak (specific anchor sequence not detailed in available sources).",
+      "obj_haz": [
+        "rockfall",
+        "runout climbing",
+        "loose rock (mid pitches)"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.54604,
+          "lng": -121.52151,
+          "name": "Parking pull-off",
+          "type": "trailhead",
+          "distMi": 0,
+          "elevFt": 1174
+        },
+        {
+          "lat": 47.549,
+          "lng": -121.5137,
+          "name": "Route start",
+          "type": "base",
+          "distMi": null,
+          "elevFt": null
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": "17+ quickdraws (up to 30 if simul-climbing), a few extendable trad draws to reduce rope drag, an optional light set of nuts for the rare slab placement, and two 60m ropes.",
+      "what_to_bring": [
+        "Helmet (documented rockfall/bent hangers)",
+        "Approach shoes for the forested approach"
+      ],
+      "pro_tips": [
+        "Confident 5.8 slab climbers can simul-climb the first 7 pitches",
+        "Extendable trad draws help manage rope drag on the wandering slab pitches"
+      ],
+      "watch_out": [
+        "Rock fall is a serious concern the entire route — dropped rock has nowhere to go but down the line",
+        "Pitches 15-17 are the hardest to protect on the whole route"
+      ],
+      "pro_needs": "Mostly bolt-protected; bolts on the lower pitches show bent hangers from historical rockfall. Pitches 15-17 in the runout middle section are notably hard to protect.",
+      "best_season": "Jul-Aug per a first-hand account of the route",
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": "Park at the gravel pull-off (~47.54604, -121.52151, ~1,174 ft). Follow NF-110/NF-5620 uphill roughly 10-15 minutes, then hike about 45 minutes, mostly uphill through forest switchbacks, to the route start near 47.549, -121.5137.",
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": [
+        {
+          "grade": null,
+          "notes": "Low-angle slab, easy but runout; simul-climbable for confident 5.8 climbers",
+          "pitch": "P1-7",
+          "lengthM": null
+        },
+        {
+          "grade": null,
+          "notes": "Steeper rock, closer bolt spacing as difficulty increases",
+          "pitch": "P8-12",
+          "lengthM": null
+        },
+        {
+          "grade": null,
+          "notes": "Mostly easy but the most runout section; fair rock quality; P15-17 hard to protect",
+          "pitch": "P13-18",
+          "lengthM": null
+        },
+        {
+          "grade": "5.10c (crux pitches)",
+          "notes": "Hardest climbing, sport-bolted; both 5.10 pitches well protected",
+          "pitch": "P19-23",
+          "lengthM": null
+        }
+      ],
+      "itinerary": null,
+      "access": {
+        "fees": null,
+        "permit": "Free self-issue Alpine Lakes Wilderness permit required at the trailhead",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Alpine Lakes Wilderness",
+        "passRequired": null
+      },
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_garfield_mountain_leaning_spire_west_route",
+      "area_id": "wa_garfield_mountain",
+      "name": "Leaning Spire West Route",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 5,
+      "pitches": null,
+      "length_m": 244,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Fred Beckey, Lois Graham, and Walt Varney, November 9, 1941",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": null,
+      "description": null,
+      "gear": [
+        "Light rack to 2in",
+        "Extra rappel slings",
+        "70m rope"
+      ],
+      "hazards": [
+        "Loose rock throughout the route",
+        "No documented ascents/registered parties prior to route write-up, implying little traffic/beta"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "The original 1941 first-ascent line up Leaning Spire, a distinct 5,169 ft tower immediately west of Garfield's true summit.",
+      "beta": "Moderate, low-5th-class trad climbing up Gully #1 to the notch below the spire; loose rock keeps the quality modest despite the historic pedigree.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.5",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "5+ rappels on a single 70m rope, off trees and rock horns",
+      "commitment": null,
+      "face": "Leaning Spire (5,169 ft), immediately west of Garfield's high point",
+      "permit": null,
+      "comms": null,
+      "descent": "Single 70m rope (60m likely sufficient) via 5+ rappels off trees and rock horns, with extensive down-scrambling. An alternative descent rappels off an overhang near the summit into Gully #2, though route-finding there is reported as 'quite scary.'",
+      "obj_haz": [
+        "loose rock",
+        "rockfall from other parties"
+      ],
+      "waypoints": null,
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": "A simple, light rack to 2 inches, plus extra rappel slings.",
+      "what_to_bring": null,
+      "pro_tips": null,
+      "watch_out": [
+        "Loose rock makes the route barely one-star quality — avoid climbing if another party is above or below"
+      ],
+      "pro_needs": "Adequate on the better rock; loose sections throughout limit protection quality.",
+      "best_season": "Plan for a very long, dry day",
+      "high_point_ft": 5169,
+      "aid_grade": null,
+      "approach": "Approach the same as the Main Peak's South Route to 'the Y', then turn up Gully #1 and follow it to the notch below the spire. Midway are 20 ft rock steps, climbable directly or bypassed via loose, brushy scrambling.",
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": null,
+        "permit": "Free self-issue Alpine Lakes Wilderness permit required at the trailhead",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Alpine Lakes Wilderness",
+        "passRequired": null
+      },
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_garfield_mountain_preiss_route",
+      "area_id": "wa_garfield_mountain",
+      "name": "Preiss Route",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 9,
+      "pitches": 13,
+      "length_m": 518,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Mike Preiss (solo), July 20, 1999",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": null,
+      "description": null,
+      "gear": [
+        "Cams to 3in",
+        "Nuts",
+        "Tricams",
+        "A few pins",
+        "Rock hammer",
+        "8-10 runners"
+      ],
+      "hazards": [
+        "Serious, poorly protected middle slab section"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A 13-pitch, Grade IV trad line up a sub-summit rock near Garfield's West Peak, established solo in 1999.",
+      "beta": "Moderate trad climbing up to 5.9 with good protection on most pitches; the crux-adjacent middle slabs are serious (R/X-rated) with real rockfall/fall exposure.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.9",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Two-rope rappel option off the sub-summit as an alternative to the walk-off descent",
+      "commitment": "IV",
+      "face": "West Peak sub-summit rock",
+      "permit": null,
+      "comms": null,
+      "descent": "Hike around right and scramble the short back side of the sub-summit rock, then descend up and over the main West Peak summit and down the west ridge; alternatively rappel with two ropes.",
+      "obj_haz": [
+        "rockfall",
+        "loose rock (middle slabs)"
+      ],
+      "waypoints": null,
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": "Small-to-medium rack with cams up to 3 inches, a set of nuts, tricams, a few pins, a rock hammer, and 8-10 runners.",
+      "what_to_bring": null,
+      "pro_tips": null,
+      "watch_out": [
+        "Middle slabs are R/X-rated for fall consequence despite moderate grade"
+      ],
+      "pro_needs": "Protection was reported good on the moderate pitches; the middle slab sections are R- or X-rated (serious/no fall) despite easier grades.",
+      "best_season": null,
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": "Hike basically straight up, taking a line of least resistance for roughly 1,500 ft while staying left of the lower rocky slabs, with up to 3rd-class scrambling. A 20 ft dirty downclimb leads to the base of the first pitch.",
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": null,
+        "permit": "Free self-issue Alpine Lakes Wilderness permit required at the trailhead",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Alpine Lakes Wilderness",
+        "passRequired": null
+      },
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_garfield_mountain_scramble",
+      "area_id": "wa_garfield_mountain",
+      "name": "Multi-Summit Scramble",
+      "discipline": "scrambling",
+      "grade": "Class 3",
+      "grade_system": "class",
+      "grade_num": 3,
+      "pitches": null,
+      "length_m": 1012,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Jim Crooks and Judson Nelson, August 27, 1940 (a fixed ring piton attributed to this ascent remains in #2 Gully)",
+      "lat": null,
+      "lng": null,
+      "aspect": "S",
+      "season": "Jul-Sep, bone dry conditions required",
+      "description": null,
+      "gear": [
+        "helmet (mandatory — rockfall is common in the gully systems)",
+        "rope and full rack mandatory on every established line, not optional as previously listed — a single rack to 2\" suffices for the easiest documented route (Southwest Ledges, 5.3), but the classic South Route needs a full trad rack, extra slings/cordage for tat-covered rap anchors, and two 60m ropes",
+        "sturdy brush-resistant clothing (extensive slide alder and devil's club bushwhacking low on approach)",
+        "headlamp — car-to-car days of 12–15+ hours are common and many parties finish in the dark"
+      ],
+      "hazards": [
+        "extremely loose, rotten rock throughout the gullies and slabs — Fred Beckey called the standard South Route a 'hazardous enigma'",
+        "mandatory 5th-class climbing and roped rappels on every documented line (South Route, Southwest Ledges 5.3, Infinite Bliss 5.10c); this is not scrambling terrain despite the local nickname",
+        "brutal bushwhack low on the approach through slide alder, devil's club, and downed timber",
+        "complex routefinding among the massif's five summits and connecting notches (e.g. the 'Y Notch')",
+        "afternoon thunderstorms, common over the Cascade crest in July–August",
+        "long days — trip reports document 12–15+ hour car-to-car pushes and frequent forced bivouacs (Glade Saddle is a known 2-person bivy site)"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "Garfield Mountain is a rugged granodiorite massif of five named summits (Main/East Peak 5,519 ft, West Peak 4,896 ft, North Peak 5,101 ft, plus the Leaning Spire) rising more than 4,400 ft above the Middle Fork Snoqualmie River in barely a mile — one of the steepest, most relief-dense peaks in the western Cascades. Despite a local reputation as a 'scramble,' every summit actually requires roped technical climbing: documented lines range from the 5.3 Southwest Ledges to the 23-pitch 5.10c sport route Infinite Bliss on the West Peak's south face, with the classic South Route (first ascended August 27, 1940 by Jim Crooks and Judson Nelson) involving sustained 5th-class terrain, extremely loose rock, and six double-rope rappels on the way down.",
+      "beta": "From the Taylor River trailhead, a cross-country line follows a dry creek bed, then a brushy, flagged climbers' path through the 'dirt gully,' a soloable 2-pitch slab, a traverse under a rock outcrop, the 'Razorback,' 'Glade Saddle' (a tight 2-person bivy site), a 'wooded ramp,' the roped 'Key Ledge Traverse,' the 'Y Notch' (head of 'The Great Canyon'), and finally '#2 Gully' — loose rock on one side, polished/mossy on the other — which gains the upper mountain via a mix of simul-climbing and belayed pitches (Beckey's 'Chimney Variation' avoids a wet chimney via two easy 5th-class leads). Above the gully, 2nd/3rd-class terrain leads to the true summit at 5,519 ft. Route-finding among several similar-looking gullies is the route's signature difficulty, and Beckey's own guidebook description is famously terse.",
+      "turnaround": "Given that 12–15+ hour car-to-car days are common, set a firm early-to-mid-afternoon turnaround time to ensure you're off the technical terrain and rappels before dark.",
+      "auto_generated": true,
+      "alpine_grade": null,
+      "rock_grade": "Class 4 scrambling on the standard line; a short 5.4 pitch on Beckey's optional 'Chimney Variation'",
+      "ice_grade": null,
+      "gain_ft": 4400,
+      "loss_ft": 4400,
+      "dist_km": 2.4,
+      "max_angle": 50,
+      "rappels": "Roughly 6-9 rope-length rappels on descent (mix of single- and double-rope, two 60m ropes) off bolted anchors, trees, and chockstones through the slab and #2 Gully",
+      "commitment": null,
+      "face": "South Route / South Face (Main Peak)",
+      "permit": "Northwest Forest Pass required to park at the Middle Fork-area pullout/trailhead ($5 day-use or $30 annual; digital Scan & Pay via the Recreation.gov app accepted), plus a free self-issue wilderness permit at the trailhead once inside the Alpine Lakes Wilderness boundary (per Mt. Baker-Snoqualmie National Forest pass/permit pages, matching this route's own access.permit field).",
+      "comms": null,
+      "descent": "There is no walk-off. The classic South Route requires six double-rope rappels (bolted and tree anchors; two 60m ropes recommended) back down through the gully system, followed by the same brushy, loose approach in reverse.",
+      "obj_haz": [
+        "rockfall",
+        "loose rock",
+        "route-finding",
+        "brush/bushwhacking",
+        "remote/serious rescue access"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.5485,
+          "lng": -121.5369,
+          "elev": 1200,
+          "name": "Middle Fork Road (FR-56) Pullout at Taylor River Crossing",
+          "note": "Small pullout where FR-56 crosses the Taylor River; parties leave the road here and bushwhack cross-country toward Garfield's south flank — no maintained trail beyond this point.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 47.5493342,
+          "lng": -121.5282222,
+          "elev": 2100,
+          "name": "Dirt Gully Creek Crossing",
+          "note": "Creek bed at the base of the dirt gully is the last reliable, 'for-sure' water on the route — top off here before the climbing begins.",
+          "type": "Water",
+          "distMi": 0.3
+        },
+        {
+          "lat": 47.54947323333333,
+          "lng": -121.5267759,
+          "elev": 2200,
+          "name": "Dirt Gully",
+          "note": "About 400 vertical feet of loose rock, dirt, and scrub brush above the creek; friable and prone to rockfall, especially when wet.",
+          "type": "Hazard",
+          "distMi": 0.35
+        },
+        {
+          "lat": 47.55030743333333,
+          "lng": -121.5180981,
+          "elev": 3600,
+          "name": "Razorback / Tiny Notch",
+          "note": "Beckey's route description is notoriously vague here; parties commonly go astray choosing between the Razorback and Tiny Notch, adding significant route-finding time.",
+          "type": "Junction",
+          "distMi": 0.65
+        },
+        {
+          "lat": 47.5510026,
+          "lng": -121.5108666,
+          "elev": 4200,
+          "name": "Glade Saddle Bivy",
+          "note": "Small bivy site for two tucked into a saddle; most parties reach it roughly three hours in and treat it as the last comfortable rest stop before the upper gullies.",
+          "type": "Campsite",
+          "distMi": 0.9
+        },
+        {
+          "lat": 47.55169776666666,
+          "lng": -121.5036351,
+          "elev": 4800,
+          "name": "Y Notch",
+          "note": "Confluence of the #1 and #2 Gullies at the head of the Great Canyon; stay right into the #2 Gully to follow the standard South Route line.",
+          "type": "Junction",
+          "distMi": 1.15
+        },
+        {
+          "lat": 47.5522539,
+          "lng": -121.4978499,
+          "elev": 5200,
+          "name": "#2 Gully Rockfall Zone",
+          "note": "A nightmarish mix of impossibly loose rock on one side and polished, mossy rock on the other; a climber here was struck by a rolling 500-lb boulder, so helmets and staggered spacing are essential.",
+          "type": "Hazard",
+          "distMi": 1.35
+        },
+        {
+          "lat": 47.552671,
+          "lng": -121.493511,
+          "elev": 5519,
+          "name": "Garfield Mountain Summit",
+          "note": "True summit register has historically logged only a handful of ascents per decade; descend via six double-rope rappels down the #2 Gully on a mix of aging bolts, chockstones, and slung trees (webbing dated as old as 1998) — carry two 60m ropes.",
+          "type": "Summit",
+          "distMi": 1.5
+        }
+      ],
+      "gpx": [
+        [
+          47.55553,
+          -121.535484
+        ],
+        [
+          47.554955,
+          -121.53308
+        ],
+        [
+          47.55499,
+          -121.53309
+        ],
+        [
+          47.55499,
+          -121.53295
+        ],
+        [
+          47.55512,
+          -121.53252
+        ],
+        [
+          47.55511,
+          -121.53209
+        ],
+        [
+          47.55501,
+          -121.53172
+        ],
+        [
+          47.55449,
+          -121.53076
+        ],
+        [
+          47.5532,
+          -121.5285
+        ],
+        [
+          47.55158,
+          -121.52634
+        ],
+        [
+          47.55152,
+          -121.52623
+        ],
+        [
+          47.55131,
+          -121.52585
+        ],
+        [
+          47.55077,
+          -121.52589
+        ],
+        [
+          47.54959,
+          -121.5254
+        ],
+        [
+          47.54926,
+          -121.52518
+        ],
+        [
+          47.54906,
+          -121.52502
+        ],
+        [
+          47.5489,
+          -121.52484
+        ],
+        [
+          47.54875,
+          -121.52459
+        ],
+        [
+          47.54871,
+          -121.52446
+        ],
+        [
+          47.54765,
+          -121.52282
+        ],
+        [
+          47.54701,
+          -121.52269
+        ],
+        [
+          47.54687,
+          -121.52258
+        ],
+        [
+          47.54663,
+          -121.5224
+        ],
+        [
+          47.546,
+          -121.52178
+        ],
+        [
+          47.54559,
+          -121.5212
+        ],
+        [
+          47.54524,
+          -121.5205
+        ],
+        [
+          47.54494,
+          -121.51999
+        ],
+        [
+          47.54474,
+          -121.51981
+        ],
+        [
+          47.544613,
+          -121.519806
+        ],
+        [
+          47.54452,
+          -121.5198
+        ],
+        [
+          47.54436,
+          -121.51992
+        ],
+        [
+          47.54427,
+          -121.52016
+        ],
+        [
+          47.54435,
+          -121.52324
+        ],
+        [
+          47.54455,
+          -121.52367
+        ],
+        [
+          47.5443,
+          -121.52358
+        ],
+        [
+          47.54363,
+          -121.5228
+        ],
+        [
+          47.54356,
+          -121.52255
+        ],
+        [
+          47.5435,
+          -121.52166
+        ],
+        [
+          47.54353,
+          -121.52092
+        ],
+        [
+          47.54362,
+          -121.52043
+        ],
+        [
+          47.54382,
+          -121.51971
+        ],
+        [
+          47.54385,
+          -121.51916
+        ],
+        [
+          47.54366,
+          -121.51832
+        ],
+        [
+          47.54346,
+          -121.51687
+        ],
+        [
+          47.54276,
+          -121.51511
+        ],
+        [
+          47.54239,
+          -121.51457
+        ],
+        [
+          47.54177,
+          -121.51393
+        ],
+        [
+          47.54161,
+          -121.51386
+        ],
+        [
+          47.54102,
+          -121.51302
+        ],
+        [
+          47.54081,
+          -121.51251
+        ],
+        [
+          47.54068,
+          -121.51084
+        ],
+        [
+          47.54061,
+          -121.51059
+        ],
+        [
+          47.54056,
+          -121.51034
+        ],
+        [
+          47.5404,
+          -121.50985
+        ],
+        [
+          47.54023,
+          -121.50955
+        ],
+        [
+          47.540283,
+          -121.509636
+        ],
+        [
+          47.54021,
+          -121.50951
+        ],
+        [
+          47.53999,
+          -121.50914
+        ],
+        [
+          47.5397,
+          -121.50879
+        ],
+        [
+          47.539,
+          -121.50793
+        ],
+        [
+          47.53887,
+          -121.50756
+        ],
+        [
+          47.53839,
+          -121.50395
+        ],
+        [
+          47.53832,
+          -121.50249
+        ],
+        [
+          47.53791,
+          -121.50108
+        ],
+        [
+          47.53711,
+          -121.49985
+        ],
+        [
+          47.53685,
+          -121.49916
+        ],
+        [
+          47.53661,
+          -121.49865
+        ],
+        [
+          47.53626,
+          -121.49781
+        ],
+        [
+          47.53627,
+          -121.49783
+        ],
+        [
+          47.53562,
+          -121.49627
+        ],
+        [
+          47.53524,
+          -121.49502
+        ],
+        [
+          47.53498,
+          -121.49465
+        ],
+        [
+          47.53457,
+          -121.49438
+        ],
+        [
+          47.53421,
+          -121.49381
+        ],
+        [
+          47.534,
+          -121.49239
+        ],
+        [
+          47.53409,
+          -121.49104
+        ],
+        [
+          47.53433,
+          -121.49012
+        ],
+        [
+          47.53464,
+          -121.489426
+        ],
+        [
+          47.534637,
+          -121.48943
+        ],
+        [
+          47.53501,
+          -121.48861
+        ],
+        [
+          47.53499,
+          -121.48756
+        ],
+        [
+          47.53509,
+          -121.487
+        ],
+        [
+          47.53518,
+          -121.48682
+        ],
+        [
+          47.53525,
+          -121.48665
+        ],
+        [
+          47.53527,
+          -121.4864
+        ],
+        [
+          47.53523,
+          -121.486
+        ],
+        [
+          47.53509,
+          -121.48531
+        ],
+        [
+          47.53509,
+          -121.48493
+        ],
+        [
+          47.53509,
+          -121.48475
+        ],
+        [
+          47.53495,
+          -121.4842
+        ],
+        [
+          47.535,
+          -121.48388
+        ],
+        [
+          47.53502,
+          -121.48358
+        ],
+        [
+          47.53467,
+          -121.48293
+        ],
+        [
+          47.53429,
+          -121.48284
+        ],
+        [
+          47.53416,
+          -121.4827
+        ],
+        [
+          47.53398,
+          -121.48236
+        ],
+        [
+          47.53379,
+          -121.48083
+        ],
+        [
+          47.533775,
+          -121.48081
+        ],
+        [
+          47.533802,
+          -121.480934
+        ],
+        [
+          47.53379,
+          -121.48083
+        ],
+        [
+          47.53287,
+          -121.47966
+        ],
+        [
+          47.53204,
+          -121.47961
+        ],
+        [
+          47.53189,
+          -121.4796
+        ],
+        [
+          47.53147,
+          -121.47936
+        ],
+        [
+          47.530537,
+          -121.478615
+        ],
+        [
+          47.530582,
+          -121.47865
+        ],
+        [
+          47.53018,
+          -121.47833
+        ],
+        [
+          47.52987,
+          -121.47802
+        ],
+        [
+          47.52896,
+          -121.47511
+        ],
+        [
+          47.52857,
+          -121.47443
+        ],
+        [
+          47.52833,
+          -121.47428
+        ],
+        [
+          47.528328,
+          -121.47427
+        ],
+        [
+          47.52805,
+          -121.4741
+        ],
+        [
+          47.52685,
+          -121.47372
+        ],
+        [
+          47.526253,
+          -121.472984
+        ],
+        [
+          47.526264,
+          -121.473
+        ],
+        [
+          47.52622,
+          -121.472946
+        ],
+        [
+          47.52622,
+          -121.47294
+        ],
+        [
+          47.52635,
+          -121.47275
+        ],
+        [
+          47.52654,
+          -121.47267
+        ],
+        [
+          47.52653,
+          -121.47225
+        ],
+        [
+          47.52655,
+          -121.47196
+        ],
+        [
+          47.52671,
+          -121.47161
+        ],
+        [
+          47.52689,
+          -121.47145
+        ],
+        [
+          47.527,
+          -121.47139
+        ],
+        [
+          47.52715,
+          -121.47142
+        ],
+        [
+          47.52726,
+          -121.47119
+        ],
+        [
+          47.52745,
+          -121.47102
+        ],
+        [
+          47.52772,
+          -121.47088
+        ],
+        [
+          47.52781,
+          -121.47075
+        ],
+        [
+          47.52795,
+          -121.47066
+        ],
+        [
+          47.52822,
+          -121.47
+        ],
+        [
+          47.52859,
+          -121.46977
+        ],
+        [
+          47.52863,
+          -121.46953
+        ],
+        [
+          47.52875,
+          -121.46939
+        ],
+        [
+          47.52904,
+          -121.46936
+        ],
+        [
+          47.52906,
+          -121.46892
+        ],
+        [
+          47.52913,
+          -121.46864
+        ],
+        [
+          47.52922,
+          -121.4686
+        ],
+        [
+          47.52932,
+          -121.4686
+        ],
+        [
+          47.52941,
+          -121.46847
+        ],
+        [
+          47.52947,
+          -121.4683
+        ],
+        [
+          47.52961,
+          -121.46817
+        ],
+        [
+          47.52978,
+          -121.46792
+        ],
+        [
+          47.52991,
+          -121.46792
+        ],
+        [
+          47.53007,
+          -121.46782
+        ],
+        [
+          47.53009,
+          -121.4677
+        ],
+        [
+          47.53018,
+          -121.46766
+        ],
+        [
+          47.53028,
+          -121.46752
+        ],
+        [
+          47.53041,
+          -121.46754
+        ],
+        [
+          47.53041,
+          -121.46744
+        ],
+        [
+          47.53086,
+          -121.46711
+        ],
+        [
+          47.53094,
+          -121.46683
+        ],
+        [
+          47.53092,
+          -121.46658
+        ],
+        [
+          47.53094,
+          -121.46642
+        ],
+        [
+          47.53092,
+          -121.46625
+        ],
+        [
+          47.53083,
+          -121.46609
+        ],
+        [
+          47.53082,
+          -121.46583
+        ],
+        [
+          47.53094,
+          -121.46566
+        ],
+        [
+          47.53116,
+          -121.46547
+        ],
+        [
+          47.53147,
+          -121.46509
+        ],
+        [
+          47.53171,
+          -121.46499
+        ],
+        [
+          47.53189,
+          -121.46484
+        ],
+        [
+          47.53204,
+          -121.4646
+        ],
+        [
+          47.53216,
+          -121.46442
+        ],
+        [
+          47.53222,
+          -121.46426
+        ],
+        [
+          47.53233,
+          -121.46344
+        ],
+        [
+          47.53241,
+          -121.46328
+        ],
+        [
+          47.53253,
+          -121.46322
+        ],
+        [
+          47.53271,
+          -121.46319
+        ],
+        [
+          47.53302,
+          -121.46321
+        ],
+        [
+          47.53311,
+          -121.46316
+        ],
+        [
+          47.53328,
+          -121.46314
+        ],
+        [
+          47.53339,
+          -121.46319
+        ],
+        [
+          47.53363,
+          -121.46297
+        ],
+        [
+          47.53393,
+          -121.46281
+        ],
+        [
+          47.53399,
+          -121.46268
+        ],
+        [
+          47.53409,
+          -121.46259
+        ],
+        [
+          47.5342,
+          -121.46257
+        ],
+        [
+          47.53444,
+          -121.4627
+        ],
+        [
+          47.53474,
+          -121.46275
+        ],
+        [
+          47.53489,
+          -121.46268
+        ],
+        [
+          47.535,
+          -121.46249
+        ],
+        [
+          47.53505,
+          -121.46229
+        ],
+        [
+          47.53512,
+          -121.46214
+        ],
+        [
+          47.535152,
+          -121.46196
+        ],
+        [
+          47.535145,
+          -121.46198
+        ],
+        [
+          47.53512,
+          -121.46214
+        ],
+        [
+          47.53534,
+          -121.46195
+        ],
+        [
+          47.53545,
+          -121.46195
+        ],
+        [
+          47.53556,
+          -121.46202
+        ],
+        [
+          47.53572,
+          -121.46202
+        ],
+        [
+          47.53584,
+          -121.46192
+        ],
+        [
+          47.53595,
+          -121.46187
+        ],
+        [
+          47.5363,
+          -121.4619
+        ],
+        [
+          47.53663,
+          -121.46215
+        ],
+        [
+          47.53673,
+          -121.46229
+        ],
+        [
+          47.53684,
+          -121.46238
+        ],
+        [
+          47.53694,
+          -121.46234
+        ],
+        [
+          47.53701,
+          -121.46223
+        ],
+        [
+          47.53709,
+          -121.46228
+        ],
+        [
+          47.53729,
+          -121.46215
+        ],
+        [
+          47.53755,
+          -121.4621
+        ],
+        [
+          47.5377,
+          -121.46205
+        ],
+        [
+          47.53806,
+          -121.46167
+        ],
+        [
+          47.53822,
+          -121.46165
+        ],
+        [
+          47.5385,
+          -121.46156
+        ],
+        [
+          47.53865,
+          -121.46164
+        ],
+        [
+          47.53885,
+          -121.4617
+        ],
+        [
+          47.53921,
+          -121.46139
+        ],
+        [
+          47.53934,
+          -121.46136
+        ],
+        [
+          47.53945,
+          -121.46125
+        ],
+        [
+          47.53955,
+          -121.46109
+        ],
+        [
+          47.53971,
+          -121.46101
+        ],
+        [
+          47.53984,
+          -121.46101
+        ],
+        [
+          47.54019,
+          -121.46091
+        ],
+        [
+          47.54029,
+          -121.4608
+        ],
+        [
+          47.54041,
+          -121.46074
+        ],
+        [
+          47.54064,
+          -121.46084
+        ],
+        [
+          47.54074,
+          -121.46084
+        ],
+        [
+          47.540913,
+          -121.46058
+        ],
+        [
+          47.54244,
+          -121.45712
+        ],
+        [
+          47.544758,
+          -121.45849
+        ],
+        [
+          47.546494,
+          -121.4603
+        ],
+        [
+          47.548756,
+          -121.46493
+        ],
+        [
+          47.548637,
+          -121.46836
+        ],
+        [
+          47.55165,
+          -121.46965
+        ],
+        [
+          47.554142,
+          -121.4742
+        ],
+        [
+          47.557156,
+          -121.47351
+        ],
+        [
+          47.559643,
+          -121.47094
+        ],
+        [
+          47.563004,
+          -121.47008
+        ],
+        [
+          47.563526,
+          -121.47017
+        ],
+        [
+          47.562134,
+          -121.472916
+        ],
+        [
+          47.561905,
+          -121.474884
+        ],
+        [
+          47.561962,
+          -121.4766
+        ],
+        [
+          47.56144,
+          -121.48064
+        ],
+        [
+          47.56028,
+          -121.48184
+        ],
+        [
+          47.559124,
+          -121.48184
+        ],
+        [
+          47.557384,
+          -121.48158
+        ],
+        [
+          47.557213,
+          -121.48321
+        ],
+        [
+          47.558487,
+          -121.4845
+        ],
+        [
+          47.55773,
+          -121.48665
+        ],
+        [
+          47.556488,
+          -121.492905
+        ],
+        [
+          47.555443,
+          -121.493484
+        ],
+        [
+          47.554527,
+          -121.49437
+        ],
+        [
+          47.552452,
+          -121.49499
+        ],
+        [
+          47.552803,
+          -121.49343
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "scrambling"
+      ],
+      "timing": {
+        "totalHrs": 13,
+        "summitTimeHrs": 13,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "4:00 AM from the trailhead",
+        "sectionBreakdown": [
+          {
+            "hrs": 13,
+            "note": "This is a single very long day, not an overnight trip — but treat it like an alpine climb: an early (pre-dawn) start is mandatory because the round trip commonly runs 12-14+ hours …",
+            "fromTo": "Car-to-car: South Route scramble, multi-summit",
+            "section": "Climb"
+          }
+        ]
+      },
+      "detailed_rack": "A light rack: small-to-medium cams/nuts, a handful of runners, and extra webbing/cord to supplement aging rappel-station slings. Two 60m ropes (thin doubles work well) are needed for the double-rope rappels through #2 Gully.",
+      "what_to_bring": [
+        "sturdy boots",
+        "gloves for brush",
+        "map/GPS",
+        "sun protection"
+      ],
+      "pro_tips": [
+        "Carry two 60m ropes for the South Route — single-rope rappels won't reach between stations.",
+        "The brush low on the approach is often worse than the climbing above it; long sleeves/pants and a helmet are worth wearing even on the hike in.",
+        "Start at first light — multiple trip reports describe 12–15+ hour car-to-car days.",
+        "For a non-technical outing on this massif, hike the WTA-maintained Garfield Ledges viewpoint trail or try the neighboring Treen Peak scramble instead."
+      ],
+      "watch_out": [
+        "Loose, rotten rock in the gully systems, worsened if other parties are climbing above you",
+        "No reliable walk-off descent — committing to the standard route means committing to roped rappels to get down",
+        "Water sources are limited and seasonal (dry creek beds); carry what you'll need"
+      ],
+      "pro_needs": "Single rack to 2\" plus slings suffices for the easiest documented line (Southwest Ledges, 5.3); the classic South Route wants a fuller trad rack, extra webbing/cordage for weathered rap anchors, and two 60m ropes for the six double-rope rappels on descent.",
+      "best_season": "July–August most reliable per Beckey's Cascade Alpine Guide; the route can be dry as early as June but conditions firm up through midsummer, and the window closes with the first autumn rain/snow",
+      "high_point_ft": 5519,
+      "aid_grade": null,
+      "approach": "From I-90 Exit 34 (North Bend), drive Middle Fork Snoqualmie River Road (FR-56) east — paved at first, then good gravel — staying on FR-56 past the Taylor River Road (FR-5620) junction to a wide gravel wash / old borrow-pit pullout on the north side of the road near the base of the mountain (trailhead elevation roughly 1,150-1,200 ft). There is no maintained, numbered Forest Service trail here — this is an unmaintained climbers' boot path marked intermittently with cairns and pink flagging tape, not a WTA-style trail. From the wash, follow the dry creekbed/streambed uphill for roughly a mile; a boot path exits climber's-left into second-growth forest with light brush before the creek narrows. Multiple boot-path branches exist low down — avoid the flat, early traverse that cuts to the slab too low, and instead take the higher, up-and-down traverse. Around 2,200 ft the path enters a loose dirt-and-scree gully mixed with vegetation (unpleasant, roughly 400 ft of gain), then exits climber's-left onto a wooded ridge for another 400 ft of steep but relatively brush-free hiking. At about 2,900 ft you reach the base of the first major slab; parties solo (or rope up, depending on comfort) two low-5th-class pitches following intersecting dikes, then continue up dirt/heather above the slab's upper-left edge. Above the slab, route-finding gets serious: intermittent boot path, cairns, and flagging lead through a 'tiny notch,' a knife-edge 'razorback,' and a flat bivy site known as the 'glade saddle' where many parties break the day with a bivouac. A short wooded ramp with one sporty 20-ft scramble step follows, then a rope-up point at an exposed ledge traverse leading to the 'Y Notch,' where the route joins the gully system locally called '#2 Gully' — loose rock on one side, polished/mossy rock on the other — for the final roughly 600 ft of short technical pitches to the summit ridge and high point (5,519 ft). Total gain is about 4,400 ft over roughly 1.5 miles one-way from the wash; budget 5-7+ hours up in good conditions. There is no reliable water past the initial creek near the trailhead, so fill up early, and only attempt this route bone dry — the slabs and dirt gullies become treacherous when wet.",
+      "descent_text": "Nearly every party descends the same South Route line rather than walking off, and this is where Garfield earns its reputation as a serious undertaking — budget as much time for the descent as the climb, since many parties top out with only a few hours of daylight left. From the summit, reverse the ridge with a single-rope rappel down to the col, then work back down through the '#2 Gully' system with a sustained series of rappels: trip reports describe roughly six double-rope (doubled-strand) rappels through the gully's mixed loose/polished rock, a single-rope rappel off the steep step on the wooded ramp, and two more double-rope rappels getting off the base of the slab (~2,900 ft) — on the order of 10 rappels total on a typical South Route descent. Treat that as a working estimate rather than an exact count: some trip reports reference numbered rap stations well into the teens/twenties on the broader Garfield massif's fixed rap line, and how many you actually do depends on rope length and how many stations you can combine. Anchors are mixed — some slab sections have bolted chain anchors and fixed rap rings, but much of the gully relies on natural anchors (slung trees, horns, chockstones), so carry extra webbing/cord and rap rings and inspect every anchor before weighting it. Two 60m ropes are the standard recommendation for this descent; parties have combined stations using 2x70m ropes, but a single 60m (or shorter) rope will leave you short on several drops and force exposed down-scrambling to reach the next anchor. Below the slab, downclimb/scramble the wooded ridge and dirt gully back into forest, then descend the creekbed/wash to the trailhead. Loose rock is a hazard throughout, especially in the dirt gully and on the west side of #2 Gully — keep helmets on for the entire descent and watch for rockfall onto parties below. Route-finding in the dark is a real risk since flagging and cairns are easy to lose — benightment low on the mountain is common enough that a GPS track of your ascent line and a reliable headlamp are strongly recommended.",
+      "bail": "Retreat below the technical sections reverses the ascent gully/ridge, but once committed to the upper 5th-class terrain on the South Route, the safe bail is to rappel the route rather than attempt to downclimb the loose rock.",
+      "pitch_detail": null,
+      "itinerary": {
+        "cal": "Best done June-August once winter snow/ice has cleared the slabs; pick a long-daylight date given the 12-14+ hour commitment.",
+        "days": [
+          {
+            "n": 1,
+            "note": "This is a single very long day, not an overnight trip — but treat it like an alpine climb: an early (pre-dawn) start is mandatory because the round trip commonly runs 12-14+ hours car to car. From the trailhead a short, steep ~45-minute approach through forest and a dry creek bed gains the base of the route; from there loose dirt gullies, a slab traverse on intersecting dikes, and the exposed 'key ledge traverse' lead into the crux #2 Gully, a mix of simul-climbed and belayed 4th/low-5th-class pitches on rock that is loose on one side and polished/mossy on the other. Above the gully, easier slabs and steep heather lead to the Main Peak summit at 5,519 ft; parties chasing the multi-summit link-up continue across to the adjoining Garfield summits before reversing. There is no walk-off: descent is via six double-rope rappels down bolted anchors and tree slings back through the gully system, with loose downclimbing between stations, so budget as much time for the descent as the ascent.",
+            "hours": 13,
+            "miles": 3,
+            "title": "Car-to-car: South Route scramble, multi-summit",
+            "gainFt": 4400,
+            "lossFt": 4400,
+            "packLb": 18,
+            "schedule": [
+              {
+                "time": "4:00 AM",
+                "label": "Leave trailhead",
+                "detail": "Near-solstice alpine start; Fred Beckey's guidebook calls 12 hours an absolute minimum car-to-car."
+              },
+              {
+                "time": "4:45 AM",
+                "label": "Reach base of route",
+                "detail": "Steep forest approach up a dry creek bed gains the start of the technical ground."
+              },
+              {
+                "time": "6:30 AM",
+                "label": "Enter #2 Gully",
+                "detail": "Key ledge traverse leads into the crux gully; loose rock on one side, polished/mossy rock on the other."
+              },
+              {
+                "time": "12:00 PM",
+                "label": "Summit Main Peak (5,519 ft)",
+                "detail": "~8 hours of climbing from the car is typical; continue to adjoining summits if doing the multi-summit link-up."
+              },
+              {
+                "time": "1:00 PM",
+                "label": "Begin descent",
+                "detail": "Six double-rope rappels (two 60m ropes recommended) on bolted and tree anchors, with loose downclimbing between stations."
+              },
+              {
+                "time": "6:00-7:00 PM",
+                "label": "Back at trailhead",
+                "detail": "Total elapsed time commonly exceeds 12-14 hours; parties who fall behind schedule sometimes take an impromptu bivy on route rather than rappel in the dark."
+              }
+            ],
+            "objective": "Summit Garfield's Main Peak (and adjoining summits) via the South Route, then reverse via 6 rappels"
+          }
+        ],
+        "totalNote": "A long single day car-to-car (roughly 13 hours, 4,400 ft gain) done during the longest daylight of summer with a pre-dawn start — not an overnight trip, but slower parties sometimes end up bivying on route rather than descending after dark.",
+        "sourceNote": "Estimated from route-specific trip-report detail and Fred Beckey's guidebook timing notes mirrored on cascadeclimber.com's Mt. Garfield page, cross-checked against SummitPost's Garfield Mountain area page and the Washington Climbers Coalition 'Middle Fork' page (SummitPost's own route pages returned 403s and could not be fetched directly)."
+      },
+      "access": {
+        "fees": "$5/day or $30/year Northwest Forest Pass",
+        "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+        "rules": "Standard Alpine Lakes Wilderness regulations apply: no mechanized or wheeled equipment, group size capped at 12 people/stock combined, self-issue wilderness permit required at the trailhead box",
+        "permit": "Northwest Forest Pass ($5 day-use or $30 annual) or an America the Beautiful interagency pass is required to park at Middle Fork-area trailheads/pullouts (digital Scan & Pay via the Recreation.gov app is accepted). A free, self-issue wilderness permit is also required at the trailhead once inside the Alpine Lakes Wilderness boundary.",
+        "closures": "FR-56 has a history of washouts and slope failures near river bends despite the 2017 repaving; it is closed to vehicles beyond the Dingford Creek Trailhead and can be high-clearance-only in sections — check current Mount Baker-Snoqualmie NF alerts before driving",
+        "group_limit": 12,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District — Alpine Lakes Wilderness",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+        "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads."
+      },
+      "road": {
+        "name": "Middle Fork Snoqualmie River Road (Forest Road 56)",
+        "status": "Paved to the Middle Fork Trailhead following a 2017 repaving, but with recurring washouts and slope failures near river bends; beyond the Middle Fork Trailhead the road narrows and is recommended for high-clearance vehicles only, and it is gated/closed to vehicles at Dingford Creek Trailhead",
+        "driveNote": "About 11.8 miles from I-90 Exit 34 to the Middle Fork Trailhead; check Mount Baker-Snoqualmie National Forest road alerts before driving, as this road has a history of closures"
+      },
+      "climate": {
+        "typical": "Marine west-coast climate: wet winters with heavy, avalanche-prone snowfall and drier summers. Because the rock is dangerously loose when wet, this is a bone-dry-conditions-only objective with a reliable window of roughly June through September (July–August most consistent); afternoon thunderstorms can build over the Cascade crest in summer."
+      },
+      "emergency": {
+        "county": "King",
+        "rangerStation": "Snoqualmie Ranger District, 902 SE North Bend Way Bldg 1, North Bend, WA 98045, (425) 888-1421 (limited hours — call ahead)",
+        "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA — a small critical-access/Level 5 trauma facility; serious trauma cases are typically transferred to Harborview Medical Center in Seattle",
+        "sheriffDispatch": "911 (King County Sheriff / SAR dispatch)"
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "Rarely climbed; the lower Garfield Ledges viewpoint trail near the same trailhead draws weekend day-hiker crowds (it's a popular sub-1.5-hour drive from Seattle), but that traffic does not translate to the actual multi-summit scramble, which the notorious brushy approach keeps quiet even on good-weather weekends",
+        "solitudeRating": 5,
+        "estimatePerSeason": "Low - likely well under 20 parties per season; no dedicated trip-report volume was found specifically for the summit scramble"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "Strong, sustained off-trail fitness - the approach is a long, slow, physically taxing bushwhack through dense brush and steep, trail-less terrain, not a groomed-trail hike",
+          "packWeight": "Keep it light (roughly 15-20 lb day pack); a heavy pack makes brush-fighting and steep terrain much harder"
+        },
+        "approachTime": "Long and slow - plan a full day; the brushy, steep, trail-less approach typically takes significantly longer than distance/elevation alone would suggest",
+        "requiredSkills": [
+          "off-trail routefinding among multiple summits",
+          "tolerance and technique for sustained bushwhacking through dense vegetation",
+          "comfort on loose rock and exposed Class 3 terrain",
+          "map/compass or GPS navigation skill, since the route is sparsely documented and trail data is thin"
+        ],
+        "experienceLevel": "Comfortable, experienced Class 3 scrambler; the modest technical grade is deceptive because the approach demands as much or more from a partner as the climbing does"
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Mid-July through October (per existing beta), with the driest and least brushy conditions typically in August-September",
+        "monthBreakdown": {
+          "July": {
+            "reason": "Season is opening up, but brush is often still wet and dense from spring, and lingering snow patches are possible higher up early in the month",
+            "status": "good"
+          },
+          "August": {
+            "reason": "Best window - driest brush conditions and most stable weather of the season, though afternoon thunderstorms are common",
+            "status": "optimal"
+          },
+          "October": {
+            "reason": "Cooling temperatures and increasing rain/early-season snow risk at elevation; wet brush becomes slick again and days are shorter",
+            "status": "marginal"
+          },
+          "September": {
+            "reason": "Continued dry, stable conditions with brush somewhat less lush; a strong alternative to August",
+            "status": "optimal"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "West-slope Cascades convective weather during the climbing season - generally drier through summer but always capable of turning wet given the marine-influenced, heavily vegetated setting (per existing climate data)",
+          "probability": "Afternoon thunderstorms common in summer, especially August, per existing hazards list"
+        },
+        "exposure": "Moderate technical exposure - Class 3 terrain with loose rock where a slip could cause a serious fall/injury; the more consequential real-world hazard is getting lost or benighted among the multiple summits in dense brush with limited visibility, per the existing routefinding-error and loose-rock watch-outs",
+        "avalanche": {
+          "zone": "N/A - non-glaciated summer scramble route; not a standard winter/spring objective per existing beta",
+          "byMonth": {
+            "July": "N/A",
+            "August": "N/A",
+            "October": "N/A",
+            "September": "N/A"
+          }
+        },
+        "crevasses": "N/A - no glacier travel"
+      },
+      "data_quality": {
+        "gaps": [
+          "No source describes a genuine Class 3 walk-up line to any Garfield summit — every documented route (South Route, Southwest Ledges 5.3, Infinite Bliss 5.10c) requires roped technical climbing; this entry's 'scramble' framing and grade may warrant reclassification (discipline/grade_system/grade_num) beyond what this audit's field set could correct",
+          "No confirmed GPS trailhead or route waypoints",
+          "Current real-time status of FR-56 washouts/closures not independently verified beyond general reports — check MBS NF alerts before a trip",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026-07-01"
+      },
+      "difficulty": {
+        "exposure": 4,
+        "physical": 4,
+        "technical": 2,
+        "commitment": 1,
+        "routefinding": 5
+      },
+      "approach_logistics": {
+        "peakLat": 47.552695,
+        "peakLng": -121.493635,
+        "trailhead": "FR-56 pullout below Garfield Mountain (Middle Fork Snoqualmie)",
+        "trailheadDirection": "From the wide gravel-wash pullout on FR-56 past the Taylor River junction (~1,150 ft): no maintained trail; climbers' route directly up"
+      },
+      "sling_rack": {
+        "cordelette": false,
+        "shoulder_slings": 2,
+        "double_length_slings": 1
+      },
+      "alpine_draws": 0,
+      "rope_type": "optional handline",
+      "rope_length_m": 30,
+      "rope_note": "Garfield is a multi-summit massif; the standard multi-summit scramble stays around Class 3 while some subsidiary summits require technical 5th-class moves. A short rope/handline is prudent for exposed ridge connections between summits.",
+      "ascender": null,
+      "corrections": "Trip reports describe inter-summit ridge travel as loose/'pretty horrible' and note other peaks on the massif require technical climbing, but none described roping up for the standard Class 3 multi-summit scramble itself.",
+      "gear_confidence": "inferred",
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": [
+        "Light trad rack to 2\" (sufficient for easiest line, Southwest Ledges 5.3)",
+        "Fuller trad rack for the classic South Route",
+        "Extra slings/cordage for tat-covered rappel anchors",
+        "Two 60m ropes for double-rope rappels"
+      ],
+      "features": [
+        "Face",
+        "Sustained",
+        "Adventurous",
+        "Committing",
+        "Exposed"
+      ],
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_garfield_mountain_southwest_ledges",
+      "area_id": "wa_garfield_mountain",
+      "name": "Southwest Ledges",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 3,
+      "pitches": null,
+      "length_m": 792,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Steve Martin and Leland Windham, September 2002",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": null,
+      "description": null,
+      "gear": null,
+      "hazards": [
+        "Exposed class 4 ledge traversing with route-finding difficulty"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A complex, mostly unroped class-4 scramble linking several historical lines up ledges to the top of Infinite Peak, Garfield's West Peaks sub-summit.",
+      "beta": "A zigzagging scramble connecting four historical routes via exposed class 4 ledges, gully drops, and brushy traverses; navigation is described as more complex than the technical difficulty suggests.",
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.3",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "~20 rappels down Infinite Bliss (two 60m ropes) plus down-scrambling",
+      "commitment": null,
+      "face": "Infinite Peak (4,804 ft southern sub-summit of Garfield's West Peaks)",
+      "permit": null,
+      "comms": null,
+      "descent": "Descend Infinite Bliss with two 60m ropes — roughly 20 rappels plus down-scrambling.",
+      "obj_haz": [
+        "route-finding",
+        "brush",
+        "exposure"
+      ],
+      "waypoints": null,
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": "No gear placements required — unroped class 4 scrambling throughout, though a rope may be prudent for some parties given the exposure and route-finding complexity.",
+      "what_to_bring": [
+        "Helmet",
+        "Route description/topo — navigation is the crux"
+      ],
+      "pro_tips": null,
+      "watch_out": [
+        "Navigation complexity exceeds the technical difficulty — 'Garfield is a hazardous enigma'",
+        "Occasional thick vegetation along the ledge traverses"
+      ],
+      "pro_needs": "None — the route is entirely unroped scrambling.",
+      "best_season": null,
+      "high_point_ft": 4804,
+      "aid_grade": null,
+      "approach": "Leave the climber's path and head into steep forest, continuing upward nearly 1,000 ft through class 4 terrain and thick brush until dropping into a gully on the left; descend several hundred feet to reach the ledge system.",
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": null,
+        "permit": "Free self-issue Alpine Lakes Wilderness permit required at the trailhead",
+        "closures": null,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Alpine Lakes Wilderness",
+        "passRequired": null
+      },
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_infinite_bliss",
+      "area_id": "wa_mount_garfield",
+      "name": "Infinite Bliss",
+      "discipline": "trad",
+      "grade": "5.10c",
+      "grade_system": "yds",
+      "grade_num": 10.75,
+      "pitches": 0,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Leland Windham and Steve Martin - Aug 2003",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": null,
+      "description": null,
+      "gear": null,
+      "hazards": null,
+      "verif": null,
+      "source": null,
+      "overview": null,
+      "beta": null,
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": null,
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": null,
+      "face": null,
+      "permit": null,
+      "comms": null,
+      "descent": null,
+      "obj_haz": null,
+      "waypoints": null,
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": null,
+      "what_to_bring": null,
+      "pro_tips": null,
+      "watch_out": null,
+      "pro_needs": null,
+      "best_season": null,
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": null,
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": null,
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 1,
+        "technical": 4,
+        "commitment": 1,
+        "routefinding": 2
+      },
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_preiss_route",
+      "area_id": "wa_mount_garfield",
+      "name": "Preiss Route",
+      "discipline": "trad",
+      "grade": "5.9",
+      "grade_system": "yds",
+      "grade_num": 9,
+      "pitches": 0,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "7/21-22 1999 Mike Preiss",
+      "lat": null,
+      "lng": null,
+      "aspect": null,
+      "season": null,
+      "description": null,
+      "gear": null,
+      "hazards": null,
+      "verif": null,
+      "source": null,
+      "overview": null,
+      "beta": null,
+      "turnaround": null,
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": null,
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": null,
+      "face": null,
+      "permit": null,
+      "comms": null,
+      "descent": null,
+      "obj_haz": null,
+      "waypoints": null,
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": null,
+      "what_to_bring": null,
+      "pro_tips": null,
+      "watch_out": null,
+      "pro_needs": null,
+      "best_season": null,
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": null,
+      "descent_text": null,
+      "bail": null,
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": null,
+      "road": null,
+      "climate": null,
+      "emergency": null,
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 2,
+        "physical": 1,
+        "technical": 3,
+        "commitment": 1,
+        "routefinding": 2
+      },
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}

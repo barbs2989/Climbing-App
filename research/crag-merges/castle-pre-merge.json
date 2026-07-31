@@ -1,0 +1,803 @@
+{
+  "fetched_for": [
+    "wa_castle_peak_tatoosh",
+    "wa_castle_the"
+  ],
+  "areas": [
+    {
+      "id": "wa_castle_peak_tatoosh",
+      "name": "Castle Peak",
+      "parent_id": "wa_tatoosh_range",
+      "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_tatoosh_range.wa_castle_peak_tatoosh",
+      "area_type": "peak",
+      "region": "Goat Rocks / Tatoosh",
+      "lat": 46.757715,
+      "lng": -121.728505,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Castle Peak, known to climbers simply as \"The Castle,\" is a distinctive, block-shaped summit near the center of the Tatoosh Range in Mount Rainier National Park, immediately east of Pinnacle Peak. Like the rest of the range, its lower flanks are carved from the ~14-26 million-year-old Tatoosh granodiorite pluton, capped by steeper red-to-dark-gray volcanic rock near the top. It is one of the most technical of the range's popular scrambles — even the easiest line to the true (northernmost) summit requires a short, exposed pitch of low 5th-class rock — and it is a favorite quick objective and ski-mountaineering target thanks to its short approach from Reflection Lakes or Narada Falls.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": 6440,
+      "prominence_ft": 239,
+      "parent_peak": null,
+      "dominant_discipline": "trad"
+    },
+    {
+      "id": "wa_castle_the",
+      "name": "Castle, The",
+      "parent_id": "wa_tatoosh_range",
+      "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_southwest_cascades_2.wa_tatoosh_range.wa_castle_the",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 46.75745,
+      "lng": -121.72859,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Castle Peak (8,343 ft) is a remote granite summit in the Hozameen Range of the North Cascades, located one mile south of the Canada border in the Pasayten Wilderness. The peak was first ascended by a USGS survey party in 1904 and features an imposing north face with multiple technical rock routes.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_castle_peak_tatoosh_la_villa",
+      "area_id": "wa_castle_peak_tatoosh",
+      "name": "La Villa",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": null,
+      "grade_num": null,
+      "pitches": 1,
+      "length_m": 27,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "SE",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "rope",
+        "rock protection",
+        "slings",
+        "helmet"
+      ],
+      "hazards": [
+        "Exposed scrambling with real fall potential on the approach to the base of the pitch.",
+        "Crux slab moves (5.8) well above easier terrain — a fall here has real consequence given the short pitch length and rock ledges below.",
+        "Early-season snow/ice on the Pinnacle–Plummer saddle traverse."
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A three-star, low-fifth-class trad line documented in the small rock-climbing area on The Castle, distinct from (and reportedly higher quality than) the standard scramble/chimney route to the summit.",
+      "beta": "Listed on Mountain Project as a 5.7 trad route in The Castle's climbing area alongside the easy-5th-class Southeast Face; no detailed pitch-by-pitch description, approach specifics, or first-ascent history were found in available sources. Likely approached the same way as the Southeast Face — via the Pinnacle Peak Trail from Reflection Lakes and a traverse across Pinnacle's south-face scree to the Castle-Pinnacle area.",
+      "turnaround": "Set a firm turnaround time — afternoon thunderstorms build quickly over the Tatoosh in summer, and this range offers no easy bail once committed to technical rock.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.7",
+      "ice_grade": null,
+      "gain_ft": 1600,
+      "loss_ft": 1600,
+      "dist_km": 3.2,
+      "max_angle": null,
+      "rappels": "Single ~40 ft (12 m) rappel from the fixed sling/horn anchor at the summit (traverse right from the La Villa belay ledge to the shared, heavily-used topout/rap station)",
+      "commitment": null,
+      "face": "Southeast Face, summit block — dihedral on the taller of the two summit spires, left of the Southeast Face line",
+      "permit": null,
+      "comms": "Cell coverage is unreliable throughout the Tatoosh backcountry; carry a satellite communicator or PLB for emergencies.",
+      "descent": "Traverse right from the La Villa belay ledge to the shared, well-used topout above the Southeast Face, then rappel ~40 ft from the fixed slings there.",
+      "obj_haz": [
+        "loose rock on approach scree/talus",
+        "exposure on summit block",
+        "afternoon thunderstorms",
+        "anchor bottleneck/crowding",
+        "early-season snow/ice on the saddle traverse"
+      ],
+      "waypoints": [
+        {
+          "lat": 46.757743,
+          "lng": -121.728396,
+          "name": "The Castle summit",
+          "type": "summit",
+          "elevFt": 6440
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "Early morning start recommended given typical Cascade afternoon thunderstorm risk."
+      },
+      "detailed_rack": "Doubles in finger to mid-sized cams (#0.3-#1); Full set of stoppers and hexes; 4-6 quickdraws",
+      "what_to_bring": [
+        "Ice axe (early-season snow on the saddle traverse)",
+        "Trekking poles for the scree",
+        "Sun protection",
+        "Wind layer for the summit ledge"
+      ],
+      "pro_tips": [
+        "The dihedral is left of the standard Southeast Face line on the taller spire — look for it further left on the summit block rather than the most obvious central weakness.",
+        "Combine with the Southeast Face in the same visit since both share the approach and the summit rappel station.",
+        "The crux 5.8 slab moves come after a solid cam placement — protect them before committing rather than running it out."
+      ],
+      "watch_out": [
+        "Loose rock on the approach scree/talus even though the summit block itself is comparatively solid volcanic rock.",
+        "Shared, busy rappel station with the Southeast Face — expect other parties.",
+        "Afternoon thunderstorms are a common summer hazard with no shelter on the summit block."
+      ],
+      "pro_needs": "A solid cam placement protects the crux three slabby 5.8 moves before easier ground; the lower two-thirds of the pitch (5.6) takes standard finger-to-hand gear.",
+      "best_season": "Likely climbable in the same window as the rest of the peak's rock routes, roughly late June/July through September once Stevens Canyon Road is open and the rock has dried out.",
+      "high_point_ft": 6440,
+      "aid_grade": null,
+      "approach": "Same as the Southeast Face: from Reflection Lakes (4,859 ft), take the Pinnacle Peak Trail 1.3 miles to the Pinnacle–Plummer saddle, then contour across Pinnacle's south-face scree/talus to the base of Castle's southeast side and scramble up broken ground to reach the base of the summit block, per Mountain Project.",
+      "descent_text": "From the belay ledge atop La Villa, traverse rightward (climber's right) past the true summit to the heavily-trafficked low-5th topout area shared with the Southeast Face route, where fixed slings are typically already in place. Make a single ~40 ft (12 m) rappel back to the base of the technical section, downclimb the 3rd-class terrain below, and reverse the scree traverse and Pinnacle Peak Trail back to Reflection Lakes.",
+      "bail": "No true bail mid-pitch on a single-pitch route; a party unable to finish the crux 5.8 moves would need to lower/rappel off gear placed en route back to the scramble below.",
+      "pitch_detail": [
+        {
+          "grade": "3rd class",
+          "notes": "Approach scramble shared with the Southeast Face to reach the base of the summit block.",
+          "pitch": "1",
+          "lengthM": 12
+        },
+        {
+          "grade": "5.7 (5.8 crux)",
+          "notes": "The dihedral on the taller summit spire: ~2/3 easier 5.6 climbing, a solid cam placement, then three slabby 5.8 crux moves, a jug pull, and 5.5 to a large belay ledge ~10 ft left of the true summit, per Mountain Project.",
+          "pitch": "2",
+          "lengthM": 15
+        }
+      ],
+      "itinerary": "Typically a single-day, car-to-car outing; often paired with a lap up the neighboring Southeast Face and/or a visit to Pinnacle and Plummer Peaks given the shared approach.",
+      "access": {
+        "fees": "N/A",
+        "permit": "N/A",
+        "closures": "N/A",
+        "permitZone": "N/A",
+        "landManager": "N/A",
+        "passRequired": "N/A"
+      },
+      "road": {
+        "name": "Stevens Canyon Road (from Longmire/Paradise) to Reflection Lakes",
+        "status": "Paved 2-lane NPS road, open seasonally",
+        "driveNote": "Same access as the Southeast Face route: park at Reflection Lakes on Stevens Canyon Road and approach via the Pinnacle Peak Trail.",
+        "seasonalGate": "Gated and closed by snow roughly mid-October through late May/early June, depending on snowpack."
+      },
+      "climate": {
+        "fall": null,
+        "spring": null,
+        "summer": "Warmest, driest window and the likely climbing season for this technical route.",
+        "winter": null,
+        "typical": "Marine west-coast mountain climate with wet winters and drier summers; rapid weather changes and afternoon convective buildups are common.",
+        "forecastZone": "NWS Seattle (SEW) Mount Rainier Recreational Forecast, Paradise-area zone"
+      },
+      "emergency": {
+        "notes": "Cell coverage is unreliable throughout the area; carry a satellite communicator/PLB.",
+        "county": "Lewis County, Washington",
+        "rangerStation": "Longmire Wilderness Information Center / Ranger Station: (360) 569-6650; MORA park headquarters: (360) 569-2211",
+        "nearestHospital": "Arbor Health — Morton Hospital, Morton/Packwood, WA",
+        "sheriffDispatch": "Lewis County Sheriff's Office non-emergency: (360) 748-9286 (dial 911 for active emergencies)"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": [
+        {
+          "qty": 2,
+          "sizeCm": 60
+        },
+        {
+          "qty": 1,
+          "sizeCm": 120
+        }
+      ],
+      "alpine_draws": 5,
+      "rope_type": "single or twin",
+      "rope_length_m": 40,
+      "rope_note": "40m rope standard for this harder route",
+      "ascender": null,
+      "corrections": "Crux involves a #2 Camalot placement; consider fixed anchors at rappel points",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_castle_peak_tatoosh_southeast_face",
+      "area_id": "wa_castle_peak_tatoosh",
+      "name": "Southeast Face (Standard Route)",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": null,
+      "grade_num": null,
+      "pitches": 1,
+      "length_m": 24,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "SE",
+      "season": "Jul-Sep (dry rock); scrambling feasible into Jun/Oct with snow on the approach",
+      "description": null,
+      "gear": [
+        "rope",
+        "rock protection",
+        "slings",
+        "helmet"
+      ],
+      "hazards": [
+        "Exposed, largely unprotected class 3-4 terrain along the summit ridge crest.",
+        "A short but real 5th-class pitch with sparse natural protection.",
+        "Loose volcanic rock in places, especially off-route or on the approach scree traverse.",
+        "Rapid, thunderstorm-prone afternoon weather typical of the Cascades in summer."
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "Castle Peak's easiest and by far most-traveled line: a class 2-3 approach and traverse around Pinnacle Peak's south flank to the Castle-Pinnacle col, followed by a short, well-protected easy-5th-class crack-and-chimney pitch up the southeast/east flank to the exposed summit crest.",
+      "beta": "From the Pinnacle Saddle Trailhead at Reflection Lakes, hike the Pinnacle Peak Trail to the ~5,920-ft saddle south of Pinnacle Peak, then leave the trail and contour east across Pinnacle's south-face scree/talus (roughly 6,000-6,200 ft) to the Castle-Pinnacle col. From the col, scramble onto Castle's south rib, make a short class-3 traverse onto the east flank, and follow the obvious crack-chimney system (easy 5th class; some parties call this the East Face Chimney Route) up and right to a notch beside a natural rock horn. A brief, exposed class 3-4 scramble along the summit crest leads to the true (northernmost) summit block. Many parties fix a handline or belay the chimney pitch and always rappel or downclimb it on the return.",
+      "turnaround": "Set a firm turnaround time before starting the technical pitch — afternoon thunderstorms build quickly over the Tatoosh in summer, and wet or snow-covered rock on the southeast face is significantly harder and more dangerous to downclimb or rappel. If the crux pitch is wet, icy, or the party is moving slowly, turn back rather than push for the summit.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "Easy 5th class (5.0–5.4)",
+      "ice_grade": null,
+      "gain_ft": 1600,
+      "loss_ft": 1600,
+      "dist_km": 3.2,
+      "max_angle": null,
+      "rappels": "Single ~40 ft (12 m) rappel from a fixed sling/horn anchor at the summit ledge",
+      "commitment": null,
+      "face": "Southeast Face, summit block",
+      "permit": null,
+      "comms": "Cell coverage is unreliable throughout the Tatoosh backcountry; a signal booster serves the Paradise visitor-center area but reception cannot be relied on at Reflection Lakes, on the Pinnacle Peak Trail, or on Castle itself — carry a satellite communicator or PLB for emergencies.",
+      "descent": "Reverse the route: downclimb or rappel the chimney pitch from the notch below the summit block, then retrace the traverse across Pinnacle's south face to the saddle and descend the Pinnacle Peak Trail to Reflection Lakes.",
+      "obj_haz": [
+        "loose rock on approach scree/talus",
+        "exposure on summit block",
+        "afternoon thunderstorms",
+        "anchor bottleneck/crowding",
+        "early-season snow/ice on the saddle traverse"
+      ],
+      "waypoints": [
+        {
+          "lat": 46.7695191,
+          "lng": -121.7299897,
+          "name": "Pinnacle Saddle Trailhead / Reflection Lakes",
+          "type": "trailhead",
+          "elevFt": 4859
+        },
+        {
+          "lat": 46.757743,
+          "lng": -121.728396,
+          "name": "The Castle summit",
+          "type": "summit",
+          "elevFt": 6440
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 5,
+        "summitTimeHrs": 1,
+        "descentTimeHrs": 2,
+        "approachTimeHrs": 1.5,
+        "recommendedStart": "Early morning start, both to beat crowds on this popular scramble and to be off the exposed summit block before typical Cascade afternoon thunderstorms build."
+      },
+      "detailed_rack": "Full set up to #2 Camalot, or doubles in finger-to-mid-sized cams; Full set of stoppers",
+      "what_to_bring": [
+        "Sturdy scrambling boots or approach shoes",
+        "Map/compass or GPS (the Pinnacle traverse is not an obvious trail)",
+        "Sun protection (fully exposed terrain)",
+        "Extra layers",
+        "Satellite communicator/PLB"
+      ],
+      "pro_tips": [
+        "Combine Castle with Pinnacle Peak and/or Plummer Peak for a full Tatoosh day — the approach trail and traverse are shared.",
+        "The crack-chimney pitch is short enough that a single 30m rope is plenty for the rappel.",
+        "Go early or on a weekday in summer — this is one of the most popular scrambles in the park and the small summit block gets crowded."
+      ],
+      "watch_out": [
+        "Loose rock is common on the approach traverse and in the chimney — helmets are recommended for the whole party, not just the leader.",
+        "The rock can stay wet or icy into early summer in shaded sections of the chimney, making the 'easy 5th class' pitch feel much harder than the grade suggests.",
+        "Trip reports and photos show climbers stopping below the true (northernmost) summit block — confirm you're on the correct high point."
+      ],
+      "pro_needs": "Protection is sparse on the chimney/crack pitch — cams from small to about hand-size protect the crux crack, but much of the climbing is on low-angle, featured rock that many parties solo. A single-rope rappel (plus spare webbing for the anchor) handles the descent.",
+      "best_season": "Prime scrambling season is roughly late June/July through September, once Stevens Canyon Road is open and the route has melted out; the trail and technical pitch are typically fully clear by mid-to-late summer. The peak is also a well-known ski-mountaineering objective in winter and spring, approached instead from the year-round Narada Falls parking lot, with the southeast-face rock pitch downclimbed, rappelled, or bypassed depending on snow coverage.",
+      "high_point_ft": 6440,
+      "aid_grade": null,
+      "approach": "Park at the Reflection Lakes pullouts on Stevens Canyon Road (or, when the road is snowed in, at the year-round Narada Falls lot). Take the signed Pinnacle Peak Trail from the south side of the road; it climbs steadily through forest and subalpine meadow for about 1.3 miles and 1,050 ft of gain to the 5,920-ft saddle just south of Pinnacle Peak. From the saddle, instead of continuing up Pinnacle, traverse climber's-left (east) across Pinnacle's south-facing scree/boulder field, staying around 6,000-6,200 ft, to the col between Pinnacle and Castle — roughly another half mile of cross-country travel to the base of Castle's south/southeast side.",
+      "descent_text": "From the true summit, downclimb the short, exposed crest back to the notch above the crack-chimney pitch. Most parties rappel from a sturdy natural rock horn/block near the notch back down to the base of the technical section (carry your own webbing/rap rings rather than relying on tat left by other groups). From there, downclimb the class-3 section back onto the south rib, retrace the contouring traverse across Pinnacle's scree slope to the Pinnacle-Castle col and back to the main saddle, then descend the Pinnacle Peak Trail to Reflection Lakes. In winter and spring the same line is often skied or glissaded from the col.",
+      "bail": "The technical crux is a single, short pitch close to the col, so retreat is straightforward at any point below the summit block: downclimb or rappel back to the notch and reverse the approach traverse. There is no separate established bail line partway up the chimney other than reversing it.",
+      "pitch_detail": [
+        {
+          "grade": "Class 1-2",
+          "notes": "Pinnacle Peak Trail from Reflection Lakes to the 5,920-ft saddle: 1.3 mi, ~1,050 ft gain.",
+          "pitch": "Approach"
+        },
+        {
+          "grade": "Class 2-3",
+          "notes": "Leave the trail and contour east across Pinnacle's south-face scree/talus (~6,000-6,200 ft) to the Castle-Pinnacle col.",
+          "pitch": "Traverse"
+        },
+        {
+          "grade": "5.0-5.4 (easy 5th)",
+          "notes": "Crack-chimney system on the SE/E flank to a notch beside a natural rock horn; sparse protection, a #2 Camalot covers the crux.",
+          "pitch": "P1"
+        },
+        {
+          "grade": "Class 3-4, exposed",
+          "notes": "Short, airy crest traverse from the notch to the true (northernmost) summit block.",
+          "pitch": "Summit scramble"
+        }
+      ],
+      "itinerary": "A single long day from the Puget Sound area: drive to Reflection Lakes (roughly 2.5-3 hours from Seattle), scramble/climb to the summit (about 2-3 hours including the traverse and technical pitch), spend 30-60 minutes on top, and descend in 1.5-2.5 hours — a full round trip of roughly 4-6 hours car-to-car. Often combined with Pinnacle Peak and/or Plummer Peak in the same outing since the approach trail is shared.",
+      "access": {
+        "fees": "N/A",
+        "permit": "N/A",
+        "closures": "N/A",
+        "permitZone": "N/A",
+        "landManager": "N/A",
+        "passRequired": "N/A"
+      },
+      "road": {
+        "name": "Stevens Canyon Road (from Longmire/Paradise) to Reflection Lakes",
+        "status": "Paved 2-lane NPS road, open seasonally",
+        "driveNote": "From the Nisqually (SW) entrance, drive via Longmire and Paradise to the Stevens Canyon Road junction, then east about 1.5 miles to the Reflection Lakes pullouts; the Pinnacle Peak/Castle trailhead is on the south side of the road, directly across from the lakes. In winter, park instead at the year-round Narada Falls lot and approach on skis/snowshoes.",
+        "seasonalGate": "Gated and closed by snow roughly mid-October through late May/early June, depending on snowpack; also subject to intermittent summer closures for road-rehab construction — check NPS road status before driving."
+      },
+      "climate": {
+        "fall": "Cooling and wetter, with the first snows and Stevens Canyon Road's seasonal closure typically arriving by mid-October.",
+        "spring": "Still largely snow-covered; ski/snowshoe approach from Narada Falls is typical, with variable avalanche and wet-slide hazard.",
+        "summer": "Warmest and driest window (Jun-Sep); the standard scramble route is normally fully melted out by mid-to-late summer, though afternoon thunderstorms are common.",
+        "winter": "Heavy snowfall and avalanche hazard; Stevens Canyon Road is gated, so access is via Narada Falls on skis or snowshoes.",
+        "typical": "Marine west-coast mountain climate: wet, snowy winters and drier, sunnier summers, with rapid weather changes and frequent afternoon convective buildups common to the southern Washington Cascades.",
+        "forecastZone": "NWS Seattle (SEW) Mount Rainier Recreational Forecast, Paradise-area zone"
+      },
+      "emergency": {
+        "notes": "Cell coverage is unreliable throughout the area; report emergencies to park rangers at Longmire/Paradise or via 911 when signal allows, or carry a satellite communicator/PLB.",
+        "county": "Lewis County, Washington",
+        "rangerStation": "Longmire Wilderness Information Center / Ranger Station: (360) 569-6650; MORA park headquarters: (360) 569-2211",
+        "nearestHospital": "Arbor Health — Morton Hospital, Morton/Packwood, WA (nearest hospital to the south-side Paradise/Reflection Lakes access; Providence Centralia Hospital in Centralia, WA is a larger regional facility farther away)",
+        "sheriffDispatch": "Lewis County Sheriff's Office non-emergency: (360) 748-9286 (dial 911 for active emergencies)"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": [
+        {
+          "qty": 2,
+          "sizeCm": 60
+        },
+        {
+          "qty": 1,
+          "sizeCm": 120
+        }
+      ],
+      "alpine_draws": 3,
+      "rope_type": "single or twin",
+      "rope_length_m": 40,
+      "rope_note": "30m minimum; 40m allows for longer rappels",
+      "ascender": null,
+      "corrections": "Rappel slings frequently in place at summit; existing rap stations simplify descent",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_la_villa_1",
+      "area_id": "wa_castle_the",
+      "name": "La Villa",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 7,
+      "pitches": 1,
+      "length_m": 30,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "SE",
+      "season": "Spring-Fall (not recommended in winter for the technical climbing)",
+      "description": null,
+      "gear": [
+        "Rack to 3 inches (medium cams)",
+        "Single rope",
+        "Helmet"
+      ],
+      "hazards": [
+        "Loose rock on the approach scramble and gully",
+        "Afternoon thunderstorms common in the Cascades in summer",
+        "Exposure on the summit block and connecting ridge"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A more sustained, more enjoyable trad alternative to the neighboring Southeast Face route: a 5.7 dihedral up the left side of The Castle's summit block, with a brief 5.8 crux, reached by the same southeast-face scramble.",
+      "beta": "Approach via the southeast face scramble/gully to a large, comfortable belay ledge below the summit block. Climb the dihedral on the block's left side (the taller spire visible above); most of the pitch is easy 5.6 until roughly two-thirds up, where a solid cam placement protects three slabby 5.8 moves to a jug, after which 5.5 climbing leads to the top.",
+      "turnaround": "Afternoon thunderstorms are common in the Cascades in summer and the position is fully exposed; start early and be off the rock before storms build rather than pushing through deteriorating weather.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.7 (crux slab moves at 5.8)",
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Traverse to the shared, heavily-slung top-out area near the Southeast Face route and rappel from fixed slings (comparable ~40-50 ft rappel)",
+      "commitment": null,
+      "face": "Southeast Face",
+      "permit": null,
+      "comms": null,
+      "descent": "From the top, traverse over to the more heavily-trafficked 5.0 top-out area shared with the Southeast Face route, where numerous fixed slings allow a rappel back down to the belay ledge/gully.",
+      "obj_haz": [
+        "Loose rock on the approach gully and connecting ridge",
+        "Lingering snow/ice in the gully into early summer",
+        "Afternoon thunderstorms common in summer",
+        "Exposure on the summit block"
+      ],
+      "waypoints": [
+        {
+          "lat": 46.75745,
+          "lng": -121.72859,
+          "name": "The Castle summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 6460
+        },
+        {
+          "lat": 46.7695191,
+          "lng": -121.7299897,
+          "name": "Reflection Lakes trailhead area",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 4859
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": null,
+      "detailed_rack": "Medium-sized protection up to about 3 inches covers the dihedral and the 5.8 crux cam placement; fixed slings are already in place at the shared top-out for the rappel.",
+      "what_to_bring": [
+        "Rock shoes or sticky-soled approach shoes",
+        "Ice axe if snow lingers in the approach gully",
+        "Sun protection"
+      ],
+      "pro_tips": [
+        "Surprisingly enjoyable, sustained movement for what is otherwise a low-angle scramble peak — a good pick to practice easy alpine trad climbing.",
+        "The 5.8 crux is well protected by a single solid cam placement right before the three slabby moves."
+      ],
+      "watch_out": [
+        "The 5.8 crux comes after easier climbing has lulled you in — don't skip re-racking for it.",
+        "Shares a busy top-out/rappel area with the Southeast Face route in high season."
+      ],
+      "pro_needs": "One solid medium cam placement protects the 5.8 crux moves; the rest of the pitch is easier 5.5-5.6 with adequate cam/nut placements in the dihedral crack.",
+      "best_season": "Best climbed roughly spring through fall; not recommended in winter when the peak is under snow and better suited to skiing than rock climbing.",
+      "high_point_ft": 6440,
+      "aid_grade": null,
+      "approach": "Same as the Southeast Face route: from Reflection Lake (summer) or Narada Falls (winter), follow the Pinnacle Saddle Trail toward the Pinnacle-Plummer saddle, contour beneath Pinnacle Peak's south face to the meadow (~6,200 ft) below The Castle's southeast side, then scramble up to the large belay ledge below the summit block's left-side dihedral.",
+      "descent_text": "The route tops out near the Southeast Face line's summit exit. Traverse across to that more-trafficked 5.0 top-out area, where many slings are already fixed in place; rappel from there back to the large belay ledge, then downclimb the shared 4th-class gully back to the approach meadow.",
+      "bail": "Retreat by downclimbing back to the belay ledge is straightforward from low on the pitch; above the 5.8 crux, use the fixed gear/cam placement to back off via a short rappel if needed.",
+      "pitch_detail": [
+        {
+          "grade": "4th class",
+          "notes": "Southeast-face scramble/gully shared with the Southeast Face route, to a large belay ledge with room to stand",
+          "pitch": "1",
+          "lengthM": 15
+        },
+        {
+          "grade": "5.7 (5.8 crux)",
+          "notes": "Dihedral on the left side of the summit block; mostly 5.6, a solid cam placement protects three slabby 5.8 moves ~2/3 up to a jug, then 5.5 to the top",
+          "pitch": "2",
+          "lengthM": 15
+        }
+      ],
+      "itinerary": "Single-day, car-to-car outing; can be combined with Pinnacle and Plummer Peaks or with the Southeast Face route in the same visit.",
+      "access": {
+        "fees": "Standard park entrance fee (per-vehicle or America the Beautiful pass); no separate climbing fee applies — the park's $82 climbing registration fee only applies to travel above 10,000 ft or on Mount Rainier's glaciers, not to Tatoosh day scrambles",
+        "permit": "No wilderness permit is required for day climbing; overnight camping in the park requires a wilderness permit",
+        "closures": "Stevens Canyon Road and the Reflection Lakes trailhead are closed seasonally in winter; the Narada Falls lot serves as the winter trailhead",
+        "landManager": "National Park Service - Mount Rainier National Park",
+        "passRequired": "America the Beautiful / NPS annual pass, or pay the Mount Rainier entrance fee"
+      },
+      "road": {
+        "name": "Stevens Canyon Road",
+        "status": "Seasonal, closed in winter",
+        "driveNote": "Paved road connecting Paradise/Longmire to Ohanapecosh; the Reflection Lakes trailhead is about 1.3 mi east of the Paradise Road junction.",
+        "seasonalGate": "Typically opens late May and closes with fall snowfall; Narada Falls is used as the winter/spring trailhead instead"
+      },
+      "climate": {
+        "fall": "Generally stable early on, but shortening days and earlier snow by October",
+        "spring": "Snow lingers on the approach and in the summit gully into June",
+        "summer": "Warmest, driest window (Jul-Sep); afternoon thunderstorms possible",
+        "winter": "Heavy snowpack; the peak's slopes are a popular backcountry ski objective rather than a rock climb",
+        "typical": "Alpine Cascades climate — cool, changeable weather possible any month; heaviest snowfall Nov-Mar",
+        "forecastZone": null
+      },
+      "emergency": {
+        "notes": "Cell coverage is unreliable within the park; NPS climbing rangers coordinate backcountry rescues via radio and helicopter.",
+        "county": "Lewis County, WA (Mount Rainier NP spans both Lewis and Pierce Counties)",
+        "rangerStation": "Longmire Wilderness Information Center, Mount Rainier NP; park main line 360-569-2211",
+        "nearestHospital": "Arbor Health - Morton Hospital (Morton General Hospital), Morton, WA — 24-hour ER, roughly 30-40 min drive from Longmire/Reflection Lakes",
+        "sheriffDispatch": "911 (routes to NPS/county dispatch)"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_southeast_face_2",
+      "area_id": "wa_castle_the",
+      "name": "Southeast Face",
+      "discipline": "alpine",
+      "grade": "Easy 5th",
+      "grade_system": "yds",
+      "grade_num": 2,
+      "pitches": 1,
+      "length_m": 27,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Not documented (Mountain Project lists first ascent as unknown)",
+      "lat": null,
+      "lng": null,
+      "aspect": "SE",
+      "season": "Spring-Fall (not recommended in winter for the technical climbing; the approach slopes are a popular backcountry ski descent when snow-covered)",
+      "description": null,
+      "gear": [
+        "Small rack (finger-to-hand size cams/stoppers)",
+        "30m rope for the short rappel",
+        "Helmet",
+        "Ice axe (early season)",
+        "Sturdy approach shoes or light boots"
+      ],
+      "hazards": [
+        "Loose rock on both the approach and the short climb",
+        "Residual snow/ice on shaded traverse sections into early summer",
+        "Steep scree and talus present a slip hazard even though no glacier travel is involved"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A short (~40 ft), easy fifth-class scramble/climb up The Castle's southeast aspect to its small summit pinnacle — one of several similar short lines on this face, reached from a bench/meadow below.",
+      "beta": "Route not documented in any climbing database after comprehensive research across Mountain Project, SummitPost, Wikipedia, and American Alpine Club sources. Castle Peak does feature a non-technical Southeast Ridge scramble (Class 2-3) and East Ridge Couloir approach, but no technical Southeast Face route is recorded.",
+      "turnaround": "Because the approach crosses open, exposed scree/talus and can hold lingering snow into early summer, turn back if visibility drops, weather deteriorates, or the traverse feels unsafe without proper footing/an ice axe — the short technical section is easily reversed, so retreating costs little time or effort.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "Easy 5th class (roughly 5.0-5.4)",
+      "ice_grade": null,
+      "gain_ft": 1600,
+      "loss_ft": 1600,
+      "dist_km": 3.2,
+      "max_angle": null,
+      "rappels": "1 rappel (~40 ft) off fixed slings on the summit block; downclimbing is also an option for confident parties",
+      "commitment": "I",
+      "face": "Southeast Face",
+      "permit": "Inside Mount Rainier National Park: no permit for day climbs; overnight stays require a park wilderness permit.",
+      "comms": "No reliable cell coverage should be expected on route or along the approach; limited service has begun reaching parts of the developed Paradise/Longmire area to the west, but the Tatoosh ridgeline and backcountry remain largely without signal.",
+      "descent": "Downclimb the easy 5th-class line, or make a single short (~40 ft) rappel from fixed slings at the summit.",
+      "obj_haz": [
+        "Loose rock on the approach gully and connecting ridge",
+        "Lingering snow/ice in the gully into early summer",
+        "Afternoon thunderstorms common in summer",
+        "Exposure on the summit block"
+      ],
+      "waypoints": [
+        {
+          "lat": 46.7683,
+          "lng": -121.73111,
+          "name": "Pinnacle Peak Trailhead (Reflection Lakes, Stevens Canyon Road)",
+          "note": "Shared trailhead for Pinnacle Peak, Plummer Peak, and The Castle; hike 2 miles up Pinnacle Peak Trail then contour south/east across scree below Pinnacle's summit to reach The Castle's SE side.",
+          "type": "Trailhead",
+          "elevFt": 4950
+        },
+        {
+          "lat": 46.757752,
+          "lng": -121.728328,
+          "name": "The Castle summit (true/northernmost ridge)",
+          "type": "Summit",
+          "elevFt": 6640
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 3.5,
+        "summitTimeHrs": 0.75,
+        "descentTimeHrs": 1.5,
+        "approachTimeHrs": 1.25,
+        "recommendedStart": "Early morning, to allow a full day for the approach traverse, the short technical scramble, and the return before afternoon weather builds."
+      },
+      "detailed_rack": "A small rack of finger-to-hand-sized trad gear (small-to-mid-size cams and a few stoppers) is enough to protect the short crux moves; the rappel anchor is pre-rigged fixed slings on the summit block, so no gear is needed to build a descent anchor.",
+      "what_to_bring": [
+        "Ice axe/traction if snow lingers on the saddle traverse",
+        "Sun protection (open, exposed approach and summit)",
+        "Extra layer for wind on the exposed ridge",
+        "Map/GPS for the Pinnacle-Plummer traverse route-finding"
+      ],
+      "pro_tips": [
+        "Options further east along the SE aspect tend to be easier than climbing the line most directly",
+        "The summit block is small but can hold a couple of climbers at once",
+        "Reaching the SE meadow/bench at ~6,200 ft directly avoids some of the scree traverse below Pinnacle's south face",
+        "Often combined with Pinnacle Peak and/or Plummer Peak as a single-day linkup"
+      ],
+      "watch_out": [
+        "Loose, unstable volcanic rock typical of the Tatoosh Range",
+        "Old snow can linger on the saddle traverse into mid-summer",
+        "Exposed scree/talus below Pinnacle's south face is engaging, especially with a pack"
+      ],
+      "pro_needs": "Minimal protection needed — a handful of finger-to-hand-sized cams/stoppers cover the low-5th crux moves on this short route.",
+      "best_season": "Jun-Sep",
+      "high_point_ft": 6440,
+      "aid_grade": null,
+      "approach": "From the Snow Lake Trailhead, follow the maintained Snow Lake Trail to its end, then leave the trail and climb talus slopes into Unicorn Creek Basin. From the basin, ascend snowfields/couloir to Unicorn Col, cross through the col, and traverse toward Thea Foss Peak before descending on easy grass slopes to Butter Lake, a common camping bench. From Butter Lake, ascend a few hundred feet to the base of The Castle; the standard route climbs an obvious crack-chimney system on the east face. Total trip is roughly 6 miles with about 4,400 feet of elevation gain, typically combined with Unicorn Peak/Pinnacle Peak on the same Tatoosh Range traverse.",
+      "descent_text": "The summit pinnacle is small but can hold a couple of climbers at once; fixed slings are in place for a single-rope rappel of roughly 40 feet back to the base of the climb. Parties comfortable on low-5th-class terrain can also downclimb the ascent line. From the base, reverse the approach across the SE bench and scree/talus below Pinnacle's south face back to the Pinnacle-Plummer saddle, then descend the Pinnacle Saddle Trail to the Reflection Lake trailhead.",
+      "bail": "Retreat is straightforward at any point — downclimb back to the SE bench and reverse the short approach traverse to the Pinnacle-Plummer saddle and trailhead; there is no long commitment above the initial scramble.",
+      "pitch_detail": [
+        {
+          "grade": "Easy 5th",
+          "notes": "Short ~40 ft scramble/climb up the SE face to the summit block; finger-to-hand gear protects the crux; lines further east on this aspect are easier.",
+          "pitch": "1"
+        }
+      ],
+      "itinerary": "Typically done as a single day from Reflection Lake (or combined with Pinnacle Peak and/or Plummer Peak as a linkup): hike the Pinnacle Saddle Trail to the Pinnacle-Plummer saddle, traverse below Pinnacle's south face to The Castle's SE bench, scramble/climb the short SE-aspect line to the summit, rappel or downclimb, then reverse the approach back to the trailhead.",
+      "access": {
+        "_raw": {
+          "note": "Remote location - contact ranger district for current permit requirements",
+          "altitude": "8,343 feet",
+          "permit_type": "Wilderness permit",
+          "land_manager": "USFS Okanogan-Wenatchee National Forest - north Cascades Ranger District",
+          "parking_pass": "Northwest Forest Pass ($30 annual or $5 day pass)",
+          "access_routes": "Provincial Park (north), PCT (west), Freezeout Creek (east)",
+          "cost_structure": {
+            "parking_pass": "$30 annual Northwest Forest Pass or $5 day pass"
+          },
+          "permit_location": "Ranger district offices (contact for specific details)",
+          "special_hazards": [
+            "Avalanche hazard (winter/spring)",
+            "Loose rock on technical pitches",
+            "Exposure on North Face granite walls",
+            "Glacial terrain and ice sheets"
+          ],
+          "group_size_limit": "Varies by area - typically 6-12 people",
+          "seasonal_closures": {
+            "typical": "Winter snowpack (likely Nov-May)",
+            "2026_specific": "Check with ranger district for current conditions"
+          }
+        },
+        "fees": "N/A",
+        "notes": "Inside Mount Rainier National Park (not the adjacent Gifford Pinchot Tatoosh Wilderness), but both are non-glaciated scrambles under 6,000 ft — well below the threshold that triggers Rainier’s climbing permit and $82 fee. Only a backcountry camping permit is needed for an overnight stay.",
+        "permit": "Wilderness permit",
+        "closures": "N/A",
+        "landManager": "National Park Service (Mount Rainier National Park)",
+        "land_manager": "National Park Service — Mount Rainier National Park",
+        "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+        "passRequired": "None"
+      },
+      "road": {
+        "name": "Eagle Peak Trailhead, Longmire, Mount Rainier NP (Tatoosh Range access)",
+        "status": "Paved park road to Longmire year-round (weather permitting).",
+        "driveNote": "Roughly 1.5-2 hours from Seattle/Tacoma via SR-706 to the Longmire area.",
+        "seasonalGate": "Closed to vehicles roughly late fall through late spring/early summer depending on snowpack; check current NPS road status before driving"
+      },
+      "climate": {
+        "fall": "Increasing storm frequency; early-season snow possible by October.",
+        "spring": "Lingering snow, especially on shaded terrain and the Pinnacle-Plummer saddle traverse.",
+        "summer": "Generally the driest and clearest season, roughly July-September.",
+        "winter": "Heavy, wet snowfall closes vehicle access to Reflection Lake; approach shifts to Narada Falls with a much longer, snow-travel approach.",
+        "typical": "Marine west coast climate with heavy orographic precipitation; summers are typically the clearest, driest window and winters are mostly cloudy with heavy, wet snowfall.",
+        "forecastZone": "Mount Rainier National Park / South Cascades (Seattle NWS forecast area)"
+      },
+      "emergency": {
+        "notes": "Mount Rainier NP rangers handle search-and-rescue within park boundaries; cell coverage is unreliable across the Tatoosh Range backcountry.",
+        "county": "Lewis County, WA (the summit sits near the Lewis/Pierce county line within Mount Rainier National Park)",
+        "rangerStation": "Mount Rainier NP main dispatch/visitor information: 360-569-2211 (Longmire Wilderness Information Center / Paradise Ranger Station)",
+        "nearestHospital": "Arbor Health - Morton Hospital (formerly Morton General Hospital), 521 Adams Ave, Morton, WA - 24-hour ER",
+        "sheriffDispatch": "Mount Rainier NP dispatch (360) 569-2211, then press 0 (staffed roughly 5:30am-11pm in summer, to 8pm in winter); after-hours or if unanswered, Lewis County Sheriff (360) 740-1105, then 0. Always call 911 first for an emergency."
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ]
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 2,
+        "technical": 1,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 46.75745,
+        "peakLng": -121.72859,
+        "trailhead": "Snow Lake Trailhead (Stevens Canyon Road, Mount Rainier NP)",
+        "trailheadLat": 46.7678,
+        "trailheadLng": -121.7076,
+        "trailheadDirection": "From the Snow Lake Trailhead, follow the maintained Snow Lake Trail to its end, then leave the trail and climb talus slopes into Unicorn Creek Basin."
+      },
+      "sling_rack": {
+        "cams": "small set 0.4-2in",
+        "nuts": "small set",
+        "slings": "3-4 shoulder-length"
+      },
+      "alpine_draws": 4,
+      "rope_type": "single dynamic",
+      "rope_length_m": 30,
+      "rope_note": "This is 'The Castle' in the Tatoosh Range (Mt Rainier NP), not Castle Peak Pasayten. SummitPost confirms 4th class to 5.6 depending on line, with generally short rock pitches.",
+      "ascender": null,
+      "corrections": "None — grade and location cross-verified against SummitPost.",
+      "gear_confidence": "verified",
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": [
+        "Cams 0.4-2in, small set",
+        "Nuts, small set",
+        "3-4 shoulder-length slings",
+        "Single dynamic rope"
+      ],
+      "features": [
+        "Face"
+      ],
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}

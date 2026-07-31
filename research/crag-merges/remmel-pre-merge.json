@@ -1,0 +1,693 @@
+{
+  "fetched_for": [
+    "wa_remmel_mountain",
+    "wa_mt_remmel"
+  ],
+  "areas": [
+    {
+      "id": "wa_mt_remmel",
+      "name": "Mt Remmel",
+      "parent_id": "wa_pasayten_wilderness",
+      "path": "usa.washington.wa_okanogan.wa_pasayten_wilderness.wa_mt_remmel",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 48.92106,
+      "lng": -120.1962,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Remmel Mountain (8,685 ft) is a massive granite talus peak in the remote interior of the Pasayten Wilderness in Okanogan County, Washington, and is the highest point in the Cathedral Range, a subrange of the Okanogan Range within the North Cascades. It sits roughly 5 miles south of the Canadian border on the east side of the Cascade crest and was first climbed July 26, 1904 by Sledge Tatum and George E. Louden Jr.; its summit hosted a Forest Service fire lookout from the 1930s until it was destroyed by lightning by 1969. The standard route is a long trail walk-up from the southeast, while the peak's northwest ridge offers a short, low-fifth-class scramble/climb on generally good granite.",
+      "route_count": 1,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    },
+    {
+      "id": "wa_remmel_mountain",
+      "name": "Remmel Mountain",
+      "parent_id": "wa_pasayten",
+      "path": "usa.washington.wa_okanogan.wa_pasayten.wa_remmel_mountain",
+      "area_type": "peak",
+      "region": "Pasayten/Okanogan",
+      "lat": 48.923342,
+      "lng": -120.196887,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Remmel Mountain (8,685 ft) is the highest peak in the Cathedral Range, a subrange of the Okanogan Range within the North Cascades, and the most prominent summit in the Pasayten Wilderness (Okanogan County, WA), rising about 5 miles south of the Canadian border. Built of granite, it climbs roughly 2,300 feet above Andrews Creek in under a mile. It was named in 1898 by pioneer surveyor Albert H. Sylvester and first climbed July 26, 1904 by Sledge Tatum and George E. Louden Jr. of the U.S.-Canada Boundary Survey party; a Forest Service fire lookout stood on its summit from the 1930s until it was removed/destroyed by 1969 after repeated lightning strikes.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": 8688,
+      "prominence_ft": 4328,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_nw_ridge",
+      "area_id": "wa_mt_remmel",
+      "name": "NW Ridge",
+      "discipline": "alpine",
+      "grade": "5.2",
+      "grade_system": "yds",
+      "grade_num": 2,
+      "pitches": 4,
+      "length_m": 361,
+      "sort_order": null,
+      "stars": null,
+      "fa": "August 10, 2011",
+      "lat": null,
+      "lng": null,
+      "aspect": "NW",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "Light trad rack (cams, stoppers)",
+        "Two 60m ropes or one 70m rope for rappels",
+        "Slings and quickdraws",
+        "Rock climbing shoes or approach boots",
+        "Helmet (loose rock exposure)",
+        "Insulating layers (can be cold at 8,685 ft)"
+      ],
+      "hazards": [
+        "Loose, exposed granite rock on upper ridge",
+        "Gendarme passages require scrambling and short rock pitches",
+        "Exposure on ridge during scrambling sections",
+        "Lightning exposure on exposed summit area; historical fire lookout destroyed by repeated lightning strikes",
+        "Mosquito hazard during approach through forested and boggy sections",
+        "Steep scree and loose boulder fields on descent, especially on west slope"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A moderate alpine rock route featuring Class 3 scrambling to the north summit followed by technical pitches on main gendarmes, with rappels required for descent. Described in the Beckey guide as appearing sensible as a route.",
+      "beta": "Good to very good rock throughout with straightforward route finding. The lower NW ridge is beautiful and wild with wonderful camp spots at 7,500 feet. No established trail to the ridge; route finding from camp to summit is aided by the ridge crest. Most climbing on the two main gendarmes involves short pitches on stable rock with good protection opportunities.",
+      "turnaround": "If not on the summit by mid-afternoon, consider returning to camp. Weather can deteriorate rapidly on exposed ridge terrain; monitor conditions throughout the climb.",
+      "auto_generated": false,
+      "alpine_grade": "II",
+      "rock_grade": "5.2",
+      "ice_grade": null,
+      "gain_ft": 5265,
+      "loss_ft": 1200,
+      "dist_km": 28.2,
+      "max_angle": null,
+      "rappels": "2 rappels bypassing a step below the North Summit on the way up, plus 1 rappel off each of the two summit gendarmes on the descent (4 total documented).",
+      "commitment": "II",
+      "face": "North side / NW ridge, via the North Summit and two main gendarmes",
+      "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+      "comms": "Cell phone service unreliable to nonexistent in Pasayten Wilderness. Satellite messenger, inReach, or Personal Locator Beacon recommended for emergency communication. Notify trailhead register of trip plans.",
+      "descent": "From summit, make 2 rappels on the west side of the main gendarmes, then scramble down and around the west slope on good to loose boulders and scree, avoiding the north summit route. Total descent time approximately 2.5 hours from summit to camp.",
+      "obj_haz": [
+        "loose rock on the gendarme rappels/descent",
+        "exposed 3rd-class scrambling on the boulder ridge",
+        "routefinding uncertainty on an unmarked, rarely-climbed ridge crest",
+        "very remote — any incident here is a multi-day extraction",
+        "heavy mosquitoes and bushwhacking on the off-trail approach"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.92573,
+          "lng": -120.13832,
+          "elev": 6850,
+          "name": "Four Point Lake",
+          "note": "Multiple good campsites with views of Remmel; standard bivy.",
+          "type": "Water",
+          "distMi": 14
+        },
+        {
+          "lat": 48.928,
+          "lng": -120.185,
+          "elev": 7500,
+          "name": "NW Ridge Camp",
+          "note": "Bivy on Remmel's NW Ridge itself, reached via ridge travel from the Four Point Lake basin.",
+          "type": "Campsite",
+          "distMi": 17.5
+        },
+        {
+          "lat": 48.8231,
+          "lng": -120.0197,
+          "name": "Thirtymile Trailhead",
+          "note": "Existing DB coordinate (48.835, -120.068) is ~4km off from the true trailhead; corrected per WTA.org and Natural Atlas. From here, follow Chewuch River Trail #510 to Remmel Lake, then go off-trail south (~2 miles bushwhack) to reach the NW Ridge, per a documented 2011 ascent trip report.",
+          "type": "Trailhead"
+        },
+        {
+          "lat": 48.9232028,
+          "lng": -120.196762,
+          "name": "Remmel Mountain",
+          "type": "Summit",
+          "elevFt": 8685
+        }
+      ],
+      "gpx": [
+        [
+          48.92573,
+          -120.13832
+        ],
+        [
+          48.928,
+          -120.185
+        ],
+        [
+          48.8231,
+          -120.0197
+        ],
+        [
+          48.9232028,
+          -120.196762
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 8.5,
+        "summitTimeHrs": 3.5,
+        "descentTimeHrs": 2.5,
+        "approachTimeHrs": 2.5,
+        "recommendedStart": "Dawn or early morning from camp at 7,500 feet"
+      },
+      "detailed_rack": "A light alpine rack is sufficient: a small set of nuts/cams to mid-size, a few slings/draws for the short low-5th-class sections, and enough webbing/cord to back up natural rappel anchors around the gendarmes (no fixed anchors are reported on route).",
+      "what_to_bring": [
+        "Navigation (map, compass, GPS)",
+        "Headlamp and backup light",
+        "First aid kit",
+        "Sun protection (sunscreen, sunglasses, hat)",
+        "High-calorie food and electrolyte drinks",
+        "Insulating layers and rain jacket",
+        "Mosquito repellent and head net for approach",
+        "Water bottles and water treatment (or camp near water)",
+        "Micro-spikes or crampons if ascending before June or after September"
+      ],
+      "pro_tips": [
+        "Approach from Remmel Lake one day before climbing to reach camp at 7,500 feet; allows early summit start",
+        "The lower NW ridge has excellent camping spots with flat areas; good water sources",
+        "Navigate gendarmes by staying on ridge crest; look for established climbing features and cairns marking passage",
+        "Double-check rappel anchors before descending from gendarmes; rock may be loose around sling placements",
+        "Early morning start from camp enables return to summit and descent before afternoon weather buildup"
+      ],
+      "watch_out": [
+        "Watch for unstable blocks and flakes on the granite ridge sections",
+        "Be cautious on the steep, loose west slope descent - rockfall hazard",
+        "Summit area highly exposed to lightning; descend if thunderstorms develop",
+        "Mosquitoes can be intense in forested sections of approach; bring bug repellent and head net"
+      ],
+      "pro_needs": "Light alpine rack with stoppers and cams up to 2-inch size for protection on the gendarme pitches. Two 60m ropes recommended for rappels. Slings for anchor building on granite.",
+      "best_season": "July through September offers optimal conditions. Early June possible with lingering snow patches; October excellent with larch colors. Late May through early October window is safest for access.",
+      "high_point_ft": 8685,
+      "aid_grade": null,
+      "approach": "From Thirtymile Trailhead, follow the Chewuch River Trail (#510) roughly 17-18 miles north then west, crossing Cathedral Creek before climbing about 2 miles to a high basin near 6,600 ft. A well-built former fire-lookout trail then switchbacks up the talus of Remmel's southeast slope to the summit — a long walk-up with no technical climbing, but a genuine multi-day backpack (~19-20 miles one-way). The Andrews Creek Trailhead offers a somewhat shorter alternate approach into the same Cathedral Lakes/Remmel basin.",
+      "descent_text": "Descend via 2 rappels on each of the main gendarmes on the west side of the ridge, each rappel approximately 15m or 30m total. After rappels, scramble down and around the west slope on stable to loose boulders and scree, carefully avoiding the direct descent route via the north summit. Route finding on descent can be straightforward if familiar with the terrain.",
+      "bail": "Retreat is straightforward via the same descent route. The ridge offers good camp spots if further descent is needed. If weather deteriorates, retreat to the 7,500 foot camp. The route avoids technical terrain until the gendarmes.",
+      "pitch_detail": [
+        {
+          "grade": "Class 3",
+          "notes": "North Summit approach via stable, lightly vegetated boulder-covered NW ridge; straightforward route finding on good to very good rock",
+          "pitch": "1"
+        },
+        {
+          "grade": "5.1-5.2",
+          "notes": "Main gendarmes on ridge; couple of short technical pitches on very nice stable rock, each gendarme requires passage",
+          "pitch": "2-3"
+        }
+      ],
+      "itinerary": "Day 1: Bushwhack from Remmel Lake south through forests and bogs to reach camp at 7,500 feet on lower ridge. Day 2: Climb from camp to summit (3.5 hours typical climbing time from camp), summit and rappel descent back to camp (2.5 hours), return to Remmel Lake.",
+      "access": {
+        "fees": "N/A",
+        "rules": "Group size capped at 12 people / 18 head of stock.",
+        "permit": "N/A",
+        "closures": "N/A",
+        "permitZone": "N/A",
+        "group_limit": 12,
+        "landManager": "N/A",
+        "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+        "parking_pass": "Northwest Forest Pass required at trailheads — $5/day or $30/annual.",
+        "passRequired": "N/A"
+      },
+      "road": {
+        "name": "Thirtymile / Chewuch River Road Trailhead (or Andrews Creek / Cathedral Driveway Trailheads), Pasayten Wilderness",
+        "status": "Access is via gravel Forest Service roads (Chewuch River Road to the Thirtymile Trailhead, or the Andrews Creek/Cathedral Driveway roads) in the Okanogan-Wenatchee National Forest; these roads are subject to washout closures in some years, which can force a longer alternate trailhead — check current national forest road status before a trip.",
+        "driveNote": "Roughly 4-4.5 hours from Seattle via Highway 20 to Winthrop, then north on Chewuch River Road; the climb itself is a long backcountry approach (15+ miles one-way) into the Pasayten Wilderness."
+      },
+      "climate": {
+        "fall": "September-early October excellent; crisp mornings, stable systems more frequent; larch meadows in peak color; October above 8,000 feet increasingly cold, possible early snow",
+        "spring": "May conditions variable with lingering snow patches below 8,000 feet; stable weather becoming more common late May",
+        "summer": "July-August most stable with long daylight hours; afternoon thunderstorms common; warm days (60-70F at summit), freezing nights",
+        "winter": "November-April snow-covered with avalanche hazard and extreme cold; generally not climbed during winter",
+        "typical": "Variable mountain weather with potential for rapid changes. Frequent exposure to lightning in upper terrain.",
+        "forecastZone": "Mount Remmel area served by National Weather Service forecast for northern Washington Cascades and Mountain Forecast weather predictions"
+      },
+      "emergency": {
+        "notes": "Cell service is unreliable in Pasayten Wilderness. Satellite messenger or satellite communication device strongly recommended. Emergency evacuation would likely require helicopter rescue from exposed ridge terrain.",
+        "county": "Okanogan County",
+        "rangerStation": "Winthrop Ranger District, Okanogan-Wenatchee National Forest, 24 West Chewuch Road, Winthrop, WA 98862, (509) 996-4000, Monday-Friday 8am-4pm",
+        "nearestHospital": "Confluence Health - Mid Valley Hospital in Omak, WA (approximately 45 miles south); North Valley Hospital in Tonopah, UT is further; note that true emergency access is via helicopter in remote Pasayten location",
+        "sheriffDispatch": "Okanogan County Sheriff: (509) 422-3600"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 2,
+        "technical": 1,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 48.92106,
+        "peakLng": -120.1962,
+        "trailhead": "Andrews Creek Trailhead (Trail #504)",
+        "trailheadLat": 48.7842,
+        "trailheadLng": -120.1088,
+        "trailheadDirection": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+      },
+      "sling_rack": {
+        "webbing": {
+          "length": "60cm",
+          "purpose": "protection on granite flakes/horns, simple belay anchors",
+          "quantity": 3
+        }
+      },
+      "alpine_draws": 2,
+      "rope_type": "Single dynamic rope",
+      "rope_length_m": 50,
+      "rope_note": "No indexed route-specific gear list found online (guidebook coverage is Beckey's Cascade Alpine Guide Vol. 3, not available via web search). Recommendation reflects a light rack for a low-grade (5.2) alpine granite ridge; many parties simul-climb or solo given the easy grade.",
+      "ascender": null,
+      "corrections": "Remmel Mountain's standard SE approach (Four Point Creek Trail) is a walk-up; the NW Ridge is the technical line. No trip-report-level gear beta was found for this specific ridge — grade-based inference only.",
+      "gear_confidence": "inferred",
+      "rappel_detail": [
+        {
+          "n": 1,
+          "notes": "First of two rappels down the main gendarmes on the ridge's west side.",
+          "anchor": "gendarme anchor, west side (type not specified in source)",
+          "lengthM": 15
+        },
+        {
+          "n": 2,
+          "notes": "Second rappel; total rappelling covers roughly 30m before scrambling down west-slope talus/scree back toward camp.",
+          "anchor": "gendarme anchor, west side (type not specified in source)",
+          "lengthM": 15
+        }
+      ],
+      "rappel_count_note": null,
+      "rack": [
+        "Light trad rack: cams and stoppers to ~2in",
+        "3x 60cm webbing for flake/horn protection and simple anchors",
+        "2 alpine draws/quickdraws",
+        "Two 60m ropes or one 70m rope for rappels"
+      ],
+      "features": [
+        "Exposed",
+        "Well-protected",
+        "Scenic"
+      ],
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_remmel_mountain_nw_ridge",
+      "area_id": "wa_remmel_mountain",
+      "name": "NW Ridge",
+      "discipline": "alpine",
+      "grade": null,
+      "grade_system": null,
+      "grade_num": null,
+      "pitches": 4,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "August 10, 2011 (ascending party not identified in the source record)",
+      "lat": null,
+      "lng": null,
+      "aspect": "N-NW",
+      "season": null,
+      "description": null,
+      "gear": [
+        "Single 50-60m rope",
+        "Small rack of nuts",
+        "Extra long slings/cord for rap anchors",
+        "Helmet",
+        "Approach shoes or light boots for the bushwhack"
+      ],
+      "hazards": [
+        "Remote, seldom-visited technical terrain far from help",
+        "Off-trail approach through boggy, mosquito-heavy forest",
+        "Exposed rappels on the west side of the gendarmes"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A rarely-climbed alpine ridge line up Remmel's long ridge north of the summit above Remmel Lake, combining sections of 3rd-class scrambling with two short 5.1-5.2 pitches over gendarmes.",
+      "beta": "From a high camp at roughly 7,500 ft on the lower ridge, the route follows a long, stable, lightly-vegetated boulder ridge north of the summit. Two main gendarmes block easy passage; each is climbed at about 5.1-5.2 and then a rappel on the west side regains the ridge crest. The Beckey guide reportedly notes the line 'appears sensible as a route'; it sees very little traffic. Parties can bypass the technical sections by staying lower on the west slope, avoiding the vertical sections but missing the ridge's technical interest.",
+      "turnaround": "Because both the approach and descent require a slow, off-trail bushwhack and the technical sections need rappels, set a turnaround time with several hours of daylight buffer for the descent and return bushwhack.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.2",
+      "ice_grade": null,
+      "gain_ft": 5265,
+      "loss_ft": null,
+      "dist_km": 28.2,
+      "max_angle": null,
+      "rappels": "2 rappels (west side of the ridge) to regain the crest past the two main gendarmes",
+      "commitment": "II",
+      "face": "North side",
+      "permit": null,
+      "comms": "No cell coverage in this remote, off-trail section of the Pasayten backcountry; carry a satellite communicator.",
+      "descent": "Reverse the ridge, downclimbing the 3rd-class sections and rappelling the two gendarmes back to high camp.",
+      "obj_haz": [
+        "unprotected 3rd/4th-class-or-harder terrain near the summit",
+        "no documented standard line or rappel route",
+        "extreme remoteness/no cell coverage"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.9562787,
+          "lng": -120.2072177,
+          "name": "Remmel Lake",
+          "type": "Water",
+          "distMi": null,
+          "elevFt": null
+        },
+        {
+          "lat": 48.92106,
+          "lng": -120.1962,
+          "name": "NW Ridge (route location)",
+          "type": "Junction",
+          "distMi": null,
+          "elevFt": null
+        },
+        {
+          "lat": 48.923342,
+          "lng": -120.196887,
+          "name": "Remmel Mountain Summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 8685
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 6,
+        "summitTimeHrs": 3.5,
+        "descentTimeHrs": 2.5,
+        "approachTimeHrs": null,
+        "recommendedStart": "Early morning from high camp to allow time for the technical sections and the return bushwhack in daylight"
+      },
+      "detailed_rack": "Small rack of nuts (or a light cam set) plus extra long slings for building rappel anchors on the gendarmes; a single 50-60m rope handles both raps.",
+      "what_to_bring": [
+        "Bivy/camping gear for a high camp at ~7,500 ft",
+        "Bug protection (approach is mosquito-infested)",
+        "Extra water/filter",
+        "Navigation tools for the trailless approach"
+      ],
+      "pro_tips": [
+        "Camp on the ridge itself at ~7,500 ft rather than lower, for better rock underfoot and less bushwhacking to start climbing.",
+        "It's possible to avoid the roped sections by staying lower on the west slope, but this bypasses the route's two technical gendarmes.",
+        "The lower ridge offers wild, scenic camp spots on stable, lightly-vegetated granite blocks."
+      ],
+      "watch_out": [
+        "Sustained, difficult bushwhacking to reach the ridge",
+        "Loose rock on the gendarmes",
+        "Very little traffic/beta — expect route-finding uncertainty",
+        "Rappel anchors may need to be built from scratch"
+      ],
+      "pro_needs": "A light trad rack (nuts/small cams) suffices for the two roped pitches; bring extra slings/cord for rap anchors since fixed anchors are unlikely on this rarely-climbed line.",
+      "best_season": null,
+      "high_point_ft": 8685,
+      "aid_grade": null,
+      "approach": "From Remmel Lake, bushwhack roughly 2 miles up the forested slope due south of the lake, through mosquito-infested timber and subalpine bog, to a high camp at treeline (~7,500 ft) on the lower NW ridge.",
+      "descent_text": "From the summit, downclimb the upper ridge scrambling to the first gendarme, rappel or downclimb it, continue down the ridge to the second gendarme, rappel it, and continue 3rd-class scrambling back to the high camp at ~7,500 ft; from there retrace the bushwhack to Remmel Lake.",
+      "bail": "Retreat is off the ridge itself — downclimb or rappel back the way you came; there is no faster alternative descent given the remote, off-trail approach.",
+      "pitch_detail": [
+        {
+          "grade": "3rd class",
+          "notes": "Ridge scrambling from high camp (~7,500 ft) on stable, lightly vegetated boulders.",
+          "pitch": "1"
+        },
+        {
+          "grade": "5.1-5.2",
+          "notes": "Climb the first main gendarme on stable rock.",
+          "pitch": "2"
+        },
+        {
+          "grade": null,
+          "notes": "Rappel the west side of the ridge (single 50-60m rope) to regain the crest past the gendarme.",
+          "pitch": "Rappel"
+        },
+        {
+          "grade": "5.1-5.2",
+          "notes": "Climb the second main gendarme.",
+          "pitch": "3"
+        },
+        {
+          "grade": null,
+          "notes": "Second rappel on the west side to regain the ridge.",
+          "pitch": "Rappel"
+        },
+        {
+          "grade": "3rd class",
+          "notes": "Continue ridge scrambling to the summit.",
+          "pitch": "4"
+        }
+      ],
+      "itinerary": null,
+      "access": {
+        "fees": "Free",
+        "notes": null,
+        "rules": "Group size capped at 12 people / 18 head of stock.",
+        "permit": "Free Self-Issue Wilderness Permit",
+        "seasonal": null,
+        "group_limit": 12,
+        "land_manager": "U.S. Forest Service",
+        "parking_pass": "Northwest Forest Pass"
+      },
+      "road": null,
+      "climate": null,
+      "emergency": {
+        "notes": "Remote, off-trail alpine terrain; carry a satellite communicator and expect long SAR response times.",
+        "county": "Okanogan County, WA",
+        "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+        "nearestHospital": "Mid-Valley Hospital, Omak, WA, (509) 826-1760; Three Rivers Hospital, Brewster, WA, (509) 689-2517",
+        "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency dispatch (509) 422-7232; 911 for emergencies"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_remmel_mountain_southeast_slope",
+      "area_id": "wa_remmel_mountain",
+      "name": "Southeast Slope (Standard Route)",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": null,
+      "grade_num": null,
+      "pitches": null,
+      "length_m": 3219,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Sledge Tatum and George E. Louden Jr., July 26, 1904, during the US–Canada Boundary Survey — a peak (not confirmed route-specific) first ascent, but very likely this line since it is the only non-technical, walk-up approach to the summit and no ropework was used.",
+      "lat": null,
+      "lng": null,
+      "aspect": "SE",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "Sturdy hiking boots",
+        "Trekking poles",
+        "Map & compass/GPS",
+        "Sun protection",
+        "Bug protection (mosquitoes can be heavy in July)",
+        "Wilderness permit (self-issue at trailhead)"
+      ],
+      "hazards": [
+        "Wildfire-damaged trail sections with heavy deadfall (Andrews Creek Trail)",
+        "Remote location far from help — self-rescue mindset required",
+        "Lingering snow patches into early July on shaded slopes",
+        "Exposed, open summit terrain during thunderstorms"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "The standard route follows a well-established unofficial climbers' trail up Remmel's southeast slope from Four Point Lake — a long, remote but non-technical Class 1-2 talus-and-meadow walk-up to the summit.",
+      "beta": "Remmel is a classic Pasayten peak-bagging objective: a big, remote walk-up rather than a technical climb. Most parties backpack in via one of three trailheads (Thirtymile/Chewuch River Trail to Four Point Lake, the shorter but rougher Andrews Creek approach, or the Cathedral Driveway) and then follow an obvious boot path up open talus and meadow slopes to the broad summit.",
+      "turnaround": "Given the remoteness (16+ miles one-way) and open, exposed summit slopes, set a firm turnaround time that leaves ample daylight margin for the long return hike, and retreat early if afternoon thunderstorms build over the exposed upper mountain.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "Class 1-2 (Class 3 on the Andrews Pass gully variant)",
+      "ice_grade": null,
+      "gain_ft": 5600,
+      "loss_ft": null,
+      "dist_km": 25.7,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": null,
+      "face": "Southeast slope",
+      "permit": null,
+      "comms": "No verified cell coverage; this is deep wilderness terrain well over 15 miles from any road — carry a satellite messenger/PLB.",
+      "descent": "Reverse the ascent route on foot back to Four Point Lake/Andrews Pass and out the inbound trailhead.",
+      "obj_haz": [
+        "afternoon thunderstorms",
+        "lingering snowfields (early season)",
+        "extreme remoteness/no cell coverage"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.8228,
+          "lng": -120.0197,
+          "name": "Thirtymile Trailhead",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3400
+        },
+        {
+          "lat": 48.7837,
+          "lng": -120.1086,
+          "name": "Andrews Creek Trailhead",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3050
+        },
+        {
+          "lat": 48.9183,
+          "lng": -120.1818,
+          "name": "Unofficial summit trail junction (off abandoned Coleman Ridge Trail)",
+          "type": "junction",
+          "distMi": null,
+          "elevFt": null
+        },
+        {
+          "lat": 48.923342,
+          "lng": -120.196887,
+          "name": "Remmel Mountain Summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 8685
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "Pre-dawn from camp on summit day to build in margin for the long approach and afternoon-thunderstorm risk"
+      },
+      "detailed_rack": "None. This is a non-technical Class 1 walk-up on the standard route — no rope or rack is carried.",
+      "what_to_bring": [
+        "Multi-day backpacking/camping gear",
+        "Water filter (sources at Four Point Lake/Andrews Creek, none higher)",
+        "Bear canister or hang line",
+        "Layers for exposed alpine weather",
+        "Extra food/fuel for a long approach"
+      ],
+      "pro_tips": [
+        "The Thirtymile/Four Point Lake line has a good, obvious unofficial trail nearly to the summit — the easiest navigation of the options.",
+        "The Andrews Creek approach is shorter on paper but crosses old 2003 burn deadfall low down, which can slow travel considerably.",
+        "Camping at Four Point Lake (6,850 ft) sets up a short, easy 4-mile round trip, 1,800 ft summit day."
+      ],
+      "watch_out": [
+        "Long, remote approach (16+ miles one-way) with no quick bailout",
+        "Deadfall and brush in the Andrews Creek burn area",
+        "Afternoon thunderstorms on the open upper slopes",
+        "Mosquitoes in early season near lakes and meadows"
+      ],
+      "pro_needs": null,
+      "best_season": "Trail access typically opens around July 1 as snow clears the east-side approaches, and the route stays in condition until the first autumn snowfall (commonly October); the most reliable window is mid-July through September.",
+      "high_point_ft": 8685,
+      "aid_grade": null,
+      "approach": "From the Thirtymile Trailhead (end of FR 5160, ~3,400 ft) or the Andrews Creek Trailhead (end of FR 51, ~3,050 ft), hike into the Pasayten Wilderness. Via Thirtymile: follow the Chewuch River Trail and Four Point Creek Trail to Four Point Lake (6,850 ft), then pick up the abandoned Coleman Ridge Trail; at roughly 7,070 ft a cairn marks the point to leave the trail and climb open meadow/talus up-valley to the summit on a well-trodden unofficial path. Via Andrews Creek: hike the Andrews Creek Trail roughly 9-11 miles (crossing heavy deadfall in an old 2003 burn in the lower miles) to a low saddle between Remmel and Coleman Ridge, then contour the west side of Coleman Ridge to reach the same upper slopes; alternatively continue to Andrews Pass (~6,700 ft) and climb one of several Class 3 west-facing gullies directly to the summit ridge.",
+      "descent_text": "Downclimb the talus/meadow boot path back to the Coleman Ridge Trail junction near 7,070 ft, then follow the trail back to Four Point Lake (or, via the Andrews Creek line, back down the Class 3 gullies or around via the Coleman Ridge contour) and out the approach trail to the trailhead.",
+      "bail": "There are no technical sections to protect on the standard line — bail simply means turning around and retracing the boot path/trail to camp. On the Andrews Pass gully variant, downclimb the gully or shift to an adjacent one if it proves too loose or exposed.",
+      "pitch_detail": null,
+      "itinerary": "Typically a 2-3 day backpack: Day 1 hike in to camp at Four Point Lake or along the Chewuch/Andrews Creek Trail; Day 2 climb to the summit and return to camp; Day 3 hike out. Strong parties have also completed the whole round trip (25+ miles, 5,500-6,800 ft gain) as a single very long day.",
+      "access": {
+        "fees": "Free",
+        "notes": null,
+        "rules": "Group size capped at 12 people / 18 head of stock.",
+        "permit": "Free Self-Issue Wilderness Permit",
+        "seasonal": null,
+        "group_limit": 12,
+        "land_manager": "U.S. Forest Service",
+        "parking_pass": "Northwest Forest Pass"
+      },
+      "road": {
+        "name": "West Chewuch Road (County Rd 1213) to Forest Road 51 / FR 5160",
+        "status": "Improved gravel Forest Service road; high-clearance recommended near the trailheads, especially early season",
+        "driveNote": "From Winthrop, drive north on West Chewuch Road (County Rd 1213) about 6 miles to where it becomes Forest Road 51; continue roughly 22 miles to the Andrews Creek Trailhead at road's end, or fork onto FR 5160 near mile 20 and continue about 11 miles total to the Thirtymile Trailhead.",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Clear, cool, and stable through September, with the first snowfall of the season typically closing out access in October.",
+        "spring": "Snow lingers into June on the approach trails; higher terrain often not clear until late June/July.",
+        "summer": "Warm, dry days with cool nights; afternoon thunderstorm risk on exposed ridges and the summit.",
+        "winter": "Cold, snowbound, and largely inaccessible; snow falls October-May across the wilderness.",
+        "typical": "Dry, sunny summers with occasional afternoon thunderstorms; noticeably drier and warmer than the west-side Cascades due to the rain shadow.",
+        "forecastZone": "East-slope North Cascades / Pasayten Wilderness (rain-shadow, continental-influenced)"
+      },
+      "emergency": {
+        "notes": "Remote wilderness with no cell coverage; carry a satellite communicator and expect long SAR response times given the 16+ mile approach.",
+        "county": "Okanogan County, WA",
+        "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+        "nearestHospital": "Mid-Valley Hospital, 810 Jasmine St, Omak, WA, (509) 826-1760 (~29 mi from Winthrop); Three Rivers Hospital, Brewster, WA, (509) 689-2517",
+        "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency dispatch (509) 422-7232; 911 for emergencies"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}
