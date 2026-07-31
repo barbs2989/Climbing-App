@@ -1,0 +1,1548 @@
+{
+  "fetched_for": [
+    "wa_mcmillan_spire_west",
+    "wa_west_mcmillan_spire"
+  ],
+  "areas": [
+    {
+      "id": "wa_mcmillan_spire_west",
+      "name": "McMillan Spire (West)",
+      "parent_id": "wa_picket_range",
+      "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_picket_range.wa_mcmillan_spire_west",
+      "area_type": "peak",
+      "region": "Washington",
+      "lat": 48.7732,
+      "lng": -121.2784,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "West McMillan Spire is the taller, western summit of the twin McMillan Spires in the Southern Picket Range, first climbed via the West Ridge in 1940 by Fred and Helmy Beckey. Reported elevations vary by source (roughly 8,000-8,041 ft, e.g. Wikipedia/USGS-derived data lists 8,004 ft with 600 ft of clean prominence, while listsofjohn.com lists 8,041 ft) — typical for an interior, largely unsurveyed North Cascades summit. It is the most-climbed peak in the Southern Pickets, not because the climbing is hard (mostly class 2-3 with one short exposed step) but because the roughly 8-10 mile, 9,000+ ft approach up Goodell Creek and over Terror Basin is itself a serious undertaking. Its neighbor, East McMillan Spire (7,992 ft), sits just 0.14 mi away but requires roped rock climbing and sees far fewer ascents.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": 8004,
+      "prominence_ft": 600,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    },
+    {
+      "id": "wa_west_mcmillan_spire",
+      "name": "West McMillan Spire",
+      "parent_id": "wa_southern_pickets",
+      "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_picket_range.wa_southern_pickets.wa_west_mcmillan_spire",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 48.77318,
+      "lng": -121.27828,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "West McMillan Spire (8,004 ft) is the higher, western summit of the twin McMillan Spires in the Southern Picket Range, deep within North Cascades National Park's Whatcom County backcountry. The peak is built of the steep granite and gneiss typical of the Pickets, rising above Terror Glacier and Terror Basin, and is reached only by a long, unmaintained approach up Goodell Creek. Fred and Helmy Beckey made the first ascent via the West Ridge on August 29, 1940, during their pioneering 1940 exploration of the Picket Range.",
+      "route_count": 2,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_mcmillan_spire_west_southwest_ridge",
+      "area_id": "wa_mcmillan_spire_west",
+      "name": "Southwest Ridge",
+      "discipline": "alpine",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 8,
+      "pitches": 6,
+      "length_m": 488,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "SW",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "medium alpine rock rack",
+        "8-10 runners",
+        "helmet",
+        "one ice axe",
+        "rope"
+      ],
+      "hazards": [
+        "Six sustained pitches mean significantly more time on the mountain than the standard scramble, raising exposure to afternoon weather",
+        "Loose rock and route-finding uncertainty given the route's low traffic (single-digit MP ratings/photos)",
+        "Remote location with no cell coverage and a multi-hour-plus helicopter response time for rescue"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A sustained six-pitch 5.8- alpine rock line up West McMillan Spire's southwest ridge, harder and more technical than the standard West Ridge scramble but sharing the same long approach via Terror Basin and the Terror Glacier.",
+      "beta": "Parties reach the east end of the Terror Glacier via the same Terror Basin approach as the West Ridge, then climb roughly six pitches of alpine rock (up to 5.8-, rated PG13) up the southwest ridge/face to the summit. Mountain Project's route page directs climbers to Beckey's Cascade Alpine Guide for further pitch-level detail; most parties climb it fully roped rather than scrambled.",
+      "turnaround": "Set a conditions-based turnaround rather than a fixed clock time — six roped pitches take considerably longer than the standard scramble, and afternoon thunderstorms and softening snow on the shared glacier approach add urgency to being off the ridge and back across the glacier before conditions deteriorate.",
+      "auto_generated": false,
+      "alpine_grade": "III",
+      "rock_grade": "5.8-",
+      "ice_grade": null,
+      "gain_ft": 9800,
+      "loss_ft": 9800,
+      "dist_km": 12.9,
+      "max_angle": 40,
+      "rappels": null,
+      "commitment": "III",
+      "face": "Southwest Ridge/Face",
+      "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+      "comms": "No reliable cell service anywhere on the approach, in Terror Basin, or on the route; a satellite messenger (inReach/SPOT) is strongly recommended given the remoteness of the Southern Pickets.",
+      "descent": "Most parties descend via the easier West Ridge scramble line rather than reversing the technical rock pitches, then follow the standard Terror Basin/notch descent back to the trailhead.",
+      "obj_haz": [
+        "rockfall",
+        "loose rock",
+        "runout on the crux (PG13) pitch",
+        "glacier crossing on approach",
+        "exposed alpine ridge"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.6733,
+          "lng": -121.2658,
+          "name": "Goodell Creek Trailhead",
+          "type": "trailhead",
+          "distMi": 0,
+          "elevFt": 600
+        },
+        {
+          "lat": 48.77318,
+          "lng": -121.27828,
+          "name": "West McMillan Spire Summit",
+          "type": "summit",
+          "distMi": 9.5,
+          "elevFt": 8038
+        }
+      ],
+      "gpx": [
+        [
+          48.6733,
+          -121.2658
+        ],
+        [
+          48.77318,
+          -121.27828
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 3.25,
+        "recommendedStart": "Pre-dawn (~4-5am) alpine start from Terror Basin, given six roped pitches take longer than the standard scramble"
+      },
+      "detailed_rack": "A medium alpine rock rack (small-to-mid cams and a set of nuts) plus 8-10 shoulder-length runners for the long, wandering pitches, and a single ice axe for the shared glacier/snow approach.",
+      "what_to_bring": [
+        "ice axe",
+        "crampons (early season glacier crossing)",
+        "helmet",
+        "rope and rack",
+        "bivy/camping gear for a 2-3 day trip",
+        "satellite communicator",
+        "approach shoes/boots suited to brush and slab"
+      ],
+      "pro_tips": [
+        "The final 5.8- pitch is rated PG13; climbing slightly to climber's right of the described line is reported by some as an easier variation",
+        "Beckey's Cascade Alpine Guide is the traditional reference most parties carry for this line's pitch-by-pitch detail",
+        "Plan to descend via the easier West Ridge scramble rather than reversing the technical pitches"
+      ],
+      "watch_out": [
+        "The crux final pitch is runout (PG13) — protection is moderate at best",
+        "Loose rock is present on the lower pitches, as on the rest of the peak",
+        "The shared glacier approach carries crevasse/moat hazard, especially early season"
+      ],
+      "pro_needs": "Standard alpine rock protection to about 2-3 inches with extra slings to manage rope drag on wandering pitches; the crux final pitch (5.8- PG13) protects only moderately well per user notes.",
+      "best_season": "Late July through September, matching the West Ridge's window, once the Terror Glacier approach has consolidated; carry an ice axe for the shared glacier crossing regardless of which ridge is climbed.",
+      "high_point_ft": 8004,
+      "aid_grade": null,
+      "approach": "Identical to the West Ridge approach: Goodell Creek trailhead to Terror Basin over the 6,200' notch, then traverse benches/slabs to the glacial lake outlet and up slabs onto the Terror Glacier. From there, continue to the east end of the Terror Glacier to reach the base of the southwest ridge (rather than the west-ridge gully used by the standard route).",
+      "descent_text": "From the summit, descend via the West Ridge's 3rd-4th class scramble and snow/ice gully back onto the Terror Glacier (rather than rappelling the southwest ridge), then re-cross the glacier and slabs to the lake outlet and climb back out over the 6,200' notch to the Goodell Creek trail.",
+      "bail": "Retreat by downclimbing to easier terrain and traversing off toward the West Ridge line, or by rappelling the route on gear if downclimbing is not feasible; there is no quick bail once established on the upper ridge given the surrounding Southern Pickets cliffs.",
+      "pitch_detail": [
+        {
+          "grade": null,
+          "notes": "Lower-angle alpine rock gaining the ridge crest",
+          "pitch": "P1",
+          "lengthM": 60
+        },
+        {
+          "grade": null,
+          "notes": null,
+          "pitch": "P2",
+          "lengthM": 70
+        },
+        {
+          "grade": null,
+          "notes": null,
+          "pitch": "P3",
+          "lengthM": 90
+        },
+        {
+          "grade": null,
+          "notes": null,
+          "pitch": "P4",
+          "lengthM": 90
+        },
+        {
+          "grade": null,
+          "notes": "Below the crux; rack up for the final pitch here",
+          "pitch": "P5",
+          "lengthM": 90
+        },
+        {
+          "grade": "5.8- PG13 (crux)",
+          "notes": "Runout final pitch to the summit; climbing slightly climber's-right of the described line reported as easier",
+          "pitch": "P6",
+          "lengthM": 85
+        }
+      ],
+      "itinerary": null,
+      "access": {
+        "fees": "No trailhead or parking fee; overnight backcountry camping permit costs $10/person plus a $6 reservation fee (free walk-up permits also available)",
+        "permit": "A backcountry/wilderness permit is required for overnight camping, issued at the Wilderness Information Center in Marblemount",
+        "closures": "The Wilderness Information Center closes for winter (around early October); self-issue permits are available outside the station or via email in the off-season",
+        "landManager": "National Park Service — North Cascades National Park (trailhead sits within Ross Lake National Recreation Area)",
+        "passRequired": "None — NPS-administered, no Northwest Forest Pass needed at this trailhead"
+      },
+      "road": {
+        "name": "Goodell Creek Road (spur off North Cascades Highway/SR-20)",
+        "status": "Gravel access road, generally open in summer; reached from the west (Sedro-Woolley/Marblemount/Newhalem side) essentially year-round",
+        "driveNote": "From Marblemount, drive east on SR-20 about 14 miles to Newhalem; cross the Skagit River at Goodell Creek, turn onto the paved road at the T, pass the state maintenance facility, then continue on gravel to a fork — the right fork reaches the group campground/trailhead where the climbers' trail begins on an overgrown former logging grade.",
+        "seasonalGate": "SR-20's seasonal winter closure gate is further east (historically Ross Dam TH to near Mazama, roughly mileposts 134-171); Goodell Creek at milepost 119 is west of that closure"
+      },
+      "climate": {
+        "fall": "A short weather window before early snow returns, typically by October",
+        "spring": "Heavy lingering snowpack with high avalanche/wet-slide hazard on approach slopes and the glacier; route generally not in condition",
+        "summer": "Prime season (Jul-Sep); afternoon thunderstorms and lightning are possible; the Terror Glacier holds firm snow into mid-summer most years",
+        "winter": "Not a winter objective — approach access and avalanche hazard make the route effectively closed",
+        "typical": "Wet, maritime North Cascades climate at lower elevations transitioning to persistent snow/glacier conditions above ~6,000'; brush and blowdown dominate the lower approach",
+        "forecastZone": "No dedicated summer alpine forecast zone exists; NWAC's West Slopes North zone covers this area for winter avalanche forecasting (mid-Nov to mid-Apr) only"
+      },
+      "emergency": {
+        "notes": "No cell coverage in Terror Basin or on route; NPS/SAR helicopter response can take many hours given the remote Southern Pickets location. Register your itinerary at the Wilderness Information Center before departure.",
+        "county": "Whatcom County, WA",
+        "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount — (360) 854-7245",
+        "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley, WA; Skagit Valley Hospital (Level III trauma center), Mount Vernon, WA, is the regional trauma referral hospital",
+        "sheriffDispatch": "Whatcom County Sheriff's Office — 911 emergency; (360) 676-6911 non-emergency"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": {
+        "peakLat": 48.7732,
+        "peakLng": -121.2784,
+        "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+        "trailheadLat": 48.68664,
+        "trailheadLng": -121.27121,
+        "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_mcmillan_spire_west_west_ridge",
+      "area_id": "wa_mcmillan_spire_west",
+      "name": "West Ridge / Southwest Approach",
+      "discipline": "alpine",
+      "grade": "Grade II, 4th class (3rd class below)",
+      "grade_system": "class",
+      "grade_num": 4,
+      "pitches": null,
+      "length_m": 610,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Fred Beckey and Helmy Beckey, August 29, 1940",
+      "lat": null,
+      "lng": null,
+      "aspect": "W",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "ice axe",
+        "crampons",
+        "30m rope plus a light rack (a few slings/small cams or nuts) for the summit step and an optional rappel",
+        "helmet",
+        "whippet or second tool useful for firm early-season snow"
+      ],
+      "hazards": [
+        "loose rock, especially in the rotten red gully skier's-right of the standard descent line",
+        "steep snow (up to ~40°) and a small crevasse/moat at the 7,200 ft Inspiration-McMillan col",
+        "exposed, lightly protected class 3 step just below the true summit",
+        "long, unmaintained approach with 100+ downed logs, washouts, and route-finding on an unofficial climber's trail",
+        "remoteness — no cell coverage, multi-day commitment, and a slow SAR response if something goes wrong"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "West McMillan Spire is the taller of the twin McMillan Spires and, by Southern Picket standards, a relatively attainable summit — most parties treat it as their introduction to the range. The technical climbing itself is moderate (a snow gully to a 7,200 ft col between Inspiration Peak and West McMillan Spire, then class 2-3 ridge scrambling with one short, exposed step below the true summit), but the approach is the real crux: an overgrown, log-choked trail up Goodell Creek, an unofficial steep climber's trail onto a forested ridge, and a rising traverse into Terror Basin before the peak is even in reach. First climbed via this line in 1940 by Fred and Helmy Beckey.",
+      "beta": "From a high camp in Terror Basin, cross rocky benches and the Terror Glacier's outlet lake, then climb onto the glacier and pick a line to the base of the ridge. A steep snow/ice gully (steepening to roughly 40 degrees near the top) leads to the ~7,200 ft col between Inspiration Peak and West McMillan Spire. From the col, follow the west ridge over broken rock, heather, scree and talus — climbers can choose more solid rock steps or looser talus depending on preference — to a short, exposed class 3 (occasionally cited as low 5th on variations) move onto the summit block.",
+      "turnaround": "Set a firm turnaround time at the 7,200 ft col — the snow gully below it softens and becomes more rockfall-prone by afternoon, and the long, log-choked hike out takes several more hours after the climb.",
+      "auto_generated": true,
+      "alpine_grade": "II",
+      "rock_grade": "4th class (3rd class below)",
+      "ice_grade": null,
+      "gain_ft": 9800,
+      "loss_ft": 9800,
+      "dist_km": 12.9,
+      "max_angle": 40,
+      "rappels": "Typically down-climbed rather than rappelled — the route is descended via the same ascent line/notch gully; no fixed rappel stations are reported.",
+      "commitment": "II",
+      "face": "West Ridge",
+      "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+      "comms": "Deep wilderness location in the North Cascades National Park interior with no reliable cell coverage reported by climbers; several trip reports note carrying a satellite phone/communicator as a precaution given the remoteness and multi-day rescue timelines.",
+      "descent": "Downclimb the west ridge back to the 7,200 ft col — a short rappel off the exposed summit step is sometimes used in low-snow years but most parties simply downclimb it. From the col, descend or glissade the snow gully back toward Terror Basin; stay skier's-left, as multiple parties have drifted right into a loose, rotten red gully by mistake. Reverse the traverse back to Terror Basin camp, then retrace the climber's trail and the overgrown Goodell Creek trail to the trailhead.",
+      "obj_haz": [
+        "rockfall",
+        "loose rock",
+        "crevasses",
+        "moat/bergschrund at glacial lake outlet",
+        "steep snow/ice gully",
+        "exposed scrambling near summit block"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.6733,
+          "lng": -121.2658,
+          "elev": 600,
+          "name": "Goodell Creek Campground / Trailhead",
+          "note": "Old overgrown roadbed departs SR 20 here paralleling Goodell Creek; NOCA backcountry permit (from the Marblemount Wilderness Info Center) required for any overnight.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 48.731245,
+          "lng": -121.281881,
+          "elev": 1700,
+          "name": "Stone-arrow/cairn turnoff to Terror Basin path",
+          "note": "A stone arrow/large cairn at the end of the old Goodell Creek roadbed marks the unsigned turnoff onto the boot path climbing toward Terror Basin; easy to walk past.",
+          "type": "Junction",
+          "distMi": 4
+        },
+        {
+          "lat": 48.731528,
+          "lng": -121.277635,
+          "elev": 1800,
+          "name": "Last water before the hill climb",
+          "note": "Trip reports note no reliable water again until Terror Basin, so tank up here before the steep 4,000 ft climb begins.",
+          "type": "Water",
+          "distMi": 4.2
+        },
+        {
+          "lat": 48.740817,
+          "lng": -121.264863,
+          "elev": 5100,
+          "name": "Treeline / heather benches",
+          "note": "Boot-beaten path gains roughly 4,000 ft in 2 miles (steeper than the old Mailbox Peak trail) before breaking out of forest onto open heather and rock benches.",
+          "type": "Junction",
+          "distMi": 5.3
+        },
+        {
+          "lat": 48.746833,
+          "lng": -121.26516,
+          "elev": 5800,
+          "name": "Terror Basin camp",
+          "note": "Gravelly wildflower basin with several small streams; the established tent sites here are the standard base camp, roughly 3:15 in from the trailhead.",
+          "type": "Campsite",
+          "distMi": 5.7
+        },
+        {
+          "lat": 48.756731,
+          "lng": -121.270191,
+          "elev": 6300,
+          "name": "The Barrier traverse",
+          "note": "Serious class-3 crossing of the ridge separating Terror Creek and Crescent Creek basins via a steep, loose grassy ledge (~6,100 ft) up to the crest (~6,400 ft); heavily exposed, loose rock, described by climbers as a 'slip-and-die' section.",
+          "type": "Hazard",
+          "distMi": 6.5
+        },
+        {
+          "lat": 48.764262,
+          "lng": -121.28099,
+          "elev": 7200,
+          "name": "Crescent Creek basin / 7,200 ft col",
+          "note": "After descending into Crescent Creek basin, heather/snow/rock leads back up to this col on the west ridge — the same col used again on the downclimb per the on-file descent.",
+          "type": "Junction",
+          "distMi": 7.3
+        },
+        {
+          "lat": 48.7732,
+          "lng": -121.2784,
+          "elev": 8038,
+          "name": "West McMillan Spire summit",
+          "note": "True summit of West McMillan Spire (Grade III, 5.6 on the west ridge); Southern Pickets high point with exposed final scrambling/low 5th class moves.",
+          "type": "Summit",
+          "distMi": 8
+        }
+      ],
+      "gpx": [
+        [
+          48.682674,
+          -121.26958
+        ],
+        [
+          48.683155,
+          -121.27095
+        ],
+        [
+          48.683636,
+          -121.27121
+        ],
+        [
+          48.684204,
+          -121.270996
+        ],
+        [
+          48.68511,
+          -121.271034
+        ],
+        [
+          48.685593,
+          -121.27121
+        ],
+        [
+          48.686413,
+          -121.27121
+        ],
+        [
+          48.68729,
+          -121.27142
+        ],
+        [
+          48.688454,
+          -121.2719
+        ],
+        [
+          48.688965,
+          -121.272026
+        ],
+        [
+          48.693184,
+          -121.272026
+        ],
+        [
+          48.694004,
+          -121.27185
+        ],
+        [
+          48.695053,
+          -121.27164
+        ],
+        [
+          48.695507,
+          -121.27177
+        ],
+        [
+          48.69684,
+          -121.27314
+        ],
+        [
+          48.698284,
+          -121.2749
+        ],
+        [
+          48.698624,
+          -121.2752
+        ],
+        [
+          48.699047,
+          -121.2752
+        ],
+        [
+          48.69933,
+          -121.27576
+        ],
+        [
+          48.70103,
+          -121.277435
+        ],
+        [
+          48.701004,
+          -121.27932
+        ],
+        [
+          48.701397,
+          -121.27992
+        ],
+        [
+          48.70219,
+          -121.27984
+        ],
+        [
+          48.70256,
+          -121.27984
+        ],
+        [
+          48.704006,
+          -121.28108
+        ],
+        [
+          48.704712,
+          -121.281685
+        ],
+        [
+          48.70525,
+          -121.28159
+        ],
+        [
+          48.705677,
+          -121.28224
+        ],
+        [
+          48.70593,
+          -121.2828
+        ],
+        [
+          48.709328,
+          -121.28533
+        ],
+        [
+          48.71185,
+          -121.28726
+        ],
+        [
+          48.71338,
+          -121.28803
+        ],
+        [
+          48.713974,
+          -121.28923
+        ],
+        [
+          48.714596,
+          -121.289665
+        ],
+        [
+          48.715076,
+          -121.29005
+        ],
+        [
+          48.715557,
+          -121.290565
+        ],
+        [
+          48.71601,
+          -121.29078
+        ],
+        [
+          48.716663,
+          -121.29095
+        ],
+        [
+          48.717342,
+          -121.29086
+        ],
+        [
+          48.717796,
+          -121.29091
+        ],
+        [
+          48.718334,
+          -121.29142
+        ],
+        [
+          48.71884,
+          -121.29164
+        ],
+        [
+          48.719326,
+          -121.29176
+        ],
+        [
+          48.719635,
+          -121.29194
+        ],
+        [
+          48.719917,
+          -121.2922
+        ],
+        [
+          48.720203,
+          -121.292496
+        ],
+        [
+          48.720684,
+          -121.29279
+        ],
+        [
+          48.722862,
+          -121.293526
+        ],
+        [
+          48.724648,
+          -121.29439
+        ],
+        [
+          48.725327,
+          -121.29516
+        ],
+        [
+          48.72674,
+          -121.29258
+        ],
+        [
+          48.728157,
+          -121.28975
+        ],
+        [
+          48.729744,
+          -121.28782
+        ],
+        [
+          48.730083,
+          -121.286705
+        ],
+        [
+          48.731045,
+          -121.28589
+        ],
+        [
+          48.731525,
+          -121.28473
+        ],
+        [
+          48.73175,
+          -121.2834
+        ],
+        [
+          48.731358,
+          -121.28241
+        ],
+        [
+          48.73113,
+          -121.28134
+        ],
+        [
+          48.73093,
+          -121.27902
+        ],
+        [
+          48.732006,
+          -121.27653
+        ],
+        [
+          48.732487,
+          -121.27499
+        ],
+        [
+          48.73308,
+          -121.27438
+        ],
+        [
+          48.733704,
+          -121.27499
+        ],
+        [
+          48.73464,
+          -121.275246
+        ],
+        [
+          48.7358,
+          -121.275246
+        ],
+        [
+          48.73679,
+          -121.27353
+        ],
+        [
+          48.737328,
+          -121.27181
+        ],
+        [
+          48.73659,
+          -121.270096
+        ],
+        [
+          48.73648,
+          -121.26864
+        ],
+        [
+          48.73668,
+          -121.26786
+        ],
+        [
+          48.73736,
+          -121.26782
+        ],
+        [
+          48.73812,
+          -121.26735
+        ],
+        [
+          48.73863,
+          -121.26632
+        ],
+        [
+          48.738968,
+          -121.26464
+        ],
+        [
+          48.742195,
+          -121.26503
+        ],
+        [
+          48.746838,
+          -121.26516
+        ],
+        [
+          48.747856,
+          -121.26554
+        ],
+        [
+          48.748478,
+          -121.26623
+        ],
+        [
+          48.749214,
+          -121.2667
+        ],
+        [
+          48.750065,
+          -121.264946
+        ],
+        [
+          48.751053,
+          -121.2646
+        ],
+        [
+          48.752922,
+          -121.26679
+        ],
+        [
+          48.7536,
+          -121.26748
+        ],
+        [
+          48.754364,
+          -121.269066
+        ],
+        [
+          48.755043,
+          -121.269196
+        ],
+        [
+          48.75824,
+          -121.27108
+        ],
+        [
+          48.759514,
+          -121.27254
+        ],
+        [
+          48.76084,
+          -121.27443
+        ],
+        [
+          48.76124,
+          -121.27559
+        ],
+        [
+          48.761494,
+          -121.2776
+        ],
+        [
+          48.761463,
+          -121.2785
+        ],
+        [
+          48.761948,
+          -121.27988
+        ],
+        [
+          48.761833,
+          -121.28099
+        ],
+        [
+          48.76633,
+          -121.28099
+        ],
+        [
+          48.767464,
+          -121.2819
+        ],
+        [
+          48.768932,
+          -121.28207
+        ],
+        [
+          48.771534,
+          -121.28249
+        ],
+        [
+          48.771873,
+          -121.281296
+        ],
+        [
+          48.77213,
+          -121.27996
+        ],
+        [
+          48.772495,
+          -121.27953
+        ],
+        [
+          48.773148,
+          -121.27868
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "rock",
+        "scrambling"
+      ],
+      "timing": {
+        "totalHrs": 18,
+        "summitTimeHrs": 6,
+        "descentTimeHrs": 5.5,
+        "approachTimeHrs": 6.5,
+        "recommendedStart": "5:00 AM from camp",
+        "sectionBreakdown": [
+          {
+            "hrs": 6.5,
+            "note": "From the Goodell Creek trailhead (600 ft), follow the old forestry-road bed roughly 4 miles through mossy, brushy, deadfall-choked forest, then turn uphill at the cairned junction …",
+            "fromTo": "Approach to Terror Basin high camp",
+            "section": "Approach"
+          },
+          {
+            "hrs": 6,
+            "note": "An early start puts the party on the Terror Glacier's snow finger while it's still firm; the glacier crossing is typically done unroped with axe/crampons to the col, where terrain …",
+            "fromTo": "Summit day: West Ridge of West McMillan Spire",
+            "section": "Climb"
+          },
+          {
+            "hrs": 5.5,
+            "note": "Pack up camp, climb back up out of the basin to the notch, then descend the heather benches and forested old road bed back to the car — mostly downhill and noticeably faster than t…",
+            "fromTo": "Hike out to the trailhead",
+            "section": "Descent"
+          }
+        ]
+      },
+      "detailed_rack": "A technical rack is optional rather than mandatory. Most parties carry an ice axe and crampons for the Terror Glacier crossing and the snow/ice gully to the col, plus a helmet for loose rock above. Some parties bring a light rope and a small rack of cams/nuts to protect the short exposed class 3 (occasionally low 5th) step below the summit block, but many climb the entire route unroped.",
+      "what_to_bring": [
+        "ice axe",
+        "crampons",
+        "30m rope and a light rack for the summit step",
+        "helmet",
+        "satellite communicator",
+        "bear canister (recommended for Terror Basin camp)"
+      ],
+      "pro_tips": [
+        "Camp at Terror Basin (~5,800 ft) rather than attempting a single push; it has flat gravel tent sites and running water and turns the summit day into just a few hours round trip.",
+        "Budget 2-4 hours for the first 4 miles along Goodell Creek alone due to deadfall — don't judge pace on mileage.",
+        "Carry a satellite communicator; there is no cell coverage anywhere on this route."
+      ],
+      "watch_out": [
+        "Stay skier's-left descending the col gully — drifting right drops parties into a loose, rotten red gully that has caught out multiple groups.",
+        "The col crevasse/moat and the steep (~40°) snow below it can be firm and icy in early morning; a slip here has a long runout.",
+        "The Goodell Creek approach trail is unmaintained — 100+ downed logs and a couple of washouts make the first 4 miles far slower than the mileage suggests."
+      ],
+      "pro_needs": "Minimal protection needed overall — a light rack of a few slings/small cams or nuts covers the short 5.6/class-3 step near the summit; the rope is mostly for security and an optional short rappel rather than sustained pitched climbing.",
+      "best_season": "Late July through September is the reliable snow-manageable window (most recorded trip reports climb between late July and late August). June and early-July ascents are a genuinely more technical snow/ice climb, with firmer, steeper névé in the gully below the col (documented on a June 6, 2023 ascent) — not recommended without solid snow-climbing skills. By late September/October fresh snow can return to the ridge and gully, adding difficulty and cutting daylight short on an already long day.",
+      "high_point_ft": 8004,
+      "aid_grade": null,
+      "approach": "From the Goodell Creek (Upper Group Campground) trailhead just east of Goodell Creek Campground off SR-20 near Newhalem, pick up the unsigned climbers'-path (no trail number — this is a boot path, not a maintained Park trail) that starts behind a large boulder near the campground. There is reliable running water right at the start, then none again until Terror Basin, so top off bottles early. The path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek and is notorious for blowdown — expect to climb over or duck under dozens of downed logs for the first couple of miles. Around 3,200 ft the trail gains the crest of the forested ridge and settles into a steady, unrelenting climb (roughly 4,000 ft of gain over about 2 miles is typical for this stretch). Near 4,000 ft it crosses a small talus field, circles left, and makes a rising traverse beneath a rock band at about 4,800 ft before kicking up a final steep gully. From there, heather benches and open slabs lead north for a couple of miles, with blueberries in late summer, to a notch in the ridge crest at roughly 6,200-6,350 ft — the high point of the approach. The north side of this notch is the crux of the approach, not the climb: in late-season/low-snow conditions it is steep, loose, chossy terrain for about 400 vertical feet (stay skier's-right — going straight down is a bad idea); early in the season it holds a firmer snow finger with a short, steeper headwall (reported up to ~80 degrees for the last 20-30 ft) that some parties rope up for or protect with a short lower. Below the notch, a small flat gravelly basin near 5,800 ft with running water is the standard Terror Basin camp. From camp, a long traverse over benches and granite slabs, trending slightly downhill, reaches a glacial lake outlet and then slabs below the Terror Glacier remnant; the glacier crossing is short and low-angle but can show bare ice by late summer — most parties cross unroped in stable conditions with crampons on. This leads to the base of the snow/rock gully that climbs to the 7,200 ft col between Inspiration Peak and West McMillan Spire, where the technical climbing begins. One-way distance from car to high camp is roughly 8-9 miles with 6,000+ ft of gain; a fit, loaded party should plan on 6-8+ hours.",
+      "descent_text": "This route is descended by reversing the line of ascent essentially top to bottom — there is no separate walk-off. From the summit, downclimb the short, exposed Class 3 rock back down to the base of the summit block, then descend the snow/rock gully to the 7,200 ft Inspiration-McMillan col, following the same snow finger climbed on the way up. That finger is glissade-able in soft, sun-affected afternoon snow, but if it is firm or icy (common in the morning or early season) parties often belay the downclimb or make a single short rappel/lower instead — one rope length is plenty (a single 30m section has been reported as sufficient), off natural anchors since there is nothing bolted or fixed on this route: a sling around a rock horn on the rock steps near the col, or a snow bollard/picket if the finger itself is icy. From the col, recross the Terror Glacier remnant and the granite benches back toward Terror Basin, then climb back up to the ridge notch and descend its loose, chossy north-side gully into the Goodell Creek drainage (same skier's-right line used on approach — avoid going straight down). From there it's a straightforward but long retrace of the forested trail, roughly 4 miles through the blowdown-choked lower section, back to the Goodell Creek trailhead. Total descent is on the order of 8,000-10,000 ft of elevation loss. The one rappel/protected-lower point is condition-dependent — more likely needed early season or in icy conditions on the snow finger or notch headwall — rather than a fixed technical rappel every party makes.",
+      "bail": "Retreat is back over the Barrier; manageable but long.",
+      "pitch_detail": [
+        {
+          "grade": "Trail/off-trail, steep brush",
+          "notes": "~4-5 mi with roughly 5,000-6,000 ft gain to camp at ~5,800 ft; heavy blowdown in the forest section.",
+          "pitch": "Approach: trailhead to Terror Basin"
+        },
+        {
+          "grade": "Glacier travel",
+          "notes": "Cross the glacial lake outlet, ascend slabs onto Terror Glacier, pick a line to the base of the West Ridge.",
+          "pitch": "Glacier crossing to base of ridge"
+        },
+        {
+          "grade": "Steep snow/ice, up to ~40°",
+          "notes": "Steepens near the top; narrows to a few feet at the col between Inspiration Peak and West McMillan Spire.",
+          "pitch": "Gully to the col"
+        },
+        {
+          "grade": "Class 3-4, short 5.6 step reported by some sources",
+          "notes": "Mostly scree, talus and broken rock with route-finding choice between solid rock and looser talus; a short exposed step gains the summit block.",
+          "pitch": "West Ridge to summit block"
+        }
+      ],
+      "itinerary": {
+        "cal": "Terror Basin is typically climbed July-September once the approach trail is snow-free and the Terror Glacier snow finger is filled in but not yet fully melted out/icy; North Cascades NP backcountry camping requires a permit for Terror Basin.",
+        "days": [
+          {
+            "n": 1,
+            "note": "From the Goodell Creek trailhead (600 ft), follow the old forestry-road bed roughly 4 miles through mossy, brushy, deadfall-choked forest, then turn uphill at the cairned junction for a steep 2-mile, ~4,000 ft climb through heather benches and blueberry fields to the notch overlooking Terror Basin. A short, occasionally exposed scramble drops into the basin, where most parties camp on rock slabs/meadows near water below Terror, Degenhardt, Inspiration and the McMillan Spires.",
+            "hours": 6.5,
+            "miles": 4.5,
+            "title": "Approach to Terror Basin high camp",
+            "gainFt": 5300,
+            "lossFt": 100,
+            "packLb": 40,
+            "schedule": [
+              {
+                "time": "7:00 AM",
+                "label": "Leave Goodell Creek trailhead",
+                "detail": "Flat forestry-road-bed hiking for ~4 miles."
+              },
+              {
+                "time": "9:30 AM",
+                "label": "Start the hill climb",
+                "detail": "Cairned turn uphill; steep ~4,000 ft in 2 miles through heather and forest."
+              },
+              {
+                "time": "12:30 PM",
+                "label": "Reach the notch",
+                "detail": "First view down into Terror Basin; short scramble down to camp."
+              },
+              {
+                "time": "1:30 PM",
+                "label": "Make camp in Terror Basin",
+                "detail": "Set up near water below the Spires; rest/scout the route for tomorrow."
+              }
+            ],
+            "objective": "Reach Terror Basin camp (~5,800 ft)"
+          },
+          {
+            "n": 2,
+            "note": "An early start puts the party on the Terror Glacier's snow finger while it's still firm; the glacier crossing is typically done unroped with axe/crampons to the col, where terrain transitions to class 3 rock for the West Ridge scramble to the summit. Most parties are back in camp by early-to-mid afternoon after a leisurely 4-5 hour round trip.",
+            "hours": 6,
+            "miles": 4,
+            "title": "Summit day: West Ridge of West McMillan Spire",
+            "gainFt": 2300,
+            "lossFt": 2300,
+            "packLb": 15,
+            "schedule": [
+              {
+                "time": "5:00 AM",
+                "label": "Leave camp",
+                "detail": "Cross the basin toward the Terror Glacier snow finger."
+              },
+              {
+                "time": "6:30 AM",
+                "label": "Reach the col",
+                "detail": "Top of the snow finger; snow transitions to rock, ice axe/crampons stowed."
+              },
+              {
+                "time": "7:15 AM",
+                "label": "Begin West Ridge scramble",
+                "detail": "Class 3 rock, some exposure; glacier crossing itself is unroped."
+              },
+              {
+                "time": "9:30 AM",
+                "label": "Summit (8,038 ft)",
+                "detail": "Short summit stay for photos/food before weather can build."
+              },
+              {
+                "time": "1:00 PM",
+                "label": "Back at camp",
+                "detail": "Retrace the ridge and glacier crossing to Terror Basin."
+              }
+            ],
+            "objective": "Climb the Terror Glacier snow finger and West Ridge to the 8,038 ft summit and back to camp"
+          },
+          {
+            "n": 3,
+            "note": "Pack up camp, climb back up out of the basin to the notch, then descend the heather benches and forested old road bed back to the car — mostly downhill and noticeably faster than the way in, though the deadfall-choked lower trail still slows the pace.",
+            "hours": 5.5,
+            "miles": 4.5,
+            "title": "Hike out to the trailhead",
+            "gainFt": 200,
+            "lossFt": 5400,
+            "packLb": 40,
+            "schedule": [],
+            "objective": "Break camp and descend to Goodell Creek trailhead"
+          }
+        ],
+        "totalNote": "A 3-day, 2-night trip is the standard plan: ~4.5 mi/5,300 ft to Terror Basin camp, a ~4 mi/2,300 ft round-trip summit day via the Terror Glacier snow finger and West Ridge, and a ~4.5 mi/5,400 ft hike out — call it ~9,800 ft gain and ~16 miles round trip overall, matching the on-file stats.",
+        "sourceNote": "Based on Eric's Base Camp trip report (ericsbasecamp.net/trips/TerrorBasin) which documents the classic 2-night/3-day structure (trailhead to camp in ~5.5 hr, summit day with ~2,200 ft round trip, then exit), the WTA route description of the Terror Basin approach and glacier/west-ridge crossing, and the on-file itinerary text. Note very fit parties can compress this to a single very long car-to-car day (ClimberKyle.com logged ~10 hr / 20 mi car-to-car) or a fast 2-ski-mountaineering day (turns-all-year.com, April conditions), but those are not the standard approach given the notoriously slow, deadfall-choked, route-finding-heavy approach trail — most parties budget 2 nights as a weather/rest buffer, per the on-file note. Clock times on the summit-day schedule are reasonable estimates from typical Terror Basin trip-report pacing, not a single verbatim source."
+      },
+      "access": {
+        "fees": "$10 per person per night plus a $6 non-refundable reservation/permit fee during the summer season (mid-May through early October); climbers 15 and under are free. No day-use or trailhead parking fee.",
+        "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+        "rules": "Camp only within your permitted Terror Basin zone site; no campfires above treeline; pack out all waste and food scraps; a bear canister is recommended for the basin camp.",
+        "permit": "A backcountry camping permit is required for any overnight stay in the Terror Basin cross-country zone — reserve ahead on Recreation.gov or get a walk-up permit at the Wilderness Information Center in Marblemount. No permit is required for a single-push day climb (rare given the approach length).",
+        "closures": "SR 20 (North Cascades Highway) closes for winter between the Ross Dam trailhead (MP 134) and Silver Star Gate (MP 171); the Goodell Creek/Newhalem trailhead sits west of that closure and is normally open year-round. However, closures have moved further west to the Newhalem gate (MP 120) in severe years, and after a December 2025 atmospheric-river storm the highway was closed all the way to Newhalem into mid-June 2026 for repairs — always check WSDOT road conditions before a trip.",
+        "group_limit": 6,
+        "landManager": "North Cascades National Park Complex (NPS) — Wilderness Information Center, Marblemount, WA; (360) 854-7245.",
+        "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"
+      },
+      "road": {
+        "name": "Goodell Creek Campground access off SR 20 (North Cascades Highway)",
+        "status": "Open in typical summer conditions; sits west of the usual winter SR 20 closure gate at Ross Dam (MP 134).",
+        "driveNote": "Paved to the trailhead; small unpaved parking area fills early on summer weekends.",
+        "seasonalGate": "No gate at the trailhead itself in most years, but the closure boundary has moved as far west as Newhalem (MP 120) in severe years — confirm current status with WSDOT before driving out."
+      },
+      "climate": {
+        "typical": "Big diurnal swings are typical: warm, sun-exposed scrambling on the ridge by midday, but near-freezing temperatures and firm snow at the 7,200 ft col in early morning. Afternoon thunderstorm build-up is common on hot August days in the North Cascades interior, so an early start matters.",
+        "bySeason": {
+          "fall": "By mid/late September fresh snow can reappear on the ridge and in the gully, and shortening daylight makes the long approach and descent tighter — watch NWS mountain forecasts closely.",
+          "spring": "Snow-covered into late June/early July most years; a June ascent is a genuine technical snow/ice climb up steeper, firmer névé to the col rather than the class 2-3 scramble it becomes later in the season.",
+          "summer": "Late July through August is the most reliable window — the snow gully to the col typically softens by midday and the ridge/summit step are usually snow-free.",
+          "winter": "Effectively inaccessible: SR 20 typically closes for the season in early December, and the route itself sits in serious avalanche terrain."
+        },
+        "forecastZone": "NWS Zone WAZ301 (Cascades of Whatcom & Skagit Counties) is the relevant mountain-weather zone; NWAC does not forecast avalanche danger for the Pickets and only operates roughly mid-November through June anyway."
+      },
+      "emergency": {
+        "notes": "There is no cell coverage anywhere in the Pickets; the nearest reliable signal is back near Marblemount/Rockport on SR 20. A satellite communicator (inReach/Zoleo) is strongly recommended given the remoteness and multi-hour-to-multi-day SAR response time for this zone.",
+        "county": "Whatcom County",
+        "rangerStation": "North Cascades National Park - Wilderness Information Center, Marblemount, WA; (360) 854-7245.",
+        "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley, WA",
+        "sheriffDispatch": "Whatcom County Sheriff's Office coordinates ground search-and-rescue for this area in cooperation with NPS wilderness rangers; dial 911 for emergencies."
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "Rare cluster during peak conditions in late July-August; essentially solitude the rest of the season",
+        "solitudeRating": 5,
+        "estimatePerSeason": "Very low — likely fewer than 10-20 parties per season"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "Very strenuous, largely off-trail approach through the Barrier and into Crescent Creek/Terror Basin; typically a 2-day approach each way with sustained bushwhacking and route-finding before the technical climbing even starts",
+          "packWeight": "40-45+ lb overnight pack for the approach; trip reports note faster summit pushes (~4.5 hrs camp-to-camp) once camp is established"
+        },
+        "approachTime": "~2 days approach (trailhead to Crescent Creek/Terror Basin camp); summit day itself roughly 4-6 hrs camp-to-camp per trip reports",
+        "requiredSkills": [
+          "Off-trail route-finding in trailless, remote terrain (the Barrier crossing is a known crux, especially in poor visibility)",
+          "Snow/glacier travel and self-arrest for the approach and summit snow finger",
+          "Low 5th class rock climbing (5.6) with sustained exposure near the summit block",
+          "Multi-day backcountry camping and self-sufficiency (North Cascades NP wilderness permit required)",
+          "Building anchors/rappelling for the descent"
+        ],
+        "experienceLevel": "Experienced alpine climbers only — this is not a beginner objective; requires prior multi-day glacier/alpine approach experience plus comfort on low 5th-class rock with real exposure and no rescue nearby"
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Mid-July through September, with late July-August the most reliable stretch (consistent with existing best_season)",
+        "monthBreakdown": {
+          "July": {
+            "reason": "Early July can still hold lingering snow in approach gullies with moats forming on the summit snow finger; conditions consolidate through the month",
+            "status": "good"
+          },
+          "August": {
+            "reason": "Most stable window — snow finger typically intact but manageable, dry rock on the ridge, and the most predictable weather of the season",
+            "status": "optimal"
+          },
+          "September": {
+            "reason": "Generally dry rock but shorter days and rising chance of early-season storms or new snow at elevation late in the month",
+            "status": "good"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "Remote alpine climate; cold and storm-prone outside the midsummer window, snowbound in spring, severe and rarely attempted in winter (per existing climate data)",
+          "probability": "Afternoon thunderstorms and fast-moving North Cascades weather systems are common in summer; the exposed summit block and ridge crest raise lightning and fall-in-a-storm risk"
+        },
+        "exposure": "Significant exposure on the summit block and along the upper west ridge scramble; a fall there would be severe. The Barrier crossing in poor visibility (already flagged on file) adds route-finding and fall hazard on the approach itself",
+        "avalanche": {
+          "zone": "N/A - non-glaciated summer scramble/climb; outside NWAC's forecast zones and season (NWAC does not issue forecasts for the North Cascades NP backcountry in summer)",
+          "byMonth": {
+            "July": "Moderate",
+            "June": "N/A",
+            "August": "Low",
+            "September": "Low"
+          }
+        },
+        "crevasses": "The standard approach and descent cross the Terror Glacier remnant near the 7,200 ft Inspiration-McMillan col, where a small crevasse/moat forms - the crossing is short and low-angle and most parties cross unroped in stable conditions with crampons, but it is not off-route and should not be assumed crevasse-free."
+      },
+      "data_quality": {
+        "gaps": [
+          "Exact prominence is disputed between sources (600 ft per Wikipedia vs. 737 ft on file) — left unchanged pending an authoritative survey source.",
+          "No confirmed pitch count or protection rating exists for the summit step; treated as a short scramble/optional-rope move, not graded pitches.",
+          "No NWAC or other authoritative avalanche/snow-condition forecast covers this zone; current conditions should be sourced from recent trip reports (CascadeClimbers, WTA) before a trip.",
+          "GPS track sourced from public CalTopo map: https://caltopo.com/m/NFU3",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026-07-01"
+      },
+      "difficulty": {
+        "exposure": 4,
+        "physical": 4,
+        "technical": 2,
+        "commitment": 3,
+        "routefinding": 5
+      },
+      "approach_logistics": {
+        "peakLat": 48.7732,
+        "peakLng": -121.2784,
+        "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+        "trailheadLat": 48.68664,
+        "trailheadLng": -121.27121,
+        "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_southwest_ridge",
+      "area_id": "wa_west_mcmillan_spire",
+      "name": "Southwest Ridge",
+      "discipline": "alpine",
+      "grade": "5.8-",
+      "grade_system": "yds",
+      "grade_num": 8,
+      "pitches": 6,
+      "length_m": 488,
+      "sort_order": null,
+      "stars": null,
+      "fa": "unknown",
+      "lat": null,
+      "lng": null,
+      "aspect": "SW",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "ice axe",
+        "helmet",
+        "medium alpine rock rack",
+        "8-10 runners"
+      ],
+      "hazards": [
+        "Remote Southern Pickets setting means any rescue is slow and difficult.",
+        "Loose rock is characteristic of Picket Range ridgelines generally."
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A longer, more technical trad line up the southwest side of West McMillan Spire, rated 5.8- over 6 pitches (Grade III), in contrast to the scrambling West Ridge.",
+      "beta": "Documented on Mountain Project with a grade and rack but almost no route-finding beta; the page explicitly directs climbers to Fred Beckey's Cascade Alpine Guide ('the red guidebook') for the actual pitch-by-pitch description. Shares the same remote Southern Pickets approach zone (Goodell Creek to Terror Basin/Terror Glacier) as the West Ridge, though the exact line taken to reach the base of the ridge from the glacier is not detailed in available online sources.",
+      "turnaround": "Given the multi-day, glacier-guarded approach and limited published beta, parties should set a conservative turnaround based on remaining daylight, weather trends, and rock conditions rather than pushing into terrain they cannot down-climb or retreat from safely.",
+      "auto_generated": false,
+      "alpine_grade": "Grade III",
+      "rock_grade": "5.8-",
+      "ice_grade": null,
+      "gain_ft": 9800,
+      "loss_ft": null,
+      "dist_km": 12.9,
+      "max_angle": null,
+      "rappels": null,
+      "commitment": "III",
+      "face": "Southwest side / Terror Glacier aspect",
+      "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+      "comms": "No cell service in this remote wilderness area; a satellite communicator or PLB is strongly recommended given the multi-day approach and glacier travel.",
+      "descent": "Reverse the route; down-climb/rappel the ridge and re-cross Terror Glacier back to Terror Basin camp.",
+      "obj_haz": [
+        "remote/committing approach",
+        "loose rock",
+        "weather exposure"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.6733,
+          "lng": -121.2658,
+          "name": "Goodell Creek Trailhead/Campground",
+          "note": "Standard access for all Southern Pickets climbs (McMillan Spires, Inspiration Peak, Mt Terror, etc.) via the unmaintained Goodell Creek climber's path, gaining ~4700ft into Terror Basin. Same trailhead used for both routes on this peak.",
+          "type": "Trailhead",
+          "elevFt": 600
+        },
+        {
+          "lat": 48.77318,
+          "lng": -121.27828,
+          "name": "West McMillan Spire",
+          "type": "Summit",
+          "elevFt": 8000
+        }
+      ],
+      "gpx": [
+        [
+          48.6733,
+          -121.2658
+        ],
+        [
+          48.77318,
+          -121.27828
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 10,
+        "summitTimeHrs": 4,
+        "descentTimeHrs": 4,
+        "approachTimeHrs": 7,
+        "recommendedStart": "Alpine start from Terror Basin camp to allow time for the glacier crossing and technical climbing before typical afternoon weather buildup."
+      },
+      "detailed_rack": "Mountain Project recommends a medium alpine rock rack with 8-10 runners, a helmet, and a single ice axe for the glacier/snow approach.",
+      "what_to_bring": [
+        "overnight backcountry permit",
+        "bear canister/food storage",
+        "map/GPS for off-trail navigation",
+        "satellite communicator or PLB",
+        "extra layers for exposed ridge climbing"
+      ],
+      "pro_tips": [
+        "Online beta for this route is sparse; consult Fred Beckey's Cascade Alpine Guide for the actual route description before attempting it, as Mountain Project itself defers to that guidebook."
+      ],
+      "watch_out": [
+        "Loose rock on multiple pitches, consistent with Pickets granite/gneiss — helmet essential.",
+        "Retreat options are limited once established on the ridge; this is committing alpine terrain far from help."
+      ],
+      "pro_needs": "Medium alpine rock rack with 8-10 runners, a helmet, and one ice axe (per Mountain Project route page).",
+      "best_season": "Summer climbing window, roughly June through September, consistent with the broader Southern Pickets climbing season documented in trip reports for this peak; specific season data for this exact line was not found beyond that general window.",
+      "high_point_ft": 8004,
+      "aid_grade": null,
+      "approach": "From the Goodell Creek Campground trailhead near Newhalem, climbers follow an unmaintained, boot-worn path roughly 4 to 4.5 miles up the forested Goodell Creek valley before turning uphill on a brutally steep, brushy side path that gains around 1,500 feet in well under half a mile. Above treeline the route makes a rising traverse across heather and scree to a notch near 6,200 feet overlooking Terror Basin, which serves as the standard base camp. From camp, reaching West McMillan Spire itself requires crossing a permanent snowfield/glacier remnant (crampons and an ice axe are mandatory) before finishing on exposed Class 2-3 scrambling to the summit. This is a genuine multi-day expedition-style approach; a North Cascades National Park backcountry permit is required, and there is significant routefinding and rockfall/glacier hazard throughout.",
+      "descent_text": null,
+      "bail": "Limited fixed bail options on the ridge itself; the safest retreat is down-climbing/rappelling back the way you came to the glacier before committing above hard-to-reverse pitches.",
+      "pitch_detail": null,
+      "itinerary": "Typically a 2-3 day trip: Day 1 approach to Terror Basin camp (6-8 hrs); Day 2 climb the Southwest Ridge and return to camp; Day 3 hike out via Goodell Creek.",
+      "access": {
+        "_raw": {
+          "permit_type": "Backcountry overnight permit required; self-permit possible if area not full",
+          "land_manager": "National Park Service (North Cascades National Park Complex / Ross Lake National Recreation Area)",
+          "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+          "special_hazards": "Strenuous Class 3 scrambling with exposed sections, alpine weather, snow/glacier travel until late summer",
+          "wilderness_zone": "North Cascades National Park Cross-Country Zone",
+          "group_size_limits": "4-12 people depending on specific campsite",
+          "seasonal_closures": "Accessible typically July, August, September only due to snow; State Route 20 closure mid-November to mid-April",
+          "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October)",
+          "altitude_restrictions": "Terror Basin area; exact elevation restrictions not specified but alpine terrain",
+          "parking_pass_required": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+          "permit_pickup_location": "Wilderness Information Center, Marblemount, WA"
+        },
+        "fees": "N/A",
+        "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+        "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range/Boston Basin/Eldorado approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+        "permit": "Backcountry overnight permit required; self-permit possible if area not full",
+        "closures": "N/A",
+        "permitZone": "North Cascades National Park Cross-Country Zone",
+        "group_limit": 6,
+        "landManager": "National Park Service (North Cascades National Park Complex / Ross Lake National Recreation Area)",
+        "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+        "passRequired": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass"
+      },
+      "road": {
+        "name": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Big Beaver/Access Creek, Southern Pickets",
+        "status": "SR-20 to Ross Dam Trailhead is paved; from there most parties use the Ross Lake Resort water taxi (~$40-60/person) across the reservoir rather than the long hike-around, then a multi-day cross-country approach into the Southern Pickets.",
+        "driveNote": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+        "seasonalGate": "SR-20 closes seasonally in winter well east of here (typical gate near Newhalem/MP120-134 through roughly April/May); Goodell Creek itself, on the west side of the closure, remains accessible year-round."
+      },
+      "climate": {
+        "fall": "Snow can return as early as late September/October, shortening the climbing window quickly.",
+        "spring": "Deep snowpack persists into July on approach slopes and the glacier; higher avalanche/wet-slide hazard and harder route-finding.",
+        "summer": "Jul-Sep is the driest, most stable window, though afternoon thunderstorms and fast-moving weather are common.",
+        "winter": "Deep snowpack and avalanche terrain make the route effectively inaccessible to climbers.",
+        "typical": "Marine west-coast mountain climate with heavy orographic precipitation, especially in winter; summers are drier but can still bring fast-moving weather.",
+        "forecastZone": "NWS West Slopes North Cascades and Vicinity zone (WAZ567)"
+      },
+      "emergency": {
+        "notes": "North Cascades National Park Service Complex headquarters is in Sedro-Woolley; the Southern Pickets are extremely remote and any rescue will be slow.",
+        "county": "Whatcom County, Washington",
+        "rangerStation": "North Cascades Wilderness Information Center, Marblemount, (360) 854-7245 / noca_wilderness@nps.gov; NPS SAR business line (360) 856-5700 ext. 515",
+        "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA, (360) 856-6021; larger Skagit Valley Hospital, Mount Vernon, WA, (360) 424-4111",
+        "sheriffDispatch": "Skagit County Sheriff (360) 336-9450 (after-hours emergency); NPS Communications Center (360) 873-4590 ext. 37 after hours"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 2,
+        "technical": 3,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+        "trailheadLat": 48.68664,
+        "trailheadLng": -121.27121,
+        "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+      },
+      "sling_rack": {
+        "cams": "single rack 0.3-3in",
+        "nuts": "small-mid stopper set",
+        "slings": "4 single + 2 double-length",
+        "pickets": 1
+      },
+      "alpine_draws": 4,
+      "rope_type": "single 60m",
+      "rope_length_m": 60,
+      "rope_note": "Confirmed on Mountain Project: West McMillan Spire, Southwest Ridge, Trad with Steep Snow, 5.8-, 2-star classic (distinct from the easier 4th-class West Ridge on the same peak). Approach through McMillan Cirque/Terror Basin crosses glaciated/steep snow terrain requiring ice axe and crampons.",
+      "ascender": null,
+      "corrections": "Route name, grade, and type verified on Mountain Project; specific rack sizes not published in any trip report found.",
+      "gear_confidence": "inferred",
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": [
+        "Cams 0.3-3in, single rack",
+        "Nuts, small-mid stopper set",
+        "8-10 runners/slings",
+        "1 snow picket + ice axe for approach",
+        "Single 60m rope"
+      ],
+      "features": [
+        "Adventurous",
+        "Committing"
+      ],
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_west_ridge_6",
+      "area_id": "wa_west_mcmillan_spire",
+      "name": "West Ridge",
+      "discipline": "mountaineering",
+      "grade": "4th",
+      "grade_system": "class",
+      "grade_num": 4,
+      "pitches": 1,
+      "length_m": 610,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Fred and Helmy Beckey, August 29, 1940",
+      "lat": null,
+      "lng": null,
+      "aspect": "W",
+      "season": "Jul-Sep",
+      "description": null,
+      "gear": [
+        "ice axe",
+        "crampons",
+        "helmet",
+        "short rope (optional, for exposed sections)"
+      ],
+      "hazards": [
+        "Terror Glacier crossing carries crevasse and glacier-travel hazard even though it is typically done unroped.",
+        "The summit ridge is narrow and heavily exposed, with large cliffs on both sides in places.",
+        "Rockfall and loose rock are recurring themes in trip reports of this route.",
+        "Weather can deteriorate quickly this deep in the Picket Range, complicating the long retreat."
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "The classic and most-climbed route on West McMillan Spire: a long glacier and scramble approach from Terror Basin over Terror Glacier, up a steep snow/ice gully to gain the West Ridge, then a 3rd-4th class scramble along scree, talus, and an exposed summit ridge to the summit block.",
+      "beta": "From a Terror Basin camp, cross rocky benches and the outlet of a glacial lake, climb slabs and snow onto Terror Glacier below the McMillan Spires, then ascend a steep snow/ice gully to reach the crest of the West Ridge. From there it is a mellow but exposed 3rd-4th class scramble up scree and talus to the summit block. The glacier crossing is normally done unroped but crampons and an ice axe are standard; some parties encounter thin, hollow snow over rock and short mixed moves on the upper ridge, especially in a low-snow year.",
+      "turnaround": "Because the descent retraces steep snow/ice and loose, exposed scrambling terrain, parties should set a firm turnaround time based on remaining daylight and building afternoon weather, and should not linger on the summit ridge if clouds or thunderstorms are developing.",
+      "auto_generated": false,
+      "alpine_grade": "Grade II",
+      "rock_grade": "4th class (up to low 5th in spots)",
+      "ice_grade": null,
+      "gain_ft": 9800,
+      "loss_ft": null,
+      "dist_km": 12.9,
+      "max_angle": 40,
+      "rappels": "Not typically roped for rappel — the route is usually downclimbed/scrambled in reverse; a single rope is sufficient if any short rappels are needed on loose sections.",
+      "commitment": "II",
+      "face": "West Ridge, above Terror Glacier",
+      "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+      "comms": "No cell service in this remote wilderness area; carry a satellite communicator or PLB — this is frequently cited as one of the most remote areas in the Lower 48.",
+      "descent": "Reverse the West Ridge route back down the snow/ice gully to Terror Glacier and Terror Basin.",
+      "obj_haz": [
+        "rockfall/loose rock",
+        "crevassed glacier travel",
+        "exposure",
+        "routefinding",
+        "cornices (early season)"
+      ],
+      "waypoints": [
+        {
+          "lat": 48.6733,
+          "lng": -121.2658,
+          "name": "Goodell Creek Trailhead/Campground",
+          "note": "Same Goodell Creek approach into Terror Basin as Southwest Ridge; West Ridge is the more popular/moderate (4th class) line and is climbed from the same basin.",
+          "type": "Trailhead",
+          "elevFt": 600
+        },
+        {
+          "lat": 48.77318,
+          "lng": -121.27828,
+          "name": "West McMillan Spire",
+          "type": "Summit",
+          "elevFt": 8000
+        }
+      ],
+      "gpx": [
+        [
+          48.6733,
+          -121.2658
+        ],
+        [
+          48.77318,
+          -121.27828
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": 10,
+        "summitTimeHrs": 4,
+        "descentTimeHrs": 4,
+        "approachTimeHrs": 7,
+        "recommendedStart": "Pre-dawn alpine start from the Terror Basin camp (trip reports describe leaving camp around 3:30-4:00 AM) to cross the glacier while snow is firm and clear the summit ridge before afternoon weather."
+      },
+      "detailed_rack": "Not a rock climb in the traditional sense - the technical crux is a steep snow/ice gully and short mixed moves near the false summit. Ice axe and crampons are standard; some parties carry a short rope and a few slings for the gully and the exposed summit block scramble, though most ascents are done unroped.",
+      "what_to_bring": [
+        "bivy/camping gear for a 2-3 day trip",
+        "water treatment (no reliable water source between the top of the hillclimb and Terror Basin)",
+        "sturdy mountaineering boots suited to scrambling and snow travel",
+        "navigation (map/GPS/compass) for the unmarked, unmaintained approach trail",
+        "bear canister if required for the camping zone"
+      ],
+      "pro_tips": [
+        "Find the correct trailhead: use the unmarked trail on the east side of Goodell Creek across from the Visitor Center sign, not the Goodell Creek Campground sign on the west side.",
+        "Terror Basin is the standard bivy - flat spots and running water, but no water between the top of the initial hillclimb and the basin itself.",
+        "Carry ice axe and crampons even late in the season; multiple trip reports describe using them for the glacier crossing and gully despite it being a relatively 'easy' 8,000-footer.",
+        "A helmet is recommended near the notch/section between Inspiration Peak and McMillan Spire due to looseness."
+      ],
+      "watch_out": [
+        "Hundreds of blowdowns litter the unmaintained lower climbers' trail.",
+        "The gully and upper ridge can hold thin, hollow snow over rock, especially late season - probe before committing.",
+        "Reddish rock near the summit approach is described as poor quality/deteriorating.",
+        "The north-side notch descent without snow cover is steep, loose choss - stay skier's right."
+      ],
+      "pro_needs": "Crampons and an ice axe are required for the Terror Glacier crossing and the snow/ice gully to the ridge crest (per Mountain Project).",
+      "best_season": "Roughly June through September based on documented ascents (trip reports span early June to late August/September). Earlier-season trips have more continuous snow for the glacier crossing and gully (requiring axe and crampons throughout), while by late summer the glacier surface softens, the gully can be melted out to loose scree, and rockfall/looseness increases with warming.",
+      "high_point_ft": 8004,
+      "aid_grade": null,
+      "approach": "From the Goodell Creek Campground trailhead near Newhalem, climbers follow an unmaintained, boot-worn path roughly 4 to 4.5 miles up the forested Goodell Creek valley before turning uphill on a brutally steep, brushy side path that gains around 1,500 feet in well under half a mile. Above treeline the route makes a rising traverse across heather and scree to a notch near 6,200 feet overlooking Terror Basin, which serves as the standard base camp. From camp, reaching West McMillan Spire itself requires crossing a permanent snowfield/glacier remnant (crampons and an ice axe are mandatory) before finishing on exposed Class 2-3 scrambling to the summit. This is a genuine multi-day expedition-style approach; a North Cascades National Park backcountry permit is required, and there is significant routefinding and rockfall/glacier hazard throughout.",
+      "descent_text": "Downclimb the exposed 3rd-4th class summit ridge and scree/talus back to the top of the steep snow/ice gully, then descend the gully (facing in if icy) back onto Terror Glacier. Recross the glacier and benches to Terror Basin camp, then reverse the steep, loose, brushy climbers' trail back to Goodell Creek. Some parties note the north-side notch descent without snow cover is intimidating steep loose choss and recommend staying skier's right.",
+      "bail": "The technical crux is the steep snow/ice gully between the glacier and the ridge crest; below that, retreat is a straightforward reversal of scrambling terrain. If conditions in the gully deteriorate (ice, rockfall), parties can retreat back across Terror Glacier and out via Terror Basin rather than continuing to the ridge.",
+      "pitch_detail": [
+        {
+          "grade": "Steep snow/ice",
+          "notes": "Steep snow/ice gully gains the West Ridge crest from the glacier; crampons and axe required, occasionally roped depending on conditions.",
+          "pitch": "Terror Glacier to ridge crest"
+        },
+        {
+          "grade": "3rd-4th class",
+          "notes": "Scree and talus scrambling along the ridge.",
+          "pitch": "Ridge crest to false summit"
+        },
+        {
+          "grade": "4th class, exposed",
+          "notes": "Exposed summit block scramble to the true summit.",
+          "pitch": "False summit to true summit"
+        }
+      ],
+      "itinerary": "Day 1: Drive to Goodell Creek trailhead and hike the steep, brushy climbers' trail (~5,000 ft gain) to a bivy at Terror Basin (~5,800 ft). Day 2: Pre-dawn alpine start; cross benches and the glacial lake outlet, ascend slabs/snow onto Terror Glacier, climb the steep snow/ice gully to the West Ridge crest, and scramble 3rd-4th class terrain to the summit; reverse the route back to Terror Basin camp. Day 3: Hike out to the trailhead.",
+      "access": {
+        "_raw": {
+          "permit_type": "Backcountry overnight permit required; self-permit possible if area not full",
+          "land_manager": "National Park Service (North Cascades National Park Complex / Ross Lake National Recreation Area)",
+          "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+          "special_hazards": "Strenuous Class 3 scrambling with exposed sections, alpine weather, snow/glacier travel until late summer",
+          "wilderness_zone": "North Cascades National Park Cross-Country Zone",
+          "group_size_limits": "4-12 people depending on specific campsite",
+          "seasonal_closures": "Accessible typically July, August, September only due to snow; State Route 20 closure mid-November to mid-April",
+          "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October)",
+          "altitude_restrictions": "Terror Basin area; exact elevation restrictions not specified but alpine terrain",
+          "parking_pass_required": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+          "permit_pickup_location": "Wilderness Information Center, Marblemount, WA"
+        },
+        "fees": "N/A",
+        "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+        "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range/Boston Basin/Eldorado approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+        "permit": "Backcountry overnight permit required; self-permit possible if area not full",
+        "closures": "N/A",
+        "permitZone": "North Cascades National Park Cross-Country Zone",
+        "group_limit": 6,
+        "landManager": "National Park Service (North Cascades National Park Complex / Ross Lake National Recreation Area)",
+        "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+        "passRequired": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass"
+      },
+      "road": {
+        "name": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Big Beaver/Access Creek, Southern Pickets",
+        "status": "SR-20 to Ross Dam Trailhead is paved; from there most parties use the Ross Lake Resort water taxi (~$40-60/person) across the reservoir rather than the long hike-around, then a multi-day cross-country approach into the Southern Pickets.",
+        "driveNote": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+        "seasonalGate": "SR-20 closes seasonally in winter well east of here (typical gate near Newhalem/MP120-134 through roughly April/May); Goodell Creek, west of the closure, remains accessible year-round."
+      },
+      "climate": {
+        "fall": "Snow can return as early as late September/October, quickly closing the window.",
+        "spring": "Continuous snow cover on the glacier and gully; ski/splitboard descents of the upper West Ridge have been reported in late April with corn-snow conditions.",
+        "summer": "Primary climbing season; glacier crossing softens and the gully can melt out to loose rock/scree by late summer.",
+        "winter": "Deep snowpack and avalanche terrain make the route effectively inaccessible.",
+        "typical": "Marine west-coast mountain climate with heavy orographic precipitation, especially wet, heavy snowfall in winter, raising avalanche danger in shoulder seasons.",
+        "forecastZone": "NWS West Slopes North Cascades and Vicinity zone (WAZ567)"
+      },
+      "emergency": {
+        "notes": "North Cascades National Park Service Complex headquarters is in Sedro-Woolley; the Southern Pickets are extremely remote and any rescue will be slow and likely require a helicopter.",
+        "county": "Whatcom County, Washington",
+        "rangerStation": "North Cascades Wilderness Information Center, Marblemount, (360) 854-7245 / noca_wilderness@nps.gov; NPS SAR business line (360) 856-5700 ext. 515",
+        "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA, (360) 856-6021; larger Skagit Valley Hospital, Mount Vernon, WA, (360) 424-4111",
+        "sheriffDispatch": "Skagit County Sheriff (360) 336-9450 (after-hours emergency); NPS Communications Center (360) 873-4590 ext. 37 after hours"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ]
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 4,
+        "technical": 3,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+        "trailheadLat": 48.68664,
+        "trailheadLng": -121.27121,
+        "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": "Published summit elevations vary slightly by source: Mountain Project rounds to 8,000 ft, Wikipedia/USGS-derived figures give 8,004 ft (used here), and ListsOfJohn's LiDAR-adjusted figure gives 8,041 ft. Approach round-trip distance/gain also vary modestly between WTA (16.0 mi / 9,800 ft gain) and AllTrails (18.7 mi / 9,484 ft gain); this entry uses the WTA figures with AllTrails cross-checked as broadly consistent.",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}

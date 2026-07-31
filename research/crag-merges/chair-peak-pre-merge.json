@@ -1,0 +1,3273 @@
+{
+  "fetched_for": [
+    "wa_chair_peak",
+    "wa_summer_fall_rock_3"
+  ],
+  "areas": [
+    {
+      "id": "wa_chair_peak",
+      "name": "Chair Peak",
+      "parent_id": "wa_snoqualmie_i90_region",
+      "path": "usa.washington.wa_centralwest.wa_snoqualmie_i90_region.wa_chair_peak",
+      "area_type": "peak",
+      "region": "Washington",
+      "lat": 47.459595,
+      "lng": -121.466875,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Chair Peak is the unmistakable, chair-shaped 6,238-ft summit at the head of the Alpental Valley near Snoqualmie Pass, rising roughly 2,200 ft above Snow Lake in just half a mile. Sitting in the Alpine Lakes Wilderness on Mount Baker-Snoqualmie National Forest land about an hour from Seattle (I-90 Exit 52), it was first climbed in 1913 by Hec Abel and L.F. Curtis and today is one of the most popular moderate objectives in the Cascades: an accessible summer scramble/rock climb (Northeast Buttress) and one of Washington's classic winter alpine ice-and-mixed outings (North Face, Northeast Buttress in condition).",
+      "route_count": 6,
+      "source": null,
+      "elevation_ft": 6238,
+      "prominence_ft": 878,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    },
+    {
+      "id": "wa_summer_fall_rock_3",
+      "name": "Summer-Fall (rock)",
+      "parent_id": "wa_snoqualmie_i90_region",
+      "path": "usa.washington.wa_centralwest.wa_snoqualmie_i90_region.wa_summer_fall_rock_3",
+      "area_type": "crag",
+      "region": "Washington",
+      "lat": 47.4596,
+      "lng": -121.46702,
+      "elevation": null,
+      "avy_zone": null,
+      "blurb": "Chair Peak (6,238 ft) is a distinctive, steep-walled summit three miles northwest of Snoqualmie Pass in the Alpine Lakes Wilderness (Mount Baker–Snoqualmie National Forest), rising above Source and Snow Lakes as part of the popular Kaleetan–Chair–Bryant–Tooth–Denny ridge system visible from Alpental and I-90. It is one of the Cascades' classic entry-level alpine objectives: moderate, often-loose rock climbs in summer/fall and popular moderate ice/mixed lines (Northeast Buttress, North Face) in winter. The peak was first climbed in 1913 by Hec V. Abel and L. F. Curtis.",
+      "route_count": 3,
+      "source": null,
+      "elevation_ft": null,
+      "prominence_ft": null,
+      "parent_peak": null,
+      "dominant_discipline": "alpine"
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_chair_peak_east_face",
+      "area_id": "wa_chair_peak",
+      "name": "East Face",
+      "discipline": "alpine",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 2,
+      "pitches": 3,
+      "length_m": 183,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Don Blair and Art Winder, September 30, 1933 (first recorded ascent of this face)",
+      "lat": null,
+      "lng": null,
+      "aspect": "E",
+      "season": "Year-round; best Jun-Sep (ice axe can help in shoulder-season snow)",
+      "description": null,
+      "gear": [
+        "Small nuts",
+        "Single cams (0.2-2 in)",
+        "Double slings/cordelette",
+        "Rap rings",
+        "Helmet",
+        "Ice axe (shoulder season)"
+      ],
+      "hazards": [
+        "Loose, blocky rock typical of Chair Peak's melange/metasedimentary geology",
+        "Sparse protection on key sections",
+        "Rockfall potential in the descent gully"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A moderate 3rd-to-low-5th-class rock line directly up the east face to the summit, one of the more accessible summer scrambling/climbing routes on the peak, with a well-known overhanging band crux.",
+      "beta": "Mountain Project rates it 5.2 (PG13) over 3 pitches, 600 ft (182 m); SummitPost describes it as about 400 ft of the route's pleasant climbing being 4th to easy 5th class, with the notable overhanging band rated 5.5. Protection is sparse in places, with runouts over 50 ft reported on the traverse pitch.",
+      "turnaround": "The descent's complex rappel-gully navigation and minimal protection on pitch 2 mean route-finding mistakes cost real time — turn around with enough daylight margin to navigate the descent gully calmly.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.2 (5.5 at the overhanging band per SummitPost)",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": 3138,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "3+ rappels down the east-facing chockstone gully back to the basin",
+      "commitment": "II",
+      "face": "East Face",
+      "permit": null,
+      "comms": null,
+      "descent": "Head partway back toward the notch until a south-facing rock gully (marked by a tree) is visible, then make 3+ rappels down the narrow, east-facing chockstone gully to the basin",
+      "obj_haz": [
+        "loose rock",
+        "runouts"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.4454,
+          "lng": -121.4236,
+          "name": "Alpental parking lot / Snow Lake TH #1013",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.4654835,
+          "lng": -121.473926,
+          "name": "Chair Peak Lake (basin below the east face)",
+          "type": "landmark",
+          "distMi": null,
+          "elevFt": 4957
+        },
+        {
+          "lat": 47.459595,
+          "lng": -121.466875,
+          "name": "Chair Peak summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": null
+      },
+      "detailed_rack": "Small nuts, single cams from about 0.2-2 in (with a #3 optional), single and double slings, a cordelette, extra webbing, and rap rings for the descent anchors.",
+      "what_to_bring": [
+        "Helmet",
+        "Approach shoes or light boots for the talus/scramble approach",
+        "Extra webbing/rap rings for descent anchors",
+        "Ice axe if snow lingers in the approach basin"
+      ],
+      "pro_tips": [
+        "Watch for the anchor-marking tree at the top of the south-facing rappel gully — it's the key to finding the correct descent line",
+        "Simul-climbing or combining the upper 3rd/4th-class terrain speeds up the day considerably"
+      ],
+      "watch_out": [
+        "Loose rock throughout, especially on the traverse pitch",
+        "Long runouts (50+ ft) with minimal protection on pitch 2",
+        "Complex descent gully navigation — easy to end up in the wrong couloir"
+      ],
+      "pro_needs": "Protection is generally good on pitch 1 (chimney/crack) but sparse on pitch 2's traverse, where placements can be over 50 ft apart; the upper 3rd/4th-class terrain has little gear.",
+      "best_season": "Best from roughly June through September when the route and approach basin are snow-free; per SummitPost, summer rock routes on the peak are typically climbed May through October.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "From the Alpental parking lot, take the Snow Lake Trail; at about 1.5 miles turn off toward Source Lake. Ascend a 3rd-class rocky gully starting around 4,200 ft, reach a small cliff around 4,800 ft, traverse through a notch, then cross a snowy basin to the base of the route around 5,500 ft.",
+      "descent_text": "From the summit, downclimb/traverse back toward the notch area, locate the marked south-facing rappel gully, and make a series of at least three rappels down the narrow, east-facing chockstone couloir to return to the approach basin.",
+      "bail": "Descend via the same rappel gully used for the normal descent; retreat is straightforward from any of the three pitches by building a gear anchor and rappelling.",
+      "pitch_detail": [
+        {
+          "grade": "5.1-5.6",
+          "notes": "Climb either side of a narrow chimney to a short, wide roof; gear anchor at a good crack",
+          "pitch": "P1",
+          "lengthM": 50
+        },
+        {
+          "grade": "4th class",
+          "notes": "Traverse left under the roof; very little protection — use anchor spots as they appear",
+          "pitch": "P2",
+          "lengthM": 40
+        },
+        {
+          "grade": "3rd/4th class",
+          "notes": "Easy terrain trending right to a notch onto the Northeast Buttress; simul-climbing option",
+          "pitch": "P3",
+          "lengthM": 40
+        },
+        {
+          "grade": "3rd class, occasional 4th",
+          "notes": "Mostly 3rd class with a few 4th-class moves up the left side of the NE face toward the summit",
+          "pitch": "Scramble",
+          "lengthM": 52
+        }
+      ],
+      "itinerary": null,
+      "access": {
+        "fees": "Summit at Snoqualmie parking fee for the Alpental lot",
+        "permit": "Free self-issue Alpine Lakes Wilderness day-use permit at the trailhead kiosk",
+        "closures": null,
+        "landManager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Alpine Lakes Wilderness",
+        "passRequired": "Summit at Snoqualmie parking permit"
+      },
+      "road": {
+        "name": "Alpental Road (Summit at Snoqualmie access road, off SR-906)",
+        "status": "Paved, plowed year-round for ski-area operations",
+        "driveNote": "From I-90 Exit 52, follow SR-906/Alpental Rd about 1.1-1.5 miles to the Alpental base lots (~3,100 ft).",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Good into September/October until early snow arrives",
+        "spring": "Snow can linger in the approach basin into June",
+        "summer": "Prime season, dry and stable",
+        "winter": "Not a winter rock objective; approach basin carries avalanche hazard",
+        "typical": "Wet, maritime Cascade climate; the route itself is a dry-season rock climb",
+        "forecastZone": "NWAC 'Snoqualmie Mtn / Chair Peak' avalanche forecast zone (winter/spring approach only)"
+      },
+      "emergency": {
+        "notes": "King County Sheriff's Office coordinates SAR call-outs for the Alpental/Snow Lake/Chair Peak backcountry",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, Mt. Baker-Snoqualmie NF: (425) 888-1421, 902 SE North Bend Way, North Bend, WA",
+        "nearestHospital": "Snoqualmie Valley Hospital (24/7 ED), 9801 Frontier Ave SE, Snoqualmie, WA, (425) 831-2300 — expect transfer to a larger Seattle-area hospital for major trauma",
+        "sheriffDispatch": "King County Sheriff's Office non-emergency (206) 296-3311; emergency 911"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_peak_north_face",
+      "area_id": "wa_chair_peak",
+      "name": "North Face",
+      "discipline": "alpine",
+      "grade": "III",
+      "grade_system": "yds",
+      "grade_num": 4,
+      "pitches": 4,
+      "length_m": 244,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Kit Lewis, Charlie Hampson, Rob Harris, Greg Jacobson (January 1975)",
+      "lat": null,
+      "lng": null,
+      "aspect": "N",
+      "season": "Dec-Mar (ice/snow); a summer rock variant (North Face Direct, 5.9) exists in snow-free condition",
+      "description": null,
+      "gear": [
+        "ice axe",
+        "second tool",
+        "crampons",
+        "ice screws",
+        "pickets",
+        "small rock rack"
+      ],
+      "hazards": [
+        "avalanche-prone approach and face",
+        "variable winter ice conditions",
+        "cornice at the top",
+        "short days"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "Chair Peak's North Face is one of Washington's most popular winter alpine ice-and-mixed classics, easily reached from Snoqualmie Pass. A moderate face of snow, ice, and mixed steps gives a superb, accessible introduction to winter alpine climbing when conditions are right.",
+      "beta": "Reached via a short traverse from the Source Lake-Snow Lake divide, the North Face offers about four pitches of steep snow and ice climbing on generally moderate-angle terrain (50-65°) with one short crux step that can approach 80° (sometimes rock, 5.4-5.6, if thin on ice). Abundant natural/fixed protection and a short approach make it a popular introduction to Cascade ice climbing, though it backs up with parties on clear winter weekends. Note: a distinct, harder rock variation called 'North Face Direct' (5.9, 5 pitches) starts about 200m from the standard line and should not be confused with this route.",
+      "turnaround": "Turn around if avalanche conditions or visibility deteriorate; winter days are short.",
+      "auto_generated": true,
+      "alpine_grade": "AD",
+      "rock_grade": "5.4",
+      "ice_grade": "AI2",
+      "gain_ft": 3138,
+      "loss_ft": 3138,
+      "dist_km": 10.78,
+      "max_angle": 70,
+      "rappels": "Typically a single 60m rappel (occasionally two) through the summit gully/notch back into the basin; some late-day/crowded ascents have required additional downclimbing when rope length fell short",
+      "commitment": "III",
+      "face": "North Face",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+      "comms": null,
+      "descent": "Descend the standard route / gully off the back toward the Snoqualmie Pass approach.",
+      "obj_haz": [
+        "rockfall",
+        "avalanche",
+        "cornice",
+        "icefall"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.44565,
+          "lng": -121.42365,
+          "elev": 3100,
+          "name": "Alpental / Snow Lake Trailhead",
+          "note": "Self-serve day-use fee kiosk (Northwest Forest Pass or $5/day); trail departs the north end of the upper Alpental Ski Area parking lot.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 47.4554,
+          "lng": -121.4522,
+          "elev": 3750,
+          "name": "Source Lake Trail junction",
+          "note": "Leave the maintained Snow Lake Trail here on the unmaintained boot path toward Source Lake, a reliable water source in the Alpental Valley.",
+          "type": "Junction",
+          "distMi": 1.6
+        },
+        {
+          "lat": 47.4599,
+          "lng": -121.4608,
+          "elev": 5090,
+          "name": "Thumb Tack",
+          "note": "Prominent rock outcrop in the basin below Chair's east face; a common gear-cache and roping-up point before the final approach.",
+          "type": "Junction",
+          "distMi": 2.3
+        },
+        {
+          "lat": 47.4594,
+          "lng": -121.4644,
+          "elev": 5506,
+          "name": "North Face open-book base",
+          "note": "Left-facing open book in the center of the north face where the route begins; three pitches of 50-70 degree snow/ice.",
+          "type": "Junction",
+          "distMi": 2.8
+        },
+        {
+          "lat": 47.4598,
+          "lng": -121.4669,
+          "elev": 6138,
+          "name": "Col below summit block",
+          "note": "Small col reached after the ice pitches; a crux step up to roughly 80 degrees (occasionally bare 5.6 rock) leads to the summit from here.",
+          "type": "Junction",
+          "distMi": 3.1
+        },
+        {
+          "lat": 47.4595564,
+          "lng": -121.466761,
+          "elev": 6238,
+          "name": "Chair Peak summit",
+          "note": "Small summit block; the northeast side is heavily corniced in winter, stay toward the uncorniced center.",
+          "type": "Summit",
+          "distMi": 3.3
+        },
+        {
+          "lat": 47.458853,
+          "lng": -121.46241,
+          "elev": 5800,
+          "name": "South-side gully rappels",
+          "note": "Descend via rappels down the gully on the south side of the east face; watch for parties and loose rock/ice falling from above.",
+          "type": "Hazard"
+        }
+      ],
+      "gpx": [
+        [
+          47.445653,
+          -121.423469
+        ],
+        [
+          47.446602,
+          -121.423076
+        ],
+        [
+          47.44684,
+          -121.422991
+        ],
+        [
+          47.447188,
+          -121.42348
+        ],
+        [
+          47.447294,
+          -121.424013
+        ],
+        [
+          47.447307,
+          -121.424837
+        ],
+        [
+          47.447366,
+          -121.42572
+        ],
+        [
+          47.447681,
+          -121.426604
+        ],
+        [
+          47.447935,
+          -121.427609
+        ],
+        [
+          47.448569,
+          -121.428114
+        ],
+        [
+          47.448797,
+          -121.42876
+        ],
+        [
+          47.449012,
+          -121.428992
+        ],
+        [
+          47.449182,
+          -121.429525
+        ],
+        [
+          47.449624,
+          -121.430245
+        ],
+        [
+          47.450476,
+          -121.431285
+        ],
+        [
+          47.450603,
+          -121.431796
+        ],
+        [
+          47.451027,
+          -121.432077
+        ],
+        [
+          47.451728,
+          -121.433107
+        ],
+        [
+          47.452026,
+          -121.433863
+        ],
+        [
+          47.452278,
+          -121.434467
+        ],
+        [
+          47.452696,
+          -121.434849
+        ],
+        [
+          47.453314,
+          -121.435835
+        ],
+        [
+          47.454007,
+          -121.43708
+        ],
+        [
+          47.454203,
+          -121.437867
+        ],
+        [
+          47.454579,
+          -121.438397
+        ],
+        [
+          47.455463,
+          -121.439995
+        ],
+        [
+          47.45617,
+          -121.440879
+        ],
+        [
+          47.456852,
+          -121.442471
+        ],
+        [
+          47.456874,
+          -121.4433
+        ],
+        [
+          47.456943,
+          -121.444045
+        ],
+        [
+          47.457185,
+          -121.444879
+        ],
+        [
+          47.457464,
+          -121.445739
+        ],
+        [
+          47.457703,
+          -121.446473
+        ],
+        [
+          47.457902,
+          -121.446772
+        ],
+        [
+          47.458157,
+          -121.447645
+        ],
+        [
+          47.458241,
+          -121.448465
+        ],
+        [
+          47.458036,
+          -121.449402
+        ],
+        [
+          47.45788,
+          -121.45028
+        ],
+        [
+          47.457681,
+          -121.451147
+        ],
+        [
+          47.457382,
+          -121.45206
+        ],
+        [
+          47.457335,
+          -121.452838
+        ],
+        [
+          47.45744,
+          -121.45382
+        ],
+        [
+          47.45745,
+          -121.454985
+        ],
+        [
+          47.457248,
+          -121.455233
+        ],
+        [
+          47.456846,
+          -121.455844
+        ],
+        [
+          47.457131,
+          -121.455977
+        ],
+        [
+          47.45729,
+          -121.456233
+        ],
+        [
+          47.457556,
+          -121.456399
+        ],
+        [
+          47.457635,
+          -121.456636
+        ],
+        [
+          47.457681,
+          -121.45692
+        ],
+        [
+          47.457612,
+          -121.457107
+        ],
+        [
+          47.457642,
+          -121.457534
+        ],
+        [
+          47.457683,
+          -121.457774
+        ],
+        [
+          47.457705,
+          -121.458028
+        ],
+        [
+          47.457778,
+          -121.45828
+        ],
+        [
+          47.457806,
+          -121.458527
+        ],
+        [
+          47.457895,
+          -121.45869
+        ],
+        [
+          47.457969,
+          -121.458893
+        ],
+        [
+          47.457991,
+          -121.459189
+        ],
+        [
+          47.458016,
+          -121.459368
+        ],
+        [
+          47.45822,
+          -121.459361
+        ],
+        [
+          47.458454,
+          -121.459629
+        ],
+        [
+          47.45867,
+          -121.459703
+        ],
+        [
+          47.459275,
+          -121.459822
+        ],
+        [
+          47.459608,
+          -121.460187
+        ],
+        [
+          47.459637,
+          -121.460779
+        ],
+        [
+          47.459653,
+          -121.461227
+        ],
+        [
+          47.459666,
+          -121.46159
+        ],
+        [
+          47.459503,
+          -121.462056
+        ],
+        [
+          47.459314,
+          -121.462328
+        ],
+        [
+          47.459235,
+          -121.462378
+        ],
+        [
+          47.459046,
+          -121.462615
+        ],
+        [
+          47.458855,
+          -121.46278
+        ],
+        [
+          47.458625,
+          -121.462789
+        ],
+        [
+          47.458348,
+          -121.462877
+        ],
+        [
+          47.458261,
+          -121.462855
+        ],
+        [
+          47.458017,
+          -121.462671
+        ],
+        [
+          47.457848,
+          -121.462279
+        ],
+        [
+          47.457765,
+          -121.462522
+        ],
+        [
+          47.457586,
+          -121.462855
+        ],
+        [
+          47.457459,
+          -121.462993
+        ],
+        [
+          47.457333,
+          -121.463302
+        ],
+        [
+          47.457354,
+          -121.4637
+        ],
+        [
+          47.457379,
+          -121.463999
+        ],
+        [
+          47.457229,
+          -121.46427
+        ],
+        [
+          47.456901,
+          -121.464604
+        ],
+        [
+          47.456976,
+          -121.46484
+        ],
+        [
+          47.457051,
+          -121.464876
+        ],
+        [
+          47.457253,
+          -121.464914
+        ],
+        [
+          47.457299,
+          -121.465187
+        ],
+        [
+          47.457465,
+          -121.465391
+        ],
+        [
+          47.457533,
+          -121.465515
+        ],
+        [
+          47.457665,
+          -121.465891
+        ],
+        [
+          47.457841,
+          -121.466119
+        ],
+        [
+          47.457878,
+          -121.466298
+        ],
+        [
+          47.458032,
+          -121.466373
+        ],
+        [
+          47.458023,
+          -121.466499
+        ],
+        [
+          47.458229,
+          -121.466402
+        ],
+        [
+          47.4583,
+          -121.466455
+        ],
+        [
+          47.458315,
+          -121.466533
+        ],
+        [
+          47.458394,
+          -121.466511
+        ],
+        [
+          47.458575,
+          -121.466575
+        ],
+        [
+          47.458842,
+          -121.466295
+        ],
+        [
+          47.458826,
+          -121.46631
+        ],
+        [
+          47.458839,
+          -121.466307
+        ],
+        [
+          47.458744,
+          -121.466485
+        ],
+        [
+          47.458784,
+          -121.466482
+        ],
+        [
+          47.458931,
+          -121.4664
+        ],
+        [
+          47.459132,
+          -121.466467
+        ],
+        [
+          47.459238,
+          -121.466377
+        ],
+        [
+          47.459374,
+          -121.466413
+        ],
+        [
+          47.459406,
+          -121.466485
+        ],
+        [
+          47.459409,
+          -121.466793
+        ],
+        [
+          47.45947,
+          -121.466921
+        ],
+        [
+          47.459553,
+          -121.466921
+        ],
+        [
+          47.4596,
+          -121.466894
+        ],
+        [
+          47.459535,
+          -121.466968
+        ],
+        [
+          47.459466,
+          -121.46674
+        ],
+        [
+          47.459375,
+          -121.466556
+        ],
+        [
+          47.459351,
+          -121.466336
+        ],
+        [
+          47.459173,
+          -121.466443
+        ],
+        [
+          47.459319,
+          -121.466322
+        ],
+        [
+          47.458801,
+          -121.466579
+        ],
+        [
+          47.45892,
+          -121.4664
+        ],
+        [
+          47.45881,
+          -121.466293
+        ],
+        [
+          47.458632,
+          -121.466395
+        ],
+        [
+          47.458433,
+          -121.466457
+        ],
+        [
+          47.458295,
+          -121.466518
+        ],
+        [
+          47.458203,
+          -121.466388
+        ],
+        [
+          47.45811,
+          -121.466476
+        ],
+        [
+          47.458034,
+          -121.46645
+        ],
+        [
+          47.458017,
+          -121.46636
+        ],
+        [
+          47.45775,
+          -121.466173
+        ],
+        [
+          47.457619,
+          -121.465954
+        ],
+        [
+          47.457585,
+          -121.465685
+        ],
+        [
+          47.457548,
+          -121.465352
+        ],
+        [
+          47.457286,
+          -121.465223
+        ],
+        [
+          47.457087,
+          -121.465045
+        ],
+        [
+          47.457044,
+          -121.464933
+        ],
+        [
+          47.456992,
+          -121.464777
+        ],
+        [
+          47.456932,
+          -121.464686
+        ],
+        [
+          47.456912,
+          -121.464547
+        ],
+        [
+          47.457115,
+          -121.46437
+        ],
+        [
+          47.457296,
+          -121.464356
+        ],
+        [
+          47.457438,
+          -121.463997
+        ],
+        [
+          47.457463,
+          -121.463531
+        ],
+        [
+          47.457369,
+          -121.463328
+        ],
+        [
+          47.457387,
+          -121.463137
+        ],
+        [
+          47.457504,
+          -121.462884
+        ],
+        [
+          47.457508,
+          -121.462691
+        ],
+        [
+          47.457664,
+          -121.462259
+        ],
+        [
+          47.458002,
+          -121.462064
+        ],
+        [
+          47.458157,
+          -121.462267
+        ],
+        [
+          47.458269,
+          -121.462565
+        ],
+        [
+          47.458289,
+          -121.462855
+        ],
+        [
+          47.458473,
+          -121.462918
+        ],
+        [
+          47.45876,
+          -121.462771
+        ],
+        [
+          47.458897,
+          -121.462834
+        ],
+        [
+          47.458922,
+          -121.462684
+        ],
+        [
+          47.458993,
+          -121.462425
+        ],
+        [
+          47.459175,
+          -121.462334
+        ],
+        [
+          47.459504,
+          -121.461856
+        ],
+        [
+          47.459602,
+          -121.461469
+        ],
+        [
+          47.459527,
+          -121.461157
+        ],
+        [
+          47.459551,
+          -121.460482
+        ],
+        [
+          47.459606,
+          -121.45998
+        ],
+        [
+          47.459517,
+          -121.459756
+        ],
+        [
+          47.459159,
+          -121.459525
+        ],
+        [
+          47.458929,
+          -121.459482
+        ],
+        [
+          47.458799,
+          -121.459346
+        ],
+        [
+          47.458704,
+          -121.459156
+        ],
+        [
+          47.458711,
+          -121.459132
+        ],
+        [
+          47.458612,
+          -121.459128
+        ],
+        [
+          47.458472,
+          -121.459054
+        ],
+        [
+          47.458227,
+          -121.458883
+        ],
+        [
+          47.457812,
+          -121.458392
+        ],
+        [
+          47.457669,
+          -121.458296
+        ],
+        [
+          47.45765,
+          -121.45794
+        ],
+        [
+          47.457615,
+          -121.457716
+        ],
+        [
+          47.457597,
+          -121.457501
+        ],
+        [
+          47.457487,
+          -121.457182
+        ],
+        [
+          47.457373,
+          -121.456765
+        ],
+        [
+          47.457359,
+          -121.456336
+        ],
+        [
+          47.457079,
+          -121.456141
+        ],
+        [
+          47.45698,
+          -121.455812
+        ],
+        [
+          47.457011,
+          -121.455448
+        ],
+        [
+          47.457314,
+          -121.455072
+        ],
+        [
+          47.457463,
+          -121.454685
+        ],
+        [
+          47.457444,
+          -121.45385
+        ],
+        [
+          47.457335,
+          -121.452677
+        ],
+        [
+          47.457373,
+          -121.451835
+        ],
+        [
+          47.457799,
+          -121.450593
+        ],
+        [
+          47.457902,
+          -121.449896
+        ],
+        [
+          47.458087,
+          -121.44893
+        ],
+        [
+          47.458105,
+          -121.448169
+        ],
+        [
+          47.45813,
+          -121.44758
+        ],
+        [
+          47.457928,
+          -121.446837
+        ],
+        [
+          47.457681,
+          -121.44655
+        ],
+        [
+          47.457505,
+          -121.445959
+        ],
+        [
+          47.457211,
+          -121.44501
+        ],
+        [
+          47.456848,
+          -121.443922
+        ],
+        [
+          47.456845,
+          -121.442813
+        ],
+        [
+          47.456771,
+          -121.442164
+        ],
+        [
+          47.45638,
+          -121.441524
+        ],
+        [
+          47.455958,
+          -121.440481
+        ],
+        [
+          47.455437,
+          -121.439865
+        ],
+        [
+          47.455146,
+          -121.439535
+        ],
+        [
+          47.454712,
+          -121.438778
+        ],
+        [
+          47.454231,
+          -121.437857
+        ],
+        [
+          47.453767,
+          -121.436852
+        ],
+        [
+          47.453339,
+          -121.435881
+        ],
+        [
+          47.45262,
+          -121.43489
+        ],
+        [
+          47.452241,
+          -121.434366
+        ],
+        [
+          47.451904,
+          -121.433705
+        ],
+        [
+          47.451381,
+          -121.432425
+        ],
+        [
+          47.450623,
+          -121.431975
+        ],
+        [
+          47.450122,
+          -121.431077
+        ],
+        [
+          47.449745,
+          -121.430636
+        ],
+        [
+          47.449312,
+          -121.429735
+        ],
+        [
+          47.448974,
+          -121.429012
+        ],
+        [
+          47.448703,
+          -121.428425
+        ],
+        [
+          47.44795,
+          -121.427748
+        ],
+        [
+          47.447653,
+          -121.426654
+        ],
+        [
+          47.447345,
+          -121.425701
+        ],
+        [
+          47.447367,
+          -121.424868
+        ],
+        [
+          47.447243,
+          -121.424178
+        ],
+        [
+          47.447116,
+          -121.423549
+        ],
+        [
+          47.446522,
+          -121.423084
+        ],
+        [
+          47.446236,
+          -121.423332
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "ice",
+        "mixed"
+      ],
+      "timing": {
+        "totalHrs": 10,
+        "summitTimeHrs": 10,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "4:30 AM from the trailhead",
+        "sectionBreakdown": [
+          {
+            "hrs": 10,
+            "note": "Standard winter/spring outing from the Alpental upper lot: hike/skin past Source Lake into the basin below Chair Peak, then climb 4 short pitches of snow/ice up the North Face gull…",
+            "fromTo": "Car-to-car: approach, climb the North Face, descend",
+            "section": "Climb"
+          }
+        ]
+      },
+      "detailed_rack": "A few ice screws (3-4), 2-3 pickets, slings for frequent tree-anchor belays on P2/P3, and a couple of small rock pieces or pitons for the crux step; two tools and crampons are mandatory.",
+      "what_to_bring": [
+        "helmet",
+        "two tools",
+        "ice screws",
+        "pickets",
+        "avalanche gear (beacon/shovel/probe)"
+      ],
+      "pro_tips": [
+        "Check the NWAC avalanche forecast — the approach and face are avalanche terrain.",
+        "Go when the ice is in; conditions vary widely through winter.",
+        "Watch the summit cornice on exit.",
+        "The crux is a short (~10 ft) step below the summit block that can hit ~80°; it's sometimes bare 5.6 rock rather than ice, so be ready to climb it either way.",
+        "Start near the left-facing open book in the center of the face; the four moderate pitches below the crux rely mainly on tree belays rather than screws."
+      ],
+      "watch_out": [
+        "avalanche hazard",
+        "variable ice conditions",
+        "summit cornice",
+        "short winter days"
+      ],
+      "pro_needs": "Screws, pickets, and a few rock pieces for the mixed step(s).",
+      "best_season": "December through March; early season is often unconsolidated snow over rock, with more consistent ice building through the freeze-thaw cycles of January-March.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "Park at the upper Alpental parking lot (end of Alpental Road, shared with the Snow Lake / Source Lake trailhead). Pick up the maintained Alpental Valley trail, which runs along and above the South Fork Snoqualmie River on the old ski-area service road/cat track for about the first 0.5 mile before narrowing to a standard trail. Continue up-valley roughly 1.5-2 miles, climbing gently through forest and avalanche-path brush with Chair Peak's north side visible ahead; a boot path forks off the main Source Lake/Snow Lake trail toward Source Lake and the basin below Chair Peak's east/north aspect (~4200 ft). From the basin, ascend talus and (in season) a snow apron directly toward the base of the north face at the head of the Alpental cirque, aiming for the obvious snow/ice runnel system below the summit block. Total approach gain to the base is roughly 1,300-1,500 ft over about 2.5-3 miles one-way. Hazards: the valley floor and lower slopes cross active avalanche paths below Chair Peak, Snoqualmie Mountain, and The Tooth, so this is a serious slide-prone approach in winter/spring — most parties go early and move quickly through the runout zones; there is also a creek crossing near Source Lake that can be tricky at high flow, and the basin below the face holds a moat late-season that can complicate the final approach to the ice.",
+      "descent_text": "From the summit, most parties reverse toward the notch/col below the summit block and descend the gully on the south side of the east face (sometimes described as the same gully used by the Northeast Buttress descent). Expect a mix of downclimbing and rappelling: parties commonly do two double-rope (60m) rappels — the first from trees/rock anchors near the head of the gully with some downclimbing to reach the next station, and a second double-rope rappel that reaches easier snow near the gully's base — though some trip reports describe reaching the base with a single 60m rappel plus downclimbing depending on snow coverage. Anchors are a mix of natural gear (trees, rock horns/slings) rather than bolts; bring cord/webbing to back up or replace tattered slings. From the base of the gully, downclimb snow/talus east back into the Chair Peak basin and pick up the approach trail to Source Lake and out. Watch for cornices at the gully lip early season, loose rock in the gully when snow-free, and wet-slide hazard on the descent slopes during warm spring conditions.",
+      "bail": "Down-climb or rappel off screws/pickets/rock; the face is moderate but conditions-dependent.",
+      "pitch_detail": [
+        {
+          "crux": true,
+          "bolts": 0,
+          "grade": "AI3",
+          "notes": "Starts at the bergschrund/base of the face and climbs through a band of ice bulges on steepening ground up to roughly 70°; the center line generally holds better, more consolidated ice than the thin, downsloping rock slabs off to climber's right. Belay is built with screws once the angle eases on a shoulder partway up the face.",
+          "pitch": 1,
+          "anchor": "Ice screw anchor",
+          "lengthM": 55
+        },
+        {
+          "crux": false,
+          "bolts": 0,
+          "grade": "AI2",
+          "notes": "A full rope-length of sustained steep snow (roughly 50-60°) up the exposed face to a stout tree belay; conditions swing between firm neve good for standard axe placements and harder ice bulges that force a switch to front-pointing/piolet traction.",
+          "pitch": 2,
+          "anchor": "Tree (sling)",
+          "lengthM": 60
+        },
+        {
+          "crux": false,
+          "bolts": 0,
+          "grade": "AI2",
+          "notes": "Moderate snow and mixed ground weaving past small rock bands, using scrub trees for protection and the belay; in fast, stable conditions parties commonly simul-climb this pitch together with pitch 2 rather than belaying it separately.",
+          "pitch": 3,
+          "anchor": "Tree anchor",
+          "lengthM": 50
+        },
+        {
+          "crux": false,
+          "bolts": 0,
+          "grade": "AI3",
+          "notes": "Steepens again to 50-70° snow and ice on the final headwall, sometimes including a short verglassed mixed/rock step, to a small col about 60 ft below the summit block; the belay sits near the often-corniced summit ridge, watch for cornice lip. From here it's an unroped scramble of about 20 ft of blocky rock to the true summit.",
+          "pitch": 4,
+          "anchor": "Picket / tree belay",
+          "lengthM": 50
+        }
+      ],
+      "itinerary": {
+        "cal": "Typically climbed as a winter/spring snow-and-ice route (roughly Dec-April); becomes rock/scree and much less appealing once it melts out by summer.",
+        "days": [
+          {
+            "n": 1,
+            "note": "Standard winter/spring outing from the Alpental upper lot: hike/skin past Source Lake into the basin below Chair Peak, then climb 4 short pitches of snow/ice up the North Face gully to the notch and a short scramble to the summit. Most parties descend the standard (SE/backside) gully rather than reversing the face.",
+            "hours": 10,
+            "miles": 6.7,
+            "title": "Car-to-car: approach, climb the North Face, descend",
+            "gainFt": 3138,
+            "lossFt": 2600,
+            "packLb": 25,
+            "schedule": [
+              {
+                "time": "4:30 AM",
+                "label": "Leave Alpental upper parking lot",
+                "detail": "Alpine start with headlamps; snowshoes or skis common in winter/spring conditions."
+              },
+              {
+                "time": "+2 hr",
+                "label": "Reach Source Lake / basin below Chair Peak",
+                "detail": "Trip reports show this leg taking roughly 2-3 hours depending on trail-breaking."
+              },
+              {
+                "time": "+1 hr",
+                "label": "Rope up at base of North Face gully",
+                "detail": "Crampons and tools on; gear up for 4 pitches of moderate snow/ice."
+              },
+              {
+                "time": "+3-4 hr",
+                "label": "Climb the 4-pitch North Face",
+                "detail": "Grade II ice; pace varies a lot with conditions and party size/traffic."
+              },
+              {
+                "time": "+30 min",
+                "label": "Summit (6,238 ft)",
+                "detail": "Short scramble from the top of the last pitch."
+              },
+              {
+                "time": "+2-3 hr",
+                "label": "Descend standard gully back to Source Lake trail and car",
+                "detail": "Downclimb/rappel the notch, then descend the backside route to rejoin the approach trail."
+              }
+            ],
+            "objective": "Summit Chair Peak via the North Face ice/snow gully"
+          }
+        ],
+        "totalNote": "A single, long winter/spring day car-to-car: roughly 9-12 hours depending on conditions and traffic on the route, ~3,100-3,300 ft gain, 4 pitches of Grade II snow/ice.",
+        "sourceNote": "Based on CascadeClimbers.com trip reports for the North Face (e.g. 'Chair Peak North Face 12/16/2017' and 'Chair Peak North Face + The Tooth South Face Solo'), the Mountaineers.org 'Chair Peak/North Face (winter)' route page, and SummitPost's Chair Peak page; timing synthesized across multiple parties since single-team splits vary widely (one report logged ~16.5 hrs car-to-car with a slow multi-team descent, others closer to 9-10 hrs)."
+      },
+      "access": {
+        "fees": "Northwest Forest Pass or a day pass covers the Forest Service trailhead outside ski season; during winter, all parking in the Alpental Valley is managed by Summit at Snoqualmie — climbers need a Summit parking/uphill permit (currently about $25/vehicle on weekends and holidays; carpools of 3+ can often park free), separate from the Northwest Forest Pass.",
+        "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+        "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+        "group_limit": 12,
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+        "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads."
+      },
+      "road": {
+        "driveNote": "From I-90 Exit 52, follow Alpental Road ~1.5 mi to its end at the Alpental Ski Area / Snow Lake trailhead lots (el. ~3,100 ft). In winter, parking in the Alpental lots (A1-A7) requires a Summit at Snoqualmie parking or uphill permit rather than just a Forest Service pass."
+      },
+      "climate": {
+        "typical": "Snowy maritime winter climate; heavy snowfall and significant avalanche hazard.",
+        "bySeason": {
+          "fall": "Early-season ice forming; thin and variable.",
+          "spring": "Ice may persist early; rising avalanche/wet hazard.",
+          "summer": "Face melts out; not a winter route.",
+          "winter": "Primary season; ice and mixed in condition, but avalanche-prone."
+        },
+        "forecastZone": "Washington West Slopes Central Cascades / Snoqualmie Pass"
+      },
+      "emergency": {
+        "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA — 24-hr ER, (425) 831-2300; serious trauma cases are typically airlifted to Harborview Medical Center in Seattle."
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "Weekends during stable winter windows (especially after a good freeze-thaw), when the route is featured in guidebooks/Selected Climbs and run as a Mountaineers Intermediate Ice/Alpine Climb",
+        "solitudeRating": 2,
+        "estimatePerSeason": "Moderate-high for a technical winter route - trip reports describe multiple parties on route simultaneously on good-weather weekends, with parties passing/racing each other for the first pitch"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "High fitness for a pre-dawn (05:00) start, winter approach with possible postholing, 4 pitches of technical climbing, and a full winter alpine day",
+          "packWeight": "Moderate-heavy winter alpine kit: ice tools, screws, rope, rack, and layers for cold, exposed conditions"
+        },
+        "approachTime": "Roughly 2-3 hours from Alpental/Snoqualmie Pass in winter conditions; longer if breaking trail",
+        "requiredSkills": [
+          "leading water ice / mixed terrain",
+          "ice screw and rock anchor building, including multi-pitch transitions",
+          "winter navigation and cold-weather self-management on a pre-dawn start",
+          "avalanche hazard assessment for the approach and face",
+          "efficient movement to manage short winter daylight"
+        ],
+        "experienceLevel": "Experienced intermediate alpine/ice climber - this is graded Grade III winter ice/mixed and is run as an 'Intermediate' level objective by local clubs, not a beginner route"
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Winter into early spring when ice and snow are in condition, per existing best_season - core window is December through March",
+        "monthBreakdown": {
+          "April": {
+            "reason": "Face begins to melt out; rising avalanche and wet-slide hazard per existing climate data",
+            "status": "marginal"
+          },
+          "March": {
+            "reason": "Ice can persist into early spring per existing best_season, but rising temperatures begin increasing hazard",
+            "status": "good"
+          },
+          "January": {
+            "reason": "Core winter season with the most consistent ice/mixed conditions when stable",
+            "status": "optimal"
+          },
+          "December": {
+            "reason": "Primary season begins; ice and mixed terrain can be in condition but avalanche-prone",
+            "status": "good"
+          },
+          "February": {
+            "reason": "Continued core winter season, weather-dependent",
+            "status": "optimal"
+          },
+          "November": {
+            "reason": "Early-season ice is forming but thin and variable, per existing climate data",
+            "status": "marginal"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "Snowy maritime winter climate with heavy snowfall and significant avalanche hazard, per existing climate data",
+          "probability": "Storm cycles and heavy snow loading are common through the winter; conditions are highly weather-dependent and require checking NWAC and recent freeze-thaw history before attempting"
+        },
+        "exposure": "Sustained 4-pitch ice/mixed climbing above an avalanche-prone approach and face; a summit cornice adds fall hazard near the top, and short winter days combined with a serious avalanche-prone approach/face raise the consequence of any delay, per existing watch_out/hazards data",
+        "avalanche": {
+          "zone": "NWAC Snoqualmie Pass forecast zone",
+          "byMonth": {
+            "April": "Moderate",
+            "March": "Considerable",
+            "January": "Considerable",
+            "December": "Considerable",
+            "February": "Considerable",
+            "November": "Moderate"
+          }
+        },
+        "crevasses": "No named glacier, but a bergschrund/moat forms at the base of the route and in the approach basin, especially early and late season, and can complicate gaining the ice - inspect it before committing."
+      },
+      "data_quality": {
+        "gaps": [
+          "No precise party-per-season count found; crowding is documented qualitatively in club trip reports rather than as a hard statistic",
+          "NWAC has no zone specific to Chair Peak itself; Snoqualmie Pass is used as the nearest applicable proxy zone",
+          "Exact ice-condition timing (when the face 'comes in' each season) varies year to year and isn't precisely forecastable beyond the general Dec-March window already on file",
+          "GPS track sourced from public CalTopo map: https://caltopo.com/m/J7BA",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026 research pass"
+      },
+      "difficulty": {
+        "exposure": 5,
+        "physical": 4,
+        "technical": 1,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 47.459595,
+        "peakLng": -121.466875,
+        "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+        "trailheadLat": 47.44542,
+        "trailheadLng": -121.42353,
+        "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": [
+        {
+          "n": 1,
+          "notes": "First of two double-rope (60m) rappels; some downclimbing needed to reach the next station.",
+          "anchor": "trees/rock horn near head of gully",
+          "lengthM": 30
+        },
+        {
+          "n": 2,
+          "notes": "Second double-rope rappel reaching easier snow near the gully's base.",
+          "anchor": "not specified in source",
+          "lengthM": 30
+        }
+      ],
+      "rappel_count_note": "Some trip reports instead describe reaching the base with a single 60m rappel plus downclimbing rather than two rappels; 2 used as the more commonly reported sequence.",
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_peak_northeast_buttress",
+      "area_id": "wa_chair_peak",
+      "name": "Northeast Buttress",
+      "discipline": "alpine",
+      "grade": "Class 5.6",
+      "grade_system": "class",
+      "grade_num": 4,
+      "pitches": 4,
+      "length_m": 295,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "NE",
+      "season": "Dec-Mar (ice/mixed); also climbed as a rock scramble in summer",
+      "description": null,
+      "gear": [
+        "rope",
+        "rock rack to 2 inches",
+        "helmet",
+        "rappel gear"
+      ],
+      "hazards": [
+        "rockfall",
+        "variable rock quality",
+        "winter avalanche terrain"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "Chair Peak is the iconic chair-shaped summit at the head of the Alpental valley, one of the most recognizable peaks above Snoqualmie Pass. The northeast buttress is a classic moderate alpine rock climb, while the peak is equally famous as a winter mountaineering objective.",
+      "beta": "From the basin below Chair Peak's East Face, the route climbs a curving gully system on climber's right before trending up and left along the buttress crest to the summit. The technical crux in winter conditions is a short, steep ice bulge encountered partway up; in summer the route is straightforward exposed scrambling with occasional low-5th-class moves. Mountain Project describes it in 4 pitches with a 60m rope, though many parties simul-climb sections or break it into 5-6 shorter pitches, especially in early-season snow. Short approach and moderate climbing make it very popular and prone to queues on clear winter weekends.",
+      "turnaround": "Set a firm turnaround time before starting based on daylight, crowding, and forecast warming - the descent gully is exposed to rockfall and cornice hazard that worsens as the day warms, so parties should plan to be off the upper mountain and through the gully before afternoon sun softens the snow and ice.",
+      "auto_generated": true,
+      "alpine_grade": "AD",
+      "rock_grade": "5.4",
+      "ice_grade": "AI2-3",
+      "gain_ft": 3100,
+      "loss_ft": 3138,
+      "dist_km": 10.46,
+      "max_angle": 70,
+      "rappels": "1-2 rope-length rappels (up to 60m) through the cornice-prone SW-facing exit gully, combined with downclimbing",
+      "commitment": "III",
+      "face": "Northeast Buttress",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+      "comms": null,
+      "descent": "Rappel and downclimb to the standard route, then descend",
+      "obj_haz": [
+        "rockfall",
+        "avalanche",
+        "wet slide",
+        "cornice collapse",
+        "loose rock"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.44565,
+          "lng": -121.42365,
+          "elev": 3100,
+          "name": "Alpental / Snow Lake Trailhead",
+          "note": "Self-serve day-use fee kiosk (Northwest Forest Pass or $5/day); trail departs the north end of the upper Alpental Ski Area parking lot.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 47.453472,
+          "lng": -121.4479,
+          "elev": 3800,
+          "name": "Source Lake Trail junction",
+          "note": "Leave the maintained Snow Lake Trail here toward Source Lake and Chair's east basin, per the on-file approach beta.",
+          "type": "Junction",
+          "distMi": 1.8
+        },
+        {
+          "lat": 47.45608,
+          "lng": -121.455983,
+          "elev": 4900,
+          "name": "Thumb Tack",
+          "note": "Large rock landmark in Chair's east basin; skis or packs are often cached here before ascending toward the buttress.",
+          "type": "Junction",
+          "distMi": 2.4
+        },
+        {
+          "lat": 47.457384,
+          "lng": -121.460025,
+          "elev": 5100,
+          "name": "Buttress base / entry gully",
+          "note": "Blocky entry gully gains low-angle blocky rock leading toward the buttress prow; rope up here for sustained Class 5.6 climbing above.",
+          "type": "Junction",
+          "distMi": 2.7
+        },
+        {
+          "lat": 47.458687,
+          "lng": -121.464067,
+          "elev": 5800,
+          "name": "Tree cluster near buttress prow",
+          "note": "Notable stand of trees used as a belay stance on the ascent and as the first rappel anchor on the descent.",
+          "type": "Junction",
+          "distMi": 3
+        },
+        {
+          "lat": 47.4595564,
+          "lng": -121.466761,
+          "elev": 6238,
+          "name": "Chair Peak summit",
+          "note": "True summit is the uncorniced center section with rock underneath; the northeast side is heavily corniced.",
+          "type": "Summit",
+          "distMi": 3.2
+        },
+        {
+          "lat": 47.458502,
+          "lng": -121.463491,
+          "elev": 6000,
+          "name": "Notch/saddle in main ridge",
+          "note": "Downclimb the SE-facing gully from the true summit to this notch before the rappels; steep unconsolidated snow up to about 70 degrees.",
+          "type": "Hazard"
+        },
+        {
+          "lat": 47.457615,
+          "lng": -121.460744,
+          "elev": 5800,
+          "name": "Fixed rappel anchor at rock buttress",
+          "note": "Double-rope rappel from a fixed anchor here down to the tree cluster, then continue rappelling and downclimbing to the base of the buttress.",
+          "type": "Hazard"
+        }
+      ],
+      "gpx": [
+        [
+          47.444691,
+          -121.42313
+        ],
+        [
+          47.444759,
+          -121.423142
+        ],
+        [
+          47.44501,
+          -121.42333
+        ],
+        [
+          47.445161,
+          -121.423416
+        ],
+        [
+          47.445307,
+          -121.4235
+        ],
+        [
+          47.44543,
+          -121.42357
+        ],
+        [
+          47.44553,
+          -121.42369
+        ],
+        [
+          47.44571,
+          -121.42407
+        ],
+        [
+          47.44575,
+          -121.42431
+        ],
+        [
+          47.44573,
+          -121.42459
+        ],
+        [
+          47.44553,
+          -121.42528
+        ],
+        [
+          47.44542,
+          -121.42556
+        ],
+        [
+          47.44531,
+          -121.42595
+        ],
+        [
+          47.4453,
+          -121.42617
+        ],
+        [
+          47.44534,
+          -121.42646
+        ],
+        [
+          47.44541,
+          -121.42659
+        ],
+        [
+          47.44588,
+          -121.42728
+        ],
+        [
+          47.44619,
+          -121.42788
+        ],
+        [
+          47.44677,
+          -121.42872
+        ],
+        [
+          47.44749,
+          -121.42957
+        ],
+        [
+          47.4476,
+          -121.42975
+        ],
+        [
+          47.44774,
+          -121.43003
+        ],
+        [
+          47.448095,
+          -121.431105
+        ],
+        [
+          47.450206,
+          -121.436434
+        ],
+        [
+          47.453195,
+          -121.442785
+        ],
+        [
+          47.45421,
+          -121.445403
+        ],
+        [
+          47.455429,
+          -121.452184
+        ],
+        [
+          47.456329,
+          -121.45669
+        ],
+        [
+          47.458998,
+          -121.457891
+        ],
+        [
+          47.459869,
+          -121.46081
+        ],
+        [
+          47.459433,
+          -121.464393
+        ],
+        [
+          47.459462,
+          -121.464425
+        ],
+        [
+          47.459919,
+          -121.464554
+        ],
+        [
+          47.45984,
+          -121.465605
+        ],
+        [
+          47.459586,
+          -121.466292
+        ],
+        [
+          47.459789,
+          -121.466872
+        ],
+        [
+          47.459796,
+          -121.466947
+        ],
+        [
+          47.459796,
+          -121.466882
+        ]
+      ],
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "rock",
+        "scrambling"
+      ],
+      "timing": {
+        "totalHrs": 11.5,
+        "summitTimeHrs": 11.5,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": "5:00 AM from the trailhead",
+        "sectionBreakdown": [
+          {
+            "hrs": 11.5,
+            "note": "A popular moderate alpine rock outing from the Alpental upper lot: approach past Source Lake into the basin, then climb 4-5 pitches of easy class 3-4 rock with big exposure up the …",
+            "fromTo": "Car-to-car: approach, climb the Northeast Buttress, descend",
+            "section": "Climb"
+          }
+        ]
+      },
+      "detailed_rack": "A single rack of nuts and cams to ~2 in, a few slings/draws, and rappel gear covers the rock route; parties attempting it as a winter line add 2-3 ice screws, a picket or two, and a second tool.",
+      "what_to_bring": [
+        "rock rack to 2 inches",
+        "helmet",
+        "rappel gear"
+      ],
+      "pro_tips": [
+        "A Cascade classic, popular in both summer and winter",
+        "Helmet essential for the variable rock",
+        "From the base, follow the blocky gully down-right of the ridge divide, then angle left across slabby ledges to a cluster of trees near the buttress's prow before following the crest to the top — about 400 ft of mostly Class 3-4 with one short 5.6 step."
+      ],
+      "watch_out": [
+        "rockfall",
+        "loose blocks on the buttress"
+      ],
+      "pro_needs": "Placements are sparse on the lower scrambling terrain (roughly 2-3 solid pieces per rope-length); focus small cams and nuts on the steeper pitches, plus ice screws for the crux ice bulge in winter conditions.",
+      "best_season": "Late July through September for the snow-free rock route; the same buttress is also climbed as a winter ice/mixed line (roughly WI2-3) from about December through March when it's in condition.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "From the upper Alpental parking lot (I-90 Exit 52, end of Alpental Road), follow the Alpental Valley/Source Lake trail: the first 0.5 mile follows the old ski-area cat track, then it becomes a standard trail climbing gently through forest for about 0.75 mile to Source Lake (roughly 1.25-1.75 miles and a few hundred feet of gain from the car). From Source Lake, leave the maintained trail and head cross-country/up boot path toward the basin below Chair Peak's east face (~4200 ft), a further 0.5-1 mile with steeper talus, heather, and (early/mid season) snow slopes. From the basin, climb a short snow gully for approximately 300 ft to gain the crest of the ridge that forms the Northeast Buttress, then follow the ridge to the start of the technical climbing. Total approach is on the order of 2-2.5 miles and 1,700-2,000 ft of gain one-way to the base of the buttress. Hazards: the basin and approach gully sit below avalanche terrain off Chair Peak and Snoqualmie Mountain — this is a classic early-season slide path, and multiple trip reports describe deep postholing, wet-slab activity, and wind-loaded slopes here; a rope/axe/crampons are typically carried from the basin onward given the exposure of the approach gully itself.",
+      "descent_text": "From the true summit, scramble/downclimb back to the notch, then descend the steep SW/S-facing gully (often described as heavily corniced at the lip, especially early season — probe carefully before committing). At the base of the initial downclimb, most parties make two rappels to get through the steepest ice/rock step: trip reports describe a first rappel of roughly 30m down the ice pitch and a second rappel of a full 60m (two ropes, or a single 60m/30m-with-a-rope-tension-release device) down the climber's-left entry pitch, for a combined descent gully that is commonly quoted as two 30m-ish rappels or one long ~60m rappel depending on rope setup and snow coverage — the exact number varies by party and season, with some Mountaineers/guiding trip reports noting a single 60m rappel off a fixed piton/rock anchor is sufficient when an intermediate anchor lets one rope reach the base, while others (especially in leaner ice years) break it into two shorter rappels. Anchors are natural/fixed gear, not bolted: a rock horn or rock-buttress station on the north side of the notch tower (sometimes buried in snow or built as a v-thread/thread anchor in ice), and lower down a tree anchor (reported with tattered old webbing — back it up). Bring a single 60m rope as the baseline plan, but be ready to build/rebuild anchors and consider a tag line or rappel device with an ascend-back-up option (e.g., Micro Traxion/Escaper) since anchor quality is inconsistent season to season. After the rappels, plunge-step or downclimb 35-40 degree snow to the base of the east face and traverse east to rejoin the approach trail. Cornice collapse at the gully lip, rockfall/icefall in the couloir, and wet-slide hazard on the lower snow apron are the primary descent hazards.",
+      "bail": "The lower buttress has natural retreat options (trees, boulders for anchors) - parties can rappel or downclimb back the way they came before committing to the upper ice bulge/steeper pitches. Leave slings/rap rings if bailing mid-route.",
+      "pitch_detail": [
+        {
+          "grade": "Class 4 / M1-4 (var.)",
+          "notes": "S-shaped gully on climber's right; conditions vary from easy snow to mixed climbing; a left slab variation exists. Tree anchor.",
+          "pitch": "P1"
+        },
+        {
+          "grade": "Easy snow",
+          "notes": "Long pitch (70-80m) to the base of the ice bulge.",
+          "pitch": "P2"
+        },
+        {
+          "grade": "AI2-3 (winter) / 5.4-5.6 (dry)",
+          "notes": "The route's crux - an obvious, steep ice bulge (or rock step when dry); awkward anchor placement above.",
+          "pitch": "P3"
+        },
+        {
+          "grade": "Steep snow / Class 3-4",
+          "notes": "Leads to the summit saddle; many parties unrope for the final scrambling.",
+          "pitch": "P4"
+        }
+      ],
+      "itinerary": {
+        "cal": "",
+        "days": [
+          {
+            "n": 1,
+            "note": "A popular moderate alpine rock outing from the Alpental upper lot: approach past Source Lake into the basin, then climb 4-5 pitches of easy class 3-4 rock with big exposure up the buttress to the summit. Descent is via rappel/downclimb to the standard route and back down the approach.",
+            "hours": 11.5,
+            "miles": 6.5,
+            "title": "Car-to-car: approach, climb the Northeast Buttress, descend",
+            "gainFt": 3100,
+            "lossFt": 3100,
+            "packLb": 20,
+            "schedule": [
+              {
+                "time": "5:00 AM",
+                "label": "Leave Alpental upper parking lot",
+                "detail": "Headlamp start; snow travel to Source Lake and the basin is common outside of summer."
+              },
+              {
+                "time": "+3.5 hr",
+                "label": "Reach base of the Northeast Buttress",
+                "detail": "One detailed trip report logged 3 hr 24 min car-to-base."
+              },
+              {
+                "time": "+2.5-3 hr",
+                "label": "Climb the buttress (4-5 pitches, class 3-4)",
+                "detail": "Same report logged 2 hr 39 min base-to-summit."
+              },
+              {
+                "time": "+30 min",
+                "label": "Summit (6,238 ft)",
+                "detail": "Brief stop for views/food before starting down."
+              },
+              {
+                "time": "+1.75 hr",
+                "label": "Rappel/downclimb back to base of climb",
+                "detail": "Reverses onto the standard route rather than down the buttress itself."
+              },
+              {
+                "time": "+2.75 hr",
+                "label": "Descend to car",
+                "detail": "Retrace the approach back to the Alpental lot."
+              }
+            ],
+            "objective": "Summit Chair Peak via the Northeast Buttress"
+          }
+        ],
+        "totalNote": "A single long day car-to-car, about 10-12 hours; one well-documented trip logged 11 hr 22 min total with roughly 3,100 ft of gain over the round trip.",
+        "sourceNote": "Estimated gain/loss from the Alpental trailhead elevation (~3,100 ft) to the Chair Peak summit (6,238 ft) since gainFt was not on file; timing drawn from CascadeClimbers.com Northeast Buttress trip reports (multiple winter TRs from 2013-2021) and the Mountaineers.org 'Chair Peak/Northeast Buttress' route page, which describes it as 5-8 hours trailhead-to-summit for the climb itself."
+      },
+      "access": {
+        "fees": "Northwest Forest Pass ($30/year) or a $5 day pass required at the Snow Lake/Alpental trailhead; no separate wilderness permit fee, though a free self-issue wilderness permit may be posted at the trailhead.",
+        "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+        "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+        "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+        "group_limit": 12,
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+        "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads."
+      },
+      "road": {
+        "driveNote": "From I-90 Exit 52, turn onto Alpental Road and drive ~1.5 mi to its end at the large gravel Snow Lake Trailhead lot (el. ~3,100 ft)."
+      },
+      "climate": {
+        "typical": "Very wet maritime climate; rock best mid- to late summer, classic winter conditions when stable.",
+        "bySeason": {
+          "fall": "Good clear window",
+          "spring": "Snow climb conditions; avalanche terrain",
+          "summer": "Best rock window with dry conditions",
+          "winter": "Premier winter alpine objective, serious avalanche terrain"
+        },
+        "forecastZone": "Snoqualmie Pass"
+      },
+      "emergency": {
+        "rangerStation": "Snoqualmie Ranger District, North Bend office, 902 SE North Bend Way Bldg 1, North Bend, WA, (425) 888-1421 (open Mon/Tue/Thu 9am-3pm).",
+        "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA — 24-hr ER, (425) 831-2300; more serious trauma cases from the Pass are typically airlifted to Harborview Medical Center in Seattle."
+      },
+      "lists": null,
+      "crowds": {
+        "peakTraffic": "Weekends July-August for the summer rock line; weekends Dec-March (especially after a freeze-thaw cycle) for the winter ice/mixed ascent",
+        "solitudeRating": 1,
+        "estimatePerSeason": "High - widely cited as one of the most popular alpine ice routes in Washington in winter, and a standard Mountaineers Basic/Intermediate rock climb in summer; short 2-hour approach drives heavy weekend traffic in both seasons"
+      },
+      "partner_requirements": {
+        "fitnessSpec": {
+          "hiking": "Moderate-high fitness for a ~2 hour approach with real elevation gain from Alpental/Snow Lake trailhead into the Source Lake basin, plus the multi-pitch climb and descent, totaling a 5-8 hour car-to-car day",
+          "packWeight": "Light-moderate day pack (rock rack, rope, helmet, approach shoes/boots); heavier in winter with ice tools/screws and extra layers"
+        },
+        "approachTime": "About 2 hours from the Alpental/Snow Lake trailhead to the base of the buttress",
+        "requiredSkills": [
+          "4th class and low 5th class (5.6) scrambling with exposure",
+          "rope management and belaying on a multi-pitch alpine route",
+          "anchor building and rappelling",
+          "rockfall awareness and loose-rock management (serious party-caused rockfall hazard)",
+          "basic route-finding in an alpine cirque"
+        ],
+        "experienceLevel": "Intermediate alpine climber - comfortable on low 5th class rock with sustained exposure and loose rock; prior multi-pitch/scrambling experience expected (this is a standard Mountaineers 'Basic Alpine Climb' objective)"
+      },
+      "seasonal_guidance": {
+        "optimalWindow": "Late July through September for dry rock conditions (best in August); the same buttress line also forms a separate winter alpine ice/mixed objective when consolidated",
+        "monthBreakdown": {
+          "May": {
+            "reason": "Snow climb/avalanche terrain per existing climate data; not a rock or reliable ice season",
+            "status": "risky"
+          },
+          "July": {
+            "reason": "Route typically dries out by mid-to-late July; some early-season snow patches possible on approach",
+            "status": "good"
+          },
+          "June": {
+            "reason": "Approach gully and lower buttress often still hold snow/ice; not yet a dry rock route",
+            "status": "marginal"
+          },
+          "April": {
+            "reason": "Spring transition - rising avalanche and wet-slide hazard, deteriorating ice",
+            "status": "risky"
+          },
+          "March": {
+            "reason": "Late winter ice can still be in condition, but spring warming begins increasing hazard",
+            "status": "good"
+          },
+          "August": {
+            "reason": "Best window for dry rock per existing best_season data; most stable weather of the summer",
+            "status": "optimal"
+          },
+          "January": {
+            "reason": "Core winter ice season when conditions are in and avalanche hazard is manageable",
+            "status": "good"
+          },
+          "October": {
+            "reason": "Early snow/wet weather can arrive; shorter daylight window",
+            "status": "marginal"
+          },
+          "December": {
+            "reason": "Winter ice/mixed conditions can come in; requires stable, consolidated ice per existing best_season",
+            "status": "good"
+          },
+          "February": {
+            "reason": "Continued winter ice season, weather-dependent",
+            "status": "good"
+          },
+          "November": {
+            "reason": "Transitional season - unstable early-season snowpack, not yet a reliable ice route",
+            "status": "risky"
+          },
+          "September": {
+            "reason": "Still generally dry with cooler temps; days shortening",
+            "status": "good"
+          }
+        }
+      },
+      "seasonal_hazards": {
+        "weather": {
+          "typical": "Very wet maritime climate outside the summer window; rock climbing is only reliably dry mid-to-late summer, per existing climate data",
+          "probability": "Afternoon thunderstorms possible in August; winter ascents are weather- and avalanche-dependent and require a stable high-pressure window"
+        },
+        "exposure": "Sustained exposure along the buttress crest with a serious, well-documented rockfall hazard onto climbers below (loose blocks); a fall on the low-5th-class crux or upper 4th-class terrain would be serious, and hazard increases with multiple parties stacked on route - consider climbing mid-week to reduce this",
+        "avalanche": {
+          "zone": "NWAC Snoqualmie Pass forecast zone",
+          "byMonth": {
+            "May": "Moderate",
+            "July": "Low",
+            "June": "Moderate",
+            "April": "Considerable",
+            "March": "Considerable",
+            "August": "Low",
+            "January": "Considerable",
+            "October": "Moderate",
+            "December": "Considerable",
+            "February": "Considerable",
+            "November": "Considerable",
+            "September": "Low"
+          }
+        },
+        "crevasses": "N/A - no glacier travel"
+      },
+      "data_quality": {
+        "gaps": [
+          "No official party-count data exists; 'most popular alpine ice route in WA' and heavy weekend rock traffic are consistent qualitative claims from multiple sources (Mountaineers, trip reports, guide services) but not a hard number",
+          "NWAC does not have a zone drawn specifically around Chair Peak; Snoqualmie Pass is the nearest applicable forecast zone, used as a proxy",
+          "Month-by-month avalanche ratings are reasoned estimates based on the existing climate/season data, not pulled from a specific historical NWAC dataset for this exact route",
+          "No public GPS track found for this route as of this research pass.",
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM",
+        "lastVerified": "2026 research pass"
+      },
+      "difficulty": {
+        "exposure": 4,
+        "physical": 3,
+        "technical": 2,
+        "commitment": 2,
+        "routefinding": 4
+      },
+      "approach_logistics": {
+        "peakLat": 47.459595,
+        "peakLng": -121.466875,
+        "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+        "trailheadLat": 47.44542,
+        "trailheadLng": -121.42353,
+        "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": [
+        {
+          "n": 1,
+          "notes": "Rappel down the steep ice pitch just below the initial downclimb from the notch.",
+          "anchor": "rock horn/buttress station, north side of notch tower",
+          "lengthM": 30
+        },
+        {
+          "n": 2,
+          "notes": "Full-length rappel (two ropes, or a single 60m) down the climber's-left entry pitch to the base.",
+          "anchor": "tree anchor (old/tattered webbing reported)",
+          "lengthM": 60
+        }
+      ],
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_peak_northwest_ridge",
+      "area_id": "wa_chair_peak",
+      "name": "Northwest Ridge",
+      "discipline": "alpine",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 7,
+      "pitches": 6,
+      "length_m": 305,
+      "sort_order": null,
+      "stars": null,
+      "fa": null,
+      "lat": null,
+      "lng": null,
+      "aspect": "NW",
+      "season": "Summer-Fall",
+      "description": null,
+      "gear": [
+        "Alpine rack (small-to-medium cams/nuts)",
+        "70m rope",
+        "Helmet"
+      ],
+      "hazards": [
+        "Loose, broken rock typical of the ridge",
+        "Sparse protection on sustained sections"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A longer, sustained 5.7 ridge climb on Chair Peak, following the crest over false summits with a mix of solid and notably loose rock — the longest documented rock route on the peak by pitch count.",
+      "beta": "Mountain Project lists this as a 6-pitch, 1,000 ft (303 m), Grade II, 5.7 trad route reached via the East Face approach to 'Thumbtack Rock' before angling right over the ridge. It has a low average rating (2/5 stars) reflecting run-out climbing and poor rock quality in places.",
+      "turnaround": "With 6 pitches, run-out sections, and poor rock in places, budget conservatively and turn around early enough to negotiate the multi-rappel descent gully in daylight.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.7",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": 3138,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Multiple rappels (from a tree anchor) down the second gully east of the false summits to reach the East Face, then a scree descent to Thumbtack Rock",
+      "commitment": "II",
+      "face": "Northwest Ridge",
+      "permit": null,
+      "comms": null,
+      "descent": "Head south over false summits to a tree with rappel anchors at the second gully heading east; make multiple rappels through the gully to the East Face, then descend scree back to Thumbtack Rock",
+      "obj_haz": [
+        "loose rock",
+        "runout climbing"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.4454,
+          "lng": -121.4236,
+          "name": "Alpental parking lot / Snow Lake TH #1013",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.459595,
+          "lng": -121.466875,
+          "name": "Chair Peak summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": null,
+        "recommendedStart": null
+      },
+      "detailed_rack": "A single alpine rack emphasizing smaller pieces (multiple 0.4-size cams reported as useful); a 70m rope is recommended for the sustained pitch lengths and to reach retreat/rappel anchors.",
+      "what_to_bring": [
+        "Helmet",
+        "Approach shoes for the scree/gully descent",
+        "Extra care on loose rock sections"
+      ],
+      "pro_tips": [
+        "A 70m rope is worth the extra length for reaching rappel/retreat anchors",
+        "Expect a quieter route than the Northeast Buttress or East Face"
+      ],
+      "watch_out": [
+        "Poor rock quality in many sections",
+        "Run-out ridge climbing with unprotected moves on vertical faces",
+        "Navigating past multiple false summits before the true summit"
+      ],
+      "pro_needs": "Protection is often sparse given the ridge's broken, sometimes loose rock; runouts on vertical sections are reported.",
+      "best_season": "Summer through fall rock conditions, per Mountain Project's season listing.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "Follow the East Face approach to the 'Thumbtack Rock' landmark, then head right up a grassy gully over the ridge toward the start of the Northwest Ridge.",
+      "descent_text": "From the true summit, traverse south across a series of false summits until reaching a tree rigged with rappel anchors at the second gully encountered heading east. Make multiple rappels down this gully to reach the East Face proper, then descend scree slopes back to Thumbtack Rock and the standard approach path.",
+      "bail": "Retreat is possible along the ridge by reversing to easier ground and downclimbing back toward the East Face approach; a 70m rope is recommended to have the reach for retreat rappels if needed.",
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": "Summit at Snoqualmie parking fee for the Alpental lot",
+        "permit": "Free self-issue Alpine Lakes Wilderness day-use permit at the trailhead kiosk",
+        "closures": null,
+        "landManager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Alpine Lakes Wilderness",
+        "passRequired": "Summit at Snoqualmie parking permit"
+      },
+      "road": {
+        "name": "Alpental Road (Summit at Snoqualmie access road, off SR-906)",
+        "status": "Paved, plowed year-round for ski-area operations",
+        "driveNote": "From I-90 Exit 52, follow SR-906/Alpental Rd about 1.1-1.5 miles to the Alpental base lots (~3,100 ft).",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Good until early snow arrives",
+        "spring": "Approach can hold lingering snow",
+        "summer": "Prime season",
+        "winter": "Not documented as a winter objective",
+        "typical": "Wet, maritime Cascade climate; this is a dry-season rock route",
+        "forecastZone": null
+      },
+      "emergency": {
+        "notes": "King County Sheriff's Office coordinates SAR call-outs for the Alpental/Snow Lake/Chair Peak backcountry",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, Mt. Baker-Snoqualmie NF: (425) 888-1421, 902 SE North Bend Way, North Bend, WA",
+        "nearestHospital": "Snoqualmie Valley Hospital (24/7 ED), 9801 Frontier Ave SE, Snoqualmie, WA, (425) 831-2300 — expect transfer to a larger Seattle-area hospital for major trauma",
+        "sheriffDispatch": "King County Sheriff's Office non-emergency (206) 296-3311; emergency 911"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_peak_voie_de_chaise",
+      "area_id": "wa_chair_peak",
+      "name": "Voie de Chaise",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 9,
+      "pitches": 8,
+      "length_m": 244,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Ian Nicholson and Tino Villanueva, summer/fall 2022",
+      "lat": null,
+      "lng": null,
+      "aspect": "E",
+      "season": "Summer-Fall",
+      "description": null,
+      "gear": [
+        "11-12 quickdraws",
+        "60m lead rope + rappel rope (for double-rope rappel)",
+        "Helmet",
+        "Small cam/nut rack for belays (optional)"
+      ],
+      "hazards": [
+        "Loose rock sections higher on the route",
+        "Tight rappel-rope margins requiring careful rope management"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A modern 8-pitch sport-oriented rock line up the right side of the East Face, established in 2022 — the longest fully-pitched rock route documented on Chair Peak, finishing with a short scramble to the summit.",
+      "beta": "First climbed by Ian Nicholson and Tino Villanueva in summer/fall 2022, this 5.9- (Grade II) route climbs 8 pitches (800 ft / 242 m total, including a summit scramble) of slab and steeper rock on the East Face, protected mostly by bolts (11-12 quickdraws recommended). The crux is a 70 ft, 5.9 pitch (P5); pitches 6-7 have notably looser rock.",
+      "turnaround": "With 8 pitches plus a rope-stretching double-rope rappel descent, budget generously — parties moving slowly on the upper, looser pitches (6-7) should turn around rather than get caught rappelling after dark.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.9-",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": 3138,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Rappel the route with two 60m ropes tied together (several stations leave under 5 ft of rope to spare); alternatively descend the East Gully",
+      "commitment": "II",
+      "face": "East Face (right side)",
+      "permit": null,
+      "comms": null,
+      "descent": "Rappel the route with two joined 60m ropes, or descend via the East Gully",
+      "obj_haz": [
+        "loose rock (P6-P7)",
+        "rockfall on descent"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.4454,
+          "lng": -121.4236,
+          "name": "Alpental parking lot / Snow Lake TH #1013",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.459595,
+          "lng": -121.466875,
+          "name": "Chair Peak summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 2.5,
+        "recommendedStart": null
+      },
+      "detailed_rack": "A single 60m rope plus a second rope (or a 70m+ tag line) for the double-rope rappel descent; 11-12 quickdraws cover the mostly bolted protection, with perhaps a few small cams/nuts for belay backup.",
+      "what_to_bring": [
+        "Helmet",
+        "Approach shoes for the talus/scree approach",
+        "Extra prusik/rappel backup given the rope-stretching rappels",
+        "Sun protection — east-facing and exposed most of the morning"
+      ],
+      "pro_tips": [
+        "Tie stopper knots in your rope ends — several rappel stations leave under 5 ft of spare rope",
+        "Loose rock increases on pitches 6-7, so test holds carefully"
+      ],
+      "watch_out": [
+        "Loose rock on the upper pitches (6-7)",
+        "Rope-stretching rappels with minimal margin at some stations",
+        "Rockfall potential during the rappel descent"
+      ],
+      "pro_needs": "Predominantly bolt-protected — 11-12 quickdraws is the quoted rack — which makes this notably better protected than Chair Peak's older trad lines.",
+      "best_season": "Summer through fall once the approach snow patch has melted out and the rock is dry.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "From the Alpental parking lot, follow the standard summer trail toward Source Lake and the East Face approach, crossing talus fields and a snow patch, then a final stretch of loose scree to the base of the route; about 2-3 hours from the parking lot.",
+      "descent_text": "Most parties rappel the route itself using two 60m ropes tied together — several rap stations leave less than 5 ft of rope to spare, so careful rope management and knots in the ends are essential. The East Gully offers an alternative walk-off/scramble descent.",
+      "bail": "Retreat by rappelling the bolted anchors back down the route from any pitch; the closely bolted nature of the line makes early bailout straightforward compared to the peak's older trad routes.",
+      "pitch_detail": [
+        {
+          "grade": "5.6-5.7",
+          "notes": "Slab climbing",
+          "pitch": "P1",
+          "lengthM": 36.6
+        },
+        {
+          "grade": "5.4-5.8",
+          "notes": null,
+          "pitch": "P2",
+          "lengthM": 30.5
+        },
+        {
+          "grade": "5.7",
+          "notes": "Slab",
+          "pitch": "P3",
+          "lengthM": 30.5
+        },
+        {
+          "grade": "5.6",
+          "notes": null,
+          "pitch": "P4",
+          "lengthM": 27.4
+        },
+        {
+          "grade": "5.9",
+          "notes": "Crux pitch",
+          "pitch": "P5",
+          "lengthM": 21.3
+        },
+        {
+          "grade": "Mostly easy",
+          "notes": "Looser rock begins",
+          "pitch": "P6",
+          "lengthM": 30.5
+        },
+        {
+          "grade": "5.6",
+          "notes": "Loose rock",
+          "pitch": "P7",
+          "lengthM": 30.5
+        },
+        {
+          "grade": "3rd-4th class scramble",
+          "notes": "Scramble to the summit",
+          "pitch": "P8",
+          "lengthM": 36.6
+        }
+      ],
+      "itinerary": "Depart Alpental in the morning; 2-3 hrs approach to the East Face; climb the 8-pitch route; rappel the route (two 60m ropes) or descend the East Gully back to the basin.",
+      "access": {
+        "fees": "Summit at Snoqualmie parking fee for the Alpental lot",
+        "permit": "Free self-issue Alpine Lakes Wilderness day-use permit at the trailhead kiosk",
+        "closures": null,
+        "landManager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Alpine Lakes Wilderness",
+        "passRequired": "Summit at Snoqualmie parking permit"
+      },
+      "road": {
+        "name": "Alpental Road (Summit at Snoqualmie access road, off SR-906)",
+        "status": "Paved, plowed year-round for ski-area operations",
+        "driveNote": "From I-90 Exit 52, follow SR-906/Alpental Rd about 1.1-1.5 miles to the Alpental base lots (~3,100 ft).",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Good into fall until early snow arrives",
+        "spring": "Approach snow patch typically still present",
+        "summer": "Prime season once the approach snow patch melts out",
+        "winter": "Not a winter objective",
+        "typical": "Wet, maritime Cascade climate; this is a dry-season rock route",
+        "forecastZone": null
+      },
+      "emergency": {
+        "notes": "King County Sheriff's Office coordinates SAR call-outs for the Alpental/Snow Lake/Chair Peak backcountry",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, Mt. Baker-Snoqualmie NF: (425) 888-1421, 902 SE North Bend Way, North Bend, WA",
+        "nearestHospital": "Snoqualmie Valley Hospital (24/7 ED), 9801 Frontier Ave SE, Snoqualmie, WA, (425) 831-2300 — expect transfer to a larger Seattle-area hospital for major trauma",
+        "sheriffDispatch": "King County Sheriff's Office non-emergency (206) 296-3311; emergency 911"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_peak_west_ridge",
+      "area_id": "wa_chair_peak",
+      "name": "West Ridge",
+      "discipline": "trad",
+      "grade": null,
+      "grade_system": "yds",
+      "grade_num": 7,
+      "pitches": null,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Martin Volken and party, reported July 25, 2007",
+      "lat": null,
+      "lng": null,
+      "aspect": "W",
+      "season": "Spring-mid-summer (light crampons/axe useful until mid-summer)",
+      "description": null,
+      "gear": [
+        "60m rope",
+        "Medium alpine rack",
+        "Light crampons",
+        "Light ice axe (early/mid-season)",
+        "Helmet"
+      ],
+      "hazards": [
+        "Loose rock in sections of the ridge",
+        "Limited protection on specific short sections",
+        "Early-season snow/glide-crack hazard on the approach"
+      ],
+      "verif": null,
+      "source": "wa-enrich-batch",
+      "overview": "A more remote, adventurous alpine rock line up Chair Peak's west side, climbing a narrow entrance couloir to the ridge crest and then following the West Ridge to the summit — less traveled and more exposed than the Northeast Buttress.",
+      "beta": "Established by Pro Guiding Service founder Martin Volken (first documented ascent reported July 25, 2007), the route is graded Alpine Grade 2+ / 5.7. It starts up a narrow 220 ft couloir to the low point of the ridge just east of a distinct tower (2 pitches of 5.7 to the top of the gully), then follows the ridge crest to the summit over varying rock quality and exposure.",
+      "turnaround": "This is a longer, more exposed, and less-traveled line than the Northeast Buttress — set a turnaround time that accounts for slower route-finding on the ridge and the 1-2 hour descent.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.7",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": 3138,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "Standard descent via the south-side couloir into the narrow rappel gully (exact rappel count not documented)",
+      "commitment": "III",
+      "face": "West Ridge",
+      "permit": null,
+      "comms": null,
+      "descent": "Descend the standard couloir on the south side of the peak, which leads into the narrow rappel gully",
+      "obj_haz": [
+        "loose chockstone",
+        "exposed ridge climbing"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.4454,
+          "lng": -121.4236,
+          "name": "Alpental parking lot / Snow Lake TH #1013",
+          "type": "trailhead",
+          "distMi": null,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.459595,
+          "lng": -121.466875,
+          "name": "Chair Peak summit",
+          "type": "summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": null,
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": 3.5,
+        "descentTimeHrs": 1.5,
+        "approachTimeHrs": 2.25,
+        "recommendedStart": null
+      },
+      "detailed_rack": "A 60m rope and a medium alpine rack; light crampons and a light ice axe are recommended into early summer.",
+      "what_to_bring": [
+        "Helmet",
+        "Light crampons and axe for early-season snow/glide cracks on the approach",
+        "Extra care around the loose lower chockstone"
+      ],
+      "pro_tips": [
+        "A more technical, exposed, and adventurous alternative to the Northeast Buttress for parties wanting a quieter line on the peak",
+        "Expect varying rock quality along the ridge — test holds"
+      ],
+      "watch_out": [
+        "Loose lower chockstone",
+        "Poorly protected short headwall section",
+        "Early-season glide cracks on the approach slabs"
+      ],
+      "pro_needs": "The first 15m into the entrance couloir has no protection but stays moderate; good protection resumes on the 5.7 climbing to the ridge crest. A loose chockstone low on the route and a poorly protected 10 ft headwall are specific noted concerns.",
+      "best_season": "Spring into mid-summer; light crampons and a light axe are recommended until mid-summer per Pro Guiding Service, after which the route goes to dry rock.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "From the standard Chair Peak trailhead used for the Northeast Buttress (Alpental lot), traverse slabby terrain that can be snowy and glide-cracked in early season to reach the base of the route, roughly 2-2.5 hours from the parking area.",
+      "descent_text": "From the summit, descend via the standard south-side couloir, which funnels into the same narrow rappel gully used by the other Chair Peak routes; reported descent time is about 1-2 hours back to the Chair Peak basin.",
+      "bail": "Retreat by downclimbing/rappelling the entrance couloir before committing to the ridge proper; once on the ridge crest, retreat options are more limited and route-dependent.",
+      "pitch_detail": [
+        {
+          "grade": "5.7 (first 15m unprotected but moderate)",
+          "notes": "220 ft couloir to the low point of the West Ridge, just east of a distinct tower",
+          "pitch": "Entrance couloir",
+          "lengthM": 67
+        },
+        {
+          "grade": "5.7",
+          "notes": "A couple of short pitches past a chockstone-capped couloir to the base of a short slab; individual lengths not documented",
+          "pitch": "Ridge pitches",
+          "lengthM": null
+        }
+      ],
+      "itinerary": "Depart Alpental; 2-2.5 hrs approach to the base of the 220 ft entrance couloir; 3-4 hrs of climbing to the summit; 1-2 hrs descent back to the Chair Peak basin via the south-side couloir.",
+      "access": {
+        "fees": "Summit at Snoqualmie parking fee for the Alpental lot",
+        "permit": "Free self-issue Alpine Lakes Wilderness day-use permit at the trailhead kiosk",
+        "closures": null,
+        "landManager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Alpine Lakes Wilderness",
+        "passRequired": "Summit at Snoqualmie parking permit"
+      },
+      "road": {
+        "name": "Alpental Road (Summit at Snoqualmie access road, off SR-906)",
+        "status": "Paved, plowed year-round for ski-area operations",
+        "driveNote": "From I-90 Exit 52, follow SR-906/Alpental Rd about 1.1-1.5 miles to the Alpental base lots (~3,100 ft).",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Likely climbable into fall until snow returns",
+        "spring": "Snowy, potentially glide-cracked approach slabs",
+        "summer": "Route dries out by mid-summer",
+        "winter": "Not documented as a winter objective",
+        "typical": "Wet, maritime Cascade climate; west-facing approach slabs can hold glide cracks into early summer",
+        "forecastZone": "NWAC 'Snoqualmie Mtn / Chair Peak' avalanche forecast zone (early season)"
+      },
+      "emergency": {
+        "notes": "King County Sheriff's Office coordinates SAR call-outs for the Alpental/Snow Lake/Chair Peak backcountry",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, Mt. Baker-Snoqualmie NF: (425) 888-1421, 902 SE North Bend Way, North Bend, WA",
+        "nearestHospital": "Snoqualmie Valley Hospital (24/7 ED), 9801 Frontier Ave SE, Snoqualmie, WA, (425) 831-2300 — expect transfer to a larger Seattle-area hospital for major trauma",
+        "sheriffDispatch": "King County Sheriff's Office non-emergency (206) 296-3311; emergency 911"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": null,
+      "difficulty": null,
+      "approach_logistics": null,
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": null,
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_chair_bryant_traverse",
+      "area_id": "wa_summer_fall_rock_3",
+      "name": "Chair-Bryant Traverse",
+      "discipline": "alpine",
+      "grade": "5.7",
+      "grade_system": "yds",
+      "grade_num": 7,
+      "pitches": 0,
+      "length_m": null,
+      "sort_order": null,
+      "stars": null,
+      "fa": "Ari Schneider, Jason Linker",
+      "lat": null,
+      "lng": null,
+      "aspect": "N",
+      "season": "Summer-Fall (rock)",
+      "description": null,
+      "gear": [
+        "Small rock rack with plenty of runners/slings",
+        "Rappel device (for the mandatory rappel off Bryant)",
+        "Helmet",
+        "50m rope"
+      ],
+      "hazards": [
+        "Loose, exposed ridge rock over an extended traverse",
+        "Complex route-finding, especially on the west side of the crest",
+        "Limited, poorly documented bail points"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "An alpine ridge linkup that starts on Chair Peak's north ridge and follows the crest toward Bryant Peak, with parties often extending the traverse further to The Tooth or even Denny Mountain for a longer high-route day.",
+      "beta": "Documented only informally — no dedicated Mountain Project/SummitPost/Peakbagger page with pitch-by-pitch beta was found. Climbers describe beginning on Chair's north ridge and following the crest toward Bryant on 4th-class to low-5th-class rock, with one short, steep mandatory rappel (~50 ft) getting off Bryant — the same rappel documented on the closely related MP route 'Tooth - Chair Traverse,' which covers the Bryant-to-Chair portion of this ridge system.",
+      "turnaround": "Because retreat from the middle of the traverse is slow and exposed, agree on a turnaround point (not just a clock time) before starting, and be willing to reverse the ridge rather than commit to an unfamiliar descent off the far end.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": null,
+      "ice_grade": null,
+      "gain_ft": null,
+      "loss_ft": null,
+      "dist_km": null,
+      "max_angle": null,
+      "rappels": "One mandatory rappel (~50 ft), reported at the Bryant end of the ridge",
+      "commitment": null,
+      "face": "North Ridge (Chair) to the Bryant col/ridge crest",
+      "permit": null,
+      "comms": null,
+      "descent": "Typically descend from wherever the traverse is exited (Bryant, the Tooth, or Denny) via that peak's own standard descent, since reversing the ridge crest is slow and exposed.",
+      "obj_haz": [
+        "loose rock",
+        "exposure",
+        "route-finding complexity"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.44542,
+          "lng": -121.42353,
+          "name": "Alpental Ski Area parking lot / Snow Lake Trailhead",
+          "note": "Same trailhead used for all Chair Peak-area routes; from here the traverse goes via Source Lake toward Pineapple Pass and Bryant Col rather than directly up Snow Lake Trail.",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 3140
+        },
+        {
+          "lat": 47.459786,
+          "lng": -121.46686,
+          "name": "Chair Peak",
+          "type": "Summit",
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "aid"
+      ],
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 2,
+        "recommendedStart": "Early alpine start recommended given the length and complexity of a multi-summit ridge day"
+      },
+      "detailed_rack": null,
+      "what_to_bring": [
+        "Approach shoes suited to scrambling",
+        "Light rack sized for a linkup rather than a single sustained pitch"
+      ],
+      "pro_tips": [
+        "Many parties extend this linkup toward the Tooth or even Denny Mountain rather than stopping at Bryant",
+        "Treat this as a serious, lightly-documented objective and carry a rope/rack even though much of it is scrambling",
+        "The rappel off Bryant is short but steep — have a plan for it before you're committed"
+      ],
+      "watch_out": [
+        "This route has little formal published beta — verify current conditions/route-finding with recent trip reports before attempting",
+        "Loose rock in numerous spots along the crest",
+        "The mandatory rappel off Bryant is a commitment point"
+      ],
+      "pro_needs": null,
+      "best_season": "Needs dry, snow-free ridge/scrambling conditions — effectively the same 'Summer-Fall' window Mountain Project lists for Chair Peak's other rock routes.",
+      "high_point_ft": null,
+      "aid_grade": null,
+      "approach": "Begins on Chair Peak's north ridge, reached via the East Face/Northeast Buttress approach (Alpental parking, Snow Lake Trail, Source Lake fork, then a gully to roughly 4,800 ft and the basin below), then continues along the crest over/past Bryant Peak.",
+      "descent_text": null,
+      "bail": "Bail options directly off the crest are limited; the most reliable retreat is generally back the way you came rather than pressing on toward Bryant/Tooth/Denny, since the far end requires the mandatory rappel and unfamiliar terrain to get off safely.",
+      "pitch_detail": null,
+      "itinerary": null,
+      "access": {
+        "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+        "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+        "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+        "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+        "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+        "group_limit": 12,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District / Alpine Lakes Wilderness",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+        "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+        "passRequired": "Northwest Forest Pass / Interagency Pass or day-use fee"
+      },
+      "road": {
+        "name": "Alpental Road via I-90 Exit 52",
+        "status": "Paved, open to the Alpental Ski Area parking lot",
+        "driveNote": "From I-90 Exit 52, go north and take the second right onto Alpental Road; continue about 1.5 miles to the trailhead parking lot.",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Stable weather can hold into October before shaded terrain starts re-icing",
+        "spring": "Snow and avalanche hazard persist on approach slopes into June",
+        "summer": "Warmest, driest window (Jul-Sep) and the normal season for this traverse",
+        "winter": "Heavy snowpack and avalanche terrain make this a winter mountaineering/ski objective rather than a rock traverse",
+        "typical": "Wet, maritime Cascades climate; the Alpental basin gets very heavy winter snowfall for its elevation",
+        "forecastZone": "NWAC – Snoqualmie Pass zone"
+      },
+      "emergency": {
+        "notes": "Cell coverage on the ridge is inconsistent; NWAC issues avalanche forecasts for the Snoqualmie Pass zone in winter/spring",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, North Bend Office, (425) 888-1421",
+        "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie, WA (24-hr ER); major trauma is typically transported to a Level 1 trauma center in Seattle",
+        "sheriffDispatch": "King County Sheriff's Office (call 911 for emergencies); King County Explorer Search & Rescue is the primary ground SAR unit for the area"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 3,
+        "physical": 1,
+        "technical": 5,
+        "commitment": 1,
+        "routefinding": 2
+      },
+      "approach_logistics": {
+        "peakLat": 47.4596,
+        "peakLng": -121.46702,
+        "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+        "trailheadLat": 47.44542,
+        "trailheadLng": -121.42353,
+        "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52, via the Source Lake fork"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": "No page dedicated to 'Chair-Bryant Traverse' was found on Mountain Project, SummitPost, or Peakbagger with formal grade/pitch/FA data. The closest documented analog is Mountain Project's 'Tooth - Chair Traverse' (5.4 YDS, Grade III, 900 ft/8 pitches, FA: M. & D. Preiss and M. Bunker, July 2007), which covers a Tooth-to-Chair crest traverse including a mandatory ~50 ft rappel off Bryant Peak — the same rappel referenced in this route's informal beta. Climber Kyle's 'Washington High Routes and Traverses' page separately describes a 'Chair-Bryant' linkup starting on Chair's north ridge and continuing to the Tooth or Denny Mountain. Given no single canonical source describes a route by this exact name, all numeric grade/pitch/FA fields are left null rather than borrowed from the similarly-named but distinct Tooth-Chair Traverse.",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_east_face_8",
+      "area_id": "wa_summer_fall_rock_3",
+      "name": "East Face",
+      "discipline": "alpine",
+      "grade": "5.2",
+      "grade_system": "yds",
+      "grade_num": 2,
+      "pitches": 0,
+      "length_m": 183,
+      "sort_order": null,
+      "stars": null,
+      "fa": "unknown",
+      "lat": null,
+      "lng": null,
+      "aspect": "E",
+      "season": "Summer-Fall (rock)",
+      "description": null,
+      "gear": [
+        "Nuts",
+        "Cams 0.2-2in",
+        "Single & double slings",
+        "Cordelette",
+        "Helmet",
+        "Ice axe (seasonal)"
+      ],
+      "hazards": [
+        "Rockfall from parties above (East Face and the neighboring Northeast Buttress share terrain near the top)",
+        "Loose/rotten rock in sections",
+        "Lingering snow/avalanche potential in the approach gully into early summer"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A moderate, 3-pitch line up Chair Peak's east face — the most visible face from the Alpental parking lot — that funnels climbers through a narrow chimney and easy 4th-class terrain onto the top of the Northeast Buttress for the final scramble to the summit.",
+      "beta": "Climb either side of a narrow chimney for pitch 1 (5.1–5.6, ~50m), then traverse left under a roof on minimal gear before easing onto 4th-class rock that trends right toward a notch joining the Northeast Buttress; finish on that route's easier upper terrain to the summit.",
+      "turnaround": "Protection and retreat options are limited once above the first pitch, so set a turnaround time before starting based on weather and party speed, and commit to it rather than pushing through worsening conditions.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.2",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": null,
+      "dist_km": 4.8,
+      "max_angle": null,
+      "rappels": "Multiple rappels down a south-facing/east-basin gully system on the descent",
+      "commitment": null,
+      "face": "East Face",
+      "permit": null,
+      "comms": null,
+      "descent": "Traverse over the false summit and down the east-trending descent gully to a notch on the southeast ridge, then use rappel gullies (slings/rings on trees/gear) back down to the east-face basin.",
+      "obj_haz": [
+        "rockfall",
+        "loose rock",
+        "runout protection",
+        "lingering snow in the approach gully"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.44542,
+          "lng": -121.42353,
+          "name": "Snow Lake Trailhead (Alpental)",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.4598,
+          "lng": -121.4669,
+          "name": "Chair Peak summit",
+          "type": "Summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "trad"
+      ],
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 2,
+        "recommendedStart": "Early/alpine start recommended given the approach length and afternoon-thunderstorm risk in summer"
+      },
+      "detailed_rack": "Light alpine rock rack: small nuts, cams from about 0.2 to 2 inches, several single- and double-length slings, and a cordelette for building anchors at ledges; carry an ice axe if snow lingers in the approach gully or descent notch.",
+      "what_to_bring": [
+        "50m rope",
+        "Approach shoes",
+        "Trekking poles for the approach trail",
+        "Layers for exposed ridge weather"
+      ],
+      "pro_tips": [
+        "Extra slings and a cordelette are worth the weight since anchors are mostly built from natural gear",
+        "Expect to share the notch/upper terrain with Northeast Buttress parties",
+        "An ice axe helps on the approach gully and descent notch well into early summer"
+      ],
+      "watch_out": [
+        "Runouts of 50+ ft between protection on some pitches",
+        "Loose rock on the traverse under the roof",
+        "The descent is 'adventurous' — don't underestimate it relative to the climb"
+      ],
+      "pro_needs": "Protection is minimal and runout in places (some sections over 50 ft between gear); build solid anchors at stances with the cordelette and slings.",
+      "best_season": "Best in summer and early fall once the approach gully and route are free of snow/ice; an ice axe is still worth carrying into early summer for lingering snow in the gully and descent notch.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "From Alpental parking, follow the Snow Lake Trail about 1.5 miles, fork toward Source Lake, then find a narrow rocky gully heading northwest starting around 4,200 ft; ascend (3rd class) to a small cliff around 4,800 ft, through a notch, then cross a basin northwest to the route's base around 5,500 ft below a distinct chimney.",
+      "descent_text": "From the true summit, cross to the false summit and drop down the east side via the normal descent gully. Continue to a notch in the southeast ridge; multiple rappels — often off tree anchors buried in slings, or built gear anchors — through a narrow, chockstone-choked couloir lead back to the east-face basin, where you rejoin the approach trail toward Source Lake and the Snow Lake Trail.",
+      "bail": "Retreat below the crux traverse is awkward; parties can rappel the route on gear/sling anchors back to the basin, or continue to the notch joining the Northeast Buttress and use that route's rappel/downclimb options.",
+      "pitch_detail": [
+        {
+          "grade": "5.1-5.6",
+          "notes": "Narrow chimney, climbable on either side, ~50m",
+          "pitch": "1"
+        },
+        {
+          "grade": "4th class",
+          "notes": "Traverse left under a roof, ~40m, minimal protection",
+          "pitch": "2"
+        },
+        {
+          "grade": "4th class",
+          "notes": "Easier terrain trending right to a notch joining the Northeast Buttress, then to the summit",
+          "pitch": "3"
+        }
+      ],
+      "itinerary": "Single long day: alpine start from Alpental; ~2 hr approach to the Chair Peak basin; 3-pitch climb (several hours depending on party speed and conditions); rappel/downclimb descent back to the basin; hike out via Source Lake and the Snow Lake Trail.",
+      "access": {
+        "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+        "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+        "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+        "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+        "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+        "group_limit": 12,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District / Alpine Lakes Wilderness",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+        "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+        "passRequired": "Northwest Forest Pass / Interagency Pass or day-use fee"
+      },
+      "road": {
+        "name": "Alpental Road via I-90 Exit 52",
+        "status": "Paved, open to the Alpental Ski Area parking lot",
+        "driveNote": "From I-90 Exit 52, go north and take the second right onto Alpental Road; continue about 1.5 miles to the trailhead parking lot.",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Stable weather can hold into October before shaded gullies start re-icing",
+        "spring": "Snow and avalanche hazard persist in the approach gully into June",
+        "summer": "Warmest, driest window (Jul-Sep); prime rock season",
+        "winter": "Heavy snowpack and avalanche terrain; the peak becomes a moderate ice/mixed objective rather than a rock climb",
+        "typical": "Wet, maritime Cascades climate; the Alpental basin gets very heavy winter snowfall for its elevation",
+        "forecastZone": "NWAC – Snoqualmie Pass zone"
+      },
+      "emergency": {
+        "notes": "Cell coverage in the basin and on the ridge is inconsistent; NWAC issues avalanche forecasts for the Snoqualmie Pass zone in winter/spring",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, North Bend Office, (425) 888-1421",
+        "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie, WA (24-hr ER); major trauma is typically transported to a Level 1 trauma center in Seattle",
+        "sheriffDispatch": "King County Sheriff's Office (call 911 for emergencies); King County Explorer Search & Rescue is the primary ground SAR unit for the area"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 2,
+        "physical": 1,
+        "technical": 1,
+        "commitment": 1,
+        "routefinding": 2
+      },
+      "approach_logistics": {
+        "peakLat": 47.4596,
+        "peakLng": -121.46702,
+        "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+        "trailheadLat": 47.44542,
+        "trailheadLng": -121.42353,
+        "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52, via the Source Lake fork"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": "The given peak coordinates/name ('Summer-Fall (rock)') correspond to Chair Peak's Mountain Project season sub-area, not an independent peak — see hierarchyNote. Approach elevation gain (~3,000 ft) and approach time (~2 hrs) are sourced from a guide-service description of the shared Chair Peak basin approach (willhiteweb.com, proguiding.com), not the East Face MP page specifically, since it shares the same trailhead/basin as the peak's other routes.",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    },
+    {
+      "id": "wa_northwest_ridge_3",
+      "area_id": "wa_summer_fall_rock_3",
+      "name": "Northwest Ridge",
+      "discipline": "alpine",
+      "grade": "5.7",
+      "grade_system": "yds",
+      "grade_num": 7,
+      "pitches": 0,
+      "length_m": 305,
+      "sort_order": null,
+      "stars": null,
+      "fa": "unknown",
+      "lat": null,
+      "lng": null,
+      "aspect": "NW",
+      "season": "Summer-Fall (rock)",
+      "description": null,
+      "gear": [
+        "Alpine rack (nuts + cams, small sizes emphasized)",
+        "Slings/runners",
+        "Helmet",
+        "Rappel device"
+      ],
+      "hazards": [
+        "Loose blocks and a chockstone obstacle on the ridge",
+        "Sparse, runout protection",
+        "Exposure on both sides of the narrow crest"
+      ],
+      "verif": null,
+      "source": null,
+      "overview": "A long, alpine ridge climb up Chair Peak's northwest side, following a broken crest of gullies, chockstones and scrambling to the summit — valued more for its exposed, scenic position than for rock quality.",
+      "beta": "From Thumbtack Rock, ascend a grassy gully to gain the northwest ridge, then follow the crest — with scrambling and route-finding around a chockstone — to the summit; expect runout climbing on variable rock throughout, with traffic remaining minimal.",
+      "turnaround": "Given the sustained, runout ridge climbing and limited fast-retreat options above the chockstone, set a conservative turnaround time before starting and stick to it if moving slowly or weather is closing in.",
+      "auto_generated": false,
+      "alpine_grade": null,
+      "rock_grade": "5.7",
+      "ice_grade": null,
+      "gain_ft": 3138,
+      "loss_ft": null,
+      "dist_km": 4.8,
+      "max_angle": null,
+      "rappels": "Rappel/downclimb the marked gully south of the summit back to Thumbtack Rock",
+      "commitment": "II",
+      "face": "Northwest Ridge",
+      "permit": null,
+      "comms": null,
+      "descent": "From the summit, head south and locate the rappel gully (marked with slings/rings); rappel or downclimb the gully system back down through scree to Thumbtack Rock.",
+      "obj_haz": [
+        "loose rock",
+        "chockstone obstacle",
+        "runout protection",
+        "route-finding"
+      ],
+      "waypoints": [
+        {
+          "lat": 47.44542,
+          "lng": -121.42353,
+          "name": "Snow Lake Trailhead (Alpental)",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 3100
+        },
+        {
+          "lat": 47.4596,
+          "lng": -121.46702,
+          "name": "Northwest Ridge base",
+          "type": "Route base",
+          "distMi": null,
+          "elevFt": null
+        },
+        {
+          "lat": 47.4598,
+          "lng": -121.4669,
+          "name": "Chair Peak summit",
+          "type": "Summit",
+          "distMi": null,
+          "elevFt": 6238
+        }
+      ],
+      "gpx": null,
+      "elev_pts": null,
+      "disciplines": [
+        "alpine",
+        "trad"
+      ],
+      "timing": {
+        "totalHrs": null,
+        "summitTimeHrs": null,
+        "descentTimeHrs": null,
+        "approachTimeHrs": 2,
+        "recommendedStart": "Early/alpine start recommended given the length and exposure of the ridge"
+      },
+      "detailed_rack": "A single alpine rack covers the route; small cams (~0.4in and similar sizes) were noted as especially useful for protecting the chockstone/crux sections, backed up with a range of nuts and plenty of slings for the wandering line.",
+      "what_to_bring": [
+        "50m rope",
+        "Approach shoes",
+        "Light alpine boots for the scree descent"
+      ],
+      "pro_tips": [
+        "Small cams (~0.4in) were repeatedly the most useful piece on this route — bring several",
+        "The route sees little traffic, so expect route-finding and moss/lichen on holds",
+        "Approach via Thumbtack Rock and the grassy gully rather than straight up scree for easier ground"
+      ],
+      "watch_out": [
+        "Poor, sometimes loose rock quality throughout",
+        "Long runouts between protection",
+        "Descent requires correctly locating the rap gully back to Thumbtack Rock — don't wander onto the wrong gully"
+      ],
+      "pro_needs": "Protection is thin in several sections — expect genuine runouts on some of the ridge's easier-looking terrain, so use every reasonable placement, especially the small cams around the crux.",
+      "best_season": "Climbed in summer and fall (Mountain Project's listed season) once the ridge is free of snow; rock quality is poor enough that many parties prioritize settled, dry weather.",
+      "high_point_ft": 6238,
+      "aid_grade": null,
+      "approach": "Same East Face approach out of Alpental to the landmark climbers call \"Thumbtack Rock,\" then head right up a grassy gully over the ridge to reach the northwest ridge proper.",
+      "descent_text": "Descend south from the true summit to find the marked rap gully (slings and rappel rings on anchors). Rappel or carefully downclimb the gully, then descend scree back to Thumbtack Rock at the base of the route, rejoining the approach line toward Source Lake.",
+      "bail": "Below the chockstone (roughly pitches 3-4), parties can downclimb back to the ridge saddle and retreat down the approach gully. Above that point, continuing to the summit and using the standard south-side rappel gully is usually faster than reversing the exposed ridge.",
+      "pitch_detail": [
+        {
+          "grade": "3rd-4th class",
+          "notes": "Approach gully to the ridge saddle with scrambling to a chockstone, ~290 ft",
+          "pitch": "1-2"
+        },
+        {
+          "grade": "5.7",
+          "notes": "Ridge climbing around/over the chockstone on mixed-quality rock, difficult protection, ~350 ft",
+          "pitch": "3-4"
+        },
+        {
+          "grade": "4th-5th class",
+          "notes": "Continued ridge travel to the summit, ~300 ft",
+          "pitch": "5-6"
+        }
+      ],
+      "itinerary": "Single long day: ~2 hr approach to Thumbtack Rock/Chair basin; 6-pitch ridge climb (several hours given the runout, wandering nature of the route); descent via the south-side rap gully back to Thumbtack Rock; hike out via Source Lake.",
+      "access": {
+        "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+        "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+        "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+        "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+        "group_limit": 12,
+        "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District / Alpine Lakes Wilderness",
+        "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+        "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+        "passRequired": "Northwest Forest Pass / Interagency Pass or day-use fee"
+      },
+      "road": {
+        "name": "Alpental Road via I-90 Exit 52",
+        "status": "Paved, open to the Alpental Ski Area parking lot",
+        "driveNote": "From I-90 Exit 52, go north and take the second right onto Alpental Road; continue about 1.5 miles to the trailhead parking lot.",
+        "seasonalGate": null
+      },
+      "climate": {
+        "fall": "Stable weather can hold into October before shaded terrain starts re-icing",
+        "spring": "Snow and avalanche hazard persist on approach slopes into June",
+        "summer": "Warmest, driest window (Jul-Sep); prime rock season",
+        "winter": "Heavy snowpack and avalanche terrain make this a winter mountaineering objective rather than a rock climb",
+        "typical": "Wet, maritime Cascades climate; the Alpental basin gets very heavy winter snowfall for its elevation",
+        "forecastZone": "NWAC – Snoqualmie Pass zone"
+      },
+      "emergency": {
+        "notes": "Cell coverage on the ridge is inconsistent; NWAC issues avalanche forecasts for the Snoqualmie Pass zone in winter/spring",
+        "county": "King County, WA",
+        "rangerStation": "Snoqualmie Ranger District, North Bend Office, (425) 888-1421",
+        "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie, WA (24-hr ER); major trauma is typically transported to a Level 1 trauma center in Seattle",
+        "sheriffDispatch": "King County Sheriff's Office (call 911 for emergencies); King County Explorer Search & Rescue is the primary ground SAR unit for the area"
+      },
+      "lists": null,
+      "crowds": null,
+      "partner_requirements": null,
+      "seasonal_guidance": null,
+      "seasonal_hazards": null,
+      "data_quality": {
+        "gaps": [
+          "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+        ],
+        "confidence": "MEDIUM"
+      },
+      "difficulty": {
+        "exposure": 2,
+        "physical": 1,
+        "technical": 2,
+        "commitment": 1,
+        "routefinding": 2
+      },
+      "approach_logistics": {
+        "peakLat": 47.4596,
+        "peakLng": -121.46702,
+        "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+        "trailheadLat": 47.44542,
+        "trailheadLng": -121.42353,
+        "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52, via the Source Lake fork"
+      },
+      "sling_rack": null,
+      "alpine_draws": null,
+      "rope_type": null,
+      "rope_length_m": null,
+      "rope_note": null,
+      "ascender": null,
+      "corrections": "The given peak coordinates (47.4596, -121.46702) exactly match this route's base coordinates on Mountain Project — confirming that the DB's 'peak' entry is really Chair Peak's 'Summer-Fall (rock)' MP sub-area, not an independent peak (see hierarchyNote). Approach gain/distance figures are sourced from a guide-service description of the shared Chair Peak basin approach, applied here since Northwest Ridge shares the same trailhead/basin.",
+      "gear_confidence": null,
+      "rappel_detail": null,
+      "rappel_count_note": null,
+      "rack": null,
+      "features": null,
+      "classic": false,
+      "gear_bucket": null,
+      "assumed_gear": null,
+      "gps_contributor_name": null
+    }
+  ]
+}
