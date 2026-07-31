@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_sherman_peak_baker_squak_glacier",
+  "last_processed_id": "wa_sitkum_spire_standard",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -943,6 +943,44 @@
         "wa_sharkfin_tower_southeast_ridge.length_m (61) does not reconcile with the pitch_detail length sum (95m); unclear what this field represents.",
         "wa_sherman_peak_baker_route.descent_text's 'roughly 30 degrees' for the Roman Wall section: guide-service sources describe the real Roman Wall as 35-45 degrees, and it's unclear this Sherman-only route legitimately reaches Roman Wall terrain at all -- may be copied from the full-Baker-summit route.",
         "wa_sherman_peak_baker_squak_glacier.season ('Jun-Sep') and .approach ('high camp...around 6,800 ft'): several guide sources favor an earlier (May-June) window before the bergschrund opens and cite a ~6,500 ft common camp -- not clearly wrong, flagged for a closer look."
+      ]
+    },
+    {
+      "batch_number": 41,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_sherpa_balanced_rock_ne_couloir",
+        "wa_sherpa_glacier",
+        "wa_sherpa_peak_east_ridge",
+        "wa_sherpa_peak_north_ridge",
+        "wa_sherpa_peak_west_ridge",
+        "wa_silver_star_glacier",
+        "wa_silver_star_ne_ridge",
+        "wa_sinister_peak_north_face",
+        "wa_sinister_peak_southwest_route",
+        "wa_sitkum_spire_standard"
+      ],
+      "confirmed_errors_fixed": 14,
+      "flagged_for_human_review": 15,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-31-batch-41.sql",
+      "note": "Six peaks, 10 routes, researched via 5 parallel agents (several reported a session-wide WebFetch 403 outage and fell back to WebSearch snippets -- flagged findings resting only on that weaker evidence rather than auto-fixed). Sherpa Balanced Rock + its area row: high_point_ft/elevation_ft (8605, stale USGS-quad figure) fixed to 8630, matching the route's own summit waypoint and modern consensus sources. Sherpa Glacier: Mount Tom access.notes contamination stripped (same pattern as Ruth Mountain/batch 40, Primus Peak/batch 39); summit-ridge grade fixed Class 4 -> Class 3 (matched own overview text + SummitPost); dist_km fixed from a mis-stored round-trip figure to the correct one-way value, backed by the row's own fitnessSpec. Sherpa Peak North Ridge: summit waypoint elevFt outlier (8635) fixed to 8630. Sherpa Peak West Ridge: gain_ft (7400) fixed to 4330 to match loss_ft on this out-and-back route. Sherpa Peak East Ridge: waypoints/gpx array reordered -- the trailhead waypoint sat out of sequence, producing a nonsensical elevation profile; reordered with no coordinate changes. Silver Star Glacier: comms mislabeled Okanogan County's own dispatch number as Skagit County; fa cleared (credited a 1952 ascent that multiple sources place on the west summit, already credited on the sibling NE Ridge route, not this east-summit route). Sinister Peak North Face + Southwest Route: shared Downey Creek Trailhead elevation reconciled to 1450 (matching both routes' own approach text); North Face summit elevation normalized to 8444 (matching area + sibling route). Sitkum Spire: White Chuck River Trailhead waypoint elevation fixed to 2300, matching the route's own approach text and WTA.",
+      "flags": [
+        "wa_silver_star_glacier: glacier-saddle waypoint (8,700 ft) sits 120-350 ft above the area's own \"300-ft-deep col\" description -- only self-derived arithmetic, not a topo source; needs a human topo check.",
+        "wa_silver_star_ne_ridge: 5.9 grade corroborated only by search-snippet paraphrase (direct fetch blocked this session) -- thin but not contradicted.",
+        "wa_sherpa_peak_west_ridge: FA year (stored 1961; search snippets suggest 1962) and third climber name (\"James Wick\" -- possibly a garbled \"James Wickwire,\" a documented period climbing partner of the other two FA members, but no source places Wickwire on this specific route) -- both unconfirmed beyond WebSearch snippets.",
+        "wa_sherpa_peak_north_ridge: FA (\"Rick La Belle and Pat Derr, 1971\") could not be corroborated or refuted with available sources.",
+        "wa_sherpa_peak_east_ridge: commitment (\"II\") disagrees with its own grade (\"Grade III, 5.7\") -- needs a human grade call.",
+        "wa_sherpa_glacier: Stuart Lake Trailhead elevation disagrees three ways across its own waypoint (2930) and two routes' approach_logistics.trailheadDirection fields (3540, 3400) -- no single figure stands out as authoritative.",
+        "wa_sinister_peak_southwest_route: top-level gain_ft/loss_ft (7000/5500) disagree with its own itinerary day-sum (~8200/8400), itinerary.totalNote (\"8,000-9,000 ft\"), and partner_requirements.fitnessSpec (\"~14,000 ft cumulative\") -- three internal sources that don't agree with each other or the top-level fields.",
+        "wa_sinister_peak_southwest_route: Cub Lake Pass waypoint's own note text (\"~5,880 ft per trip reports\") disagrees with its elev field (6000, matching Mountaineers.org).",
+        "wa_sinister_peak_southwest_route: Sixmile Camp waypoint (2300) disagrees with the route's own approach prose (2,440 ft) -- neither could be resolved with a clear winner.",
+        "wa_sinister_peak area: prominence_ft (853) vs. external sources citing 840 ft -- ListsOfJohn (likely the more precise source) was blocked from direct fetch.",
+        "wa_sitkum_spire_standard: corrections field and area blurb/route overview all cite Glacier Peak's summit as 10,541 ft, but search snippets suggest a 2014-15 lidar resurvey lowered the accepted figure to ~10,525+ ft -- flagged rather than fixed given the session-wide WebFetch outage prevented reaching a primary source; appears in 3 places so a fix needs to touch all three consistently.",
+        "wa_sitkum_spire_standard: corrections field cites high_point_ft as 10,541 when the actual stored value is 9,355 -- a real internal contradiction, but resolving it requires deciding whether this route's stats describe the spire or the full Glacier Peak summit push, a route-semantics question for a human.",
+        "wa_sitkum_spire_standard: dist_km (14.5) doesn't match its own waypoint distances (12.5 mi one-way) or itinerary.totalNote (\"~25 mi round trip\") under any convention tried.",
+        "wa_sitkum_spire_standard: White Chuck River Trail #643 characterization (\"brushy, unmaintained... with blowdown\") is softer than the Forest Service's own reported \"inaccessible, no plans to repair\" language, though recent trip reports still describe parties using it -- a tone gap, not a clear error.",
+        "Session-wide note: WebFetch returned HTTP 403 on essentially every direct URL attempted across multiple agents this run (USFS, Wikipedia, SummitPost, Mountain Project, Peakbagger, etc.) -- likely a proxy/session issue rather than per-site blocking. All corroboration for this batch leaned more heavily on WebSearch snippets than direct source reads; flagged items above should get a follow-up pass once direct fetch is working again."
       ]
     }
   ]

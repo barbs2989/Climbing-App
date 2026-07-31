@@ -2773,3 +2773,103 @@ couple of guide sources favoring an earlier window and a lower camp.
 
 Next batch will continue alphabetically after `wa_sherman_peak_baker_squak_glacier` (see
 progress file).
+
+## 2026-07-31 — Pass 1, Batch 41
+
+Ten routes across six peaks: Sherpa Balanced Rock, Mount Stuart (Sherpa Glacier), Sherpa
+Peak (East/North/West Ridges), Silver Star Mountain (Glacier + NE Ridge), Sinister Peak
+(North Face + Southwest Route), and Sitkum Spire. Research split across five parallel
+passes; several agents reported WebFetch returning 403 on every direct URL this session
+(a session-wide proxy issue, not per-site blocking) and fell back to WebSearch snippets —
+findings resting only on that weaker evidence are flagged below rather than auto-fixed.
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-41.sql` (14, touching 9 routes + 1
+area row):**
+- `wa_sherpa_balanced_rock_ne_couloir` + area `wa_sherpa_balanced_rock`: `high_point_ft`/
+  `elevation_ft` (8605, an old USGS-quad figure) contradicted the same route's own summit
+  waypoint (8630) and the modern consensus elevation (Wikipedia/SummitPost), already used
+  correctly on the sibling `wa_sherpa_peak` area row and both East/West Ridge summit
+  waypoints — fixed to 8630 on both rows.
+- `wa_sherpa_glacier`: `access.notes` carried the same "Mount Tom area, North Cascades"
+  boilerplate contamination fixed on Ruth Mountain last batch and on `wa_primus_peak_south_
+  ridge` in batch 39 — stripped. Summit-ridge `grade`/`grade_num`/`rock_grade` (Class 4)
+  contradicted this row's own overview text ("simple class-3 ridge scrambling") and
+  SummitPost — fixed to Class 3. `dist_km` (43.45, converting to exactly 27.00 mi)
+  contradicted this row's own `partner_requirements.fitnessSpec` ("~27 mi... car-to-car"
+  round trip) — under this app's distKm*2 round-trip display convention that doubles to a
+  54-mi round trip; fixed to the one-way value (21.73) that reproduces the row's own stated
+  27 mi. Single-row fix backed by an internal numeric match, not a bulk `dist_km` pass.
+- `wa_sherpa_peak_north_ridge`: summit waypoint `elevFt` (8635) was the sole outlier
+  against this route's own `high_point_ft` and both sibling routes' summit waypoints (all
+  8630) — fixed.
+- `wa_sherpa_peak_west_ridge`: `gain_ft` (7400) contradicted `loss_ft` (4330) on a route
+  this row's own `descent_text` describes as reversing the same approach — gain should
+  equal loss on an out-and-back. The row's own `itinerary.totalNote` ("~4,300 ft gain
+  total") and trailhead-to-summit arithmetic both land near the existing `loss_ft` — fixed
+  `gain_ft` to 4330.
+- `wa_silver_star_glacier`: `comms` labeled the real Okanogan County non-emergency number
+  (509-422-7232) "Skagit County Sheriff Dispatch" — Silver Star sits in Okanogan County,
+  and this same route's own `emergency` block elsewhere already has the correct county;
+  fixed the label, kept the number. Also `fa` credited the 1952 Beckey/Hieb/Staley/Wilde
+  ascent to this east-summit route, but multiple sources place that ascent on the WEST
+  summit — already (and correctly) credited on the sibling `wa_silver_star_ne_ridge`
+  route — and this route's own overview text says the east summit's real FA (Wernstedt,
+  1926) used a different line entirely. No source gives a specific FA party for this exact
+  north-glacier line to the true summit, so `fa` was cleared rather than guessed.
+- `wa_sinister_peak_north_face` + `wa_sinister_peak_southwest_route`: both routes' shared
+  Downey Creek Trailhead disagreed between each route's own waypoint (1440 / 1400) and both
+  routes' own approach prose ("~1,450 ft", matching USFS) — fixed both to 1450. North Face's
+  `high_point_ft`/summit waypoint (8440) also didn't match the area row or the sibling
+  route's summit waypoint (both 8444, matching ListsOfJohn) — normalized to 8444.
+- `wa_sitkum_spire_standard`: White Chuck River Trailhead waypoint `elev` (1600)
+  contradicted this route's own `approach`/`approach_logistics.trailheadDirection` text
+  (both "~2,300 ft"), independently matching a WTA trip report — fixed to 2300.
+- `wa_sherpa_peak_east_ridge`: the (already coordinate-corrected) Esmeralda Basin
+  trailhead waypoint sat at array index 3, after "East end of ridge" (7,800 ft) instead of
+  first, with no `distMi` — since this route's `gpx` track is built directly from the same
+  ordered list, the rendered path climbed to 7,800 ft, dropped back to 3,500 ft, then
+  jumped to the 8,630 ft summit. Reordered to Trailhead → Long's Pass → Stuart basin bivy →
+  East end of ridge → Summit and gave the trailhead `distMi: 0`; no coordinates changed.
+
+**Flagged for human review — not auto-fixed:** `wa_silver_star_glacier`'s glacier-saddle
+waypoint (8,700 ft) sits 120-350 ft above the area's own "300-ft-deep col" description —
+only self-derived arithmetic, not a topo source, so flagged rather than corrected;
+`wa_silver_star_ne_ridge`'s 5.9 grade is corroborated only by search-snippet paraphrase
+(direct fetch blocked), thin but not contradicted. `wa_sherpa_peak_west_ridge`'s FA year
+(stored 1961; Wenatchee Outdoors search snippets suggest 1962) and third climber name
+("James Wick" — possibly a garbled "James Wickwire," a documented period climbing partner
+of the other two FA members, but no source places Wickwire on this specific route) — both
+unconfirmed beyond search snippets, not fixed. `wa_sherpa_peak_north_ridge`'s FA ("Rick La
+Belle and Pat Derr, 1971") could not be corroborated or refuted. `wa_sherpa_peak_east_
+ridge`'s `commitment` ("II") disagrees with its own `grade` ("Grade III, 5.7") — needs a
+human grade call. `wa_sherpa_glacier`'s Stuart Lake Trailhead elevation disagrees three
+ways across its own waypoint (2930) and two routes' `approach_logistics.trailheadDirection`
+fields (3540, 3400) — no single figure stands out as authoritative. `wa_sinister_peak_
+southwest_route`'s top-level `gain_ft`/`loss_ft` (7000/5500) disagree with its own
+itinerary day-sum (~8200/8400), `itinerary.totalNote` ("8,000-9,000 ft"), and
+`partner_requirements.fitnessSpec` ("~14,000 ft cumulative") — three internal sources that
+don't agree with each other or the top-level fields, so no confident single fix; also its
+Cub Lake Pass waypoint's own `note` text ("~5,880 ft per trip reports") disagrees with its
+`elev` field (6000, which matches Mountaineers.org) and its Sixmile Camp waypoint (2300)
+disagrees with the route's own approach prose (2,440 ft) — neither could be resolved with a
+clear winner. `wa_sinister_peak`'s area `prominence_ft` (853) vs. external sources citing
+840 ft — ListsOfJohn (likely the more precise source) was blocked from direct fetch.
+`wa_sitkum_spire_standard`'s `corrections` field cites Glacier Peak's summit as "10,541 ft"
+matching the area blurb and route overview, but search snippets suggest a 2014-15 lidar
+resurvey lowered the accepted figure to ~10,525+ ft — flagged rather than fixed given the
+session-wide WebFetch outage prevented reaching a primary source (USGS/current Wikipedia)
+for the exact current figure; this claim also appears in 3 places (area blurb, route
+overview, route `corrections`), so a fix needs to touch all three consistently. Same
+route's `corrections` field also cites `high_point_ft` as 10,541 when the actual stored
+value is 9,355 — a real internal contradiction, but resolving it requires first deciding
+whether this route's stats (gain_ft/loss_ft = 8500, consistent with reaching Glacier Peak's
+true summit) are describing the spire or the full Glacier Peak summit push, a route-
+semantics question left to a human rather than guessed at. Same route's `dist_km` (14.5)
+doesn't match its own waypoint distances (12.5 mi one-way) or `itinerary.totalNote` ("~25 mi
+round trip") under any convention tried — flagged, not fixed. `wa_sitkum_spire_standard`'s
+White Chuck River Trail #643 characterization ("brushy, unmaintained... with blowdown") is
+softer than the Forest Service's own reported "inaccessible, no plans to repair" language,
+though recent trip reports still describe parties using it — a tone gap, not a clear error.
+
+Next batch will continue alphabetically after `wa_sitkum_spire_standard` (see progress
+file).
