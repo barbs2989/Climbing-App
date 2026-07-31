@@ -65,6 +65,45 @@ if (dropped.length) {
 }
 console.log(`  ok    every persisted column is mapped back`);
 
+// ---- the mirror case: read back but never written ---------------------------
+//
+// The check above is one-directional: it catches a column that is written and
+// then dropped on read. It is blind to the inverse — hydration that maps a
+// column the write path never populates. That reads as a working feature in the
+// code and is silent data loss in practice: the field is mapped, so it looks
+// handled, and it is always empty because nothing ever put a value there.
+//
+// Four columns are in that state today. They are NOT oversights and adding them
+// to the payload would not work: partners is uuid[] and belayed_by/crew_id are
+// uuid, while the app holds partner NAMES ("Maya Chen") and has no profile ids
+// to resolve them against. They are blocked on partner tagging resolving real
+// profiles, so they are recorded here rather than silently tolerated. Remove an
+// entry when its write path lands; do not add to this list to make a new failure
+// go away.
+const UNWRITTEN_OK = new Map([
+  ["partners",   "uuid[]; app holds partner names, needs profile-id resolution"],
+  ["belayed_by", "uuid; same — catch credit has no profile id to point at"],
+  ["crew_id",    "uuid; log<->crew link is never set on save"],
+  ["gpx_track",  "written only via contribute, never by the log save path"],
+]);
+const readNotWritten = [...readBack]
+  .filter(c => !written.has(c) && !["id", "user_id", "route_id", "created_at", "updated_at"].includes(c))
+  .sort();
+const unexpected = readNotWritten.filter(c => !UNWRITTEN_OK.has(c));
+const known = readNotWritten.filter(c => UNWRITTEN_OK.has(c));
+if (known.length) {
+  console.log(`  known unwritten     : ${known.length} (${known.join(", ")})`);
+}
+if (unexpected.length) {
+  console.error(`\ncheck:log FAILED — ${unexpected.length} column(s) hydrated but never written:\n`);
+  unexpected.forEach(c => console.error("  - " + c));
+  console.error("\nThe read path maps these, so the feature looks wired up, but the write");
+  console.error("path never sets them — they are permanently empty and nothing errors.");
+  console.error("Either write them in syncLogToDb's payload, drop them from the hydration,");
+  console.error("or record them in UNWRITTEN_OK with the reason they cannot be written yet.");
+  process.exit(1);
+}
+
 // ---- the fields most expensive to lose must be present by name --------------
 const CRITICAL = [
   ["beta", "beta"], ["gear_beta", "gearBeta"], ["itinerary", "itinerary"],
