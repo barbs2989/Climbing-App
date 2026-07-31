@@ -59,6 +59,18 @@ const code = sql
 // UPDATE/DELETE/INSERT lists, not procedural SQL with embedded blocks.
 const statements = code.split(";").map(s => s.trim()).filter(Boolean);
 
+// Remove parenthesised SELECT groups, innermost first, so ids inside a guard or a
+// scalar subquery are not mistaken for the statement's own write targets. Only groups
+// containing `select` are dropped — an ordinary `id in ('a','b')` list is preserved.
+function stripSubqueries(sql) {
+  let out = sql, prev;
+  do {
+    prev = out;
+    out = out.replace(/\(([^()]*)\)/gi, (whole, inner) => (/\bselect\b/i.test(inner) ? " " : whole));
+  } while (out !== prev);
+  return out;
+}
+
 const targets = []; // { kind, id, stmt }
 for (const stmt of statements) {
   const head = stmt.slice(0, 220).replace(/\s+/g, " ");
@@ -77,16 +89,29 @@ for (const stmt of statements) {
   const stmtTable = tableMatch ? tableMatch[1].toLowerCase() : null;
   if (stmtTable !== TABLE.toLowerCase()) continue;
 
+  // Ids inside a subquery are not what this statement writes to. The safest form of
+  // DELETE names its twin in an EXISTS guard —
+  //     delete from routes where id = 'stray'
+  //       and exists (select 1 from routes k where k.id = 'keeper' and k.dist_km is not null)
+  // — and reading ids out of the whole statement counted 'keeper' as a deletion target,
+  // so the only-copy check fired on a row that was never being deleted. That failed the
+  // guarded delete and passed the unguarded one, which is exactly backwards. Same class
+  // as the table-name bug above: a mention is not a write.
+  const scrubbed = stripSubqueries(stmt);
+
   const ids = new Set();
-  for (const m of stmt.matchAll(/\bid\s*=\s*'([^']+)'/gi)) ids.add(m[1]);
-  const inClause = stmt.match(/\bid\s+in\s*\(([^)]*)\)/i);
+  for (const m of scrubbed.matchAll(/\bid\s*=\s*'([^']+)'/gi)) ids.add(m[1]);
+  const inClause = scrubbed.match(/\bid\s+in\s*\(([^)]*)\)/i);
   if (inClause) for (const m of inClause[1].matchAll(/'([^']+)'/g)) ids.add(m[1]);
 
   if (!ids.size) {
     console.warn(`WARN  ${isDelete ? "DELETE" : "UPDATE"} with no literal id predicate — not checkable:\n      ${head}`);
     continue;
   }
-  for (const id of ids) targets.push({ kind: isDelete ? "delete" : "update", id, stmt: head });
+  // `full` keeps the untruncated statement so the only-copy check can tell whether a
+  // cross-area DELETE names its twin in an EXISTS guard. `stmt` stays the short form
+  // used for reporting.
+  for (const id of ids) targets.push({ kind: isDelete ? "delete" : "update", id, stmt: head, full: stmt });
 }
 
 if (!targets.length) {
@@ -118,16 +143,41 @@ const missing = targets.filter(t => !found.has(t.id));
 const deletes = targets.filter(t => t.kind === "delete" && found.has(t.id));
 
 // For each DELETE, is this the last row carrying that name on that peak?
-const onlyCopy = [];
+//
+// "Last copy on this peak" is a proxy, and it is wrong for a cross-area dedup: when a
+// route is stranded under a bogus area, its twin is by definition on a DIFFERENT area,
+// so the proxy fails every such delete no matter how safe. A rule that cannot be
+// satisfied is a rule people route around.
+//
+// So the twin is looked for by name anywhere, and the three cases are separated:
+//   - a same-area sibling exists            -> fine, nothing to prove
+//   - no row of that name exists anywhere   -> FAIL. This is the Triple Couloirs case.
+//   - the twin is on another area           -> allowed ONLY if this DELETE names that
+//                                              twin's id in an EXISTS guard, so the
+//                                              statement removes 0 rows if the twin
+//                                              vanished between writing and running.
+const onlyCopy = [], crossArea = [];
 for (const t of deletes) {
   const row = found.get(t.id);
   const r = await fetch(
-    `${SUPABASE_URL}/rest/v1/${TABLE}?area_id=eq.${encodeURIComponent(row.area_id)}` +
-      `&name=eq.${encodeURIComponent(row.name)}&select=id`,
+    `${SUPABASE_URL}/rest/v1/${TABLE}?name=eq.${encodeURIComponent(row.name)}&select=id,area_id`,
     { headers: headers(key) }
   );
-  const siblings = await r.json();
-  if (siblings.length <= 1) onlyCopy.push({ ...t, name: row.name, area: row.area_id });
+  const sameName = await r.json();
+  const sameArea = sameName.filter(s => s.area_id === row.area_id);
+  if (sameArea.length > 1) continue;
+
+  const elsewhere = sameName.filter(s => s.id !== t.id);
+  if (!elsewhere.length) { onlyCopy.push({ ...t, name: row.name, area: row.area_id }); continue; }
+
+  // Names like "East Face" are shared by 90+ routes catalog-wide, so "a row with this
+  // name exists somewhere" proves nothing. What counts is the specific twin the author
+  // asserts in the guard — that is the claim being made, and it is checked against the
+  // live row set rather than taken on trust.
+  const asserted = elsewhere.filter(s => new RegExp(`'${s.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}'`).test(t.full));
+  if (asserted.length) crossArea.push({ ...t, name: row.name, area: row.area_id, twin: asserted.map(s => `${s.id} (${s.area_id})`).join(", ") });
+  else onlyCopy.push({ ...t, name: row.name, area: row.area_id,
+    hint: `${elsewhere.length} other row(s) share this name, but none is named in this statement — put the intended twin's id in an EXISTS guard` });
 }
 
 // Paste-size checks
@@ -147,8 +197,14 @@ if (missing.length) {
 if (onlyCopy.length) {
   bad = true;
   console.log(`FAIL  ${onlyCopy.length} DELETE(s) would remove the ONLY row with that name on its peak:`);
-  for (const o of onlyCopy) console.log(`        ${o.id}  ("${o.name}" on ${o.area})`);
+  for (const o of onlyCopy) console.log(`        ${o.id}  ("${o.name}" on ${o.area})${o.hint ? `\n          ${o.hint}` : ""}`);
   console.log(`      A duplicate flag is a hypothesis. Confirm the twin row exists before deleting either half.\n`);
+}
+
+if (crossArea.length) {
+  console.log(`INFO  ${crossArea.length} cross-area DELETE(s) — twin is on another area and IS named in an EXISTS guard:`);
+  for (const c of crossArea) console.log(`        ${c.id}  ("${c.name}" on ${c.area})  twin: ${c.twin}`);
+  console.log(`      Allowed: the guard makes each statement a no-op if its twin is gone at run time.\n`);
 }
 
 if (sql.length > PASTE_LIMIT || oversizeStmt.length || longLines.length) {
