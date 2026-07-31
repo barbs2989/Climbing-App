@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_tom_scramble",
+  "last_processed_id": "wa_nooksack_tower_south_face",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -759,6 +759,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-07-31-batch-33.sql",
       "note": "Five peaks, 10 routes (Stuart 2, Teneriffe 2, Terror 4, Thomson 1, Tom 1). Mount Stuart West Ridge had two related approach-side errors: its own approach text gave the Esmeralda/Ingalls Way trailhead elevation as ~5,500 ft, self-contradicted by its own next sentence's math (Longs Pass ~6,400 ft minus ~2,100 ft gain implies ~4,300 ft) and by external sources (mountainwerks.org: 4,243 ft); and its first waypoint/gpx point stored a coordinate ~2.5 mi east of the real trailhead with a mismatched elevation (3,200 ft) -- same copied-coordinate-onto-wrong-point bug as batch 27 -- fixed using the row's own correct approach_logistics trailhead coords plus the confirmed 4,243 ft. Mount Terror's West Ridge and Stoddard Buttress routes both had the recurring null-top-level-grade-despite-consistent-subfields bug (batches 6/10/17/19/26/30/31) -- filled from their own already-agreeing alpine_grade/rock_grade/commitment. Flagged rather than fixed: West Ridge's itinerary.schedule references Stuart Lake TH/Stuart Pass, contradicting this route's own Esmeralda-side approach (likely cross-route contamination); West Ridge's grade text says NCCS III while commitment/alpine_grade both say II (no source resolved which); Stoddard Buttress's fa splits one likely single 1984 solo push (per secondary AAC/NWMJ summaries) into two ascents a year apart, but every primary source 403'd this run so it wasn't rewritten; East Ridge's (wa_mount_terror_southeast_face) pre-existing self-flagged id/name mismatch was re-confirmed still present; Mount Thomson West Ridge's 4-person 1940 FA credit is only half-corroborated (Beckey brothers confirmed, Craig/Ford not found either way). Gendarme, both Teneriffe routes, Terror North Face, and Mount Tom's Glacier/Scramble Route audited clean."
+    },
+    {
+      "batch_number": 34,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_mount_torment_south_ridge",
+        "wa_mount_torment_torment_forbidden_traverse",
+        "wa_ne_ridge",
+        "wa_needle_peak_north_ridge",
+        "wa_neve_glacier_west_ridge",
+        "wa_news_nw_corner",
+        "wa_nooksack_tower_beckey_route",
+        "wa_nooksack_tower_south_face"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 9,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-31-batch-34.sql",
+      "note": "Six peaks, 8 routes (Torment 2, Cathedral 1, Needle 1, Snowfield 1, North Early Winters Spire 1, Nooksack Tower 2). Notable: a previous, unrelated audit/correction pass had moved NEWS NW Corner's Blue Lake Trailhead waypoint coordinate 1.3km away from the real trailhead while its own note claimed the opposite direction of error -- reverted. Also corrected a one-day date error on a real, well-corroborated May 2025 fatal-accident hazard note (May 11 -> May 10) and a route name (Nooksack East Ridge/Beckey Route -> North Face, since it climbs a north-facing couloir, not an east ridge -- its aspect/face fields already said so). Flagged rather than fixed: Cathedral Peak NE Ridge's FA/grade/pitch trio could not be matched to a real Mountain Project page and may be a misidentified/conflated route; its gain_ft is arithmetically too low given its own trailhead/summit elevations. Needle Peak North Ridge and Nooksack Tower South Face audited clean."
     }
   ]
 }

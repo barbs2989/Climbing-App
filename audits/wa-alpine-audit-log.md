@@ -2237,3 +2237,81 @@ Thomas J. Dryer's disputed first ascent.
 
 Next batch will continue alphabetically after `wa_mount_stuart_stuart_glacier_couloir` (see
 progress file).
+
+---
+
+## 2026-07-31 — Pass 1, Batch 34
+
+Six peaks, 8 routes (Mount Torment 2, Cathedral Peak 1, Needle Peak 1, Snowfield Peak 1, North
+Early Winters Spire 1, Nooksack Tower 2): South Ridge, Torment-Forbidden Traverse (Torment); NE
+Ridge (Cathedral); North Ridge (Needle); Neve Glacier/West Ridge (Snowfield); Northwest Corner/
+Boving-Pollack (North Early Winters Spire); East Ridge/Beckey Route, South Face (Nooksack Tower).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-34.sql` (5, touching 6 fields across 4
+routes):**
+- Mount Torment South Ridge: `grade`/`commitment`/`alpine_grade` overstated the route as
+  Grade II-III/III — independent sources (including a SummitPost page literally titled "South
+  Ridge, II, 5.4") consistently give it as Grade II. Corrected all three fields.
+- Snowfield Peak Neve Glacier/West Ridge: the Pyramid Lake Trailhead waypoint's `elev` (2500)
+  contradicted both external trail data and this same row's own `approach` text, which correctly
+  says "~1,150 ft" — looks like a value copied from the lake instead of the trailhead. Fixed.
+- North Early Winters Spire NW Corner: the Blue Lake Trailhead waypoint carried a note claiming
+  a *previous* audit pass had "corrected" its coordinate from (48.5191,-120.6742) to
+  (48.5168,-120.6573) because the former was ~1.3km off. Re-verifying independently (Trailforks,
+  WTA, The Mountaineers) found the opposite — the original coordinate was the real trailhead, and
+  the "correction" was a regression that moved it 1.3km to nowhere in particular. Reverted the
+  coordinate and rewrote the note; also fixed the same waypoint's `elevFt` (5200 → ~5,400, matching
+  external sources and this row's own approach text).
+- North Early Winters Spire NW Corner: a `hazards` entry describing the real, well-corroborated
+  May 2025 Early Winter Couloir anchor-failure fatalities (3 dead, 1 seriously injured, a single
+  rusted piton pulled while the whole party was clipped to it) dated the incident May 11 — every
+  news source dates the fall itself to the evening of May 10 (the 911 call, from the injured
+  survivor after reaching help, was the morning of the 11th). Corrected the date.
+- Nooksack Tower East Ridge/Beckey Route: `name` ("East Ridge / Beckey Route") contradicted this
+  same row's own `aspect`/`face` fields (N/NE, North Face) and every external source, which call
+  it the Beckey-Schmidtke or North Face route — it climbs a north-facing ice couloir to a north
+  arête, never an east ridge. Renamed to "North Face (Beckey-Schmidtke Route)"; the row's own
+  beta/approach/pitch detail already correctly described the real route, so only the name was
+  wrong.
+
+**Clean:** Needle Peak North Ridge's FA claim (Blake Herrington & Tim Halder, Aug 19-20 2006,
+opening a traverse to Bonanza Peak) is corroborated by the AAJ account and cross-checked against
+the same pair's Tupshin Peak climb ten days earlier; its mostly-null grade/pitch fields are
+appropriate given the only source rates the whole two-day traverse, not this segment alone.
+Nooksack Tower South Face's FA (Klubberud & Manfredi, July 2002), pitch count, and grade (V,
+5.10-) are all independently confirmed against AAC Publications.
+
+**Flagged for human review (9):**
+- Mount Torment South Ridge: three of four `pitch_detail` grades (5.5) run hotter than the
+  confirmed Grade II/5.4 cap — no pitch-by-pitch source found to assert a specific fix.
+- Mount Torment (both routes): `fa` spells the FA's second climber "Walter Sellers" on one row
+  and "Walt Sellers" on the other — both spellings appear in reputable sources for what's almost
+  certainly the same person; no primary source reachable to settle which the guidebook of record
+  uses.
+- Mount Torment (both routes): `dist_km` (4.8 on both) reads low against external figures
+  (~10 mi RT for the South Ridge, 9.0 mi one-way for the Traverse per Mountain Project) — flagged
+  per this repo's standing caution against guessing at that column's intended convention.
+- Cathedral Peak NE Ridge: `gain_ft` (4700) is arithmetically too low given this row's own
+  trailhead/summit elevations (net gain alone is already 5,556 ft before the approach's known dip
+  into Spanish Creek) — no source gives an exact figure to replace it with.
+- Cathedral Peak NE Ridge: `fa` (August 1973) and the grade/pitches trio (5.3/II/7) couldn't be
+  matched to a locatable Mountain Project page under this route name — the one Cathedral Peak
+  ridge route confirmed by URL ("North Ridge") is a different, better-documented line. Possible
+  route misidentification; needs direct MP/Beckey access to resolve.
+- Nooksack Tower East Ridge/Beckey Route: the Nooksack Cirque Trailhead waypoint's elevation
+  (2,200 ft) matches neither the USFS-published trailhead location/elevation nor this row's own
+  approach text, and is much closer to the described washout/parking point — possibly mislabeled.
+- Nooksack Tower East Ridge/Beckey Route: the river-ford waypoint sits ~1.1 mi from the ford
+  coordinate given in this row's own approach text — an internal inconsistency neither source
+  could resolve.
+- Nooksack Tower East Ridge/Beckey Route: `season` ("Jun-Aug") and `best_season` ("mid-July
+  through September") disagree with each other on both ends of the window.
+- North Early Winters Spire NW Corner: the summit waypoint is plausible (right massif, right
+  elevation) but no source specifically pins the North spire's coordinates apart from the more
+  commonly cited South spire point — low priority.
+
+Also noted but not touched: current (2026) status of Forest Road 32/Ruth Creek (Nooksack Tower's
+access road) couldn't be confirmed beyond general regional flood-damage reporting — an
+access-conditions question for a human to check directly, not a database fact error.
+
+Next batch will continue alphabetically after `wa_nooksack_tower_south_face` (see progress file).
