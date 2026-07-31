@@ -23,7 +23,7 @@ us Triple Couloirs (see the CLAUDE.md note on `wa_dragontail_peak_triple_couloir
 
 ## Loss audit — 2026-07-31
 
-Six of the nine route pairs were merged and their copies deleted by a parallel session
+Eight of the nine route pairs were merged and their copies deleted by a parallel session
 while this archive was being assembled. Because the archives predate those deletes, the
 merges could be audited after the fact: for every non-empty field on each deleted copy,
 does the survivor still carry content?
@@ -36,32 +36,38 @@ does the survivor still carry content?
 | `wa_garfield_mountain_preiss_route` | 10 | 0 |
 | `wa_castle_peak_tatoosh_la_villa` | 36 | 0 |
 | `wa_castle_peak_tatoosh_southeast_face` | 57 | 0 |
+| `wa_mcmillan_spire_west_southwest_ridge` | 55 | 1 (`fa`, value `"unknown"`) |
+| `wa_mcmillan_spire_west_west_ridge` | 51 | 0 |
 
-**Zero fields lost.** Chair-Bryant Traverse — a real route that existed only on the husk
+**Zero real fields lost** — the one flagged gap is the literal string `"unknown"`, not a
+first-ascent record. Chair-Bryant Traverse — a real route that existed only on the husk
 area `wa_summer_fall_rock_3` and would have been destroyed by a wholesale area delete —
 was correctly reparented to `wa_chair_peak` and survives.
 
 ## Still unmerged at the time of writing
 
-`wa_mcmillan_spire_west_southwest_ridge` ← `wa_southwest_ridge`,
-`wa_mcmillan_spire_west_west_ridge` ← `wa_west_ridge_6`, and
-`wa_vanishing_point` ← `wa_baring_mountain_vanishing_point` (note the reversed direction:
-the short id is the survivor here, because Dolomite Tower is Vanishing Point's correct home
-and the peak-scoped row is the misfile).
+One pair: `wa_vanishing_point` ← `wa_baring_mountain_vanishing_point`. Note the **reversed
+direction** — the short id is the survivor here, because Dolomite Tower is Vanishing Point's
+correct home and the peak-scoped row is the misfile.
 
-`merge-body-*.json` are reviewed, ready-to-apply field sets for those three, with
-`merge-rationale-*.md` recording the decision per field. They are **data, not a migration** —
-nothing applies them automatically. Points worth carrying into whoever finishes the job:
+`merge-body-baring.json` is a reviewed, ready-to-apply field set for it, with
+`merge-rationale-baring.md` recording the decision per field. It is **data, not a
+migration** — nothing applies it automatically. `merge-body-mcmillan.json` is kept for the
+same reason the archives are: it records what a second reviewer concluded about a pair that
+someone else then merged, so the two can be compared.
 
-- The only apparent gap in the McMillan audit is `fa`, and the copy's value is the string
-  `"unknown"` — not a real first-ascent record, so nothing is owed there.
+Findings worth carrying forward, all of them same-name-different-peak bleed:
+
 - Both McMillan copies' `road` objects describe the Ross Lake water taxi. That is Northern
-  Pickets access; these routes are approached from Goodell Creek. Do not take those.
+  Pickets access; these routes are approached from Goodell Creek. They were not taken.
 - `wa_mcmillan_spire_west_west_ridge` crosses the Terror Glacier, so its discipline should
-  be `mountaineering` per the glacier convention, not `alpine`.
+  be `mountaineering` per the glacier convention, not `alpine`. Checked live: it already
+  is. Its `grade` still reads `"Grade II, 4th class (3rd class below)"` where the column
+  wants the compact form (`"4th"`), with the verbose text belonging in `alpine_grade` /
+  `rock_grade` — left alone here because grade normalization is being swept separately.
 - The Castle copy carried Castle Peak (Pasayten) contamination — an 8,343 ft elevation,
   Okanogan-Wenatchee land manager, and a Snow Lake approach — against a Tatoosh Range peak
-  inside Mount Rainier National Park. Same-name, different-peak bleed; it was rejected.
+  inside Mount Rainier National Park. Rejected.
 
 Related: `research/gunsight-bleed-notes.md` for the same class of cross-peak contamination,
 and the CLAUDE.md section on route identity for why name-shaped ids cause it.
