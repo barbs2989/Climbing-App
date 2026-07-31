@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { shortGrade } from "./grade";
@@ -683,7 +683,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -722,6 +722,15 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
     setStateNode(state);
     setStack([...ancestors.filter(x => x.area_type !== "state"), a]);
   };
+  // Saved-areas chips (and anything outside the browser) jump to a DB area by id;
+  // the full row is fetched here because jumpToArea needs area_type + ltree path.
+  const handledAreaJump = useRef(null);
+  const jumpAreaRowQ = useArea(jumpToAreaReq ? jumpToAreaReq.areaId : null);
+  useEffect(() => {
+    if (!jumpToAreaReq || handledAreaJump.current === jumpToAreaReq.id || !jumpAreaRowQ.data) return;
+    handledAreaJump.current = jumpToAreaReq.id;
+    jumpToArea(jumpAreaRowQ.data);
+  }, [jumpToAreaReq, jumpAreaRowQ.data]);
 
   return (
     <div>
