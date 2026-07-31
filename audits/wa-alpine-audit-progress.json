@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_shuksan_sulphide_glacier",
+  "last_processed_id": "wa_mount_stuart_stuart_glacier_couloir",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -717,6 +717,27 @@
         "wa_mount_sefrit_southwest_ridge / wa_mount_shuksan_fisher_chimneys / wa_mount_shuksan_sulphide_glacier: grade_num handling for Class-4-labeled routes is inconsistent within this single batch -- Southwest Ridge stores grade_num=4 for 'Class 4' while Fisher Chimneys and Sulphide Glacier both store grade_num=0 for their own 'Class 4' component. No schema documentation found settling which convention is correct, and it's not a self-contradiction within any one row, so left unfixed; worth a dedicated pass to establish the intended convention DB-wide.",
         "wa_mount_shuksan_beckey_schmidtke / wa_mount_shuksan_price_glacier / wa_mount_shuksan_north_face: alpine_grade stores a Roman-numeral NCCS commitment grade ('IV', 'IV', 'II-III') duplicating the `commitment` field, in the column the schema defines as French adjectival (F/PD/AD/D/TD/ED) -- same recurring bug flagged in batches 9/19/21/23/25/29. Checked available sources (Nelson/Potterfield via search, SummitPost) for Price Glacier specifically and found only NCCS/YDS/ice grades cited, no French adjectival letter -- consistent with batch 29's finding that PNW glacier/alpine routes usually aren't assigned one. Left unfixed rather than guess."
       ]
+    },
+    {
+      "batch_number": 32,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_mount_shuksan_white_salmon_glacier",
+        "wa_mount_spickard_southwest",
+        "wa_mount_st_helens_monitor_ridge",
+        "wa_mount_st_helens_worm_flows",
+        "wa_mount_steel_first_divide",
+        "wa_mount_stuart_girth_pillar",
+        "wa_mount_stuart_ice_cliff_glacier",
+        "wa_mount_stuart_north_face",
+        "wa_mount_stuart_north_ridge",
+        "wa_mount_stuart_stuart_glacier_couloir"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 4,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-07-31-batch-32.sql",
+      "note": "Four peaks/areas (Shuksan, Spickard, St. Helens, Steel, Stuart -- 5 areas), 10 routes (Stuart carries 5). Two watch_out-stored-as-newline-string rendering bugs found and fixed (White Salmon Glacier, Ice Cliff Glacier, Stuart Glacier Couloir -- 3 routes, same pattern as Fisher Chimneys in batch 31), each paired with the recurring Mount Tom area, North Cascades junk clause in access.notes on the same three rows. Mount Stuart North Ridge (Complete) fa credited Hargis/Ossiander with the right climbers but the wrong year (1963, actually Beckey/Marts lower-ridge variation) -- corroborated via multiple independent searches that Hargis/Ossiander toe-to-summit-over-the-Gendarme line dates to 1970; fixed with added context distinguishing all three historical ascents (Claunch/Rupley 1956, Beckey/Marts 1963, Hargis/Ossiander 1970). Mount Spickard Southwest corrections field claimed to use 8,980 ft while high_point_ft actually stored 8979 -- fixed the text to match the stored value rather than pick a winner among genuinely conflicting external elevation figures (8978-8983 across sources). Mount Stuart North Face was already correctly flagged unverified/fabricated-duplicate by a prior research pass (2026-07-28) -- confirmed the flag is accurate (no such named route in any source checked) and left as-is, no new action needed."
     }
   ]
 }

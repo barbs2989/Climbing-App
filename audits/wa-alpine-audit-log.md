@@ -2118,3 +2118,72 @@ Nisqually Icefall, Ptarmigan Ridge, Sunset Ridge, Tahoma Glacier, Willis Wall), 
   should recheck if the LiDAR figure becomes more widely cited.
 
 Next batch will continue alphabetically after `wa_mount_seattle_noyes_basin` (see progress file).
+
+---
+
+## 2026-07-31 — Pass 1, Batch 32
+
+Checked 10 routes across Mount Shuksan (White Salmon Glacier), Mount Spickard (Southwest Route),
+Mount St. Helens (Monitor Ridge, Worm Flows), Mount Steel (First Divide Route), and Mount Stuart
+(Girth Pillar, Ice Cliff Glacier, North Face, North Ridge Complete, Stuart Glacier Couloir).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-32.sql` (5, touching 8 fields across 5
+routes):**
+- White Salmon Glacier, Ice Cliff Glacier, and Stuart Glacier Couloir all had `watch_out` stored
+  as one newline-joined string instead of a JSON array — the same rendering bug caught on Fisher
+  Chimneys in batch 31 (`lib/db.js`'s `toArr()` only splits on commas, so the app would render
+  each route's hazard list as a single run-on bullet instead of separate items). Converted all
+  three to proper JSON arrays.
+- The same three routes also carried the recurring "Mount Tom area, North Cascades." junk clause
+  at the end of `access.notes` (DB-wide copy-paste contamination first identified in batch 15,
+  already confirmed on 3 Shuksan routes in batch 31) — stripped from all three.
+- Mount Stuart North Ridge (Complete): `fa` credited the right climbers (Mead Hargis & Jay
+  Ossiander) with the wrong year (1963). Cross-checked via several independent searches
+  (converging on American Alpine Institute's route-history profile): 1963 was actually Fred
+  Beckey & Steve Marts's earlier ascent via a lower-ridge variation, seven years before Hargis &
+  Ossiander's 1970 toe-to-summit line over the Great Gendarme — the route this row actually
+  describes and the one most parties climb today. Fixed the year and added a short note
+  distinguishing it from the two earlier partial/variation ascents (Claunch & Rupley's ungendarmed
+  1956 ascent, and Beckey & Marts's 1963 lower-ridge version) so one field doesn't conflate three
+  distinct historical climbs.
+- Mount Spickard Southwest Route: `corrections` stated "this page uses 8,980 ft" for the summit
+  elevation, but the row's own `high_point_ft` actually stores 8979 — a plain contradiction
+  between the row's documented reasoning and its real data. External sources genuinely disagree
+  on this summit's elevation (8978 ft lidar-revised Wikipedia figure, 8979 ft traditional
+  Wikipedia/trailcatjim figure, 8980 ft PeakVisor, 8983 ft older listsofjohn.com and this peak's
+  own `areas.elevation_ft` row), so rather than pick a winner among them, the fix only makes the
+  corrections text match what the row already stores (8979, the traditional figure).
+
+**Clean:** Ice Cliff Glacier's FA (Bill & Gene Prater, Dave Mahre, Aug 5 1957) and Stuart Glacier
+Couloir's FA (Helmy Beckey & Larry Strathdee, June 1944) were both independently corroborated
+externally. Mount Steel First Divide Route's trailhead waypoint (47.5155, -123.3295) matches the
+NPS-published Staircase Ranger Station GPS coordinates exactly; its distance/gain figures are
+internally consistent (12.7 mi to First Divide ≈ the stored 20.4 km, and trailhead→First
+Divide→summit elevation deltas sum to the stored 5,440 ft gain). Monitor Ridge and Worm Flows'
+permit/quota text matches current (2026) Recreation.gov terms; Mount St. Helens's on-file FA
+("Unknown, 1853") is a reasonable hedge given historians still debate the exact circumstances of
+Thomas J. Dryer's disputed first ascent.
+
+**Flagged for human review (4):**
+- Mount Spickard: the area row's `elevation_ft` (8983) still disagrees with the route's
+  `high_point_ft` (8979) — left both as-is since external sources don't converge on a single
+  correct figure (see above); a future pass should recheck if a lidar-based figure becomes the
+  clear consensus.
+- White Salmon Glacier's `fa` ("Piley, Richards, Thompson — September 9, 1926") could not be
+  independently confirmed or contradicted by any source found this pass — left unverified.
+- Girth Pillar's `fa` ("Kit Lewis & Jim Nelson, 1983") is partially corroborated (a source
+  confirms Lewis and Nelson made the first winter ascent of "their" Girth Pillar route, implying
+  they did establish it) but the 1983 date itself was not independently confirmed — left as-is
+  rather than guess.
+- Mount Stuart North Face: already correctly flagged as an unverified fabricated duplicate of
+  Ice Cliff Glacier by a prior research pass (2026-07-28, `verif.status="unverified"` with a
+  detailed `corrections` note). Re-verified the flag is accurate — no source checked this pass
+  documents a distinct "North Face" route on Mount Stuart — and left untouched; no new action
+  needed. Also noted but not fixed: its `grade_num` field doesn't match any of the routes here
+  (Stuart Glacier Couloir's `grade_num`=3 doesn't correspond to its M5-/WI2-3 grades), but
+  `lib/db.js` never maps `grade_num` into the app's route object — the UI derives its own grade
+  number from the `grade` text via `gn()` at render time — so this is inert stored data with no
+  live rendering impact, not worth a guess-based fix.
+
+Next batch will continue alphabetically after `wa_mount_stuart_stuart_glacier_couloir` (see
+progress file).
