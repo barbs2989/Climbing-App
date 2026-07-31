@@ -17,6 +17,9 @@ export default defineConfig({
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
           if (id.includes("@tanstack")) return "react-query";
+          // Only matters for CI/prod builds where the VITE_SUPABASE_* env is set;
+          // without it the client tree-shakes away and this rule emits nothing.
+          if (id.includes("@supabase")) return "supabase";
           if (id.includes("/react/") || id.includes("/react-dom/") || id.includes("/scheduler/")) return "react";
         },
       },
