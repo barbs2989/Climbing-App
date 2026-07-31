@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_rock_mountain_northeast_ridge",
+  "last_processed_id": "wa_sherman_peak_baker_squak_glacier",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -904,6 +904,45 @@
         "wa_rapple_grapple: fa ('Bryan Burdo,' no year) is unverifiable, already self-flagged as a gap; watch_out text reads as generic rappel-pun boilerplate rather than sourced beta.",
         "wa_raven_ridge_southeast_ridge_crater_lake: FA party 'Gilbertson & Robinson, Jan 2019' is unverifiable -- worth a second look given a Robinson Mountain route is in this same batch, in case of a stray cross-record name bleed.",
         "wa_robinson_mountain_north_couloir / wa_rock_mountain_northeast_ridge: remaining guidebook-citation and multi-peak-traverse mileage claims are trip-report-sourced and not independently checkable without the source texts."
+      ]
+    },
+    {
+      "batch_number": 40,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_ruth_icy_traverse",
+        "wa_ruth_mountain_south_slopes",
+        "wa_sahale_mountain_r1",
+        "wa_sahale_mountain_sahale_glacier",
+        "wa_se_ridge_aka_shield_wall",
+        "wa_sentinel_peak_standard",
+        "wa_sews_sw_rib",
+        "wa_sharkfin_tower_southeast_ridge",
+        "wa_sherman_peak_baker_route",
+        "wa_sherman_peak_baker_squak_glacier"
+      ],
+      "confirmed_errors_fixed": 24,
+      "flagged_for_human_review": 16,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-31-batch-40.sql",
+      "note": "Seven peaks, 10 routes. Ruth Mountain South Slopes: stripped the recurring 'Mount Tom area, North Cascades' boilerplate contamination from access.notes. Sahale Mountain (both routes): Sahale Glacier Camp elevation was stored as 7,400 ft against WTA and this row's own waypoints/approach text (7,600 ft) -- fixed on access._raw and (for the Sahale Arm route) pitch_detail. Sahale Mountain + Sharkfin Tower: Boston Basin's group_limit was stored as 6, but NPS's cross-country-zones page names Boston Basin (with Eldorado/Sulphide Glacier) a 12-person high-occupancy zone -- fixed on all three rows. Mount Washington (Olympics): three different elevations were stored across the area row (6255) and its SE Ridge route (high_point_ft 6260, access._raw.altitude_restrictions 6278) -- resolved to 6,260 ft (Wikipedia, corroborated by matching prominence). Same route's access block was contaminated with Olympic National PARK language and a neighboring peak's (Mount Ellinor) day-hike stat, despite this peak actually sitting in Olympic National FOREST's Mount Skokomish Wilderness per its own area blurb -- fixed. Sentinel Peak: Cache Col elevation, a fabricated 'Dana Glacier'/south-face route description in hazards/pitch_detail (Dana Glacier is real but ~2.5 mi south near Dome Peak, unrelated), a wrong 2026 NCNP lottery date range, a 'Mountain Loop Highway' access-corridor error, and a trailhead elevation mismatch -- all fixed. South Early Winters Spire SW Rib: a 1/4-mile camping closure misattributed to Cutthroat Lake instead of Blue Lake, a wrong 10-day (vs. 14-day) dispersed-camping cap, a Blue Lake Trailhead elevation outlier (5200 vs 5400 ft), and a trailhead-distance error (1.5 mi vs 1 mi) -- fixed. Sharkfin Tower: a wrong NCNP Wilderness Information Center phone number and a wrong $35 (vs $30) annual Northwest Forest Pass price -- fixed. Sherman Peak (both routes): high_point_ft (10160) contradicted the area row and both routes' own summit waypoints/overview text (all already 10,133) -- a real July 2023 DGPS survey (countryhighpoints.com) confirmed 10,133 ft/395.4 ft prominence, independently verified as genuine (not fabricated); fixed on both routes plus the Squak Glacier route's own waypoint. The Crater Rim Scramble route's gain_ft (7500) also didn't match its own loss_ft/totalNote -- fixed to 6800.",
+      "flags": [
+        "wa_ruth_icy_traverse: 'Ruth-Icy Saddle'/'Ruth Glacier Camp' waypoint longitudes (-121.555) sit west of Ruth's own summit -- the wrong direction from Icy Peak. Direction of the error is confirmed; needs a human topo/CalTopo pull for the correct value.",
+        "wa_ruth_mountain_south_slopes: Hannegan Pass elevation internally inconsistent (5,066 ft everywhere except one itinerary schedule string saying 5,056 ft); gain_ft/loss_ft (4115) vs itinerary gainFt/lossFt (4200) also disagree.",
+        "wa_ruth_icy_traverse: which of Icy Peak's two sub-summits (SE vs NW) is truly higher is disputed between older USGS-map-based sources and a peakbagger LiDAR discussion.",
+        "wa_sahale_mountain_r1: dist_km (16.9) doubles to almost exactly 21.00 mi, matching the known WA round-trip/one-way convention bug pattern (CLAUDE.md, ~61 other rows) -- but this row's own itinerary/totalNote insist the real round trip is ~10.5 mi. Needs a human GPX-track check, not a bulk fix. Also gain_ft/loss_ft (5480/5500) vs. itinerary day-sum (5080/5080) disagree.",
+        "wa_sahale_mountain_sahale_glacier.fa ('August 1897; John Charlton and Albert H. Sylvester'): consistent across secondary sources but not verified against a primary source (Beckey/AAC) this session -- direct fetches were blocked.",
+        "wa_se_ridge_aka_shield_wall: access._raw.cost_structure, permit_pickup_hours/location, and access.parking_pass still describe Olympic National Park's fee/permit system (confirmed wrong direction) but the correct Forest-Service-side wording could not be sourced this session; also access._raw.group_size_limits ('not specified') contradicts access.rules (a specific 12/8-stock figure) on the same row.",
+        "wa_se_ridge_aka_shield_wall: pitch count above the Shield Wall (3 rappels + 6 pitches = 13 total) matches one secondary source exactly but not another (2 rappels + 2-3 pitches) -- could not resolve which is current.",
+        "wa_sentinel_peak_standard.data_quality.gaps: the claim that listsofjohn.com's LiDAR figure 'independently' corroborates the 2025 DGPS resurvey may be circular (the LoJ page may itself have been updated because of the resurvey) -- wording issue, not a factual error.",
+        "wa_sentinel_peak_standard: gain_ft/loss_ft (8500/9200) mismatch by ~8% on an out-and-back route; flagged in the row's own data_quality as a computed estimate, not independently sourced.",
+        "wa_sentinel_peak / wa_sentinel_peak_standard: area parent_chain ('Darrington and Mountain Loop Hwy') is itself wrong -- re-parenting the area node needs a human to pick the correct existing area id.",
+        "wa_sews_sw_rib: pitch count (7, matching Alpinism Project) vs. two other sources citing 9 or 10 pitches -- longstanding source disagreement, not a clear error. Also length_m (274) doesn't reconcile with the pitch_detail length sum (225m); itinerary.days[0] gainFt/lossFt (2621) vs. this route's own gain_ft/loss_ft (2407) disagree by ~214 ft.",
+        "wa_sharkfin_tower_southeast_ridge.areas.prominence_ft (80 ft): could not independently verify this session (Peakbagger/ListsOfJohn fetches were blocked).",
+        "wa_sharkfin_tower_southeast_ridge.pitch_detail grades (P1 5.4, P3 5.2): secondary sources describe these more loosely as 'class 4 to low 5th'/'exposed class 4' -- may reflect a specific guidebook's line choice; row's own data_quality already discloses a 5.0-5.5 range.",
+        "wa_sharkfin_tower_southeast_ridge.length_m (61) does not reconcile with the pitch_detail length sum (95m); unclear what this field represents.",
+        "wa_sherman_peak_baker_route.descent_text's 'roughly 30 degrees' for the Roman Wall section: guide-service sources describe the real Roman Wall as 35-45 degrees, and it's unclear this Sherman-only route legitimately reaches Roman Wall terrain at all -- may be copied from the full-Baker-summit route.",
+        "wa_sherman_peak_baker_squak_glacier.season ('Jun-Sep') and .approach ('high camp...around 6,800 ft'): several guide sources favor an earlier (May-June) window before the bergschrund opens and cite a ~6,500 ft common camp -- not clearly wrong, flagged for a closer look."
       ]
     }
   ]

@@ -2678,3 +2678,98 @@ correct "unverified" field into a wrong confident one.
 
 Next batch will continue alphabetically after `wa_rock_mountain_northeast_ridge` (see
 progress file).
+
+## 2026-07-31 — Pass 1, Batch 40
+
+Ten routes across seven peaks: Ruth Mountain (2), Sahale Mountain (2), Mount Washington
+(Olympics), Sentinel Peak, South Early Winters Spire's Southwest Rib, Sharkfin Tower, and
+Sherman Peak/Baker (2).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-40.sql` (24 field-level fixes across
+11 UPDATE statements, touching 10 routes + 2 area rows):**
+- `wa_ruth_mountain_south_slopes`: `access.notes` carried the "Mount Tom area, North
+  Cascades" boilerplate contamination string (same recurring bug first seen batch 15,
+  most recently batch 39) — stripped.
+- Sahale Mountain, both routes: `access._raw.altitude_restrictions` said Sahale Glacier
+  Camp sits at 7,400 ft, contradicted by WTA's page (12 mi RT / 3,940 ft gain, matching
+  this row's own `gainFt`) and by each route's own waypoints/approach text, already 7,600
+  ft — fixed, including the same figure repeated in the Sahale Arm route's
+  `pitch_detail[1].notes`.
+- Sahale Mountain, both routes + Sharkfin Tower: `access.rules`/`group_limit` said Boston
+  Basin is a 6-person cross-country zone. NPS's own cross-country-zones page names Boston
+  Basin (with Eldorado and Sulphide Glacier) a 12-person high-occupancy zone instead —
+  fixed on all three rows (found first while auditing Sharkfin, then applied to its Boston
+  Basin-approach sibling Sahale routes too).
+- `wa_mount_washington_olympic` (area) + its `wa_se_ridge_aka_shield_wall` route: three
+  different elevations were stored across one peak (area 6255, route `high_point_ft`
+  6260, route's own `access._raw.altitude_restrictions` 6278) — resolved to 6,260 ft
+  (Wikipedia infobox; its prominence figure, 2,615 ft, independently matches this row's
+  own `prominence_ft` exactly). The same route's `access` block was also contaminated
+  with Olympic *National Park*-specific land-manager/wilderness-zone language and a
+  Mount Ellinor day-hike stat ("3.2-mile out-and-back"), even though Mount Washington
+  sits entirely in the Mount Skokomish *Wilderness* of Olympic *National Forest* — already
+  stated correctly in this same peak's own area blurb, confirmed via fs.usda.gov — fixed
+  `landManager`/`land_manager`/`permitZone`/`_raw.wilderness_zone`/`_raw.altitude_restrictions`.
+- `wa_sentinel_peak_standard`: `approach`'s Cache Col elevation ("~6,600-6,800 ft")
+  contradicted this row's own waypoint (6,900 ft) and Wikipedia (6,903 ft) — fixed.
+  `hazards`/`pitch_detail` described crossing "Dana Glacier" and climbing a "south face" —
+  Dana Glacier is real but sits ~2.5 mi south near Dome Peak, unrelated to Sentinel, and no
+  source describes a south-face Sentinel route; this row's own approach/descent_text/
+  itinerary all agree on the real route (Le Conte Glacier → col → west face/west ridge,
+  matching `pitch_detail`'s 4th entry) — removed the contaminated entries rather than
+  inventing replacement beta for a route no source documents. Also fixed: `access.permit`
+  cited the wrong 2026 NCNP lottery window (was Feb 10-Mar 3/Apr 25; actual is Mar 2-13/Apr
+  29); `access.parking_pass` named "Mountain Loop Highway," which doesn't reach Sentinel
+  Peak (it's a Cascade River Road/Suiattle River Road objective); `approach_logistics.
+  trailheadDirection` said 3,660 ft vs. this row's own waypoint of 3,600 ft.
+- `wa_sews_sw_rib`: `access.rules` attributed a 1/4-mile no-camping closure to Cutthroat
+  Lake, but USFS's Blue Lake Trailhead page attributes it to Blue Lake — this route's own
+  trailhead lake; same field's "10 day" dispersed-camping cap corrected to the actual
+  Okanogan-Wenatchee NF 14-day standard. `waypoints[0].elevFt` (Blue Lake Trailhead) was
+  5,200 ft against WTA/Gaia's ~5,400 ft — and this row's own `gain_ft` (2407) already
+  equals 7807−5400, i.e. the rest of the record already assumed 5,400. `approach_logistics.
+  trailheadDirection` said 1.5 mi west of Washington Pass; sources (and this row's own
+  `approach` text) say ~1 mi.
+- `wa_sharkfin_tower_southeast_ridge`: `access._raw.permit_pickup_hours` embedded the
+  wrong NCNP Wilderness Information Center phone number ((360) 873-4500 vs. the real (360)
+  854-7245, already stored correctly elsewhere in this DB); `passRequired`/`_raw.
+  parking_pass_required` gave the annual Northwest Forest Pass price as $35 (USFS/REI
+  confirm $30).
+- Sherman Peak, both routes: `high_point_ft` (10160) contradicted the area row, both
+  routes' own summit waypoints, and the Crater Rim Scramble route's own overview text (all
+  already 10,133) — a real July 2023 differential-GPS survey (countryhighpoints.com,
+  survey-grade DGPS + NOAA OPUS post-processing) fixed Sherman Peak at 10,133.0 ft / 395.4
+  ft prominence, just under the 400 ft cutoff that removed it from WA's Top 100 peaks list;
+  10,160 was the stale pre-survey figure — fixed on both routes' `high_point_ft` plus the
+  Squak Glacier route's own summit waypoint. The Crater Rim Scramble route's `gain_ft`
+  (7500) also didn't match its own `loss_ft` (6800)/totalNote or the verified trailhead-
+  to-summit difference — looks carried over from stats for the longer route to Baker's
+  true summit (Grant Peak), which this route doesn't reach — fixed to 6800.
+
+**Scrutinized and confirmed real, not fabricated:** both the "2025 DGPS resurvey" claim
+that Old Guard Peak is ~2.7 ft higher than Sentinel Peak, and the "July 2023 DGPS survey"
+behind Sherman Peak's 10,133 ft figure, independently verified against
+countryhighpoints.com's peak-survey writeups (a site that specifically tracks WA
+prominence-list resurveys) — this pattern of suspiciously-precise recent-survey claims has
+been fabricated before in this DB, but not this time in either case.
+
+**Flagged for human review — not auto-fixed (see `sql/2026-07-31-batch-40.sql`'s trailing
+comment block for full detail):** `wa_ruth_icy_traverse`'s Ruth-Icy Saddle/Ruth Glacier
+Camp waypoint longitudes sit the wrong direction from Icy Peak (needs a human topo pull,
+not a guessed value); `wa_ruth_mountain_south_slopes`'s Hannegan Pass elevation and
+gain/loss figures disagree internally; which of Icy Peak's two sub-summits is truly higher
+is disputed between sources; `wa_sahale_mountain_r1`'s `dist_km` matches the known
+WA round-trip/one-way convention bug pattern (CLAUDE.md) but this row's own itinerary
+insists otherwise — needs a GPX-track check, not a bulk fix; several gain_ft/loss_ft vs.
+itinerary-sum mismatches (Sahale, Sentinel, SEWS) that no source could resolve; `wa_se_
+ridge_aka_shield_wall`'s remaining Olympic-NP-flavored fee/permit-hour text (confirmed
+wrong direction, correct Forest-Service wording not sourced this session) and an
+unresolved pitch-count disagreement; `wa_sentinel_peak`'s area `parent_chain` wrongly
+routes through "Mountain Loop Hwy" (needs a human to pick the correct existing area-tree
+parent); `wa_sews_sw_rib`'s pitch-count/length_m disagreements between sources;
+`wa_sharkfin_tower_southeast_ridge`'s unverified prominence figure and pitch-grade
+looseness; `wa_sherman_peak_baker_squak_glacier`'s season/camp-elevation claims against a
+couple of guide sources favoring an earlier window and a lower camp.
+
+Next batch will continue alphabetically after `wa_sherman_peak_baker_squak_glacier` (see
+progress file).
