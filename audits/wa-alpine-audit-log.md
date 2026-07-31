@@ -2418,3 +2418,66 @@ approach all confirmed).
   this note-leak pattern.
 
 Next batch will continue alphabetically after `wa_northwest_ridge` (see progress file).
+
+## 2026-07-31 — Pass 1, Batch 37
+
+Six peaks, 8 routes: Northwest Ridge (Boston Peak); NW Face Var., Remsberg Variation
+(Liberty Bell Mountain); NW Ridge (Colchuck Balanced Rock); Southwest Route (Old Guard
+Peak); South Ridge / PCT approach (Old Snowy Mountain); Blue Glacier/Snow Dome East Face
+Ramps, Summit Block Northwest Edge Finish, and the West-Middle-East Traverse (Mount
+Olympus, 3 routes).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-37.sql` (4, touching 4 routes):**
+- Old Guard Peak Southwest Route: `access.land_manager` ("Mt. Baker-Snoqualmie National
+  Forest, Darrington Ranger District") contradicted this same row's own, more detailed
+  `access.landManager` and `emergency.rangerStation` fields, which correctly place the
+  peak in Okanogan-Wenatchee NF's Chelan Ranger District (south of Cache Col, in Glacier
+  Peak Wilderness, outside North Cascades NP) and only credit Darrington RD with the
+  separate western Suiattle River/Downey Creek access corridor. `access.parking_pass`
+  separately claimed a Northwest Forest Pass was needed "at Mountain Loop Highway
+  trailheads" — an unrelated Mt. Baker-Snoqualmie NF corridor nowhere near this route,
+  contradicting the row's own `access.passRequired` field (already correctly "no pass
+  needed"). Both corrected — the same wrong-ranger-district/wrong-corridor contamination
+  pattern seen in batches 4, 5, 8, and 12.
+- Mount Olympus Blue Glacier/East Face Ramps: `access.notes` carried the exact "Mount Tom
+  area, North Cascades" string plus a Northwest Forest Pass claim — the identical
+  DB-wide copy-paste contamination first identified in batch 15 (35 affected rows at the
+  time, including a Wyoming route). Mount Olympus sits in Olympic National Park on the
+  Olympic Peninsula, nowhere near the North Cascades; corrected to match this row's own
+  already-correct `permit`/`access.land_manager`/`access.parking_pass` fields (NPS
+  Olympic NP entrance fee, not a Forest Service pass).
+- Mount Olympus Blue Glacier/East Face Ramps: the West Peak summit waypoint's `elevFt`
+  (7973) was the sole outlier against this same row's own `high_point_ft` (7980), the
+  area row's `elevation_ft` (7980), and the identical West Peak waypoint on both sibling
+  routes audited this batch (Summit Block Northwest Edge Finish, Traverse — both 7980).
+  Fixed to 7980.
+- Mount Olympus Summit Block, Northwest Edge Finish: top-level `grade` was null despite
+  populated, internally-consistent `alpine_grade` (PD), `rock_grade` (5.4), `commitment`
+  (Grade III), and `pitch_detail` (Class 5.3-5.4) — the recurring null-grade-despite-
+  populated-subfields bug (batches 6/10/17/19/26/30/31/33). Filled as "Grade III; 5.4",
+  matching sibling wa_olympus_blue_glacier_east_ramps's grade format.
+- Mount Olympus Traverse: `rope_note` read "West Peak (7,969ft)", the sole outlier
+  against this same row's own `high_point_ft`, its own West Peak waypoint, and the area
+  row's `elevation_ft` (all 7980) — a plain digit-transposition typo. Fixed to 7,980ft.
+
+**Clean:** Boston Peak's Northwest Ridge (elevation, FA, and trailhead all internally
+consistent; the row's own `corrections` field already resolves a July-vs-August FA-month
+source discrepancy). Liberty Bell's NW Face Var. (Remsberg Variation) (pitch grades,
+shared P1-P2 with the standard route, summit elevation matching 8 sibling Liberty Bell
+routes, and Methow Valley RD access details all consistent). Old Snowy Mountain's South
+Ridge/PCT route (elevation, approach, Cowlitz Valley RD land manager, and the December
+2025 FR-21 washout closure all independently corroborated).
+
+**Flagged for human review (2):**
+- Colchuck Balanced Rock NW Ridge: `pitches` is stored as 0, contradicting the row's own
+  overview/hazards text describing "a few pitches of low 5th class... up to 5.6" plus a
+  documented descent rappel — real roped multi-pitch climbing, not an unroped scramble.
+  The cited source (Steph Abegg's trip report) 403'd on fetch this pass and no Mountain
+  Project page gave an exact pitch count; "a few" isn't specific enough to assign a
+  number, so left flagged rather than guessed.
+- Old Guard Peak Southwest Route: the row's own `data_quality.gaps` field already flags
+  an unresolved naming ambiguity between the route's name/approach text ("Southwest
+  Route" / "southwest side") and its own `face`/`aspect` fields (both NW) — re-confirmed
+  still open this pass, left as a standing (not new) flag.
+
+Next batch will continue alphabetically after `wa_olympus_traverse` (see progress file).
