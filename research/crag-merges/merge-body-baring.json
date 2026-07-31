@@ -1,0 +1,137 @@
+{
+  "wa_vanishing_point": {
+    "source": "wa-enrich-batch",
+    "pitches": 20,
+    "gear": [
+      "Single rack of nuts and cams to #1 (finger to mid-hand)",
+      "15 draws (including 6 single runners)",
+      "60-meter single rope",
+      "Helmet (essential for rockfall hazard)",
+      "Alpine rock shoes",
+      "Approach shoes for the wet gully/creek approach",
+      "Sling or prusik to ascend/clip the fixed ropes on the approach",
+      "Harness",
+      "Carabiners",
+      "Belay/rappel device",
+      "Anchor-building kit"
+    ],
+    "beta": "Vanishing Point is approximately as steep a route as one could find on the mountain—nearly every pitch involves relentless overhanging terrain at 5.11–5.12. The route was established over several years and fully modernized in 2020 with new stainless-steel anchors and improved protection. Notable features include pitch 5 (crux, 5.12+), a collapsed roof section, and several intentionally runout pitches. The approach involves 800 feet of mostly roped-up slab climbing with fixed lines and bolts. Published pitch counts vary between 14 and 20 depending on how the climbing is split or linked; the pitch-by-pitch breakdown here uses the 20-pitch convention.",
+    "best_season": "Late July through September, once the approach gully has shed its snow and running water (typically early-to-mid August in a normal year); documented ascents cluster in September. Spring and late fall carry significant snow hazard on the approach gullies, and snow risk returns toward October.",
+    "what_to_bring": [
+      "Rock climbing shoes (alpine)",
+      "Approach shoes for the wet gully/creek approach",
+      "Helmet (essential for rockfall hazard)",
+      "Layers (fleece, wind jacket, rain shell)",
+      "Headlamp with extra batteries",
+      "Water or hydration system (2–3L for dry/late-season)",
+      "High-calorie food (energy bars, nuts, nut butter)",
+      "First aid kit (blood stoppers, pain relief, blister treatment)",
+      "Knife/multitool",
+      "Sunscreen and lip balm",
+      "Toilet paper and trowel",
+      "Map and compass (GPS unreliable in dense forest)",
+      "Satellite communicator or PLB",
+      "Rappel backup device (if retreating)",
+      "Rain cover for pack",
+      "Insulation bivy layer (in case of unplanned bivy; caves reported near route start)"
+    ],
+    "pro_tips": [
+      "Pitch 5 is the crux at 5.12+ (graded 5.11c on FA, but climbers report it as significantly harder). Scout the line on approach if possible.",
+      "The collapsed roof section on pitch 9/10 (rerouted in 2020) demonstrates route changes since FA—the route may still undergo evolution as weathering continues.",
+      "Pitch 8 is intentionally left with significant runout as a mental challenge; this is by design. Know your comfort level.",
+      "Start very early (4–5 am from trailhead) to maximize light on the climb and descent.",
+      "Water is usually available in the approach gully until early August; carry extra capacity if climbing later in season.",
+      "Bring a satellite communicator or PLB—cell service is unreliable in the Skykomish drainage.",
+      "The 2020 modernization improved the approach significantly; older trip reports may reference less secure sections.",
+      "Ben Gilkison's 2012 onsight of most pitches is impressive but not representative of typical climbing here—this is a serious, committing alpine route.",
+      "The approach gully has fixed ropes at its steepest sections — bring a sling or prusik to use them rather than free-climbing wet, loose rock.",
+      "Several pitches have variation options; review a topo or a recent trip report before committing to a given line."
+    ],
+    "watch_out": [
+      "Rockfall risk is real, especially on pitch 5 area where the roof has partially collapsed since 1999 FA.",
+      "Loose rock throughout approach and on tower—wear helmet at all times.",
+      "Multiple runout sections—not all are bolted; know the line before committing.",
+      "Serious exposure on most pitches—not a beginner alpine climb.",
+      "Approach is technical and hard to navigate even with beta; parties have gotten lost.",
+      "Weather can change rapidly in the Cascades—be prepared to descend or bivy.",
+      "Fixed lines on approach may be weathered or absent in some years—do not rely solely on them.",
+      "No moderate pitches — sustained difficulty from bottom to top with several 5.11–5.12 sections and limited rests.",
+      "A wet 5.8 slab low on the approach has seen recent rockfall."
+    ],
+    "waypoints": [
+      {
+        "lat": 47.7954,
+        "lng": -121.46434,
+        "name": "Barclay Lake Trailhead",
+        "note": "USFS-listed coordinate for the Barclay Lake Trailhead parking area; the approach follows the Barclay Lake trail before leaving it off-trail toward the tower.",
+        "type": "Trailhead",
+        "distMi": 0,
+        "elevFt": 2280
+      },
+      {
+        "lat": 47.784586,
+        "lng": -121.426684,
+        "elev": 2422,
+        "name": "Barclay Lake",
+        "note": "Trail continues past the lake toward Baring's north side.",
+        "type": "Water",
+        "distMi": 2.2
+      },
+      {
+        "lat": 47.7805,
+        "lng": -121.429,
+        "elev": 5200,
+        "name": "Dolomite Tower Base",
+        "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+        "type": "Junction",
+        "distMi": 3.8
+      },
+      {
+        "lat": 47.781,
+        "lng": -121.43,
+        "elev": 5900,
+        "name": "Vanishing Point Topout",
+        "note": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete.",
+        "type": "Topout",
+        "distMi": 4
+      },
+      {
+        "lat": 47.77918,
+        "lng": -121.43599,
+        "name": "Dolomite Tower",
+        "type": "Summit",
+        "elevFt": 5708
+      }
+    ],
+    "itinerary": "Typically climbed as a 2-3 day trip mirroring the original ascent style: Day 1 — hike in and complete the ~3-3.5 hour technical approach (forested rib with fixed lines, roped slab) to the bivy caves below the tower; Day 2 — climb the full 20-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches); Day 3 (or same-day if fast) — descend via the ~3-hour descent route back to the trailhead. Strong parties also do the route car-to-car in one very long day (roughly 3 hours of approach, a full day on route, and about 3 hours of descent) with a pre-dawn start.",
+    "access": {
+      "fees": "$5/vehicle/day or $30/year day-use fee at the Barclay Lake Trailhead",
+      "permit": "No formal climbing permit; a day-use fee or valid pass is required at the trailhead",
+      "closures": "Barclay Creek Road (FS 6024) had a significant washout reported roughly 2 miles before the trailhead in January 2026; verify current road status before driving in.",
+      "landManager": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+      "passRequired": "Northwest Forest Pass or Interagency Recreation Pass accepted (WA Discover Pass is NOT valid here)",
+      "notes": "Much of the Baring massif sits outside designated wilderness — administratively unrestricted despite serious technical terrain."
+    },
+    "road": {
+      "name": "Barclay Creek Road / FS Road 6024",
+      "status": "Generally drivable to the trailhead, but a significant washout roughly 2 miles before the trailhead was reported in January 2026; confirm current conditions with the Skykomish Ranger District.",
+      "driveNote": "Roughly 1-1.5 hours from Seattle via US-2. From US-2 milepost 42 in Baring, turn north onto Barclay Creek Road (FS 6024, across from 'Der Baring Store'), cross the railroad tracks, and continue about 4.3-4.5 miles to the trailhead.",
+      "seasonalGate": "Not gated on a fixed seasonal schedule, but subject to closure from winter storm damage/washouts."
+    },
+    "climate": {
+      "fall": "September: Cooling nights, shorter days, lower crowds. Early September resembles summer; late September sees increasing snow risk. October can have early snow on high terrain.",
+      "spring": "April–May: Snow lingers on approach gullies above 3,500 ft through May; ice axe often needed. Spring runoff swells creeks. Approach is technical and avalanche-hazardous early in season.",
+      "summer": "June–August: Most reliable climbing window. June is typically drier than July–August. Expect afternoon clouds and occasional thunderstorms. July–August can be humid and buggy. Water is abundant in approach gullies.",
+      "winter": "November–March: Route is snow and ice-covered; winter alpine climbing required. Approach is avalanche-hazardous. Not recommended for most climbers.",
+      "typical": "The Central-West Cascades are maritime-influenced with mild summers and wet winters. Expect rapidly changing weather, afternoon thunderstorms (especially July–August), and cool nights. Afternoon clouds and rain are common even in summer.",
+      "forecastZone": "NWAC Stevens Pass / West Slopes Central Cascades zone; NWS Everett/Stevens Pass corridor"
+    },
+    "emergency": {
+      "notes": "Rescue response time is long due to remote location and steep approach. Self-rescue skills and party discipline are essential. Notify ranger station before climbing. Carry a satellite communicator.",
+      "county": "Snohomish County, WA",
+      "rangerStation": "Skykomish Ranger Station, Mount Baker-Snoqualmie National Forest, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288. Hours: Wed–Fri 9:00 AM–12:00 PM, 1:00 PM–4:00 PM. Phone: (360) 677-2414.",
+      "nearestHospital": "EvergreenHealth Monroe (Monroe, WA) — 24-hour ER roughly 30 miles west via US-2; Providence Regional Medical Center Everett is the nearest full-service hospital. Helicopter airlift (SAR) likely required from the route for serious injury.",
+      "sheriffDispatch": "Snohomish County Sheriff: 911 (emergency) or (425) 407-3999 (non-emergency)"
+    }
+  }
+}
