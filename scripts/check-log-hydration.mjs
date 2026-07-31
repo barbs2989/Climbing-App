@@ -17,7 +17,12 @@
 // mapping it back fails the check rather than silently losing it.
 import { readFileSync } from "node:fs";
 
-const SRC = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8");
+// The app is split across ClimbMatch.jsx (App) and ClimbMatchCore.jsx (helpers,
+// seed data, presentational components); markers may live in either. Core is
+// optional so this also works on pre-split checkouts.
+const readOpt = (u) => { try { return readFileSync(u, "utf8"); } catch { return ""; } };
+const SRC = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8") +
+  "\n" + readOpt(new URL("../ClimbMatchCore.jsx", import.meta.url));
 const fail = m => { console.error("check:log FAILED — " + m); process.exit(1); };
 
 // ---- what the write path persists -------------------------------------------
