@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_rainier_kautz_glacier",
+  "last_processed_id": "wa_mount_seattle_noyes_basin",
   "total_in_scope_last_count": 470,
-  "total_wa_alpine_or_mountaineering_tagged": 589,
+  "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
     {
       "batch_number": 1,
@@ -663,6 +663,33 @@
         "wa_mount_rainier_curtis_ridge: has a 'Columbia Crest'/type=Summit waypoint with no elevFt at all, while the route's own high_point_ft (13800) implies it does NOT reach the true summit -- unclear whether this route actually continues to the top (joining Liberty Ridge/upper mountain) or tops out around 13,800 ft and the waypoint is mislabeled; Mountain Project's dedicated route page 403'd this pass and no other source with route-specific topout info was found. Needs a human with page access or a guidebook (Nelson/Potterfield).",
         "Recurring alpine_grade-holds-an-NCCS-Roman-numeral-instead-of-a-French-adjectival-letter bug (same one flagged and partially fixed in batches 9/19/21/23/25) affects 8 of this batch's 10 routes (Rahm, Curtis Ridge, DC, Emmons, Fuhrer Finger, Gibraltar Ledges, Ingraham Direct, Kautz Glacier) -- checked sources for the two most technical candidates (Fuhrer Finger, Kautz Glacier) and found only NCCS/YDS grades cited (Mountaineers.org, AAI, Mountain Project), no French adjectival letter for any of them; consistent with batch 23's finding that mellow/moderate PNW glacier routes usually aren't assigned an adjectival grade at all. Left unfixed rather than guess.",
         "wa_mount_rahm_standard: on-file elevation (8,485 ft) sits between two conflicting external figures found this pass (8,480 ft vs. Wikipedia's 8,486 ft) -- not an outlier against either, left as-is; noting only in case a future pass finds a definitive source. Its own prominence_ft (280) matches Wikipedia's figure exactly."
+      ]
+    },
+    {
+      "batch_number": 30,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_mount_rainier_kautz_headwall",
+        "wa_mount_rainier_liberty_ridge",
+        "wa_mount_rainier_mowich_face",
+        "wa_mount_rainier_nisqually_icefall",
+        "wa_mount_rainier_ptarmigan_ridge",
+        "wa_mount_rainier_sunset_ridge",
+        "wa_mount_rainier_tahoma_glacier",
+        "wa_mount_rainier_willis_wall",
+        "wa_mount_redoubt_south_face",
+        "wa_mount_seattle_noyes_basin"
+      ],
+      "confirmed_errors_fixed": 9,
+      "flagged_for_human_review": 4,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-07-31-batch-30.sql",
+      "note": "Three peaks, 10 routes (Mount Rainier carries 8). Discovered that the batch-29 assumption (\"stale high_point_ft=14410 always means fix to the area's corrected 14406\") doesn't hold peak-wide: Liberty Ridge, Ptarmigan Ridge, and Willis Wall are north-face routes whose own waypoints already correctly name their top-out as 'Liberty Cap' at 14,112 ft -- a real, separate, lower summit block on Rainier's crater rim, not the true summit -- externally confirmed (IMG, SummitPost, Mountain Project) that Liberty Ridge's defined technical climbing ends at Liberty Cap and reaching the true summit needs a further optional traverse. Fixed those three to 14112 (matching their own waypoints) rather than 14406; separately fixed Kautz Headwall, Nisqually Icefall, and Tahoma Glacier's stale 14410/14411 to 14406 since those routes' own waypoints/approach put them on the true-summit (south/west) side, same pattern as batch 29. Mowich Face and Sunset Ridge already had the correct 14112 Liberty-Cap figure -- audited clean. Kautz Headwall's fa field was a verbatim copy of the sibling standard Kautz Glacier route's 1920 FA (already fixed in batch 29) -- cleared to NULL rather than guess, since no source documents a distinct FA for the headwall ice variation. Liberty Ridge's fa had a garbled, duplicated-parenthetical rendering of its second and third climbers' names; fixed via the AAC's own 1936 publication and Mountaineers/Filson retrospectives to 'Ome Daiber, Will Borrow, and Arnold Campbell, September 28-October 1, 1935'. Tahoma Glacier's three-person 1891 FA (Van Trump, Drewry, Riley, with a dog) was independently corroborated externally and left untouched. Mount Redoubt's area elevation_ft (8963) was the sole outlier against its own South Face route's high_point_ft (8969) and the route's own `corrections` field, which had already researched and settled on 8,969 ft (Wikipedia et al.) but never had that figure applied to the area row -- same never-propagated-correction pattern as batches 12/15 -- fixed. Mount Seattle's Noyes Basin Route had the recurring null-top-level-grade-despite-populated-sub-fields bug (batches 6/10/17/19/26): grade/grade_system/grade_num/disciplines were null despite alpine_grade='Grade I' and the route's own beta text already citing 'Route 1, Grade I, Class 3' from the Climber's Guide to the Olympic Mountains -- filled to Class 3 / class / 3 / [\"scrambling\"], matching the sibling South Slopes route's convention.",
+      "flags": [
+        "wa_mount_rainier_ptarmigan_ridge / wa_mount_rainier_willis_wall: both routes' approach/approach_logistics text correctly documents that the traditional trailheads (Mowich Lake Road, Carbon River Road via Ipsut Creek) are no longer drivable as of 2026 and the Fairfax Bridge closed permanently in April 2025, so most parties now approach via White River Campground -- but each route's own waypoints array still lists only the old trailhead (Mowich Lake Trailhead / Ipsut Creek Campground) as its 'Trailhead'-type point, with no White River Campground waypoint added even though its coordinates are already present in approach_logistics. Left flagged rather than inserting a new waypoint entry, since ordering/wording of a new array element is more of a content decision than a single-fact patch.",
+        "wa_mount_rainier_kautz_headwall: no source found (Mountaineers.org, SummitPost, AAC, NPS) documents a distinct first-ascent party/date for this ice-headwall variation, separate from the standard Kautz Glacier route -- fa left NULL rather than guess.",
+        "wa_mount_rainier_liberty_ridge: gain_ft (9708) runs a bit higher than a straight Mowich Lake (4,800 ft) to Liberty Cap (14,112 ft, post-fix) delta (~9,312 ft) would suggest -- plausibly explained by camp-to-camp elevation ups/downs on the approach, but not independently confirmed against a source with a specific gain figure; left as-is.",
+        "wa_mount_redoubt_south_face: the route's own `corrections` field (used to source this batch's area elevation fix) also notes a competing 2020s LiDAR re-survey figure of 8,958 ft and calls Mountain Project's listed 8,603 ft implausible -- 8,969 ft (Wikipedia, Peakbagger, PeakVisor, and the route's own high_point_ft) was used as the best-corroborated figure this pass, but a future pass should recheck if the LiDAR figure becomes the more commonly cited one."
       ]
     }
   ]

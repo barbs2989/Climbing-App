@@ -1991,3 +1991,58 @@ completeness gap rather than an error, not worth a SQL patch. Edmunds Headwall's
 ('D') was already correctly typed — no issue.
 
 Next batch will continue alphabetically after `wa_mount_rainier_kautz_glacier` (see progress file).
+
+---
+
+## 2026-07-31 — Pass 1, Batch 30
+
+Checked 10 routes across 3 peaks: Mount Rainier (Kautz Headwall, Liberty Ridge, Mowich Face,
+Nisqually Icefall, Ptarmigan Ridge, Sunset Ridge, Tahoma Glacier, Willis Wall), Mount Redoubt
+(South Face / Redoubt Glacier), Mount Seattle (Noyes Basin Route).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-30.sql` (9):**
+- Learned that batch 29's fix pattern ("stale `high_point_ft`=14410 → the area's corrected 14406")
+  doesn't apply peak-wide: Liberty Ridge, Ptarmigan Ridge, and Willis Wall are north-face routes
+  whose own `waypoints` already correctly name their top-out as **Liberty Cap** (14,112 ft) — a
+  real, separate, lower summit block on Rainier's crater rim, not the true summit. Externally
+  confirmed (IMG, SummitPost, Mountain Project) that Liberty Ridge's defined technical climbing
+  ends at Liberty Cap; reaching the true summit needs a further, optional traverse. Fixed all
+  three to 14112 to match their own waypoints, instead of 14406.
+- Kautz Headwall, Nisqually Icefall, and Tahoma Glacier had the ordinary stale 14410/14411 figure
+  (south/west-side routes that do reach the true summit) — fixed to 14406, same as batch 29.
+  Mowich Face and Sunset Ridge already had the correct 14112 Liberty-Cap figure — audited clean.
+- Kautz Headwall's `fa` field was a verbatim copy of the sibling standard Kautz Glacier route's
+  1920 FA (fixed in batch 29) — cleared to NULL rather than guess; no source documents a distinct
+  first ascent for this ice-headwall variation.
+- Liberty Ridge's `fa` had a garbled, duplicated-parenthetical rendering of its second and third
+  climbers ("Will (Arnold) Borrow (Campbell), and Arnold Campbell") — fixed via the AAC's own 1936
+  publication and Mountaineers/Filson retrospectives to "Ome Daiber, Will Borrow, and Arnold
+  Campbell, September 28-October 1, 1935".
+- Mount Redoubt's area `elevation_ft` (8963) was the sole outlier against its own South Face
+  route's `high_point_ft` (8969) — the route's own `corrections` field had already researched and
+  settled on 8,969 ft (Wikipedia, Peakbagger, PeakVisor) but that figure was never applied to the
+  area row. Fixed.
+- Mount Seattle's Noyes Basin Route had the recurring null-top-level-grade-despite-populated-
+  sub-fields bug (batches 6/10/17/19/26): `grade`/`grade_system`/`grade_num`/`disciplines` were
+  null despite `alpine_grade`='Grade I' and the route's own beta text already citing "Route 1,
+  Grade I, Class 3" from the *Climber's Guide to the Olympic Mountains*. Filled to Class 3 /
+  class / 3 / `["scrambling"]`, matching sibling South Slopes' convention.
+
+**Clean:** Mowich Face and Sunset Ridge (elevation already correct); Tahoma Glacier's 1891 FA
+(Van Trump, Drewry, Riley, with a dog) independently corroborated externally.
+
+**Flagged for human review (4):**
+- Ptarmigan Ridge / Willis Wall: both routes' approach text correctly documents that the
+  traditional trailheads (Mowich Lake Road, Carbon River Road via Ipsut Creek) are no longer
+  drivable as of 2026 and the Fairfax Bridge closed permanently in April 2025, so most parties now
+  approach via White River Campground — but each route's `waypoints` array still lists only the
+  old trailhead, with no White River Campground point added even though its coordinates already
+  exist in `approach_logistics`. Left flagged rather than inserting a new waypoint entry.
+- Kautz Headwall: no source found documents a distinct FA for this variation — left NULL.
+- Liberty Ridge: `gain_ft` (9708) runs a bit higher than a straight Mowich Lake→Liberty Cap delta
+  (~9,312 ft) would suggest — plausibly camp-to-camp ups/downs, not independently confirmed.
+- Mount Redoubt South Face: its own `corrections` field also notes a competing 2020s LiDAR
+  re-survey figure (8,958 ft) — used the better-corroborated 8,969 ft this pass, but a future pass
+  should recheck if the LiDAR figure becomes more widely cited.
+
+Next batch will continue alphabetically after `wa_mount_seattle_noyes_basin` (see progress file).
