@@ -2315,3 +2315,59 @@ access road) couldn't be confirmed beyond general regional flood-damage reportin
 access-conditions question for a human to check directly, not a database fact error.
 
 Next batch will continue alphabetically after `wa_nooksack_tower_south_face` (see progress file).
+
+## 2026-07-31 — Pass 1, Batch 35
+
+Eight peaks, 8 routes: North Face (Lexington Tower); North Face Var. Right/Directisimo (Concord
+Tower); Fight or Flight (Castle Peak, Pasayten); Northwest Couloir/Cedar Creek approach (North
+Gardner Mountain); North Ridge (Whatcom Peak); North Ridge (Cutthroat Peak); North Ridge (Primus
+Peak); Northeast Buttress (Colchuck Peak).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-35.sql` (5, touching 4 routes):**
+- Concord Tower North Face Var. Right (Directisimo): `high_point_ft` (7569) contradicted this
+  same row's own summit waypoint (stored at 7560) as well as external sources, which consistently
+  give Concord Tower's summit as 7,560 ft. Corrected.
+- North Gardner Mountain Northwest Couloir: `high_point_ft` (8963, also duplicated onto the
+  summit waypoint) was off by 7 ft — Wikipedia/Wikidata/Mountaineers.org/peakery.com all agree on
+  8,956 ft, and the summit coordinate itself matches Wikidata to within ~10m, so only the number
+  was wrong. Fixed on both fields.
+- North Gardner Mountain Northwest Couloir: the Cedar Creek Trailhead waypoint was missing
+  lat/lng entirely (the only trailhead in this batch with nulls) — filled with 48.5792,-120.4787,
+  corroborated independently by WTA and Trailforks for the real USFS Trail #476 trailhead.
+- Whatcom Peak North Ridge: a `hazards` entry conflated two adjacent glaciers — the cited 2017
+  NPS climbing ranger blog post attributes a "bare ice, shallow crevasse crossing" observation to
+  Whatcom Glacier, not Challenger Glacier as stored; the same account calls Challenger Glacier's
+  crevasses "open but easy to navigate." Corrected the attribution (note: the primary NPS page
+  403'd on direct fetch this pass, so this rests on search-engine synthesis of that page rather
+  than a full-text read — worth a human re-check once the page is reachable).
+- Colchuck Peak Northeast Buttress: `fa` ("Mark Weigelt and Julie Brugger, 1970") was a
+  cross-peak misattribution — Weigelt's real 1970 FA is Backbone Ridge on the neighboring
+  Dragontail Peak, climbed with John Bonneville, not Julie Brugger, and not this route
+  (independently confirmed via Climbing.com, AAC Publications, SummitPost). No source found gives
+  a correctly-attributed FA for this route itself, so the field was set to note the fact is
+  unverified rather than guess a replacement.
+
+**Clean:** Lexington Tower North Face (FA, grade, summit elevation, "Stegosaur" descent all
+independently confirmed). Castle Peak Fight or Flight (FA party/date/detail, elevation matching
+Gilbertson's GPS resurvey, Canada-side approach all confirmed). Primus Peak North Ridge (existing
+"needs more research" FA flag left standing — circumstantially well supported this pass via an
+AAC Publications 1987 AAJ entry and Mark Bebie's obituary, but the article text itself couldn't
+be read to confirm authorship, so not marked resolved). Cutthroat Peak North Ridge (FA date,
+summit elevation, approach, and grade all consistent — see flags below for two minor unresolved
+details).
+
+**Flagged for human review (4):**
+- North Gardner Mountain Northwest Couloir: Cedar Creek Trailhead `elevFt` (2961) is ~80-115 ft
+  lower than WTA/USFS published figures (~3,040-3,075 ft) — sources disagree by more than
+  rounding and the origin of the stored figure couldn't be identified.
+- Whatcom Peak North Ridge: `fa` calls the North Ridge "the original first ascent of Whatcom
+  Peak" — the 1936 Berry/Buchanan ascent of the peak itself is solid, but no source ties it to
+  this specific ridge line rather than another route.
+- Cutthroat Peak North Ridge: the third 1940 FA climber's surname ("Ed Kenney") couldn't be
+  confirmed — searches repeatedly surfaced "Ed Kennedy" instead, with no primary source reachable
+  to settle the spelling.
+- Cutthroat Peak North Ridge: the West Ridge descent's rappel count ("4-5 rappels") is higher
+  than at least one independently found description (two 30m rappels plus downclimbing) — could
+  be real party-to-party variation; no single source settled on a count.
+
+Next batch will continue alphabetically after `wa_northeast_buttress_4` (see progress file).

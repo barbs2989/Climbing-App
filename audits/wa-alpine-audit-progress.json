@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_nooksack_tower_south_face",
+  "last_processed_id": "wa_northeast_buttress_4",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -778,6 +778,25 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-07-31-batch-34.sql",
       "note": "Six peaks, 8 routes (Torment 2, Cathedral 1, Needle 1, Snowfield 1, North Early Winters Spire 1, Nooksack Tower 2). Notable: a previous, unrelated audit/correction pass had moved NEWS NW Corner's Blue Lake Trailhead waypoint coordinate 1.3km away from the real trailhead while its own note claimed the opposite direction of error -- reverted. Also corrected a one-day date error on a real, well-corroborated May 2025 fatal-accident hazard note (May 11 -> May 10) and a route name (Nooksack East Ridge/Beckey Route -> North Face, since it climbs a north-facing couloir, not an east ridge -- its aspect/face fields already said so). Flagged rather than fixed: Cathedral Peak NE Ridge's FA/grade/pitch trio could not be matched to a real Mountain Project page and may be a misidentified/conflated route; its gain_ft is arithmetically too low given its own trailhead/summit elevations. Needle Peak North Ridge and Nooksack Tower South Face audited clean."
+    },
+    {
+      "batch_number": 35,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_north_face_3",
+        "wa_north_face_left_buttress",
+        "wa_north_face_var_right_directisimo",
+        "wa_north_gardner_mountain_nw_couloir",
+        "wa_north_ridge_2",
+        "wa_north_ridge_3",
+        "wa_north_ridge_4",
+        "wa_northeast_buttress_4"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 4,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-07-31-batch-35.sql",
+      "note": "Eight peaks (Lexington Tower, Concord Tower, Castle Peak, North Gardner Mountain, Whatcom Peak, Cutthroat Peak, Primus Peak, Colchuck Peak), 8 routes. Concord Tower's North Face Var. Right had high_point_ft (7569) contradicting its own summit waypoint (7560) and external sources -- fixed to 7560. North Gardner Mountain's Northwest Couloir had high_point_ft off by 7ft (8963 vs confirmed 8956 across Wikipedia/Wikidata/Mountaineers.org/peakery.com) -- fixed on both the top-level field and summit waypoint; also filled a null lat/lng on its Cedar Creek Trailhead waypoint (48.5792,-120.4787, corroborated by WTA+Trailforks), leaving the trailhead's elevFt flagged (2961 vs ~3040-3075ft external) since sources disagree by more than rounding. Whatcom Peak's North Ridge hazards conflated two glaciers -- the cited 2017 NPS ranger blog attributes bare-ice/shallow-crevasse conditions to Whatcom Glacier, not Challenger Glacier as stored -- corrected the attribution (primary page 403'd this pass, relied on search-engine synthesis, so flagged for a human re-check once reachable). Colchuck Peak's Northeast Buttress fa field misattributed Mark Weigelt's real 1970 FA (Backbone Ridge on neighboring Dragontail Peak, with John Bonneville, not Julie Brugger) to this route -- classic cross-peak contamination; set to unverified rather than guess a replacement since no source ties an actual FA party to this route. Lexington Tower North Face, Castle Peak's Fight or Flight, and Cutthroat Peak's North Ridge all audited clean (FA/grade/elevation/approach independently confirmed); Primus Peak's North Ridge existing FA data-quality flag left standing -- circumstantially better supported this pass (AAC 1987 AAJ entry title, Bebie obituary) but article text unreadable, so not marked resolved. Minor unresolved items (Cutthroat's third FA climber surname Kenney vs Kennedy, its West Ridge rappel count, North Gardner's trailhead elevation, Whatcom's route-specific FA claim) flagged, not fixed."
     }
   ]
 }
