@@ -2585,3 +2585,96 @@ batch's audited-id list); worth a dedicated pass.
   Triple Couloirs precedent for why area_id changes aren't made on inference alone.
 
 Next batch will continue alphabetically after `wa_poltergeist_pinnacle` (see progress file).
+
+## 2026-07-31 — Pass 1, Batch 39
+
+Ten routes across eight peaks: `wa_poltergeist_pinnacle_north_route` (the duplicate stub
+flagged in batch 38), Primus Peak, Prusik Peak (x3), Vesper Peak's Ragged Edge, Liberty
+Bell's Rapple Grapple, Raven Ridge, Robinson Mountain, and Rock Mountain.
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-39.sql` (10, touching 7 routes + 1
+area row):**
+- `wa_poltergeist_pinnacle_north_route`: `length_m` (421) was the sole outlier against
+  this row's own `pitch_detail` sum (55+60+60+270 = 445m), independently corroborated
+  against the AAC Publications 2004 FA report and matching the length_m (445) already on
+  file for the likely-duplicate `wa_poltergeist_pinnacle` route flagged last batch — fixed
+  to 445. This closes the loop batch 38 left open ("no fix applied to either row").
+- `wa_primus_peak_south_ridge`: `access.notes` carried the "Mount Tom area, North
+  Cascades" boilerplate string first identified DB-wide in batch 15 — stripped.
+- `wa_prusik_peak_der_sportsman`: a summit waypoint's `elevFt` (8000) was the sole
+  outlier against this row's own `high_point_ft` and both sibling Prusik Peak routes
+  (all 8008) — fixed.
+- `wa_prusik_peak_south_face_burgner_stanley`: `rock_grade`/`grade_num` (5.10a/10)
+  contradicted this row's own top-level grade ("III, 5.9+") and every `pitch_detail`
+  entry — confirmed via Climbing.com's route title ("Stanley-Burgner, III 5.9+, six
+  pitches") and fixed to 5.9+/9. Same route's `dist_km` (31.4) was stored round-trip, not
+  one-way — its own `itinerary.totalNote` already states "~19.5 mi round-trip" (31.4 km),
+  while both sibling Prusik routes correctly store one-way distance — fixed to 15.7.
+  Unlike the DB-wide `dist_km` convention ambiguity CLAUDE.md warns not to bulk-fix, this
+  had concrete single-row internal evidence (its own note plus its own siblings).
+- `wa_ragged_edge` (Vesper Peak): `access.land_manager`/`access.rules` carried Glacier
+  Peak Wilderness boilerplate (wrong wilderness area's group-size/campfire rules),
+  contradicting this row's own `access._raw.wilderness_zone`/`land_manager` fields, which
+  correctly place Vesper Peak outside any wilderness — same wrong-district/zone
+  contamination pattern as many prior batches; fixed.
+- `wa_rapple_grapple` (Liberty Bell): `high_point_ft` was null despite the row's own
+  waypoints already giving 7,720 ft, matching the area row and every previously-audited
+  Liberty Bell sibling — filled. Its top-level `descent` field described the standard
+  Beckey Route rappels to the Liberty Bell-Concord notch, contradicting this row's own
+  more detailed `descent_text`, which documents a distinct east-side gully exit with two
+  independent rappels — rewritten to match.
+- `wa_rock_mountain_northeast_ridge` + area `wa_rock_mountain`: `high_point_ft` (6852) and
+  `elevation_ft` (6856) disagreed with each other and with external sources (Wikipedia:
+  6,840+ ft; GNIS/Wikidata: 2,085.5m = 6,841 ft, independently confirmed via search) — both
+  fixed to 6841.
+
+**Not fixed — a proposed fix rejected after independent re-verification:** research
+initially proposed correcting `wa_prusik_peak_west_ridge`'s `fa` field from "the specific
+first-ascent party is not recorded in available sources" to "Fred Beckey, 1957." A direct
+follow-up search confirmed the West Ridge route does date to 1957, but found no source
+naming Beckey (or anyone else) as the first-ascent party for that specific line — the
+1957 date is conflated in some secondary write-ups with Beckey's well-documented 1948
+first ascent of the *peak* via a different route, and a Beckey guidebook quote about the
+West Ridge's rock quality doesn't establish him as its first ascensionist. The row's
+existing hedge was already the accurate statement; left unchanged rather than downgrade a
+correct "unverified" field into a wrong confident one.
+
+**Flagged for human review (11):**
+- `wa_poltergeist_pinnacle_north_route`: top-level `grade`/`commitment` say "Grade IV,"
+  but the row's own `data_quality.gaps` says public sources document it as "III 5.9 R/X"
+  — could not confirm the exact AAC/NWMJ commitment grade from search snippets alone.
+- `wa_poltergeist_pinnacle_north_route`: `access.fees` says the Perfect Pass/Whatcom Pass
+  zone is walk-up only, while `access.notes` describes a generic 60/40 Recreation.gov
+  split — needs a human to confirm this specific zone's actual reservation status.
+- `wa_poltergeist_pinnacle` (area): stored lat/lng sits ~270m from Wikipedia's cited
+  coordinate — worth a topo/USGS cross-check given the peak's tiny 40 ft prominence.
+- `wa_primus_peak_south_ridge`: `overview`/`approach`/`itinerary` describe the Eldorado
+  Creek/Cascade River Road approach via Klawatti Col, but `turnaround`/`pitch_detail`/
+  `bail` and the numeric `dist_km`/`gain_ft` describe the separate, real Thunder
+  Creek/Lucky Ridge/East Ridge route instead — a two-route splice needing a human
+  decision on which route this row actually represents (check whether a distinct East
+  Ridge row already exists for Primus). Also: `loss_ft` null, `fa` unpopulated.
+- `wa_prusik_peak_der_sportsman`: `length_m` (183, ~600ft) vs. a non-approved aggregator's
+  198m figure — not fixed without a stronger source.
+- `wa_prusik_peak_south_face_burgner_stanley`: `length_m` (152m, ~499ft) vs. external
+  sources themselves disagreeing (600-650 ft) — left unresolved.
+- `wa_prusik_peak_west_ridge`: the row's `gpx`/a "Snow Lakes Trailhead" waypoint describe
+  a different trailhead than the `approach`/`approach_logistics` narrative (Stuart Lake
+  TH via Colchuck/Aasgard Pass) — needs a corrected track or corrected narrative, not a
+  one-line patch.
+- `wa_ragged_edge`: the row's own `sourceNote` self-declares this a duplicate entry of
+  `wa_vesper_peak_north_face_ragged_edge` — needs a human merge decision, not auto-fixed.
+  Also: `gain_ft`/`loss_ft` (4115/4400) mismatch each other and the row's own itinerary
+  (4400/4400 — gain should equal loss on a round-trip climb).
+- `wa_rapple_grapple`: `fa` ("Bryan Burdo," no year) is unverifiable, already self-flagged
+  as a gap; `watch_out` text reads as generic rappel-pun boilerplate rather than sourced
+  beta.
+- `wa_raven_ridge_southeast_ridge_crater_lake`: FA party "Gilbertson & Robinson, Jan 2019"
+  is unverifiable — worth a second look given a Robinson Mountain route is in this same
+  batch, in case of a stray cross-record name bleed (surname could be coincidental).
+- `wa_robinson_mountain_north_couloir` / `wa_rock_mountain_northeast_ridge`: remaining
+  guidebook-citation and multi-peak-traverse mileage claims are trip-report-sourced and
+  not independently checkable without the source texts.
+
+Next batch will continue alphabetically after `wa_rock_mountain_northeast_ridge` (see
+progress file).

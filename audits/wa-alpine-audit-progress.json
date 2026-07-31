@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_poltergeist_pinnacle",
+  "last_processed_id": "wa_rock_mountain_northeast_ridge",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -870,6 +870,40 @@
         "wa_pernod_spire_standard: dist_km (9.66) appears to already be round-trip (matches the row's own itinerary mileage almost exactly) rather than the one-way convention the app doubles for display -- not normalized on a single row without a DB-wide pass, per standing guidance.",
         "wa_point_success_south_side: approach/itinerary.sourceNote describe the Longmire/Wonderland Trail approach (the only remaining approach per an outside source, since Tahoma Creek Trail closed), but the stored gpx track and final waypoints entry both start from the closed Tahoma Creek/Westside Road gate instead, with a waypoint note that contradicts the rest of the row. Needs a real Longmire-based GPX track, not a one-field patch.",
         "wa_poltergeist_pinnacle (route on Mount Challenger's area_id): strong evidence (matching FA, matching grade, and the separate wa_poltergeist_pinnacle area's own blurb naming this exact FA/grade as its 'sole recorded technical route') suggests this route belongs under the distinct wa_poltergeist_pinnacle area instead, where a thinner duplicate (wa_poltergeist_pinnacle_north_route) already exists for the same climb. Not fixed -- moving area_id would collide with the existing duplicate rather than resolve it; needs a human merge decision, not a single UPDATE."
+      ]
+    },
+    {
+      "batch_number": 39,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_poltergeist_pinnacle_north_route",
+        "wa_primus_peak_south_ridge",
+        "wa_prusik_peak_der_sportsman",
+        "wa_prusik_peak_south_face_burgner_stanley",
+        "wa_prusik_peak_west_ridge",
+        "wa_ragged_edge",
+        "wa_rapple_grapple",
+        "wa_raven_ridge_southeast_ridge_crater_lake",
+        "wa_robinson_mountain_north_couloir",
+        "wa_rock_mountain_northeast_ridge"
+      ],
+      "confirmed_errors_fixed": 10,
+      "flagged_for_human_review": 11,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-07-31-batch-39.sql",
+      "note": "Eight peaks, 10 routes. Closed the loop batch 38 left open: wa_poltergeist_pinnacle_north_route's length_m (421) was the sole outlier against its own pitch_detail sum (445) and the AAC 2004 FA report, and now matches its likely-duplicate sibling wa_poltergeist_pinnacle's already-correct 445 -- fixed. wa_primus_peak_south_ridge had the 'Mount Tom area, North Cascades' DB-wide boilerplate contamination first identified in batch 15 -- stripped. Prusik Peak's Der Sportsman had a summit waypoint elevFt (8000) as the sole outlier against high_point_ft and both siblings (8008) -- fixed. Its South Face/Burgner-Stanley sibling had rock_grade/grade_num (5.10a/10) contradicting its own top-level grade and pitch_detail (nothing above 5.9+), confirmed via Climbing.com's route title and fixed to 5.9+/9; same route's dist_km (31.4) was stored round-trip against its own itinerary.totalNote and both one-way-storing siblings -- fixed to 15.7 (a single-row fix with concrete internal evidence, not the DB-wide dist_km ambiguity CLAUDE.md warns against bulk-fixing). Vesper Peak's Ragged Edge had Glacier Peak Wilderness boilerplate contaminating access.land_manager/access.rules, contradicting its own access._raw fields correctly placing it outside any wilderness -- fixed. Liberty Bell's Rapple Grapple had a null high_point_ft (filled from its own waypoint/area/siblings, 7720) and a descent field describing the wrong (Beckey/notch) exit, contradicted by its own more detailed descent_text -- both fixed. Rock Mountain's Northeast Ridge high_point_ft (6852) disagreed with its own area row (6856) and external sources (Wikipedia/GNIS converge on 6841) -- fixed both the route and the area row. One proposed fix, wa_prusik_peak_west_ridge's fa (Fred Beckey, 1957), was investigated further and NOT applied: no source actually names an FA party for the West Ridge specifically, only that the route dates to 1957 -- the row's existing 'not recorded in available sources' hedge was already correct and was left unchanged rather than replaced with an unconfirmed name.",
+      "flags": [
+        "wa_poltergeist_pinnacle_north_route: top-level grade/commitment say 'Grade IV' but the row's own data_quality.gaps says sources document 'III 5.9 R/X' -- could not confirm the exact commitment grade from available sources.",
+        "wa_poltergeist_pinnacle_north_route: access.fees says the Perfect Pass/Whatcom Pass zone is walk-up only while access.notes describes a generic 60/40 Recreation.gov split -- needs human confirmation of this zone's actual reservation status.",
+        "wa_poltergeist_pinnacle (area): stored lat/lng sits ~270m from Wikipedia's cited coordinate for this low-prominence (40 ft) summit -- worth a topo/USGS cross-check.",
+        "wa_primus_peak_south_ridge: overview/approach/itinerary describe the Eldorado Creek/Klawatti Col approach, but turnaround/pitch_detail/bail and the numeric dist_km/gain_ft describe the separate, real Thunder Creek/Lucky Ridge/East Ridge route -- a two-route splice needing a human decision on which route this row represents. Also loss_ft null and fa unpopulated.",
+        "wa_prusik_peak_der_sportsman: length_m (183, ~600ft) vs. a non-approved aggregator's 198m figure -- not fixed without a stronger source.",
+        "wa_prusik_peak_south_face_burgner_stanley: length_m (152m, ~499ft) vs. external sources themselves disagreeing (600-650 ft) -- left unresolved.",
+        "wa_prusik_peak_west_ridge: gpx/a 'Snow Lakes Trailhead' waypoint describe a different trailhead than the approach/approach_logistics narrative (Stuart Lake TH via Colchuck/Aasgard Pass) -- needs a corrected track or narrative, not a one-line patch.",
+        "wa_ragged_edge: the row's own sourceNote self-declares this a duplicate entry of wa_vesper_peak_north_face_ragged_edge -- needs a human merge decision. Also gain_ft/loss_ft (4115/4400) mismatch each other and the row's own itinerary (4400/4400).",
+        "wa_rapple_grapple: fa ('Bryan Burdo,' no year) is unverifiable, already self-flagged as a gap; watch_out text reads as generic rappel-pun boilerplate rather than sourced beta.",
+        "wa_raven_ridge_southeast_ridge_crater_lake: FA party 'Gilbertson & Robinson, Jan 2019' is unverifiable -- worth a second look given a Robinson Mountain route is in this same batch, in case of a stray cross-record name bleed.",
+        "wa_robinson_mountain_north_couloir / wa_rock_mountain_northeast_ridge: remaining guidebook-citation and multi-peak-traverse mileage claims are trip-report-sourced and not independently checkable without the source texts."
       ]
     }
   ]
