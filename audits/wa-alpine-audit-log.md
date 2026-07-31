@@ -8,6 +8,56 @@ scope out of 557 total WA rows tagged alpine/mountaineering.
 
 ---
 
+## 2026-07-31 — Pass 1, Batch 33
+
+Five peaks, 10 routes (Mount Stuart 2, Mount Teneriffe 2, Mount Terror 4, Mount Thomson 1,
+Mount Tom 1): The Gendarme, West Ridge (Stuart); Kamikaze Trail, Standard Route (Teneriffe);
+North Face, East Ridge, Stoddard Buttress, West Ridge (Terror); West Ridge (Thomson);
+Glacier/Scramble Route (Tom).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-33.sql`:**
+- Mount Stuart West Ridge: approach text's trailhead elevation ("~5,500 ft") was wrong and
+  self-contradicted its own next sentence (Longs Pass at "~6,400 ft" reached via "~2,100 ft
+  gain from the trailhead" implies ~4,300 ft, not 5,500); fixed to 4,243 ft, matching both
+  that internal math and external sources (mountainwerks.org's route page, corroborated by
+  general trip-report/AllTrails figures for the North Fork Teanaway Road end).
+- Mount Stuart West Ridge: the first waypoint ("Esmeralda Basin Trailhead") and the matching
+  first `gpx` point stored a coordinate ~2.5 miles east of the real trailhead with a wrong
+  elevation (3,200 ft) — same "correct coordinate copied onto the wrong point" bug as batch
+  27's Mount Index/Lago/Larrabee fixes. Fixed using the row's own already-correct
+  `approach_logistics` trailhead coordinates plus the externally-confirmed 4,243 ft.
+- Mount Terror West Ridge and Stoddard Buttress: both had the recurring null-top-level-grade-
+  despite-populated-and-internally-consistent-subfields bug (batches 6/10/17/19/26/30/31) —
+  filled from their own alpine_grade/rock_grade/commitment, matching the format already used
+  by this peak's other two routes.
+
+**Flagged for human review (not auto-fixed):**
+- Mount Stuart West Ridge: `itinerary.days[0].schedule` references "Stuart Lake TH" and
+  "Reach Stuart Pass," contradicting this route's own approach/waypoints, which describe the
+  separate Esmeralda/Ingalls Way trailhead and explicitly stay short of Stuart Pass — likely
+  cross-route itinerary contamination, not rewritten for lack of a real timing source.
+- Mount Stuart West Ridge: `grade` leads with NCCS "III" while `commitment`/`alpine_grade`
+  both say "II" — an internal mismatch no source found this pass could resolve.
+- Mount Terror Stoddard Buttress: `fa` splits Stoddard's ascent into a 1984 solo FA plus a
+  separate 1985 "left-side" extension: search-engine summaries of the AAC/NWMJ record instead
+  describe one push (July 14-17, 1984 season, reported in AAJ's 1985 volume under exactly that
+  "Left Side" title), suggesting the on-file two-ascent split may be fabricated — but every
+  primary source 403'd this run, so left flagged rather than rewritten from indirect evidence.
+- Mount Terror East Ridge (`wa_mount_terror_southeast_face`): re-confirmed the row's own
+  pre-existing id/name-mismatch self-flag is still accurate and unresolved.
+- Mount Thomson West Ridge: FA party (Beckey brothers + Robert Craig & William Ford, 1940) is
+  only partially corroborated — Fred and Helmy Beckey's 1940 West Ridge ascent is confirmed,
+  Craig/Ford's presence on this specific climb (vs. others on the same expedition) isn't. Not
+  a contradiction, just unconfirmed; noted for a future pass with archive access.
+
+Mount Stuart's Gendarme, both Mount Teneriffe routes, Mount Terror's North Face, and Mount
+Tom's Glacier/Scramble Route all audited clean — FA/elevation/land-manager claims checked
+this pass (Terror's 8,151 ft and 1961 North Face FA party; Teneriffe's 4,788 ft and DNR land
+manager, already self-corrected in a prior pass; Tom's 7,076 ft and 1914 Meany/Thomas Martin
+FA) all corroborated externally without contradiction.
+
+---
+
 ## 2026-07-27 — Pass 1, Batch 1
 
 Checked 8 routes (one per distinct peak, first 8 alphabetically): Liberty Bell Mountain (A

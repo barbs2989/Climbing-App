@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_mount_stuart_stuart_glacier_couloir",
+  "last_processed_id": "wa_mount_tom_scramble",
   "total_in_scope_last_count": 470,
   "total_wa_alpine_or_mountaineering_tagged": 591,
   "batches": [
@@ -738,6 +738,27 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-07-31-batch-32.sql",
       "note": "Four peaks/areas (Shuksan, Spickard, St. Helens, Steel, Stuart -- 5 areas), 10 routes (Stuart carries 5). Two watch_out-stored-as-newline-string rendering bugs found and fixed (White Salmon Glacier, Ice Cliff Glacier, Stuart Glacier Couloir -- 3 routes, same pattern as Fisher Chimneys in batch 31), each paired with the recurring Mount Tom area, North Cascades junk clause in access.notes on the same three rows. Mount Stuart North Ridge (Complete) fa credited Hargis/Ossiander with the right climbers but the wrong year (1963, actually Beckey/Marts lower-ridge variation) -- corroborated via multiple independent searches that Hargis/Ossiander toe-to-summit-over-the-Gendarme line dates to 1970; fixed with added context distinguishing all three historical ascents (Claunch/Rupley 1956, Beckey/Marts 1963, Hargis/Ossiander 1970). Mount Spickard Southwest corrections field claimed to use 8,980 ft while high_point_ft actually stored 8979 -- fixed the text to match the stored value rather than pick a winner among genuinely conflicting external elevation figures (8978-8983 across sources). Mount Stuart North Face was already correctly flagged unverified/fabricated-duplicate by a prior research pass (2026-07-28) -- confirmed the flag is accurate (no such named route in any source checked) and left as-is, no new action needed."
+    },
+    {
+      "batch_number": 33,
+      "date": "2026-07-31",
+      "route_ids": [
+        "wa_mount_stuart_the_gendarme",
+        "wa_mount_stuart_west_ridge",
+        "wa_mount_teneriffe_kamikaze_trail",
+        "wa_mount_teneriffe_standard_route",
+        "wa_mount_terror_north_face",
+        "wa_mount_terror_southeast_face",
+        "wa_mount_terror_stoddard_buttress",
+        "wa_mount_terror_west_ridge",
+        "wa_mount_thomson_west_ridge",
+        "wa_mount_tom_scramble"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 5,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-07-31-batch-33.sql",
+      "note": "Five peaks, 10 routes (Stuart 2, Teneriffe 2, Terror 4, Thomson 1, Tom 1). Mount Stuart West Ridge had two related approach-side errors: its own approach text gave the Esmeralda/Ingalls Way trailhead elevation as ~5,500 ft, self-contradicted by its own next sentence's math (Longs Pass ~6,400 ft minus ~2,100 ft gain implies ~4,300 ft) and by external sources (mountainwerks.org: 4,243 ft); and its first waypoint/gpx point stored a coordinate ~2.5 mi east of the real trailhead with a mismatched elevation (3,200 ft) -- same copied-coordinate-onto-wrong-point bug as batch 27 -- fixed using the row's own correct approach_logistics trailhead coords plus the confirmed 4,243 ft. Mount Terror's West Ridge and Stoddard Buttress routes both had the recurring null-top-level-grade-despite-consistent-subfields bug (batches 6/10/17/19/26/30/31) -- filled from their own already-agreeing alpine_grade/rock_grade/commitment. Flagged rather than fixed: West Ridge's itinerary.schedule references Stuart Lake TH/Stuart Pass, contradicting this route's own Esmeralda-side approach (likely cross-route contamination); West Ridge's grade text says NCCS III while commitment/alpine_grade both say II (no source resolved which); Stoddard Buttress's fa splits one likely single 1984 solo push (per secondary AAC/NWMJ summaries) into two ascents a year apart, but every primary source 403'd this run so it wasn't rewritten; East Ridge's (wa_mount_terror_southeast_face) pre-existing self-flagged id/name mismatch was re-confirmed still present; Mount Thomson West Ridge's 4-person 1940 FA credit is only half-corroborated (Beckey brothers confirmed, Craig/Ford not found either way). Gendarme, both Teneriffe routes, Terror North Face, and Mount Tom's Glacier/Scramble Route audited clean."
     }
   ]
 }
