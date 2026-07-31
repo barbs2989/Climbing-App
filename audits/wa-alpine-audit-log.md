@@ -2371,3 +2371,50 @@ details).
   be real party-to-party variation; no single source settled on a count.
 
 Next batch will continue alphabetically after `wa_northeast_buttress_4` (see progress file).
+
+## 2026-07-31 — Pass 1, Batch 36
+
+Eight peaks, 8 routes: Northeast Face Direct (Mount Formidable); Northeast Ridge, 1963 Route
+(Johannesburg Mountain); Northwest Arete (Argonaut Peak); Northwest Buttress (Sloan Peak);
+Northwest Face (Kangaroo Temple); Northwest Face, Boving-Pollock (South Early Winters Spire);
+Standard Route / Northwest Spire (Northwest Mox Peak); Northwest Ridge (Dorado Needle).
+
+**Confirmed errors → fixes in `sql/2026-07-31-batch-36.sql` (5, touching 4 routes):**
+- Johannesburg Mountain Northeast Ridge (1963 Route): `approach_logistics.trailheadLat/Lng`
+  was mislabeled as the Cascade Pass junction (3.6 mi up-trail) instead of the actual trailhead —
+  the row's own `waypoints` array already carries a corrected trailhead point with a note
+  explaining an earlier ~1.2km DB-pin fix, but that fix was never propagated to
+  approach_logistics. Corrected to match, cross-checked against this batch's own Mount Formidable
+  route, which shares the identical real-world trailhead.
+- Argonaut Peak Northwest Arete: the short `descent` field said to simply reverse the arête back
+  to the notch, directly contradicting this row's own more detailed `descent_text`/`rappel_detail`
+  (both describe a 4-rappel traverse east to the Argonaut-Colchuck col instead). Rewrote the short
+  field to match the row's own already-correct detail.
+- Northwest Mox Peak Standard Route: two fixes on the same waypoint — `elev` (1800) contradicted
+  the row's own approach text ("park at 2,350 ft") and the identical trailhead coordinate on
+  sibling wa_southeast_mox_peak_se_rib (2350 ft); and the waypoint's `note` was a leaked internal
+  research artifact ("Reused coordinate from this session's own Southeast Mox Peak research...")
+  — the same session-leak pattern fixed on Dragontail Peak's Serpentine Arete in batch 19.
+  Replaced with normal trailhead description text.
+- Dorado Needle Northwest Ridge: the trailhead waypoint (and matching first `gpx` point) was
+  stored ~8km from the real trailhead, contradicted by this row's own `approach_logistics` field
+  and by all 4 sibling Eldorado Peak routes in the DB, which agree on the correct coordinate for
+  the shared trailhead this route's own approach text says it uses. Corrected both.
+
+**Clean:** Mount Formidable's Northeast Face Direct (FA, 11-year ascent gap, elevation, trailhead
+all independently confirmed — existing unverified-surname flag left standing). Sloan Peak's
+Northwest Buttress (route stats, elevation, approach all confirmed; FA-year ambiguity already
+resolved by a prior pass). Kangaroo Temple's Northwest Face (Beckey brothers' 1942 FA, elevation,
+approach all confirmed).
+
+**Flagged for human review (2):**
+- South Early Winters Spire Northwest Face (Boving-Pollock): `fa` records only the 1977 free
+  ascent (Boving & Kerns), while the row's own overview describes a separate 1976 aid FA by
+  Boving & Pollock that the field omits — row's own data_quality note already flags this as
+  unresolved (key corroborating source 403'd), left unfixed per standing policy.
+- wa_southeast_mox_peak_se_rib (out of this batch's scope): carries the same leaked
+  internal-research-note pattern found and fixed on this batch's Northwest Mox Peak route, on its
+  own Depot Creek Road trailhead waypoint — worth a future batch or a dedicated DB-wide sweep for
+  this note-leak pattern.
+
+Next batch will continue alphabetically after `wa_northwest_ridge` (see progress file).
