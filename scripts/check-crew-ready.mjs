@@ -16,7 +16,12 @@
 // so this fails if either is edited into a wrong shape.
 import { readFileSync } from "node:fs";
 
-const SRC = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8");
+// The app is split across ClimbMatch.jsx (App) and ClimbMatchCore.jsx (helpers,
+// seed data, presentational components); markers may live in either. Core is
+// optional so this also works on pre-split checkouts.
+const readOpt = (u) => { try { return readFileSync(u, "utf8"); } catch { return ""; } };
+const SRC = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8") +
+  "\n" + readOpt(new URL("../ClimbMatchCore.jsx", import.meta.url));
 
 function extractBraced(marker) {
   const i = SRC.indexOf(marker);
