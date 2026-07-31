@@ -13,7 +13,6 @@
     "Anything not listed here is a NEW finding and is what the exit summary counts.",
     "Removing an entry makes the finding reappear — that is the intended way to reopen one."
   ],
-
   "steep": [
     {
       "key": "wa_johannesburg_mountain_northeast_buttress",
@@ -28,7 +27,6 @@
       "why": "Big Four's north face is 4,200 ft tall and the Spindrift Couloir is 4,000 ft of climbing (matching its own length_m of 1219), rising off a 1-mile approach trail. One of the steepest faces in the Cascades."
     }
   ],
-
   "duplicateRoutes": [
     {
       "key": "az_split_rock_area|lost in space (var)",
@@ -37,7 +35,6 @@
       "why": "Three rows share the name but carry different grades (V3-4 / V2 / V3) with the same FA (Flying Zebra) — a variation set, not one climb entered three times. The rows' own `corrections` field records the same conclusion."
     }
   ],
-
   "numericContamination": [
     {
       "key": "length_m|arete left|3",
@@ -70,16 +67,28 @@
       "why": "Same duplicate area as gain_ft|east face|3138."
     },
     {
-      "key": "high_point_ft|northeast face|7225",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "wa_little_big_chief duplicates wa_little_big_chief_mountain (4 m apart, crag copy with null elevation). Area merge, deferred."
-    },
-    {
       "key": "high_point_ft|nw ridge|8685",
       "verdict": "deferred",
       "date": "2026-07-30",
       "why": "wa_mt_remmel duplicates wa_remmel_mountain (259 m apart, crag copy with null elevation). Area merge, deferred."
+    },
+    {
+      "key": "gain_ft|nw ridge|5265",
+      "verdict": "deferred",
+      "date": "2026-07-31",
+      "why": "Artifact of the in-progress duplicate-area merge, not contamination. Remmel Mountain is entered twice, and resolving the pair's numeric disagreement to the correct sourced value means the same name+value now spans both area rows — which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
+    },
+    {
+      "key": "high_point_ft|la villa|6440",
+      "verdict": "deferred",
+      "date": "2026-07-31",
+      "why": "Artifact of the in-progress duplicate-area merge, not contamination. The Castle is entered twice, and resolving the pair's numeric disagreement to the correct sourced value means the same name+value now spans both area rows — which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
+    },
+    {
+      "key": "high_point_ft|southwest ridge|8004",
+      "verdict": "deferred",
+      "date": "2026-07-31",
+      "why": "Artifact of the in-progress duplicate-area merge, not contamination. West McMillan Spire is entered twice, and resolving the pair's numeric disagreement to the correct sourced value means the same name+value now spans both area rows — which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
     }
   ]
 }
