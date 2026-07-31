@@ -30,14 +30,17 @@ function extractBraced(marker) {
 }
 
 // the crew-row -> app-crew mapping inside the useMyCrews effect
+// (the mapper no longer reads row.dismissed — archiving is per-user/local-only —
+// so the end marker is the meet_time field, the mapper's last)
+const H_END = 'meetTime:row.meet_time||""};';
 const hStart = SRC.indexOf("var mid=function(u)");
-const hEnd = SRC.indexOf("dismissed:!!row.dismissed};", hStart);
+const hEnd = SRC.indexOf(H_END, hStart);
 if (hStart < 0 || hEnd < 0) {
   console.error("check:crew FAILED — could not locate the crew hydration block.");
   console.error("If it was intentionally restructured, update this script's markers.");
   process.exit(1);
 }
-const hydrationBody = SRC.slice(hStart, hEnd + "dismissed:!!row.dismissed};".length);
+const hydrationBody = SRC.slice(hStart, hEnd + H_END.length);
 
 const mod = new Function(
   "row", "uid",
