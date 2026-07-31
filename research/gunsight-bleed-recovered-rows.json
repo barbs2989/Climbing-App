@@ -1,0 +1,539 @@
+[
+  {
+    "id": "wa_east_face",
+    "area_id": "wa_middle_peak",
+    "name": "East Face",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "grade_system": "yds",
+    "grade_num": 10,
+    "pitches": 7,
+    "length_m": 183,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Sol Wertkin & Martins Putelis, 2006",
+    "lat": null,
+    "lng": null,
+    "aspect": "E",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+      "Medium trad climbing rack (0.5-1.5 inch cams, stoppers)",
+      "Ice axe",
+      "Crampons",
+      "Ice tools (if early season)",
+      "3 quickdraws minimum",
+      "50-60m rope (doubled recommended for rappels)",
+      "Harness",
+      "Helmet",
+      "Belay device",
+      "Carabiners"
+    ],
+    "hazards": [
+      "Exposed alpine climbing on east face with significant fall hazard",
+      "Crevasse fields on Chickamin Glacier approach and descent",
+      "Bergschrund may require boulder-hopping or bypass",
+      "Afternoon rockfall hazard on south-facing rappel descent",
+      "Rapid weather changes can trap climbers in exposed positions",
+      "Icefall hazard on Blue Glacier adjacent to eastern slopes"
+    ],
+    "verif": null,
+    "source": null,
+    "overview": "A stunning 6-7 pitch alpine climb on the east face of Middle Gunsight featuring exceptional granite quality with a hidden line that unfolds piece by piece offering mostly continuous 5.9-5.10+ climbing in a stunning remote setting.",
+    "beta": "Climb the East Face of Middle Gunsight via a hidden line visible from Blue Glacier. After a short warmup section, climbing is in the 5.9-5.10+ range throughout most of the route. Route features twin hand cracks and flake at the start of pitch 2 visible from the glacier. The route offers mostly continuous climbing with excellent rock quality and exposure.",
+    "turnaround": "Turn around if: 1) Any pitch takes significantly longer than expected (more than 45 minutes), 2) Weather deteriorates with precipitation or wind gusts above 30 mph, 3) Late afternoon arrival at base of rock (after 3pm), 4) Any team member shows signs of altitude sickness or exhaustion.",
+    "auto_generated": false,
+    "alpine_grade": "III",
+    "rock_grade": "5.10d",
+    "ice_grade": null,
+    "gain_ft": 5000,
+    "loss_ft": null,
+    "dist_km": 16.1,
+    "max_angle": 60,
+    "rappels": "Roughly 2 rappels back through the moat/bergschrund to the Blue Glacier",
+    "commitment": "III",
+    "face": "East Face",
+    "permit": null,
+    "comms": "Cell coverage unreliable throughout approach and on peaks. The area is in a deep valley with no reliable signal. Emergency communication may require satellite communicator. Nearest ranger station is Chelan Ranger District.",
+    "descent": "Rappel the south-facing side of the peak (typically 3-4 rappels on 50-60m lines) to avoid the climb-back problem of ascending the east face descent.",
+    "obj_haz": [
+      "Crevassed glacier crossing",
+      "Moat/bergschrund at route base",
+      "Afternoon thunderstorms",
+      "Loose rock in places",
+      "Remote, self-rescue-only terrain"
+    ],
+    "waypoints": [
+      {
+        "lat": 48.2595,
+        "lng": -121.2229,
+        "elev": 1440,
+        "name": "Downey Creek Trailhead",
+        "note": "Remote 2-day approach: Downey/Bachelor Creek trail to Itswoot Ridge, then over the Dome-Chickamin col and across the Chickamin Glacier to the Gunsight Range.",
+        "type": "Trailhead",
+        "distMi": 0
+      },
+      {
+        "lat": 48.30571,
+        "lng": -120.99439,
+        "elev": 8000,
+        "name": "Middle Peak (Gunsight Range)",
+        "note": "East Face (5.10d) climbs 6-7 pitches of clean granite on Middle Gunsight; approach distance is approximate given the glaciated, multi-day approach.",
+        "type": "Summit",
+        "distMi": 17
+      }
+    ],
+    "gpx": [
+      [
+        48.2595,
+        -121.2229
+      ],
+      [
+        48.30571,
+        -120.99439
+      ]
+    ],
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+      "totalHrs": 50,
+      "summitTimeHrs": 6,
+      "descentTimeHrs": 4,
+      "approachTimeHrs": 16,
+      "recommendedStart": "7:00 AM at trailhead Day 1"
+    },
+    "detailed_rack": "Medium-sized rock climbing rack: 1-2x each of 0.5-1.5 inch cams, medium stopper set, 0.5-1 inch pitons for aid (minimal), 2-3 slings, 2-3 quickdraws, ice tools and crampons if early season or water ice present, single 50-60m rope sufficient for climbing, 2x 50m ropes for rappelling.",
+    "what_to_bring": [
+      "Backpack (60-70L)",
+      "Sleeping bag (rated to 0F/-18C)",
+      "Insulated sleeping pad",
+      "Tent with stakes",
+      "Food (5+ days)",
+      "Water purification system",
+      "Headlamp with batteries",
+      "First aid kit",
+      "Sun protection (SPF 50+ sunscreen, glacier glasses)",
+      "Rain/snow jacket and pants",
+      "Insulated gloves and hat",
+      "Base layers (merino wool)",
+      "Map, compass, altimeter",
+      "Emergency bivy sack",
+      "Repair kit"
+    ],
+    "pro_tips": [
+      "The twin hand cracks and flake at pitch 2 are distinctive landmarks visible from the glacier; they mark the best line up the face.",
+      "Excellent rock quality throughout; expect good protection on nearly all pitches.",
+      "The route unfolds well with minimal route-finding complications.",
+      "Consider traversing to North Gunsight West Face (5.11+) if conditions are favorable and time permits; it's nearby.",
+      "Early start from camp (dawn) ensures sufficient daylight for climbing and descent."
+    ],
+    "watch_out": [
+      "Rappel anchors must be thoroughly checked; no fixed anchors remain from first ascent.",
+      "The east face has excellent but exposed rock; falls are serious.",
+      "Crevasse field on glacier approach is significant; cross in early morning before snow bridges soften.",
+      "Afternoon thunderstorms can develop rapidly; watch for lightning risk on exposed east face.",
+      "Descent via south-facing slopes can have rockfall hazard during afternoon warming."
+    ],
+    "pro_needs": "Full trad protection on well-formed cracks and pockets. Most placements are solid granite with good rock quality. Anchors can be built with cams and slings; no fixed anchors present. Rappel anchors should be redundant with bomber placements.",
+    "best_season": "July through early August. Early July may have lingering snow and ice on lower pitches; late August risks deteriorating weather. Peak climbing window: July 15-August 15. Route best climbed in stable weather windows of 2-3 days.",
+    "high_point_ft": 8200,
+    "aid_grade": null,
+    "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Middle Gunsight's east face is a known technical objective once on the ridge; expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access.",
+    "descent_text": "After summiting, traverse south along the summit ridge to the south-facing rappel anchors. Perform 3-4 rappels on 50-60 meter lines to descend the south face, which is protected from rockfall. Navigate the crevasse field on Chickamin Glacier to return to base camp.",
+    "bail": "Turn back from any pitch and descend via snow gulley or scramble to the south face for easier exit options. Crevasse field on glacier provides forced exit if base camp is unreachable.",
+    "pitch_detail": [
+      {
+        "grade": "5.9",
+        "notes": "Warmup pitch; moderate crack climbing on lower east face",
+        "pitch": "1"
+      },
+      {
+        "grade": "5.10+",
+        "notes": "Twin hand cracks and right-facing flake; distinctive pitch visible from glacier; sustained climbing",
+        "pitch": "2"
+      },
+      {
+        "grade": "5.10",
+        "notes": "Face climbing with pockets and edges",
+        "pitch": "3"
+      },
+      {
+        "grade": "5.10",
+        "notes": "Crack and face climbing; exposed position",
+        "pitch": "4"
+      },
+      {
+        "grade": "5.10+",
+        "notes": "Steep face climbing with pockets; excellent rock quality",
+        "pitch": "5"
+      },
+      {
+        "grade": "5.10d",
+        "notes": "Upper pitch with sustained climbing near summit",
+        "pitch": "6"
+      },
+      {
+        "grade": "5.9",
+        "notes": "Final pitch to summit of Middle Gunsight",
+        "pitch": "7"
+      }
+    ],
+    "itinerary": "Day 1: Downey Creek Trailhead to Bachelor Flats camp (6 miles, 3,100 ft gain). Day 2: Bachelor Flats to Dome-Chickamin Col base camp (3.2 miles, 2,600 ft gain). Day 3: Climb East Face of Middle Gunsight (4-6 hours climbing time, 600 ft gain) and descend to base camp (3-4 hours). Day 4: Return to Bachelor Flats (5-6 hours). Day 5: Return to trailhead (6 miles, 4,500 ft loss).",
+    "access": {
+      "fees": "None for permit. Recreation pass may be required at trailhead ($5 day or $30 annual)",
+      "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+      "permit": "Free self-issued wilderness permit required for Glacier Peak Wilderness",
+      "closures": "Check Suiattle River Road for washout closures. Route may close for grizzly bear activity.",
+      "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+      "group_limit": 12,
+      "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+      "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+      "passRequired": "Northwest Forest Pass recommended"
+    },
+    "road": {
+      "name": "Downey Creek Trailhead via Suiattle River Road (FR 26)",
+      "status": "Suiattle River Road (FR 26) suffered major flood/washout damage and is currently CLOSED to vehicles at approximately milepost 4.5 under a closure order in effect through January 1, 2028; the Downey Creek Trail beyond the closure remains hikeable on foot with some minor obstacles (downed trees, damaged puncheon). Vehicle access to the historic trailhead is not currently possible.",
+      "driveNote": "Normally about 2.5-3 hours from Seattle via Darrington and the Suiattle River Road when fully open; currently requires walking or biking the closed road from the MP 4.5 closure gate, adding several miles to the approach."
+    },
+    "climate": {
+      "fall": "Difficult conditions from September onward; not recommended outside July-August.",
+      "spring": "Snow-covered approach; trail not clear until late June.",
+      "summer": "Best climbing July-August. July highs 65-75F at base camp, 40-50F on peaks. August similar with increasing instability. Most snow gone by late July.",
+      "winter": "Not practical; requires advanced winter mountaineering.",
+      "typical": "Alpine climate with rapid weather changes. Afternoon thunderstorms common July-August. Temperatures at 8,200 ft range 40-60F. High UV index.",
+      "forecastZone": "North Cascades alpine zone; consult mountain-forecast.com or NWAC"
+    },
+    "emergency": {
+      "notes": "Remote location requires self-rescue capability or satellite communication. No ranger patrols on route.",
+      "county": "Skagit/Chelan County border",
+      "rangerStation": "Chelan Ranger District, 428 W. Woodin Avenue, Chelan, WA 98816, (509) 682-4900",
+      "nearestHospital": "Cascade Medical Center, Concrete, WA; Skykomish Valley Hospital, Skykomish, WA",
+      "sheriffDispatch": "Skagit County Sheriff (360) 336-9450"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": {
+      "gaps": [
+        "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+      ],
+      "confidence": "MEDIUM"
+    },
+    "difficulty": {
+      "exposure": 4,
+      "physical": 2,
+      "technical": 4,
+      "commitment": 2,
+      "routefinding": 4
+    },
+    "approach_logistics": {
+      "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+      "trailheadLat": 48.2591,
+      "trailheadLng": -121.2244,
+      "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor"
+    },
+    "sling_rack": {
+      "cams": "double set 0.3-3in, single to #4",
+      "nuts": "full set",
+      "slings": "6-8 (extra for loose-rock anchors and tat replacement)",
+      "cordelette": true
+    },
+    "alpine_draws": 6,
+    "rope_type": "single dynamic (second rope recommended for rappel retreat)",
+    "rope_length_m": 60,
+    "rope_note": "East Face of the Middle Peak, Mount Index — one of the Cascades' most notoriously loose and serious big alpine walls; the 5.10d grade given implies a freed line. No modern route-specific rope-length/rack beta was found online; sizing follows typical remote Cascades granite/gneiss big-wall practice.",
+    "ascender": null,
+    "corrections": "Found AAC Publications historical FA context, but no current trip report gives a pitch-by-pitch rack for the 5.10d line specifically. Gear inferred from the route's known seriousness/looseness and comparable remote Cascades big walls; flag for expert review.",
+    "gear_confidence": "inferred",
+    "rappel_detail": [
+      {
+        "n": 1,
+        "notes": "First rappel after traversing the summit ridge to the south-facing anchors.",
+        "anchor": "South-face rappel anchor (rockfall-sheltered)",
+        "lengthM": 55
+      },
+      {
+        "n": 2,
+        "notes": "Continuing down the south face.",
+        "anchor": "South-face rappel anchor",
+        "lengthM": 55
+      },
+      {
+        "n": 3,
+        "notes": "Continuing down the south face.",
+        "anchor": "South-face rappel anchor",
+        "lengthM": 55
+      },
+      {
+        "n": 4,
+        "notes": "Final rappel before navigating the crevasse field on the Chickamin Glacier back to camp.",
+        "anchor": "South-face rappel anchor",
+        "lengthM": 55
+      }
+    ],
+    "rappel_count_note": "Source gives a range of 3-4 rappels on 50-60m lines; 4 used as representative, midpoint length used per rap.",
+    "rack": [
+      "Cams 0.5–1.5in (1-2 each)",
+      "Medium stopper set",
+      "2-3 slings",
+      "2-3 quickdraws",
+      "Ice axe/crampons (early season)",
+      "50-60m rope for climbing, 2x50m for rappel"
+    ],
+    "features": [
+      "Crack",
+      "Sustained",
+      "Exposed",
+      "Technical",
+      "Scenic"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null
+  },
+  {
+    "id": "wa_west_face",
+    "area_id": "wa_south_peak",
+    "name": "West Face",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "grade_system": "yds",
+    "grade_num": 9,
+    "pitches": 4,
+    "length_m": 152,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Unknown; climbed by Cliff Leight and a partner in the early 1990s (per Mountain Project) — not to be confused with the much more famous 5.11+ 'West Face' testpiece on North Peak (North Gunsight), a separate route established by Jim Nelson & Carl Dietrich in 1986 and freed by Jens Holsten & Max Hasson in 2007.",
+    "lat": null,
+    "lng": null,
+    "aspect": "W",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+      "helmet",
+      "sturdy scrambling boots",
+      "optional short rope/light rack for the class 4 traverse"
+    ],
+    "hazards": [
+      "Unroped exposed traverse near the summit",
+      "Loose rock in the ascent gullies/ribs"
+    ],
+    "verif": null,
+    "source": null,
+    "overview": "A short, steep class 2-4 scramble up gullies, ribs, and talus on Remmel's west side, typically climbed directly from an Andrews Pass camp as part of a multi-peak Pasayten traverse with Cathedral Peak and Amphitheater Mountain.",
+    "beta": "From a camp at or near Andrews Pass, the route picks a way up gullies, ribs, and talus slopes directly above camp. Most of the climbing is class 2-3, with one notably exposed, unroped class 4 traverse around a small cliff band about 20 feet below the summit — manageable but with real exposure. The climb from camp to summit takes only about 2 hours. The east side of the peak has a maintained class-1 trail, giving parties an easier descent option instead of reversing the exposed traverse.",
+    "turnaround": "Turn around before committing to the exposed class 4 traverse if rock is wet, icy, or visibility is poor — it is unprotected and unroped for most parties.",
+    "auto_generated": false,
+    "alpine_grade": "II-III",
+    "rock_grade": "5.9+",
+    "ice_grade": null,
+    "gain_ft": 1985,
+    "loss_ft": null,
+    "dist_km": 24.1,
+    "max_angle": null,
+    "rappels": "2 raps off the shared summit (35m north, then east to the glacier)",
+    "commitment": "II",
+    "face": "West Face",
+    "permit": null,
+    "comms": "No documented cell coverage; the Gunsight Range is consistently described as among the most remote lower-48 climbing areas — carry a satellite communicator.",
+    "descent": "Reverse the ascent gullies/talus back down to the Andrews Pass camp, or descend via the maintained class-1 trail on the peak's east side to avoid re-crossing the exposed class-4 section.",
+    "obj_haz": [
+      "remote/complex retreat",
+      "glacier crevasses on the Chickamin approach",
+      "less-traveled line with limited fresh beta"
+    ],
+    "waypoints": [
+      {
+        "lat": 48.2595,
+        "lng": -121.2229,
+        "elev": 1440,
+        "name": "Downey Creek Trailhead",
+        "note": "Corrected - previous waypoints incorrectly placed this route ~59 miles away at Amphitheater Mountain (Pasayten Wilderness), a research error. South Peak is actually part of the Gunsight Range, Glacier Peak Wilderness - same remote 2-day approach as Middle Peak (Downey/Bachelor Creek trail to Itswoot Ridge, Dome-Chickamin col, Chickamin Glacier).",
+        "type": "Trailhead",
+        "distMi": 0
+      },
+      {
+        "lat": 48.303,
+        "lng": -120.99439,
+        "elev": 8100,
+        "name": "South Peak (Gunsight Range)",
+        "note": "Confirmed via AAC Publications/SummitPost as a real, distinct summit - the southernmost of four named summits (Northeast/North/Middle/South) along one short ridge crest, reached last in a north-to-south traverse after Middle Peak. No independently sourced coordinate was found (Peakbagger/SummitPost/CascadeClimbers blocked automated access) - this is a disclosed geometric estimate ~0.2mi south of Middle Peak's verified position (48.30571,-120.99439) along the ridge, not a directly sourced fix.",
+        "type": "Summit",
+        "distMi": 17.5
+      }
+    ],
+    "gpx": [
+      [
+        48.2595,
+        -121.2229
+      ],
+      [
+        48.303,
+        -120.99439
+      ]
+    ],
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+      "totalHrs": null,
+      "summitTimeHrs": null,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": null
+    },
+    "detailed_rack": "Typically climbed unroped as a scramble; a rope and a few pieces of light protection are optional insurance for less experienced parties on the exposed class 4 traverse below the summit.",
+    "what_to_bring": [
+      "Helmet",
+      "Climbing shoes",
+      "Approach shoes",
+      "Insulating layers",
+      "Rain jacket",
+      "Sun protection",
+      "Headlamp",
+      "Water and food for multi-day approach"
+    ],
+    "pro_tips": [
+      "Camping at Andrews Pass lets you tag Remmel's summit directly above without extra approach mileage, and pairs well with Cathedral Peak and Amphitheater Mountain on the same trip",
+      "The exposed class 4 traverse ~20 ft below the summit is the crux — take care with a pack on",
+      "Descending via the east-side class-1 trail avoids having to reverse the exposed traverse"
+    ],
+    "watch_out": [
+      "An exposed, unprotected class 4 traverse around a cliff band about 20 feet below the summit is the technical crux and is usually unroped",
+      "Loose talus and rib terrain on the ascent gullies"
+    ],
+    "pro_needs": "None required for confident class 4 scramblers; a rope/light rack is a reasonable option for the exposed crux traverse.",
+    "best_season": "Late June through September, once the Andrews Creek approach and pass are snow-free; the documented ascent was in late June.",
+    "high_point_ft": 8100,
+    "aid_grade": null,
+    "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces; this is an experienced-mountaineers-only objective, not a roadside crag.",
+    "descent_text": "Down-climb the class 2-4 gully/rib line back to camp, taking particular care re-crossing the exposed unroped traverse below the summit. Alternatively, drop off the east side onto Remmel's maintained trail and loop back around via the standard hiking route if reversing the exposed section is undesirable.",
+    "bail": "Below the crux, retreat down the ascent gullies/ribs to camp is straightforward. Above the crux traverse, down-climb the same exposed section carefully, or wait out wet/icy conditions before attempting it.",
+    "pitch_detail": [
+      {
+        "grade": "5.?",
+        "notes": "Left-side chimney start.",
+        "pitch": "P1",
+        "lengthM": 38
+      },
+      {
+        "grade": "5.9+",
+        "notes": "Traverse right onto the face.",
+        "pitch": "P2",
+        "lengthM": 38
+      },
+      {
+        "grade": "5.9+",
+        "notes": "Right-facing dihedral high on the route.",
+        "pitch": "P3",
+        "lengthM": 38
+      },
+      {
+        "grade": "5.?",
+        "notes": "Finish up the face and left to the summit.",
+        "pitch": "P4",
+        "lengthM": 38
+      }
+    ],
+    "itinerary": "Day 1-2: Hike the Andrews Creek Trail ~15 miles to Andrews Pass and camp. Day 3: Scramble Remmel's West Face to the summit (~2 hrs) and either reverse the route or descend the east-side trail back toward camp.",
+    "access": {
+      "_raw": {
+        "notes": "Alpine climbing area; exact location within North Cascades National Park Complex requires verification",
+        "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+        "permit_type": "Backcountry overnight permit",
+        "land_manager": "National Park Service - North Cascades National Park",
+        "wilderness_zone": "North Cascades National Park Complex",
+        "group_size_limit": "Maximum 12 people per party",
+        "parking_pass_cost": "$30 per vehicle (7-day pass)",
+        "seasonal_closures": "Wilderness accessible mid-May through mid-October",
+        "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+        "special_requirements": "Permit pickup required by 11am on start date; restrictions on motorized equipment and group size per campsite (4-12 people depending on site)",
+        "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+        "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+      },
+      "fees": "N/A",
+      "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+      "permit": "Backcountry overnight permit",
+      "closures": "N/A",
+      "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+      "permitZone": "North Cascades National Park Complex",
+      "group_limit": 12,
+      "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+      "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+      "passRequired": "America the Beautiful Annual ($80) or per-vehicle entrance fee"
+    },
+    "road": {
+      "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+      "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+      "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+      "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+    },
+    "climate": {
+      "fall": "Deteriorating weather, increasing snow at elevation, shorter daylight",
+      "spring": "High avalanche risk, heavy snow at elevation, unreliable access",
+      "summer": "Best conditions July-August with rare weather windows; afternoon thunderstorms common; temperatures range 30-50F at summit",
+      "winter": "Not recommended; extreme snow accumulation, avalanche hazard, poor visibility",
+      "typical": "Alpine climate with significant weather variability",
+      "forecastZone": "Northwest Avalanche Center forecast for North Cascades"
+    },
+    "emergency": {
+      "notes": "Remote location with 2+ day approach; evacuation is extremely difficult and time-consuming",
+      "county": "Chelan County",
+      "rangerStation": "North Cascades National Park / Okanogan-Wenatchee National Forest",
+      "nearestHospital": "Lake Chelan Community Hospital, 110 S Apple Blossom Dr, Chelan, WA 98816, (509) 682-3300",
+      "sheriffDispatch": "(509) 667-6851 (non-emergency); 911 for emergencies"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": {
+      "gaps": [
+        "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+      ],
+      "confidence": "MEDIUM"
+    },
+    "difficulty": {
+      "exposure": 3,
+      "physical": 2,
+      "technical": 3,
+      "commitment": 2,
+      "routefinding": 4
+    },
+    "approach_logistics": {
+      "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+      "trailheadLat": 48.2591,
+      "trailheadLng": -121.2244,
+      "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor"
+    },
+    "sling_rack": {
+      "cams": "set 0.4-3in",
+      "nuts": "small-mid set"
+    },
+    "alpine_draws": 8,
+    "rope_type": "double 60m x 9mm",
+    "rope_length_m": 60,
+    "rope_note": "Gunsight Range South Peak. Not individually confirmed; inferred from area pattern and remote-glacier access logistics shared with South Ridge.",
+    "ascender": null,
+    "corrections": "Route not individually detailed in fetched MP data.",
+    "gear_confidence": "inferred",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [
+      "Cams, single set 0.4-3\"",
+      "Nuts, small-to-mid set",
+      "8 alpine quickdraws",
+      "Double 60m x 9mm ropes"
+    ],
+    "features": [],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null
+  }
+]
