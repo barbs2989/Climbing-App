@@ -25,6 +25,15 @@ export default function LoginScreen({ onClose, onAuthed }) {
       : await signUp(email.trim(), password, name.trim());
     setBusy(false);
     if (error) { setErr(error.message); return; }
+    // Signing up with an address that already has an account is NOT an error:
+    // to avoid leaking which emails are registered, Supabase returns a decoy user
+    // with an empty `identities` array, no session, and error === null. That fell
+    // through to the "check your email" branch below, so the user waited for a
+    // confirmation mail that was never coming, for an account already theirs.
+    if (mode === "up" && data && data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+      setInfo("That email already has an account — sign in instead.");
+      setMode("in"); setPassword(""); return;
+    }
     rememberEmail(email.trim());
     if (mode === "up" && data && data.user && !data.session) {
       setInfo("Account created — check your email to confirm, then sign in.");

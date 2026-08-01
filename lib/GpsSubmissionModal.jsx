@@ -27,6 +27,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
   const [validationIssues, setValidationIssues] = useState([])
   const [confirmations, setConfirmations] = useState({ climbed: false, isRoute: false })
   const [showSuccess, setShowSuccess] = useState(false)
+  const [dragOver, setDragOver] = useState(false)
   // Whether a receipt email actually reached the climber. Starts false and is only
   // set true if notify-gps-climber reports a real send, so the success screen never
   // promises an email that a missing/failing mail provider will not deliver.
@@ -68,8 +69,10 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     setQualityScore(score)
   }
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files?.[0]
+  // Shared by the file picker and the drop zone. The UI has always said "or drag
+  // and drop", but nothing listened for a drop -- dropping a .gpx just navigated
+  // the tab away to the file. Both paths now land here.
+  const readGpxFile = (file) => {
     if (!file) return
 
     const reader = new FileReader()
@@ -105,6 +108,17 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     }
 
     reader.readAsText(file)
+  }
+
+  const handleFileUpload = (e) => readGpxFile(e.target.files?.[0])
+
+  const handleDrop = (e) => {
+    e.preventDefault()
+    setDragOver(false)
+    const file = e.dataTransfer?.files?.[0]
+    if (!file) return
+    if (!/\.gpx$/i.test(file.name)) { setError('That file is not a .gpx track'); return }
+    readGpxFile(file)
   }
 
   const handleSubmit = async () => {
@@ -150,7 +164,14 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
 
     try {
       // Call Supabase edge function for validation
-      const SUPABASE_URL = 'https://ofuofhojhbcrcahuotya.supabase.co'
+      // Read the same env var lib/supabase.js does. This was hardcoded to the
+      // production project, so a local or staging build still posted GPS tracks
+      // straight into prod.
+      const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+      if (!SUPABASE_URL) {
+        setError('GPS submission is not configured in this build (VITE_SUPABASE_URL is unset).')
+        return // the finally below clears `submitting`
+      }
       const response = await fetch(`${SUPABASE_URL}/functions/v1/validate-gps`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -308,7 +329,13 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           {tab === 'upload' && (
             <div>
               <label style={{...styles.label}}>Upload GPX File</label>
-              <div style={{...styles.uploadBox}}>
+              <div
+                onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
+                onDragEnter={(e) => { e.preventDefault(); setDragOver(true) }}
+                onDragLeave={() => setDragOver(false)}
+                onDrop={handleDrop}
+                style={{...styles.uploadBox, ...(dragOver ? {borderColor: C.accent, background: C.accent + '18'} : {})}}
+              >
                 <input
                   type="file"
                   accept=".gpx"
@@ -319,7 +346,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
                 <label htmlFor="gpxFileInput" style={{...styles.uploadLabel}}>
                   <div style={{fontSize: '24px', marginBottom: '8px'}}>📁</div>
                   <div>Click to select .gpx file</div>
-                  <div style={{fontSize: '12px', color: C.text70}}>or drag and drop</div>
+                  <div style={{fontSize: '12px', color: C.text70}}>{dragOver ? 'Drop the .gpx to load it' : 'or drag and drop'}</div>
                 </label>
               </div>
             </div>
