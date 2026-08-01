@@ -92,12 +92,19 @@ function validateGpsQuality(
   }
 
   if (expectedPeakCoords) {
-    const [peakLat, peakLng] = expectedPeakCoords
-    const avgLat = lats.reduce((a, b) => a + b) / lats.length
-    const avgLng = lngs.reduce((a, b) => a + b) / lngs.length
-    const distToPeak = haversineDistance([avgLat, avgLng], [peakLat, peakLng])
-    if (distToPeak > 2) {
-      score -= Math.min(30, distToPeak * 5)
+    // Closest approach, not the average of every point. This rule was dead until
+    // the handler started passing coords, and as written it averaged the whole
+    // track: on any route with a real approach the midpoint sits kilometres from
+    // the summit by definition, so switching it on would have penalised exactly
+    // the long alpine tracks this catalog is mostly made of. What actually
+    // distinguishes a good track from someone else's mountain is whether it ever
+    // reaches the route at all.
+    const peak = expectedPeakCoords
+    const closest = Math.min(
+      ...coordinates.map((c) => haversineDistance(c, peak))
+    )
+    if (closest > 2) {
+      score -= Math.min(30, closest * 5)
     }
   }
 
@@ -170,8 +177,31 @@ serve(async (req) => {
       )
     }
 
+    // Look up where this route actually is, so the proximity rules in
+    // validateGpsQuality can run. They take `expectedPeakCoords`, but this call
+    // passed one argument, so the parameter was always undefined and BOTH blocks
+    // that use it -- the "way outside expected area" bounds check and the
+    // distance-to-peak score penalty -- were dead. A track on the wrong continent
+    // scored the same as one on the route.
+    //
+    // Prefer the route's own coords, fall back to its area (peaks carry lat/lng on
+    // `areas`). If neither is known we pass undefined and the rules stay off rather
+    // than rejecting a good track against a coordinate we do not have.
+    let expectedPeakCoords: [number, number] | undefined
+    const { data: routeRow } = await supabase
+      .from("routes")
+      .select("lat, lng, areas ( lat, lng )")
+      .eq("id", routeId)
+      .maybeSingle()
+    const areaRow = Array.isArray(routeRow?.areas) ? routeRow?.areas[0] : routeRow?.areas
+    const srcLat = routeRow?.lat ?? areaRow?.lat
+    const srcLng = routeRow?.lng ?? areaRow?.lng
+    if (typeof srcLat === "number" && typeof srcLng === "number") {
+      expectedPeakCoords = [srcLat, srcLng]
+    }
+
     // Validate quality
-    const validation = validateGpsQuality(gpxData)
+    const validation = validateGpsQuality(gpxData, expectedPeakCoords)
 
     // Store submission in database
     const { data: submission, error: submitError } = await supabase
