@@ -68,10 +68,40 @@
          leave an empty gap. Banner/header overlays (back button, badges) are preserved. */
       .cover-x { display: none !important; }
       *:has(> .cover-x:only-child) { display: none !important; }
+      /* Boot placeholder — the app shell, drawn from inline HTML/CSS while the JS
+         bundle downloads and React mounts. On a slow phone that gap is several
+         seconds, and #root was empty for all of it: a black screen with no sign
+         the app was coming. React's createRoot clears this on first render.
+         Mirrors the real banner + primary nav (same colours, paddings and item
+         height) so the swap doesn't shift layout. Only the chrome that is
+         genuinely about to appear is drawn — content areas are neutral shimmer,
+         never placeholder numbers or names. */
+      #cm-boot { max-width: 520px; margin: 0 auto; min-height: 100vh; background: #0d1117; }
+      #cm-boot .b-bar { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 12px; padding-top: calc(16px + env(safe-area-inset-top)); }
+      #cm-boot .b-icons { display: flex; justify-content: flex-end; gap: 9px; }
+      #cm-boot .b-icons i { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #30363d; background: #1c2330; display: block; }
+      #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #e6edf3; line-height: 1.1; }
+      #cm-boot .b-mark span { color: #2f81f7; }
+      #cm-boot .b-nav { display: flex; background: #161b22; border-bottom: 1px solid #30363d; }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 15px 2px 14px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 3.5vw); font-weight: 600; color: #99a3ad; border-bottom: 2px solid transparent; }
+      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-bottom-color: #2f81f7; }
+      #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #21262d; margin: 3px 13px; display: block; }
+      #cm-boot .b-nav div:first-child b { background: #0d2044; }
+      #cm-boot .b-body { padding: 14px; display: flex; flex-direction: column; gap: 11px; }
+      #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
+      #cm-boot .b-line { height: 11px; border-radius: 6px; }
     </style>
   </head>
   <body style="margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-    <div id="root"></div>
+    <div id="root"><div id="cm-boot" role="status" aria-label="Loading ClimbMatch" aria-busy="true">
+      <div class="b-bar"><div class="b-icons"><i></i><i></i></div><div class="b-mark">Climb<span>Match</span></div></div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crew</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
+      <div class="b-body">
+        <div class="b-card"><div class="b-line cm-shimmer" style="width:58%"></div><div class="b-line cm-shimmer" style="width:88%"></div><div class="b-line cm-shimmer" style="width:74%"></div></div>
+        <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
+        <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
+      </div>
+    </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>
 </html>
