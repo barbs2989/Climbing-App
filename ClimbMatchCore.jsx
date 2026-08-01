@@ -1277,7 +1277,11 @@ function AreaRegionSelect({areaCountry,setAreaCountry,areaState,setAreaState,are
 function PartnerSearch({connections,onConnect,onViewProfile,onPlan,initialClimb,onConsumeInitial,friendState,blocked,objDates,crews,onInvite,onResume,onShowMutuals,routeById}){
   const [mode,setMode]=useState("objectives"),[levelF,setLevelF]=useState("All"),[maxMiles,setMaxMiles]=useState(200),[minTrust,setMinTrust]=useState(0),[selectedRoute,setSelectedRoute]=useState(""),[climbQuery,setClimbQuery]=useState(""),[verifiedOnly,setVerifiedOnly]=useState(false),[speedMatch,setSpeedMatch]=useState(false),[showFilters,setShowFilters]=useState(true),[areaId,setAreaId]=useState(""),[areaBy,setAreaBy]=useState("near"),[radiusMi,setRadiusMi]=useState(50),[areaCountry,setAreaCountry]=useState("usa"),[areaState,setAreaState]=useState(""),[sortBy,setSortBy]=useState("match"),[discF,setDiscF]=useState("All"),[availF,setAvailF]=useState([]),[shown,setShown]=useState(8),[objOpen,setObjOpen]=useState({});
   const [selClimbObj,setSelClimbObj]=useState(null);
-  useEffect(()=>{if(initialClimb){setMode("route");setSelectedRoute(initialClimb.id);setSelClimbObj(initialClimb);if(onConsumeInitial)onConsumeInitial();}},[initialClimb]);const _tDate=selectedRoute?(function(){var a=(objDates||{})[selectedRoute];return (Array.isArray(a)?a[0]:a)||"";})():"";const _tWk=_tDate?(()=>{const wd=new Date(_tDate+"T12:00:00").getDay();return (wd===0||wd===6)?["weekends"]:["weekday_am","weekday_pm"];})():null;const dateFit=c=>!_tWk||availMatch(availOf(c),_tWk);
+  useEffect(()=>{if(initialClimb){setMode("route");setSelectedRoute(initialClimb.id);setSelClimbObj(initialClimb);if(onConsumeInitial)onConsumeInitial();}},[initialClimb]);const _tDate=selectedRoute?(function(){var a=(objDates||{})[selectedRoute];return (Array.isArray(a)?a[0]:a)||"";})():"";const _tWk=_tDate?(()=>{const wd=new Date(_tDate+"T12:00:00").getDay();return (wd===0||wd===6)?["weekends"]:["weekday_am","weekday_pm"];})():null;/* A climber who never shared availability is not evidence that they are free. `availMatch`
+     answers "do these two sets overlap", and it returns true when a side is empty — correct for
+     "no filter selected", wrong as a claim about a person. So the knowledge check lives here:
+     no shared availability, no badge, and no sort credit for having matched the date. */
+  const dateFit=c=>{const _a=availOf(c);return !!(_tWk&&_a.length&&availMatch(_a,_tWk));};
   const _cc={},_dd={};const cS=c=>_cc[c.id]!=null?_cc[c.id]:(_cc[c.id]=compat(ME,c));const dS=c=>_dd[c.id]!=null?_dd[c.id]:(_dd[c.id]=distMiles(ME,c));
 const filtered=ALL_CLIMBERS.filter(c=>{
     if(blocked&&blocked.some(b=>b.id===c.id))return false;
@@ -1287,7 +1291,9 @@ const filtered=ALL_CLIMBERS.filter(c=>{
     if(vScore(c)<minTrust)return false;
     if(speedMatch&&Math.abs((c.hikingSpeedFtHr||0)-(ME.hikingSpeedFtHr||950))>400)return false;
     if(discF!=="All"&&!(c.disciplines||[]).includes(discF))return false;
-    if(availF.length&&!availMatch(availOf(c),availF))return false;
+    /* Selecting "Weekends" asks a question about known availability; someone who never
+       answered it is not a result. Unknown is excluded rather than waved through. */
+    if(availF.length){const _a=availOf(c);if(!_a.length||!availMatch(_a,availF))return false;}
     if(mode==="objectives"&&!c.objectiveIds.some(id=>ME.objectiveIds.includes(id)))return false;
     if(mode==="route"&&(!selectedRoute||!c.objectiveIds.includes(selectedRoute)))return false;if(mode==="area"){if(areaBy==="near"){if(radiusMi<9000&&distMiles(ME,c)>radiusMi)return false;}else{const reg=areaId||areaState||areaCountry;if(reg&&!c.objectiveIds.some(id=>{const r=ROUTES.find(x=>x.id===id);return r&&inArea(r.mountainId,reg);}))return false;}}
     return true;
