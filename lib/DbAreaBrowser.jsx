@@ -10,6 +10,7 @@ import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
+import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade } from "./grade";
 
 // Grade for a compact row. Catalog grades often carry a qualifier inline
@@ -29,7 +30,7 @@ const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ra
 // and the route rows already title-case it to "Rock", so filtering by Rock now
 // matches the label the list shows. It is deliberately not folded into Trad —
 // there is no `style` column in the DB to tell the two apart.
-const DISCIPLINES = [["", "All"], ["sport", "Sport"], ["trad", "Trad"], ["rock", "Rock"], ["bouldering", "Boulder"], ["alpine", "Alpine"], ["ice", "Ice"], ["mixed", "Mixed"], ["mountaineering", "Mountaineering"], ["aid", "Aid"], ["scrambling", "Scramble"]];
+const DISCIPLINES = [["", "All"], ["sport", DL.sport], ["trad", DL.trad], ["rock", DL.rock], ["bouldering", DS.bouldering], ["alpine", DL.alpine], ["ice", DL.ice], ["mixed", DL.mixed], ["mountaineering", DL.mountaineering], ["aid", DL.aid], ["scrambling", DS.scrambling]];
 
 function haversineMi(a, b) {
   const R = 3958.8, toRad = d => d * Math.PI / 180;
