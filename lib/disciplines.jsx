@@ -12,10 +12,10 @@ export const DISC_COLORS = {
   rock: "#2f81f7", trad: "#a371f7", sport: "#39d353", scrambling: "#e3a008", alpine: "#56d4dd", mountaineering: "#f85149",
   hiking: "#b07d3a", bouldering: "#f0883e", ice: "#79c0ff", mixed: "#f778ba", aid: "#9aa4b2",
 };
-export const DISC_LABELS = {
-  rock: "Rock", trad: "Trad", sport: "Sport", scrambling: "Scrambling", alpine: "Alpine", mountaineering: "Mountaineering",
-  hiking: "Hiking", bouldering: "Bouldering", ice: "Ice", mixed: "Mixed", aid: "Aid",
-};
+// Re-exported so this module's public surface is unchanged; the labels
+// themselves live in ./discLabels alongside every other list's, because this
+// file's inline SVG glyphs must stay out of the startup bundle.
+export { DISC_LABELS } from "./discLabels";
 
 function DiscGlyph({ d, size, color }) {
   const sz = size || 16, col = color || "#fff", dk = "rgba(0,0,0,0.42)";
