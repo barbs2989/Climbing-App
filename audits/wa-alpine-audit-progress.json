@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_sitkum_spire_standard",
-  "total_in_scope_last_count": 470,
-  "total_wa_alpine_or_mountaineering_tagged": 591,
+  "last_processed_id": "wa_south_face_10",
+  "total_in_scope_last_count": 519,
+  "total_wa_alpine_or_mountaineering_tagged": 620,
   "batches": [
     {
       "batch_number": 1,
@@ -982,6 +982,27 @@
         "wa_sitkum_spire_standard: White Chuck River Trail #643 characterization (\"brushy, unmaintained... with blowdown\") is softer than the Forest Service's own reported \"inaccessible, no plans to repair\" language, though recent trip reports still describe parties using it -- a tone gap, not a clear error.",
         "Session-wide note: WebFetch returned HTTP 403 on essentially every direct URL attempted across multiple agents this run (USFS, Wikipedia, SummitPost, Mountain Project, Peakbagger, etc.) -- likely a proxy/session issue rather than per-site blocking. All corroboration for this batch leaned more heavily on WebSearch snippets than direct source reads; flagged items above should get a follow-up pass once direct fetch is working again."
       ]
+    },
+    {
+      "batch_number": 42,
+      "date": "2026-08-01",
+      "route_ids": [
+        "wa_sloan_peak_corkscrew",
+        "wa_sloan_peak_r1",
+        "wa_snowfield_peak_neve_glacier",
+        "wa_snowking_mountain_standard",
+        "wa_south_arete",
+        "wa_south_early_winter_spire_direct_east_buttress",
+        "wa_south_early_winter_spire_east_buttress",
+        "wa_south_early_winter_spire_passenger",
+        "wa_south_early_winter_spire_southwest_couloir",
+        "wa_south_face_10"
+      ],
+      "confirmed_errors_fixed": 26,
+      "flagged_for_human_review": 27,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-01-batch-42.sql",
+      "note": "Five peaks, 10 routes, researched via 5 parallel agents; WebFetch reads from Wikipedia/USFS/AAC Publications were mostly unblocked this run (last batch's session-wide 403 outage did not recur), though Mountain Project/SummitPost/Peakbagger/CascadeClimbers direct fetches were still frequently 403'd, pushing some items to WebSearch-snippet-level evidence. Sloan Peak (both routes): fixed a wrong-wilderness-name error (labeled 'Glacier Peak Wilderness' instead of the actual Henry M. Jackson Wilderness) plus copy-paste contamination from other peaks (Vesper Peak trailhead reference, Glacier-Peak/Suiattle-River-Road note), a ~200m-off trailhead waypoint on r1 vs. its sibling, the round-trip-stored-as-one-way dist_km bug on both routes, and null/mismatched loss_ft on both. Biggest open flag: wa_sloan_peak_r1 looks like a duplicate/mislabeled entry of wa_sloan_peak_corkscrew rather than the genuinely distinct 'West Face' rock route its own beta field says it should document -- needs a human merge/delete or rewrite decision. Snowfield Peak: fixed a null top-level permit column (app reads this column, not access.permit, which already had the right text -- a recurring bug pattern), a null loss_ft, and an outlier waypoint elevation. Snowking Mountain: repeated and fixed, on this peak's OTHER route, the exact NPS/North-Cascades-NP-vs-Forest-Service contamination pattern already fixed on its sibling wa_east_ridge_2 in batch 9 (land_manager, access.notes, access.rules, group_limit, top-level permit), plus a loss_ft internal-consistency fix, a stale summit-elevation figure surviving in itinerary text, and area elevation_ft/prominence_ft corrections. South Early Winters Spire: found the same Cutthroat-Lake/Blue-Lake trailhead mixup already seen on the neighboring Liberty Bell/Lexington Tower cluster (batches 18, 40) on 3 of 5 routes, plus a gain_ft self-consistency fix (South Arete) and a grade_num/grade-text mismatch (Passenger, already explained by the row's own corrections field as an AAC-vs-Mountain-Project sourcing split). Cathedral Peak: fixed an overview FA-year typo (1969 -> 1968) contradicting the row's own fa field, confirmed via AAC Publications. Peak-wide flags left for humans: Snowking's alpine_grade holding a commitment-grade value instead of the schema's French adjectival scale (same bug class as batch 9's Dragontail fix, no sourced replacement found); South Early Winters Spire's 5-way Blue Lake Trailhead elevation disagreement and Direct East Buttress's invalid alpine_grade token; Cathedral Peak's internally implausible gain/loss pairing and a summit-adjacent waypoint that may be a coordinate error."
     }
   ]
 }

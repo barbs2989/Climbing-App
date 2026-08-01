@@ -2873,3 +2873,86 @@ though recent trip reports still describe parties using it — a tone gap, not a
 
 Next batch will continue alphabetically after `wa_sitkum_spire_standard` (see progress
 file).
+
+## 2026-08-01 — Pass 1, Batch 42
+
+Five peaks, 10 routes (Sloan Peak 2, Snowfield Peak 1, Snowking Mountain 1, South Early
+Winters Spire 5, Cathedral Peak 1), researched via 5 parallel agents: Corkscrew Route, West
+Face/r1 (Sloan Peak); Neve Glacier (Snowfield Peak); Standard Route (Snowking Mountain);
+South Arete, Direct East Buttress, East Buttress, Passenger, Southwest Couloir (South Early
+Winters Spire); South Face (Cathedral Peak, Pasayten).
+
+Sloan Peak: both routes carried the same wrong-wilderness-name error (labeled "Glacier Peak
+Wilderness" instead of the actual Henry M. Jackson Wilderness the peak sits in, confirmed via
+Wikipedia/USFS/PeakVisor) plus copy-paste contamination bled in from other peaks (a Vesper
+Peak trailhead reference, a Glacier-Peak/Suiattle-River-Road note) — fixed on both routes.
+`wa_sloan_peak_r1`'s Bedal Creek Trailhead waypoint was ~200 m off from the same physical
+trailhead's coordinate on the sibling Corkscrew Route — reconciled to match. Both routes had
+the round-trip-stored-as-one-way `dist_km` bug (9.5 mi round trip stored directly instead of
+halved) — fixed per-row, not bulk-normalized. `wa_sloan_peak_corkscrew`'s `loss_ft` and
+`wa_sloan_peak_r1`'s null `loss_ft` were both corrected to match `gain_ft` on these
+out-and-back routes. Biggest open flag: `wa_sloan_peak_r1` looks like a duplicate/mislabeled
+entry of `wa_sloan_peak_corkscrew` (identical GPX track and gain_ft) rather than the genuinely
+distinct roped 5.7-5.8 "West Face" rock route its own `beta` field says it should document —
+that same `beta` field also misattributes a real but unrelated 2023 winter ice ascent
+(Merrill-Minton) as this route's FA. Needs a human merge/delete or from-scratch rewrite
+decision, not a field patch.
+
+Snowfield Peak: top-level `permit` column was null while `access.permit` already fully
+documented the NPS backcountry-permit requirement — same "app reads the wrong column" bug
+this project has fixed repeatedly before; copied across. `loss_ft` was null on a round-trip
+route and filled to match `gain_ft`/itinerary. A "Colonial Glacier moraine camp" waypoint
+elevation (6,400 ft) was an outlier against four other same-row mentions of the same camp and
+external trip reports (all 5,400–6,100 ft) — corrected to a best-fit 5,900 ft.
+
+Snowking Mountain: repeated, on this peak's other route (`wa_snowking_mountain_standard`),
+the exact NPS/North-Cascades-NP-vs-Forest-Service contamination pattern already found and
+fixed on this same peak's sibling `wa_east_ridge_2` in batch 9 — `access.land_manager`,
+`access.notes` (NPS Recreation.gov lottery boilerplate), `access.rules` (NPS Boston Basin
+campsite/bear-canister boilerplate), `access.group_limit` (6, an NPS cross-country-zone cap),
+and the top-level `permit` column (written in NPS/Marblemount language) were all fixed to the
+correct Forest Service/Glacier Peak Wilderness facts. Also fixed: `loss_ft` (1,100, internally
+impossible against `gain_ft`=6,800 and the route's own itinerary loss sum) corrected to 6,800;
+a stale 7,439 ft summit figure surviving in two itinerary text fields, not updated to match
+this row's own (correct) 7,433 ft `high_point_ft`; and the area's `elevation_ft` (7,439→7,433)
+and `prominence_ft` (1,639→1,593, moderate-confidence search-snippet evidence only). Flagged:
+`alpine_grade` holding a Roman-numeral commitment grade instead of the French adjectival scale
+the column is defined for (same bug class as batch 9's Dragontail fix, but no sourced
+replacement value found); `fa` unresearched; and the area hierarchy embedding
+`wa_hwy20_ncnp` in a Forest Service peak's ancestry chain, which may be a shared corridor
+label rather than an error — needs sibling-area data to judge.
+
+South Early Winters Spire: found the same Cutthroat-Lake/Blue-Lake trailhead mixup already
+seen on the neighboring Liberty Bell/Lexington Tower cluster (batches 18, 40) — three of the
+five routes (South Arete, Direct East Buttress, Passenger) had `access.rules` misattributing
+a 1/4-mile no-camping buffer to Cutthroat Lake instead of Blue Lake, the trailhead they
+actually use; fixed on all three. Also fixed: South Arete's `gain_ft` (2,000, disagreeing
+with its own `loss_ft`/itinerary/descent_text, all of which imply ~2,400) and Passenger's
+`grade_num` (12, not matching its own displayed "5.11d" grade text — the row's own
+`corrections` field already explains the AAC-vs-Mountain-Project sourcing split behind it).
+East Buttress and Southwest Couloir had no confirmed errors. Peak-wide flag: all 5 routes'
+Blue Lake Trailhead elevation disagrees between their own waypoints (5,200/5,204 ft) and
+their shared `approach_logistics` boilerplate (5,400 ft) — external sources split the same
+way, so left unresolved. Direct East Buttress's `alpine_grade` ("D") is invalid for the
+commitment-grade column and disagrees with its own `commitment`/grade text — flagged, not
+guessed, since only weak search-snippet evidence was found for a replacement.
+
+Cathedral Peak (Pasayten): `overview` said "the original 1969 Beckey line," contradicting the
+row's own `fa` field ("September 1968") — fixed to 1968, confirmed via the AAC Publications
+first-ascent account (whose named features — Confession Box, Pulpit Ledge, Belfry Ledge —
+match this row's own `beta`/`pitch_detail` almost verbatim) and Mountain Project; no source
+found supports 1969. Flagged: an internally implausible `gain_ft`/`loss_ft` pairing (6,700 ft
+of loss exceeds the ~5,556 ft net trailhead-to-summit gain implied by this row's own
+confirmed elevations) with no authoritative gain/loss breakdown found to fix it against; a
+waypoint sitting implausibly close (~370 ft) to the summit that a 403'd Mountain Project page
+could not be used to correct; and a 5 ft elevation-datum discrepancy (8,606 vs. 8,601 ft)
+between `high_point_ft`/area `elevation_ft` and the summit waypoint, likely just two
+legitimate figures from different survey vintages.
+
+Session note: most agents this batch got clean WebFetch reads from Wikipedia/USFS/AAC
+Publications (last batch's session-wide 403 outage did not recur), though Mountain
+Project/SummitPost/Peakbagger/CascadeClimbers direct fetches were still frequently blocked,
+pushing several items in this batch to WebSearch-snippet-level evidence rather than a direct
+source read — noted inline above and in the SQL file where that weaker evidence level applies.
+
+Next batch will continue alphabetically after `wa_south_face_10` (see progress file).
