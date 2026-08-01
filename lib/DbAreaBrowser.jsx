@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { shortGrade } from "./grade";
@@ -196,7 +196,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
 }
 
 // ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
-function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
+function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -216,7 +216,7 @@ function AreaPage({ area, booked, onToggleSave, onDrill, onFinder, onNear, onObj
           <div style={{ fontSize: 19, fontWeight: 700, color: C.text }}>{area.name}</div>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
         </div>
-        <div style={{ fontSize: 12, color: C.textSub }}>{area.region}{area.elevation_ft ? " · " + area.elevation_ft.toLocaleString() + " ft" : ""}</div>
+        <div style={{ fontSize: 12, color: C.textSub }}>{area.region}{area.elevation_ft ? " · " + (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : ""}</div>
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
         {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
         <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
@@ -424,7 +424,7 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C }) {
+function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C, uDistMi }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null), tileRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -577,7 +577,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C }) {
           <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{sel.name}</div>
-              <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + sel._mi.toFixed(1) + " mi" : "")}</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
             </div>
             <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blue, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
             <button onClick={() => setSel(null)} title="Close" style={{ background: "none", border: "none", color: C.textMuted, fontSize: 17, cursor: "pointer", padding: "0 4px", flexShrink: 0 }}>×</button>
@@ -683,7 +683,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -713,14 +713,29 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   // Jump straight to any area reached by something other than drilling — a
   // near-me map pin, a tree-search hit, or a tree-node tap — by rebuilding its
   // real state/region breadcrumb from the area's own ltree path.
+  // Every await below is guarded by a sequence number: two jumps in flight at once
+  // (tap a search hit, tap another before the first resolves) could otherwise land
+  // out of order and leave the browser on the earlier area.
+  const jumpSeq = useRef(0);
   const jumpToArea = async a => {
+    const seq = ++jumpSeq.current;
     setTreeOpen(false);
     setStateNode(a); setStack([]); setScreen("areas");
-    const ancestors = await fetchAreaBreadcrumb(a).catch(() => []);
+    // areas_in_subtree returns a narrow projection with no `path`, so a search hit
+    // cannot build its own breadcrumb and every panel keyed on path renders empty.
+    // Hydrate the full row before navigating.
+    let full = a;
+    if (!a.path) {
+      const row = await fetchArea(a.id).catch(() => null);
+      if (jumpSeq.current !== seq) return;
+      if (row) { full = row; setStateNode(row); }
+    }
+    const ancestors = await fetchAreaBreadcrumb(full).catch(() => []);
+    if (jumpSeq.current !== seq) return;
     const state = ancestors.find(x => x.area_type === "state");
     if (!state) return;
     setStateNode(state);
-    setStack([...ancestors.filter(x => x.area_type !== "state"), a]);
+    setStack([...ancestors.filter(x => x.area_type !== "state"), full]);
   };
   // Saved-areas chips (and anything outside the browser) jump to a DB area by id;
   // the full row is fetched here because jumpToArea needs area_type + ltree path.
@@ -757,9 +772,9 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} />
       ) : screen === "near" ? (
-        <NearMePanel center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
+        <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
+        <AreaPage key={current.id} uElev={uElev} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

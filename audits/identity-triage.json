@@ -41,54 +41,6 @@
       "verdict": "real-and-correct",
       "date": "2026-07-30",
       "why": "Two 3-metre boulder problems on different blocs sharing a common name. A 3 m height is not a shared measurement, it is what a boulder problem is."
-    },
-    {
-      "key": "gain_ft|east face|3138",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "Chair Peak's value on wa_summer_fall_rock_3, which is a duplicate area whose name is a copy of the season field. Resolving it means merging areas, which is structural and was deferred."
-    },
-    {
-      "key": "gain_ft|northwest ridge|3138",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "Same duplicate area as gain_ft|east face|3138."
-    },
-    {
-      "key": "high_point_ft|east face|6238",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "Same duplicate area as gain_ft|east face|3138."
-    },
-    {
-      "key": "high_point_ft|northwest ridge|6238",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "Same duplicate area as gain_ft|east face|3138."
-    },
-    {
-      "key": "high_point_ft|nw ridge|8685",
-      "verdict": "deferred",
-      "date": "2026-07-30",
-      "why": "wa_mt_remmel duplicates wa_remmel_mountain (259 m apart, crag copy with null elevation). Area merge, deferred."
-    },
-    {
-      "key": "gain_ft|nw ridge|5265",
-      "verdict": "deferred",
-      "date": "2026-07-31",
-      "why": "Artifact of the in-progress duplicate-area merge, not contamination. Remmel Mountain is entered twice; resolving that pair's numeric disagreement to the correct sourced value (28.2 km / 5,265 ft) means the same name+value now spans both area rows, which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
-    },
-    {
-      "key": "high_point_ft|la villa|6440",
-      "verdict": "deferred",
-      "date": "2026-07-31",
-      "why": "Artifact of the in-progress duplicate-area merge, not contamination. The Castle is entered twice; resolving that pair's numeric disagreement to the correct sourced value (6,440 ft) means the same name+value now spans both area rows, which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
-    },
-    {
-      "key": "high_point_ft|southwest ridge|8004",
-      "verdict": "deferred",
-      "date": "2026-07-31",
-      "why": "Artifact of the in-progress duplicate-area merge, not contamination. West McMillan Spire is entered twice; resolving that pair's numeric disagreement to the correct sourced value (8,004 ft) means the same name+value now spans both area rows, which is exactly what check 7 looks for. It disappears when the pair is merged, as Little Big Chief's did."
     }
   ]
 }
