@@ -5,8 +5,13 @@
 -- reporter "our team will review it". Nothing was stored anywhere. This table is
 -- where a report actually lands.
 --
--- Apply in the Supabase SQL Editor. Numbering: 0075 was unused as of 2026-08-05 --
--- see README-numbering.md, there is no tracking table and numbers are labels.
+-- Apply in the Supabase SQL Editor. APPLIED 2026-08-05 and verified live.
+--
+-- Numbering: this was written as 0075, which was free at the time, but #546 landed
+-- 0075_crew_locked_day.sql while it was in review. Renumbered to 0077 rather than
+-- add a third collision to a folder whose README exists because the first two cost
+-- an afternoon. The number is a label -- the objects below already exist in the DB
+-- under the old filename, and renaming the file changes nothing about that.
 
 create table user_reports (
   id              uuid primary key default gen_random_uuid(),
