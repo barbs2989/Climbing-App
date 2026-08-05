@@ -152,7 +152,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
   const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
   useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
-  const tab = on => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blue : "transparent", color: on ? "#fff" : C.textSub });
+  const tab = on => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? "#fff" : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
   return (
     <div style={{ marginBottom: 14 }}>
@@ -531,7 +531,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C, uDistMi
         const climbs = areas.reduce((s, a) => s + (a.route_count || 0), 0);
         const avgLat = areas.reduce((s, a) => s + a.lat, 0) / n, avgLng = areas.reduce((s, a) => s + a.lng, 0) / n;
         const sz = Math.min(22 + n, 44);
-        const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blue + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
+        const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(n + " areas · " + climbs + " climbs — tap to zoom in", { direction: "top" });
         mk.on("click", () => {
