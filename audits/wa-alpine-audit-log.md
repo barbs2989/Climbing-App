@@ -3265,3 +3265,82 @@ Pre-flighted with `check:sql` before finalizing — all 4 write targets confirme
 no deletes proposed this batch.
 
 Next batch will continue alphabetically after `wa_the_hitchhiker` (see progress file).
+
+---
+
+## 2026-08-05 — Pass 1, Batch 47
+
+Six peaks, 10 routes, researched via 6 parallel agents (one per peak group): Cathedral Peak /
+The Monk (5 routes — Le Gibet, Odine, Scabo, West Cracks Left Crack, West Cracks Right Crack),
+The Needle (Neve Glacier Approach/Standard), The Pleiades (Glacier/Scramble Route), The Pyramid
+(South Route, Southern Pickets), The Rake (Ridge Traverse Route, Southern Pickets), Unicorn Peak
+(The Roof).
+
+**Confirmed errors → fixes in `sql/2026-08-05-batch-47.sql`:**
+
+- **The Pleiades scramble** was this batch's biggest find: its own `corrections` field already
+  suspected the "Glacier/Scramble Route" name didn't match a literal glacier crossing, and that
+  suspicion was correct — `partner_requirements`, `seasonal_hazards.crevasses`,
+  `access.land_manager`, `access.permit`, and both `approach_logistics` trailhead fields all
+  carried content copy-pasted from an unrelated Mount Baker route (the Park Glacier line via
+  Ptarmigan Ridge/Camp Kiser — a different mountain and trailhead ~15 miles away), directly
+  contradicting this route's own approach text, waypoints, itinerary, hazards, and
+  `rope_type = "none"`. All 6 fixed to describe the route's actual single-day, no-glacier Twin
+  Lakes/High Pass Trail approach (confirmed via the USFS Ptarmigan Ridge Trail 682.1 page and
+  the row's own internal data).
+- **Unicorn Peak's The Roof**: `length_m` (122) contradicted its own single 15m pitch in
+  `pitch_detail` — fixed to 15. The identical wrong 122 value appears verbatim on two sibling
+  Unicorn Peak routes (`wa_open_book_2`, `wa_classic_route_2`), each also a single 15m-pitch
+  route — a copy-paste artifact repeated three times, not three independent measurements.
+  Those two siblings are outside this batch's scope; flagged here for a follow-up pass.
+- **The Monk - Odine** (Cathedral Peak): `watch_out` still opened "5.8 route in The Monk complex"
+  despite `grade`/`grade_num`/`rock_grade` already having been corrected to 5.9 by an earlier
+  pass (per the row's own `corrections` note, which cites Mountain Project) — the leftover prose
+  was fixed to match the already-corrected structured fields.
+- **The Pyramid's South Route** (Southern Pickets): `road.status`/`seasonalGate` claimed a
+  winter closure gate at the Goodell Creek trailhead, directly contradicted by this same row's
+  own `access.closures` field and confirmed via WSDOT (the real SR-20 winter gate sits far east,
+  near Ross Dam/Early Winters — Goodell Creek/Newhalem stays open year-round) — fixed. Also
+  renamed the route from "South Route" to "West Ridge": this row's own `aspect` (W), `face`
+  ("West/connecting ridge to Mt. Degenhardt"), `pro_tips`, and waypoint notes all describe a
+  west-side line, and the route's own cited source (Steph Abegg's Southern Pickets trip report)
+  titles this exact climb "Pyramid West Ridge." The route `id` keeps its `_south_route` suffix —
+  renaming the id itself is a separate, riskier decision left for a human, consistent with this
+  dataset's known id/name-mismatch pattern.
+
+All 10 confirmed fixes were independently re-verified against the live DB (current column
+values matched each research agent's report byte-for-byte) before SQL was written, and
+pre-flighted with `check:sql` — all 10 write targets confirmed to exist live, no deletes
+proposed.
+
+**Flagged for human review, not auto-fixed:**
+
+- All 5 Monk routes share `high_point_ft = 8606` (Cathedral Peak's true summit elevation),
+  but their own `waypoints` arrays say The Monk's tower top is 8,300 ft, and the shared
+  approach/descent text describes The Monk as a separate, lower, semi-detached tower whose
+  routes rappel an NE gully rather than reaching Cathedral's summit — looks copy-pasted from
+  the area row rather than reflecting the route's actual topout, but no external source for
+  The Monk's specific elevation was found to confirm a replacement value.
+- Two Monk routes (Le Gibet, West Cracks - Left Crack) have a `corrections` note claiming a
+  verified 2-star Mountain Project rating that was never written to the null `stars` column;
+  Mountain Project was unreachable (blocked) this run to re-confirm before applying.
+- Scabo and West Cracks - Right Crack both have a `loss_ft` wildly out of step (5450/5200 ft)
+  with three sibling Monk routes sharing byte-identical approach text and reporting 1300 ft —
+  no source found to say which figure is correct.
+- The Needle's mid-route waypoints and `gpx` track are geographically inconsistent with
+  themselves and with the real coordinate for Horsemans Pack (off by as much as ~4.4 mi), and
+  the `gpx` track never actually reaches the summit — it looks adapted from the shared Snowfield
+  Peak approach and never reconciled for The Needle specifically. This needs a human to re-plot
+  from an actual GPS track rather than a single-value fix.
+- The Rake's summit elevation is disputed between two source families (7,840 ft vs. the on-file
+  7,869 ft) with no primary source reachable this run to adjudicate; its `alpine_grade` (IV)
+  duplicates the commitment grade instead of the schema's French adjectival scale (the same
+  recurring DB-wide pattern noted in prior batches, no sourced replacement found); and its
+  `dist_km` looks like it may already store a round-trip figure rather than one-way (per
+  CLAUDE.md's guidance on this column, left for `npm run audit:distances` rather than
+  hand-patched).
+- Both The Needle and The Rake audits were constrained by primary sources (Wikipedia, Mountain
+  Project, SummitPost, Peakbagger) returning 403 to direct fetch this run; WebSearch snippets
+  were used as a lower-confidence fallback and are noted as such above.
+
+Next batch will continue alphabetically after `wa_the_roof` (see progress file).

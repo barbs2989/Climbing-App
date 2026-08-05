@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_the_hitchhiker",
+  "last_processed_id": "wa_the_roof",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1108,6 +1108,27 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-05-batch-46.sql",
       "note": "Eight peaks, 10 routes, researched via 8 parallel agents. Fixed: Tenpeak Southeast Route pitches (3->2, matching its own beta/pitch_detail); Chopping Block South Route grade (Grade II-III 5.4 -> Grade II 5.5, applying a fix its own corrections field had already identified but never applied) plus filling a null pitches field to 5; Devils Club rope_note pitch count (23->25, matching its own top-level pitches field and 25-entry pitch_detail array); Mount Stuart Direct North Ridge fa (added the omitted 1956 Claunch/Rupley original ascent, re-labeled 1963 Beckey/Marts as first-over-the-Gendarme rather than the ridge FA). Flagged rather than fixed: Swiss Peak area has no lat/lng at all and no sourced coordinate was found; The Brothers 2ft area-vs-route elevation gap is noise within an already-documented unresolved external conflict; Concord Tower area elevation (7611) may itself be the error rather than the Cave Route high_point_ft (7569) per rounded secondary sources, left unswapped; Devils Club top-level grade (5.11/5.11-) is uncorroborated by any primary source (all cite V+ 5.9+ A2-) but reconciling it touches the whole pitch_detail array on a safety-relevant serious route, left flagged; Devils Club alpine_grade (V+) looks like the recurring NCCS-in-French-scale-field bug with no sourced replacement; SEWS Hitchhiker approach/road/access text disagrees with its own already-flagged waypoint, and this pass found the waypoint is likely the one thats right, but no detailed route-specific approach could be sourced to safely rewrite the prose fields."
+    },
+    {
+      "batch_number": 47,
+      "date": "2026-08-05",
+      "route_ids": [
+        "wa_the_monk_le_gibet",
+        "wa_the_monk_odine",
+        "wa_the_monk_scabo",
+        "wa_the_monk_west_cracks_left_crack",
+        "wa_the_monk_west_cracks_right_crack",
+        "wa_the_needle_neve_glacier",
+        "wa_the_pleiades_scramble",
+        "wa_the_pyramid_picket_south_route",
+        "wa_the_rake_traverse_route",
+        "wa_the_roof"
+      ],
+      "confirmed_errors_fixed": 10,
+      "flagged_for_human_review": 15,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-05-batch-47.sql",
+      "note": "Six peaks, 10 routes, researched via 6 parallel agents (one per peak group). The Pleiades scramble was the biggest find: its own `corrections` field already suspected the 'Glacier/Scramble Route' name didn't match a literal glacier crossing, and that suspicion was right -- partner_requirements, seasonal_hazards.crevasses, access.land_manager, access.permit, and both approach_logistics trailhead fields all carried content copy-pasted from an unrelated Mount Baker glacier route (Ptarmigan Ridge/Camp Kiser, a different mountain and trailhead ~15 miles away), contradicting this route's own approach text, waypoints, itinerary, hazards, and rope_type='none'; all 6 fixed. Unicorn Peak's The Roof had a length_m (122) contradicting its own single 15m pitch in pitch_detail -- the same wrong 122 appears verbatim on two sibling Unicorn Peak routes outside this batch's scope, flagged for a follow-up pass. The Monk - Odine (Cathedral Peak) had a stale watch_out string still reading '5.8 route' despite its own grade/grade_num/rock_grade already having been corrected to 5.9 by an earlier pass (per its own corrections note) -- fixed the leftover prose. The Pyramid's South Route had a road.status/seasonalGate claiming a Goodell Creek winter closure gate, contradicted by its own access.closures field and WSDOT (the real SR-20 winter gate is far east at Ross Dam, nowhere near Goodell Creek/Newhalem) -- fixed; also renamed 'South Route' to 'West Ridge' since aspect/face/pro_tips/waypoints and the row's own cited source (Steph Abegg trip report) all describe a west-side line, leaving the id's '_south_route' suffix as a separate rename decision for a human. All 10 confirmed fixes independently verified against the live DB (current values matched each agent's report) and pre-flighted with check:sql -- all 10 write targets confirmed to exist, no deletes proposed. Left flagged, not fixed: all 5 Monk routes share `high_point_ft`=8606 (Cathedral Peak's true summit) despite their own waypoints saying The Monk's tower top is 8,300 ft -- looks copy-pasted from the area row, but no source found for The Monk's actual topout elevation; two Monk routes (Le Gibet, West Cracks-Left) have a `corrections` note claiming a verified 2-star rating that was never written to the null `stars` column, and Mountain Project was unreachable this run to re-confirm; Scabo and West Cracks-Right both have a loss_ft wildly out of step with 3 siblings sharing the identical approach text, with no source to say which value is right; The Needle's mid-route waypoints/gpx are geographically inconsistent with themselves and with the real Horsemans Pack coordinate (up to ~4.4 mi off) and the gpx track never reaches the summit -- looks adapted from the shared Snowfield Peak approach and never reconciled for The Needle specifically, needs a human to re-derive from a real track rather than a single-value fix; The Rake's summit elevation is disputed between two source families (7,840 vs 7,869 ft) with no primary source reachable to adjudicate, its alpine_grade duplicates the commitment grade (recurring DB-wide pattern), and its dist_km looks like it already stores a round-trip figure rather than one-way (per CLAUDE.md, left for `audit:distances` rather than hand-patched). Both The Needle and The Rake audits were constrained by primary sources (Wikipedia, Mountain Project, SummitPost, Peakbagger) returning 403 to direct fetch this run -- WebSearch snippets were used as a fallback and are noted as lower-confidence corroboration."
     }
   ]
 }
