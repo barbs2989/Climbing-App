@@ -3344,3 +3344,89 @@ proposed.
   were used as a lower-confidence fallback and are noted as such above.
 
 Next batch will continue alphabetically after `wa_the_roof` (see progress file).
+
+## 2026-08-05 — Pass 1, Batch 48
+
+Five peaks, 10 routes, researched via 5 parallel agents (one per peak group): The Tooth
+(Tooth Fairy, Northeast Slabs, South Face), The Triad (East Peak), North Early Winters Spire
+(The West Face), Three Fingers (North Peak, Middle Peak, South Peak via Lookout), Three Queens
+(Middle Peak, West Peak).
+
+**Confirmed errors → 26 fixes in `sql/2026-08-05-batch-48.sql`:**
+
+- **Three Fingers North Peak (`wa_three_fingers_r1`)** was this batch's biggest find: five
+  fields (`pro_tips`, `watch_out`, `rope_note`, `ascender`, plus a whole leaked waypoint)
+  carried the South Peak lookout route's three-fixed-ladders content, directly contradicting
+  this route's own `overview`, which explicitly says "There is no maintained trail, no
+  ladders, and no register cabin" on the North Peak — the ladders belong to the separate
+  South Peak lookout route. Fixed all five, including removing the leaked "South Peak lookout
+  ladders" waypoint and shortening the summit waypoint's note to match.
+- Two more Three Fingers self-contradictions: Middle Peak's own summit waypoint note claimed
+  its elevation matched "the record's own high_point_ft (6,797 ft)" when both the waypoint and
+  `high_point_ft` actually read 6,800 ft — fixed the note's stale number. Middle Peak's
+  `approach_logistics.peakLat/Lng` pointed at the North/South Peak's shared coordinate instead
+  of its own documented summit (visible in its own waypoints array) — fixed. South Peak
+  Lookout's `gain_ft` (5,750) didn't match its own `loss_ft` or itinerary-derived total
+  (4,200) for what is an out-and-back route — fixed.
+- **North Early Winters Spire's West Face**: a stale Blue Lake TH waypoint/`gpx` point that a
+  sibling route on the same peak (`wa_news_nw_corner`) had already caught and fixed — this
+  route's own `approach_logistics.trailheadLat/Lng` already had the corrected value, it just
+  never propagated to `waypoints`/`gpx`. Also fixed: a 60m-vs-70m rope contradiction against
+  its own `rope_length_m`, a 500ft-vs-660ft route-length contradiction against its own
+  `pitch_detail`, a repeated FA misspelling ("Beckstad" → "Beckstead", confirmed via theCrag),
+  and the recurring `alpine_grade`-duplicates-`commitment` and `watch_out`-string-not-array
+  bugs.
+- **The Triad's East Peak**: `gain_ft` had regressed to an uncorrected trailhead-to-summit
+  delta despite its own itinerary/`sourceNote` already documenting the real, corrected
+  round-trip figure — fixed back to the documented value. A null `fa` its own overview already
+  answered (1949, Eilertsen/Lowery/Scales/Wilde, corroborated via Wikipedia) — filled. A
+  `rappels` field describing "2 rappels of ~30m" contradicting its own pitch-by-pitch descent
+  data (1 rappel, ~20m) — fixed. A truncated `approach_logistics.trailheadDirection` string —
+  restored from the matching full sentence in the route's own `approach` field. The area row's
+  `prominence_ft` (822) disagreed with Wikipedia/Peakbagger/Peakery, which converge on 760 —
+  fixed (elevation was not in dispute).
+- **Three Queens Middle Peak**: `access.notes` named the Snoqualmie Ranger District at a
+  Mt. Baker-Snoqualmie NF phone number, contradicting its own `landManager`/
+  `emergency.rangerStation` fields (both correctly say Cle Elum Ranger District) and the live
+  USFS "Three Queens Fire" closure alert, which directs inquiries to Cle Elum — fixed. Its
+  `dist_km` (4.3, meant to be one-way) didn't match its own itinerary text ("roughly 10 miles
+  round trip") or the underlying source trip report — corrected to 8.05 km one-way. West
+  Peak's missing trailhead coordinates were filled from the corroborated sibling value (both
+  routes share the Mineral Creek Trailhead).
+- **The Tooth** had the lightest touch: a commitment-grade-in-`alpine_grade` bug and a wrong
+  `nearestHospital` (Harborview instead of the actually-closer Snoqualmie Valley Hospital,
+  matching both sibling routes) on Tooth Fairy, and a `watch_out` string-vs-array bug on
+  Northeast Slabs. South Face audited clean.
+
+All 26 confirmed fixes were independently re-verified against a fresh full-row fetch of the
+live DB (matching each research agent's report) before this file was written, and
+pre-flighted with `check:sql` — all write targets (routes and the one areas-table target,
+The Triad's `prominence_ft`) confirmed to exist live, no deletes proposed.
+
+**Flagged for human review, not auto-fixed:**
+
+- North Early Winters Spire's West Face: `pitches` (6) vs. `pitch_detail`'s 5 documented
+  pitches — no source found for what a genuine 6th pitch would contain; an unverifiable 1985
+  FFA (Steve Risse and Dave Tower) — not contradicted either, just unconfirmed.
+- The Tooth's Northeast Slabs: `dist_km` reads as a plausible one-way figure by magnitude but
+  conflicts with the route's own itinerary narrative ("about 6.5 miles" total) — a
+  narrative-vs-render conflict `audit:distances`' magnitude-only heuristic doesn't catch,
+  left per CLAUDE.md's guidance not to bulk-normalize this column. Its own
+  `rappel_count_note` field already documents an unresolved 2-rappel-vs-4-rappel
+  self-contradiction in the descent description.
+- Three Fingers: the North Peak and South Peak Lookout summit waypoints share the exact same
+  coordinate to 6 decimal places despite being distinct summits with different elevations —
+  looks like the area's single representative point reused for two real, separate towers; the
+  area's own `elevation_ft` (6,865) matches none of three internally-documented conventions
+  (technical true high point at 6,870, named/lookout summit at 6,854 per a prior batch's own
+  `corrections` note, or the ~6,858-6,859 ft commonly published externally).
+- Three Queens West Peak: `overview`/`beta`/`turnaround` describe camping at "Spectacle Point
+  (5,800 ft)," but the only stored waypoint is the separate, lower "Spectacle Lake" (4,265 ft,
+  confirmed via Wikipedia) — needs a human with the original source (blocked by robots/WAF
+  this run) to confirm the real camp location.
+- The Triad's East Peak: waypoints/`what_to_bring` still list a Marble Creek basin campsite
+  and bivy gear despite the route's own itinerary/`sourceNote` explicitly correcting this to a
+  single-day car-to-car climb — may be intentional (optional multi-day combo with an Eldorado
+  glacier camp) rather than leftover contamination; left for a human call.
+
+Next batch will continue alphabetically after `wa_three_queens_west_peak` (see progress file).
