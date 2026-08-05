@@ -26,7 +26,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASELINE = path.join(ROOT, "scripts", "undefined-refs-baseline.json");
 
 // Files to scan: the app source, not build output or tooling.
-const FILES = ["ClimbMatch.jsx", "main.jsx"]
+// Every app source file, not just the entry ones. `ClimbMatchCore.jsx` and
+// `RouteDetail.jsx` were split out of ClimbMatch.jsx (#497/#508) and this list was
+// never updated, so for a week the check that exists to stop production blank screens
+// was reading 24% of the app — the other 76%, including the 900KB core, was invisible
+// to it. A guard with a hardcoded file list silently narrows every time the code moves.
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"]
   .concat(fs.existsSync(path.join(ROOT, "lib")) ? fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f)).map(f => "lib/" + f) : [])
   .filter(f => fs.existsSync(path.join(ROOT, f)));
 
@@ -73,6 +78,13 @@ function scan() {
       ReferencedIdentifier(p) {
         const name = p.node.name;
         if (GLOBALS.has(name)) return;
+        // `arguments` is bound inside every non-arrow function but has no Babel binding,
+        // so it reads as undefined. Not added to GLOBALS: inside an ARROW function it
+        // really is unbound, and that is a genuine bug worth keeping catchable.
+        if (name === "arguments") {
+          const fn = p.getFunctionParent();
+          if (fn && fn.node.type !== "ArrowFunctionExpression") return;
+        }
         if (p.scope.hasBinding(name, { noGlobals: true })) return;
         const owner = ownerOf(p);
         const key = `${rel} :: ${name} :: ${owner}`;
