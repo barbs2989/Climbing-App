@@ -42,6 +42,24 @@ const BRANCHING = new Set([
 
 const nameOf = p => p.node.id?.name || p.parentPath?.node?.id?.name || p.parentPath?.node?.key?.name || null;
 
+// Does this statement return out of the ENCLOSING function? `if (!c) return null;`
+// is the usual early-return shape, so looking only for a bare ReturnStatement misses
+// almost all of them — that is how ConsensusPanel's six-hooks-after-a-guard survived
+// (#562: the first trip report on a route blanked the app with React #310).
+// Returns inside a nested function belong to that function, so do not descend into one.
+const NESTED_FN = new Set(["FunctionDeclaration", "FunctionExpression", "ArrowFunctionExpression", "ObjectMethod", "ClassMethod"]);
+function returnsOutOfFunction(node) {
+  let hit = false;
+  (function walk(n) {
+    if (hit || !n || typeof n !== "object") return;
+    if (Array.isArray(n)) { for (const x of n) walk(x); return; }
+    if (typeof n.type !== "string" || NESTED_FN.has(n.type)) return;
+    if (n.type === "ReturnStatement") { hit = true; return; }
+    for (const k in n) { if (k === "loc" || k === "type" || k === "leadingComments" || k === "trailingComments") continue; walk(n[k]); }
+  })(node);
+  return hit;
+}
+
 function scan() {
   const found = new Map();
   for (const rel of FILES) {
@@ -79,8 +97,11 @@ function scan() {
         // 3. called after an early return in the same function body
         if (fn && fn.node.body?.type === "BlockStatement") {
           const body = fn.node.body.body;
-          const ret = body.find(s => s.type === "ReturnStatement");
-          if (ret && line > ret.loc.end.line) add("called after an early return");
+          // Compare source offsets, not line numbers: this codebase packs dozens of
+          // statements onto one physical line, so a line-number test cannot tell a hook
+          // before a guard from one after it.
+          const ret = body.find(s => returnsOutOfFunction(s));
+          if (ret && p.node.start > ret.end) add("called after an early return");
         }
       },
     });
