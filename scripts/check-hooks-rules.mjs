@@ -23,7 +23,10 @@ const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASELINE = path.join(ROOT, "scripts", "hooks-rules-baseline.json");
 
-const FILES = ["ClimbMatch.jsx", "main.jsx"]
+// See the note in check-undefined-refs.mjs: the three-way file split (#497/#508) left
+// this list pointing at the entry files only, so the rules-of-hooks check has not been
+// reading ClimbMatchCore.jsx or RouteDetail.jsx — where most components now live.
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"]
   .concat(fs.existsSync(path.join(ROOT, "lib")) ? fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f)).map(f => "lib/" + f) : [])
   .filter(f => fs.existsSync(path.join(ROOT, f)));
 
