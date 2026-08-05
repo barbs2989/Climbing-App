@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_south_face_10",
-  "total_in_scope_last_count": 519,
-  "total_wa_alpine_or_mountaineering_tagged": 620,
+  "last_processed_id": "wa_south_ridge_2",
+  "total_in_scope_last_count": 524,
+  "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
     {
       "batch_number": 1,
@@ -1003,6 +1003,27 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-01-batch-42.sql",
       "note": "Five peaks, 10 routes, researched via 5 parallel agents; WebFetch reads from Wikipedia/USFS/AAC Publications were mostly unblocked this run (last batch's session-wide 403 outage did not recur), though Mountain Project/SummitPost/Peakbagger/CascadeClimbers direct fetches were still frequently 403'd, pushing some items to WebSearch-snippet-level evidence. Sloan Peak (both routes): fixed a wrong-wilderness-name error (labeled 'Glacier Peak Wilderness' instead of the actual Henry M. Jackson Wilderness) plus copy-paste contamination from other peaks (Vesper Peak trailhead reference, Glacier-Peak/Suiattle-River-Road note), a ~200m-off trailhead waypoint on r1 vs. its sibling, the round-trip-stored-as-one-way dist_km bug on both routes, and null/mismatched loss_ft on both. Biggest open flag: wa_sloan_peak_r1 looks like a duplicate/mislabeled entry of wa_sloan_peak_corkscrew rather than the genuinely distinct 'West Face' rock route its own beta field says it should document -- needs a human merge/delete or rewrite decision. Snowfield Peak: fixed a null top-level permit column (app reads this column, not access.permit, which already had the right text -- a recurring bug pattern), a null loss_ft, and an outlier waypoint elevation. Snowking Mountain: repeated and fixed, on this peak's OTHER route, the exact NPS/North-Cascades-NP-vs-Forest-Service contamination pattern already fixed on its sibling wa_east_ridge_2 in batch 9 (land_manager, access.notes, access.rules, group_limit, top-level permit), plus a loss_ft internal-consistency fix, a stale summit-elevation figure surviving in itinerary text, and area elevation_ft/prominence_ft corrections. South Early Winters Spire: found the same Cutthroat-Lake/Blue-Lake trailhead mixup already seen on the neighboring Liberty Bell/Lexington Tower cluster (batches 18, 40) on 3 of 5 routes, plus a gain_ft self-consistency fix (South Arete) and a grade_num/grade-text mismatch (Passenger, already explained by the row's own corrections field as an AAC-vs-Mountain-Project sourcing split). Cathedral Peak: fixed an overview FA-year typo (1969 -> 1968) contradicting the row's own fa field, confirmed via AAC Publications. Peak-wide flags left for humans: Snowking's alpine_grade holding a commitment-grade value instead of the schema's French adjectival scale (same bug class as batch 9's Dragontail fix, no sourced replacement found); South Early Winters Spire's 5-way Blue Lake Trailhead elevation disagreement and Direct East Buttress's invalid alpine_grade token; Cathedral Peak's internally implausible gain/loss pairing and a summit-adjacent waypoint that may be a coordinate error."
+    },
+    {
+      "batch_number": 43,
+      "date": "2026-08-05",
+      "route_ids": [
+        "wa_south_face_12",
+        "wa_south_face_2",
+        "wa_south_face_3",
+        "wa_south_face_4",
+        "wa_south_face_5",
+        "wa_south_face_center",
+        "wa_south_gully_south_spur",
+        "wa_south_headwall",
+        "wa_south_rib",
+        "wa_south_ridge_2"
+      ],
+      "confirmed_errors_fixed": 15,
+      "flagged_for_human_review": 12,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-05-batch-43.sql",
+      "note": "Eight peaks, 10 routes, researched via 5 parallel agents. Argonaut Peak: permit field wrongly claimed an Enchantment Permit Area lottery requirement, contradicting the row's own access.fees/notes/permit fields -- fixed; loss_ft (1400) badly undercounted against the row's own itinerary sums -- gain_ft/loss_ft aligned to 6257/6157. Pernod Spire: alpine_grade held 'UIAA VI' (wrong grading system entirely, not the French adjectival scale) -- cleared; a waypoint was a leaked internal-research-session artifact (note text read like an AI agent's own reasoning, missing elev/distMi unlike every other waypoint) -- removed along with its gpx point, then filled the adjacent summit waypoint's missing elev; also fixed rope_type (single->double) and sling_rack.cams, both contradicted by the row's own gear list. Concord Tower: no confirmed errors this batch; South Face Center's fa ('Not Known', cleared by an earlier pass as unverifiable) got fresh but still only search-snippet-level corroboration for restoring 'Fielding & Tarver, 1966' -- left flagged rather than reversed a second time on secondary evidence. Kangaroo Temple: overview 'eight-pitch' contradicted the row's own pitches(7)/pitch_detail/rope_note -- fixed to seven-pitch; rope_note's 'chains' descent claim contradicted the row's own hazards field ('no chains') -- fixed. Inspiration Peak: fa asserted a confident '1970' despite the row's own data_quality.gaps already concluding the year is unconfirmed and should be left unresolved -- applied that already-completed research to the fa column itself. Guye Peak (both routes): identical leaked access._raw 'area not found' block, same pattern already fixed on this peak's Blood Sport route in batch 3 -- replaced with a pointer note on both. Mount Stuart South Headwall: permit/access.rules/group_limit wrongly carried Enchantment Permit Area quota rules for a south-side (Longs Pass/Ingalls Way) approach confirmed via multiple sources to not need one -- replaced with standard Alpine Lakes Wilderness rules, matching the same distinction on this batch's Argonaut Peak row; a waypoint mislabeled 'Ingalls Pass' (using that pass's real elevation) was renamed to 'Longs Pass' with the correct elevation, confirmed via the row's own approach text and external sources; watch_out converted from a newline-joined string to a JSON array (recurring rendering bug), dropping a rappel claim contradicted by the row's own descent fields. Luna Peak: gain_ft/loss_ft (8600/8009) aligned to the row's own itinerary sums (already symmetric at 8700/8700); dist_km (16.1) was off by >2x from the same itinerary and the row's own approach text -- corrected to 38.62 km one-way. Left flagged, not fixed: alpine_grade duplicating the NCCS commitment grade on 4 routes (Guye Peak x2, Mount Stuart, Luna Peak) -- DB-wide recurring ambiguity, no sourced French-scale replacement found; Guye Peak's wilderness/permit boundary applicability (unresolved without a USFS map); South Gully/South Spur's pitches/grade/length_m mixing its two seasonal variants; Inspiration Peak's pitch-count/length narrative (4-pitch prose vs. 8-pitch top-level fields, the latter corroborated by the FA's own primary account) needing a multi-field human rewrite."
     }
   ]
 }

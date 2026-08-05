@@ -2956,3 +2956,101 @@ pushing several items in this batch to WebSearch-snippet-level evidence rather t
 source read — noted inline above and in the SQL file where that weaker evidence level applies.
 
 Next batch will continue alphabetically after `wa_south_face_10` (see progress file).
+
+---
+
+## 2026-08-05 — Pass 1, Batch 43
+
+Eight peaks, 10 routes, researched via 5 parallel agents: South Face (Argonaut Peak); South
+Face (Pernod Spire); South Face, South Face Center (Concord Tower); South Face (Kangaroo
+Temple); South Face (Inspiration Peak); South Gully/South Spur, South Rib (Guye Peak); South
+Headwall (Mount Stuart); South Ridge (Luna Peak).
+
+Argonaut Peak: top-level `permit` claimed an Enchantment Permit Area lottery requirement,
+contradicting this row's own `access.fees`/`access.notes`/`access.permit` fields, which
+already correctly state the Teanaway-side Beverly Creek/Ingalls Creek approach sits outside
+the lottery boundary — fixed to match. `loss_ft` (1,400) badly undercounted against the row's
+own itinerary day-by-day sums (gain 6,257/loss 6,157 combined) for a car-to-car out-and-back —
+both `gain_ft`/`loss_ft` aligned to the itinerary totals.
+
+Pernod Spire: `alpine_grade` held "UIAA VI," a rock-difficulty grade from the wrong scale
+entirely (not the French adjectival scale this column is documented to hold per
+`0006_composite_grades.sql`) — cleared, matching the sibling Argonaut Peak row which already
+leaves this column null. A waypoint ("SR-20 Burgundy Col / Wine Spires pullout") was a leaked
+internal-research-session artifact — its note text read like an AI research agent's own
+reasoning ("Confirms existing DB entry's location/description; minor coordinate refinement
+based on...") rather than trail beta, and unlike every other waypoint on the row it carried no
+elev/distMi; removed it and its matching `gpx` point, then filled the now-adjacent summit
+waypoint's missing elev from the row's own `high_point_ft`. Also fixed `rope_type` ("single"
+→ "double," matching the row's own "two 60m ropes"/double-rope-rappel fields) and
+`sling_rack.cams` (extended to 4 in, matching the row's own rack list which already calls for
+a #4 Camalot).
+
+Concord Tower: no confirmed errors on either route this batch. South Face's fourth FA-climber
+name ("Bruce Schuler") couldn't be independently confirmed or refuted (primary sources
+403'd). South Face Center's `fa` is currently "Not Known," cleared by an earlier pass whose
+own `sourceNote` says the "Fielding & Tarver, 1966" attribution "could not be verified
+anywhere and appears to be a mix-up" — this batch's research found consistent search-snippet
+corroboration for exactly that FA, matching the row's own overview/beta almost verbatim, but
+every primary source (SummitPost) 403'd again. Given a prior pass already investigated and
+reversed this same fact, left flagged for a human with direct source access rather than
+reversed a second time on secondary evidence alone.
+
+Kangaroo Temple: `overview` called the route "eight-pitch," contradicting the row's own
+`pitches` (7), `pitch_detail` (7 entries), and `rope_note` ("7-pitch") — fixed to
+"seven-pitch." The same `rope_note` also claimed the descent uses "chains atop North Face and
+P1 belay chains," directly contradicted by the row's own `hazards` field ("hidden 3-bolt
+anchors (no chains)") — fixed to match.
+
+Inspiration Peak: `fa` asserted a confident "June 18, 1970," but the row's own
+`data_quality.gaps` field already documents the real finding in detail — Mike Heath's own
+1970 AAJ first-ascent account gives the date "June 18" but never states a year, and per AAJ's
+convention of reporting the prior season's climbs the ascent likely happened in 1969, a
+conclusion the gaps note says should leave `fa` unresolved pending a second source. That
+conclusion was written down but never applied to the `fa` column itself — fixed to reflect it
+honestly rather than assert the unconfirmed year. Flagged, not fixed: `pitches`
+(8)/`length_m` (305, ~1,000 ft) are corroborated by Heath's own account ("this impressive
+1000-foot face," ~8 leads), but `overview`/`beta`/`itinerary` all separately describe a
+compressed 4-pitch, ~600 ft version — a real internal inconsistency needing a human prose
+rewrite across several fields, not a single value patch.
+
+Guye Peak: both routes carried a byte-identical leaked failed-research block in
+`access._raw` ("Area name not found in standard Washington climbing databases or USFS/NPS
+resources," every sub-field "Unknown") — false on its face (Guye Peak is one of the most
+documented crags in the state) and contradicted by each row's own populated top-level
+`access.*` fields; same pattern already fixed on this peak's `wa_blood_sport` route in batch
+3 — replaced both with a pointer note. Both routes' `alpine_grade` duplicates the NCCS
+commitment grade rather than a French adjectival value, and South Gully/South Spur's
+pitches/grade/length_m mix data from its two seasonal variants (summer scramble vs. winter
+mixed line) inconsistently — both left flagged, not patched (the former is a DB-wide
+recurring ambiguity with no sourced replacement in this case; the latter needs a human
+decision on how to represent both variants). Whether Alpine Lakes Wilderness's surveyed
+boundary reaches these two short roadside-adjacent lines is also unresolved — `permit` is
+null on both despite Guye Peak being wilderness-listed — needs an authoritative USFS boundary
+map, not a guess.
+
+Mount Stuart: South Headwall's `permit` and `access.notes`/`access.rules`/`access.group_limit`
+all described Enchantment Permit Area quota rules (8-person cap, single site,
+non-transferable, lottery) — confirmed via multiple independent sources that no Enchantment
+permit applies to any south-side Mount Stuart route; the lottery covers only the Stuart
+Lake/Colchuck/Snow Lakes zones reached via Icicle Creek Road, not the Longs Pass/Ingalls Way
+(Teanaway-side) approach this route's own `approach` field describes — replaced with standard
+Alpine Lakes Wilderness rules (free self-issue permit, 12-person limit), the same distinction
+already correctly documented on this batch's Argonaut Peak row. A waypoint named "Ingalls
+Pass" (elev 6,457 ft) was also wrong: the row's own approach text names "Longs Pass Trail
+#1229," and external sources confirm the route crosses Longs Pass (~6,200 ft) — the stored
+elevation actually matches Ingalls Pass's real elevation (~6,500 ft, a different pass leading
+to an unrelated basin, Lake Ingalls) — renamed and corrected. `watch_out` was also stored as
+one newline-joined string instead of a JSON array (the recurring rendering bug — `lib/db.js`'s
+`toArr()` only splits on commas); converted to an array and dropped "Descent involves multiple
+rappels," contradicted by the row's own descent/descent_text (a walk-down via the Cascadian
+Couloir) and null `rappels` field.
+
+Luna Peak: South Ridge's `gain_ft`/`loss_ft` (8,600/8,009) were asymmetric and didn't match
+the row's own itinerary day-by-day sums, which are already symmetric at 8,700/8,700 for this
+out-and-back — aligned to match. `dist_km` (16.1) was off by more than 2x from the same
+itinerary (three days summing to 48 miles round trip) and from the row's own `approach` text,
+which independently states "the ~77 km on-file round-trip distance" — corrected to 38.62 km
+one-way, matching this app's documented `distKm*2` display convention.
+
+Next batch will continue alphabetically after `wa_south_ridge_2` (see progress file).
