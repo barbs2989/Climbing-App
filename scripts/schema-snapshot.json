@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-07-30",
+  "generatedAt": "2026-08-05",
   "tables": {
     "account_links": [
       "id",
@@ -76,6 +76,7 @@
       "stars",
       "sun_note",
       "sun_vote",
+      "tick_type",
       "trail_condition",
       "trip_report_visibility",
       "updated_at",
@@ -141,9 +142,11 @@
       "user_id"
     ],
     "crews": [
+      "agreed_date",
       "cap",
       "created_at",
       "created_by",
+      "date_forced",
       "dates",
       "dismissed",
       "float_plan",
@@ -160,6 +163,25 @@
       "image_url",
       "updated_at",
       "user_id"
+    ],
+    "gps_notifications": [
+      "action_url",
+      "admin_notes",
+      "climber_email",
+      "climber_name",
+      "created_at",
+      "email_error",
+      "email_sent",
+      "feedback",
+      "id",
+      "quality_score",
+      "recipient_email",
+      "recipient_name",
+      "route_name",
+      "sent_at",
+      "status",
+      "submission_id",
+      "type"
     ],
     "gps_submissions": [
       "admin_notes",
@@ -411,6 +433,17 @@
       "id",
       "name",
       "trust_score"
+    ],
+    "user_reports": [
+      "created_at",
+      "detail",
+      "id",
+      "reason",
+      "reported_id",
+      "reported_name",
+      "reporter",
+      "reporter_label",
+      "status"
     ],
     "verification_records": [
       "created_at",
