@@ -354,7 +354,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
           {savedSearches.map(s => (
             <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} onClick={() => loadSearch(s)}>
               <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
-              <button onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={{ background: "none", border: "none", color: C.textMuted, fontSize: 16, cursor: "pointer", padding: 4 }}>×</button>
+              <button aria-label="Remove saved search" onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={{ background: "none", border: "none", color: C.textMuted, fontSize: 16, cursor: "pointer", padding: 4 }}>×</button>
             </div>
           ))}
         </div>

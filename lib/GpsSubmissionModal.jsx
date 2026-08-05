@@ -281,7 +281,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         <div style={{...styles.header}}>
           <h2 style={{...styles.heading}}>Submit GPS Track</h2>
           <p style={{...styles.subheading}}>{routeName}</p>
-          <button style={{...styles.closeButton}} onClick={onClose}>✕</button>
+          <button aria-label="Close" style={{...styles.closeButton}} onClick={onClose}>✕</button>
         </div>
 
         {error && (
