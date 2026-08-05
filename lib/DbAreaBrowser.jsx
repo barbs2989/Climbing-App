@@ -42,7 +42,7 @@ function childNoun(children) {
   const types = [...new Set((children || []).map(c => c.area_type))];
   return (types.length === 1 && CHILD_NOUN[types[0]]) || "Areas";
 }
-const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blue, flexShrink: 0 }} /><span style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
+const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
 const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color, padding: sm ? "2px 7px" : "3px 10px", borderRadius: 20, fontSize: sm ? 11 : 12, fontWeight: 600, whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 4 }}>{label}</span>;
 const backRow = (onBack, title, C) => (
   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
@@ -128,7 +128,7 @@ function StatePicker({ onPick, C }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>Pick a state</SL>
-      <select value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
+      <select aria-label="Select a state" value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
         <option value="">{isLoading || !states ? "Loading states…" : "Select a state…"}</option>
         {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
@@ -399,7 +399,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(o[1], df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
             <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
               <button onClick={() => setDf(DEF)} style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Clear all</button>
-              <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
+              <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blueSolid, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
             </div>
           </div>
         </div>
@@ -593,7 +593,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C, uDistMi
               <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{sel.name}</div>
               <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
             </div>
-            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blue, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
+            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
             <button onClick={() => setSel(null)} title="Close" style={{ background: "none", border: "none", color: C.textMuted, fontSize: 17, cursor: "pointer", padding: "0 4px", flexShrink: 0 }}>×</button>
           </div>
         ) : null}
