@@ -1433,7 +1433,7 @@ function AddRoute({onClose,defaultArea,onSubmit,onAddRoute}){
   const [gear,setGear]=useState({qd:0,screws:0,pads:0,cams:{},nuts:{},items:[]});
   const [srcType,setSrcType]=useState(""),[srcNote,setSrcNote]=useState("");
   const [desc,setDesc]=useState("");
-  const [photos,setPhotos]=useState([]),[coverIdx,setCoverIdx]=useState(0),[gpx,setGpx]=useState(false);
+  const [photos,setPhotos]=useState([]),[coverIdx,setCoverIdx]=useState(0);
   const [climbed,setClimbed]=useState(false),[attest,setAttest]=useState(false),[sent,setSent]=useState(false);
   const byName=(a,b)=>(a.name||"").localeCompare(b.name||"");
   const kidsOf=useCallback(pid=>MOUNTAINS.filter(m=>m.parentId===pid).sort(byName),[]);
