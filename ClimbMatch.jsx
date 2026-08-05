@@ -160,7 +160,27 @@ export default function App(){
   const crewForceDate=(cid,d)=>{const _cc=crews.find(c=>c.id===cid);const wasForced=!!(_cc&&_cc.date===d&&_cc.dateForced);updateCrew(cid,wasForced?{date:null,dateForced:false}:{date:d,dateForced:true});showToast(wasForced?"Removed the locked day":"Day locked for the crew — heads up, not everyone's confirmed yet");};
   const updateCrew=(cid,patch)=>{const _uc=crews.find(c=>c.id===cid);setCrews(cs=>cs.map(c=>{if(c.id!==cid)return c;return {...c,...patch};}));if(uid&&_uc&&_uc._dbId){const dbPatch={};if(patch.cap!=null)dbPatch.cap=patch.cap;if(patch.meetPlace!=null)dbPatch.meet_place=patch.meetPlace;if(patch.meetTime!=null)dbPatch.meet_time=patch.meetTime;if(patch.floatPlan!=null)dbPatch.float_plan=patch.floatPlan;if(patch.dates!=null)dbPatch.dates=patch.dates;/* 0075: the locked day is a real column now, so it survives a refresh and reaches the rest of the crew. date is nullable on purpose — unlocking sends null, which !=null would swallow. */if(patch.date!==undefined)dbPatch.agreed_date=patch.date;if(patch.dateForced!==undefined)dbPatch.date_forced=!!patch.dateForced;if(Object.keys(dbPatch).length)updateCrewRow(_uc._dbId,dbPatch).catch(function(e){/* organizer-only RLS: revert the optimistic edit so a member's change doesn't stick locally while never syncing */var prev={};Object.keys(patch).forEach(function(k){prev[k]=_uc[k];});setCrews(cs=>cs.map(c=>c.id===cid?{...c,...prev}:c));showToast((e&&e.message)||"That didn’t save — try again");});}};
   const activeCrew=chatCrew?crews.find(c=>c.id===chatCrew):null;
-  const activeCrewMembers=activeCrew?activeCrew.members.map(m=>CLIMBERS.find(x=>x.id===m.climberId)).filter(Boolean):[];
+  // Crew members were resolved only against the seed CLIMBERS array, so a real
+  // member — whose climberId is an auth uuid — matched nothing and was dropped by
+  // filter(Boolean). A DB-backed crew therefore rendered "You + 0 climbers" with an
+  // empty roster no matter how many people had actually joined, and with no member
+  // to tap there was no route to their profile. Resolve seed ids from CLIMBERS as
+  // before and uuids from profiles.
+  // uuid test inlined rather than calling isDbId: that helper is declared further
+  // down the component, so a useMemo running during render hits its temporal dead
+  // zone and throws "Cannot access before initialization", blanking the crew chat.
+  const activeCrewMemberIds=useMemo(function(){return activeCrew?activeCrew.members.map(function(m){return m.climberId;}).filter(function(id){return typeof id==="string"&&/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);}):[];},[activeCrew]);
+  const activeCrewProfilesQ=useProfilesByIds(activeCrewMemberIds);
+  const activeCrewMembers=useMemo(function(){
+    if(!activeCrew)return [];
+    var profs=activeCrewProfilesQ.data||[];
+    return activeCrew.members.map(function(m){
+      var seed=CLIMBERS.find(function(x){return x.id===m.climberId;});
+      if(seed)return seed;
+      var pr=profs.find(function(x){return x.id===m.climberId;});
+      return pr?{id:pr.id,name:pr.name||"A climber",avatar:pr.avatar||FALLBACK_AV,_real:true}:null;
+    }).filter(Boolean);
+  },[activeCrew,activeCrewProfilesQ.data]);
   const activeCrewRoute=activeCrew?(routeById(activeCrew.routeId)||{}):{};
   const [crewMsgMore,setCrewMsgMore]=useState({}),[dmMore,setDmMore]=useState({}),[msgPaging,setMsgPaging]=useState(false);
   // One mapper per table for DB row -> local message shape, used by hydration, pagination, and every realtime channel, so no path can drop a field (the old per-crew channel mapping omitted `image` and photos vanished). `_dbId` is the dedupe key: two channels can deliver the same INSERT around an open/close transition, and appends skip a row whose id is already in the thread.
