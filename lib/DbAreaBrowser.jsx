@@ -204,8 +204,19 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
   const isLeaf = Array.isArray(children) && children.length === 0;
   const loading = lc || (isLeaf && lr);
   const error = ec || er;
-  const chips = [area.avy_zone].filter(Boolean);
+  // dominant_discipline used to reach only the map pin's colour and icon, so the DB
+  // browser was missing a chip the seed browser has always shown. Same gate as seed:
+  // it only means something on a formation, not on a range/state/country.
+  const domDisc = ["peak", "crag", "wall"].includes(area.area_type) ? area.dominant_discipline : null;
+  const chips = [domDisc ? DL[domDisc] || domDisc : null, area.avy_zone].filter(Boolean);
   const noun = childNoun(children).toLowerCase();
+  // parent_peak is stored two ways: 67 areas hold a display name (sometimes with a
+  // trailing "— …per…" note), 28 hold a raw area id. Resolve the ids to names rather
+  // than printing "wa_mount_anderson_olympic" at someone.
+  const rawParent = area.parent_peak || null;
+  const parentIsId = !!rawParent && /^[a-z]{2}_[a-z0-9_]+$/.test(rawParent);
+  const { data: parentNames } = useAreaNamesByIds(parentIsId ? [rawParent] : []);
+  const parentPeak = !rawParent ? null : parentIsId ? (parentNames && parentNames[rawParent]) || null : String(rawParent).split(" — ")[0].trim();
 
   return (
     <div>
@@ -217,7 +228,9 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
           <div style={{ fontSize: 19, fontWeight: 700, color: C.text }}>{area.name}</div>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
         </div>
-        <div style={{ fontSize: 12, color: C.textSub }}>{area.region}{area.elevation_ft ? " · " + (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : ""}</div>
+        <div style={{ fontSize: 12, color: C.textSub }}>{area.region}{area.elevation_ft ? " · " + (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : ""}{area.prominence_ft ? " · " + (uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom" : ""}</div>
+        {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
+        {area.source === "approx-picket-range" ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin and any distance shown are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
         {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
         <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
