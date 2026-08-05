@@ -3430,3 +3430,77 @@ The Triad's `prominence_ft`) confirmed to exist live, no deletes proposed.
   glacier camp) rather than leftover contamination; left for a human call.
 
 Next batch will continue alphabetically after `wa_three_queens_west_peak` (see progress file).
+
+---
+
+## 2026-08-05 — Pass 1, Batch 49
+
+Eight routes across 7 peaks (Tomyhoi Peak, Lexington Tower, The Tooth, Tower Mountain,
+Trapper Mountain x2, Tricouni Peak, Vesper Peak): Southeast Ridge (Tomyhoi); Tooth and Claw
+(Lexington Tower); Tooth - Chair Traverse (The Tooth); Southwest Route/Standard (Tower
+Mountain); North Couloir, South Slopes (Trapper Mountain); Southwest Slopes/Lucky Pass
+(Tricouni Peak); True Grit (Vesper Peak).
+
+**Confirmed error → 4 fixes in `sql/2026-08-05-batch-49.sql`:** Vesper Peak's area elevation
+(6,214 ft) and 3 of its 4 routes' `high_point_ft` (all 6,214 ft) were the outliers against
+external sources — independently verified this pass that Wikipedia, Peakbagger.com, and
+USGS-derived topo sources all converge on 6,221 ft, with 6,214 ft traceable only to Mountain
+Project's area page. The 4th route, True Grit, already carried 6,221 ft with its own
+`corrections` field explaining the source split; the other three records had just never been
+updated to match. Fixed the area row (elevation_ft + the "(6,214 ft)" mention in its own
+blurb text) and both Ragged Edge routes plus Fish & Whistle to 6,221 ft.
+
+**Audited clean, no action:** Tomyhoi Peak's Southeast Ridge (elevation 7,439 ft confirmed via
+Wikipedia/Peakbagger, matching WA's actual USFS Yellow Aster Butte/Tomyhoi Lake beta in
+detail); The Tooth's Chair Traverse (6,238 ft high point is correct — that's Chair Peak's own
+summit elevation, since this route legitimately continues past The Tooth to finish there; the
+row's own `corrections` field already documents this reasoning); Tower Mountain's Southwest
+Route (the 8,444 ft vs. 8,445 ft area/route gap is a genuine, already-documented external
+source split, not something to force into agreement); Trapper Mountain's North Couloir
+(approach via Cascade River Road/Cascade Pass to Trapper Lake independently confirmed as the
+real, "most-used" approach to this peak).
+
+**Checked and deliberately left alone:** Lexington Tower's Tooth and Claw has a null
+`high_point_ft` while its sibling East Face/North Face routes both carry the peak's true
+summit elevation (7,560 ft, confirmed). Research this pass turned up a specific reason NOT to
+fill it the same way: multiple sources indicate Lexington Tower's east-side face routes
+(including this one) top out on an east shoulder/notch below the true summit spire, not the
+summit itself — filling in 7,560 ft would misrepresent the route. No confirmed substitute
+figure was found, so the null stays. Also independently verified this pass: the route's FA
+credit ("Steve Risse, Dave Tower, June 1989") is genuine and correctly attributed (Mountain
+Project + SummitPost agree, and Steve Risse is independently documented via an AAC obituary as
+active on Lexington Tower's east side in this era) — "Dave Tower" being a real climber's name,
+not a mangled reference to the peak itself.
+
+**Flagged for human review, not auto-fixed:**
+
+- **wa_trapper_mountain_south_slopes** — this batch's most significant find. The route's
+  approach/waypoints describe reaching Trapper Lake via a "Devore Creek Trail" junction off
+  the Stehekin River Trail. Two independent research passes confirmed this is contamination:
+  Devore Creek Trail is real, but it leads to the Devore Peak/Tupshin Peak/Fourth of July
+  Basin cluster, a different, distant peak group — not Trapper Mountain. The route's own
+  waypoints even show the tell: a 20+ km gap between the "Devore Creek" waypoint and the
+  "Trapper Lake" waypoint with nothing in between. The actual, "most-used" documented approach
+  to Trapper Lake goes via Cascade River Road → Cascade Pass → Pelton Basin (matching this
+  peak's other route, North Couloir, which already has this right) — but no source gave
+  enough specific detail (mileage, waypoint coordinates) to draft a confident non-fabricated
+  replacement for the South Slopes route's approach text, road/access fields, waypoints, and
+  gpx track, all of which are built around the wrong trail. This needs a human rewrite with
+  guidebook (Beckey) or NPS primary-source access, not a field patch. Notably, the area row's
+  own blurb ("reaching the peak means getting to Stehekin by boat or floatplane") also leans
+  on the Stehekin framing and may need reconciling with the Cascade Pass approach once this is
+  resolved.
+- **wa_tricouni_peak_southwest_slopes** — the route's own `data_quality.gaps` field already
+  flagged an approach mismatch between its `fa` field (which describes an Inspiration
+  Glacier/Klawatti Col approach) and its overview/beta/waypoints (which describe the modern
+  standard north-side approach via Thunder Creek/McAllister Camp/Borealis Glacier/Lucky Pass).
+  Research this pass resolved part of this: the overview/beta and the "Southwest Slopes" name
+  are both actually correct — "Lucky Pass" is a real, correctly-named feature, and the final
+  chute/ridge from the pass to the summit genuinely faces southwest even though the approach
+  to reach that pass comes from the north. What's still unresolved is the `fa` field itself,
+  which may be conflating the 1951 Elerding/Carlson party's real ascent (possibly via the
+  Inspiration Traverse's south-side finish) with the modern standard route — no source found
+  specific enough to confirm which approach that 1951 party actually used, so left as-is
+  rather than guessed.
+
+Next batch will continue alphabetically after `wa_true_grit_2` (see progress file).
