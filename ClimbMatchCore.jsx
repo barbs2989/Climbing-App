@@ -1071,7 +1071,7 @@ function GuideDashboard({onClose,notify}){
   const [revs,setRevs]=useState([{by:"@wasatch_will",rating:5,date:"Nov 2025",trip:"Multi-pitch trad",text:"Best instruction I have had, period. Clear feedback and a great sense of when to push.",response:""},{by:"@returnclimber",rating:5,date:"Jun 2026",trip:"Refresher day",text:"Sharp, professional, and I trusted him completely on the rope.",response:"Thanks, great climbing with you. See you next season!"},{by:"@gymrat_gabe",rating:3,date:"Feb 2026",trip:"Intro day",text:"Knowledgeable, but our day felt a little rushed.",response:""}]);
   const [replyId,setReplyId]=useState(null);const [replyText,setReplyText]=useState("");
   const postReply=i=>{setRevs(a=>a.map((r,k)=>k===i?{...r,response:replyText}:r));setReplyId(null);setReplyText("");};
-  const addCred=()=>{if(!nNum.trim())return;setCreds(c=>[...c,{type:nType,num:nNum.trim(),expiry:nExp.trim()||"--",status:"review"}]);setNNum("");setNExp("");setAdding(false);notify&&notify("Credential submitted for verification.");};
+  const addCred=()=>{if(!nNum.trim())return;setCreds(c=>[...c,{type:nType,num:nNum.trim(),expiry:nExp.trim()||"--",status:"review"}]);setNNum("");setNExp("");setAdding(false);/* No verification path exists — the credential is added to local state with status "review" and nothing checks it. "Submitted for verification" claimed an external process on a professional-certification field, which is exactly where a false claim matters. */notify&&notify("Added — credential checks aren’t live in this preview yet.");};
   const verifyCred=i=>setCreds(c=>c.map((x,k)=>k===i?{...x,status:"verified"}:x));
   const verifiedCount=creds.filter(c=>c.status==="verified").length;
   const SECTIONS=[["credentials","Credentials"],["availability","Availability"],["inquiries","Inquiries"],["reviews","Reviews"],["profile","Profile"]];
@@ -2146,7 +2146,7 @@ function Guides({notify,onDash,onInquire}){
   list=[...list].sort((a,b)=>sort==="price"?a.rate-b.rate:sort==="reviews"?b.reviews-a.reviews:b.rating-a.rating);
   const activeN=(certF!=="all")+(priceF!=="all")+(langF!=="all")+(partyF!=="all")+(ratingF!=="all");
   const open=g=>{setSel(g);setSent(false);setObj("");setDates("");setParty("1");setMsg("");setRevSort("newest");setRevAll(false);};
-  const send=()=>{setSent(true);onInquire&&onInquire(sel);notify&&notify("Inquiry sent to "+sel.name.split(" ")[0]+" — they’ll reply in the app");};
+  const send=()=>{setSent(true);onInquire&&onInquire(sel);notify&&notify("Noted — this preview doesn’t send it to "+sel.name.split(" ")[0]+" yet.");};
   return (<div>
     <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search guides by name, specialty, or area…" style={{width:"100%",padding:"9px 13px",borderRadius:10,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:14,outline:"none",boxSizing:"border-box",marginBottom:10}}/>
     <div style={SZ1}>{DISCS.map(x=>{const on=disc===x[0];return <button key={x[0]} onClick={()=>setDisc(x[0])} style={{flexShrink:0,padding:"8px 13px",borderRadius:16,border:`1px solid ${on?C.green:C.border}`,background:on?C.greenBg:C.surface,color:on?C.green:C.textSub,fontSize:12,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"}}>{x[1]}</button>;})}</div>
