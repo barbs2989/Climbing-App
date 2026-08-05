@@ -3188,3 +3188,80 @@ Pre-flighted with `check:sql` before finalizing — all 22 write targets confirm
 no deletes proposed this batch.
 
 Next batch will continue alphabetically after `wa_storm_king_southwest_scramble` (see progress file).
+
+## 2026-08-05 — Pass 1, Batch 46
+
+Eight peaks, 10 routes (Swiss Peak 1, Tenpeak Mountain 2, The Brothers 2, Concord Tower 1,
+The Chopping Block 1, Southeast Mox Peak 1, Mount Stuart 1, South Early Winters Spire 1):
+Standard Route (Swiss Peak); North Couloir, Southeast Route (Tenpeak); South Couloir, Brothers
+Traverse (The Brothers); The Cave Route (Concord Tower); South Route (Chopping Block); The
+Devils Club (SE Mox); The Direct North Ridge w/ Gendarme (Stuart); The Hitchhiker (SEWS).
+Researched via 8 parallel agents, one peak-group each.
+
+**Confirmed errors → fixes in `sql/2026-08-05-batch-46.sql`:**
+- Tenpeak Mountain Southeast Route: `pitches` (3) contradicted the row's own beta text ("the
+  final two pitches...") and its own 2-entry `pitch_detail` array — fixed to 2.
+- The Chopping Block South Route: this row's own `corrections` field already flagged a grade
+  discrepancy (DB said "Grade II-III, 5.4"; sources say "5.5/Grade II") that was never applied —
+  confirmed via Mountaineers.org (corroborated by references to Beckey's Cascade Alpine Guide)
+  and fixed; also filled the null `pitches` field with the sourced 5-pitch count (the row's own
+  `pitch_detail` array still only lists 2 of the 5 and needs expansion by a future pass).
+- Southeast Mox Peak's Devils Club: `rope_note` said "(23 pitches)", contradicting the row's own
+  top-level `pitches` field (25) and its own fully-detailed 25-entry `pitch_detail` array
+  (individually graded pitches 1-25, matching the ~25-pitch figure independently found in
+  AAJ/Climbing.com/CascadeClimbers sources) — corrected to 25.
+- Mount Stuart's Direct North Ridge w/ Gendarme: `fa` omitted the ridge's actual 1956 original
+  ascent (Don Claunch & John Rupley, who bypassed the Great Gendarme) and mislabeled the 1963
+  Beckey/Marts ascent as simply "Upper ridge" when it was actually the first ascent climbing
+  directly over the Gendarme — corrected per American Alpine Institute / SummitPost / Cascades
+  climbing-history sources. The 1970 Hargis/Ossiander direct-lower-start credit was already
+  right and is unchanged.
+
+**Independently verified as correct, no action:** Swiss Peak's 7,988 ft elevation and the
+Wallace/Kaplan 2005 Northern Pickets traverse claim; Tenpeak's 8,312 ft elevation and its
+Southeast Route's 1940 Anderson/Campbell FA; The Brothers' 1908/1912 Hill/Collier-party FAs and
+"Mt. Edward"/"Mt. Arthur" naming; Concord Tower's Cave Route FA (Burgner/McPherson, 1968) and
+route description; The Chopping Block's 1932 Degenhardt/Strandberg FA; Southeast Mox Peak's
+8,504 ft elevation and its Devils Club FA (Layton/Wolfe, 2005) and ~2,500 ft East Face height;
+Mount Stuart's 9,415 ft elevation/5,354 ft prominence and its AAC-documented July 2020 rockfall
+accident; SEWS's 7,807 ft elevation and its Hitchhiker FA (Burdo/Johnston, 2007).
+
+**Flagged for human review (not auto-fixed):**
+- Swiss Peak's own area row has no `lat`/`lng` at all (both null) — no source found this pass
+  gives a specific, corroborated summit coordinate to fill the gap; left blank rather than
+  guessed.
+- The Brothers: the area's `elevation_ft` (6868) sits 2 ft above both of its own routes'
+  `high_point_ft` (6866) — this is noise within an already-documented, unresolved external
+  conflict (this row's own `data_quality.gaps` already flags 6,842 ft older USGS-derived figures
+  vs. 6,866-6,868 ft newer ones); independently re-confirmed as still unresolved, not a new issue.
+- Concord Tower's area `elevation_ft` (7611) may itself be the error, not the Cave Route's
+  `high_point_ft` (7569) as a prior pass's own note hypothesized — secondary sources
+  (SummitPost-derived search snippets) converge on "7,560+ ft," closer to the route's own figure
+  than the area's — but the source is a rounded, non-primary figure, so left flagged rather than
+  swapped.
+- Southeast Mox Peak's Devils Club: the row's own top-level grade fields (`grade`="5.11",
+  `rock_grade`="5.11-", `grade_num`=11) could not be corroborated by any primary source found
+  (AAJ, Alpinist, Climbing.com, CascadeClimbers all cite only "V+ 5.9+ A2-" — the same figure the
+  row's own overview text cites as a secondary "press summary," when it may actually be the only
+  documented grade). Not auto-fixed because correcting it would also require reconciling the
+  row's own detailed 25-entry `pitch_detail` array (individual pitch grades run up to 5.11- on a
+  possible later free-climbing breakdown this pass could not independently verify), and this is
+  safety-relevant grade information on a serious, remote wall.
+- Southeast Mox Peak's Devils Club: `alpine_grade`="V+" looks like the same recurring DB-wide bug
+  as past batches (a Roman-numeral/NCCS-style commitment grade landing in a field meant to hold
+  a French-adjectival value, duplicating the row's own separate `commitment`="V" field) — no
+  sourced French-scale replacement value found, so left flagged rather than cleared/guessed.
+- SEWS's Hitchhiker: `approach`/`descent_text`/`road`/`access` all consistently describe the
+  Blue Lake Trailhead, but the row's own `waypoints` array carries a single, explicitly
+  self-flagged point ("Hairpin Turn Pullout," noted inline as "DIFFERENT from existing DB value")
+  that a prior pass left unresolved. External research this pass found the hairpin/Spire Gully
+  approach is actually the better-corroborated one for this specific south-face route (shared
+  with neighboring Backseat Driver/Rubbernecker), making the majority-agreeing prose fields the
+  likely error rather than the flagged waypoint — but no fully-detailed, route-specific approach
+  paragraph could be sourced to safely rewrite `approach`/`road`/`access` without fabricating
+  driving-direction specifics, so left flagged for a human rewrite rather than a partial patch.
+
+Pre-flighted with `check:sql` before finalizing — all 4 write targets confirmed to exist live,
+no deletes proposed this batch.
+
+Next batch will continue alphabetically after `wa_the_hitchhiker` (see progress file).

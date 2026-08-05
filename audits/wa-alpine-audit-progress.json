@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_storm_king_southwest_scramble",
+  "last_processed_id": "wa_the_hitchhiker",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1087,6 +1087,27 @@
         "wa_storm_king_southwest_scramble: dist_km is internally inconsistent three ways (stored one-way figure implies ~27mi round trip; itinerary day-miles sum to ~33.5mi; itinerary.totalNote claims '40-45mi') -- data_quality.gaps already admits no real GPS track exists; not fixed.",
         "wa_storm_king_southwest_scramble: a 'Rainy Pass Trailhead' waypoint/gpx entry is a leaked research-session artifact whose own note second-guesses the route's real trailhead -- but no other waypoint documents an actual trailhead before mile 13.8, so removing it would leave the route with none stored at all; left for a human to resolve the real trailhead, not mechanically deleted."
       ]
+    },
+    {
+      "batch_number": 46,
+      "date": "2026-08-05",
+      "route_ids": [
+        "wa_swiss_peak_standard_route",
+        "wa_tenpeak_mountain_north_couloir",
+        "wa_tenpeak_mountain_southeast",
+        "wa_the_brothers_south_couloir",
+        "wa_the_brothers_traverse",
+        "wa_the_cave_route",
+        "wa_the_chopping_block_south_route",
+        "wa_the_devils_club",
+        "wa_the_direct_north_ridge_w_gendarme",
+        "wa_the_hitchhiker"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 6,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-05-batch-46.sql",
+      "note": "Eight peaks, 10 routes, researched via 8 parallel agents. Fixed: Tenpeak Southeast Route pitches (3->2, matching its own beta/pitch_detail); Chopping Block South Route grade (Grade II-III 5.4 -> Grade II 5.5, applying a fix its own corrections field had already identified but never applied) plus filling a null pitches field to 5; Devils Club rope_note pitch count (23->25, matching its own top-level pitches field and 25-entry pitch_detail array); Mount Stuart Direct North Ridge fa (added the omitted 1956 Claunch/Rupley original ascent, re-labeled 1963 Beckey/Marts as first-over-the-Gendarme rather than the ridge FA). Flagged rather than fixed: Swiss Peak area has no lat/lng at all and no sourced coordinate was found; The Brothers 2ft area-vs-route elevation gap is noise within an already-documented unresolved external conflict; Concord Tower area elevation (7611) may itself be the error rather than the Cave Route high_point_ft (7569) per rounded secondary sources, left unswapped; Devils Club top-level grade (5.11/5.11-) is uncorroborated by any primary source (all cite V+ 5.9+ A2-) but reconciling it touches the whole pitch_detail array on a safety-relevant serious route, left flagged; Devils Club alpine_grade (V+) looks like the recurring NCCS-in-French-scale-field bug with no sourced replacement; SEWS Hitchhiker approach/road/access text disagrees with its own already-flagged waypoint, and this pass found the waypoint is likely the one thats right, but no detailed route-specific approach could be sourced to safely rewrite the prose fields."
     }
   ]
 }
