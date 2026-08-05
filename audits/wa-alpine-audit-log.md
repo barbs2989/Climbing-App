@@ -3053,4 +3053,56 @@ itinerary (three days summing to 48 miles round trip) and from the row's own `ap
 which independently states "the ~77 km on-file round-trip distance" — corrected to 38.62 km
 one-way, matching this app's documented `distKm*2` display convention.
 
-Next batch will continue alphabetically after `wa_south_ridge_2` (see progress file).
+## 2026-08-05 — Pass 1, Batch 44
+
+Eight peaks, 10 routes, researched via 5 parallel agents. Black Peak/Whatcom Peak: Black Peak's
+South Ridge had two cross-contamination bugs — `approach_logistics.trailhead` pointed at the
+Lake Ann Trailhead on SR-542 near Mount Baker (a same-named but different trailhead ~90 mi
+away, confirmed via USFS/PNT coordinates), and `access.rules` carried Boston Basin's
+site-specific camp rules/elevations, an unrelated NCNP zone near Eldorado/Forbidden Peak —
+both fixed using the row's own already-correct waypoint/approach data; also filled top-level
+lat/lng (null) and `loss_ft` (null) from the row's own waypoint/itinerary data, and cleared
+`alpine_grade` duplicating `commitment`. Whatcom Peak's South Spur: filled top-level lat/lng
+from the row's own waypoint; `gain_ft`/`loss_ft` (6700/1374) were wildly asymmetric for a
+closed loop and didn't match the row's own itinerary day-sums (11,000/9,300) — aligned.
+
+South Twin Sister (3 routes): North Ridge and West Ridge both falsely claimed some routes
+cross into North Cascades National Park — Twin Sisters Mountain sits entirely within Mount
+Baker Wilderness, ~40 mi from the NCNP boundary — fixed on both; both also claimed a
+Northwest Forest Pass is required, contradicting West Ridge's own `access.passRequired` field,
+which already correctly says no pass is needed at the FR 38 pullouts — fixed on both. West
+Ridge's `gain_ft`/`loss_ft` (3000/5400) were asymmetric for a car-to-car out-and-back and
+contradicted the row's own itinerary (6100/6100, sourced to a real trip report) — aligned. The
+Olivine Scramble route was clean — its land-manager/permit fields (Hampton Lumber, fee
+permit) were independently confirmed more current and accurate than its two siblings'.
+
+Sharkfin Tower (Southeast Face): only the recurring `watch_out` newline-string-instead-of-array
+bug — fixed. Southeast Mox Peak: the route was misnamed "Southeast Rib / Standard" when every
+source (Mountain Project, an AAC winter-FA report, trip reports) and the row's own
+face/aspect/overview fields identify it as the West Ridge (Beckey Route) — renamed;
+`alpine_grade` cleared (NCCS notation duplicating `commitment`); a waypoint note contained a
+leaked AI-research-session artifact ("Reused coordinate from this session's own Devil's Club
+research...") — replaced with a real note, coordinate left unchanged. Left flagged: the record
+mixes two non-interchangeable approaches (Depot Creek/Canada vs. Ross Lake/Perry Creek) whose
+mileage/gain figures don't reconcile — needs a human decision on which is canonical.
+
+Mount Shuksan (Southeast Ridge/SE Corner): only the `watch_out` array bug — fixed. South Early
+Winters Spire (Southern Man): `fa` named "Kevin Falley," the wrong first name — corrected to
+Leighan Falley, confirmed via independent bios and matching the row's own `overview` field;
+`aspect` said "E" but the row's own text repeatedly describes a south-facing headwall route (5
+of 9 pitches) — corrected to "S"; `timing.sectionBreakdown[0].note` was truncated mid-word —
+completed using the identical text already present in the row's own `itinerary.days[0].note`;
+`watch_out` array bug — fixed. Left flagged: a leaked research-session artifact in
+`emergency.notes`, a pre-existing FA-conflict already correctly hedged in `data_quality.gaps`,
+and `alpine_grade` duplicating `commitment` with no sourced replacement.
+
+Dorado Needle (Southwest Buttress): the trailhead waypoint/GPX start point was ~6 km off from
+the real Eldorado Trailhead, which the row's own `approach_logistics` field already had
+correct — fixed both. The route claimed an entrance-fee parking pass ($30/vehicle or America
+the Beautiful $80); North Cascades NP charges no entrance fee at all — fixed. `dist_km` (9.7)
+contradicted the row's own approach text (~25.75 km round trip) — corrected to 12.88 km
+one-way per this app's `distKm*2` display convention. `alpine_grade` cleared (duplicated
+`commitment`). Left flagged: Eldorado-zone `group_limit` (6 here vs. possibly 12 per some
+sources) needs confirmation against a primary NPS boundary page that returned 403s this batch.
+
+Next batch will continue alphabetically after `wa_southwest_buttress` (see progress file).

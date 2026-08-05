@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 1,
-  "last_processed_id": "wa_south_ridge_2",
+  "last_processed_id": "wa_southwest_buttress",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1024,6 +1024,27 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-05-batch-43.sql",
       "note": "Eight peaks, 10 routes, researched via 5 parallel agents. Argonaut Peak: permit field wrongly claimed an Enchantment Permit Area lottery requirement, contradicting the row's own access.fees/notes/permit fields -- fixed; loss_ft (1400) badly undercounted against the row's own itinerary sums -- gain_ft/loss_ft aligned to 6257/6157. Pernod Spire: alpine_grade held 'UIAA VI' (wrong grading system entirely, not the French adjectival scale) -- cleared; a waypoint was a leaked internal-research-session artifact (note text read like an AI agent's own reasoning, missing elev/distMi unlike every other waypoint) -- removed along with its gpx point, then filled the adjacent summit waypoint's missing elev; also fixed rope_type (single->double) and sling_rack.cams, both contradicted by the row's own gear list. Concord Tower: no confirmed errors this batch; South Face Center's fa ('Not Known', cleared by an earlier pass as unverifiable) got fresh but still only search-snippet-level corroboration for restoring 'Fielding & Tarver, 1966' -- left flagged rather than reversed a second time on secondary evidence. Kangaroo Temple: overview 'eight-pitch' contradicted the row's own pitches(7)/pitch_detail/rope_note -- fixed to seven-pitch; rope_note's 'chains' descent claim contradicted the row's own hazards field ('no chains') -- fixed. Inspiration Peak: fa asserted a confident '1970' despite the row's own data_quality.gaps already concluding the year is unconfirmed and should be left unresolved -- applied that already-completed research to the fa column itself. Guye Peak (both routes): identical leaked access._raw 'area not found' block, same pattern already fixed on this peak's Blood Sport route in batch 3 -- replaced with a pointer note on both. Mount Stuart South Headwall: permit/access.rules/group_limit wrongly carried Enchantment Permit Area quota rules for a south-side (Longs Pass/Ingalls Way) approach confirmed via multiple sources to not need one -- replaced with standard Alpine Lakes Wilderness rules, matching the same distinction on this batch's Argonaut Peak row; a waypoint mislabeled 'Ingalls Pass' (using that pass's real elevation) was renamed to 'Longs Pass' with the correct elevation, confirmed via the row's own approach text and external sources; watch_out converted from a newline-joined string to a JSON array (recurring rendering bug), dropping a rappel claim contradicted by the row's own descent fields. Luna Peak: gain_ft/loss_ft (8600/8009) aligned to the row's own itinerary sums (already symmetric at 8700/8700); dist_km (16.1) was off by >2x from the same itinerary and the row's own approach text -- corrected to 38.62 km one-way. Left flagged, not fixed: alpine_grade duplicating the NCCS commitment grade on 4 routes (Guye Peak x2, Mount Stuart, Luna Peak) -- DB-wide recurring ambiguity, no sourced French-scale replacement found; Guye Peak's wilderness/permit boundary applicability (unresolved without a USFS map); South Gully/South Spur's pitches/grade/length_m mixing its two seasonal variants; Inspiration Peak's pitch-count/length narrative (4-pitch prose vs. 8-pitch top-level fields, the latter corroborated by the FA's own primary account) needing a multi-field human rewrite."
+    },
+    {
+      "batch_number": 44,
+      "date": "2026-08-05",
+      "route_ids": [
+        "wa_south_ridge_3",
+        "wa_south_spur",
+        "wa_south_twin_sister_north_ridge",
+        "wa_south_twin_sister_scramble",
+        "wa_south_twin_sister_west_ridge",
+        "wa_southeast_face",
+        "wa_southeast_mox_peak_se_rib",
+        "wa_southeast_ridge_se_corner",
+        "wa_southern_man",
+        "wa_southwest_buttress"
+      ],
+      "confirmed_errors_fixed": 26,
+      "flagged_for_human_review": 29,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-05-batch-44.sql",
+      "note": "Eight peaks, 10 routes, researched via 5 parallel agents. Black Peak: approach_logistics.trailhead pointed at the Lake Ann Trailhead on SR-542 near Mount Baker (a same-named but different trailhead ~90mi away) -- fixed to the real SR-20/Rainy Pass trailhead already correct in the row's own waypoints; access.rules carried Boston Basin's unrelated camp rules -- replaced; top-level lat/lng and loss_ft (both null) filled from the row's own data; alpine_grade cleared (duplicated commitment). Whatcom Peak: lat/lng filled; gain_ft/loss_ft (6700/1374) realigned to the row's own itinerary sums (11000/9300) for this closed loop. South Twin Sister: North Ridge and West Ridge both falsely claimed NCNP boundary crossings (Twin Sisters is entirely Mount Baker Wilderness) and both wrongly required a Northwest Forest Pass (contradicting West Ridge's own passRequired field) -- fixed on both; West Ridge gain_ft/loss_ft realigned to a real trip report (6100/6100). The Olivine Scramble route was clean. Sharkfin Tower: watch_out array-formatting bug fixed. Southeast Mox Peak: route was misnamed 'Southeast Rib' when every source and the row's own face/aspect/overview fields identify it as the West Ridge (Beckey Route) -- renamed; alpine_grade cleared; a waypoint note held a leaked AI-research-session artifact -- replaced. Mount Shuksan: watch_out array bug fixed. South Early Winters Spire: fa's 'Kevin Falley' corrected to Leighan Falley (matches the row's own overview field); aspect 'E' corrected to 'S' (row's own text describes a south-facing headwall); a truncated timing note completed from the row's own itinerary; watch_out array bug fixed. Dorado Needle: trailhead waypoint/gpx corrected ~6km to match the row's own approach_logistics; false NCNP entrance-fee claim removed (NCNP has no entrance fee); dist_km corrected to match the row's own approach text; alpine_grade cleared. Left flagged across the batch: several internally-inconsistent gain_ft/dist_km figures with no single verifiable source, alpine_grade-duplicates-commitment on routes with no sourced French-scale replacement, Southeast Mox Peak's two non-interchangeable approaches mixed in one record, and a handful of unconfirmed phone numbers/group limits."
     }
   ]
 }
