@@ -3105,4 +3105,86 @@ one-way per this app's `distKm*2` display convention. `alpine_grade` cleared (du
 `commitment`). Left flagged: Eldorado-zone `group_limit` (6 here vs. possibly 12 per some
 sources) needs confirmation against a primary NPS boundary page that returned 403s this batch.
 
-Next batch will continue alphabetically after `wa_southwest_buttress` (see progress file).
+## Batch 45 — 2026-08-05
+
+Eight peaks, 10 routes, researched via 5 parallel agents. Every proposed fix was re-verified
+against this batch's own raw row data before writing SQL — two proposed "fixes" were rejected
+on that check (see below), since they would have overwritten correct data with wrong data.
+
+**Rejected fixes (important):** wa_southwest_face's (The Tooth) research agent proposed
+changing `grade`/`rock_grade` from 5.5 to 5.7 citing Mountaineers.org/Mountain Project — but
+this row's own `corrections` field already documents a prior, more careful pass that explicitly
+weighed the 5.7 claim against Mountain Project's dedicated route page (with a full grade
+conversion table) and deliberately kept 5.5. Left as-is and flagged rather than re-litigated on
+weaker evidence. wa_soviet_route's (Bonanza Peak) research agent proposed changing
+`high_point_ft` from 9320 to 9511/9516 to match Bonanza's main summit — but this route's own
+`overview` text explicitly says it climbs to Bonanza's **Southwest Peak, a distinct 9,320 ft
+sub-summit**, not the 9,516 ft main summit; 9320 is correct for what this route actually climbs.
+Also revised (not rejected) wa_spectre_peak_south_route's gain/loss fix: the research agent
+proposed matching only the technical-climbing day's stats (1,500/200 ft), but the row's own
+4-day itinerary sums to a symmetric 8,100/8,100 ft for the full out-and-back trip — used the
+full-trip figure instead, consistent with how this convention has been resolved on other
+multi-day routes in past batches.
+
+**The Tooth / Pinnacle Peak:** Southwest Face `pitches` (0) and `alpine_grade` (duplicated
+`commitment`) fixed from the row's own pitch_detail/commitment fields. Pinnacle Peak's Southwest
+Scramble `gain_ft`/`loss_ft` (1050) only covered the trailhead-to-saddle segment, missing the
+saddle-to-summit gain — fixed to 1682 ft from the row's own waypoint elevations; its
+`permitZone`/`wilderness_zone` wrongly said "Tatoosh Wilderness" (a separate Gifford Pinchot NF
+unit) instead of Mount Rainier NP's own "Mount Rainier Wilderness" — fixed. Flagged: a stray
+"Fires prohibited near Tatoosh Lakes" contamination with no verified replacement text, a
+trailheadLat/Lng vs. waypoints[0] drift, and The Tooth's area blurb citing a 1928 FA against one
+source citing 1916 (areas-table issue, outside this batch's route scope).
+
+**Bonanza Peak / Spectre Peak:** Soviet Route repeated the "Chiwawa/Entiat Ranger Districts"
+nonexistent-district error already fixed elsewhere on this peak in batch 4 — fixed to Chelan
+Ranger District; `loss_ft` (null) and `dist_km` (stored as round-trip) both fixed from the row's
+own itinerary day-sums. Spectre Peak's South Ridge ("Spirited Away") had a nonexistent "Glacier
+Ranger District" (real name: Mt. Baker Ranger District, confirmed via USFS's own site) fixed;
+`dist_km` round-trip-vs-one-way fixed; a stale summit waypoint elevation (7880) fixed to match
+high_point_ft/area elevation (7952); a stale data_quality.gaps note referencing an
+already-superseded "1980" FA year removed; a truncated `approach_logistics.trailheadDirection`
+completed from the row's own approach text. Flagged: a real 5.8-vs-5.9 grade split between the
+FA party's own trip report and AAC Publications, already self-documented and left unresolved.
+
+**Spider Mountain:** No fixes — both routes audited clean/flag-only. wa_spider_mountain_north_ridge's
+id says "north_ridge" but its own name/content ("Southeast Gully / East Ridge") and every field
+consistently describe the peak's real standard route — same id/name-mismatch family flagged
+repeatedly in past batches (Big Kangaroo, Colonial Peak, Corteo Peak, etc.), left for a human
+rename decision. Also flagged: the 1938 peak-FA climber's name ("Ralph Clough" on file vs. "Ray
+W. Clough" in most sources) and a possible NCNP-vs-Forest-Service land-manager gap on both
+routes, since the peak straddles both per the area's own blurb but the routes' access field only
+names the park.
+
+**Spire Point / Prusik Peak:** Spire Point's Southwest Face `pitches` (1, contradicted by its
+own 5-pitch rope_note/pitch_detail) fixed to 5. Prusik Peak's Stanley-Burgner got the batch's
+most fixes: `alpine_grade` cleared (duplicated commitment), `loss_ft` filled from gain_ft/itinerary
+symmetry, `dist_km` fixed (round-trip→one-way), descent/descent_text's "five rappels" corrected
+to "four" to match the row's own rappel_detail array and rappel_count_note, a copy-pasted
+"Snow Lakes Trailhead" waypoint name corrected to the coordinates' real match ("Stuart Lake
+Trailhead"), `length_m` corrected to the externally-sourced 600 ft figure, and `fa` corrected to
+name the FA party (already named in the row's own overview field). Flagged as a likely duplicate
+(not auto-merged): Stanley-Burgner and sibling wa_prusik_peak_south_face_burgner_stanley — every
+external source uses "Stanley-Burgner"/"Burgner-Stanley"/"South Face" interchangeably for what
+looks like one single 1968 route documented under two DB rows.
+
+**Storm King:** this batch's own task briefing incorrectly assumed this Storm King was in
+Olympic NP near Mount Olympus — the audit agent caught the error itself (this Storm King is
+actually in North Cascades NP, near Mount Goode) and correctly declined to apply any wrong
+Olympic-NP corrections; the DB's existing area hierarchy/land-manager text was already right.
+Biggest finding of the batch: wa_storm_king_north_face's own `verif` field already states
+"Likely a fabricated entry" — no source found this run corroborates a "North Face" route or its
+claimed 1978 FA; every available source documents only the Southwest Route as an established
+line on this peak. Flagged prominently for a human decision on removal/further investigation
+(not deleted, per guardrails); a harmless internal coordinate fix (`approach_logistics`
+peakLat/Lng, ~3km off from the area's own coordinates) was still applied regardless of that
+question. Southwest Scramble's `loss_ft` (2200) fixed to 6300 to match its own itinerary
+day-sum and gain_ft symmetry. Flagged, not fixed: a leaked research-session artifact disguised
+as a "Rainy Pass Trailhead" waypoint, whose own note text second-guesses the route's real
+trailhead — but removing it would leave the route with no stored trailhead waypoint at all
+before mile 13.8, so left for a human to resolve rather than mechanically deleted.
+
+Pre-flighted with `check:sql` before finalizing — all 22 write targets confirmed to exist live,
+no deletes proposed this batch.
+
+Next batch will continue alphabetically after `wa_storm_king_southwest_scramble` (see progress file).
