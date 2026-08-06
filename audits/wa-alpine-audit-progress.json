@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": null,
+  "last_processed_id": "wa_amphitheater_mountain_finger_of_fatwa",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1219,6 +1219,26 @@
       "clean": 2,
       "sql_file": null,
       "note": "Last 3 routes in pass-1 scope (confirmed via live query: nothing sorts after wa_witches_tower_south_face). Windy Peak's two routes (Iron Gate/Boundary Trail and Cathedral Driveway/Windy Creek Trail approaches) both audited clean against Wikipedia/Wikidata/firetower.org/WTA/willhiteweb -- elevation, prominence, coordinates, 'easternmost Bulger' claim, and 1932-1963 lookout history all confirmed. Witches Tower's South Face route: elevation/prominence/coordinates and the Colchuck Lake-Aasgard Pass waypoint chain confirmed, but flagged (not fixed) a self-contradiction where itinerary.sourceNote claims a trip report's 14.0mi round-trip 'matches the on-file 22.53 km distance almost exactly' when the row's actual dist_km is 12.9 -- unresolvable without the source trip report (WebFetch blocked at proxy level again this run). PASS 1 COMPLETE."
+    },
+    {
+      "batch_number": 52,
+      "pass": 2,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_a_servant_to_liberty",
+        "wa_abernathy_peak_south_ridge",
+        "wa_action_potential",
+        "wa_agnes_mountain_west_route",
+        "wa_alpine_lookout_round_mountain_trail",
+        "wa_american_border_peak_northeast_face",
+        "wa_american_border_peak_southeast_face",
+        "wa_amphitheater_mountain_finger_of_fatwa"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 8,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-08-06-batch-52.sql",
+      "note": "First batch of pass 2 (facts re-checked from the top of the alphabet since sources can go stale). 7 peaks, 8 routes, audited via 7 parallel research agents (one per peak). Confirmed fixes: Liberty Bell's FA field/pro_tips wrongly called Mikey Schaefer's 2016 completing ascent \"rope-solo\" (only his 2015 equipping pass was); Abernathy Peak's permit field claimed a nonexistent Lake Chelan-Sawtooth Wilderness self-issue permit; Burgundy Spire's approach_logistics was mislabeled with a different peak's (Silver Star Creek) trailhead narrative while carrying its own correct coordinates; Agnes Mountain's area elevation_ft (8131) disagreed with its own route's high_point_ft and 3 external sources (8119); Agnes Mountain's permit field wrongly framed the route as NPS-regulated when it's actually in Glacier Peak Wilderness (USFS); American Border Peak's beta field self-contradicted its own fa field on who made the first ascent. wa_alpine_lookout_round_mountain_trail and wa_amphitheater_mountain_finger_of_fatwa audited clean; wa_american_border_peak_northeast_face checked out on every populated field (mostly null, thinly documented)."
     }
   ]
 }

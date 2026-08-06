@@ -3641,3 +3641,82 @@ were added to the catalog mid-pass by unrelated enrichment work landing on `main
 sorted alphabetically before the pass's cursor, they were never reached this pass). Starting
 pass 2 from the top of the alphabet will pick them up along with everything else — facts go
 stale, so a fresh full pass is the intended behavior, not a gap to patch around.
+
+## Batch 52 — 2026-08-06 (Pass 2, batch 1)
+
+First batch of the second full pass, starting fresh from the top of the alphabet. 8 routes
+across 7 peaks, checked via 7 parallel research agents (one per peak, American Border Peak's
+two routes covered together). Direct WebFetch to Mountain Project/AAC/SummitPost/CascadeClimbers/
+Wikipedia was 403-blocked for several agents this run (same proxy-policy issue noted in recent
+pass-1 batches) — those findings lean on WebSearch snippet cross-referencing instead, called out
+per-field below where it lowers confidence.
+
+- **Liberty Bell** (`wa_a_servant_to_liberty`) — the `fa` field and both `pro_tips` entries
+  mischaracterized Mikey Schaefer's Aug 6, 2016 completing free ascent as "rope-solo." Per AAC
+  Publications, Schaefer's rope-solo work was his 2015 scouting/equipping pass; the actual FA
+  send was a partnered lead with Shanjean Lee belaying. Fixed both fields. Everything else
+  checked out (route relationship to Freedom or Death/Thin Red Line, descent, approach waypoint,
+  grade, pitch count). `length_m` (427) vs. two sources' "450m" and the Alex Honnold repeat-ascent
+  claim in `data_quality.gaps` couldn't be resolved (primary sources 403'd) — left for a human.
+- **Abernathy Peak** (`wa_abernathy_peak_south_ridge`) — `permit` claimed a free self-issue Lake
+  Chelan-Sawtooth Wilderness permit is required; the USFS Okanogan-Wenatchee NF page says no
+  wilderness permit of any kind is needed there (unlike the neighboring Pasayten, which does use
+  self-issue permits) — only a Northwest Forest Pass for parking, which the field already and
+  separately noted correctly. Fixed. Elevation, prominence, coordinates, trail mileage, gain,
+  class-3 difficulty, and season all confirmed correct against USFS/PeakBagger/trip reports.
+  Trailhead elevation (3,100 ft waypoint vs. a 3,150 ft consensus) and driving distance
+  (22-24 mi vs. sourced 21.6-21.8 mi) are minor, unconfirmed discrepancies — not fixed.
+- **Burgundy Spire** (`wa_action_potential`) — `approach_logistics` was labeled "Silver Star Creek
+  Trailhead" with a Silver Star Creek approach narrative, but carried the coordinates of the
+  route's own correctly-documented SR-20/Burgundy Col pullout elsewhere in the same row. Silver
+  Star Creek is a real but distinct approach (used for Silver Star Mountain's glacier route, per
+  The Mountaineers) — not this route's approach. Fixed to describe the SR-20/Burgundy Col
+  approach consistently. Grade, pitch count, FA climbers/year, and the Bench/Burgundy Col
+  waypoints all confirmed correct. FA exact dates (July 18-20, 2004 vs. a single-date CC trip
+  report title) and pitch-by-pitch gear/length detail couldn't be independently confirmed
+  (sources 403'd) — flagged, not fixed. Note: the area row's own `elevation_ft` (8483) differs
+  by 9 ft from the route's `high_point_ft` (8492, which matches listsofjohn.com) — out of this
+  batch's scope (area row, not one of the audited routes) but worth a future-batch look.
+- **Agnes Mountain** (`wa_agnes_mountain_west_route`, area `wa_agnes_mountain`) — two confirmed
+  errors. (1) The area's `elevation_ft` (8131) disagreed with the route's own `high_point_ft`
+  (already correct at 8119) and with Wikipedia/Peakbagger/PeakVisor, which all independently
+  agree on 8,119 ft — fixed the area row. (2) `permit` framed the climb as North Cascades
+  NP-regulated (Recreation.gov/Marblemount WIC reservation), but Agnes Mountain and nearly all of
+  the route's approach are actually in the Glacier Peak Wilderness (Okanogan-Wenatchee NF) — the
+  NPS/Lake Chelan NRA boundary is only ~2 miles up the Agnes Creek Trail from High Bridge, per the
+  USFS's own Agnes Gorge Trail page — fixed to describe the correct free self-issue USFS permit.
+  FA (Frazier & O'Brien, 1936, via West Fork of Agnes Creek), summit coordinates, prominence, and
+  trailhead coordinates all confirmed correct. `gain_ft`/`loss_ft` asymmetry (4,000/6,500 against
+  a ~6,450-6,480 ft net elevation change), `dist_km`, descent narrative (may conflate the 1936
+  line with a different, more modern south-ridge route), and difficulty grade are flagged as
+  needing human verification — no confident single fix for a rarely-climbed 1936 line.
+- **Alpine Lookout** (`wa_alpine_lookout_round_mountain_trail`) — audited clean. Trailhead/summit
+  coordinates, elevation (6,237 ft), lookout history (1936 L-4 replaced by a 1975 R-6 cab, still
+  staffed most summers — confirmed against the National Historic Lookout Register), route
+  description, permit rules, and emergency contacts all checked out against WTA/USFS/NHLR. The
+  wide gain/distance spread across sources is already disclosed in the row's own `corrections`
+  field and needs no fix.
+- **American Border Peak** (`wa_american_border_peak_northeast_face`,
+  `wa_american_border_peak_southeast_face`) — one confirmed error: the Southeast Face route's
+  `beta` field claimed it was "first climbed by Baker, Beckey, and Dudra in 1952," directly
+  contradicting the same route's own correctly-populated `fa` field (Dalgleish/Fyles/
+  Henderson/Fraser, Sept 14, 1930 — also the peak's overall FA, confirmed via Wikipedia and
+  Peakbagger). Fixed the beta field's opening sentence to match; the 1952 party's actual route is
+  unidentified and wasn't reintroduced without a confirmed target. Peak elevation (7,998 ft),
+  prominence, summit coordinates, grade, gain, and mileage all confirmed correct. No cross-route
+  contradictions found. The Northeast Face route checked out on every populated field, most of
+  which are still null (thinly documented online) — an unconfirmed 1982 FA (Serl/Jones/Griffiths/
+  Nichol) surfaced in search results but wasn't added without a primary-source read.
+- **Amphitheater Mountain** (`wa_amphitheater_mountain_finger_of_fatwa`) — audited clean. FA
+  (Bennett & Herrington, 2011), north-face aspect, descent, trailhead coordinates, driving
+  directions, and Pasayten permit rules all confirmed against Blake Herrington's FA blog post, the
+  2012 AAJ note, USFS, and Mountain Project (for the shared descent). The 5.11c letter grade
+  (sources found only say "5.11"), length_m (152m best-supported but conflicting 160/175m
+  mentions surfaced), and dist_km/gain_ft (independent hiking sources disagree, and this column
+  has known convention problems project-wide) are flagged, not fixed. The 2018 CascadeClimbers trip
+  report that likely holds the detailed pitch beta was 403-blocked, same gap the row's own
+  `rope_note` already discloses.
+
+6 confirmed errors fixed across 5 peaks (SQL: `audits/sql/2026-08-06-batch-52.sql`); 8 fields
+flagged for human review; 2 routes (Alpine Lookout, Amphitheater Mountain) plus the Northeast
+Face route on American Border Peak audited clean.
