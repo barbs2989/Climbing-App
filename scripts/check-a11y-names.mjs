@@ -5,14 +5,18 @@
 // in the first place: a <div> holding the visible label, no htmlFor/id linking it to
 // the input, so a sighted user reads "PARTY SIZE" and a screen reader gets "spinbutton".
 //
-// A placeholder DOES NOT COUNT as a name here, and that is the whole point of the
-// check. Chrome falls back to placeholder text, so a control with only a placeholder
-// technically has a name -- but:
-//   - it disappears the moment the user types, taking the name with it
-//   - it is routinely an example, not a label: "e.g. 48.7860", "e.g. 1.2", "0", "—"
-// A source scan that skipped placeholder-bearing controls hid 15 real defects; treating
-// placeholder as sufficient is exactly that mistake. scripts/audit-a11y.mjs makes the
-// same call.
+// A DESCRIPTIVE placeholder counts as a name here; a meaningless one does not. Chrome
+// falls back to placeholder text, so "Approach min" really is announced, while "0", "—"
+// and "e.g. 48.7860" name nothing. The rule is at the `ph` check below, and it is
+// deliberately weaker than scripts/audit-a11y.mjs, which counts NO placeholder as a name.
+//
+// Be precise about what a pass means, because the two obvious readings are both wrong:
+//   - it does NOT mean every control has a durable name. 95 controls are named only by a
+//     placeholder, which vanishes the moment the user types.
+//   - a DYNAMIC placeholder (placeholder={...}) is accepted unconditionally, without
+//     judging the string it builds. That is why three controls in RouteDetail lost their
+//     aria-labels in a merge and this guard stayed green -- their dynamic placeholders
+//     covered for them. Restored in the same commit as this comment.
 //
 // Walks the tree rather than naming files: a guard with a hardcoded list silently
 // covered 24% of this repo after the app was split into three files (#547).
@@ -111,10 +115,10 @@ if (fresh.length) {
   console.error(`\ncheck:a11y-names — ${fresh.length} form control(s) with no accessible name:\n`);
   for (const f of fresh) console.error(`  ${f.rel}:${f.line}  <${f.tag}>  ${f.key.split(":").slice(2).join(":")}`);
   console.error(`
-A placeholder is NOT a name: it vanishes once the user types, and is usually an
-example ("e.g. 5.10a"). Give the control an aria-label matching the text already on
-screen, or aria-labelledby the element holding it. If the control genuinely reads
-better from its runtime placeholder, add it to the baseline:
+A meaningless placeholder is not a name -- "0", "—", "e.g. 5.10a" announce nothing,
+and even a good one vanishes once the user types. Give the control an aria-label
+matching the text already on screen, or aria-labelledby the element holding it. If the
+control genuinely reads better from its runtime placeholder, add it to the baseline:
 
   node scripts/check-a11y-names.mjs --update
 `);
