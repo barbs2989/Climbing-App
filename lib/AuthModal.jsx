@@ -92,10 +92,13 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
           <div style={{ fontSize: 19, fontWeight: 800 }}>{TITLE[mode]}</div>
-          {/* Only when there is something to close. At the gate, and on the reset screen, no
-              onClose is passed -- React drops onClick={undefined} silently, so an unconditional
-              × would render, take the click and do nothing. (Same fix as #593; if that lands
-              first this line is already what it wants.) */}
+          {/* Only offer a way out when there is one. Since #584 this component is also the
+              production sign-in GATE (ClimbMatch.jsx renders <AuthModal onAuthed={...}/> with
+              no onClose when realAuthGate is on), and React drops onClick={undefined} silently
+              -- so the close button rendered, invited a click, and did nothing. Verified against
+              the live site: Escape and × both left the modal up, with no page error to show for
+              it. Worse for a screen reader, which announced an actionable "Close" that wasn't.
+              The reset screen below is the same shape: also no onClose, also no ×. */}
           {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
