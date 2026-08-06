@@ -155,7 +155,10 @@ if (!base) {
   if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
   base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`starting dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
+  // VITE_DEMO_AUTOLOGIN keeps the demo gate open for this harness. Without it the real
+  // account gate blocks every screen and the check can only ever report the login form.
+  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+    { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   // --strictPort means vite exits rather than sliding to another port. If it dies,
   // whatever answers our URL is not ours, so treat its exit as fatal instead of
   // letting waitForServer be satisfied by a stranger.
