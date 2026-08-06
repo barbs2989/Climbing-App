@@ -336,7 +336,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
                 onDrop={handleDrop}
                 style={{...styles.uploadBox, ...(dragOver ? {borderColor: C.accent, background: C.accent + '18'} : {})}}
               >
-                <input
+                <input aria-label="Upload GPX file"
                   type="file"
                   accept=".gpx"
                   onChange={handleFileUpload}
@@ -454,7 +454,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           </label>
 
           <label style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>
-          <select
+          <select aria-label="GPS device type"
             value={deviceType}
             onChange={(e) => setDeviceType(e.target.value)}
             style={{...styles.input}}
