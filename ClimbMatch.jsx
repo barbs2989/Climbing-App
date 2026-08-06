@@ -156,10 +156,13 @@ if(onboarded||uid){if(profile.disciplines.length)ME.disciplines=profile.discipli
      the way it was and the toast says so -- a "you are now friends" that survives a failed
      write is the swallowed-write bug this codebase keeps finding (#548/#551/#563). */
   if(uid&&_row&&_row._dbId){respondToConnection(_row._dbId,true).then(function(){myConnQ.refetch&&myConnQ.refetch();showToast("You and "+String(c.name).split(" ")[0]+" are now connected");}).catch(function(){setConnections(p=>p.filter(x=>x.id!==c.id));setFriendReqIn(p=>p.includes(c.id)?p:[...p,c.id]);showToast("Couldn't accept that request — try again.");});}
-  else showToast(`You and ${c.name.split(" ")[0]} are now friends `);};
+  /* Seed climbers and signed-out use never reach a row, so this changes local state only.
+     Say that, rather than claiming a connection that will not survive a refresh — the
+     same honesty the existing sendReq preview toast already uses. */
+  else showToast(`You and ${c.name.split(" ")[0]} are connected in this preview — not saved.`);};
   const declineReq=(id)=>{var _row=_connRow(id);setFriendReqIn(p=>p.filter(x=>x!==id));
   if(uid&&_row&&_row._dbId){respondToConnection(_row._dbId,false).then(function(){myConnQ.refetch&&myConnQ.refetch();showToast("Request declined");}).catch(function(){setFriendReqIn(p=>p.includes(id)?p:[...p,id]);showToast("Couldn't decline that request — try again.");});}
-  else showToast("Request declined");};
+  else showToast("Request declined in this preview — not saved.");};
   const sendReq=(c,note)=>{if(note&&note.trim())setReqNotes(pn=>({...pn,[c.id]:note.trim()}));setFriendReqOut(p=>p.includes(c.id)?p:[...p,c.id]);
   /* A real climber gets a real request row; a seed climber keeps the honest preview wording,
      because for them it still does not deliver anything. Two different claims for two
