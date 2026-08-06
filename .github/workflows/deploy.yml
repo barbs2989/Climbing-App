@@ -10,9 +10,24 @@ permissions:
   pages: write
   id-token: write
 
+# Queue deploys instead of cancelling them. With cancel-in-progress: true, a push that
+# lands while a build is running kills that build -- and the build takes ~5 min. On
+# 2026-08-06 several sessions merged every 3-6 min and five runs were cancelled mid-build
+# (f0cb2bc, e6def23, 29c60cd, cf917ef, 84705a7), each by the next merge, so none reached
+# the publish step. Cancelling only saves time when the superseded run is worthless; here
+# it IS the deploy, so the saved minutes cost the publish entirely.
+#
+# Not the whole story that day -- Actions and Pages were also in a major outage, which is
+# what failed the runs that did get as far as deploy-pages@v4. This change would not have
+# saved that; it addresses the cancellations, which are ours and recur whenever merges
+# outpace the build.
+#
+# Queueing costs a little latency when merges are rapid (each run waits for the one
+# ahead) and is otherwise identical: the last run to finish still publishes the newest
+# commit.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
