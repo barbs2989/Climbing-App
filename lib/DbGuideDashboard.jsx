@@ -65,13 +65,27 @@ export default function DbGuideDashboard({ onClose, notify, C, ActionIcon }) {
       refetchCreds();
     } catch (e) { notify && notify("Couldn't submit that credential."); }
   };
-  const resubmit = async id => { await resubmitGuideCredential(id); refetchCreds(); notify && notify("Resubmitted for review."); };
-  const setInqStatus = async (id, st) => { await updateInquiryStatus(id, st); refetchInq(); };
-  const postReply = async id => { await postGuideReply(id, replyText); setReplyId(null); setReplyText(""); refetchReviews(); };
+  // Every one of these is a write that can be refused by RLS. Unwrapped, the rejection
+  // became an unhandled promise and the button did nothing at all — no error, no toast.
+  // addCred above was already guarded; these four were not.
+  const resubmit = async id => {
+    try { await resubmitGuideCredential(id); refetchCreds(); notify && notify("Resubmitted for review."); }
+    catch (e) { notify && notify("Couldn't resubmit that credential."); }
+  };
+  const setInqStatus = async (id, st) => {
+    try { await updateInquiryStatus(id, st); refetchInq(); }
+    catch (e) { notify && notify("Couldn't update that inquiry."); }
+  };
+  const postReply = async id => {
+    try { await postGuideReply(id, replyText); setReplyId(null); setReplyText(""); refetchReviews(); }
+    catch (e) { notify && notify("Couldn't post that reply."); }
+  };
   const saveProfile = async () => {
-    await updateGuideProfile(uid, { day_rate: Number(rate) || 0, group_max: Number(groupMax), bio, regions: regions.split(",").map(s => s.trim()).filter(Boolean), cancellation_policy: policy });
-    notify && notify("Guide profile saved.");
-    refetchProfile();
+    try {
+      await updateGuideProfile(uid, { day_rate: Number(rate) || 0, group_max: Number(groupMax), bio, regions: regions.split(",").map(s => s.trim()).filter(Boolean), cancellation_policy: policy });
+      notify && notify("Guide profile saved.");
+      refetchProfile();
+    } catch (e) { notify && notify("Couldn't save your guide profile."); }
   };
 
   if (!session) {
