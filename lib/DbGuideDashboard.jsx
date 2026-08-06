@@ -138,9 +138,9 @@ export default function DbGuideDashboard({ onClose, notify, C, ActionIcon }) {
             </div>;
           })}
           {adding ? <div style={{ ...card, border: "1px solid " + C.blueDim }}>
-            <select value={nKind} onChange={e => setNKind(e.target.value)} style={inp}><option value="primary_track">Primary certification track</option><option value="cross_cutting">Additional (avalanche/medical)</option></select>
-            {nKind === "primary_track" ? <select value={nTrack} onChange={e => setNTrack(e.target.value)} style={{ ...inp, marginTop: 8 }}>{Object.keys(CERT_TRACK_LABELS).map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
-              : <select value={nCc} onChange={e => setNCc(e.target.value)} style={{ ...inp, marginTop: 8 }}><option value="AIARE">AIARE</option><option value="WFR">WFR</option><option value="other">Other</option></select>}
+            <select aria-label="Certification kind" value={nKind} onChange={e => setNKind(e.target.value)} style={inp}><option value="primary_track">Primary certification track</option><option value="cross_cutting">Additional (avalanche/medical)</option></select>
+            {nKind === "primary_track" ? <select aria-label="Certification track" value={nTrack} onChange={e => setNTrack(e.target.value)} style={{ ...inp, marginTop: 8 }}>{Object.keys(CERT_TRACK_LABELS).map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
+              : <select aria-label="Additional certification" value={nCc} onChange={e => setNCc(e.target.value)} style={{ ...inp, marginTop: 8 }}><option value="AIARE">AIARE</option><option value="WFR">WFR</option><option value="other">Other</option></select>}
             <div style={{ display: "flex", gap: 8, marginTop: 8 }}><input value={nNum} onChange={e => setNNum(e.target.value)} placeholder="Certificate no." style={inp} /><input value={nOrg} onChange={e => setNOrg(e.target.value)} placeholder="Issuing org" style={inp} /></div>
             <div style={{ display: "flex", gap: 8, marginTop: 9 }}><button onClick={addCred} style={{ flex: 1, background: C.blue, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Submit for verification</button><button onClick={() => setAdding(false)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div>
           </div> : <button onClick={() => setAdding(true)} style={{ width: "100%", background: C.surface, border: "1px dashed " + C.border, color: C.blue, borderRadius: 10, padding: "10px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>+ Add credential</button>}
@@ -179,13 +179,13 @@ export default function DbGuideDashboard({ onClose, notify, C, ActionIcon }) {
 
         {section === "profile" && <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 8 }}>Rate (per day) and party size</div>
-          <div style={{ display: "flex", gap: 8 }}><input value={rate} onChange={e => setRate(e.target.value.replace(/[^0-9]/g, ""))} style={{ ...inp, maxWidth: 150 }} /><select value={groupMax} onChange={e => setGroupMax(e.target.value)} style={{ ...inp, maxWidth: 180 }}>{["1", "2", "3", "4", "6"].map(n => <option key={n} value={n}>{"Up to " + n}</option>)}</select></div>
+          <div style={{ display: "flex", gap: 8 }}><input aria-label="Rate per day" value={rate} onChange={e => setRate(e.target.value.replace(/[^0-9]/g, ""))} style={{ ...inp, maxWidth: 150 }} /><select aria-label="Maximum party size" value={groupMax} onChange={e => setGroupMax(e.target.value)} style={{ ...inp, maxWidth: 180 }}>{["1", "2", "3", "4", "6"].map(n => <option key={n} value={n}>{"Up to " + n}</option>)}</select></div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 8, marginTop: 14 }}>Bio</div>
-          <textarea value={bio} onChange={e => setBio(e.target.value)} rows={4} style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
+          <textarea aria-label="Bio" value={bio} onChange={e => setBio(e.target.value)} rows={4} style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 8, marginTop: 14 }}>Regions / areas</div>
-          <input value={regions} onChange={e => setRegions(e.target.value)} style={inp} />
+          <input aria-label="Regions / areas" value={regions} onChange={e => setRegions(e.target.value)} style={inp} />
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 8, marginTop: 14 }}>Cancellation and turnaround policy</div>
-          <textarea value={policy} onChange={e => setPolicy(e.target.value)} rows={4} style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
+          <textarea aria-label="Cancellation and turnaround policy" value={policy} onChange={e => setPolicy(e.target.value)} rows={4} style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
           <button onClick={saveProfile} style={{ width: "100%", marginTop: 16, background: C.blue, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Save profile</button>
         </div>}
       </div>

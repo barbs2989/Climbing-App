@@ -143,7 +143,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
 
         {uid && reviewableInquiry && !reviewSent ? <div style={{ marginTop: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px" }}>
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
-          <select value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
+          <select aria-label="Rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
           <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blue, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
@@ -155,7 +155,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
           <>
             <textarea value={obj} onChange={e => setObj(e.target.value)} rows={2} placeholder="What's your objective?" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
             <input value={dates} onChange={e => setDates(e.target.value)} placeholder="Dates you're thinking of" style={{ ...inp, marginTop: 8 }} />
-            <select value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>
+            <select aria-label="Party size" value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>
               {Array.from({ length: guide.groupMax || 4 }, (_, i) => i + 1).map(n => <option key={n} value={n}>{n + (n > 1 ? " climbers" : " climber")}</option>)}
             </select>
             <textarea value={msg} onChange={e => setMsg(e.target.value)} rows={3} placeholder="Anything else the guide should know?" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
@@ -193,11 +193,11 @@ export default function DbGuides({ onDash, notify, C, ActionIcon }) {
     <div style={{ padding: 14 }}>
       <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas..." style={inp} />
       <div style={{ display: "flex", gap: 8, marginTop: 8, overflowX: "auto" }}>
-        <select value={disc} onChange={e => setDisc(e.target.value)} style={{ ...inp, minWidth: 160 }}>
+        <select aria-label="Filter by discipline" value={disc} onChange={e => setDisc(e.target.value)} style={{ ...inp, minWidth: 160 }}>
           <option value="">All disciplines</option>
           {Object.entries(DISCIPLINE_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
         </select>
-        <select value={sort} onChange={e => setSort(e.target.value)} style={{ ...inp, minWidth: 130 }}>
+        <select aria-label="Sort guides" value={sort} onChange={e => setSort(e.target.value)} style={{ ...inp, minWidth: 130 }}>
           <option value="rating">Top rated</option>
           <option value="price">Lowest price</option>
         </select>
