@@ -32,9 +32,40 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      current: ${{ steps.tip_final.outputs.current }}
     steps:
       - uses: actions/checkout@v4
+      # Only the tip of the default branch may publish.
+      #
+      # #616 stopped deploys cancelling each other, reasoning that "the last run to
+      # finish still publishes the newest commit". That holds only when runs are
+      # CREATED in commit order, and a re-run of a failed deploy is created whenever
+      # someone retries it — possibly after newer commits have queued. On 2026-08-06 a
+      # re-run of f340ba1 (#614) finished after newer runs and published, so production
+      # went BACKWARDS: #613, #621 and #622 vanished from the live site.
+      #
+      # Checked twice — here, so a superseded run does not spend minutes building, and
+      # again after the build, since the tip can move while it runs. A superseded run
+      # publishes nothing; the newer commit's own run is what publishes.
+      #
+      # This prevents production moving backwards. It does NOT guarantee the tip gets
+      # published: if the tip's own run fails, production stays put. Stale beats
+      # reverted, but a failed deploy still needs looking at.
+      - id: tip_early
+        name: Skip if this commit is already superseded
+        run: |
+          BR="${{ github.event.repository.default_branch }}"
+          git fetch --quiet origin "${BR:-main}"
+          TIP=$(git rev-parse FETCH_HEAD)
+          if [ "$TIP" = "${{ github.sha }}" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Not publishing ${GITHUB_SHA:0:7}: superseded by ${TIP:0:7}. That commit's own run publishes."
+          fi
       - uses: actions/setup-node@v4
+        if: steps.tip_early.outputs.current == 'true'
         with:
           node-version: 20
           cache: npm
@@ -45,12 +76,14 @@ jobs:
       # `npm ci`; production had the looser one. The cache also cuts the build,
       # which is what widened the window #616's queueing change addressed.
       - run: npm ci
+        if: steps.tip_early.outputs.current == 'true'
       # A missing secret does not fail the build, it changes the app. Vite folds
       # an unset import.meta.env.VITE_* to undefined, so lib/supabase.js leaves
       # `supabase` null, USE_DB goes false, and the site ships happily serving the
       # in-memory seed catalog instead of Supabase. With VITE_DEMO_AUTOLOGIN on it
       # looks entirely healthy — it just isn't the real catalogue. Fail loudly.
       - name: Require the Supabase secrets
+        if: steps.tip_early.outputs.current == 'true'
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -67,11 +100,14 @@ jobs:
       # blank-screened production twice (PRs #317, #359). No linter here, and the
       # bundler happily builds them.
       - run: npm run check:refs
+        if: steps.tip_early.outputs.current == 'true'
       # Catches hooks called conditionally, after an early return, or from an
       # event handler. A hook in a handler throws at click time without
       # unmounting, so the control silently does nothing (PR #377).
       - run: npm run check:hooks
+        if: steps.tip_early.outputs.current == 'true'
       - run: npm run build
+        if: steps.tip_early.outputs.current == 'true'
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -90,13 +126,29 @@ jobs:
       #                                which then resolves github-pages-<id>-<N+1>
       #                                while the good artifact is still named
       #                                ...-<id>-<N>, and dies on a missing artifact.
+      # The tip can move during the build, so re-check before anything is published.
+      - id: tip_final
+        name: Re-check the tip after building
+        if: steps.tip_early.outputs.current == 'true'
+        run: |
+          BR="${{ github.event.repository.default_branch }}"
+          git fetch --quiet origin "${BR:-main}"
+          TIP=$(git rev-parse FETCH_HEAD)
+          if [ "$TIP" = "${{ github.sha }}" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Built ${GITHUB_SHA:0:7} but ${TIP:0:7} landed meanwhile; not publishing."
+          fi
       - uses: actions/upload-pages-artifact@v3
+        if: steps.tip_final.outputs.current == 'true'
         with:
           path: ./dist
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
   deploy:
     needs: build
+    if: needs.build.outputs.current == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
