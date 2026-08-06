@@ -161,7 +161,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
         <div onClick={() => setMode("areas")} style={tab(mode === "areas")}>Areas</div>
         <div onClick={() => setMode("routes")} style={tab(mode === "routes")}>Routes</div>
       </div>
-      <input value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
       {qq ? (
         <div style={{ marginTop: 6, maxHeight: "46vh", overflowY: "auto" }}>
           {mode === "areas" ? (

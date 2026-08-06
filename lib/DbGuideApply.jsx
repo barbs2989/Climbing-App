@@ -150,7 +150,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
         <textarea value={bio} onChange={e => setBio(e.target.value)} rows={4} placeholder="Bio" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
           <input value={dayRate} onChange={e => setDayRate(e.target.value.replace(/[^0-9]/g, ""))} placeholder="Day rate ($)" style={inp} />
-          <select value={groupMax} onChange={e => setGroupMax(e.target.value)} style={{ ...inp, maxWidth: 180 }}>{["1", "2", "3", "4", "6"].map(n => <option key={n} value={n}>{"Up to " + n}</option>)}</select>
+          <select aria-label="Maximum group size" value={groupMax} onChange={e => setGroupMax(e.target.value)} style={{ ...inp, maxWidth: 180 }}>{["1", "2", "3", "4", "6"].map(n => <option key={n} value={n}>{"Up to " + n}</option>)}</select>
         </div>
         <input value={regions} onChange={e => setRegions(e.target.value)} placeholder="Regions (comma-separated)" style={{ ...inp, marginTop: 8 }} />
         <input value={languages} onChange={e => setLanguages(e.target.value)} placeholder="Languages (comma-separated)" style={{ ...inp, marginTop: 8 }} />
@@ -158,7 +158,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
 
         <div style={label}>Primary certification track</div>
         <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>This determines exactly which disciplines you can be listed under — we cross-check it against AMGA/IFMGA's public directories before listing you.</div>
-        <select value={certTrack} onChange={e => setCertTrack(e.target.value)} style={inp}>{tracks.map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
+        <select aria-label="Primary certification track" value={certTrack} onChange={e => setCertTrack(e.target.value)} style={inp}>{tracks.map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
         {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color: C.blue, background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
           <input value={certNumber} onChange={e => setCertNumber(e.target.value)} placeholder="Certification number" style={inp} />
@@ -169,7 +169,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
         <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8 }}>Avalanche training, medical certs — these don't grant additional guiding disciplines.</div>
         {crossCutting.map((c, i) => <div key={i} style={{ fontSize: 12.5, color: C.textSub, marginBottom: 4 }}>{CROSS_CUTTING.find(x => x[0] === c.type)[1] + " — " + c.cert_number}</div>)}
         <div style={{ display: "flex", gap: 8 }}>
-          <select value={ccType} onChange={e => setCcType(e.target.value)} style={inp}>{CROSS_CUTTING.map(x => <option key={x[0]} value={x[0]}>{x[1]}</option>)}</select>
+          <select aria-label="Additional certification" value={ccType} onChange={e => setCcType(e.target.value)} style={inp}>{CROSS_CUTTING.map(x => <option key={x[0]} value={x[0]}>{x[1]}</option>)}</select>
           <input value={ccNumber} onChange={e => setCcNumber(e.target.value)} placeholder="Cert number" style={inp} />
           <button onClick={addCrossCutting} style={{ background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 9, padding: "0 14px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Add</button>
         </div>
