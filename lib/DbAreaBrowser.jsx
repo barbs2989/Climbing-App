@@ -128,8 +128,13 @@ function StatePicker({ onPick, C }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>Pick a state</SL>
+      {/* The placeholder used to fall back on `isLoading || !states`, so a FAILED load -- where
+          isLoading is false but states is undefined -- left the control reading "Loading states…"
+          forever, directly above the error message saying it could not load. Two statements
+          contradicting each other, and the app looks hung rather than broken. This is the
+          poor-signal path, which for a climbing app is not an edge case. */}
       <select aria-label="Select a state" value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
-        <option value="">{isLoading || !states ? "Loading states…" : "Select a state…"}</option>
+        <option value="">{isLoading ? "Loading states…" : error ? "Couldn’t load states" : (states && states.length) ? "Select a state…" : "No states found"}</option>
         {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Use a route or crag Route finder to filter and search by type, grade, stars and more.</div>
