@@ -50,7 +50,7 @@ function GuideCard({ g, verified, onOpen, C }) {
 function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
-  const { data: credentials } = useGuideCredentials(guide.id);
+  const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
   const { data: reviews } = useGuideReviews(guide.id);
   const { data: myInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
@@ -106,7 +106,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
           <div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <span style={{ fontSize: 17, fontWeight: 700, color: C.text }}>{guide.name}</span>
-              {verified ? <span style={{ fontSize: 11, fontWeight: 700, color: C.green, background: C.greenBg, border: "1px solid " + C.greenDim, borderRadius: 6, padding: "1px 6px" }}>{"✓ Verified"}</span> : null}
+              {verified ? <span style={{ fontSize: 11, fontWeight: 700, color: C.green, background: C.greenBg, border: "1px solid " + C.greenDim, borderRadius: 6, padding: "1px 6px" }}>{"✓ Verified"}</span> : credsLoading ? <span style={{ fontSize: 11, fontWeight: 700, color: C.textMuted, background: C.surface, border: "1px solid " + C.border, borderRadius: 6, padding: "1px 6px" }}>{"Checking…"}</span> : credsError ? <span style={{ fontSize: 11, fontWeight: 700, color: C.amber, background: C.amberBg, border: "1px solid " + C.amber, borderRadius: 6, padding: "1px 6px" }}>{"Couldn’t check credentials"}</span> : null}
             </div>
             <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{guide.title + " · " + guide.base}</div>
           </div>
@@ -174,7 +174,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
 }
 
 export default function DbGuides({ onDash, notify, C, ActionIcon }) {
-  const { data: rows } = useGuides();
+  const { data: rows, isLoading: guidesLoading, isError: guidesError } = useGuides();
   const [q, setQ] = useState(""); const [disc, setDisc] = useState(""); const [sort, setSort] = useState("rating");
   const [sel, setSel] = useState(null);
   const [applyOpen, setApplyOpen] = useState(false);
@@ -203,7 +203,7 @@ export default function DbGuides({ onDash, notify, C, ActionIcon }) {
         </select>
       </div>
       <div style={{ marginTop: 12 }}>
-        {guides.length ? guides.map(g => <GuideCard key={g.id} g={g} verified={g._verified} onOpen={() => setSel(g)} C={C} />) : <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "30px 0" }}>No guides listed yet.</div>}
+        {guides.length ? guides.map(g => <GuideCard key={g.id} g={g} verified={g._verified} onOpen={() => setSel(g)} C={C} />) : <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "30px 0" }}>{guidesLoading ? "Loading guides…" : guidesError ? "Couldn’t load the guide directory — check your connection and try again" : "No guides listed yet."}</div>}
       </div>
       <div style={{ marginTop: 16, textAlign: "center" }}>
         <div style={{ fontSize: 13, color: C.textSub, marginBottom: 8 }}>Are you a certified guide?</div>
