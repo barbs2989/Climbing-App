@@ -196,8 +196,21 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
   const climbDisp=climbLenRaw?(usePitchSumForLen?uLen(climbLenRaw):uElev(climbLenRaw)):null;
   // A loop or point-to-point outing has no "same trail back", so distKm*2 is not a round
   // trip for it — show the distance without inventing a return leg.
-  const isOutBack=shapeOf(route)==="outback";
-  const rtNote=isOutBack?" Round trip assumes the same trail back to the trailhead.":" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
+  //
+  // `outing_shape` (migration 0087) is the recorded answer and wins when a route has one.
+  // shapeOf() is the fallback guess, and it is a weak one: it reads name+blurb+summary, and
+  // `blurb`/`summary` have no column in `routes`, so on a DB route it sees the NAME alone and
+  // defaults to "outback" — 480 of 496 WA alpine routes with a distance, and its `loop` branch
+  // never fires because nothing is named "loop". Doubling is still right for most of them (the
+  // approach is retraced even when the CLIMB descends another line), which is why the fallback
+  // is left as-is rather than made stricter: a prose classifier over `descent` was measured and
+  // would have deleted 376 round-trip figures, most of them correct.
+  const recShape=route.outingShape||route.outing_shape||null;
+  const isOutBack=recShape?recShape==="outback":shapeOf(route)==="outback";
+  const rtNote=isOutBack?(recShape?" Round trip: this route is recorded as retracing its approach.":" Round trip assumes the same trail back to the trailhead.")
+    :recShape==="loop"?" This route loops back to the trailhead by a different line, so doubling the approach would overstate it."
+    :recShape==="point"?" This route finishes at a different trailhead, so there is no round trip to show."
+    :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
   let stats,note;
   if(disc==="bouldering"){
     stats=[["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]];

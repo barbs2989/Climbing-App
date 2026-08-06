@@ -270,6 +270,15 @@
       "waiver_process_attested",
       "waiver_process_attested_at"
     ],
+    "hazard_votes": [
+      "created_at",
+      "hazard_label",
+      "id",
+      "route_id",
+      "updated_at",
+      "user_id",
+      "vote"
+    ],
     "inquiries": [
       "climber_disclaimer_accepted_at",
       "climber_id",
@@ -389,6 +398,7 @@
       "max_angle",
       "name",
       "obj_haz",
+      "outing_shape",
       "overview",
       "partner_requirements",
       "permit",
