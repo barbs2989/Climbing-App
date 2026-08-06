@@ -10,6 +10,7 @@
     "ClimbMatch.jsx :: \"Trip report deleted\")",
     "ClimbMatch.jsx :: \"You and \"+String(c.name).split(\" \")[0]+\" are now connected\")",
     "ClimbMatch.jsx :: _org?\"You left — the crew is disbanded for everyone\":\"You left the cre",
+    "ClimbMatch.jsx :: _send?\"Thanks — your report helps the next climber\":\"Your vote was wit",
     "ClimbMatch.jsx :: _wasIn?\"Removed your pick for that day\":\"You're in — marked that day a",
     "ClimbMatch.jsx :: `Marked as requested — this preview doesn't deliver it to ${c.name.spl",
     "ClimbMatch.jsx :: `You and ${c.name.split(\" \")[0]} are connected in this preview — not s"
