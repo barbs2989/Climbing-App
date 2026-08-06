@@ -12,6 +12,7 @@ npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
+npm run check:boot # index.html's boot placeholder still matches the real nav
 ```
 
 There is no unit test suite, linter, or type checker. The three `check:` scripts are
@@ -22,6 +23,10 @@ ships: not a build error, but a screen that renders wrong or not at all.
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
   `scripts/undefined-refs-baseline.json` empty.
+- **`check:boot`** compares the inline boot placeholder in `index.html` (the app
+  shell painted while the bundle loads) against the real `NAV` array. It is a
+  hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
+  before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
 - **`check:hooks`** catches hooks called outside a component body — the #377 bug
   (an invalid hook call inside a click handler). Also gated by `npm run build`.
 - **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
