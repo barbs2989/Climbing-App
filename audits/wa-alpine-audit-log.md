@@ -4227,3 +4227,98 @@ newly-authored SET-clause text were rewritten to avoid them. A few WHERE-clause 
 matches that must reproduce semicolon-containing live prose verbatim (Unicorn Peak,
 Colchuck Peak) remain outside the tool's auto-check; those were independently re-verified
 against a fresh live fetch immediately before writing rather than left unchecked.
+
+## Batch 59 — 2026-08-06 (Pass 2, batch 8)
+
+Routes: `wa_colfax_peak_cosley_houston`, `wa_colfax_peak_kimchi_suicide_volcano`,
+`wa_colfax_peak_polish_route` (Colfax Peak, 3 routes), `wa_colonial_peak_west_ridge`
+(Colonial Peak), `wa_complete_south_buttress` (Cutthroat Peak), `wa_concord_tower_north_face`
+(Concord Tower), `wa_copper_peak_south_route` (Copper Peak), `wa_corteo_peak_southwest_ridge`
+(Corteo Peak), `wa_crater_mountain_standard_route` (Crater Mountain),
+`wa_crooked_thumb_peak_east_face` (Crooked Thumb Peak). Researched via 8 parallel agents, one
+per peak.
+
+- **Colfax Peak** (3 routes) — elevation, coordinates, FA (Cosley/Houston 1982; Haley/Hart
+  2015 on Kimchi; Rogoz 2000 on Polish), and land manager all confirmed clean. One fix:
+  Cosley-Houston Couloir's `length_m` (305, ~1000ft) was a copy/paste duplicate of sibling
+  Polish Route's value — AAJ ("ca. 700ft"), the route's own `pitch_detail` sum (200m), and a
+  trip report ("600 feet") all cluster around 213m instead — corrected. Flagged, not fixed:
+  area `prominence_ft` (473 vs ~400ft externally) was already disclosed as unresolved in the
+  row's own `data_quality` field, still unresolved; both Cosley-Houston and Polish Route have
+  a `seasonal_guidance.optimalWindow` ("April–June") that contradicts their own broader
+  `season`/`best_season` fields; Kimchi's `season` ("Apr") looks like its FA month leaked in
+  rather than reflecting its real Dec–May condition window described in its own `best_season`
+  text.
+- **Colonial Peak** — elevation, FA (Degenhardt/Strandberg 1931), coordinates, route
+  name/grade, and NPS permit fee structure all confirmed clean. No SQL. Flagged: `approach`
+  text says a Northwest Forest Pass is needed to park, contradicting the row's own
+  `access.passRequired: "None"` (plausibly correct, since the trailhead sits inside NPS/Ross
+  Lake NRA, but not confirmed via a direct nps.gov read this pass — blocked); a `corrections`
+  field references a stale routeId (`wa_colonial_peak_northeast`) that no longer matches this
+  row's actual id, left over from an earlier rename pass.
+- **Cutthroat Peak** (Complete South Buttress) — confirmed the area's `elevation_ft` had
+  drifted back to the stale 8,065 ft figure a prior pass (batch 7) already corrected to
+  8,066 ft across the peak's routes (Wikipedia/Peakbagger both agree on 8,066 ft). Fixed the
+  area row, its free-text `blurb` (same stale figure embedded in prose), and
+  `wa_north_ridge_3` — a sibling route outside this batch's picked list but carrying the same
+  stale 8,065 ft `high_point_ft`, found while checking siblings for the same root cause. FA
+  ("unknown"), grade (5.8/Grade III), land manager, and season on the route itself all
+  checked out clean. Flagged: the route's own `itinerary` schedule text says "~16 pitches"
+  while `pitches` says 22 (standard-route pitch count leaking into this Complete-variant's
+  prose); pitch count/length couldn't be independently re-confirmed this pass since WebFetch
+  403'd on every domain attempted.
+- **Concord Tower** (North Face) — audited fully clean. Verified the top-level `grade`
+  ("5.6") vs `rock_grade`/crux-pitch grade ("5.7") is not an error: Mountaineers.org and
+  Mountain Project both independently publish the route's overall grade as 5.6 despite the
+  5.7 crux pitch, a normal older-Beckey-route convention, and the row's own
+  `itinerary.sourceNote` already cites that source. The elevation dispute flagged in a prior
+  pass (7,569 on file vs 7,611 waypoint/area vs ~7,560 some external sources) remains
+  unresolved — no new source found to settle it.
+- **Copper Peak** (South Route) — elevation, prominence, coordinates, FA (Bennet/
+  Courtwright/Hagman 1937), and land manager all confirmed clean — explicitly checked for
+  the recurring fabricated "Chiwawa/Entiat Ranger District" error from earlier batches and
+  confirmed this row does NOT have it (correctly reads Chelan Ranger District). Also
+  corroborated the Dec 2025 Holden Village flood/landslide closure details against current
+  news coverage. No SQL. Flagged: a leftover `corrections` note treats this route as the
+  Olympics' (non-technical) Copper Mountain, contradicting the rest of the row which is
+  clearly the glaciated North Cascades Copper Peak — stale artifact needing a human
+  strip/rewrite.
+- **Corteo Peak** (Southwest Ridge) — elevation, coordinates, FA, and grade text confirmed
+  clean. Two fixes: area `prominence_ft` was a 1-ft outlier (651 vs Wikipedia/Peakbagger's
+  652); `loss_ft` was null on an out-and-back route with a populated, waypoint-consistent
+  `gain_ft` (3,245 ft) — filled with the same figure. Rejected a third proposed fix: an agent
+  argued `grade_num=2` should be 3.5 for "Class 3-4" under a claimed DB "midpoint" convention,
+  but spot-checking 15 other live "Class 3-4" routes shows no such convention (a roughly even
+  mix of grade_num 3 and 4, one other outlier at 2) — left flagged rather than applying an
+  unsupported number. Also flagged: the route's own `approach` text and one `itinerary`
+  objective line describe the peak's separate East Face route (via Horsefly Pass) rather than
+  this Southwest Ridge line, contradicting this same row's own `beta`/`descent_text`/
+  `waypoints`/`gpx` — the earlier id/name rename (from `wa_corteo_peak_southeast_face`) fixed
+  the label but left contaminated prose behind; needs a human rewrite, not a field patch.
+- **Crater Mountain** (Standard Route) — elevation, coordinates, and rock_grade confirmed
+  clean. One fix: the route's top-level `permit` field wrongly framed the entire route under
+  NPS/North Cascades NP complex backcountry-permit rules, contradicting this same row's own
+  `access.permit`/`emergency.notes` fields (and USFS's Jackita Ridge Trail #738 page), which
+  correctly place the whole standard route in the Pasayten Wilderness (Okanogan-Wenatchee NF,
+  free self-issue permit) — rewrote to match. Flagged: area `prominence_ft` (1,971 ft) vs
+  Wikipedia/Peakbagger's 1,928 ft — may reflect a newer LiDAR P600 resurvey (1,971 ft clears
+  the ~1,969 ft/600m P600 threshold cited as the reason this peak was recently added to that
+  list; 1,928 ft doesn't), but peakbagger.com itself was unreachable this pass to confirm
+  directly; `fa` is null with no source found naming a first-ascent party; `length_m: 107` on
+  an explicitly unroped scramble route looks like a leftover placeholder with no authoritative
+  replacement value found.
+- **Crooked Thumb Peak** (East Face) — confirmed the FA (Jackson/Jensen/Marts/Schmechel,
+  July 31 1963) via the original 1964 AAJ writeup, and the area's elevation/prominence
+  against Peakbagger/Wikipedia/PeakVisor — all clean. Correctly left `high_point_ft` null
+  rather than filling it from the area's `elevation_ft`: the 1963 AAJ account doesn't state
+  whether the party topped the true summit fin, and a modern trip report describes that true
+  summit as requiring separate 5.8+/A1 climbing beyond the class 3-4 terrain this route
+  describes — a real Picket Range false-summit risk, not something to guess past. Flagged for
+  a human with full AAJ archive or Beckey guide access.
+
+7 confirmed errors fixed across 5 peaks (SQL: `audits/sql/2026-08-06-batch-59.sql`); Concord
+Tower, Colonial Peak, and Crooked Thumb Peak audited fully clean. Notable this batch: two
+prior-pass "corrected" facts were found to have drifted back to their wrong values (Cutthroat
+Peak's area elevation, and — per batch 58's note — this is now the second time a
+previously-fixed elevation has needed re-fixing) — worth watching whether some upstream
+process is periodically re-seeding stale area-level data independently of route-level fixes.
