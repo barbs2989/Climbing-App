@@ -102,14 +102,21 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
           {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
+        {/* aria-label on all three: their only visible naming is the placeholder, which is not
+            an accessible name -- it is a hint, and it disappears the moment the field has text.
+            A screen reader announced these as bare "edit text". This is the sign-in GATE, so
+            since #584 made accounts mandatory it is the first screen every user meets.
+            Each label repeats the placeholder verbatim, including the reset-mode wording, so
+            the announced name and the visible words never diverge -- which is why #588 left
+            placeholder-only fields alone in general and why these three are safe to name. */}
         {mode === "up" && (
-          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Display name" autoComplete="name" style={field} />
+          <input value={name} onChange={(e) => setName(e.target.value)} aria-label="Display name" placeholder="Display name" autoComplete="name" style={field} />
         )}
         {mode !== "reset" && (
-          <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder="Email" type="email" autoComplete="email" style={field} />
+          <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Email" placeholder="Email" type="email" autoComplete="email" style={field} />
         )}
         {mode !== "forgot" && !done && (
-          <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder={mode === "reset" ? "New password" : "Password"} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
+          <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label={mode === "reset" ? "New password" : "Password"} placeholder={mode === "reset" ? "New password" : "Password"} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
         )}
         {mode === "in" && (
           <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
