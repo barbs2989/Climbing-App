@@ -453,8 +453,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             This is the climbing route, not the approach
           </label>
 
-          <label style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>
+          <label htmlFor="gps-device-type" style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>
           <select
+            id="gps-device-type"
             value={deviceType}
             onChange={(e) => setDeviceType(e.target.value)}
             style={{...styles.input}}
@@ -487,8 +488,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             style={{...styles.input}}
           />
 
-          <label style={{...styles.label}}>Additional notes</label>
+          <label htmlFor="gps-notes" style={{...styles.label}}>Additional notes</label>
           <textarea
+            id="gps-notes"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="e.g., Early season snow / Late season dry / Took West Ridge variant"
