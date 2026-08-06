@@ -49,8 +49,13 @@ const envFile = (f) => { try { return fs.readFileSync(path.join(ROOT, f), "utf8"
 const envText = envFile(".env") + "\n" + envFile(".env.local");
 const envVal = (k) => process.env[k] ?? (envText.match(new RegExp("^\\s*" + k + "\\s*=\\s*(\\S+)", "m")) || [])[1];
 const USE_DB = envVal("VITE_USE_DB") === "true" && !!envVal("VITE_SUPABASE_URL") && !!envVal("VITE_SUPABASE_ANON_KEY");
-const ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs");
-const STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
+// Local env describes the dev server this script SPAWNS. It says nothing about an app
+// served from somewhere else, so with --url the sample is resolved from the running app
+// instead (see the probe below). Checking production picked the seed-only "West Slabs",
+// failed to open it, and reported "could not open the sample route" -- which reads as a
+// broken deploy when nothing is wrong.
+let ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs");
+let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
 const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300 };
@@ -383,9 +388,25 @@ try {
   await waitForApp(60000);
   await page.waitForTimeout(3000);
 
-  log(`route detail (${USE_DB ? "DB" : "seed"} catalog, sample: ${ROUTE}):`);
   await tap("Climbs");
   for (let i = 0; i < 25; i++) { if (!/Loading climbs/.test(await page.innerText("body"))) break; await page.waitForTimeout(1500); }
+  // Ask the app which catalog it is actually serving, rather than inferring it from
+  // local env that does not apply to a remote target. The DB picker lists plain
+  // "Washington"; the seed one lists "Utah · 10 climbs".
+  let catalog = USE_DB ? "DB" : "seed";
+  if (URL_ARG && !(argOf("--route") && argOf("--state"))) {
+    const opts = await page.evaluate(() => {
+      const sel = document.querySelector("select");
+      return sel ? [...sel.options].map((o) => o.label) : [];
+    });
+    if (opts.length) {
+      const dbBacked = opts.some((o) => /^Washington\b/.test(o));
+      catalog = dbBacked ? "DB" : "seed";
+      if (!argOf("--state")) STATE = dbBacked ? "Washington" : "Utah";
+      if (!argOf("--route")) ROUTE = dbBacked ? "North Ridge (Complete)" : "West Slabs";
+    }
+  }
+  log(`route detail (${catalog} catalog, sample: ${ROUTE}):`);
   // The seed state picker labels its options "Utah · 10 climbs" while the DB one
   // uses plain "Washington" — match by prefix so both drill in, and dispatch a real
   // change event so React's controlled select actually updates.
