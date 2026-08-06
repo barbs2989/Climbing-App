@@ -36,6 +36,12 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
+          # Keep the deployed app browsable without an account. #584 made the demo
+          # gate opt-IN (VITE_DEMO_AUTOLOGIN) and left it unset here, which silently
+          # turned production into signup-required: a first-time visitor got a
+          # sign-in box and could not see a single climb. Whether the app gates on a
+          # real account is a product decision, and the recorded one is to stay open.
+          VITE_DEMO_AUTOLOGIN: "true"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
