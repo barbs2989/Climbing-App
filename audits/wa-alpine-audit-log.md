@@ -3777,3 +3777,86 @@ repeated verbatim across multiple queries, which raises but doesn't fully restor
 7 confirmed errors fixed across 3 peaks (SQL: `audits/sql/2026-08-06-batch-53.sql`); 8 fields
 flagged for human review; Amphitheater Mountain's 5 remaining routes and its area row audited
 clean save for the one Left Side flag above.
+
+## Batch 54 — 2026-08-06 (Pass 2, batch 3)
+
+10 routes across 7 peaks, checked via 7 parallel research agents (one per peak): Austera Peak (3
+routes), Bacon Peak, Bear Mountain (Chilliwack Range), Prusik Peak (Beckey-Davis), Big Kangaroo
+(Beckey-Tate), Morning Star Peak (Beyond Redlining), and Big Four Mountain (2 routes). WebFetch
+was 403-blocked for essentially every target domain across all seven agents this run (Wikipedia,
+Peakbagger, listsofjohn.com, Mountain Project, StephAbegg.com, AAC Publications) — same
+proxy-policy issue as recent batches; all findings lean on WebSearch snippet cross-referencing,
+generally with multiple independent snippets per fact.
+
+- **Austera Peak** (`wa_austera_peak` + 2 routes) — 2 confirmed errors, both on the Southwest
+  Ridge route. Its `data_quality.gaps` claimed no public GPS track exists for the route while the
+  same row's `gpx` field holds a populated 325-point track — removed the stale claim. Its
+  `waypoints[0]` (Eldorado Creek Trailhead) held lat/lng 48.5136/-121.1964, contradicting both its
+  own `approach_logistics.trailheadLat/Lng` and the sibling route's matching waypoint for the
+  identical physical trailhead (both agree on 48.49261/-121.11761) — corrected. **Not fixed,
+  worth a note:** the research agent also flagged both Austera routes' `dist_km` (4.5 for both)
+  as inconsistent with their waypoints' full trailhead-to-summit mileage. Checked this by hand
+  before writing SQL: `dist_km`/`gain_ft`/`loss_ft` on these two routes appear to be scoped to
+  just the summit-day segment (high camp to summit), not the full backpack-in — e.g. `wa_austera_
+  peak`'s camp-to-summit waypoint span is 2.8 mi one-way, which converts to 4.5 km almost exactly,
+  matching the stored value. That said, both unrelated routes share byte-identical `gain_ft`/
+  `loss_ft`/`dist_km` (1280/592/4.5), which is itself odd enough to flag for a human look rather
+  than either fix or dismiss outright. Elevation/prominence, summit coordinates, the 1965 Firey/
+  Meulemans/Hovey FA, and Chockstone Route's grade/pitch description all confirmed clean.
+- **Bacon Peak** (`wa_bacon_peak_diobsud`) — 2 confirmed errors, both on the area row: `elevation_
+  ft` (7067) and `prominence_ft` (2512) disagreed with Wikipedia/Wikidata/Peakbagger, which
+  converge on 7,070/2,505 — fixed both. `elevation_ft` was also self-inconsistent with the route's
+  own `high_point_ft` and summit waypoint (already 7070). Coordinates, FR-1107 closure note, and
+  the Noisy-Diobsud Wilderness/parent-area placement all confirmed clean. Flagged, not fixed: a
+  descent-glacier discrepancy between `rope_note` and `descent_text`, and an unresolved first
+  ascent (null on file, sources hedge on 1905/Robertson-Logan).
+- **Bear Mountain, Chilliwack Range** (`wa_bear_mountain_chilliwack_north_buttress`) — 1 confirmed
+  error: `approach_logistics.trailheadLat/Lng` (48.9583/-121.6417) didn't match the real Hannegan
+  Pass Trailhead — the row's own `waypoints[0]` entry for the same trailhead already had it right
+  (48.9101/-121.5927, matching WTA/Trailforks) — fixed. Elevation, prominence, coordinates, and
+  the 1967 Beckey/Fielding FA all confirmed. Flagged, not fixed (several structural issues, none
+  with a clear single-field correction): `gain_ft`/`loss_ft` (5950/5950) doesn't match the
+  itinerary's own day-by-day sums, and those sums don't even net to each other (7300 gain vs 6250
+  loss for a round trip); `waypoints`/`gpx` aren't sorted by `distMi` (summit sorts second, ahead
+  of the pass and camps); and `approach`/`itinerary.sourceNote` both claim the row's mileage
+  "matches" 30.58 km when `dist_km` is actually 14.5 km, apparently conflating two different named
+  approaches to the same peak.
+- **Prusik Peak, Beckey-Davis** (`wa_beckey_davis`) — 3 confirmed errors. `access._raw.group_size_
+  limits` said "Maximum party 12 people," contradicting the row's own `access.rules`/`group_limit`
+  (8) and Recreation.gov's published Enchantment Permit Area cap — fixed to 8.
+  `waypoints[0]` was labeled "Snow Lakes Trailhead" but its coordinates are actually Stuart Lake
+  Trailhead's (match the row's own `approach_logistics` within survey tolerance; the real Snow
+  Lakes Trailhead is a different location near Leavenworth) — relabeled. `length_m` (198, ~650 ft)
+  contradicted the row's own `rope_note` ("700ft") and SummitPost/StephAbegg, both of which give
+  700 ft — corrected to 213 m. Elevation, prominence, the 1962 Beckey/Davis FA, and the descent/
+  rappel sequence all confirmed. Flagged, not fixed: `pitches` (7) vs. a 6-entry `pitch_detail`
+  array (sources themselves split 6 vs. 7, so no clear correction), and `waypoints[3]` sharing
+  identical coordinates with the summit waypoint despite being a different named point.
+- **Big Kangaroo, Beckey-Tate** (`wa_beckey_tate`) — 1 confirmed error: `itinerary.days[0].gainFt`/
+  `lossFt` and `itinerary.totalNote` both said 2,800 ft, contradicting the row's own top-level
+  `gain_ft`/`loss_ft` (3166) — independently verified from the row's own approach text (5,160 ft
+  trailhead to 8,326 ft summit = 3,166 ft) — fixed the itinerary to match. Elevation, prominence,
+  coordinates, and the 1942 Beckey/Beckey/Varney FA all confirmed. Flagged, not fixed: the route's
+  grade (5.9+ vs. older sources' III 5.8/5.9) and aspect (S vs. a primary photo source's "southeast
+  -facing") both have genuinely conflicting sourcing, already partly self-flagged on file.
+- **Morning Star Peak, Beyond Redlining** (`wa_beyond_redlining`) — 2 confirmed errors. `overview`
+  said the route was established "in July 2020," contradicting the row's own `fa` field ("May
+  2020") and AAC Publications (May 29, 2020) — fixed. Area `prominence_ft` (1000) disagreed with
+  Wikipedia and peak-database sources, which give 980 — fixed. Grade, pitch count, FA party, and
+  approach description all confirmed. Flagged, not fixed: an `access.permit` field claiming a
+  wilderness permit is required, contradicting the row's own top-level `permit` field and this
+  area's actual (non-wilderness) land status — plausible cross-contamination from a different
+  trailhead record, not conclusively ruled out.
+- **Big Four Mountain** (`wa_big_four_mountain` + 2 routes) — 2 confirmed errors. Area `prominence
+  _ft` (1150) disagreed with Wikipedia/listsofjohn.com/peakery.com, which converge on 1,080 —
+  fixed. Spindrift Couloir's `max_angle` (90) contradicted the row's own `beta` text ("roughly
+  95-degree angles") and the AAC/AAJ first-ascent report ("IV+ 5.9 95°") — fixed to 95. FA party/
+  date for both routes, route lengths, and the well-documented 1998/2010/2015 ice-cave-collapse
+  fatalities all confirmed. Flagged, not fixed: both routes' shared trailhead waypoint elevation
+  (1640 ft) is likely low — sources cluster 1,700-1,750 ft and the row's own `gain_ft` math
+  implies ~1,720 — but no single authoritative source pins an exact figure, so left for a human
+  call rather than guessed.
+
+13 confirmed errors fixed across 7 peaks (SQL: `audits/sql/2026-08-06-batch-54.sql`); 12 fields
+flagged for human review; Austera Peak's original route and Chockstone Route audited clean save
+for the dist_km note above.
