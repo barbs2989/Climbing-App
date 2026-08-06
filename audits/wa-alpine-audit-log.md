@@ -3504,3 +3504,102 @@ not a mangled reference to the peak itself.
   rather than guessed.
 
 Next batch will continue alphabetically after `wa_true_grit_2` (see progress file).
+
+## Batch 50 (2026-08-06)
+
+Nine peaks, 10 routes (`wa_ultramega_ok` / Burgundy Spire, `wa_upper_north_ridge_w_great_gendarme`
+/ Mount Stuart, `wa_vasiliki_ridge_standard` / Vasiliki Ridge, `wa_vesper_peak_north_face_ragged_edge`
+/ Vesper Peak, `wa_warrior_peak_standard` / Warrior Peak, `wa_west_craggy_peak_standard_route` /
+West Craggy Peak, `wa_west_twin_needle_south_route` / West Twin Needle, `wa_whatcom_peak_southwest_route`
+/ Whatcom Peak, `wa_whitehorse_mountain_nw_shoulder` + `wa_whitehorse_mountain_r1` / Whitehorse
+Mountain), researched via 8 parallel agents, one per peak group. WebFetch to primary sources
+(Mountain Project, SummitPost, Peakbagger, Wikipedia, Beckey's guide) was blocked at the
+network/proxy level for the entire run, so every finding below leans on WebSearch snippet
+corroboration across multiple independent queries rather than direct page reads — noted per
+item where that materially limited confidence. 11 confirmed fixes written to
+`audits/sql/2026-08-06-batch-50.sql`, pre-flighted with `check:sql` (all 11 write targets
+confirmed to exist live, no deletes proposed).
+
+**Fixed this batch:** Vasiliki Ridge's `high_point_ft` (8190 ft) had never caught up to the
+row's own `corrections` field, which already documents a 2025 GPS/LiDAR survey settling on
+8,203 ft — the area row and the route's own summit waypoint both already carried the corrected
+figure. Warrior Peak got three fixes: area elevation (7314→7320 ft, matching the route's own
+already-correct `high_point_ft` and Wikipedia/PeakVisor/Wikidata), prominence (804→760 ft, no
+source corroborates 804), and `rock_grade` ("3rd class scrambling"→"Class 4, low 5th",
+which was self-contradicting the row's own `grade` field and hazard-waypoint note describing
+the same summit step) — plus reconciling a duplicate `access.land_manager`/`landManager` pair
+that disagreed on whether the route crosses both Olympic NF and Olympic NP (the detailed
+`landManager` field was externally verified against the WTA/USFS-documented boundary sign
+~7.1 mi in; `land_manager` was the stale NPS-only outlier). Burgundy Spire's Ultramega OK got
+three fixes: `dist_km` (10.62→5.31 km, was storing the round-trip figure the app then doubles
+again per CLAUDE.md's documented one-way convention — resolved from the route's own
+waypoints/itinerary, no external source needed); `gain_ft` (4170→4300, matching the row's own
+`loss_ft` and itinerary, since a car-to-car loop's gain must equal its loss); and
+`road.seasonalGate`'s SR-20 closure start date (Dec 12→Dec 4, 2025, per WSDOT's official
+season-closure announcement — the June 14, 2026 reopening date was independently confirmed
+correct and left alone). Mount Stuart's Upper North Ridge w/Great Gendarme repeated the same
+nonexistent "Leavenworth Ranger District" error already fixed on this same land unit in
+batches 4, 5, and 12 — corrected to Wenatchee River Ranger District, and the row's own false
+`corrections: "None — consistent across multiple sources"` claim was overwritten with a note
+pointing at the open flags below. Whatcom Peak's Southwest Route had a first-ascent misspelling
+("Buchanan"→"Buchanen") where the route's own parent-area blurb already had the correct
+spelling, making the route row the sole outlier even within its own DB; also fixed a ~677m
+summit-coordinate discrepancy between the area/`approach_logistics` fields (48.8576357,
+-121.373549) and the route's own summit waypoint (48.8561, -121.3825), which converts exactly
+from Wikipedia's DMS coordinate for Whatcom Peak. Whitehorse Mountain's Northwest Shoulder had
+`max_angle` (55°) contradicting its own `descent_text`, which explicitly describes the summit
+downclimb reaching "up to about 60 degrees" — fixed to 60; left the sibling route `r1`'s
+matching 55° alone since r1's own pitch_detail text (~50-55°) actually supports it.
+
+**Audited clean, no action:** Vesper Peak's North Face (Ragged Edge) — FA, grade/pitch
+internal consistency, approach/access, gain/loss, and hazards (including corroborating a
+documented September 2024 rockfall event via a CascadeClimbers thread) all checked out; its
+elevation fix remains pending from batch 49 and was not re-proposed. `dist_km` is a likely
+round-trip-vs-one-way convention issue (same pattern CLAUDE.md warns not to hand-patch) —
+left for a future `audit:distances` pass.
+
+**Biggest open flag:** `wa_whitehorse_mountain_r1`'s GPX track is byte-for-byte identical to
+its `nw_shoulder` sibling (all 916 points match), and its top-level `gain_ft`/`loss_ft`/`dist_km`
+are also copied wholesale from the sibling — contradicting r1's own itinerary and pitch_detail
+text, which describe a materially different, externally-corroborated route (a "Snow Gulch"
+approach via Ashton Creek, matching a real trip report's stats almost exactly). r1's own
+`approach` field even self-contradicts, opening by describing the standard Niederprum/Lone
+Tree Pass/High Pass line before switching to Snow Gulch language mid-field. This needs a human
+rewrite with a freshly-plotted track, not a field patch.
+
+**Other significant flags, not auto-fixed:**
+
+- **Mount Stuart** (`wa_upper_north_ridge_w_great_gendarme`): the row's `fa` field may have
+  the Great Gendarme's first-ascent credit swapped with the original ridge's bypass-FA credit
+  — search snippets (climbaz.com's Rupley interview, AAI) suggest the 1956 Rupley/Gordon party
+  bypassed the Gendarme via a rappel rather than climbing it, and that Jim Wickwire & Fred
+  Stanley's 1964 ascent is the Gendarme's real FA, the reverse of what's on file. Also: a
+  waypoint ("Top of Sherpa Glacier notch") sits ~0.2 mi from neighboring Sherpa Peak's own
+  summit and contradicts the route's own `face` field, which correctly names the Stuart
+  Glacier — looks like cross-peak contamination, same family as prior batches' sibling-route
+  bleed. Pitch count disagrees across three fields (16 in `pitch_detail`, 17 in `rope_note`,
+  18 top-level), and `dist_km`/`gain_ft` are inconsistent with the row's own waypoints. All
+  left flagged — WebFetch to primary sources was blocked this entire run, and this row's
+  historical claims deserve a Beckey/AAJ-level source before editing.
+- **West Craggy Peak** (`wa_west_craggy_peak_standard_route`): the row's own `corrections`
+  field claims "elevationFt...listed as null," but the area's `elevation_ft` (8366) is
+  populated and disagrees with the route's own `high_point_ft` (8372) that the same note
+  claims was applied — a stale/self-contradicting note on top of a genuinely disputed
+  elevation (8366 vs. 8367 vs. 8372 across sources, no clear winner). Also, the "Copper Glance
+  Creek crossing" waypoint (distMi 1.6, elev 6400 ft) is very likely misplaced — four
+  independent sources (Mountaineers.org, WTA, USFS trail page, Wenatchee Outdoors) put the
+  real crossing at ~0.4 mi from the trailhead, nowhere near 6,400 ft — but no source gives an
+  exact replacement elevation, only a rough range, so this wasn't patched.
+- **West Twin Needle** (`wa_west_twin_needle_south_route`): top-level `grade`/`commitment`
+  ("Grade III, 5.7") contradicts the row's own `beta` and `pitch_detail` fields, which quote
+  an outside source giving "Grade II" for the same route — the same self-contradiction pattern
+  already flagged on sibling wa_east_twin_needle_south_route in batch 10. Also, an "Eye Col"
+  waypoint and a "Himmelhorn–West Twin Needle col" appear to be conflated as the same feature
+  when external sources place them on opposite sides of the peak, and two consecutive
+  waypoints imply a physically impossible 0.8 mi trail distance between points ~3 mi apart
+  straight-line — the GPX track's tail also looks like it doesn't reach the real summit.
+  `gain_ft`/`loss_ft` (7336/7336) don't match the route's own itinerary day-sum (9000/9000)
+  either. No confident single fix for any of this — needs a human with route-specific
+  guidebook access.
+
+Next batch will continue alphabetically after `wa_whitehorse_mountain_r1` (see progress file).
