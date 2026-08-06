@@ -3603,3 +3603,41 @@ rewrite with a freshly-plotted track, not a field patch.
   guidebook access.
 
 Next batch will continue alphabetically after `wa_whitehorse_mountain_r1` (see progress file).
+
+## Batch 51 — 2026-08-06
+
+Three routes across 2 peaks — the last unaudited routes in the pass-1 scope (confirmed via a
+live query: no route id sorts after `wa_witches_tower_south_face` in scope). **Pass 1 is
+complete.** Checked via 2 parallel research agents, one per peak.
+
+- **Windy Peak** (`wa_windy_peak_iron_gate_trail`, `wa_windy_peak_windy_creek_trail`) — both
+  routes audited clean. Elevation (8,335 ft) and prominence (1,773 ft) confirmed against
+  Wikipedia/Wikidata; summit coordinates match Wikidata to the 3rd-4th decimal, ruling out
+  confusion with the other, unrelated "Windy Peak/Pass" near Hwy 20/Rainy Pass; the "easternmost
+  Bulger" claim and the 1932-1963 L-4 lookout history (built by Allen & Johnson, used briefly by
+  the WWII Aircraft Warning Service, demolished 1963) both confirmed via firetower.org and
+  Wikipedia; both approach descriptions (Iron Gate/Boundary Trail/Sunny Pass, and Cathedral
+  Driveway/Windy Creek Trail) matched published directions (willhiteweb, WTA) closely, including
+  road mileages. One minor blurb detail — surviving telephone-line remnants on the NW slope —
+  was unverified (plausible for a lookout of that era, not contradicted, not worth a flag).
+- **Witches Tower** (`wa_witches_tower_south_face`) — elevation (8,566 ft), prominence (210 ft),
+  and summit coordinates all confirmed against Wikipedia/Wikidata; the Colchuck Lake -> Aasgard
+  Pass -> summit waypoint chain is geographically coherent and matches known elevations. One
+  flagged, not fixed: the route's own `itinerary.sourceNote` claims a cited trip report's "14.0
+  miles" round-trip figure "matches the on-file 22.53 km distance almost exactly," but the row's
+  actual `dist_km` is 12.9, not 22.53 — the note is asserting a match to a number that isn't in
+  the field. Whether the fix belongs on `dist_km`, on the note text, or reflects the same
+  one-way/round-trip `dist_km` convention split flagged project-wide in `CLAUDE.md` (never
+  bulk-corrected) isn't resolvable without the source trip report itself (WebFetch to
+  SummitPost/Mountain Project/etc. was blocked at the network/proxy level again this run, same
+  as batch 50) — left for a human to resolve. The route-naming inconsistency already
+  self-documented in `data_quality.gaps` (South Face vs. West Buttress grade/pitch confusion) was
+  independently corroborated by search results, not newly found.
+
+0 confirmed errors this batch — no SQL file. 2 routes clean, 1 flagged for human review.
+
+**Pass 1 complete: 524 routes it started with, 526 in scope by the time it finished** (2 routes
+were added to the catalog mid-pass by unrelated enrichment work landing on `main`; since they
+sorted alphabetically before the pass's cursor, they were never reached this pass). Starting
+pass 2 from the top of the alphabet will pick them up along with everything else — facts go
+stale, so a fresh full pass is the intended behavior, not a gap to patch around.

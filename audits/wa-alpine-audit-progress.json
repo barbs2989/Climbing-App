@@ -1,9 +1,9 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
-  "pass": 1,
-  "last_processed_id": "wa_whitehorse_mountain_r1",
-  "total_in_scope_last_count": 524,
+  "pass": 2,
+  "last_processed_id": null,
+  "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
     {
@@ -1205,6 +1205,20 @@
         "wa_vesper_peak_north_face_ragged_edge: dist_km (13.7) looks like a round-trip-vs-one-way convention issue (matches the pattern CLAUDE.md warns not to hand-patch) -- left for a future audit:distances pass.",
         "wa_vesper_peak_north_face_ragged_edge: name/route-identity risk -- Mountain Project lists a separate, distinct 4-pitch 'North Face' route alongside the 6-pitch 'Ragged Edge' this row's data actually matches; the area's route_count=4 vs. only 3 named routes in its blurb suggests the unnamed 4th slot may be meant for that distinct route, not a duplicate of this one."
       ]
+    },
+    {
+      "batch_number": 51,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_windy_peak_iron_gate_trail",
+        "wa_windy_peak_windy_creek_trail",
+        "wa_witches_tower_south_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 2,
+      "sql_file": null,
+      "note": "Last 3 routes in pass-1 scope (confirmed via live query: nothing sorts after wa_witches_tower_south_face). Windy Peak's two routes (Iron Gate/Boundary Trail and Cathedral Driveway/Windy Creek Trail approaches) both audited clean against Wikipedia/Wikidata/firetower.org/WTA/willhiteweb -- elevation, prominence, coordinates, 'easternmost Bulger' claim, and 1932-1963 lookout history all confirmed. Witches Tower's South Face route: elevation/prominence/coordinates and the Colchuck Lake-Aasgard Pass waypoint chain confirmed, but flagged (not fixed) a self-contradiction where itinerary.sourceNote claims a trip report's 14.0mi round-trip 'matches the on-file 22.53 km distance almost exactly' when the row's actual dist_km is 12.9 -- unresolvable without the source trip report (WebFetch blocked at proxy level again this run). PASS 1 COMPLETE."
     }
   ]
 }
