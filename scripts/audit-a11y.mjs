@@ -148,13 +148,27 @@ const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile
 await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
 await page.waitForTimeout(3500);
 
+let reached = 0;
 for (const t of TABS) {
   if (!(await tap(t))) { console.log(`  (skip ${t}: not reachable)`); continue; }
+  reached++;
   await page.waitForTimeout(600);
   record(t, await page.evaluate(AUDIT));
   console.log(`  ${t}: ${findings.length} cumulative`);
 }
+const controls = await page.evaluate(() => document.querySelectorAll('button, a[href], input, select, textarea').length);
 await browser.close();
+
+// A run that reaches nothing reports zero findings, which reads exactly like a clean app.
+// That happened for real: once the demo gate became opt-in, production served a sign-in wall,
+// every tab was unreachable, and this script cheerfully printed all-zero. Refuse to report a
+// pass it did not earn.
+if (reached < TABS.length) {
+  console.error(`\nFAILED: only reached ${reached}/${TABS.length} tabs (page had ${controls} controls).`);
+  console.error(`Zero findings here means "nothing was measured", not "nothing is wrong".`);
+  console.error(`If the app is behind a sign-in wall, seed a session first or point --url at a signed-in build.`);
+  process.exit(1);
+}
 
 const byKind = {};
 for (const f of findings) (byKind[f.kind] = byKind[f.kind] || []).push(f);
