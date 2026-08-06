@@ -251,17 +251,17 @@ console.log("3. DUPLICATE ROUTES  (same name on the same area — what a UNIQUE 
 const byKey = new Map();
 for (const r of scoped) {
   if (!r.area_id) continue;
-  const k = `${r.area_id} ${norm(r.name)}`;
+  const k = `${r.area_id}\u0000${norm(r.name)}`;
   if (!byKey.has(k)) byKey.set(k, []);
   byKey.get(k).push(r);
 }
 const dupes = [...byKey.entries()].filter(([, rs]) => rs.length > 1);
-const realDupes = dupes.filter(([k]) => !PLACEHOLDER.test(k.split(" ")[1]));
+const realDupes = dupes.filter(([k]) => !PLACEHOLDER.test(k.split("\u0000")[1]));
 console.log(`   duplicate (area, name) pairs : ${dupes.length}`);
 console.log(`     placeholder names (fine)   : ${dupes.length - realDupes.length}`);
 console.log(`     REAL collisions (suspect)  : ${realDupes.length}`);
 for (const [k, rs] of realDupes) {
-  const [aid, nm] = k.split(" ");
+  const [aid, nm] = k.split("\u0000");
   console.log(`     x${rs.length}  ${((areas.get(aid) || {}).name || "?").slice(0, 28).padEnd(28)} | ${nm.slice(0, 30).padEnd(30)} | ${rs.map(r => r.id).join(", ")}`);
 }
 console.log("");
@@ -384,13 +384,13 @@ for (const col of NUMERIC) {
   for (const r of scoped) {
     const v = r[col];
     if (v == null || v === 0) continue;
-    const k = `${norm(r.name)} ${v}`;
+    const k = `${norm(r.name)}\u0000${v}`;
     if (!groups.has(k)) groups.set(k, []);
     groups.get(k).push(r);
   }
   for (const [k, rs] of groups) {
     if (new Set(rs.map(r => r.area_id)).size < 2) continue;
-    const [nm, val] = k.split(" ");
+    const [nm, val] = k.split("\u0000");
     if (PLACEHOLDER.test(nm)) continue;
     numericContam.push({ column: col, name: nm, value: Number(val),
                          peaks: new Set(rs.map(r => r.area_id)).size,
@@ -494,7 +494,7 @@ const report = {
   idScoping: { peakScoped: scoped.length - orphan.length, nameDerived: orphan.length,
                collisionFamilies: collisions.map(([b, rs]) => ({ base: b, ids: rs.map(r => r.id) })) },
   contamination,
-  duplicateRoutes: realDupes.map(([k, rs]) => ({ areaId: k.split(" ")[0], name: k.split(" ")[1], ids: rs.map(r => r.id) })),
+  duplicateRoutes: realDupes.map(([k, rs]) => ({ areaId: k.split("\u0000")[0], name: k.split("\u0000")[1], ids: rs.map(r => r.id) })),
   outOfStatePlaceNames: leaks,
   impossibleSummits: impossible,
   numericContamination: numericContam,
