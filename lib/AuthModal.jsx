@@ -43,9 +43,15 @@ export default function LoginScreen({ onClose, onAuthed }) {
     onClose && onClose();
   };
 
+  // role/aria-modal live on the BACKDROP, not the inner panel — the other 39 dialogs in this
+  // app do the same, and useDialogA11y (lib/dialogA11y.js) depends on it: Escape closes by
+  // calling dlg.click() on the element carrying role="dialog", expecting that element's own
+  // handler to dismiss. With the role on the panel, that click hit
+  // onClick={e=>e.stopPropagation()} and was swallowed, so Escape silently did nothing on the
+  // sign-in modal — the one a keyboard user meets first.
   return (
-    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
-      <div onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" style={{ width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
+    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Sign in" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+      <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
           <div style={{ fontSize: 19, fontWeight: 800 }}>{mode === "in" ? "Welcome back" : "Create your account"}</div>
           <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>
