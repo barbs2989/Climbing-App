@@ -144,25 +144,25 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={label}>Listing basics</div>
-        <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title (e.g. AMGA Certified Rock Guide)" style={inp} />
-        <input value={baseLocation} onChange={e => setBaseLocation(e.target.value)} placeholder="Base location (city, state)" style={{ ...inp, marginTop: 8 }} />
-        <input value={specialty} onChange={e => setSpecialty(e.target.value)} placeholder="Specialty (short line)" style={{ ...inp, marginTop: 8 }} />
-        <textarea value={bio} onChange={e => setBio(e.target.value)} rows={4} placeholder="Bio" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
+        <input aria-label="Title" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title (e.g. AMGA Certified Rock Guide)" style={inp} />
+        <input aria-label="Base location (city, state)" value={baseLocation} onChange={e => setBaseLocation(e.target.value)} placeholder="Base location (city, state)" style={{ ...inp, marginTop: 8 }} />
+        <input aria-label="Specialty (short line)" value={specialty} onChange={e => setSpecialty(e.target.value)} placeholder="Specialty (short line)" style={{ ...inp, marginTop: 8 }} />
+        <textarea aria-label="Bio" value={bio} onChange={e => setBio(e.target.value)} rows={4} placeholder="Bio" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-          <input value={dayRate} onChange={e => setDayRate(e.target.value.replace(/[^0-9]/g, ""))} placeholder="Day rate ($)" style={inp} />
+          <input aria-label="Day rate ($)" value={dayRate} onChange={e => setDayRate(e.target.value.replace(/[^0-9]/g, ""))} placeholder="Day rate ($)" style={inp} />
           <select aria-label="Maximum group size" value={groupMax} onChange={e => setGroupMax(e.target.value)} style={{ ...inp, maxWidth: 180 }}>{["1", "2", "3", "4", "6"].map(n => <option key={n} value={n}>{"Up to " + n}</option>)}</select>
         </div>
-        <input value={regions} onChange={e => setRegions(e.target.value)} placeholder="Regions (comma-separated)" style={{ ...inp, marginTop: 8 }} />
-        <input value={languages} onChange={e => setLanguages(e.target.value)} placeholder="Languages (comma-separated)" style={{ ...inp, marginTop: 8 }} />
-        <textarea value={cancellationPolicy} onChange={e => setCancellationPolicy(e.target.value)} rows={3} placeholder="Cancellation policy (shown to clients)" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
+        <input aria-label="Regions (comma-separated)" value={regions} onChange={e => setRegions(e.target.value)} placeholder="Regions (comma-separated)" style={{ ...inp, marginTop: 8 }} />
+        <input aria-label="Languages (comma-separated)" value={languages} onChange={e => setLanguages(e.target.value)} placeholder="Languages (comma-separated)" style={{ ...inp, marginTop: 8 }} />
+        <textarea aria-label="Cancellation policy (shown to clients)" value={cancellationPolicy} onChange={e => setCancellationPolicy(e.target.value)} rows={3} placeholder="Cancellation policy (shown to clients)" style={{ ...inp, marginTop: 8, resize: "vertical", fontFamily: "inherit" }} />
 
         <div style={label}>Primary certification track</div>
         <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>This determines exactly which disciplines you can be listed under — we cross-check it against AMGA/IFMGA's public directories before listing you.</div>
         <select aria-label="Primary certification track" value={certTrack} onChange={e => setCertTrack(e.target.value)} style={inp}>{tracks.map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
         {track.length ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>{track.map(d => <span key={d} style={{ fontSize: 11.5, fontWeight: 600, color: C.blue, background: C.blueBg, borderRadius: 20, padding: "3px 9px" }}>{d}</span>)}</div> : null}
         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-          <input value={certNumber} onChange={e => setCertNumber(e.target.value)} placeholder="Certification number" style={inp} />
-          <input value={issuingOrg} onChange={e => setIssuingOrg(e.target.value)} placeholder="Issuing org" style={{ ...inp, maxWidth: 140 }} />
+          <input aria-label="Certification number" value={certNumber} onChange={e => setCertNumber(e.target.value)} placeholder="Certification number" style={inp} />
+          <input aria-label="Issuing org" value={issuingOrg} onChange={e => setIssuingOrg(e.target.value)} placeholder="Issuing org" style={{ ...inp, maxWidth: 140 }} />
         </div>
 
         <div style={label}>Additional certifications (optional)</div>
@@ -170,12 +170,12 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
         {crossCutting.map((c, i) => <div key={i} style={{ fontSize: 12.5, color: C.textSub, marginBottom: 4 }}>{CROSS_CUTTING.find(x => x[0] === c.type)[1] + " — " + c.cert_number}</div>)}
         <div style={{ display: "flex", gap: 8 }}>
           <select aria-label="Additional certification" value={ccType} onChange={e => setCcType(e.target.value)} style={inp}>{CROSS_CUTTING.map(x => <option key={x[0]} value={x[0]}>{x[1]}</option>)}</select>
-          <input value={ccNumber} onChange={e => setCcNumber(e.target.value)} placeholder="Cert number" style={inp} />
+          <input aria-label="Cert number" value={ccNumber} onChange={e => setCcNumber(e.target.value)} placeholder="Cert number" style={inp} />
           <button onClick={addCrossCutting} style={{ background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 9, padding: "0 14px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Add</button>
         </div>
 
         <div style={label}>Insurance</div>
-        <input value={insuranceCarrierName} onChange={e => setInsuranceCarrierName(e.target.value)} placeholder="Insurance carrier name" style={inp} />
+        <input aria-label="Insurance carrier name" value={insuranceCarrierName} onChange={e => setInsuranceCarrierName(e.target.value)} placeholder="Insurance carrier name" style={inp} />
         <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>Self-attested, not independently confirmed active — we do check the carrier name is a real, findable company.</div>
         <label style={{ display: "block", marginTop: 8, fontSize: 12.5, color: C.textSub }}>Certificate of insurance (photo)
           <input type="file" accept="image/*" onChange={e => setInsuranceFile(e.target.files[0] || null)} style={{ display: "block", marginTop: 4 }} />
@@ -192,7 +192,7 @@ export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
           </div>
         ))}
         <div style={{ ...label, marginTop: 10 }}>Signature</div>
-        <input value={sig} onChange={e => setSig(e.target.value)} placeholder="Type your full legal name" style={inp} />
+        <input aria-label="Type your full legal name" value={sig} onChange={e => setSig(e.target.value)} placeholder="Type your full legal name" style={inp} />
 
         <button onClick={submit} disabled={!ok || submitting} style={{ width: "100%", marginTop: 18, background: ok ? C.blue : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 13, fontSize: 14, fontWeight: 700, cursor: ok ? "pointer" : "default" }}>
           {submitting ? "Submitting…" : "Submit application"}

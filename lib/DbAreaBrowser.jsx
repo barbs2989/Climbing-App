@@ -348,7 +348,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   return (
     <div>
       {backRow(onBack, "Route finder" + (scope ? " · " + scope.name : ""), C)}
-      <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search routes…" style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
+      <input aria-label="Search routes" value={q} onChange={e => setQ(e.target.value)} placeholder="Search routes…" style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
       <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>
         <button onClick={() => { setDf(af); setSheet(true); }} style={{ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + (nF ? C.blue : C.border), background: nF ? C.blueBg : C.surface, color: nF ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer" }}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
         <button onClick={saveSearch} style={{ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer" }}>Save search</button>
@@ -676,7 +676,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
         <button onClick={onClose} aria-label="Close" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, width: 38, height: 38, fontSize: 18, cursor: "pointer" }}>{"×"}</button>
       </div>
       <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
-        <input value={q} onChange={e => setQ(e.target.value)} placeholder="Filter areas & crags…" style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+        <input aria-label="Filter areas & crags" value={q} onChange={e => setQ(e.target.value)} placeholder="Filter areas & crags…" style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
       </div>
       <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
         {q.trim() ? (
