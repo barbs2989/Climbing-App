@@ -479,7 +479,10 @@ const CLIMBERS=[
 ];
 const DEMO_FILLERS=false;
 const PRIVACY_CONTROLS_LIVE=false;
-const DEMO_AUTOLOGIN=true;
+// Opt-IN demo gate. Unset — which is production — means the real Supabase session is the
+// only way into the app (see realAuthGate in ClimbMatch.jsx). Set VITE_DEMO_AUTOLOGIN=true
+// for seed-data browsing and for check:ui, which drives 17 screens and cannot sign in.
+const DEMO_AUTOLOGIN=import.meta.env.VITE_DEMO_AUTOLOGIN==="true";
 const SHOW_COVERS=false;
 const FILLER_CLIMBERS=DEMO_FILLERS?(()=>{
   const fh=(k,sd)=>{let x=Math.imul((k+1)^0x9e3779b9,2654435761)^Math.imul(sd+1,40503);x=Math.imul(x^(x>>>15),2246822519);x^=x>>>13;return (x>>>0);};
