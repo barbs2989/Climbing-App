@@ -317,7 +317,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
               <p style={{...styles.helpText}}>
                 Paste your GPS data. Format: GPX XML or one coordinate per line (lat, lng)
               </p>
-              <textarea
+              <textarea aria-label="Paste coordinates or GPX"
                 value={coordinates}
                 onChange={handlePaste}
                 placeholder="48.123, -121.456&#10;48.124, -121.457&#10;...&#10;&#10;or paste GPX XML starting with &lt;?xml..."
@@ -469,8 +469,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             <option>Other</option>
           </select>
 
-          <label style={{...styles.label}}>Email (optional)</label>
+          <label htmlFor="gps-email" style={{...styles.label}}>Email (optional)</label>
           <input
+            id="gps-email"
             type="email"
             value={climbEmail}
             onChange={(e) => setClimbEmail(e.target.value)}
@@ -478,8 +479,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             style={{...styles.input}}
           />
 
-          <label style={{...styles.label}}>Your name (optional, for attribution)</label>
+          <label htmlFor="gps-name" style={{...styles.label}}>Your name (optional, for attribution)</label>
           <input
+            id="gps-name"
             type="text"
             value={climbName}
             onChange={(e) => setClimbName(e.target.value)}
