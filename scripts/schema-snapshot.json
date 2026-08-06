@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-08-05",
+  "generatedAt": "2026-08-06",
   "tables": {
     "account_links": [
       "id",
@@ -95,6 +95,14 @@
       "updated_at",
       "user_id"
     ],
+    "connections": [
+      "addressee",
+      "created_at",
+      "id",
+      "requester",
+      "responded_at",
+      "status"
+    ],
     "contributions": [
       "area_id",
       "contributor",
@@ -131,6 +139,7 @@
     ],
     "crew_members": [
       "crew_id",
+      "invited_by",
       "joined_at",
       "note",
       "status",
