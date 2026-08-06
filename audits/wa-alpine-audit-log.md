@@ -4050,3 +4050,90 @@ Mountain's two routes covered together).
 Peak and Cathedral Peak Pasayten audited fully clean. Notable open item carried over from pass 1:
 Cascade Peak's East Ridge route-identity conflict is still unresolved and, on this pass's reading,
 still needs a human rename/split rather than a text patch.
+
+## Batch 57 — 2026-08-06 (Pass 2, batch 6)
+
+Routes: `wa_chair_bryant_traverse`, `wa_chair_peak_east_face`, `wa_chair_peak_north_face`,
+`wa_chair_peak_northeast_buttress`, `wa_chair_peak_northwest_ridge` (Chair Peak),
+`wa_chalangin_peak_little_giant_pass_luahna_col` (Chalangin Peak),
+`wa_chelan_butte_chelan_butte_trail` (Chelan Butte), `wa_chianti_spire_east_face` (Chianti
+Spire), `wa_chimney_rock_east_face_direct`, `wa_chimney_rock_west_face` (Chimney Rock).
+Researched via 5 parallel agents, one per peak.
+
+- **Chair Peak** — peak-level facts (elevation 6,238 ft, prominence 878 ft, 1913 FA)
+  confirmed clean. `wa_chair_peak_east_face` audited fully clean (pitch-by-pitch beta and
+  1933 FA both corroborated externally). Two fixes: `wa_chair_bryant_traverse` had
+  grade/grade_num/pitches/fa populated with unverifiable values that directly contradicted
+  its own `corrections` field, which explicitly says no dedicated source exists for this
+  linkup and all those fields should be null — cleared to match the row's own documented
+  methodology. `wa_chair_peak_north_face`'s top-level `grade` held "III" (a commitment
+  grade, duplicating the separate `commitment` column) under `grade_system='yds'`, which
+  needs a YDS value — corrected to 5.4, matching the row's own `grade_num`/`rock_grade`.
+  Flagged, not fixed: North Face's and Northwest Ridge's FA fields may describe the same
+  1975 first ascent misfiled under the wrong route (overlapping climber names, same year,
+  but attributed to different aspects); Northeast Buttress's grade/grade_system mismatch
+  (both 5.4 and 5.6 are self-supported by the row's own pitch_detail); a ~590m disagreement
+  between the two routes' "Thumb Tack" landmark waypoints; North Face/NE Buttress `dist_km`
+  showing the same round-trip-vs-one-way convention bug CLAUDE.md warns about (not
+  bulk-normalized per that guidance); and a dangling "(see hierarchyNote)" reference in two
+  routes' `corrections` text pointing at a field that doesn't exist in the schema.
+- **Chalangin Peak** — elevation (8,371 ft), prominence, coordinates, USFS Little Giant
+  Trailhead details, and gain/loss/distance all corroborated externally (Peakbagger,
+  Wikipedia, USFS, WTA, a Jim Brisbine trip report matching mileage/gain almost exactly).
+  Two fixes: top-level `permit` was null despite `access.permit` already documenting the
+  free self-issue wilderness permit — `lib/db.js` reads only the top-level column, so the
+  permit info wasn't rendering in the app at all; copied across. `season` said "Jul-Oct,"
+  contradicted by the row's own `climate.summer` field and by WTA/Mountaineers.org, which
+  say the Chiwawa River ford is only safely fordable August–October — corrected to
+  "Aug-Oct." One minor flag: `length_m` (137, the summit scramble segment) is plausible but
+  has no exact external source.
+- **Chelan Butte** — confirmed this route's mountaineering tag is honestly represented as a
+  non-technical hike (grade/pitches/rack all correctly null; hazards are heat/loose
+  gravel/hang-glider traffic, not fabricated alpine hazards). Two related fixes: area
+  `elevation_ft` and route `high_point_ft` were both stale at 3,812 ft despite the route's
+  own summit waypoint (3,835 ft) and its own `corrections` field already stating Peakbagger/
+  PeakVisor/WTA confirm 3,835 ft — the correction had been written down but never applied to
+  the columns; now applied, matching external sources. `permit` also wrongly cited a
+  Northwest Forest Pass (USFS); Chelan Butte Wildlife Area is WDFW state land, so a Discover
+  Pass applies instead — this row's own `access.parking_pass` field already said so
+  correctly, contradicting the top-level `permit` text. Flagged: a gain_ft/loss_ft figure
+  (2,500 ft) with conflicting AllTrails corroboration (2,631–2,806 ft depending on GPS
+  track), and whether "mountaineering" is the right discipline tag at all for a route whose
+  own overview says "no technical climbing" — a taxonomy call, not a fact patch.
+- **Chianti Spire** — FA (Nelson & Bebie, 1986), grade (III 5.10b), land manager, permit,
+  and area hierarchy all read correct and internally consistent. Two related elevation
+  fixes: area `elevation_ft` and route `high_point_ft` were both 8,459 ft, contradicting the
+  route's own "Chianti Spire Summit" waypoint (8,420 ft) and external sources (ListsOfJohn,
+  SummitPost); corrected to 8,420. Also fixed `length_m` (198 → 215), which didn't match the
+  row's own pitch_detail lengths summed (45+25+35+25+35+45+5). Several flags: a
+  gain_ft/loss_ft vs. itinerary-day-sum mismatch that interacts with the elevation fix and
+  isn't cleanly resolvable without a firmer trailhead elevation; a beta-text-vs-pitch_detail
+  disagreement over which pitch (P2 or P5) carries the 5.10b crux; a `dist_km` value that
+  looks like round-trip miles rather than one-way (the same systemic ~61-row bug CLAUDE.md
+  describes — flagged for the dedicated `audit:distances` tool, not patched here); a ~170m
+  offset between the area's lat/lng and the route's own summit waypoint; and unverified
+  prominence plus a stray editorial note baked into a waypoint's `note` field.
+- **Chimney Rock** — re-verified the pass-1 batch-5 elevation correction on
+  `wa_chimney_rock_west_face` (high_point_ft 7,440 ft for the South Summit, distinct from
+  the 7,727 ft main summit) is still live and still correct against Wikipedia/PeakVisor. One
+  fix on `wa_chimney_rock_east_face_direct`: `emergency.nearestHospital` named a nonexistent
+  Cle Elum "hospital" — Kittitas Valley Healthcare's only ER is in Ellensburg (603 S
+  Chestnut St); Cle Elum has urgent care only, non-emergency — exactly what the sibling West
+  Face route already states correctly. Two fixes on `wa_chimney_rock_west_face`: `aspect`
+  was stored as "E" though the route's name/overview/beta/descent all consistently describe
+  the west face — corrected to "W"; and `itinerary.sourceNote` still cited the 7,727 ft
+  main-summit elevation to justify its gain estimate, contradicting the row's own (correct)
+  7,440 ft `high_point_ft` — rewritten to reference the right summit. Flagged: East Face
+  Direct's 1954 FA party couldn't be corroborated against any accessible source; three of
+  West Face's upper waypoints (moat crossing, notch, South Summit) sit ~2.6–2.9 km from the
+  peak's own verified coordinates and outside where the embedded GPX track goes, with no
+  authoritative south-peak-specific source found to fix them; and West Face's `dist_km`
+  shows the same round-trip-vs-one-way fingerprint flagged on Chianti Spire above.
+
+13 confirmed errors fixed across 5 peaks (SQL: `audits/sql/2026-08-06-batch-57.sql`);
+`wa_chair_peak_east_face` audited fully clean. Two open items worth a dedicated follow-up:
+the round-trip-vs-one-way `dist_km` pattern surfaced again on 3 more routes this batch
+(Chair Peak x2, Chianti Spire, Chimney Rock West Face) beyond the ~61 rows already known —
+worth running `audit:distances` broadly rather than patching one row at a time; and the
+Chair Peak North Face/Northwest Ridge FA overlap looks like the same
+first-ascent-misfiled-under-the-wrong-route pattern seen on other peaks in earlier batches.

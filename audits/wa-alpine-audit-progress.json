@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_cathedral_peak_pasayten_se_buttress",
+  "last_processed_id": "wa_chimney_rock_west_face",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1323,6 +1323,27 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-08-06-batch-56.sql",
       "note": "9 parallel research agents, one per peak. The Castle (Tatoosh Range) was the worst-contaminated row this pass: access._raw, road.name, and approach_logistics all carried boilerplate/data bled in from unrelated peaks (a North Cascades USFS record and neighboring Unicorn Peak's approach), plus a waypoint elevation and an area prominence_ft error -- 5 fixes on one peak. Also fixed: Prusik Peak's Boving-Christensen fa year (already correct in its own overview field, just not on fa itself); South Early Winters Spire's Boving Roofs trailhead waypoint elevation; Buckner Mountain's 2026 NPS lottery date off by a day; Burgundy Spire's blurb wrongly calling it the tallest Wine Spire (it's Pernod); Cardinal Peak's region field (Entiat Mountains -> Chelan Mountains); Cascade Peak's blurb having the Johannesburg Mountain compass direction backwards. Burnt Boot Peak and Cathedral Peak Pasayten (re-checked from pass 1) both audited fully clean. Biggest open flag, carried over from pass 1 batch 4: Cascade Peak's East Ridge route-identity conflict is still unresolved -- the 2026-07-28 fix merged two routes (Cascade Peak's NW Chimney and what looks like Johannesburg Mountain's separate, real East Ridge) into one row instead of splitting them, per the row's own data_quality.gaps note recommending a split. Also flagged: possible NPS group-size-limit error (6 vs 12) on both Buckner Mountain routes; a dist_km convention mismatch on Buckner's North Face (point-to-point traverse vs. the app's round-trip-doubling rendering); and Burgundy Spire's elevation_ft matching neither sourced convention available."
+    },
+    {
+      "batch_number": 57,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_chair_bryant_traverse",
+        "wa_chair_peak_east_face",
+        "wa_chair_peak_north_face",
+        "wa_chair_peak_northeast_buttress",
+        "wa_chair_peak_northwest_ridge",
+        "wa_chalangin_peak_little_giant_pass_luahna_col",
+        "wa_chelan_butte_chelan_butte_trail",
+        "wa_chianti_spire_east_face",
+        "wa_chimney_rock_east_face_direct",
+        "wa_chimney_rock_west_face"
+      ],
+      "confirmed_errors_fixed": 13,
+      "flagged_for_human_review": 21,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-06-batch-57.sql",
+      "note": "Pass 2, batch 6. Researched via 5 parallel agents, one per peak. wa_chair_peak_east_face audited fully clean. Re-verified the pass-1 batch-5 Chimney Rock West Face elevation fix (7,440 ft South Summit) is still live and correct. Two notable open items: the round-trip-vs-one-way dist_km convention bug (per CLAUDE.md's ~61-row known issue) surfaced again on 3 more routes (Chair Peak North Face/NE Buttress, Chianti Spire, Chimney Rock West Face) -- flagged for the dedicated audit:distances tool rather than patched piecemeal; and Chair Peak's North Face/Northwest Ridge FA fields may describe the same 1975 first ascent misfiled under the wrong route, same pattern as prior batches' first-ascent-conflation flags."
     }
   ]
 }
