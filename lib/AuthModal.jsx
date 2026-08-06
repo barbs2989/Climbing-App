@@ -4,7 +4,7 @@
 // out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
-import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword } from "./auth";
+import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle } from "./auth";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
@@ -27,6 +27,10 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
+  // Asked, not assumed -- see useOAuthProviders. Until the project has Google enabled this is
+  // false and the button never renders, so nobody is offered a sign-in that cannot complete.
+  const providers = useOAuthProviders();
+  const googleOn = !!providers && providers.indexOf("google") >= 0;
 
   // Deliberately the same message whether or not the address has an account. Saying "no account
   // for that email" turns this box into a membership oracle for anyone who wants to know which
@@ -81,6 +85,17 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
 
   const go = () => (mode === "forgot" ? sendReset() : mode === "reset" ? saveNewPassword() : submit());
 
+  // A successful call navigates to Google and never comes back to this line, so reaching the
+  // error branch means the redirect did not happen at all -- surface it rather than leaving the
+  // button looking dead. Coming back, the tokens are in the URL hash and detectSessionInUrl
+  // (on by default) turns them into a session, which useSession picks up and the gate closes.
+  const goGoogle = async () => {
+    setErr(""); setInfo(""); setBusy(true);
+    const { error } = await signInWithGoogle();
+    setBusy(false);
+    if (error) setErr(error.message);
+  };
+
   // role/aria-modal live on the BACKDROP, not the inner panel — the other 39 dialogs in this
   // app do the same, and useDialogA11y (lib/dialogA11y.js) depends on it: Escape closes by
   // calling dlg.click() on the element carrying role="dialog", expecting that element's own
@@ -102,6 +117,22 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
           {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
+        {/* Sign-in and sign-up only: on "forgot" there is no account to federate yet, and on
+            "reset" the climber is already signed in and owes us a password.
+            aria-label so the decorative "G" does not become part of the announced name -- the
+            same reason the demo screen's Facebook button carries one. */}
+        {googleOn && (mode === "in" || mode === "up") && (
+          <div>
+            <button onClick={goGoogle} disabled={busy} aria-label="Continue with Google" style={{ width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, borderRadius: 11, border: "1px solid " + c.border, background: "#fff", color: "#1f2328", fontSize: 15, fontWeight: 600, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
+              <span style={{ fontWeight: 800, color: "#4285F4" }}>G</span> Continue with Google
+            </button>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "14px 0" }}>
+              <div style={{ flex: 1, height: 1, background: c.border }} />
+              <span style={{ fontSize: 12, color: c.sub }}>or use email</span>
+              <div style={{ flex: 1, height: 1, background: c.border }} />
+            </div>
+          </div>
+        )}
         {/* aria-label on all three: their only visible naming is the placeholder, which is not
             an accessible name -- it is a hint, and it disappears the moment the field has text.
             A screen reader announced these as bare "edit text". This is the sign-in GATE, so
