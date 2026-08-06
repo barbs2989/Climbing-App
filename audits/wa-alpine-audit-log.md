@@ -4414,3 +4414,68 @@ its fixes. This is the third same-day instance of a previously-fixed field rever
 (Cutthroat Peak's elevation, now twice today, plus Crooked Thumb Peak's `high_point_ft`
 regressing from pass 1) — worth a dedicated look at whether some import/seed process is
 periodically overwriting audited rows independently of this branch's fixes.
+
+## 2026-08-06 — Pass 2, Batch 61
+
+Five peaks, 10 routes, researched via 5 parallel agents (one per peak): Dorado Needle (Direct
+Southwest Buttress, East Ridge/Inspiration Glacier), Pernod Spire (Direct West Face), South
+Early Winters Spire (Dolphin Chimney), Dome Peak (Dome Glacier, Indian Summer), Dragontail
+Peak (Backbone Ridge, East Ridge via Aasgard Pass, Hidden Couloir, Gerber-Sink).
+
+- **South Early Winters Spire** (`wa_dolphin_chimney`) — Blue Lake Trailhead waypoint
+  elevation (5,200 ft) contradicted this same row's own `approach_logistics` (5,400 ft) and
+  external USFS/trip-report sourcing — fixed. Same Blue-Lake-trailhead contamination family
+  seen on sibling Washington Pass peaks in earlier batches. Flagged rather than fixed: an
+  unexplained ~200-400 ft gain/loss gap against the trailhead-to-summit delta, and possible
+  conflation of two differently-named approach variations in the route's own approach text.
+- **Dorado Needle** — `approach_logistics` on both routes stored the wrong Eldorado Creek
+  trailhead coordinates (48.49261,-121.11761); the correct value (48.5136,-121.1964) was
+  already sitting elsewhere on the same rows (fixed both). Also stripped a stray "Mount Tom
+  area, North Cascades" clause from the East Ridge route's `access.notes` — same DB-wide
+  copy-paste-boilerplate pattern first flagged in pass-1 batch 15 — and rewrote a stale
+  waypoint note that still described a coordinate fix as pending when that coordinate had
+  already been corrected in a prior pass. Flagged: Direct Southwest Buttress's very
+  existence/FA as a distinct named variant from the standard Southwest Buttress route
+  couldn't be corroborated by any source reached this pass (several key sites 403'd); the
+  row's own `data_quality` already carries the same low-confidence flag.
+- **Pernod Spire** (`wa_direct_west_face`) — `access.passRequired` said "None" while the same
+  row's `access.parking_pass`/`_raw.parking_pass` both require a Northwest Forest Pass —
+  internal self-contradiction, fixed. Confirmed Pernod Spire (not Burgundy) really is the
+  tallest Wine Spire, the correct counterpart to batch 56's Burgundy Spire fix. Biggest open
+  flag: the route's `beta`/`pro_tips` fields say the crux is pitch 3, but the structured
+  `pitch_detail` array (internally self-consistent, lengths sum to the stored `length_m`)
+  marks pitch 6 as the crux with the grade string that actually matches the route's overall
+  grade — needs a primary topo/guidebook source to resolve, not guessable from what's on file.
+- **Dome Peak** — WebFetch returned HTTP 403 on every URL attempted this pass (a session-wide
+  outage, not a per-site block, confirmed via a failed control fetch), so no fixes were
+  confident enough to apply from WebSearch snippets alone. Re-verified pass-1 batch-8's
+  county and parking-pass fixes are still intact. Re-flagged the still-unresolved
+  elevation/prominence split (8,920/area's own blurb 8,926 ft) with no new resolving source
+  found. New flag: Dome Glacier's `dist_km` (16.1) looks copy-pasted from its sibling Indian
+  Summer route rather than computed from its own ~17-mi one-way waypoints/itinerary — a case
+  for `audit:distances`, not a guessed patch, per this column's known mixed-convention
+  problem.
+- **Dragontail Peak** — Backbone Ridge's waypoints/gpx listed "Aasgard Pass" twice at two
+  different coordinates under the same elevation; the wrong one (~620m off Wikipedia's
+  actual pass position) was corrected to match the already-right duplicate. Gerber-Sink's
+  `descent` field was stale boilerplate about rappels, contradicting its own `rappels: "0"`
+  and its well-sourced `descent_text` (walk-off via Aasgard Pass, no rappels documented) —
+  rewritten to match. Also resolved an open question from batch 60: that batch attributed
+  Bear Mountain's contaminated ice_grade to "an unrelated Direct North Buttress route on
+  Dragontail Peak" — confirmed this pass that Direct North Buttress is indeed a real,
+  separate Dragontail route (Mountain Project id 112066038), and that Gerber-Sink's own
+  ice_grade (WI3+) is independently correct, not the contamination source. Flagged: Hidden
+  Couloir's own fields (full ~10hr summit-push itinerary, gain_ft matching the whole
+  mountain) look like they describe the full Triple Couloirs route rather than the short
+  standalone entry gully its own overview/beta describe — possibly related to the
+  already-flagged r4/triple_couloirs duplicate pair; and a templated "Colchuck Lake"
+  waypoint tail duplicated (at slightly different coordinates) across multiple routes on
+  this peak, needing a human dedup call rather than a guessed merge.
+
+7 confirmed errors fixed across all 5 peaks (SQL: `audits/sql/2026-08-06-batch-61.sql`,
+validated with `npm run check:sql` — all 7 checkable statements confirmed against live
+target ids; the Gerber-Sink `descent` statement couldn't be auto-checked because the tool's
+naive parser splits on the em dash in the replacement text, so it was verified manually
+against a fresh live fetch instead). One route (`wa_dragontail_peak_east_ridge_aasgard_pass`)
+audited fully clean. `check:sql` also warned the file (5.4KB) exceeds the SQL Editor's
+~4KB safe-paste size — split it into chunks when applying by hand.
