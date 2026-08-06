@@ -17,7 +17,7 @@ import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequireme
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
-import {uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,gn,Hr,vScore,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,missingFacts,Comments,TopContributors} from "./ClimbMatchCore.jsx";
+import {uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,gn,Hr,vScore,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,missingFacts,Comments,TopContributors,shapeOf} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -171,50 +171,54 @@ function TechStats({route,sunReports,onSuggestSun,onEdit}){
   const usePitchSumForLen=!route.routeFt&&route.pitchDetail&&route.pitchDetail.length;
   const climbLenRaw=route.routeFt||(route.pitchDetail&&route.pitchDetail.length?route.pitchDetail.reduce((a,pp)=>a+(pp.lengthM||0),0):null);
   const climbDisp=climbLenRaw?(usePitchSumForLen?uLen(climbLenRaw):uElev(climbLenRaw)):null;
+  // A loop or point-to-point outing has no "same trail back", so distKm*2 is not a round
+  // trip for it — show the distance without inventing a return leg.
+  const isOutBack=shapeOf(route)==="outback";
+  const rtNote=isOutBack?" Round trip assumes the same trail back to the trailhead.":" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
   let stats,note;
   if(disc==="bouldering"){
     stats=[["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]];
     if(hasDist)stats.unshift(["Approach",uDist(distKm),C.blue]);
-    if(hasDist)stats.splice(1,0,["Round trip",uDist(roundTripKm),C.blue]);
+    if(hasDist&&isOutBack)stats.splice(1,0,["Round trip",uDist(roundTripKm),C.blue]);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
-    note="Height is the boulder itself. The approach is just the walk in — there is no meaningful elevation gain to a single boulder. Round trip assumes the same trail back to the trailhead.";
+    note="Height is the boulder itself. The approach is just the walk in — there is no meaningful elevation gain to a single boulder."+rtNote+"";
   }else if(disc==="hiking"||disc==="mountaineering"){
     stats=[];
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
     if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
-    if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.amber]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(avgGrade!=null)stats.push(["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]);
     if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.purple]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(waterCount)stats.push(["Water sources",waterCount,C.blue]);
-    note="For a summit objective, total ascent from the trailhead is the number that matters most. Round trip assumes the same trail back to the trailhead.";
+    note="For a summit objective, total ascent from the trailhead is the number that matters most."+rtNote+"";
   }else if(disc==="alpine"){
     stats=[];
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
     if(climbDisp)stats.push(["Climb length",climbDisp,C.teal]);
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
-    if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(route.pitches>0&&rappelCount(route)!=null)stats.push(["Rappels",rappelLabel(route),C.red]);
-    note="Total ascent is the whole day from the trailhead; climb length is just the technical climbing within it. Round trip assumes the same trail back to the trailhead.";
+    note="Total ascent is the whole day from the trailhead; climb length is just the technical climbing within it."+rtNote+"";
   }else{
     const climbLabel=disc==="aid"?"Wall height":disc==="scrambling"?"Scramble section":"Route length";
     stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     if(hasAscent)stats.push(["Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(hasDist)stats.push(["Approach dist",uDist(distKm),C.blue]);
-    if(hasDist)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(rappelCount(route)!=null)stats.push(["Rappels",rappelLabel(route),C.red]);
-    note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers. Round trip assumes the same trail back to the trailhead."):null;
+    note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers."+rtNote+""):null;
   }
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>TECHNICAL STATS</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit technical stats"/>:null}</div>{(function(){var ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment,gg=route.grade;var P=[];if(rg)P.push(["Rock",rg]);if(cm)P.push(["Commitment",cm]);if(ag)P.push(["Alpine",ag]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1&&gg)P.push(["Grade",gg]);var notes=[];[["Rock",rg],["Commitment",cm],["Alpine",ag],["Ice",ig],["Aid",adg],["Grade",gg]].forEach(function(p){var d=p[1]?gradeDetail(p[1]):"";if(!d||notes.some(function(n){return n[1]===d;}))return;notes.push([p[0],d]);});if(P.length<1)return null;var cmExp=cm?COMMITMENT_EXPLAINERS[String(cm).replace(/^Grade\s*/i,"").trim()]:null;var bailWps=(route.waypoints||[]).filter(function(w){return w.type==="Bailout"&&w.distMi!=null;}).sort(function(a,b){return a.distMi-b.distMi;});var nearBail=bailWps[0];return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{fontSize:11,color:C.textMuted,fontWeight:700,textTransform:"uppercase",letterSpacing:0.4,marginBottom:7}}>Composite Grade</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.textMuted,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{shortGrade(p[1])}</span>;})}</div>{notes.length?<div style={{marginTop:8}}>{notes.map(function(n){return <div key={n[0]} style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:4}}><span style={{fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{n[0]}</span>{" · "+n[1]}</div>;})}</div>:null}{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{nearBail?("Committing — nearest bail point is "+(nearBail.timeToSafety||(uDistMi(nearBail.distMi)+" away"))+"."):cmExp}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{background:C.surface,borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.textMuted,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>First Ascent</span>{" · "+route.fa}</div>:null}{note?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8,lineHeight:1.5}}>{note}</div>:null}</div>;
 }
