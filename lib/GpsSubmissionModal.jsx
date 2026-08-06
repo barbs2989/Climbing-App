@@ -436,7 +436,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             />
             I personally climbed this exact route on:
           </label>
-          <input
+          <input aria-label="Climb date"
             type="date"
             value={climbDate}
             onChange={(e) => setClimbDate(e.target.value)}
