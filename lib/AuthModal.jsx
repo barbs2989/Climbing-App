@@ -1,21 +1,57 @@
 // Phase 2 — login / signup modal over Supabase Auth (lib/auth.js).
 // Self-contained (own styles, no dependency on the C palette) so it can't regress the app.
-// Email pre-fills from the last sign-in; the session persists, so this only appears
-// when signed out. Password is never stored.
+// Email pre-fills from the last sign-in; the session persists, so this appears only when signed
+// out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
+// authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
-import { signIn, signUp, rememberEmail, recallEmail } from "./auth";
+import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword } from "./auth";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
-export default function LoginScreen({ onClose, onAuthed }) {
-  const [mode, setMode] = useState("in");           // "in" | "up"
+const TITLE = { in: "Welcome back", up: "Create your account", forgot: "Reset your password", reset: "Choose a new password" };
+const BLURB = {
+  in: "Sign in — you'll stay logged in on this device.",
+  up: "Set up an account to log climbs and contribute beta.",
+  forgot: "We'll email you a link that opens ClimbMatch and lets you set a new password.",
+  reset: "You opened a reset link, so you're signed in — pick a new password now and it will be the one that works next time.",
+};
+const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset link", reset: "Save new password" };
+
+export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }) {
+  const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [err, setErr] = useState("");
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
+  const [done, setDone] = useState(false);
+
+  // Deliberately the same message whether or not the address has an account. Saying "no account
+  // for that email" turns this box into a membership oracle for anyone who wants to know which
+  // climbers are here, and Supabase returns success either way for the same reason.
+  const sendReset = async () => {
+    if (!email.trim()) { setErr("Enter the email you signed up with."); return; }
+    setErr(""); setInfo(""); setBusy(true);
+    const { error } = await requestPasswordReset(email.trim());
+    setBusy(false);
+    if (error) { setErr(error.message); return; }
+    rememberEmail(email.trim());
+    setInfo("If that email has an account, a reset link is on its way. The link opens ClimbMatch and asks for a new password.");
+  };
+
+  const saveNewPassword = async () => {
+    if (password.length < 6) { setErr("Use at least 6 characters."); return; }
+    setErr(""); setInfo(""); setBusy(true);
+    const { error } = await updatePassword(password);
+    setBusy(false);
+    if (error) { setErr(error.message); return; }
+    // The reset link already signed them in, so there is nothing left to do -- but dropping
+    // straight into the app reads as "did that work?". Confirm it, then let them dismiss.
+    setPassword(""); setDone(true);
+    setInfo("Password updated. This is the one to use next time you sign in.");
+  };
 
   const submit = async () => {
     if (!email.trim() || !password) { setErr("Email and password are required."); return; }
@@ -43,6 +79,8 @@ export default function LoginScreen({ onClose, onAuthed }) {
     onClose && onClose();
   };
 
+  const go = () => (mode === "forgot" ? sendReset() : mode === "reset" ? saveNewPassword() : submit());
+
   // role/aria-modal live on the BACKDROP, not the inner panel — the other 39 dialogs in this
   // app do the same, and useDialogA11y (lib/dialogA11y.js) depends on it: Escape closes by
   // calling dlg.click() on the element carrying role="dialog", expecting that element's own
@@ -50,31 +88,48 @@ export default function LoginScreen({ onClose, onAuthed }) {
   // onClick={e=>e.stopPropagation()} and was swallowed, so Escape silently did nothing on the
   // sign-in modal — the one a keyboard user meets first.
   return (
-    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Sign in" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+    <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-          <div style={{ fontSize: 19, fontWeight: 800 }}>{mode === "in" ? "Welcome back" : "Create your account"}</div>
-          <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>
+          <div style={{ fontSize: 19, fontWeight: 800 }}>{TITLE[mode]}</div>
+          {/* Only when there is something to close. At the gate, and on the reset screen, no
+              onClose is passed -- React drops onClick={undefined} silently, so an unconditional
+              × would render, take the click and do nothing. (Same fix as #593; if that lands
+              first this line is already what it wants.) */}
+          {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
         </div>
-        <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>
-          {mode === "in" ? "Sign in — you'll stay logged in on this device." : "Set up an account to log climbs and contribute beta."}
-        </div>
+        <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
         {mode === "up" && (
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Display name" autoComplete="name" style={field} />
         )}
-        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" autoComplete="email" style={field} />
-        <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && submit()} placeholder="Password" type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
+        {mode !== "reset" && (
+          <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder="Email" type="email" autoComplete="email" style={field} />
+        )}
+        {mode !== "forgot" && !done && (
+          <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder={mode === "reset" ? "New password" : "Password"} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
+        )}
+        {mode === "in" && (
+          <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
+            <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: 0 }}>Forgot password?</button>
+          </div>
+        )}
         {err && <div style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
         {info && <div style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
-        <button onClick={submit} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: c.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
-          {busy ? "…" : mode === "in" ? "Sign in" : "Create account"}
+        <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: c.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
+          {busy ? "…" : done ? "Continue to ClimbMatch" : ACTION[mode]}
         </button>
-        <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
-          {mode === "in" ? "New here? " : "Already have an account? "}
-          <button onClick={() => { setErr(""); setInfo(""); setMode(mode === "in" ? "up" : "in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>
-            {mode === "in" ? "Create an account" : "Sign in"}
-          </button>
-        </div>
+        {mode === "forgot" ? (
+          <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
+            <button onClick={() => { setErr(""); setInfo(""); setMode("in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>Back to sign in</button>
+          </div>
+        ) : mode === "reset" ? null : (
+          <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
+            {mode === "in" ? "New here? " : "Already have an account? "}
+            <button onClick={() => { setErr(""); setInfo(""); setMode(mode === "in" ? "up" : "in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>
+              {mode === "in" ? "Create an account" : "Sign in"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
