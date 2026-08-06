@@ -37,7 +37,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+          cache: npm
+      # `npm ci`, not `npm install`. package-lock.json is committed, but `npm
+      # install` re-resolves the `^` ranges (vite ^5.4.0, @supabase/supabase-js
+      # ^2.109.0, react ^18.3.1), so production could build against dependency
+      # versions no pull request ever compiled. build-check.yml already uses
+      # `npm ci`; production had the looser one. The cache also cuts the build,
+      # which is what widened the window #616's queueing change addressed.
+      - run: npm ci
+      # A missing secret does not fail the build, it changes the app. Vite folds
+      # an unset import.meta.env.VITE_* to undefined, so lib/supabase.js leaves
+      # `supabase` null, USE_DB goes false, and the site ships happily serving the
+      # in-memory seed catalog instead of Supabase. With VITE_DEMO_AUTOLOGIN on it
+      # looks entirely healthy — it just isn't the real catalogue. Fail loudly.
+      - name: Require the Supabase secrets
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          missing=""
+          [ -z "$VITE_SUPABASE_URL" ] && missing="$missing VITE_SUPABASE_URL"
+          [ -z "$VITE_SUPABASE_ANON_KEY" ] && missing="$missing VITE_SUPABASE_ANON_KEY"
+          if [ -n "$missing" ]; then
+            echo "::error::missing repository secret(s):$missing — refusing to deploy a build that would silently fall back to the seed catalog"
+            exit 1
+          fi
+          echo "supabase secrets present"
       # Catches identifiers referenced but never bound — the bug class that has
       # blank-screened production twice (PRs #317, #359). No linter here, and the
       # bundler happily builds them.
@@ -57,6 +82,14 @@ jobs:
           # sign-in box and could not see a single climb. Whether the app gates on a
           # real account is a product decision, and the recorded one is to stay open.
           VITE_DEMO_AUTOLOGIN: "true"
+      # The run_attempt suffix is required — artifact names must be unique within
+      # a run, so a bare "github-pages" collides on the second attempt. It does
+      # mean this workflow must be re-run WHOLE:
+      #     gh run rerun <id>          correct — build re-uploads under attempt N
+      #     gh run rerun <id> --failed WRONG — reruns only the failed deploy job,
+      #                                which then resolves github-pages-<id>-<N+1>
+      #                                while the good artifact is still named
+      #                                ...-<id>-<N>, and dies on a missing artifact.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
