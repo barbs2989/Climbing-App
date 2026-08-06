@@ -3860,3 +3860,90 @@ generally with multiple independent snippets per fact.
 13 confirmed errors fixed across 7 peaks (SQL: `audits/sql/2026-08-06-batch-54.sql`); 12 fields
 flagged for human review; Austera Peak's original route and Chockstone Route audited clean save
 for the dist_km note above.
+
+## Batch 55 — 2026-08-06 (Pass 2, batch 4)
+
+10 routes across 6 peaks, checked via 6 parallel research agents (one per peak): Big Kangaroo
+(West Face), Big Snow Mountain (2 routes), Black Peak (2 routes), Bonanza Peak (3 routes), Booker
+Mountain, and Boston Peak. WebSearch snippet cross-referencing again did most of the work; some
+agents also got clean WebFetch hits this run (The Mountaineers' official route pages, NPS fee
+pages, WSDOT closure pages).
+
+- **Big Kangaroo, West Face** (`wa_big_kangaroo_west_face`) — 2 confirmed errors, both internal
+  self-contradictions. `partner_requirements.approachTime` claimed an 11.5-hr car-to-car day,
+  contradicting `timing.totalHrs` (7), `turnaround`, and `itinerary.totalNote` on the same row
+  (all three independently agree ~6-8 hrs) — corrected to 6-8 hrs. `waypoints[0]` ("Hairpin Turn
+  Pullout") held lat/lng 48.5269/-120.6506 with a note claiming "~0.9 mi **west** of Washington
+  Pass," contradicting the route's own `approach` text ("east," milepost 163),
+  `approach_logistics.trailheadLat/Lng`, and the CalTopo-sourced GPX track's first point (all
+  three agree on 48.5145/-120.6433, east side) — corrected. Elevation (8,326 ft), prominence
+  (1,077 ft), the 1942 Beckey/Beckey/Varney FA, grade (II 5.6), land manager, and the
+  single-rusty-bolt descent all confirmed clean. Flagged, not fixed: elevation may need revisiting
+  per a newer Gilbertson lidar figure (8,318 ft) cited by two sources WebFetch couldn't reach;
+  `length_m` (61m/200ft) vs. `pitch_detail`'s ~150m sum, already self-flagged on file as an
+  MP-vs-trip-report source split; `beta`'s "up to 4 pitches" vs. `pitches`=3, same cause; and the
+  area blurb's Beckey-Tate south-face grade (sources split III 5.8 vs. 5.9).
+- **Big Snow Mountain** (`wa_big_snow_mountain` + 2 routes) — 1 confirmed error: area
+  `prominence_ft` (1402) disagreed with Wikipedia/SummitPost/Peakbagger-indexed sources, which
+  converge on 1,360 ft — the area's own blurb text (3.75 mi isolation to Overcoat Peak) matches
+  the corrected figure. Elevation (6,680 ft), coordinates (exact match to listsofjohn.com), both
+  routes' gain figures (verified against The Mountaineers/willhiteweb.com), and the FSR 56 washout
+  closure note all confirmed clean. Flagged, not fixed: `parent_peak` is null though sources agree
+  it's Overcoat Peak (no DB id to write with confidence); stale/self-contradictory `corrections`
+  free-text on both routes that no longer matches their own (correct) stored gain/distance values.
+- **Black Peak** (`wa_black_peak` + 2 routes) — 1 confirmed error: Northeast Ridge's
+  `approach_logistics.trailhead/trailheadLat/trailheadLng` pointed to the Lake Ann Trailhead on
+  **SR-542** near Mt. Baker/Artist Point — a different trailhead ~49 miles away — instead of the
+  Rainy Pass/Lake Ann-Maple Pass trailhead on SR-20 that the row's own `trailheadDirection` note,
+  its `waypoints[0]`, and WTA/The Mountaineers all describe — corrected. Coordinates, prominence
+  (3,450 ft), the 1973 Jackson/Kennedy FA, grade (III), and approach/summit timing all confirmed
+  clean via The Mountaineers' official route page. Flagged, not fixed: `elevation_ft` (8970 per
+  SummitPost/DB vs. 8975 per Wikipedia-derived figures, a 5-ft datum-level split); `pitches`=3 vs.
+  a 5-entry `pitch_detail`; and the area's `region: "Washington Pass"` label, which may be an
+  intentional broader-corridor grouping rather than an error.
+- **Bonanza Peak** (`wa_bonanza_peak` + 3 routes) — 3 confirmed errors. The area blurb and Mary
+  Green Glacier route's `fa`/`overview` misspelled first-ascensionist "Curtis Ijames" as "Curtis
+  James" and wrongly credited the 1937 FA to the Mary Green Glacier route; sources (Wikipedia's
+  Company Glacier page, corroborating search results) agree the 1937 party actually summited via
+  the **Company Glacier** on the north side — fixed the name and route attribution across all
+  three fields. North Ridge's `overview`/`beta` were contaminated with unrelated-peak content
+  ("highest point in the Wenatchee Mountains," a Middle Fork Snoqualmie trailhead) contradicting
+  the row's own accurate Holden-Village waypoints and Bonanza's real Chiwawa/Entiat placement —
+  replaced with text consistent with the route's own verified fields. Prominence (3,711 ft),
+  coordinates, Northeast Buttress's FA/timing (AAC Publications), the 1975 Soviet Route mention,
+  and the Holden Village flood-closure details (repeated across all three routes) all confirmed
+  clean. Flagged, not fixed: `high_point_ft` (9511) vs. area `elevation_ft` (9516), both genuinely
+  sourced; North Ridge's `grade: "Class 2"`, which looks like a mislabeled duplicate of Mary Green
+  Glacier rather than a real independent line (an editorial merge call, not a text fix); Mary
+  Green Glacier's "Moat crossing" waypoint, already self-flagged in `data_quality.gaps` as
+  corrupted; and Northeast Buttress's `ice_grade: "AI2"`, unsupported by any source describing
+  this as a rock-only line.
+- **Booker Mountain** (`wa_booker_mountain_northeast_face`) — 2 confirmed errors, both apparent
+  boilerplate bleed from Cascade River Road/Boston Basin trailhead records. `road.status` claimed
+  SR 20 is "generally open year-round," but it closes every winter for avalanche danger and the
+  closure gate has historically retreated to Colonial Creek Campground — this route's own
+  trailhead (WSDOT, KOMO, Cascadia Daily, King5) — corrected. `access.seasonal` blamed washout
+  risk on "Cascade River Road," which serves the unrelated Marblemount→Boston Basin corridor and
+  has no connection to this route's Colonial Creek/Thunder Creek trailhead on SR 20 (NPS, WTA) —
+  corrected to point at the real SR 20 seasonal-closure risk instead. Elevation (8,284 ft),
+  coordinates, the 1904 USGS naming history, the 1964 Davis/Holland FA, the route's beta narrative
+  against the 1965 AAJ account, and the 2026 backcountry-permit lottery window all confirmed
+  clean. Flagged, not fixed: `access.rules`' Boston Basin-specific camping detail (also apparent
+  bleed-over, but no verified replacement found for Booker's actual camping rules); `prominence_ft`
+  (992) unverifiable (Peakbagger/Wikidata blocked); and a null `elevation` column sitting alongside
+  a populated `elevation_ft`, likely a legacy/duplicate column worth a schema check.
+- **Boston Peak** (`wa_boston_peak_southeast_face`) — no confirmed errors. Elevation (8,894 ft),
+  prominence (854 ft), coordinates (exact match to Wikipedia), the 1938
+  Bressler/Clough/Cox/Myers FA, the NPS Boston Basin permit fee structure, the bear-canister
+  requirement, and the standard SE-face route description (verified against Mountaineers.org's own
+  program page) all confirmed clean. Flagged, not fixed: `elevation_ft` (listsofjohn.com says
+  8,888 ft vs. 8,894 ft everywhere else — majority favors the stored value); a genuine trailhead
+  mileage split between guidebook sources (21.7 mi per Beckey vs. 22.5 mi elsewhere) already
+  reflected as two different numbers in the row's own fields; a `waypoints` distance duplication
+  bug (two different points both carry `distMi: 4.2`) with no sourced correct value for either
+  leg; and a `descent_text`/`itinerary`/`bail` conflict describing two different physical
+  descents, which can't be resolved from available sources.
+
+9 confirmed errors fixed across 6 peaks (SQL: `audits/sql/2026-08-06-batch-55.sql`); 24 fields
+flagged for human review; Boston Peak's Southeast Face audited clean of confirmed errors (several
+flags, no fixes).

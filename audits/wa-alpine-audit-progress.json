@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_big_four_mountain_spindrift_couloir",
+  "last_processed_id": "wa_boston_peak_southeast_face",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1281,6 +1281,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-08-06-batch-54.sql",
       "note": "Third batch of pass 2. 7 peaks, 10 routes, audited via 7 parallel research agents (one per peak). Confirmed fixes: Austera Peak SW Ridge's data_quality.gaps falsely claimed no GPS track exists despite a populated 325-point gpx field, and its trailhead waypoint had wrong coordinates contradicting its own approach_logistics and its sibling route; Bacon Peak's area elevation_ft/prominence_ft (7067/2512) both disagreed with 3 external sources (7070/2505); Bear Mountain's approach_logistics trailhead coords didn't match its own waypoints[0] for the same trailhead; Beckey-Davis (Prusik) had a group-size-limit contradiction (12 vs the row's own 8), a mislabeled trailhead waypoint (named Snow Lakes, coords actually Stuart Lake), and length_m (198) contradicting its own rope_note (700ft); Beckey-Tate (Big Kangaroo) had itinerary gain/loss (2800) contradicting its own top-level gain_ft/loss_ft (3166), independently verified from its own approach text; Beyond Redlining (Morning Star) had an overview FA date (July 2020) contradicting its own fa field and AAC sources (May 2020), plus area prominence_ft off by 20ft; Big Four Mountain's area prominence_ft was off by 70ft and Spindrift Couloir's max_angle (90) contradicted its own beta text and the AAC first-ascent report (95). Notably walked back one research agent's flagged dist_km 'error' on both Austera routes after independently checking the math by hand -- the stored dist_km/gain_ft/loss_ft appear to be correctly scoped to just the summit-day segment, not the full approach, so left unfixed with a note rather than applying a plausible-looking but likely wrong correction."
+    },
+    {
+      "batch_number": 55,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_big_kangaroo_west_face",
+        "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+        "wa_big_snow_mountain_north_slope_dingford_route",
+        "wa_black_peak_east_buttress",
+        "wa_black_peak_northeast_ridge",
+        "wa_bonanza_peak_mary_green_glacier",
+        "wa_bonanza_peak_north_ridge",
+        "wa_bonanza_peak_northeast_buttress",
+        "wa_booker_mountain_northeast_face",
+        "wa_boston_peak_southeast_face"
+      ],
+      "confirmed_errors_fixed": 9,
+      "flagged_for_human_review": 24,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-06-batch-55.sql"
     }
   ]
 }
