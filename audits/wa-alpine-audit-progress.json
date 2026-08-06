@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_boston_peak_southeast_face",
+  "last_processed_id": "wa_cathedral_peak_pasayten_se_buttress",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1301,6 +1301,28 @@
       "flagged_for_human_review": 24,
       "clean": 0,
       "sql_file": "audits/sql/2026-08-06-batch-55.sql"
+    },
+    {
+      "batch_number": 56,
+      "pass": 2,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_boving_christensen",
+        "wa_boving_roofs",
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_burgundy_spire_north_face",
+        "wa_burnt_boot_peak_north_ridge",
+        "wa_cardinal_peak_nw_couloir_north_ridge",
+        "wa_cascade_peak_east_ridge",
+        "wa_castle_peak_tatoosh_southeast_face",
+        "wa_cathedral_peak_pasayten_se_buttress"
+      ],
+      "confirmed_errors_fixed": 11,
+      "flagged_for_human_review": 15,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-08-06-batch-56.sql",
+      "note": "9 parallel research agents, one per peak. The Castle (Tatoosh Range) was the worst-contaminated row this pass: access._raw, road.name, and approach_logistics all carried boilerplate/data bled in from unrelated peaks (a North Cascades USFS record and neighboring Unicorn Peak's approach), plus a waypoint elevation and an area prominence_ft error -- 5 fixes on one peak. Also fixed: Prusik Peak's Boving-Christensen fa year (already correct in its own overview field, just not on fa itself); South Early Winters Spire's Boving Roofs trailhead waypoint elevation; Buckner Mountain's 2026 NPS lottery date off by a day; Burgundy Spire's blurb wrongly calling it the tallest Wine Spire (it's Pernod); Cardinal Peak's region field (Entiat Mountains -> Chelan Mountains); Cascade Peak's blurb having the Johannesburg Mountain compass direction backwards. Burnt Boot Peak and Cathedral Peak Pasayten (re-checked from pass 1) both audited fully clean. Biggest open flag, carried over from pass 1 batch 4: Cascade Peak's East Ridge route-identity conflict is still unresolved -- the 2026-07-28 fix merged two routes (Cascade Peak's NW Chimney and what looks like Johannesburg Mountain's separate, real East Ridge) into one row instead of splitting them, per the row's own data_quality.gaps note recommending a split. Also flagged: possible NPS group-size-limit error (6 vs 12) on both Buckner Mountain routes; a dist_km convention mismatch on Buckner's North Face (point-to-point traverse vs. the app's round-trip-doubling rendering); and Burgundy Spire's elevation_ft matching neither sourced convention available."
     }
   ]
 }

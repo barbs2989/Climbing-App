@@ -3947,3 +3947,106 @@ pages, WSDOT closure pages).
 9 confirmed errors fixed across 6 peaks (SQL: `audits/sql/2026-08-06-batch-55.sql`); 24 fields
 flagged for human review; Boston Peak's Southeast Face audited clean of confirmed errors (several
 flags, no fixes).
+
+## Batch 56 — 2026-08-06 (Pass 2, batch 5)
+
+10 routes across 9 peaks, checked via 9 parallel research agents (one per peak, Buckner
+Mountain's two routes covered together).
+
+- **Prusik Peak** (`wa_boving_christensen`) — `fa` gave no year ("year not given by available
+  sources"), but the route's own `overview` field already stated "put up by Paul Boving and Matt
+  Christensen in 1977" — the `fa` field just never picked it up. Confirmed via a StephAbegg trip
+  report and a CascadeClimbers.com forum thread both independently corroborating 1977. Fixed.
+  Grade/pitch count/length (5.10, 4p, 450') match StephAbegg's title exactly; area elevation,
+  prominence, coordinates, and Enchantment permit fees all confirmed. Individual pitch grades and
+  the gear list (already self-flagged `gear_confidence: "inferred"`) couldn't be independently
+  confirmed — topo pages 403'd — left as-is.
+- **South Early Winters Spire** (`wa_boving_roofs`) — the Blue Lake Trailhead waypoint's
+  elevation (5,200 ft) contradicted this same route's own `approach_logistics.trailheadDirection`
+  text, which already correctly said 5,400 ft; WTA and The Mountaineers both list the trailhead at
+  5,400 ft. Fixed. FA (Adam/Bedayn/Davis, 1937), area elevation/prominence/coordinates, grade
+  (5.10b), and USFS/Methow Valley RD land-manager text all confirmed. `aspect`/`face` giving
+  different compass directions for the same pitch, a seasonal-gate-date discrepancy between two
+  of the route's own fields, and a minor `length_m` vs. `pitch_detail`-sum mismatch are flagged,
+  not fixed — no single authoritative source pins any of them down.
+- **Buckner Mountain** (`wa_buckner_mountain_north_face`, `wa_buckner_mountain_southwest_face`) —
+  the Southwest Face route's `access.notes` gave the 2026 NPS early-access lottery window as
+  "Mar 2–13," off by one day; WTA, Campflare, and iHeartPNW (all citing the NPS release) agree the
+  actual window is March 3–14. Fixed. Elevation (9,114/9,112 ft), prominence, FA (Lewis Ryan,
+  1901), coordinates, permit fee structure, and the North Face's Grade II/1,300 ft/8-13 pitch
+  description (verbatim match to Mountaineers.org) all confirmed on both routes. Two flags, not
+  fixed: `group_limit: 6` on both routes may actually be 12 if Boston Basin is an NPS Type-1
+  cross-country zone rather than Type-2 (nps.gov 403'd, couldn't confirm directly — needs a human
+  with direct NPS access); and the North Face's `dist_km` (29.93) reads as a one-way figure for
+  what its own text describes as a point-to-point Boston Basin→Cascade Pass traverse, which the
+  app's `distKm * 2` round-trip rendering convention (CLAUDE.md) isn't built to represent — a
+  product/data-model question, not a fact error.
+- **Burgundy Spire** (`wa_burgundy_spire` area row) — `blurb` called Burgundy Spire "the highest
+  and most technically involved of the four Wine Spires." Mountaineers.org's Wine Spires page and
+  SummitPost's Chianti Spire page both corroborate that Pernod Spire is actually the tallest of
+  the four, with Burgundy and Chianti roughly equal in elevation just below it. Fixed the blurb's
+  claim; also reconfirmed the pass-1 Silver Star Creek approach-contamination fix on the North
+  Face route still holds. FA (Beckey party, 1953), grade (5.8, III), length (800'), and land
+  manager all confirmed. `elevation_ft` (8,483) matches neither the ~8,400 ft climbing-literature
+  figure (which the route's own `high_point_ft` already uses) nor listsofjohn.com's 8,492 ft —
+  flagged, not fixed, since neither source lines up with the stored value cleanly enough to
+  identify the intended convention.
+- **Burnt Boot Peak** (`wa_burnt_boot_peak_north_ridge`) — audited clean. Elevation (6,540 ft),
+  prominence, coordinates, FA (Williamson/Bucher/Oas, AAJ 1972), Mount Baker-Snoqualmie NF/Alpine
+  Lakes Wilderness permit terms, and emergency contacts all confirmed against Wikipedia,
+  ListsOfJohn, Peakbagger, and AAC Publications. The NWAC avalanche-zone label is plausible but
+  unconfirmed (zone-boundary map inaccessible) — flagged only.
+- **Cardinal Peak** (`wa_cardinal_peak` area row) — `region` said "Entiat Mountains," but Cardinal
+  Peak is the highest point of the distinct Chelan Mountains subrange (the two ranges only merge
+  further north); AAC Publications titles its report "Cardinal Peak, Chelan Range" and Wikipedia
+  agrees. Fixed. Prominence (2,070 ft), the North Fork Entiat trailhead waypoint, and the
+  Saska-Basin approach narrative all confirmed. The area's `blurb` carries the same underlying
+  mischaracterization (describes Chelan Mountains as a "subpart" of Entiat Mountains) — left
+  flagged for an editorial rewrite rather than patched here. A 1-ft elevation datum split (8,596
+  vs. 8,595) and a possible USFS district rename ("Entiat" → "Entiat-Chelan Ranger District") are
+  also flagged, not fixed — sourcing too thin/transitional to commit to either.
+- **Cascade Peak** (`wa_cascade_peak` area row) — `blurb` had the compass relationship to
+  Johannesburg Mountain backwards, saying Cascade Peak "sits just 0.53 mi west-southwest of...
+  Johannesburg Mountain," when Wikipedia states Johannesburg (the nearest higher peak) lies 0.53
+  mi WSW *of Cascade Peak* — i.e. the reverse. Fixed. Confirmed the pass-1 batch-4 geographic-
+  conflation fix still holds: this route's own coordinates/waypoints/GPX now cluster tightly
+  around Cascade Peak, not Johannesburg. However the deeper route-identity question flagged in
+  pass 1 is still open and, per the row's own `data_quality.gaps` note, arguably got worse: the
+  2026-07-28 fix's `corrections` field claims Beckey's "East Ridge" and "NW Chimney" are one
+  route, citing a CascadeClimbers trip report that is actually titled as a two-summit
+  Johannesburg+Cascade linkup — while Mountaineers.org documents Johannesburg's own separate,
+  real "East Ridge" (FA 1938) starting from the same col, and this row's own `bail`/`descent_text`
+  fields already warn against that route as a distinct, worse alternative. Left flagged for a
+  human rename/split decision (likely: rename this row to "NW Chimney" only, create a separate
+  Johannesburg East Ridge entry) rather than patched — same conflation family as prior batches'
+  Big Kangaroo/Colonial Peak/Corteo Peak/Goat Mountain flags.
+- **The Castle, Tatoosh Range** (`wa_castle_peak_tatoosh_southeast_face`, area
+  `wa_castle_peak_tatoosh`) — the most contaminated row this batch, four confirmed errors plus one
+  on the area row: (1) area `prominence_ft` (239) corrected to 200 ft (Wikipedia/Peakbagger); (2)
+  the route's own summit waypoint `elevFt` (6,640) contradicted this same record's `area.
+  elevation_ft`/`high_point_ft` (6,440, which matches Wikipedia) — fixed to 6,440; (3) `access.
+  _raw` was leftover contamination from an unrelated North Cascades peak record (8,343 ft, "USFS
+  Okanogan-Wenatchee NF – north Cascades Ranger District," Pasayten-style access routes — none of
+  which exist near the Tatoosh Range), directly contradicting this record's own correct NPS/Mount
+  Rainier land-manager text — dropped the field; (4) `road.name` said "Eagle Peak Trailhead,
+  Longmire," a real but unrelated Longmire-area trailhead — fixed to the Pinnacle Peak Trailhead/
+  Reflection Lakes access this record's own driveNote/approach text already describes; (5)
+  `approach_logistics` named "Snow Lake Trailhead"/"Unicorn Creek Basin," confirmed (WTA/
+  SummitPost/Willhite) as neighboring Unicorn Peak's approach, not Castle/Pinnacle's — rewritten
+  to the Pinnacle Peak Trailhead approach using this record's own already-correct waypoint
+  coordinates for that trailhead. FA remains undocumented in every source checked (Mountain
+  Project 403'd) — flagged, not guessed. The land-manager distinction (NPS/Mount Rainier NP, not
+  the adjacent GPNF Tatoosh Wilderness) was independently reconfirmed as already-correct.
+- **Cathedral Peak, Pasayten** (`wa_cathedral_peak_pasayten_se_buttress`) — audited clean, no
+  confirmed errors (also re-verifies the pass-1 batch-5 check). Elevation (8,606 ft), prominence,
+  summit coordinates, FA (Carl W. and George O. Smith, 1901), and the route's III 5.10a grade/10
+  pitches/~1,000 ft (corroborated by a Spokane Alpine Club trip report and a StephAbegg TR) all
+  confirmed — correctly distinguished throughout from the unrelated Enchantments-area Cathedral
+  Peak. A road-mileage figure that's ambiguous even across USFS/WTA/PNT sourcing, an internal
+  gain_ft vs. itinerary-sum mismatch, and an unconfirmable FA-party detail (already self-hedged in
+  the row) are flagged, not fixed.
+
+11 confirmed errors fixed across 7 peaks (SQL: `audits/sql/2026-08-06-batch-56.sql`); Burnt Boot
+Peak and Cathedral Peak Pasayten audited fully clean. Notable open item carried over from pass 1:
+Cascade Peak's East Ridge route-identity conflict is still unresolved and, on this pass's reading,
+still needs a human rename/split rather than a text patch.
