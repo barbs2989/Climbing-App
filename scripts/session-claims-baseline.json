@@ -1,0 +1,11 @@
+{
+  "note": "Success messages beside a session-gated write that are intentional (local-only state that really did change). Shrink this list; never grow it without a reason in the PR.",
+  "allowed": [
+    "ClimbMatch.jsx :: \"Conditions report deleted\")",
+    "ClimbMatch.jsx :: \"Crew removed\")",
+    "ClimbMatch.jsx :: \"Partner confirmed ✓\")",
+    "ClimbMatch.jsx :: \"Trip report deleted\")",
+    "ClimbMatch.jsx :: _org?\"You left — the crew is disbanded for everyone\":\"You left the cre",
+    "ClimbMatch.jsx :: _wasIn?\"Removed your pick for that day\":\"You're in — marked that day a"
+  ]
+}
