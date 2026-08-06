@@ -24,18 +24,30 @@ jobs:
       # package-lock.json is committed, so install exactly what it pins.
       - run: npm ci
 
-      # `npm run build` already chains both guards, but running them as their own
-      # steps means a guard failure reads as "Rules of hooks failed" in the checks
-      # list instead of hiding inside a build log.
+      # These two run as their own steps so a failure reads as "Rules of hooks
+      # failed" in the checks list instead of hiding inside a build log. They are
+      # idempotent, and `npm run build` below runs them again along with the rest.
       - name: Undefined references
         run: npm run check:refs
       - name: Rules of hooks
         run: npm run check:hooks
 
-      # The bundler step on its own — the two guards above already ran.
+      # `npm run build`, NOT `npx vite build`. This step used to call the bundler
+      # directly on the reasoning that "the two guards above already ran" — true
+      # when the chain was two guards long. It is now eleven, so calling vite
+      # directly meant nine of them ran only on main, after merge:
+      #   schema-drift, crew-ready, log-hydration, zindex, disc-labels,
+      #   write-feedback, boot-shell, session-claims, a11y-names
+      # A guard that first fires after the merge does not prevent the merge. The
+      # newest of them, check:a11y-names (#613), would never have run on a PR at
+      # all. Keep this in step with deploy.yml, which also runs `npm run build`:
+      # whatever gates production must gate the pull request.
       - name: Build
-        run: npx vite build
+        run: npm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
+          # deploy.yml sets this, so without it here the PR compiles a different
+          # app than production and any code behind the flag is never gated.
+          VITE_DEMO_AUTOLOGIN: "true"
