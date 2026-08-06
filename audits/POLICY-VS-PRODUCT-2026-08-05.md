@@ -69,10 +69,24 @@ Against:
 > **Privacy → What others can see:** "Other climbers see your public profile **as governed by
 > your privacy settings** — the fields you choose to make visible."
 
-Both describe controls the user cannot currently reach. **Do not simply flip the flag** —
-that would expose four controls whose persistence has not been verified, which is the exact
-anti-pattern the rest of this audit has been removing. Verify each one writes and reads back
-before enabling.
+Both describe controls the user cannot currently reach.
+
+> **Correction (2026-08-06).** This section originally said the flag was "cheap to close in
+> the product's favour — verify persistence, then enable". That was wrong, and the reason
+> matters. All four settings govern **how other people see you**. A client can only decide
+> what its own user is shown, so honouring "friends only" would require every *other* user's
+> app to comply. Enforcement needs server-side rules — profile columns plus RLS — not UI.
+> Rendering the toggles without that would assert a protection the app cannot keep: the same
+> class of defect this audit has spent its time removing. **`PRIVACY_CONTROLS_LIVE = false`
+> is the app being honest, not an oversight.**
+>
+> The test worth reusing: *can my own client alone make this promise true?* Contrast
+> `visibleWhileBrowsing` (#540), which is genuinely self-enforcing — your own client simply
+> declines to attach your name to the presence broadcast, so nothing downstream has to
+> cooperate. That one was correctly wired; these four cannot be.
+>
+> So gap 4 is **not** cheap, and it is not a UI task. The options are: build the server-side
+> rules, or amend the two Privacy sections to describe what the app actually does today.
 
 ---
 
@@ -94,7 +108,8 @@ before enabling.
 
 1. **Deletion and export** (gaps 1–2) are the substantive ones — they are enumerated user
    rights with no implementation. Decide build-vs-amend before launch.
-2. **Gap 4** is cheap to close in the product's favour: the controls exist in code and are
-   flag-gated. Verify persistence, then enable, and the Location and What-others-can-see
-   sections become true as written.
+2. **Gap 4** is an amend-or-build, **not** a UI toggle — see the correction above. The four
+   controls cannot be enforced client-side because they govern what *other* users see. Either
+   commit to the server-side rules, or reword the Location and What-others-can-see sections
+   to describe today's behaviour.
 3. **Gap 3** is likely an amend — there is no non-essential processing to opt out of today.
