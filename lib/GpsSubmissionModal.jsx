@@ -487,8 +487,9 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             style={{...styles.input}}
           />
 
-          <label style={{...styles.label}}>Additional notes</label>
-          <textarea aria-label="Additional notes"
+          <label htmlFor="gps-notes" style={{...styles.label}}>Additional notes</label>
+          <textarea
+            id="gps-notes"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="e.g., Early season snow / Late season dry / Took West Ridge variant"
