@@ -20,7 +20,7 @@
 // often differ because one figure is one-way and the other round trip — which is a data bug
 // worth fixing, but on its own it doesn't prove the rows are duplicates.
 
-import { selectAll } from "./lib/supabase-env.mjs";
+import { selectAll, SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
 
 const STOP = new Set(["the","a","of","route","climb","via","and"]);
 
@@ -63,17 +63,33 @@ const populated = r => FIELDS.filter(k => {
   return v !== null && v !== undefined && v !== "" && !(Array.isArray(v) && !v.length);
 }).length;
 
-const areas = await selectAll("areas", "id,name,area_type", "area_type=eq.peak");
-const waPeaks = areas.filter(a => a.id.startsWith("wa_"));
+// Fetch the areas unfiltered and narrow in JS. Asking PostgREST for `area_type=eq.peak`
+// paginates over an unfiltered index on a column that has none, and the anon role's 3s
+// statement_timeout kills it: this script died on `GET areas -> 500 {"code":"57014"}`
+// before printing anything. audit-distances already takes the whole-table-then-filter
+// route for the same reason; the areas table is small enough that it is cheaper anyway.
+const areas = await selectAll("areas", "id,name,area_type", null, { pageSize: 1000 });
+const waPeaks = areas.filter(a => a.area_type === "peak" && a.id.startsWith("wa_"));
 console.log(`${waPeaks.length} WA peak areas\n`);
 
-const rows = await selectAll("routes", `id,name,area_id,${FIELDS.join(",")}`,
-  "id=gte.wa_&id=lt.wa%60", { pageSize: 500 });
-// Old-convention ids (adams_*, etc.) fall outside the wa_ range, so pull anything whose area
-// is a WA peak regardless of its own id prefix.
-const extra = await selectAll("routes", `id,name,area_id,${FIELDS.join(",")}`,
-  `area_id=in.(${waPeaks.map(a => a.id).join(",")})`, { pageSize: 500 });
-const all = [...rows, ...extra.filter(e => !rows.some(r => r.id === e.id))];
+// Fetch by area in chunks. This used to run an `id=gte.wa_&id=lt.wa\`` range scan across the
+// whole 200k-row routes table first, which the anon role's 3s statement_timeout killed with
+// a 57014 -- the script never reached its own analysis. That query was also redundant: every
+// route whose area is not a WA peak is discarded a few lines below, so scanning by id prefix
+// could only ever add rows that were about to be thrown away. Chunking by area_id is the
+// pattern audit-distances already uses, and it asks only for rows this script will keep.
+// It also picks up legacy ids (`adams_*`, `stuart_*`) for free, since they are found through
+// their area rather than their own prefix.
+const all = [];
+const peakIds = waPeaks.map(a => a.id);
+for (let i = 0; i < peakIds.length; i += 80) {
+  const chunk = peakIds.slice(i, i + 80).map(x => `"${x}"`).join(",");
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=${encodeURIComponent(`id,name,area_id,${FIELDS.join(",")}`)}` +
+    `&area_id=in.(${encodeURIComponent(chunk)})&limit=2000`;
+  const res = await fetch(url, { headers: headers(anonKey()) });
+  if (!res.ok) throw new Error(`GET routes chunk ${i} -> ${res.status} ${(await res.text()).slice(0, 200)}`);
+  all.push(...await res.json());
+}
 
 const byArea = {};
 for (const r of all) {
@@ -81,6 +97,19 @@ for (const r of all) {
   (byArea[r.area_id] = byArea[r.area_id] || []).push(r);
 }
 const areaName = Object.fromEntries(waPeaks.map(a => [a.id, a.name]));
+
+// Say what was examined, and refuse to report three clean sections having examined nothing.
+// All three findings below are counts of things NOT found, so an empty fetch prints exactly
+// the same all-zero report as a spotless catalog -- and this script has already shipped one
+// query that returned nothing at all (the 57014 above).
+const examined = Object.values(byArea).reduce((n, rs) => n + rs.length, 0);
+const comparable = Object.values(byArea).filter(rs => rs.length > 1).length;
+console.log(`${examined} routes on those peaks; ${comparable} areas hold more than one route\n`);
+if (!examined) {
+  console.error(`FAILED: fetched ${all.length} routes and matched 0 to a WA peak.`);
+  console.error(`Three zero findings here would mean nothing was compared, not that nothing is wrong.`);
+  process.exit(1);
+}
 
 const nameHits = [], convHits = [], stubs = [];
 for (const [aid, list] of Object.entries(byArea)) {
