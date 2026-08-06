@@ -36,6 +36,13 @@ import { SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
 const argv = process.argv.slice(2);
 const arg = (n, d) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
 const TABLE = arg("--table", "routes");
+// Which column scopes a row to its parent. `routes` hang off an area; `areas` hang off
+// another area. This was hardcoded to area_id, so `--table areas` asked PostgREST for
+// areas.area_id and died with 42703 — the areas mode had never once worked, while the
+// default silently reported "nothing to check" on an areas file. Structural area edits
+// are handed over as copy-paste SQL routinely, so both halves mattered.
+const SCOPE_COL = TABLE.toLowerCase() === "areas" ? "parent_id" : "area_id";
+const skippedTables = new Set();
 const file = argv.filter(a => !a.startsWith("--") && argv[argv.indexOf(a) - 1] !== "--table")[0];
 
 if (!file) {
@@ -87,6 +94,10 @@ for (const stmt of statements) {
   // never routes. A guard that cries wolf is a guard people stop reading.
   const tableMatch = stmt.match(/^\s*(?:delete\s+from|update)\s+([a-z_][a-z0-9_]*)/i);
   const stmtTable = tableMatch ? tableMatch[1].toLowerCase() : null;
+  // Remember what this file actually writes to. Skipping quietly is right for one
+  // statement, but a file that touches ONLY other tables must not end on "nothing to
+  // check" — that reads exactly like "checked, all good". See the report below.
+  if (stmtTable) skippedTables.add(stmtTable);
   if (stmtTable !== TABLE.toLowerCase()) continue;
 
   // Ids inside a subquery are not what this statement writes to. The safest form of
@@ -115,6 +126,16 @@ for (const stmt of statements) {
 }
 
 if (!targets.length) {
+  // The file DOES write, just not to the table we were pointed at. Saying "nothing to
+  // check" here is indistinguishable from "checked, all good" — which is how the Middle
+  // Peak areas fix went to the user unchecked. Fail closed and name the flag to use.
+  const others = [...skippedTables].filter(t => t !== TABLE.toLowerCase());
+  if (others.length) {
+    console.error(`\ncheck:sql FAILED — this file writes to ${others.map(t => `\`${t}\``).join(", ")}, but it was checked against \`${TABLE}\`.`);
+    console.error(`Nothing was verified. Re-run naming the table you are actually writing:`);
+    for (const t of others) console.error(`  node scripts/check-sql-targets.mjs --table ${t} ${file === "-" ? "-" : file}`);
+    process.exit(1);
+  }
   console.log("no UPDATE/DELETE statements with literal ids found — nothing to check");
   process.exit(0);
 }
@@ -127,7 +148,7 @@ async function fetchRows(ids) {
   for (let i = 0; i < ids.length; i += 50) {
     const batch = ids.slice(i, i + 50).map(x => `"${x}"`).join(",");
     const r = await fetch(
-      `${SUPABASE_URL}/rest/v1/${TABLE}?id=in.(${batch})&select=id,name,area_id`,
+      `${SUPABASE_URL}/rest/v1/${TABLE}?id=in.(${batch})&select=id,name,${SCOPE_COL}`,
       { headers: headers(key) }
     );
     if (!r.ok) { console.error(`query failed: ${r.status} ${await r.text()}`); process.exit(2); }
@@ -160,23 +181,23 @@ const onlyCopy = [], crossArea = [];
 for (const t of deletes) {
   const row = found.get(t.id);
   const r = await fetch(
-    `${SUPABASE_URL}/rest/v1/${TABLE}?name=eq.${encodeURIComponent(row.name)}&select=id,area_id`,
+    `${SUPABASE_URL}/rest/v1/${TABLE}?name=eq.${encodeURIComponent(row.name)}&select=id,${SCOPE_COL}`,
     { headers: headers(key) }
   );
   const sameName = await r.json();
-  const sameArea = sameName.filter(s => s.area_id === row.area_id);
+  const sameArea = sameName.filter(s => s[SCOPE_COL] === row[SCOPE_COL]);
   if (sameArea.length > 1) continue;
 
   const elsewhere = sameName.filter(s => s.id !== t.id);
-  if (!elsewhere.length) { onlyCopy.push({ ...t, name: row.name, area: row.area_id }); continue; }
+  if (!elsewhere.length) { onlyCopy.push({ ...t, name: row.name, area: row[SCOPE_COL] }); continue; }
 
   // Names like "East Face" are shared by 90+ routes catalog-wide, so "a row with this
   // name exists somewhere" proves nothing. What counts is the specific twin the author
   // asserts in the guard — that is the claim being made, and it is checked against the
   // live row set rather than taken on trust.
   const asserted = elsewhere.filter(s => new RegExp(`'${s.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}'`).test(t.full));
-  if (asserted.length) crossArea.push({ ...t, name: row.name, area: row.area_id, twin: asserted.map(s => `${s.id} (${s.area_id})`).join(", ") });
-  else onlyCopy.push({ ...t, name: row.name, area: row.area_id,
+  if (asserted.length) crossArea.push({ ...t, name: row.name, area: row[SCOPE_COL], twin: asserted.map(s => `${s.id} (${s[SCOPE_COL]})`).join(", ") });
+  else onlyCopy.push({ ...t, name: row.name, area: row[SCOPE_COL],
     hint: `${elsewhere.length} other row(s) share this name, but none is named in this statement — put the intended twin's id in an EXISTS guard` });
 }
 
