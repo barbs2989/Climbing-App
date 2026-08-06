@@ -32,6 +32,10 @@ create policy "guide_credentials self insert pending" on guide_credentials for i
 -- stays admin-only" — but resubmitGuideCredential() does an UPDATE, and no self-update
 -- policy exists. Every click throws PGRST116 into an unhandled rejection: the button does
 -- nothing and says nothing. Allow exactly that one transition, and only that one.
+-- Note: this does not pin cert_track, so a guide may switch tracks while resubmitting.
+-- That is deliberate and safe — the row lands in 'pending', which grants no badge and no
+-- disciplines, and the admin re-checks it against the uploaded documents either way. It
+-- does mean a reviewer must not assume the track is the one they rejected.
 create policy "guide_credentials self resubmit" on guide_credentials for update
   using (guide_id = auth.uid() and status in ('rejected', 'lapsed'))
   with check (
