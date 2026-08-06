@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_crooked_thumb_peak_east_face",
+  "last_processed_id": "wa_direct_north_buttress",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1402,6 +1402,55 @@
         "wa_cutthroat_peak / wa_complete_south_buttress: itinerary.days[0].schedule text says 'up to ~16 pitches' while the row's own pitches field says 22 -- the standard (non-Complete) route's pitch count leaking into the Complete variant's schedule prose.",
         "wa_complete_south_buttress: pitch count (22) and length_m (366, averaging ~55ft/pitch) could not be independently confirmed this pass -- WebFetch returned 403 on every domain attempted (not specific to climbing sites), so verification relied on WebSearch snippets only. Worth a re-check once fetch access is healthy.",
         "wa_concord_tower_north_face: summit elevation dispute (7,569 on file vs 7,611 waypoint/area vs ~7,560 per some external sources) remains unresolved from a prior pass; no new resolving source found this run."
+      ]
+    },
+    {
+      "batch_number": 60,
+      "pass": 2,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_crooked_thumb_peak_south_route",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir",
+        "wa_cutthroat_peak_northeast_face",
+        "wa_cutthroat_peak_southeast_buttress",
+        "wa_cutthroat_south_buttress",
+        "wa_cutthroat_west_ridge",
+        "wa_dark_peak_dark_glacier_route",
+        "wa_dark_side_of_liberty",
+        "wa_diamond_in_the_rough",
+        "wa_direct_north_buttress"
+      ],
+      "confirmed_errors_fixed": 16,
+      "flagged_for_human_review": 24,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-06-batch-60.sql",
+      "note": "Researched via 6 parallel agents, one per peak. Cutthroat Peak's area elevation_ft had drifted back to the stale 8065 value for the SECOND time today -- batch 59 (earlier this pass) had just re-fixed it to 8066 -- re-fixed again (area+blurb+one route waypoint/pitch_detail note) and flagged as a likely upstream re-seeding issue rather than a one-off. Crooked Thumb Peak's high_point_ft had similarly reverted to 8129, undoing a deliberate pass-1 NULL decision -- reset to NULL. Also fixed: 2 Cutthroat rock_grade errors (Northeast Face 5.7->5.10, Southeast Buttress 5.6->5.8, both externally confirmed), a wrong Ross Lake NRA land-manager claim and a 1-day-off lottery date on Crooked Thumb Peak, Dark Peak's area prominence_ft (273->264, secondary-source only -- primary sources blocked at network level this session), a Blue-Lake-trailhead text contamination on Liberty Bell's Dark Side of Liberty (first audit of this route -- much of the surrounding numeric approach data is also contaminated but left flagged, not guessed, since no authoritative replacement was found), 3 access-field contamination errors plus a fabricated duplicate waypoint on Sloan Peak's Diamond in the Rough, and a cross-peak grade contamination on Bear Mountain's Direct North Buttress (ice_grade WI5+ traced to an unrelated same-named Dragontail Peak route). Re-verified and confirmed still intact: Sloan Peak's pass-1 elevation fix, and all of Bear Mountain's pass-1 batch-8 fixes (FA, pitches, length, grade, season, NPS fee). No route in this batch came back fully clean. Biggest open items: all 5 Cutthroat Peak routes share an identical wrong beta field and an identical approach/approach_logistics block pointing at the wrong trailhead (Rainy Pass PCT, ~7km off) -- template contamination needing authored rewrites, not patches; Crooked Thumb Peak's FA credits may be swapped between its two 1963 routes (needs primary AAJ text); Dark Peak's 3-way elevation conflict narrowed (8518 unsupported) but still split between 8504/8507; this is now the third same-day instance of a previously-fixed field reverting (Cutthroat elevation x2, Crooked Thumb high_point_ft) -- worth a dedicated look at whether an import/seed process is periodically overwriting audited rows.",
+      "flags": [
+        "wa_cutthroat_peak (all 5 routes): identical, self-evidently wrong `beta` field ('Grade II, 5.7 climbing. Short approach from highway...') copy-pasted across all 5 routes, contradicting each route's own real grade (III+/WI4, III/5.10, III/5.8, 5.8/III, 5.6/D) -- needs authored per-route replacement text, not a find-replace.",
+        "wa_cutthroat_peak (all 5 routes): identical `approach_logistics`/`approach` text names the Rainy Pass PCT trailhead (~48.5564,-120.6547 / ~48.5181,-120.7331 confirmed real coords) -- ~7km from the actual unofficial SR-20 pullout ~1.5mi west of Washington Pass that every guide source (AAI, NC Mountain Guides, Mountaineers.org) describes, and that each route's own waypoints already correctly use. Needs human GPS confirmation of the real pullout before writing a fix.",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir / northeast_face / southeast_buttress / south_buttress / west_ridge: trailhead waypoint coordinates disagree by up to ~1 mi between routes that claim to share one pullout -- needs topo/GPS check to settle which (if any) is correct.",
+        "wa_cutthroat_south_buttress: gain_ft (2500) vs itinerary.days[0].gainFt (2965, matches waypoint-implied gain) -- needs reconciliation.",
+        "wa_cutthroat_west_ridge: gain_ft/loss_ft (3800/3200) vs itinerary gainFt/lossFt (3300/3300, matches route's own sourceNote text) -- needs reconciliation.",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir / northeast_face / southeast_buttress: shared gain_ft=2500 undercounts the waypoint-implied ~3166 ft gain -- needs reconciliation.",
+        "wa_cutthroat_south_buttress / wa_cutthroat_west_ridge: access._raw block says 'no permits required' while also carrying permit_pickup_hours/location fields -- self-contradictory leftover template fields, low-severity cleanup flag.",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir: FA ('Dan Cauthorn and Tim Wilson') plausible given the route's name and corroborated by route-existence sources, but no source found explicitly confirming date/party -- not contradicted, just unconfirmed.",
+        "wa_cutthroat_peak_r1 vs wa_cutthroat_south_buttress: standing duplicate-route flag from pass-1 batch 7 (same Beckey/Gordon-1958 route under two ids) reconfirmed as still applicable; r1 itself was outside this batch's row set so could not be directly re-checked. No action taken per guardrails.",
+        "wa_crooked_thumb_peak_south_route: this route's own `face` text ('diagonal gully and chimney system to the first notch north of the summit') matches AAJ's description of the OTHER 1963 FA party (Ardussi/Magnusson/Mech/Swanson) rather than the party currently credited in `fa` (Jackson/Jensen/Marts/Schmechel, who climbed a separate class 3-4 line same day) -- the two 1963 routes' FA credits may be swapped across this peak's two DB rows. Needs primary 1964 AAJ text access to resolve; the sibling route was not in this batch's row set to cross-check directly.",
+        "wa_crooked_thumb_peak_south_route: round-trip mileage disagrees across 5 different fields in the same row (40 / 46.5 / 48-50 / 50+ / 54 mi) -- no single authoritative source found to settle it.",
+        "wa_crooked_thumb_peak_south_route: pitch_detail (5-pitch breakdown, tops out 'Class 4, exposed') has no discrete pitch for the 5.8+/A1 headwall crux described in the route's own grade/descent_text/rappel_detail fields -- internal data-consistency gap, not independently sourceable as a specific error.",
+        "wa_dark_peak (area) + wa_dark_peak_dark_glacier_route: 3-way elevation conflict narrowed but not resolved -- area elevation_ft=8518 has zero corroboration in any source found and is likely wrong, but the correct replacement is genuinely split between 8504 (waypoint, SummitPost/Bulger-List, Country Highpoints) and 8507 (route high_point_ft, PeakVisor) across credible secondary sources. Primary sources (Wikipedia, Peakbagger, USGS GNIS) were blocked at the network/proxy level this session -- needs a follow-up pass with that access restored.",
+        "wa_dark_peak_dark_glacier_route: season='Jun-Jul' is narrower than both the route's own best_season text ('June into August') and WTA's cited May-October climbable range, and SummitPost calls May 'most excellent' -- three different windows across sources/fields, needs a human call on which is authoritative.",
+        "wa_dark_peak_dark_glacier_route: dist_km=20.1 (round-trip ~25mi under this app's x2 convention) vs two independent sources citing 27.7-28.0 mi round trip (~10% higher) -- could reflect a different approach variant (Swamp Creek vs Hemlock Camp/PCT) rather than an error; not independently resolved.",
+        "wa_dark_peak (area blurb): states neighboring Bonanza Peak at 9,511 ft; the route's own Bonanza waypoint says 9,516 ft, matching Wikipedia's Bonanza Peak page coordinates exactly -- minor (5ft) inconsistency about a neighboring peak, not Dark Peak itself, low priority.",
+        "wa_dark_side_of_liberty: gpx track, dist_km, gain_ft, itinerary, and timing fields all reflect the wrong (Blue Lake) trailhead's approach profile, per the same contamination pattern as the fixed partner_requirements.approachTime field -- the route's own approach text is correct (hairpin-curve/pond pullout, ~20 min from the road) but no authoritative replacement GPS track/mileage/gain figures were found for that actual approach. Needs a dedicated re-measurement/re-collection pass, not a field patch.",
+        "wa_dark_side_of_liberty: pitch count disagreement -- routes.pitches=10 and pitch_detail (10 entries) agree with Mountain Project, but hazards/timing.sectionBreakdown/itinerary all reference '10-11' or '11' pitches, possibly counting an optional 4th-class summit scramble as an 11th pitch. Needs a human call on whether to standardize to 10 or document an explicit 11th pitch.",
+        "wa_diamond_in_the_rough: waypoints/gpx array is not ordered by approach progression (zigzags trailhead(0mi) -> summit(4.5mi) -> junction(1.5mi) -> summit-dup) -- any track rendered from gpx would zigzag. Needs human reordering decision, not a value patch.",
+        "wa_diamond_in_the_rough: top-level grade '5.11-' conflicts with the route's own beta field (citing the original 2011 FA trip report as '5.10, Grade III') and every other source found this pass, which also say 5.10/Grade III -- mountainproject.com (source of the 5.11- figure) returned 403 to direct verification. Source conflict unresolved.",
+        "wa_diamond_in_the_rough: access.rules campfire-prohibited-above-3500ft figure could not be confirmed as applying to Henry M. Jackson Wilderness specifically (only the wilderness NAME was fixed this batch) -- left as-is, more commonly associated with Glacier Peak Wilderness rules, possibly still-contaminated text.",
+        "wa_diamond_in_the_rough: an alternate approach via 'Cougar Creek/North Fork Sauk trailhead (FR 49)' in the route's own approach text could not be corroborated by any source found this pass.",
+        "wa_direct_north_buttress: `face` field's 'Gerber-Sink' reference remains unconfirmed against any Bear Mountain/Chilliwack Range source -- same open item as pass-1 batch 8; only an unrelated Leavenworth-area 'Gerber-Sink' climb was found.",
+        "wa_direct_north_buttress: `road`/driveNote describes a Depot Creek (BC) approach, but a route-specific trip report (skisickness.com) explicitly documents driving/hiking up Depot Creek as a known WRONG TURN for this route -- the correct approach from the same Chilliwack Lake Road parking area is the Chilliwack River Trail. No precise authoritative mileage/road-status text found to write a confident replacement.",
+        "Systemic: this is the third same-day instance of a previously-fixed field reverting to its old value (Cutthroat Peak elevation_ft, fixed in batch 59 and again here in batch 60; Crooked Thumb Peak high_point_ft, fixed in pass 1 batch 7 and reverted by this pass) -- strongly suggests an upstream import/seed process periodically overwrites audited rows independently of this branch's fixes. Worth investigating outside the scope of a single audit batch."
       ]
     }
   ]

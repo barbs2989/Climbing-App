@@ -4322,3 +4322,95 @@ prior-pass "corrected" facts were found to have drifted back to their wrong valu
 Peak's area elevation, and — per batch 58's note — this is now the second time a
 previously-fixed elevation has needed re-fixing) — worth watching whether some upstream
 process is periodically re-seeding stale area-level data independently of route-level fixes.
+
+## Batch 60 — 2026-08-06 (Pass 2, batch 9)
+
+Routes: `wa_crooked_thumb_peak_south_route` (Crooked Thumb Peak), `wa_cutthroat_peak_cauthorn_wilson_couloir`,
+`wa_cutthroat_peak_northeast_face`, `wa_cutthroat_peak_southeast_buttress`, `wa_cutthroat_south_buttress`,
+`wa_cutthroat_west_ridge` (Cutthroat Peak, 5 routes), `wa_dark_peak_dark_glacier_route` (Dark Peak),
+`wa_dark_side_of_liberty` (Liberty Bell Mountain), `wa_diamond_in_the_rough` (Sloan Peak),
+`wa_direct_north_buttress` (Bear Mountain). Researched via 6 parallel agents, one per peak.
+
+- **Cutthroat Peak's area `elevation_ft` drifted back to the stale 8,065 ft value for the
+  second time TODAY** — batch 59, earlier this same pass, had just re-fixed it to 8,066 ft.
+  Re-fixed again (area row, blurb, and a South Buttress waypoint/pitch_detail note still
+  carrying 8,065 ft) but flagging this loudly: two same-day reversions on one field point at
+  an upstream process re-seeding area-level data independently of route fixes, not a stale
+  audit. Also fixed two rock_grade errors on Cutthroat siblings, both contradicted by their
+  own overview/pitch_detail text and confirmed externally: Northeast Face 5.7→5.10 (AAC
+  Publications' "The Swarm" writeup, III 5.10), Southeast Buttress 5.6→5.8
+  (Mountaineers.org, "Grade III, 5.8"). Left unfixed and flagged: all 5 Cutthroat routes
+  share an identical, self-evidently wrong `beta` field ("Grade II, 5.7... short approach
+  from highway") that contradicts each route's own real grade, and an identical
+  `approach`/`approach_logistics` block pointing at the Rainy Pass PCT trailhead — confirmed
+  ~7 km from the real unofficial SR-20 pullout every guide source describes for this peak —
+  both look like template contamination but need authored replacement text, not a
+  find-replace; also flagged a ~1 mi trailhead-waypoint disagreement between routes and
+  several gain_ft/loss_ft-vs-itinerary mismatches per route.
+- **Crooked Thumb Peak** — `high_point_ft` had reverted to 8,129 ft, undoing pass 1's
+  deliberate decision to leave it NULL (unconfirmed whether the route tops the true summit
+  fin); reset to NULL, reinforced this pass by the route's own cited 2016 trip report, which
+  says the party found "no feasible way to reach [the true summit thumb] directly." Also
+  fixed a wrong Ross Lake NRA land-manager claim (this route's real Hannegan approach never
+  touches the NRA per USFS Trail #674) and a 2026 lottery date off by a day (Mar 2–13 →
+  Mar 3–14, per NPS). New flag: the row's own `face` text ("diagonal gully and chimney
+  system to the first notch north of the summit") matches the *other* 1963 FA party
+  (Ardussi/Magnusson/Mech/Swanson) per AAJ secondary sourcing, while `fa` credits a
+  different party (Jackson/Jensen/Marts/Schmechel) who climbed a separate class 3-4 line
+  that day — looks like the two 1963 routes' FA credits may be swapped across this peak's
+  two DB rows; needs primary AAJ-text access to resolve, not guessed. Also flagged a 5-way
+  round-trip-mileage disagreement (40 to 54 mi across different fields in the same row).
+- **Dark Peak** — fixed area `prominence_ft` (273→264 ft) based on converging secondary
+  sources (SummitPost/Bulger-List context); primary sources (Wikipedia, Peakbagger) were
+  blocked at the network level this session, so this fix carries less certainty than usual
+  — worth a follow-up primary-source check. The pass-1 3-way elevation conflict (8518
+  area / 8507 route / 8504 waypoint) was narrowed but not resolved: 8518 has zero
+  corroboration anywhere and is likely wrong, but the correct replacement is genuinely split
+  between 8504 and 8507 across credible secondary sources — left unfixed per audit
+  guardrails. Also flagged a `season` field ("Jun–Jul") that undercuts the route's own
+  broader `best_season` text and external sourcing (May–October), and a ~10% dist_km gap
+  against two sources that may just reflect a different approach variant.
+- **Liberty Bell Mountain** (`wa_dark_side_of_liberty`, first audit of this route) — found
+  the same "Blue Lake trailhead" contamination pattern seen on sibling Washington Pass peaks
+  in earlier batches, but this time spread across more fields: `gpx`'s first coordinate
+  matches Blue Lake TH almost exactly (~20m), and `dist_km`, `gain_ft`, `itinerary`, and
+  `timing` all reflect that trailhead's longer profile — even though this route's own
+  (correct) `approach` text describes a completely different, ~20-minute roadside approach
+  from a hairpin-curve pullout east of the pass (confirmed via AAC Publications/Climbing.com
+  FA accounts). Fixed the one field with a confirmable text correction
+  (`partner_requirements.approachTime`, which literally named "Blue Lake trailhead"); left
+  the GPS track, distance, and gain figures flagged rather than guessed, since no
+  authoritative replacement values were found for the real approach — this needs a
+  dedicated re-measurement/re-collection pass, not a field patch. Also flagged a
+  10-vs-"10-11"-vs-"11" pitch-count inconsistency across fields.
+- **Sloan Peak** (`wa_diamond_in_the_rough`) — re-verified the area's elevation/prominence
+  fix from pass 1 batch 7 is still holding (7,835 ft, no drift). Fixed three contamination
+  errors in the route's own `access` fields: two fields wrongly named "Glacier Peak
+  Wilderness" instead of Sloan Peak's real Henry M. Jackson Wilderness (matching the same
+  row's own `wilderness_zone`/`permitZone` fields), and a parking-pass note citing "Sunrise
+  Mine TH for Vesper Peak" — an unrelated peak's trailhead — instead of this route's own
+  Bedal Creek TH. Also removed a fabricated waypoint ("Route GPS pin, Mountain Project, SW
+  Face") that exactly duplicated the summit coordinate while the row's own
+  `data_quality.gaps` field already says no public GPS track exists for this route. Flagged
+  rather than fixed: the waypoint/gpx array isn't ordered by approach progression (zigzags
+  trailhead→summit→junction→summit), and a grade conflict (5.11− on file vs. 5.10/Grade III
+  in the route's own cited 2011 FA trip report and every other source found, with
+  mountainproject.com blocked from direct verification).
+- **Bear Mountain** (`wa_direct_north_buttress`) — re-verified all of pass-1 batch-8's fixes
+  (FA, pitch count, length, grade, season, NPS fee correction) are still intact, no
+  reversion. One new fix: `ice_grade` "WI5+" contradicts this route's own summer-rock-only
+  season and gear fields, and no source describes ice climbing on it — traced to likely
+  contamination from an unrelated, identically-named "Direct North Buttress" route on
+  Dragontail Peak, whose Mountain Project page lists a crux pitch graded exactly "WI5+ M4."
+  Cleared to NULL. Left flagged: an unconfirmable "Gerber-Sink" face-name reference (same
+  open item as pass 1), and a `road`/approach field describing a Depot Creek approach that a
+  route-specific trip report (skisickness.com) explicitly calls a documented wrong turn —
+  the correct approach per that source is the Chilliwack River Trail from the same
+  trailhead.
+
+16 confirmed errors fixed across all 6 peaks (SQL: `audits/sql/2026-08-06-batch-60.sql`); no
+route in this batch came back fully clean — every peak had at least one open flag alongside
+its fixes. This is the third same-day instance of a previously-fixed field reverting
+(Cutthroat Peak's elevation, now twice today, plus Crooked Thumb Peak's `high_point_ft`
+regressing from pass 1) — worth a dedicated look at whether some import/seed process is
+periodically overwriting audited rows independently of this branch's fixes.
