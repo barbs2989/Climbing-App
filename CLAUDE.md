@@ -13,6 +13,7 @@ npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
+npm run check:drift# does the live site actually serve the current tip of main?
 ```
 
 There is no unit test suite, linter, or type checker. The three `check:` scripts are
@@ -36,7 +37,22 @@ ships: not a build error, but a screen that renders wrong or not at all.
   sit in front of production deploys. Run it by hand before merging anything that
   touches the render tree. `--snapshot before.json` / `--snapshot after.json` dumps
   per-screen text so you can prove a refactor is behaviour-neutral; only the clock
-  inside ASPECT & SUN should differ between two runs.
+  inside ASPECT & SUN should differ between two runs. `--url <live URL>` points the
+  same walk at the deployed site instead of a dev server.
+- **`check:drift`** asks whether the live site is actually serving the current tip
+  of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
+  the build. It exists because on 2026-08-06 production sat **8 commits behind for
+  five hours** and nothing said so: `cancel-in-progress: true` had merges killing
+  each other's builds (fixed in #616), and during a GitHub Actions outage nine
+  merges produced **no deploy run at all**. A workflow cannot report on a run that
+  never existed, so the question has to be asked from outside. Two traps it encodes:
+  the newest deployment record is **not** necessarily the live one — a stale run can
+  put a `failure` record on top of a healthy site, so it walks back to the most
+  recent deployment whose status is actually `success`; and it holds a 45-minute
+  grace window, because a commit that landed two minutes ago is lag, not drift.
+  It reports rather than self-heals: a `workflow_dispatch` made with the built-in
+  `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
+  it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
 
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
