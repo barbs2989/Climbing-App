@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_chimney_rock_west_face",
+  "last_processed_id": "wa_colchuck_peak_northeast_couloir",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1344,6 +1344,28 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-06-batch-57.sql",
       "note": "Pass 2, batch 6. Researched via 5 parallel agents, one per peak. wa_chair_peak_east_face audited fully clean. Re-verified the pass-1 batch-5 Chimney Rock West Face elevation fix (7,440 ft South Summit) is still live and correct. Two notable open items: the round-trip-vs-one-way dist_km convention bug (per CLAUDE.md's ~61-row known issue) surfaced again on 3 more routes (Chair Peak North Face/NE Buttress, Chianti Spire, Chimney Rock West Face) -- flagged for the dedicated audit:distances tool rather than patched piecemeal; and Chair Peak's North Face/Northwest Ridge FA fields may describe the same 1975 first ascent misfiled under the wrong route, same pattern as prior batches' first-ascent-conflation flags."
+    },
+    {
+      "batch_number": 58,
+      "pass": 2,
+      "date": "2026-08-06",
+      "route_ids": [
+        "wa_chiwawa_mountain_southwest",
+        "wa_chockstone_route",
+        "wa_clark_mountain_west_ridge",
+        "wa_classic_route_2",
+        "wa_classic_route_3",
+        "wa_colchuck_peak_colchuck_glacier",
+        "wa_colchuck_peak_east_ridge",
+        "wa_colchuck_peak_holsten_hilden",
+        "wa_colchuck_peak_north_buttress_couloir",
+        "wa_colchuck_peak_northeast_couloir"
+      ],
+      "confirmed_errors_fixed": 12,
+      "flagged_for_human_review": 15,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-06-batch-58.sql",
+      "note": "Pass 2, batch 7. Researched via 6 parallel agents (one per peak; Colchuck Peak's 5 routes audited together as a sibling-contamination check). wa_colchuck_peak_colchuck_glacier audited fully clean. Unicorn Peak's Classic Route was the safety-relevant find: rappels/pitch_detail[0].notes/watch_out[0] all still pointed climbers at the deprecated 'bleached snag' rappel anchor, contradicting this same row's own descent_text field, which already correctly documents that anchor is no longer sound and the current anchor is a rock horn -- propagated the correction to the three lagging fields; also fixed a detailed_rack self-contradiction ('no cams needed' vs. the row's own gear/rack/sling_rack/pro_needs, which all list cams) and a length_m (122) wildly inconsistent with the row's own single 15m pitch. North Early Winters Spire's Chockstone Route had the by-now-familiar Blue Lake TH coordinate contamination (already fixed on sibling routes on this peak in an earlier pass, never applied here), a rack/detailed_rack cam-size contradiction already resolved in the row's own gear/corrections fields but never propagated, and a watch_out newline-string-instead-of-array bug. Chiwawa Mountain's Southwest Route had grade wrongly say '+glacier', contradicted by its own pro_needs/watch_out/seasonal_hazards -- fixed; its crowds/partner_requirements/seasonal_guidance/seasonal_hazards fields describe a wholesale different, glaciated route and need a human rewrite (flagged, not patched). Clark Mountain's West Ridge/Walrus Glacier had null top-level lat/lng backfilled from data already present three other places on the same row, and an itinerary day-mileage/totalNote mismatch (day sums undercounted the route's own waypoints and totalNote overcounted both mileage and elevation) reconciled to the row's own top-level gain_ft and external Mountaineers.org/Wenatchee Outdoors sourcing. Lane Peak's Classic Route had an approach-text mileage outlier (3 mi vs. three agreeing internal fields all saying ~4 mi) -- fixed. Colchuck Peak: East Ridge's gain_ft/loss_ft (2800/2800) corrected to 5300/5300 matching its own waypoint-implied profile and sibling Colchuck Glacier's identical figure; Northeast Couloir's watch_out newline-string-instead-of-array bug fixed. Explicitly checked all 5 Colchuck Peak routes for the Enchantments-lottery-on-a-day-trip bug seen elsewhere in this DB -- not present here, clean on that front. Left flagged rather than fixed: East Ridge's own corrections field wants a name change to 'Colchuck Glacier'/'East Route' but both exactly match sibling wa_colchuck_peak_colchuck_glacier and East Ridge's own beta field describes a materially different line than its approach/pitch_detail -- likely the same possible-duplicate-route pattern as Dragontail r4/triple_couloirs and Cutthroat r1/south_buttress, a human merge/rename call; Holsten-Hilden's alpine_grade Roman-numeral-vs-French-scale bug (no source for the correct letter) plus a stale corrections narrative and missing loss_ft/pitches; North Buttress Couloir's null top-level grade (a fix was considered but its own rock_grade/ice_grade sub-fields are explicitly marked as belonging to a harder variation, not the main line, so left null rather than misstate the base route) plus a commitment-grade II-vs-III source conflict and an elevated gain_ft/loss_ft with no confirming source; Clark Mountain's West Ridge/Walrus Glacier name-vs-content conflict (every source calls it 'Walrus Glacier', not 'West Ridge') and an outlier waypoint ~0.85mi off its own GPX track with only an approximate replacement coordinate, left unpatched. Also note: the check:sql pre-flight script naively strips everything after a bare '--' per line and splits statements on every literal semicolon, including ones inside quoted string values -- this broke several multi-clause UPDATE statements' auto-detectability until dashes/semicolons inside authored SET-clause text were rewritten to avoid them; WHERE-clause old-value matches that must reproduce semicolon-containing live prose verbatim (a few Unicorn Peak/Colchuck Peak statements) remain outside the tool's auto-check but were independently re-verified against a fresh live fetch before writing."
     }
   ]
 }

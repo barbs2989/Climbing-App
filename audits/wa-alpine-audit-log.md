@@ -4137,3 +4137,93 @@ the round-trip-vs-one-way `dist_km` pattern surfaced again on 3 more routes this
 worth running `audit:distances` broadly rather than patching one row at a time; and the
 Chair Peak North Face/Northwest Ridge FA overlap looks like the same
 first-ascent-misfiled-under-the-wrong-route pattern seen on other peaks in earlier batches.
+
+## Batch 58 — 2026-08-06 (Pass 2, batch 7)
+
+Routes: `wa_chiwawa_mountain_southwest` (Chiwawa Mountain), `wa_chockstone_route` (North
+Early Winters Spire), `wa_clark_mountain_west_ridge` (Clark Mountain, Dakobed Range),
+`wa_classic_route_2` (Unicorn Peak), `wa_classic_route_3` (Lane Peak),
+`wa_colchuck_peak_colchuck_glacier`, `wa_colchuck_peak_east_ridge`,
+`wa_colchuck_peak_holsten_hilden`, `wa_colchuck_peak_north_buttress_couloir`,
+`wa_colchuck_peak_northeast_couloir` (Colchuck Peak). Researched via 6 parallel agents (one
+per peak; Colchuck Peak's 5 routes audited together as a sibling-contamination check).
+
+- **Chiwawa Mountain** — elevation, prominence, FA, land manager, permit/fee, and closure
+  order all confirmed clean against USFS. One fix: `grade` said "Class 3-4 + glacier,"
+  contradicted by the row's own `pro_needs`/`watch_out`/`seasonal_hazards.crevasses`, which
+  all state the standard SW line has no glacier travel — corrected to "Class 3-4." Flagged,
+  not fixed: `crowds`/`partner_requirements`/`seasonal_guidance`/`seasonal_hazards` describe
+  a wholesale different, roped/glaciated Lyman-Glacier-style climb, directly contradicting
+  the row's own overview/approach/pitch_detail/itinerary — needs a human rewrite, not a
+  field patch; also an itinerary day-sum vs. top-level gain_ft mismatch and an
+  `alpine_grade` Roman-numeral-vs-French-scale bug with no source for the correct letter.
+- **North Early Winters Spire** — FA (Grande/Schoening/Widrig, 1950), grade, and land
+  manager all confirmed clean. Two fixes: `waypoints[0]`/`gpx[0]` ("Blue Lake TH") carried
+  the same stale, contaminated coordinate already found and fixed on sibling routes on this
+  peak in an earlier pass — the correct trailhead was already sitting in this row's own
+  `approach_logistics` fields, just never applied to waypoints/gpx; also tightened the
+  summit waypoint to the row's own precise peak coordinate. `rack`/`detailed_rack` both said
+  "0.5-3in," contradicted by the row's own `gear`/`corrections` fields, which already
+  quote Mountain Project's "single rack to 2 inches" — propagated. Also fixed a
+  `watch_out` stored as a newline-joined string instead of a JSON array. Flagged: a
+  pitches-vs-pitch_detail count mismatch and a col waypoint sharing coordinates with the
+  summit marker despite a real elevation difference.
+- **Clark Mountain (Dakobed Range)** — confirmed this is the correct Clark Mountain (not
+  the Pasayten one); elevation, prominence, land manager, and permit info all check out.
+  Two fixes: top-level `lat`/`lng` were null despite the identical coordinate already
+  present three other places on the same row — backfilled. `itinerary.days[0]`/`[2].miles`
+  undercounted the row's own waypoints (Boulder Basin camp sits at 9 mi, not 7.5), and
+  `totalNote` separately overcounted both mileage (26 vs. ~23) and elevation (7,300 vs.
+  ~6,500 ft, the last already matching top-level `gain_ft` and external
+  Mountaineers.org/Wenatchee Outdoors sourcing) — both reconciled. Flagged: a waypoint
+  ("Boulder Creek Trail #1562 junction") sitting ~0.85 mi off the row's own GPX track with
+  only an approximate replacement coordinate found, left unpatched; and the route's own
+  name/face ("West Ridge") vs. every source documenting this line only as "Walrus Glacier."
+- **Unicorn Peak** — re-verified the earlier-pass elevation fix (6,971 ft) is still live and
+  correct. Safety-relevant find: `rappels`, `pitch_detail[0].notes`, and `watch_out[0]` all
+  still pointed climbers at the deprecated "bleached snag" rappel anchor, contradicting the
+  row's own `descent_text`, which already correctly documents that anchor is no longer
+  sound and the current, trip-report-corroborated anchor is a rock horn — propagated that
+  correction to all three lagging fields. Also fixed `detailed_rack` ("no cams needed,"
+  contradicting the row's own gear/rack/sling_rack/pro_needs, which all list cams) and
+  `length_m` (122, wildly inconsistent with the row's own single 15 m pitch). Flagged: a
+  gain_ft/loss_ft vs. itinerary-day-sum mismatch where both sides are independently sourced
+  but disagree — a human editorial call, not patched.
+- **Lane Peak** — fees, entrance-fee inapplicability, elevation, and internal length math
+  all confirmed clean against current NPS figures. One fix: `approach` text said round trip
+  is "a bit over 3 miles," contradicted by three internally-consistent fields (`dist_km`,
+  `itinerary.days[0].miles`, `itinerary.totalNote`, all ~4 mi) and independently
+  corroborated (willhiteweb.com: 2 mi one-way) — corrected. Flagged: a possible
+  net-vs-cumulative gain_ft convention question and a mismatched approach_logistics
+  trailhead vs. the row's own waypoints/gpx.
+- **Colchuck Peak** (5 routes) — `wa_colchuck_peak_colchuck_glacier` audited fully clean.
+  Explicitly checked all 5 routes for the Enchantments-overnight-lottery-required-for-a-
+  day-trip bug seen elsewhere in this DB — not present here. `wa_colchuck_peak_east_ridge`'s
+  gain_ft/loss_ft (2,800/2,800) didn't reconcile with the row's own waypoints or with
+  sibling Colchuck Glacier's identical trailhead-to-summit profile (5,300/5,300) —
+  corrected. `wa_colchuck_peak_northeast_couloir`'s `watch_out` was a newline-joined string
+  instead of a JSON array (8 hazard sentences) — converted. Flagged rather than fixed:
+  East Ridge's own `corrections` field wants a name change to "Colchuck Glacier"/"East
+  Route," but both names exactly match sibling `wa_colchuck_peak_colchuck_glacier` and East
+  Ridge's own `beta` field describes a materially different ridge scramble than its
+  approach/pitch_detail — likely the same possible-duplicate-route pattern as Dragontail
+  r4/triple_couloirs and Cutthroat r1/south_buttress, a human merge/rename call, not a name
+  patch. Holsten-Hilden's `alpine_grade` holds a Roman-numeral commitment grade instead of
+  the schema's French adjectival scale (no source for the correct letter) plus a stale
+  `corrections` narrative and missing `loss_ft`/`pitches`. North Buttress Couloir's
+  top-level `grade` is null; a fix composing one from the row's own alpine_grade/rock_grade/
+  ice_grade was considered but rejected since rock_grade/ice_grade are explicitly qualified
+  as belonging to a harder variation, not the main line — left null rather than misstate
+  the base route, plus a commitment-grade source conflict (II vs. III) and an elevated
+  gain_ft/loss_ft with no confirming source. Northeast Couloir's "Colchuck Lake" waypoint
+  sits ~600 m from where every sibling's identical waypoint clusters, left unpatched.
+
+12 confirmed errors fixed across 6 peaks/10 routes (SQL:
+`audits/sql/2026-08-06-batch-58.sql`); `wa_colchuck_peak_colchuck_glacier` audited fully
+clean. Tooling note: `check:sql`'s statement splitter naively strips text after a bare `--`
+and splits on every literal `;`, including ones inside quoted string values — this silently
+broke several multi-clause UPDATE statements' auto-detectability until dashes/semicolons in
+newly-authored SET-clause text were rewritten to avoid them. A few WHERE-clause old-value
+matches that must reproduce semicolon-containing live prose verbatim (Unicorn Peak,
+Colchuck Peak) remain outside the tool's auto-check; those were independently re-verified
+against a fresh live fetch immediately before writing rather than left unchecked.
