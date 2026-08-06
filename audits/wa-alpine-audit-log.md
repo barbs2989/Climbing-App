@@ -3720,3 +3720,60 @@ per-field below where it lowers confidence.
 6 confirmed errors fixed across 5 peaks (SQL: `audits/sql/2026-08-06-batch-52.sql`); 8 fields
 flagged for human review; 2 routes (Alpine Lookout, Amphitheater Mountain) plus the Northeast
 Face route on American Border Peak audited clean.
+
+## Batch 53 — 2026-08-06 (Pass 2, batch 2)
+
+8 routes across 3 peaks, checked via 3 parallel research agents (one per peak): the 5 remaining
+routes on Amphitheater Mountain (batch 52 only covered its 6th route, Finger of Fatwa),
+Anderson's Thumb's lone Standard Route, and Argonaut Peak's two routes. Direct WebFetch to
+Mountain Project, theCrag, Wikipedia, SummitPost, Climbing.com, and CascadeClimbers was
+403-blocked for every attempt across all three agents this run — same proxy-policy issue noted
+in recent batches. All findings lean on WebSearch snippet cross-referencing, several independently
+repeated verbatim across multiple queries, which raises but doesn't fully restore confidence.
+
+- **Amphitheater Mountain** (`wa_amphitheater_mountain` + 5 routes) — 0 confirmed errors. Area
+  elevation (8,358 ft), prominence (758 ft), and the 1901 Calkins/Smith FA all confirmed against
+  Wikipedia/PeakVisor. Right Side, North Ridge, Pilgrimage to Mecca, and West Route all checked
+  out clean — grades, pitch counts, cruxes, and descents matched Mountain Project/Climbing.com
+  text closely, several near-verbatim. One substantive flag, not fixed: Middle Finger Buttress
+  Left Side's `beta`/`overview`/`pitch_detail` describe a "hand crack" crux and a 5.7-5.9 finish,
+  but six independent WebSearch queries returned an identical MP quote — a chimney into what was
+  originally an A1 aid pitch, then 5.7+ dihedrals, with the top two pitches "mostly 4th class" —
+  with no hand crack mentioned and a direct grade conflict on the finish. Not fixed because it
+  spans multiple narrative fields (a rewrite, not a single fact-fix) and there's an unruled-out
+  alternate explanation (a freed variation matching the route's overall 5.10b grade). Three FA
+  exact dates and Pilgrimage to Mecca's rack composition (#3 single vs. doubled) also flagged,
+  unconfirmed.
+- **Anderson's Thumb** (`wa_andersons_thumb_standard`) — 2 confirmed errors, both minor. The
+  Flypaper Pass waypoint's `elev` (6500) contradicted the route's own approach narrative ("toward
+  Flypaper Pass (6,600 ft)...") and SummitPost's published 6,600 ft figure for the same
+  notch — fixed. The `corrections` field's leftover placeholder text mislabeled the peak's region
+  as "Washington North Cascades," at odds with every other geographic field on the row (it's
+  central Olympics, under Olympic NP) — fixed the substring, left the rest of that stale
+  QA-artifact text alone since later fields (`beta`, `itinerary.sourceNote`) already supersede it
+  with a cited trip report (trailcatjim.com) this session independently corroborated. Mount
+  Anderson summit elevation/coordinates, Anderson Pass, Honeymoon Meadows mileage, Echo Rock
+  elevation, Eel Glacier's position, Anderson Glacier's ~2011 disappearance, and the Olympic NP
+  wilderness-permit fee structure all confirmed. Flagged, not fixed: an internal
+  washout-to-old-trailhead mileage inconsistency (5.5 mi vs. 8-9 mi, plausibly different
+  measurement baselines) and a stale QA-artifact note on an otherwise-correct trailhead waypoint.
+- **Argonaut Peak** (`wa_argonaut_peak` + 2 routes) — 5 confirmed errors, re-audited as part of
+  pass 2. Southeast Ridge (id still reads `east_ridge` from an already-tracked prior rename):
+  top-level `permit` claimed an Enchantment Permit Area lottery requirement, contradicting the
+  row's own `access.*` fields — the identical bug batch 43 fixed on this peak's sibling South
+  Face route (`wa_south_face_12`) never got applied here; fixed the same way. `gain_ft`/`loss_ft`
+  didn't match the row's own itinerary day-by-day sums (`loss_ft` held the *gain* total by
+  coincidence) — aligned to 4157/4457. Northeast Couloir: `commitment` held "III" against
+  SummitPost's consistently documented "II 5.6" — fixed. `loss_ft` (843) was wildly inconsistent
+  with the row's own (independently verified) `gain_ft` (5057) for a round trip back to the same
+  Stuart Lake Trailhead — aligned to match. `access.notes` was a raw escaped-JSON blob instead of
+  plain text (the same leaked-structure rendering bug seen elsewhere in this project), and its
+  embedded permit-season date ("June 15-October 15") contradicted the row's own top-level
+  `permit`/`access.permit` fields and the official USFS/Recreation.gov season (May 15-Oct 31) —
+  rewritten to plain text with the date corrected. Flagged, not fixed: a summit-elevation duality
+  (8457 vs. a WTA trip-report's 8453), an unconfirmed `alpine_grade: "AD"`, and NE Couloir's rope
+  length spec (30m stored vs. two secondary sources' 50m).
+
+7 confirmed errors fixed across 3 peaks (SQL: `audits/sql/2026-08-06-batch-53.sql`); 8 fields
+flagged for human review; Amphitheater Mountain's 5 remaining routes and its area row audited
+clean save for the one Left Side flag above.
