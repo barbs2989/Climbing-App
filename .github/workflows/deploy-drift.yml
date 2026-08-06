@@ -1,0 +1,57 @@
+name: Deploy drift check
+
+# Asks, from outside any deploy run, the one question deploy.yml structurally
+# cannot answer: is the live site actually serving the current tip of main?
+#
+# On 2026-08-06 production sat 8 commits behind for five hours. Nine merges
+# produced no deploy run at all during a GitHub Actions incident, and a workflow
+# cannot report on a run that never existed -- so the gap was invisible until
+# somebody happened to compare by hand. Everything else that day reported
+# "cancelled", which reads like a decision rather than a failure.
+#
+# A failing scheduled run emails the repo owner, which is the point: this is the
+# only check here whose job is to notice silence.
+
+on:
+  schedule:
+    # Every 30 minutes. Deploys take ~5 min, so this bounds how long production
+    # can silently lag at roughly the grace window plus one interval.
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+# Never let drift checks pile up behind each other.
+concurrency:
+  group: deploy-drift
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # No dependencies -- the script uses fetch and the REST API only, so there
+      # is deliberately no npm install here. This check must keep working even
+      # when the build is broken.
+      - name: Is production serving current main?
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SITE_URL: https://barbs2989.github.io/Climbing-App/
+          # A merge that just landed is not drift. Only complain once a commit
+          # has had a fair chance to build, queue and publish.
+          GRACE_MINUTES: "45"
+        run: node scripts/check-deploy-drift.mjs
+
+      # Deliberately NOT auto-dispatching deploy.yml on failure. Workflow
+      # dispatches made with the built-in GITHUB_TOKEN do not start a new
+      # workflow run (GitHub blocks that to prevent recursion), so a "self-heal"
+      # step here would appear to work and quietly do nothing -- the exact
+      # failure mode this check exists to catch. Healing needs a PAT, or
+      # deploy.yml exposed via workflow_call. Until then this reports, loudly,
+      # and the fix is one command: gh workflow run deploy.yml --ref main

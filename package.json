@@ -22,7 +22,8 @@
     "check:writes": "node scripts/check-write-feedback.mjs",
     "check:boot": "node scripts/check-boot-shell.mjs",
     "check:a11y-names": "node scripts/check-a11y-names.mjs",
-    "check:claims": "node scripts/check-session-claims.mjs"
+    "check:claims": "node scripts/check-session-claims.mjs",
+    "check:drift": "node scripts/check-deploy-drift.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
