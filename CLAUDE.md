@@ -13,6 +13,7 @@ npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
+npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:drift# does the live site actually serve the current tip of main?
 ```
 
@@ -30,6 +31,22 @@ ships: not a build error, but a screen that renders wrong or not at all.
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
 - **`check:hooks`** catches hooks called outside a component body — the #377 bug
   (an invalid hook call inside a click handler). Also gated by `npm run build`.
+- **`check:bare`** renders the real `RouteDetail` with `react-dom/server` for a route that
+  has **no enrichment** — name, grade, pitches and nothing else — across every discipline ×
+  sub-tab, and asserts the screen states what it does not know. It exists because `check:ui`
+  walks exactly **one** route detail and the route it samples is an *enriched* one, so the
+  shape almost every route actually has was the one shape nothing rendered. Enrichment
+  reaches ~648 of 5,477 alpine-scope routes; catalog-wide it is 1,023 of 205,492. Two bugs
+  shipped straight through that hole: **#641** (`scarfHrs` coerces `+distKm||0`, so "no
+  approach data" and "a zero approach" were identical — Total/Est. summit/Est. return added
+  a 0.0hr hike leg and the return tile went **green**, an affirmative "you're down before
+  dark" with the walk in *and* out counted as zero, and the "After dark" warning could never
+  fire) and **#655** (the sport/trad/bouldering safety advice sat behind the Safety tab,
+  which is hidden for exactly those three disciplines). Both were invisible to a guard that
+  only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
+  pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
+  silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
+  (`CountUp`) renders its initial `0` — never assert on those numbers.
 - **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
   `[object Object]` in rendered copy, and named sections still present. It is
