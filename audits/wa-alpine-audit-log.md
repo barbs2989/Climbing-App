@@ -4563,3 +4563,68 @@ cross-checked manually against the live rows instead). No route in this batch ca
 clean — every route had at least one open flag alongside its fixes or in place of one.
 `check:sql` also warned the file (7.9KB) exceeds the SQL Editor's ~4KB safe-paste size — split
 it into chunks when applying by hand.
+
+## 2026-08-07 — Pass 2, Batch 63
+
+Five peaks, 10 routes, researched via 4 parallel agents: Mount Thomson (East Ridge) +
+Pinnacle Peak/Tatoosh (East Ridge) + Primus Peak (East Slope); East Twin Needle (South
+Route + Thread of Ice); Eldorado Peak group 1 (East Ridge, NW Couloir/Eldorado Glacier,
+North Ridge); Eldorado Peak group 2 (Northeast Face, West Arete).
+
+- **Mount Thomson** (`wa_east_ridge_6`) — `gain_ft` (3600) turned out to be the one-way
+  approach gain lifted from the route's own `approach` text, not the round-trip total its
+  own itinerary states (4900, matching the existing `loss_ft`) — fixed. Also cleared a
+  stale `data_quality.gaps` note claiming the FA was "left as unknown" when the `fa` column
+  actually holds a specific, externally-corroborated attribution (Joe Hazard & B. French,
+  1917). Flagged, not fixed: the route's own `approach` text states a one-way mileage that
+  disagrees with its own itinerary-implied figure.
+- **Pinnacle Peak, Tatoosh Range** (`wa_east_ridge_8`) — audited clean; the id-implies-5.8
+  vs. actual-5.5 grade mismatch a prior batch already resolved in-row holds with no
+  regression. Flagged: `dist_km` is NULL, unlike both sibling Pinnacle routes — no
+  authoritative one-way mileage source found to fill it.
+- **Primus Peak** (`wa_east_slope`) — `dist_km` (16.1) didn't reproduce the route's own
+  itinerary total (~19 mi RT per WTA); 15.3 km does, and is also the exact value already
+  on file for sibling route `wa_primus_peak_south_ridge` — looks like a value swap between
+  the two Primus routes. Fixed.
+- **East Twin Needle** — `wa_east_twin_needle_south_route`'s grade fix from batch 10 (5.7 →
+  II 5.10a) is confirmed still live and correct, but three other fields never got the
+  memo: `overview` and `pro_needs` still described a separate "moderate 5.7" line distinct
+  from "a harder East Arête," and `data_quality.gaps[0]` still cited the retired grade —
+  all three rewritten to match the row's own corrected grade/beta. `wa_east_twin_needle_
+  thread_of_ice` audited fully clean, including the previously-flagged null-grade pattern
+  (already resolved, no regression). Bonus finds on the parent area row (out of this
+  batch's route scope but well-corroborated, so fixed anyway): `prominence_ft` (176) was
+  the metric prominence value mislabeled as feet (Wikipedia: 576 ft / 176 m), and the
+  area's `lat`/`lng` matched a coordinate the route's own waypoint data had already
+  identified and superseded as wrong (southeast of Mount Terror instead of the correct
+  position near Eye Col) — both fixed to match the route's own sourced values.
+- **Eldorado Peak** (5 routes across both agent groups) — East Ridge audited clean, batch
+  10's high_point_ft fix confirmed still live with no regression. NW Couloir/Eldorado
+  Glacier had four confirmed internal contradictions: `gain_ft` (4000) vs. its own
+  itinerary total (6700); `pitches` (8) vs. its own overview/pitch_detail (2-3); `descent`
+  claiming an optional rappel that its own `descent_text` explicitly says isn't needed; and
+  `rappels` naming a nonexistent "Dean's Tower notch" instead of the "Dean's Spire col"
+  consistently named elsewhere in the same row — all four fixed. North Ridge's `aspect`
+  (N) contradicted its own overview/beta/watch_out text (all describing an E-facing line)
+  — fixed. Northeast Face had a `descent` field that was generic boilerplate contradicting
+  its own `descent_text` and external sources, and a `dist_km` storing the full round-trip
+  distance instead of one-way (doubling the error under the app's `distKm * 2` convention)
+  — both fixed. West Arête's `waypoints` summit elevation (8868) contradicted its own
+  `corrections` field, which already explains 8868 is an old USGS benchmark, not the true
+  summit (8872.9 ft) — fixed.
+- Flagged, not fixed: NW Couloir's `alpine_grade` (M3-M4, mixed) is inconsistent with an
+  otherwise pure snow/ice route (no source found to resolve); North Ridge has a `null`
+  top-level `grade` despite populated `rock_grade`/`grade_num`; and — the most significant
+  open item this batch — the `wa_eldorado_peak` area row's blurb calls the North Ridge "20+
+  pitches, one of the 50 Classic Climbs of North America," which flatly contradicts this
+  route row's own data (3 pitches, 800 ft, 5.7) and found no external corroboration either
+  way. Needs a human to determine whether the area blurb is fabricated or the route row is
+  drastically under-scoped.
+
+14 confirmed errors fixed across 5 peaks (SQL: `audits/sql/2026-08-07-batch-63.sql`,
+validated with `npm run check:sql` — 11 of 14 statements confirm automatically against live
+target ids; 3 weren't auto-checkable due to the tool's known naive-parser issue with
+quotes/parens in long replacement text (same as batches 61-62), and were manually
+cross-checked against live rows instead). 2 routes (Pinnacle Peak East Ridge, East Twin
+Needle Thread of Ice) audited fully clean. `check:sql` also warned the file (7.6KB) exceeds
+the SQL Editor's ~4KB safe-paste size — split it into chunks when applying by hand.
