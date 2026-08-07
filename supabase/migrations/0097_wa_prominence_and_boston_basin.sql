@@ -1,4 +1,4 @@
--- 0096: two WA alpine data corrections — missing summit prominence, and Boston
+-- 0097: two WA alpine data corrections — missing summit prominence, and Boston
 -- Basin sitting beside the North Cascades Core group instead of inside it.
 --
 -- ── 1. Prominence backfill ───────────────────────────────────────────────────
@@ -67,7 +67,14 @@ update areas set parent_id = 'wa_boston_basin' where parent_id = 'wa_boston_basi
 -- table (0001) — it does NOT recompute when an AREA's parent_id changes. Same
 -- fix pattern as 0017 and 0027. The move stays inside the wa_north_cascades
 -- subtree, so North Cascades Core is the only node whose subtree membership
--- changed (86 -> 106); every ancestor above it already counted these 20 routes.
+-- changed; every ancestor above it already counted these 20 routes.
+--
+-- APPLIED 2026-08-07. Core landed on 103, not the 86 + 20 = 106 predicted here
+-- before the fact: its cached 86 was itself 3 too high, so the true pre-move
+-- count was 83. The recount below is authoritative; 103 is right. Never predict
+-- one of these from arithmetic on two cached numbers. A separate, pre-existing
+-- drift remains untouched on the ancestors (washington +2, wa_hwy20_ncnp +3,
+-- wa_north_cascades -1) — a full-subtree recount would clear it.
 update areas set route_count = (
   select count(*) from routes r join areas a2 on a2.id = r.area_id where a2.path <@ areas.path
 ) where id = 'wa_north_cascades_core';
