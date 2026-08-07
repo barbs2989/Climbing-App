@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_koala_krack",
+  "last_processed_id": "wa_lemah_two_goatshead_spire",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1679,6 +1679,28 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-07-batch-70.sql",
       "note": "King Kong (Mount Stuart) resolved a prior-flagged FA-vs-FFA mixup (AAC/Alpinist corroborate Wertkin & Johnson's FA-with-a-fall vs. Wertkin & Gleason's FFA a week later) and a resurfaced approach-boilerplate contamination from the north-side Stuart Lake Trailhead. Klawatti Peak's two routes shared a ~3.9mi-off trailhead coordinate; the SW Buttress route had a waypoint note with the fix backwards (claiming the correct coordinate was the error). Kimtah Peak's itinerary mileage, gain_ft, and data_quality.gaps were all internally inconsistent with the row's own other fields. Left flagged: Kimtah's elevation_ft asserts false precision (no source attests the specific figure); Jack Mountain's summit elevation disagrees across its own 3 routes/area row (9069 vs 9075 ft); Klawatti SE Face's bergschrund/glacier waypoints are still geometrically impossible (unresolved from a prior pass); Klawatti SW Buttress's approach text needs a fuller human rewrite beyond one patched clause; both Johannesburg routes' gpx tracks contradict their own data_quality.gaps and contain implausible points with no authoritative replacement found; Koala Krack's existence as a documented Kangaroo Temple route remains unconfirmed after a second search pass."
+    },
+    {
+      "batch_number": 71,
+      "pass": 2,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_kololo_peaks_standard",
+        "wa_kyes_peak_glaciated_scramble",
+        "wa_kyes_peak_northeast_ridge",
+        "wa_labor_pains",
+        "wa_lane_peak_r1",
+        "wa_lane_peak_r2",
+        "wa_lane_peak_r3",
+        "wa_le_conte_mountain_northern_aspect",
+        "wa_lemah_mountain_east_route",
+        "wa_lemah_two_goatshead_spire"
+      ],
+      "confirmed_errors_fixed": 14,
+      "flagged_for_human_review": 14,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-07-batch-71.sql",
+      "note": "Researched via 5 parallel agents grouped by peak. Le Conte Mountain: fixed a misnamed 1938 FA party member ('Ralph' -> 'Ray' W. Clough, corroborated by multiple independent sources) and a permit field wrongly describing a self-issue Glacier Peak Wilderness permit, contradicting the row's own access.* fields and NPS policy (it's North Cascades NP / Cascade Pass, reservation-lottery backcountry permit). Labor Pains: fixed a stray British E-grade in alpine_grade (used nowhere else in the catalog, contradicting commitment='III' and the route's own overview), a Blue Lake TH waypoint/gpx coordinate ~1.26km off from the route's own approach_logistics trailhead fields, a descent/rappels/descent_text claim of 'bolted stations' contradicting the row's own more granular rappel_detail/bail fields (mixed bolt/natural/gear anchors), and an overview overstating '3 sustained 5.11a pitches' against the row's own corrections field (5 pitches, 2 of them 5.10-5.11). Lane Peak: fixed The Zipper's grade_num (3->2, contradicted its own ice_grade WI2/beta/pitch_detail) and filled Lover's Lane's null grade fields from its own internally-consistent AI1 rating, resolving a flag left open by the 2026-07-29 pass-1 audit. Kyes Peak: filled Northeast Ridge's null grade fields from its own rock_grade/beta text, fixed Glaciated Scramble's loss_ft (707, wildly inconsistent with gain_ft=6023 for a stated out-and-back) and a beta text naming the wrong ridge (own waypoints call the same point 'South Ridge', not 'northeast ridge'), and fixed the area's prominence_ft (1744 -> 1720, matching Wikipedia's own elevation-minus-key-col arithmetic). Kololo Peaks: fixed a summit waypoint that mislabeled the west (lower) summit as the true high point, contradicting the route's own overview/beta and external sources (east summit, 8,243ft, is correct), and fixed loss_ft (7000 vs gain_ft=6120 for a stated reverse-the-ascent descent). Lemah Mountain/Lemah Two audited with zero confirmed fixes -- FA claims, elevations, and coordinates for both routes corroborated cleanly. Left flagged: Le Conte's gain_ft/dist_km semantics for a multi-day itinerary (ambiguous, not clearly wrong) and a duplicate 'Cascade Pass' waypoint entry; Labor Pains' Blue Lake TH elevation (5200 vs 5400, sources conflict), a pitch_detail array with only 4 of 5 pitches itemized, and an unconfirmed '5-day' Forest Pass sub-field; Lane Peak's r3 grade conflicting with a secondhand Mountain Project WI2/1500ft reading (network egress blocked direct access) against the row's own internally-consistent AI1/1000ft data, and a season field disagreeing with the row's own seasonal_guidance breakdown; Kyes Peak Northeast Ridge's FA name (Mike Heath) unverified (AAC/AAJ source domain blocked) though the date/route description corroborate, and an approach-trailhead-side discrepancy against Beckey's guide; Kololo Peaks' area elevation/prominence (unreachable primary sources this pass) and a ~150m area-vs-summit-waypoint coordinate offset; Lemah Mountain East Route's grade fields disagreeing on whether it tops out at Class 4 or 5.0, and an internally inconsistent day-by-day itinerary mileage; a Lemah Two area-hierarchy parent_id/parent_peak disagreement that may be a deliberate access-corridor split shared with several neighboring peaks, not necessarily a bug."
     }
   ]
 }

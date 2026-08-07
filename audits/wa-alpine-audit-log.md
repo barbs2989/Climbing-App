@@ -5096,3 +5096,45 @@ but no authoritative replacement track was found to fix it with; and Koala Krack
 as a documented route on Kangaroo Temple remains unconfirmed after a second, more thorough
 search pass (Mountain Project's own Kangaroo Temple page lists only 3 routes, not this one) —
 still flagged rather than deleted per guardrails.
+
+## 2026-08-07 — Pass 2, Batch 71
+
+Checked 10 routes across 7 peaks: Kololo Peaks (Standard Route), Kyes Peak (Glaciated Scramble,
+Northeast Ridge), North Early Winters Spire (Labor Pains), Lane Peak (Zipper, Fly, Lover's
+Lane), Le Conte Mountain (Northern Aspect), Lemah Mountain (East Route), and Lemah Two
+(Goatshead Spire). Researched via 5 parallel agents grouped by peak.
+
+14 confirmed errors fixed (SQL: `audits/sql/2026-08-07-batch-71.sql`; `npm run check:sql`
+confirmed all 11 distinct write targets exist against live rows, no DELETE in this batch — 3
+statements not auto-checkable due to the parser's known long-statement issue, manually
+cross-checked instead against rows fetched directly from the live DB earlier in this pass).
+
+Notable finds: Le Conte Mountain's `fa` field misnamed a 1938 first-ascent party member
+("Ralph" instead of "Ray" W. Clough, later a well-known UC Berkeley structural engineer) and
+its `permit` field wrongly described a self-issue Glacier Peak Wilderness permit — the route is
+actually in North Cascades NP via Cascade Pass and needs an NPS reservation-lottery backcountry
+permit, contradicting the row's own `access.*` fields. Labor Pains had a stray British E-grade
+in `alpine_grade` used nowhere else in the catalog, a trailhead waypoint/gpx coordinate ~1.26km
+off from its own `approach_logistics` fields, a descent description claiming "bolted stations"
+that contradicted its own more granular rappel fields (mixed bolt/natural/gear anchors), and an
+`overview` overstating pitch difficulty against its own `corrections` field. Lane Peak's Zipper
+had a `grade_num` contradicting its own `ice_grade`/beta/pitch_detail; Lover's Lane's long-null
+grade fields (flagged unresolved in pass 1) were filled from its own internally-consistent AI1
+rating. Kyes Peak's Glaciated Scramble had a `loss_ft` wildly inconsistent with `gain_ft` for a
+stated out-and-back, plus beta text naming the wrong ridge (its own waypoints call the same
+point "South Ridge," not "northeast ridge"); the area's `prominence_ft` didn't match Wikipedia's
+own elevation-minus-key-col arithmetic. Kololo Peaks Standard Route's summit waypoint mislabeled
+the lower west summit as the true high point, contradicting the route's own overview/beta text
+and external sources.
+
+Lemah Mountain and Lemah Two audited clean — zero confirmed fixes; FA claims, elevations, and
+coordinates for both routes corroborated cleanly against Wikipedia and independent searches.
+
+Left flagged rather than fixed: several ambiguous itinerary/gain-loss semantics for multi-day
+routes (Le Conte, Lemah Mountain) where the "correct" figure depends on field intent rather
+than a verifiable fact; a Lane Peak Lover's Lane grade conflict against a secondhand (network-
+blocked) Mountain Project reading; a Kyes Peak Northeast Ridge FA name that couldn't be
+independently confirmed (source domain blocked) though the date/route description corroborate;
+Kololo Peaks' area elevation/prominence (primary sources unreachable this pass); and a Lemah Two
+area-hierarchy parent mismatch that may be a deliberate access-corridor split shared with
+several neighboring peaks rather than a bug.
