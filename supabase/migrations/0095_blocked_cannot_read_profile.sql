@@ -1,7 +1,7 @@
 -- A climber you blocked can still read your profile.
 --
 -- The last item the Blocked-climbers screen still admits to: "They can still see your public
--- profile — we're working on that." 0088 covered DMs, 0092 covers crew invites, this covers
+-- profile — we're working on that." 0088 covered DMs, 0094 covers crew invites, this covers
 -- the profile read.
 --
 -- THE TRAP, and the reason a naive version of this is worse than not shipping it: RLS
@@ -19,7 +19,7 @@
 -- review, and enforce nothing -- the always-passing guard this codebase has shipped before
 -- (see the check:sql defects in #587).
 --
--- So the check runs through a SECURITY DEFINER function, the same escape 0088's and 0092's
+-- So the check runs through a SECURITY DEFINER function, the same escape 0088's and 0094's
 -- triggers use, with a pinned search_path because resolving `blocked_users` through a
 -- caller-controlled search_path is a privilege-escalation hole.
 create or replace function profile_owner_blocked_me(target uuid) returns boolean
@@ -48,7 +48,7 @@ create policy "profiles public read" on profiles for select
 --   select policyname, cmd from pg_policies where tablename = 'profiles' order by cmd;
 --
 -- BEHAVIOUR CANNOT BE PROVEN WITH ONE ACCOUNT. The service role bypasses RLS entirely, so
--- unlike 0088/0092 (triggers, which fire for every role) there is no single-account probe
+-- unlike 0088/0094 (triggers, which fire for every role) there is no single-account probe
 -- that exercises this. It needs a second signed-up climber:
 --   as B:  select id from profiles where id = '<A>';   -- 1 row
 --   as A:  insert into blocked_users (blocker, blocked) values ('<A>','<B>');
