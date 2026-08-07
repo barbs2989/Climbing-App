@@ -5138,3 +5138,42 @@ independently confirmed (source domain blocked) though the date/route descriptio
 Kololo Peaks' area elevation/prominence (primary sources unreachable this pass); and a Lemah Two
 area-hierarchy parent mismatch that may be a deliberate access-corridor split shared with
 several neighboring peaks rather than a bug.
+
+## Batch 72 (2026-08-07, pass 2)
+
+Routes: Mount Stone (Lena Lake to Mt Stone traverse), Gunn Peak (Lewis Creek Route), Lexington
+Tower (East Face), and Liberty Bell Mountain's 7 in-scope routes (Beckey Route, East Face,
+Independence Route, Liberty and Injustice for All, Northwest Face, Overexposure, Serpentine
+Crack) — researched via 3 parallel agents grouped by peak. 14 confirmed fixes, 11 flags, 2
+routes clean (Beckey Route, Northwest Face).
+
+Liberty Bell's East Face group had a recurring "wrong side of the mountain" contamination
+pattern: Independence Route, East Face, and Liberty and Injustice for All all had trailhead
+waypoints (and, for Independence Route, the full `approach`/`approach_logistics`) copied from
+the Blue Lake Trailhead/Beckey Route despite being genuine East Face lines approached from a
+separate SR-20 hairpin/pond pullout — corrected using each row's own already-verified approach
+text as the source. East Face also had a `beta` field describing an unrelated 10-pitch route
+(contradicting its own 4-pitch `pitch_detail`) and an overview calling the route "popular"
+against its own `crowds` field ("rarely climbed") — both rewritten to match the row's own
+already-correct data. Independence Route's `grade_num` (12) didn't match "5.12a" under the
+app's own `gradeNum()` formula (should be 12.25); Liberty and Injustice for All's `dist_km` was
+double its same-trailhead siblings' figure. Overexposure's aspect/face were mislabeled
+"Southwest" when its own overview text and a waypoint shared with the Northwest Face route both
+identify it as the West Face; Overexposure and Serpentine Crack both had `emergency.county`
+trimmed to "Chelan" despite their own `emergency.notes` documenting the Chelan/Okanogan county
+line.
+
+Lewis Creek Route's `dist_km` (6 km) contradicted its own itinerary's cited 12.07 km. Lexington
+Tower's area blurb mislabeled the East Face route's grade "III" against its own alpine_grade/
+commitment fields (IV, confirmed externally).
+
+Left flagged rather than fixed: an impossible East Face notch elevation/coordinate on Lexington
+Tower (exceeds the peak's own true-summit elevation); a pre-existing "is this a real named
+route" question on Lewis Creek Route; an unreconciled multi-source gain/loss range on the Mount
+Stone traverse (already caveated on-file); remaining contaminated intermediate waypoints on
+Liberty Bell's Independence Route/East Face beyond the trailhead point (no sourced replacement
+coordinates found); a possible area-level FA-credit discrepancy on Liberty Bell (2 vs. 3
+climbers credited); a corrupted/truncated `approach` field and a gear/pitch-detail size
+contradiction on Serpentine Crack; and a `dist_km` one-way-vs-round-trip convention
+inconsistency on Overexposure (documented systemic issue, not bulk-normalized per CLAUDE.md
+guidance).
