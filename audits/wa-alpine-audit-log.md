@@ -4986,3 +4986,57 @@ directly from the live DB earlier in this pass) confirmed to exist). ~13 items f
 human review, including one route (Himmelhorn) with a confirmed-but-unfixable geographic
 defect. check:sql warned the file (13.1KB) exceeds the SQL Editor's ~4KB safe-paste size —
 split it into chunks when applying by hand.
+
+## 2026-08-07 — Pass 2, Batch 69
+
+Checked 10 routes across 6 peaks: Hozomeen Mountain (North Peak North Route, Southeast
+Face), Hurry-Up Peak (South Ridge), Icy Peak (Ruth-Icy Traverse, Southwest Route), Ingalls
+Peak (East Route, South Ridge), Inner Constance (Northwest Buttress, Standard Route), and
+Inspiration Peak (West Ridge). Researched via 5 parallel agents grouped by peak.
+
+18 confirmed errors fixed (SQL: `audits/sql/2026-08-07-batch-69.sql`; `npm run check:sql`
+confirmed all 18 distinct target ids exist against live rows, no DELETE in this batch — 2
+statements not auto-checkable due to the tool's known naive-parser issue with a long
+single-line statement burying the `id =` predicate past its 220-char head-check, both
+manually cross-checked instead against rows already fetched directly from the live DB
+earlier in this pass). check:sql also warned the file (11.2KB) exceeds the SQL Editor's
+~4KB safe-paste size — split it into chunks when applying by hand.
+
+Notable finds: Icy Peak's Southwest Route claimed to reach the true, higher Southeast
+summit (7,073 ft) via `high_point_ft` and its own summit waypoint, while its own approach
+text says the described line tops out at the lower Northwest/register summit — and gives
+an "about 11 ft higher" gap for the true summit that matches Beckey's cited 7,062 ft
+Northwest Peak elevation almost exactly, confirming the row's own text was right and the
+elevation fields were wrong. Ingalls Peak's South Ridge wrongly placed itself inside the
+quota Enchantment Permit Area (it's a separate, non-quota Teanaway-side trailhead — press
+coverage explicitly names Lake Ingalls as the fallback for hikers who missed the
+Enchantment lottery) and carried a stale rappel description (4 raps needing two 60m ropes
+due to stuck-rope reports) that its own `descent_text` already contradicts (3 raps, single
+60m rope). Two routes had boilerplate contamination from unrelated routes: Hurry-Up Peak's
+`partner_requirements` referenced a "Horseshoe Basin" camp that its own `overview` field
+explicitly rules out for this peak (Horseshoe Basin serves Sahale/Boston/Forbidden on the
+other side of Cascade Pass), and Inner Constance's Northwest Buttress waypoint/
+`approach_logistics` pointed at the Dosewallips/Lake Constance trailhead used by the
+*Standard Route*, contradicted by its own approach text and a `pro_tips` field that
+explicitly warns that side "deposits you in Avalanche Canyon on the wrong aspect for this
+route."
+
+Left flagged rather than fixed: Hozomeen Southeast Face has a much deeper problem than a
+field typo — its `overview`/`fa`/`waypoints` describe the AAC-documented Southeast Buttress
+of Hozomeen's *South* Peak (8,003 ft) almost verbatim, while `high_point_ft`/`face` assert
+it's the *North* Peak (8,071 ft) standard route. The row's own `corrections` field already
+diagnoses this and proposes a fix that was never applied — resolving it means picking which
+peak this row is actually about, a content decision for a human, not a field-level fact fix.
+Also flagged: several internal gain/loss and dist_km reconciliations across multiple routes
+where two fields disagree but no single source clearly says which is right; Icy Peak's
+"two vs. three summits" question and a Seahpo Peak elevation conflict between two Wikipedia
+pages; Ingalls South Ridge's Dogtooth Crags waypoints, which sit roughly a mile from where
+the route's own beta says they should relative to Ingalls Col and the summit — a confirmed
+geometry problem with no safe replacement coordinates found; and Inner Constance Standard's
+`high_point_ft` (7672), which disagrees with its own sibling route (7670) and with external
+sources that themselves range 7667–7680 ft.
+
+Three of the five research agents flagged a "duplicate area row" in their data — this is an
+artifact of this run's own query (which joins the parent area once per sibling route on that
+peak, producing byte-identical rows in the export), not a live database issue. Noting it here
+so a future pass doesn't re-flag the same non-bug.
