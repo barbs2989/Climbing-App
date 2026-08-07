@@ -22,13 +22,16 @@ const SHELL_CACHE = "climbmatch-shell-v1";
 const GENERATION_KEY = "__shell_generation__";
 const ASSET_RE = /assets\/index-[A-Za-z0-9_-]+\.js/;
 
+// Returns true when it actually pruned, i.e. this is a deploy the client has not seen. The
+// caller uses that to re-precache: pruning drops every lazy chunk too, and without a refill
+// the offline set would silently degrade to "whatever you happened to visit" after a deploy.
 async function pruneIfNewDeploy(html) {
   const found = html.match(ASSET_RE);
-  if (!found) return; // not the app shell, or markup we don't recognise — leave the cache alone
+  if (!found) return false; // not the app shell, or markup we don't recognise — leave the cache alone
   const cache = await caches.open(SHELL_CACHE);
   const marker = new URL(GENERATION_KEY, self.registration.scope).toString();
   const prev = await cache.match(marker);
-  if (prev && (await prev.text()) === found[0]) return; // same deploy, nothing to do
+  if (prev && (await prev.text()) === found[0]) return false; // same deploy, nothing to do
 
   // Record the new generation FIRST, so a reload racing this can't prune twice.
   await cache.put(marker, new Response(found[0]));
@@ -46,6 +49,56 @@ async function pruneIfNewDeploy(html) {
   // correctness never depends on the cache, the client is provably online here (the HTML
   // fetch just succeeded), and each asset is re-cached the next time it is requested. Paying
   // ~2 MB once to reclaim tens of MB of unreachable bytes is the right way round.
+}
+
+// Every /assets/ URL the shell references, plus the lazily-imported chunks those pull in.
+//
+// The lazy chunks matter more than they look. RouteDetail and DbAreaBrowser only load on
+// demand, so before this they were cached only if you had already visited that screen while
+// online — and a climber downloads a state precisely so they can read route beta at the
+// trailhead. Download Washington, never open a route page before losing signal, and the one
+// screen the download exists for failed to load.
+//
+// Discovered by crawling, never a hardcoded list: Vite content-hashes every chunk name, so a
+// list would rot on the next deploy and fail silently. The entry bundle references its chunks
+// as "./Name-hash.js" string literals; those chunks reference further ones (RouteDetail pulls
+// in GpsSubmissionModal), so this walks to a fixed point rather than one level.
+//
+// Bounded by `seen`, so a cycle cannot loop, and by MAX_DEPTH as a backstop against a bundler
+// output shape that makes the regex match something unexpected. Each fetch is independently
+// caught: one missing chunk must not abandon the rest.
+const CHUNK_RE = /"\.\/([A-Za-z0-9_.-]+\.js)"/g;
+const MAX_DEPTH = 6;
+
+async function precacheShellAssets(html, cache) {
+  const seen = new Set();
+  // Default cache mode, not "reload": the page just fetched these, so this normally costs
+  // nothing beyond a memory/disk-cache read. Only the HTML needs to bypass the HTTP cache.
+  const take = async (url) => {
+    if (seen.has(url)) return null;
+    seen.add(url);
+    try {
+      const r = await fetch(url);
+      if (!r || !r.ok) return null;
+      await cache.put(url, r.clone());
+      return /\.js(\?|$)/.test(url) ? await r.text() : null;
+    } catch (e) { return null; }
+  };
+
+  const fromHtml = [...new Set(Array.from(html.matchAll(/(?:src|href)="([^"]*\/assets\/[^"]+)"/g), (m) => m[1]))]
+    .map((u) => new URL(u, self.registration.scope).toString());
+  let frontier = (await Promise.all(fromHtml.map(async (u) => [u, await take(u)]))).filter(([, t]) => t);
+
+  for (let depth = 0; depth < MAX_DEPTH && frontier.length; depth++) {
+    const next = [];
+    for (const [from, text] of frontier) {
+      // Resolve against the referring asset, not the scope — "./x.js" is relative to /assets/.
+      for (const m of text.matchAll(CHUNK_RE)) next.push(new URL(m[1], from).toString());
+    }
+    const fetched = await Promise.all([...new Set(next)].map(async (u) => [u, await take(u)]));
+    frontier = fetched.filter(([, t]) => t);
+  }
+  return seen.size;
 }
 
 self.addEventListener("install", (event) => {
@@ -82,11 +135,7 @@ self.addEventListener("install", (event) => {
         await pruneIfNewDeploy(html);
         const cache = await caches.open(SHELL_CACHE);
         await cache.put(self.registration.scope, res);
-        // Entry bundle, its static imports (modulepreload) and the stylesheet — every
-        // /assets/ URL the shell references. Lazily-imported chunks are not in here and
-        // do not need to be: once this worker controls the page they cache on first use.
-        const assets = [...new Set(Array.from(html.matchAll(/(?:src|href)="([^"]*\/assets\/[^"]+)"/g), (m) => m[1]))];
-        await Promise.all(assets.map((u) => cache.add(new URL(u, self.registration.scope).toString()).catch(() => {})));
+        await precacheShellAssets(html, cache);
       } catch (e) {
         /* offline or a failed fetch during install — nothing to precache, carry on */
       }
@@ -117,7 +166,19 @@ self.addEventListener("fetch", (event) => {
           caches.open(SHELL_CACHE).then((cache) => cache.put(req, copy));
           if (req.mode === "navigate") {
             // waitUntil, not await: the page must not wait on cache maintenance.
-            event.waitUntil(res.clone().text().then(pruneIfNewDeploy).catch(() => {}));
+            //
+            // Refill after a prune. A new deploy deletes every /assets/ entry including the
+            // lazy chunks, and only what the client happens to visit would come back — so
+            // without this the offline set decays on every deploy and the trailhead case
+            // silently regresses. Runs only when pruneIfNewDeploy actually pruned (once per
+            // deploy per client), and the client is provably online here.
+            event.waitUntil(
+              res.clone().text()
+                .then(async (html) => {
+                  if (await pruneIfNewDeploy(html)) await precacheShellAssets(html, await caches.open(SHELL_CACHE));
+                })
+                .catch(() => {})
+            );
           }
         }
         return res;
