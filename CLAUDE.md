@@ -15,6 +15,7 @@ npm run check:dead-props # props passed or declared but never read (runs in buil
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
+npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:drift# does the live site actually serve the current tip of main?
 ```
 
@@ -74,6 +75,34 @@ a build error, but a screen that renders wrong or not at all.
   per-screen text so you can prove a refactor is behaviour-neutral; only the clock
   inside ASPECT & SUN should differ between two runs. `--url <live URL>` points the
   same walk at the deployed site instead of a dev server.
+- **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
+  **brand-new account** sees them — every count zero, every list empty. It exists because
+  `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
+  `friendReqIn` is `[5]`, `crewUnread` is `{crew_seed_tingey:2}`. So every branch that only
+  runs when a count is zero is dead ground to it, and it never opens a modal at all. Four
+  rounds of bugs lived in that gap, all with `check:ui` green: **#637** (Home dropped 3 of 4
+  tiles and the whole Unfinished business dropdown), **#654** (`Last verified catch: · 0
+  partners confirmed`; the demo climber's 950 ft/hr shown as a new user's own pace),
+  **#662** (four `Suspense fallback={null}` boundaries — a blank content area), and **#674**
+  (the share card putting the word `undefined` into the clipboard copy, the `mailto:` body,
+  the `sms:` body and the tweet). The pattern in all four: *a section that is correct with
+  data becomes a lie, a dangling label, or a dead end at zero.*
+  - The zero state is forced by `scripts/zero-state.config.mjs`, a Vite config used only by
+    this check. It rewrites three anchors **in memory** to replay the app's own sign-in
+    reset — never edit the source, and never hand-copy that reset: a copy that omits
+    `setProfile` or the `Object.assign(ME,…)` manufactures leaks that were never there.
+    Each anchor must match **exactly once** or the run dies with `ANCHOR LOST`, so a moved
+    anchor cannot quietly walk the populated app and pass.
+  - Overlays are **discovered from the source**, not listed in the script, so a modal added
+    tomorrow is walked without anyone registering it. One declared below the injection point
+    is named in the output rather than silently skipped.
+  - Injection-tested: restoring the four #674 defects trips 7 assertions, and breaking an
+    anchor fails with `ANCHOR LOST` **plus** "nothing below was actually checked".
+  - Not in `build` and **not in CI**, same as `check:ui` — and note the repo depends on
+    `playwright-core`, which ships no browser for a runner to drive. Run it by hand.
+  - Opening an overlay by name reaches some the UI would not offer at zero (e.g.
+    `vouchesGivenOpen` only opens from a *See all N →* button needing >3 vouches). Check the
+    setter's call sites before treating an empty one as a bug.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
