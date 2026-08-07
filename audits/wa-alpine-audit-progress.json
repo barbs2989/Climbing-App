@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_glacier_peak_sitkum_glacier",
+  "last_processed_id": "wa_guye_peak_improbable_traverse",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1593,6 +1593,28 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-07-batch-66.sql",
       "note": "Researched via 4 parallel agents grouped by peak. Little Tahoma's Frying Pan/Whitman Glaciers had the batch's worst contamination: approach_logistics named a real but ~150mi-distant USFS trailhead (Lake Wenatchee) instead of its own correctly-described Fryingpan Creek Trailhead, access.notes carried the same 'Mount Tom area, North Cascades' boilerplate junk string flagged DB-wide in pass-1 batch 15, pitches=0 contradicted a populated pitch_detail, and gain_ft contradicted its own itinerary day-sum -- all four fixed. Ghost Peak's descent_text described exiting via Ross Lake, contradicting its own approach text and itinerary (both say Hannegan Pass) -- fixed. Gilbert Peak: Conrad Glacier's trailhead waypoint was ~1mi off (fixed against sibling Meade Glacier's confirmed-correct value for the same physical trailhead); both Conrad Glacier and Meade Glacier carried a Cowlitz Valley RD/Gifford Pinchot NF land-manager value copy-pasted from the West Route's Snowgrass-side approach, both actually on Naches RD/Okanogan-Wenatchee NF per their own Conrad Meadows approach text -- fixed. Glacier Peak: the recurring 'A. H. Dubor' misspelling of 1897 surveyor A. H. Dubois (first fixed pass-1 batch 13) recurred on 3 of 5 routes -- fixed on all 3; Cool Glacier-Gerdine's gain_ft/loss_ft contradicted its own itinerary/totalNote -- fixed; Frostbite Ridge's gpx track was byte-for-byte identical to Cool Glacier-Gerdine's (a copy-pasted south-side track on a north-side route) -- nulled rather than fabricated, plus its trailheadDirection said 'southeast' from a trailhead its own coordinates place to the northeast -- fixed; Kennedy Glacier's approach_logistics.peakLat/peakLng was ~500m off against its own waypoint/sibling/area row -- fixed, plus a null loss_ft despite a populated itinerary-matching gain_ft -- fixed. Biggest open flag: Disappointment Peak Cleaver's row conflates two mutually exclusive approaches (prose describes the south-side North Fork Sauk/White Pass line, structured fields describe an east-side Buck Creek Pass/Trinity/Chiwawa River line, with waypoints even out of physical order) -- needs a human to pick one canonical approach and rewrite consistently, not a field patch. Also flagged: Sitkum Glacier's FA year (1897 vs one unconfirmed 1898 search snippet) and a cross-sibling trailhead-mileage contradiction with Kennedy Glacier; Kennedy Glacier's dist_km vs its own corrections-field mileage; Frostbite Ridge's two disagreeing summit elevations (10541 vs 10550) and a gain/loss-vs-itinerary gap; Gilbert Peak's long-standing 8184ft (Wikipedia/USGS) vs 8201ft (USFS prose) conflict, already transparently logged rather than guessed; Ghost Peak's internal mileage mismatch and low-confidence rappel field. WebFetch was blocked for several primary sources (Wikipedia, fs.usda.gov) on two of the four research threads, pushing more items to flagged than usual."
+    },
+    {
+      "batch_number": 67,
+      "pass": 2,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_goat_mountain_south_ridge",
+        "wa_golden_horn_north_face",
+        "wa_goode_mountain_megalodon_ridge",
+        "wa_goode_mountain_northeast_face",
+        "wa_goode_mountain_southwest_couloir",
+        "wa_gorillas_direct",
+        "wa_gunnshy_peak_standard_route",
+        "wa_gunrunner",
+        "wa_gunsight_peak_standard",
+        "wa_guye_peak_improbable_traverse"
+      ],
+      "confirmed_errors_fixed": 20,
+      "flagged_for_human_review": 13,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-07-batch-67.sql",
+      "note": "Researched via 4 parallel agents grouped by peak. Goat Mountain South Ridge's high_point_ft (6721) turned out to be the false west-summit elevation, not this route's real east-summit destination (6891, confirmed via SummitPost and the row's own waypoints/area row) -- fixed, plus 4 fields separately drifted to an unsupported '~6,600 ft' false-summit figure (should be 6,721 ft per the row's own beta field), a resulting waypoint-note arithmetic slip (170ft miscomputed as 120ft), and a gain/loss mismatch vs. its own itinerary (4300/4800 -> 5100/5100). Gorillas Direct (Mount Stuart) repeated the King Kong trailhead-conflation bug from an earlier pass: approach text said 'Longs Pass' at mile 2.5 where the route's own waypoint for that point says 'Ingalls Pass' -- fixed. Gunnshy Peak's trailhead waypoint was ~500m off its own approach_logistics value for the same point -- fixed. Mount Goode's 3 routes shared a stale approach_logistics trailhead (2 of 3 still said 'Rainy Pass' despite each route's own waypoints/gpx already pointing to 'Bridge Creek Trailhead' from a prior pass) and an identical wrong Boston-Basin-specific camping-rules clause (a different, unrelated NCNP corridor) -- fixed on all 3. Northeast Face was the standout: fa ('Beckey and Parrott, 1954') contradicted the row's own data_quality.gaps ('no confirmed FA found') and no source corroborates it (Beckey's real NE-side Goode FA is the distinct Northeast Buttress, 1966) -- nulled; its grade (IV) disagreed with its own commitment/alpine_grade (both III) -- fixed; its gain_ft/loss_ft didn't match its own itinerary sum -- fixed. Gunrunner (Middle Peak, Gunsight Range) had the batch's worst contamination: access/emergency fields named a Lake Serene/Vesper Peak trailhead, Mt. Baker Wilderness, Chelan Ranger District, a hospital in the wrong town, and a hospital that doesn't exist -- none relate to its real Downey Creek/Glacier Peak Wilderness approach, corrected against sibling wa_gunsight_peak_standard's verified block for the identical approach; dist_km also undercounted -- fixed. While using that sibling as the 'known good' reference, found it wasn't fully clean either -- its own access.parking_pass carried the identical Mountain Loop Highway contamination -- fixed too. Resolved the standing question of whether 'Middle Peak' (rather than 'Gunsight Peak') is a mislabeling for this area: it isn't -- Gunsight Peak is a documented multi-summit massif (North/Middle/South) and Middle Peak is the correct name for its highest point. The underlying elevation is still unresolved three ways (8185 area / 8198 one route / 8200 other route, vs. Wikipedia 8198 / listsofjohn 8184) -- left flagged. Guye Peak's Improbable Traverse audited essentially clean; only its FA names/dates couldn't be confirmed this pass (sources network-blocked) -- flagged. Golden Horn's North Face was clean on every fact checked; its one open item (Swamp Creek vs. Rainy Pass North trailhead) may be two valid alternate approaches rather than a bug -- left for a human call rather than picking one."
     }
   ]
 }

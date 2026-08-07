@@ -4831,3 +4831,69 @@ items flagged for human review. 0 routes fully clean end-to-end (every route in 
 had at least one confirmed fix or an open flag). check:sql also warned the file (7.4KB)
 exceeds the SQL Editor's ~4KB safe-paste size — split it into chunks when applying by
 hand.
+
+## 2026-08-07 — Pass 2, Batch 67
+
+Four peaks/areas, 10 routes (Goat Mountain 1, Golden Horn 1, Mount Goode 3, Mount Stuart 1,
+Gunnshy Peak 1, Gunsight Range/Middle Peak 2, Guye Peak 1): South Ridge (Goat Mountain);
+North Face (Golden Horn); Megalodon Ridge, Northeast Face, Southwest Couloir (Goode);
+Gorillas Direct (Stuart); Standard Route (Gunnshy); Gunrunner, Standard Route (Middle
+Peak); Improbable Traverse (Guye Peak). Researched via 4 parallel agents grouped by peak.
+
+Goat Mountain's South Ridge had the batch's most internally tangled row: `high_point_ft`
+(6,721 ft) was actually the *false* west-summit elevation, not the route's real
+destination — its own `waypoints`, approach text, and the parent area row all agree the
+route tops out on the true 6,891 ft east summit (confirmed via SummitPost) — fixed, along
+with four other fields that had separately drifted to an unsupported "~6,600 ft" figure
+for the false summit (should be 6,721 ft, per the row's own already-correct `beta` field),
+a resulting arithmetic slip in a waypoint note (170 ft height difference miscomputed as
+120), and a gain/loss mismatch (4,300/4,800 vs. the row's own itinerary-sourced 5,100/5,100).
+Gorillas Direct (Mount Stuart) had the same trailhead-conflation bug flagged for its
+sibling King Kong in an earlier pass: `approach` sent parties to "Longs Pass" at mile 2.5,
+but this route's own waypoint for that exact point says "Ingalls Pass" — Longs Pass and
+Ingalls Pass are two different forks of the same trailhead system — fixed. Gunnshy Peak's
+trailhead waypoint was ~500m off from its own `approach_logistics` value for the identical
+point — fixed to the WTA-confirmed coordinate.
+
+Mount Goode's three routes shared a stale `approach_logistics` trailhead (still "Rainy
+Pass" on two of three, despite each route's own waypoints/gpx having already been
+corrected in a prior pass to "Bridge Creek Trailhead") and an identical, wrong
+Boston-Basin-specific camping-rules clause — Boston Basin is a different NCNP corridor
+entirely, nowhere near this Bridge Creek approach — fixed on all three. Northeast Face was
+the standout: its `fa` ("Beckey and Parrott, 1954") flatly contradicted the row's own
+`data_quality.gaps` ("no confirmed first-ascent party/date found"), and no source
+corroborates that claim (Beckey's real documented NE-side FA on Goode is the distinct
+Northeast Buttress, 1966) — nulled rather than guessed; its `grade` (IV) also disagreed
+with its own `commitment`/`alpine_grade` (both III) — fixed; and its `gain_ft`/`loss_ft`
+didn't match its own itinerary sum — fixed.
+
+Gunrunner (Middle Peak, Gunsight Range) had the batch's worst cross-route contamination:
+`access` and `emergency` fields named a Lake Serene/Vesper Peak trailhead, Mt. Baker
+Wilderness, Chelan Ranger District, a Cascade Medical Center located in the wrong town, and
+a hospital that doesn't exist — none relate to this route's real Downey Creek Trailhead /
+Glacier Peak Wilderness approach, all corrected against its sibling `wa_gunsight_peak_
+standard`'s already-verified block for the identical approach; its `dist_km` also
+undercounted against its own waypoint mileage and that same sibling — fixed. While
+reviewing the sibling as the "known good" reference, found it wasn't fully clean either:
+its own `access.parking_pass` carried the identical "Mountain Loop Highway" contamination
+— fixed too. Resolved the standing question of whether filing these two routes under an
+area named "Middle Peak" (rather than "Gunsight Peak") is a mislabeling: it isn't — Gunsight
+Peak is a documented multi-summit massif (North/Middle/South), and Middle Peak is the
+correct name for its highest point, the one Wikipedia/USGS list under the massif's overall
+name. The underlying elevation figure itself is still unresolved three ways (8,185 ft area
+row / 8,198 ft on one route / 8,200 ft on the other, against Wikipedia's 8,198 and
+listsofjohn's 8,184) — left flagged, not guessed. Guye Peak's Improbable Traverse audited
+essentially clean (best-sourced row in the batch); only its FA names/dates couldn't be
+independently confirmed or refuted this pass (primary FA-history sources were
+network-blocked) — flagged rather than assumed correct. Golden Horn's North Face was clean
+on every fact checked; its one open item is a trailhead ambiguity (prose names Swamp Creek,
+structured fields name Rainy Pass North) that may be two genuinely valid alternate
+approaches rather than a bug — left for a human to adjudicate rather than picking one.
+
+20 confirmed errors fixed (SQL: `audits/sql/2026-08-07-batch-67.sql`; validated with
+`npm run check:sql` — 20 of 22 statements (16 distinct target ids) auto-confirm against
+live rows, no DELETE removes an only copy; 2 statements not auto-checkable due to the
+tool's known naive-parser issue with quotes in long replacement text, manually
+cross-checked instead — both target ids confirmed to exist). ~13 items flagged for human
+review. check:sql also warned the file (11.6KB) exceeds the SQL Editor's ~4KB safe-paste
+size — split it into chunks when applying by hand.
