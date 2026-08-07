@@ -26,7 +26,33 @@ import AppErrorBoundary from "./AppErrorBoundary.jsx";
 // Scoped to queries so that any future useMutation keeps the default offline-queue
 // behaviour, where pausing a write until reconnect is the right thing. There are no
 // mutations in the tree today.
-const queryClient = new QueryClient({ defaultOptions: { queries: { networkMode: "always" } } });
+//
+// `retry` exists because networkMode "always" has a cost: queries now genuinely run with no
+// signal, and the default 3 retries make the user wait out the backoff before seeing anything.
+// Measured on the live site, going offline with the app open — every START and FAIL landed on
+// the SAME timestamp, so the request fails instantly and the entire wait is backoff:
+//
+//   3.1s 7.1s 8.1s 9.1s 11.1s 15.1s 17.1s 18.1s 20.1s 24.1s 28.1s 29.1s 31.1s 35.1s
+//   16 attempts for one query, settling at ~35s on "Loading states…"
+//
+// Retrying is pointless when the device itself reports no network: nothing changed between
+// attempts and no amount of backoff conjures a connection. Only `navigator.onLine === false`
+// is trusted, never `true` — the browser sets false when the OS says there is no link, which
+// is reliable, while true merely means an interface exists and says nothing about reachability
+// (captive portals, dead uplinks). So a genuinely offline device fails on the first attempt
+// and shows its real state at once, while every online failure keeps the full retry budget.
+//
+// This does not weaken the offline catalog: orOffline consults IndexedDB inside the FIRST
+// attempt, so a downloaded state is served immediately either way. What collapses is only the
+// dead waiting when there is nothing local to serve.
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      networkMode: "always",
+      retry: (failureCount) => (typeof navigator !== "undefined" && navigator.onLine === false ? false : failureCount < 3),
+    },
+  },
+});
 
 // The boundary wraps the provider too: a throw from a query-client consumer during render
 // is just as fatal, and outside it there is nothing left to render a fallback with.
