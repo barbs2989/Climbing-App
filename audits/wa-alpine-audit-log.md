@@ -4479,3 +4479,87 @@ naive parser splits on the em dash in the replacement text, so it was verified m
 against a fresh live fetch instead). One route (`wa_dragontail_peak_east_ridge_aasgard_pass`)
 audited fully clean. `check:sql` also warned the file (5.4KB) exceeds the SQL Editor's
 ~4KB safe-paste size — split it into chunks when applying by hand.
+
+## 2026-08-07 — Pass 2, Batch 62
+
+Eight peaks, 10 routes, researched via 4 parallel agents grouped by peak: Dragontail Peak
+(Pandora's Box, Triple Couloirs, Serpentine Arête), Chimney Rock (East Face) + East McMillan
+Spire (West Ridge/Southwest Face), Witches Tower (E/SE Face) + Middle Peak/Gunsight Range
+(East Face), Snowking Mountain (East Ridge) + Silver Star Mountain-Okanogan (East Ridge) +
+Inspiration Peak (East Ridge).
+
+- **Dragontail Peak** — Triple Couloirs' (`wa_dragontail_peak_r4`) "Asgard"→"Aasgard"
+  misspelling fix, logged as applied back in pass-1 batch 9, turned out to still be live on
+  the row in all four affected fields (descent/descent_text/bail/turnaround) — the batch-9
+  SQL for those quote-heavy text UPDATEs apparently never actually landed on the DB, even
+  though that same batch's short `alpine_grade` fix on the same route did land. Re-applied
+  here; worth a human double-checking whether other past batches' apostrophe/quote-heavy
+  UPDATEs have the same silent-no-op problem. Also filled a NULL `high_point_ft` (8,840 ft,
+  from sibling/area consensus). The long-flagged `wa_dragontail_peak_triple_couloirs`
+  duplicate has since disappeared from the DB (route_count now matches actual rows) —
+  resolved, though the surviving row (`r4`) still carrying the unfixed misspelling raises a
+  "did the right copy win" question worth a human glance. Serpentine Arête had a second,
+  previously-missed instance of the same duplicate-waypoint bug (a stray "Colchuck Lake"
+  entry off by 13 ft) — fixed. Pandora's Box's headline fabricated-WI6-contamination fix from
+  batch 9 is intact, but `pro_tips[0]` and `watch_out` still carry unmatched leftover
+  harder-route language the original fix missed — flagged, not guessed at (no source gives
+  correct replacement text for either field).
+- **Chimney Rock** (`wa_east_face_6`) — re-verified clean on the summit-elevation mismatch
+  its sibling West Face had in pass 1 (no regression), but its own itinerary day-by-day
+  gain/loss no longer sums to its externally-corroborated top-level total — flagged, no track
+  data available to say which day is undercounted. Also carries the same round-trip-vs-one-way
+  `dist_km` fingerprint CLAUDE.md already documents as a DB-wide, do-not-bulk-fix issue.
+- **East McMillan Spire** (`wa_east_mcmillan_spire_west_ridge`) — `approach_logistics` still
+  held a stale trailhead coordinate the row's own waypoint/GPX data had already superseded
+  (same propagation-gap pattern as batch 61's Dorado Needle fix) — fixed. A real grade-vs-
+  commitment contradiction (top-level grade says "Grade III," the dedicated `commitment`
+  column says "II") surfaced — left flagged, no accessible source settled which numeral is
+  right.
+- **Witches Tower** (`wa_e_se_face`) — the pass-1 batch-9 flag (mandatory roped 5.6 pitch in
+  descent/itinerary contradicting the row's own 4th-class grade fields) is still unresolved;
+  the row's own `corrections`/`sourceNote` fields already explain the likely cause (content
+  bled in from a similarly-named separate 5.6 route on the same peak) but nobody has done the
+  rewrite/split yet.
+- **Middle Peak** (`wa_east_face`, Gunsight Range/Chickamin-Blue Glaciers — confirmed via
+  coordinates this is *not* the unrelated Mount Index "Middle Peak" a prior batch touched) —
+  the biggest find this batch: five separate confirmed errors, several looking like cross-
+  route contamination. `gain_ft` undercounted the route's own itinerary by 1,300 ft; `rappels`
+  named the wrong glacier (Blue, the approach side, instead of Chickamin, the actual descent
+  side); `access.parking_pass` named "Sunrise Mine TH for Vesper Peak" — a completely
+  unrelated Mountain Loop Highway trailhead; `emergency.rangerStation` named an
+  Okanogan-Wenatchee district instead of this route's actual Darrington/Mt. Baker-Snoqualmie
+  one; and `emergency.nearestHospital` named a real hospital in the wrong county (matching
+  Witches Tower's own correct value almost verbatim — likely a copy-paste source) plus a
+  hospital that doesn't exist at all ("Skykomish Valley Hospital"). All fixed from the row's
+  own correct fields or authoritative sources. Left flagged: a 15 ft area-vs-route elevation
+  split that mirrors a genuine real-world source disagreement, and an unconfirmed sheriff-
+  jurisdiction county.
+- **Snowking Mountain** (`wa_east_ridge_2`) — pass-1 fixes (land manager, glacier-crossing
+  contradiction) hold with no regression. New flag: `fa` states a confident, specific FA
+  party while the row's own `data_quality.gaps` simultaneously says "no confirmed FA" —
+  direct internal contradiction, and external search could only corroborate half the claimed
+  party. Left for a human with guidebook access.
+- **Silver Star Mountain (Okanogan)** (`wa_east_ridge_3`) — still no fix; every primary
+  source (SummitPost, NWMJ, Mountain Project, Mountaineers.org, even Wikipedia) 403'd again
+  this pass, same wall pass 1 hit. Got a sharper lead on the pass-1 two-trailhead-merge
+  suspicion via search snippets — evidence of at least 3 distinct named ridge routes on this
+  peak, any of which could be the contamination source — but rewriting the approach/beta text
+  from inference alone risked fabricating details, so left flagged rather than patched.
+- **Inspiration Peak** (`wa_east_ridge_4`) — one clean, low-risk fix: the 2026 NCNP
+  early-access lottery date window was stale by a day ("Mar 2–13" vs. NPS's actual "Mar
+  3–14"), the same off-by-one-day bug already fixed on two sibling NCNP routes (Buckner
+  Mountain, Crooked Thumb Peak) in earlier batches but never propagated here.
+- **DB-wide flag, not fixed** (surfaced independently on both Silver Star and Inspiration
+  Peak this batch): `alpine_grade` holding a roman-numeral commitment grade instead of the
+  French adjectival scale `supabase/migrations/0006_composite_grades.sql` defines for that
+  column — a spot-check across ~25 other routes found this format inconsistent DB-wide, so
+  it reads as a systemic backlog rather than something to patch route-by-route.
+
+10 confirmed errors fixed across 5 of the 10 routes (SQL: `audits/sql/2026-08-07-batch-62.sql`,
+validated with `npm run check:sql` — all checkable statements confirm against live target ids;
+3 statements weren't auto-checkable due to the tool's known naive-parser issue with hyphens/
+em-dashes inside quoted replacement text, same as batch 61's Gerber-Sink case, and were
+cross-checked manually against the live rows instead). No route in this batch came back fully
+clean — every route had at least one open flag alongside its fixes or in place of one.
+`check:sql` also warned the file (7.9KB) exceeds the SQL Editor's ~4KB safe-paste size — split
+it into chunks when applying by hand.
