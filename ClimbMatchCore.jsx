@@ -2594,6 +2594,15 @@ function RouteFinder({scope,onOpen,onBack}){
   </div></div>,document.body):null}
   </div>;
 }
+// QuickMatch is unreachable in production and should not be ported as-is. It renders only
+// under AreaView, and the Climbs tab is `USE_DB ? <DbAreaBrowser/> : <AreaView/>`, so only
+// env-less builds (worktrees, CI, fresh clones) can reach it -- which is why it keeps
+// looking healthy. RouteFinder/map/objectives all have DbAreaBrowser twins; this alone does
+// not. Porting it needs approach data the catalog does not have: measured 2026-08-06, only
+// 625 of 205,492 routes carry dist_km + gain_ft + loss_ft, and 623 of those 625 are WA. A
+// time-budget filter over that returns a near-empty list, which a climber reads as "nothing
+// fits my window" rather than "we have approach data for 0.3% of climbs". Fix the data
+// first. See RouteDetail's Calculator for how the same missing inputs are disclosed there.
 const TIME_BUDGETS=[["half","Half day",5],["full","Full day",10],["multi","Multi-day",99]];
 const DIST_BUDGETS=[["close","30 min",25],["mid","1 hr",75],["far","2 hr+",99999]];
 function QuickMatch({scope,onOpen,onBack}){
