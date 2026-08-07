@@ -5040,3 +5040,59 @@ Three of the five research agents flagged a "duplicate area row" in their data �
 artifact of this run's own query (which joins the parent area once per sibling route on that
 peak, producing byte-identical rows in the export), not a live database issue. Noting it here
 so a future pass doesn't re-flag the same non-bug.
+
+## 2026-08-07 — Pass 2, Batch 70
+
+Checked 10 routes across 6 peaks: Jack Mountain (Nohokomeen Glacier and Headwall, Northeast
+Glacier, South Face/Southeast Ridge), Johannesburg Mountain (Cascade-Johannesburg Couloir,
+Northeast Buttress), Kimtah Peak (Southwest Slopes/Gully), Mount Stuart (King Kong - Gorillas
+Direct Direct), Klawatti Peak (Southeast Face, SW Buttress), and Kangaroo Temple (Koala Krack).
+Researched via 6 parallel agents grouped by peak.
+
+32 confirmed errors fixed across 39 UPDATE statements (SQL: `audits/sql/2026-08-07-batch-70.sql`;
+`npm run check:sql` confirmed all 25 distinct write targets exist against live rows, no DELETE
+in this batch — 8 statements not auto-checkable due to the tool's known naive-parser issue with
+long single-line statements burying the `id =` predicate past its head-check length, all
+manually cross-checked instead against rows already fetched directly from the live DB earlier
+in this pass). check:sql also warned the file (22.7KB) exceeds the SQL Editor's ~4KB safe-paste
+size — split it into ~1.5KB chunks when applying by hand.
+
+Notable finds: King Kong (Mount Stuart) resolved a real FA-vs-FFA mixup left open by a prior
+audit pass — AAC Publications and Alpinist Newswire both corroborate that Sol Wertkin & Tyree
+Johnson made the actual first ascent (with a fall on the headwall crack) about a week before Sol
+Wertkin & Jon Gleason's clean, free ascent on Sept 9, 2016; the row's `beta` field had the FFA
+date/partner mislabeled as the FA. The same route also had a resurfaced case of this project's
+recurring approach-boilerplate-contamination bug: `approach_logistics` and `access.notes`
+described the north-side Stuart Lake Trailhead (used by routes like the North Ridge) instead of
+the south-side Teanaway/Esmeralda approach this route's own `approach`/`road`/`emergency.county`
+fields already correctly use — fixed using the same trailhead coordinates already audited for
+the neighboring Ingalls Peak South Ridge route in batch 69. Klawatti Peak's two routes had a
+trailhead coordinate ~3.9 mi from the real Eldorado Creek trailhead (matching each row's own
+`approach_logistics` field once corrected); the SW Buttress route additionally had a wrong,
+self-contradicting note baked directly into a waypoint claiming the *correct* coordinate was the
+error — the note had the fix backwards and was corrected along with the coordinate. Kimtah Peak
+had an itinerary whose day-by-day mileage (20 mi total) didn't match its own waypoints and its
+own "roughly 15 miles" summary note, a `gain_ft` inconsistent with its own `loss_ft` and
+itinerary breakdown, and a `data_quality.gaps` list claiming no FA and no gully/gendarme
+waypoints existed when the row's own `fa` and `waypoints` fields already had both. Two Jack
+Mountain routes and both Johannesburg Mountain routes repeated a pattern seen in many earlier
+batches: a stale or self-contradicting field (a wrong hospital name, a backwards land-manager
+field, a wrong trailhead, a wrong dist_km/loss_ft pair) that the row's own other fields already
+had right.
+
+Left flagged rather than fixed: Kimtah Peak's `elevation_ft`/`high_point_ft` (8,649 ft) has no
+attesting source anywhere — every source found gives only "8,600+ ft" because the peak sits
+outside LiDAR survey coverage, and the row's own prose already says so while its numeric fields
+assert false precision; Jack Mountain's summit elevation is inconsistent across its own three
+routes and area row (9,069 vs 9,075 ft) with real external sources split the same way, needing a
+human to pick one figure and apply it peak-wide; Klawatti Peak Southeast Face's bergschrund and
+glacier-crossing waypoints are still geometrically impossible (flagged in a prior pass, still
+unresolved — no safe replacement coordinate found this pass either); Klawatti SW Buttress's
+`approach` field is otherwise Eldorado Peak's approach text with one corrected clause patched in
+and would benefit from a fuller human rewrite; Johannesburg Mountain's `gpx` tracks on both
+routes are contradicted by their own `data_quality.gaps` ("no public GPS track found") and
+contain large blocks of geographically implausible points — likely fabricated or contaminated,
+but no authoritative replacement track was found to fix it with; and Koala Krack's own existence
+as a documented route on Kangaroo Temple remains unconfirmed after a second, more thorough
+search pass (Mountain Project's own Kangaroo Temple page lists only 3 routes, not this one) —
+still flagged rather than deleted per guardrails.

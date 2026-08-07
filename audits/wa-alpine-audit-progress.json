@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_inspiration_peak_west_ridge",
+  "last_processed_id": "wa_koala_krack",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1657,6 +1657,28 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-08-07-batch-69.sql",
       "note": "Researched via 5 parallel agents grouped by peak. Hozomeen Mountain's North Peak North Route audited clean; its Southeast Face row has a much deeper problem the agent flagged but I left unfixed: its overview/fa/waypoints describe the AAC-documented Southeast Buttress of Hozomeen's SOUTH Peak (8,003ft) almost verbatim, while high_point_ft/face assert this is the North Peak (8,071ft) standard route -- the row's own corrections field already flags this and proposes a fix that was never applied. Fixed only what's independently verifiable regardless of which peak the row means: a mis-dated North Face FA (2019->2016, wrong partner) and a waypoint distMi that contradicted its own note text. Hurry-Up Peak: fixed a Kool-Aid Lake elevation typo, a road-gate distance figure, boilerplate 'Horseshoe Basin' contamination (copy-pasted from a different Sahale/Boston-area route) in partner_requirements, and a trailhead elevation mismatch. Icy Peak: Southwest Route's high_point_ft/summit waypoint claimed the true (Southeast) 7,073ft summit while its own approach text says the described line tops out at the 7,062ft Northwest/register summit, matching Beckey's stated 11-ft gap between the two -- fixed elevation and reworded the overview; also fixed season to include September per the route's own seasonal_guidance. Ruth-Icy Traverse route audited clean. Ingalls Peak area prominence (1248->1222, matches Wikipedia+Peakbagger). South Ridge route had several errors: permit field wrongly described it as inside the quota Enchantment Permit Area (it isn't -- confirmed via press coverage naming Lake Ingalls a non-quota alternative), pitches (4->3, contradicted 5+ of the row's own fields), a stale/wrong rappel description (4 raps/2 ropes needed -> 3 raps/1 rope, matching its own descent_text), a trailhead elevation off by 69ft from its own East Route sibling, and Lake Ingalls' elevation off by 13ft from its own waypoint. East Route audited clean; confirmed East Peak is a real, distinct sub-summit, not a duplicate area row. Inner Constance's Northwest Buttress waypoint/approach_logistics pointed at the Dosewallips/Lake Constance trailhead, contradicted by its own approach text and pro_tips (which say Dosewallips 'deposits you in Avalanche Canyon on the wrong aspect') -- corrected to the Upper Dungeness Trailhead the route text actually describes. Standard Route's approach text mislabeled a round-trip mileage figure as one-way. Inspiration Peak's dist_km was inconsistent with its own waypoints/itinerary -- fixed to match. Left flagged (not fixed): Hozomeen SE Face's peak-identity conflation and its knock-on fields (aspect/face/gain-loss/land_manager duplicate key/stale closures), Hozomeen area's null elevation field and unverifiable 10,000-year quarrying claim, Hurry-Up's dist_km/gain-loss/a waypoint distance impossibility/schedule gap, Icy's Ruth-Icy Traverse coordinate/grade-inversion questions, Icy Southwest Route's dist_km/gain-loss/descent-time conflict/two-vs-three-summits question, Icy area's Seahpo Peak elevation source conflict, Ingalls South Ridge's Dogtooth Crags waypoint geometry (looks ~1mi off, no safe replacement found), Inner Constance Standard's elevation (7672 vs sibling's 7670, external sources 7667-7680) and its Crystal-Pass-vs-actually-documented-route framing (a content decision, not a fact fix), and Inspiration Peak's length_m-vs-pitch-sum mismatch and permit-lottery wording. 'Duplicate area row' flags from three of the five agents were an artifact of this run's own query (joining the area once per sibling route), not a live DB issue -- noted so a future pass doesn't re-flag it."
+    },
+    {
+      "batch_number": 70,
+      "pass": 2,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_jack_mountain_nohokomeen_headwall",
+        "wa_jack_mountain_northeast_glacier",
+        "wa_jack_mountain_south_face",
+        "wa_johannesburg_mountain_cj_couloir",
+        "wa_johannesburg_mountain_northeast_buttress",
+        "wa_kimtah_peak_scramble",
+        "wa_king_kong_gorillas_direct_direct",
+        "wa_klawatti_peak_southeast_face",
+        "wa_klawatti_peak_sw_buttress",
+        "wa_koala_krack"
+      ],
+      "confirmed_errors_fixed": 32,
+      "flagged_for_human_review": 11,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-07-batch-70.sql",
+      "note": "King Kong (Mount Stuart) resolved a prior-flagged FA-vs-FFA mixup (AAC/Alpinist corroborate Wertkin & Johnson's FA-with-a-fall vs. Wertkin & Gleason's FFA a week later) and a resurfaced approach-boilerplate contamination from the north-side Stuart Lake Trailhead. Klawatti Peak's two routes shared a ~3.9mi-off trailhead coordinate; the SW Buttress route had a waypoint note with the fix backwards (claiming the correct coordinate was the error). Kimtah Peak's itinerary mileage, gain_ft, and data_quality.gaps were all internally inconsistent with the row's own other fields. Left flagged: Kimtah's elevation_ft asserts false precision (no source attests the specific figure); Jack Mountain's summit elevation disagrees across its own 3 routes/area row (9069 vs 9075 ft); Klawatti SE Face's bergschrund/glacier waypoints are still geometrically impossible (unresolved from a prior pass); Klawatti SW Buttress's approach text needs a fuller human rewrite beyond one patched clause; both Johannesburg routes' gpx tracks contradict their own data_quality.gaps and contain implausible points with no authoritative replacement found; Koala Krack's existence as a documented Kangaroo Temple route remains unconfirmed after a second search pass."
     }
   ]
 }
