@@ -11,15 +11,16 @@ npm run build      # production build to dist/ (runs check:refs + check:hooks fi
 npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
+npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:drift# does the live site actually serve the current tip of main?
 ```
 
-There is no unit test suite, linter, or type checker. The three `check:` scripts are
-what stands in for one, and they target the failure mode this codebase actually
-ships: not a build error, but a screen that renders wrong or not at all.
+There is no unit test suite, linter, or type checker. The `check:` scripts are what
+stands in for one, and they target the failure mode this codebase actually ships: not
+a build error, but a screen that renders wrong or not at all.
 
 - **`check:refs`** parses with Babel and fails on any identifier with no binding in
   an enclosing scope — the bug that blank-screened production in #317 and #359.
@@ -31,6 +32,23 @@ ships: not a build error, but a screen that renders wrong or not at all.
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
 - **`check:hooks`** catches hooks called outside a component body — the #377 bug
   (an invalid hook call inside a click handler). Also gated by `npm run build`.
+- **`check:dead-props`** asks two questions of every component: does it destructure a prop
+  it never references, and does a call site pass a prop it never destructures? The second
+  is the runtime bug — `<Foo onSave={…}/>` where `Foo` reads `onSubmit` looks correct at
+  both ends and silently does nothing. The first is slower-acting: #656 deferred list
+  persistence partly because `Challenges` received `setUserLists` and **never called it**,
+  so dead wiring read as a feature already plumbed. #667 swept both to zero. A pass does
+  **not** mean a prop is used meaningfully — a prop forwarded straight to a child counts as
+  referenced, so this cannot see a handler wired to a button that never renders. Removals
+  **cascade** (deleting a param strands the wiring that fed it), so re-run to a fixpoint
+  rather than once. Gated by `npm run build`. Injection-tested, and worth knowing why: three
+  defects in the first draft each made it report a clean sweep while real findings existed —
+  Babel's shorthand `{foo}` gives the property a key node *and* a value node that **is** the
+  binding, so every prop marked itself referenced; `<ActionIcon/>` is a `JSXIdentifier`, not
+  an `Identifier`, so an Identifier-only visitor called 6 live props dead; and keying
+  components by name alone silently picks one of the two `LoginScreen`/`Pill`/`SL`
+  definitions. Re-run the injections named at the bottom of the script before trusting a
+  green result after any traversal change.
 - **`check:bare`** renders the real `RouteDetail` with `react-dom/server` for a route that
   has **no enrichment** — name, grade, pitches and nothing else — across every discipline ×
   sub-tab, and asserts the screen states what it does not know. It exists because `check:ui`
