@@ -1,0 +1,59 @@
+{
+  "note": "Migration numbers that were already duplicated when check:migration-numbers was added (2026-08-06). Grandfathered so the guard does not fail on day one for history nobody will renumber. Do NOT add to this file to silence a new collision — renumber the new migration instead. Adding a file to a listed number also fails, because the file list must match exactly.",
+  "accepted": {
+    "0025": [
+      "0025_alpine_peak_coordinates.sql",
+      "0025_approach_logistics.sql"
+    ],
+    "0040": [
+      "0040_climb_logs_enhancements.sql",
+      "0040_gear_audit_batch_10_real.sql"
+    ],
+    "0042": [
+      "0042_crew_and_direct_messaging.sql",
+      "0042_gear_audit_test_batch.sql",
+      "0042_gps_submissions.sql"
+    ],
+    "0043": [
+      "0043_gear_audit_finalization.sql",
+      "0043_salvaged_batches_1-4_corrected.sql"
+    ],
+    "0044": [
+      "0044_gear_audit_batch_6_real.sql",
+      "0044_phase3_tier1_hazard_enrichment.sql"
+    ],
+    "0045": [
+      "0045_gear_audit_batch_7_real.sql",
+      "0045_phase3_tier2_hazard_enrichment.sql",
+      "0045_phase3_tier2_ice_routes_hazards_2026-07-28.sql"
+    ],
+    "0050": [
+      "0050_rack_features_columns.sql",
+      "0050_rappel_detail_audit.sql"
+    ],
+    "0051": [
+      "0051_areas_dominant_discipline.sql",
+      "0051_rappel_detail_round3.sql"
+    ],
+    "0054": [
+      "0054_climb_logs_missing_columns_and_fk_fix.sql",
+      "0054_phase3_tier2_winter_seasonal_enrichment.sql"
+    ],
+    "0063": [
+      "0063_route_dedup_index.sql",
+      "0063_widen_route_name_placeholder.sql"
+    ],
+    "0065": [
+      "0065_route_duplicate_names_materialized.sql",
+      "0065_widen_route_name_placeholder.sql"
+    ],
+    "0073": [
+      "0073_climb_log_tick_type.sql",
+      "0073_comments_profiles_fk.sql"
+    ],
+    "0087": [
+      "0087_connections.sql",
+      "0087_routes_outing_shape.sql"
+    ]
+  }
+}
