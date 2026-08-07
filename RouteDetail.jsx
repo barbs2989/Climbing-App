@@ -135,7 +135,29 @@ function assumedFor(route,disc){
 }
 const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
 /* The Protection tile is a half-width column at 13px, so it needs a label, not a paragraph. Researched racks are written as full sentences ("Cams: doubles from small sizes through #3 — trip reports call for…"), which would dump the whole rack into that column. Keep only compact, rack-shaped entries and fall back to the generic label rather than overflowing. The full rack still renders in its own section on the Plan tab. */
-function rackSummary(rack){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);var t=a.filter(function(g){return typeof g==="string"&&g.length<=60&&/cam|rack|nut|stopper|draw|hex|tricam|piece|gear/i.test(g);});var s=t.join(", ");if(!s)return "Gear-protected";return s.length>64?s.slice(0,63).replace(/[\s,;:—-]+$/,"")+"…":s;}
+function rackSummary(rack){
+  var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);var strs=a.filter(function(g){return typeof g==="string";});if(!strs.length)return "Gear-protected";
+  /* Judge each entry on its own and drop the negated or conditional ones. A researched rack says things like "ice screws are rarely used here and are not worth carrying" or "protected with rock gear, not screws" — read as a flat word list, those advertise exactly the gear the route says to leave behind. */
+  var NEG=/\bnot\b|\bno\b|\bn't\b|rarely|seldom|never|unless|only if|optional|if you|leave (?:them|it)|skip|instead of|rather than/i;
+  var low=strs.filter(function(g){return !NEG.test(g);}).join(" · ").toLowerCase();
+  /* Derive a compact label from prose so a researched rack still says something concrete. Only sizes written as "#3" or "to 3 inches" count — never a bare number, which would read pitch or grade numbers as cam sizes. */
+  var parts=[],nums=[],m,re=/#(\d+(?:\.\d+)?)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
+  re=/\bto (?:a )?(\d+(?:\.\d+)?)\s*(?:in\b|inch)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
+  if(/\bcams?\b|camalot|friend/.test(low)){var top=nums.length?Math.max.apply(null,nums):null;parts.push(top!=null?"Cams to #"+top:"Cams");}
+  if(/\bnuts?\b|stopper|\bwires?\b/.test(low))parts.push("nuts");
+  if(/offset/.test(low))parts.push("offsets");
+  if(/piton|knifeblade|\bpins?\b|\bangles?\b/.test(low))parts.push("pins");
+  if(/\bscrews?\b/.test(low))parts.push("screws");
+  if(/picket/.test(low))parts.push("pickets");
+  var dm=low.match(/(\d+\s*(?:-|–|to)\s*\d+|\d+)\s*\+?\s*(?:quickdraws|draws)/);
+  if(dm)parts.push(dm[1].replace(/\s*(?:to|–)\s*/,"-")+" draws");else if(/quickdraw|\bdraws\b/.test(low))parts.push("draws");
+  if(/two \d*\s*m?\s*ropes|two ropes|double[- ]rope|half or twin|twin ropes/.test(low))parts.push("2 ropes");
+  var s=parts.join(" · ");
+  /* Nothing derivable — fall back to whole entries short enough to sit in the column, then to the generic label. */
+  if(!s)s=strs.filter(function(g){return !NEG.test(g)&&g.length<=60&&/cam|rack|nut|stopper|draw|hex|tricam|piece|gear/i.test(g);}).join(", ");
+  if(!s)return "Gear-protected";
+  return s.length>64?s.slice(0,63).replace(/[\s,;:·—-]+$/,"")+"…":s;
+}
 function gearReadout(route,owners){
   const disc=catOf(route);const base=(DISC_GEAR[disc]||[]).slice();
   const text=(((route&&route.rack)||[]).join(" ")+" "+(((route&&route.gearTiers&&route.gearTiers.required)||[]).join(" "))).toLowerCase();
