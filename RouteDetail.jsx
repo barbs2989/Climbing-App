@@ -380,6 +380,19 @@ function Calculator({route,fit:fitProp,setFit:setFitProp}){
   // separate approach estimate to it double-counts the walk in.
   const publishedIsWholeDay=!!(route.timing&&route.timing.summitTimeHrs!=null&&route.timing.totalHrs!=null&&route.timing.summitTimeHrs===route.timing.totalHrs&&route.timing.approachTimeHrs==null);
   const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
+  // hasHikeInputs is an OR, so ONE of the three is enough to render a confident total -- while
+  // scarfHrs still charges every missing component as 0. Measured on the live catalog: 950
+  // routes render a confident estimate and only 625 carry all three, so 325 of them (34%) were
+  // quoting a number with a silently free leg. Worst case is dist-only, which drops both the
+  // gain and the descent: a route with 1,200 m of climbing rendered a 1.8hr approach as fact,
+  // in green, against 5.6hr once the missing pieces are supplied. Name the components rather
+  // than saying "no approach data", because here most of it IS present.
+  const _missHike=[];
+  if(route.distKm==null||route.distKm==="")_missHike.push("approach distance");
+  if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
+  if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
+  const hikeInputsComplete=_missHike.length===0;
+  const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
   const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:hikeH*0.75);
   const fmt=h=>{let total=Math.round(h*60);const day=Math.floor(total/1440);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
@@ -391,7 +404,7 @@ function Calculator({route,fit:fitProp,setFit:setFitProp}){
   // so the tell went away and the fault did not. These are lower bounds, not estimates.
   // Never paint one green either: a green "Est. return" asserts you are down before dark,
   // and with the walk in and the walk out both counted as zero we cannot assert that.
-  const approachUnknown=hasAnyEstimate&&!hasHikeInputs&&!publishedIsWholeDay;
+  const approachUnknown=hasAnyEstimate&&!hikeInputsComplete&&!publishedIsWholeDay;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
     <div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>{["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"Time Estimate":route.discipline==="bouldering"?"Approach Time":"Time-to-Summit"}</div>
     {route.timing?(function(){var tm=route.timing;var sb=Array.isArray(tm.sectionBreakdown)?tm.sectionBreakdown:[];return <div style={{background:C.blueBg,borderRadius:10,padding:"10px 12px",margin:"4px 0 12px",border:`1px solid ${C.blueDim}`}}><div style={{fontSize:11,fontWeight:800,color:C.blue,letterSpacing:0.3,marginBottom:6}}>PUBLISHED TIMES · CAR-TO-CAR</div>{tm.recommendedStart?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Recommended start: "}<b style={{color:C.text}}>{tm.recommendedStart}</b></div>:null}<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:sb.length?8:0}}>{[["Approach",tm.approachTimeHrs],["Summit",tm.summitTimeHrs],["Descent",tm.descentTimeHrs],["Total",tm.totalHrs]].filter(function(x){return x[1]!=null;}).map(function(x,i){return <div key={i} style={{flex:"1 1 56px",background:C.surface,borderRadius:8,padding:"6px 4px",textAlign:"center"}}><div style={{fontSize:10,color:C.textMuted,fontWeight:700}}>{x[0].toUpperCase()}</div><div style={{fontSize:14,fontWeight:800,color:x[0]==="Total"?C.blue:C.text}}>{x[1]+" hr"}</div></div>;})}</div>{sb.map(function(s,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:8,padding:"6px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:12.5,fontWeight:600,color:C.text}}>{s.section}{s.fromTo?<span style={{color:C.textMuted,fontWeight:400}}>{" · "+s.fromTo}</span>:null}</div>{s.note?<div style={{fontSize:11,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{s.note}</div>:null}</div><div style={{fontSize:12.5,fontWeight:700,color:C.blue,flexShrink:0,whiteSpace:"nowrap"}}>{s.hrs+" hr"}</div></div>;})}</div>;})():null}
@@ -406,14 +419,14 @@ function Calculator({route,fit:fitProp,setFit:setFitProp}){
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?(approachUnknown?"≥":"")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{(hasPublishedSummitH||hasDerivedSummitH||route.pitches)?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(approachUnknown?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
       </div>
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
         <div style={{textAlign:"center",background:sumLate?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:approachUnknown?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(approachUnknown?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>Leave earlier</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:approachUnknown?C.text:C.green}}>{hasAnyEstimate?(approachUnknown?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>After dark</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — no approach distance or gain is recorded for this climb, so the walk in and the walk out count as zero. Your real day will be longer."}</div>:null}
+        <div style={{textAlign:"center",background:late?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:approachUnknown?C.text:C.green}}>{hasAnyEstimate?(approachUnknown?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>After dark</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}
       </div>
     </div>
     {(route.segments||[]).map((seg,i)=>{

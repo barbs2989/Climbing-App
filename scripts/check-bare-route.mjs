@@ -114,6 +114,33 @@ else {
   else ok("no green safety affirmation without the data to back it");
 }
 
+// 2b. PARTIAL data is the harder case, and the one that shipped. `hasHikeInputs` is an OR, so
+//     one component was enough to render a confident total while scarfHrs charged the missing
+//     ones as 0 — 325 of the 950 routes that show an estimate. A route is only allowed to
+//     present an unmarked figure when dist, gain AND loss are all present.
+const PARTIALS = [
+  ["dist+gain, no loss", { distKm: 8, gainM: 1200 }],
+  ["gain only", { gainM: 1200 }],
+  ["dist only", { distKm: 8 }],
+];
+const alpineBase = { ...bare("alpine", "5.8"), mountainId: "probe_peak" };
+for (const [label, extra] of PARTIALS) {
+  let html;
+  try { html = render({ ...alpineBase, ...extra }, "planner"); }
+  catch (e) { fail(`partial "${label}" threw: ${e.message.split("\n")[0].slice(0, 100)}`); continue; }
+  const t = text(html);
+  if (!/≥/.test(t)) fail(`partial "${label}": confident unmarked estimate with a missing component`);
+  else if (html.includes(GREEN_BG)) fail(`partial "${label}": green tile despite a missing component`);
+  else ok(`partial "${label}": marked as a lower bound, not painted green`);
+}
+// And the complete case must NOT be downgraded — otherwise the fix above is just "mark
+// everything", which would be useless noise on the routes that do have full data.
+{
+  const html = render({ ...alpineBase, distKm: 8, gainM: 1200, lossM: 1200 }, "planner");
+  if (/≥/.test(text(html))) fail("a route with dist+gain+loss is wrongly marked as a lower bound");
+  else ok("a fully-populated route still shows a plain estimate");
+}
+
 // 3. #655 — crag disciplines cannot open the Safety tab, so their discipline advice must be
 //    reachable on Overview instead.
 for (const d of CRAG) {
