@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_forbidden_peak_north_ridge",
+  "last_processed_id": "wa_frenzel_spitz_south_route",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1550,6 +1550,27 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-07-batch-64.sql",
       "note": "Researched via 4 parallel agents grouped by peak. Network caveat: most WebFetch access to primary sources (Wikipedia, Mountain Project, NPS.gov, WTA.org, SuperTopo, Mountaineers.org, CascadeClimbers.com) was blocked by this run's egress policy; agents fell back to WebSearch snippets only, which lowered yield and pushed several plausible errors to 'flagged' rather than 'fixed' for lack of a confirmable primary source -- worth a re-run of the flagged items from a session with that access. Elephant Butte/Elephant Head: no new confirmed errors; both prior pass-1 fixes (area elevation/prominence; a bad FA credit removed) verified still live with no regression. Flagged, not fixed: Elephant Butte's area.region ('North Cascades / Stehekin') looks geographically wrong for a Diablo/Sourdough-corridor peak, and an internal access.parking_pass vs access.passRequired contradiction neither reachable source could resolve. Prusik/Sloan/Vesper: Energizer Bunny's aspect/face/overview all said 'west face' but AAC Publications titles the route 'Prusik Peak, South Face, Energizer Bunny' and multiple trip reports group it with Prusik's other south-face lines -- all three fixed, plus a waypoint mislabeled with Snow Lakes Trailhead's name/elevation when its own coordinates are actually the Stuart Lake Trailhead. Fire on the Mountain resolved a pass-1 flag left open for a full pass (pitches 8->7, length_m 457->305, matching its own pitch_detail/rope_note and external sourcing), plus a wrong wilderness name in access.land_manager and a Vesper-Peak-trailhead copy-paste in access.parking_pass. Fish & Whistle's gain_ft didn't equal loss_ft on a same-trailhead out-and-back -- fixed to match. Flora Mountain/Flycatcher Buttress: no confirmed errors; Flora's stale corrections note (recommending a value the row's own elevation_ft already differs from) and Flycatcher's base-waypoint-collapsed-onto-summit-coordinate and duplicate/conflicting trailhead coordinates were flagged rather than guessed. Forbidden Peak: 2 of 3 routes' 2026 Boston Basin lottery date ('Mar 2-13') was off by a day against NPS's actual window (Mar 3-14) -- fixed on the two rows carrying it; East Ridge's data_quality.gaps still described a duplicate-route problem that a 2026-07-29 rename/merge (confirmed via the pass-1 fix and the duplicate id's absence from the live DB) already resolved -- stale note updated; North Ridge's beta opening line said 'Grade III, 5.7' contradicting its own already-correct 5.6 grade fields (a likely copy-mix with a single 5.7 move mentioned later in the same sentence) -- fixed. East Face/Catscratch's pass-1 route-identity-conflation flag (name mixes two unrelated features, grade doesn't match its own class-4 description) remains open, unresolved this pass. 12 confirmed fixes across 14 statements validated with npm run check:sql -- 12 of 14 auto-confirmed against live target ids; the remaining 2 (both same jsonb_set pattern) not auto-checkable due to the tool's known naive-parser issue with quotes in long replacement text, manually cross-checked against the live rows instead. check:sql also warned the file (7.3KB) exceeds the SQL Editor's ~4KB safe-paste size -- split it into chunks when applying by hand."
+    },
+    {
+      "batch_number": 65,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_forbidden_peak_northeast_face",
+        "wa_forbidden_peak_northwest_face",
+        "wa_forbidden_peak_west_ridge",
+        "wa_fortress_mountain_east_ridge",
+        "wa_fortress_mountain_northeast_face",
+        "wa_fortress_mountain_southwest_face",
+        "wa_fortune_peak_east_slope",
+        "wa_fortune_peak_standard_route",
+        "wa_free_mojo",
+        "wa_frenzel_spitz_south_route"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-08-07-batch-65.sql",
+      "note": "Same route ordering as pass-1 batch 12; confirmed that batch's fixes (Forbidden Peak NE Face FA/grade contamination, Fortress Mountain's 8679ft elevation, the 'Chiwawa/Entiat Ranger Districts' nonexistent-district error, Fortune Peak's Cle Elum RD land_manager) are all still live and correct, and that the Fortress Mountain Northeast Face naming flag was independently resolved by a later pass (name field now 'Northeast Ridge', id slug intentionally retained). New finding: gain_ft below the mathematical floor implied by the route's own monotonically-ascending waypoints on Forbidden Peak NE Face (4600 vs 5615 floor), NW Face (4800 vs 5615 floor, corroborated by NW Face's own already-correct loss_ft), and Free Mojo (2200 vs 2607 floor) -- all three fixed. Flagged rather than fixed: Frenzel Spitz's Grade III vs commitment II conflict (unresolved from pass 1, no source found this pass either); Fortress Mountain East Ridge's loss_ft (7900) anomalously ~2000ft above its own gain_ft and its sibling route's loss_ft with no described alternate descent; Fortress Mountain Northeast Face's land_manager (single forest) vs landManager (two forests) same-row conflict, where external research this pass found Fortress Mountain's summit plausibly straddles both national forests region-wide but couldn't confirm the specific route's side of the boundary."
     }
   ]
 }

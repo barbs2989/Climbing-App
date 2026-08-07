@@ -4709,3 +4709,55 @@ weren't auto-checkable due to the tool's known naive-parser limitation and were 
 cross-checked against the live rows instead, same as recent batches). 1 route (Elephant
 Head) audited fully clean. `check:sql` also warned the file (7.3KB) exceeds the SQL
 Editor's ~4KB safe-paste size — split it into chunks when applying by hand.
+
+
+## Batch 65 — pass 2 (2026-08-07)
+
+Routes: Forbidden Peak (Northeast Face, Northwest Face, West Ridge), Fortress Mountain
+(East Ridge, Northeast Face, Southwest Face), Fortune Peak (East Slope, Standard Route),
+Free Mojo, Frenzel Spitz South Route. Same ordering as pass-1 batch 12 — checked whether
+that batch's fixes held and looked for new drift rather than re-litigating settled facts.
+
+Pass-1 batch 12 fixes confirmed still live and correct: Forbidden Peak Northeast Face's
+FA/grade_num (no longer contaminated with Dragontail Peak's FA party), Fortress Mountain's
+elevation (8,679 ft, consistent across the area and all 3 routes), the "Chiwawa/Entiat
+Ranger Districts" land_manager fix on all 3 Fortress routes, and Fortune Peak's corrected
+Cle Elum Ranger District land_manager on both routes. Fortress Mountain Northeast Face's
+naming flag from pass 1 (id says "Northeast Face," every source calls it "Northeast
+Ridge") was independently resolved by a later pass — the `name` field now reads "Northeast
+Ridge" with a `corrections` note documenting the 2026-07-29 rename (id slug intentionally
+retained, same precedent as Cutthroat Peak East Face).
+
+New finding this pass: **`gain_ft` below the mathematical floor implied by the route's own
+waypoints**, the same self-contradiction class flagged in several earlier batches (Fish
+Whistle/Vesper Peak, Southwest Couloir). Forbidden Peak Northeast Face (`gain_ft` 4,600)
+and Northwest Face (`gain_ft` 4,800) both climb monotonically from the shared 3,200 ft
+Boston Basin Trailhead to the shared 8,815 ft summit with zero recorded elevation loss
+along the way — a 5,615 ft net gain is the floor, so both stored values were physically
+impossible. Northwest Face's own `loss_ft` was already correctly 5,615, corroborating that
+figure; both routes fixed to 5,615 for gain (and Northeast Face's `loss_ft`, also short of
+the floor at 5,200, fixed to match). Free Mojo had the identical pattern: `gain_ft`/
+`loss_ft` both stored 2,200 against a 2,607 ft net (Blue Lake Trailhead 5,200 ft → South
+Early Winters Spire summit 7,807 ft) — fixed to 2,607.
+
+Flagged, not fixed: Frenzel Spitz South Route's `grade` ("Grade III") vs `commitment`
+("II") conflict carries over from pass 1 unresolved — a research pass this run couldn't
+find any source specifying an NCCS commitment grade for this obscure Southern Pickets
+line (AAC Publications and Beckey Vol. 3, the likely authoritative sources, weren't
+reachable); needs a human with guidebook/AAJ archive access. Fortress Mountain East
+Ridge's `loss_ft` (7,900) is ~2,000 ft higher than its own `gain_ft` (5,884, which already
+matches the trailhead-summit net almost exactly) and its sibling Southwest Face's `loss_ft`
+(6,000) for the identical trailhead/summit pair, with no alternate descent route described
+in the row's own text to explain the excess — no confirmed replacement value, left flagged.
+Fortress Mountain Northeast Face has a same-row conflict between `access.land_manager`
+(Okanogan-Wenatchee National Forest only) and `access.landManager` (adds "and Mt.
+Baker-Snoqualmie National Forest") — external sources suggest Fortress Mountain's summit
+does straddle both forests region-wide, which would make the two-forest field the more
+complete one, but this pass couldn't confirm the actual Forest Service boundary against
+this specific ridge route (sources were proxy-blocked); left flagged rather than picking
+a side.
+
+3 confirmed errors fixed (SQL: `audits/sql/2026-08-07-batch-65.sql`, validated with
+`npm run check:sql` — all 3 statements auto-confirm against live target ids). 3 flagged
+for human review, 4 routes (West Ridge, Fortress Southwest Face, both Fortune Peak
+routes) audited clean.
