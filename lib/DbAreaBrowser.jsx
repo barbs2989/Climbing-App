@@ -465,7 +465,7 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
-function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C, uDistMi }) {
+function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null), tileRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
