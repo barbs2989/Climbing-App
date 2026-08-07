@@ -1,7 +1,7 @@
 // Enrichment data display components
 // Used on route detail page, Details and Safety tabs
 
-export function PeakMetadataPanel({route, C, MOUNTAINS, uElev, ActionIcon}) {
+export function PeakMetadataPanel({route, C, ActionIcon}) {
   if (!route.peakMetadata) return null;
   const {county, range, geology, firstAscent} = route.peakMetadata;
   // Only surface facts that actually have data — county in particular is populated

@@ -20,7 +20,7 @@ const AGREEMENTS = [
   "I am an independent contractor, not an employee or agent of ClimbMatch.",
 ];
 
-export default function DbGuideApply({ onClose, notify, C, ActionIcon }) {
+export default function DbGuideApply({ onClose, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: existing } = useGuideProfile(uid);

@@ -20,7 +20,7 @@ function daysUntil(iso) {
   return Math.round((new Date(iso).getTime() - Date.now()) / 86400000);
 }
 
-export default function DbGuideDashboard({ onClose, notify, C, ActionIcon }) {
+export default function DbGuideDashboard({ onClose, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const [section, setSection] = useState("credentials");

@@ -47,7 +47,7 @@ function GuideCard({ g, verified, onOpen, C }) {
   );
 }
 
-function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
+function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
@@ -173,7 +173,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
   ), document.body);
 }
 
-export default function DbGuides({ onDash, notify, C, ActionIcon }) {
+export default function DbGuides({ onDash, notify, C }) {
   const { data: rows, isLoading: guidesLoading, isError: guidesError } = useGuides();
   const [q, setQ] = useState(""); const [disc, setDisc] = useState(""); const [sort, setSort] = useState("rating");
   const [sel, setSel] = useState(null);
@@ -210,8 +210,8 @@ export default function DbGuides({ onDash, notify, C, ActionIcon }) {
         <button onClick={() => setApplyOpen(true)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 10, padding: "9px 16px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Apply to guide</button>
         <div onClick={onDash} style={{ marginTop: 10, fontSize: 12, color: C.textMuted, cursor: "pointer" }}>Already listed? Open your guide dashboard →</div>
       </div>
-      {sel ? <GuideDetail guide={sel} onClose={() => setSel(null)} onDash={onDash} notify={notify} C={C} ActionIcon={ActionIcon} /> : null}
-      {applyOpen ? <DbGuideApplyLazy onClose={() => setApplyOpen(false)} notify={notify} C={C} ActionIcon={ActionIcon} /> : null}
+      {sel ? <GuideDetail guide={sel} onClose={() => setSel(null)} onDash={onDash} notify={notify} C={C} /> : null}
+      {applyOpen ? <DbGuideApplyLazy onClose={() => setApplyOpen(false)} notify={notify} C={C} /> : null}
     </div>
   );
 }
