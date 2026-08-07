@@ -33,7 +33,7 @@
 **Action on completion**:
 1. Extract JSON output from workflow
 2. Map route names to database IDs (name-based matching)
-3. Run import script: `import-phase2-alpine.mjs`
+3. Run import script: `scripts/oneoff/import-phase2-alpine.mjs`
 4. Verify 60+ routes updated with critical hazards
 
 **Expected outcome**: +60 high-risk alpine hazard entries
@@ -93,7 +93,7 @@ NOW              → T+10 min → T+20 min → T+30 min → T+40 min → T+50 mi
 | Script | Status | Purpose |
 |--------|--------|---------|
 | `insert-ice-routes.mjs` | ⏳ TO CREATE | Insert 46 new ice routes |
-| `import-phase2-alpine.mjs` | ✓ READY | Update alpine hazards (60+) |
+| `scripts/oneoff/import-phase2-alpine.mjs` | ✓ READY | Update alpine hazards (60+) |
 | `update-critical-fixes.mjs` | ⏳ TO CREATE | Mowich Lake, Rainier, Carbon River |
 | `enhance-hazards.mjs` | ✓ READY | Add hazard enhancements to 30 routes |
 | `verify-coverage.mjs` | ✓ READY | Final verification query |

@@ -62,7 +62,7 @@ After import, verify the data:
 
 ```bash
 cd /Users/nathanbarber/dev/Climbing-App
-node .claude/worktrees/photos-topo-waypoints/query_watch_out_comprehensive.mjs
+node .claude/worktrees/photos-topo-waypoints/scripts/oneoff/query_watch_out_comprehensive.mjs
 ```
 
 Should show:

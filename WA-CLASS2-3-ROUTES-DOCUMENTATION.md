@@ -397,7 +397,7 @@ cd /Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints
 export SUPABASE_SERVICE_KEY=your_service_key_here
 
 # Run the import
-node import-class2-3-routes.mjs
+node scripts/oneoff/import-class2-3-routes.mjs
 ```
 
 ### Validation

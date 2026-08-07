@@ -86,7 +86,7 @@
 
 - [ ] Query coverage metrics
   ```bash
-  node query_watch_out_comprehensive.mjs
+  node scripts/oneoff/query_watch_out_comprehensive.mjs
   ```
 - [ ] Generate coverage report
 - [ ] Document any remaining gaps
@@ -106,8 +106,8 @@
 - `batch_update_watch_out.mjs` — batch import from JSON
 - `generate_watch_out_migration.mjs` — generate SQL migrations
 - `verify_watch_out_data.mjs` — validate data quality
-- `extract_and_migrate_watch_out.mjs` — migrate existing hazard data
-- `query_watch_out_comprehensive.mjs` — analyze coverage
+- `scripts/oneoff/extract_and_migrate_watch_out.mjs` — migrate existing hazard data
+- `scripts/oneoff/query_watch_out_comprehensive.mjs` — analyze coverage
 
 ### Data Files
 - `ice_route_watch_out_examples.json` — 9 example routes

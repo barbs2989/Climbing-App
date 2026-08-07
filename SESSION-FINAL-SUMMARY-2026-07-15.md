@@ -46,8 +46,8 @@ Completed comprehensive 4-phase database enrichment initiative for Washington St
 - Quality audit identified 30 enhancement opportunities
 
 **Deployment Scripts Prepared**:
-- `insert-ice-routes-final.mjs` (46 routes ready)
-- `import-phase2-alpine.mjs` (60+ hazards ready)
+- `scripts/oneoff/insert-ice-routes-final.mjs` (46 routes ready)
+- `scripts/oneoff/import-phase2-alpine.mjs` (60+ hazards ready)
 - `update-critical-fixes.mjs` (3 critical fixes ready)
 
 **Quality Standards Met**:

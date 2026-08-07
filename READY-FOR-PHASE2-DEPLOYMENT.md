@@ -25,12 +25,12 @@
 ## Ready-to-Execute Deployment
 
 ### Track 1: Ice Routes (46 new routes)
-- Script: `insert-ice-routes-final.mjs` ← PREPARED
+- Script: `scripts/oneoff/insert-ice-routes-final.mjs` ← PREPARED
 - Time: 5-10 minutes
 - Outcome: 8,088 → 8,134 routes
 
 ### Track 2: Alpine Hazards (60+ routes)  
-- Script: `import-phase2-alpine.mjs` ← READY
+- Script: `scripts/oneoff/import-phase2-alpine.mjs` ← READY
 - Time: 5-7 minutes
 - Outcome: 578 → 638+ hazards (7.9%+)
 

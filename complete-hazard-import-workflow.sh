@@ -69,7 +69,7 @@ node verify-hazard-import.mjs
 # Step 6: Generate final report
 echo ""
 echo -e "${YELLOW}[6/6] Generating final report...${NC}"
-node query_watch_out_comprehensive.mjs | head -100
+node scripts/oneoff/query_watch_out_comprehensive.mjs | head -100
 
 echo ""
 echo -e "${GREEN}============================================${NC}"

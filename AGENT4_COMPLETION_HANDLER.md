@@ -44,7 +44,7 @@ mkdir -p research-data
 
 ### 3. Run Automated Processing
 ```bash
-node process-agent4-output.mjs
+node scripts/oneoff/process-agent4-output.mjs
 ```
 
 This will:
@@ -81,7 +81,7 @@ npm run migrate:dev
 
 ### 6. Verify Import
 ```bash
-node verify-phase3-tier2-hazards.mjs
+node scripts/oneoff/verify-phase3-tier2-hazards.mjs
 ```
 
 Expected output:
@@ -132,7 +132,7 @@ git push origin worktree-trip-report-crew-persistence
 ## Troubleshooting
 
 ### Agent Output Not Found
-If `process-agent4-output.mjs` can't find the agent output:
+If `scripts/oneoff/process-agent4-output.mjs` can't find the agent output:
 
 1. Check possible locations:
    - `research-data/agent4-ice-routes-tier2.json`

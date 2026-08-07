@@ -45,7 +45,7 @@ Run QA checklist:
 ### Step 5: Run Import Script
 ```bash
 # From project root:
-node alpine-traverses-tier2-import.mjs
+node scripts/oneoff/alpine-traverses-tier2-import.mjs
 
 # Expected output:
 # - Matched: 6 routes (or close to it)
@@ -56,7 +56,7 @@ node alpine-traverses-tier2-import.mjs
 ### Step 6: Verify Database
 ```bash
 # Query specific routes
-node query_routes.mjs | grep -i "high route\|enchantment\|ptarmigan"
+node scripts/oneoff/query_routes.mjs | grep -i "high route\|enchantment\|ptarmigan"
 
 # Or check via Supabase SQL:
 SELECT id, name, jsonb_array_length(watch_out) as hazard_count 
@@ -74,7 +74,7 @@ WHERE name ILIKE '%high route%' OR name ILIKE '%enchantment%';
 ### Step 8: Commit Changes
 ```bash
 git add research-data/alpine-traverses-tier2-agent1.json
-git add alpine-traverses-tier2-import.mjs
+git add scripts/oneoff/alpine-traverses-tier2-import.mjs
 git commit -m "Alpine traverses Tier 2: 6 routes, 42+ hazards documented
 
 - High Route (Cascade Crest) - 7 hazards
@@ -109,7 +109,7 @@ Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>"
 
 ## Files Created
 - `/research-data/alpine-traverses-tier2-agent1.json` — Research output
-- `/alpine-traverses-tier2-import.mjs` — Import script
+- `/scripts/oneoff/alpine-traverses-tier2-import.mjs` — Import script
 - `/ALPINE_TRAVERSES_SCHEMA.md` — Data structure docs
 - `/ALPINE_TRAVERSES_EXAMPLE.json` — Example output
 - `/ALPINE_TRAVERSES_QA_CHECKLIST.md` — Quality verification

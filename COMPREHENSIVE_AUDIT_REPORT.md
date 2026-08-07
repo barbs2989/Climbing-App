@@ -414,9 +414,9 @@ hazard_details: [
 - **Data Export Format:** JSON (structured route details with quality scores)
 
 ### Quality Audit Files Generated
-1. `audit-db.mjs` — Database query and scoring engine
+1. `scripts/oneoff/audit-db.mjs` — Database query and scoring engine
 2. `audit-report-initial.json` — Raw audit findings
-3. `generate-enhancements.mjs` — Hazard enhancement recommendation generator
+3. `scripts/oneoff/generate-enhancements.mjs` — Hazard enhancement recommendation generator
 4. `COMPREHENSIVE_AUDIT_REPORT.md` — This report
 
 ---

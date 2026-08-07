@@ -45,7 +45,7 @@ Research and document hazards for Washington ice climbing and mixed alpine route
 - Output format: JSON array of routes with watch_out arrays
 
 ### Step 2: Consolidation (READY)
-Script: `consolidate-phase3-tier2-ice-routes.mjs`
+Script: `scripts/oneoff/consolidate-phase3-tier2-ice-routes.mjs`
 - Loads agent output from `research-data/agent4-ice-routes-tier2.json`
 - Deduplicates against existing research
 - Generates migration SQL
@@ -57,7 +57,7 @@ Script: `consolidate-phase3-tier2-ice-routes.mjs`
 - Deployment method: Supabase SQL editor or `npm run migrate:dev`
 
 ### Step 4: Verification (READY)
-Script: `verify-phase3-tier2-hazards.mjs`
+Script: `scripts/oneoff/verify-phase3-tier2-hazards.mjs`
 - Validates hazard coverage by state and discipline
 - Spot-checks sample routes
 - Reports coverage statistics
@@ -105,9 +105,9 @@ Per route (7-10 entries minimum):
 ## Files Created/Modified
 
 ### New Infrastructure Scripts
-- `consolidate-phase3-tier2-ice-routes.mjs` - Consolidation pipeline
-- `verify-phase3-tier2-hazards.mjs` - Verification and coverage checking
-- `process-agent4-output.mjs` - Automated output handler
+- `scripts/oneoff/consolidate-phase3-tier2-ice-routes.mjs` - Consolidation pipeline
+- `scripts/oneoff/verify-phase3-tier2-hazards.mjs` - Verification and coverage checking
+- `scripts/oneoff/process-agent4-output.mjs` - Automated output handler
 
 ### Data Files (To Be Generated)
 - `research-data/agent4-ice-routes-tier2.json` - Agent output (10-12 routes)
@@ -125,7 +125,7 @@ Per route (7-10 entries minimum):
 1. **05:30** - Agent 4 launched, research begins
 2. **06:15-06:30** (est.) - Agent completes research
 3. **06:31** - Agent output notification received
-4. **06:32** - Run `node process-agent4-output.mjs`
+4. **06:32** - Run `node scripts/oneoff/process-agent4-output.mjs`
 5. **06:33** - Manual review of migration SQL
 6. **06:34** - Deploy migration via Supabase
 7. **06:35** - Run verification script

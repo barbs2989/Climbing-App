@@ -153,8 +153,8 @@ Final Coverage: 531/8081 (6.6%)
 ✅ `verify-hazard-import.mjs` - Coverage verification
 
 ### Analysis & Reporting Tools
-✅ `query_ice_routes.mjs` - Ice route status check
-✅ `query_watch_out_comprehensive.mjs` - Full coverage analysis
+✅ `scripts/oneoff/query_ice_routes.mjs` - Ice route status check
+✅ `scripts/oneoff/query_watch_out_comprehensive.mjs` - Full coverage analysis
 ✅ `research-missing-peaks.mjs` - Gap identification
 ✅ `prepare-watch-out-import.mjs` - Route matching
 ✅ `complete-hazard-import-workflow.sh` - Automated end-to-end workflow
@@ -305,8 +305,8 @@ This project successfully demonstrated a systematic approach to hazard documenta
 
 ### Check Current Coverage
 ```bash
-node query_ice_routes.mjs
-node query_watch_out_comprehensive.mjs
+node scripts/oneoff/query_ice_routes.mjs
+node scripts/oneoff/query_watch_out_comprehensive.mjs
 ```
 
 ### Future Imports (when more research data arrives)

@@ -127,8 +127,8 @@ Research agents produce JSON arrays with format:
 - Generates coverage report
 
 ### Step 4: Verification & Analysis
-- Run: `node query_ice_routes.mjs` - check ice coverage
-- Run: `node query_watch_out_comprehensive.mjs` - full analysis
+- Run: `node scripts/oneoff/query_ice_routes.mjs` - check ice coverage
+- Run: `node scripts/oneoff/query_watch_out_comprehensive.mjs` - full analysis
 - Run: `node verify-hazard-import.mjs` - detailed coverage breakdown
 
 ## Expected Output
@@ -148,8 +148,8 @@ Research agents produce JSON arrays with format:
 ## Scripts & Tools
 
 ### Research & Analysis
-- `query_ice_routes.mjs` - Query all ice routes, check coverage
-- `query_watch_out_comprehensive.mjs` - Full analysis by discipline
+- `scripts/oneoff/query_ice_routes.mjs` - Query all ice routes, check coverage
+- `scripts/oneoff/query_watch_out_comprehensive.mjs` - Full analysis by discipline
 - `research-missing-peaks.mjs` - Identify missing peak routes
 - `check-peak-areas.mjs` - Analyze peak area organization
 
@@ -161,7 +161,7 @@ Research agents produce JSON arrays with format:
 
 ### Verification
 - `verify-hazard-import.mjs` - Post-import coverage analysis
-- `watch_out_import_structure.mjs` - Show expected data structures
+- `scripts/oneoff/watch_out_import_structure.mjs` - Show expected data structures
 
 ## Next Steps
 
@@ -179,8 +179,8 @@ Research agents produce JSON arrays with format:
 
 4. **Verify coverage**
    ```bash
-   node query_ice_routes.mjs
-   node query_watch_out_comprehensive.mjs
+   node scripts/oneoff/query_ice_routes.mjs
+   node scripts/oneoff/query_watch_out_comprehensive.mjs
    ```
 
 5. **Handle unmatched routes**
