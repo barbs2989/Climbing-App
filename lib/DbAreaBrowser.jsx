@@ -139,12 +139,22 @@ function StatePicker({ onPick, C }) {
           contradicting each other, and the app looks hung rather than broken. This is the
           poor-signal path, which for a climbing app is not an edge case. */}
       <select aria-label="Select a state" value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
-        <option value="">{isLoading ? "Loading states…" : error ? "Couldn’t load states" : (states && states.length) ? "Select a state…" : "No states found"}</option>
+        {/* Data outranks error. A failed REFETCH leaves the previous list intact, so the
+            options below are still listed and still work — saying "Couldn’t load states"
+            above a populated dropdown contradicts what the user can plainly see, and
+            hides a list that is genuinely usable. Only claim failure when there is
+            nothing to show. Offline this is the common case, not a rare one: the refetch
+            cannot succeed, and the list it already has is exactly what was wanted. */}
+        <option value="">{isLoading ? "Loading states…" : (states && states.length) ? "Select a state…" : error ? "Couldn’t load states" : "No states found"}</option>
         {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Use a route or crag Route finder to filter and search by type, grade, stars and more.</div>
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
-      {error ? <div style={{ color: C.red, fontSize: 12.5, marginTop: 8 }}>Couldn't load states — check your connection and try again.</div> : null}
+      {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
+          Telling someone to check their connection is useless advice when the list they
+          asked for is already on screen and working. */}
+      {error && !(states && states.length) ? <div style={{ color: C.red, fontSize: 12.5, marginTop: 8 }}>Couldn't load states — check your connection and try again.</div> : null}
+      {error && states && states.length ? <div style={{ color: C.textMuted, fontSize: 12.5, marginTop: 8 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
     </div>
   );
 }
@@ -376,7 +386,8 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
         </div>
       ) : null}
       <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
-      {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div>}
+      {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
+      {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {all.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={areaNames && areaNames[r.area_id]} />)}
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {!isLoading && all.length > 0 && total != null && all.length < total && (
@@ -430,7 +441,8 @@ function ObjectivesPanel({ area, wishlist, onOpen, onBack, C }) {
     <div>
       {backRow(onBack, "My objectives" + (area ? " · " + area.name : ""), C)}
       {isLoading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
-      {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div>}
+      {error && !(data && data.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div> : null}
+      {error && data && data.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
       {!isLoading && !error && (!data || !data.length) && (
         <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>No objectives here yet — open a climb and tap to add it to your objectives.</div>
       )}
@@ -617,7 +629,8 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, onList, C, uDistMi
         <>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
           {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
-          {error && <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div>}
+          {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
+          {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
           {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
           {sorted.map(a => (
