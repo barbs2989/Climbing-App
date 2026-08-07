@@ -51,7 +51,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
-  const { data: reviews } = useGuideReviews(guide.id);
+  const { data: reviews, isLoading: revLoading, isError: revError } = useGuideReviews(guide.id);
   const { data: myInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
@@ -139,7 +139,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C, ActionIcon }) {
               <div style={{ fontSize: 12.5, color: C.textSub }}>{r.guide_reply}</div>
             </div> : null}
           </div>
-        )) : <div style={{ fontSize: 12.5, color: C.textMuted }}>No reviews yet.</div>}
+        )) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{revLoading ? "Loading reviews…" : revError ? "Couldn’t load reviews — check your connection and try again" : "No reviews yet."}</div>}
 
         {uid && reviewableInquiry && !reviewSent ? <div style={{ marginTop: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px" }}>
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
