@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-08-06",
+  "generatedAt": "2026-08-07",
   "tables": {
     "account_links": [
       "id",
@@ -216,6 +216,26 @@
       "status",
       "submitted_at",
       "updated_at"
+    ],
+    "group_members": [
+      "group_id",
+      "id",
+      "joined_at",
+      "role",
+      "user_id"
+    ],
+    "groups": [
+      "accent",
+      "blurb",
+      "created_at",
+      "created_by",
+      "disciplines",
+      "event_policy",
+      "id",
+      "location",
+      "name",
+      "policy",
+      "visibility"
     ],
     "guide_credentials": [
       "cert_number",
