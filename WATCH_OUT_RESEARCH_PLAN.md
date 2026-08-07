@@ -167,8 +167,8 @@ Populate hazard warnings (watch_out field) for Washington ice and high-grade alp
 ### Data Processing
 - `batch_update_watch_out.mjs` — batch update routes from JSON input
 - `generate_watch_out_migration.mjs` — generate SQL migration files
-- `extract_and_migrate_watch_out.mjs` — migrate existing hazard data
-- `query_ice_routes.mjs` — query ice routes and coverage
+- `scripts/oneoff/extract_and_migrate_watch_out.mjs` — migrate existing hazard data
+- `scripts/oneoff/query_ice_routes.mjs` — query ice routes and coverage
 
 ### Example Data
 - `ice_route_watch_out_examples.json` — 9 example routes with complete watch_out data

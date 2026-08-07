@@ -238,7 +238,7 @@ node verify-hazard-import.mjs
 1. Verify route name matches against live Supabase database
 2. Consolidate with other Agent research (combine research-data/*.json)
 3. Run import script to batch update `routes.watch_out`
-4. Verify coverage gains via query_watch_out_comprehensive.mjs
+4. Verify coverage gains via scripts/oneoff/query_watch_out_comprehensive.mjs
 5. Check for unmatched routes (likely <5%)
 
 ### Gap Analysis (if needed)

@@ -16,8 +16,8 @@ bash complete-hazard-import-workflow.sh
 
 ### To Check Current Coverage:
 ```bash
-node query_ice_routes.mjs
-node query_watch_out_comprehensive.mjs
+node scripts/oneoff/query_ice_routes.mjs
+node scripts/oneoff/query_watch_out_comprehensive.mjs
 ```
 
 ### To Identify Remaining Gaps:
@@ -59,7 +59,7 @@ import-watch-out.mjs (database import)
         ↓
 Database (routes.watch_out updated)
         ↓
-query_ice_routes.mjs / verify-hazard-import.mjs (verify)
+scripts/oneoff/query_ice_routes.mjs / verify-hazard-import.mjs (verify)
 ```
 
 ### Key Scripts
@@ -70,8 +70,8 @@ query_ice_routes.mjs / verify-hazard-import.mjs (verify)
 | `final-hazard-import.mjs` | Main import workflow | Ready |
 | `import-watch-out.mjs` | Supabase batch import | Ready |
 | `verify-hazard-import.mjs` | Post-import verification | Ready |
-| `query_ice_routes.mjs` | Quick ice route check | Ready |
-| `query_watch_out_comprehensive.mjs` | Full analysis | Ready |
+| `scripts/oneoff/query_ice_routes.mjs` | Quick ice route check | Ready |
+| `scripts/oneoff/query_watch_out_comprehensive.mjs` | Full analysis | Ready |
 | `research-missing-peaks.mjs` | Identify gaps | Ready |
 
 ## Expected Data Format
@@ -229,12 +229,12 @@ Overall: 650+/2159 (30%+)
 - Result files appear in `/private/tmp/claude-501/...`
 
 ### Route not matching
-- Check exact database name with query_ice_routes.mjs
+- Check exact database name with scripts/oneoff/query_ice_routes.mjs
 - May need manual lookup on Mountain Project
 - Add to unmatched routes for later review
 
 ### Import failures
-- Check database connectivity: `node query_ice_routes.mjs`
+- Check database connectivity: `node scripts/oneoff/query_ice_routes.mjs`
 - Verify JSON format: `jq . wa-ice-alpine-import.json`
 - Check failures.txt for specific errors
 

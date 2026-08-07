@@ -137,7 +137,7 @@ Test in browser (http://127.0.0.1:5173 with Supabase configured):
 ## Files Generated
 
 - `supabase/migrations/0025_approach_logistics.sql` — Database schema change
-- `enhance_approach_workflow.mjs` — Workflow script with quality gates
+- `scripts/oneoff/enhance_approach_workflow.mjs` — Workflow script with quality gates
 - `apply_enrichment.py` — Database application script
 - Enriched route data (in workflow agent transcripts)
 

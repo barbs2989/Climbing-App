@@ -77,8 +77,8 @@
 ## Automation Pipeline Status
 
 Import scripts ready:
-- ✓ `import-phase2-ice-routes.mjs` (name-based matching)
-- ✓ `import-phase2-alpine.mjs` (direct ID + name fallback)
+- ✓ `scripts/oneoff/import-phase2-ice-routes.mjs` (name-based matching)
+- ✓ `scripts/oneoff/import-phase2-alpine.mjs` (direct ID + name fallback)
 - ✓ Database connection verified
 - ✓ Batch processing templates staged
 

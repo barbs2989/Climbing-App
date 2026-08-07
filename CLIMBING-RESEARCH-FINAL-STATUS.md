@@ -95,7 +95,7 @@
 1. **Database Credentials**: Verify Supabase `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` available
 2. **Run Bulk Import**:
    ```bash
-   node deploy-climbing-research.mjs  # or equivalent SQL migration
+   node scripts/oneoff/deploy-climbing-research.mjs  # or equivalent SQL migration
    ```
 3. **Verify in App**:
    - Check route detail pages for hazard data in "Safety" tab
@@ -153,8 +153,8 @@
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `consolidate-climbing-phases.mjs` | Phase consolidation script | ✅ Complete |
-| `deploy-climbing-research.mjs` | Deployment preparation | ✅ Complete |
+| `scripts/oneoff/consolidate-climbing-phases.mjs` | Phase consolidation script | ✅ Complete |
+| `scripts/oneoff/deploy-climbing-research.mjs` | Deployment preparation | ✅ Complete |
 | `supabase-climbing-routes-final.json` | Final deployment package (87 routes, 317+ hazards) | ✅ Ready |
 | `master-climbing-research-final.json` | Master consolidation (metadata + routes) | ✅ Complete |
 | `CLIMBING-RESEARCH-FINAL-STATUS.md` | This status document | ✅ Current |

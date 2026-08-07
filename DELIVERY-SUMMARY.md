@@ -12,7 +12,7 @@ This research and documentation package provides comprehensive hazard informatio
    - All `watch_out` fields populated with detailed, actionable hazard descriptions
    - Covers 10 geographic regions across Washington State
 
-2. **import-class2-3-routes.mjs** (Import script)
+2. **scripts/oneoff/import-class2-3-routes.mjs** (Import script)
    - Node.js script for importing routes into Supabase database
    - Handles data normalization and batch insertion
    - Ready to run with standard environment variables
@@ -187,7 +187,7 @@ export SUPABASE_SERVICE_KEY="your_service_key_here"
 cd /Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints
 
 # 3. Run the import script
-node import-class2-3-routes.mjs
+node scripts/oneoff/import-class2-3-routes.mjs
 
 # 4. Verify import in Supabase Studio
 # Query: SELECT COUNT(*) FROM routes WHERE id LIKE 'wa_%' AND discipline = 'scrambling';
@@ -274,7 +274,7 @@ The `watch_out` array enables:
 | File | Size | Purpose | Status |
 |------|------|---------|--------|
 | wa-class2-3-routes.json | ~70 KB | Route data for import | Ready |
-| import-class2-3-routes.mjs | ~3 KB | Import script | Ready |
+| scripts/oneoff/import-class2-3-routes.mjs | ~3 KB | Import script | Ready |
 | WA-CLASS2-3-ROUTES-DOCUMENTATION.md | ~40 KB | Comprehensive guide | Complete |
 | CLASS2-3-ROUTES-INDEX.json | ~15 KB | Quick reference | Complete |
 | CLASS2-3-ROUTES-SUMMARY.csv | ~5 KB | Spreadsheet format | Complete |

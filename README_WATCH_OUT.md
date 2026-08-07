@@ -19,7 +19,7 @@ cat wa-ice-alpine-import.json | node batch_update_watch_out.mjs --dry-run --verb
 cat wa-ice-alpine-import.json | node batch_update_watch_out.mjs --verbose
 
 # 4. Verify in database
-node query_watch_out_comprehensive.mjs
+node scripts/oneoff/query_watch_out_comprehensive.mjs
 ```
 
 ## Package Contents
@@ -84,9 +84,9 @@ node query_watch_out_comprehensive.mjs
   cat data.json | node verify_watch_out_data.mjs
   ```
 
-- **query_watch_out_comprehensive.mjs** — Query database coverage metrics
+- **scripts/oneoff/query_watch_out_comprehensive.mjs** — Query database coverage metrics
   ```bash
-  node query_watch_out_comprehensive.mjs
+  node scripts/oneoff/query_watch_out_comprehensive.mjs
   ```
 
 - **generate_watch_out_migration.mjs** — Generate SQL migration files
@@ -95,8 +95,8 @@ node query_watch_out_comprehensive.mjs
   ```
 
 #### Legacy/Reference
-- **extract_and_migrate_watch_out.mjs** — Migrate existing hazard data
-- **check_major_peaks.mjs** — Query routes for major peaks
+- **scripts/oneoff/extract_and_migrate_watch_out.mjs** — Migrate existing hazard data
+- **scripts/oneoff/check_major_peaks.mjs** — Query routes for major peaks
 
 ## Data Summary
 
@@ -160,7 +160,7 @@ Expected: Updates database with watch_out field for 35 routes
 
 ### 4. Post-Import Verification
 ```bash
-node query_watch_out_comprehensive.mjs
+node scripts/oneoff/query_watch_out_comprehensive.mjs
 ```
 Expected: Shows increased watch_out coverage (5.2% → 6.8%)
 
@@ -213,7 +213,7 @@ Expected: Shows increased watch_out coverage (5.2% → 6.8%)
 - Verify database updates completed
 - Restart dev server (npm run dev)
 - Check browser console for errors
-- Verify routes with `query_watch_out_comprehensive.mjs`
+- Verify routes with `scripts/oneoff/query_watch_out_comprehensive.mjs`
 
 ### Quality concerns
 - Run `verify_watch_out_data.mjs` to see specific issues

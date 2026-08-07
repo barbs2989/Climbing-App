@@ -231,7 +231,7 @@ All routes verified for:
 **Files in this worktree:**
 - `alpine_trailhead_enrichment.sql` — Complete SQL updates (ready to apply)
 - `research_results.json` — Structured research data
-- `find_thin_routes.mjs` — Query script for identifying thin routes
-- `generate_sql_updates.mjs` — SQL generation utility
-- `prepare_updates.mjs` — Data transformation utilities
+- `scripts/oneoff/find_thin_routes.mjs` — Query script for identifying thin routes
+- `scripts/oneoff/generate_sql_updates.mjs` — SQL generation utility
+- `scripts/oneoff/prepare_updates.mjs` — Data transformation utilities
 - `TRAILHEAD_ENRICHMENT_SUMMARY.md` — This document

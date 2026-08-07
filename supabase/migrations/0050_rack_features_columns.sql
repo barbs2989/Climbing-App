@@ -1,7 +1,7 @@
 -- Adds the two structured/tag columns `dbRouteToCamel` has always read (rack,
 -- features -> camelCase rack/features) but that never had a backing column,
 -- so they were always empty for every DB-backed route. Populated in a follow-up
--- data-only script (apply_rack_features.mjs) against the 431-route curated WA
+-- data-only script (scripts/oneoff/apply_rack_features.mjs) against the 431-route curated WA
 -- gear-audit set once this migration is applied -- see that script for the
 -- research/sourcing methodology.
 

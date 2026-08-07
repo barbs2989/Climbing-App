@@ -52,8 +52,8 @@
 - **Coverage analysis**: 48% of hazard entries need specificity improvement; 100% of permits verified for 2026
 
 ### Phase 2 Deployment Scripts Prepared
-- `insert-ice-routes-final.mjs` — 46 ice routes ready for insertion
-- `import-phase2-alpine.mjs` — 60+ alpine hazards ready for import
+- `scripts/oneoff/insert-ice-routes-final.mjs` — 46 ice routes ready for insertion
+- `scripts/oneoff/import-phase2-alpine.mjs` — 60+ alpine hazards ready for import
 - `update-critical-fixes.mjs` — 3 critical audit fixes prepared
 
 ### Expected Coverage After Phase 2
@@ -106,7 +106,7 @@
 - Specific technical hazards (rockfall, crevasses, route-finding, snow bridges)
 
 ### Consolidation Infrastructure
-- **File**: `phase3-consolidate-and-deploy.mjs`
+- **File**: `scripts/oneoff/phase3-consolidate-and-deploy.mjs`
 - **Function**: Aggregate all agent research outputs into deployment-ready JSON
 - **Deployment Tracks**: Track 1 (new routes), Track 2 (hazards), Track 3 (verification)
 
@@ -156,7 +156,7 @@
 ### Ready for Execution (Phase 2 & 3)
 When Phase 3 agents complete (estimated 15-45 minutes from research start):
 
-1. **Run consolidation script** (`phase3-consolidate-and-deploy.mjs`)
+1. **Run consolidation script** (`scripts/oneoff/phase3-consolidate-and-deploy.mjs`)
    - Aggregate all 18 agent outputs
    - Merge findings into master JSON structure
    - Calculate coverage metrics
