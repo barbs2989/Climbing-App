@@ -135,11 +135,20 @@ function assumedFor(route,disc){
 }
 const DISC_HAZ={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
 /* The Protection tile is a half-width column at 13px, so it needs a label, not a paragraph. Researched racks are written as full sentences ("Cams: doubles from small sizes through #3 — trip reports call for…"), which would dump the whole rack into that column. Keep only compact, rack-shaped entries and fall back to the generic label rather than overflowing. The full rack still renders in its own section on the Plan tab. */
+/* Judge each rack entry on its own and drop the negated or conditional ones. A researched rack says things like "ice screws are rarely used here and are not worth carrying" or "protected with rock gear, not screws"; read as a flat word list, those advertise exactly the gear the route says to leave behind. Anything matching a rack against keywords must go through this first. */
+const RACK_NEG=/\bnot worth\b|\bnot needed\b|\bnot necessary\b|\bnot required\b|\bno need\b|\bunnecessary\b|\brarely\b|\bseldom\b|\bnever\b|\bdon'?t\b|\bdo not\b|,\s*not\b|\bnot\s+(?:the\s+)?(?:screws|cams|nuts|pickets|pins|bolts)\b/i;
+/* Conditional phrasing ("only if you plan to belay") is not a negation — it is real gear you may not need. The compact tile leaves it out; the packing checklist keeps it, because a checklist should over-include rather than send someone up short. */
+const RACK_COND=/\bonly if\b|\bunless\b|\bif you\b|\boptional\b/i;
+function rackAffirmed(rack){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);return a.filter(function(g){return typeof g==="string"&&!RACK_NEG.test(g)&&!RACK_COND.test(g);});}
+/* Per-OCCURRENCE negation for keyword matching. Dropping a whole entry loses affirmative gear that shares a sentence with a negation — "belays are often pins rather than screws" genuinely calls for pins. A category counts as present if any single mention of it is not negated in its immediate context. */
+function rackMentions(rack,kw){var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);
+  for(var i=0;i<a.length;i++){var e=a[i];if(typeof e!=="string")continue;var low=e.toLowerCase();
+    for(var k=0;k<kw.length;k++){var p=low.indexOf(kw[k]);while(p>=0){if(!RACK_NEG.test(low.slice(Math.max(0,p-45),p+kw[k].length+30)))return true;p=low.indexOf(kw[k],p+1);}}}
+  return false;}
 function rackSummary(rack){
   var a=Array.isArray(rack)?rack:(rack?[String(rack)]:[]);var strs=a.filter(function(g){return typeof g==="string";});if(!strs.length)return "Gear-protected";
-  /* Judge each entry on its own and drop the negated or conditional ones. A researched rack says things like "ice screws are rarely used here and are not worth carrying" or "protected with rock gear, not screws" — read as a flat word list, those advertise exactly the gear the route says to leave behind. */
-  var NEG=/\bnot\b|\bno\b|\bn't\b|rarely|seldom|never|unless|only if|optional|if you|leave (?:them|it)|skip|instead of|rather than/i;
-  var low=strs.filter(function(g){return !NEG.test(g);}).join(" · ").toLowerCase();
+  var NEG=RACK_NEG;
+  var low=rackAffirmed(rack).join(" · ").toLowerCase();
   /* Derive a compact label from prose so a researched rack still says something concrete. Only sizes written as "#3" or "to 3 inches" count — never a bare number, which would read pitch or grade numbers as cam sizes. */
   var parts=[],nums=[],m,re=/#(\d+(?:\.\d+)?)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
   re=/\bto (?:a )?(\d+(?:\.\d+)?)\s*(?:in\b|inch)/g;while((m=re.exec(low)))nums.push(parseFloat(m[1]));
@@ -160,8 +169,9 @@ function rackSummary(rack){
 }
 function gearReadout(route,owners){
   const disc=catOf(route);const base=(DISC_GEAR[disc]||[]).slice();
-  const text=(((route&&route.rack)||[]).join(" ")+" "+(((route&&route.gearTiers&&route.gearTiers.required)||[]).join(" "))).toLowerCase();
-  GEAR_CATS.forEach(c=>{if(c.kw.some(k=>text.includes(k))&&base.indexOf(c.label)<0)base.push(c.label);});
+  /* Match per occurrence, or a rack saying "ice screws are not worth carrying" adds Ice screws to the packing checklist. */
+  const src=((route&&route.rack)||[]).concat(((route&&route.gearTiers&&route.gearTiers.required)||[]));
+  GEAR_CATS.forEach(c=>{if(rackMentions(src,c.kw)&&base.indexOf(c.label)<0)base.push(c.label);});
   const owned=(owners||[]).map(g=>(g||[]).join(" ").toLowerCase());
   return base.map(label=>{const c=GEAR_CATS.find(x=>x.label===label)||{kw:[label.toLowerCase()]};return {label:label,have:owned.some(t=>c.kw.some(k=>t.includes(k)))};});
 }
