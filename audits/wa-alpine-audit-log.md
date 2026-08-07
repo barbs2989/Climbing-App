@@ -4761,3 +4761,73 @@ a side.
 `npm run check:sql` — all 3 statements auto-confirm against live target ids). 3 flagged
 for human review, 4 routes (West Ridge, Fortress Southwest Face, both Fortune Peak
 routes) audited clean.
+
+## Batch 66 — pass 2 (2026-08-07)
+
+Routes: Frying Pan/Whitman Glaciers (Little Tahoma), Ghost Peak South Route (Picket
+Range), Gilbert Peak's Conrad Glacier / Meade Glacier / West Route, and 5 Glacier Peak
+routes (Cool Glacier-Gerdine, Disappointment Peak Cleaver, Frostbite Ridge, Kennedy
+Glacier, Sitkum Glacier). Researched via 4 parallel agents grouped by peak.
+
+Little Tahoma's Frying Pan/Whitman Glaciers route had the batch's most contaminated row:
+`approach_logistics` described "White River Trailhead (FR-6400, Lake Wenatchee)" — a real
+USFS trailhead ~150 miles away near Leavenworth — instead of the route's own, correctly
+described Fryingpan Creek Trailhead; `access.notes` carried the same "Mount Tom area,
+North Cascades" boilerplate junk string flagged DB-wide (35 routes) in pass-1 batch 15;
+`pitches` was 0 despite a populated 2-pitch `pitch_detail`; and `gain_ft` (7,600)
+contradicted its own itinerary day-sum (7,338, matching the already-correct `loss_ft`) —
+all four fixed. Ghost Peak's South Route had a `descent_text` describing an exit via the
+Big Beaver Trail to Ross Lake, flatly contradicting its own approach text ("Hannegan Pass
+Trailhead...not Ross Lake") and itinerary — fixed to match the route's own stated exit.
+
+Gilbert Peak: Conrad Glacier's trailhead waypoint was ~1 mile off (missing elevFt too),
+correctable against sibling Meade Glacier's confirmed-correct coordinates for the same
+physical trailhead — fixed. Both Conrad Glacier and Meade Glacier carried a Cowlitz
+Valley Ranger District (Gifford Pinchot NF) land-manager value copy-pasted from the West
+Route's Snowgrass-side approach; both routes actually sit on Naches Ranger District
+(Okanogan-Wenatchee NF) per their own Conrad Meadows/South Tieton approach text — fixed.
+West Route audited clean on every externally-checkable fact (summit coordinate matches
+Wikipedia to 5 decimal places).
+
+Glacier Peak: the recurring "A. H. Dubor" misspelling of 1897 USGS surveyor A. H. Dubois
+(first fixed pass-1 batch 13) turned up again on 3 of the 5 routes this batch — fixed on
+all 3. Cool Glacier-Gerdine's `gain_ft`/`loss_ft` (9,400/9,400) contradicted its own
+itinerary day-sum and `totalNote` text (~7,750 ft) — fixed. Frostbite Ridge's `gpx` track
+was byte-for-byte identical to Cool Glacier-Gerdine's — a copy-pasted south-side track on
+a route whose own text describes a north-side line — nulled rather than fabricating a
+replacement; its `approach_logistics.trailheadDirection` also claimed "southeast" from a
+trailhead its own coordinates place to the northeast of the summit — fixed. Kennedy
+Glacier's `approach_logistics.peakLat/peakLng` was ~500m off the true summit against its
+own waypoint, its sibling's matching value, and the area row — fixed; its `loss_ft` was
+null despite a populated, itinerary-matching `gain_ft` — fixed.
+
+Biggest open flag: Disappointment Peak Cleaver's row conflates two mutually exclusive
+approaches — its prose (`approach`, `approach_logistics`, hazards) describes the south-side
+North Fork Sauk/White Pass line, while its structured fields (`waypoints`, `itinerary`,
+`road`) describe an entirely different east-side Buck Creek Pass/Trinity/Chiwawa River
+line, with `waypoints` even out of physical order. This also explains why its top-level
+`gain_ft`/`loss_ft` don't reconcile with either approach's itinerary sum. Needs a human to
+pick one canonical approach and rewrite the row consistently — not a single-field patch.
+Also flagged, not fixed: Sitkum Glacier's FA year (1897, one unconfirmed search snippet
+claimed Wikipedia says 1898 — direct fetch was blocked, so left as-is) and a cross-sibling
+trailhead-mileage contradiction with Kennedy Glacier for the shared White Chuck River
+Trailhead; Kennedy Glacier's `dist_km` conflicting with its own `corrections` field's
+stated one-way mileage; Frostbite Ridge's two internally-disagreeing summit elevations
+(10,541 vs 10,550) and a gain/loss-vs-itinerary gap in the opposite direction from Cool
+Glacier-Gerdine's fixed one; Gilbert Peak's long-standing 8,184 ft (Wikipedia/USGS) vs
+8,201 ft (USFS prose) conflict, already transparently logged in the row rather than
+guessed; and Ghost Peak's internal mileage mismatch and low-confidence rappel-count field
+(row's own `data_quality.confidence` already marked LOW).
+
+Network caveat: WebFetch was blocked for several primary sources this run (Wikipedia,
+fs.usda.gov) on two of the four research threads; those agents fell back to WebSearch
+snippets only, which is reflected in the higher-than-usual flagged count.
+
+16 confirmed errors fixed (SQL: `audits/sql/2026-08-07-batch-66.sql`, validated with
+`npm run check:sql` — 15 of 15 checkable targets auto-confirm against live ids, no DELETE
+removes an only copy; 1 statement not auto-checkable due to the tool's known naive-parser
+issue with a comma inside quoted replacement text, manually cross-checked instead). ~18
+items flagged for human review. 0 routes fully clean end-to-end (every route in this batch
+had at least one confirmed fix or an open flag). check:sql also warned the file (7.4KB)
+exceeds the SQL Editor's ~4KB safe-paste size — split it into chunks when applying by
+hand.

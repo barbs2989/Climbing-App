@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_frenzel_spitz_south_route",
+  "last_processed_id": "wa_glacier_peak_sitkum_glacier",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1571,6 +1571,28 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-08-07-batch-65.sql",
       "note": "Same route ordering as pass-1 batch 12; confirmed that batch's fixes (Forbidden Peak NE Face FA/grade contamination, Fortress Mountain's 8679ft elevation, the 'Chiwawa/Entiat Ranger Districts' nonexistent-district error, Fortune Peak's Cle Elum RD land_manager) are all still live and correct, and that the Fortress Mountain Northeast Face naming flag was independently resolved by a later pass (name field now 'Northeast Ridge', id slug intentionally retained). New finding: gain_ft below the mathematical floor implied by the route's own monotonically-ascending waypoints on Forbidden Peak NE Face (4600 vs 5615 floor), NW Face (4800 vs 5615 floor, corroborated by NW Face's own already-correct loss_ft), and Free Mojo (2200 vs 2607 floor) -- all three fixed. Flagged rather than fixed: Frenzel Spitz's Grade III vs commitment II conflict (unresolved from pass 1, no source found this pass either); Fortress Mountain East Ridge's loss_ft (7900) anomalously ~2000ft above its own gain_ft and its sibling route's loss_ft with no described alternate descent; Fortress Mountain Northeast Face's land_manager (single forest) vs landManager (two forests) same-row conflict, where external research this pass found Fortress Mountain's summit plausibly straddles both national forests region-wide but couldn't confirm the specific route's side of the boundary."
+    },
+    {
+      "batch_number": 66,
+      "pass": 2,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_frying_pan_whitman_glaciers",
+        "wa_ghost_peak_south_route",
+        "wa_gilbert_peak_conrad_glacier",
+        "wa_gilbert_peak_meade_glacier",
+        "wa_gilbert_peak_west_route",
+        "wa_glacier_peak_cool_glacier_gerdine",
+        "wa_glacier_peak_disappointment_peak_cleaver",
+        "wa_glacier_peak_frostbite_ridge",
+        "wa_glacier_peak_kennedy_glacier",
+        "wa_glacier_peak_sitkum_glacier"
+      ],
+      "confirmed_errors_fixed": 16,
+      "flagged_for_human_review": 18,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-07-batch-66.sql",
+      "note": "Researched via 4 parallel agents grouped by peak. Little Tahoma's Frying Pan/Whitman Glaciers had the batch's worst contamination: approach_logistics named a real but ~150mi-distant USFS trailhead (Lake Wenatchee) instead of its own correctly-described Fryingpan Creek Trailhead, access.notes carried the same 'Mount Tom area, North Cascades' boilerplate junk string flagged DB-wide in pass-1 batch 15, pitches=0 contradicted a populated pitch_detail, and gain_ft contradicted its own itinerary day-sum -- all four fixed. Ghost Peak's descent_text described exiting via Ross Lake, contradicting its own approach text and itinerary (both say Hannegan Pass) -- fixed. Gilbert Peak: Conrad Glacier's trailhead waypoint was ~1mi off (fixed against sibling Meade Glacier's confirmed-correct value for the same physical trailhead); both Conrad Glacier and Meade Glacier carried a Cowlitz Valley RD/Gifford Pinchot NF land-manager value copy-pasted from the West Route's Snowgrass-side approach, both actually on Naches RD/Okanogan-Wenatchee NF per their own Conrad Meadows approach text -- fixed. Glacier Peak: the recurring 'A. H. Dubor' misspelling of 1897 surveyor A. H. Dubois (first fixed pass-1 batch 13) recurred on 3 of 5 routes -- fixed on all 3; Cool Glacier-Gerdine's gain_ft/loss_ft contradicted its own itinerary/totalNote -- fixed; Frostbite Ridge's gpx track was byte-for-byte identical to Cool Glacier-Gerdine's (a copy-pasted south-side track on a north-side route) -- nulled rather than fabricated, plus its trailheadDirection said 'southeast' from a trailhead its own coordinates place to the northeast -- fixed; Kennedy Glacier's approach_logistics.peakLat/peakLng was ~500m off against its own waypoint/sibling/area row -- fixed, plus a null loss_ft despite a populated itinerary-matching gain_ft -- fixed. Biggest open flag: Disappointment Peak Cleaver's row conflates two mutually exclusive approaches (prose describes the south-side North Fork Sauk/White Pass line, structured fields describe an east-side Buck Creek Pass/Trinity/Chiwawa River line, with waypoints even out of physical order) -- needs a human to pick one canonical approach and rewrite consistently, not a field patch. Also flagged: Sitkum Glacier's FA year (1897 vs one unconfirmed 1898 search snippet) and a cross-sibling trailhead-mileage contradiction with Kennedy Glacier; Kennedy Glacier's dist_km vs its own corrections-field mileage; Frostbite Ridge's two disagreeing summit elevations (10541 vs 10550) and a gain/loss-vs-itinerary gap; Gilbert Peak's long-standing 8184ft (Wikipedia/USGS) vs 8201ft (USFS prose) conflict, already transparently logged rather than guessed; Ghost Peak's internal mileage mismatch and low-confidence rappel field. WebFetch was blocked for several primary sources (Wikipedia, fs.usda.gov) on two of the four research threads, pushing more items to flagged than usual."
     }
   ]
 }
