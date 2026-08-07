@@ -115,7 +115,12 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
         <div style={{ marginTop: 9 }}>
           {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
           {similar.length ? <div><div style={lbl}>{"Because you've been climbing " + (DISCIPLINES.find(d => d[0] === profile.disc) || [, profile.disc])[1]}</div>{similar.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
-          {popular.length ? <div><div style={lbl}>Popular in this area</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {/* `popular` sorts on (stars || 0), and only 6 routes in the whole 205k catalog carry
+              a star rating -- so for essentially every area every candidate ties at 0, the sort
+              is a no-op, and a stable sort hands back the pool's own order, which is sortBy:"name".
+              Calling five alphabetically-first routes "Popular in this area" invents a signal we
+              do not have. Claim popularity only when the rows actually carry it. */}
+          {popular.length ? <div><div style={lbl}>{popular.some(r => r.stars) ? "Popular in this area" : "More climbs in this area"}</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
         </div>
       ) : null}
     </div>
@@ -377,7 +382,11 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
       {!isLoading && all.length > 0 && total != null && all.length < total && (
         <button onClick={() => setPage(p => p + 1)} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", marginTop: 4 }}>Load more</button>
       )}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px" }}>No routes match these filters.</div>}
+      {/* A star minimum is almost always the real reason a search comes back empty: the RPC
+          filters on coalesce(stars,0), and 6 routes in 205,492 have a rating, so 4★+ matches
+          nothing anywhere in the catalog and 3★+ matches four. Left unexplained the climber
+          reads "no routes match" as "this crag is no good" rather than "we have no ratings". */}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{af.minStars ? "No routes match these filters. Almost no climb in the catalog has a star rating yet, so a minimum-star filter rules out nearly everything — try setting it back to Any." : "No routes match these filters."}</div>}
 
       {sheet ? (
         <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
@@ -398,6 +407,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
             {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade — grades aren't comparable across climbing types.</div> : null}
             {lab("Minimum stars")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]].map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
+            {df.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Star ratings are still missing for almost every climb, so this will hide nearly all of them.</div> : null}
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
