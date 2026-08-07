@@ -4628,3 +4628,84 @@ quotes/parens in long replacement text (same as batches 61-62), and were manuall
 cross-checked against live rows instead). 2 routes (Pinnacle Peak East Ridge, East Twin
 Needle Thread of Ice) audited fully clean. `check:sql` also warned the file (7.6KB) exceeds
 the SQL Editor's ~4KB safe-paste size — split it into chunks when applying by hand.
+
+## 2026-08-07 — Pass 2, Batch 64
+
+Eight peaks, 10 routes, researched via 4 parallel agents: Elephant Butte + Elephant Head;
+Prusik Peak (Energizer Bunny) + Sloan Peak (Fire on the Mountain) + Vesper Peak (Fish &
+Whistle); Flora Mountain + North Early Winters Spire (Flycatcher Buttress); Forbidden Peak
+(East Face/Catscratch, East Ridge, North Ridge).
+
+**Network caveat:** this run's egress policy blocked WebFetch to most primary sources
+(Wikipedia, Mountain Project, NPS.gov, WTA.org, SuperTopo, Mountaineers.org,
+CascadeClimbers.com) across all four agents — only WebSearch snippets were reachable. Yield
+is lower than recent batches as a result, and several plausible errors were left flagged
+rather than fixed for lack of a confirmable primary source. Worth re-running the flagged
+items from a session with that access restored.
+
+- **Elephant Butte / Elephant Head** — no new confirmed errors. Both prior pass-1 fixes
+  (Elephant Butte's area elevation_ft/prominence_ft; Elephant Head's bad FA credit, which
+  was removed rather than guessed) verified still live with no regression. Flagged, not
+  fixed: Elephant Butte's `area.region` ("North Cascades / Stehekin") looks geographically
+  wrong for a peak reached via the Diablo/Sourdough Ridge corridor, ~40 miles from Stehekin
+  itself (a sibling peak, `wa_berdeen_peak`, carries the identical wrong tag, out of scope
+  this batch); and an internal contradiction between `access.parking_pass` ("Northwest
+  Forest Pass") and `access.passRequired` ("None required...") that no reachable source
+  could resolve either way.
+- **Prusik Peak** (`wa_energizer_bunny`) — `aspect`, `face`, and `overview` all called this
+  Prusik Peak's west face, but AAC Publications titles the route "Prusik Peak, South Face,
+  Energizer Bunny" and multiple trip reports group it with the peak's other south-face
+  lines (Solid Gold, Burgner-Stanley) — all three fixed. Also fixed a waypoint that named
+  itself "Snow Lakes Trailhead" (elev 1,300 ft) while its own coordinates matched the
+  Stuart Lake Trailhead (~3,400 ft) that this route's own approach/road fields consistently
+  describe as the actual start point — Snow Lakes TH is a real but unrelated trailhead on a
+  different, ~10-mile-distant Enchantments approach.
+- **Sloan Peak** (`wa_fire_on_the_mountain`) — resolved a pass-1 flag that sat open for a
+  full audit cycle: `pitches` (8) and `length_m` (457, ~1,500 ft) both contradicted the
+  route's own `pitch_detail` array (7 entries), `overview` ("climbs 7 pitches"), and
+  `rope_note` ("7 pitches... ~1000ft technical"); Mountain Project, stephabegg.com, and
+  Blake Herrington's *Cascades Rock* guidebook (Herrington co-established the route) all
+  agree on 7 pitches / 1,000 ft — fixed to 7 / 305 m, with `beta`'s "8 pitches... 333 m"
+  text rewritten to match. Also fixed `access.land_manager` (said "Glacier Peak
+  Wilderness," contradicting the row's own `access.landManager` and the DB's own area
+  hierarchy, which both correctly say Henry M. Jackson Wilderness — a separate, adjacent
+  wilderness) and `access.parking_pass`, which named "Sunrise Mine TH for Vesper Peak" —
+  copy-pasted verbatim from sibling route `wa_fish_whistle`'s own field.
+- **Vesper Peak** (`wa_fish_whistle`) — `gain_ft` (4,115) didn't equal `loss_ft` (4,400) on
+  a single-day car-to-car route with a non-technical walk-off back to the same trailhead,
+  where gain should equal loss; `loss_ft` already agreed with the route's own
+  `itinerary.days[0].gainFt` (4,400), isolating `gain_ft` as the outlier — fixed.
+- **Flora Mountain / North Early Winters Spire** (Flycatcher Buttress) — no confirmed
+  errors; both audited as internally consistent on the facts reachable this run (FA,
+  elevation, grade, rack all corroborated). Flagged rather than fixed: Flora Mountain's own
+  `corrections` field recommends an elevation value (8,325 ft) that no longer matches its
+  own already-populated `elevation_ft` (8,323 ft) — stale provenance text, not a factual
+  error, but no clearly "correct" replacement to write; Flycatcher Buttress has a base
+  waypoint sitting ~20 m from its own summit waypoint despite an 860 ft vertical separation
+  and a 10-pitch route between them (looks copied from the summit point rather than
+  surveyed), plus two different coordinates for the same SR-20 trailhead within the same
+  row (~580 m apart) — neither resolvable without primary topo/GPS access.
+- **Forbidden Peak** (3 routes) — the 2026 Boston Basin permit-lottery window stored as
+  "Mar 2–13" was off by a day against NPS's actual announced window (Mar 3–14) — fixed on
+  the two routes carrying that field (East Face/Catscratch, East Ridge). East Ridge's
+  `data_quality.gaps` still described an unresolved duplicate-route problem
+  ("...wa_forbidden_peak_east_ridge_direct... should probably be reconciled") that a
+  2026-07-29 rename/merge already resolved — confirmed via this row's own `corrections`
+  field and the duplicate id's absence from the live DB — stale note rewritten so future
+  passes stop re-flagging an already-solved problem; the row's FA/grade/pitch data is
+  otherwise internally coherent, no merge artifacts found. North Ridge's `beta` opening
+  line read "Grade III, 5.7 climbing," contradicting its own already-correct `grade`/
+  `grade_num`/`rock_grade` fields (all 5.6, a pass-1 fix confirmed still live) — likely
+  copy-mixed with a single 5.7 move mentioned later in the same sentence ("10 feet of 5.7
+  rock... to gain Sharkfin Col") — fixed. East Face/Catscratch's pass-1 flag stands
+  unresolved: its own `corrections` field still documents a name conflating two unrelated
+  Forbidden Peak features, with grade fields (5.9) that don't match its own class-4
+  description — needs an editorial rename/re-grade decision this pass couldn't make.
+
+12 confirmed errors fixed across 6 of the 10 routes (SQL: `audits/sql/2026-08-07-batch-64.sql`,
+validated with `npm run check:sql` — 12 of 14 statements auto-confirm against live target
+ids; the remaining 2, both the same `jsonb_set` pattern on quote-heavy replacement text,
+weren't auto-checkable due to the tool's known naive-parser limitation and were manually
+cross-checked against the live rows instead, same as recent batches). 1 route (Elephant
+Head) audited fully clean. `check:sql` also warned the file (7.3KB) exceeds the SQL
+Editor's ~4KB safe-paste size — split it into chunks when applying by hand.

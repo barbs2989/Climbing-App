@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_eldorado_peak_west_arete",
+  "last_processed_id": "wa_forbidden_peak_north_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1528,6 +1528,28 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-08-07-batch-63.sql",
       "note": "Researched via 4 parallel agents grouped by peak. Mount Thomson's East Ridge had gain_ft holding the one-way approach gain instead of the round-trip total its own itinerary states -- fixed, plus a stale data_quality note claiming an unconfirmed FA the fa column already had correctly filled. Primus Peak's East Slope had a dist_km value that looked swapped with sibling wa_primus_peak_south_ridge -- fixed to match its own itinerary-implied mileage. East Twin Needle's South Route had its top-level grade already correctly fixed in batch 10, but three other fields (overview, pro_needs, data_quality.gaps) still described the pre-fix, contradictory version of the route -- rewritten to match; also fixed the parent area row's prominence_ft (metric value mislabeled as feet) and lat/lng (matched a coordinate the route's own waypoint data had already superseded as wrong). Eldorado Peak's NW Couloir/Eldorado Glacier route had four internal contradictions (gain_ft, pitches, descent, rappels all disagreeing with the row's own overview/descent_text/approach text) -- all fixed; North Ridge's aspect (N) contradicted its own overview/beta/watch_out text (all E-facing) -- fixed; Northeast Face's descent field was generic boilerplate contradicting its own descent_text, and dist_km stored the full round-trip distance instead of one-way -- both fixed; West Arete's waypoints summit elevation contradicted its own corrections field -- fixed. Biggest open flag: the wa_eldorado_peak area row's blurb calls the North Ridge '20+ pitches, one of the 50 Classic Climbs of North America,' flatly contradicting this route row's own data (3 pitches, 800 ft, 5.7) -- no external corroboration found either way, needs a human call on which side is wrong. Pinnacle Peak (Tatoosh) East Ridge and East Twin Needle's Thread of Ice both audited fully clean. 14 confirmed fixes validated with npm run check:sql -- 11 of 14 auto-confirmed against live target ids, 3 not auto-checkable due to the tool's known naive-parser issue with quotes/parens in long text (manually cross-checked instead)."
+    },
+    {
+      "batch_number": 64,
+      "pass": 2,
+      "date": "2026-08-07",
+      "route_ids": [
+        "wa_elephant_butte_standard_route",
+        "wa_elephant_head_standard",
+        "wa_energizer_bunny",
+        "wa_fire_on_the_mountain",
+        "wa_fish_whistle",
+        "wa_flora_mountain_southwest_slope",
+        "wa_flycatcher_buttress",
+        "wa_forbidden_peak_east_face_catscratch",
+        "wa_forbidden_peak_east_ridge",
+        "wa_forbidden_peak_north_ridge"
+      ],
+      "confirmed_errors_fixed": 12,
+      "flagged_for_human_review": 11,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-07-batch-64.sql",
+      "note": "Researched via 4 parallel agents grouped by peak. Network caveat: most WebFetch access to primary sources (Wikipedia, Mountain Project, NPS.gov, WTA.org, SuperTopo, Mountaineers.org, CascadeClimbers.com) was blocked by this run's egress policy; agents fell back to WebSearch snippets only, which lowered yield and pushed several plausible errors to 'flagged' rather than 'fixed' for lack of a confirmable primary source -- worth a re-run of the flagged items from a session with that access. Elephant Butte/Elephant Head: no new confirmed errors; both prior pass-1 fixes (area elevation/prominence; a bad FA credit removed) verified still live with no regression. Flagged, not fixed: Elephant Butte's area.region ('North Cascades / Stehekin') looks geographically wrong for a Diablo/Sourdough-corridor peak, and an internal access.parking_pass vs access.passRequired contradiction neither reachable source could resolve. Prusik/Sloan/Vesper: Energizer Bunny's aspect/face/overview all said 'west face' but AAC Publications titles the route 'Prusik Peak, South Face, Energizer Bunny' and multiple trip reports group it with Prusik's other south-face lines -- all three fixed, plus a waypoint mislabeled with Snow Lakes Trailhead's name/elevation when its own coordinates are actually the Stuart Lake Trailhead. Fire on the Mountain resolved a pass-1 flag left open for a full pass (pitches 8->7, length_m 457->305, matching its own pitch_detail/rope_note and external sourcing), plus a wrong wilderness name in access.land_manager and a Vesper-Peak-trailhead copy-paste in access.parking_pass. Fish & Whistle's gain_ft didn't equal loss_ft on a same-trailhead out-and-back -- fixed to match. Flora Mountain/Flycatcher Buttress: no confirmed errors; Flora's stale corrections note (recommending a value the row's own elevation_ft already differs from) and Flycatcher's base-waypoint-collapsed-onto-summit-coordinate and duplicate/conflicting trailhead coordinates were flagged rather than guessed. Forbidden Peak: 2 of 3 routes' 2026 Boston Basin lottery date ('Mar 2-13') was off by a day against NPS's actual window (Mar 3-14) -- fixed on the two rows carrying it; East Ridge's data_quality.gaps still described a duplicate-route problem that a 2026-07-29 rename/merge (confirmed via the pass-1 fix and the duplicate id's absence from the live DB) already resolved -- stale note updated; North Ridge's beta opening line said 'Grade III, 5.7' contradicting its own already-correct 5.6 grade fields (a likely copy-mix with a single 5.7 move mentioned later in the same sentence) -- fixed. East Face/Catscratch's pass-1 route-identity-conflation flag (name mixes two unrelated features, grade doesn't match its own class-4 description) remains open, unresolved this pass. 12 confirmed fixes across 14 statements validated with npm run check:sql -- 12 of 14 auto-confirmed against live target ids; the remaining 2 (both same jsonb_set pattern) not auto-checkable due to the tool's known naive-parser issue with quotes in long replacement text, manually cross-checked against the live rows instead. check:sql also warned the file (7.3KB) exceeds the SQL Editor's ~4KB safe-paste size -- split it into chunks when applying by hand."
     }
   ]
 }
