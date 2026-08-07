@@ -72,19 +72,22 @@ update areas set route_count = (
   select count(*) from routes r join areas a2 on a2.id = r.area_id where a2.path <@ areas.path
 ) where id = 'wa_north_cascades_core';
 
--- Verify afterward:
+-- Verify afterward. NOTE: cast `path` to text and use no ltree operators here. A
+-- first draft of these checks used `path !~ '...'`, but `!~` is the TEXT regex
+-- operator and there is no ltree form of it — Postgres raised 42883, and because
+-- the SQL Editor runs the whole script in one transaction, that error in a
+-- read-only verify rolled back all six correct UPDATEs above. A broken check
+-- undid the fix.
 --   select id, name, prominence_ft from areas
 --     where id in ('wa_mount_pilchuck','wa_mount_teneriffe','wa_raven_ridge');
 --   -- expect 2860, 628, 1092
 --
---   select id, parent_id, path, route_count from areas where id = 'wa_boston_basin';
---   -- expect parent_id = wa_north_cascades_core and path ...wa_north_cascades_core.wa_boston_basin
+--   select id, parent_id, path::text, route_count from areas where id = 'wa_boston_basin';
+--   -- expect parent_id = wa_north_cascades_core, path ...wa_north_cascades_core.wa_boston_basin
 --
---   select count(*) from areas
---     where parent_id = 'wa_boston_basin'
---       and path !~ 'wa_north_cascades_core.wa_boston_basin.*';
---   -- expect 0 — every child's path cascaded
+--   select id, path::text from areas where parent_id = 'wa_boston_basin' order by id;
+--   -- expect 7 rows, every path containing .wa_north_cascades_core.wa_boston_basin.
 --
 --   select id, route_count from areas
 --     where id in ('wa_north_cascades_core','wa_north_cascades','wa_hwy20_ncnp');
---   -- expect core = 106; north_cascades and hwy20_ncnp unchanged
+--   -- expect core = 106; north_cascades (125) and hwy20_ncnp (484) unchanged
