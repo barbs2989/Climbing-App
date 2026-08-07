@@ -152,6 +152,47 @@ for (const d of CRAG) {
   } else ok(`${d}: discipline safety advice reachable on Overview`);
 }
 
+// 4. The Plan/Safety tabs are gated on CONTENT, not discipline. Both ends have to hold or
+//    the gate is useless: a bare crag route must still get neither tab (an empty Plan tab is
+//    worse than no Plan tab), and a crag route that carries a real approach/descent/hazard
+//    must get them back. Red Mountain's South Face is the route that proved this — filed
+//    `trad`, it hid an approach, a descent, permits, four hazards and two watch-outs behind
+//    tabs the strip never rendered, and Overview showed none of it. Whole-line matching, so
+//    "Plan" cannot pass on the strength of "Trip plan".
+{
+  const lines = (h) => text(h).split(" ").length && h.replace(/<style[\s\S]*?<\/style>/g, " ")
+    .replace(/<[^>]+>/g, "\n").split("\n").map((s) => s.trim()).filter(Boolean);
+  const ADVICE = "What matters most for this discipline";
+  const cragBase = { ...bare("trad", "5.8"), pitches: 3 };
+  const bl = lines(render(cragBase, "overview"));
+  if (bl.includes("Plan") || bl.includes("Safety")) fail("bare crag route: offered a Plan/Safety tab with no content to put in it");
+  else ok("bare crag route: no Plan or Safety tab");
+  if (bl.filter((l) => l === ADVICE).length !== 1) fail(`bare crag route: discipline advice should appear exactly once on Overview (got ${bl.filter((l) => l === ADVICE).length})`);
+  else ok("bare crag route: discipline advice inline on Overview exactly once");
+
+  const rich = { ...cragBase, id: "probe_rich", approach: "Walk up the gully.", descent: "Walk off west.",
+    hazards: ["Loose rock in the gully"], objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] };
+  const rl = lines(render(rich, "overview"));
+  if (!rl.includes("Plan")) fail("enriched crag route: approach/descent on file but no Plan tab");
+  else ok("enriched crag route: Plan tab offered");
+  if (!rl.includes("Safety")) fail("enriched crag route: hazards on file but no Safety tab");
+  else ok("enriched crag route: Safety tab offered");
+  // The advice lives in SafetyMatrix too, so leaving it inline as well would print it twice.
+  if (rl.filter((l) => l === ADVICE).length !== 0) fail("enriched crag route: discipline advice duplicated on Overview and Safety");
+  else ok("enriched crag route: discipline advice not duplicated");
+  const rp = text(render(rich, "planner"));
+  if (!rp.includes("Walk up the gully") || !rp.includes("Walk off west")) fail("enriched crag route: Plan tab does not render its approach/descent");
+  else ok("enriched crag route: approach and descent render on Plan");
+  const rs = text(render(rich, "safety"));
+  if (!rs.includes("Loose rock in the gully") || !rs.includes("Steepens near the top")) fail("enriched crag route: Safety tab drops its own hazards/watch-outs");
+  else ok("enriched crag route: its own hazards and watch-outs render on Safety");
+  // watchOut renders inside the KNOWN HAZARDS box; it used to be left out of that box's
+  // own condition, so a route with watch-outs and no hazards printed none of them.
+  const wo = text(render({ ...cragBase, id: "probe_wo", watchOut: ["Test every hold"] }, "safety"));
+  if (!wo.includes("Test every hold")) fail("watch-outs alone are swallowed when a route has no hazards");
+  else ok("watch-outs alone still render");
+}
+
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(failures
   ? `\ncheck:bare — ${failures} problem(s).`
