@@ -4897,3 +4897,92 @@ tool's known naive-parser issue with quotes in long replacement text, manually
 cross-checked instead — both target ids confirmed to exist). ~13 items flagged for human
 review. check:sql also warned the file (11.6KB) exceeds the SQL Editor's ~4KB safe-paste
 size — split it into chunks when applying by hand.
+
+## 2026-08-07 — Pass 2, Batch 68
+
+Five peaks, 8 routes (Guye Peak 3, Hadley Peak 2, Helmet Butte 1, Himmelhorn 1, Mount
+Deception 1): West Face, North Route, Southeast Gully (Guye Peak); Cougar Divide, Skyline
+Divide (Hadley Peak); Standard Route (Helmet Butte); Southeast Route (Himmelhorn, a repeat
+visit — see below); Honeymoon Route (Mount Deception). Researched via 5 parallel agents
+grouped by peak.
+
+Guye Peak's North Route had the batch's worst single defect: its `itinerary`/`timing`
+described an entirely different, nonexistent "North Rib" route reached via "the
+non-established talus route" — directly contradicting this same row's own
+`approach`/`beta`/`overview` and even its own `itinerary.cal` field, which already states
+the North Route uses the separate Cave Ridge Trail and is unaffected by the 2021 Alpental
+closure. Reads as West Face boilerplate copy-pasted without updating the route name or
+approach; it even carried over West Face's summit elevation (5,169 ft, itself wrong — see
+below) and a mid-word truncation in one note field. Rewritten from scratch to match the
+route's own documented approach. West Face's own `high_point_ft` (5,169) was the sole
+outlier against every other reference to Guye's summit on file (area row, its own
+waypoint, and both siblings all say 5,168, matching Wikipedia) — fixed; its summit
+waypoint/gpx point was separately ~170m off from every other coordinate for the same
+point, including its own `approach_logistics` — fixed. Southeast Gully's trailhead
+waypoint was missing an elevation, filled from USFS/Mountaineers sources (3,045 ft),
+which also reconciles its stated gain against the true floor. One item deliberately left
+unfixed: West Face's `pitch_detail` describes the *Improbable Traverse's* specific crux
+(5.8 moves protected by old pitons, matching Mountain Project's separate Improbable
+Traverse page) while the rest of the row matches Mountaineers.org's West Face description
+— looks like the two routes' content has been blended into one row; flagged for a human
+with both DB rows in front of them rather than patched blind.
+
+Hadley Peak's Skyline Divide had a gain/loss figure (2,818 ft) below the route's own
+mathematical floor and directly contradicted by its own `pro_tips` field ("GPS-tracked
+hikes commonly log more gain (3,300+ ft)...") — fixed to 3,300. Its trailhead elevation
+(4,250 ft) undershot the USFS-published 4,400 ft — fixed. Cougar Divide's summit waypoint
+(7,470 ft) was the odd one out against this route's own `high_point_ft`, the sibling
+route's `high_point_ft`, and the area row (all 7,522) — fixed to match the DB's internal
+consensus, though external sources genuinely disagree on Hadley's true elevation across a
+wider range (7,415–7,546 ft seen), so this only resolves the self-contradiction, not the
+open external question (left flagged). Both routes' `access.land_manager` (snake_case
+field only — the camelCase `landManager` sibling was already correct on both) wrongly
+claimed some approaches cross into North Cascades National Park; Mount Baker/Hadley Peak
+sit entirely within Mount Baker Wilderness/USFS land, and NCNP's nearest boundary is ~20
+miles away — fixed on both rows, along with the matching NCNP-permit contamination in
+`access.rules`.
+
+Helmet Butte's Standard Route carried Mountain-Loop-Highway and Chelan-Ranger-District
+contamination in `access.land_manager`/`landManager`/`parking_pass` and
+`emergency.rangerStation` — the real managing office for this Chiwawa River Road/Trinity
+Trailhead approach is the Wenatchee River Ranger District (confirmed against a live USFS
+closure alert for the same road) — fixed all four fields. Its summit waypoint elevation
+(7,420 ft) contradicted its own `high_point_ft` (7,400) and its own `corrections` field,
+which already documents deliberately picking 7,400 over ListsOfJohn's 7,420 — the
+waypoint was never synced to that decision — fixed. The parent area's `blurb` separately
+had a stray "7,372-ft summit" typo disagreeing with its own `elevation_ft` (7,400) and
+matching no source found — fixed.
+
+Himmelhorn's Southeast Route (previously marked clean in Pass 1, Batch 15 on a lighter
+check) got no SQL fixes this pass, but a deeper waypoint/GPX geometry check found a real
+problem: the row's own mid-route waypoints (Terror-Crescent Divide Saddle through the
+Himmel-Otto Col Gully) sit roughly 3.7 straight-line miles south of where they need to be
+relative to the row's own, externally-verified summit coordinate (matches Wikipedia to 5
+decimals) — a physical impossibility for what the route's own text describes as a short,
+direct col-to-summit push. The GPX track (sourced from a public CalTopo map per
+`data_quality.gaps`) shares the same error, and the mid-chain mileage suspiciously matches
+published figures for the separate, lower Terror Basin camp — raising the possibility the
+wrong basin's track got used. No safe replacement coordinates found this pass; flagged as
+the batch's top open item rather than guessed. Mount Deception's Honeymoon Route had a
+wrong address *and* phone number for the Wilderness Information Center in
+`emergency.rangerStation` (600 E. Park Ave / 360-565-3130 is actually Olympic NP's
+separate headquarters mailing address and general visitor line) — corrected to 3002 Mount
+Angeles Rd / 360-565-3100, which this same row's own `access._raw.permit_pickup_hours`
+field already cited correctly (a self-contradiction) — fixed. Its stored Royal Basin
+reservation season ("May 1–Sept 30") disagreed with NPS's actual June 15–Oct 15 window and
+with this row's own `seasonal_guidance` note — fixed. Its Upper Dungeness Trailhead
+waypoint elevation (2,900 ft) contradicted its own `approach` text, which already
+correctly says ~2,500 ft (2,900 ft is actually the NP boundary about 1.2 mi up-trail) —
+fixed. Left flagged: the same trailhead waypoint's lat/lng sits ~37m from the Royal Lake
+waypoint despite the route text putting them 7.2 trail miles apart — clearly wrong, but no
+confidently-sourced replacement coordinate found this pass.
+
+13 confirmed errors fixed across 19 UPDATE statements (SQL:
+`audits/sql/2026-08-07-batch-68.sql`; validated with `npm run check:sql` — all 13 distinct
+target ids confirmed to exist against live rows, no DELETE in this batch; 2 statements not
+auto-checkable due to the tool's known naive-parser issue with `--` inside long
+replacement text, manually cross-checked instead — both target ids (already fetched
+directly from the live DB earlier in this pass) confirmed to exist). ~13 items flagged for
+human review, including one route (Himmelhorn) with a confirmed-but-unfixable geographic
+defect. check:sql warned the file (13.1KB) exceeds the SQL Editor's ~4KB safe-paste size —
+split it into chunks when applying by hand.
