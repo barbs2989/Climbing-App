@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_daniel_daniel_glacier",
+  "last_processed_id": "wa_mount_fury_east_mongo_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1882,6 +1882,26 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-08-batch-80.sql",
       "note": "Researched via 5 parallel agents grouped by peak. WebFetch was blocked by the network egress proxy for nearly every external domain for 4 of the 5 agents (Crowder, Cruiser, Custer, Daniel); those findings lean on WebSearch snippet corroboration. Fixed: Mount Constance West Arete's gear array wrongly called the rock 'granite' (this row's own descent_text and NPS/WA DNR geology confirm pillow basalt); Mount Crowder's area row + both routes' approach_logistics carried a ~35m-outlier summit coordinate that didn't match Wikipedia/Peakbagger, while the Southwest Route's own summit waypoint already had the correct value -- fixed all three to match; both Mount Cruiser routes had a stale road.status describing the Bear Gulch Fire closure as still in effect (NPS news release + Shelton-Mason County Journal confirm FR-24/Staircase reopened July 8, 2026, a month stale as of this audit), and the NW Face/Corner route's access.closures made the same stale claim -- both fixed, leaving Flapjack Lakes Trail/Gladys Divide marked closed per the most recent USFS alerts; Mount Daniel's area prominence_ft (3508) didn't match Wikipedia/Peakbagger/PeakVisor's 3,480 ft -- fixed; the Daniel Glacier route's max_angle (56) contradicted The Mountaineers' own route page (35 degrees) whose description matches this row's beta field almost verbatim -- fixed. Mount Custer Standard audited fully clean. Flagged rather than fixed: Mount Daniel's itinerary total/day-mileage fields are internally consistent but collectively conflict with the route's own dist_km and an AllTrails figure for the same route, needing a re-split no source specifies; Mount Cruiser NW Face/Corner's existence/grade/FA could not be independently corroborated (Mountain Project unreachable); Mount Cruiser South Corner's gpx track contradicts its own data_quality.gaps claim of no public GPS track and looks synthetic (a smooth spiral, not a real trail) -- left in place rather than silently nulled given the safety implications; both Cruiser routes' permit field contradicts their own access.passRequired field on whether a Northwest Forest Pass is needed; Mount Crowder Southwest Route's fa and corrections fields directly contradict each other on which 1962 party climbed which line; Mount Custer's summit coordinate has genuinely conflicting external evidence, left alone; Mount Constance's two routes share an identical unverified gain_ft/loss_ft (7100/7100) despite being different lines."
+    },
+    {
+      "batch_number": 81,
+      "pass": 2,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_mount_daniel_lynch_glacier",
+        "wa_mount_deception_standard",
+        "wa_mount_degenhardt_southwest_route",
+        "wa_mount_despair_east_route",
+        "wa_mount_fairchild_standard",
+        "wa_mount_formidable_north_ptarmigan",
+        "wa_mount_formidable_south_face",
+        "wa_mount_fury_east_mongo_ridge"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 17,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-08-batch-81.sql",
+      "note": "Researched via 7 parallel agents grouped by peak. WebFetch was blocked by the network egress proxy for every domain tried across all 7 agents; findings lean on cross-corroborated WebSearch snippets. Fixed (6): Mount Daniel Lynch Glacier's emergency.notes wrongly placed the Deception Pass Trailhead in Chelan County (it's King/Kittitas); Mount Deception Standard's summit waypoint elevFt (7786) contradicted this row's own high_point_ft/area elevation_ft/overview text (all 7788) -- fixed; the same row's access.parking_pass wrongly charged an Olympic NP entrance fee at a USFS trailhead with no entrance station -- fixed to match its own passRequired field; Mount Formidable North Ptarmigan's road.status said Cascade River Road is paved 20 miles from Marblemount, external sources and its own sibling route both say ~10 -- fixed; Mount Formidable South Face's gain_ft/loss_ft (6100/6200) contradicted its own itinerary.sourceNote citing 10,600 ft round trip for the same climb -- fixed to 10600/10600, now matching its sibling route; Mount Fury Mongo Ridge's Ross Dam Trailhead waypoint elevFt (1640) contradicted its own approach text (~2,150 ft) and WTA's stated elevation -- fixed. Not re-proposed: Mount Daniel's area prominence_ft (3508->3480) was already proposed in batch-80's SQL and hasn't been applied yet. Highest-priority flag: Mount Fury Mongo Ridge's area_id (wa_mount_fury_west) is actually CORRECT per every source found -- the broken field is the route's own id (wa_mount_fury_east_mongo_ridge), which should read wa_mount_fury_west_mongo_ridge; a primary-key rename needing an FK-reference check first, not auto-fixed. Other flags: Mount Fairchild Standard blends two different real approach corridors (Sol Duc-based vs Whiskey Bend/Fitzhenry-based) into one route row with no shared waypoints, needs a human split; Mount Formidable South Face's Kool-Aid Lake elevation has three different values within the same row (6320/6100/6120 ft); that row's Red Ledges waypoint (7800 ft) is higher than the col reached afterward per its own narrative sequence; Mount Degenhardt's 'Southwest Route' name appears in no source found (documented as 'Corkscrew'/'South Route'); Mount Deception's dist_km (32.2) looks like a doubled/misapplied one-way value per this codebase's known convention, flagged for audit:distances rather than hand-fixed; Mount Fury East's elevation_ft (8356, 2022 theodolite) conflicts with a 2024 GPS/RTK survey (8321.5 ft); Mount Despair's parent_id (wa_picket_range) is questionable per Wikipedia/PeakVisor placing it in an adjacent/different subrange."
     }
   ]
 }

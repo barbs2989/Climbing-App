@@ -5547,3 +5547,73 @@ distance-from-Spickard cross-check that favors the on-file value) -- left alone 
 access. Mount Constance Terrible Traverse and West Arete both store an identical `gain_ft`/
 `loss_ft` (7100/7100) despite being different lines -- suspicious but no source gave an exact
 replacement figure for either.
+
+## Batch 81 (pass 2, 2026-08-08)
+
+Seven peaks, eight routes: Mount Daniel (Lynch Glacier), Mount Deception (Standard), Mount
+Degenhardt (Southwest Route), Mount Despair (East Route), Mount Fairchild (Standard), Mount
+Formidable (North Ptarmigan, South Face), Mount Fury (Mongo Ridge). Researched via 7 parallel
+agents grouped by peak. WebFetch was blocked by the network egress proxy for every domain tried
+across all 7 agents; every finding below leans on cross-corroborated WebSearch snippets rather
+than direct page reads, which is noted explicitly for anything less than solidly agreed-upon.
+
+Confirmed fixes (6): Mount Daniel Lynch Glacier's `emergency.notes` wrongly placed the
+Deception Pass Trailhead in "Chelan County / Icicle Creek area" and called it "a different
+jurisdiction" from the Cathedral Rock Trailhead route -- it's actually the same trailhead area
+(Tucquala Meadows/Fish Lake TH via Salmon La Sac Rd, King/Kittitas county line); fixed. Mount
+Deception Standard's summit waypoint `elevFt` (7786) contradicted this same row's own
+`high_point_ft`, the area's `elevation_ft`, and its own overview text, all of which say 7,788 ft
+(Wikipedia/PeakVisor/WTA agree) -- fixed. The same row's `access.parking_pass` wrongly charged
+an Olympic NP entrance fee ($30-80) at the Upper Dungeness Trailhead, which sits on Olympic
+National Forest land with no entrance station -- only a Northwest Forest Pass applies, which
+this row's own `access.passRequired` field already correctly says -- fixed to match. Mount
+Formidable North Ptarmigan's `road.status` said Cascade River Road is paved for "20 miles from
+Marblemount," but external sources and this route's own sibling (South Face) both say ~10
+miles -- fixed. Mount Formidable South Face's `gain_ft`/`loss_ft` (6100/6200) contradicted its
+own `itinerary.sourceNote`, which cites a trip report giving "22 mi / 10,600 ft round trip" for
+the same climb -- fixed to 10,600/10,600, which also now matches the sibling North Ptarmigan
+route's figures for what both rows describe as substantially the same approach. Mount Fury
+Mongo Ridge's "Ross Dam Trailhead" waypoint gave `elevFt` 1640, contradicting this same route's
+own approach text ("~2,150 ft") and WTA's stated parking-lot elevation (2,150 ft) -- likely
+conflated with Ross Lake's water-surface elevation (~1,600 ft) -- fixed.
+
+Not re-proposed: Mount Daniel's area `prominence_ft` (3508, should be 3480 per Wikipedia/
+PeakVisor) is still wrong in the live DB, but that exact fix was already proposed in
+batch-80's SQL file and hasn't been applied yet -- not duplicated here.
+
+Highest-priority flag, not auto-fixed: Mount Fury Mongo Ridge's `area_id` (`wa_mount_fury_west`)
+is actually **correct** -- every source (AAC Publications, Alpinist, NWMJ, Mountain Project,
+CascadeClimbers trip reports) confirms Mongo Ridge tops out on West Fury's summit. The broken
+field is the route's own **id**, `wa_mount_fury_east_mongo_ridge`, which should read
+`wa_mount_fury_west_mongo_ridge`. This is a primary-key rename, not a field patch, so per
+CLAUDE.md's route-identity guidance it needs a check for foreign-key/contribution references
+before anyone runs it -- flagged for a human, no SQL proposed.
+
+Other flags (selected highlights; full detail in the per-peak agent reports): Mount Fairchild
+Standard's `approach`/`waypoints`/`gpx` describe the real Sol Duc-based Bailey Range approach
+(Deer Lake -> High Divide -> Cat Basin -> Mount Carrie -> Fairchild Glacier), while its own
+`timing`/`itinerary` describe an entirely different, also-real corridor (Whiskey Bend -> Elwha
+-> Long Ridge -> Mount Fitzhenry) with no shared waypoints -- looks like two different source
+write-ups got blended into one row; needs a human to pick one and strip the other, or split
+into two routes, not a simple field fix. (Separately: the task brief for this peak wrongly
+described it as near Mount Baker -- it's actually in the Bailey Range, Olympic NP; the DB's own
+parent placement was already correct, so this was a briefing error, not a data defect.) Mount
+Formidable South Face's Kool-Aid Lake elevation is given three different values within the same
+row (waypoint 6320 ft, approach text 6100 ft, pro_tips 6120 ft) -- external sources are
+themselves split on the true figure, but the three-way internal disagreement is a defect
+regardless of which is right. That same row's "Red Ledges" waypoint elevation (7800 ft) is
+higher than the Spider-Formidable col the route's own narrative says is reached afterward --
+geographically implausible given the row's own sequence, no source gave a replacement. Mount
+Degenhardt's "Southwest Route" name doesn't appear in any source found -- documented routes are
+"Corkscrew Route"/"South Route"; the row's own sourceNote calls it "the Southwest/Corkscrew
+Route," suggesting the app synthesized this name -- needs a human with Beckey's guide to confirm
+the canonical name. Mount Deception Standard's `dist_km` (32.2, i.e. ~20 mi) is likely a doubled/
+misapplied value under this codebase's known one-way `distKm` convention, since the row's own
+itinerary already sums to ~20 mi round trip -- flagged for `audit:distances` per CLAUDE.md's
+guidance not to hand-normalize this column ad hoc rather than fixed directly here. Mount Fury
+East's `elevation_ft` (8356, a 2022 theodolite figure) conflicts with a more precise 2024 GPS/RTK
+survey giving 8321.5 ft -- may be measuring a since-melted icecap rather than the rock summit,
+left for human judgment on which vintage/datum to store. Mount Despair's `parent_id`
+(`wa_picket_range`) is questionable -- Wikipedia says the Picket Range is northeast of (not
+containing) Mount Despair, and PeakVisor places it in the "Skagit Range" instead -- informal
+North Cascades subrange naming makes this hard to resolve from search alone.
