@@ -5347,3 +5347,50 @@ paired with a class-based grade text ("Grade II, Class 4 / low 5th") and `grade_
 inconsistent with this batch's own class-graded sibling (Mesahchie, `grade_system='class'`), but
 there's no clearly-intended value within the row itself to fix toward, so left for a human
 data-modeling decision rather than guessed.
+
+## Batch 77 (2026-08-08, pass 2)
+
+Routes: Mount Adams (Lyman Glacier, Mazama Glacier Headwall, North Ridge, Northwest Ridge, South
+Climb, Wilson Glacier Headwall), Mount Anderson (Eel Glacier), Mount Baker (Boulder Glacier). 2
+confirmed fixes, 1 flag, 5 routes clean. `npm run check:sql` confirmed both write targets exist
+on live rows. No DELETE this batch.
+
+Lyman Glacier's top-level `season` field ("May-Jun") excluded July even though the row's own
+`best_season` ("June to July") and `seasonal_guidance.monthBreakdown` (July rated "good", within
+the optimal window) both treat July as climbable -- widened `season` to "May-Jul" to match the
+row's own more detailed fields; a same-row consistency fix, no new external fact needed.
+
+Mazama Glacier Headwall's plain-text `permit` field carried the same generic USFS "Mt. Adams
+Climbing Pass (Cascade Volcano Pass)" boilerplate used by every other Mount Adams route in this
+batch -- but this route starts from Bird Creek Meadows on Yakama Nation land (Tract D), where the
+Volcano Pass doesn't apply. The row's own `access` object and `watch_out` array already correctly
+documented a Yakama tribal-use permit with non-tribal access restricted to roughly July
+1-October 1; rewrote `permit` to match what the row's own fields already established rather than
+the copy-pasted USFS default. Externally corroborated via Wikipedia's Mount Adams Recreation Area
+article (east-side Tract D land, Bird Creek Meadows carved out as one of the few reservation-side
+areas open to public recreation).
+
+North Ridge, Northwest Ridge, South Climb, Eel Glacier, and Boulder Glacier all audited clean.
+Checked North Ridge's FA claim ("A.G. Aiken, Edward J. Allen, and Andrew J. Burge, 1854...
+believed to have followed this ridge/cleaver") against TroutLake.org's own Mount Adams history,
+which independently calls the North Cleaver line "likely" for that party given their camp
+location -- matches this DB's hedge almost word for word. South Climb's FA field ("undocumented
+for this specific line, climbed since at least the 1860s") also checks out: the first documented
+south-side ascent was in 1864. Boulder Glacier's 1891 LaConnor Expedition FA, correctly
+distinguished on-file from Joe Morovits's separate 1894 Boulder-Park Cleaver route, and Eel
+Glacier's 1920 Fairman B. Lee (party of 13) FA -- the glacier's name is literally Lee's surname
+spelled backward -- both externally reconfirmed. Mount Anderson's approach_logistics peak
+coordinates (47.721165, -123.331655) matched Wikipedia's summit coordinates almost to the meter.
+
+Flagged rather than fixed: Wilson Glacier Headwall is internally incoherent on season and land
+jurisdiction. Its top-level `season` field reads "Jul-Sep," but `best_season` and
+`seasonal_guidance` both call May "optimal" and July "risky" -- opposite framings in the same
+row. Separately, its `approach` text routes climbers via the Cold Springs/South Climb (USFS)
+trailhead onto the Round-the-Mountain Trail, which the row's OWN `access.rules` field says
+crosses onto Yakama land and requires the tribal permit that this route's plain-text `permit`
+field never mentions (it carries the same USFS Volcano Pass boilerplate flagged and fixed on
+Mazama Glacier Headwall above, but here it's genuinely unclear which permit regime actually
+governs the route without deeper research). Also, `grade_system` is `'yds'` paired with a
+Roman-numeral grade ("III-IV"), inconsistent with every sibling route in this batch. The row's
+own `corrections` field already flags itself as thin/ambiguous sourcing requiring expert review,
+so all three were left for a human rather than guessed at.

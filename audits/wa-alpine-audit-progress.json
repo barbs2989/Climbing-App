@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_adams_lava_glacier_headwall",
+  "last_processed_id": "wa_mount_baker_boulder_glacier",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1801,6 +1801,25 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-08-08-batch-76.sql",
       "note": "wa_mcmillan_spire_west_west_ridge's summit waypoint (elev 8,038) and itinerary schedule label ('Summit (8,038 ft)') both contradicted this row's own high_point_ft (8,004) and its own corrections field, which already documents settling this exact cross-source conflict on 8,004 ft -- externally reconfirmed via Wikipedia (8,004 ft / 2,440 m); fixed both, and also corrected the same waypoint's note, which read '(Grade III, 5.6 on the west ridge)' -- that's the sibling Southwest Ridge route's rating (alpine_grade III, rock_grade 5.8-), not this route's own (Grade II, 4th class/low 5th, commitment II), so it looks like cross-route contamination bled in from the sibling row. wa_mount_adams_adams_glacier had a data_quality.gaps entry claiming the row 'defers to the more conservative on-file Grade IV' framing, but the row's own grade/alpine_grade/commitment fields all already read III with no Grade IV anywhere on the row; externally confirmed (Ice and Trail trip report: 'Mt. Adams: Adams Glacier (Grade III, Steep Snow, AI2)') that III is correct, so the stale gaps note was rewritten to match the row's own fields instead of contradicting them. Also found the same watch_out shape bug flagged in batch 74 (wa_live_free_or_die) recurring on two more routes this batch -- wa_mojo_rising and wa_mount_adams_adams_glacier both stored watch_out as one newline-joined string instead of the jsonb string[] every sibling route uses, which collapses into a single run-on bullet client-side since toArr() only splits on commas; converted both to proper arrays with the same bullet content. wa_marvin_s_ear, wa_mcmillan_spire_west_southwest_ridge, wa_mesahchie_peak_west_ridge, and wa_mount_adams_lava_glacier_headwall audited clean -- FAs (Mix-up Peak's Grande/Kendrick 1947, Mojo Rising's Allen/Kauffman/Smith Oct 2006, McMillan Spire's Beckey brothers 1940) and route facts all corroborated externally. Flagged rather than fixed: wa_mix_up_peak_east_face has grade_system='yds' paired with a class-based grade text ('Grade II, Class 4 / low 5th') and grade_num=0 -- inconsistent with this batch's own class-graded sibling (Mesahchie, grade_system='class'), but no clearly-intended value to fix toward within the row itself, so left for a human data-modeling decision rather than guessed. `npm run check:sql` confirmed all 3 write targets exist on live rows. No DELETE this batch."
+    },
+    {
+      "batch_number": 77,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_mount_adams_lyman_glacier",
+        "wa_mount_adams_mazama_glacier_headwall",
+        "wa_mount_adams_north_ridge",
+        "wa_mount_adams_northwest_ridge",
+        "wa_mount_adams_south_climb",
+        "wa_mount_adams_wilson_glacier_headwall",
+        "wa_mount_anderson_eel_glacier",
+        "wa_mount_baker_boulder_glacier"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 1,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-08-08-batch-77.sql",
+      "note": "wa_mount_adams_lyman_glacier's top-level season field ('May-Jun') excluded July even though the row's own best_season ('June to July') and seasonal_guidance.monthBreakdown (July rated 'good', within the optimal window) both treat July as climbable -- widened to 'May-Jul' to match the row's own more detailed fields. wa_mount_adams_mazama_glacier_headwall's top-level permit field carried the generic USFS Cascade Volcano Pass boilerplate shared by every other Mount Adams route in this batch, but this route starts from Bird Creek Meadows on Yakama Nation land (Tract D) -- the row's own access object and watch_out array already correctly documented a Yakama tribal-use permit with non-tribal access restricted to roughly July 1-October 1; rewrote the plain-text permit field to match what the row's own fields already established instead of the copy-pasted USFS default (externally corroborated: Wikipedia's Mount Adams Recreation Area article confirms the east-side Tract D land and Bird Creek Meadows exception). wa_mount_adams_north_ridge, wa_mount_adams_northwest_ridge, wa_mount_adams_south_climb, wa_mount_anderson_eel_glacier, and wa_mount_baker_boulder_glacier all audited clean -- the 1854 Mount Adams FA (Aiken/Allen/Burge) is genuinely credited to a north-side party with the North Cleaver called 'likely' by TroutLake.org's own history page, matching this DB's own hedged 'believed to have followed this ridge/cleaver' phrasing; South Climb's 'FA of this specific line undocumented, climbed since the 1860s' matches the documented first south-side ascent in 1864; Boulder Glacier's 1891 LaConnor Expedition FA vs. Morovits's separate 1894 Boulder-Park Cleaver line, and Eel Glacier's 1920 Fairman B. Lee party-of-13 FA (the glacier is literally Lee's name spelled backward), both externally confirmed. Flagged rather than fixed: wa_mount_adams_wilson_glacier_headwall is internally incoherent on season and jurisdiction -- its top-level season field reads 'Jul-Sep' while best_season/seasonal_guidance both call May 'optimal' and July 'risky', and its approach text routes via the Cold Springs/South Climb (USFS) trailhead onto the Round-the-Mountain Trail which its OWN access.rules field says crosses onto Yakama land requiring the tribal permit the row's plain-text permit field never mentions; grade_system is also 'yds' paired with a Roman-numeral grade ('III-IV'), inconsistent with every sibling route in this batch. The row's own corrections field already flags itself as thin/ambiguous sourcing requiring expert review, so left for a human rather than guessed at which fields are right. `npm run check:sql` confirmed both write targets exist on live rows. No DELETE this batch."
     }
   ]
 }
