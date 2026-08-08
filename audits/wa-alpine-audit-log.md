@@ -5617,3 +5617,64 @@ left for human judgment on which vintage/datum to store. Mount Despair's `parent
 (`wa_picket_range`) is questionable -- Wikipedia says the Picket Range is northeast of (not
 containing) Mount Despair, and PeakVisor places it in the "Skagit Range" instead -- informal
 North Cascades subrange naming makes this hard to resolve from search alone.
+
+## Batch 82 (pass 2, 2026-08-08)
+
+Routes: Mount Fury East Southeast Glaciers, Mount Fury West West Ridge, Mount Goode Northeast
+Buttress, Mount Hardy Snow Scramble, Mount Hinman Hinman Glacier, Mount Howard South Slope,
+Mount Index North Norwegian Buttress, Mount Index North Peak Traverse. 12 confirmed fixes, 12
+flags, 2 routes (Goode, Howard) fully clean. Researched via 7 parallel agents grouped by peak.
+`npm run check:sql` confirmed all 8 write targets exist on live rows.
+
+Mount Hardy carried the same systematic 1-2 ft area/waypoint elevation slip seen in several
+prior batches (Christie, Kyes, Hozomeen, Inner Constance): `routes.high_point_ft` already had
+the correct 8,099 ft, but `areas.elevation_ft` and the route's own "Mount Hardy summit" waypoint
+both said 8,097 -- and the row's own overview text explicitly (wrongly) rationalized the gap as
+"normal survey variance." Wikipedia/Peakbagger/PeakVisor all give 8,099 ft with summit
+coordinates matching this row's waypoint exactly, so it's a data-entry slip, not survey noise;
+fixed both, plus the area's prominence_ft (1512 -> 1519, same three sources). Mount Hinman's
+area prominence_ft (1306 -> 1252) was similarly off per Wikipedia/PeakVisor/Peakery/
+listsofjohn.com; separately its `blurb` cited neighbor Mount Daniel's elevation as 7,899 ft
+(Daniel's lower East Peak) where this app's own Mount Daniel route data already uses 7,960 ft
+(Daniel's main/true summit, the county highpoint) -- fixed to match.
+
+Mount Fury East and Mount Fury West both had a Mongo-Ridge-contamination bug, continuing the
+pattern flagged in batch 81 (where the East Peak's own Mongo Ridge route was found mislabeled).
+This time it wasn't an id issue but two different fact-bleeds: East Peak's `fa` credited "Don
+Keller, Joan Firey, and Joe Firey, 1960," but AAC Publications' Helmy Beckey obituary and The
+Mountaineers' own blog both describe Fred and 14-year-old Helmy Beckey first-ascending East Fury
+in 1940 -- fixed to Beckey 1940, though a lower-tier secondary source instead names an unnamed
+1930s Ptarmigan Climbing Club ascent, so this one is worth a human double-check against a
+primary source (AAJ/Beckey's guide) despite being fixed. West Peak's `descent_text` closing note
+invented a "1981 solo first ascent of the full connecting West Ridge, twelve rappels across four
+days" -- that description is actually Wayne Wallace's real 2006 solo first ascent of Mongo Ridge,
+a separate route on West Fury's south buttress (confirmed via AAC Publications and Wallace's own
+trip report); fixed via targeted string replacement, leaving the rest of the descent note as-is.
+Also fixed on East Peak: `access.fees` still quoted NPS's pre-March-2024 $5/person/night
+backcountry rate (now $10, confirmed via nps.gov/noca and AP coverage of the fee restructure),
+and `loss_ft` (13000) which looks like the row's own "~13,000 ft cumulative gain+loss" total got
+stored in the loss-only field instead of the ~7,200 ft this row's own 4-day itinerary sums to for
+a round trip returning to the same trailhead. On West Peak, `waypoints`/`gpx` also had the summit
+itself out of distance order (index 1, right after the trailhead, instead of last) -- reordered
+both arrays to ascending distMi.
+
+Mount Index North Peak Traverse's `pitches` (4) contradicted its own itinerary/timing text and
+external sources, both converging on ~12 pitches for the standard North Face line -- fixed.
+North Norwegian Buttress's `pro_needs` called the 1980s Doorish solo aid line "easier, roughly
+A2" than the modern Jotnar line, but AAC Publications and a trip report put Doorish at VI 5.9
+A3 -- comparable, not easier -- fixed via targeted replace. Mount Goode and Mount Howard were
+both audited fully clean against elevation, prominence, coordinates, FA history, grade, permits,
+and access -- no confirmed errors on either.
+
+Flagged rather than fixed: two legitimate elevation surveys disagree on Fury East's summit
+(8,356 ft 2022 theodolite vs. 8,321.5 ft 2024 GPS resurvey, possibly measuring
+icecap-vs-rock); Fury West's East Fury waypoint sits an implausible ~40m from its own West Fury
+waypoint for what should be a 0.25-0.5 mi connecting-ridge traverse, and three different
+round-trip mileage figures appear across that row's itinerary/totalNote/dist_km with no way to
+tell which is authoritative; Index North Peak Traverse's `fa` names "Bill (Wolf) Schoening"
+where every source found (including Pete Schoening's own AAC obituary) points to Pete Schoening
+instead, and a separate source conflict over whether Middle Peak was truly first climbed on this
+same 1950 ascent or eight years later. Goode: a minor pitch-count variance and an internal
+disagreement between `obj_haz` and `pitch_detail` on where its crux 5.7 slab sits (low vs. mid
+buttress). Howard: gain_ft/loss_ft may understate its longer Rock Mountain TH approach option,
+an internal timing-field mismatch, and a null/unverifiable `fa`.
