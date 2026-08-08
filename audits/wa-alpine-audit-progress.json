@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_little_big_chief_mountain_northeast_face",
+  "last_processed_id": "wa_luahna_peak_southwest_slope_southeast_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1744,6 +1744,25 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-08-08-batch-73.sql",
       "note": "Liberty Bell Mountain's 4 remaining routes (Thin Red Line, Liberty Crack, Liberty Crack Free, Liberty Traverse) continued batch 72's east-face-approach-contamination cleanup, this time spreading into hazards/seasonal_hazards/partner_requirements/timing/itinerary/descent fields and a shared byte-identical west-side gpx track (cleared on 3 routes, no verified replacement available). Liberty Cap's 2 Rainier-summit \"finish\" routes had a stale high_point_ft (14112 vs the row's own text-endorsed 14097) on both, plus a live access-data staleness bug on Ptarmigan Ridge Finish: SR-165's Fairfax Bridge, the sole public road to Mowich Lake, was permanently closed in April 2025 (independently confirmed via WSDOT's own announcements) with no funded repair before 2031, but the row still described ordinary seasonal gating -- fixed road/access/approach fields to reflect the closure and point to the still-viable White River alternative. Lincoln Peak's North Ridge route turned out to be a misnamed/mis-approached row: its own overview already identified it as \"Wilkes-Booth\" (NW Face, FA 2015, confirmed via AAC/CascadeClimbers), but name/approach still carried a fabricated 1958 FA and ice-screw claim that traces to neighboring Colfax Peak's climbing history -- fixed name/approach/stale rock_grade; also fixed a commitment-vs-grade contradiction on the Standard route and areas.parent_peak pointing at sibling Colfax Peak instead of the real parent, Mount Baker (confirmed via Colfax's own parent_peak convention in the live DB). Little Big Chief Mountain's lone route had an fa value contradicting its own corrections field (which already concluded fa should be null) and a beta field claiming a PCT approach that contradicts its own approach field and USFS/WTA trail data. Lichtenberg Mountain audited fully clean. Flagged rather than fixed: an LC-vs-LCF shared-trail approach-time discrepancy and single- vs dual-county emergency fields on Liberty Bell; Camp Schurman elevation and Carbon Glacier depth variance plus an unconfirmed 1935 FA date on Liberty Cap; a 3-way elevation conflict (9085 vs 9101 ft) spanning both Lincoln Peak routes and the area row; and a narrative-vs-structured pitch-count inconsistency on Little Big Chief."
+    },
+    {
+      "batch_number": 74,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_little_mac_spire_southwest_route",
+        "wa_little_sister_north_face",
+        "wa_little_sister_west_face",
+        "wa_little_tahoma_cowlitz_ingraham_glaciers",
+        "wa_little_tahoma_east_shoulder",
+        "wa_live_free_or_die",
+        "wa_lizard_mountain_south_route",
+        "wa_luahna_peak_southwest_slope_southeast_ridge"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-08-08-batch-74.sql",
+      "note": "Little Mac Spire's Southwest Route had a corrections field contaminated with beta for an unrelated peak: it claimed the route was \"located near Mac Peak in the Deception Lakes area\" (a real but distinct 6,859 ft summit near Stevens Pass, ~90 miles from the Southern Pickets, confirmed via SummitPost/Wikipedia), and also self-contradicted the row's own pitches field (said \"2-3 short pitches\" against pitches=9) -- rewrote to drop both. Live Free or Die's watch_out field described the entire route as a boulder problem (\"Boulder problem grade terrain - V5+...\", \"bouldering sections\"), directly contradicting this same row's own overview, which already explains the name/grade previously caused exactly this misreading and states plainly it's an 11-pitch face route, not a boulder problem -- confirmed externally via AAC Publications' FA writeup. Also fixed the underlying schema-shape bug: watch_out was stored as one newline-joined string instead of the jsonb string[] the column is documented for and every sibling route uses, which collapses into a single run-on bullet client-side since toArr() only splits on commas. Luahna Peak's area row carried an outdated elevation (8450 ft, traceable to a 2005 trip report) against the current authoritative figure (8,445 ft, Wikipedia/NGS) that this DB's own route row already used in high_point_ft -- fixed the area row to match both. Little Sister's North Face and West Face, Little Tahoma's East Shoulder (FA independently confirmed: Flett & Garrison, Aug 29, 1894) and Cowlitz/Ingraham Glaciers route, and Luahna Peak's own route all audited clean. Left flagged: Lizard Mountain's summit elevation, which the row's own data_quality field already correctly flags as inconsistent across sources (7,306-7,420 ft) with no confirmed benchmark found."
     }
   ]
 }

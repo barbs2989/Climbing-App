@@ -5230,3 +5230,45 @@ unconfirmed 1935 FA date on Liberty Cap; a real, unresolved 3-way elevation conf
 area/text vs. 9,101 ft structured fields, both externally sourced) spanning both Lincoln Peak
 routes and the area row; and a narrative-vs-structured belayed-pitch-count inconsistency on
 Little Big Chief, given the peak's inherently thin documentation.
+
+## Batch 74 (2026-08-08, pass 2)
+
+Routes: Little Mac Spire (Southwest Route), Little Sister (North Face, West Face), Little
+Tahoma (Cowlitz/Ingraham Glaciers, East Shoulder), Live Free or Die! (Liberty Bell), Lizard
+Mountain (South Route), Luahna Peak (Southwest Slope/Southeast Ridge). 3 confirmed fixes, 1
+flag, 4 routes clean. `npm run check:sql` confirmed both checkable write targets against the
+`routes` table exist on live rows; the `areas` write target (Luahna Peak) was cross-checked
+manually against the live table instead, since the checker script's generic column set
+(`area_id`) doesn't exist on `areas` — confirmed present and correct. No DELETE this batch.
+
+Little Mac Spire's Southwest Route had a `corrections` field contaminated with beta for an
+unrelated peak: it claimed the route was "located near Mac Peak in the Deception Lakes area"
+— a real but distinct 6,859 ft summit near Stevens Pass, roughly 90 miles from the Southern
+Pickets (confirmed via SummitPost/Wikipedia) — and separately contradicted this row's own
+`pitches` field (said "2-3 short pitches" against `pitches`=9). Rewrote to drop both while
+keeping the still-valid uncertainty flag on the FA date/grade.
+
+Live Free or Die's `watch_out` field described the whole route as a boulder problem ("Boulder
+problem grade terrain - V5+...", "bouldering sections", "exposed bouldering terrain"),
+directly contradicting this same row's own `overview`, which already explains the on-file
+name/grade previously caused exactly this misreading and states plainly it's an 11-pitch,
+~1,200 ft face route, not a boulder problem — confirmed externally via the AAC Publications FA
+writeup (8 pitches to M&M Ledge, shared 3-4-pitch finish, mostly 5.10-5.11 face climbing with
+a bouldery crux move). Also fixed the underlying shape bug: `watch_out` was stored as one
+newline-joined string instead of the jsonb `string[]` the column is documented for
+(`0012_alpine_rich_fields.sql`) and every sibling route uses — which collapses into a single
+run-on bullet client-side, since `toArr()` only splits on commas, not newlines. Replacement
+content was drawn from this same row's own `descent_text`/`hazards`/`seasonal_hazards` fields,
+not new research.
+
+Luahna Peak's `areas` row carried an outdated elevation (8,450 ft, traceable to a 2005 trip
+report) against the current authoritative figure (8,445 ft, per Wikipedia/NGS) that this DB's
+own route row already used in `high_point_ft` — fixed the area row to match both.
+
+Little Sister's North Face and West Face, Little Tahoma's East Shoulder (FA independently
+confirmed: J.B. Flett & Henry Garrison, August 29, 1894) and Cowlitz/Ingraham Glaciers route,
+and Luahna Peak's own route field content all audited clean.
+
+Left flagged rather than fixed: Lizard Mountain's summit elevation, where the row's own
+`data_quality` field already correctly flags a real cross-source inconsistency (7,306-7,420 ft)
+with no confirmed benchmark found in this pass either.
