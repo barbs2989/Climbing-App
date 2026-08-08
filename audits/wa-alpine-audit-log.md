@@ -5304,3 +5304,46 @@ Mazama/AAC-adjacent sources) and internally consistent with this DB's own area r
 Glacier's summit waypoint, corrected in an earlier pass from a wrong "Luna Peak" coordinate to
 Phantom Peak's own verified position, was re-checked against the live `wa_phantom_peak` area row
 and still matches (8,016 ft, same lat/lng).
+
+## Batch 76 (2026-08-08, pass 2)
+
+Routes: Marvin's Ear (Morning Star Peak), McMillan Spire West (Southwest Ridge, West Ridge),
+Mesahchie Peak (West Ridge/Southwest Gully), Mix-up Peak (East Face/East Buttress), Mojo Rising
+(South Early Winters Spire), Mount Adams (Adams Glacier, Lava Glacier Headwall). 3 confirmed
+fixes, 1 flag, 4 routes clean. `npm run check:sql` confirmed all 3 write targets exist on live
+rows. No DELETE this batch.
+
+West McMillan Spire's own West Ridge route had a real internal elevation contradiction: its
+summit waypoint (elev 8,038) and itinerary schedule label ("Summit (8,038 ft)") both contradicted
+this same row's own `high_point_ft` (8,004) and its own `corrections` field, which already
+documents settling this exact cross-source conflict on 8,004 ft ("Wikipedia/USGS-derived figures
+give 8,004 ft"). Externally reconfirmed via Wikipedia (8,004 ft / 2,440 m) -- fixed both. The same
+waypoint's `note` also read "(Grade III, 5.6 on the west ridge)", which is the sibling Southwest
+Ridge route's own rating (alpine_grade III, rock_grade 5.8-), not this route's (Grade II, 4th
+class/low 5th, commitment II) -- looks like cross-route contamination bled in from the sibling
+row, so corrected the note to describe this route's own grade instead.
+
+Mount Adams' Adams Glacier route had a `data_quality.gaps` entry claiming the row "defers to the
+more conservative on-file Grade IV / serac-hazard framing" -- but the row's own `grade`,
+`alpine_grade`, and `commitment` fields all already read III, with no Grade IV anywhere else on
+the row. Externally confirmed (Ice and Trail trip report: "Mt. Adams: Adams Glacier (Grade III,
+Steep Snow, AI2)") that III is the correct, standard rating -- rewrote the stale gaps note to
+match the row's own already-correct fields instead of contradicting them.
+
+Also found the same `watch_out` shape bug flagged and fixed in batch 74 (`wa_live_free_or_die`)
+recurring on two more routes this batch: `wa_mojo_rising` and `wa_mount_adams_adams_glacier` both
+stored `watch_out` as one newline-joined string instead of the jsonb `string[]` every sibling
+route uses -- which collapses into a single run-on bullet client-side since `toArr()` only splits
+on commas, not newlines. Converted both to proper arrays with the same bullet content, no new
+research needed.
+
+Marvin's Ear, McMillan Spire West's Southwest Ridge, Mesahchie Peak, and Mount Adams' Lava Glacier
+Headwall all audited clean -- first ascents (Mix-up Peak: Wesley Grande & Jack Kendrick, 1947;
+Mojo Rising: Mark Allen, Joel Kauffman & Tom Smith, Oct 13-14 2006; West McMillan Spire: Fred &
+Helmy Beckey, 1940) and route facts all corroborated externally.
+
+Left flagged rather than fixed: Mix-up Peak's East Face/East Buttress has `grade_system='yds'`
+paired with a class-based grade text ("Grade II, Class 4 / low 5th") and `grade_num=0` --
+inconsistent with this batch's own class-graded sibling (Mesahchie, `grade_system='class'`), but
+there's no clearly-intended value within the row itself to fix toward, so left for a human
+data-modeling decision rather than guessed.

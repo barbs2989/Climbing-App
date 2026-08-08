@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_martin_peak_west_ridge",
+  "last_processed_id": "wa_mount_adams_lava_glacier_headwall",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1782,6 +1782,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-08-08-batch-75.sql",
       "note": "wa_martin_peak_west_ridge fa field wrongly credited a joint 1936 ascent (Everett Darr and Ida Zacher); documented sole first ascensionist was Ida Zacher, solo, per Mazama Bulletin She Climbs High! (2025) -- also matches this DB's own wa_martin_peak area blurb, which already had it right. wa_lundin_peak_south_face_left flagged: grade field null despite a well-documented 5.10 crux (Mountain Project), left for human to pin the exact grade token."
+    },
+    {
+      "batch_number": 76,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_marvin_s_ear",
+        "wa_mcmillan_spire_west_southwest_ridge",
+        "wa_mcmillan_spire_west_west_ridge",
+        "wa_mesahchie_peak_west_ridge",
+        "wa_mix_up_peak_east_face",
+        "wa_mojo_rising",
+        "wa_mount_adams_adams_glacier",
+        "wa_mount_adams_lava_glacier_headwall"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-08-08-batch-76.sql",
+      "note": "wa_mcmillan_spire_west_west_ridge's summit waypoint (elev 8,038) and itinerary schedule label ('Summit (8,038 ft)') both contradicted this row's own high_point_ft (8,004) and its own corrections field, which already documents settling this exact cross-source conflict on 8,004 ft -- externally reconfirmed via Wikipedia (8,004 ft / 2,440 m); fixed both, and also corrected the same waypoint's note, which read '(Grade III, 5.6 on the west ridge)' -- that's the sibling Southwest Ridge route's rating (alpine_grade III, rock_grade 5.8-), not this route's own (Grade II, 4th class/low 5th, commitment II), so it looks like cross-route contamination bled in from the sibling row. wa_mount_adams_adams_glacier had a data_quality.gaps entry claiming the row 'defers to the more conservative on-file Grade IV' framing, but the row's own grade/alpine_grade/commitment fields all already read III with no Grade IV anywhere on the row; externally confirmed (Ice and Trail trip report: 'Mt. Adams: Adams Glacier (Grade III, Steep Snow, AI2)') that III is correct, so the stale gaps note was rewritten to match the row's own fields instead of contradicting them. Also found the same watch_out shape bug flagged in batch 74 (wa_live_free_or_die) recurring on two more routes this batch -- wa_mojo_rising and wa_mount_adams_adams_glacier both stored watch_out as one newline-joined string instead of the jsonb string[] every sibling route uses, which collapses into a single run-on bullet client-side since toArr() only splits on commas; converted both to proper arrays with the same bullet content. wa_marvin_s_ear, wa_mcmillan_spire_west_southwest_ridge, wa_mesahchie_peak_west_ridge, and wa_mount_adams_lava_glacier_headwall audited clean -- FAs (Mix-up Peak's Grande/Kendrick 1947, Mojo Rising's Allen/Kauffman/Smith Oct 2006, McMillan Spire's Beckey brothers 1940) and route facts all corroborated externally. Flagged rather than fixed: wa_mix_up_peak_east_face has grade_system='yds' paired with a class-based grade text ('Grade II, Class 4 / low 5th') and grade_num=0 -- inconsistent with this batch's own class-graded sibling (Mesahchie, grade_system='class'), but no clearly-intended value to fix toward within the row itself, so left for a human data-modeling decision rather than guessed. `npm run check:sql` confirmed all 3 write targets exist on live rows. No DELETE this batch."
     }
   ]
 }
