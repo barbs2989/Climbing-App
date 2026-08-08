@@ -5484,3 +5484,66 @@ than have one invented here. Mount Carrie Standard's pre-existing `corrections` 
 pairs "Carrie Glacier" with the standard climbing line, but the glacier is actually in a separate
 cirque the route doesn't cross) was independently corroborated this pass but is not new -- left as
 previously flagged, per the note's own instruction not to rename.
+
+## Batch 80 (pass 2, 2026-08-08)
+
+Five peaks, eight routes: Mount Constance (Terrible Traverse, West Arete),
+Mount Crowder (Northeast Ridge, Southwest Route), Mount Cruiser (South Corner, NW Face/Corner),
+Mount Custer (Standard), Mount Daniel (Daniel Glacier / Southeast Slopes). Researched via 5
+parallel agents grouped by peak. WebFetch was blocked by the network egress proxy for nearly
+every external domain for 4 of the 5 agents (Crowder, Cruiser, Custer, Daniel) -- those findings
+lean on WebSearch snippet corroboration rather than direct page reads; flagged explicitly where
+that weakens confidence.
+
+Confirmed fixes (6): Mount Constance West Arete's `gear` array called the rock "granite"
+("Full set of nuts/stoppers -- this granite takes them well"), contradicting this same row's own
+`descent_text` ("Given the pillow-basalt rock...") and confirmed externally (NPS/WA DNR geology:
+Mount Constance is Eocene pillow basalt, not granite) -- fixed. Mount Crowder's area row and both
+routes' `approach_logistics` carried a ~35m-outlier summit coordinate (48.7976266, -121.352631)
+that didn't match Wikipedia/Peakbagger's published value (48.7977056, -121.3519083) -- notably,
+the Southwest Route's own summit waypoint already stored the correct value verbatim, so two
+different coordinate sources had been mixed into the same peak record; fixed area + both routes
+to the corroborated value. Both Mount Cruiser routes had a stale `road.status` describing FR-24/
+the Staircase entrance as closed under the 2025 Bear Gulch Fire order; confirmed via an NPS news
+release and Shelton-Mason County Journal reporting that FR-24 and Staircase reopened July 8,
+2026 -- fixed (a month stale as of this audit). The NW Face/Corner route's `access.closures` was
+similarly stale, claiming closure "through at least Oct 1, 2026"; rewrote to reflect the July 8
+reopening while leaving Flapjack Lakes Trail/Gladys Divide (this route's actual approach) marked
+closed, since the most recent USFS alerts found still show that specific trail closed for burn-
+scar rehab. Mount Daniel's area `prominence_ft` (3508) didn't match any source found -- Wikipedia/
+Peakbagger/PeakVisor all agree on 3,480 ft -- fixed. The Daniel Glacier route's `max_angle` (56)
+contradicted The Mountaineers' own route page for this named route ("Grade II with 35 degrees
+snow and/or ice"), whose description text matches this row's own `beta` field almost verbatim --
+fixed to 35.
+
+Mount Custer Standard audited fully clean -- elevation (8,630 ft), prominence (1,230 ft), FA
+(Dawe/Mason/Teichman, 1958), the Chosster/breccia rock-quality reputation, permit fee structure,
+and the Depot Creek approach chronology all corroborated. One item worth noting for a future pass:
+this route's own `data_quality.gaps` cites a prominence figure (1,314 ft) that doesn't match either
+the correct 1,230 ft external figure or the DB's own stored `prominence_ft` -- traces to an
+AI-generated wiki, not a reliable source; the stale gap note itself wasn't touched this batch
+(text-only, no factual column affected).
+
+Flagged rather than fixed (selected highlights; full detail in the per-peak agent reports):
+Mount Daniel's `itinerary.totalNote`/`sourceNote`/day-mileage fields are internally consistent
+with each other (sum to ~19 mi round trip) but collectively conflict with the route's own
+`dist_km` (12.1 km one-way, doubling to ~15 mi per the app's stated convention) and with AllTrails'
+15.3 mi figure for the same named route -- fixing this needs a re-split of day-by-day mileage that
+no source specifies, left for a human. Mount Cruiser NW Face/Corner's very existence, grade, and
+FA (Wayne Wallace & David Parker, 2004) could not be independently corroborated beyond one
+low-confidence AI-summarized search snippet (Mountain Project itself was unreachable) -- flagged
+for a human with direct MP access. Mount Cruiser South Corner's `gpx` track (127 points) directly
+contradicts this same row's own `data_quality.gaps`, which states no public GPS track exists for
+this route, and the plotted shape looks synthetic (a smooth spiral) rather than a real trail
+alignment -- flagged as a likely fabricated/placeholder track rather than silently nulled, given
+the safety implications of presenting fake GPS data as real. Both Cruiser routes also carry a
+`permit` field claiming a Northwest Forest Pass is required, contradicting each row's own
+`access.passRequired` field ("no Northwest Forest Pass needed... inside the National Park
+boundary") -- recommend striking the clause, not confirmed enough to auto-fix. Mount Crowder
+Southwest Route's `fa` field and its own `corrections` field directly contradict each other on
+whether the 1962 FA party climbed this line or the NE Ridge -- no source found settles it. Mount
+Custer's summit coordinate has genuinely conflicting external evidence (GNIS/Wikidata vs. a
+distance-from-Spickard cross-check that favors the on-file value) -- left alone pending topo/quad
+access. Mount Constance Terrible Traverse and West Arete both store an identical `gain_ft`/
+`loss_ft` (7100/7100) despite being different lines -- suspicious but no source gave an exact
+replacement figure for either.
