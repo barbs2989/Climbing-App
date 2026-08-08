@@ -5678,3 +5678,44 @@ same 1950 ascent or eight years later. Goode: a minor pitch-count variance and a
 disagreement between `obj_haz` and `pitch_detail` on where its crux 5.7 slab sits (low vs. mid
 buttress). Howard: gain_ft/loss_ft may understate its longer Rock Mountain TH approach option,
 an internal timing-field mismatch, and a null/unverifiable `fa`.
+
+## Batch 83 (pass 2, 2026-08-08)
+
+Mount Index (Northeast Buttress), Mount Johnson (Standard), Mount Lago (South Slope - South
+Face), Mount Larrabee (South Ridge), Mount Logan (Fremont Glacier, Banded Glacier, Douglas
+Glacier), Mount Mathias (Bailey Range Scramble). Researched via 6 parallel agents grouped by
+peak; WebFetch was blocked by the network egress proxy for every domain tried across all 6
+agents, so findings lean on cross-corroborated WebSearch snippets rather than direct page
+fetches.
+
+Fixed (1): Mount Lago's `prominence_ft` (3280) didn't match Wikipedia/PeakVisor, which both
+consistently give 3,268 ft -- fixed. The row's own `corrections` field had already re-verified
+elevation and coordinates in a prior pass but never checked prominence, so this one slipped
+through. Elevation, coordinates, FA, permit terms, and access details on all 8 routes in this
+batch checked out clean against authoritative sources -- no other confirmed errors.
+
+Flagged rather than fixed: gain_ft/loss_ft internal-consistency problems recur across most of
+this batch and are the dominant finding -- Mount Larrabee's gain_ft (3900) disagrees with its
+own itinerary day-1 figure (4225) and with the Mountaineers' published ~4,400 ft; Mount Logan
+Fremont Glacier's gain_ft/loss_ft (8900/9600) match neither each other (an out-and-back should
+balance) nor the route's own itinerary day-sum (8200/8200); Mount Mathias's gain_ft (6130)
+matches neither its own itinerary-day sum (11,400 ft) nor its own totalNote ("~11,000 ft"),
+and it's unclear whether the field is meant to cover the whole 5-day trip or just summit day.
+Worst case is Mount Logan's Banded Glacier route (`wa_mount_logan_r1`): it contains two
+directly contradictory self-described "corrections" about its own trailhead -- one field
+insists the correct approach is Thunder Creek/Colonial Creek Campground and explicitly claims
+to correct an old Easy Pass value, while a different field claims the opposite, that Easy Pass
+is correct and Thunder Creek is the wrong "longer approach" -- with `approach`/`beta`/`road`/
+`access.closures` all actually describing Easy Pass throughout. Its gpx track's first ~45
+points are also suspiciously identical to the sibling Fremont Glacier route's track, and its
+gain_ft/loss_ft/itinerary-sum give three more mutually inconsistent numbers (7027/13000/8100).
+This needs a human to pick the correct approach and re-derive the dependent fields together --
+not a piecemeal SQL patch. Other flags: Mount Index's `high_point_ft` may be reusing the area's
+Main Peak elevation for a route whose FA history/description place it on the separate, lower
+North Peak; its `ice_grade`/`alpine_grade` look unsourced/possibly fabricated during
+enrichment. Mount Johnson's FA party names for the disputed 1935 date couldn't be independently
+corroborated. Mount Larrabee's `dist_km` looks too low against its own itinerary/sourceNote and
+external ~10-mi-RT figures. Mount Logan Douglas Glacier's itinerary total (28 mi) doesn't sum
+from its own day-by-day mileage (19 mi). Mount Mathias's route record appears to blend two
+different real approaches (a Hoh-glacier-only line and the full Sol Duc-to-Hoh Bailey Range
+Traverse) with no way to tell which one the row is meant to represent.
