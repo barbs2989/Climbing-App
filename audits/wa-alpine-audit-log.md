@@ -5719,3 +5719,61 @@ external ~10-mi-RT figures. Mount Logan Douglas Glacier's itinerary total (28 mi
 from its own day-by-day mileage (19 mi). Mount Mathias's route record appears to blend two
 different real approaches (a Hoh-glacier-only line and the full Sol Duc-to-Hoh Bailey Range
 Traverse) with no way to tell which one the row is meant to represent.
+
+## Batch 84 (pass 2, 2026-08-08)
+
+Mount Maude (North Face, Entiat Ice Fall), Mount Mystery (Standard), Mount Olympus/West Peak
+(Blue Glacier, West Ridge), Mount Persis (The Hexorcist, West Ridge), Mount Pilchuck (East
+Ridge). Researched via 5 parallel agents grouped by peak; WebFetch was blocked by the network
+egress proxy for every domain tried, so findings lean on cross-corroborated WebSearch snippets.
+
+Fixed (14): Mount Maude North Face's `loss_ft` (400) contradicted its own itinerary
+(gainFt/lossFt 6000/6000 for a loop back to the same trailhead) -- set to match `gain_ft`
+(5580). Its `dist_km` (6.4, i.e. 4 mi one-way) undershot its own waypoints (summit at 8 mi
+one-way) and AllTrails' independently reported 15.6-mi-round-trip figure -- corrected to 12.5.
+Mount Mystery's itinerary day-by-day gain/loss (days[0].gainFt 3300, days[2].lossFt 3300) each
+summed to 6900 against the row's own top-level 6700 and its own cited trailcatjim.com source --
+both corrected to 3100. Its waypoints[1] ("Royal Basin Trail junction") had elev 1900, a 700 ft
+drop in the first mile that contradicts every surrounding waypoint's ascending elevation and
+WTA's own "gains a gentle 300 feet" description -- corrected to 2900. Mount Olympus Blue
+Glacier's `road.status` said the Upper Hoh Road "reopened...in May 2026"; the real reopening was
+May 8, 2025 (confirmed via KOMO/Washington State Standard/Peninsula Daily News), and the row's
+own sibling West Ridge route already had the correct date -- fixed. Its `access.notes` field
+was contaminated with an unrelated peak's text ("Mount Tom area, North Cascades" -- a North
+Cascades USFS peak, not this NPS-managed Olympic NP summit) -- replaced with a notes field
+consistent with the row's own correct access.fees/parking_pass. Its `waypoints` array had the
+summit out of distance order (before Glacier Meadows instead of after) -- reordered. Both
+Olympus routes' `length_m` fields were badly off their own internal pitch data (Blue Glacier:
+122m vs. three in-row mentions of a ~70-100 ft summit pitch -- fixed to 30; West Ridge: 543m vs.
+its own 7-pitch pitch_detail summing to 185m -- fixed to 185) and both shared a `dist_km` of 28
+that was actually just the one-way distance to base camp, missing the summit push entirely
+(each route's own itinerary sums to ~42 mi round trip) -- fixed to 33.5 (Blue Glacier) / 34.3
+(West Ridge). Mount Persis's area `prominence_ft` (599) didn't match Wikipedia/Peakbagger/
+Wikidata, which all converge on 544 -- fixed. Mount Pilchuck East Ridge's `permit` field wrongly
+required a Discover Pass, but this route's actual trailhead (Pinnacle Lake, via FR 4020/4021)
+is USFS land where a Discover Pass isn't valid -- the row's own access.fees/passRequired fields
+already had the correct Northwest Forest Pass answer, only the top-level field disagreed --
+fixed.
+
+Flagged rather than fixed: Mount Maude Entiat Ice Fall shares the same suspect `dist_km` (6.4)
+and has a null `loss_ft`, but neither is independently pinned down for this less-documented
+route; both Maude routes' road/access fields are silent on a real May 2026 Chiwawa River Road
+closure (FR 6200, storm damage) that blocks the standard drive to Phelps Creek Trailhead
+entirely -- worth confirming current status before writing an update, since closures change.
+Mount Mystery's advance-permit reservation window (stated as May 1-Sept 30) conflicts with NPS/
+WTA/PermitSnag sources giving June 15-Oct 15 -- flagged rather than fixed since the primary NPS
+reservation page was not directly fetchable. Both Olympus routes carry an identical, internally
+inconsistent gain_ft/loss_ft (7500/400) that doesn't reconcile against either route's own
+itinerary -- needs a human to pick a convention and recompute. Mount Persis West Ridge's gain_ft
+(2658) is only 6 ft off its own waypoint-implied net gain (2664) and is explicitly WTA-sourced
+per the row's own `corrections` field -- too close to call an error. The Hexorcist's `permit`/
+`access` fields claim no permit is needed, but its own `road` field says it shares "the same
+general FR-62 access as the West Ridge route" -- which documents a required private-timberland
+Hampton Resources gate permit -- a self-contradiction within the row that couldn't be resolved
+without a source confirming the north-face approach's actual relationship to that gate. Its `fa`
+also cites a "see corrections" pointer that the row's own `corrections` field never addresses,
+and the named party/date ("Bill Enger, 1985") couldn't be corroborated anywhere the route's
+Burdo attribution itself was confirmed. Mount Pilchuck's `areas.elevation_ft` (5341) sits between
+two independently-sourced Wikipedia figures (5,344 ft article vs. 5,324 ft state-park page) with
+no clear tiebreaker, and the route's own `high_point_ft` (5324) may or may not be an error
+depending on which is chosen.

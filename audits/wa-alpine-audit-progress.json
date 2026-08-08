@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_mathias_scramble",
+  "last_processed_id": "wa_mount_pilchuck_east_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1942,6 +1942,26 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-08-batch-83.sql",
       "note": "Researched via 6 parallel agents grouped by peak. WebFetch was blocked by the network egress proxy for every domain tried across all 6 agents; findings lean on cross-corroborated WebSearch snippets. Fixed: Mount Lago's area prominence_ft (3280->3268), confirmed via Wikipedia/PeakVisor. No other confirmed errors -- elevation, coordinates, FA, permits, and access details checked out clean on all 8 routes. Dominant finding was gain_ft/loss_ft internal-consistency problems recurring across the batch (Larrabee, Logan Fremont, Mathias all have gain/loss figures that disagree with their own itinerary day-sums or external sources), worst on Mount Logan's Banded Glacier route (wa_mount_logan_r1), which contains two directly contradictory self-described corrections about its own trailhead (Thunder Creek vs Easy Pass) plus a gpx track suspiciously identical to its sibling Fremont Glacier route -- needs human resolution, not a piecemeal SQL patch. Other flags: Index's high_point_ft possibly reusing the Main Peak's elevation for a route that may summit the lower North Peak, plus unsourced ice_grade/alpine_grade; Johnson's disputed-FA party names unconfirmable; Larrabee's dist_km possibly too low; Logan Douglas Glacier's itinerary total not matching its own day-by-day mileage; Mathias's route record possibly blending two different real approaches."
+    },
+    {
+      "batch_number": 84,
+      "pass": 2,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_mount_maude_r1",
+        "wa_mount_maude_r2",
+        "wa_mount_mystery_standard",
+        "wa_mount_olympus_blue_glacier",
+        "wa_mount_olympus_west_ridge",
+        "wa_mount_persis_the_hexorcist",
+        "wa_mount_persis_west_ridge",
+        "wa_mount_pilchuck_east_ridge"
+      ],
+      "confirmed_errors_fixed": 14,
+      "flagged_for_human_review": 23,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-08-batch-84.sql",
+      "note": "Researched via 5 parallel agents grouped by peak (Maude, Mystery, Olympus, Persis, Pilchuck). WebFetch was blocked by the network egress proxy for every domain tried; findings lean on cross-corroborated WebSearch snippets. Fixed (14): Maude North Face loss_ft/dist_km internal-consistency fixes; Mystery itinerary gain/loss reconciliation and a waypoint elevation drop error; Olympus Blue Glacier's stale 'May 2026' road-reopening date (actual: May 2025), a Mount-Tom-contaminated access.notes field, an out-of-order waypoints array, and a length_m error; both Olympus routes' length_m/dist_km internal-consistency fixes; Persis area prominence_ft (599->544); Pilchuck's permit field wrongly requiring a Discover Pass at a USFS trailhead. Flagged (23): Maude Entiat Ice Fall's copy-pasted dist_km and null loss_ft, an unmentioned real Chiwawa River Road closure; Mystery's permit-window date conflict; both Olympus routes' unreconciled gain_ft/loss_ft; Persis West Ridge's borderline gain_ft (6ft off, WTA-sourced); The Hexorcist's self-contradictory permit claim vs. its own road field, plus a dangling fa 'see corrections' pointer; Pilchuck's area elevation_ft caught between two conflicting Wikipedia figures. See audit log for full detail."
     }
   ]
 }
