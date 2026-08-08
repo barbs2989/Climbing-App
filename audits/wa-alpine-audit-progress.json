@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_baker_squak_glacier",
+  "last_processed_id": "wa_mount_constance_north_chute",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -1843,6 +1843,25 @@
       "flags": [
         "wa_mount_baker_squak_glacier: grade, grade_system, and gain_ft/loss_ft are all null, unlike every other route in this batch (source field is just 'wa-enrich-batch' with no data_quality/corrections object at all, suggesting this row never got a full enrichment pass). External sources describe it only as a 'Basic Glacier Climb' with a guide-service Technical/Strenuous 3/3 rating, not a Grade/class figure comparable to sibling routes, and no authoritative gain-ft figure was found specific enough to state as fact (one third-party guide blog cites ~6,800 ft total gain, not corroborated elsewhere) -- left for a human enrichment pass rather than guessed."
       ]
+    },
+    {
+      "batch_number": 79,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_mount_blum_north_ridge",
+        "wa_mount_buckindy_scramble",
+        "wa_mount_carrie_standard",
+        "wa_mount_challenger_challenger_glacier",
+        "wa_mount_christie_west",
+        "wa_mount_constance_finger_traverse",
+        "wa_mount_constance_north_chimney",
+        "wa_mount_constance_north_chute"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 2,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-08-batch-79.sql",
+      "note": "Mount Christie's area elevation_ft + its own route's summit waypoint both carried a 1-ft slip (6182) against the route's own high_point_ft (6181, correct) and external sources (Wikipedia/PeakVisor: 6,181 ft) -- same systematic-offset pattern as prior Kyes/Hozomeen/Inner Constance fixes, both fixed. Mount Buckindy Scramble's top-level permit column had NPS North Cascades boilerplate contradicting its own access.notes/rules/permit sub-fields (all correctly Forest Service) and external sources (Glacier Peak Wilderness, Mt Baker-Snoqualmie NF, not NPS) -- same pattern as batch 8/9's Bear Mountain/Snowking Mountain NPS-boilerplate fixes, fixed. Two grade_num convention fixes (Mount Challenger's Challenger Glacier route had the YDS digit of its 5.6-5.7 step stored instead of its class-system's class digit 3; Mount Constance North Chimney's grade_num was null despite a populated grade/rock_grade, filled to 5 via the established 5th-class convention), plus one null top-level grade filled on Mount Blum North Ridge from its own commitment+rock_grade fields (same pattern as batch 6/10's Kimchi/Thread-of-Ice fills). Flagged: Mount Constance North Chute is a bare enrichment stub (grade/grade_system/grade_num/data_quality/corrections all null, same as batch 78's Squak Glacier); Mount Blum North Ridge's top-level permit is null but was left un-synthesized since neither DB permit-text template (Olympic NP vs NPS North Cascades complex) fits its mixed NF/NP-adjacent situation cleanly."
     }
   ]
 }

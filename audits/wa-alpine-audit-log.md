@@ -5435,3 +5435,52 @@ pass. External sources describe it only as a "Basic Glacier Climb" with a guide-
 Technical/Strenuous 3/3 rating, not a figure comparable to sibling routes, and no authoritative
 gain-ft number was found specific enough to state as fact. Left for a human enrichment pass
 rather than guessed.
+
+## Batch 79 (2026-08-08, pass 2)
+
+Routes: Mount Blum North Ridge, Mount Buckindy Scramble, Mount Carrie Standard, Mount Challenger
+Glacier, Mount Christie West Slopes, Mount Constance (Finger Traverse, North Chimney, North
+Chute). 6 confirmed fixes, 2 flags, 1 route clean (`npm run check:sql` confirmed all 5 `routes`
+write targets exist on live rows; the 1 `areas` target was verified to exist by a direct REST
+query, since `check-sql-targets.mjs` only knows the `routes` table's column shape).
+
+Cross-checked all six peaks' elevations against Wikipedia/PeakVisor/peakbagger: five matched
+exactly (Blum 7,685; Buckindy 7,320; Carrie 6,995; Challenger 8,207; Constance 7,756). Mount
+Christie was the outlier -- external sources agree on 6,181 ft, matching this peak's own West
+Slopes route `high_point_ft` (already correct), but the area row's `elevation_ft` (6,182) and that
+same route's own summit waypoint (`elev: 6182`) both carried a 1 ft slip -- same systematic-offset
+pattern as prior batches' Kyes Peak/Hozomeen/Inner Constance fixes. Fixed both.
+
+Mount Buckindy Scramble had a confirmed permit contradiction: the row's own `access.notes`,
+`access.rules`, and `access.permit` sub-fields all correctly describe a Forest Service self-issue
+permit (Glacier Peak Wilderness, no quota), but the separate top-level `permit` column carried NPS
+North Cascades boilerplate ("Marblemount Wilderness Information Center") pointing overnight
+climbers at the wrong agency entirely. Confirmed externally that Mount Buckindy sits in the
+Mount Baker-Snoqualmie National Forest's Glacier Peak Wilderness, not North Cascades National
+Park -- same NPS-boilerplate-on-a-Forest-Service-peak pattern as batch 8's Bear Mountain and
+batch 9's Snowking Mountain fixes. Fixed.
+
+Two grade_num convention fixes, same family as prior batches' YDS-digit fills (Ingalls Peak,
+Forbidden Peak): Mount Challenger's Challenger Glacier route stored `grade_num: 5` (the YDS digit
+of its 5.6-5.7 summit step) against a `grade_system` of `'class'`, breaking the DB-wide convention
+that `grade_num` tracks the class digit for class-graded routes (confirmed against ~25 other WA
+class-system rows, all consistent) -- its own grade text is "Class 3-4," so fixed to 3. Mount
+Constance's North Chimney route had a null `grade_num` despite a populated `grade` ("Grade II-III")
+and `rock_grade` ("...short low-5th-class moves..."); filled to 5 using the same "5th class ->
+grade_num 5" convention already on file elsewhere (e.g. wa_vasiliki_ridge_standard). Also filled
+Mount Blum North Ridge's null top-level `grade` from its own already-verified `commitment` (III)
++ `rock_grade` (5.8-5.9 R) fields, same pattern as batch 6/10's Kimchi/Thread-of-Ice null-grade
+fills.
+
+Flagged rather than fixed: Mount Constance's North Chute route is a bare enrichment stub --
+`grade`/`grade_system`/`grade_num`/`data_quality`/`corrections` all null, `source` is just
+`"wa-enrich-batch"` -- same "never got a full pass" pattern as batch 78's Squak Glacier; needs a
+human enrichment pass rather than a piecemeal fill. Mount Blum North Ridge's top-level `permit`
+column is also null despite a fully populated `access.permit` sub-field describing the real
+requirement -- left un-synthesized since the DB's top-level `permit` strings follow land-manager-
+specific templates (Olympic NP vs. NPS North Cascades complex) and Blum's mixed NF-approach/
+NP-adjacent-summit situation doesn't cleanly fit either, so a human should pick the phrasing rather
+than have one invented here. Mount Carrie Standard's pre-existing `corrections` note (route name
+pairs "Carrie Glacier" with the standard climbing line, but the glacier is actually in a separate
+cirque the route doesn't cross) was independently corroborated this pass but is not new -- left as
+previously flagged, per the note's own instruction not to rename.
