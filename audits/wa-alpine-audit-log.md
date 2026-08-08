@@ -5394,3 +5394,44 @@ governs the route without deeper research). Also, `grade_system` is `'yds'` pair
 Roman-numeral grade ("III-IV"), inconsistent with every sibling route in this batch. The row's
 own `corrections` field already flags itself as thin/ambiguous sourcing requiring expert review,
 so all three were left for a human rather than guessed at.
+
+## Batch 78 (2026-08-08, pass 2)
+
+Routes: Mount Baker (Boulder-Park Cleaver, Cockscomb Ridge, Coleman-Deming, Coleman Headwall,
+Easton Glacier, North Ridge, Park Glacier Headwall, Squak Glacier). 6 confirmed fixes, 1 flag,
+1 route clean. `npm run check:sql` confirmed all 6 write targets exist on live rows. No DELETE
+this batch.
+
+Five of the eight routes shared the identical `access.permit` value "Mount Baker Climbing" --
+not a real permit name. Confirmed via USFS that Mount Baker has no climbing permit at all
+(self-issue registration only, and it's optional); the string is a truncated fragment of the
+USFS recreation-area page title "Mt. Baker Summit - Climbing", not a permit description. Each
+row's own top-level `permit` column already stated the real fact correctly, matching the other
+three routes in this batch whose `access.permit` sub-field was already a full correct sentence --
+rewrote the five truncated rows to match, a same-row consistency fix, no new external fact
+invented.
+
+Park Glacier Headwall's `access.notes` carried a trailing false clause, "...Mount Tom area,
+North Cascades." -- the same copy-paste boilerplate string identified DB-wide in batch 15 (pass
+1) and stamped on 35 unrelated routes including a Wyoming route with no possible North Cascades
+connection. This is a third confirmed instance (after two fixed in batch 15), fixed with the
+identical replacement text used then.
+
+Cross-checked all eight routes' first ascents against external sources: North Ridge (Beckey/
+Widrig/Widrig, Aug 1948), Cockscomb Ridge (Murley/Musser/author, July 4, per the 1961 AAJ
+article), and Park Glacier Headwall (Bodine/Friar/Keliher, July 4-5, 1971 headwall variation, via
+AAC Publications) all corroborated. Coleman Headwall's own `corrections` field already resolves
+a III+ vs. IV grade discrepancy against Mountain Project's page, left as-is. Also ran
+`npm run audit:distances -- --state wa` given a wide `dist_km` spread across this batch (4-25.7
+km, 6.4x) -- none of the eight routes appear in the script's flagged "long approach not explained
+by convention" list, so left untouched per the script's own explicit no-bulk-normalize guidance;
+the spread reflects genuinely different trailheads (Boulder Creek vs. Heliotrope Ridge vs.
+Schriebers Meadow), not a defect.
+
+Flagged rather than fixed: Squak Glacier's `grade`, `grade_system`, and `gain_ft`/`loss_ft` are
+all null, unlike every other route in this batch -- its `source` field is just "wa-enrich-batch"
+with no `data_quality`/`corrections` object at all, suggesting it never got a full enrichment
+pass. External sources describe it only as a "Basic Glacier Climb" with a guide-service
+Technical/Strenuous 3/3 rating, not a figure comparable to sibling routes, and no authoritative
+gain-ft number was found specific enough to state as fact. Left for a human enrichment pass
+rather than guessed.

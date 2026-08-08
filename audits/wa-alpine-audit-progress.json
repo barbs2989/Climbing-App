@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_baker_boulder_glacier",
+  "last_processed_id": "wa_mount_baker_squak_glacier",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1820,6 +1820,29 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-08-08-batch-77.sql",
       "note": "wa_mount_adams_lyman_glacier's top-level season field ('May-Jun') excluded July even though the row's own best_season ('June to July') and seasonal_guidance.monthBreakdown (July rated 'good', within the optimal window) both treat July as climbable -- widened to 'May-Jul' to match the row's own more detailed fields. wa_mount_adams_mazama_glacier_headwall's top-level permit field carried the generic USFS Cascade Volcano Pass boilerplate shared by every other Mount Adams route in this batch, but this route starts from Bird Creek Meadows on Yakama Nation land (Tract D) -- the row's own access object and watch_out array already correctly documented a Yakama tribal-use permit with non-tribal access restricted to roughly July 1-October 1; rewrote the plain-text permit field to match what the row's own fields already established instead of the copy-pasted USFS default (externally corroborated: Wikipedia's Mount Adams Recreation Area article confirms the east-side Tract D land and Bird Creek Meadows exception). wa_mount_adams_north_ridge, wa_mount_adams_northwest_ridge, wa_mount_adams_south_climb, wa_mount_anderson_eel_glacier, and wa_mount_baker_boulder_glacier all audited clean -- the 1854 Mount Adams FA (Aiken/Allen/Burge) is genuinely credited to a north-side party with the North Cleaver called 'likely' by TroutLake.org's own history page, matching this DB's own hedged 'believed to have followed this ridge/cleaver' phrasing; South Climb's 'FA of this specific line undocumented, climbed since the 1860s' matches the documented first south-side ascent in 1864; Boulder Glacier's 1891 LaConnor Expedition FA vs. Morovits's separate 1894 Boulder-Park Cleaver line, and Eel Glacier's 1920 Fairman B. Lee party-of-13 FA (the glacier is literally Lee's name spelled backward), both externally confirmed. Flagged rather than fixed: wa_mount_adams_wilson_glacier_headwall is internally incoherent on season and jurisdiction -- its top-level season field reads 'Jul-Sep' while best_season/seasonal_guidance both call May 'optimal' and July 'risky', and its approach text routes via the Cold Springs/South Climb (USFS) trailhead onto the Round-the-Mountain Trail which its OWN access.rules field says crosses onto Yakama land requiring the tribal permit the row's plain-text permit field never mentions; grade_system is also 'yds' paired with a Roman-numeral grade ('III-IV'), inconsistent with every sibling route in this batch. The row's own corrections field already flags itself as thin/ambiguous sourcing requiring expert review, so left for a human rather than guessed at which fields are right. `npm run check:sql` confirmed both write targets exist on live rows. No DELETE this batch."
+    },
+    {
+      "batch_number": 78,
+      "pass": 2,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_mount_baker_boulder_park_cleaver",
+        "wa_mount_baker_cockscomb_ridge",
+        "wa_mount_baker_coleman_deming",
+        "wa_mount_baker_coleman_headwall",
+        "wa_mount_baker_easton_glacier",
+        "wa_mount_baker_north_ridge",
+        "wa_mount_baker_park_glacier_headwall",
+        "wa_mount_baker_squak_glacier"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 1,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-08-batch-78.sql",
+      "note": "Five of this batch's eight routes (wa_mount_baker_boulder_park_cleaver, wa_mount_baker_cockscomb_ridge, wa_mount_baker_coleman_deming, wa_mount_baker_coleman_headwall, wa_mount_baker_north_ridge) shared the identical access.permit value 'Mount Baker Climbing' -- not a real permit name. Confirmed via USFS that Mount Baker has no climbing permit at all (self-issue registration only, optional); the string is a truncated fragment of the USFS recreation-area page title 'Mt. Baker Summit - Climbing' (fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing), not a permit description. Each row's own top-level `permit` column already stated the real fact correctly ('Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.'), matching the other three routes in this batch whose access.permit sub-field was already a full correct sentence -- rewrote the five truncated rows to match, a same-row consistency fix. wa_mount_baker_park_glacier_headwall's access.notes carried a trailing false clause, '...Mount Tom area, North Cascades.' -- the SAME copy-paste boilerplate string identified DB-wide in batch 15 (pass 1) and stamped on 35 unrelated routes including a Wyoming route with no possible North Cascades connection; this is a third confirmed instance (after wa_guye_peak_south_gully and wa_icy_peak_southwest_route in batch 15), fixed with the identical replacement text used then. Also cross-checked all eight routes' first ascents (North Ridge: Beckey/Widrig/Widrig Aug 1948, corroborated externally; Cockscomb Ridge: Murley/Musser/author July 4 per the 1961 AAJ article, corroborated; Coleman Headwall's own `corrections` field already resolves a III+ vs IV grade discrepancy against Mountain Project, left as-is; Park Glacier Headwall: Bodine/Friar/Keliher July 4-5 1971 headwall variation, corroborated via AAC Publications) -- all consistent, no errors found. Ran `npm run audit:distances -- --state wa` given a wide dist_km spread across this batch's routes (4-25.7 km, 6.4x) -- none of the eight appear in the script's flagged 'long approach not explained by convention' list, so left untouched per the script's own explicit no-bulk-normalize guidance; the spread reflects genuinely different trailheads (Boulder Creek vs. Heliotrope Ridge vs. Schriebers Meadow). `npm run check:sql` confirmed all 6 write targets exist on live rows. No DELETE this batch.",
+      "flags": [
+        "wa_mount_baker_squak_glacier: grade, grade_system, and gain_ft/loss_ft are all null, unlike every other route in this batch (source field is just 'wa-enrich-batch' with no data_quality/corrections object at all, suggesting this row never got a full enrichment pass). External sources describe it only as a 'Basic Glacier Climb' with a guide-service Technical/Strenuous 3/3 rating, not a Grade/class figure comparable to sibling routes, and no authoritative gain-ft figure was found specific enough to state as fact (one third-party guide blog cites ~6,800 ft total gain, not corroborated elsewhere) -- left for a human enrichment pass rather than guessed."
+      ]
     }
   ]
 }
