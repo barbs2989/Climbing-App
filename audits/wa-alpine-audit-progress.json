@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+  "last_processed_id": "wa_martin_peak_west_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1763,6 +1763,25 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-08-08-batch-74.sql",
       "note": "Little Mac Spire's Southwest Route had a corrections field contaminated with beta for an unrelated peak: it claimed the route was \"located near Mac Peak in the Deception Lakes area\" (a real but distinct 6,859 ft summit near Stevens Pass, ~90 miles from the Southern Pickets, confirmed via SummitPost/Wikipedia), and also self-contradicted the row's own pitches field (said \"2-3 short pitches\" against pitches=9) -- rewrote to drop both. Live Free or Die's watch_out field described the entire route as a boulder problem (\"Boulder problem grade terrain - V5+...\", \"bouldering sections\"), directly contradicting this same row's own overview, which already explains the name/grade previously caused exactly this misreading and states plainly it's an 11-pitch face route, not a boulder problem -- confirmed externally via AAC Publications' FA writeup. Also fixed the underlying schema-shape bug: watch_out was stored as one newline-joined string instead of the jsonb string[] the column is documented for and every sibling route uses, which collapses into a single run-on bullet client-side since toArr() only splits on commas. Luahna Peak's area row carried an outdated elevation (8450 ft, traceable to a 2005 trip report) against the current authoritative figure (8,445 ft, Wikipedia/NGS) that this DB's own route row already used in high_point_ft -- fixed the area row to match both. Little Sister's North Face and West Face, Little Tahoma's East Shoulder (FA independently confirmed: Flett & Garrison, Aug 29, 1894) and Cowlitz/Ingraham Glaciers route, and Luahna Peak's own route all audited clean. Left flagged: Lizard Mountain's summit elevation, which the row's own data_quality field already correctly flags as inconsistent across sources (7,306-7,420 ft) with no confirmed benchmark found."
+    },
+    {
+      "batch_number": 75,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_luna_glacier",
+        "wa_luna_peak_southeast_slopes",
+        "wa_lundin_peak_south_face_left",
+        "wa_magic_mountain_north_face",
+        "wa_magic_mountain_northeast_couloir",
+        "wa_magic_mountain_south_ridge",
+        "wa_magic_mountain_west_ridge",
+        "wa_martin_peak_west_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-08-08-batch-75.sql",
+      "note": "wa_martin_peak_west_ridge fa field wrongly credited a joint 1936 ascent (Everett Darr and Ida Zacher); documented sole first ascensionist was Ida Zacher, solo, per Mazama Bulletin She Climbs High! (2025) -- also matches this DB's own wa_martin_peak area blurb, which already had it right. wa_lundin_peak_south_face_left flagged: grade field null despite a well-documented 5.10 crux (Mountain Project), left for human to pin the exact grade token."
     }
   ]
 }

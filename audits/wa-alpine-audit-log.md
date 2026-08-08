@@ -5272,3 +5272,35 @@ and Luahna Peak's own route field content all audited clean.
 Left flagged rather than fixed: Lizard Mountain's summit elevation, where the row's own
 `data_quality` field already correctly flags a real cross-source inconsistency (7,306-7,420 ft)
 with no confirmed benchmark found in this pass either.
+
+## Batch 75 (2026-08-08, pass 2)
+
+Routes: Luna Glacier (Phantom Peak), Luna Peak (Southeast Slopes), Lundin Peak (South Face
+Left), Magic Mountain (North Face, Northeast Couloir, South Ridge / Southeast Slopes, West
+Ridge), Martin Peak (West Ridge). 1 confirmed fix, 1 flag, 6 routes clean. `npm run check:sql`
+confirmed the write target exists on the live `routes` table. No DELETE this batch.
+
+Martin Peak West Ridge's `fa` field credited a joint ascent, "Everett Darr and Ida Zacher,
+July 1936," but the documented 1936 first ascent was a SOLO climb by Ida Zacher, made while
+scouting the Bonanza Peak area — Everett did not summit that day (he later married her; she is
+credited in later sources as Ida Zacher Darr). Corroborated by the Mazama Bulletin's 2025 "She
+Climbs High!" retrospective on her climbing record, and consistent with this DB's own
+`wa_martin_peak` area row, whose blurb already reads "First climbed in July 1936 by Ida Zacher
+Darr" with no mention of Everett — the route row, not the area row, was the one out of step.
+Also cleared a stale `data_quality.gaps` entry on the same row flagging the on-file route name
+as "Southeast Slopes" against sourced "West Ridge" beta: the `name` field already reads "West
+Ridge" (a prior pass fixed the name but never cleared the now-obsolete gap note), so it was
+dropped and `lastVerified` bumped to this pass.
+
+Flagged rather than fixed: Lundin Peak South Face Left's `grade` field is null despite the
+route's crux being well documented (an opening 5.10 layback hand-crack, per Mountain Project's
+route description) — left for a human to confirm the precise grade token (e.g. 5.10 vs. 5.10a)
+against a primary source before writing, since a search-engine summary alone isn't precise
+enough to commit to a specific YDS suffix.
+
+Luna Glacier, Luna Peak Southeast Slopes, and all four Magic Mountain routes audited clean:
+elevations, FA people/dates, and area-hierarchy placement all corroborated externally (Wikipedia,
+Mazama/AAC-adjacent sources) and internally consistent with this DB's own area rows. Luna
+Glacier's summit waypoint, corrected in an earlier pass from a wrong "Luna Peak" coordinate to
+Phantom Peak's own verified position, was re-checked against the live `wa_phantom_peak` area row
+and still matches (8,016 ft, same lat/lng).
