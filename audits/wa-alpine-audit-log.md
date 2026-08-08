@@ -5177,3 +5177,56 @@ climbers credited); a corrupted/truncated `approach` field and a gear/pitch-deta
 contradiction on Serpentine Crack; and a `dist_km` one-way-vs-round-trip convention
 inconsistency on Overexposure (documented systemic issue, not bulk-normalized per CLAUDE.md
 guidance).
+
+## Batch 73 (2026-08-08, pass 2)
+
+Routes: Liberty Bell Mountain's 4 remaining routes (Thin Red Line, Liberty Crack, Liberty
+Crack Free, Liberty Traverse), Liberty Cap (Liberty Ridge Finish, Ptarmigan Ridge Finish),
+Lichtenberg Mountain (West Face/West Rib), Lincoln Peak (North Ridge, Standard), Little Big
+Chief Mountain (Northeast Face) — researched via 5 parallel agents grouped by peak. 31
+confirmed fixes, 10 flags, 1 route clean (Lichtenberg). `npm run check:sql` confirmed all 35
+checkable write targets exist against live rows (3 statements skipped by the parser's known
+long-statement issue — manually cross-checked those 3 directly against the fetched rows
+instead, all correct); no DELETE in this batch.
+
+Liberty Bell's 4 routes continued batch 72's east-face-approach-contamination pattern, this
+time spreading past `waypoints` into `hazards`, `seasonal_hazards`, `partner_requirements`,
+`timing`, `itinerary`, and a wrong top-level `descent` field on Thin Red Line specifically,
+plus a shared, byte-identical west-side `gpx` track on three of the four routes (cleared to
+NULL — no verified East Face track available to replace it). Liberty Cap's two Rainier-summit
+"finish" routes both carried a stale `high_point_ft` (14112 ft, contradicting each row's own
+text-endorsed 14,097 ft and the parent area) — fixed on both. Ptarmigan Ridge Finish also had
+a live access-data staleness bug: SR-165's Fairfax Bridge, the sole public road to Mowich
+Lake, was permanently closed on April 22, 2025 per WSDOT's own announcements (no funded
+repair, not expected back before 2031 — independently verified via web search before writing
+the fix), but the row still described ordinary seasonal gating; fixed `road`/`access`/
+`approach`/waypoint fields to state the closure and point to the still-viable White River/St.
+Elmo Pass alternative.
+
+Lincoln Peak's North Ridge route was misnamed and mis-approached: its own `overview` already
+identified it as "Wilkes-Booth" (NW Face, FA March 2015, confirmed via AAC Publications and a
+CascadeClimbers trip report), but `name` still said "North Ridge / Standard" and `approach`
+carried a fabricated 1958 FA/ice-screw claim that traces to neighboring Colfax Peak's own
+climbing history (same Lincoln-assassination-themed route-naming convention) — both fixed,
+plus a stale `rock_grade` the row had already self-flagged for removal. Also fixed a
+commitment-vs-grade contradiction on the Standard route (VI vs. its own III-IV) and
+`areas.parent_peak` on Lincoln Peak itself, which named sibling Colfax Peak instead of the
+real parent, Mount Baker (confirmed by checking Colfax's own `parent_peak` convention directly
+in the live DB).
+
+Little Big Chief Mountain's lone route had an `fa` value asserting a specific 1939 FA
+attribution that directly contradicted its own `corrections` field, which had already
+concluded the attribution couldn't be confirmed for this specific line and should be left
+null — fixed to match the row's own reasoning. Its `beta` field also claimed a PCT approach
+to Dutch Miller Gap, contradicting its own more detailed `approach` field and USFS/WTA trail
+data (Dutch Miller Gap Trail 1030 the whole way, no PCT segment) — fixed. Lichtenberg
+Mountain's West Face/West Rib route audited fully clean: elevation, gain/loss, distance, and
+a dated 1978 trip-report-sourced ascent all corroborated externally.
+
+Left flagged rather than fixed: a genuine Liberty Crack-vs-Liberty Crack Free shared-trail
+approach-time discrepancy and ambiguous single- vs. dual-county `emergency.county` values on
+two Liberty Bell routes; Camp Schurman elevation and Carbon Glacier thickness figures plus an
+unconfirmed 1935 FA date on Liberty Cap; a real, unresolved 3-way elevation conflict (9,085 ft
+area/text vs. 9,101 ft structured fields, both externally sourced) spanning both Lincoln Peak
+routes and the area row; and a narrative-vs-structured belayed-pitch-count inconsistency on
+Little Big Chief, given the peak's inherently thin documentation.

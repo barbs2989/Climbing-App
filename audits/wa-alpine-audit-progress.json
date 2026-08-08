@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_liberty_bell_serpentine_crack",
+  "last_processed_id": "wa_little_big_chief_mountain_northeast_face",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -1723,6 +1723,27 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-08-07-batch-72.sql",
       "note": "Researched via 3 parallel agents grouped by peak (Mount Stone/Gunn Peak/Lexington Tower; Liberty Bell group 1 -- Beckey Route/East Face/Independence Route/Liberty and Injustice for All; Liberty Bell group 2 -- NW Face/Overexposure/Serpentine Crack). Liberty Bell's East Face lines (Independence Route, East Face, Liberty and Injustice for All) shared a recurring 'wrong side of the mountain' contamination: trailhead waypoints (and, for Independence Route, the full approach/approach_logistics) copied from the Blue Lake Trailhead/Beckey Route despite being genuine East Face lines approached from a separate SR-20 hairpin/pond pullout -- fixed from each row's own already-verified approach text. East Face also had a beta field describing an unrelated 10-pitch route (its own pitch_detail is 4 pitches) and an overview calling it 'popular' against its own crowds field ('rarely climbed') -- both rewritten. Independence Route's grade_num (12) didn't match 5.12a under the app's own gradeNum() formula (fixed to 12.25); Liberty and Injustice for All's dist_km was exactly double its same-trailhead siblings' figure -- fixed. Overexposure's aspect/face were mislabeled 'Southwest' when its own overview text and a waypoint shared with the NW Face route both identify it as the West Face -- fixed; Overexposure and Serpentine Crack both had emergency.county trimmed to 'Chelan' alone despite their own emergency.notes documenting the Chelan/Okanogan county line -- fixed on both. Lewis Creek Route's dist_km (6km) contradicted its own itinerary's cited 12.07km -- fixed. Lexington Tower's area blurb mislabeled the East Face route's grade 'III' against its own alpine_grade/commitment fields (IV, confirmed externally) -- fixed. Beckey Route and NW Face audited clean. Left flagged: an impossible East Face notch elevation/coordinate on Lexington Tower; a pre-existing 'is this a real named route' question on Lewis Creek Route; an unreconciled multi-source gain/loss range on the Mount Stone traverse (already caveated on-file); remaining contaminated intermediate waypoints on Independence Route/East Face beyond the trailhead point (no sourced replacement found); a possible area-level FA-credit discrepancy on Liberty Bell (2 vs 3 climbers credited); a corrupted/truncated approach field and a gear/pitch-detail contradiction on Serpentine Crack; and a dist_km one-way-vs-round-trip convention inconsistency on Overexposure (systemic, documented, not bulk-normalized)."
+    },
+    {
+      "batch_number": 73,
+      "date": "2026-08-08",
+      "route_ids": [
+        "wa_liberty_bell_thin_red_line",
+        "wa_liberty_cap_liberty_ridge_finish",
+        "wa_liberty_cap_ptarmigan_ridge_finish",
+        "wa_liberty_crack",
+        "wa_liberty_crack_free",
+        "wa_liberty_traverse",
+        "wa_lichtenberg_mountain_west_face_west_rib",
+        "wa_lincoln_peak_north_ridge",
+        "wa_lincoln_peak_standard",
+        "wa_little_big_chief_mountain_northeast_face"
+      ],
+      "confirmed_errors_fixed": 31,
+      "flagged_for_human_review": 10,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-08-batch-73.sql",
+      "note": "Liberty Bell Mountain's 4 remaining routes (Thin Red Line, Liberty Crack, Liberty Crack Free, Liberty Traverse) continued batch 72's east-face-approach-contamination cleanup, this time spreading into hazards/seasonal_hazards/partner_requirements/timing/itinerary/descent fields and a shared byte-identical west-side gpx track (cleared on 3 routes, no verified replacement available). Liberty Cap's 2 Rainier-summit \"finish\" routes had a stale high_point_ft (14112 vs the row's own text-endorsed 14097) on both, plus a live access-data staleness bug on Ptarmigan Ridge Finish: SR-165's Fairfax Bridge, the sole public road to Mowich Lake, was permanently closed in April 2025 (independently confirmed via WSDOT's own announcements) with no funded repair before 2031, but the row still described ordinary seasonal gating -- fixed road/access/approach fields to reflect the closure and point to the still-viable White River alternative. Lincoln Peak's North Ridge route turned out to be a misnamed/mis-approached row: its own overview already identified it as \"Wilkes-Booth\" (NW Face, FA 2015, confirmed via AAC/CascadeClimbers), but name/approach still carried a fabricated 1958 FA and ice-screw claim that traces to neighboring Colfax Peak's climbing history -- fixed name/approach/stale rock_grade; also fixed a commitment-vs-grade contradiction on the Standard route and areas.parent_peak pointing at sibling Colfax Peak instead of the real parent, Mount Baker (confirmed via Colfax's own parent_peak convention in the live DB). Little Big Chief Mountain's lone route had an fa value contradicting its own corrections field (which already concluded fa should be null) and a beta field claiming a PCT approach that contradicts its own approach field and USFS/WTA trail data. Lichtenberg Mountain audited fully clean. Flagged rather than fixed: an LC-vs-LCF shared-trail approach-time discrepancy and single- vs dual-county emergency fields on Liberty Bell; Camp Schurman elevation and Carbon Glacier depth variance plus an unconfirmed 1935 FA date on Liberty Cap; a 3-way elevation conflict (9085 vs 9101 ft) spanning both Lincoln Peak routes and the area row; and a narrative-vs-structured pitch-count inconsistency on Little Big Chief."
     }
   ]
 }
