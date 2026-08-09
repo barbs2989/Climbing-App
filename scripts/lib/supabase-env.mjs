@@ -29,6 +29,14 @@ export function loadEnv() {
       env[t.slice(0, i).trim()] = t.slice(i + 1).trim().replace(/^["']|["']$/g, "");
     }
   }
+  // Fall back to the real environment for anything the files did not supply, so a script
+  // can also run in CI where the gitignored dotfiles do not exist and the values arrive as
+  // repo secrets. Files still WIN where both are present: locally the dotfiles are the
+  // source of truth, and a stray exported VITE_SUPABASE_URL in somebody's shell must not
+  // silently redirect a script at a different project.
+  for (const k of ["SUPABASE_SERVICE_KEY", "SUPABASE_SERVICE_ROLE_KEY", "VITE_SUPABASE_URL", "VITE_SUPABASE_ANON_KEY"]) {
+    if (env[k] === undefined && process.env[k]) env[k] = process.env[k];
+  }
   return env;
 }
 
