@@ -27,6 +27,7 @@
 // `dist_km=not.is.null` instead scans the whole 200k-row routes table on an unindexed
 // column and dies on the anon role's 3s statement_timeout with a 57014.
 
+import fs from "node:fs";
 import { selectAll, SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
 
 const KM_PER_MI = 1.60934;
@@ -124,12 +125,24 @@ const NON_ALPINE = new Set(["bouldering", "sport", "toprope", "gym"]);
 const misfiled = withDist.filter(r =>
   NON_ALPINE.has(String(r.discipline || "").toLowerCase()) &&
   areaById.get(r.area_id)?.area_type === "peak");
-console.log(`=== ${misfiled.length} non-alpine routes carrying a peak's area_id ===`);
+// Verdicts already reached live in audits/distances-triage.json. Deleting an entry there
+// reopens the finding; anything absent is NEW and is what the closing line counts.
+const TRIAGE_PATH = new URL("../audits/distances-triage.json", import.meta.url);
+let triage = {};
+try { triage = JSON.parse(fs.readFileSync(TRIAGE_PATH, "utf8")); }
+catch (e) { if (e.code !== "ENOENT") console.log(`   (could not read distances-triage.json: ${e.message})`); }
+const ruledOn = new Map((triage.misfiled || []).map(e => [e.key, e]));
+const freshMisfiled = misfiled.filter(r => !ruledOn.has(r.id));
+const deferredMisfiled = misfiled.filter(r => ruledOn.get(r.id)?.verdict === "deferred");
+console.log(`=== ${misfiled.length} non-alpine routes carrying a peak's area_id `+
+  `(${freshMisfiled.length} new, ${misfiled.length - freshMisfiled.length} already ruled on) ===`);
 console.log("  A hypothesis, not a verdict: confirm the row against its own overview before acting.");
 for (const r of misfiled) {
+  const v = ruledOn.get(r.id);
   console.log(`  ${pad(r.dist_km, 6)} km  ${r.discipline}  ${peakOf(r)} / ${r.name}  [${r.id}]` +
-    `${r.source ? "" : "  source:null"}`);
+    `${r.source ? "" : "  source:null"}${v ? "  -> " + v.verdict.toUpperCase() : "  -> NEW"}`);
 }
+if (deferredMisfiled.length) console.log(`  ${deferredMisfiled.length} of these is a deferred defect, not clean data.`);
 console.log("");
 
 // ---------------------------------------------------------------------------
@@ -153,4 +166,5 @@ for (const s of spread.slice(0, verbose ? spread.length : 10)) {
 }
 if (!verbose && spread.length > 10) console.log(`  … ${spread.length - 10} more (--verbose to list all)`);
 
-console.log(`\nNothing was written. ${suspect.length + misfiled.length} rows warrant a look.`);
+console.log(`\nNothing was written. ${suspect.length + freshMisfiled.length} rows warrant a look` +
+  `${misfiled.length - freshMisfiled.length ? ` (${misfiled.length - freshMisfiled.length} more already ruled on in audits/distances-triage.json)` : ""}.`);
