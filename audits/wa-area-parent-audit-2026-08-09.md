@@ -247,7 +247,22 @@ peaks three ways (Middle Fork — Garfield, Preacher, Treen, Price, Roosevelt, B
 Teneriffe; the pass — Denny; Alpine Lakes crest — Alta, Four Brothers, Cathedral Rock,
 Lemah Two, Daniel, Hinman); or leave it. A rename is the cheapest and is reversible.
 
-### 3. Rejected candidates — recorded so they are not re-raised
+### 3. D1's count is NOT monotonic — a correct fix can raise it
+
+After `0117`/`0118` the WA sweep reads **D1 18, D2 0, D3 0** — D1 went *up*, from 15. All
+three new hits are the Ingalls rows flagged against **Headlight Basin**, and they appeared
+precisely *because* `0117` was right: moving Ingalls from Teanaway into Stuart-Enchantments
+put it in the same subtree as Headlight Basin, ~1 km away, so D1 can now see it. It could
+not before.
+
+Rejected: Headlight Basin holds Headlight Playground and Lake Ingalls Outcrop — two outcrops
+in the basin *below* the peak. A basin is not the formation group of the summit above it,
+and MP files Ingalls Peak directly under Stuart-Enchantments, which is where it now sits.
+
+**Do not read a rising D1 as a regression.** D2 and D3 are the counts that must stay at
+zero; D1 is a hypothesis generator whose population changes whenever the tree does.
+
+### 4. Rejected candidates — recorded so they are not re-raised
 
 - **`** Enchantments Bouldering` ← Dragontail, Colchuck Balanced Rock, Witches Tower…** —
   false positive. That group is scoped by *discipline*, not geography; alpine peaks do not
