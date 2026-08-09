@@ -22,6 +22,7 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run audit:area-parents # is every area filed under the place it belongs to?
@@ -284,6 +285,39 @@ a build error, but a screen that renders wrong or not at all.
     fails as stale bookkeeping.
   - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
     long-beta block fails naming `beta`.
+- **`check:a11y-badges`** asks whether any control announces its badge count welded to its
+  label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
+  Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
+  is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
+  not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
+  `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
+  - **Structural, not lexical, and that distinction is the whole check.** Scanning names for a
+    digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
+    `Class 4` are all correct names. The defect is that the digit and the word come from
+    **different DOM nodes**. A grade is one authored string in one text node; a badge is a
+    separate element. So it walks each control's text nodes, finds a letter↔digit transition
+    **across a node boundary**, and only then asks Chrome what it computed. An earlier
+    string-matching attempt reported "none" while direct measurement showed three, and was
+    binned rather than shipped.
+  - Confirmed by **measurement, never markup**: a candidate is reported only if the name Chrome
+    actually computed still holds the two fragments glued. That is why an `aria-label` fix —
+    which changes no structure at all — reads as fixed, and why rearranging JSX cannot satisfy it.
+  - Runs against the **populated** demo. A badge is `count ? <span>…`, so at zero there is no
+    badge and nothing to find; check:zero's config would make this vacuous.
+  - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
+    with the three checks above, so they cannot drift on which modals exist. Mount detection
+    compares **line sets, not text length** — `Inbox` *replaces* the screen rather than adding
+    to it, so a length test read it as never mounted and silently dropped it from the sweep.
+    That was not hypothetical: it is why the second defect went unseen on the first run.
+  - Does **not** cover clickable `<div>`s (React's onClick leaves no attribute, and a div with
+    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`) or
+    the route detail screen, which is reached by clicking rather than by URL.
+  - Zero candidates anywhere is treated as a **failure**, not a pass: every control here is
+    multi-node, so an empty scan means the scan broke.
+  - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
+    announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
+    than passing over a blank app — the trap `check:overlay-scroll` documents above.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for

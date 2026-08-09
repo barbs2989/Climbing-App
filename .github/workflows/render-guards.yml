@@ -1,7 +1,8 @@
 name: Render guards
 
-# Three checks that ask "does this actually reach a screen?" — a question the static
-# guards in build-check.yml cannot answer, because all three need the app rendered.
+# Four checks that ask "does this reach a screen, and reach it correctly?" — a question
+# the static guards in build-check.yml cannot answer, because all four need the app
+# rendered.
 #
 # Why they need CI at all. All were hand-run only, and on 2026-08-09 that failed
 # exactly the way you would predict: check:overlay-scroll had gone RED on main and
@@ -9,8 +10,8 @@ name: Render guards
 # page behind them (#724). Nothing reported it, because nothing ran it. A guard that
 # only runs when somebody remembers is a guard you do not have.
 #
-# check:ui was the last one still in that position, and it is the broadest of the
-# three — 17 screens, asserting nothing blanked, no uncaught page errors, no
+# check:ui was the last one still in that position, and it is the broadest of them
+# — 17 screens, asserting nothing blanked, no uncaught page errors, no
 # NaN/undefined/[object Object] in rendered copy, and that named sections survive.
 # It sat outside CI because it was too flaky to gate on, and both causes are now
 # fixed rather than tolerated: #464 made it claim a genuinely free port instead of
@@ -119,6 +120,38 @@ jobs:
           name: ui-screens
           path: ui-screens.json
           if-no-files-found: warn
+
+  a11y-badges:
+    name: No control announces a glued count
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:a11y-badges cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Badge counts stay out of accessible names
+        run: npm run check:a11y-badges
+        env:
+          # Same reasoning as overlay-scroll above: without these USE_DB is off and the
+          # app under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
 
   field-renders:
     name: Enriched columns reach a screen
