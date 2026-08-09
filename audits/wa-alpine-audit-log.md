@@ -6404,3 +6404,83 @@ FA/beta narrative (near-verbatim corroborated by an AAC Publications account of 
 Early Winters Spire's FA, grade, and permit/land-manager text (correctly distinguished from Snowfield's
 NPS regime) -- see the researching agents' reports for full per-route detail (not reproduced here to
 keep this log terse).
+
+## Batch 93 (pass 2) -- 2026-08-09
+
+Eight routes across seven peaks: Nooksack Tower (Beckey-Schmidtke Route, South Face), Lexington
+Tower (North Face), Concord Tower (North Face Var. Right/Directisimo), Castle Peak ("Fight or
+Flight"), North Gardner Mountain (Northwest Couloir), Whatcom Peak (North Ridge), and Cutthroat
+Peak (North Ridge). Researched via 4 parallel agents grouped by peak. WebFetch to essentially
+every primary-source domain (nps.gov, mountainproject.com, summitpost.org, mountaineers.org,
+wikipedia.org, AAC Publications, theCrag) was blocked by this session's egress proxy, same as
+every recent batch, so findings rest on WebSearch result snippets rather than full-page reads
+throughout.
+
+**Fixed (7) -> `sql/2026-08-09-batch-93.sql`:** Both Nooksack Tower routes' first waypoint (and
+matching GPX point), labelled "Nooksack Cirque Trailhead," sat about a mile from the real
+trailhead -- each row's own `approach_logistics` field already had the correct coordinates,
+confirmed against Trailforks, so the waypoint/gpx were just never updated to match. Concord
+Tower's Directisimo variant had `length_m` (91) contradicting its own `pitch_detail` sum (120m)
+and its own `itinerary.sourceNote` citation of "120 m" from SuperTopo -- 91 is the exact
+`length_m` of sibling route wa_north_face_3, a copy-paste value never updated. The same
+Directisimo row's Blue Lake Trailhead waypoint elevation (5200) contradicted external sources,
+its own approach text ("~5,400 ft"), and the same trailhead point correctly stored as 5400 on
+its sibling route. Castle Peak's "Fight or Flight" had a `road` field describing Stehekin
+ferry/floatplane access -- unrelated content from a different, Lake Chelan-area peak entirely;
+corrected using this row's own already-verified `approach` text (BC Hwy 3/Manning Park or SR-20
+to Ross Dam). North Gardner Mountain's Northwest Couloir route had `approach_logistics` pointing
+to Wolf Creek Trailhead, the approach for this peak's separate standard south route, when the
+route's own name, approach, beta and waypoints all describe the Cedar Creek Trailhead
+exclusively. Whatcom Peak's `areas` row (not either audited route) had lat/lng about 0.4 mi off
+from the Wikipedia/GNIS-cited summit -- the sibling route's own summit waypoint already had the
+correct value.
+
+**Route-identity check (the reason this batch's Castle Peak route drew closer scrutiny):**
+`wa_north_face_left_buttress` is a name-derived id, the exact pattern CLAUDE.md flags as
+error-prone, so this pass specifically re-verified peak attribution via AAC Publications and
+Alpinist sources before trusting anything else on the row. "Fight or Flight" (Herrington/Hirst,
+Aug 2008) is correctly placed on Castle Peak -- no area_id mismatch, only the contaminated `road`
+field above.
+
+**Flagged rather than fixed (14):** Cutthroat Peak's elevation has two credible, differently-
+sourced values in circulation -- 8,065-8,066 ft (Wikipedia/GNIS/Peakbagger, matching the stored
+`prominence_ft`) vs. 8,050 ft (ListsOfJohn/SummitPost, tied to a documented north-peak/south-peak
+naming ambiguity on the mountain itself) -- and the route's own `high_point_ft` (8065) and
+waypoint `elevFt` (8050) disagree as a result; no canonical source to pick a winner. Whatcom
+Peak's 1936 FA spelling ("Buchanan" vs. "Buchanen") remains unsettled across the route, its
+parent area row, and Wikipedia itself -- the prior pass's "flagged, not applied" stance stands,
+now with the added wrinkle that the route's own `data_quality.gaps` text describes an on-file
+"Buchanen" spelling that isn't actually what's stored. Concord Tower's summit elevation (7,560 ft
+per Mountain Project/WTA/Mountaineers.org vs. 7,611-7,612 ft per ListsOfJohn's LiDAR data) is a
+genuine, still-unresolved guidebook-era-vs-LiDAR-era conflict already disclosed in the area's own
+blurb. Lexington Tower's area-tree placement skips the "Liberty Bell Group" node that sibling
+Concord Tower is nested under, despite both peaks' own text describing themselves as part of that
+group -- flagged rather than reparented, since any area-tree change has `route_count` rollup
+implications a same-value SQL guard can't protect against. Castle Peak's Frosty Mountain/Lightning
+Lake trailhead elevation (3,900 ft on file vs. ~4,090-4,110 ft in published sources, a ~200 ft
+gap) and the exact year of the "1993 Colorado Route" it references could not be independently
+pinned down. Nooksack Tower's Beckey-Schmidtke route has three mutually disagreeing trailhead
+elevations across its `waypoints`, `approach` text, and `gain_ft`-implied value (2,200 / 2,550 /
+~2,150 ft), a summit-day hour total that doesn't cleanly reconcile with its own day-by-day
+itinerary, and a ford waypoint about a mile from the coordinates named in its own approach
+prose -- resolving any of these needs a human call on which "trailhead" or "ford" the field is
+meant to represent, not a guess. The South Face route on the same tower carries three
+mutually-qualifying permit statements (`permit`, `access.permit`, `access.rules`) and two
+disagreeing land-manager fields in the same `access` object. Concord Tower's Directisimo variant
+has a `rope_note` whose cited grades (5.6/5.7/5.6+/5.7) don't cleanly match its own pitch_detail
+grades (5.6/5.8/5.7) -- plausibly describing the shared standard-route pitch 1 rather than this
+variant, worded ambiguously enough not to call outright wrong. Its 2026 SR-20 seasonal-closure
+date range ("April 15-25 opening") reads as stale for the actual 2026 season (storm-damaged
+reopening pushed to June 14), though the field itself hedges with "typical" so it isn't strictly
+false.
+
+**Clean:** elevation/coordinates for Nooksack Tower (8,285 ft), Lexington Tower (7,560 ft),
+Whatcom Peak's route-level waypoint (7,574 ft, matching the peak's own area row), and North
+Gardner Mountain (8,956 ft); FA records for both Nooksack Tower routes (Beckey/Schmidtke 1946,
+Klubberud/Manfredi 2002), Lexington Tower's North Face (Kelley/McGowan 1954), Castle Peak's
+"Fight or Flight" area/FA history, and Cutthroat Peak's North Ridge (Beckey/Crooks/Kenney 1940,
+now corroborated across more independent sources than the prior pass credited); grade/pitch data
+for all eight routes; North Cascades NP backcountry permit fee text (both Nooksack routes,
+Whatcom Peak); Northwest Forest Pass fee text and land-manager info for the Washington Pass
+routes and Cutthroat Peak -- see the researching agents' reports for full per-route detail (not
+reproduced here to keep this log terse).
