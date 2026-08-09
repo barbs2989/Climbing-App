@@ -371,6 +371,35 @@ clock and a `CountUp` do not prevent settling — rather than on spotting a spin
     all. Injection-tested: narrowing it to `/\bLoading\b\s/` fails `check:ui` naming
     `"Loading…"`.
 
+**Did the guard actually read the app?** Every static guard has to answer that before it
+prints `ok`, and until 2026-08-09 none of them asked. `scripts/lib/guard-sources.mjs` is the
+shared answer, used by the nine guards that scan source: `appSources()` for the ones that
+name their inputs, `assertCovered()` for the ones that walk the tree.
+  - **#547 is the case on record**, and the point is that its *fix* preserved the failure.
+    The three-way split (#497/#508) moved most of the app into `ClimbMatchCore.jsx` and
+    `RouteDetail.jsx` while `check:refs`/`check:hooks` still named only the entry files, so
+    for a week the guard that exists to stop production blank screens read **24% of the app**.
+    The repair added the names and then filtered the list with
+    `.filter(f => fs.existsSync(...))` — so a renamed file still did not fail the guard, it
+    dropped out of the list and the run went green on what was left. A missing required
+    source is now **fatal**, never a quietly shorter list.
+  - Walking the tree is the safer design and every newer guard does it, but it fails open in
+    the other direction: a `SKIP` list that grows, a moved root, or an extension filter that
+    stops matching yields `[]`, and every "no findings" check then passes **vacuously**.
+  - `check:writes` had a second, closer instance. Its write vocabulary is derived at runtime
+    from `export async function <name>` in `lib/db.js` — good design, because a new write is
+    covered without editing the guard — but every check begins "is this a known write?", so an
+    **empty** set makes each one return early. Measured, not argued: with the vocabulary
+    emptied it printed `ok — no write failure is swallowed` and exited **0**. Only a style
+    change in `db.js` (to `export const x = async () =>`) is needed to cause that.
+  - Same family as `check:dead-flag-gates` printing **ok** having loaded no files, and
+    `check:overlay-scroll`'s anchor-lost case exiting 0 having verified nothing: a guard you
+    believe you have and do not.
+  - Injection-tested: adding a bogus name to `REQUIRED` fails **all nine** guards, each naming
+    the missing file and its own file count; breaking the `db.js` vocabulary regex fails
+    `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
+    `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.

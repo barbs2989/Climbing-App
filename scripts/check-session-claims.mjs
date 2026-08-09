@@ -25,6 +25,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -48,7 +49,7 @@ const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only t
 
 function scan() {
   const found = new Map();
-  for (const rel of sources(ROOT)) {
+  for (const rel of assertCovered(sources(ROOT), ROOT, "check:claims")) {
     const code = fs.readFileSync(path.join(ROOT, rel), "utf8");
     if (!code.includes("showToast")) continue;
     let ast;

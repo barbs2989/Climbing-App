@@ -35,6 +35,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -62,12 +63,24 @@ const WRITES = new Set(
     .filter((n) => /^(create|update|delete|add|remove|log|give|revoke|submit|insert|set|mark|ack|unack|invite|claim|verify|upload|approve)/i.test(n))
 );
 
+// Deriving the vocabulary from db.js is the right design, but it fails open: every check
+// below starts with "is the .catch()'d call a known write?", so an EMPTY set makes each
+// one return early and the run reports "no write failure is swallowed" having examined
+// nothing. That needs only a style change in db.js to happen — the regex matches
+// `export async function x`, not `export const x = async () =>`.
+if (!WRITES.size) {
+  console.error("\ncheck-writes FAILED — no write functions were found in lib/db.js.");
+  console.error("The vocabulary is matched as `export async function <name>`; if db.js now");
+  console.error("exports writes some other way, this check silently verifies nothing.\n");
+  process.exit(1);
+}
+
 const isEmptyFn = (n) =>
   n && (n.type === "ArrowFunctionExpression" || n.type === "FunctionExpression") &&
   n.body && n.body.type === "BlockStatement" && n.body.body.length === 0;
 
 const findings = [];
-for (const file of walk(ROOT)) {
+for (const file of assertCovered(walk(ROOT), ROOT, "check:writes")) {
   const src = fs.readFileSync(file, "utf8");
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true }); }

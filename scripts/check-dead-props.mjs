@@ -35,6 +35,7 @@ import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -53,6 +54,7 @@ const files = [];
     else if (p.endsWith(".jsx")) files.push(p);
   }
 })(ROOT);
+assertCovered(files, ROOT, "check:dead-props");
 
 const asts = [];
 for (const file of files) {
