@@ -11,6 +11,7 @@
     "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:dead-props": "node scripts/check-dead-props.mjs",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
+    "check:migration-claims": "node scripts/check-migration-claims.mjs",
     "check:overlays": "node scripts/check-overlay-portals.mjs",
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",

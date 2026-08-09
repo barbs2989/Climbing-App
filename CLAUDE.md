@@ -26,6 +26,7 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
+npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run audit:area-parents # is every area filed under the place it belongs to?
 ```
 
@@ -387,6 +388,31 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+- **`check:migration-claims`** asks whether two **open PRs** claim the same migration
+  number. `check:migrations` already refuses two files sharing a number in the checkout and
+  runs inside `npm run build` — but it cannot see this failure, because when either PR is
+  written there is no duplicate to find: each branch holds exactly one `0103`, and the
+  collision only exists once the second one merges. On 2026-08-09 **#728 and #727 merged
+  three seconds apart**, both green, and main stopped building — `check:migrations` is a
+  build gate, so **every deploy was blocked** until #737 renumbered the file. Later that day
+  #752 and #753 both claimed 0108 *and* 0109; that one was survived only because somebody
+  looked.
+  - The recorded lesson had been "checking open PRs before numbering is not enough, the other
+    PR may not be open yet" — which is an argument for asking at **merge** time rather than
+    authoring time. This re-asks on every PR run against whatever is open right now.
+  - It fails **both** PRs, deliberately: they cannot both merge as they are, and naming only
+    one would be picking a winner the script has no basis to pick.
+  - **Fails closed with no token** — "nothing was checked" is reported as a failure, never as
+    a pass. Same reasoning as `check:counts` refusing an empty read: the realistic failure
+    mode of this guard is a false green about a repo it never looked at.
+  - Compares against the **merge base**, not the working tree. On a PR the checkout already
+    contains the branch's own new migration, so comparing against the tree would make every
+    PR collide with itself.
+  - Not in `npm run build` (network + token). Runs on every PR as its **own job** in
+    `build-check.yml`, so a failure reads as "Migration numbers are unclaimed" rather than
+    hiding in a build log.
+  - Injection-tested; the four cases are named at the bottom of the script and are driven by
+    `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
