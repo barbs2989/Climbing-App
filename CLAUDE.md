@@ -79,7 +79,7 @@ a build error, but a screen that renders wrong or not at all.
   Chen 11 rows, Alex Torres 8, Jordan Park 7 … and "Nathan Barber", the seed `ME`). Two real
   identities collide with them: **`ME`**, whose `id` is *never* reassigned — it is `0` signed
   in or out — while `ME.name` becomes the real account's profile name; and a **DB-backed
-  friend**, a uuid that the friends list hands to `FullProfile`. Before #726 a real account
+  friend**, a uuid that the friends list hands to `FullProfile`. Before #735 a real account
   named "Nathan Barber" saw *Angels Landing, Oct 2024, Summit, 5★* on its own résumé. Not
   cosmetic: three `Leaderboards` badges (`classics_b`, `highpoints_b`, `peaks_b`) **count**
   those rows and `me` is in the pool whenever `showOnRanks` is set, so a collision **scores**.
