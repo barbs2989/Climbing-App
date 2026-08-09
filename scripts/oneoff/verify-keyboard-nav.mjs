@@ -12,25 +12,31 @@ const claimPort = () => new Promise((res) => {
   s.listen(0, "127.0.0.1", () => { const p = s.address().port; s.close(() => res(p)); });
 });
 
+// --url points the same walk at the deployed site instead of a dev server, so "it works"
+// can mean production rather than this checkout.
+const URL_ARG = (() => { const i = process.argv.indexOf("--url"); return i >= 0 ? process.argv[i + 1] : null; })();
+
 const port = await claimPort();
 // Same spawn as check:ui, which drives this app's dev server successfully. Two details
 // are load-bearing and were the reason my first two attempts timed out in Chrome while
 // Node's fetch to the same URL succeeded: --host pins the interface, and the prewarm
 // below compiles the ~1.5MB entry module BEFORE the browser asks for it.
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
+const server = URL_ARG ? null : spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
   stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" },
 });
-const base = `http://127.0.0.1:${port}/Climbing-App/`;
+const base = URL_ARG || `http://127.0.0.1:${port}/Climbing-App/`;
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-let up = false;
-for (let i = 0; i < 120; i++) {
-  try { const r = await fetch(base); if (r.ok) { up = true; break; } } catch {}
-  await wait(500);
+if (!URL_ARG) {
+  let up = false;
+  for (let i = 0; i < 120; i++) {
+    try { const r = await fetch(base); if (r.ok) { up = true; break; } } catch {}
+    await wait(500);
+  }
+  if (!up) { console.error("dev server never came up"); server.kill(); process.exit(1); }
+  // Compile the entry module before the browser asks, or Chrome times out on goto.
+  await fetch(base + "ClimbMatch.jsx").catch(() => {});
 }
-if (!up) { console.error("dev server never came up"); server.kill(); process.exit(1); }
-// Compile the entry module before the browser asks, or Chrome times out on goto.
-await fetch(base + "ClimbMatch.jsx").catch(() => {});
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
@@ -99,7 +105,7 @@ try {
   }
 } finally {
   await browser.close();
-  server.kill();
+  if (server) server.kill();
 }
 
 if (fails.length) { console.error("\nFAIL:\n" + fails.map((f) => "  - " + f).join("\n") + "\n"); process.exit(1); }

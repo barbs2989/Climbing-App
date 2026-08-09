@@ -509,6 +509,42 @@ try {
     }
   }
 
+  // ---- step 9b: the float plan lists the people who are actually going -------------------
+  // safetyMembers built its roster with CLIMBERS.find(...).filter(Boolean), which DROPS
+  // anyone the seed array does not know. For a real crew that silently removed the partner
+  // and left a float plan naming only you. Not a cosmetic bug: this screen is the one that
+  // says who is on the mountain.
+  if (!memConfirmed) {
+    record("the safety plan lists the real partner", "blocked", "no crew with two members");
+  } else if (!(await goTab(pageA, "Crew", "My Crews"))) {
+    record("the safety plan lists the real partner", "blocked", "A could not reach the Crew tab");
+  } else {
+    const sp = pageA.getByRole("button", { name: /^Safety plan/i }).first();
+    if (!(await sp.count())) {
+      record("the safety plan lists the real partner", "blocked", `no "Safety plan" control on A's crew card. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+    } else {
+      await sp.scrollIntoViewIfNeeded();
+      await sp.click();
+      await pageA.waitForTimeout(4000);
+      const t = await snap(pageA, "A:safety-plan");
+      const bFirst = B.name.split(" ")[0];
+      // Confirm we are on the safety screen before judging an absence — otherwise a screen
+      // that never opened reads as "the partner is missing".
+      if (!/float plan|safety|who.s going|party/i.test(t)) {
+        record("the safety plan lists the real partner", "blocked", "could not confirm the safety screen opened, so an absent name proves nothing");
+      } else if (t.includes(bFirst)) {
+        record("the safety plan lists the real partner", "ok");
+      } else {
+        record("the safety plan lists the real partner", "defect", `the float plan for a two-person crew never names ${bFirst} — safetyMembers resolves ids against the seed CLIMBERS array and drops everyone it cannot match, so a real partner is silently left off the plan that says who is on the mountain`);
+      }
+      // The safety plan REPLACES the crew list, so leaving it open cost the next step its
+      // precondition and the chat check reported "no Crew chat button" — a scaffold failure
+      // wearing the costume of a product one. Walk back out.
+      const back = pageA.getByRole("button", { name: /Back to crews/i }).first();
+      if (await back.count()) { await back.click(); await pageA.waitForTimeout(3000); }
+    }
+  }
+
   // ---- step 10: the two of them can actually talk ---------------------------------------
   if (!memConfirmed) {
     record("A and B can message inside the crew", "blocked", "they are not in a crew together");

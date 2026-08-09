@@ -149,7 +149,7 @@ function StatePicker({ onPick, C }) {
         <option value="">{isLoading ? "Loading states…" : (states && states.length) ? "Select a state…" : error ? "Couldn’t load states" : "No states found"}</option>
         {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
-      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Use a route or crag Route finder to filter and search by type, grade, stars and more.</div>
+      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
@@ -217,7 +217,10 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   );
 }
 
-// ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
+// ── one area's own page: hero + save + View all/View map/Objectives + sub-areas ──
+// "View all N routes" IS the route finder, opened unfiltered — the finder's own default
+// state is every route in the subtree. There used to be a second "Route finder" button in
+// the row below wired to the identical handler, i.e. the same screen under two names.
 function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
@@ -264,7 +267,6 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
       ) : null}
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>View map</button>
-        <button onClick={onFinder} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Route finder</button>
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
