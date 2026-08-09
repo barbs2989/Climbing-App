@@ -6484,3 +6484,74 @@ for all eight routes; North Cascades NP backcountry permit fee text (both Nooksa
 Whatcom Peak); Northwest Forest Pass fee text and land-manager info for the Washington Pass
 routes and Cutthroat Peak -- see the researching agents' reports for full per-route detail (not
 reproduced here to keep this log terse).
+
+---
+
+## 2026-08-09 — Pass 2, Batch 94
+
+Eight peaks, 8 routes: North Ridge (Primus Peak); Northeast Buttress (Colchuck Peak); Northeast
+Face Direct (Mount Formidable); Northeast Ridge/1963 Route (Johannesburg Mountain); Northwest
+Arete (Argonaut Peak); Northwest Buttress (Sloan Peak); Northwest Face (Kangaroo Temple);
+Northwest Face/Falcon Route (Little Big Chief Mountain).
+
+**Confirmed errors -> fixes in `sql/2026-08-09-batch-94.sql`:**
+- Primus Peak's North Ridge carried an internal date contradiction: the route's own `fa` field
+  and `overview` text both said Mark Bebie's first ascent was 1986, but its `beta` field said
+  "September 7, 1987." AAC Publications' AAJ 1987 volume (Washington-Cascades section) carries
+  the trip report for this exact solo ascent -- AAJ annuals report the PRIOR year's climbs, and
+  other Bebie entries in the same 1987 volume are independently dated 1986, confirming the
+  editorial pattern. Corrected the `beta` field's year only; `fa`/`overview` were already right.
+- Kangaroo Temple's Northwest Face stored `pitches = 5`, but its own `pitch_detail` array (P1-P5)
+  stopped one pitch short of what its own `rope_note` field said ("6-pitch 5.7+ face route").
+  Mountain Project, Mountaineers.org, and a Spokalpine trip report all independently give 6
+  pitches. Fixed the scalar `pitches` field; did not fabricate a P6 entry for `pitch_detail`
+  (grade/notes for the missing pitch aren't sourced) -- flagged below instead.
+- Little Big Chief Mountain's Northwest Face (Falcon Route) `approach` text named "Dutch Miller
+  Gap Trailhead" as the drive-to starting point, but a USFS gate installed in 2007 ended vehicle
+  access there -- the real modern drive-to point is Dingford Creek Trailhead, which this same
+  route's own `waypoints` field already names correctly. Confirmed via WTA trip reports and USFS
+  trailhead pages; the stored 14-15 mile approach figure is consistent with measuring from
+  Dingford Creek, reinforcing it as the actual described start. Corrected the `approach` text.
+
+**Flagged for human review (not auto-fixed):**
+- Kangaroo Temple's `pitch_detail` array is missing its 6th pitch (see above) -- needs a sourced
+  grade/description for P6, not a guess.
+- Argonaut Peak's Northwest Arete `access` object (fees/notes/permit/closures/parking_pass) all
+  describe a completely different, unrelated approach (Ingalls Creek/Longs Pass from the
+  Teanaway, non-quota) than the one this route actually uses -- its own `approach` text,
+  `waypoints`, `road`, and top-level `permit` field all consistently describe the Stuart Lake
+  Trailhead / Enchantment Permit Area approach instead. The mismatch looks like content
+  copy-pasted from a different Teanaway-area route. Not auto-fixed: correcting it means
+  replacing five JSON keys and the exact current Enchantment quota-permit cost figures weren't
+  independently re-confirmed this pass, so a guessed dollar amount risked introducing a new
+  error rather than fixing one.
+- Primus Peak's stored prominence (843 ft) matches neither Wikipedia (828 ft) nor PeakVisor
+  (856 ft) and those two disagree with each other by 28 ft; the actual authoritative prominence
+  databases (ListsOfJohn/Peakbagger) weren't reachable this pass.
+- Colchuck Peak's Northeast Buttress FA remains genuinely undocumented after another dedicated
+  search (Beckey's guide references, Mountain Project, SummitPost, AAI, CascadeClimbers, AAJ) --
+  the route's existing "not documented, pending a source" stance is accurate and was left as-is.
+- Johannesburg Mountain's Northeast Ridge (1963 Route) FA party is likewise still unsourced
+  after a dedicated search; also unable to independently re-verify its stored grade/pitch
+  count/length (5.7+, IV, 12 pitches, ~4,000 ft) due to source-access limits this pass.
+- Mount Formidable's Northeast Face Direct: FA surname ambiguity in what could be retrieved
+  ("Loren Campbell" vs. "Loren Klubberud") couldn't be resolved without reading the primary
+  SummitPost/AAJ text directly; stored pitch count (11) falls within SummitPost's own titled
+  range ("8-12 Pitches") but isn't independently pinned down.
+- Sloan Peak's Northwest Buttress FA ("M. Preiss & M. Bunker, 2000") could be neither confirmed
+  nor contradicted -- no source found supports the previously-corrected "2020" either, so the
+  route's existing hedged stance is left as-is. Bedal Creek Trailhead's exact coordinates also
+  came back inconsistent across sources and weren't resolved.
+- Little Big Chief's FA: AAC Publications confirms Jeff Hansell and the September 10, 2001 date,
+  but "Martin Volken" as the second climber wasn't independently re-confirmed (no source found
+  contradicting it either).
+
+**Clean:** grade/pitch data, elevation, and coordinates for all eight peaks/routes (Primus 8,508
+ft; Colchuck 8,705 ft; Formidable 8,325 ft; Johannesburg 8,200 ft; Argonaut 8,457 ft; Sloan 7,835
+ft; Kangaroo Temple 7,572 ft; Little Big Chief 7,225 ft -- all matched independent sources);
+permit/land-manager text for Primus, Colchuck, Formidable, Johannesburg, Sloan, and Little Big
+Chief; FA party/date for Formidable (month/year), Argonaut (peak's own FA, separate from this
+route), Kangaroo Temple (Beckey brothers 1942, confirmed specific to this route, not just the
+peak); descent-route descriptions for Colchuck, Johannesburg, and Kangaroo Temple -- see the
+researching agents' reports for full per-route detail (not reproduced here to keep this log
+terse).
