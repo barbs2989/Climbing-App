@@ -221,7 +221,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
 // "View all N routes" IS the route finder, opened unfiltered — the finder's own default
 // state is every route in the subtree. There used to be a second "Route finder" button in
 // the row below wired to the identical handler, i.e. the same screen under two names.
-function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
+function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested , onAddClimb}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -270,6 +270,14 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
+      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
+          behind `selArea`, which is null under USE_DB — so on every real area page the
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in. */}
+      {onAddClimb ? (
+        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
 
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
@@ -751,7 +759,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -856,7 +864,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} uElev={uElev} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
+        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
