@@ -74,7 +74,7 @@ function DbTopContributors({ areaId, C, ActionIcon }) {
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [areaName || null, r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " on the cliff" : null].filter(Boolean).join(" · ");
+  const sub = [areaName || null, r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div onClick={() => onOpen(r)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -248,7 +248,7 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
           <div style={{ fontSize: 19, fontWeight: 700, color: C.text }}>{area.name}</div>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
         </div>
-        <div style={{ fontSize: 12, color: C.textSub }}>{area.region}{area.elevation_ft ? " · " + (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : ""}{area.prominence_ft ? " · " + (uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom" : ""}</div>
+        {(() => { const parts = [area.region && area.region !== area.name ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null].filter(Boolean); return parts.length ? <div style={{ fontSize: 12, color: C.textSub }}>{parts.join(" · ")}</div> : null; })()}
         {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
         {area.source === "approx-picket-range" ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin and any distance shown are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
