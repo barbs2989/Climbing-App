@@ -34,6 +34,7 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -120,6 +121,22 @@ const MAX_DISCLOSURES = 4;
 const log = (...a) => console.log(...a);
 const fails = [];
 const fail = (screen, msg) => fails.push(`${screen}: ${msg}`);
+
+// Cheap, browserless, and runs before anything is spawned: confirm the spinner pattern the
+// settle helper uses still matches the app's own loading strings. It cannot prove coverage
+// of a spinner worded some new way -- see the note in render-settle.mjs -- but it does stop
+// SPINNER_RE being narrowed until it silently matches nothing.
+try {
+  // ROOT, not cwd. The tool check:field-renders replaced measured a different worktree
+  // than the one you ran it in; a scan that resolves its own sources relative to the
+  // script cannot drift that way.
+  const cov = spinnerCoverage(ROOT);
+  if (cov.uncovered.length) {
+    for (const [s, f] of cov.uncovered) fail("spinner-coverage", `${JSON.stringify(s)} in ${f} is no longer matched by SPINNER_RE, so a screen showing it reads as settled`);
+  }
+} catch (e) {
+  fail("spinner-coverage", `${e.message}`);
+}
 
 async function waitForServer(url, tries = 60) {
   for (let i = 0; i < tries; i++) {
@@ -312,13 +329,10 @@ async function sweepInteractive(tab) {
 
 async function capture(name) {
   pageErrors.length = 0;
-  await page.waitForTimeout(900);
-  // Wait out any async data fetch so we assert on the screen, not its spinner.
-  for (let i = 0; i < 25; i++) {
-    if (!/Loading climbs|Loading…/.test(await page.innerText("body"))) break;
-    await page.waitForTimeout(1500);
-  }
-  const text = await page.innerText("body");
+  // Wait out any async data fetch so we assert on the screen, not its spinner -- and out of
+  // a screen that is merely slow, which the old two-literal poll did not cover at all.
+  // See scripts/lib/render-settle.mjs.
+  const text = await settledText(page, { min: 30, timeout: 45000 });
   screens[name] = text;
   const min = MIN_CHARS[name] ?? MIN_CHARS.default;
   if (text.length < min) fail(name, `rendered only ${text.length} chars (min ${min}) — blank or broken screen`);
@@ -395,7 +409,7 @@ try {
   await page.waitForTimeout(3000);
 
   await tap("Climbs");
-  for (let i = 0; i < 25; i++) { if (!/Loading climbs/.test(await page.innerText("body"))) break; await page.waitForTimeout(1500); }
+  await settledText(page, { min: 30, timeout: 45000 });
   // Ask the app which catalog it is actually serving, rather than inferring it from
   // local env that does not apply to a remote target. The DB picker lists plain
   // "Washington"; the seed one lists "Utah · 10 climbs".
