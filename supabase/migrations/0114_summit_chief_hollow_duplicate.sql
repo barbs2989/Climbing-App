@@ -1,4 +1,4 @@
--- 0110 (numbered 0108 when it was pasted): Summit Chief existed twice — a hollow stub 20 m from the real summit.
+-- 0114 (pasted as 0108, briefly 0110): Summit Chief existed twice — a hollow stub 20 m from the real summit.
 --
 -- The last unresolved hit from the WA area-parent audit (0106 / 0107, PR #736), and the
 -- only one of the four metres-apart duplicates outside Washington Pass and the Pickets.

@@ -111,7 +111,7 @@ route ("Plan 9 from Outer Space"), not a stub.
 
 ---
 
-## FIXED in `0110` (Summit Chief)
+## FIXED in `0114` (Summit Chief)
 
 `wa_summit_chief` (crag, 0 routes, no elevation, no children) sits **20 m** from
 `wa_summit_chief_mountain` (peak, 2 routes, 7,467 ft / 1,323 ft prominence). One mountain,

@@ -1,7 +1,7 @@
 -- 0111: file the Snoqualmie / Alpine Lakes peaks where Mountain Project files them.
 --
 -- Requested directly: "do how mountain project does it". Same shape as 0105 did for Mount
--- Index, and it starts by correcting something 0110 asserted.
+-- Index, and it starts by correcting something 0114 asserted.
 --
 -- ── WHAT WAS WRONG ───────────────────────────────────────────────────────────
 -- Three sibling regions cover one stretch of terrain under Central-West Cascades:
@@ -17,15 +17,15 @@
 -- repaired at Washington Pass and the Pickets. Its 30 peaks were never distributed into
 -- the MP tree, so peaks and crags of the same terrain sat in parallel regions.
 --
--- ── A CORRECTION TO 0110 ─────────────────────────────────────────────────────
--- 0110 deleted the hollow `wa_summit_chief` stub and stated that Summit Chief Mountain was
+-- ── A CORRECTION TO 0114 ─────────────────────────────────────────────────────
+-- 0114 deleted the hollow `wa_summit_chief` stub and stated that Summit Chief Mountain was
 -- "already filed with its actual neighbours" in wa_snoqualmie_i90_region. **That was
 -- wrong.** MP lists "Summit Chief" as a sub-area of Western Alpine Lakes, and MP's own
 -- description of that region names it explicitly: "The Cascade Crest north of Snoqualmie
 -- offers the spires of Chimney Rock and Summit Chief". So the deleted stub had been in the
 -- RIGHT region and the populated peak is the one misfiled. Deleting the stub was still
 -- correct -- it held no routes, no children, no elevation -- but the peak needed a move,
--- and it gets one below. Nothing from 0110 needs undoing.
+-- and it gets one below. Nothing from 0114 needs undoing.
 --
 -- ── HOW THE TARGETS WERE DECIDED ─────────────────────────────────────────────
 -- By reading MP's two sub-area listings and matching on NAME, not by coordinates. Every
