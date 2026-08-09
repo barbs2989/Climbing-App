@@ -20,6 +20,7 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
+npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -582,6 +583,25 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:contrib-fields`** asserts that every field a climber can submit is a field the
+  merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
+  by both merge paths (the local `routeEdits` one and the DB one that counts distinct
+  contributors). A key offered by `SuggestFix` and absent from `SS` is accepted, toasted as
+  recorded, written to the `contributions` table, and then read by nothing — the climber gets
+  a success message and the route never changes. Static, so it sits in `npm run build`.
+  - **Two submission paths, and checking only one was this guard's own first-draft bug.**
+    Besides the `FIELDS` list, `RouteDetail` calls `onSubmit` with a literal field name; that
+    is how `bailout` and `startLocation` are filed, and neither is in `FIELDS`, so a
+    FIELDS-only scan cannot see that path at all. Those two are the only `EXEMPT` names,
+    because `onContribute` returns before the field-edit path for them (they are additive,
+    geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
+    exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
+    being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
+    or `var SS={` is renamed — an empty set on either side would make every comparison pass
+    vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
+  - Injection-tested; the 4 cases are named at the bottom of the script.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
