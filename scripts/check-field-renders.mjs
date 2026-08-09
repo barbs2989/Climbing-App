@@ -255,8 +255,20 @@ const KNOWN = {
   // "partial — 1/5 leaves shown": only .avalanche.byMonth is consumed, and only when the area
   // has an avyZone. That was always the recorded reason, so the finding has not changed — but
   // "partial" is reported by the PARTIALLY SHOWN section, and KNOWN is keyed on NEVER RENDERS,
-  // so leaving it here just makes the allowlist read stale. The other 4 sub-keys still have no
-  // reader and need a home before they are useful.
+  // so leaving it here just makes the allowlist read stale.
+  //
+  // The other 4 sub-keys have no reader, and 2026-08-09 that was MEASURED rather than left as
+  // "needs a home" (scripts/oneoff/measure-seasonal-hazard-overlap.mjs, 505 routes). Against
+  // the text the route already shows (watch_out, hazards, obj_haz, climate, season):
+  //     exposure            502 routes · 40% word overlap · 13 new content words
+  //     weather.typical     495 routes · 48% overlap · 8 new words
+  //     weather.probability 448 routes · 39% overlap · 9 new words
+  //     crevasses           293 routes · 39% overlap · 10 new words
+  // The enrichment cross-references its neighbours on purpose ("already flagged in on-file
+  // hazards/watch_out"), so four new prose blocks would buy ~40 content words, half of them a
+  // rephrase of WATCH OUT. DECIDED: do not give these a home. Unlike descent_text (#707) or
+  // what_to_bring (#732), which said something nothing else did, this is an upstream dedup
+  // problem — fix it in enrichment, not by growing the route screen.
   // what_to_bring was here recorded "Unconfirmed", and confirming it CONFIRMED it — the guard
   // was right and the recorded reason was wrong. The items were not "being filtered": the
   // filtered list `ess` was computed and then referenced in exactly one place, the early
