@@ -433,10 +433,17 @@ try {
       log(`  ${name}: skipped — ${NEEDS_EXTRA_STATE[name]}`);
       continue;
     }
-    let opened = null;
+    let opened = null, empty = null, threw = null;
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
+      // What the opener actually did, before judging the screen: a payload that resolved
+      // empty in this fixture renders nothing and reads exactly like a broken modal.
+      const d = await page.evaluate((n) => ({
+        np: (window.__overlayNoPayload || {})[n], er: (window.__overlayOpenErrors || {})[n],
+      }), name);
+      if (d.er) { threw = d.er; break; }
+      if (d.np) { empty = d.np; break; }
       // Settle on the text no longer changing. The old gate broke out of its wait the
       // moment the body passed 40 characters, which on an overlay that renders a header
       // first means it stopped waiting before the body arrived.
@@ -446,6 +453,17 @@ try {
       // would report an overlay as opened when nothing opened at all.
       const lines = openedText.split("\n").map((l) => l.trim());
       if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
+    }
+    if (threw) {
+      asserted++;
+      fail(`modal:${name}`, `the opener threw while building its payload: ${threw}`);
+      continue;
+    }
+    if (empty) {
+      // Not asserted: this account has nothing to open it about, which is a fact about the
+      // fixture, not about the modal. Counting it would overstate what was verified.
+      log(`  ${name}: skipped — payload resolved empty for this account: ${empty}`);
+      continue;
     }
     asserted++;
     if (!opened) {
