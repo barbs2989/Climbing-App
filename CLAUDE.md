@@ -20,6 +20,7 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
+npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -547,6 +548,45 @@ a build error, but a screen that renders wrong or not at all.
     having loaded nothing at all.
   - Injection-tested: reverting each of the three dead gates fails the run and names the
     line; restoring makes it green.
+
+- **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
+  `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
+  verified by hand in a browser against live federal services, and every one of those runs
+  was throwaway — while what they proved was not *rendering* (`check:ui`/`check:zero` cover
+  that) but a set of rules about what the screens may **claim**. Six of those rules had
+  already been broken at least once, and a wildfire screen is the worst place in the app to
+  quietly re-break one. Static — no browser, no dev server, and no calls to NIFC or NOAA —
+  so it sits in `npm run build`, cannot flake, and does not hammer a public federal service
+  on every commit.
+  - What it locks down, each a shipped defect: **`uDistMi` used as a boolean** (it is a
+    *formatter*, so the branch is always truthy and every metric user saw "mi" — invisible
+    to `check:dead-props` and `check:refs`, since the prop is both read and bound, and
+    imperial is the default); **`resultRecordCount` with no `orderByFields`** (the server
+    returns an arbitrary OBJECTID slice while the UI says "showing the largest", and
+    truncation is the *normal* case on the default viewport); **`onset` fetched and dropped**
+    (a Red Flag Warning starting tomorrow rendered as current danger — 15 of 48 live products
+    had a future onset); **`where: "1=1"` on the perimeters query** (prescribed burns drawing
+    as wildfires, dormant out of burn season); **`Date.parse(z.ends || 0)`** (stringifies null
+    to `"0"`, parses as the year 2000, so a product with *no* end time outranked every real one
+    and became the headline); and **`placeholderData` on the per-route query** (the key is the
+    route's coordinate, so it would print the previous route's fires under this route's heading).
+  - It also asserts the two caveats are still on screen — there is **no national closures API**,
+    so both surfaces must say so, and the per-route panel must say its distances are to the
+    fire's *reported point of origin* (a 138,000-acre fire is ~24km across, so its edge can be
+    far closer than that number).
+  - **An empty result and a failed read are checked by source ORDER, not proximity**: an error
+    branch and a `.data` read must both precede the "No active wildfires" claim. A first draft
+    used "look at the preceding 600 characters" and reported the route panel's real gate —
+    early returns 40 lines up — as missing.
+  - Injection-tested, 10/10, each naming its own defect. **Two started as false passes and both
+    were scope mistakes rather than missing rules**: the `body.error` check looked for `throw`
+    within 200 characters and found the *next statement's* throw, and the `zoneInEffect` check
+    only asked whether the name appeared in the file, so neutering the draw while leaving the
+    in-effect/upcoming split intact kept it green. Presence is not use, and proximity is not
+    scope — the `injection logged, counter didn't move` shape again.
+  - Writing it found a live gap nobody had noticed: the **fire-weather query was the one capped
+    request still going out unordered**. Size is meaningless for a weather zone, but
+    "which of these ends first" is exactly what you want to keep, so it now orders `ends ASC`.
 
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
