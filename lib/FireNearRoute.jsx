@@ -1,8 +1,11 @@
 // "Is anything burning near this climb?" — the per-route half of the Fire map.
 //
-// Sits at the top of a route's Conditions tab. The map answers "is the range on
-// fire"; this answers it for one objective, which is the question you have once you
-// have picked a line and are deciding whether to drive.
+// Sits at the top of a route's Safety tab, above the float plan and the forecast links —
+// a fire that can close an approach road is a hazard, not a description of the climb. (On a
+// route with no Safety tab, which is content-gated, RouteDetail keeps it on Overview instead
+// rather than dropping it.) The map answers "is the range on fire"; this answers it for one
+// objective, which is the question you have once you have picked a line and are deciding
+// whether to drive.
 //
 // Three honesty rules, all of them the difference between useful and dangerous:
 //
