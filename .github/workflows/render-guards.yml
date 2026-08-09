@@ -11,7 +11,7 @@ name: Render guards
 # only runs when somebody remembers is a guard you do not have.
 #
 # check:ui was the last one still in that position, and it is the broadest of them
-# — 17 screens, asserting nothing blanked, no uncaught page errors, no
+# — 20 screens, asserting nothing blanked, no uncaught page errors, no
 # NaN/undefined/[object Object] in rendered copy, and that named sections survive.
 # It sat outside CI because it was too flaky to gate on, and both causes are now
 # fixed rather than tolerated: #464 made it claim a genuinely free port instead of
@@ -79,9 +79,10 @@ jobs:
   ui-walk:
     name: The app renders on every screen
     runs-on: ubuntu-latest
-    # The slowest of the three: it walks 17 screens, opens interactive state and
-    # drills into a route detail's sub-tabs. Measured at 5m35s locally, so the 25
-    # minutes below is headroom for a slower runner, not an expected duration.
+    # It walks 20 screens, opens interactive state and drills into a route detail's
+    # sub-tabs. Measured at 5m35s locally when it walked 17; the three Crew sub-views
+    # add a little. The 25 minutes below is headroom for a slower runner, not an
+    # expected duration.
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -125,7 +126,9 @@ jobs:
   a11y-badges:
     name: No control announces a glued count
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 50 overlays since #748 widened the scaffold's discovery (was 28). This check shares
+    # that discovery, so it inherited the wider walk — and the longer runtime with it.
+    timeout-minutes: 32
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
