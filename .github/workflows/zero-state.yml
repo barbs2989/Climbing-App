@@ -1,0 +1,69 @@
+name: Zero state
+
+# Walks the app as a brand-new account sees it (npm run check:zero).
+#
+# Deliberately its own workflow rather than a step in build-check.yml. This drives a
+# real browser, so it is slower and more prone to flaking than the static guards, and a
+# flake here must not read as "the build is broken" — nor block a deploy, which is why
+# it is absent from deploy.yml for the same reason check:ui is.
+#
+# It needs no browser install: the ubuntu-latest runner image ships Google Chrome, which
+# is what playwright-core's channel:"chrome" drives. That is the whole reason this can
+# run in CI at all — playwright-core downloads no browser of its own.
+
+on:
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: zero-state-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  zero-state:
+    runs-on: ubuntu-latest
+    # A hung dev server or a browser that never launches should fail in minutes, not
+    # sit for the default six hours.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # Fail here, with a readable message, rather than inside playwright's launcher.
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:zero cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Zero state
+        run: npm run check:zero -- --dump zero-state.json
+        env:
+          # Match build-check.yml and deploy.yml. Without these USE_DB is off and the
+          # Climbs tab renders AreaView instead of DbAreaBrowser — a different app than
+          # production, so a pass would say nothing about what ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # The failure message names the screen and the offending text, but the surrounding
+      # copy is usually what tells you whether it is a real bug.
+      - name: Upload per-screen text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zero-state-screens
+          path: zero-state.json
+          if-no-files-found: warn
