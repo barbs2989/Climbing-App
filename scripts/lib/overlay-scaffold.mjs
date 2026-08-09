@@ -282,15 +282,24 @@ export function buildOpener(code, anchor, label, coreCode) {
       "(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[" + q + "]=String(e&&e.message||e);}}";
   }).join(",");
 
+  // The thunks are rebuilt EVERY RENDER and reached through a ref, not captured once in a
+  // mount effect. A payload reads live state, and the effect fires 1200ms after mount — by
+  // which point check:zero's sign-in reset has emptied `crews`. A mount-time closure built
+  // `{crewId:crews[0].id}` from the seeded value that no longer existed, so `crews.find(...)`
+  // missed and crewInvite and recapId reported "added nothing on any of 6 tabs" — a guard
+  // failure indistinguishable from a broken modal, which is the one confusion this walk must
+  // not introduce. Assigning through a ref during render keeps the payload current.
+  const names = usable.map((s) => JSON.stringify(s.name)).join(",");
   return {
     usable,
     skipped,
     inject:
-      "useEffect(function(){var M={" + map + "};" +
-      "window.__overlays=Object.keys(M);" +
+      "var __ovOpen=useRef(null);" +
+      "__ovOpen.current=function(z){var M={" + map + "};if(M[z])M[z]();};" +
+      "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
-      "if(z&&M[z])setTimeout(function(){M[z]();},1200);" +
+      "if(z)setTimeout(function(){__ovOpen.current(z);},1200);" +
       "window.__overlaysReady=true;},[]);",
   };
 }
