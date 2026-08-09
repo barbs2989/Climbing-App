@@ -6330,3 +6330,77 @@ gain/loss figures, Mount Teneriffe's land-manager correction (WA DNR, already fi
 and Kamikaze Trail's gain_ft, Mount Terror North Face's FA/grade/distance figures and West Ridge's
 description/grade, and Mount Thomson's grade/pitch-count/elevation -- see the researching agents'
 reports for full per-route detail (not reproduced here to keep this log terse).
+
+## Batch 92 (pass 2) -- 2026-08-09
+
+Eight routes across six peaks: Mount Tom (Glacier/Scramble Route), Mount Torment (South Ridge,
+Torment-Forbidden Traverse), Mount Triumph (Northeast Ridge), Cathedral Peak/Pasayten (NE Ridge,
+stored under the generic id `wa_ne_ridge`), Needle Peak (North Ridge), Snowfield Peak (Neve
+Glacier/West Ridge), and North Early Winters Spire (Northwest Corner / Boving-Pollack, stored under
+the generic id `wa_news_nw_corner`). Researched via 4 parallel agents grouped by peak. WebFetch to
+essentially every primary-source domain (nps.gov, mountainproject.com, summitpost.org,
+mountaineers.org, wikipedia.org, theCrag) was blocked by this session's egress proxy, same as every
+recent batch, so findings rest on WebSearch result snippets rather than full-page reads throughout.
+
+**Fixed (4) -> `sql/2026-08-09-batch-92.sql`:** Needle Peak's `permit` field described the North
+Cascades NP backcountry-permit system, contradicting its own `access.landManager` ("Okanogan-Wenatchee
+National Forest") and external sources placing this Dark Peak/Bonanza-ridge objective in the Glacier
+Peak Wilderness -- corrected to a free self-issue USFS wilderness permit, the same permit *type*
+already correctly stored on this batch's Cathedral Peak row, just previously wrong on this peak.
+Mount Torment's Torment-Forbidden Traverse had `alpine_grade` ('D') contradicting its own `commitment`
+('IV') and `grade` ('Grade IV, 5.6') -- a pure in-row inconsistency, confirmed against the sibling
+South Ridge row where the two fields agree -- corrected to 'IV'. Snowfield Peak's Neve Glacier/West
+Ridge had `access.notes`/`access.rules` contaminated with unrelated content: a Northwest Forest Pass
+claim naming "Mount Tom area" (a different, Olympics peak) that contradicted this row's own
+`access.passRequired`, plus Boston Basin-specific camping/group-size rules (Boston Basin is the
+Forbidden/Sahale/Eldorado corridor, not Snowfield's Highway 20/Pyramid Lake corridor) -- the wrong
+notes text was rewritten and the unrelated rules/group_limit deleted rather than guessed. North Early
+Winters Spire's NW Corner route said "six" bolted West Face rappel stations in three separate fields
+(`rappels`, `descent_text`, `pro_tips`), contradicting its own `rappel_count_note` ("four bolted, not
+six, plus one tree rappel") and a North Cascade Mountain Guides route page describing four bolted
+stations -- all three fields corrected to match.
+
+**Flagged rather than fixed (12):** Cathedral Peak's `dist_km` (27.4, one-way) looks short against its
+own waypoint data (a 20 mi trailhead-to-summit figure) and the already-confirmed 18 mi just to reach
+the pass below it -- no authoritative single trailhead-to-summit mileage found to set a specific
+correct value. Its `stars` (null) contradicts its own `corrections` field, which claims a verified
+2-star rating. Mount Triumph's `high_point_ft` (7270) conflicts with Wikipedia's 7,240+ ft, while a
+"Picket Twelve" summit list matches the stored 7270 exactly -- a genuine cross-source conflict, not a
+typo. Its area placement under `wa_picket_range` is also disputed in the climbing literature (some
+sources treat Triumph as merely adjacent to the Pickets, others as one of the "Picket Twelve"). Mount
+Tom's own `itinerary.sourceNote` cites "69.2 km/43mi" while the stored `dist_km` (33.8) and day-by-day
+itinerary both converge on 42.0 mi -- a small internal citation mismatch. Both Mount Torment routes
+store an identical `dist_km` of 4.8, which is inconsistent with each route's own waypoint distances
+(4.6 mi and 6 mi one-way respectively) and, for the traverse, its own 11.5 mi itinerary sum -- looks
+like a copy/placeholder value on one or both rows, but the correct one-way figure needs re-derivation,
+not a guess. The traverse's `high_point_ft` (8815, Forbidden Peak's elevation) disagrees with the South
+Ridge's `high_point_ft` (8120, Mount Torment's own elevation) under the same `area_id` -- both are
+individually correct for the peak they describe, but which one a "traverse" row should report needs a
+schema-intent decision, not a data fix. The traverse also self-contradicts on a waterfall-slabs
+fatality claim: `obj_haz`/`descent_text` assert it while `rappel_detail` says it was investigated and
+retracted as unsupported -- research turned up a real 2013 NPS-documented fatality in the same descent
+system (different exact wording), so the retraction itself may have been too hasty; needs a careful
+human re-review rather than either accepting or removing the claim outright. Needle Peak's area
+placement under `wa_stehekin` is questionable given it's actually Glacier Peak Wilderness/USFS land
+reached via Stehekin, not NPS Stehekin district itself -- depends on whether that branch is a
+jurisdictional or a merely-geographic bucket. Snowfield Peak's `fa` (Degenhardt & Strandberg, Aug 1931)
+is well corroborated by secondary sources for the peak generally, but no source directly confirmed the
+FA specifically climbed today's class-3/4 west-ridge finish rather than some other exit line. North
+Early Winters Spire's summit waypoint sits 50-100m from the one external coordinate found, which is
+for the shared spire massif rather than the north spire specifically. Its `dist_km` (8.4) converts
+suspiciously close to the row's own round-trip mileage rather than the required one-way value -- a
+likely convention error, but per this codebase's standing caution against ad hoc edits to `dist_km`,
+routed to `audit:distances` for review rather than a manual SQL fix. Its area path segment
+`wa_hwy20_ncnp` may misleadingly imply NPS jurisdiction for a peak confirmed (by this row's own access
+data) to sit entirely in Okanogan-Wenatchee National Forest.
+
+**Clean:** elevation/coordinates for Mount Tom, Mount Torment, Cathedral Peak, and Snowfield Peak (all
+matched published figures/coordinates closely); Mount Tom's FA, grade, and trail waypoint mileages;
+Mount Triumph's FA, technical grade hedge, and permit/contact info; Mount Torment South Ridge's FA,
+grade, gain/loss, and permit text; the traverse's FA (confirmed to be the *same* 1958 Cooper/Sellers
+event as the South Ridge, not a separate ascent, resolving the audit's initial suspicion) and its 2026
+NPS reservation-lottery details; Cathedral Peak's permit type and area nesting; Needle Peak's entire
+FA/beta narrative (near-verbatim corroborated by an AAC Publications account of the same trip); North
+Early Winters Spire's FA, grade, and permit/land-manager text (correctly distinguished from Snowfield's
+NPS regime) -- see the researching agents' reports for full per-route detail (not reproduced here to
+keep this log terse).

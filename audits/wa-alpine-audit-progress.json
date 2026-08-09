@@ -2,8 +2,8 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_thomson_west_ridge",
-  "total_in_scope_last_count": 526,
+  "last_processed_id": "wa_news_nw_corner",
+  "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
     {
@@ -2096,6 +2096,25 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-09-batch-91.sql",
       "note": "Closes out Mount Stuart (west_ridge was its last unaudited route) and covers all of Mount Teneriffe, Mount Terror, and Mount Thomson."
+    },
+    {
+      "batch_number": 92,
+      "date": "2026-08-09",
+      "route_ids": [
+        "wa_mount_tom_scramble",
+        "wa_mount_torment_south_ridge",
+        "wa_mount_torment_torment_forbidden_traverse",
+        "wa_mount_triumph_northeast_ridge",
+        "wa_ne_ridge",
+        "wa_needle_peak_north_ridge",
+        "wa_neve_glacier_west_ridge",
+        "wa_news_nw_corner"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 12,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-09-batch-92.sql",
+      "note": "Covers Mount Tom, Mount Torment (both routes), Mount Triumph, Cathedral Peak (Pasayten, id wa_ne_ridge), Needle Peak, Snowfield Peak, and North Early Winters Spire (id wa_news_nw_corner)."
     }
   ]
 }
