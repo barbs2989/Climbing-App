@@ -41,7 +41,8 @@
     "check:counts": "node scripts/check-area-counts.mjs",
     "check:field-renders": "node scripts/check-field-renders.mjs",
     "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs",
-    "check:fire": "node scripts/check-fire.mjs"
+    "check:fire": "node scripts/check-fire.mjs",
+    "check:anniversary": "node scripts/check-anniversary.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

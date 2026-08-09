@@ -25,6 +25,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
@@ -411,6 +412,51 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
+  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  `mergedNotifs` beside four live sources hid that completely: the notification list worked,
+  so nothing looked wrong. It now derives from the user's real `logs`.
+  - **Nothing rendered it afterwards, and nothing easily could, because the feature is
+    date-gated.** `_anniv` only fires for a log whose yearly anchor is within **two days** of
+    today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
+    it renders nothing, and every other guard walks the app on one of those days. A feature
+    invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
+    computed at config load so it never rots. The date is built in **local** time, because
+    `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off
+    west of Greenwich and would still pass the ±2-day gate while proving less than it claims.
+    Feb 29 needs no special case — `"2027-02-29T12:00:00"` parses to Mar 1, one day off, still
+    inside the window (measured, not assumed).
+  - The injected entry is a **clone of the seed entry with only its date rewritten**, lifted
+    out of the source by balancing braces rather than hand-written. A hand-written literal is a
+    second copy of a shape that lives elsewhere: add a field to the seed log and the clone
+    silently stops matching, and `logs` also feeds `Resume`, `TickList` and `_pastClimbs`. The
+    brace walk runs over **raw source but skips string contents** — the opposite care from
+    `check:overlay-discovery`, which must not blank strings; here a `{` *inside* a string must
+    not be counted or the walk ends in the wrong place, truncating the literal mid-prose.
+  - It refuses to run a probe that cannot fire: if the date rewrite is a no-op, the config
+    throws rather than injecting an entry carrying the original date.
+  - Checks **both** surfaces that render `mergedNotifs` (the notifications panel and Home's
+    alerts dropdown), because #713's defect was invisible precisely *because* the list around
+    it worked — "some notification rendered" is not the question. It asserts the head **and**
+    the tail of the composed string, so a truncation fails; it does not assert the route name,
+    which resolves differently on seed vs `USE_DB` and would go red for reasons that are not
+    this feature's fault.
+  - **Browserless self-tests run first**, because both helpers fail by producing a *wrong
+    probe* rather than an error, and a wrong probe fails the browser assertions — sending
+    whoever reads it hunting for a bug in the feature that does not exist. They cover the
+    calendar cases a single run cannot (a run only ever exercises today) and, with a synthetic
+    entry, the brace-in-a-string case **real data does not exercise**: the seed prose happens
+    to contain no braces today, so nothing else would notice that logic breaking.
+  - What a pass does **not** mean: that the date arithmetic is right for every calendar case.
+    The probe sits one year back to the day, the easy case. It proves the path from `logs` to
+    the screen is not severed, which is the failure that actually shipped.
+  - Injection-tested, three cases: dating the probe outside the ±2-day window fails on both
+    surfaces (so the check is **not** vacuous — it depends on the injection doing its job);
+    reverting `_anniv` to `MY_CLIMBS.map` fails; breaking the opener anchor fails on the
+    58-character boot shell rather than passing over a blank app.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
