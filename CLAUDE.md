@@ -19,6 +19,7 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
+npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 ```
@@ -199,7 +200,35 @@ a build error, but a screen that renders wrong or not at all.
     only thing that gave it away.
   - Failures print a **locator** (the element's inline style), because in a codebase with no
     class names a failure without one sends you hunting through a 40,000-character line.
-  - Not in `npm run build` and not in CI — browser automation, same reasoning as `check:ui`.
+  - Not in `npm run build` — browser automation, same reasoning as `check:ui`. It **does** run
+    on every PR, via `.github/workflows/render-guards.yml`, and that is not decoration: it was
+    hand-run only until 2026-08-09, by which point it had **already gone red on main** and
+    nobody knew (#724, the guide application sheet). A guard that runs only when somebody
+    remembers is a guard you do not have.
+- **`check:field-renders`** asks, for every enriched `routes` column, whether its value ever
+  reaches a screen. A column can be mapped in `dbRouteToCamel`, offered in the fix form, and
+  displayed **nowhere**: `descent_text` was populated on 1,021 routes and rendered on none
+  while the form invited climbers to write into it (#707). Grep cannot find that — every
+  identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
+  column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
+  Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
+    `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
+    different branch's code than the one you ran it in.
+  - **Six ways this kind of probe reports a healthy column as dead.** All six were live in the
+    first drafts and the count went 15 → 3 as each was fixed, so distrust a first run: a
+    hardcoded root; too few sub-tabs (`climate` renders on *conditions*); rendering
+    `<RouteDetail/>` alone when `ClimbMatch.jsx` also mounts sibling panels that own whole
+    columns (`EnrichmentPanels` owns crowds/partner_requirements/seasonal_guidance/data_quality,
+    `EmergencyRescueCard` owns emergency); one discipline base, when `RouteGearCheck` is
+    `cragOnly`; testing only the longest string leaf, which condemns a column over one hidden
+    sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
+    with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
+    verbatim though the column drives the screen.
+  - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
+    fails as stale bookkeeping.
+  - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
+    long-beta block fails naming `beta`.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
