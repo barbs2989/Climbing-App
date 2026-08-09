@@ -163,7 +163,7 @@ const load = async (qs, settle) => {
 const TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
 const seen = new Map();       // overlay name -> finding rows
 const notReached = [];
-let checkedOverlays = 0, checkedScrollers = 0;
+let checkedOverlays = 0, checkedScrollers = 0, noPayload = 0;
 
 // Warm once so the first real navigation is not paying for the module graph.
 await load("?zt=today", 2500);
@@ -195,11 +195,21 @@ for (const name of overlays) {
     log(`  ${name}`.padEnd(26) + "skipped — " + NEEDS_EXTRA_STATE[name]);
     continue;
   }
-  let landed = null;
+  let landed = null, empty = null;
   for (const t of TABS) {
     await load(`?zt=${t}&z=${name}`, 2200);
+    // A payload that resolved empty in the seeded demo (no groups or events — both sit
+    // behind DEMO_FILLERS, which is permanently false) mounts nothing, and would otherwise
+    // be counted against the opener as if the scaffold were broken.
+    const d = await page.evaluate((n) => (window.__overlayNoPayload || {})[n], name);
+    if (d) { empty = d; break; }
     const r = await scan();
     if (r.roots > 0) { landed = { tab: t, ...r }; break; }
+  }
+  if (empty) {
+    log(`  ${name}`.padEnd(26) + "skipped — nothing to open it about in the demo: " + empty);
+    noPayload++;
+    continue;
   }
   if (!landed) { notReached.push(name); continue; }
   checkedOverlays++;
@@ -225,7 +235,7 @@ if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors
 // Second half of the same guard: the app can boot while the OPENER half of the scaffold is
 // broken, in which case every overlay renders as a bare tab. A handful legitimately do not
 // mount (named below); most of them not mounting means the walk verified nothing.
-const expected = overlays.filter((n) => !NEEDS_EXTRA_STATE[n]).length;
+const expected = overlays.filter((n) => !NEEDS_EXTRA_STATE[n]).length - noPayload;
 if (checkedOverlays < Math.ceil(expected * 0.6)) {
   fail("scaffold", `only ${checkedOverlays} of ${expected} openable overlays mounted — the opener is not working, so most of this run checked nothing`);
 }

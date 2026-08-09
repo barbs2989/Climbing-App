@@ -16,6 +16,7 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
+npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
@@ -113,6 +114,60 @@ a build error, but a screen that renders wrong or not at all.
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
+- **`check:overlay-discovery`** asks whether every modal the app declares can still be
+  *reached* by the three browser guards. They all walk "every overlay" and all get that list
+  from `scripts/lib/overlay-scaffold.mjs`, which until 2026-08-09 discovered overlays by a
+  **name** shape — `[xOpen,setX]=useState(false)`. #725 counted 28 found against **22 more**
+  that carry `role="dialog"` and could be opened by **none of the three**: `LogAscent` (the
+  largest component in the app, and where a climber records a climb), `FullProfile`, `Resume`,
+  `GiveVouch`, `LogCatch`, `ReportModal`, `ConnectModal` and the rest — trust-and-safety
+  surfaces heavily over-represented. Discovery is now **behavioural**: a state whose JSX
+  renders a dialog, whatever it is called. Gated by `npm run build`, so unlike the browser
+  guards it runs on every machine rather than only in CI.
+  - **Nothing reported the omission, and could not have.** Those guards count overlays
+    *opened*, so a modal the regex could not see was never a missing row — it was not a row.
+    A coverage hole in a guard is invisible by construction unless something asks from
+    outside, which is what this script is. Same lesson as `check:drift`: *a workflow cannot
+    report on a run that never existed.*
+  - Two precision rules, both wrong in the first draft. **Balance the braces, never take a
+    fixed window** — half these modals are wrapped in an IIFE (`{crewInvite&&(()=>{…})()}`)
+    so the dialog can be thousands of characters past the state name, and on a 428,000-char
+    file there is no safe window size. And **the dialog must be the region's own first
+    element**: `openGroupId` renders a full-screen group view whose nested `ReactionPicker`
+    puts `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
+    classify every screen large enough to contain a modal as a modal.
+  - Brace-matching runs over **raw source**, deliberately *not* the comment/string blanker
+    that `check:seed-history` and `check:dead-flag-gates` use. That blanker treats every
+    quote as a string delimiter and JSX body text is full of apostrophes (`don't`), so it
+    desynchronises and swallows braces — it is safe for *does this pattern appear*, and not
+    for balancing. Blanking here returned **0 overlays** where raw returns 22.
+  - Payloads live in `OVERLAY_PAYLOADS`, and the registry is **fail-closed**: a dialog state
+    that is neither registered nor exempt in `NEEDS_EXTRA_STATE` fails the run. Discovery
+    stays automatic; only the payload is registered, and an unregistered one is loud. Each
+    expression is lifted from the app's **own setter call sites** rather than invented,
+    because these modals hold the thing they are about and several resolve an id and
+    `return null` on a miss — a wrong payload does not throw, it renders nothing and reads
+    exactly like a broken modal.
+  - A dialog state initialised to `false` needs no payload — it is a flag whatever it is
+    called (`confirmDelete`, `pastExpand`). The **initial value** says how to open a state;
+    the name says nothing. That is the point of discovering these by behaviour.
+  - Whether the payload can actually resolve is **measured at runtime, not declared**,
+    because the answer differs per guard: `check:zero` has nothing, `check:overlay-scroll`
+    has the seeded demo (a crew — but `events` and the club `GROUPS` sit behind
+    `DEMO_FILLERS`, permanently false), and `check:signed-in` has a real account owning a
+    crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
+    *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
+    to render, so this cannot excuse a broken one.
+  - `postMenuFor` and `reactPickerFor` are exempt: they render **inside** the `openGroupId`
+    view and the `posts` they look up is a local of that IIFE, so no App-scope expression can
+    open them.
+  - **The hole it does not close, printed rather than hidden:** five overlay states live in
+    `RouteDetail.jsx`, and the opener injects into `App`, so no `?z=` can ever reach another
+    component's local state. They are walked only insofar as `check:ui` opens a route. The
+    script reports the count as a `note` — a known quantity beats an absence nobody can see,
+    which is the failure this whole guard is about.
+  - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
+    overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 17 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
   `[object Object]` in rendered copy, and named sections still present. It is the

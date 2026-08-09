@@ -1,5 +1,16 @@
 # Half the modal surface is invisible to the overlay guards — 2026-08-09
 
+> **RESOLVED the same day.** Discovery in `scripts/lib/overlay-scaffold.mjs` is now
+> **behavioural** — a state whose JSX renders a dialog, whatever it is called — and all three
+> guards walk **50** overlays instead of 28. The recommendation at the bottom of this document
+> is what was implemented; see `check:overlay-discovery` in CLAUDE.md for the two precision
+> rules it needed and the traps that took two drafts to find. Two corrections to the table
+> below, both found by building it: **`openGroupId` is not an overlay** (its `role="dialog"`
+> is a *nested* ReactionPicker 24,227 chars into a full-screen group view), and
+> **`postMenuFor`/`reactPickerFor` cannot be opened by any flag** — they render inside that
+> view and the `posts` they read is a local of its IIFE. The `Resume` suspicion recorded below
+> was confirmed and fixed separately in **#735**.
+
 **This is a coverage finding, not a defect list.** Nothing below is claimed to be broken.
 What is established is that these screens have never been *looked at* by any of the three browser
 guards, and were never in the 2026-07-30 audit either — so nobody knows.

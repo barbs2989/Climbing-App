@@ -43,7 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     # A hung dev server or a browser that never launches should fail in minutes,
     # not sit for the default six hours.
-    timeout-minutes: 20
+    # 50 overlays since the scaffold's discovery was widened (was 28).
+    timeout-minutes: 32
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

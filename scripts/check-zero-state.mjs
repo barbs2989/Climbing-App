@@ -320,16 +320,35 @@ if (!overlays.length) {
 // being an overlay fails, so the exemption list cannot rot in silence.
 const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
 assertKnownOverlays(overlays, fail);
+const noPayload = new Set();
 for (const name of overlays) {
   if (NEEDS_EXTRA_STATE[name]) {
     log(`  modal:${name}`.padEnd(24) + "   skipped — " + NEEDS_EXTRA_STATE[name]);
     continue;
   }
-  let landed = null;
+  let landed = null, empty = null, threw = null;
   for (const t of OVERLAY_TABS) {
     const lines = await load(`?zt=${t}&z=${name}`, 3400);
+    // Ask the opener what happened before judging the screen. A modal that resolves an id
+    // against an empty list renders nothing on every tab, and is indistinguishable from a
+    // broken one by looking at the page — a brand-new account has no crew to invite anyone
+    // to, and that is correct behaviour, not a defect.
+    const d = await page.evaluate((n) => ({
+      np: (window.__overlayNoPayload || {})[n], er: (window.__overlayOpenErrors || {})[n],
+    }), name);
+    if (d.er) { threw = d.er; break; }
+    if (d.np) { empty = d.np; break; }
     const before = new Set(dump["tab:" + t] || []);
     if (lines.some((l) => !before.has(l))) { landed = { tab: t, lines }; break; }
+  }
+  if (threw) {
+    fail("modal:" + name, `the opener threw while building its payload: ${threw}`);
+    continue;
+  }
+  if (empty) {
+    noPayload.add(name);
+    log(`  modal:${name}`.padEnd(24) + "   skipped — nothing to open it about at zero: " + empty);
+    continue;
   }
   if (!landed) {
     fail("modal:" + name, `added nothing on any of ${OVERLAY_TABS.length} tabs — it never rendered, so it is unverified`);
@@ -348,7 +367,7 @@ await browser.close();
 stopServer();
 
 if (!fails.length) {
-  const _skipped=overlays.filter((n)=>NEEDS_EXTRA_STATE[n]).length;
+  const _skipped=overlays.filter((n)=>NEEDS_EXTRA_STATE[n]||noPayload.has(n)).length;
   // Say how many were actually opened, not how many exist. Counting the skipped ones as
   // walked is the same overstatement that let four unopened overlays read as checked.
   log(`\ncheck:zero: ok — ${TABS.length} tabs and ${overlays.length-_skipped} overlays hold up with every count at zero${_skipped?` (${_skipped} skipped, gated on state the opener cannot set)`:""}.\n`);
