@@ -127,7 +127,10 @@ const fail = (screen, msg) => fails.push(`${screen}: ${msg}`);
 // of a spinner worded some new way -- see the note in render-settle.mjs -- but it does stop
 // SPINNER_RE being narrowed until it silently matches nothing.
 try {
-  const cov = spinnerCoverage(process.cwd());
+  // ROOT, not cwd. The tool check:field-renders replaced measured a different worktree
+  // than the one you ran it in; a scan that resolves its own sources relative to the
+  // script cannot drift that way.
+  const cov = spinnerCoverage(ROOT);
   if (cov.uncovered.length) {
     for (const [s, f] of cov.uncovered) fail("spinner-coverage", `${JSON.stringify(s)} in ${f} is no longer matched by SPINNER_RE, so a screen showing it reads as settled`);
   }
