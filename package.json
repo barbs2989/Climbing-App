@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-bare-route.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-migration-numbers.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-bare-route.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-migration-numbers.mjs && node scripts/check-icons.mjs && vite build",
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
@@ -17,6 +17,7 @@
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
     "audit:identity": "node scripts/audit-route-identity.mjs",
     "audit:distances": "node scripts/audit-distances.mjs",
+    "audit:area-parents": "node scripts/audit-area-parents.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
     "check:crew": "node scripts/check-crew-ready.mjs",
     "check:log": "node scripts/check-log-hydration.mjs",
@@ -25,6 +26,7 @@
     "check:writes": "node scripts/check-write-feedback.mjs",
     "check:boot": "node scripts/check-boot-shell.mjs",
     "check:bare": "node scripts/check-bare-route.mjs",
+    "check:icons": "node scripts/check-icons.mjs",
     "check:seed-history": "node scripts/check-seed-history.mjs",
     "check:overlay-discovery": "node scripts/check-overlay-discovery.mjs",
     "check:overlay-scroll": "node scripts/check-overlay-scroll.mjs",
@@ -35,7 +37,8 @@
     "check:claims": "node scripts/check-session-claims.mjs",
     "check:drift": "node scripts/check-deploy-drift.mjs",
     "check:counts": "node scripts/check-area-counts.mjs",
-    "check:field-renders": "node scripts/check-field-renders.mjs"
+    "check:field-renders": "node scripts/check-field-renders.mjs",
+    "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

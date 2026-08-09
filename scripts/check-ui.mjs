@@ -443,7 +443,20 @@ try {
   const input = await page.$('input[type="text"], input:not([type])');
   if (input) { await input.fill(ROUTE); await page.waitForTimeout(3000); }
   if (!(await tap(ROUTE))) {
-    fail("route", `could not open the sample route ${JSON.stringify(ROUTE)}`);
+    // In CI nobody is watching the browser, so this failure has to say which of the
+    // two very different causes it is. The sample route is pinned by name against the
+    // live DB catalog, so a rename or a delete there turns this red on a PR whose
+    // author changed nothing -- and that reads identically to a broken route list
+    // unless the message separates them.
+    // Ask the app, rather than guessing from body length: DbAreaBrowser renders
+    // "No routes match." for a search with no hits, and the seed browser renders
+    // "No climbs match this filter."
+    const listed = await page.innerText("body").catch(() => "");
+    const empty = /No routes match\.|No climbs match this filter\./i.test(listed);
+    fail("route", `could not open the sample route ${JSON.stringify(ROUTE)} in the ${STATE} ${catalog} catalog`
+      + (empty
+        ? ` — the list rendered and said it has no match, so the row was probably renamed or deleted. This check pins the name; pass --route to point it elsewhere.`
+        : ` — the list did not report an empty search, so this is the route list or the search box, not missing data.`));
   } else {
     await page.waitForTimeout(2500);
     // If the route page threw during render, React unmounts the tree and every

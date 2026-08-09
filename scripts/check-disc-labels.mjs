@@ -17,6 +17,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { DISC_LABELS, DISC_SHORT } from "../lib/discLabels.js";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "supabase", "research", "audits"]);
@@ -51,7 +52,7 @@ const PATTERNS = (k) => [
 ];
 
 const offenders = [];
-for (const f of walk(ROOT)) {
+for (const f of assertCovered(walk(ROOT), ROOT, "check:disc-labels")) {
   if (f.endsWith("/lib/discLabels.js")) continue; // the source of truth itself
   const src = readFileSync(f, "utf8");
   for (const k of KEYS) {

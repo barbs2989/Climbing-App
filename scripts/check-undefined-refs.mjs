@@ -20,6 +20,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { appSources } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -31,9 +32,12 @@ const BASELINE = path.join(ROOT, "scripts", "undefined-refs-baseline.json");
 // never updated, so for a week the check that exists to stop production blank screens
 // was reading 24% of the app — the other 76%, including the 900KB core, was invisible
 // to it. A guard with a hardcoded file list silently narrows every time the code moves.
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"]
-  .concat(fs.existsSync(path.join(ROOT, "lib")) ? fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f)).map(f => "lib/" + f) : [])
-  .filter(f => fs.existsSync(path.join(ROOT, f)));
+//
+// That fix used to end `.filter(f => fs.existsSync(...))`, which preserved the very
+// failure above: a renamed file did not fail the guard, it dropped out of the list and
+// the run went green on what was left. A missing required source is now fatal —
+// see scripts/lib/guard-sources.mjs.
+const FILES = appSources(ROOT, "check:refs");
 
 const GLOBALS = new Set([
   // ECMAScript

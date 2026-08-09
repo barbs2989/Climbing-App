@@ -19,11 +19,14 @@ npm run check:seed-history # seed climbs must never be attributed to a real acco
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
+npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
+npm run audit:area-parents # is every area filed under the place it belongs to?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -165,15 +168,29 @@ a build error, but a screen that renders wrong or not at all.
     which is the failure this whole guard is about.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
-- **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
+- **`check:ui`** spawns a dev server, walks 17 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
-  `[object Object]` in rendered copy, and named sections still present. It is
-  **not** wired into `deploy.yml` — browser automation is too slow and flaky to
-  sit in front of production deploys. Run it by hand before merging anything that
-  touches the render tree. `--snapshot before.json` / `--snapshot after.json` dumps
-  per-screen text so you can prove a refactor is behaviour-neutral; only the clock
-  inside ASPECT & SUN should differ between two runs. `--url <live URL>` points the
-  same walk at the deployed site instead of a dev server.
+  `[object Object]` in rendered copy, and named sections still present. It is the
+  broadest of the browser guards and it runs on every PR via
+  `.github/workflows/render-guards.yml` (~5m35s). It stays **out of `deploy.yml`** and
+  out of `npm run build` — browser automation is too slow and flaky to sit in front of
+  a production deploy, and a flake must not read as "the build is broken".
+  - It was hand-run only until 2026-08-09, for a reason that no longer holds: it was too
+    flaky to gate on. Both causes are fixed rather than tolerated — #464 made it claim a
+    genuinely free port instead of adopting whatever answered 5190 (it had reported a
+    failure in code it never loaded, and could equally have passed), and #742 made it
+    settle on the text having stopped changing. Wiring it in only made sense *after* both.
+  - `--snapshot before.json` / `--snapshot after.json` dumps per-screen text so you can
+    prove a refactor is behaviour-neutral; only the clock inside ASPECT & SUN should differ
+    between two runs. CI uploads that dump as the `ui-screens` artifact, because the failure
+    line names the screen and the offending text but the surrounding copy is what tells you
+    whether it is a real bug.
+  - `--url <live URL>` points the same walk at the deployed site instead of a dev server.
+  - **The sample route detail is pinned by name** (`North Ridge (Complete)` in Washington
+    under `USE_DB`, `West Slabs` in Utah on seed), so a rename or delete in the live DB
+    turns this red on a PR whose author changed nothing. The failure separates the two
+    cases by reading the app's own `No routes match.` empty state rather than guessing from
+    body length, and says which it is; `--route` repoints it.
 - **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
@@ -323,6 +340,39 @@ a build error, but a screen that renders wrong or not at all.
     fails as stale bookkeeping.
   - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
     long-beta block fails naming `beta`.
+- **`check:a11y-badges`** asks whether any control announces its badge count welded to its
+  label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
+  Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
+  is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
+  not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
+  `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
+  - **Structural, not lexical, and that distinction is the whole check.** Scanning names for a
+    digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
+    `Class 4` are all correct names. The defect is that the digit and the word come from
+    **different DOM nodes**. A grade is one authored string in one text node; a badge is a
+    separate element. So it walks each control's text nodes, finds a letter↔digit transition
+    **across a node boundary**, and only then asks Chrome what it computed. An earlier
+    string-matching attempt reported "none" while direct measurement showed three, and was
+    binned rather than shipped.
+  - Confirmed by **measurement, never markup**: a candidate is reported only if the name Chrome
+    actually computed still holds the two fragments glued. That is why an `aria-label` fix —
+    which changes no structure at all — reads as fixed, and why rearranging JSX cannot satisfy it.
+  - Runs against the **populated** demo. A badge is `count ? <span>…`, so at zero there is no
+    badge and nothing to find; check:zero's config would make this vacuous.
+  - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
+    with the three checks above, so they cannot drift on which modals exist. Mount detection
+    compares **line sets, not text length** — `Inbox` *replaces* the screen rather than adding
+    to it, so a length test read it as never mounted and silently dropped it from the sweep.
+    That was not hypothetical: it is why the second defect went unseen on the first run.
+  - Does **not** cover clickable `<div>`s (React's onClick leaves no attribute, and a div with
+    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`) or
+    the route detail screen, which is reached by clicking rather than by URL.
+  - Zero candidates anywhere is treated as a **failure**, not a pass: every control here is
+    multi-node, so an empty scan means the scan broke.
+  - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
+    announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
+    than passing over a blank app — the trap `check:overlay-scroll` documents above.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
@@ -363,6 +413,63 @@ a build error, but a screen that renders wrong or not at all.
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
+- **`check:icons`** asserts the app declares an icon at all, and that every icon it names
+  exists and is the size it claims. Vite does **not** verify references into `public/` — a
+  missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
+  silently iconless tab as the only symptom. That was the app's state until 2026-08-09: zero
+  `<link rel="icon">` elements, so no tab icon, no home-screen icon, nothing for an installer.
+  Static (no browser, no dev server), so it sits in `build` with the other gates. Ported from
+  **#746**, a parallel session's independent take on the same task, after #745 shipped two
+  defects it would have caught.
+  - **The two path conventions are opposite**, which is the trap: `index.html` must use
+    `%BASE_URL%x` or root-absolute `/x` (Vite rebases both); `manifest.webmanifest` must use
+    **relative** (`icon.svg`), because `public/` is copied verbatim and Vite never rewrites
+    inside it, so a root-absolute path resolves off-base and every icon 404s. Relative also
+    survives a repo rename. `id` is exempt and stays root-absolute — the spec resolves it
+    against the **origin**, so a relative `./` would resolve to `/` and silently change the
+    installed app's identity.
+  - It reads each PNG's width/height straight out of the **IHDR** rather than trusting the
+    declared `sizes`, since a launcher handed a 192 where it asked for 512 just upscales it.
+  - It rejects a manifest that reuses one file for both `any` and `maskable` — exactly what
+    #745 shipped. A maskable icon must be **full bleed** and separately scaled; see the
+    `favicon-maskable.svg` note above.
+  - A claim it deliberately does **not** make: that a page with no icon has the browser probe
+    `/favicon.ico` and 404. #745 asserted that; probed with a request-logging server and
+    Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
+    and nothing else. The missing icon is directly observable and needs no such story.
+  - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
+  the question `check:counts` cannot reach. `route_count` is verified against the subtree an
+  area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
+  self-consistent too. The Liberty Bell Group is one ridge of five towers and three of them
+  (Lexington Tower, North Early Winters Spire, South Early Winters Spire — 23 routes) were
+  parented as the group's **siblings**, so it advertised 27 routes against a true 50 and the
+  best-known lines at Washington Pass rendered outside the formation every guidebook files
+  them under. Kangaroo Ridge (`route_count` 0, holding two empty stubs while all five
+  populated formations sat outside) and "Silver Star and Wine spires" (containing neither
+  Silver Star nor three of the four Wine Spires) had the identical defect. `0106` repaired
+  all three.
+  - **The mechanism will recur on any import.** Two loads that were never joined: an
+    OpenBeta-derived crag tree supplied the grouping rows plus hollow `crag` stubs, and a
+    separate alpine peak list attached every real summit **flat** to the region above. The
+    fingerprint is a 0-route stub sitting metres from a populated peak of the same name —
+    `wa_north_early_winter_spire` was **8 m** from `wa_north_early_winters_spire`.
+  - **Report-only, like `audit:identity`** — not a pass/fail gate, and the exit code says
+    "things to look at", never "these are bugs". Earned: D1's first draft flagged 41
+    candidates of which 12 were real. Coordinates cannot decide parentage in crag terrain
+    (at the Icicle boulders every formation is within 500 m of every other) and generic
+    tokens like "dome"/"face"/"buttress" match across unrelated crags. **Confirm each hit
+    against the group's own name before moving anything.**
+  - Read-only, anon key, fails closed on an empty read — zero areas makes every tree look
+    perfect, so the realistic failure mode is a false pass.
+  - Injection-tested, and **three separate defects each made all four injections report a
+    clean tree** — none visible by reading the detector. The index was built before
+    injection (so a "moved" peak stayed in its frozen child list); victims were drawn from
+    the whole 47k-row catalog (so `--inject=path` perturbed an *Alaska* row while the scope
+    is WA); and scope from a single source hid one fault each way — by `parent_id` an orphan
+    has already left the walk, by `path` a rewritten path no longer says `washington`, so
+    scope is now the **union of both**. The tell every time: the injection logged, the
+    counter did not move.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
@@ -399,6 +506,12 @@ clock and a `CountUp` do not prevent settling — rather than on spotting a spin
     four runs, passing every time. A guard whose whole purpose is real data under a uuid was
     sometimes asserting against the empty state, and the `undefined`/`NaN` scan is only as
     good as the completeness of the text it scans. Now 48 four runs out of four.
+    - **48 is the healthy number and 117 is the broken one** — the counts run backwards from
+      the intuition, so check which is which before re-investigating. Populated is
+      `← Back / Messages / Friends / Crews / START A CHAT / Robin`, just a name. The EMPTY
+      state is longer because it carries explanatory copy: `No friend chats yet` plus
+      "Message a partner from their profile and your chats will live here." Read
+      `--dump`'s text, never the char count, when deciding whether a screen has data.
   - **Deciding from motion, not vocabulary, is the point.** Widening the regex to every "…"
     verb is wrong: `Analyzing…` is a *terminal* crew-readiness state, and `Working…` and
     `Downloading…` are button labels gated on `busy` — a guard waiting for those to clear
@@ -412,11 +525,61 @@ clock and a `CountUp` do not prevent settling — rather than on spotting a spin
     all. Injection-tested: narrowing it to `/\bLoading\b\s/` fails `check:ui` naming
     `"Loading…"`.
 
+**Did the guard actually read the app?** Every static guard has to answer that before it
+prints `ok`, and until 2026-08-09 none of them asked. `scripts/lib/guard-sources.mjs` is the
+shared answer, used by the nine guards that scan source: `appSources()` for the ones that
+name their inputs, `assertCovered()` for the ones that walk the tree.
+  - **#547 is the case on record**, and the point is that its *fix* preserved the failure.
+    The three-way split (#497/#508) moved most of the app into `ClimbMatchCore.jsx` and
+    `RouteDetail.jsx` while `check:refs`/`check:hooks` still named only the entry files, so
+    for a week the guard that exists to stop production blank screens read **24% of the app**.
+    The repair added the names and then filtered the list with
+    `.filter(f => fs.existsSync(...))` — so a renamed file still did not fail the guard, it
+    dropped out of the list and the run went green on what was left. A missing required
+    source is now **fatal**, never a quietly shorter list.
+  - Walking the tree is the safer design and every newer guard does it, but it fails open in
+    the other direction: a `SKIP` list that grows, a moved root, or an extension filter that
+    stops matching yields `[]`, and every "no findings" check then passes **vacuously**.
+  - `check:writes` had a second, closer instance. Its write vocabulary is derived at runtime
+    from `export async function <name>` in `lib/db.js` — good design, because a new write is
+    covered without editing the guard — but every check begins "is this a known write?", so an
+    **empty** set makes each one return early. Measured, not argued: with the vocabulary
+    emptied it printed `ok — no write failure is swallowed` and exited **0**. Only a style
+    change in `db.js` (to `export const x = async () =>`) is needed to cause that.
+  - Same family as `check:dead-flag-gates` printing **ok** having loaded no files, and
+    `check:overlay-scroll`'s anchor-lost case exiting 0 having verified nothing: a guard you
+    believe you have and do not.
+  - Injection-tested: adding a bogus name to `REQUIRED` fails **all nine** guards, each naming
+    the missing file and its own file count; breaking the `db.js` vocabulary regex fails
+    `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
+    `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.
 
 Pushing to `main` (or `master`) triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages at https://barbs2989.github.io/Climbing-App/. `vite.config.js` sets `base: "/Climbing-App/"` to match the repo name — this must stay in sync with the repo name or asset links break on Pages.
+
+That base has a trap worth knowing before adding anything to `public/`. Vite substitutes
+`%BASE_URL%` inside `index.html`, so icon and manifest `<link>`s written that way come out
+correct. It does **not** rewrite the *contents* of files in `public/` — so the paths inside
+`manifest.webmanifest` (`start_url`, `scope`, every icon `src`) are hardcoded with the
+`/Climbing-App/` prefix and would silently 404 on Pages if written as bare `/`. Nothing
+fails the build if they are wrong; the icons just never appear and the app becomes
+non-installable, which is exactly the class of thing nobody notices. `public/favicon.svg` is
+the single source for the mark — the PNGs beside it are generated from it by
+`node scripts/oneoff/render-app-icons.mjs`, so change the SVG and re-run rather than editing
+a PNG.
+
+`favicon-maskable.svg` is a **separate** file on purpose, and #745 shipped the bug that
+explains why: it tagged the ordinary rounded icon `purpose: "maskable"`. A maskable icon must
+be **full bleed** (the launcher supplies the shape; a pre-rounded tile inside its mask reads
+as a small badge floating on the launcher background) and its ink must stay inside the safe
+zone, which is the central circle of 80% the width — **not** the inner 80% square, whose
+corners sit at ~113% of that radius. The mark is a wide triangle, so its lower corners are
+the binding constraint. The generator **measures the rendered pixels** and fails if any ink
+lands outside that circle, because the arithmetic is easy to get wrong: the first corrected
+scale still overshot at 82.9% and only the measurement caught it.
 
 ## Architecture
 

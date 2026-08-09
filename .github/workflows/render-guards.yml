@@ -1,21 +1,30 @@
 name: Render guards
 
-# Two checks that ask "does this actually reach a screen?" — a question the static
-# guards in build-check.yml cannot answer, because both need the app rendered.
+# Four checks that ask "does this reach a screen, and reach it correctly?" — a question
+# the static guards in build-check.yml cannot answer, because all four need the app
+# rendered.
 #
-# Why they need CI at all. Both were hand-run only, and on 2026-08-09 that failed
+# Why they need CI at all. All were hand-run only, and on 2026-08-09 that failed
 # exactly the way you would predict: check:overlay-scroll had gone RED on main and
 # nobody knew. Three full-screen states of the guide application sheet scrolled the
 # page behind them (#724). Nothing reported it, because nothing ran it. A guard that
 # only runs when somebody remembers is a guard you do not have.
 #
+# check:ui was the last one still in that position, and it is the broadest of them
+# — 17 screens, asserting nothing blanked, no uncaught page errors, no
+# NaN/undefined/[object Object] in rendered copy, and that named sections survive.
+# It sat outside CI because it was too flaky to gate on, and both causes are now
+# fixed rather than tolerated: #464 made it claim a genuinely free port instead of
+# adopting whatever answered 5190, and #742 made it settle on the text having
+# stopped changing instead of polling for two of the app's thirteen spinners.
+#
 # Deliberately its own workflow, not steps in build-check.yml — the same reasoning
 # zero-state.yml records. These render a real app, so they are slower and flakier
 # than a Babel pass, and a flake here must not read as "the build is broken" nor
-# block a deploy, which is why neither appears in deploy.yml.
+# block a deploy, which is why none of them appear in deploy.yml.
 #
-# Two independent jobs rather than two steps, so a browser flake in one cannot stop
-# the other from reporting.
+# Independent jobs rather than steps, so a browser flake in one cannot stop the
+# others from reporting.
 
 on:
   pull_request:
@@ -62,6 +71,84 @@ jobs:
         env:
           # Match zero-state.yml. Without these USE_DB is off and the app under test
           # is not the one that ships, so a pass would say nothing about production.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+  ui-walk:
+    name: The app renders on every screen
+    runs-on: ubuntu-latest
+    # The slowest of the three: it walks 17 screens, opens interactive state and
+    # drills into a route detail's sub-tabs. Measured at 5m35s locally, so the 25
+    # minutes below is headroom for a slower runner, not an expected duration.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:ui cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Walk every screen
+        run: npm run check:ui -- --snapshot ui-screens.json
+        env:
+          # Match zero-state.yml. Without these USE_DB is off and check:ui walks the
+          # seed catalog instead of the DB one — a different app than production, and
+          # it would silently switch its sample route to the seed spelling and pass.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # The failure line names the screen and the offending text; the surrounding copy
+      # is what tells you whether it is a real bug. Same reasoning as zero-state.yml.
+      - name: Upload per-screen text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-screens
+          path: ui-screens.json
+          if-no-files-found: warn
+
+  a11y-badges:
+    name: No control announces a glued count
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:a11y-badges cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Badge counts stay out of accessible names
+        run: npm run check:a11y-badges
+        env:
+          # Same reasoning as overlay-scroll above: without these USE_DB is off and the
+          # app under test is not the one that ships.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"

@@ -24,6 +24,7 @@ import { join, relative } from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "audits"]);
@@ -41,7 +42,7 @@ const walk = (dir, out = []) => {
   return out;
 };
 
-const files = walk(ROOT);
+const files = assertCovered(walk(ROOT), ROOT, "check:overlays");
 const graph = new Map();      // component name -> Set of component names it renders
 const overlays = [];          // {component, file, line, z, portalled}
 let appscrollSeed = null;     // Set of component names rendered inside #appscroll

@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>ClimbMatch</title>
+    <!-- Icons + install metadata. %BASE_URL% (not a bare "/") because Pages serves the
+         app from /Climbing-App/ — see `base` in vite.config.js. Until 2026-08-09 the app
+         declared no icon at all: no tab icon, no home-screen icon, nothing for an installer.
+         That much is directly observable and is the whole reason these lines exist.
+
+         What is NOT established is the follow-on story this comment used to tell — that
+         declaring an icon is also what stops the browser probing /favicon.ico and taking a
+         404. It was measured and could not be reproduced: a request-logging server plus
+         Chrome via playwright, headless AND headed, saw a page declaring no icon request
+         "/" and nothing else. scripts/check-icons.mjs says the same at more length and
+         deliberately rests on the missing icon instead. The two files disagreed until
+         #746's finding was carried here; please do not reintroduce the claim.
+
+         The PNGs are generated from favicon.svg by scripts/oneoff/render-app-icons.mjs;
+         edit the SVG and re-run it rather than editing a PNG. -->
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+    <!-- Matches the app banner (C.surface), not the page background, so the Android
+         status bar reads as an extension of the banner sitting directly below it. -->
+    <meta name="theme-color" content="#161b22" />
     <style>
       /* Mobile baseline */
       html { -webkit-text-size-adjust: 100%; }
