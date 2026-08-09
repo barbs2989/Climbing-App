@@ -18,6 +18,7 @@ npm run check:bare # renders a route with NO enrichment — the shape 99.5% of t
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
+npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -323,6 +324,31 @@ a build error, but a screen that renders wrong or not at all.
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
+- **`check:icons`** asserts the app declares an icon at all, and that every icon it names
+  exists and is the size it claims. Vite does **not** verify references into `public/` — a
+  missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
+  silently iconless tab as the only symptom. That was the app's state until 2026-08-09: zero
+  `<link rel="icon">` elements, so no tab icon, no home-screen icon, nothing for an installer.
+  Static (no browser, no dev server), so it sits in `build` with the other gates. Ported from
+  **#746**, a parallel session's independent take on the same task, after #745 shipped two
+  defects it would have caught.
+  - **The two path conventions are opposite**, which is the trap: `index.html` must use
+    `%BASE_URL%x` or root-absolute `/x` (Vite rebases both); `manifest.webmanifest` must use
+    **relative** (`icon.svg`), because `public/` is copied verbatim and Vite never rewrites
+    inside it, so a root-absolute path resolves off-base and every icon 404s. Relative also
+    survives a repo rename. `id` is exempt and stays root-absolute — the spec resolves it
+    against the **origin**, so a relative `./` would resolve to `/` and silently change the
+    installed app's identity.
+  - It reads each PNG's width/height straight out of the **IHDR** rather than trusting the
+    declared `sizes`, since a launcher handed a 192 where it asked for 512 just upscales it.
+  - It rejects a manifest that reuses one file for both `any` and `maskable` — exactly what
+    #745 shipped. A maskable icon must be **full bleed** and separately scaled; see the
+    `favicon-maskable.svg` note above.
+  - A claim it deliberately does **not** make: that a page with no icon has the browser probe
+    `/favicon.ico` and 404. #745 asserted that; probed with a request-logging server and
+    Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
+    and nothing else. The missing icon is directly observable and needs no such story.
+  - Injection-tested; the 8 cases are named at the bottom of the script.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
@@ -446,9 +472,19 @@ correct. It does **not** rewrite the *contents* of files in `public/` — so the
 `/Climbing-App/` prefix and would silently 404 on Pages if written as bare `/`. Nothing
 fails the build if they are wrong; the icons just never appear and the app becomes
 non-installable, which is exactly the class of thing nobody notices. `public/favicon.svg` is
-the single source for the mark — the three PNGs beside it are generated from it by
+the single source for the mark — the PNGs beside it are generated from it by
 `node scripts/oneoff/render-app-icons.mjs`, so change the SVG and re-run rather than editing
 a PNG.
+
+`favicon-maskable.svg` is a **separate** file on purpose, and #745 shipped the bug that
+explains why: it tagged the ordinary rounded icon `purpose: "maskable"`. A maskable icon must
+be **full bleed** (the launcher supplies the shape; a pre-rounded tile inside its mask reads
+as a small badge floating on the launcher background) and its ink must stay inside the safe
+zone, which is the central circle of 80% the width — **not** the inner 80% square, whose
+corners sit at ~113% of that radius. The mark is a wide triangle, so its lower corners are
+the binding constraint. The generator **measures the rendered pixels** and fails if any ink
+lands outside that circle, because the arithmetic is easy to get wrong: the first corrected
+scale still overshot at 82.9% and only the measurement caught it.
 
 ## Architecture
 
