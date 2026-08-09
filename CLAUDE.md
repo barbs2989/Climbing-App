@@ -363,6 +363,17 @@ how a live section gets deleted while the check stays green.
 
 Pushing to `main` (or `master`) triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages at https://barbs2989.github.io/Climbing-App/. `vite.config.js` sets `base: "/Climbing-App/"` to match the repo name — this must stay in sync with the repo name or asset links break on Pages.
 
+That base has a trap worth knowing before adding anything to `public/`. Vite substitutes
+`%BASE_URL%` inside `index.html`, so icon and manifest `<link>`s written that way come out
+correct. It does **not** rewrite the *contents* of files in `public/` — so the paths inside
+`manifest.webmanifest` (`start_url`, `scope`, every icon `src`) are hardcoded with the
+`/Climbing-App/` prefix and would silently 404 on Pages if written as bare `/`. Nothing
+fails the build if they are wrong; the icons just never appear and the app becomes
+non-installable, which is exactly the class of thing nobody notices. `public/favicon.svg` is
+the single source for the mark — the three PNGs beside it are generated from it by
+`node scripts/oneoff/render-app-icons.mjs`, so change the SVG and re-run rather than editing
+a PNG.
+
 ## Architecture
 
 This is **ClimbMatch**, a mobile-first social app for finding climbing partners, planning objectives, and sharing route conditions. The entire application is a single React component file.
