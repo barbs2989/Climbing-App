@@ -1,0 +1,86 @@
+-- 0108: Summit Chief existed twice — a hollow stub 20 m from the real summit.
+--
+-- The last unresolved hit from the WA area-parent audit (0106 / 0107, PR #736), and the
+-- only one of the four metres-apart duplicates outside Washington Pass and the Pickets.
+--
+--   wa_summit_chief          crag   0 routes  no elevation  no prominence  no children
+--                            under wa_western_alpine_lakes
+--   wa_summit_chief_mountain peak   2 routes  7,467 ft      1,323 ft prom
+--                            under wa_snoqualmie_i90_region
+--
+-- 47.52354 / -121.26834 against 47.5234895 / -121.2685305 — **20 m apart**, one mountain.
+-- Same fingerprint as wa_north_early_winter_spire (8 m) and wa_crooked_thumb (21 m): the
+-- OpenBeta crag tree's hollow shell left beside the alpine peak list's real row.
+--
+-- ── WHY THIS WAS HELD BACK FROM 0107, AND WHY IT IS SAFE NOW ─────────────────
+-- The audit deferred this one on the grounds that the stub and the real peak sit in
+-- DIFFERENT regions, and that those two regions overlap — so deleting the stub looked like
+-- it would paper over a boundary question. That reasoning was wrong, and the distinction
+-- is worth keeping: **the stub carries no information.** No routes, no children, no
+-- elevation, no prominence. Nothing about the region question is decided, hidden or made
+-- harder by removing a row that holds nothing. The overlap is independently visible
+-- without it (see below) and is reported, not buried.
+--
+-- Summit Chief Mountain STAYS in wa_snoqualmie_i90_region. It is already filed with its
+-- actual neighbours — Chimney Rock (0.7 km), Little Big Chief (0.9 km), Bears Breast — so
+-- this migration moves nothing. It only drops the empty twin.
+--
+-- ── THE REGION OVERLAP, REPORTED NOT EXECUTED ────────────────────────────────
+-- `wa_western_alpine_lakes` (9 children, 8 routes) is very likely redundant against
+-- `wa_snoqualmie_i90_region` (31 children, 85 routes). Every one of its children has a
+-- Snoqualmie Pass neighbour within 7 km and most within 3:
+--
+--     Summit Chief      -> Summit Chief Mountain   0.02 km   (this duplicate)
+--     Lemah Mountain    -> Lemah Two               0.34 km
+--     Overcoat Peak     -> Chimney Rock            0.73 km
+--     Kaleetan Peak     -> Mount Roosevelt         0.80 km
+--     Chikamin Peak     -> Four Brothers           1.17 km
+--     Lisa's Playground -> Denny Mountain          1.67 km
+--     Three Queens      -> Hibox Mountain          2.81 km
+--     Granite Mountain  -> The Tooth               4.07 km
+--     Bald Eagle Peak   -> Mount Hinman            6.85 km
+--
+-- Merging the two is NOT done here. That is a 9-area editorial restructuring argued from
+-- COORDINATES, and this codebase has been repeatedly right to refuse that: the co-located
+-- sweep found 2,543 pairs of which 2 were real, and the audit that produced 0106 flagged
+-- 41 candidates of which 12 were. Lemah Mountain / Lemah Two in particular are 340 m apart
+-- with DIFFERENT names and routes on both — Lemah Peak genuinely has several summits, so
+-- that pair is most likely two real summits, not a duplicate. Nothing here touches them.
+--
+-- Granite Mountain and Lisa's Playground also stay: both are 0-route, but neither has a
+-- populated twin nearby, so they are honestly-empty real areas rather than shells.
+--
+-- ── SAFETY ───────────────────────────────────────────────────────────────────
+-- Verified against the live DB immediately before writing: the stub has no routes, no
+-- children, and climb_logs / contributions / comments / hazard_votes / user_lists are all
+-- empty tables, so nothing is orphaned. Guarded on the survivor existing, per 0102 — the
+-- last unguarded duplicate delete destroyed the only copy of Triple Couloirs.
+--
+-- No route_count changes anywhere: the stub holds 0 routes, so every ancestor is already
+-- correct. No parentage changes, so no ltree cascade.
+delete from areas where id = 'wa_summit_chief'
+  and not exists (select 1 from routes where area_id = 'wa_summit_chief')
+  and not exists (select 1 from areas where parent_id = 'wa_summit_chief')
+  and exists (select 1 from areas k where k.id = 'wa_summit_chief_mountain'
+                                      and k.route_count > 0);
+
+-- ── Verify afterward, as SEPARATE statements ─────────────────────────────────
+-- Do not append these to the paste: the SQL Editor runs a pasted script as ONE
+-- transaction, and an error in a read-only SELECT rolls back the writes before it.
+--
+--   select id from areas where id = 'wa_summit_chief';
+--   -- expect 0 rows
+--
+--   select id, name, parent_id, route_count, elevation_ft, prominence_ft from areas
+--     where id = 'wa_summit_chief_mountain';
+--   -- expect wa_snoqualmie_i90_region, 2 routes, 7467, 1323 — untouched
+--
+--   select count(*) from areas where parent_id = 'wa_western_alpine_lakes';
+--   -- expect 8 (was 9)
+--
+--   select id, route_count from areas
+--     where id in ('wa_western_alpine_lakes','wa_snoqualmie_i90_region');
+--   -- expect BOTH unchanged: 8 and 85. The stub held no routes, so nothing recounts.
+--
+--   -- then:  npm run check:counts   and   npm run audit:area-parents
+--   -- D2 should drop from 2 hollow stubs to 1 (Chewiliken Creek Crags remains).

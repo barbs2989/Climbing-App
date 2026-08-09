@@ -111,19 +111,54 @@ route ("Plan 9 from Outer Space"), not a stub.
 
 ---
 
+## FIXED in `0108` (Summit Chief)
+
+`wa_summit_chief` (crag, 0 routes, no elevation, no children) sits **20 m** from
+`wa_summit_chief_mountain` (peak, 2 routes, 7,467 ft / 1,323 ft prominence). One mountain,
+two rows — the same fingerprint as North Early Winter Spire (8 m) and Crooked Thumb (21 m).
+
+This was originally deferred on the grounds that the stub and the real peak sit in
+different regions, and that deleting the stub would paper over the boundary question.
+**That reasoning was wrong and is worth correcting explicitly:** the stub holds no routes,
+no children, no elevation and no prominence, so removing it decides nothing about the
+regions. The overlap below is visible without it.
+
+Summit Chief Mountain is **not moved** — it is already filed with its actual neighbours
+(Chimney Rock 0.7 km, Little Big Chief 0.9 km, Bears Breast).
+
+---
+
 ## NOT actioned — needs a decision
 
-### 1. Summit Chief — two overlapping groupings, no clean answer
+### 1. `wa_western_alpine_lakes` is probably redundant
 
-`wa_summit_chief` (crag, 0 routes, no elevation) sits **15 m** from
-`wa_summit_chief_mountain` (peak, 2 routes, 7,467 ft / 1,323 ft prominence). Same
-mountain. But the stub is under **Western Alpine Lakes** and the real peak under
-**Snoqualmie Pass**, and those two regions overlap on the ground: Western Alpine Lakes
-holds Lemah Mountain while Snoqualmie Pass holds **Lemah Two** — the same massif split
-across both.
+Every one of its nine children has a `wa_snoqualmie_i90_region` neighbour within 7 km, and
+most within 3:
 
-Deleting the stub is easy; deciding which region owns these Alpine Lakes summits is a
-product call, and doing the first without the second just hides the question.
+| Western Alpine Lakes | nearest Snoqualmie Pass peak | apart |
+|---|---|---|
+| Summit Chief *(stub, removed in `0108`)* | Summit Chief Mountain | **0.02 km** |
+| Lemah Mountain | Lemah Two | 0.34 km |
+| Overcoat Peak | Chimney Rock | 0.73 km |
+| Kaleetan Peak | Mount Roosevelt | 0.80 km |
+| Chikamin Peak | Four Brothers | 1.17 km |
+| Lisa's Playground | Denny Mountain | 1.67 km |
+| Three Queens | Hibox Mountain | 2.81 km |
+| Granite Mountain | The Tooth | 4.07 km |
+| Bald Eagle Peak | Mount Hinman | 6.85 km |
+
+Western Alpine Lakes holds 9 areas / 8 routes; Snoqualmie Pass holds 31 / 85. Folding the
+first into the second would make the grouping internally consistent, the way `0097` folded
+Boston Basin into North Cascades Core.
+
+**Not executed**, because it is a nine-area restructuring argued from *coordinates* — the
+one form of evidence this codebase has repeatedly been right to refuse. The co-located
+sweep found 2,543 pairs of which 2 were real; the audit behind `0106` flagged 41 candidates
+of which 12 were. **Lemah Mountain / Lemah Two is the specific trap**: 340 m apart but with
+*different names* and routes on both, and Lemah Peak genuinely has several summits, so that
+pair is most likely two real summits rather than a duplicate. Granite Mountain and Lisa's
+Playground are 0-route but have no populated twin nearby — honestly-empty real areas, not
+shells.
 
 ### 2. Rejected candidates — recorded so they are not re-raised
 
