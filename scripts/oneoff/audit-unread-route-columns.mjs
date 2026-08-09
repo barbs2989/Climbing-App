@@ -20,10 +20,22 @@
 //   5. Tokens were taken from JSON KEYS ("routefinding", "estimatePerSeason") and matched
 //      CASE-SENSITIVELY, so `difficulty` read as unread while rendering "DIFFICULTY
 //      BREAKDOWN / Exposure / ...".
+//   6. NO ATTRIBUTION. Finding the token in a fully-populated route proved only that SOME
+//      column rendered it. Enrichment prose repeats across columns and the longest-word
+//      heuristic kept picking generic vocabulary, so 27 of 42 "rendered" verdicts survived
+//      BLANKING the column they were credited to — among them `overview` and `descent`,
+//      two of the self-test's own controls. The self-test passed on exactly the evidence it
+//      existed to reject, and the resulting "no unread columns" was unearned.
 //
-// So it now self-tests before it reports: known-rendered columns must come back rendered,
-// and a synthetic field nothing reads must come back unread. If either fails, it exits 1
-// rather than print findings. A detector that cannot detect must not look clean.
+// So it now self-tests before it reports: known-rendered columns must come back ATTRIBUTED,
+// a sentinel written into a rendered column must vanish when that column is blanked, and a
+// synthetic field nothing reads must come back unread. If any fails, it exits 1 rather than
+// print findings. A detector that cannot detect must not look clean.
+//
+// USE check:field-renders (#719) FOR A PER-COLUMN ANSWER. It injects one column onto a BARE
+// route, so nothing else can supply the token — real isolation instead of blank-diff over
+// shared prose. This script's contribution is breadth (all 86 columns vs 45) and a NO READER
+// list that is trustworthy when non-empty; its silence is weak evidence, not a clean bill.
 import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
@@ -107,11 +119,12 @@ if (!got) { console.error("could not read a sample at any page size — the data
 const rows = got.rows;
 console.log("rows:", rows.length, `(limit=${got.limit})`, "| columns:", COLS.length);
 
-// Render once per route, not once per column — the same route serves many columns.
+// Render once per (route, blanked-column), not once per column.
 const cache = new Map();
-function tabsFor(route) {
-  if (cache.has(route.id)) return cache.get(route.id);
-  const camel = dbRouteToCamel(route);
+function tabsFor(route, blank) {
+  const key = route.id + "#" + (blank || "");
+  if (cache.has(key)) return cache.get(key);
+  const camel = dbRouteToCamel(blank ? { ...route, [blank]: null } : route);
   const pages = []; const errs = [];
   for (const tab of TABS) {
     // fix (4): a throw is recorded, never silently treated as "did not render".
@@ -119,7 +132,7 @@ function tabsFor(route) {
     catch (e) { errs.push(tab + ": " + e.message.split("\n")[0].slice(0, 80)); }
   }
   const v = { pages, errs };
-  cache.set(route.id, v);
+  cache.set(key, v);
   return v;
 }
 
@@ -132,20 +145,35 @@ const populatedFor = (col) => rows.filter((r) => {
 // Try up to EXAMPLES routes; a column counts as read if ANY of them renders ANY of its
 // tokens. One example is not evidence — that is how `grade` and `descent` were misreported.
 const EXAMPLES = 6;
+// fix (6) — ATTRIBUTION. Finding the token in a fully-populated route proves only that SOME
+// column rendered it, not this one. Enrichment prose repeats heavily across columns and the
+// longest-word heuristic keeps landing on generic vocabulary ("conditions", "washington",
+// "trailhead"), so 27 of 42 "rendered" verdicts turned out to survive blanking the column
+// they were credited to — including `overview` and `descent`, two of the self-test's own
+// controls. A token counts ONLY if it disappears when the column is blanked.
 function assess(col, extra) {
   const pool = (extra ? [extra] : populatedFor(col));
   if (!pool.length) return { verdict: "unpopulated", n: 0 };
-  let tried = 0, threwAll = 0, lastErr = "", anyTokens = false;
+  let tried = 0, threwAll = 0, lastErr = "", anyTokens = false, sawUnattributable = false;
   for (const r of pool.slice(0, EXAMPLES)) {
     const toks = tokensFor(r[col]);
     if (!toks.length) continue;
     anyTokens = true; tried++;
     const { pages, errs } = tabsFor(r);
     if (!pages.length) { threwAll++; lastErr = errs[0] || ""; continue; }
-    for (const p of pages) for (const t of toks) if (p.includes(t)) return { verdict: "rendered", n: pool.length, example: r.id, token: t };
+    const present = toks.filter((t) => pages.some((p) => p.includes(t)));
+    if (!present.length) continue;
+    const without = tabsFor(r, col).pages;
+    if (!without.length) { threwAll++; lastErr = "blank-render threw"; continue; }
+    const attributed = present.find((t) => !without.some((p) => p.includes(t)));
+    if (attributed) return { verdict: "rendered", n: pool.length, example: r.id, token: attributed };
+    sawUnattributable = true;                       // rendered by SOMETHING, but not by this
   }
   if (!anyTokens) return { verdict: "no-word-value", n: pool.length };
   if (tried && threwAll === tried) return { verdict: "INCONCLUSIVE-threw", n: pool.length, err: lastErr };
+  // Never call this "NO READER": the column may well render, we just cannot separate its
+  // output from a neighbour's. Reporting it as unread is how a real column gets deleted.
+  if (sawUnattributable) return { verdict: "INCONCLUSIVE-shared", n: pool.length, example: pool[0].id };
   return { verdict: "NO READER", n: pool.length, example: pool[0].id, tokens: tokensFor(pool[0][col]).slice(0, 3) };
 }
 
@@ -163,7 +191,23 @@ for (const c of KNOWN_READ) {
   if (a.verdict === "NO READER") selfFail.push(`${c} -> NO READER, but this column demonstrably renders`);
   else if (a.verdict === "rendered") confirmed++;
 }
-if (confirmed < 4) selfFail.push(`only ${confirmed} of ${KNOWN_READ.length} known-rendered columns were positively confirmed — too few to trust a sweep`);
+if (confirmed < 4) selfFail.push(`only ${confirmed} of ${KNOWN_READ.length} known-rendered columns were ATTRIBUTED — too few to trust a sweep`);
+// Positive control for the attribution step itself. A sentinel written INTO a column that
+// renders must be attributable to it; if blanking the column does not remove the sentinel,
+// blank-diff is not working and every "rendered" verdict below is unearned.
+{
+  const base = rows.find((r) => r.overview);
+  const sent = "zzqqxx attributable sentinel phrase";
+  const seeded = { ...base, id: base.id + "#s", overview: sent };
+  // Both calls go through tabsFor's `blank` parameter — the exact path assess() relies on —
+  // so a blank-diff that silently stopped blanking fails here instead of passing unnoticed.
+  const withS = tabsFor(seeded).pages;
+  const noS = tabsFor(seeded, "overview").pages;
+  const shows = withS.some((p) => p.includes("attributable"));
+  const gone = !noS.some((p) => p.includes("attributable"));
+  if (!shows) selfFail.push("positive control: a sentinel in `overview` never rendered");
+  else if (!gone) selfFail.push("positive control: blanking `overview` did not remove its sentinel — blank-diff is broken");
+}
 // Negative control: a field nothing reads must come back unread. If this says "rendered",
 // the matcher is matching boilerplate and every finding is worthless.
 {
@@ -180,7 +224,7 @@ if (selfFail.length) {
   for (const f of selfFail) console.error("  " + f);
   process.exit(1);
 }
-console.log("self-test ok: " + confirmed + " known-rendered columns positively confirmed, negative control clean\n");
+console.log("self-test ok: " + confirmed + " known-rendered columns ATTRIBUTED, both controls clean\n");
 
 // ── the actual sweep ─────────────────────────────────────────────────────────────────────
 const results = [];
@@ -192,7 +236,15 @@ console.log("=== POPULATED but rendered on NO sub-tab ===");
 if (!unread.length) console.log("  (none)");
 for (const u of unread) console.log(`  ${u.col.padEnd(22)} ${String(u.n).padStart(4)} of ${rows.length} sampled   e.g. ${u.example}  tried=${JSON.stringify(u.tokens)}`);
 if (threw.length) { console.log("\n=== INCONCLUSIVE — every render threw, nothing was checked ==="); for (const t of threw) console.log(`  ${t.col.padEnd(22)} ${t.err}`); }
-console.log("\nrendered fine: " + results.filter((r) => r.verdict === "rendered").length +
+const shared = results.filter((r) => r.verdict === "INCONCLUSIVE-shared").sort((a, b) => b.n - a.n);
+if (shared.length) {
+  console.log("\n=== INCONCLUSIVE — token renders, but so it does with the column BLANKED ===");
+  console.log("    enrichment prose repeats across columns, so this cannot tell whether the");
+  console.log("    column is read or a neighbour supplied the same words. NOT a finding.");
+  for (const s of shared) console.log(`  ${s.col.padEnd(22)} ${String(s.n).padStart(4)} of ${rows.length} sampled   e.g. ${s.example}`);
+}
+console.log("\nattributed (proven read): " + results.filter((r) => r.verdict === "rendered").length +
+            " | inconclusive-shared: " + shared.length +
             " | unpopulated in sample: " + results.filter((r) => r.verdict === "unpopulated").length +
             " | numeric/no-word value: " + results.filter((r) => r.verdict === "no-word-value").length);
 console.log(`
@@ -203,4 +255,9 @@ What this run does NOT cover, so nobody reads more into a clean result than it c
     columns unpopulated within it were never exercised — listed above as "unpopulated in
     sample", which means untested, not clean.
   • It renders the route-detail sub-tabs only. A column read somewhere else entirely (the
-    area browser, search, the logbook) is out of scope.`);
+    area browser, search, the logbook) is out of scope.
+  • Only the "attributed" count is a positive result. "inconclusive-shared" is the common
+    case for enrichment prose and says nothing either way — an empty NO READER list is
+    therefore much weaker evidence than it looks. For a per-column answer with proper
+    isolation, use npm run check:field-renders (#719), which injects one column onto a BARE
+    route so nothing else can supply the token.`);
