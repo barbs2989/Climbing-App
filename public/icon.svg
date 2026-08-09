@@ -1,0 +1,12 @@
+<!-- App icon. The mountain-range path is the app's OWN `alpine` glyph, copied verbatim
+     from DiscIcon in ClimbMatchCore.jsx, on the boot shell's background (#0d1117) in the
+     brand blue the wordmark already uses for "Match" (#2f81f7). Nothing here is invented:
+     alpine is the product's scope, so it is the discipline glyph that stands for the app.
+
+     Authored in the same 24x24 viewBox as DiscIcon so the path can be pasted between the
+     two without rescaling. The transform insets the range to x 3..21, y 6.7..18.2 so its
+     bottom corners clear the rx=5.5 tile rounding — at full bleed they poke outside it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ClimbMatch">
+  <rect width="24" height="24" rx="5.5" fill="#0d1117"/>
+  <path d="M1 21L6 10L9 15L12 7L15 14L18 9L23 21Z" transform="translate(2.18 1) scale(0.818)" fill="#2f81f7"/>
+</svg>

@@ -1,0 +1,14 @@
+<!-- Maskable variant of icon.svg, for Android's adaptive-icon crop.
+     Two differences, both required by the maskable contract:
+       1. The background is FULL BLEED with no rounded corners — the launcher supplies the
+          shape (circle, squircle, rounded square), and a pre-rounded tile inside its mask
+          shows as a smaller badge floating on white.
+       2. The range is scaled to sit inside the safe zone: the central circle of 80% the
+          icon's width, i.e. radius 9.6 in this 24 viewBox. The path's half-diagonal is
+          13.04 * scale, so scale must be <= 0.736; 0.70 leaves a little margin.
+     Anything outside that circle can be cropped away on some launchers, which is why this
+     cannot simply reuse icon.svg with `purpose: "any maskable"`. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ClimbMatch">
+  <rect width="24" height="24" fill="#0d1117"/>
+  <path d="M1 21L6 10L9 15L12 7L15 14L18 9L23 21Z" transform="translate(3.6 2.2) scale(0.7)" fill="#2f81f7"/>
+</svg>

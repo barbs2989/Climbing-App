@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>ClimbMatch</title>
+    <meta name="description" content="Find climbing partners, plan objectives, and share route conditions." />
+    <!-- Paints the browser/OS chrome the same colour as the boot shell below, so the status
+         bar does not sit as a white band above a black app on mobile. -->
+    <meta name="theme-color" content="#0d1117" />
+    <!-- Icons. The href is written root-absolute because these live in public/, and Vite
+         rewrites a leading "/" here to the configured base ("/Climbing-App/"). Do NOT copy
+         that convention into manifest.webmanifest: public/ files are emitted verbatim, so
+         paths INSIDE the manifest must stay relative to resolve under the base on Pages.
+
+         The SVG is the source of truth for the mark; the PNGs beside it are generated from
+         it by `npm run gen:icons` and exist only because iOS ignores SVG for apple-touch-icon
+         and Android's installer wants a bitmap. Until 2026-08-09 the app declared no icon at
+         all, so it had no tab icon and could not be installed. -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- iOS reads none of the manifest's display fields; these are its equivalent, and
+         "black-translucent" lets the app draw under the status bar, which the viewport's
+         viewport-fit=cover and the safe-area padding on .b-bar already account for. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ClimbMatch" />
     <style>
       /* Mobile baseline */
       html { -webkit-text-size-adjust: 100%; }
