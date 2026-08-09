@@ -1,0 +1,41 @@
+{
+ "_readme": [
+  "Verdicts for audit:distances findings that have already been ruled on, mirroring",
+  "audits/identity-triage.json. Section 3 (non-alpine routes carrying a peak's area_id)",
+  "says of itself that it is a hypothesis, not a verdict -- so without this file the same",
+  "four rows get re-researched on every run.",
+  "",
+  "Deleting an entry REOPENS the finding. Anything absent is NEW, and only new findings",
+  "count toward the closing line, so a real regression still stands out.",
+  "",
+  "verdict: 'correct' = filed where it belongs, the filter is what is imprecise.",
+  "         'deferred' = a genuine defect whose fix was consciously postponed."
+ ],
+ "misfiled": [
+  {
+   "key": "wa_bread_loaf",
+   "verdict": "deferred",
+   "ruled": "2026-08-08",
+   "why": "Genuinely misfiled. Its own overview places it 'about a mile in (clockwise) on the Silver Falls Loop Trail out of Ohanapecosh Campground, on the park's southeast side' and says outright it is 'unrelated to the park's glaciated alpine routes' -- yet it carries wa_mount_rainier, the SUMMIT area, roughly 15 miles away. Deferred rather than fixed because there is no destination: no Mount Rainier NP crag area exists, so this is a structural change (create area, reparent, let the route_count trigger settle), not a row edit.",
+   "impact": "Browsing Mount Rainier lists a V0 forest boulder among 20 glaciated routes."
+  },
+  {
+   "key": "wa_don_t_climb_that_she_said",
+   "verdict": "correct",
+   "ruled": "2026-08-08",
+   "why": "On the peak's own approach: 'a flat-topped erratic beside the White Chuck Glacier basin, climbed almost in passing by parties on Glacier Peak's standard south-side approach'. Filing it under Glacier Peak is right; discipline=bouldering is what trips the filter."
+  },
+  {
+   "key": "wa_mile_high_club",
+   "verdict": "correct",
+   "ruled": "2026-08-08",
+   "why": "A 7-pitch, 700 ft, Grade III bolted alpine route up the southwest arete of Eros Tower, a rock sub-summit of Morning Star Peak. discipline=sport is accurate for the protection and is what trips the filter; the area is right."
+  },
+  {
+   "key": "wa_the_balanced_rock",
+   "verdict": "correct",
+   "ruled": "2026-08-08",
+   "why": "The problem IS the summit block: 'a short, exposed boulder problem atop the true summit of Colchuck Balanced Rock -- climbing the balanced block itself'. dist_km 16.74 is the approach to the peak, not an incoherent boulder approach."
+  }
+ ]
+}
