@@ -89,8 +89,28 @@ for (const f of FILES) {
         if (decl && proseRe.test(decl[0])) why = "via " + hayCode;
       }
       if (!why) return;
-      // Already negation-aware? These are the guards that exist today.
-      const guarded = /RACK_NEG|PERMIT_NEG|_pmSays|rackMentions|rackAffirmed|NEG\./.test(code);
+
+      // A MEMBERSHIP test is not keyword matching over prose: `mem.indexOf(uid)`,
+      // `sel.indexOf(r.id)`, `text.includes(q)` look for an id or a user's search query, and
+      // "not" sitting nearby means nothing to them. Only a LITERAL keyword needle can be
+      // disclaimed by the surrounding sentence. Without this the report was 2/3 noise.
+      const needle = m === "test" ? c.object : path.node.arguments[0];
+      const needleCode = needle ? src.slice(needle.start, needle.end) : "";
+      const isKeywordMatch = m === "test"
+        ? (needleCode.startsWith("/") || /RegExp/.test(needleCode))
+        : /^["'`]/.test(needleCode);
+      if (!isKeywordMatch) return;
+
+      // Negation-aware either via a named guard OR INLINE. needsRopedGlacierTravel tests
+      // /\b(no|not|non-technical|none)\b … rope/ itself and returns early before its
+      // affirmative match. The first version of this script only knew the named helpers, so
+      // it printed "already negation-aware: 0" while three mechanisms existed — an output
+      // that contradicted its own summary and would have sent the next reader hunting.
+      const named = /RACK_NEG|PERMIT_NEG|_pmSays|rackMentions|rackAffirmed|NEG\./.test(code);
+      const fn = path.getFunctionParent();
+      const fnCode = fn ? src.slice(fn.node.start, fn.node.end) : "";
+      const inline = /\(\s*no\s*\||\|\s*not\s*[|)]|\bno\b\s*\|/.test(fnCode);
+      const guarded = named || inline;
       hits.push({ file: rel, line: path.node.loc.start.line, guarded, why, hay: hayCode.slice(0, 50), code: code.replace(/\s+/g, " ").slice(0, 130) });
     },
   });
