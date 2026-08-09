@@ -6190,3 +6190,81 @@ routes, shared the identical `dist_km: 8` before this batch, suggesting a copy/p
 Clean: FA facts, coordinates, permits/fees, land-manager text, and internal consistency checks not
 called out above across all 8 routes -- see full per-route detail in the researching agents'
 reports (not reproduced here to keep this log terse).
+
+## Batch 90 (pass 2) -- 2026-08-09
+
+Checked: eight routes across two peaks -- Mount Steel (Standard Scramble) and Mount Stuart
+(Cascadian Couloir, Girth Pillar, Ice Cliff Glacier, North Face, North Ridge, Stuart Glacier
+Couloir, The Gendarme). Researched via 3 parallel agents grouped by peak (Steel x1; Stuart
+Cascadian/Girth Pillar/Ice Cliff Glacier x3; Stuart North Face/North Ridge/Stuart Glacier
+Couloir/Gendarme x4), citing Wikipedia, SummitPost, Mountaineers.org, USFS Wenatchee River/Cle
+Elum/Hood Canal Ranger Districts, Recreation.gov, AAI route profiles, and guidebook-derived trip
+reports, same standard as prior batches. North Face was left untouched -- already self-flagged
+(`verif.status: unverified`) as a likely duplicate of the real Ice Cliff Glacier route, and this
+pass confirmed no independently-sourced "North Face" line exists on Stuart in any source checked.
+
+Fixed (17): Mount Steel's `dist_km` (80.47) stored the already-doubled round-trip mileage instead
+of the one-way figure the app convention doubles for display -- fixed to 25 mi = 40.23 km per the
+row's own waypoints. Its `approach_logistics.trailhead` named the Staircase Trailhead even though
+the route's own name, waypoints and beta text (which notes the Staircase/First Divide line is
+currently closed by Bear Gulch Fire damage) all point to the Duckabush Trailhead -- corrected to
+match. Cascadian Couloir had four fixes: `fa` ("Samuel Gannett, 1895") had zero corroboration
+anywhere, while Wikipedia/SummitPost independently credit Frank Tweedy's 1883 solo ascent (with
+Richard Goode two days later) via the same south-gully line as today's route; `dist_km` (19.3, the
+row's own round-trip mileage per its `totalNote` and final waypoint) was doubling again on display
+-- fixed to the one-way 9.66 km; `high_point_ft` (9416) disagreed with its own summit waypoint and
+the area row's canonical 9415; and waypoint 0's trailhead elevation (3200) contradicted its own
+approach text ("~4,243 ft") and external sources -- fixed to 4243. Girth Pillar and Ice Cliff
+Glacier shared the same `dist_km` round-trip-stored-as-one-way bug (24.14, both routes' own
+totalNote gives 15 mi round trip) -- both fixed to 12.07 km one-way. Girth Pillar's summit waypoint
+`elevFt` (9416) and `length_m` (610, not matching the sum of its own 11 `pitch_detail.lengthM`
+values = 455) were also fixed. Ice Cliff Glacier's `access.notes` ("No specific climbing permit")
+flatly contradicted its own `permit` field and its Girth Pillar sibling -- the Stuart Lake
+Trailhead approach sits inside the Enchantment Permit Area's Stuart Zone and needs the same May
+15-Oct 31 lottery permit for overnight stays; found the identical wrong text on Stuart Glacier
+Couloir's `access.notes` by direct comparison while fixing this one, and fixed both. North Ridge's
+`pitches` (20) contradicted its own 18-entry `pitch_detail` array and its own overview text
+("roughly 18 pitches"). Its `fa` field self-contradicted its own `overview`, which correctly names
+Rupley & Gordon (not "Don Claunch") for the 1956 FA and separately credits Wickwire & Stanley's
+1964 direct Gendarme ascent (which the old `fa` value omitted entirely, misattributing the
+Gendarme's first ascent to the 1970 Hargis/Ossiander line instead) -- rewritten to keep all four
+real, distinct events (1956/1963/1964/1970). Stuart Glacier Couloir's `gain_ft` (6015) didn't sum
+from its own itinerary days (2600+3400=6000) and was exactly the sibling North Ridge row's figure,
+a likely copy-paste bleed -- fixed to 6000, matching its own `loss_ft`. The Gendarme's `descent`
+described "retracing the ascent when possible," contradicting its own `descent_text` (Cascadian
+Couloir exit) and the sibling North Ridge row's `bail` notes (retreat above the Gendarme is
+committing, rarely attempted) -- rewritten to match; its null `fa` was filled with the same
+Wickwire & Stanley 1964 date now consistent with the corrected North Ridge row.
+
+Flagged rather than fixed (13): Mount Steel's area-row `parent_peak` ("White Mountain") looks wrong
+against external sources (should be Mount Duckabush) but sits on the `areas` table, outside this
+route-scoped audit's mandate. Minor aspect-wording imprecision and an acknowledged-estimate summit-
+day mileage split were also left alone. Cascadian Couloir's itinerary day-by-day gain/loss (sums to
+5175/5175) sits in tension with its own top-level gain_ft/loss_ft (8100/8100, which itself looks
+right against the double-Longs-Pass-crossing profile) -- no confident source to redistribute the
+per-day split. Its waypoints/gpx track for the Lake Ingalls/Longs Pass section don't match its own
+approach prose or the trailhead's own logistics coordinates, possibly sourced from the wrong trail
+entirely -- needs a re-derived track, not a field patch. Girth Pillar and Ice Cliff Glacier's shared
+"Stuart Lake Trailhead" waypoint elevation (3,400 ft) disagrees with Girth Pillar's own approach
+text (~3,540 ft) and external sources (~2,930 ft) three ways, with no clearly authoritative pick.
+Girth Pillar's gain/loss vs. itinerary sum (16-200 ft off) was within the row's own already-declared
+LOW confidence and not treated as a confident error, nor was its unconfirmed-but-uncontradicted 1983
+FA year. Ice Cliff Glacier's `length_m` (610, identical to Girth Pillar's since-fixed wrong value,
+with no per-pitch data to check it against) was flagged rather than guessed at. North Ridge's
+`approach` narrative calls the north Stuart Lake approach "primary" while its own waypoints/gpx and
+loop shape only close cleanly via the south (Esmeralda/Longs Pass) side -- needs an editorial call
+on which variant the stored track represents. Its `length_m` (853) doesn't sum from its own
+pitch_detail (755m, ~13% gap, no clear source for either). North Ridge and Stuart Glacier Couloir's
+`dist_km` values read as round-trip mileage per their own itineraries rather than the documented
+one-way convention -- consistent with the ~61 known exceptions CLAUDE.md already warns not to bulk-
+normalize, so left untouched pending a per-route call. The Gendarme's `commitment` field stores "IV"
+(the full North Ridge's grade) on its own 2-pitch sub-feature -- a likely schema-misuse pattern
+flagged in prior batches, not a fact error fixed here.
+
+Clean: elevation/coordinates for both peaks (Steel 6,225 ft; Stuart 9,415 ft, matching every route
+row and the area rows exactly), FA facts for Stuart Glacier Couloir and Ice Cliff Glacier, permit/
+access boilerplate aside from the two access.notes fixes above, false-summit-vs-true-summit
+handling on North Ridge and The Gendarme (no elevation conflation despite this being a known
+recurring bug shape on this peak), and gain_ft/loss_ft-vs-itinerary sums for Steel, North Ridge and
+Ice Cliff Glacier -- see the researching agents' reports for full per-route detail (not reproduced
+here to keep this log terse).
