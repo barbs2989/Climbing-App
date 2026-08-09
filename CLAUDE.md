@@ -16,6 +16,7 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
+npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
@@ -181,6 +182,27 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested; the four cases are named at the bottom of the script and are
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
+
+- **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
+  it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
+  `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
+  writer: the Year in Climbing modal (its one opener read `MY_CLIMBS.length`), climb
+  anniversaries (`_anniv` mapped over `MY_CLIMBS`), and the Local Legend badge. None looked
+  like a bug — each sat beside live code that worked, so the screen was fine and the feature
+  simply never happened. Gated by `npm run build`.
+  - The distinction it encodes: five **other** constants on the same flag are healthy
+    because every consumer is **additive** — `createdGroups.concat(GROUPS)`,
+    `useState(COMMENTS)`, `CLIMBERS.concat(FILLER_CLIMBERS)`. The question is never "is this
+    constant empty?" but **"is there another writer?"**
+  - Comments and string contents are blanked in **one stateful pass**, not by regex, and
+    that is not fussiness: stripping comments first *ate real code* (seed prose contains
+    `//`, so the rest of a dense line vanished) and `MY_CLIMBS` and `GROUPS` dropped out of
+    the analysis entirely — the check then reported "every one read additively" having never
+    seen the two constants it existed for. Offsets are preserved so line numbers stay true.
+  - It fails closed when a source file cannot be read. An earlier draft printed **ok** while
+    having loaded nothing at all.
+  - Injection-tested: reverting each of the three dead gates fails the run and names the
+    line; restoring makes it green.
 
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
