@@ -311,6 +311,254 @@ try {
     else record("A's crew shows B as a member", "blocked", "A's crew card was not on screen to check");
   }
 
+  // ---- steps 6-10: the stretch AFTER accept ------------------------------------------
+  // Everything above only proves two people are in the same crew. The product's promise is
+  // that they end up on the same rock on the same day, and that stretch has never been
+  // driven by two real accounts. crews.dates, crew_day_acks and crew messages are all real.
+  //
+  // Two things the first pass got wrong, both scaffold rather than product:
+  //   - the day picker is behind the "Plan the day" disclosure, so a top-level scan for a
+  //     date control finds nothing and reads as "the feature is missing"
+  //   - /message|chat/ matched the "Messages" tab icon before the crew's own "Crew chat"
+  //     button, so it navigated away from the crew and then reported chat unreachable
+  //
+  // Note how a day is actually agreed: addDay() proposes a day with an EMPTY ack list, and
+  // the ONLY thing that writes an ack is meRankDate — the "1st choice / Backup" buttons.
+  // Ranking a day is acking it. An audit that looks for an "I can make it" control finds
+  // none and wrongly concludes the loop is broken.
+
+  async function buttonNames(page) {
+    try {
+      return await page.evaluate(() => Array.from(document.querySelectorAll("button"))
+        .map((b) => (b.getAttribute("aria-label") || b.innerText || "").replace(/\s+/g, " ").trim())
+        .filter(Boolean).slice(0, 60));
+    } catch { return []; }
+  }
+  const dbCrew = async () => {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/crews?created_by=eq.${A.id}&select=id,dates,agreed_date,meet_place,meet_time,crew_day_acks(user_id,date)`, { headers: headers(KEY) });
+    const rows = await r.json().catch(() => []);
+    return Array.isArray(rows) && rows[0] ? rows[0] : null;
+  };
+  const acksFor = (crew, id, day) => ((crew && crew.crew_day_acks) || []).some((a) => a.user_id === id && a.date === day);
+
+  // Open the "Plan the day" disclosure. Returns false rather than letting a caller treat a
+  // closed panel as an absent feature.
+  // Reach the crew's day calendar. It is rendered inline by CrewCard ("Step 2 · Propose
+  // actual dates"), so normally this only has to confirm it is there. Two things can hide
+  // it: the card is collapsed, or we are on the wrong crew sub-tab.
+  async function openPlan(page) {
+    const cal = () => page.getByRole("button", { name: "Previous month" });
+    if (await cal().count()) return true;
+    // Crew sub-tabs carry a count inside the label ("Crews1"), so match by prefix — an
+    // exact "Crews" silently matches nothing and the click is a no-op.
+    const sub = page.getByRole("button", { name: /^Crews/ }).first();
+    if (await sub.count()) { await sub.click(); await page.waitForTimeout(2500); }
+    if (await cal().count()) return true;
+    for (const label of [/Expand/i, /^Plan the day/i]) {
+      const b = page.getByRole("button", { name: label }).first();
+      if (await b.count()) {
+        await b.scrollIntoViewIfNeeded();
+        await b.click();
+        await page.waitForTimeout(2500);
+        if (await cal().count()) return true;
+      }
+    }
+    return false;
+  }
+  // Rank a day as 1st choice — the app's ack. Same control for whoever proposed it.
+  async function rankDay(page) {
+    const btn = page.getByRole("button", { name: /1st choice/i }).first();
+    if (!(await btn.count())) return false;
+    await btn.scrollIntoViewIfNeeded();
+    await btn.click();
+    await page.waitForTimeout(3500);
+    return true;
+  }
+
+  // Match MiniCalendar's own key format (local date, not toISOString — UTC would shift the
+  // day for anyone west of Greenwich and click the wrong cell).
+  const pad = (n) => (n < 10 ? "0" : "") + n;
+  const target = new Date(Date.now() + 3 * 86400000);
+  const targetKey = `${target.getFullYear()}-${pad(target.getMonth() + 1)}-${pad(target.getDate())}`;
+  const memConfirmed = Array.isArray(memRows) && memRows.length;
+
+  // ---- step 6: A proposes a day --------------------------------------------------------
+  let proposedDay = null;
+  if (!memConfirmed) {
+    record("A proposes a climbing day", "blocked", "B never joined the crew, so there is nobody to agree with");
+  } else if (!(await openPlan(pageA))) {
+    record("A proposes a climbing day", "blocked", `could not open "Plan the day" on A's crew card. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+  } else {
+    // Scope day-cell lookup to the calendar, walking UP from the month nav rather than
+    // filtering divs by "has the nav button" and taking .last() — the deepest such div is
+    // the HEADER ROW, which holds the nav and none of the day cells. That found no cell and
+    // read as "the calendar has no days", which is not a thing that can be true.
+    const nav = pageA.getByRole("button", { name: "Previous month" }).first();
+    let cal = null;
+    for (const up of ["xpath=../..", "xpath=../../..", "xpath=../../../.."]) {
+      const root = nav.locator(up);
+      if (await root.getByRole("button", { name: /^\d{1,2}$/ }).count()) { cal = root; break; }
+    }
+    if (!cal) {
+      record("A proposes a climbing day", "blocked", "found the month nav but no day cells above it in the DOM");
+      cal = nav.locator("xpath=../..");
+    }
+    if (target.getMonth() !== new Date().getMonth()) {
+      await pageA.getByRole("button", { name: "Next month" }).first().click();
+      await pageA.waitForTimeout(1500);
+    }
+    const cell = cal.getByRole("button", { name: String(target.getDate()), exact: true }).first();
+    if (!(await cell.count())) {
+      record("A proposes a climbing day", "blocked", "the calendar opened but the target day cell was not found");
+    } else {
+      await cell.click();
+      await pageA.waitForTimeout(4000);
+      const after = await dbCrew();
+      const dates = (after && after.dates) || [];
+      if (dates.includes(targetKey)) { proposedDay = targetKey; record("A proposes a climbing day", "ok", `crews.dates holds ${targetKey}`); }
+      else record("A proposes a climbing day", "defect", `A tapped ${targetKey} on the crew calendar but crews.dates is ${JSON.stringify(dates)} — the proposal did not persist`);
+    }
+    screens["A:propose-day"] = await pageA.innerText("body");
+  }
+
+  // ---- step 7: A's own ack --------------------------------------------------------------
+  if (!proposedDay) {
+    record("A marks the day as working for them", "blocked", "no day was proposed");
+  } else if (!(await rankDay(pageA))) {
+    record("A marks the day as working for them", "blocked", `no "1st choice" control in A's day row. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+  } else {
+    const after = await dbCrew();
+    if (acksFor(after, A.id, proposedDay)) record("A marks the day as working for them", "ok", "crew_day_acks row written for A");
+    else record("A marks the day as working for them", "defect", `A ranked ${proposedDay} as their 1st choice but no crew_day_acks row exists for them`);
+  }
+
+  // ---- step 8: B sees that day and agrees to it -----------------------------------------
+  let bAcked = false;
+  if (!proposedDay) {
+    record("B sees the day A proposed", "blocked", "no day was proposed to see");
+  } else if (!(await goTab(pageB, "Crew", "Crews"))) {
+    record("B sees the day A proposed", "blocked", "B could not reach the Crew tab");
+  } else {
+    const dt = new Date(proposedDay + "T12:00:00");
+    const dom = String(dt.getDate());
+    const mon = dt.toLocaleString("en-US", { month: "short" });
+    let seen = false, t = "";
+    for (let i = 0; i < 10; i++) {
+      await pageB.waitForTimeout(2000);
+      t = await pageB.innerText("body");
+      if (t.includes(mon + " " + dom) || t.includes(proposedDay)) { seen = true; break; }
+      if (await openPlan(pageB)) {
+        t = await pageB.innerText("body");
+        if (t.includes(mon + " " + dom) || t.includes(proposedDay)) { seen = true; break; }
+      }
+    }
+    screens["B:sees-day"] = t;
+    if (!seen) {
+      record("B sees the day A proposed", "defect", `A proposed ${proposedDay} and it is stored on the crew, but B's crew screen never shows it`);
+    } else {
+      record("B sees the day A proposed", "ok");
+      if (!(await rankDay(pageB))) {
+        record("B agrees to the day", "blocked", `the day is shown to B but no "1st choice" control was reachable. Buttons: ${(await buttonNames(pageB)).slice(0, 25).join(" | ")}`);
+      } else {
+        const after = await dbCrew();
+        if (acksFor(after, B.id, proposedDay)) { bAcked = true; record("B agrees to the day", "ok", "crew_day_acks row written for B"); }
+        else record("B agrees to the day", "defect", `B ranked ${proposedDay} but no crew_day_acks row exists for them`);
+      }
+    }
+  }
+
+  // ---- step 9: the crew reads as agreed, and names the people in it ---------------------
+  if (!bAcked) {
+    record("the crew reaches an agreed day", "blocked", "both sides never acked the same day");
+  } else if (!(await goTab(pageA, "Crew", "My Crews"))) {
+    record("the crew reaches an agreed day", "blocked", "A could not return to the Crew tab");
+  } else {
+    await openPlan(pageA);
+    const after = await dbCrew();
+    const both = acksFor(after, A.id, proposedDay) && acksFor(after, B.id, proposedDay);
+    const t = await snap(pageA, "A:agreed");
+    if (!both) {
+      record("the crew reaches an agreed day", "blocked", `only one side's ack is stored, so the agreed state was never reachable to test`);
+    } else if (/everyone.s in|works for everyone|locked/i.test(t)) {
+      record("the crew reaches an agreed day", "ok", "both acks stored and the crew card says the day works for everyone");
+    } else {
+      record("the crew reaches an agreed day", "defect", "both members have acked the same day in the database, but A's crew card does not say the day is agreed");
+    }
+    // The per-day agreement chips name each member. They resolve ids against the SEED
+    // CLIMBERS array, which a uuid never matches — the same lookup that rendered
+    // "You + 0 climbers" in #569 and an owner with no controls in #680. If B shows up as
+    // the generic word "Climber" while the roster above prints their real name, that is it.
+    // SCOPE THIS TO THE CHIP ROW. A page-wide test for B's name passes on the roster
+    // ("CREW · 2 MEMBERS / You / In / Ben") and the weekly availability grid, both of which
+    // print it correctly — so the chips could say "Climber" and the check would still go
+    // green. That is the always-passing guard this repo keeps shipping: the first draft of
+    // this very assertion did exactly that, and the run reported 16/16 with the defect
+    // plainly on screen. Read only the window between the ranking header and MEETUP.
+    const chipStart = t.lastIndexOf("HOW THIS DAY RANKS FOR YOU");
+    const chipEnd = chipStart >= 0 ? t.indexOf("MEETUP", chipStart) : -1;
+    const chips = (chipStart >= 0 && chipEnd > chipStart) ? t.slice(chipStart, chipEnd) : "";
+    const bFirst = B.name.split(" ")[0];
+    if (!chips) {
+      record("the agreed-day chips name the real climber", "blocked", "could not isolate the day-agreement chip row on screen");
+    } else if (/\bClimber\b/.test(chips) && !chips.includes(bFirst)) {
+      record("the agreed-day chips name the real climber", "defect", `the day agreement row calls B "Climber" instead of ${bFirst} — the chip resolves member ids against the seed CLIMBERS array, which a real member's uuid never matches, while the roster three lines above resolves the same person correctly`);
+    } else if (chips.includes(bFirst)) {
+      record("the agreed-day chips name the real climber", "ok");
+    } else {
+      record("the agreed-day chips name the real climber", "blocked", `the chip row was found but named neither ${bFirst} nor the generic fallback`);
+    }
+  }
+
+  // ---- step 10: the two of them can actually talk ---------------------------------------
+  if (!memConfirmed) {
+    record("A and B can message inside the crew", "blocked", "they are not in a crew together");
+  } else {
+    const msg = "Meeting at the trailhead at 5am";
+    // EXACTLY "Crew chat" — /chat|message/ matches the Messages tab first and navigates
+    // out of the crew entirely, which is how this read as unreachable last run.
+    const chat = pageA.getByRole("button", { name: "Crew chat", exact: true }).first();
+    if (!(await chat.count())) {
+      record("A and B can message inside the crew", "blocked", `no "Crew chat" button on A's crew card. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+    } else {
+      await chat.scrollIntoViewIfNeeded();
+      await chat.click();
+      await pageA.waitForTimeout(3500);
+      const box = pageA.getByRole("textbox", { name: "Message" }).first();
+      if (!(await box.count())) {
+        record("A and B can message inside the crew", "blocked", `crew chat opened but no composer was found. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+      } else {
+        await box.fill(msg);
+        await pageA.waitForTimeout(500);
+        const send = pageA.getByRole("button", { name: "Send message" }).first();
+        if (await send.count()) await send.click(); else await box.press("Enter");
+        await pageA.waitForTimeout(4000);
+        const sent = await snap(pageA, "A:sent-message");
+        if (!sent.includes(msg)) {
+          record("A and B can message inside the crew", "defect", "A sent a crew message and it did not appear on A's own screen");
+        } else {
+          record("A sends a crew message", "ok");
+          if (!(await goTab(pageB, "Crew", "Crews"))) {
+            record("B receives A's crew message", "blocked", "B could not reach the Crew tab to look");
+          } else {
+            const subB = pageB.getByRole("button", { name: /^Crews/ }).first();
+            if (await subB.count()) { await subB.click(); await pageB.waitForTimeout(2500); }
+            const chatB = pageB.getByRole("button", { name: "Crew chat", exact: true }).first();
+            if (await chatB.count()) { await chatB.click(); await pageB.waitForTimeout(3000); }
+            let t = "";
+            for (let i = 0; i < 10; i++) {
+              await pageB.waitForTimeout(2000);
+              t = await pageB.innerText("body");
+              if (t.includes(msg)) break;
+            }
+            screens["B:received"] = t;
+            if (t.includes(msg)) record("B receives A's crew message", "ok", "sent by A, visible to B");
+            else record("B receives A's crew message", "defect", "A's crew message was sent and shown to A, but B never sees it");
+          }
+        }
+      }
+    }
+  }
+
   if (pageErrors.length) record("no uncaught page errors", "defect", [...new Set(pageErrors)].join(" | "));
   else record("no uncaught page errors", "ok");
 
