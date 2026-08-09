@@ -33,6 +33,7 @@
 // The zero state is forced by scripts/zero-state.config.mjs, which replays the app's
 // OWN sign-in reset in memory. It does not edit source and it never ships.
 
+import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -227,7 +228,7 @@ async function load(qs, settle, expectContent) {
   // the run dies on ?zt=routes before checking anything. (Belt and braces with
   // setDefaultNavigationTimeout above -- this one survives someone resetting the default.)
   await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
-  await page.waitForFunction(() => window.__zeroReady === true, null, { timeout: 60000 }).catch(() => {});
+  await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
   if (expectContent) {
     // Length alone is not enough: a Suspense fallback ("Loading climbs…") clears the
     // length bar while the screen is still empty, so the walk would check the spinner and
@@ -288,7 +289,7 @@ for (const t of TABS) {
 
 // 2. Every overlay the app declares. The list comes from the source via the scaffold,
 //    so a modal added later is walked without being registered here.
-const overlays = await page.evaluate(() => window.__zeroOverlays || []);
+const overlays = await page.evaluate(() => window.__overlays || []);
 if (!overlays.length) {
   fail("scaffold", "no overlay states were discovered — the scaffold did not run, and nothing below was actually checked");
 } else {
@@ -298,8 +299,20 @@ if (!overlays.length) {
 // scoped to one screen -- the Unfinished business dropdown only exists on Home. Opening
 // those from the wrong tab renders nothing, and the walk would then check the bare tab and
 // report it green. So: take the first tab where the overlay actually ADDS something.
+//
+// An overlay that adds nothing on ANY tab is a FAILURE, not a note. Logging and carrying on
+// is how areaTreeOpen, crewListOpen, unfinishedOpen and alertsOpen came to be counted as
+// walked without ever mounting -- including the Unfinished business dropdown, i.e. the
+// thing #637 broke. Overlays that genuinely cannot be reached by flag alone are exempt BY
+// NAME in NEEDS_EXTRA_STATE, each recording its real gate, and a name there that stops
+// being an overlay fails, so the exemption list cannot rot in silence.
 const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
+assertKnownOverlays(overlays, fail);
 for (const name of overlays) {
+  if (NEEDS_EXTRA_STATE[name]) {
+    log(`  modal:${name}`.padEnd(24) + "   skipped — " + NEEDS_EXTRA_STATE[name]);
+    continue;
+  }
   let landed = null;
   for (const t of OVERLAY_TABS) {
     const lines = await load(`?zt=${t}&z=${name}`, 3400);
@@ -307,10 +320,7 @@ for (const name of overlays) {
     if (lines.some((l) => !before.has(l))) { landed = { tab: t, lines }; break; }
   }
   if (!landed) {
-    // Not automatically a bug: some overlays only open from a control that needs data
-    // (vouchesGivenOpen wants >3 vouches). Say so rather than passing in silence.
-    log(`  modal:${name}`.padEnd(24) + "     — added nothing on any tab");
-    dump["modal:" + name] = [];
+    fail("modal:" + name, `added nothing on any of ${OVERLAY_TABS.length} tabs — it never rendered, so it is unverified`);
     continue;
   }
   dump["modal:" + name] = landed.lines;
@@ -326,7 +336,10 @@ await browser.close();
 stopServer();
 
 if (!fails.length) {
-  log(`\ncheck:zero: ok — ${TABS.length} tabs and ${overlays.length} overlays hold up with every count at zero.\n`);
+  const _skipped=overlays.filter((n)=>NEEDS_EXTRA_STATE[n]).length;
+  // Say how many were actually opened, not how many exist. Counting the skipped ones as
+  // walked is the same overstatement that let four unopened overlays read as checked.
+  log(`\ncheck:zero: ok — ${TABS.length} tabs and ${overlays.length-_skipped} overlays hold up with every count at zero${_skipped?` (${_skipped} skipped, gated on state the opener cannot set)`:""}.\n`);
   process.exit(0);
 }
 console.error(`\ncheck:zero: ${fails.length} problem(s) a brand-new account would see:\n`);

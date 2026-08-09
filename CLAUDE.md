@@ -98,7 +98,19 @@ a build error, but a screen that renders wrong or not at all.
     anchor cannot quietly walk the populated app and pass.
   - Overlays are **discovered from the source**, not listed in the script, so a modal added
     tomorrow is walked without anyone registering it. One declared below the injection point
-    is named in the output rather than silently skipped.
+    is named in the output rather than silently skipped. Discovery, the `?z=` opener and the
+    lazy-chunk warm list are shared with `check:signed-in` via
+    `scripts/lib/overlay-scaffold.mjs`, so the two cannot drift on which modals exist.
+  - **No single tab hosts them all**, and until 2026-08-08 this walked every overlay from
+    `?zt=me` and asserted nothing about whether it opened — so `areaTreeOpen`,
+    `crewListOpen`, `unfinishedOpen` and `alertsOpen` rendered *identically to the bare
+    profile tab* and were counted as walked. One of them is the Unfinished business dropdown,
+    i.e. the guard written for **#637** never opened the thing #637 broke. It now tries each
+    tab and **fails** if opening an overlay changes nothing on any of them. Two are exempt by
+    name in `NEEDS_EXTRA_STATE`, each recording its real gate (`areaTreeOpen` renders as
+    `areaTreeOpen && selArea`; `crewListOpen` is a disclosure inside the crew finder's
+    results) — and a name there that stops being an overlay **fails**, so the exemption list
+    cannot rot. The summary counts overlays **opened**, not declared.
   - Injection-tested: restoring the four #674 defects trips 7 assertions, and breaking an
     anchor fails with `ANCHOR LOST` **plus** "nothing below was actually checked".
   - Runs on every PR via `.github/workflows/zero-state.yml` — its **own** workflow, not a
@@ -140,9 +152,21 @@ a build error, but a screen that renders wrong or not at all.
   - Setup uses the service key, which **bypasses RLS** — so a row existing here is no
     evidence a policy would have let a user create it. This answers "does the screen render
     correctly", never "is the policy right".
+  - It then opens **every overlay** with that account signed in — the same set `check:zero`
+    opens at zero, but with real people behind them. That is where its first
+    overlay run landed a finding: the friends list rendered `undefined · 0` for a real connection, because a
+    DB-derived friend carries only `{id,name,avatar,location,username}` and the row printed
+    `c.level` plus `vScore(c)`, which invents a trust score from an object with no vouches.
+    The hydration that builds those objects says so in its own comment — *"carries no grades
+    or trust it never had"* — and the row rendered exactly that. Invisible at zero, where you
+    have no friends.
   - Injection-tested: reverting each of the five defects it claims to catch fails the run,
     and each case requires a failure message that *names* that defect — a run that dies from
-    a port race must not count as a catch.
+    a port race must not count as a catch. One early assertion tested
+    `/Mod\b|Remove|Visibility|Public|Private/`, which matches the words "Public group" in a
+    label everyone sees, so reverting the `isCreator` fix left it **green**. Only injection
+    found that. `+ Mod` is gated on `isCreator`, the visibility toggle on `isMod`; they are
+    different questions and must be asserted separately.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
