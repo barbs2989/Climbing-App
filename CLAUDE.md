@@ -110,15 +110,29 @@ a build error, but a screen that renders wrong or not at all.
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
-- **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
+- **`check:ui`** spawns a dev server, walks 17 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
-  `[object Object]` in rendered copy, and named sections still present. It is
-  **not** wired into `deploy.yml` — browser automation is too slow and flaky to
-  sit in front of production deploys. Run it by hand before merging anything that
-  touches the render tree. `--snapshot before.json` / `--snapshot after.json` dumps
-  per-screen text so you can prove a refactor is behaviour-neutral; only the clock
-  inside ASPECT & SUN should differ between two runs. `--url <live URL>` points the
-  same walk at the deployed site instead of a dev server.
+  `[object Object]` in rendered copy, and named sections still present. It is the
+  broadest of the browser guards and it runs on every PR via
+  `.github/workflows/render-guards.yml` (~5m35s). It stays **out of `deploy.yml`** and
+  out of `npm run build` — browser automation is too slow and flaky to sit in front of
+  a production deploy, and a flake must not read as "the build is broken".
+  - It was hand-run only until 2026-08-09, for a reason that no longer holds: it was too
+    flaky to gate on. Both causes are fixed rather than tolerated — #464 made it claim a
+    genuinely free port instead of adopting whatever answered 5190 (it had reported a
+    failure in code it never loaded, and could equally have passed), and #742 made it
+    settle on the text having stopped changing. Wiring it in only made sense *after* both.
+  - `--snapshot before.json` / `--snapshot after.json` dumps per-screen text so you can
+    prove a refactor is behaviour-neutral; only the clock inside ASPECT & SUN should differ
+    between two runs. CI uploads that dump as the `ui-screens` artifact, because the failure
+    line names the screen and the offending text but the surrounding copy is what tells you
+    whether it is a real bug.
+  - `--url <live URL>` points the same walk at the deployed site instead of a dev server.
+  - **The sample route detail is pinned by name** (`North Ridge (Complete)` in Washington
+    under `USE_DB`, `West Slabs` in Utah on seed), so a rename or delete in the live DB
+    turns this red on a PR whose author changed nothing. The failure separates the two
+    cases by reading the app's own `No routes match.` empty state rather than guessing from
+    body length, and says which it is; `--route` repoints it.
 - **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
