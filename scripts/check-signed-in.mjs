@@ -27,6 +27,16 @@
 // Only rendering the screen catches it, and only an account with a populated crew
 // renders that screen.
 //
+// It then opens EVERY overlay the app declares with that account signed in. check:zero
+// opens the same set at zero, where the failure is a dangling label or a dead end; here
+// they have real people behind them, which is where a seed id meeting a uuid surfaces.
+// The list is discovered from the source (scripts/lib/overlay-scaffold.mjs), so a modal
+// added tomorrow is walked without anyone registering it.
+//
+// Opening by name reaches some overlays the UI would not currently offer. Before treating
+// one as a bug, check the setter's call sites -- an overlay no user can reach is a
+// different finding from one that renders wrong.
+//
 //   npm run check:signed-in
 //   npm run check:signed-in -- --dump out.json   # per-screen text, for A/B diffing
 //   npm run check:signed-in -- --keep            # leave the fixture accounts behind
@@ -47,6 +57,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
+import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -130,7 +141,11 @@ try {
   // injected session has to satisfy the same gate a production user does. If the session
   // were not accepted, the walk would find a login form and fail rather than quietly
   // walking a demo.
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  // The signed-in config adds ONLY a ?z=<overlayName> opener. It does not touch identity —
+  // that is the whole difference from zero-state.config.mjs, which rewrites three anchors to
+  // force a brand-new account. Here the session is real and uid comes from it, which is the
+  // point: an overlay rendering real crew-mates is what nothing has ever walked.
+  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });
@@ -234,7 +249,7 @@ try {
     }
     for (const [re, why] of FORBIDDEN) { const m = text.match(re); if (m) fail(name, `${why} — found ${JSON.stringify(m[0])}`); }
     for (const e of pageErrors) fail(name, `uncaught page error: ${e}`);
-    log(`  ${name}: ${text.length} chars`);
+    log(`  ${name}: ${text.length} chars${opts.tab ? " (on " + opts.tab + ")" : ""}`);
     return text;
   }
 
@@ -373,6 +388,77 @@ try {
     fail("Group:detail", "could not open the group the fixture owns — it is not listed for its own owner");
   }
 
+  // --- Every overlay, as an account that owns things. --------------------------------
+  //
+  // check:zero opens all of these at zero, where the bug is a dangling label or a dead end
+  // (#674 put the word "undefined" into a text message that way). This walks the same set
+  // with REAL people behind them, which nothing has done: the overlays that render other
+  // climbers -- share cards, rosters, invites, vouches -- are exactly where a seed id
+  // meeting a uuid shows up, and that is the family behind #569, #680 and #701.
+  log("\noverlays, signed in and populated:");
+  const overlays = await page.evaluate(() => window.__overlays || []);
+  asserted++;
+  if (!overlays.length) {
+    fail("scaffold", "no overlay states were discovered — the opener did not run, so NONE of the overlays below were actually checked");
+  } else {
+    log(`  ${overlays.length} overlay states discovered`);
+  }
+  // A baseline of the same tab with NO overlay. Several of these are full-screen
+  // takeovers that REPLACE the nav, so "did the nav appear" is not a usable readiness
+  // test -- it reported guideAppOpen and inboxOpen as "never rendered" when they had
+  // rendered fine. Comparing against this baseline asks the question that actually
+  // matters: did opening the overlay change the screen at all?
+  // No single tab hosts every overlay. Several are rendered inside one tab's subtree and
+  // simply do not exist elsewhere: alertsOpen and unfinishedOpen live on Home, crewListOpen
+  // on Crew, areaTreeOpen on Climbs. Opening those from the Profile tab leaves the screen
+  // untouched, which reads as "the overlay is dead" when the truth is it was never mounted.
+  //
+  // So try each tab and take the first where opening the overlay actually CHANGES the
+  // screen. Failing only when no tab works is what makes "changed nothing" mean something.
+  const TABS = ["me", "today", "crew", "routes", "logbook", "discover"];
+  const baselines = {};
+  for (const t of TABS) {
+    await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
+    // Same settle as the overlay pass below. A shorter one here would let ordinary
+    // late-arriving content read as "the overlay changed the screen".
+    await page.waitForTimeout(2600);
+    baselines[t] = new Set((await page.innerText("body")).split("\n").map((l) => l.trim()));
+  }
+
+  assertKnownOverlays(overlays, fail);
+  for (const name of overlays) {
+    if (NEEDS_EXTRA_STATE[name]) {
+      log(`  ${name}: skipped — ${NEEDS_EXTRA_STATE[name]}`);
+      continue;
+    }
+    let opened = null;
+    for (const t of TABS) {
+      await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
+      await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
+      for (let i = 0; i < 40; i++) {
+        if ((await page.innerText("body").catch(() => "")).trim().length > 40) break;
+        await page.waitForTimeout(1000);
+      }
+      await page.waitForTimeout(2600);
+      // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
+      // trips on anything that moves on its own -- a clock, a relative timestamp -- and
+      // would report an overlay as opened when nothing opened at all.
+      const lines = (await page.innerText("body")).split("\n").map((l) => l.trim());
+      if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
+    }
+    asserted++;
+    if (!opened) {
+      fail(`modal:${name}`, `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified`);
+      continue;
+    }
+    // The floor is deliberately low: a takeover like the guide dashboard legitimately
+    // renders two honest lines ("You haven't applied to guide yet."). The real signal is
+    // the forbidden-text and page-error checks inside capture(), which is what caught
+    // #674's "undefined" and the friends row here.
+    await capture(`modal:${name}`, { min: 30, tab: opened.tab });
+  }
+
   if (DUMP) {
     fs.writeFileSync(DUMP, JSON.stringify(screens, null, 2));
     log(`\nwrote ${DUMP} (${Object.keys(screens).length} screens)`);
@@ -380,15 +466,20 @@ try {
 
   // A walk that asserted almost nothing must not read as a pass. Every count below is a
   // floor for work that definitely happened above, so this trips on a silent early exit.
-  const MIN_ASSERTS = 12;
-  if (asserted < MIN_ASSERTS) {
-    console.error(`\nINCONCLUSIVE: only ${asserted} assertions ran (expected at least ${MIN_ASSERTS}). The walk exited early; treat this as a failure, not a pass.`);
-    process.exitCode = 1;
-  } else if (fails.length) {
+  const MIN_ASSERTS = 40;
+  // Print the findings whatever else is true. An earlier version returned early on
+  // INCONCLUSIVE and swallowed the failure list, so a run that knew exactly what was wrong
+  // ("no overlay states were discovered") reported only that too few assertions ran --
+  // technically a failure, but it told the reader nothing about the cause.
+  if (fails.length) {
     console.error(`\ncheck:signed-in FAILED (${fails.length}):`);
     for (const f of fails) console.error("  - " + f);
     process.exitCode = 1;
-  } else {
+  }
+  if (asserted < MIN_ASSERTS) {
+    console.error(`\nINCONCLUSIVE: only ${asserted} assertions ran (expected at least ${MIN_ASSERTS}). The walk exited early; treat this as a failure, not a pass.`);
+    process.exitCode = 1;
+  } else if (!fails.length) {
     log(`\nAll ${Object.keys(screens).length} screens OK, ${asserted} assertions.`);
   }
 } catch (e) {
