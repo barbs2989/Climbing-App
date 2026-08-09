@@ -74,19 +74,24 @@ a build error, but a screen that renders wrong or not at all.
   a 0.0hr hike leg and the return tile went **green**, an affirmative "you're down before
   dark" with the walk in *and* out counted as zero, and the "After dark" warning could never
   fire) and **#655** (the sport/trad/bouldering safety advice sat behind the Safety tab,
-  which is hidden for exactly those three disciplines). Both were invisible to a guard that
+  which was hidden for exactly those three disciplines — that tab is unconditional now, so the
+  advice is asserted on it rather than inline on Overview). Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
-  - It also pins **where the nearby-fire panel lives**: on the Safety tab, first section, and on
-    Overview *only* for a route offered no Safety tab (`showSafety` is content-gated, so that is
-    99.5% of the catalog — moving it unconditionally would delete it for almost every route).
-    This needed a **located** fixture: `bare()`'s area has no `lat`/`lng` and `FireNearRoute`
-    renders nothing without a coordinate, so every other render here is of a route where the
-    panel is correctly absent. Match its loading line, **never its "Fire & smoke" heading** —
-    the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that removed
-    the panel from Safety entirely passed on the strength of that link.
+  - It also pins **where the nearby-fire panel lives**: first section of the Safety tab, on every
+    route, and nowhere else. That needed a **located** fixture — `bare()`'s area has no `lat`/`lng`
+    and `FireNearRoute` renders nothing without a coordinate, so every other render here is of a
+    route where the panel is correctly absent. Match its loading line, **never its "Fire & smoke"
+    heading**: the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that
+    removed the panel from Safety entirely passed on the strength of that link.
+  - **Plan and Safety are gated differently, and it asserts both.** `showPlan` is content-gated;
+    the Safety tab is **unconditional**. An empty Plan tab promises an approach and a descent and
+    delivers a blank, but the Safety tab is never empty — the per-discipline advice, the forecast
+    links and the fire panel all render without the route carrying one safety field of its own.
+    While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
+    `hasSafetyContent()` is gone; `hasPlanContent()` stays.
 - **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
   **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
   matches a **display name**, which belongs to neither id space, so it hands one person's
