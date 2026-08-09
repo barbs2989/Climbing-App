@@ -1,4 +1,4 @@
--- 0106: Eldorado Peak is filed twice as well — merge only, delete nothing.
+-- 0108: Eldorado Peak is filed twice as well — merge only, delete nothing.
 --
 -- Found by the flat-sub-summit sweep that followed 0105. `wa_main_peak` [crag, 4 routes]
 -- sits 20 m from `wa_eldorado_peak` [peak, 8,872 ft], both flat under North Cascades Core.
