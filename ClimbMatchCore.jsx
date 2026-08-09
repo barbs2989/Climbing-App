@@ -85,6 +85,21 @@ let DLOCALE=undefined;
 const DISC={rock:{label:"Rock",icon:"🨢",color:"#2f81f7",bg:"#2f81f722"},scrambling:{label:"Scrambling",icon:"🥾",color:"#e3a008",bg:"#e3a00822"},alpine:{label:"Alpine",icon:"🏔️",color:"#56d4dd",bg:"#56d4dd22"},mountaineering:{label:"Mountaineering",icon:"⛰️",color:"#f85149",bg:"#f8514922"},hiking:{label:"Hiking",icon:"🌲",color:"#b07d3a",bg:"#b07d3a22"},bouldering:{label:"Bouldering",icon:"🪨",color:"#f0883e",bg:"#f0883e22"},ice:{label:"Ice",icon:"🧊",color:"#79c0ff",bg:"#79c0ff22"},mixed:{label:"Mixed",icon:"⛏️",color:"#f778ba",bg:"#f778ba22"},aid:{label:"Aid",icon:"🪜",color:"#9aa4b2",bg:"#9aa4b222"}};
 const CAT={...DISC,trad:{label:"Trad",icon:"🨢",color:"#a371f7",bg:"#a371f722"},sport:{label:"Sport",icon:"🔗",color:"#39d353",bg:"#39d35322"}};
 let UNITS="imperial";
+/* Set from App whenever the real Supabase session changes. Seed climbing history is authored
+   by NAME (`ROUTES[].activity[].user`), not by id, so it can only be attributed safely to a
+   SEED identity — and ME keeps `id:0` even when signed in, so an id test alone cannot tell
+   your demo self from your real account. See seedHistoryFor(). */
+let DB_UID=null;
+/* The mirror of seedHistoryFor(): resolve the AUTHOR of a seed activity row. Eight places used
+   to write `a.user===ME.name?ME:CLIMBERS.find(…)`, which reads a display name as an identity
+   claim. Seed `activity` never contains a real account's own entries — those live in `logs` —
+   so once you are signed in that first branch can only ever be a FALSE match, and it fires
+   whenever your profile name happens to equal a seed reporter's. It is not just a label: this
+   feeds `trustOf` in buildConsensus/kwScan and the start-location and topo weightings, and a
+   signed-in ME has `trustScore:0` from the sign-in reset — so a collision would silently
+   re-weight the derived conditions consensus. Falling through to CLIMBERS is the right answer
+   there, because the row really is the seed climber's. */
+export const seedAuthor=n=>(n===ME.name&&!DB_UID)?ME:(CLIMBERS.find(c=>c.name===n)||null);
 let VOUCH_BOOST={};
 let MY_STARS={};
 let RESPONSE_RATES={};
@@ -629,7 +644,7 @@ function paceVariants(it,waypoints){
   return{relaxed,standard:days,demanding};
 }
 const normTag=t=>{var s=String(t).trim();return s?s.charAt(0).toUpperCase()+s.slice(1).toLowerCase():s;};
-function buildConsensus(activity,voteFor){if(!activity||!activity.length)return null;const trustOf=n=>{const a=n===ME.name?ME:CLIMBERS.find(c=>c.name===n);return a?vScore(a):50;};const wOf=it=>{const base=0.45+0.55*(trustOf(it.user)/100);return base*(it.crewId?1:0.72);};const byMonth={};activity.forEach(a=>{if(!a.date)return;const mo=new Date(String(a.date).slice(0,10)+"T12:00:00").getMonth();if(isNaN(mo))return;if(!byMonth[mo])byMonth[mo]={count:0,stars:0,rated:0};byMonth[mo].count++;if(a.stars>0){byMonth[mo].rated++;byMonth[mo].stars+=a.stars;}});const _rated=activity.filter(a=>a&&a.stars>0);const avgStars=_rated.length?_rated.reduce((s,a)=>s+a.stars,0)/_rated.length:0;const allTags={};let wTot=0;activity.forEach(a=>{const w=wOf(a);wTot+=w;(a.condTags||[]).forEach(t=>{t=normTag(t);allTags[t]=(allTags[t]||0)+w;});});const topTags=Object.entries(allTags).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,w])=>({tag:t,pct:Math.min(100,Math.round(w/wTot*100))}));const bestMonths=Object.entries(byMonth).filter(([,v])=>v.rated&&v.stars/v.rated>=4).map(([m])=>MONTHS[parseInt(m)]);const confidence=activity.length>=5?"high":activity.length>=3?"medium":"low";const recentReports=activity.filter(a=>isRecent(a.date)).sort((a,b)=>(b.date||"").localeCompare(a.date||""));const rTags={};let rTot=0;recentReports.forEach(a=>{const w=wOf(a);rTot+=w;(a.condTags||[]).forEach(t=>{t=normTag(t);rTags[t]=(rTags[t]||0)+w;});});const recentTags=rTot?Object.entries(rTags).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,w])=>({tag:t,pct:Math.min(100,Math.round(w/rTot*100))})):[];/* Hiding a reported hazard needs CORROBORATION, not one voice. This used to clear on a
+function buildConsensus(activity,voteFor){if(!activity||!activity.length)return null;const trustOf=n=>{const a=seedAuthor(n);return a?vScore(a):50;};const wOf=it=>{const base=0.45+0.55*(trustOf(it.user)/100);return base*(it.crewId?1:0.72);};const byMonth={};activity.forEach(a=>{if(!a.date)return;const mo=new Date(String(a.date).slice(0,10)+"T12:00:00").getMonth();if(isNaN(mo))return;if(!byMonth[mo])byMonth[mo]={count:0,stars:0,rated:0};byMonth[mo].count++;if(a.stars>0){byMonth[mo].rated++;byMonth[mo].stars+=a.stars;}});const _rated=activity.filter(a=>a&&a.stars>0);const avgStars=_rated.length?_rated.reduce((s,a)=>s+a.stars,0)/_rated.length:0;const allTags={};let wTot=0;activity.forEach(a=>{const w=wOf(a);wTot+=w;(a.condTags||[]).forEach(t=>{t=normTag(t);allTags[t]=(allTags[t]||0)+w;});});const topTags=Object.entries(allTags).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,w])=>({tag:t,pct:Math.min(100,Math.round(w/wTot*100))}));const bestMonths=Object.entries(byMonth).filter(([,v])=>v.rated&&v.stars/v.rated>=4).map(([m])=>MONTHS[parseInt(m)]);const confidence=activity.length>=5?"high":activity.length>=3?"medium":"low";const recentReports=activity.filter(a=>isRecent(a.date)).sort((a,b)=>(b.date||"").localeCompare(a.date||""));const rTags={};let rTot=0;recentReports.forEach(a=>{const w=wOf(a);rTot+=w;(a.condTags||[]).forEach(t=>{t=normTag(t);rTags[t]=(rTags[t]||0)+w;});});const recentTags=rTot?Object.entries(rTags).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,w])=>({tag:t,pct:Math.min(100,Math.round(w/rTot*100))})):[];/* Hiding a reported hazard needs CORROBORATION, not one voice. This used to clear on a
    single "gone" vote (gone>=1 && gone>still). That was survivable only while votes were
    session-only — you could hide a hazard from yourself and nobody else. Now that they
    persist (0089), the old rule would let one anonymous vote suppress a rockfall warning for
@@ -637,7 +652,7 @@ function buildConsensus(activity,voteFor){if(!activity||!activity.length)return 
    The asymmetry is deliberate: erring this way leaves a cleared hazard showing, which
    costs a climber some caution; erring the other way hides a real one. */
 const HAZARD_CLEAR_MIN_VOTES=2;
-const clearedTag=t=>{if(!voteFor)return false;const v=voteFor(t);return !!(v&&v.gone>=HAZARD_CLEAR_MIN_VOTES&&v.gone>(v.still||0));};const hazards=recentReports.filter(a=>(a.condTags||[]).some(t=>isHazardTag(t)&&!clearedTag(t))).map(a=>({user:a.user,avatar:a.avatar,date:a.date,trust:trustOf(a.user),tags:(a.condTags||[]).filter(t=>isHazardTag(t)&&!clearedTag(t))})).slice(0,4);const clearedTags=voteFor?[...new Set(recentReports.flatMap(a=>(a.condTags||[]).filter(t=>isHazardTag(t)&&clearedTag(t))))]:[];const lastDate=activity.map(a=>a.date).filter(Boolean).sort().slice(-1)[0]||null;const verifiedCount=activity.filter(a=>{const au=a.user===ME.name?ME:CLIMBERS.find(c=>c.name===a.user);return au&&au.verified;}).length;const photos=(activity.flatMap(a=>(a.photos||[]).map(p=>({url:typeof p==='string'?p:p.url,user:a.user,avatar:a.avatar,date:a.date})))).slice(0,12);const faCredits=activity.filter(a=>a.faAscent).map(a=>a.user).filter((v,i,a)=>a.indexOf(v)===i);const isDeveloped=activity.some(a=>a.developed);var _CF=["tempF","carToCar","snow","water","bugs","trail","freezing","snowDepth","seepage","mud"];var condAgg={};_CF.forEach(function(k){var vals=activity.filter(function(a){return a.cond&&a.cond[k]!=null&&a.cond[k]!=="";}).map(function(a){return{val:a.cond[k],w:wOf(a),date:a.date,recent:isRecent(a.date)};});if(!vals.length)return;var pool=vals.filter(function(v){return v.recent;});if(!pool.length)pool=vals;if(k==="tempF"){var ws=pool.reduce(function(s,v){return s+v.w;},0);condAgg[k]={value:Math.round(pool.reduce(function(s,v){return s+parseFloat(v.val)*v.w;},0)/ws)+"°F",n:pool.length};}else if(k==="carToCar"){var srt=vals.slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));});condAgg[k]={value:srt[0].val,n:vals.length};}else{var tal={};pool.forEach(function(v){tal[v.val]=(tal[v.val]||0)+v.w;});var winner=Object.entries(tal).sort(function(a,b){return b[1]-a[1];})[0][0];var agree=pool.filter(function(v){return v.val===winner;});var dates=agree.map(function(v){return v.date;}).filter(Boolean).sort();condAgg[k]={value:winner,n:agree.length,mostRecent:dates.length?dates[dates.length-1]:null};}});return{avgStars,topTags,bestMonths,byMonth,confidence,reportCount:activity.length,hazards,clearedTags,lastDate,verifiedCount,recentTags,recentCount:recentReports.length,conditions:condAgg,photos,faCredits,isDeveloped};}
+const clearedTag=t=>{if(!voteFor)return false;const v=voteFor(t);return !!(v&&v.gone>=HAZARD_CLEAR_MIN_VOTES&&v.gone>(v.still||0));};const hazards=recentReports.filter(a=>(a.condTags||[]).some(t=>isHazardTag(t)&&!clearedTag(t))).map(a=>({user:a.user,avatar:a.avatar,date:a.date,trust:trustOf(a.user),tags:(a.condTags||[]).filter(t=>isHazardTag(t)&&!clearedTag(t))})).slice(0,4);const clearedTags=voteFor?[...new Set(recentReports.flatMap(a=>(a.condTags||[]).filter(t=>isHazardTag(t)&&clearedTag(t))))]:[];const lastDate=activity.map(a=>a.date).filter(Boolean).sort().slice(-1)[0]||null;const verifiedCount=activity.filter(a=>{const au=seedAuthor(a.user);return au&&au.verified;}).length;const photos=(activity.flatMap(a=>(a.photos||[]).map(p=>({url:typeof p==='string'?p:p.url,user:a.user,avatar:a.avatar,date:a.date})))).slice(0,12);const faCredits=activity.filter(a=>a.faAscent).map(a=>a.user).filter((v,i,a)=>a.indexOf(v)===i);const isDeveloped=activity.some(a=>a.developed);var _CF=["tempF","carToCar","snow","water","bugs","trail","freezing","snowDepth","seepage","mud"];var condAgg={};_CF.forEach(function(k){var vals=activity.filter(function(a){return a.cond&&a.cond[k]!=null&&a.cond[k]!=="";}).map(function(a){return{val:a.cond[k],w:wOf(a),date:a.date,recent:isRecent(a.date)};});if(!vals.length)return;var pool=vals.filter(function(v){return v.recent;});if(!pool.length)pool=vals;if(k==="tempF"){var ws=pool.reduce(function(s,v){return s+v.w;},0);condAgg[k]={value:Math.round(pool.reduce(function(s,v){return s+parseFloat(v.val)*v.w;},0)/ws)+"°F",n:pool.length};}else if(k==="carToCar"){var srt=vals.slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));});condAgg[k]={value:srt[0].val,n:vals.length};}else{var tal={};pool.forEach(function(v){tal[v.val]=(tal[v.val]||0)+v.w;});var winner=Object.entries(tal).sort(function(a,b){return b[1]-a[1];})[0][0];var agree=pool.filter(function(v){return v.val===winner;});var dates=agree.map(function(v){return v.date;}).filter(Boolean).sort();condAgg[k]={value:winner,n:agree.length,mostRecent:dates.length?dates[dates.length-1]:null};}});return{avgStars,topTags,bestMonths,byMonth,confidence,reportCount:activity.length,hazards,clearedTags,lastDate,verifiedCount,recentTags,recentCount:recentReports.length,conditions:condAgg,photos,faCredits,isDeveloped};}
 
 
 
@@ -892,9 +907,23 @@ function PhotoStrip({photos,onAdd}){
   </div>;
 }
 function ticksFor(name){const out=[];ROUTES.forEach(r=>{(r.activity||[]).forEach(a=>{if(a.user===name)out.push({route:r,mtn:MOUNTAINS.find(m=>m.id===r.mountainId)||{},date:a.date,tickType:a.tickType,stars:a.stars,user:a.user,avatar:a.avatar,condTags:a.condTags,text:a.text,partners:a.partners,cond:a.cond});});});return out.sort((a,b)=>(b.date||"").localeCompare(a.date||""));}
-function TickList({name,logs,onOpen,initial,routeById}){
+/* ticksFor matches on a DISPLAY NAME, which belongs to neither id space, so it will happily
+   hand one person's climbing history to anyone who shares their name. Eleven names author
+   seed activity (Maya Chen 11 rows, Alex Torres 8, Jordan Park 7 … and "Nathan Barber", the
+   seed ME). Two real identities can collide with them:
+     - ME. `ME.id` is never reassigned — it is `0` signed in or out — while `ME.name` becomes
+       the real account's profile name. So a numeric-id test says "seed" for a real account.
+       The sign-in reset already clears `ME.ticks`, which is what makes Resume/TickList fall
+       through to this name scan in the first place.
+     - A DB-backed friend. `{id,name,avatar,…}` under a uuid, and the friends list opens
+       FullProfile with it (partner-search rows are inert on purpose, so they cannot).
+   Attributing to the wrong person is not cosmetic here: three Leaderboards badges
+   (classics_b, highpoints_b, peaks_b) COUNT these rows, so a collision scores. Same rule as
+   everywhere else in this codebase — never invent identity, and keep the id spaces apart. */
+const seedHistoryFor=c=>(c&&typeof c.id==="number"&&(c.id!==0||!DB_UID))?ticksFor(c.name):[];
+function TickList({climber,logs,onOpen,initial,routeById}){
   const [sort,setSort]=useState("new");const [disc,setDisc]=useState("all");const [showAll,setShowAll]=useState(false);
-  const base=ticksFor(name);
+  const base=seedHistoryFor(climber);
   const extra=(logs||[]).map(l=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return r?{route:r,mtn:MOUNTAINS.find(m=>m.id===r.mountainId)||r._dbArea||{},date:l.date,tickType:l.tickType,stars:l.stars,user:ME.name,avatar:ME.avatar,condTags:l.condTags||[],text:l.text||l.notes||"",partners:l.partners||[],cond:l.cond,photos:l.photos,gpxName:l.gpxName}:null;}).filter(Boolean);
   const allRaw=[...extra,...base];
   if(!allRaw.length)return <div style={{fontSize:13,color:C.textMuted,padding:"10px 2px"}}>No logged climbs yet — log an ascent from any climb's page and it shows up here.</div>;
@@ -940,7 +969,7 @@ function FriendsFeed({connections,onOpenRoute,onOpenProfile,onKudos,onMsg,onVouc
   const VB={Flash:"flashed",Onsight:"onsighted",Summit:"summited",Lead:"led",Send:"sent",Redpoint:"redpointed",Top:"topped out"};
   const items=[];
   (connections||[]).forEach(f=>{
-    ticksFor(f.name).forEach(t=>items.push({type:"send",f:f,route:t.route,date:t.date,tickType:t.tickType}));
+    seedHistoryFor(f).forEach(t=>items.push({type:"send",f:f,route:t.route,date:t.date,tickType:t.tickType}));
     (f.vouches||[]).forEach(v=>items.push({type:"vouch",f:f,from:v.from,date:v.date}));
   });
   if(!items.length)return null;
@@ -1011,9 +1040,9 @@ function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,on
           
           
           <SL>Disciplines</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{climber.disciplines.map(d=><DiscBadge key={d} id={d} sm/>)}</div>
-          {((climber.__selfLogs&&climber.__selfLogs.length)||climber.pyramid)?<div style={{marginBottom:12}}><SL>Sends by grade</SL><div style={{fontSize:12,color:C.textMuted,margin:"-2px 0 8px",lineHeight:1.5}}>{climber.__selfLogs?"Your sends by grade — where you operate and what you can project.":"Climbs logged at each grade — a quick read on where they operate."}</div><AscentPyramid routeById={routeById} logs={climber.__selfLogs} pyramid={climber.pyramid}/></div>:null}<Challenges routeById={routeById} logs={ticksFor(climber.name).map(t=>({routeId:t.route.id,tickType:t.tickType,stars:t.stars,date:t.date})).concat(climber.__selfLogs||[])} who={climber.name} onOpen={onOpenRoute} onOpenReport={onOpenReport}/>
+          {((climber.__selfLogs&&climber.__selfLogs.length)||climber.pyramid)?<div style={{marginBottom:12}}><SL>Sends by grade</SL><div style={{fontSize:12,color:C.textMuted,margin:"-2px 0 8px",lineHeight:1.5}}>{climber.__selfLogs?"Your sends by grade — where you operate and what you can project.":"Climbs logged at each grade — a quick read on where they operate."}</div><AscentPyramid routeById={routeById} logs={climber.__selfLogs} pyramid={climber.pyramid}/></div>:null}<Challenges routeById={routeById} logs={seedHistoryFor(climber).map(t=>({routeId:t.route.id,tickType:t.tickType,stars:t.stars,date:t.date})).concat(climber.__selfLogs||[])} who={climber.name} onOpen={onOpenRoute} onOpenReport={onOpenReport}/>
           
-          <div style={{marginBottom:12}}><SL>Logged Climbs · {ticksFor(climber.name).length+(climber.__selfLogs?climber.__selfLogs.length:0)}</SL><div style={{background:C.surface,borderRadius:11,padding:"2px 13px",border:`1px solid ${C.border}`}}><TickList routeById={routeById} name={climber.name} logs={climber.__selfLogs||[]} onOpen={onOpenReport} initial={6}/></div></div>
+          <div style={{marginBottom:12}}><SL>Logged Climbs · {seedHistoryFor(climber).length+(climber.__selfLogs?climber.__selfLogs.length:0)}</SL><div style={{background:C.surface,borderRadius:11,padding:"2px 13px",border:`1px solid ${C.border}`}}><TickList routeById={routeById} climber={climber} logs={climber.__selfLogs||[]} onOpen={onOpenReport} initial={6}/></div></div>
           
         </div>:null}
         {pt==="safety"?<div>
@@ -2068,7 +2097,7 @@ function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catc
     vert:{id:"vert",icon:"📈",label:"Vert 1yr",val:pp=>vertOf(pp),disp:pp=>uElev(vertOf(pp)),suffix:"climbed · 12mo",note:"Estimated vertical climbed over the last 12 months — rewards the people logging the biggest days, not just the hardest moves."},
     onsight:{id:"onsight",icon:"⚡",label:"Onsight pts",val:pp=>onsightPts(pp),disp:pp=>onsightPts(pp).toLocaleString(),suffix:disc==="bouldering"?"flash pts":"onsight pts",note:"A cumulative score for first-try sends — onsights and flashes across every climb, weighted by grade. Rewards depth, not just your single hardest first-try."},
     days:{id:"days",icon:"📅",label:"Days 1yr",val:pp=>daysOf(pp),suffix:"days out · 12mo",note:"Days on rock or in the mountains over the last 12 months. Rewards showing up."},
-    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Fifty Classics",val:pp=>ticksFor(pp.name).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>ticksFor(pp.name).filter(t=>(t.route.lists||[]).includes("state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>ticksFor(pp.name).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
+    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Fifty Classics",val:pp=>seedHistoryFor(pp).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>seedHistoryFor(pp).filter(t=>(t.route.lists||[]).includes("state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>seedHistoryFor(pp).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
   };
   let ids;
   const ROPED=disc!=="bouldering"&&disc!=="scrambling"&&disc!=="hiking";
@@ -2338,7 +2367,7 @@ function Resume({climber,logs,onClose,fstate,onConnect,onMessage,courses:courses
   const fmtFull=d=>{if(!d)return"";const p=d.split("-");return (MN[parseInt(p[1])]||"")+" "+(p[2]?parseInt(p[2])+", ":"")+p[0];};
   const today=fmtFull(new Date().toISOString().slice(0,10));
   const tickRow=t=>{if(t.routeId){const r=(routeById?routeById(t.routeId):ROUTES.find(x=>x.id===t.routeId));const mt=r?(MOUNTAINS.find(m=>m.id===r.mountainId)||r._dbArea||null):null;return {date:t.date,name:r?r.name:t.routeId,area:mt?mt.name:"",grade:r?r.grade:"",disc:r?r.discipline:"",role:t.role,partner:t.partner};}return {date:t.date,name:t.name,area:t.area||"",grade:t.grade||"",disc:"",kind:t.kind,role:t.role,partner:t.partner};};
-  const derived=ticksFor(climber.name).map(t=>({date:t.date,name:t.route.name,area:t.mtn.name,grade:t.route.grade,disc:t.route.discipline,role:t.tickType,partner:null}));
+  const derived=seedHistoryFor(climber).map(t=>({date:t.date,name:t.route.name,area:t.mtn.name,grade:t.route.grade,disc:t.route.discipline,role:t.tickType,partner:null}));
   const baked=climber.ticks?climber.ticks.map(tickRow):derived;
   const courses=coursesProp||climber.courses||(climber.certifications||[]).map(c=>({name:c,org:"",date:""}));
   const live=(logs||[]).map(l=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));const mt=r?(MOUNTAINS.find(m=>m.id===r.mountainId)||r._dbArea||null):null;return {date:l.date,name:r?r.name:"Logged climb",area:mt?mt.name:"",grade:r?r.grade:"",disc:r?r.discipline:"",role:l.tickType,partner:(l.partners&&l.partners[0])||null};});
@@ -2420,7 +2449,7 @@ function TripReport({ascent,onClose,onViewClimber,onOpenRoute,onShare,onConnect,
   const [showShare,setShowShare]=useState(false);
   if(!ascent)return null;
   const r=ascent.route,mtn=ascent.mtn||{};
-  const author=ascent.user===ME.name?ME:(CLIMBERS.find(c=>c.name===ascent.user)||null);
+  const author=seedAuthor(ascent.user);
   const ts=author?vScore(author):null,verified=author?author.verified:false;
   const isSummit=/summit/i.test(ascent.tickType||""),isAttempt=/attempt|bail|retreat|turn/i.test(ascent.tickType||"");
   const cat=CAT[catOf(r)]||{};
@@ -2755,6 +2784,7 @@ function PullToRefresh({onRefresh,children}){const [d,setD]=useState(0);const [b
 function ReactionPicker({onPick,onClose}){return createPortal(<div onClick={onClose} role="dialog" aria-label="React" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:9700,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,maxHeight:"62vh",overflowY:"auto",overscrollBehavior:"contain",borderRadius:"16px 16px 0 0",border:"1px solid "+C.border,padding:16}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}><div style={{fontSize:14,fontWeight:700,color:C.text}}>React</div><button onClick={onClose} aria-label="Close" style={{width:32,height:32,borderRadius:16,border:"none",background:C.surface,color:C.textSub,fontSize:16,cursor:"pointer"}}>✕</button></div><div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8}}>{REACTIONS.map(function(r){return <button key={r.k} onClick={()=>onPick(r.k)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:4,padding:"10px 4px",borderRadius:12,border:"1px solid "+C.border,background:C.surface,cursor:"pointer"}}><span style={{fontSize:22,lineHeight:1}}>{r.e}</span><span style={{fontSize:10,fontWeight:700,color:C.textSub,textAlign:"center"}}>{r.l}</span></button>;})}</div></div></div>,document.body);}
 var _cbBatch=[],_cbTimer=null,_toastT=null,_celebTimer=null;
 export function __set_UNITS(v){UNITS=v;}
+export function __set_DB_UID(v){DB_UID=v;}
 export function __set_RESPONSE_RATES(v){RESPONSE_RATES=v;}
 export function __set__celebTimer(v){_celebTimer=v;}
 export function __set__toastT(v){_toastT=v;}

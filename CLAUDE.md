@@ -15,6 +15,7 @@ npm run check:dead-props # props passed or declared but never read (runs in buil
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
+npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -71,6 +72,44 @@ a build error, but a screen that renders wrong or not at all.
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
+- **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
+  **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
+  matches a **display name**, which belongs to neither id space, so it hands one person's
+  climbing record to anyone who shares their name. Eleven names author seed activity (Maya
+  Chen 11 rows, Alex Torres 8, Jordan Park 7 … and "Nathan Barber", the seed `ME`). Two real
+  identities collide with them: **`ME`**, whose `id` is *never* reassigned — it is `0` signed
+  in or out — while `ME.name` becomes the real account's profile name; and a **DB-backed
+  friend**, a uuid that the friends list hands to `FullProfile`. Before #726 a real account
+  named "Nathan Barber" saw *Angels Landing, Oct 2024, Summit, 5★* on its own résumé. Not
+  cosmetic: three `Leaderboards` badges (`classics_b`, `highpoints_b`, `peaks_b`) **count**
+  those rows and `me` is in the pool whenever `showOnRanks` is set, so a collision **scores**.
+  Gated by `npm run build`.
+  - The id test alone cannot work, for the reason #680 records: **`0` is a real id.** The gate
+    is `typeof c.id==="number" && (c.id!==0 || !DB_UID)`, where `DB_UID` is a module global
+    written by `__set_DB_UID(uid)` — keyed on the **session**, exactly like the sign-in reset
+    (`useEffect(…,[uid])`), not on a build flag. With `DEMO_AUTOLOGIN` on, a visitor browsing
+    the demo has no `uid` and the demo is untouched.
+  - Ironically the sign-in reset is what **exposes** this: it clears `ME.ticks`, and clearing
+    it is what makes `Resume`/`TickList` fall *through* to the name scan.
+  - The same root cause runs in **both directions**, and the second one is easier to miss.
+    Eight places resolved a seed report's *author* as `a.user===ME.name?ME:CLIMBERS.find(…)`.
+    Seed `activity` never holds a real account's own entries — those live in `logs` — so once
+    you are signed in that branch can only ever be a **false** match. It is not a label: it
+    feeds `trustOf` in `buildConsensus`/`kwScan` and the start-location and topo weightings,
+    and a signed-in `ME` carries `trustScore:0` from the reset, so a name collision would
+    quietly **re-weight the derived conditions consensus**. All eight now go through
+    `seedAuthor(name)`, which falls through to `CLIMBERS` because the row really is the seed
+    climber's.
+  - The **static** half matters more than the render half — rendering can only prove today's
+    call sites, while the real regression is a twelfth `ticksFor(x.name)` added next month. So
+    it fails if `ticksFor` has any caller other than `seedHistoryFor`, and if any
+    `===ME.name?ME` survives, naming file:line. Comments and string contents are blanked in
+    **one stateful pass** (offsets preserved) for the reason `check:dead-flag-gates` records —
+    a regex strip ate real code there — so prose that merely *mentions* the pattern is safe.
+  - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
+    that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
+    climber, so the seed-climber assertion is **comparative** (against a name with no seed
+    activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
   `[object Object]` in rendered copy, and named sections still present. It is
