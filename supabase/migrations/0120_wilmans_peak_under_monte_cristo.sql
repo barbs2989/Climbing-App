@@ -1,0 +1,103 @@
+-- 0120: Wilmans Peak belongs to the Monte Cristo Group, and the other 17 D1 candidates do not
+-- belong anywhere else.
+--
+-- `audit:area-parents` reports 18 D1 candidates across 8 groups in the Washington subtree
+-- (D2 and D3 are clean). Exactly ONE of them is a real misfiling. The other 17 are recorded
+-- below rather than left for the next person to re-derive, because a candidate list that keeps
+-- coming back and keeps being dismissed is indistinguishable from one nobody has looked at.
+--
+-- ── THE MOVE ─────────────────────────────────────────────────────────────────
+-- `wa_wilmans_peak` (1 route, "Standard Scramble") sits directly under Darrington and Mountain
+-- Loop Hwy, as a SIBLING of `wa_monte_cristo_group` — which is 1.60 km away and already holds
+-- Cadet, Columbia, Del Campo, Foggy, Kyes and Monte Cristo Peak.
+--
+-- Mountain Project settles it: its "Monte Cristo Group" lists exactly four children — Columbia
+-- Peak, Kyes Peak, Monte Cristo Peak and **Wilmans Peak Group**. The peak is not near the group,
+-- it is one of its members. The geography agrees: the Wilmans Peaks stand immediately southeast
+-- above the old Monte Cristo townsite and are climbed from the same Glacier Basin approach as
+-- the rest of the group.
+--
+-- Note the direction of the MP evidence, because it cuts both ways here. MP does NOT file Cadet,
+-- Del Campo or Foggy under Monte Cristo Group, and we do. Those three are left alone: they are
+-- already inside the group, the audit does not flag them, and this migration exists to move a
+-- peak that is demonstrably a member — not to import MP's tree wholesale.
+--
+-- ── THE 17 THAT STAY, AND WHY ────────────────────────────────────────────────
+-- Two structural reasons cover 10 of them, and neither is a judgement call:
+--
+--   PARALLEL DISCIPLINE TREES (5) — "** Enchantments Bouldering" holds one boulder (Split
+--   Personality) and the detector flags Witches Tower, Dragontail Peak, Little Annapurna,
+--   Enchantment Peak and Colchuck Balanced Rock, all within 1.4 km. They are alpine formations
+--   and it is a bouldering grouping; they are correctly its siblings. This is the same shape
+--   #763 recorded catalog-wide, where parallel Ice/Bouldering/Sport trees made most of a 46-stub
+--   sweep false positives.
+--
+--   CRAG GROUPINGS THAT ARE NOT THE PEAK (5) — "Cutthroat Lake Crags" (Cutthroat Wall, Molar
+--   Tooth, Cutthroat Creek Wall) is flagged against Cutthroat Peak 3.42 km away; "Headlight
+--   Basin" (Headlight Playground, Lake Ingalls Outcrop) against Ingalls Peak and its South and
+--   East summits. In both cases the group's own NAME says it is the crags, not the summit. The
+--   Ingalls rows have a second, independent reason: 0117 deliberately kept the three summits as
+--   separate peak rows, and `trg_areas_leaf_xor` forbids a route-holding area from also holding
+--   children, so Ingalls Peak (3 routes) cannot adopt its own sub-summits even if we wanted it to.
+--
+-- The remaining 7 are judgement calls, each checked and each declined:
+--
+--   Mount Crowder / Northern Pickets — its nearest neighbour (Mount Fury, 2.6 km) and its
+--   prominence parent (Phantom Peak) are both inside the group, which is why the detector fires.
+--   But Crowder sits between the Northern and Southern Pickets near Picket Pass, and our tree
+--   already files SEVEN outlying Picket peaks (Berdeen, Davis, Elephant Butte, Indian Mountain,
+--   Despair, Prophet, Triumph) directly under `wa_picket_range` alongside both sub-range groups.
+--   Crowder is in that cohort. Moving it on proximity alone would assert a sub-range membership
+--   no source states.
+--
+--   Horseshoe Peak / Boston Basin — different cirque. Boston Basin lies east of Forbidden,
+--   Boston and Sahale; Horseshoe Peak is approached through Horseshoe Basin, south of the
+--   Sahale-Boston-Buckner ridge. 3.07 km apart and separated by the divide.
+--
+--   Big Snagtooth / "Silver Star and Wine spires" — Big Snagtooth is the high point of
+--   SNAGTOOTH RIDGE, the line of towers south of Silver Star. A neighbouring formation, not a
+--   Wine Spire.
+--
+--   North Peak / "Middle Peak" (Mount Index) — Index's North, Middle and Main peaks are
+--   siblings by construction. A 0.53 km separation between two summits of one mountain is what
+--   that mountain looks like, not a filing error.
+--
+--   Sheep Gap Mountain (8.8 km), Gothic Peak (9.9 km), Bedal Peak (11.4 km), Morning Star Peak
+--   (11.6 km) / Monte Cristo Group — all four fall inside the group's 9.7 km footprint radius
+--   only because that footprint is large. MP's Monte Cristo Group does not list any of them,
+--   and Gothic and Morning Star are Gothic Basin / Sunrise Mine objectives on the far side of
+--   the Mountain Loop. Left as siblings.
+--
+-- ── SAFETY ───────────────────────────────────────────────────────────────────
+-- Verified against the live DB immediately before writing:
+--   * wa_wilmans_peak is a childless leaf holding 1 route.
+--   * wa_monte_cristo_group holds 0 direct routes and already has 6 children, so it is
+--     unambiguously a parent and trg_areas_leaf_xor passes.
+--   * Both rows sit under wa_glacier_peak_region, so no ancestor above it changes subtree
+--     membership and there is no ltree cascade to chase (areas_set_path does not cascade, but
+--     the moved row has no descendants).
+update areas set parent_id = 'wa_monte_cristo_group'
+ where id = 'wa_wilmans_peak';
+
+-- Recount from the subtree, never arithmetic — 0111 predicted 29 and the truth was 28.
+-- Darrington is recounted too even though it should not move: if it does, a route left the
+-- subtree and that is a real problem, not a rounding difference.
+update areas set route_count = (
+  select count(*) from routes r join areas a2 on a2.id = r.area_id where a2.path <@ areas.path
+) where id in ('wa_monte_cristo_group','wa_glacier_peak_region');
+
+-- ── Verify afterward, as SEPARATE statements ─────────────────────────────────
+-- One paste is ONE transaction; an error in a read-only SELECT rolls back the writes above it.
+--
+--   select id, parent_id, path::text from areas where id = 'wa_wilmans_peak';
+--   -- expect parent_id = wa_monte_cristo_group and path
+--   --   usa.washington.wa_northwest.wa_glacier_peak_region.wa_monte_cristo_group.wa_wilmans_peak
+--
+--   select id, route_count from areas
+--     where id in ('wa_monte_cristo_group','wa_glacier_peak_region') order by id;
+--   -- expect monte_cristo_group 9 (was 8), glacier_peak_region UNCHANGED at 186.
+--   -- Predicted from a recount of the live tree, not by adding one.
+--
+--   -- then:  npm run check:counts   and   npm run audit:area-parents
+--   -- audit should report 17 D1 candidates across 7 groups; the Monte Cristo group keeps
+--   -- Sheep Gap, Gothic, Bedal and Morning Star, which are declined above.
