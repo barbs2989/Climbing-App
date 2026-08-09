@@ -23,6 +23,7 @@ npm run check:overlay-scroll # no overlay pane may chain its scroll to the page 
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
+npm run audit:area-parents # is every area filed under the place it belongs to?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -308,6 +309,38 @@ a build error, but a screen that renders wrong or not at all.
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
+- **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
+  the question `check:counts` cannot reach. `route_count` is verified against the subtree an
+  area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
+  self-consistent too. The Liberty Bell Group is one ridge of five towers and three of them
+  (Lexington Tower, North Early Winters Spire, South Early Winters Spire — 23 routes) were
+  parented as the group's **siblings**, so it advertised 27 routes against a true 50 and the
+  best-known lines at Washington Pass rendered outside the formation every guidebook files
+  them under. Kangaroo Ridge (`route_count` 0, holding two empty stubs while all five
+  populated formations sat outside) and "Silver Star and Wine spires" (containing neither
+  Silver Star nor three of the four Wine Spires) had the identical defect. `0104` repaired
+  all three.
+  - **The mechanism will recur on any import.** Two loads that were never joined: an
+    OpenBeta-derived crag tree supplied the grouping rows plus hollow `crag` stubs, and a
+    separate alpine peak list attached every real summit **flat** to the region above. The
+    fingerprint is a 0-route stub sitting metres from a populated peak of the same name —
+    `wa_north_early_winter_spire` was **8 m** from `wa_north_early_winters_spire`.
+  - **Report-only, like `audit:identity`** — not a pass/fail gate, and the exit code says
+    "things to look at", never "these are bugs". Earned: D1's first draft flagged 41
+    candidates of which 12 were real. Coordinates cannot decide parentage in crag terrain
+    (at the Icicle boulders every formation is within 500 m of every other) and generic
+    tokens like "dome"/"face"/"buttress" match across unrelated crags. **Confirm each hit
+    against the group's own name before moving anything.**
+  - Read-only, anon key, fails closed on an empty read — zero areas makes every tree look
+    perfect, so the realistic failure mode is a false pass.
+  - Injection-tested, and **three separate defects each made all four injections report a
+    clean tree** — none visible by reading the detector. The index was built before
+    injection (so a "moved" peak stayed in its frozen child list); victims were drawn from
+    the whole 47k-row catalog (so `--inject=path` perturbed an *Alaska* row while the scope
+    is WA); and scope from a single source hid one fault each way — by `parent_id` an orphan
+    has already left the walk, by `path` a rewritten path no longer says `washington`, so
+    scope is now the **union of both**. The tell every time: the injection logged, the
+    counter did not move.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
