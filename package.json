@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-bare-route.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-fire.mjs && node scripts/check-migration-numbers.mjs && node scripts/check-icons.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-clickable-divs.mjs && node scripts/check-bare-route.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-fire.mjs && node scripts/check-migration-numbers.mjs && node scripts/check-icons.mjs && vite build",
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
@@ -28,6 +28,7 @@
     "check:boot": "node scripts/check-boot-shell.mjs",
     "check:bare": "node scripts/check-bare-route.mjs",
     "check:icons": "node scripts/check-icons.mjs",
+    "check:clickable": "node scripts/check-clickable-divs.mjs",
     "check:seed-history": "node scripts/check-seed-history.mjs",
     "check:overlay-discovery": "node scripts/check-overlay-discovery.mjs",
     "check:overlay-scroll": "node scripts/check-overlay-scroll.mjs",
