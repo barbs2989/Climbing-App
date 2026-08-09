@@ -1,4 +1,11 @@
--- 0103: Mount Index is filed twice too — merge only, delete nothing.
+-- 0104: Mount Index is filed twice too — merge only, delete nothing.
+--
+-- Renumbered from 0103. #728 and #729 were written in parallel and both took 0103, which is
+-- the exact ambiguity README-numbering.md exists to prevent — "has 0103 been applied?" had
+-- two answers. This one merged second, so it moved; `0103_profile_discoverable.sql` keeps the
+-- number. The number is a label, not an ordering key (these are applied by hand), so nothing
+-- about the applied state changes — but if you already ran this file as "0103", it is this
+-- same file.
 --
 -- The third and last real hit from the co-located-area sweep (2,543 pairs, 3 real). The
 -- other two are done: 0100/0101 (The Brothers) and 0102 (McLellan).
