@@ -99,8 +99,12 @@ a build error, but a screen that renders wrong or not at all.
     is named in the output rather than silently skipped.
   - Injection-tested: restoring the four #674 defects trips 7 assertions, and breaking an
     anchor fails with `ANCHOR LOST` **plus** "nothing below was actually checked".
-  - Not in `build` and **not in CI**, same as `check:ui` — and note the repo depends on
-    `playwright-core`, which ships no browser for a runner to drive. Run it by hand.
+  - Runs on every PR via `.github/workflows/zero-state.yml` — its **own** workflow, not a
+    step in `build-check.yml` and not in `deploy.yml`, so a browser flake cannot read as
+    "the build is broken" or block a deploy. It is **not** in `npm run build`, so a local
+    build will not catch a regression here; run it by hand, CI is the backstop.
+    `playwright-core` downloads no browser, so it drives the Google Chrome that ships on
+    the `ubuntu-latest` image — the workflow asserts Chrome is present before starting.
   - Opening an overlay by name reaches some the UI would not offer at zero (e.g.
     `vouchesGivenOpen` only opens from a *See all N →* button needing >3 vouches). Check the
     setter's call sites before treating an empty one as a bug.
