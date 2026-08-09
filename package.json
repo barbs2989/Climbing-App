@@ -22,6 +22,7 @@
     "audit:terrain": "node scripts/audit-route-terrain.mjs",
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "audit:rappels": "node scripts/audit-rappels.mjs",
+    "audit:hazard-redundancy": "node scripts/audit-hazard-redundancy.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
     "check:crew": "node scripts/check-crew-ready.mjs",
     "check:log": "node scripts/check-log-hydration.mjs",
