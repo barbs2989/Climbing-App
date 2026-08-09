@@ -11,6 +11,14 @@ node_modules/
 # local-only service key for catalog loads (never commit)
 .env.load
 
+# per-screen text dumps written by the browser guards (check:ui --snapshot,
+# check:zero --dump). CI uploads them as build artifacts; locally they are scratch,
+# and a committed one would read as a checked-in expectation that nothing updates.
+ui-screens.json
+zero-state.json
+before.json
+after.json
+
 # regenerable catalog data — lives in Supabase, re-pull via etl-state.mjs
 catalog/**/*.json
 supabase/seed-utah.sql
