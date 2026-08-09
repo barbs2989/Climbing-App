@@ -1,0 +1,89 @@
+name: Render guards
+
+# Two checks that ask "does this actually reach a screen?" — a question the static
+# guards in build-check.yml cannot answer, because both need the app rendered.
+#
+# Why they need CI at all. Both were hand-run only, and on 2026-08-09 that failed
+# exactly the way you would predict: check:overlay-scroll had gone RED on main and
+# nobody knew. Three full-screen states of the guide application sheet scrolled the
+# page behind them (#724). Nothing reported it, because nothing ran it. A guard that
+# only runs when somebody remembers is a guard you do not have.
+#
+# Deliberately its own workflow, not steps in build-check.yml — the same reasoning
+# zero-state.yml records. These render a real app, so they are slower and flakier
+# than a Babel pass, and a flake here must not read as "the build is broken" nor
+# block a deploy, which is why neither appears in deploy.yml.
+#
+# Two independent jobs rather than two steps, so a browser flake in one cannot stop
+# the other from reporting.
+
+on:
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: render-guards-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  overlay-scroll:
+    name: Overlays contain their own scroll
+    runs-on: ubuntu-latest
+    # A hung dev server or a browser that never launches should fail in minutes,
+    # not sit for the default six hours.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # Fail here, with a readable message, rather than inside playwright's launcher.
+      # playwright-core downloads no browser; it drives the Google Chrome that ships
+      # on the ubuntu-latest image. That is the only reason this can run in CI.
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:overlay-scroll cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Overlay scroll containment
+        run: npm run check:overlay-scroll
+        env:
+          # Match zero-state.yml. Without these USE_DB is off and the app under test
+          # is not the one that ships, so a pass would say nothing about production.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+  field-renders:
+    name: Enriched columns reach a screen
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Every enriched column reaches a screen
+        run: npm run check:field-renders
+        env:
+          # Read-only, and the ANON key on purpose — `routes` and `areas` are publicly
+          # readable, CI has no business holding a key that bypasses RLS, and a checker
+          # that could write is a checker that can corrupt what it is checking. Same
+          # stance as area-count-drift.yml.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
