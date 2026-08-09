@@ -16,6 +16,7 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
+npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 ```
@@ -104,6 +105,39 @@ a build error, but a screen that renders wrong or not at all.
   - Opening an overlay by name reaches some the UI would not offer at zero (e.g.
     `vouchesGivenOpen` only opens from a *See all N →* button needing >3 vouches). Check the
     setter's call sites before treating an empty one as a bug.
+- **`check:signed-in`** walks the app as a **real signed-in account that already owns
+  things** — a crew and a group, each with a *second real member*. It fills the one gap the
+  two checks either side of it cannot reach: `check:ui` walks the seeded demo logged out, so
+  every id it resolves is a seed integer; `check:zero` walks a new account with every list
+  empty, so there is nothing to resolve. **Real data under a uuid** is neither, and it has
+  shipped bugs three times — **#569** (crew roster resolved members against seed `CLIMBERS`,
+  so a uuid matched nothing and a populated crew read `You + 0 climbers`), **#680** (group
+  management compared `ownerId` against the seed id `0`, so a DB group's own owner got no
+  controls), and **#688** (four more, below). Same shape every time: *seed-id logic meeting a
+  uuid.*
+  - Two accounts, created and destroyed **per run** (`scripts/lib/ui-fixture.mjs`). The
+    second one is the point — a solo fixture reproduces none of the bugs above, which is why
+    the 2026-08-05 `--signed-in` attempt was injection-tested, **missed**, and was reverted.
+    Per-run rather than one permanent QA account, because a fake climber left in `profiles`
+    surfaces in partner search for real users.
+  - Emails are on the reserved `.invalid` domain, so a stray confirmation can never route.
+    `sweepOrphans()` runs before each fixture and removes anything an earlier run left, so a
+    killed process leaks at most until the next run — teardown retries are not enough on
+    their own, because a killed process never reaches its `finally` block.
+  - The session is **injected into `localStorage` under `climbmatch-auth`**, not typed into
+    the sign-in modal: deterministic, and not coupled to that modal's markup.
+  - It deliberately does **not** set `VITE_DEMO_AUTOLOGIN`, so `realAuthGate` is live and the
+    injected session must satisfy the same gate a production user does. It asserts *who* it
+    is signed in as before anything else — otherwise a rejected session would quietly walk a
+    demo identity and report green about the wrong account.
+  - Requires the **service key** and `VITE_USE_DB=true`; it exits 1 rather than walking a
+    seed app. Not in `build` or CI, and CI should not hold a service key.
+  - Setup uses the service key, which **bypasses RLS** — so a row existing here is no
+    evidence a policy would have let a user create it. This answers "does the screen render
+    correctly", never "is the policy right".
+  - Injection-tested: reverting each of the five defects it claims to catch fails the run,
+    and each case requires a failure message that *names* that defect — a run that dies from
+    a port race must not count as a catch.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for

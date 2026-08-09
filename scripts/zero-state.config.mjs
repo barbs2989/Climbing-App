@@ -12,6 +12,7 @@
 // matching the check fails with ANCHOR LOST rather than quietly walking a populated
 // app and reporting green -- the same failure mode check:bare guards against.
 
+import { readFileSync, existsSync } from "node:fs";
 import base from "../vite.config.js";
 
 const ANCHORS = [
@@ -90,4 +91,51 @@ function zeroStateScaffold() {
   };
 }
 
-export default { ...base, plugins: [zeroStateScaffold(), ...(base.plugins || [])] };
+// Warm the LAZY children, not just the entry.
+//
+// #693 raised load()'s goto timeout to 120s because the Climbs tab lazily imports
+// DbAreaBrowser and the dev server compiles that chunk on the first request for it. That
+// diagnosis is right, but a bigger budget is not a fix: on a machine held at ~800 load by a
+// parallel session the run still died at 120s, on the FIRST navigation. Vite's own warmup
+// starts transforming these at server boot, which overlaps with Playwright launching
+// Chrome, so the chunks are largely built before the first goto instead of being paid for
+// inside its timeout.
+//
+// Discovered from the source rather than listed here, for the same reason the overlay list
+// is: a lazy import added tomorrow is warmed without anyone remembering to register it.
+// A hardcoded file list silently narrows every time the code moves.
+function lazyChunks() {
+  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx"];
+  const out = new Set();
+  for (const f of files) {
+    let src;
+    try { src = readFileSync(new URL("../" + f, import.meta.url), "utf8"); } catch { continue; }
+    for (const m of src.matchAll(/lazy\(\s*\(\)\s*=>\s*import\("([^"]+)"\)/g)) {
+      // warmup.clientFiles takes real file paths, not module specifiers: most of these are
+      // written extensionless ("./lib/DbAreaBrowser") and would warm NOTHING if passed
+      // through. Resolve against disk and say so if one does not exist, rather than
+      // shipping a warm list that quietly covers one file out of six.
+      const spec = m[1];
+      const cand = [spec, spec + ".jsx", spec + ".js", spec + "/index.jsx", spec + "/index.js"];
+      const hit = cand.find((c) => existsSync(new URL("../" + c.replace(/^\.\//, ""), import.meta.url)));
+      if (hit) out.add(hit);
+      else console.error("check:zero — lazy import " + JSON.stringify(spec) + " did not resolve to a file; it will not be warmed.");
+    }
+  }
+  if (!out.size) {
+    // Nothing matched: either there are no lazy imports any more, or the pattern moved.
+    // Say so rather than silently warming nothing and leaving the next person to rediscover
+    // the 120s timeout the hard way.
+    console.error("check:zero — no lazy imports found to warm; if the app still uses lazy(), the pattern in zero-state.config.mjs needs updating.");
+  }
+  return [...out];
+}
+
+const WARM = lazyChunks();
+console.log("check:zero — warming " + WARM.length + " lazy chunk(s): " + WARM.join(", "));
+
+export default {
+  ...base,
+  plugins: [zeroStateScaffold(), ...(base.plugins || [])],
+  server: { ...(base.server || {}), warmup: { clientFiles: WARM } },
+};
