@@ -168,7 +168,7 @@ a build error, but a screen that renders wrong or not at all.
     which is the failure this whole guard is about.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
-- **`check:ui`** spawns a dev server, walks 17 screens in headless Chrome, and
+- **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
   `[object Object]` in rendered copy, and named sections still present. It is the
   broadest of the browser guards and it runs on every PR via
@@ -191,6 +191,23 @@ a build error, but a screen that renders wrong or not at all.
     turns this red on a PR whose author changed nothing. The failure separates the two
     cases by reading the app's own `No routes match.` empty state rather than guessing from
     body length, and says which it is; `--route` repoints it.
+  - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
+    four screens of a six-tab app no render guard had ever opened. `tap()` matches control
+    text exactly, and these buttons carry the badge *inside* the control, so `textContent` is
+    `"Friends2"` and every exact-text strategy missed — while `tap()` returned `false`
+    **silently**, so a caller that ignored it went on clicking whatever was on screen. Six
+    attempts failed that way before the cause was clear. `tapByName()` clicks by **accessible
+    name** instead, which is authored (`aria-label`) and so does not move when the count does.
+    Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
+    captured, and that equality is asserted as a round-trip rather than dodged.
+    `Crew:Friends` landmarks **`PEOPLE YOU’VE CLIMBED WITH`** — the surface #713 revived onto
+    real `logs`, which until now nothing rendered in any guard (`check:dead-flag-gates` proves
+    the constant feeding it is not dead, a different question from whether it reaches a
+    screen). Uppercase with a curly apostrophe because `innerText` returns the CSS-transformed
+    text, not the source string. `Crew:Groups` gets a 300-char floor: at 353 it is the app's
+    shortest screen and a **correct** empty state, so the 400 default would fail working code.
+    Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
+    revived block fails naming the missing landmark.
 - **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
@@ -360,10 +377,16 @@ a build error, but a screen that renders wrong or not at all.
   - Runs against the **populated** demo. A badge is `count ? <span>…`, so at zero there is no
     badge and nothing to find; check:zero's config would make this vacuous.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
-    with the three checks above, so they cannot drift on which modals exist. Mount detection
-    compares **line sets, not text length** — `Inbox` *replaces* the screen rather than adding
-    to it, so a length test read it as never mounted and silently dropped it from the sweep.
-    That was not hypothetical: it is why the second defect went unseen on the first run.
+    with the checks above, so they cannot drift on which modals exist — and when #748 widened
+    that discovery from a name shape to **behaviour**, this check inherited the wider walk for
+    free: **50 screens, 44 overlays, 116 controls**, against 32/26/77 on the run that found the
+    Inbox bar. `LogAscent`, `FullProfile`, `Resume`, `GiveVouch` and `ConnectModal` were swept
+    for the first time by that widening, and are clean. Sharing the scaffold rather than
+    copying it is what made that automatic.
+  - Mount detection compares **line sets, not text length** — `Inbox` *replaces* the screen
+    rather than adding to it, so a length test read it as never mounted and silently dropped it
+    from the sweep. That was not hypothetical: it is why the second defect went unseen on the
+    first run.
   - Does **not** cover clickable `<div>`s (React's onClick leaves no attribute, and a div with
     no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`) or
     the route detail screen, which is reached by clicking rather than by URL.

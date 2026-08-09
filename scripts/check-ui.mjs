@@ -59,7 +59,12 @@ let ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs
 let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300 };
+// "Crew:Groups" is legitimately the shortest screen in the app: the demo has joined no
+// groups, so it is a heading, one explanatory line and two CTAs -- a correct and complete
+// empty state, measured at 353 chars. The floor is set just under that rather than at the
+// 400 default, which would fail a working screen. It stays a real floor: the nav chrome
+// alone is ~90 chars, so a blank content area still trips it.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, "Crew:Groups": 300 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
@@ -87,6 +92,20 @@ const LANDMARKS = {
   // constant; this catches the banner simply disappearing. Built from the current year
   // because the label carries it, so this does not rot every January.
   Profile: [`Your ${new Date().getFullYear()} Year in Climbing`],
+  // The Crew sub-views, unreachable to this check until #740/#755 named their buttons.
+  //
+  // "PEOPLE YOU'VE CLIMBED WITH" is the surface #713 revived: it used to map over
+  // MY_CLIMBS, a constant that DEMO_FILLERS empties, so it could never render and nobody
+  // noticed. It now derives from the user's real `logs`, and until now NOTHING rendered it
+  // in a guard -- check:dead-flag-gates proves the constant is not dead, which is a
+  // different question from whether the section reaches a screen. Uppercase and with a
+  // curly apostrophe because innerText returns the CSS-transformed text, not the source
+  // string.
+  "Crew:Friends": ["PEOPLE YOU’VE CLIMBED WITH", "FRIENDS’ RECENT ACTIVITY"],
+  // Descriptive lines rather than counts: "CREW INVITES (1)" moves with the seed data and
+  // would rot into a false failure the first time somebody adds an invite.
+  "Crew:Groups": ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  "Crew:Requests": ["Friend requests, crew invites, and group activity waiting on you."],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
@@ -229,6 +248,37 @@ const tap = async (text, i = 0) => {
   await els[i].click({ timeout: 8000 }).catch(() => {});
   await page.waitForTimeout(1600);
   return true;
+};
+
+// Click a control by its ACCESSIBLE NAME instead of its text content.
+//
+// This exists because tap() cannot reach the Crew sub-tabs, and six attempts to make it
+// failed before the reason was clear. Those buttons render the badge count INSIDE the
+// control -- `<button>{label}{n?<span>{n}</span>:null}</button>` -- so textContent is
+// "Friends2", and every exact-text strategy tap() has (its own querySelectorAll filter and
+// Playwright's `text="…"`) misses. Worse, tap() then returns false SILENTLY, and a caller
+// that ignores the return value carries on clicking whatever is on screen: that is how a
+// flow came to be "checking" the Friends view while standing on a different tab entirely.
+//
+// #740 and #755 gave those buttons an explicit aria-label ("Friends, 2"), which is both the
+// a11y fix and a durable handle -- it is authored, so it does not move when the count does.
+// Match the label exactly or up to the ", " the count is appended after, never a substring:
+// a bare prefix match would let "Crews" also select "Crews, 2" on a different bar.
+const tapByName = async (label) => {
+  const ok = await page.evaluate((label) => {
+    const re = new RegExp("^" + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(,|$)");
+    const el = [...document.querySelectorAll("[aria-label]")].find((e) => {
+      if (!re.test((e.getAttribute("aria-label") || "").trim())) return false;
+      const r = e.getBoundingClientRect();
+      return r.width > 2 && r.height > 2;
+    });
+    if (!el) return false;
+    el.scrollIntoView({ block: "center" });
+    el.click();
+    return true;
+  }, label);
+  if (ok) await page.waitForTimeout(1600);
+  return ok;
 };
 
 // Leaf elements whose trimmed text matches a DISCLOSURE pattern, in DOM order.
@@ -543,6 +593,31 @@ try {
       if (twin) throw new Error(`sub-tab ${sub} is byte-identical to ${twin} -- it did not switch`);
       seen[sub] = t;
       for (const [re, why] of FORBIDDEN) { const mm = t.match(re); if (mm) throw new Error(`${sub}: ${why} -- found ${JSON.stringify(mm[0])}`); }
+    }
+  });
+
+  // The Crew tab's four sub-views were UNREACHABLE to this check until #740/#755 named
+  // their buttons -- see tapByName above. That is four screens of a six-tab app that no
+  // render guard had ever opened, and it is where #569 (a populated crew reading "You + 0
+  // climbers") and #688 lived.
+  await flow("crew-subviews-switch", async () => {
+    await tap("Crew");
+    // Only three are captured. `crewView` defaults to "crews", so the Crews sub-view IS the
+    // Crew screen already captured in the main walk -- capturing it again would be a
+    // byte-identical twin and fail for being correct. That equality is worth asserting
+    // rather than dodging, so it becomes the round-trip check at the end.
+    for (const sub of ["Friends", "Groups", "Requests"]) {
+      if (!(await tapByName(sub))) throw new Error(`the Crew sub-tab ${JSON.stringify(sub)} is not present, or has lost its aria-label`);
+      // capture() settles the screen, records it into --snapshot, and applies the same
+      // min-length / FORBIDDEN / LANDMARKS / identical-twin rules every other screen gets.
+      // The twin check is global, so a sub-view that silently renders another screen fails
+      // here even if it differs from its three siblings.
+      await capture("Crew:" + sub);
+    }
+    if (!(await tapByName("Crews"))) throw new Error("the Crew sub-tab \"Crews\" is not present, or has lost its aria-label");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Crew && back !== screens.Crew) {
+      throw new Error("returning to the Crews sub-tab did not restore the Crew screen -- the bar navigates one way only");
     }
   });
 
