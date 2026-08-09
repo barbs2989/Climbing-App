@@ -275,10 +275,12 @@ const KNOWN = {
   // return `if(!assumed.length&&!ess.length)return null`. It was never rendered. The box
   // printed `assumed`, the generic discipline kit, on all 1,037 populated routes. Fixed by
   // rendering it as "Specific to this route", so the entry is gone rather than reworded.
-  lists: "membership keys, not display copy — consumed by ticksFor/inList via "
-    + "`.includes(\"state_hp\")`. NOTE: the live column holds free prose (\"Bulger List "
-    + "(Washington's 100 highest peaks)\"), which that exact-match test can never satisfy, so "
-    + "the badge it feeds cannot fire for DB routes. A data-shape question, not a render one.",
+  // `lists` was here, recorded as "membership keys, not display copy" with a note that the
+  // live column holds free prose an exact `.includes("state_hp")` could never satisfy. That
+  // note was right and it was the whole bug: the column reached no screen AND fed a badge
+  // that could not fire. lib/routeTags.js now maps that prose to slugs at read time and
+  // RouteTagRow renders them as chips on the route page, so the column renders and the
+  // badge can score. Entry removed rather than reworded — same as what_to_bring above.
 };
 const dead = results.filter((r) => r.verdict === "NEVER RENDERS" && !KNOWN[r.col]);
 const known = results.filter((r) => r.verdict === "NEVER RENDERS" && KNOWN[r.col]);
