@@ -5939,3 +5939,88 @@ for this rarely-documented route was found to supply a replacement; its `data_qu
 claims no public GPS track was found, yet `waypoints`/`gpx` hold a 2-point Paradise-to-summit
 pseudo-track -- likely just synthesized bookends rather than a real found-then-lost track, worth a
 glance but not urgent.
+
+## Batch 87 (pass 2) -- 2026-08-09
+
+Checked: eight routes across four peaks -- Mount Rainier (Ptarmigan Ridge, Sunset Ridge, Tahoma
+Glacier, Willis Wall), Mount Redoubt (South Face), Mount Seattle (Noyes Basin, Seattle Creek), and
+Mount Sefrit (Bloody Head Couloir). Researched via 3 parallel agents grouped by peak. WebFetch was
+blocked by the network egress proxy for nps.gov and most secondary sources (Wikipedia, SummitPost,
+Mountaineers.org, trip-report sites) again this run; findings lean on cross-corroborated WebSearch
+snippets, same standard as prior batches.
+
+Fixed (9): Two Rainier routes (Sunset Ridge, Tahoma Glacier) and Willis Wall each carried a `gpx`
+field holding a fabricated straight-line "track" between just their trailhead and summit waypoints
+-- Sunset Ridge's and Tahoma Glacier's directly contradicted their own `data_quality.gaps`, which
+say no public GPS track was found for either; Willis Wall's was simply straight lines connecting
+its own 3 named waypoints. All three cleared to NULL rather than left in place, same treatment as
+Liberty Ridge in batch 86. Tahoma Glacier's `access.notes` described "Mount Tom area, North
+Cascades" and a Northwest Forest Pass requirement -- Mount Tom is an unrelated North Cascades peak;
+every other field in the same access block (land_manager, permit, fees) correctly names Rainier,
+so this was copy/paste contamination, fixed to the standard Rainier registration text shared
+verbatim by the other 3 Rainier routes in this batch. Tahoma Glacier's `gain_ft` (5,007) and
+`loss_ft` (9,500) both contradicted its own itinerary day sums (12,000 ft each way) and the
+itinerary's own totalNote citing "~12,000 ft gain" -- both fixed to 12,000; its
+`timing.approachTimeHrs` (6) undercounted its own two approach legs (6.5 + 5 = 11.5 hrs per
+timing.sectionBreakdown, the only combination that reconciles with totalHrs) -- fixed to 11.5.
+Mount Redoubt South Face's `gain_ft` (5,000) contradicted its own itinerary day sums (6,400 ft)
+and its own totalNote ("~6,400 ft round trip") -- fixed. Its itinerary day-2 note cited the "true
+summit at 8,963 ft," contradicting its own high_point_ft, summit waypoint, and its own
+`corrections` field (which documents 8,969 ft as the deliberately-chosen figure over a rejected
+8,603 ft MP number and an 8,958 ft LiDAR revision) -- fixed to 8,969 ft. Its
+`approach_logistics.trailheadLat/Lng` sat ~11 km from its own actual described trailhead
+(waypoints[0], "Depot Creek Road washout") -- fixed to match. Both Mount Seattle routes (Noyes
+Basin, Seattle Creek) cited "~16 miles" from the North Fork Quinault Trailhead to Low Divide in
+`approach_logistics.trailheadDirection`; the Mountaineers.org route page (echoed by Hiking Project
+and Komoot trail summaries) puts this leg at ~9.2 miles one-way -- both fixed to "~9 miles."
+
+Flagged rather than fixed (16): Ptarmigan Ridge's itinerary day-1 note and matching
+timing.sectionBreakdown note both still describe the old Mowich Lake/Spray Park approach,
+contradicting this same row's own `approach` and `approach_logistics` fields (Mowich Lake Road
+not drivable as of 2026, White River is now the only practical approach) -- a real defect, but the
+correct replacement hours/miles for a White River-based day 1 aren't documented anywhere in this
+row, so left for a human rather than guessed. The same row's `dist_km` (28.97) and `loss_ft`
+(9,500) don't reconcile with the itinerary's day sums (13 mi, 4,900 ft loss) -- consistent with
+the itinerary missing an "exit to trailhead" day the other three Rainier routes in this batch all
+have, likely the same root cause as the stale approach-day text; needs an added day, not a number
+swap. Its `fa` date ("September 8, 1935") has corroborated climbers/year but the specific date
+wasn't independently found. Sunset Ridge's and Willis Wall's `descent` fields both contradict
+their own more-detailed `descent_text` (Sunset Ridge implies retracing the ascent when the real
+descent exits the opposite side of the mountain, requiring a shuttle; Willis Wall implies rappels
+when its own descent_text explicitly says no fixed rappels are used on the descent) -- same
+pattern as Mowich Face in batch 86, flagged rather than rewritten since the right replacement
+wording is a judgment call, not a new fact. Sunset Ridge's `fa` "who suggested the route's name"
+detail and the omission of a third climber (Don Woods, per one source) couldn't be independently
+confirmed or refuted. Tahoma Glacier's `dist_km` (12) is contradicted by two of the row's own
+sources that disagree with each other -- its own descent_text cites a 21.5-mile trip report
+(34.6 km) while its own itinerary sums to 26 miles (41.8 km) -- flagged rather than picking one
+arbitrarily. Its summit elevation (14,406 ft) matches neither the long-standing USGS figure
+(14,410 ft) nor the 2022+ resurvey figures (~14,399.6 ft crater rim / 14,389.2 ft Columbia Crest
+ice) -- needs a human decision on which convention to standardize on. Its `fa` "Alfred Drewry"
+and "with a dog" details couldn't be corroborated or refuted. Redoubt South Face's `dist_km`
+(17.7) self-contradicts its own itinerary.sourceNote, which cites "27.68 km" as the on-file
+figure -- but per CLAUDE.md's documented dist_km convention (one-way, doubled for display) the
+row's own one-way waypoint distance (8.6 mi = 13.84 km) would double to exactly the sourceNote's
+27.68 km, suggesting 13.84 is correct -- however this row could also be one of the ~61 known
+round-trip-storing exceptions, so left for a human to confirm the convention before fixing. Its
+`approach` field says "Approach via Depot Glacier to Redoubt Glacier," but Depot Glacier is a
+distinct real feature on Redoubt's northeast slopes (per Wikipedia), not the Depot Creek
+drainage this route's own waypoints/itinerary actually follow -- likely a Depot Creek/Depot
+Glacier name mix-up, not fixed without reaching NPS's own page (blocked). Its `beta` field
+describes a second, harder Northeast Face route in detail, directly contradicting this same row's
+own `data_quality.gaps` ("the separate, more technical Northeast Face route... is not documented
+here") -- looks like leaked content from a different route, but the correct trim is an editorial
+call. Its `loss_ft` is null and could reasonably be filled with the same ~6,400 ft as the fixed
+gain_ft, but left as a gap rather than an assumed value. Both Mount Seattle routes' `beta` fields
+cite a specific guidebook route number ("Route 1" / "Route 3" in the Climber's Guide to the
+Olympic Mountains) that couldn't be verified against the guidebook itself (not accessible online);
+their `emergency.notes` claims of "essentially no recorded ascents" may overstate it for Seattle
+Creek specifically, since a Mazamas club activity page exists for that exact route. Mount Sefrit's
+Bloody Head Couloir had no confirmed errors -- a sparsely-documented route where everything
+populated held up against SummitPost's description -- but its `overview` claim that it's "also
+called the North Couloir" may be confused with an unrelated, similarly-named route on Bloody
+Mountain in the California Sierra Nevada; not confirmed either way.
+
+Clean: FA facts, coordinates, elevations, permit/fee figures, and internal consistency checks not
+called out above across all 8 routes -- see full per-route detail in the researching agents'
+reports (not reproduced here to keep this log terse).
