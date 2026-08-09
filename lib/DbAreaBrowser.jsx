@@ -399,13 +399,22 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
           reads "no routes match" as "this crag is no good" rather than "we have no ratings". */}
       {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{af.minStars ? "No routes match these filters. Almost no climb in the catalog has a star rating yet, so a minimum-star filter rules out nearly everything — try setting it back to Any." : "No routes match these filters."}</div>}
 
-      {sheet ? (
+      {/* Portalled to <body>, and not because 300 was too low a z-index. #appscroll — the
+          tab's scroll container — carries `animation-fill-mode: both`, which makes it a
+          permanent stacking context at z-index auto. Every fixed overlay rendered inside it
+          is therefore trapped below the app header + primary nav (z-index 30), whatever
+          z-index it asks for. This sheet opens at 88vh, so its top 81px — the whole title
+          row and the × — sat behind the tabs, with the × not even clickable. Same reason
+          RouteDetail portals its own sheets. Keep the title row sticky so it survives a
+          scroll too. */}
+      {sheet ? createPortal(
         <div onClick={() => setSheet(false)} role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", padding: "16px 16px 18px", maxHeight: "88vh", overflowY: "auto" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "88vh", display: "flex", flexDirection: "column" }}>
+            <div style={{ position: "sticky", top: 0, zIndex: 2, background: C.bg, borderRadius: "16px 16px 0 0", borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 16px 12px" }}>
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
               <button onClick={() => setSheet(false)} aria-label="Close" style={{ background: C.borderLight, border: "none", color: C.textSub, borderRadius: 8, width: 34, height: 34, fontSize: 20, cursor: "pointer" }}>×</button>
             </div>
+            <div style={{ padding: "0 16px 18px", overflowY: "auto" }}>
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
@@ -427,9 +436,9 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
               <button onClick={() => setDf(DEF)} style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Clear all</button>
               <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blueSolid, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
             </div>
+            </div>
           </div>
-        </div>
-      ) : null}
+        </div>, document.body) : null}
     </div>
   );
 }

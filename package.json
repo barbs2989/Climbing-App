@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-bare-route.mjs && node scripts/check-migration-numbers.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-bare-route.mjs && node scripts/check-migration-numbers.mjs && vite build",
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:dead-props": "node scripts/check-dead-props.mjs",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
+    "check:overlays": "node scripts/check-overlay-portals.mjs",
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
@@ -24,6 +25,7 @@
     "check:writes": "node scripts/check-write-feedback.mjs",
     "check:boot": "node scripts/check-boot-shell.mjs",
     "check:bare": "node scripts/check-bare-route.mjs",
+    "check:zero": "node scripts/check-zero-state.mjs",
     "check:a11y-names": "node scripts/check-a11y-names.mjs",
     "check:claims": "node scripts/check-session-claims.mjs",
     "check:drift": "node scripts/check-deploy-drift.mjs"
