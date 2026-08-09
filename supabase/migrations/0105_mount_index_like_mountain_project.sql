@@ -101,7 +101,13 @@ update areas set route_count = (
 --    where id in ('wa_mount_index','wa_main_peak_2','wa_middle_peak_2','wa_north_peak_2',
 --                 'wa_north_norwegian_buttress','wa_j_tunheim') order by path::text;
 --   -- expect Main/Middle/North Peak parented to wa_mount_index, every path containing
---   -- .wa_mount_index., North Peak typed peak at 5357, Mount Index route_count 7
+--   -- .wa_mount_index., North Peak typed peak at 5357, and Mount Index route_count 6:
+--   -- Main Peak 1 + Jotunheim 1 + North Norwegian Buttress 1 + North Peak 3. The massif
+--   -- held 8 route rows before this (4 on Mount Index, 1 Main, 1 Jotunheim, 2 North Peak)
+--   -- and two of them were the duplicates dropped above. Derive that number from the
+--   -- subtree, never by arithmetic on cached counts — APPLIED 2026-08-09 and the recount
+--   -- returned 6 against a 7 predicted here, the same way North Cascades Core returned
+--   -- 103 against a predicted 106 in 0097.
 --   select id, name, area_id from routes
 --    where area_id in ('wa_mount_index','wa_north_peak_2','wa_north_norwegian_buttress')
 --    order by area_id, id;
