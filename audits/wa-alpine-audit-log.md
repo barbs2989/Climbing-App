@@ -6024,3 +6024,85 @@ Mountain in the California Sierra Nevada; not confirmed either way.
 Clean: FA facts, coordinates, elevations, permit/fee figures, and internal consistency checks not
 called out above across all 8 routes -- see full per-route detail in the researching agents'
 reports (not reproduced here to keep this log terse).
+
+## Batch 88 (pass 2) -- 2026-08-09
+
+Checked: eight routes across two peaks -- Mount Sefrit (Southeast Ridge, Southwest Ridge) and
+Mount Shuksan (Beckey-Schmidtke, Fisher Chimneys, Hanging Glacier, North Face, Northeast Ridge,
+Northwest Arete). Researched via 3 parallel agents grouped by peak (Sefrit x2; Shuksan x3; Shuksan
+x3). WebFetch was blocked by the network egress proxy for every external domain tried again this
+run; findings lean on cross-corroborated WebSearch snippets citing Wikipedia, USGS GNIS, AAC
+Publications, NWAC, Mountaineers.org, Trailforks, peakery.com, and trip-report sites, same standard
+as prior batches.
+
+Fixed (13): Sefrit Southeast Ridge's `approach` cited Hannegan Campground trailhead elevation as
+"about 2,950 ft" -- two independent sources (Mountaineers.org, Trailforks) put it at ~3,110-3,120
+ft -- fixed to 3,120 ft. Sefrit Southwest Ridge had four separate fixes: `dist_km` (9.3km/5.8mi)
+and the matching `itinerary.days[0].miles`/`totalNote` text all contradicted this row's own
+`corrections` field, which documents the stats as derived from a ~10.5 mi round trip
+(peakery.com) -- fixed to 16.9 km / 10.5 mi throughout; `gain_ft`/`loss_ft` (4500/4500) matched
+the sibling Southeast Ridge route's numbers exactly rather than this row's own
+`itinerary.days[0].gainFt/lossFt` (5000/5000) and peakery.com's "about 5,000 feet" -- fixed to
+5000/5000; and `access.permit` described a paid North Cascades National Park backcountry-permit
+regime ($10/person + $6 fee, Thu/Fri-only issuance) that contradicted this row's own top-level
+`permit` field (free self-issue Mount Baker Wilderness permit, no fee) and the sibling route's
+identical land manager -- replaced with the same free-permit text already correct elsewhere on
+this row. Two Shuksan routes (North Face, Northeast Ridge) had `climate.forecastZone` values
+("NWAC Mt. Baker zone", "NWAC/NWS Mt. Baker zone") that aren't real NWAC zone names -- both fixed
+to "West Slopes North (NWAC)", matching North Face's own `seasonal_hazards.avalanche.zone` and
+NWAC's actual zone naming. Northwest Arete's summit waypoint gave `elevFt` 9127 against this same
+dataset's own high_point_ft/area elevation_ft/sibling summit waypoints, all 9131 -- fixed to 9131.
+Beckey-Schmidtke's `high_point_ft` (8268, tracing to a single trip-report title) contradicted its
+own overview text and its own summit waypoint (both 8285) and Wikipedia/USGS GNIS -- fixed to
+8285; its `access.notes` described the Lake Ann Trail/Sulphide Glacier/Fisher Chimneys approach
+(correct on the sibling Fisher Chimneys route, untouched here) instead of the Ruth Creek
+Road/Nooksack Cirque Trail #750 approach this row's own `approach` field and waypoints actually
+document -- rewritten to match. Hanging Glacier's `rope_note` claimed it's "used as an AMGA guide
+exam route" -- sources instead credit Shuksan's North Face (a sibling route in this same batch)
+with that -- removed the misattributed clause; its top-level `season` ("Jul-Aug") contradicted its
+own `best_season` ("May to June") and `seasonal_guidance.monthBreakdown` (no August entry at all)
+-- fixed to "May-Jun".
+
+Flagged rather than fixed (16): Sefrit Southeast Ridge's `gain_ft`/`loss_ft` (4500, GPS-logged per
+a specific trip report) sits in tension with the corrected trailhead elevation -- both numbers are
+individually well-sourced but don't arithmetically reconcile, left for a human. Its `length_m`
+(1125) is an internally-labeled "computed total" with no sourced aggregate to check it against; its
+waypoints/gpx are null, so no geographic sanity check could be run. Sefrit Southwest Ridge's
+`rock_grade` ("Class 3") contradicts its own `grade` field and multiple internal mentions of a
+Class 4 crux -- the one real source found (bivouac.com's "West Ridge") supports Class 3 but its
+identity with "Southwest Ridge" isn't certain and the page sits behind a login; needs a human with
+full access or a Beckey's guide excerpt. Its `access.fees`/`parking_pass`/`passRequired` fields
+directly contradict each other on whether a pass is required at the Nooksack Cirque Trailhead --
+confirmed data-integrity defect, but no source pinned down which value is right. Its `pitches` (0)
+alongside a graded Class 4 section, and `alpine_grade` "PD" on a non-glaciated scramble, are both
+internally odd but not independently checkable facts. Its route identity itself is unresolved --
+this row's own `corrections` field already documents that no source names an exact "Southwest
+Ridge" on Sefrit; the closest match (bivouac's "West Ridge") may or may not be the same line. North
+Face's `fa` attribution (Fasset/Hanft/Thompson) rests on a name with no independent corroboration
+found; a low-reliability search snippet crediting Fred Beckey may be conflating this with his
+Price Glacier FA on the same peak -- needs direct Beckey's guide or CascadeClimbers FA-wiki access
+(both egress-blocked). Its `approach`/`itinerary`/`dist_km` blend two real but different approach
+variants (the short White Salmon Road approach vs. the multi-day Fisher Chimneys/Lake Ann
+approach) into one inconsistent narrative -- needs a human decision on which variant this record
+should describe before the fields can be reconciled. Its `length_m` (914/~3,000ft) is ~15-20%
+off this same row's own itinerary text ("roughly 2,500-2,600 ft"). Its `access.land_manager`
+names NPS alone where the sibling Northwest Arete route documents the same peak's dual USFS/NPS
+manager split explicitly -- likely incomplete rather than wrong. Northeast Ridge's `fa` is null
+with no source found either way -- plausibly correct as an unrecorded informal finish rather than
+a gap. Northwest Arete's route identity is genuinely ambiguous: an AAI page title references a
+separate "Northwest Rib" (FA Cruver/Davis, 1974) with different stated boundaries than the
+SummitPost "Northwest Arete" page this row's data otherwise matches almost verbatim -- unclear
+whether these are the same line under two names or two distinct lines; needs direct Beckey's guide
+access to resolve. Its `commitment` field ("10-12 hours, Serious") looks like schema misuse -- every
+other route in this batch stores a Roman-numeral grade there instead -- flagged for the data team,
+not a fact error. Fisher Chimneys' `fa` (a specific six-person 1920s-40s party) has zero external
+corroboration in any source reachable this run -- needs Mountaineers club archive access to verify
+before trusting it. Hanging Glacier's `gain_ft`/`loss_ft` (4430/6000) show an unusually large
+~35% asymmetry for a there-and-back route with no source found to confirm or correct either
+number; it also carries a duplicate waypoint (two identical "Hanging Glacier" entries at the same
+coordinates, one typed "Junction" and one "Feature") -- a data-hygiene item, not necessarily a
+factual error.
+
+Clean: FA facts, coordinates, elevations, permit/fee figures, and internal consistency checks not
+called out above across all 8 routes -- see full per-route detail in the researching agents'
+reports (not reproduced here to keep this log terse).
