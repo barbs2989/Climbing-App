@@ -77,6 +77,14 @@ a build error, but a screen that renders wrong or not at all.
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
+  - It also pins **where the nearby-fire panel lives**: on the Safety tab, first section, and on
+    Overview *only* for a route offered no Safety tab (`showSafety` is content-gated, so that is
+    99.5% of the catalog — moving it unconditionally would delete it for almost every route).
+    This needed a **located** fixture: `bare()`'s area has no `lat`/`lng` and `FireNearRoute`
+    renders nothing without a coordinate, so every other render here is of a route where the
+    panel is correctly absent. Match its loading line, **never its "Fire & smoke" heading** —
+    the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that removed
+    the panel from Safety entirely passed on the strength of that link.
 - **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
   **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
   matches a **display name**, which belongs to neither id space, so it hands one person's

@@ -193,8 +193,60 @@ for (const d of CRAG) {
   else ok("watch-outs alone still render");
 }
 
+// 5. The nearby-fire panel lives on Safety, and a route with no Safety tab keeps it on
+//    Overview rather than losing it. Nothing above can see this: FireNearRoute renders NOTHING
+//    without a coordinate (deliberately — "no fires near here" about a place we cannot locate
+//    is worse than silence), and `bare()`'s area has no lat/lng, so every render so far has
+//    been of a route where the panel is correctly absent. Locate the area and the question
+//    becomes answerable. Under renderToStaticMarkup no effect runs, so the query is still
+//    loading and the panel paints its "checking" line — which is what to match on. Do NOT
+//    widen this to the panel's heading: the Safety tab's forecast list already links
+//    "Fire & smoke — AirNow", so a heading match reports the panel present on Safety when it
+//    is not there at all. Injection 1 below passed on exactly that until it was tightened.
+{
+  const at = { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Washington", lat: 47.5, lng: -121.0 };
+  const located = (d, extra) => ({ ...bare(d, "5.9"), id: "probe_fire_" + d, _dbArea: at, ...extra });
+  const FIRE = /Checking federal fire reports/;
+  const hits = (r, tab) => (text(render(r, tab)).match(FIRE) || []).length;
+
+  if (!hits(located("alpine"), "safety")) fail("ANCHOR LOST or moved: the nearby-fire panel does not render on Safety");
+  else ok("nearby fire: renders on the Safety tab");
+  if (hits(located("alpine"), "overview")) fail("nearby fire: still on Overview for a route that has a Safety tab");
+  else ok("nearby fire: not left behind on Overview");
+  if (hits(located("alpine"), "conditions")) fail("nearby fire: duplicated onto the Reports tab");
+  else ok("nearby fire: not on Reports");
+  // A bare crag route is offered no Safety tab at all, so moving the panel there unconditionally
+  // would delete it for 99.5% of the catalog. It falls back to Overview — and only there.
+  if (!hits(located("trad"), "overview")) fail("nearby fire: lost entirely on a crag route with no Safety tab");
+  else ok("nearby fire: kept on Overview when there is no Safety tab to hold it");
+  // An enriched crag route earns the tab back, so it must move like the alpine one.
+  const richCrag = located("trad", { objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] });
+  if (!hits(richCrag, "safety") || hits(richCrag, "overview")) fail("nearby fire: enriched crag route does not follow its Safety tab");
+  else ok("nearby fire: follows the Safety tab back onto an enriched crag route");
+  // Position: it is the first thing on the tab, above the float-plan prompt and the forecasts.
+  const st = text(render(located("alpine"), "safety"));
+  const iF = st.search(FIRE), iB = st.indexOf("Committing objective"), iW = st.indexOf("Weather & mountain forecasts");
+  if (iB < 0 || iW < 0) fail("ANCHOR LOST: the Safety tab's banner/forecast sections were renamed — update this guard");
+  else if (iF > iB || iF > iW) fail("nearby fire: no longer the first section on Safety");
+  else ok("nearby fire: first section on Safety, above the float plan and the forecasts");
+}
+
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(failures
   ? `\ncheck:bare — ${failures} problem(s).`
   : "\ncheck:bare: ok — a route with no enrichment states what it does not know.");
 process.exit(failures ? 1 : 0);
+
+// ── Injections for section 5, all four confirmed caught and NAMED (a run that dies for some
+//    other reason is not a catch). In RouteDetail.jsx:
+//      1. revert the move — `{showSafety?null:fireEl}` back to `{fireEl}` and drop `{fireEl}`
+//         from the safety branch  -> "does not render on Safety"
+//      2. render it in both places — `{showSafety?null:fireEl}` to `{fireEl}`
+//         -> "still on Overview for a route that has a Safety tab"
+//      3. drop the fallback — `{showSafety?null:fireEl}` to `{null}`
+//         -> "lost entirely on a crag route with no Safety tab"
+//      4. demote it below the committing-objective banner
+//         -> "no longer the first section on Safety"
+//    Case 1 is the one that shaped the anchor: matching the panel's "Fire & smoke" HEADING made
+//    it pass, because the Safety tab's forecast list links "Fire & smoke — AirNow" and the
+//    assertion was reading that. Only the panel's own loading line is unique to the panel.
