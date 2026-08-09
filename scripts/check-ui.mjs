@@ -488,10 +488,34 @@ try {
     sel.value = opt.value;
     sel.dispatchEvent(new Event("change", { bubbles: true }));
   }, STATE);
-  await page.waitForTimeout(3000);
+  // These were the last two flat waits in this file; every other step settles on the text
+  // having stopped changing (see render-settle.mjs). Settling is strictly more adaptive than
+  // 3000ms — it tolerates a slow list without tolerating a missing one, since a list that
+  // never renders still fails at the tap below.
+  //
+  // Be precise about what this does NOT claim. On 2026-08-09 this step went red on a
+  // comment-only PR and green on re-run with no change, and the fix for that flake is
+  // UNPROVEN: scripts/oneoff/test-checkui-route-nav-under-slow-db.mjs replays this exact
+  // sequence under an injected per-request delay and the old timing opened the route anyway
+  // at both 6s and 12s. So do not read this as "the flake is fixed" and stop looking.
+  //
+  // Two things that injection did establish, both of which correct the obvious story:
+  //   - The search box here does NOT issue a name=ilike query. Four /rest/v1/routes requests
+  //     were delayed per attempt and ZERO were name searches, so this filters client-side
+  //     over an already-loaded list. Search latency was never the exposure.
+  //   - The network-bound step is the list load after the state change, and the delayed
+  //     requests land during the settled Climbs step above, which absorbs them.
+  // Cold cost, measured the same day, for whoever picks this up: a first request from a
+  // fresh page costs 3.8–6.4s and it is connection setup, not the query — a trivial
+  // routes?limit=1 cost 3845ms cold against 320ms warm, with novel search terms 184–428ms.
+  //
+  // The floor before each settle is load-bearing: settledText samples the DOM, and a request
+  // that has not been issued yet looks perfectly stable.
+  await page.waitForTimeout(800);
+  await settledText(page, { min: 30, timeout: 45000 });
   await tap("Routes");
   const input = await page.$('input[type="text"], input:not([type])');
-  if (input) { await input.fill(ROUTE); await page.waitForTimeout(3000); }
+  if (input) { await input.fill(ROUTE); await page.waitForTimeout(800); await settledText(page, { min: 30, timeout: 45000 }); }
   if (!(await tap(ROUTE))) {
     // In CI nobody is watching the browser, so this failure has to say which of the
     // two very different causes it is. The sample route is pinned by name against the
@@ -503,8 +527,13 @@ try {
     // "No climbs match this filter."
     const listed = await page.innerText("body").catch(() => "");
     const empty = /No routes match\.|No climbs match this filter\./i.test(listed);
+    // Third cause, and it used to hide inside the second: no text input was found at all,
+    // so nothing was ever typed and the tap was looking through an unfiltered list. That is
+    // a different repair from a broken list, and the message must not conflate them.
     fail("route", `could not open the sample route ${JSON.stringify(ROUTE)} in the ${STATE} ${catalog} catalog`
-      + (empty
+      + (!input
+        ? ` — no search box was found on the Routes view, so the name was never typed. Check the route list rendered before this step, not the search itself.`
+        : empty
         ? ` — the list rendered and said it has no match, so the row was probably renamed or deleted. This check pins the name; pass --route to point it elsewhere.`
         : ` — the list did not report an empty search, so this is the route list or the search box, not missing data.`));
   } else {
