@@ -58,6 +58,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
+import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -230,19 +231,18 @@ try {
 
   async function capture(name, opts = {}) {
     pageErrors.length = 0;
-    await page.waitForTimeout(900);
-    let text = await page.innerText("body");
-    for (let i = 0; i < 40 && /Loading climbs|Loading…/.test(text); i++) {
-      await page.waitForTimeout(1500);
-      text = await page.innerText("body");
-    }
+    // Read the screen once it stops changing. The literal spinner list this used to poll
+    // covered 2 of the app's 13 spinners, and nothing at all waited for a screen that was
+    // merely slow — which is how `inboxOpen` was captured at 48 chars on one run and 117
+    // on the next, passing both. See scripts/lib/render-settle.mjs.
+    const text = await settledText(page, { min: 30, timeout: 60000 });
     screens[name] = text;
     asserted++;
     const min = opts.min ?? 400;
     // Distinguish "still fetching" from "rendered nothing". Both end up short, but only
     // one of them is a bug, and reporting a slow query as a blank screen sends the reader
     // looking for a render fault that is not there.
-    if (/Loading climbs|Loading…/.test(text)) {
+    if (looksLikeSpinner(text)) {
       fail(name, "still showing a loading state after 60s — the signed-in query never resolved");
     } else if (text.length < min) {
       fail(name, `rendered only ${text.length} chars (min ${min}) — blank or broken screen`);
@@ -420,10 +420,11 @@ try {
   for (const t of TABS) {
     await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });
     await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
-    // Same settle as the overlay pass below. A shorter one here would let ordinary
-    // late-arriving content read as "the overlay changed the screen".
-    await page.waitForTimeout(2600);
-    baselines[t] = new Set((await page.innerText("body")).split("\n").map((l) => l.trim()));
+    // Same settle as the overlay pass below, and it has to be: a baseline captured while
+    // the tab was still filling in is missing lines, so the diff below would credit the
+    // overlay with content that was always going to arrive.
+    const baseText = await settledText(page, { min: 30, timeout: 45000 });
+    baselines[t] = new Set(baseText.split("\n").map((l) => l.trim()));
   }
 
   assertKnownOverlays(overlays, fail);
@@ -436,15 +437,14 @@ try {
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
-      for (let i = 0; i < 40; i++) {
-        if ((await page.innerText("body").catch(() => "")).trim().length > 40) break;
-        await page.waitForTimeout(1000);
-      }
-      await page.waitForTimeout(2600);
+      // Settle on the text no longer changing. The old gate broke out of its wait the
+      // moment the body passed 40 characters, which on an overlay that renders a header
+      // first means it stopped waiting before the body arrived.
+      const openedText = await settledText(page, { min: 30, timeout: 45000 });
       // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
       // trips on anything that moves on its own -- a clock, a relative timestamp -- and
       // would report an overlay as opened when nothing opened at all.
-      const lines = (await page.innerText("body")).split("\n").map((l) => l.trim());
+      const lines = openedText.split("\n").map((l) => l.trim());
       if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
     }
     asserted++;

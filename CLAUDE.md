@@ -15,10 +15,12 @@ npm run check:dead-props # props passed or declared but never read (runs in buil
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
+npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
+npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 ```
@@ -70,6 +72,44 @@ a build error, but a screen that renders wrong or not at all.
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
+- **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
+  **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
+  matches a **display name**, which belongs to neither id space, so it hands one person's
+  climbing record to anyone who shares their name. Eleven names author seed activity (Maya
+  Chen 11 rows, Alex Torres 8, Jordan Park 7 … and "Nathan Barber", the seed `ME`). Two real
+  identities collide with them: **`ME`**, whose `id` is *never* reassigned — it is `0` signed
+  in or out — while `ME.name` becomes the real account's profile name; and a **DB-backed
+  friend**, a uuid that the friends list hands to `FullProfile`. Before #735 a real account
+  named "Nathan Barber" saw *Angels Landing, Oct 2024, Summit, 5★* on its own résumé. Not
+  cosmetic: three `Leaderboards` badges (`classics_b`, `highpoints_b`, `peaks_b`) **count**
+  those rows and `me` is in the pool whenever `showOnRanks` is set, so a collision **scores**.
+  Gated by `npm run build`.
+  - The id test alone cannot work, for the reason #680 records: **`0` is a real id.** The gate
+    is `typeof c.id==="number" && (c.id!==0 || !DB_UID)`, where `DB_UID` is a module global
+    written by `__set_DB_UID(uid)` — keyed on the **session**, exactly like the sign-in reset
+    (`useEffect(…,[uid])`), not on a build flag. With `DEMO_AUTOLOGIN` on, a visitor browsing
+    the demo has no `uid` and the demo is untouched.
+  - Ironically the sign-in reset is what **exposes** this: it clears `ME.ticks`, and clearing
+    it is what makes `Resume`/`TickList` fall *through* to the name scan.
+  - The same root cause runs in **both directions**, and the second one is easier to miss.
+    Eight places resolved a seed report's *author* as `a.user===ME.name?ME:CLIMBERS.find(…)`.
+    Seed `activity` never holds a real account's own entries — those live in `logs` — so once
+    you are signed in that branch can only ever be a **false** match. It is not a label: it
+    feeds `trustOf` in `buildConsensus`/`kwScan` and the start-location and topo weightings,
+    and a signed-in `ME` carries `trustScore:0` from the reset, so a name collision would
+    quietly **re-weight the derived conditions consensus**. All eight now go through
+    `seedAuthor(name)`, which falls through to `CLIMBERS` because the row really is the seed
+    climber's.
+  - The **static** half matters more than the render half — rendering can only prove today's
+    call sites, while the real regression is a twelfth `ticksFor(x.name)` added next month. So
+    it fails if `ticksFor` has any caller other than `seedHistoryFor`, and if any
+    `===ME.name?ME` survives, naming file:line. Comments and string contents are blanked in
+    **one stateful pass** (offsets preserved) for the reason `check:dead-flag-gates` records —
+    a regex strip ate real code there — so prose that merely *mentions* the pattern is safe.
+  - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
+    that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
+    climber, so the seed-climber assertion is **comparative** (against a name with no seed
+    activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **`check:ui`** spawns a dev server, walks 12 screens in headless Chrome, and
   asserts: nothing blanked, no uncaught page errors, no `NaN`/`undefined`/`null`/
   `[object Object]` in rendered copy, and named sections still present. It is
@@ -199,7 +239,35 @@ a build error, but a screen that renders wrong or not at all.
     only thing that gave it away.
   - Failures print a **locator** (the element's inline style), because in a codebase with no
     class names a failure without one sends you hunting through a 40,000-character line.
-  - Not in `npm run build` and not in CI — browser automation, same reasoning as `check:ui`.
+  - Not in `npm run build` — browser automation, same reasoning as `check:ui`. It **does** run
+    on every PR, via `.github/workflows/render-guards.yml`, and that is not decoration: it was
+    hand-run only until 2026-08-09, by which point it had **already gone red on main** and
+    nobody knew (#724, the guide application sheet). A guard that runs only when somebody
+    remembers is a guard you do not have.
+- **`check:field-renders`** asks, for every enriched `routes` column, whether its value ever
+  reaches a screen. A column can be mapped in `dbRouteToCamel`, offered in the fix form, and
+  displayed **nowhere**: `descent_text` was populated on 1,021 routes and rendered on none
+  while the form invited climbers to write into it (#707). Grep cannot find that — every
+  identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
+  column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
+  Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
+    `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
+    different branch's code than the one you ran it in.
+  - **Six ways this kind of probe reports a healthy column as dead.** All six were live in the
+    first drafts and the count went 15 → 3 as each was fixed, so distrust a first run: a
+    hardcoded root; too few sub-tabs (`climate` renders on *conditions*); rendering
+    `<RouteDetail/>` alone when `ClimbMatch.jsx` also mounts sibling panels that own whole
+    columns (`EnrichmentPanels` owns crowds/partner_requirements/seasonal_guidance/data_quality,
+    `EmergencyRescueCard` owns emergency); one discipline base, when `RouteGearCheck` is
+    `cragOnly`; testing only the longest string leaf, which condemns a column over one hidden
+    sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
+    with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
+    verbatim though the column drives the screen.
+  - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
+    fails as stale bookkeeping.
+  - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
+    long-beta block fails naming `beta`.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
@@ -260,6 +328,34 @@ a build error, but a screen that renders wrong or not at all.
     having loaded nothing at all.
   - Injection-tested: reverting each of the three dead gates fails the run and names the
     line; restoring makes it green.
+
+**When is a screen finished rendering?** Every browser guard has to answer that before it
+reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
+(`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
+changing** — `stable` consecutive identical samples, with digits masked so the ASPECT & SUN
+clock and a `CountUp` do not prevent settling — rather than on spotting a spinner.
+  - The three guards previously each decided this by hand, and two decided it wrong. They
+    polled for the literal strings `Loading climbs` and `Loading…`, which are **2 of the 13
+    user-visible spinners in the app** — `Loading dashboard…`, `Loading forecast…`,
+    `Loading topo photos…` and eight more were invisible to them. Worse, nothing waited at
+    all for a screen that was merely *slow* rather than spinning.
+  - That was not theoretical. `check:signed-in` read the Inbox as **`No friend chats yet` on
+    an account that has a friend**, intermittently — measured at 48/117/48/117 chars over
+    four runs, passing every time. A guard whose whole purpose is real data under a uuid was
+    sometimes asserting against the empty state, and the `undefined`/`NaN` scan is only as
+    good as the completeness of the text it scans. Now 48 four runs out of four.
+  - **Deciding from motion, not vocabulary, is the point.** Widening the regex to every "…"
+    verb is wrong: `Analyzing…` is a *terminal* crew-readiness state, and `Working…` and
+    `Downloading…` are button labels gated on `busy` — a guard waiting for those to clear
+    would burn its timeout on a finished screen. `SPINNER_RE` survives only to label a short
+    screen "still fetching" rather than "blank", where a miss costs a clear message, not a
+    verdict.
+  - `spinnerCoverage()` is deliberately modest about what it proves: it **cannot** prove
+    coverage of a future spinner worded `Fetching photos…` (it searches for `Loading`, so
+    testing those hits against a `Loading` pattern would be circular). It proves `SPINNER_RE`
+    has not been *narrowed* until it matches nothing, and that the scan read some files at
+    all. Injection-tested: narrowing it to `/\bLoading\b\s/` fails `check:ui` naming
+    `"Loading…"`.
 
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly

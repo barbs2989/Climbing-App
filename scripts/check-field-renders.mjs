@@ -139,7 +139,12 @@ const probe = (hay, needle) => {
 };
 
 async function rowWith(col) {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=*,areas(*)&${col}=not.is.null&limit=8`;
+  // order=id.asc is load-bearing: PostgREST gives no ordering guarantee, so an unordered
+  // limit=8 returns a DIFFERENT eight rows run to run. That made the whole guard
+  // non-deterministic — `rappel_detail` read "renders" one run and "unprovable" the next,
+  // with no code change between them. A guard whose verdict depends on server row order
+  // cannot be trusted either way.
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=*,areas(*)&${col}=not.is.null&order=id.asc&limit=8`;
   const r = await fetch(url, { headers: headers(KEY) });
   if (!r.ok) return [];
   const rows = await r.json();
@@ -172,24 +177,13 @@ for (const [bname, b] of Object.entries(BASES)) {
   for (const tab of TABS) { try { BASELINE[bname + ":" + tab] = txt(render(b, tab)); } catch (e) { BASELINE[bname + ":" + tab] = ""; } }
 }
 
-const results = [];
-for (const [col, field] of FIELDS) {
-  const rows = await rowWith(col);
-  if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
-
-  // Pick the row whose value exposes the most distinct leaf paths — the widest test of the
-  // column's real shape.
-  let best = null;
-  for (const row of rows) {
-    const camel = dbRouteToCamel(row);
-    const leaves = leafPaths(camel[field]);
-    if (leaves.length && (!best || leaves.length > best.leaves.length)) best = { row, camel, leaves };
-  }
-  if (!best) { results.push({ col, field, verdict: "UNPROVABLE (numeric/short)", tabs: [], missing: [] }); continue; }
-
+// Render one candidate row and score how many of its leaves reached a screen. Split out of
+// the loop so every candidate is judged by identical logic — a second, hand-inlined copy is
+// how the retry path quietly diverges from the first-pick path.
+function assessRow(cand, field) {
   const renderedAlone = {}, renderedReal = {};
   for (const [bname, b] of Object.entries(BASES)) {
-    const isolated = Object.assign({}, b, { [field]: best.camel[field] });
+    const isolated = Object.assign({}, b, { [field]: cand.camel[field] });
     for (const tab of TABS) {
       let a = "";
       try { a = txt(render(isolated, tab)); } catch (e) { /* isolated shape may throw */ }
@@ -197,18 +191,48 @@ for (const [col, field] of FIELDS) {
     }
   }
   for (const tab of TABS) {
-    try { renderedReal[tab] = txt(render(best.camel, tab)); } catch (e) { renderedReal[tab] = ""; }
+    try { renderedReal[tab] = txt(render(cand.camel, tab)); } catch (e) { renderedReal[tab] = ""; }
   }
   const keys = Object.keys(renderedAlone);
   const hitTabs = new Set(), condTabs = new Set(), missing = [];
-  for (const leaf of best.leaves) {
+  for (const leaf of cand.leaves) {
     let seenAlone = false, seenReal = false;
     for (const k of keys) if (probe(renderedAlone[k], leaf.text)) { seenAlone = true; hitTabs.add(k); }
     for (const tab of TABS) if (probe(renderedReal[tab], leaf.text)) { seenReal = true; condTabs.add("real:" + tab); }
     if (!seenAlone && !seenReal) missing.push(leaf.path);
   }
-  const found = best.leaves.length - missing.length;
-  const changedTabs = keys.filter((k) => renderedAlone[k] && renderedAlone[k] !== BASELINE[k]);
+  return { hitTabs, condTabs, missing, keys,
+    found: cand.leaves.length - missing.length,
+    changedTabs: keys.filter((k) => renderedAlone[k] && renderedAlone[k] !== BASELINE[k]) };
+}
+
+const results = [];
+for (const [col, field] of FIELDS) {
+  const rows = await rowWith(col);
+  if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
+
+  // Rank rows by how many distinct leaf paths the value exposes — the widest test of the
+  // column's real shape — but keep the runners-up. ONE row is not enough to declare a column
+  // dead: some columns are consumed through a filter, so an unlucky sample renders nothing
+  // while the column is fine. `what_to_bring` is passed as `essentials` and de-duplicated
+  // against the discipline's assumed gear, so a route whose items are all assumed shows
+  // nothing — that sample alone had this column recorded as NEVER RENDERS while it
+  // demonstrably renders on 1,025 of 1,037 populated routes (98.8%); the 12 that show
+  // nothing hold just ["Helmet"], which is correct de-duplication.
+  const ranked = rows.map((row) => { const camel = dbRouteToCamel(row); return { row, camel, leaves: leafPaths(camel[field]) }; })
+    .filter((c) => c.leaves.length)
+    .sort((a, b) => b.leaves.length - a.leaves.length);
+  if (!ranked.length) { results.push({ col, field, verdict: "UNPROVABLE (numeric/short)", tabs: [], missing: [] }); continue; }
+  const CANDIDATES = 5;
+  let best = ranked[0], picked = null;
+  for (const cand of ranked.slice(0, CANDIDATES)) {
+    const r = assessRow(cand, field);
+    if (!picked || r.found > picked.r.found) { picked = { cand, r }; }
+    if (r.found === cand.leaves.length) break;      // fully shown — no better outcome exists
+  }
+  best = picked.cand;
+
+  const { hitTabs, condTabs, missing, found, changedTabs, keys } = picked.r;
   const verdict = found === 0
     ? (changedTabs.length ? "used, not echoed (derived/summarised)" : "NEVER RENDERS")
     : missing.length === 0 ? (hitTabs.size ? "renders" : "conditional (only beside other fields)")
@@ -227,10 +251,30 @@ for (const r of results) {
 // Known and explained. A column here is NOT a pass — it is a recorded decision, so that a
 // column that goes dark tomorrow still fails. Empty this rather than grow it casually.
 const KNOWN = {
-  seasonal_hazards: "only the .avalanche.byMonth sub-key is consumed, and only when the area "
-    + "has an avyZone; the rest of the column has no reader. Needs a home before it is useful.",
-  what_to_bring: "passed to RouteGearCheck as `essentials`, which drops any item already in "
-    + "the discipline's assumed-gear list; the sample route's items are being filtered, not ignored. Unconfirmed.",
+  // seasonal_hazards was here as NEVER RENDERS. With deterministic ordering it scores
+  // "partial — 1/5 leaves shown": only .avalanche.byMonth is consumed, and only when the area
+  // has an avyZone. That was always the recorded reason, so the finding has not changed — but
+  // "partial" is reported by the PARTIALLY SHOWN section, and KNOWN is keyed on NEVER RENDERS,
+  // so leaving it here just makes the allowlist read stale.
+  //
+  // The other 4 sub-keys have no reader, and 2026-08-09 that was MEASURED rather than left as
+  // "needs a home" (scripts/oneoff/measure-seasonal-hazard-overlap.mjs, 505 routes). Against
+  // the text the route already shows (watch_out, hazards, obj_haz, climate, season):
+  //     exposure            502 routes · 40% word overlap · 13 new content words
+  //     weather.typical     495 routes · 48% overlap · 8 new words
+  //     weather.probability 448 routes · 39% overlap · 9 new words
+  //     crevasses           293 routes · 39% overlap · 10 new words
+  // The enrichment cross-references its neighbours on purpose ("already flagged in on-file
+  // hazards/watch_out"), so four new prose blocks would buy ~40 content words, half of them a
+  // rephrase of WATCH OUT. DECIDED: do not give these a home. Unlike descent_text (#707) or
+  // what_to_bring (#732), which said something nothing else did, this is an upstream dedup
+  // problem — fix it in enrichment, not by growing the route screen.
+  // what_to_bring was here recorded "Unconfirmed", and confirming it CONFIRMED it — the guard
+  // was right and the recorded reason was wrong. The items were not "being filtered": the
+  // filtered list `ess` was computed and then referenced in exactly one place, the early
+  // return `if(!assumed.length&&!ess.length)return null`. It was never rendered. The box
+  // printed `assumed`, the generic discipline kit, on all 1,037 populated routes. Fixed by
+  // rendering it as "Specific to this route", so the entry is gone rather than reworded.
   lists: "membership keys, not display copy — consumed by ticksFor/inList via "
     + "`.includes(\"state_hp\")`. NOTE: the live column holds free prose (\"Bulger List "
     + "(Washington's 100 highest peaks)\"), which that exact-match test can never satisfy, so "
