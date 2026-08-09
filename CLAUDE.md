@@ -417,6 +417,12 @@ clock and a `CountUp` do not prevent settling — rather than on spotting a spin
     four runs, passing every time. A guard whose whole purpose is real data under a uuid was
     sometimes asserting against the empty state, and the `undefined`/`NaN` scan is only as
     good as the completeness of the text it scans. Now 48 four runs out of four.
+    - **48 is the healthy number and 117 is the broken one** — the counts run backwards from
+      the intuition, so check which is which before re-investigating. Populated is
+      `← Back / Messages / Friends / Crews / START A CHAT / Robin`, just a name. The EMPTY
+      state is longer because it carries explanatory copy: `No friend chats yet` plus
+      "Message a partner from their profile and your chats will live here." Read
+      `--dump`'s text, never the char count, when deciding whether a screen has data.
   - **Deciding from motion, not vocabulary, is the point.** Widening the regex to every "…"
     verb is wrong: `Analyzing…` is a *terminal* crew-readiness state, and `Working…` and
     `Downloading…` are button labels gated on `busy` — a guard waiting for those to clear
