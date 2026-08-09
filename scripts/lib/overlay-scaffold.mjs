@@ -299,8 +299,21 @@ export function buildOpener(code, anchor, label, coreCode) {
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
-      "if(z)setTimeout(function(){__ovOpen.current(z);},1200);" +
-      "window.__overlaysReady=true;},[]);",
+      // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
+      // waits on this flag and then asks what happened; setting it synchronously while the
+      // opener fires 1200ms later meant they were asking before there was an answer. The
+      // two guards that survived it only did so because their settle windows (3400ms and
+      // 2200ms) happen to exceed 1200 — a coincidence, not a guarantee, and one that would
+      // break silently the first time someone tightened a timeout.
+      //
+      // The 1200ms is still a race against the app's own mount-time effects, and at zero it
+      // is visible: check:zero's sign-in reset empties `crews`, so crewInvite's payload is
+      // occasionally built before that lands and the overlay opens instead of being skipped.
+      // Both outcomes are correct — it either renders properly or is correctly reported as
+      // having nothing to open it about — so the skip count at zero can differ by one
+      // between runs. Do not treat that as a flake to chase; treat a FAILURE as one.
+      "if(z)setTimeout(function(){__ovOpen.current(z);window.__overlaysReady=true;},1200);" +
+      "else window.__overlaysReady=true;},[]);",
   };
 }
 
