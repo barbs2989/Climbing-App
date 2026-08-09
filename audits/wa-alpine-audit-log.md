@@ -5777,3 +5777,76 @@ Burdo attribution itself was confirmed. Mount Pilchuck's `areas.elevation_ft` (5
 two independently-sourced Wikipedia figures (5,344 ft article vs. 5,324 ft state-park page) with
 no clear tiebreaker, and the route's own `high_point_ft` (5324) may or may not be an error
 depending on which is chosen.
+
+
+## Batch 85 (pass 2) -- 2026-08-09
+
+Checked: Mount Pilchuck Standard Route, Mount Price (Hester Lake Route), Mount Rahm (Standard
+Route/Glacier), and five Mount Rainier routes (Curtis Ridge, Disappointment Cleaver, Edmunds
+Headwall, Emmons-Winthrop Glacier, Fuhrer Finger). Researched via 4 parallel agents grouped by
+peak (Pilchuck; Price+Rahm; Rainier x3; Rainier x2). WebFetch was blocked by the network egress
+proxy again this run; findings lean on cross-corroborated WebSearch snippets from at least two
+independent sources per confirmed fix.
+
+Fixed (13): Mount Pilchuck Standard Route repeats the same `permit` defect fixed on its East
+Ridge sibling in batch 84 -- a Discover Pass claimed for a USFS (not state-park) trailhead --
+fixed to Northwest Forest Pass, matching the row's own access sub-object; its `length_m` (21)
+was off by ~200x against its own dist_km (4.3 km = 4,300 m one-way) -- fixed. Mount Rahm's area
+lat/lng sat ~150-170 m from the Wikipedia/GNIS summit coordinate that the route's own waypoints
+already had correct -- fixed. Curtis Ridge's gain_ft/loss_ft (7000/9500) contradicted its own
+itinerary.days sums (9500 gain / 9300 loss) and its own totalNote ("~9,500 ft gain") -- fixed;
+its dist_km (29.77, rendering ~2x the real trip once doubled) was corrected to the itinerary's
+one-way figure (13.7); its gpx track sat ~40 miles north near North Bend, contradicting its own
+waypoints and its own data_quality.gaps note claiming no public track exists -- cleared rather
+than left in place. Edmunds Headwall's first waypoint described an unrelated west-side approach
+(Dry Creek/Westside Rd) contradicting its own approach text, road field, and approach_logistics,
+which all agree on Mowich Lake -- corrected to match, per wildsnow.com/turns-all-year.com ski
+trip reports; elevFt on that waypoint was dropped rather than guessed. Emmons Glacier's
+"Glacier Basin Camp Site Area" waypoint elev (6800) contradicted its own approach text's 5,935
+ft (WTA/Mountaineers-confirmed) -- fixed; its trailhead elevation appeared as three disagreeing
+values in one row (4600/4400/4260) -- reconciled to 4,400 ft, the figure matching external
+sources and the row's own approach text. Fuhrer Finger's `fa` omitted a first-ascent party
+member (Peyton Farrer), confirmed present via two independent sources (SummitPost,
+Mountainproject) -- added; its approach text's Camp Muir elevation (10,080 ft) conflicted with
+Wikipedia/AllTrails/WTA's 10,188 ft -- fixed.
+
+Flagged rather than fixed (19): Pilchuck's `access.rules` field describes Glacier Peak
+Wilderness group-size/campfire rules, but Pilchuck is not inside that wilderness (USFS boundary
+page) -- confirmed wrong, but no verified replacement text was found, so left for a human to
+rewrite rather than guessing at specifics. Pilchuck's `areas.elevation_ft` sits amid still-
+unresolved external disagreement (5,324/5,341/5,344/5,340 ft across WTA/Wikipedia/Peakbagger/
+TrailChick) -- same open question noted in batch 84, still unresolved. Pilchuck's `parent_id`
+placement under a "Glacier Peak region" bucket looks suspect given the wilderness-rules
+contamination above, but isn't independently confirmed as a placement error. Mount Price's
+trailhead pass requirement (Northwest Forest Pass) conflicts with an MBS-NF page apparently
+saying no fee currently applies at Dingford Creek -- WebFetch to the primary source was blocked;
+its `approach_logistics.trailheadLat/Lng` differs by ~130-150 m from its own waypoints[0], which
+independently matches a sourced trailhead coordinate. Mount Rahm's `dist_km` (8, implying a much
+shorter round trip than the row's own itinerary/waypoint mileage) looks internally inconsistent,
+but no clean external one-way figure was found to pin the correct value; its grade ("Class 3 +
+glacier") may describe a different (easier) gully variant than sources describing a harder
+Class-4/5 western option -- ambiguous rather than clearly wrong. Mount Rainier's area
+`elevation_ft` (14406) is contested between the long-standing NPS/USGS figure (14,410 ft) and a
+2024 GPS/lidar resurvey figure that may describe a different high point (the SW crater rim, not
+the ice-covered Columbia Crest) -- genuinely unresolved, not a simple typo; the same ambiguity
+propagates to `high_point_ft` on Curtis Ridge and Disappointment Cleaver. Rainier's stated
+winter/summer self-registration window conflicts with at least one other source giving a
+different winter start date -- sources disagree with each other. Curtis Ridge's `length_m`
+(1067) is an exact duplicate of Edmunds Headwall's value and doesn't fit Curtis Ridge's own
+scale, but no correct replacement was identified. Disappointment Cleaver's `dist_km` undershoots
+commonly cited 16-18 mi round-trip figures from guide services, though it's internally
+consistent with its own waypoint data -- looks like normal source variance (trail mileage vs.
+straight-line), not a clear error. Edmunds Headwall's `gain_ft` needs recomputing now that the
+trailhead is corrected, but no verified figure was derived; its `alpine_grade` ("D") reads oddly
+alongside `commitment: "IV"` with no dedicated guidebook page to check it against. Emmons
+Glacier's `dist_km` disagrees by ~24% with its own last waypoint's one-way mileage, and no
+external one-way figure was found to adjudicate; its `length_m` (1497) doesn't obviously
+correspond to any named segment in the row: flagged for clarification rather than correction;
+its "Glacier Basin Camp Site Area" waypoint's lat/lng sits only ~150-200 m from the trailhead
+despite being labeled 3.5 mi away -- clearly wrong, but no correct coordinate was identified.
+Fuhrer Finger's `dist_km` (24.94, implying a ~31 mi round trip) is more than double the ~14 mi
+round trip described by SummitPost/Mountainproject and roughly matched by the row's own
+itinerary -- likely wrong, but the correct one-way figure wasn't independently pinned down; its
+`gpx` track terminates well short of the summit (covering only the lower Paradise approach)
+despite `waypoints` implying full trailhead-to-summit coverage -- a real data gap, not a simple
+value fix.
