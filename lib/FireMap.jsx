@@ -26,7 +26,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
-import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fireDistMi, FIRE_SOURCES } from "./fire";
+import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -48,7 +48,14 @@ function bboxOf(map) {
   return { minLat: b.getSouth(), maxLat: b.getNorth(), minLng: b.getWest(), maxLng: b.getEast() };
 }
 
-export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus = null, locale = undefined }) {
+// `uDistMi` is the app's unit-aware distance FORMATTER (ClimbMatchCore.jsx), not a
+// boolean flag — `mi => "35.5 mi" | "57.2 km"` depending on the user's setting. This
+// component originally destructured it as `uDistMi = true` and branched on its
+// truthiness, so the function object was always truthy and every distance rendered
+// in miles: a climber with metric selected was shown "mi" on every row, and the km
+// branch was unreachable. The default here is a formatter, not `true`, so a caller
+// that forgets to pass it degrades to imperial rather than crashing.
+export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -72,8 +79,11 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
+      // The caller picks the zoom, because only it knows whether `focus` is a crag or
+      // a whole state. Clamped so a bad value cannot hand Leaflet an out-of-range zoom.
+      const fz = focus && Number.isFinite(focus.zoom) ? Math.min(14, Math.max(3, focus.zoom)) : 9;
       const map = L.map(mapDiv.current, { attributionControl: false })
-        .setView(focus ? [focus.lat, focus.lng] : [US.lat, US.lng], focus ? 9 : US.zoom);
+        .setView(focus ? [focus.lat, focus.lng] : [US.lat, US.lng], focus ? fz : US.zoom);
       applyBaseLayer(map, tileRef, baseLayer);
       // Order matters: perimeters and weather zones are fills, incident points sit
       // on top so a marker inside a perimeter stays clickable.
@@ -130,9 +140,14 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
     grp.clearLayers();
     if (!show.wx) return;
     zones.forEach(z => {
+      // A product issued for later is drawn fainter and unfilled, and its tooltip
+      // says "from …" instead of "until …". Drawing the two identically is what let a
+      // warning starting tomorrow look like weather you are standing in.
+      const live = zoneInEffect(z);
       const color = z.kind === "warning" ? C.orange : C.amber;
-      L.geoJSON(z.geometry, { style: { color, weight: 1.5, opacity: 0.75, dashArray: "5 4", fillColor: color, fillOpacity: 0.08 } })
-        .bindTooltip(z.label + (fmtEnds(z.ends, locale) ? " " + fmtEnds(z.ends, locale) : ""), { sticky: true })
+      const when = live ? fmtEnds(z.ends, locale) : fmtStarts(z.starts, locale);
+      L.geoJSON(z.geometry, { style: { color, weight: live ? 1.5 : 1, opacity: live ? 0.75 : 0.4, dashArray: live ? "5 4" : "2 6", fillColor: color, fillOpacity: live ? 0.08 : 0 } })
+        .bindTooltip(z.label + (live ? "" : " (issued for later)") + (when ? " " + when : ""), { sticky: true })
         .addTo(grp);
     });
   }, [ready, zones, show.wx, C, locale]);
@@ -158,26 +173,52 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
     if (map) { try { map.setView([f.lat, f.lng], Math.max(map.getZoom(), 9), { animate: true }); } catch (e) {} }
   };
 
+  // Every branch reports something. The first version returned silently when
+  // geolocation was unavailable or the map had not loaded, and swallowed the error
+  // callback too — so a denied permission, a timeout, and a browser without
+  // geolocation all produced a button that visibly did nothing.
+  const [locateMsg, setLocateMsg] = useState("");
   const locate = () => {
-    if (!navigator.geolocation || !mapRef.current) return;
+    if (!navigator.geolocation) { setLocateMsg("This browser can't share your location."); return; }
+    if (!mapRef.current) { setLocateMsg("The map isn't loaded, so there's nothing to centre."); return; }
+    setLocateMsg("Finding you…");
     navigator.geolocation.getCurrentPosition(
-      p => { try { mapRef.current.setView([p.coords.latitude, p.coords.longitude], 9); } catch (e) {} },
-      () => {}, { timeout: 8000 }
+      p => {
+        setLocateMsg("");
+        try { mapRef.current.setView([p.coords.latitude, p.coords.longitude], 9); } catch (e) { setLocateMsg("Couldn't move the map."); }
+      },
+      err => setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."),
+      { timeout: 8000 }
     );
   };
 
-  // A warning covering the middle of the viewport is the one worth headlining;
-  // a warning clipped by the corner of the map is not. No geometry test here —
-  // just prefer warnings over watches and take the soonest to expire.
+  // Which product to headline. Priority order, and each step is load-bearing:
+  //   1. in effect NOW beats one issued for later — a warning that starts tomorrow
+  //      lunchtime is not current danger and must not be banner-ed as though it were
+  //   2. a Warning beats a Watch
+  //   3. soonest to expire, so the banner tracks the nearest deadline
+  // The end-time fallback is `Infinity`, not 0. Written as `Date.parse(z.ends || 0)`
+  // it stringified null to "0" and parsed as the year 2000, so a product with no end
+  // time sorted ahead of every real one and became the headline — the least
+  // informative zone winning, and then rendering with no "until" line at all.
+  const inEffect = useMemo(() => zones.filter(z => zoneInEffect(z)), [zones]);
+  const upcoming = useMemo(() => zones.filter(z => !zoneInEffect(z)), [zones]);
   const topZone = useMemo(() => {
-    const w = zones.filter(z => z.kind === "warning");
-    const pool = w.length ? w : zones;
-    return pool.slice().sort((a, b) => (Date.parse(a.ends || 0) || 0) - (Date.parse(b.ends || 0) || 0))[0] || null;
-  }, [zones]);
+    const rank = pool => pool.slice().sort((a, b) => (Date.parse(a.ends) || Infinity) - (Date.parse(b.ends) || Infinity))[0];
+    const nowW = inEffect.filter(z => z.kind === "warning");
+    return rank(nowW.length ? nowW : inEffect.length ? inEffect : upcoming.filter(z => z.kind === "warning").length ? upcoming.filter(z => z.kind === "warning") : upcoming) || null;
+  }, [inEffect, upcoming]);
+  const topIsUpcoming = topZone ? !zoneInEffect(topZone) : false;
+  // How many others share the headline's footing, so "and N more" counts comparable
+  // things rather than lumping tomorrow's watch in with tonight's warning.
+  const peerCount = Math.max(0, (topIsUpcoming ? upcoming.length : inEffect.length) - 1);
 
   const anyError = firesQ.error || perimQ.error || wxQ.error;
   const anyLoading = (show.fires && firesQ.isFetching) || (show.perims && perimQ.isFetching) || (show.wx && wxQ.isFetching);
-  const truncated = (firesQ.data && firesQ.data.truncated) || (perimQ.data && perimQ.data.truncated);
+  // The weather layer was missing here, so a viewport hitting CAP.wx drew a subset of
+  // Red Flag polygons and said nothing — against this module's own stated contract
+  // that a capped result is always disclosed.
+  const truncated = (firesQ.data && firesQ.data.truncated) || (perimQ.data && perimQ.data.truncated) || (wxQ.data && wxQ.data.truncated);
   // Distances need a reference the user can name, and it must not move when they
   // tap a row: flying to a fire re-centres the map, so measuring from the map
   // centre made the fire you just selected read "0 mi from" — true, meaningless,
@@ -218,10 +259,14 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
             Active wildfires &amp; fire weather
           </div>
         </div>
-        <button onClick={locate} aria-label="Centre on my location"
-          style={{ padding: "8px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer", display: "flex", alignItems: "center" }}>
-          <ActionIcon name="target" size={15} color={C.textSub} />
-        </button>
+        {/* Not offered at all when the map failed to load — there is nothing to centre,
+            and a button whose only possible outcome is an apology is worse than absent. */}
+        {mapFail ? null : (
+          <button onClick={locate} aria-label="Centre on my location"
+            style={{ padding: "8px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer", display: "flex", alignItems: "center" }}>
+            <ActionIcon name="target" size={15} color={C.textSub} />
+          </button>
+        )}
         <button onClick={onClose} aria-label="Close fire map"
           style={{ padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Close</button>
       </div>
@@ -229,14 +274,21 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
       {/* headline fire-weather banner — the danger half, above the map so it is not
           something you have to go looking for */}
       {show.wx && topZone ? (
-        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 14px", background: topZone.kind === "warning" ? C.redBg : C.amberBg, borderBottom: "1px solid " + (topZone.kind === "warning" ? C.red : C.amber), flexShrink: 0 }}>
-          <ActionIcon name="alert" size={15} color={topZone.kind === "warning" ? C.red : C.amber} />
+        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 14px", background: topIsUpcoming ? C.amberBg : topZone.kind === "warning" ? C.redBg : C.amberBg, borderBottom: "1px solid " + (topIsUpcoming ? C.amber : topZone.kind === "warning" ? C.red : C.amber), flexShrink: 0 }}>
+          <ActionIcon name="alert" size={15} color={topIsUpcoming ? C.amber : topZone.kind === "warning" ? C.red : C.amber} />
           <div style={{ flex: 1, fontSize: 12, lineHeight: 1.45, color: C.text }}>
-            <b>{topZone.label}</b>{zones.length > 1 ? " and " + (zones.length - 1) + " more" : ""} in view
+            {/* "in view" vs "issued for later" is the difference between conditions you
+                are standing in and conditions forecast for tomorrow. Both are worth
+                showing; conflating them is what made a future warning read as current. */}
+            <b>{topZone.label}</b>{peerCount ? " and " + peerCount + " more" : ""}{topIsUpcoming ? " issued for later" : " in view"}
             {/* Its own line rather than " · until 8PM" appended inline: at phone width
                 the inline version wrapped and left the separator stranded on a line
                 of its own. Same reason the source list below is one line per source. */}
-            {fmtEnds(topZone.ends, locale) ? <div style={{ color: C.textSub }}>{fmtEnds(topZone.ends, locale)}</div> : null}
+            {(topIsUpcoming ? fmtStarts(topZone.starts, locale) : fmtEnds(topZone.ends, locale))
+              ? <div style={{ color: C.textSub }}>{topIsUpcoming ? fmtStarts(topZone.starts, locale) : fmtEnds(topZone.ends, locale)}</div> : null}
+            {/* When something is in effect AND more is queued behind it, say so — the
+                banner otherwise hides the fact that tonight gets worse. */}
+            {!topIsUpcoming && upcoming.length ? <div style={{ color: C.textMuted, fontSize: 11 }}>{upcoming.length + " more issued for later"}</div> : null}
           </div>
           {topZone.url ? <a href={topZone.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, fontWeight: 700, color: C.blue, textDecoration: "none", flexShrink: 0 }}>Full text →</a> : null}
         </div>
@@ -265,8 +317,12 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
         )}
       </div>
 
-      {/* list + status */}
-      <div style={{ flex: "1 1 40%", minHeight: 150, overflowY: "auto", borderTop: "1px solid " + C.border, background: C.bg }}>
+      {/* list + status.
+          `overscrollBehavior: contain` stops a drag that runs out of list from
+          scrolling the document underneath — this overlay is position:fixed over a
+          page that is still scrollable, so without it the pane reads as frozen.
+          check:overlay-scroll enforces this for every overlay. */}
+      <div style={{ flex: "1 1 40%", minHeight: 150, overflowY: "auto", overscrollBehavior: "contain", borderTop: "1px solid " + C.border, background: C.bg }}>
         <div style={{ padding: "12px 14px 20px", display: "flex", flexDirection: "column", gap: 10 }}>
 
           <div>
@@ -277,7 +333,18 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
             {/* Says what the mileage on each row is measured from — "750 mi" with no
                 stated reference is a number nobody can act on. */}
             {ref && fires.length ? <div style={{ fontSize: 10.5, color: C.textMuted, marginTop: 3 }}>Distances {refLabel}</div> : null}
+            {locateMsg ? <div style={{ fontSize: 11, color: C.amber, marginTop: 4 }}>{locateMsg}</div> : null}
           </div>
+
+          {/* With the Fires chip off, the query is disabled — so there is no data, no
+              error and no loading state, and this section used to render a heading over
+              nothing at all. Say which layer is off instead. */}
+          {!show.fires ? (
+            <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
+              The Fires layer is turned off.
+              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>Tap “Fires” on the map to list active wildfires again.</div>
+            </div>
+          ) : null}
 
           {/* An error is an error. It never collapses into "no fires nearby". */}
           {anyError ? (
@@ -298,12 +365,15 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
 
           {truncated ? (
             <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.5 }}>
-              Too many fires to draw at this zoom — showing the largest. Zoom in for the full picture.
+              Too many to draw at this zoom — showing the largest. Zoom in for the full picture.
             </div>
           ) : null}
 
-          {/* The one honest empty state: the query came back, and it came back empty. */}
-          {!anyError && firesQ.data && fires.length === 0 ? (
+          {/* The one honest empty state: the query came back, and it came back empty.
+              Also gated on the layer being ON — with it off, React Query serves the last
+              cached result for this key, so an ungated list would show stale rows under
+              a heading claiming they are what is in view. */}
+          {show.fires && !anyError && firesQ.data && fires.length === 0 ? (
             <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
               No active wildfire incidents reported in this view.
               <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>
@@ -317,13 +387,13 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
               200-row list is not something anyone reads. The cap is stated rather
               than applied quietly — a list that stops at 60 while claiming to be
               "fires in view" is the same lie as an empty state over a failed query. */}
-          {fires.length > LIST_CAP ? (
+          {show.fires && fires.length > LIST_CAP ? (
             <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>
               Showing the {LIST_CAP} largest of {fires.length} in view. All {fires.length} are on the map — zoom in to narrow the list.
             </div>
           ) : null}
 
-          {fires.slice(0, LIST_CAP).map(f => {
+          {(show.fires ? fires.slice(0, LIST_CAP) : []).map(f => {
             const open = sel === f.id, color = fireColor(f, C), mi = ref ? fireDistMi(ref.lat, ref.lng, f.lat, f.lng) : null;
             return (
               <button key={f.id} onClick={() => flyTo(f)}
@@ -331,7 +401,10 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = true, focus 
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />
                   <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f.name}</span>
-                  {mi != null && mi >= 1 ? <span style={{ fontSize: 11, color: C.textMuted, flexShrink: 0 }}>{uDistMi ? Math.round(mi) + " mi" : Math.round(mi * 1.609) + " km"}</span> : null}
+                  {/* Formatted by the app's unit-aware formatter, and never suppressed:
+                      the old `mi >= 1` guard hid the distance for the very nearest
+                      fires, which is the one case where the number matters most. */}
+                  {mi != null ? <span style={{ fontSize: 11, color: C.textMuted, flexShrink: 0 }}>{uDistMi(Math.round(mi * 10) / 10)}</span> : null}
                 </div>
                 <div style={{ fontSize: 11.5, color: C.textSub, lineHeight: 1.5 }}>
                   {/* Joined with a NO-BREAK space before each "·" so the separator can

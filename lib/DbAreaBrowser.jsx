@@ -741,7 +741,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -750,6 +750,20 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
+
+  // Report where the user is browsing to the parent. This exists because App's
+  // `selArea` is only ever written on the SEED catalog path, and production builds
+  // set VITE_USE_DB=true — so anything outside this component that wanted "the area
+  // being looked at" got null in the deployed app. The Fire map's focus point was
+  // exactly that: it worked locally on seed data and could never fire in production.
+  // Reported as a plain {id,name,lat,lng,areaType} rather than the row itself, so the
+  // consumer cannot come to depend on the DB shape.
+  useEffect(() => {
+    if (!onAreaContext) return;
+    onAreaContext(current && current.lat != null && current.lng != null
+      ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
+      : null);
+  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
 
   const jump = i => {
     setScreen("areas");
