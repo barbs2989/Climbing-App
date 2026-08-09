@@ -79,10 +79,29 @@ function stripSubqueries(sql) {
 }
 
 const targets = []; // { kind, id, stmt }
+const createdIds = new Set(); // ids this file INSERTs, so later statements may target them
 for (const stmt of statements) {
   const head = stmt.slice(0, 220).replace(/\s+/g, " ");
   const isDelete = /^\s*delete\s+from/i.test(stmt);
   const isUpdate = /^\s*update\s/i.test(stmt);
+
+  // A row this file CREATES counts as existing for the statements after it. Without this,
+  // any migration that inserts an area and then references it — a new sub-area plus the
+  // recount that follows — fails with "target id does not exist", because the id is not
+  // live yet at check time. That is a false alarm on a correct file, and a guard that
+  // cries wolf is a guard people stop reading. Ids are read POSITIONALLY from the column
+  // list so a literal that merely looks like an id cannot be mistaken for one.
+  const ins = stmt.match(/^\s*insert\s+into\s+([a-z_][a-z0-9_]*)\s*\(([^)]*)\)\s*values\s*\(/i);
+  if (ins) {
+    if (ins[1].toLowerCase() === TABLE.toLowerCase()) {
+      const cols = ins[2].split(",").map((c) => c.trim().toLowerCase());
+      const idIdx = cols.indexOf("id");
+      const tuple = stmt.slice(stmt.toLowerCase().indexOf("values") + 6);
+      const vals = [...tuple.matchAll(/'((?:[^']|'')*)'/g)].map((m) => m[1]);
+      if (idIdx >= 0 && vals[idIdx]) createdIds.add(vals[idIdx].replace(/''/g, "'"));
+    }
+    continue;
+  }
   if (!isDelete && !isUpdate) continue;
 
   // Read the table this statement actually writes to, rather than testing whether
@@ -160,7 +179,7 @@ async function fetchRows(ids) {
 const rows = await fetchRows(uniq);
 const found = new Map(rows.map(r => [r.id, r]));
 
-const missing = targets.filter(t => !found.has(t.id));
+const missing = targets.filter(t => !found.has(t.id) && !createdIds.has(t.id));
 const deletes = targets.filter(t => t.kind === "delete" && found.has(t.id));
 
 // For each DELETE, is this the last row carrying that name on that peak?
@@ -289,4 +308,24 @@ process.exit(bad ? 1 : 0);
  * Control: supabase/migrations/0101_drop_brothers_duplicate.sql must PASS and print both
  * twins BY NAME — they are renamed survivors ("South Couloir (Standard Route)"), which is
  * why a name-only twin search could not see them and the id assertion exists at all.
+ */
+
+/* Injection tests for "ids this file INSERTs count as existing" (added with 0105, which
+ * creates a sub-area and then recounts it). Run against the live table:
+ *
+ *   1. update areas set route_count = 0 where id = 'wa_totally_made_up_area';
+ *      -> FAIL. The original guarantee is intact: a never-created id is still a no-op.
+ *
+ *   2. insert into ROUTES (...) values ('wa_some_new_route', ...);
+ *      update AREAS set route_count = 0 where id = 'wa_some_new_route';
+ *      -> FAIL. The insert must be into the table being checked; a row created in a
+ *         different table does not make an areas id exist.
+ *
+ *   3. insert into areas (id, name, area_type, parent_id) values ('wa_brand_new_area', ...);
+ *      update areas set route_count = 0 where id = 'wa_brand_new_area';
+ *      -> PASS. The case this rule exists for.
+ *
+ *   4. insert into areas (name, area_type, id, parent_id) values (..., 'wa_positional_area', ...);
+ *      -> PASS. The id is read POSITIONALLY from the column list, not assumed first, so a
+ *         literal that merely looks like an id cannot be mistaken for one.
  */
