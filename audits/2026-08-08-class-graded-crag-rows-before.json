@@ -1,0 +1,1399 @@
+{
+ "takenAt": "2026-08-08",
+ "note": "before-state for triage-class-graded-crag-rows.mjs --apply; restore by writing `discipline` back",
+ "bucketA": [
+  {
+   "id": "ca_leconte_gully",
+   "area_id": "ca_g_grizzly_peak",
+   "name": "LeConte Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_left_scramble",
+   "area_id": "ca_6_franosch",
+   "name": "Left Scramble",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_scottish_gully",
+   "area_id": "ca_lower_tier",
+   "name": "Scottish Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_south_gully",
+   "area_id": "ca_mammoth_rock",
+   "name": "South Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ct_4th_class_gully",
+   "area_id": "ct_upper_tier_2",
+   "name": "4th Class Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ct_class_4_scramble",
+   "area_id": "ct_upper_ledges",
+   "name": "Class 4 Scramble",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "md_central_descent_route",
+   "area_id": "md_bulges_the",
+   "name": "Central Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "md_little_bulge_descent_route",
+   "area_id": "md_bulges_the",
+   "name": "Little Bulge Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "me_the_ramp_aka_the_gully",
+   "area_id": "me_c_main_face",
+   "name": "The Ramp (aka The Gully)",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nh_north_right_end_descent_gully",
+   "area_id": "nh_middle_sugarloaf_main_face",
+   "name": "North (right) End Descent Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nh_scramble_to_launch_ledge",
+   "area_id": "nh_3_the_mid_section",
+   "name": "Scramble to \"Launch Ledge\"",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nh_south_left_descent_gully",
+   "area_id": "nh_middle_sugarloaf_main_face",
+   "name": "South (Left) Descent Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_rap_and_catwalk_approach_from_easterly_end",
+   "area_id": "nm_shield",
+   "name": "Rap and Catwalk Approach from Easterly End",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_se_gully_standard_route",
+   "area_id": "nm_cabezon_peak",
+   "name": "SE Gully (Standard Route)",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_shortcut_scramble",
+   "area_id": "nm_sunny_side_2",
+   "name": "Shortcut Scramble",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_southeast_ridge_a_k_a_standard_descent",
+   "area_id": "nm_thumb_the",
+   "name": "Southeast Ridge (a.k.a., standard descent)",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_west_gully",
+   "area_id": "nm_cerro_guadalupe",
+   "name": "West Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nv_southeast_gully",
+   "area_id": "nv_c_calico_peak",
+   "name": "SouthEast Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_walrus_gully",
+   "area_id": "nv_b_red_book_point",
+   "name": "Walrus Gully",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_access_integrale",
+   "area_id": "ny_7_sunny_picnics",
+   "name": "Access Integrale",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_access_scramble",
+   "area_id": "ny_7_sunny_picnics",
+   "name": "Access Scramble",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_good_book_top_bottom_access",
+   "area_id": "ny_6_the_good_book",
+   "name": "Good Book Top-Bottom Access",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_mooring_line_descent_route",
+   "area_id": "ny_cove_overlook",
+   "name": "Mooring Line Descent Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_northern_grand_traverse_ledge_access",
+   "area_id": "ny_millbrook",
+   "name": "Northern Grand Traverse Ledge Access",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_radcliffe_descent",
+   "area_id": "ny_b_jackie_and_friends",
+   "name": "Radcliffe Descent",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_the_descent_route_2",
+   "area_id": "ny_fresh_wall_spier_falls_area_the",
+   "name": "The Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "or_approach_gully",
+   "area_id": "or_zz_upper_gorge",
+   "name": "Approach Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "pa_rap_station",
+   "area_id": "pa_short_stack",
+   "name": "rap station",
+   "discipline": "sport",
+   "grade": "4th"
+  },
+  {
+   "id": "va_armbuster_descent_route",
+   "area_id": "va_bird_s_nest",
+   "name": "Armbuster Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_balcony_descent",
+   "area_id": "va_lower_balcony",
+   "name": "Balcony Descent",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "va_descent",
+   "area_id": "va_romeo_s_ladder",
+   "name": "Descent",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_descent_2",
+   "area_id": "va_cigar_box",
+   "name": "Descent",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_descent_gully_2",
+   "area_id": "va_dihedrals",
+   "name": "Descent Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_descent_route",
+   "area_id": "va_cornice",
+   "name": "Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_downclimb_3",
+   "area_id": "va_gorky_park",
+   "name": "Downclimb",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "va_microdome_descent",
+   "area_id": "va_microdome",
+   "name": "Microdome descent",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_poison_ivy_gully_descent",
+   "area_id": "va_degree_101",
+   "name": "Poison Ivy Gully (descent)",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_east_gully",
+   "area_id": "wa_agathla_tower",
+   "name": "East Gully",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_gully_1",
+   "area_id": "wa_amphitheater_the",
+   "name": "Gully 1",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_gully_2",
+   "area_id": "wa_amphitheater_the",
+   "name": "Gully 2",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wi_talus_scramble",
+   "area_id": "wi_wedge_the",
+   "name": "Talus Scramble",
+   "discipline": "bouldering",
+   "grade": "4th"
+  }
+ ],
+ "bucketBLeftAlone": [
+  {
+   "id": "ak_nw_ridge",
+   "name": "NW Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "al_rebar_route",
+   "name": "Rebar Route",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "az_anarchy_crack",
+   "name": "Anarchy Crack",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_elden_slab_route",
+   "name": "Elden Slab Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_ephemeral_cascade",
+   "name": "Ephemeral Cascade",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_george_route",
+   "name": "George Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_hiker_s_route",
+   "name": "Hiker's Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "az_morning_glory_4th_class_route",
+   "name": "Morning Glory 4th Class Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_old_folks_boogie",
+   "name": "Old Folks Boogie",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_project_16",
+   "name": "Project",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "az_project_17",
+   "name": "Project",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "az_regular_route_2",
+   "name": "Regular route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_staircase_face",
+   "name": "Staircase Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "az_the_walk_up",
+   "name": "The Walk Up",
+   "discipline": "sport",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_aquila_peak_northeast_face",
+   "name": "Aquila Peak, Northeast Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "name": "Castle Dome - 4th class route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_chockstone_chimney_2",
+   "name": "Chockstone Chimney",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_couloir_du_pissoir",
+   "name": "Couloir du Pissoir",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_descent_crack",
+   "name": "Descent Crack",
+   "discipline": "bouldering",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_downclimb_crack",
+   "name": "Downclimb Crack",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_gunsight_2",
+   "name": "Gunsight",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_kuna_crest",
+   "name": "Kuna Crest",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_mt_baldy_trail_aka_south_ridge_or_bear_flat_trail",
+   "name": "Mt. Baldy Trail (aka South Ridge or Bear Flat Trail)",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_mt_harrington_north_ridge",
+   "name": "Mt. Harrington, North Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_no_way_down",
+   "name": "No Way Down",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_north_castle_butte",
+   "name": "North Castle Butte",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_north_face_9",
+   "name": "North face",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_preschooler_s_playground",
+   "name": "Preschooler's Playground",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_southwest_arete_6",
+   "name": "Southwest Arete",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_southwest_ridge_4",
+   "name": "Southwest ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_summit_cave_route",
+   "name": "Summit Cave Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_tehipite_dome_north_ridge",
+   "name": "Tehipite Dome - North Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_the_chute",
+   "name": "The Chute",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_unknown_7",
+   "name": "Unknown",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_west_face_8",
+   "name": "West Face",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_west_ridge",
+   "name": "West Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ca_west_ridge_6",
+   "name": "West Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ca_west_shoulder",
+   "name": "West Shoulder",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_1_2",
+   "name": "1",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "co_12_045_left_couloir",
+   "name": "12,045 Left Couloir",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_10",
+   "name": "East Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_16",
+   "name": "East Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_17",
+   "name": "East Face",
+   "discipline": "bouldering",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_7",
+   "name": "East Face",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_east_face_9",
+   "name": "East Face",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_east_face_babyhorn",
+   "name": "East Face/Babyhorn",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_hobo",
+   "name": "East Face/Hobo",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_mallory_flatironnette_aka_shark_fin",
+   "name": "East Face/Mallory Flatironnette aka Shark Fin",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_north_rib_of_the_eastern_crag",
+   "name": "East Face - North Rib of the Eastern Crag",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_north_side",
+   "name": "East Face North Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_of_the_gazebo",
+   "name": "East Face of the Gazebo",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_south",
+   "name": "East Face South",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_face_south_side_2",
+   "name": "East Face South Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_ridge_8",
+   "name": "East Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_east_the_face",
+   "name": "East The Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_easy_listening",
+   "name": "Easy Listening",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_extra_credit_summit_aka_terror_summit",
+   "name": "Extra Credit Summit aka Terror Summit",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_falcon_spires_highline",
+   "name": "Falcon Spires Highline",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_fatironette",
+   "name": "Fatironette",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_first_arch_shortcut",
+   "name": "First Arch Shortcut",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_fumbledeedum",
+   "name": "Fumbledeedum",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_funicular_route",
+   "name": "Funicular Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_keyhole_route",
+   "name": "Keyhole Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_lower_deviation_right",
+   "name": "Lower Deviation Right",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_middle_sister_north_face",
+   "name": "Middle Sister - North Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_north_sister_west_ridge",
+   "name": "North Sister - West Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_northeast_arete_3",
+   "name": "Northeast Arete",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_northeast_ridge_11",
+   "name": "Northeast Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_northeast_ridge_of_the_dome",
+   "name": "Northeast Ridge of the Dome",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_perch_highline",
+   "name": "Perch Highline",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_poofie",
+   "name": "Poofie",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_pushing_two_hundred",
+   "name": "Pushing Two Hundred",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_quartzite_ridge_north_side",
+   "name": "Quartzite Ridge North Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_rabbit_ears_summit",
+   "name": "Rabbit Ears Summit",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_route_1_4",
+   "name": "Route 1",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_slab_crack_2",
+   "name": "Slab Crack",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_south_ramp_of_lost_and_found",
+   "name": "South Ramp of Lost and Found",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_south_ridge_11",
+   "name": "South Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_southeast_ridge_3",
+   "name": "Southeast Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_southeast_ridge_6",
+   "name": "Southeast Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_sunny_side_two",
+   "name": "Sunny Side Two",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_sw_face",
+   "name": "SW Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_unknown_156",
+   "name": "Unknown",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "co_upper_east_face_sphinx",
+   "name": "Upper East Face, Sphinx",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "co_via_parfet_s_ferrata",
+   "name": "Via Parfet’s Ferrata",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ct_climbs_left_of_nor_easter",
+   "name": "Climbs Left of Nor'easter",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ct_routes_beyond_morning_glory",
+   "name": "Routes Beyond Morning Glory",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "il_mountaineer_s_route",
+   "name": "Mountaineer's Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "il_no_hans_solo",
+   "name": "No Hans Solo",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "ky_ban_hammer_closed_project",
+   "name": "Ban Hammer (Closed Project)",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ky_booty_flowers_pedals_away_closed_project",
+   "name": "Booty Flowers Pedals Away (Closed Project)",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ky_south_ridge",
+   "name": "South Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ky_standard_route",
+   "name": "Standard Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ky_worship_and_tribute_closed_project",
+   "name": "Worship and Tribute (Closed Project)",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "md_top_roping_at_carderock_with_tots",
+   "name": "Top Roping at Carderock with Tots",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "me_death_ramp",
+   "name": "Death Ramp",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "me_fireman_s_ladder_area",
+   "name": "Fireman's Ladder Area",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "me_lower_wall_alcove_staircase_break",
+   "name": "Lower Wall / Alcove / Staircase Break",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "me_main_wall_alcove_staircase_break",
+   "name": "Main Wall / Alcove / Staircase Break",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "me_overview_of_otter_cliffs_sub_areas",
+   "name": "Overview of Otter Cliffs \"Sub-Areas\"",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "me_the_slide",
+   "name": "The Slide",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "me_the_staircase",
+   "name": "The Staircase",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "mi_acces_ledge",
+   "name": "Acces Ledge",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "mi_east_side_rap_route",
+   "name": "East side rap route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "mn_corner_staircase",
+   "name": "Corner Staircase",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "mo_grand_staircase",
+   "name": "Grand Staircase",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "mo_walk_up",
+   "name": "Walk Up",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nc_practice_chains",
+   "name": "Practice Chains",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "nh_dividing_line_for_mid_section",
+   "name": "DIVIDING LINE for MID-SECTION",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nh_numb_knees",
+   "name": "Numb Knees",
+   "discipline": "bouldering",
+   "grade": "4th"
+  },
+  {
+   "id": "nh_the_nostril_block",
+   "name": "The Nostril Block",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nj_lead_wall_gulley",
+   "name": "Lead Wall Gulley",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_normal_route_4",
+   "name": "Normal Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_normal_route_5",
+   "name": "Normal Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_normal_route_6",
+   "name": "Normal Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_normal_route_9",
+   "name": "Normal Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_north_west_side",
+   "name": "North West Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_northeast_face",
+   "name": "Northeast Face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nm_northwest_face_2",
+   "name": "Northwest Face",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_regular_route_8",
+   "name": "Regular Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nm_se_ramp",
+   "name": "SE Ramp",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_a_b_buttress",
+   "name": "A.B. Buttress",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_back_side",
+   "name": "Back Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_black_mountain_ridge",
+   "name": "Black Mountain Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "nv_northeast_ramp",
+   "name": "NorthEast Ramp",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_south_calico_traverse",
+   "name": "South Calico Traverse",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_ssw_face",
+   "name": "SSW face",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "nv_west_side",
+   "name": "West side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_brevi_lezioni_rovelli",
+   "name": "Brevi Lezioni Rovelli",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_cascade_mountain_slide",
+   "name": "Cascade Mountain Slide",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_ee_bond",
+   "name": "EE Bond",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_left_bracket",
+   "name": "Left Bracket",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_northwest_passage",
+   "name": "Northwest Passage",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_roger_s_escape_hatch",
+   "name": "Roger's Escape Hatch",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_smegma_garden_and_pigeon",
+   "name": "Smegma Garden and Pigeon",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_southeast_slide",
+   "name": "Southeast Slide",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_tangling_with_yarn",
+   "name": "Tangling with Yarn",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_toprope_lines",
+   "name": "Toprope lines",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "ny_trap_dike_summer",
+   "name": "Trap Dike (summer)",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ny_where_the_wild_things_are_2",
+   "name": "Where the Wild Things Are",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "oh_prickly_pickle",
+   "name": "Prickly Pickle",
+   "discipline": "bouldering",
+   "grade": "3rd"
+  },
+  {
+   "id": "or_bolt_ladder",
+   "name": "Bolt Ladder",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "or_chimney_south_side",
+   "name": "Chimney South Side",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "pa_teaching_station",
+   "name": "teaching station",
+   "discipline": "sport",
+   "grade": "4th"
+  },
+  {
+   "id": "tx_central_ramp",
+   "name": "Central Ramp",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "tx_meat_sweat",
+   "name": "Meat Sweat",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "tx_turkey_ridge",
+   "name": "Turkey Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ut_east_ridge",
+   "name": "East Ridge",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ut_let_it_go_grade_6_a6",
+   "name": "Let it Go    (grade 6 A6)",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_lone_wolf_vi_a6",
+   "name": "Lone Wolf      (VI- A6)",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ut_mount_beulah_n_e_couloir_and_north_ridge",
+   "name": "Mount Beulah    N.E. Couloir and North Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_northeast_ridge_2",
+   "name": "Northeast Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_social_distancing",
+   "name": "Social Distancing",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_sprang_brake",
+   "name": "Sprang Brake",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_stimulus_check",
+   "name": "Stimulus Check",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_tea_pot_rock",
+   "name": "Tea Pot Rock",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "ut_unfinished_project",
+   "name": "Unfinished Project",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_unknown_61",
+   "name": "Unknown",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_vaccination_vacation",
+   "name": "Vaccination Vacation",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "ut_whale_rider",
+   "name": "Whale Rider",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "va_blackberry",
+   "name": "Blackberry",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "va_dihedral_descent_route",
+   "name": "Dihedral Descent Route",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_gap_mtn_sw_ridge_i",
+   "name": "Gap Mtn. SW Ridge I",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "va_gap_mtn_sw_ridge_ii",
+   "name": "Gap Mtn. SW Ridge II",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "va_hunky_dory",
+   "name": "Hunky Dory",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_project_9",
+   "name": "Project",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "va_unnamed_arete",
+   "name": "Unnamed Arete",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_angel_s_highway",
+   "name": "Angel's highway",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "wa_bond_hall_project",
+   "name": "Bond Hall Project",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_deus_ex_machina",
+   "name": "Deus ex Machina",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_donald_duck_rock",
+   "name": "Donald Duck Rock",
+   "discipline": "rock",
+   "grade": "4th"
+  },
+  {
+   "id": "wa_klettersteig",
+   "name": "Klettersteig",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_prism_roof",
+   "name": "Prism Roof",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "wa_senior_moment_2",
+   "name": "Senior Moment",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "wa_the_greater_roof",
+   "name": "The Greater Roof",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "wi_boyish_gulley",
+   "name": "Boyish Gulley",
+   "discipline": "rock",
+   "grade": "3rd"
+  },
+  {
+   "id": "wi_fvbt_full_value_bluff_tour",
+   "name": "FVBT-Full Value Bluff Tour",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wi_the_rich_bechler_memorial",
+   "name": "The Rich Bechler Memorial",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wv_project_2",
+   "name": "Project",
+   "discipline": "sport",
+   "grade": "3rd"
+  },
+  {
+   "id": "wy_cowboy_route",
+   "name": "Cowboy Route",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "wy_stepping_out_of_flatland",
+   "name": "Stepping Out of Flatland",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wy_unknown_2_2",
+   "name": "Unknown 2",
+   "discipline": "trad",
+   "grade": "4th"
+  },
+  {
+   "id": "wy_west_ridge_east_ridge",
+   "name": "West Ridge-East Ridge",
+   "discipline": "trad",
+   "grade": "3rd"
+  },
+  {
+   "id": "wy_white_house_boulder",
+   "name": "White House Boulder",
+   "discipline": "bouldering",
+   "grade": "3rd"
+  }
+ ]
+}
