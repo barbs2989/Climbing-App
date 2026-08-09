@@ -669,7 +669,12 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
 // this fetches each node's children only once it's actually expanded. ──
 function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate, C }) {
   const isOpen = expanded.has(area.id);
-  const { data: children, isLoading } = useAreaChildren(area.id, { enabled: isOpen });
+  // `error` is destructured because without it a FAILED children fetch left `children`
+  // undefined and fell through to "No sub-areas." — an affirmative claim that a
+  // formation holds nothing, on a node that may hold plenty. main.jsx sets
+  // networkMode "always", so an offline device errors immediately rather than pausing,
+  // which makes this the common case rather than a rare one.
+  const { data: children, isLoading, error } = useAreaChildren(area.id, { enabled: isOpen });
   const cur = area.id === currentId;
   const n = area.route_count;
   const pad = 14 + depth * 22;
@@ -688,7 +693,9 @@ function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate
           ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
           : children && children.length
             ? children.map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
-            : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
+            : error
+              ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
+              : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
       ) : null}
     </div>
   );
