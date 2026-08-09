@@ -329,6 +329,34 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested: reverting each of the three dead gates fails the run and names the
     line; restoring makes it green.
 
+**When is a screen finished rendering?** Every browser guard has to answer that before it
+reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
+(`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
+changing** — `stable` consecutive identical samples, with digits masked so the ASPECT & SUN
+clock and a `CountUp` do not prevent settling — rather than on spotting a spinner.
+  - The three guards previously each decided this by hand, and two decided it wrong. They
+    polled for the literal strings `Loading climbs` and `Loading…`, which are **2 of the 13
+    user-visible spinners in the app** — `Loading dashboard…`, `Loading forecast…`,
+    `Loading topo photos…` and eight more were invisible to them. Worse, nothing waited at
+    all for a screen that was merely *slow* rather than spinning.
+  - That was not theoretical. `check:signed-in` read the Inbox as **`No friend chats yet` on
+    an account that has a friend**, intermittently — measured at 48/117/48/117 chars over
+    four runs, passing every time. A guard whose whole purpose is real data under a uuid was
+    sometimes asserting against the empty state, and the `undefined`/`NaN` scan is only as
+    good as the completeness of the text it scans. Now 48 four runs out of four.
+  - **Deciding from motion, not vocabulary, is the point.** Widening the regex to every "…"
+    verb is wrong: `Analyzing…` is a *terminal* crew-readiness state, and `Working…` and
+    `Downloading…` are button labels gated on `busy` — a guard waiting for those to clear
+    would burn its timeout on a finished screen. `SPINNER_RE` survives only to label a short
+    screen "still fetching" rather than "blank", where a miss costs a clear message, not a
+    verdict.
+  - `spinnerCoverage()` is deliberately modest about what it proves: it **cannot** prove
+    coverage of a future spinner worded `Fetching photos…` (it searches for `Loading`, so
+    testing those hits against a `Loading` pattern would be circular). It proves `SPINNER_RE`
+    has not been *narrowed* until it matches nothing, and that the scan read some files at
+    all. Injection-tested: narrowing it to `/\bLoading\b\s/` fails `check:ui` naming
+    `"Loading…"`.
+
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.

@@ -34,6 +34,7 @@
 // OWN sign-in reset in memory. It does not edit source and it never ships.
 
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
+import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -91,6 +92,19 @@ const FORBIDDEN_LANDMARKS = {
 const log = (...a) => console.log(...a);
 const fails = [];
 const fail = (screen, msg) => fails.push(`${screen}: ${msg}`);
+
+// Browserless and instant, and it runs here because this is the guard CI actually runs on
+// every PR: confirm the settle helper's spinner pattern still matches the app's own loading
+// strings. It cannot prove coverage of a spinner worded some new way -- see the note in
+// render-settle.mjs -- but it does stop SPINNER_RE being narrowed until it matches nothing,
+// which would let every guard read a spinner as a settled screen.
+try {
+  for (const [s, f] of spinnerCoverage(ROOT).uncovered) {
+    fail("spinner-coverage", `${JSON.stringify(s)} in ${f} is no longer matched by SPINNER_RE, so a screen showing it reads as settled`);
+  }
+} catch (e) {
+  fail("spinner-coverage", e.message);
+}
 
 // Icon NAMES the codebase assigns to a notification's `icon` field. Rendering one of
 // these as bare text means an ActionIcon name reached the DOM as a word -- #674, where
@@ -233,16 +247,14 @@ async function load(qs, settle, expectContent) {
     // Length alone is not enough: a Suspense fallback ("Loading climbs…") clears the
     // length bar while the screen is still empty, so the walk would check the spinner and
     // report the tab green. The Climbs tab is lazy AND waits on a DB round trip.
-    await page
-      .waitForFunction(
-        (n) => {
-          const t = document.body.innerText.replace(/\s+/g, " ").trim();
-          return t.length > n && !/Loading[\s.…]/i.test(t);
-        },
-        CHROME_ONLY,
-        { timeout: 45000 }
-      )
-      .catch(() => {});
+    //
+    // This check had the right idea first and the other two guards have now been brought
+    // onto it, so the definition of "settled" lives in one place. Two things came back the
+    // other way: it also waits for the text to stop CHANGING, which catches a screen that
+    // is slow rather than spinning, and the pattern gained a word boundary -- the local
+    // one matched "Downloading…", a button label, and would have waited it out as though
+    // the page were still loading.
+    await settledText(page, { min: CHROME_ONLY, timeout: 45000 });
   }
   await page.waitForTimeout(settle);
   return await visibleText();
