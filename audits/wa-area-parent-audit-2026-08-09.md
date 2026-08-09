@@ -173,6 +173,58 @@ structure to copy for a place MP does not list.
 
 ---
 
+## The full Mountain Project hierarchy diff — all 10 WA regions
+
+The detectors above find *co-located* defects. They cannot see a region filed at the wrong
+level, or a container that was never imported, because nothing about those is geometrically
+odd. So every WA region was diffed by hand against MP's published sub-area list, matching by
+**name**, which proved far more reliable than coordinates ever were.
+
+| MP region | ours | result |
+|---|---|---|
+| Northwest Region | `wa_northwest` | matches |
+| — its `Hwy 20 & N Cascades` | `wa_hwy20_ncnp` | **fixed `0115`** — Wa Pass + Pickets were siblings of North Cascades, not inside it |
+| Central-West Cascades & Seattle | `wa_centralwest` | **fixed `0111` + `0118`** |
+| Central-East Cascades | `wa_centraleast` | **fixed `0117`** — Ingalls Peak was under Teanaway |
+| South-West & Tacoma | `wa_sw_tacoma` | **fixed `0116`** — a region nested inside its own namesake |
+| Olympics & Pacific Coast | `wa_olympics` | **fixed `0118`** — 18 direct children against MP's 10 |
+| Okanogan | `wa_okanogan` | matches — 13 of MP's 14, same names, no level error |
+| Central Region | `wa_central_region` | matches |
+| Northeast Corner & Spokane | `wa_northeast_corner_spokane` | matches — our 5 children are MP's 5 exactly |
+| South-Central & Yakima | `wa_southeast_cascades_yakima` | matches — all 4 of ours are in MP's list |
+| Southeast Corner | `wa_southeast_corner` | matches — all 7 of ours are in MP's list |
+
+**A region "matching" never means we hold everything MP holds.** In five regions we simply
+have no row for some MP area (Chewuch, Bremerton, Vashon Island, Rialto Beach, Mount Aix,
+The Hillside, Chilltopia, Whitman College, Frog Lake Plateau and others). That is a coverage
+gap, not a parentage defect, and this audit does not treat it as one.
+
+### What `0118` found, and why it is a different shape
+
+`0106`/`0107` were the two-load defect — hollow stubs beside real peaks. `0118` is the other
+failure mode: **MP groups a scatter of small crags under a container we never imported**, so
+all of them landed flat at region level. No stub, no duplicate, nothing a proximity or
+name-collision detector could see. Only the region-level child *count* gives it away —
+18 against MP's 10.
+
+The sharpest single find is `Olympic Peninsula Bouldering`, which we had nested **inside
+Olympic National Park** while it holds Jefferson Lake and Lena Lake — both National
+*Forest*. Its own contents disprove its placement. `Gig Harbor` was the only cross-region
+error: filed under Central-West Cascades, when it is across the Narrows on the Kitsap side,
+where MP puts it.
+
+### Where MP is silent, nothing was moved
+
+MP does not index the 14 alpine peaks under `wa_snoqualmie_i90_region` — its Snoqualmie Pass
+Area, Western Alpine Lakes and North Bend lists were all fetched and **none of the 14 appears
+in any of them**. Those rows come from our own alpine list, exactly like the North Cascades
+Core groupings, so there is no MP answer to copy and `0118` moved none of them. The same
+restraint applied in `0117`: MP keeps one `Ingalls Peak` area where we keep three summit
+rows, and matching MP's *placement* is not a reason to import MP's *granularity* — collapsing
+them would strip each summit's own elevation from `enrichRoute`.
+
+---
+
 ## NOT actioned — needs a decision
 
 ### 1. Daniel and Hinman: MP's prose and structure disagree
@@ -182,7 +234,20 @@ Hinman"* as part of that region, but MP carries **no sub-area for either**. The 
 one thing and the structure says nothing, so `0111` leaves both in place rather than
 picking. Same for **Lemah Two**, a sub-summit MP does not separate from Lemah Mountain.
 
-### 2. Rejected candidates — recorded so they are not re-raised
+### 2. Two sibling regions both called "Snoqualmie Pass"
+
+`wa_snoqualmie_i90_region` ("Snoqualmie Pass", 28 routes, 14 alpine peaks) and
+`wa_snoqualmie_pass_area` ("Snoqualmie Pass Area", 84 routes, MP's real area) are siblings
+under Central-West. Nothing is *wrong* — the peak sets are disjoint, there is no hollow
+duplicate, and `check:counts` is happy — but the area browser prints two near-identical
+names and a climber picking the wrong one finds the peaks missing.
+
+Three options, none of which MP can settle: rename ours; dissolve it and redistribute the 14
+peaks three ways (Middle Fork — Garfield, Preacher, Treen, Price, Roosevelt, Burnt Boot,
+Teneriffe; the pass — Denny; Alpine Lakes crest — Alta, Four Brothers, Cathedral Rock,
+Lemah Two, Daniel, Hinman); or leave it. A rename is the cheapest and is reversible.
+
+### 3. Rejected candidates — recorded so they are not re-raised
 
 - **`** Enchantments Bouldering` ← Dragontail, Colchuck Balanced Rock, Witches Tower…** —
   false positive. That group is scoped by *discipline*, not geography; alpine peaks do not
