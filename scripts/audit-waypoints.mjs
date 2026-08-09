@@ -184,7 +184,13 @@ const F = {
   outOfOrder: [],
   elevKeyWrong: [],
   typeCasing: [],
+  typeOffVocab: [],
 };
+
+// The app's own vocabulary — RouteDetail's colour map and glyph map are keyed on exactly
+// these strings, and it compares `w.type==="Trailhead"` / `"Summit"||"Topout"` directly.
+const CANON = ["Trailhead", "Water", "Campsite", "Junction", "Hazard", "Summit", "Topout", "Bailout"];
+const CANON_BY_LC = new Map(CANON.map(c => [c.toLowerCase(), c]));
 
 for (const r of scoped) {
   const wps = (Array.isArray(r.waypoints) ? r.waypoints : []).filter(w => w && typeof w === "object");
@@ -198,8 +204,17 @@ for (const r of scoped) {
 
   // -- schema hygiene: these are mechanical and independent of geometry ------
   if (wps.some(w => w.elevFt != null && w.elev == null)) F.elevKeyWrong.push({ ...tag, n: wps.filter(w => w.elevFt != null && w.elev == null).length });
-  const badCase = [...new Set(wps.map(typeOf).filter(t => t && t !== t[0].toUpperCase() + t.slice(1).toLowerCase()))];
-  if (badCase.length) F.typeCasing.push({ ...tag, types: badCase });
+  // Two different defects that a single "is it Capitalised?" test conflates, and conflating
+  // them makes the report lie in both directions. A mis-cased CANONICAL value is a straight
+  // bug — the app has a branch for it and the branch does not fire. An OFF-VOCABULARY value
+  // ("landmark", "col", "crag_base") is a modelling gap: capitalising it changes nothing,
+  // because there is no branch to reach either way. Fixing the first is mechanical; fixing
+  // the second means deciding what the app should do with it.
+  const types = [...new Set(wps.map(typeOf).filter(Boolean))];
+  const miscased = types.filter(t => { const c = CANON_BY_LC.get(t.toLowerCase()); return c && c !== t; });
+  const offVocab = types.filter(t => !CANON_BY_LC.has(t.toLowerCase()));
+  if (miscased.length) F.typeCasing.push({ ...tag, types: miscased });
+  if (offVocab.length) F.typeOffVocab.push({ ...tag, types: offVocab });
 
   if (ths.length > 1) F.multiTrailhead.push({ ...tag, names: ths.map(w => w.name) });
   if (!summits.length) {
@@ -277,18 +292,19 @@ const TITLES = {
   unrouted: "UNMEASURABLE — gpx is a 2-3 point placeholder, not a track",
   noTrack: "UNMEASURABLE — waypoints but no gpx at all",
   elevKeyWrong: "elevFt SET WITHOUT elev — the app reads w.elev, so this elevation never renders",
-  typeCasing: "WAYPOINT type IS NOT Capitalised — the app matches on exact case",
+  typeCasing: "CANONICAL type IN THE WRONG CASE — the app has a branch for it and compares exact case, so it does not fire",
+  typeOffVocab: "type IS OUTSIDE THE APP'S VOCABULARY — renders with the fallback glyph; needs a decision, not capitalisation",
 };
 const ORDER = ["trailheadOffLine", "trailheadNotAtStart", "multiTrailhead", "summitOffLine", "trackNotEndingAtSummit",
   "summitMissing", "topoutOnPeak", "waypointOffLine", "outOfOrder", "truncatedTrack", "elevKeyWrong", "typeCasing",
-  "unrouted", "noTrack"];
+  "typeOffVocab", "unrouted", "noTrack"];
 
 console.log(`\n${scoped.length} of ${routes.length} routes in scope carry waypoints.\n`);
 let actionable = 0;
 for (const k of ORDER) {
   const v = F[k];
   if (!v.length) continue;
-  const informational = k === "unrouted" || k === "noTrack" || k === "truncatedTrack";
+  const informational = k === "unrouted" || k === "noTrack" || k === "truncatedTrack" || k === "typeOffVocab";
   if (!informational) actionable += v.length;
   console.log(`=== ${v.length}  ${TITLES[k]} ===`);
   const show = VERBOSE ? v : v.slice(0, 25);
