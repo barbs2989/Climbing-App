@@ -18,6 +18,7 @@ npm run check:bare # renders a route with NO enrichment — the shape 99.5% of t
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
+npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 ```
@@ -167,6 +168,38 @@ a build error, but a screen that renders wrong or not at all.
     label everyone sees, so reverting the `isCreator` fix left it **green**. Only injection
     found that. `+ Mod` is gated on `isCreator`, the visibility toggle on `isMod`; they are
     different questions and must be asserted separately.
+- **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
+  inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
+  document that is still scrollable — the Crew tab is ~5,600px — so with the default
+  `overscroll-behavior: auto` a drag that runs out of sheet keeps going on the page
+  underneath, and the sheet appears frozen. That is the "Past crews scroll is sticky"
+  report: 851px of viewport over 968px of content, **117px of travel**, against a 5,615px
+  page. #684 fixed that sheet and the trip report, #702 swept the 23 overlays that are
+  *themselves* the scroller — and neither could reach the shape this catches: an overlay
+  that does not scroll wrapping an inner pane that does. Those two style objects sit in
+  different JSX elements hundreds of characters apart, so no regex over style literals can
+  pair them; only layout knows. It found 11, four of them overflowing on demo data already
+  (the friends list by 498px, notifications by 378, the Privacy sheet by 245, and the share
+  sheet's summary `<textarea>` by 112).
+  - **Two ways a region qualifies.** Overflowing *right now* is the proven case; a pane with
+    a bounded `max-height` is the latent one — not overflowing with the demo's data, but it
+    will the moment a real account has more, and then it chains identically. Requiring
+    current overflow would make coverage a function of how much seed data happens to exist.
+  - Overlay discovery and the `?z=` opener are shared with `check:zero` and
+    `check:signed-in` via `scripts/lib/overlay-scaffold.mjs`, so the three cannot drift on
+    which modals exist. It runs against the **populated** demo, not the zero state: at zero
+    almost nothing has enough content to scroll.
+  - Injection-tested, and the second case is the one that matters. Removing containment from
+    the friends list fails the run *naming* `friendsOpen` and its 498px. Breaking the
+    scaffold anchor **used to pass** — vite reports a throwing transform as a per-request
+    internal error and keeps serving, so the app was blank, every overlay landed in "never
+    mounted", and the check exited 0 having verified nothing. It now asserts the app is on
+    screen first. Watch the detail there: the blank app reported *nav present* because
+    `index.html`'s boot placeholder mirrors the real nav — 58 characters of text was the
+    only thing that gave it away.
+  - Failures print a **locator** (the element's inline style), because in a codebase with no
+    class names a failure without one sends you hunting through a 40,000-character line.
+  - Not in `npm run build` and not in CI — browser automation, same reasoning as `check:ui`.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
