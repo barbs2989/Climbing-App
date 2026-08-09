@@ -66,6 +66,23 @@ try {
 
   fixture = await createFixture(log);
   const { owner, mate } = fixture;
+  // 0110 makes listing strictly opt-IN, so a freshly created account must NOT be listed.
+  // Assert that first — it is the whole point of the default, and it is the one property
+  // that cannot be checked after something has opted in.
+  const freshDefault = await dbDiscoverable(mate.id);
+  if (freshDefault === false) {
+    rec("a brand-new account is not listed until it opts in", true, "profiles.discoverable defaults to false");
+  } else {
+    rec("a brand-new account is not listed until it opts in", false, `a new account was created with discoverable=${JSON.stringify(freshDefault)} — migration 0110_discoverable_defaults_off.sql has not been applied, so every new climber is listed without choosing to be`);
+  }
+  // Opt the mate in explicitly. With an opt-in default, a fixture account is unlisted, so
+  // testing "a real climber appears in browse" against it would otherwise be testing nothing.
+  await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${mate.id}`, {
+    method: "PATCH", headers: { ...headers(KEY), "Content-Type": "application/json" },
+    body: JSON.stringify({ discoverable: true }),
+  });
+  if ((await dbDiscoverable(mate.id)) !== true) { throw new Error("could not opt the fixture mate in; nothing below would be meaningful"); }
+
   const mateSession = await signInAs(mate);
   log(`  owner=${owner.name} (${owner.id.slice(0, 8)})  mate=${mate.name} (${mate.id.slice(0, 8)})\n`);
 
