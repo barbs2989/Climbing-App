@@ -21,7 +21,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { overlayStates, buildOpener, OVERLAY_PAYLOADS, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
+import { overlayStates, buildOpener, buildRouteDetailOpener, OVERLAY_PAYLOADS, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // The anchor used by check:signed-in and check:overlay-scroll. check:zero injects at its own
@@ -58,16 +58,21 @@ try {
   fail(e.message);
 }
 
-// The remaining hole, reported rather than hidden. RouteDetail declares its own modals, and
-// the opener injects into App — it cannot reach another component's local state, so no `?z=`
-// will ever open one. They are walked only insofar as check:ui happens to open a route.
-// Printing the count keeps it a known quantity instead of an absence nobody can see, which
-// is the failure mode this whole file is about. It is a note, not a failure: there is nothing
-// to fix in the app, and failing on it would train everyone to ignore the output.
+// RouteDetail's own overlays. These were a printed NOTE when this file was written — an App
+// level opener cannot set a flag local to another component — and are now openable, because
+// RouteDetail gets its own injected opener and App navigates into a route first. The same
+// fail-closed rule applies: a component that owns an overlay and has no anchor throws, rather
+// than the overlay quietly going unwalked.
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-const rdFlags = [...rd.matchAll(/\[([a-zA-Z][\w$]*Open),set[A-Z][\w$]*\]=useState\(false\)/g)].map((m) => m[1]);
-if (rdFlags.length) {
-  console.log(`  note ${rdFlags.length} overlay state(s) live in RouteDetail.jsx, out of reach of an App-level opener: ${rdFlags.join(", ")}`);
+let rdCount = 0;
+try {
+  const { names, states } = buildRouteDetailOpener(rd, "check:overlay-discovery");
+  rdCount = names.length;
+  const byComp = [...new Set(states.map((s) => s.component))];
+  if (!names.length) fail("RouteDetail.jsx declares no overlays — the flag pattern has stopped matching there");
+  else ok(`${names.length} overlay(s) in RouteDetail.jsx, all with an injection anchor (${byComp.join(", ")})`);
+} catch (e) {
+  fail(e.message);
 }
 
 // Bookkeeping in both directions. A name listed but no longer real is how an exemption list
@@ -80,7 +85,7 @@ if (!stale) ok("no stale entries in NEEDS_EXTRA_STATE or OVERLAY_PAYLOADS");
 
 console.log(fails
   ? `\ncheck:overlay-discovery: ${fails} failure(s)`
-  : `\ncheck:overlay-discovery: ok — ${all.length} overlays, all reachable by the browser guards.`);
+  : `\ncheck:overlay-discovery: ok — ${all.length + rdCount} overlays (${all.length} in App, ${rdCount} in RouteDetail), all reachable by the browser guards.`);
 process.exit(fails ? 1 : 0);
 
 // Injection-tested 2026-08-09, five cases:
