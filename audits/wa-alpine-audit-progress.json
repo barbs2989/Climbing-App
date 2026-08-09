@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_northwest_face_4",
+  "last_processed_id": "wa_old_guard_peak_southwest_route",
   "total_in_scope_last_count": 529,
-  "total_wa_alpine_or_mountaineering_tagged": 625,
+  "total_wa_alpine_or_mountaineering_tagged": 592,
   "batches": [
     {
       "batch_number": 1,
@@ -2151,6 +2151,25 @@
       "flagged_for_human_review": 8,
       "clean": 0,
       "sql_file": "audits/sql/2026-08-09-batch-94.sql"
+    },
+    {
+      "batch_number": 95,
+      "date": "2026-08-09",
+      "route_ids": [
+        "wa_northwest_face_boving_pollock",
+        "wa_northwest_mox_peak_standard",
+        "wa_northwest_ridge",
+        "wa_northwest_ridge_2",
+        "wa_nw_face_var_remsberg_variation",
+        "wa_nw_ridge_2",
+        "wa_old_guard_peak_east_side_route",
+        "wa_old_guard_peak_southwest_route"
+      ],
+      "confirmed_errors_fixed": 10,
+      "flagged_for_human_review": 44,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-09-batch-95.sql",
+      "note": "Covers South Early Winters Spire (Boving-Pollock), Northwest Mox Peak, Dorado Needle, Boston Peak, Liberty Bell Mountain (Remsberg Variation), Colchuck Balanced Rock, and both Old Guard Peak routes. Two web-egress-blocked research passes (only WebSearch snippets, no direct WebFetch to MP/SummitPost/SuperTopo/etc.) so several grade/length facts that would normally be source-confirmed are flagged instead. One area-level fix: Colchuck Balanced Rock topographic parent corrected from Colchuck Peak to Enchantment Peak."
     }
   ]
 }

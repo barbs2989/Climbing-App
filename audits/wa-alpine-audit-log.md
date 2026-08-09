@@ -6555,3 +6555,59 @@ route), Kangaroo Temple (Beckey brothers 1942, confirmed specific to this route,
 peak); descent-route descriptions for Colchuck, Johannesburg, and Kangaroo Temple -- see the
 researching agents' reports for full per-route detail (not reproduced here to keep this log
 terse).
+
+## Batch 95 (pass 2) -- 2026-08-09
+
+Eight routes across seven peaks: South Early Winters Spire (Northwest Face, Boving-Pollock),
+Northwest Mox Peak (Standard Route), Dorado Needle (Northwest Ridge), Boston Peak (Northwest
+Ridge), Liberty Bell Mountain (NW Face Var., Remsberg Variation), Colchuck Balanced Rock (NW
+Ridge), and both Old Guard Peak routes (East Side, Southwest). Researched via 7 parallel agents,
+one per peak. WebFetch to essentially every primary-source domain (Mountain Project, SummitPost,
+SuperTopo, Wikipedia, NPS, USFS, AAJ, stephabegg.com, trailcatjim.com) was blocked by this
+session's egress proxy, same as recent batches, so findings rest on WebSearch result snippets
+rather than full-page reads throughout -- treat this batch's confidence as somewhat lower than
+usual as a result.
+
+**Fixed (10) -> `sql/2026-08-09-batch-95.sql`:** Dorado Needle's Northwest Ridge -- the peak's
+easiest, first-ascent line (3 short pitches) -- was rated `alpine_grade`/`commitment` III, but
+BC Adventure Guides, Cascade Mountain Ascents, and spokalpine.com all independently grade it
+Grade II, distinct from the peak's harder Southwest Buttress (III+) and East Ridge (III);
+corrected to II. That same route's `access` fields implied a per-vehicle NPS entrance fee
+("$30/7-day pass", "America the Beautiful ... or per-vehicle entrance fee") -- North Cascades
+National Park charges no entrance fee at all (confirmed via NPS-derived sources), so this looks
+like content conflated from a fee-charging park; corrected to say no entrance fee applies.
+Three routes had `gain_ft`/`loss_ft` figures that didn't reconcile with their own
+`itinerary.days[]` breakdowns (a self-verifiable arithmetic check, not an external-source one):
+Dorado Needle's NW Ridge (7000/7000 -> 6400/6400, matching its own `itinerary.totalNote`),
+Northwest Mox Peak's Standard Route (`gain_ft` 5450 -> 7000), and Old Guard Peak's Southwest
+Route (`loss_ft` 14100 -> 12400). Boston Peak's Northwest Ridge `fa` field said "July 2018" while
+the same route's `overview`/`beta`/`itinerary` all said August 2018, and AAJ's own indexed record
+of the Boyce-Willis "Boston Marathon" enchainment gives August -- aligned `fa` to match. Colchuck
+Balanced Rock's `parent_peak` (an area-level field, not a route field) pointed to Colchuck Peak,
+but its actual topographic/prominence parent is Enchantment Peak per Wikipedia and PeakVisor --
+corrected. Old Guard Peak's Southwest Route had three more internal-consistency errors: its
+`itinerary` day-1 note said Cache Col was "~6,100 ft" against the SAME route's own waypoint
+(6,903 ft) and approach text ("~6,900 ft"); its Kool-Aid Lake waypoint elevation (6,119 ft) sat
+outside the SAME route's own approach text range ("~6,320-6,800 ft"), corrected to 6,320 ft
+(AllTrails, the low end of that range); and `emergency.sheriffDispatch` named Skagit County
+Sheriff as primary SAR dispatcher despite the peak sitting in Chelan County (confirmed
+independently, and already stated correctly on this peak's own East Side Route row) -- aligned
+the two routes.
+
+**Flagged rather than fixed (44):** mostly internal inconsistencies and unverifiable specifics
+that a blocked-WebFetch pass couldn't resolve independently -- see each researching agent's full
+report for detail (not reproduced here to keep this log terse). Notable ones: Colchuck Balanced
+Rock's NW Ridge route has `pitches: 0` contradicting its own prose description of "a few pitches"
+-- no authoritative count found to supply a replacement. South Early Winters Spire's
+Boving-Pollock route resolved a previously-flagged `data_quality.gaps` uncertainty (WebSearch
+snippets of a CascadeClimbers.com thread confirm "Boving-Pollock" the route name and "Boving and
+Kerns, 1977" the `fa` field describe two real, distinct 1976-aid/1977-free events, not a
+conflict) but still carries a genuine internal split between its `rope_type`/`rope_note` (implying
+double-rope rappels) and its `descent`/`rappel_detail` fields (explicitly single-rope, 3 raps).
+Liberty Bell's Remsberg Variation has a similar `rappels` (3) vs. `descent` (2) mismatch. Boston
+Peak's `approach_logistics` peak coordinates sit ~75m from both the area row's and the route's
+own summit waypoint -- unclear if intentional. Northwest Mox Peak's `fa` field asserts a specific
+1941 Beckey first-ascent date/route for the NW spire that every source found actually documents
+for the SE (Hard Mox) spire instead -- this contradicts the row's own `data_quality.gaps`
+admission that the NW spire's FA is unconfirmed, but no primary source (AAJ 1942, Beckey's guide)
+was reachable to settle it either way, so left as-is rather than guessed at.
