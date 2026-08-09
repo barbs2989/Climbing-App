@@ -141,34 +141,47 @@ for (const [label, extra] of PARTIALS) {
   else ok("a fully-populated route still shows a plain estimate");
 }
 
-// 3. #655 — crag disciplines cannot open the Safety tab, so their discipline advice must be
-//    reachable on Overview instead.
+// 3. #655 — the per-discipline safety advice must be REACHABLE for crag disciplines. It used to
+//    be asserted on Overview, because the Safety tab was hidden for exactly those three
+//    disciplines and Overview was the only place left. The tab is unconditional now, so the
+//    advice is asserted where it actually lives — but the question #655 asked is unchanged, and
+//    it is the reachability, not the location, that this guards.
 for (const d of CRAG) {
-  const html = cache.get(d + "/overview");
-  if (!html) { fail(`could not render ${d}/overview`); continue; }
+  const html = cache.get(d + "/safety");
+  if (!html) { fail(`could not render ${d}/safety`); continue; }
   const t = text(html);
   if (!t.includes("What matters most for this discipline") || !t.includes("Watch out for on this type of climb")) {
-    fail(`${d}: discipline safety advice is unreachable — Safety tab is hidden for it (#655 regressed)`);
-  } else ok(`${d}: discipline safety advice reachable on Overview`);
+    fail(`${d}: discipline safety advice is unreachable (#655 regressed)`);
+  } else ok(`${d}: discipline safety advice reachable on Safety`);
 }
 
-// 4. The Plan/Safety tabs are gated on CONTENT, not discipline. Both ends have to hold or
-//    the gate is useless: a bare crag route must still get neither tab (an empty Plan tab is
-//    worse than no Plan tab), and a crag route that carries a real approach/descent/hazard
-//    must get them back. Red Mountain's South Face is the route that proved this — filed
-//    `trad`, it hid an approach, a descent, permits, four hazards and two watch-outs behind
-//    tabs the strip never rendered, and Overview showed none of it. Whole-line matching, so
-//    "Plan" cannot pass on the strength of "Trip plan".
+// 4. PLAN is gated on CONTENT, not discipline; SAFETY is offered on every route. The two are
+//    deliberately different and both ends of each have to hold.
+//    Plan: a bare crag route must still get no Plan tab (an empty Plan tab promises an approach
+//    and a descent and delivers a blank), and a crag route carrying a real approach/descent must
+//    get it back. Red Mountain's South Face is the route that proved this — filed `trad`, it hid
+//    an approach, a descent, permits, four hazards and two watch-outs behind tabs the strip never
+//    rendered, and Overview showed none of it.
+//    Safety: always offered, because that tab is never empty even for a route with no safety
+//    fields of its own — the discipline advice, the forecast links and the nearby-fire panel all
+//    render regardless. Gating it meant 99.5% of the catalog had nowhere to show a live wildfire.
+//    Whole-line matching, so "Plan" cannot pass on the strength of "Trip plan".
 {
   const lines = (h) => text(h).split(" ").length && h.replace(/<style[\s\S]*?<\/style>/g, " ")
     .replace(/<[^>]+>/g, "\n").split("\n").map((s) => s.trim()).filter(Boolean);
   const ADVICE = "What matters most for this discipline";
   const cragBase = { ...bare("trad", "5.8"), pitches: 3 };
   const bl = lines(render(cragBase, "overview"));
-  if (bl.includes("Plan") || bl.includes("Safety")) fail("bare crag route: offered a Plan/Safety tab with no content to put in it");
-  else ok("bare crag route: no Plan or Safety tab");
-  if (bl.filter((l) => l === ADVICE).length !== 1) fail(`bare crag route: discipline advice should appear exactly once on Overview (got ${bl.filter((l) => l === ADVICE).length})`);
-  else ok("bare crag route: discipline advice inline on Overview exactly once");
+  if (bl.includes("Plan")) fail("bare crag route: offered a Plan tab with no content to put in it");
+  else ok("bare crag route: no Plan tab");
+  if (!bl.includes("Safety")) fail("bare crag route: no Safety tab — the advice, the forecasts and the fire panel have nowhere to render");
+  else ok("bare crag route: Safety tab offered anyway");
+  // It is on Safety now, so a copy left on Overview would print it twice.
+  if (bl.filter((l) => l === ADVICE).length !== 0) fail(`bare crag route: discipline advice duplicated onto Overview (got ${bl.filter((l) => l === ADVICE).length})`);
+  else ok("bare crag route: discipline advice not left behind on Overview");
+  const bs = lines(render(cragBase, "safety"));
+  if (bs.filter((l) => l === ADVICE).length !== 1) fail(`bare crag route: discipline advice should appear exactly once on Safety (got ${bs.filter((l) => l === ADVICE).length})`);
+  else ok("bare crag route: discipline advice on Safety exactly once");
 
   const rich = { ...cragBase, id: "probe_rich", approach: "Walk up the gully.", descent: "Walk off west.",
     hazards: ["Loose rock in the gully"], objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] };
@@ -177,7 +190,6 @@ for (const d of CRAG) {
   else ok("enriched crag route: Plan tab offered");
   if (!rl.includes("Safety")) fail("enriched crag route: hazards on file but no Safety tab");
   else ok("enriched crag route: Safety tab offered");
-  // The advice lives in SafetyMatrix too, so leaving it inline as well would print it twice.
   if (rl.filter((l) => l === ADVICE).length !== 0) fail("enriched crag route: discipline advice duplicated on Overview and Safety");
   else ok("enriched crag route: discipline advice not duplicated");
   const rp = text(render(rich, "planner"));
@@ -193,8 +205,11 @@ for (const d of CRAG) {
   else ok("watch-outs alone still render");
 }
 
-// 5. The nearby-fire panel lives on Safety, and a route with no Safety tab keeps it on
-//    Overview rather than losing it. Nothing above can see this: FireNearRoute renders NOTHING
+// 5. The nearby-fire panel lives on Safety, on EVERY route and nowhere else. That "every route"
+//    is load-bearing, and it is why section 4 asserts the Safety tab is unconditional: while that
+//    tab was content-gated the panel needed an Overview fallback, and a fallback is a second place
+//    for it to be — which is a second place to forget. Nothing above can see this: FireNearRoute
+//    renders NOTHING
 //    without a coordinate (deliberately — "no fires near here" about a place we cannot locate
 //    is worse than silence), and `bare()`'s area has no lat/lng, so every render so far has
 //    been of a route where the panel is correctly absent. Locate the area and the question
@@ -215,14 +230,13 @@ for (const d of CRAG) {
   else ok("nearby fire: not left behind on Overview");
   if (hits(located("alpine"), "conditions")) fail("nearby fire: duplicated onto the Reports tab");
   else ok("nearby fire: not on Reports");
-  // A bare crag route is offered no Safety tab at all, so moving the panel there unconditionally
-  // would delete it for 99.5% of the catalog. It falls back to Overview — and only there.
-  if (!hits(located("trad"), "overview")) fail("nearby fire: lost entirely on a crag route with no Safety tab");
-  else ok("nearby fire: kept on Overview when there is no Safety tab to hold it");
-  // An enriched crag route earns the tab back, so it must move like the alpine one.
-  const richCrag = located("trad", { objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] });
-  if (!hits(richCrag, "safety") || hits(richCrag, "overview")) fail("nearby fire: enriched crag route does not follow its Safety tab");
-  else ok("nearby fire: follows the Safety tab back onto an enriched crag route");
+  // The bare crag route is the case the whole design turns on — it is 99.5% of the catalog, and
+  // it is the one that had nowhere to put a wildfire while the Safety tab was gated on content.
+  for (const d of CRAG) {
+    if (!hits(located(d), "safety")) fail(`nearby fire: a bare ${d} route cannot see it — no Safety tab, or the panel is not on it`);
+    else if (hits(located(d), "overview")) fail(`nearby fire: bare ${d} route renders it on Overview as well`);
+    else ok(`nearby fire: on Safety for a bare ${d} route, and only there`);
+  }
   // Position: it is the first thing on the tab, above the float-plan prompt and the forecasts.
   const st = text(render(located("alpine"), "safety"));
   const iF = st.search(FIRE), iB = st.indexOf("Committing objective"), iW = st.indexOf("Weather & mountain forecasts");
@@ -237,16 +251,18 @@ console.log(failures
   : "\ncheck:bare: ok — a route with no enrichment states what it does not know.");
 process.exit(failures ? 1 : 0);
 
-// ── Injections for section 5, all four confirmed caught and NAMED (a run that dies for some
+// ── Injections for sections 3-5, all five confirmed caught and NAMED (a run that dies for some
 //    other reason is not a catch). In RouteDetail.jsx:
-//      1. revert the move — `{showSafety?null:fireEl}` back to `{fireEl}` and drop `{fireEl}`
-//         from the safety branch  -> "does not render on Safety"
-//      2. render it in both places — `{showSafety?null:fireEl}` to `{fireEl}`
-//         -> "still on Overview for a route that has a Safety tab"
-//      3. drop the fallback — `{showSafety?null:fireEl}` to `{null}`
-//         -> "lost entirely on a crag route with no Safety tab"
+//      1. re-gate the tab strip on discipline — `x[0]==="safety"?!cragOnly:true`
+//         -> "bare crag route: no Safety tab"
+//      2. move the fire panel back to Overview
+//         -> "does not render on Safety"
+//      3. render it in both places
+//         -> "not left behind on Overview" / "renders it on Overview as well"
 //      4. demote it below the committing-objective banner
 //         -> "no longer the first section on Safety"
-//    Case 1 is the one that shaped the anchor: matching the panel's "Fire & smoke" HEADING made
+//      5. restore the inline CragSafetyNotes on Overview
+//         -> "discipline advice duplicated onto Overview"
+//    Case 2 is the one that shaped the anchor: matching the panel's "Fire & smoke" HEADING made
 //    it pass, because the Safety tab's forecast list links "Fire & smoke — AirNow" and the
 //    assertion was reading that. Only the panel's own loading line is unique to the panel.

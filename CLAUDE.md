@@ -25,6 +25,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
@@ -74,19 +75,24 @@ a build error, but a screen that renders wrong or not at all.
   a 0.0hr hike leg and the return tile went **green**, an affirmative "you're down before
   dark" with the walk in *and* out counted as zero, and the "After dark" warning could never
   fire) and **#655** (the sport/trad/bouldering safety advice sat behind the Safety tab,
-  which is hidden for exactly those three disciplines). Both were invisible to a guard that
+  which was hidden for exactly those three disciplines — that tab is unconditional now, so the
+  advice is asserted on it rather than inline on Overview). Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
-  - It also pins **where the nearby-fire panel lives**: on the Safety tab, first section, and on
-    Overview *only* for a route offered no Safety tab (`showSafety` is content-gated, so that is
-    99.5% of the catalog — moving it unconditionally would delete it for almost every route).
-    This needed a **located** fixture: `bare()`'s area has no `lat`/`lng` and `FireNearRoute`
-    renders nothing without a coordinate, so every other render here is of a route where the
-    panel is correctly absent. Match its loading line, **never its "Fire & smoke" heading** —
-    the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that removed
-    the panel from Safety entirely passed on the strength of that link.
+  - It also pins **where the nearby-fire panel lives**: first section of the Safety tab, on every
+    route, and nowhere else. That needed a **located** fixture — `bare()`'s area has no `lat`/`lng`
+    and `FireNearRoute` renders nothing without a coordinate, so every other render here is of a
+    route where the panel is correctly absent. Match its loading line, **never its "Fire & smoke"
+    heading**: the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that
+    removed the panel from Safety entirely passed on the strength of that link.
+  - **Plan and Safety are gated differently, and it asserts both.** `showPlan` is content-gated;
+    the Safety tab is **unconditional**. An empty Plan tab promises an approach and a descent and
+    delivers a blank, but the Safety tab is never empty — the per-discipline advice, the forecast
+    links and the fire panel all render without the route carrying one safety field of its own.
+    While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
+    `hasSafetyContent()` is gone; `hasPlanContent()` stays.
 - **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
   **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
   matches a **display name**, which belongs to neither id space, so it hands one person's
@@ -407,6 +413,51 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
+  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  `mergedNotifs` beside four live sources hid that completely: the notification list worked,
+  so nothing looked wrong. It now derives from the user's real `logs`.
+  - **Nothing rendered it afterwards, and nothing easily could, because the feature is
+    date-gated.** `_anniv` only fires for a log whose yearly anchor is within **two days** of
+    today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
+    it renders nothing, and every other guard walks the app on one of those days. A feature
+    invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
+    computed at config load so it never rots. The date is built in **local** time, because
+    `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off
+    west of Greenwich and would still pass the ±2-day gate while proving less than it claims.
+    Feb 29 needs no special case — `"2027-02-29T12:00:00"` parses to Mar 1, one day off, still
+    inside the window (measured, not assumed).
+  - The injected entry is a **clone of the seed entry with only its date rewritten**, lifted
+    out of the source by balancing braces rather than hand-written. A hand-written literal is a
+    second copy of a shape that lives elsewhere: add a field to the seed log and the clone
+    silently stops matching, and `logs` also feeds `Resume`, `TickList` and `_pastClimbs`. The
+    brace walk runs over **raw source but skips string contents** — the opposite care from
+    `check:overlay-discovery`, which must not blank strings; here a `{` *inside* a string must
+    not be counted or the walk ends in the wrong place, truncating the literal mid-prose.
+  - It refuses to run a probe that cannot fire: if the date rewrite is a no-op, the config
+    throws rather than injecting an entry carrying the original date.
+  - Checks **both** surfaces that render `mergedNotifs` (the notifications panel and Home's
+    alerts dropdown), because #713's defect was invisible precisely *because* the list around
+    it worked — "some notification rendered" is not the question. It asserts the head **and**
+    the tail of the composed string, so a truncation fails; it does not assert the route name,
+    which resolves differently on seed vs `USE_DB` and would go red for reasons that are not
+    this feature's fault.
+  - **Browserless self-tests run first**, because both helpers fail by producing a *wrong
+    probe* rather than an error, and a wrong probe fails the browser assertions — sending
+    whoever reads it hunting for a bug in the feature that does not exist. They cover the
+    calendar cases a single run cannot (a run only ever exercises today) and, with a synthetic
+    entry, the brace-in-a-string case **real data does not exercise**: the seed prose happens
+    to contain no braces today, so nothing else would notice that logic breaking.
+  - What a pass does **not** mean: that the date arithmetic is right for every calendar case.
+    The probe sits one year back to the day, the easy case. It proves the path from `logs` to
+    the screen is not severed, which is the failure that actually shipped.
+  - Injection-tested, three cases: dating the probe outside the ±2-day window fails on both
+    surfaces (so the check is **not** vacuous — it depends on the injection doing its job);
+    reverting `_anniv` to `MY_CLIMBS.map` fails; breaking the opener anchor fails on the
+    58-character boot shell rather than passing over a blank app.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
@@ -613,7 +664,7 @@ a build error, but a screen that renders wrong or not at all.
     branch and a `.data` read must both precede the "No active wildfires" claim. A first draft
     used "look at the preceding 600 characters" and reported the route panel's real gate —
     early returns 40 lines up — as missing.
-  - Injection-tested, 10/10, each naming its own defect. **Two started as false passes and both
+  - Injection-tested, 13/13, each naming its own defect. **Two started as false passes and both
     were scope mistakes rather than missing rules**: the `body.error` check looked for `throw`
     within 200 characters and found the *next statement's* throw, and the `zoneInEffect` check
     only asked whether the name appeared in the file, so neutering the draw while leaving the
@@ -622,6 +673,17 @@ a build error, but a screen that renders wrong or not at all.
   - Writing it found a live gap nobody had noticed: the **fire-weather query was the one capped
     request still going out unordered**. Size is meaningless for a weather zone, but
     "which of these ends first" is exactly what you want to keep, so it now orders `ends ASC`.
+  - It also reads `RouteDetail.jsx`, for **reachability only**. The first version had the same
+    hole one level up: it asserted a great deal about the panel's contents and nothing about
+    whether the panel was *mounted*. Measured rather than assumed — neutering the mount left it
+    green, which is the `descent_text` shape (populated on 1,021 routes, rendered on none).
+    Since **#769** the placement is two mutually exclusive mounts (`{fireEl}` on Safety;
+    `{showSafety?null:fireEl}` on Overview) because `showSafety` is **content-gated** — a bare
+    crag route is offered no Safety tab at all. So *neither* is a reachable state and would be
+    #655 again, and *both* would double-render a red hazard box; the guard pins exactly one.
+    That block reads **raw** source, because the discriminator is a string literal
+    (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
+    `tab===""` — the first run failed with "gone blind" for precisely that reason.
 
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
@@ -809,6 +871,26 @@ live DB and fails on:
 - target ids that do not exist — the statement would report success and do nothing
 - a `DELETE` removing the last row with that name on its peak — the only copy
 - files or statements large enough to be truncated on paste
+
+Pass `--table areas` for an area file. It **fails closed** if the file writes to a table it
+was not checked against, so a structural edit cannot be silently verified as "nothing to
+check" — the `areas` mode had never once worked before that, since it asked PostgREST for
+`areas.area_id`.
+
+**Dissolving an emptied container is a distinct operation from a dedup**, and the only-copy
+rule could not express it. `0119` moves 15 peaks out of a region and then deletes the
+region: there is no twin, because the row is a grouping node being retired, not half of a
+duplicate pair. Before this the delete could only pass by naming some unrelated row as its
+"twin" — a false claim the script would then print as though verified, and *a rule you can
+only satisfy by lying is worse than no rule*. Such a `DELETE` is now allowed **only when the
+statement proves the row is empty in SQL**: a `NOT EXISTS` guard on child areas *and* one on
+routes, both naming the row being deleted. That cannot be checked against the live DB — the
+row still has its children until the transaction runs — so it is matched in the statement
+text, and it makes the delete fail-safe by construction: if any move above it matched
+nothing, the guard holds and zero rows go. Both guards are required and each is tested
+separately; half a proof is not a proof, since an area with no children can still hold
+routes directly and one with no direct routes can still have a populated subtree. The rule
+is scoped to `--table areas` — deleting a *climb* always needs its twin.
 
 On 2026-07-28 five fixes were reported applied that had matched nothing, because their
 ids were composed from route display names instead of looked up. One of them caused data

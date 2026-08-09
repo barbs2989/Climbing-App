@@ -196,9 +196,37 @@ const deletes = targets.filter(t => t.kind === "delete" && found.has(t.id));
 //                                              twin's id in an EXISTS guard, so the
 //                                              statement removes 0 rows if the twin
 //                                              vanished between writing and running.
-const onlyCopy = [], crossArea = [];
+const onlyCopy = [], crossArea = [], dissolutions = [];
 for (const t of deletes) {
   const row = found.get(t.id);
+
+  // ── An emptied CONTAINER is not a "last copy" ──────────────────────────────
+  // The only-copy rule protects climbing DATA: delete the last row named X and X is gone.
+  // A grouping row in `areas` that has been emptied earlier in the same transaction holds
+  // none — no routes, no child areas — so there is nothing to lose, and it has no twin by
+  // construction. It is being dissolved, not deduped. 0119 is the case: 15 peaks move out
+  // to four real parents, then the emptied region goes.
+  //
+  // Before this, such a delete could only pass by naming some unrelated row as its "twin",
+  // which is a FALSE claim the script would then print as though it had been verified.
+  // A rule that can only be satisfied by lying is worse than no rule.
+  //
+  // This cannot be checked against the live DB — the row still has its children until the
+  // transaction runs — so the statement must PROVE it in SQL: a NOT EXISTS guard on child
+  // areas and one on routes. That makes the delete fail-safe by construction, which is the
+  // actual safety property: if any move above matched nothing, the guard holds and zero
+  // rows are removed. The guards are matched in the statement text rather than taken on
+  // the author's word, because accepting the claim untested reopens the Triple Couloirs
+  // hole this whole rule exists for.
+  if (SCOPE_COL === "parent_id") {
+    const esc = t.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const guarded = (col) =>
+      new RegExp(`not\\s+exists\\s*\\([\\s\\S]*?${col}\\s*=\\s*'${esc}'[\\s\\S]*?\\)`, "i").test(t.full);
+    if (guarded("parent_id") && guarded("area_id")) {
+      dissolutions.push({ ...t, name: row.name, area: row[SCOPE_COL] });
+      continue;
+    }
+  }
   const r = await fetch(
     `${SUPABASE_URL}/rest/v1/${TABLE}?name=eq.${encodeURIComponent(row.name)}&select=id,${SCOPE_COL}`,
     { headers: headers(key) }
@@ -273,6 +301,13 @@ if (crossArea.length) {
   console.log(`      Allowed: the guard makes each statement a no-op if its twin is gone at run time.\n`);
 }
 
+if (dissolutions.length) {
+  console.log(`INFO  ${dissolutions.length} container dissolution(s) — emptied earlier in this transaction, and guarded:`);
+  for (const d of dissolutions) console.log(`        ${d.id}  ("${d.name}" on ${d.area})`);
+  console.log(`      Allowed: each DELETE carries NOT EXISTS guards on child areas AND routes,`);
+  console.log(`      so it removes 0 rows if any move above it matched nothing.\n`);
+}
+
 if (sql.length > PASTE_LIMIT || oversizeStmt.length || longLines.length) {
   console.log(`WARN  paste-size risk — the SQL Editor has silently truncated large pastes:`);
   if (sql.length > PASTE_LIMIT) console.log(`        file is ${sql.length} bytes (soft limit ${PASTE_LIMIT})`);
@@ -328,4 +363,31 @@ process.exit(bad ? 1 : 0);
  *   4. insert into areas (name, area_type, id, parent_id) values (..., 'wa_positional_area', ...);
  *      -> PASS. The id is read POSITIONALLY from the column list, not assumed first, so a
  *         literal that merely looks like an id cannot be mistaken for one.
+ */
+
+/* Injection tests for the container-dissolution rule (added with 0119, which moves 15 peaks
+ * out of a region and then deletes the emptied region). Run with --table areas.
+ *
+ *   1. BOTH guards present, real target:
+ *        delete from areas where id = 'wa_snoqualmie_i90_region'
+ *          and not exists (select 1 from areas  c where c.parent_id = 'wa_snoqualmie_i90_region')
+ *          and not exists (select 1 from routes r where r.area_id  = 'wa_snoqualmie_i90_region');
+ *      -> PASS, printed as a dissolution. The case the rule exists for.
+ *
+ *   2. only the CHILD guard (routes guard dropped):
+ *      -> FAIL as an only-copy. Half a proof is not a proof: an area with no children can
+ *         still hold routes directly, and deleting it orphans them.
+ *
+ *   3. only the ROUTES guard (child guard dropped):
+ *      -> FAIL. Symmetric: no direct routes says nothing about a populated subtree beneath.
+ *
+ *   4. both guards present but naming a DIFFERENT id than the delete target:
+ *        delete from areas where id = 'wa_snoqualmie_i90_region'
+ *          and not exists (select 1 from areas c where c.parent_id = 'wa_some_other_area') ...
+ *      -> FAIL. The guards must be about the row being deleted; the id is interpolated into
+ *         the pattern, so a guard on some other area cannot satisfy it.
+ *
+ *   5. the same statement with --table routes (the default):
+ *      -> the rule does not apply at all (SCOPE_COL is area_id), so a routes delete can
+ *         never be excused as a "dissolution". Deleting a climb always needs its twin.
  */

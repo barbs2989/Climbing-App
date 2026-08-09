@@ -238,7 +238,127 @@ export function overlayStates(code, coreCode) {
 // Only setters declared ABOVE the injection point are in scope. Anything below is named in
 // the output rather than silently dropped — a modal that quietly stops being walked is
 // exactly the blind spot these checks exist to close.
-export function buildOpener(code, anchor, label, coreCode) {
+// ---------------------------------------------------------------------------------------
+// RouteDetail's own overlays.
+//
+// The App-level opener cannot reach these: it injects into App, and these flags are local to
+// components in RouteDetail.jsx, so no `?z=` can set them. check:overlay-discovery printed
+// the count as a known hole from 2026-08-09; this closes it by injecting a second opener into
+// each component that owns one.
+//
+// Two components own overlays today, which is why this is keyed by component rather than
+// assuming one injection site. Each anchor must appear EXACTLY once and must sit BELOW every
+// flag that component declares, so they are all in scope where the effect is spliced in.
+// `?z=rd:shareOpen` opens RouteDetail's share sheet; `?z=shareOpen` opens App's. Both exist.
+export const RD_PREFIX = "rd:";
+
+export const ROUTE_DETAIL_ANCHORS = {
+  RouteDetail: "const [quickPhotoPick,setQuickPhotoPick]=useState([]);",
+};
+
+// Which component encloses a given offset — the nearest preceding top-level declaration.
+function ownerAt(code, pos) {
+  let best = null;
+  for (const m of code.matchAll(/function ([A-Z][\w$]*)\s*\(/g)) {
+    if (m.index < pos) best = m[1]; else break;
+  }
+  return best;
+}
+
+export function routeDetailSource() {
+  return readFileSync(new URL("../../RouteDetail.jsx", import.meta.url), "utf8");
+}
+
+// Discovered by BEHAVIOUR, exactly like the App side — and the first draft of this function
+// did not, which is worth recording because it made the same mistake this whole guard exists
+// to catch. Matching `*Open` + useState(false) returned five names, and two of them are not
+// modals at all: `trackHistOpen` is a "See N older tracks" expander (`trackHistOpen?ct:ct.slice(0,2)`)
+// and `notesOpen` is a "Data notes ▾" disclosure inside ProvenancePanel. Both were duly
+// "opened", rendered no dialog, and were reported as overlays that never mounted — noise that
+// looks exactly like a real finding. A name is not evidence; what it renders is.
+export function routeDetailOverlays(rdCode) {
+  const dlg = dialogComponents(rdCode);
+  const out = [];
+  for (const m of rdCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(([^)]{0,30})/g)) {
+    const [name, setter, init] = [m[1], m[2], m[3].trim()];
+    if (init !== "false") continue; // RouteDetail's modals are all plain flags today
+    let evidence = null;
+    for (const r of rdCode.matchAll(new RegExp("\\{\\s*" + name + "\\s*(?:&&|\\?)", "g"))) {
+      const end = matchBrace(rdCode, r.index);
+      if (end < 0) continue;
+      const seg = rdCode.slice(r.index, end);
+      const t = TAG.exec(seg);
+      if (!t) continue;
+      if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
+      const d = seg.indexOf('role="dialog"');
+      if (d >= 0 && (seg.slice(0, d).match(/<[A-Za-z][\w$.]*/g) || []).length <= 1) { evidence = 'inline role="dialog"'; break; }
+    }
+    if (evidence) out.push({ name, setter, at: m.index, component: ownerAt(rdCode, m.index), kind: "flag", evidence });
+  }
+  return out;
+}
+
+// Returns the transformed RouteDetail source plus the names it can open.
+//
+// The opener sets `__overlaysReady` ITSELF rather than letting App set it. That is the whole
+// point: readiness has to mean "the thing that opens THIS overlay has run", and for a
+// RouteDetail modal that is this effect, which cannot run until App has navigated into a
+// route and the component has mounted. App setting it would put the guards back to asking
+// what happened before anything had — the #768 bug, one level down.
+export function buildRouteDetailOpener(rdCode, label) {
+  const all = routeDetailOverlays(rdCode);
+  const byComponent = new Map();
+  for (const s of all) {
+    if (!byComponent.has(s.component)) byComponent.set(s.component, []);
+    byComponent.get(s.component).push(s);
+  }
+  const homeless = [...byComponent.keys()].filter((c) => !ROUTE_DETAIL_ANCHORS[c]);
+  if (homeless.length) {
+    // Fail closed, same principle as the payload registry: an overlay in a component with no
+    // anchor is one nothing opens, and silence about it is exactly what this closes.
+    throw new Error(
+      `${label} — RouteDetail.jsx declares overlays in component(s) with no injection anchor: ` +
+      homeless.map((c) => `${c} (${byComponent.get(c).map((s) => s.name).join(", ")})`).join("; ") +
+      `. Add an anchor to ROUTE_DETAIL_ANCHORS in scripts/lib/overlay-scaffold.mjs, below every flag that component declares.`
+    );
+  }
+
+  // An anchor for a component that no longer owns an overlay is stale bookkeeping, and stale
+  // bookkeeping is how these lists rot. Same standard as NEEDS_EXTRA_STATE and OVERLAY_PAYLOADS.
+  const unused = Object.keys(ROUTE_DETAIL_ANCHORS).filter((c) => !byComponent.has(c));
+  if (unused.length) {
+    throw new Error(`${label} — ROUTE_DETAIL_ANCHORS lists ${unused.join(", ")}, which no longer owns an overlay. Remove it from scripts/lib/overlay-scaffold.mjs.`);
+  }
+
+  let out = rdCode;
+  const names = [];
+  for (const [component, states] of byComponent) {
+    const anchor = ROUTE_DETAIL_ANCHORS[component];
+    const n = out.split(anchor).length - 1;
+    if (n !== 1) {
+      throw new Error(`${label} — ANCHOR LOST in RouteDetail.jsx: expected exactly 1 occurrence of\n  ${anchor}\nbut found ${n}. Nothing below was actually checked.`);
+    }
+    const at = out.indexOf(anchor);
+    const below = states.filter((s) => s.at >= at + anchor.length);
+    if (below.length) {
+      throw new Error(`${label} — ${component}'s anchor sits above ${below.map((s) => s.name).join(", ")}, so they are not in scope where the opener is injected. Move the anchor below them.`);
+    }
+    // NAMESPACED, because the two files collide: `shareOpen` is declared in ClimbMatch.jsx
+    // AND in RouteDetail.jsx, and they are different sheets. Un-prefixed, whichever opener
+    // was consulted first won and the other was never walked at all — the first run of this
+    // silently stopped checking App's share sheet and reported RouteDetail's twice.
+    for (const s of states) names.push(RD_PREFIX + s.name);
+    const map = states.map((s) => JSON.stringify(RD_PREFIX + s.name) + ":" + s.setter).join(",");
+    const inject =
+      "useEffect(function(){var M={" + map + "};" +
+      "var z=new URLSearchParams(location.search).get('z');" +
+      "if(z&&M[z]){M[z](true);window.__overlaysReady=true;}},[]);";
+    out = out.replace(anchor, anchor + inject);
+  }
+  return { code: out, names, states: all };
+}
+
+export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
   const at = code.indexOf(anchor);
   if (at < 0) throw new Error(`buildOpener: anchor not found: ${anchor}`);
   const all = overlayStates(code, coreCode);
@@ -289,13 +409,21 @@ export function buildOpener(code, anchor, label, coreCode) {
   // missed and crewInvite and recapId reported "added nothing on any of 6 tabs" — a guard
   // failure indistinguishable from a broken modal, which is the one confusion this walk must
   // not introduce. Assigning through a ref during render keeps the payload current.
-  const names = usable.map((s) => JSON.stringify(s.name)).join(",");
+  const rdNames = routeDetailNames || [];
+  const names = usable.map((s) => JSON.stringify(s.name)).concat(rdNames.map((n) => JSON.stringify(n))).join(",");
+  const rdSet = JSON.stringify(rdNames);
   return {
     usable,
     skipped,
     inject:
       "var __ovOpen=useRef(null);" +
-      "__ovOpen.current=function(z){var M={" + map + "};if(M[z])M[z]();};" +
+      // RouteDetail's overlays are opened by RouteDetail's own effect, but that component
+      // does not exist until a route is selected — so App's job for those names is only to
+      // navigate. It deliberately does NOT set __overlaysReady: RouteDetail does, once it has
+      // actually opened the thing. Setting it here would mean "App has navigated", which is
+      // not the question any guard is asking.
+      "var __rdOv=" + rdSet + ";" +
+      "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(ROUTES[0]);return;}var M={" + map + "};if(M[z])M[z]();};" +
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
@@ -312,7 +440,14 @@ export function buildOpener(code, anchor, label, coreCode) {
       // Both outcomes are correct — it either renders properly or is correctly reported as
       // having nothing to open it about — so the skip count at zero can differ by one
       // between runs. Do not treat that as a flake to chase; treat a FAILURE as one.
-      "if(z)setTimeout(function(){__ovOpen.current(z);window.__overlaysReady=true;},1200);" +
+      // For a RouteDetail overlay, RouteDetail's effect sets readiness the moment it opens.
+      // The 2500ms here is only a FLOOR for the case where it never does — without it a
+      // broken RouteDetail opener would hang each guard on its 60s waitForFunction, six tabs
+      // deep, and turn one defect into a half-hour run. Tripping the floor lets the guard
+      // judge the screen and fail properly, which is the useful outcome.
+      "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
+      "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
+      "else window.__overlaysReady=true;},1200);" +
       "else window.__overlaysReady=true;},[]);",
   };
 }
