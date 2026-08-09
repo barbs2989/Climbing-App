@@ -5850,3 +5850,92 @@ itinerary -- likely wrong, but the correct one-way figure wasn't independently p
 `gpx` track terminates well short of the summit (covering only the lower Paradise approach)
 despite `waypoints` implying full trailhead-to-summit coverage -- a real data gap, not a simple
 value fix.
+
+## Batch 86 (pass 2) -- 2026-08-09
+
+Checked: eight Mount Rainier routes -- Fuhrer Thumb, Gibraltar Ledges, Ingraham Direct, Kautz
+Glacier, Kautz Headwall, Liberty Ridge, Mowich Face, Nisqually Icefall. Researched via 3 parallel
+agents grouped by peak (all Rainier, so grouped ~3/2/3 to parallelize research time). WebFetch
+was blocked by the network egress proxy again this run for nps.gov, wikipedia.org, summitpost.org
+and caltopo.com; findings lean on cross-corroborated WebSearch snippets from 2+ independent
+sources per confirmed fix, same standard as prior batches.
+
+Fixed (12): Fuhrer Thumb repeats a permit-language defect seen on other Rainier routes in earlier
+batches -- `access.permit` said "Free climbing permit at Paradise WIC," directly contradicting
+its own `access.fees` ($82 cost-recovery fee) and every sibling route's `access.permit` wording --
+fixed to match. Gibraltar Ledges' and Ingraham Direct's `waypoints[0]` ("Paradise") both carried
+`elevFt: 5420`, contradicting their own approach text and NPS's official Paradise elevation
+(5,400 ft) -- both fixed. Kautz Glacier's `waypoints` Camp Hazard elevation (12,500 ft)
+contradicted its own approach text and itinerary (both said 10,800 ft) *and* external sources
+(Mountaineers.org/willhiteweb/SummitPost/Mountain Project converge on ~11,100-11,300 ft, matching
+neither on-file figure) -- all three fields (waypoint, approach text, itinerary objective)
+reconciled to the externally-supported figure rather than to each other's still-wrong value.
+Kautz Glacier's `fa` field wrongly credited guide Wapowety and "four soldiers" with reaching the
+1857 high point; two independent historical accounts agree only Kautz, Dr. Craig, and Pvt.
+Nicholas Dogue continued that far (Wapowety and Pvt. Carroll turned back from fatigue/snow
+blindness) -- corrected, and the contested high-point elevation (~12,000 ft vs. near the crater
+rim across sources) recorded as a range instead of re-asserting a single unverified number; the
+1920 first-full-ascent party/year were independently confirmed and left untouched. Kautz
+Headwall's `length_m` (259, ~850 ft) contradicted its own overview/pitch_detail ("~300-foot wall,
+two pitches," 55m+35m=90m) and external sources describing a ~300 ft, two-pitch, 60m-rope
+headwall -- fixed to 91m; its approach text's Camp Hazard figure (10,800 ft) was corrected the
+same way as Kautz Glacier's. Liberty Ridge's `waypoints`/`gpx` held Mowich Lake and Puyallup
+Glacier coordinates (Rainier's NW side) while every other field on the same row -- approach,
+descent_text, bail, timing, approach_logistics -- correctly describes the real White River/
+Glacier Basin/St. Elmo Pass/Carbon Glacier (NE side) line; confirmed contamination via
+Mountaineers.org/SummitPost/trip-report cross-corroboration and cleared (no reliable replacement
+track found this pass; the row's own data_quality.gaps cites a CalTopo URL this audit couldn't
+fetch to verify). Nisqually Icefall's `itinerary.days[0].note` and `timing.sectionBreakdown[0].note`
+(identical text) described the Kautz Glacier route's Wilson Glacier/Turtle Snowfield/"the Fan"
+approach almost verbatim to Mountaineers.org's Kautz page, contradicting this row's own approach
+text and the 1948 first-ascent account (both climb directly up the Nisqually Glacier alongside
+Wapowety Cleaver, never touching the Wilson Glacier) -- both fields corrected to match the row's
+own approach text; the day's hours/miles/gainFt were left alone since they weren't independently
+sourced for the corrected line.
+
+Flagged rather than fixed (20): Fuhrer Thumb's `dist_km` (8) looks low against externally-cited
+round trips for this style of Paradise-glacier route, and its `access.fees` labels the $82 figure
+"(2024)" while sibling routes say "(2026 rate)" for the identical number -- likely a stale year
+label, not a wrong dollar amount, but left for a human to standardize. Gibraltar Ledges' Camp
+Muir waypoint (10,080 ft) sits amid genuine three-way source disagreement (10,050-10,100 ft per
+WTA vs. 10,188 ft per Wikipedia, the latter already used to "fix" Fuhrer Finger's approach text in
+batch 85) -- flagged rather than patched piecemeal since a human should pick one canonical Camp
+Muir figure and apply it consistently across every Rainier route rather than have this audit
+process contradict its own prior fix; its `dist_km` (20.1) also reads high against typical
+Camp-Muir-route round trips with no clean one-way source found. Ingraham Direct's `season` field
+("January through end of May... before the DC opens for summer") and its own `overview`/
+`best_season` ("late May through June") describe different windows that may be talking past each
+other (broad winter-viability vs. peak-condition window) rather than one being flatly wrong --
+recommend a human reword rather than a mechanical fix. Both Gibraltar Ledges and Ingraham Direct
+tag `grade_system: "class"` despite carrying NCCS-style alpine grades ("II-III," "Grade II-III
+glacier") -- looks like a broader schema-labeling pattern rather than an isolated defect, not
+fixed unilaterally. Kautz Glacier's Camp Hazard waypoint `lat` (46.793) may sit too far south/low
+for a 7-mile-in camp (a named topo point closer to 46.836 exists at the same longitude), but exact
+modern camp coordinates shift with conditions/year and weren't independently pinned down; its
+`gain_ft`/`loss_ft` (9500/9500) sit ~500 ft above its own itinerary-day sums (9000/9000) -- both
+individually plausible, read as rounding slack rather than a clear error; its `length_m` (1039)
+doesn't obviously reconcile with `pitches: 2` against a `pitch_detail` array that lists 4 entries;
+one source suggested the $82 fee "may no longer be valid for the entire 2026 season," a possible
+policy change this audit couldn't confirm with nps.gov blocked. Kautz Headwall has the same
+gain_ft/loss_ft-vs-itinerary gap as Kautz Glacier, plus a `grade_system: "yds"` tag on a
+Roman-numeral commitment grade ("III-IV") -- same schema-pattern concern as above, not fixed here;
+its approach text called Camp Hazard "the top of the snowfield" while Kautz Glacier's approach
+calls the same camp/elevation "the base of the Turtle Snowfield" -- a smaller "base vs. top of the
+same snowfield" wording clash left for a human alongside the elevation fix. Liberty Ridge's `fa`
+claim of "~52 hours car-to-summit" couldn't be independently corroborated (the full AAC 1936
+journal writeup sits behind a blocked domain) but wasn't contradicted either. Mowich Face's
+`descent` field ("using rappels and downclimbing as necessary") contradicts its own more detailed
+`descent_text` and `rappels: "0"` (both say the standard descent is a walk-off/glacier carryover
+with no rappelling) -- flagged rather than rewritten since the right replacement wording is a
+judgment call, not a new fact; its `road.seasonalGate` note ("~27-mile round trip" post-bridge-
+closure) looks like a one-way Mowich-Lake-to-Westside-Road figure (26.4 mi one-way per
+Mountaineers.org) mislabeled as round-trip; its `dist_km` (28.97) doesn't clearly reconcile with
+its own itinerary mileage and no outside one-way figure was found for this rare route; its
+"Liberty Cap (inferred route top-out)" waypoint sits ~600 m from the actual surveyed Liberty Cap
+point, already self-labeled "inferred" so not clearly wrong. Nisqually Icefall's `dist_km` (24.94)
+is the exact same figure as Fuhrer Finger's already-flagged `dist_km` (batch 85) -- two unrelated
+routes sharing an unusual decimal is a contamination signal, but no authoritative one-way mileage
+for this rarely-documented route was found to supply a replacement; its `data_quality.gaps`
+claims no public GPS track was found, yet `waypoints`/`gpx` hold a 2-point Paradise-to-summit
+pseudo-track -- likely just synthesized bookends rather than a real found-then-lost track, worth a
+glance but not urgent.
