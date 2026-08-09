@@ -13,6 +13,31 @@ permissions:
   contents: read
 
 jobs:
+  # Its own job, not a step in `build`: this one needs the network and a token, and a
+  # failure should read as "Migration numbers are unclaimed" in the checks list rather than
+  # hiding inside a build log. It is deliberately NOT in `npm run build` — a local build
+  # must never depend on GitHub being reachable.
+  migration-claims:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The script diffs this branch's migrations against the base branch, so it needs
+          # more than the single squashed commit a shallow clone provides.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Migration numbers are unclaimed
+        run: node scripts/check-migration-claims.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
     runs-on: ubuntu-latest
     steps:
