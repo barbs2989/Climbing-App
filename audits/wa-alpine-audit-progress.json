@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_shuksan_northwest_arete",
+  "last_processed_id": "wa_mount_steel_first_divide",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -2038,6 +2038,26 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-09-batch-88.sql",
       "note": "Researched via 3 parallel agents grouped by peak (Sefrit x2; Shuksan x3; Shuksan x3). WebFetch blocked by network egress proxy for every domain again; findings lean on cross-corroborated WebSearch snippets. Fixed (13): Sefrit SE Ridge trailhead elevation; Sefrit SW Ridge dist_km/miles+totalNote, gain_ft/loss_ft, access.permit NCNP contamination; Shuksan North Face + NE Ridge climate.forecastZone (invalid NWAC zone names); NW Arete summit waypoint elevFt; Beckey-Schmidtke high_point_ft + access.notes (Lake Ann boilerplate copied onto the wrong route); Hanging Glacier rope_note (misattributed AMGA-exam claim) + season. Fisher Chimneys: no confirmed errors. Flagged (16): SE Ridge gain/loss-vs-trailhead reconciliation, unsourced length_m; SW Ridge rock_grade vs grade conflict, access fee-requirement self-contradiction, pitches/alpine_grade oddities, unresolved route-name identity; North Face fa attribution, blended approach variants, length_m mismatch, land_manager completeness; NE Ridge fa gap; NW Arete Rib-vs-Arete identity question, commitment field schema misuse; Fisher Chimneys uncorroborated fa; Hanging Glacier gain/loss asymmetry, duplicate waypoint."
+    },
+    {
+      "batch_number": 89,
+      "pass": 2,
+      "date": "2026-08-09",
+      "route_ids": [
+        "wa_mount_shuksan_price_glacier",
+        "wa_mount_shuksan_sulphide_glacier",
+        "wa_mount_shuksan_white_salmon_glacier",
+        "wa_mount_spickard_silver_glacier",
+        "wa_mount_spickard_southwest",
+        "wa_mount_st_helens_monitor_ridge",
+        "wa_mount_st_helens_worm_flows",
+        "wa_mount_steel_first_divide"
+      ],
+      "confirmed_errors_fixed": 16,
+      "flagged_for_human_review": 19,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-09-batch-89.sql",
+      "note": "Researched via 4 parallel agents grouped by peak (Shuksan x3; Spickard x2; St Helens x2; Steel x1). WebFetch blocked by network egress proxy again; findings lean on cross-corroborated WebSearch snippets. Fixed (16): Price Glacier descent/loss_ft; Sulphide Glacier dist_km; White Salmon Glacier peakLat/peakLng contamination + summit waypoint elev + trailhead/approach rewrite (was describing the wrong trailhead entirely); Spickard SW corrections stale-fa note + summit waypoint elev + dist_km; Monitor Ridge fa + beta waypoint conflation; Worm Flows gain_ft + trailhead waypoint elev + aspect + avalanche zone name. Flagged (19): Steel trailhead elev/gain_ft tension + null loss_ft; Silver Glacier length_m/pitch-distance semantics; Spickard SW contested elevation, composition claim, two unconfirmed glacier-length claims, self-contradicting pass requirement, camp elevation discrepancy; Price Glacier trailhead elevation; Sulphide Glacier mileage-to-camp 3-way disagreement + day-1 gain apportionment; White Salmon Glacier FA uncertainty, description/gain_ft wording, dist_km vs Strava, trailhead elev range; Monitor Ridge + Worm Flows length_m semantics; Worm Flows dist_km imprecise (notably shared an identical dist_km:8 with Monitor Ridge pre-fix, suggesting copy/paste)."
     }
   ]
 }

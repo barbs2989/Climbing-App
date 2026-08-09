@@ -6106,3 +6106,87 @@ factual error.
 Clean: FA facts, coordinates, elevations, permit/fee figures, and internal consistency checks not
 called out above across all 8 routes -- see full per-route detail in the researching agents'
 reports (not reproduced here to keep this log terse).
+
+## Batch 89 (pass 2) -- 2026-08-09
+
+Checked: eight routes across four peaks -- Mount Shuksan (Price Glacier, Sulphide Glacier, White
+Salmon Glacier), Mount Spickard (Silver Glacier, Southwest Route/Silver Lake), Mount St. Helens
+(Monitor Ridge, Worm Flows), and Mount Steel (First Divide). Researched via 4 parallel agents
+grouped by peak. WebFetch was blocked by the network egress proxy for every external domain tried
+again this run; findings lean on cross-corroborated WebSearch snippets citing WTA, USFS, NPS,
+Mount St. Helens Institute, USGS CVO, Mountaineers.org, SummitPost, Wikipedia/USGS GNIS, and
+trip-report sites (trailcatjim.com, havetent.com, ericsbasecamp.net), same standard as prior
+batches. Also cross-checked several fields against sibling routes already corrected in this
+dataset (Shuksan's 9,131 ft summit, confirmed in batch 88).
+
+Fixed (16): Price Glacier's `descent` field described down-climbing the Price Glacier itself,
+directly contradicting this same row's own `descent_text` ("NOT back to the Ruth Creek car") and
+`pro_tips` ("never reverse the Price") -- rewritten to summarize the row's own documented
+Fisher-Chimneys-or-Sulphide exit; its `loss_ft` (6000) didn't sum from its own
+`itinerary.days[].lossFt` (0+2100+3700=5800) -- fixed to 5800. Sulphide Glacier's `dist_km` (8,
+doubling to a 9.9 mi round trip) undercounted against multiple independent sources citing ~13-14
+mi round trip -- fixed to 10.9 (one-way). White Salmon Glacier had three fixes: `approach_logistics.
+peakLat/peakLng` were badly off (~14 mi west, ~2 mi north of Shuksan's actual summit) and
+disagreed with the correct coordinates already stored on this same peak's other two routes in this
+batch -- fixed to 48.8315/-121.6032; its summit `waypoints[1].elev` (9127) disagreed with the
+9,131 ft figure used on the sibling routes -- fixed to 9131; and its `approach`/
+`approach_logistics.trailhead` fields described the Lake Ann Trailhead/Austin Pass approach --
+that's the Fisher Chimneys route's trailhead, not this one's, and directly contradicted this row's
+own `waypoints[0]` and `road` fields, which already correctly describe the White Salmon Road
+hairpin approach -- rewritten to match. Spickard Southwest Route had three fixes: `corrections`
+claimed "'fa' has been left null" but this row's own `fa` field is populated and externally
+corroborated (Fred & Helmi Beckey, 1941) -- the stale sentence was replaced; its summit
+`waypoints[6].elev` (8983) disagreed with this same row's own `high_point_ft` (8979) and its own
+`corrections` text ("this page uses 8,979 ft") -- fixed to 8979; and `dist_km` (13.7, doubling to
+~17.0 mi round trip) undercounted against this row's own `waypoints[6].distMi` (10.3 mi one-way)
+and its own itinerary ("roughly 20 miles ... round-trip") -- fixed to 16.6. Monitor Ridge's `fa`
+("Unknown") is actually well documented -- USGS CVO credits Thomas J. Dryer, John Wilson, Drew &
+Smith, Aug 26 1853 -- fixed; its `beta` conflated two adjacent waypoints, describing the 2.1-mi
+Loowit Trail junction as "4,800 feet, gaining 1,000 feet" when this row's own waypoint for that
+exact junction gives 4,600 ft / 900 ft gained (the 4,800 ft figure belongs to the next waypoint) --
+fixed. Worm Flows had four fixes: `gain_ft` (5563) contradicted its own `loss_ft` (5700) and
+`itinerary.days[0].gainFt` (5700) on a route explicitly reversed on descent -- fixed to 5700; its
+trailhead `waypoints[0].elev` (2680) contradicted its own `overview`/`beta` text ("2,800 ft") and
+was the literal arithmetic source of the gain_ft error (8363-2800=5563) -- fixed to 2800; `aspect`
+(W) contradicted its own `face` field ("south-southwest side") and an independently-sourced
+south-facing description -- fixed to SW; and `seasonal_hazards.avalanche.zone` ("Mount St. Helens
+(NWAC forecast zone)", not a real NWAC zone name) contradicted its own `climate.forecastZone`
+field, which already correctly names "West Slopes South" -- fixed to match. Mount Steel's First
+Divide route had one linked error across three fields: `beta`/`approach`/`dist_km` all cited 12.7
+mi to First Divide, but WTA, ProTrails, and The Mountaineers' route page independently give 13.1
+mi -- all three fixed together (dist_km 20.4 -> 21.1).
+
+Flagged rather than fixed (19): Steel's trailhead elevation ("about 785 ft") and derived `gain_ft`
+(5440) sit in tension with WTA's cumulative-gain figure (3,568 ft) in a way that looks arithmetically
+off, but no authoritative trailhead elevation was found to source a specific fix; its `loss_ft` is
+null on an out-and-back route -- a completeness gap, not a sourced error. Silver Glacier's
+`length_m`/`pitch_detail[].lengthM` values arithmetically equal vertical gain (not slope distance)
+for every pitch -- a field-semantics question, not a numeric error with a known correct value.
+Spickard Southwest has six open items: contested summit elevation (8,979 vs a newer LIDAR 8,978 ft
+not yet reflected in `corrections`); `overview`'s "Tertiary-age gneiss" composition claim
+(mixed/unconfirmed); an unconfirmed "3 miles toward Mount Redoubt" glacier-length claim; an
+unconfirmed "over a mile" Silver Glacier length claim; a self-contradicting `access.passRequired`
+("Trail Park Pass," not standard WA/NPS terminology) that couldn't be resolved via search; and a
+~60 ft internal discrepancy in the Ouzel Lake camp elevation between a waypoint and two itinerary
+notes. Price Glacier's `waypoints[0].elev` (Nooksack Cirque trailhead, 2200 ft) looks ~350 ft low
+against synthesized search results, but wasn't confirmed enough to fix. Sulphide Glacier's
+mileage-to-camp figures disagree three ways internally (waypoint distMi 4, itinerary miles 5,
+approach-text "7-8 miles") with no primary source found to reconcile them; its day-1 `gainFt`
+(3200) looks low relative to the row's own corrected total gain and external sourcing, but
+apportioning the fix across days needs a primary source. White Salmon Glacier's FA
+("Piley/Richards/Thompson, 1926") is already self-flagged as uncertain and stays that way; its
+`description` ("Gains 2,000 ft") reads misleadingly next to `gain_ft` (7500) but may describe only
+the final glacier segment; its `dist_km` may be low against one Strava listing, uncorroborated by a
+second source; and its corrected-adjacent `waypoints[0].elev` (3650) sits within normal
+guidebook-variance of a 3,400-3,450 ft cluster from search. Monitor Ridge's and Worm Flows'
+`length_m` fields (1086 / 1421) don't surface in the UI for `discipline: "mountaineering"` and have
+no apparent basis given null `pitches`/rope fields on both rows -- needs a human call on intended
+semantics before either is touched. Worm Flows' `dist_km` (8, doubling to ~9.9 mi) is undercounted
+against this row's own itinerary ("roughly 12 miles roundtrip") and its own summit waypoint distMi
+(5.4 mi one-way), but sources disagree enough on the exact figure (10.8-12 mi) that a specific
+replacement wasn't fixed -- also notable that Monitor Ridge and Worm Flows, two different-length
+routes, shared the identical `dist_km: 8` before this batch, suggesting a copy/paste origin.
+
+Clean: FA facts, coordinates, permits/fees, land-manager text, and internal consistency checks not
+called out above across all 8 routes -- see full per-route detail in the researching agents'
+reports (not reproduced here to keep this log terse).
