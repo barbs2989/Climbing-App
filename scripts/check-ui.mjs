@@ -80,6 +80,12 @@ const FORBIDDEN = [
 const LANDMARKS = {
   "route:Overview": ["Overview"],
   "route:Plan": ["GETTING THERE", "APPROACH", "ASPECT & SUN", "RACK"],
+  // The Year in Climbing banner is the ONLY opener of that modal, and until #713 it was
+  // gated on MY_CLIMBS.length — a constant DEMO_FILLERS empties — so the whole modal was
+  // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
+  // constant; this catches the banner simply disappearing. Built from the current year
+  // because the label carries it, so this does not rot every January.
+  Profile: [`Your ${new Date().getFullYear()} Year in Climbing`],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
