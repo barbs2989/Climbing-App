@@ -147,6 +147,43 @@ try {
     rec("an unlisted climber disappears from browse", false, "could not turn the setting off, so this was never tested");
   }
 
+  // ---- 4) and an ANONYMOUS visitor sees no list at all -------------------------------
+  // This is the regression this file exists for. Production builds with
+  // VITE_DEMO_AUTOLOGIN=true (#584, so the app stays browsable without an account), which
+  // makes realAuthGate false and leaves DB_UID null. A browse list gated only on USE_DB
+  // therefore published real climbers' names, handles and cities to the open web — verified
+  // live before it was fixed. The server above runs with the flag OFF, where a signed-out
+  // visitor just gets the auth modal, so it cannot see this. Spin up a second one that
+  // matches production.
+  const port2 = await claimPort(port + 1);
+  const base2 = `http://127.0.0.1:${port2}/Climbing-App/`;
+  const server2 = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port2), "--strictPort"],
+    { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
+  try {
+    if (!(await waitForServer(base2))) {
+      rec("an anonymous visitor is shown no climber list", false, "the demo-autologin dev server never came up, so this was not tested");
+    } else {
+      const anon = await browser.newContext({ viewport: { width: 390, height: 900 } });
+      const pa = await anon.newPage();
+      await pa.goto(base2, { waitUntil: "domcontentloaded", timeout: 180000 });
+      await pa.getByRole("button", { name: "Home", exact: true }).first().waitFor({ timeout: 90000 });
+      await pa.waitForTimeout(2000);
+      await pa.getByRole("button", { name: "Partners", exact: true }).first().click();
+      await pa.waitForTimeout(6000);
+      const ta = await pa.innerText("body");
+      // Prove we actually reached partner browse before concluding the list is absent —
+      // otherwise a screen that failed to load reads as a clean pass.
+      if (!/Search for partners by/i.test(ta)) {
+        rec("an anonymous visitor is shown no climber list", false, "could not confirm partner browse rendered, so absence proves nothing");
+      } else if (/CLIMBERS ON CLIMBMATCH/i.test(ta)) {
+        rec("an anonymous visitor is shown no climber list", false, "the real-climber section rendered with no account signed in — real names are public");
+      } else {
+        rec("an anonymous visitor is shown no climber list", true, "browse rendered, section absent");
+      }
+      await anon.close();
+    }
+  } finally { server2.kill(); }
+
   const bad = results.filter((r) => !r.ok);
   log(`\n${results.length} check(s): ${results.length - bad.length} ok, ${bad.length} failed`);
   if (bad.length) process.exitCode = 1;
