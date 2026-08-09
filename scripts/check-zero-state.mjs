@@ -19,14 +19,16 @@
 //   npm run check:zero
 //   npm run check:zero -- --dump out.json   # per-screen text, for A/B diffing
 //
-// Not wired into `npm run build`, and not in CI, for the same reason check:ui is not:
-// browser automation is too slow and flaky to sit in front of a production deploy, and
-// the repo depends on playwright-core, which ships no browser for a runner to drive.
-// Run it by hand before merging anything that touches the render tree.
+// Runs on every pull request via .github/workflows/zero-state.yml -- its own workflow,
+// not a step in build-check.yml and not in deploy.yml, so a browser flake cannot read as
+// "the build is broken" or block a deploy. That mirrors how check:ui is treated.
 //
-// That is a real limitation, not a preference. A guard nobody runs is a guard you do
-// not have -- so if this starts getting skipped, the fix is a browser in CI, not a
-// weaker check.
+// It is NOT in `npm run build`, so a local build will not catch a regression here. Run it
+// by hand before merging anything that touches the render tree; CI is the backstop.
+//
+// playwright-core downloads no browser, so this drives the Google Chrome that ships on
+// the ubuntu-latest runner image. If that image ever stops including Chrome, the workflow
+// fails on an explicit check rather than inside playwright's launcher.
 //
 // The zero state is forced by scripts/zero-state.config.mjs, which replays the app's
 // OWN sign-in reset in memory. It does not edit source and it never ships.
@@ -71,13 +73,18 @@ const ZERO_LANDMARKS = {
   // #637: these four tiles and the dropdown used to be filtered out when their count
   // was 0, which is exactly when a new user needs them.
   "tab:today": ["Explore climbs", "Find partners", "Find crews", "Unfinished business"],
+  // The dropdown has to say what it is empty OF. It used to read "Nothing waiting on you
+  // right now", a near-copy of the "Nothing needs you right now" card immediately below it.
+  "modal:unfinishedOpen": ["No requests, invites or unread messages."],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares
 // something blank. Also whole-line matches.
 const FORBIDDEN_LANDMARKS = {
-  // #674: Instagram / Copy link / Share… on a year of all zeros.
-  "modal:recapOpen": ["Share your year", "Instagram"],
+  // #674: a share block on a year of all zeros. Also the near-duplicate empty copy the
+  // Unfinished business dropdown used to carry.
+  "modal:recapOpen": ["Share your year", "Copy my year", "↗ Share…"],
+  "modal:unfinishedOpen": ["Nothing waiting on you right now."],
 };
 
 const log = (...a) => console.log(...a);
@@ -125,21 +132,50 @@ if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); proc
 if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port} with the zero-state config...`);
+// detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing
+// only the npx pid leaves the real server listening -- a leaked dev server then squats the
+// port for every later run, and (worse) can answer for a DIFFERENT checkout. Kill the group.
 const server = spawn(
   "npx",
   ["vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
-  { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
+  { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;
 server.on("exit", () => { died = true; });
+let stopped = false;
+const stopServer = () => {
+  if (stopped) return;
+  stopped = true;
+  try { process.kill(-server.pid, "SIGTERM"); } catch { try { server.kill(); } catch {} }
+};
+// Any exit path -- assertion failure, thrown error, Ctrl-C -- must still release the port.
+process.on("exit", stopServer);
+process.on("SIGINT", () => { stopServer(); process.exit(130); });
+process.on("SIGTERM", () => { stopServer(); process.exit(143); });
+process.on("uncaughtException", (e) => { console.error(e); stopServer(); process.exit(1); });
 if (!(await waitForServer(base)) || died) {
   console.error(died ? "the dev server exited during startup — port taken, or the scaffold failed to apply" : "dev server never came up");
-  server.kill(); process.exit(1);
+  stopServer(); process.exit(1);
 }
 await fetch(base + "ClimbMatch.jsx").catch(() => {});
 
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+// playwright-core ships no browser, so a missing Chrome is a setup problem, not a bug in
+// the app. Say which it is instead of surfacing a launcher stack trace.
+let browser;
+try {
+  browser = await chromium.launch({ channel: "chrome", headless: true });
+} catch (e) {
+  console.error("could not launch Google Chrome: " + String(e.message).split("\n")[0]);
+  console.error("playwright-core downloads no browser of its own — install Chrome, or run this on a runner image that has it.");
+  stopServer();
+  process.exit(1);
+}
 const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
+// The first navigation compiles a ~1.5MB module. Playwright's 30s default is not enough
+// for that on a loaded machine or a cold CI runner, and the timeout surfaces as a thrown
+// TimeoutError -- which reads as a broken app rather than a slow one.
+page.setDefaultNavigationTimeout(120000);
+page.setDefaultTimeout(30000);
 const pageErrors = [];
 page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 
@@ -169,13 +205,44 @@ const visibleText = () => page.evaluate(() => {
   return out;
 });
 
-async function load(qs, settle) {
+// `__zeroReady` fires when App mounts, which is BEFORE lazy children resolve and before a
+// cold dev server has finished compiling the screen. On the first navigations of a run
+// that gap is wide enough that only the nav bar has rendered -- which reads as "the screen
+// blanked" when it was still loading. Where content is expected, wait for it.
+const CHROME_ONLY = 90; // the wordmark + seven nav labels, and nothing else
+
+async function load(qs, settle, expectContent) {
+  // If vite dies mid-walk, every remaining screen renders as the bare shell and this check
+  // would report a pile of blank-screen failures against code that is fine. Say what
+  // actually happened instead, and stop -- nothing after this point is evidence.
+  if (died) {
+    console.error("\nthe dev server exited part-way through the walk — every result after that point");
+    console.error("would be an empty page, so nothing below was actually checked.");
+    stopServer();
+    process.exit(1);
+  }
   // 120s, not the 30s default: the Climbs tab lazily imports DbAreaBrowser, and the dev
   // server compiles that chunk on the first request for it. The ClimbMatch.jsx warm-up
   // above does not cover lazy children, so a cold, loaded machine blows the default and
-  // the run dies on ?zt=routes before checking anything.
+  // the run dies on ?zt=routes before checking anything. (Belt and braces with
+  // setDefaultNavigationTimeout above -- this one survives someone resetting the default.)
   await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
   await page.waitForFunction(() => window.__zeroReady === true, null, { timeout: 60000 }).catch(() => {});
+  if (expectContent) {
+    // Length alone is not enough: a Suspense fallback ("Loading climbs…") clears the
+    // length bar while the screen is still empty, so the walk would check the spinner and
+    // report the tab green. The Climbs tab is lazy AND waits on a DB round trip.
+    await page
+      .waitForFunction(
+        (n) => {
+          const t = document.body.innerText.replace(/\s+/g, " ").trim();
+          return t.length > n && !/Loading[\s.…]/i.test(t);
+        },
+        CHROME_ONLY,
+        { timeout: 45000 }
+      )
+      .catch(() => {});
+  }
   await page.waitForTimeout(settle);
   return await visibleText();
 }
@@ -200,11 +267,22 @@ function assertScreen(label, lines) {
   }
 }
 
+// A first navigation against a cold dev server pays for compiling the whole module graph.
+// Do that once, unmeasured, so the first tab in the walk is not the one that absorbs it.
+log("warming the dev server...");
+await load("?zt=today", 1500, true);
+
 // 1. Every main tab, empty.
 for (const t of TABS) {
-  const lines = await load(`?zt=${t}`, 2600);
+  const lines = await load(`?zt=${t}`, 2600, true);
   dump["tab:" + t] = lines;
-  log(`  tab:${t}`.padEnd(24) + String(lines.join("\n").length).padStart(6) + " chars");
+  const n = lines.join("\n").length;
+  log(`  tab:${t}`.padEnd(24) + String(n).padStart(6) + " chars");
+  // A tab that renders the nav bar and nothing else is the blank-screen bug (#662), and
+  // without this it would show up only as a small number nobody reads.
+  if (n <= CHROME_ONLY) fail("tab:" + t, `rendered only the nav bar (${n} chars) — the content area was empty`);
+  // Still spinning after 45s is the #658 shape: a screen that never admits it is stuck.
+  if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:" + t, `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
   assertScreen("tab:" + t, lines);
 }
 
@@ -216,11 +294,28 @@ if (!overlays.length) {
 } else {
   log(`\n  ${overlays.length} overlay states discovered\n`);
 }
+// Most overlays are rendered from a global modal stack and appear on any tab, but some are
+// scoped to one screen -- the Unfinished business dropdown only exists on Home. Opening
+// those from the wrong tab renders nothing, and the walk would then check the bare tab and
+// report it green. So: take the first tab where the overlay actually ADDS something.
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
 for (const name of overlays) {
-  const lines = await load(`?zt=me&z=${name}`, 3400);
-  dump["modal:" + name] = lines;
-  log(`  modal:${name}`.padEnd(24) + String(lines.join("\n").length).padStart(6) + " chars");
-  assertScreen("modal:" + name, lines);
+  let landed = null;
+  for (const t of OVERLAY_TABS) {
+    const lines = await load(`?zt=${t}&z=${name}`, 3400);
+    const before = new Set(dump["tab:" + t] || []);
+    if (lines.some((l) => !before.has(l))) { landed = { tab: t, lines }; break; }
+  }
+  if (!landed) {
+    // Not automatically a bug: some overlays only open from a control that needs data
+    // (vouchesGivenOpen wants >3 vouches). Say so rather than passing in silence.
+    log(`  modal:${name}`.padEnd(24) + "     — added nothing on any tab");
+    dump["modal:" + name] = [];
+    continue;
+  }
+  dump["modal:" + name] = landed.lines;
+  log(`  modal:${name}`.padEnd(24) + String(landed.lines.join("\n").length).padStart(6) + ` chars  (${landed.tab})`);
+  assertScreen("modal:" + name, landed.lines);
 }
 
 if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors)].join(" | ")}`);
@@ -228,7 +323,7 @@ if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors
 if (DUMP) { fs.writeFileSync(DUMP, JSON.stringify(dump, null, 1)); log(`\nwrote ${DUMP}`); }
 
 await browser.close();
-server.kill();
+stopServer();
 
 if (!fails.length) {
   log(`\ncheck:zero: ok — ${TABS.length} tabs and ${overlays.length} overlays hold up with every count at zero.\n`);

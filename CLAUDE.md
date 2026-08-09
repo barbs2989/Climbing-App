@@ -16,7 +16,9 @@ npm run check:ui   # drives the real app in Chrome and asserts per-screen invari
 npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
+npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:drift# does the live site actually serve the current tip of main?
+npm run check:counts# does every areas.route_count still match the truth?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -98,11 +100,48 @@ a build error, but a screen that renders wrong or not at all.
     is named in the output rather than silently skipped.
   - Injection-tested: restoring the four #674 defects trips 7 assertions, and breaking an
     anchor fails with `ANCHOR LOST` **plus** "nothing below was actually checked".
-  - Not in `build` and **not in CI**, same as `check:ui` — and note the repo depends on
-    `playwright-core`, which ships no browser for a runner to drive. Run it by hand.
+  - Runs on every PR via `.github/workflows/zero-state.yml` — its **own** workflow, not a
+    step in `build-check.yml` and not in `deploy.yml`, so a browser flake cannot read as
+    "the build is broken" or block a deploy. It is **not** in `npm run build`, so a local
+    build will not catch a regression here; run it by hand, CI is the backstop.
+    `playwright-core` downloads no browser, so it drives the Google Chrome that ships on
+    the `ubuntu-latest` image — the workflow asserts Chrome is present before starting.
   - Opening an overlay by name reaches some the UI would not offer at zero (e.g.
     `vouchesGivenOpen` only opens from a *See all N →* button needing >3 vouches). Check the
     setter's call sites before treating an empty one as a bug.
+- **`check:signed-in`** walks the app as a **real signed-in account that already owns
+  things** — a crew and a group, each with a *second real member*. It fills the one gap the
+  two checks either side of it cannot reach: `check:ui` walks the seeded demo logged out, so
+  every id it resolves is a seed integer; `check:zero` walks a new account with every list
+  empty, so there is nothing to resolve. **Real data under a uuid** is neither, and it has
+  shipped bugs three times — **#569** (crew roster resolved members against seed `CLIMBERS`,
+  so a uuid matched nothing and a populated crew read `You + 0 climbers`), **#680** (group
+  management compared `ownerId` against the seed id `0`, so a DB group's own owner got no
+  controls), and **#688** (four more, below). Same shape every time: *seed-id logic meeting a
+  uuid.*
+  - Two accounts, created and destroyed **per run** (`scripts/lib/ui-fixture.mjs`). The
+    second one is the point — a solo fixture reproduces none of the bugs above, which is why
+    the 2026-08-05 `--signed-in` attempt was injection-tested, **missed**, and was reverted.
+    Per-run rather than one permanent QA account, because a fake climber left in `profiles`
+    surfaces in partner search for real users.
+  - Emails are on the reserved `.invalid` domain, so a stray confirmation can never route.
+    `sweepOrphans()` runs before each fixture and removes anything an earlier run left, so a
+    killed process leaks at most until the next run — teardown retries are not enough on
+    their own, because a killed process never reaches its `finally` block.
+  - The session is **injected into `localStorage` under `climbmatch-auth`**, not typed into
+    the sign-in modal: deterministic, and not coupled to that modal's markup.
+  - It deliberately does **not** set `VITE_DEMO_AUTOLOGIN`, so `realAuthGate` is live and the
+    injected session must satisfy the same gate a production user does. It asserts *who* it
+    is signed in as before anything else — otherwise a rejected session would quietly walk a
+    demo identity and report green about the wrong account.
+  - Requires the **service key** and `VITE_USE_DB=true`; it exits 1 rather than walking a
+    seed app. Not in `build` or CI, and CI should not hold a service key.
+  - Setup uses the service key, which **bypasses RLS** — so a row existing here is no
+    evidence a policy would have let a user create it. This answers "does the screen render
+    correctly", never "is the policy right".
+  - Injection-tested: reverting each of the five defects it claims to catch fails the run,
+    and each case requires a failure message that *names* that defect — a run that dies from
+    a port race must not count as a catch.
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
@@ -117,6 +156,31 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+- **`check:counts`** asks whether every `areas.route_count` still matches a fresh
+  count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
+  not in the build. `route_count` is maintained by a trigger on the **routes**
+  table, so it is correct for route inserts/deletes/moves but nothing maintains it
+  when an **area** moves, is merged, or is deleted — each of those silently leaves
+  every ancestor above it wrong. 0017, 0027 and 0098 each repaired a round of this,
+  and each round was found by somebody auditing by hand. It is not cosmetic:
+  `route_count` is what the area browser prints beside an area name and what
+  `lib/db.js` orders areas by, so a stale value both misstates the number and
+  misplaces the area — before 0098, Liberty Bell Group cached **6 against a true
+  27** and sorted as though it were tiny.
+  - **Not a build gate, deliberately.** Drift is a property of the database, not
+    the checkout: no code change can cause it and none can fix it, so failing
+    `npm run build` would block unrelated PRs on a condition their author cannot
+    affect, and whoever caused it (by running a migration) is not who sees red.
+  - Read-only, anon key only — a checker that could write is a checker that can
+    corrupt what it is checking. It also fails closed on an empty read, because
+    this guard's realistic failure mode is a **false pass**: zero routes makes
+    every area look consistent.
+  - Walks the tree once (post-order DFS, O(n)) instead of running one `path <@`
+    subtree count per area, which is 47k aggregate queries over 205k rows — that
+    cost is why the invariant went unchecked for so long.
+  - Injection-tested; the four cases are named at the bottom of the script and are
+    driven by `--inject=`, since the fault lives in the DB and the checker cannot
+    write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
