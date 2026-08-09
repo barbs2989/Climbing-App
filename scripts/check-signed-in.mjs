@@ -437,17 +437,22 @@ try {
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
-      // What the opener actually did, before judging the screen: a payload that resolved
-      // empty in this fixture renders nothing and reads exactly like a broken modal.
+      // Settle on the text no longer changing. The old gate broke out of its wait the
+      // moment the body passed 40 characters, which on an overlay that renders a header
+      // first means it stopped waiting before the body arrived.
+      const openedText = await settledText(page, { min: 30, timeout: 45000 });
+      // Ask the opener what it did — and ask AFTER settling, not before. `__overlaysReady`
+      // is set synchronously by the effect, but the opener itself fires on a 1200ms timer,
+      // so reading straight after waitForFunction sees the state before any payload has been
+      // evaluated. That reported eventInvite (whose payload is empty here, because `events`
+      // is not DB-backed and sits behind DEMO_FILLERS) as a modal that mounted nothing.
+      // check:zero and check:overlay-scroll settle 3400ms and 2200ms first, which is why
+      // only this guard tripped on it.
       const d = await page.evaluate((n) => ({
         np: (window.__overlayNoPayload || {})[n], er: (window.__overlayOpenErrors || {})[n],
       }), name);
       if (d.er) { threw = d.er; break; }
       if (d.np) { empty = d.np; break; }
-      // Settle on the text no longer changing. The old gate broke out of its wait the
-      // moment the body passed 40 characters, which on an overlay that renders a header
-      // first means it stopped waiting before the body arrived.
-      const openedText = await settledText(page, { min: 30, timeout: 45000 });
       // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
       // trips on anything that moves on its own -- a clock, a relative timestamp -- and
       // would report an overlay as opened when nothing opened at all.
