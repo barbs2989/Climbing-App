@@ -1,0 +1,11 @@
+<!-- ClimbMatch mark. Not a new design: this is the app's OWN Climbs-tab glyph
+     (ActionIcon name="mountain", path "m8 3 4 8 5-5 5 15H2L8 3z") on the app's
+     background, stroked in the same blue the boot wordmark uses for "Match".
+     The glyph is scaled to 0.8 and centred so it sits inside the inner 80% —
+     the safe zone Android crops a `maskable` icon to. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ClimbMatch">
+  <rect width="24" height="24" rx="5" fill="#0d1117"/>
+  <g transform="translate(2.4 2.4) scale(0.8)">
+    <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke="#2f81f7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
