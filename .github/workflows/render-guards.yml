@@ -1,7 +1,7 @@
 name: Render guards
 
-# Four checks that ask "does this reach a screen, and reach it correctly?" — a question
-# the static guards in build-check.yml cannot answer, because all four need the app
+# Five checks that ask "does this reach a screen, and reach it correctly?" — a question
+# the static guards in build-check.yml cannot answer, because all five need the app
 # rendered.
 #
 # Why they need CI at all. All were hand-run only, and on 2026-08-09 that failed
@@ -149,6 +149,39 @@ jobs:
 
       - name: Badge counts stay out of accessible names
         run: npm run check:a11y-badges
+        env:
+          # Same reasoning as overlay-scroll above: without these USE_DB is off and the
+          # app under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+  anniversary:
+    name: The anniversary notification still fires
+    runs-on: ubuntu-latest
+    # One screen and two overlays, so it is the quickest of these.
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:anniversary cannot drive anything."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: A qualifying log produces an anniversary
+        run: npm run check:anniversary
         env:
           # Same reasoning as overlay-scroll above: without these USE_DB is off and the
           # app under test is not the one that ships.

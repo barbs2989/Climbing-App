@@ -292,12 +292,17 @@ console.log("\n--- unreported containment is never flattered ---");
 }
 
 console.log("\n--- the panel is actually reachable, on every route ---");
-// #769 moved the panel to the Safety tab, which is the right home for a hazard — but
-// `showSafety` is CONTENT-gated, so a bare crag route is offered no Safety tab at all.
-// The placement is therefore two mounts that must be exactly complementary: Safety when
-// there is a Safety tab, Overview when there is not. "Neither" is a reachable state and
-// would be #655 again (the right content behind a tab those very routes never see);
-// "both" would double-render a red hazard box. This pins that invariant.
+// #769 moved the panel to the Safety tab, which is the right home for a hazard. It briefly
+// needed a complementary Overview mount, because `showSafety` was CONTENT-gated and a bare
+// crag route — 99.5% of the catalog — was offered no Safety tab at all. #776 removed that
+// gate instead: the Safety tab is now offered on every route, so there is ONE mount and the
+// fallback is gone.
+//
+// That makes the tab gate itself load-bearing, and it is asserted here for that reason. If
+// anyone re-gates "safety" in the tab strip, the panel does not merely move — it becomes
+// unreachable for almost every route in the app, with no fallback left to catch it. That is
+// #655's exact shape (the right content behind a tab those very routes never see), and it
+// would otherwise be a one-token change in a filter expression nobody would connect to fires.
 {
   // RAW, not blanked. The sub-tab branches are `tab==="safety"?` — the discriminator is
   // a STRING LITERAL, and the blanker wipes string contents, so in blanked source every
@@ -321,19 +326,32 @@ console.log("\n--- the panel is actually reachable, on every route ---");
       const bounds = [safetyAt, overviewAt].sort((a, b) => a - b);
       const seg = (start) => h.slice(start, bounds.find(b => b > start) ?? Math.min(h.length, start + 30000));
       const inSafety = new RegExp("\\{\\s*" + sym + "\\s*\\}").test(seg(safetyAt));
-      const ovSeg = seg(overviewAt);
-      const inOverview = new RegExp("\\{\\s*" + sym + "\\s*\\}").test(ovSeg);
-      const ovGated = new RegExp("showSafety\\s*\\?\\s*null\\s*:\\s*" + sym).test(ovSeg);
+      // Strip JSX comments before looking for a second mount: the Overview branch OPENS with a
+      // `{/* … see fireEl above … */}` note explaining where the panel went, and a naive search
+      // for the symbol would report that prose as a mount. Then match any single-brace expression
+      // containing it, so a restored `{showSafety?null:fireEl}` is caught as well as a bare one.
+      const ovSeg = seg(overviewAt).replace(/\{\s*\/\*[^]*?\*\/\s*\}/g, " ");
+      const inOverview = new RegExp("\\{[^{}]*\\b" + sym + "\\b").test(ovSeg);
 
       if (!inSafety) fail(`${HOST}: the fire panel is not rendered on the Safety tab — that is its home (#769)`);
       else ok("the fire panel renders on the Safety tab");
 
-      if (!inOverview && !ovGated) {
-        fail(`${HOST}: the fire panel has no Overview fallback — a bare crag route is offered NO Safety tab (showSafety is content-gated), so those routes would lose the panel entirely. This is the #655 shape.`);
-      } else if (inOverview && !ovGated) {
-        fail(`${HOST}: the Overview mount is not gated on showSafety — a route with a Safety tab would render the hazard box TWICE`);
+      // One mount, not two. The old Overview fallback would now double-render the hazard box.
+      if (inOverview) fail(`${HOST}: the fire panel is ALSO mounted on Overview — every route has a Safety tab now (#776), so this renders the hazard box twice`);
+      else ok("the fire panel is mounted once, on Safety, with no leftover Overview copy");
+
+      // And the tab that holds it is offered unconditionally. Scope this to the tab strip's own
+      // filter callback — the word "safety" appears all over this file, so a file-wide search
+      // would be satisfied by prose, and `showPlan` legitimately lives in the same expression.
+      // Lazy `[^]*?`, not `[^\]]*`: every entry in that array ends with a `]` of its own, so a
+      // negated-] class stops at the first one and the match never reaches the filter.
+      const strip = h.match(/\[\s*\["overview","Overview"\][^]*?\["safety","Safety"\]\s*\]\s*\.filter\(([^)]*)\)/);
+      if (!strip) {
+        fail(`${HOST}: could not find the route sub-tab strip and its filter — this gate check has gone blind`);
+      } else if (/safety/.test(strip[1])) {
+        fail(`${HOST}: the Safety tab is gated again (${strip[1].trim().slice(0, 80)}) — the fire panel has no fallback since #776, so gating that tab makes it unreachable for the 99.5% of routes with no safety data of their own. #655's shape.`);
       } else {
-        ok("the Overview fallback exists and is gated on showSafety, so exactly one of the two renders");
+        ok("the Safety tab is offered on every route, so the single mount is reachable everywhere");
       }
     }
   }
@@ -375,9 +393,17 @@ console.log(`${GUARD}: ok — the fire surfaces state what they know and admit w
 //     file. Neutering the DRAW while leaving the in-effect/upcoming split intact kept the
 //     name present, so a warning starting tomorrow drew exactly like one in effect. Now
 //     scoped to the drawing effect.
-//   11. RouteDetail.jsx — every `{fireEl}` → `{null}`                → "not rendered on the Safety tab"
-//   12. RouteDetail.jsx — delete `{showSafety?null:fireEl}`          → "no Overview fallback"
-//   13. RouteDetail.jsx — `{showSafety?null:fireEl}` → `{fireEl}`    → "not gated on showSafety"
+//   11. RouteDetail.jsx — drop `{fireEl}` from the safety branch    → "not rendered on the Safety tab"
+//   12. RouteDetail.jsx — add a second `{fireEl}` on Overview       → "ALSO mounted on Overview"
+//   13. RouteDetail.jsx — restore `{showSafety?null:fireEl}`        → "ALSO mounted on Overview"
+//   14. RouteDetail.jsx — re-gate the strip, `x[0]==="safety"?!cragOnly:true`
+//                                                                    → "the Safety tab is gated again"
+//   15. RouteDetail.jsx — rename the strip's `["safety","Safety"]`  → "gone blind"
+//   (12 and 13 must BOTH trip: the search strips JSX comments first — the Overview branch opens
+//   with a note that mentions `fireEl` — and then matches any brace expression containing the
+//   symbol, so a gated fallback is caught as well as a bare one. An earlier `\{\s*fireEl\s*\}`
+//   form passed case 13. Case 15 exists because this gate check is the kind that fails OPEN: a
+//   renamed tab strip makes the regex miss and every conclusion below it vacuous.)
 //
 // Both of the false passes above are the "injection logged, counter didn't move" shape:
 // presence is not use, and proximity is not scope.

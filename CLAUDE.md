@@ -25,6 +25,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
@@ -74,19 +75,24 @@ a build error, but a screen that renders wrong or not at all.
   a 0.0hr hike leg and the return tile went **green**, an affirmative "you're down before
   dark" with the walk in *and* out counted as zero, and the "After dark" warning could never
   fire) and **#655** (the sport/trad/bouldering safety advice sat behind the Safety tab,
-  which is hidden for exactly those three disciplines). Both were invisible to a guard that
+  which was hidden for exactly those three disciplines — that tab is unconditional now, so the
+  advice is asserted on it rather than inline on Overview). Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
-  - It also pins **where the nearby-fire panel lives**: on the Safety tab, first section, and on
-    Overview *only* for a route offered no Safety tab (`showSafety` is content-gated, so that is
-    99.5% of the catalog — moving it unconditionally would delete it for almost every route).
-    This needed a **located** fixture: `bare()`'s area has no `lat`/`lng` and `FireNearRoute`
-    renders nothing without a coordinate, so every other render here is of a route where the
-    panel is correctly absent. Match its loading line, **never its "Fire & smoke" heading** —
-    the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that removed
-    the panel from Safety entirely passed on the strength of that link.
+  - It also pins **where the nearby-fire panel lives**: first section of the Safety tab, on every
+    route, and nowhere else. That needed a **located** fixture — `bare()`'s area has no `lat`/`lng`
+    and `FireNearRoute` renders nothing without a coordinate, so every other render here is of a
+    route where the panel is correctly absent. Match its loading line, **never its "Fire & smoke"
+    heading**: the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that
+    removed the panel from Safety entirely passed on the strength of that link.
+  - **Plan and Safety are gated differently, and it asserts both.** `showPlan` is content-gated;
+    the Safety tab is **unconditional**. An empty Plan tab promises an approach and a descent and
+    delivers a blank, but the Safety tab is never empty — the per-discipline advice, the forecast
+    links and the fire panel all render without the route carrying one safety field of its own.
+    While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
+    `hasSafetyContent()` is gone; `hasPlanContent()` stays.
 - **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
   **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
   matches a **display name**, which belongs to neither id space, so it hands one person's
@@ -406,6 +412,51 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
+  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  `mergedNotifs` beside four live sources hid that completely: the notification list worked,
+  so nothing looked wrong. It now derives from the user's real `logs`.
+  - **Nothing rendered it afterwards, and nothing easily could, because the feature is
+    date-gated.** `_anniv` only fires for a log whose yearly anchor is within **two days** of
+    today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
+    it renders nothing, and every other guard walks the app on one of those days. A feature
+    invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
+    computed at config load so it never rots. The date is built in **local** time, because
+    `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off
+    west of Greenwich and would still pass the ±2-day gate while proving less than it claims.
+    Feb 29 needs no special case — `"2027-02-29T12:00:00"` parses to Mar 1, one day off, still
+    inside the window (measured, not assumed).
+  - The injected entry is a **clone of the seed entry with only its date rewritten**, lifted
+    out of the source by balancing braces rather than hand-written. A hand-written literal is a
+    second copy of a shape that lives elsewhere: add a field to the seed log and the clone
+    silently stops matching, and `logs` also feeds `Resume`, `TickList` and `_pastClimbs`. The
+    brace walk runs over **raw source but skips string contents** — the opposite care from
+    `check:overlay-discovery`, which must not blank strings; here a `{` *inside* a string must
+    not be counted or the walk ends in the wrong place, truncating the literal mid-prose.
+  - It refuses to run a probe that cannot fire: if the date rewrite is a no-op, the config
+    throws rather than injecting an entry carrying the original date.
+  - Checks **both** surfaces that render `mergedNotifs` (the notifications panel and Home's
+    alerts dropdown), because #713's defect was invisible precisely *because* the list around
+    it worked — "some notification rendered" is not the question. It asserts the head **and**
+    the tail of the composed string, so a truncation fails; it does not assert the route name,
+    which resolves differently on seed vs `USE_DB` and would go red for reasons that are not
+    this feature's fault.
+  - **Browserless self-tests run first**, because both helpers fail by producing a *wrong
+    probe* rather than an error, and a wrong probe fails the browser assertions — sending
+    whoever reads it hunting for a bug in the feature that does not exist. They cover the
+    calendar cases a single run cannot (a run only ever exercises today) and, with a synthetic
+    entry, the brace-in-a-string case **real data does not exercise**: the seed prose happens
+    to contain no braces today, so nothing else would notice that logic breaking.
+  - What a pass does **not** mean: that the date arithmetic is right for every calendar case.
+    The probe sits one year back to the day, the easy case. It proves the path from `logs` to
+    the screen is not severed, which is the failure that actually shipped.
+  - Injection-tested, three cases: dating the probe outside the ±2-day window fails on both
+    surfaces (so the check is **not** vacuous — it depends on the injection doing its job);
+    reverting `_anniv` to `MY_CLIMBS.map` fails; breaking the opener anchor fails on the
+    58-character boot shell rather than passing over a blank app.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
