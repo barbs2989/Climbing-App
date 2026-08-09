@@ -4,7 +4,7 @@ Triggered by: *"liberty bell group needs an audit, south early winter spires and
 early winter spires aren't in the group. Look for all parent mistakes in wa."*
 
 Both reported peaks were indeed outside the group, and so was a third. The same defect is
-live on five more grouping areas. `0104` fixes the three at Washington Pass; the rest is
+live on five more grouping areas. `0106` fixes the three at Washington Pass; the rest is
 below, with the reasoning for why each was or was not actioned.
 
 Reproduce with `npm run audit:area-parents`. Baseline as of this audit:
@@ -31,7 +31,7 @@ subtree itself is right.
 
 ---
 
-## FIXED in `0104` (Washington Pass)
+## FIXED in `0106` (Washington Pass)
 
 Sorted by latitude, the Liberty Bell Group is one ridge over ~350 m:
 
@@ -65,9 +65,9 @@ All 13 movers are childless leaves and no destination holds direct routes, so
 
 ---
 
-## NOT actioned — needs a decision
+## FIXED in `0107` (Picket Range)
 
-### 1. Picket Range — the same defect, twice, at larger scale
+### The same defect, twice, at larger scale
 
 `wa_northern_pickets` (`route_count` 0) holds only two hollow rows; `wa_southern_pickets`
 (`route_count` 1) holds two hollow rows plus one real buttress. Meanwhile **every** real
@@ -82,13 +82,15 @@ Hollow stubs duplicating a populated peak:
 | `wa_rake_the` (0 rt) | `wa_the_rake` (1 rt) | 1.67 km |
 | `wa_chopping_block_pinnacle_peak_the` (0 rt) | `wa_the_chopping_block` (3 rt) | 1.08 km |
 
-**Why it is not in `0104`:** which summits fall in which sub-range is an editorial call,
-and the boundary cases are genuinely arguable (Mount Crowder, Luna Peak and Mount Prophet
-are variously grouped as Northern Pickets or as outliers). Distances here are also not
-trustworthy evidence — five Southern Picket peaks share the identical placeholder
-coordinate `48.76800 / -121.28800`, so the name is the only real signal.
+**Coordinates are not the authority here** and were not used as one. Five Southern Picket
+peaks share the identical placeholder coordinate `48.76800 / -121.28800` and Swiss Peak has
+none at all, so membership is the standard guidebook division of the range. There *is* a
+clean latitude gap at Picket Pass — northern crest 48.810–48.858 N, southern 48.755–48.777 N,
+nothing between 48.7766 and 48.7976 — but it was used only as a sanity check that no peak in
+the list sits on the wrong side of the pass. Swiss Peak is placed on our own prior research:
+`0097` already records it as "Swiss Peak (7,988 ft, Northern Pickets)".
 
-Proposed membership, for review:
+Membership applied:
 
 - **Northern Pickets** — Whatcom Peak, Mount Challenger, Crooked Thumb Peak, Phantom Peak,
   Ghost Peak, Spectre Peak, Poltergeist Pinnacle, Mount Fury (East), Mount Fury (West),
@@ -100,7 +102,18 @@ Proposed membership, for review:
   Despair, Davis Peak, Berdeen Peak, Elephant Butte, Mount Prophet, Indian Mountain,
   Mount Crowder.
 
-### 2. Summit Chief — two overlapping groupings, no clean answer
+**Mount Crowder is the one genuinely arguable call.** It falls *inside* the latitude gap at
+48.7976, across McMillan Creek from both crests, and sources put it with the Northern
+Pickets or in neither. It is left on the range: a wrong confident answer is worse than an
+honest undivided one, and nothing renders differently for a direct child of the range.
+Ed Wood Memorial Buttress is kept in Southern Pickets — it is a real buttress with a real
+route ("Plan 9 from Outer Space"), not a stub.
+
+---
+
+## NOT actioned — needs a decision
+
+### 1. Summit Chief — two overlapping groupings, no clean answer
 
 `wa_summit_chief` (crag, 0 routes, no elevation) sits **15 m** from
 `wa_summit_chief_mountain` (peak, 2 routes, 7,467 ft / 1,323 ft prominence). Same
@@ -112,7 +125,7 @@ across both.
 Deleting the stub is easy; deciding which region owns these Alpine Lakes summits is a
 product call, and doing the first without the second just hides the question.
 
-### 3. Rejected candidates — recorded so they are not re-raised
+### 2. Rejected candidates — recorded so they are not re-raised
 
 - **`** Enchantments Bouldering` ← Dragontail, Colchuck Balanced Rock, Witches Tower…** —
   false positive. That group is scoped by *discipline*, not geography; alpine peaks do not

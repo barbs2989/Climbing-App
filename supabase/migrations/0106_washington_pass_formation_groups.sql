@@ -1,5 +1,17 @@
--- 0104: three Washington Pass formation groups were hollow shells sitting BESIDE the
+-- 0106: three Washington Pass formation groups were hollow shells sitting BESIDE the
 -- peaks they name.
+--
+-- APPLIED 2026-08-09, and verified against the live DB rather than on the SQL Editor's
+-- word: Liberty Bell Group 27 -> 50 with all six children on correct ltree paths, Kangaroo
+-- Ridge 0 -> 13, Silver Star and Wine spires 10 -> 25, the duplicate stub gone,
+-- wa_sub_wapass unchanged at 149, and `check:counts` clean across all 47,572 areas.
+--
+-- NUMBERED 0104 WHEN IT WAS PASTED, renamed to 0106 afterwards. `main` moved underneath
+-- this branch: 0103_profile_discoverable was itself renumbered to 0104 to settle an
+-- earlier collision, and 0105 is claimed by an open branch. The file name is
+-- documentation and the applied state does not depend on it, which is exactly what
+-- README-numbering.md says to do. `ls supabase/migrations/` in a worktree cut days ago
+-- reports a stale answer -- fetch first, and check every ref, not just the working tree.
 --
 -- Reported as "South Early Winter Spire and North Early Winter Spire aren't in the
 -- Liberty Bell Group". They are not, and the same defect is on both of its neighbours.

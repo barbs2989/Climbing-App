@@ -318,7 +318,7 @@ a build error, but a screen that renders wrong or not at all.
   best-known lines at Washington Pass rendered outside the formation every guidebook files
   them under. Kangaroo Ridge (`route_count` 0, holding two empty stubs while all five
   populated formations sat outside) and "Silver Star and Wine spires" (containing neither
-  Silver Star nor three of the four Wine Spires) had the identical defect. `0104` repaired
+  Silver Star nor three of the four Wine Spires) had the identical defect. `0106` repaired
   all three.
   - **The mechanism will recur on any import.** Two loads that were never joined: an
     OpenBeta-derived crag tree supplied the grouping rows plus hollow `crag` stubs, and a

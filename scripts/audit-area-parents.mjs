@@ -8,7 +8,7 @@
 // the formation every guidebook files them under. Kangaroo Ridge (route_count 0, holding
 // two empty stubs while all five populated formations sat outside) and "Silver Star and
 // Wine spires" (containing NEITHER Silver Star NOR three of the four Wine Spires) had the
-// identical defect. 0104 repaired all three.
+// identical defect. 0106 repaired all three.
 //
 // Nothing could see it. check:counts proves route_count matches the SUBTREE it has -- it
 // is exactly correct about a wrong tree. The ltree paths were self-consistent. No guard
@@ -300,7 +300,7 @@ process.exit(0);
 //   node scripts/audit-area-parents.mjs --inject=stray
 //       pulls a populated peak out of the Liberty Bell Group and re-files it as the
 //       group's sibling. D1 must list it under that group (41 -> 43: the peak is also
-//       picked up by a second group whose radius overlaps). This is 0104's defect.
+//       picked up by a second group whose radius overlaps). This is 0106's defect.
 //
 //   node scripts/audit-area-parents.mjs --inject=stub
 //       clones a populated peak as a 0-route crag ~11 m away with a PLURALISED name.
