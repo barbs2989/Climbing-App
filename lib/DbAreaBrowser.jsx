@@ -268,12 +268,17 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
 
-      {!loading && !error && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
+      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
-      {error && <div style={{ color: C.red, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div>}
+      {/* Data outranks error, as in the state picker: a failed REFETCH leaves the previous
+          children/routes intact, and hiding a list the user can still use is worse than showing
+          it. Red stays for "there is nothing here", where "check your connection" is actionable;
+          a surviving list gets a muted staleness note instead. */}
+      {error && !((children && children.length) || (routes && routes.length)) ? <div style={{ color: C.red, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't load this area — check your connection and try again.</div> : null}
+      {error && ((children && children.length) || (routes && routes.length)) ? <div style={{ color: C.textMuted, fontSize: 12.5, lineHeight: 1.5 }}>Couldn't refresh just now — showing what loaded last.</div> : null}
 
-      {!loading && !error && children && children.length > 0 && searchMode === "areas" ? (
+      {!loading && children && children.length > 0 && searchMode === "areas" ? (
         <div style={{ marginBottom: 10 }}>
           <SL C={C}>{childNoun(children)}</SL>
           {children.map(a => (
@@ -287,10 +292,12 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
         </div>
       ) : null}
 
-      {!loading && !error && isLeaf && (
+      {!loading && isLeaf && (
         routes && routes.length > 0
           ? routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)
-          : <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div>
+          /* Only claim the crag is empty when the load actually succeeded — otherwise a
+             failed refetch reports "no routes" about a crag it never managed to read. */
+          : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
       )}
 
       <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
