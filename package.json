@@ -17,6 +17,7 @@
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
     "audit:identity": "node scripts/audit-route-identity.mjs",
     "audit:distances": "node scripts/audit-distances.mjs",
+    "audit:area-parents": "node scripts/audit-area-parents.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
     "check:crew": "node scripts/check-crew-ready.mjs",
     "check:log": "node scripts/check-log-hydration.mjs",
