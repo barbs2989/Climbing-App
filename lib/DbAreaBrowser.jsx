@@ -12,6 +12,7 @@ import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } fro
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade } from "./grade";
+import { clickable } from "./clickable";
 
 // Grade for a compact row. Catalog grades often carry a qualifier inline
 // ("Class 3 (short 4th-class crux)"); shortGrade drops it here, and the route
@@ -76,7 +77,7 @@ function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
   const sub = [areaName || null, r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
-    <div onClick={() => onOpen(r)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
+    <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
         <div style={{ fontSize: 11, color: C.textMuted, display: "flex", alignItems: "center", gap: 5 }}>
@@ -148,7 +149,7 @@ function StatePicker({ onPick, C }) {
         <option value="">{isLoading ? "Loading states…" : (states && states.length) ? "Select a state…" : error ? "Couldn’t load states" : "No states found"}</option>
         {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
-      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Use a route or crag Route finder to filter and search by type, grade, stars and more.</div>
+      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
@@ -178,8 +179,8 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
     <div style={{ marginBottom: 14 }}>
       <SL C={C}>{"Search " + scope.name}</SL>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
-        <div onClick={() => setMode("areas")} style={tab(mode === "areas")}>Areas</div>
-        <div onClick={() => setMode("routes")} style={tab(mode === "routes")}>Routes</div>
+        <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
+        <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
       </div>
       <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
       {qq ? (
@@ -189,7 +190,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
             : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No areas match.</div>
             : areaHits.map(a => (
-              <div key={a.id} onClick={() => onJumpToArea(a)} style={row}>
+              <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
                   <div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
@@ -202,7 +203,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
             : !routeHits || !routeHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No routes match.</div>
             : routeHits.map(r => (
-              <div key={r.id} onClick={() => onOpenRoute(r)} style={row}>
+              <div key={r.id} {...clickable(() => onOpenRoute(r))} style={row}>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
                 </div>
@@ -216,7 +217,10 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
   );
 }
 
-// ── one area's own page: hero + save + View all/Near me/Route finder/Objectives + sub-areas ──
+// ── one area's own page: hero + save + View all/View map/Objectives + sub-areas ──
+// "View all N routes" IS the route finder, opened unfiltered — the finder's own default
+// state is every route in the subtree. There used to be a second "Route finder" button in
+// the row below wired to the identical handler, i.e. the same screen under two names.
 function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested }) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
@@ -263,7 +267,6 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
       ) : null}
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>View map</button>
-        <button onClick={onFinder} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Route finder</button>
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
@@ -282,7 +285,7 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
         <div style={{ marginBottom: 10 }}>
           <SL C={C}>{childNoun(children)}</SL>
           {children.map(a => (
-            <div key={a.id} onClick={() => onDrill(a)} style={{ background: C.card, borderRadius: 12, padding: "12px 14px", marginBottom: 11, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
+            <div key={a.id} {...clickable(() => onDrill(a))} style={{ background: C.card, borderRadius: 12, padding: "12px 14px", marginBottom: 11, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: C.text }}>{a.name}</span>
                 <span style={{ fontSize: 12, color: a.route_count > 0 ? C.blue : C.textMuted, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>{a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + " →"}</span>
@@ -379,7 +382,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
       {showSaved && savedSearches.length > 0 && (
         <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, marginBottom: 10, maxHeight: 200, overflowY: "auto" }}>
           {savedSearches.map(s => (
-            <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} onClick={() => loadSearch(s)}>
+            <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
               <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
               <button aria-label="Remove saved search" onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={{ background: "none", border: "none", color: C.textMuted, fontSize: 16, cursor: "pointer", padding: 4 }}>×</button>
             </div>
@@ -650,7 +653,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
           {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
           {sorted.map(a => (
-            <div key={a.id} onClick={() => onOpenArea(a)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? a._mi.toFixed(1) + " mi · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
@@ -686,7 +689,7 @@ function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate
           <div style={{ fontSize: 14.5, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
         </button>
         {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
-        <span onClick={() => onNavigate(area)} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
+        <span {...clickable(() => onNavigate(area))} aria-label={"Open " + area.name} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
       </div>
       {isOpen ? (
         isLoading
@@ -730,7 +733,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
           : !results || !results.length ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>{'No areas match "' + q.trim() + '"'}</div>
           : results.map(m => (
-            <div key={m.id} onClick={() => onNavigate(m)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }}>
+            <div key={m.id} {...clickable(() => onNavigate(m))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }}>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
                 <div style={{ fontSize: 11.5, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.parent_name || ""}</div>

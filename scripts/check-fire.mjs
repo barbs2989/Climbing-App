@@ -44,7 +44,12 @@ const GUARD = "check:fire";
 const DATA = "lib/fire.js";
 const MAP = "lib/FireMap.jsx";
 const PANEL = "lib/FireNearRoute.jsx";
-const FILES = [DATA, MAP, PANEL];
+// RouteDetail.jsx is here for reachability only. Everything above can be perfect and
+// mounted nowhere — the dead-UI class this repo has already shipped (descent_text was
+// populated on 1,021 routes and rendered on none). Measured: neutering the mount left
+// this guard green, because every other assertion is about the panel's own contents.
+const HOST = "RouteDetail.jsx";
+const FILES = [DATA, MAP, PANEL, HOST];
 
 let fails = 0;
 const fail = (msg) => { console.error("  FAIL  " + msg); fails++; };
@@ -286,6 +291,72 @@ console.log("\n--- unreported containment is never flattered ---");
   else ok("a missing acreage is stated, not printed as 0");
 }
 
+console.log("\n--- the panel is actually reachable, on every route ---");
+// #769 moved the panel to the Safety tab, which is the right home for a hazard. It briefly
+// needed a complementary Overview mount, because `showSafety` was CONTENT-gated and a bare
+// crag route — 99.5% of the catalog — was offered no Safety tab at all. #776 removed that
+// gate instead: the Safety tab is now offered on every route, so there is ONE mount and the
+// fallback is gone.
+//
+// That makes the tab gate itself load-bearing, and it is asserted here for that reason. If
+// anyone re-gates "safety" in the tab strip, the panel does not merely move — it becomes
+// unreachable for almost every route in the app, with no fallback left to catch it. That is
+// #655's exact shape (the right content behind a tab those very routes never see), and it
+// would otherwise be a one-token change in a filter expression nobody would connect to fires.
+{
+  // RAW, not blanked. The sub-tab branches are `tab==="safety"?` — the discriminator is
+  // a STRING LITERAL, and the blanker wipes string contents, so in blanked source every
+  // branch collapses to `tab===""` and they become indistinguishable. (First run failed
+  // with "gone blind" for exactly that reason.) Requiring the `?` keeps prose from
+  // matching, and RouteDetail's own comments about the Safety tab do not contain it.
+  const h = raw[HOST];
+  if (!/\bFireNearRoute\b/.test(h)) {
+    fail(`${HOST}: FireNearRoute is never referenced — the per-route fire panel exists but is mounted nowhere`);
+  } else {
+    // The element is built once and rendered by name, so look for the rendered symbol
+    // rather than the JSX tag.
+    const el = (h.match(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{[^]*?<FireNearRoute/) || [])[1];
+    const sym = el || "FireNearRoute";
+    const safetyAt = h.search(/tab===["']safety["']\s*\?/);
+    const overviewAt = h.search(/tab===["']overview["']\s*\?/);
+    if (safetyAt < 0 || overviewAt < 0) {
+      fail(`${HOST}: could not find both the safety and overview sub-tab branches — this reachability check has gone blind`);
+    } else {
+      // Scope each check to its own branch: from that branch to the start of the next one.
+      const bounds = [safetyAt, overviewAt].sort((a, b) => a - b);
+      const seg = (start) => h.slice(start, bounds.find(b => b > start) ?? Math.min(h.length, start + 30000));
+      const inSafety = new RegExp("\\{\\s*" + sym + "\\s*\\}").test(seg(safetyAt));
+      // Strip JSX comments before looking for a second mount: the Overview branch OPENS with a
+      // `{/* … see fireEl above … */}` note explaining where the panel went, and a naive search
+      // for the symbol would report that prose as a mount. Then match any single-brace expression
+      // containing it, so a restored `{showSafety?null:fireEl}` is caught as well as a bare one.
+      const ovSeg = seg(overviewAt).replace(/\{\s*\/\*[^]*?\*\/\s*\}/g, " ");
+      const inOverview = new RegExp("\\{[^{}]*\\b" + sym + "\\b").test(ovSeg);
+
+      if (!inSafety) fail(`${HOST}: the fire panel is not rendered on the Safety tab — that is its home (#769)`);
+      else ok("the fire panel renders on the Safety tab");
+
+      // One mount, not two. The old Overview fallback would now double-render the hazard box.
+      if (inOverview) fail(`${HOST}: the fire panel is ALSO mounted on Overview — every route has a Safety tab now (#776), so this renders the hazard box twice`);
+      else ok("the fire panel is mounted once, on Safety, with no leftover Overview copy");
+
+      // And the tab that holds it is offered unconditionally. Scope this to the tab strip's own
+      // filter callback — the word "safety" appears all over this file, so a file-wide search
+      // would be satisfied by prose, and `showPlan` legitimately lives in the same expression.
+      // Lazy `[^]*?`, not `[^\]]*`: every entry in that array ends with a `]` of its own, so a
+      // negated-] class stops at the first one and the match never reaches the filter.
+      const strip = h.match(/\[\s*\["overview","Overview"\][^]*?\["safety","Safety"\]\s*\]\s*\.filter\(([^)]*)\)/);
+      if (!strip) {
+        fail(`${HOST}: could not find the route sub-tab strip and its filter — this gate check has gone blind`);
+      } else if (/safety/.test(strip[1])) {
+        fail(`${HOST}: the Safety tab is gated again (${strip[1].trim().slice(0, 80)}) — the fire panel has no fallback since #776, so gating that tab makes it unreachable for the 99.5% of routes with no safety data of their own. #655's shape.`);
+      } else {
+        ok("the Safety tab is offered on every route, so the single mount is reachable everywhere");
+      }
+    }
+  }
+}
+
 console.log("\n--- the offline path stays honest ---");
 // main.jsx sets networkMode "always" globally, which is what turns an offline device
 // into an error instead of React Query's paused no-data-no-error limbo. fire.js must
@@ -301,7 +372,7 @@ if (fails) {
 }
 console.log(`${GUARD}: ok — the fire surfaces state what they know and admit what they do not.\n`);
 
-// Injection-tested, 10/10 caught and each naming its own defect. Cases:
+// Injection-tested, 13/13 caught and each naming its own defect. Cases:
 //   1.  lib/fire.js  — delete `orderByFields` from fetchActiveFires  → "capped but sends no orderByFields"
 //   2.  lib/FireMap.jsx — `uDistMi(...)` → `uDistMi ? …" mi" : …" km"` → "used as a boolean"
 //   3.  lib/fire.js  — add `placeholderData: p => p` to useFiresNear  → "carries placeholderData"
@@ -322,5 +393,25 @@ console.log(`${GUARD}: ok — the fire surfaces state what they know and admit w
 //     file. Neutering the DRAW while leaving the in-effect/upcoming split intact kept the
 //     name present, so a warning starting tomorrow drew exactly like one in effect. Now
 //     scoped to the drawing effect.
-// Both are the "injection logged, counter didn't move" shape: presence is not use, and
-// proximity is not scope.
+//   11. RouteDetail.jsx — drop `{fireEl}` from the safety branch    → "not rendered on the Safety tab"
+//   12. RouteDetail.jsx — add a second `{fireEl}` on Overview       → "ALSO mounted on Overview"
+//   13. RouteDetail.jsx — restore `{showSafety?null:fireEl}`        → "ALSO mounted on Overview"
+//   14. RouteDetail.jsx — re-gate the strip, `x[0]==="safety"?!cragOnly:true`
+//                                                                    → "the Safety tab is gated again"
+//   15. RouteDetail.jsx — rename the strip's `["safety","Safety"]`  → "gone blind"
+//   (12 and 13 must BOTH trip: the search strips JSX comments first — the Overview branch opens
+//   with a note that mentions `fireEl` — and then matches any brace expression containing the
+//   symbol, so a gated fallback is caught as well as a bare one. An earlier `\{\s*fireEl\s*\}`
+//   form passed case 13. Case 15 exists because this gate check is the kind that fails OPEN: a
+//   renamed tab strip makes the regex miss and every conclusion below it vacuous.)
+//
+// Both of the false passes above are the "injection logged, counter didn't move" shape:
+// presence is not use, and proximity is not scope.
+//
+// Cases 11-13 exist because the first version of this guard had the SAME hole one level
+// up: it asserted a great deal about the panel's contents and nothing about whether the
+// panel was mounted. Measured, not assumed — neutering the mount left the guard green,
+// which is the descent_text shape (populated on 1,021 routes, rendered on none). The
+// reachability block reads RAW source, because the sub-tab discriminator is a string
+// literal (`tab==="safety"`) and the blanker wipes string contents, collapsing every
+// branch to `tab===""`.
