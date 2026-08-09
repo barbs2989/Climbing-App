@@ -17,6 +17,7 @@ import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequireme
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
+import { hasTag } from "./lib/routeTags";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
 const DbGuideApply = lazy(() => import("./lib/DbGuideApply"));
@@ -2129,7 +2130,7 @@ function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catc
     vert:{id:"vert",icon:"📈",label:"Vert 1yr",val:pp=>vertOf(pp),disp:pp=>uElev(vertOf(pp)),suffix:"climbed · 12mo",note:"Estimated vertical climbed over the last 12 months — rewards the people logging the biggest days, not just the hardest moves."},
     onsight:{id:"onsight",icon:"⚡",label:"Onsight pts",val:pp=>onsightPts(pp),disp:pp=>onsightPts(pp).toLocaleString(),suffix:disc==="bouldering"?"flash pts":"onsight pts",note:"A cumulative score for first-try sends — onsights and flashes across every climb, weighted by grade. Rewards depth, not just your single hardest first-try."},
     days:{id:"days",icon:"📅",label:"Days 1yr",val:pp=>daysOf(pp),suffix:"days out · 12mo",note:"Days on rock or in the mountains over the last 12 months. Rewards showing up."},
-    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Fifty Classics",val:pp=>seedHistoryFor(pp).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>seedHistoryFor(pp).filter(t=>(t.route.lists||[]).includes("state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>seedHistoryFor(pp).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
+    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Classic climbs",val:pp=>seedHistoryFor(pp).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>seedHistoryFor(pp).filter(t=>hasTag(t.route,"state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>seedHistoryFor(pp).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
   };
   let ids;
   const ROPED=disc!=="bouldering"&&disc!=="scrambling"&&disc!=="hiking";
