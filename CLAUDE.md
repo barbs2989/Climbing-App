@@ -25,6 +25,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
@@ -471,6 +472,40 @@ a build error, but a screen that renders wrong or not at all.
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
+- **`check:clickable`** finds controls only a mouse can operate. This app has no CSS
+  framework, so controls are hand-built divs with inline styles — and a `<div onClick>` is
+  not in the tab order, does nothing on Enter or Space, and is announced as prose. **279
+  clickable non-native elements** exist; when the check was written **not one** of them had
+  a `role`, and the whole app contained **zero** `role="button"`. That is not a markup
+  nitpick: the route rows, the area rows and the search results are all `<div onClick>`, so
+  *opening a climb could not be done from a keyboard at all*.
+  - `lib/clickable.js` supplies the triad — `role`, `tabIndex`, and an `onKeyDown` firing on
+    Enter and Space. All three are load-bearing: `role` alone is **worse** than a bare div,
+    because it announces a button that still cannot be reached. Spread it as
+    `<div {...clickable(go)}>`. It is a helper rather than a swap to real `<button>`s
+    because a button brings its own font, padding and box metrics, and this codebase
+    positions everything by hand — see the `<select>`-vs-`<button>` note.
+  - `preventDefault` on Space is required (Space scrolls the page), and the handler ignores
+    events whose `target` is not the row itself, so a nested delete button keeps its Enter.
+  - **The baseline is a per-file count, i.e. a ratchet** — the number may go down, never up.
+    It deliberately cannot see a one-for-one swap in the same file. A stable per-control key
+    would be better and is not available: this codebase packs many declarations onto one
+    physical line, so a line number does not identify a control, and handler text repeats
+    verbatim (`()=>openRoute(r)` many times over). A stale baseline (higher than reality)
+    **fails**, so bookkeeping cannot quietly re-open room for regressions.
+  - Two exemptions, both measured rather than assumed. `onClick={e=>e.stopPropagation()}` is
+    a **shield**, not a control — it stops a click inside a sheet reaching the backdrop, and
+    demanding a tab stop there would put a focusable "button" that does nothing in front of
+    every modal. And `{...clickable(fn)}` is recognised **explicitly**: a spread carries no
+    attribute names, so without that a *fixed* control would stop looking like a control and
+    read as one fewer thing to check rather than one more thing fixed.
+  - Fails closed: zero clickable non-native elements means the scan broke, not that the app
+    is clean.
+  - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
+    1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
+    attributes are present.
+  - Injection-tested: reverting one `{...clickable(…)}` to a bare `onClick` fails naming the
+    file and line. Gated by `npm run build`.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
