@@ -613,7 +613,7 @@ a build error, but a screen that renders wrong or not at all.
     branch and a `.data` read must both precede the "No active wildfires" claim. A first draft
     used "look at the preceding 600 characters" and reported the route panel's real gate —
     early returns 40 lines up — as missing.
-  - Injection-tested, 10/10, each naming its own defect. **Two started as false passes and both
+  - Injection-tested, 13/13, each naming its own defect. **Two started as false passes and both
     were scope mistakes rather than missing rules**: the `body.error` check looked for `throw`
     within 200 characters and found the *next statement's* throw, and the `zoneInEffect` check
     only asked whether the name appeared in the file, so neutering the draw while leaving the
@@ -622,6 +622,17 @@ a build error, but a screen that renders wrong or not at all.
   - Writing it found a live gap nobody had noticed: the **fire-weather query was the one capped
     request still going out unordered**. Size is meaningless for a weather zone, but
     "which of these ends first" is exactly what you want to keep, so it now orders `ends ASC`.
+  - It also reads `RouteDetail.jsx`, for **reachability only**. The first version had the same
+    hole one level up: it asserted a great deal about the panel's contents and nothing about
+    whether the panel was *mounted*. Measured rather than assumed — neutering the mount left it
+    green, which is the `descent_text` shape (populated on 1,021 routes, rendered on none).
+    Since **#769** the placement is two mutually exclusive mounts (`{fireEl}` on Safety;
+    `{showSafety?null:fireEl}` on Overview) because `showSafety` is **content-gated** — a bare
+    crag route is offered no Safety tab at all. So *neither* is a reachable state and would be
+    #655 again, and *both* would double-render a red hazard box; the guard pins exactly one.
+    That block reads **raw** source, because the discriminator is a string literal
+    (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
+    `tab===""` — the first run failed with "gone blind" for precisely that reason.
 
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
