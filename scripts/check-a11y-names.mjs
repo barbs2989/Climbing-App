@@ -29,6 +29,7 @@
 // "Reply to Sam…"), where a static label would announce less, not more.
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const BASELINE = join(ROOT, "scripts", "a11y-names-baseline.json");
@@ -67,7 +68,7 @@ const tagsOf = (src, name) => {
 const lineOf = (src, i) => src.slice(0, i).split("\n").length;
 
 const findings = [];
-for (const file of walk(ROOT)) {
+for (const file of assertCovered(walk(ROOT), ROOT, "check:a11y-names")) {
   const rel = file.slice(ROOT.length).replace(/^\/+/, "");
   const src = readFileSync(file, "utf8");
   for (const tag of ["input", "textarea", "select"]) {

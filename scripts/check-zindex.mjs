@@ -16,6 +16,7 @@
 // like; just stay under Z_TOAST.
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { assertCovered } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts"]);
@@ -30,7 +31,7 @@ const walk = (dir, out = []) => {
   return out;
 };
 
-const files = walk(ROOT);
+const files = assertCovered(walk(ROOT), ROOT, "check:zindex");
 
 // ---- find the declared ceiling ---------------------------------------------
 let ceiling = null, ceilingFile = null;
