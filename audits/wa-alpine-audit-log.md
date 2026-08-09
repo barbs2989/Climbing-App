@@ -6268,3 +6268,65 @@ handling on North Ridge and The Gendarme (no elevation conflation despite this b
 recurring bug shape on this peak), and gain_ft/loss_ft-vs-itinerary sums for Steel, North Ridge and
 Ice Cliff Glacier -- see the researching agents' reports for full per-route detail (not reproduced
 here to keep this log terse).
+
+## Batch 91 (pass 2) -- 2026-08-09
+
+Checked: eight routes across four peaks -- Mount Stuart (West Ridge, closing out this peak), Mount
+Teneriffe (Kamikaze Trail, Standard Route), Mount Terror (North Face, East Ridge/"Southeast Face",
+Stoddard Buttress, West Ridge), and Mount Thomson (West Ridge). Researched via 4 parallel agents
+grouped by peak, citing SummitPost, Mountaineers.org, Mazamas, FastestKnownTime.com, WTA, dnr.wa.gov,
+AAC Publications/AAJ, Mountain Project, and CascadeClimbers.com trip reports -- same standard as prior
+batches. WebFetch to most of these domains was blocked by this session's egress proxy, so findings
+rest on WebSearch result snippets rather than full-page reads throughout this batch.
+
+Fixed (5): Mount Stuart West Ridge's `dist_km` (32.2) implied a phantom ~40 mi round trip on display,
+matching neither its own itinerary text (~16.5 mi) nor any external source -- a FastestKnownTime.com
+GPS track of the same loop and this row's own waypoints both converge on the one-way figure already
+used for the sibling Cascadian Couloir route (9.66 km, fixed in batch 90), so applied the same value
+here. Mount Teneriffe's Standard Route had its `approach_logistics.trailhead` wrongly set to "Mount
+Si Trailhead" -- a separate parking lot ~2.9 mi back down the same road -- contradicting its own
+approach text/waypoints and its Kamikaze Trail sibling; confirmed via WTA/DNR/Snoqualmie Valley
+Record coverage these are two distinct trailheads, not alternate names for one, and corrected to
+"Mount Teneriffe Trailhead." Mount Terror's East Ridge (stored under the `wa_mount_terror_southeast_
+face` id) had a `descent` field describing a reversal of the ascent, contradicting its own
+`descent_text`/`bail` fields and external sources (SummitPost, Mountain Project), which agree every
+route on this peak descends via the West Ridge gully into Crescent Creek Basin -- rewritten to match.
+Stoddard Buttress's `fa` field described two separate climbs (a July 16 1984 solo ascent plus a
+distinct "1985 left-side variant"), but AAC Publications' own synopsis of "Mount Terror, North Face,
+Left Side" describes one continuous solo ascent, July 14-17 1984 -- the AAJ writeup appears in the
+1985 volume only because AAJ volumes cover the prior season, not because of a second climb -- rewritten
+as the single event sources support. Mount Thomson West Ridge's `itinerary.days[0].gainFt/lossFt`
+(3600) turned out to be the actual bug, not the top-level `gain_ft`/`loss_ft` (5200) as initially
+suspected from a naive trailhead-to-summit elevation diff: a FastestKnownTime.com route page with
+matching waypoints and a corroborating WTA trip report both put the real cumulative gain/loss for this
+undulating PCT approach (over Kendall Ridge Saddle, Kendall Pass, past Ridge Lake and Bumblebee Pass)
+at ~5,200 ft, so the itinerary day was corrected to match the top-level fields instead.
+
+Flagged rather than fixed (8): Mount Stuart West Ridge's commitment grade ("III") is split across
+sources -- Mazamas' own route page supports III (matching the stored value) while Mountaineers.org and
+spokalpine.com list II -- left as-is, no clear tiebreaker. Its own itinerary text's "~16.5 mi" total is
+higher than the best-sourced external figure (~12 mi via FastestKnownTime); only the `dist_km` field
+itself was fixed, the prose was left for a human call. Mount Teneriffe Kamikaze Trail's `dist_km`
+(5.95) reads roughly 8-13% short against both its own waypoints (4.1 mi one-way) and the most-repeated
+external figure (8 mi round trip on AllTrails/aggregators), but sources on this route are inconsistent
+enough (ranging 6.5-14 mi) that no single figure could be called authoritative. Mount Terror's East
+Ridge/"Southeast Face" id-vs-name mismatch (already self-flagged in the row's own `corrections` field)
+remains unresolved -- sources use both names for what appears to be the same line, so no rename was
+made; its `fa` field stays null, no source gives a route-specific FA distinct from the 1932 whole-peak
+FA. Stoddard Buttress's commitment grade ("IV") could not be confirmed as specific to this route versus
+the older North Buttress line (sources split III/IV between the two). Mount Terror West Ridge's null
+`fa` may in fact be fillable with the 1932 Degenhardt/Strandberg whole-peak FA (one source describes
+that ascent's line as matching today's West Ridge), but nothing confirms today's route is precisely the
+1932 line rather than a later reconstruction -- left null pending a Beckey's guide check. Mount Thomson
+West Ridge's `fa` ("Fred Beckey, Helmy Beckey, Robert Craig & William Ford, 1940") could not be
+confirmed or refuted -- "William Ford" turned up in zero sources anywhere in connection with Beckey,
+Craig, or 1940 Cascades climbing, and the primary sources most likely to carry the real FA line
+(Beckey's guide, Mountaineers.org) were unreachable this pass; needs a human with direct access to
+those sources.
+
+Clean: elevation/coordinates for all four peaks (Stuart 9,415 ft; Teneriffe 4,788 ft; Terror 8,151 ft;
+Thomson 6,554 ft, matching every route row and area row exactly), Mount Stuart West Ridge's FA and
+gain/loss figures, Mount Teneriffe's land-manager correction (WA DNR, already fixed in a prior pass)
+and Kamikaze Trail's gain_ft, Mount Terror North Face's FA/grade/distance figures and West Ridge's
+description/grade, and Mount Thomson's grade/pitch-count/elevation -- see the researching agents'
+reports for full per-route detail (not reproduced here to keep this log terse).

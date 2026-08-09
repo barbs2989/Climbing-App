@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_mount_stuart_the_gendarme",
+  "last_processed_id": "wa_mount_thomson_west_ridge",
   "total_in_scope_last_count": 526,
   "total_wa_alpine_or_mountaineering_tagged": 625,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -2077,6 +2077,25 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-09-batch-90.sql",
       "note": "wa_mount_stuart_north_face: no fix -- already self-flagged (verif.status: unverified) as a likely duplicate of the real Ice Cliff Glacier route; confirmed no independently-sourced \"North Face\" line exists on Stuart. Left as-is, not deleted (may carry user content, a human call not a fact-audit fix)."
+    },
+    {
+      "batch_number": 91,
+      "date": "2026-08-09",
+      "route_ids": [
+        "wa_mount_stuart_west_ridge",
+        "wa_mount_teneriffe_kamikaze_trail",
+        "wa_mount_teneriffe_standard_route",
+        "wa_mount_terror_north_face",
+        "wa_mount_terror_southeast_face",
+        "wa_mount_terror_stoddard_buttress",
+        "wa_mount_terror_west_ridge",
+        "wa_mount_thomson_west_ridge"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 8,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-09-batch-91.sql",
+      "note": "Closes out Mount Stuart (west_ridge was its last unaudited route) and covers all of Mount Teneriffe, Mount Terror, and Mount Thomson."
     }
   ]
 }
