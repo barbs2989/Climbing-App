@@ -170,7 +170,11 @@ const visibleText = () => page.evaluate(() => {
 });
 
 async function load(qs, settle) {
-  await page.goto(base + qs, { waitUntil: "domcontentloaded" });
+  // 120s, not the 30s default: the Climbs tab lazily imports DbAreaBrowser, and the dev
+  // server compiles that chunk on the first request for it. The ClimbMatch.jsx warm-up
+  // above does not cover lazy children, so a cold, loaded machine blows the default and
+  // the run dies on ?zt=routes before checking anything.
+  await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
   await page.waitForFunction(() => window.__zeroReady === true, null, { timeout: 60000 }).catch(() => {});
   await page.waitForTimeout(settle);
   return await visibleText();
