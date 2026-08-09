@@ -1,0 +1,54 @@
+name: Area count drift check
+
+# Asks whether every areas.route_count still matches the truth.
+#
+# route_count is a denormalised aggregate maintained by a trigger on the ROUTES
+# table. Nothing maintains it when an AREA moves, is merged, or is deleted, so
+# every such operation silently leaves the ancestors above it wrong. 0017, 0027
+# and 0098 each repaired a round of exactly this, and each round was found by
+# somebody auditing by hand rather than by anything reporting it.
+#
+# It is user-visible: route_count is what the area browser prints beside an area
+# name and what areas are ordered by. Before 0098, Liberty Bell Group cached 6
+# against a true 27 -- 22% of its climbs, and sorted as though it were tiny.
+#
+# NOT a build gate, on purpose. Drift is a property of the DATABASE, not the
+# checkout: no code change can cause it and none can fix it. Failing
+# `npm run build` would block every unrelated PR on a condition its author
+# cannot affect, and the person who caused it (by running a migration) is not
+# the person who would see red. Same reasoning as the deploy drift check -- the
+# question has to be asked on a schedule, from outside.
+
+on:
+  schedule:
+    # Daily. Drift only appears when somebody runs a structural migration, which
+    # is a rare, deliberate act -- polling more often would just burn minutes on
+    # a 205k-row read that almost always says the same thing.
+    - cron: "20 7 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: area-count-drift
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  counts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # No npm install -- the script uses fetch and the REST API only, so this
+      # keeps working even when the build is broken.
+      - name: Does every area's cached route_count match the truth?
+        env:
+          # Read-only. The anon key is deliberate: `areas` and `routes` are
+          # publicly readable, and a checker that could write is a checker that
+          # can corrupt what it is checking.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-area-counts.mjs --sql

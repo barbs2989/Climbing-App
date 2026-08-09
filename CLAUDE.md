@@ -17,6 +17,7 @@ npm run check:boot # index.html's boot placeholder still matches the real nav
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:drift# does the live site actually serve the current tip of main?
+npm run check:counts# does every areas.route_count still match the truth?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -117,6 +118,31 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+- **`check:counts`** asks whether every `areas.route_count` still matches a fresh
+  count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
+  not in the build. `route_count` is maintained by a trigger on the **routes**
+  table, so it is correct for route inserts/deletes/moves but nothing maintains it
+  when an **area** moves, is merged, or is deleted — each of those silently leaves
+  every ancestor above it wrong. 0017, 0027 and 0098 each repaired a round of this,
+  and each round was found by somebody auditing by hand. It is not cosmetic:
+  `route_count` is what the area browser prints beside an area name and what
+  `lib/db.js` orders areas by, so a stale value both misstates the number and
+  misplaces the area — before 0098, Liberty Bell Group cached **6 against a true
+  27** and sorted as though it were tiny.
+  - **Not a build gate, deliberately.** Drift is a property of the database, not
+    the checkout: no code change can cause it and none can fix it, so failing
+    `npm run build` would block unrelated PRs on a condition their author cannot
+    affect, and whoever caused it (by running a migration) is not who sees red.
+  - Read-only, anon key only — a checker that could write is a checker that can
+    corrupt what it is checking. It also fails closed on an empty read, because
+    this guard's realistic failure mode is a **false pass**: zero routes makes
+    every area look consistent.
+  - Walks the tree once (post-order DFS, O(n)) instead of running one `path <@`
+    subtree count per area, which is 47k aggregate queries over 205k rows — that
+    cost is why the invariant went unchecked for so long.
+  - Injection-tested; the four cases are named at the bottom of the script and are
+    driven by `--inject=`, since the fault lives in the DB and the checker cannot
+    write. `--sql` prints the repair as a **recount**, never as literal numbers.
 
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly

@@ -28,7 +28,8 @@
     "check:zero": "node scripts/check-zero-state.mjs",
     "check:a11y-names": "node scripts/check-a11y-names.mjs",
     "check:claims": "node scripts/check-session-claims.mjs",
-    "check:drift": "node scripts/check-deploy-drift.mjs"
+    "check:drift": "node scripts/check-deploy-drift.mjs",
+    "check:counts": "node scripts/check-area-counts.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
