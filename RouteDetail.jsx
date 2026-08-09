@@ -22,6 +22,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
 import { routeTerrain, fitAdvice, fitGear } from "./lib/terrain";
+import { rappelReportedMax } from "./lib/rappels";
 import {uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,missingFacts,Comments,TopContributors,shapeOf,gainCoversWholeOuting} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
@@ -291,7 +292,16 @@ function fmtRappels(r){if(r==null)return null;if(typeof r!=="object")return r;va
    header states the count and total length, so a bare count here would just repeat it —
    keep only the prose that says something the table cannot. */
 function rappelNoteText(route){var s=fmtRappels(route&&route.rappels);if(s==null)return null;var t=String(s).trim();if(!t)return null;if(route&&route.rappelDetail&&route.rappelDetail.length&&/^\d+(?:\.\d+)?x?(?:\s*·\s*\d+(?:\.\d+)?\s*(?:m|ft))?$/i.test(t))return null;return t;}
-function rappelLabel(route){if(route&&route.rappelDetail&&route.rappelDetail.length)return route.rappelDetail.length+"x";var r=route&&route.rappels;if(r==null)return null;if(typeof r==="object")return r.count!=null?r.count+"x":null;var t=String(r).trim();if(/^\d+$/.test(t))return t+"x";var m=t.match(/^~?\s*(\d+)\s*[-\u2013]\s*(\d+)/);if(m)return m[1]+"\u2013"+m[2];var n=rappelCount(route);return n!=null?"~"+n+"x":null;}
+/* Every rappel count a route can state, so the two boxes cannot print different numbers.
+   Forbidden Peak's West Ridge is the case: its rappelDetail lists 3 stations, its `rappels`
+   prose says "~5 single-rope raps via East Ledges/NE Face", and its rappelCountNote says
+   late-season parties need "as many as 6-7". Overview and the table header both said "3",
+   the prose box beside them said 5, and nothing reconciled them. The documented count stays
+   the headline \u2014 it is the one backed by station-by-station data \u2014 but when another field on
+   the same row reports more, the label says so instead of quietly disagreeing. */
+function rappelLabel(route){var n=(route&&route.rappelDetail&&route.rappelDetail.length)?route.rappelDetail.length:null;
+  if(n!=null){var mx=rappelReportedMax(route);return (mx!=null&&mx>n)?(n+"\u2013"+mx+"x"):(n+"x");}
+  var r=route&&route.rappels;if(r==null)return null;if(typeof r==="object")return r.count!=null?r.count+"x":null;var t=String(r).trim();if(/^\d+$/.test(t))return t+"x";var m=t.match(/^~?\s*(\d+)\s*[-\u2013]\s*(\d+)/);if(m)return m[1]+"\u2013"+m[2];var n2=rappelCount(route);return n2!=null?"~"+n2+"x":null;}
 function rappelCount(route){if(route&&route.rappelDetail&&route.rappelDetail.length)return route.rappelDetail.length;var r=route&&route.rappels;if(r==null)return null;if(typeof r==="object")return r.count!=null?r.count:null;var s=String(r).trim();if(/^\d+$/.test(s))return parseInt(s,10);var m=s.match(/^~?\s*(\d+)\s*[-–]?\s*(?:rappels?|raps?)?\b/i);if(m)return parseInt(m[1],10);m=s.match(/\b(\d+)\s*[-–]?\s*(?:rappels?|raps?)\b/i);if(m)return parseInt(m[1],10);return null;}
 function TechStats({route,onEdit}){
   const disc=catOf(route);
@@ -434,7 +444,7 @@ function RappelTable({route,onEdit}){
   const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);
   const total=raps.reduce((a,r)=>a+(r.lengthM||0),0);
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
-    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{"RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":"")}</div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
+    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{(function(){var mx=rappelReportedMax(route);return (mx!=null&&mx>raps.length)?("RAPPELS · "+raps.length+" documented · up to "+mx+" reported"):("RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":""));})()}</div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
     {route.rappelCountNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:9,background:C.surface,borderRadius:8,padding:"7px 9px"}}>{route.rappelCountNote}</div>:null}
     {raps.map((r,idx)=><div key={r._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}><div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2,gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div></div>)}
   </div>;
