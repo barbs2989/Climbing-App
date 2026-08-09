@@ -9,15 +9,20 @@
 // Does not ship. Only ever passed via `vite --config`.
 
 import base from "../vite.config.js";
-import { buildOpener, lazyChunks } from "./lib/overlay-scaffold.mjs";
+import { buildOpener, buildRouteDetailOpener, routeDetailSource, lazyChunks } from "./lib/overlay-scaffold.mjs";
 
 const ANCHOR = "  const prevUidRef=useRef(uid);";
+// RouteDetail owns overlays of its own, and no `?z=` injected into App can reach a flag
+// local to another component. So it gets its own opener, and App is told the names so it
+// knows to navigate into a route first. See scripts/lib/overlay-scaffold.mjs.
+const RD_NAMES = buildRouteDetailOpener(routeDetailSource(), "check:overlay-scroll").names;
 
 function overlayScrollScaffold() {
   return {
     name: "overlay-scroll-scaffold",
     enforce: "pre", // before @vitejs/plugin-react compiles the JSX away
     transform(code, id) {
+      if (id.endsWith("/RouteDetail.jsx")) return buildRouteDetailOpener(code, "check:overlay-scroll").code;
       if (!id.endsWith("/ClimbMatch.jsx")) return null;
       const n = code.split(ANCHOR).length - 1;
       if (n !== 1) {
@@ -30,7 +35,7 @@ function overlayScrollScaffold() {
       }
       // Discovery + opener are shared with check:zero and check:signed-in, so the three
       // cannot drift on which modals exist. See scripts/lib/overlay-scaffold.mjs.
-      const { inject } = buildOpener(code, ANCHOR, "check:overlay-scroll");
+      const { inject } = buildOpener(code, ANCHOR, "check:overlay-scroll", undefined, RD_NAMES);
       return code.replace(ANCHOR, ANCHOR + "\n  " + inject);
     },
   };

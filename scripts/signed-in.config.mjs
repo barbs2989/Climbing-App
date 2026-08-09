@@ -14,7 +14,12 @@
 // cannot leak into a bundle.
 
 import base from "../vite.config.js";
-import { buildOpener, lazyChunks } from "./lib/overlay-scaffold.mjs";
+import { buildOpener, buildRouteDetailOpener, routeDetailSource, lazyChunks } from "./lib/overlay-scaffold.mjs";
+
+// RouteDetail owns overlays of its own, and no `?z=` injected into App can reach a flag local
+// to another component. So it gets its own opener, and App is told the names so it knows to
+// navigate into a route first. See scripts/lib/overlay-scaffold.mjs.
+const RD_NAMES = buildRouteDetailOpener(routeDetailSource(), "check:signed-in").names;
 
 // The real declaration, left intact. It sits below every `set*Open` setter, which is what
 // makes it a usable injection point, and it is NOT rewritten — unlike the zero-state
@@ -26,6 +31,7 @@ function signedInScaffold() {
     name: "signed-in-scaffold",
     enforce: "pre", // must run before @vitejs/plugin-react compiles the JSX away
     transform(code, id) {
+      if (id.endsWith("/RouteDetail.jsx")) return buildRouteDetailOpener(code, "check:signed-in").code;
       if (!id.endsWith("/ClimbMatch.jsx")) return null;
       const n = code.split(ANCHOR).length - 1;
       if (n !== 1) {
@@ -38,7 +44,7 @@ function signedInScaffold() {
           "scripts/signed-in.config.mjs."
         );
       }
-      const { inject } = buildOpener(code, ANCHOR, "check:signed-in");
+      const { inject } = buildOpener(code, ANCHOR, "check:signed-in", undefined, RD_NAMES);
       return code.replace(ANCHOR, ANCHOR + "\n  " + inject);
     },
   };
