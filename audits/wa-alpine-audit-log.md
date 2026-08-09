@@ -6611,3 +6611,26 @@ own summit waypoint -- unclear if intentional. Northwest Mox Peak's `fa` field a
 for the SE (Hard Mox) spire instead -- this contradicts the row's own `data_quality.gaps`
 admission that the NW spire's FA is unconfirmed, but no primary source (AAJ 1942, Beckey's guide)
 was reachable to settle it either way, so left as-is rather than guessed at.
+
+## Batch 96 (pass 2) -- 2026-08-09
+
+Checked: Old Snowy Mountain / South Ridge-PCT approach, Mount Olympus / Blue Glacier-Snow Dome
+East Face Ramps, Mount Olympus / Summit Block NW Edge Finish, Mount Olympus / Traverse, Unicorn
+Peak / Open Book, Ottohorn / Southeast Route, Ottohorn / West Ridge, Overcoat Peak / Southeast
+Route.
+
+**Fixed (1):** Ottohorn's West Ridge route claimed the peak's 1961 first ascent (Cooper, Denny,
+Firey, Firey, Whitmore) as its own `fa`, stating outright "This route IS the first-ascent line."
+Independent sources (the AAC's "First Ascents in the Southern Pickets" and other secondary
+accounts) agree that 1961 climb went up the EAST ridge from the Otto-Himmel col -- this peak's own
+Southeast Route already attributes it there, correctly hedged. A CascadeClimbers.com trip report
+titled "FAs of Beep, Honk, and the West Ridge of Ottohorn 7/25/2017" independently confirms the
+West Ridge was a separate, later first ascent; the page itself was unreachable (egress-blocked) so
+the exact 2017 party/date could not be confirmed, and `fa` was corrected to remove the false 1961
+claim rather than guess a replacement.
+
+**Clean:** elevations, coordinates, land managers, permit/fee info, and first-ascent parties
+(where stored) on the remaining seven routes all cross-checked against Wikipedia, NPS/USFS pages,
+and peak databases (PeakVisor, Peakbagger, ListsOfJohn) with no discrepancies -- including Mount
+Olympus's 7,980 ft summit and its 47.8013N/123.7109W coordinate, which matched to five decimal
+places across all three Olympus routes, the area row, and external sources.
