@@ -188,7 +188,33 @@ for (const t of deletes) {
   const sameArea = sameName.filter(s => s[SCOPE_COL] === row[SCOPE_COL]);
   if (sameArea.length > 1) continue;
 
-  const elsewhere = sameName.filter(s => s.id !== t.id);
+  // A twin does not have to share the name. The peak-scoped import RENAMES as it goes —
+  // The Brothers' twins are "South Couloir (Standard Route)" and "Brothers Traverse (North
+  // Peak to South Peak)" against bare "South Couloir" / "Brothers Traverse" — so a
+  // name-only search finds unrelated routes and misses the actual survivor. That made the
+  // rule unsatisfiable for exactly the dedup it was written to allow.
+  //
+  // So any OTHER id quoted in this statement is also a twin candidate, resolved against
+  // the live table. The claim still has to be true — an id that does not exist is not a
+  // twin — and every accepted twin is printed by name below so a human can see what was
+  // asserted. This widens what counts as a candidate; it does not weaken the check that
+  // the asserted row is really there.
+  const quoted = [...t.full.matchAll(/'([a-z0-9_]+)'/gi)].map(m => m[1]).filter(id => id !== t.id);
+  let byId = [];
+  if (quoted.length) {
+    const q = await fetch(
+      `${SUPABASE_URL}/rest/v1/${TABLE}?id=in.(${[...new Set(quoted)].join(",")})&select=id,name,${SCOPE_COL}`,
+      { headers: headers(key) }
+    );
+    byId = await q.json();
+  }
+  // An id-asserted twin only counts if it is on a DIFFERENT area. Asserting a row that
+  // sits on the same area as the target proves nothing — in a dedup that area is usually
+  // the one being emptied, so the "twin" is about to be deleted too. (Same-name rows keep
+  // their original handling: a same-area namesake already short-circuits above.)
+  const candidates = [...sameName, ...byId.filter(b => !sameName.some(s => s.id === b.id) && b[SCOPE_COL] !== row[SCOPE_COL])];
+
+  const elsewhere = candidates.filter(s => s.id !== t.id);
   if (!elsewhere.length) { onlyCopy.push({ ...t, name: row.name, area: row[SCOPE_COL] }); continue; }
 
   // Names like "East Face" are shared by 90+ routes catalog-wide, so "a row with this
@@ -196,7 +222,7 @@ for (const t of deletes) {
   // asserts in the guard — that is the claim being made, and it is checked against the
   // live row set rather than taken on trust.
   const asserted = elsewhere.filter(s => new RegExp(`'${s.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}'`).test(t.full));
-  if (asserted.length) crossArea.push({ ...t, name: row.name, area: row[SCOPE_COL], twin: asserted.map(s => `${s.id} (${s[SCOPE_COL]})`).join(", ") });
+  if (asserted.length) crossArea.push({ ...t, name: row.name, area: row[SCOPE_COL], twin: asserted.map(s => `${s.id} (${s[SCOPE_COL]})${s.name && s.name !== row.name ? ` named "${s.name}"` : ""}`).join(", ") });
   else onlyCopy.push({ ...t, name: row.name, area: row[SCOPE_COL],
     hint: `${elsewhere.length} other row(s) share this name, but none is named in this statement — put the intended twin's id in an EXISTS guard` });
 }
@@ -238,3 +264,29 @@ if (sql.length > PASTE_LIMIT || oversizeStmt.length || longLines.length) {
 
 if (!bad) console.log("OK    every target id exists; no DELETE removes an only copy");
 process.exit(bad ? 1 : 0);
+
+/* Injection tests for the twin rule — each must FAIL (exit 1), against the live table.
+ * Written as one-off .sql files and run through this script; all three use a real,
+ * existing delete target so only the twin claim is under test.
+ *
+ *   1. twin id asserted but NO SUCH ROW:
+ *        delete from routes where id = 'wa_south_couloir'
+ *          and exists (select 1 from routes k where k.id = 'wa_this_id_does_not_exist');
+ *      -> FAIL. This is the Triple Couloirs shape: the id was composed rather than
+ *         looked up, so the "duplicate" never existed and the delete removed the only copy.
+ *
+ *   2. no twin asserted at all:
+ *        delete from routes where id = 'wa_south_couloir';
+ *      -> FAIL.
+ *
+ *   3. twin asserted is a real row but on the SAME area as the target:
+ *        delete from routes where id = 'wa_south_couloir'
+ *          and exists (select 1 from routes k where k.id = 'wa_brothers_traverse');
+ *      -> FAIL. It proves nothing: in a dedup that area is the one being emptied, so the
+ *         claimed twin is usually about to be deleted too. This case passed when the
+ *         id-asserted candidate set was first widened, and the area check was added for it.
+ *
+ * Control: supabase/migrations/0101_drop_brothers_duplicate.sql must PASS and print both
+ * twins BY NAME — they are renamed survivors ("South Couloir (Standard Route)"), which is
+ * why a name-only twin search could not see them and the id assertion exists at all.
+ */
