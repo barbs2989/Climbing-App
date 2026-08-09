@@ -17,6 +17,7 @@ import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequireme
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
+import { hasTag } from "./lib/routeTags";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
 const DbGuideApply = lazy(() => import("./lib/DbGuideApply"));
@@ -174,11 +175,16 @@ function isRecent(d){if(!d)return false;const t=new Date(d).getTime();return !is
 
 
 
-const COND_ENUMS={snow:["None","Patchy","Continuous","Postholing","Impassable"],freezing:["Below route","At route level","Above route"],water:["Flowing","Trickle","Dry — carry water","Frozen"],trail:["Clear","Snow-free to TH","Partial snow","Fully snow-covered"],mud:["None","Some mud","Postholing / deep mud"]};
+/* protection/anchors/crowds are the last three climb_logs columns that had a column and no
+   question: protection_quality, anchor_quality and crowd_level have existed since 0037 and
+   nothing has ever written them. They are also the answers a climber most wants from the last
+   party — whether the pro is really there, whether the anchors are trustworthy, and whether
+   they will be queueing — and none of them can be read off the catalog, only off a report. */
+const COND_ENUMS={snow:["None","Patchy","Continuous","Postholing","Impassable"],freezing:["Below route","At route level","Above route"],water:["Flowing","Trickle","Dry — carry water","Frozen"],trail:["Clear","Snow-free to TH","Partial snow","Fully snow-covered"],mud:["None","Some mud","Postholing / deep mud"],protection:["Good — as rated","Sparse but fine","Runout","Bad / no pro"],anchors:["Bolts / chains","Fixed but worn","Gear anchors","Rebuild before use"],crowds:["Had it to ourselves","A few parties","Busy","Queueing at the base"]};
 
 
 function condGroupsFor(route){const c=catOf(route);const cat=(c==="sport"||c==="trad")?"rock":(c==="alpine"||c==="mountaineering")?"alpine":c;return CONDITION_SETS[cat]||CONDITION_SETS.rock;}
-function condMetricsFor(route){var c=catOf(route);var rock=(c==="sport"||c==="trad");var alp=(c==="alpine"||c==="mountaineering"||c==="scrambling");var ice=(c==="ice"||c==="mixed");var m=[];if(alp||ice)m.push(["carToCar","Car-to-car time","e.g. 9–11 hr"]);if(alp||ice)m.push(["snow","Snow on route","e.g. continuous above 9k"],["freezing","Freezing level","e.g. ~11,000 ft overnight"]);if(alp)m.push(["snowDepth","Snow depth","e.g. boot-top, soft by noon"],["water","Water sources","e.g. last water at the moraine"],["bugs","Bugs","e.g. mosquitoes thick at camp"],["trail","Approach trail","e.g. snow-free to 7k"],["mud","Mud / postholing","e.g. postholing after 10am"]);if(rock)m.push(["seepage","Seepage / wet streaks","e.g. left side weeping"]);return m;}
+function condMetricsFor(route){var c=catOf(route);var rock=(c==="sport"||c==="trad");var alp=(c==="alpine"||c==="mountaineering"||c==="scrambling");var ice=(c==="ice"||c==="mixed");var m=[];if(alp||ice)m.push(["carToCar","Car-to-car time","e.g. 9–11 hr"]);if(alp||ice)m.push(["snow","Snow on route","e.g. continuous above 9k"],["freezing","Freezing level","e.g. ~11,000 ft overnight"]);if(alp)m.push(["snowDepth","Snow depth","e.g. boot-top, soft by noon"],["water","Water sources","e.g. last water at the moraine"],["bugs","Bugs","e.g. mosquitoes thick at camp"],["trail","Approach trail","e.g. snow-free to 7k"],["mud","Mud / postholing","e.g. postholing after 10am"]);if(rock)m.push(["seepage","Seepage / wet streaks","e.g. left side weeping"]);/* Protection and anchors are asked wherever there is protection to judge — every roped discipline, i.e. everything but bouldering and scrambling. Crowds and party size are asked everywhere: both are route-independent facts about the day, and crowding is what decides a dawn start. */var roped=["trad","sport","alpine","ice","mixed","aid","mountaineering"].indexOf(c)>=0;if(roped)m.push(["protection","Protection quality","e.g. thin gear low, then good"],["anchors","Anchor condition","e.g. new chains at every station"]);m.push(["crowds","Crowds","e.g. three parties on the route"],["partySize","Party size","e.g. 2"]);return m;}
 /* A fact counts as present whether it arrived as an array, a prose string, or an object. The DB has no `rack` column at all, so DB-backed routes always had an empty r.rack and every one of them advertised "Missing gear/rack" — even with a full gear list and detailed_rack written. */
 function _hasAny(v){if(!v)return false;if(Array.isArray(v))return v.length>0;if(typeof v==="string")return v.trim().length>0;return true;}
 function missingFacts(r){if(!r)return [];var m=[];if(!r.grade&&!r.commitment&&!r.alpineGrade&&!r.iceGrade)m.push("grade");if(!_hasAny(r.rack)&&!_hasAny(r.gear)&&!_hasAny(r.detailedRack)&&!_hasAny(r.proNeeds))m.push("gear/rack");if(!r.routeFt&&!r.pitches)m.push("length");if(!r.approach)m.push("approach");if(!r.descent&&!r.descentText)m.push("descent");if(!_hasAny(r.hazards)&&!_hasAny(r.objHaz))m.push("hazards");return m;}
@@ -835,9 +841,15 @@ function GearTiers({gear,claims,onClaim,roster,extras,onAddExtra}){
 }
 function ReportStats({cond}){
   if(!cond)return null;
-  const items=[cond.tempF!=null&&["",cond.tempF+"°F"],cond.carToCar&&["",cond.carToCar],cond.snow&&["",cond.snow],cond.water&&["",cond.water],cond.bugs&&["",cond.bugs],cond.trail&&["",cond.trail],cond.freezing&&["",cond.freezing],cond.snowDepth&&["",cond.snowDepth],cond.seepage&&["",cond.seepage],cond.mud&&["",cond.mud]].filter(Boolean);
+  /* Every one of these chips used to render with an EMPTY label — the slot was there, and all
+     ten passed "". So a trip report showed a row of bare values: "Flowing", "Continuous",
+     "Clear". Each of those is a different measurement, and which one is unguessable; "Clear"
+     alone could be the trail, the sky or the water. The chips are the only place a reader sees
+     these numbers, so an unlabelled one is a fact nobody can use. Labels also let the new
+     columns (party size, protection, anchors, crowds) join the same row without ambiguity. */
+  const items=[cond.tempF!=null&&["Temp",cond.tempF+"°F"],cond.carToCar&&["Car-to-car",cond.carToCar],cond.partySize&&["Party",cond.partySize],cond.snow&&["Snow",cond.snow],cond.snowDepth&&["Snow depth",cond.snowDepth],cond.freezing&&["Freezing lvl",cond.freezing],cond.water&&["Water",cond.water],cond.trail&&["Trail",cond.trail],cond.mud&&["Mud",cond.mud],cond.bugs&&["Bugs",cond.bugs],cond.seepage&&["Seepage",cond.seepage],cond.protection&&["Protection",cond.protection],cond.anchors&&["Anchors",cond.anchors],cond.crowds&&["Crowds",cond.crowds]].filter(Boolean);
   if(!items.length)return null;
-  return <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:6}}>{items.map((x,i)=><span key={i} style={{fontSize:12,color:C.textSub,background:C.surface,padding:"2px 7px",borderRadius:6,border:`1px solid ${C.border}`}}>{x[0]} {x[1]}</span>)}</div>;
+  return <div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:6}}>{items.map((x,i)=><span key={i} style={{fontSize:12,color:C.textSub,background:C.surface,padding:"2px 7px",borderRadius:6,border:`1px solid ${C.border}`}}><span style={{color:C.textMuted,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3,marginRight:4}}>{x[0]}</span>{x[1]}</span>)}</div>;
 }
 
 
@@ -2178,7 +2190,7 @@ function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catc
     vert:{id:"vert",icon:"📈",label:"Vert 1yr",val:pp=>vertOf(pp),disp:pp=>uElev(vertOf(pp)),suffix:"climbed · 12mo",note:"Estimated vertical climbed over the last 12 months — rewards the people logging the biggest days, not just the hardest moves."},
     onsight:{id:"onsight",icon:"⚡",label:"Onsight pts",val:pp=>onsightPts(pp),disp:pp=>onsightPts(pp).toLocaleString(),suffix:disc==="bouldering"?"flash pts":"onsight pts",note:"A cumulative score for first-try sends — onsights and flashes across every climb, weighted by grade. Rewards depth, not just your single hardest first-try."},
     days:{id:"days",icon:"📅",label:"Days 1yr",val:pp=>daysOf(pp),suffix:"days out · 12mo",note:"Days on rock or in the mountains over the last 12 months. Rewards showing up."},
-    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Fifty Classics",val:pp=>seedHistoryFor(pp).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>seedHistoryFor(pp).filter(t=>(t.route.lists||[]).includes("state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>seedHistoryFor(pp).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
+    climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:"The most-logged and highest-rated climbs in this scope."},classics_b:{id:"classics_b",icon:"🏛️",label:"Classic climbs",val:pp=>seedHistoryFor(pp).filter(t=>t.route.classic).length+(pp.classics||0),suffix:"classics",note:"Regional classic climbs logged — the must-do lines."},highpoints_b:{id:"highpoints_b",icon:"🗻",label:"State highpoints — USA",val:pp=>seedHistoryFor(pp).filter(t=>hasTag(t.route,"state_hp")).length+(pp.highpoints||0),suffix:"highpoints",note:"U.S. state highpoints summited."},peaks_b:{id:"peaks_b",icon:"⛰️",label:"Peaks",val:pp=>seedHistoryFor(pp).filter(t=>["mountaineering","alpine","scrambling"].includes(t.route.discipline)).length+(pp.peaksListed||0),suffix:"summits",note:"Peaks & summits logged across all mountain disciplines."}
   };
   let ids;
   const ROPED=disc!=="bouldering"&&disc!=="scrambling"&&disc!=="hiking";

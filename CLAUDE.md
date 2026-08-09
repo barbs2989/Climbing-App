@@ -20,6 +20,7 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
+npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -582,6 +583,25 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:contrib-fields`** asserts that every field a climber can submit is a field the
+  merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
+  by both merge paths (the local `routeEdits` one and the DB one that counts distinct
+  contributors). A key offered by `SuggestFix` and absent from `SS` is accepted, toasted as
+  recorded, written to the `contributions` table, and then read by nothing — the climber gets
+  a success message and the route never changes. Static, so it sits in `npm run build`.
+  - **Two submission paths, and checking only one was this guard's own first-draft bug.**
+    Besides the `FIELDS` list, `RouteDetail` calls `onSubmit` with a literal field name; that
+    is how `bailout` and `startLocation` are filed, and neither is in `FIELDS`, so a
+    FIELDS-only scan cannot see that path at all. Those two are the only `EXEMPT` names,
+    because `onContribute` returns before the field-edit path for them (they are additive,
+    geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
+    exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
+    being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
+    or `var SS={` is renamed — an empty set on either side would make every comparison pass
+    vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
+  - Injection-tested; the 4 cases are named at the bottom of the script.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
@@ -962,3 +982,49 @@ fault — it passes `r.id` straight through from `catalog/`.
 > `--allow-duplicate-names` overrides it, and should only be used once you have confirmed
 > the rows really are distinct climbs. Before re-importing any state loaded under the old
 > scheme, migrate its ids first.
+
+### Enrichment prose must not be written into a display field
+
+A research pass has one job that keeps going wrong: it answers the question it was asked
+and writes the *answer paragraph* into a column the UI renders as a **label**. The column
+is then correct — the prose is accurate, sourced and useful — and the screen is broken,
+which is why nothing catches it. Every guard the repo has asks whether a column is
+populated; none asks whether what is in it is the right *shape*.
+
+Three columns have taken this and all three now have a reader-side defence. **Write the
+value, put the reasoning somewhere else.**
+
+- **`season` is a WINDOW, not an explanation.** It is rendered in the route header strap
+  beside elevation and pitch count (`8,815 ft · 6p · Jul-Sep`). Enrichment has written up
+  to 232 characters into it (`wa_hourglass_gully_winter`), and a paragraph about snow
+  bridges then wrapped over the cover photo and pushed the header open. WA currently has
+  **14 `season` values containing a parenthetical** and many more that are a whole
+  sentence — `"Late May–June is most commonly reported, when snow still covers the couloir
+  and brush; by mid-summer the couloir is loose talus/scree"`. Write `"late May-Jun"` there
+  and put that sentence in **`best_season`** or `seasonal_guidance.monthBreakdown`, which
+  exist for exactly this and are rendered as prose on the Conditions tab.
+  `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
+  falling back to a cut at `;`/`.`/`(` — but it is a *repair*, and it can only ever show
+  less than what was written.
+- **`grade` is a GRADE.** It reaches the compact route rows on an area page and the header
+  pill, where there is room for `5.9` and not for `"5.11b/c (6c+ French, E4 6a British)"`
+  or `"4th class, described by guidebook sources as 'probably low 5th to most'"`.
+  `shortGrade()`/`gradeDetail()` in `lib/grade.js` split them, and the qualifier renders in
+  the GRADES panel on the route page — so the words are not lost, but the split is done by
+  a list of cut tokens and a new phrasing can defeat it. Put the qualifier in
+  `pitch_detail[].notes` or `beta`.
+- **`rappels` is prose today and reads like a count.** Every WA value is a sentence
+  (`"~5 single-rope rappels, approximately 400 ft total, down the NE Face"`,
+  `"Variable — downclimb/short rappels on West Ridge itself, or ~5 single-rope raps via
+  East Ledges/NE Face"`). There are also `rappel_count_note` and `rappel_detail` columns.
+  A UI that wants "how many rappels" cannot get it from any of them without parsing
+  English, and a parse that reads "~5" out of the second example is **wrong** — that route
+  is a downclimb unless you choose the East Ledges descent. If a numeric rappel count is
+  ever needed it has to be a new, explicitly-nullable column, and `null` must mean
+  "depends on the descent chosen" rather than defaulting to 0. See
+  [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
+
+The rule generalises: **before writing a researched string into an existing column, look at
+where that column renders.** `npm run check:field-renders` will tell you; a column that
+reaches a header, a pill, a chip or a table cell takes a value, and its explanation belongs
+in the prose column beside it.
