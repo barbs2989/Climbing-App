@@ -111,7 +111,7 @@ route ("Plan 9 from Outer Space"), not a stub.
 
 ---
 
-## FIXED in `0108` (Summit Chief)
+## FIXED in `0110` (Summit Chief)
 
 `wa_summit_chief` (crag, 0 routes, no elevation, no children) sits **20 m** from
 `wa_summit_chief_mountain` (peak, 2 routes, 7,467 ft / 1,323 ft prominence). One mountain,
@@ -123,42 +123,64 @@ different regions, and that deleting the stub would paper over the boundary ques
 no children, no elevation and no prominence, so removing it decides nothing about the
 regions. The overlap below is visible without it.
 
-Summit Chief Mountain is **not moved** — it is already filed with its actual neighbours
-(Chimney Rock 0.7 km, Little Big Chief 0.9 km, Bears Breast).
+**Superseded by `0111`:** this file originally added "Summit Chief Mountain is not moved —
+it is already filed with its actual neighbours". That was wrong, and Mountain Project says
+so — see below. The peak moves in `0111`. The stub deletion here stands regardless.
+
+---
+
+## FIXED in `0111` (Snoqualmie / Alpine Lakes, per Mountain Project)
+
+### The coordinate argument in this file was wrong, and MP disproved it
+
+An earlier revision of this document argued that `wa_western_alpine_lakes` was **probably
+redundant** against `wa_snoqualmie_i90_region`, on the evidence that every one of its nine
+children has a neighbour in the other region within 7 km — Lemah Mountain 0.34 km from
+Lemah Two, Overcoat 0.73 km from Chimney Rock.
+
+**That reasoning was wrong, and it is the single most instructive error in this audit.**
+Checking Mountain Project directly:
+
+- **"Western Alpine Lakes" is a real MP area** — a direct sub-area of Central-West Cascades
+  & Seattle with 40 routes, defined as everything between Stevens and Snoqualmie Passes
+  *except what is reached directly from I-90 and Highway 2*. It is not redundant; it is one
+  of the two regions that were already right.
+- **MP has no "Snoqualmie Pass"** at all. `wa_snoqualmie_i90_region` — the 30-peak row — is
+  the alpine-peak-list bucket, the *same* two-load artifact as Washington Pass and the
+  Pickets. The redundant region was the one the coordinate argument proposed keeping.
+- **Summit Chief belongs to Western Alpine Lakes**, which MP's own regional description
+  names outright: *"the spires of Chimney Rock and Summit Chief"*. So the hollow stub
+  deleted in `0110` had been in the **correct** region and the populated peak was the
+  misfiled one.
+
+Two proximity pairs the coordinate argument treated as evidence of redundancy are in fact
+nothing of the kind: **Lemah Mountain / Lemah Two** are separate summits of one massif that
+MP does not split, and **Granite Mountain / Kaleetan Peak** belong to *Snoqualmie Pass
+Area* on MP — they move the opposite way from what "fold the small region into the big one"
+would have done.
+
+`0111` moves 18 areas, every one matched by **name** against MP's two published sub-area
+lists: 10 into Snoqualmie Pass Area, 8 into Western Alpine Lakes.
+
+**Near-miss worth recording:** MP spells it "Bear's Breast Mountain" and our row does not.
+The first matching pass turned the apostrophe into a separator, produced a stray token, and
+reported the row as absent from MP. 17 moves became 18 once apostrophes were stripped
+before tokenising — a name match is only as good as its normaliser.
+
+Fifteen rows stay in `wa_snoqualmie_i90_region` because **MP has no area for them at all**
+(Cathedral Rock, Mount Daniel, Hinman, Teneriffe, Garfield and ten more). There is no MP
+structure to copy for a place MP does not list.
 
 ---
 
 ## NOT actioned — needs a decision
 
-### 1. `wa_western_alpine_lakes` is probably redundant
+### 1. Daniel and Hinman: MP's prose and structure disagree
 
-Every one of its nine children has a `wa_snoqualmie_i90_region` neighbour within 7 km, and
-most within 3:
-
-| Western Alpine Lakes | nearest Snoqualmie Pass peak | apart |
-|---|---|---|
-| Summit Chief *(stub, removed in `0108`)* | Summit Chief Mountain | **0.02 km** |
-| Lemah Mountain | Lemah Two | 0.34 km |
-| Overcoat Peak | Chimney Rock | 0.73 km |
-| Kaleetan Peak | Mount Roosevelt | 0.80 km |
-| Chikamin Peak | Four Brothers | 1.17 km |
-| Lisa's Playground | Denny Mountain | 1.67 km |
-| Three Queens | Hibox Mountain | 2.81 km |
-| Granite Mountain | The Tooth | 4.07 km |
-| Bald Eagle Peak | Mount Hinman | 6.85 km |
-
-Western Alpine Lakes holds 9 areas / 8 routes; Snoqualmie Pass holds 31 / 85. Folding the
-first into the second would make the grouping internally consistent, the way `0097` folded
-Boston Basin into North Cascades Core.
-
-**Not executed**, because it is a nine-area restructuring argued from *coordinates* — the
-one form of evidence this codebase has repeatedly been right to refuse. The co-located
-sweep found 2,543 pairs of which 2 were real; the audit behind `0106` flagged 41 candidates
-of which 12 were. **Lemah Mountain / Lemah Two is the specific trap**: 340 m apart but with
-*different names* and routes on both, and Lemah Peak genuinely has several summits, so that
-pair is most likely two real summits rather than a duplicate. Granite Mountain and Lisa's
-Playground are 0-route but have no populated twin nearby — honestly-empty real areas, not
-shells.
+MP's Western Alpine Lakes description names *"the glaciated gentleness of Daniel and
+Hinman"* as part of that region, but MP carries **no sub-area for either**. The prose says
+one thing and the structure says nothing, so `0111` leaves both in place rather than
+picking. Same for **Lemah Two**, a sub-summit MP does not separate from Lemah Mountain.
 
 ### 2. Rejected candidates — recorded so they are not re-raised
 
