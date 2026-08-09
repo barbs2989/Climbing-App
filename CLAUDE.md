@@ -821,6 +821,26 @@ live DB and fails on:
 - a `DELETE` removing the last row with that name on its peak — the only copy
 - files or statements large enough to be truncated on paste
 
+Pass `--table areas` for an area file. It **fails closed** if the file writes to a table it
+was not checked against, so a structural edit cannot be silently verified as "nothing to
+check" — the `areas` mode had never once worked before that, since it asked PostgREST for
+`areas.area_id`.
+
+**Dissolving an emptied container is a distinct operation from a dedup**, and the only-copy
+rule could not express it. `0119` moves 15 peaks out of a region and then deletes the
+region: there is no twin, because the row is a grouping node being retired, not half of a
+duplicate pair. Before this the delete could only pass by naming some unrelated row as its
+"twin" — a false claim the script would then print as though verified, and *a rule you can
+only satisfy by lying is worse than no rule*. Such a `DELETE` is now allowed **only when the
+statement proves the row is empty in SQL**: a `NOT EXISTS` guard on child areas *and* one on
+routes, both naming the row being deleted. That cannot be checked against the live DB — the
+row still has its children until the transaction runs — so it is matched in the statement
+text, and it makes the delete fail-safe by construction: if any move above it matched
+nothing, the guard holds and zero rows go. Both guards are required and each is tested
+separately; half a proof is not a proof, since an area with no children can still hold
+routes directly and one with no direct routes can still have a populated subtree. The rule
+is scoped to `--table areas` — deleting a *climb* always needs its twin.
+
 On 2026-07-28 five fixes were reported applied that had matched nothing, because their
 ids were composed from route display names instead of looked up. One of them caused data
 loss: `wa_dragontail_peak_r4` and `wa_dragontail_peak_triple_couloirs` were flagged as a
