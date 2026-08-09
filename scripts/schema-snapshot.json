@@ -89,6 +89,12 @@
       "user_id",
       "water_level"
     ],
+    "comment_reactions": [
+      "comment_id",
+      "created_at",
+      "reaction",
+      "user_id"
+    ],
     "comments": [
       "created_at",
       "deleted",
