@@ -1,0 +1,158 @@
+#!/usr/bin/env node
+// audit:waypoint-track — is every waypoint actually on (or very near) the route's own track?
+//
+// A waypoint and the GPX line are two independent enrichments, written at different times from
+// different sources, and nothing has ever checked them against each other. When they disagree
+// the map does not look broken: it draws the line, drops the pin, and the pin simply sits in
+// the wrong basin — which reads as "the trail goes over there" to someone navigating by it.
+//
+// Distance is measured from each waypoint to the NEAREST SEGMENT of the track, not to the
+// nearest track VERTEX. That distinction is the whole accuracy of this audit: GPX points on a
+// long straight traverse can be hundreds of metres apart, so a waypoint sitting exactly on the
+// line between two of them is far from both, and a vertex-distance check would flag it. The
+// first draft did that and called a correctly-placed trailhead a 400 m error.
+//
+// REPORT-ONLY. A genuinely off-track waypoint is a data fix; but a Bailout or a Hazard pin is
+// legitimately off the line (that is what bailing means), so those carry a higher threshold
+// rather than being silently exempt — an exemption you cannot see is one you cannot audit.
+//
+// Read-only, anon key, fails closed on an empty read.
+
+import { selectAll } from "./lib/supabase-env.mjs";
+
+const args = process.argv.slice(2);
+const argOf = (n, d) => {
+  const eq = args.find(a => a.startsWith(n + "="));
+  if (eq) return eq.slice(n.length + 1);
+  const i = args.indexOf(n);
+  return i >= 0 && args[i + 1] ? args[i + 1] : d;
+};
+const STATE = argOf("--state", "wa").toLowerCase();
+const LIMIT = parseInt(argOf("--limit", "30"), 10);
+const INJECT = argOf("--inject", null);
+
+// On-track tolerance, metres. A recorded track and a hand-placed pin will never agree exactly:
+// consumer GPS is good to ~10 m, and a "Summit" pin is placed on the high point while the
+// track stops where the recorder stopped walking.
+const TOL = { default: 120, Bailout: 2000, Hazard: 600, Water: 400, Bivy: 500, Campsite: 500 };
+
+const R = 6371000;
+const rad = d => d * Math.PI / 180;
+// Local equirectangular projection to metres. Over the few km a route spans this is accurate
+// to well under the tolerances above, and it makes the point-to-segment maths ordinary planar
+// geometry instead of spherical trigonometry.
+function proj(lat, lng, lat0) { return { x: rad(lng) * Math.cos(rad(lat0)) * R, y: rad(lat) * R }; }
+
+function distToSegment(p, a, b) {
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const L2 = dx * dx + dy * dy;
+  if (L2 === 0) return Math.hypot(p.x - a.x, p.y - a.y);
+  let t = ((p.x - a.x) * dx + (p.y - a.y) * dy) / L2;
+  t = Math.max(0, Math.min(1, t));
+  return Math.hypot(p.x - (a.x + t * dx), p.y - (a.y + t * dy));
+}
+
+function nearestOnTrack(wp, pts, lat0) {
+  const p = proj(+wp.lat, +wp.lng, lat0);
+  const P = pts.map(q => proj(q.lat, q.lng, lat0));
+  let best = Infinity;
+  if (P.length === 1) return Math.hypot(p.x - P[0].x, p.y - P[0].y);
+  for (let i = 0; i < P.length - 1; i++) best = Math.min(best, distToSegment(p, P[i], P[i + 1]));
+  return best;
+}
+
+const norm = g => {
+  if (!g) return [];
+  const arr = Array.isArray(g) ? g : (Array.isArray(g.points) ? g.points : []);
+  return arr
+    .map(q => Array.isArray(q) ? { lat: +q[0], lng: +q[1] } : { lat: +(q.lat ?? q.latitude), lng: +(q.lng ?? q.lon ?? q.longitude) })
+    .filter(q => Number.isFinite(q.lat) && Number.isFinite(q.lng));
+};
+
+const rows = await selectAll("routes", "id,name,area_id,discipline,waypoints,gpx", "", { pageSize: 1000 })
+  .catch(e => { console.error("read failed:", e.message); process.exit(1); });
+if (!rows.length) { console.error("FAIL — read 0 routes; refusing to report clean on an empty read."); process.exit(1); }
+
+const scoped = rows.filter(r => STATE === "all" || String(r.id || "").startsWith(STATE + "_"));
+let withBoth = scoped.filter(r => {
+  const w = Array.isArray(r.waypoints) ? r.waypoints : [];
+  return norm(r.gpx).length >= 2 && w.some(x => x && x.lat != null && x.lng != null);
+});
+
+if (INJECT === "shift") {
+  // Move every waypoint ~1km north. Every route with a track must then report findings.
+  withBoth = withBoth.map(r => ({ ...r, waypoints: r.waypoints.map(w => (w && w.lat != null) ? { ...w, lat: +w.lat + 0.009 } : w) }));
+}
+if (INJECT === "snap") {
+  // Put every waypoint exactly on the track's first vertex — must report ZERO findings.
+  withBoth = withBoth.map(r => { const p = norm(r.gpx)[0]; return { ...r, waypoints: r.waypoints.map(w => (w && w.lat != null) ? { ...w, lat: p.lat, lng: p.lng } : w) }; });
+}
+
+const findings = [];
+let wpChecked = 0;
+for (const r of withBoth) {
+  const pts = norm(r.gpx);
+  const lat0 = pts[0].lat;
+  const bad = [];
+  for (const w of (r.waypoints || [])) {
+    if (!w || w.lat == null || w.lng == null) continue;
+    if (!Number.isFinite(+w.lat) || !Number.isFinite(+w.lng)) continue;
+    wpChecked++;
+    const d = nearestOnTrack(w, pts, lat0);
+    const tol = TOL[w.type] || TOL.default;
+    if (d > tol) bad.push({ w, d, tol });
+  }
+  if (bad.length) {
+    const placed = (r.waypoints || []).filter(w => w && w.lat != null && Number.isFinite(+w.lat)).length;
+    // WHICH of the two is wrong matters more than the distance, and the distance alone cannot
+    // say. If EVERY pin misses — and misses by kilometres — the pins are not individually
+    // misplaced; the track is describing a different journey. Curtis Ridge is the case that
+    // forced this distinction: a 5-point track sitting 60 km north of Rainier while all three
+    // of its waypoints are correctly on the mountain. Reported as an off-track PIN, that reads
+    // as "fix the waypoints", which would have moved three correct pins onto a wrong line.
+    const allMiss = bad.length === placed && placed >= 2;
+    const far = Math.min(...bad.map(b => b.d)) > 2000;
+    // The third case, and the one that makes this list worth reading. A track that covers only
+    // the CLIMB — starting at the base, not the car — leaves every approach waypoint
+    // legitimately off it. Those are not misplaced pins and must not be listed as if they
+    // were: "fixing" them means dragging a correct trailhead onto a line that never went
+    // there. Detected by extent, not by waypoint type: if the pins span far more ground than
+    // the track does, the track is a subset of the journey rather than a contradiction of it.
+    const span = arr => { if (arr.length < 2) return 0; const la = arr.map(q => q.lat), ln = arr.map(q => q.lng);
+      const a = proj(Math.min(...la), Math.min(...ln), la[0]), b = proj(Math.max(...la), Math.max(...ln), la[0]);
+      return Math.hypot(b.x - a.x, b.y - a.y); };
+    const wpPts = (r.waypoints || []).filter(w => w && Number.isFinite(+w.lat)).map(w => ({ lat: +w.lat, lng: +w.lng }));
+    const trackSpan = span(pts), wpSpan = span(wpPts);
+    const onTrack = placed - bad.length;
+    const partial = onTrack >= 1 && wpSpan > trackSpan * 1.6 && trackSpan > 0;
+    findings.push({
+      r, bad, placed, trackSpan, wpSpan,
+      worst: Math.max(...bad.map(b => b.d)),
+      blame: (allMiss && far) ? "TRACK" : partial ? "PARTIAL" : "PIN",
+      trackPts: pts.length,
+    });
+  }
+}
+findings.sort((a, b) => b.worst - a.worst);
+const trackBad = findings.filter(f => f.blame === "TRACK");
+
+console.log(`\nscope "${STATE}" · ${scoped.length} routes · ${withBoth.length} have BOTH a track (2+ pts) and placed waypoints`);
+console.log(`${wpChecked} waypoints measured against their own track · ${findings.length} routes disagree`);
+const partialN = findings.filter(f => f.blame === "PARTIAL").length;
+const pinN = findings.length - trackBad.length - partialN;
+console.log(`  ${trackBad.length} WRONG TRACK  — every pin misses by >2 km; the line, not the pins, is in the wrong place`);
+console.log(`  ${partialN} PARTIAL TRACK — the track covers only part of the journey (usually the climb), so approach pins sit off it legitimately. NOT a defect.`);
+console.log(`  ${pinN} PIN           — individual waypoints off an otherwise matching track. This is the list worth fixing.\n`);
+for (const f of findings.slice(0, LIMIT)) {
+  console.log(`── [${f.blame}] ${f.r.name}  (${f.r.id})  worst ${Math.round(f.worst)} m off · ${f.bad.length}/${f.placed} pins miss · track has ${f.trackPts} pts`);
+  for (const b of f.bad.slice(0, 4)) {
+    console.log(`     ${String(b.w.type || "?").padEnd(10)} ${JSON.stringify(String(b.w.name || "").slice(0, 40))}  ${Math.round(b.d)} m  (tolerance ${b.tol} m)`);
+  }
+  console.log("");
+}
+if (findings.length > LIMIT) console.log(`… ${findings.length - LIMIT} more (raise --limit)\n`);
+console.log("Report only — nothing was changed.");
+// Injection cases:
+//   --inject=snap   every waypoint placed on the track    -> must report 0 routes
+//   --inject=shift  every waypoint moved ~1km north       -> must report ~every route
+process.exit(0);

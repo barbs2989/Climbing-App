@@ -249,8 +249,12 @@ function MDToolbar({taRef,value,onChange}){
       applyAndSelect(value.slice(0,s-ml)+selText+value.slice(e+ml),s-ml,e-ml);
       return;
     }
-    const sel=selText||(marker==="**"?"bold text":"italic text");
-    applyAndSelect(value.slice(0,s)+marker+sel+marker+value.slice(e),s+ml,s+ml+sel.length);
+    // Nothing selected: open the markers and leave the caret BETWEEN them, so you press B
+    // and then type and what you type comes out bold — the way it behaves in any word
+    // processor. It used to insert the literal words "bold text" as a placeholder, so every
+    // use started with deleting sample text that you first had to realise was sample text.
+    if(!selText){applyAndSelect(value.slice(0,s)+marker+marker+value.slice(e),s+ml,s+ml);return;}
+    applyAndSelect(value.slice(0,s)+marker+selText+marker+value.slice(e),s+ml,s+ml+selText.length);
   }
   function toggleList(kind){
     const ta=taRef.current;if(!ta)return;
@@ -260,6 +264,15 @@ function MDToolbar({taRef,value,onChange}){
     const lineEnd=nlAfter===-1?value.length:nlAfter;
     const bulletRe=/^\s*[-•]\s+/,numRe=/^\s*\d+[.)]\s+/;
     const lines=value.slice(lineStart,lineEnd).split("\n");
+    // Clicking a list button on an EMPTY line used to do nothing at all: the mapper below
+    // returns blank lines untouched, so the one case where you are about to start a list —
+    // caret on a fresh line — was the case that produced no marker and no feedback. Start
+    // the list and put the caret after the marker so you can just type.
+    if(lines.length===1&&!lines[0].trim()){
+      const mk=kind==="ol"?"1. ":"- ";
+      applyAndSelect(value.slice(0,lineStart)+mk+value.slice(lineEnd),lineStart+mk.length,lineStart+mk.length);
+      return;
+    }
     const already=lines.every(function(ln){return !ln.trim()||(kind==="ol"?numRe:bulletRe).test(ln);});
     let n=1;
     const next=lines.map(function(ln){
@@ -273,6 +286,32 @@ function MDToolbar({taRef,value,onChange}){
   useEffect(function(){
     const ta=taRef.current;if(!ta)return;
     function onKey(e){
+      // Enter inside a list continues the list, and Enter on an EMPTY list item ends it.
+      // Without this a list is only ever as long as the one line the toolbar wrote: you
+      // press Enter and land on a bare line, and have to reach for the button again for
+      // every single item. This is the behaviour that makes the toolbar feel like a word
+      // processor rather than a way to type punctuation.
+      // This effect deliberately has no dependency array — it re-attaches each render, so
+      // `value` in this closure is always the current one. Do not "optimise" that away.
+      if(e.key==="Enter"&&!e.shiftKey&&!e.metaKey&&!e.ctrlKey&&!e.altKey){
+        const ta=taRef.current;if(!ta)return;
+        const s=ta.selectionStart,selE=ta.selectionEnd;
+        if(s!==selE)return;                       // a real selection — let Enter replace it
+        const lineStart=value.lastIndexOf("\n",s-1)+1;
+        const line=value.slice(lineStart,s);
+        const bm=line.match(/^(\s*)([-•])\s+(.*)$/);
+        const nm=bm?null:line.match(/^(\s*)(\d+)([.)])\s+(.*)$/);
+        if(!bm&&!nm)return;                       // not in a list — ordinary newline
+        const body=bm?bm[3]:nm[4];
+        e.preventDefault();
+        if(!body.trim()){                         // empty item: drop the marker, leave the list
+          applyAndSelect(value.slice(0,lineStart)+value.slice(s),lineStart,lineStart);
+          return;
+        }
+        const ins="\n"+(bm?(bm[1]+bm[2]+" "):(nm[1]+(parseInt(nm[2],10)+1)+nm[3]+" "));
+        applyAndSelect(value.slice(0,s)+ins+value.slice(s),s+ins.length,s+ins.length);
+        return;
+      }
       if(!(e.metaKey||e.ctrlKey))return;
       if(e.key==="b"||e.key==="B"){e.preventDefault();toggleWrap("**");}
       else if(e.key==="i"||e.key==="I"){e.preventDefault();toggleWrap("_");}
@@ -2240,7 +2279,7 @@ function LogAscent({route,onClose,onSave,connections,existing,onDelete,onAddBail
   const [tags,setTags]=useState(x.condTags||[]);const [termInput,setTermInput]=useState("");
   const [temp,setTemp]=useState(x.cond&&x.cond.tempF!=null?String(x.cond.tempF):"");const [metrics,setMetrics]=useState(x.cond||{});
   const [partners,setPartners]=useState(x.partners||[]);const [partnerIds,setPartnerIds]=useState(x.partnerIds||[]);const [vouchSel,setVouchSel]=useState(x.vouchFor||[]);const [caughtBy,setCaughtBy]=useState(x.caughtBy||null);
-  const [notes,setNotes]=useState(x.text||"");const notesRef=useRef(null);const [fa,setFa]=useState(!!x.fa);const [developed,setDeveloped]=useState(!!x.developed);const [pInput,setPInput]=useState("");const [photoUrls,setPhotoUrls]=useState(x.photos||[]);const [gpxName,setGpxName]=useState(x.gpxName||"");const [gpxParsed,setGpxParsed]=useState(null);const [gpxParseErr,setGpxParseErr]=useState(false);const [gpxWpAdded,setGpxWpAdded]=useState({});const [gpxWpType,setGpxWpType]=useState({});const [beta,setBeta]=useState(x.beta||"");const [gearBeta,setGearBeta]=useState(x.gearBeta||"");const [sunVote,setSunVote]=useState(x.sunVote||null);const [sunNote,setSunNote]=useState(x.sunNote||"");const [scout,setScout]=useState(!!x.scoutOnly);const [showBailoutForm,setShowBailoutForm]=useState(false);const [bailoutAdded,setBailoutAdded]=useState(0);const [showStartForm,setShowStartForm]=useState(false);const [startAdded,setStartAdded]=useState(0);const [outcomeReasons,setOutcomeReasons]=useState(x.outcomeReasons||[]);const [outcomeNote,setOutcomeNote]=useState(x.outcomeNote||"");const [visibility,setVisibility]=useState(x.visibility||"public");
+  const [notes,setNotes]=useState(x.text||"");const notesRef=useRef(null),betaRef=useRef(null),gearBetaRef=useRef(null);const [fa,setFa]=useState(!!x.fa);const [developed,setDeveloped]=useState(!!x.developed);const [pInput,setPInput]=useState("");const [photoUrls,setPhotoUrls]=useState(x.photos||[]);const [gpxName,setGpxName]=useState(x.gpxName||"");const [gpxParsed,setGpxParsed]=useState(null);const [gpxParseErr,setGpxParseErr]=useState(false);const [gpxWpAdded,setGpxWpAdded]=useState({});const [gpxWpType,setGpxWpType]=useState({});const [beta,setBeta]=useState(x.beta||"");const [gearBeta,setGearBeta]=useState(x.gearBeta||"");const [sunVote,setSunVote]=useState(x.sunVote||null);const [sunNote,setSunNote]=useState(x.sunNote||"");const [scout,setScout]=useState(!!x.scoutOnly);const [showBailoutForm,setShowBailoutForm]=useState(false);const [bailoutAdded,setBailoutAdded]=useState(0);const [showStartForm,setShowStartForm]=useState(false);const [startAdded,setStartAdded]=useState(0);const [outcomeReasons,setOutcomeReasons]=useState(x.outcomeReasons||[]);const [outcomeNote,setOutcomeNote]=useState(x.outcomeNote||"");const [visibility,setVisibility]=useState(x.visibility||"public");
   const alpiney=["alpine","mountaineering","ice","mixed","scrambling"].indexOf(_cat)>=0;
   const [showItinForm,setShowItinForm]=useState(false);const [myItin,setMyItin]=useState(x.itinerary?{days:itinDaysToDraft(x.itinerary.days)}:null);
   const tog=(a,set,v)=>set(a.includes(v)?a.filter(x=>x!==v):[...a,v]);
@@ -3033,7 +3072,20 @@ function Comments({targetId,comments,onAdd,onViewProfile,onEdit,onDelete,onLike,
   // which is the only place that knows whether "me" is a uuid (DB) or seed id 0 (demo).
   // A key REACTIONS does not carry renders as nothing rather than as a broken chip.
   const reactChips=(c,sm)=>{const counts=reactionCounts(c.reactions);if(!counts.length)return null;return <div style={{display:"flex",flexWrap:"wrap",gap:5,marginTop:5}}>{counts.map(function(rc){var rr=REACTIONS.find(function(x){return x.k===rc.k;});if(!rr)return null;var mine=c.myReaction===rc.k;return <span key={rc.k} onClick={()=>{if(onReact)onReact(c.id,rc.k);}} title={rr.l} style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:sm?11:11.5,fontWeight:700,color:mine?C.blue:C.textSub,background:mine?C.blueBg:C.surface,border:"1px solid "+(mine?C.blueDim:C.border),borderRadius:12,padding:"3px 8px",cursor:"pointer"}}>{rr.e+" "+rc.n}</span>;})}</div>;};
-  const reactBtn=(c)=><span onClick={()=>setReactFor(c.id)} style={{color:c.myReaction?C.blue:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>{c.myReaction?"Reacted":"React"}</span>;
+  /* Reactions were already wired to replies as well as top-level comments — but the only
+     affordance was the grey word "React", sitting beside a "Like" that visibly flips to
+     "Liked". Two plain text links, one of which looks like the other's label, and the reaction
+     one reads as the less real of the two. So it was reported, accurately, as "we only have
+     the like button".
+     Two changes, both about discoverability rather than capability: the entry point is a
+     bordered chip with an emoji on it, so it reads as a control; and the three most-used
+     reactions sit inline next to it, so the common case is one tap and does not go through a
+     modal at all. The full picker is still behind the chip. */
+  const QUICK_REACTS=REACTIONS.slice(0,3);
+  const reactBtn=(c)=><span style={{display:"inline-flex",alignItems:"center",gap:4}}>
+    {QUICK_REACTS.map(function(qr){var mine=c.myReaction===qr.k;return <span key={qr.k} aria-label={"React "+qr.l} title={qr.l} {...clickable(()=>{if(onReact)onReact(c.id,qr.k);})} style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:26,height:26,borderRadius:13,border:"1px solid "+(mine?C.blueDim:C.border),background:mine?C.blueBg:C.surface,cursor:"pointer",fontSize:13,lineHeight:1}}>{qr.e}</span>;})}
+    <span role="button" tabIndex={0} aria-label={c.myReaction?"Change your reaction":"Add a reaction"} onClick={()=>setReactFor(c.id)} style={{display:"inline-flex",alignItems:"center",gap:3,padding:"0 8px",height:26,borderRadius:13,border:"1px solid "+(c.myReaction?C.blueDim:C.border),background:c.myReaction?C.blueBg:C.surface,color:c.myReaction?C.blue:C.textMuted,cursor:"pointer",fontSize:11,fontWeight:700,whiteSpace:"nowrap"}}>{"☺+"}</span>
+  </span>;
   const ta={width:"100%",padding:"11px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13.5,outline:"none",boxSizing:"border-box",resize:"vertical",minHeight:78,lineHeight:1.5,fontFamily:"inherit"};
   const mainMention=mentionCandidates?groupMentionMatch(text,mentionCandidates):null;
   const replyMention=mentionCandidates?groupMentionMatch(replyTxt,mentionCandidates):null;

@@ -19,6 +19,8 @@
     "audit:identity": "node scripts/audit-route-identity.mjs",
     "audit:distances": "node scripts/audit-distances.mjs",
     "audit:area-parents": "node scripts/audit-area-parents.mjs",
+    "audit:approach-scope": "node scripts/audit-approach-scope.mjs",
+    "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "check:route-tags": "node scripts/check-route-tags.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
