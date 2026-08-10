@@ -769,6 +769,16 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
 
+  // The crumb strip is one non-wrapping scrollable line, so on a deep path the area you are
+  // actually standing in — the LAST crumb — is the part scrolled off the right edge. Pin it
+  // back into view whenever the path changes, so the sticky bar always answers "where am I"
+  // rather than "which state did you start in".
+  const crumbStrip = useRef(null);
+  useEffect(() => {
+    const el = crumbStrip.current;
+    if (el) el.scrollLeft = el.scrollWidth;
+  }, [crumbs.length, current && current.id]);
+
   // Report where the user is browsing to the parent. This exists because App's
   // `selArea` is only ever written on the SEED catalog path, and production builds
   // set VITE_USE_DB=true — so anything outside this component that wanted "the area
@@ -839,20 +849,35 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
 
   return (
     <div>
-      {crumbs.length && screen === "areas" ? (
-        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 7, marginBottom: 12, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px" }}>
-          <button onClick={back} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "5px 11px", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginRight: 4 }}>{"← Back"}</button>
-          {[null, ...crumbs].map((c, i) => {
-            const last = i === crumbs.length;
-            return (
-              <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
-                {i > 0 ? <span style={{ color: C.textSub, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
-                {last
-                  ? <span style={{ color: C.text, fontWeight: 800, fontSize: 15.5 }}>{c ? c.name : ""}</span>
-                  : <button onClick={() => jump(c ? i - 1 : -1)} style={{ background: "transparent", border: "none", color: C.blue, fontSize: 15, cursor: "pointer", fontWeight: 700, padding: 0 }}>{c ? c.name : "All areas"}</button>}
-              </span>
-            );
-          })}
+      {/* Breadcrumb + Back. Sticky, and rendered on EVERY sub-screen — not just "areas".
+          Two reports drove both halves. It used to scroll away on a long area page, so on
+          anything below the fold there was no way back without scrolling to the top. And it
+          was gated on `screen === "areas"`, so opening "View map" (screen "near") removed the
+          only ← Back on the page: the map's own chrome is a List/Map segmented toggle, which
+          reads as a view switch rather than an exit, and nothing else said how to get out.
+          On a sub-screen Back returns to the area page rather than popping the area stack —
+          the panel is a layer over the area you are standing on, not a step deeper into it.
+          The crumb strip is one non-wrapping scrollable line (it used to wrap, and a deep
+          path could eat several lines of a viewport that is now permanently occupied) and
+          auto-scrolls to the end so the area you are actually in is the part you can see. */}
+      {crumbs.length ? (
+        <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 7, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px" }}>
+            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ flexShrink: 0, background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "5px 11px", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginRight: 4 }}>{"← Back"}</button>
+            <div ref={crumbStrip} style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "nowrap", overflowX: "auto", overscrollBehavior: "contain", minWidth: 0, flex: 1, scrollbarWidth: "none" }}>
+              {[null, ...crumbs].map((c, i) => {
+                const last = i === crumbs.length;
+                return (
+                  <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 5, flexShrink: 0, whiteSpace: "nowrap" }}>
+                    {i > 0 ? <span style={{ color: C.textSub, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
+                    {last && screen === "areas"
+                      ? <span style={{ color: C.text, fontWeight: 800, fontSize: 15.5 }}>{c ? c.name : ""}</span>
+                      : <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: last ? C.text : C.blue, fontSize: 15, cursor: "pointer", fontWeight: last ? 800 : 700, padding: 0, whiteSpace: "nowrap" }}>{c ? c.name : "All areas"}</button>}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
         </div>
       ) : null}
       {!stateNode ? (

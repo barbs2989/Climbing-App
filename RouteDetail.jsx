@@ -747,7 +747,101 @@ function RappelTable({route,onEdit}){
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
     <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{"RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":"")}</div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
     {route.rappelCountNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:9,background:C.surface,borderRadius:8,padding:"7px 9px"}}>{route.rappelCountNote}</div>:null}
-    {raps.map((r,idx)=><div key={r._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}><div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2,gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div></div>)}
+    {/* A rappel row answers four questions in the order you ask them on the ground:
+        WHERE is the station (`station`) — the one a party actually gets stuck on, and the one
+        a bare "60m, bolted" row never answered; HOW LONG and off WHAT (`lengthM`/`anchor`);
+        WHAT GOES WRONG (`hazards`) — pendulum swings, a pull that jams, a station you can
+        rappel straight past; and anything else (`notes`). Every key is optional and each
+        block is gated on its own value, so a route carrying only the old {lengthM, anchor,
+        notes} shape renders exactly as it did before. */}
+    {raps.map((r,idx)=>{const _haz=Array.isArray(r.hazards)?r.hazards.filter(Boolean):(r.hazards?[r.hazards]:[]);return <div key={r._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}><div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{"R"+r._n}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2,gap:8}}><span style={{fontSize:13,fontWeight:700,color:C.red,flexShrink:0,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span><span style={{fontSize:11.5,fontWeight:600,color:/bolt/i.test(r.anchor||"")?C.green:C.blue,textAlign:"right",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.anchor||"—"}</span></div>{r.station?<div style={{marginTop:5,marginBottom:_haz.length||r.notes||r.pull?6:0,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"6px 9px"}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Finding the station</div><div style={{fontSize:12,color:C.text,lineHeight:1.5}}>{r.station}</div></div>:null}{_haz.length?<div style={{marginBottom:r.notes||r.pull?6:0,display:"flex",flexDirection:"column",gap:4}}>{_haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.redBg,border:"1px solid "+C.red+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.red}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}{r.pull?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:r.notes?5:0}}><span style={{fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,fontSize:9.5,color:C.textMuted,marginRight:5}}>Pull</span>{r.pull}</div>:null}{r.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{r.notes}</div>:null}</div></div>;})}
+  </div>;
+}
+/* CLIMBING ROUTE — the pitch table's counterpart for terrain that has no pitches.
+   A scramble or a mountaineering line has an actual-climbing section every bit as real as a
+   pitched route's, and until now there was nowhere to put it: the only structured slot was
+   pitch_detail, which those routes legitimately leave empty. So that description went into
+   `approach` instead, which is why approach prose on unpitched routes so often walks you past
+   the base of the climb and keeps going to the summit — and why a party looking for where the
+   climbing STARTS had to reverse-engineer it out of a paragraph about a trail.
+   Gated on isPitched() being false: a route with real pitches keeps PITCH-BY-PITCH and this
+   never renders, so the two can never both claim to describe the same ground. */
+function ClimbingRouteTable({route,onEdit}){
+  const segs=Array.isArray(route.climbingRoute)?route.climbingRoute:[];
+  if(!segs.length)return null;
+  const list=segs.map((s,i)=>({...s,_n:s.n!=null?s.n:i+1})).sort((a,b)=>a._n-b._n);
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
+    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{"CLIMBING ROUTE · "+list.length+" section"+(list.length!==1?"s":"")}</div></div>{onEdit?<EditIconButton onClick={onEdit} title="Edit the climbing route"/>:null}</div>
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>From the base of the climbing to the top — the technical ground itself, not the walk in.</div>
+    {list.map((s,idx)=><div key={s._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}>
+      <div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{s._n}</div>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:s.notes?3:0}}>
+          <span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}>{s.label||("Section "+s._n)}</span>
+          {s.class?<span style={{flexShrink:0,fontSize:11,fontWeight:800,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{s.class}</span>:null}
+        </div>
+        {s.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{s.notes}</div>:null}
+      </div>
+    </div>)}
+  </div>;
+}
+
+/* APPROACH — one card per distinct way in, because a route usually has more than one and the
+   single `approach` paragraph could only ever describe whichever one the writer had in mind.
+   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is
+   the answer to "how do I know I'm at the start of the climbing", which is the question that
+   actually gets parties lost, and burying it mid-paragraph is exactly how it got lost before.
+   Renders ALONGSIDE the existing `approach` prose, never instead of it — the prose is the
+   long-form account and is often the only thing a route has. */
+function ApproachVariants({route,onEdit}){
+  const vars=Array.isArray(route.approachVariants)?route.approachVariants:[];
+  if(!vars.length)return null;
+  return <div style={{marginBottom:12}}>
+    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the approaches"/>:null}>{"APPROACHES · "+vars.length+" way"+(vars.length!==1?"s":"")+" in"}</SL>
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>Which one is right depends on the season — read the window on each before you pick.</div>
+    {vars.map((v,i)=>{
+      const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
+      const facts=[v.hours?v.hours+(/\bh|hour/i.test(String(v.hours))?"":" hr"):null,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
+      return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
+          <div style={{fontSize:13.5,fontWeight:800,color:C.text,minWidth:0,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>
+          {v.season?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{v.season}</span>:null}
+        </div>
+        {facts.length?<div style={{display:"flex",flexWrap:"wrap",gap:10,marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}</div>:null}
+        {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
+        {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
+          <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
+          <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
+        </div>:null}
+        {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
+      </div>;
+    })}
+  </div>;
+}
+
+/* BIVY — where you sleep if the route runs long. Alpine and mountaineering only: the question
+   "where would I spend the night" is not a real one on a single-pitch crag, and rendering an
+   empty prompt for it there is noise. Sites carrying coordinates are also mirrored into
+   waypoints (type "Bivy") by the enrichment, so the same site is a pin on the route track —
+   this panel is the detail the map pin has no room for. */
+function BivyPanel({route,onEdit}){
+  const sites=Array.isArray(route.bivy)?route.bivy:[];
+  if(!sites.length)return null;
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:13}}>
+    <div style={SZ4}><div style={{fontSize:12,fontWeight:700,color:C.purple}}>{"BIVY & HIGH CAMPS · "+sites.length}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit bivy sites"/>:null}</div>
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>If the day runs long, these are the places on file to stop. Anything with coordinates is also a pin on the route track.</div>
+    {sites.map((b,i)=><div key={i} style={{border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:8}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:4}}>
+        <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{b.name||("Bivy "+(i+1))}</div>
+        {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
+      </div>
+      {(b.capacity||b.water||b.permit)?<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:b.notes?6:0}}>
+        {b.capacity?<span style={{fontSize:11,fontWeight:700,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{b.capacity}</span>:null}
+        {b.water?<span style={{fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px"}}>{"Water: "+b.water}</span>:null}
+        {b.permit?<span style={{fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px"}}>{b.permit}</span>:null}
+      </div>:null}
+      {b.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{b.notes}</div>:null}
+    </div>)}
   </div>;
 }
 function PitchComments({targetId,comments,onAdd}){
@@ -952,23 +1046,130 @@ function TopoLineOverlay({points,pins}){
     {(pins||[]).map(function(pn,i){return <circle key={i} cx={pn.x} cy={pn.y} r={1.6} fill={pinColor(pn.category)} stroke="#fff" strokeWidth={0.4}/>;})}
   </svg>;
 }
+/* The topo editor. Four things it could not do, each of them the difference between a line a
+   climber trusts and one they redraw:
+
+     · Drawing was TAP-ONLY — one point per tap, so a twelve-pitch line was ~15 separate taps
+       and any wobble meant starting over. It draws on drag now, sampling a point every 1.5%
+       of the frame so a swipe yields a usable polyline rather than 400 coordinates.
+     · A mis-placed point could not be fixed. The only tools were "undo last" and "clear all",
+       so one bad point four points back cost you the four after it. Every point and pin is a
+       draggable handle now, and the selected one can be deleted on its own.
+     · No zoom, on a phone-sized image. A belay pin has to land on a specific ledge; at 390px
+       wide, 1% of the frame is under 4px. A loupe follows the drag at 3x, which is how touch
+       platforms have solved this since iOS text selection.
+     · Upload/save errors used alert() — a blocking dialog, in an app that has toasts and
+       inline notices everywhere else. Now an inline error inside the section.
+
+   Coordinates stay percentages of the frame, and the frame is the painted photo (see
+   TopoLineOverlay) — dragging clamps to 0..100 so a handle pulled off the edge cannot store a
+   point that is not on the rock. */
+const LOUPE_Z = 3;            // magnification
+const DRAW_MIN_STEP = 1.5;    // % of frame between sampled points while dragging
 function TopoDrawer({initial,onCancel,onSubmit}){
   const [points,setPoints]=useState((initial&&initial.points)||[]);const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
   const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
-  const handleClick=function(e){const rect=e.currentTarget.getBoundingClientRect();const x=Math.round(((e.clientX-rect.left)/rect.width)*1000)/10;const y=Math.round(((e.clientY-rect.top)/rect.height)*1000)/10;if(mode==="line")setPoints(function(p){return p.concat([{x:x,y:y}]);});else setPins(function(p){return p.concat([{x:x,y:y,category:pinCat,note:""}]);});};
+  const [sel,setSel]=useState(null);      // {kind:"point"|"pin", i} — the handle under edit
+  const [loupe,setLoupe]=useState(null);  // {x,y} while a drag is in flight
+  const frameRef=useRef(null);
+  const drag=useRef(null);                // {kind:"point"|"pin"|"draw", i}
+  const photo=initial&&initial.photoUrl;
+
+  // Clamped so a drag that leaves the frame parks the handle on the edge rather than storing
+  // a coordinate that is not on the photo.
+  const at=function(e){
+    const r=frameRef.current.getBoundingClientRect();
+    const c=(v,size)=>Math.min(100,Math.max(0,Math.round((v/size)*1000)/10));
+    return {x:c(e.clientX-r.left,r.width),y:c(e.clientY-r.top,r.height)};
+  };
+  const moveTo=function(kind,i,p){
+    if(kind==="point")setPoints(function(a){return a.map(function(q,qi){return qi===i?{x:p.x,y:p.y}:q;});});
+    else setPins(function(a){return a.map(function(q,qi){return qi===i?Object.assign({},q,{x:p.x,y:p.y}):q;});});
+  };
+  const onDown=function(e){
+    if(!frameRef.current)return;
+    const p=at(e);
+    const h=e.target&&e.target.dataset&&e.target.dataset.h;   // "point:3" / "pin:1"
+    try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){}
+    if(h){
+      const [kind,idx]=h.split(":");
+      drag.current={kind:kind,i:+idx};
+      setSel({kind:kind,i:+idx});
+      setLoupe(p);
+      return;
+    }
+    if(mode==="line"){
+      drag.current={kind:"draw"};
+      setPoints(function(a){return a.concat([p]);});
+      setSel({kind:"point",i:points.length});
+    }else{
+      setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
+      setSel({kind:"pin",i:pins.length});
+    }
+    setLoupe(p);
+  };
+  const onMove=function(e){
+    if(!drag.current||!frameRef.current)return;
+    const p=at(e);
+    setLoupe(p);
+    if(drag.current.kind==="draw"){
+      setPoints(function(a){
+        const last=a[a.length-1];
+        if(last&&Math.abs(last.x-p.x)<DRAW_MIN_STEP&&Math.abs(last.y-p.y)<DRAW_MIN_STEP)return a;
+        return a.concat([p]);
+      });
+      return;
+    }
+    moveTo(drag.current.kind,drag.current.i,p);
+  };
+  const onUp=function(){drag.current=null;setLoupe(null);};
+
+  const delSel=function(){
+    if(!sel)return;
+    if(sel.kind==="point")setPoints(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
+    else setPins(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
+    setSel(null);
+  };
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
+  const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
+  const handle=function(kind,i,x,y,col){
+    const on=sel&&sel.kind===kind&&sel.i===i;
+    return <span key={kind+i} data-h={kind+":"+i} title={kind==="point"?("Point "+(i+1)+" — drag to move"):"Pin — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:10,height:on?18:10,marginLeft:on?-9:-5,marginTop:on?-9:-5,
+        borderRadius:"50%",background:on?col:col+"99",border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(255,255,255,0.6)"),
+        boxShadow:on?"0 0 0 3px "+C.blue+"66":"none",cursor:"grab",touchAction:"none"}}/>;
+  };
   return <div>
-    <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
+    <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
     {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{c[1]}</button>;})}</div>:null}
-    <div onClick={handleClick} style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border}}>
-      {initial&&initial.photoUrl?<img loading="lazy" decoding="async" src={initial.photoUrl} alt="" onLoad={arOnLoad} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Tap where the feature is. Drag any dot to move it."}</div>
+    {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
+        scrolling and the drag never reaches these handlers on a touch screen.
+
+        HONEST NOTE ON check:clickable: this surface used to be a <div onClick> and was counted
+        in that guard's mouse-only baseline. Pointer handlers are not onClick, so the scanner no
+        longer sees it and the baseline drops by one — that is the guard losing sight of a
+        control, NOT the control becoming keyboard-operable. Freehand drawing on a photo has no
+        sensible key-by-key equivalent, so it stays pointer-driven on purpose. What IS reachable
+        from a keyboard is everything destructive or corrective: Undo last point, Delete
+        selected and Clear all are real <button>s, as are the mode and category chips. */}
+    <div ref={frameRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
+      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
+      {photo?<img loading="lazy" decoding="async" src={photo} alt="" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
       <TopoLineOverlay points={points} pins={pins}/>
+      {points.map(function(p,i){return handle("point",i,p.x,p.y,C.amber);})}
+      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category));})}
+      {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
+        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*100)+"% "+(LOUPE_Z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
+        <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
+      </div>:null}
     </div>
     <div style={{display:"flex",gap:7,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});}} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"}}>Undo last point</button>
-      <button onClick={function(){setPoints([]);setPins([]);}} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"}}>Clear all</button>
+      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>Undo last point</button>
+      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"pin")):"Delete selected"}</button>
+      <button onClick={function(){setPoints([]);setPins([]);setSel(null);}} style={btn}>Clear all</button>
     </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
@@ -1071,6 +1272,12 @@ function TopoSection({route}){
   const [localPhotos,setLocalPhotos]=useState([]);
   const [localLines,setLocalLines]=useState({});
   const [busy,setBusy]=useState(false);
+  /* alert() blocked the whole page for a failed upload, in an app that reports every other
+     write inline. It also hid WHICH photo failed, since the dialog outlives the row. This
+     renders in the section, next to the thing that failed, and clears on the next attempt.
+     Not swallowed either way — check:write-feedback exists because a silent failure behind
+     a success message is the worse bug. */
+  const [err,setErr]=useState(null);
   const [viewerIdx,setViewerIdx]=useState(null);
   const [drawFor,setDrawFor]=useState(null);
   const dbTopos=useAreaTopos(USE_DB?areaId:null);
@@ -1087,12 +1294,13 @@ function TopoSection({route}){
     inp.click();
   };
   const addPhoto=function(file){
+    setErr(null);
     if(USE_DB){
       setBusy(true);
       uploadTopoPhoto(areaId,file).then(function(t){
         setBusy(false);dbTopos.refetch();
         setDrawFor({id:t.id,url:topoPhotoUrl(t.storage_path),db:true,lines:[]});
-      }).catch(function(e){setBusy(false);alert((e&&e.message)||"Couldn't upload that photo.");});
+      }).catch(function(e){setBusy(false);setErr((e&&e.message)||"Couldn't upload that photo.");});
     } else {
       const rd=new FileReader();
       rd.onload=function(){
@@ -1104,10 +1312,11 @@ function TopoSection({route}){
     }
   };
   const submitLine=function(photo,data){
+    setErr(null);
     if(photo.db){
       submitTopoLine(photo.id,route.id,data.points,data.pins,null).then(function(){
         dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){alert((e&&e.message)||"Couldn't save that line.");});
+      }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
     } else {
       setLocalLines(function(m){
         const o=Object.assign({},m);
@@ -1125,6 +1334,7 @@ function TopoSection({route}){
       <SL>TOPO</SL>
       <button onClick={pickFile} disabled={busy} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"+ Add photo"}</button>
     </div>
+    {err?<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginBottom:9,display:"flex",alignItems:"center",gap:9}}><span style={{flex:1,fontSize:12.5,color:C.red,lineHeight:1.45}}>{err}</span><button onClick={function(){setErr(null);}} aria-label="Dismiss error" style={{flexShrink:0,background:"none",border:"none",color:C.red,fontSize:16,cursor:"pointer",lineHeight:1,padding:6,margin:-4}}>×</button></div>:null}
     {!photos.length?
       <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:13,padding:"22px 16px",textAlign:"center"}}>
         <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
@@ -1523,6 +1733,18 @@ function RouteDetail({route,presence,autoFix,onAutoFixDone,contribs,onSubTab,ini
   },[_tripRows,_reporterQ&&_reporterQ.data]);
   const activity=useMemo(function(){var out=[],seen=new Set(),ids=new Set();(route.activity||[]).concat(myReports||[]).concat(dbReports).forEach(function(a){if(!a||seen.has(a))return;var k=a._dbId!=null?a._dbId:a.id;if(k!=null){if(ids.has(k))return;ids.add(k);}seen.add(a);out.push(a);});return out.sort(function(x,y){return (y.date||"").localeCompare(x.date||"");});},[route.activity,myReports,dbReports]);const hzVoteFor=useCallback(function(label){if(!hzVotes||!label)return null;var direct=hzVotes[route.id+"|"+label];if(direct)return direct;var lc=String(label).toLowerCase();var cat=Object.keys(HAZ_KW).find(function(k){return k.toLowerCase()===lc||HAZ_KW[k].some(function(kw){return lc.indexOf(kw)>=0;});});return cat?hzVotes[route.id+"|"+cat]:null;},[hzVotes,route.id]);const ovCC=useMemo(()=>buildConsensus(activity,hzVoteFor),[activity,hzVoteFor]);const topRef=useRef(null);useEffect(()=>{try{if(topRef.current&&topRef.current.scrollIntoView)topRef.current.scrollIntoView({block:"start"});if(typeof window!=="undefined"&&window.scrollTo)window.scrollTo(0,0);}catch(e){}},[route&&route.id]);
   const {data:dbSibs}=useAreaRoutes(route.mountainId);const cragOnly=["trad","sport","bouldering"].includes(catOf(route));const showPlan=!cragOnly||hasPlanContent(route);/* Safety is offered on EVERY route, deliberately unlike Plan. An empty Plan tab is worse than no Plan tab — it promises an approach and a descent and delivers a blank — but the Safety tab is never empty: it carries the per-discipline advice, the forecast links and, since #769, the nearby-fire panel, none of which come from the route's own record. Plan stays content-gated for exactly that reason. This replaced `showSafety=!cragOnly||hasSafetyContent(route)`, which meant 99.5% of the catalog was offered no Safety tab and so had nowhere to put a live wildfire. */const techStatsEl=<div style={{marginBottom:12}}><TechStats route={enrichRoute(route)} onEdit={()=>{setFixOpenSection("grade");setFixOpen(true);}}/></div>;
+/* "About this peak" (peakMetadata.geology) used to sit in its own PEAK panel far down the
+     Overview, under the range/county rows — so the paragraph that tells you what the mountain
+     IS was separated from the paragraph that tells you what the route is by everything in
+     between. It is merged into the top description card instead: one block of prose at the
+     top of the page. PeakMetadataPanel keeps range/county/first-ascent and no longer renders
+     geology, so the text has exactly one home and check:field-renders still finds it. */
+  /* Deliberately NOT an IIFE. check:fire identifies the fire panel's element by matching
+     `const <name>=(function(){ … <FireNearRoute`, lazily, so ANY earlier `(function(){` in
+     this component captures that match — this const sits ~1.2k chars above `fireEl` and made
+     the guard hunt for `{_peakGeo}` on the Safety tab and report the panel both missing there
+     and double-mounted on Overview. A plain destructure keeps the guard pointed at fireEl. */
+  const _peakGeoPm=enrichRoute(route).peakMetadata,_peakGeo=(_peakGeoPm&&_peakGeoPm.geology)||"";
   /* Nearby active fire. It lives on the SAFETY tab — a fire that can close your approach road is a
      hazard, and it belongs beside the float plan, the forecasts and the hazard matrix rather than
      in the middle of a description of the climb. Rendered FIRST there, above the committing-objective
@@ -1552,7 +1774,13 @@ function RouteDetail({route,presence,autoFix,onAutoFixDone,contribs,onSubTab,ini
     every route now has. It did start on `conditions`, and that is worth not repeating — that tab is
     LABELLED "Reports" / "Send Reports", so a climber looking for hazards never opens it. Same trap
     as #655. */}
-      <div style={{marginBottom:6}}>{saved?<div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{padding:"7px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Find partners →</button></div>:<button onClick={onToggleSave} style={{width:"100%",padding:"9px",marginBottom:6,background:C.amberBg,color:C.amber,border:"1px solid "+C.amber,borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}>Save route to your objectives</button>}</div><button onClick={()=>onLog(route)} style={{width:"100%",padding:"9px",marginBottom:6,background:logged?C.greenBg:C.blueBg,color:logged?C.green:C.blue,border:"1px solid "+(logged?C.greenDim:C.blueDim),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700}}>{logged?"✓ Logged":"Log ascent?"}</button><button onClick={onToggleOffline} style={{width:"100%",padding:"9px",marginBottom:12,background:offlineSaved?C.greenBg:C.card,color:offlineSaved?C.green:C.textSub,border:"1px solid "+(offlineSaved?C.greenDim:C.border),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}><div style={{lineHeight:1.3}}>Save to offline</div><div style={{fontSize:11,fontWeight:400,color:offlineSaved?C.green:C.textMuted,marginTop:2}}>Work without cell service</div></button>{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{fontSize:11.5,fontWeight:700,color:C.teal,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}{(()=>{var vw=(presence&&presence.count)||0;var viewers=(presence&&presence.viewers)||[];var ey=OPEN_CREWS.filter(function(oc){return oc.routeId===route.id&&oc.spots>0;}).length;var lists=popInterest(route);var asc=route.activity?route.activity.length:0;var chips=[];if(ey)chips.push({n:ey,label:" crew"+(ey!==1?"s":"")+" eyeing"});if(asc)chips.push({n:asc,label:" ascent"+(asc!==1?"s":"")+" logged"});if(lists>0)chips.push({n:lists,label:" list"+(lists!==1?"s":"")+" saved"});return <div className="cm-stagger" onClick={()=>setTab("partners")} style={{display:"flex",alignItems:"center",gap:7,marginBottom:13,flexWrap:"wrap",cursor:"pointer"}}>{vw?<span style={{display:"inline-flex",alignItems:"center",gap:6,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:20,padding:"4px 11px"}}><span style={{width:7,height:7,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{fontSize:12,fontWeight:700,color:C.green}}><CountUp value={vw}/> viewing now</span></span>:null}{viewers.slice(0,4).map(function(vwr,i){return <span key={"v"+i} onClick={function(e){e.stopPropagation();onViewProfile&&onViewProfile(Object.assign({},CLIMBERS[0],{id:"presence_"+vwr.id,name:vwr.name||"Climber",username:(vwr.name||"climber").toLowerCase().replace(/\s+/g,""),avatar:vwr.avatar||FALLBACK_AV,trustScore:50,vouches:[],bio:"Viewing this route right now.",philosophy:"",verified:false,objectiveIds:[]}));}} title={(vwr.name||"A climber")+" is viewing this route now — tap to connect"} style={{cursor:"pointer",display:"inline-flex"}}><Av src={vwr.avatar} size={22}/></span>;})}{chips.map(function(c,i){return <span key={i} style={{display:"inline-flex",alignItems:"center",gap:4,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:600,color:C.textSub}}><b style={{color:C.text,fontWeight:800}}><CountUp value={c.n}/></b>{c.label}</span>;})}{route.classic?<span style={{display:"inline-flex",alignItems:"center",gap:5,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:700,color:C.amber}}><ActionIcon name="award" size={13} color={C.amber}/>Regional classic</span>:null}<RouteTagRow route={route}/></div>;})()}{cragOnly?techStatsEl:null}{(route.overview||route.desc)?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:12}}>{splitParagraphs(route.overview||route.desc).map((p,i)=><p key={i} style={{fontSize:14,color:C.textSub,lineHeight:1.75,margin:i===0?"0 0 10px":"10px 0 0"}}>{p}</p>)}</div>:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{setFixOpenSection("beta");setFixOpen(true);}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:3,letterSpacing:0.3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?<div style={{marginBottom:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>}>GETTING THERE</SL>{(route.road&&(route.road.driveNote||route.road.name))?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Trailhead</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{route.road.driveNote||route.road.name}</div></div>:null}{route.approach?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Approach</div>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>:<GapNote what="No approach description" why="How you get from the car to the base of this climb is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}<GPXMap pts={route.gpxPts} waypoints={route.waypoints} peakCoord={mtn.lat!=null?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null} endpointLabels={["alpine","mountaineering"].includes(catOf(route))?{startLabel:"Trailhead",startColor:C.green,finishLabel:"Summit",finishColor:C.orange}:undefined}/>{gapTrack(route)?<GapNote mt={10} what="No recorded GPS track" why="The map has no line to follow — only the waypoints below, if any. Recorded a GPX on this climb?" cta="Submit a track" onFix={()=>setShowGpsModal(true)}/>:null}{(()=>{const _al=route.approachLogistics||{};const th=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||((_al.trailheadLat!=null&&_al.trailheadLng!=null)?{lat:_al.trailheadLat,lng:_al.trailheadLng}:null)||(route.waypoints||[]).find(w=>w&&w.lat!=null&&/trailhead|parking|\bth\b/i.test(String(w.name||w.label||"")));if(!th||th.lat==null)return null;return <button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+th.lat+","+th.lng,"_blank")} style={{marginTop:9,width:"100%",padding:"9px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Directions to crag (Google Maps)</button>;})()}</div>:null}{cragOnly?<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>}>WAYPOINTS</SL>{(route.waypoints&&route.waypoints.length)?route.waypoints.map((wp,i)=>{const _wt=wpType(wp),col=wpColor(_wt),ic=wpIs(wp,"Hazard")?<ActionIcon name="alert" size={16} color={col}/>:wpGlyph(_wt);const prevWp=i>0?route.waypoints[i-1]:null;const _samePt=!!(prevWp&&prevWp.lat!=null&&prevWp.lng!=null&&wp.lat!=null&&wp.lng!=null&&Number(prevWp.lat)===Number(wp.lat)&&Number(prevWp.lng)===Number(wp.lng));const segMi=(!_samePt&&prevWp&&wp.distMi!=null&&prevWp.distMi!=null)?(wp.distMi-prevWp.distMi):null;const segFt=(!_samePt&&prevWp&&wp.elev!=null&&prevWp.elev!=null)?(wp.elev-prevWp.elev):null;return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div style={{background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:7,border:`1px solid ${C.border}`,display:"flex",gap:10}}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(wp.distMi)}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}</div></div></div>;}):<div style={{background:C.card,borderRadius:11,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag.</div><button onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} style={{padding:"8px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>}</div>:null}{/* The Protection/Anchor card lived here; it is now <ProtectionCard/> on Plan, minus the
+      <div style={{marginBottom:6}}>{saved?<div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{padding:"7px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Find partners →</button></div>:<button onClick={onToggleSave} style={{width:"100%",padding:"9px",marginBottom:6,background:C.amberBg,color:C.amber,border:"1px solid "+C.amber,borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}>Save route to your objectives</button>}</div><button onClick={()=>onLog(route)} style={{width:"100%",padding:"9px",marginBottom:6,background:logged?C.greenBg:C.blueBg,color:logged?C.green:C.blue,border:"1px solid "+(logged?C.greenDim:C.blueDim),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700}}>{logged?"✓ Logged":"Log ascent?"}</button><button onClick={onToggleOffline} style={{width:"100%",padding:"9px",marginBottom:12,background:offlineSaved?C.greenBg:C.card,color:offlineSaved?C.green:C.textSub,border:"1px solid "+(offlineSaved?C.greenDim:C.border),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}><div style={{lineHeight:1.3}}>Save to offline</div><div style={{fontSize:11,fontWeight:400,color:offlineSaved?C.green:C.textMuted,marginTop:2}}>Work without cell service</div></button>{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{fontSize:11.5,fontWeight:700,color:C.teal,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}{(()=>{var vw=(presence&&presence.count)||0;var viewers=(presence&&presence.viewers)||[];var ey=OPEN_CREWS.filter(function(oc){return oc.routeId===route.id&&oc.spots>0;}).length;var lists=popInterest(route);var asc=route.activity?route.activity.length:0;var chips=[];if(ey)chips.push({n:ey,label:" crew"+(ey!==1?"s":"")+" eyeing"});if(asc)chips.push({n:asc,label:" ascent"+(asc!==1?"s":"")+" logged"});if(lists>0)chips.push({n:lists,label:" list"+(lists!==1?"s":"")+" saved"});return <div className="cm-stagger" onClick={()=>setTab("partners")} style={{display:"flex",alignItems:"center",gap:7,marginBottom:13,flexWrap:"wrap",cursor:"pointer"}}>{vw?<span style={{display:"inline-flex",alignItems:"center",gap:6,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:20,padding:"4px 11px"}}><span style={{width:7,height:7,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{fontSize:12,fontWeight:700,color:C.green}}><CountUp value={vw}/> viewing now</span></span>:null}{viewers.slice(0,4).map(function(vwr,i){return <span key={"v"+i} onClick={function(e){e.stopPropagation();onViewProfile&&onViewProfile(Object.assign({},CLIMBERS[0],{id:"presence_"+vwr.id,name:vwr.name||"Climber",username:(vwr.name||"climber").toLowerCase().replace(/\s+/g,""),avatar:vwr.avatar||FALLBACK_AV,trustScore:50,vouches:[],bio:"Viewing this route right now.",philosophy:"",verified:false,objectiveIds:[]}));}} title={(vwr.name||"A climber")+" is viewing this route now — tap to connect"} style={{cursor:"pointer",display:"inline-flex"}}><Av src={vwr.avatar} size={22}/></span>;})}{chips.map(function(c,i){return <span key={i} style={{display:"inline-flex",alignItems:"center",gap:4,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:600,color:C.textSub}}><b style={{color:C.text,fontWeight:800}}><CountUp value={c.n}/></b>{c.label}</span>;})}{route.classic?<span style={{display:"inline-flex",alignItems:"center",gap:5,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:700,color:C.amber}}><ActionIcon name="award" size={13} color={C.amber}/>Regional classic</span>:null}<RouteTagRow route={route}/></div>;})()}{cragOnly?techStatsEl:null}{/* MERGE NOTE: the card renders when there is a description OR "About this peak", because
+    geology has no other home — PeakMetadataPanel stopped rendering it, so gating this card on
+    the description alone would leave routes.peak_metadata.geology populated and displayed
+    nowhere. The GapNote still fires on a missing DESCRIPTION specifically, which is a
+    different claim from a missing peak blurb. */}
+{(route.overview||route.desc||_peakGeo)?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:12}}>{(route.overview||route.desc)?splitParagraphs(route.overview||route.desc).map((p,i)=><p key={i} style={{fontSize:14,color:C.textSub,lineHeight:1.75,margin:i===0?"0 0 10px":"10px 0 0"}}>{p}</p>):null}{_peakGeo?<div style={{marginTop:(route.overview||route.desc)?12:0,paddingTop:(route.overview||route.desc)?12:0,borderTop:(route.overview||route.desc)?"1px solid "+C.borderLight:"none"}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5,marginBottom:5}}>About this peak</div>{splitParagraphs(_peakGeo).map((p,i)=><p key={i} style={{fontSize:13.5,color:C.textSub,lineHeight:1.7,margin:i===0?"0":"9px 0 0"}}>{p}</p>)}</div>:null}</div>:null}
+{(route.overview||route.desc)?null:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{setFixOpenSection("beta");setFixOpen(true);}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:3,letterSpacing:0.3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?<div style={{marginBottom:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>}>GETTING THERE</SL>{(route.road&&(route.road.driveNote||route.road.name))?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Trailhead</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{route.road.driveNote||route.road.name}</div></div>:null}{route.approach?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Approach</div>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>:<GapNote what="No approach description" why="How you get from the car to the base of this climb is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}<GPXMap pts={route.gpxPts} waypoints={route.waypoints} peakCoord={mtn.lat!=null?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null} endpointLabels={["alpine","mountaineering"].includes(catOf(route))?{startLabel:"Trailhead",startColor:C.green,finishLabel:"Summit",finishColor:C.orange}:undefined}/>{gapTrack(route)?<GapNote mt={10} what="No recorded GPS track" why="The map has no line to follow — only the waypoints below, if any. Recorded a GPX on this climb?" cta="Submit a track" onFix={()=>setShowGpsModal(true)}/>:null}{(()=>{const _al=route.approachLogistics||{};const th=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||((_al.trailheadLat!=null&&_al.trailheadLng!=null)?{lat:_al.trailheadLat,lng:_al.trailheadLng}:null)||(route.waypoints||[]).find(w=>w&&w.lat!=null&&/trailhead|parking|\bth\b/i.test(String(w.name||w.label||"")));if(!th||th.lat==null)return null;return <button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+th.lat+","+th.lng,"_blank")} style={{marginTop:9,width:"100%",padding:"9px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Directions to crag (Google Maps)</button>;})()}</div>:null}{cragOnly?<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>}>WAYPOINTS</SL>{(route.waypoints&&route.waypoints.length)?route.waypoints.map((wp,i)=>{const _wt=wpType(wp),col=wpColor(_wt),ic=wpIs(wp,"Hazard")?<ActionIcon name="alert" size={16} color={col}/>:wpGlyph(_wt);const prevWp=i>0?route.waypoints[i-1]:null;const _samePt=!!(prevWp&&prevWp.lat!=null&&prevWp.lng!=null&&wp.lat!=null&&wp.lng!=null&&Number(prevWp.lat)===Number(wp.lat)&&Number(prevWp.lng)===Number(wp.lng));const segMi=(!_samePt&&prevWp&&wp.distMi!=null&&prevWp.distMi!=null)?(wp.distMi-prevWp.distMi):null;const segFt=(!_samePt&&prevWp&&wp.elev!=null&&prevWp.elev!=null)?(wp.elev-prevWp.elev):null;return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div style={{background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:7,border:`1px solid ${C.border}`,display:"flex",gap:10}}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(wp.distMi)}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}</div></div></div>;}):<div style={{background:C.card,borderRadius:11,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag.</div><button onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} style={{padding:"8px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>}</div>:null}{/* The Protection/Anchor card lived here; it is now <ProtectionCard/> on Plan, minus the
         Anchor column. See the note on that component for why the Anchor half was dead. */}{rkFlagged.length?<div onClick={()=>setTab("safety")} style={{display:"flex",alignItems:"center",gap:9,background:C.amberBg,border:`1px solid ${C.amber}`,borderRadius:11,padding:"10px 13px",marginBottom:13,cursor:"pointer"}}><span style={{flexShrink:0}}><ActionIcon name="alert" size={17} color={C.amber}/></span><div style={{flex:1}}><div style={{fontSize:12.5,fontWeight:700,color:C.amber}}>Climbers are flagging hazards not in the official info</div><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{rkFlagged.map(h=>h.label).slice(0,3).join(", ")+" — tap to open Safety."}</div></div><span style={{color:C.amber,fontSize:16,flexShrink:0}}>›</span></div>:null}
         {!cragOnly?techStatsEl:null}<VerifNote route={route}/><PeakMetadataPanel route={enrichRoute(route)} C={C} ActionIcon={ActionIcon}/>{/* DATA CONFIDENCE (ProvenancePanel) and DATA QUALITY (DataQualityPanel, mounted from
         ClimbMatch.jsx) both sat on Overview and both answered "how complete/trusted is this
@@ -1611,13 +1839,20 @@ const landMgrVal=ac.land_manager||ac.landManager;const closuresVal=ac.closures||
    it would let 15 Mt. Baker boilerplate routes through to the wrong agency; PERMIT_PERIPHERAL
    above is what makes it safe. Measured together: 107 wrong links removed, 7 genuine park
    links gained, 1 moved. Do not "tidy" display and matching back into one expression. */
-const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+" "+(feesVal||"")).toLowerCase();/* Match the agency name only where it is ASSERTED, never where it is disclaimed. This haystack is land manager + permit + fees, and 1,282 WA routes carry the fees line "None - no climbing fee (National Forest, not Mount Rainier NP)". A bare /rainier/ test reads that as Rainier and sends a climber on a Snoqualmie or Index route to Mount Rainier's climbing-permit page - contradicting the very sentence it matched. 1,308 of the 1,941 routes showing a permit link were pointed at the wrong agency this way. Same defect the rack summary already guards with RACK_NEG ("ice screws are not worth carrying" must not advertise screws). */const _pmUrl=_pmSays(_pmLm,/enchantment/g)?["Enchantment Permit Area lottery — Recreation.gov","https://www.recreation.gov/permits/233273"]:_pmSays(_pmLm,/north cascades/g)?["North Cascades NP backcountry permits — nps.gov","https://www.nps.gov/noca/planyourvisit/permits.htm"]:_pmSays(_pmLm,/rainier/g)?["Mount Rainier climbing permits — nps.gov","https://www.nps.gov/mora/planyourvisit/climbing.htm"]:_pmSays(_pmLm,/olympic national park/g)?["Olympic NP wilderness permits — nps.gov","https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"]:_pmSays(_pmLm,/recreation\.gov/g)?["Reserve on Recreation.gov","https://www.recreation.gov"]:null;return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>ACCESS & REGULATIONS</div><EditIconButton onClick={function(){setFixOpenSection("permit");setFixOpen(true);}} title="Edit access & permit information"/></div>{rows.map(r=><div key={r[0]} style={{marginBottom:7}}><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{r[0]}</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>)}{_pmUrl?<a href={_pmUrl[1]} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{_pmUrl[0]+" →"}</a>:null}<div style={{fontSize:12,color:C.textMuted,marginTop:8,fontStyle:"italic"}}>Confirm current permits and closures with the land manager before you go.</div></div>;})()}{(route.approach||(route.approachLogistics&&route.approachLogistics.trailhead)||(route.waypoints||[]).some(w=>w&&w.type==="Trailhead"&&w.lat!=null))?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>}>APPROACH</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`}}><TrailheadCard route={route} onEdit={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>{route.approach?splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>):null}</div></div>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{route.turnaround?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("turn");setFixOpen(true);}} title="Edit turnaround time"/>}>TURNAROUND</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:"1px solid "+C.border}}>{splitParagraphs(String(route.turnaround)).map(function(p,i){return <p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0":"8px 0 0"}}>{p}</p>;})}</div></div>:null}{/* Up, then down. PROTECTION and PITCH-BY-PITCH sit after the approach and before the
+const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+" "+(feesVal||"")).toLowerCase();/* Match the agency name only where it is ASSERTED, never where it is disclaimed. This haystack is land manager + permit + fees, and 1,282 WA routes carry the fees line "None - no climbing fee (National Forest, not Mount Rainier NP)". A bare /rainier/ test reads that as Rainier and sends a climber on a Snoqualmie or Index route to Mount Rainier's climbing-permit page - contradicting the very sentence it matched. 1,308 of the 1,941 routes showing a permit link were pointed at the wrong agency this way. Same defect the rack summary already guards with RACK_NEG ("ice screws are not worth carrying" must not advertise screws). */const _pmUrl=_pmSays(_pmLm,/enchantment/g)?["Enchantment Permit Area lottery — Recreation.gov","https://www.recreation.gov/permits/233273"]:_pmSays(_pmLm,/north cascades/g)?["North Cascades NP backcountry permits — nps.gov","https://www.nps.gov/noca/planyourvisit/permits.htm"]:_pmSays(_pmLm,/rainier/g)?["Mount Rainier climbing permits — nps.gov","https://www.nps.gov/mora/planyourvisit/climbing.htm"]:_pmSays(_pmLm,/olympic national park/g)?["Olympic NP wilderness permits — nps.gov","https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"]:_pmSays(_pmLm,/recreation\.gov/g)?["Reserve on Recreation.gov","https://www.recreation.gov"]:null;return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>ACCESS & REGULATIONS</div><EditIconButton onClick={function(){setFixOpenSection("permit");setFixOpen(true);}} title="Edit access & permit information"/></div>{rows.map(r=><div key={r[0]} style={{marginBottom:7}}><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{r[0]}</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>)}{_pmUrl?<a href={_pmUrl[1]} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{_pmUrl[0]+" →"}</a>:null}<div style={{fontSize:12,color:C.textMuted,marginTop:8,fontStyle:"italic"}}>Confirm current permits and closures with the land manager before you go.</div></div>;})()}{/* The structured approaches come FIRST, then the long-form prose below. A climber
+    choosing a way in wants the comparison (which one, what season, how long) before the
+    narrative; the narrative is what you read once you have chosen. */}<ApproachVariants route={route} onEdit={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>{(route.approach||(route.approachLogistics&&route.approachLogistics.trailhead)||(route.waypoints||[]).some(w=>w&&w.type==="Trailhead"&&w.lat!=null))?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>}>APPROACH</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`}}><TrailheadCard route={route} onEdit={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>{route.approach?splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>):null}</div></div>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{route.turnaround?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("turn");setFixOpen(true);}} title="Edit turnaround time"/>}>TURNAROUND</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:"1px solid "+C.border}}>{splitParagraphs(String(route.turnaround)).map(function(p,i){return <p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0":"8px 0 0"}}>{p}</p>;})}</div></div>:null}{/* Up, then down. PROTECTION and PITCH-BY-PITCH sit after the approach and before the
     descent; the rappels follow the descent prose immediately below. All three used to be on
     Overview, which left Plan describing how to reach the base and how to walk off but
     nothing about the climbing in between. */}
 {!cragOnly?<ProtectionCard route={route} myReports={myReports} onEdit={()=>{setFixOpenSection("gear");setFixOpen(true);}}/>:null}
 {route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<RouteBeta route={route} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null}
 {route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<div style={{marginBottom:14}}><PitchTable route={route} comments={comments} onCommentAdd={onCommentAdd} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/></div>:(gapPitches(route)?<GapNote what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null)}
+{/* The unpitched counterpart, in the SAME slot as PITCH-BY-PITCH. isPitched() is the
+    switch, so exactly one of PITCH-BY-PITCH and CLIMBING ROUTE can appear on a route and
+    neither can silently shadow the other. Moved here with the pitch table when Plan took
+    ownership of the climbing itself. */}
+{!isPitched(route)&&(route.climbingRoute||[]).length?<div style={{marginBottom:14}}><ClimbingRouteTable route={route} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/></div>:null}
 {(route.descent||route.descentText||rxOf(route.id).retreat)?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("descentText");setFixOpen(true);}} title="Edit descent information"/>}>DESCENT</SL>{[["Descent",descentBeta(route)]].concat((!cragOnly&&rxOf(route.id).retreat)?[["Retreat / bail",rxOf(route.id).retreat]]:[]).filter(x=>x[1]).map(x=><div key={x[0]} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.blue,marginBottom:5}}>{x[0]}</div>{splitParagraphs(x[1]).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>)}</div>:<GapNote what="No descent recorded" why="Nothing says how you get off this route — and on many climbs the way down is the committing part." cta="Describe the descent" onFix={()=>{setFixOpenSection("descentText");setFixOpen(true);}}/>}{/* The rappel table and its prose/count summary, immediately after the descent they belong
     to. Both were on Overview; keeping them adjacent is what matters — see the note where
     they used to sit. */}
