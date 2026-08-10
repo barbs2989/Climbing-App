@@ -20,6 +20,8 @@
     "audit:distances": "node scripts/audit-distances.mjs",
     "audit:area-parents": "node scripts/audit-area-parents.mjs",
     "audit:terrain": "node scripts/audit-route-terrain.mjs",
+    "audit:approach-scope": "node scripts/audit-approach-scope.mjs",
+    "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "audit:waypoint-order": "node scripts/audit-waypoint-order.mjs",
     "audit:rappels": "node scripts/audit-rappels.mjs",

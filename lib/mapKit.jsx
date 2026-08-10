@@ -26,11 +26,28 @@ export function loadLeaflet(onReady, onError) {
     sc = document.createElement("script");
     sc.id = "leaflet-js";
     sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
-    sc.onload = onReady;
-    sc.onerror = onError;
+    // Record the outcome ON the element. A later consumer cannot learn it any other
+    // way: `load` and `error` are one-shot events, so a listener attached after the
+    // script has already settled never fires. Both terminal states below were
+    // unreachable-by-callback before this, and each one strands a map.
+    sc.dataset.state = "loading";
+    sc.onload = () => { sc.dataset.state = window.L ? "loaded" : "error"; if (window.L) onReady(); else if (onError) onError(); };
+    sc.onerror = () => { sc.dataset.state = "error"; if (onError) onError(); };
     document.body.appendChild(sc);
+  } else if (sc.dataset.state === "error") {
+    // Already failed once. Report it NOW rather than attaching a listener to an event
+    // that has been and gone — that path left the caller waiting on its own timeout
+    // (9s in NearMePanel) before it could even say the map was unavailable, and left
+    // any caller without a timeout stuck on "Loading map…" forever.
+    if (onError) onError();
+  } else if (sc.dataset.state === "loaded") {
+    // Settled successfully, but `window.L` was falsy at the top of this call — the CDN
+    // answered 200 with something that is not Leaflet (a captive portal or an error
+    // page both do this). Neither event will fire again, so treat it as a failure
+    // instead of hanging.
+    if (onError) onError();
   } else {
-    sc.addEventListener("load", onReady);
+    sc.addEventListener("load", () => { if (window.L) onReady(); else if (onError) onError(); });
     if (onError) sc.addEventListener("error", onError);
   }
 }
