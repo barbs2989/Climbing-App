@@ -97,12 +97,8 @@ export function PartnerRequirementsPanel({route, C, ActionIcon}) {
   return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><div style={{fontSize:14,fontWeight:700,color:C.text,marginBottom:10,display:"flex",alignItems:"center",gap:7}}><ActionIcon name="partners" size={16} color={C.text}/><span>PARTNER REQUIREMENTS</span></div>{experienceLevel?<div style={{marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:2}}>Experience level</div><div style={{fontSize:13,color:C.textSub}}>{experienceLevel}</div></div>:null}{fitnessSpec?<div style={{marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:2}}>Fitness specs</div>{typeof fitnessSpec==="string"?<div style={{fontSize:13,color:C.textSub}}>{fitnessSpec}</div>:<div style={{fontSize:12.5,color:C.textSub}}>{Object.entries(fitnessSpec).map(([k,v])=>k+": "+v).join(" · ")}</div>}</div>:null}{requiredSkills&&requiredSkills.length?<div style={{marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:3}}>Required skills</div><div style={{display:"flex",gap:4,flexWrap:"wrap"}}>{requiredSkills.map(s=><span key={s} style={{fontSize:11.5,color:C.blue,background:C.blueBg,padding:"3px 8px",borderRadius:6}}>{s}</span>)}</div></div>:null}{approachTime?<div><div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:2}}>Approach time</div><div style={{fontSize:13,color:C.textSub}}>{approachTime}</div></div>:null}</div>;
 }
 
-export function DataQualityPanel({route, C, ActionIcon}) {
-  if (!route.dataQuality) return null;
-  const {confidence, lastVerified} = route.dataQuality;
-  // The gap list itself lives in Overview's own "Help fill in the gaps" banner
-  // (routeGaps()), which is actionable and shown for every route — this panel
-  // only adds the confidence/freshness read, so the two don't repeat each other.
-  const confColor=confidence==="HIGH"?C.green:confidence==="MEDIUM"?C.amber:C.red;
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 15px",marginBottom:13}}><div style={{fontSize:14,fontWeight:700,color:C.text,marginBottom:10,display:"flex",alignItems:"center",gap:7}}><ActionIcon name="chart" size={16} color={C.text}/><span>DATA QUALITY</span></div><div style={{padding:"8px 11px",background:confColor+"22",border:"1px solid "+confColor+"55",borderRadius:8}}><div style={{fontSize:12,fontWeight:700,color:confColor,marginBottom:2}}>Confidence: {confidence}</div><div style={{fontSize:11.5,color:C.textSub}}>Data verified from {lastVerified?lastVerified:"recent sources"}</div></div></div>;
-}
+// DataQualityPanel (the DATA QUALITY box) was removed along with DATA CONFIDENCE: both
+// reported how complete a route's data was, at the top of Overview, and per-section
+// GapNotes now say it where it is actionable. That leaves the `data_quality` column with
+// no reader on purpose — recorded in check:field-renders' KNOWN map, not left to be
+// rediscovered as a bug.

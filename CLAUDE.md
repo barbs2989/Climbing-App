@@ -20,11 +20,13 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
+npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
@@ -74,19 +76,24 @@ a build error, but a screen that renders wrong or not at all.
   a 0.0hr hike leg and the return tile went **green**, an affirmative "you're down before
   dark" with the walk in *and* out counted as zero, and the "After dark" warning could never
   fire) and **#655** (the sport/trad/bouldering safety advice sat behind the Safety tab,
-  which is hidden for exactly those three disciplines). Both were invisible to a guard that
+  which was hidden for exactly those three disciplines — that tab is unconditional now, so the
+  advice is asserted on it rather than inline on Overview). Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
-  - It also pins **where the nearby-fire panel lives**: on the Safety tab, first section, and on
-    Overview *only* for a route offered no Safety tab (`showSafety` is content-gated, so that is
-    99.5% of the catalog — moving it unconditionally would delete it for almost every route).
-    This needed a **located** fixture: `bare()`'s area has no `lat`/`lng` and `FireNearRoute`
-    renders nothing without a coordinate, so every other render here is of a route where the
-    panel is correctly absent. Match its loading line, **never its "Fire & smoke" heading** —
-    the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that removed
-    the panel from Safety entirely passed on the strength of that link.
+  - It also pins **where the nearby-fire panel lives**: first section of the Safety tab, on every
+    route, and nowhere else. That needed a **located** fixture — `bare()`'s area has no `lat`/`lng`
+    and `FireNearRoute` renders nothing without a coordinate, so every other render here is of a
+    route where the panel is correctly absent. Match its loading line, **never its "Fire & smoke"
+    heading**: the Safety tab's forecast list links `Fire & smoke — AirNow`, and an injection that
+    removed the panel from Safety entirely passed on the strength of that link.
+  - **Plan and Safety are gated differently, and it asserts both.** `showPlan` is content-gated;
+    the Safety tab is **unconditional**. An empty Plan tab promises an approach and a descent and
+    delivers a blank, but the Safety tab is never empty — the per-discipline advice, the forecast
+    links and the fire panel all render without the route carrying one safety field of its own.
+    While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
+    `hasSafetyContent()` is gone; `hasPlanContent()` stays.
 - **`check:seed-history`** asserts that seed climbing history is only ever attributed to a
   **seed** identity. `ticksFor(name)` scans `ROUTES[].activity` for `a.user === name` — it
   matches a **display name**, which belongs to neither id space, so it hands one person's
@@ -407,6 +414,51 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
+  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  `mergedNotifs` beside four live sources hid that completely: the notification list worked,
+  so nothing looked wrong. It now derives from the user's real `logs`.
+  - **Nothing rendered it afterwards, and nothing easily could, because the feature is
+    date-gated.** `_anniv` only fires for a log whose yearly anchor is within **two days** of
+    today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
+    it renders nothing, and every other guard walks the app on one of those days. A feature
+    invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
+    computed at config load so it never rots. The date is built in **local** time, because
+    `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off
+    west of Greenwich and would still pass the ±2-day gate while proving less than it claims.
+    Feb 29 needs no special case — `"2027-02-29T12:00:00"` parses to Mar 1, one day off, still
+    inside the window (measured, not assumed).
+  - The injected entry is a **clone of the seed entry with only its date rewritten**, lifted
+    out of the source by balancing braces rather than hand-written. A hand-written literal is a
+    second copy of a shape that lives elsewhere: add a field to the seed log and the clone
+    silently stops matching, and `logs` also feeds `Resume`, `TickList` and `_pastClimbs`. The
+    brace walk runs over **raw source but skips string contents** — the opposite care from
+    `check:overlay-discovery`, which must not blank strings; here a `{` *inside* a string must
+    not be counted or the walk ends in the wrong place, truncating the literal mid-prose.
+  - It refuses to run a probe that cannot fire: if the date rewrite is a no-op, the config
+    throws rather than injecting an entry carrying the original date.
+  - Checks **both** surfaces that render `mergedNotifs` (the notifications panel and Home's
+    alerts dropdown), because #713's defect was invisible precisely *because* the list around
+    it worked — "some notification rendered" is not the question. It asserts the head **and**
+    the tail of the composed string, so a truncation fails; it does not assert the route name,
+    which resolves differently on seed vs `USE_DB` and would go red for reasons that are not
+    this feature's fault.
+  - **Browserless self-tests run first**, because both helpers fail by producing a *wrong
+    probe* rather than an error, and a wrong probe fails the browser assertions — sending
+    whoever reads it hunting for a bug in the feature that does not exist. They cover the
+    calendar cases a single run cannot (a run only ever exercises today) and, with a synthetic
+    entry, the brace-in-a-string case **real data does not exercise**: the seed prose happens
+    to contain no braces today, so nothing else would notice that logic breaking.
+  - What a pass does **not** mean: that the date arithmetic is right for every calendar case.
+    The probe sits one year back to the day, the easy case. It proves the path from `logs` to
+    the screen is not severed, which is the failure that actually shipped.
+  - Injection-tested, three cases: dating the probe outside the ±2-day window fails on both
+    surfaces (so the check is **not** vacuous — it depends on the injection doing its job);
+    reverting `_anniv` to `MY_CLIMBS.map` fails; breaking the opener anchor fails on the
+    58-character boot shell rather than passing over a blank app.
+  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
 - **`check:drift`** asks whether the live site is actually serving the current tip
   of `main`, and runs on a schedule (`.github/workflows/deploy-drift.yml`), not in
   the build. It exists because on 2026-08-06 production sat **8 commits behind for
@@ -531,6 +583,25 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:contrib-fields`** asserts that every field a climber can submit is a field the
+  merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
+  by both merge paths (the local `routeEdits` one and the DB one that counts distinct
+  contributors). A key offered by `SuggestFix` and absent from `SS` is accepted, toasted as
+  recorded, written to the `contributions` table, and then read by nothing — the climber gets
+  a success message and the route never changes. Static, so it sits in `npm run build`.
+  - **Two submission paths, and checking only one was this guard's own first-draft bug.**
+    Besides the `FIELDS` list, `RouteDetail` calls `onSubmit` with a literal field name; that
+    is how `bailout` and `startLocation` are filed, and neither is in `FIELDS`, so a
+    FIELDS-only scan cannot see that path at all. Those two are the only `EXEMPT` names,
+    because `onContribute` returns before the field-edit path for them (they are additive,
+    geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
+    exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
+    being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
+    or `var SS={` is renamed — an empty set on either side would make every comparison pass
+    vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
+  - Injection-tested; the 4 cases are named at the bottom of the script.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
@@ -911,3 +982,49 @@ fault — it passes `r.id` straight through from `catalog/`.
 > `--allow-duplicate-names` overrides it, and should only be used once you have confirmed
 > the rows really are distinct climbs. Before re-importing any state loaded under the old
 > scheme, migrate its ids first.
+
+### Enrichment prose must not be written into a display field
+
+A research pass has one job that keeps going wrong: it answers the question it was asked
+and writes the *answer paragraph* into a column the UI renders as a **label**. The column
+is then correct — the prose is accurate, sourced and useful — and the screen is broken,
+which is why nothing catches it. Every guard the repo has asks whether a column is
+populated; none asks whether what is in it is the right *shape*.
+
+Three columns have taken this and all three now have a reader-side defence. **Write the
+value, put the reasoning somewhere else.**
+
+- **`season` is a WINDOW, not an explanation.** It is rendered in the route header strap
+  beside elevation and pitch count (`8,815 ft · 6p · Jul-Sep`). Enrichment has written up
+  to 232 characters into it (`wa_hourglass_gully_winter`), and a paragraph about snow
+  bridges then wrapped over the cover photo and pushed the header open. WA currently has
+  **14 `season` values containing a parenthetical** and many more that are a whole
+  sentence — `"Late May–June is most commonly reported, when snow still covers the couloir
+  and brush; by mid-summer the couloir is loose talus/scree"`. Write `"late May-Jun"` there
+  and put that sentence in **`best_season`** or `seasonal_guidance.monthBreakdown`, which
+  exist for exactly this and are rendered as prose on the Conditions tab.
+  `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
+  falling back to a cut at `;`/`.`/`(` — but it is a *repair*, and it can only ever show
+  less than what was written.
+- **`grade` is a GRADE.** It reaches the compact route rows on an area page and the header
+  pill, where there is room for `5.9` and not for `"5.11b/c (6c+ French, E4 6a British)"`
+  or `"4th class, described by guidebook sources as 'probably low 5th to most'"`.
+  `shortGrade()`/`gradeDetail()` in `lib/grade.js` split them, and the qualifier renders in
+  the GRADES panel on the route page — so the words are not lost, but the split is done by
+  a list of cut tokens and a new phrasing can defeat it. Put the qualifier in
+  `pitch_detail[].notes` or `beta`.
+- **`rappels` is prose today and reads like a count.** Every WA value is a sentence
+  (`"~5 single-rope rappels, approximately 400 ft total, down the NE Face"`,
+  `"Variable — downclimb/short rappels on West Ridge itself, or ~5 single-rope raps via
+  East Ledges/NE Face"`). There are also `rappel_count_note` and `rappel_detail` columns.
+  A UI that wants "how many rappels" cannot get it from any of them without parsing
+  English, and a parse that reads "~5" out of the second example is **wrong** — that route
+  is a downclimb unless you choose the East Ledges descent. If a numeric rappel count is
+  ever needed it has to be a new, explicitly-nullable column, and `null` must mean
+  "depends on the descent chosen" rather than defaulting to 0. See
+  [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
+
+The rule generalises: **before writing a researched string into an existing column, look at
+where that column renders.** `npm run check:field-renders` will tell you; a column that
+reaches a header, a pill, a chip or a table cell takes a value, and its explanation belongs
+in the prose column beside it.

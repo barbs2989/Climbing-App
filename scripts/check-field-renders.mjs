@@ -71,7 +71,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 import { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
 import { enrichRoute, AspectSunPanel, EmergencyRescueCard, C, ActionIcon, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
-import { SeasonalGuidancePanel, CrowdsPanel, DataQualityPanel, PartnerRequirementsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};
+import { SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 const h = React.createElement;
@@ -80,7 +80,12 @@ export { dbRouteToCamel };
 function siblings(route, tab) {
   const r = enrichRoute(route);
   const mtn = MOUNTAINS.find((x) => x.id === route.mountainId) || route._dbArea;
-  if (tab === "overview") return [h(DataQualityPanel, { key: "dq", route: r, C, ActionIcon })];
+  // Overview no longer mounts a sibling panel: DataQualityPanel (the DATA QUALITY box) was
+  // removed with ProvenancePanel's DATA CONFIDENCE box — two panels grading the route's data
+  // above the route itself. The data_quality column is recorded in KNOWN below as a deliberate
+  // non-reader. This harness must mirror what the app actually mounts, or it measures a
+  // screen nobody sees.
+  if (tab === "overview") return [];
   if (tab === "planner") return [
     h(AspectSunPanel, { key: "asp", route: r, sunReports: {}, onSuggestSun: noop }),
     h(SeasonalGuidancePanel, { key: "sg", route: r, C, ActionIcon }),
@@ -275,10 +280,30 @@ const KNOWN = {
   // return `if(!assumed.length&&!ess.length)return null`. It was never rendered. The box
   // printed `assumed`, the generic discipline kit, on all 1,037 populated routes. Fixed by
   // rendering it as "Specific to this route", so the entry is gone rather than reworded.
-  lists: "membership keys, not display copy — consumed by ticksFor/inList via "
-    + "`.includes(\"state_hp\")`. NOTE: the live column holds free prose (\"Bulger List "
-    + "(Washington's 100 highest peaks)\"), which that exact-match test can never satisfy, so "
-    + "the badge it feeds cannot fire for DB routes. A data-shape question, not a render one.",
+  // `lists` was here, recorded as "membership keys, not display copy" with a note that the
+  // live column holds free prose an exact `.includes("state_hp")` could never satisfy. That
+  // note was right and it was the whole bug: the column reached no screen AND fed a badge
+  // that could not fire. lib/routeTags.js now maps that prose to slugs at read time and
+  // RouteTagRow renders them as chips on the route page, so the column renders and the
+  // badge can score. Entry removed rather than reworded — same as what_to_bring above.
+  // Its only reader was EnrichmentPanels' DATA QUALITY box on Overview, removed together with
+  // ProvenancePanel's DATA CONFIDENCE box: two panels, at the top of the page, both answering
+  // "how complete is this route's data" before the route itself. Gaps are now reported by the
+  // section that owns the missing field (GapNote), which says the same thing where it can be
+  // acted on. This is a DELIBERATE removal of the reader, not an unnoticed hole — which is
+  // exactly what this map is for. If the confidence/freshness read earns a home again, it
+  // belongs next to the data it grades, not above it.
+  // `corrections` lost its reader with the same box. Kept out on purpose rather than re-homed:
+  // 501 routes carry it and the modal population is boilerplate — "None — consistent across
+  // sources." is a correction that says nothing happened. `verif` did NOT go with it: it says
+  // something specific on 19 routes ("UNVERIFIED LOCATION: the parent area could not be found")
+  // and now renders as one muted line on Overview (VerifNote), so it is absent from this map.
+  corrections: "reader removed with the DATA CONFIDENCE box — graded bookkeeping, and much of "
+    + "the column reads \"None — consistent across sources.\" The substantive half of that box, "
+    + "`verif`, was kept as a one-line note on Overview rather than allowlisted here.",
+  data_quality: "reader removed on purpose — the DATA QUALITY box duplicated DATA CONFIDENCE "
+    + "at the top of Overview and both were replaced by per-section gap notices. Give it a "
+    + "home beside the fields it grades if it comes back, not another page-level banner.",
 };
 const dead = results.filter((r) => r.verdict === "NEVER RENDERS" && !KNOWN[r.col]);
 const known = results.filter((r) => r.verdict === "NEVER RENDERS" && KNOWN[r.col]);

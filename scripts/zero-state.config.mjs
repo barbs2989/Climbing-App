@@ -13,7 +13,12 @@
 // app and reporting green -- the same failure mode check:bare guards against.
 
 import base from "../vite.config.js";
-import { buildOpener, lazyChunks } from "./lib/overlay-scaffold.mjs";
+import { buildOpener, buildRouteDetailOpener, routeDetailSource, lazyChunks } from "./lib/overlay-scaffold.mjs";
+
+// RouteDetail owns overlays of its own, and no `?z=` injected into App can reach a flag local
+// to another component. So it gets its own opener, and App is told the names so it knows to
+// navigate into a route first. See scripts/lib/overlay-scaffold.mjs.
+const RD_NAMES = buildRouteDetailOpener(routeDetailSource(), "check:zero").names;
 
 const ANCHORS = [
   [
@@ -41,6 +46,7 @@ function zeroStateScaffold() {
     name: "zero-state-scaffold",
     enforce: "pre", // must run before @vitejs/plugin-react compiles the JSX away
     transform(code, id) {
+      if (id.endsWith("/RouteDetail.jsx")) return buildRouteDetailOpener(code, "check:zero").code;
       if (!id.endsWith("/ClimbMatch.jsx")) return null;
       let out = code;
       for (const [from, to] of ANCHORS) {
@@ -58,7 +64,7 @@ function zeroStateScaffold() {
       // Overlay discovery and the opener effect are shared with
       // scripts/signed-in.config.mjs, so the two checks cannot drift apart on which
       // modals exist. See scripts/lib/overlay-scaffold.mjs.
-      const { inject } = buildOpener(out, 'const prevUidRef=useRef("__forcezero");', "check:zero");
+      const { inject } = buildOpener(out, 'const prevUidRef=useRef("__forcezero");', "check:zero", undefined, RD_NAMES);
       return out.replace(
         'const prevUidRef=useRef("__forcezero");',
         'const prevUidRef=useRef("__forcezero");\n  ' + inject

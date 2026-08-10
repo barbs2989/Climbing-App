@@ -34,12 +34,58 @@ for (let k = pEnd; k < SRC.length; k++) {
   else if (SRC[k] === "}" && --depth === 0) { pEnd = k + 1; break; }
 }
 const payloadLit = SRC.slice(SRC.indexOf("{", pi), pEnd);
-const written = new Set([...payloadLit.matchAll(/([a-z_]+)\s*:/g)].map(m => m[1]));
 
-// nested inside the photos jsonb, not top-level columns
-["caption", "url"].forEach(k => written.delete(k));
-// derived on both sides rather than round-tripped — see #405's rationale
-const DERIVED = new Set(["discipline", "car_to_car_minutes"]);
+// Column names are the keys at depth 1 of the payload literal, and nothing else.
+//
+// This was `payloadLit.matchAll(/([a-z_]+)\s*:/g)` over the raw slice, which cannot tell a
+// column from any other `word:` in range. Two ways that misreports, both live rather than
+// hypothetical: a ternary inside a column's own value expression — `isNaN(n)?null:n` — is
+// read as a column called `null`, and a key nested inside a value (`{url:u,caption:null}` in
+// the photos map) is read as a top-level column, which is why `caption`/`url` had to be
+// deleted again by hand afterwards. Both failures point the SAME direction: they invent
+// columns, so they can only ever produce a false FAILURE, never a false pass. That is the
+// safe direction for a guard to be wrong in, and it is why this went unnoticed — but a
+// guard that cries wolf gets exemptions bolted onto it until it stops meaning anything, and
+// the exemption list is where a real dropped column would eventually get parked.
+//
+// So: one stateful pass tracking strings, template literals, comments and nesting depth,
+// collecting an identifier followed by `:` only while depth === 1. Comments are skipped
+// rather than stripped, because prose in a payload comment ("belayed_by: the catcher") is
+// exactly the shape being matched.
+function depth1Keys(src) {
+  const keys = new Set();
+  let depth = 0, i = 0, quote = null;
+  while (i < src.length) {
+    const c = src[i], n = src[i + 1];
+    if (quote) {
+      if (c === "\\") { i += 2; continue; }
+      if (c === quote) quote = null;
+      i++; continue;
+    }
+    if (c === "/" && n === "/") { const nl = src.indexOf("\n", i); i = nl < 0 ? src.length : nl; continue; }
+    if (c === "/" && n === "*") { const end = src.indexOf("*/", i + 2); i = end < 0 ? src.length : end + 2; continue; }
+    if (c === '"' || c === "'" || c === "`") { quote = c; i++; continue; }
+    if (c === "{" || c === "(" || c === "[") { depth++; i++; continue; }
+    if (c === "}" || c === ")" || c === "]") { depth--; i++; continue; }
+    if (depth === 1 && /[a-z_]/.test(c)) {
+      let j = i; while (j < src.length && /[a-z0-9_]/.test(src[j])) j++;
+      let k = j; while (k < src.length && /\s/.test(src[k])) k++;
+      if (src[k] === ":") keys.add(src.slice(i, j));
+      i = j; continue;
+    }
+    i++;
+  }
+  return keys;
+}
+const written = depth1Keys(payloadLit);
+
+// derived on both sides rather than round-tripped — see #405's rationale.
+// caught_fall is `tickType === "Fell" && !!caughtBy`: both of its inputs ARE hydrated
+// (tick_type and belayed_by), so re-reading the boolean would be reading back a value the
+// app recomputes anyway — and a stored `true` disagreeing with a hydrated tickType is a
+// contradiction the read path would have to arbitrate. It is written for consumers OTHER
+// than this app (the catch ledger, and anything querying "was a fall caught here").
+const DERIVED = new Set(["discipline", "car_to_car_minutes", "caught_fall"]);
 
 // ---- what the read path maps back -------------------------------------------
 const hi = SRC.indexOf("var item={_dbId:row.id");
@@ -117,3 +163,28 @@ if (missing.length) {
 }
 console.log("  ok    trip beta, gear, itinerary, GPX, FA and timings all hydrated");
 console.log("\nclimb-log hydration: ok");
+
+// ---- injection cases, re-run these after touching depth1Keys ----------------
+//
+// The key extractor was a bare regex until 2026-08-09 and is now a stateful scan, so the
+// cases that matter are the ones where "looks like a key" and "is a key" disagree. Verified
+// by feeding each literal to depth1Keys directly:
+//
+//   1. {a_col:1,b_col:2}                                   -> a_col, b_col   (baseline)
+//   2. {party_size:(function(){return x?null:y;})()}        -> party_size     (was: + "null")
+//   3. {photos:list.map(function(u){return {url:u,caption:null};})}
+//                                                          -> photos         (was: + url, caption,
+//                                                             which is why both were deleted by hand)
+//   4. {/* belayed_by: the catcher */real_col:1}            -> real_col       (prose in a comment)
+//   5. {\n// mud: dropped before\nreal_col:1}               -> real_col       (line comment)
+//   6. {notes:"snow: continuous",other:2}                   -> notes, other   (colon in a string)
+//   7. {notes:`level: high`,other:2}                        -> notes, other   (template literal)
+//   8. {tags:[{k:1},{j:2}],top:3}                           -> tags, top      (array of objects)
+//
+// And end-to-end, against the real app: deleting `if(row.temp_f!=null)o.tempF=row.temp_f;`
+// from the hydration must fail this script NAMING temp_f — a run that fails for any other
+// reason is not a catch.
+//
+// Equivalence was checked before the swap rather than argued: run both the old regex and
+// depth1Keys over the payload literal as it stood at 3dbae26 and the sets are identical
+// (27 keys, no difference either way). The new scan removes false columns only.

@@ -29,7 +29,7 @@ import { spawn } from "node:child_process";
 import net from "node:net";
 import fs from "node:fs";
 import { chromium } from "playwright-core";
-import { overlayStates, NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
+import { overlayStates, NEEDS_EXTRA_STATE, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const PORT = 5250;
@@ -37,9 +37,14 @@ const log = (s) => console.log(s);
 const fails = [];
 const fail = (where, msg) => fails.push(`${where}: ${msg}`);
 
-const overlays = overlayStates(fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8")).map((s) => s.name);
-if (!overlays.length) { console.error("discovered no overlays — the discovery regex has drifted"); process.exit(1); }
-assertKnownOverlays(overlays, fail);
+const appOverlays = overlayStates(fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8")).map((s) => s.name);
+if (!appOverlays.length) { console.error("discovered no overlays — the discovery regex has drifted"); process.exit(1); }
+// Bookkeeping is asserted against App's list only: NEEDS_EXTRA_STATE and OVERLAY_PAYLOADS
+// describe App's overlays, and RouteDetail's are opened by a different mechanism entirely.
+assertKnownOverlays(appOverlays, fail);
+// RouteDetail's own modals, opened by the second injected opener. Walked here too, because a
+// pane that chains its scroll does so wherever it lives.
+const overlays = appOverlays.concat(buildRouteDetailOpener(routeDetailSource(), "check:overlay-scroll").names);
 
 async function waitForServer(url, tries = 120) {
   for (let i = 0; i < tries; i++) {
