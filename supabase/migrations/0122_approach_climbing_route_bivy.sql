@@ -1,4 +1,8 @@
--- 0120 — Three structured fields the route page needs and could not express before.
+-- 0122 — Three structured fields the route page needs and could not express before.
+--
+-- Renumbered 0120 -> 0122: main already carried 0120_wilmans_peak_under_monte_cristo and 0121,
+-- so this file's original number would have collided the moment this branch merged and blocked
+-- every deploy on check:migrations. Its statements are already applied to the live DB.
 --
 -- Each one exists because prose in an existing column was doing two jobs at once, and the
 -- reader could not tell which job a given sentence was doing.
