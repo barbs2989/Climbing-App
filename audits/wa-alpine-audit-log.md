@@ -6710,3 +6710,97 @@ both routes' elevation/coordinates, and the West Ridge's 2021 Wehrly/Larson firs
 all independently confirmed. Prusik Peak's elevation, coordinates, and Der Sportsman's identity,
 grade (5.11+, not the 5.9 the task brief guessed), pitch-by-pitch description, and the
 Enchantments' permit-lottery mechanics all checked out.
+
+## Batch 98 (pass 2) -- 2026-08-10
+
+Checked 8 routes across 7 peaks, continuing alphabetically after `wa_prusik_peak_der_sportsman`:
+Prusik Peak (South Face/Burgner-Stanley, West Ridge), Vesper Peak (Ragged Edge), Liberty Bell
+Mountain (Rapple Grapple), Raven Ridge (Southeast Ridge/Crater Lake), Remmel Mountain (NW Ridge),
+Goose Egg Mountain (Ride the Lightning), Mount Fury West (Ridge Traverse from East Fury).
+
+**Fixed (21):**
+- Prusik Peak South Face (Burgner-Stanley): `fa` never actually named the first-ascent party
+  despite the row's own overview already stating it and external confirmation (Climbing.com,
+  SummitPost) -- filled in (Ron Burgner and Fred Stanley, 1968).
+- Prusik Peak West Ridge: `alpine_grade`/`commitment` were both "III," contradicting the route's
+  own top-level grade ("Grade II, 5.7") and its own short simul-climb itinerary -- looked
+  copy-pasted from the sibling South Face row. Fixed to II.
+- Prusik Peak West Ridge: `gain_ft`/`loss_ft` (6200/4608) contradicted the route's own itinerary
+  sum (5300/5300, an exact internal contradiction, not just an estimate mismatch). Fixed.
+- Prusik Peak West Ridge: `access._raw.group_size_limits` said "Maximum party 12 people,"
+  contradicting this same object's own `access.group_limit` (8) and the real Enchantment Permit
+  Area rule. Fixed.
+- Prusik Peak West Ridge: `access._raw.advanced_lottery_dates` said results post "~March 15,"
+  contradicting the row's own `access.notes` ("after Mar 17") and the confirmed 2026 lottery
+  result date. Fixed.
+- Prusik Peak West Ridge: `fa` said the FA party "is not recorded," but multiple sources credit
+  Fred Beckey with the 1957 West Ridge FA. Filled in (no partner recorded).
+- Vesper Peak Ragged Edge: `approach_logistics.trailheadLat/Lng` was a different coordinate than
+  this same row's own `waypoints[0]` entry for the identical Sunrise Mine Trailhead, which already
+  held the externally-verified location. Fixed to match.
+- Vesper Peak Ragged Edge: `length_m` (244m ~800ft) overstated the route by ~100ft against Steph
+  Abegg's trip report ("700'"), multiple other sources, and the row's own overview/pitch_detail
+  sum. Fixed to 213m (~700ft).
+- Liberty Bell Rapple Grapple: `waypoints[0].elev` for Blue Lake Trailhead was 5200; WTA/The
+  Mountaineers/USFS all give 5,400 ft, matching this row's own approach_logistics prose. Fixed.
+- Liberty Bell Rapple Grapple: `gear[0]` still said "rack to 3 inches," contradicting the row's
+  own `corrections` field documenting an already-applied "pro to 4 inches" fix elsewhere on the
+  same row. Fixed to match.
+- Raven Ridge (Southeast Ridge/Crater Lake): `permit` claimed a self-issue Lake Chelan-Sawtooth
+  Wilderness permit is required -- false per USFS, and contradicted this row's own `access.permit`
+  field. Fixed.
+- Remmel Mountain (area): `prominence_ft` (4328) vs. Wikipedia/PeakVisor consensus (4364). Fixed.
+- Remmel Mountain (area): `elevation_ft` (8688) contradicted the row's own waypoint, gear text,
+  and blurb (all 8685, matching Wikipedia/PeakVisor). Fixed to 8685.
+- Goose Egg Mountain (Ride the Lightning): `access.notes` called it a "basalt crag," contradicting
+  the row's own `hazards` field ("columnar andesite") and external geology sources. Fixed.
+- Goose Egg Mountain: top-level `season` ("May-Oct") was truncated against the row's own
+  `best_season`/`approach` text (both "through November") and SummitPost. Fixed to May-Nov.
+- Goose Egg Mountain: `access._raw.altitude_restrictions` said "4,531 feet," contradicting the
+  row's own `high_point_ft` (4566) and the area's own elevation/prominence pairing. Fixed.
+- Mount Fury West (Ridge Traverse from East Fury): `overview` cited East Fury's stale pre-survey
+  elevation (8,280 ft) against the row's own parent-area blurb, which already cites the 2022
+  Gilbertson survey figure (8,356 ft). Fixed.
+- Mount Fury West: `approach` described the standard **Mount Challenger** approach (Big Beaver to
+  Beaver Pass, Whatcom Pass, Challenger Glacier) -- a different Northern Pickets peak entirely --
+  contradicting this same row's own waypoints/road/approach_logistics/itinerary/descent, which all
+  correctly describe Ross Lake -> Big Beaver Trail -> Luna Camp -> Access Creek -> Luna Col.
+  Rewritten using only the row's own already-correct data.
+- Mount Fury West: `access._raw.special_requirements` was contaminated with Olympic National Park
+  content (Elk Lake/Glacier Meadows/Blue Glacier -- Mount Olympus landmarks, not North Cascades),
+  contradicting the row's own `land_manager`. Rewritten with correct North Cascades NP content.
+- Mount Fury West: `rope_note` misplaced Mount Fury in the "Southern Pickets"; the area's own
+  `path` and external sources agree it's in the Northern Pickets. Fixed.
+- Mount Fury West: `access.fees` said "N/A" -- outdated since North Cascades NP began charging
+  summer-season backcountry permit fees in March 2024. Fixed with current fee structure.
+
+**Flagged for human review, selected highlights:**
+- Vesper Peak Ragged Edge: this route's own `timing.sectionBreakdown`/`itinerary.sourceNote` state
+  outright that it's a "duplicate route entry for Ragged Edge -- same sources as
+  `wa_vesper_peak_north_face_ragged_edge`," meaning two DB rows may describe the same physical
+  climb. Needs `audit:identity`-style investigation, not a blind fix from this pass -- the area's
+  `route_count` (4) may also be inflated by the duplicate.
+- Liberty Bell Rapple Grapple: `pitches` (4) doesn't match its own `pitch_detail` array (3 entries
+  summing to 100m of the stated 120m `length_m`) -- the row's `corrections` field explains the
+  bump to 4 came from theCrag, but no 4th pitch_detail entry was ever added to match.
+- Prusik Peak West Ridge: two different "Aasgard Pass" waypoints exist in one route's own
+  `waypoints` array with different coordinates, and neither matches the externally-verified
+  location the sibling South Face route stores exactly.
+- Remmel Mountain: `approach_logistics.trailhead` names Andrews Creek Trailhead, but the row's own
+  approach/waypoints/gpx/road all describe the Thirtymile Trailhead/Chewuch River Trail approach
+  instead -- looks like a mismatch between which trailhead field was set vs. which approach was
+  actually researched.
+- Raven Ridge: this row's own `dist_km` appears to measure only the maintained trail to Crater
+  Lake, not the full off-trail route to the summit, while `gain_ft` correctly reflects the full
+  trailhead-to-summit elevation -- an internal convention mismatch with no source found precise
+  enough to fix the distance.
+
+**Tooling note:** WebFetch to essentially every authoritative domain (Wikipedia, Mountain Project,
+SummitPost, NPS, USFS, WTA, Mountaineers.org, theCrag, peakbagger.com) was blocked by network
+egress policy for every research agent in this batch. All findings above rest on WebSearch
+result-snippet corroboration rather than direct page reads; each agent flagged specific claims
+where that distinction mattered most. Worth a note if this recurs across future batches -- may be
+worth a policy check on which domains the audit's egress allowlist actually covers.
+
+Next batch will continue alphabetically after `wa_ridge_traverse_from_east_fury` (see progress
+file).

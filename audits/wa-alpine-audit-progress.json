@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_prusik_peak_der_sportsman",
+  "last_processed_id": "wa_ridge_traverse_from_east_fury",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 592,
   "batches": [
@@ -2202,6 +2202,25 @@
       "confirmed_errors_fixed": 10,
       "flagged_for_human_review": 8,
       "clean": 2
+    },
+    {
+      "batch_number": 98,
+      "date": "2026-08-10",
+      "route_ids": [
+        "wa_prusik_peak_south_face_burgner_stanley",
+        "wa_prusik_peak_west_ridge",
+        "wa_ragged_edge",
+        "wa_rapple_grapple",
+        "wa_raven_ridge_southeast_ridge_crater_lake",
+        "wa_remmel_mountain_nw_ridge",
+        "wa_ride_the_lightning_2",
+        "wa_ridge_traverse_from_east_fury"
+      ],
+      "confirmed_errors_fixed": 21,
+      "flagged_for_human_review": 15,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-08-10-batch-98.sql",
+      "note": "Prusik Peak's West Ridge had the batch's densest cluster: grade/commitment copy-pasted from the sibling South Face route (III instead of its own II), gain/loss contradicting its own itinerary sum, two contradictory permit sub-fields (group size 12 vs. the row's own group_limit=8, and a lottery results date off by two days from the row's own access.notes), plus a missing FA attribution -- both Prusik routes also had FA gaps filled from external sourcing since each route's own overview/general research already had the answer. Mount Fury West's Ridge Traverse from East Fury was the most substantially wrong single row: its approach field described the standard Mount Challenger approach (a different Northern Pickets peak) verbatim, contradicting five other fields on its own row that all agreed on the real Ross Lake/Big Beaver/Luna Col approach -- rewritten from the row's own already-correct data rather than fabricated. That same row also had Olympic National Park content bled into access._raw.special_requirements (Elk Lake/Glacier Meadows/Blue Glacier are Mount Olympus landmarks), a stale pre-2022-survey East Fury elevation, a Southern-vs-Northern-Pickets misplacement, and an outdated N/A backcountry fee (NPS began charging in March 2024). Two internal-elevation-contradiction fixes at Remmel Mountain and Goose Egg Mountain followed the batch's recurring pattern: pick the value the row's OWN other fields already agree on, not a new number. Ragged Edge (Vesper Peak) surfaced something bigger than a fact error: its own timing/itinerary fields say outright it's a duplicate DB row of wa_vesper_peak_north_face_ragged_edge -- flagged for identity-audit follow-up, not fixed here. Every research agent this batch hit total WebFetch egress blocks to every authoritative domain tried and worked from WebSearch snippets only -- noted in the log as worth checking if it recurs."
     }
   ]
 }
