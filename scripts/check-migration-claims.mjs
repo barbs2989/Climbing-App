@@ -56,11 +56,14 @@ const onMain = new Map();
 for (const f of mainFiles) { const n = numOf(f); if (n) onMain.set(n, f); }
 
 // ---- what the open PRs claim --------------------------------------------------------
+let examined = 0; // how many open PRs were actually read — reported, never assumed
 async function openPrMigrations() {
   if (injectPath) {
     // The fault lives on GitHub, not in the checkout, so the injection cases feed a fixture
     // instead of trying to open real pull requests. Same shape as check:counts --inject.
-    return JSON.parse(fs.readFileSync(injectPath, "utf8"));
+    const injected = JSON.parse(fs.readFileSync(injectPath, "utf8"));
+    examined = injected.length;
+    return injected;
   }
   const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || (() => {
     try { return execFileSync("gh", ["auth", "token"], { encoding: "utf8" }).trim(); } catch { return ""; }
@@ -85,9 +88,14 @@ async function openPrMigrations() {
     return r.json();
   };
   const prs = await api(`/repos/${slug}/pulls?state=open&per_page=100`);
+  examined = prs.length;
   const out = [];
+  // DRAFTS COUNT. They used to be skipped, and that made this guard blind exactly when it is
+  // useful: a numbering collision is always still a draft at the moment it is worth catching,
+  // and drafts merge routinely here. On 2026-08-09 #788 (draft) carried a 0120 that was already
+  // on main and this printed "no open PR adds a migration" — a false statement about a set it
+  // declined to look at. A person renumbering it is what fixed that, not this check.
   for (const pr of prs) {
-    if (pr.draft) continue;
     const files = await api(`/repos/${slug}/pulls/${pr.number}/files?per_page=300`);
     const migs = files.map((f) => f.filename).filter((f) => /^supabase\/migrations\/\d{4}_.*\.sql$/.test(f));
     if (migs.length) out.push({ number: pr.number, title: pr.title, files: migs });
@@ -96,7 +104,7 @@ async function openPrMigrations() {
 }
 
 const prs = await openPrMigrations();
-if (!prs.length) { console.log("check:migration-claims: ok — no open PR adds a migration."); process.exit(0); }
+if (!prs.length) { console.log(`check:migration-claims: ok — examined ${examined} open PR(s), including drafts; none adds a migration.`); process.exit(0); }
 
 // ---- who claims what ------------------------------------------------------------------
 const claims = new Map(); // number -> [{pr, file}]
@@ -137,7 +145,7 @@ if (problems.length) {
 }
 
 const claimed = [...claims.keys()].sort().join(", ");
-console.log(`check:migration-claims: ok — ${prs.length} open PR(s) add migrations (${claimed}), no number claimed twice.`);
+console.log(`check:migration-claims: ok — examined ${examined} open PR(s) including drafts; ${prs.length} add migrations (${claimed}), no number claimed twice.`);
 
 // ---- injection cases (the fault lives on GitHub, so they are driven by --inject) -------
 // 1) two PRs, same number -> FAILS naming both PR numbers:
@@ -149,3 +157,8 @@ console.log(`check:migration-claims: ok — ${prs.length} open PR(s) add migrati
 //      [{"number":1,"title":"A","files":["supabase/migrations/0998_a.sql"]},
 //       {"number":2,"title":"B","files":["supabase/migrations/0999_b.sql"]}]
 // 4) no token and no --inject -> FAILS ("nothing was checked"), never a silent pass.
+// 5) DRAFT PRs are in scope, and --inject cannot test it (injection bypasses the API path
+//    where the draft filter lived). Measured against the live repo instead, on the same day:
+//      before: "ok — no open PR adds a migration."          <- #788 is a draft adding 0122
+//      after : "examined 4 open PR(s) including drafts; 1 add migrations (0122)"
+//    If that distinction ever needs re-proving, run the old copy from git and diff the line.
