@@ -1009,23 +1009,130 @@ function TopoLineOverlay({points,pins}){
     {(pins||[]).map(function(pn,i){return <circle key={i} cx={pn.x} cy={pn.y} r={1.6} fill={pinColor(pn.category)} stroke="#fff" strokeWidth={0.4}/>;})}
   </svg>;
 }
+/* The topo editor. Four things it could not do, each of them the difference between a line a
+   climber trusts and one they redraw:
+
+     · Drawing was TAP-ONLY — one point per tap, so a twelve-pitch line was ~15 separate taps
+       and any wobble meant starting over. It draws on drag now, sampling a point every 1.5%
+       of the frame so a swipe yields a usable polyline rather than 400 coordinates.
+     · A mis-placed point could not be fixed. The only tools were "undo last" and "clear all",
+       so one bad point four points back cost you the four after it. Every point and pin is a
+       draggable handle now, and the selected one can be deleted on its own.
+     · No zoom, on a phone-sized image. A belay pin has to land on a specific ledge; at 390px
+       wide, 1% of the frame is under 4px. A loupe follows the drag at 3x, which is how touch
+       platforms have solved this since iOS text selection.
+     · Upload/save errors used alert() — a blocking dialog, in an app that has toasts and
+       inline notices everywhere else. Now an inline error inside the section.
+
+   Coordinates stay percentages of the frame, and the frame is the painted photo (see
+   TopoLineOverlay) — dragging clamps to 0..100 so a handle pulled off the edge cannot store a
+   point that is not on the rock. */
+const LOUPE_Z = 3;            // magnification
+const DRAW_MIN_STEP = 1.5;    // % of frame between sampled points while dragging
 function TopoDrawer({initial,onCancel,onSubmit}){
   const [points,setPoints]=useState((initial&&initial.points)||[]);const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
   const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
-  const handleClick=function(e){const rect=e.currentTarget.getBoundingClientRect();const x=Math.round(((e.clientX-rect.left)/rect.width)*1000)/10;const y=Math.round(((e.clientY-rect.top)/rect.height)*1000)/10;if(mode==="line")setPoints(function(p){return p.concat([{x:x,y:y}]);});else setPins(function(p){return p.concat([{x:x,y:y,category:pinCat,note:""}]);});};
+  const [sel,setSel]=useState(null);      // {kind:"point"|"pin", i} — the handle under edit
+  const [loupe,setLoupe]=useState(null);  // {x,y} while a drag is in flight
+  const frameRef=useRef(null);
+  const drag=useRef(null);                // {kind:"point"|"pin"|"draw", i}
+  const photo=initial&&initial.photoUrl;
+
+  // Clamped so a drag that leaves the frame parks the handle on the edge rather than storing
+  // a coordinate that is not on the photo.
+  const at=function(e){
+    const r=frameRef.current.getBoundingClientRect();
+    const c=(v,size)=>Math.min(100,Math.max(0,Math.round((v/size)*1000)/10));
+    return {x:c(e.clientX-r.left,r.width),y:c(e.clientY-r.top,r.height)};
+  };
+  const moveTo=function(kind,i,p){
+    if(kind==="point")setPoints(function(a){return a.map(function(q,qi){return qi===i?{x:p.x,y:p.y}:q;});});
+    else setPins(function(a){return a.map(function(q,qi){return qi===i?Object.assign({},q,{x:p.x,y:p.y}):q;});});
+  };
+  const onDown=function(e){
+    if(!frameRef.current)return;
+    const p=at(e);
+    const h=e.target&&e.target.dataset&&e.target.dataset.h;   // "point:3" / "pin:1"
+    try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){}
+    if(h){
+      const [kind,idx]=h.split(":");
+      drag.current={kind:kind,i:+idx};
+      setSel({kind:kind,i:+idx});
+      setLoupe(p);
+      return;
+    }
+    if(mode==="line"){
+      drag.current={kind:"draw"};
+      setPoints(function(a){return a.concat([p]);});
+      setSel({kind:"point",i:points.length});
+    }else{
+      setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
+      setSel({kind:"pin",i:pins.length});
+    }
+    setLoupe(p);
+  };
+  const onMove=function(e){
+    if(!drag.current||!frameRef.current)return;
+    const p=at(e);
+    setLoupe(p);
+    if(drag.current.kind==="draw"){
+      setPoints(function(a){
+        const last=a[a.length-1];
+        if(last&&Math.abs(last.x-p.x)<DRAW_MIN_STEP&&Math.abs(last.y-p.y)<DRAW_MIN_STEP)return a;
+        return a.concat([p]);
+      });
+      return;
+    }
+    moveTo(drag.current.kind,drag.current.i,p);
+  };
+  const onUp=function(){drag.current=null;setLoupe(null);};
+
+  const delSel=function(){
+    if(!sel)return;
+    if(sel.kind==="point")setPoints(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
+    else setPins(function(a){return a.filter(function(_q,i){return i!==sel.i;});});
+    setSel(null);
+  };
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
+  const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
+  const handle=function(kind,i,x,y,col){
+    const on=sel&&sel.kind===kind&&sel.i===i;
+    return <span key={kind+i} data-h={kind+":"+i} title={kind==="point"?("Point "+(i+1)+" — drag to move"):"Pin — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:10,height:on?18:10,marginLeft:on?-9:-5,marginTop:on?-9:-5,
+        borderRadius:"50%",background:on?col:col+"99",border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(255,255,255,0.6)"),
+        boxShadow:on?"0 0 0 3px "+C.blue+"66":"none",cursor:"grab",touchAction:"none"}}/>;
+  };
   return <div>
-    <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
+    <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
     {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{c[1]}</button>;})}</div>:null}
-    <div onClick={handleClick} style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border}}>
-      {initial&&initial.photoUrl?<img loading="lazy" decoding="async" src={initial.photoUrl} alt="" onLoad={arOnLoad} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Tap where the feature is. Drag any dot to move it."}</div>
+    {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
+        scrolling and the drag never reaches these handlers on a touch screen.
+
+        HONEST NOTE ON check:clickable: this surface used to be a <div onClick> and was counted
+        in that guard's mouse-only baseline. Pointer handlers are not onClick, so the scanner no
+        longer sees it and the baseline drops by one — that is the guard losing sight of a
+        control, NOT the control becoming keyboard-operable. Freehand drawing on a photo has no
+        sensible key-by-key equivalent, so it stays pointer-driven on purpose. What IS reachable
+        from a keyboard is everything destructive or corrective: Undo last point, Delete
+        selected and Clear all are real <button>s, as are the mode and category chips. */}
+    <div ref={frameRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
+      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
+      {photo?<img loading="lazy" decoding="async" src={photo} alt="" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
       <TopoLineOverlay points={points} pins={pins}/>
+      {points.map(function(p,i){return handle("point",i,p.x,p.y,C.amber);})}
+      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category));})}
+      {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
+        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*100)+"% "+(LOUPE_Z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
+        <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
+      </div>:null}
     </div>
     <div style={{display:"flex",gap:7,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});}} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"}}>Undo last point</button>
-      <button onClick={function(){setPoints([]);setPins([]);}} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"}}>Clear all</button>
+      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>Undo last point</button>
+      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"pin")):"Delete selected"}</button>
+      <button onClick={function(){setPoints([]);setPins([]);setSel(null);}} style={btn}>Clear all</button>
     </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
@@ -1128,6 +1235,12 @@ function TopoSection({route}){
   const [localPhotos,setLocalPhotos]=useState([]);
   const [localLines,setLocalLines]=useState({});
   const [busy,setBusy]=useState(false);
+  /* alert() blocked the whole page for a failed upload, in an app that reports every other
+     write inline. It also hid WHICH photo failed, since the dialog outlives the row. This
+     renders in the section, next to the thing that failed, and clears on the next attempt.
+     Not swallowed either way — check:write-feedback exists because a silent failure behind
+     a success message is the worse bug. */
+  const [err,setErr]=useState(null);
   const [viewerIdx,setViewerIdx]=useState(null);
   const [drawFor,setDrawFor]=useState(null);
   const dbTopos=useAreaTopos(USE_DB?areaId:null);
@@ -1144,12 +1257,13 @@ function TopoSection({route}){
     inp.click();
   };
   const addPhoto=function(file){
+    setErr(null);
     if(USE_DB){
       setBusy(true);
       uploadTopoPhoto(areaId,file).then(function(t){
         setBusy(false);dbTopos.refetch();
         setDrawFor({id:t.id,url:topoPhotoUrl(t.storage_path),db:true,lines:[]});
-      }).catch(function(e){setBusy(false);alert((e&&e.message)||"Couldn't upload that photo.");});
+      }).catch(function(e){setBusy(false);setErr((e&&e.message)||"Couldn't upload that photo.");});
     } else {
       const rd=new FileReader();
       rd.onload=function(){
@@ -1161,10 +1275,11 @@ function TopoSection({route}){
     }
   };
   const submitLine=function(photo,data){
+    setErr(null);
     if(photo.db){
       submitTopoLine(photo.id,route.id,data.points,data.pins,null).then(function(){
         dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){alert((e&&e.message)||"Couldn't save that line.");});
+      }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
     } else {
       setLocalLines(function(m){
         const o=Object.assign({},m);
@@ -1182,6 +1297,7 @@ function TopoSection({route}){
       <SL>TOPO</SL>
       <button onClick={pickFile} disabled={busy} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"+ Add photo"}</button>
     </div>
+    {err?<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginBottom:9,display:"flex",alignItems:"center",gap:9}}><span style={{flex:1,fontSize:12.5,color:C.red,lineHeight:1.45}}>{err}</span><button onClick={function(){setErr(null);}} aria-label="Dismiss error" style={{flexShrink:0,background:"none",border:"none",color:C.red,fontSize:16,cursor:"pointer",lineHeight:1,padding:6,margin:-4}}>×</button></div>:null}
     {!photos.length?
       <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:13,padding:"22px 16px",textAlign:"center"}}>
         <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
