@@ -345,9 +345,19 @@ console.log("\n--- the panel is actually reachable, on every route ---");
       // would be satisfied by prose, and `showPlan` legitimately lives in the same expression.
       // Lazy `[^]*?`, not `[^\]]*`: every entry in that array ends with a `]` of its own, so a
       // negated-] class stops at the first one and the match never reaches the filter.
-      const strip = h.match(/\[\s*\["overview","Overview"\][^]*?\["safety","Safety"\]\s*\]\s*\.filter\(([^)]*)\)/);
+      //
+      // The anchor deliberately does NOT require Safety to be the array's LAST entry. It used to
+      // (`…["safety","Safety"]\s*\]\s*\.filter`), and reordering the strip to
+      // Overview/Plan/Reports/Safety/Partners/Photos made this gate go blind — a presentation
+      // change silently disabling a safety-reachability check is exactly the failure the "gone
+      // blind" branch exists to prevent, so the anchor keys on the array's opener and its
+      // `.filter(` instead, and Safety's PRESENCE is asserted separately below. Tab order is
+      // free to change; the Safety tab existing and being ungated is not.
+      const strip = h.match(/\[\s*\["overview","Overview"\][^]*?\]\s*\.filter\(([^)]*)\)/);
       if (!strip) {
         fail(`${HOST}: could not find the route sub-tab strip and its filter — this gate check has gone blind`);
+      } else if (!/\["safety","Safety"\]/.test(strip[0])) {
+        fail(`${HOST}: the Safety tab is no longer in the sub-tab strip at all — the fire panel's only mount is unreachable`);
       } else if (/safety/.test(strip[1])) {
         fail(`${HOST}: the Safety tab is gated again (${strip[1].trim().slice(0, 80)}) — the fire panel has no fallback since #776, so gating that tab makes it unreachable for the 99.5% of routes with no safety data of their own. #655's shape.`);
       } else {
