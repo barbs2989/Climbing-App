@@ -121,7 +121,11 @@ const ok = (m) => console.log("  ok    " + m);
 
 for (const c of CASES) {
   let html;
-  try { html = render(c.route, "overview"); }
+  // "planner", not "overview": PITCH-BY-PITCH and ROUTE BETA moved to the Plan tab, beside
+  // the approach, descent and rack — the split this guard checks is unchanged, only where it
+  // renders. Rendering the wrong tab does not fail loudly on its own; it reports every entry
+  // as reaching NEITHER section, which is how this was caught.
+  try { html = render(c.route, "planner"); }
   catch (e) { fail(`${c.name} threw: ${e.message.split("\n")[0].slice(0, 140)}`); continue; }
   const t = text(html);
 
