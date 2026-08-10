@@ -6634,3 +6634,79 @@ claim rather than guess a replacement.
 and peak databases (PeakVisor, Peakbagger, ListsOfJohn) with no discrepancies -- including Mount
 Olympus's 7,980 ft summit and its 47.8013N/123.7109W coordinate, which matched to five decimal
 places across all three Olympus routes, the area row, and external sources.
+
+## Batch 97 (pass 2) -- 2026-08-10
+
+Checked: Pernod Spire / Standard Rock Route, Phantom Peak / South Route, Phantom Peak / West
+Ridge, Point Success / via Success Cleaver, Poltergeist Pinnacle (both the misfiled
+`wa_poltergeist_pinnacle` row and its duplicate `wa_poltergeist_pinnacle_north_route`), Primus
+Peak / South Ridge, Prusik Peak / Der Sportsman. Eight routes, one research agent per route.
+This session's network egress proxy blocked WebFetch to every primary source (Mountain Project,
+Wikipedia, CascadeClimbers, AAC Publications, Peakbagger, ListsOfJohn, NPS, USFS) for all eight
+agents -- every finding below rests on WebSearch result snippets, not a direct page read. Worth
+a follow-up pass once fetch access is restored, especially on the items left flagged rather than
+fixed for exactly this reason.
+
+**Fixed (10, `sql/2026-08-10-batch-97.sql`):** Phantom Peak's South Route carried an
+`approach_logistics` trailhead and a `road` field naming, respectively, Mount Shuksan's Nooksack
+Cirque Trailhead and the Southern Pickets' Goodell Creek access -- neither has anything to do
+with Phantom Peak; both corrected to the Hannegan Pass Trailhead / Whatcom Pass approach the
+rest of this row's own data already (correctly) uses. Its sibling West Ridge route had the
+Marblemount Wilderness Information Center's phone number one digit off (854-7200 -> 854-7245,
+matching the South Route's own correct copy of the same office) and an `fa` citation with a
+fabricated "Vol. 64" alongside the real AAJ 2022 Issue 96 -- removed rather than guessed at.
+Poltergeist Pinnacle: `pitches` said 6 against the row's own 4-entry `pitch_detail` and Mountain
+Project's listed 4; fixed to 4. The area row's coordinates were ~270m off from the
+Wikipedia-sourced value that was already sitting, correctly, on this same peak's own route
+waypoint -- synced. Primus Peak's South Ridge route named the glacier it crosses
+"McAllister Glacier" / "North Klawatti/McAllister Glacier" throughout (route name, face,
+overview, hazards, pro_tips, watch_out, a waypoint note, timing, itinerary, partner
+requirements, seasonal hazards, data-quality notes, and the area blurb) -- two real,
+non-adjacent glaciers (Primus is flanked by the North Klawatti Glacier; McAllister Glacier sits
+in an unrelated cirque near Dorado Needle) got conflated under one label. Fixed everywhere that
+exact mislabel appears; left alone: "McAllister Camp" and "McAllister-Klawatti col," a real,
+differently-named feature that turns out to belong to a *different* route entirely (see below).
+Prusik Peak's Der Sportsman had a general Alpine Lakes Wilderness group-size figure (12) sitting
+inside `access._raw` next to the correct Enchantments-specific figure (8) recorded twice
+elsewhere on the same row; a `gain_ft`/`loss_ft` pair (6200/4500) that couldn't both be right on
+a round-trip itinerary and didn't match the row's own itinerary breakdown (5400/5400, used
+instead); and a `rappels` summary field still saying "single-rope rappel" while every other,
+more detailed field on the row (added in a later pass) correctly documents 5-6 rappels.
+
+**Flagged rather than fixed:** Pernod Spire's Standard Rock Route looks like it blends two
+different lines under one row -- `beta`/`rock_grade` describe an easy 5.5-5.7 climb while
+`pitch_detail` tops out at 5.9 (A0), `aspect`/`face` say "North" but the approach text sends you
+to the west face and the itinerary climbs the south face, and three mutually inconsistent
+descent accounts exist (`descent`, `descent_text`, and `rappel_detail`) describing three
+different ways down. Safety-relevant and not something to guess at from search snippets alone.
+Primus Peak's South Ridge route has the same shape, worse: its own `pitch_detail`, `gpx`,
+first `waypoints` entry ("Thunder Creek Trailhead"), and `turnaround` field describe a
+completely different, independently-documented route -- SummitPost/CascadeClimbers' "East Ridge
+via Thunder Creek and Lucky Ridge" -- while `overview`/`approach`/`itinerary`/`road` describe the
+real South Ridge/Eldorado approach this row is named for. "McAllister Camp" is real (a Thunder
+Creek-side camp, confirming where the mix-up's name collision came from), it just belongs to the
+other route. Needs a human to decide whether to split this into two rows. Poltergeist Pinnacle
+is flagged for the same reason `wa_poltergeist_pinnacle_north_route`'s `corrections` field
+already names it: `wa_poltergeist_pinnacle` (filed under Mount Challenger's area) and
+`wa_poltergeist_pinnacle_north_route` (filed under Poltergeist Pinnacle's own area, id
+misleadingly says "north_route" though the route and every source call it the East Face) are
+the same 2004 Aylward/Murphy first ascent recorded twice. Reparenting or renaming either row
+alone would just move the duplicate around; not something to resolve with a text substitution,
+and this audit does not delete rows on its own say-so. Smaller items left as-is for lack of a
+reachable primary source: the West Ridge FA's exact AAJ page number; Poltergeist Pinnacle's FA
+partner name ("Forrest Murphy," found nowhere independently of this DB); a handful of
+sub-hundred-foot elevation/prominence disagreements (Primus Peak 843 vs. 828 ft prominence,
+Poltergeist Pinnacle 8198 vs. "8,200+" ft) that read as ordinary survey-vintage noise rather
+than errors; and Der Sportsman's `length_m` (183), which matches neither its own
+`pitch_detail` sum (225m) nor either of two disagreeing theCrag entries (198m, 213m) -- no
+single authoritative total found to correct it to.
+
+**Clean:** Point Success's elevation (14,158 ft, second-highest point on Rainier), coordinates,
+Success Cleaver route identity, and the full NPS climbing-fee/permit structure ($82 annual
+climbing fee, $12/night wilderness camping, 12-person party limit, no-solo rule) all checked out
+exactly against current NPS-sourced figures -- no changes needed on this route at all. Phantom
+Peak's 1940 Fred & Helmy Beckey first ascent (including the "Helmy," not "Helmi," spelling),
+both routes' elevation/coordinates, and the West Ridge's 2021 Wehrly/Larson first ascent were
+all independently confirmed. Prusik Peak's elevation, coordinates, and Der Sportsman's identity,
+grade (5.11+, not the 5.9 the task brief guessed), pitch-by-pitch description, and the
+Enchantments' permit-lottery mechanics all checked out.
