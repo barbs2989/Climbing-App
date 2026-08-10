@@ -9,9 +9,9 @@
 // than in the rows, so it covers seed routes and future imports too; this script measures how
 // much it changes and prints what it would touch.
 //
-//   node scripts/audit-waypoints.mjs                 # whole catalog summary
-//   node scripts/audit-waypoints.mjs --state wa      # ids under a state prefix
-//   node scripts/audit-waypoints.mjs --list 30
+//   node scripts/audit-waypoint-order.mjs                 # whole catalog summary
+//   node scripts/audit-waypoint-order.mjs --state wa      # ids under a state prefix
+//   node scripts/audit-waypoint-order.mjs --list 30
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { orderWaypoints, dedupeWaypoints } from "../lib/waypoints.js";
 
