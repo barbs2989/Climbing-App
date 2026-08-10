@@ -6804,3 +6804,54 @@ worth a policy check on which domains the audit's egress allowlist actually cove
 
 Next batch will continue alphabetically after `wa_ridge_traverse_from_east_fury` (see progress
 file).
+
+## Batch 99 (pass 2) -- 2026-08-10
+
+Checked 10 routes across 8 peaks, continuing alphabetically after
+`wa_ridge_traverse_from_east_fury`: Robinson Mountain (North Couloir), Rock Mountain (Northeast
+Ridge), Ruth Mountain (Icy Traverse, South Slopes), Sahale Mountain (Quien Sabe Glacier, Sahale
+Arm/Sahale Glacier), Eagle Peak (Scramble Route), Mount Washington/Eastern Olympics (SE Ridge aka
+Shield Wall), Sentinel Peak (Standard), South Early Winters Spire (SW Rib).
+
+**Fixed (39):** Full detail and citations are in `audits/sql/2026-08-10-batch-99.sql`; the
+recurring pattern this batch was fields that self-contradict *other fields on the same row* --
+prominence figures unrelated to an already-fixed elevation (Robinson, Rock Mountain); a trailhead
+longitude off by ~800 ft on both Ruth Mountain routes, shared by an identical error on both rows;
+a Sahale route's overview describing the wrong compass side against its own aspect/face fields; a
+group_limit numeric field never actually updated even though the row's own corrections log and
+rules text already say it was fixed (both Sahale routes); Eagle Peak's structured `access` object
+carrying stale "N/A"/wrong values that contradicted its own populated `access._raw`/top-level
+fields on six separate sub-fields; Mount Washington's `access` block being contaminated end-to-end
+with Olympic *National Park* fee/permit/rule language on a route that's actually Olympic National
+*Forest* land (this row's own land_manager was already correct); Sentinel Peak's Red Ledge hazard
+description misplaced against its own waypoint ordering, and its NP backcountry permit wrongly
+called "free" when NPS has charged $10+$6 since March 2024; and South Early Winters Spire's
+itinerary gain/loss figures and start time never updated to match an already-corrected top-level
+elevation delta and cited source trip report.
+
+**Flagged for human review, selected highlights:**
+- Ruth Icy Traverse: `itinerary.days[].gainFt/lossFt` sum to 5,500/6,400 but the row's own
+  top-level `gain_ft`/`loss_ft` are 8,000/8,000 -- day-by-day breakdown never updated to match a
+  prior total correction, and outside trip reports disagree on the true round-trip total, so no
+  automatic fix proposed.
+- Sahale Quien Sabe Glacier: Sahale Glacier Camp's stated 4-6 person limit vs. several secondary
+  sources citing a flat 4-person cap -- nps.gov itself was blocked from direct fetch.
+- Sentinel Peak: `area.prominence_ft` (355) is sourced to a pre-2025-resurvey datasheet; the 2025
+  DGPS survey found neighboring Old Guard Peak only 2.7 ft higher and "a few hundred yards away,"
+  raising the question of whether prominence should now be computed relative to Old Guard instead
+  -- needs a human check against primary listsofjohn/peakbagger data, not a blind fix.
+- South Early Winters Spire: `length_m` (274) is ~18% off its own `pitch_detail` sum (225m); no
+  authoritative total-length source was reachable to say which figure is right.
+- Rock Mountain: the structured `access.fees`/`access.permit`/`access.passRequired` fields are all
+  null while the free-text `permit` field is populated and correct -- a completeness gap, not a
+  factual error, left for a human data-entry pass.
+
+**Tooling note:** Direct WebFetch to most authoritative climbing/reference domains (Mountain
+Project, SummitPost, Wikipedia, Peakbagger, PeakVisor, NPS/USFS pages, WTA, Mountaineers.org) was
+again blocked by network egress policy for every research agent this batch, same as batch 98.
+Findings rest on WebSearch result-snippet corroboration and internal row cross-checks rather than
+raw page reads. All proposed fixes above were additionally spot-checked by re-reading the actual
+live-DB JSON for each route before finalizing this file, to make sure "current value" claims match
+the real rows and that `replace()`/`jsonb_set()` targets are exact.
+
+Next batch will continue alphabetically after `wa_sews_sw_rib` (see progress file).
