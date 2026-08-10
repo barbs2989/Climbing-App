@@ -550,7 +550,13 @@ try {
       await capture("route:" + sub);
     }
     // Expanding a pitch is its own render path, and the one that blanked in #359.
-    await tap("Overview");
+    // PITCH-BY-PITCH lives on Plan, not Overview — it moved there with PROTECTION and the
+    // rappels so the tab that describes the approach and the descent also describes the
+    // climbing between them. Tapping the wrong tab here does not fail loudly on its own:
+    // it finds no "more" control and reports the render path as unchecked, which is the
+    // message that caught this. Plan is absent on a route with no plan content, so fall
+    // back to Overview rather than assuming the tab is there.
+    if (!(await tap("Plan"))) await tap("Overview");
     await page.waitForTimeout(1500);
     const expanded = await page.evaluate(() => {
       let t = null;
