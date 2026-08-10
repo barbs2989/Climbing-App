@@ -12,6 +12,15 @@
 //   node scripts/audit-waypoint-order.mjs                 # whole catalog summary
 //   node scripts/audit-waypoint-order.mjs --state wa      # ids under a state prefix
 //   node scripts/audit-waypoint-order.mjs --list 30
+//
+// SIBLING, NOT A DUPLICATE. `scripts/audit-waypoints.mjs` asks a different question of the
+// same column; the two were written in parallel under one filename (#789 and #783). This one
+// asks whether the LIST is sensible — ordering and duplicate pins — and needs no gpx at all.
+// That one asks whether each waypoint is on the route's own GPX TRACK: segment-aware distance
+// to the line, whether the trailhead sits at the track's start, whether the track ever reaches
+// the summit. Neither subsumes the other — a perfectly ordered list can sit entirely off the
+// track, and a list every point of which is on the track can still name the summit third from
+// the end. Run both.
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { orderWaypoints, dedupeWaypoints } from "../lib/waypoints.js";
 
