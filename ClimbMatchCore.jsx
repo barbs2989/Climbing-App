@@ -74,7 +74,7 @@ const enrichRoute = (route) => {
   }
   return out;
 };
-const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",orange:"#f0883e"};
+const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",orange:"#f0883e",pink:"#ff77c8",yellow:"#f2d669"};
 const HERO_BG="linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN="inset 0 1px 0 rgba(255,255,255,0.07)";
 const SZ1={display:"flex",gap:6,overflowX:"auto",marginBottom:8,paddingBottom:2};
@@ -333,12 +333,34 @@ function MDToolbar({taRef,value,onChange}){
   </div>;
 }
 function gpxDownload(r,overridePts,overrideName){const pts=(overridePts&&overridePts.length)?overridePts:((r&&r.gpxPts)||[]);if(!pts.length)return;const seg=pts.map(pt=>{const lat=Array.isArray(pt)?pt[0]:pt.lat,lon=Array.isArray(pt)?pt[1]:pt.lon,ele=Array.isArray(pt)?pt[2]:pt.ele;return `<trkpt lat="${lat}" lon="${lon}">${ele!=null?`<ele>${ele}</ele>`:""}</trkpt>`;}).join("");const wpts=((r&&r.waypoints)||[]).map(w=>{const lat=(w&&w.lat!=null)?w.lat:(Array.isArray(w)?w[0]:null),lon=(w&&w.lng!=null)?w.lng:(Array.isArray(w)?w[1]:null),nm=((w&&(w.name||w.label))||"").replace(/[<>&]/g,"");return (lat!=null&&lon!=null)?`<wpt lat="${lat}" lon="${lon}"><name>${nm}</name></wpt>`:"";}).join("");const trkName=overrideName||((r&&r.name)||"Route");const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="ClimbMatch" xmlns="http://www.topografix.com/GPX/1/1">${wpts}<trk><name>${trkName.replace(/[<>&]/g,"")}</name><trkseg>${seg}</trkseg></trk></gpx>`;try{const blob=new Blob([gpx],{type:"application/gpx+xml"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(trkName.replace(/[^a-z0-9]+/gi,"_"))+".gpx";document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(url),1500);}catch(e){}}
-/* "Bivy" is deliberately separate from "Campsite". A campsite is a place you planned to sleep
-   — a permitted basin site with water, reached on the walk in. A bivy is a ledge or a moat
-   lip high on the route that you sleep on because you are not getting down tonight, and the
-   distinction is the whole point of the question "where would I sleep if this goes long".
-   Folding both into "Campsite" made every high bivy read as a comfortable basin camp. */
-const WP_TYPES=["Trailhead","Junction","Water","Campsite","Bivy","Summit","Topout","Hazard"];
+const WP_TYPES=["Trailhead","Junction","Water","Campsite","Summit","Topout","Hazard"];
+/* One place that says what a waypoint type looks like. It was three: GPXMap, WaypointMapPicker
+   and the two waypoint lists in RouteDetail each carried their own copy of the same object
+   literal, and all three had `Summit` and `Topout` set to the SAME colour (C.orange). On the
+   map that is two indistinguishable dots; in the legend it is two rows the eye cannot tell
+   apart, which is what "the legend waypoints are too similar in colour" is. Nothing could
+   catch it — the copies agreed with each other, so they were consistent AND wrong.
+
+   The glyph is here rather than only in the list because the legend encoded type by COLOUR
+   ALONE ("● Trailhead" in green, "● Summit" in orange). Colour alone fails for the ~8% of men
+   with red-green deficiency on exactly the Trailhead/Summit/Hazard trio, and fails for
+   everyone on a sunlit phone. Carrying the glyph means the legend still reads when the hue
+   does not. Hues are spread deliberately: the three warm ones (Hazard/Summit/Junction) are
+   the closest pair set, so they take the three most distinct glyphs. */
+const WP_STYLE={
+ Trailhead:{color:C.green,glyph:"◈"},
+ Junction:{color:C.yellow,glyph:"⊕"},
+ Water:{color:C.blue,glyph:"≈"},
+ Campsite:{color:C.purple,glyph:"⌂"},
+ Summit:{color:C.orange,glyph:"▲"},
+ Topout:{color:C.teal,glyph:"△"},
+ Hazard:{color:C.red,glyph:"⚠"},
+ Bailout:{color:C.pink,glyph:"⚑"}
+};
+function wpColor(t){return (WP_STYLE[t]&&WP_STYLE[t].color)||C.textSub;}
+function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
+// type -> colour, for the call sites that index a plain map (`wc[wp.type]`, `wc.Summit`).
+const WP_COLORS=Object.keys(WP_STYLE).reduce(function(o,k){o[k]=WP_STYLE[k].color;return o;},{});
 const WP_SINGLE_TYPES=["Trailhead","Summit"];
 const MAX_WAYPOINTS=8;
 // `waypoints[].type` is free text and the catalog holds 49 distinct spellings of about a
@@ -792,8 +814,13 @@ function ChatComposer({variant,quickReplies,placeholder,onSend,onTyping}){const 
 function TypingIndicator({names}){const list=Array.isArray(names)?names:(names?[names]:[]);if(!list.length)return null;const label=list.length===1?list[0]+" is typing…":list.length===2?list[0]+" and "+list[1]+" are typing…":list.slice(0,-1).join(", ")+" and "+list[list.length-1]+" are typing…";return <div style={{color:C.textMuted,fontSize:13,fontStyle:"italic"}}>{label}</div>;}
 function MessageRow({m,avatarSrc,showName,reactKey,reactAt,reactTimer,onSetReactAt,onReact,isLast}){const mine=m.from==="me";const open=reactAt===reactKey;return <div className={isLast?"cm-slideup":undefined} style={{display:"flex",justifyContent:mine?"flex-end":"flex-start",gap:6,alignItems:"flex-end"}}>{!mine?<Av src={avatarSrc} size={showName?24:22}/>:null}<div style={{maxWidth:showName?"74%":undefined}}>{showName&&!mine?<div style={{fontSize:12,color:C.textMuted,marginBottom:2,marginLeft:4}}>{m.name}</div>:null}<div onTouchStart={()=>{reactTimer.current=setTimeout(function(){onSetReactAt(reactKey);},420);}} onTouchEnd={()=>clearTimeout(reactTimer.current)} onTouchMove={()=>clearTimeout(reactTimer.current)} style={{position:"relative",maxWidth:showName?undefined:"74%",padding:"8px 12px",borderRadius:mine?"16px 16px 4px 16px":"16px 16px 16px 4px",background:mine?C.blueSolid:C.card,color:mine?"white":C.text,fontSize:14,lineHeight:1.5,boxShadow:mine?"0 1px 2px rgba(47,129,247,0.35)":"0 1px 2px rgba(0,0,0,0.35)",border:mine?"none":`1px solid ${C.borderLight}`}}>{m.image?<img loading="lazy" decoding="async" src={m.image} alt="" style={{maxWidth:"170px",borderRadius:9,display:"block"}}/>:m.text}{m.ts?<div style={{fontSize:11,opacity:0.5,marginTop:3,textAlign:mine?"right":"left"}}>{relTime(m.ts)}</div>:null}{m.reaction?<span className="cm-pop" style={{position:"absolute",bottom:-9,right:mine?8:"auto",left:mine?"auto":8,fontSize:13,background:C.bg,borderRadius:9,padding:"0 3px",border:"1px solid "+C.border,lineHeight:1.4}}>{m.reaction}</span>:null}{open?createPortal(<div onClick={()=>onSetReactAt(null)} style={{position:"fixed",inset:0,zIndex:55}}/>,document.body):null}{open?<div style={{position:"absolute",top:-40,right:mine?0:"auto",left:mine?"auto":0,zIndex:60,display:"flex",gap:3,background:C.card,border:"1px solid "+C.border,borderRadius:20,padding:"5px 8px",boxShadow:"0 4px 14px rgba(0,0,0,0.45)"}}>{["Nice","Haha","Love","Wow","Oof"].map(function(e,ei){return <button key={ei} onClick={()=>{onReact(e);onSetReactAt(null);}} style={{background:"none",border:"none",fontSize:11.5,fontWeight:700,color:C.textSub,cursor:"pointer",padding:"4px 7px",lineHeight:1}}>{e}</button>;})}</div>:null}</div></div></div>;}
 const Stars=({n,size})=><span style={{color:C.amber,fontSize:size||14}}>{"★".repeat(Math.round(n))}{"".repeat(5-Math.round(n))}</span>;
-const YDSL=["5.6","5.7","5.8","5.9","5.10a","5.10b","5.10c","5.10d","5.11a","5.11b","5.11c","5.11d","5.12a","5.12b","5.12c","5.12d","5.13a","5.13b","5.13c","5.13d","5.14a","5.14b","5.14c","5.14d"];
-const VL=["V0","V1","V2","V3","V4","V5","V6","V7","V8","V9","V10","V11","V12","V13","V14","V15","V16","V17"];
+/* The onboarding "YOUR GRADES" selects — a climber's OWN level, not a route's. Given the
+   modifier rungs the route scale gained (see ADDR_YDS), leaving these without a + would mean
+   the app can record that a route is 5.9+ but not that you climb 5.9+. Safe to widen: these
+   feed compat(), which parses the string with /5\.(\d+)([a-d]?)/ rather than indexing this
+   array, so "5.9+" scores as 5.9 and no ranking shifts. */
+const YDSL=["5.6","5.6+","5.7-","5.7","5.7+","5.8-","5.8","5.8+","5.9-","5.9","5.9+","5.10-","5.10a","5.10b","5.10","5.10c","5.10d","5.10+","5.11-","5.11a","5.11b","5.11","5.11c","5.11d","5.11+","5.12-","5.12a","5.12b","5.12","5.12c","5.12d","5.12+","5.13-","5.13a","5.13b","5.13","5.13c","5.13d","5.13+","5.14-","5.14a","5.14b","5.14","5.14c","5.14d","5.14+"];
+const VL=["V0-","V0","V0+","V1-","V1","V1+","V2-","V2","V2+","V3-","V3","V3+","V4-","V4","V4+","V5-","V5","V5+","V6-","V6","V6+","V7-","V7","V7+","V8-","V8","V8+","V9-","V9","V9+","V10-","V10","V10+","V11","V12","V13","V14","V15","V16","V17"];
 const SL=({children,action})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
 const MeH=SL;
 
@@ -955,7 +982,7 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels}){
   const mapDiv=useRef(null),mapRef=useRef(null),userRef=useRef(null),accRef=useRef(null);
   const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false),[geoErr,setGeoErr]=useState(""),[locating,setLocating]=useState(false),[locatedOnce,setLocatedOnce]=useState(false),[fullscreen,setFullscreen]=useState(false);const boundsRef=useRef(null);
   const [baseLayer,setBaseLayer]=useState("sat");
-  const wc={Trailhead:C.green,Water:C.blue,Campsite:C.purple,Bivy:C.purple,Junction:C.amber,Hazard:C.red,Summit:C.orange,Topout:C.orange,Bailout:C.teal};
+  const wc=WP_COLORS;
   const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
   const hasPts=pts&&pts.length>=2;
   const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);
@@ -976,7 +1003,7 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels}){
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
   if(!hasPts&&!(waypoints&&waypoints.length)&&!hasPeak)return null;
   const resetView=()=>{const map=mapRef.current;if(!map)return;if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25));else if(hasPeak)map.setView([peakCoord.lat,peakCoord.lng],12);else map.setView([39.5,-98.5],4);};
-  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} style={{padding:"7px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13,fontWeight:700,cursor:"pointer"}}>✕ Close</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C}/><button onClick={()=>setFullscreen(f=>!f)} title={fullscreen?"Exit full screen":"View full screen"} style={{position:"absolute",top:10,right:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"9px 12px",fontSize:14,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{fullscreen?"⤤":"⤢"}</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:10,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:10,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+(locating?"Locating…":"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"6px 2px 0",display:"flex",gap:9,flexWrap:"wrap"}}>{Object.entries(wc).map(([k,v])=><span key={k} style={{fontSize:12,color:v}}>● {k}</span>)}</div></div>;
+  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} style={{padding:"7px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13,fontWeight:700,cursor:"pointer"}}>✕ Close</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C}/><button onClick={()=>setFullscreen(f=>!f)} title={fullscreen?"Exit full screen":"View full screen"} style={{position:"absolute",top:10,right:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"9px 12px",fontSize:14,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{fullscreen?"⤤":"⤢"}</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:10,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:10,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+(locating?"Locating…":"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{Object.keys(WP_STYLE).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:WP_STYLE[k].color,fontSize:12.5,lineHeight:1}}>{WP_STYLE[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
   return fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>;
 }
 
@@ -1750,14 +1777,48 @@ function condRep(r){return (r.activity||[]).length;}
 
 
 
-const ADDR_YDS=["5.4","5.5","5.6","5.7","5.8","5.9","5.10a","5.10b","5.10c","5.10d","5.11a","5.11b","5.11c","5.11d","5.12a","5.12b","5.12c","5.12d","5.13a","5.13b","5.13c","5.13d","5.14a","5.14b","5.14c","5.14d","5.15a","5.15b"];
-const ADDR_VS=["VB","V0","V1","V2","V3","V4","V5","V6","V7","V8","V9","V10","V11","V12","V13","V14","V15","V16","V17"];
-const ADDR_WIS=["WI1","WI2","WI3","WI4","WI5","WI6","WI7"];
-const ADDR_MS=["M1","M2","M3","M4","M5","M6","M7","M8","M9","M10","M11","M12"];
-const ADDR_AIDS=["A0","A1","A2","A3","A4","A5","C1","C2","C3","C3+","C4"];
+/* These lists are the app's grade SCALE, not just a picker menu: gradeVal(), routeGradeVal()
+   and the area browser's diffOf() all rank a route by `list.indexOf(grade)`, and the Climbs
+   filter builds its min/max from the same array. So a grade missing here is not merely
+   un-offerable — it is unrankable and unfilterable.
+
+   Every modifier form was missing. 30,507 catalog routes store a grade ending in + or −
+   (5.9+ 4,025 · 5.10+ 2,741 · 5.8+ 2,580 · 5.11+ 1,755 · 5.7+ 1,512 · V0- 1,401 · V0+ 1,296 …),
+   so indexOf returned -1 for all of them: they sorted as unknown difficulty, the grade filter
+   could never match them, and a climber correcting a 5.9+ in the contribute flow had to round
+   it to 5.9 or 5.10a because the picker had no + to press.
+
+   Modifiers are placed where each system places them, so the sequence stays monotone:
+   5.10- ≈ a/b, bare 5.10 ≈ b/c, 5.10+ ≈ c/d. Below 5.10 YDS is letterless, so those take only
+   −/+. 5.15 keeps a/b — there is no consensus 5.15c/d to rank against, and inventing the rungs
+   would let the filter claim a precision the scale does not have. */
+const ADDR_YDS=["5.4-","5.4","5.4+","5.5-","5.5","5.5+","5.6-","5.6","5.6+","5.7-","5.7","5.7+","5.8-","5.8","5.8+","5.9-","5.9","5.9+","5.10-","5.10a","5.10b","5.10","5.10c","5.10d","5.10+","5.11-","5.11a","5.11b","5.11","5.11c","5.11d","5.11+","5.12-","5.12a","5.12b","5.12","5.12c","5.12d","5.12+","5.13-","5.13a","5.13b","5.13","5.13c","5.13d","5.13+","5.14-","5.14a","5.14b","5.14","5.14c","5.14d","5.14+","5.15a","5.15b"];
+const ADDR_VS=["VB","V0-","V0","V0+","V1-","V1","V1+","V2-","V2","V2+","V3-","V3","V3+","V4-","V4","V4+","V5-","V5","V5+","V6-","V6","V6+","V7-","V7","V7+","V8-","V8","V8+","V9-","V9","V9+","V10-","V10","V10+","V11-","V11","V11+","V12-","V12","V12+","V13-","V13","V13+","V14","V15","V16","V17"];
+const ADDR_WIS=["WI1","WI2","WI2+","WI3","WI3+","WI4","WI4+","WI5","WI5+","WI6","WI6+","WI7"];
+const ADDR_MS=["M1","M2","M3","M3+","M4","M4+","M5","M5+","M6","M6+","M7","M7+","M8","M8+","M9","M10","M11","M12"];
+const ADDR_AIDS=["A0","A1","A2","A2+","A3","A3+","A4","A4+","A5","C1","C2","C2+","C3","C3+","C4"];
 const ADDR_ALPS=["Class 3","Class 4","Class 5","Grade I","Grade II","Grade III","Grade IV","Grade V","Grade VI"];
 const ADDR_CLS=["Class 1","Class 2","Class 3","Class 4"];
 const ADDR_GRADES={sport:ADDR_YDS,trad:ADDR_YDS,rock:ADDR_YDS,bouldering:ADDR_VS,ice:ADDR_WIS,mixed:ADDR_MS,aid:ADDR_AIDS,mountaineering:ADDR_ALPS,alpine:ADDR_ALPS,scrambling:ADDR_CLS,hiking:ADDR_CLS};
+/* Adding the modifier rungs took YDS from 28 chips to 55, and 55 chips in a flat wrap is a
+   wall you scan rather than a control you use. Split each scale into (stem, suffix) so the
+   picker can ask the two questions a climber actually asks in order — which number, then how
+   hard within it — instead of listing every rung at once. Purely presentational: the value
+   written is still one string straight out of the scale array, so ordering is untouched.
+
+   The suffix class is deliberately narrow (a-d, + and −). "Class 3", "Grade II", "VB" and
+   "C4" end in characters outside it and stay whole, which is what we want: they have no
+   within-grade refinement to ask about. */
+function gradeGroups(list){
+  const order=[],by={};
+  (list||[]).forEach(function(g){
+    const m=/^(.+?)([+−-]|[a-d])$/.exec(g);
+    const stem=m?m[1]:g,suf=m?m[2]:"";
+    if(!by[stem]){by[stem]=[];order.push(stem);}
+    by[stem].push([suf,g]);
+  });
+  return order.map(function(s){return {stem:s,variants:by[s]};});
+}
 const ADDR_STYLE=["Slab","Vertical","Overhanging","Crack","Face","Chimney","Offwidth","Dihedral","Arête","Sustained","Bouldery","Technical","Pumpy","Runout","Well-protected","Exposed","Scenic","Adventurous","Committing"];
 
 const ADDR_HAZ=["Rockfall","Loose rock","Runout","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","River / creek crossing","Serious exposure","Complex route-finding","Bad landing zone","Warms up / sun-affected"];
@@ -1896,7 +1957,7 @@ function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}){
   const mapDiv=useRef(null),mapRef=useRef(null),markersRef=useRef([]),tileRef=useRef(null);
   const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);
   const [baseLayer,setBaseLayer]=useState("sat");
-  const wc={Trailhead:C.green,Water:C.blue,Campsite:C.purple,Bivy:C.purple,Junction:C.amber,Hazard:C.red,Summit:C.orange,Topout:C.orange,Bailout:C.teal};
+  const wc=WP_COLORS;
   const pickRef=useRef(onPick);pickRef.current=onPick;
   useEffect(function(){
     let cancelled=false;
@@ -3070,4 +3131,4 @@ export function __set__toastT(v){_toastT=v;}
 export function __set_DLOCALE(v){DLOCALE=v;}
 export function __set__cbTimer(v){_cbTimer=v;}
 export function __set__cbBatch(v){_cbBatch=v;}
-export {wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,MY_CLIMBS,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch, fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
+export {wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,MY_CLIMBS,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
