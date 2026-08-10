@@ -25,14 +25,30 @@ name: Render guards
 #
 # Independent jobs rather than steps, so a browser flake in one cannot stop the
 # others from reporting.
+#
+# They run on push to main as well as on pull_request, because a green PR is not a
+# statement about main. A pull_request run tests merge(head, base) as base stood WHEN
+# THE RUN STARTED, so two PRs that are each green can still break main between them —
+# and that is not hypothetical here: #728 and #727 merged three seconds apart, both
+# green, and main stopped building. check:migration-claims now catches that one
+# collision; nothing catches the general case, because until now no browser guard had
+# ever been run against main. The failure would surface on the NEXT unrelated PR,
+# attributed to whoever opened it.
 
 on:
   pull_request:
     branches: [main, master]
+  push:
+    branches: [main, master]
 
 concurrency:
   group: render-guards-${{ github.head_ref || github.ref }}
-  cancel-in-progress: true
+  # Cancel superseded PR runs; never cancel a main run. #616 is the reason: with
+  # cancel-in-progress on, merges killed each other's deploys and production sat eight
+  # commits behind for five hours. Cancelling here would be quieter and worse — a
+  # cancelled run reports no failure, so the merge that was never checked would look
+  # checked.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
