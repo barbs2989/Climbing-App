@@ -41,6 +41,13 @@
 //     clean route. Those are counted and named as UNROUTED rather than silently passing —
 //     a guard that cannot see a defect must say so. Same lesson as check:overlay-discovery.
 //
+// SIBLING, NOT A DUPLICATE. `scripts/audit-waypoint-order.mjs` asks a different question of
+// the same column; the two were written in parallel under one filename (#783 and #789). That
+// one asks whether the LIST is sensible — ordering and duplicate pins (Forbidden naming the
+// summit third from the end; Olympus showing two summit pins) — and needs no gpx at all. This
+// one asks whether each waypoint is on the route's own TRACK. Neither subsumes the other, so
+// run both.
+//
 // A fifth thing it deliberately does NOT flag: a `Topout` waypoint instead of `Summit`.
 // On a crag route (Pinto Rock, Shuksan Crag, the Wine Spires' individual lines) topping
 // out IS the end of the route and there is no summit to reach. Topout is only reported
