@@ -84,6 +84,49 @@ if (dead.length) {
   process.exit(1);
 }
 
+// ---- the same question, one level down: object fields have SUB-keys -------------------
+//
+// `road` and `access` are jsonb objects, so passing the check above only proves the COLUMN is
+// applied — it says nothing about whether the individual keys the form offers are keys any
+// reader looks at. Get one wrong and the failure is the exact shape this guard exists to stop:
+// accepted, stored, consensus reached, displayed nowhere.
+//
+// It is a live risk rather than a hypothetical, because the readers and the key lists sit ~400
+// lines apart in RouteDetail.jsx and nothing ties them together. `access` in particular carries
+// TWO spellings for the same fact — `land_manager` on 399 of 400 sampled rows and `landManager`
+// on 8, with display reading `ac.land_manager||ac.landManager` — so "which spelling does the
+// form write?" has a right answer and a silently-wrong one.
+//
+// Deliberately a SUBSTRING test against the whole file rather than a scoped one: a sub-key can
+// legitimately be read as `ac.foo`, `route.road.foo`, `road.foo` or destructured, and demanding
+// a single shape would fail on correct code. The claim here is only "something, somewhere,
+// mentions this key" — weak, but it is exactly strong enough to catch a typo or a rename, which
+// is the failure that actually happens.
+const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"]];
+for (const [constName, field] of OBJ_FIELDS) {
+  const m = rd.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
+  if (!m) {
+    console.error(`check:contrib-fields: ANCHOR LOST — ${constName} not found in RouteDetail.jsx.`);
+    console.error(`The sub-keys of the \`${field}\` field went unchecked, so this run proved less than it claims.`);
+    process.exit(1);
+  }
+  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_]+)","/g)].map((x) => x[1]);
+  if (!subKeys.length) {
+    console.error(`check:contrib-fields: parsed 0 sub-keys out of ${constName} — the scan broke.`);
+    process.exit(1);
+  }
+  const unread = subKeys.filter((k) => !new RegExp("\\." + k + "\\b").test(rd));
+  if (unread.length) {
+    console.error(`check:contrib-fields: ${unread.length} sub-key(s) of \`${field}\` are offered by the form and read by nothing:\n`);
+    for (const k of unread) console.error(`  ${field}.${k}`);
+    console.error(`\nA climber can fill these in, reach consensus, and see nothing change.`);
+    console.error(`Check the spelling against the panel's own reader — \`access\` has two`);
+    console.error(`land-manager spellings and the form must write the canonical one.`);
+    process.exit(1);
+  }
+  console.log(`  ${field}: ${subKeys.length} sub-key(s) offered, all read`);
+}
+
 const orphan = [...ss].filter((k) => !submitted.includes(k));
 console.log(`check:contrib-fields: ok — all ${submitted.length} submittable fields are applied by the merge.`);
 console.log(`  ${form.length} from the SuggestFix form, ${direct.length} filed directly (${[...new Set(direct)].join(", ") || "none"})`);
@@ -95,3 +138,14 @@ if (orphan.length) console.log(`  ${orphan.length} in SS but not in the form, se
 //   rename `var SS={` in ClimbMatch.jsx   -> ANCHOR LOST, exit 1 (does not pass vacuously)
 //   rename `const FIELDS=[{k:`            -> ANCHOR LOST, exit 1
 //   add a bogus name to EXEMPT            -> fails as a stale exemption
+//
+// Sub-key extension, injection-tested 2026-08-12:
+//   typo a sub-key (land_manager -> land_managr) -> fails naming access.land_managr
+//   rename ROAD_KEYS                             -> ANCHOR LOST, exit 1 (not a vacuous pass)
+//   empty the key list                           -> "parsed 0 sub-keys", exit 1
+//   swap land_manager for the legacy landManager -> PASSES, deliberately. Both spellings are
+//     read (display is `ac.land_manager||ac.landManager`), so the legacy one is not BROKEN,
+//     just worse. This guard's claim is "a reader looks at this key", not "you picked the
+//     better key" — encoding the editorial preference here would make it fail on code that
+//     works, and the reasoning for preferring the canonical spelling lives in the comment
+//     beside ACCESS_KEYS where the next person will actually read it.

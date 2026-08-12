@@ -1,0 +1,84 @@
+-- 0125: Black Peak joins Washington Pass — and the Core / Washington Pass boundary is settled
+-- for every member, not for this one peak.
+--
+-- `wa_black_peak` (8,975 ft; East Buttress, Northeast Ridge, South Ridge) is a direct child of
+-- `wa_north_cascades`, a SIBLING of both grouping rows — the same shape Boston Basin had before
+-- 0097. It was measured on 2026-08-09 and deliberately not moved, because moving one peak
+-- without deciding the boundary just relocates the question.
+--
+-- ── THE EARLIER READING WAS WRONG, AND THE REASON IS WORTH KEEPING ───────────
+-- That pass concluded Black Peak was "marginally closer to Core", from these numbers: nearest
+-- Core member Mesahchie **7.7 km**, versus the Washington Pass row's own coordinate **11.5 km**.
+-- Those are not comparable quantities. One is a distance to the nearest MEMBER of a group; the
+-- other is a distance to a group ROW's single coordinate. Measured the same way on both sides:
+--
+--     nearest Core member    Mesahchie Peak    7.7 km
+--     nearest WaPass member  Corteo Peak       2.9 km      <- 2.6x closer
+--
+-- Corteo is the peak immediately north of Black across the Wing Lake cirque. Access agrees:
+-- Black Peak is climbed from Rainy Pass on Highway 20 via Lake Ann / Heather Pass / Wing Lake,
+-- the same corridor Washington Pass is reached from, and the published route descriptions call
+-- it a climb "near Washington Pass". Core's members are the interior peaks — Ragged Ridge,
+-- Logan, Goode, Boston Basin — reached from Easy Pass and the Cascade River.
+--
+-- Both groups are OUR editorial groupings; MP has no "North Cascades Core" and files Black Peak
+-- flat under `N Cascades`, exactly as it files Corteo. So there is no upstream shape to match
+-- and geography decides. That is what makes this safe to settle rather than defer.
+--
+-- ── THE BOUNDARY, JUDGED FOR ALL 54 MEMBERS ─────────────────────────────────
+-- For every located member of both groups: distance to the nearest member of its OWN group vs
+-- the nearest member of the RIVAL group. A member closer to the rival is a boundary question.
+--
+--     Core   (34 located)  members closer to Washington Pass : 0
+--     WaPass (20 located)  members closer to Core            : 1   Mount Arriva
+--
+-- Zero in one direction means Core is coherent and this move does not open a seam.
+--
+-- ── MOUNT ARRIVA STAYS, AND NOT AS A SHRUG ──────────────────────────────────
+-- Arriva (1 route) is 3.7 km from Mesahchie in Core and 7.1 km from Corteo in its own group,
+-- which is why it registers as a crossing. Two facts settle it the other way:
+--
+--   * **Arriva's prominence parent IS Black Peak**, 4.1 km southeast. It reads as a Core peak
+--     only because its own parent peak is currently outside the group. After this move its
+--     nearest own-group member becomes Black Peak at 4.1 km against Mesahchie's 3.7 km — the
+--     margin collapses from 3.4 km to **0.4 km**, i.e. distance no longer decides it.
+--   * With distance that close, keeping a summit in the same group as its prominence parent is
+--     the better tiebreak than 400 m of proximity to a different ridge.
+--
+-- So the crossing count stays at 1 after this migration — that was **simulated before writing,
+-- not hoped for** — and it is a recorded decision rather than an open question. Do not "fix"
+-- Arriva by moving it to Core without new evidence; it would separate it from Black Peak.
+--
+-- ── SAFETY, verified against the live DB immediately before writing ──────────
+--   * wa_black_peak  — 3 direct routes, **0 children**. A childless leaf, so trg_areas_set_path
+--     re-deriving its own path is enough: there is NO descendant path to repair and the 0097
+--     idempotent re-assign is not needed here. (The 2026-08-09 note anticipated needing it; the
+--     row turned out to have no children, so it is deliberately absent rather than forgotten.)
+--   * wa_sub_wapass  — 0 direct routes, 20 children. Already a parent, so trg_areas_leaf_xor
+--     cannot be violated by adopting a 21st.
+--   * Both rows sit under wa_north_cascades, so nothing above it changes subtree membership:
+--     north_cascades must stay 342 and north_cascades_core must stay 101.
+update areas set parent_id = 'wa_sub_wapass'
+ where id = 'wa_black_peak';
+
+-- Recount from the subtree, never arithmetic. Core and North Cascades are recounted although
+-- neither should move — if either does, a route left a subtree it should not have.
+update areas set route_count = (
+  select count(*) from routes r join areas a2 on a2.id = r.area_id where a2.path <@ areas.path
+) where id in ('wa_sub_wapass','wa_north_cascades_core','wa_north_cascades');
+
+-- ── Verify afterward, as SEPARATE statements ─────────────────────────────────
+-- One paste is ONE transaction; an error in a read-only SELECT rolls back the writes above it.
+--
+--   select id, parent_id, path::text from areas where id = 'wa_black_peak';
+--   -- expect parent_id = wa_sub_wapass and path
+--   --   usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_black_peak
+--   -- parent_id and path disagreeing is the silent failure: every `path <@` subtree query
+--   -- would then miss this row and its three climbs.
+--
+--   select id, route_count from areas
+--     where id in ('wa_sub_wapass','wa_north_cascades_core','wa_north_cascades') order by id;
+--   -- expect sub_wapass 152 (was 149), north_cascades_core UNCHANGED at 101,
+--   -- north_cascades UNCHANGED at 342. Predicted from a live recount, not by adding three.
+--
+--   -- then:  npm run check:counts   and   npm run audit:area-parents

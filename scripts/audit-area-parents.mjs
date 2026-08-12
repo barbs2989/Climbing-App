@@ -40,6 +40,7 @@
 // it is checking. Fails closed on an empty read: zero areas makes every tree look perfect,
 // and this guard's realistic failure mode is a FALSE PASS.
 
+import fs from "fs";
 import { selectAll } from "./lib/supabase-env.mjs";
 
 const argv = process.argv.slice(2);
@@ -112,6 +113,47 @@ if (INJECT) {
     const v = inj.find(a => a.parent_id && byId.has(a.parent_id));
     v.parent_id = "no_such_area";
     log(`     pointed ${v.id}.parent_id at a row that does not exist`);
+  } else if (INJECT === "twin") {
+    // Nest a populated area inside a parent of the IDENTICAL name, both holding routes.
+    // D4 must pair them. Note the clone keeps the same name exactly -- a pluralised clone
+    // is the LEGITIMATE boulder-field shape and D4 must not fire on it, which is what
+    // --inject=twinplural checks.
+    const real = inj.find(a => a.route_count > 1 && ch(a.id).length === 0);
+    const twin = { ...real, id: real.id + "_twin", parent_id: real.id,
+                   path: `${real.path}.${real.id}_twin`, route_count: 1 };
+    areas.push(twin);
+    log(`     nested ${twin.id} ("${twin.name}", 1 route) inside identically-named ${real.id}`);
+  } else if (INJECT === "twinplural") {
+    // The false-positive guard: a SINGULAR child inside a PLURAL parent is one boulder in a
+    // named cluster and is correct. D4 must NOT fire, i.e. the count must not move.
+    const real = inj.find(a => a.route_count > 1 && ch(a.id).length === 0);
+    const twin = { ...real, id: real.id + "_one", parent_id: real.id, name: real.name + "s",
+                   path: `${real.path}.${real.id}_one`, route_count: 1 };
+    areas.push(twin);
+    log(`     nested "${twin.name}" inside "${real.name}" — D4 must NOT count this`);
+  } else if (INJECT === "shape") {
+    // Drop a crag in flat at region level. This is 0118's defect: no stub, no duplicate,
+    // nothing co-located, so D1..D4 cannot see it. D5 must report it UNDECLARED.
+    const crag = { id: "wa_injected_flat_crag", name: "Some Roadside Crag", parent_id: "wa_olympics",
+                   area_type: "crag", route_count: 4, path: "usa.washington.wa_olympics.wa_injected_flat_crag",
+                   lat: 47.8, lng: -123.1, elevation_ft: null };
+    areas.push(crag);
+    log(`     added ${crag.id} flat under wa_olympics`);
+  } else if (INJECT === "shapeblind") {
+    // The fail-closed case: the reference is intact and the regions exist, but it has
+    // stopped describing this tree (someone swapped the file, or an import renamed
+    // everything). Every declared name goes stale at once, and D5 must say the reference
+    // matched NOTHING rather than quietly reporting per-region noise. A reference that
+    // describes no live row is checking nothing, which is this codebase's most-repeated bug.
+    let n = 0;
+    for (const r of ch(STATE)) for (const k of ch(r.id)) { k.name = `Renamed ${n++}`; }
+    log(`     renamed all ${n} region-level children so no declaration can match`);
+  } else if (INJECT === "shapestale") {
+    // Rename a declared region-level child. D5 must report BOTH an UNDECLARED new name and
+    // a STALE declaration -- the reference is now describing a tree that has moved on.
+    const v = byId.get("wa_kitsap_puget_islands");
+    v.name = "Kitsap Peninsula";
+    log(`     renamed wa_kitsap_puget_islands to "${v.name}"`);
   } else {
     console.error(`unknown --inject=${INJECT}`); process.exit(2);
   }
@@ -263,15 +305,163 @@ for (const a of inScope) {
 }
 if (!broken) log("  none");
 
+// ---------------------------------------------------------------- D4: redundant level
+// A container whose ONLY child carries the identical name. The intermediate level says
+// nothing: the browser shows "Last Unicorn, The", then "Last Unicorn, The", then two boulder
+// problems.
+//
+// ── THE FIRST VERSION OF D4 WAS VACUOUS, AND THE REASON IS WORTH THE SPACE ────
+// It looked for a same-named parent/child pair where BOTH held routes -- "one crag existing
+// twice with its routes split" -- and it reported 3 WA hits that all looked real. Every one
+// was a false positive, and the test could NEVER have found a true one:
+//
+//   * `route_count` is a SUBTREE aggregate. A parent's count is satisfied entirely by its
+//     child's own routes propagating up, so `p.route_count > 0` says nothing about the
+//     parent holding anything itself. All 3 WA parents held ZERO direct routes; so did all
+//     58 catalog-wide.
+//   * `trg_areas_leaf_xor` forbids an area from having child areas AND direct routes at the
+//     same time. Measured: of 47,590 areas, **0** hold both. So the shape D4 claimed to
+//     detect -- both halves populated -- is impossible by construction, and a same-named
+//     container/leaf pair is the CORRECT way to express "this crag has its own problems and
+//     also contains other boulders". `wa_fuzz_wall` holds Span Man and Haunted Shack beside
+//     `wa_fuzz_wall_2`, which is where Fuzz Wall's own three problems live.
+//
+// The lesson, third instance in one sweep: a subtree aggregate is not evidence about a row.
+// Precision was "measured" by eyeballing names and counts, and the schema invariant that
+// made the whole test empty was never checked. Ask what a detector CANNOT report, not just
+// what it does.
+//
+// What replaced it needs no route counts at all and is exact: 12 hits catalog-wide, 1 in WA,
+// and all 12 are a `region` whose lone child is a same-named `crag` holding the routes.
+// Still matched on the RAW name -- a singular child inside a PLURAL parent ("Aries Boulder"
+// in "Aries Boulders") is one boulder in a named cluster and is correct, which is what
+// --inject=twinplural pins.
+//
+// Reported, never repaired, and here the repair is genuinely awkward rather than merely
+// risky: collapsing the level means moving the routes up, but `routes_require_leaf` refuses
+// to attach a route to an area that still has a child, and the FK refuses to drop the child
+// while routes point at it. It needs a deferred constraint or two transactions -- not worth
+// it for one WA area and two boulder problems.
+section("D4  a container whose ONLY child carries the identical name (a level that says nothing)");
+let twins = 0;
+for (const a of inScope) {
+  const k = ch(a.id);
+  if (k.length !== 1 || k[0].name !== a.name) continue;
+  twins++; findings++;
+  log(`\n  "${a.name}"`);
+  log(`     container ${a.id} [${a.area_type}]`);
+  log(`     lone child ${k[0].id} [${k[0].area_type}]  ${k[0].route_count} routes, ${ch(k[0].id).length} children`);
+  log(`        in ${where(a)}`);
+}
+if (!twins) log("  none");
+
+// ---------------------------------------------------------------- D5: MP region shape
+// The only detector here that consults something OUTSIDE the database, and the only one
+// that can see the 0118 defect class: MP groups a scatter of small crags under a container,
+// our import drops them flat at region level, and `Olympics & Pacific Coast` ends up with
+// 18 direct children against MP's 10. No stub, no duplicate, nothing co-located -- D1..D4
+// are all structurally blind to it. The only signal is the child list itself.
+//
+// scripts/wa-region-shape.json is an ALLOW-LIST keyed on OUR names, not a snapshot equality
+// test. Every region-level child must be declared either as corresponding to an MP area
+// (`mp`) or as a deliberate divergence with a reason (`extra`). A name in neither is the
+// finding. That way a legitimate restructure is recorded in the same commit instead of
+// fighting a diff that fires on every change -- the failure mode that makes a snapshot
+// baseline get regenerated blindly until it asserts nothing.
+//
+// It also fails on a STALE entry: a declared name that is no longer a child of that region
+// means the file is describing a tree that has moved on, and a reference nobody maintains
+// is a reference that lies. Same rule as the KNOWN map in check:field-renders.
+//
+// WA only, and skipped for any other scope, because that is the diff that was actually
+// done. It says so rather than passing silently -- an empty check reporting "ok" is this
+// codebase's most-repeated bug.
+section("D5  region-level children vs the Mountain Project reference");
+let shapeHits = 0;
+if (ALL || STATE !== "washington") {
+  log(`  skipped — the MP reference covers the washington subtree only (scope: ${scopeLabel})`);
+} else {
+  const REF = JSON.parse(fs.readFileSync(new URL("./wa-region-shape.json", import.meta.url), "utf8"));
+  const regions = Object.keys(REF).filter(k => !k.startsWith("_"));
+  const liveTop = ch(STATE).map(a => a.name).sort();
+  log(`  reference covers ${regions.length} regions; live tree has ${liveTop.length} at region level`);
+
+  for (const rid of regions) {
+    const row = byId.get(rid);
+    if (!row) { shapeHits++; findings++; log(`\n  MISSING REGION  ${rid} is in the reference but not in the tree`); continue; }
+    const declared = new Map();
+    for (const n of REF[rid].mp || []) declared.set(n, "mp");
+    for (const n of Object.keys(REF[rid].extra || {})) declared.set(n, "extra");
+    const live = ch(rid).map(a => a.name);
+    const undeclared = live.filter(n => !declared.has(n));
+    const stale = [...declared.keys()].filter(n => !live.includes(n));
+    if (!undeclared.length && !stale.length) continue;
+    shapeHits += undeclared.length + stale.length;
+    findings += undeclared.length + stale.length;
+    log(`\n  ${REF[rid].name}  (${rid})`);
+    for (const n of undeclared) {
+      const a = ch(rid).find(x => x.name === n);
+      log(`     UNDECLARED  "${n}" [${a.area_type}] ${a.route_count} routes  ${a.id}`);
+      log(`        Either it corresponds to an MP area (add to "mp") or it is a deliberate`);
+      log(`        divergence (add to "extra" WITH a reason). A crag that appears flat at`);
+      log(`        region level is 0118's defect.`);
+    }
+    for (const n of stale) log(`     STALE       "${n}" is declared as a child of this region and is not one`);
+  }
+  // A reference that matches nothing is a reference that checks nothing.
+  const anyDeclared = regions.some(r => (REF[r].mp || []).some(n => ch(r).some(a => a.name === n)));
+  if (!anyDeclared) {
+    log(`\n  !! the reference matched NO live child in ANY region — it is not describing this tree`);
+    shapeHits++; findings++;
+  }
+}
+if (!shapeHits) log("  none");
+
+// ---------------------------------------------------------------- D6: name hygiene
+// Import escapes in the display name. `Exit 34: Middle Fork &amp; Taylor River` carried a
+// raw HTML entity -- the only one of 47,566 names -- and nothing anywhere would have caught
+// it: it is not a parentage question, no guard reads area names, and it renders straight to
+// the climber. 0119 fixed that row; this is what stops the next import re-introducing it.
+//
+// Cheap, exact, and no judgement involved, so unlike D1/D2/D4 every hit here is real. The
+// id is deliberately NOT checked: `wa_exit_34_middle_fork_amp_taylor_river` still carries
+// the escape, and it must, because routes reference it by FK and no climber ever sees it.
+section("D6  display names carrying an import escape or stray whitespace");
+const HYGIENE = [
+  [/&(?:amp|lt|gt|quot|apos|nbsp|#\d+);/, "HTML entity"],
+  [/^\s|\s$/, "leading/trailing whitespace"],
+  [/\s{2,}/, "doubled space"],
+  [/�/, "replacement character (a mojibake tell)"],
+];
+let dirty = 0;
+for (const a of inScope) {
+  const hit = HYGIENE.find(([re]) => re.test(a.name));
+  if (!hit) continue;
+  dirty++; findings++;
+  log(`  ${hit[1].padEnd(34)} ${JSON.stringify(a.name)}  ${a.id}`);
+}
+if (!dirty) log("  none");
+
 // ---------------------------------------------------------------- summary
 section("SUMMARY");
 log(`  scope            ${scopeLabel} (${inScope.length} areas)`);
 log(`  D1 stray peaks   ${strays.reduce((s, x) => s + x.cands.length, 0)} across ${strays.length} groups`);
 log(`  D2 hollow stubs  ${stubs}`);
 log(`  D3 path breaks   ${broken}`);
-log(`\n  ${findings} thing(s) to look at. These are CANDIDATES, not verdicts —`);
-log(`  D1 and D2 reason from coordinates and names, and both lie in crag terrain.`);
-log(`  Confirm each against the group's own name and a guidebook before moving anything.`);
+log(`  D4 dead levels   ${twins}`);
+log(`  D5 shape drift   ${shapeHits}`);
+log(`  D6 dirty names   ${dirty}`);
+log(`\n  ${findings} thing(s) to look at — but they are NOT all the same kind of claim:`);
+log(`    D1, D2  hypotheses. They reason from coordinates and names, and both lie in crag`);
+log(`            terrain — D1's first draft flagged 41 of which 12 were real. Confirm each`);
+log(`            against the group's own name and a guidebook before moving anything.`);
+log(`    D3, D4  exact. D4 needs no route counts and has no judgement in it — but its`);
+log(`      D6    REPAIR is awkward: routes_require_leaf refuses to move routes up while`);
+log(`            the child exists, and the FK refuses to drop the child while routes point`);
+log(`            at it. A path mismatch and an escaped name are defects, not candidates.`);
+log(`    D5      exact about the DECLARATION, not about the tree: it says this child is not`);
+log(`            accounted for in scripts/wa-region-shape.json. The fix may be to move the`);
+log(`            area, or to declare it — read the region's MP list and decide.`);
 process.exit(0);
 
 // ---------------------------------------------------------------- injection tests
@@ -314,3 +504,55 @@ process.exit(0);
 //
 //   node scripts/audit-area-parents.mjs --inject=orphan
 //       points a parent_id at a row that does not exist. D3 must report ORPHAN  (0 -> 1).
+//
+// Added with D4/D5/D6 (2026-08-09). Baseline for these is D4 1 / D5 0 / D6 3.
+//
+//   --inject=twin        gives a routes-holding leaf a single child of the IDENTICAL name,
+//                        making it a container whose lone child says nothing. D4 must report
+//                        it  (1 -> 2).
+//   --inject=twinplural  same, but the child's name is PLURALISED. D4 must NOT fire
+//                        (1 -> 1). This is the false-positive guard and it is the reason D4
+//                        matches raw names instead of canon(): "Aries Boulder" inside "Aries
+//                        Boulders" is one boulder in a named cluster and is correct.
+//   --inject=shape       drops a crag in flat at region level — 0118's defect exactly, with
+//                        no stub, no duplicate and nothing co-located, so D1..D4 are all
+//                        blind to it. D5 must report it UNDECLARED  (0 -> 1).
+//   --inject=shapestale  renames a declared region-level child. D5 must report BOTH the new
+//                        name UNDECLARED and the old one STALE  (0 -> 2). A reference file
+//                        nobody maintains is a reference that lies.
+//   --inject=shapeblind  renames EVERY region-level child, so no declaration can match. D5
+//                        must say the reference matched NOTHING rather than emit per-region
+//                        noise  (0 -> 159). This is the fail-closed case: a reference that
+//                        describes no live row is checking nothing.
+//
+// D6 needs no injection — it is an exact regex over a string with no judgement involved, so
+// there is no scoping or indexing trap for an injection to expose. Its 3 WA hits are real.
+//
+// WHAT WAS MEASURED AND DELIBERATELY NOT SHIPPED. Three further detectors were written,
+// measured against the live tree, and dropped rather than shipped as noise:
+//
+//   sibling name containment  ("Snoqualmie Pass" inside a sibling "Snoqualmie Pass Area",
+//       0119's defect)          8 WA hits, 0 real. Restricting it to sibling CONTAINERS
+//                               with >=2 children each did not help: "Central Olympic
+//                               Mountains" vs "North-Central Olympic Mountains", "Chelan"
+//                               vs "Sawtooth / Lake Chelan", "West Face" vs "North West
+//                               Face" are all correct. Legitimate sibling naming is not
+//                               separable from the defect by name alone.
+//   flat leaves beside          29 WA hits, 0 real. North Cascades Core (32 leaves + 2
+//       containers                containers), Washington Pass (16 + 5) and Snoqualmie Pass
+//       (0118's Olympics shape)   Area (25 + 3) are all deliberate. This is why D5 consults
+//                                 an EXTERNAL reference instead: the shape is legal, and
+//                                 only MP's own list says whether a container is missing.
+//   identical sibling names     0 hits catalog-wide. A detector that has never fired and
+//                               cannot be shown to fire is dead code.
+//   D4's OWN first version      "a same-named parent/child pair where BOTH hold routes" --
+//       (shipped in #820,        3 WA hits that all looked real, and structurally incapable
+//        replaced immediately)   of ever finding a true one. `route_count` is a SUBTREE
+//                               aggregate, so the parent's count came entirely from the
+//                               child; and trg_areas_leaf_xor means **0 of 47,590** areas
+//                               hold child areas and direct routes at once, so "both halves
+//                               populated" cannot exist. Ask what a detector CANNOT report.
+//
+// Record kept because the next person to have these ideas should not have to re-measure
+// them, and because "D1's first draft flagged 41 of which 12 were real" is the standing
+// lesson: measure precision before shipping a detector, not after.
