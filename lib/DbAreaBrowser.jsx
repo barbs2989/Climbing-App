@@ -462,7 +462,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
               <button onClick={() => setSheet(false)} aria-label="Close" style={{ background: C.borderLight, border: "none", color: C.textSub, borderRadius: 8, width: 34, height: 34, fontSize: 20, cursor: "pointer" }}>×</button>
             </div>
-            <div style={{ padding: "0 16px 18px", overflowY: "auto" }}>
+            <div style={{ padding: "0 16px 18px", overflowY: "auto", flex: 1, minHeight: 0 }}>
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
