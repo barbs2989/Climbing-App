@@ -23,6 +23,7 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
+npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -688,6 +689,29 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
+  a trip report carries approach / climb / descent minutes and a car-to-car total, and other
+  climbers can read them — but the planner still answered "how long will this take?" with
+  Scarf's Rule alone, so the app held evidence of how long a route takes and printed a formula
+  beside it. The panel now sits **above** the estimate, because ordering is a claim about
+  authority: measurement first, model second.
+  - **No existing guard could ever see it.** `check:bare` renders a route with no activity;
+    `check:ui` walks the seeded demo, whose `cond.carToCar` is **prose** ("7 hr", "3 days",
+    "Turned around") and therefore deliberately ignored; `check:zero` has nothing logged; and
+    `check:field-renders` covers `routes` columns while these are `climb_logs` ones. That is the
+    `check:anniversary` shape — a surface nothing exercises breaks silently and stays broken.
+  - **Numeric minutes only, never the `carToCar` string.** Parsing it would read `3` out of
+    "3 days", which is the mistake `rappels` and `season` already record. `carToCarMin` is the
+    integer; the legs are integers; their sum is a real car-to-car. One assertion exists purely
+    to fail if anything ever starts parsing English durations.
+  - It does **not** feed the model. `scarfHrs` is parameterised by the READER's fitness and pack
+    weight, and a logged time comes from a party whose fitness nobody recorded; blending them
+    would give a number that is neither measurement nor prediction. A median with the spread and
+    the party count says what it is. A **turned-around** party is excluded from the total — they
+    covered real ground, but not the route — and the count on screen is what proves it.
+  - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
+    the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
+    prose, and swapping the median for a mean each fail it by name.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
