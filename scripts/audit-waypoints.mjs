@@ -258,10 +258,75 @@ const F = {
   trackOffItsPeak: [],
 };
 
-// The app's own vocabulary — RouteDetail's colour map and glyph map are keyed on exactly
-// these strings, and it compares `w.type==="Trailhead"` / `"Summit"||"Topout"` directly.
-const CANON = ["Trailhead", "Water", "Campsite", "Junction", "Hazard", "Summit", "Topout", "Bailout"];
-const CANON_BY_LC = new Map(CANON.map(c => [c.toLowerCase(), c]));
+/* The app's vocabulary is READ FROM THE APP, never retyped here.
+
+   It was an eight-name literal, and #841 made that wrong within the day: it added Base, Crag,
+   Pass, Approach and Landmark to WP_STYLE and pointed ~37 raw spellings at them through
+   WP_TYPE_MAP. The app then drew all five correctly while this audit went on calling 141
+   waypoints "outside the app's vocabulary" — asserting a modelling gap that had just been
+   closed, and inviting a data migration nobody needed. `check:wp-styles` keeps those two maps
+   honest with each other; nothing kept THIS file honest with either.
+
+   A hand-copied vocabulary cannot help but drift, because the two files are edited by
+   different people for different reasons. Parsing it means this is wrong only if the app is.
+
+   The question is also not "is this string in a list": the app resolves a raw value through
+   WP_TYPE_MAP first and only then looks it up in WP_STYLE. So mirror `wpType()` and ask what
+   the app asks — after canonicalisation, can WP_STYLE DRAW it? */
+const CORE = fs.readFileSync(new URL("../ClimbMatchCore.jsx", import.meta.url), "utf8");
+function parseBlock(name) {
+  const i = CORE.indexOf(`const ${name}={`);
+  if (i < 0) return null;
+  let d = 0;
+  for (let j = i + name.length + 7; j < CORE.length; j++) {
+    const c = CORE[j];
+    if (c === "{") d++;
+    else if (c === "}") { if (--d === 0) return CORE.slice(i, j + 1); }
+    else if (c === '"' || c === "'") { const q = c; while (++j < CORE.length && CORE[j] !== q) if (CORE[j] === "\\") j++; }
+  }
+  return null;
+}
+const styleBlock = parseBlock("WP_STYLE"), typeMapBlock = parseBlock("WP_TYPE_MAP");
+if (!styleBlock || !typeMapBlock) {
+  console.error("\naudit:waypoints FAILED — could not read WP_STYLE / WP_TYPE_MAP from ClimbMatchCore.jsx.");
+  console.error("Refusing to judge the catalog against a vocabulary this script invented.\n");
+  process.exit(1);
+}
+const DRAWABLE = new Set([...styleBlock.matchAll(/[\n{]\s*([A-Za-z][A-Za-z0-9_]*)\s*:\s*\{/g)].map(m => m[1]));
+/* The key class MUST include `-` and the key MUST be trimmed. Both were wrong in the first
+   draft and both produced a confident false report rather than an error: without the hyphen
+   `"route-start"` parses as the key `start`, so 4 routes using it were reported as outside the
+   vocabulary though the app draws them; without the trim a key written after a newline parses
+   as `"  camp"`, which no lookup of `camp` can match. The size check below cannot catch
+   either — both bugs yield the RIGHT NUMBER of entries under the wrong names. */
+const TYPE_MAP = new Map([...typeMapBlock.matchAll(/["']?([A-Za-z0-9_ /-]+?)["']?\s*:\s*"([A-Za-z]+)"/g)].map(m => [m[1].trim().toLowerCase(), m[2]]));
+if (DRAWABLE.size < 8 || TYPE_MAP.size < 20) {
+  console.error(`\naudit:waypoints FAILED — parsed ${DRAWABLE.size} drawable types and ${TYPE_MAP.size} spellings.`);
+  console.error("That is too few to be real; the parse broke rather than the app shrinking.\n");
+  process.exit(1);
+}
+// Assert the SHAPES that broke, not just the count — a size check passes while names are wrong.
+for (const probe of ["route-start", "camp", "trailhead/pass", "climbing area"]) {
+  if (!TYPE_MAP.has(probe)) {
+    console.error(`\naudit:waypoints FAILED — WP_TYPE_MAP parsed, but the key ${JSON.stringify(probe)} is missing.`);
+    console.error("The regex is dropping a key shape (hyphen, leading space, slash), and every route");
+    console.error("spelled that way would be reported as outside the app's vocabulary.\n");
+    process.exit(1);
+  }
+}
+// wpType() in ClimbMatchCore.jsx, mirrored. Keep the two in step.
+const canonOf = raw => { const r = String(raw || "").trim(); if (!r) return ""; return TYPE_MAP.get(r.toLowerCase()) || (r.charAt(0).toUpperCase() + r.slice(1)); };
+/* Mis-casing is measured against WP_TYPE_MAP, NOT against the drawable names, and that
+   distinction is the finding. `wpType()` lowercases before it looks anything up, so a spelling
+   the map contains works in ANY case — `base`, `pass`, `landmark`, `approach` all resolve and
+   all draw. Testing them against the drawable names flagged 26 routes with nothing wrong with
+   them and, because this category is actionable while typeOffVocab is informational, pushed the
+   headline UP 763 -> 789: one false positive traded for a worse one next door.
+   What remains is fragile rather than broken — a spelling the map does NOT contain that reaches
+   a drawable name only via the capitalise-first-letter fallback. Correct today; silently wrong
+   the moment that name gains a second word. */
+const CANON_BY_LC = new Map([...DRAWABLE].map(c => [c.toLowerCase(), c]));
+const fallbackOnly = t => !TYPE_MAP.has(String(t).trim().toLowerCase());
 
 for (const r of scoped) {
   const wps = (Array.isArray(r.waypoints) ? r.waypoints : []).filter(w => w && typeof w === "object");
@@ -282,8 +347,10 @@ for (const r of scoped) {
   // because there is no branch to reach either way. Fixing the first is mechanical; fixing
   // the second means deciding what the app should do with it.
   const types = [...new Set(wps.map(typeOf).filter(Boolean))];
-  const miscased = types.filter(t => { const c = CANON_BY_LC.get(t.toLowerCase()); return c && c !== t; });
-  const offVocab = types.filter(t => !CANON_BY_LC.has(t.toLowerCase()));
+  const miscased = types.filter(t => { const c = CANON_BY_LC.get(t.toLowerCase()); return c && c !== t && fallbackOnly(t); });
+  // "Off vocabulary" now means the app cannot DRAW it, not that it is absent from a list here.
+  // A spelling WP_TYPE_MAP resolves is fully supported however it is written.
+  const offVocab = types.filter(t => !DRAWABLE.has(canonOf(t)));
   if (miscased.length) F.typeCasing.push({ ...tag, types: miscased });
   if (offVocab.length) F.typeOffVocab.push({ ...tag, types: offVocab });
 
