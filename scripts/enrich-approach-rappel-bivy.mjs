@@ -189,7 +189,11 @@ const DATA = {
 for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
   const raw = JSON.parse(fs.readFileSync(f, "utf8"));
   for (const [id, spec] of Object.entries(raw)) {
-    const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length);
+    // `rappel_add` has to count as content. It is an object keyed by rappel number rather than
+    // an array, so an array-only test drops a rappel-enrichment batch entirely — and drops it
+    // SILENTLY, reporting "nothing to write" for a file full of work.
+    const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length)
+      || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
     for (const k of ["climbing_route", "approach_variants", "bivy"]) if (Array.isArray(spec[k]) && !spec[k].length) delete spec[k];
