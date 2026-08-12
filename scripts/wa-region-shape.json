@@ -1,0 +1,156 @@
+{
+  "_README": [
+    "The WA region-level tree, diffed by NAME against Mountain Project's published sub-area",
+    "lists on 2026-08-09. This is the ONLY thing that can catch the 0118 defect class:",
+    "MP groups a scatter of small crags under a container, our import dropped them flat at",
+    "region level, and Olympics & Pacific Coast ended up with 18 direct children against",
+    "MP's 10. There is no stub, no duplicate and nothing co-located, so every geometric",
+    "detector in audit:area-parents is structurally blind to it. Only an external reference",
+    "sees it.",
+    "",
+    "HOW IT IS USED. D5 in scripts/audit-area-parents.mjs asserts that every one of OUR",
+    "region-level children appears below, either in `mp` (it corresponds to an MP area) or in",
+    "`extra` (a deliberate divergence, WITH a reason). A child that is in neither is the",
+    "finding. It is an allow-list keyed on OUR names, not a snapshot equality test, so a",
+    "legitimate restructure is recorded here in the same commit rather than fighting a diff.",
+    "",
+    "WHAT IT DOES NOT CLAIM. Not that we hold everything MP holds. `mp_absent` records MP",
+    "areas we have no row for at all - a coverage gap, not a parentage defect, and this file",
+    "keeps them written down so they are not rediscovered as bugs. And matching MP's",
+    "PLACEMENT never means importing MP's GRANULARITY: 0117 kept three Ingalls summit rows",
+    "where MP has one, because enrichRoute builds peakMetadata per area_type='peak'.",
+    "",
+    "Route counts are deliberately NOT recorded. They move every time anyone adds a climb on",
+    "either side, so pinning them would guarantee a stale file. Names are the durable claim."
+  ],
+  "_source": "https://www.mountainproject.com/area/108471485 and siblings; fetched 2026-08-09",
+  "_mp_regions_we_do_not_mirror": {
+    "Ice, Mixed & Drytooling": "MP carries a discipline-scoped top-level region with 0 routes. We group by geography only."
+  },
+
+  "wa_northwest": {
+    "name": "Northwest Region",
+    "verdict": "matches MP exactly",
+    "mp": [
+      "Bellingham and Mt Baker Hwy",
+      "Darrington and Mountain Loop Hwy",
+      "Hwy 20 and North Cascades National Park",
+      "San Juan, Fidalgo & Whidbey Islands"
+    ],
+    "extra": {},
+    "mp_absent": []
+  },
+
+  "wa_centraleast": {
+    "name": "Central-East Cascades, Wenatchee & Leavenworth",
+    "verdict": "0117 moved Ingalls Peak out of Teanaway into Stuart-Enchantments",
+    "mp": [
+      "Chelan", "Chiwaukum Range", "Cle Elum River Valley", "Demilitarized Zone",
+      "Entiat Mountain Range", "Entiat River Valley", "Leavenworth",
+      "Peshastin Pinnacles State Park", "Roslyn", "Scottish Lakes", "Smithbrook",
+      "Stuart-Enchantments", "Teanaway"
+    ],
+    "extra": {
+      "Chiwawa Ridge / DaKobed Range": "our own alpine grouping; MP indexes none of these summits",
+      "Nason Ridge / Chiwaukum Mountains": "our own alpine grouping",
+      "Sawtooth / Lake Chelan": "our own alpine grouping",
+      "Stehekin": "our own alpine grouping",
+      "Stevens Pass / Lake Valhalla": "our own alpine grouping",
+      "East Wenatchee": "small crag cluster; MP has a differently-scoped 'Wenatchee'",
+      "Orondo": "small crag; MP does not carry it at region level",
+      "Tarpiscan Road": "small crag; MP does not carry it at region level"
+    },
+    "mp_absent": ["Chumstick Snag", "Little Wenatchee Area", "Mission Creek Cashmere", "Wenatchee"]
+  },
+
+  "wa_centralwest": {
+    "name": "Central-West Cascades & Seattle",
+    "verdict": "matches MP exactly after 0111 (Snoqualmie/Alpine Lakes), 0118 (Gig Harbor + Tacoma out) and 0119 (the 14 peaks redistributed, the duplicate 'Snoqualmie Pass' region dissolved)",
+    "mp": [
+      "North Bend & Vicinity",
+      "Seattle and Seattle Eastside",
+      "Skykomish Valley",
+      "Snoqualmie Pass Area",
+      "Western Alpine Lakes"
+    ],
+    "extra": {},
+    "mp_absent": []
+  },
+
+  "wa_okanogan": {
+    "name": "Okanogan",
+    "verdict": "matches MP; 13 of MP's 14, same names, no level error",
+    "mp": [
+      "Burge Mountain (Tonasket)", "Burge North - Hidden Canyon (Tonasket)",
+      "Chewiliken Creek Crags (Tonasket)", "Kettle Valley (Curlew)", "Mazama",
+      "McLoughlin Canyon (Tonasket)", "Mount Hull - Lower SW Face (Oroville)",
+      "Pasayten Wilderness", "SE Pasaytens", "Sinlahekin Valley (Loomis)",
+      "Toats Coulee - Middle Fork (Loomis)", "Whistler Canyon Trailhead (Oroville)"
+    ],
+    "extra": {
+      "Riverside (Riverside)": "0-route container of 3 empty crags; MP does not list it at region level and I could not establish where MP nests it. Left rather than guessed at."
+    },
+    "mp_absent": ["Chewuch (Winthrop)"]
+  },
+
+  "wa_olympics": {
+    "name": "Olympics & Pacific Coast",
+    "verdict": "0118 cut 18 direct children to 11 — created Kitsap Peninsula & Puget Sound Islands, lifted Olympic Bouldering out of the National PARK (it holds Jefferson Lake and Lena Lake, which are National FOREST), and moved Lake Cushman under the Forest",
+    "mp": [
+      "Cape Disappointment", "Cape Flattery", "Crackenstein", "Elwha River",
+      "Kitsap Peninsula & Puget Sound Islands", "Olympia Area Bouldering",
+      "Olympic Bouldering", "Olympic National Forest", "Olympic National Park"
+    ],
+    "extra": {
+      "Chimacum Rock": "3 routes; MP lists it at no region level I could find, so leaving it beats guessing",
+      "Olympia": "2 routes; ditto — MP has 'Olympia Area Bouldering' but no bare 'Olympia'"
+    },
+    "mp_absent": ["Area Closed"],
+    "_note": "'Olympic Bouldering' is our name for MP's 'Olympic Peninsula Bouldering'. Our Olympic National Park subtree (Bailey Range, Eastern/Central Olympics, ...) is OUR alpine grouping and is deliberately NOT flattened to MP's per-peak list."
+  },
+
+  "wa_sw_tacoma": {
+    "name": "South-West & Tacoma",
+    "verdict": "0116 dissolved a region nested inside its own namesake and lifted Columbia Gorge + Tacoma & I5 up one level",
+    "mp": ["Columbia Gorge", "Southwest Cascades", "Tacoma & I5 to Foothills"],
+    "extra": {},
+    "mp_absent": ["Tenino City Park", "Waterfall ice and mixed routes in the SW Cascades"]
+  },
+
+  "wa_central_region": {
+    "name": "Central Region",
+    "verdict": "matches MP",
+    "mp": ["Ancient Lakes Ice Climbs", "Banks Lake / Northrup Canyon", "Frenchman Coulee, AKA Vantage", "Ancient Lakes Coulee"],
+    "extra": {
+      "Lake Lenore and Soap Lake": "0-route crag; MP does not carry it at region level",
+      "Moses Coulee": "0-route crag; MP does not carry it at region level"
+    },
+    "mp_absent": ["Frog Lake Plateau", "Great Blade, The", "Trail Lake Coulee", "Upper Goose Lake"],
+    "_note": "Ours merges MP's 'Banks Lake' + 'Northrup Canyon' into one row, and names MP's 'Ancient Lakes & Judith Pond' as 'Ancient Lakes Coulee'."
+  },
+
+  "wa_northeast_corner_spokane": {
+    "name": "Northeast Corner & Spokane",
+    "verdict": "matches MP exactly — our 5 children are MP's 5",
+    "mp": ["China Bend", "Marcus", "Metaline Falls", "Onion Creek", "Spokane Area"],
+    "extra": {},
+    "mp_absent": []
+  },
+
+  "wa_southeast_cascades_yakima": {
+    "name": "Southeast Cascades & Yakima",
+    "verdict": "matches MP — all 4 of ours are in MP's list",
+    "mp": ["Cowiche Canyon", "Horsethief Butte", "Strobach Mountain", "Tieton River"],
+    "extra": {},
+    "mp_absent": ["Mount Aix", "The Hillside", "Umtanum Creek Falls Ice", "White Pass Ice"],
+    "_note": "MP names this region 'South-Central & Yakima', and names our 'Strobach Mountain' as 'Strobach Mountain Ice'."
+  },
+
+  "wa_southeast_corner": {
+    "name": "Southeast Corner",
+    "verdict": "matches MP — all 7 of ours are in MP's list",
+    "mp": ["Dikes, The", "Granite Point", "Palouse Falls", "Rainbow Wall", "Roadkill Crag", "Sillusi Bluffs", "Wallula Gap"],
+    "extra": {},
+    "mp_absent": ["Chilltopia", "Empire Highway Boulders", "Holding Spot for Temporarily Closed Areas", "Howard Amon", "Whitman College"]
+  }
+}

@@ -21,11 +21,16 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
+npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
@@ -419,6 +424,62 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:overflow`** asks whether the app still fits the phone it is built for. Every
+  control here is hand-positioned with inline styles and there is no CSS framework, which is
+  exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
+  unbroken string pushes the page wider than the screen — the user gets a page that slides
+  left-right under the thumb with a control's right edge simply gone. **No other guard can
+  see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
+  reports the same characters as a correct one. Two bugs of this shape are already on record
+  and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
+  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  (browser automation).
+  - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
+    *correct* pattern that is supposed to scroll sideways, so an element is reported only if
+    no ancestor is an intentional horizontal scroller.
+  - **Authored intent and clipping are read from different places, and the asymmetry is
+    load-bearing.** `auto`/`scroll` must come from the **inline style**, because CSS coerces
+    a `visible` overflow-x to `auto` whenever overflow-y is not visible — and nearly every
+    pane in this app sets `overflowY:"auto"`. Reading computed style there excluded almost
+    the entire app: the first draft reported a clean sweep across 51 screens while a 520px
+    `minWidth` injected into the Home tab sat there unflagged. Clipping is the opposite —
+    nothing coerces *to* `hidden`, so `hidden`/`clip` is read from **computed** style, which
+    is also the only way to catch it reliably: reading the clip inline made the run **flaky**,
+    with FireMap's 256px tiles reporting 0 offenders on one tab and 3 on another.
+  - Two more exclusions, both measured rather than assumed: the inside of an `<svg>` is
+    skipped (`<g>`/`<path>` carry their own coordinate system, so their client rects are not
+    page geometry), and only the **right** edge counts — an element off to the left cannot
+    widen a left-to-right document, and including it reported map tiles at `left=-220`.
+  - **The self-test is not optional and runs before any screen is walked.** The expected
+    result of this check is "no findings", which is exactly what a broken detector prints.
+    It injects three shapes into a real page — a plain over-wide box, one pushed out by a
+    fixed `minWidth`, and one inside an `overflow-x:auto` parent — and the first two must be
+    caught and the third must not, or the run fails having measured nothing.
+  - Fails closed in the other direction too: an empty `__overlays` or fewer than 26 screens
+    walked is a failure, not a pass. The openable count varies run to run (42–46 of 50)
+    because some payloads resolve only on some tabs, so the floor is deliberately well below
+    it rather than pinned.
+  - Mount detection compares **line sets, not text length** — the trap `check:a11y-badges`
+    records, and one this repeated in draft: with a `>120 chars` test every modal reported
+    the Home tab's numbers, because that was true on the first tab every time.
+  - Failures group by the **offending element**, not by screen. An overlay renders over the
+    tab behind it, so one bad row on Home otherwise reads as eleven findings.
+  - Injection-tested: a `minWidth:520` on the Home "Unfinished business" row fails the run
+    naming `tab:today`, the element, and its inline style as a locator.
+  - **It replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818), whose "13 screens
+    clean" result should not be relied on.** That probe excluded an ancestor whose
+    **computed** `overflowX` matched `auto|scroll|hidden` — the coercion trap above — so on
+    a codebase where nearly every pane sets `overflowY:"auto"` it was blind to most of the
+    app. Its self-test passed anyway because it injected into `document.body`, outside the
+    app tree: the `injection passes because the fault is out of frame` shape exactly. #818
+    asked for the promotion to be done "from a quiet machine"; this is it, with the
+    exclusion corrected.
+  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
+    That is the richest layout in the app and where both recorded bugs of this class lived,
+    so it is the coverage that matters most. The drill-in (state select → Routes → open a
+    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
+    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
+    not read a green run as covering the route page.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
@@ -588,6 +649,32 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:grade-parser`** asserts `routes.grade_num` is parsed in exactly one place. That
+  column is the sortable grade — both finder RPCs (`0018`/`0019`) rank and filter on it — and a
+  wrong value is invisible: the route just sits in the wrong place in a list nobody
+  cross-checks. The arithmetic existed **four** times (`load-state.mjs`,
+  `load-wa-rock-safe.mjs`, `import-alpine.mjs`, `oneoff/import-class2-3-routes.mjs`) and had
+  already drifted into **three** behaviours — three agreed, the oneoff returned `5.1` for
+  `"5.10"` where the catalog convention is `10`, and **none** handled a bare ordinal (`"4th"`,
+  `"Easy 5th"`) that the live column nonetheless had right. All four now import `gradeNumFrom`
+  from `lib/grade.js`. Static, so it sits in `npm run build`.
+  - **The swap was proven before it was made, not after.** `verify-grade-parser-equivalence.mjs`
+    ran both implementations over every distinct `(grade, system)` pair in the live WA catalog
+    plus hand-written edge cases — **348 inputs, identical on every one** — because these
+    scripts write `grade_num` for the whole catalog and "I reformatted it and it looks the same"
+    is not evidence. Adding the bare-ordinal branch then differed on exactly **4** inputs, all
+    `null` → a correct value. Agreement with the stored column went 98.09% → 98.49%.
+  - That equivalence script keeps a **verbatim copy** of the pipeline parser on purpose — its
+    job is to be a second opinion, and importing the function under test would make it vacuous.
+    It is the one exemption, named explicitly so it cannot quietly widen.
+  - Matches a **declaration**, not the word `gradeNum` — every importer mentions it. It also
+    skips comment lines, because this guard has to *say* `function gradeNum(` to explain
+    itself and flagged itself on the first run. Deliberately not the comment/string blanker
+    other guards use: that one eats real code when a string contains `//` (a URL), and a
+    declaration is never inside a string literal.
+  - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
+    Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
+    the file and line, and renaming the export fails with "every importer is broken".
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -601,12 +688,119 @@ a build error, but a screen that renders wrong or not at all.
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
     exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - **It asks the same question one level down for the two jsonb fields.** `road` and `access`
+    are objects, so passing the column check proves nothing about the individual sub-keys the
+    form offers. `ROAD_KEYS` / `ACCESS_KEYS` are checked against the file for a reader, because
+    the readers and the key lists sit ~400 lines apart and nothing else ties them together —
+    and `access` carries **two spellings of the same fact** (`land_manager` on 399 of 400
+    sampled rows, `landManager` on 8, display reading `ac.land_manager||ac.landManager`), so
+    "which spelling does the form write?" has a right answer and a silently-wrong one.
+    Deliberately a substring test: a sub-key is legitimately read as `ac.foo`, `road.foo` or
+    destructured, and demanding one shape would fail on correct code. Writing the *legacy*
+    spelling **passes** on purpose — it is read, so it is worse rather than broken, and the
+    editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-readers`** enforces one sentence: **a function that reads
+  `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
+  correction out-votes the station-by-station enrichment rather than the reverse. #787 found
+  every reader preferred the enrichment, so on the 155 routes carrying a station list a
+  correction could pass the 3-agree gate and display **nothing**; it fixed the three readers
+  that existed and wrote the rule in a comment above them. #784 then added two more readers
+  and neither carried the guard — five readers, three guarded, and `rappelHeadingCount`
+  renders the section heading, which states a **number**. #791 repaired both.
+  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
+    better comment: the merge was **clean** (the two PRs touch different lines), every gate
+    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
+    a number), and both new functions read as **correct in isolation**. Only a comment three
+    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+  - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
+    explanatory comment about this very rule sits at top level between functions, so a
+    whole-file grep would report a phantom sixth reader. Function bodies come from balancing
+    braces over **raw** source — the blanker used elsewhere desynchronises on JSX apostrophes.
+  - **Comments are stripped before either test, and that is load-bearing.** Two of the five
+    readers explain the rule in a comment that *names* `_rapEdited`, so deleting their real
+    guard still left the token in the body. Injection case 2 unguarded all five and the first
+    draft reported **four** — the two best-documented readers were the two that would have
+    slipped. Presence is not use, the same false pass `check:fire` records for `zoneInEffect`.
+  - Fails **closed**: zero readers means the column was renamed or the walk broke, never that
+    the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
+    that branch could never fire until the match was word-bounded (injection case 3, the
+    second first-draft false pass).
+  - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
+    draft and both were false passes**. Neither was visible by reading the script.
+- **`check:provenance`** asserts that every route-page section that carries a provenance chip
+  still renders one, and that a section with **no data carries none**. The chip says how a
+  section was **sourced** — `Climber-verified` / `On file` / `Auto-generated` — and deliberately
+  not how *true* it is, because nothing in `routes` can support that claim:
+  `data_quality.confidence` is **94.0% "MEDIUM"** across 8,367 WA routes (58 LOW, 57 HIGH), and
+  89% of the `gaps` arrays are one boilerplate sentence repeated 8,021 times. A chip fed by
+  either says one word everywhere. Static apart from a `renderToStaticMarkup` pass, so it sits
+  in `npm run build`. See `lib/provenance.js`.
+  - **Adding the prop is not enough, and that is the whole reason this renders rather than
+    greps.** Five of the first ten wired headings showed no chip, each for its own reason:
+    `rappels` was wired to the wrong one of **two** surfaces that both render the text
+    "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
+    `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
+    `check:field-renders` already records; `pitch_detail` splits **per entry** across
+    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare; and the
+    "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
+    season-keyed chip there rendered nothing at all.
+  - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
+    bug, because those need opposite fixes. Match a heading, never the chip label alone.
+  - **`gear` is deliberately NOT wired.** #806's RACK caption owns that section, reads the real
+    per-section column (`gear_confidence`) and stays **silent on the verified majority** —
+    praise on every route is what got two page-level graders (`ProvenancePanel`'s DATA
+    CONFIDENCE, `EnrichmentPanels`' DATA QUALITY) deleted. `sectionProvenance("gear")` is still
+    unit-tested; **do not add a second label to RACK**.
+  - **A per-section signal must beat the route-level flag**, and `sectionProvenance` checks
+    `auto_generated` **last** for that reason: 138 WA routes are `auto_generated=true` AND
+    `gear_confidence=verified` — the audit went back and confirmed a generated rack. #810 added
+    the three assertions that exercise the ordering, because every other case in the file sets
+    one signal or the other and would still pass if the two blocks were swapped.
+  - **"`auto_generated` is 5.4% true" is catalog-wide and understates it badly.** Among routes
+    that actually carry these fields — the only ones that render these sections — it is true on
+    **39–66%** (66% of the 584 with a gpx track). So the chip discriminates: 64.4% "On file"
+    across 13,790 chips, not one word everywhere. `scripts/oneoff/measure-provenance-spread.mjs`
+    is the measurement. Judge a signal on the subset that reaches a screen, never on the table.
+  - **Counting chips: count the `title` attribute, not the label text.** `ProvChip` renders its
+    label in both `title="How this section was sourced: …"` and the text node, so counting
+    `"On file"` returns exactly **double**. That artifact read as duplicate labelling on a tab
+    and was very nearly reported as a defect.
+  - One assertion is **marked WEAK in the script on purpose**: "a bare route renders no chip"
+    passes even when `sectionProvenance` is broken to rate absent data, because a bare route's
+    sections are content-gated and never render, so no heading exists to hang a chip on. The
+    honesty rule is pinned by the unit assertions, not by that one.
+  - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
+    row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
+    absent data fails the four emptiness assertions.
+- **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
+  a trip report carries approach / climb / descent minutes and a car-to-car total, and other
+  climbers can read them — but the planner still answered "how long will this take?" with
+  Scarf's Rule alone, so the app held evidence of how long a route takes and printed a formula
+  beside it. The panel now sits **above** the estimate, because ordering is a claim about
+  authority: measurement first, model second.
+  - **No existing guard could ever see it.** `check:bare` renders a route with no activity;
+    `check:ui` walks the seeded demo, whose `cond.carToCar` is **prose** ("7 hr", "3 days",
+    "Turned around") and therefore deliberately ignored; `check:zero` has nothing logged; and
+    `check:field-renders` covers `routes` columns while these are `climb_logs` ones. That is the
+    `check:anniversary` shape — a surface nothing exercises breaks silently and stays broken.
+  - **Numeric minutes only, never the `carToCar` string.** Parsing it would read `3` out of
+    "3 days", which is the mistake `rappels` and `season` already record. `carToCarMin` is the
+    integer; the legs are integers; their sum is a real car-to-car. One assertion exists purely
+    to fail if anything ever starts parsing English durations.
+  - It does **not** feed the model. `scarfHrs` is parameterised by the READER's fitness and pack
+    weight, and a logged time comes from a party whose fitness nobody recorded; blending them
+    would give a number that is neither measurement nor prediction. A median with the spread and
+    the party count says what it is. A **turned-around** party is excluded from the total — they
+    covered real ground, but not the route — and the count on screen is what proves it.
+  - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
+    the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
+    prose, and swapping the median for a mean each fail it by name.
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
@@ -674,6 +868,57 @@ a build error, but a screen that renders wrong or not at all.
     has already left the walk, by `path` a rewritten path no longer says `washington`, so
     scope is now the **union of both**. The tell every time: the injection logged, the
     counter did not move.
+  - **Six detectors now, and they are not the same kind of claim** — the summary says so per
+    detector rather than labelling everything a candidate. D1/D2/D4 are hypotheses; D3/D6 are
+    exact defects; D5 is exact about a *declaration*, not about the tree.
+  - **D4 — a container whose ONLY child carries the identical name**, i.e. a level that says
+    nothing: the browser shows "Last Unicorn, The", then "Last Unicorn, The", then two boulder
+    problems. Exact, no route counts involved — 12 hits catalog-wide, 1 in WA, all 12 a
+    `region` whose lone child is a same-named `crag`. Matched on the **raw** name, so a
+    singular child inside a plural parent ("Aries Boulder" in "Aries Boulders" — one boulder in
+    a named cluster) is correctly ignored; `--inject=twinplural` pins that.
+    - **Reported, never repaired, and the repair is genuinely awkward rather than merely
+      risky:** `routes_require_leaf` refuses to move the routes up while the child still
+      exists, and the FK refuses to drop the child while routes point at it. It needs a
+      deferred constraint or two transactions.
+    - **D4's FIRST version, shipped in #820, was vacuous, and the reason generalises.** It
+      looked for a same-named parent/child pair where *both* held routes and reported 3 WA hits
+      that all looked real. Every one was false and the test could never have found a true one:
+      `route_count` is a **subtree aggregate**, so the parent's count came entirely from the
+      child (all 3 WA parents, and all 58 catalog-wide, held **zero** direct routes); and
+      `trg_areas_leaf_xor` means **0 of 47,590** areas hold child areas and direct routes at
+      once, so "both halves populated" cannot exist. A same-named container/leaf pair is the
+      *correct* way to say "this crag has its own problems and also contains other boulders" —
+      `wa_fuzz_wall` holds Span Man and Haunted Shack beside `wa_fuzz_wall_2`. **Ask what a
+      detector cannot report, not only what it does**, and never read a subtree aggregate as
+      evidence about a row.
+  - **D5 — region-level children against `scripts/wa-region-shape.json`**, the only detector
+    that consults anything outside the DB, and the only one that can see the `0118` class: MP
+    groups a scatter of small crags under a container, our import drops them flat, and
+    Olympics ended up with **18 direct children against MP's 10**. No stub, no duplicate,
+    nothing co-located — every geometric detector is structurally blind to it.
+    - It is an **allow-list keyed on our own names**, not a snapshot equality test. Each
+      region-level child must be declared either as corresponding to an MP area (`mp`) or as a
+      deliberate divergence **with a reason** (`extra`). So a legitimate restructure is
+      recorded in the same commit, instead of fighting a diff that fires on every change —
+      which is how a snapshot baseline ends up regenerated blindly until it asserts nothing.
+    - It fails on a **stale** entry too: a declared name that is no longer a child means the
+      file describes a tree that has moved on. Same rule as `check:field-renders`' `KNOWN` map.
+    - Route counts are deliberately **not** recorded — they move whenever anyone adds a climb
+      on either side, so pinning them would guarantee a stale file. Names are the durable claim.
+    - WA only, and it **says it skipped** for any other scope rather than passing silently.
+      `--inject=shapeblind` covers the fail-closed case: if no declaration matches any live
+      child, it reports that the reference is not describing this tree.
+  - **Three further detectors were written, measured, and deliberately not shipped** — the
+    reasons are recorded at the bottom of the script so nobody re-derives them. Sibling name
+    containment (the `0119` shape) gave 8 WA hits and **0 real**: "Central Olympic Mountains"
+    vs "North-Central Olympic Mountains", "Chelan" vs "Sawtooth / Lake Chelan" and "West Face"
+    vs "North West Face" are all correct, so legitimate sibling naming is not separable from
+    the defect by name alone. Flat-leaves-beside-containers (the Olympics shape) gave 29 and
+    **0 real** — North Cascades Core, Washington Pass and Snoqualmie Pass Area are all
+    deliberate, which is exactly why D5 has to consult an external reference. Identical
+    sibling names gave **0 catalog-wide**, i.e. dead code. *Measure a detector's precision
+    before shipping it, not after.*
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other

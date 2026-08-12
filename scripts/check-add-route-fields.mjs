@@ -100,6 +100,37 @@ const sent = (() => {
 })();
 const sentSet = new Set(sent);
 
+// ── the set being checked must not quietly shrink ───────────────────────────────────────
+// Every assertion below is of the form "of the keys we found, are they all storable?", so
+// a key that stops being FOUND leaves the checked set and takes its own assertion with it.
+// The run then reports ok on the survivors. Measured, not theorised — replicating the
+// walker on a synthetic literal and folding one key inside a nested object:
+//
+//     healthy            keys=[name,grade,beta,gear,haz]   -> ok, all 5 submitted keys in SS
+//     beta nested away   keys=[name,grade,gear,haz]        -> ok, all 4 submitted keys in SS
+//
+// and `beta` nested inside another object is a REAL regression: SS applies top-level keys,
+// so it would no longer be storable at all. The existing fail-closed floor is on FIELDS
+// (`< 5 disciplines`), which guards the wrong axis entirely — it says nothing about fields,
+// so `sent` could collapse to two keys and still pass.
+//
+// So the names are pinned. This is bookkeeping on purpose: a pinned name that stops being
+// submitted FAILS rather than passing quietly, which forces whoever removed it to say so
+// here. Same rule as check:field-renders' KNOWN map. Do not "fix" a failure by deleting the
+// entry -- that is the vacuous pass this block exists to prevent.
+const MUST_COVER = [
+  "name", "discipline", "grade", "pitchCount", "length", "gain", "dist", "rock", "aspect",
+  "approach", "season", "commit", "descentText", "style", "haz", "gear", "beta",
+  // the eight #794 added; every one of these was a question the form asked and could not store
+  "protRating", "fa", "crux", "landing", "startType", "rap", "turn", "comms",
+];
+const unpinned = MUST_COVER.filter((k) => !sentSet.has(k));
+if (unpinned.length) {
+  fail(`the proposal no longer submits ${unpinned.join(", ")} — either it stopped being ` +
+       `collected, or it moved out of the top level where SS can apply it. If the removal ` +
+       `was deliberate, drop the name from MUST_COVER in this file in the same commit.`);
+} else ok(`all ${MUST_COVER.length} pinned fields are still submitted at the top level`);
+
 // 1. every submitted key is one SS knows about, or is explicitly provenance
 const PROVENANCE = new Set(["areaName", "source", "sourceNote", "climbed", "photoCount"]);
 const unknown = [...sentSet].filter((k) => !SS.has(k) && !PROVENANCE.has(k));
@@ -140,10 +171,28 @@ for (const lighter of ["rock", "bouldering", "scrambling", "hiking"]) {
 }
 if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.bouldering}, scrambling ${counts.scrambling}, hiking ${counts.hiking}`);
 
-// 4. a signed-out submit must not claim success — RLS rejects it (401/42501, measured)
-if (!/if\(USE_DB&&!uid\)\{setSaveErr/.test(ar)) {
-  fail("the submit handler no longer refuses when signed out — contributions RLS requires auth.uid(), so it would report success over a rejected insert");
-} else ok("a signed-out submit is refused rather than reported as filed");
+// 4. the signed-out case must be VISIBLY different, whatever the policy currently allows.
+//
+// This assertion used to require a hard refusal, because on 2026-08-09 an anonymous INSERT
+// on `contributions` returned 401/42501 and submitting would have reported success over a
+// rejected write. 0079 has since been applied: re-measured 2026-08-12, the same publishable
+// key gets **201 with `contributor` null**, and the openness is scoped — `routes` and `areas`
+// still refuse an anon write. So refusing became the wrong behaviour, and a guard pinned to
+// the refusal would have frozen a stale policy into the UI.
+//
+// What does NOT change with policy is that a signed-out climber must be told what signing
+// out costs: the row cannot be attributed to them and cannot count toward the agreement that
+// verifies a climb. So the invariant is DISCLOSURE, not refusal — the signed-out path must
+// differ from the signed-in one in the banner, the button and the confirmation.
+const SIGNED_OUT_SURFACES = [
+  [/\(USE_DB&&!uid&&!saveErr\)\?<div/, "the pre-submit banner"],
+  [/\(USE_DB&&!uid\)\?"[^"]+":"Submit for review"/, "the submit button label"],
+  [/uid\?"It is filed against your account/, "the confirmation screen"],
+];
+const missing = SIGNED_OUT_SURFACES.filter(([re]) => !re.test(ar)).map(([, name]) => name);
+if (missing.length) {
+  fail(`the signed-out path is not disclosed on ${missing.join(", ")} — an anonymous submission is accepted (201, contributor null) but cannot be attributed or counted, so saying nothing files an unattributable row while the climber believes it is theirs`);
+} else ok("the signed-out path is disclosed on the banner, the button and the confirmation");
 
 console.log("");
 if (failures) {
@@ -158,4 +207,4 @@ console.log(`check:add-route-fields: ok — ${declared.size} fields across ${Obj
 //   2. add `foo:1,` to the _prop literal    -> "SS cannot apply: foo"
 //   3. write `style:` twice in _prop        -> "repeats style"
 //   4. trim alpine's FIELDS below rock's    -> "the tailoring is inverted again"
-//   5. delete the `if(USE_DB&&!uid)` guard  -> "would report success over a rejected insert"
+//   5. drop any one of the three signed-out surfaces -> "the signed-out path is not disclosed on <that surface>"
