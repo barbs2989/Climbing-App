@@ -23,8 +23,9 @@
 // braces, never take a fixed window … there is no safe window size"); scripts/lib/jsx-ancestors.mjs
 // applies it to ancestry.
 //
-// The coverage number is now PRINTED. A pane whose ancestors resolve to nothing is reported as
-// unevaluated rather than silently passed — a guard that cannot see something should say so.
+// The count of panes that actually depend on flex shrinking is PRINTED, so "nothing to check"
+// and "everything checked out" cannot read the same. There is no longer an "unevaluated"
+// bucket to report: ancestry comes from the AST, so every pane resolves or the parse failed.
 import fs from "fs";
 import path from "path";
 import url from "url";
@@ -35,11 +36,6 @@ const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), ".."
 // Names its inputs and fails if a required one is missing, per scripts/lib/guard-sources.mjs
 // — a guard that quietly reads a shorter list is a guard you do not have.
 const files = appSources(ROOT, "check:flex-scroll").map(f => path.join(ROOT, f));
-
-// \b matters: without it `lineHeight:1.5` matches `[Hh]eight:` and exempts the pane as though
-// it had been given an explicit height. That exempted 0 real panes when measured, so it was
-// latent rather than live — fixed here because the next pane to carry lineHeight would have
-// gone silently unchecked.
 
 let elements = 0, panes = 0, evaluated = 0;
 const hits = [];
