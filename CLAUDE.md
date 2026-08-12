@@ -22,6 +22,7 @@ npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
@@ -712,6 +713,57 @@ a build error, but a screen that renders wrong or not at all.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+- **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
+  That function is the whole consume half of the add-a-route flow: it turns a pending
+  `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
+  so the id convention and the `(area_id, name)` duplicate refusal cannot be skipped by a
+  caller. **`0128` and `0132` both rewrote it from the same ancestor (`0127`) hours apart**, and
+  each kept only what it came for — 0128 added `grade_num`, 0132 added the six tech-stat columns
+  and **silently dropped `grade_num`**. Static (migration files + `lib/db.js`, no DB, no
+  browser), so it sits in `npm run build`. `0135` is the merge.
+  - **Nothing could have caught it, and the reason is worth internalising.** The merge was
+    clean — different files entirely, so git had nothing to report. Every gate stayed green.
+    Both bodies are valid SQL that inserts a route. `check:migrations` is satisfied because
+    they carry different numbers. And the live probe each author ran — *does a non-admin still
+    get `P0001`?* — is answered **identically by either fork**, because the admin gate is the
+    first statement in both. A behavioural check that passes on the broken version is worse
+    than no check, which is why this guard is **structural rather than behavioural**.
+  - **The symptom was six columns written by nothing.** `prot_rating`, `start_type`, `landing`,
+    `pads`, `rock`, `crux` exist on `routes`, are allow-listed in `SS`, are collected by the
+    form, are mapped by `dbRouteToCamel` (`rockType: r.rock`), and four already render in the
+    TECH STATS tiles. Storage, form and display were all correct; only the write between them
+    was missing, so **every layer reviews as finished**. Measured live: all six existed with
+    **0 populated rows**.
+  - **Three rules, each an actual defect from the episode.** (1) *Monotonic columns* — the
+    newest definition's insert must be a superset of every earlier one's; a function that
+    accretes fields may gain them and must never lose one. (2) *One live signature* — it
+    replays every create/drop in file order and requires exactly one to survive, because
+    `create or replace` **cannot replace across argument lists** and 0132 created a 1-arg
+    version without dropping 0128's 2-arg one. (3) *The client matches* — `lib/db.js` names its
+    RPC arguments and PostgREST resolves by name, so a mismatch is `PGRST202` and approval is
+    impossible. Rules 1 and 2 are independent on purpose: a correct column list behind a
+    lingering overload is still broken, and injection case 3 pins exactly that.
+  - It strips **`--` line comments only**, deliberately not the blanker other guards use: these
+    files are prose-heavy and 0135's own header names every column it writes, so a comment that
+    *mentions* `grade_num` must not read as the insert writing it.
+  - Fails **closed** three ways: fewer than 20 migration files, zero parsable definitions, or
+    an empty column list. And when the insert regex breaks it reports **that** rather than
+    blaming a rename — the generic "no definition found" message sent the first run hunting for
+    a function sitting right there (injection case 6).
+  - **Two of its own rules were wrong in the first draft, and neither was visible by reading
+    it.** A `DROP` names bare **types** (`approve_new_route(uuid)`) where a `CREATE` names
+    `name type`, so parsing both the same way made every drop delete a signature no file
+    creates — rule 2 then reported two live overloads against correct migrations. And matching
+    every `word:` for the client's argument names picked up `gradeNum` out of the ternary
+    `Number.isFinite(gradeNum) ? gradeNum : null`, failing rule 3 on a correct call. Both were
+    false **failures** rather than false passes, which is the safer direction, but they are the
+    reason the injection cases must be re-run after any parsing change.
+  - Injection-tested, 6 cases at the bottom of the script. **Case 1 is not synthetic** — it is
+    the real historical fault, reproduced by deleting `0135`, and all three rules fire on it
+    naming `grade_num`, the two overloads, and the broken client call.
+  - It does **not** overlap `check:add-route-fields`, which guards the other end: what the form
+    asks and whether its keys are in `SS`. A key can be in `SS` — so session-state merging
+    works — and still be dropped by approval. That gap is exactly what shipped.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
