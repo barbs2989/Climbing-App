@@ -53,6 +53,35 @@ for (const id of ids) {
   // reports 51 of 1,019 WA routes rendering out of order, typically with the summit listed
   // second. Writing positional legs into one of those produces confident, wrong guidance —
   // worse than the empty field it replaces. Refuse instead.
+  const hav = (a, b) => {
+    if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return null;
+    const R = 6371, t = (x) => (x * Math.PI) / 180;
+    const dLat = t(b.lat - a.lat), dLng = t(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(t(a.lat)) * Math.cos(t(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+
+  // Run this BEFORE the ordering checks, because a bad coordinate makes them draw the wrong
+  // conclusion. Both Colfax routes were refused for "out of order" when the real fault was
+  // that Kulshan Cabin is stored 8.9 km from the trailhead while its own distMi says 2 miles.
+  //
+  // The invariant is airtight and needs no threshold-picking: trail distance can never be
+  // SHORTER than straight-line distance. Where it is, the coordinate is impossible — and the
+  // prose may still be perfectly writable, so this reports the real fault rather than
+  // blaming an ordering that might be fine.
+  const impossible = [];
+  for (let i = 1; i < wps.length; i++) {
+    const d = hav(wps[0], wps[i]);
+    if (d == null || wps[i].distMi == null) continue;
+    const trailKm = Number(wps[i].distMi) * 1.60934;
+    if (trailKm > 0 && d > trailKm * 1.10) {
+      impossible.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km straight-line vs ${wps[i].distMi}mi = ${trailKm.toFixed(1)}km of trail)`);
+    }
+  }
+  if (impossible.length) {
+    throw new Error(`${id}: coordinate(s) impossible — straight-line distance exceeds the recorded trail distance: ${impossible.join("; ")}. ` +
+      `Trail distance can never be shorter than a straight line, so the lat/lng is wrong, not necessarily the order. The prose may still be writable once the coordinates are fixed.`);
+  }
   const marks = wps.map((w) => (w && w.distMi != null ? Number(w.distMi) : null));
   const known = marks.filter((m) => m != null);
   if (known.length >= 3) {
@@ -73,13 +102,6 @@ for (const id of ids) {
   // Straight-line distance from the first waypoint catches it: if something listed before the
   // summit sits farther out than the summit does, the sequence cannot be a single outward
   // journey. Refuse and let a human look, rather than write legs for a trip nobody takes.
-  const hav = (a, b) => {
-    if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return null;
-    const R = 6371, t = (x) => (x * Math.PI) / 180;
-    const dLat = t(b.lat - a.lat), dLng = t(b.lng - a.lng);
-    const h = Math.sin(dLat / 2) ** 2 + Math.cos(t(a.lat)) * Math.cos(t(b.lat)) * Math.sin(dLng / 2) ** 2;
-    return 2 * R * Math.asin(Math.sqrt(h));
-  };
   const sumIdx = wps.findIndex((w) => /^(summit|topout)$/i.test(String((w && w.type) || "")));
   if (sumIdx > 0 && wps[0]) {
     const dSum = hav(wps[0], wps[sumIdx]);
