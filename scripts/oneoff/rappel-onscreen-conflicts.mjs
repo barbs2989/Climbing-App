@@ -78,19 +78,37 @@ for (const [s, want] of SELFTEST) {
 }
 console.log(`extractor self-test: ${SELFTEST.length}/${SELFTEST.length} (counts vs lengths)\n`);
 
-const real = [], noClaim = [], ranges = [], agree = [];
+/* A row that names BOTH rope setups and states the table's count somewhere in its own text is
+   not contradicting itself — it is describing one descent two ways, which is what these
+   descents genuinely are (Forbidden West Ridge: 3 on two ropes, ~5 on one; Ingalls South
+   Ridge: 3 on two, 4 on one). Counting those as defects sends someone to "correct" a number
+   that is right, and the correction deletes the other half of the answer. */
+const SINGLE = /\bsingle[- ]rope\b|\bone 60\s?m\b|\ba single 60\b|\bsingle 60\s?m\b|\bon a single\b/i;
+const DOUBLE = /\bdouble[- ]rope\b|\btwo (?:60|70)\s?m ropes?\b|\btwo ropes\b|\bdoubled\b|\bhalf[- ]ropes?\b/i;
+const reconciledByRope = (r, table) => {
+  const hay = [r.rappels, r.rappel_count_note].filter(Boolean).join(" ");
+  if (!(SINGLE.test(hay) && DOUBLE.test(hay))) return false;
+  const nums = new Set();
+  for (const m of hay.matchAll(/\b(\d{1,2})\b/g)) nums.add(Number(m[1]));
+  for (const [w, n] of Object.entries(WORDS)) if (new RegExp(`\\b${w}\\b`, "i").test(hay)) nums.add(n);
+  return nums.has(table);
+};
+
+const real = [], noClaim = [], ranges = [], agree = [], byRope = [];
 for (const r of rows) {
   const table = Array.isArray(r.rappel_detail) ? r.rappel_detail.length : 0;
   if (!table) continue;
   const { n, range } = claimed(r.rappels);
   if (range) { ranges.push({ r, table }); continue; }
   if (n == null) { noClaim.push({ r, table }); continue; }
-  (n === table ? agree : real).push({ r, n, table });
+  if (n === table) { agree.push({ r, n, table }); continue; }
+  (reconciledByRope(r, table) ? byRope : real).push({ r, n, table });
 }
 console.log(`routes with a rappel table: ${rows.length}`);
 console.log(`  prose agrees with the table          : ${agree.length}`);
 console.log(`  prose states a RANGE (admitted doubt): ${ranges.length}`);
 console.log(`  prose states NO count (no conflict)  : ${noClaim.length}`);
+console.log(`  reconciled by ROPE SETUP (both stated): ${byRope.length}`);
 console.log(`\nGENUINE on-screen contradictions: ${real.length}\n`);
 for (const c of real.sort((a, b) => Math.abs(b.n - b.table) - Math.abs(a.n - a.table))) {
   const adjudicated = c.r.rappel_count_note && /\b(?:used (?:as|here)|representative|better-supported|per source|commonly cited|corroborated|treat \d+ as)\b/i.test(c.r.rappel_count_note);
