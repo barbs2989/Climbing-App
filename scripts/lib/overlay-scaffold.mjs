@@ -358,7 +358,29 @@ export function buildRouteDetailOpener(rdCode, label) {
   return { code: out, names, states: all };
 }
 
-export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
+// One line for a config's transform hook: hand it every module, it claims RouteDetail.jsx and
+// returns null for everything else.
+//
+// This exists because passing the wiring by hand did not survive contact. FIVE configs call
+// buildOpener and #779 wired THREE — a11y-badges and anniversary silently kept walking without
+// RouteDetail's modals, so check:a11y-badges and check:overflow were narrower than the other
+// three and nothing said so. That is the exact drift the shared scaffold was factored out to
+// prevent, reintroduced as per-config boilerplate. Anything a config has to remember is
+// something a config will forget.
+export function routeDetailTransform(code, id, label) {
+  if (!id.endsWith("/RouteDetail.jsx")) return null;
+  return buildRouteDetailOpener(code, label).code;
+}
+
+// Same reasoning, the other half: the names DEFAULT to the ones on disk, so a config that does
+// not pass them still opens a route rather than walking a quietly narrower set.
+let _rdNames = null;
+export function routeDetailNames() {
+  if (!_rdNames) _rdNames = buildRouteDetailOpener(routeDetailSource(), "overlay-scaffold").names;
+  return _rdNames;
+}
+
+export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
   const at = code.indexOf(anchor);
   if (at < 0) throw new Error(`buildOpener: anchor not found: ${anchor}`);
   const all = overlayStates(code, coreCode);
@@ -409,7 +431,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
   // missed and crewInvite and recapId reported "added nothing on any of 6 tabs" — a guard
   // failure indistinguishable from a broken modal, which is the one confusion this walk must
   // not introduce. Assigning through a ref during render keeps the payload current.
-  const rdNames = routeDetailNames || [];
+  const rdNames = routeDetailNames_ || routeDetailNames();
   const names = usable.map((s) => JSON.stringify(s.name)).concat(rdNames.map((n) => JSON.stringify(n))).join(",");
   const rdSet = JSON.stringify(rdNames);
   return {
@@ -427,6 +449,20 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
+      // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
+      // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did
+      // not complete under the scaffold config, so the richest layout in the app, and the one
+      // where both recorded overflow bugs lived, printed NOT REACHED on every run. CLAUDE.md
+      // calls fixing it the top follow-up. Navigating directly is deterministic and cannot be
+      // defeated by a row that renders differently or a list that is slow.
+      // Readiness is deferred here for the same reason it is everywhere else in this file,
+      // and getting it wrong once more is what the first CI run caught: with `?zr=1` and no
+      // `z`, the `else` at the bottom set __overlaysReady SYNCHRONOUSLY while this navigation
+      // waits 900ms, so the guard read window.__routeOpen before it could exist and reported
+      // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
+      // run" — see the note below and #768.
+      "var _zr=p.get('zr');" +
+      "if(_zr){setTimeout(function(){openRoute(ROUTES[0]);window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
       // opener fires 1200ms later meant they were asking before there was an answer. The
@@ -448,7 +484,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else window.__overlaysReady=true;},[]);",
+      "else if(!_zr)window.__overlaysReady=true;},[]);",
   };
 }
 
