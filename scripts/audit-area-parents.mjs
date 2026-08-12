@@ -305,35 +305,52 @@ for (const a of inScope) {
 }
 if (!broken) log("  none");
 
-// ---------------------------------------------------------------- D4: split namesake
-// An area nested inside a parent carrying the IDENTICAL name, where BOTH hold routes. The
-// same climbing area exists twice, one inside the other, with its routes divided between
-// them -- `wa_pit_the_2` holds 10 routes inside `wa_pit_the`'s 13.
+// ---------------------------------------------------------------- D4: redundant level
+// A container whose ONLY child carries the identical name. The intermediate level says
+// nothing: the browser shows "Last Unicorn, The", then "Last Unicorn, The", then two boulder
+// problems.
 //
-// D2 cannot see this and never could: it requires the duplicate to have route_count === 0,
-// which is what makes it safe to call a stub. Here both halves are populated, so the tell is
-// not emptiness but the name collision across one level of nesting.
+// ── THE FIRST VERSION OF D4 WAS VACUOUS, AND THE REASON IS WORTH THE SPACE ────
+// It looked for a same-named parent/child pair where BOTH held routes -- "one crag existing
+// twice with its routes split" -- and it reported 3 WA hits that all looked real. Every one
+// was a false positive, and the test could NEVER have found a true one:
 //
-// Matched on the RAW name, deliberately NOT canon(). canon() strips plurals and generic
-// words, and a singular child inside a plural parent is the NORMAL shape for a boulder
-// field: "Aries Boulder" inside "Aries Boulders" is one boulder in a named cluster and is
-// correct. Measured before shipping -- canon() gives 6 hits in WA of which 3 are those
-// legitimate boulder pairs; raw equality gives exactly the 3 real ones. Catalog-wide the
-// same tightening takes 249 down to 64.
+//   * `route_count` is a SUBTREE aggregate. A parent's count is satisfied entirely by its
+//     child's own routes propagating up, so `p.route_count > 0` says nothing about the
+//     parent holding anything itself. All 3 WA parents held ZERO direct routes; so did all
+//     58 catalog-wide.
+//   * `trg_areas_leaf_xor` forbids an area from having child areas AND direct routes at the
+//     same time. Measured: of 47,590 areas, **0** hold both. So the shape D4 claimed to
+//     detect -- both halves populated -- is impossible by construction, and a same-named
+//     container/leaf pair is the CORRECT way to express "this crag has its own problems and
+//     also contains other boulders". `wa_fuzz_wall` holds Span Man and Haunted Shack beside
+//     `wa_fuzz_wall_2`, which is where Fuzz Wall's own three problems live.
 //
-// Reported, never repaired. Merging two populated areas means moving routes, and a
-// duplicate flag is a hypothesis: see the Triple Couloirs loss recorded in
-// scripts/check-sql-targets.mjs.
-section("D4  an area nested inside a parent of the SAME name, both holding routes");
+// The lesson, third instance in one sweep: a subtree aggregate is not evidence about a row.
+// Precision was "measured" by eyeballing names and counts, and the schema invariant that
+// made the whole test empty was never checked. Ask what a detector CANNOT report, not just
+// what it does.
+//
+// What replaced it needs no route counts at all and is exact: 12 hits catalog-wide, 1 in WA,
+// and all 12 are a `region` whose lone child is a same-named `crag` holding the routes.
+// Still matched on the RAW name -- a singular child inside a PLURAL parent ("Aries Boulder"
+// in "Aries Boulders") is one boulder in a named cluster and is correct, which is what
+// --inject=twinplural pins.
+//
+// Reported, never repaired, and here the repair is genuinely awkward rather than merely
+// risky: collapsing the level means moving the routes up, but `routes_require_leaf` refuses
+// to attach a route to an area that still has a child, and the FK refuses to drop the child
+// while routes point at it. It needs a deferred constraint or two transactions -- not worth
+// it for one WA area and two boulder problems.
+section("D4  a container whose ONLY child carries the identical name (a level that says nothing)");
 let twins = 0;
 for (const a of inScope) {
-  const p = byId.get(a.parent_id);
-  if (!p || a.name !== p.name) continue;
-  if (!(a.route_count > 0 && p.route_count > 0)) continue;
+  const k = ch(a.id);
+  if (k.length !== 1 || k[0].name !== a.name) continue;
   twins++; findings++;
   log(`\n  "${a.name}"`);
-  log(`     child  ${a.id}  ${a.route_count} routes, ${ch(a.id).length} children`);
-  log(`     parent ${p.id}  ${p.route_count} routes (subtree, so it INCLUDES the child's)`);
+  log(`     container ${a.id} [${a.area_type}]`);
+  log(`     lone child ${k[0].id} [${k[0].area_type}]  ${k[0].route_count} routes, ${ch(k[0].id).length} children`);
   log(`        in ${where(a)}`);
 }
 if (!twins) log("  none");
@@ -431,16 +448,17 @@ log(`  scope            ${scopeLabel} (${inScope.length} areas)`);
 log(`  D1 stray peaks   ${strays.reduce((s, x) => s + x.cands.length, 0)} across ${strays.length} groups`);
 log(`  D2 hollow stubs  ${stubs}`);
 log(`  D3 path breaks   ${broken}`);
-log(`  D4 split twins   ${twins}`);
+log(`  D4 dead levels   ${twins}`);
 log(`  D5 shape drift   ${shapeHits}`);
 log(`  D6 dirty names   ${dirty}`);
 log(`\n  ${findings} thing(s) to look at — but they are NOT all the same kind of claim:`);
 log(`    D1, D2  hypotheses. They reason from coordinates and names, and both lie in crag`);
 log(`            terrain — D1's first draft flagged 41 of which 12 were real. Confirm each`);
 log(`            against the group's own name and a guidebook before moving anything.`);
-log(`    D4      a hypothesis too, and repairing one means MOVING ROUTES between areas.`);
-log(`            Confirm both halves are really one area before merging either.`);
-log(`    D3, D6  exact. A path mismatch and an escaped name are defects, not candidates.`);
+log(`    D3, D4  exact. D4 needs no route counts and has no judgement in it — but its`);
+log(`      D6    REPAIR is awkward: routes_require_leaf refuses to move routes up while`);
+log(`            the child exists, and the FK refuses to drop the child while routes point`);
+log(`            at it. A path mismatch and an escaped name are defects, not candidates.`);
 log(`    D5      exact about the DECLARATION, not about the tree: it says this child is not`);
 log(`            accounted for in scripts/wa-region-shape.json. The fix may be to move the`);
 log(`            area, or to declare it — read the region's MP list and decide.`);
@@ -487,16 +505,15 @@ process.exit(0);
 //   node scripts/audit-area-parents.mjs --inject=orphan
 //       points a parent_id at a row that does not exist. D3 must report ORPHAN  (0 -> 1).
 //
-// Added with D4/D5/D6 (2026-08-09). Baseline for these is D4 3 / D5 0 / D6 3.
+// Added with D4/D5/D6 (2026-08-09). Baseline for these is D4 1 / D5 0 / D6 3.
 //
-//   --inject=twin        nests a populated area inside a parent of the IDENTICAL name.
-//                        D4 must pair them  (3 -> 4).
-//   --inject=twinplural  nests a SINGULAR-named child inside a PLURAL parent. D4 must NOT
-//                        fire  (3 -> 3). This is the false-positive guard and it is the
-//                        reason D4 matches raw names instead of canon(): "Aries Boulder"
-//                        inside "Aries Boulders" is one boulder in a named cluster and is
-//                        correct. canon() gives 6 WA hits of which 3 are that legitimate
-//                        shape; raw equality gives exactly the 3 real ones.
+//   --inject=twin        gives a routes-holding leaf a single child of the IDENTICAL name,
+//                        making it a container whose lone child says nothing. D4 must report
+//                        it  (1 -> 2).
+//   --inject=twinplural  same, but the child's name is PLURALISED. D4 must NOT fire
+//                        (1 -> 1). This is the false-positive guard and it is the reason D4
+//                        matches raw names instead of canon(): "Aries Boulder" inside "Aries
+//                        Boulders" is one boulder in a named cluster and is correct.
 //   --inject=shape       drops a crag in flat at region level — 0118's defect exactly, with
 //                        no stub, no duplicate and nothing co-located, so D1..D4 are all
 //                        blind to it. D5 must report it UNDECLARED  (0 -> 1).
@@ -528,6 +545,13 @@ process.exit(0);
 //                                 only MP's own list says whether a container is missing.
 //   identical sibling names     0 hits catalog-wide. A detector that has never fired and
 //                               cannot be shown to fire is dead code.
+//   D4's OWN first version      "a same-named parent/child pair where BOTH hold routes" --
+//       (shipped in #820,        3 WA hits that all looked real, and structurally incapable
+//        replaced immediately)   of ever finding a true one. `route_count` is a SUBTREE
+//                               aggregate, so the parent's count came entirely from the
+//                               child; and trg_areas_leaf_xor means **0 of 47,590** areas
+//                               hold child areas and direct routes at once, so "both halves
+//                               populated" cannot exist. Ask what a detector CANNOT report.
 //
 // Record kept because the next person to have these ideas should not have to re-measure
 // them, and because "D1's first draft flagged 41 of which 12 were real" is the standing

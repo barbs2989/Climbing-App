@@ -2,8 +2,8 @@
 //
 // AddRoute has filed `new_route` rows into `contributions` since #794 and nothing read
 // them, so a proposal was accepted, toasted as "Submitted for review", and could never
-// become a route. This is the screen where one becomes real, and migration 0125 is the
-// half that does the writing.
+// become a route. This is the screen where one becomes real; migration 0127 is the half that
+// does the writing, and 0131 widened it to keep six more fields the form always collected.
 //
 // Gated on `useIsAdmin`, but that gate is cosmetic by design: `approve_new_route` and
 // `reject_new_route` both re-check `is_admin(auth.uid())` in SQL, so a tampered client
@@ -13,12 +13,19 @@
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouteProposals, approveNewRoute, rejectNewRoute } from "./db";
+import { gradeNumFor } from "./grade";
 import { C } from "../ClimbMatchCore";
 
-// The form collects seven fields that have no column in `routes` (rockStyle, rock,
-// protRating, crux, landing, pads, startType). They are preserved verbatim in
-// verif.proposal on approval, and shown here, so a reviewer sees everything the climber
-// actually wrote rather than only the part the schema can hold.
+// Shown here because a reviewer should see everything the climber wrote, not only the part
+// the schema models. Six of these got real columns in 0131 (prot_rating, start_type, landing,
+// pads, rock, crux), so approval now stores them rather than parking them in verif.proposal —
+// they stay on this list because the reviewer still needs to READ them before deciding.
+//
+// `rockStyle` is the one that will never get a column: it is the rock sub-discipline
+// (trad / sport / bouldering), which `discipline` already carries, and a second column for the
+// same fact is how a route ends up filed as sport in one place and trad in another. It reaches
+// the route only through `discipline`, so it is displayed here and deliberately not persisted
+// under its own name. See 0131's header.
 const EXTRA_KEYS = [
   ["rockStyle", "Rock style"], ["rock", "Rock"], ["protRating", "Protection"],
   ["crux", "Crux"], ["landing", "Landing"], ["pads", "Pads"], ["startType", "Start"],
@@ -46,10 +53,19 @@ export function RouteProposalQueue() {
     qc.invalidateQueries({ queryKey: ["area-routes"] });
   };
 
-  const doApprove = async (id) => {
+  /* Takes the whole proposal, not just its id, because `grade_num` is computed HERE from the
+     grade and discipline the climber submitted. It is the column both finder RPCs sort and
+     filter on (`grade_num ... nulls last`, `grade_num >= min_grade`), so a route approved
+     without one sorts behind the entire 205k-route catalog. #814 shipped without it.
+     Computed client-side on purpose: the arithmetic already exists four times over in the
+     pipeline, and a SQL fifth is the drift this codebase keeps paying for — so the number
+     travels to the RPC, which still does the writing. */
+  const doApprove = async (r) => {
+    const id = r.id;
     setBusyId(id); setMsg(null);
     try {
-      const newId = await approveNewRoute(id);
+      const v = r.value || {};
+      const newId = await approveNewRoute(id, gradeNumFor(v.grade, v.discipline));
       setMsg({ kind: "ok", text: "Filed as " + newId });
       refresh();
     } catch (e) {
@@ -146,7 +162,7 @@ export function RouteProposalQueue() {
                 </div>
               </div>
             : <div style={{ display: "flex", gap: 7, marginTop: 9 }}>
-                <button onClick={() => doApprove(r.id)} disabled={busy}
+                <button onClick={() => doApprove(r)} disabled={busy}
                   style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : "#fff", border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
                   {busy ? "Working…" : "Approve — file this climb"}
                 </button>

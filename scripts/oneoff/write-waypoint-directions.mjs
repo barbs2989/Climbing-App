@@ -102,6 +102,33 @@ for (const id of ids) {
   // Straight-line distance from the first waypoint catches it: if something listed before the
   // summit sits farther out than the summit does, the sequence cannot be a single outward
   // journey. Refuse and let a human look, rather than write legs for a trip nobody takes.
+  // Sixth gate, and it exists because the other five all passed wa_lemah_mountain_east_route.
+  // Its straight-line distance from waypoint 1 runs 5.95 -> 7.6 -> 7.0 -> 5.6 -> 2.5 -> 0.7 km
+  // and then jumps to 10.7 km for the summit: the coordinates walk out and come all the way
+  // back to the car. `distMi` and `elev` are cleanly monotonic, so gate (b) is happy; gate (a)
+  // compares each point only against its OWN trail mileage; and gate (d) compares only against
+  // the summit — which is the one point far enough out to mask every other.
+  //
+  // The missing question was never "is this point beyond the summit" but "did the party
+  // teleport backwards since the last point". Compare each waypoint with its PREDECESSOR.
+  const RETREAT_KM = 2.0; // smaller drops are real: switchbacks, a col regained, a basin skirted
+  const backtrack = [];
+  {
+    let prev = null, prevI = -1;
+    for (let i = 0; i < wps.length; i++) {
+      const d = hav(wps[0], wps[i]);
+      if (d == null) continue;
+      if (prev != null && prev - d > RETREAT_KM) {
+        backtrack.push(`${prevI + 1} "${wps[prevI].name}" (${prev.toFixed(1)}km) -> ${i + 1} "${wps[i].name}" (${d.toFixed(1)}km)`);
+      }
+      prev = d; prevI = i;
+    }
+  }
+  if (backtrack.length) {
+    throw new Error(`${id}: consecutive waypoints jump back toward the start by more than ${RETREAT_KM}km — ${backtrack.join("; ")}. ` +
+      `distMi may look monotonic while the coordinates walk out and return; that is a lat/lng fault, and legs written against it would describe a trip nobody takes.`);
+  }
+
   const sumIdx = wps.findIndex((w) => /^(summit|topout)$/i.test(String((w && w.type) || "")));
   if (sumIdx > 0 && wps[0]) {
     const dSum = hav(wps[0], wps[sumIdx]);

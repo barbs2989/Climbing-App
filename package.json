@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-clickable-divs.mjs && node scripts/check-bare-route.mjs && node scripts/check-pitch-split.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-fire.mjs && node scripts/check-migration-numbers.mjs && node scripts/check-icons.mjs && node scripts/check-route-tags.mjs && node scripts/check-contrib-fields.mjs && node scripts/check-rappel-single-rope.mjs && node scripts/check-rappel-readers.mjs && node scripts/check-logged-times.mjs && node scripts/check-flex-scroll.mjs && node scripts/check-dialog-dismiss.mjs && node scripts/check-add-route-fields.mjs && node scripts/check-provenance-chips.mjs && vite build",
+    "build": "node scripts/check-undefined-refs.mjs && node scripts/check-hooks-rules.mjs && node scripts/check-dead-props.mjs && node scripts/check-schema-drift.mjs && node scripts/check-crew-ready.mjs && node scripts/check-log-hydration.mjs && node scripts/check-zindex.mjs && node scripts/check-overlay-portals.mjs && node scripts/check-disc-labels.mjs && node scripts/check-write-feedback.mjs && node scripts/check-boot-shell.mjs && node scripts/check-session-claims.mjs && node scripts/check-a11y-names.mjs && node scripts/check-clickable-divs.mjs && node scripts/check-bare-route.mjs && node scripts/check-pitch-split.mjs && node scripts/check-seed-history.mjs && node scripts/check-overlay-discovery.mjs && node scripts/check-dead-flag-gates.mjs && node scripts/check-fire.mjs && node scripts/check-migration-numbers.mjs && node scripts/check-icons.mjs && node scripts/check-route-tags.mjs && node scripts/check-contrib-fields.mjs && node scripts/check-contrib-shapes.mjs && node scripts/check-grade-parser.mjs && node scripts/check-rappel-single-rope.mjs && node scripts/check-rappel-readers.mjs && node scripts/check-logged-times.mjs && node scripts/check-flex-scroll.mjs && node scripts/check-dialog-dismiss.mjs && node scripts/check-add-route-fields.mjs && node scripts/check-provenance-chips.mjs && vite build",
     "preview": "vite preview",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
@@ -42,6 +42,8 @@
     "check:flex-scroll": "node scripts/check-flex-scroll.mjs",
     "check:dialog-dismiss": "node scripts/check-dialog-dismiss.mjs",
     "check:contrib-fields": "node scripts/check-contrib-fields.mjs",
+    "check:grade-parser": "node scripts/check-grade-parser.mjs",
+    "check:contrib-shapes": "node scripts/check-contrib-shapes.mjs",
     "check:add-route-fields": "node scripts/check-add-route-fields.mjs",
     "check:provenance": "node scripts/check-provenance-chips.mjs",
     "check:rappel-readers": "node scripts/check-rappel-readers.mjs",
@@ -59,6 +61,7 @@
     "check:counts": "node scripts/check-area-counts.mjs",
     "check:field-renders": "node scripts/check-field-renders.mjs",
     "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs",
+    "check:overflow": "node scripts/check-horizontal-overflow.mjs",
     "check:fire": "node scripts/check-fire.mjs",
     "check:anniversary": "node scripts/check-anniversary.mjs",
     "check:rappel-single-rope": "node scripts/check-rappel-single-rope.mjs"

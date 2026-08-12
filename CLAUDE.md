@@ -21,6 +21,7 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -29,6 +30,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
@@ -417,6 +419,62 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:overflow`** asks whether the app still fits the phone it is built for. Every
+  control here is hand-positioned with inline styles and there is no CSS framework, which is
+  exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
+  unbroken string pushes the page wider than the screen — the user gets a page that slides
+  left-right under the thumb with a control's right edge simply gone. **No other guard can
+  see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
+  reports the same characters as a correct one. Two bugs of this shape are already on record
+  and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
+  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  (browser automation).
+  - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
+    *correct* pattern that is supposed to scroll sideways, so an element is reported only if
+    no ancestor is an intentional horizontal scroller.
+  - **Authored intent and clipping are read from different places, and the asymmetry is
+    load-bearing.** `auto`/`scroll` must come from the **inline style**, because CSS coerces
+    a `visible` overflow-x to `auto` whenever overflow-y is not visible — and nearly every
+    pane in this app sets `overflowY:"auto"`. Reading computed style there excluded almost
+    the entire app: the first draft reported a clean sweep across 51 screens while a 520px
+    `minWidth` injected into the Home tab sat there unflagged. Clipping is the opposite —
+    nothing coerces *to* `hidden`, so `hidden`/`clip` is read from **computed** style, which
+    is also the only way to catch it reliably: reading the clip inline made the run **flaky**,
+    with FireMap's 256px tiles reporting 0 offenders on one tab and 3 on another.
+  - Two more exclusions, both measured rather than assumed: the inside of an `<svg>` is
+    skipped (`<g>`/`<path>` carry their own coordinate system, so their client rects are not
+    page geometry), and only the **right** edge counts — an element off to the left cannot
+    widen a left-to-right document, and including it reported map tiles at `left=-220`.
+  - **The self-test is not optional and runs before any screen is walked.** The expected
+    result of this check is "no findings", which is exactly what a broken detector prints.
+    It injects three shapes into a real page — a plain over-wide box, one pushed out by a
+    fixed `minWidth`, and one inside an `overflow-x:auto` parent — and the first two must be
+    caught and the third must not, or the run fails having measured nothing.
+  - Fails closed in the other direction too: an empty `__overlays` or fewer than 26 screens
+    walked is a failure, not a pass. The openable count varies run to run (42–46 of 50)
+    because some payloads resolve only on some tabs, so the floor is deliberately well below
+    it rather than pinned.
+  - Mount detection compares **line sets, not text length** — the trap `check:a11y-badges`
+    records, and one this repeated in draft: with a `>120 chars` test every modal reported
+    the Home tab's numbers, because that was true on the first tab every time.
+  - Failures group by the **offending element**, not by screen. An overlay renders over the
+    tab behind it, so one bad row on Home otherwise reads as eleven findings.
+  - Injection-tested: a `minWidth:520` on the Home "Unfinished business" row fails the run
+    naming `tab:today`, the element, and its inline style as a locator.
+  - **It replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818), whose "13 screens
+    clean" result should not be relied on.** That probe excluded an ancestor whose
+    **computed** `overflowX` matched `auto|scroll|hidden` — the coercion trap above — so on
+    a codebase where nearly every pane sets `overflowY:"auto"` it was blind to most of the
+    app. Its self-test passed anyway because it injected into `document.body`, outside the
+    app tree: the `injection passes because the fault is out of frame` shape exactly. #818
+    asked for the promotion to be done "from a quiet machine"; this is it, with the
+    exclusion corrected.
+  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
+    That is the richest layout in the app and where both recorded bugs of this class lived,
+    so it is the coverage that matters most. The drill-in (state select → Routes → open a
+    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
+    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
+    not read a green run as covering the route page.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
@@ -586,6 +644,32 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:grade-parser`** asserts `routes.grade_num` is parsed in exactly one place. That
+  column is the sortable grade — both finder RPCs (`0018`/`0019`) rank and filter on it — and a
+  wrong value is invisible: the route just sits in the wrong place in a list nobody
+  cross-checks. The arithmetic existed **four** times (`load-state.mjs`,
+  `load-wa-rock-safe.mjs`, `import-alpine.mjs`, `oneoff/import-class2-3-routes.mjs`) and had
+  already drifted into **three** behaviours — three agreed, the oneoff returned `5.1` for
+  `"5.10"` where the catalog convention is `10`, and **none** handled a bare ordinal (`"4th"`,
+  `"Easy 5th"`) that the live column nonetheless had right. All four now import `gradeNumFrom`
+  from `lib/grade.js`. Static, so it sits in `npm run build`.
+  - **The swap was proven before it was made, not after.** `verify-grade-parser-equivalence.mjs`
+    ran both implementations over every distinct `(grade, system)` pair in the live WA catalog
+    plus hand-written edge cases — **348 inputs, identical on every one** — because these
+    scripts write `grade_num` for the whole catalog and "I reformatted it and it looks the same"
+    is not evidence. Adding the bare-ordinal branch then differed on exactly **4** inputs, all
+    `null` → a correct value. Agreement with the stored column went 98.09% → 98.49%.
+  - That equivalence script keeps a **verbatim copy** of the pipeline parser on purpose — its
+    job is to be a second opinion, and importing the function under test would make it vacuous.
+    It is the one exemption, named explicitly so it cannot quietly widen.
+  - Matches a **declaration**, not the word `gradeNum` — every importer mentions it. It also
+    skips comment lines, because this guard has to *say* `function gradeNum(` to explain
+    itself and flagged itself on the first run. Deliberately not the comment/string blanker
+    other guards use: that one eats real code when a string contains `//` (a URL), and a
+    declaration is never inside a string literal.
+  - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
+    Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
+    the file and line, and renaming the export fails with "every importer is broken".
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -747,15 +831,27 @@ a build error, but a screen that renders wrong or not at all.
   - **Six detectors now, and they are not the same kind of claim** — the summary says so per
     detector rather than labelling everything a candidate. D1/D2/D4 are hypotheses; D3/D6 are
     exact defects; D5 is exact about a *declaration*, not about the tree.
-  - **D4 — an area nested inside a parent of the identical name, both holding routes.**
-    `wa_pit_the_2` holds 10 routes inside `wa_pit_the`'s 13, so one crag exists twice with its
-    routes split. **D2 cannot see this and never could**: it requires the duplicate to have
-    `route_count === 0`, which is what makes a stub safe to call a stub. Matched on the **raw**
-    name, deliberately not `canon()` — a singular child inside a plural parent is the *normal*
-    boulder-field shape ("Aries Boulder" inside "Aries Boulders" is one boulder in a named
-    cluster). Measured before shipping: `canon()` gives 6 WA hits of which 3 are that
-    legitimate shape, raw equality gives exactly the 3 real ones. `--inject=twinplural` is the
-    false-positive guard and must **not** fire.
+  - **D4 — a container whose ONLY child carries the identical name**, i.e. a level that says
+    nothing: the browser shows "Last Unicorn, The", then "Last Unicorn, The", then two boulder
+    problems. Exact, no route counts involved — 12 hits catalog-wide, 1 in WA, all 12 a
+    `region` whose lone child is a same-named `crag`. Matched on the **raw** name, so a
+    singular child inside a plural parent ("Aries Boulder" in "Aries Boulders" — one boulder in
+    a named cluster) is correctly ignored; `--inject=twinplural` pins that.
+    - **Reported, never repaired, and the repair is genuinely awkward rather than merely
+      risky:** `routes_require_leaf` refuses to move the routes up while the child still
+      exists, and the FK refuses to drop the child while routes point at it. It needs a
+      deferred constraint or two transactions.
+    - **D4's FIRST version, shipped in #820, was vacuous, and the reason generalises.** It
+      looked for a same-named parent/child pair where *both* held routes and reported 3 WA hits
+      that all looked real. Every one was false and the test could never have found a true one:
+      `route_count` is a **subtree aggregate**, so the parent's count came entirely from the
+      child (all 3 WA parents, and all 58 catalog-wide, held **zero** direct routes); and
+      `trg_areas_leaf_xor` means **0 of 47,590** areas hold child areas and direct routes at
+      once, so "both halves populated" cannot exist. A same-named container/leaf pair is the
+      *correct* way to say "this crag has its own problems and also contains other boulders" —
+      `wa_fuzz_wall` holds Span Man and Haunted Shack beside `wa_fuzz_wall_2`. **Ask what a
+      detector cannot report, not only what it does**, and never read a subtree aggregate as
+      evidence about a row.
   - **D5 — region-level children against `scripts/wa-region-shape.json`**, the only detector
     that consults anything outside the DB, and the only one that can see the `0118` class: MP
     groups a scatter of small crags under a container, our import drops them flat, and
