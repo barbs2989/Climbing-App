@@ -768,6 +768,38 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
 
+**Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
+green tick this repo collects is earned on a **pull request**, and a `pull_request` run
+tests `merge(head, base)` as base stood **when that run started**. So a PR that went green
+an hour ago is a statement about an hour-old main, and two PRs that are each green can
+still break main between them.
+  - **Not hypothetical, twice over.** #728 and #727 merged three seconds apart, both green,
+    and main stopped building — every deploy blocked until #737. `check:migration-claims`
+    now catches that one collision by asking about open PRs; it says nothing about the
+    general case. The general case had no guard at all, because until now **no browser
+    guard had ever run against main**: `render-guards.yml` and `zero-state.yml` were
+    `pull_request`-only, so `check:ui`, `check:zero`, `check:overlay-scroll`,
+    `check:a11y-badges`, `check:field-renders` and `check:anniversary` had literally never
+    been asked about the branch that ships.
+  - The **static** gates were already covered and stay as they are: `deploy.yml` runs
+    `npm run build` on push to main, so a `check:refs` regression fails the deploy loudly.
+    It is only the rendered-screen half that main never saw.
+  - Both workflows now also trigger on `push: [main, master]`. The failure they prevent is
+    not "main is broken" but **"main is broken and the next PR author gets the red"** —
+    which is the shape `check:drift` exists for and the one #724 actually took.
+  - **`cancel-in-progress` had to become conditional**, and this is the trap: the group
+    falls back to `github.ref`, so on push every merge would land in one group and cancel
+    the one before it — #616 exactly, where merges killed each other's deploys and
+    production sat eight commits behind for five hours. Here it would be quieter and worse:
+    a cancelled run reports **no failure**, so the merge that was never checked would read
+    as checked. It is now
+    `cancel-in-progress: ${{ github.event_name == 'pull_request' }}` — supersede PR runs,
+    never a main run.
+  - Measured before shipping, since a preventive guard should not also be a bug report: all
+    six were green on `8401e05` (`check:ui` 20 screens, `check:zero`, `check:overlay-scroll`
+    47 regions across 44 overlays, `check:a11y-badges` 116 controls, `check:field-renders`,
+    `check:anniversary`). So this closes a hole rather than fixing a live break.
+
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.

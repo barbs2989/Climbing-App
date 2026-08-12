@@ -11,13 +11,21 @@ name: Zero state
 # is what playwright-core's channel:"chrome" drives. That is the whole reason this can
 # run in CI at all — playwright-core downloads no browser of its own.
 
+# Runs on push to main as well, for the reason render-guards.yml records at length: a
+# pull_request run tests the base as it stood when that run started, so nothing here
+# has ever been a statement about main itself.
+
 on:
   pull_request:
+    branches: [main, master]
+  push:
     branches: [main, master]
 
 concurrency:
   group: zero-state-${{ github.head_ref || github.ref }}
-  cancel-in-progress: true
+  # Superseded PR runs are cancellable; a main run is not. A cancelled run reports no
+  # failure, so cancelling here would make an unchecked merge look checked (#616).
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
