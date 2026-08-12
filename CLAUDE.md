@@ -23,7 +23,9 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
+npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -733,6 +735,37 @@ a build error, but a screen that renders wrong or not at all.
     second first-draft false pass).
   - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
     draft and both were false passes**. Neither was visible by reading the script.
+- **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
+  resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
+  other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
+  not blank the screen — it renders a placeholder that reads like a person, or drops them.
+  Seven rounds of this have shipped: **#569** ("You + 0 climbers"), **#680** (a DB group's own
+  owner got no controls), **#715** ("undefined · 0"), **#734** (a real invite under the words
+  "No crew invites"), **#756** (the day-agreement row said "Climber"), **#778** (the FLOAT PLAN
+  dropped real partners — the screen recording who is on the mountain listed one of two — and
+  the trip recap said "Member") and **#826** (a past crew card listed no partners, so
+  "reconnect" could never suggest whoever you actually climbed with). Each was found by walking
+  one more surface; this asks statically, across all of them at once. Gated by `npm run build`.
+  - **Why a script and not a comment**, and this is the whole argument: #778 shipped the
+    resolver plus three fixes, and #776 then merged from a branch based on **pre-#778 main** —
+    its squash silently **reverted all of it**. Clean merge, no conflict, every check green,
+    and main went back to shipping the bugs. The only thing that would have noticed was a step
+    in a one-off nobody runs. Same reasoning as `check:rappel-readers`.
+  - A site passes when the **same expression** also consults real profiles — what `CrewCard`'s
+    `mem` does (the #569 fix). That is a correct answer, not an exemption.
+  - **Comments are stripped before any test**, and it is load-bearing: two call sites explain
+    this rule in a comment that *names* `crewMemberById`, so leaving comments in would let a
+    site pass on prose about the fix rather than the fix. The false pass
+    `check:rappel-readers` already records.
+  - Six exemptions, each with a **measured** reason (seed-only lists: `crewReqIn`,
+    `crewJoinIn` twice, the seed invite card, `GuideDashboard`'s inquiries, and a
+    notification whose result is guarded by `if(c)` so a miss opens nothing). A **stale**
+    exemption fails, so the list cannot rot into a description of code that is gone.
+  - Fails **closed**: zero member-id lookups means the walk broke, never that the app is clean.
+  - Injection-tested, 6 cases at the bottom of the script: reverting each of the three #778
+    fixes fails and names the file and line; deleting a live exemption reports it as a finding;
+    an exemption matching nothing reports as stale; and breaking the scan vocabulary reports
+    "found NO member-id lookups at all" rather than passing.
 - **`check:provenance`** asserts that every route-page section that carries a provenance chip
   still renders one, and that a section with **no data carries none**. The chip says how a
   section was **sourced** — `Climber-verified` / `On file` / `Auto-generated` — and deliberately
@@ -778,6 +811,68 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
+  Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
+  `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
+  `WP_STYLE` turns a canonical type into `{color, glyph}`. Nothing tied them together and they
+  drifted: `WP_TYPE_MAP` emitted five canonical types — **`Base`, `Crag`, `Pass`, `Approach`,
+  `Landmark`** — that `WP_STYLE` had an entry for **none** of, so all five fell through
+  `wpGlyph`'s `||"📍"` fallback and rendered as one identical grey emoji pin. **141 waypoints on
+  130 WA routes**, with a route's Base indistinguishable from its Landmark. Static apart from
+  one `renderToStaticMarkup` pass, so it sits in `npm run build`.
+  - **Invisible to every gate that already existed**, which is the argument for this one: both
+    maps are valid JS, every identifier is bound, the screen renders, and a pin appears — it is
+    just the wrong pin. `check:refs`, `check:dead-props` and `check:field-renders` are all
+    structurally blind to it (the column is populated *and* rendered; only the glyph is wrong).
+  - It also caught a **second** defect of the same family: the two Leaflet marker call sites did
+    `wc[wp.type]`, indexing the colour map with the **RAW** string and bypassing the normaliser
+    the rest of the app goes through. `WP_TYPE_MAP` is keyed lowercase, so `"Lake"`, `"camp"`,
+    `"Base/bivy"`, `"Trailhead/pass"` all missed and drew grey — **20 more waypoints whose
+    colour this app already knew**. A raw lookup is a *silent* miss: it yields `undefined`,
+    falls to the default, and throws nothing. Section 3 forbids the shape outright.
+  - **Parsed with Babel, deliberately not with the comment/string blanker the sibling guards
+    use.** A raw regex would match the explanatory comments (which quote `wc[wp.type]` as the
+    defect) and report phantoms; but the blanker is unsafe *here in the other direction* — it
+    treats every straight quote as a string delimiter and JSX body text is full of them, so it
+    can desynchronise and wipe a **real** `wc[w.type]`. That is a false pass, the one outcome a
+    guard must never produce. An AST has neither failure mode. Note the split from section 1,
+    which reads **raw** source because every value there *is* a string literal and blanking
+    would report two empty maps as two agreeing maps.
+  - **A glyph must be a text-presentation character**, tested with `\p{Emoji_Presentation}`. A
+    codepoint with emoji presentation is painted by the font's colour glyph and **ignores the
+    CSS `color` beside it** — which is exactly what 📍 did. A hand-rolled codepoint range was
+    tried first and called the existing, working `⚑` and `⚠` defects (both are `Emoji=Yes` but
+    `Emoji_Presentation=No`); widening it by name would have hidden the next real one. `U+FE0F`
+    is checked separately, so `"⚠️"` fails where bare `"⚠"` passes.
+  - **The five new types share one neutral colour on purpose.** The palette carries nine
+    chromatic hues and the eight existing types spend them; minting near-duplicates would damage
+    the eight that work, and **reusing** a hue would be worse than grey — a Crag drawn in
+    Campsite purple is not ambiguous, it is a wrong navigational claim. These five are
+    descriptive rather than navigational, so the glyph carries the distinction, which is the
+    principle the `WP_STYLE` comment already states rather than an exception to it.
+  - **`Approach` is the dashed `⇢`, not `→`** — the plain arrow appears **104 times** in this app
+    as ordinary copy (`See all →`), so as a pin glyph it reads as punctuation, *and* no render
+    assertion could tell the pin from a link. A glyph used elsewhere as prose is not a glyph.
+  - Section 4 renders the real `RouteDetail` over waypoints carrying **raw** spellings
+    (`"Climbing area"`, `"col"`, `"Lake"`) and requires the glyph the *normaliser* should reach,
+    exercising `WP_TYPE_MAP → wpType → WP_STYLE` end to end. It demands **two** occurrences of
+    each, not one: every type renders on two surfaces (the list row and the map legend) and an
+    "at least once" test is satisfied by **either** — measured, after blanking the list's glyph
+    left the assertion green on the legend alone. Same vacuous-pass shape as `check:bare`
+    matching the Safety tab's "Fire & smoke" link.
+  - The legend now lists only the types **the route actually uses**. It printed all of `WP_STYLE`
+    unconditionally, which already described types the map did not draw; at 13 styled types that
+    becomes a wall of pills mostly about other routes.
+  - `WP_TYPES` (what the editor offers) is deliberately **not** widened — the reverse direction is
+    fine and precedented, since `Bailout` has always been styled without being offered. The guard
+    only forbids offering a type that cannot be drawn.
+  - Injection-tested, 8 cases at the bottom of the script, all caught. **Two were harness bugs
+    first, and both are the `injection logged, counter didn't move` shape:** the glyphs were
+    written as perl `\x{22A5}` escapes and perl without `-CSD` works on **bytes**, so three cases
+    reported "not caught" while the file was never modified; and case 7 aimed at `wpGlyph(_wty)`
+    when the surface rendering on Overview is `wpGlyph(_wt)` — `RouteDetail` has **three**
+    waypoint glyph surfaces, not one. Every case now proves the edit landed *by checksum* before
+    it judges the guard.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
