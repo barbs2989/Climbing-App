@@ -597,6 +597,17 @@ a build error, but a screen that renders wrong or not at all.
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
     exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - **It asks the same question one level down for the two jsonb fields.** `road` and `access`
+    are objects, so passing the column check proves nothing about the individual sub-keys the
+    form offers. `ROAD_KEYS` / `ACCESS_KEYS` are checked against the file for a reader, because
+    the readers and the key lists sit ~400 lines apart and nothing else ties them together —
+    and `access` carries **two spellings of the same fact** (`land_manager` on 399 of 400
+    sampled rows, `landManager` on 8, display reading `ac.land_manager||ac.landManager`), so
+    "which spelling does the form write?" has a right answer and a silently-wrong one.
+    Deliberately a substring test: a sub-key is legitimately read as `ac.foo`, `road.foo` or
+    destructured, and demanding one shape would fail on correct code. Writing the *legacy*
+    spelling **passes** on purpose — it is read, so it is worse rather than broken, and the
+    editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
