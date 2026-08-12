@@ -127,7 +127,9 @@ const MATRIX = [
   ["pitchDetail(table)", "PITCH-BY-PITCH", { pitchDetail: [{ n: 1, grade: "5.6", notes: "chimney" }] }, "planner", "trad"],
   ["pitchDetail(stages)", "ROUTE BETA", { pitchDetail: [{ label: "Approach gully", class: "3rd", notes: "scramble" }] }, "planner", "trad"],
   ["beta", "BETA", { beta: [LONG_BETA] }, "overview", "trad"],
-  ["gear", "RACK", { gear: ["single set of cams"] }, "overview", "trad"],
+  /* gear is NOT here: #806's RACK caption owns that section, and asserting a chip on RACK
+     would demand the double label this deliberately avoids. sectionProvenance("gear") is
+     still unit-tested in section 5 above, it just has no heading of its own. */
   ["climate", "CLIMATE &amp; SEASON", { climate: { typical: "Dry.", forecastZone: "Front Range" } }, "conditions", "trad"],
   ["hazards", "KNOWN HAZARDS", { hazards: ["rockfall"] }, "safety", "trad"],
 ];

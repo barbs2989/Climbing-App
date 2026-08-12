@@ -21,6 +21,7 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -602,6 +603,34 @@ a build error, but a screen that renders wrong or not at all.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-readers`** enforces one sentence: **a function that reads
+  `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
+  correction out-votes the station-by-station enrichment rather than the reverse. #787 found
+  every reader preferred the enrichment, so on the 155 routes carrying a station list a
+  correction could pass the 3-agree gate and display **nothing**; it fixed the three readers
+  that existed and wrote the rule in a comment above them. #784 then added two more readers
+  and neither carried the guard — five readers, three guarded, and `rappelHeadingCount`
+  renders the section heading, which states a **number**. #791 repaired both.
+  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
+    better comment: the merge was **clean** (the two PRs touch different lines), every gate
+    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
+    a number), and both new functions read as **correct in isolation**. Only a comment three
+    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+  - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
+    explanatory comment about this very rule sits at top level between functions, so a
+    whole-file grep would report a phantom sixth reader. Function bodies come from balancing
+    braces over **raw** source — the blanker used elsewhere desynchronises on JSX apostrophes.
+  - **Comments are stripped before either test, and that is load-bearing.** Two of the five
+    readers explain the rule in a comment that *names* `_rapEdited`, so deleting their real
+    guard still left the token in the body. Injection case 2 unguarded all five and the first
+    draft reported **four** — the two best-documented readers were the two that would have
+    slipped. Presence is not use, the same false pass `check:fire` records for `zoneInEffect`.
+  - Fails **closed**: zero readers means the column was renamed or the walk broke, never that
+    the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
+    that branch could never fire until the match was word-bounded (injection case 3, the
+    second first-draft false pass).
+  - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
+    draft and both were false passes**. Neither was visible by reading the script.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were

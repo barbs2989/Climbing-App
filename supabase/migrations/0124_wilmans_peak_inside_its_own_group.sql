@@ -1,0 +1,78 @@
+-- 0124: Wilmans Peak goes INSIDE the Wilmans Peak Group — the last 50 m of a join that took
+-- three migrations and two sessions.
+--
+-- 0120 moved `wa_wilmans_peak` (the summit, Standard Scramble, Class 3-4) out of the flat
+-- Darrington listing and into `wa_monte_cristo_group`. 0123 then moved `wa_wilmans_peak_group`
+-- (holding `wa_wilmans_spires` and the 5.6 East Wilmans Spire) into the same place. Both are
+-- applied and both were right. What they leave is the summit standing NEXT TO the group named
+-- after it:
+--
+--   wa_monte_cristo_group
+--   ├── wa_wilmans_peak         Standard Scramble          <- 50 m apart
+--   └── wa_wilmans_peak_group
+--       └── wa_wilmans_spires   East Wilmans Spire 5.6
+--
+-- `audit:area-parents` flags exactly this, at **0.05 km** — the shortest separation in the
+-- whole D1 list, and the one case where the group's own NAME contains the stray's name. That
+-- is the test this repo prescribes for a D1 hit, and it is unambiguous here.
+--
+-- Mountain Project settles the shape, and note this is a DIFFERENT question from the one 0120
+-- and 0123 answered. They asked which parent the Wilmans rows belong under; this asks how the
+-- two Wilmans rows relate to EACH OTHER. MP's "Wilmans Peak Group" lists exactly two children:
+--
+--     Wilmans Peak     (0 routes on MP)
+--     Wilmans Spires   (the East Wilmans Spire line)
+--
+-- So the group is not a sibling of the peak, it is the formation that contains it — Wilmans
+-- Peak itself plus the three spires along the ridge west of it. The 0-route MP count is also
+-- why this could not be settled from route data alone: on MP the summit area is empty and all
+-- the recorded climbing sits on the spires, while WE hold a scramble on the summit. Different
+-- catalogues, same formation.
+--
+-- ── WHY THIS IS NOT A DUPLICATE, AND MUST NOT BE MERGED ──────────────────────
+-- Two rows 50 m apart with near-identical names is the fingerprint of the co-located duplicate
+-- that #736/#763 swept — and this is NOT one, which is why this migration moves a row instead
+-- of deleting one. They hold different climbs on different terrain: a Class 3-4 walk-up on the
+-- summit block, and a 5.6 alpine rock route on a spire. Deleting either would destroy a real
+-- climb, the way `wa_dragontail_peak_triple_couloirs` was destroyed by a duplicate flag that
+-- was only ever a hypothesis. Nesting keeps both.
+--
+-- ── SAFETY, verified against the live DB immediately before writing ──────────
+--   * wa_wilmans_peak        — 1 direct route, 0 children. A leaf; it can become a child.
+--   * wa_wilmans_peak_group  — 0 direct routes, 1 child. Already a parent, so adopting a
+--     second child cannot violate trg_areas_leaf_xor. (A target holding a direct route is the
+--     case that would fail, and it is checked, not assumed.)
+--   * The mover is childless, so trg_areas_set_path re-deriving its own path is enough —
+--     there is no descendant path to repair and no 0097-style re-assign is needed.
+--   * Both rows already sit under wa_monte_cristo_group, so nothing above it changes subtree
+--     membership: Monte Cristo must stay 10 and Darrington must stay 186.
+update areas set parent_id = 'wa_wilmans_peak_group'
+ where id = 'wa_wilmans_peak';
+
+-- Recount from the subtree, never arithmetic. Monte Cristo and Darrington are recounted too
+-- even though neither should move — if either does, a route left a subtree it should not have,
+-- and that is a real problem rather than a rounding difference.
+update areas set route_count = (
+  select count(*) from routes r join areas a2 on a2.id = r.area_id where a2.path <@ areas.path
+) where id in ('wa_wilmans_peak_group','wa_monte_cristo_group','wa_glacier_peak_region');
+
+-- ── Verify afterward, as SEPARATE statements ─────────────────────────────────
+-- One paste is ONE transaction; an error in a read-only SELECT rolls back the writes above it.
+--
+--   select id, parent_id, path::text from areas
+--     where id in ('wa_wilmans_peak','wa_wilmans_spires') order by id;
+--   -- expect wa_wilmans_peak parented to wa_wilmans_peak_group, path
+--   --   ...wa_monte_cristo_group.wa_wilmans_peak_group.wa_wilmans_peak
+--   -- and wa_wilmans_spires UNCHANGED beneath the same group.
+--
+--   select id, route_count from areas
+--     where id in ('wa_wilmans_peak_group','wa_monte_cristo_group','wa_glacier_peak_region')
+--     order by id;
+--   -- expect wilmans_peak_group 2 (was 1), monte_cristo_group UNCHANGED at 10,
+--   -- glacier_peak_region UNCHANGED at 186. Predicted from a live recount, not by adding one.
+--
+--   -- then:  npm run check:counts   and   npm run audit:area-parents
+--   -- audit D1 should drop 16 -> 15, and the "Wilmans Peak Group" entry should disappear
+--   -- from the list entirely (its only other candidate, Columbia Peak at 1.24 km, is a
+--   -- distinct summit already correctly filed in Monte Cristo Group — declined, same as the
+--   -- 17 recorded in 0120).
