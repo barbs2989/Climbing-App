@@ -29,6 +29,7 @@ npm run check:signed-in # walks a REAL signed-in account that owns a crew and a 
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
@@ -417,6 +418,62 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:overflow`** asks whether the app still fits the phone it is built for. Every
+  control here is hand-positioned with inline styles and there is no CSS framework, which is
+  exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
+  unbroken string pushes the page wider than the screen — the user gets a page that slides
+  left-right under the thumb with a control's right edge simply gone. **No other guard can
+  see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
+  reports the same characters as a correct one. Two bugs of this shape are already on record
+  and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
+  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  (browser automation).
+  - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
+    *correct* pattern that is supposed to scroll sideways, so an element is reported only if
+    no ancestor is an intentional horizontal scroller.
+  - **Authored intent and clipping are read from different places, and the asymmetry is
+    load-bearing.** `auto`/`scroll` must come from the **inline style**, because CSS coerces
+    a `visible` overflow-x to `auto` whenever overflow-y is not visible — and nearly every
+    pane in this app sets `overflowY:"auto"`. Reading computed style there excluded almost
+    the entire app: the first draft reported a clean sweep across 51 screens while a 520px
+    `minWidth` injected into the Home tab sat there unflagged. Clipping is the opposite —
+    nothing coerces *to* `hidden`, so `hidden`/`clip` is read from **computed** style, which
+    is also the only way to catch it reliably: reading the clip inline made the run **flaky**,
+    with FireMap's 256px tiles reporting 0 offenders on one tab and 3 on another.
+  - Two more exclusions, both measured rather than assumed: the inside of an `<svg>` is
+    skipped (`<g>`/`<path>` carry their own coordinate system, so their client rects are not
+    page geometry), and only the **right** edge counts — an element off to the left cannot
+    widen a left-to-right document, and including it reported map tiles at `left=-220`.
+  - **The self-test is not optional and runs before any screen is walked.** The expected
+    result of this check is "no findings", which is exactly what a broken detector prints.
+    It injects three shapes into a real page — a plain over-wide box, one pushed out by a
+    fixed `minWidth`, and one inside an `overflow-x:auto` parent — and the first two must be
+    caught and the third must not, or the run fails having measured nothing.
+  - Fails closed in the other direction too: an empty `__overlays` or fewer than 26 screens
+    walked is a failure, not a pass. The openable count varies run to run (42–46 of 50)
+    because some payloads resolve only on some tabs, so the floor is deliberately well below
+    it rather than pinned.
+  - Mount detection compares **line sets, not text length** — the trap `check:a11y-badges`
+    records, and one this repeated in draft: with a `>120 chars` test every modal reported
+    the Home tab's numbers, because that was true on the first tab every time.
+  - Failures group by the **offending element**, not by screen. An overlay renders over the
+    tab behind it, so one bad row on Home otherwise reads as eleven findings.
+  - Injection-tested: a `minWidth:520` on the Home "Unfinished business" row fails the run
+    naming `tab:today`, the element, and its inline style as a locator.
+  - **It replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818), whose "13 screens
+    clean" result should not be relied on.** That probe excluded an ancestor whose
+    **computed** `overflowX` matched `auto|scroll|hidden` — the coercion trap above — so on
+    a codebase where nearly every pane sets `overflowY:"auto"` it was blind to most of the
+    app. Its self-test passed anyway because it injected into `document.body`, outside the
+    app tree: the `injection passes because the fault is out of frame` shape exactly. #818
+    asked for the promotion to be done "from a quiet machine"; this is it, with the
+    exclusion corrected.
+  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
+    That is the richest layout in the app and where both recorded bugs of this class lived,
+    so it is the coverage that matters most. The drill-in (state select → Routes → open a
+    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
+    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
+    not read a green run as covering the route page.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
