@@ -2218,9 +2218,9 @@ function WeatherPanel({waypoints}){
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
     <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware via Open-Meteo, broken into AM/PM/Night with an hourly view on tap — cross-checked against NWS and MET Norway. Read it yourself: mountain terrain can differ sharply from the forecast, and sources can legitimately disagree.</div>
-    <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const wCol=wpColor(w.type);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
+    <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
-        <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(w.type)}</div>
+        <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
       </div>
       {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
