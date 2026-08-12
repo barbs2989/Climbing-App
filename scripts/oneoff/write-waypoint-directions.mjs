@@ -64,6 +64,58 @@ for (const id of ids) {
         `Positional directions would describe legs that do not exist. Fix the order first — see npm run audit:waypoint-order.`);
     }
   }
+  // `distMi` monotonicity is NOT sufficient to prove travel order, which a batch run found
+  // the hard way on wa_berdeen_peak_scramble: its marks climb 0 -> 2.5 -> 5.8 -> 6.3 -> 7.2
+  // so the check above passes, but the route's own approach and descent_text put Berdeen Lake
+  // and the high camp on the far side of the summit — you reach that basin by dropping ~500 ft
+  // NW off the top. The list walks you to the lake BEFORE the summit, which is backwards.
+  //
+  // Straight-line distance from the first waypoint catches it: if something listed before the
+  // summit sits farther out than the summit does, the sequence cannot be a single outward
+  // journey. Refuse and let a human look, rather than write legs for a trip nobody takes.
+  const hav = (a, b) => {
+    if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return null;
+    const R = 6371, t = (x) => (x * Math.PI) / 180;
+    const dLat = t(b.lat - a.lat), dLng = t(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(t(a.lat)) * Math.cos(t(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+  const sumIdx = wps.findIndex((w) => /^(summit|topout)$/i.test(String((w && w.type) || "")));
+  if (sumIdx > 0 && wps[0]) {
+    const dSum = hav(wps[0], wps[sumIdx]);
+    if (dSum != null) {
+      const beyond = [], nearBy = [];
+      for (let i = 1; i < sumIdx; i++) {
+        const d = hav(wps[0], wps[i]);
+        if (d == null) continue;
+        // Two tiers, because the cost is asymmetric. Past 15% it cannot be a single outward
+        // journey and the writer refuses. Between 0 and 15% a genuine cirque approach can
+        // legitimately swing wide, so it only warns — but it MUST warn, because Berdeen Peak
+        // clears the summit distance by 10% and slipped straight through a bare 15% test.
+        if (d > dSum * 1.15) beyond.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km vs summit ${dSum.toFixed(1)}km)`);
+        else if (d > dSum) nearBy.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km vs summit ${dSum.toFixed(1)}km)`);
+      }
+      if (nearBy.length) {
+        console.log(`  WARN ${id}: waypoint(s) before the summit sit slightly farther from the start than the summit — ${nearBy.join("; ")}.`);
+        console.log(`       Could be a cirque approach, or the list could be walking past the summit and back. Check the approach/descent prose before trusting these legs.`);
+      }
+      if (beyond.length) {
+        throw new Error(`${id}: waypoint(s) listed BEFORE the summit sit farther from the start than the summit does — ${beyond.join("; ")}. ` +
+          `distMi is monotonic here, so the order check passes, but the sequence is not a single outward journey. Check the route's approach/descent prose before writing legs.`);
+      }
+    }
+  }
+  // Second blind spot, found the same way: the trailhead is not always first. On
+  // wa_argonaut_peak_east_ridge the Beverly Turnpike trailhead is waypoint FIVE of six, with
+  // Long's Pass and Colchuck Lake — two different approaches to the peak — listed above it.
+  // wa_bacon_peak_diobsud has its trailhead sixth of seven. Neither is caught by the distMi
+  // check, because the offending waypoints carry no distMi at all, so only three marks are
+  // known and those three ascend cleanly.
+  const thIdx = wps.findIndex((w) => /^trailhead$/i.test(String((w && w.type) || "")));
+  if (thIdx > 0) {
+    throw new Error(`${id}: the Trailhead is waypoint ${thIdx + 1} of ${wps.length}, not the first. ` +
+      `Everything listed above it is either a different approach or out of sequence, and positional legs would describe junctions this route never passes.`);
+  }
   const next = wps.map((w, i) => {
     const d = String(dirs[i] || "").trim();
     if (!d) { skipped++; return w; }
