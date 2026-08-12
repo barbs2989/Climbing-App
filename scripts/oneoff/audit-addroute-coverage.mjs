@@ -193,6 +193,61 @@ const APP_SRC = APP_FILES.map((f) => {
 
 const camel = (s) => s.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
 
+// Blank `//` and `/* */` comments from JS, preserving offsets. Quote state is tracked so a
+// `//` inside a URL string survives, and quote tracking is SUSPENDED inside a comment so an
+// apostrophe in prose ("climber's") cannot flip it — the desynchronisation that
+// check:dead-flag-gates records eating real code.
+function stripJsComments(src) {
+  let out = "", q = null;
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i];
+    if (q) { out += c; if (c === "\\") { out += src[++i] ?? ""; } else if (c === q) q = null; continue; }
+    if (c === "/" && src[i + 1] === "/") { while (i < src.length && src[i] !== "\n") { out += " "; i++; } out += "\n"; continue; }
+    if (c === "/" && src[i + 1] === "*") { const e = src.indexOf("*/", i + 2); const stop = e < 0 ? src.length : e + 2; for (; i < stop; i++) out += src[i] === "\n" ? "\n" : " "; i--; continue; }
+    if (c === "'" || c === '"' || c === "`") { q = c; out += c; continue; }
+    out += c;
+  }
+  return out;
+}
+
+// dbRouteToCamel renames as well as spreads, and the renames are NOT all camelCase of the
+// column: `length_m` becomes `routeFt` (with a unit conversion), `area_id` becomes
+// `mountainId`, `gpx` becomes `gpxPts`, `permit` becomes `permits`, `obj_haz` becomes
+// `objHaz`. Searching only for the column and its camelCase twin reports every one of those
+// as unread while the app renders them on every route. So the alias map is parsed out of the
+// function rather than guessed: split the returned object literal on top-level commas and,
+// for each `key: expr`, credit every `r.<column>` the expression touches to that key.
+function aliasMap() {
+  const src = R("lib/db.js");
+  const i = src.indexOf("export function dbRouteToCamel(r) {");
+  if (i < 0) throw new Error("ANCHOR LOST: dbRouteToCamel signature changed in lib/db.js");
+  const start = src.indexOf("return {", i);
+  let depth = 0, end = -1;
+  for (let j = src.indexOf("{", start); j < src.length; j++) {
+    if (src[j] === "{") depth++;
+    else if (src[j] === "}") { depth--; if (depth === 0) { end = j; break; } }
+  }
+  if (end < 0) throw new Error("could not balance dbRouteToCamel's return object");
+  const map = new Map(); // column -> Set(alias names)
+  // Comments MUST go before the split, and this is not cosmetic: dbRouteToCamel's entries
+  // are separated by page-long `//` comments ("The structured rack a climber wants IS
+  // `gear`, so fall back to it") whose own commas are at depth zero. Splitting first tears
+  // one entry into three, the key regex fails on the fragments, and the `gear` column loses
+  // its `rack` alias — i.e. the most-read column in the file reads as unread.
+  const body = stripJsComments(src.slice(src.indexOf("{", start) + 1, end));
+  for (const part of splitTop(body)) {
+    const km = /^\s*([A-Za-z_$][\w$]*)\s*:/.exec(part);
+    if (!km) continue;
+    for (const cm of part.matchAll(/\br\.([a-z_][a-z0-9_]*)\b/g)) {
+      if (!map.has(cm[1])) map.set(cm[1], new Set());
+      map.get(cm[1]).add(km[1]);
+    }
+  }
+  if (map.size < 20) throw new Error(`only ${map.size} aliases parsed from dbRouteToCamel — the parse broke`);
+  return map;
+}
+const ALIASES = aliasMap();
+
 // dbRouteToCamel spreads `...r`, so an un-aliased column arrives under its snake name.
 // Both spellings are searched; a hit under either is a read.
 //
@@ -204,16 +259,57 @@ const camel = (s) => s.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
 // `route.x` / `r.x`, so `.x` and `["x"]` are the shapes that mean "a route's value is being
 // read". Destructuring would be missed; this codebase's dense inline style does not use it
 // for route fields (spot-checked against RouteDetail's own reads).
+// THE RECEIVER IS THE MEASUREMENT, and getting to that took three passes. A bare
+// word-boundary search called `rock` a live field on the strength of `disc==="rock"`.
+// Narrowing to member access `.rock` still called it live — on `filters.rock`, `f.rock`
+// and `CONDITION_SETS.rock`, none of which is a route. And `.crux` matches `p.crux` /
+// `r.crux`, which is the boolean "is this the crux PITCH" flag inside a pitch_detail row,
+// not the route's crux description the form collects. Two different facts, one spelling.
+//
+// So the receiver is captured and only a ROUTE-shaped one counts. `route` is this
+// codebase's overwhelming convention (measured: watchOut, protRating, landing, startType,
+// proTips are read exclusively as `route.x`). Other receivers are kept and PRINTED rather
+// than discarded, so a column read through a differently-named parameter shows up as
+// something to look at instead of silently reading as dead.
+const ROUTE_RECEIVERS = new Set(["route", "selRoute", "rt", "_route", "theRoute"]);
+
+// One file breaks the convention and it had to be found by reading signatures, not guessed:
+// lib/terrain.js names its route parameter `r` in `corpus(r)` and `seasonalBlock(r)`, and
+// those two functions are the ONLY readers of `description` and `seasonal_hazards`. Every
+// other helper module (routeTags, provenance, rappels, hazards, lists) uses `route`, so `r`
+// stays untrusted elsewhere — in RouteDetail.jsx `r.crux` is a pitch row, not a route.
+// lib/db.js is deliberately NOT here: `r` there is the raw row inside dbRouteToCamel, and a
+// read that only ever happens on the alias line is plumbing, which is exactly the
+// descent_text shape — mapped for 1,021 routes and rendered on none.
+const FILE_RECEIVERS = { "lib/terrain.js": new Set(["r"]) };
+const isRouteReceiver = (file, name) => ROUTE_RECEIVERS.has(name) || (FILE_RECEIVERS[file] && FILE_RECEIVERS[file].has(name));
+
+// Memoised: the report asks about the same column from four sections, and each miss is a
+// regex sweep over ~1.5MB of dense source × 34 files. Without this the run takes minutes.
+const _readCache = new Map();
 function readsOf(col) {
-  const names = new Set([col, camel(col)]);
-  const hits = [];
+  if (_readCache.has(col)) return _readCache.get(col);
+  const r = _readsOf(col);
+  _readCache.set(col, r);
+  return r;
+}
+
+function _readsOf(col) {
+  const names = new Set([col, camel(col), ...(ALIASES.get(col) || [])]);
+  const hits = [];       // route-receiver reads only
+  const other = new Map(); // receiver -> count, for transparency
   for (const { f, s } of APP_SRC) {
     for (const n of names) {
-      const re = new RegExp("(?:\\.|\\[\")" + n + "(?![\\w$])", "g");
-      const c = (s.match(re) || []).length;
+      const re = new RegExp("([A-Za-z_$][\\w$]*)\\.(" + n + ")(?![\\w$])", "g");
+      let m, c = 0;
+      while ((m = re.exec(s))) {
+        if (isRouteReceiver(f, m[1])) c++;
+        else other.set(m[1], (other.get(m[1]) || 0) + 1);
+      }
       if (c) hits.push({ file: f, name: n, count: c });
     }
   }
+  hits.other = other;
   return hits;
 }
 
@@ -222,7 +318,14 @@ function readsOf(col) {
 // EnrichmentPanels.jsx (which check:field-renders records as owning whole columns) are
 // weighted above everything else; ClimbMatch.jsx / ClimbMatchCore.jsx count as a render
 // site but a hit there can also be the SuggestFix allow-list rather than a screen.
-const ROUTE_PAGE = new Set(["RouteDetail.jsx", "EnrichmentPanels.jsx"]);
+// ClimbMatchCore.jsx counts, and check:field-renders records why: ClimbMatch.jsx mounts
+// SIBLING panels beside <RouteDetail/> that own whole columns, and those panels are defined
+// in core. `emergency` is the live instance — EmergencyRescueCard (ClimbMatchCore.jsx:1160)
+// reads route.emergency.sheriffDispatch/rangerStation/nearestHospital and renders the
+// EMERGENCY & RESCUE box on the route page. Scoring only RouteDetail.jsx ranked a column
+// populated on 1,073 routes as reaching no screen. Verified by reading that component, not
+// assumed from the file name.
+const ROUTE_PAGE = new Set(["RouteDetail.jsx", "EnrichmentPanels.jsx", "ClimbMatchCore.jsx"]);
 const RENDER_FILES = new Set(["RouteDetail.jsx", "EnrichmentPanels.jsx", "ClimbMatch.jsx", "ClimbMatchCore.jsx"]);
 const rendersIn = (hits) => hits.filter((h) => RENDER_FILES.has(h.file) || /^lib\/(FireNearRoute|DbAreaBrowser|provenance|rappels|waypoints|terrain|grade|hazards|routeTags|disciplines|lists)\./.test(h.file));
 const onRoutePage = (hits) => hits.some((h) => ROUTE_PAGE.has(h.file));
@@ -232,14 +335,22 @@ const onRoutePage = (hits) => hits.some((h) => ROUTE_PAGE.has(h.file));
 async function population(cols) {
   const k = anonKey();
   const out = {};
-  for (const c of cols) {
-    const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/routes?select=id&${encodeURIComponent(c)}=not.is.null`,
-      { method: "HEAD", headers: { apikey: k, Authorization: "Bearer " + k, Prefer: "count=exact", Range: "0-0" } }
-    );
-    const cr = res.headers.get("content-range") || "";
-    out[c] = res.ok ? Number((cr.split("/")[1] ?? "0")) : null;
-  }
+  // Anon key, HEAD only — a checker that could write is a checker that can corrupt what it
+  // is checking. Six at a time: serial is 95 round trips and ran over five minutes, which is
+  // long enough that nobody re-runs it, and a measurement nobody re-runs is a claim.
+  const queue = [...cols];
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    for (let c = queue.shift(); c !== undefined; c = queue.shift()) {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/routes?select=id&${encodeURIComponent(c)}=not.is.null`,
+        { method: "HEAD", headers: { apikey: k, Authorization: "Bearer " + k, Prefer: "count=exact", Range: "0-0" } }
+      );
+      const cr = res.headers.get("content-range") || "";
+      out[c] = res.ok ? Number((cr.split("/")[1] ?? "0")) : null;
+    }
+  }));
+  // Fails closed: an all-null read would make every population claim below meaningless.
+  if (Object.values(out).every((v) => v === null || v === 0)) throw new Error("every column read as empty — the count read failed, the table is not empty");
   return out;
 }
 
@@ -371,7 +482,34 @@ const deadAnywhere = cols.filter((c) => readsOf(c).length === 0);
 console.log("\n" + "-".repeat(78));
 console.log(`COLUMNS NO APP FILE READS (all ${cols.length}, written or not) — ${deadAnywhere.length}`);
 console.log("-".repeat(78));
-for (const c of deadAnywhere) console.log(`    ${pad(c, 22)} pop=${pad(pop[c], 7)} ${written.includes(c) ? "(written by approval)" : ""}`);
+for (const c of deadAnywhere) {
+  const o = readsOf(c).other;
+  const near = [...o.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k, v]) => `${k}.${camel(c)}×${v}`).join(" ");
+  console.log(`    ${pad(c, 22)} pop=${pad(pop[c], 7)} ${written.includes(c) ? "(WRITTEN by approval) " : ""}${near ? "non-route receivers: " + near : ""}`);
+}
+
+// ── two specifics that a column-by-column sweep cannot express, each re-checked here so
+//    the claim fails loudly if the code moves rather than sitting stale in a comment.
+console.log("\n" + "-".repeat(78));
+console.log("NOTES — verified by hand, re-asserted here");
+console.log("-".repeat(78));
+{
+  const rd = R("RouteDetail.jsx");
+  const readsRockType = /route\.rockType/.test(rd);
+  const hasRockTypeCol = colSet.has("rock_type");
+  const aliasedToRockType = [...ALIASES.values()].some((s) => s.has("rockType"));
+  console.log(`  rock: the READER is spelled rockType (route.rockType in RouteDetail: ${readsRockType}),`);
+  console.log(`        there is no rock_type column (${hasRockTypeCol}) and dbRouteToCamel has no`);
+  console.log(`        rock -> rockType alias (${aliasedToRockType}). So even if approval WROTE routes.rock,`);
+  console.log(`        no DB route would display it. Three spellings of one fact: the form's key`);
+  console.log(`        (rock), the column (rock), and the reader (rockType, a seed-array field).`);
+  if (readsRockType && !hasRockTypeCol && !aliasedToRockType) console.log(`        -> CONFIRMED: routes.rock is unreachable from the screen today.`);
+  else console.log(`        -> CHANGED since this was written; re-check before quoting it.`);
+
+  console.log(`  grade_num: written by approval, read by NO app file — but it is not dead. The`);
+  console.log(`        finder RPCs (0018/0019) rank on it in SQL, which is why 0128 exists. A`);
+  console.log(`        JS-only readership scan cannot see a SQL consumer; do not call it unused.`);
+}
 
 console.log("\n" + "=".repeat(78));
 console.log(`totals: ${cols.length} columns | ${form.length} collected | ${written.length} written | ` +

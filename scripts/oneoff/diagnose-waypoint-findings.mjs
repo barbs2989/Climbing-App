@@ -284,6 +284,16 @@ for (const r of scoped) {
   printHist("   distance to own track, ALL of them:", ds, [50, 100, 250, 500, 1000, 2000, 5000], "m");
   for (const cut of [250, 500, 750, 1000, 2000]) console.log(`      at a ${String(cut).padStart(4)}m tolerance the finding count would be ${ds.filter(d => d > cut).length}`);
   console.log(`   ${ds.filter(d => d <= 50).length} sit within 50m of their track — the healthy mode is TIGHT, so the tail is real, not noise.`);
+  // One tolerance is applied to every type, and the types are not alike. A Campsite or a
+  // Water source is legitimately OFF the trail — you camp beside the lake, not on the
+  // path — while a Junction is a point ON it by definition. If the off-trail types run
+  // systematically wider, part of the 395 is the tolerance being wrong, not the data.
+  const byT = new Map();
+  for (const x of ALL_D) { if (!byT.has(x.type)) byT.set(x.type, []); byT.get(x.type).push(x.m); }
+  console.log(`\n   PER-TYPE — is one tolerance right for all of them?`);
+  for (const [t, arr] of [...byT.entries()].sort((a, b) => b[1].length - a[1].length).slice(0, 10)) {
+    console.log(`      ${t.padEnd(12)} n=${String(arr.length).padStart(4)}  median=${String(m0(pct(arr, 50))).padStart(5)}m  p75=${String(m0(pct(arr, 75))).padStart(6)}m  p90=${String(m0(pct(arr, 90))).padStart(6)}m  >500m: ${(100 * arr.filter(d => d > 500).length / arr.length).toFixed(0)}%`);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -526,6 +536,150 @@ console.log("=".repeat(78));
     const pts = scoped.filter(r => !!r.auto_generated === flag).map(r => (Array.isArray(r.gpx) ? r.gpx.length : 0));
     console.log(`      auto_generated=${flag}: ${pts.length} routes, median gpx points=${m0(pct(pts, 50))}, ${pts.filter(p => p < 4).length} with a <4-point placeholder`);
   }
+}
+
+// ---------------------------------------------------------------------------
+// Q5 — the root-cause classifier: is the TRACK wrong, or are the WAYPOINTS wrong?
+//
+// Every category above counts waypoints. But a waypoint is only ever "off track"
+// relative to a track, and inspecting the worst offenders showed the track is usually
+// the guilty party — one bad gpx manufactures 7-11 findings at once. So classify the
+// ROUTE, not the waypoint, and count how many findings each class is responsible for.
+// ---------------------------------------------------------------------------
+console.log("\n" + "=".repeat(78));
+console.log("Q5  ROOT-CAUSE CLASSIFIER — per route: is the TRACK wrong or the WAYPOINTS wrong?");
+console.log("=".repeat(78));
+{
+  const classes = new Map();
+  const bump = (k, id, n) => { if (!classes.has(k)) classes.set(k, { routes: [], findings: 0 }); classes.get(k).routes.push(id); classes.get(k).findings += n; };
+  const findingsPerRoute = new Map();
+  for (const x of [...F.waypointOffLine, ...F.trackNotEndingAtSummit, ...F.trailheadNotAtStart, ...F.summitOffLine, ...F.trailheadOffLine]) findingsPerRoute.set(x.id, (findingsPerRoute.get(x.id) || 0) + 1);
+
+  let nullCoord = 0, nullCoordRoutes = new Set();
+  const rows = [];
+  for (const r of scoped) {
+    const track = (Array.isArray(r.gpx) ? r.gpx : []).filter(p => Array.isArray(p) && p.length >= 2 && p[0] != null && p[1] != null);
+    const wps = r.waypoints.filter(w => w && typeof w === "object");
+    for (const w of wps) if (w.lat == null || w.lng == null) { nullCoord++; nullCoordRoutes.add(r.id); }
+    const pts = wps.filter(w => w.lat != null && w.lng != null);
+    if (track.length < 4 || !pts.length) continue;
+    const n = findingsPerRoute.get(r.id) || 0;
+    if (!n) continue;
+
+    const tLen = trackLenM(track);
+    // extent, not point count: a 4-point track spanning 20 m is a stub wearing a track's
+    // clothes, and the audit's `length < 4` guard waves it straight through.
+    let tExtent = 0;
+    for (let i = 0; i < track.length; i += Math.max(1, Math.floor(track.length / 40))) for (let j = i + 1; j < track.length; j += Math.max(1, Math.floor(track.length / 40))) tExtent = Math.max(tExtent, haversine(track[i][0], track[i][1], track[j][0], track[j][1]));
+    let wExtent = 0;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) wExtent = Math.max(wExtent, haversine(pts[i].lat, pts[i].lng, pts[j].lat, pts[j].lng));
+    const dists = pts.map(w => toPolyline(w.lat, w.lng, track).m);
+    const onTrack = dists.filter(d => d <= WP_TOL).length;
+    const minD = Math.min(...dists);
+    const th = wps.find(w => lc(w) === "trailhead" && w.lat != null);
+    const thStart = th ? haversine(th.lat, th.lng, track[0][0], track[0][1]) : null;
+    const thEnd = th ? haversine(th.lat, th.lng, track[track.length - 1][0], track[track.length - 1][1]) : null;
+
+    // The discriminator that matters is the SHARE of a route's waypoints that sit on its
+    // track. A route with 1 of 8 on track is not 7 bad waypoints — the track and the
+    // waypoint list are describing different things, and rewriting 7 good waypoints to
+    // match one bad gpx is exactly the bulk "fix" that breaks more than it repairs.
+    const frac = onTrack / pts.length;
+    let cls;
+    if (tExtent < 1000 && wExtent > 2000) cls = "A_DEGENERATE_TRACK";     // gpx is a stub; slipped past the <4pt guard
+    else if (minD > 1000) cls = "B_DISJOINT_TRACK";                        // NO waypoint is near the track: wrong gpx entirely
+    else if (th && thEnd != null && thEnd < 400 && thStart > 2000) cls = "C_REVERSED_TRACK"; // trailhead at the track's END
+    else if (frac < 0.4) cls = "D_TRACK_DESCRIBES_SOMETHING_ELSE";        // most waypoints off: the gpx is the wrong span/leg
+    else if (frac < 0.75) cls = "E_PARTIAL_TRACK";                        // gpx covers part of the outing
+    else cls = "F_WAYPOINT_SCATTER";                                      // track sound; a minority of waypoints are displaced
+    bump(cls, r.id, n);
+    rows.push({ id: r.id, cls, n, tPts: track.length, tExtentM: m0(tExtent), tLenKm: +(tLen / 1000).toFixed(2), wExtentM: m0(wExtent), onTrack, of: pts.length, minD: m0(minD), thStartM: thStart == null ? null : m0(thStart), thEndM: thEnd == null ? null : m0(thEnd), disc: r.discipline });
+  }
+
+  const LABEL = {
+    A_DEGENERATE_TRACK: "gpx is a STUB (extent <1km) that slipped past the <4-point guard — one bad row, many findings",
+    B_DISJOINT_TRACK: "gpx is somewhere ELSE entirely (no waypoint within 1km) — wrong track attached to the route",
+    C_REVERSED_TRACK: "gpx is REVERSED — the trailhead sits at the track's END",
+    D_TRACK_DESCRIBES_SOMETHING_ELSE: "under 40% of the route's waypoints are on its track — the GPX is the wrong leg/span, not the waypoints",
+    E_PARTIAL_TRACK: "40-75% on track — the gpx covers part of the outing; waypoints past its ends are probably correct",
+    F_WAYPOINT_SCATTER: "over 75% on track — the track is sound and a MINORITY of waypoints are genuinely displaced",
+  };
+  const total = [...classes.values()].reduce((a, b) => a + b.findings, 0);
+  console.log(`   ${total} geometry findings across ${rows.length} routes, classified by what is actually wrong:\n`);
+  for (const [k, v] of [...classes.entries()].sort((a, b) => b[1].findings - a[1].findings)) {
+    console.log(`   ${String(v.findings).padStart(4)} findings  ${String(v.routes.length).padStart(4)} routes   ${k}`);
+    console.log(`        ${LABEL[k]}`);
+    const ex = rows.filter(x => x.cls === k).sort((a, b) => b.n - a.n).slice(0, VERBOSE ? 50 : 5);
+    for (const x of ex) console.log(`        e.g. ${x.id} (${x.n} findings, track ${x.tPts}pts/${x.tLenKm}km extent=${x.tExtentM}m, waypoints span ${x.wExtentM}m, ${x.onTrack}/${x.of} on track)`);
+  }
+  // CROSS-TAB — the actual deliverable. For each audit category, how many of its
+  // findings sit on a route whose TRACK is the identified problem (A-E) versus one
+  // where the track is sound and the waypoint really is misplaced (F)? Only the F
+  // column is a per-waypoint research task; the rest are per-ROUTE gpx problems.
+  const clsOf = new Map(rows.map(x => [x.id, x.cls]));
+  const CATS = { waypointOffLine: F.waypointOffLine, trackNotEndingAtSummit: F.trackNotEndingAtSummit, summitOffLine: F.summitOffLine, trailheadNotAtStart: F.trailheadNotAtStart, trailheadOffLine: F.trailheadOffLine };
+  const COLS2 = ["A_DEGENERATE_TRACK", "B_DISJOINT_TRACK", "C_REVERSED_TRACK", "D_TRACK_DESCRIBES_SOMETHING_ELSE", "E_PARTIAL_TRACK", "F_WAYPOINT_SCATTER"];
+  console.log(`\n   CROSS-TAB — audit category × what is actually wrong with the route:`);
+  console.log(`      ${"category".padEnd(24)} ${COLS2.map(c => c[0]).map(c => c.padStart(6)).join("")}   total`);
+  for (const [cat, arr] of Object.entries(CATS)) {
+    const counts = COLS2.map(c => arr.filter(x => clsOf.get(x.id) === c).length);
+    console.log(`      ${cat.padEnd(24)} ${counts.map(n => String(n).padStart(6)).join("")}   ${arr.length}`);
+  }
+  console.log(`      A=degenerate B=disjoint C=reversed D=describes-something-else E=partial F=waypoint-scatter`);
+  console.log(`      (rows may not sum to the total: findings on routes with no other finding are unclassified)`);
+
+  console.log(`\n   WAYPOINTS WITH NO COORDINATES: ${nullCoord} across ${nullCoordRoutes.size} routes — silently SKIPPED by the audit`);
+  console.log(`   (they cannot be measured, so they are invisible to every category above; they still render as a pin with no position)`);
+}
+
+// ---------------------------------------------------------------------------
+// Q6 — the one transform that is even a candidate: reversing a track's point order.
+//
+// Reversing a polyline changes NO point-to-line distance, so it cannot touch the 395.
+// It can only ever move a finding in the two endpoint-sensitive categories. That makes
+// it cheap to evaluate honestly: apply it and re-run the audit's own predicate.
+// ---------------------------------------------------------------------------
+console.log("\n" + "=".repeat(78));
+console.log("Q6  WOULD REVERSING THE TRACK FIX ANYTHING? (the only mechanical transform in play)");
+console.log("=".repeat(78));
+{
+  let cand = [], wouldFix = [], wouldBreak = [];
+  for (const r of scoped) {
+    const track = (Array.isArray(r.gpx) ? r.gpx : []).filter(p => Array.isArray(p) && p.length >= 2 && p[0] != null && p[1] != null);
+    if (track.length < 4) continue;
+    const wps = r.waypoints.filter(w => w && typeof w === "object");
+    const th = wps.find(w => lc(w) === "trailhead" && w.lat != null && w.lng != null);
+    if (!th) continue;
+    const line = toPolyline(th.lat, th.lng, track);
+    const dStart = haversine(th.lat, th.lng, track[0][0], track[0][1]);
+    const dEnd = haversine(th.lat, th.lng, track[track.length - 1][0], track[track.length - 1][1]);
+    // The audit flags this route iff the trailhead is on the line but not at the start.
+    const flagged = line.m <= TH_ON_LINE && dStart > TH_AT_START;
+    if (!flagged) continue;
+    cand.push(r.id);
+    // After reversal the roles of dStart/dEnd swap. Does the predicate go quiet?
+    const fixedNow = !(line.m <= TH_ON_LINE && dEnd > TH_AT_START);
+    // ...but a summit that WAS at the reversed end may now be at the start, and vice
+    // versa. Check we are not trading one finding for another.
+    const summit = wps.find(w => lc(w) === "summit" && w.lat != null);
+    let breaks = false;
+    if (summit) {
+      const sEndBefore = haversine(summit.lat, summit.lng, track[track.length - 1][0], track[track.length - 1][1]);
+      const sEndAfter = haversine(summit.lat, summit.lng, track[0][0], track[0][1]);
+      if (sEndBefore <= SUMMIT_TOL && sEndAfter > SUMMIT_TOL) breaks = true;
+    }
+    if (fixedNow && !breaks) wouldFix.push({ id: r.id, dStart: m0(dStart), dEnd: m0(dEnd), disc: r.discipline });
+    else if (fixedNow && breaks) wouldBreak.push({ id: r.id, dStart: m0(dStart), dEnd: m0(dEnd) });
+  }
+  console.log(`   ${cand.length} routes are flagged TRAILHEAD-NOT-AT-START (of ${F.trailheadNotAtStart.length} findings).`);
+  console.log(`   ${wouldFix.length} would be silenced by reversing the gpx, and break nothing else.`);
+  console.log(`   ${wouldBreak.length} would be silenced but would then push the SUMMIT off the track's end — a wash, not a fix.`);
+  for (const x of wouldFix.slice(0, VERBOSE ? 100 : 15)) console.log(`      ${x.id}  trailhead is ${x.dStart}m from the start but ${x.dEnd}m from the end  (${x.disc})`);
+  console.log(`\n   NOTE: reversal cannot affect the 395 off-track waypoints at all — distance to a`);
+  console.log(`   polyline is order-independent. Any claim that "fixing the tracks" clears that`);
+  console.log(`   category by reordering is arithmetically false.`);
+  console.log(`\n   For context, the audit's own informational TRUNCATED-TRACK bucket holds ${F.truncatedTrack.length} routes,`);
+  console.log(`   where the trailhead is right and the gpx omits the approach — already excluded from the 878.`);
 }
 
 if (JSON_OUT) { fs.writeFileSync(JSON_OUT, JSON.stringify(F, null, 2)); console.log(`\nWrote ${JSON_OUT}`); }
