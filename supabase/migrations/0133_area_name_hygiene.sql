@@ -1,4 +1,4 @@
--- 0132: the three WA area names carrying a doubled space.
+-- 0133: the three WA area names carrying a doubled space.
 --
 -- Found by D6, the name-hygiene detector added in #820. `0119` fixed the one name in all
 -- 47,566 that carried a raw HTML entity (`Exit 34: Middle Fork &amp; Taylor River`); D6 exists
