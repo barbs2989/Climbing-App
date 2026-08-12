@@ -100,6 +100,37 @@ const sent = (() => {
 })();
 const sentSet = new Set(sent);
 
+// ── the set being checked must not quietly shrink ───────────────────────────────────────
+// Every assertion below is of the form "of the keys we found, are they all storable?", so
+// a key that stops being FOUND leaves the checked set and takes its own assertion with it.
+// The run then reports ok on the survivors. Measured, not theorised — replicating the
+// walker on a synthetic literal and folding one key inside a nested object:
+//
+//     healthy            keys=[name,grade,beta,gear,haz]   -> ok, all 5 submitted keys in SS
+//     beta nested away   keys=[name,grade,gear,haz]        -> ok, all 4 submitted keys in SS
+//
+// and `beta` nested inside another object is a REAL regression: SS applies top-level keys,
+// so it would no longer be storable at all. The existing fail-closed floor is on FIELDS
+// (`< 5 disciplines`), which guards the wrong axis entirely — it says nothing about fields,
+// so `sent` could collapse to two keys and still pass.
+//
+// So the names are pinned. This is bookkeeping on purpose: a pinned name that stops being
+// submitted FAILS rather than passing quietly, which forces whoever removed it to say so
+// here. Same rule as check:field-renders' KNOWN map. Do not "fix" a failure by deleting the
+// entry -- that is the vacuous pass this block exists to prevent.
+const MUST_COVER = [
+  "name", "discipline", "grade", "pitchCount", "length", "gain", "dist", "rock", "aspect",
+  "approach", "season", "commit", "descentText", "style", "haz", "gear", "beta",
+  // the eight #794 added; every one of these was a question the form asked and could not store
+  "protRating", "fa", "crux", "landing", "startType", "rap", "turn", "comms",
+];
+const unpinned = MUST_COVER.filter((k) => !sentSet.has(k));
+if (unpinned.length) {
+  fail(`the proposal no longer submits ${unpinned.join(", ")} — either it stopped being ` +
+       `collected, or it moved out of the top level where SS can apply it. If the removal ` +
+       `was deliberate, drop the name from MUST_COVER in this file in the same commit.`);
+} else ok(`all ${MUST_COVER.length} pinned fields are still submitted at the top level`);
+
 // 1. every submitted key is one SS knows about, or is explicitly provenance
 const PROVENANCE = new Set(["areaName", "source", "sourceNote", "climbed", "photoCount"]);
 const unknown = [...sentSet].filter((k) => !SS.has(k) && !PROVENANCE.has(k));
