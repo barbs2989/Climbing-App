@@ -44,7 +44,11 @@ const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
 const nums = s => (norm(s).match(/\d[\d,\.]*/g) || []).map(x => x.replace(/,/g, "").replace(/\.$/, ""));
 // Feature/direction words worth checking. Deliberately narrow: these are the tokens a reader
 // navigates by, and the ones an invented sentence tends to introduce.
-const TERMS = /\b(north|south|east|west|northeast|northwest|southeast|southwest|left|right|gully|gullies|couloir|chimney|arete|arête|ridge|notch|col|saddle|slab|slabs|moat|bergschrund|schrund|cornice|glacier|snowfield|talus|scree|heather|granite|chockstone|gendarme|travers\w*|downclimb\w*|rappel\w*|belay\w*|crevasse)\b/g;
+// Compass words carry -ern/-erly endings, and the regex has to CAPTURE those before the
+// stemmer can fold them: \bsouth\b does not match "southern" at all, so a source saying
+// "the southern gully" put nothing in the term set and a segment saying "south" was reported
+// as invented. Matching the suffix here is what lets stem() do its job.
+const TERMS = /\b(north|south|east|west|northeast|northwest|southeast|southwest)(?:ern|erly)?\b|\b(left|right|gully|gullies|couloir|chimney|arete|arête|ridge|notch|col|saddle|slab|slabs|moat|bergschrund|schrund|cornice|glacier|snowfield|talus|scree|heather|granite|chockstone|gendarme|travers\w*|downclimb\w*|rappel\w*|belay\w*|crevasse)\b/g;
 // Crude but sufficient stemmer: these are English nouns and verbs from one narrow domain, and
 // the only job is to make "traversing"/"traverse", "gullies"/"gully", "slabs"/"slab" compare
 // equal. Anything cleverer would be a dependency for no gain.
@@ -52,7 +56,10 @@ const TERMS = /\b(north|south|east|west|northeast|northwest|southeast|southwest|
 // itself while "traversing" stems to "travers", so the two never compare equal and two
 // correctly-reworded routes were reported as untraceable. Over-stemming is harmless here
 // because the same function is applied to BOTH sides of every comparison.
-const stem = w => w.replace(/(ies)$/, "y").replace(/(ing|ed|es|s)$/, "").replace(/e$/, "");
+// `-ern` is stripped for the same reason as the trailing e: a source saying "the southern
+// gully" and a segment saying "the south gully" are the same claim, and flagging that pair
+// teaches people to ignore the guard. Compass words are the ones this matters for.
+const stem = w => w.replace(/(ies)$/, "y").replace(/(ern)$/, "").replace(/(ing|ed|es|s)$/, "").replace(/e$/, "");
 
 let problems = 0, segs = 0;
 for (const id of ids) {
