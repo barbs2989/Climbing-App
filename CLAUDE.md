@@ -720,6 +720,45 @@ a build error, but a screen that renders wrong or not at all.
     has already left the walk, by `path` a rewritten path no longer says `washington`, so
     scope is now the **union of both**. The tell every time: the injection logged, the
     counter did not move.
+  - **Six detectors now, and they are not the same kind of claim** — the summary says so per
+    detector rather than labelling everything a candidate. D1/D2/D4 are hypotheses; D3/D6 are
+    exact defects; D5 is exact about a *declaration*, not about the tree.
+  - **D4 — an area nested inside a parent of the identical name, both holding routes.**
+    `wa_pit_the_2` holds 10 routes inside `wa_pit_the`'s 13, so one crag exists twice with its
+    routes split. **D2 cannot see this and never could**: it requires the duplicate to have
+    `route_count === 0`, which is what makes a stub safe to call a stub. Matched on the **raw**
+    name, deliberately not `canon()` — a singular child inside a plural parent is the *normal*
+    boulder-field shape ("Aries Boulder" inside "Aries Boulders" is one boulder in a named
+    cluster). Measured before shipping: `canon()` gives 6 WA hits of which 3 are that
+    legitimate shape, raw equality gives exactly the 3 real ones. `--inject=twinplural` is the
+    false-positive guard and must **not** fire.
+  - **D5 — region-level children against `scripts/wa-region-shape.json`**, the only detector
+    that consults anything outside the DB, and the only one that can see the `0118` class: MP
+    groups a scatter of small crags under a container, our import drops them flat, and
+    Olympics ended up with **18 direct children against MP's 10**. No stub, no duplicate,
+    nothing co-located — every geometric detector is structurally blind to it.
+    - It is an **allow-list keyed on our own names**, not a snapshot equality test. Each
+      region-level child must be declared either as corresponding to an MP area (`mp`) or as a
+      deliberate divergence **with a reason** (`extra`). So a legitimate restructure is
+      recorded in the same commit, instead of fighting a diff that fires on every change —
+      which is how a snapshot baseline ends up regenerated blindly until it asserts nothing.
+    - It fails on a **stale** entry too: a declared name that is no longer a child means the
+      file describes a tree that has moved on. Same rule as `check:field-renders`' `KNOWN` map.
+    - Route counts are deliberately **not** recorded — they move whenever anyone adds a climb
+      on either side, so pinning them would guarantee a stale file. Names are the durable claim.
+    - WA only, and it **says it skipped** for any other scope rather than passing silently.
+      `--inject=shapeblind` covers the fail-closed case: if no declaration matches any live
+      child, it reports that the reference is not describing this tree.
+  - **Three further detectors were written, measured, and deliberately not shipped** — the
+    reasons are recorded at the bottom of the script so nobody re-derives them. Sibling name
+    containment (the `0119` shape) gave 8 WA hits and **0 real**: "Central Olympic Mountains"
+    vs "North-Central Olympic Mountains", "Chelan" vs "Sawtooth / Lake Chelan" and "West Face"
+    vs "North West Face" are all correct, so legitimate sibling naming is not separable from
+    the defect by name alone. Flat-leaves-beside-containers (the Olympics shape) gave 29 and
+    **0 real** — North Cascades Core, Washington Pass and Snoqualmie Pass Area are all
+    deliberate, which is exactly why D5 has to consult an external reference. Identical
+    sibling names gave **0 catalog-wide**, i.e. dead code. *Measure a detector's precision
+    before shipping it, not after.*
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
