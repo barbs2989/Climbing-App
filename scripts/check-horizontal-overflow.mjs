@@ -196,9 +196,68 @@ for (const t of TABS) {
   if (pageWide || r.total) findings.push({ screen: "tab:" + t, ...r });
 }
 
+// Route detail is the richest layout in the app — header strap, stat tiles, waypoint rows,
+// the sub-tab strip — and it is where BOTH recorded bugs of this class lived, so leaving it
+// out would miss the only place the defect has actually happened. Reaching it needs the
+// same drill-in check:ui uses, and the sample route is pinned by name for the same reason.
+// Ported from scripts/oneoff/measure-horizontal-overflow.mjs (#818), which this replaces.
+log("");
+const ROUTE = "North Ridge (Complete)";
+const tap = async (name) => {
+  const ok = await page.evaluate((n) => {
+    const hit = [...document.querySelectorAll("button,div,span,a")].filter((e) => (e.innerText || "").trim() === n)
+      // A sub-tab name can collide with the bottom nav, and a global match silently leaves
+      // the route page. Skip anything inside a fixed/sticky chrome element.
+      .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; });
+    if (!hit.length) return false;
+    hit[0].click(); return true;
+  }, name);
+  if (ok) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+  return ok;
+};
+await load("?zt=routes");
+await page.evaluate(() => {
+  const sel = document.querySelector("select");
+  if (!sel) return;
+  const opt = [...sel.options].find((o) => /^Washington\b/.test(o.label) || /^Utah\b/.test(o.label));
+  if (!opt) return;
+  sel.value = opt.value; sel.dispatchEvent(new Event("change", { bubbles: true }));
+});
+await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+await tap("Routes");
+// ANY route will do. check:ui pins its sample by name because it asserts on that route's
+// CONTENT; this only measures layout, so pinning would import that check's known flakiness
+// (a rename in the live DB turns it red on a PR that changed nothing) for no benefit. Take
+// the first route row the list offers.
+const opened = await page.evaluate(() => {
+  const rows = [...document.querySelectorAll('[role="button"]')]
+    .filter((e) => { const t = (e.innerText || "").trim(); return t.length > 8 && !/^(Areas|Routes)$/.test(t); });
+  if (!rows.length) return null;
+  const t = rows[0].innerText.trim().slice(0, 40).replace(/\n/g, " ");
+  rows[0].click();
+  return t;
+});
+if (opened) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+if (opened) {
+  log(`  route detail: opened ${JSON.stringify(opened)}`);
+  for (const sub of ["Overview", "Reports", "Photos", "Partners", "Plan", "Safety"]) {
+    if (sub !== "Overview" && !(await tap(sub))) { log(`  route:${sub}`.padEnd(28) + "NOT REACHED"); continue; }
+    const r = await scan();
+    const wide = r.docScrollW > r.docClientW + 1;
+    log(`  route:${sub}`.padEnd(28) + `page ${r.docScrollW}/${r.docClientW}${wide ? "  <-- SCROLLS SIDEWAYS" : ""}  offenders:${r.total}`);
+    if (wide || r.total) findings.push({ screen: "route:" + sub, ...r });
+  }
+} else {
+  // Reported, never silent. The DB sample route is known-flaky (a rename in the live DB
+  // turns this red on a PR whose author changed nothing), so it does not fail the run —
+  // but an unreported skip would quietly shrink coverage to the tabs.
+  log(`  route detail`.padEnd(28) + `NOT REACHED — no route row was offered by the list; retry once before believing it`);
+}
+
 // The scaffold publishes every overlay it discovered. Read it from the page rather than
 // rebuilding the list here, so this cannot drift on which modals exist — the same reason
 // the other browser guards share overlay-scaffold.mjs.
+await load("?zt=today");
 const overlays = await page.evaluate(() => window.__overlays || []);
 log(`\n  ${overlays.length} overlay states discovered\n`);
 let skipped = 0;

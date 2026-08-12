@@ -460,6 +460,20 @@ a build error, but a screen that renders wrong or not at all.
     tab behind it, so one bad row on Home otherwise reads as eleven findings.
   - Injection-tested: a `minWidth:520` on the Home "Unfinished business" row fails the run
     naming `tab:today`, the element, and its inline style as a locator.
+  - **It replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818), whose "13 screens
+    clean" result should not be relied on.** That probe excluded an ancestor whose
+    **computed** `overflowX` matched `auto|scroll|hidden` — the coercion trap above — so on
+    a codebase where nearly every pane sets `overflowY:"auto"` it was blind to most of the
+    app. Its self-test passed anyway because it injected into `document.body`, outside the
+    app tree: the `injection passes because the fault is out of frame` shape exactly. #818
+    asked for the promotion to be done "from a quiet machine"; this is it, with the
+    exclusion corrected.
+  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
+    That is the richest layout in the app and where both recorded bugs of this class lived,
+    so it is the coverage that matters most. The drill-in (state select → Routes → open a
+    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
+    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
+    not read a green run as covering the route page.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
