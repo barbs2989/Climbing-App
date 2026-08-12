@@ -222,6 +222,11 @@ const tap = async (name) => {
 // follow-up". `?zr=1` calls the app's own openRoute() from inside the opener, which cannot be
 // defeated by a slow list, a row that renders differently, or a select whose labels move.
 await load("?zr=1");
+// Wait for the navigation itself, not just for the page to settle. `load` returns on
+// __overlaysReady, and tying the two together is what the first CI run got wrong — belt and
+// braces, so a future change to either cannot silently reintroduce the race.
+await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).catch(() => {});
+await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
 const opened = await page.evaluate(() => {
   if (!window.__routeOpen) return null;
   // The route page's own heading, for the log line — proof of WHICH route, not just that
