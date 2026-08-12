@@ -13,6 +13,7 @@
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouteProposals, approveNewRoute, rejectNewRoute } from "./db";
+import { gradeNumFor } from "./grade";
 import { C } from "../ClimbMatchCore";
 
 // The form collects seven fields that have no column in `routes` (rockStyle, rock,
@@ -46,10 +47,19 @@ export function RouteProposalQueue() {
     qc.invalidateQueries({ queryKey: ["area-routes"] });
   };
 
-  const doApprove = async (id) => {
+  /* Takes the whole proposal, not just its id, because `grade_num` is computed HERE from the
+     grade and discipline the climber submitted. It is the column both finder RPCs sort and
+     filter on (`grade_num ... nulls last`, `grade_num >= min_grade`), so a route approved
+     without one sorts behind the entire 205k-route catalog. #814 shipped without it.
+     Computed client-side on purpose: the arithmetic already exists four times over in the
+     pipeline, and a SQL fifth is the drift this codebase keeps paying for — so the number
+     travels to the RPC, which still does the writing. */
+  const doApprove = async (r) => {
+    const id = r.id;
     setBusyId(id); setMsg(null);
     try {
-      const newId = await approveNewRoute(id);
+      const v = r.value || {};
+      const newId = await approveNewRoute(id, gradeNumFor(v.grade, v.discipline));
       setMsg({ kind: "ok", text: "Filed as " + newId });
       refresh();
     } catch (e) {
@@ -146,7 +156,7 @@ export function RouteProposalQueue() {
                 </div>
               </div>
             : <div style={{ display: "flex", gap: 7, marginTop: 9 }}>
-                <button onClick={() => doApprove(r.id)} disabled={busy}
+                <button onClick={() => doApprove(r)} disabled={busy}
                   style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : "#fff", border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
                   {busy ? "Working…" : "Approve — file this climb"}
                 </button>
