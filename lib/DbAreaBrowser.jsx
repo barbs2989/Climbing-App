@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -129,27 +129,57 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
 }
 
 // ── state picker: exact match for the static "Pick a state" AreaBrowse ──
+// The subdivision noun differs by country and there is no column that carries it — Canadian
+// provinces are stored with area_type "state" like everywhere else. Named explicitly rather
+// than inferred, with a neutral fallback so a third country reads sensibly on the day it
+// lands instead of calling Bavaria a state.
+const SUBDIVISION = { usa: "state", canada: "province or territory" };
+const subdivisionNoun = id => SUBDIVISION[id] || "region";
+
 function StatePicker({ onPick, C }) {
+  const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
+  const [countryId, setCountryId] = useState("");
+  // One country is not a choice, it is a dead tap — so skip the step until there are two.
+  // The catalog ran on a single root for its whole life and would have shown a pointless
+  // "pick a country" select the entire time.
+  const only = countries && countries.length === 1 ? countries[0].id : null;
+  const country = countryId || only || "";
+  const noun = subdivisionNoun(country);
+  // `path` is the materialized ltree and its first label is the root, so this needs no
+  // extra query and cannot disagree with the tree.
+  const inCountry = (states || []).filter(x => !country || String(x.path || "").split(".")[0] === country);
+  const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
-      <SL C={C}>Pick a state</SL>
+      {only ? null : (
+        <div style={{ marginBottom: 10 }}>
+          <SL C={C}>Pick a country</SL>
+          <select aria-label="Select a country" value={country} disabled={lc || !countries}
+            onChange={e => setCountryId(e.target.value)}
+            style={{ ...selStyle, cursor: lc || !countries ? "default" : "pointer" }}>
+            <option value="">{lc ? "Loading countries…" : (countries && countries.length) ? "Select a country…" : ec ? "Couldn’t load countries" : "No countries found"}</option>
+            {(countries || []).map(c => <option key={c.id} value={c.id}>{c.name + (c.route_count != null ? ` — ${c.route_count.toLocaleString()} climbs` : "")}</option>)}
+          </select>
+        </div>
+      )}
+      <SL C={C}>{`Pick a ${noun}`}</SL>
       {/* The placeholder used to fall back on `isLoading || !states`, so a FAILED load -- where
           isLoading is false but states is undefined -- left the control reading "Loading states…"
           forever, directly above the error message saying it could not load. Two statements
           contradicting each other, and the app looks hung rather than broken. This is the
           poor-signal path, which for a climbing app is not an edge case. */}
-      <select aria-label="Select a state" value="" disabled={isLoading || !states} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600, cursor: isLoading || !states ? "default" : "pointer" }}>
+      <select aria-label={`Select a ${noun}`} value="" disabled={isLoading || !states || !country} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ ...selStyle, opacity: country ? 1 : 0.55, cursor: isLoading || !states || !country ? "default" : "pointer" }}>
         {/* Data outranks error. A failed REFETCH leaves the previous list intact, so the
             options below are still listed and still work — saying "Couldn’t load states"
             above a populated dropdown contradicts what the user can plainly see, and
             hides a list that is genuinely usable. Only claim failure when there is
             nothing to show. Offline this is the common case, not a rare one: the refetch
             cannot succeed, and the list it already has is exactly what was wanted. */}
-        <option value="">{isLoading ? "Loading states…" : (states && states.length) ? "Select a state…" : error ? "Couldn’t load states" : "No states found"}</option>
-        {(states || []).map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+        <option value="">{!country ? "Choose a country first" : isLoading ? `Loading ${noun}s…` : inCountry.length ? `Select a ${noun}…` : error ? `Couldn’t load ${noun}s` : `No ${noun}s found`}</option>
+        {inCountry.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
-      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap a state to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
+      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {isLoading ? <div style={{ color: C.textMuted, fontSize: 12, marginTop: 8 }}>Loading states…</div> : null}
       {/* Same split: red is for "you have nothing", muted is for "this may be out of date".
           Telling someone to check their connection is useless advice when the list they
