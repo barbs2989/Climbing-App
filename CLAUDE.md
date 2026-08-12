@@ -747,15 +747,27 @@ a build error, but a screen that renders wrong or not at all.
   - **Six detectors now, and they are not the same kind of claim** — the summary says so per
     detector rather than labelling everything a candidate. D1/D2/D4 are hypotheses; D3/D6 are
     exact defects; D5 is exact about a *declaration*, not about the tree.
-  - **D4 — an area nested inside a parent of the identical name, both holding routes.**
-    `wa_pit_the_2` holds 10 routes inside `wa_pit_the`'s 13, so one crag exists twice with its
-    routes split. **D2 cannot see this and never could**: it requires the duplicate to have
-    `route_count === 0`, which is what makes a stub safe to call a stub. Matched on the **raw**
-    name, deliberately not `canon()` — a singular child inside a plural parent is the *normal*
-    boulder-field shape ("Aries Boulder" inside "Aries Boulders" is one boulder in a named
-    cluster). Measured before shipping: `canon()` gives 6 WA hits of which 3 are that
-    legitimate shape, raw equality gives exactly the 3 real ones. `--inject=twinplural` is the
-    false-positive guard and must **not** fire.
+  - **D4 — a container whose ONLY child carries the identical name**, i.e. a level that says
+    nothing: the browser shows "Last Unicorn, The", then "Last Unicorn, The", then two boulder
+    problems. Exact, no route counts involved — 12 hits catalog-wide, 1 in WA, all 12 a
+    `region` whose lone child is a same-named `crag`. Matched on the **raw** name, so a
+    singular child inside a plural parent ("Aries Boulder" in "Aries Boulders" — one boulder in
+    a named cluster) is correctly ignored; `--inject=twinplural` pins that.
+    - **Reported, never repaired, and the repair is genuinely awkward rather than merely
+      risky:** `routes_require_leaf` refuses to move the routes up while the child still
+      exists, and the FK refuses to drop the child while routes point at it. It needs a
+      deferred constraint or two transactions.
+    - **D4's FIRST version, shipped in #820, was vacuous, and the reason generalises.** It
+      looked for a same-named parent/child pair where *both* held routes and reported 3 WA hits
+      that all looked real. Every one was false and the test could never have found a true one:
+      `route_count` is a **subtree aggregate**, so the parent's count came entirely from the
+      child (all 3 WA parents, and all 58 catalog-wide, held **zero** direct routes); and
+      `trg_areas_leaf_xor` means **0 of 47,590** areas hold child areas and direct routes at
+      once, so "both halves populated" cannot exist. A same-named container/leaf pair is the
+      *correct* way to say "this crag has its own problems and also contains other boulders" —
+      `wa_fuzz_wall` holds Span Man and Haunted Shack beside `wa_fuzz_wall_2`. **Ask what a
+      detector cannot report, not only what it does**, and never read a subtree aggregate as
+      evidence about a row.
   - **D5 — region-level children against `scripts/wa-region-shape.json`**, the only detector
     that consults anything outside the DB, and the only one that can see the `0118` class: MP
     groups a scatter of small crags under a container, our import drops them flat, and
