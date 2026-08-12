@@ -23,7 +23,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
 import { routeTerrain, fitAdvice, fitGear } from "./lib/terrain";
-import { rappelReportedMax } from "./lib/rappels";
+import { rappelReportedMax, rappelHeaderLabel } from "./lib/rappels";
 import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
@@ -790,7 +790,7 @@ function RappelTable({route,onEdit}){
   const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);
   const total=raps.reduce((a,r)=>a+(r.lengthM||0),0);
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
-    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{(function(){var mx=rappelReportedMax(route);return (mx!=null&&mx>raps.length)?("RAPPELS · "+raps.length+" documented · up to "+mx+" reported"):("RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":""));})()}</div><ProvChip prov={sectionProvenance(route,"rappels")}/></div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
+    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{rappelHeaderLabel(route)}</div><ProvChip prov={sectionProvenance(route,"rappels")}/></div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
     {route.rappelCountNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:9,background:C.surface,borderRadius:8,padding:"7px 9px"}}>{route.rappelCountNote}</div>:null}
     {/* A rappel row answers four questions in the order you ask them on the ground:
         WHERE is the station (`station`) — the one a party actually gets stuck on, and the one

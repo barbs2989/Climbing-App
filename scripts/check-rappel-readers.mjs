@@ -46,8 +46,14 @@ const GUARD = "check:rappel-readers";
 // reports green about nothing ([[guards-must-prove-they-read-the-app]]).
 appSources(ROOT, GUARD);
 
-const FILE = "RouteDetail.jsx";
-const SRC = fs.readFileSync(path.join(ROOT, FILE), "utf8");
+/* The readers live in TWO files now: RouteDetail.jsx renders them, lib/rappels.js derives
+   them. Scanning only the first left rappelDocumented/rappelHeaderLabel — which read
+   .rappelDetail to build the RAPPELS header — outside a guard whose whole subject is
+   rappelDetail readers, and the fail-closed branch could not catch it because the other file
+   still had five. A guard that names its inputs must name all of them ([[#547]]). */
+const FILES = ["RouteDetail.jsx", "lib/rappels.js"];
+const FILE = FILES.join(" + ");
+const SRC = FILES.map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
 
 const ENRICHMENT = ".rappelDetail";
 const CONTRIB_GUARD = "_rapEdited";
@@ -64,7 +70,9 @@ const CONTRIB_GUARD = "_rapEdited";
 // would report a phantom sixth reader.
 function topLevelFunctions(src) {
   const out = [];
-  const re = /\nfunction ([A-Za-z_$][\w$]*)\s*\(/g;
+  // lib/rappels.js exports its readers, so `export function` has to match as well — without
+  // this the new file parses to zero functions and contributes nothing to the scan.
+  const re = /\n(?:export\s+)?function ([A-Za-z_$][\w$]*)\s*\(/g;
   let m;
   while ((m = re.exec(src))) {
     const open = src.indexOf("{", m.index + m[0].length - 1);
