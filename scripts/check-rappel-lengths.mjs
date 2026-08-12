@@ -13,6 +13,19 @@
 // numbers. The question here is only whether a stated number is physically consistent with the rope
 // configuration the route's own text describes.
 //
+// THE HOLE IN RULES 1 AND 2, printed rather than hidden. Both stand down when the route's text
+// names two ropes — and a two-rope mention only proves a long rappel is POSSIBLE SOMEWHERE on the
+// route, never that every station is that long. `wa_tooth_and_claw` was cleared by this reasoning
+// and was defective anyway: six stations all stored at exactly 70m, where the two-70m-rope fact
+// applies to the FIRST rappel only and six 70m rappels is far more than the height of the route.
+// Rule 3 is what caught it in the end, because the researcher wrote down what the numbers were.
+//
+// A "every station identical and >=50m" rule would catch that shape, and it is NOT added here: a
+// route whose source really does report seven double-rope rappels of full rope length
+// (`wa_south_face_5`) is indistinguishable from it by any test this script can run. The difference
+// is whether a source states the distances, which is not in the data. So the residual risk is a
+// UNIFORM full-rope table on a route that names two ropes; check that shape by hand.
+//
 // Read-only, anon key. NOT a build gate: this is a property of the database, not the checkout, so no
 // code change can cause or fix it and failing `npm run build` would block PRs whose author cannot
 // affect it — the same reasoning `check:counts` records.

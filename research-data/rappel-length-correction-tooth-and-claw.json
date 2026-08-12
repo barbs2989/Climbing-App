@@ -1,0 +1,33 @@
+{
+  "_README": [
+    "A second rope-capacity correction, and it corrects an earlier judgement in this same sweep.",
+    "",
+    "wa_tooth_and_claw was CLEARED by the first pass because its text names two 70m ropes, and a",
+    "70m station is legitimate off two 70m ropes. That reasoning was right in general and wrong",
+    "here: the two-rope mention applies to the FIRST rappel only. Six 70m rappels is 420m, far",
+    "more than the height of the route, and no source publishes per-station distances below the",
+    "first. So the uniform 70s are the rope's capacity again — the same defect, wearing a",
+    "configuration that made it look sound.",
+    "",
+    "The lesson for the guard: a two-rope mention proves a LONG rappel is POSSIBLE somewhere on",
+    "the route. It does not prove every station is that long."
+  ],
+
+  "wa_tooth_and_claw": {
+    "area": "wa_lexington_tower",
+    "_why": "Six stations all stored at exactly 70m with no published per-station distance. The one sourced fact about distance is that two 70m ropes reach the bolted anchor atop pitch 5 from the top station while doubled 60m ropes do not — which bounds that single rappel between 60m and 70m rather than measuring it, and says nothing at all about the five below. All six are nulled: an upper bound is not a measurement, and writing 70 everywhere is exactly the substitution this sweep exists to remove. The rope requirement is the actionable fact and it lives in the count note, where it can be stated precisely instead of being encoded as five wrong numbers.",
+    "rappel_add": {
+      "1": { "lengthM": null },
+      "2": { "lengthM": null },
+      "3": { "lengthM": null },
+      "4": { "lengthM": null },
+      "5": { "lengthM": null },
+      "6": { "lengthM": null }
+    },
+    "set": {
+      "rappel_count_note": "No source publishes a rappel total for this route, and the count moves with where you start, so no per-station distances are listed. The rope requirement is published and it is not a preference: the top station is a bolted anchor roughly 20-30 ft above the old pitch-6 slung-block anchor, and from it two 70m ropes reach the bolted anchor atop pitch 5 while doubled 60m ropes do not. A 70m lead rope plus a 70m tagline is the stated ideal because it keeps the option of rappelling from the very top; a party on 60s has to start lower, from partway through the 4th-class scrambling on pitch 7. Most parties do not rappel this at all — they top out on the East Shoulder and take the walk-off, a very exposed and sketchy 4th-class traverse west into the descent gully, which most keep the rope on for despite poor protection."
+    },
+    "_sources": ["carried from the researched batch for this route"],
+    "_confidence": "corroborated"
+  }
+}
