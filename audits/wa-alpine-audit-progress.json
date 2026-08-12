@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_stanley_burgner",
+  "last_processed_id": "wa_the_brothers_south_couloir",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 592,
   "batches": [
@@ -2346,6 +2346,25 @@
       "flagged_for_human_review": 28,
       "clean": 0,
       "sql_file": "audits/sql/2026-08-12-batch-104.sql"
+    }    ,
+    {
+      "batch_number": 105,
+      "date": "2026-08-12",
+      "route_ids": [
+        "wa_storm_king_north_face",
+        "wa_storm_king_southwest_scramble",
+        "wa_sw_ridge",
+        "wa_swiss_peak_standard_route",
+        "wa_tenpeak_mountain_north_couloir",
+        "wa_tenpeak_mountain_southeast",
+        "wa_tepeh_towers",
+        "wa_the_brothers_south_couloir"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "No new SQL fixes this batch. Re-checked several already-flagged/self-documented items rather than resolving them, since summitpost.org, mountaineers.org and similar reference domains were egress-blocked again this run (same domains flagged blocked in batch 104's tooling note) -- WebSearch snippet synthesis only. Confirmed via WebSearch snippets, matching on file: Tenpeak Mountain FA (Lloyd Anderson & Tom Campbell, Sept 21 1940), The Brothers FA history (1908 north/Mt. Arthur, 1912 south/Mt. Edward, same six names), Swiss Peak elevation (7988 ft), and the Middle Gunsight SW Ridge / Tepeh Towers route descriptions."
     }
   ]
 }

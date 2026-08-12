@@ -7239,3 +7239,47 @@ this fresh clone) was recreated locally from the read-only anon key supplied for
 `check:sql` could verify against the live schema; it is gitignored and was not committed.
 
 Next batch will continue alphabetically after `wa_stanley_burgner` (see progress file).
+
+## Batch 105 — 2026-08-12
+
+Eight routes, next-alphabetically after `wa_stanley_burgner`: Storm King (2 routes), Middle
+Gunsight SW Ridge, Swiss Peak, Tenpeak Mountain (2 routes), Tepeh Towers, The Brothers South
+Couloir.
+
+**Confirmed fixes (0):** none this batch.
+
+**Clean (6):** `wa_sw_ridge`, `wa_swiss_peak_standard_route`, `wa_tenpeak_mountain_north_couloir`,
+`wa_tenpeak_mountain_southeast`, `wa_tepeh_towers`, `wa_the_brothers_south_couloir`. Spot-checked
+via WebSearch against Wikipedia/Peakbagger/Mountain Project/trip-report snippets: Tenpeak
+Mountain's FA (Lloyd Anderson & Tom Campbell, Sept 21 1940) matches exactly; The Brothers' FA
+history (north/Mt. Arthur 1908 by C. Hill & W. Hill, south/Mt. Edward 1912 by Collier, Corkenill,
+Dehn, Fish, Goldsmith, Trumbull) matches exactly, and the row's own `data_quality.gaps` already
+correctly flags the 6,842 ft (Wikipedia/NGVD29) vs 6,866-6,868 ft (Brothers Wilderness page,
+Mountaineers/USGS) elevation split as unresolved rather than picking one; Swiss Peak's 7,988 ft
+high point confirmed; the Middle Gunsight SW Ridge and Tepeh Towers beta both closely match
+independent route-page descriptions (loose-then-good-climbing 5-pitch ridge; short low-5th
+pitch + scramble off the Eldorado icecap, respectively).
+
+**Flagged for human review (2), both on Storm King, neither newly resolved:**
+- `wa_storm_king_north_face` — this row already self-flags (`verif.status: unverified`) that no
+  source could corroborate a distinct "North Face" route or its claimed 1978 Dick
+  Emerson/Walt Grove FA, separate from the peak's only well-documented line (the Southwest
+  Route), and calls it "likely a fabricated entry." Attempted to independently confirm or
+  refute this pass; summitpost.org and mountaineers.org (the two primary route-page sources)
+  were both egress-blocked, and a WebSearch summary claiming to confirm the FA looked like it
+  was echoing the search query back rather than citing real snippet text, so it was not trusted
+  either way. Left as-is; still needs a human with direct source access.
+- `wa_storm_king_southwest_scramble` — internal contradiction between two of the row's own
+  structured fields: `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` still point to
+  Colonial Creek Campground (48.6855, -121.0925), but a waypoint note on the same row says that
+  trailhead "is a different, unconnected drainage well north of here and is very likely wrong"
+  and proposes Rainy Pass Trailhead instead. Not resolved here since neither approach could be
+  independently confirmed against a live source this run (same blocks as above), and the row's
+  own hedge ("very likely wrong," not "wrong") isn't confident enough to act on without a source.
+
+**Tooling note:** summitpost.org, mountaineers.org, web.archive.org were all unreachable via
+WebFetch this run (egress-blocked or unsupported), consistent with batch 104's tooling note
+covering the same domain family. All verification this batch relied on WebSearch's snippet
+synthesis rather than direct page fetches.
+
+Next batch continues alphabetically after `wa_the_brothers_south_couloir` (see progress file).
