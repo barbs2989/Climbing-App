@@ -1,7 +1,11 @@
--- 0126 — the CONSUME half of the add-a-route flow.
+-- 0127 — the CONSUME half of the add-a-route flow.
 --
--- Renumbered 0125 -> 0126: main took 0125 for black_peak_under_washington_pass while this
--- was being verified. The SQL below is ALREADY APPLIED to the live DB (applied as 0125 on
+-- Renumbered twice, 0125 -> 0126 -> 0127. main took 0125 for black_peak_under_washington_pass
+-- while this was being verified, and #812 (Fifty Classics, Canada) then claimed 0126 as well.
+-- 0127 was chosen over waiting because #812 has to renumber its OWN 0125 regardless — that one
+-- collides with main, not with a peer — so moving this file unblocks both instead of one.
+--
+-- The SQL below is ALREADY APPLIED to the live DB (applied as 0125 on
 -- 2026-08-12 and verified: 12 columns on contributions, route_slug correct, the admin gate
 -- returning P0001, and a submitter-set status overwritten to pending). The number is
 -- bookkeeping for check:migrations; the database does not read the filename. Do not re-run
