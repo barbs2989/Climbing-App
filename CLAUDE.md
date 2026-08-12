@@ -23,6 +23,7 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -729,6 +730,37 @@ a build error, but a screen that renders wrong or not at all.
     second first-draft false pass).
   - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
     draft and both were false passes**. Neither was visible by reading the script.
+- **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
+  resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
+  other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
+  not blank the screen — it renders a placeholder that reads like a person, or drops them.
+  Seven rounds of this have shipped: **#569** ("You + 0 climbers"), **#680** (a DB group's own
+  owner got no controls), **#715** ("undefined · 0"), **#734** (a real invite under the words
+  "No crew invites"), **#756** (the day-agreement row said "Climber"), **#778** (the FLOAT PLAN
+  dropped real partners — the screen recording who is on the mountain listed one of two — and
+  the trip recap said "Member") and **#826** (a past crew card listed no partners, so
+  "reconnect" could never suggest whoever you actually climbed with). Each was found by walking
+  one more surface; this asks statically, across all of them at once. Gated by `npm run build`.
+  - **Why a script and not a comment**, and this is the whole argument: #778 shipped the
+    resolver plus three fixes, and #776 then merged from a branch based on **pre-#778 main** —
+    its squash silently **reverted all of it**. Clean merge, no conflict, every check green,
+    and main went back to shipping the bugs. The only thing that would have noticed was a step
+    in a one-off nobody runs. Same reasoning as `check:rappel-readers`.
+  - A site passes when the **same expression** also consults real profiles — what `CrewCard`'s
+    `mem` does (the #569 fix). That is a correct answer, not an exemption.
+  - **Comments are stripped before any test**, and it is load-bearing: two call sites explain
+    this rule in a comment that *names* `crewMemberById`, so leaving comments in would let a
+    site pass on prose about the fix rather than the fix. The false pass
+    `check:rappel-readers` already records.
+  - Six exemptions, each with a **measured** reason (seed-only lists: `crewReqIn`,
+    `crewJoinIn` twice, the seed invite card, `GuideDashboard`'s inquiries, and a
+    notification whose result is guarded by `if(c)` so a miss opens nothing). A **stale**
+    exemption fails, so the list cannot rot into a description of code that is gone.
+  - Fails **closed**: zero member-id lookups means the walk broke, never that the app is clean.
+  - Injection-tested, 6 cases at the bottom of the script: reverting each of the three #778
+    fixes fails and names the file and line; deleting a live exemption reports it as a finding;
+    an exemption matching nothing reports as stale; and breaking the scan vocabulary reports
+    "found NO member-id lookups at all" rather than passing.
 - **`check:provenance`** asserts that every route-page section that carries a provenance chip
   still renders one, and that a section with **no data carries none**. The chip says how a
   section was **sourced** — `Climber-verified` / `On file` / `Auto-generated` — and deliberately
