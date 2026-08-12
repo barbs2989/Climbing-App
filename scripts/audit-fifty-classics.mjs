@@ -69,7 +69,7 @@ const peakKey = s => norm(areaName(s)).replace(STOP, " ").split(/\s+/).filter(Bo
 // `spire` is dropped here for the same reason peakKey drops it: the book writes the formation
 // into the route name ("Lost Arrow Spire Tip") where the catalog does not ("Lost Arrow Tip").
 // Without this the only candidate left was "Lost Arrow Spire Direct" — a different line, which
-// an earlier run of this script duly tagged. 0126 corrects that tag.
+// an earlier run of this script duly tagged. 0131 corrects that tag.
 const routeKey = s => norm(s).replace(/\b(route|the|complete|standard|spire)\b/g, " ").split(/\s+/).filter(Boolean).join(" ").trim();
 
 // Every US route id in this catalog is prefixed with its two-letter state. So a Canadian entry
@@ -80,7 +80,7 @@ const REGION_PREFIX = {
   Utah: "ut", California: "ca", "New Mexico": "nm",
   // Canadian provinces use their own two-letter codes for the same reason the states do, and
   // none of them collide with a US prefix. `ca_` was the wrong choice for Canada — it is
-  // California here, and 0127 moves those rows off it. Matching positively rather than by
+  // California here, and 0131 moves those rows off it. Matching positively rather than by
   // "not a US prefix" is what makes that mistake impossible to repeat silently.
   "British Columbia": "bc", Alberta: "ab", Yukon: "yt", "Northwest Territories": "nt",
 };

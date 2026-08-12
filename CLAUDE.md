@@ -21,6 +21,9 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
+npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -596,12 +599,119 @@ a build error, but a screen that renders wrong or not at all.
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
     exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - **It asks the same question one level down for the two jsonb fields.** `road` and `access`
+    are objects, so passing the column check proves nothing about the individual sub-keys the
+    form offers. `ROAD_KEYS` / `ACCESS_KEYS` are checked against the file for a reader, because
+    the readers and the key lists sit ~400 lines apart and nothing else ties them together —
+    and `access` carries **two spellings of the same fact** (`land_manager` on 399 of 400
+    sampled rows, `landManager` on 8, display reading `ac.land_manager||ac.landManager`), so
+    "which spelling does the form write?" has a right answer and a silently-wrong one.
+    Deliberately a substring test: a sub-key is legitimately read as `ac.foo`, `road.foo` or
+    destructured, and demanding one shape would fail on correct code. Writing the *legacy*
+    spelling **passes** on purpose — it is read, so it is worse rather than broken, and the
+    editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-readers`** enforces one sentence: **a function that reads
+  `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
+  correction out-votes the station-by-station enrichment rather than the reverse. #787 found
+  every reader preferred the enrichment, so on the 155 routes carrying a station list a
+  correction could pass the 3-agree gate and display **nothing**; it fixed the three readers
+  that existed and wrote the rule in a comment above them. #784 then added two more readers
+  and neither carried the guard — five readers, three guarded, and `rappelHeadingCount`
+  renders the section heading, which states a **number**. #791 repaired both.
+  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
+    better comment: the merge was **clean** (the two PRs touch different lines), every gate
+    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
+    a number), and both new functions read as **correct in isolation**. Only a comment three
+    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+  - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
+    explanatory comment about this very rule sits at top level between functions, so a
+    whole-file grep would report a phantom sixth reader. Function bodies come from balancing
+    braces over **raw** source — the blanker used elsewhere desynchronises on JSX apostrophes.
+  - **Comments are stripped before either test, and that is load-bearing.** Two of the five
+    readers explain the rule in a comment that *names* `_rapEdited`, so deleting their real
+    guard still left the token in the body. Injection case 2 unguarded all five and the first
+    draft reported **four** — the two best-documented readers were the two that would have
+    slipped. Presence is not use, the same false pass `check:fire` records for `zoneInEffect`.
+  - Fails **closed**: zero readers means the column was renamed or the walk broke, never that
+    the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
+    that branch could never fire until the match was word-bounded (injection case 3, the
+    second first-draft false pass).
+  - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
+    draft and both were false passes**. Neither was visible by reading the script.
+- **`check:provenance`** asserts that every route-page section that carries a provenance chip
+  still renders one, and that a section with **no data carries none**. The chip says how a
+  section was **sourced** — `Climber-verified` / `On file` / `Auto-generated` — and deliberately
+  not how *true* it is, because nothing in `routes` can support that claim:
+  `data_quality.confidence` is **94.0% "MEDIUM"** across 8,367 WA routes (58 LOW, 57 HIGH), and
+  89% of the `gaps` arrays are one boilerplate sentence repeated 8,021 times. A chip fed by
+  either says one word everywhere. Static apart from a `renderToStaticMarkup` pass, so it sits
+  in `npm run build`. See `lib/provenance.js`.
+  - **Adding the prop is not enough, and that is the whole reason this renders rather than
+    greps.** Five of the first ten wired headings showed no chip, each for its own reason:
+    `rappels` was wired to the wrong one of **two** surfaces that both render the text
+    "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
+    `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
+    `check:field-renders` already records; `pitch_detail` splits **per entry** across
+    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare; and the
+    "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
+    season-keyed chip there rendered nothing at all.
+  - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
+    bug, because those need opposite fixes. Match a heading, never the chip label alone.
+  - **`gear` is deliberately NOT wired.** #806's RACK caption owns that section, reads the real
+    per-section column (`gear_confidence`) and stays **silent on the verified majority** —
+    praise on every route is what got two page-level graders (`ProvenancePanel`'s DATA
+    CONFIDENCE, `EnrichmentPanels`' DATA QUALITY) deleted. `sectionProvenance("gear")` is still
+    unit-tested; **do not add a second label to RACK**.
+  - **A per-section signal must beat the route-level flag**, and `sectionProvenance` checks
+    `auto_generated` **last** for that reason: 138 WA routes are `auto_generated=true` AND
+    `gear_confidence=verified` — the audit went back and confirmed a generated rack. #810 added
+    the three assertions that exercise the ordering, because every other case in the file sets
+    one signal or the other and would still pass if the two blocks were swapped.
+  - **"`auto_generated` is 5.4% true" is catalog-wide and understates it badly.** Among routes
+    that actually carry these fields — the only ones that render these sections — it is true on
+    **39–66%** (66% of the 584 with a gpx track). So the chip discriminates: 64.4% "On file"
+    across 13,790 chips, not one word everywhere. `scripts/oneoff/measure-provenance-spread.mjs`
+    is the measurement. Judge a signal on the subset that reaches a screen, never on the table.
+  - **Counting chips: count the `title` attribute, not the label text.** `ProvChip` renders its
+    label in both `title="How this section was sourced: …"` and the text node, so counting
+    `"On file"` returns exactly **double**. That artifact read as duplicate labelling on a tab
+    and was very nearly reported as a defect.
+  - One assertion is **marked WEAK in the script on purpose**: "a bare route renders no chip"
+    passes even when `sectionProvenance` is broken to rate absent data, because a bare route's
+    sections are content-gated and never render, so no heading exists to hang a chip on. The
+    honesty rule is pinned by the unit assertions, not by that one.
+  - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
+    row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
+    absent data fails the four emptiness assertions.
+- **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
+  a trip report carries approach / climb / descent minutes and a car-to-car total, and other
+  climbers can read them — but the planner still answered "how long will this take?" with
+  Scarf's Rule alone, so the app held evidence of how long a route takes and printed a formula
+  beside it. The panel now sits **above** the estimate, because ordering is a claim about
+  authority: measurement first, model second.
+  - **No existing guard could ever see it.** `check:bare` renders a route with no activity;
+    `check:ui` walks the seeded demo, whose `cond.carToCar` is **prose** ("7 hr", "3 days",
+    "Turned around") and therefore deliberately ignored; `check:zero` has nothing logged; and
+    `check:field-renders` covers `routes` columns while these are `climb_logs` ones. That is the
+    `check:anniversary` shape — a surface nothing exercises breaks silently and stays broken.
+  - **Numeric minutes only, never the `carToCar` string.** Parsing it would read `3` out of
+    "3 days", which is the mistake `rappels` and `season` already record. `carToCarMin` is the
+    integer; the legs are integers; their sum is a real car-to-car. One assertion exists purely
+    to fail if anything ever starts parsing English durations.
+  - It does **not** feed the model. `scarfHrs` is parameterised by the READER's fitness and pack
+    weight, and a logged time comes from a party whose fitness nobody recorded; blending them
+    would give a number that is neither measurement nor prediction. A median with the spread and
+    the party count says what it is. A **turned-around** party is excluded from the total — they
+    covered real ground, but not the route — and the count on screen is what proves it.
+  - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
+    the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
+    prose, and swapping the median for a mean each fail it by name.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
