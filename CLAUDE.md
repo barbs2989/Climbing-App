@@ -32,6 +32,11 @@ npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:approach-scope # does a route's approach text run past the base of the climb?
+npm run audit:waypoint-track # is every waypoint on (or near) the route's own GPS track?
+npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
+npm run check:enrichment-traceable # does a climbing_route batch invent anything?
+npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -602,6 +607,41 @@ a build error, but a screen that renders wrong or not at all.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
+  separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
+  `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
+  them apart stops the audit growing flags only a pipeline cares about.
+  - The problem it exists for: `approach` is meant to describe the walk in, but a route with no
+    pitch table had nowhere else to put a description of the climbing, so that description went
+    into the approach and the prose runs past the base and keeps going to the summit. 360 WA
+    routes carry it; 254 had no pitch table. Migration 0122's `climbing_route` is where it goes.
+  - Batches are produced by **re-homing, never researching** — every fact must already be in
+    that route's own `approach`. That instruction is worth nothing unless something checks it,
+    so **`check:enrichment-traceable`** verifies that every number and every load-bearing
+    feature/direction word in a segment also appears in the source. Prose may be rewritten
+    freely; specifics may not be invented. Run it on a batch BEFORE `enrich:apply`.
+  - It took two rounds to make that guard right, and both are the same lesson. It first flagged
+    "Traverse to the summit gully" as untraceable where the source said "travers**ing** higher"
+    — a guard that flags correct work teaches people to ignore it. The fix (stem both sides)
+    still failed because the stemmer never stripped a trailing `e`, so "traverse" and
+    "traversing" never met. Over-stemming is safe here: the same function runs on both sides.
+  - Injection-tested: adding *"Rappel 45 m from a bolted anchor on the cornice above the
+    chimney"* to a Buckner segment is caught on the number, "cornice" and "chimney" — and
+    correctly does NOT flag "rappel", which that route's approach really does mention.
+  - **An empty result is a real result.** Eldorado's Northwest Couloir gets zero segments
+    because its approach stops at the couloir base; Mount Anderson gets two despite `pitches:7`
+    because the text stops at Flypaper Pass. Those routes stay on the candidate list. They are a
+    gap in the data, and leaving the gap visible beats filling it from imagination.
+  - `enrich:apply` is the single write path and must stay so: it asserts each route's `area_id`
+    before writing (only ~9% of route ids are peak-scoped, so a name-shaped id proves nothing),
+    writes through `patchRow`, then **re-reads and reconciles**. Its verification builds the
+    check list from what was actually written — an earlier version omitted `climbing_route`, so
+    a route setting only that column satisfied every remaining clause vacuously and printed
+    "verified" having confirmed nothing.
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+    section was found **defined and mounted nowhere** after a merge kept main's copy of the
+    dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were

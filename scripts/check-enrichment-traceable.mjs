@@ -36,7 +36,11 @@ const rows = await res.json();
 const srcOf = new Map(rows.map(r => [r.id, String(r.approach || "")]));
 if (srcOf.size !== ids.length) console.log(`note: ${ids.length - srcOf.size} route(s) in the batch had no row`);
 
-const norm = s => s.toLowerCase().replace(/[‐-―]/g, "-").replace(/[‘’]/g, "'");
+// Fold accents. Climbing prose carries "arête" and "couloir" with and without diacritics
+// interchangeably, and without this the source's "arête" and a segment's "arete" are different
+// strings — which the checker reported as invented content on a correct route.
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+  .replace(/[‐-―]/g, "-").replace(/[‘’]/g, "'");
 const nums = s => (norm(s).match(/\d[\d,\.]*/g) || []).map(x => x.replace(/,/g, "").replace(/\.$/, ""));
 // Feature/direction words worth checking. Deliberately narrow: these are the tokens a reader
 // navigates by, and the ones an invented sentence tends to introduce.
