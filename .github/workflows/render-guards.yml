@@ -1,7 +1,7 @@
 name: Render guards
 
-# Five checks that ask "does this reach a screen, and reach it correctly?" — a question
-# the static guards in build-check.yml cannot answer, because all five need the app
+# Six checks that ask "does this reach a screen, and reach it correctly?" — a question
+# the static guards in build-check.yml cannot answer, because all six need the app
 # rendered.
 #
 # Why they need CI at all. All were hand-run only, and on 2026-08-09 that failed
@@ -227,3 +227,35 @@ jobs:
           # stance as area-count-drift.yml.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+  horizontal-overflow:
+    name: The app fits a 390px phone
+    runs-on: ubuntu-latest
+    # Walks the same 6 tabs and ~43 openable overlays as its siblings; measured at ~6m
+    # locally, so this is headroom rather than an expected duration.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:overflow cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Nothing runs off the right-hand edge
+        run: npm run check:overflow
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app
+          # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
