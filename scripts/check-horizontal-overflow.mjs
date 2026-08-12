@@ -186,6 +186,7 @@ if (argvSelfTestOnly) { await browser.close(); stopServer(); process.exit(0); }
 const lines = async () => new Set((await page.innerText("body").catch(() => "")).split("\n").map((s) => s.trim()).filter(Boolean));
 
 const findings = [];
+let routeNotReached = false;
 const baseline = {};
 for (const t of TABS) {
   await load(`?zt=${t}`);
@@ -215,27 +216,18 @@ const tap = async (name) => {
   if (ok) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
   return ok;
 };
-await load("?zt=routes");
-await page.evaluate(() => {
-  const sel = document.querySelector("select");
-  if (!sel) return;
-  const opt = [...sel.options].find((o) => /^Washington\b/.test(o.label) || /^Utah\b/.test(o.label));
-  if (!opt) return;
-  sel.value = opt.value; sel.dispatchEvent(new Event("change", { bubbles: true }));
-});
-await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
-await tap("Routes");
-// ANY route will do. check:ui pins its sample by name because it asserts on that route's
-// CONTENT; this only measures layout, so pinning would import that check's known flakiness
-// (a rename in the live DB turns it red on a PR that changed nothing) for no benefit. Take
-// the first route row the list offers.
+// Navigated, not driven. This used to select a state, tap Routes and click the first row —
+// three UI steps that did not complete under the scaffold config, so the richest layout in
+// the app printed NOT REACHED on every run and CLAUDE.md carried "fixing it is the top
+// follow-up". `?zr=1` calls the app's own openRoute() from inside the opener, which cannot be
+// defeated by a slow list, a row that renders differently, or a select whose labels move.
+await load("?zr=1");
 const opened = await page.evaluate(() => {
-  const rows = [...document.querySelectorAll('[role="button"]')]
-    .filter((e) => { const t = (e.innerText || "").trim(); return t.length > 8 && !/^(Areas|Routes)$/.test(t); });
-  if (!rows.length) return null;
-  const t = rows[0].innerText.trim().slice(0, 40).replace(/\n/g, " ");
-  rows[0].click();
-  return t;
+  if (!window.__routeOpen) return null;
+  // The route page's own heading, for the log line — proof of WHICH route, not just that
+  // something rendered.
+  const h = document.querySelector("h1,h2");
+  return (h && h.innerText.trim().slice(0, 40)) || "(route detail)";
 });
 if (opened) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
 if (opened) {
@@ -248,10 +240,16 @@ if (opened) {
     if (wide || r.total) findings.push({ screen: "route:" + sub, ...r });
   }
 } else {
-  // Reported, never silent. The DB sample route is known-flaky (a rename in the live DB
-  // turns this red on a PR whose author changed nothing), so it does not fail the run —
-  // but an unreported skip would quietly shrink coverage to the tabs.
-  log(`  route detail`.padEnd(28) + `NOT REACHED — no route row was offered by the list; retry once before believing it`);
+  // Now a FAILURE, not a note — recorded here and raised with the other hard failures below,
+  // so the overlay walk still runs and reports whatever it finds.
+  //
+  // While this was a UI drill-in it could miss for reasons that were nobody's fault — a
+  // renamed route, a slow list — so a note was the honest call. `?zr=1` calls openRoute()
+  // directly, so the only way it does not land is that the opener or the route page is
+  // broken, and both are worth failing on. The screen where both recorded bugs of this class
+  // lived must not be able to go unmeasured in silence.
+  routeNotReached = true;
+  log(`  route detail`.padEnd(28) + `NOT REACHED — ?zr=1 never set window.__routeOpen`);
 }
 
 // The scaffold publishes every overlay it discovered. Read it from the page rather than
@@ -296,6 +294,12 @@ const walked = TABS.length + (overlays.length - skipped);
 if (!overlays.length) {
   console.error("check:overflow FAILED — the scaffold published no overlays, so only tabs were walked.");
   console.error("Look for ANCHOR LOST in the vite output above.\n");
+  process.exit(1);
+}
+if (routeNotReached) {
+  console.error("check:overflow FAILED — ?zr=1 did not open the route detail screen, so the richest");
+  console.error("layout in the app, and the one where both recorded bugs of this class lived, was not");
+  console.error("measured at all. Check the scaffold's opener and that ROUTES[0] still resolves.\n");
   process.exit(1);
 }
 if (walked < TABS.length + 20) {
