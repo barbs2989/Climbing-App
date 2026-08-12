@@ -520,6 +520,12 @@ try {
   // sequence under an injected per-request delay and the old timing opened the route anyway
   // at both 6s and 12s. So do not read this as "the flake is fixed" and stop looking.
   //
+  // It recurred on 2026-08-12 (PR #840, a change confined to SuggestFix, which this walk never
+  // opens) — red in CI, green locally on the identical commit with all 20 screens passing, then
+  // green on re-run. Twice now the cost has been an author proving a red was not theirs, which
+  // is why the retry below exists. The retry addresses the COST, not the cause: the cause is
+  // still unknown and this comment stays until somebody reproduces it.
+  //
   // Two things that injection did establish, both of which correct the obvious story:
   //   - The search box here does NOT issue a name=ilike query. Four /rest/v1/routes requests
   //     were delayed per attempt and ZERO were name searches, so this filters client-side
@@ -535,9 +541,36 @@ try {
   await page.waitForTimeout(800);
   await settledText(page, { min: 30, timeout: 45000 });
   await tap("Routes");
-  const input = await page.$('input[type="text"], input:not([type])');
-  if (input) { await input.fill(ROUTE); await page.waitForTimeout(800); await settledText(page, { min: 30, timeout: 45000 }); }
-  if (!(await tap(ROUTE))) {
+  // BOUNDED RETRY, and deliberately not a longer timeout. The 2026-08-09 investigation could
+  // not reproduce this under an injected slow DB at 6s or 12s, so the exposure is not a wait
+  // that is merely too short, and a bigger number would be a guess dressed as a fix. A retry
+  // buys the one thing that is safe to buy without knowing the cause: if the row genuinely is
+  // not there, every attempt fails and the run still goes red with the same three-way message
+  // below. Nothing is weakened — only the cost of an intermittent miss is removed.
+  //
+  // It re-reads the input and re-types each pass rather than just tapping again, because the
+  // hypothesis this addresses is that the LIST was not ready: the search filters client-side
+  // over an already-loaded list (measured — zero name queries go out), so a re-filter against
+  // a list that has since arrived is the operation that can newly succeed. `fill("")` first,
+  // or React's controlled input keeps the previous value and the second fill is a no-op.
+  //
+  // A retry that succeeds is PRINTED, never silent. Absorbing it quietly would turn a
+  // measurable flake into an invisible one, and the next person to see this go red would have
+  // no idea it had been happening — the same rule this file follows for anything it drops.
+  let input = null, openedOn = 0;
+  for (let attempt = 1; attempt <= 3 && !openedOn; attempt++) {
+    if (attempt > 1) await settledText(page, { min: 30, timeout: 45000 });
+    input = await page.$('input[type="text"], input:not([type])');
+    if (input) {
+      await input.fill("");
+      await input.fill(ROUTE);
+      await page.waitForTimeout(800);
+      await settledText(page, { min: 30, timeout: 45000 });
+    }
+    if (await tap(ROUTE)) openedOn = attempt;
+  }
+  if (openedOn > 1) console.log(`  note: sample route opened on attempt ${openedOn} of 3 — the route list was not ready on the first pass`);
+  if (!openedOn) {
     // In CI nobody is watching the browser, so this failure has to say which of the
     // two very different causes it is. The sample route is pinned by name against the
     // live DB catalog, so a rename or a delete there turns this red on a PR whose
