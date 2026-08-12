@@ -181,12 +181,68 @@ for (const name of MUST_COVER) {
   );
 }
 
+// ── the OTHER submission path: AddRoute's local route object ─────────────────
+// Everything above is about the contribute/SuggestFix path, where CONV does the reshaping.
+// AddRoute has a second, entirely separate exit that CONV never touches: when USE_DB is off it
+// builds a seed-shaped route inline and hands it to onAddRoute, bypassing both the merge and
+// dbRouteToCamel. So the same defect can live there with every check above green, and did:
+//
+//     beta:desc||""      <- a STRING, from the description textarea
+//
+// against readers that are `Array.isArray(route.beta)?route.beta:[]` — the ROUTE BETA
+// long-prose section and the short-tips list. Both dropped it; only the third reader, which
+// has a string fallback, showed anything. All 14 seed routes declare `beta:[…]` and none a
+// string, so the shape was wrong by the app's own convention.
+//
+// The DB path is correct and deliberately different: `_prop.beta` stays a string because it is
+// written to the `beta` COLUMN, and dbRouteToCamel wraps that into an array on the way out.
+// Only the object built here skips that wrapper. Do not "unify" them.
+const nr = block(CORE, "var _nr={", "AddRoute's local route object");
+// key:value pairs at depth 1 of the literal. Depth-tracked rather than regex-split because the
+// values contain ternaries, nested arrays and calls — `beta:desc?[desc]:[]` splits wrong on a
+// naive comma.
+const nrPairs = [];
+{
+  let d = 0, key = null, start = 0;
+  for (let i = nr.indexOf("{") + 1; i < nr.length; i++) {
+    const c = nr[i];
+    if (c === "{" || c === "[" || c === "(") d++;
+    else if (c === "}" || c === "]" || c === ")") { if (!d) break; d--; }
+    else if (c === ":" && !d && key === null) {
+      const m = nr.slice(0, i).match(/([A-Za-z_$][\w$]*)\s*$/);
+      if (m) { key = m[1]; start = i + 1; }
+    } else if (c === "," && !d && key !== null) {
+      nrPairs.push([key, nr.slice(start, i).trim()]);
+      key = null;
+    }
+  }
+  if (key !== null) nrPairs.push([key, nr.slice(start).replace(/}\s*$/, "").trim()]);
+}
+if (nrPairs.length < 8) die(`parsed only ${nrPairs.length} keys out of AddRoute's local route object; the walk broke, so nothing about that path was checked.`);
+
+let nrChecked = 0;
+for (const [key, expr] of nrPairs) {
+  if (!(discards(key) || crashes(key))) continue;
+  nrChecked++;
+  // Array-shaped is enough: an array literal anywhere in the expression covers `[]`,
+  // `desc?[desc]:[]` and `Array.isArray(style)?style:[]`. A bare string or identifier is not.
+  if (/\[/.test(expr)) console.log(`  ok    _nr.${key} — reader is array-only, and the local path builds an array`);
+  else {
+    console.log(`  FAIL  _nr.${key}=${expr} — AddRoute's local path assigns a non-array, but route.${key}'s reader ` +
+      `discards/crashes on one. This object bypasses CONV and dbRouteToCamel, so nothing reshapes it: ` +
+      `the value is accepted, the route is created, and that field renders nowhere.`);
+    fails++;
+  }
+}
+if (!nrChecked) die("checked 0 array-only fields on AddRoute's local path. `beta` is one, so the walk or the reader scan broke.");
+
 if (fails) {
   console.error(`\n${GUARD} FAILED — ${fails} field(s) submit a value their own reader throws away.`);
   console.error("Add a CONV entry that produces the shape the reader expects, next to whatToBring/watchOut in ClimbMatch.jsx.\n");
+  console.error("For a _nr.* failure there is no CONV to add — build the right shape inline, as the seed routes do.\n");
   process.exit(1);
 }
-console.log(`${GUARD}: ok — all ${rows.length} array-only readers are fed a converter.`);
+console.log(`${GUARD}: ok — all ${rows.length} array-only readers are fed a converter, and ${nrChecked} on AddRoute's local path build the shape directly.`);
 
 // Injection-tested, 5 cases:
 //   1. delete the `beta` CONV entry          -> FAILS naming beta (the shipped defect)
