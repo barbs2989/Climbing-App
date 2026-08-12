@@ -6930,3 +6930,61 @@ Stuart's full waypoints/gpx array replacement, Sherpa Peak East Ridge's trailhea
 against the actual current row contents.
 
 Next batch will continue alphabetically after `wa_silver_star_ne_ridge` (see progress file).
+
+## Batch 101 (pass 2) -- 2026-08-12
+
+Checked 12 routes across 6 peaks/features, continuing alphabetically after
+`wa_silver_star_ne_ridge`: Sinister Peak (North Face, Southwest Route), Sitkum Spire (Standard
+Route), Sloan Peak (Corkscrew Route, West Face/R1), Snowfield Peak (Neve Glacier), Snowking
+Mountain (Standard Route), South Early Winters Spire (South Arete, Direct East Buttress, East
+Buttress, Passenger, Southwest Couloir). Three otherwise-matching routes were excluded from
+scope during selection: `wa_skeena26` and `wa_slippery_slab_tower_ne_face` sit under crag-type
+areas (Squire Creek Walls, Thunder Mountain and Slippery Slab Tower), and a second `wa_south_face`
+route sits under Vasiliki Tower, also a crag -- none are `area_type = 'peak'`.
+
+**Fixed (5):** Full detail and citations are in `audits/sql/2026-08-12-batch-101.sql`. Sinister
+Peak's Southwest Route had a summit elevation (`high_point_ft` 8,440 ft) contradicting its own
+summit waypoint (8,444 ft), the `wa_sinister_peak` area row (8,444 ft), and the sibling North
+Face route (already 8,444 ft) -- North Face's own 2026-07-31 correction note claimed this sync
+had already happened, but the scalar on the Southwest Route itself was never actually touched.
+The same row's `gain_ft`/`loss_ft` (7000/5500) also didn't match its own itinerary day-by-day sum
+(8200/8400 across its 4-day approach) or that itinerary's own `totalNote` ("roughly 8,000-9,000
+ft cumulative gain round trip"). Sitkum Spire's `high_point_ft` (9,355 ft, the spire's own minor
+summit) contradicted its own `corrections` field, which explicitly documents the route's real
+high point as Glacier Peak's true 10,541 ft summit -- the note was written but the scalar was
+never updated to match it, while `gain_ft` (8,500 ft, already on file) was only consistent with
+the 10,541 ft figure (net ~8,241 ft from the 2,300 ft trailhead) and not with 9,355 ft (net
+~7,055 ft). South Arete's `pitches` field (3) contradicted its own `pitch_detail` (exactly 2
+numbered pitches, the second ending "walk-off near summit"), its own `beta` text ("Pitch 1...
+Pitch 2... then easier ground leads to the summit"), and its own itinerary note ("a couple of
+5.5-5.6 moves over 2 pitches") -- the stray 3 most likely bled in from this same row's separate
+`rappel_count_note` (2-3 rappel stations for the descent, a different count).
+
+**Flagged for human review (2):**
+- Passenger's first-ascent month (October 1991 on file) conflicts with an AAC Publications
+  search-result snippet reading "completed in August," which also implies 8 pitches / 800 ft /
+  IV 5.12a against Mountain Project's 7 pitches / 900 ft / 5.11d -- a conflict this row's own
+  `corrections` field already weighs for the length/grade half but not the month/pitch-count
+  half. WebFetch to `publications.americanalpineclub.org` was blocked, so the full AAC article
+  couldn't be read to resolve it either way.
+- Snowking Mountain's 2-day itinerary has a ~900 ft gain/loss imbalance (day 1: 4,700 ft gain /
+  300 ft loss; day 2: 2,700 ft gain / 6,200 ft loss; net +900 ft on a route that returns to its
+  own trailhead) not clearly attributable to either day without a source confirming Cyclone Lake
+  camp's actual elevation -- left alone rather than guessed at.
+
+**Clean (7):** Sinister Peak North Face, Sloan Peak Corkscrew Route, Sloan Peak West Face/R1,
+Snowfield Peak Neve Glacier, South Early Winters Spire's Direct East Buttress, East Buttress, and
+Southwest Couloir.
+
+**Tooling note:** WebFetch to every authoritative domain tried (mountainproject.com,
+publications.americanalpineclub.org) was blocked again this batch -- the fifth consecutive batch
+with this restriction (see batches 97-100). WebSearch snippets were used instead and did
+corroborate several on-file facts against independent sources: Direct East Buttress's Beckey/Doug
+Leen 1968 first ascent, Southwest Couloir's Adam/Bedayn/Davis July 1937 first ascent, Snowfield
+Peak's 8,351 ft elevation and 2,907 ft prominence, and Sinister Peak's ~8,440-8,444 ft elevation
+range. All 4 UPDATE statements (5 field-level fixes: Sinister Peak's Southwest Route touches
+`high_point_ft`, `gain_ft` and `loss_ft` in one statement) were spot-checked against the live-DB
+JSON and passed `npm run check:sql` before finalizing the SQL file.
+
+Next batch will continue alphabetically after `wa_south_early_winter_spire_southwest_couloir`
+(see progress file).
