@@ -6988,3 +6988,71 @@ JSON and passed `npm run check:sql` before finalizing the SQL file.
 
 Next batch will continue alphabetically after `wa_south_early_winter_spire_southwest_couloir`
 (see progress file).
+
+## Batch 102 (2026-08-12, pass 2)
+
+Routes: Cathedral Peak's South Face, Argonaut Peak's South Face, Pernod Spire's South Face,
+Concord Tower's South Face and South Face Center, Kangaroo Temple's South Face, Inspiration
+Peak's South Face, Guye Peak's South Gully/South Spur and South Rib, Mount Stuart's South
+Headwall. Researched via 8 parallel agents (one per peak/route-group).
+
+**Confirmed errors fixed (6):** Argonaut Peak's summit waypoint carried a stale 8,453 ft
+elevation while the route's own `high_point_ft` (already correct at 8,457 ft, matching
+Wikipedia/USGS-derived data) went unquestioned. Both Concord Tower routes' `high_point_ft`
+(7,569 ft) disagreed with their own "Concord Tower Summit" waypoint (7,560 ft) and with every
+external source found — no source anywhere supports 7,569. Inspiration Peak's South Face summit
+waypoint (7,880 ft) was stale against its own correct `high_point_ft` (7,891 ft, confirmed by
+Wikipedia and Peakbagger); separately, its top-level `pitches` (8) and `length_m` (305 = ~1000ft)
+contradicted the route's own beta ("about 600 ft (4 pitches)"), itinerary ("just 4 pitches...
+the shortest of Inspiration's three technical lines"), and its own 4-entry `pitch_detail` array
+(summing to 160m = ~525ft) — corrected to 4 pitches / 160m. Mount Stuart's South Headwall
+`approach_logistics.peakLat/peakLng` sat ~0.3mi/1600ft from the true summit, an outlier against
+both this row's own area coordinates and its own waypoints entry, both of which match USGS GNIS
+Feature ID 1526641 exactly.
+
+**Flagged for human review (9):** Cathedral Peak's `high_point_ft` (8,606) vs. its own waypoint
+(8,601) is not a simple typo — both trace to real, differently-sourced conventions (GNIS/NAVD88
+gives 8,606; the traditional/NGVD29-era figure and most trip reports give 8,601; a 2020s LiDAR
+resurvey gives 8,599 lower still). Left alone pending a human decision on which datum this
+database standardizes on. Pernod Spire's South Face first-ascent party/date, grade/length, and
+summit elevation could not be independently corroborated this run — WebFetch was blocked for
+Mountain Project and every other reference domain, leaving only WebSearch snippets, which is
+weaker evidence than the fact-check bar requires; the row's serious safety claim (a 2025 fatal
+rappel-anchor failure on the neighboring North Early Winters Spire, cited as hazard context) was
+independently and thoroughly confirmed as real via multiple news outlets and the USFS accident
+report. Concord Tower's South Face names a fourth FA climber, "Bruce Schuler," alongside three
+names (Cramer, Anderson, Stanley) that a SummitPost snippet corroborates for 1965 — no source
+mentioning Schuler was found; left on file rather than removed on absence-of-evidence alone.
+Concord Tower's South Face Center carries `fa: "Not Known"` per a 2026-08-05 correction that
+removed a "Fielding/Tarver 1966" attribution as an apparent mix-up with a different peak — but
+this run's SummitPost search results independently and repeatedly attribute Concord Tower's own
+South Face Center specifically to Mark Fielding & Frank Tarver, May 1966, contradicting that
+removal's stated rationale. This needs a human to check Beckey's Cascade Alpine Guide directly
+before either reinstating the FA or confirming the removal was correct. Kangaroo Temple's South
+Face first-ascent party (Bill Marts, Steve Marts, Don McPherson, summer 1965) could not be
+independently confirmed (same egress-blocked-domains issue); separately, the row's own
+`data_quality.gaps` already flags an unresolved internal contradiction about whether the route's
+approach crosses Kangaroo Pass — this run's research leans toward "yes, it does" (contradicting
+an appended "IMPORTANT" note claiming otherwise) but with only moderate confidence, so the text
+was left unchanged pending a human check against SuperTopo's dedicated route page. Guye Peak's
+South Rib pitch count (5 pitches, 244m) could not be independently confirmed this run (Mountain
+Project unreachable).
+
+**Clean (1):** Guye Peak's South Gully/South Spur — elevation, land manager (confirmed inside
+Alpine Lakes Wilderness despite sitting adjacent to the Alpental ski area's permit boundary),
+grading, and the on-file 2021 Alpental private-land access dispute all independently corroborated.
+
+**Tooling note:** WebFetch was blocked by the network egress proxy for mountainproject.com,
+supertopo.com, summitpost.org, mountaineers.org, americanalpineclub.org, wikipedia.org, and
+similar reference domains for most of this batch's agents (confirmed via direct curl testing by
+one agent, and via `/root/.ccr/README.md` policy denials by others) — a continuation of the
+restriction noted in batches 97-100. Agents fell back to WebSearch snippet synthesis, which is
+weaker evidence and in one case (Inspiration Peak's FA year) caused the search layer itself to
+briefly hallucinate an unsupported date before the agent caught and discarded it. Items that
+depended on primary-source page text and couldn't be corroborated by snippets alone were left
+un-fixed and flagged above rather than guessed at. `npm run check:sql` passed clean: 6 write
+targets across 6 statements, every target id exists, no DELETE in this file. `.env.local` (not
+present in this fresh clone) was recreated locally from the read-only anon key supplied for this
+run so `check:sql` could verify against the live schema; it is gitignored and was not committed.
+
+Next batch will continue alphabetically after `wa_south_rib` (see progress file).

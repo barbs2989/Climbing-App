@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_south_early_winter_spire_southwest_couloir",
+  "last_processed_id": "wa_south_rib",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 592,
   "batches": [
@@ -2286,6 +2286,26 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-08-12-batch-101.sql",
       "note": "Covers Sinister Peak (2 routes), Sitkum Spire, Sloan Peak (2 routes), Snowfield Peak, Snowking Mountain, and South Early Winters Spire (South Arete, Direct East Buttress, East Buttress, Passenger, Southwest Couloir). Three excluded from scope: wa_skeena26 and wa_slippery_slab_tower_ne_face (area_type crag, not peak) and a second wa_south_face route under Vasiliki Tower (also a crag). Most fixes were internal-consistency catches on rows already heavily corrected in earlier batches of this pass, same recurring pattern: Sinister Peak's Southwest Route had a summit elevation (8,440 ft) contradicting its own summit waypoint, the area row, and the sibling North Face route (all 8,444 ft) -- the North Face route's own correction note claimed this had already been synced, but the scalar on the Southwest Route itself was never actually touched; the same row's gain_ft/loss_ft (7000/5500) also didn't match its own itinerary day-by-day sum (8200/8400) or that itinerary's own totalNote. Sitkum Spire's high_point_ft (9,355 ft, the spire's own minor summit) contradicted its own corrections field, which explicitly documents the route's high point as Glacier Peak's true 10,541 ft summit -- the note was written but the scalar was never updated to match, while gain_ft (8,500 ft, already on file) was only consistent with the 10,541 ft figure. South Arete's pitches field (3) contradicted its own pitch_detail (2 numbered pitches, the second ending in a walk-off), its own beta text, and its own itinerary note ('over 2 pitches') -- likely bled in from this same row's separate 3-rappel descent count. Two items flagged rather than fixed: Passenger's first-ascent month (October 1991 on file) conflicts with an AAC Publications search snippet reading 'completed in August', which also implies 8 pitches/800ft/IV 5.12a against Mountain Project's 7 pitches/900ft/5.11d already weighed in this row's own corrections text -- WebFetch to publications.americanalpineclub.org was blocked, so the full article couldn't be read to resolve it. Snowking Mountain's 2-day itinerary has a ~900 ft gain/loss imbalance (day sums 4700/300 then 2700/6200, net +900 ft on a route that returns to its own trailhead) that isn't clearly attributable to either day without a source pinning down Cyclone Lake camp's actual elevation, so it's left for a human rather than guessed at. WebFetch remains blocked to every authoritative domain tried (mountainproject.com, publications.americanalpineclub.org) -- fifth batch running with this restriction; findings rest on WebSearch snippets plus internal-consistency checks, and confirmed facts (Direct East Buttress FA, Southwest Couloir FA, Snowfield Peak elevation/prominence, Sinister Peak elevation) matched what's on file via WebSearch corroboration. All four proposed fixes were spot-checked against the live-DB JSON and passed npm run check:sql before finalizing the SQL file."
+    },
+    {
+      "batch_number": 102,
+      "date": "2026-08-12",
+      "route_ids": [
+        "wa_south_face_10",
+        "wa_south_face_12",
+        "wa_south_face_2",
+        "wa_south_face_3",
+        "wa_south_face_4",
+        "wa_south_face_5",
+        "wa_south_face_center",
+        "wa_south_gully_south_spur",
+        "wa_south_headwall",
+        "wa_south_rib"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 9,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-12-batch-102.sql"
     }
   ]
 }
