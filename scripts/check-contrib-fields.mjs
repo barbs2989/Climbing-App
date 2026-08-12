@@ -102,7 +102,7 @@ if (dead.length) {
 // a single shape would fail on correct code. The claim here is only "something, somewhere,
 // mentions this key" — weak, but it is exactly strong enough to catch a typo or a rename, which
 // is the failure that actually happens.
-const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"]];
+const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = rd.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
