@@ -7120,3 +7120,122 @@ clone) was recreated locally from the read-only anon key supplied for this run s
 
 Next batch will continue alphabetically after `wa_southeast_ridge_se_corner` (see progress
 file).
+
+## 2026-08-12 — Pass 2, Batch 104
+
+Nine peaks, 10 routes: Southern Man (South Early Winters Spire); Southwest Buttress (Dorado
+Needle); Southwest Face (The Tooth); Southwest Scramble (Pinnacle Peak, Tatoosh); Soviet Route
+(Bonanza Peak); South Ridge / "Spirited Away" (Spectre Peak); North Face (Kloke-Tindall) and
+Southeast Gully/East Ridge (Spider Mountain, x2); Southwest Face (Spire Point);
+Stanley-Burgner (Prusik Peak).
+
+**Confirmed errors → fixes in `sql/2026-08-12-batch-104.sql` (14):**
+- Dorado Needle Southwest Buttress: `dist_km` had regressed to 6.44, exactly half the 12.88
+  this row's own `corrections` log already recorded fixing on 2026-08-05 — and half of what
+  its own approach text ("~25.75 km round trip") and itinerary total ("~16 mi round trip")
+  imply. Restored to 12.88.
+- Dorado Needle Southwest Buttress: `access.group_limit` (6) and `access.rules` misclassified
+  the Eldorado/Dorado Needle cross-country zone as a standard 6-person zone. It's a Type I
+  high-occupancy zone (12-person cap) per multiple sources, and this row's own
+  `access._raw.group_size_limit` already said "Maximum 12 people per party" — the derived
+  field just didn't match its own raw source. Fixed to 12 and reworded.
+- Pinnacle Peak (area row): `prominence_ft` was 581; independent sources (Wikipedia, PeakVisor)
+  agree on 562 ft.
+- Pinnacle Peak Southwest Scramble: `access.fees` said "N/A" inside Mount Rainier National
+  Park — the fee-park-vs-fee-free confusion this audit exists to catch. Added the $30/vehicle
+  (or $15 pedestrian, or interagency pass) NPS entrance fee, distinct from the overnight
+  wilderness-permit fee already on file.
+- Spectre Peak "Spirited Away": `best_season`'s closing clause had the snow direction
+  backwards ("favorable low-snow conditions... easier descent"), contradicting this same row's
+  `climate.summer`, `itinerary.days[3].note`, and `descent_text`, all of which describe
+  abundant/lingering snow making the descent glissade-friendly. Corrected.
+- Spectre Peak "Spirited Away": `approach` carried a stale parenthetical ("matching the on-file
+  74 km distance") left over from the 2026-08-05 correction that changed `dist_km` to 37.02 —
+  the prose was never updated. Fixed to reference the current value.
+- Spectre Peak "Spirited Away": `itinerary.totalNote` said "~46 hrs of moving time", but this
+  row's own `timing.totalHrs` (49) and the sum of `itinerary.days[].hours` (10+8+15+16=49) both
+  say 49 — "46" looks like an accidental reuse of the 46-mile distance figure one clause over.
+  Fixed to 49.
+- Spectre Peak "Spirited Away": `waypoints[0]` (Hannegan Pass) elevation was 5100, but this
+  row's own `approach` text says "5,050 ft Hannegan Pass" twice, matching USFS/WTA (pass
+  ~5,050 ft, trail max 5,076 ft). Fixed to 5050.
+- Spider Mountain North Face (Kloke-Tindall): `fa` credited the June 17, 2003 Volken/Avolio ski
+  descent to this 1972 line, but independent sources (skisickness.com's own route page,
+  corroborated by a CascadeClimbers thread) place that descent on a separate, nearby 1976 north
+  face line ("Arachnophobia"). Removed the misattributed clause rather than guess a replacement
+  date for the Kloke-Tindall line's own (still-unconfirmed) first ski descent.
+- Spider Mountain North Face: `approach_logistics.trailheadDirection` gave the Cascade Pass
+  Trailhead as "~3,660 ft" — an outlier against NPS/WTA (3,600 ft) and against this dataset's
+  own sibling route (`wa_spider_mountain_north_ridge`), whose `approach` text and `gain_ft` math
+  (8317−3600=4717) both already assume 3,600 ft. Fixed.
+- Spire Point Southwest Face: `approach` named "Downey Creek Trail (#792)"; USFS confirms it is
+  Trail #768, and this row's own `waypoints[1].note` and `approach_logistics.trailhead` already
+  say 768 — `approach` was the sole outlier. Fixed.
+- Spire Point Southwest Face: `waypoints[5]` ("Spire Col") elevation was 7000, contradicting
+  four other mentions of the same location in this same row (`beta`, `approach`,
+  `pitch_detail[0].notes`, `itinerary.days[1]` x2), all saying 7,760 ft — matching a WTA trip
+  report. Fixed to 7760.
+- Prusik Peak Stanley-Burgner: `waypoints[0]` (Stuart Lake Trailhead) elevation was 1300, about
+  2,100 ft too low — USFS/Mountaineers.org place it at ~3,000-3,400 ft, and this row's own
+  `approach` text implies a ~3,570 ft start ("Colchuck Lake, 5,570 ft, ~4.1 mi/2,000 ft gain").
+  Fixed to 3400.
+- Prusik Peak Stanley-Burgner: `itinerary.days[1].schedule[4].detail` described the descent as
+  "Downclimb/rappel the West Ridge back toward the notch" — but this row's own `descent`,
+  `descent_text`, `rappel_detail`, and `bail` fields all consistently describe a north-face
+  rappel descent (4 raps on slung anchors), reconfirmed externally. West Ridge is a distinct,
+  separate 5.7 route on Prusik Peak with no role in this route's descent — looks like a
+  copy/paste mix-up between the two. Fixed to match the rest of the row.
+
+**Flagged for human review (28):** FA/free-ascent name-date-grade discrepancy on Southern Man
+deepened rather than resolved (search snippets now lean "Bobby"/Sept 2009/5.12a against the
+on-file "Blake Matthews"/2010/5.11d, but only via secondhand synthesis, not a primary source);
+a `gain_ft` vs. itinerary internal mismatch on the same route; an unconfirmed Cutthroat Lake
+camping-buffer claim. The Tooth's approach-segment distance (1.5 mi vs. ~2 mi to the Source
+Lake fork) and its already-annotated FA date, neither independently confirmable this pass.
+Dorado Needle's pitch-count/commitment-grade spread widened to a third data point (9p/5.8/III
+vs. 11p/5.8/III vs. 13p/5.7/III+), plus an unconfirmed 1985 establishment date, a time-sensitive
+Cascade River Road closure claim, unconfirmed permit-desk hours, and descent-narrative framing
+that may conflate two valid variants. Pinnacle Peak's `dist_km` (left alone per this repo's
+standing warning against bulk-normalizing that column), a ~130m trailhead-coordinate gap
+between two of its own fields, and a shaky "Stevens Peak is also taller" claim (sourced
+elevations put it 2 ft lower). Bonanza Peak's main-summit elevation (9516 vs. 9511 across
+sources), a three-way Holden Village elevation spread, and an unverifiable rappel-anchor
+material detail. Spectre Peak's summit coordinate (area row vs. route waypoint, ~1.2 km apart —
+the authoritative peakbagger/listsofjohn sources were both blocked), a crux-pitch numbering
+mismatch (P2 in the itinerary vs. pitch 3 in the table), and a 2025 trip-report title citing 10
+pitches against this row's detailed 12-pitch table. Spider Mountain's still-unconfirmed exact
+first-ski-descent date for the Kloke-Tindall line itself, a Kool-Aid Lake basin elevation
+~500-700 ft above independent sources, and a stale route id
+(`wa_spider_mountain_north_ridge` naming a route whose actual name/aspect is "Southeast
+Gully/East Ridge," southeast-facing) matching the exact id-drift failure pattern this repo's
+CLAUDE.md documents. Spire Point's face/aspect fields ("East"/"E") possibly describing a
+different SummitPost-documented route ("East Face") than the one this record's name and beta
+narrate ("Southwest"/"South") — already flagged in this row's own `data_quality.gaps` and not
+newly resolved; its first-ascent party (unknown, no source found); and an unconfirmed 12-person
+Glacier Peak Wilderness group cap. Stanley-Burgner's already-known `pitch_detail`-sum vs.
+`length_m` mismatch (237m vs. 183m, still unresolved for lack of a primary topo); a ~70m summit
+waypoint vs. area-coordinate gap; and a genuinely split grade consensus (5.10a per MP/
+dashertonclimbs vs. III 5.9+ per climbing.com/Mountaineers.org vs. 5.10- per climberkyle).
+
+**Clean (0):** every route in this batch had at least one confirmed fix or a flagged item;
+none passed with nothing to note.
+
+**Tooling note:** WebFetch was blocked by the network egress proxy for mountainproject.com,
+supertopo.com, summitpost.org, mountaineers.org, americanalpineclub.org, wikipedia.org,
+cascadeclimbers.com, skisickness.com, stephabegg.com, fs.usda.gov, nps.gov, and similar
+reference domains for all 9 research agents this batch — one agent (Dorado Needle) reported
+`stephabegg.com`/`fs.usda.gov` blocked despite not being on the pre-flagged likely-blocked
+list, i.e. the block is broader than the standing warning suggests. Agents fell back to
+WebSearch snippet synthesis throughout, and several flagged items above are explicitly weaker
+for it (Southern Man's FA discrepancy, Spectre Peak's summit coordinate, Spider Mountain's
+ski-descent date). `npm run check:sql` passed clean against both `--table routes` (default,
+11 checkable targets across the 14 routes-table statements) and `--table areas` (1 target, the
+Pinnacle Peak prominence fix) — 3 WARNs for statements the checker's id-predicate scan
+couldn't parse across long `jsonb_set`/string-literal statements with embedded escaped quotes
+(the `access.rules` rewrite, the `access.fees` rewrite, and the Spider Mountain `fa` rewrite,
+all containing nested `''`-escaped apostrophes); all three were manually verified against the
+same ids' other, cleanly-checked statements in this same file. `.env.local` (not present in
+this fresh clone) was recreated locally from the read-only anon key supplied for this run so
+`check:sql` could verify against the live schema; it is gitignored and was not committed.
+
+Next batch will continue alphabetically after `wa_stanley_burgner` (see progress file).
