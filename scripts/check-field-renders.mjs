@@ -53,6 +53,7 @@ const FIELDS = [
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],
   ["pitch_detail", "pitchDetail"], ["rappel_detail", "rappelDetail"], ["rappel_count_note", "rappelCountNote"],
   ["gear", "gear"], ["detailed_rack", "detailedRack"], ["what_to_bring", "whatToBring"],
+  ["gear_confidence", "gearConfidence"],
   ["pro_tips", "proTips"], ["pro_needs", "proNeeds"], ["beta", "beta"],
   ["overview", "overview"], ["description", "desc"], ["face", "face"],
   ["sling_rack", "slingRack"], ["rope_note", "ropeNote"], ["corrections", "corrections"],
