@@ -25,14 +25,14 @@ const routes = data.routes || [];
 console.log(`Loading ${routes.length} Class 2-3 mountaineering/scrambling routes from ${PREFIX}`);
 
 // Normalize route data for database insertion
-function gradeNum(g, s) {
-  if (!g) return null;
-  let m;
-  if (s === 'class' && (m = g.match(/class\s*(\d)/i))) return parseInt(m[1]);
-  if (s === 'class' && (m = g.match(/(\d)\s*(?:rd|th|nd)?\s*class/i))) return parseInt(m[1]);
-  if ((m = g.match(/(\d+)\.(\d)/))) return parseFloat(m[0]);
-  return null;
-}
+// grade_num is parsed by lib/grade.js — the SINGLE implementation. This file used to
+// carry its own copy; there were FOUR, and they had already drifted (this one and the
+// two beside it agreed, scripts/oneoff/import-class2-3-routes.mjs did not, and none
+// handled a bare ordinal like "4th"). Equivalence with the copy removed here was
+// proven over every distinct (grade, system) in the live WA catalog before the swap:
+// scripts/oneoff/verify-grade-parser-equivalence.mjs. Do not re-inline it —
+// check:grade-parser fails if a second parser appears.
+import { gradeNumFrom as gradeNum } from "../../lib/grade.js";
 
 const ri = v => (v == null ? null : Math.round(v));
 

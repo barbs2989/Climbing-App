@@ -15,7 +15,11 @@ const rows = await selectAll(
   "routes",
   "id,name,grade,discipline,grade_num,areas!inner(path)",
   "areas.path=cd.usa.washington&grade=not.is.null&grade_num=not.is.null",
-  { pageSize: 1000, key: requireServiceKey() },
+  // pageSize 300, not 1000: the statement timeout is PER STATEMENT, so a smaller page is a
+  // shorter query. At 1000 this join started returning 57014 intermittently once other
+  // sessions were hitting the same database — it is contention, not a broken query, and the
+  // fix is to ask for less at a time rather than to retry the same too-large page.
+  { pageSize: 300, key: requireServiceKey() },
 );
 // Fail closed: an empty read makes perfect agreement the trivial answer.
 if (!rows.length) { console.error("read 0 rows — refusing to report parity about nothing"); process.exit(1); }
