@@ -40,6 +40,8 @@ npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
+npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -929,6 +931,53 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
+  a geometry question no column-coverage check can reach, since every field is populated and
+  every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
+  `audit:waypoint-order` is its **sibling, not a duplicate**: that one asks whether the *list* is
+  sensible (ordering, duplicate pins) and needs no gpx at all. Run both.
+  - **It has twice reported far more problems than exist, and both times the fix was to the
+    audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
+    every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
+    it could not see). This pass took it to 646 the same way, so **treat a headline count here as
+    a hypothesis until it has been deduplicated** — see [[waypoint-audit-overcounted-by-126]].
+  - **The categories must be disjoint, and two were not.** `waypointOffLine` walks every pin, so
+    a trailhead or summit already judged by its own category was reported a second time — 100
+    pins double-counted, Curtis Ridge producing six findings from three waypoints. Worse,
+    `summitOffLine` and `trackNotEndingAtSummit` both fired on the same pin, which is not merely
+    a double count: it put 20 routes whose summit pin is *correct* and whose gpx simply stops
+    short into a category titled "SUMMIT IS NOT ON THE TRACK". Those need the **opposite** repair,
+    which is the distinction note (3) already draws for trailheads. They are now exclusive.
+  - **A dedupe that loses a finding is worse than the double count it replaces**, so it is
+    verified by comparing distinct `(route, waypoint)` pairs across dumps rather than totals:
+    `verify-waypoint-dedupe-lost-nothing.mjs`, 449 before and 449 after, nothing lost, 100 pins
+    moved to the more specific category.
+  - **`trackOffItsPeak` is the one test not measured against the route's own track**, which is
+    why it is worth having: every other category asks "is this pin on this line?" and therefore
+    cannot say which of the two is wrong. When the *track* is the misplaced thing, the route's
+    correct pins are all faithfully reported as broken and the gpx is never suspected.
+    `wa_mount_rainier_curtis_ridge` carried five points beside **Rattlesnake Lake, ~65 km from
+    Rainier and 734 m from a bouldering crag**, and all six of its findings blamed the waypoints.
+    Anchoring on the area's own coordinate settles it with no pins, prose or judgement.
+  - **Its title says "never comes within 2 km", not "is not this peak's track", and the
+    difference is measured.** Of 8 WA hits only **one** is a foreign track; the other seven
+    start at the **correct trailhead** and merely stop short (Himmelhorn and West Twin Needle
+    from Goodell Creek, Fuhrer Finger from Paradise, Barnes up the Elwha). Naming it for the
+    stronger claim would have been false of seven of eight. It is **informational** for the same
+    reason — 6 of its 8 are already counted elsewhere, so counting it would re-inflate the total
+    this pass deflated. Confirm each with `probe-whose-track-is-it.mjs`, which names the peak a
+    stray track actually reaches; the threshold comes from the measured distribution (closest
+    approach is **13 m at the median, 1,038 m at p95**), not from a guess.
+  - The placeholder-coordinate guard (`COORD_DP`) **excludes zero WA routes today** and says so
+    in the script: both peaks it would protect are already filtered as `unrouted`. It is kept
+    for the eight 3-decimal Picket summits, not because live data has exercised it.
+  - The opening read pays a **warm-up request** because the first call of a run costs ~3.7s of
+    connection setup against 0.3–0.7s warm, and anon carries a 3s `statement_timeout` — so it
+    intermittently died with `57014` before fetching anything. Shrinking the page does **not**
+    fix that: measured, 1,000 areas *with* lat/lng takes 725 ms warm while 400 still failed cold.
+  - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
+    the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
+    that guard was found to be inert and got documented as such rather than presumed working.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
