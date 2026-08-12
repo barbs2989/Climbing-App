@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_sews_sw_rib",
+  "last_processed_id": "wa_silver_star_ne_ridge",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 592,
   "batches": [
@@ -2242,6 +2242,27 @@
       "clean": 0,
       "sql_file": "audits/sql/2026-08-10-batch-99.sql",
       "note": "Covers Robinson Mountain, Rock Mountain, Ruth Mountain (2 routes), Sahale Mountain (2 routes), Eagle Peak, Mount Washington (Eastern Olympics), Sentinel Peak, South Early Winters Spire. Recurring pattern: fields self-contradicting other fields on the same row rather than needing external sourcing -- stale prominence figures unrelated to already-fixed elevations, a trailhead longitude off by ~800ft shared identically across both Ruth Mountain routes, group_limit numeric fields never actually updated despite corrections-log text claiming they were, Eagle Peaks structured access object contradicting its own populated access._raw fields on six sub-fields, Mount Washingtons access block contaminated end-to-end with Olympic National Park language on a route that is actually Olympic National Forest land, and South Early Winters Spires itinerary gain/loss/start-time never updated to match an already-corrected top-level elevation delta. All research agents again had WebFetch blocked to most authoritative domains (same as batch 98); findings rest on WebSearch snippets plus internal-consistency checks, and every proposed fix was spot-checked against the live-DB JSON before finalizing the SQL file."
+    },
+    {
+      "batch_number": 100,
+      "date": "2026-08-12",
+      "route_ids": [
+        "wa_sharkfin_tower_southeast_ridge",
+        "wa_sherman_peak_baker_route",
+        "wa_sherman_peak_baker_squak_glacier",
+        "wa_sherpa_balanced_rock_ne_couloir",
+        "wa_sherpa_glacier",
+        "wa_sherpa_peak_east_ridge",
+        "wa_sherpa_peak_north_ridge",
+        "wa_sherpa_peak_west_ridge",
+        "wa_silver_star_glacier",
+        "wa_silver_star_ne_ridge"
+      ],
+      "confirmed_errors_fixed": 26,
+      "flagged_for_human_review": 21,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-08-12-batch-100.sql",
+      "note": "Sherpa Peak's North Ridge was the batch's densest cluster: five of its six access.* sub-fields (permit, landManager, fees, rules, closures) all described the Teanaway/Esmeralda-side approach used by its own East and West Ridge siblings instead of the Stuart Lake Trailhead this route actually uses -- looks like the whole access block was copied from a sibling route and never re-pointed. The three Sherpa Peak siblings also had a permit-field polarity swap running the other way: East and West Ridge (Teanaway-side, outside the Enchantment lottery zone) both claimed the lottery applied, while North Ridge (Stuart Lake side, inside the zone) claimed it didn't -- each route's own access.permit sub-field already had it right, only the top-level permit/notes fields were swapped. Mount Stuart's Sherpa Glacier had a rendering bug, not just a fact error: its waypoints/gpx arrays were stored out of route order (icefall, then topout, then trailhead, then summit), which GPXMap draws straight in array order -- producing a backwards, self-crossing track on the map. Sherman Peak's Easton Glacier route claimed some upper Mount Baker routes cross into North Cascades National Park; Congress deliberately excluded Baker from NCNP when the park was created in 1968, and the route stays USFS/Wilderness throughout, contradicting this route's own landManager field and its sibling Squak Glacier route. Recurring pattern from past batches held again: several fixes were internal-consistency catches rather than needing external sourcing (Sharkfin Tower's gain_ft/loss_ft not matching its own itinerary sum; its length_m not matching its own pitch_detail sum; Silver Star Glacier's gain_ft not matching loss_ft on an out-and-back route; a waypoint elevation implying an uphill creek crossing where the route's own approach text says it's a descent). All research agents again had WebFetch blocked to essentially every authoritative domain tried and worked from WebSearch snippets only, same as recent batches -- now four batches running, worth a policy check on the egress allowlist if it keeps recurring. Notable open item for a human, not fixed here: Sherpa Peak's North Ridge data_quality.gaps field self-reports 'this entry duplicates wa_north_ridge_9' -- an identity question, not addressed by this pass."
     }
   ]
 }

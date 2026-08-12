@@ -6855,3 +6855,78 @@ live-DB JSON for each route before finalizing this file, to make sure "current v
 the real rows and that `replace()`/`jsonb_set()` targets are exact.
 
 Next batch will continue alphabetically after `wa_sews_sw_rib` (see progress file).
+
+## Batch 100 (pass 2) -- 2026-08-12
+
+Checked 10 routes across 6 peaks/features, continuing alphabetically after `wa_sews_sw_rib`:
+Sharkfin Tower (Southeast Ridge), Sherman Peak/Mount Baker (Crater Rim Scramble via Easton
+Glacier, Squak Glacier Route), Sherpa Balanced Rock (Northeast Couloir), Mount Stuart (Sherpa
+Glacier), Sherpa Peak (East Ridge, North Ridge, West Ridge), Silver Star Mountain/Okanogan
+(Silver Star Glacier, Northeast Ridge).
+
+**Fixed (26):** Full detail and citations are in `audits/sql/2026-08-12-batch-100.sql`. Sherpa
+Peak's North Ridge was the densest cluster: five of its six `access.*` sub-fields (permit,
+landManager, fees, rules, closures) all described the Teanaway/Esmeralda-side approach used by
+its own East and West Ridge siblings instead of the Stuart Lake Trailhead this route actually
+uses -- reads like the whole access block was copied from a sibling and never re-pointed. The
+three Sherpa Peak siblings also had a permit-field polarity swap running the other direction:
+East and West Ridge (Teanaway-side, outside the Enchantment Permit Area lottery zone) both
+claimed the lottery applied, while North Ridge (Stuart Lake side, inside the zone) claimed it
+didn't -- each route's own `access.permit` sub-field already had it right; only the top-level
+`permit`/`notes` fields were swapped. Mount Stuart's Sherpa Glacier had a rendering bug, not
+just a fact error: its `waypoints`/`gpx` arrays were stored out of route order (icefall, then
+topout, then trailhead, then summit), which `GPXMap` draws straight in array order, producing a
+backwards, self-crossing track on the map -- reordered to match the route's own `distMi`
+values, and its trailhead elevation corrected from 2,930 to ~3,400 ft to match this row's own
+approach-logistics text. Sherman Peak's Easton Glacier route claimed some upper Mount Baker
+routes cross into North Cascades National Park; Congress deliberately excluded Baker from NCNP
+when the park was created in 1968, and the route stays USFS/Wilderness throughout, contradicting
+this row's own `landManager` field and its sibling Squak Glacier route. Several other fixes were
+internal-consistency catches rather than needing external sourcing: Sharkfin Tower's
+`gain_ft`/`loss_ft` not matching its own itinerary day-by-day sum, and its `length_m` not
+matching its own `pitch_detail` sum; Silver Star Glacier's `gain_ft` not matching `loss_ft` on
+an out-and-back route, a creek-crossing waypoint elevation implying an uphill crossing where the
+route's own approach text describes a ~200 ft descent, a stale "year-round access" note
+contradicting the route's own (already-corrected) SR-20 winter-closure field, and a "1 rappel"
+figure overstating a rappel the route's own descent text calls optional; and Silver Star's
+Northeast Ridge claiming no parking fee at a trailhead its own `road.driveNote` says is shared
+with the Glacier route, which correctly documents the Northwest Forest Pass requirement there.
+Mount Stuart's Sherpa Glacier was also downgraded from Grade III to Grade II (alpine_grade and
+commitment): multiple independent sources describe it as Grade II, snow to 40 degrees, and the
+route's own overview already calls it "the easiest and most direct of Mount Stuart's three
+north-side glacier routes" at the lowest max_angle of the three, yet it shared "III" with the
+harder Ice Cliff Glacier.
+
+**Flagged for human review, selected highlights:**
+- Sherpa Peak's North Ridge `data_quality.gaps` field self-reports "this entry duplicates
+  `wa_north_ridge_9`" -- an identity/duplicate-row question, not investigated or fixed here (out
+  of scope per this audit's methodology; needs `audit:identity`-style follow-up).
+- Sherpa Peak (area row) `blurb` states as fact that the Balanced Rock obelisk is Sherpa's true
+  summit, while the East and West Ridge routes' own text says the opposite (Balanced Rock is a
+  separate ~20-ft feature, not the true summit). External sources describe this as a genuinely
+  unresolved controversy (no careful survey exists) -- a human should pick one framing and make
+  all three rows agree rather than this pass guessing.
+- Sherpa Peak East/West Ridge and Mount Stuart's Sherpa Glacier itinerary day-by-day gain/loss
+  figures don't sum to their own top-level `gain_ft`/`loss_ft` (or, being out-and-back routes,
+  don't net to zero) -- same recurring shape as past batches, no single day/leg identified with
+  enough confidence to fix blindly.
+- Three separate `dist_km` questions (Sharkfin Tower, Sherman Peak's Easton Glacier route,
+  Sherpa Peak West Ridge) where the figure doesn't cleanly match the route's own waypoint/
+  itinerary mileage under either a one-way or round-trip reading -- left alone per CLAUDE.md's
+  explicit warning against bulk-normalizing this column.
+- Sherpa Peak West Ridge's `grade_num` (5) doesn't match its own `grade` string's stated top
+  difficulty ("5.4," which would predict 4 by the convention both siblings use) -- it instead
+  matches the separate `rock_grade` field (5.5); unclear which field is meant to drive
+  `grade_num`.
+
+**Tooling note:** WebFetch to essentially every authoritative domain (Wikipedia, Mountain
+Project, SummitPost, USFS, NPS, Mountaineers.org, WenatcheeOutdoors, peakbagger.com,
+willhiteweb.com) was again blocked by network egress policy for every research agent this batch
+-- the fourth consecutive batch with this issue (see batches 97-99). All findings above rest on
+WebSearch result-snippet corroboration and internal row cross-checks rather than direct page
+reads; every proposed fix was spot-checked against the live-DB JSON for each route before
+finalizing the SQL file, including full re-verification of the two riskiest fixes (Mount
+Stuart's full waypoints/gpx array replacement, Sherpa Peak East Ridge's trailhead elevation)
+against the actual current row contents.
+
+Next batch will continue alphabetically after `wa_silver_star_ne_ridge` (see progress file).
