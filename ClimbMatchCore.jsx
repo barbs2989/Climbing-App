@@ -827,7 +827,18 @@ const Stars=({n,size})=><span style={{color:C.amber,fontSize:size||14}}>{"★".r
    array, so "5.9+" scores as 5.9 and no ranking shifts. */
 const YDSL=["5.6","5.6+","5.7-","5.7","5.7+","5.8-","5.8","5.8+","5.9-","5.9","5.9+","5.10-","5.10a","5.10b","5.10","5.10c","5.10d","5.10+","5.11-","5.11a","5.11b","5.11","5.11c","5.11d","5.11+","5.12-","5.12a","5.12b","5.12","5.12c","5.12d","5.12+","5.13-","5.13a","5.13b","5.13","5.13c","5.13d","5.13+","5.14-","5.14a","5.14b","5.14","5.14c","5.14d","5.14+"];
 const VL=["V0-","V0","V0+","V1-","V1","V1+","V2-","V2","V2+","V3-","V3","V3+","V4-","V4","V4+","V5-","V5","V5+","V6-","V6","V6+","V7-","V7","V7+","V8-","V8","V8+","V9-","V9","V9+","V10-","V10","V10+","V11","V12","V13","V14","V15","V16","V17"];
-const SL=({children,action})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
+/* PROV_TONE maps a provenance tone to a palette entry. Kept here beside SL rather than in
+   lib/provenance.js so that module stays free of `C` and testable on its own. */
+const PROV_TONE={good:C.green,neutral:C.textSub,weak:C.amber};
+/* One implementation, three call sites: SL (most sections), and the two hand-rolled headings
+   that predate it — BETA and RACK. Duplicating the markup per heading is how they drift, and
+   a chip that looks different per section reads as meaning something different. */
+export const ProvChip=({prov})=>prov&&prov.label?<span title={"How this section was sourced: "+prov.label} style={{fontSize:10.5,fontWeight:700,color:PROV_TONE[prov.tone]||C.textSub,background:(PROV_TONE[prov.tone]||C.textSub)+"22",borderRadius:6,padding:"2px 6px",whiteSpace:"nowrap",flexShrink:0,textTransform:"none",letterSpacing:0}}>{prov.label}</span>:null;
+/* `prov` is an already-resolved provenance object ({label,tone}) or null — SL renders it and
+   does not decide it, so the domain rule lives in one place (sectionProvenance). A null prov
+   renders NOTHING: a section with no data must not carry a rating, which is why callers pass
+   the result through untouched rather than defaulting it. */
+const SL=({children,action,prov})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span><ProvChip prov={prov}/>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
 const MeH=SL;
 
 /* ── Text boxes: grow while you type, and format what you write. ─────────────────────────
