@@ -27,6 +27,7 @@
     "audit:rappels": "node scripts/audit-rappels.mjs",
     "audit:hazard-redundancy": "node scripts/audit-hazard-redundancy.mjs",
     "audit:fifty-classics": "node scripts/audit-fifty-classics.mjs",
+    "audit:list-coverage": "node scripts/audit-list-coverage.mjs",
     "check:route-tags": "node scripts/check-route-tags.mjs",
     "check:sql": "node scripts/check-sql-targets.mjs",
     "check:crew": "node scripts/check-crew-ready.mjs",
