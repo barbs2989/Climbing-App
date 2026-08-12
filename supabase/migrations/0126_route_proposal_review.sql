@@ -1,4 +1,12 @@
--- 0125 — the CONSUME half of the add-a-route flow.
+-- 0126 — the CONSUME half of the add-a-route flow.
+--
+-- Renumbered 0125 -> 0126: main took 0125 for black_peak_under_washington_pass while this
+-- was being verified. The SQL below is ALREADY APPLIED to the live DB (applied as 0125 on
+-- 2026-08-12 and verified: 12 columns on contributions, route_slug correct, the admin gate
+-- returning P0001, and a submitter-set status overwritten to pending). The number is
+-- bookkeeping for check:migrations; the database does not read the filename. Do not re-run
+-- expecting a change — every statement is guarded (add column if not exists / create or
+-- replace / drop trigger if exists), so a re-run is a no-op.
 --
 -- #794 made the submit half real: `AddRoute` files a `new_route` row into `contributions`,
 -- verified against the live DB (signed-in INSERT 201, `contributor` stamped from the JWT).
