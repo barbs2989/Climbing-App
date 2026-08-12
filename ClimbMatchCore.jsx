@@ -830,11 +830,15 @@ const VL=["V0-","V0","V0+","V1-","V1","V1+","V2-","V2","V2+","V3-","V3","V3+","V
 /* PROV_TONE maps a provenance tone to a palette entry. Kept here beside SL rather than in
    lib/provenance.js so that module stays free of `C` and testable on its own. */
 const PROV_TONE={good:C.green,neutral:C.textSub,weak:C.amber};
+/* One implementation, three call sites: SL (most sections), and the two hand-rolled headings
+   that predate it — BETA and RACK. Duplicating the markup per heading is how they drift, and
+   a chip that looks different per section reads as meaning something different. */
+export const ProvChip=({prov})=>prov&&prov.label?<span title={"How this section was sourced: "+prov.label} style={{fontSize:10.5,fontWeight:700,color:PROV_TONE[prov.tone]||C.textSub,background:(PROV_TONE[prov.tone]||C.textSub)+"22",borderRadius:6,padding:"2px 6px",whiteSpace:"nowrap",flexShrink:0,textTransform:"none",letterSpacing:0}}>{prov.label}</span>:null;
 /* `prov` is an already-resolved provenance object ({label,tone}) or null — SL renders it and
    does not decide it, so the domain rule lives in one place (sectionProvenance). A null prov
    renders NOTHING: a section with no data must not carry a rating, which is why callers pass
    the result through untouched rather than defaulting it. */
-const SL=({children,action,prov})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span>{prov&&prov.label?<span title={"How this section was sourced: "+prov.label} style={{fontSize:10.5,fontWeight:700,color:PROV_TONE[prov.tone]||C.textSub,background:(PROV_TONE[prov.tone]||C.textSub)+"22",borderRadius:6,padding:"2px 6px",whiteSpace:"nowrap",flexShrink:0,textTransform:"none",letterSpacing:0}}>{prov.label}</span>:null}{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
+const SL=({children,action,prov})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span><ProvChip prov={prov}/>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
 const MeH=SL;
 
 /* ── Text boxes: grow while you type, and format what you write. ─────────────────────────

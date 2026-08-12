@@ -100,19 +100,53 @@ const routeWith = (extra) => Object.assign({
   _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Colorado" },
 }, extra);
 
-function markup(extra) {
-  try { return render(routeWith(extra), "planner"); }
+function markup(extra, tab, disc) {
+  try { return render(Object.assign(routeWith(extra), disc ? { discipline: disc } : null), tab || "planner"); }
   catch (e) { return "RENDER THREW: " + e.message; }
 }
 
-const withApproach = markup({ approach: "Hike the Blue Lake trail 1.2 mi to the notch." });
-const bare = markup({});
+/* THE REACHABILITY MATRIX. Every wired heading, with the minimum data that makes its section
+   render, asserted to actually show a chip. Chosen by measurement
+   (scripts/oneoff/probe-chip-reachability.mjs), not by assuming a prop is enough — the first
+   run had 5 of 10 dark, and each dark row had its own cause:
+     - rappels    wired to the wrong heading. The one users see is a hand-rolled div, not the
+                  SL further down; both say "RAPPELS", so grep alone could not tell them apart.
+     - gpx        alpine-gated, invisible to a `trad` fixture (the cragOnly trap).
+     - waypoints  same.
+     - pitchDetail pitch_detail is split PER ENTRY — roped pitches to PITCH-BY-PITCH, travel
+                  legs to ROUTE BETA. Two headings, so two rows here.
+     - climate    the "CLIMATE & SEASON" box is gated on route.climate, NOT route.season, so a
+                  season-keyed chip rendered nothing. `season` is a different surface. */
+const LONG_BETA = "x".repeat(260) + " long beta prose for the block that needs >=220 chars.";
+const MATRIX = [
+  ["approach", "APPROACH", { approach: "Hike the trail 1.2 mi." }, "planner", "trad"],
+  ["descentText", "DESCENT", { descentText: "Walk off east." }, "planner", "trad"],
+  ["rappels", "RAPPELS", { rappels: "3", rappelDetail: [{ n: 1, lengthM: 30 }] }, "planner", "trad"],
+  ["gpx", "ROUTE TRACK", { gpxPts: [{ lat: 40, lng: -105 }, { lat: 40.01, lng: -105.01 }] }, "planner", "mountaineering"],
+  ["waypoints", "WAYPOINTS", { waypoints: [{ type: "Trailhead", name: "TH", lat: 40, lng: -105 }] }, "planner", "mountaineering"],
+  ["pitchDetail(table)", "PITCH-BY-PITCH", { pitchDetail: [{ n: 1, grade: "5.6", notes: "chimney" }] }, "planner", "trad"],
+  ["pitchDetail(stages)", "ROUTE BETA", { pitchDetail: [{ label: "Approach gully", class: "3rd", notes: "scramble" }] }, "planner", "trad"],
+  ["beta", "BETA", { beta: [LONG_BETA] }, "overview", "trad"],
+  ["gear", "RACK", { gear: ["single set of cams"] }, "overview", "trad"],
+  ["climate", "CLIMATE &amp; SEASON", { climate: { typical: "Dry.", forecastZone: "Front Range" } }, "conditions", "trad"],
+  ["hazards", "KNOWN HAZARDS", { hazards: ["rockfall"] }, "safety", "trad"],
+];
 
-const sawOnFile = withApproach.includes("On file");
-const bareHasNoChip = !bare.includes("On file") && !bare.includes("Auto-generated") && !bare.includes("Climber-verified");
-if (withApproach.startsWith("RENDER THREW")) { console.log("  FAIL  " + withApproach.slice(0, 200)); fail++; }
-else {
-  t("populated approach renders an 'On file' chip", sawOnFile, true);
+const CHIPS = ["Climber-verified", "On file", "Auto-generated"];
+for (const [name, heading, extra, tab, disc] of MATRIX) {
+  const m = markup(extra, tab, disc);
+  if (m.startsWith("RENDER THREW")) { console.log(`  FAIL  ${name}: ${m.slice(0, 160)}`); fail++; continue; }
+  if (!m.includes(heading)) {
+    // Distinguishing these two is the whole point: opposite fixes.
+    console.log(`  FAIL  ${name}: its heading (${heading}) never rendered — fixture too thin, not a chip bug`);
+    fail++; continue;
+  }
+  t(`${name} heading renders a chip`, CHIPS.some((c) => m.includes(c)), true);
+}
+
+const bare = markup({});
+const bareHasNoChip = !CHIPS.some((c) => bare.includes(c));
+{
   /* HONEST ABOUT WHAT THIS ONE PROVES: it passes even when sectionProvenance is broken to
      rate absent data, because a bare route's sections are content-gated and never render at
      all — so no SL exists to hang a chip on either way. Measured, not assumed: injecting
