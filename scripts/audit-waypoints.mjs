@@ -192,6 +192,12 @@ const F = {
   elevKeyWrong: [],
   typeCasing: [],
   typeOffVocab: [],
+  /* Waypoints carrying no coordinate at all. Every geometry test in this file begins
+     `if (w.lat == null || w.lng == null) continue`, so these were skipped SILENTLY and could
+     not appear in any of the 878 findings — a defect class the audit was structurally unable
+     to report. They are not harmless: the route page still lists the row, and GPXMap still
+     draws a pin, from a position that does not exist. Counted before any geometry runs. */
+  noCoordinate: [],
 };
 
 // The app's own vocabulary — RouteDetail's colour map and glyph map are keyed on exactly
@@ -229,9 +235,24 @@ for (const r of scoped) {
     else if (!topouts.length) F.summitMissing.push({ ...tag, types: [...new Set(wps.map(typeOf))] });
   }
 
+  /* Report the positionless waypoints BEFORE geometry, because geometry is exactly what
+     cannot see them — every test below opens by skipping a null coordinate. */
+  const noCoord = wps.filter((w) => w.lat == null || w.lng == null || isNaN(+w.lat) || isNaN(+w.lng));
+  if (noCoord.length) F.noCoordinate.push({ ...tag, names: noCoord.map((w) => w.name || typeOf(w) || "(unnamed)") });
+
   // -- geometry -------------------------------------------------------------
   if (!track.length) { F.noTrack.push({ ...tag, wps: wps.length }); continue; }
-  if (track.length < 4) { F.unrouted.push({ ...tag, pts: track.length }); continue; }
+  /* A placeholder track is one with no EXTENT, not one with few points. Guarding on point
+     count alone waved through 4-point stubs that span metres: wa_luna_peak_southeast_slopes
+     is 4 points covering 17 m, and being measured as a real track it manufactured 11
+     findings on its own. Measure the span and treat a stub as unrouted, so it stops
+     generating geometry findings it cannot possibly support. */
+  const trackSpanM = track.length < 2 ? 0 : Math.max(
+    ...track.map((p) => haversine(track[0][0], track[0][1], p[0], p[1])));
+  if (track.length < 4 || trackSpanM < 500) {
+    F.unrouted.push({ ...tag, pts: track.length, spanM: m0(trackSpanM) });
+    continue;
+  }
 
   const start = track[0], end = track[track.length - 1];
 
@@ -255,11 +276,22 @@ for (const r of scoped) {
     const line = toPolyline(w.lat, w.lng, track);
     if (line.m > SUMMIT_TOL) F.summitOffLine.push({ ...tag, wp: w.name, offLineM: m0(line.m) });
     const dEnd = haversine(w.lat, w.lng, end[0], end[1]);
-    const dStart = haversine(w.lat, w.lng, start[0], start[1]);
-    // An out-and-back track legitimately ends where it started, so "the track does not
-    // finish at the summit" is only a finding when the summit is not one of the ends.
-    if (dEnd > SUMMIT_TOL && dStart > SUMMIT_TOL) {
-      F.trackNotEndingAtSummit.push({ ...tag, wp: w.name, trackEndToSummitM: m0(dEnd), pts: track.length });
+    /* The old predicate here was `dEnd > TOL && dStart > TOL`, and its comment claimed to
+       exempt out-and-backs — but it exempts the summit being at an END, which is the opposite
+       of the out-and-back case. An out-and-back starts and finishes at the trailhead with the
+       summit in the MIDDLE, so it was flagged every single time. 100 of the 146 findings in
+       this category had the summit sitting ON the track (median a few metres off the line,
+       peaking at exactly 50% along it — the out-and-back signature). The track reaches those
+       summits.
+
+       What the category name actually means is "the track stops before the summit". So ask
+       that: the summit is off the line AND its nearest point on the polyline is an endpoint,
+       which is what "beyond the end" looks like geometrically. A summit lateral to the track
+       is a different defect and is already reported as SUMMIT IS NOT ON THE TRACK. */
+    const beyondEnd = line.seg >= track.length - 2 && line.t >= 0.999;
+    const beyondStart = line.seg === 0 && line.t <= 0.001;
+    if (line.m > SUMMIT_TOL && (beyondEnd || beyondStart)) {
+      F.trackNotEndingAtSummit.push({ ...tag, wp: w.name, trackEndToSummitM: m0(dEnd), offLineM: m0(line.m), pts: track.length, past: beyondEnd ? "end" : "start" });
     }
   }
 
@@ -296,6 +328,7 @@ const TITLES = {
   trackNotEndingAtSummit: "TRACK DOES NOT REACH THE SUMMIT",
   waypointOffLine: "WAYPOINT IS NOT ON THE TRACK",
   outOfOrder: "WAYPOINTS ARE OUT OF SEQUENCE ALONG THE TRACK",
+  noCoordinate: "WAYPOINT HAS NO COORDINATE — renders as a pin with no position, and no geometry test can see it",
   unrouted: "UNMEASURABLE — gpx is a 2-3 point placeholder, not a track",
   noTrack: "UNMEASURABLE — waypoints but no gpx at all",
   elevKeyWrong: "elevFt SET WITHOUT elev — the app reads w.elev, so this elevation never renders",
@@ -304,7 +337,7 @@ const TITLES = {
 };
 const ORDER = ["trailheadOffLine", "trailheadNotAtStart", "multiTrailhead", "summitOffLine", "trackNotEndingAtSummit",
   "summitMissing", "topoutOnPeak", "waypointOffLine", "outOfOrder", "truncatedTrack", "elevKeyWrong", "typeCasing",
-  "typeOffVocab", "unrouted", "noTrack"];
+  "typeOffVocab", "noCoordinate", "unrouted", "noTrack"];
 
 console.log(`\n${scoped.length} of ${routes.length} routes in scope carry waypoints.\n`);
 let actionable = 0;
