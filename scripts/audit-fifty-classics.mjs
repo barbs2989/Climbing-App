@@ -62,7 +62,15 @@ const STOP = /\b(mount|mt|the|peak|mountain|spire|tower|dome|rock|group|massif|f
 // that holds it, for exactly that reason.
 const stem = w => w.replace(/s$/, "");
 const peakKey = s => norm(areaName(s)).replace(STOP, " ").split(/\s+/).filter(Boolean).map(stem).join(" ").trim();
-const routeKey = s => norm(s).replace(/\b(route|the|direct|complete|standard)\b/g, " ").split(/\s+/).filter(Boolean).join(" ").trim();
+// "direct" is NOT a stopword. It is a meaningful qualifier in a route name — Devils Thumb
+// has both an "East Ridge (via Southeast face)" and a "Direct East Ridge", and stripping the
+// word made the direct variation an exact match for the book's plain "East Ridge" and let it
+// win. The book names the direct line explicitly when it means one (#27 Direct Exum Ridge).
+// `spire` is dropped here for the same reason peakKey drops it: the book writes the formation
+// into the route name ("Lost Arrow Spire Tip") where the catalog does not ("Lost Arrow Tip").
+// Without this the only candidate left was "Lost Arrow Spire Direct" — a different line, which
+// an earlier run of this script duly tagged. 0126 corrects that tag.
+const routeKey = s => norm(s).replace(/\b(route|the|complete|standard|spire)\b/g, " ").split(/\s+/).filter(Boolean).join(" ").trim();
 
 // Every US route id in this catalog is prefixed with its two-letter state. So a Canadian entry
 // matching a US-prefixed id is a name collision, not a find — that is how "Mount Temple"
@@ -155,7 +163,10 @@ for (const c of FIFTY_CLASSICS) {
   // Tie-break only: an "Alt. Start" or a named variation is not the line the book lists.
   // Applied as a preference, never as an exclusion — if a variation is the ONLY candidate it
   // still gets reported rather than silently dropped.
-  const VARIATION = /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b/i;
+  // A "Direct" counts as a variation only when the book did NOT ask for the direct line.
+  const wantsDirect = /\bdirect\b/i.test(c.route);
+  const VARIATION = wantsDirect ? /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b/i
+                                : /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b|\bdirect\b/i;
   if (cands.length > 1 && cands.some(x => !VARIATION.test(x.r.name))) cands = cands.filter(x => !VARIATION.test(x.r.name));
   const exact = cands.filter(x => routeKey(x.r.name) === want);
   const pick = exact.length === 1 ? exact[0] : (cands.length === 1 ? cands[0] : null);
