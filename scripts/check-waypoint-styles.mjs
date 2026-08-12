@@ -176,6 +176,66 @@ if (rawLookups.length) {
   for (const r of rawLookups) bad(`${r.f}:${r.line} — ${r.what} indexes the RAW type; wrap it in wpType() or the lookup silently misses every non-canonical spelling`);
 } else ok("every waypoint style lookup normalises through wpType() first");
 
+// ── 3b. no raw `.type === "<canonical type>"` comparison ─────────────────────
+// Section 3 covers style lookups, and that is not the whole surface: a raw EQUALITY test
+// against a canonical name misses in exactly the same silent way. Two of them sat in
+// RouteDetail.jsx while section 3 reported clean over both:
+//
+//   TrailheadCard:  waypoints.find(w => w.type === "Trailhead")   -> supplies name/lat/lng
+//   the approach section's own render gate:  waypoints.some(w => w.type === "Trailhead" …)
+//
+// #847 fixed both to wpIs(). This section is the part #847 did not add: it fixed the two
+// instances and left nothing to stop a third. That distinction is the whole argument for a
+// script over a careful diff — the invariant ("never compare a raw .type") was already
+// implicit in wpType()'s existence and in section 3's comment, and two call sites still got
+// written the other way. #798 is the same story one file over: a semantic rule in prose,
+// broken in four days by a clean merge that added two more readers.
+//
+// The live impact when they existed was smaller than it looks, which is worth recording so
+// nobody re-derives it: `wa_mount_ballard_south` is the only affected route (it stores
+// "Harts Pass" as `"Trailhead/pass"`), and TrailheadCard prefers approach_logistics — which
+// that route has set — so the card and the gate were both already satisfied by another field.
+// A latent silent miss, not a broken screen. It did also hide a real finding: the route
+// carries a SECOND trailhead waypoint, so audit:waypoints' multiTrailhead could not see it.
+//
+// Scoped to string literals that are CANONICAL WP_STYLE keys, which is what makes this
+// precise rather than a haystack: the app compares `.type` against plenty of unrelated
+// vocabularies (`"itinerary"`, `"grade"`, `"invite"`, `"ul"`), and those are different
+// objects' type fields entirely. Only a waypoint's canonical name implies a waypoint.
+const CANON_TYPES = new Set(styled);
+const rawEquality = [];
+for (const f of FILES) {
+  let ast;
+  try {
+    ast = parse(raw[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+  } catch (e) {
+    console.error(`\n${GUARD} FAILED — could not parse ${f}: ${e.message}`);
+    process.exit(1);
+  }
+  const isRawType = (n) => n && n.type === "MemberExpression" && !n.computed
+    && n.property && n.property.type === "Identifier" && n.property.name === "type";
+  traverse(ast, {
+    BinaryExpression(p) {
+      const n = p.node;
+      if (n.operator !== "===" && n.operator !== "!==" && n.operator !== "==" && n.operator !== "!=") return;
+      const pair = [[n.left, n.right], [n.right, n.left]];
+      for (const [a, b] of pair) {
+        if (!isRawType(a)) continue;
+        if (!(b && b.type === "StringLiteral" && CANON_TYPES.has(b.value))) continue;
+        rawEquality.push({ f, line: n.loc ? n.loc.start.line : 0, val: b.value });
+      }
+    },
+  });
+}
+if (!CANON_TYPES.size) bad("no canonical types were parsed, so section 3b checked nothing");
+else if (rawEquality.length) {
+  for (const r of rawEquality) {
+    bad(`${r.f}:${r.line} — compares a RAW \`.type\` against the canonical ${JSON.stringify(r.val)}. ` +
+      `That is a silent miss for every mapped spelling (e.g. "Trailhead/pass"): the test finds nothing, ` +
+      `the caller falls back, and the screen reads as "this route has no such waypoint". Use wpIs(w, ${JSON.stringify(r.val)}).`);
+  }
+} else ok(`no raw \`.type ===\` comparison against any of the ${CANON_TYPES.size} canonical types`);
+
 // ── 4. the glyphs REACH A SCREEN ─────────────────────────────────────────────
 // Sections 1-3 prove the maps agree and the lookups normalise. Neither proves a pin changed:
 // `descent_text` was populated on 1,021 routes and rendered on none, and check:field-renders
