@@ -7056,3 +7056,67 @@ present in this fresh clone) was recreated locally from the read-only anon key s
 run so `check:sql` could verify against the live schema; it is gitignored and was not committed.
 
 Next batch will continue alphabetically after `wa_south_rib` (see progress file).
+
+---
+
+## 2026-08-12 — Pass 2, Batch 103
+
+Ten routes across 8 peaks: South Ridge (Luna Peak, Black Peak, Eldorado Peak's "Main Peak"
+sub-summit), South Spur (Whatcom Peak), North Ridge/Olivine Scramble/West Ridge (South Twin
+Sister), Southeast Face (Sharkfin Tower), West Ridge/Beckey Route (Southeast Mox Peak,
+stored id `..._se_rib`), Southeast Ridge/SE Corner (Mount Shuksan).
+
+**Confirmed errors fixed (16):** A recurring internal-consistency bug class dominated this
+batch — `gain_ft`/`loss_ft` scalars disagreeing with a route's own `itinerary.days` sums
+(Eldorado's Main Peak descent text, Sharkfin Tower's gain/loss, Southeast Mox Peak's
+gain_ft), and `waypoints`/`gpx` arrays stored out of physical route order so `GPXMap` draws
+a backwards, self-crossing track — the same shape fixed on Mount Stuart's Sherpa Glacier
+(batch 100) and Shuksan's own North Face/NE Ridge (batch 88), recurring independently on
+Luna Peak's South Ridge and Shuksan's own Southeast Ridge, which that batch-88 sweep never
+reached. Two "fix already applied to a sibling route but this one was missed" cases:
+Whatcom Peak's `approach_logistics.peakLat/peakLng` (batch 50's fix never reached South
+Spur) and South Twin Sister's Olivine Scramble `access.parking_pass` (batch 5's sweep never
+reached the Scramble, only West/North Ridge). Sharkfin Tower's `access.group_limit`/`rules`
+independently recurred the exact Boston-Basin-is-a-12-not-6-person-zone bug already fixed on
+its sibling Southeast Ridge in batch 100. Mount Shuksan's `seasonal_hazards.avalanche.zone`/
+`climate.forecastZone` carried the same not-a-real-NWAC-zone-name string ("NWAC Mt Baker
+zone") already fixed on two Shuksan siblings in batch 88. South Twin Sister's North Ridge
+`commitment` (II) contradicted its own `grade` field (Grade III) and a stale itinerary line
+still describing a rappel its own `rappels: "0"`/descent_text say doesn't happen; West
+Ridge's own `rappels` field overstated an optional rappel as required, the same shape as
+Silver Star Glacier in batch 100.
+
+**Flagged for human review (18):** Three elevation-datum conflicts in the Cathedral Peak
+shape (external sources genuinely disagree by convention, not error) — Black Peak (8970 vs.
+8975/8986 across sources), Eldorado's Main Peak summit waypoint (8868 vs. high_point_ft
+8873). Black Peak's `gain_ft` disagreeing with its own itinerary by two different amounts
+depending on which of three on-file figures you trust — no clear single value to fix
+blindly. `length_m` vs. `pitch_detail`-sum mismatches on Sharkfin Tower and Southeast Mox
+Peak, both with only partial corroboration. `dist_km` mismatches on four routes, left alone
+per this repo's standing warning against bulk-normalizing that column. South Twin Sister's
+lower-approach land manager conflicts between "DNR/Olivine Corp" (North/West Ridge) and
+"Hampton Family Forests" (Scramble) for one shared road, unresolved because WebFetch to
+hamptonlumber.com was blocked. Southeast Mox Peak's route id (`..._se_rib`) still encoding
+its pre-correction name after `name` itself was already fixed to "West Ridge (Beckey
+Route)" — a deliberate id-rename follow-up, not something to silently UPDATE. Whatcom
+Peak's own area-level lat/lng fix from batch 50 appears never applied to `areas.wa_whatcom_peak`
+despite the route-level fix landing correctly — worth confirming alongside this batch's fix.
+Black Peak's Wing Lake/Lewis Lake camping-permit-zone ambiguity remains unresolved (conflicting
+secondary sources on Park vs. Forest jurisdiction).
+
+**Clean (0):** every route in this batch had at least one confirmed fix or a flagged item;
+none passed with nothing to note.
+
+**Tooling note:** WebFetch was blocked by the network egress proxy for mountainproject.com,
+supertopo.com, summitpost.org, mountaineers.org, americanalpineclub.org, wikipedia.org,
+hamptonlumber.com and similar reference domains for all 8 research agents this batch — the
+seventh consecutive batch with this restriction. Agents fell back to WebSearch snippet
+synthesis throughout. `npm run check:sql` passed clean: 13 write targets across 20
+statements in this file, every target id exists, no DELETE anywhere in the file (2 WARNs
+for statements the checker's id-predicate scan couldn't parse across a multi-line
+`jsonb_set` — both manually verified correct). `.env.local` (not present in this fresh
+clone) was recreated locally from the read-only anon key supplied for this run so
+`check:sql` could verify against the live schema; it is gitignored and was not committed.
+
+Next batch will continue alphabetically after `wa_southeast_ridge_se_corner` (see progress
+file).
