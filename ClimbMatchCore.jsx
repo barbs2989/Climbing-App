@@ -356,11 +356,40 @@ const WP_STYLE={
  Summit:{color:C.orange,glyph:"▲"},
  Topout:{color:C.teal,glyph:"△"},
  Hazard:{color:C.red,glyph:"⚠"},
- Bailout:{color:C.pink,glyph:"⚑"}
+ Bailout:{color:C.pink,glyph:"⚑"},
+ /* The five below are DESCRIPTIVE, not navigational, and that is why they deliberately share
+    one neutral colour instead of taking five more hues. `WP_TYPE_MAP` has always canonicalised
+    ~30 raw spellings into these five, and WP_STYLE had an entry for none of them — so all five
+    fell to the `||"📍"` fallback and rendered as one identical grey emoji pin: 141 waypoints on
+    130 WA routes, and Base/Crag/Pass/Approach/Landmark were indistinguishable from each other.
+    The two maps disagreed about how many kinds of waypoint exist and the renderer lost.
+
+    Why not five new hues: the palette carries nine chromatic colours and the eight above spend
+    them. Minting near-duplicates (amber beside yellow, blueSolid beside blue) would damage the
+    eight that currently work — and REUSING a hue would be worse than grey, because a Crag drawn
+    in Campsite purple is not merely ambiguous, it is a wrong navigational claim. Grey says
+    "context, not a waypoint you act on", which is exactly what these five are.
+    So the glyph carries the whole distinction here, which is the principle stated above rather
+    than an exception to it. All five are Geometric-Shapes/math characters with no emoji
+    presentation variant — a char that renders as emoji ignores `color` and would reintroduce
+    the very bug this fixes. Approach is the DASHED arrow U+21E2 rather than a plain "→": the
+    plain arrow appears 104 times in this app as ordinary copy ("See all →", "A → B"), so as a
+    pin glyph it would read as punctuation rather than as a type, and no render assertion could
+    tell the two apart. A glyph used elsewhere as prose is not a glyph. */
+ Base:{color:C.textSub,glyph:"⊥"},
+ Crag:{color:C.textSub,glyph:"▩"},
+ Pass:{color:C.textSub,glyph:"◡"},
+ Approach:{color:C.textSub,glyph:"⇢"},
+ Landmark:{color:C.textSub,glyph:"◉"}
 };
 function wpColor(t){return (WP_STYLE[t]&&WP_STYLE[t].color)||C.textSub;}
 function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
-// type -> colour, for the call sites that index a plain map (`wc[wp.type]`, `wc.Summit`).
+/* type -> colour, for the call sites that index a plain map (`wc[wpType(wp)]`, `wc.Summit`).
+   Index it with `wpType(w)`, NEVER the raw `w.type`. Both Leaflet marker call sites did the
+   latter, so they bypassed the normaliser the rest of the app goes through and drew a grey dot
+   for 20 WA waypoints whose colour this app already knows — "Lake" (6), "camp" (5),
+   "Base/bivy" (4), "Trailhead/pass", "Pass/camp", "lake/basin". WP_TYPE_MAP is keyed lowercase,
+   so a capitalised spelling misses too; a raw lookup is a silent miss, never an error. */
 const WP_COLORS=Object.keys(WP_STYLE).reduce(function(o,k){o[k]=WP_STYLE[k].color;return o;},{});
 const WP_SINGLE_TYPES=["Trailhead","Summit"];
 const MAX_WAYPOINTS=8;
@@ -1090,14 +1119,14 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels}){
     const label=(wp.type?wp.type+": ":"")+(wp.name||"");
     const hit=L.circleMarker([wp.lat,wp.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true});
     hit.bindPopup(html);hit.bindTooltip(label,{direction:"top"});hit.addTo(map);
-    const mk=L.circleMarker([wp.lat,wp.lng],{radius:6,color:"#ffffff",weight:2,fillColor:wc[wp.type]||C.textSub,fillOpacity:0.95});
+    const mk=L.circleMarker([wp.lat,wp.lng],{radius:6,color:"#ffffff",weight:2,fillColor:wc[wpType(wp)]||C.textSub,fillOpacity:0.95});
     mk.bindPopup(html);mk.bindTooltip(label,{direction:"top"});mk.addTo(map);
     if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.circleMarker([peakCoord.lat,peakCoord.lng],{radius:8,color:"#ffffff",weight:2,fillColor:C.orange,fillOpacity:1}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
   const locate=()=>{if(!navigator.geolocation){setGeoErr("Location isn’t available on this device.");return;}setLocating(true);setGeoErr("");navigator.geolocation.getCurrentPosition(pos=>{setLocating(false);const L=window.L,map=mapRef.current;if(!L||!map)return;const la=pos.coords.latitude,ln=pos.coords.longitude,ac=pos.coords.accuracy||50;if(userRef.current){userRef.current.setLatLng([la,ln]);}else{userRef.current=L.circleMarker([la,ln],{radius:7,color:"#ffffff",weight:3,fillColor:C.green,fillOpacity:1}).addTo(map).bindTooltip("You are here",{direction:"top"});}if(accRef.current){accRef.current.setLatLng([la,ln]).setRadius(ac);}else{accRef.current=L.circle([la,ln],{radius:ac,color:C.green,weight:1,fillColor:C.green,fillOpacity:0.12}).addTo(map);}map.setView([la,ln],13);setLocatedOnce(true);},err=>{setLocating(false);setGeoErr(err&&err.code===1?"Location permission denied — enable it to see where you are on the route.":"Couldn’t get your location right now.");},{enableHighAccuracy:true,timeout:12000,maximumAge:30000});};
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
   if(!hasPts&&!(waypoints&&waypoints.length)&&!hasPeak)return null;
   const resetView=()=>{const map=mapRef.current;if(!map)return;if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25));else if(hasPeak)map.setView([peakCoord.lat,peakCoord.lng],12);else map.setView([39.5,-98.5],4);};
-  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} style={{padding:"7px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13,fontWeight:700,cursor:"pointer"}}>✕ Close</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C}/><button onClick={()=>setFullscreen(f=>!f)} title={fullscreen?"Exit full screen":"View full screen"} style={{position:"absolute",top:10,right:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"9px 12px",fontSize:14,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{fullscreen?"⤤":"⤢"}</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:10,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:10,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+(locating?"Locating…":"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{Object.keys(WP_STYLE).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:WP_STYLE[k].color,fontSize:12.5,lineHeight:1}}>{WP_STYLE[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
+  const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} style={{padding:"7px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13,fontWeight:700,cursor:"pointer"}}>✕ Close</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C}/><button onClick={()=>setFullscreen(f=>!f)} title={fullscreen?"Exit full screen":"View full screen"} style={{position:"absolute",top:10,right:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"9px 12px",fontSize:14,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{fullscreen?"⤤":"⤢"}</button>{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:10,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:10,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+(locating?"Locating…":"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:WP_STYLE[k].color,fontSize:12.5,lineHeight:1}}>{WP_STYLE[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;
   return fullscreen?createPortal(mapUI,document.body):<div>{mapUI}</div>;
 }
 
@@ -2111,7 +2140,7 @@ function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}){
     (waypoints||[]).forEach(function(w,i){
       if(!w||w.lat==null||w.lng==null||isNaN(w.lat)||isNaN(w.lng))return;
       const isActive=i===activeIdx;
-      const mk=L.circleMarker([w.lat,w.lng],{radius:isActive?9:6,color:isActive?C.blue:"#ffffff",weight:isActive?3:2,fillColor:wc[w.type]||C.textSub,fillOpacity:1});
+      const mk=L.circleMarker([w.lat,w.lng],{radius:isActive?9:6,color:isActive?C.blue:"#ffffff",weight:isActive?3:2,fillColor:wc[wpType(w)]||C.textSub,fillOpacity:1});
       mk.bindTooltip((w.type||"")+(w.name?": "+w.name:""),{direction:"top"});mk.addTo(map);markersRef.current.push(mk);
     });
   },[waypoints,activeIdx,peakCoord]);
