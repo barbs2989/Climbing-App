@@ -378,11 +378,16 @@ function fmtRappels(r){if(r==null)return null;if(typeof r!=="object")return r;va
    header states the count and total length, so a bare count here would just repeat it —
    keep only the prose that says something the table cannot. */
 /* `_rappelsFromContrib` is set by the contribution merge in ClimbMatch.jsx when climbers have
-   agreed a correction to the rappel count/length. All three readers below prefer `rappelDetail`
+   agreed a correction to the rappel count/length. All FIVE readers below prefer `rappelDetail`
    (the station-by-station enrichment) over `rappels`, so on the 155 routes that carry it an
    accepted correction passed the 3-agree gate and then displayed nothing at all — rappelCount
    returned the stale station count and rappelNoteText suppressed the new value outright. The
-   station list is not deleted; it just stops out-voting the humans who climbed it. */
+   station list is not deleted; it just stops out-voting the humans who climbed it.
+
+   The count was three when #787 wrote this and is five now — #784 added rappelsAreNone and
+   rappelHeadingCount, and both shipped without the guard. Nothing catches a reader that
+   forgets it: that merge was clean and every gate stayed green. If you add a sixth, the
+   `!_rapEdited(route)&&` prefix is the whole contract. */
 function _rapEdited(route){return !!(route&&route._rappelsFromContrib);}
 function rappelNoteText(route){var s=fmtRappels(route&&route.rappels);if(s==null)return null;var t=String(s).trim();if(!t)return null;if(!_rapEdited(route)&&route&&route.rappelDetail&&route.rappelDetail.length&&/^\d+(?:\.\d+)?x?(?:\s*·\s*\d+(?:\.\d+)?\s*(?:m|ft))?$/i.test(t))return null;return t;}
 /* Every rappel count a route can state, so the two boxes cannot print different numbers.
@@ -417,7 +422,10 @@ const RAP_NONE_RE=/^\s*(?:none|no\b|n\/a|not required|zero|0)\b/i;
 const RAP_ALT_RE=/\b\d+\s*(?:-|\s)?\s*(?:short\s+|full\s+)?raps?(?:pels?)?\b/i;
 function rappelsAreNone(route){
   if(!route)return false;
-  if(route.rappelDetail&&route.rappelDetail.length)return false;
+  // `!_rapEdited` for the reason #787 records: a climber who has agreed a correction must not
+  // be out-voted by the stale station list. Without it, a route corrected to a walk-off would
+  // keep rendering its old rappel table.
+  if(!_rapEdited(route)&&route.rappelDetail&&route.rappelDetail.length)return false;
   const r=route.rappels;
   if(r==null)return false;
   if(typeof r==="object")return r.count===0;
@@ -439,7 +447,10 @@ function rappelsAreNone(route){
    below it is the evidence. */
 function rappelHeadingCount(route){
   const plural=function(n){return n+" rappel"+(String(n)==="1"?"":"s");};
-  if(route&&route.rappelDetail&&route.rappelDetail.length)return plural(route.rappelDetail.length);
+  // Same guard as the other readers, and this is the sharpest case: the heading states a
+  // NUMBER, so a stale station count here silently contradicts the correction the climber
+  // just watched pass the 3-agree gate.
+  if(!_rapEdited(route)&&route&&route.rappelDetail&&route.rappelDetail.length)return plural(route.rappelDetail.length);
   const r=route&&route.rappels;
   if(r==null)return null;
   if(typeof r==="object")return r.count!=null?plural(r.count):null;
