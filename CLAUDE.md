@@ -38,6 +38,7 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
 ```
 
@@ -561,6 +562,43 @@ a build error, but a screen that renders wrong or not at all.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
+- **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
+  merge**. It exists because the comment that promised it could not be was wrong, and stayed
+  believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
+  *"Superseded PR runs are cancellable; a main run is not"* above
+  `cancel-in-progress: ${{ github.event_name == 'pull_request' }}` — the flag is right and
+  the claim is false. **`cancel-in-progress: false` only protects a run that is already IN
+  PROGRESS; GitHub cancels a still-PENDING run unconditionally when a newer run joins its
+  concurrency group, and no flag disables that.** Static, so it sits in `npm run build`.
+  - Measured on run `31644233526` (event `push`, sha `7fb4e65`): `18e6265`'s run sat pending
+    for **15 minutes** (created 21:33:48, started 21:48:44), `7fb4e65`'s was created 21:48:58
+    and correctly went pending *behind* it, then `9d441d3`'s was created 21:50:48 and
+    `7fb4e65`'s was **cancelled two seconds later**. A cancelled run reports **no failure**,
+    so **#835's merge read as checked by a guard that never ran on it** — precisely the
+    outcome #616's note said was impossible here.
+  - **The fix is structural, not a stricter flag**: group by `github.sha` on a push
+    (`github.head_ref || github.sha`) so main runs never share a group and so never queue
+    behind one another. Sharing one group across main pushes is what *built* the queue that
+    made a run cancellable. The cost is that main pushes now run in parallel — the right
+    trade, since a skipped check is worth less than a runner minute.
+  - **`deploy.yml` is the one exemption, and it is checked rather than trusted.** A superseded
+    *deploy* is harmless (deploying a newer tip includes the older commits) and `check:drift`
+    asks from outside whether the live site serves the current tip. A superseded *check* is
+    different: nothing ever asks that question again. The exemption is keyed to
+    `group: pages`, so if that group changes the run **fails as stale bookkeeping** — the same
+    standard as `NEEDS_EXTRA_STATE`.
+  - It also pins the **#795** invariant it depends on: both browser guards must still trigger
+    on push to main. A workflow that stops being push-triggered would otherwise drop out of
+    the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
+    exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
+    broken scan, never as safe CI.
+  - **Comments are stripped before anything is matched**, and that is load-bearing here: both
+    workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
+    scan that read comments would pass on the strength of an explanation. Same trap
+    `check:schema-drift` records from the other side, where prose naming a column failed the
+    build.
+  - Injection-tested 6/6, listed at the bottom of the script. Case 6 must **pass**: a comment
+    mentioning the forbidden `group: ${{ github.ref }}` is documentation, not a regression.
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
