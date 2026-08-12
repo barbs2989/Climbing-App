@@ -7283,3 +7283,101 @@ covering the same domain family. All verification this batch relied on WebSearch
 synthesis rather than direct page fetches.
 
 Next batch continues alphabetically after `wa_the_brothers_south_couloir` (see progress file).
+
+## Batch 106 — 2026-08-12
+
+Ten routes, next-alphabetically after `wa_the_brothers_south_couloir`: Brothers Traverse, The
+Cave Route (Concord Tower), Chopping Block South Route, The Devils Club (Southeast Mox Peak),
+Direct North Ridge w/ Gendarme (Mount Stuart), The Hitchhiker (South Early Winters Spire), and
+four Monk lines on Cathedral Peak (Le Gibet, Odine, Scabo, West Cracks - Left Crack).
+
+**Confirmed fixes (10, across 6 routes):**
+- `wa_the_brothers_traverse` — `ice_grade` overstated Mountain Project's own published grade
+  (claimed AI3, MP says AI2); `areas.elevation_ft` for The Brothers (6868) matched no source
+  and disagreed with this row's own `high_point_ft` (6866, which the Forest Service/WTA/
+  Mountaineers all agree on) — fixed both.
+- `wa_the_chopping_block_south_route` — `access.rules` grouped Boston Basin/Eldorado in with
+  the Southern Pickets as 6-person zones; batch 104 already established (NPS-sourced) that
+  Boston Basin/Eldorado are 12-person zones. Corrected the parenthetical rather than the
+  route's own (correct) `group_limit`.
+- `wa_the_devils_club` — `overview` mischaracterized the 2008 Larson/Wehrly outing as a
+  "second ascent"/variation of this route; it was the first ascent of a separate, previously
+  unclimbed summit (Lemolo Peak) via its own new route, per AAC/Alpinist/Klipsun. Also
+  removed four stale waypoints/gpx points from the wrong (Depot Creek/BC-side) approach —
+  the row's own approach text only describes the Ross Lake/Little Beaver/Perry Creek
+  approach, and one surviving waypoint's own note already flagged the duplication without
+  the earlier pass having removed the stale points.
+- `wa_the_direct_north_ridge_w_gendarme` — Stuart Lake Trailhead waypoint elevation (3540 ft)
+  was ~610 ft (21%) too high; WTA/USFS agree on ~2930 ft.
+- `wa_the_hitchhiker` — `overview` said the route starts "100 yards" right of The Passenger;
+  the row's own approach/timing fields already say "100 ft," and external sourcing agrees.
+  `grade`/`rock_grade` corrected from "5.11-" to "5.11b" per SuperTopo and theCrag's own
+  route-page titles, neither of which supports "5.11-".
+- `wa_the_monk_odine` — `road.status`/`road.driveNote` described Forest Road 51 as gravel
+  (self-contradictory within `road.status`'s own sentence); WTA/USFS agree the drive is paved
+  the entire ~28 miles from Winthrop, matching this row's own `approach` text. `watch_out`
+  still opened with "5.8 route" after `grade`/`grade_num`/`rock_grade`/`pitch_detail` were all
+  corrected to 5.9 in an earlier pass (per this row's own `corrections` field) — the text
+  field was missed by that fix.
+
+**A pattern worth a human's attention, not fixed:** three of the four Monk routes audited
+this batch (`wa_the_monk_le_gibet`, `wa_the_monk_odine`, `wa_the_monk_west_cracks_left_crack`)
+independently turned up the same two defects: (1) a Monk-specific waypoint sharing near-
+identical coordinates with Cathedral Peak's own summit pin, despite these routes' own text
+describing The Monk as "a distinct, smaller detached tower/buttress ... not part of the main
+South Face wall," and `high_point_ft` on at least `wa_the_monk_odine` exactly matching
+Cathedral's true summit elevation (8606) rather than the Monk's own ~8300 ft waypoint; and
+(2) a `corrections` field claiming "Grade (5.8, 2 stars) verified on Mountain Project" while
+`stars` is `null`. This looks like Monk-route enrichment shared geometry/notes across sibling
+routes rather than sourcing each independently, but Mountain Project itself was unreachable
+via WebFetch for all four agents this batch, so none could pull the real per-route pin or
+star count to write a verified fix. Flagging for a human with direct MP access rather than
+guessing; `wa_the_monk_scabo` (below) did NOT show this pattern, so it isn't universal across
+the Monk group.
+
+**Also flagged for human review, not fixed:**
+- `wa_the_cave_route` — pitch count (3 vs. an independently-sourced 4-pitch "Tunnel Route"
+  account, possibly the same climb under SuperTopo's name); `high_point_ft` (7569) matches
+  neither of the area's own two disputed elevation figures (7560/7611); trailhead elevation
+  disagrees internally (waypoint 5200 ft vs. prose 5400 ft, and both figures independently
+  sourced elsewhere).
+- `wa_the_chopping_block_south_route` — the "South Route" name itself still isn't confirmed
+  as a distinct documented line (already self-flagged in the row); a possible third FA
+  credit (James C. Martin) found in one secondary source but not tied specifically to this
+  summit.
+- `wa_the_devils_club` — AAJ publication year (row says 2007; one source construction points
+  to AAJ 2006) unresolved without direct access to the AAC's own PDF; a grade/length pairing
+  question (does 2400ft pair with the AAC or the Mountain Project grade?) left as the row's
+  existing, disclosed editorial call.
+- `wa_the_direct_north_ridge_w_gendarme` — pitch count (20) falls within a plausible range
+  across sources that use "Direct"/"Complete"/"Upper" North Ridge inconsistently; `gain_ft`
+  doesn't cleanly reconcile against the corrected trailhead elevation, likely because it's a
+  cumulative multi-pass approach figure with no single source to check it against.
+- `wa_the_hitchhiker` — approach trailhead conflict already self-flagged in the row; rappel
+  count (2 vs. 3) reflects genuine route variability per an independent source, not an error;
+  `pitch_detail` lengths sum short of `length_m` by ~29m with no source to adjudicate; FA year
+  unconfirmed either way.
+
+**Clean (1):** `wa_the_monk_scabo` — every checkable field (grade, pitches, descent, rack,
+area elevation/prominence/coordinates, approach mileage, road, permit, group limit) matched
+external sourcing exactly, including the row's own `corrections` claim of Mountain Project
+verification.
+
+**Tooling note:** every primary route-database/land-manager domain relevant to this batch was
+blocked by the network egress proxy for WebFetch across all ten research agents —
+`mountainproject.com`, `supertopo.com`, `thecrag.com`, `summitpost.org`, `mountaineers.org`,
+`stephabegg.com`, `wta.org`, `fs.usda.gov`, `nps.gov`, `en.wikipedia.org`,
+`publications.americanalpineclub.org`, `alpinist.com`, `climbing.com`, `cascadeclimbers.com`,
+and `web.archive.org` among them — consistent with the same domain family flagged blocked in
+batches 104/105. All findings this batch rest on WebSearch snippet synthesis; several flagged
+(not fixed) items above are explicitly weaker for it. `npm run check:sql` passed clean against
+both `--table routes` (9 checkable targets across 11 UPDATE statements) and `--table areas` (1
+target) — 1 WARN for the `wa_the_monk_odine` road.driveNote statement, whose id predicate the
+checker's regex couldn't parse cleanly past an embedded ''-escaped apostrophe earlier in the
+file (the Devils Club waypoints fix); manually verified against that statement's own clean
+`WHERE id = 'wa_the_monk_odine'` clause. `.env.local` (not present in this fresh clone) was
+recreated locally from the read-only anon key supplied for this run so `check:sql` could
+verify against the live schema; it is gitignored and was not committed.
+
+Next batch continues alphabetically after `wa_the_monk_west_cracks_left_crack` (see progress
+file).
