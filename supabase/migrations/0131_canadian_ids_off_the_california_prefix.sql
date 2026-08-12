@@ -1,6 +1,11 @@
+-- NUMBERED 0131 SO IT RUNS AFTER 0130, which is the file that creates these rows. It was
+-- briefly 0127 — before 0130 — which on a fresh replay would have deleted rows that did not
+-- exist yet and then let 0130 re-create them under the very prefix this corrects. The live
+-- database was applied in the right order by hand; this is about replay.
+--
 -- Canadian ids move off the `ca_` prefix, which in this catalog means CALIFORNIA.
 --
--- 0126 filed every Canadian row under `ca_`, reading it as "Canada". It is not: ~14,000
+-- 0130 filed every Canadian row under `ca_`, reading it as "Canada". It is not: ~14,000
 -- Californian routes already own that prefix, so `id like 'ca_%'` — the reflex filter used
 -- throughout scripts/ and by audit:identity — silently returned Bugaboo Spire and Mount Robson
 -- as Californian. That is exactly the route-identity contamination CLAUDE.md documents, and it
@@ -13,7 +18,7 @@
 -- Done as delete-then-insert rather than an id UPDATE because areas.path is a materialized
 -- ltree that areas_set_path does NOT cascade: renaming a parent id would leave every
 -- descendant's path pointing at an id that no longer exists. These rows were inserted minutes
--- ago by 0126, nothing references them, and the delete is scoped to source =
+-- ago by 0130, nothing references them, and the delete is scoped to source =
 -- 'fifty-classics-roster' so it cannot reach a Californian row that legitimately owns `ca_`.
 
 begin;
