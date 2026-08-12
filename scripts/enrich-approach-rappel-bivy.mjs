@@ -17,7 +17,9 @@
 //     0122 migration exists for, so it must not drift into being a second `notes`.
 //
 // Usage:  node scripts/enrich-approach-rappel-bivy.mjs [--dry] [--only <routeId>]
+//                                                     [--from batch.json] (repeatable)
 
+import fs from "fs";
 import { patchRow, SUPABASE_URL, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 
 const args = process.argv.slice(2);
@@ -176,6 +178,24 @@ const DATA = {
     }
   }
 };
+
+// Batches produced elsewhere (see --from) are merged in here rather than pasted into DATA, so
+// the review surface stays the JSON file and this script stays the single write path — area
+// assertion, patchRow, re-read. A batch file must not be able to bypass any of that.
+//
+// An entry whose climbing_route is EMPTY is dropped with its stated reason rather than written.
+// Writing [] would look identical to "enriched" on every count-based check while putting an
+// empty section on the route, which is the failure mode this whole change exists to remove.
+for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
+  const raw = JSON.parse(fs.readFileSync(f, "utf8"));
+  for (const [id, spec] of Object.entries(raw)) {
+    const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length);
+    if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
+    if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
+    for (const k of ["climbing_route", "approach_variants", "bivy"]) if (Array.isArray(spec[k]) && !spec[k].length) delete spec[k];
+    DATA[id] = spec;
+  }
+}
 
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
