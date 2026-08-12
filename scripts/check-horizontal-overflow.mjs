@@ -216,32 +216,78 @@ const tap = async (name) => {
   return ok;
 };
 await load("?zt=routes");
-await page.evaluate(() => {
-  const sel = document.querySelector("select");
-  if (!sel) return;
-  const opt = [...sel.options].find((o) => /^Washington\b/.test(o.label) || /^Utah\b/.test(o.label));
-  if (!opt) return;
-  sel.value = opt.value; sel.dispatchEvent(new Event("change", { bubbles: true }));
+// TWO selects, not one: PICK A COUNTRY then PICK A REGION, and the region list is inert
+// until a country is chosen. `document.querySelector("select")` returns the COUNTRY picker,
+// so setting it to "Washington" matches no option and silently does nothing — the drill-in
+// then never leaves the picker and route detail reads as NOT REACHED. Pick by the option
+// text on whichever select actually offers it, and assert each step moved.
+const pick = (rx) => page.evaluate((src) => {
+  const re = new RegExp(src);
+  for (const sel of document.querySelectorAll("select")) {
+    const opt = [...sel.options].find((o) => re.test(o.label));
+    if (!opt) continue;
+    sel.value = opt.value;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+    return opt.label;
+  }
+  return null;
+}, rx);
+
+const country = await pick("^United States\\b");
+if (country) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+const region = country ? await pick("^Washington$|^Washington\\b") : null;
+if (region) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
+if (!country || !region) log(`  route detail`.padEnd(28) + `NOT REACHED — country=${JSON.stringify(country)} region=${JSON.stringify(region)}`);
+
+// Picking a region lands on the AREA browser, not a route list — the rows are areas
+// ("Northwest Region · 1129 climbs"), and clicking one only descends the tree. "View all N
+// routes" is the control that actually produces routes; it is the finder, not a shortcut.
+// Matched by shape rather than by its number, which moves with the catalog.
+const viaViewAll = await page.evaluate(() => {
+  const el = [...document.querySelectorAll('[role="button"],button,div,span,a')]
+    .find((e) => /^View all [\d,]+ routes/.test((e.innerText || "").trim()));
+  if (!el) return null;
+  const t = el.innerText.trim().slice(0, 40);
+  el.click();
+  return t;
 });
-await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
-await tap("Routes");
+if (viaViewAll) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
 // ANY route will do. check:ui pins its sample by name because it asserts on that route's
 // CONTENT; this only measures layout, so pinning would import that check's known flakiness
 // (a rename in the live DB turns it red on a PR that changed nothing) for no benefit. Take
 // the first route row the list offers.
 const opened = await page.evaluate(() => {
-  const rows = [...document.querySelectorAll('[role="button"]')]
-    .filter((e) => { const t = (e.innerText || "").trim(); return t.length > 8 && !/^(Areas|Routes)$/.test(t); });
+  const rows = [...document.querySelectorAll('[role="button"]')].filter((e) => {
+    const t = (e.innerText || "").trim();
+    if (t.length < 8) return false;
+    if (/^(Areas|Routes|View map|Objectives|All areas)$/.test(t)) return false;
+    // An AREA row ends in "N climbs →" and only descends the tree; it is not a route.
+    if (/\d[\d,]* climbs\s*→?$/.test(t)) return false;
+    if (/^View all /.test(t)) return false;
+    return true;
+  });
   if (!rows.length) return null;
-  const t = rows[0].innerText.trim().slice(0, 40).replace(/\n/g, " ");
-  rows[0].click();
+  // Prefer a roped multi-pitch line over a boulder problem. The point of coming here is the
+  // RICHEST layout — header strap, stat tiles, waypoint rows, pitch tables — and a V3
+  // boulder has almost none of it (it is also not offered a Plan tab at all, since showPlan
+  // is content-gated). Falling back to the first row keeps this working if the labels move.
+  const rich = rows.find((e) => /Trad|Alpine|Mountaineering|Ice|Sport/i.test(e.innerText || ""));
+  const el = rich || rows[0];
+  const t = el.innerText.trim().slice(0, 40).replace(/\n/g, " ");
+  el.click();
   return t;
 });
 if (opened) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
 if (opened) {
   log(`  route detail: opened ${JSON.stringify(opened)}`);
   for (const sub of ["Overview", "Reports", "Photos", "Partners", "Plan", "Safety"]) {
-    if (sub !== "Overview" && !(await tap(sub))) { log(`  route:${sub}`.padEnd(28) + "NOT REACHED"); continue; }
+    // Plan is CONTENT-GATED (Safety is not), so a route with no approach or descent is
+    // correctly offered no Plan tab. Say which case this is rather than printing a bare
+    // NOT REACHED that reads like a broken click.
+    if (sub !== "Overview" && !(await tap(sub))) {
+      log(`  route:${sub}`.padEnd(28) + (sub === "Plan" ? "not offered — content-gated, correct for a route with no plan data" : "NOT REACHED"));
+      continue;
+    }
     const r = await scan();
     const wide = r.docScrollW > r.docClientW + 1;
     log(`  route:${sub}`.padEnd(28) + `page ${r.docScrollW}/${r.docClientW}${wide ? "  <-- SCROLLS SIDEWAYS" : ""}  offenders:${r.total}`);

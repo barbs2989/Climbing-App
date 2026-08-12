@@ -470,12 +470,26 @@ a build error, but a screen that renders wrong or not at all.
     app tree: the `injection passes because the fault is out of frame` shape exactly. #818
     asked for the promotion to be done "from a quiet machine"; this is it, with the
     exclusion corrected.
-  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
-    That is the richest layout in the app and where both recorded bugs of this class lived,
-    so it is the coverage that matters most. The drill-in (state select → Routes → open a
-    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
-    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
-    not read a green run as covering the route page.
+  - **Route detail IS now reached**, and the drill-in has three traps worth keeping. The
+    Climbs tab has **two** selects — country then region — and the region list is inert
+    until a country is picked, so `document.querySelector("select")` returns the *country*
+    picker and setting it to "Washington" matches nothing and silently does nothing. That
+    one defect is why this read `NOT REACHED` when it shipped. Picking a region then lands
+    on the **area browser**, whose rows only descend the tree (`… N climbs →`); **"View all
+    N routes" is the control that produces routes** — it is the finder, not a shortcut, and
+    it is matched by shape rather than by its number, which moves with the catalog.
+  - It opens **whichever route the list offers**, preferring a roped line over a boulder
+    problem, rather than pinning a name. `check:ui` pins its sample because it asserts on
+    that route's *content*; this only measures layout, so pinning would import that check's
+    known flakiness (a rename in the live DB turns it red on a PR that changed nothing) for
+    no benefit.
+  - **`Plan` is content-gated and `Safety` is not**, so a route carrying no approach or
+    descent is correctly offered no Plan tab. The run says *"not offered — content-gated"*
+    rather than a bare `NOT REACHED`, which would read like a broken click.
+  - **What route coverage still does not prove.** An arbitrary route is un-enriched — that is
+    the shape ~99.5% of the catalog has, and worth measuring for exactly that reason — so
+    the *rich* layout (pitch tables, waypoint rows, stat tiles) is only partly exercised.
+    Pointing it at an enriched route is the remaining follow-up.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
