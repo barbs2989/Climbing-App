@@ -25,7 +25,71 @@ const DRY = args.includes("--dry");
 const ONLY = (() => { const i = args.indexOf("--only"); return i >= 0 ? args[i + 1] : null; })();
 
 // ── Content ──────────────────────────────────────────────────────────────────────────────
+// climbing_route entries below are a RE-HOMING, not new research: every fact in them was
+// already in that route's own `approach` text, where audit:approach-scope found it. Nothing is
+// invented and nothing is deleted — `approach` is left exactly as it is this pass, because
+// losing a sentence is worse than repeating one, and the CLIMBING ROUTE heading is what tells
+// a reader which half of the story they are in. Trimming the approach to stop at the base is a
+// separate, riskier pass that should be done route-by-route with eyes on it.
 const DATA = {
+  wa_bulls_tooth_standard: {
+    area: "wa_bulls_tooth",
+    climbing_route: [
+      { n: 1, label: "Summit block, right-hand line", class: "Class 2–3",
+        notes: "Solid granite. The easier line works around the right (east/south) side of the block rather than the left — going left is the common error here." },
+      { n: 2, label: "Final step and mantle", class: "Class 3",
+        notes: "Short but exposed: a step and a mantle onto the summit itself." },
+    ],
+  },
+
+  wa_bearpaw_mountain_scramble: {
+    area: "wa_bearpaw_mountain",
+    climbing_route: [
+      { n: 1, label: "Summit block from the north bowl", class: "Class 2–3",
+        notes: "Roughly 300 ft from the base of the block to the 6,091 ft summit on generally solid rock and blocks, with mild exposure in the last stretch. Snow lingers in the summit gullies into July on shaded ground; early season that can mean an axe for this section." },
+    ],
+  },
+
+  wa_summit_chief_mountain_south_route: {
+    area: "wa_summit_chief_mountain",
+    climbing_route: [
+      { n: 1, label: "Talus basin to the 7,200 ft notch", class: "Class 2",
+        notes: "Steep hardpan and talus with real rockfall potential from parties above. A moat around 7,000 ft, where the peak steepens, is the feature most likely to stop you — it can be impassable after mid-July, earlier in a low-snow year." },
+      { n: 2, label: "Southwest gully system", class: "Class 2–3",
+        notes: "Loose rock and an exposed slab that dips slightly outward. Route-finding through here is the crux of the route, and beta photos of the south-ridge crossing point are frequently reported as inaccurate — navigate it rather than pattern-match it." },
+      { n: 3, label: "Final scramble to the summit", class: "Class 2–3",
+        notes: "Short, on the same loose ground as the gully below." },
+    ],
+  },
+
+  wa_cloudy_peak_southwest_slopes: {
+    area: "wa_cloudy_peak",
+    climbing_route: [
+      { n: 1, label: "Cloudy Pass to the southwest ridge", class: "Class 2",
+        notes: "An obvious boot path climbs through meadows onto rocky talus and gains the southwest ridge — about 1,500 ft above the pass, in well under a mile." },
+      { n: 2, label: "The southwest ridge crest", class: "Class 2–3",
+        notes: "Stay ON the crest. Straying onto the flanking slopes puts you in seriously unstable scree and talus. Loose blocks throughout, so keep the party out of one another's fall line. The exposure is real — the far (north) side of the ridge drops away steeply." },
+      { n: 3, label: "Summit block, east then north side", class: "Class 4+",
+        notes: "At the base of the final block, traverse round to its east side, then work toward the north (back) side to find the walkable weakness through. Narrow, genuinely exposed, and the technical crux of the day." },
+    ],
+    // The route's own text already recorded that three approaches reach Cloudy Pass; until now
+    // that fact lived as an aside at the end of an approach paragraph, where it could not be
+    // compared against anything. Same facts, made choosable.
+    approach_variants: [
+      { name: "Phelps Creek and Spider Gap (standard)", season: "Jul–Sep", hours: "2 days", gainFt: 5800,
+        notes: "From the Phelps Creek Trailhead (~3,500 ft), Trail #1511 climbs the valley about 6.5 miles to Spider Meadows, then into upper Phelps Basin and up the Spider Glacier snowfield to Spider Gap at 7,100 ft. Descend the north side — the steepest 100 vertical feet first, softer snow tends to be climber's-left — then scree and easing snowfield past the Lyman Glacier to Lower Lyman Lake, and back up about 1.8 miles of open meadow to Cloudy Pass at 6,438 ft. This is the line the on-file distance matches.",
+        baseFinding: "Cloudy Pass is the staging point, not the base: the climbing starts where the boot path leaves the meadows and gains the southwest ridge, with the summit about 1,500 ft above the pass.",
+        hazards: [
+          "Spider Gap is the crux of the approach — a permanent snow/glacier slope that is a straightforward boot-pack in summer but can hold open crevasses and firm icy snow early season. Carry an axe and know how to use it.",
+          "A whiteout or an early-morning refreeze moves crampons from optional to necessary.",
+        ] },
+      { name: "Buck Creek Trail from Trinity, over Buck Creek Pass", season: "Jul–Sep", hours: "Multi-day",
+        notes: "A longer alternative reaching Cloudy Pass from the Trinity Trailhead by way of Buck Creek Pass. Recorded on file as one of the three ways in; it is a multi-day trip rather than a variation on the standard day." },
+      { name: "Railroad Creek from Holden Village", season: "Jul–Sep", hours: "Multi-day",
+        notes: "Reaches Lower Lyman Lake and Cloudy Pass from Holden Village, which is itself reached by the Lake Chelan boat and a vehicle shuttle. The longest of the three and the one with the most fixed logistics." },
+    ],
+  },
+
   wa_forbidden_peak_west_ridge: {
     area: "wa_forbidden_peak",
     approach_variants: [
@@ -161,10 +225,17 @@ for (const id of ids) {
 
   // Re-read and reconcile. A 200 is not evidence the data changed.
   const after = await readRoute(id);
-  const ok =
-    (!body.approach_variants || (after.approach_variants || []).length === body.approach_variants.length) &&
-    (!body.bivy || (after.bivy || []).length === body.bivy.length) &&
-    (!body.rappel_detail || (after.rappel_detail || []).some(r => r.station));
+  // Every key written must be checked. The first version of this omitted climbing_route, so a
+  // route that set ONLY that column satisfied every remaining clause vacuously and printed
+  // "verified" having confirmed nothing — the same shape as a guard that passes because it
+  // looked at an empty set. Build the checks from what was actually written.
+  const checks = [];
+  if (body.approach_variants) checks.push((after.approach_variants || []).length === body.approach_variants.length);
+  if (body.climbing_route) checks.push((after.climbing_route || []).length === body.climbing_route.length);
+  if (body.bivy) checks.push((after.bivy || []).length === body.bivy.length);
+  if (body.rappel_detail) checks.push((after.rappel_detail || []).some(r => r.station));
+  if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
+  const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
   if (!ok) process.exitCode = 1;
 }
