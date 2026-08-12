@@ -85,7 +85,15 @@ const written = depth1Keys(payloadLit);
 // app recomputes anyway — and a stored `true` disagreeing with a hydrated tickType is a
 // contradiction the read path would have to arbitrate. It is written for consumers OTHER
 // than this app (the catch ledger, and anything querying "was a fall caught here").
-const DERIVED = new Set(["discipline", "car_to_car_minutes", "caught_fall"]);
+//
+// car_to_car_minutes WAS here, on the same "derived on both sides" reasoning, and that was
+// the one entry the reasoning did not hold for. Nothing re-derived it on read: the only
+// place carToCar is computed from the three legs is the LogAscent form, while you type. So
+// the total showed until you reloaded and then vanished — and RouteDetail's separate
+// hydration of the same rows DID read the column, so it stayed on screen for every other
+// climber. An exemption is a claim about the code, and this one had quietly stopped being
+// true; it is now a real round-trip and the exemption is gone so it cannot lapse again.
+const DERIVED = new Set(["discipline", "caught_fall"]);
 
 // ---- what the read path maps back -------------------------------------------
 const hi = SRC.indexOf("var item={_dbId:row.id");

@@ -79,6 +79,28 @@ const TH_AT_START = 400;  // ...and this far from the first track point is not t
 const SUMMIT_TOL = 300;   // a summit marker should sit on the track's high end
 const WP_TOL = 500;       // any other waypoint further than this is not on the route
 const TRUNCATED = 2000;   // track start this far from the trailhead => the track is the problem
+/* A track that never comes within this of the peak it is filed under is not that peak's track.
+   Chosen from the measured distribution, not assumed: across the 549 WA routes that have both a
+   gpx and an `area_type='peak'` parent, the closest approach of a route's own track to its own
+   summit is 13 m at the median and 1,038 m at p95. 2 km is well beyond the healthy population
+   and still catches Curtis Ridge at 65 km.
+   See scripts/oneoff/probe-track-reaches-its-peak.mjs for the measurement. */
+const PEAK_REACH = 2000;
+/* Below this many decimal places a stored coordinate is a PLACEHOLDER, not a measurement, and
+   this test cannot judge a track against it. Eight Northern Picket peaks carry exactly 3
+   decimals while their neighbours carry 6-7 — the tell is precision, not proximity — and
+   measuring a good track against an invented summit reports the track as kilometres wrong.
+   3 decimals is ~110 m of latitude, far inside PEAK_REACH, so this cannot excuse a genuinely
+   displaced track either.
+
+   IT EXCLUDES ZERO WA ROUTES TODAY, and that is stated rather than left to be assumed: disabling
+   it changes the result by nothing. Both routes it would catch (Luna Peak SE Slopes, Spinnaker
+   Peak S Route — the only two 3-decimal peaks carrying a track) are already filtered out above as
+   `unrouted`, being 4-point and 2-point placeholder gpx. So this is an unexercised guard against a
+   false positive that has not happened yet, kept because those eight peaks are real and one of
+   them acquiring a proper track is the case it exists for — not because anything has proven it
+   works on live data. Measured, not claimed. */
+const COORD_DP = 4;
 
 const R = 6371000;
 const rad = d => (d * Math.PI) / 180;
@@ -117,6 +139,9 @@ function alongTrack(track, seg, t) {
 }
 
 const m0 = n => Math.round(n);
+// Decimal places as stored. Used only to tell a measured coordinate from a placeholder one —
+// see COORD_DP.
+const decimals = v => { const s = String(v), i = s.indexOf("."); return i < 0 ? 0 : s.length - i - 1; };
 const typeOf = w => String(w?.type || "").trim();
 const lc = w => typeOf(w).toLowerCase();
 
@@ -135,7 +160,19 @@ const stateArg = STATE_ALIAS[STATE] || STATE;
 console.log(`Reading areas (scope: ${stateArg})…`);
 // `path` is an ltree column, so PostgREST cannot LIKE it — fetch and filter here. The
 // id-prefix fallback catches legacy ids (`stuart_west_ridge`) that predate state scoping.
-const allAreas = await selectAll("areas", "id,name,path,area_type", null, { pageSize: 1000 });
+/* The FIRST request of a run pays connection setup — measured at 3.7s against 0.3-0.7s for the
+   same query once warm — and this reads under the ANON key on purpose (an auditor that could
+   write is one that can corrupt what it is checking), which carries a 3s statement_timeout. So
+   the opening read intermittently died with 57014 before it had fetched anything.
+   That is a cold start, NOT an expensive query, and the distinction matters because the obvious
+   response is to shrink the page, which fixes nothing: measured, 1000 areas WITH lat/lng takes
+   725 ms warm, and 400 still failed cold. See scripts/oneoff/probe-areas-page-cost.mjs.
+   So pay the setup on a request whose result is thrown away, and leave the page size alone. */
+await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });
+
+// lat/lng are read for the trackOffItsPeak test below — the one question here that needs an
+// anchor OUTSIDE the route's own row.
+const allAreas = await selectAll("areas", "id,name,path,area_type,lat,lng", null, { pageSize: 1000 });
 if (!allAreas.length) {
   console.error("FAIL: read 0 areas. Refusing to report a clean result on an empty read.");
   process.exit(1);
@@ -198,12 +235,98 @@ const F = {
      to report. They are not harmless: the route page still lists the row, and GPXMap still
      draws a pin, from a position that does not exist. Counted before any geometry runs. */
   noCoordinate: [],
+  /* THE ONLY TEST HERE THAT IS NOT MEASURED AGAINST THE ROUTE'S OWN TRACK, which is exactly why
+     it is worth having. Every other geometry category asks "is this pin on this line?" and so
+     cannot say which of the two is wrong — if the TRACK is the thing that is misplaced, the
+     route's pins are all faithfully reported as defective and the gpx is never suspected.
+     `wa_mount_rainier_curtis_ridge` is the case: its track is five points beside Rattlesnake
+     Lake, ~65 km from Rainier and 734 m from a bouldering crag, and it produced six findings
+     all of which blamed the waypoints. The waypoints are correct.
+     Anchoring on the AREA's coordinate settles it, because a route filed under a peak must have
+     a track that goes to that peak — no pins, no prose and no judgement required.
+
+     WHAT IT DOES NOT CLAIM, measured before shipping rather than after. 8 WA hits, and only ONE
+     is a foreign track: Curtis Ridge at 65 km. The other seven all START AT THE CORRECT
+     TRAILHEAD and simply stop short — Himmelhorn and West Twin Needle from Goodell Creek (the
+     standard Pickets approach), Fuhrer Finger from Paradise, Barnes up the Elwha. Those are
+     approach-only tracks, which is a real defect but a different one, so the title says
+     "never comes within 2 km" — what is measured — rather than "is not this peak's track",
+     which would be false of seven of the eight. Distinguish them by magnitude: kilometres is a
+     truncated approach, tens of kilometres is somewhere else.
+     Confirmed one by one with scripts/oneoff/probe-whose-track-is-it.mjs, which names the peak
+     each stray track actually reaches. A hypothesis is not a defect until something says so. */
+  trackOffItsPeak: [],
 };
 
-// The app's own vocabulary — RouteDetail's colour map and glyph map are keyed on exactly
-// these strings, and it compares `w.type==="Trailhead"` / `"Summit"||"Topout"` directly.
-const CANON = ["Trailhead", "Water", "Campsite", "Junction", "Hazard", "Summit", "Topout", "Bailout"];
-const CANON_BY_LC = new Map(CANON.map(c => [c.toLowerCase(), c]));
+/* The app's vocabulary is READ FROM THE APP, never retyped here.
+
+   It was an eight-name literal, and #841 made that wrong within the day: it added Base, Crag,
+   Pass, Approach and Landmark to WP_STYLE and pointed ~37 raw spellings at them through
+   WP_TYPE_MAP. The app then drew all five correctly while this audit went on calling 141
+   waypoints "outside the app's vocabulary" — asserting a modelling gap that had just been
+   closed, and inviting a data migration nobody needed. `check:wp-styles` keeps those two maps
+   honest with each other; nothing kept THIS file honest with either.
+
+   A hand-copied vocabulary cannot help but drift, because the two files are edited by
+   different people for different reasons. Parsing it means this is wrong only if the app is.
+
+   The question is also not "is this string in a list": the app resolves a raw value through
+   WP_TYPE_MAP first and only then looks it up in WP_STYLE. So mirror `wpType()` and ask what
+   the app asks — after canonicalisation, can WP_STYLE DRAW it? */
+const CORE = fs.readFileSync(new URL("../ClimbMatchCore.jsx", import.meta.url), "utf8");
+function parseBlock(name) {
+  const i = CORE.indexOf(`const ${name}={`);
+  if (i < 0) return null;
+  let d = 0;
+  for (let j = i + name.length + 7; j < CORE.length; j++) {
+    const c = CORE[j];
+    if (c === "{") d++;
+    else if (c === "}") { if (--d === 0) return CORE.slice(i, j + 1); }
+    else if (c === '"' || c === "'") { const q = c; while (++j < CORE.length && CORE[j] !== q) if (CORE[j] === "\\") j++; }
+  }
+  return null;
+}
+const styleBlock = parseBlock("WP_STYLE"), typeMapBlock = parseBlock("WP_TYPE_MAP");
+if (!styleBlock || !typeMapBlock) {
+  console.error("\naudit:waypoints FAILED — could not read WP_STYLE / WP_TYPE_MAP from ClimbMatchCore.jsx.");
+  console.error("Refusing to judge the catalog against a vocabulary this script invented.\n");
+  process.exit(1);
+}
+const DRAWABLE = new Set([...styleBlock.matchAll(/[\n{]\s*([A-Za-z][A-Za-z0-9_]*)\s*:\s*\{/g)].map(m => m[1]));
+/* The key class MUST include `-` and the key MUST be trimmed. Both were wrong in the first
+   draft and both produced a confident false report rather than an error: without the hyphen
+   `"route-start"` parses as the key `start`, so 4 routes using it were reported as outside the
+   vocabulary though the app draws them; without the trim a key written after a newline parses
+   as `"  camp"`, which no lookup of `camp` can match. The size check below cannot catch
+   either — both bugs yield the RIGHT NUMBER of entries under the wrong names. */
+const TYPE_MAP = new Map([...typeMapBlock.matchAll(/["']?([A-Za-z0-9_ /-]+?)["']?\s*:\s*"([A-Za-z]+)"/g)].map(m => [m[1].trim().toLowerCase(), m[2]]));
+if (DRAWABLE.size < 8 || TYPE_MAP.size < 20) {
+  console.error(`\naudit:waypoints FAILED — parsed ${DRAWABLE.size} drawable types and ${TYPE_MAP.size} spellings.`);
+  console.error("That is too few to be real; the parse broke rather than the app shrinking.\n");
+  process.exit(1);
+}
+// Assert the SHAPES that broke, not just the count — a size check passes while names are wrong.
+for (const probe of ["route-start", "camp", "trailhead/pass", "climbing area"]) {
+  if (!TYPE_MAP.has(probe)) {
+    console.error(`\naudit:waypoints FAILED — WP_TYPE_MAP parsed, but the key ${JSON.stringify(probe)} is missing.`);
+    console.error("The regex is dropping a key shape (hyphen, leading space, slash), and every route");
+    console.error("spelled that way would be reported as outside the app's vocabulary.\n");
+    process.exit(1);
+  }
+}
+// wpType() in ClimbMatchCore.jsx, mirrored. Keep the two in step.
+const canonOf = raw => { const r = String(raw || "").trim(); if (!r) return ""; return TYPE_MAP.get(r.toLowerCase()) || (r.charAt(0).toUpperCase() + r.slice(1)); };
+/* Mis-casing is measured against WP_TYPE_MAP, NOT against the drawable names, and that
+   distinction is the finding. `wpType()` lowercases before it looks anything up, so a spelling
+   the map contains works in ANY case — `base`, `pass`, `landmark`, `approach` all resolve and
+   all draw. Testing them against the drawable names flagged 26 routes with nothing wrong with
+   them and, because this category is actionable while typeOffVocab is informational, pushed the
+   headline UP 763 -> 789: one false positive traded for a worse one next door.
+   What remains is fragile rather than broken — a spelling the map does NOT contain that reaches
+   a drawable name only via the capitalise-first-letter fallback. Correct today; silently wrong
+   the moment that name gains a second word. */
+const CANON_BY_LC = new Map([...DRAWABLE].map(c => [c.toLowerCase(), c]));
+const fallbackOnly = t => !TYPE_MAP.has(String(t).trim().toLowerCase());
 
 for (const r of scoped) {
   const wps = (Array.isArray(r.waypoints) ? r.waypoints : []).filter(w => w && typeof w === "object");
@@ -224,8 +347,10 @@ for (const r of scoped) {
   // because there is no branch to reach either way. Fixing the first is mechanical; fixing
   // the second means deciding what the app should do with it.
   const types = [...new Set(wps.map(typeOf).filter(Boolean))];
-  const miscased = types.filter(t => { const c = CANON_BY_LC.get(t.toLowerCase()); return c && c !== t; });
-  const offVocab = types.filter(t => !CANON_BY_LC.has(t.toLowerCase()));
+  const miscased = types.filter(t => { const c = CANON_BY_LC.get(t.toLowerCase()); return c && c !== t && fallbackOnly(t); });
+  // "Off vocabulary" now means the app cannot DRAW it, not that it is absent from a list here.
+  // A spelling WP_TYPE_MAP resolves is fully supported however it is written.
+  const offVocab = types.filter(t => !DRAWABLE.has(canonOf(t)));
   if (miscased.length) F.typeCasing.push({ ...tag, types: miscased });
   if (offVocab.length) F.typeOffVocab.push({ ...tag, types: offVocab });
 
@@ -256,6 +381,33 @@ for (const r of scoped) {
 
   const start = track[0], end = track[track.length - 1];
 
+  /* Does this track go to the peak the route is filed under? Asked BEFORE the pin tests,
+     because when the answer is no every one of them is measuring against the wrong line and
+     their findings name the wrong culprit. Reported, not `continue`d: a displaced track and a
+     genuinely stray pin can coexist, and suppressing the rest would trade one blind spot for
+     another. The report says which to read first. */
+  if (area && area.area_type === "peak" && area.lat != null && area.lng != null
+      && decimals(area.lat) >= COORD_DP && decimals(area.lng) >= COORD_DP) {
+    let closest = Infinity;
+    for (const p of track) {
+      const d = haversine(+area.lat, +area.lng, p[0], p[1]);
+      if (d < closest) closest = d;
+    }
+    if (closest > PEAK_REACH) {
+      F.trackOffItsPeak.push({ ...tag, closestM: m0(closest), pts: track.length,
+        peak: `${area.lat},${area.lng}` });
+    }
+  }
+
+  // Pins already reported by a category more specific than `waypointOffLine`. The trailhead and
+  // summit loops below run over subsets of `wps`, and the generic loop then walks the SAME
+  // objects, so without this the one defect is counted two or three times: Curtis Ridge has
+  // three waypoints and produced six findings. Both specific tolerances (250 m, 300 m) are
+  // tighter than WP_TOL (500 m), so the generic loop never has anything to add about a pin
+  // these have already judged — but this keys on the pin itself rather than on that arithmetic,
+  // so loosening a tolerance later cannot silently re-open the double count.
+  const reported = new Set();
+
   for (const w of ths) {
     if (w.lat == null || w.lng == null) continue;
     const line = toPolyline(w.lat, w.lng, track);
@@ -263,8 +415,10 @@ for (const r of scoped) {
     // Note (3): if the track ALSO starts far from this trailhead, the track is what is
     // wrong. Reporting that as a bad waypoint would send someone to rewrite good data.
     if (line.m > TRUNCATED && dStart > TRUNCATED) {
+      reported.add(w);
       F.truncatedTrack.push({ ...tag, wp: w.name, offLineM: m0(line.m), fromStartM: m0(dStart) });
     } else if (line.m > TH_ON_LINE) {
+      reported.add(w);
       F.trailheadOffLine.push({ ...tag, wp: w.name, offLineM: m0(line.m), fromStartM: m0(dStart) });
     } else if (dStart > TH_AT_START) {
       F.trailheadNotAtStart.push({ ...tag, wp: w.name, offLineM: m0(line.m), fromStartM: m0(dStart) });
@@ -274,7 +428,8 @@ for (const r of scoped) {
   for (const w of summits) {
     if (w.lat == null || w.lng == null) continue;
     const line = toPolyline(w.lat, w.lng, track);
-    if (line.m > SUMMIT_TOL) F.summitOffLine.push({ ...tag, wp: w.name, offLineM: m0(line.m) });
+    // `trailheadNotAtStart` above is deliberately NOT in `reported`: it asserts the pin IS on
+    // the line, so it makes no claim the generic loop could be duplicating.
     const dEnd = haversine(w.lat, w.lng, end[0], end[1]);
     /* The old predicate here was `dEnd > TOL && dStart > TOL`, and its comment claimed to
        exempt out-and-backs — but it exempts the summit being at an END, which is the opposite
@@ -290,8 +445,20 @@ for (const r of scoped) {
        is a different defect and is already reported as SUMMIT IS NOT ON THE TRACK. */
     const beyondEnd = line.seg >= track.length - 2 && line.t >= 0.999;
     const beyondStart = line.seg === 0 && line.t <= 0.001;
+    /* The two are now EXCLUSIVE, and that is a correctness fix rather than tidying. Both used to
+       fire on the same pin whenever the track stopped short — one measurement reported twice —
+       and worse, "SUMMIT IS NOT ON THE TRACK" was then counting 20 routes whose summit pin is
+       perfectly correct and whose GPX simply ends early. Those need the OPPOSITE repair, which
+       is the same distinction note (3) draws for trailheads: a track that stops short is a track
+       defect, and rewriting the waypoint would destroy good data. So the beyond-an-endpoint case
+       belongs to trackNotEndingAtSummit alone, and summitOffLine keeps the lateral case its name
+       actually describes. */
     if (line.m > SUMMIT_TOL && (beyondEnd || beyondStart)) {
+      reported.add(w);
       F.trackNotEndingAtSummit.push({ ...tag, wp: w.name, trackEndToSummitM: m0(dEnd), offLineM: m0(line.m), pts: track.length, past: beyondEnd ? "end" : "start" });
+    } else if (line.m > SUMMIT_TOL) {
+      reported.add(w);
+      F.summitOffLine.push({ ...tag, wp: w.name, offLineM: m0(line.m) });
     }
   }
 
@@ -299,7 +466,9 @@ for (const r of scoped) {
   for (const w of wps) {
     if (w.lat == null || w.lng == null) continue;
     const line = toPolyline(w.lat, w.lng, track);
-    if (line.m > WP_TOL) F.waypointOffLine.push({ ...tag, wp: w.name, type: typeOf(w), offLineM: m0(line.m) });
+    // `reported` suppresses the DUPLICATE only. The `placed` bookkeeping below is untouched, so
+    // the ordering test still sees every on-line pin including trailheads and summits.
+    if (line.m > WP_TOL) { if (!reported.has(w)) F.waypointOffLine.push({ ...tag, wp: w.name, type: typeOf(w), offLineM: m0(line.m) }); }
     else placed.push({ name: w.name, type: typeOf(w), along: alongTrack(track, line.seg, line.t), distMi: w.distMi });
   }
   // Ordering: the stored distMi should rise the same way position along the track does.
@@ -326,6 +495,7 @@ const TITLES = {
   topoutOnPeak: "TOPOUT USED ON A NAMED PEAK (should be Summit)",
   summitOffLine: "SUMMIT IS NOT ON THE TRACK",
   trackNotEndingAtSummit: "TRACK DOES NOT REACH THE SUMMIT",
+  trackOffItsPeak: "TRACK NEVER COMES WITHIN 2 km OF THE PEAK IT IS FILED UNDER — read this BEFORE the pin findings on the same route: they are measured against this line. Usually an approach-only track that stops short; at a large distance, a track from somewhere else entirely (informational — most of these are already counted above)",
   waypointOffLine: "WAYPOINT IS NOT ON THE TRACK",
   outOfOrder: "WAYPOINTS ARE OUT OF SEQUENCE ALONG THE TRACK",
   noCoordinate: "WAYPOINT HAS NO COORDINATE — renders as a pin with no position, and no geometry test can see it",
@@ -335,7 +505,10 @@ const TITLES = {
   typeCasing: "CANONICAL type IN THE WRONG CASE — the app has a branch for it and compares exact case, so it does not fire",
   typeOffVocab: "type IS OUTSIDE THE APP'S VOCABULARY — renders with the fallback glyph; needs a decision, not capitalisation",
 };
-const ORDER = ["trailheadOffLine", "trailheadNotAtStart", "multiTrailhead", "summitOffLine", "trackNotEndingAtSummit",
+// trackOffItsPeak leads: when it fires, the pin findings below it on that route are measured
+// against a line that belongs to somewhere else, and reading them first sends you to rewrite
+// correct waypoints.
+const ORDER = ["trackOffItsPeak", "trailheadOffLine", "trailheadNotAtStart", "multiTrailhead", "summitOffLine", "trackNotEndingAtSummit",
   "summitMissing", "topoutOnPeak", "waypointOffLine", "outOfOrder", "truncatedTrack", "elevKeyWrong", "typeCasing",
   "typeOffVocab", "noCoordinate", "unrouted", "noTrack"];
 
@@ -344,7 +517,13 @@ let actionable = 0;
 for (const k of ORDER) {
   const v = F[k];
   if (!v.length) continue;
-  const informational = k === "unrouted" || k === "noTrack" || k === "truncatedTrack" || k === "typeOffVocab";
+  /* trackOffItsPeak is informational for a measured reason, not a hedge: of its 8 WA hits, 5 are
+     already counted under trackNotEndingAtSummit and 1 under truncatedTrack, so counting it as
+     actionable would re-inflate the very total this pass deflated. It earns its place by saying
+     WHICH LINE the pin findings were measured against, and by needing no summit waypoint to do
+     it — not by being a new count. */
+  const informational = k === "unrouted" || k === "noTrack" || k === "truncatedTrack"
+    || k === "typeOffVocab" || k === "trackOffItsPeak";
   if (!informational) actionable += v.length;
   console.log(`=== ${v.length}  ${TITLES[k]} ===`);
   const show = VERBOSE ? v : v.slice(0, 25);
