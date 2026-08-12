@@ -771,9 +771,16 @@ function TrailheadCard({route,onEdit}){
 function RappelTable({route,onEdit}){
   if(!route.rappelDetail||!route.rappelDetail.length)return null;
   const raps=route.rappelDetail.map((r,i)=>({...r,_n:r.n!=null?r.n:i+1})).sort((a,b)=>a._n-b._n);
-  const total=raps.reduce((a,r)=>a+(r.lengthM||0),0);
+  /* `lengthM` is legitimately null where no source publishes a per-station distance — that is the
+     honest value, and writing the ROPE's capacity there instead is what made one route claim 560m
+     of rappel down a 244m face. But summing with `||0` then turns "unknown" into "zero", so a
+     table with 2 known rappels of 30m and 1 unknown printed "60 m total" and read as the whole
+     descent. Count what is actually known and say so when it is only part of the line. */
+  const known=raps.filter(r=>r.lengthM!=null);
+  const total=known.reduce((a,r)=>a+r.lengthM,0);
+  const partial=known.length>0&&known.length<raps.length;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
-    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{(function(){var mx=rappelReportedMax(route);return (mx!=null&&mx>raps.length)?("RAPPELS · "+raps.length+" documented · up to "+mx+" reported"):("RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":""));})()}</div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+" total"}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
+    <div style={SZ4}><div style={{display:"flex",alignItems:"center",gap:10,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.red}}>{(function(){var mx=rappelReportedMax(route);return (mx!=null&&mx>raps.length)?("RAPPELS · "+raps.length+" documented · up to "+mx+" reported"):("RAPPELS · "+raps.length+" rappel"+(raps.length!==1?"s":""));})()}</div>{total>0?<div style={{fontSize:12,color:C.textMuted}}>{uLen(total)+(partial?(" across "+known.length+" of "+raps.length):" total")}</div>:null}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit rappel information"/>:null}</div>
     {route.rappelCountNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:9,background:C.surface,borderRadius:8,padding:"7px 9px"}}>{route.rappelCountNote}</div>:null}
     {/* A rappel row answers four questions in the order you ask them on the ground:
         WHERE is the station (`station`) — the one a party actually gets stuck on, and the one

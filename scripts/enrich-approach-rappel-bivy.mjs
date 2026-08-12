@@ -193,7 +193,9 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
     // an array, so an array-only test drops a rappel-enrichment batch entirely — and drops it
     // SILENTLY, reporting "nothing to write" for a file full of work.
     const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length)
-      || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0);
+      || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0)
+      || (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length > 0)
+      || (spec.set && Object.keys(spec.set).length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
     for (const k of ["climbing_route", "approach_variants", "bivy"]) if (Array.isArray(spec[k]) && !spec[k].length) delete spec[k];
@@ -204,7 +206,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -230,12 +232,38 @@ for (const id of ids) {
   if (spec.approach_variants) body.approach_variants = spec.approach_variants;
   if (spec.climbing_route) body.climbing_route = spec.climbing_route;
   if (spec.bivy) body.bivy = spec.bivy;
-  if (spec.rappel_add && Array.isArray(before.rappel_detail)) {
+  // A WHOLE table, for a route that has none — and, with an explicit opt-in, for one whose stored
+  // table is itself the thing being corrected. Replacing is refused by default: a table already on
+  // file may have been reviewed by a human, and overwriting it silently is how researched work gets
+  // lost. `replace_rappels` has to be set per route in the batch, so the decision is visible in the
+  // reviewed file rather than in a flag someone typed once.
+  if (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length) {
+    const had = (before.rappel_detail || []).length;
+    if (had && !spec.replace_rappels) {
+      console.error(`REFUSING ${id} — it already has ${had} rappel entries. Set "replace_rappels": true in the batch if the stored table is what you mean to correct.`);
+      process.exitCode = 1; continue;
+    }
+    body.rappel_detail = spec.rappel_detail;
+  } else if (spec.rappel_add && Array.isArray(before.rappel_detail)) {
     body.rappel_detail = before.rappel_detail.map((r, i) => {
       const n = r.n != null ? r.n : i + 1;
       const add = spec.rappel_add[n];
       return add ? { ...r, ...add } : r;
     });
+  }
+  // A CORRECTION path for the scalar prose columns beside the table. It exists because the
+  // rappel-length defect is not repairable without it: a table can be fixed while
+  // `rappel_count_note` still states the methodology that produced the wrong number, and the
+  // next pass then re-derives it. The allow-list is deliberate — this script must not become a
+  // way to write arbitrary columns, and `null` is a legal value here (it is the correct value
+  // for a distance no source gives; see the rope-capacity note below).
+  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text"]);
+  if (spec.set) {
+    for (const [k, v] of Object.entries(spec.set)) {
+      if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
+      body[k] = v;
+    }
+    if (body._refuse) { delete body._refuse; continue; }
   }
 
   console.log(`\n${id}  (${before.name} · ${before.area_id})`);
@@ -257,7 +285,18 @@ for (const id of ids) {
   if (body.approach_variants) checks.push((after.approach_variants || []).length === body.approach_variants.length);
   if (body.climbing_route) checks.push((after.climbing_route || []).length === body.climbing_route.length);
   if (body.bivy) checks.push((after.bivy || []).length === body.bivy.length);
-  if (body.rappel_detail) checks.push((after.rappel_detail || []).some(r => r.station));
+  // Compare what came back against what was SENT, key by key, rather than testing for the
+  // presence of `station`. That earlier test only described an enrichment batch: a CORRECTION
+  // that nulls a wrong lengthM adds no station, so a correct write reported a mismatch — and,
+  // worse, a batch that changed nothing at all would have passed on stations written months ago.
+  // Key-by-key because jsonb does not preserve key ORDER, so stringifying the whole array
+  // compares formatting as well as content.
+  if (body.rappel_detail) {
+    const got = after.rappel_detail || [];
+    checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>
+      Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
+  }
+  for (const k of ["rappel_count_note", "rappels", "descent_text"]) if (k in body) checks.push(after[k] === body[k]);
   if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
   const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
