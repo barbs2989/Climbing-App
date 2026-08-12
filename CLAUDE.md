@@ -25,6 +25,7 @@ npm run check:grade-parser  # grade_num is parsed in exactly one place (in build
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
+npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -37,7 +38,10 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
+npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -560,6 +564,43 @@ a build error, but a screen that renders wrong or not at all.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
+- **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
+  merge**. It exists because the comment that promised it could not be was wrong, and stayed
+  believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
+  *"Superseded PR runs are cancellable; a main run is not"* above
+  `cancel-in-progress: ${{ github.event_name == 'pull_request' }}` — the flag is right and
+  the claim is false. **`cancel-in-progress: false` only protects a run that is already IN
+  PROGRESS; GitHub cancels a still-PENDING run unconditionally when a newer run joins its
+  concurrency group, and no flag disables that.** Static, so it sits in `npm run build`.
+  - Measured on run `31644233526` (event `push`, sha `7fb4e65`): `18e6265`'s run sat pending
+    for **15 minutes** (created 21:33:48, started 21:48:44), `7fb4e65`'s was created 21:48:58
+    and correctly went pending *behind* it, then `9d441d3`'s was created 21:50:48 and
+    `7fb4e65`'s was **cancelled two seconds later**. A cancelled run reports **no failure**,
+    so **#835's merge read as checked by a guard that never ran on it** — precisely the
+    outcome #616's note said was impossible here.
+  - **The fix is structural, not a stricter flag**: group by `github.sha` on a push
+    (`github.head_ref || github.sha`) so main runs never share a group and so never queue
+    behind one another. Sharing one group across main pushes is what *built* the queue that
+    made a run cancellable. The cost is that main pushes now run in parallel — the right
+    trade, since a skipped check is worth less than a runner minute.
+  - **`deploy.yml` is the one exemption, and it is checked rather than trusted.** A superseded
+    *deploy* is harmless (deploying a newer tip includes the older commits) and `check:drift`
+    asks from outside whether the live site serves the current tip. A superseded *check* is
+    different: nothing ever asks that question again. The exemption is keyed to
+    `group: pages`, so if that group changes the run **fails as stale bookkeeping** — the same
+    standard as `NEEDS_EXTRA_STATE`.
+  - It also pins the **#795** invariant it depends on: both browser guards must still trigger
+    on push to main. A workflow that stops being push-triggered would otherwise drop out of
+    the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
+    exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
+    broken scan, never as safe CI.
+  - **Comments are stripped before anything is matched**, and that is load-bearing here: both
+    workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
+    scan that read comments would pass on the strength of an explanation. Same trap
+    `check:schema-drift` records from the other side, where prose naming a column failed the
+    build.
+  - Injection-tested 6/6, listed at the bottom of the script. Case 6 must **pass**: a comment
+    mentioning the forbidden `group: ${{ github.ref }}` is documentation, not a regression.
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
@@ -805,6 +846,68 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
+  Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
+  `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
+  `WP_STYLE` turns a canonical type into `{color, glyph}`. Nothing tied them together and they
+  drifted: `WP_TYPE_MAP` emitted five canonical types — **`Base`, `Crag`, `Pass`, `Approach`,
+  `Landmark`** — that `WP_STYLE` had an entry for **none** of, so all five fell through
+  `wpGlyph`'s `||"📍"` fallback and rendered as one identical grey emoji pin. **141 waypoints on
+  130 WA routes**, with a route's Base indistinguishable from its Landmark. Static apart from
+  one `renderToStaticMarkup` pass, so it sits in `npm run build`.
+  - **Invisible to every gate that already existed**, which is the argument for this one: both
+    maps are valid JS, every identifier is bound, the screen renders, and a pin appears — it is
+    just the wrong pin. `check:refs`, `check:dead-props` and `check:field-renders` are all
+    structurally blind to it (the column is populated *and* rendered; only the glyph is wrong).
+  - It also caught a **second** defect of the same family: the two Leaflet marker call sites did
+    `wc[wp.type]`, indexing the colour map with the **RAW** string and bypassing the normaliser
+    the rest of the app goes through. `WP_TYPE_MAP` is keyed lowercase, so `"Lake"`, `"camp"`,
+    `"Base/bivy"`, `"Trailhead/pass"` all missed and drew grey — **20 more waypoints whose
+    colour this app already knew**. A raw lookup is a *silent* miss: it yields `undefined`,
+    falls to the default, and throws nothing. Section 3 forbids the shape outright.
+  - **Parsed with Babel, deliberately not with the comment/string blanker the sibling guards
+    use.** A raw regex would match the explanatory comments (which quote `wc[wp.type]` as the
+    defect) and report phantoms; but the blanker is unsafe *here in the other direction* — it
+    treats every straight quote as a string delimiter and JSX body text is full of them, so it
+    can desynchronise and wipe a **real** `wc[w.type]`. That is a false pass, the one outcome a
+    guard must never produce. An AST has neither failure mode. Note the split from section 1,
+    which reads **raw** source because every value there *is* a string literal and blanking
+    would report two empty maps as two agreeing maps.
+  - **A glyph must be a text-presentation character**, tested with `\p{Emoji_Presentation}`. A
+    codepoint with emoji presentation is painted by the font's colour glyph and **ignores the
+    CSS `color` beside it** — which is exactly what 📍 did. A hand-rolled codepoint range was
+    tried first and called the existing, working `⚑` and `⚠` defects (both are `Emoji=Yes` but
+    `Emoji_Presentation=No`); widening it by name would have hidden the next real one. `U+FE0F`
+    is checked separately, so `"⚠️"` fails where bare `"⚠"` passes.
+  - **The five new types share one neutral colour on purpose.** The palette carries nine
+    chromatic hues and the eight existing types spend them; minting near-duplicates would damage
+    the eight that work, and **reusing** a hue would be worse than grey — a Crag drawn in
+    Campsite purple is not ambiguous, it is a wrong navigational claim. These five are
+    descriptive rather than navigational, so the glyph carries the distinction, which is the
+    principle the `WP_STYLE` comment already states rather than an exception to it.
+  - **`Approach` is the dashed `⇢`, not `→`** — the plain arrow appears **104 times** in this app
+    as ordinary copy (`See all →`), so as a pin glyph it reads as punctuation, *and* no render
+    assertion could tell the pin from a link. A glyph used elsewhere as prose is not a glyph.
+  - Section 4 renders the real `RouteDetail` over waypoints carrying **raw** spellings
+    (`"Climbing area"`, `"col"`, `"Lake"`) and requires the glyph the *normaliser* should reach,
+    exercising `WP_TYPE_MAP → wpType → WP_STYLE` end to end. It demands **two** occurrences of
+    each, not one: every type renders on two surfaces (the list row and the map legend) and an
+    "at least once" test is satisfied by **either** — measured, after blanking the list's glyph
+    left the assertion green on the legend alone. Same vacuous-pass shape as `check:bare`
+    matching the Safety tab's "Fire & smoke" link.
+  - The legend now lists only the types **the route actually uses**. It printed all of `WP_STYLE`
+    unconditionally, which already described types the map did not draw; at 13 styled types that
+    becomes a wall of pills mostly about other routes.
+  - `WP_TYPES` (what the editor offers) is deliberately **not** widened — the reverse direction is
+    fine and precedented, since `Bailout` has always been styled without being offered. The guard
+    only forbids offering a type that cannot be drawn.
+  - Injection-tested, 8 cases at the bottom of the script, all caught. **Two were harness bugs
+    first, and both are the `injection logged, counter didn't move` shape:** the glyphs were
+    written as perl `\x{22A5}` escapes and perl without `-CSD` works on **bytes**, so three cases
+    reported "not caught" while the file was never modified; and case 7 aimed at `wpGlyph(_wty)`
+    when the surface rendering on Overview is `wpGlyph(_wt)` — `RouteDetail` has **three**
+    waypoint glyph surfaces, not one. Every case now proves the edit landed *by checksum* before
+    it judges the guard.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -828,6 +931,53 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
+  a geometry question no column-coverage check can reach, since every field is populated and
+  every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
+  `audit:waypoint-order` is its **sibling, not a duplicate**: that one asks whether the *list* is
+  sensible (ordering, duplicate pins) and needs no gpx at all. Run both.
+  - **It has twice reported far more problems than exist, and both times the fix was to the
+    audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
+    every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
+    it could not see). This pass took it to 646 the same way, so **treat a headline count here as
+    a hypothesis until it has been deduplicated** — see [[waypoint-audit-overcounted-by-126]].
+  - **The categories must be disjoint, and two were not.** `waypointOffLine` walks every pin, so
+    a trailhead or summit already judged by its own category was reported a second time — 100
+    pins double-counted, Curtis Ridge producing six findings from three waypoints. Worse,
+    `summitOffLine` and `trackNotEndingAtSummit` both fired on the same pin, which is not merely
+    a double count: it put 20 routes whose summit pin is *correct* and whose gpx simply stops
+    short into a category titled "SUMMIT IS NOT ON THE TRACK". Those need the **opposite** repair,
+    which is the distinction note (3) already draws for trailheads. They are now exclusive.
+  - **A dedupe that loses a finding is worse than the double count it replaces**, so it is
+    verified by comparing distinct `(route, waypoint)` pairs across dumps rather than totals:
+    `verify-waypoint-dedupe-lost-nothing.mjs`, 449 before and 449 after, nothing lost, 100 pins
+    moved to the more specific category.
+  - **`trackOffItsPeak` is the one test not measured against the route's own track**, which is
+    why it is worth having: every other category asks "is this pin on this line?" and therefore
+    cannot say which of the two is wrong. When the *track* is the misplaced thing, the route's
+    correct pins are all faithfully reported as broken and the gpx is never suspected.
+    `wa_mount_rainier_curtis_ridge` carried five points beside **Rattlesnake Lake, ~65 km from
+    Rainier and 734 m from a bouldering crag**, and all six of its findings blamed the waypoints.
+    Anchoring on the area's own coordinate settles it with no pins, prose or judgement.
+  - **Its title says "never comes within 2 km", not "is not this peak's track", and the
+    difference is measured.** Of 8 WA hits only **one** is a foreign track; the other seven
+    start at the **correct trailhead** and merely stop short (Himmelhorn and West Twin Needle
+    from Goodell Creek, Fuhrer Finger from Paradise, Barnes up the Elwha). Naming it for the
+    stronger claim would have been false of seven of eight. It is **informational** for the same
+    reason — 6 of its 8 are already counted elsewhere, so counting it would re-inflate the total
+    this pass deflated. Confirm each with `probe-whose-track-is-it.mjs`, which names the peak a
+    stray track actually reaches; the threshold comes from the measured distribution (closest
+    approach is **13 m at the median, 1,038 m at p95**), not from a guess.
+  - The placeholder-coordinate guard (`COORD_DP`) **excludes zero WA routes today** and says so
+    in the script: both peaks it would protect are already filtered as `unrouted`. It is kept
+    for the eight 3-decimal Picket summits, not because live data has exercised it.
+  - The opening read pays a **warm-up request** because the first call of a run costs ~3.7s of
+    connection setup against 0.3–0.7s warm, and anon carries a 3s `statement_timeout` — so it
+    intermittently died with `57014` before fetching anything. Shrinking the page does **not**
+    fix that: measured, 1,000 areas *with* lat/lng takes 725 ms warm while 400 still failed cold.
+  - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
+    the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
+    that guard was found to be inert and got documented as such rather than presumed working.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
