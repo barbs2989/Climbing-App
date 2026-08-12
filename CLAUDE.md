@@ -21,6 +21,7 @@ npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account se
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -586,6 +587,32 @@ a build error, but a screen that renders wrong or not at all.
     Chrome via playwright, headless **and** headed, a page declaring no icon requested `/`
     and nothing else. The missing icon is directly observable and needs no such story.
   - Injection-tested; the 8 cases are named at the bottom of the script.
+- **`check:grade-parser`** asserts `routes.grade_num` is parsed in exactly one place. That
+  column is the sortable grade — both finder RPCs (`0018`/`0019`) rank and filter on it — and a
+  wrong value is invisible: the route just sits in the wrong place in a list nobody
+  cross-checks. The arithmetic existed **four** times (`load-state.mjs`,
+  `load-wa-rock-safe.mjs`, `import-alpine.mjs`, `oneoff/import-class2-3-routes.mjs`) and had
+  already drifted into **three** behaviours — three agreed, the oneoff returned `5.1` for
+  `"5.10"` where the catalog convention is `10`, and **none** handled a bare ordinal (`"4th"`,
+  `"Easy 5th"`) that the live column nonetheless had right. All four now import `gradeNumFrom`
+  from `lib/grade.js`. Static, so it sits in `npm run build`.
+  - **The swap was proven before it was made, not after.** `verify-grade-parser-equivalence.mjs`
+    ran both implementations over every distinct `(grade, system)` pair in the live WA catalog
+    plus hand-written edge cases — **348 inputs, identical on every one** — because these
+    scripts write `grade_num` for the whole catalog and "I reformatted it and it looks the same"
+    is not evidence. Adding the bare-ordinal branch then differed on exactly **4** inputs, all
+    `null` → a correct value. Agreement with the stored column went 98.09% → 98.49%.
+  - That equivalence script keeps a **verbatim copy** of the pipeline parser on purpose — its
+    job is to be a second opinion, and importing the function under test would make it vacuous.
+    It is the one exemption, named explicitly so it cannot quietly widen.
+  - Matches a **declaration**, not the word `gradeNum` — every importer mentions it. It also
+    skips comment lines, because this guard has to *say* `function gradeNum(` to explain
+    itself and flagged itself on the first run. Deliberately not the comment/string blanker
+    other guards use: that one eats real code when a string contains `//` (a URL), and a
+    declaration is never inside a string literal.
+  - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
+    Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
+    the file and line, and renaming the export fails with "every importer is broken".
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
