@@ -38,7 +38,7 @@ const key = anonKey();
 /* Keyset paging, not one filtered request. `rappel_detail=not.is.null` is an unindexed jsonb
    scan over 205k rows and intermittently hits the 3s statement timeout on the anon role — the
    57014 that makes a healthy query look like a broken script. selectAll walks id ascending. */
-const rows = await selectAll("routes", "id,name,rappels,rappel_detail,rappel_count_note", "rappel_detail=not.is.null", { pageSize: 200, key });
+const rows = await selectAll("routes", "id,name,rappels,rappel_detail,rappel_count_note", "rappel_detail=not.is.null", { pageSize: 60, key });
 if (!rows.length) throw new Error("empty read — refusing to report a clean result");
 
 const WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, single: 1 };
