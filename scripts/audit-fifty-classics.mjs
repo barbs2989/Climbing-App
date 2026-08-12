@@ -78,6 +78,11 @@ const routeKey = s => norm(s).replace(/\b(route|the|complete|standard|spire)\b/g
 const REGION_PREFIX = {
   Alaska: "ak", Washington: "wa", Wyoming: "wy", Colorado: "co",
   Utah: "ut", California: "ca", "New Mexico": "nm",
+  // Canadian provinces use their own two-letter codes for the same reason the states do, and
+  // none of them collide with a US prefix. `ca_` was the wrong choice for Canada — it is
+  // California here, and 0127 moves those rows off it. Matching positively rather than by
+  // "not a US prefix" is what makes that mistake impossible to repeat silently.
+  "British Columbia": "bc", Alberta: "ab", Yukon: "yt", "Northwest Territories": "nt",
 };
 const US_PREFIX = /^(a[klrz]|c[aot]|de|fl|ga|hi|i[adln]|k[sy]|la|m[adeinost]|n[cdehjmvy]|o[hkr]|pa|ri|s[cd]|t[nx]|ut|v[at]|w[aivy])_/;
 const regionOk = (routeId, region) => {

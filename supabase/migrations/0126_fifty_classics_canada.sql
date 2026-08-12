@@ -31,6 +31,33 @@
 
 begin;
 
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Canada is a SECOND ROOT, and 0048 forbade that. This relaxes it, deliberately.
+-- ─────────────────────────────────────────────────────────────────────────────
+-- 0048_prevent_duplicate_area_root.sql added `areas_single_root_idx` after a real
+-- bug: a leftover bare 'wa' node sitting beside 'usa' made Washington appear twice
+-- in the browser and stranded Eldorado Peak, Guye Peak and 100+ routes outside the
+-- reachable hierarchy. That protection is still wanted — but the thing that broke
+-- was a PLACEHOLDER node, and 0048 shipped a second guard against exactly that:
+--
+--   alter table areas add constraint areas_root_must_be_country
+--     check (parent_id is not null or area_type = 'country');
+--
+-- That CHECK is untouched and still blocks the 'wa' shape (its area_type was null).
+-- What the unique index additionally forbids is a legitimate second COUNTRY, which
+-- is not the bug it was written for. Two 'usa' rows remain impossible regardless —
+-- `id` is the primary key.
+--
+-- Checked before relaxing it, because a single-root assumption elsewhere would turn
+-- this into the very stranding 0048 prevented:
+--   * areas_set_path (0001) branches on `parent_id is null` and sets path := id, so
+--     a second root gets a correct path.
+--   * check:counts already walks `areas.filter(a => !a.parent_id)` — plural roots.
+--   * lib/db.js useStates() resolved the roots instead of naming 'usa', and the
+--     breadcrumb drops the leading path label; both ship in this PR.
+--   * area search is scoped to whatever area you are already inside, so unaffected.
+drop index if exists areas_single_root_idx;
+
 insert into areas (id, name, area_type, parent_id, region, source, blurb) values
   ('canada', 'Canada', 'country', null, 'North America', 'fifty-classics-roster',
    'The Canadian ranges — the Rockies, the Purcells and Selkirks, the Coast Mountains, and the big glaciated peaks of the Yukon and the Northwest Territories.')
