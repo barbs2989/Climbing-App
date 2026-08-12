@@ -9,7 +9,7 @@
    the negatives are as important as the positives: a LENGTH must never become a count.
 
    Static, no DB, no browser. */
-import { rappelSingleRope, rappelHeaderLabel, rappelNumbersIn } from "../lib/rappels.js";
+import { rappelSingleRope, rappelHeaderLabel, rappelNumbersIn, rappelRopeNeed, rappelSingleRopeWarning } from "../lib/rappels.js";
 
 let fail = 0;
 const eq = (label, got, want) => {
@@ -44,6 +44,25 @@ eq("plain agreement is unchanged", rappelHeaderLabel(plain), "RAPPELS · 3 rappe
 const reported = { rappelDetail: [1, 2, 3], rappels: null, rappelCountNote: "parties report up to 7 rappels in dry conditions" };
 eq("reported-max wording preserved", rappelHeaderLabel(reported), "RAPPELS · 3 documented · up to 7 reported");
 eq("no station list -> no label", rappelHeaderLabel({ rappelDetail: null, rappels: "~5 single-rope raps" }), null);
+
+/* The arithmetic half. A rappel reaches HALF the rope, so a station longer than ~32 m is not
+   happening on a single 60 — that table is the two-rope sequence no matter what the prose says.
+   42 of 156 catalog station lists are in that position, so the boundary is load-bearing: get it
+   wrong and the app either cries wolf on every route or stays silent on all of them. */
+const T = (...lens) => ({ rappelDetail: lens.map((lengthM, i) => ({ n: i + 1, lengthM })) });
+console.log("\nrope needed, from station lengths");
+eq("30 m stations fit a single 60", rappelRopeNeed(T(30, 30, 25)).needs, "single60");
+eq("32 m is still a single 60 (boundary)", rappelRopeNeed(T(32)).needs, "single60");
+eq("35 m needs a single 70", rappelRopeNeed(T(35, 30)).needs, "single70");
+eq("55 m needs two ropes", rappelRopeNeed(T(55, 30)).needs, "double");
+eq("longest station is what counts", rappelRopeNeed(T(20, 20, 60)).max, 60);
+eq("no lengths -> no verdict", rappelRopeNeed({ rappelDetail: [{ n: 1 }] }), null);
+eq("no table -> no verdict", rappelRopeNeed({ rappelDetail: null }), null);
+
+console.log("\nsingle-rope warning fires only when it must");
+eq("warns on a two-rope station list", /does not reach the longest station here \(55 m\)/.test(rappelSingleRopeWarning(T(55, 30)) || ""), true);
+eq("silent when one rope reaches", rappelSingleRopeWarning(T(30, 28)), null);
+eq("header says two ropes", rappelHeaderLabel(T(55, 30)), "RAPPELS · 2 stations · two ropes (longest 55 m)");
 
 console.log("\nrappelNumbersIn still bounded");
 eq("a year is not a rappel count", rappelNumbersIn("bolted in 2023, 4 rappels").join(","), "4");

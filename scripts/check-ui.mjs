@@ -463,10 +463,35 @@ try {
   // Ask the app which catalog it is actually serving, rather than inferring it from
   // local env that does not apply to a remote target. The DB picker lists plain
   // "Washington"; the seed one lists "Utah · 10 climbs".
+  // The area picker asks for a COUNTRY before it will offer a state, now that the catalog
+  // holds more than one. `document.querySelector("select")` used to be the state picker and is
+  // now the country one, so choosing a country has to happen first — and both selects are
+  // addressed by accessible name rather than by document order, so a third control appearing
+  // above them cannot silently redirect this again. The country select is absent entirely when
+  // only one country exists, which is not an error: the app skips a step it cannot offer.
+  const pickInSelect = (namePrefix, label) => page.evaluate(({ namePrefix, label }) => {
+    const sel = [...document.querySelectorAll("select")]
+      .find((x) => (x.getAttribute("aria-label") || "").startsWith(namePrefix));
+    if (!sel) return "no-select";
+    const opt = [...sel.options].find((o) => o.label === label || o.label.startsWith(label + " ") || o.label.startsWith(label + " —"));
+    if (!opt) return "no-option";
+    sel.value = opt.value;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+    return "ok";
+  }, { namePrefix, label });
+
+  const countryPick = await pickInSelect("Select a country", "United States");
+  if (countryPick === "no-option") {
+    fail("route", `could not choose a country — "United States" was not among the options`);
+  }
+  if (countryPick === "ok") await settledText(page, { min: 30, timeout: 45000 });
+
   let catalog = USE_DB ? "DB" : "seed";
   if (URL_ARG && !(argOf("--route") && argOf("--state"))) {
     const opts = await page.evaluate(() => {
-      const sel = document.querySelector("select");
+      const sel = [...document.querySelectorAll("select")]
+        .find((x) => (x.getAttribute("aria-label") || "").startsWith("Select a state"))
+        || document.querySelector("select");
       return sel ? [...sel.options].map((o) => o.label) : [];
     });
     if (opts.length) {
@@ -480,14 +505,10 @@ try {
   // The seed state picker labels its options "Utah · 10 climbs" while the DB one
   // uses plain "Washington" — match by prefix so both drill in, and dispatch a real
   // change event so React's controlled select actually updates.
-  await page.evaluate((state) => {
-    const sel = document.querySelector("select");
-    if (!sel) return;
-    const opt = [...sel.options].find((o) => o.label === state || o.label.startsWith(state + " "));
-    if (!opt) return;
-    sel.value = opt.value;
-    sel.dispatchEvent(new Event("change", { bubbles: true }));
-  }, STATE);
+  const statePick = await pickInSelect("Select a state", STATE);
+  if (statePick !== "ok") {
+    fail("route", `could not choose "${STATE}" in the area picker (${statePick}) — the country step above it may not have applied`);
+  }
   // These were the last two flat waits in this file; every other step settles on the text
   // having stopped changing (see render-settle.mjs). Settling is strictly more adaptive than
   // 3000ms — it tolerates a slow list without tolerating a missing one, since a list that

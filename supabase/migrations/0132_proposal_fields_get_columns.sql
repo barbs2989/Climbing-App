@@ -1,4 +1,15 @@
--- 0131 — six fields the contribute form has always collected and could never store.
+-- 0132 — six fields the contribute form has always collected and could never store.
+--
+-- Renumbered 0131 -> 0132. This is the FOURTH number the route-proposal work has needed in
+-- one afternoon (0125 -> 0126 -> 0127 for the review migration, then 0131 -> 0132 for this
+-- one), and every collision was the same shape: main moved between choosing the number and
+-- pushing. check:migration-claims compares OPEN PRs, so it sees peer-vs-peer and is
+-- structurally blind to this one. The rule that actually works: re-check the free number
+-- immediately before pushing, never when you write the file.
+--
+-- The SQL is ALREADY APPLIED to the live DB (as 0131, verified: 6/6 columns with pads an
+-- integer, and approve_new_route still answering P0001 for a non-admin). Every statement is
+-- guarded, so a re-run is a no-op and nothing needs running again.
 --
 -- `var SS={…}` in ClimbMatch.jsx is the allow-list both merge paths consult, and all six of
 -- these are in it: a climber's edit to `protRating`, `startType`, `landing`, `pads`, `rock` or

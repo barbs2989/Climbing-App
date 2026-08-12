@@ -32,12 +32,13 @@ const SELFTEST = [
 /*
 
    Read-only. */
-import { anonKey, headers, SUPABASE_URL } from "../lib/supabase-env.mjs";
+import { anonKey, selectAll } from "../lib/supabase-env.mjs";
 
 const key = anonKey();
-const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,rappels,rappel_detail,rappel_count_note&rappel_detail=not.is.null`, { headers: headers(key) });
-if (!res.ok) throw new Error(res.status + " " + (await res.text()).slice(0, 200));
-const rows = await res.json();
+/* Keyset paging, not one filtered request. `rappel_detail=not.is.null` is an unindexed jsonb
+   scan over 205k rows and intermittently hits the 3s statement timeout on the anon role — the
+   57014 that makes a healthy query look like a broken script. selectAll walks id ascending. */
+const rows = await selectAll("routes", "id,name,rappels,rappel_detail,rappel_count_note", "rappel_detail=not.is.null", { pageSize: 60, key });
 if (!rows.length) throw new Error("empty read — refusing to report a clean result");
 
 const WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, single: 1 };
