@@ -168,8 +168,23 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 //    two merged things a row is, so it must reach the screen.
 {
   const t = text(render(route("alpine", { bivy: [{ name: "Sulphide camp", type: "camp" }, { name: "Notch bivy", type: "bivy" }] }), "planner"));
-  if (t.includes("Established camp") && t.includes("Bivy")) ok("site `type` renders as a chip");
+  if (t.includes("Camp") && t.includes("Bivy")) ok("site `type` renders as a chip");
   else fail("site `type` does not reach the screen");
+  // `camp` must NOT be labelled "Established camp": dispersed basin sites and developed
+  // campgrounds share that type, so the stronger word is a false claim on every dispersed one.
+  if (!t.includes("Established camp")) ok("`camp` is labelled neutrally, not as 'Established camp'");
+  else fail("a dispersed site would be labelled 'Established camp' — overclaims what it is");
+}
+
+// ── 8b. The "also a pin on the route track" line is CONDITIONAL. Only 4 of 175 catalog sites
+//    carry coordinates, so stating it unconditionally sends climbers looking for absent pins.
+{
+  const noCoord = text(render(route("alpine", { bivy: [{ name: "Basin camp" }] }), "planner"));
+  if (!/pin under ROUTE TRACK/.test(noCoord)) ok("no track-pin claim when no site is on the track");
+  else fail("claims sites are pinned on the track when none are");
+  const onTrack = text(render(route("alpine", { waypoints: [WP] }), "planner"));
+  if (/pin under ROUTE TRACK/.test(onTrack)) ok("the track-pin claim appears when a site IS on the track");
+  else fail("a waypoint-derived site should say it is pinned on the track");
 }
 
 // ── 9. No camping data anywhere → no section, and no crash.
