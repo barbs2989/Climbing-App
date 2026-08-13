@@ -49,6 +49,16 @@ That is false in production, and the same bundle carries the proof:
 - so a signed-in climber's profile, logbook, direct messages and crew chats are written to a
   hosted database — while the screen labelled *Privacy* says nothing leaves their phone
 
+Confirmed in a real browser against the live site, not inferred from the bundle: the Climbs
+tab renders **"PICK A COUNTRY / Loading countries…"**, which is `DbAreaBrowser` — a screen that
+exists only on the DB path (the seed path walks the in-memory `MOUNTAINS` tree and has no
+country picker). The production app is visibly sitting on a pending Supabase request. `USE_DB`
+is on in production; this is not a demo build.
+
+*(Aside, not a finding: Supabase was returning `504` during this check and the countries never
+finished loading. That is the transient backend condition already on record, not evidence
+about the policy.)*
+
 **It is not demo-gated.** Two entry points, neither behind `DEMO_FILLERS` or `USE_DB`:
 
 - `ClimbMatch.jsx:686` — a **Privacy** link in the Settings footer, beside Feedback
