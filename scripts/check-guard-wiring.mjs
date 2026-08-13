@@ -86,6 +86,13 @@ const EXCLUDED = {
     "walking a seed app. CI must not hold a service key, so this is deliberately " +
     "hand-run only. Setup with that key also bypasses RLS, so it answers 'does the " +
     "screen render' and never 'is the policy right'.",
+  "check-enrichment-traceable.mjs":
+    "takes an enrichment BATCH FILE as its argument and verifies that every number and " +
+    "load-bearing feature word in a generated segment also appears in that route's own " +
+    "source text — i.e. that a re-homing pass invented nothing. Same shape as " +
+    "check-sql-targets below: there is no standing file for a schedule or a build to run " +
+    "it against, because the thing it checks exists only between a batch being written " +
+    "and `enrich:apply` writing it. It gates that moment, by hand, before the write.",
   "check-sql-targets.mjs":
     "takes a .sql FILE as its argument (`npm run check:sql -- fix.sql`) and reads the " +
     "live DB. There is no standing file to check, so there is nothing for a schedule or " +
