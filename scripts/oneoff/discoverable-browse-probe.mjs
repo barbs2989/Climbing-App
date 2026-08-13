@@ -93,18 +93,25 @@ try {
     const page = await ctx.newPage();
     return page;
   };
-  const gotoPartners = async (page) => {
+  const gotoPartners = async (page, until) => {
     await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
     await page.getByRole("button", { name: "Home", exact: true }).first().waitFor({ timeout: 90000 });
     await page.waitForTimeout(2000);
     await page.getByRole("button", { name: "Partners", exact: true }).first().click();
-    await page.waitForTimeout(4000);
-    return page.innerText("body");
+    let t = "";
+    for (let i = 0; i < 12; i++) {
+      await page.waitForTimeout(1500);
+      t = await page.innerText("body");
+      // Always wait for the section itself; `until` lets a caller wait for the specific
+      // state it is about to assert on, so a slow fetch reads as slow rather than as absent.
+      if (/CLIMBERS ON CLIMBMATCH/i.test(t) && (!until || until(t))) break;
+    }
+    return t;
   };
 
   // ---- 1) the browse list exists and names a real climber ---------------------------
   const pageOwner = await open(fixture.session);
-  let t = await gotoPartners(pageOwner);
+  let t = await gotoPartners(pageOwner, (x) => x.includes(mate.name));
   if (!/CLIMBERS ON CLIMBMATCH/i.test(t)) {
     rec("partner browse shows a real-climbers section", false, "the section heading never rendered");
   } else {
@@ -122,6 +129,44 @@ try {
     // seed card printed those as "undefined · 0" (#715).
     if (/undefined|NaN|\[object Object\]/.test(sec)) rec("the real-climber rows render no placeholder junk", false, "undefined/NaN in the browse section");
     else rec("the real-climber rows render no placeholder junk", true);
+  }
+
+  // ---- 1b) an unlisted viewer is told THEY are unlisted -------------------------------
+  // Listing is opt-in and defaults off, so "No other climbers are listed yet" is where every
+  // new account lands. Accurate, and a dead end unless it says the one thing the reader can
+  // act on. Shown only on an explicit false — never while the profile row is still loading,
+  // which would tell someone they are unlisted when they are not.
+  {
+    const anon2 = await browser.newContext({ viewport: { width: 390, height: 900 } });
+    await anon2.addInitScript(({ k, v }) => { try { localStorage.setItem(k, v); } catch {} },
+      { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(fixture.session)) });
+    const p2 = await anon2.newPage();
+    // The mate was opted IN above so the listing case had someone to find, which means the
+    // list is not empty and the empty state never renders. Un-list them for this one check,
+    // then put it back — otherwise this asserts against a state the run cannot reach, and
+    // "the prompt is missing" would be a property of the fixture rather than of the app.
+    const setD = (id, v) => fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${id}`, {
+      method: "PATCH", headers: { ...headers(KEY), "Content-Type": "application/json" },
+      body: JSON.stringify({ discoverable: v }),
+    });
+    await setD(mate.id, false);
+    // Prove the un-listing actually landed before loading. Without this the page can race the
+    // PATCH, render the mate, and the missing prompt becomes a statement about the fixture.
+    for (let i = 0; i < 10 && (await dbDiscoverable(mate.id)) !== false; i++) await new Promise((r) => setTimeout(r, 500));
+    if ((await dbDiscoverable(mate.id)) !== false) throw new Error("could not un-list the mate; the empty-state case would prove nothing");
+    const t2 = await gotoPartners(p2, (x) => !x.includes(mate.name));
+    const own = await dbDiscoverable(owner.id);
+    if (own !== false) {
+      rec("an unlisted viewer is prompted to list themselves", false, `NOT TESTED: the fixture owner is discoverable=${JSON.stringify(own)}, so the unlisted empty state was never on screen`);
+    } else if (!/CLIMBERS ON CLIMBMATCH/i.test(t2)) {
+      rec("an unlisted viewer is prompted to list themselves", false, "NOT TESTED: the browse section did not render, so its empty state proves nothing");
+    } else if (/yours is off too/i.test(t2)) {
+      rec("an unlisted viewer is prompted to list themselves", true, "the empty state says the reader is unlisted and offers the toggle");
+    } else {
+      rec("an unlisted viewer is prompted to list themselves", false, "browse is empty for an unlisted viewer and never mentions that their own listing is off — the one thing they can change");
+    }
+    await anon2.close();
+    await setD(mate.id, true);
   }
 
   // ---- 2) the Settings toggle persists ----------------------------------------------
@@ -155,7 +200,7 @@ try {
   // ---- 3) and it actually removes them from the OTHER account's browse ---------------
   if ((await dbDiscoverable(mate.id)) === false) {
     const page2 = await open(fixture.session);
-    const t2 = await gotoPartners(page2);
+    const t2 = await gotoPartners(page2, (x) => !x.includes(mate.name));
     const s2 = t2.indexOf("CLIMBERS ON CLIMBMATCH");
     const sec2 = s2 >= 0 ? t2.slice(s2, s2 + 900) : t2;
     if (sec2.includes(mate.name)) rec("an unlisted climber disappears from browse", false, `${mate.name} turned the setting off and is still listed to the other account`);
