@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -252,8 +252,9 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
 // state is every route in the subtree. There used to be a second "Route finder" button in
 // the row below wired to the identical handler, i.e. the same screen under two names.
 // NEARBY PEAKS — "I'm here for the weekend, what else is in reach." Only on a PEAK that
-// carries coordinates, and it reuses useNearbyAreas rather than adding a second proximity
-// query; that hook already fetches peaks+crags in a bounding box.
+// carries coordinates. It uses useNearbyPeaks, NOT the older useNearbyAreas: that one caps at
+// 500 ordered by route_count, and around Stuart the cap is actually REACHED, so the nearest
+// small peak can be truncated away before distance is ever considered. See the hook's note.
 //
 // Four things this deliberately does NOT do, each measured rather than assumed:
 //
@@ -295,7 +296,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
   const bounds = nearbyPeaksBounds(area);
   // Called unconditionally — the hook is gated by `enabled: !!bounds`, not by a conditional
   // call, because a hook behind an `if` is the #377 shape check:hooks exists to catch.
-  const { data } = useNearbyAreas(bounds);
+  const { data } = useNearbyPeaks(bounds);
   const rows = useMemo(() => nearbyPeaksRows(area, data && data.rows, 6),
     [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]);
   if (!rows.length) return null;

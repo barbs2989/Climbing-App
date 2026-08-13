@@ -149,7 +149,30 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("the heading does not show the merged count of 2 — " + (t.match(/CAMPING & BIVY · \d+/) || ["no count found"])[0]);
 }
 
-// ── 7. No camping data anywhere → no section, and no crash.
+// ── 7. TWO ELEVATION CONVENTIONS. Measured on the live catalog: of 175 bivy sites, 77 carry
+//    `elev` (feet), 55 carry ONLY `elevM` (metres), 43 carry neither, and ZERO carry both.
+//    uElev() takes feet, so reading `elev` alone rendered no elevation at all for 31% of
+//    sites — present in the data, absent from the screen, and invisible to any coverage
+//    check because the column is populated. Wing Lake is the real row: elevM 2103 = 6,900 ft.
+{
+  const t = text(render(route("alpine", { bivy: [{ name: "Wing Lake", elevM: 2103 }] }), "planner"));
+  if (/6,9\d\d ft/.test(t)) ok("a site carrying only elevM renders its elevation in feet");
+  else fail("elevM-only site rendered no usable elevation — " + (t.match(/Wing Lake[^☾]{0,40}/) || ["not found"])[0]);
+  // And feet must NOT be re-converted: 5900 ft stays 5,900, not 19,357.
+  const f = text(render(route("alpine", { bivy: [{ name: "Glacier Basin camp", elev: 5900 }] }), "planner"));
+  if (f.includes("5,900 ft")) ok("a site carrying elev (feet) is not double-converted");
+  else fail("feet were mangled — " + (f.match(/Glacier Basin camp[^☾]{0,40}/) || ["not found"])[0]);
+}
+
+// ── 8. `type` (camp | bivy | hut on 77 of 175 sites) is the one field that says WHICH of the
+//    two merged things a row is, so it must reach the screen.
+{
+  const t = text(render(route("alpine", { bivy: [{ name: "Sulphide camp", type: "camp" }, { name: "Notch bivy", type: "bivy" }] }), "planner"));
+  if (t.includes("Established camp") && t.includes("Bivy")) ok("site `type` renders as a chip");
+  else fail("site `type` does not reach the screen");
+}
+
+// ── 9. No camping data anywhere → no section, and no crash.
 if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
 else ok("no camping data renders no section");
 

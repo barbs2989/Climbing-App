@@ -898,13 +898,28 @@ function ApproachVariants({route,onEdit}){
    lists ONCE (matched on name, which is the only field both stores reliably carry).
    It renders on EVERY route that has a site, day-trippable or not: a party benighted on a
    "day route" is exactly who needs this, so absence of a bivy plan is not absence of a bivy. */
+/* `bivy[].elev` holds FEET and `bivy[].elevM` holds METRES, and the two NEVER co-occur —
+   measured on the live catalog: of 175 sites, 77 carry elev, 55 carry only elevM, 43 carry
+   neither, and 0 carry both. So this column holds two conventions, the shape dist_km and
+   gain_ft already record. uElev() takes feet, so reading `elev` alone silently rendered NO
+   elevation for 31% of sites. Converted at READ time, never normalised in the DB — the same
+   rule the waypoint vocabulary follows. */
+function campElevFt(s){
+  if(!s)return null;
+  if(s.elev!=null)return s.elev;
+  if(s.elevM!=null)return s.elevM*3.28084;
+  return null;
+}
 function campSites(route){
   const bivy=Array.isArray(route.bivy)?route.bivy:[];
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
   const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
-  return bivy.map(b=>({name:b&&b.name,elev:b&&b.elev,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:w&&w.elev,notes:(w&&w.directions)||"",onTrack:true})));
+  /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
+     WHICH of the two things this section merges you are looking at, so it earns a chip. */
+  const TYPE={camp:"Established camp",bivy:"Bivy",hut:"Hut"};
+  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
+    .concat(wps.map(w=>({name:w&&w.name,elev:w&&w.elev,kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
 function CampingPanel({route,onEdit}){
   const sites=campSites(route);
@@ -917,7 +932,8 @@ function CampingPanel({route,onEdit}){
         <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{b.name||("Camp "+(i+1))}</div>
         {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
       </div>
-      {(b.capacity||b.water||b.permit||b.onTrack)?<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:b.notes?6:0}}>
+      {(b.kind||b.capacity||b.water||b.permit||b.onTrack)?<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:b.notes?6:0}}>
+        {b.kind?<span style={{fontSize:11,fontWeight:700,color:C.purple,background:C.card,border:"1px solid "+C.purple+"55",borderRadius:20,padding:"2px 9px"}}>{b.kind}</span>:null}
         {b.capacity?<span style={{fontSize:11,fontWeight:700,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{b.capacity}</span>:null}
         {b.water?<span style={{fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px"}}>{"Water: "+b.water}</span>:null}
         {b.permit?<span style={{fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px"}}>{b.permit}</span>:null}
