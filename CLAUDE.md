@@ -428,11 +428,28 @@ a build error, but a screen that renders wrong or not at all.
       recorded `season — succeeded on attempt 3` and still lost 17 of 45 columns, so three was
       the boundary rather than a margin. The same query measured 233–654ms for
       access/hazards/gear and timed out for approach/descent/road **minutes apart, with the
-      slow set moving between runs** — contention on an unindexed `not.is.null` scan over
-      ~205k routes. Backoff is exponential because a fixed 400ms re-asks inside the same busy
-      moment, and a total retry budget still caps the run so a wholesale-slow project degrades
-      to one attempt per column, ends, and fails closed. A retry that **succeeds** is printed:
-      absorbing it would turn a measurable flake into an invisible one.
+      slow set moving between runs**. Backoff is exponential because a fixed 400ms re-asks
+      inside the same busy moment, and a total retry budget still caps the run so a
+      wholesale-slow project degrades to one attempt per column, ends, and fails closed. A
+      retry that **succeeds** is printed: absorbing it would turn a measurable flake into an
+      invisible one.
+    - **`order=id.asc` is what costs, NOT a missing index on the filtered column** — and the
+      difference matters because it sends you to opposite repairs. Measured on the live
+      project, same column, seconds apart: `descent` **timed out** with the order and returned
+      **200 in 193ms** without it; `road` 3131ms → **123ms**; `approach` 13654ms → 6231ms.
+      With `order=id.asc&limit=8` Postgres walks the id index and filters row by row until it
+      finds 8 matches, so a **sparse** column traverses most of the table; unordered it can
+      stop at the first 8 it meets. Narrowing with `id=like.wa_*` does **not** rescue it
+      (still timed out on all three).
+    - **Indexes were considered and rejected, deliberately.** Partial indexes
+      (`(id) WHERE col IS NOT NULL`) would make the ordered query instant, but that is ~45 of
+      them on a 205k-row table, maintained on every route write, serving **only this guard**:
+      `lib/db.js` issues **zero** `not.is.null` queries, so the app gains nothing. Dropping
+      the ordering is the other obvious fix and is worse — it is the exact non-determinism the
+      note above this one exists to prevent. Retries are the cheap correct answer here, since
+      the row genuinely exists and only cache warmth decides whether this attempt sees it.
+      **Do not "fix" this with an index without first re-measuring whether the app has started
+      issuing this query shape.**
     - CI timeout is 25 minutes for this reason, not because a healthy run is slow (~40–85s).
   - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
     long-beta block fails naming `beta`. The fail-closed half is injection-tested against a
