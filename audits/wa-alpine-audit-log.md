@@ -7893,3 +7893,20 @@ block recorded in every batch this pass. All findings rest on WebSearch snippet 
 
 No SQL file this batch — nothing to write. Next batch continues alphabetically after
 `wa_argonaut_peak_northeast_couloir` (see progress file).
+
+## 2026-08-13 — Run skipped: database unreachable
+
+No batch this run. Every `/rest/v1/*` data query (`routes`, `areas`) against the live
+Supabase project hung indefinitely and eventually returned a proxy-level `504 upstream
+request timeout` (measured at 126s on one `routes` attempt); repeated across 6 attempts over
+several minutes, on both the `routes` and `areas` tables, with and without a `limit`. The
+gateway itself is up — `/rest/v1/` and `/auth/v1/health` both answer in <1s with expected
+401s — so this is the Postgres data path specifically being unreachable or paused, not a
+network/proxy block (confirmed via `$HTTPS_PROXY/__agentproxy/status`: the CONNECT tunnel to
+`ofuofhojhbcrcahuotya.supabase.co` succeeds, TLS completes, no relay failure logged for this
+host — the request is sent and nothing ever comes back).
+
+Per the audit guardrails (read-only, never fabricate or guess), no routes were checked, no
+SQL was written, and `wa-alpine-audit-progress.json` was left untouched — `last_processed_id`
+still points at `wa_argonaut_peak_northeast_couloir`, so the next run resumes at the correct
+place rather than skipping a batch it never actually audited.
