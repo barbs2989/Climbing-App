@@ -84,9 +84,9 @@ const FIELDS = [
   ["overview", "overview"], ["description", "desc"], ["face", "face"],
   ["sling_rack", "slingRack"], ["rope_note", "ropeNote"], ["corrections", "corrections"],
   ["verif", "verif"], ["data_quality", "dataQuality"], ["lists", "lists"],
-  // The six `0135` writes. All have ZERO populated rows today, so the real-value method has
-  // nothing to pull — they are judged through SENTINELS below instead. Listed here so they
-  // are walked at all; before this they were absent and therefore unguarded.
+  // The six `0135` writes. All have ZERO populated rows, so the real-value method has nothing
+  // to pull — they are judged through SENTINELS below and **no query is issued for them**.
+  // Listed here so they are walked at all; before this they were absent and unguarded.
   ["prot_rating", "protRating"], ["start_type", "startType"], ["landing", "landing"],
   ["pads", "pads"], ["rock", "rock"], ["crux", "crux"],
 ];
@@ -433,28 +433,34 @@ for (const [col, field] of FIELDS) {
     console.log(`\n(abandoning after ${queryFailures.length} consecutive failed column queries — the read is down, not the app)`);
     break;
   }
-  const rows = await rowWith(col);
-  if (!rows.length) {
-    // No row to sample. For a sentinel column that is the EXPECTED state (0 populated rows),
-    // and it is exactly the case the real-value method cannot judge — so prove the reader
-    // synthetically rather than recording "NO DATA" and checking nothing.
-    if (SENTINELS[col]) {
-      const s = assessSentinel(col);
-      const shown = SENTINELS[col].numeric ? s.changed : s.hits.length > 0;
-      results.push({
-        col, field,
-        verdict: shown
-          ? (SENTINELS[col].numeric
-            ? "renders (sentinel — value not assertable, CountUp under SSR)"
-            : "renders (sentinel)")
-          : "NEVER RENDERS (sentinel)",
-        tabs: s.hits.map((t) => "sentinel:" + t), missing: [],
-      });
-      continue;
-    }
-    results.push({ col, field, verdict: "NO DATA", tabs: [] });
+  // A sentinel column is judged SYNTHETICALLY, so do not query the database for it at all.
+  //
+  // Querying was the first draft and CI found the flaw within minutes: these columns have zero
+  // populated rows BY DEFINITION, so the query can only ever come back empty — it cannot
+  // inform the verdict, but it is one more chance to trip the 3s statement timeout, and a
+  // 57014 there fails the whole run through the fail-closed path. The first CI run reported
+  // `prot_rating` and `start_type` as BOTH "renders (sentinel)" and failed queries, which is
+  // the contradiction that gives it away. Six pointless queries, six new ways to go red.
+  //
+  // Their values are short enums (`PG-13`, `sit`, `granite`), so even once backfilled the
+  // real-value method could not judge them — it needs a string leaf of >=14 chars. Sentinel is
+  // the right method for these columns permanently, not a stand-in until data arrives.
+  if (SENTINELS[col]) {
+    const s = assessSentinel(col);
+    const shown = SENTINELS[col].numeric ? s.changed : s.hits.length > 0;
+    results.push({
+      col, field,
+      verdict: shown
+        ? (SENTINELS[col].numeric
+          ? "renders (sentinel — value not assertable, CountUp under SSR)"
+          : "renders (sentinel)")
+        : "NEVER RENDERS (sentinel)",
+      tabs: s.hits.map((t) => "sentinel:" + t), missing: [],
+    });
     continue;
   }
+  const rows = await rowWith(col);
+  if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
 
   // Rank rows by how many distinct leaf paths the value exposes — the widest test of the
   // column's real shape — but keep the runners-up. ONE row is not enough to declare a column
