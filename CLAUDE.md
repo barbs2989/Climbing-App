@@ -523,6 +523,16 @@ a build error, but a screen that renders wrong or not at all.
       finds 8 matches, so a **sparse** column traverses most of the table; unordered it can
       stop at the first 8 it meets. Narrowing with `id=like.wa_*` does **not** rescue it
       (still timed out on all three).
+      - **Read those numbers as a RATIO, not an absolute, and here is the baseline that says
+        why.** Every figure above was taken while the project was already degrading. Measured
+        again the minute Postgres came back healthy, same three columns, ordering still in
+        place: `approach` **206ms**, `descent` **215ms**, `road` **205ms** — against timeouts
+        for all three an hour earlier. So the ordering is genuinely the more expensive plan
+        and the A/B stands, but it is ~200ms on a healthy database, comfortably inside the 3s
+        anon ceiling. It only becomes fatal when the database is *already* sick. Do not read
+        this note as "the ordered query is slow" and go optimise it; the query is fine, and on
+        2026-08-13 the actual fault was Postgres being unreachable
+        (`503 PGRST002`) while Storage and the gateway stayed healthy.
     - **Indexes were considered and rejected, deliberately.** Partial indexes
       (`(id) WHERE col IS NOT NULL`) would make the ordered query instant, but that is ~45 of
       them on a 205k-row table, maintained on every route write, serving **only this guard**:
