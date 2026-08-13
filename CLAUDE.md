@@ -656,7 +656,20 @@ a build error, but a screen that renders wrong or not at all.
     attribute names, so without that a *fixed* control would stop looking like a control and
     read as one fewer thing to check rather than one more thing fixed.
   - Fails closed: zero clickable non-native elements means the scan broke, not that the app
-    is clean.
+    is clean. It also fails on a **stale** baseline (higher than reality), so lowering it is a
+    deliberate step rather than something a fix does silently.
+  - **The `lib/` remainder is deliberate, and it is all one shape.** After the guide screens
+    were fixed, the five left in `lib/` — `AuthModal`, `DbAreaBrowser`, `FireMap`, and two in
+    `GpsSubmissionModal` — are every one of them a **modal backdrop**: a `position:fixed;
+    inset:0` overlay whose `onClick` closes, wrapping a panel that calls `stopPropagation`.
+    A backdrop must **not** be a tab stop; each of those modals carries its own close control,
+    and making the backdrop focusable would put a "button" that reads as nothing in front of
+    every sheet. Do not "finish" `lib/` by spreading `clickable()` over them.
+  - **Two of the fixed controls are checkboxes, not buttons** (`Check` in `DbGuides`, the
+    mandatory attestations in `DbGuideApply`). They take `role="checkbox"` plus
+    `aria-checked`, because a button role announces the control and silently drops the one
+    thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
+    exists for exactly this; the `aria-checked` is written beside it.
   - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
     1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
     attributes are present.
