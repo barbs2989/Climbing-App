@@ -25,6 +25,7 @@ npm run check:grade-parser  # grade_num is parsed in exactly one place (in build
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
+npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -44,6 +45,14 @@ npm run check:ci-cancel # can a guard running on main be cancelled by the next m
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
+npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:approach-scope # does a route's approach text run past the base of the climb?
+npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
+npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
+npm run audit:waypoint-track # is every waypoint on (or near) the route's own GPS track?
+npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
+npm run check:enrichment-traceable # does a climbing_route batch invent anything?
+npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -808,6 +817,60 @@ a build error, but a screen that renders wrong or not at all.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-lengths`** asks whether a rappel table states a distance the rope it describes
+  can actually reach. **A rope doubled through an anchor reaches HALF its length** — one 60m rope
+  gives 30m rappels, two 70m ropes give 70m — and where a source published no per-station
+  distance, an earlier enrichment pass wrote the rope's *capacity* into `lengthM` instead of null.
+  `wa_ellation` stored 8 x 70m, i.e. 560m of rappel down an 8-pitch route, while its own prose said
+  the raps "approach the rope's full 35m reach". `wa_overcoat_peak_southeast_route` had the
+  identical 2x error. A climber rigs for a rappel twice as long as the rope allows; this is the
+  rope-off-the-end shape, and it is the worst thing in this dataset to get wrong.
+  - **It is not a "does every rappel have a length" check, and must never become one.** `null` is
+    the CORRECT value where no source gives a distance, and writing nulls rather than inventing
+    numbers is what the repair did. **Halving is also wrong**: a rappel with no published distance
+    may be 35m or 15m, so a halved figure replaces one fabricated number with another.
+  - **30m is both a rope size and the correct half of a 60m rope**, so the rope-size rule is scoped
+    to stations >=50m. Including 30 flagged 22 correct routes. Separately, any station over 60m is
+    impossible on less than two ropes, and that rule does not need a rope to be *named*.
+  - Two false-positive classes were found by running it, and both were regexes that flagged correct
+    work — which teaches people to ignore a guard. `/double[- ]rope\b/` does not match "double
+    **ropes**", so it condemned `wa_action_potential`, whose descent text lists all five lengths
+    individually *and* names double ropes. And matching "rope length" in the count note flagged
+    three routes whose notes accurately said things like "depending on rope length/number of ropes
+    carried"; the admission being looked for is specifically the rope's **capacity** standing in
+    for a measurement.
+  - The third rule is about the **note, not the numbers**: a table can be corrected while
+    `rappel_count_note` still states the method that produced the wrong value, and the next pass
+    then re-derives it. That is why `enrich:apply` grew a `set` path for the scalar prose columns.
+  - Read-only, anon key, fails closed on an empty read *and* on zero rappel tables. **Not a build
+    gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
+    reasoning as `check:counts`. Injection-tested, 4 cases at the bottom of the script; note that
+    `--inject=clean` (every length nulled) must **PASS**.
+  - Reader-side, `RappelTable` prints `—` for a null length. Its total was summed with `||0`, which
+    turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
+    total" and read as the whole descent. It now sums only known stations and says "60 m across 2
+    of 3" when the line is partial.
+- **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
+  `descent_text` says are not made. Both describe the same descent of the same climb, so a
+  disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its
+  sample — stored **"6 raps to 30m"** while its descent text said the Cascadian Couloir walk-off
+  needs "no rappelling required (0 rappels)" and that the only rappel is an optional bypass taken on
+  the way **up**. `wa_mount_baker_coleman_headwall` stored "2-3 rappels to 30m" against a text
+  saying no trip report describes a fixed rappel on its descent at all.
+  - **No coverage check can see this.** They ask whether the column is populated, and it is — a
+    wrong claim and a right one are identical from there.
+  - **Report-only, and it must stay that way.** Measured precision on the first run was **6
+    flagged, 1 real**. A walk-off descent can still involve a real rappel elsewhere on the day
+    (Buckner's North Face rappels the Sharkfin Col step on the *return leg*, and its text says to
+    treat that, not the summit slopes, as the route's rappel hazard), and rappelling is often a
+    conditional alternative to downclimbing rather than a contradiction (Stickney). Read both
+    fields in full before changing either. The exit code says "things to look at", never "bugs".
+  - The claim regex matches only a **leading** number. Prose that merely mentions a rappel is not
+    an assertion that the descent has N of them, and matching it buries the real hits.
+  - Two of the six were fixed as **phrasing** rather than errors: Colchuck's Northeast Couloir led
+    with a rappel sequence its own text calls an emergency option while discouraging that descent
+    entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
+    the wrong descent is its own defect even when every fact is true.
 - **`check:rappel-readers`** enforces one sentence: **a function that reads
   `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
   correction out-votes the station-by-station enrichment rather than the reverse. #787 found
@@ -836,6 +899,26 @@ a build error, but a screen that renders wrong or not at all.
     second first-draft false pass).
   - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
     draft and both were false passes**. Neither was visible by reading the script.
+- **`check:real-profile-rows`** enforces one sentence: **a row must not print a level or a
+  trust score for someone who has neither.** Seed climbers carry `level` and enough history
+  for `vScore()` to mean something; a real profile carries neither, so the subtitle renders
+  **"undefined · 0"**. #715 fixed ONE row of this and left the rest — they survived for months
+  and were found only by driving a real account through the friend-request screen, where the
+  row asking you to accept a stranger showed `@handle` above `undefined · 0`. Gated by
+  `npm run build`.
+  - It flags the **text** shape only: a level or score concatenated into a rendered string.
+    `vScore()` used for sorting, filtering, or handed to `<TrustBadge score={…}>` is a
+    different question — a badge can gate on `_real`, and `FullProfile` already does.
+  - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
+    through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
+    to "On ClimbMatch" rather than to fabricated numbers).
+  - Five exemptions, each **measured** by reading the collection that feeds the row (the seed
+    crew-invite card, PartnerSearch's ALL_CLIMBERS example card, two rows of the seed
+    GuideDashboard, and the OPEN_CREWS organiser chip). A **stale** exemption fails.
+  - Fails **closed**: zero concatenations means the vocabulary moved, never a clean app.
+  - Injection-tested 5/5. It found **9 unswept rows** when written, five reachable with a real
+    profile — including `ConnectModal`'s own subtitle, which read "undefined · Bellingham, WA"
+    on the sheet that asks you to connect.
 - **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
   resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
   other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
@@ -1045,6 +1128,29 @@ a build error, but a screen that renders wrong or not at all.
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
   `audit:waypoint-order` is its **sibling, not a duplicate**: that one asks whether the *list* is
   sensible (ordering, duplicate pins) and needs no gpx at all. Run both.
+  - **THERE ARE THREE WAYPOINT AUDITS, AND TWO OF THEM ASK THE SAME QUESTION.**
+    `audit:waypoint-track` measures the *same* thing this does — is each pin on the route's own
+    line — with its own thresholds, and **neither script mentioned the other**. Against WA they
+    flag **218 and 240 routes with only 178 in common**. Read the two together or you are reading
+    one arbitrary half; do not quote either count as "the" number of waypoint problems.
+    - The divergence is mostly **tolerance, not disagreement about facts**: this one uses a flat
+      500 m for any non-trailhead/summit pin, `waypoint-track` uses **120 m by default with
+      per-type exemptions** (Bailout 2000, Hazard 600, Water 400, Campsite 500) — because a
+      Bailout pin is *supposed* to be off the line. So 53 routes visible to it and not to this
+      one are pins 120–500 m out, which is a judgement call rather than a miss.
+    - It is **ahead** of this script in two ways worth copying rather than duplicating: those
+      per-type tolerances, and a **blame column** (TRACK / PARTIAL / PIN) that separates "the
+      line is wrong" and "the track only covers the climb, so approach pins are legitimately
+      off it — NOT a defect" from the pins actually worth fixing. Its PARTIAL bucket is 38
+      routes this script reports as defects.
+    - It was **behind** in one, and it was the same defect twice: it had **no placeholder gate**,
+      so it measured pins against 2-point stubs and dots. `wa_sky_mountain_s_route` stores nine
+      points spanning **four metres** and it reported a pin "2,237 m off"; `wa_mount_terror_
+      stoddard_buttress` is 55 m of extent and reported 9,966 m. That is exactly what #834 fixed
+      in this file and nobody carried across — **the four-grade-parsers shape, one level up**.
+      Fixed: 240 → 231, and its lone "WRONG TRACK" was itself a 17 m placeholder.
+    - A point-count gate cannot see this (**nine points is not a suspicious number**) — the test
+      has to be **extent**. Skipped routes are now named and counted, not dropped.
   - **It has twice reported far more problems than exist, and both times the fix was to the
     audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
     every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
@@ -1087,6 +1193,41 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
+  separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
+  `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
+  them apart stops the audit growing flags only a pipeline cares about.
+  - The problem it exists for: `approach` is meant to describe the walk in, but a route with no
+    pitch table had nowhere else to put a description of the climbing, so that description went
+    into the approach and the prose runs past the base and keeps going to the summit. 360 WA
+    routes carry it; 254 had no pitch table. Migration 0122's `climbing_route` is where it goes.
+  - Batches are produced by **re-homing, never researching** — every fact must already be in
+    that route's own `approach`. That instruction is worth nothing unless something checks it,
+    so **`check:enrichment-traceable`** verifies that every number and every load-bearing
+    feature/direction word in a segment also appears in the source. Prose may be rewritten
+    freely; specifics may not be invented. Run it on a batch BEFORE `enrich:apply`.
+  - It took two rounds to make that guard right, and both are the same lesson. It first flagged
+    "Traverse to the summit gully" as untraceable where the source said "travers**ing** higher"
+    — a guard that flags correct work teaches people to ignore it. The fix (stem both sides)
+    still failed because the stemmer never stripped a trailing `e`, so "traverse" and
+    "traversing" never met. Over-stemming is safe here: the same function runs on both sides.
+  - Injection-tested: adding *"Rappel 45 m from a bolted anchor on the cornice above the
+    chimney"* to a Buckner segment is caught on the number, "cornice" and "chimney" — and
+    correctly does NOT flag "rappel", which that route's approach really does mention.
+  - **An empty result is a real result.** Eldorado's Northwest Couloir gets zero segments
+    because its approach stops at the couloir base; Mount Anderson gets two despite `pitches:7`
+    because the text stops at Flypaper Pass. Those routes stay on the candidate list. They are a
+    gap in the data, and leaving the gap visible beats filling it from imagination.
+  - `enrich:apply` is the single write path and must stay so: it asserts each route's `area_id`
+    before writing (only ~9% of route ids are peak-scoped, so a name-shaped id proves nothing),
+    writes through `patchRow`, then **re-reads and reconciles**. Its verification builds the
+    check list from what was actually written — an earlier version omitted `climbing_route`, so
+    a route setting only that column satisfied every remaining clause vacuously and printed
+    "verified" having confirmed nothing.
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+    section was found **defined and mounted nowhere** after a merge kept main's copy of the
+    dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
