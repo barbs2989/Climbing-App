@@ -253,6 +253,30 @@ a build error, but a screen that renders wrong or not at all.
     turns this red on a PR whose author changed nothing. The failure separates the two
     cases by reading the app's own `No routes match.` empty state rather than guessing from
     body length, and says which it is; `--route` repoints it.
+  - **That discrimination is FIVE-way since #898, and the branch it gained is the one that
+    was being answered wrongly.** The old fall-through asserted *"the list did not report an
+    empty search, so this is the route list or the search box, **not missing data**"* — a
+    confident claim it had no evidence for. A list that never POPULATED looks identical: no
+    rows, no empty state. On 2026-08-13 that message sent a session hunting through
+    `DbAreaBrowser` while Postgres was taking seconds per query; the route opened fine on the
+    same commit once the database recovered. It now asks instead of inferring — is a spinner
+    still up (`looksLikeSpinner`), and how fast is the database **right now**
+    (`probeDbLatency`, a non-fatal sibling of `assertDbReachable`) — and every branch prints
+    the measured latency rather than a guess.
+    - `assertDbReachable` cannot cover this: it proves the project was alive **before** the
+      walk. A **degraded** project answers `routes?limit=1` in under a second, passes the
+      preflight comfortably, and still cannot fill a route list inside a settle timeout.
+      Dead versus slow are different failures and the preflight only sees the first.
+    - Skipped under `--url`, where local env describes a different deployment than the one
+      being walked — the same exemption the preflight already carries.
+    - The slow-DB wording is deliberately **advisory, not a verdict**: it says re-run once the
+      project answers in well under a second and only investigate the list if it fails again
+      on a healthy one. A guard that cannot be certain should say what it measured, not pick.
+    - Injection-tested: neutering the empty-state regex falls through to the new branches and
+      prints the latency; forcing the threshold to 0 fires the slow-DB branch; a nonexistent
+      `--route` still takes the renamed-or-deleted branch, so the ordering did not regress.
+      The still-loading branch is **not** injection-proven — forcing it needs a genuinely
+      degraded database, and that is recorded rather than claimed.
   - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
     four screens of a six-tab app no render guard had ever opened. `tap()` matches control
     text exactly, and these buttons carry the badge *inside* the control, so `textContent` is

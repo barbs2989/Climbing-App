@@ -34,8 +34,8 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
-import { assertDbReachable } from "./lib/db-preflight.mjs";
+import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-settle.mjs";
+import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -593,6 +593,23 @@ try {
     // "No climbs match this filter."
     const listed = await page.innerText("body").catch(() => "");
     const empty = /No routes match\.|No climbs match this filter\./i.test(listed);
+    // Fourth cause, and the one that was being reported as the third: the list never
+    // POPULATED. A still-spinning list and a slow database both leave the page with no rows
+    // and no empty state, which is exactly the shape the "not missing data" branch below
+    // then blamed on the route list. On 2026-08-13 that message sent this session hunting
+    // through DbAreaBrowser while Postgres was taking seconds per query — the route opened
+    // fine, on the same commit, once the database recovered.
+    //
+    // So: ask the app whether it is still loading, and ask the DATABASE how it is doing,
+    // rather than inferring either. assertDbReachable ran before the walk and only proves
+    // the project was alive THEN; a degraded project passes it and fails here. Skipped under
+    // --url, where local env describes a different deployment than the one being walked.
+    const spinning = looksLikeSpinner(listed);
+    const db = URL_ARG ? { state: "skipped" } : await probeDbLatency();
+    const dbSlow = db.state === "error" || (db.state === "ok" && db.ms > 2000);
+    const dbNote = db.state === "ok" ? `the database answered in ${db.ms}ms`
+      : db.state === "error" ? `the database did not answer (${db.err})`
+      : "the database was not probed (--url)";
     // Third cause, and it used to hide inside the second: no text input was found at all,
     // so nothing was ever typed and the tap was looking through an unfiltered list. That is
     // a different repair from a broken list, and the message must not conflate them.
@@ -601,7 +618,11 @@ try {
         ? ` — no search box was found on the Routes view, so the name was never typed. Check the route list rendered before this step, not the search itself.`
         : empty
         ? ` — the list rendered and said it has no match, so the row was probably renamed or deleted. This check pins the name; pass --route to point it elsewhere.`
-        : ` — the list did not report an empty search, so this is the route list or the search box, not missing data.`));
+        : spinning
+        ? ` — the list is STILL LOADING, so the row was never on screen to tap. ${dbNote}. This is the data not arriving, not the route list.`
+        : dbSlow
+        ? ` — the list rendered neither rows nor an empty state, and ${dbNote}. Treat this as a slow database rather than a broken list: re-run once it is answering in well under a second, and only investigate the list if it fails again on a healthy project.`
+        : ` — the list reported no empty search, is not still loading, and ${dbNote}. That leaves the route list or the search box.`));
   } else {
     await page.waitForTimeout(2500);
     // If the route page threw during render, React unmounts the tree and every
