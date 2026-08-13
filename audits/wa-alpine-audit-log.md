@@ -7531,3 +7531,28 @@ No batch was picked, no SQL written, `wa-alpine-audit-progress.json` is unchange
 `last_processed_id` is still `wa_the_triad_east_peak`.
 The next run should just retry batch 108 (routes after `wa_the_triad_east_peak`
 alphabetically) as normal; nothing here needs manual recovery.
+
+## 2026-08-13 -- Run skipped: Supabase still unreachable (third consecutive attempt)
+
+Same outage, still not recovered. 10 attempts against
+`ofuofhojhbcrcahuotya.supabase.co/rest/v1/routes` over ~13 minutes (04:31-04:44 UTC),
+same query shape as every prior batch:
+
+- 8 of 10: bare curl timeout (20s), zero bytes received -- no TLS/HTTP response at all.
+- 2 of 10: a real HTTP response, but `503` with body
+  `{"code":"PGRST002","message":"Could not query the database for the schema cache. Retrying."}`.
+
+PGRST002 is PostgREST reporting it cannot reach the underlying Postgres instance to
+build its schema cache -- this is not a network/proxy/auth problem on this side (a bare
+`GET /rest/v1/` with no query returned a normal `401` instantly, so the edge/gateway is
+up; only the database-backed queries fail). `github.com` remained reachable throughout.
+
+This means the outage has now held continuously since at least 01:06 UTC through
+04:44 UTC (3h38m+) across three separate scheduled runs, and it is the project's actual
+Postgres instance that is degraded -- which would affect the live ClimbMatch app's
+DB-backed routes/areas for real users too, not just this audit.
+
+No batch was picked, no SQL written, `wa-alpine-audit-progress.json` is unchanged --
+`last_processed_id` is still `wa_the_triad_east_peak`. Next run: retry batch 108 as
+normal. If this keeps recurring, worth checking the Supabase project dashboard directly
+(billing/pause state, compute add-on) rather than continuing to retry blind from here.
