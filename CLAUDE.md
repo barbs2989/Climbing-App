@@ -41,6 +41,7 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
