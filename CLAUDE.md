@@ -68,6 +68,7 @@ npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:w
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
+npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -990,6 +991,35 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
+- **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
+  column. Both describe the same piece of mountain, so a disagreement means one is wrong —
+  and which one is **not** decidable from the columns, which is why this is **report-only** and
+  must stay so.
+  - **`wa_little_annapurna_south_slopes` is the case that shaped it, and the first reported repair
+    was BACKWARDS.** That report said "the aspect is wrong, set it to S". The aspect (N/NW) was
+    correct, `face` agreed with it, the row's own "base of south slopes" waypoint sat **north** of
+    the summit, and the peak's genuine south side is a different route out of a different valley.
+    The **name** was the wrong half. Aspect drives the sun/shade readout, so applying that report
+    would have turned a correctly-shady north slog into a sunny one. The output says so in as many
+    words rather than implying a fix.
+  - **The precision rule is the ridge/face split, and without it this audit is noise.** A **ridge**,
+    arete, buttress or spur *separates two faces* — the North Ridge has an east side and a west
+    side, so either is a legitimate aspect and a 90° disagreement there is **correct data**. Only an
+    **opposed** ridge (180°) says something contradictory. A **face**, wall, slab, couloir or gully
+    is a single plane, so 90° already *is* the contradiction. `FACE` is tested before `RIDGE`,
+    because a name carrying both words ("Northeast Face Direct off the North Ridge") is describing a
+    face reached from a ridge far more often than the reverse.
+  - Two defects in the first draft, both found by the logic test and **neither visible by reading
+    it**. The comparison was `d > limit`, which excludes *exactly* 90° — so a North Face with an
+    east aspect, the commonest way this defect appears, fell through as clean; it is `>=` now, with
+    the face limit at 90 and the ridge limit at 180. And direction matching was an unbounded
+    substring test, so **"Weston Wall" matched "west"** — a report-only audit that manufactures
+    findings is one people learn to ignore.
+  - The DB half runs only when the file is **executed**, so `scripts/oneoff/verify-aspect-vs-name-logic.mjs`
+    can import the real `judge`/`dirInName`/`landform` and pin them **without a database** — which is
+    how both defects above were caught during an outage. It imports the functions rather than
+    copying them; a mirrored copy would agree with the audit whatever the audit did.
+  - Fails closed on an empty read: zero routes for a state is a broken scan, never a clean catalog.
 - **`check:rappel-readers`** enforces one sentence: **a function that reads
   `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
   correction out-votes the station-by-station enrichment rather than the reverse. #787 found
