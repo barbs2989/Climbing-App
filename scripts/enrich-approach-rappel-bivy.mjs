@@ -206,7 +206,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -263,7 +263,14 @@ for (const id of ids) {
   // ("South-southwest via open timber basin ... basin northwest of peak"). Correcting it is not
   // enrichment: the replacement must be RE-HOMED from a peer row on the same peak or from this
   // route's own researched approach_variants, never composed from memory.
-  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text", "approach"]);
+  // `waypoints` is settable ONLY to correct a pin that is demonstrably in the wrong place, and the
+  // replacement must be RE-HOMED from a peer row on the same peak whose coordinate has been checked
+  // against a known summit. wa_ragged_edge stored a "Vesper-Sperry Saddle" pin 2.32 km from the
+  // Vesper summit and a "North Face Ledge" pin 2.63 km away, both roughly 2,500 ft below their
+  // stated elevations, while three sibling rows carry the real pair 0.27 km and 0.10 km out.
+  // This is NOT a route for bulk waypoint edits — see the standing rule that waypoint findings
+  // must be read row by row before anything is written.
+  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text", "approach", "waypoints"]);
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
@@ -303,6 +310,13 @@ for (const id of ids) {
       Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
   }
   for (const k of ["rappel_count_note", "rappels", "descent_text", "approach"]) if (k in body) checks.push(after[k] === body[k]);
+  // waypoints is an array of objects, so compare length plus each entry's name and coordinate —
+  // a string compare would fail on jsonb key order, which is not stable.
+  if (body.waypoints) {
+    const got = after.waypoints || [];
+    checks.push(got.length === body.waypoints.length && body.waypoints.every((w, i) =>
+      got[i] && got[i].name === w.name && got[i].lat === w.lat && got[i].lng === w.lng));
+  }
   if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
   const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
