@@ -169,12 +169,23 @@ try {
     if (!au?.email) throw new Error("could not read the admin's email");
     const gl = await (await fetch(`${URL_}/auth/v1/admin/generate_link`, { method: "POST", headers: svcH,
       body: JSON.stringify({ type: "magiclink", email: au.email }) })).json();
-    const th = gl?.properties?.hashed_token;
-    if (!th) throw new Error(`generate_link gave no token: ${JSON.stringify(gl).slice(0, 160)}`);
-    const vr = await (await fetch(`${URL_}/auth/v1/verify`, { method: "POST",
-      headers: { apikey: ANON, "Content-Type": "application/json" },
-      body: JSON.stringify({ type: "magiclink", token_hash: th }) })).json();
-    if (!vr?.access_token) throw new Error(`verify gave no session: ${JSON.stringify(vr).slice(0, 160)}`);
+    // The RAW REST endpoint returns the user object with `hashed_token` at the TOP level.
+    // Only the JS client wraps it as `{properties:{hashed_token}}` — reading the nested shape
+    // against the REST API gets you a perfectly valid user object and no token.
+    const th = gl?.hashed_token || gl?.properties?.hashed_token;
+    if (!th) {
+      const keys = gl && typeof gl === "object" ? Object.keys(gl).join(",") : typeof gl;
+      throw new Error(`generate_link gave no token — keys were: ${keys}`);
+    }
+    const verify = async (payload) => (await fetch(`${URL_}/auth/v1/verify`, { method: "POST",
+      headers: { apikey: ANON, "Content-Type": "application/json" }, body: JSON.stringify(payload) })).json();
+    let vr = await verify({ type: "magiclink", token_hash: th });
+    // Older gotrue takes the one-time code plus the email rather than the hashed token.
+    if (!vr?.access_token && gl?.email_otp) vr = await verify({ type: "magiclink", token: gl.email_otp, email: au.email });
+    if (!vr?.access_token) {
+      // Never dump the body — a partial session response can carry a refresh token.
+      throw new Error(`verify gave no session (${vr?.error_code || vr?.error || vr?.msg || "unknown"})`);
+    }
     ADMIN_JWT = vr.access_token;
     adminToken = ADMIN_JWT;
     ok("session minted — token not printed, revoked (scope=local) in teardown");
