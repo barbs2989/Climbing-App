@@ -29,6 +29,7 @@ npm run check:real-profile-rows # no row prints a level/trust a real profile lac
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -1145,6 +1146,42 @@ a build error, but a screen that renders wrong or not at all.
     in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
     wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
     missed"* — **prove the injection landed before believing what the guard says about it.**
+- **`check:toast-reachable`** asserts that every screen `App` returns can **show a toast**.
+  `showToast` sets state, but the toast only appears if its renderer is mounted in whatever
+  `App` returned — and `App` returns **early on nine screens** (legal, session restore, auth,
+  password recovery, the profile editor, both guide screens, the calendar) while the toast
+  rendered only in the **final** return. On those nine the message went into state nothing was
+  rendering and the 2.6s timer then cleared it. **13 messages could never reach a user.** Static,
+  so it sits in `npm run build`.
+  - The three that matter: **all 11 guide-dashboard messages**, including four RLS-failure
+    warnings (a guide taps Save and the screen does nothing whether the write succeeded or the
+    database refused it — and those handlers were wrapped in try/catch *precisely* because "the
+    rejection became an unhandled promise and the button did nothing at all", so the wrap landed
+    and the toast still could not render); the guide application's **submit failure and only the
+    failure** (its success path calls `onClose()` so its toast appears, the `catch` does not);
+    and **"Join a group to create events"**, which is the *default* outcome of the Calendar's
+    "+ Create an event" button — `GROUPS` is empty behind `DEMO_FILLERS` and `joinedGroups`
+    starts empty, and the early `return` skips `setCalOpen(false)`. That is the **zero state**,
+    not an edge case.
+  - The fix is **one** `const _toastEl` hoisted above the early returns and referenced by all
+    nine — one definition, nine renderers, nothing to drift. The nine returns were edited **by
+    condition, never by line number**: this file packs many declarations onto one physical line,
+    and an unmatched anchor was made fatal rather than a silently shorter edit list.
+  - **No existing guard could see this, and the near-misses are the point.** `check:zindex`
+    enforces that the toast beats every other z-index; `check:overlay-portals` enforces that it
+    escapes the stacking context. Both ask whether a **mounted** toast is *visible*. Neither asks
+    whether it is mounted. A toast can satisfy every ceiling and portal rule in the app and still
+    be absent from the screen that fired it.
+  - **`check:zindex` went red the moment the fix landed**, because its anchor was the inline
+    `{toast&&` shape at the render site. That is the guard working — it refused to report on a
+    file it no longer understood. It now accepts the hoisted `_toastEl=toast&&` shape too, and
+    matching **neither** stays fatal.
+  - Scoped with Babel to **App's own top-level returns** — a `return null` inside a nested
+    component is not a screen. Fails **closed** three ways: a renamed `App`, a renamed
+    declaration, or fewer than five returns found each report a *broken scan*, never a clean app.
+  - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
+    checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
+    not a screen.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
