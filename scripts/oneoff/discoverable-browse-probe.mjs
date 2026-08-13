@@ -154,7 +154,10 @@ try {
     // PATCH, render the mate, and the missing prompt becomes a statement about the fixture.
     for (let i = 0; i < 10 && (await dbDiscoverable(mate.id)) !== false; i++) await new Promise((r) => setTimeout(r, 500));
     if ((await dbDiscoverable(mate.id)) !== false) throw new Error("could not un-list the mate; the empty-state case would prove nothing");
-    const t2 = await gotoPartners(p2, (x) => !x.includes(mate.name));
+    // Wait for the PROMPT itself, not merely for the section: it depends on the profile row
+    // query resolving (meListed stays undefined until then, and the prompt renders only on an
+    // explicit false). Polling for the section alone judged before the answer existed.
+    const t2 = await gotoPartners(p2, (x) => !x.includes(mate.name) && /yours is off too/i.test(x));
     const own = await dbDiscoverable(owner.id);
     if (own !== false) {
       rec("an unlisted viewer is prompted to list themselves", false, `NOT TESTED: the fixture owner is discoverable=${JSON.stringify(own)}, so the unlisted empty state was never on screen`);
@@ -181,8 +184,11 @@ try {
     rec("the discoverability toggle is reachable in Settings", false, "no Settings control on the profile tab");
   } else {
     await settings.click();
-    await pageMate.waitForTimeout(3000);
+    // The control renders only once the profile row has loaded — deliberately, so it never
+    // draws an unknown state as a definite on/off. That means a fixed wait is a race: waitFor
+    // the control instead, and let the timeout be what reports its absence.
     const toggle = pageMate.getByRole("button", { name: "Toggle partner browse listing" }).first();
+    try { await toggle.waitFor({ state: "visible", timeout: 25000 }); } catch {}
     if (!(await toggle.count())) {
       rec("the discoverability toggle is reachable in Settings", false, "the toggle did not render in the settings sheet");
     } else {
