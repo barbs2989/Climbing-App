@@ -206,7 +206,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -270,7 +270,16 @@ for (const id of ids) {
   // stated elevations, while three sibling rows carry the real pair 0.27 km and 0.10 km out.
   // This is NOT a route for bulk waypoint edits — see the standing rule that waypoint findings
   // must be read row by row before anything is written.
-  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text", "approach", "waypoints"]);
+  // PROSE columns only. The line is deliberate: display text a correction can rewrite, versus
+  // IDENTITY and CLASSIFICATION columns — `name`, `discipline`, `grade`, `area_id` — which are
+  // NOT here and must go through hand-written SQL a human runs, because they feed search, dedup,
+  // the duplicate-name view and the discipline filter chips. wa_little_annapurna_south_slopes is
+  // the case that drew the line: its prose needs a systematic north/south repair AND its name is
+  // wrong, and only the first half belongs to this script.
+  const SETTABLE = new Set([
+    "rappel_count_note", "rappels", "descent_text", "approach", "waypoints",
+    "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail",
+  ]);
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
@@ -309,7 +318,11 @@ for (const id of ids) {
     checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>
       Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
   }
-  for (const k of ["rappel_count_note", "rappels", "descent_text", "approach"]) if (k in body) checks.push(after[k] === body[k]);
+  // Scalars compare directly; the array-valued prose columns (hazards, pro_tips, watch_out)
+  // compare by JSON, which is safe here because they are arrays of STRINGS — order is meaningful
+  // and there are no object keys whose order jsonb could reshuffle.
+  for (const k of ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail"]) if (k in body) checks.push(after[k] === body[k]);
+  for (const k of ["hazards", "pro_tips", "watch_out"]) if (k in body) checks.push(JSON.stringify(after[k]) === JSON.stringify(body[k]));
   // waypoints is an array of objects, so compare length plus each entry's name and coordinate —
   // a string compare would fail on jsonb key order, which is not stable.
   if (body.waypoints) {
