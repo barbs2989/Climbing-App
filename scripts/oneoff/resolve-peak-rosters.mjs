@@ -12,7 +12,7 @@
 //
 // Read-only. Reports; writes nothing.
 import { SUPABASE_URL, headers, anonKey, requireServiceKey, selectAll } from "../lib/supabase-env.mjs";
-import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS } from "./roster-data.mjs";
+import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS } from "./roster-data.mjs";
 
 const LOOSE = !!process.env.LOOSE;   // opt-in only, for comparing precision
 const KEY = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })();
@@ -60,6 +60,11 @@ const ALIASES = {
   "north six shooter": ["North Six Shooter Peak"],
   "south six shooter": ["South Sixshooter"],          // one word in the catalog
   "sister superior": ["Sister Superior Group"],
+  // National park highpoints, same rule — the catalog's spelling of the same summit, read off
+  // the row. Goode is the one that matters: it is the technical rock climb that makes this list
+  // belong in a climbing app at all, and it was missing purely on word order.
+  "goode": ["Mount Goode"],                           // roster "Goode Mountain"; WA, 4 routes
+  "olympus": ["Mount Olympus (West Peak)"],           // Olympic NP highpoint; WA, 6 routes
 };
 
 // SCAN FIRST, PROBE PER NAME AS A FALLBACK. Both paths exist because both fail, in opposite
@@ -120,7 +125,7 @@ try {
   // path is still reported, and DUMP refuses to emit a roster from it — see below.
   const token = nm => (key(nm) || norm(nm)).slice(0, 40);
   const wanted = new Set();
-  for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS]) {
+  for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS]) {
     for (const e of r) {
       wanted.add(token(e.name));
       for (const alt of ALIASES[key(e.name)] || []) wanted.add(token(alt));
@@ -275,10 +280,11 @@ const b = report("California 14ers", CA_14ERS, "california");
 const c = report("State highpoints", STATE_HIGHPOINTS, null);
 const d = report("Cascade volcanoes", CASCADE_VOLCANOES, null);
 const e = report("Desert towers", DESERT_TOWERS, null);
+const f = report("NP highpoints", NP_HIGHPOINTS, null);
 
-const tot = [a, b, c, d, e].reduce((n, x) => n + x.total, 0);
-const res = [a, b, c, d, e].reduce((n, x) => n + x.ok, 0);
-const use = [a, b, c, d, e].reduce((n, x) => n + x.withRoutes, 0);
+const tot = [a, b, c, d, e, f].reduce((n, x) => n + x.total, 0);
+const res = [a, b, c, d, e, f].reduce((n, x) => n + x.ok, 0);
+const use = [a, b, c, d, e, f].reduce((n, x) => n + x.withRoutes, 0);
 console.log(`\n${res}/${tot} names resolve to an area; ${use} of those hold at least one route.`);
 console.log(`read via ${VIA.toUpperCase()}${VIA === "scan" ? "" : "  <-- DEGRADED: the probe path under-reports; these numbers are a FLOOR, not the answer"}`);
 console.log(`A roster entry whose area holds NO route is not an objective a climber can tick —\nit would render as a name with nothing behind it.`);
@@ -293,7 +299,7 @@ if (process.env.DUMP && VIA !== "scan") {
   process.exit(1);
 }
 if (process.env.DUMP) {
-  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS" };
+  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS", "NP highpoints": "NP_HIGHPOINT_PEAKS" };
   console.log("\n// ---- generated, paste into lib/lists.js ----");
   for (const [label, rows] of Object.entries(RESOLVED)) {
     console.log(`export const ${varName[label]} = [`);

@@ -136,3 +136,41 @@ export const STATE_HIGHPOINTS = [
   { name: "Mount Rainier", state: "washington", ft: 14411 }, { name: "Spruce Knob", state: "west_virginia", ft: 4862 },
   { name: "Timms Hill", state: "wisconsin", ft: 1951 }, { name: "Gannett Peak", state: "wyoming", ft: 13809 },
 ];
+
+// The highest point of each of the 63 US national parks.
+//
+// Many are not climbs at all — Everglades' highpoint is 10 ft, Gateway Arch's is 470 ft — and
+// several are unnamed benchmarks ("Billings Benchmark Southeast", "BCG Public Land highpoint")
+// that no climbing catalog will ever hold. They stay in the roster because the list is "the
+// highest point of each national park" and dropping the flat ones would misstate it; whether the
+// catalog holds them is the resolver's question, not the roster's.
+//
+// A handful ARE serious objectives, and they are why this list belongs in a climbing app at all:
+// Goode Mountain (North Cascades) is a technical rock climb, Mt Fairweather and Mt St Elias are
+// glacier expeditions.
+export const NP_HIGHPOINTS = [
+  { name: "Denali", state: "alaska", ft: 20310 }, { name: "Mount Saint Elias", state: "alaska", ft: 18008 },
+  { name: "Mount Fairweather", state: "alaska", ft: 15325 }, { name: "Mount Whitney", state: "california", ft: 14498 },
+  { name: "Mount Rainier", state: "washington", ft: 14411 }, { name: "Longs Peak", state: "colorado", ft: 14255 },
+  { name: "North Palisade", state: "california", ft: 14242 }, { name: "Grand Teton", state: "wyoming", ft: 13770 },
+  { name: "Mauna Loa", state: "hawaii", ft: 13679 }, { name: "Mount Lyell", state: "california", ft: 13114 },
+  { name: "Wheeler Peak", state: "nevada", ft: 13063 }, { name: "Eagle Peak", state: "wyoming", ft: 11367 },
+  { name: "Telescope Peak", state: "california", ft: 11048 }, { name: "Mount Cleveland", state: "montana", ft: 10466 },
+  { name: "Lassen Peak", state: "california", ft: 10457 }, { name: "Redoubt Volcano", state: "alaska", ft: 10197 },
+  { name: "Haleakala", state: "hawaii", ft: 10023 }, { name: "Goode Mountain", state: "washington", ft: 9200 },
+  { name: "Rainbow Point", state: "utah", ft: 9115 }, { name: "Mount Scott", state: "oregon", ft: 8929 },
+  { name: "Guadalupe Peak", state: "texas", ft: 8749 }, { name: "Horse Ranch Mountain", state: "utah", ft: 8726 },
+  { name: "Mica Mountain", state: "arizona", ft: 8664 }, { name: "Mount Igikpak", state: "alaska", ft: 8276 },
+  { name: "Mount Olympus", state: "washington", ft: 7969 }, { name: "Emory Peak", state: "texas", ft: 7825 },
+  { name: "Mount Griggs", state: "alaska", ft: 7600 }, { name: "Clingmans Dome", state: "tennessee", ft: 6643 },
+  { name: "McCarty Peak", state: "alaska", ft: 6400 }, { name: "Pilot Rock", state: "arizona", ft: 6234 },
+  { name: "Quail Mountain", state: "california", ft: 5813 }, { name: "Elephant Butte", state: "utah", ft: 5653 },
+  { name: "Rankin Ridge", state: "south_dakota", ft: 5013 }, { name: "Mount Angayukaqsraq", state: "alaska", ft: 4700 },
+  { name: "Hawksbill", state: "virginia", ft: 4050 }, { name: "Red Shirt Table", state: "south_dakota", ft: 3340 },
+  { name: "North Chalone Peak", state: "california", ft: 3304 }, { name: "Lata Mountain", state: "american_samoa", ft: 3169 },
+  { name: "Peck Hill", state: "north_dakota", ft: 2860 }, { name: "Grandview", state: "west_virginia", ft: 2517 },
+  { name: "El Montanon", state: "california", ft: 1808 }, { name: "Cadillac Mountain", state: "maine", ft: 1528 },
+  { name: "Music Mountain", state: "arkansas", ft: 1400 }, { name: "Mount Desor", state: "michigan", ft: 1394 },
+  { name: "Bordeaux Mountain", state: "virgin_islands", ft: 1286 }, { name: "Cave Ridge", state: "kentucky", ft: 920 },
+  { name: "Grossman Hammock", state: "florida", ft: 10 },
+];
