@@ -4,6 +4,7 @@
 // + minor-in-party flag, and only lets a climber review a guide they actually have a
 // real inquiry with. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useMemo, useState, lazy, Suspense } from "react";
+import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
 import {
@@ -15,8 +16,11 @@ import {
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
 function Check({ checked, onClick, children, C }) {
+  // role="checkbox", not "button" — this toggles between two states and a screen reader has
+  // to be able to say which one it is in, so aria-checked is as load-bearing as the tab
+  // stop. Announcing it as a button would lose the state entirely.
   return (
-    <div onClick={onClick} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
+    <div {...clickable(onClick, { role: "checkbox" })} aria-checked={!!checked} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
       <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blue : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
       <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{children}</span>
     </div>
@@ -25,7 +29,7 @@ function Check({ checked, onClick, children, C }) {
 
 function GuideCard({ g, verified, onOpen, C }) {
   return (
-    <div onClick={onOpen} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
+    <div {...clickable(onOpen)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
         {g.avatar ? <img src={g.avatar} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -208,7 +212,7 @@ export default function DbGuides({ onDash, notify, C }) {
       <div style={{ marginTop: 16, textAlign: "center" }}>
         <div style={{ fontSize: 13, color: C.textSub, marginBottom: 8 }}>Are you a certified guide?</div>
         <button onClick={() => setApplyOpen(true)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 10, padding: "9px 16px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Apply to guide</button>
-        <div onClick={onDash} style={{ marginTop: 10, fontSize: 12, color: C.textMuted, cursor: "pointer" }}>Already listed? Open your guide dashboard →</div>
+        <div {...clickable(onDash)} style={{ marginTop: 10, fontSize: 12, color: C.textMuted, cursor: "pointer" }}>Already listed? Open your guide dashboard →</div>
       </div>
       {sel ? <GuideDetail guide={sel} onClose={() => setSel(null)} onDash={onDash} notify={notify} C={C} /> : null}
       {applyOpen ? <DbGuideApplyLazy onClose={() => setApplyOpen(false)} notify={notify} C={C} /> : null}
