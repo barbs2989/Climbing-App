@@ -71,13 +71,20 @@ if (offenders.length) {
 }
 
 // ---- the toast must actually use the constant, and escape stacking contexts --
-const toastFile = files.find((f) => /\{toast\s*&&/.test(readFileSync(f, "utf8")));
+// Two shapes, because the toast is no longer written inline at its render site. It is now
+// declared ABOVE App's nine early returns as `const _toastEl=toast&&createPortal(...)` and
+// referenced by each of them — see the comment beside that declaration. Matching only the
+// old inline `{toast&&` shape would have made this guard fail on a correct file, which is the
+// safe direction but still a false alarm; matching NEITHER shape must stay fatal, since a
+// silently skipped block is how a z-index ceiling stops being enforced.
+const TOAST_ANCHORS = [/\{toast\s*&&/, /_toastEl\s*=\s*toast\s*&&/];
+const toastFile = files.find((f) => { const s = readFileSync(f, "utf8"); return TOAST_ANCHORS.some((re) => re.test(s)); });
 if (!toastFile) {
-  console.error("\ncheck:zindex FAILED — could not find the toast render site (`{toast&&`).");
+  console.error("\ncheck:zindex FAILED — could not find the toast render site (`{toast&&` or `_toastEl=toast&&`).");
   process.exit(1);
 }
 const toastSrc = readFileSync(toastFile, "utf8");
-const at = toastSrc.indexOf("{toast&&");
+const at = Math.min(...TOAST_ANCHORS.map((re) => { const m = toastSrc.match(re); return m ? m.index : Infinity; }));
 const block = toastSrc.slice(at, at + 700);
 
 if (!/zIndex\s*:\s*Z_TOAST/.test(block)) {
