@@ -7800,3 +7800,49 @@ to stephabegg.com/alpinist.com-style reference pages); all findings rest on WebS
 synthesis, consistent with every batch this pass. No SQL file this batch -- nothing to write.
 
 Next batch continues alphabetically after `wa_witches_tower_south_face` (see progress file).
+
+---
+
+## 2026-08-13 — Pass 2 complete; Pass 3, Batch 112
+
+Pass 2 is done: a scope query for routes after `wa_witches_tower_south_face` returned zero
+rows, confirming all 535 currently-in-scope routes have been audited this pass. Pass 3 starts
+over from the top of the `id ASC` ordering (facts go stale; per the recurring-audit brief a
+completed pass restarts rather than stopping). Total in-scope count is unchanged at 535 (593
+WA rows tagged alpine/mountaineering catalog-wide, 535 of those under a `peak`-type area).
+
+First eight routes, alphabetically: A Servant To Liberty (Liberty Bell Mountain), South Ridge
+(Abernathy Peak, via Scatter Lake), Action Potential (Burgundy Spire), West Route (Agnes
+Mountain), Round Mountain Trail/Standard Route (Alpine Lookout), Northeast Face and Southeast
+Face/South Ridge (American Border Peak, both routes), Finger of Fatwa (Amphitheater Mountain).
+
+**Confirmed fixes (0):** none this batch.
+
+**Clean (8):** all eight, and this batch got unusually thorough web corroboration. Peak
+elevations confirmed exactly against independent sources for six of the eight peaks: Liberty
+Bell Mountain 7,720 ft, Burgundy Spire 8,492 ft (listsofjohn — an earlier SummitPost hit only
+gave an approximate "~8,400 ft," which would have been a false alarm if trusted alone),
+American Border Peak 7,998 ft (Wikipedia; listsofjohn's 8,033 ft is a known outlier, not used),
+Agnes Mountain 8,119 ft, Amphitheater Mountain 8,358 ft with its summit coordinate matching the
+stored waypoint to within ~15 m, and Alpine Lookout 6,237 ft. Abernathy Peak's 8,321 ft matches
+the commonly-cited/Bulger-list figure; listsofjohn's 8,332 ft is the outlier there. First-ascent
+records confirmed verbatim: Agnes Mountain (W. Ronald Frazier & Dan O'Brien, 1936, via the West
+Fork of Agnes Creek — matches Beckey's account exactly, including that it's rarely climbed),
+American Border Peak (Alec Dalgleish, Tom Fyles, Stan Henderson, R. A. Fraser, Sept 14 1930),
+and Action Potential (Mark Allen & Mike Layton, 2004 — a CascadeClimbers trip report confirms
+the FA date and party). A Servant To Liberty's `waypoints` note documents its own prior
+correction (2026-07-18, trailhead pin) and the route's Mikey Schaefer/2016/rope-solo FA and
+former "A Slave to Liberty" name read as accurate.
+
+**Needs human verification:** none. One internal-consistency oddity was chased down rather
+than flagged: Agnes Mountain's West Route has `gain_ft: 4000` against `loss_ft: 6500`, which
+looked like a mismatch at first (every other route this batch has equal or near-equal gain and
+loss) — but it resolves cleanly once the approach is read: this is a backpack-in/high-camp
+route (Swamp Creek Camp on the Agnes Creek Trail), and `loss_ft` matches the full descent from
+the 8,119 ft summit back to the 1,650 ft trailhead almost exactly (6,469 ft), while `gain_ft`
+is consistent with the climbing day's net ascent from a high camp rather than the whole
+approach. Not a defect, just a different (and reasonable) accounting convention — no SQL
+fix, and no reason to send it to a human.
+
+No SQL file this batch — nothing to write. Next batch continues alphabetically after
+`wa_amphitheater_mountain_finger_of_fatwa` (see progress file).
