@@ -419,9 +419,19 @@ a build error, but a screen that renders wrong or not at all.
     - **A `42703` gets its own message.** "This guard names a column that does not exist" and
       "the database is unreachable" need opposite repairs. That paid immediately: `permit_url`
       **is not a column** — `routes` has 95 and exactly one permit-ish one, `permit` — so every
-      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed. Not a missing
-      feature: `permitUrl` is seed-only, `lib/db.js` maps `permits: r.permit`, and the
-      contribute form does not offer it.
+      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed — this guard's
+      subject is column → screen, and with no column there is nothing to query.
+      - **The reason first given for that removal was wrong, and the wrong reason is the
+        dangerous half.** It said the form does not offer `permitUrl` and no DB route can have
+        one; both are false, and together they would justify deleting a working feature. It
+        **is** offered — `{k:"permitUrl",label:"Permit link"}` lives in **`RouteDetail`'s own
+        `FIELDS`** list, not `ClimbMatch.jsx`'s, which is exactly how the first check missed
+        it — it is in `SS`, and RouteDetail renders `<a href={route.permitUrl}>` beside the
+        permit prose. A DB route reaches it through the **contribution overlay**, which needs
+        no column at all: `dbContribs` rows are grouped by field, gated on `SS[rc.field]` and
+        applied onto the route object client-side once the 3-agree gate passes. Not every
+        contributable field is column-backed, so "absent from `routes`" does **not** mean
+        "unreachable" — check `SS` and the overlay before concluding a field is dead.
     - **Retries are five, and the number is measured.** The failure being retried is `57014`,
       the 3s anon statement timeout, so the *client* timeout is irrelevant — the server gives
       up on its own and only a later attempt against a warmer cache can succeed. A run
