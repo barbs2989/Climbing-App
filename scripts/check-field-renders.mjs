@@ -43,7 +43,16 @@ const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners
 const FIELDS = [
   ["approach", "approach"], ["descent", "descent"], ["descent_text", "descentText"],
   ["approach_logistics", "approachLogistics"], ["road", "road"], ["access", "access"],
-  ["permit", "permits"], ["permit_url", "permitUrl"],
+  // `permit_url` was here and is NOT a column: routes has 95 columns and exactly one
+  // permit-ish one, `permit`. Every run queried it, got HTTP 400 42703, and the old
+  // `if (!r.ok) return []` turned that into "NO DATA" — so a name that had never resolved
+  // sat in the results table looking like an unpopulated column. The fail-closed change
+  // below surfaced it on its first honest run against a live DB.
+  // Not a missing feature: `permitUrl` is seed-only (ClimbMatchCore's ROUTES carry it and
+  // RouteDetail renders it), lib/db.js maps `permits: r.permit` and no permitUrl at all,
+  // and the contribute form does not offer it — so nothing writes it and no DB route can
+  // have one. There is nothing here for this guard, whose subject is enriched DB columns.
+  ["permit", "permits"],
   ["waypoints", "waypoints"], ["gpx", "gpxPts"], ["elev_pts", "elevPts"],
   ["itinerary", "itinerary"], ["timing", "timing"], ["turnaround", "turnaround"],
   ["hazards", "hazards"], ["obj_haz", "objHaz"], ["watch_out", "watchOut"],
@@ -149,6 +158,27 @@ const probe = (hay, needle) => {
   return hay.includes(n.slice(0, 60));
 };
 
+// Every query that did not come back healthy, so a broken READ can never be reported as a
+// finding about the CODE. See the failure this exists for, directly below.
+const queryFailures = [];
+// Queries that only succeeded on a retry — reported, never swallowed.
+const retriedOk = [];
+
+// A request must be able to give up on its own. `fetch` has NO default timeout, so a
+// connection the server accepts and then never answers hangs this script forever — and in
+// CI that surfaces as an opaque job timeout with no output, which is strictly worse than
+// the false pass this change exists to remove. 12s is chosen against measured behaviour,
+// not picked round: the anon statement timeout fires at 3s and a cold connection costs
+// 3.8-6.4s, so anything still silent at 12s is hung rather than slow.
+const REQ_TIMEOUT_MS = 12000;
+// Retrying 45 columns three times is only affordable while the failures are occasional.
+// When the DB is slow ACROSS THE BOARD every column burns its full retry budget and the run
+// stops fitting any sane CI limit, so retries are abandoned once this much wall-clock has
+// gone on them; later columns then get a single attempt each and the run still finishes and
+// still fails closed. Bounding the spend, not the honesty.
+const RETRY_BUDGET_MS = 8 * 60 * 1000;
+const startedAt = Date.now();
+
 async function rowWith(col) {
   // order=id.asc is load-bearing: PostgREST gives no ordering guarantee, so an unordered
   // limit=8 returns a DIFFERENT eight rows run to run. That made the whole guard
@@ -156,10 +186,83 @@ async function rowWith(col) {
   // with no code change between them. A guard whose verdict depends on server row order
   // cannot be trusted either way.
   const url = `${SUPABASE_URL}/rest/v1/routes?select=*,areas(*)&${col}=not.is.null&order=id.asc&limit=8`;
-  const r = await fetch(url, { headers: headers(KEY) });
-  if (!r.ok) return [];
-  const rows = await r.json();
-  return Array.isArray(rows) ? rows : [];
+  // A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two is the bug this block
+  // exists for. `if (!r.ok) return []` made a dead database indistinguishable from "no route
+  // has this column populated", and the consequence was not a quiet false pass — it was
+  // WRONG ADVICE. On 2026-08-12 main went red twice with every one of the 46 columns reading
+  // NO DATA, and the only thing the run said was:
+  //
+  //     STALE allowlist entries (these now render — remove them): data_quality
+  //
+  // i.e. it told the author to delete correct bookkeeping from KNOWN because the DB was
+  // down. Following that instruction would have removed the recorded reason a column is not
+  // rendered, and the guard would then have reported that column dead forever after.
+  //
+  // Worse, that red was an ACCIDENT of KNOWN being non-empty. The stale test is the only
+  // thing on this path that exits non-zero when nothing rendered: with an empty allowlist
+  // the identical outage prints "ok — every measurable enriched column reaches a screen"
+  // and exits 0. So this guard's realistic failure mode was a false pass, exactly like
+  // check:counts over an empty read and check:migration-claims with no token. Both of those
+  // fail closed; this one did not.
+  //
+  // Retry with backoff before giving up, for the same reason #854 added a retry to check:ui:
+  // the observed failure is transient and it buys down the cost of an intermittent miss
+  // without weakening anything — a genuinely broken read fails every attempt and still fails
+  // the run.
+  //
+  // What it is retrying is MEASURED, not guessed. Caught live on 2026-08-12:
+  //
+  //   emergency: HTTP 500 {"code":"57014","message":"canceling statement due to statement timeout"}
+  //
+  // 57014 is the statement timeout on the anon role — the same 3s ceiling that made every
+  // app-side read of route_duplicate_names error while the identical query looked healthy in
+  // the SQL editor, where postgres has no timeout. This query filters an unindexed column
+  // with `not.is.null` across ~205k routes, so whether it lands under 3s depends on cache
+  // warmth, and the same column passes on one run and times out on the next. One retry was
+  // not enough (measured — a single retry still went red), hence three with a backoff.
+  let lastErr = null;
+  // FIVE attempts, with an EXPONENTIAL backoff, and both numbers come from measurement.
+  //
+  // The client timeout above is irrelevant to the failure actually being retried: the server
+  // gives up at its own 3s statement ceiling and returns a 500, so waiting longer per request
+  // buys nothing. Only a LATER attempt against a warmer cache can succeed — and it does. A run
+  // on 2026-08-13 recorded `season — succeeded on attempt 3`, so three attempts was landing
+  // right on the edge; that same run still lost 17 of 45 columns.
+  //
+  // The cost is what makes this affordable rather than a treadmill: measured on the live
+  // project minutes later, the identical query took 233-654ms for access/hazards/gear and
+  // timed out for approach/descent/road, and the slow set MOVES between runs. This is
+  // contention on an unindexed `not.is.null` scan over ~205k routes, not a broken column, so
+  // the row really is there and another attempt is a fair way to get it.
+  //
+  // Backoff grows 0.8s, 1.6s, 3.2s, 6.4s because a fixed 400ms re-asks inside the same busy
+  // moment. RETRY_BUDGET_MS still caps the whole thing, so a wholesale-slow project degrades
+  // to one attempt per column and the run still ends and still fails closed.
+  const maxAttempts = (Date.now() - startedAt) < RETRY_BUDGET_MS ? 5 : 1;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    if (attempt > 1) await new Promise((r) => setTimeout(r, 800 * Math.pow(2, attempt - 2)));
+    try {
+      const r = await fetch(url, { headers: headers(KEY), signal: AbortSignal.timeout(REQ_TIMEOUT_MS) });
+      if (!r.ok) { lastErr = `HTTP ${r.status} ${(await r.text().catch(() => "")).slice(0, 160)}`; continue; }
+      const rows = await r.json();
+      // Print a retry that WORKED. Absorbing it silently would convert a measurable flake
+      // into an invisible one, and the next person to see this go red would have no idea it
+      // had been happening at all — the rule #854 set for the same reason.
+      if (attempt > 1) retriedOk.push({ col, attempt, err: lastErr });
+      return Array.isArray(rows) ? rows : [];
+    } catch (e) {
+      // A thrown fetch (socket hangup, DNS, connection reset) never reached `!r.ok` at all —
+      // it crashed the script with an unhandled rejection, which reads as a broken guard
+      // rather than a broken database. Caught here so it lands in the same report.
+      // Name our own abort for what it is. "The operation was aborted due to timeout" on its
+      // own reads like a server message and sends the reader to the DB; this one is ours.
+      lastErr = (e && e.name === "TimeoutError")
+        ? `no response within ${REQ_TIMEOUT_MS / 1000}s (aborted by this script, not by the server)`
+        : String((e && e.message) || e);
+    }
+  }
+  queryFailures.push({ col, err: lastErr });
+  return [];
 }
 
 // Two bases, because whole sections are discipline-gated: RouteGearCheck (and the essentials
@@ -219,6 +322,17 @@ function assessRow(cand, field) {
 
 const results = [];
 for (const [col, field] of FIELDS) {
+  // Stop early when the database is simply DOWN. If the first several columns each fail
+  // every attempt, the remaining forty tell you nothing you do not already know, and
+  // grinding through them turns a 3-minute answer into a quarter-hour one — against a
+  // never-responding server the full walk was measured at ~14min. This only ever short-
+  // circuits a run that is already going to fail closed. The test is that EVERY result so
+  // far is a query failure, so a single success anywhere disables it for the whole run —
+  // a sporadically flaky column can never trigger it.
+  if (queryFailures.length >= 5 && results.length === queryFailures.length) {
+    console.log(`\n(abandoning after ${queryFailures.length} consecutive failed column queries — the read is down, not the app)`);
+    break;
+  }
   const rows = await rowWith(col);
   if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
 
@@ -311,6 +425,56 @@ const KNOWN = {
     + "at the top of Overview and both were replaced by per-section gap notices. Give it a "
     + "home beside the fields it grades if it comes back, not another page-level banner.",
 };
+// FAIL CLOSED ON A BROKEN READ, and do it BEFORE any verdict is interpreted. Everything
+// below this line reasons about what rendered; none of it means anything if the rows never
+// arrived. This has to come ahead of the stale-allowlist test in particular, because that
+// test is what turned an outage into "remove these entries" — advice that was both wrong and
+// easy to follow.
+if (retriedOk.length) {
+  console.log("\nnote: " + retriedOk.length + " column quer" + (retriedOk.length === 1 ? "y" : "ies")
+    + " needed a retry (the read is flaky, the result below is still sound):");
+  for (const f of retriedOk) console.log(`  ${f.col} — succeeded on attempt ${f.attempt}, first failure: ${f.err}`);
+}
+if (queryFailures.length) {
+  // Separate the two causes, because they need OPPOSITE repairs and a run that conflates
+  // them sends the reader the wrong way — the same reasoning #854 applies to check:ui's
+  // three-way route failure. A 42703 is this guard's own bookkeeping naming a column that
+  // is not there; anything else is the database being unreachable or unhappy.
+  const schema = queryFailures.filter((f) => /42703|does not exist/i.test(f.err));
+  const transient = queryFailures.filter((f) => !/42703|does not exist/i.test(f.err));
+  if (schema.length) {
+    console.log("\nTHIS GUARD NAMES A COLUMN THAT DOES NOT EXIST — its own list is stale, the DB is fine.");
+    for (const f of schema) console.log(`  ${f.col}: ${f.err}`);
+    console.log("  Fix the FIELDS list at the top of this script: drop the entry, or correct the name");
+    console.log("  to whatever the column was renamed to. Do NOT touch the KNOWN allowlist for this.");
+  }
+  if (transient.length) {
+    console.log("\nTHE DATABASE READ FAILED — this run proves NOTHING about the app.");
+    console.log(`  ${transient.length} of ${FIELDS.length} column queries did not come back, after a retry each.`);
+    for (const f of transient.slice(0, 6)) console.log(`  ${f.col}: ${f.err}`);
+    if (transient.length > 6) console.log(`  … and ${transient.length - 6} more`);
+    console.log("  Nothing here is a finding about the code, and no allowlist entry below is stale.");
+    if ((Date.now() - startedAt) >= RETRY_BUDGET_MS) {
+      console.log(`  (The ${RETRY_BUDGET_MS / 60000}min retry budget ran out, so later columns got one attempt each`);
+      console.log("   rather than three — say so rather than let the attempt count differ silently.)");
+    }
+    console.log("  Re-run it. If it persists, check the Supabase project is up and the anon key is valid.");
+  }
+  process.exit(1);
+}
+// A read can also come back healthy and empty — wrong project, an emptied table, or RLS
+// rejecting every row (PostgREST answers 200 with []). No query errored, so the check above
+// cannot see it, and every column would read NO DATA and pass vacuously. 46 enriched columns
+// are not all empty in a catalog of 205k routes: treat a wholesale-empty read as broken,
+// never as clean. Same rule as check:counts refusing an empty read.
+const noData = results.filter((r) => r.verdict === "NO DATA");
+if (noData.length === results.length && results.length > 0) {
+  console.log("\nEVERY column came back with no rows, and no query reported an error.");
+  console.log("  That is not a clean catalog — it is a read that found nothing: an empty or wrong");
+  console.log("  project, or RLS rejecting every row (PostgREST answers 200 with [] for that).");
+  console.log("  Refusing to report this as a pass.");
+  process.exit(1);
+}
 const dead = results.filter((r) => r.verdict === "NEVER RENDERS" && !KNOWN[r.col]);
 const known = results.filter((r) => r.verdict === "NEVER RENDERS" && KNOWN[r.col]);
 if (known.length) {

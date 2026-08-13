@@ -8,7 +8,7 @@
 // number here and a number on screen cannot disagree — and prose spellings ("Washington Bulger
 // List (100 Highest Peaks in Washington)") count exactly as slugs do.
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
-import { LIST_ALIASES, routeInList } from "../lib/lists.js";
+import { LIST_ALIASES, routeInList, listPeaks } from "../lib/lists.js";
 
 // The totals the Challenges screen advertises, copied from its own `lists` array. A list whose
 // total is unknown there is left null rather than guessed.
@@ -28,16 +28,20 @@ if (!rows.length) { console.error("FAIL: no routes carry a lists value — refus
 console.log(`\n=== named list coverage ===`);
 console.log(`routes carrying any list tag: ${rows.length}\n`);
 const keys = Object.keys(LIST_ALIASES);
+// A PEAK list is defined by its roster, not by `routes.lists` — see the note in lib/lists.js.
+// Counting its tags would report the Bulgers as 11 of 100 while the app shows 100 objectives,
+// i.e. this audit would disagree with the screen it exists to measure.
 const out = keys.map(k => {
-  const have = rows.filter(r => routeInList(r, k)).length;
+  const roster = listPeaks(k);
+  const have = roster ? roster.length : rows.filter(r => routeInList(r, k)).length;
   const want = DECLARED[k];
-  return { k, have, want, gap: want != null ? want - have : null };
+  return { k, have, want, via: roster ? "roster" : "tags", gap: want != null ? want - have : null };
 }).sort((a, b) => (b.gap ?? -1) - (a.gap ?? -1));
 
 const pad = (s, n) => String(s).padEnd(n);
-console.log(pad("list", 14) + pad("tagged", 8) + pad("advertised", 12) + "gap");
+console.log(pad("list", 14) + pad("members", 9) + pad("advertised", 12) + pad("via", 8) + "gap");
 for (const r of out) {
-  console.log(pad(r.k, 14) + pad(r.have, 8) + pad(r.want ?? "—", 12) + (r.gap == null ? "—" : r.gap > 0 ? `${r.gap} missing` : "complete"));
+  console.log(pad(r.k, 14) + pad(r.have, 9) + pad(r.want ?? "—", 12) + pad(r.via, 8) + (r.gap == null ? "—" : r.gap > 0 ? `${r.gap} missing` : "complete"));
 }
 const empty = out.filter(r => r.have === 0);
 console.log(`\nlists with NOTHING tagged: ${empty.length} of ${keys.length} — ${empty.map(r => r.k).join(", ") || "none"}`);

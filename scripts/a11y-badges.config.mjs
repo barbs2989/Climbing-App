@@ -15,7 +15,7 @@
 // Does not ship. Only ever passed via `vite --config`.
 
 import base from "../vite.config.js";
-import { buildOpener, lazyChunks } from "./lib/overlay-scaffold.mjs";
+import { buildOpener, lazyChunks, routeDetailTransform } from "./lib/overlay-scaffold.mjs";
 
 const ANCHOR = "  const prevUidRef=useRef(uid);";
 
@@ -24,6 +24,10 @@ function a11yBadgeScaffold() {
     name: "a11y-badges-scaffold",
     enforce: "pre", // before @vitejs/plugin-react compiles the JSX away
     transform(code, id) {
+      // RouteDetail owns modals of its own, and no `?z=` injected into App can reach a
+      // flag local to another component. Shared helper so no config can forget it.
+      const _rd = routeDetailTransform(code, id, "check:a11y-badges");
+      if (_rd !== null) return _rd;
       if (!id.endsWith("/ClimbMatch.jsx")) return null;
       const n = code.split(ANCHOR).length - 1;
       if (n !== 1) {

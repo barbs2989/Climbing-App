@@ -22,7 +22,18 @@ on:
     branches: [main, master]
 
 concurrency:
-  group: zero-state-${{ github.head_ref || github.ref }}
+  # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
+  # `head_ref` is empty and this falls through to `github.sha`, which is UNIQUE per commit
+  # — so main runs never share a group and never queue behind one another.
+  #
+  # That last part is load-bearing and `cancel-in-progress` alone does NOT achieve it.
+  # `cancel-in-progress: false` only protects a run that is already IN PROGRESS; GitHub
+  # cancels a still-PENDING run unconditionally when a newer run joins its group. Measured
+  # on run 31644233526 — a push run for 7fb4e65 that went pending behind a 15-minute queue
+  # and was cancelled two seconds after the next merge's run was created. It reported no
+  # failure, so #835's merge read as checked by a guard that never ran on it. Sharing one
+  # group across main pushes is what created the queue that made it cancellable.
+  group: zero-state-${{ github.head_ref || github.sha }}
   # Superseded PR runs are cancellable; a main run is not. A cancelled run reports no
   # failure, so cancelling here would make an unchecked merge look checked (#616).
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}

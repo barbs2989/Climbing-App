@@ -42,7 +42,27 @@ on:
     branches: [main, master]
 
 concurrency:
-  group: render-guards-${{ github.head_ref || github.ref }}
+  # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
+  # `head_ref` is empty and this falls through to `github.sha`, which is UNIQUE per commit
+  # — so main runs never share a group and never queue behind one another.
+  #
+  # That is not the same guarantee `cancel-in-progress` gives, and the difference is the
+  # whole point of this line. `cancel-in-progress: false` only protects a run that is
+  # already IN PROGRESS. GitHub cancels a still-PENDING run unconditionally when a newer
+  # run joins its group, and the comment below was written believing otherwise.
+  #
+  # Measured, on this workflow: run 31644233526, event `push`, sha 7fb4e65. 18e6265's run
+  # sat pending for 15 minutes (created 21:33:48, started 21:48:44); 7fb4e65's was created
+  # 21:48:58 and correctly went pending behind it; 9d441d3's was created 21:50:48 and
+  # 7fb4e65's was CANCELLED at 21:50:50, two seconds later. It reported no failure, so
+  # #835's merge read as checked by a guard that had never run on it — the exact failure
+  # the note below claims to prevent. Sharing one group across main pushes is what built
+  # the queue that made it cancellable, so per-SHA groups are the fix, not a stricter flag.
+  #
+  # Cost: main pushes now run in parallel rather than serially. That is the price of
+  # actually checking each merge, and it is the right trade — a check that is skipped is
+  # worth less than a runner minute.
+  group: render-guards-${{ github.head_ref || github.sha }}
   # Cancel superseded PR runs; never cancel a main run. #616 is the reason: with
   # cancel-in-progress on, merges killed each other's deploys and production sat eight
   # commits behind for five hours. Cancelling here would be quieter and worse — a
@@ -209,7 +229,13 @@ jobs:
   field-renders:
     name: Enriched columns reach a screen
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # A healthy run is ~85s. The headroom is for the degraded case: each of the 45 column
+    # queries now retries up to 3 times, and the failure being retried is a 57014 statement
+    # timeout, so a wholesale-slow Supabase costs three timeouts per column before the run
+    # gives up. At the 3s anon ceiling that is ~7min; a cold connection costs 3.8-6.4s (see
+    # the note in CLAUDE.md) and 15 was too tight against that. It only ever fails closed
+    # after spending this, so the budget buys a correct verdict, never a false pass.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

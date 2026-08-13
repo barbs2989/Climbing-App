@@ -3,6 +3,7 @@
 // all persisted to Supabase. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { clickable } from "./clickable";
 import { useSession } from "./auth";
 import {
   useCertTrackDisciplines, useGuideProfile, useGuideCredentials,
@@ -185,8 +186,11 @@ export default function DbGuideApply({ onClose, notify, C }) {
         </label>
 
         <div style={label}>Agreements</div>
+        {/* These are the mandatory attestations that gate the application, so a climber who
+            cannot reach them cannot apply at all. role="checkbox" + aria-checked, for the
+            reason DbGuides' Check records — a button role would drop the state. */}
         {AGREEMENTS.map((text, i) => (
-          <div key={i} onClick={() => setAgree(a => a.map((v, k) => k === i ? !v : v))} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
+          <div key={i} {...clickable(() => setAgree(a => a.map((v, k) => k === i ? !v : v)), { role: "checkbox" })} aria-checked={!!agree[i]} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
             <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (agree[i] ? C.blue : C.border), background: agree[i] ? C.blue : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{agree[i] ? "✓" : ""}</span>
             <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{text}</span>
           </div>

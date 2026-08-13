@@ -85,7 +85,15 @@ const written = depth1Keys(payloadLit);
 // app recomputes anyway — and a stored `true` disagreeing with a hydrated tickType is a
 // contradiction the read path would have to arbitrate. It is written for consumers OTHER
 // than this app (the catch ledger, and anything querying "was a fall caught here").
-const DERIVED = new Set(["discipline", "car_to_car_minutes", "caught_fall"]);
+//
+// car_to_car_minutes WAS here, on the same "derived on both sides" reasoning, and that was
+// the one entry the reasoning did not hold for. Nothing re-derived it on read: the only
+// place carToCar is computed from the three legs is the LogAscent form, while you type. So
+// the total showed until you reloaded and then vanished — and RouteDetail's separate
+// hydration of the same rows DID read the column, so it stayed on screen for every other
+// climber. An exemption is a claim about the code, and this one had quietly stopped being
+// true; it is now a real round-trip and the exemption is gone so it cannot lapse again.
+const DERIVED = new Set(["discipline", "caught_fall"]);
 
 // ---- what the read path maps back -------------------------------------------
 const hi = SRC.indexOf("var item={_dbId:row.id");
@@ -162,6 +170,88 @@ if (missing.length) {
   process.exit(1);
 }
 console.log("  ok    trip beta, gear, itinerary, GPX, FA and timings all hydrated");
+
+// ---- the SECOND hydration ---------------------------------------------------
+//
+// Everything above reads ClimbMatch.jsx. That is one of TWO hydrations of this table, and
+// until #861 this script could not see the other one at all — RouteDetail.jsx was not even
+// in its sources.
+//
+//   ClimbMatch.jsx   builds `logs`     -> your own logbook
+//   RouteDetail.jsx  builds `dbReports` -> the same rows as a route's `activity`
+//
+// A route's `activity` dedupes route.activity -> myReports -> dbReports by _dbId, so YOUR
+// row arrives via myReports carrying the full ClimbMatch shape. Every other climber's row
+// exists only as dbReports. So a column this hydration drops is a fact that is on screen
+// for its author and nobody else — and both shapes are opened into the SAME components
+// (ReportStats, TripReport).
+//
+// That had happened twice over: #843 (car_to_car_minutes, the mirror direction) and #861,
+// where faAscent and developed were dropped, so buildConsensus could only ever credit a
+// First Ascent to yourself.
+const RD_SRC = readFileSync(new URL("../RouteDetail.jsx", import.meta.url), "utf8");
+const rdAnchor = "return _tripRows.map(function(r){";
+const rdStart = RD_SRC.indexOf(rdAnchor);
+if (rdStart < 0) fail("ANCHOR LOST — could not find RouteDetail's climb_logs hydration (" + rdAnchor + ").");
+let rdDepth = 0, rdEnd = RD_SRC.length;
+for (let k = RD_SRC.indexOf("{", rdStart + rdAnchor.length - 1); k < RD_SRC.length; k++) {
+  if (RD_SRC[k] === "{") rdDepth++;
+  else if (RD_SRC[k] === "}" && --rdDepth === 0) { rdEnd = k + 1; break; }
+}
+const rdHydration = RD_SRC.slice(rdStart, rdEnd);
+const rdRead = new Set([...rdHydration.matchAll(/\br\.([a-z_]+)/g)].map(m => m[1]));
+
+// Fails closed: an anchor that still matches but a body that reads almost nothing means the
+// brace walk went wrong, and every comparison below would pass vacuously.
+if (rdRead.size < 10) fail(`RouteDetail's hydration parsed to only ${rdRead.size} column reads — the scan is broken, not the app.`);
+
+// Columns this hydration may legitimately skip. Each reason is MEASURED, not assumed — the
+// question is always "what on the route page consumes it?", never "does it feel relevant?".
+//
+// Scope note, learned when the staleness rule below fired on its own first run: `written`
+// comes from the depth-1 keys of the payload LITERAL, so the three columns syncLogToDb
+// appends conditionally afterwards (`payload.partners=`, `belayed_by`, `gpx_track`) are not
+// in it and need no entry here. They are already tracked by UNWRITTEN_OK above. Two of them
+// are still worth knowing about, because they look like obvious things to hydrate and are
+// not:
+//   partners    — matchClimber does CLIMBERS.find(c=>c.name===nm&&ascent.partnerIds.includes(c.id))
+//                 against seed INTEGER ids. Feeding it uuids takes that branch and returns
+//                 null for EVERY partner, which is worse than the name fallback it uses
+//                 today. The class check:crew-member-readers exists for.
+//   gpx_track   — TripReport's Download GPX uses the ROUTE's track, gpxDownload(r); nothing
+//                 reads a report's own track on this surface.
+const ROUTE_THIN = new Map([
+  ["trip_report_visibility", "RLS (0081) decides which rows come back; the page never re-filters"],
+  ["crew_id", "the log<->crew link is never set on save, and a report card is not crew-scoped"],
+]);
+const rdDropped = [...written]
+  .filter(c => !rdRead.has(c) && !DERIVED.has(c) && !ROUTE_THIN.has(c))
+  .sort();
+
+// A stale exemption is a description of code that has moved on, so it fails too — the same
+// standard NEEDS_EXTRA_STATE and check:field-renders' KNOWN map are held to.
+const staleThin = [...ROUTE_THIN.keys()].filter(c => rdRead.has(c) || !written.has(c));
+
+console.log(`  2nd hydration reads : ${rdRead.size} columns (RouteDetail)`);
+console.log(`  route-thin, exempt  : ${ROUTE_THIN.size}`);
+
+if (rdDropped.length) {
+  console.error(`\ncheck:log FAILED — ${rdDropped.length} column(s) the ROUTE-PAGE hydration drops:\n`);
+  rdDropped.forEach(c => console.error("  - " + c));
+  console.error("\nThese survive into your own logbook and not onto the route page, so the");
+  console.error("fact is on screen for its author and for nobody else. Both shapes are opened");
+  console.error("into the same components. Map them in RouteDetail's _tripRows.map, or record");
+  console.error("them in ROUTE_THIN with the reader you checked for and did not find.");
+  process.exit(1);
+}
+if (staleThin.length) {
+  console.error(`\ncheck:log FAILED — ${staleThin.length} stale ROUTE_THIN entr(y/ies):\n`);
+  staleThin.forEach(c => console.error(`  - ${c}  (${rdRead.has(c) ? "now IS read there" : "no longer written at all"})`));
+  console.error("\nAn exemption is a claim about the code. Delete it rather than let it rot.");
+  process.exit(1);
+}
+console.log("  ok    the route-page hydration drops nothing a reader wants");
+
 console.log("\nclimb-log hydration: ok");
 
 // ---- injection cases, re-run these after touching depth1Keys ----------------
@@ -188,3 +278,22 @@ console.log("\nclimb-log hydration: ok");
 // Equivalence was checked before the swap rather than argued: run both the old regex and
 // depth1Keys over the payload literal as it stood at 3dbae26 and the sets are identical
 // (27 keys, no difference either way). The new scan removes false columns only.
+//
+// ---- injection cases for the SECOND-hydration section (#861) ----------------
+//
+//   1. revert the #861 fix (delete fa/faAscent/developed/itinerary/sunVote/sunNote from
+//      RouteDetail's literal)          -> FAILS, naming 5 columns
+//   2. delete ONE column (`stars`) from RouteDetail's literal
+//                                      -> FAILS, naming stars   (a NEW regression, not the
+//                                         one the section was written for)
+//   3. rename the callback param, breaking the anchor
+//                                      -> FAILS with ANCHOR LOST, never passes over a body
+//                                         it could not find
+//   4. add a ROUTE_THIN entry for a column that IS read there
+//                                      -> FAILS as a stale exemption
+//
+// Case 2 is the one that took two attempts, and the lesson is the usual one: `stars:r.stars,`
+// occurs TWICE in RouteDetail.jsx and the first hit is unrelated, so a bare .replace() edited
+// the wrong line and the run passed. It reported "edit landed: false" rather than "guard
+// missed", which is the only reason it was not written up as a hole in the guard. Prove the
+// injection landed before believing what the guard says about it.

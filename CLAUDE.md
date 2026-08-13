@@ -22,11 +22,13 @@ npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
@@ -38,7 +40,11 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
+npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
+npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -568,6 +574,43 @@ a build error, but a screen that renders wrong or not at all.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
+- **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
+  merge**. It exists because the comment that promised it could not be was wrong, and stayed
+  believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
+  *"Superseded PR runs are cancellable; a main run is not"* above
+  `cancel-in-progress: ${{ github.event_name == 'pull_request' }}` — the flag is right and
+  the claim is false. **`cancel-in-progress: false` only protects a run that is already IN
+  PROGRESS; GitHub cancels a still-PENDING run unconditionally when a newer run joins its
+  concurrency group, and no flag disables that.** Static, so it sits in `npm run build`.
+  - Measured on run `31644233526` (event `push`, sha `7fb4e65`): `18e6265`'s run sat pending
+    for **15 minutes** (created 21:33:48, started 21:48:44), `7fb4e65`'s was created 21:48:58
+    and correctly went pending *behind* it, then `9d441d3`'s was created 21:50:48 and
+    `7fb4e65`'s was **cancelled two seconds later**. A cancelled run reports **no failure**,
+    so **#835's merge read as checked by a guard that never ran on it** — precisely the
+    outcome #616's note said was impossible here.
+  - **The fix is structural, not a stricter flag**: group by `github.sha` on a push
+    (`github.head_ref || github.sha`) so main runs never share a group and so never queue
+    behind one another. Sharing one group across main pushes is what *built* the queue that
+    made a run cancellable. The cost is that main pushes now run in parallel — the right
+    trade, since a skipped check is worth less than a runner minute.
+  - **`deploy.yml` is the one exemption, and it is checked rather than trusted.** A superseded
+    *deploy* is harmless (deploying a newer tip includes the older commits) and `check:drift`
+    asks from outside whether the live site serves the current tip. A superseded *check* is
+    different: nothing ever asks that question again. The exemption is keyed to
+    `group: pages`, so if that group changes the run **fails as stale bookkeeping** — the same
+    standard as `NEEDS_EXTRA_STATE`.
+  - It also pins the **#795** invariant it depends on: both browser guards must still trigger
+    on push to main. A workflow that stops being push-triggered would otherwise drop out of
+    the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
+    exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
+    broken scan, never as safe CI.
+  - **Comments are stripped before anything is matched**, and that is load-bearing here: both
+    workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
+    scan that read comments would pass on the strength of an explanation. Same trap
+    `check:schema-drift` records from the other side, where prose naming a column failed the
+    build.
+  - Injection-tested 6/6, listed at the bottom of the script. Case 6 must **pass**: a comment
+    mentioning the forbidden `group: ${{ github.ref }}` is documentation, not a regression.
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
@@ -622,7 +665,20 @@ a build error, but a screen that renders wrong or not at all.
     attribute names, so without that a *fixed* control would stop looking like a control and
     read as one fewer thing to check rather than one more thing fixed.
   - Fails closed: zero clickable non-native elements means the scan broke, not that the app
-    is clean.
+    is clean. It also fails on a **stale** baseline (higher than reality), so lowering it is a
+    deliberate step rather than something a fix does silently.
+  - **The `lib/` remainder is deliberate, and it is all one shape.** After the guide screens
+    were fixed, the five left in `lib/` — `AuthModal`, `DbAreaBrowser`, `FireMap`, and two in
+    `GpsSubmissionModal` — are every one of them a **modal backdrop**: a `position:fixed;
+    inset:0` overlay whose `onClick` closes, wrapping a panel that calls `stopPropagation`.
+    A backdrop must **not** be a tab stop; each of those modals carries its own close control,
+    and making the backdrop focusable would put a "button" that reads as nothing in front of
+    every sheet. Do not "finish" `lib/` by spreading `clickable()` over them.
+  - **Two of the fixed controls are checkboxes, not buttons** (`Check` in `DbGuides`, the
+    mandatory attestations in `DbGuideApply`). They take `role="checkbox"` plus
+    `aria-checked`, because a button role announces the control and silently drops the one
+    thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
+    exists for exactly this; the `aria-checked` is written beside it.
   - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
     1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
     attributes are present.
@@ -679,6 +735,57 @@ a build error, but a screen that renders wrong or not at all.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+- **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
+  That function is the whole consume half of the add-a-route flow: it turns a pending
+  `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
+  so the id convention and the `(area_id, name)` duplicate refusal cannot be skipped by a
+  caller. **`0128` and `0132` both rewrote it from the same ancestor (`0127`) hours apart**, and
+  each kept only what it came for — 0128 added `grade_num`, 0132 added the six tech-stat columns
+  and **silently dropped `grade_num`**. Static (migration files + `lib/db.js`, no DB, no
+  browser), so it sits in `npm run build`. `0135` is the merge.
+  - **Nothing could have caught it, and the reason is worth internalising.** The merge was
+    clean — different files entirely, so git had nothing to report. Every gate stayed green.
+    Both bodies are valid SQL that inserts a route. `check:migrations` is satisfied because
+    they carry different numbers. And the live probe each author ran — *does a non-admin still
+    get `P0001`?* — is answered **identically by either fork**, because the admin gate is the
+    first statement in both. A behavioural check that passes on the broken version is worse
+    than no check, which is why this guard is **structural rather than behavioural**.
+  - **The symptom was six columns written by nothing.** `prot_rating`, `start_type`, `landing`,
+    `pads`, `rock`, `crux` exist on `routes`, are allow-listed in `SS`, are collected by the
+    form, are mapped by `dbRouteToCamel` (`rockType: r.rock`), and four already render in the
+    TECH STATS tiles. Storage, form and display were all correct; only the write between them
+    was missing, so **every layer reviews as finished**. Measured live: all six existed with
+    **0 populated rows**.
+  - **Three rules, each an actual defect from the episode.** (1) *Monotonic columns* — the
+    newest definition's insert must be a superset of every earlier one's; a function that
+    accretes fields may gain them and must never lose one. (2) *One live signature* — it
+    replays every create/drop in file order and requires exactly one to survive, because
+    `create or replace` **cannot replace across argument lists** and 0132 created a 1-arg
+    version without dropping 0128's 2-arg one. (3) *The client matches* — `lib/db.js` names its
+    RPC arguments and PostgREST resolves by name, so a mismatch is `PGRST202` and approval is
+    impossible. Rules 1 and 2 are independent on purpose: a correct column list behind a
+    lingering overload is still broken, and injection case 3 pins exactly that.
+  - It strips **`--` line comments only**, deliberately not the blanker other guards use: these
+    files are prose-heavy and 0135's own header names every column it writes, so a comment that
+    *mentions* `grade_num` must not read as the insert writing it.
+  - Fails **closed** three ways: fewer than 20 migration files, zero parsable definitions, or
+    an empty column list. And when the insert regex breaks it reports **that** rather than
+    blaming a rename — the generic "no definition found" message sent the first run hunting for
+    a function sitting right there (injection case 6).
+  - **Two of its own rules were wrong in the first draft, and neither was visible by reading
+    it.** A `DROP` names bare **types** (`approve_new_route(uuid)`) where a `CREATE` names
+    `name type`, so parsing both the same way made every drop delete a signature no file
+    creates — rule 2 then reported two live overloads against correct migrations. And matching
+    every `word:` for the client's argument names picked up `gradeNum` out of the ternary
+    `Number.isFinite(gradeNum) ? gradeNum : null`, failing rule 3 on a correct call. Both were
+    false **failures** rather than false passes, which is the safer direction, but they are the
+    reason the injection cases must be re-run after any parsing change.
+  - Injection-tested, 6 cases at the bottom of the script. **Case 1 is not synthetic** — it is
+    the real historical fault, reproduced by deleting `0135`, and all three rules fire on it
+    naming `grade_num`, the two overloads, and the broken client call.
+  - It does **not** overlap `check:add-route-fields`, which guards the other end: what the form
+    asks and whether its keys are in `SS`. A key can be in `SS` — so session-state merging
+    works — and still be dropped by approval. That gap is exactly what shipped.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -929,6 +1036,49 @@ a build error, but a screen that renders wrong or not at all.
     when the surface rendering on Overview is `wpGlyph(_wt)` — `RouteDetail` has **three**
     waypoint glyph surfaces, not one. Every case now proves the edit landed *by checksum* before
     it judges the guard.
+- **`check:log`** guards the climb-log read path against silently dropping fields, and since
+  #861 it guards **both** of them. `climb_logs` is hydrated **twice** — `ClimbMatch.jsx` builds
+  `logs` (your own logbook), `RouteDetail.jsx` builds `dbReports` (the same rows as a route's
+  `activity`) — and a route's `activity` dedupes `route.activity → myReports → dbReports` by
+  `_dbId`, so **your** row arrives via `myReports` carrying the full ClimbMatch shape while
+  every **other** climber's row exists only as `dbReports`. Both are opened into the same
+  components (`ReportStats`, `TripReport`). So a column one hydration drops is a fact on
+  screen for its author and for nobody else. Gated by `npm run build`.
+  - It has now caught that in **both directions**. #843: `car_to_car_minutes` was read by
+    RouteDetail and not by ClimbMatch, so your car-to-car time showed while you typed (the
+    form computes it), vanished on reload, and stayed visible to everyone else. #861: the
+    reverse — `fa_ascent` and `developed` were read by ClimbMatch and not by RouteDetail, so
+    `buildConsensus`' `faCredits`/`isDeveloped` could only ever credit a First Ascent to
+    **yourself**, on a panel whose entire purpose is public attribution. The same hydration
+    was also starving `TripReport` of `itinerary`, `sun_vote` and `sun_note`.
+  - **`DERIVED` is the dangerous list, and #843 is why.** `car_to_car_minutes` sat there as
+    "derived on both sides rather than round-tripped" — a claim requiring something to
+    re-derive it on read, and nothing did (the only place `carToCar` is computed from the
+    three legs is the LogAscent form, while typing). Proved by injection: restore that
+    exemption *and* delete the read, and the script prints `ok`. **An exemption is a claim
+    about the code**; if you cannot point at the deriving expression, it is not derived, it
+    is dropped. Same standard as `check:field-renders`' `KNOWN` map.
+  - `ROUTE_THIN` is the second hydration's exemption list and a **stale entry fails** — a
+    column that starts being read there, or stops being written, is reported rather than
+    tolerated. Only two entries are live; each names the reader it was checked for.
+  - **`partners` is deliberately not hydrated onto the route page**, and this is measured
+    rather than a taste call: `matchClimber` does
+    `CLIMBERS.find(c=>c.name===nm&&ascent.partnerIds.includes(c.id))` against seed **integer**
+    ids, so feeding it uuids takes that branch and returns `null` for **every** partner —
+    strictly worse than the name fallback it uses today. The class
+    `check:crew-member-readers` exists for.
+  - Scope trap worth knowing: `written` comes from the depth-1 keys of the payload **literal**,
+    so the three columns `syncLogToDb` appends conditionally afterwards (`partners`,
+    `belayed_by`, `gpx_track`) are not in it. They are tracked by `UNWRITTEN_OK` instead.
+    Exempting them in `ROUTE_THIN` fails as stale — which is how that was discovered.
+  - Fails closed twice over: `ANCHOR LOST` if RouteDetail's `return _tripRows.map(function(r){`
+    is renamed, and a parse yielding fewer than 10 column reads is reported as a broken scan
+    rather than a clean app.
+  - Injection-tested, 4 cases for the second-hydration section, listed at the bottom of the
+    script. Case 2 (drop a single column) took two attempts: `stars:r.stars,` occurs **twice**
+    in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
+    wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
+    missed"* — **prove the injection landed before believing what the guard says about it.**
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -952,6 +1102,76 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
+  a geometry question no column-coverage check can reach, since every field is populated and
+  every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
+  `audit:waypoint-order` is its **sibling, not a duplicate**: that one asks whether the *list* is
+  sensible (ordering, duplicate pins) and needs no gpx at all. Run both.
+  - **THERE ARE THREE WAYPOINT AUDITS, AND TWO OF THEM ASK THE SAME QUESTION.**
+    `audit:waypoint-track` measures the *same* thing this does — is each pin on the route's own
+    line — with its own thresholds, and **neither script mentioned the other**. Against WA they
+    flag **218 and 240 routes with only 178 in common**. Read the two together or you are reading
+    one arbitrary half; do not quote either count as "the" number of waypoint problems.
+    - The divergence is mostly **tolerance, not disagreement about facts**: this one uses a flat
+      500 m for any non-trailhead/summit pin, `waypoint-track` uses **120 m by default with
+      per-type exemptions** (Bailout 2000, Hazard 600, Water 400, Campsite 500) — because a
+      Bailout pin is *supposed* to be off the line. So 53 routes visible to it and not to this
+      one are pins 120–500 m out, which is a judgement call rather than a miss.
+    - It is **ahead** of this script in two ways worth copying rather than duplicating: those
+      per-type tolerances, and a **blame column** (TRACK / PARTIAL / PIN) that separates "the
+      line is wrong" and "the track only covers the climb, so approach pins are legitimately
+      off it — NOT a defect" from the pins actually worth fixing. Its PARTIAL bucket is 38
+      routes this script reports as defects.
+    - It was **behind** in one, and it was the same defect twice: it had **no placeholder gate**,
+      so it measured pins against 2-point stubs and dots. `wa_sky_mountain_s_route` stores nine
+      points spanning **four metres** and it reported a pin "2,237 m off"; `wa_mount_terror_
+      stoddard_buttress` is 55 m of extent and reported 9,966 m. That is exactly what #834 fixed
+      in this file and nobody carried across — **the four-grade-parsers shape, one level up**.
+      Fixed: 240 → 231, and its lone "WRONG TRACK" was itself a 17 m placeholder.
+    - A point-count gate cannot see this (**nine points is not a suspicious number**) — the test
+      has to be **extent**. Skipped routes are now named and counted, not dropped.
+  - **It has twice reported far more problems than exist, and both times the fix was to the
+    audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
+    every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
+    it could not see). This pass took it to 646 the same way, so **treat a headline count here as
+    a hypothesis until it has been deduplicated** — see [[waypoint-audit-overcounted-by-126]].
+  - **The categories must be disjoint, and two were not.** `waypointOffLine` walks every pin, so
+    a trailhead or summit already judged by its own category was reported a second time — 100
+    pins double-counted, Curtis Ridge producing six findings from three waypoints. Worse,
+    `summitOffLine` and `trackNotEndingAtSummit` both fired on the same pin, which is not merely
+    a double count: it put 20 routes whose summit pin is *correct* and whose gpx simply stops
+    short into a category titled "SUMMIT IS NOT ON THE TRACK". Those need the **opposite** repair,
+    which is the distinction note (3) already draws for trailheads. They are now exclusive.
+  - **A dedupe that loses a finding is worse than the double count it replaces**, so it is
+    verified by comparing distinct `(route, waypoint)` pairs across dumps rather than totals:
+    `verify-waypoint-dedupe-lost-nothing.mjs`, 449 before and 449 after, nothing lost, 100 pins
+    moved to the more specific category.
+  - **`trackOffItsPeak` is the one test not measured against the route's own track**, which is
+    why it is worth having: every other category asks "is this pin on this line?" and therefore
+    cannot say which of the two is wrong. When the *track* is the misplaced thing, the route's
+    correct pins are all faithfully reported as broken and the gpx is never suspected.
+    `wa_mount_rainier_curtis_ridge` carried five points beside **Rattlesnake Lake, ~65 km from
+    Rainier and 734 m from a bouldering crag**, and all six of its findings blamed the waypoints.
+    Anchoring on the area's own coordinate settles it with no pins, prose or judgement.
+  - **Its title says "never comes within 2 km", not "is not this peak's track", and the
+    difference is measured.** Of 8 WA hits only **one** is a foreign track; the other seven
+    start at the **correct trailhead** and merely stop short (Himmelhorn and West Twin Needle
+    from Goodell Creek, Fuhrer Finger from Paradise, Barnes up the Elwha). Naming it for the
+    stronger claim would have been false of seven of eight. It is **informational** for the same
+    reason — 6 of its 8 are already counted elsewhere, so counting it would re-inflate the total
+    this pass deflated. Confirm each with `probe-whose-track-is-it.mjs`, which names the peak a
+    stray track actually reaches; the threshold comes from the measured distribution (closest
+    approach is **13 m at the median, 1,038 m at p95**), not from a guess.
+  - The placeholder-coordinate guard (`COORD_DP`) **excludes zero WA routes today** and says so
+    in the script: both peaks it would protect are already filtered as `unrouted`. It is kept
+    for the eight 3-decimal Picket summits, not because live data has exercised it.
+  - The opening read pays a **warm-up request** because the first call of a run costs ~3.7s of
+    connection setup against 0.3–0.7s warm, and anon carries a 3s `statement_timeout` — so it
+    intermittently died with `57014` before fetching anything. Shrinking the page does **not**
+    fix that: measured, 1,000 areas *with* lat/lng takes 725 ms warm while 400 still failed cold.
+  - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
+    the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
+    that guard was found to be inert and got documented as such rather than presumed working.
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
