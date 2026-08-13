@@ -23,15 +23,26 @@
 // arrived at all", never "did the screen render correctly".
 import { loadEnv } from "./supabase-env.mjs";
 
-// Short on purpose. This is a liveness ping, not a query under test: the anon statement
-// timeout fires at 3s and a cold connection costs 3.8-6.4s, so a project that cannot answer
-// `limit=1` in 10s is not going to carry 53 screens.
-const PING_TIMEOUT_MS = 10000;
-
-// Two attempts, because a single cold connection can legitimately be slow and a preflight
-// that cries outage on one blip is worse than no preflight — it would train people to ignore
-// it. Both must fail before the run is abandoned.
-const ATTEMPTS = 2;
+// Generous on purpose, and it was NOT generous enough on the first attempt. 10s x 2 produced
+// a FALSE ABORT in CI the moment the project came back: check:overflow gave up at 37s while
+// check:zero, on the same commit and minutes apart, got its answer and went on to pass — so
+// the database was reachable and this pinged it during a cold spell. A preflight that cries
+// outage on a slow-but-live project is worse than no preflight, because the whole point is to
+// tell those two states apart, and people would learn to re-run it blindly.
+//
+// So budget for the bad case rather than the typical one. Measured here: 554ms warm, 2.7s
+// cold, and 3.8-6.4s for a cold connection per the note in CLAUDE.md — but a project that has
+// just come back has empty caches and is slower than any of those. Three attempts at 20s is
+// up to ~65s before abandoning, which is still nothing against the 25 minutes of silence this
+// exists to prevent, and it makes a false abort much harder to provoke.
+//
+// The asymmetry is deliberate: being slow to declare an outage costs a minute; declaring one
+// wrongly costs a red job somebody has to investigate.
+const PING_TIMEOUT_MS = 20000;
+const ATTEMPTS = 3;
+// Backoff between attempts, so three tries actually sample three moments rather than hammering
+// one bad instant.
+const BACKOFF_MS = 1500;
 
 // Returns "skipped" when no DB is configured. That is NOT a failure: several of these guards
 // run against seed data on a fresh clone or in a worktree with no dotfiles, and the app then
@@ -49,6 +60,7 @@ export async function assertDbReachable(opts) {
   }
   let lastErr = null;
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    if (attempt > 1) await new Promise((r) => setTimeout(r, BACKOFF_MS));
     const started = Date.now();
     try {
       const r = await fetch(`${url}/rest/v1/routes?select=id&limit=1`, {
