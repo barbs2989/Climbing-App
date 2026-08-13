@@ -23,12 +23,12 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # The script diffs this branch's migrations against the base branch, so it needs
           # more than the single squashed commit a shallow clone provides.
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -38,11 +38,29 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build:
+  merge-survival:
+    # A `pull_request` checkout IS merge(head, base), so HEAD here is exactly the merge this
+    # guard exists to interrogate: did resolving it silently delete something either side had
+    # added? Git mis-merges this repo's dense single-line files without conflicting, and #482
+    # and #776 both shipped that way — clean merge, green CI, merged work quietly un-shipped.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # It diffs both parents against their merge base; a shallow clone has neither.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: A merge kept everything both sides added
+        run: node scripts/check-merge-survival.mjs
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm

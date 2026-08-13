@@ -1,0 +1,86 @@
+{
+  "wa_dark_peak_dark_glacier_route": {
+    "area": "wa_dark_peak",
+    "climbing_route": [],
+    "skip_reason": "Both documented approach options stop at the saddle/col below the glacier (Dark Fin Col). The text describes no travel on the Dark Glacier or above it, so there is no climbing description to re-home."
+  },
+  "wa_direct_north_buttress": {
+    "area": "wa_bear_mountain_chilliwack",
+    "climbing_route": [],
+    "skip_reason": "The only climbing sentence describes a different route on the same peak — the west ridge and upper north ridge, or the Northwest Ridge, called the most commonly cited standard route. Nothing in the text describes the Direct North Buttress itself, and re-homing standard-route beta onto a 21-pitch buttress would misattribute it."
+  },
+  "wa_dome_peak_dome_glacier": {
+    "area": "wa_dome_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Dome Glacier to the 8,560 ft notch",
+        "notes": "Rope up for the glacier crossing: follow roughly a 115° bearing up-glacier, working through visible crevasse bands, to a notch at ~8,560 ft just north of the summit block. Hazard named: the visible crevasse bands on the glacier."
+      }
+    ]
+  },
+  "wa_dragontail_peak_east_ridge_aasgard_pass": {
+    "area": "wa_dragontail_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Snow Creek Glacier basin to the east ridge saddle",
+        "notes": "From Aasgard Pass head right/south along a short ridge above a tarn to reach Dragontail's east saddle, then cross the Snow Creek Glacier basin to the saddle on the east ridge. The basin is typically snow-covered through late July and is a mellow, low-crevasse slope."
+      },
+      {
+        "n": 2,
+        "label": "East ridge to the summit",
+        "class": "class 3",
+        "notes": "A class-3 scramble/ridge walk along the east ridge from the saddle directly to the summit."
+      }
+    ]
+  },
+  "wa_east_face_6": {
+    "area": "wa_chimney_rock",
+    "climbing_route": [],
+    "skip_reason": "The text ends at gaining and crossing the Chimney Glacier to the base of the route, with the high camp at the toe of the glacier. It describes no climbing on the East Face itself."
+  },
+  "wa_east_mcmillan_spire_west_ridge": {
+    "area": "wa_east_mcmillan_spire",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Snow gully to the saddle",
+        "notes": "Continue up glacier/snow toward the col between West and East McMillan Spires; the standard line follows a steep snow gully that steepens to roughly 40 degrees for the final 200-300 ft to the saddle. Crevasses can open on the Terror Glacier below, so assess conditions and carry basic glacier gear (axe, crampons)."
+      },
+      {
+        "n": 2,
+        "label": "Ledge system and rib variation to the saddle",
+        "class": "4th class",
+        "notes": "Parties who prefer rock over steep snow can instead follow a reddish, rightward-trending ledge system and a short 4th-class rib on the true-left side of the gully to reach the same saddle."
+      },
+      {
+        "n": 3,
+        "label": "West ridge crest to the summit",
+        "class": "3rd class",
+        "notes": "From the saddle, easy but exposed 3rd-class scrambling along the connecting ridge crest (the 'west ridge') leads directly to East McMillan Spire's 7,992 ft summit. Hazard named: exposure on the crest."
+      }
+    ]
+  },
+  "wa_elephant_head_standard": {
+    "area": "wa_elephant_head",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "General mountaineering terrain above the snowline",
+        "notes": "Above the point where the boot path fades near the seasonal snowline, typically around 6,300–6,500 ft, travel is general mountaineering terrain — talus, heather, and snow slopes depending on season — toward the peak's high point at 7,995 ft. Below this the Itswoot Ridge crest holds loose rock and route-finding through boulder benches."
+      },
+      {
+        "n": 2,
+        "label": "Final approach to the summit rocks",
+        "class": "Class 2–3",
+        "notes": "Straightforward Class 2–3 scrambling on the final approach to the summit rocks at 7,995 ft."
+      }
+    ]
+  },
+  "wa_emerald_peak_west_route": {
+    "area": "wa_emerald_peak_entiat",
+    "climbing_route": [],
+    "skip_reason": "Both the primary and alternate approaches stop at gaining the west-side gully below Emerald's summit block. No ascent of the gully or the summit block is described."
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "wa_mount_rainier_kautz_headwall": {
+    "area": "wa_mount_rainier",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower ice step",
+        "class": "AI1-AI2",
+        "notes": "The headwall presents as two ice steps separated by a band of lower-angle snow; the lower step runs around 50°, alpine ice in typical conditions and harder if thin. Rockfall and icefall from the Wapowety Cleaver and Kautz Icefall above are the main hazards — move through exposed sections early and efficiently."
+      },
+      {
+        "n": 2,
+        "label": "Lower-angle snow band",
+        "notes": "A band of lower-angle snow separating the two ice steps."
+      },
+      {
+        "n": 3,
+        "label": "Upper ice step",
+        "class": "AI1-AI2",
+        "notes": "The upper step runs around 70°, with individual pitches reported anywhere from a short steep section up to 400-450 ft of alpine ice, harder if thin. Continued exposure to rockfall and icefall from the Wapowety Cleaver and Kautz Icefall above."
+      }
+    ]
+  },
+  "wa_mount_shuksan_fisher_chimneys": {
+    "area": "wa_mount_shuksan",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Fisher Chimneys to the Winnie Glacier",
+        "class": "4th class",
+        "notes": "From the far end of the cliff band, roughly 5.5-6 miles and 3,800-4,300 ft of gain from the trailhead, the Chimneys are a broken, leftward-ascending line of 4th-class rock steps and heather ledges leading up to the Winnie Glacier. Watch for rockfall within the chimneys themselves (helmet essential, especially below other parties), and expect route-finding difficulty threading the braided chimney ledge system, which is easy to overshoot in poor visibility. Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft)."
+      }
+    ]
+  },
+  "wa_mount_stuart_girth_pillar": {
+    "area": "wa_mount_stuart",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Ice Cliff Glacier",
+        "notes": "From the moraine camp, rope up and climb the Ice Cliff Glacier itself. This is the route's main objective hazard, with significant icefall, spindrift, and crevasse danger — parties typically stay left to dodge falling ice and swing wide right to avoid the glacier's largest crevasses."
+      },
+      {
+        "n": 2,
+        "label": "The ice cliff step",
+        "notes": "At the top of the glacier, the 'ice cliff' step itself: anywhere from 10 to 100+ feet of 50-70° snow/ice, easier and shorter early season, steeper and more likely bare ice as the season progresses."
+      },
+      {
+        "n": 3,
+        "label": "Four moderate rock pitches to the pillar",
+        "notes": "Above the step, four moderate pitches of rock lead to the base of the Girth Pillar proper (~8,200-8,400'). No water source above the moraine camp — carry what you need, or plan to melt snow/ice."
+      }
+    ]
+  },
+  "wa_mount_terror_north_face": {
+    "area": "wa_mount_terror",
+    "climbing_route": [],
+    "skip_reason": "The text stops at the base of the wall: the technical start 'is reached via a traverse from Terror Basin over the Chopping Block col through McMillan Cirque ... before rounding into position under Terror's wall', with the Terror Glacier remnant 'at the base ... heavily crevassed'. Nothing describes climbing the North Face/Stoddard Buttress. The only summit sequence given — 'ascending slabs and snow to the saddle between Mount Terror and Mount Degenhardt, then following the short, steep ridge crest directly to the summit' — is a different, ridge line, not this face, so re-homing it would put the wrong beta on a technical route."
+  },
+  "wa_mount_townsend_standard": {
+    "area": "wa_mount_townsend",
+    "climbing_route": [],
+    "skip_reason": "The route is maintained Trail #839 the whole way and the text says so: 'the trail's grade eases considerably for the final ~1.3 miles to the broad, flat summit ridge (6,282 ft)' and 'No technical terrain or exposure is encountered on the standard route.' There is no climbing described to move out of the approach."
+  },
+  "wa_mount_washington_olympic_standard": {
+    "area": "wa_mount_washington_olympic",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Scree and talus gully",
+        "notes": "Above the meadows the route enters scree and talus slopes and stays primarily on the climber's-left side of a large, loose rocky gully; this section is tight in spots with a lot of unconsolidated rock, so groups should stay spread out (not stacked directly above/below each other) to avoid raining rocks on people below. In spring and early summer this gully can hold avalanche-prone snow and may require an ice axe."
+      },
+      {
+        "n": 2,
+        "label": "South ridgeline / 'Dog Walk Ledge'",
+        "class": "class 3, with a couple of class 3+/4 moves",
+        "notes": "The path winds above the gully until it gains Mount Washington's southern ridgeline, then follows a faint, exposed climbers'/goat trail along the ridge crest — in multiple spots the tread narrows to barely one boot-width with real exposure on both sides. Not a place for hesitant scramblers."
+      },
+      {
+        "n": 3,
+        "label": "Scree field and goat trail to the wind shelter",
+        "notes": "The ridge trail leads to a scree field below the false summit, greasy and slick if wet, and a 'goat trail' up its climbers'-right edge to a stone wind shelter on the ridge."
+      },
+      {
+        "n": 4,
+        "label": "Final summit scramble",
+        "class": "class 3–4",
+        "notes": "From the wind shelter a final short scramble gains the true 6,255 ft summit."
+      }
+    ]
+  },
+  "wa_mount_watson_scramble": {
+    "area": "wa_mount_watson",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Talus slopes and east gully to the 5,900-ft saddle",
+        "notes": "From Watson Lakes the maintained trail ends and the route becomes an open, cairned/boot-path climbers' route: leave the basin and climb talus (and snow well into summer) on Watson's north/west slopes toward Watson Pass and the ridge crest. The standard and easiest line follows the widest gully east of the peak up to a saddle at about 5,900 ft on the ridge; the western gully alternative has a dangerous moat and rotten snow bridge late-season and should be avoided. Route-finding is the main hazard in poor visibility, since the line is unmarked talus/snow rather than trail."
+      },
+      {
+        "n": 2,
+        "label": "Ridge traverse to the summit block",
+        "notes": "From the 5,900-ft saddle, traverse along the ridge and across a steep slope to wrap around the base of the summit block."
+      },
+      {
+        "n": 3,
+        "label": "Short dirt-and-rock gully",
+        "class": "class 2-3",
+        "notes": "A short, loose dirt-and-rock gully of 10-15 ft gains the true summit ridge."
+      },
+      {
+        "n": 4,
+        "label": "Summit ridge catwalk",
+        "class": "class 2-3",
+        "notes": "A narrow (~30 ft), exposed catwalk with real drop-off on both sides — a hand line is commonly carried and recommended for this final airy section."
+      }
+    ]
+  },
+  "wa_navaho_peak_south_slopes": {
+    "area": "wa_navaho_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South ridge to the summit",
+        "class": "Class 2",
+        "notes": "From Navaho Pass (~6,000 ft), leave the maintained trail and traverse/climb east along the broad south ridge of Navaho Peak: an easy, mostly open scramble on rock and heather with no technical exposure, gaining the final 1,100–1,200 ft to the 7,223 ft summit over about 0.7–0.8 mile."
+      }
+    ]
+  }
+}

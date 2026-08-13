@@ -1,0 +1,84 @@
+{
+  "wa_foggy_peak_scramble": {
+    "area": "wa_foggy_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Summit gully",
+        "class": "3",
+        "notes": "The final few hundred feet to the summit is a steep class 3 gully with abundant loose, downsloping rock, and some route-finding is needed to stay at class 3 rather than straying into class 4 terrain. A helmet is strongly recommended for anyone climbing behind another party member."
+      }
+    ]
+  },
+  "wa_frenzel_spitz_south_route": {
+    "area": "wa_frenzel_spitz",
+    "climbing_route": [],
+    "skip_reason": "The approach text stops at the base of the South Route proper. Everything it describes (gaining the Ottohorn-Himmelhorn col, then downclimbing/scrambling roughly 500 ft on the Frenzel Spitz side) is travel to that base; the South Route climbing itself is not described."
+  },
+  "wa_gardner_mountain_west_ridge": {
+    "area": "wa_gardner_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Cliff bands and gullies to the summit ridge",
+        "notes": "From the small meadow basin below the peak around 6,200 ft, work up toward the summit ridge, threading a few short cliff bands and gullies. This stretch is the route-finding crux: loose rock underfoot, and into early summer lingering snow patches that can warrant an ice axe."
+      },
+      {
+        "n": 2,
+        "label": "Final scramble to the 8,902 ft summit",
+        "class": "2-3",
+        "notes": "Class 2-3 scrambling on broken rock and scree to Gardner's 8,902 ft summit."
+      }
+    ]
+  },
+  "wa_glacier_peak_sitkum_glacier": {
+    "area": "wa_glacier_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text ends where snowfields are ascended southeast/uphill from Boulder Basin camp onto the toe of the Sitkum Glacier. Nothing above the toe of the glacier is described, so there is no climbing content to re-home."
+  },
+  "wa_golden_horn_north_face": {
+    "area": "wa_golden_horn",
+    "climbing_route": [],
+    "skip_reason": "The text states outright that it is the general basin-access line reported by parties, not pitch-by-pitch beta for the original 1958 North Face route. It stops at travelling northwest from Snowy Lakes toward Golden Horn's basin, with no description of the north face climbing."
+  },
+  "wa_gray_wolf_ridge_se_slopes": {
+    "area": "wa_gray_wolf_ridge",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Saddle to Baldy's summit",
+        "notes": "From the saddle/ridge crest between Tyler Peak and Baldy (about 6,200 ft), it is about 0.15 mile and 300 vertical feet more to Baldy's summit, reported as 6,797-6,827 ft depending on source."
+      },
+      {
+        "n": 2,
+        "label": "Ridge crest over Pt. 7076 to Gray Wolf Peak",
+        "notes": "Drop about 600 ft off Baldy's far side, then follow the long, open, mostly-unmarked ridge crest - packed dirt, shattered shale, and short talus/scree sections - over intermediate high points including Pt. 7076 to Gray Wolf Peak's 7,218-ft summit. Expect to detour briefly around occasional gendarmes and false summits. The line stays on or near an exposed above-treeline crest for miles, so wind, afternoon thunderstorms, and lingering snow patches into July (which can bury the intermittent boot path and warrant an axe) are the main hazards; long stretches are unmarked, so carry a map or GPS, and there is no reliable water once you commit to the crest past the Baldy saddle."
+      }
+    ]
+  },
+  "wa_grotto_mountain_e_route": {
+    "area": "wa_grotto_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Klinger Ridge crest toward the east summit",
+        "notes": "From Klinger Ridge at roughly 4,600 ft - open meadow and boulder terrain - continue along/near the ridge crest toward the east summit. Loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire; sustained off-trail route-finding, with fog/whiteout a real risk since there is no trail to follow."
+      },
+      {
+        "n": 2,
+        "label": "Granite blocks and talus traverse to the notch",
+        "notes": "From about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower. Exposed granite/talus near the summit notch."
+      },
+      {
+        "n": 3,
+        "label": "Downclimb the step to the true summit",
+        "notes": "Downclimb a short, steep/near-vertical step - exposed and loose in places, helmet warranted - to gain the south side and the true summit."
+      }
+    ]
+  },
+  "wa_gunn_peak_southeast_route": {
+    "area": "wa_gunn_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text ends at the upper tree benches directly below the peak's south face, which it names as the base of the summit scrambling. The summit scrambling itself is not described."
+  }
+}

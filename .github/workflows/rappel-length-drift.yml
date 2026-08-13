@@ -1,0 +1,62 @@
+name: Rappel length drift check
+
+# Asks whether any rappel table states a distance the rope it describes can reach.
+#
+# A rope doubled through an anchor reaches HALF its length: one 60m rope gives 30m
+# rappels, one 70m rope gives 35m, and two 70m ropes give 70m. Where a source
+# published no per-station distance, an enrichment pass wrote the ROPE'S CAPACITY
+# into `lengthM` instead of null. wa_ellation stored 8 x 70m -- 560m of rappel down
+# an 8-pitch route -- while its own prose said the raps "approach the rope's full
+# 35m reach". wa_overcoat_peak_southeast_route and wa_tooth_and_claw had the same
+# 2x error.
+#
+# A climber reading that table rigs for a rappel twice as long as the rope allows.
+# It is the worst thing in this dataset to get wrong, and it is invisible to every
+# coverage check: the column is populated, so a wrong number and a right one look
+# identical from there.
+#
+# NOT a build gate, on purpose, and for the same reason the area count check is
+# not: this is a property of the DATABASE, not the checkout. No code change can
+# cause it and none can fix it, so failing `npm run build` would block unrelated
+# PRs on a condition their author cannot affect. The question has to be asked on a
+# schedule, from outside.
+#
+# It is NOT a "does every rappel have a length" check and must never become one.
+# `null` is the CORRECT value where no source gives a distance -- writing nulls
+# rather than inventing numbers is what the repair did. Halving is also wrong: a
+# rappel with no published distance may be 35m or 15m.
+
+on:
+  schedule:
+    # Daily, an hour after the area count check so the two never contend for the
+    # same cold connection. Drift here appears only when an enrichment pass writes
+    # rappel data, which is deliberate and infrequent.
+    - cron: "20 8 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: rappel-length-drift
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  rappels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      # No npm install -- the script uses fetch and the REST API only, so it keeps
+      # working even when the build is broken.
+      - name: Can the rope each route describes actually reach the rappel it states?
+        env:
+          # Read-only. The anon key is deliberate: `routes` is publicly readable,
+          # and a checker that could write is a checker that can corrupt what it
+          # is checking. The script also fails closed on an empty read and on zero
+          # rappel tables, because its realistic failure mode is a false pass.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-rappel-lengths.mjs

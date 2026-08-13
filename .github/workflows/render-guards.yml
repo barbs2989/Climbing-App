@@ -82,8 +82,8 @@ jobs:
     # 50 overlays since the scaffold's discovery was widened (was 28).
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -121,8 +121,8 @@ jobs:
     # expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -153,7 +153,7 @@ jobs:
       # is what tells you whether it is a real bug. Same reasoning as zero-state.yml.
       - name: Upload per-screen text
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ui-screens
           path: ui-screens.json
@@ -166,8 +166,8 @@ jobs:
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -199,8 +199,8 @@ jobs:
     # One screen and two overlays, so it is the quickest of these.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -237,8 +237,8 @@ jobs:
     # after spending this, so the budget buys a correct verdict, never a false pass.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -261,8 +261,8 @@ jobs:
     # locally, so this is headroom rather than an expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -286,13 +286,42 @@ jobs:
           VITE_USE_DB: "true"
           VITE_DEMO_AUTOLOGIN: "true"
 
+  challenge-rows:
+    name: Tick-list rows say something true
+    runs-on: ubuntu-latest
+    # Opens ONE panel and expands ONE card, so it is much shorter than its siblings.
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:challenge-rows cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: The Challenges list panel renders real rows
+        run: npm run check:challenge-rows
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app
+          # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
   signed-in:
     name: A real signed-in account still works
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -315,11 +344,11 @@ jobs:
       # The privileged half now happens ONCE, locally:
       #   scripts/oneoff/create-ci-test-accounts.mjs   (two accounts, discoverable=false)
       #   scripts/oneoff/seed-ci-test-fixture.mjs      (crew, group, logbook, connection)
-      # so all CI does below is exchange a password for a session with the ANON key — what
-      # a real browser does. No service key is present on this runner, deliberately.
+      # so all this job does is exchange a password for a session with the ANON key, which is
+      # what a real browser does. No service key is present on this runner, deliberately.
       #
-      # The accounts are permanent, which is only acceptable because both profiles are
-      # discoverable=false and so cannot surface in partner browse. durable-fixture.mjs
+      # The accounts are permanent, which is acceptable only because both profiles are
+      # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
       # re-asserts that on every run rather than trusting the day it was set.
       - name: Walk a real signed-in account
         run: npm run check:signed-in

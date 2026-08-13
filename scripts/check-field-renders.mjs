@@ -35,6 +35,7 @@ const ROOT = process.cwd();          // never hardcode a worktree — the predec
                                      // measured a different branch's code than the one you ran it in
 const require_ = createRequire(import.meta.url);
 const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
 const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners"];
 
@@ -48,10 +49,22 @@ const FIELDS = [
   // `if (!r.ok) return []` turned that into "NO DATA" — so a name that had never resolved
   // sat in the results table looking like an unpopulated column. The fail-closed change
   // below surfaced it on its first honest run against a live DB.
-  // Not a missing feature: `permitUrl` is seed-only (ClimbMatchCore's ROUTES carry it and
-  // RouteDetail renders it), lib/db.js maps `permits: r.permit` and no permitUrl at all,
-  // and the contribute form does not offer it — so nothing writes it and no DB route can
-  // have one. There is nothing here for this guard, whose subject is enriched DB columns.
+  // Removing it is right; the reason first given for it was WRONG, and the wrong reason is
+  // the dangerous part — it would justify deleting a working feature.
+  //
+  // What is true: there is no `permit_url` COLUMN, `lib/db.js` maps only `permits: r.permit`,
+  // and this guard's subject is column -> screen. With no column there is nothing here to
+  // query, which is the whole justification for dropping the entry.
+  //
+  // What is FALSE, and was written here: that the contribute form does not offer it and that
+  // no DB route can have one. `permitUrl` IS offered — `{k:"permitUrl",label:"Permit link"}`
+  // in RouteDetail's own FIELDS list (the fix form is defined there, NOT in ClimbMatch.jsx,
+  // which is how the first check missed it) — it is in `SS`, and RouteDetail renders
+  // `<a href={route.permitUrl}>` beside the permit prose. A DB route reaches it through the
+  // CONTRIBUTION OVERLAY, which needs no column: dbContribs rows are grouped by field, gated
+  // on `SS[rc.field]`, and applied onto the route object client-side once the 3-agree gate
+  // passes. So the feature works end to end and must not be "cleaned up" on the strength of
+  // this guard no longer listing it.
   ["permit", "permits"],
   ["waypoints", "waypoints"], ["gpx", "gpxPts"], ["elev_pts", "elevPts"],
   ["itinerary", "itinerary"], ["timing", "timing"], ["turnaround", "turnaround"],
@@ -61,12 +74,22 @@ const FIELDS = [
   ["seasonal_guidance", "seasonalGuidance"], ["seasonal_hazards", "seasonalHazards"],
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],
   ["pitch_detail", "pitchDetail"], ["rappel_detail", "rappelDetail"], ["rappel_count_note", "rappelCountNote"],
+  // 0122's three. This list is HAND-MAINTAINED, so a new column is invisible here until someone
+  // adds it — and these three were the ones most worth watching: `bivy`'s panel has already been
+  // left defined and mounted NOWHERE once, by a merge that kept main's copy of the dense line the
+  // mount lived on. The guard that exists to catch exactly that could not see the column.
+  ["approach_variants", "approachVariants"], ["climbing_route", "climbingRoute"], ["bivy", "bivy"],
   ["gear", "gear"], ["detailed_rack", "detailedRack"], ["what_to_bring", "whatToBring"],
   ["gear_confidence", "gearConfidence"],
   ["pro_tips", "proTips"], ["pro_needs", "proNeeds"], ["beta", "beta"],
   ["overview", "overview"], ["description", "desc"], ["face", "face"],
   ["sling_rack", "slingRack"], ["rope_note", "ropeNote"], ["corrections", "corrections"],
   ["verif", "verif"], ["data_quality", "dataQuality"], ["lists", "lists"],
+  // The six `0135` writes. All have ZERO populated rows, so the real-value method has nothing
+  // to pull — they are judged through SENTINELS below and **no query is issued for them**.
+  // Listed here so they are walked at all; before this they were absent and unguarded.
+  ["prot_rating", "protRating"], ["start_type", "startType"], ["landing", "landing"],
+  ["pads", "pads"], ["rock", "rock"], ["crux", "crux"],
 ];
 
 // The route screen is NOT just <RouteDetail/>. ClimbMatch.jsx mounts sibling panels next to
@@ -278,6 +301,64 @@ const BASES = {
 };
 const BARE = BASES.alpine;
 
+// A THIRD base, for the bouldering-only tiles. `landing`, `pads` and `start_type` are shown
+// on a boulder problem and nowhere else, so probing them from `crag` reports live columns as
+// dead — the same discipline-gating trap this file already records for `RouteGearCheck`.
+const BOULDER = {
+  id: "probe", name: "Probe Problem", grade: "V4", gradeSystem: "vscale",
+  discipline: "bouldering", pitches: 1, mountainId: "probe_area",
+  _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Washington" },
+};
+
+// SENTINEL COLUMNS — the hole the real-value method cannot see, by construction.
+//
+// Everything above pulls a REAL value from the live DB. A column with **zero populated rows**
+// therefore has nothing to pull, reports `NO DATA`, and is never checked at all — which is
+// precisely the moment you most want to know its reader is wired, i.e. just after a migration
+// adds it and before any backfill. `0135` shipped the write for these six; #855 then had to
+// prove they reach a screen with a 106-line ONE-OFF
+// (`scripts/oneoff/probe-six-proposal-columns-render.mjs`), because this guard structurally
+// could not answer it. That one-off is now folded in here and deleted: a verification nobody
+// runs is not a verification, which is the rule this whole file exists to enforce.
+//
+// Method: inject a distinctive sentinel onto a bare route and look for it on screen. It proves
+// the READER exists independently of whether any row is populated.
+//
+// Two traps, both inherited from #855's probe rather than rediscovered:
+//   - `dbRouteToCamel` emits BOTH `rock` and `rockType` from the single `rock` column, so
+//     patching one of them reports a healthy column as dead. Mimic the MAPPER, never the column.
+//   - `pads` is numeric and the TECH STATS tiles render through `<CountUp/>`, which is
+//     `useState(0)` reaching its target only inside a `useEffect`. Effects do not run under
+//     `renderToStaticMarkup`, so a numeric tile renders **0** and its value can never be
+//     asserted here. For those, assert only that the page CHANGED — never the number. Same
+//     warning `check:bare` carries.
+const SENTINELS = {
+  prot_rating: { base: BASES.crag, patch: { protRating: "ZZPROTZZ" } },
+  start_type: { base: BOULDER, patch: { startType: "ZZSTARTZZ" } },
+  landing: { base: BOULDER, patch: { landing: "ZZLANDZZ" } },
+  rock: { base: BASES.crag, patch: { rock: "ZZROCKZZ", rockType: "ZZROCKZZ" } },
+  crux: { base: BASES.crag, patch: { crux: "ZZCRUXZZ" } },
+  pads: { base: BOULDER, patch: { pads: 7 }, numeric: true },
+};
+
+// Render a sentinel-patched route across every sub-tab and report where it landed. Numeric
+// columns are judged by "did the page change", string columns by finding the sentinel itself.
+function assessSentinel(col) {
+  const spec = SENTINELS[col];
+  const patched = Object.assign({}, spec.base, spec.patch);
+  const needle = Object.values(spec.patch).map(String).find((v) => v.startsWith("ZZ"));
+  const hits = [];
+  let changed = false;
+  for (const tab of TABS) {
+    let withField = "", without = "";
+    try { withField = txt(render(patched, tab)); } catch { /* shape may throw */ }
+    try { without = txt(render(spec.base, tab)); } catch { /* shape may throw */ }
+    if (withField && withField !== without) changed = true;
+    if (needle && withField.includes(needle)) hits.push(tab);
+  }
+  return { hits, changed, needle };
+}
+
 // A field can be USED without being echoed: the RACK box prints rackSummary(route.rack), so
 // the raw gear prose never appears verbatim even though the column drives the screen. Without
 // this baseline the probe reports such a field as dead and sends you chasing a non-bug.
@@ -315,6 +396,51 @@ function assessRow(cand, field) {
     changedTabs: keys.filter((k) => renderedAlone[k] && renderedAlone[k] !== BASELINE[k]) };
 }
 
+// Did this column's value actually reach a screen? POSITIVE evidence only.
+//
+// #863 made a failed query fail closed, so NO DATA now reliably means "the query succeeded
+// and no route has this column populated". That is the remaining hole: a genuinely empty
+// column that is ALSO in KNOWN still reaches the stale test below, and the weaker phrasing
+// of that test — "the verdict is something other than NEVER RENDERS" — reads NO DATA as
+// "this renders now, remove it". Same wrong advice #863 documents, arriving down a path its
+// fix does not cover, because no query failed.
+//
+// Defined up here with a self-test rather than beside its one use, because the self-test has
+// to run BEFORE the DB work: this guard's healthy output is "no findings", which is exactly
+// what a broken detector prints. Same reasoning as check:overflow's injected shapes.
+const RENDERED = (v) => !/^NEVER RENDERS\b|^NO DATA$|^UNPROVABLE/.test(v);
+for (const [verdict, want] of [
+  ["renders", true], ["partial (2 of 5)", true], ["conditional (alpine only)", true],
+  ["used, not echoed (derived/summarised)", true],
+  ["NEVER RENDERS", false], ["NO DATA", false], ["UNPROVABLE (numeric/short)", false],
+]) {
+  if (RENDERED(verdict) !== want) {
+    console.error(`check:field-renders FAILED — self-test: RENDERED(${JSON.stringify(verdict)}) should be ${want}.`);
+    console.error("The stale-allowlist test depends on this, and nothing has been measured yet.");
+    process.exit(1);
+  }
+}
+
+// Ask the shared preflight ONE cheap question before walking 54 columns.
+//
+// Measured on 2026-08-13: with Supabase returning 503 to everything, this guard spent
+// **6m12s** grinding through the whole list to conclude the read had failed, while
+// `check:ui` and `check:overflow` — which share `db-preflight.mjs` — said the same thing in
+// ~20s and stopped. Same answer, eighteen times the cost, and six minutes of output that has
+// to be read before the one line that matters.
+//
+// It is COMPLEMENTARY to the per-column fail-closed below, not a replacement. The preflight
+// only sees a TOTAL outage; the failure this guard hits most often is PARTIAL (2 of 54 columns
+// timing out on the slow ones while the rest answer in 200ms), and only the per-column path
+// can catch that. Keep both: the preflight makes the common catastrophic case cheap, the
+// per-column path keeps the subtle case honest.
+await assertDbReachable({
+  label: "check:field-renders",
+  why: "check:field-renders pulls a real value per column from this database. With it "
+    + "unreachable every one of the 54 queries fails in turn, which takes minutes and ends in "
+    + "the same verdict this one request already gives.",
+});
+
 const results = [];
 for (const [col, field] of FIELDS) {
   // Stop early when the database is simply DOWN. If the first several columns each fail
@@ -327,6 +453,32 @@ for (const [col, field] of FIELDS) {
   if (queryFailures.length >= 5 && results.length === queryFailures.length) {
     console.log(`\n(abandoning after ${queryFailures.length} consecutive failed column queries — the read is down, not the app)`);
     break;
+  }
+  // A sentinel column is judged SYNTHETICALLY, so do not query the database for it at all.
+  //
+  // Querying was the first draft and CI found the flaw within minutes: these columns have zero
+  // populated rows BY DEFINITION, so the query can only ever come back empty — it cannot
+  // inform the verdict, but it is one more chance to trip the 3s statement timeout, and a
+  // 57014 there fails the whole run through the fail-closed path. The first CI run reported
+  // `prot_rating` and `start_type` as BOTH "renders (sentinel)" and failed queries, which is
+  // the contradiction that gives it away. Six pointless queries, six new ways to go red.
+  //
+  // Their values are short enums (`PG-13`, `sit`, `granite`), so even once backfilled the
+  // real-value method could not judge them — it needs a string leaf of >=14 chars. Sentinel is
+  // the right method for these columns permanently, not a stand-in until data arrives.
+  if (SENTINELS[col]) {
+    const s = assessSentinel(col);
+    const shown = SENTINELS[col].numeric ? s.changed : s.hits.length > 0;
+    results.push({
+      col, field,
+      verdict: shown
+        ? (SENTINELS[col].numeric
+          ? "renders (sentinel — value not assertable, CountUp under SSR)"
+          : "renders (sentinel)")
+        : "NEVER RENDERS (sentinel)",
+      tabs: s.hits.map((t) => "sentinel:" + t), missing: [],
+    });
+    continue;
   }
   const rows = await rowWith(col);
   if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
@@ -470,16 +622,31 @@ if (noData.length === results.length && results.length > 0) {
   console.log("  Refusing to report this as a pass.");
   process.exit(1);
 }
-const dead = results.filter((r) => r.verdict === "NEVER RENDERS" && !KNOWN[r.col]);
-const known = results.filter((r) => r.verdict === "NEVER RENDERS" && KNOWN[r.col]);
+// `startsWith`, not `===`: a sentinel column reports "NEVER RENDERS (sentinel)" and must fail
+// exactly like any other unrendered column. An equality test here would let the whole sentinel
+// class report a defect and still exit 0 — the false pass this guard keeps having to relearn.
+const isDead = (r) => r.verdict.startsWith("NEVER RENDERS");
+const dead = results.filter((r) => isDead(r) && !KNOWN[r.col]);
+const known = results.filter((r) => isDead(r) && KNOWN[r.col]);
 if (known.length) {
   console.log("\nKNOWN, not rendered (recorded reasons):");
   for (const r of known) console.log("  " + r.col + " — " + KNOWN[r.col]);
 }
 // A name in KNOWN that has started rendering is stale bookkeeping; say so rather than let the
-// list rot into a permanent excuse.
-const stale = Object.keys(KNOWN).filter((c) => !results.some((r) => r.col === c && r.verdict === "NEVER RENDERS"));
+// list rot into a permanent excuse. RENDERED demands positive evidence — see its definition
+// above for why "not NEVER RENDERS" is not the same question.
+const stale = Object.keys(KNOWN).filter((c) => results.some((r) => r.col === c && RENDERED(r.verdict)));
 if (stale.length) { console.log("\nSTALE allowlist entries (these now render — remove them): " + stale.join(", ")); process.exit(1); }
+// The other direction the list can rot: a name matching NO column at all. That is bookkeeping
+// about a column that has been renamed or dropped, and nothing above can see it — the stale
+// test only ever looks at columns that ARE in `results`. It would otherwise sit here forever
+// describing something gone. Precedent: #863 found `permit_url` had never been a column.
+const orphan = Object.keys(KNOWN).filter((c) => !results.some((r) => r.col === c));
+if (orphan.length) {
+  console.error("\ncheck:field-renders FAILED — allowlist names no such column: " + orphan.join(", "));
+  console.error("Renamed, dropped, or never existed? Fix the list rather than leaving it describing a column that is gone.");
+  process.exit(1);
+}
 const cond = results.filter((r) => r.verdict.startsWith("conditional"));
 const unprovable = results.filter((r) => r.verdict.startsWith("UNPROVABLE") || r.verdict === "NO DATA");
 console.log("\n" + results.length + " fields · " + dead.length + " render nowhere · " + cond.length
@@ -492,7 +659,18 @@ if (partial.length) {
 }
 if (dead.length) {
   console.log("\nFIELDS THAT REACH NO SCREEN:");
-  for (const r of dead) console.log("  " + r.col + "  (sample route " + r.id + ")\n      value: " + JSON.stringify(r.sample));
+  // A sentinel column has no sample row by definition — printing "sample route undefined"
+  // beside it reads as a broken guard rather than a real finding, which is the wrong thing to
+  // hand somebody at the moment they are being told a column is dead.
+  for (const r of dead) {
+    if (r.verdict.startsWith("NEVER RENDERS (sentinel")) {
+      const spec = SENTINELS[r.col];
+      console.log("  " + r.col + "  (no populated row — probed with a sentinel on a bare "
+        + spec.base.discipline + " route)\n      injected: " + JSON.stringify(spec.patch));
+      continue;
+    }
+    console.log("  " + r.col + "  (sample route " + r.id + ")\n      value: " + JSON.stringify(r.sample));
+  }
   process.exit(1);
 }
 console.log("\ncheck:field-renders: ok — every measurable enriched column reaches a screen.");

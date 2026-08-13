@@ -25,9 +25,12 @@ npm run check:grade-parser  # grade_num is parsed in exactly one place (in build
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
+npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -36,15 +39,47 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
+npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
+npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
+npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
+npm run check:disc-labels # one spelling per discipline, everywhere (in build)
+npm run check:claims # no success toast for a write that only runs signed-in (in build)
+npm run check:a11y-names # every control a screen reader reaches has a name (in build)
+npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
+npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
+npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
+npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
+npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
+npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
+npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
+npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
+npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
+npm run check:crew  # guards the crew "Ready" calculation (in build)
+npm run check:migrations # two migrations must never share a number (in build)
+npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
+npm run audit:approach-scope # does a route's approach text run past the base of the climb?
+npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
+npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
+npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
+npm run check:enrichment-traceable # does a climbing_route batch invent anything?
+npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
+npm run audit:rappels      # do a route's rappel fields agree with each other?
+npm run audit:hazard-redundancy # how often does KNOWN HAZARDS say the same thing twice?
+npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
+npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
+npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -222,6 +257,30 @@ a build error, but a screen that renders wrong or not at all.
     turns this red on a PR whose author changed nothing. The failure separates the two
     cases by reading the app's own `No routes match.` empty state rather than guessing from
     body length, and says which it is; `--route` repoints it.
+  - **That discrimination is FIVE-way since #902, and the branch it gained is the one that
+    was being answered wrongly.** The old fall-through asserted *"the list did not report an
+    empty search, so this is the route list or the search box, **not missing data**"* — a
+    confident claim it had no evidence for. A list that never POPULATED looks identical: no
+    rows, no empty state. On 2026-08-13 that message sent a session hunting through
+    `DbAreaBrowser` while Postgres was taking seconds per query; the route opened fine on the
+    same commit once the database recovered. It now asks instead of inferring — is a spinner
+    still up (`looksLikeSpinner`), and how fast is the database **right now**
+    (`probeDbLatency`, a non-fatal sibling of `assertDbReachable`) — and every branch prints
+    the measured latency rather than a guess.
+    - `assertDbReachable` cannot cover this: it proves the project was alive **before** the
+      walk. A **degraded** project answers `routes?limit=1` in under a second, passes the
+      preflight comfortably, and still cannot fill a route list inside a settle timeout.
+      Dead versus slow are different failures and the preflight only sees the first.
+    - Skipped under `--url`, where local env describes a different deployment than the one
+      being walked — the same exemption the preflight already carries.
+    - The slow-DB wording is deliberately **advisory, not a verdict**: it says re-run once the
+      project answers in well under a second and only investigate the list if it fails again
+      on a healthy one. A guard that cannot be certain should say what it measured, not pick.
+    - Injection-tested: neutering the empty-state regex falls through to the new branches and
+      prints the latency; forcing the threshold to 0 fires the slow-DB branch; a nonexistent
+      `--route` still takes the renamed-or-deleted branch, so the ordering did not regress.
+      The still-loading branch is **not** injection-proven — forcing it needs a genuinely
+      degraded database, and that is recorded rather than claimed.
   - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
     four screens of a six-tab app no render guard had ever opened. `tap()` matches control
     text exactly, and these buttons carry the badge *inside* the control, so `textContent` is
@@ -407,8 +466,115 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **A column with ZERO populated rows was unguarded by construction, which is the worst
+    possible moment for it.** The method pulls a REAL value, so a column nothing has written
+    yet has nothing to pull: it reported `NO DATA` and was never checked — exactly when you
+    most want to know the reader is wired, i.e. just after a migration adds the column and
+    before any backfill. `0135` shipped the write for `prot_rating`, `start_type`, `landing`,
+    `pads`, `rock` and `crux`, and #855 then had to prove they reach a screen with a **106-line
+    one-off**, because this guard structurally could not answer it. That one-off is now folded
+    in and deleted — a verification nobody runs is not a verification.
+    - `SENTINELS` injects a distinctive value (`ZZCRUXZZ`) onto a bare route and looks for it,
+      proving the **reader** independently of whether any row is populated. All six render, on
+      Overview, in the TECH STATS tiles.
+    - **Two traps, inherited from #855's probe rather than rediscovered.** `dbRouteToCamel`
+      emits **both** `rock` and `rockType` from the single `rock` column, so patching one
+      reports a healthy column as dead — mimic the MAPPER, never the column. And `pads` is
+      numeric: the tiles render through `<CountUp/>`, which is `useState(0)` reaching its
+      target only inside a `useEffect`, and effects do not run under `renderToStaticMarkup`.
+      So a numeric tile renders **0** and its value can never be asserted here — those are
+      judged on "did the page change", never on the number. Same warning `check:bare` carries.
+    - A third base (`BOULDER`) exists because `landing`, `pads` and `start_type` are shown on a
+      boulder problem and nowhere else; probing them from `crag` reports live columns as dead —
+      the discipline-gating trap this file already records for `RouteGearCheck`.
+    - `NEVER RENDERS (sentinel)` fails the run like any other unrendered column — matched with
+      `startsWith`, not `===`, or the whole sentinel class could report a defect and still exit
+      0. Injection-tested: deleting the `Crux` tile from `RouteDetail` fails naming `crux` and
+      printing the injected patch, and restoring it goes green.
+  - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
+    rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
+    "no route has this column populated". Main went red twice on 2026-08-12 with all 46
+    columns reading `NO DATA`, and the only line either run printed was
+    `STALE allowlist entries (these now render — remove them): data_quality` — i.e. it told
+    the author to delete correct bookkeeping from `KNOWN` because the DB was down. Following
+    it would have removed the recorded reason a column is not rendered and the guard would
+    then have called that column dead forever after. #863 fixed it.
+    - That red was an **accident**, and the default was a **false pass**: the stale test is
+      the only thing on that path that exits non-zero when nothing rendered, so with an empty
+      allowlist the identical outage prints `ok — every measurable enriched column reaches a
+      screen` and exits **0**. Measured, not argued.
+    - **It was already lying on GREEN runs**, which matters more. Against the last green main
+      run: 44 verdict rows identical, and `approach` reported `NO DATA` in CI while it
+      demonstrably renders on three tabs. A silent timeout laundered into a coverage gap on a
+      *passing* run. Do not read green here as "it read the data".
+    - It now fails closed **before any verdict is interpreted** — ahead of the stale test in
+      particular, since that is what turned an outage into an accusation. A thrown fetch is a
+      separate path from `!r.ok` (connection refused used to escape as a raw `ECONNREFUSED`
+      stack, which reads as a broken guard rather than a broken database), and a healthy `200`
+      with `[]` for **every** column fails too — that is RLS rejecting every row or a wrong
+      project, not a clean catalog.
+    - **A `42703` gets its own message.** "This guard names a column that does not exist" and
+      "the database is unreachable" need opposite repairs. That paid immediately: `permit_url`
+      **is not a column** — `routes` has 95 and exactly one permit-ish one, `permit` — so every
+      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed — this guard's
+      subject is column → screen, and with no column there is nothing to query.
+      - **The reason first given for that removal was wrong, and the wrong reason is the
+        dangerous half.** It said the form does not offer `permitUrl` and no DB route can have
+        one; both are false, and together they would justify deleting a working feature. It
+        **is** offered — `{k:"permitUrl",label:"Permit link"}` lives in **`RouteDetail`'s own
+        `FIELDS`** list, not `ClimbMatch.jsx`'s, which is exactly how the first check missed
+        it — it is in `SS`, and RouteDetail renders `<a href={route.permitUrl}>` beside the
+        permit prose. A DB route reaches it through the **contribution overlay**, which needs
+        no column at all: `dbContribs` rows are grouped by field, gated on `SS[rc.field]` and
+        applied onto the route object client-side once the 3-agree gate passes. Not every
+        contributable field is column-backed, so "absent from `routes`" does **not** mean
+        "unreachable" — check `SS` and the overlay before concluding a field is dead.
+    - **Retries are five, and the number is measured.** The failure being retried is `57014`,
+      the 3s anon statement timeout, so the *client* timeout is irrelevant — the server gives
+      up on its own and only a later attempt against a warmer cache can succeed. A run
+      recorded `season — succeeded on attempt 3` and still lost 17 of 45 columns, so three was
+      the boundary rather than a margin. The same query measured 233–654ms for
+      access/hazards/gear and timed out for approach/descent/road **minutes apart, with the
+      slow set moving between runs**. Backoff is exponential because a fixed 400ms re-asks
+      inside the same busy moment, and a total retry budget still caps the run so a
+      wholesale-slow project degrades to one attempt per column, ends, and fails closed. A
+      retry that **succeeds** is printed: absorbing it would turn a measurable flake into an
+      invisible one.
+    - **`order=id.asc` is what costs, NOT a missing index on the filtered column** — and the
+      difference matters because it sends you to opposite repairs. Measured on the live
+      project, same column, seconds apart: `descent` **timed out** with the order and returned
+      **200 in 193ms** without it; `road` 3131ms → **123ms**; `approach` 13654ms → 6231ms.
+      With `order=id.asc&limit=8` Postgres walks the id index and filters row by row until it
+      finds 8 matches, so a **sparse** column traverses most of the table; unordered it can
+      stop at the first 8 it meets. Narrowing with `id=like.wa_*` does **not** rescue it
+      (still timed out on all three).
+      - **Read those numbers as a RATIO, not an absolute, and here is the baseline that says
+        why.** Every figure above was taken while the project was already degrading. Measured
+        again the minute Postgres came back healthy, same three columns, ordering still in
+        place: `approach` **206ms**, `descent` **215ms**, `road` **205ms** — against timeouts
+        for all three an hour earlier. So the ordering is genuinely the more expensive plan
+        and the A/B stands, but it is ~200ms on a healthy database, comfortably inside the 3s
+        anon ceiling. It only becomes fatal when the database is *already* sick. Do not read
+        this note as "the ordered query is slow" and go optimise it; the query is fine, and on
+        2026-08-13 the actual fault was Postgres being unreachable
+        (`503 PGRST002`) while Storage and the gateway stayed healthy.
+    - **Indexes were considered and rejected, deliberately.** Partial indexes
+      (`(id) WHERE col IS NOT NULL`) would make the ordered query instant, but that is ~45 of
+      them on a 205k-row table, maintained on every route write, serving **only this guard**:
+      `lib/db.js` issues **zero** `not.is.null` queries, so the app gains nothing. Dropping
+      the ordering is the other obvious fix and is worse — it is the exact non-determinism the
+      note above this one exists to prevent. Retries are the cheap correct answer here, since
+      the row genuinely exists and only cache warmth decides whether this attempt sees it.
+      **Do not "fix" this with an index without first re-measuring whether the app has started
+      issuing this query shape.**
+    - CI timeout is 25 minutes for this reason, not because a healthy run is slow (~40–85s).
   - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
-    long-beta block fails naming `beta`.
+    long-beta block fails naming `beta`. The fail-closed half is injection-tested against a
+    **local HTTP server standing in for PostgREST** — 500s, connection refused, `200 []`,
+    `400 42703`, and fail-once-then-succeed — which needs no database and caught the
+    wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
+    **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
+    if `.env.local` exists in the worktree and the injection quietly hits the real DB.
 - **`check:a11y-badges`** asks whether any control announces its badge count welded to its
   label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
   Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
@@ -498,12 +664,21 @@ a build error, but a screen that renders wrong or not at all.
     app tree: the `injection passes because the fault is out of frame` shape exactly. #818
     asked for the promotion to be done "from a quiet machine"; this is it, with the
     exclusion corrected.
-  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
-    That is the richest layout in the app and where both recorded bugs of this class lived,
-    so it is the coverage that matters most. The drill-in (state select → Routes → open a
-    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
-    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
-    not read a green run as covering the route page.
+  - **Route detail IS covered, and failing to reach it is now a hard failure.** This used to
+    be the known gap — the drill-in (state select → Routes → open a row) did not complete
+    under the scaffold config, so the richest layout in the app, and the one where both
+    recorded bugs of this class lived, printed `NOT REACHED` on every run. It is reached by
+    **navigation rather than by driving the UI**: `?zr=1` calls the app's own `openRoute()`
+    from inside the opener, which no slow list, differently-rendered row or moved `<select>`
+    label can defeat, and all six sub-tabs are then walked.
+    - The status was **upgraded from a note to an exit-1**, and the reasoning is worth
+      keeping: while it was a UI drill-in it could miss for reasons that were nobody's
+      fault, so a note was the honest call. Now the only ways `?zr=1` fails to land are a
+      broken opener or a broken route page — both worth going red for. The screen where
+      this defect has actually happened must not be able to go unmeasured in silence.
+    - It waits on `window.__routeOpen` **as well as** on the text settling. Tying the two
+      together is what the first CI run got wrong: `load()` returns on `__overlaysReady`,
+      which says nothing about whether the navigation has happened yet.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
@@ -678,6 +853,21 @@ a build error, but a screen that renders wrong or not at all.
     every modal. And `{...clickable(fn)}` is recognised **explicitly**: a spread carries no
     attribute names, so without that a *fixed* control would stop looking like a control and
     read as one fewer thing to check rather than one more thing fixed.
+  - **The shield exemption matched a SYNTAX, and this codebase writes the other one.** It
+    tested for an arrow function with an expression body, while every shield in the app is
+    `function(e){e.stopPropagation();}` — a `FunctionExpression` with a **block** body — so
+    all **13** were counted as mouse-only controls and the baseline read 247 where the truth
+    was **234**. The too-narrow proxy again, and note which way it points: it hid no defect,
+    it *manufactured* 13, each one an element the note below says must **never** be given a
+    tab stop. Somebody working the baseline down would have been told, by the guard, to break
+    precisely what the exemption exists to protect — the same shape as `check:field-renders`
+    telling an author to delete correct bookkeeping during an outage.
+  - Matched on **what the handler does, not how it is written**: any function whose body is
+    that one call. The body must be that call and **nothing else** — a handler that stops
+    propagation and *then does real work* is a control, and widening far enough to swallow it
+    would hide a genuine defect, which is the direction that actually matters. Injection case
+    1 in `scripts/oneoff/inject-clickable-shield-cases.mjs` pins exactly that, and case 2
+    pins the third syntax (`(e)=>{e.stopPropagation();}`) staying exempt.
   - Fails closed: zero clickable non-native elements means the scan broke, not that the app
     is clean. It also fails on a **stale** baseline (higher than reality), so lowering it is a
     deliberate step rather than something a fix does silently.
@@ -830,6 +1020,90 @@ a build error, but a screen that renders wrong or not at all.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-lengths`** asks whether a rappel table states a distance the rope it describes
+  can actually reach. **A rope doubled through an anchor reaches HALF its length** — one 60m rope
+  gives 30m rappels, two 70m ropes give 70m — and where a source published no per-station
+  distance, an earlier enrichment pass wrote the rope's *capacity* into `lengthM` instead of null.
+  `wa_ellation` stored 8 x 70m, i.e. 560m of rappel down an 8-pitch route, while its own prose said
+  the raps "approach the rope's full 35m reach". `wa_overcoat_peak_southeast_route` had the
+  identical 2x error. A climber rigs for a rappel twice as long as the rope allows; this is the
+  rope-off-the-end shape, and it is the worst thing in this dataset to get wrong.
+  - **It is not a "does every rappel have a length" check, and must never become one.** `null` is
+    the CORRECT value where no source gives a distance, and writing nulls rather than inventing
+    numbers is what the repair did. **Halving is also wrong**: a rappel with no published distance
+    may be 35m or 15m, so a halved figure replaces one fabricated number with another.
+  - **30m is both a rope size and the correct half of a 60m rope**, so the rope-size rule is scoped
+    to stations >=50m. Including 30 flagged 22 correct routes. Separately, any station over 60m is
+    impossible on less than two ropes, and that rule does not need a rope to be *named*.
+  - Two false-positive classes were found by running it, and both were regexes that flagged correct
+    work — which teaches people to ignore a guard. `/double[- ]rope\b/` does not match "double
+    **ropes**", so it condemned `wa_action_potential`, whose descent text lists all five lengths
+    individually *and* names double ropes. And matching "rope length" in the count note flagged
+    three routes whose notes accurately said things like "depending on rope length/number of ropes
+    carried"; the admission being looked for is specifically the rope's **capacity** standing in
+    for a measurement.
+  - The third rule is about the **note, not the numbers**: a table can be corrected while
+    `rappel_count_note` still states the method that produced the wrong value, and the next pass
+    then re-derives it. That is why `enrich:apply` grew a `set` path for the scalar prose columns.
+  - Read-only, anon key, fails closed on an empty read *and* on zero rappel tables. **Not a build
+    gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
+    reasoning as `check:counts`. Injection-tested, 4 cases at the bottom of the script; note that
+    `--inject=clean` (every length nulled) must **PASS**.
+  - Reader-side, `RappelTable` prints `—` for a null length. Its total was summed with `||0`, which
+    turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
+    total" and read as the whole descent. It now sums only known stations and says "60 m across 2
+    of 3" when the line is partial.
+- **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
+  `descent_text` says are not made. Both describe the same descent of the same climb, so a
+  disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its
+  sample — stored **"6 raps to 30m"** while its descent text said the Cascadian Couloir walk-off
+  needs "no rappelling required (0 rappels)" and that the only rappel is an optional bypass taken on
+  the way **up**. `wa_mount_baker_coleman_headwall` stored "2-3 rappels to 30m" against a text
+  saying no trip report describes a fixed rappel on its descent at all.
+  - **No coverage check can see this.** They ask whether the column is populated, and it is — a
+    wrong claim and a right one are identical from there.
+  - **Report-only, and it must stay that way.** Measured precision on the first run was **6
+    flagged, 1 real**. A walk-off descent can still involve a real rappel elsewhere on the day
+    (Buckner's North Face rappels the Sharkfin Col step on the *return leg*, and its text says to
+    treat that, not the summit slopes, as the route's rappel hazard), and rappelling is often a
+    conditional alternative to downclimbing rather than a contradiction (Stickney). Read both
+    fields in full before changing either. The exit code says "things to look at", never "bugs".
+  - The claim regex matches only a **leading** number. Prose that merely mentions a rappel is not
+    an assertion that the descent has N of them, and matching it buries the real hits.
+  - Two of the six were fixed as **phrasing** rather than errors: Colchuck's Northeast Couloir led
+    with a rappel sequence its own text calls an emergency option while discouraging that descent
+    entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
+    the wrong descent is its own defect even when every fact is true.
+**A climber's agreed correction must out-vote the enrichment — and the rule has now been
+broken three times, in three different shapes.** `_rapEdited` (rappels, #787/#791),
+`_descEdited` (descent text, #897) and `_rackEdited` (rack, #907) all say the same sentence about a
+different column, and each was found separately because *the failure never looks like a bug*:
+the column is populated, the section renders, and a plausible value is on screen. Only the
+climber who made the correction knows the screen is wrong, and they have no way to report it.
+  - The three failed **differently**, which is why finding one did not find the next.
+    `rappelDetail` displayed **nothing**; `descentText` was out-voted **by string length**, so a
+    shorter correction lost to longer stale prose; `rack` was not discarded at all — the
+    contribute form's `rack` key merges into **`gearTiers.required`**, which `routeRackFor` does
+    not read, so the correction rendered in the GearTiers panel while the RACK box **kept
+    showing the value it replaced**. One Overview tab asserting two different racks for one
+    route, with nothing saying which is current, and the form still offering the superseded
+    text as "current" to the next climber.
+  - **The gate is load-bearing, not defensive**, and the rack case is the clearest example:
+    `gearTiers.required` is populated by seed data and enrichment on routes nobody has touched,
+    so preferring it unconditionally inverts the rule for the whole catalog. Proven rather than
+    argued — dropping `_rackEdited` fails two controls in
+    `scripts/oneoff/probe-rack-correction-reaches-the-rack-box.mjs`.
+  - **Only rendering can settle these.** Every identifier is bound, every column is populated,
+    and grep cannot tell "the correction reaches a screen" from "the correction reaches *the*
+    screen it was made on". The rack probe finds the hosting sub-tab rather than assuming it,
+    then slices the markup around the RACK heading — because the correction *was* on the tab,
+    just not in the box, and a tab-wide match reports that as fixed. Same vacuous-pass shape as
+    `check:bare` matching the Safety tab's "Fire & smoke" link.
+  - `check:rappel-readers` guards the first of the three statically. **The other two are guarded
+    only by their probes**, which is recorded here rather than implied: the general rule
+    ("a reader of an enrichment column that has a contribute-form key must consult
+    `_contribFields`") is not yet enforced anywhere, and a fourth instance would ship silently.
+
 - **`check:rappel-readers`** enforces one sentence: **a function that reads
   `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
   correction out-votes the station-by-station enrichment rather than the reverse. #787 found
@@ -858,6 +1132,26 @@ a build error, but a screen that renders wrong or not at all.
     second first-draft false pass).
   - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
     draft and both were false passes**. Neither was visible by reading the script.
+- **`check:real-profile-rows`** enforces one sentence: **a row must not print a level or a
+  trust score for someone who has neither.** Seed climbers carry `level` and enough history
+  for `vScore()` to mean something; a real profile carries neither, so the subtitle renders
+  **"undefined · 0"**. #715 fixed ONE row of this and left the rest — they survived for months
+  and were found only by driving a real account through the friend-request screen, where the
+  row asking you to accept a stranger showed `@handle` above `undefined · 0`. Gated by
+  `npm run build`.
+  - It flags the **text** shape only: a level or score concatenated into a rendered string.
+    `vScore()` used for sorting, filtering, or handed to `<TrustBadge score={…}>` is a
+    different question — a badge can gate on `_real`, and `FullProfile` already does.
+  - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
+    through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
+    to "On ClimbMatch" rather than to fabricated numbers).
+  - Five exemptions, each **measured** by reading the collection that feeds the row (the seed
+    crew-invite card, PartnerSearch's ALL_CLIMBERS example card, two rows of the seed
+    GuideDashboard, and the OPEN_CREWS organiser chip). A **stale** exemption fails.
+  - Fails **closed**: zero concatenations means the vocabulary moved, never a clean app.
+  - Injection-tested 5/5. It found **9 unswept rows** when written, five reachable with a real
+    profile — including `ConnectModal`'s own subtitle, which read "undefined · Bellingham, WA"
+    on the sheet that asks you to connect.
 - **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
   resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
   other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
@@ -1039,6 +1333,42 @@ a build error, but a screen that renders wrong or not at all.
     in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
     wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
     missed"* — **prove the injection landed before believing what the guard says about it.**
+- **`check:toast-reachable`** asserts that every screen `App` returns can **show a toast**.
+  `showToast` sets state, but the toast only appears if its renderer is mounted in whatever
+  `App` returned — and `App` returns **early on nine screens** (legal, session restore, auth,
+  password recovery, the profile editor, both guide screens, the calendar) while the toast
+  rendered only in the **final** return. On those nine the message went into state nothing was
+  rendering and the 2.6s timer then cleared it. **13 messages could never reach a user.** Static,
+  so it sits in `npm run build`.
+  - The three that matter: **all 11 guide-dashboard messages**, including four RLS-failure
+    warnings (a guide taps Save and the screen does nothing whether the write succeeded or the
+    database refused it — and those handlers were wrapped in try/catch *precisely* because "the
+    rejection became an unhandled promise and the button did nothing at all", so the wrap landed
+    and the toast still could not render); the guide application's **submit failure and only the
+    failure** (its success path calls `onClose()` so its toast appears, the `catch` does not);
+    and **"Join a group to create events"**, which is the *default* outcome of the Calendar's
+    "+ Create an event" button — `GROUPS` is empty behind `DEMO_FILLERS` and `joinedGroups`
+    starts empty, and the early `return` skips `setCalOpen(false)`. That is the **zero state**,
+    not an edge case.
+  - The fix is **one** `const _toastEl` hoisted above the early returns and referenced by all
+    nine — one definition, nine renderers, nothing to drift. The nine returns were edited **by
+    condition, never by line number**: this file packs many declarations onto one physical line,
+    and an unmatched anchor was made fatal rather than a silently shorter edit list.
+  - **No existing guard could see this, and the near-misses are the point.** `check:zindex`
+    enforces that the toast beats every other z-index; `check:overlay-portals` enforces that it
+    escapes the stacking context. Both ask whether a **mounted** toast is *visible*. Neither asks
+    whether it is mounted. A toast can satisfy every ceiling and portal rule in the app and still
+    be absent from the screen that fired it.
+  - **`check:zindex` went red the moment the fix landed**, because its anchor was the inline
+    `{toast&&` shape at the render site. That is the guard working — it refused to report on a
+    file it no longer understood. It now accepts the hoisted `_toastEl=toast&&` shape too, and
+    matching **neither** stays fatal.
+  - Scoped with Babel to **App's own top-level returns** — a `return null` inside a nested
+    component is not a screen. Fails **closed** three ways: a renamed `App`, a renamed
+    declaration, or fewer than five returns found each report a *broken scan*, never a clean app.
+  - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
+    checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
+    not a screen.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -1062,6 +1392,86 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
+  discipline that can benight a party, and that it merges its **two** stores into one section.
+  Static SSR, so it sits in `npm run build`.
+  - **The mount has already been silently lost once**, which is why this is a script and not the
+    comment it replaces. It lived on a dense line, main changed the same line, and the merge kept
+    main's copy — leaving the panel **defined and rendered nowhere**. Nothing caught it:
+    `check:dead-props` sees props, not unmounted components; `check:refs` sees bindings, and every
+    binding was fine; and `routes.bivy` was populated, so any coverage check looked healthy. The
+    repair left a comment saying "confirm BIVY still reaches the screen" — the exact shape
+    [[semantic-invariants-need-a-script]] records as rotting.
+  - **Two stores, one section.** `route.bivy` holds researched sites (capacity/water/permit/notes);
+    a **Campsite waypoint** is the same fact recorded on the track. Rendered apart, a route could
+    show a camp pin under WAYPOINTS while this panel said nothing — two answers to one question.
+    `campSites()` merges them and dedupes on **name**, the only field both stores reliably carry.
+  - **It moved off the Safety tab (2026-08-13) and gained `scrambling`.** Where you sleep is a
+    planning decision, not a hazard; on Safety it sat behind a tab nobody opens for logistics. And
+    a scramble that overruns benights a party exactly like an alpine route. The gate reads
+    `catOf(route)`, **not** `route.discipline`, because `catOf` folds `rock` into trad/sport first.
+  - It renders on a day-trippable route too, deliberately: the party that gets benighted on a
+    "car-to-car" route is precisely who needs it, so *no bivy plan* is not *no bivy*.
+  - **Count inside the panel, never across the tab.** The Planner also renders ROUTE TRACK and its
+    map legend, which name the same waypoint legitimately — a whole-tab count reads 2 for correct
+    code. The first run of this script did exactly that and reported a dedupe bug that did not
+    exist. The slice is bounded by the next heading, and a missing `ROUTE TRACK` fails as
+    `ANCHOR LOST` rather than passing.
+  - **Match the un-escaped text.** `renderToStaticMarkup` emits `CAMPING &amp; BIVY`; see
+    [[ssr-probes-must-match-escaped-html]]. Assertion 0 proves the probe can fire at all, so a
+    renamed heading reports `ANCHOR LOST` instead of a vacuously green run.
+  - **Known gap, printed rather than hidden:** `bivy` is **not contributable** — it is in neither
+    `FIELDS` nor `SS`, and the panel's edit pencil opens the *waypoints* editor. A climber cannot
+    add or correct a camp. That needs a structured array editor and is not built.
+  - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
+    own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
+    dropped the waypoint half of the merge).
+- **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
+  Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
+  coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by
+  different enrichment passes, neither reading the other, and nothing had ever compared them.
+  **155 of 630 WA routes disagreed by more than 500 m**, p95 15 km, worst 216 km. No coverage
+  check can see this: both columns are populated, both values are plausible coordinates.
+  - **The cause is name collision**, the same root cause as the route-id note above, one level up:
+    there are two "White River Trailhead"s in WA **130 km apart** and two "Lake Ann"s **79 km**
+    apart, so Little Tahoma carried the Lake Wenatchee White River and Black Peak carried Mount
+    Baker's Lake Ann. **A name is not an identity.**
+  - **It is user-visible, and the two surfaces disagree on which record wins.** `TrailheadCard`
+    (the only directions control on the Plan tab) reads `approach_logistics` **first**; the crag
+    Overview "Directions to crag" button reads the **pin** first. So on a disagreeing route the
+    trailhead you are sent to depends on which screen you are looking at. **Deliberately not
+    "fixed" by swapping a priority** — which record is right varies per route, so that would only
+    move the error. The repair is the data.
+  - **Distance to the peak names the guilty record; the pin-vs-blob comparison cannot.** Two
+    coordinates disagreeing says only that one is wrong. `scripts/oneoff/probe-logistics-trailhead-vs-peak.mjs`
+    anchors on the route's own peak from `areas` — a third, independent record — exactly as
+    `trackOffItsPeak` does in `audit:waypoints`. That settled the 7 gross cases in #886.
+    **Its MIRROR is empty**: at that scale the *pin* is never the far one, so the blob is the
+    wrong record every time. That asymmetry does **not** generalise downward — below 25 km the
+    pin is wrong at least as often, which is why the rest had to be read rather than measured.
+  - **Distance alone never condemns a trailhead.** 236 WA routes sit >8 km from their peak and
+    almost all are correct: Hozomeen, the Mox Peaks, Ragged Ridge and the Pasayten summits are
+    genuinely 28-31 km from the road. Eight such routes were deliberately left alone.
+  - **A shared `trailheadDirection` string is NOT a contamination fingerprint**, and the first
+    draft said it was. Measured, those repeats are mostly legitimate — "From the Ross Dam
+    Trailhead on SR-20" really is the access for **ten** routes across the Pickets and Ross Lake,
+    the Stehekin ferry really does serve Flora/Trapper/Tupshin. **Remote peaks share one distant
+    trailhead; that is what remote means.** Printed as context, never counted.
+  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m. What
+    remains is sub-kilometre slop plus peaks with two genuine approaches where **both records are
+    correct** — `wa_lundin_peak_west_ridge` is the clean example. Do not sweep those to zero.
+  - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
+    declare a **winner, never a coordinate**: the script reads both records off the row and copies
+    the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
+    needing a THIRD coordinate cannot be expressed at all** — the exclusion is structural rather
+    than a judgement made correctly 102 times. That is what made unreviewed subagent triage safe
+    to ship, with `scripts/oneoff/verify-slice-ac-fixes-reference-the-row.mjs` measuring which
+    recommendations actually referenced the row (26 of 34; the 8 that did not were one group, all
+    off by exactly 454 m).
+  - Read-only and fails closed on an empty read. **Not a build gate** — a property of the DB, not
+    the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
+    the service key only because the anon role's 3s `statement_timeout` cannot complete a read of
+    two jsonb columns over 8k rows, and it issues no write. Retries are printed, not absorbed.
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
@@ -1132,6 +1542,41 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
+  separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
+  `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
+  them apart stops the audit growing flags only a pipeline cares about.
+  - The problem it exists for: `approach` is meant to describe the walk in, but a route with no
+    pitch table had nowhere else to put a description of the climbing, so that description went
+    into the approach and the prose runs past the base and keeps going to the summit. 360 WA
+    routes carry it; 254 had no pitch table. Migration 0122's `climbing_route` is where it goes.
+  - Batches are produced by **re-homing, never researching** — every fact must already be in
+    that route's own `approach`. That instruction is worth nothing unless something checks it,
+    so **`check:enrichment-traceable`** verifies that every number and every load-bearing
+    feature/direction word in a segment also appears in the source. Prose may be rewritten
+    freely; specifics may not be invented. Run it on a batch BEFORE `enrich:apply`.
+  - It took two rounds to make that guard right, and both are the same lesson. It first flagged
+    "Traverse to the summit gully" as untraceable where the source said "travers**ing** higher"
+    — a guard that flags correct work teaches people to ignore it. The fix (stem both sides)
+    still failed because the stemmer never stripped a trailing `e`, so "traverse" and
+    "traversing" never met. Over-stemming is safe here: the same function runs on both sides.
+  - Injection-tested: adding *"Rappel 45 m from a bolted anchor on the cornice above the
+    chimney"* to a Buckner segment is caught on the number, "cornice" and "chimney" — and
+    correctly does NOT flag "rappel", which that route's approach really does mention.
+  - **An empty result is a real result.** Eldorado's Northwest Couloir gets zero segments
+    because its approach stops at the couloir base; Mount Anderson gets two despite `pitches:7`
+    because the text stops at Flypaper Pass. Those routes stay on the candidate list. They are a
+    gap in the data, and leaving the gap visible beats filling it from imagination.
+  - `enrich:apply` is the single write path and must stay so: it asserts each route's `area_id`
+    before writing (only ~9% of route ids are peak-scoped, so a name-shaped id proves nothing),
+    writes through `patchRow`, then **re-reads and reconciles**. Its verification builds the
+    check list from what was actually written — an earlier version omitted `climbing_route`, so
+    a route setting only that column satisfied every remaining clause vacuously and printed
+    "verified" having confirmed nothing.
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+    section was found **defined and mounted nowhere** after a merge kept main's copy of the
+    dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
@@ -1348,6 +1793,49 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     the missing file and its own file count; breaking the `db.js` vocabulary regex fails
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+
+**Can the database even answer, before a guard spends half an hour finding out?**
+`scripts/lib/db-preflight.mjs` asks once, up front, and is used by `check:ui`, `check:zero`
+and `check:overflow` (#865). `check:field-renders` answers the same question its own way,
+per column.
+  - **The failure it exists for.** When Supabase went unreachable on 2026-08-13,
+    `check:overflow` was **cancelled at its 25-minute job wall** having walked 6 tabs, 6 route
+    sub-tabs and **29 of 53 overlays** — producing no diagnosis at all. A cancelled job, no
+    failure message, and no way for the next author to tell an outage from their own
+    regression. It was never *stuck*: these guards decide a screen is done by waiting for its
+    text to stop changing (`render-settle.mjs`), and with no data arriving **nothing ever
+    settles**, so every screen burns its full 45s timeout. 53 overlays at 45s is ~40 minutes
+    on its own — fifty futile waits at full price.
+  - Measured, before → after: `check:overflow` 25m16s cancelled → **31s**; `check:ui` 6m6s →
+    **38s**; `check:zero` 6m34s → **40s**, all naming the database.
+  - **Wired into three guards, NOT all of them, and the restraint is the point.**
+    `check:overlay-scroll` (2m59s) and `check:a11y-badges` (6m35s) both **passed** during the
+    same total outage: their verdicts are about layout and announced names and do not need
+    catalog data on screen. A preflight there would convert honest passes into false failures.
+    Only a guard whose assertions need the data gets one — `check:ui` opens a DB route **by
+    name**, and `check:zero` asserts no screen is still loading.
+  - **What each of those printed instead, which is why the message matters.** `check:ui` said
+    `could not choose a country — "United States" was not among the options`, which reads as a
+    broken area picker. `check:zero` said `2 problem(s) a brand-new account would see: still
+    showing a loading state after 45s` — the symptom honest, the attribution not: no
+    brand-new account would see that, the database was down.
+  - Three exemptions, each deliberate: `--selftest-only` on `check:overflow` needs no data and
+    the detector must stay provable while the DB is down; `--url` on `check:ui`, because local
+    env describes the server that script **spawns** and says nothing about an app served
+    elsewhere; and **no DB configured returns "skipped", not a failure**, so seed-mode runs in
+    a fresh clone or a worktree with no dotfiles keep working.
+  - **The tolerance was wrong first, and CI proved it within the hour.** At 10s × 2 it
+    **false-aborted** the moment the project came back — `check:overflow` gave up at 37s while
+    `check:zero`, same commit and minutes apart, got its answer and passed. That is the one
+    outcome this must never produce, since the whole job is telling dead from slow, and people
+    would learn to re-run it blindly. Measured immediately after recovery:
+    `db preflight: ok (7913ms)`. Warm is 554ms and cold 2.7s, so the typical case was never
+    the problem — a project that has just come back has empty caches. Now **3 attempts at 20s
+    with backoff**, ~65s worst case before abandoning. The asymmetry is the reasoning: being
+    slow to declare an outage costs a minute, declaring one wrongly costs a red job somebody
+    has to investigate.
+  - It fails **closed**, and it claims nothing about rendering — only "could the data have
+    arrived at all".
 
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
