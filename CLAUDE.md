@@ -67,6 +67,7 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -1369,6 +1370,52 @@ climber who made the correction knows the screen is wrong, and they have no way 
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
+  Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
+  coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by
+  different enrichment passes, neither reading the other, and nothing had ever compared them.
+  **155 of 630 WA routes disagreed by more than 500 m**, p95 15 km, worst 216 km. No coverage
+  check can see this: both columns are populated, both values are plausible coordinates.
+  - **The cause is name collision**, the same root cause as the route-id note above, one level up:
+    there are two "White River Trailhead"s in WA **130 km apart** and two "Lake Ann"s **79 km**
+    apart, so Little Tahoma carried the Lake Wenatchee White River and Black Peak carried Mount
+    Baker's Lake Ann. **A name is not an identity.**
+  - **It is user-visible, and the two surfaces disagree on which record wins.** `TrailheadCard`
+    (the only directions control on the Plan tab) reads `approach_logistics` **first**; the crag
+    Overview "Directions to crag" button reads the **pin** first. So on a disagreeing route the
+    trailhead you are sent to depends on which screen you are looking at. **Deliberately not
+    "fixed" by swapping a priority** — which record is right varies per route, so that would only
+    move the error. The repair is the data.
+  - **Distance to the peak names the guilty record; the pin-vs-blob comparison cannot.** Two
+    coordinates disagreeing says only that one is wrong. `scripts/oneoff/probe-logistics-trailhead-vs-peak.mjs`
+    anchors on the route's own peak from `areas` — a third, independent record — exactly as
+    `trackOffItsPeak` does in `audit:waypoints`. That settled the 7 gross cases in #886.
+    **Its MIRROR is empty**: at that scale the *pin* is never the far one, so the blob is the
+    wrong record every time. That asymmetry does **not** generalise downward — below 25 km the
+    pin is wrong at least as often, which is why the rest had to be read rather than measured.
+  - **Distance alone never condemns a trailhead.** 236 WA routes sit >8 km from their peak and
+    almost all are correct: Hozomeen, the Mox Peaks, Ragged Ridge and the Pasayten summits are
+    genuinely 28-31 km from the road. Eight such routes were deliberately left alone.
+  - **A shared `trailheadDirection` string is NOT a contamination fingerprint**, and the first
+    draft said it was. Measured, those repeats are mostly legitimate — "From the Ross Dam
+    Trailhead on SR-20" really is the access for **ten** routes across the Pickets and Ross Lake,
+    the Stehekin ferry really does serve Flora/Trapper/Tupshin. **Remote peaks share one distant
+    trailhead; that is what remote means.** Printed as context, never counted.
+  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m. What
+    remains is sub-kilometre slop plus peaks with two genuine approaches where **both records are
+    correct** — `wa_lundin_peak_west_ridge` is the clean example. Do not sweep those to zero.
+  - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
+    declare a **winner, never a coordinate**: the script reads both records off the row and copies
+    the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
+    needing a THIRD coordinate cannot be expressed at all** — the exclusion is structural rather
+    than a judgement made correctly 102 times. That is what made unreviewed subagent triage safe
+    to ship, with `scripts/oneoff/verify-slice-ac-fixes-reference-the-row.mjs` measuring which
+    recommendations actually referenced the row (26 of 34; the 8 that did not were one group, all
+    off by exactly 454 m).
+  - Read-only and fails closed on an empty read. **Not a build gate** — a property of the DB, not
+    the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
+    the service key only because the anon role's 3s `statement_timeout` cannot complete a read of
+    two jsonb columns over 8k rows, and it issues no write. Retries are printed, not absorbed.
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
