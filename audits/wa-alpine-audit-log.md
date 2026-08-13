@@ -7381,3 +7381,136 @@ verify against the live schema; it is gitignored and was not committed.
 
 Next batch continues alphabetically after `wa_the_monk_west_cracks_left_crack` (see progress
 file).
+
+## Batch 107 — 2026-08-13
+
+Checked 10 routes across 8 peaks: The Monk – West Cracks – Right Crack (Cathedral Peak,
+Pasayten), Neve Glacier Approach/Standard (The Needle), Glacier/Scramble Route (The Pleiades),
+South Route (The Pyramid, Southern Pickets), Ridge Traverse Route (The Rake, Southern Pickets),
+The Roof (Unicorn Peak), three routes at The Tooth (The Tooth Fairy, Northeast Slabs, South
+Face/Standard), and East Peak Standard Route (The Triad).
+
+**Confirmed errors fixed (9 statements, `audits/sql/2026-08-13-batch-107.sql`):**
+- `wa_the_monk_west_cracks_right_crack` — `high_point_ft` (8606, matching Cathedral Peak's own
+  summit) corrected to 8300, matching this route's own waypoints and approach text describing
+  The Monk as a distinct, smaller detached tower — the same summit-collision defect the prior
+  batch found on three of four sibling Monk routes. This route also carries the sibling
+  `corrections`-vs-`stars` mismatch pattern (flagged below, not fixed).
+- `wa_the_pleiades_scramble` — five fixes: `access.land_manager` dropped a false claim that
+  some upper routes cross into North Cascades National Park (contradicted by this row's own
+  `permit`/`landManager` fields and by Mount Larrabee's real position west of the NCNP
+  boundary); `approach_logistics.trailhead` corrected from "Tomyhoi Lake Trailhead" (this
+  route's own washout-contingency fallback) to "Twin Lakes Trailhead" (where this route's own
+  waypoints/gpx/approach text actually start); `approach_logistics.trailheadDirection` restored
+  from a mid-word truncation, using this route's own untruncated `approach` field; and
+  `partner_requirements` plus `seasonal_hazards.{exposure,crevasses}` were rewritten to remove
+  beta for an unrelated Mount Baker massif approach (Ptarmigan Ridge/Camp Kiser, roped glacier
+  travel, crevasse rescue) that contradicted this same route's own `rope_type`, `rack`,
+  `pro_needs`, `gear`, and `itinerary` — an enrichment-contamination defect of the shape
+  CLAUDE.md already documents for other columns.
+- `wa_the_rake` (area) — `lat`/`lng` moved from a point east of Mount Terror (off the Southern
+  Pickets ridgeline entirely) to 48.7755/-121.3067, the point already sitting unused in this
+  route's own GPX-track terminus and summit waypoint — verified against the confirmed
+  west-to-east ridge order (Terror → The Rake → Twin Needles) and Wikipedia/USGS-sourced
+  neighbor coordinates.
+- `wa_the_roof` — `length_m` (122, ~400 ft) corrected to 15, matching this route's own
+  `pitch_detail`/`rappels`/`descent_text` (all describe a single ~15 m/50 ft rappel) and
+  external sourcing that Unicorn Peak's whole summit tower is only 50-70 ft tall.
+- `wa_the_tooth_fairy` — `emergency.nearestHospital` corrected from Harborview Medical Center
+  (downtown Seattle, ~1 hr away) to Snoqualmie Valley Hospital (~30-40 min via I-90), matching
+  both sibling Tooth routes' already-correct value; Harborview is the trauma-transfer
+  destination, not the nearest ER.
+- `wa_the_triad_east_peak` / `wa_the_triad` (area) — four fixes: area `prominence_ft` (822,
+  matching no source) corrected to 760 per Peakbagger/Wikipedia agreement; route `grade_num`
+  (stored 0 for a route whose own grade string tops out at 5.4) corrected to 4, matching this
+  catalog's own numeric-YDS grade_num convention; `gain_ft` (3920, a straight elevation delta)
+  corrected to 5410 to match `loss_ft` on a route that explicitly reverses the same trail
+  car-to-car — this route's own `itinerary.days[0]` already carried the correct,
+  trip-report-sourced 5410/5410 pair; and `fa` (null) populated from this route's own
+  already-stated overview prose ("Dick Eilertsen, Dick Lowery, Dick Scales, and Don Wilde,
+  1949"), independently corroborated via WebSearch.
+
+**Also flagged for human review, not fixed:**
+- `wa_the_triad` (area) — `parent_peak` (null) should likely be set to `'wa_eldorado_peak'`
+  (Eldorado Peak is The Triad's topographic line parent per Peakbagger/Wikipedia, and this
+  row's own blurb already says "~2 miles southwest of Eldorado Peak"). **Not written to the SQL
+  file**: live DB read access degraded partway through this run — every `areas` query timed out
+  for roughly the back half of the batch, including retries of a query pattern that had worked
+  minutes earlier — so `wa_eldorado_peak`'s existence as a live area id could not be
+  independently confirmed before committing. A human should confirm the id is live, then apply
+  `UPDATE areas SET parent_peak = 'wa_eldorado_peak' WHERE id = 'wa_the_triad';` (left as a
+  commented-out note at the bottom of the SQL file).
+- `wa_the_monk_west_cracks_right_crack` — `corrections` claims "Grade (5.7, 2 stars) verified
+  on Mountain Project" while `stars` is `null` — the same corrections/stars mismatch pattern
+  flagged (not fixed) on sibling Monk routes last batch. Mountain Project was blocked for
+  WebFetch again this run, so the actual current star count could not be independently pulled.
+- `wa_the_triad_east_peak` — whether "East Peak" is actually the correct summit name for this
+  route's own beta. The two trip reports this route's own `itinerary.sourceNote` cites by name
+  are both titled "...to Main/Middle Summit," not "East Peak," and Wikipedia/Peakbagger-derived
+  figures list the middle peak, not the east, as the range's true high point at the same
+  nominal elevation. Could not resolve — the two cited TR sites (CascadeClimbers.com,
+  jeffreyjhebert.com) were both blocked for WebFetch this run.
+- `wa_the_needle_neve_glacier` — the attached `gpx` track almost certainly terminates on
+  **Snowfield Peak's** summit (36 m from Snowfield's sourced coordinate), not The Needle's own
+  summit waypoint (939 m from the track's nearest point, vs. 7-28 m for every other waypoint on
+  this same route) — a reused/mislabeled Snowfield-Neve tour track, consistent with this row's
+  own `data_quality` sourceNote admitting no trip report documents The Needle specifically
+  start-to-finish. No corrected track exists to substitute; needs a human with CalTopo access.
+  Also flagged: `grade_num: 0` for a `Class 3/4`-graded route reads as an unparsed fail-open
+  default rather than a real 0 rating (same anti-pattern CLAUDE.md warns against elsewhere) —
+  not fixed, since the intended value (3 vs. 4) isn't resolvable from this row alone.
+- `wa_the_pyramid_picket_south_route` — several unresolved items, none independently fixable
+  this run: the route may actually be Beckey's "West Ridge," not "South Route," per one
+  indirect source citation (StephAbegg, blocked for direct read); `dist_km` (27.68) appears to
+  already be a round-trip figure rather than the one-way convention this column is supposed to
+  follow catalog-wide (per CLAUDE.md's existing warning against bulk-normalizing this column —
+  recommend `npm run audit:distances` on this id specifically rather than a one-off fix); two
+  different trailhead coordinates ~450 m apart are both labeled "Goodell Creek" within the same
+  row; and `rappels: "None standard"` sits in tension with `descent`/`itinerary` text describing
+  a short rappel most parties use.
+- `wa_the_tooth_r1` (Northeast Slabs) — `fa` ("Jim Nelson & Paul Stevenson, 1982") could not be
+  corroborated against any accessible source this run (already self-flagged `LOW` confidence
+  in the row); `watch_out` is stored as a `\n`-delimited string rather than an array, unlike
+  both sibling Tooth routes — a structural inconsistency, not a sourced factual error.
+- `wa_the_tooth_south_face` — `length_m` (101 m / ~330 ft) vs. one recurring web claim the wall
+  is "400 feet" — sources conflict with no clear tiebreaker; on-file value matches one of two
+  commonly-cited figures, so left unchanged.
+- `wa_the_roof` — whether "The Roof" is genuinely a distinct, formally named line on Unicorn
+  Peak's summit block, vs. an informal label for one of several unnamed 4th-class-to-5.6 lines
+  described by available sources — already self-hedged in the row (`gear_confidence:
+  "inferred"`); not independently resolvable without Mountain Project/SummitPost access.
+- Minor internal-consistency-only notes left as-is (no external source to adjudicate):
+  `wa_the_pleiades_scramble` gain/loss figures (3400 vs 3200, already self-documented in the
+  row's own `itinerary.sourceNote`) and region label ("Baker / Twin Sisters"); `wa_the_roof`
+  `gain_ft` vs. `itinerary` gain (2397 vs 2600); `wa_the_rake` elevation (7869 vs. this same
+  route's own 7840 ft summit waypoint, both figures independently sourced elsewhere) and
+  unverified prominence; `wa_the_pyramid_picket_south_route` unverified prominence.
+
+**Clean (2):** `wa_the_tooth_r1` (Northeast Slabs) and `wa_the_tooth_south_face` (South Face)
+matched external sourcing on every other checkable field (grade, pitches, FA, permit/access,
+group limit, hazards).
+
+**Tooling note:** Mountain Project, SuperTopo, theCrag, SummitPost, Wikipedia, Peakbagger,
+stephabegg.com, WTA, USFS, NPS, AAC Publications, Alpinist, Climbing.com, CascadeClimbers,
+Mountaineers.org, and web.archive.org were all blocked for WebFetch across every research agent
+this batch (same domain family flagged blocked in the two preceding batches) — findings above
+rest on WebSearch snippet synthesis except where noted. Separately, live DB read access via the
+anon key degraded significantly partway through this run: every `areas` query timed out for the
+back half of the batch, including retries of query patterns that had succeeded minutes earlier
+in the same session. One finding (`wa_the_triad.parent_peak`) was downgraded from a confirmed
+fix to a flagged item as a result, rather than write an area-id reference whose target could not
+be independently confirmed live. `npm run check:sql -- audits/sql/2026-08-13-batch-107.sql`
+**could not complete** — Supabase itself returned a Cloudflare 522 ("Connection timed out"
+connecting to the origin) starting partway through this run, and the outage held through 5
+retry attempts spread over ~14 minutes (01:06-01:20 UTC), each hitting either the same 522 or a
+raw fetch timeout. This is an external infrastructure outage, not a proxy or query-shape issue —
+the same anon key and query patterns had succeeded earlier in this same run. The two structural
+WARNs `check:sql` did emit before the outage (both on `wa_the_pleiades_scramble`'s
+`partner_requirements`/`seasonal_hazards` statements, "UPDATE with no literal id predicate — not
+checkable") are a known limitation of its single-line-id-predicate regex on multi-line jsonb
+statements, not a defect in those statements — both carry a correct `WHERE id = ...` clause one
+line below the `SET`, same shape as a WARN noted (and manually verified clean) in batch 106.
+**A human should re-run `npm run check:sql -- audits/sql/2026-08-13-batch-107.sql` once Supabase
+is confirmed healthy, before applying any statement in this file.**
+
+Next batch continues alphabetically after `wa_the_triad_east_peak` (see progress file).

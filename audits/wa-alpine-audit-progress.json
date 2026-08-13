@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_the_monk_west_cracks_left_crack",
+  "last_processed_id": "wa_the_triad_east_peak",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2385,6 +2385,22 @@
       "flagged_for_human_review": 22,
       "clean": 1,
       "sql_file": "audits/sql/2026-08-12-batch-106.sql"
+    },
+    {
+      "batch_number": 107,
+      "date": "2026-08-13",
+      "route_ids": [
+        "wa_the_monk_west_cracks_right_crack",
+        "wa_the_needle_neve_glacier",
+        "wa_the_pleiades_scramble",
+        "wa_the_pyramid_picket_south_route",
+        "wa_the_rake_traverse_route",
+        "wa_the_roof",
+        "wa_the_tooth_fairy",
+        "wa_the_tooth_r1",
+        "wa_the_tooth_south_face",
+        "wa_the_triad_east_peak"
+      ]
     }
   ]
 }
