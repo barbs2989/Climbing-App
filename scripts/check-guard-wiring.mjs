@@ -151,6 +151,73 @@ for (const [name, body] of Object.entries(npmScripts)) {
     fail(`npm script "${name}" runs scripts/${m[1]}, which does not exist on disk.`);
 }
 
+// 4. Every guard must be NAMED in CLAUDE.md's command block.
+//
+//    Sections 1-3 ask whether a guard runs. This asks whether anyone can find out that it
+//    exists, which is a different hole and was the larger one: measured on 2026-08-13,
+//    **11 of the 39 build-chain guards appeared nowhere in CLAUDE.md at all** — including
+//    check:contrib-shapes, written and injection-tested the day before by the same session
+//    that then failed to document it.
+//
+//    That matters here more than it would in a repo with a test suite. CLAUDE.md is the
+//    file every session reads and is told OVERRIDES its defaults; it is also the only index
+//    of what has already been guarded. A guard nobody can see is not merely undocumented,
+//    it is an invitation to write it a second time — and this codebase has taken that hit
+//    repeatedly: FOUR copies of the grade parser that had drifted into three behaviours,
+//    THREE waypoint audits of which two ask the same question with different thresholds.
+//    Both were written by people who could not see what already existed.
+//
+//    Structural, not lexical: it requires the name inside the ```bash command block, which
+//    is the index, and NOT merely somewhere in the file. Prose mentions another guard in
+//    passing all the time — check:schema is named only inside check:ci-cancel's paragraph,
+//    which tells a reader nothing about how to run it or what it covers. An "appears
+//    anywhere" test passes on those and would have reported 5 of these 11 as documented.
+const mdPath = path.join(ROOT, "CLAUDE.md");
+if (!fs.existsSync(mdPath)) dead("CLAUDE.md does not exist — the guard index could not be read");
+const mdBlock = /```bash\n([\s\S]*?)```/.exec(fs.readFileSync(mdPath, "utf8"));
+if (!mdBlock) dead("CLAUDE.md has no ```bash command block — the guard index could not be found");
+const indexed = new Set([...mdBlock[1].matchAll(/npm run ([A-Za-z0-9:_-]+)/g)].map((m) => m[1]));
+// Fail closed. An index that stopped parsing would otherwise report every guard as
+// undocumented, which is loud, OR — if the regex matched nothing at all — the emptiness
+// would make `indexed` empty and every guard fail. Both are noisy rather than silent, but a
+// block that parsed to a HANDFUL is the dangerous middle: it reads as a real index and is
+// not one. 20 is well below the ~45 entries present and well above any partial parse.
+if (indexed.size < 20) dead(`CLAUDE.md's command block parsed to only ${indexed.size} entries — the index could not be read`);
+
+// Declared exemptions, same rule as EXCLUDED: a name here must be a real file, and must
+// genuinely be absent from the index. Empty today, and it should stay that way — every
+// guard in this repo is worth one line.
+const UNDOCUMENTED = {};
+
+// An alias is a npm script that runs ONLY this guard — not any chain that happens to
+// contain it. `build` matches `scripts/check-fire.mjs` on a substring test, and `npm run
+// build` is the third line of the command block, so a substring test credits the block with
+// documenting all 39 build-chain guards and this whole section passes vacuously. It did:
+// the first draft reported "all 53 guards are named" and injection case 1 (delete a guard's
+// line from the block) did not move it. Only the 14 guards outside the chain were really
+// being tested, which is how check:sql was still caught — a false pass that looked like a
+// clean sweep, and was found ONLY by injection.
+const aliasesOf = (f) => Object.entries(npmScripts)
+  .filter(([, body]) => new RegExp("^node scripts/" + f.replace(/\./g, "\\.") + "(\\s|$)").test(body.trim()))
+  .map(([name]) => name);
+
+const undocumented = onDisk.filter((f) => !aliasesOf(f).some((a) => indexed.has(a)));
+const undocUndeclared = undocumented.filter((f) => !UNDOCUMENTED[f]);
+if (undocUndeclared.length) {
+  for (const f of undocUndeclared)
+    fail(`scripts/${f} (npm run ${aliasesOf(f)[0]}) is not named in CLAUDE.md's command ` +
+         `block, so nothing tells the next session it exists. Add one line there — a name ` +
+         `and what it asks — or declare it in UNDOCUMENTED in this file WITH A REASON.`);
+} else ok(`all ${onDisk.length} guards are named in CLAUDE.md's command block`);
+
+for (const name of Object.keys(UNDOCUMENTED)) {
+  if (!onDisk.includes(name))
+    fail(`UNDOCUMENTED names scripts/${name}, which does not exist. Stale bookkeeping.`);
+  else if (!undocumented.includes(name))
+    fail(`UNDOCUMENTED names scripts/${name} as undocumented, but it is now in the command ` +
+         `block. Remove the entry — a stale exemption is room for a real one to hide in.`);
+}
+
 if (failures) {
   console.error(`\ncheck:guard-wiring FAILED — ${failures} problem(s).\n`);
   process.exit(1);
@@ -170,3 +237,15 @@ console.log(`\nok — every guard runs somewhere: ` +
 //   3. add "check-fire.mjs" to EXCLUDED while it is still wired     -> stale exemption
 //   4. rename check-signed-in.mjs                                   -> EXCLUDED names a missing file
 //   5. point scripts/ at a directory with no check-*.mjs            -> dead(), not ok
+// Section 4 (the CLAUDE.md index), all 5 caught — scripts/oneoff/inject-guard-wiring-docs.sh:
+//   1. delete a guard's line from the command block   -> names the guard
+//   2. UNDOCUMENTED entry naming a documented guard   -> stale exemption
+//   3. rename the ```bash fence                       -> dead("no command block"), not ok
+//   4. shrink the block to 2 entries                  -> dead("parsed to only 2"), not ok
+//   5. mention a guard in PROSE but not in the block  -> still fails (structural, not lexical)
+// Case 1 FALSE-PASSED on the first draft and case 5 with it, and neither was visible by
+// reading the code: aliasesOf() matched `scripts/x.mjs` as a substring, so `build` counted
+// as an alias of all 39 chain guards and `npm run build` in the block documented every one
+// of them. It printed "all 53 guards are named" while testing only 14. Fixing it surfaced
+// 6 more undocumented guards, check:migrations among them. Re-run these after ANY change to
+// how an alias is resolved.

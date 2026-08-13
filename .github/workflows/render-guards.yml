@@ -285,3 +285,32 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
           VITE_DEMO_AUTOLOGIN: "true"
+
+  challenge-rows:
+    name: Tick-list rows say something true
+    runs-on: ubuntu-latest
+    # Opens ONE panel and expands ONE card, so it is much shorter than its siblings.
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:challenge-rows cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: The Challenges list panel renders real rows
+        run: npm run check:challenge-rows
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app
+          # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
