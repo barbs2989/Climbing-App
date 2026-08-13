@@ -1,0 +1,40 @@
+{
+  "_README": [
+    "A FOURTH rope-capacity defect, and the one that exposed a hole in check:rappel-lengths.",
+    "",
+    "Every source calls this descent three SINGLE-ROPE rappels on a 60 m rope. A 60 m rope doubled",
+    "reaches 30 m, so no station here can exceed that — yet stations 1 and 2 were stored at 60 m",
+    "and 55 m, which are the rope's capacity rather than distances.",
+    "",
+    "The guard passed it. Its double-rope stand-down fired on a DIFFERENT sentence in the same",
+    "prose — 'can also be done as 2 x 50m double-rope rappels' — which describes an ALTERNATIVE",
+    "configuration while the stored table is the single-rope sequence. A fact about one descent",
+    "suppressed a check on another. A new rule now keys on an explicit 'single-rope' mention that",
+    "nothing can suppress, and it is REPORT-ONLY because run as a failure it also flagged correct",
+    "rows whose stored table is the two-rope sequence.",
+    "",
+    "All three lengths are nulled rather than halved. The prose gives a BOUND, not a measurement:",
+    "a doubled 60 reaches 30 m, and a party reported a 50 m rope only just reaching station 2, so",
+    "that rappel is nearer 25 m. An upper bound is not a distance, and halving would replace one",
+    "fabricated number with another. Station 3's stored 30 m goes too — it is the same bound, not",
+    "an independent measurement."
+  ],
+  "wa_kangaroo_temple_north_face": {
+    "area": "wa_kangaroo_temple",
+    "_grounding": "this route's own rappels/descent_text, which state three single-rope rappels on a 60 m rope and record that a 50 m rope only just reaches station 2",
+    "rappel_add": {
+      "1": {
+        "lengthM": null
+      },
+      "2": {
+        "lengthM": null
+      },
+      "3": {
+        "lengthM": null
+      }
+    },
+    "set": {
+      "rappel_count_note": "Three single-rope rappels on a 60 m rope is the common sequence; it can also be done as two double-rope rappels on 50 m ropes, which is a different set of stations rather than a different count of the same ones. No per-station distances are published, so none are listed: a 60 m rope doubled reaches 30 m, which bounds every rappel here, and a party reported a 50 m rope only just reaching the second station, so that one is nearer 25 m. Sources disagree on the top anchor — one describes three bolts with hangers and no chains, another describes chains — most likely a rebuild, so judge what is actually in place."
+    }
+  }
+}
