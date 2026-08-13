@@ -44,6 +44,7 @@ npm run check:ci-cancel # can a guard running on main be cancelled by the next m
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
+npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -1045,6 +1046,29 @@ a build error, but a screen that renders wrong or not at all.
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
   `audit:waypoint-order` is its **sibling, not a duplicate**: that one asks whether the *list* is
   sensible (ordering, duplicate pins) and needs no gpx at all. Run both.
+  - **THERE ARE THREE WAYPOINT AUDITS, AND TWO OF THEM ASK THE SAME QUESTION.**
+    `audit:waypoint-track` measures the *same* thing this does — is each pin on the route's own
+    line — with its own thresholds, and **neither script mentioned the other**. Against WA they
+    flag **218 and 240 routes with only 178 in common**. Read the two together or you are reading
+    one arbitrary half; do not quote either count as "the" number of waypoint problems.
+    - The divergence is mostly **tolerance, not disagreement about facts**: this one uses a flat
+      500 m for any non-trailhead/summit pin, `waypoint-track` uses **120 m by default with
+      per-type exemptions** (Bailout 2000, Hazard 600, Water 400, Campsite 500) — because a
+      Bailout pin is *supposed* to be off the line. So 53 routes visible to it and not to this
+      one are pins 120–500 m out, which is a judgement call rather than a miss.
+    - It is **ahead** of this script in two ways worth copying rather than duplicating: those
+      per-type tolerances, and a **blame column** (TRACK / PARTIAL / PIN) that separates "the
+      line is wrong" and "the track only covers the climb, so approach pins are legitimately
+      off it — NOT a defect" from the pins actually worth fixing. Its PARTIAL bucket is 38
+      routes this script reports as defects.
+    - It was **behind** in one, and it was the same defect twice: it had **no placeholder gate**,
+      so it measured pins against 2-point stubs and dots. `wa_sky_mountain_s_route` stores nine
+      points spanning **four metres** and it reported a pin "2,237 m off"; `wa_mount_terror_
+      stoddard_buttress` is 55 m of extent and reported 9,966 m. That is exactly what #834 fixed
+      in this file and nobody carried across — **the four-grade-parsers shape, one level up**.
+      Fixed: 240 → 231, and its lone "WRONG TRACK" was itself a 17 m placeholder.
+    - A point-count gate cannot see this (**nine points is not a suspicious number**) — the test
+      has to be **extent**. Skipped routes are now named and counted, not dropped.
   - **It has twice reported far more problems than exist, and both times the fix was to the
     audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
     every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
