@@ -32,6 +32,7 @@
 // Fails closed in the other direction too: walking zero screens is a failure, not a pass.
 import { NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 import { settledText } from "./lib/render-settle.mjs";
+import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -56,6 +57,12 @@ async function claimPort(start, span = 40) {
   }
   return null;
 }
+// Ask whether the database can answer at all BEFORE spawning a server or a browser. It costs
+// one request; skipping it cost 25 minutes and a cancelled job with no message on 2026-08-13
+// (29 of 53 overlays walked, then the wall). Nothing below this can settle without data, so
+// there is nothing to learn by starting. `--selftest-only` walks no screens and needs no data,
+// so it is exempt — the detector must stay provable while the DB is down.
+if (!argvSelfTestOnly) await assertDbReachable({ label: "check:overflow" });
 const port = await claimPort(5330);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;

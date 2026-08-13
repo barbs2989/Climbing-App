@@ -70,6 +70,38 @@ export const CASCADE_VOLCANOES = [
   { name: "Lassen Peak", state: "california", ft: 10457 },
 ];
 
+// Named desert towers of the Moab / Castle Valley / Fisher Towers / Indian Creek / Canyonlands
+// area. The Challenges card advertises 30, and like the Cascade 18 that number is NOT canonical —
+// no published roster fixes it. These are the named formations that are actually climbed, so the
+// tick is "have you summited this tower", exactly as for a peak list.
+//
+// Unlike the fourteener lists, this one plays to the catalog's strength: a desert tower IS a
+// climbing formation, so it exists as an area with routes rather than being absent the way a
+// walk-up fourteener is.
+export const DESERT_TOWERS = [
+  { name: "Castleton Tower", state: "utah" }, { name: "The Rectory", state: "utah" },
+  { name: "The Priest", state: "utah" }, { name: "Sister Superior", state: "utah" },
+  { name: "Lighthouse Tower", state: "utah" }, { name: "The Titan", state: "utah" },
+  { name: "Ancient Art", state: "utah" }, { name: "Echo Tower", state: "utah" },
+  { name: "Cottontail Tower", state: "utah" }, { name: "The Kingfisher", state: "utah" },
+  { name: "North Six Shooter", state: "utah" }, { name: "South Six Shooter", state: "utah" },
+  { name: "Moses", state: "utah" }, { name: "Zeus", state: "utah" },
+  { name: "Aphrodite", state: "utah" }, { name: "Standing Rock", state: "utah" },
+  { name: "Washer Woman", state: "utah" }, { name: "Monster Tower", state: "utah" },
+  { name: "Charlie Horse Needle", state: "utah" }, { name: "Dark Angel", state: "utah" },
+  { name: "Owl Rock", state: "utah" }, { name: "Argon Tower", state: "utah" },
+  { name: "Determination Tower", state: "utah" }, { name: "Sunflower Tower", state: "utah" },
+  { name: "Easter Island", state: "utah" }, { name: "King of Pain", state: "utah" },
+  { name: "Thumbelina", state: "utah" }, { name: "Eagle Rock Spire", state: "utah" },
+  { name: "The Nuns", state: "utah" }, { name: "Corral Spire", state: "utah" },
+];
+
+// The 46 Adirondack High Peaks (New York) and the New England 4,000-footers are both canonical
+// rosters, but they are NOT included here. Measured first, as the Colorado lesson requires: the
+// eastern trees in this catalog are crag trees too, so a hiking-peak roster would resolve to
+// almost nothing and would ship a list of names with no climbs behind them. Left for a peak
+// import rather than filled badly.
+
 // The highest point of each of the 50 states. `state` is the ltree label the catalog uses, so it
 // can disambiguate the many repeated names (Black Mountain, Castle Peak).
 //
