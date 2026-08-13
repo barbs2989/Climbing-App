@@ -7630,3 +7630,64 @@ audits/sql/2026-08-13-batch-108.sql` ran clean this time (Supabase healthy): all
 targets exist, no DELETE removes an only copy.
 
 Next batch continues alphabetically after `wa_tooth_and_claw` (see progress file).
+
+## 2026-08-13 -- Pass 2, Batch 109
+
+Eight routes, six peaks (The Tooth 1, Tower Mountain 1, Trapper Mountain 2, Main Peak/Mount
+Index 1, Tricouni Peak 1, Vesper Peak 1, Burgundy Spire 1): Tooth-Chair Traverse; Southwest
+Route/Standard (Tower Mountain); North Couloir and South Slopes (Trapper Mountain); Traverse
+of Mount Index; Southwest Slopes/Lucky Pass (Tricouni Peak); True Grit (Vesper Peak);
+Ultramega OK (Burgundy Spire).
+
+**Confirmed errors -> fix in `sql/2026-08-13-batch-109.sql`:**
+- Tooth-Chair Traverse: `length_m` (274, ~900 ft) is far short of the traverse's real crest
+  distance. Mountain Project's page for this exact route states "approximately 1.5 miles" on
+  the crest -- and that same page's other facts (the ~50 ft mandatory rappel off Bryant Peak,
+  the 3-4 hour crest timing) already match this row exactly, which is strong corroboration MP
+  is this row's real source. Corrected to 2,414 m (1.5 mi). `dist_km` (4.8, already tracking
+  MP's separately stated "4-5 miles in and out" under this app's one-way/doubling convention)
+  needed no change.
+
+**Flagged for human review (not auto-fixed):**
+- Trapper Mountain South Slopes -- likely data contamination, not a simple factual slip. This
+  row's `approach` text, `waypoints`, and `gpx` all describe reaching Trapper Lake via a boat/
+  floatplane trip to Stehekin, then Harlequin Campground and a Devore Creek Trail junction --
+  but every other signal points to Trapper Lake actually being reached from Cascade Pass:
+  this row's own `beta` field says so, the sibling `wa_trapper_mountain_north_couloir` row
+  (same peak) approaches via Cascade Pass/Pelton Basin with matching Trapper Lake coordinates,
+  and independent sources (a WTA trip report and an NWHikers.net thread titled "Trapper lake
+  via Cascade Pass") both document that exact approach with real hiking times. No source found
+  ties Trapper Mountain to Devore Creek at all -- that drainage is the real, documented approach
+  to a *different* set of peaks (Tupshin, Devore, Flora), reached from the same Harlequin
+  Campground/Stehekin River Trail start point this row uses, which is the likely source of the
+  mix-up. The stored `gpx` is also internally broken regardless of source: it jumps roughly
+  25 km between its 2nd and 3rd points with nothing in between, which no continuous hike could
+  produce. `gain_ft`/`loss_ft`/`dist_km` (5800/5800/30.58) are all downstream of the same wrong
+  approach. Not fixed here -- correcting it means re-deriving real waypoints/mileage for the
+  Cascade Pass approach, which is a re-enrichment job, not a one-line correction this audit can
+  respons­ibly guess at.
+- Tricouni Peak Southwest Slopes: `length_m` (274, same 900 ft figure as the Tooth-Chair
+  Traverse fix above) has no route-specific source behind it -- no source found states an exact
+  footage for this route's Class 3-4 summit scramble, and the identical value recurring on an
+  unrelated route in the same batch reads like a shared placeholder rather than two coincidental
+  measurements. Left alone rather than guessing a replacement number.
+
+**Clean (5):** Tower Mountain Southwest Route (1913 FA, 8,444 ft elevation, and the loose-rock/
+class-3 gully hazard description all confirmed against SummitPost/Wikipedia/ListsOfJohn),
+Trapper Mountain North Couloir (1970s foot FA by Roper/Avreitt/Ferguson and the 2012 Stewart/
+Spoonde first ski descent both confirmed, including the unusual "Spoonde" spelling), Traverse
+of Mount Index (Beckey/Schoening August 1950 FA "in sneakers over two nights" confirmed
+verbatim), True Grit (Darin Berdinka 2015 FA and spelling confirmed via his own Mountain
+Project/Instagram profile; pitch_detail lengths sum exactly to the stored length_m), Ultramega
+OK (Mark Allen/Tom Smith July 24, 2004 FA confirmed via a CascadeClimbers trip report; pitch_
+detail lengths sum exactly to the stored length_m -- the overview's separate "~900 ft" prose
+undershoots the precise 310 m/1,017 ft by about 13%, but it's explicitly an approximate figure
+in prose, not a structured field, so not treated as an error).
+
+**Tooling note:** WebFetch was blocked network-wide again for every specific route/reference
+page attempted (mountainproject.com, turns-all-year.com) -- same block recorded in the last
+several batches. All findings rest on WebSearch snippet synthesis; flagged per-item above where
+that materially weakens confidence. `npm run check:sql -- audits/sql/2026-08-13-batch-109.sql`
+ran clean: the 1 write target exists, no DELETE removes an only copy.
+
+Next batch continues alphabetically after `wa_ultramega_ok` (see progress file).

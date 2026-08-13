@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 2,
-  "last_processed_id": "wa_tooth_and_claw",
+  "last_processed_id": "wa_ultramega_ok",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2415,6 +2415,24 @@
         "wa_tomyhoi_peak_southeast_ridge",
         "wa_tooth_and_claw"
       ]
+    },
+    {
+      "batch_number": 109,
+      "date": "2026-08-13",
+      "route_ids": [
+        "wa_tooth_chair_traverse",
+        "wa_tower_mountain_southwest_route",
+        "wa_trapper_mountain_north_couloir",
+        "wa_trapper_mountain_south_slopes",
+        "wa_traverse_of_mount_index",
+        "wa_tricouni_peak_southwest_slopes",
+        "wa_true_grit_2",
+        "wa_ultramega_ok"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-08-13-batch-109.sql"
     }
   ]
 }
