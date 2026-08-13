@@ -320,6 +320,31 @@ function assessRow(cand, field) {
     changedTabs: keys.filter((k) => renderedAlone[k] && renderedAlone[k] !== BASELINE[k]) };
 }
 
+// Did this column's value actually reach a screen? POSITIVE evidence only.
+//
+// #863 made a failed query fail closed, so NO DATA now reliably means "the query succeeded
+// and no route has this column populated". That is the remaining hole: a genuinely empty
+// column that is ALSO in KNOWN still reaches the stale test below, and the weaker phrasing
+// of that test — "the verdict is something other than NEVER RENDERS" — reads NO DATA as
+// "this renders now, remove it". Same wrong advice #863 documents, arriving down a path its
+// fix does not cover, because no query failed.
+//
+// Defined up here with a self-test rather than beside its one use, because the self-test has
+// to run BEFORE the DB work: this guard's healthy output is "no findings", which is exactly
+// what a broken detector prints. Same reasoning as check:overflow's injected shapes.
+const RENDERED = (v) => !/^NEVER RENDERS$|^NO DATA$|^UNPROVABLE/.test(v);
+for (const [verdict, want] of [
+  ["renders", true], ["partial (2 of 5)", true], ["conditional (alpine only)", true],
+  ["used, not echoed (derived/summarised)", true],
+  ["NEVER RENDERS", false], ["NO DATA", false], ["UNPROVABLE (numeric/short)", false],
+]) {
+  if (RENDERED(verdict) !== want) {
+    console.error(`check:field-renders FAILED — self-test: RENDERED(${JSON.stringify(verdict)}) should be ${want}.`);
+    console.error("The stale-allowlist test depends on this, and nothing has been measured yet.");
+    process.exit(1);
+  }
+}
+
 const results = [];
 for (const [col, field] of FIELDS) {
   // Stop early when the database is simply DOWN. If the first several columns each fail
@@ -482,9 +507,20 @@ if (known.length) {
   for (const r of known) console.log("  " + r.col + " — " + KNOWN[r.col]);
 }
 // A name in KNOWN that has started rendering is stale bookkeeping; say so rather than let the
-// list rot into a permanent excuse.
-const stale = Object.keys(KNOWN).filter((c) => !results.some((r) => r.col === c && r.verdict === "NEVER RENDERS"));
+// list rot into a permanent excuse. RENDERED demands positive evidence — see its definition
+// above for why "not NEVER RENDERS" is not the same question.
+const stale = Object.keys(KNOWN).filter((c) => results.some((r) => r.col === c && RENDERED(r.verdict)));
 if (stale.length) { console.log("\nSTALE allowlist entries (these now render — remove them): " + stale.join(", ")); process.exit(1); }
+// The other direction the list can rot: a name matching NO column at all. That is bookkeeping
+// about a column that has been renamed or dropped, and nothing above can see it — the stale
+// test only ever looks at columns that ARE in `results`. It would otherwise sit here forever
+// describing something gone. Precedent: #863 found `permit_url` had never been a column.
+const orphan = Object.keys(KNOWN).filter((c) => !results.some((r) => r.col === c));
+if (orphan.length) {
+  console.error("\ncheck:field-renders FAILED — allowlist names no such column: " + orphan.join(", "));
+  console.error("Renamed, dropped, or never existed? Fix the list rather than leaving it describing a column that is gone.");
+  process.exit(1);
+}
 const cond = results.filter((r) => r.verdict.startsWith("conditional"));
 const unprovable = results.filter((r) => r.verdict.startsWith("UNPROVABLE") || r.verdict === "NO DATA");
 console.log("\n" + results.length + " fields · " + dead.length + " render nowhere · " + cond.length
