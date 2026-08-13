@@ -199,6 +199,57 @@ if (!call) {
   }
 }
 
+// ── rule 4: the approval reads every key the form offers ─────────────────────
+// The gap between the two guards that existed. This one proved the function never LOSES a
+// column it once wrote; check:add-route-fields proved a field is in `SS`, which makes
+// session-merge work and says nothing about approval. Neither asks whether the form offers
+// something the function never wrote AT ALL — so #862 and #877 widened the form by 8 fields,
+// every one was accepted, toasted as submitted, and dropped on approval. Third instance of
+// this shape after 0132/0135.
+//
+// Matching on `v->>'key'` rather than on column names deliberately: the function itself is the
+// only honest record of which proposal key feeds which column, and a hand-maintained rename
+// map would rot exactly where this guard needs to be right.
+const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+let core;
+try { core = fs.readFileSync(CORE, "utf8"); } catch (e) {
+  console.error(`FAIL  cannot read ${CORE}: ${e.message}`); process.exit(1);
+}
+const fIdx = core.indexOf("const FIELDS={rock:[");
+if (fIdx < 0) {
+  fail.push("`const FIELDS={rock:[` not found in ClimbMatchCore.jsx — AddRoute's field list moved, so this guard can no longer tell what the form offers");
+} else {
+  let d = 0, j = core.indexOf("{", fIdx);
+  for (let i = j; i < core.length; i++) { if (core[i] === "{") d++; else if (core[i] === "}") { d--; if (!d) { j = i; break; } } }
+  const fSeg = core.slice(fIdx, j + 1);
+  const offered = new Set();
+  for (const m of fSeg.matchAll(/([a-z]+):\[([^\]]*)\]/g))
+    m[2].split(",").map((x) => x.trim().replace(/"/g, "")).filter(Boolean).forEach((k) => offered.add(k));
+  // three form keys are renamed on submit; AddRoute's own `_prop` is where that happens
+  const SUBMIT_AS = { descent: "descentText", height: "length", pitches: "pitchCount" };
+  // read by another mechanism, not from the proposal jsonb
+  const NOT_FROM_PROPOSAL = new Set(["grade"]); // grade_num arrives as p_grade_num, grade as v->>'grade'
+  const latestBody = fs.readFileSync(path.join(MIGRATIONS, latest.file), "utf8");
+  const readKeys = new Set([...latestBody.matchAll(/v\s*->>?\s*'([A-Za-z_][A-Za-z0-9_]*)'/g)].map((m) => m[1]));
+  const unread = [...offered]
+    .map((k) => [k, SUBMIT_AS[k] || k])
+    .filter(([, sk]) => !readKeys.has(sk) && !NOT_FROM_PROPOSAL.has(sk))
+    .sort();
+  if (!offered.size) {
+    fail.push("parsed 0 offered fields out of FIELDS — the walk broke, not an empty form");
+  } else if (unread.length) {
+    fail.push(
+      `${latest.file} never reads ${unread.length} key(s) the ADD-ROUTE FORM offers:\n` +
+      unread.map(([k, sk]) => `        form field ${k.padEnd(14)} submitted as ${sk}`).join("\n") +
+      `\n        Each is collected from the climber, accepted into \`contributions\` and toasted as\n` +
+      `        submitted — then dropped the moment an admin approves. Offering a field and not\n` +
+      `        writing it is worse than not offering it.`
+    );
+  } else {
+    console.log(`rule 4  every one of the ${offered.size} fields the form offers is read by the approval  ok`);
+  }
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (note.length) { console.log(""); note.forEach((n) => console.log(`note  ${n}`)); }
 if (fail.length) {

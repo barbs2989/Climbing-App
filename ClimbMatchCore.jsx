@@ -2040,8 +2040,24 @@ function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,session,onSubmit
   <div style={grp}>{"3 · Route name"}</div><input aria-label="Route name" value={name} onChange={e=>setName(e.target.value)} placeholder="e.g. Northeast Ridge" style={Object.assign({},fld,{marginTop:6})}/>{dupes.length?<div style={{fontSize:12,color:C.amber,marginTop:6,lineHeight:1.5,background:C.amberBg,border:"1px solid "+C.amber+"44",borderRadius:9,padding:"8px 11px"}}>{"Possible match: "+dupes.map(r=>r.name).join(", ")+". If it's the same line, add your beta there instead."}</div>:null}
   <div style={grp}>{"4 · The climb"}</div>{sf("grade")?<div><div style={lab}>{"Grade"}</div>{gradeScale.length?<div style={{display:"flex",gap:5,flexWrap:"wrap",padding:"2px 0"}}>{gradeScale.map(g=>{const on=grade===g;return <button key={g} onClick={()=>setGrade(on?"":g)} style={sm(on)}>{g}</button>;})}</div>:<input aria-label="Grade" value={grade} onChange={e=>setGrade(e.target.value)} placeholder="Grade" style={fld}/>}</div>:null}
   {sf("pitches")?<div><div style={lab}>{"Pitches"}</div><div style={{display:"flex",gap:6}}>{[["single","Single-pitch"],["multi","Multi-pitch"]].map(o=>{const on=pitch===o[0];return <button key={o[0]} onClick={()=>setPitch(on?"":o[0])} style={chip(on)}>{o[1]}</button>;})}</div></div>:null}
-  {(sf("height")||sf("gain")||sf("dist"))?TwoCol(sf("height")?numF("h","Height / length (ft)","e.g. 600",height,setHeight,1):(sf("gain")?numF("g","Elevation gain (ft)","e.g. 4100",gain,setGain,1):<div style={{flex:1}}/>),(sf("height")&&sf("gain"))?numF("g","Gain (ft)","e.g. 4100",gain,setGain,1):(sf("dist")?numF("d","Distance (mi)","e.g. 9.5",dist,setDist,1):<div style={{flex:1}}/>)):null}
-  {sf("dist")&&sf("height")?<div>{numF("d2","Distance (mi)","e.g. 9.5",dist,setDist,0)}</div>:null}
+  {(function(){/* ONE list, laid out two per row, rather than a hand-rolled pair of nested
+     ternaries. The old version had slots for height, gain and dist and NONE for `loss` — so
+     alpine, mountaineering, scrambling and hiking each declared a field the form never drew.
+     Two things followed, and the second is why this is a bug rather than a missing feature:
+     `loss` was submitted as null forever, and `checks` counts `sf("loss")?!!loss:1`, so the
+     completeness meter could never reach 100% on those four disciplines no matter what the
+     climber filled in. Driving the layout off the same sf() gate the rest of the form uses
+     means a field can no longer be declared without being drawn. */
+    var nums=[];
+    if(sf("height"))nums.push(["h","Height / length (ft)","e.g. 600",height,setHeight]);
+    if(sf("gain"))nums.push(["g","Elevation gain (ft)","e.g. 4100",gain,setGain]);
+    if(sf("loss"))nums.push(["l","Elevation loss (ft)","e.g. 4100",loss,setLoss]);
+    if(sf("dist"))nums.push(["d","Distance (mi)","e.g. 9.5",dist,setDist]);
+    if(!nums.length)return null;
+    var rows=[];
+    for(var i=0;i<nums.length;i+=2){var a=nums[i],b=nums[i+1];
+      rows.push(<div key={"num"+a[0]}>{TwoCol(numF(a[0],a[1],a[2],a[3],a[4],1),b?numF(b[0],b[1],b[2],b[3],b[4],1):<div style={{flex:1}}/>)}</div>);}
+    return <div>{rows}</div>;})()}
   {/* "Face / route-group" is SuggestFix's own label for this column, reused verbatim so the two
      forms name one thing the same way. It is NOT "Aspect" below it: aspect is the compass
      direction the rock points, this is which named face or route-group the line belongs to
