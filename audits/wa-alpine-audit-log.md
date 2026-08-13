@@ -7514,3 +7514,20 @@ line below the `SET`, same shape as a WARN noted (and manually verified clean) i
 is confirmed healthy, before applying any statement in this file.**
 
 Next batch continues alphabetically after `wa_the_triad_east_peak` (see progress file).
+
+## 2026-08-13 -- Run skipped: Supabase unreachable
+
+This scheduled run could not start batch 108. Every request to
+`ofuofhojhbcrcahuotya.supabase.co` (REST endpoint, anon key, same query shape that
+worked in batch 107) failed to connect at all -- 14 attempts across ~16 minutes
+(02:32-02:44 UTC), each either a bare curl timeout or (per `curl -v`) a completed TLS
+handshake followed by no HTTP response within 12s. No Cloudflare error page was even
+returned this time, which is a step worse than batch 107's tail-end 522s from the same
+host earlier the same day (01:06-01:20 UTC) -- this looks like a continuation of, or a
+second instance of, that same outage rather than a new unrelated issue. `github.com`
+was reachable throughout, so this is Supabase-side, not local/proxy.
+
+No batch was picked, no SQL written, `wa-alpine-audit-progress.json` is unchanged --
+`last_processed_id` is still `wa_the_triad_east_peak`.
+The next run should just retry batch 108 (routes after `wa_the_triad_east_peak`
+alphabetically) as normal; nothing here needs manual recovery.
