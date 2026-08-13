@@ -159,6 +159,21 @@ const queryFailures = [];
 // Queries that only succeeded on a retry — reported, never swallowed.
 const retriedOk = [];
 
+// A request must be able to give up on its own. `fetch` has NO default timeout, so a
+// connection the server accepts and then never answers hangs this script forever — and in
+// CI that surfaces as an opaque job timeout with no output, which is strictly worse than
+// the false pass this change exists to remove. 12s is chosen against measured behaviour,
+// not picked round: the anon statement timeout fires at 3s and a cold connection costs
+// 3.8-6.4s, so anything still silent at 12s is hung rather than slow.
+const REQ_TIMEOUT_MS = 12000;
+// Retrying 45 columns three times is only affordable while the failures are occasional.
+// When the DB is slow ACROSS THE BOARD every column burns its full retry budget and the run
+// stops fitting any sane CI limit, so retries are abandoned once this much wall-clock has
+// gone on them; later columns then get a single attempt each and the run still finishes and
+// still fails closed. Bounding the spend, not the honesty.
+const RETRY_BUDGET_MS = 8 * 60 * 1000;
+const startedAt = Date.now();
+
 async function rowWith(col) {
   // order=id.asc is load-bearing: PostgREST gives no ordering guarantee, so an unordered
   // limit=8 returns a DIFFERENT eight rows run to run. That made the whole guard
@@ -201,10 +216,11 @@ async function rowWith(col) {
   // warmth, and the same column passes on one run and times out on the next. One retry was
   // not enough (measured — a single retry still went red), hence three with a backoff.
   let lastErr = null;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  const maxAttempts = (Date.now() - startedAt) < RETRY_BUDGET_MS ? 3 : 1;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     if (attempt > 1) await new Promise((r) => setTimeout(r, 400 * (attempt - 1)));
     try {
-      const r = await fetch(url, { headers: headers(KEY) });
+      const r = await fetch(url, { headers: headers(KEY), signal: AbortSignal.timeout(REQ_TIMEOUT_MS) });
       if (!r.ok) { lastErr = `HTTP ${r.status} ${(await r.text().catch(() => "")).slice(0, 160)}`; continue; }
       const rows = await r.json();
       // Print a retry that WORKED. Absorbing it silently would convert a measurable flake
@@ -216,7 +232,11 @@ async function rowWith(col) {
       // A thrown fetch (socket hangup, DNS, connection reset) never reached `!r.ok` at all —
       // it crashed the script with an unhandled rejection, which reads as a broken guard
       // rather than a broken database. Caught here so it lands in the same report.
-      lastErr = String((e && e.message) || e);
+      // Name our own abort for what it is. "The operation was aborted due to timeout" on its
+      // own reads like a server message and sends the reader to the DB; this one is ours.
+      lastErr = (e && e.name === "TimeoutError")
+        ? `no response within ${REQ_TIMEOUT_MS / 1000}s (aborted by this script, not by the server)`
+        : String((e && e.message) || e);
     }
   }
   queryFailures.push({ col, err: lastErr });
@@ -280,6 +300,17 @@ function assessRow(cand, field) {
 
 const results = [];
 for (const [col, field] of FIELDS) {
+  // Stop early when the database is simply DOWN. If the first several columns each fail
+  // every attempt, the remaining forty tell you nothing you do not already know, and
+  // grinding through them turns a 3-minute answer into a quarter-hour one — against a
+  // never-responding server the full walk was measured at ~14min. This only ever short-
+  // circuits a run that is already going to fail closed. The test is that EVERY result so
+  // far is a query failure, so a single success anywhere disables it for the whole run —
+  // a sporadically flaky column can never trigger it.
+  if (queryFailures.length >= 5 && results.length === queryFailures.length) {
+    console.log(`\n(abandoning after ${queryFailures.length} consecutive failed column queries — the read is down, not the app)`);
+    break;
+  }
   const rows = await rowWith(col);
   if (!rows.length) { results.push({ col, field, verdict: "NO DATA", tabs: [] }); continue; }
 
@@ -401,6 +432,10 @@ if (queryFailures.length) {
     for (const f of transient.slice(0, 6)) console.log(`  ${f.col}: ${f.err}`);
     if (transient.length > 6) console.log(`  … and ${transient.length - 6} more`);
     console.log("  Nothing here is a finding about the code, and no allowlist entry below is stale.");
+    if ((Date.now() - startedAt) >= RETRY_BUDGET_MS) {
+      console.log(`  (The ${RETRY_BUDGET_MS / 60000}min retry budget ran out, so later columns got one attempt each`);
+      console.log("   rather than three — say so rather than let the attempt count differ silently.)");
+    }
     console.log("  Re-run it. If it persists, check the Supabase project is up and the anon key is valid.");
   }
   process.exit(1);
