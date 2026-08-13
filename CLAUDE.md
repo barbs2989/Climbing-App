@@ -37,6 +37,7 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
+npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
