@@ -7846,3 +7846,50 @@ fix, and no reason to send it to a human.
 
 No SQL file this batch — nothing to write. Next batch continues alphabetically after
 `wa_amphitheater_mountain_finger_of_fatwa` (see progress file).
+
+## Batch 113 — 2026-08-13
+
+Eight routes, next-alphabetically after `wa_amphitheater_mountain_finger_of_fatwa`: both
+Middle Finger Buttress lines on Amphitheater Mountain (Left Side, Right Side), the North
+Ridge, Pilgrimage to Mecca, and the West Route (all five share the Amphitheater Mountain
+peak); Anderson's Thumb Standard Route (Mount Anderson massif, Olympics); and both routes on
+Argonaut Peak (Southeast Ridge, Northeast Couloir).
+
+**Confirmed fixes (0):** none this batch.
+
+**Clean (8):** all eight. Middle Finger Buttress Left Side (5.10b, 4 pitches) and Right Side
+(5.9, 7 pitches) both confirmed against Mountain Project/theCrag search snippets — grade and
+pitch count match exactly for both lines, including that the Left Side begins in a chimney
+with an excellent hand crack and the Right Side climbs NW-side cracks with a pitch-3 crux.
+Pilgrimage to Mecca's FA (Darin Berdinka and Owen Lunz, July 2004) confirmed verbatim against
+Climbing.com's own feature on the route, including the ~20-mile approach and sub-2-hour climb
+time. The North Ridge's grade (5.5) and Wikipedia's cited 5-pitch count fall within the
+stored 5-7 pitch range the route's own beta text already documents as line-dependent — no
+contradiction. Argonaut Peak's elevation (8,457 ft) reconfirmed exactly against Wikipedia
+(already checked peak-level in batch 112 but rechecked here as a cross-reference), and its
+Southeast Ridge route (Grade II, 5.6, 8 pitches, "two single or one double rope rappel into
+the notch") matches a SummitPost description of the same route almost verbatim, including the
+rappel count into the notch — strong corroboration that the route's own 2026-07-15
+self-correction (renaming it from a phantom "East Ridge" to the real, documented Southeast
+Ridge) was the right fix. The Northeast Couloir's permit/access text (Enchantment Permit Area
+quota system for overnight, free day-use self-issue) is internally consistent with its Stuart
+Lake/Colchuck Lake trailhead sitting inside the Colchuck Zone of the Enchantment Permit
+boundary, unlike the Southeast Ridge's Ingalls Creek approach which correctly notes it falls
+outside that boundary.
+
+**Needs human verification:** none newly flagged. Anderson's Thumb's technical grade, FA, and
+most gear detail remain unverifiable against any public source (no Mountain Project/SummitPost
+page for the Thumb itself) — but the route's own `data_quality.gaps` and `corrections` fields
+already document this exhaustively as auto-generated/unconfirmed, so re-flagging it here would
+just restate what the record already says about itself. Its embedded waypoint note (documenting
+a prior fix from a badly-misplaced West Fork Dosewallips trailhead coordinate to
+47.7434,-123.2033) was spot-checked against a real West Fork Dosewallips River Trail trailhead
+coordinate found via search (47.74359,-123.19138) — within ~900m, consistent with a trail-
+junction area rather than a new error.
+
+**Tooling note:** WebFetch was blocked network-wide again for every specific reference page
+attempted (mountainproject.com, mountaineers.org, publications.americanalpineclub.org) — same
+block recorded in every batch this pass. All findings rest on WebSearch snippet synthesis.
+
+No SQL file this batch — nothing to write. Next batch continues alphabetically after
+`wa_argonaut_peak_northeast_couloir` (see progress file).
