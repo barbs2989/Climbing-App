@@ -7556,3 +7556,77 @@ No batch was picked, no SQL written, `wa-alpine-audit-progress.json` is unchange
 `last_processed_id` is still `wa_the_triad_east_peak`. Next run: retry batch 108 as
 normal. If this keeps recurring, worth checking the Supabase project dashboard directly
 (billing/pause state, compute add-on) rather than continuing to retry blind from here.
+
+## 2026-08-13 -- Pass 2, Batch 108 (Supabase outage recovered)
+
+Supabase is healthy again as of this run -- a bare `GET /rest/v1/` returned 401 (gateway up)
+and a real `routes` query returned 200 in ~1s, first try. The outage logged in the two prior
+skipped-run entries held from at least 01:06 UTC to sometime before this run started; total
+downtime across three consecutive scheduled runs was 3h38m+. No action needed here beyond
+noting recovery -- this was infrastructure-side (PGRST002, DB unreachable), not this audit's
+to fix.
+
+Eight routes, five peaks (North Early Winters Spire 1, Three Fingers 3, Three Queens 2,
+Tomyhoi Peak 1, Lexington Tower 1): The West Face; North Peak (Lookout route), Middle Peak
+(South Face), South Peak via Lookout (Three Fingers); Middle Peak South Chimney, West Peak
+West Ridge-West Face (Three Queens); Southeast Ridge (Tomyhoi); Tooth and Claw (Lexington
+Tower).
+
+**Confirmed errors -> fixes in `sql/2026-08-13-batch-108.sql`:**
+- The West Face: `fa` misspelled "Dave Beckstad" -- corrected to "Dave Beckstead" (theCrag and
+  other independent sources agree on this spelling for Beckey's 1965 partner).
+- The West Face: `overview` stated "roughly 500 ft (152 m)" against this same row's own
+  `length_m` of 201 (~660 ft) -- external sources (theCrag: 200m) support the 660 ft figure,
+  not 500 ft. Fixed the prose to match the structured field.
+- Three Fingers South Peak via Lookout: `loss_ft` (4200) vs `gain_ft` (5750) for a route whose
+  own `descent` field says "Reverse the route" -- no source describes an alternate lower exit,
+  so this reads as a data-entry bug. Set `loss_ft` = `gain_ft` = 5750.
+- Three Queens Middle Peak (South Chimney): `dist_km` (4.3) was roughly half the true one-way
+  distance -- the row's own primary source (a 2007 trip report that already matches this row's
+  gain/loss/timing figures exactly) states ~10 miles round trip, which converts to ~8.05 km
+  one-way under this app's doubling convention. The stored 4.3 km suspiciously matches a
+  *partial* leg the same report separately describes (a 2.8-mile hike back to the car from the
+  base of the talus). Corrected to 8.05.
+- Tooth and Claw: `gpx`'s first two points were byte-identical low-precision duplicates of the
+  topout waypoint, while the higher-precision true summit fix (Peakbagger-confirmed) already
+  sat correctly as the track's last point -- dropped the duplicate leading point.
+
+**Flagged for human review (not auto-fixed):**
+- The West Face: Blue Lake Trailhead elevation is internally inconsistent (5,200 ft in
+  waypoints vs 5,400 ft in approach text), and external sources themselves disagree across a
+  5,200-5,400 ft range -- needs a human pick, not a guess.
+- The West Face: FFA partner "Dave Tower, 1985" -- Risse's general association with an early
+  free ascent of this route is corroborated, but the specific partner name/year could not be
+  independently confirmed this pass.
+- Tooth and Claw: the *sibling* route's (West Face) FFA date/partner overlaps with the item
+  above -- same open question, not a sign of the two routes' FA records being confused with
+  each other (both are independently sourced and distinct).
+- Three Fingers South Peak via Lookout: overview's "built ... by Darrington-area mountaineers"
+  is technically accurate (Forest Service personnel/locals) but risks being misread as
+  crediting The Mountaineers club, which only took over trail maintenance decades later in
+  1985 -- wording risk, not a factual error.
+- Three Fingers Middle Peak: `high_point_ft` (6800) passes the sanity check (below both the
+  confirmed North Peak 6,870 ft and South Peak ~6,854-6,870 ft) but the exact Peakbagger figure
+  for this specific subsidiary summit could not be pulled live (page unreachable this run).
+- Three Queens Middle Peak / West Peak: neither route carries a summit waypoint, and West Peak
+  also lacks a trailhead waypoint and never captures its named intermediate camp (Spectacle
+  Point) -- completeness gaps, not factual errors.
+- Three Queens West Peak: Spectacle Point camp elevation (5,800 ft) and `length_m` (183) could
+  not be independently verified -- thin documentation on an obscure line.
+- Tomyhoi Peak Southeast Ridge: `length_m` (61) is plausible as a "technical crux only" figure
+  (route is `pitches: 0`) but no source states it directly.
+
+**Clean (2):** Three Fingers North Peak (Lookout route) and Three Queens West Peak matched
+external sourcing on every checked field (elevation, grade, gain/loss, distance, FA/lookout
+history where applicable) with no internal inconsistencies.
+
+**Tooling note:** WebFetch was blocked network-wide for every specific route/reference page
+attempted across all five research passes this batch (Mountain Project, SuperTopo, theCrag,
+SummitPost, Wikipedia, USFS, Peakbagger, WTA, StephAbegg, NC Mountain Guides, and others) --
+same domain-family block recorded in batch 107 and the two preceding it. All findings rest on
+WebSearch snippet synthesis of those same sources rather than direct page reads; flagged
+per-item above where that materially weakens confidence. `npm run check:sql --
+audits/sql/2026-08-13-batch-108.sql` ran clean this time (Supabase healthy): all 5 write
+targets exist, no DELETE removes an only copy.
+
+Next batch continues alphabetically after `wa_tooth_and_claw` (see progress file).
