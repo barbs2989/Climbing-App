@@ -1014,6 +1014,36 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
+**A climber's agreed correction must out-vote the enrichment — and the rule has now been
+broken three times, in three different shapes.** `_rapEdited` (rappels, #787/#791),
+`_descEdited` (descent text, #897) and `_rackEdited` (rack, #907) all say the same sentence about a
+different column, and each was found separately because *the failure never looks like a bug*:
+the column is populated, the section renders, and a plausible value is on screen. Only the
+climber who made the correction knows the screen is wrong, and they have no way to report it.
+  - The three failed **differently**, which is why finding one did not find the next.
+    `rappelDetail` displayed **nothing**; `descentText` was out-voted **by string length**, so a
+    shorter correction lost to longer stale prose; `rack` was not discarded at all — the
+    contribute form's `rack` key merges into **`gearTiers.required`**, which `routeRackFor` does
+    not read, so the correction rendered in the GearTiers panel while the RACK box **kept
+    showing the value it replaced**. One Overview tab asserting two different racks for one
+    route, with nothing saying which is current, and the form still offering the superseded
+    text as "current" to the next climber.
+  - **The gate is load-bearing, not defensive**, and the rack case is the clearest example:
+    `gearTiers.required` is populated by seed data and enrichment on routes nobody has touched,
+    so preferring it unconditionally inverts the rule for the whole catalog. Proven rather than
+    argued — dropping `_rackEdited` fails two controls in
+    `scripts/oneoff/probe-rack-correction-reaches-the-rack-box.mjs`.
+  - **Only rendering can settle these.** Every identifier is bound, every column is populated,
+    and grep cannot tell "the correction reaches a screen" from "the correction reaches *the*
+    screen it was made on". The rack probe finds the hosting sub-tab rather than assuming it,
+    then slices the markup around the RACK heading — because the correction *was* on the tab,
+    just not in the box, and a tab-wide match reports that as fixed. Same vacuous-pass shape as
+    `check:bare` matching the Safety tab's "Fire & smoke" link.
+  - `check:rappel-readers` guards the first of the three statically. **The other two are guarded
+    only by their probes**, which is recorded here rather than implied: the general rule
+    ("a reader of an enrichment column that has a contribute-form key must consult
+    `_contribFields`") is not yet enforced anywhere, and a fourth instance would ship silently.
+
 - **`check:rappel-readers`** enforces one sentence: **a function that reads
   `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
   correction out-votes the station-by-station enrichment rather than the reverse. #787 found
