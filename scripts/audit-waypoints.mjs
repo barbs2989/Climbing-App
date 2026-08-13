@@ -213,6 +213,36 @@ if (!scoped.length) {
 // ---------------------------------------------------------------------------
 // measure
 // ---------------------------------------------------------------------------
+/* PER-FAULT POPULATIONS, measured independently of the classification below.
+   ---------------------------------------------------------------------------
+   `F`'s categories are deliberately EXCLUSIVE, by two separate mechanisms, and both are
+   correct for a TOTAL:
+
+     * the `else if` chains — a trailhead that is both off-line AND not-at-start is filed
+       once, under the more specific fault;
+     * `reported` — #834's dedupe, which stopped one pin being counted by both its own
+       category and the generic off-line loop (that double count is why the headline went
+       878 -> 753 -> 646).
+
+   Neither is a bug. But an exclusive category answers "how many findings are there", NOT
+   "how many routes carry this fault", and reading it as the second understates it — badly.
+   A sibling audit reported 36 routes as "trailhead not first" where the true population was
+   120: the other 84 tripped an earlier gate. I quoted this file's per-category numbers as
+   populations earlier and they were floors.
+
+   So: ONE number that sums (the exclusive total, unchanged) and ONE set that populates
+   (below, overlapping and labelled as such). Trying to make a single set do both is what
+   produced the confusion. These are route-id sets, so a route with three bad pins counts
+   once per fault, and they are printed only as context — `actionable` is untouched. */
+const POP = {
+  trailheadOffLine: new Set(),
+  trailheadNotAtStart: new Set(),
+  truncatedTrack: new Set(),
+  summitOffLine: new Set(),
+  trackNotEndingAtSummit: new Set(),
+  waypointOffLine: new Set(),
+};
+
 const F = {
   unrouted: [],           // gpx too sparse to measure against
   noTrack: [],            // waypoints but no gpx at all
@@ -434,6 +464,11 @@ for (const r of scoped) {
     if (w.lat == null || w.lng == null) continue;
     const line = toPolyline(w.lat, w.lng, track);
     const dStart = haversine(w.lat, w.lng, start[0], start[1]);
+    // Populations first, so each predicate is asked INDEPENDENTLY of the chain below. Same
+    // thresholds, no `else` — this is the "how many routes carry this fault" half.
+    if (line.m > TH_ON_LINE) POP.trailheadOffLine.add(r.id);
+    if (dStart > TH_AT_START) POP.trailheadNotAtStart.add(r.id);
+    if (line.m > TRUNCATED && dStart > TRUNCATED) POP.truncatedTrack.add(r.id);
     // Note (3): if the track ALSO starts far from this trailhead, the track is what is
     // wrong. Reporting that as a bad waypoint would send someone to rewrite good data.
     if (line.m > TRUNCATED && dStart > TRUNCATED) {
@@ -475,6 +510,10 @@ for (const r of scoped) {
        defect, and rewriting the waypoint would destroy good data. So the beyond-an-endpoint case
        belongs to trackNotEndingAtSummit alone, and summitOffLine keeps the lateral case its name
        actually describes. */
+    // Populations, asked independently: a summit beyond the track's end is ALSO off the line,
+    // and the exclusive filing below deliberately reports only the more specific of the two.
+    if (line.m > SUMMIT_TOL) POP.summitOffLine.add(r.id);
+    if (line.m > SUMMIT_TOL && (beyondEnd || beyondStart)) POP.trackNotEndingAtSummit.add(r.id);
     if (line.m > SUMMIT_TOL && (beyondEnd || beyondStart)) {
       reported.add(w);
       F.trackNotEndingAtSummit.push({ ...tag, wp: w.name, trackEndToSummitM: m0(dEnd), offLineM: m0(line.m), pts: track.length, past: beyondEnd ? "end" : "start" });
@@ -490,6 +529,10 @@ for (const r of scoped) {
     const line = toPolyline(w.lat, w.lng, track);
     // `reported` suppresses the DUPLICATE only. The `placed` bookkeeping below is untouched, so
     // the ordering test still sees every on-line pin including trailheads and summits.
+    // Population counts EVERY off-line pin, including the ones `reported` suppresses below.
+    // That suppression is right for the total and wrong for "how many routes have a pin off
+    // their own track", which is this line's question.
+    if (line.m > WP_TOL) POP.waypointOffLine.add(r.id);
     if (line.m > WP_TOL) { if (!reported.has(w)) F.waypointOffLine.push({ ...tag, wp: w.name, type: typeOf(w), offLineM: m0(line.m) }); }
     else placed.push({ name: w.name, type: typeOf(w), along: alongTrack(track, line.seg, line.t), distMi: w.distMi });
   }
@@ -563,9 +606,33 @@ const clean = ORDER.every(k => !F[k].length);
 if (clean) console.log("No waypoint sits off its own track.");
 
 if (JSON_OUT) {
-  fs.writeFileSync(JSON_OUT, JSON.stringify({ scope: STATE, routes: scoped.length, findings: F }, null, 2));
+  fs.writeFileSync(JSON_OUT, JSON.stringify({
+    scope: STATE, routes: scoped.length, findings: F,
+    // Serialised alongside the findings so a consumer cannot read one without the other, and
+    // named for what it is rather than "counts".
+    populationsOverlapping: Object.fromEntries(Object.entries(POP).map(([k, v]) => [k, [...v]])),
+  }, null, 2));
   console.log(`Wrote ${JSON_OUT}`);
 }
 
-console.log(`Nothing was written to the database. ${actionable} waypoint problems warrant a look;` +
+/* Two numbers, and they answer different questions. The block above is the exclusive
+   classification: every finding filed once, so it SUMS to the total below. This block asks each
+   predicate independently, so a route appears under every fault it carries — which is what you
+   need to size work, and what the exclusive counts understate. They do NOT sum; adding them
+   double-counts on purpose. */
+const popRows = Object.entries(POP).filter(([, v]) => v.size);
+if (popRows.length) {
+  console.log("\nPER-FAULT ROUTE POPULATIONS — these OVERLAP and must NOT be added up.");
+  console.log("A route appears once per fault it carries. Use these to size work; use the");
+  console.log("exclusive counts above to tally findings. Where a population exceeds its");
+  console.log("category, the difference is routes whose fault was filed under a more specific one.");
+  for (const [k, v] of popRows.sort((a, b) => b[1].size - a[1].size)) {
+    const excl = Array.isArray(F[k]) ? new Set(F[k].map((x) => x.id)).size : null;
+    const gap = excl != null && v.size > excl ? `   (+${v.size - excl} filed under a more specific fault)` : "";
+    console.log(`  ${String(v.size).padStart(5)}  ${k}${excl != null ? `   exclusive: ${excl}` : ""}${gap}`);
+  }
+}
+
+console.log(`\nNothing was written to the database. ${actionable} waypoint problems warrant a look` +
+  ` (exclusive findings, so this total sums);` +
   ` ${F.unrouted.length + F.noTrack.length} routes could not be measured at all.`);
