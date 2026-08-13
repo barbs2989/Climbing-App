@@ -38,8 +38,18 @@ eq("aspect 'NW' -> nw", dirOfAspect("NW"), "nw");
 eq("aspect 'n/nw' takes the letters", dirOfAspect("n/nw"), "nnw" in DEG ? "nnw" : null);
 eq("aspect null -> null", dirOfAspect(null), null);
 
-console.log("\n— landform —");
-eq("Face wins over Ridge when both appear", landform("Northeast Face Direct off the North Ridge"), "face");
+console.log("\n— summit nouns: a direction on a SUMMIT is not an aspect —");
+// Warrior Peak: "Southeast Peak" is which of two summits, and the row says so itself. Its NW aspect
+// is not a contradiction. Found on the first real run.
+eq('"Southeast Peak Standard" names a summit, not an aspect', dirInName("Southeast Peak Standard (Home Lake approach)"), null);
+eq('"West Face / South Summit" still reads WEST', dirInName("West Face / South Summit (Standard)"), "w");
+
+console.log("\n— landform: earliest word wins —");
+eq("Face wins when it comes first", landform("Northeast Face Direct off the North Ridge"), "face");
+// "glacier" is in the FACE set, so a face-first test read this ridge route as a face and flagged its
+// correct N aspect. Found on the first real run.
+eq('"West Ridge / Colonial Glacier" is a RIDGE', landform("West Ridge / Colonial Glacier"), "ridge");
+eq('"South Slopes / Ruth Glacier" is a face', landform("South Slopes / Ruth Glacier"), "face");
 eq("'South Slopes' is a face", landform("South Slopes"), "face");
 eq("'East Ridge' is a ridge", landform("East Ridge"), "ridge");
 eq("'Beckey Route' is other", landform("Beckey Route"), "other");

@@ -44,10 +44,17 @@ export const dirInName = name => {
   // "Southwest Slope - Southeast Ridge" is a southwest line. Scanning in list order read both
   // backwards and produced three false disagreements on the first real run. Ties go to the longer
   // word so "northeast" still beats "north" at the same offset.
+  // A direction bound to a SUMMIT noun names which top you are going to, not which way the rock
+  // faces. "Southeast Peak Standard" is the route up Warrior Peak's southeast summit — the row says
+  // so itself, "the higher of Warrior Peak's two summits, versus the lower northwest summit" — and
+  // its NW aspect is not a contradiction. Same shape as "South Summit" and "North Peak".
+  const SUMMIT_NOUN = /^\s*(?:peak|summit|tower|spire|pinnacle|horn|dome)\b/;
   let best = null;
   for (const [w, k] of WORDS) {
     const m = new RegExp(`\\b${w}\\b`).exec(s);
-    if (m && (!best || m.index < best.i || (m.index === best.i && w.length > best.len))) best = { i: m.index, k, len: w.length };
+    if (!m) continue;
+    if (SUMMIT_NOUN.test(s.slice(m.index + w.length))) continue;
+    if (!best || m.index < best.i || (m.index === best.i && w.length > best.len)) best = { i: m.index, k, len: w.length };
   }
   if (best) return best.k;
   // Bare compass abbreviations appear as words in real route names ("NE Ridge", "SW Couloir"), and
@@ -74,9 +81,17 @@ export const dirOfAspect = a => {
 // the same thing, so a 90-degree disagreement there IS a contradiction.
 const RIDGE = /\b(ridge|arete|arête|buttress|spur|rib|crest)\b/i;
 const FACE = /\b(face|wall|slab|slabs|couloir|gully|gulley|chute|slope|slopes|glacier|headwall)\b/i;
-// FACE is tested first: "Northeast Face Direct off the North Ridge" is a face route. A name carrying
-// both words is describing a face reached from a ridge far more often than the reverse.
-export const landform = name => FACE.test(name) ? "face" : RIDGE.test(name) ? "ridge" : "other";
+// Whichever word comes FIRST, by the same principle as the direction scan: a route name leads with
+// what it is. Testing FACE before RIDGE looked right — "Northeast Face Direct off the North Ridge"
+// is a face route — but it read "West Ridge / Colonial Glacier" as a face, because `glacier` is in
+// the FACE set. That row's aspect of N is CORRECT and its own `face` column says why ("final class 3
+// section on the north-facing upper slopes"): a west ridge with north-facing upper slopes is a
+// ridge, and only the ridge rule tolerates the perpendicular aspect that follows from it.
+export const landform = name => {
+  const f = FACE.exec(name), r = RIDGE.exec(name);
+  if (f && r) return f.index <= r.index ? "face" : "ridge";
+  return f ? "face" : r ? "ridge" : "other";
+};
 // "other" — a named line with no landform word ("Beckey Route") — is treated as a ridge, the
 // conservative side, because nothing in the name says it is a single plane.
 //
