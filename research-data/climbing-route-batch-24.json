@@ -1,0 +1,90 @@
+{
+  "wa_la_bohn_peak_southwest_slopes": {
+    "area": "wa_la_bohn_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Southwest slopes from La Bohn Gap",
+        "notes": "From the broad 5,900-ft saddle of La Bohn Gap, ascend talus and open slopes on the southwest side, staying left (west/south) of the broad west ridge, to gain the 6,585 ft summit. Route-finding trap at the gap: USGS maps mislabel it roughly 2/3 mile southeast of its true position, so verify you are at the correct broad saddle before committing to slopes east of it, which end in a precipitous drop toward Lake Rowena. Water is scarce above La Bohn Lakes."
+      }
+    ]
+  },
+  "wa_lincoln_peak_standard": {
+    "area": "wa_lincoln_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Southwest basin and bergschrund",
+        "notes": "An alpine start from the ~6,100 ft treeline camp gets the team into the southwest basin and across the bergschrund crux while it is still cold and firm."
+      },
+      {
+        "n": 2,
+        "label": "X Couloir to the summit",
+        "notes": "Roughly 1,500 ft of 30-40 degree snow plus a steep serac step in the X Couloir to the 9,101 ft summit; the timing of the alpine start is what keeps this ground cold and firm."
+      }
+    ]
+  },
+  "wa_little_big_chief_mountain_west_route": {
+    "area": "wa_little_big_chief_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Open slopes to the west ridge/west face",
+        "notes": "From the Chief Creek crossing, faint but generally trackable switchbacks climb the open slopes toward Little Big Chief's west ridge/west face — 4,000+ ft of gain above the ford, a full day's effort in its own right. As trees thin out it becomes cross-country travel over heather benches and talus, with loose scree and route-finding (rather than any single obstacle) as the main hazards."
+      },
+      {
+        "n": 2,
+        "label": "Exposed summit ridge",
+        "class": "3-4",
+        "notes": "The final few hundred feet narrow onto an exposed summit ridge, with class 3-4 scrambling through a notch just below the top."
+      }
+    ]
+  },
+  "wa_little_tahoma_east_shoulder": {
+    "area": "wa_little_tahoma",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Fryingpan Glacier to Whitman Notch",
+        "notes": "From the 7,000-7,350 ft high camp, gain the Fryingpan Glacier, rope up, and traverse southwest to 9,100 ft Whitman Notch — the first view of the Whitman Glacier. Roped glacier travel."
+      },
+      {
+        "n": 2,
+        "label": "Upper Whitman Glacier to the high shoulder",
+        "notes": "Cross the upper Whitman Glacier to the peak's high shoulder."
+      },
+      {
+        "n": 3,
+        "label": "Final snow couloir and summit block",
+        "class": "3-4",
+        "notes": "The final steep snow couloir leads to the Class 3-4 summit block."
+      }
+    ]
+  },
+  "wa_luna_glacier": {
+    "area": "wa_phantom_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text covers only reaching Luna Cirque (Big Beaver Trail / Luna Creek bushwhack, or the Access Creek variation) and stops there. No climbing above the cirque is described, so there is nothing to re-home."
+  },
+  "wa_luna_peak_southeast_slopes": {
+    "area": "wa_luna_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text ends at Luna Col (7,200ft) and explicitly frames everything before it as leading up to 'the final push' — the talus gullies, the traverse south of Point 6,730 and the basin crossing at ~6,600ft are all travel to the col. The climb above the col is not described."
+  },
+  "wa_massie_peak_west_route": {
+    "area": "wa_massie_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Broad west ridge to the summit",
+        "class": "2-3",
+        "notes": "Leave the Massie Lake High Route short of Pass No Pass and turn uphill (climber's right) onto Massie Peak's broad west ridge, then follow the ridge crest east for a bit over a mile to the 7,533 ft summit — talus and heather with a few short rock steps, generally Class 2 with brief Class 3 moves near the summit block. Route-finding is the main hazard: blazes thin out above treeline and the line is unsigned and easy to lose in flat light, so carry a map/GPS track. Snow and ice linger on shaded sections of the ridge well into summer; many parties carry microspikes and a light ice axe before mid-July."
+      }
+    ]
+  },
+  "wa_mcmillan_spire_west_west_ridge": {
+    "area": "wa_mcmillan_spire_west",
+    "climbing_route": [],
+    "skip_reason": "The text runs only to the base of the snow/rock gully below the 7,200 ft col between Inspiration Peak and West McMillan Spire, and says outright that the technical climbing begins at that col. Everything described (the notch descent into Terror Basin, the slab traverse, the short Terror Glacier crossing) is approach; the West Ridge itself is not described."
+  }
+}

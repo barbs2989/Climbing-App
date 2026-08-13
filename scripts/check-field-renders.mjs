@@ -61,6 +61,11 @@ const FIELDS = [
   ["seasonal_guidance", "seasonalGuidance"], ["seasonal_hazards", "seasonalHazards"],
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],
   ["pitch_detail", "pitchDetail"], ["rappel_detail", "rappelDetail"], ["rappel_count_note", "rappelCountNote"],
+  // 0122's three. This list is HAND-MAINTAINED, so a new column is invisible here until someone
+  // adds it — and these three were the ones most worth watching: `bivy`'s panel has already been
+  // left defined and mounted NOWHERE once, by a merge that kept main's copy of the dense line the
+  // mount lived on. The guard that exists to catch exactly that could not see the column.
+  ["approach_variants", "approachVariants"], ["climbing_route", "climbingRoute"], ["bivy", "bivy"],
   ["gear", "gear"], ["detailed_rack", "detailedRack"], ["what_to_bring", "whatToBring"],
   ["gear_confidence", "gearConfidence"],
   ["pro_tips", "proTips"], ["pro_needs", "proNeeds"], ["beta", "beta"],

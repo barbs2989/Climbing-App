@@ -45,6 +45,13 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:approach-scope # does a route's approach text run past the base of the climb?
+npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
+npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
+npm run audit:waypoint-track # is every waypoint on (or near) the route's own GPS track?
+npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
+npm run check:enrichment-traceable # does a climbing_route batch invent anything?
+npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 ```
 
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
@@ -809,6 +816,60 @@ a build error, but a screen that renders wrong or not at all.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:rappel-lengths`** asks whether a rappel table states a distance the rope it describes
+  can actually reach. **A rope doubled through an anchor reaches HALF its length** — one 60m rope
+  gives 30m rappels, two 70m ropes give 70m — and where a source published no per-station
+  distance, an earlier enrichment pass wrote the rope's *capacity* into `lengthM` instead of null.
+  `wa_ellation` stored 8 x 70m, i.e. 560m of rappel down an 8-pitch route, while its own prose said
+  the raps "approach the rope's full 35m reach". `wa_overcoat_peak_southeast_route` had the
+  identical 2x error. A climber rigs for a rappel twice as long as the rope allows; this is the
+  rope-off-the-end shape, and it is the worst thing in this dataset to get wrong.
+  - **It is not a "does every rappel have a length" check, and must never become one.** `null` is
+    the CORRECT value where no source gives a distance, and writing nulls rather than inventing
+    numbers is what the repair did. **Halving is also wrong**: a rappel with no published distance
+    may be 35m or 15m, so a halved figure replaces one fabricated number with another.
+  - **30m is both a rope size and the correct half of a 60m rope**, so the rope-size rule is scoped
+    to stations >=50m. Including 30 flagged 22 correct routes. Separately, any station over 60m is
+    impossible on less than two ropes, and that rule does not need a rope to be *named*.
+  - Two false-positive classes were found by running it, and both were regexes that flagged correct
+    work — which teaches people to ignore a guard. `/double[- ]rope\b/` does not match "double
+    **ropes**", so it condemned `wa_action_potential`, whose descent text lists all five lengths
+    individually *and* names double ropes. And matching "rope length" in the count note flagged
+    three routes whose notes accurately said things like "depending on rope length/number of ropes
+    carried"; the admission being looked for is specifically the rope's **capacity** standing in
+    for a measurement.
+  - The third rule is about the **note, not the numbers**: a table can be corrected while
+    `rappel_count_note` still states the method that produced the wrong value, and the next pass
+    then re-derives it. That is why `enrich:apply` grew a `set` path for the scalar prose columns.
+  - Read-only, anon key, fails closed on an empty read *and* on zero rappel tables. **Not a build
+    gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
+    reasoning as `check:counts`. Injection-tested, 4 cases at the bottom of the script; note that
+    `--inject=clean` (every length nulled) must **PASS**.
+  - Reader-side, `RappelTable` prints `—` for a null length. Its total was summed with `||0`, which
+    turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
+    total" and read as the whole descent. It now sums only known stations and says "60 m across 2
+    of 3" when the line is partial.
+- **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
+  `descent_text` says are not made. Both describe the same descent of the same climb, so a
+  disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its
+  sample — stored **"6 raps to 30m"** while its descent text said the Cascadian Couloir walk-off
+  needs "no rappelling required (0 rappels)" and that the only rappel is an optional bypass taken on
+  the way **up**. `wa_mount_baker_coleman_headwall` stored "2-3 rappels to 30m" against a text
+  saying no trip report describes a fixed rappel on its descent at all.
+  - **No coverage check can see this.** They ask whether the column is populated, and it is — a
+    wrong claim and a right one are identical from there.
+  - **Report-only, and it must stay that way.** Measured precision on the first run was **6
+    flagged, 1 real**. A walk-off descent can still involve a real rappel elsewhere on the day
+    (Buckner's North Face rappels the Sharkfin Col step on the *return leg*, and its text says to
+    treat that, not the summit slopes, as the route's rappel hazard), and rappelling is often a
+    conditional alternative to downclimbing rather than a contradiction (Stickney). Read both
+    fields in full before changing either. The exit code says "things to look at", never "bugs".
+  - The claim regex matches only a **leading** number. Prose that merely mentions a rappel is not
+    an assertion that the descent has N of them, and matching it buries the real hits.
+  - Two of the six were fixed as **phrasing** rather than errors: Colchuck's Northeast Couloir led
+    with a rappel sequence its own text calls an emergency option while discouraging that descent
+    entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
+    the wrong descent is its own defect even when every fact is true.
 - **`check:rappel-readers`** enforces one sentence: **a function that reads
   `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
   correction out-votes the station-by-station enrichment rather than the reverse. #787 found
@@ -1111,6 +1172,41 @@ a build error, but a screen that renders wrong or not at all.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
+  separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
+  `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
+  them apart stops the audit growing flags only a pipeline cares about.
+  - The problem it exists for: `approach` is meant to describe the walk in, but a route with no
+    pitch table had nowhere else to put a description of the climbing, so that description went
+    into the approach and the prose runs past the base and keeps going to the summit. 360 WA
+    routes carry it; 254 had no pitch table. Migration 0122's `climbing_route` is where it goes.
+  - Batches are produced by **re-homing, never researching** — every fact must already be in
+    that route's own `approach`. That instruction is worth nothing unless something checks it,
+    so **`check:enrichment-traceable`** verifies that every number and every load-bearing
+    feature/direction word in a segment also appears in the source. Prose may be rewritten
+    freely; specifics may not be invented. Run it on a batch BEFORE `enrich:apply`.
+  - It took two rounds to make that guard right, and both are the same lesson. It first flagged
+    "Traverse to the summit gully" as untraceable where the source said "travers**ing** higher"
+    — a guard that flags correct work teaches people to ignore it. The fix (stem both sides)
+    still failed because the stemmer never stripped a trailing `e`, so "traverse" and
+    "traversing" never met. Over-stemming is safe here: the same function runs on both sides.
+  - Injection-tested: adding *"Rappel 45 m from a bolted anchor on the cornice above the
+    chimney"* to a Buckner segment is caught on the number, "cornice" and "chimney" — and
+    correctly does NOT flag "rappel", which that route's approach really does mention.
+  - **An empty result is a real result.** Eldorado's Northwest Couloir gets zero segments
+    because its approach stops at the couloir base; Mount Anderson gets two despite `pitches:7`
+    because the text stops at Flypaper Pass. Those routes stay on the candidate list. They are a
+    gap in the data, and leaving the gap visible beats filling it from imagination.
+  - `enrich:apply` is the single write path and must stay so: it asserts each route's `area_id`
+    before writing (only ~9% of route ids are peak-scoped, so a name-shaped id proves nothing),
+    writes through `patchRow`, then **re-reads and reconciles**. Its verification builds the
+    check list from what was actually written — an earlier version omitted `climbing_route`, so
+    a route setting only that column satisfied every remaining clause vacuously and printed
+    "verified" having confirmed nothing.
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+    section was found **defined and mounted nowhere** after a merge kept main's copy of the
+    dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
