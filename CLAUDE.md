@@ -394,8 +394,53 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
+    rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
+    "no route has this column populated". Main went red twice on 2026-08-12 with all 46
+    columns reading `NO DATA`, and the only line either run printed was
+    `STALE allowlist entries (these now render — remove them): data_quality` — i.e. it told
+    the author to delete correct bookkeeping from `KNOWN` because the DB was down. Following
+    it would have removed the recorded reason a column is not rendered and the guard would
+    then have called that column dead forever after. #863 fixed it.
+    - That red was an **accident**, and the default was a **false pass**: the stale test is
+      the only thing on that path that exits non-zero when nothing rendered, so with an empty
+      allowlist the identical outage prints `ok — every measurable enriched column reaches a
+      screen` and exits **0**. Measured, not argued.
+    - **It was already lying on GREEN runs**, which matters more. Against the last green main
+      run: 44 verdict rows identical, and `approach` reported `NO DATA` in CI while it
+      demonstrably renders on three tabs. A silent timeout laundered into a coverage gap on a
+      *passing* run. Do not read green here as "it read the data".
+    - It now fails closed **before any verdict is interpreted** — ahead of the stale test in
+      particular, since that is what turned an outage into an accusation. A thrown fetch is a
+      separate path from `!r.ok` (connection refused used to escape as a raw `ECONNREFUSED`
+      stack, which reads as a broken guard rather than a broken database), and a healthy `200`
+      with `[]` for **every** column fails too — that is RLS rejecting every row or a wrong
+      project, not a clean catalog.
+    - **A `42703` gets its own message.** "This guard names a column that does not exist" and
+      "the database is unreachable" need opposite repairs. That paid immediately: `permit_url`
+      **is not a column** — `routes` has 95 and exactly one permit-ish one, `permit` — so every
+      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed. Not a missing
+      feature: `permitUrl` is seed-only, `lib/db.js` maps `permits: r.permit`, and the
+      contribute form does not offer it.
+    - **Retries are five, and the number is measured.** The failure being retried is `57014`,
+      the 3s anon statement timeout, so the *client* timeout is irrelevant — the server gives
+      up on its own and only a later attempt against a warmer cache can succeed. A run
+      recorded `season — succeeded on attempt 3` and still lost 17 of 45 columns, so three was
+      the boundary rather than a margin. The same query measured 233–654ms for
+      access/hazards/gear and timed out for approach/descent/road **minutes apart, with the
+      slow set moving between runs** — contention on an unindexed `not.is.null` scan over
+      ~205k routes. Backoff is exponential because a fixed 400ms re-asks inside the same busy
+      moment, and a total retry budget still caps the run so a wholesale-slow project degrades
+      to one attempt per column, ends, and fails closed. A retry that **succeeds** is printed:
+      absorbing it would turn a measurable flake into an invisible one.
+    - CI timeout is 25 minutes for this reason, not because a healthy run is slow (~40–85s).
   - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
-    long-beta block fails naming `beta`.
+    long-beta block fails naming `beta`. The fail-closed half is injection-tested against a
+    **local HTTP server standing in for PostgREST** — 500s, connection refused, `200 []`,
+    `400 42703`, and fail-once-then-succeed — which needs no database and caught the
+    wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
+    **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
+    if `.env.local` exists in the worktree and the injection quietly hits the real DB.
 - **`check:a11y-badges`** asks whether any control announces its badge count welded to its
   label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
   Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
@@ -1444,6 +1489,49 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     the missing file and its own file count; breaking the `db.js` vocabulary regex fails
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+
+**Can the database even answer, before a guard spends half an hour finding out?**
+`scripts/lib/db-preflight.mjs` asks once, up front, and is used by `check:ui`, `check:zero`
+and `check:overflow` (#865). `check:field-renders` answers the same question its own way,
+per column.
+  - **The failure it exists for.** When Supabase went unreachable on 2026-08-13,
+    `check:overflow` was **cancelled at its 25-minute job wall** having walked 6 tabs, 6 route
+    sub-tabs and **29 of 53 overlays** — producing no diagnosis at all. A cancelled job, no
+    failure message, and no way for the next author to tell an outage from their own
+    regression. It was never *stuck*: these guards decide a screen is done by waiting for its
+    text to stop changing (`render-settle.mjs`), and with no data arriving **nothing ever
+    settles**, so every screen burns its full 45s timeout. 53 overlays at 45s is ~40 minutes
+    on its own — fifty futile waits at full price.
+  - Measured, before → after: `check:overflow` 25m16s cancelled → **31s**; `check:ui` 6m6s →
+    **38s**; `check:zero` 6m34s → **40s**, all naming the database.
+  - **Wired into three guards, NOT all of them, and the restraint is the point.**
+    `check:overlay-scroll` (2m59s) and `check:a11y-badges` (6m35s) both **passed** during the
+    same total outage: their verdicts are about layout and announced names and do not need
+    catalog data on screen. A preflight there would convert honest passes into false failures.
+    Only a guard whose assertions need the data gets one — `check:ui` opens a DB route **by
+    name**, and `check:zero` asserts no screen is still loading.
+  - **What each of those printed instead, which is why the message matters.** `check:ui` said
+    `could not choose a country — "United States" was not among the options`, which reads as a
+    broken area picker. `check:zero` said `2 problem(s) a brand-new account would see: still
+    showing a loading state after 45s` — the symptom honest, the attribution not: no
+    brand-new account would see that, the database was down.
+  - Three exemptions, each deliberate: `--selftest-only` on `check:overflow` needs no data and
+    the detector must stay provable while the DB is down; `--url` on `check:ui`, because local
+    env describes the server that script **spawns** and says nothing about an app served
+    elsewhere; and **no DB configured returns "skipped", not a failure**, so seed-mode runs in
+    a fresh clone or a worktree with no dotfiles keep working.
+  - **The tolerance was wrong first, and CI proved it within the hour.** At 10s × 2 it
+    **false-aborted** the moment the project came back — `check:overflow` gave up at 37s while
+    `check:zero`, same commit and minutes apart, got its answer and passed. That is the one
+    outcome this must never produce, since the whole job is telling dead from slow, and people
+    would learn to re-run it blindly. Measured immediately after recovery:
+    `db preflight: ok (7913ms)`. Warm is 554ms and cold 2.7s, so the typical case was never
+    the problem — a project that has just come back has empty caches. Now **3 attempts at 20s
+    with backoff**, ~65s worst case before abandoning. The asymmetry is the reasoning: being
+    slow to declare an outage costs a minute, declaring one wrongly costs a red job somebody
+    has to investigate.
+  - It fails **closed**, and it claims nothing about rendering — only "could the data have
+    arrived at all".
 
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
