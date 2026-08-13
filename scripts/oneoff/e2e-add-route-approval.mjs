@@ -67,7 +67,7 @@ async function rest(path, opts = {}, headers = svcH) {
   return { status: r.status, body };
 }
 
-let user = null, routeId = null, contribId = null, skipped = false;
+let user = null, routeId = null, contribId = null, skipped = false, adminToken = null;
 
 try {
   // ── 0. leave nothing from an earlier dead run ────────────────────────────────
@@ -150,7 +150,35 @@ try {
   else ok(`refused: ${String(denyB.message || "").slice(0, 80)}`);
 
   // ── 4. approve, through the RPC the review UI calls ──────────────────────────
-  const ADMIN_JWT = process.env.ADMIN_JWT;
+  // `--as-admin` mints a session for the EXISTING admin over the admin API rather than
+  // making a new one, so no privilege is ever granted (see the header). Three rules:
+  //   - the token is never printed, never put on a command line, never written to disk. A
+  //     magiclink token signs you in; treat it exactly like a password.
+  //   - it refuses unless there is EXACTLY ONE admin, so it cannot pick the wrong identity.
+  //   - it is revoked in teardown with `scope=local`. The default logout is GLOBAL, which
+  //     would sign the real person out of their own browser — a rude way to end a test.
+  let ADMIN_JWT = process.env.ADMIN_JWT;
+  if (!ADMIN_JWT && process.argv.includes("--as-admin")) {
+    step("mint a session for the existing admin (nothing is granted)");
+    const admins = (await rest(`profiles?select=id,name&is_admin=is.true`)).body;
+    if (!Array.isArray(admins) || admins.length !== 1) {
+      throw new Error(`expected exactly 1 admin, found ${Array.isArray(admins) ? admins.length : "?"} — refusing to guess`);
+    }
+    console.log(`  admin: ${admins[0].name} (${admins[0].id})`);
+    const au = await (await fetch(`${URL_}/auth/v1/admin/users/${admins[0].id}`, { headers: svcH })).json();
+    if (!au?.email) throw new Error("could not read the admin's email");
+    const gl = await (await fetch(`${URL_}/auth/v1/admin/generate_link`, { method: "POST", headers: svcH,
+      body: JSON.stringify({ type: "magiclink", email: au.email }) })).json();
+    const th = gl?.properties?.hashed_token;
+    if (!th) throw new Error(`generate_link gave no token: ${JSON.stringify(gl).slice(0, 160)}`);
+    const vr = await (await fetch(`${URL_}/auth/v1/verify`, { method: "POST",
+      headers: { apikey: ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "magiclink", token_hash: th }) })).json();
+    if (!vr?.access_token) throw new Error(`verify gave no session: ${JSON.stringify(vr).slice(0, 160)}`);
+    ADMIN_JWT = vr.access_token;
+    adminToken = ADMIN_JWT;
+    ok("session minted — token not printed, revoked (scope=local) in teardown");
+  }
   if (!ADMIN_JWT) {
     step("approval half SKIPPED — no ADMIN_JWT supplied");
     console.log("  The submit half above is proven. The approval itself is NOT, and this script");
@@ -244,6 +272,13 @@ try {
     chk.status === 404 || chk.status === 403 ? ok("account deleted") : bad(`ACCOUNT STILL PRESENT (${chk.status}): ${user.id}`);
     const prof = (await rest(`profiles?select=id,is_admin&id=eq.${user.id}`)).body;
     Array.isArray(prof) && prof.length === 0 ? ok("profile row gone (admin flag with it)") : bad(`PROFILE STILL PRESENT: ${JSON.stringify(prof)}`);
+  }
+  if (adminToken) {
+    // scope=local — the default is GLOBAL and would sign the real admin out everywhere.
+    const lo = await fetch(`${URL_}/auth/v1/logout?scope=local`, { method: "POST",
+      headers: { apikey: ANON, Authorization: `Bearer ${adminToken}` } });
+    lo.status === 204 || lo.status === 200 ? ok("minted admin session revoked (scope=local — their browser is untouched)")
+      : bad(`could not revoke the minted session (${lo.status})`);
   }
   const orphans = (await rest(`routes?select=id&name=like.ZZ%20QA%20Approval%20Probe*`)).body;
   Array.isArray(orphans) && orphans.length === 0 ? ok("no probe routes remain anywhere") : bad(`ORPHANS: ${JSON.stringify(orphans)}`);
