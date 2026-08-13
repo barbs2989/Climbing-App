@@ -35,6 +35,7 @@ const ROOT = process.cwd();          // never hardcode a worktree — the predec
                                      // measured a different branch's code than the one you ran it in
 const require_ = createRequire(import.meta.url);
 const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
 const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners"];
 
@@ -419,6 +420,26 @@ for (const [verdict, want] of [
     process.exit(1);
   }
 }
+
+// Ask the shared preflight ONE cheap question before walking 54 columns.
+//
+// Measured on 2026-08-13: with Supabase returning 503 to everything, this guard spent
+// **6m12s** grinding through the whole list to conclude the read had failed, while
+// `check:ui` and `check:overflow` — which share `db-preflight.mjs` — said the same thing in
+// ~20s and stopped. Same answer, eighteen times the cost, and six minutes of output that has
+// to be read before the one line that matters.
+//
+// It is COMPLEMENTARY to the per-column fail-closed below, not a replacement. The preflight
+// only sees a TOTAL outage; the failure this guard hits most often is PARTIAL (2 of 54 columns
+// timing out on the slow ones while the rest answer in 200ms), and only the per-column path
+// can catch that. Keep both: the preflight makes the common catastrophic case cheap, the
+// per-column path keeps the subtle case honest.
+await assertDbReachable({
+  label: "check:field-renders",
+  why: "check:field-renders pulls a real value per column from this database. With it "
+    + "unreachable every one of the 54 queries fails in turn, which takes minutes and ends in "
+    + "the same verdict this one request already gives.",
+});
 
 const results = [];
 for (const [col, field] of FIELDS) {
