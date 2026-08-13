@@ -417,6 +417,31 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **A column with ZERO populated rows was unguarded by construction, which is the worst
+    possible moment for it.** The method pulls a REAL value, so a column nothing has written
+    yet has nothing to pull: it reported `NO DATA` and was never checked — exactly when you
+    most want to know the reader is wired, i.e. just after a migration adds the column and
+    before any backfill. `0135` shipped the write for `prot_rating`, `start_type`, `landing`,
+    `pads`, `rock` and `crux`, and #855 then had to prove they reach a screen with a **106-line
+    one-off**, because this guard structurally could not answer it. That one-off is now folded
+    in and deleted — a verification nobody runs is not a verification.
+    - `SENTINELS` injects a distinctive value (`ZZCRUXZZ`) onto a bare route and looks for it,
+      proving the **reader** independently of whether any row is populated. All six render, on
+      Overview, in the TECH STATS tiles.
+    - **Two traps, inherited from #855's probe rather than rediscovered.** `dbRouteToCamel`
+      emits **both** `rock` and `rockType` from the single `rock` column, so patching one
+      reports a healthy column as dead — mimic the MAPPER, never the column. And `pads` is
+      numeric: the tiles render through `<CountUp/>`, which is `useState(0)` reaching its
+      target only inside a `useEffect`, and effects do not run under `renderToStaticMarkup`.
+      So a numeric tile renders **0** and its value can never be asserted here — those are
+      judged on "did the page change", never on the number. Same warning `check:bare` carries.
+    - A third base (`BOULDER`) exists because `landing`, `pads` and `start_type` are shown on a
+      boulder problem and nowhere else; probing them from `crag` reports live columns as dead —
+      the discipline-gating trap this file already records for `RouteGearCheck`.
+    - `NEVER RENDERS (sentinel)` fails the run like any other unrendered column — matched with
+      `startsWith`, not `===`, or the whole sentinel class could report a defect and still exit
+      0. Injection-tested: deleting the `Crux` tile from `RouteDetail` fails naming `crux` and
+      printing the injected patch, and restoring it goes green.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46
