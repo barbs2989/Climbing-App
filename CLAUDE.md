@@ -37,11 +37,30 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:a11y-badges # no control announces its badge count welded to its label
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
+npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
+npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
+npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
+npm run check:disc-labels # one spelling per discipline, everywhere (in build)
+npm run check:claims # no success toast for a write that only runs signed-in (in build)
+npm run check:a11y-names # every control a screen reader reaches has a name (in build)
+npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
+npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
+npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
+npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
+npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
+npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
+npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
+npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
+npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
+npm run check:crew  # guards the crew "Ready" calculation (in build)
+npm run check:migrations # two migrations must never share a number (in build)
+npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
@@ -49,9 +68,13 @@ npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:w
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
-npm run audit:waypoint-track # is every waypoint on (or near) the route's own GPS track?
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
+npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
+npm run audit:rappels      # do a route's rappel fields agree with each other?
+npm run audit:hazard-redundancy # how often does KNOWN HAZARDS say the same thing twice?
+npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
+npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 ```
 
@@ -419,9 +442,19 @@ a build error, but a screen that renders wrong or not at all.
     - **A `42703` gets its own message.** "This guard names a column that does not exist" and
       "the database is unreachable" need opposite repairs. That paid immediately: `permit_url`
       **is not a column** — `routes` has 95 and exactly one permit-ish one, `permit` — so every
-      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed. Not a missing
-      feature: `permitUrl` is seed-only, `lib/db.js` maps `permits: r.permit`, and the
-      contribute form does not offer it.
+      run had queried a phantom, got a 400, and filed it as `NO DATA`. Removed — this guard's
+      subject is column → screen, and with no column there is nothing to query.
+      - **The reason first given for that removal was wrong, and the wrong reason is the
+        dangerous half.** It said the form does not offer `permitUrl` and no DB route can have
+        one; both are false, and together they would justify deleting a working feature. It
+        **is** offered — `{k:"permitUrl",label:"Permit link"}` lives in **`RouteDetail`'s own
+        `FIELDS`** list, not `ClimbMatch.jsx`'s, which is exactly how the first check missed
+        it — it is in `SS`, and RouteDetail renders `<a href={route.permitUrl}>` beside the
+        permit prose. A DB route reaches it through the **contribution overlay**, which needs
+        no column at all: `dbContribs` rows are grouped by field, gated on `SS[rc.field]` and
+        applied onto the route object client-side once the 3-agree gate passes. Not every
+        contributable field is column-backed, so "absent from `routes`" does **not** mean
+        "unreachable" — check `SS` and the overlay before concluding a field is dead.
     - **Retries are five, and the number is measured.** The failure being retried is `57014`,
       the 3s anon statement timeout, so the *client* timeout is irrelevant — the server gives
       up on its own and only a later attempt against a warmer cache can succeed. A run
@@ -547,12 +580,21 @@ a build error, but a screen that renders wrong or not at all.
     app tree: the `injection passes because the fault is out of frame` shape exactly. #818
     asked for the promotion to be done "from a quiet machine"; this is it, with the
     exclusion corrected.
-  - **The known gap, printed rather than hidden: route detail is currently NOT REACHED.**
-    That is the richest layout in the app and where both recorded bugs of this class lived,
-    so it is the coverage that matters most. The drill-in (state select → Routes → open a
-    row) does not complete under the scaffold config; the run says `NOT REACHED` on its own
-    line rather than quietly walking six fewer screens. Fixing it is the top follow-up — do
-    not read a green run as covering the route page.
+  - **Route detail IS covered, and failing to reach it is now a hard failure.** This used to
+    be the known gap — the drill-in (state select → Routes → open a row) did not complete
+    under the scaffold config, so the richest layout in the app, and the one where both
+    recorded bugs of this class lived, printed `NOT REACHED` on every run. It is reached by
+    **navigation rather than by driving the UI**: `?zr=1` calls the app's own `openRoute()`
+    from inside the opener, which no slow list, differently-rendered row or moved `<select>`
+    label can defeat, and all six sub-tabs are then walked.
+    - The status was **upgraded from a note to an exit-1**, and the reasoning is worth
+      keeping: while it was a UI drill-in it could miss for reasons that were nobody's
+      fault, so a note was the honest call. Now the only ways `?zr=1` fails to land are a
+      broken opener or a broken route page — both worth going red for. The screen where
+      this defect has actually happened must not be able to go unmeasured in silence.
+    - It waits on `window.__routeOpen` **as well as** on the text settling. Tying the two
+      together is what the first CI run got wrong: `load()` returns on `__overlaysReady`,
+      which says nothing about whether the navigation has happened yet.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
   #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
   `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
@@ -727,6 +769,21 @@ a build error, but a screen that renders wrong or not at all.
     every modal. And `{...clickable(fn)}` is recognised **explicitly**: a spread carries no
     attribute names, so without that a *fixed* control would stop looking like a control and
     read as one fewer thing to check rather than one more thing fixed.
+  - **The shield exemption matched a SYNTAX, and this codebase writes the other one.** It
+    tested for an arrow function with an expression body, while every shield in the app is
+    `function(e){e.stopPropagation();}` — a `FunctionExpression` with a **block** body — so
+    all **13** were counted as mouse-only controls and the baseline read 247 where the truth
+    was **234**. The too-narrow proxy again, and note which way it points: it hid no defect,
+    it *manufactured* 13, each one an element the note below says must **never** be given a
+    tab stop. Somebody working the baseline down would have been told, by the guard, to break
+    precisely what the exemption exists to protect — the same shape as `check:field-renders`
+    telling an author to delete correct bookkeeping during an outage.
+  - Matched on **what the handler does, not how it is written**: any function whose body is
+    that one call. The body must be that call and **nothing else** — a handler that stops
+    propagation and *then does real work* is a control, and widening far enough to swallow it
+    would hide a genuine defect, which is the direction that actually matters. Injection case
+    1 in `scripts/oneoff/inject-clickable-shield-cases.mjs` pins exactly that, and case 2
+    pins the third syntax (`(e)=>{e.stopPropagation();}`) staying exempt.
   - Fails closed: zero clickable non-native elements means the scan broke, not that the app
     is clean. It also fails on a **stale** baseline (higher than reality), so lowering it is a
     deliberate step rather than something a fix does silently.
