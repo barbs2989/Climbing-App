@@ -216,9 +216,26 @@ async function rowWith(col) {
   // warmth, and the same column passes on one run and times out on the next. One retry was
   // not enough (measured — a single retry still went red), hence three with a backoff.
   let lastErr = null;
-  const maxAttempts = (Date.now() - startedAt) < RETRY_BUDGET_MS ? 3 : 1;
+  // FIVE attempts, with an EXPONENTIAL backoff, and both numbers come from measurement.
+  //
+  // The client timeout above is irrelevant to the failure actually being retried: the server
+  // gives up at its own 3s statement ceiling and returns a 500, so waiting longer per request
+  // buys nothing. Only a LATER attempt against a warmer cache can succeed — and it does. A run
+  // on 2026-08-13 recorded `season — succeeded on attempt 3`, so three attempts was landing
+  // right on the edge; that same run still lost 17 of 45 columns.
+  //
+  // The cost is what makes this affordable rather than a treadmill: measured on the live
+  // project minutes later, the identical query took 233-654ms for access/hazards/gear and
+  // timed out for approach/descent/road, and the slow set MOVES between runs. This is
+  // contention on an unindexed `not.is.null` scan over ~205k routes, not a broken column, so
+  // the row really is there and another attempt is a fair way to get it.
+  //
+  // Backoff grows 0.8s, 1.6s, 3.2s, 6.4s because a fixed 400ms re-asks inside the same busy
+  // moment. RETRY_BUDGET_MS still caps the whole thing, so a wholesale-slow project degrades
+  // to one attempt per column and the run still ends and still fails closed.
+  const maxAttempts = (Date.now() - startedAt) < RETRY_BUDGET_MS ? 5 : 1;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    if (attempt > 1) await new Promise((r) => setTimeout(r, 400 * (attempt - 1)));
+    if (attempt > 1) await new Promise((r) => setTimeout(r, 800 * Math.pow(2, attempt - 2)));
     try {
       const r = await fetch(url, { headers: headers(KEY), signal: AbortSignal.timeout(REQ_TIMEOUT_MS) });
       if (!r.ok) { lastErr = `HTTP ${r.status} ${(await r.text().catch(() => "")).slice(0, 160)}`; continue; }
