@@ -35,6 +35,7 @@
 
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
+import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -142,6 +143,12 @@ async function claimPort(start, span = 40) {
   return null;
 }
 
+// This walk asserts that no screen is STILL LOADING, so an unreachable catalog fails it by
+// definition — and the failure it printed during the 2026-08-13 outage was
+// `2 problem(s) a brand-new account would see: still showing a loading state after 45s`.
+// The symptom is honest; the attribution is not. No brand-new account would see that, the
+// database was down. Ask first, so the run says which of the two it is.
+await assertDbReachable({ label: "check:zero" });
 const port = await claimPort(PORT);
 if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
 if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
