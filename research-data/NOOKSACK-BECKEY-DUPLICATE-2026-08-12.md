@@ -1,8 +1,72 @@
 # Mount Shuksan is wearing Nooksack Tower's route — and there are two copies of it
 
-Found while researching rappel descents. **Not fixed. It needs a decision only you can make, and
-the last time a "duplicate" here was resolved by deleting one half, the only copy of Triple
-Couloirs was destroyed.**
+**RESOLVED by research. The SQL is written, checked against the live DB, and waiting for you to
+run: `audits/sql/2026-08-12-nooksack-beckey-merge.sql`.** It is a merge-then-delete in one
+transaction, and the delete is guarded so it becomes a no-op if the surviving twin is not there.
+
+## What the sources settled
+
+The AAC's own first-ascent report is unambiguous. On 5 July 1946 Beckey and Schmidtke left a
+3,000 ft camp on the North Fork Nooksack, reached the bergschrund at 6,500 ft, climbed roughly
+800 ft of ~50° ice couloir on the **north face**, traversed west into a hidden rock trough, and
+finished up about 1,200 ft of fourth-class on the north arête to the summit of **Nooksack
+Tower** — a peak that had turned back attempts since 1939. They rappelled off pitons placed in
+the rock flanking the couloir.
+
+Nooksack Tower is 8,285 ft with 325 ft of prominence, three quarters of a mile northeast of
+Shuksan's summit. Every published source files it as a named, route-bearing sub-area *whose
+parent is Mount Shuksan* — which is exactly what this database already models. Mountain Project's
+breadcrumb is `Mt Shuksan > Nooksack Tower`, and MP holds **zero** routes directly at the Shuksan
+level.
+
+**The two rows are one climb, and the Shuksan row's own fields say so**: `face` reads "NE Face,
+Nooksack Tower", its final waypoint is "Nooksack Tower summit", and its lat/lng of 48.836,
+-121.587 is the Tower's summit — 0.8 mi from Shuksan's, matching the published offset. Its grade
+string, pitch count, length and star rating are a field-for-field ingest of Mountain Project's
+Beckey-Schmidtke page, attributed to the parent breadcrumb instead of the sub-area. **Mount
+Shuksan has no route called Beckey-Schmidtke in any source checked**, and Beckey's own
+Shuksan-proper first ascents carry different names.
+
+## Why merge-and-delete rather than just moving the row
+
+Moving it was the option that *looked* safer, and it is not. It would put two rows describing the
+identical 1946 line on one small peak that currently shows two routes — making the duplication
+maximally visible and seeding exactly the "which of these is real?" ambiguity that destroyed
+Triple Couloirs. The evidence here is not circumstantial: same party, same date, same face, same
+couloir, same arête, same rappel count, same source page.
+
+**The recommendation was explicitly conditional on the carry-over actually being done** — a delete
+that loses the 70° step and the AI1-2 grade would be worse than a visible duplicate. So the SQL
+does the carry-over and the delete in one transaction, and copies every value **by subquery rather
+than by retyping it**, which is how a transcription error becomes a "verified" write.
+
+## One place I departed from the research
+
+It recommended carrying the Shuksan row's `emergency` block across. I did not, on geography: that
+block names the Marblemount ranger station and the **Skagit** County Sheriff, but Nooksack Cirque
+is approached from Ruth Creek off the Mount Baker Highway and lies in **Whatcom** County. The
+Nooksack row already names the Glacier Public Service Center and the Whatcom County Sheriff, which
+are the right ones for that trailhead.
+
+Also left behind: the `access` block, contaminated in the opposite direction (it describes the Lake
+Ann Trail, Fisher Chimneys and the Sulphide Glacier — Shuksan's own approaches); the `grade`
+string, which is prose in a field the UI renders as a pill, with its AI1-2 detail preserved in
+`ice_grade` instead; and `timing`, where the Nooksack row's 20 hours matches the ~21-hour trip
+report and the Shuksan row's 11 does not.
+
+**Unresolved, and left alone rather than guessed**: `length_m` is 305 on one row and 610 on the
+other. The climb is ~800 ft of couloir plus ~1,200 ft of arête, so 610 m may be the whole line
+while 305 m is only the technical rock.
+
+**One caveat the research stated plainly**: SummitPost and the CascadeClimbers trip reports
+returned 403s and are cited from search excerpts rather than full text. Nothing above rests on
+them — the AAJ account and the Mountain Project hierarchy each settle it independently. Beckey's
+Cascade Alpine Guide Vol. 3 was not readable in this pass, and it is the one source that could in
+principle name a Shuksan variant.
+
+---
+
+*Original writeup, kept because the reasoning about why this was not a simple delete still stands:*
 
 ## What is wrong
 
