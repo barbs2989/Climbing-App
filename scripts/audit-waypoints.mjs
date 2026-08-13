@@ -631,6 +631,33 @@ if (popRows.length) {
     const gap = excl != null && v.size > excl ? `   (+${v.size - excl} filed under a more specific fault)` : "";
     console.log(`  ${String(v.size).padStart(5)}  ${k}${excl != null ? `   exclusive: ${excl}` : ""}${gap}`);
   }
+
+  /* TWO SELF-CHECKS on the column above, in the script rather than only in a review, because
+     "population >= exclusive" is exactly what a second column that has quietly started
+     double-counting also prints.
+
+     1. A population can never be SMALLER than its exclusive count. It is a superset by
+        construction, so smaller means the independent predicate has drifted from the one the
+        classifier uses — the two would then be measuring different faults under one name.
+     2. The MOST SPECIFIC faults must show a gap of exactly ZERO. `truncatedTrack` and
+        `trackNotEndingAtSummit` are first in their chains, so nothing can be filed above them
+        and there is nothing for a population to recover. If either grows a gap, the
+        independent measurement is counting something the classifier does not — which is the
+        failure mode that would make this whole column reassuring and wrong. */
+  const FIRST_IN_CHAIN = ["truncatedTrack", "trackNotEndingAtSummit"];
+  const popProblems = [];
+  for (const [k, v] of Object.entries(POP)) {
+    if (!Array.isArray(F[k])) continue;
+    const excl = new Set(F[k].map((x) => x.id)).size;
+    if (v.size < excl) popProblems.push(`${k}: population ${v.size} < exclusive ${excl} — the independent predicate has drifted from the classifier's`);
+    if (FIRST_IN_CHAIN.includes(k) && v.size !== excl) popProblems.push(`${k}: it is first in its chain, so population and exclusive must match, but ${v.size} != ${excl} — the independent measurement is counting something the classification does not`);
+  }
+  if (popProblems.length) {
+    console.log("\n  POPULATION SELF-CHECK FAILED — treat the column above as unreliable:");
+    for (const p of popProblems) console.log(`    ${p}`);
+  } else {
+    console.log(`\n  self-check ok — every population is a superset, and both first-in-chain faults (${FIRST_IN_CHAIN.join(", ")}) match exactly.`);
+  }
 }
 
 console.log(`\nNothing was written to the database. ${actionable} waypoint problems warrant a look` +
