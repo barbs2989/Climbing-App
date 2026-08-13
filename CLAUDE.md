@@ -25,6 +25,7 @@ npm run check:grade-parser  # grade_num is parsed in exactly one place (in build
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
+npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
@@ -837,6 +838,26 @@ a build error, but a screen that renders wrong or not at all.
     second first-draft false pass).
   - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
     draft and both were false passes**. Neither was visible by reading the script.
+- **`check:real-profile-rows`** enforces one sentence: **a row must not print a level or a
+  trust score for someone who has neither.** Seed climbers carry `level` and enough history
+  for `vScore()` to mean something; a real profile carries neither, so the subtitle renders
+  **"undefined · 0"**. #715 fixed ONE row of this and left the rest — they survived for months
+  and were found only by driving a real account through the friend-request screen, where the
+  row asking you to accept a stranger showed `@handle` above `undefined · 0`. Gated by
+  `npm run build`.
+  - It flags the **text** shape only: a level or score concatenated into a rendered string.
+    `vScore()` used for sorting, filtering, or handed to `<TrustBadge score={…}>` is a
+    different question — a badge can gate on `_real`, and `FullProfile` already does.
+  - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
+    through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
+    to "On ClimbMatch" rather than to fabricated numbers).
+  - Five exemptions, each **measured** by reading the collection that feeds the row (the seed
+    crew-invite card, PartnerSearch's ALL_CLIMBERS example card, two rows of the seed
+    GuideDashboard, and the OPEN_CREWS organiser chip). A **stale** exemption fails.
+  - Fails **closed**: zero concatenations means the vocabulary moved, never a clean app.
+  - Injection-tested 5/5. It found **9 unswept rows** when written, five reachable with a real
+    profile — including `ConnectModal`'s own subtitle, which read "undefined · Bellingham, WA"
+    on the sheet that asks you to connect.
 - **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
   resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
   other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
