@@ -13,9 +13,9 @@ import { LIST_ALIASES, routeInList, listPeaks } from "../lib/lists.js";
 // The totals the Challenges screen advertises, copied from its own `lists` array. A list whose
 // total is unknown there is left null rather than guessed.
 const DECLARED = {
-  fifty: 50, bulgers: 100, co14: 53, ca14: 12, state_hp: 50, np_hp: 63,
+  fifty: 50, bulgers: 100, co14: 53, ca14: 12,
   cascade: 18, adk46: 46, ne4k: 67, co_cent: 100, id12: 9, ultra: null,
-  seven: 7, beckey: 100, desert: null, mp_classics: null, gunks: null, triple: 3,
+  beckey: 100, desert: 27, mp_classics: null, gunks: null,
 };
 
 const key = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })();
