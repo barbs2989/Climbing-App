@@ -35,7 +35,7 @@ jobs:
     outputs:
       current: ${{ steps.tip_final.outputs.current }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # Only the tip of the default branch may publish.
       #
       # #616 stopped deploys cancelling each other, reasoning that "the last run to
@@ -64,7 +64,7 @@ jobs:
             echo "current=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Not publishing ${GITHUB_SHA:0:7}: superseded by ${TIP:0:7}. That commit's own run publishes."
           fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.tip_early.outputs.current == 'true'
         with:
           node-version: 20
@@ -140,7 +140,7 @@ jobs:
             echo "current=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Built ${GITHUB_SHA:0:7} but ${TIP:0:7} landed meanwhile; not publishing."
           fi
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         if: steps.tip_final.outputs.current == 'true'
         with:
           path: ./dist
@@ -155,6 +155,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}

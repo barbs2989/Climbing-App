@@ -82,8 +82,8 @@ jobs:
     # 50 overlays since the scaffold's discovery was widened (was 28).
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -121,8 +121,8 @@ jobs:
     # expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -153,7 +153,7 @@ jobs:
       # is what tells you whether it is a real bug. Same reasoning as zero-state.yml.
       - name: Upload per-screen text
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ui-screens
           path: ui-screens.json
@@ -166,8 +166,8 @@ jobs:
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -199,8 +199,8 @@ jobs:
     # One screen and two overlays, so it is the quickest of these.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -237,8 +237,8 @@ jobs:
     # after spending this, so the budget buys a correct verdict, never a false pass.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -261,8 +261,8 @@ jobs:
     # locally, so this is headroom rather than an expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
@@ -292,8 +292,8 @@ jobs:
     # Opens ONE panel and expands ONE card, so it is much shorter than its siblings.
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
