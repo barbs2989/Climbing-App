@@ -1016,7 +1016,7 @@ a build error, but a screen that renders wrong or not at all.
     the wrong descent is its own defect even when every fact is true.
 **A climber's agreed correction must out-vote the enrichment — and the rule has now been
 broken three times, in three different shapes.** `_rapEdited` (rappels, #787/#791),
-`_descEdited` (descent text, #897) and `_rackEdited` (rack) all say the same sentence about a
+`_descEdited` (descent text, #897) and `_rackEdited` (rack, #907) all say the same sentence about a
 different column, and each was found separately because *the failure never looks like a bug*:
 the column is populated, the section renders, and a plausible value is on screen. Only the
 climber who made the correction knows the screen is wrong, and they have no way to report it.
