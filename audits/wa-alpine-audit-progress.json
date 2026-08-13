@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_argonaut_peak_northeast_couloir",
+  "last_processed_id": "wa_beckey_davis",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2504,6 +2504,25 @@
       "flagged_for_human_review": 0,
       "clean": 8,
       "sql_file": null
+    },
+    {
+      "batch_number": 114,
+      "date": "2026-08-13",
+      "route_ids": [
+        "wa_austera_peak",
+        "wa_austera_peak_chockstone_route",
+        "wa_austera_peak_southwest_ridge",
+        "wa_bacon_peak_diobsud",
+        "wa_baring_mountain_northwest_ridge",
+        "wa_baring_mountain_r1",
+        "wa_bear_mountain_chilliwack_north_buttress",
+        "wa_beckey_davis"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-08-13-batch-114.sql",
+      "note": "wa_beckey_davis: pitches column (7) contradicted its own pitch_detail array (6 itemized pitches) and its own rope_note (\"6 pitches, 700ft\"); corrected to 6 pitches, confirmed by StephAbegg/Mountain Project. wa_austera_peak_southwest_ridge: grade_num (5) contradicted its own grade field (\"Grade II, 5.2\") and its sibling route at the same peak (wa_austera_peak_chockstone_route, same 5.2 crux, correctly stores grade_num 2); corrected to 2."
     }
   ]
 }

@@ -7910,3 +7910,40 @@ Per the audit guardrails (read-only, never fabricate or guess), no routes were c
 SQL was written, and `wa-alpine-audit-progress.json` was left untouched — `last_processed_id`
 still points at `wa_argonaut_peak_northeast_couloir`, so the next run resumes at the correct
 place rather than skipping a batch it never actually audited.
+
+## 2026-08-13 — Batch 114 (pass 3): Austera Peak, Bacon Peak, Baring Mountain, Bear Mountain, Beckey-Davis
+
+Database had recovered from the prior run's outage — a `routes?limit=1` probe answered in
+<1s, so this batch proceeded normally. Checked 8 routes: Austera Peak's peak-level entry,
+its Chockstone Route and Southwest Ridge/McAllister Glacier; Bacon Peak's Diobsud Creek/Green
+Lake Glacier; Baring Mountain's Northwest Ridge and North Face; Bear Mountain's (Chilliwack)
+North Buttress; and Prusik Peak's Beckey-Davis.
+
+**Confirmed fixes (2):** `wa_beckey_davis` stored `pitches: 7` and a beta paragraph opening
+"Seven pitches...", contradicting its own `pitch_detail` array (which itemizes exactly 6
+pitches) and its own `rope_note` field (already correctly reading "6 pitches, 700ft").
+StephAbegg's trip report is titled "Prusik Peak, Beckey-Davis (5.9, 700', 6p)" and Mountain
+Project agrees — corrected to 6. `wa_austera_peak_southwest_ridge` stored `grade_num: 5` for
+a route whose own `grade` field is "Grade II, 5.2" and whose own `rock_grade` field says
+"Easy 5th (roughly 5.2-5.4, short sections)" — this catalog's grade_num convention is the
+digits after the decimal (5.2 -> 2, not 5), confirmed by its own sibling route at the same
+peak, `wa_austera_peak_chockstone_route`, which shares the identical 5.2 crux grade and
+correctly stores grade_num 2. Corrected to 2. SQL: `audits/sql/2026-08-13-batch-114.sql`,
+pre-flighted clean with `check:sql`.
+
+**Clean (6):** Austera Peak's FA (Sept 16 1965, Joe & Joan Firey/John & Irene
+Meulemans/Anthony Hovey) confirmed exactly against Mountain Project/Mountaineers sources.
+Baring Mountain North Face's FA (Don Gordon and Ed Cooper, July 9-13 1960, Beckey on the
+final summit team, building on Schoening/Berge's 1951 attempts) confirmed exactly against
+AAC Publications. Bear Mountain North Buttress's FA (Fred Beckey & Mark Fielding, July 14-15
+1967) and its IV/5.10/7-pitch/2200ft stats confirmed exactly against StephAbegg and AAC.
+Austera Peak's own elevation (8,339 ft) and coordinates match the `areas` row exactly
+(area_type=peak, same lat/lng). Austera Peak's Chockstone Route (5.2, ~60ft chimney) is
+internally consistent with the Southwest Ridge route's own pitch_detail describing the same
+summit-tower feature. Baring Mountain Northwest Ridge's elevation (6,127 ft) matches its area
+row.
+
+**Needs human verification:** none newly flagged this batch.
+
+No other discrepancies found. Next batch continues alphabetically after
+`wa_beckey_davis` (see progress file).
