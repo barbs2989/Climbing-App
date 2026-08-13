@@ -114,11 +114,17 @@ export async function assertDbReachable(opts) {
   console.log("");
   console.log("THE DATABASE IS UNREACHABLE — abandoning before walking anything.");
   console.log(`  ${lastErr}`);
-  console.log(`  ${label} feeds its screens from this database. With no data arriving nothing`);
-  console.log("  settles, so every screen would burn its full timeout and the run would end at the");
-  console.log("  job wall having proved nothing — check:overflow did precisely that on 2026-08-13,");
-  console.log("  cancelled at 25 minutes with 29 of 53 overlays walked and no failure message.");
-  console.log("  Stopping here instead. This is NOT a finding about the app: re-run it once the");
-  console.log("  project answers.");
+  // The consequence line is the CALLER's, because it has to be true of the guard printing it.
+  // A browser walk burns a settle timeout per screen; a column probe burns a query per column.
+  // Same verdict, different arithmetic, and a message that describes the wrong one reads as a
+  // guard that does not know what it does.
+  const why = (opts && opts.why)
+    || `${label} feeds its screens from this database. With no data arriving nothing settles, so`
+      + " every screen would burn its full timeout and the run would end at the job wall having"
+      + " proved nothing.";
+  for (const line of String(why).match(/.{1,86}(\s|$)/g) || [why]) console.log("  " + line.trim());
+  console.log("  Precedent: check:overflow was cancelled at 25 minutes on 2026-08-13 with 29 of 53");
+  console.log("  overlays walked and no failure message at all. Stopping here instead.");
+  console.log("  This is NOT a finding about the app: re-run it once the project answers.");
   process.exit(1);
 }
