@@ -45,11 +45,33 @@ import AppErrorBoundary from "./AppErrorBoundary.jsx";
 // This does not weaken the offline catalog: orOffline consults IndexedDB inside the FIRST
 // attempt, so a downloaded state is served immediately either way. What collapses is only the
 // dead waiting when there is nothing local to serve.
+// A TIMEOUT is never retried, and the reason is that the retrying already happened one layer
+// down. supabase-js retries a failed PostgREST request FOUR times on its own, with backoff —
+// measured against a backend that accepts and never answers, one `.select()` produced fetches
+// at t+1.0s, t+8.0s, t+16.0s and t+26.0s, all to the identical URL. So a single queryFn call
+// is already four network attempts, and the `failureCount < 3` below multiplies it to SIXTEEN.
+// That is the same 16 the note above measured going offline, from the same cause.
+//
+// With the 25s per-request deadline in lib/supabase.js that is 16 x 25s of "Loading countries…",
+// which is why a dead database produced a spinner that had still not settled after FIVE
+// MINUTES of watching. Retrying a request that already exhausted its deadline, after the client
+// beneath already retried it four times, cannot discover anything new — it only makes the user
+// wait longer to be told the same thing.
+//
+// Deliberately narrow: only aborts/timeouts skip the retry budget. A 500, a dropped connection
+// or an RLS error still gets the full three, because those genuinely can differ on a second
+// attempt. Matched on the message because the value reaching here is the plain object
+// supabase-js returns, not a DOMException, so `err.name` is unreliable.
+const isTimeout = (err) => /TimeoutError|AbortError|aborted due to timeout|signal is aborted/i.test(String((err && err.message) || err || ""));
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       networkMode: "always",
-      retry: (failureCount) => (typeof navigator !== "undefined" && navigator.onLine === false ? false : failureCount < 3),
+      retry: (failureCount, error) => {
+        if (typeof navigator !== "undefined" && navigator.onLine === false) return false;
+        if (isTimeout(error)) return false;
+        return failureCount < 3;
+      },
     },
   },
 });
