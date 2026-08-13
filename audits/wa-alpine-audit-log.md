@@ -7757,3 +7757,46 @@ materially weakens confidence. `npm run check:sql -- audits/sql/2026-08-13-batch
 ran clean: both write targets exist, no DELETE removes an only copy.
 
 Next batch continues alphabetically after `wa_west_face_2` (see progress file).
+
+## Batch 111 — 2026-08-13
+
+Seven routes, next-alphabetically after `wa_west_face_2` and filtered to `area_type='peak'`
+(three sibling ids in this id range -- `wa_west_ridge_2`, `wa_western_dihedral`,
+`wa_wright_pond` -- sit under crag/wall areas and were skipped per scope): West Twin Needle
+South Route (Southern Pickets), Whatcom Peak Southwest Route/Whatcom Glacier, Whitehorse
+Mountain Northwest Shoulder (both the standard and the early-season snow/ice variant), Windy
+Peak via Iron Gate Trailhead, Windy Peak via Windy Creek Trail, Witches Tower South
+Face/Standard Route.
+
+**Confirmed fixes (0):** none this batch.
+
+**Clean (7):** all seven. West Twin Needle's elevation (7,936 ft) and FA (Degenhardt, Martin
+& Strandberg, Aug 17 1932) both confirmed verbatim against Wikipedia/AAC Publications, and
+the peak's own area coordinates place it correctly in the Southern Pickets relative to the
+Goodell Creek trailhead. Whatcom Peak's elevation (7,574 ft) and FA (Fred Berry & Lawrence
+Buchanan, 1936) both confirmed exactly against Wikipedia; the route's own `corrections` field
+already flags that no source uses the literal name "Southwest Route" (Mountain Project calls
+it "South Spur") -- documentation of a naming ambiguity, not a data defect, left as-is.
+Whitehorse Mountain's FA (Nels Bruseth, 1909) confirmed, and its Boulder River Wilderness
+permit-free access matches the Forest Service's own posture for that trailhead. Windy Peak's
+elevation (8,335 ft) confirmed exactly against Wikipedia/Peakvisor for both approach-route
+rows, which correctly share the same final Class 2 summit scramble and summit waypoint.
+Witches Tower's elevation (8,566 ft, corrected in an earlier pass) reconfirmed against
+Wikipedia, and its stated 2026 Enchantment lottery window (Feb 15-Mar 1 application, Mar 17
+results) matches Recreation.gov's published 2026 dates exactly.
+
+**Needs human verification (not fixed, too weak to act on):** Whitehorse Mountain's two
+routes both give `high_point_ft: 6852`, which matches listsofjohn.com's figure for the peak,
+but the parent `areas.elevation_ft` is 6851 -- a 1 ft internal mismatch. Left unfixed because
+external sources for this specific peak disagree by far more than that: Wikipedia gives
+"6,840+ ft" (old 40-ft-contour estimate), Peakery gives 6,839 ft, and other trip-report
+references cite 6,857 ft -- an 18 ft spread. Picking listsofjohn's 6,852 to resolve a 1 ft
+internal inconsistency would be arbitrary given how unsettled the peak's true elevation is
+across sources; flagging for a human to decide which convention (if any) to standardize on
+rather than guessing.
+
+**Tooling note:** WebFetch was unavailable this run (network-restricted sandbox has no route
+to stephabegg.com/alpinist.com-style reference pages); all findings rest on WebSearch snippet
+synthesis, consistent with every batch this pass. No SQL file this batch -- nothing to write.
+
+Next batch continues alphabetically after `wa_witches_tower_south_face` (see progress file).
