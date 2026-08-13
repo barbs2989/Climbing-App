@@ -32,15 +32,31 @@ const WORDS = [
   ["north", "n"], ["south", "s"], ["east", "e"], ["west", "w"],
 ];
 export const dirInName = name => {
-  const s = String(name).toLowerCase();
+  const raw = String(name);
+  const s = raw.toLowerCase();
   // WORD-BOUNDED, and this is not pedantry: a plain substring test matches "west" inside "Weston
   // Wall" and "north" inside "Northern Lights", manufacturing a disagreement on a route whose name
   // carries no direction at all. A report-only audit that invents findings is one people learn to
   // ignore. Hyphens are word characters for our purposes ("South-West"), so \b handles them.
-  for (const [w, k] of WORDS) if (new RegExp(`\\b${w}\\b`).test(s)) return k;
-  // Bare compass abbreviations appear as words in real route names ("NE Ridge", "SW Couloir").
-  const m = /\b(ne|nw|se|sw|n|s|e|w)\b/.exec(s);
-  return m ? m[1] : null;
+  //
+  // EARLIEST BY POSITION, not first in this list. Route names routinely carry two directions and
+  // lead with their own: "South Ridge (North Peak)" is the SOUTH Ridge of the north summit, and
+  // "Southwest Slope - Southeast Ridge" is a southwest line. Scanning in list order read both
+  // backwards and produced three false disagreements on the first real run. Ties go to the longer
+  // word so "northeast" still beats "north" at the same offset.
+  let best = null;
+  for (const [w, k] of WORDS) {
+    const m = new RegExp(`\\b${w}\\b`).exec(s);
+    if (m && (!best || m.index < best.i || (m.index === best.i && w.length > best.len))) best = { i: m.index, k, len: w.length };
+  }
+  if (best) return best.k;
+  // Bare compass abbreviations appear as words in real route names ("NE Ridge", "SW Couloir"), and
+  // this is matched CASE-SENSITIVELY against the original name. Lowercased, `\bs\b` matches the
+  // possessive in "Ford's Theatre", "Marvin's Ear" and "Lover's Lane" — three routes whose names
+  // carry no direction at all, each reported as a 180-degree contradiction on the first real run.
+  // Real route names write the abbreviation capitalised; a lone lowercase "s" never means south.
+  const m = /\b(NE|NW|SE|SW|N|S|E|W)\b/.exec(raw);
+  return m ? m[1].toLowerCase() : null;
 };
 export const dirOfAspect = a => {
   const s = String(a || "").trim().toLowerCase().replace(/[^nsew]/g, "");

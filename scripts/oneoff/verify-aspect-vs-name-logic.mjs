@@ -20,6 +20,19 @@ eq('"Beckey Route" has no direction', dirInName("Beckey Route"), null);
 // false positive, but "Weston" containing "west" is the dangerous one.
 eq('"Weston Wall" does not match west', dirInName("Weston Wall"), null);
 
+// The six false positives the FIRST REAL RUN produced, against 510 comparable WA routes. All six
+// were the parser's fault, not the data's — 30% of that run's findings.
+console.log("  -- possessives: an apostrophe is a word boundary, so \\bs\\b matched \"Ford's\" --");
+eq('"Ford\'s Theatre" has no direction', dirInName("Ford's Theatre"), null);
+eq('"Marvin\'s Ear" has no direction', dirInName("Marvin's Ear"), null);
+eq('"Lover\'s Lane (couloir)" has no direction', dirInName("Lover's Lane (couloir)"), null);
+console.log("  -- two directions: the route leads with its OWN --");
+eq('"South Ridge (North Peak)" is SOUTH', dirInName("South Ridge (North Peak)"), "s");
+eq('"West Face (North Peak)" is WEST', dirInName("West Face (North Peak)"), "w");
+eq('"Southwest Slope - Southeast Ridge" is SW', dirInName("Southwest Slope - Southeast Ridge"), "sw");
+eq('"NE Ridge" still works (capitalised abbreviation)', dirInName("NE Ridge"), "ne");
+eq('"Northeast" beats "north" at the same offset', dirInName("Northeast Buttress"), "ne");
+
 console.log("\n— aspect parsing —");
 eq("aspect 'NW' -> nw", dirOfAspect("NW"), "nw");
 eq("aspect 'n/nw' takes the letters", dirOfAspect("n/nw"), "nnw" in DEG ? "nnw" : null);

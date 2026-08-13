@@ -1015,6 +1015,21 @@ a build error, but a screen that renders wrong or not at all.
     the face limit at 90 and the ridge limit at 180. And direction matching was an unbounded
     substring test, so **"Weston Wall" matched "west"** — a report-only audit that manufactures
     findings is one people learn to ignore.
+  - **The first real run reported 20 findings and SIX were the parser's fault** — 30%, and the
+    precision was only measurable against live data. An apostrophe is a word boundary, so `\bs\b`
+    matched the possessive in *Ford's Theatre*, *Marvin's Ear* and *Lover's Lane*, three names
+    carrying no direction at all; the abbreviation branch is **case-sensitive against the original
+    name** now, because a real route writes `NE Ridge` and a lone lowercase `s` never means south.
+    And the word scan returned the first match in **list** order rather than the earliest by
+    **position**, so *"South Ridge (North Peak)"* read as NORTH — route names routinely carry two
+    directions and **lead with their own**. All six are pinned as regression cases.
+    - Fixing the second one made `wa_chimney_rock_west_face` go from 90° to **180°**, i.e. more
+      severe and correctly so: its name leads with *West Face* and its aspect is `E`. That is
+      independent corroboration, by a different method, of the separate finding that this row is an
+      **Idaho** route (Selkirk Crest) filed on a Washington peak.
+    - Measured after the fix: **14 findings against 502 comparable WA routes (2.8%)**, 11 of them
+      faces. Judge a detector's precision on a real run before trusting a count — a first run here
+      was 30% noise.
   - The DB half runs only when the file is **executed**, so `scripts/oneoff/verify-aspect-vs-name-logic.mjs`
     can import the real `judge`/`dirInName`/`landform` and pin them **without a database** — which is
     how both defects above were caught during an outage. It imports the functions rather than
