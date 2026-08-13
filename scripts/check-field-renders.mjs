@@ -48,10 +48,22 @@ const FIELDS = [
   // `if (!r.ok) return []` turned that into "NO DATA" — so a name that had never resolved
   // sat in the results table looking like an unpopulated column. The fail-closed change
   // below surfaced it on its first honest run against a live DB.
-  // Not a missing feature: `permitUrl` is seed-only (ClimbMatchCore's ROUTES carry it and
-  // RouteDetail renders it), lib/db.js maps `permits: r.permit` and no permitUrl at all,
-  // and the contribute form does not offer it — so nothing writes it and no DB route can
-  // have one. There is nothing here for this guard, whose subject is enriched DB columns.
+  // Removing it is right; the reason first given for it was WRONG, and the wrong reason is
+  // the dangerous part — it would justify deleting a working feature.
+  //
+  // What is true: there is no `permit_url` COLUMN, `lib/db.js` maps only `permits: r.permit`,
+  // and this guard's subject is column -> screen. With no column there is nothing here to
+  // query, which is the whole justification for dropping the entry.
+  //
+  // What is FALSE, and was written here: that the contribute form does not offer it and that
+  // no DB route can have one. `permitUrl` IS offered — `{k:"permitUrl",label:"Permit link"}`
+  // in RouteDetail's own FIELDS list (the fix form is defined there, NOT in ClimbMatch.jsx,
+  // which is how the first check missed it) — it is in `SS`, and RouteDetail renders
+  // `<a href={route.permitUrl}>` beside the permit prose. A DB route reaches it through the
+  // CONTRIBUTION OVERLAY, which needs no column: dbContribs rows are grouped by field, gated
+  // on `SS[rc.field]`, and applied onto the route object client-side once the 3-agree gate
+  // passes. So the feature works end to end and must not be "cleaned up" on the strength of
+  // this guard no longer listing it.
   ["permit", "permits"],
   ["waypoints", "waypoints"], ["gpx", "gpxPts"], ["elev_pts", "elevPts"],
   ["itinerary", "itinerary"], ["timing", "timing"], ["turnaround", "turnaround"],
