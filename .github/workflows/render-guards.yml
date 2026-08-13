@@ -229,7 +229,13 @@ jobs:
   field-renders:
     name: Enriched columns reach a screen
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # A healthy run is ~85s. The headroom is for the degraded case: each of the 45 column
+    # queries now retries up to 3 times, and the failure being retried is a 57014 statement
+    # timeout, so a wholesale-slow Supabase costs three timeouts per column before the run
+    # gives up. At the 3s anon ceiling that is ~7min; a cold connection costs 3.8-6.4s (see
+    # the note in CLAUDE.md) and 15 was too tight against that. It only ever fails closed
+    # after spending this, so the budget buys a correct verdict, never a false pass.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
