@@ -215,3 +215,61 @@ Two standing notes carried forward from the 2026-08-07 audit, both still true:
   that needed fixing. **§A and §F3 are that same shape again** — the considered Privacy Policy
   is right and the casual in-app sheet is wrong. Treat 1 and 2 as the baseline; suspect 3 and 4.
 - Nothing here required a code change to discover, and none was made.
+
+---
+
+## Appendix — drafted replacement copy, NOT applied
+
+Only for the items in "decide nothing — just fix". **Nothing here has been written to the app**;
+this exists so that approving it is one instruction rather than a second research pass. Each
+entry is the current string, then a proposed one. Wording is a starting point, not advice —
+a reviewer should still read it.
+
+### §A — the "Privacy" sheet, `ClimbMatch.jsx:568`
+
+Six of its eleven entries are still framed as demo copy. The three that are actually *wrong*:
+
+**1. "What we store"**
+
+- now: *"Your profile, climbs, crews and availability stay on your device for this demo — there
+  is no server and nothing leaves your phone."*
+- draft: *"Your account, profile, climbs, crews and messages are stored on our servers so they
+  are there when you sign in on another device. Route and area data comes from the same place."*
+
+**2. "What we don't do"** — currently contradicts Privacy Policy §5.
+
+- now: *"We don't sell your data, run ads, or share your information with third parties. There
+  are no third-party trackers."*
+- draft: *"We don't sell your data, run ads, or use third-party trackers. We do rely on service
+  providers to run the app — hosting for your account and climbs, map tiles, and public
+  wildfire and weather feeds."*
+
+**3. "Verification"** — no document is ever collected (`addVerification` writes
+`{user_id, verification_type, status}` and nothing else).
+
+- now: *"Optional ID verification confirms you are a real person and boosts trust — the
+  document itself is never shown to anyone."*
+- draft: *"Verification badges record that a check was completed. We do not collect or store
+  identity documents."*
+
+**4. "Retention & deletion"** and **5. "Questions"** — leave until the deletion decision (D1)
+and the contact channel (§C) are settled. Rewriting them now would just move the contradiction.
+
+### §F1 — Privacy Policy §5, remove the payment processor that does not exist
+
+- now: *"…service providers who help run the app (hosting, maps, payments) under contract…"*
+- draft: *"…service providers who help run the app (hosting, maps) under contract…"*
+
+### §F2 — Privacy Policy §8, remove the passkey advice
+
+- now: *"…so use a strong, unique password or a passkey."*
+- draft: *"…so use a strong, unique password."*
+
+Restore the passkey wording if and when passkey sign-in is actually built.
+
+### Note on where the age fix lands
+
+Not drafted, because B is a real decision rather than a correction. Whichever floor is chosen,
+**two** strings have to change together — Terms §2 and the sheet's *Age* entry — and the
+sign-up form is where any enforcement would have to live. Changing one and not the others just
+relocates the contradiction.
