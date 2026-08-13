@@ -43,9 +43,11 @@ That is false in production, and the same bundle carries the proof:
 
 - the bundle contains the Supabase project URL and the publishable API key (`supabase.co` ×1,
   key ×2)
-- `lib/db.js` reads and writes **35 tables**, among them `profiles`, `climb_logs`, `messages`,
-  `crews_messages`, `connections`, `vouches`, `belay_catches`, `verification_records`,
-  `user_reports`, `guide_documents`
+- `lib/db.js` **writes 31 tables** and reads 4 more. The written set is user data almost
+  end to end: `profiles`, `climb_logs`, `messages`, `crews_messages`, `connections`, `vouches`,
+  `belay_catches`, `verification_records`, `user_reports`, `guide_documents`, `comments`,
+  `objectives`, `saved_searches`, `user_lists`, `blocked_users` and the rest. (The 4 read-only
+  are the catalog — `areas`, `routes`, `crew_listings`, `cert_track_disciplines`.)
 - so a signed-in climber's profile, logbook, direct messages and crew chats are written to a
   hosted database — while the screen labelled *Privacy* says nothing leaves their phone
 
