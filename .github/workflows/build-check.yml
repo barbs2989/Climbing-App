@@ -38,6 +38,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  merge-survival:
+    # A `pull_request` checkout IS merge(head, base), so HEAD here is exactly the merge this
+    # guard exists to interrogate: did resolving it silently delete something either side had
+    # added? Git mis-merges this repo's dense single-line files without conflicting, and #482
+    # and #776 both shipped that way — clean merge, green CI, merged work quietly un-shipped.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # It diffs both parents against their merge base; a shallow clone has neither.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: A merge kept everything both sides added
+        run: node scripts/check-merge-survival.mjs
+
   build:
     runs-on: ubuntu-latest
     steps:
