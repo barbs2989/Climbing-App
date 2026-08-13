@@ -35,6 +35,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
+import { assertDbReachable } from "./lib/db-preflight.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -194,6 +195,17 @@ async function claimPort(start, span = 40) {
   return null;
 }
 
+// Ask the database one cheap question before spawning anything. This walk opens a DB route
+// BY NAME, so with the catalog unreachable it cannot succeed — and what it printed during the
+// 2026-08-13 outage was `could not choose a country — "United States" was not among the
+// options`, which reads as a broken area picker. Six minutes to produce a message pointing at
+// the wrong thing. Naming the real cause in twenty seconds is the whole gain.
+//
+// Skipped with --url on purpose: local env describes the server this script SPAWNS and says
+// nothing about an app served from somewhere else, exactly as the sample-route note above
+// records. Aborting a production check on the strength of a local dotfile would be its own
+// false failure.
+if (!URL_ARG) await assertDbReachable({ label: "check:ui" });
 let server = null;
 let base = URL_ARG;
 if (!base) {
