@@ -38,8 +38,14 @@ import { SUPABASE_URL, requireServiceKey, anonKey, headers } from "./supabase-en
 const DOMAIN = "climbmatch-qa.invalid";
 const ROUTE_ID = "wa_mount_baker_north_ridge";
 
-const KEY = requireServiceKey();
-const SH = headers(KEY);
+// Resolved on FIRST USE, not at import. scripts/lib/durable-fixture.mjs re-exports
+// sessionForStorage and STORAGE_KEY from here so the two fixture modes cannot disagree about
+// the storage contract — and that import happens in CI, which deliberately holds no service
+// key. Demanding it at module scope made importing this file fail before doing anything, and
+// worse, made the key look required for a path that must never have it.
+let _KEY = null, _SH = null;
+const KEY = () => (_KEY ??= requireServiceKey());
+const SH = () => (_SH ??= headers(KEY()));
 
 // Retry transient transport failures. Teardown MUST NOT be defeated by one flaky
 // socket: a single `fetch failed` during cleanup is how two fixture accounts were
@@ -60,7 +66,7 @@ const rest = async (path, opts = {}) => {
   const { headers: h, ...rest } = opts;
   const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/${path}`, {
     ...rest,
-    headers: { ...SH, "Content-Type": "application/json", ...(h || {}) },
+    headers: { ...SH(), "Content-Type": "application/json", ...(h || {}) },
   });
   const text = await r.text();
   let body = null;

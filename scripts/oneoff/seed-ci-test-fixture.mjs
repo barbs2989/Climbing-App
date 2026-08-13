@@ -161,10 +161,24 @@ async function run() {
     console.log(`  ${table}: written`);
   }
 
+  // A connection is made in TWO steps, and discovering that is the whole argument for
+  // seeding as the users. The service-key fixture inserts {requester, addressee,
+  // status:"accepted"} in one write, which RLS refuses for BOTH accounts (42501) — so it has
+  // been manufacturing a state the app's own flow cannot produce, and any screen that depends
+  // on how an accepted connection actually comes about was being tested against a fiction.
+  // The real flow: the requester creates it pending, the addressee accepts it.
   const { body: conn } = await as(owner, `connections?requester=eq.${owner.id}&addressee=eq.${mate.id}&select=status&limit=1`);
   if (!conn?.length) {
-    await insertAsEither("connections", { requester: owner.id, addressee: mate.id, status: "accepted" }, owner, mate, "connection");
-    console.log("  connection: written");
+    const { status, body: made } = await as(owner, "connections", {
+      method: "POST", body: JSON.stringify({ requester: owner.id, addressee: mate.id, status: "pending" }),
+    });
+    if (status >= 300) throw new Error(`connection request failed (${status}): ${JSON.stringify(made)?.slice(0, 200)}`);
+    console.log("  connection: requested by owner (pending)");
+    const { status: aStatus, body: acc } = await as(mate, `connections?requester=eq.${owner.id}&addressee=eq.${mate.id}`, {
+      method: "PATCH", body: JSON.stringify({ status: "accepted" }),
+    });
+    if (aStatus >= 300 || !acc?.length) throw new Error(`the addressee could not accept the request (${aStatus}): ${JSON.stringify(acc)?.slice(0, 200)}`);
+    console.log("  connection: accepted by mate — the two-step flow a real pair uses");
   } else console.log(`  connection: already ${conn[0].status}`);
 
   console.log("\nok — the durable accounts now own a crew and a group, each with a second real member.");

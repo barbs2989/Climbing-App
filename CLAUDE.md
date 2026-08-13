@@ -308,8 +308,29 @@ a build error, but a screen that renders wrong or not at all.
     injected session must satisfy the same gate a production user does. It asserts *who* it
     is signed in as before anything else — otherwise a rejected session would quietly walk a
     demo identity and report green about the wrong account.
-  - Requires the **service key** and `VITE_USE_DB=true`; it exits 1 rather than walking a
-    seed app. Not in `build` or CI, and CI should not hold a service key.
+  - Needs `VITE_USE_DB=true` plus the Supabase url/anon key; it exits 1 rather than walking a
+    seed app. Not in `build` (browser automation), but it **does run in CI** since 2026-08-13.
+  - **It has two fixture modes, and which one runs says where it is.** Locally it creates a
+    pair per run with the **service key** and destroys them after. In CI it signs in to two
+    **durable** accounts with the **anon key only** — CI must never hold the service key, and
+    that requirement is exactly why this guard sat outside CI and went **~40 merged commits
+    without running**. "Hand-run" means "not run" on a loaded machine. The privileged half now
+    happens once, locally: `scripts/oneoff/create-ci-test-accounts.mjs` then
+    `seed-ci-test-fixture.mjs`.
+  - The durable pair is only acceptable because both profiles are **`discoverable=false`**, so
+    they cannot appear in partner browse — the objection against a permanent QA account.
+    `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
+    migration or column-default change could flip it.
+  - **Seeding as the users found something the service key had been hiding.** RLS refuses an
+    `INSERT` of a connection with `status:"accepted"` for *both* accounts (42501) — a real pair
+    must request, then accept. The old fixture wrote that row directly with the service key, so
+    it manufactured a state the app's own flow cannot produce. A group owner also cannot add a
+    member (403); the member seats themselves. This is what CLAUDE.md already warned about —
+    setup that bypasses RLS answers "does the screen render", never "is the policy right".
+  - Ruled out on the way, so nobody re-derives them: a dedicated test **project** (rejected),
+    and **per-run accounts on the anon key** — tempting since `mailer_autoconfirm` is true, but
+    there is no `delete_own_account` RPC and Supabase has no self-delete, so every run would
+    leak an auth user forever.
   - Setup uses the service key, which **bypasses RLS** — so a row existing here is no
     evidence a policy would have let a user create it. This answers "does the screen render
     correctly", never "is the policy right".
