@@ -128,6 +128,22 @@ for (const [k, g] of [...legs.entries()].sort((x, y) => y[1].crowMi - x[1].crowM
   }
 }
 
+// The single both-origins case as of 2026-08-13, read rather than left as a bare id, because
+// "needs reading" is only useful if somebody eventually does it:
+//
+//   wa_smears_jugs_and_rock_roll -- its distMi chain (Snow Lakes 6.0, Lake Viviane 9.3) describes
+//   the SNOW LAKES TRAIL #1553 approach, while the stored Trailhead pin is the STUART LAKE
+//   TRAILHEAD, a different trailhead on the far side of the Enchantments. The waypoint's own note
+//   contains both, in one sentence: titled "Stuart Lake Trailhead (Trail #1599) ... Confirmed
+//   correct via USFS official page" and then "From Snow Lakes TH, hike Snow Lakes Trail #1553".
+//   Its `approach` prose describes a THIRD line again (Stuart Lake TH -> Colchuck Lake -> Aasgard
+//   Pass). Four further defects sit on the same row: distMi runs 6 -> 9.3 -> 0.2 (the last is a
+//   LEG distance among cumulative ones), waypoint 2 is typed Topout while its own note calls it
+//   the BASE of the face, and two pairs of pins share a coordinate exactly.
+//
+//   NOT repaired here: which corridor is canonical is a judgement, both are real ways in, and the
+//   route is a single-pitch 5.10a on a crag beside a campsite -- low value, real chance of picking
+//   wrong. Fixing it means choosing the corridor FIRST, then rebuilding the array to match it.
 if (both.length) {
   console.log(`\nImpossible from both origins — read these individually:`);
   for (const b of both) {
