@@ -18,7 +18,7 @@
 // ([[probe-trailhead-vs-track-start]]). approach_logistics is prose-derived and independent.
 //
 // Read-only, reports only. node scripts/oneoff/probe-trailhead-vs-logistics.mjs [--state=wa] [--min=500]
-import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
+import { selectAll, requireServiceKey } from "./lib/supabase-env.mjs";
 
 const arg = (n, d) => (process.argv.find(a => a.startsWith(`--${n}=`)) || `--${n}=${d}`).split("=")[1];
 const STATE = arg("state", "wa");
@@ -40,10 +40,28 @@ const hav = (aLat, aLng, bLat, bLng) => {
   return 2 * 6371000 * Math.asin(Math.sqrt(s));
 };
 
-/* Two heavy jsonb columns on one read: 400 rows/page trips the statement timeout intermittently.
-   150 is measured to stay under it. */
-const rows = await selectAll("routes", "id,name,area_id,waypoints,approach_logistics",
-  `id=like.${STATE}_*`, { pageSize: 150, key });
+/* Two heavy jsonb columns over 8k rows: 57014 here is intermittent and MOVES BETWEEN RUNS, so it
+   is contention rather than a page size to tune down — this audit died twice on 2026-08-13 before
+   it had retries. Retries are PRINTED, because absorbing one silently turns a measurable flake
+   into an invisible one. Same reasoning check:field-renders records.
+
+   It uses the SERVICE key only because the anon role's 3s statement_timeout cannot complete this
+   read; it issues no write of any kind, and there is no code path here that could. */
+const withRetry = async (label, fn, tries = 5) => {
+  for (let i = 1; i <= tries; i++) {
+    try {
+      const v = await fn();
+      if (i > 1) console.log(`(${label} succeeded on attempt ${i})`);
+      return v;
+    } catch (e) {
+      if (i === tries) throw e;
+      console.log(`(${label} attempt ${i} failed: ${String(e.message).slice(0, 90)} — retrying)`);
+      await new Promise(r => setTimeout(r, 800 * 2 ** (i - 1)));
+    }
+  }
+};
+const rows = await withRetry("routes", () => selectAll("routes",
+  "id,name,area_id,waypoints,approach_logistics", `id=like.${STATE}_*`, { pageSize: 150, key }));
 if (!rows.length) { console.error("read 0 routes — refusing to report"); process.exit(1); }
 
 /* Name comparison is deliberately loose and is NEVER the finding on its own — it only labels a
