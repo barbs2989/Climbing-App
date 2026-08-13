@@ -232,8 +232,19 @@ const F = {
   /* Waypoints carrying no coordinate at all. Every geometry test in this file begins
      `if (w.lat == null || w.lng == null) continue`, so these were skipped SILENTLY and could
      not appear in any of the 878 findings — a defect class the audit was structurally unable
-     to report. They are not harmless: the route page still lists the row, and GPXMap still
-     draws a pin, from a position that does not exist. Counted before any geometry runs. */
+     to report. Counted before any geometry runs.
+
+     WHAT THIS IS NOT, corrected 2026-08-12 after reading the renderers: it does NOT draw a pin
+     from a position that does not exist. Every renderer guards — GPXMap's marker loop opens
+     `forEach(wp=>{if(wp==null||wp.lat==null)return;}`, gpxDownload emits a `<wpt>` only when
+     both coordinates are non-null, WaypointMapPicker filters, and TrailheadCard has `hasCoord`.
+     The waypoint is simply absent from the map and present in the itinerary list as text.
+
+     That correction matters more than it sounds, because the overstated version invites the
+     wrong repair. These 43 waypoints across 17 routes carry real, sourced itinerary information
+     — "Headlee Pass", "Sunrise Mine Trailhead (Trail No. 707)", "Custer-Spickard Saddle" —
+     and DELETING them to clear the finding would destroy that. The fix is to source the missing
+     coordinate, or to leave the row alone; it is never to remove the waypoint. */
   noCoordinate: [],
   /* THE ONLY TEST HERE THAT IS NOT MEASURED AGAINST THE ROUTE'S OWN TRACK, which is exactly why
      it is worth having. Every other geometry category asks "is this pin on this line?" and so
@@ -356,7 +367,18 @@ for (const r of scoped) {
 
   if (ths.length > 1) F.multiTrailhead.push({ ...tag, names: ths.map(w => w.name) });
   if (!summits.length) {
-    if (topouts.length && area?.area_type === "peak") F.topoutOnPeak.push({ ...tag, names: topouts.map(w => w.name) });
+    // ...unless the topout NAMES A SUB-FEATURE, in which case Topout is correct and Summit
+    // would be a lie. Measured on all 9 hits this rule produced: NONE of them wanted the
+    // rename. Five climb The Monk, a separate tower at Cathedral Peak (topout 8,300 ft, below
+    // Cathedral's own summit); one is explicitly "a non-technical scramble TO THE COL between
+    // Colchuck Balanced Rock and Colchuck Peak"; one tops out on Dragontail's NE Towers. Being
+    // filed under a peak does not mean a route reaches that peak — subsidiary towers, cols and
+    // notches are ordinary objectives, and each of these waypoints SAYS SO IN ITS OWN NAME.
+    // Precision before this exemption: 0 of 9. See [[rappel-counts-are-rope-configuration-dependent]]
+    // for the same lesson — the flag is a hypothesis, and the data often already answers it.
+    const SUBFEATURE = /\b(tower|towers|col|notch|saddle|gendarme|spire|pinnacle|buttress|shoulder)\b/i;
+    const realTopouts = topouts.filter(w => !SUBFEATURE.test(String(w.name || "")));
+    if (realTopouts.length && area?.area_type === "peak") F.topoutOnPeak.push({ ...tag, names: realTopouts.map(w => w.name) });
     else if (!topouts.length) F.summitMissing.push({ ...tag, types: [...new Set(wps.map(typeOf))] });
   }
 
@@ -492,13 +514,13 @@ const TITLES = {
   trailheadNotAtStart: "TRAILHEAD IS ON THE TRACK BUT NOT AT ITS START",
   multiTrailhead: "MORE THAN ONE TRAILHEAD",
   summitMissing: "NO SUMMIT OR TOPOUT WAYPOINT",
-  topoutOnPeak: "TOPOUT USED ON A NAMED PEAK (should be Summit)",
+  topoutOnPeak: "TOPOUT ON A NAMED PEAK, and the waypoint name does NOT say it is a sub-feature — so it may want to be Summit. Confirm the route reaches the peak before renaming",
   summitOffLine: "SUMMIT IS NOT ON THE TRACK",
   trackNotEndingAtSummit: "TRACK DOES NOT REACH THE SUMMIT",
   trackOffItsPeak: "TRACK NEVER COMES WITHIN 2 km OF THE PEAK IT IS FILED UNDER — read this BEFORE the pin findings on the same route: they are measured against this line. Usually an approach-only track that stops short; at a large distance, a track from somewhere else entirely (informational — most of these are already counted above)",
   waypointOffLine: "WAYPOINT IS NOT ON THE TRACK",
   outOfOrder: "WAYPOINTS ARE OUT OF SEQUENCE ALONG THE TRACK",
-  noCoordinate: "WAYPOINT HAS NO COORDINATE — renders as a pin with no position, and no geometry test can see it",
+  noCoordinate: "WAYPOINT HAS NO COORDINATE — missing from the map (every renderer guards), present in the itinerary as text; no geometry test can see it. SOURCE the coordinate, never delete the waypoint",
   unrouted: "UNMEASURABLE — gpx is a 2-3 point placeholder, not a track",
   noTrack: "UNMEASURABLE — waypoints but no gpx at all",
   elevKeyWrong: "elevFt SET WITHOUT elev — the app reads w.elev, so this elevation never renders",
