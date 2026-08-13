@@ -251,7 +251,70 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
 // "View all N routes" IS the route finder, opened unfiltered — the finder's own default
 // state is every route in the subtree. There used to be a second "Route finder" button in
 // the row below wired to the identical handler, i.e. the same screen under two names.
-function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested , onAddClimb}) {
+// NEARBY PEAKS — "I'm here for the weekend, what else is in reach." Only on a PEAK that
+// carries coordinates, and it reuses useNearbyAreas rather than adding a second proximity
+// query; that hook already fetches peaks+crags in a bounding box.
+//
+// Four things this deliberately does NOT do, each measured rather than assumed:
+//
+//   - It does not rank by `route_count`. That column is a cached SUBTREE aggregate and it
+//     drifts whenever an area moves, merges or is deleted (check:counts exists for exactly
+//     that). It is fine to PRINT and fine to test for >0; it is not a sort key. Distance is.
+//   - It does not dedupe on coordinates. Co-located areas are usually legitimate — a wall and
+//     the peak above it share a summit pin — and past sweeps established that deduping on
+//     proximity destroys real rows. The >0 route filter is what removes the hollow import
+//     stubs (the two Early Winters Spires sit 8 m apart; only one holds routes).
+//   - It does not claim to work outside Washington. `area_type='peak'` is WA-only today, so
+//     elsewhere this finds nothing and renders NOTHING rather than an empty "no nearby peaks"
+//     panel, which would read as a fact about the mountains rather than about our data.
+//   - It does not use one bounding box for lat and lng. A degree of longitude shrinks with
+//     latitude — at 48°N it is ~0.67 of a degree of latitude — so a square box searches ~50%
+//     too wide east-west up here and drags in peaks over a range.
+// The two pure halves are exported so they can be tested without a browser, a DB or a render
+// — scripts/oneoff/verify-nearby-peaks.mjs drives them. Keeping the selection inside the
+// component would make it provable only by rendering, and the query it depends on is live.
+export function nearbyPeaksLive(area) {
+  return !!area && area.area_type === "peak" && area.lat != null && area.lng != null;
+}
+export function nearbyPeaksBounds(area, dLat) {
+  if (!nearbyPeaksLive(area)) return null;
+  const d = dLat || 0.5; // ~35 mi; a long weekend's radius, not a road trip.
+  // cos() is floored so a hypothetical polar area cannot divide by ~0 and ask for the planet.
+  const dLng = d / Math.max(0.2, Math.cos(area.lat * Math.PI / 180));
+  return { minLat: area.lat - d, maxLat: area.lat + d, minLng: area.lng - dLng, maxLng: area.lng + dLng };
+}
+export function nearbyPeaksRows(area, rows, limit) {
+  if (!nearbyPeaksLive(area)) return [];
+  return (rows || [])
+    .filter(a => a && a.area_type === "peak" && a.id !== area.id && a.route_count > 0 && a.lat != null && a.lng != null)
+    .map(a => ({ a, mi: haversineMi(area, a) }))
+    .sort((x, y) => x.mi - y.mi)
+    .slice(0, limit || 6);
+}
+function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
+  const bounds = nearbyPeaksBounds(area);
+  // Called unconditionally — the hook is gated by `enabled: !!bounds`, not by a conditional
+  // call, because a hook behind an `if` is the #377 shape check:hooks exists to catch.
+  const { data } = useNearbyAreas(bounds);
+  const rows = useMemo(() => nearbyPeaksRows(area, data && data.rows, 6),
+    [data, area && area.id, area && area.lat, area && area.lng, area && area.area_type]);
+  if (!rows.length) return null;
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <SL C={C}>Nearby peaks</SL>
+      <div style={{ fontSize: 11.5, color: C.textMuted, margin: "-4px 0 9px", lineHeight: 1.5 }}>Other peaks with routes on file, by straight-line distance from this summit — not driving distance, and not a claim they share a trailhead.</div>
+      {rows.map(({ a, mi }) => (
+        <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ background: C.card, borderRadius: 12, padding: "11px 14px", marginBottom: 9, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+            <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</span>
+            <span style={{ fontSize: 12, color: C.blue, fontWeight: 600, flexShrink: 0 }}>{(uDistMi ? uDistMi(mi) : mi.toFixed(1) + " mi") + " · " + a.route_count + " →"}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested , onAddClimb}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -340,6 +403,8 @@ function AreaPage({ area, uElev, booked, onToggleSave, onDrill, onFinder, onNear
              failed refetch reports "no routes" about a crag it never managed to read. */
           : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
       )}
+
+      <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
       <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
 
@@ -919,7 +984,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
+        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
