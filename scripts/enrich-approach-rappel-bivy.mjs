@@ -206,8 +206,30 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
+// Named so the settable-column assertion below can check itself against them rather than against a
+// string somebody has to remember to keep in step.
+const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,approach_variants,climbing_route,bivy";
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail"];
+const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road"];
+// `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
+// they are verified — just not by either list.
+const VERIFY_CUSTOM = ["waypoints", "rappel_detail"];
+// The allow-list for `set`. See the long note at its use site for where the line is drawn and why.
+const SETTABLE = new Set([
+  "rappel_count_note", "rappels", "descent_text", "approach", "waypoints", "road",
+  "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail",
+]);
+// A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
+// in the re-read select or `after[k]` is undefined, and in a verify group or the write is checked by
+// nothing. Both failures report SUCCESS for a write nobody confirmed — the exact shape this script's
+// re-read exists to prevent. Asserted at startup rather than remembered, so it fails on any run
+// including --dry, and without needing the database to answer.
+for (const k of SETTABLE) {
+  if (!readSelect.split(",").includes(k)) throw new Error(`${k} is settable but missing from the re-read select — after.${k} would be undefined and its verify vacuous`);
+  if (![...VERIFY_SCALAR, ...VERIFY_JSON, ...VERIFY_CUSTOM].includes(k)) throw new Error(`${k} is settable but in no verify group — it would be written and checked by nothing`);
+}
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=${readSelect}&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -318,16 +340,19 @@ for (const id of ids) {
   // stated elevations, while three sibling rows carry the real pair 0.27 km and 0.10 km out.
   // This is NOT a route for bulk waypoint edits — see the standing rule that waypoint findings
   // must be read row by row before anything is written.
+  // `road` is settable for the same reason as `approach` and under the same restriction: it is the
+  // other column contamination lands in. wa_upper_castle_toprope_wall carries Mount Rainier's road
+  // value — a different mountain, a different highway, a different gate — on a Leavenworth-area
+  // toprope wall. Like `approach`, a replacement must be RE-HOMED from a peer row that shares the
+  // real access, never written from memory: the whole failure being repaired is prose that reads
+  // fluently while describing somewhere else.
   // PROSE columns only. The line is deliberate: display text a correction can rewrite, versus
   // IDENTITY and CLASSIFICATION columns — `name`, `discipline`, `grade`, `area_id` — which are
   // NOT here and must go through hand-written SQL a human runs, because they feed search, dedup,
   // the duplicate-name view and the discipline filter chips. wa_little_annapurna_south_slopes is
   // the case that drew the line: its prose needs a systematic north/south repair AND its name is
   // wrong, and only the first half belongs to this script.
-  const SETTABLE = new Set([
-    "rappel_count_note", "rappels", "descent_text", "approach", "waypoints",
-    "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail",
-  ]);
+  // (SETTABLE is declared at module scope, beside the verify lists it has to stay in step with.)
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
@@ -369,8 +394,11 @@ for (const id of ids) {
   // Scalars compare directly; the array-valued prose columns (hazards, pro_tips, watch_out)
   // compare by JSON, which is safe here because they are arrays of STRINGS — order is meaningful
   // and there are no object keys whose order jsonb could reshuffle.
-  for (const k of ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail"]) if (k in body) checks.push(after[k] === body[k]);
-  for (const k of ["hazards", "pro_tips", "watch_out"]) if (k in body) checks.push(JSON.stringify(after[k]) === JSON.stringify(body[k]));
+  for (const k of VERIFY_SCALAR) if (k in body) checks.push(after[k] === body[k]);
+  // `road` belongs in THIS group, not the scalar one above: it is jsonb, so === compares two object
+  // identities and is false for a write that landed perfectly. A settable column added to the
+  // allow-list and not to one of these two lines is verified by nothing at all.
+  for (const k of VERIFY_JSON) if (k in body) checks.push(JSON.stringify(after[k]) === JSON.stringify(body[k]));
   // waypoints is an array of objects, so compare length plus each entry's name and coordinate —
   // a string compare would fail on jsonb key order, which is not stable.
   if (body.waypoints) {
