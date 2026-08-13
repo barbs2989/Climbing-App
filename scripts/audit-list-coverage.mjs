@@ -13,9 +13,9 @@ import { LIST_ALIASES, routeInList, listPeaks } from "../lib/lists.js";
 // The totals the Challenges screen advertises, copied from its own `lists` array. A list whose
 // total is unknown there is left null rather than guessed.
 const DECLARED = {
-  fifty: 50, bulgers: 100, co14: 53, ca14: 12, state_hp: 50, np_hp: 63,
+  fifty: 50, bulgers: 100, co14: 53, ca14: 12,
   cascade: 18, adk46: 46, ne4k: 67, co_cent: 100, id12: 9, ultra: null,
-  seven: 7, beckey: 100, desert: null, mp_classics: null, gunks: null, triple: 3,
+  beckey: 100, desert: 27, mp_classics: null, gunks: null,
 };
 
 const key = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })();
@@ -28,6 +28,10 @@ if (!rows.length) { console.error("FAIL: no routes carry a lists value — refus
 console.log(`\n=== named list coverage ===`);
 console.log(`routes carrying any list tag: ${rows.length}\n`);
 const keys = Object.keys(LIST_ALIASES);
+// Keys that ARE cards but advertise no fixed total (the list has no canonical size), so a null
+// DECLARED does not make them chip-only. Named rather than inferred, and a stale name fails.
+const CARD_ONLY_EXEMPT = new Set(["ultra", "gunks", "mp_classics"]);
+for (const k of CARD_ONLY_EXEMPT) if (!LIST_ALIASES[k]) { console.error(`stale exemption: ${k} is no longer a list key`); process.exit(1); }
 // A PEAK list is defined by its roster, not by `routes.lists` — see the note in lib/lists.js.
 // Counting its tags would report the Bulgers as 11 of 100 while the app shows 100 objectives,
 // i.e. this audit would disagree with the screen it exists to measure.
@@ -35,16 +39,24 @@ const out = keys.map(k => {
   const roster = listPeaks(k);
   const have = roster ? roster.length : rows.filter(r => routeInList(r, k)).length;
   const want = DECLARED[k];
-  return { k, have, want, via: roster ? "roster" : "tags", gap: want != null ? want - have : null };
+  // No card and no roster means this key survives only as per-route CHIP vocabulary — the list
+  // was removed from Challenges but the fact about the route is still true. Reporting those as
+  // empty lists would invent broken features. DECLARED is copied from the card list, so its
+  // absence IS the test; no second source of truth is introduced.
+  const chipOnly = want == null && !roster && !CARD_ONLY_EXEMPT.has(k);
+  return { k, have, want, via: roster ? "roster" : "tags", chipOnly, gap: want != null ? want - have : null };
 }).sort((a, b) => (b.gap ?? -1) - (a.gap ?? -1));
 
 const pad = (s, n) => String(s).padEnd(n);
 console.log(pad("list", 14) + pad("members", 9) + pad("advertised", 12) + pad("via", 8) + "gap");
 for (const r of out) {
-  console.log(pad(r.k, 14) + pad(r.have, 9) + pad(r.want ?? "—", 12) + pad(r.via, 8) + (r.gap == null ? "—" : r.gap > 0 ? `${r.gap} missing` : "complete"));
+  console.log(pad(r.k, 14) + pad(r.have, 9) + pad(r.want ?? "—", 12) + pad(r.via, 8) + (r.chipOnly ? "chip only — no list card" : r.gap == null ? "—" : r.gap > 0 ? `${r.gap} missing` : "complete"));
 }
-const empty = out.filter(r => r.have === 0);
-console.log(`\nlists with NOTHING tagged: ${empty.length} of ${keys.length} — ${empty.map(r => r.k).join(", ") || "none"}`);
+const lists = out.filter(r => !r.chipOnly);
+const empty = lists.filter(r => r.have === 0);
+console.log(`\nlists with NOTHING tagged: ${empty.length} of ${lists.length} — ${empty.map(r => r.k).join(", ") || "none"}`);
+const chip = out.filter(r => r.chipOnly).map(r => r.k);
+if (chip.length) console.log(`(${chip.length} further key(s) are per-route chip vocabulary with no list card, so they are not lists and are excluded above: ${chip.join(", ")})`);
 const totalGap = out.reduce((n, r) => n + (r.gap > 0 ? r.gap : 0), 0);
 console.log(`total advertised objectives not yet in the catalog: ${totalGap}`);
 process.exit(0);
