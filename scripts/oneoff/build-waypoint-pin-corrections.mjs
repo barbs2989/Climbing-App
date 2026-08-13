@@ -61,16 +61,24 @@ const FIX = [
     peers: ["wa_prusik_peak_south_face_burgner_stanley"], peerMatch: "aasgard", allowSinglePeer: true,
     why: "The row carries TWO Aasgard Pass pins 890 m apart. This drops the outlier rather than moving it — a duplicate is not a displaced pin, and keeping both would leave the list with a pin that has no journey.",
   },
-  {
-    id: "wa_southwest_buttress", action: "move", match: "inspiration glacier",
-    peers: ["wa_northwest_ridge", "wa_direct_southwest_buttress"], peerMatch: "inspiration glacier",
-    why: "Dorado Needle's high-camp pin is 474 m from two agreeing peers.",
-  },
-  {
-    id: "wa_southwest_buttress", action: "move", match: "mcallister",
-    peers: ["wa_northwest_ridge", "wa_direct_southwest_buttress"], peerMatch: "mcallister",
-    why: "The Inspiration-McAllister col pin is 548 m from the same two agreeing peers.",
-  },
+  // DORADO NEEDLE'S TWO PINS ARE DELIBERATELY NOT HERE, and the reason generalises.
+  //
+  // The triage listed wa_southwest_buttress's high camp (474 m) and Inspiration-McAllister col
+  // (548 m) as safely fixable because two peers agree with each other. They were generated, and the
+  // monotonic check caught them: backsteps went 0 -> 1. The row is ALREADY correct — its distance to
+  // the summit falls at every step (6534, 3360, 1866, 1244, 870, 497, 248, 2 m) and it carries EIGHT
+  // waypoints where the peers carry six or seven, so it is a finer-grained line of its own. Moving
+  // two of them onto the peers' coordinates jumps them PAST its un-moved "McAllister Glacier
+  // crossing" pin, which is what created the backstep.
+  //
+  // The precision says which row to trust: this one stores clean six-decimal values
+  // (48.538192,-121.157054) while both "agreeing peers" store -121.15236952380953 — interpolated
+  // along a track. The peers are the COMPUTED pins. So peer agreement is not evidence that a third
+  // row is wrong; two rows sharing an interpolated coordinate agree with each other by construction.
+  //
+  // The general rule this adds to the wa_ragged_edge standard: peer agreement is necessary, not
+  // sufficient. A row whose own pin list is internally consistent and monotonic is evidence AGAINST
+  // its pins being displaced, and it outranks a majority built from interpolation.
 ];
 
 const allIds = [...new Set(FIX.flatMap(f => [f.id, ...f.peers]))];
