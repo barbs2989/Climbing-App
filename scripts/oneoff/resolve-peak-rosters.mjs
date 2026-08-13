@@ -11,8 +11,8 @@
 // it first called absent were in the catalog.
 //
 // Read-only. Reports; writes nothing.
-import { anonKey, requireServiceKey, selectAll } from "../lib/supabase-env.mjs";
-import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES } from "./roster-data.mjs";
+import { SUPABASE_URL, headers, anonKey, requireServiceKey, selectAll } from "../lib/supabase-env.mjs";
+import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS } from "./roster-data.mjs";
 
 const LOOSE = !!process.env.LOOSE;   // opt-in only, for comparing precision
 const KEY = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })();
@@ -24,6 +24,12 @@ const EXPAND = [[/\bmt\b/g, "mount"], [/\bmtn\b/g, "mountain"], [/\bst\b/g, "sai
 const norm = s => {
   let t = String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
   for (const [re, to] of EXPAND) t = t.replace(re, to);
+  // The catalog files "The Titan" as "Titan, The" — an index-card convention it uses widely
+  // ("Castle, The", "Crestones, The", "Rectory, The"). Punctuation is already gone by here, so
+  // this rewrites a TRAILING "the" back to the front. It is a reordering, not a loosening: it
+  // moves a word that is present on both sides rather than discarding one. "Castle, The" becomes
+  // "the castle", which still does NOT match "castle peak" — the wrong answer stays rejected.
+  t = t.replace(/^(.+)\s+the$/, "the $1");
   return t.replace(/\s+/g, " ").trim();
 };
 // "Mount", "Peak", "Mountain" are noise in a peak name — the catalog and every roster disagree
@@ -35,33 +41,84 @@ const key = s => norm(s).replace(STOP, " ").replace(/\s+/g, " ").trim();
 // Renames and second names. A roster written today says "Mount Blue Sky" while a catalog built
 // from older data says "Mount Evans", and neither is wrong — so this is a genuine alias table,
 // not a fuzzy-match crutch. Each entry is a documented rename or an equally-used second name.
+// Values are FULL names, because the primary index is the full normalised name — an alias of
+// "evans" never matched the catalog's "Mt. Evans" ("mount evans"), which is why Mount Blue Sky
+// resolved to nothing while a 298-route area sat there.
+//
+// Keyed by the STRIPPED key so a roster spelling and its alias meet regardless of "Mount"/"Peak".
+// Every entry below was confirmed by reading the actual row, not guessed: each is either a
+// documented rename or the catalog's own spelling of the same formation.
 const ALIASES = {
-  "blue sky": ["evans"],                    // renamed 2023
-  "denali": ["mckinley"],                   // renamed 2015
-  "kuwohi": ["clingmans dome"],             // renamed 2024
-  "black elk": ["harney"],                  // renamed 2016
-  "mckinley": ["denali"],
-  "evans": ["blue sky"],
+  "blue sky": ["Mount Evans"],              // renamed 2023; catalog has "Mt. Evans"
+  "denali": ["Mount McKinley"],             // renamed 2015
+  "kuwohi": ["Clingmans Dome"],             // renamed 2024
+  "black elk": ["Harney Peak"],             // renamed 2016
+  "mckinley": ["Denali"],
+  "evans": ["Mount Blue Sky"],
+  // Catalog spellings of desert towers, each read off the row it points at.
+  "kingfisher": ["Kingfisher"],                       // roster "The Kingfisher"
+  "north six shooter": ["North Six Shooter Peak"],
+  "south six shooter": ["South Sixshooter"],          // one word in the catalog
+  "sister superior": ["Sister Superior Group"],
 };
 
-const areas = await selectAll("areas", "id,name,area_type,elevation_ft,route_count,path", "", { pageSize: 1000, key: KEY });
-if (!areas.length) { console.error("FAIL: empty read of areas — refusing to report every roster as unresolvable."); process.exit(1); }
-console.log(`\nloaded ${areas.length} areas\n`);
+// SCAN FIRST, PROBE PER NAME AS A FALLBACK. Both paths exist because both fail, in opposite
+// conditions, and each failure is a confident wrong answer if unhandled.
+//
+//   * The full scan (47,590 areas, keyset-paged) takes ~40s on a quiet database and is the
+//     better read — it sees every candidate. On a busy one it returns 500 57014 (statement
+//     timeout); four consecutive attempts failed while several parallel sessions were hammering
+//     the same project.
+//   * Probing per name asks only for the ~160 names wanted, so it survives load — but each
+//     `ilike` is a sequential scan of an unindexed column, and 160 of those is far SLOWER than
+//     one paged scan when the database is free. Measured: the scan finished in under a minute
+//     where the probes had not finished in ten.
+//
+// So: try the scan, fall back to probing. Either way this FAILS CLOSED — an empty read would
+// report every roster as unresolvable, which is the one outcome that must never pass silently.
+const H = headers(KEY);
+await fetch(`${SUPABASE_URL}/rest/v1/areas?select=id&limit=1`, { headers: H }).catch(() => {});  // pay connection setup once
 
-// Index by normalised name. Many names repeat across states ("Castle Peak", "Black Mountain"),
-// so the state is used to disambiguate rather than taking the first hit.
-const byKey = new Map();
-// A SECOND index on the full normalised name, keeping "mount" and "peak". This is the one that
-// separates Mount Wilson (14,252) from Wilson Peak (14,023) — two different San Juan fourteeners
-// that both reduce to "wilson" once the stopwords go, and which the first draft happily resolved
-// to the SAME area. Stripping is a fallback, never the primary test.
-const byFull = new Map();
-for (const a of areas) {
-  const k = key(a.name);
-  if (k) { if (!byKey.has(k)) byKey.set(k, []); byKey.get(k).push(a); }
-  const f = norm(a.name);
-  if (f) { if (!byFull.has(f)) byFull.set(f, []); byFull.get(f).push(a); }
+const get = async (url, tries = 3) => {
+  for (let i = 1; i <= tries; i++) {
+    try {
+      const r = await fetch(url, { headers: H });
+      if (r.ok) return JSON.parse(await r.text());
+      if (i === tries) throw new Error(`${r.status} ${(await r.text()).slice(0, 120)}`);
+    } catch (e) { if (i === tries) throw e; }
+    await new Promise(r => setTimeout(r, 800 * i));
+  }
+};
+
+const COLS = "id,name,area_type,elevation_ft,route_count,path";
+let areas = [];
+try {
+  areas = await selectAll("areas", COLS, "", { pageSize: 1000, key: KEY });
+  console.log(`\nscanned ${areas.length} areas\n`);
+} catch (e) {
+  console.error(`  full scan failed (${String(e.message).slice(0, 60)}) — falling back to per-name probes`);
+  // The search token is the distinctive part of the name, with Mount/Peak/The removed so
+  // "Mount Sneffels" also finds a bare "Sneffels". Matching stays EXACT afterwards; this only
+  // decides what to ask the database for.
+  const token = nm => (key(nm).split(" ")[0] || norm(nm)).slice(0, 24);
+  const wanted = new Set();
+  for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS]) {
+    for (const e of r) {
+      wanted.add(token(e.name));
+      for (const alt of ALIASES[key(e.name)] || []) wanted.add(token(alt));
+    }
+  }
+  const seen = new Set();
+  let n = 0;
+  for (const t of wanted) {
+    if (!t) continue;
+    const rows = await get(`${SUPABASE_URL}/rest/v1/areas?select=${COLS}&name=ilike.*${encodeURIComponent(t)}*&limit=60`);
+    for (const a of rows) if (!seen.has(a.id)) { seen.add(a.id); areas.push(a); }
+    if (++n % 25 === 0) process.stderr.write(`  ...${n}/${wanted.size} name probes\n`);
+  }
+  console.log(`\nprobed ${wanted.size} name tokens, ${areas.length} candidate areas\n`);
 }
+if (!areas.length) { console.error("FAIL: no areas read — refusing to report every roster as unresolvable."); process.exit(1); }
 
 // A route id / path prefix is the only state signal available. `path` is the ltree lineage and
 // its first label is the country, so the STATE is the second label.
@@ -171,10 +228,11 @@ const a = report("Colorado 14ers", CO_14ERS, "colorado");
 const b = report("California 14ers", CA_14ERS, "california");
 const c = report("State highpoints", STATE_HIGHPOINTS, null);
 const d = report("Cascade volcanoes", CASCADE_VOLCANOES, null);
+const e = report("Desert towers", DESERT_TOWERS, null);
 
-const tot = [a, b, c, d].reduce((n, x) => n + x.total, 0);
-const res = [a, b, c, d].reduce((n, x) => n + x.ok, 0);
-const use = [a, b, c, d].reduce((n, x) => n + x.withRoutes, 0);
+const tot = [a, b, c, d, e].reduce((n, x) => n + x.total, 0);
+const res = [a, b, c, d, e].reduce((n, x) => n + x.ok, 0);
+const use = [a, b, c, d, e].reduce((n, x) => n + x.withRoutes, 0);
 console.log(`\n${res}/${tot} names resolve to an area; ${use} of those hold at least one route.`);
 console.log(`A roster entry whose area holds NO route is not an objective a climber can tick —\nit would render as a name with nothing behind it.`);
 
@@ -182,7 +240,7 @@ console.log(`A roster entry whose area holds NO route is not an objective a clim
 // than hand-copied for the reason the Bulger roster records: a mistyped id is invisible — the
 // entry simply never becomes an objective.
 if (process.env.DUMP) {
-  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS" };
+  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS" };
   console.log("\n// ---- generated, paste into lib/lists.js ----");
   for (const [label, rows] of Object.entries(RESOLVED)) {
     console.log(`export const ${varName[label]} = [`);
