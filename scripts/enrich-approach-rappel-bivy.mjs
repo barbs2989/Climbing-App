@@ -284,8 +284,13 @@ for (const id of ids) {
         console.error(`REFUSING ${id} — station ${fix.station} holds ${JSON.stringify(st.lengthM)}, batch expected ${JSON.stringify(fix.from)}. The row has moved since this correction was researched.`);
         bad = true; continue;
       }
-      const text = JSON.stringify(st);
-      if (!fix.expect || !text.includes(fix.expect)) {
+      // The haystack is the station's own string values joined, NOT JSON.stringify(st). Stringifying
+      // escapes quotes, newlines and backslashes, so a fingerprint lifted from the raw prose would
+      // fail to match any station whose text contains one — a FALSE refusal that reads exactly like
+      // a re-ordered table and would send someone hunting for a defect that is not there. Whitespace
+      // is collapsed on both sides for the same reason.
+      const text = Object.values(st).filter(v => typeof v === "string").join(" ").replace(/\s+/g, " ");
+      if (!fix.expect || !text.includes(String(fix.expect).replace(/\s+/g, " "))) {
         console.error(`REFUSING ${id} — station ${fix.station} does not contain the expected text ${JSON.stringify(fix.expect || "(none given)")}. The table may have been re-ordered.`);
         bad = true; continue;
       }
