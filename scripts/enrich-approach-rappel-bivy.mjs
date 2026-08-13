@@ -195,6 +195,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
     const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length)
       || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0)
       || (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length > 0)
+      || (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length > 0)
       || (spec.set && Object.keys(spec.set).length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
@@ -250,6 +251,48 @@ for (const id of ids) {
       const add = spec.rappel_add[n];
       return add ? { ...r, ...add } : r;
     });
+  } else if (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length) {
+    // ONE STATION'S DISTANCE, and nothing else on the row. This is the shape a rope-capacity
+    // repair actually takes: the triage of the rule-3 candidates returned findings like "station 2
+    // stores 60 m and its own text says a single 60 m rope reaches, so the true distance is <=30 m"
+    // — one number wrong inside a table whose prose is researched and correct. `replace_rappels`
+    // would put all of that prose at risk to change one integer, and a reviewer diffing a whole
+    // replacement table cannot see which number was the point.
+    //
+    // Two guards, and BOTH are required, because a station is identified by its position in an
+    // array and positions move. `from` must equal the stored value, so a row someone else has
+    // already corrected is refused rather than re-corrected; `expect` must appear in the station's
+    // own text, so a re-ordered or rebuilt table cannot have a correction land on the wrong
+    // rappel. wa_ellation's table was re-sequenced earlier in this sweep for exactly that reason
+    // — index alone is not identity.
+    if (!Array.isArray(before.rappel_detail) || !before.rappel_detail.length) {
+      console.error(`REFUSING ${id} — rappel_lengths given but the row has no rappel table to correct`);
+      process.exitCode = 1; continue;
+    }
+    const next = before.rappel_detail.map(r => ({ ...r }));
+    let bad = false;
+    for (const fix of spec.rappel_lengths) {
+      const i = fix.station - 1;
+      const st = next[i];
+      if (!st) { console.error(`REFUSING ${id} — station ${fix.station} does not exist (table has ${next.length})`); bad = true; continue; }
+      // `from` is compared with ==, deliberately: a stored 60 and a batch 60 must match whether the
+      // column round-tripped the number as 60 or "60". `to` is written as given, and null is a
+      // legal, CORRECT value — it is what a distance no source publishes should be. Halving a
+      // rope's capacity would just replace one fabricated number with another.
+      if (!("from" in fix) || !("to" in fix)) { console.error(`REFUSING ${id} — station ${fix.station} needs both "from" and "to"`); bad = true; continue; }
+      if (st.lengthM != fix.from) {
+        console.error(`REFUSING ${id} — station ${fix.station} holds ${JSON.stringify(st.lengthM)}, batch expected ${JSON.stringify(fix.from)}. The row has moved since this correction was researched.`);
+        bad = true; continue;
+      }
+      const text = JSON.stringify(st);
+      if (!fix.expect || !text.includes(fix.expect)) {
+        console.error(`REFUSING ${id} — station ${fix.station} does not contain the expected text ${JSON.stringify(fix.expect || "(none given)")}. The table may have been re-ordered.`);
+        bad = true; continue;
+      }
+      st.lengthM = fix.to;
+    }
+    if (bad) { process.exitCode = 1; continue; }
+    body.rappel_detail = next;
   }
   // A CORRECTION path for the scalar prose columns beside the table. It exists because the
   // rappel-length defect is not repairable without it: a table can be fixed while

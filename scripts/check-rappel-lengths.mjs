@@ -54,7 +54,15 @@ const DOUBLE = /\btwo\b[^.]{0,25}\bropes?\b|\bdouble[- ]ropes?\b|\btwin ropes?\b
 // rope length/number of ropes carried" and "double-rope rappels of roughly full rope length" are
 // both accurate descriptions of a real descent. The admission is specifically the rope's CAPACITY
 // standing in for a measurement, so that is what this matches.
-const ADMITS = /rope[' ]?s? capacity|approximated at the stated|estimated from the stated/i;
+//
+// `near-max` was added after a triage of the rule-3 candidates found wa_mount_torment_south_ridge,
+// whose note says "individual station lengths aren't given explicitly, estimated near-max for a 60m
+// rope used double" — the same admission this rule exists to catch, in words it did not match. Six
+// identical 55 m stations, 330 m of rappel, and the note SAYS where the number came from. It fell
+// through to the report-only rule instead of failing, which is the quiet direction to be wrong in.
+// It is scoped to a rope mention rather than matched bare: "near-max" about anything else (an angle,
+// a grade, a pack weight) is not a claim about a distance.
+const ADMITS = /rope[' ]?s? capacity|approximated at the stated|estimated from the stated|near[- ]?max[^.]{0,40}\brope/i;
 
 const prose = r => `${r.rappels || ""} ${r.rappel_count_note || ""} ${r.descent_text || ""}`;
 
