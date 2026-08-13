@@ -92,15 +92,33 @@ const get = async (url, tries = 3) => {
 
 const COLS = "id,name,area_type,elevation_ft,route_count,path";
 let areas = [];
+let VIA = "scan";
+let scanErr = null;
+// Retry the scan before degrading. It fails intermittently under load, and the fallback is a
+// WORSE read, not an equivalent one — so spend a few seconds here rather than silently accepting
+// under-reported numbers.
+for (let attempt = 1; attempt <= 3; attempt++) {
+  try { areas = await selectAll("areas", COLS, "", { pageSize: 1000, key: KEY }); scanErr = null; break; }
+  catch (e) {
+    scanErr = e;
+    if (attempt < 3) { console.error(`  scan attempt ${attempt}/3 failed (${String(e.message).slice(0, 50)}) — retrying`); await new Promise(r => setTimeout(r, 2500 * attempt)); }
+  }
+}
 try {
-  areas = await selectAll("areas", COLS, "", { pageSize: 1000, key: KEY });
-  console.log(`\nscanned ${areas.length} areas\n`);
+  if (scanErr) throw scanErr;
+  console.log(`\nread via SCAN: ${areas.length} areas\n`);
 } catch (e) {
+  VIA = "probe";
   console.error(`  full scan failed (${String(e.message).slice(0, 60)}) — falling back to per-name probes`);
-  // The search token is the distinctive part of the name, with Mount/Peak/The removed so
-  // "Mount Sneffels" also finds a bare "Sneffels". Matching stays EXACT afterwards; this only
-  // decides what to ask the database for.
-  const token = nm => (key(nm).split(" ")[0] || norm(nm)).slice(0, 24);
+  // THE PROBE PATH IS LOSSY, and silently so until this was measured. Three consecutive runs of
+  // identical code returned 78, 78 and 68 resolved names; the difference was not the database
+  // moving, it was WHICH PATH RAN. The first draft searched on the FIRST WORD only with a 60-row
+  // cap, so `ilike *palisade*` filled up with "Palisades Park", "Palisades Kepler State Park" and
+  // friends and never reached North Palisade — a false MISS reported as a confident number.
+  //
+  // Two fixes: search on the whole stripped name (far more selective), and raise the cap. The
+  // path is still reported, and DUMP refuses to emit a roster from it — see below.
+  const token = nm => (key(nm) || norm(nm)).slice(0, 40);
   const wanted = new Set();
   for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS]) {
     for (const e of r) {
@@ -112,13 +130,35 @@ try {
   let n = 0;
   for (const t of wanted) {
     if (!t) continue;
-    const rows = await get(`${SUPABASE_URL}/rest/v1/areas?select=${COLS}&name=ilike.*${encodeURIComponent(t)}*&limit=60`);
+    const rows = await get(`${SUPABASE_URL}/rest/v1/areas?select=${COLS}&name=ilike.*${encodeURIComponent(t)}*&limit=400`);
     for (const a of rows) if (!seen.has(a.id)) { seen.add(a.id); areas.push(a); }
     if (++n % 25 === 0) process.stderr.write(`  ...${n}/${wanted.size} name probes\n`);
   }
-  console.log(`\nprobed ${wanted.size} name tokens, ${areas.length} candidate areas\n`);
+  console.log(`\nread via PROBE (degraded): ${wanted.size} name tokens, ${areas.length} candidate areas\n`);
 }
 if (!areas.length) { console.error("FAIL: no areas read — refusing to report every roster as unresolvable."); process.exit(1); }
+
+// TWO indexes over the same rows.
+//   byFull — the full normalised name, stopwords intact. This is the primary test, and the one
+//            that separates Mount Wilson (14,252) from Wilson Peak (14,023): two different San
+//            Juan fourteeners that both reduce to "wilson" once stopwords go.
+//   byKey  — the stripped key, used only by the opt-in LOOSE path.
+const byKey = new Map();
+const byFull = new Map();
+for (const a of areas) {
+  const k = key(a.name);
+  if (k) { if (!byKey.has(k)) byKey.set(k, []); byKey.get(k).push(a); }
+  const f = norm(a.name);
+  if (f) { if (!byFull.has(f)) byFull.set(f, []); byFull.get(f).push(a); }
+}
+
+if (process.env.IDXDBG) {
+  for (const n of ["Split Mountain", "Mount St. Helens", "North Palisade"]) {
+    console.log(`IDX ${JSON.stringify(n)} -> norm=${JSON.stringify(norm(n))} byFull=${(byFull.get(norm(n))||[]).length} byKey=${(byKey.get(key(n))||[]).length}`);
+  }
+  const sample = [...byFull.keys()].filter(k => k.includes("palisade")).slice(0, 6);
+  console.log("IDX keys containing 'palisade':", JSON.stringify(sample));
+}
 
 // A route id / path prefix is the only state signal available. `path` is the ltree lineage and
 // its first label is the country, so the STATE is the second label.
@@ -139,6 +179,9 @@ const resolve = (name, stateHint, wantFt) => {
   // EXACT normalised name (stopwords intact) is what separates Mount Wilson from Wilson Peak.
   // The STRIPPED key is the fallback, and only when no OTHER entry on this roster reduces to it.
   const exactC = gather(byFull);
+  if (process.env.RDBG && /Split Mountain|St\. Helens|North Palisade/.test(name)) {
+    console.log(`RDBG ${name}: k=${JSON.stringify(k)} norm=${JSON.stringify(norm(name))} exactC=${exactC.length} AMB=${AMBIGUOUS.has(k)} hint=${stateHint}`);
+  }
   // The stripped-key fallback is DISABLED, and this is the finding that killed it: it matched
   // Colorado's "Castle Peak" (14,279 ft, Elk Mountains) to `co_castle_the` — an area named
   // "Castle, The" in Buffalo Creek, a granite crag outside Denver — and "Crestone Peak" to a bare
@@ -152,6 +195,9 @@ const resolve = (name, stateHint, wantFt) => {
   // state beats precision across the whole country.
   const ofState = list => stateHint ? list.filter(a => stateOf(a).includes(stateHint)) : list;
   const cands = ofState(exactC).length ? ofState(exactC) : ofState(looseC);
+  if (process.env.RDBG && /Split Mountain|St\. Helens|North Palisade/.test(name)) {
+    console.log(`RDBG2 ${name}: exactC=${exactC.map(a=>a.id+"|"+stateOf(a)).join(",")} ofState=${ofState(exactC).length} cands=${cands.length}`);
+  }
   if (!cands.length) {
     if (AMBIGUOUS.has(k)) return { hit: null, why: `"${name}" is not distinguishable from another entry on this list by name alone` };
     return { hit: null, why: (exactC.length || looseC.length) ? `name exists, but not in ${stateHint}` : "no area with this name" };
@@ -199,7 +245,7 @@ const report = (label, roster, stateHint) => {
   for (const e of roster) {
     const hint = stateHint || e.state;
     const r = resolve(e.name, hint, e.ft);
-    if (!r.hit) { misses.push(`${e.name}${r.why.startsWith("name exists") ? " (wrong state)" : ""}`); continue; }
+    if (!r.hit) { misses.push(`${e.name}${r.why.startsWith("name exists") ? " (wrong state)" : ""}`); if (process.env.WHY) console.log(`      WHY ${e.name}: ${r.why}`); continue; }
     ok++;
     if ((r.hit.route_count || 0) > 0) { withRoutes++; hits.push({ ...e, id: r.hit.id, rc: r.hit.route_count }); }
   }
@@ -234,11 +280,18 @@ const tot = [a, b, c, d, e].reduce((n, x) => n + x.total, 0);
 const res = [a, b, c, d, e].reduce((n, x) => n + x.ok, 0);
 const use = [a, b, c, d, e].reduce((n, x) => n + x.withRoutes, 0);
 console.log(`\n${res}/${tot} names resolve to an area; ${use} of those hold at least one route.`);
+console.log(`read via ${VIA.toUpperCase()}${VIA === "scan" ? "" : "  <-- DEGRADED: the probe path under-reports; these numbers are a FLOOR, not the answer"}`);
 console.log(`A roster entry whose area holds NO route is not an objective a climber can tick —\nit would render as a name with nothing behind it.`);
 
 // Emit the resolved rosters as JS literals for lib/lists.js. Emitted from the resolver rather
 // than hand-copied for the reason the Bulger roster records: a mistyped id is invisible — the
 // entry simply never becomes an objective.
+if (process.env.DUMP && VIA !== "scan") {
+  console.error("\nREFUSING to emit a roster: this run read via the degraded PROBE path, which\n" +
+                "under-reports. Re-run when the full scan succeeds — a roster built from a lossy\n" +
+                "read ships a SHORT list that looks like a finished one.");
+  process.exit(1);
+}
 if (process.env.DUMP) {
   const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS" };
   console.log("\n// ---- generated, paste into lib/lists.js ----");
