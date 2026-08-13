@@ -135,6 +135,18 @@ const discards = (p) => new RegExp("Array\\.isArray\\(route\\." + esc(p) + "\\)\
 // does not guard anything.
 const crashes = (p) =>
   new RegExp("\\(route\\." + esc(p) + "\\|\\|\\[\\]\\)\\s*\\.(map|filter|forEach|slice|some|every|reduce)\\(").test(readers);
+// A THIRD way, and the one that caught nothing until AddRoute started offering these fields:
+//
+//     route.whatToBring && route.whatToBring.length ? route.whatToBring.join("\n") : "—"
+//
+// The `&& .length` reads like a type check and is not one — a non-empty STRING has a truthy
+// `.length`, so it passes the guard and reaches `.join`, which strings do not have. It throws.
+// `crashes()` above cannot see this: there is no `||[]` and no `.map`. Distinct from `discards()`
+// too, since nothing here silently drops the value — the route page breaks outright, which is
+// worse and easier to miss in review because the guard clause looks deliberate.
+const throwsOnJoin = (p) =>
+  new RegExp("route\\." + esc(p) + "(?:\\s*&&[^?]{0,80})?\\s*(?:\\?[^?]{0,40})?route\\." + esc(p) + "\\.join\\(").test(readers)
+  || new RegExp("route\\." + esc(p) + "\\.join\\(").test(readers);
 
 const typeOf = Object.fromEntries(FIELDS.map((f) => [f.k, f.type]));
 const rows = [];
@@ -222,11 +234,28 @@ if (nrPairs.length < 8) die(`parsed only ${nrPairs.length} keys out of AddRoute'
 
 let nrChecked = 0;
 for (const [key, expr] of nrPairs) {
-  if (!(discards(key) || crashes(key))) continue;
+  if (!(discards(key) || crashes(key) || throwsOnJoin(key))) continue;
   nrChecked++;
-  // Array-shaped is enough: an array literal anywhere in the expression covers `[]`,
-  // `desc?[desc]:[]` and `Array.isArray(style)?style:[]`. A bare string or identifier is not.
-  if (/\[/.test(expr)) console.log(`  ok    _nr.${key} — reader is array-only, and the local path builds an array`);
+  // Array-shaped is enough. An array literal anywhere in the expression covers `[]`,
+  // `desc?[desc]:[]` and `Array.isArray(style)?style:[]`.
+  //
+  // A CALL can also be array-shaped, and the literal-only test called three correct fields
+  // broken the moment AddRoute started converting with a helper. Rather than loosen the rule to
+  // "anything with parentheses", each allowed helper is named here AND its definition is checked
+  // to actually produce an array — so the allowance cannot rot into a hole. `linesOf` splits a
+  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back.
+  const ARRAY_HELPERS = ["linesOf"];
+  const helperOk = ARRAY_HELPERS.filter((h) => {
+    const def = CORE.match(new RegExp("(?:const|function)\\s+" + h + "\\s*=?\\s*(?:function)?\\s*\\([^)]*\\)\\s*\\{[^}]{0,300}"));
+    return def && /\.split\(|\.filter\(|\.map\(|\[\]/.test(def[0]);
+  });
+  for (const h of ARRAY_HELPERS) {
+    if (!helperOk.includes(h))
+      die(`ARRAY_HELPERS names \`${h}\`, but no definition producing an array was found for it in ClimbMatchCore.jsx. ` +
+        `Either it was renamed, or it no longer returns an array — in which case every _nr field using it is unchecked.`);
+  }
+  const arrayShaped = /\[/.test(expr) || helperOk.some((h) => new RegExp("\\b" + h + "\\s*\\(").test(expr));
+  if (arrayShaped) console.log(`  ok    _nr.${key} — reader is array-only, and the local path builds an array`);
   else {
     console.log(`  FAIL  _nr.${key}=${expr} — AddRoute's local path assigns a non-array, but route.${key}'s reader ` +
       `discards/crashes on one. This object bypasses CONV and dbRouteToCamel, so nothing reshapes it: ` +
