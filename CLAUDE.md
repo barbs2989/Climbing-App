@@ -29,6 +29,7 @@ npm run check:real-profile-rows # no row prints a level/trust a real profile lac
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -1266,6 +1267,40 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
+  discipline that can benight a party, and that it merges its **two** stores into one section.
+  Static SSR, so it sits in `npm run build`.
+  - **The mount has already been silently lost once**, which is why this is a script and not the
+    comment it replaces. It lived on a dense line, main changed the same line, and the merge kept
+    main's copy — leaving the panel **defined and rendered nowhere**. Nothing caught it:
+    `check:dead-props` sees props, not unmounted components; `check:refs` sees bindings, and every
+    binding was fine; and `routes.bivy` was populated, so any coverage check looked healthy. The
+    repair left a comment saying "confirm BIVY still reaches the screen" — the exact shape
+    [[semantic-invariants-need-a-script]] records as rotting.
+  - **Two stores, one section.** `route.bivy` holds researched sites (capacity/water/permit/notes);
+    a **Campsite waypoint** is the same fact recorded on the track. Rendered apart, a route could
+    show a camp pin under WAYPOINTS while this panel said nothing — two answers to one question.
+    `campSites()` merges them and dedupes on **name**, the only field both stores reliably carry.
+  - **It moved off the Safety tab (2026-08-13) and gained `scrambling`.** Where you sleep is a
+    planning decision, not a hazard; on Safety it sat behind a tab nobody opens for logistics. And
+    a scramble that overruns benights a party exactly like an alpine route. The gate reads
+    `catOf(route)`, **not** `route.discipline`, because `catOf` folds `rock` into trad/sport first.
+  - It renders on a day-trippable route too, deliberately: the party that gets benighted on a
+    "car-to-car" route is precisely who needs it, so *no bivy plan* is not *no bivy*.
+  - **Count inside the panel, never across the tab.** The Planner also renders ROUTE TRACK and its
+    map legend, which name the same waypoint legitimately — a whole-tab count reads 2 for correct
+    code. The first run of this script did exactly that and reported a dedupe bug that did not
+    exist. The slice is bounded by the next heading, and a missing `ROUTE TRACK` fails as
+    `ANCHOR LOST` rather than passing.
+  - **Match the un-escaped text.** `renderToStaticMarkup` emits `CAMPING &amp; BIVY`; see
+    [[ssr-probes-must-match-escaped-html]]. Assertion 0 proves the probe can fire at all, so a
+    renamed heading reports `ANCHOR LOST` instead of a vacuously green run.
+  - **Known gap, printed rather than hidden:** `bivy` is **not contributable** — it is in neither
+    `FIELDS` nor `SS`, and the panel's edit pencil opens the *waypoints* editor. A climber cannot
+    add or correct a camp. That needs a structured array editor and is not built.
+  - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
+    own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
+    dropped the waypoint half of the merge).
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
