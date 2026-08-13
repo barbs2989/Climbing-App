@@ -314,3 +314,49 @@ jobs:
           # under test is not the one that ships.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+  signed-in:
+    name: A real signed-in account still works
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:signed-in cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # This guard sat OUTSIDE CI until 2026-08-13, and the reason was sound: its fixture
+      # created accounts with the production SERVICE KEY, which bypasses RLS, and CI must
+      # never hold that key. The consequence was the failure this workflow exists to fix —
+      # it went ~40 merged commits without running, because on a loaded machine "hand-run"
+      # means "not run".
+      #
+      # The privileged half now happens ONCE, locally:
+      #   scripts/oneoff/create-ci-test-accounts.mjs   (two accounts, discoverable=false)
+      #   scripts/oneoff/seed-ci-test-fixture.mjs      (crew, group, logbook, connection)
+      # so all this job does is exchange a password for a session with the ANON key, which is
+      # what a real browser does. No service key is present on this runner, deliberately.
+      #
+      # The accounts are permanent, which is acceptable only because both profiles are
+      # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
+      # re-asserts that on every run rather than trusting the day it was set.
+      - name: Walk a real signed-in account
+        run: npm run check:signed-in
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
