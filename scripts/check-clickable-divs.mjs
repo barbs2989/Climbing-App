@@ -99,12 +99,35 @@ for (const rel of files) {
       // a click inside a sheet from reaching the backdrop that closes it. Demanding a role
       // and a tab stop there would put an announced, focusable "button" that does nothing
       // in front of every modal's content.
+      //
+      // Matched on what the handler DOES, not on which syntax it happens to be written in.
+      // The first version tested for an arrow function with an expression body and nothing
+      // else, but this codebase writes its shields as `function(e){e.stopPropagation();}` —
+      // a FunctionExpression with a BLOCK body — so all 13 of them were counted as
+      // mouse-only controls. That is the "too-narrow proxy" failure, and here it points the
+      // wrong way round: it does not hide a defect, it manufactures 13, every one of them an
+      // element the note above says must NEVER be given a tab stop. An author working the
+      // baseline down would have been told to break exactly the thing the exemption exists
+      // to protect.
+      //
+      // The body must be that one call and NOTHING else. A handler that stops propagation
+      // and then does real work IS a control, and widening far enough to swallow it would
+      // hide a genuine defect — the direction that actually matters.
       const ex = onClick.value && onClick.value.type === "JSXExpressionContainer" && onClick.value.expression;
-      const isShield =
-        ex && ex.type === "ArrowFunctionExpression" && ex.body &&
-        ex.body.type === "CallExpression" && ex.body.callee &&
-        ex.body.callee.type === "MemberExpression" &&
-        ex.body.callee.property && ex.body.callee.property.name === "stopPropagation";
+      const isStopCall = (n) =>
+        n && n.type === "CallExpression" && n.callee &&
+        n.callee.type === "MemberExpression" &&
+        n.callee.property && n.callee.property.name === "stopPropagation";
+      const isShield = (() => {
+        if (!ex) return false;
+        if (ex.type !== "ArrowFunctionExpression" && ex.type !== "FunctionExpression") return false;
+        if (isStopCall(ex.body)) return true; // `e => e.stopPropagation()`
+        if (ex.body && ex.body.type === "BlockStatement") {
+          const b = ex.body.body; // `function(e){ e.stopPropagation(); }` — one statement only
+          return b.length === 1 && b[0].type === "ExpressionStatement" && isStopCall(b[0].expression);
+        }
+        return false;
+      })();
       if (isShield) return;
 
       candidates++;

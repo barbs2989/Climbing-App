@@ -769,6 +769,21 @@ a build error, but a screen that renders wrong or not at all.
     every modal. And `{...clickable(fn)}` is recognised **explicitly**: a spread carries no
     attribute names, so without that a *fixed* control would stop looking like a control and
     read as one fewer thing to check rather than one more thing fixed.
+  - **The shield exemption matched a SYNTAX, and this codebase writes the other one.** It
+    tested for an arrow function with an expression body, while every shield in the app is
+    `function(e){e.stopPropagation();}` — a `FunctionExpression` with a **block** body — so
+    all **13** were counted as mouse-only controls and the baseline read 247 where the truth
+    was **234**. The too-narrow proxy again, and note which way it points: it hid no defect,
+    it *manufactured* 13, each one an element the note below says must **never** be given a
+    tab stop. Somebody working the baseline down would have been told, by the guard, to break
+    precisely what the exemption exists to protect — the same shape as `check:field-renders`
+    telling an author to delete correct bookkeeping during an outage.
+  - Matched on **what the handler does, not how it is written**: any function whose body is
+    that one call. The body must be that call and **nothing else** — a handler that stops
+    propagation and *then does real work* is a control, and widening far enough to swallow it
+    would hide a genuine defect, which is the direction that actually matters. Injection case
+    1 in `scripts/oneoff/inject-clickable-shield-cases.mjs` pins exactly that, and case 2
+    pins the third syntax (`(e)=>{e.stopPropagation();}`) staying exempt.
   - Fails closed: zero clickable non-native elements means the scan broke, not that the app
     is clean. It also fails on a **stale** baseline (higher than reality), so lowering it is a
     deliberate step rather than something a fix does silently.
