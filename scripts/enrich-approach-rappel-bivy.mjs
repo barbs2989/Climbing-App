@@ -206,7 +206,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -257,7 +257,13 @@ for (const id of ids) {
   // next pass then re-derives it. The allow-list is deliberate — this script must not become a
   // way to write arbitrary columns, and `null` is a legal value here (it is the correct value
   // for a distance no source gives; see the rope-capacity note below).
-  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text"]);
+  // `approach` is settable so a CONTAMINATED approach can be corrected — five Cutthroat Peak
+  // routes shared one boilerplate string naming the wrong trailhead (the PCT rather than the SR-20
+  // pullout) and the wrong side of the mountain, and it contradicted itself inside one sentence
+  // ("South-southwest via open timber basin ... basin northwest of peak"). Correcting it is not
+  // enrichment: the replacement must be RE-HOMED from a peer row on the same peak or from this
+  // route's own researched approach_variants, never composed from memory.
+  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text", "approach"]);
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
@@ -296,7 +302,7 @@ for (const id of ids) {
     checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>
       Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
   }
-  for (const k of ["rappel_count_note", "rappels", "descent_text"]) if (k in body) checks.push(after[k] === body[k]);
+  for (const k of ["rappel_count_note", "rappels", "descent_text", "approach"]) if (k in body) checks.push(after[k] === body[k]);
   if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
   const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
