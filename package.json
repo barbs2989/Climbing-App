@@ -72,6 +72,7 @@
     "check:field-renders": "node scripts/check-field-renders.mjs",
     "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs",
     "check:overflow": "node scripts/check-horizontal-overflow.mjs",
+    "check:challenge-rows": "node scripts/check-challenge-rows.mjs",
     "check:fire": "node scripts/check-fire.mjs",
     "check:ci-cancel": "node scripts/check-ci-cancellation.mjs",
     "check:anniversary": "node scripts/check-anniversary.mjs",

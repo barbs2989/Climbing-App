@@ -72,11 +72,41 @@ log(`starting dev server on ${port}...`);
 // it means this cannot drift on which overlays exist.
 const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
+// Did OUR server start, and is it still ours?
+//
+// `claimPort` proves the port was free a moment ago; it cannot prove vite got it. The probe
+// socket is closed before vite binds, so another process can take the port in between —
+// `--strictPort` then makes vite EXIT rather than slide, and without this listener nothing
+// notices. The loop below used to discard its own result (no `up`, no bail), so a run whose
+// server never came up walked on regardless: against nothing, or worse, against a leaked dev
+// server from another worktree serving a DIFFERENT branch, possibly in DB mode. That is the
+// squatter-adoption failure `check-ui.mjs` records from experience — and its dangerous half is
+// not a false red but a false GREEN, reported for code this guard never loaded.
+//
+// The self-test does not protect against it either: it injects three shapes into whatever page
+// is on screen, so a squatter's page satisfies it exactly as ours does.
+//
+// Same two-line guard the other six browser checks already use; this was the one that lacked it.
+let died = false;
+server.on("exit", () => { died = true; });
 let stopped = false;
 const stopServer = () => { if (stopped) return; stopped = true; try { process.kill(-server.pid, "SIGTERM"); } catch { try { server.kill(); } catch {} } };
 process.on("exit", stopServer);
+process.on("SIGINT", () => { stopServer(); process.exit(130); });
+process.on("SIGTERM", () => { stopServer(); process.exit(143); });
 process.on("uncaughtException", (e) => { console.error(e); stopServer(); process.exit(1); });
-for (let i = 0; i < 60; i++) { try { const r = await fetch(base); if (r.ok) break; } catch {} await new Promise((r) => setTimeout(r, 2000)); }
+let up = false;
+for (let i = 0; i < 60; i++) {
+  if (died) break;
+  try { const r = await fetch(base); if (r.ok) { up = true; break; } } catch {}
+  await new Promise((r) => setTimeout(r, 2000));
+}
+if (!up || died) {
+  console.error(died
+    ? "the dev server exited during startup — the port was taken between claiming it and vite binding it, or the scaffold failed to apply"
+    : "dev server never came up");
+  stopServer(); process.exit(1);
+}
 await fetch(base + "ClimbMatch.jsx").catch(() => {});
 
 let browser;
