@@ -7691,3 +7691,69 @@ that materially weakens confidence. `npm run check:sql -- audits/sql/2026-08-13-
 ran clean: the 1 write target exists, no DELETE removes an only copy.
 
 Next batch continues alphabetically after `wa_ultramega_ok` (see progress file).
+
+## 2026-08-13 -- Pass 2, Batch 110
+
+Seven routes, six peaks (Mount Stuart 1, Vasiliki Ridge/Ares Tower 1, Vesper Peak 1,
+Warrior Peak 1, Mount Washington/Ellinor traverse 1, West Craggy Peak 1, North Peak/Gunsight
+Range 1): Upper North Ridge w/Great Gendarme; Standard Route (Ares Tower); North Face
+(Ragged Edge); Southeast Peak Standard (Home Lake approach); Washington Ellinor Traverse;
+Standard Route (Copper Glance Basin); West Face (North Peak).
+
+**Confirmed errors -> fix in `sql/2026-08-13-batch-110.sql`:**
+- Upper North Ridge w/Great Gendarme (Mount Stuart): `fa` had the two 1956/1964 credits
+  backwards. Stored text read as though Rupley & Gordon climbed the Great Gendarme
+  directly in 1956 and Wickwire & Stanley did the general upper-ridge linkup in 1964.
+  Three independent sources (a Mountain Project route-profile synthesis, an AAC
+  Publications incident report on this exact route, and Grokipedia's Jim Wickwire page)
+  agree on the opposite: Gordon & Rupley's 1956 first ascent of the North Ridge bypassed
+  the Great Gendarme rather than climbing it, and Wickwire & Stanley made the first ascent
+  of the Great Gendarme itself in 1964. Fixed.
+- West Face (North Peak, Gunsight Range): `approach` opened with a claim that the area's
+  stored coordinates erroneously place it at Washington Pass and are "likely a data/
+  geocoding error worth flagging for correction." That claim is false as of this run --
+  the area's live coordinates (48.3068, -120.994) match Wikipedia's Gunsight Peak entry
+  (48.30667N, 120.99389W) to four decimal places, correctly placing it near Dome Peak in
+  the Glacier Peak Wilderness, nowhere near Washington Pass. Whatever coordinate error this
+  note once described has since been corrected and the warning was never removed, so it
+  was actively telling climbers to distrust a location that is now right. Removed the
+  stale claim; kept the accurate Downey Creek/Ptarmigan Traverse approach text that
+  followed it.
+
+**Flagged for human review (not auto-fixed):**
+- West Face (North Peak): the same `approach` field's closing sentence says "before
+  reaching the base of South Peak's granite faces," but this route's own area is North
+  Peak, not the sibling South Peak area a few hundred feet away in the same range --
+  reads like cross-contamination between the two peaks' enrichment write-ups (both share
+  essentially the same approach). Left as "South Peak's" in the SQL fix above rather than
+  silently rewording it, since the audit couldn't independently confirm which peak's face
+  the original write-up actually meant.
+- West Face (North Peak): `rappels` ("4 double-rope rappels (~50m, 50m, 50m, 20m)", summing
+  to ~170m) disagrees with `descent`/`descent_text` (both say "four double-rope rappels of
+  approximately 30m each," ~120m total) for what should be the same four rappels off the
+  same route. No source found gives an authoritative length for each individual rappel, so
+  this is flagged rather than guessed at; the `rappels` total is at least the more plausible
+  of the two against the route's own 183m/600ft length.
+
+**Clean (5):** Standard Route/Ares Tower on Vasiliki Ridge (Beckey & Staley's May 31, 1952
+FA confirmed, and the route's own hedge that Ares-Tower-specific FA credit is unconfirmed
+beyond the general Vasiliki Ridge party ascent matches what's findable); North Face/Ragged
+Edge on Vesper Peak (Berdinka & Pires, Aug 18 2013 FA confirmed verbatim, 6 pitches/5.7
+confirmed, gain_ft 4115 vs WTA's stated 4,114 ft near-exact match); Warrior Peak Southeast
+Peak Standard (Beckey solo 1945 FA confirmed, high_point_ft 7320 and "11th-highest Olympic
+peak" both confirmed verbatim against Wikipedia); Washington Ellinor Traverse (Mount
+Washington's 6,260 ft elevation confirmed exactly, route description matches independent
+trip-report beta on "The Wedge" and the crux gendarme downclimb); West Craggy Peak Standard
+Route (the Feb 8-9, 2020 probable-first-winter-ascent claim confirmed independently, Copper
+Glance Trailhead elevation close match). One elevation note: West Craggy's `high_point_ft`
+(8372) and the area's `elevation_ft` (8366) each match a different, independently
+citable source (a Wikipedia "Big Craggy Peak" mention giving West Craggy as 8,372 ft vs a
+Mountaineers.org page giving 8,366 ft) -- both plausible, not treated as an error.
+
+**Tooling note:** WebFetch was blocked network-wide again for every specific route/reference
+page attempted (stephabegg.com, alpinist.com) -- same block recorded in every batch this
+pass. All findings rest on WebSearch snippet synthesis; flagged per-item above where that
+materially weakens confidence. `npm run check:sql -- audits/sql/2026-08-13-batch-110.sql`
+ran clean: both write targets exist, no DELETE removes an only copy.
+
+Next batch continues alphabetically after `wa_west_face_2` (see progress file).
