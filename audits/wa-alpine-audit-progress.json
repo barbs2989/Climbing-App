@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_beckey_davis",
+  "last_processed_id": "wa_black_peak_east_buttress",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2523,6 +2523,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-08-13-batch-114.sql",
       "note": "wa_beckey_davis: pitches column (7) contradicted its own pitch_detail array (6 itemized pitches) and its own rope_note (\"6 pitches, 700ft\"); corrected to 6 pitches, confirmed by StephAbegg/Mountain Project. wa_austera_peak_southwest_ridge: grade_num (5) contradicted its own grade field (\"Grade II, 5.2\") and its sibling route at the same peak (wa_austera_peak_chockstone_route, same 5.2 crux, correctly stores grade_num 2); corrected to 2."
+    },
+    {
+      "batch_number": 115,
+      "date": "2026-08-13",
+      "route_ids": [
+        "wa_beckey_tate",
+        "wa_beyond_redlining",
+        "wa_big_four_mountain_northwest_ridge",
+        "wa_big_four_mountain_spindrift_couloir",
+        "wa_big_kangaroo_west_face",
+        "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+        "wa_big_snow_mountain_north_slope_dingford_route",
+        "wa_black_peak_east_buttress"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 4,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-08-13-batch-115.sql",
+      "note": "Fixed: wa_big_four_mountain_spindrift_couloir's max_angle (90) contradicted its own pitch_detail (\"drytooling moves up to roughly 95-degree angles\") and the AAC Publications FA report (Paull/Littauer, Mar 2 1996, \"IV+ 5.9 95 degrees\", 4,000ft matching length_m); corrected to 95. wa_big_kangaroo_west_face's grade_num was NULL despite its own rock_grade (5.6) and pitch_detail crux (5.6) -- corrected to 6, matching the sibling route wa_beckey_tate's grade->grade_num convention. Flagged, not fixed (conflicting/unverifiable secondary sources, left for a human): (1) wa_black_peak_east_buttress's access/permit text claims NCNP backcountry permits are free -- multiple 2025/2026 secondary sources describe a new $10/person + $6 reservation fee; could not reach nps.gov directly in this environment to confirm the exact wording, and this boilerplate permit text likely recurs across many other NCNP routes so a single-row fix would be incomplete -- worth a dedicated pass. (2) wa_beckey_tate and wa_big_kangaroo_west_face share one 91-point gpx track (1.42mi/2.29km) that matches neither route's stored dist_km (6.92km and 1.9km) nor either route's own approach-text mileage (~2mi and ~3mi respectively), and the two routes' approach texts about which has the longer approach contradict which dist_km is larger -- too tangled to resolve with confidence without a primary source. (3) wa_beyond_redlining's FA date (\"May 2020\") got two different specific dates (May 29 vs Jul 11, 2020) from independent web searches for the same Roberts/Hicks ascent; month-level claim in the DB isn't contradicted by either, so left as-is but noted."
     }
   ]
 }

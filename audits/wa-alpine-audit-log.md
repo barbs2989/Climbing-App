@@ -7947,3 +7947,60 @@ row.
 
 No other discrepancies found. Next batch continues alphabetically after
 `wa_beckey_davis` (see progress file).
+
+## 2026-08-13 — Batch 115 (pass 3): Beckey-Tate, Beyond Redlining, Big Four Mountain (x2), Big Kangaroo West Face, Big Snow Mountain (x2), Black Peak East Buttress
+
+Checked 8 routes: Big Kangaroo's Beckey-Tate and West Face/West Route; Morning Star Peak's
+Beyond Redlining (Vega North Tower); Big Four Mountain's Northwest Ridge and Spindrift
+Couloir; Big Snow Mountain's East Ridge (Hardscrabble) and North Slope (Dingford) routes;
+and Black Peak's East Buttress.
+
+**Confirmed fixes (2):** `wa_big_four_mountain_spindrift_couloir` stored `max_angle: 90`,
+contradicting its own `pitch_detail` array, whose "Upper mixed" pitch reads "drytooling moves
+up to roughly 95-degree angles" — and AAC Publications' report on Bart Paull and Doug
+Littauer's March 2, 1996 first ascent grades the route "IV+ 5.9 95 degrees" over 4,000 feet,
+which also matches this row's own `length_m` (1219m), `alpine_grade` (IV+), `rock_grade`
+(5.9) and `ice_grade` (WI5) — every other stat on the row already agreed with the primary
+source except `max_angle`. Corrected to 95. `wa_big_kangaroo_west_face` stored
+`grade_num: NULL` despite its own `rock_grade` ("5.6") and its own `pitch_detail` crux pitch
+(also 5.6, "a steep move past a single old, rusty 1/4-inch bolt to the tiny summit"); the
+catalog's grade_num convention (digits after the decimal) is confirmed by the sibling route
+on the same peak, `wa_beckey_tate` (5.9+ -> grade_num 9). Corrected to 6. SQL:
+`audits/sql/2026-08-13-batch-115.sql`, pre-flighted clean with `check:sql`.
+
+**Clean (3):** Big Four Mountain's Northwest Ridge FA (Forest Farr & Art Winder, July 19
+1931) and summit elevation (~6,160-6,170ft) confirmed against Wikipedia/AAC-era secondary
+sources. Both Big Snow Mountain routes' summit elevation (6,680ft) confirmed against
+Wikipedia, and both routes' `gain_ft` matches their own trailhead-to-summit waypoint
+elevations exactly (5,280ft and 5,300ft respectively). Black Peak's summit elevation
+(8,970ft) and Rainy Pass/Wing Lake approach line confirmed against WTA/Wikipedia; its
+coordinates land correctly on the Wing Lake basin peak, not a namesake elsewhere in the
+state.
+
+**Needs human verification (not fixed — flagged only):**
+- `wa_black_peak_east_buttress`'s `access.permit` text states NCNP backcountry permits are
+  free. Several 2025/2026 secondary sources describe a new NPS fee structure ($10/person +
+  $6 non-refundable reservation fee) for North Cascades NP backcountry overnight stays.
+  `nps.gov` itself was unreachable from this environment (egress-blocked), so this could not
+  be confirmed against the primary source, and this boilerplate permit sentence likely
+  recurs across many other NCNP-area routes in the catalog — a single-row fix would be
+  incomplete. Recommend a dedicated pass once someone can read nps.gov directly.
+- `wa_beckey_tate` and `wa_big_kangaroo_west_face` share one 91-point gpx track (measures
+  1.42mi/2.29km) that matches neither route's own `dist_km` (6.92km and 1.9km) nor either
+  route's own approach-text mileage claim (~2mi to base for Beckey-Tate, ~3mi to the roped
+  pitches for West Face) — and Beckey-Tate's text explicitly calls its own approach "longer
+  and more sustained" than West Face's, which is backwards from what the two approach-text
+  mile figures say on their own. Too tangled to resolve to one confident number without a
+  primary source (e.g. a GPX track that actually reaches each route's own base).
+- `wa_beyond_redlining`'s FA date ("May 2020") — two independent web searches for the same
+  Roberts/Hicks first ascent returned two different specific dates (May 29 vs July 11,
+  2020). The DB's month-level claim isn't contradicted by either, so left unchanged, but the
+  exact date could not be pinned down with this environment's available sources.
+
+No web-egress access to individual site domains (Mountain Project, AAC Publications,
+StephAbegg, SummitPost, nps.gov, wta.org, Wikipedia, etc.) was available this run — only
+WebSearch's own aggregated results were reachable, which is weaker corroboration than a
+direct primary-source read and is the reason for the three human-verification flags above
+rather than confident fixes.
+
+Next batch continues alphabetically after `wa_black_peak_east_buttress` (see progress file).
