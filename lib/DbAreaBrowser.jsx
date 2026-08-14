@@ -377,16 +377,20 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
+      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
+
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
           behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in. */}
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
+          It sits directly BELOW the Areas/Routes search rather than above it: the moment a
+          climber knows a route is missing is the moment a search for it came back empty, so
+          this is the next thing under their thumb. It is NOT gated on the search rendering —
+          a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
       {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
         </button>
       ) : null}
-
-      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {/* Data outranks error, as in the state picker: a failed REFETCH leaves the previous
