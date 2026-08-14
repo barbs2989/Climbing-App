@@ -8004,3 +8004,72 @@ direct primary-source read and is the reason for the three human-verification fl
 rather than confident fixes.
 
 Next batch continues alphabetically after `wa_black_peak_east_buttress` (see progress file).
+
+## 2026-08-14 — Batch 116 (pass 3): Black Peak Northeast Ridge, Bonanza Peak (x3), Booker Mountain, Boston Peak, Boving-Christensen, Boving Roofs
+
+Checked 8 routes: Black Peak's Northeast Ridge; Bonanza Peak's Mary Green Glacier (standard
+route), North Ridge and Northeast Buttress; Booker Mountain's Northeast Face; Boston Peak's
+Southeast Face; Prusik Peak's Boving-Christensen; and South Early Winters Spire's Boving
+Roofs.
+
+**Confirmed fix (1):** `wa_bonanza_peak_north_ridge` stored `gain_ft: 3800`, but the route's
+own two waypoints (Holden Village trailhead 3,300 ft, Bonanza Peak summit 9,511 ft) net
+6,211 ft of gain — and its own `itinerary` text shows why: 3,800 ft is roughly the *summit
+day* leg from high camp, not the full trailhead-to-summit gain that `gain_ft` represents
+everywhere else in this catalog (it feeds the Planner's Naismith-style time estimate
+directly). The two sibling routes on this exact peak, sharing nearly the same trailhead —
+`wa_bonanza_peak_mary_green_glacier` and `wa_bonanza_peak_northeast_buttress` — both store
+`gain_ft: 6300` against a 3,262 ft trailhead and 9,516 ft summit (diff 6,254, rounded),
+i.e. both measure the full trip, not one day of it. Corrected to 6200. SQL:
+`audits/sql/2026-08-14-batch-116.sql`, pre-flighted clean with `check:sql`.
+
+**Clean (5):** Black Peak's Northeast Ridge FA (Roger Jackson and Michael Kennedy, September
+1, 1973) confirmed exactly, and its `gain_ft` (4130) matches its own trailhead (4,855 ft) to
+summit (8,970 ft) waypoints within normal trail-profile margin. Bonanza Peak's original 1937
+FA (Curtis Ijames, Barrie James, Joe Leuthold, Mazamas) confirmed exactly. The Northeast
+Buttress's 2004 three-summit-traverse FA (Kurt Buchwald, Peter Avolio, Martin Volken, Aug
+21-22) confirmed exactly against AAC Publications, including the route's own `rock_grade`
+(5.7/5.8) matching the source's "V 5.7/5.8" rating. Booker Mountain's Northeast Face FA (Dan
+Davis and John Holland, August 22 1964, AAJ 1965) confirmed exactly, elevation (8,284 ft) and
+coordinates match the area row. Boston Peak's elevation (8,894 ft) and coordinates match the
+area row exactly, and `gain_ft` (5600) is consistent with its own trailhead/summit
+waypoints. All six routes' summit coordinates land within a tight margin of each peak's known
+published position; area hierarchy placement checked for Bonanza Peak specifically (filed
+under "Entiat Mountain Range," a broader regional grouping that legitimately includes it
+alongside Mount Maude/Seven Fingered Jack/Fernow, even though its actual approach is via Lake
+Chelan/Holden rather than the Chiwawa River) — not a defect.
+
+**Confirmed context, not a defect:** the flood/landslide closure text on all three Bonanza
+Peak routes (FR 8301 and Holden Village closed for the 2026 season, boat shuttle suspended)
+matches independent news coverage of the December 2025 Railroad Creek flooding almost exactly
+— correct road number, correct dates, correct scope.
+
+**Needs human verification (not fixed — flagged only):**
+- `wa_black_peak_northeast_ridge`'s `access.permit` carries the same "free backcountry
+  permit" claim already flagged on `wa_black_peak_east_buttress` last batch, unresolved for
+  the same reason (nps.gov unreachable from this environment). Not re-flagging in detail;
+  same open question, same peak.
+- Bonanza Peak's own elevation is genuinely contested across sources: 9,511 ft is a
+  traditional/older figure, a 2020s lidar re-survey reportedly revised it to 9,503 ft, and
+  other current sources (incl. Wikipedia) cite 9,516 ft. In this catalog, the `areas` row and
+  two of these three routes' summit waypoints store 9,516 ft, while `wa_bonanza_peak_north_ridge`
+  alone stores 9,511 ft. Since even the "authoritative" real-world figures disagree with each
+  other, left `wa_bonanza_peak_north_ridge`'s 9,511 ft unchanged rather than guessing which is
+  right — flagging the 3-way disagreement (9,511 / 9,516 / 9,503) for a human to settle.
+- `wa_boving_christensen`'s FA is stored as "Paul Boving and Matt Christensen (year not given)"
+  — already an honest non-claim, and this run couldn't pin a date either: one aggregated
+  source implies a repeat by Matt Christensen roughly 33 years after the original ascent
+  (~1977), but it's ambiguous whether Matt Christensen was on the FA party or only the later
+  repeat. Left as-is.
+- `wa_boving_roofs`'s FA is stored as "Paul Boving and Steve Pollock" with no date. Only weak
+  corroboration found (Boving and Pollock made a confirmed FA together on the adjacent North
+  Early Winters Spire in Sept 1976), not a direct confirmation of this specific route/pitch —
+  and one source referred to a similarly-named "Boving-Pollock" pitch on this same peak at a
+  different grade (5.10c vs. this row's 5.10b), which may or may not be the same feature. Not
+  contradicted, so left unchanged, but flagged as thin.
+
+No web-egress access to individual site domains (Mountain Project, AAC Publications,
+CascadeClimbers, StephAbegg, SummitPost, nps.gov) was available this run — only WebSearch's
+own aggregated results were reachable, same limitation as last batch.
+
+Next batch continues alphabetically after `wa_boving_roofs` (see progress file).
