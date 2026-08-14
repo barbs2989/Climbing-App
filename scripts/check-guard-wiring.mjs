@@ -230,7 +230,11 @@ console.log(`\nok — every guard runs somewhere: ` +
 //   1. add a new scripts/check-nothing.mjs and wire it nowhere      -> undeclared, names it
 //   2. delete `node scripts/check-fire.mjs &&` from the build chain -> undeclared, names it
 //   3. add "check-fire.mjs" to EXCLUDED while it is still wired     -> stale exemption
-//   4. rename check-signed-in.mjs                                   -> EXCLUDED names a missing file
+//   4. rename check-enrichment-traceable.mjs                        -> EXCLUDED names a missing file
+//      (it named check-signed-in.mjs until #948 wired that guard back into CI and removed its
+//      exemption. The case then proved nothing: renaming a guard that is no longer in EXCLUDED
+//      cannot make EXCLUDED name a missing file. An injection case has to point at a script that
+//      is still exempt, so it moved with the exemption rather than being left to rot.)
 //   5. point scripts/ at a directory with no check-*.mjs            -> dead(), not ok
 // Section 4 (the CLAUDE.md index), all 5 caught — scripts/oneoff/inject-guard-wiring-docs.sh:
 //   1. delete a guard's line from the command block   -> names the guard
