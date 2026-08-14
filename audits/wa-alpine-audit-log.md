@@ -8127,3 +8127,64 @@ results were reachable, same limitation as prior batches.
 
 Next batch continues alphabetically after `wa_cathedral_peak_pasayten_se_buttress` (see
 progress file).
+
+## 2026-08-14 — Batch 118 (pass 3): Chair Peak (x5), Chalangin Peak, Chelan Butte, Chianti Spire
+
+Checked 8 routes: Chair Peak's East Face, North Face, Northeast Buttress, Northwest Ridge,
+and the Chair-Bryant Traverse; Chalangin Peak's Little Giant Pass-Luahna Col route; Chelan
+Butte Trail; and Chianti Spire's East Face (Rebel Yell). Two routes that would otherwise
+have sorted into this alphabetical range were skipped as out-of-scope crags per the audit's
+own peak-only scope: `wa_clean_break` (Juno Tower) and a `South Face` on `wa_south_face_3`.
+
+**Confirmed fixes (6):** Two of the same defect on Chair Peak's North Face and Northeast
+Buttress — `dist_km` stored 10.78 km and 10.46 km respectively, both almost exactly double
+the one-way distance each route's own approach text and own waypoint list independently
+support (North Face: approach text says "~2.5-3 mi," own waypoints put the summit at distMi
+3.3 = 5.31 km; Northeast Buttress: approach text says "2-2.5 mi," own waypoints put the
+summit at distMi 3.2 = 5.15 km — both stored values are within 1.5-1.6% of exactly 2x those
+figures). Since the app doubles `dist_km` itself to render round trip, left as stored this
+would have shown a round-trip distance roughly 4x the route's own approach prose. Corrected
+both to their own waypoint-derived one-way distance. Same two routes also had their
+`commitment` grade fixed from 'III' to 'II' (North Face's `grade` column, which duplicated
+the same value, fixed too) — both are the catalog's classic moderate ice lines (rock 5.4,
+ice AI2/AI2-3, max_angle 70), and The Mountaineers' own route pages, American Alpine
+Institute's route profile, and independent trip reports all consistently call them "Grade
+II ice climbs"; nothing found calls either III (North Face's own season note correctly
+distinguishes the moderate line from a harder, unrelated "North Face Direct 5.9" summer
+variant, which may be where a III got attached). 'II' is also this catalog's established
+bare-roman-numeral format (279 WA routes already use it this way). Separately,
+`wa_chelan_butte`'s `areas.elevation_ft` stored 3812 ft against the peak's own route storing
+its own summit waypoint at 3835 ft and three independent outside sources (SummitPost,
+willhiteweb.com, a hang-gliding launch-site guide) agreeing on 3,835 ft — corrected to
+match. And that same route's `permit` column wrongly cited a Northwest Forest Pass (a USFS
+pass) when the row's own `access` jsonb already correctly identifies the land manager as
+WDFW (Chelan Butte Wildlife Area, state land) requiring a Discover Pass instead — WDFW's own
+site confirms the Discover Pass requirement. Corrected `permit` to agree with the row's own
+`access` data. SQL for all six: `audits/sql/2026-08-14-batch-118.sql`, pre-flighted clean
+with `check:sql`.
+
+**Clean (3, some already-fixed by a prior pass):** Chair Peak's East Face FA (Don Blair and
+Art Winder, September 30, 1933, "first recorded ascent of this face") confirmed exactly,
+including the specific "5.5 at the overhanging band per SummitPost" qualifier. Chair Peak's
+own elevation (6,238 ft) and summit coordinates matched across the area row and every
+route's waypoints. Chalangin Peak's route was fully corroborated: outside sources describe
+the Little Giant Pass approach as "about 27 miles and 11,000 ft gain," matching this route's
+own `dist_km` (21.7 km one-way, which the app doubles to ~27 mi round trip) and `gain_ft`
+(11000) almost exactly, and the Chiwawa River Road drive distance (19 miles) to the
+trailhead also matched independently. Chianti Spire's East Face already carries a
+self-documenting note on its own trailhead waypoint recording a prior correction (a mismatch
+with an unrelated "Early Winters Creek Trailhead" was already caught and fixed by an earlier
+audit pass) — checked and confirmed still consistent, along with its FA (Jim Nelson and Mark
+Bebie, 1986, matching the area row's own blurb) and rappel-length data (4 rappels of 55 m
+each, within a 60m double-rope rappel's reach).
+
+**Needs human verification (not fixed — flagged only):** `wa_chair_bryant_traverse`'s FA
+("Ari Schneider, Jason Linker") could not be corroborated either way — this looks like a
+plausible but obscure/recent linkup traverse, and no search turned up a record of it under
+either name. Not contradicted by anything found, so left unchanged.
+
+Web access this run: WebSearch's aggregated results were reachable; WebFetch/direct domain
+access (summitpost.org, en.wikipedia.org) was blocked by the network egress proxy, same
+limitation as every prior batch.
+
+Next batch continues alphabetically after `wa_chianti_spire_east_face` (see progress file).
