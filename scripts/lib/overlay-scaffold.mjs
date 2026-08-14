@@ -78,6 +78,12 @@ export const OVERLAY_PAYLOADS = {
   // it is called, and is opened with `true`. `confirmDelete` and `pastExpand` are the two
   // today. Only state that HOLDS something needs a payload.
 
+  // A data-rights request KIND, not an object. Both setter call sites pass a bare string —
+  // setDataReq("export") and setDataReq("optout") — and the sheet's copy branches on which,
+  // so an object here would render the opt-out wording under the export heading rather than
+  // fail loudly. "export" is the one reached from Settings → Your data.
+  dataReq: { expr: '"export"' },
+
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
