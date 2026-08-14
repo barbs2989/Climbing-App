@@ -8188,3 +8188,83 @@ access (summitpost.org, en.wikipedia.org) was blocked by the network egress prox
 limitation as every prior batch.
 
 Next batch continues alphabetically after `wa_chianti_spire_east_face` (see progress file).
+
+## 2026-08-14 — Batch 119 (pass 3): Chimney Rock (x2), Chiwawa Mountain, North Early Winters
+Spire (Chockstone Route), Clark Mountain, Unicorn Peak, Lane Peak, Colchuck Peak (Colchuck
+Glacier)
+
+Checked 8 routes across 7 peaks: Chimney Rock's East Face Direct and West Face/South Summit,
+Chiwawa Mountain's Southwest Route, North Early Winters Spire's Chockstone Route, Clark
+Mountain's West Ridge/Walrus Glacier, Unicorn Peak's Classic Route, Lane Peak's Classic
+Route, and Colchuck Peak's Colchuck Glacier.
+
+**Headline finding this run isn't about these 8 routes — it's about the audit pipeline
+itself.** While re-verifying, every "confirmed error" below turned out to already have been
+found and written up as proposed SQL on 2026-08-06 (batches 57/58), but the live values are
+still wrong. Spot-checking ~8 UPDATE statements at random across the whole history —
+batch 30 (07-31), batch 42 (08-01), batch 43 (08-05), batch 50/55/56 (08-06), batch 70
+(08-07), batch 90 (08-10), batch 100 (08-12), batch 114 (08-13) — every one through roughly
+batch 55 had landed live (`fa` nulled on Kautz Headwall, `permit` corrected on
+`wa_south_face_12`, `loss_ft` corrected on Sloan Peak Corkscrew), and **nothing checked from
+batch 56 onward has** (`high_point_ft` still 8190 not 8203 on Vasiliki Ridge, `access.fees`
+unchanged on Jack Mountain, `access.group_limit` still 6 not 12 on Sharkfin Tower, `pitches`
+still 7 not 6 on Beckey-Davis, and everything below). That's ~63 batches — over a week of
+this audit's output — sitting unreviewed. Worth a human checking whether
+`audits/sql/2026-08-06-batch-56.sql` onward got missed entirely, since pass 3 will otherwise
+keep re-discovering the same fixes indefinitely without ever landing them.
+
+**Confirmed fixes (6, all re-derived independently this run and all duplicates of unapplied
+2026-08-06 proposals — SQL: `audits/sql/2026-08-14-batch-119.sql`, pre-flighted clean with
+`check:sql`):**
+- `wa_chimney_rock_west_face`: `aspect` stored 'E' though the route's own name ("West Face/
+  South Summit"), approach text ("Pitch 1 ... on the west face"), and descent_text ("Descend
+  by reversing the West Face") all independently call it the west-facing line. Corrected to
+  'W'. (Re-checked the broader "possible Idaho Chimney Rock contamination" concern this row
+  carries in CLAUDE.md's `audit:aspect-name` notes — the one contaminated sentence it
+  referred to was the 2001 rappel-bolt claim already removed from `descent_text` in batch 5;
+  the rest of the row — trailhead, ranger district, waypoints, approach — is internally
+  consistent and specific to the real Alpine Lakes Chimney Rock. No further contamination
+  found.)
+- `wa_chimney_rock_east_face_direct`: `emergency.nearestHospital` still names a Cle Elum
+  "hospital" ER; Kittitas Valley Healthcare's only ER is in Ellensburg, Cle Elum has urgent
+  care only — exactly what the sibling West Face route's own copy of this field already
+  states correctly. Fixed to match.
+- `wa_chiwawa_mountain_southwest`: `grade` said "Class 3-4 + glacier," contradicted by the
+  row's own `overview` ("non-glaciated, largely cross-country scramble"), `pro_needs` ("No
+  rope, rack, or crevasse-rescue gear is needed... unless you detour onto the glaciated NE
+  side"), and `watch_out` ("this is not the glaciated Lyman Glacier route"). Corrected to
+  "Class 3-4."
+- `wa_chockstone_route`: `rack`/`detailed_rack` both said cams "0.5-3in," contradicted by
+  the row's own `corrections` field quoting Mountain Project verbatim ("single rack to 2
+  inches"). Propagated. Same route's `watch_out` was a newline-joined string instead of a
+  JSON array (5 hazard sentences) — converted.
+- `wa_classic_route_2` (Unicorn Peak) — safety-relevant: `rappels`, `watch_out[0]`, and
+  `pitch_detail[0].notes` all still send climbers to the deprecated "bleached snag" rappel
+  anchor, contradicted by the row's own `descent_text`, which already documents that anchor
+  is no longer sound and the current, trip-report-corroborated anchor is a rock horn.
+  Propagated to all three. Same route's `length_m` (122, ~400 ft) was wildly inconsistent
+  with its own single 15 m pitch — corrected.
+
+**Checked and still internally consistent, no new issues found:** Clark Mountain's West
+Ridge (elevation, coordinates, gain_ft-vs-itinerary within normal noise at 6,500/6,100 ft),
+Lane Peak's Classic Route (all fields match prior-pass fixes), and Colchuck Peak's Colchuck
+Glacier (fully clean, matches its batch-58 "audited fully clean" finding — re-verified
+elevation, waypoints, gain_ft/itinerary sum agree closely at 5,300/5,305).
+
+**Needs human verification (not fixed — flagged only):**
+- `wa_chiwawa_mountain_southwest`: `dist_km` is populated (30.58) despite this same row's
+  own `data_quality.gaps` explicitly stating "no single dist_km value was reliable enough to
+  record" (mileage varies 14-16 mi for Chiwawa alone vs. ~20 mi combined with Fortress
+  Mountain, by the row's own account). A genuine internal contradiction, but resolving which
+  of the two documented trip shapes `dist_km` should represent is an editorial call, not a
+  fact this run can adjudicate — left unchanged.
+- `wa_chimney_rock_east_face_direct`: 1954 FA (Cornelius Molenaar, Elvis R. Johnson) still
+  could not be corroborated against any source this run's web access could reach — carried
+  over unchanged from batch 57's identical flag.
+
+Web access this run: WebSearch's aggregated results were reachable and did confirm Chimney
+Rock's three summit elevations (7,727/7,634/7,440 ft) against Wikipedia's snippet content;
+WebFetch/direct domain access was not attempted separately this run.
+
+Next batch continues alphabetically after `wa_colchuck_peak_colchuck_glacier` (see progress
+file).
