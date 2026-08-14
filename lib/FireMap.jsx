@@ -23,7 +23,7 @@
 // Portalled to document.body: #appscroll is a permanent stacking context beneath
 // the header's zIndex 30, so a position:fixed overlay rendered inside it paints
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
@@ -48,6 +48,58 @@ function bboxOf(map) {
   return { minLat: b.getSouth(), maxLat: b.getNorth(), minLng: b.getWest(), maxLng: b.getEast() };
 }
 
+// The one place that decides where this map opens. Both the seed below and the real
+// `setView` read it, so a change to the framing cannot move one without the other —
+// and a drift between them is invisible (it costs a duplicate fetch, not an error).
+// The caller picks the zoom, because only it knows whether `focus` is a crag or a
+// whole state; clamped so a bad value cannot hand Leaflet an out-of-range zoom.
+function viewFor(focus) {
+  if (!focus || !Number.isFinite(focus.lat) || !Number.isFinite(focus.lng)) return [US.lat, US.lng, US.zoom];
+  return [focus.lat, focus.lng, Number.isFinite(focus.zoom) ? Math.min(14, Math.max(3, focus.zoom)) : 9];
+}
+
+// The viewport Leaflet WILL show, computed before Leaflet exists.
+//
+// Every one of the three federal queries is gated on `bbox`, and `bbox` was only
+// ever written from the live map — so the data could not start loading until the
+// Leaflet CDN had answered, the map had initialised and a 150ms settle had fired.
+// Measured on a warm CDN that put the first NIFC request 4.5s after the click with
+// ~460ms of it pure Leaflet download; on a cold or throttled connection the CDN leg
+// is the whole story. Nothing about "which fires are in this box" needs a map to be
+// on screen, so this reproduces Leaflet's own EPSG:3857 bounds arithmetic from the
+// container size and the view the map is about to be given. The queries then run in
+// PARALLEL with the CDN fetch rather than behind it.
+//
+// It has to be Leaflet's exact arithmetic rather than a rough box: `bboxKey` rounds
+// to 0.01deg, so a guess that lands on a different key costs a second round of
+// requests against NIFC and NOAA rather than saving anything. Verified equal to
+// map.getBounds() at mount — see scripts/oneoff/probe-firemap-timing.mjs.
+function bboxForView(el, lat, lng, zoom) {
+  if (!el) return null;
+  const w = el.clientWidth, h = el.clientHeight;
+  if (!w || !h) return null;
+  const scale = 256 * Math.pow(2, zoom);
+  const latRad = lat * Math.PI / 180;
+  const cx = (lng + 180) / 360 * scale;
+  const cy = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * scale;
+  const unLng = x => x / scale * 360 - 180;
+  const unLat = y => {
+    const n = Math.PI - 2 * Math.PI * y / scale;
+    return 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n)));
+  };
+  // Leaflet ROUNDS its pixel origin to whole pixels (_getNewPixelOrigin) and takes the
+  // far corner as origin + size, so its bounds are pixel-snapped and an unrounded
+  // computation is off by the sub-pixel remainder. That sounds ignorable and is not:
+  // measured at zoom 4 the remainder was 0.29px, which is 0.025deg of longitude — two
+  // and a half times `bboxKey`'s 0.01deg rounding, so it produced a different key and
+  // fetched everything twice. Round here and the keys are identical.
+  const x0 = Math.round(cx - w / 2), y0 = Math.round(cy - h / 2);
+  return {
+    minLng: unLng(x0), maxLng: unLng(x0 + w),
+    minLat: unLat(y0 + h), maxLat: unLat(y0),
+  };
+}
+
 // `uDistMi` is the app's unit-aware distance FORMATTER (ClimbMatchCore.jsx), not a
 // boolean flag — `mi => "35.5 mi" | "57.2 km"` depending on the user's setting. This
 // component originally destructured it as `uDistMi = true` and branched on its
@@ -65,6 +117,17 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   const [show, setShow] = useState({ fires: true, perims: true, wx: true });
   const [sel, setSel] = useState(null);
 
+  // Seed the viewport before Leaflet is anywhere near ready, so the three federal
+  // queries below start on mount instead of waiting out the CDN. useLayoutEffect
+  // rather than useEffect because the map div only has a measurable size once the
+  // DOM is committed, and this needs to run at the FIRST opportunity after that —
+  // every millisecond here is a millisecond added to the fire list.
+  useLayoutEffect(() => {
+    const [vLat, vLng, vZoom] = viewFor(focus);
+    const seed = bboxForView(mapDiv.current, vLat, vLng, vZoom);
+    if (seed) setBbox(b => b || seed);
+  }, []);
+
   const firesQ = useActiveFires(bbox, show.fires);
   const perimQ = useFirePerimeters(bbox, show.perims);
   const wxQ = useFireWeather(bbox, show.wx);
@@ -79,11 +142,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
-      // The caller picks the zoom, because only it knows whether `focus` is a crag or
-      // a whole state. Clamped so a bad value cannot hand Leaflet an out-of-range zoom.
-      const fz = focus && Number.isFinite(focus.zoom) ? Math.min(14, Math.max(3, focus.zoom)) : 9;
-      const map = L.map(mapDiv.current, { attributionControl: false })
-        .setView(focus ? [focus.lat, focus.lng] : [US.lat, US.lng], focus ? fz : US.zoom);
+      // Same view the bbox was seeded from — see viewFor.
+      const [vLat, vLng, vZoom] = viewFor(focus);
+      const map = L.map(mapDiv.current, { attributionControl: false }).setView([vLat, vLng], vZoom);
       applyBaseLayer(map, tileRef, baseLayer);
       // Order matters: perimeters and weather zones are fills, incident points sit
       // on top so a marker inside a perimeter stays clickable.
