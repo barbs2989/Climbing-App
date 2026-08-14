@@ -1,0 +1,60 @@
+{
+ "zone": "Mount Rainier",
+ "areas": ["wa_mount_rainier"],
+ "sites": [
+  {
+   "name": "Camp Muir",
+   "type": "camp",
+   "elev": 10080,
+   "capacity": "Roughly 25-35 tent parties on the Cowlitz Glacier snow platforms in a normal season, plus the 1921 stone Public Shelter which sleeps on the order of 15-20 on its bunks; permits are issued against a party quota rather than numbered pads, so the practical ceiling moves with snow cover",
+   "water": "No running water and no reliable melt stream. Every party must carry a stove and fuel and melt snow; snow is normally available on the Cowlitz year-round, but late in a dry season the cleanest snow can be a walk from the tent platforms",
+   "permit": "Mount Rainier National Park wilderness camping permit required for any overnight, obtained through Recreation.gov with roughly two-thirds reservable in advance and about one-third held for walk-ups within a day of departure. Separately, anyone travelling on glaciers, going above high camp or attempting the summit owes the climbing cost recovery fee, paid on Pay.gov before arriving; the amount is revised periodically, so confirm it at booking. Walking to Camp Muir and back as a day trip needs neither. In-person registration at a ranger station is still required on or before the climb date.",
+   "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserved, so treat it as a bonus rather than a plan and carry a tent regardless; it has been closed for maintenance in past seasons and its status is worth re-checking each year. Weather is the main hazard to the camp itself, and the snowfield below is notorious for whiteout navigation, so record your descent bearings before you need them. The Paradise road is plowed year-round, so unlike the north-side camps this one is not gated by a seasonal road closure."
+  },
+  {
+   "name": "Ingraham Flats",
+   "type": "camp",
+   "elev": 11100,
+   "capacity": "A handful of parties, typically under ten tents; the usable flat ground shifts year to year as the Ingraham Glacier changes and crevasses open across the bench",
+   "water": "Snow only, melted on a stove. There is no liquid water source at this elevation",
+   "permit": "Same Mount Rainier National Park wilderness camping permit as Camp Muir, issued for a specific camp — a permit written for Camp Muir does not authorise a night here. The climbing cost recovery fee applies to everyone camping here, since reaching it means crossing the Cowlitz Glacier and going above Camp Muir.",
+   "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more exposed camp, and objective exposure to icefall off the Ingraham headwall above, which is why parties argue about whether the higher start is worth it. Whether it is sound in a given week is conditions-dependent and worth asking the climbing rangers rather than deciding from a guidebook. Sites are dug into snow, so bring a shovel and expect to build your own platform and walls."
+  },
+  {
+   "name": "Camp Schurman",
+   "type": "camp",
+   "elev": 9440,
+   "capacity": "Considerably smaller than Camp Muir, on the order of a dozen tent sites on the snow and rock around Steamboat Prow; the quota fills quickly on good-weather weekends",
+   "water": "Snow to melt in most conditions, and the camp generally has adequate clean snow through the season. Some parties find running meltwater near camp late in summer, but it is seasonal and should not be counted on when planning fuel",
+   "permit": "Mount Rainier National Park wilderness camping permit required, same reservation and walk-up split as the rest of the park's climbing camps, with in-person registration before the climb. The climbing cost recovery fee applies to anyone continuing onto the Emmons or Winthrop glaciers or attempting the summit; walking to Camp Schurman as a day trip without going higher does not trigger it.",
+   "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its exterior and toilet facilities, but the hut is staff quarters and not a shelter climbers can sleep in, so a tent is mandatory. Access is gated by the White River Road, which typically does not open until late June, and by the Inter Glacier, which is small but crevassed enough that roping up is a judgement call that changes through the season. Late in a dry summer the Inter Glacier turns to bare ice and rubble."
+  },
+  {
+   "name": "Thumb Rock",
+   "type": "bivy",
+   "elev": 10760,
+   "capacity": "Very limited, realistically two to four small tents; parties have ended up stacking tents in a vertical line on the slope when the site is busy, which is not a safe arrangement",
+   "water": "Snow only. There is no water and no shelter, so carry all fuel for the bivouac and for summit day",
+   "permit": "Mount Rainier National Park wilderness camping permit required for the overnight, plus the climbing cost recovery fee, which is unavoidable on this route. Registration is in person at a ranger station and climbing rangers will discuss current route conditions at that point, which on Liberty Ridge is worth treating as part of the planning rather than a formality.",
+   "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal rockfall struck tents here in 2019, so site selection within the notch and the timing of your arrival matter more than comfort. Warm afternoons that prevent an overnight freeze are the usual trigger, and the park service advises against the route when the freezing level on the mountain is high. The approach from the Carbon River or Mowich side is long and its own seasonal problem, since those roads open on different schedules and can be closed by washouts or fire."
+  },
+  {
+   "name": "White River Campground",
+   "type": "camp",
+   "elev": 4400,
+   "capacity": "88 individual drive-in sites with flush toilets and fire grates; RV length is limited to about 27 ft",
+   "water": "Potable water at the campground when it is open for the season",
+   "permit": "No wilderness permit needed, but this is inside Mount Rainier National Park so park entrance applies, and the park has operated timed-entry reservations for corridor access in recent summers. Recent NPS listings show it as first-come rather than reservable, which contradicts several third-party campground sites still advertising reservations, so check the current NPS page before relying on either. A camping permit here does not cover the mountain: the wilderness permit and the climbing fee are separate.",
+   "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the last to open, around late June, and the first to close in September, so early-season parties often sleep outside the park. Its availability is not guaranteed year to year — it has been listed closed for fire activity — so confirm status before driving in. A reasonable place to sort gear and get a short night before an early start up the Inter Glacier."
+  },
+  {
+   "name": "Cougar Rock Campground",
+   "type": "camp",
+   "elev": 3180,
+   "capacity": "179 individual sites across six loops, plus separate group sites",
+   "water": "Potable water available at the campground during the operating season",
+   "permit": "Mount Rainier National Park entrance applies, and the park has used timed-entry reservations for the Nisqually/Paradise corridor in recent summers, which can affect what time you can drive up on summit morning. Campsites are reservable through Recreation.gov and required during the peak midsummer window. This covers the campground only and is unrelated to the wilderness permit and climbing fee.",
+   "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept open through the year, it is the least season-gated approach on the mountain, though the campground itself runs roughly late May to late September. It sits low and forested at just over 3,000 ft, which makes for comfortable sleeping but no acclimatisation value whatsoever. Book early, since it is one of only two campgrounds in the park taking reservations and fills on summer weekends."
+  }
+ ]
+}

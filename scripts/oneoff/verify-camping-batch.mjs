@@ -8,7 +8,7 @@ const get = async q => {
   if (!r.ok) throw new Error(r.status + " " + (await r.text()).slice(0, 160));
   return r.json();
 };
-const batch = JSON.parse(fs.readFileSync("enrichment-wip/camping_liberty_bell_group_2026_08_13.json", "utf8"));
+const batch = JSON.parse(fs.readFileSync(process.argv[2] || "enrichment-wip/camping_liberty_bell_group_2026_08_13.json", "utf8"));
 const ids = Object.keys(batch);
 let rows = [];
 for (let i = 0; i < ids.length; i += 40) rows = rows.concat(await get(`routes?select=id,name,area_id,bivy&id=in.(${ids.slice(i, i + 40).join(",")})&limit=200`));
