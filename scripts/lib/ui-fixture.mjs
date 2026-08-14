@@ -77,7 +77,13 @@ const rest = async (path, opts = {}) => {
 const auth = async (path, opts = {}) => {
   const r = await fetchRetry(`${SUPABASE_URL}/auth/v1/${path}`, {
     ...opts,
-    headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json", ...(opts.headers || {}) },
+    // KEY() — CALL it. #919 made the key lazy (`const KEY = () => …`) so importing this file
+    // could not demand a service key on the CI path that must never hold one. It wired SH()
+    // correctly and missed this one helper, so `apikey` got the FUNCTION and the bearer token
+    // got its source text: every local run died with 401 "Invalid API key" before creating a
+    // fixture. Invisible because the same PR moved CI onto the anon-key durable fixture, so
+    // nothing exercised this path again.
+    headers: { apikey: KEY(), Authorization: `Bearer ${KEY()}`, "Content-Type": "application/json", ...(opts.headers || {}) },
   });
   const text = await r.text();
   let body = null;
