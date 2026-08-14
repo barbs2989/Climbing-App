@@ -81,15 +81,6 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
-  "check-signed-in.mjs":
-    "was wired into render-guards.yml on 2026-08-13 (#919) and UNWIRED again the same day, " +
-    "because it went red on main: modal:inboxOpen reports 'added nothing on any of 6 tabs'. " +
-    "That is unresolved rather than dismissed — the Inbox's empty-state copy has changed on " +
-    "main since the guard's one passing run, so it may be a real regression in that modal " +
-    "rather than a fixture artifact. It stays hand-runnable (npm run check:signed-in, which " +
-    "still passes end to end apart from that one assertion) and the CI job comes back once " +
-    "the inbox question is answered. The durable accounts and secrets it needs are already " +
-    "in place, so re-wiring is a one-file change.",
   "check-enrichment-traceable.mjs":
     "takes an enrichment BATCH FILE as its argument and verifies that every number and " +
     "load-bearing feature word in a generated segment also appears in that route's own " +
