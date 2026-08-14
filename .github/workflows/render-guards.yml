@@ -319,6 +319,25 @@ jobs:
     name: A real signed-in account still works
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    # SERIALISED REPO-WIDE, and this is load-bearing rather than tidiness.
+    #
+    # Unlike every other guard here, this one drives a SHARED MUTABLE resource: two durable
+    # accounts in the live project. Per-run fixtures were independent by construction — each
+    # run made its own pair and destroyed them — and moving to durable accounts to get this
+    # into CI quietly traded that away. Two runs at once sign in as the same climber and walk
+    # the same inbox, crew and group, so one run's state changes what the other measures.
+    #
+    # Observed exactly that: it passed alone on #919, then failed twice on #920 and once
+    # locally while main had three render-guards runs in flight, always on modal:inboxOpen,
+    # with no app change between. A guard that reports on whichever run got there first is
+    # worse than one that waits.
+    #
+    # NOT keyed on head_ref, deliberately: the collision is between DIFFERENT branches, so a
+    # per-branch group would not prevent it. cancel-in-progress stays false — a cancelled run
+    # reports no failure, which is the silent non-coverage this whole workflow exists to end.
+    concurrency:
+      group: signed-in-durable-accounts
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
