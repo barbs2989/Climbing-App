@@ -77,7 +77,12 @@ const rest = async (path, opts = {}) => {
 const auth = async (path, opts = {}) => {
   const r = await fetchRetry(`${SUPABASE_URL}/auth/v1/${path}`, {
     ...opts,
-    headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json", ...(opts.headers || {}) },
+    // KEY is a lazy GETTER, not a string — it must be CALLED. Interpolating the function
+    // itself sent its own source text as the credential, and GoTrue answered
+    // `401 {"message":"Invalid API key"}`, which reads exactly like a stale or wrong key and
+    // sent two sessions looking at the wrong thing. `rest()` above calls `SH()` correctly,
+    // which is why REST worked while every auth-admin call failed.
+    headers: { apikey: KEY(), Authorization: `Bearer ${KEY()}`, "Content-Type": "application/json", ...(opts.headers || {}) },
   });
   const text = await r.text();
   let body = null;
