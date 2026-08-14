@@ -452,7 +452,11 @@ try {
       log(`  ${name}: skipped — ${NEEDS_EXTRA_STATE[name]}`);
       continue;
     }
-    let opened = null, empty = null, threw = null;
+    // Held so a FAILURE can show what was on screen instead. Until now the only overlays
+    // whose text was ever captured were the ones that opened, so "it never rendered" was a
+    // dead end: you could not tell an unmounted modal from one rendering an empty shell,
+    // and the next step was always "reproduce it and look", which nobody could do locally.
+    let opened = null, empty = null, threw = null, lastText = "", lastTab = null;
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
@@ -475,6 +479,7 @@ try {
       // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
       // trips on anything that moves on its own -- a clock, a relative timestamp -- and
       // would report an overlay as opened when nothing opened at all.
+      lastText = openedText; lastTab = t;
       const lines = openedText.split("\n").map((l) => l.trim());
       if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
     }
@@ -491,7 +496,17 @@ try {
     }
     asserted++;
     if (!opened) {
-      fail(`modal:${name}`, `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified`);
+      // Say WHAT was on screen instead. "It never rendered" is a true statement and a useless
+      // one on its own: an unmounted modal and one rendering an empty shell produce the same
+      // sentence, and they need opposite investigations. The last tab's settled text is the
+      // cheapest evidence that separates them, and it costs nothing on a passing run.
+      const shown = lastText.split("\n").map((l) => l.trim()).filter(Boolean);
+      const novel = shown.filter((l) => !baselines[lastTab]?.has(l));
+      fail(`modal:${name}`,
+        `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified. ` +
+        `On the last tab (${lastTab}) the screen was ${lastText.length} chars, ` +
+        `${shown.length} non-empty line(s), ${novel.length} not in that tab's baseline. ` +
+        `First lines: ${JSON.stringify(shown.slice(0, 8))}`);
       continue;
     }
     // The floor is deliberately low: a takeover like the guide dashboard legitimately
