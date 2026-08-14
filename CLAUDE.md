@@ -30,6 +30,7 @@ npm run check:provenance   # every wired section heading still shows how it was 
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
@@ -1601,6 +1602,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
+- **`check:track-caveat`** asserts that a line drawn between a route's own waypoints does not pose
+  as a recorded GPS track. **201 of the 580 WA routes carrying a `gpx` store a polyline whose every
+  vertex IS one of that route's own waypoints** — median **four** points, 162 of them spanning more
+  than 2 km. The route page renders those under a ROUTE TRACK heading, draws them on the map, and
+  offers **Download GPX**, so a climber can take away five straight segments across 22 km of the
+  North Cascades (`wa_amphitheater_mountain_north_ridge`) as though somebody had walked it. The
+  waypoints are real and worth keeping; calling the line between them a track is the untrue part, so
+  the fix is a **caption**, the same shape as the RACK caption and the fire panel's point-of-origin
+  caveat. Static SSR, so it sits in `npm run build`. See `lib/track.js`.
+  - **The provenance chip does not already cover this, and the measurement says so in the worst
+    way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
+    whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell
+    which kind of line is on screen. That is the rule `check:provenance` already records: a
+    per-section signal must beat the route-level flag.
+  - **No waypoint audit can see this class, by construction.** All three ask *"is each pin on this
+    route's own track?"* and on these routes the answer is **yes because the track is a copy of the
+    pins** — two records agreeing is one claim counted twice, the shape
+    [[prose-can-be-the-contaminated-half-ask-the-track]] records. The tiny-stub placeholder gate
+    those audits carry is about **extent** and cannot reach it either: these have large extent and
+    unremarkable point counts. It also means an off-track finding on such a route is not evidence.
+  - The predicate requires **every** vertex to be a waypoint, not most: a genuine track passes
+    through its own waypoints too, so a threshold would caption correct data. What distinguishes
+    the synthetic ones is that there is nothing in the line *except* the pins.
+  - **The ANCHOR is `>ROUTE TRACK<` in the RAW html, never the stripped words**, and that was found
+    by injection rather than by reading it. **Two surfaces render that text**: CAMPING & BIVY's prose
+    says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
+    waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
+    left the check **green**. The same two-surfaces trap this file records for `rappels`.
+  - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
+    predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
+    the direction that teaches people to ignore it), and renaming the heading.
 - **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
   nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
   `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
