@@ -1,0 +1,152 @@
+[
+  {
+    "id": "wa_artic_rose",
+    "area_id": "wa_half_moon_crag",
+    "waypoints": [
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4800,
+        "name": "Half Moon Crag",
+        "note": "Confirmed via Mountain Project (exact GPS match to this area's registered location) - granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single verified coordinate serves as both approach reference and topout.",
+        "type": "Topout",
+        "distMi": 1
+      },
+      {
+        "lat": 47.7457,
+        "lng": -121.0885,
+        "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+        "note": "Mountain Project gives written directions only ('Hwy 2 to Stevens Pass, take old Stevens Pass Hwy/Tye Rd downhill toward Wellington, pull off just uphill of the double hairpin turn, ~1.4 mi from US2') and does not publish a separate parking GPS pin. This coordinate (matching what's already in our DB) is geographically consistent with that description but is an inferred/estimated pulloff location, not a directly sourced pin.",
+        "type": "Trailhead"
+      },
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4761,
+        "name": "Half Moon Crag",
+        "type": "Summit",
+        "elevFt": 4761
+      }
+    ]
+  },
+  {
+    "id": "wa_astral_projection",
+    "area_id": "wa_half_moon_crag",
+    "waypoints": [
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4800,
+        "name": "Half Moon Crag",
+        "note": "Confirmed via Mountain Project (exact GPS match to this area's registered location) - granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single verified coordinate serves as both approach reference and topout.",
+        "type": "Topout",
+        "distMi": 1
+      },
+      {
+        "lat": 47.7457,
+        "lng": -121.0885,
+        "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+        "note": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+        "type": "Trailhead"
+      },
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4761,
+        "name": "Half Moon Crag",
+        "type": "Summit",
+        "elevFt": 4761
+      }
+    ]
+  },
+  {
+    "id": "wa_astroglide",
+    "area_id": "wa_half_moon_crag",
+    "waypoints": [
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4800,
+        "name": "Half Moon Crag",
+        "note": "Confirmed via Mountain Project (exact GPS match to this area's registered location) - granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single verified coordinate serves as both approach reference and topout.",
+        "type": "Topout",
+        "distMi": 1
+      },
+      {
+        "lat": 47.7457,
+        "lng": -121.0885,
+        "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+        "note": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+        "type": "Trailhead"
+      },
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4761,
+        "name": "Half Moon Crag",
+        "type": "Summit",
+        "elevFt": 4761
+      }
+    ]
+  },
+  {
+    "id": "wa_asymptotic",
+    "area_id": "wa_half_moon_crag",
+    "waypoints": [
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4800,
+        "name": "Half Moon Crag",
+        "note": "Confirmed via Mountain Project (exact GPS match to this area's registered location) - granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single verified coordinate serves as both approach reference and topout.",
+        "type": "Topout",
+        "distMi": 1
+      },
+      {
+        "lat": 47.7457,
+        "lng": -121.0885,
+        "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+        "note": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+        "type": "Trailhead"
+      },
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4761,
+        "name": "Half Moon Crag",
+        "type": "Summit",
+        "elevFt": 4761
+      }
+    ]
+  },
+  {
+    "id": "wa_half_fast",
+    "area_id": "wa_half_moon_crag",
+    "waypoints": [
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4800,
+        "name": "Half Moon Crag",
+        "note": "Confirmed via Mountain Project (exact GPS match to this area's registered location) - granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single verified coordinate serves as both approach reference and topout.",
+        "type": "Topout",
+        "distMi": 1
+      },
+      {
+        "lat": 47.7457,
+        "lng": -121.0885,
+        "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+        "note": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+        "type": "Trailhead"
+      },
+      {
+        "lat": 47.75586,
+        "lng": -121.11626,
+        "elev": 4761,
+        "name": "Half Moon Crag",
+        "type": "Summit",
+        "elevFt": 4761
+      }
+    ]
+  }
+]

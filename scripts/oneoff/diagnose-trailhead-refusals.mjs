@@ -26,6 +26,25 @@
 // recorded fields, never composed from memory -- the same rule enrich:apply enforces for prose.
 // `--evidence` prints each route's own candidates for it.
 //
+// THE DISCRIMINATOR THAT DECIDES THE REPAIR, found by fixing one cluster and refusing another.
+// "Coordinate impossible" says a distance and two pins disagree. It does NOT say which is wrong,
+// and the two cases need opposite repairs:
+//
+//   PINS RIGHT, DISTANCE WRONG -> null the distance. Half Moon Crag (5 routes): both pins carry
+//   their own verification notes, the crag's "Confirmed via Mountain Project (exact GPS match)",
+//   and the approach gives TIME AND GAIN BUT NO DISTANCE -- so the stored distMi=1 against a
+//   1.47 mi separation had nothing behind it. Nulled, order fixed. The 45-60min/1,000ft
+//   description already lives in the waypoint note, so nothing useful was lost.
+//
+//   DISTANCE RIGHT, PIN WRONG -> change nothing, and say so. Mount Constance (4 routes): the
+//   elevations corroborate BOTH pins (1,400 ft trailhead, 4,750 ft lake = the 3,300-3,400 ft
+//   gain the route's own text states) and the prose corroborates the distance ("under 2.2
+//   miles" vs distMi=2). The inconsistency is ~0.25 mi of horizontal error in one coordinate.
+//   Nulling a correct distance to accommodate a wrong pin would destroy the good half.
+//
+// So: check the ELEVATIONS and the PROSE against each other before touching either. Where they
+// agree with the distance, the pin is the suspect and this script is the wrong tool.
+//
 // IT IS OFTEN NOT RECOVERABLE, AND THAT IS THE SECOND FINDING. Several of these routes record
 // more than one approach corridor and disagree with themselves about which one the waypoints
 // describe -- Phantom Peak pins Hannegan Pass, names Nooksack Cirque in approach_logistics, and
