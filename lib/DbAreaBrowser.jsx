@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
@@ -53,39 +53,13 @@ const backRow = (onBack, title, C) => (
   </div>
 );
 
-// area_top_contributors returns raw auth uids, never names -- db.js says so above the hook,
-// and this rendered `c.contributor` straight into the row, so the crag page would have named
-// its top contributor as a uuid. Invisible so far only because the contributions ledger is
-// empty; the first climber to file anything would have seen it. Resolve through profiles, and
-// fall back to "Climber" rather than to the id, the same answer TopContributors gives.
-//
-// useProfilesByIds sits ABOVE the empty-data return on purpose: a hook after a conditional
-// return is the #377 shape and check:hooks fails the build for it.
-function DbTopContributors({ areaId, C, ActionIcon }) {
-  const { data } = useAreaTopContributors(areaId, 3);
-  const profiles = useProfilesByIds((data || []).map((r) => r.contributor));
-  const nameOf = (uid) => {
-    const p = (profiles.data || []).find((pp) => pp.id === uid);
-    return (p && p.name) || "Climber";
-  };
-  if (!data || !data.length) return null;
-  const medal = ["#d4af37", "#c0c0c0", "#cd7f32"];
-  return (
-    <div style={{ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 8 }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: C.blue, marginBottom: 10 }}>TOP CONTRIBUTORS</div>
-      {data.map((c, i) => (
-        <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 9, marginTop: i ? 9 : 0 }}>
-          <span style={{ width: 18, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><ActionIcon name="award" size={15} color={medal[i]} /></span>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{nameOf(c.contributor)}</div>
-            {i === 0 ? <span style={{ display: "inline-block", fontSize: 10.5, fontWeight: 700, color: C.amber, background: C.amberBg, padding: "1px 7px", borderRadius: 9, letterSpacing: 0.3, marginTop: 2 }}>{"★ Top Contributor"}</span> : null}
-          </div>
-          <span style={{ fontSize: 12, fontWeight: 700, color: C.textMuted, flexShrink: 0 }}>{c.n}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
+// TOP CONTRIBUTORS used to be forked here — a second implementation of the panel that
+// ClimbMatchCore already owns. The fork is why the crag page rendered `c.contributor`, an auth
+// uid, as a person's name: the good copy resolved profiles and this one never learned to, and
+// nothing tied them together. #945 fixed the symptom; deleting the fork is what stops it
+// recurring. The shared component arrives as a prop for the same reason `C` and `ActionIcon`
+// do — this file must not import ClimbMatchCore, which lazy-imports this module and would make
+// the cycle static.
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
@@ -547,7 +521,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb}) {
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -647,7 +621,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
-      <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
+      {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
 
       <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} discSlots={discSlots} C={C} />
     </div>
@@ -1154,7 +1128,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb, TopContributors }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1284,7 +1258,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
