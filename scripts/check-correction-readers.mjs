@@ -55,7 +55,12 @@ appSources(ROOT, GUARD);
    — outside a guard whose whole subject is rappelDetail readers, and the fail-closed branch
    could not catch it because the other file still had five. A guard that names its inputs
    must name all of them ([[#547]]). */
-const FILES = ["RouteDetail.jsx", "lib/rappels.js"];
+/* lib/rack.js joined the list when contribRack/_rackEdited/routeRackFor moved out of
+   RouteDetail.jsx so the crew card could read them without core importing a lazy-loaded file.
+   Omitting it here would not have been a quiet miss — the rack rivalry's precedence function
+   would have vanished from the scan and the fail-closed branch fires — but the same move made
+   silently, one file at a time, is exactly the #547 shape this comment already warns about. */
+const FILES = ["RouteDetail.jsx", "lib/rappels.js", "lib/rack.js"];
 const FILE = FILES.join(" + ");
 const SRC = FILES.map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
 const APP = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
