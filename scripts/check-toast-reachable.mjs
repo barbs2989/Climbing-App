@@ -76,9 +76,35 @@ appFn.traverse({
   },
 });
 
-if (returns.length < 5) {
-  console.error(`check:toast-reachable FAILED — found only ${returns.length} top-level return(s) in App.`);
-  console.error("App has ~10. A scan this short did not read the component; do not read this as a pass.");
+// The count is PINNED, not floored, and the reason is that this guard has already been fooled
+// by the very PR that introduced it. #890 wrapped nine early returns in <>{_toastEl}…</> and
+// on the Calendar's return it opened the fragment and NEVER CLOSED IT. Everything after was
+// swallowed as JSX text — including `if(inboxOpen)return <Inbox …/>`, which stopped existing
+// as a ReturnStatement at all. App went from 10 top-level returns to 9, Messages became
+// unreachable, and this guard printed "9 (9 render a screen)" and passed, because 9 > 5.
+//
+// A DROP is the dangerous direction and is almost always a swallowed return: the code still
+// parses, every identifier is still bound, and the screen simply ceases to exist. Nothing else
+// in the suite can see it — that is why the Inbox defect masqueraded as a CI flake for days
+// (see the note in check:signed-in). A floor cannot catch a drop from 10 to 9; only a pin can.
+const EXPECTED_RETURNS = 10;
+if (returns.length !== EXPECTED_RETURNS) {
+  const dropped = returns.length < EXPECTED_RETURNS;
+  console.error(`check:toast-reachable FAILED — App has ${returns.length} top-level return(s), expected ${EXPECTED_RETURNS}.`);
+  if (dropped) {
+    console.error(`
+A return VANISHED from the AST. The usual cause is an unclosed JSX fragment or element on an
+earlier return, which swallows every statement after it as JSX text — the code still parses and
+every identifier is still bound, so nothing else in the suite will tell you. That is #890
+exactly: the Calendar's return ate the Inbox's, and Messages was unreachable for days.
+
+Find it by listing App's top-level returns and looking for the screen that is missing:
+  node -e 'see the ancestry probe in this file's injection notes'`);
+  } else {
+    console.error(`
+A return was ADDED. That is fine — a new screen — but it must be deliberate: confirm it renders
+{${TOAST_ID}} and then raise EXPECTED_RETURNS to ${returns.length} in this file.`);
+  }
   process.exit(1);
 }
 
@@ -120,3 +146,15 @@ console.log(`\ncheck:toast-reachable: ok — every screen App returns can show a
 //   4. Add `if(x)return null;` inside App -> must still PASS (a guard clause is not a screen).
 //   5. Add a nested `function Foo(){return <div/>}` inside App -> must still PASS (its return
 //      is not App's).
+//   6. Delete one top-level return outright -> must FAIL saying a return VANISHED. This is the
+//      case the pinned count exists for; 4/4 verified 2026-08-14.
+//   7. Add a return (`if(false)return <>{_toastEl}<div/></>;`) -> must FAIL saying one was
+//      ADDED, and tell you to raise EXPECTED_RETURNS deliberately.
+//
+// A NOTE ON REPRODUCING #890 EXACTLY, because it was tried and is a trap: removing only the
+// Calendar return's `</>` does NOT recreate the defect — it raises `SyntaxError: Unterminated
+// JSX contents`, because the Inbox return's own `</>` is then consumed closing the OUTER
+// fragment and its nested one is left open. #890 parsed only because the swallowed return
+// carried no fragment of its own. Recreating that needs several coordinated edits and would
+// test the harness more than the guard, so case 6 injects the INVARIANT (a return stopped
+// existing) rather than one syntax that can cause it.
