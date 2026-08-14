@@ -1904,7 +1904,14 @@ function gapTrack(r){return !!r&&!(r.gpxPts&&r.gpxPts.length>=3);}
    only a tie-breaker for two ENRICHED strings; once a field is in `_contribFields` the
    climbers' text wins outright. */
 function _descEdited(r){return !!(r&&(r._contribFields||[]).indexOf("descentText")>=0);}
-function descentBeta(r){if(!r)return "";const a=String(r.descent||"").trim(),b=String(r.descentText||"").trim();if(b&&_descEdited(r))return b;return b.length>a.length?b:a;}
+/* WHICH SIDE HOLDS THE CORRECTION: `a`, not `b`. Both merge paths write through the rename map
+   `M` in ClimbMatch.jsx, and M has {descentText:"descent"} -- so a contribution submitted under
+   the form key `descentText` lands in **route.descent**, while route.descentText keeps the
+   untouched enrichment prose. #897 had this backwards (it returned `b` when edited), which
+   returned the enrichment and discarded the correction -- strictly worse than the plain length
+   comparison it replaced, since before it a correction at least won when it was longer.
+   `_rapEdited` is the model: it reads route.rappels, the M DESTINATION, not the source column. */
+function descentBeta(r){if(!r)return "";const a=String(r.descent||"").trim(),b=String(r.descentText||"").trim();if(a&&_descEdited(r))return a;return b.length>a.length?b:a;}
 /* `routes.season` is not a month range. Enrichment writes prose into it — up to 232 characters on
    wa_hourglass_gully_winter — and the hero header rendered it raw, so a paragraph about snow bridges
    wrapped over the cover photo and pushed the box open. The full text still shows in the season chip
