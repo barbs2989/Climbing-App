@@ -18,7 +18,13 @@ const BLURB = {
 };
 const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset link", reset: "Save new password" };
 
-export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }) {
+// The Terms open with "By creating an account or using ClimbMatch you agree to these Terms",
+// and until now this screen -- the real one -- never mentioned them. The DEMO LoginScreen in
+// ClimbMatchCore.jsx did, which is the wrong way round: the fake door carried the notice and
+// the real one did not. `onLegal` is what lets the host show them; when it is absent (the
+// `recovery` modal, where you are already a user mid-password-reset) nothing renders, so this
+// cannot break a call site that does not pass it.
+export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal }) {
   const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
@@ -159,6 +165,19 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
         <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: c.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
           {busy ? "…" : done ? "Continue to ClimbMatch" : ACTION[mode]}
         </button>
+        {/* Shown on BOTH sign-in and create-account, because the Terms bind on "creating an
+            account OR using ClimbMatch" and when realAuthGate is on this screen is the only
+            door into the app -- so both paths are the moment of acceptance. Not on forgot or
+            reset: you are an existing user mid-recovery there, and it would be noise at the
+            one point someone is locked out. */}
+        {onLegal && (mode === "in" || mode === "up") && (
+          <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
+            By {mode === "up" ? "creating an account" : "signing in"} you agree to our{" "}
+            <button onClick={() => onLegal("terms")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Terms of Service</button>
+            {" "}and{" "}
+            <button onClick={() => onLegal("privacy")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Privacy Policy</button>.
+          </div>
+        )}
         {mode === "forgot" ? (
           <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
             <button onClick={() => { setErr(""); setInfo(""); setMode("in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>Back to sign in</button>

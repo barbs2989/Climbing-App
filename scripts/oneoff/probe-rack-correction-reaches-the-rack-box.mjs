@@ -104,8 +104,14 @@ if (t0.includes("ZQCORRECTIONZQ")) fail("control: the correction marker appeared
 
 // ── After a climber's "Rack & gear" correction merges. This is exactly what ClimbMatch's
 //    merge produces: gearTiers.required set, detailedRack untouched.
+//    MODEL BOTH WRITES. A rack contribution goes through two paths at once: the general loop
+//    (`o[M[k]||k] = CONV[k](value)`, and M.rack==="rack", CONV.rack === v=>[v]) sets o.rack,
+//    AND the gReq special case sets o.gearTiers.required. Setting only one of them is how the
+//    #897 descent test managed to pass while its fix was inverted -- a probe that hand-models
+//    the writer can only confirm the author believed the same thing twice.
 const after = base();
 after.detailedRack = ENRICHED;
+after.rack = [CORRECTION];
 after.gearTiers = { required: [CORRECTION] };
 after._contribFields = ["rack"];
 const t1 = text(render(after, rackTab));

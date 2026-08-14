@@ -148,8 +148,39 @@ const arStart = core.indexOf("function AddRoute(");
 const arEnd = core.indexOf("function numsClose(");
 if (arStart < 0 || arEnd < 0) anchorLost("AddRoute function bounds");
 const ar = core.slice(arStart, arEnd);
-const gated = new Set([...ar.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]));
+
+// The completeness meter is NOT an input, and counting it as one is how `loss` hid.
+// `const checks=[…]` contains `sf("loss")?!!loss:1` for every field, so a field with no
+// control at all still looked "gated" here — the guard reported 30/30 rendered while four
+// disciplines declared a field the form never drew, and whose entry in `checks` could
+// therefore never be satisfied (the meter could not reach 100%). Cut that expression out
+// before looking for inputs.
+const ckStart = ar.indexOf("const checks=[");
+if (ckStart < 0) anchorLost("`const checks=[` in AddRoute — the completeness meter");
+let ckDepth = 0, ckEnd = ar.indexOf("[", ckStart);
+for (let i = ckEnd; i < ar.length; i++) {
+  if (ar[i] === "[") ckDepth++;
+  else if (ar[i] === "]") { ckDepth--; if (!ckDepth) { ckEnd = i; break; } }
+}
+// Block comments go too, and this is not hypothetical: the comment added beside the fix
+// EXPLAINS the bug by quoting `sf("loss")?!!loss:1`, which put a second occurrence outside
+// `checks` and made the input test pass on prose. Presence is not use — the same false pass
+// check:rappel-readers and check:crew-member-readers both record. Only `/* */` is stripped:
+// the aggressive blanker other guards use eats real code when a string contains `//`.
+const arInputs = (ar.slice(0, ckStart) + ar.slice(ckEnd)).replace(/\/\*[\s\S]*?\*\//g, " ");
+
+const gated = new Set([...arInputs.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]));
 const declared = new Set(Object.values(FIELDS).flat());
+
+// The general form of the same defect, and the one that does not depend on where sf() is
+// written: a piece of form state nothing can write. `useState` gives every field a setter;
+// if only the declaration mentions it, no control writes it and the field is dead however
+// convincingly it is declared elsewhere.
+const setters = [...new Set([...ar.matchAll(/\bset[A-Z][A-Za-z0-9]*/g)].map((m) => m[0]))];
+const deadSetters = setters.filter((t) => (ar.match(new RegExp(`\\b${t}\\b`, "g")) || []).length === 1);
+if (deadSetters.length) {
+  fail(`AddRoute state nothing ever writes: ${deadSetters.join(", ")} — declared with useState and never called, so the field cannot be filled in`);
+} else ok(`all ${setters.length} form states are written by some control`);
 
 const promisedNotRendered = [...declared].filter((k) => !gated.has(k));
 if (promisedNotRendered.length) fail(`FIELDS offers ${promisedNotRendered.join(", ")} but no input is gated on it — the form never asks`);
