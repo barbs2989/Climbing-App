@@ -1,5 +1,40 @@
 # Name vs aspect: 12 disagreements, and the `face` column decides most of them
 
+> **RESOLUTION LOG (updated 2026-08-13, after published-source research).**
+> **3 settled, 9 still open.** The bar for acting is a *published* statement, not internal
+> agreement — the catalog is what is in doubt, so `face` agreeing with `aspect` raises suspicion
+> about the name but cannot supply the right one.
+>
+> | route | verdict | action |
+> |---|---|---|
+> | `wa_forbidden_peak_east_face_catscratch` | **PHANTOM — not a route at all** | **DELETED.** See below. |
+> | `wa_ruth_mountain_south_slopes` | **NAME WRONG** | prose applied; rename SQL in `audits/sql/2026-08-13-ruth-mountain-rename.sql` |
+> | `wa_chimney_rock_west_face` | **Idaho route, corroborated** | removal recommended, not applied — needs a human |
+> | `wa_spire_point_southwest_face` | **UNRESOLVED** | route naming needs Beckey; no source settles it |
+> | `wa_pinnacle_peak_tatoosh_r1`, `wa_plummer_peak_r1` | **name suspect, UNRESOLVED for rename** | data self-consistent; no published route name found |
+> | the remaining 6 | not yet researched | — |
+>
+> **`wa_forbidden_peak_east_face_catscratch` was the big one, and the answer was not a rename.**
+> It is a row for a feature that is not a summit route, and the row diagnosed itself — its own
+> `overview` already read *"No documented 5.9/Grade IV 'East Face' summit route was found. The only
+> well-sourced feature matching 'Catscratch' is the Cat Scratch Gullies."* An earlier pass reached
+> that conclusion and left the row standing. Confirmed against published sources: the Cat Scratch
+> Gullies rise from Boston Basin on the **south** side to the 8,265 ft West Ridge notch, and
+> Forbidden's six real routes each already had their own row. Removed; the peak now lists exactly
+> six, and `route_count` is in step.
+>
+> **Nothing was lost, because the beta was already on the right row.**
+> `wa_forbidden_peak_west_ridge` carries a Cat Scratch approach variant whose `baseFinding` is
+> precisely the confusion that motivated this whole project: *"Cat Scratch is not the snow couloir,
+> and that mix-up is the usual reason parties lose time here."* The DELETE was guarded on that
+> variant being present, so it could not fire in a state where the information would be lost.
+>
+> **`wa_ruth_mountain_south_slopes` is the second Little Annapurna: the name states a TRAVEL
+> DIRECTION, not an aspect.** Hannegan Pass is north of Ruth, so the approach walks *south* along
+> Ruth Arm to reach a mountain then climbed on its north-side glacier. Five signals agree and none
+> is the name.
+
+
 First real run of `audit:aspect-name` against 8,367 WA routes, 490 comparable. **12 disagreements.**
 
 Getting there took two rounds of fixing the audit rather than the data — it reported **20**, then 14,
