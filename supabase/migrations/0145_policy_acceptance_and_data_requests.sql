@@ -1,3 +1,8 @@
+-- ALREADY APPLIED to the live project (2026-08-13), while this file was still numbered 0143.
+-- Renumbered to 0145 because #930 claimed 0143 in parallel and main merged 0144 in between;
+-- the objects are unaffected by the rename. Re-running is safe and a no-op — every statement
+-- here is `if not exists`, `create or replace`, or `drop policy if exists` before its create.
+--
 -- Make two promises in the published policy real.
 --
 -- 1. "By creating an account you agree to these Terms" -- record WHICH text was agreed to.
