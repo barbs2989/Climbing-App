@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -52,8 +52,21 @@ const backRow = (onBack, title, C) => (
   </div>
 );
 
+// area_top_contributors returns raw auth uids, never names -- db.js says so above the hook,
+// and this rendered `c.contributor` straight into the row, so the crag page would have named
+// its top contributor as a uuid. Invisible so far only because the contributions ledger is
+// empty; the first climber to file anything would have seen it. Resolve through profiles, and
+// fall back to "Climber" rather than to the id, the same answer TopContributors gives.
+//
+// useProfilesByIds sits ABOVE the empty-data return on purpose: a hook after a conditional
+// return is the #377 shape and check:hooks fails the build for it.
 function DbTopContributors({ areaId, C, ActionIcon }) {
   const { data } = useAreaTopContributors(areaId, 3);
+  const profiles = useProfilesByIds((data || []).map((r) => r.contributor));
+  const nameOf = (uid) => {
+    const p = (profiles.data || []).find((pp) => pp.id === uid);
+    return (p && p.name) || "Climber";
+  };
   if (!data || !data.length) return null;
   const medal = ["#d4af37", "#c0c0c0", "#cd7f32"];
   return (
@@ -63,7 +76,7 @@ function DbTopContributors({ areaId, C, ActionIcon }) {
         <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 9, marginTop: i ? 9 : 0 }}>
           <span style={{ width: 18, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><ActionIcon name="award" size={15} color={medal[i]} /></span>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.contributor}</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{nameOf(c.contributor)}</div>
             {i === 0 ? <span style={{ display: "inline-block", fontSize: 10.5, fontWeight: 700, color: C.amber, background: C.amberBg, padding: "1px 7px", borderRadius: 9, letterSpacing: 0.3, marginTop: 2 }}>{"★ Top Contributor"}</span> : null}
           </div>
           <span style={{ fontSize: 12, fontWeight: 700, color: C.textMuted, flexShrink: 0 }}>{c.n}</span>
@@ -364,16 +377,20 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
+      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
+
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
           behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in. */}
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
+          It sits directly BELOW the Areas/Routes search rather than above it: the moment a
+          climber knows a route is missing is the moment a search for it came back empty, so
+          this is the next thing under their thumb. It is NOT gated on the search rendering —
+          a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
       {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
         </button>
       ) : null}
-
-      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {/* Data outranks error, as in the state picker: a failed REFETCH leaves the previous
@@ -808,8 +825,31 @@ function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate
   );
 }
 
+// The top of the tree is the top of the CATALOG — the same root the drill-down calls
+// "All areas" in its own breadcrumb. This used to render `stateRoot` as depth 0, so a
+// screen titled "All areas" began at Washington and silently omitted the two levels
+// above it (usa > washington), which is precisely the level the breadcrumb beside it
+// labels "All areas". The tree and the drill-down agreed at every level below the state
+// and disagreed about where the hierarchy starts.
+//
+// `useCountries` rather than a fresh useAreaChildren(null): it is the same query the
+// country picker on the area screen has already run, so opening the tree costs no
+// request. Children below this are still fetched only on expand — the catalog is 47k
+// areas and eagerly walking it has never been affordable.
+function DbAreaTreeRoots({ currentId, expanded, onToggle, onNavigate, C }) {
+  const { data: roots, isLoading, error } = useCountries();
+  const pad = { padding: "14px 16px", color: C.textMuted, fontSize: 12.5 };
+  if (isLoading) return <div style={pad}>Loading…</div>;
+  if (error) return <div style={{ ...pad, color: C.amber }}>Couldn’t load the area tree.</div>;
+  if (!roots || !roots.length) return <div style={pad}>No areas.</div>;
+  return roots.map(r => <DbAreaTreeNode key={r.id} area={r} depth={0} currentId={currentId} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />);
+}
+
 function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C }) {
-  const [expanded, setExpanded] = useState(() => new Set([stateRoot.id, ...(ancestorIds || [])]));
+  // Open on the path you are actually standing on: the country above the state, the
+  // state, and every area you have drilled through. Without the country the new root
+  // level would render collapsed and the tree would open showing two rows.
+  const [expanded, setExpanded] = useState(() => new Set([stateRoot.parent_id, stateRoot.id, ...(ancestorIds || [])].filter(Boolean)));
   const [q, setQ] = useState("");
   const { data: results, isLoading: searching, error: searchError } = useAreaSearch(stateRoot.id, q.trim());
   const toggle = id => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
@@ -824,12 +864,12 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
         <button onClick={onClose} aria-label="Back" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, padding: "9px 13px", fontSize: 14, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{"← Back"}</button>
         <div style={{ minWidth: 0, flex: 1 }}>
           <div style={{ color: C.text, fontSize: 17, fontWeight: 800, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>All areas</div>
-          <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{stateRoot.name + " — tap a name to jump, ▸ to expand"}</div>
+          <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Tap a name to jump, ▸ to expand"}</div>
         </div>
         <button onClick={onClose} aria-label="Close" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, width: 38, height: 38, fontSize: 18, cursor: "pointer" }}>{"×"}</button>
       </div>
       <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
-        <input aria-label="Filter areas & crags" value={q} onChange={e => setQ(e.target.value)} placeholder="Filter areas & crags…" style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+        <input aria-label="Filter areas & crags" value={q} onChange={e => setQ(e.target.value)} placeholder={"Filter areas & crags in " + stateRoot.name + "…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
       </div>
       <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
         {q.trim() ? (
@@ -847,7 +887,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             </div>
           ))
         ) : (
-          <DbAreaTreeNode area={stateRoot} depth={0} currentId={current.id} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
+          <DbAreaTreeRoots currentId={current.id} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
         )}
       </div>
     </div>,

@@ -5,6 +5,7 @@
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle } from "./auth";
+import { POLICY_VERSION } from "./policy";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
@@ -33,6 +34,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
+  const [adult, setAdult] = useState(false); // 18+ attestation, create-account only
   // Asked, not assumed -- see useOAuthProviders. Until the project has Google enabled this is
   // false and the button never renders, so nobody is offered a sign-in that cannot complete.
   const providers = useOAuthProviders();
@@ -65,10 +67,15 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
 
   const submit = async () => {
     if (!email.trim() || !password) { setErr("Email and password are required."); return; }
+    // The Terms say 18+, and until now nothing asked. An ATTESTATION rather than a date of
+    // birth on purpose: a birthdate is a new piece of personal data on every account, and it
+    // would not be verified either -- so it collects more and proves the same. Gate the write,
+    // not just the checkbox, or the rule is decoration.
+    if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { data, error } = mode === "in"
       ? await signIn(email.trim(), password)
-      : await signUp(email.trim(), password, name.trim());
+      : await signUp(email.trim(), password, name.trim(), POLICY_VERSION);
     setBusy(false);
     if (error) { setErr(error.message); return; }
     // Signing up with an address that already has an account is NOT an error:
@@ -96,6 +103,11 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // button looking dead. Coming back, the tokens are in the URL hash and detectSessionInUrl
   // (on by default) turns them into a session, which useSession picks up and the gate closes.
   const goGoogle = async () => {
+    // Google on "up" creates an account too, so it has to clear the same 18+ gate as the email
+    // form. Without this the attestation would be a checkbox you could simply walk around, and
+    // the Terms would again assert an age nothing checks. Google is not enabled on the project
+    // today, so this is closing the hole before it opens rather than fixing a live one.
+    if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { error } = await signInWithGoogle();
     setBusy(false);
@@ -159,6 +171,16 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
           <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
             <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: 0 }}>Forgot password?</button>
           </div>
+        )}
+        {/* A NATIVE checkbox, deliberately. The main app hand-builds controls out of divs and
+            has to spread clickable() to get a tab stop, Enter/Space and a role; this file owns
+            its own styles and already uses real inputs, so a native one is keyboard-operable
+            and announced correctly with nothing added. */}
+        {mode === "up" && (
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+            <input type="checkbox" checked={adult} onChange={(e) => { setAdult(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
+            <span>I am 18 or older.</span>
+          </label>
         )}
         {err && <div style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
         {info && <div style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}

@@ -23,7 +23,7 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
-npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
@@ -58,6 +58,7 @@ npm run check:rappel-single-rope # the headline rappel count is the single-rope 
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
@@ -72,6 +73,7 @@ npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do th
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
+npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -466,6 +468,19 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —
+    deriving it automatically was measured and REJECTED.** `dbRouteToCamel` reads 61 columns
+    against the 54 walked here, so 21 are unwalked; each was probed with a sentinel across all
+    three bases and six sub-tabs. **Every one reaches a screen.** Six are numeric and judged
+    only on "did the page change" (`length_m`, `gain_ft`, `loss_ft`, `dist_km`, `max_angle`,
+    `high_point_ft`, plus `alpine_draws`/`rope_length_m`), the four grade variants and
+    `rope_type`/`ascender` render outright, and the two that *looked* dead are both
+    **used-not-echoed**: `grade_system` selects a format via `gradeSystemFor()` and is never
+    printed, and `auto_generated` picks a provenance chip label in `lib/provenance.js` which
+    needs section content a bare route does not have. So a derived list would carry ~10
+    exemptions to report **zero** findings — bookkeeping that rots, in exchange for nothing.
+    Add a column here by hand when one is added, and re-run that measurement before automating
+    it. `check:field-renders`' subject is columns that reach a screen, not list maintenance.
   - **A column with ZERO populated rows was unguarded by construction, which is the worst
     possible moment for it.** The method pulls a REAL value, so a column nothing has written
     yet has nothing to pull: it reported `NO DATA` and was never checked — exactly when you
@@ -1074,15 +1089,73 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
-**A climber's agreed correction must out-vote the enrichment — and the rule has now been
-broken three times, in three different shapes.** `_rapEdited` (rappels, #787/#791),
-`_descEdited` (descent text, #897) and `_rackEdited` (rack, #907) all say the same sentence about a
-different column, and each was found separately because *the failure never looks like a bug*:
-the column is populated, the section renders, and a plausible value is on screen. Only the
-climber who made the correction knows the screen is wrong, and they have no way to report it.
-  - The three failed **differently**, which is why finding one did not find the next.
-    `rappelDetail` displayed **nothing**; `descentText` was out-voted **by string length**, so a
-    shorter correction lost to longer stale prose; `rack` was not discarded at all — the
+- **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
+  column. Both describe the same piece of mountain, so a disagreement means one is wrong —
+  and which one is **not** decidable from the columns, which is why this is **report-only** and
+  must stay so.
+  - **`wa_little_annapurna_south_slopes` is the case that shaped it, and the first reported repair
+    was BACKWARDS.** That report said "the aspect is wrong, set it to S". The aspect (N/NW) was
+    correct, `face` agreed with it, the row's own "base of south slopes" waypoint sat **north** of
+    the summit, and the peak's genuine south side is a different route out of a different valley.
+    The **name** was the wrong half. Aspect drives the sun/shade readout, so applying that report
+    would have turned a correctly-shady north slog into a sunny one. The output says so in as many
+    words rather than implying a fix.
+  - **The precision rule is the ridge/face split, and without it this audit is noise.** A **ridge**,
+    arete, buttress or spur *separates two faces* — the North Ridge has an east side and a west
+    side, so either is a legitimate aspect and a 90° disagreement there is **correct data**. Only an
+    **opposed** ridge (180°) says something contradictory. A **face**, wall, slab, couloir or gully
+    is a single plane, so 90° already *is* the contradiction. `FACE` is tested before `RIDGE`,
+    because a name carrying both words ("Northeast Face Direct off the North Ridge") is describing a
+    face reached from a ridge far more often than the reverse.
+  - Two defects in the first draft, both found by the logic test and **neither visible by reading
+    it**. The comparison was `d > limit`, which excludes *exactly* 90° — so a North Face with an
+    east aspect, the commonest way this defect appears, fell through as clean; it is `>=` now, with
+    the face limit at 90 and the ridge limit at 180. And direction matching was an unbounded
+    substring test, so **"Weston Wall" matched "west"** — a report-only audit that manufactures
+    findings is one people learn to ignore.
+  - **The first real run reported 20 findings and SIX were the parser's fault** — 30%, and the
+    precision was only measurable against live data. An apostrophe is a word boundary, so `\bs\b`
+    matched the possessive in *Ford's Theatre*, *Marvin's Ear* and *Lover's Lane*, three names
+    carrying no direction at all; the abbreviation branch is **case-sensitive against the original
+    name** now, because a real route writes `NE Ridge` and a lone lowercase `s` never means south.
+    And the word scan returned the first match in **list** order rather than the earliest by
+    **position**, so *"South Ridge (North Peak)"* read as NORTH — route names routinely carry two
+    directions and **lead with their own**. All six are pinned as regression cases.
+    - Fixing the second one made `wa_chimney_rock_west_face` go from 90° to **180°**, i.e. more
+      severe and correctly so: its name leads with *West Face* and its aspect is `E`. That is
+      independent corroboration, by a different method, of the separate finding that this row is an
+      **Idaho** route (Selkirk Crest) filed on a Washington peak.
+    - Measured after the fix: **14 findings against 502 comparable WA routes (2.8%)**, 11 of them
+      faces. Judge a detector's precision on a real run before trusting a count — a first run here
+      was 30% noise.
+  - The DB half runs only when the file is **executed**, so `scripts/oneoff/verify-aspect-vs-name-logic.mjs`
+    can import the real `judge`/`dirInName`/`landform` and pin them **without a database** — which is
+    how both defects above were caught during an outage. It imports the functions rather than
+    copying them; a mirrored copy would agree with the audit whatever the audit did.
+  - Fails closed on an empty read: zero routes for a state is a broken scan, never a clean catalog.
+**A climber's agreed correction must out-vote the enrichment — broken TWICE for real, and
+claimed a third time by three separate sessions who were all wrong.** `_rapEdited` (rappels,
+#787/#791) and `_rackEdited` (rack, #907) say the same sentence about a different column, and
+each was found separately because *the failure never looks like a bug*: the column is
+populated, the section renders, and a plausible value is on screen. Only the climber who made
+the correction knows the screen is wrong, and they have no way to report it.
+  - **`descentText` is NOT a third instance, and the story of how it kept looking like one is
+    the most useful thing here.** `M` maps `descentText`→`descent`, so it reads as a textbook
+    rename rivalry. But **after both merge paths** the writer runs fix-ups, and one of them is
+    `if(o.descent!=null)o.descentText=o.descent;` — its own comment says *"Write both
+    spellings; equal strings make the comparison moot."* So a real contribution leaves
+    `route.descent === route.descentText` and `descentBeta` returns the correction whichever
+    side it reads, **including under the plain length comparison that predates every change to
+    it**. #897 made it prefer `descentText` and called that a fix; #915 made it prefer
+    `descent` and called #897 "strictly worse"; `check:correction-readers` then shipped #915's
+    direction as a *rule*. Three claims, two of them contradicting each other, **all derived
+    from the `var M` line without reading the fix-ups below it**, and each validated by a
+    fixture that set only one of the two properties — so each confirmed what its author
+    already believed. **Read the whole writer before gating a reader**: look the form key up in
+    `M` *and* check the fix-ups that run after both merges (`gainM`→`gainFt`, `lossM`→`lossFt`,
+    `descent`→`descentText`, `rappels`→`_rappelsFromContrib`, `gReq`→`gearTiers.required`).
+  - The two real ones failed **differently**, which is why finding one did not find the next.
+    `rappelDetail` displayed **nothing**; `rack` was not discarded at all — the
     contribute form's `rack` key merges into **`gearTiers.required`**, which `routeRackFor` does
     not read, so the correction rendered in the GearTiers panel while the RACK box **kept
     showing the value it replaced**. One Overview tab asserting two different racks for one
@@ -1099,24 +1172,67 @@ climber who made the correction knows the screen is wrong, and they have no way 
     then slices the markup around the RACK heading — because the correction *was* on the tab,
     just not in the box, and a tab-wide match reports that as fixed. Same vacuous-pass shape as
     `check:bare` matching the Safety tab's "Fire & smoke" link.
-  - `check:rappel-readers` guards the first of the three statically. **The other two are guarded
-    only by their probes**, which is recorded here rather than implied: the general rule
-    ("a reader of an enrichment column that has a contribute-form key must consult
-    `_contribFields`") is not yet enforced anywhere, and a fourth instance would ship silently.
+  - **`check:correction-readers` now enforces the general rule**, in the build. It used to be
+    `check:rappel-readers` and guarded only the first; `rack` was covered solely by a
+    `scripts/oneoff/` probe that **nothing runs**, so a third instance would have shipped
+    silently. See its own entry below.
 
-- **`check:rappel-readers`** enforces one sentence: **a function that reads
-  `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
-  correction out-votes the station-by-station enrichment rather than the reverse. #787 found
-  every reader preferred the enrichment, so on the 155 routes carrying a station list a
-  correction could pass the 3-agree gate and display **nothing**; it fixed the three readers
-  that existed and wrote the rule in a comment above them. #784 then added two more readers
-  and neither carried the guard — five readers, three guarded, and `rappelHeadingCount`
-  renders the section heading, which states a **number**. #791 repaired both.
-  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
-    better comment: the merge was **clean** (the two PRs touch different lines), every gate
-    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
-    a number), and both new functions read as **correct in isolation**. Only a comment three
-    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+- **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
+  **every** contributable column rather than rappels alone: **where a contribute-form field
+  competes with an enrichment column, the reader must prefer the CLIMBERS' value once
+  `_contribFields` records that they agreed it.** The rule has broken twice, in shapes sharing
+  no code and no symptom — `rappelDetail` (#787/#791, readers preferred the station list so a
+  correction displayed **nothing**) and `rack` (#907, the RACK box read `gearTiers.required`
+  while the form writes `rack`, so the box the climber edited kept the value they had
+  replaced). Fixing one never found the next; **do not assume a third looks like either.**
+  - **It was widened because `rack` was guarded only by a `scripts/oneoff/` probe, and nothing
+    runs those.** The general rule was enforced nowhere, so a third instance would have shipped
+    in silence. That is the gap it closes, and it is why this is a build gate rather than a
+    probe.
+  - **Three rules.** (1) Every reader of `rappelDetail` must carry `_rapEdited`. (2) The named
+    **precedence** function — the one that chooses between the climbers' column and the
+    enrichment — must consult the guard, and where a rename is **live** must return the
+    **M destination**. (3) Fail closed on an **unregistered** `_<x>Edited` helper, since that
+    helper is the fingerprint of a third rivalry; a registered guard or precedence function
+    that no longer exists fails as stale.
+  - **The rename map is READ FROM THE APP, never restated**, and so is whether the rename still
+    matters. Both merge paths file a contribution through `var M` (`o[M[k]||k]` and `M[f]||f`),
+    and `M` carries `{descentText:"descent"}`. But **a rename only creates a rivalry if the two
+    spellings can disagree**, and after both merges the writer runs
+    `if(o.descent!=null)o.descentText=o.descent;` — so they cannot. The guard **detects mirrors
+    rather than declaring them**: while one stands, that rename is reported moot and skipped;
+    delete it and the rename rule switches back on by itself. Position is checked as well as
+    presence, since a mirror upstream of a merge would simply be overwritten by it.
+    - **This is the correction to three earlier readings of the same code**, including this
+      guard's own first version, which asserted #915's direction as a rule and would therefore
+      have failed a correct refactor. #897, #915 and that first draft each derived a rule from
+      the `var M` line and stopped there. It fails `ANCHOR LOST` if `var M` moves, and fails if
+      either merge path stops routing through it.
+  - **`everyReaderGates` is true for exactly one column, deliberately.** Asserting it for the
+    other two was this guard's own first-draft mistake: it flagged `hasPlanContent` (an
+    existence OR), `routeHasGlacierTravel` and `simulMentioned` (keyword blobs) and
+    `proseSources` — four functions that read `.descentText` correctly and make no precedence
+    decision. #915 had already swept the other 15 renames and said so. **A guard that flags
+    correct work teaches people to ignore it**, which is worse than the hole it closes.
+  - **`rack` is deliberately NOT rename-checked**, and that is measured: a rack contribution
+    is written to **both** `o.rack` and `o.gearTiers.required`, so returning
+    `gearTiers.required` under the guard really does hand back the climbers' value. It is the
+    same mirroring the descent fix-up performs, just done by the writer rather than by a
+    trailing assignment — **neither column can be got the wrong way round.**
+  - **No rename in the app currently needs policing**, which is a finding rather than a gap:
+    the sweep of all 15 `M` renames found no other reader making a display-precedence decision
+    across one. Rule 2 is armed and idle, and the mirror detection is what keeps it honest —
+    it will arm itself the moment a mirror is deleted.
+  - **Nothing caught the two real ones and nothing could**, which is the entire argument for a
+    script over a better comment: the merges were **clean** (the PRs touch different lines),
+    every gate stayed **green** (the invariant is semantic — an unguarded reader is valid JS
+    that renders a plausible value), and the new functions read as **correct in isolation**.
+    Only a comment three functions above them said otherwise, and nobody adding a sixth reader
+    has to scroll there.
+  - **What it does NOT settle, and could not:** whether the value reaches *the screen the
+    correction was made on*. `rack` rendered on the right tab and in the wrong box. Only
+    rendering answers that, which is what the `scripts/oneoff/` probe is for; this guard proves
+    the precedence decision, not the destination.
   - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
     explanatory comment about this very rule sits at top level between functions, so a
     whole-file grep would report a phantom sixth reader. Function bodies come from balancing
@@ -1130,8 +1246,18 @@ climber who made the correction knows the screen is wrong, and they have no way 
     the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
     that branch could never fire until the match was word-bounded (injection case 3, the
     second first-draft false pass).
-  - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
-    draft and both were false passes**. Neither was visible by reading the script.
+  - Injection-tested, 9 cases plus 4 that pin the **mirror behaving as a switch** (mirror on +
+    reader flipped must PASS; mirror deleted + reader flipped must FAIL). **Two of the original
+    seven failed on the first draft and both were false passes**, neither visible by reading
+    it. Each case proves the edit **landed by checksum** before judging the guard — which
+    earned itself twice: case 1's pattern did not match at first and the harness reported
+    *"edit never landed"* rather than *"guard missed"*, and later the whole baseline went stale
+    the moment #915 merged (it was pinned to that branch, so two cases silently ran against a
+    file predating the rack work). **A harness baseline pinned to a branch rots when the branch
+    merges** — pin it to main. The widening added its own first-draft failure in the other
+    direction: `[^)]*` in the guarded-return pattern **cannot cross the `)` inside
+    `_descEdited(r)`**, so every reader reported as an unrecognised shape — noisy rather than
+    silent, and caught at once.
 - **`check:real-profile-rows`** enforces one sentence: **a row must not print a level or a
   trust score for someone who has neither.** Seed climbers carry `level` and enough history
   for `vScore()` to mean something; a real profile carries neither, so the subtitle renders
@@ -1167,13 +1293,13 @@ climber who made the correction knows the screen is wrong, and they have no way 
     resolver plus three fixes, and #776 then merged from a branch based on **pre-#778 main** —
     its squash silently **reverted all of it**. Clean merge, no conflict, every check green,
     and main went back to shipping the bugs. The only thing that would have noticed was a step
-    in a one-off nobody runs. Same reasoning as `check:rappel-readers`.
+    in a one-off nobody runs. Same reasoning as `check:correction-readers`.
   - A site passes when the **same expression** also consults real profiles — what `CrewCard`'s
     `mem` does (the #569 fix). That is a correct answer, not an exemption.
   - **Comments are stripped before any test**, and it is load-bearing: two call sites explain
     this rule in a comment that *names* `crewMemberById`, so leaving comments in would let a
     site pass on prose about the fix rather than the fix. The false pass
-    `check:rappel-readers` already records.
+    `check:correction-readers` already records.
   - Six exemptions, each with a **measured** reason (seed-only lists: `crewReqIn`,
     `crewJoinIn` twice, the seed invite card, `GuideDashboard`'s inquiries, and a
     notification whose result is guarded by `if(c)` so a miss opens nothing). A **stale**

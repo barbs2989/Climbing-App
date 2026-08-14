@@ -174,3 +174,57 @@ export const NP_HIGHPOINTS = [
   { name: "Bordeaux Mountain", state: "virgin_islands", ft: 1286 }, { name: "Cave Ridge", state: "kentucky", ft: 920 },
   { name: "Grossman Hammock", state: "florida", ft: 10 },
 ];
+
+// The Adirondack 46 High Peaks (New York) — the Marshall/Marshall/Clark roster the Adirondack
+// Forty-Sixers recognise. CANONICAL: the list has never been revised, and two independent sources
+// agree on all 46 names.
+//
+// Three traps a matcher must not fall into, each from the source rather than assumed:
+//   * DO NOT FILTER BY ELEVATION. Four of the 46 — Blake, Cliff, Nye, Couchsachraga — are BELOW
+//     4,000 ft by modern survey and are still on the list, because the list is historical rather
+//     than a live elevation query.
+//   * MacNaughton Mountain (4,000 ft) is NOT one of the 46 despite being higher than those four.
+//     It is widely called the "unofficial 47th". If the catalog holds it, it must not tick this.
+//   * East Dix was officially renamed GRACE PEAK in 2014, so a catalog built from older data holds
+//     the old name. Handled by ALIASES in the resolver, not by weakening the matcher.
+export const ADK_46 = [
+  { name: "Mount Marcy", state: "new_york", ft: 5344 }, { name: "Algonquin Peak", state: "new_york", ft: 5114 },
+  { name: "Mount Haystack", state: "new_york", ft: 4960 }, { name: "Mount Skylight", state: "new_york", ft: 4924 },
+  { name: "Whiteface Mountain", state: "new_york", ft: 4867 }, { name: "Dix Mountain", state: "new_york", ft: 4857 },
+  { name: "Gray Peak", state: "new_york", ft: 4840 }, { name: "Iroquois Peak", state: "new_york", ft: 4840 },
+  { name: "Basin Mountain", state: "new_york", ft: 4827 }, { name: "Gothics", state: "new_york", ft: 4736 },
+  { name: "Mount Colden", state: "new_york", ft: 4714 }, { name: "Giant Mountain", state: "new_york", ft: 4627 },
+  { name: "Nippletop", state: "new_york", ft: 4620 }, { name: "Santanoni Peak", state: "new_york", ft: 4607 },
+  { name: "Mount Redfield", state: "new_york", ft: 4606 }, { name: "Wright Peak", state: "new_york", ft: 4580 },
+  { name: "Saddleback Mountain", state: "new_york", ft: 4515 }, { name: "Panther Peak", state: "new_york", ft: 4442 },
+  { name: "Table Top Mountain", state: "new_york", ft: 4427 }, { name: "Rocky Peak Ridge", state: "new_york", ft: 4420 },
+  { name: "Macomb Mountain", state: "new_york", ft: 4405 }, { name: "Armstrong Mountain", state: "new_york", ft: 4400 },
+  { name: "Hough Peak", state: "new_york", ft: 4400 }, { name: "Seward Mountain", state: "new_york", ft: 4361 },
+  { name: "Mount Marshall", state: "new_york", ft: 4360 }, { name: "Allen Mountain", state: "new_york", ft: 4340 },
+  { name: "Big Slide Mountain", state: "new_york", ft: 4240 }, { name: "Esther Mountain", state: "new_york", ft: 4240 },
+  { name: "Upper Wolfjaw Mountain", state: "new_york", ft: 4185 }, { name: "Lower Wolfjaw Mountain", state: "new_york", ft: 4175 },
+  { name: "Street Mountain", state: "new_york", ft: 4166 }, { name: "Phelps Mountain", state: "new_york", ft: 4161 },
+  { name: "Donaldson Mountain", state: "new_york", ft: 4140 }, { name: "Seymour Mountain", state: "new_york", ft: 4120 },
+  { name: "Sawteeth", state: "new_york", ft: 4100 }, { name: "Cascade Mountain", state: "new_york", ft: 4098 },
+  { name: "South Dix", state: "new_york", ft: 4060 }, { name: "Porter Mountain", state: "new_york", ft: 4059 },
+  { name: "Mount Colvin", state: "new_york", ft: 4057 }, { name: "Mount Emmons", state: "new_york", ft: 4040 },
+  { name: "Dial Mountain", state: "new_york", ft: 4020 }, { name: "Grace Peak", state: "new_york", ft: 4012 },
+  { name: "Blake Peak", state: "new_york", ft: 3960 }, { name: "Cliff Mountain", state: "new_york", ft: 3960 },
+  { name: "Nye Mountain", state: "new_york", ft: 3895 }, { name: "Couchsachraga Peak", state: "new_york", ft: 3820 },
+];
+
+// The Idaho 12ers — CANONICAL. "The nine Idaho 12ers" is a fixed phrase; Tom Lopez's IDAHO: A
+// Climbing Guide (the standard reference) and idahotwelvers.com give the same nine names in the
+// same order. Seven are in the Lost River Range, one Lemhi (Diamond), one Pioneer (Hyndman).
+//
+// Two matcher traps: Old Hyndman Peak (11,775 ft) is a SEPARATE adjacent summit and is not a
+// 12er, so a fuzzy match must not reach it; and Donaldson Peak here collides by name with
+// Donaldson Mountain in ADK_46 above, which is exactly why the resolver's state gate is
+// fail-closed rather than falling back to an out-of-state candidate.
+export const IDAHO_12ERS = [
+  { name: "Borah Peak", state: "idaho", ft: 12662 }, { name: "Leatherman Peak", state: "idaho", ft: 12228 },
+  { name: "Mount Church", state: "idaho", ft: 12200 }, { name: "Diamond Peak", state: "idaho", ft: 12197 },
+  { name: "Mount Breitenbach", state: "idaho", ft: 12140 }, { name: "Lost River Mountain", state: "idaho", ft: 12078 },
+  { name: "Mount Idaho", state: "idaho", ft: 12065 }, { name: "Donaldson Peak", state: "idaho", ft: 12023 },
+  { name: "Hyndman Peak", state: "idaho", ft: 12009 },
+];
