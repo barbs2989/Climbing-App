@@ -467,6 +467,19 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —
+    deriving it automatically was measured and REJECTED.** `dbRouteToCamel` reads 61 columns
+    against the 54 walked here, so 21 are unwalked; each was probed with a sentinel across all
+    three bases and six sub-tabs. **Every one reaches a screen.** Six are numeric and judged
+    only on "did the page change" (`length_m`, `gain_ft`, `loss_ft`, `dist_km`, `max_angle`,
+    `high_point_ft`, plus `alpine_draws`/`rope_length_m`), the four grade variants and
+    `rope_type`/`ascender` render outright, and the two that *looked* dead are both
+    **used-not-echoed**: `grade_system` selects a format via `gradeSystemFor()` and is never
+    printed, and `auto_generated` picks a provenance chip label in `lib/provenance.js` which
+    needs section content a bare route does not have. So a derived list would carry ~10
+    exemptions to report **zero** findings — bookkeeping that rots, in exchange for nothing.
+    Add a column here by hand when one is added, and re-run that measurement before automating
+    it. `check:field-renders`' subject is columns that reach a screen, not list maintenance.
   - **A column with ZERO populated rows was unguarded by construction, which is the worst
     possible moment for it.** The method pulls a REAL value, so a column nothing has written
     yet has nothing to pull: it reported `NO DATA` and was never checked — exactly when you
