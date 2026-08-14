@@ -434,6 +434,20 @@ try {
   //
   // So try each tab and take the first where opening the overlay actually CHANGES the
   // screen. Failing only when no tab works is what makes "changed nothing" mean something.
+  // Compare lines with their DIGITS MASKED, and that is what turned a permanent failure into
+  // a 1-in-3 flake for a month. The test is "did opening this add a line the tab did not
+  // already have", so any line that moves on its own answers YES without an overlay being
+  // involved -- a relative timestamp rolling from "In 2 days" to "In 1 day", an unread badge,
+  // the ASPECT & SUN clock. `inboxOpen` was reported OPENED at "1610 chars (on me)" on runs
+  // where the Inbox could not render at all: 1610 is the plain Profile tab, credited to the
+  // overlay because one number had changed since the baseline. So two runs of the same commit
+  // disagreed, the failures read as flaky, and the REAL defect underneath (#890 left the
+  // Calendar's JSX fragment unclosed, so the Inbox early return became fragment TEXT and the
+  // screen was unreachable) was dismissed twice as CI noise.
+  // The cost is a line that differs ONLY by a number no longer proving a mount. A false pass
+  // certifies a modal nobody looked at, which is strictly worse than asking for a second
+  // distinguishing line -- and `render-settle` already masks digits for exactly this reason.
+  const lineKey = (l) => l.trim().replace(/\d+/g, "#");
   const TABS = ["me", "today", "crew", "routes", "logbook", "discover"];
   const baselines = {};
   for (const t of TABS) {
@@ -443,7 +457,7 @@ try {
     // the tab was still filling in is missing lines, so the diff below would credit the
     // overlay with content that was always going to arrive.
     const baseText = await settledText(page, { min: 30, timeout: 45000 });
-    baselines[t] = new Set(baseText.split("\n").map((l) => l.trim()));
+    baselines[t] = new Set(baseText.split("\n").map(lineKey));
   }
 
   assertKnownOverlays(overlays, fail);
@@ -452,7 +466,7 @@ try {
       log(`  ${name}: skipped — ${NEEDS_EXTRA_STATE[name]}`);
       continue;
     }
-    let opened = null, empty = null, threw = null;
+    let opened = null, empty = null, threw = null, sawText = "";
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
@@ -475,8 +489,11 @@ try {
       // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
       // trips on anything that moves on its own -- a clock, a relative timestamp -- and
       // would report an overlay as opened when nothing opened at all.
-      const lines = openedText.split("\n").map((l) => l.trim());
+      const lines = openedText.split("\n").map(lineKey);
       if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
+      // Keep the closest look at the screen, for the failure message below. "It added
+      // nothing" is only actionable if it also says what WAS there.
+      if (!sawText || openedText.length > sawText.length) sawText = openedText;
     }
     if (threw) {
       asserted++;
@@ -491,7 +508,15 @@ try {
     }
     asserted++;
     if (!opened) {
-      fail(`modal:${name}`, `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified`);
+      // Print what WAS on screen. Without it this message cannot distinguish "the opener
+      // never ran", "the app never mounted" (the boot shell mirrors the nav, so a blank app
+      // reads as nav-present) and "the state flipped but the screen ignores it" — three
+      // faults needing three different repairs, and the third is what #890 actually was.
+      const head = sawText.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, 6).join(" | ");
+      fail(`modal:${name}`,
+        `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified. ` +
+        `The screen it settled on was ${sawText.trim().length} chars: ${JSON.stringify(head)}. ` +
+        `If that is the ordinary tab, the state flipped and nothing reads it; if it is the nav alone, the app never mounted.`);
       continue;
     }
     // The floor is deliberately low: a takeover like the guide dashboard legitimately
