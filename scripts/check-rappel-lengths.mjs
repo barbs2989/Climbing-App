@@ -54,12 +54,20 @@ const DOUBLE = /\btwo\b[^.]{0,25}\bropes?\b|\bdouble[- ]ropes?\b|\btwin ropes?\b
 // rope length/number of ropes carried" and "double-rope rappels of roughly full rope length" are
 // both accurate descriptions of a real descent. The admission is specifically the rope's CAPACITY
 // standing in for a measurement, so that is what this matches.
-const ADMITS = /rope[' ]?s? capacity|approximated at the stated|estimated from the stated/i;
+//
+// `near-max` was added after a triage of the rule-3 candidates found wa_mount_torment_south_ridge,
+// whose note says "individual station lengths aren't given explicitly, estimated near-max for a 60m
+// rope used double" — the same admission this rule exists to catch, in words it did not match. Six
+// identical 55 m stations, 330 m of rappel, and the note SAYS where the number came from. It fell
+// through to the report-only rule instead of failing, which is the quiet direction to be wrong in.
+// It is scoped to a rope mention rather than matched bare: "near-max" about anything else (an angle,
+// a grade, a pack weight) is not a claim about a distance.
+const ADMITS = /rope[' ]?s? capacity|approximated at the stated|estimated from the stated|near[- ]?max[^.]{0,40}\brope/i;
 
 const prose = r => `${r.rappels || ""} ${r.rappel_count_note || ""} ${r.descent_text || ""}`;
 
 function findings(rows) {
-  const out = [];
+  const out = [], look = [];
   for (const r of rows) {
     if (!Array.isArray(r.rappel_detail) || !r.rappel_detail.length) continue;
     const lens = r.rappel_detail.map(x => x && x.lengthM).filter(x => typeof x === "number");
@@ -82,13 +90,35 @@ function findings(rows) {
         out.push({ id: r.id, area: r.area_id, why: `every station tops out at ${max}m and the text names a ${max}m rope with no second rope — that is the rope's capacity, not a rappel distance` });
     }
 
-    // 3. The note admitting the substitution in words. Independent of the numbers, because a table
+    // 3. The route says SINGLE-ROPE in so many words and names a rope size. Then every station is
+    //    bounded by half that rope, full stop — and this rule deliberately does NOT consult the
+    //    double-rope test above, because that test is what let wa_kangaroo_temple_north_face
+    //    through: its prose says "three single-rope rappels using a 60 m rope" AND, in a separate
+    //    sentence, "can also be done as 2 x 50m double-rope rappels". The stand-down fired on an
+    //    ALTERNATIVE configuration while the stored table was the single-rope one, holding 60 m and
+    //    55 m stations a doubled 60 cannot reach. An explicit "single-rope" is the strongest signal
+    //    in this data and nothing should be able to suppress it.
+    const single = /\bsingle[- ]rope\b|\bsingle\b[^.]{0,20}\brope\b/i.test(p);
+    if (single) {
+      const named = [...p.matchAll(/\b(\d{2})\s?m\b/gi)].map(m => +m[1]).filter(v => ROPES.includes(v));
+      const biggest = named.length ? Math.max(...named) : 0;
+      // REPORT-ONLY, and the reason is measured rather than cautious. Run as a failure it flagged
+      // 22 routes, and several are CORRECT: wa_south_face_5's prose describes both a double-rope
+      // party and a single-70 party, and its stored table is the double-rope one. The discriminator
+      // is which configuration the STORED TABLE corresponds to, and no regex can see that — the
+      // count note sometimes says in prose, and sometimes does not. So this surfaces candidates for
+      // a human instead of crying wolf. Rules 1, 2 and 4 still fail.
+      if (biggest && max > biggest / 2 + 2)   // +2 for rounding in published figures
+        look.push({ id: r.id, area: r.area_id, why: `describes SINGLE-ROPE rappels on a ${biggest}m rope (reaching ${biggest / 2}m doubled) but stores a ${max}m station — check whether the stored table is the single-rope sequence or a two-rope one` });
+    }
+
+    // 4. The note admitting the substitution in words. Independent of the numbers, because a table
     //    can be corrected while the note still states the method that produced the wrong value —
     //    and the next enrichment pass then re-derives it.
     if (ADMITS.test(r.rappel_count_note || ""))
       out.push({ id: r.id, area: r.area_id, why: `rappel_count_note still describes lengths as taken from the rope's capacity: "${String(r.rappel_count_note).replace(/\s+/g, " ").slice(0, 110)}"` });
   }
-  return out;
+  return { out, look };
 }
 
 const rows = await selectAll("routes", "id,name,area_id,rappels,rappel_detail,rappel_count_note,descent_text", "", { pageSize: 1000 });
@@ -102,9 +132,13 @@ if (INJECT === "capacity") { const t = tables[0]; t.rappel_detail = t.rappel_det
 if (INJECT === "note") { const t = tables[0]; t.rappel_count_note = "Individual rappel lengths aren't given; approximated at the stated single 70m rope capacity."; console.log(`[inject] ${t.id}: count note admits the substitution`); }
 if (INJECT === "clean") { for (const t of tables) { t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: null })); t.rappel_count_note = ""; } console.log("[inject] every stored length nulled — a null is CORRECT and must not be reported"); }
 
-const hits = findings(tables);
+const { out: hits, look } = findings(tables);
 console.log(`checked ${tables.length} routes carrying a rappel table (of ${rows.length} routes read)\n`);
 for (const h of hits) console.log(`  ${h.id}  [${h.area}]\n     ${h.why}\n`);
+if (look.length) {
+  console.log(`${look.length} route(s) to LOOK AT — reported, not failed (see rule 3):\n`);
+  for (const h of look) console.log(`  ${h.id}  [${h.area}]\n     ${h.why}\n`);
+}
 if (hits.length) {
   console.error(`FAIL — ${hits.length} rappel table${hits.length === 1 ? "" : "s"} state${hits.length === 1 ? "s" : ""} a distance the described rope cannot reach.`);
   console.error("The correct repair is null, not a halved number: a rappel with no published distance may be 35m or 15m, and halving invents a second figure.");

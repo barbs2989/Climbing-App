@@ -1,0 +1,102 @@
+{
+  "_README": [
+    "Vesper Peak's north face is gained over the VESPER-WOLF saddle, not a Vesper-Sperry one.",
+    "Settled by geometry rather than by counting sources: Wolf Peak sits ON the connecting ridge",
+    "between Vesper and Sperry (Vesper->Wolf 509 m, Wolf->Sperry 820 m), so there is no direct",
+    "Vesper-Sperry col to cross. Sperry is 1.2 km ENE across the Vesper Creek / Lake Elan basin.",
+    "",
+    "The rows already contradicted THEMSELVES: all four carry an approach_variant named",
+    "'Sunrise Mine Trail #707, Headlee Pass, Vesper-Wolf saddle', and wa_ragged_edge's own",
+    "baseFinding already records that sources name the saddle inconsistently and that the two",
+    "cairns plus the Copper Lake view are the reliable test rather than the name. So this",
+    "correction is a RE-HOMING that makes each row agree with itself; no new prose was needed.",
+    "",
+    "Left alone deliberately: every 'basin between Vesper and Sperry' reference, which is CORRECT,",
+    "and wa_vesper_peak_north_face_ragged_edge, which had it right all along.",
+    "",
+    "The likely origin: Mountain Project's route page mentions the basin between Vesper and Sperry",
+    "and then refers to 'a col between the peaks' — a dangling antecedent. Its own approach page",
+    "names the saddle between Vesper and Wolf and gives the coordinates used below."
+  ],
+  "wa_fish_whistle": {
+    "area": "wa_vesper_peak",
+    "_why": "Named the col as Vesper-Sperry. Wolf Peak lies between the two summits, so that col does not exist; the crossing is the Vesper-Wolf saddle, which this row's own approach_variant already names.",
+    "set": {
+      "approach": "Same approach as True Grit and Ragged Edge: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead, through Wirtz Basin and Headlee Pass (~4,720 ft, 2.7 mi, loose rock/rockfall in the narrow couloir), down to Vesper Creek and Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain — last water), then off-trail up the talus ridge to the Vesper-Wolf col and across the exposed heather ledge system at ~5,800 ft (slick when wet, holds snow into mid-to-late summer — ice axe useful early season). Fish & Whistle's start is not a separate landmark on this traverse — it's a large tree roughly 50 ft left (west) of the True Grit start, on the talus/boulder apron directly below the north face, so simply continue the same ledge traverse slightly past True Grit's start to find it. Plan 3+ hours from the trailhead to the base of the route.",
+      "descent_text": "Fish & Whistle climbs the same upper north-face headwall as True Grit and finishes in the same general area near the top of the face/summit ridge, so the standard exit is almost certainly the same walk-off used for True Grit and Ragged Edge: scramble down the southeast side (a seasonal snow slope early on, open slabs/talus by late summer) back to the Vesper-Wolf saddle, then down to Vesper Lake and out the Sunrise Mine Trail. No rappel anchors or rap-specific beta for this route were found in guidebook or trip-report sources. Given its harder, more sustained bolt-protected pitches, a party unable to finish the walk-off (e.g., benighted or in bad weather) could retreat by rappelling the bolted anchors pitch-by-pitch with a single 60m rope, but this is not the documented standard descent."
+    }
+  },
+  "wa_ragged_edge": {
+    "area": "wa_vesper_peak",
+    "_why": "Named the col as Vesper-Sperry. Wolf Peak lies between the two summits, so that col does not exist; the crossing is the Vesper-Wolf saddle, which this row's own approach_variant already names.",
+    "set": {
+      "approach": "Same trailhead and trail as True Grit: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead on the Mountain Loop Highway, through second-growth forest and an early creek crossing of the South Fork Stillaguamish (log crossing, harder in high runoff), up through Wirtz Basin and out onto open, cairned talus, then through Headlee Pass (~4,720 ft, 2.7 mi, loose rock/rockfall exposure in the narrow couloir) and down to Vesper Creek and Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain) — the last dependable water. From the lake the maintained trail fades; cross the outlet and follow an obvious talus ridgeline up to the col/saddle between Vesper and Wolf Peak. From there a slightly improbable but well-trodden heather ledge system (goat trail through it) cuts across the north face at roughly 5,800 ft to a small notch overlooking the remnant Vesper Glacier, where the route starts. This traverse crosses steep, exposed heather that's treacherous when wet and typically holds snow into mid-to-late summer, so an ice axe (and sometimes crampons) is worth carrying into early summer. Plan on 3+ hours from the trailhead to the base of the climb.",
+      "descent_text": "No rappels are required — Ragged Edge tops out at or very near Vesper's summit, and the standard exit is a walk-off down the peak's east side/East Ridge back toward the Vesper-Wolf saddle, then down to Vesper Lake and out the Sunrise Mine Trail. The descent is class 2-3 scrambling/talus, occasionally holding snow into early summer (ice axe useful then), and is fast relative to the climb — most parties are back at the saddle and lake within an hour or two of topping out, with the whole car-to-car day often wrapping up in well under 12 hours. Watch for loose rock on the upper descent slopes, especially with parties above or below.",
+      "waypoints": [
+        {
+          "lat": 48.0247771,
+          "lng": -121.4778228,
+          "elev": 2400,
+          "name": "Sunrise Mine Trailhead",
+          "note": "End of Sunrise Mine Road (NF-4065), 2.3 mi off Mountain Loop Highway; Northwest Forest Pass required at the kiosk.",
+          "type": "Trailhead",
+          "distMi": 0
+        },
+        {
+          "lat": 48.0096,
+          "lng": -121.5008,
+          "elev": 4698,
+          "name": "Headlee Pass",
+          "note": "Corrected coordinate (OpenStreetMap saddle node, elevation cross-checked against WTA; previous value duplicated the trailhead). Steep, loose switchbacks up the old mining trail top out at this notch between Sperry and Morning Star Peaks; can hold snow into July.",
+          "type": "Junction",
+          "distMi": 2.7
+        },
+        {
+          "lat": 48.014327,
+          "lng": -121.508418,
+          "elev": 5028,
+          "name": "Vesper Lake (Lake Elan)",
+          "note": "Filter water at the lake outlet before continuing up-basin; last reliable water before the climb.",
+          "type": "Water",
+          "distMi": 3.4
+        },
+        {
+          "lat": 48.01375,
+          "lng": -121.51451,
+          "elev": 5700,
+          "name": "Saddle/col between Vesper and Wolf Peak (cairned pass)",
+          "type": "col",
+          "distMi": null,
+          "elevFt": 5700
+        },
+        {
+          "lat": 48.01376,
+          "lng": -121.51736,
+          "elev": 5800,
+          "name": "Ragged Edge route start (north face ledge)",
+          "type": "start",
+          "distMi": null,
+          "elevFt": 5800
+        },
+        {
+          "lat": 48.012988,
+          "lng": -121.517992,
+          "elev": 6214,
+          "name": "Vesper Peak Summit",
+          "note": "P6, the signature 'ragged edge' arete pitch, tops out on the true summit; descend the East Ridge back to the Vesper-Sperry saddle and out via Headlee Pass.",
+          "type": "Summit",
+          "distMi": 4.5
+        }
+      ]
+    },
+    "_waypoint_why": "Its 'Vesper-Sperry Saddle' pin sat 2.32 km from the Vesper summit and its 'North Face Ledge' pin 2.63 km — past Sperry, in the wrong drainage, and about 2,500 ft below their stated elevations. Replaced with the pair carried identically by wa_fish_whistle, wa_true_grit_2 and wa_vesper_peak_north_face_ragged_edge: the cairned pass at 0.27 km and the ledge start at 0.10 km."
+  },
+  "wa_true_grit_2": {
+    "area": "wa_vesper_peak",
+    "_why": "Named the col as Vesper-Sperry. Wolf Peak lies between the two summits, so that col does not exist; the crossing is the Vesper-Wolf saddle, which this row's own approach_variant already names.",
+    "set": {
+      "approach": "Start at the Sunrise Mine Trailhead (Sunrise Mine Trail #707) off the Mountain Loop Highway near Big Four/Barlow Pass. The trail begins in second-growth forest and almost immediately crosses the South Fork Stillaguamish via a log crossing that can be a genuine obstacle during high runoff (early season/after rain). From there the trail climbs steadily through Wirtz Basin, breaks out of the trees into open talus and boulder fields marked by cairns, and reaches Headlee Pass at roughly 4,720 ft and 2.7 miles in — a narrow, rocky notch/couloir with loose rock underfoot where rockfall from parties above is a real hazard. Past the pass the trail drops briefly through trees, then crosses about a third of a mile of talus to Vesper Creek, which it follows up to Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain from the trailhead) — the last reliable running water before the climb. From the lake, cross the outlet and follow the obvious talus ridgeline up to the saddle/col between Vesper and Wolf Peak. From the saddle, a ledge system cuts across Vesper's north face at roughly 5,800 ft, reached by walking out steep, exposed heather benches that get slick when wet and hold a steep snow slope into early-to-mid summer (ice axe and possibly crampons recommended for that window). The ledge leads to a small notch overlooking the Vesper Glacier remnant, near where True Grit's start is found. Allow 3+ hours from the trailhead to the base of the route.",
+      "descent_text": "True Grit tops out on Vesper's summit headwall/ridge, and the descent is a walk-off rather than a rappel-based exit — 0 rappels under normal conditions. From the top, downclimb/scramble class 3-4 terrain on the peak's southeast side; for most of the season this is a straightforward roughly 30-degree snow slope that can be glissaded or plunge-stepped (ice axe strongly recommended, crampons useful early season), while by late August/September the snow is gone and it's a walk down open slabs and talus instead. Aim for the Vesper-Wolf saddle, which is visible above Vesper Lake, then drop back to the lake outlet and pick up the talus ridge and Sunrise Mine Trail for the hike out. No technical anchors are needed; parties report the whole car-to-car outing (climb plus this descent) commonly taking 8-11 hours."
+    }
+  }
+}

@@ -195,6 +195,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
     const hasContent = ["climbing_route", "approach_variants", "bivy"].some(k => Array.isArray(spec[k]) && spec[k].length)
       || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0)
       || (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length > 0)
+      || (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length > 0)
       || (spec.set && Object.keys(spec.set).length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
@@ -205,8 +206,30 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 
 // ── Apply ────────────────────────────────────────────────────────────────────────────────
 const key = anonKey();
+// Named so the settable-column assertion below can check itself against them rather than against a
+// string somebody has to remember to keep in step.
+const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,approach_variants,climbing_route,bivy";
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail"];
+const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road"];
+// `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
+// they are verified — just not by either list.
+const VERIFY_CUSTOM = ["waypoints", "rappel_detail"];
+// The allow-list for `set`. See the long note at its use site for where the line is drawn and why.
+const SETTABLE = new Set([
+  "rappel_count_note", "rappels", "descent_text", "approach", "waypoints", "road",
+  "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail",
+]);
+// A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
+// in the re-read select or `after[k]` is undefined, and in a verify group or the write is checked by
+// nothing. Both failures report SUCCESS for a write nobody confirmed — the exact shape this script's
+// re-read exists to prevent. Asserted at startup rather than remembered, so it fails on any run
+// including --dry, and without needing the database to answer.
+for (const k of SETTABLE) {
+  if (!readSelect.split(",").includes(k)) throw new Error(`${k} is settable but missing from the re-read select — after.${k} would be undefined and its verify vacuous`);
+  if (![...VERIFY_SCALAR, ...VERIFY_JSON, ...VERIFY_CUSTOM].includes(k)) throw new Error(`${k} is settable but in no verify group — it would be written and checked by nothing`);
+}
 const readRoute = async id => {
-  const url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,approach_variants,climbing_route,bivy&id=eq.${encodeURIComponent(id)}`;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=${readSelect}&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
   if (!res.ok) throw new Error(`read ${id} -> ${res.status}`);
   const rows = await res.json();
@@ -250,6 +273,53 @@ for (const id of ids) {
       const add = spec.rappel_add[n];
       return add ? { ...r, ...add } : r;
     });
+  } else if (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length) {
+    // ONE STATION'S DISTANCE, and nothing else on the row. This is the shape a rope-capacity
+    // repair actually takes: the triage of the rule-3 candidates returned findings like "station 2
+    // stores 60 m and its own text says a single 60 m rope reaches, so the true distance is <=30 m"
+    // — one number wrong inside a table whose prose is researched and correct. `replace_rappels`
+    // would put all of that prose at risk to change one integer, and a reviewer diffing a whole
+    // replacement table cannot see which number was the point.
+    //
+    // Two guards, and BOTH are required, because a station is identified by its position in an
+    // array and positions move. `from` must equal the stored value, so a row someone else has
+    // already corrected is refused rather than re-corrected; `expect` must appear in the station's
+    // own text, so a re-ordered or rebuilt table cannot have a correction land on the wrong
+    // rappel. wa_ellation's table was re-sequenced earlier in this sweep for exactly that reason
+    // — index alone is not identity.
+    if (!Array.isArray(before.rappel_detail) || !before.rappel_detail.length) {
+      console.error(`REFUSING ${id} — rappel_lengths given but the row has no rappel table to correct`);
+      process.exitCode = 1; continue;
+    }
+    const next = before.rappel_detail.map(r => ({ ...r }));
+    let bad = false;
+    for (const fix of spec.rappel_lengths) {
+      const i = fix.station - 1;
+      const st = next[i];
+      if (!st) { console.error(`REFUSING ${id} — station ${fix.station} does not exist (table has ${next.length})`); bad = true; continue; }
+      // `from` is compared with ==, deliberately: a stored 60 and a batch 60 must match whether the
+      // column round-tripped the number as 60 or "60". `to` is written as given, and null is a
+      // legal, CORRECT value — it is what a distance no source publishes should be. Halving a
+      // rope's capacity would just replace one fabricated number with another.
+      if (!("from" in fix) || !("to" in fix)) { console.error(`REFUSING ${id} — station ${fix.station} needs both "from" and "to"`); bad = true; continue; }
+      if (st.lengthM != fix.from) {
+        console.error(`REFUSING ${id} — station ${fix.station} holds ${JSON.stringify(st.lengthM)}, batch expected ${JSON.stringify(fix.from)}. The row has moved since this correction was researched.`);
+        bad = true; continue;
+      }
+      // The haystack is the station's own string values joined, NOT JSON.stringify(st). Stringifying
+      // escapes quotes, newlines and backslashes, so a fingerprint lifted from the raw prose would
+      // fail to match any station whose text contains one — a FALSE refusal that reads exactly like
+      // a re-ordered table and would send someone hunting for a defect that is not there. Whitespace
+      // is collapsed on both sides for the same reason.
+      const text = Object.values(st).filter(v => typeof v === "string").join(" ").replace(/\s+/g, " ");
+      if (!fix.expect || !text.includes(String(fix.expect).replace(/\s+/g, " "))) {
+        console.error(`REFUSING ${id} — station ${fix.station} does not contain the expected text ${JSON.stringify(fix.expect || "(none given)")}. The table may have been re-ordered.`);
+        bad = true; continue;
+      }
+      st.lengthM = fix.to;
+    }
+    if (bad) { process.exitCode = 1; continue; }
+    body.rappel_detail = next;
   }
   // A CORRECTION path for the scalar prose columns beside the table. It exists because the
   // rappel-length defect is not repairable without it: a table can be fixed while
@@ -263,7 +333,26 @@ for (const id of ids) {
   // ("South-southwest via open timber basin ... basin northwest of peak"). Correcting it is not
   // enrichment: the replacement must be RE-HOMED from a peer row on the same peak or from this
   // route's own researched approach_variants, never composed from memory.
-  const SETTABLE = new Set(["rappel_count_note", "rappels", "descent_text", "approach"]);
+  // `waypoints` is settable ONLY to correct a pin that is demonstrably in the wrong place, and the
+  // replacement must be RE-HOMED from a peer row on the same peak whose coordinate has been checked
+  // against a known summit. wa_ragged_edge stored a "Vesper-Sperry Saddle" pin 2.32 km from the
+  // Vesper summit and a "North Face Ledge" pin 2.63 km away, both roughly 2,500 ft below their
+  // stated elevations, while three sibling rows carry the real pair 0.27 km and 0.10 km out.
+  // This is NOT a route for bulk waypoint edits — see the standing rule that waypoint findings
+  // must be read row by row before anything is written.
+  // `road` is settable for the same reason as `approach` and under the same restriction: it is the
+  // other column contamination lands in. wa_upper_castle_toprope_wall carries Mount Rainier's road
+  // value — a different mountain, a different highway, a different gate — on a Leavenworth-area
+  // toprope wall. Like `approach`, a replacement must be RE-HOMED from a peer row that shares the
+  // real access, never written from memory: the whole failure being repaired is prose that reads
+  // fluently while describing somewhere else.
+  // PROSE columns only. The line is deliberate: display text a correction can rewrite, versus
+  // IDENTITY and CLASSIFICATION columns — `name`, `discipline`, `grade`, `area_id` — which are
+  // NOT here and must go through hand-written SQL a human runs, because they feed search, dedup,
+  // the duplicate-name view and the discipline filter chips. wa_little_annapurna_south_slopes is
+  // the case that drew the line: its prose needs a systematic north/south repair AND its name is
+  // wrong, and only the first half belongs to this script.
+  // (SETTABLE is declared at module scope, beside the verify lists it has to stay in step with.)
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
@@ -302,7 +391,21 @@ for (const id of ids) {
     checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>
       Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
   }
-  for (const k of ["rappel_count_note", "rappels", "descent_text", "approach"]) if (k in body) checks.push(after[k] === body[k]);
+  // Scalars compare directly; the array-valued prose columns (hazards, pro_tips, watch_out)
+  // compare by JSON, which is safe here because they are arrays of STRINGS — order is meaningful
+  // and there are no object keys whose order jsonb could reshuffle.
+  for (const k of VERIFY_SCALAR) if (k in body) checks.push(after[k] === body[k]);
+  // `road` belongs in THIS group, not the scalar one above: it is jsonb, so === compares two object
+  // identities and is false for a write that landed perfectly. A settable column added to the
+  // allow-list and not to one of these two lines is verified by nothing at all.
+  for (const k of VERIFY_JSON) if (k in body) checks.push(JSON.stringify(after[k]) === JSON.stringify(body[k]));
+  // waypoints is an array of objects, so compare length plus each entry's name and coordinate —
+  // a string compare would fail on jsonb key order, which is not stable.
+  if (body.waypoints) {
+    const got = after.waypoints || [];
+    checks.push(got.length === body.waypoints.length && body.waypoints.every((w, i) =>
+      got[i] && got[i].name === w.name && got[i].lat === w.lat && got[i].lng === w.lng));
+  }
   if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
   const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
