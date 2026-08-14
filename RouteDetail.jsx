@@ -6,6 +6,10 @@
 import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy, memo } from "react";
 import { createPortal } from "react-dom";
 import { DISC_LABELS as DL } from "./lib/discLabels";
+/* rackFromText / _rackEdited / contribRack / routeRackFor / DISC_RACK moved to lib/rack.js so
+   the crew card can answer the same question without core importing this lazy-loaded file.
+   Moved verbatim; the correction-precedence rule and its history live beside them there. */
+import { rackFromText, _rackEdited, contribRack, routeRackFor, DISC_RACK } from "./lib/rack";
 import { USE_DB, supabase } from "./lib/supabase";
 import {useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useRouteTripReports} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
@@ -177,18 +181,7 @@ const GEAR_CATS=[
  {label:"Bear canister",kw:["bear","canister"]},
  {label:"Glacier / crevasse kit",kw:["glacier","crevasse","picket","prusik"]}
 ];
-const DISC_RACK={
- sport:["Quickdraws — count the bolts, +2 spare (typ. 12–18)","2 locking carabiners for the anchor"],
- trad:["Cams — single rack #0.3–#3; double #0.5–#2 if sustained","Nuts — 1 set (#1–#11)","Alpine draws ×6–8","Quickdraws ×4–6","Slings + cordelette","2–3 lockers for anchors"],
- bouldering:["Crash pads — 2–4 (more for high/bad landings)","Spotter(s)","Tape for sharp holds"],
- ice:["Ice tools ×2","Crampons (mono/dual point)","Ice screws — 8–12 (add stubbies for thin ice)","Rope — 60 m","Screamers","V-thread tool","5 m cord for rappels"],
- mixed:["Ice tools ×2","Crampons","Ice screws ×6–10","Small cam/nut set","Rope — 60 m"],
- alpine:["Rope — single 60 m (or twins for raps)","Light rack — cams #0.3–#2, a few nuts, 4–6 slings","Ice axe + crampons (if snow/ice on route)","Warm layers","Navigation","Day's food/water"],
- mountaineering:["Ice axe","Crampons","Rope","Harness","2 prusiks","2 locking carabiners","Pulley","Picket","Crevasse-rescue gear","Navigation","Warm layers","Glacier glasses","Food/water"],
- scrambling:["Approach shoes (sticky rubber)","Helmet (rockfall)","Light rope + harness for exposed steps","Navigation","Water","Layers"],
- hiking:["Footwear for the terrain","Navigation — map / GPS / compass","Water + filter","Food","Layers + shell","Sun protection","Headlamp","First-aid"],
- aid:["Full trad rack + offset cams/nuts","Aiders/etriers ×2","Daisy chains","Ascenders","Lead rope","Haul line"]
-};
+
 const DISC_ASSUMED={sport:["Rope","Quickdraws","Harness","Belay / rappel device","Personal anchor / sling","Helmet","Climbing shoes","Chalk"],trad:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Climbing shoes","Chalk","Nut tool"],bouldering:["Climbing shoes","Chalk","Brush"],aid:["Harness","Belay / rappel device","Helmet","Aiders / etriers","Daisy chains","Ascenders"],ice:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Mountaineering boots","Warm layers"],mixed:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Warm layers"],alpine:["Harness","Belay / rappel device","Helmet","Ice axe","Crampons","Mountaineering boots","Glacier / crevasse kit","Warm layers","Navigation"],mountaineering:["Ice axe","Crampons","Mountaineering boots","Harness","Helmet","Glacier / crevasse kit","Navigation","Warm layers"],scrambling:["Approach shoes","Helmet","Navigation (map / GPS)"]};
 // "alpine" spans a 5.8 rock rib at Washington Pass and a glaciated north face, so
 // assuming one kit for both put a glacier/crevasse kit, an ice axe, crampons and
@@ -325,25 +318,6 @@ function gearReadout(route,owners){
   const owned=(owners||[]).map(g=>(g||[]).join(" ").toLowerCase());
   return base.map(label=>{const c=GEAR_CATS.find(x=>x.label===label)||{kw:[label.toLowerCase()]};return {label:label,have:owned.some(t=>c.kw.some(k=>t.includes(k)))};});
 }
-function rackFromText(s){return (s||"").split(/\.\s+(?=[A-Z])/).map(x=>x.trim()).filter(Boolean).map(x=>/[.!?]$/.test(x)?x:x+".");}
-/* A climber's agreed rack correction must out-vote the enrichment, exactly as _rapEdited does
-   for rappelDetail and _descEdited for descentText. THE SAME RULE, THE THIRD TIME.
-
-   The contribute form's "Rack & gear" field is keyed `rack`, and ClimbMatch's merge files it
-   into `gearTiers.required` — it writes neither `detailedRack` nor `rack`. So before this,
-   routeRackFor could not see a correction at all: it read detailedRack, then proNeeds, then the
-   generic DISC_RACK. The correction was not discarded, which is what made it hard to notice —
-   it rendered in the GearTiers panel further down the SAME tab, so the Overview asserted two
-   different racks for one route with nothing saying which was current, and the box the climber
-   had actually corrected kept showing the value they had replaced. Measured by rendering:
-   scripts/oneoff/probe-rack-correction-reaches-the-rack-box.mjs.
-
-   Gating on _rackEdited is load-bearing, not defensive. gearTiers.required is ALSO populated by
-   seed data and enrichment (every seed route carries one), so preferring it unconditionally
-   would invert the rule for every route nobody has corrected. */
-function _rackEdited(r){return !!(r&&(r._contribFields||[]).indexOf("rack")>=0);}
-function contribRack(r){const req=(r&&r.gearTiers&&r.gearTiers.required)||[];return (_rackEdited(r)&&req.length)?req:null;}
-function routeRackFor(route){const c=contribRack(route);if(c)return c;return (route&&route.detailedRack)?rackFromText(route.detailedRack):((route&&route.proNeeds)?[route.proNeeds]:null);}
 const GEAR_MARGIN_TIERS=[["ultralight","Ultralight",[]],["midweight","Midweight",["Extra insulating layer","Headlamp + spare batteries"]],["cautious","Extra cautious",["Extra insulating layer","Headlamp + spare batteries","First aid kit","Emergency bivy / space blanket","Extra food & water","Backup navigation (paper map/compass)"]]];
 function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
 function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length)return null;if(sr[0]&&typeof sr[0]==="object"&&"sizeCm" in sr[0])return sr.map(function(s){return s.qty+"× "+s.sizeCm+"cm";}).join(", ");return sr.map(fmtSlingVal).filter(Boolean).join("; ");}if(typeof sr!=="object")return null;var parts=Object.keys(sr).map(function(k){var v=sr[k];if(v===false||v==null||v==="")return null;var label=k.replace(/_/g," ");if(/^\d+(\.\d+)?(cm|in|mm)$/i.test(k)&&(typeof v==="number"||/^\d+$/.test(v)))return v+"× "+k;var sub=fmtSlingVal(v);return sub?(label+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}
