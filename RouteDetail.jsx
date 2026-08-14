@@ -934,7 +934,10 @@ function campSites(route){
   const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
   /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
      WHICH of the two things this section merges you are looking at, so it earns a chip. */
-  const TYPE={camp:"Established camp",bivy:"Bivy",hut:"Hut"};
+  /* The label for `camp` is deliberately the neutral "Camp", NOT "Established camp": a dispersed
+     basin site and a developed campground are both stored as `camp`, so the stronger word would
+     be a false claim on every dispersed site. The capacity chip carries that distinction. */
+  const TYPE={camp:"Camp",bivy:"Bivy",hut:"Hut"};
   return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
     .concat(wps.map(w=>({name:w&&w.name,elev:w&&w.elev,kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
@@ -943,7 +946,11 @@ function CampingPanel({route,onEdit}){
   if(!sites.length)return null;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:13}}>
     <div style={SZ4}><div style={{fontSize:12,fontWeight:700,color:C.purple}}>{"CAMPING & BIVY · "+sites.length}</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null}</div>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>Where you can sleep on this route — established camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns. Anything with coordinates is also a pin on the route track.</div>
+    {/* The "also a pin on the route track" sentence is CONDITIONAL, because it is only true of
+        waypoint-derived sites. Most researched bivy rows carry no coordinate at all — measured:
+        4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
+        that are not there. Claim it only when at least one site actually is on the track. */}
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
     {sites.map((b,i)=><div key={i} style={{border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:8}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:4}}>
         <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{b.name||("Camp "+(i+1))}</div>
