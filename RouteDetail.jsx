@@ -1911,13 +1911,28 @@ function gapTrack(r){return !!r&&!(r.gpxPts&&r.gpxPts.length>=3);}
    only a tie-breaker for two ENRICHED strings; once a field is in `_contribFields` the
    climbers' text wins outright. */
 function _descEdited(r){return !!(r&&(r._contribFields||[]).indexOf("descentText")>=0);}
-/* WHICH SIDE HOLDS THE CORRECTION: `a`, not `b`. Both merge paths write through the rename map
-   `M` in ClimbMatch.jsx, and M has {descentText:"descent"} -- so a contribution submitted under
-   the form key `descentText` lands in **route.descent**, while route.descentText keeps the
-   untouched enrichment prose. #897 had this backwards (it returned `b` when edited), which
-   returned the enrichment and discarded the correction -- strictly worse than the plain length
-   comparison it replaced, since before it a correction at least won when it was longer.
-   `_rapEdited` is the model: it reads route.rappels, the M DESTINATION, not the source column. */
+/* THERE IS NO RIVALRY HERE, and this comment previously asserted one. Two things happen in
+   ClimbMatch's merge and you have to read both:
+
+     1. every contribution is written through the rename map `M`, which has
+        {descentText:"descent"} -- so the form key `descentText` lands in route.descent;
+     2. AFTER both merge paths, `if(o.descent!=null)o.descentText=o.descent;` MIRRORS it back
+        (#787), and its own comment says "Write both spellings; equal strings make the
+        comparison moot."
+
+   So a real contribution leaves route.descent === route.descentText, and this function returns
+   the correction whichever side it reads -- including under the bare length comparison that
+   predates every change to it. #897 made it prefer `b` and called that a fix; #915 made it
+   prefer `a` and called #897 a regression that had "discarded the correction". Measured by
+   rendering both variants against a fixture that sets BOTH properties: behaviourally identical.
+   Neither was a live fix, and #915's accusation was false.
+
+   Keep the branch -- it costs nothing and it is what keeps this correct IF the mirror is ever
+   removed. Do not describe it as fixing a live defect, and do not "restore" the other ordering
+   on the strength of the M rename alone. See #932, which had to un-assert the same claim inside
+   check:correction-readers, where it had hardened into a rule.
+
+   The real instance of this class is `rack` -- see _rackEdited. */
 function descentBeta(r){if(!r)return "";const a=String(r.descent||"").trim(),b=String(r.descentText||"").trim();if(a&&_descEdited(r))return a;return b.length>a.length?b:a;}
 /* `routes.season` is not a month range. Enrichment writes prose into it — up to 232 characters on
    wa_hourglass_gully_winter — and the hero header rendered it raw, so a paragraph about snow bridges
