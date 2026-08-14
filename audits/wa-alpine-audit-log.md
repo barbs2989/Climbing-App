@@ -8073,3 +8073,57 @@ CascadeClimbers, StephAbegg, SummitPost, nps.gov) was available this run — onl
 own aggregated results were reachable, same limitation as last batch.
 
 Next batch continues alphabetically after `wa_boving_roofs` (see progress file).
+
+## 2026-08-14 — Batch 117 (pass 3): Buckner Mountain (x2), Burgundy Spire, Burnt Boot Peak,
+Cardinal Peak, Cascade Peak, The Castle, Cathedral Peak
+
+Checked 8 routes: Buckner Mountain's North Face and Southwest Face/Slopes; Burgundy Spire's
+North Face; Burnt Boot Peak's North Ridge; Cardinal Peak's Northwest Couloir–North Ridge;
+Cascade Peak's East Ridge and NW Chimney; The Castle's (Tatoosh Range) Southeast Face; and
+Cathedral Peak's (Pasayten) Southeast Buttress. Two routes on `wa_south_face_3` that carry
+an alpine discipline tag and would otherwise have sorted into this batch were skipped —
+that area is a `crag`, not a `peak`, per the audit's own scope definition.
+
+**Confirmed fixes (3):** `wa_burgundy_spire`'s area row stored `elevation_ft: 8483`, but its
+own North Face route already stores its summit at 8,400 ft (both `high_point_ft` and the
+route's own recorded summit waypoint), and three independent outside sources (The
+Mountaineers, LemkeClimbs, a peakbagger-derived figure of 2,560 m) all agree on ~8,400 ft.
+Corrected the area row to 8400. Separately, `wa_castle_peak_tatoosh_southeast_face`'s own
+Summit waypoint stored `elev`/`elevFt: 6640` against its own `high_point_ft` of 6440, the
+parent area's `elevation_ft` of 6440, and Wikipedia's 6,440 ft for The Castle — a plain
+digit transposition, corrected to 6440. And the same route's `access` jsonb carried a
+leftover `_raw` sub-object describing an entirely different peak: 8,343 ft, "Provincial
+Park (north)" and other Canadian-border access routes, "north Cascades Ranger District",
+and "glacial terrain and ice sheets" as a hazard — nothing about The Castle, a 6,440 ft
+non-glaciated Tatoosh Range scramble well inside Mount Rainier NP nowhere near the border,
+confirmed both against this same row's own correct `notes`/`permit`/`landManager` fields
+and against Wikipedia. `_raw` is not read anywhere in the app (grepped `*.jsx`), so removing
+it only strips contaminated leftover data, nothing currently on screen. SQL for all three:
+`audits/sql/2026-08-14-batch-117.sql`, pre-flighted clean against both `routes` and `areas`.
+
+**Clean (4):** Buckner Mountain's original 1901 first ascent by Lewis Ryan and Cascade
+Peak's July 23, 1950 first ascent by Fred Beckey, Pete Schoening and Phil Sharpe both
+confirmed exactly; Burgundy Spire's North Face 1953 Beckey-party first ascent (aided/fixed
+ropes, later freed at 5.8 via the Burgundy Ledge tunnel) confirmed. Elevations and
+coordinates for Buckner Mountain (9,114 ft), Cascade Peak (7,428 ft), Cardinal Peak
+(8,595–8,596 ft, listsofjohn vs. DB, a 1 ft rounding difference) and Cathedral Peak
+(8,606 ft) all matched their area rows and outside sources. Cathedral Peak's own FA is
+already stored as an honest non-claim ("unrecorded... route established July 1973") and
+Wikipedia's pitch count (9-10) and length (~1,000 ft) for its Southeast Buttress line up
+with the DB's 10 pitches / 305 m.
+
+**Needs human verification (not fixed — flagged only):** `wa_burnt_boot_peak_north_ridge`'s
+FA is stored as Don Williamson, Bill Bucher and Tom Oas, reported in the 1972 AAJ.
+Wikipedia gives the peak's overall first ascent as 1963 with no party named. These aren't
+necessarily contradictory — the 1963 date could be the peak's easiest-line first ascent
+while 1972 is specific to this technical North Ridge line, a distinction this catalog
+has drawn correctly elsewhere (e.g. Cascade Peak's own hedge last checked) — but this
+environment's blocked web egress to AAC Publications/AAJ archives meant it couldn't be
+pinned down further this run. Left unchanged.
+
+No web-egress access to individual site domains (Wikipedia, SummitPost, Mountaineers.org,
+peakbagger, AAC Publications) was available this run — only WebSearch's own aggregated
+results were reachable, same limitation as prior batches.
+
+Next batch continues alphabetically after `wa_cathedral_peak_pasayten_se_buttress` (see
+progress file).

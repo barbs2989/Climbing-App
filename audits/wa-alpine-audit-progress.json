@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_boving_roofs",
+  "last_processed_id": "wa_cathedral_peak_pasayten_se_buttress",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2557,6 +2557,23 @@
         "wa_boving_roofs"
       ],
       "findings": "gain_ft fixed on wa_bonanza_peak_north_ridge (3800 -> 6200, summit-day gain vs full trailhead-to-summit); 3 items flagged needs-human-verification (Black Peak permit fee area boundary, Bonanza Peak elevation 9511/9516/9503 disagreement, Boving-Christensen/Boving Roofs FA dates thin)"
+    },
+    {
+      "batch_number": 117,
+      "date": "2026-08-14",
+      "route_ids": [
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_burgundy_spire_north_face",
+        "wa_burnt_boot_peak_north_ridge",
+        "wa_cardinal_peak_nw_couloir_north_ridge",
+        "wa_cascade_peak_east_ridge",
+        "wa_castle_peak_tatoosh_southeast_face",
+        "wa_cathedral_peak_pasayten_se_buttress"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "findings": "areas.elevation_ft fixed on wa_burgundy_spire (8483 -> 8400, matches route's own summit waypoint and 3 outside sources); wa_castle_peak_tatoosh_southeast_face waypoints summit elev/elevFt fixed (6640 -> 6440, digit transposition vs the route's own high_point_ft, the area row, and Wikipedia); same route's access._raw removed (contaminated leftover data describing an unrelated glaciated Canadian-border peak, unused by the app). 1 flagged: wa_burnt_boot_peak_north_ridge FA (Williamson/Bucher/Oas, 1972 AAJ) vs Wikipedia's unattributed 1963 peak first-ascent date -- plausibly a route-FA vs peak-FA distinction but not corroborable with this environment's blocked web egress to AAJ archives. 3 of 8 routes had skippable out-of-scope siblings on wa_south_face_3 (a crag, not a peak) noted but not audited."
     }
   ]
 }
