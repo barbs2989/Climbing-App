@@ -38,6 +38,13 @@ for (let i = open; i < src.length; i++) {
 if (end < 0) { console.error("FAIL: could not balance the lists array."); process.exit(1); }
 const arr = src.slice(open, end + 1);
 
+// Cards gated to demo mode. They exist in the array but `DEMO_FILLERS` is false in production, so
+// a real account never sees them — reporting them as live lists would overstate what the screen
+// offers, which is the same overstatement this audit exists to catch. Read from the app rather
+// than restated here, so the two cannot drift.
+const gateM = src.match(/const SEED_ONLY_CARDS=new Set\(\[([^\]]*)\]\)/);
+const DEMO_ONLY = new Set(gateM ? [...gateM[1].matchAll(/"([a-z0-9_]+)"/g)].map(m => m[1]) : []);
+
 const cards = [];
 const re = /\{key:"([a-z0-9_]+)"/g;
 let m;
@@ -86,7 +93,8 @@ const out = cards.map(c => {
   const roster = c.roster ? listPeaks(c.k) : null;
   const tagged = rows.filter(r => routeInList(r, c.k)).length;
   const have = roster ? roster.length : tagged;
-  const via = roster ? "roster" : c.derived ? "seed" : "tags";
+  const demoOnly = DEMO_ONLY.has(c.k);
+  const via = demoOnly ? "demo" : roster ? "roster" : c.derived ? "seed" : "tags";
   // A card that can NEVER fill: its objectives come only from a tag no route in the catalog
   // carries. Not "short" — structurally empty, the shape that got Triple Crown and Seven
   // Summits removed. `seed` cards are excluded: they build from seed ROUTES and the user's own
@@ -99,12 +107,15 @@ const pad = (s, n) => String(s).padEnd(n);
 console.log(pad("list", 14) + pad("members", 9) + pad("advertised", 12) + pad("via", 8) + "state");
 for (const r of out) {
   const state = r.dead ? "CANNOT FILL — no route carries this tag"
+    : r.via === "demo" ? "demo mode only — a real account never sees this card"
     : r.via === "seed" ? "seed/derived — not measurable from the catalog"
     : r.gap == null ? "no advertised total"
     : r.gap > 0 ? `${r.gap} missing` : "complete";
   console.log(pad(r.k, 14) + pad(r.have, 9) + pad(r.want ?? "—", 12) + pad(r.via, 8) + state);
 }
 
+const demo = out.filter(r => r.via === "demo");
+if (demo.length) console.log(`\na real account sees ${cards.length - demo.length} of ${cards.length} cards — ${demo.length} are demo-only: ${demo.map(r => r.k).join(", ")}`);
 const dead = out.filter(r => r.dead);
 console.log(`\ncards that CANNOT FILL: ${dead.length} of ${cards.length} — ${dead.map(r => r.k).join(", ") || "none"}`);
 if (dead.length) console.log(`  (each renders "0" forever: its objectives come only from a routes.lists tag no route carries)`);
