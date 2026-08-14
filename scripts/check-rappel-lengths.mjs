@@ -48,7 +48,9 @@ const ROPES = [50, 60, 70, 80];
 // match "double ropes", and it therefore flagged wa_action_potential — a route whose descent text
 // lists all five lengths individually AND says "with double ropes". A guard that flags correct work
 // teaches people to ignore it.
-const DOUBLE = /\btwo\b[^.]{0,25}\bropes?\b|\bdouble[- ]ropes?\b|\btwin ropes?\b|\b(?:60|70)s\b|\bropes\b/i;
+// `2x30m` puts the pair marker BEFORE the number and `60m x2` puts it after; both are written in
+// this data and both mean two ropes.
+const DOUBLE = /\btwo\b[^.]{0,25}\bropes?\b|\bdouble[- ]ropes?\b|\btwin ropes?\b|\b(?:60|70)s\b|\bropes\b|\b\d\s?x\s?\d{2}\s?m\b|\b\d{2}\s?m\s?x\s?\d\b/i;
 // The count note admitting, in words, that it substituted the rope's size for a distance.
 // Matching "rope length" here was wrong and flagged three CORRECT routes: "a range depending on
 // rope length/number of ropes carried" and "double-rope rappels of roughly full rope length" are
@@ -64,7 +66,47 @@ const DOUBLE = /\btwo\b[^.]{0,25}\bropes?\b|\bdouble[- ]ropes?\b|\btwin ropes?\b
 // a grade, a pack weight) is not a claim about a distance.
 const ADMITS = /rope[' ]?s? capacity|approximated at the stated|estimated from the stated|near[- ]?max[^.]{0,40}\brope/i;
 
-const prose = r => `${r.rappels || ""} ${r.rappel_count_note || ""} ${r.descent_text || ""}`;
+// `gear` is where a route most often states its rope OUTRIGHT — "60m single rope", "Two 30m ropes
+// (or one 60m)", "50m rope (60m or double 50m ropes preferable for 3-person parties)" — and until
+// #951 this script never read it. 1,065 WA routes carry a gear array; a route whose only named rope
+// lives there had NO rope size at all as far as rules 2 and 3 were concerned, so it passed for want
+// of evidence rather than on the merits. It is one column short of the question being asked.
+//
+// It feeds the two-rope test AND the named-size scan, and those two cannot be separated. Reading
+// gear only for sizes would take the "60m" out of `Two 30m ropes (or one 60m)` while ignoring the
+// word that says there are two of them, and manufacture a finding against a correct route. The text
+// that names the rope is the text that says how many there are.
+const gearText = r => (Array.isArray(r.gear) ? r.gear.filter(g => typeof g === "string").join(" ; ") : "");
+// The two-rope test is STRICTER on gear than on prose, and that asymmetry is measured rather than
+// tidy. `DOUBLE` accepts a bare plural `ropes`, which is right for a descent narrative — prose that
+// says "ropes" is nearly always counting them. A gear list pluralises casually: of the 34 rappel-
+// table routes whose gear says "ropes", 4 name no two-rope configuration at all, and two of those
+// are `Single 60m rope (skinny 7-8mm ropes are common)` and `60m dynamic ropes (single rope
+// technique)` — SINGLE-rope routes that a bare plural would have stood rules 1 and 2 down on.
+// Standing down wrongly is a false PASS on a rope-off-the-end check, which is the direction that
+// gets somebody hurt, so gear has to name a count, a pairing, or a second strand.
+//
+// Bounded with `[^;]` because gearText joins entries with " ; ": without it, "two sets #1 to #3"
+// in one entry and "60m rope" in another would read as two ropes across the boundary. That is not
+// hypothetical — `wa_a_servant_to_liberty` lists "two sets #0 C3 to #.75" and "two sets #1 to #3".
+const GEAR_DOUBLE = /\btwo\b[^;]{0,25}\bropes?\b|\bdouble[- ][^;]{0,14}\bropes?\b|\btwin\b[^;]{0,14}\bropes?\b|\b\d\s?x\s?\d{2}\s?m\b|\b\d{2}\s?m\s?x\s?\d\b|\bsecond rope\b|\bpair of ropes\b|\btag line\b/i;
+// U+00D7 MULTIPLICATION SIGN, not ASCII x — `2×30m ropes` is written with it, and a two-rope
+// configuration spelled that way read as a single rope.
+const prose = r => `${r.rappels || ""} ${r.rappel_count_note || ""} ${r.descent_text || ""} ${gearText(r)}`.replace(/×/g, "x");
+
+// Rope sizes the text NAMES. A range (`50-60m rope`, `30–60m single rope`) names both ends, and
+// rule 3 takes the largest — reading only the low end understates the rope a party carries and
+// invents a finding against a correct route.
+//
+// An OPEN-ENDED size (`50m+ rope`) names no upper bound at all, so it returns `open` and rule 3
+// stands down rather than guessing one. Substituting a number there — 60, say — would be exactly
+// the fabrication this whole script exists to catch, committed by the checker instead of the data.
+function namedRopes(p) {
+  const out = [];
+  for (const m of p.matchAll(/\b(\d{2})\s*(?:-|–|to)\s*(\d{2})\s?m\b/gi)) { out.push(+m[1]); out.push(+m[2]); }
+  for (const m of p.matchAll(/\b(\d{2})\s?m\b/gi)) out.push(+m[1]);
+  return { sizes: out.filter(v => ROPES.includes(v)), open: /\b\d{2}\s?m\s*\+/.test(p) };
+}
 
 function findings(rows) {
   const out = [], look = [];
@@ -73,7 +115,9 @@ function findings(rows) {
     const lens = r.rappel_detail.map(x => x && x.lengthM).filter(x => typeof x === "number");
     if (!lens.length) continue;
     const p = prose(r);
-    const twoRopes = DOUBLE.test(p);
+    // Loose on the route's own narrative, strict on the gear list — see GEAR_DOUBLE.
+    const twoRopes = DOUBLE.test(`${r.rappels || ""} ${r.rappel_count_note || ""} ${r.descent_text || ""}`.replace(/×/g, "x"))
+      || GEAR_DOUBLE.test(gearText(r).replace(/×/g, "x"));
     const max = Math.max(...lens);
 
     // 1. Over 60m is impossible on anything less than two ropes, whatever the prose says about
@@ -85,7 +129,7 @@ function findings(rows) {
     //    to >=50m because 30m is BOTH a rope size and the correct half of a 60m rope: including it
     //    flagged 22 correct routes.
     else if (max >= 50 && !twoRopes) {
-      const named = [...p.matchAll(/\b(\d{2})\s?m\b/gi)].map(m => +m[1]).filter(v => ROPES.includes(v));
+      const named = namedRopes(p).sizes;
       if (named.includes(max))
         out.push({ id: r.id, area: r.area_id, why: `every station tops out at ${max}m and the text names a ${max}m rope with no second rope — that is the rope's capacity, not a rappel distance` });
     }
@@ -100,8 +144,8 @@ function findings(rows) {
     //    in this data and nothing should be able to suppress it.
     const single = /\bsingle[- ]rope\b|\bsingle\b[^.]{0,20}\brope\b/i.test(p);
     if (single) {
-      const named = [...p.matchAll(/\b(\d{2})\s?m\b/gi)].map(m => +m[1]).filter(v => ROPES.includes(v));
-      const biggest = named.length ? Math.max(...named) : 0;
+      const { sizes: named, open } = namedRopes(p);
+      const biggest = named.length && !open ? Math.max(...named) : 0;
       // REPORT-ONLY, and the reason is measured rather than cautious. Run as a failure it flagged
       // 22 routes, and several are CORRECT: wa_south_face_5's prose describes both a double-rope
       // party and a single-70 party, and its stored table is the double-rope one. The discriminator
@@ -121,16 +165,30 @@ function findings(rows) {
   return { out, look };
 }
 
-const rows = await selectAll("routes", "id,name,area_id,rappels,rappel_detail,rappel_count_note,descent_text", "", { pageSize: 1000 });
+const rows = await selectAll("routes", "id,name,area_id,rappels,rappel_detail,rappel_count_note,descent_text,gear", "", { pageSize: 1000 });
 if (!rows.length) { console.error("FAIL — read 0 routes. Refusing to report a clean result about a table this check never saw."); process.exit(1); }
 const tables = rows.filter(r => Array.isArray(r.rappel_detail) && r.rappel_detail.length);
 if (!tables.length) { console.error("FAIL — 0 routes carry a rappel table. Every rule below would pass vacuously."); process.exit(1); }
 
 // The fault lives in the DB and this checker is read-only, so injections are applied to the rows in
 // memory rather than written.
-if (INJECT === "capacity") { const t = tables[0]; t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: 70 })); t.rappels = "rappel the route on a single 70m rope"; t.rappel_count_note = ""; t.descent_text = ""; console.log(`[inject] ${t.id}: all stations set to 70m with a single 70m rope named`); }
+// `gear` is cleared here, and it has to be. Once this script started reading that column, leaving
+// the row's real gear in place made the injected scenario self-contradictory: tables[0] is
+// wa_a_servant_to_liberty, whose gear says "two ropes for rappel", so a case claiming to describe
+// a route that names ONE rope was handing the guard a route that names two. It stood rules 1 and 2
+// down exactly as documented and the case printed `ok` — reading as "the guard broke" when the
+// guard was right and the INJECTION was wrong. Injections have to be re-checked when a script's
+// inputs widen, not only when its logic changes.
+if (INJECT === "capacity") { const t = tables[0]; t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: 70 })); t.rappels = "rappel the route on a single 70m rope"; t.rappel_count_note = ""; t.descent_text = ""; t.gear = []; console.log(`[inject] ${t.id}: all stations set to 70m with a single 70m rope named`); }
 if (INJECT === "note") { const t = tables[0]; t.rappel_count_note = "Individual rappel lengths aren't given; approximated at the stated single 70m rope capacity."; console.log(`[inject] ${t.id}: count note admits the substitution`); }
 if (INJECT === "clean") { for (const t of tables) { t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: null })); t.rappel_count_note = ""; } console.log("[inject] every stored length nulled — a null is CORRECT and must not be reported"); }
+// The rope named ONLY in gear. Every prose column is emptied, so the run can only see the 70m rope
+// if it reads that array — which is the whole point of the change that added it. A version of this
+// script that ignores gear prints `ok` here.
+if (INJECT === "gearrope") { const t = tables[0]; t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: 70 })); t.rappels = ""; t.rappel_count_note = ""; t.descent_text = ""; t.gear = ["helmet", "70m single rope", "rack to 3in"]; console.log(`[inject] ${t.id}: 70m stations, and the 70m single rope named ONLY in gear`); }
+// The mirror of it, and the one that guards against over-reach: the same 70m stations on a route
+// whose gear names TWO ropes. Two 70m ropes really do reach 70m, so this must NOT be reported.
+if (INJECT === "geartwo") { const t = tables[0]; t.rappel_detail = t.rappel_detail.map(d => ({ ...d, lengthM: 70 })); t.rappels = ""; t.rappel_count_note = ""; t.descent_text = ""; t.gear = ["helmet", "Two 70m ropes", "rack to 3in"]; console.log(`[inject] ${t.id}: 70m stations, gear names TWO 70m ropes — correct, must NOT be reported`); }
 
 const { out: hits, look } = findings(tables);
 console.log(`checked ${tables.length} routes carrying a rappel table (of ${rows.length} routes read)\n`);
@@ -146,7 +204,9 @@ if (hits.length) {
 }
 console.log("ok — every stated rappel distance is consistent with the rope configuration its route describes");
 
-// Injection-tested, four cases:
+// Injection-tested, six cases:
+//   --inject=gearrope  70m stations, the 70m rope named ONLY in gear              -> must FAIL
+//   --inject=geartwo   the same table where gear names TWO 70m ropes              -> must PASS
 //   --inject=capacity  a full-rope-capacity table with a single rope named        -> must FAIL
 //   --inject=note      table fine, but the note still admits the substitution     -> must FAIL
 //   --inject=clean     every length nulled                                        -> must PASS (null is correct)

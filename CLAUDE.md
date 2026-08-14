@@ -1083,10 +1083,36 @@ a build error, but a screen that renders wrong or not at all.
   - The third rule is about the **note, not the numbers**: a table can be corrected while
     `rappel_count_note` still states the method that produced the wrong value, and the next pass
     then re-derives it. That is why `enrich:apply` grew a `set` path for the scalar prose columns.
+  - **It read four prose columns and not `gear`, which is where a route most often names its rope
+    outright** — `60m single rope`, `Two 30m ropes (or one 60m)`, `50m rope (60m or double 50m
+    ropes preferable for 3-person parties)`. 1,065 routes carry a gear array, and a route whose only
+    named rope lived there had **no rope size at all** as far as rules 2 and 3 were concerned, so it
+    passed for want of evidence rather than on the merits. Fixed; the live catalog stays at **0
+    failures**, with 2 new report-only candidates and **nothing lost**.
+    - **Gear feeds the two-rope test AND the named-size scan, and they cannot be separated.**
+      Reading gear only for sizes would take the `60m` out of `Two 30m ropes (or one 60m)` while
+      ignoring the word saying there are two of them, and condemn a correct route. The text that
+      names the rope is the text that says how many there are.
+    - **But the two-rope test is STRICTER on gear than on prose, and that asymmetry is measured.**
+      A descent narrative saying "ropes" is nearly always counting them; a gear list pluralises
+      casually. Of the 34 rappel-table routes whose gear says `ropes`, **4 name no two-rope
+      configuration**, and two are `Single 60m rope (skinny 7-8mm ropes are common)` and `60m dynamic
+      ropes (single rope technique)` — **single**-rope routes a bare plural would have stood rules 1
+      and 2 down on. Standing down wrongly is a false PASS on a rope-off-the-end check.
+    - A range (`50-60m`) names both ends and rule 3 takes the largest, since reading the low end
+      understates the rope. An **open-ended** size (`50m+`) names no upper bound, so rule 3 stands
+      down rather than substituting one — inventing a 60 there would be the exact fabrication this
+      script exists to catch, committed by the checker.
   - Read-only, anon key, fails closed on an empty read *and* on zero rappel tables. **Not a build
     gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
-    reasoning as `check:counts`. Injection-tested, 4 cases at the bottom of the script; note that
-    `--inject=clean` (every length nulled) must **PASS**.
+    reasoning as `check:counts`. Injection-tested, **6** cases at the bottom of the script; note that
+    `--inject=clean` (every length nulled) and `--inject=geartwo` must **PASS**.
+    - **Widening a script's INPUTS invalidates its injections, not just changing its logic.**
+      `--inject=capacity` claims to describe a route naming one rope, and left the row's real `gear`
+      alone. Once gear was read, `tables[0]` is `wa_a_servant_to_liberty`, whose gear says **"two
+      ropes for rappel"** — so the case was handing the guard a self-contradictory route, the guard
+      stood down exactly as documented, and the case printed `ok`. That reads as *the guard broke*
+      when the guard was right and the **injection** was wrong. It clears `gear` now.
   - Reader-side, `RappelTable` prints `—` for a null length. Its total was summed with `||0`, which
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
