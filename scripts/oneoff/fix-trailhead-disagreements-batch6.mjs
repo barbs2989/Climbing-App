@@ -58,16 +58,26 @@ const PLAN = [
   // well-known trailhead 1.3 km west serving the south side of the group.
   ["wa_liberty_bell_thin_red_line", "log"],
 
-  // APPEARED MID-SESSION, between two runs of the audit an hour apart — a parallel session is
-  // enriching approaches, so this backlog is a moving target rather than a fixed list. That is an
-  // argument FOR the audit existing, not against fixing this row.
-  // Both records carry the IDENTICAL name ("Eldorado Creek trailhead (Cascade River Road mile 20)"),
-  // so it never showed as [NAME DIFFERS] despite being 21.5 km apart — the widest disagreement in
-  // the catalog with no name signal at all. The pin (48.6855,-121.0925) is Colonial Creek /
-  // Thunder Creek, and the route's own overview says it approaches "from the opposite (Cascade
-  // River Road/Eldorado) side of the mountain RATHER THAN via Thunder Creek". So the pin holds a
-  // different route's trailhead under this one's name. The blob matches the prose and the road.
-  ["wa_primus_peak_south_ridge", "log"],
+  // wa_primus_peak_south_ridge WAS HERE AS ["…","log"] AND THE VERDICT WAS WRONG. Removed rather
+  // than corrected, because the row needs no repair now and an entry here is a loaded gun: this
+  // applier resolves a disagreement in whichever direction its plan says, so if anything ever made
+  // the two records differ again, re-running would push the wrong answer back.
+  //
+  // What I got wrong, since the reasoning looked strong: the route's `approach`, `overview` and
+  // `trailheadDirection` ALL name Eldorado — the overview even says it approaches "from the
+  // opposite (Cascade River Road/Eldorado) side of the mountain RATHER THAN via Thunder Creek" —
+  // so three fields agreed and I treated that as decisive. But the PROSE IS THE CONTAMINATED HALF:
+  // it is Dorado Needle's approach, 21.5 km away. Three fields agreeing is worth nothing when one
+  // enrichment pass wrote all three from the same wrong source.
+  //
+  // The only independent witness is the route's own gpx, and it says Thunder Creek: 198 points
+  // ending 5 m from Primus Peak (so it is certainly this route's track) and starting 475 m from
+  // Thunder Creek TH, 21.9 km from the Eldorado coordinate this line used to write. Both peer
+  // routes on the peak carry Thunder Creek in both records.
+  //
+  // I did not consult the track because probe-track-start-as-third-trailhead-record.mjs did not
+  // exist yet when this batch was written. THE LESSON IS NOT ABOUT THIS ROW: a verdict reached
+  // before a new source of evidence exists should be re-run against it, not left standing.
 ];
 
 const num = v => (v === null || v === undefined || v === "" ? null : Number.isFinite(+v) ? +v : null);
