@@ -2508,10 +2508,17 @@ function RetryReminder({logs,routes,onOpen,compact}){
    those after RouteDetail. It is now mounted from there, on the four tabs that carry a
    Discussion minus Partners.
 
-   Ranking is a raw COUNT — contributions rows in the area subtree for the DB path
-   (area_top_contributors, 0005), activity + comments + photos for the seed fallback. It
-   does not weigh whether a contribution was accepted, deduplicate a climber correcting the
-   same field twice, or decay with age. Treat the number as "rows filed", not "beta earned".
+   What the number counts, DB path (area_top_contributors, 0148): one point per (route, field)
+   a climber corrected — however many times they filed it, since the ledger is append-only and
+   refining one value writes several rows about one fact — plus one per photo/report/rating,
+   which really are separate artifacts. Anonymous rows score nothing, in BOTH spellings: the
+   literal "anon" and the NULL a genuinely anonymous INSERT leaves. Seed fallback: one per
+   activity/comment/photo row, undeduplicated; the two paths never mix, so they are not meant
+   to agree. Two things it still does NOT weigh, each for a recorded reason in 0148 — whether
+   a contribution was ACCEPTED (`status` is 'pending' for every kind by design, so filtering
+   on it would empty the board; field consensus is computed here in the client, not in the DB)
+   and trip reports (they are `climb_logs`, author-only under RLS, so counting them means
+   reading private rows through a definer function — a privacy call, not a ranking tweak).
 
    The row opens a profile only when there IS one to open. It used to carry cursor:pointer
    and an onClick unconditionally, and the DB path names contributors by auth uid, so a real
