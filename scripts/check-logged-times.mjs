@@ -89,7 +89,15 @@ ck("a turned-around party is excluded from the count", withTimes.includes("Media
 ck("per-leg median reaches the screen", withTimes.includes("approach 2h 30m"));
 
 // Ordering is a claim about authority: measured reality above the formula that predicts it.
-const iT = withTimes.indexOf(HEADING), iM = withTimes.indexOf("Scarf");
+//
+// The anchor for "the model" is the estimator's own FITNESS input, not the words
+// "Scarf's Rule". Those words were on screen as an attribution and have been removed —
+// they named the formula's provenance, which is not something a climber can act on. An
+// anchor made of explanatory copy pins the copy; this one pins the THING. The estimate
+// is parameterised by fitness, so the estimator cannot render without this control, and
+// the control cannot appear anywhere the estimator has not.
+const MODEL = "FITNESS";
+const iT = withTimes.indexOf(HEADING), iM = withTimes.indexOf(MODEL);
 ck("evidence sits ABOVE the model", iT > -1 && iM > -1 && iT < iM);
 
 const one = render(ROUTE, "planner", [{ user: "A", date: "2026-07-01", tickType: "Summit", cond: { carToCarMin: 480 } }]);
@@ -97,7 +105,7 @@ ck("a single report says so, and is not pluralised", one.includes("Median of 1 l
 
 const none = render(ROUTE, "planner", []);
 ck("no logged time means no panel, not an empty state", !none.includes(HEADING));
-ck("the estimate still renders without any logs", none.includes("Scarf"));
+ck("the estimate still renders without any logs", none.includes(MODEL));
 
 // The whole reason numeric minutes exist as a separate field. If this ever passes, something
 // started parsing English durations and the number on screen is fiction.
