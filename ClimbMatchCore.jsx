@@ -20,6 +20,7 @@ import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequireme
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail } from "./lib/grade";
+import { useRecentRouteIds } from "./lib/recent";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
 const DbGuides = lazy(() => import("./lib/DbGuides"));
 const DbGuideApply = lazy(() => import("./lib/DbGuideApply"));
@@ -136,7 +137,46 @@ function gradeLabelRaw(r){return r.rockGrade||r.rock_grade||r.iceGrade||r.ice_gr
 function gradeLabel(r){return shortGrade(gradeLabelRaw(r));}
 function routeGradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(gradeLabel(r));return i<0?-1:i/gl.length;}
 function suggGainFt(r){return r.gainFt!=null?r.gainFt:(r.gain_ft!=null?r.gain_ft:null);}
-function suggestionProfile(logs,routeById){var byDisc={};(logs||[]).forEach(function(l){if(!routeCompleted(l.routeId,logs))return;var r=routeById(l.routeId);if(!r)return;var d=catOf(r);var b=byDisc[d]||(byDisc[d]={n:0,gSum:0,gN:0,aSum:0,aN:0});b.n++;var gv=routeGradeVal(r);if(gv>=0){b.gSum+=gv;b.gN++;}var af=suggGainFt(r);if(af){b.aSum+=af;b.aN++;}});var disc=Object.keys(byDisc).sort(function(x,y){return byDisc[y].n-byDisc[x].n;})[0];if(!disc)return null;var picked=byDisc[disc];return {disc:disc,gradeVal:picked.gN?picked.gSum/picked.gN:null,avgGainFt:picked.aN?picked.aSum/picked.aN:null};}
+/* One climber's grade/gain centre for ONE discipline. Split out because three callers now
+   accumulate the same shape from different evidence: completed logs, and climbs merely
+   opened (lib/recent.js). */
+function _suggAccum(byDisc,r){if(!r)return;var d=catOf(r);if(!d)return;var b=byDisc[d]||(byDisc[d]={n:0,gSum:0,gN:0,aSum:0,aN:0});b.n++;var gv=routeGradeVal(r);if(gv>=0){b.gSum+=gv;b.gN++;}var af=suggGainFt(r);if(af){b.aSum+=af;b.aN++;}}
+function _suggShape(d,b,src){return {disc:d,src:src,n:b.n,gradeVal:b.gN?b.gSum/b.gN:null,avgGainFt:b.aN?b.aSum/b.aN:null};}
+/* Returns EVERY logged discipline, not just the busiest one.
+   It used to end `…sort(by count)[0]` and throw the rest away, so a climber who logs 6 sport
+   and 5 alpine got sport-only suggestions and the alpine half of their logbook was invisible
+   — and a couple of new logs could flip the whole feed. Worse, the DB reader filtered at the
+   QUERY (`useSubtreeRoutes({disc})`), so the other disciplines were never even fetched and no
+   amount of client-side ranking could have recovered them.
+   `disc`/`gradeVal`/`avgGainFt` still describe the top discipline so existing readers are
+   unaffected; `discs` is the new, complete answer. */
+function suggestionProfile(logs,routeById){
+  var byDisc={};
+  (logs||[]).forEach(function(l){if(!routeCompleted(l.routeId,logs))return;_suggAccum(byDisc,routeById(l.routeId));});
+  var order=Object.keys(byDisc).sort(function(x,y){return byDisc[y].n-byDisc[x].n;});
+  if(!order.length)return null;
+  var discs=order.map(function(d){return _suggShape(d,byDisc[d],"logged");});
+  return {disc:discs[0].disc,gradeVal:discs[0].gradeVal,avgGainFt:discs[0].avgGainFt,discs:discs};
+}
+/* Three, because each slot costs a `useSubtreeRoutes` RPC on the DB path and the panel is one
+   section of an area page. Raising this raises the query count on every area page. */
+var SUGGEST_DISC_MAX=3;
+/* The discipline slots to actually render: logged disciplines first, then any discipline the
+   climber has only been BROWSING (lib/recent.js), which is what lets a feed react to what
+   someone is researching before they have logged any of it.
+   A discipline that is both logged and browsed keeps its `logged` slot and is never repeated
+   — the two rows make different claims ("you've been climbing X" vs "you've been looking at
+   X") and only one of them is true of a climb you have actually done. Logged always outranks
+   browsed: a completed climb is a far stronger statement than a page view. */
+function suggestDiscSlots(profile,viewedRoutes,max){
+  var lim=max||SUGGEST_DISC_MAX;
+  var logged=(profile&&profile.discs)||[];
+  var seen={};logged.forEach(function(s){seen[s.disc]=1;});
+  var byDisc={};
+  (viewedRoutes||[]).forEach(function(r){_suggAccum(byDisc,r);});
+  var viewed=Object.keys(byDisc).filter(function(d){return !seen[d];}).sort(function(x,y){return byDisc[y].n-byDisc[x].n;}).map(function(d){return _suggShape(d,byDisc[d],"viewed");});
+  return logged.concat(viewed).slice(0,lim);
+}
 function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var limit=(opts&&opts.limit)||5;return candidates.filter(function(r){return catOf(r)===profile.disc;}).map(function(r){var gv=routeGradeVal(r);var gd=(profile.gradeVal!=null&&gv>=0)?Math.abs(gv-profile.gradeVal):0.5;var af=suggGainFt(r);var ad=(profile.avgGainFt!=null&&af)?Math.min(1,Math.abs(af-profile.avgGainFt)/Math.max(profile.avgGainFt,500)):0.5;return {r:r,score:gd*0.65+ad*0.35};}).sort(function(x,y){return x.score-y.score;}).slice(0,limit).map(function(x){return x.r;});}
 
 
@@ -2362,14 +2402,33 @@ function AreaCrags({area,countIn,onOpenArea}){
 }
 function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
   const [open,setOpen]=useState(false);
+  const recentIds=useRecentRouteIds();
   if(!area)return null;
   const inScope=ROUTES.filter(r=>inArea(r.mountainId,area.id));
+  const byId={};inScope.forEach(r=>{byId[r.id]=r;});
   const objectives=inScope.filter(r=>wishlist.indexOf(r.id)>=0&&!completedIds.has(r.id));
-  const pool=inScope.filter(r=>!completedIds.has(r.id)&&wishlist.indexOf(r.id)<0);
-  const similar=rankSimilarRoutes(pool,profile,{limit:5});
-  const popular=(!objectives.length&&!similar.length)?[...pool].sort((a,b)=>(b.activity||[]).length-(a.activity||[]).length).slice(0,5):[];
-  const total=objectives.length+similar.length+popular.length;
+  const objIds=new Set(objectives.map(r=>r.id));
+  /* Climbs opened recently, in THIS area — the "I was just looking at that" row. Anything
+     already completed or already an objective is dropped: those have their own rows and the
+     same climb listed twice under two headings reads as a bug. */
+  const recent=recentIds.map(id=>byId[id]).filter(r=>r&&!completedIds.has(r.id)&&!objIds.has(r.id)).slice(0,5);
+  const recentSet=new Set(recent.map(r=>r.id));
+  const pool=inScope.filter(r=>!completedIds.has(r.id)&&wishlist.indexOf(r.id)<0&&!recentSet.has(r.id));
+  /* Discipline slots read views from the WHOLE catalog, not just this area: someone
+     researching ice in another range should still get an ice row here. The suggested climbs
+     themselves stay in-area — only the taste is global. */
+  const viewedAll=recentIds.map(id=>ROUTES.find(r=>r.id===id)).filter(Boolean);
+  const slots=suggestDiscSlots(profile,viewedAll);
+  /* One climb, one row. Two slots can rank the same route (a trad slot and an alpine slot
+     overlap on a route whose catOf lands in one but which suits both), and the same name
+     appearing twice under different reasons looks broken. First slot wins. */
+  const claimed={};
+  const bands=slots.map(s=>{const rows=rankSimilarRoutes(pool.filter(r=>!claimed[r.id]),s,{limit:5});rows.forEach(r=>{claimed[r.id]=1;});return {slot:s,rows:rows};}).filter(b=>b.rows.length);
+  const popular=(!objectives.length&&!recent.length&&!bands.length)?[...pool].sort((a,b)=>(b.activity||[]).length-(a.activity||[]).length).slice(0,5):[];
+  const total=objectives.length+recent.length+bands.reduce((n,b)=>n+b.rows.length,0)+popular.length;
   if(!total)return null;
+  const discLabel=d=>(CAT[d]||{}).label||d;
+  const bandTitle=s=>s.src==="viewed"?("Because you've been looking at "+discLabel(s.disc)):("Because you've been climbing "+discLabel(s.disc));
   const lbl={fontSize:11.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3,margin:"2px 0 7px"};
   const row=r=>{const m=MOUNTAINS.find(x=>x.id===r.mountainId);return <div key={r.id} {...clickable(()=>onOpen(r))} style={{display:"flex",alignItems:"center",gap:10,padding:"11px 12px",marginBottom:8,background:C.card,border:"1px solid "+C.border,borderRadius:11,cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{[m?m.name:null,r.pitches>1?r.pitches+"p":null].filter(Boolean).join(" · ")}</div></div><span style={{fontSize:12,color:C.textMuted,flexShrink:0,fontWeight:700,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{gradeLabel(r)}</span></div>;};
   return <div style={{marginTop:14}}>
@@ -2379,7 +2438,8 @@ function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
     </button>
     {open?<div style={{marginTop:9}}>
       {objectives.length?<div><div style={lbl}>{"From your objectives"}</div>{objectives.map(row)}</div>:null}
-      {similar.length?<div><div style={lbl}>{"Because you've been climbing "+((CAT[profile.disc]||{}).label||profile.disc)}</div>{similar.map(row)}</div>:null}
+      {recent.length?<div><div style={lbl}>{"Pick up where you left off"}</div>{recent.map(row)}</div>:null}
+      {bands.map(b=><div key={b.slot.src+":"+b.slot.disc}><div style={lbl}>{bandTitle(b.slot)}</div>{b.rows.map(row)}</div>)}
       {popular.length?<div><div style={lbl}>{"Popular in this area"}</div>{popular.map(row)}</div>:null}
     </div>:null}
   </div>;
@@ -3484,4 +3544,4 @@ export function __set__toastT(v){_toastT=v;}
 export function __set_DLOCALE(v){DLOCALE=v;}
 export function __set__cbTimer(v){_cbTimer=v;}
 export function __set__cbBatch(v){_cbBatch=v;}
-export {climberLine,wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
+export {climberLine,wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
