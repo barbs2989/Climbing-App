@@ -7,7 +7,68 @@
 // identical work: it is several DIFFERENT defects wearing one refusal message, and this script
 // separates them so nobody tries to "finish the job" with a bulk transform.
 //
-// THE FINDING THAT MATTERS, and the reason a bulk fix would make the data worse:
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+// CORRECTED 2026-08-14 — THE HEADLINE BELOW IS WRONG FOR MOST OF THESE ROUTES. READ THIS FIRST.
+//
+// This script's label, "distMi ANCHORED to the old first waypoint", describes a mechanism that
+// research disproved on 12 of 16 legs. What is actually stored is nearly the opposite, and it is
+// worse:
+//
+//   THE DISTANCES ARE ALREADY CORRECT AND ALREADY TRAILHEAD-RELATIVE — TO A DIFFERENT TRAILHEAD
+//   THAN THE ROW'S OWN TRAILHEAD WAYPOINT NAMES.
+//
+// Stored values match published one-way distances digit for digit, for a trailhead the row does
+// not name: 16.1 = Whiskey Bend to Hayes River. 9.5 = Trinity/Chiwawa to Buck Creek Pass.
+// 7.85 = Sol Duc to Heart Lake. 4.7 = Surprise Creek to Surprise Lake. 3.4 = the real Foggy Dew
+// trailhead to Foggy Dew Falls. 2.5 = Esmeralda Basin to Long's Pass. 0.1 = Little Giant
+// trailhead to the Chiwawa ford, which sits 0.06 mi from the Forest Service's Little Giant TH.
+//
+// So a later pass REPLACED THE TRAILHEAD WAYPOINT and left the original corridor's chain and
+// mileages in place. There is no trail leg between the named trailhead and the first waypoint at
+// all, because they are on different approaches. Reordering cannot fix that, and neither can a
+// rebase: the number is not missing, it belongs to another corridor.
+//
+// AND SEVERAL OF THOSE REPLACEMENTS INVERTED THE TRUTH, WITH A NOTE EXPLAINING WHY. This is the
+// part to be most careful with, because the wrong value is the one carrying the justification:
+//   - Foggy Dew's waypoint note dismisses a coordinate as "~5 km off from the real trailhead
+//     lot". That dismissed coordinate is what the Forest Service publishes as the Foggy Dew
+//     trailhead (48.179295, -120.252817, 3,400 ft). The original DB value was right.
+//   - Mount Berge's note argues the DB's "Little Giant Trailhead" was wrong and substitutes
+//     Trinity, while its own first waypoint sits 0.06 mi from that Little Giant trailhead.
+//   - Mount Barnes' note says "existing DB trailhead 'Sol Duc Trailhead' is incorrect" and every
+//     mileage left behind is Sol Duc's.
+//   - Glacier Peak's note says "existing DB trailhead (Trinity/Chiwawa) is wrong for this route"
+//     while both surviving approach waypoints are Trinity/Chiwawa landmarks.
+//   - Whistler's note claims it "corrects existing DB trailhead, which sits ~2.2 mi east" — and
+//     ~2.2 mi east is plausibly the correct pullout for the corridor its waypoints describe.
+//
+// DO NOT TRUST A WAYPOINT NOTE THAT ARGUES AGAINST THE DB VALUE. Check it against the chain the
+// waypoints actually describe. A confident correction with a rationale is harder to doubt than a
+// bare wrong value, which is exactly what makes this class expensive.
+//
+// TWO PIN ERRORS where the corridor IS right, both verifiable from stored data with no external
+// source, and both the SAME shape — a waypoint [0] left behind when its siblings were corrected:
+//   - wa_tailgunner_peak_w_route [0] "Barclay Creek crossing", distMi 0.3, sits 0.09 mi from the
+//     summit — the same distance as Tailgunner Pass, and nearer the summit than the trailhead is
+//     (1.12 mi). Its own notes record waypoints [1]-[5] being corrected for duplicating the
+//     summit; [0] was missed.
+//   - wa_slippery_slab_tower_ne_face [0] "Surprise Lake" sits 5.83 mi from a summit that is only
+//     2.95 mi from the trailhead. Its notes record the same "~4.5 mi west" error being corrected
+//     on [2] and [3]; [0] was missed. WDFW publishes the lake at 47.66798, -121.140727.
+//
+// ONE GENUINE GAP: Alpental parking to the Guye Peak talus base. No source publishes a mileage
+// (the 2021 private-road closure left no established line), both pins look reasonable, and the
+// stored 0.3 mi is impossible against a 0.70 mi separation. The DISTANCE is the wrong record and
+// no honest replacement exists.
+//
+// WHAT STILL STANDS from the original write-up below: Half Moon Crag really was pins-right/
+// distance-wrong and was fixed that way (#955), and Mount Constance really is distance-right/
+// pin-wrong — research put its trailhead pin ~2 mi east of where the boot path leaves the
+// Dosewallips Road, and every published figure (1.5/2.0/2.2 mi) sits below the 2.45 mi bound, so
+// raising the mileage would be the wrong repair. The rest of the framing below is superseded.
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+//
+// THE ORIGINAL FINDING, kept for the trail — accurate for Half Moon Crag, wrong for most others:
 //
 //   On 24 of the 25 "coordinate impossible" routes, `distMi` is anchored to the ORIGINAL first
 //   waypoint, NOT to the trailhead -- and every one of those trailhead pins carries no distMi
@@ -119,7 +180,10 @@ for (const r of rows) {
 }
 
 console.log(`WA routes whose Trailhead is not first and whose move the writer REFUSES on coordinates\n`);
-console.log(`  ${String(anchored.length).padStart(3)}  distMi ANCHORED to the old first waypoint — needs a REBASE, not a reorder`);
+console.log(`  ${String(anchored.length).padStart(3)}  distMi is self-consistent from the OLD first waypoint`);
+console.log(`       ...but researched 2026-08-14: on 12 of 16 legs those distances are ALREADY`);
+console.log(`       trailhead-relative — to a DIFFERENT trailhead than the row names. Mostly a`);
+console.log(`       WRONG TRAILHEAD WAYPOINT, not a missing offset. Read the header before acting.`);
 console.log(`  ${String(both.length).padStart(3)}  impossible from BOTH origins — a misplaced pin or a wrong distMi, needs reading`);
 console.log(`  ${String(ok.length).padStart(3)}  coordinate gate CLEAN — refused (if at all) by one of the mover's five other gates\n`);
 console.log(`  excluded from the population, same as the mover: ${skippedSplice} multi-Trailhead splice(s), ${skippedDirections} already carrying directions\n`);

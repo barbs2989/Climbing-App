@@ -830,6 +830,16 @@ function loggedTimeStats(activity){
    inline version because that one is a display string built during editing; this is the only
    place a stored integer becomes prose, and rounding belongs with the reader. */
 function fmtDurMin(min){var m=Math.round(+min||0);if(m<60)return m+"m";var h=Math.floor(m/60),r=m%60;return h+"h"+(r?" "+r+"m":"");}
+/* How much of a pitch's time a party actually spends belaying, by grade. 0.5 means "moving
+   together or soloing, not pitching it"; 1 means "belaying every pitch". Exported so the planner
+   can tell the reader when a discount is being applied to their number rather than applying one
+   silently — a factor below 1 is exactly the condition that needs disclosing. */
+function pitchedFraction(gradeNum){
+  var LOW=3.5,HIGH=6.5;                            // gn("5.3")=3.5, gn("5.6")=6.5
+  if(!(gradeNum>LOW))return 0.5;                   // NaN-safe: an unparsed grade cannot land here
+  if(gradeNum>=HIGH)return 1;
+  return 0.5+0.5*((gradeNum-LOW)/(HIGH-LOW));
+}
 function techHrs(pitches,len,gradeNum){
   if(!pitches)return 0;
   const speed=130*Math.exp(-0.11*(gradeNum-5)); // m/hr of pitch progress, incl. belaying the follower; slower as grade rises
@@ -855,6 +865,36 @@ function techHrs(pitches,len,gradeNum){
   // actually take on easy alpine rock. Guessing a curve here is the fabrication these files keep
   // warning about, one layer up.
   //
+  // THE CLIFF IS NOW GONE, and here is exactly what did and did not change, because the
+  // distinction is the whole justification.
+  //
+  // The step asserted TWO things: a 0.5 discount at 5.6 and below, and none above. It also
+  // implied a THIRD thing nobody has ever claimed — that one grade step from 5.6 to 5.7 more
+  // than doubles the climbing time. Measured with the app's own gn(): 2.17x, where the
+  // underlying speed model moves 1.09x. That is an artifact of writing a gradual thing as a
+  // step, not a fact about climbing.
+  //
+  // So the discount now FADES OUT as grade rises rather than vanishing at a boundary: full 0.5
+  // at 5.3 and below, tapering to none by 5.6. Worst single-grade jump 2.17x -> 1.44x.
+  //
+  // THE DIRECTION WAS FORCED, not chosen. A curve can only lose the cliff by moving one side.
+  // Moving the upper side (discounting 5.7-5.9) would SHORTEN estimates, and this number feeds
+  // Est. summit / Est. return — the "am I down before dark" answer — where erring short is the
+  // #641 direction, an affirmative that reads green. So the taper is on the lower side only, and
+  // the measurement asserts it: ZERO estimates get shorter, and 5.6 doubles.
+  //
+  // WHY NOT FIT THE CURVE TO DATA: because there is none. `climb_logs` holds exactly ONE row,
+  // measured with the service key rather than assumed from an anon read returning [] (a 200 with
+  // an empty array is what RLS looks like too). Nothing here is fitted; the endpoints are the
+  // author's own two assertions and only the shape between them changed.
+  //
+  // MEASURED LIMIT worth knowing before trusting any of this: gn() returns 7.5 for a grade it
+  // cannot parse, and of 741 WA routes with pitches, 106 carry grades like "Class 3-4" or
+  // "Grade II" and 132 carry none — so 32% are treated as 5.7 and get no discount at all,
+  // whatever this curve says. They are over-estimated, which is the safe direction, but the
+  // discount never reaches the easy routes it was written for. Fixing that means teaching gn()
+  // bare ordinals, which also moves sorting and filtering, so it is reported rather than done here.
+  //
   // What IS shipped is the disclosure: the planner states the assumption beside the number and
   // tells a party that intends to pitch it to double the figure. That neutralises the danger
   // without inventing a model. It lives in RouteDetail's estimate tiles, gated to exactly the
@@ -862,7 +902,7 @@ function techHrs(pitches,len,gradeNum){
   // scripts/oneoff/probe-techhrs-disclosure-reaches-the-planner.mjs -- which asserts it is
   // PRESENT at 5.6 and ABSENT at 5.10a and with no pitches, because a probe that matches nothing
   // reads identically to a real defect. Injection-tested: disabling the gate fails it.
-  if(gradeNum<=6.5)perPitch*=0.5;
+  perPitch*=pitchedFraction(gradeNum);
   return pitches*perPitch;
 }
 function parseHrsRange(h){if(h==null)return null;const s=String(h).trim();const m=s.match(/^([\d.]+)\s*-\s*([\d.]+)/);if(m)return[parseFloat(m[1]),parseFloat(m[2])];const n=parseFloat(s);return isNaN(n)?null:[n,n];}
@@ -3615,4 +3655,4 @@ export function __set__toastT(v){_toastT=v;}
 export function __set_DLOCALE(v){DLOCALE=v;}
 export function __set__cbTimer(v){_cbTimer=v;}
 export function __set__cbBatch(v){_cbBatch=v;}
-export {climberLine,wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
+export {climberLine,wpType,wpIs,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,routeAscentFt,gainCoversWholeOuting,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,TickList,LogCatch,QuickLog,GiveVouch,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,fedge,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,LegalView,EditProfileScreen,GuideDashboard,sunTimes,Calendar,Inbox,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,PartnerSearch,analyzeAlignment,Questionnaire,FloatPlan,SafetyTab,inArea,_lev,_tol,_norm,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_SRC,ADDR_COMMIT,AddRoute,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,CrewCard,ShareCard,_discIconCache,getDiscIconMarkup,OverviewMap,LogAscent,Leaderboards,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,CrewFinder,Guides,DbClimbPicker,LogRoutePicker,Resume,NotifPanel,FriendsList,TripReport,Help,Onboarding,AscentPyramid,ListsManager,Challenges,MyAscents,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,_cbBatch,_cbTimer,_toastT,_celebTimer};
