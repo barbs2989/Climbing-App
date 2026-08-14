@@ -30,6 +30,7 @@ npm run check:provenance   # every wired section heading still shows how it was 
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1557,6 +1558,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
+- **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
+  climber logs, and that a climb they merely **looked at** is never described as one they have
+  climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
+  single most-logged discipline and discarded the rest, so a climber logging 6 sport and 5 alpine
+  got sport-only suggestions and a couple of new logs could flip the whole feed. Static (the pure
+  functions are lifted from the real source and run with stubbed deps), so it sits in `npm run build`.
+  - **Nothing caught it and nothing could.** Every identifier was bound, the section rendered, and
+    the rows it showed were *correct for the one discipline it had picked*. A feed that is right
+    about a third of your climbing looks exactly like a feed that is right — the same shape as
+    `descent_text` being populated on 1,021 routes and rendered on none.
+  - **The structural half is the important half, and no unit test can reach it.** The DB reader
+    filtered at the **query** — `useSubtreeRoutes(area.id,{disc:profile.disc})` — so other
+    disciplines were never fetched and no client-side ranking could have recovered them. A
+    perfectly correct `suggestDiscSlots` returning three slots is worth nothing if the pool it
+    ranks only ever holds one discipline. Section 2 pins the pool query as discipline-**blind**;
+    the fix costs no extra round trip, because one mixed pool replaced one filtered pool.
+  - **Comments are stripped before that scan**, and it is load-bearing: `DbSuggestedClimbs` now
+    *explains* the rule in prose naming `{disc: profile.disc}`, so a scan that read comments
+    would pass on the strength of the explanation. The trap `check:ci-cancel` and
+    `check:correction-readers` both record. The slice is bounded at the next top-level
+    `function ` so a `disc:` belonging to another component cannot be read as this one's.
+  - **The honesty rule is separate from the coverage rule.** A discipline that is both logged and
+    browsed must appear **once**, labelled logged — "you've been climbing X" and "you've been
+    looking at X" are different claims and only one is true of a climb you have done. Browsing
+    alone still earns a row, which is what lets the feed react to research before anything is
+    logged; that is deliberate, not a leak.
+  - Fails **closed**: a truncated source, a renamed function (`ANCHOR LOST`), or a missing
+    `SUGGEST_DISC_MAX` are reported as a broken scan, never as a clean app.
+  - What it does **not** prove: that the ranked routes are *good*, or that the section is
+    reachable on screen. It tests which disciplines survive and which query fetches them.
+    Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
 - **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
   Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
   coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by

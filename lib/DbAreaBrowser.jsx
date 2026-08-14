@@ -7,7 +7,8 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -108,17 +109,52 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and passed down.
-function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, C }) {
+function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
   const [open, setOpen] = useState(false);
+  const recentIds = useRecentRouteIds();
   const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
-  const { data: pool } = useSubtreeRoutes(area.id, { disc: profile ? profile.disc : "", sortBy: "name", pageSize: 30 });
+  /* THE POOL IS NO LONGER FILTERED BY DISCIPLINE, and that is the actual fix.
+     It used to be `{disc: profile.disc}` — the single most-logged discipline — so every other
+     discipline was excluded by the QUERY and no amount of client-side ranking could recover
+     it. Now one mixed pool comes back and `rankSuggested` (which already filters on catOf)
+     picks per slot. Same one round trip, so the multi-discipline rows cost nothing extra.
+     pageSize is up from 30 because the 30 now have to cover every discipline, not one. */
+  const { data: pool } = useSubtreeRoutes(area.id, { sortBy: "name", pageSize: 120 });
+  /* Recently-opened climbs, twice over, because the two answers are different questions.
+     Scoped: which of them are in THIS area — that is the "pick up where you left off" row.
+     Unscoped: what has this climber been looking at ANYWHERE — that is the taste that earns a
+     discipline a row here even when every climb they browsed was in another range. Both are
+     `.in("id", …)` over at most RECENT_MAX primary keys, so neither is an expensive read. */
+  const { data: recentScoped } = useScopedWishlistRoutes(area, recentIds);
+  const { data: recentAll } = useRoutesByIds(recentIds);
   const objectives = (objRoutes || []).filter(r => !completedIds.has(r.id));
-  const candidates = (pool || []).filter(r => !completedIds.has(r.id) && !(wishlist || []).includes(r.id));
-  const similar = profile ? rankSuggested(candidates, profile, { limit: 5 }) : [];
-  const popular = (!objectives.length && !similar.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
-  const total = objectives.length + similar.length + popular.length;
+  const objIds = new Set(objectives.map(r => r.id));
+  /* Keep the click order the climber actually produced. The query returns rows in whatever
+     order Postgres hands back, and "recent" is a claim about sequence — sorting by the stored
+     position is the only thing that makes the heading true. */
+  const recentPos = {}; (recentIds || []).forEach((id, i) => { recentPos[id] = i; });
+  const recent = (recentScoped || [])
+    .filter(r => !completedIds.has(r.id) && !objIds.has(r.id))
+    .sort((a, b) => (recentPos[a.id] ?? 99) - (recentPos[b.id] ?? 99))
+    .slice(0, 5);
+  const recentSet = new Set(recent.map(r => r.id));
+  const candidates = (pool || []).filter(r => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id));
+  /* One climb, one row — two slots can rank the same route and a repeated name reads as a bug. */
+  const slots = discSlots ? discSlots(profile, recentAll || []) : [];
+  const claimed = {};
+  const bands = slots.map(s => {
+    const rows = rankSuggested(candidates.filter(r => !claimed[r.id]), s, { limit: 5 });
+    rows.forEach(r => { claimed[r.id] = 1; });
+    return { slot: s, rows };
+  }).filter(b => b.rows.length);
+  const popular = (!objectives.length && !recent.length && !bands.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
+  const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
   if (!total) return null;
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
+  const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
+  /* Two headings, because they are two different claims and only one of them can be true of a
+     climb you have actually done. Never say "you've been climbing X" off a page view. */
+  const bandTitle = s => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
   return (
     <div style={{ marginTop: 14 }}>
       <button onClick={() => setOpen(o => !o)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
@@ -128,7 +164,8 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
       {open ? (
         <div style={{ marginTop: 9 }}>
           {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
-          {similar.length ? <div><div style={lbl}>{"Because you've been climbing " + (DISCIPLINES.find(d => d[0] === profile.disc) || [, profile.disc])[1]}</div>{similar.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {recent.length ? <div><div style={lbl}>Pick up where you left off</div>{recent.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {bands.map(b => <div key={b.slot.src + ":" + b.slot.disc}><div style={lbl}>{bandTitle(b.slot)}</div>{b.rows.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div>)}
           {/* `popular` sorts on (stars || 0), and only 6 routes in the whole 205k catalog carry
               a star rating -- so for essentially every area every candidate ties at 0, the sort
               is a no-op, and a stable sort hands back the pool's own order, which is sortBy:"name".
@@ -328,7 +365,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested , onAddClimb}) {
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, ActionIcon, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -426,7 +463,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
       <DbTopContributors areaId={area.id} C={C} ActionIcon={ActionIcon} />
 
-      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} C={C} />
+      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} discSlots={discSlots} C={C} />
     </div>
   );
 }
@@ -895,7 +932,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb }) {
+export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1025,7 +1062,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, ActionIcon, bookmarks, o
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} />
+        <AreaPage key={current.id} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} ActionIcon={ActionIcon} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
