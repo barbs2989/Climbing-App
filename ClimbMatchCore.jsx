@@ -3384,6 +3384,13 @@ function Challenges({catchTotal,logs,onOpen,who,onOpenReport,givenVouches,catche
     return roster.map(p=>({id:p.id,name:p.name,ft:p.ft,mountainId:p.id,_peak:true}));};
   const peakDone=p=>peakClimbed(p,uniq);
   const classicRoutes=ROUTES.filter(r=>r.classic).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id)));const cDone=classicRoutes.filter(r=>got(r.id)).length;
+  // These four build their objectives from the seed ROUTES demo set rather than from the
+  // catalog or the climber's own logs, so on a real account they present 14 sample climbs
+  // as tick-list objectives — and each also claimed scope:"Your region" while listing
+  // Utah/Washington/Yosemite climbs to everyone. DEMO_FILLERS is the boundary for sample
+  // climbs, so they render in demo mode only. `quiver` is deliberately NOT here: it reads
+  // the climber's own logged disciplines, not seed data.
+  const SEED_ONLY_CARDS=new Set(["classics","summits","winter","crag_lcc"]);
   const lists=[
     {key:"classics",icon:"🏆",label:"Regional Classics",col:C.amber,scope:"Your region",routes:classicRoutes},
     {key:"quiver",icon:"🎯",label:"Discipline Quiver",col:C.blue,scope:"Your region",quiver:true},
@@ -3399,7 +3406,7 @@ function Challenges({catchTotal,logs,onOpen,who,onOpenReport,givenVouches,catche
     {key:"fifty",icon:"⭐",label:"Fifty Classic Climbs",col:C.amber,scope:"National",total:50,source:"Steck & Roper, North America",routes:inList("fifty")},
     
     {key:"desert",icon:"🏜️",label:"Desert Towers",col:C.orange,scope:"Regional",total:27,source:"Moab & Castle Valley towers",routes:peakObjectives("desert")||inList("desert"),doneBy:peakDone}
-  ];
+  ].filter(function(L){return DEMO_FILLERS||!SEED_ONLY_CARDS.has(L.key);});
   const onsight=logs.some(l=>l.tickType==="Onsight"||l.tickType==="Flash");const totPitch=logs.reduce((a,l)=>{const r=(routeById?routeById(l.routeId):ROUTES.find(x=>x.id===l.routeId));return a+((r&&r.pitches)||1);},0);
   const badges=[
     {icon:"target",label:"First send",desc:"Log your first completed climb",got:uniq.length>=1},
