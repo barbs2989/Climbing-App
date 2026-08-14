@@ -31,6 +31,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
+npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1574,6 +1575,36 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
+- **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
+  nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
+  `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
+  never mapped by `dbRouteToCamel`, never written by any enrichment JSON. So the entire
+  who's-bringing-what feature rendered on the demo and on **no real Washington route**. Static
+  (it imports `lib/rack.js`, which imports nothing), so it sits in `npm run build`.
+  - **Every layer reviewed as finished**, which is why this survived: the component existed, the
+    props were wired, and the seed route rendered it correctly. Only the data said otherwise —
+    the same shape as `descent_text` populated on 1,021 routes and rendered on none, and as
+    `approve_new_route` writing six columns nothing filled.
+  - **The honesty rule is the second half.** `Required`/`Recommended`/`Optional` is a real
+    ranking on a seed route and on a contribution; the DB carries a rack, not a priority order.
+    Painting a derived list red as REQUIRED is a safety-adjacent claim nothing in the row
+    supports, so derived gear renders as **neutral groups** and the guard fails if
+    `required`/`recommended`/`optional` ever appear on a derived result.
+  - **The generic table is a last resort and says so.** Measured 2026-08-14 against 8,366 WA
+    routes: `detailed_rack` 957, `pro_needs` 990, `what_to_bring` 1028 — so the route's *own*
+    rack answers for ~12% and `DISC_RACK` answers for the rest. A stock list is labelled
+    *"Typical … rack — not this route's own"*, and a route that has its own rack must never get
+    one stapled underneath it; both are asserted.
+  - It also pins the crew card as a **third reader of the rack correction rivalry**
+    (`check:correction-readers`): a climber's agreed rack must reach the crew card, not the
+    value they replaced. That is where this would silently diverge from the RACK box.
+  - Comments are stripped before the structural scan, because `CrewCard` now *explains* the bug
+    in prose naming `route.gearTiers` — the same trap `check:ci-cancel` records.
+  - `rackFromText`/`_rackEdited`/`contribRack`/`routeRackFor`/`DISC_RACK` moved to **`lib/rack.js`**
+    for this: core cannot import `RouteDetail.jsx` (lazy-loaded, and it already imports *from*
+    core, so a static import both cycles and drags the route page into the main bundle). Same
+    shape as `lib/rappels.js`, which is why that file was already in
+    `check:correction-readers`' `FILES`; `lib/rack.js` was added to it in the same commit.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
