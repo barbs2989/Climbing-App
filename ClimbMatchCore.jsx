@@ -792,7 +792,35 @@ function techHrs(pitches,len,gradeNum){
   if(!pitches)return 0;
   const speed=130*Math.exp(-0.11*(gradeNum-5)); // m/hr of pitch progress, incl. belaying the follower; slower as grade rises
   let perPitch=0.17+(len/speed);                 // ~10 min belay transition + climb time
-  if(gradeNum<=6.5)perPitch*=0.5;                // easy terrain (≤5.6) is usually simul-climbed / moved together, not pitched
+  // Easy terrain (≤5.6) is usually moved together or soloed rather than pitched. TWO THINGS
+  // ABOUT THIS LINE ARE WORTH KNOWING BEFORE YOU TOUCH IT, because both look like bugs and only
+  // one is.
+  //
+  // 1. It is the exact GRADE INFERENCE that simulMentioned() in RouteDetail.jsx documents itself
+  //    as refusing -- "deriving it from 4th class and long would manufacture that claim on 415
+  //    routes at once". So the app declines to SAY parties move together without the route's own
+  //    words, while betting the time estimate on it here. That is a real inconsistency.
+  // 2. It is a CLIFF, and the cliff is an artifact rather than terrain: measured on 50 m pitches,
+  //    a 10-pitch route goes ~3h at 5.6 to 6h30 at 5.7 -- 2.17x for ONE grade step, where the
+  //    underlying speed model only moves 1.04x. On a 20-pitch 60 m route the halving sits ~6h51
+  //    below the pitched figure, and that number feeds Est. summit / Est. return.
+  //
+  // DO NOT simply delete the halving. Research (2026-08-13) found that on roughly half these
+  // routes the alternative to belaying is SOLOING, not simul-climbing -- Terror West Ridge, West
+  // McMillan and Boston Peak are documented unroped -- so the fast figure is the more correct one
+  // there, and removing it would make the estimate worse on exactly those routes. Smoothing the
+  // cliff is the obvious next move and needs data this repo does not have: how long parties
+  // actually take on easy alpine rock. Guessing a curve here is the fabrication these files keep
+  // warning about, one layer up.
+  //
+  // What IS shipped is the disclosure: the planner states the assumption beside the number and
+  // tells a party that intends to pitch it to double the figure. That neutralises the danger
+  // without inventing a model. It lives in RouteDetail's estimate tiles, gated to exactly the
+  // routes this line touches, and is proven to reach a screen by
+  // scripts/oneoff/probe-techhrs-disclosure-reaches-the-planner.mjs -- which asserts it is
+  // PRESENT at 5.6 and ABSENT at 5.10a and with no pitches, because a probe that matches nothing
+  // reads identically to a real defect. Injection-tested: disabling the gate fails it.
+  if(gradeNum<=6.5)perPitch*=0.5;
   return pitches*perPitch;
 }
 function parseHrsRange(h){if(h==null)return null;const s=String(h).trim();const m=s.match(/^([\d.]+)\s*-\s*([\d.]+)/);if(m)return[parseFloat(m[1]),parseFloat(m[2])];const n=parseFloat(s);return isNaN(n)?null:[n,n];}
