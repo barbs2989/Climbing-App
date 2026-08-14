@@ -24,8 +24,9 @@
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 
 const key = requireServiceKey();
+const ALL = process.argv.includes("--all");
 const IDS = process.argv.slice(2).filter(a => !a.startsWith("--"));
-const TARGETS = IDS.length ? IDS : [
+const DEFAULTS = [
   "wa_bedal_peak_standard",
   "wa_mount_anderson_eel_glacier",
   "wa_little_big_chief_mountain_northeast_face",
@@ -38,6 +39,28 @@ const R = Math.PI / 180;
 const hav = (a, b, c, d) => { const p = (c - a) * R, q = (d - b) * R;
   const s = Math.sin(p / 2) ** 2 + Math.cos(a * R) * Math.cos(c * R) * Math.sin(q / 2) ** 2;
   return 2 * 6371000 * Math.asin(Math.sqrt(s)); };
+
+/* --all derives the worklist from the live data rather than from a list pasted out of an audit
+   run. That matters here specifically: a parallel session enriching approaches adds new
+   disagreements while you work, so an id list is stale the moment it is written. */
+async function disagreeing() {
+  const rows = await selectAll("routes", "id,waypoints,approach_logistics", "id=like.wa_*",
+    { pageSize: 150, key });
+  const out = [];
+  for (const r of rows) {
+    const al = (r.approach_logistics && typeof r.approach_logistics === "object"
+      && !Array.isArray(r.approach_logistics)) ? r.approach_logistics : null;
+    const w = (Array.isArray(r.waypoints) ? r.waypoints : []).find(x => x
+      && String(x.type || "").toLowerCase() === "trailhead" && num(x.lat) !== null && num(x.lng) !== null);
+    const lLat = num(al && al.trailheadLat), lLng = num(al && al.trailheadLng);
+    if (!w || lLat === null || lLng === null) continue;
+    if (hav(num(w.lat), num(w.lng), lLat, lLng) > 500) out.push(r.id);
+  }
+  return out;
+}
+
+const TARGETS_RESOLVED = IDS.length ? IDS : (ALL ? await disagreeing() : DEFAULTS);
+if (ALL) console.log(`--all: ${TARGETS_RESOLVED.length} route(s) currently disagree by >500 m\n`);
 
 // gpx has held more than one shape in this catalog, so read defensively rather than assuming.
 const firstPoint = g => {
@@ -55,7 +78,8 @@ const firstPoint = g => {
   return null;
 };
 
-for (const id of TARGETS) {
+const tally = { "VOTES-PIN": 0, "VOTES-LOG": 0, DERIVED: 0, AMBIGUOUS: 0, "NO TRACK": 0 };
+for (const id of TARGETS_RESOLVED) {
   const [r] = await selectAll("routes", "id,name,waypoints,approach_logistics,gpx", `id=eq.${id}`, { pageSize: 3, key });
   if (!r) { console.log(`${id}\n   NOT FOUND\n`); continue; }
   const wps = Array.isArray(r.waypoints) ? r.waypoints : [];
@@ -70,15 +94,19 @@ for (const id of TARGETS) {
   const apart = Math.round(hav(pLat, pLng, lLat, lLng));
   console.log(`   pin  "${w.name}" @${pLat},${pLng}`);
   console.log(`   log  "${al.trailhead}" @${lLat},${lLng}   (${apart} m apart)`);
-  if (!t) { console.log(`   NO TRACK — nothing to ask\n`); continue; }
+  if (!t) { tally["NO TRACK"]++; console.log(`   NO TRACK — nothing to ask\n`); continue; }
 
   const dPin = Math.round(hav(t.lat, t.lng, pLat, pLng));
   const dLog = Math.round(hav(t.lat, t.lng, lLat, lLng));
   console.log(`   track start @${t.lat},${t.lng}   ->  ${dPin} m from pin, ${dLog} m from log`);
-  if (dPin <= 1) { console.log(`   DERIVED — the track starts ON the pin, so it is the same claim twice. NO VOTE\n`); continue; }
+  if (dPin <= 1) { tally.DERIVED++; console.log(`   DERIVED — the track starts ON the pin, so it is the same claim twice. NO VOTE\n`); continue; }
   const lo = Math.min(dPin, dLog), hi = Math.max(dPin, dLog);
-  if (lo === 0 || hi / lo < 2) { console.log(`   AMBIGUOUS — independent, but not decisively nearer either\n`); continue; }
-  console.log(`   ${dPin < dLog ? "VOTES-PIN" : "VOTES-LOG"} — independent, and ${Math.round(hi / lo)}x nearer\n`);
+  if (lo === 0 || hi / lo < 2) { tally.AMBIGUOUS++; console.log(`   AMBIGUOUS — independent, but not decisively nearer either\n`); continue; }
+  const verdict = dPin < dLog ? "VOTES-PIN" : "VOTES-LOG";
+  tally[verdict]++;
+  console.log(`   ${verdict} — independent, and ${Math.round(hi / lo)}x nearer\n`);
 }
-console.log("Report only; nothing was written. A vote is evidence, not a verdict — read the route's");
+console.log(`-- ${TARGETS_RESOLVED.length} route(s) asked --`);
+for (const [k, v] of Object.entries(tally)) console.log(`   ${String(v).padStart(3)}  ${k}`);
+console.log("\nReport only; nothing was written. A vote is evidence, not a verdict — read the route's");
 console.log("prose before acting on one, and remember a track can start mid-approach rather than at a road.");
