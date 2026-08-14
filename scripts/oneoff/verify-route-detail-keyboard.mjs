@@ -124,6 +124,30 @@ try {
       }
     }
 
+    // --- 1b. TAB REACHABILITY ----------------------------------------------------------
+    // focus() is a cheat: it moves focus to an element whether or not the tab order can
+    // reach it, and the tab order is precisely what was broken. Walk real Tab presses from
+    // the top of the document and count how many distinct converted controls receive focus.
+    await page.evaluate(() => { document.body.focus(); window.scrollTo(0, 0); });
+    const seen = new Set();
+    for (let i = 0; i < 70; i++) {
+      await page.keyboard.press("Tab");
+      const id = await page.evaluate(() => {
+        const a = document.activeElement;
+        if (!a || a === document.body) return null;
+        if (a.getAttribute("role") !== "button" && a.getAttribute("role") !== "checkbox") return null;
+        if (a.tagName === "BUTTON" || a.tagName === "A") return null; // natively focusable anyway
+        return (a.getAttribute("aria-label") || a.innerText || "").trim().replace(/\s+/g, " ").slice(0, 34) || "(unnamed)";
+      });
+      if (id) seen.add(id);
+    }
+    if (!seen.size) {
+      fails.push("70 Tab presses reached ZERO converted controls — they carry the attributes but the tab order does not reach them");
+    } else {
+      proven++;
+      notes.push(`Tab reached ${seen.size} converted control(s) in 70 presses, e.g. ${JSON.stringify([...seen].slice(0, 4))}`);
+    }
+
     // --- 2. the headline claim: Enter opens ANOTHER climb -------------------------------
     // "PAIRS WELL WITH" holds the linked-route rows fed by onOpenRoute.
     const nav = await page.evaluate(() => {
