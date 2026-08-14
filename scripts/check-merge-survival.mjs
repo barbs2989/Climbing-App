@@ -81,13 +81,21 @@ const NOISE = new Set(("const let var function return if else for while this nul
   + "React useState useEffect useMemo useRef useCallback").split(/\s+/));
 
 // identifiers added by `rev` relative to `base`, per file
+// Counters that separate "the walk broke" from "this diff genuinely adds no identifiers".
+// Without them, tokensChecked===0 conflates the two, and a PR that only DELETES a file — a
+// perfectly ordinary thing — is reported as a broken scan. That happened on #920, which
+// removed one stray script and nothing else.
+let filesSeen = 0, filesWatched = 0;
+
 function addedTokens(rev) {
   const out = new Map();
   let files;
   try { files = git("diff", "--name-only", base, rev).trim().split("\n").filter(Boolean); }
   catch { return out; }
+  filesSeen += files.length;
   for (const f of files) {
     if (!WATCH.test(f) || SKIP.test(f)) continue;
+    filesWatched++;
     let d;
     try { d = git("diff", "-U0", base, rev, "--", f); } catch { continue; }
     const added = new Set(), removed = new Set();
@@ -128,11 +136,28 @@ for (const parent of parents) {
   }
 }
 
-// fail closed: a scan that read nothing is a broken scan, never a clean merge
-if (tokensChecked === 0) {
-  console.error("FAIL: no identifiers were compared at all — the diff walk or the file filter is broken.");
+// Fail closed: a scan that read nothing is a broken scan, never a clean merge — but only
+// when it read nothing because it COULD not, rather than because there was nothing to read.
+//
+// The distinction is the diff's own file list. If `git diff --name-only` returned no files at
+// all, the revisions are wrong or the walk is broken, and reporting green would certify a
+// comparison that never happened. If it returned files that simply contribute no ADDED
+// identifiers — a deletion-only commit, a docs-only change, a pure rewrite where every token
+// also appears on a removed line — then there is genuinely nothing for this guard to check,
+// and saying so is the honest answer.
+//
+// Conflating the two failed #920, which deleted one stray script and was told its diff walk
+// was broken.
+if (filesSeen === 0) {
+  console.error("FAIL: the diff listed no files at all — the walk is broken or the revisions are wrong.");
   console.error(`  base=${base.slice(0, 7)} parents=${parents.map((p) => p.slice(0, 7)).join(",")}`);
+  console.error("  Nothing was compared, so this cannot report a clean merge.");
   process.exit(1);
+}
+if (tokensChecked === 0) {
+  console.log(`ok — nothing to compare: ${filesSeen} changed file(s), ${filesWatched} in scope, and none of them ADD an identifier.`);
+  console.log("  A deletion-only or docs-only change has nothing that a merge could silently drop.");
+  process.exit(0);
 }
 
 // a stale exemption describes a merge that no longer exists
