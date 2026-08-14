@@ -1088,15 +1088,29 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
-**A climber's agreed correction must out-vote the enrichment — and the rule has now been
-broken three times, in three different shapes.** `_rapEdited` (rappels, #787/#791),
-`_descEdited` (descent text, #897) and `_rackEdited` (rack, #907) all say the same sentence about a
-different column, and each was found separately because *the failure never looks like a bug*:
-the column is populated, the section renders, and a plausible value is on screen. Only the
-climber who made the correction knows the screen is wrong, and they have no way to report it.
-  - The three failed **differently**, which is why finding one did not find the next.
-    `rappelDetail` displayed **nothing**; `descentText` was out-voted **by string length**, so a
-    shorter correction lost to longer stale prose; `rack` was not discarded at all — the
+**A climber's agreed correction must out-vote the enrichment — broken TWICE for real, and
+claimed a third time by three separate sessions who were all wrong.** `_rapEdited` (rappels,
+#787/#791) and `_rackEdited` (rack, #907) say the same sentence about a different column, and
+each was found separately because *the failure never looks like a bug*: the column is
+populated, the section renders, and a plausible value is on screen. Only the climber who made
+the correction knows the screen is wrong, and they have no way to report it.
+  - **`descentText` is NOT a third instance, and the story of how it kept looking like one is
+    the most useful thing here.** `M` maps `descentText`→`descent`, so it reads as a textbook
+    rename rivalry. But **after both merge paths** the writer runs fix-ups, and one of them is
+    `if(o.descent!=null)o.descentText=o.descent;` — its own comment says *"Write both
+    spellings; equal strings make the comparison moot."* So a real contribution leaves
+    `route.descent === route.descentText` and `descentBeta` returns the correction whichever
+    side it reads, **including under the plain length comparison that predates every change to
+    it**. #897 made it prefer `descentText` and called that a fix; #915 made it prefer
+    `descent` and called #897 "strictly worse"; `check:correction-readers` then shipped #915's
+    direction as a *rule*. Three claims, two of them contradicting each other, **all derived
+    from the `var M` line without reading the fix-ups below it**, and each validated by a
+    fixture that set only one of the two properties — so each confirmed what its author
+    already believed. **Read the whole writer before gating a reader**: look the form key up in
+    `M` *and* check the fix-ups that run after both merges (`gainM`→`gainFt`, `lossM`→`lossFt`,
+    `descent`→`descentText`, `rappels`→`_rappelsFromContrib`, `gReq`→`gearTiers.required`).
+  - The two real ones failed **differently**, which is why finding one did not find the next.
+    `rappelDetail` displayed **nothing**; `rack` was not discarded at all — the
     contribute form's `rack` key merges into **`gearTiers.required`**, which `routeRackFor` does
     not read, so the correction rendered in the GearTiers panel while the RACK box **kept
     showing the value it replaced**. One Overview tab asserting two different racks for one
@@ -1113,40 +1127,42 @@ climber who made the correction knows the screen is wrong, and they have no way 
     then slices the markup around the RACK heading — because the correction *was* on the tab,
     just not in the box, and a tab-wide match reports that as fixed. Same vacuous-pass shape as
     `check:bare` matching the Safety tab's "Fire & smoke" link.
-  - **`check:correction-readers` now enforces the general rule for all three**, in the build.
-    It used to be `check:rappel-readers` and guarded only the first; the other two were covered
-    solely by `scripts/oneoff/` probes that **nothing runs**, so a fourth instance would have
-    shipped silently. See its own entry below.
+  - **`check:correction-readers` now enforces the general rule**, in the build. It used to be
+    `check:rappel-readers` and guarded only the first; `rack` was covered solely by a
+    `scripts/oneoff/` probe that **nothing runs**, so a third instance would have shipped
+    silently. See its own entry below.
 
 - **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
   **every** contributable column rather than rappels alone: **where a contribute-form field
   competes with an enrichment column, the reader must prefer the CLIMBERS' value once
-  `_contribFields` records that they agreed it.** The rule has broken three times, in three
-  shapes sharing no code and no symptom — `rappelDetail` (#787/#791, readers preferred the
-  station list so a correction displayed **nothing**), `descentText` (#897/#915, picked by
-  string **length**, then #897's own fix returned the wrong side of a rename and made it
-  *strictly worse* — before it a correction at least won when longer, after it a correction
-  could never win at all), and `rack` (#907, the RACK box read `gearTiers.required` while the
-  form writes `rack`, so the box the climber edited kept the value they had replaced). Fixing
-  one never found the next; **do not assume a fourth looks like any of these.**
-  - **It was widened because the other two were guarded only by `scripts/oneoff/` probes, and
-    nothing runs those.** The general rule was enforced nowhere, so a fourth instance would
-    have shipped in silence. That is the gap it closes, and it is why this is a build gate
-    rather than a probe.
-  - **Three rules, because the three bugs are two different failures.** (1) Every reader of
-    `rappelDetail` must carry `_rapEdited`. (2) The named **precedence** function — the one
-    that chooses between the climbers' column and the enrichment — must consult the guard,
-    and where a rename is involved must return the **M destination**. (3) Fail closed on an
-    **unregistered** `_<x>Edited` helper, since that helper is the fingerprint of a fourth
-    rivalry; a registered guard or precedence function that no longer exists fails as stale.
-  - **The rename map is READ FROM THE APP, never restated.** Both merge paths file a
-    contribution through `var M` (`o[M[k]||k]` and `M[f]||f`), and `M` carries
-    `{descentText:"descent"}` — so a correction submitted as `descentText` lands in
-    `route.descent` while `route.descentText` keeps the enrichment. #897 hand-modelled that
-    and got it backwards **in its fix and in its test**, so the two agreed with each other and
-    both disagreed with the code. A guard that restates the map can make the identical
-    mistake. It fails `ANCHOR LOST` if `var M` moves, and fails if either merge path stops
-    routing through it.
+  `_contribFields` records that they agreed it.** The rule has broken twice, in shapes sharing
+  no code and no symptom — `rappelDetail` (#787/#791, readers preferred the station list so a
+  correction displayed **nothing**) and `rack` (#907, the RACK box read `gearTiers.required`
+  while the form writes `rack`, so the box the climber edited kept the value they had
+  replaced). Fixing one never found the next; **do not assume a third looks like either.**
+  - **It was widened because `rack` was guarded only by a `scripts/oneoff/` probe, and nothing
+    runs those.** The general rule was enforced nowhere, so a third instance would have shipped
+    in silence. That is the gap it closes, and it is why this is a build gate rather than a
+    probe.
+  - **Three rules.** (1) Every reader of `rappelDetail` must carry `_rapEdited`. (2) The named
+    **precedence** function — the one that chooses between the climbers' column and the
+    enrichment — must consult the guard, and where a rename is **live** must return the
+    **M destination**. (3) Fail closed on an **unregistered** `_<x>Edited` helper, since that
+    helper is the fingerprint of a third rivalry; a registered guard or precedence function
+    that no longer exists fails as stale.
+  - **The rename map is READ FROM THE APP, never restated**, and so is whether the rename still
+    matters. Both merge paths file a contribution through `var M` (`o[M[k]||k]` and `M[f]||f`),
+    and `M` carries `{descentText:"descent"}`. But **a rename only creates a rivalry if the two
+    spellings can disagree**, and after both merges the writer runs
+    `if(o.descent!=null)o.descentText=o.descent;` — so they cannot. The guard **detects mirrors
+    rather than declaring them**: while one stands, that rename is reported moot and skipped;
+    delete it and the rename rule switches back on by itself. Position is checked as well as
+    presence, since a mirror upstream of a merge would simply be overwritten by it.
+    - **This is the correction to three earlier readings of the same code**, including this
+      guard's own first version, which asserted #915's direction as a rule and would therefore
+      have failed a correct refactor. #897, #915 and that first draft each derived a rule from
+      the `var M` line and stopped there. It fails `ANCHOR LOST` if `var M` moves, and fails if
+      either merge path stops routing through it.
   - **`everyReaderGates` is true for exactly one column, deliberately.** Asserting it for the
     other two was this guard's own first-draft mistake: it flagged `hasPlanContent` (an
     existence OR), `routeHasGlacierTravel` and `simulMentioned` (keyword blobs) and
@@ -1155,16 +1171,23 @@ climber who made the correction knows the screen is wrong, and they have no way 
     correct work teaches people to ignore it**, which is worse than the hole it closes.
   - **`rack` is deliberately NOT rename-checked**, and that is measured: a rack contribution
     is written to **both** `o.rack` and `o.gearTiers.required`, so returning
-    `gearTiers.required` under the guard really does hand back the climbers' value. Only
-    `descentText` writes one side and reads the other.
-  - **Written against main while the descent bug was still live, so its headline injection is
-    a real caught defect rather than a manufactured one** — it failed on `main` naming
-    `descentBeta`, and passed on #915's fix. A before/after control pair, not an assertion.
-  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
-    better comment: the merge was **clean** (the two PRs touch different lines), every gate
-    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
-    a number), and both new functions read as **correct in isolation**. Only a comment three
-    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+    `gearTiers.required` under the guard really does hand back the climbers' value. It is the
+    same mirroring the descent fix-up performs, just done by the writer rather than by a
+    trailing assignment — **neither column can be got the wrong way round.**
+  - **No rename in the app currently needs policing**, which is a finding rather than a gap:
+    the sweep of all 15 `M` renames found no other reader making a display-precedence decision
+    across one. Rule 2 is armed and idle, and the mirror detection is what keeps it honest —
+    it will arm itself the moment a mirror is deleted.
+  - **Nothing caught the two real ones and nothing could**, which is the entire argument for a
+    script over a better comment: the merges were **clean** (the PRs touch different lines),
+    every gate stayed **green** (the invariant is semantic — an unguarded reader is valid JS
+    that renders a plausible value), and the new functions read as **correct in isolation**.
+    Only a comment three functions above them said otherwise, and nobody adding a sixth reader
+    has to scroll there.
+  - **What it does NOT settle, and could not:** whether the value reaches *the screen the
+    correction was made on*. `rack` rendered on the right tab and in the wrong box. Only
+    rendering answers that, which is what the `scripts/oneoff/` probe is for; this guard proves
+    the precedence decision, not the destination.
   - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
     explanatory comment about this very rule sits at top level between functions, so a
     whole-file grep would report a phantom sixth reader. Function bodies come from balancing
@@ -1178,12 +1201,15 @@ climber who made the correction knows the screen is wrong, and they have no way 
     the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
     that branch could never fire until the match was word-bounded (injection case 3, the
     second first-draft false pass).
-  - Injection-tested, 9 cases run against the real files and listed at the bottom of the
-    script; **two of the original seven failed on the first draft and both were false
-    passes**, neither visible by reading it. Each case proves the edit **landed by checksum**
-    before judging the guard — case 1's pattern did not match at first and the harness
-    reported *"edit never landed"* rather than *"guard missed"*, which is the rule
-    `check:log` records. The widening added its own first-draft failure in the other
+  - Injection-tested, 9 cases plus 4 that pin the **mirror behaving as a switch** (mirror on +
+    reader flipped must PASS; mirror deleted + reader flipped must FAIL). **Two of the original
+    seven failed on the first draft and both were false passes**, neither visible by reading
+    it. Each case proves the edit **landed by checksum** before judging the guard — which
+    earned itself twice: case 1's pattern did not match at first and the harness reported
+    *"edit never landed"* rather than *"guard missed"*, and later the whole baseline went stale
+    the moment #915 merged (it was pinned to that branch, so two cases silently ran against a
+    file predating the rack work). **A harness baseline pinned to a branch rots when the branch
+    merges** — pin it to main. The widening added its own first-draft failure in the other
     direction: `[^)]*` in the guarded-return pattern **cannot cross the `)` inside
     `_descEdited(r)`**, so every reader reported as an unrecognised shape — noisy rather than
     silent, and caught at once.
