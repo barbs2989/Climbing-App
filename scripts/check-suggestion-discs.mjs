@@ -137,10 +137,18 @@ const check = (name, cond, detail) => {
 }
 
 // The cap is real, and counted across BOTH sources.
+// The fixture is GENERATED from MAXN rather than hand-listed, so this holds for any cap.
+// Injection case 8 is why: hand-listing three logged disciplines silently assumed the cap was
+// 3, so merely raising SUGGEST_DISC_MAX — a legitimate change — turned the build red on
+// "spends its slots on logged first". A guard that fails correct work teaches people to
+// ignore it, which is worse than the hole it closes.
 {
-  const { slots } = run(done("s1", "a1", "i1"), byId, [R.b1, R.m1]);
+  const R2 = {}, ids = [];
+  for (let i = 0; i < MAXN + 1; i++) { const id = "L" + i; R2[id] = { id, disc: "logged" + i, gv: 0.4, gain: 500 }; ids.push(id); }
+  const { slots } = run(ids.map(id => ({ routeId: id, done: true })), id => R2[id] || null, [{ id: "V0", disc: "browsedOnly", gv: 0.4, gain: 500 }]);
   check(`slots are capped at SUGGEST_DISC_MAX (${MAXN})`, slots.length === MAXN, `got ${slots.length}`);
-  check("the cap spends its slots on logged disciplines first", slots.every(s => s.src === "logged"));
+  check("the cap spends its slots on logged disciplines first, never a browsed one",
+    slots.every(s => s.src === "logged"), slots.map(s => s.src).join(","));
 }
 
 // An incomplete log is not a climb.
