@@ -7,12 +7,12 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade } from "./grade";
+import { shortGrade, gradeNumFrom } from "./grade";
 import { clickable } from "./clickable";
 
 // Grade for a compact row. Catalog grades often carry a qualifier inline
@@ -269,15 +269,18 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
             la ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
             : !areaHits || !areaHits.length ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>No areas match.</div>
-            : areaHits.map(a => (
-              <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
-                  <div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
+            : <>
+              {areaHits.map(a => (
+                <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
+                    <div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
+                  </div>
+                  {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
                 </div>
-                {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
-              </div>
-            ))
+              ))}
+              {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
+            </>
           ) : (
             lr ? <div style={{ fontSize: 13, color: C.textMuted, padding: "14px 4px", textAlign: "center" }}>Loading…</div>
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
@@ -293,6 +296,185 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
           )}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+// ── SUMMIT BRIEFING: what a peak page knows that its route rows never say ──
+//
+// Reaching a peak on the alpine/scrambling/mountaineering side of the catalog used to give
+// you a name, an elevation and a list of route names. Everything that is true of the
+// MOUNTAIN rather than of one line on it — which permit the trailhead needs, who manages
+// the land, how far the shortest way in is, how many ways up there even are — was one tap
+// further in, on a route page, and you had to open several routes to learn it was the same
+// answer every time. On Mount Baker all nine routes carry the identical permit string.
+//
+// Everything here comes from `useAreaRoutes`, which the page has already fetched and which
+// selects `*` — so this is a new READING of rows already in memory, not a new query, and it
+// cannot fail separately from the route list it sits above.
+//
+// The honesty rule this panel is built on: a fact is a PEAK fact only when the routes that
+// state it AGREE. Where they disagree the panel says so and names no value, because picking
+// one would attribute a Teanaway-side permit to an Enchantments-side route. Where only some
+// routes carry it, the denominator is on screen.
+const ALPINE_FAMILY = ["alpine", "mountaineering", "scrambling", "ice", "mixed"];
+
+// Comparison form only — never displayed. Enrichment reached these routes one at a time,
+// so the same fact arrives spelled several ways: Mount Baker's nine routes carry BOTH
+// "Northwest Forest Pass" and "NW Forest Pass", and both "U.S. Forest Service" and "USDA
+// Forest Service — Mount Baker-Snoqualmie National Forest…". Comparing raw strings calls
+// that a disagreement and makes the panel refuse to answer a question it knows the answer
+// to — which is worse than saying nothing, because it teaches you the panel is useless.
+const ALIAS = { nw: "northwest", usda: "us", usa: "us", mt: "mount", mtn: "mountain", natl: "national", nat: "national", nf: "national forest", np: "national park", nra: "national recreation area", usfs: "us forest service", nps: "national park service" };
+function normFact(s) {
+  // Periods go FIRST and separately, so an initialism collapses to one token: "U.S." must
+  // become "us" and not "u s", or it stops matching the "USDA" the alias table folds onto
+  // it and the two Forest Service spellings read as two different agencies.
+  return String(s).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, " ").trim().split(" ").map(w => ALIAS[w] || w).join(" ");
+}
+// Routes that state this fact, and whether they agree on it.
+//
+// "Agree" means identical once spelling is set aside, OR that every version is a PREFIX of
+// the longest one — one route stating the manager as "U.S. Forest Service" and another as
+// "USDA Forest Service — Mount Baker-Snoqualmie NF" are not in conflict, the second is
+// simply more specific, and the specific one is what gets displayed. Anything else is a
+// real conflict and the caller must not name a winner: Mount Stuart's Teanaway-side permit
+// explicitly says the Enchantment quota does NOT apply, while its north-side routes say it
+// does. Both are correct about their own approach.
+function sharedFact(routes, pick) {
+  const said = routes.map(pick).filter(v => v != null && String(v).trim() !== "").map(v => String(v).trim());
+  if (!said.length) return null;
+  const byLength = said.slice().sort((a, b) => b.length - a.length);
+  const longest = byLength[0], longestNorm = normFact(longest);
+  const agreed = said.every(v => longestNorm.startsWith(normFact(v)));
+  return { value: longest, agreed, said: said.length, of: routes.length };
+}
+// Smallest and largest of a numeric column, each with the route it came from.
+function numericSpan(routes, pick) {
+  const vals = routes.map(r => ({ r, v: Number(pick(r)) })).filter(x => Number.isFinite(x.v) && x.v > 0);
+  if (!vals.length) return null;
+  vals.sort((a, b) => a.v - b.v);
+  return { lo: vals[0], hi: vals[vals.length - 1], said: vals.length, of: routes.length };
+}
+const accessOf = r => (r.access && typeof r.access === "object") ? r.access : {};
+
+// Exported so it can be rendered on its own against real catalog rows. Everything it
+// claims is a reading of other rows, and the only way to check a reading is to render it
+// — the lesson `check:field-renders` is built on.
+export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
+  const rows = useMemo(() => {
+    const rs = routes || [];
+    if (rs.length < 2) return null;
+    // Gate on the disciplines the request named. A sport crag filed as a "peak" gets
+    // nothing here: its routes share a base, not a summit, and "shortest approach" and
+    // "ways up" are not the questions anyone asks of it.
+    const family = rs.filter(r => ALPINE_FAMILY.includes(r.discipline));
+    if (family.length * 2 < rs.length) return null;
+
+    const out = [];
+
+    // How many ways up, and of what kind. `discipline` is populated on every catalog row,
+    // so this is a count rather than a derivation.
+    const byDisc = {};
+    rs.forEach(r => { if (r.discipline) byDisc[r.discipline] = (byDisc[r.discipline] || 0) + 1; });
+    const discList = Object.entries(byDisc).sort((a, b) => b[1] - a[1]).map(([d, n]) => n + " " + (DL[d] || d).toLowerCase());
+    if (discList.length) out.push(["Ways up", discList.length === 1 ? discList[0] + " route" + (rs.length !== 1 ? "s" : "") : rs.length + " routes — " + discList.join(" · "), null]);
+
+    // Hardest rock pitch, from `rock_grade` ONLY.
+    //
+    // Deliberately NOT from `grade_num`, and this is the trap worth knowing: `gradeNumFrom`
+    // falls through to a ROMAN commitment grade (`^(VII|VI|IV|III|II|I|V)`) on the same 0-15
+    // scale it uses for YDS and class, so Mount Baker's "III+" and "IV" store as 4 — every
+    // one of that peak's nine routes scores as a "class 3-4 scramble". A span computed from
+    // that column would read "Class 2 to Class 4" for a mountain whose routes run to Grade
+    // IV ice. `rock_grade` is a single scale (YDS plus class), so a span across it means
+    // one thing. `lib/grade.js` records that the stored `grade_num` disagrees with itself
+    // on 1.9% of rows for the same four-importers reason.
+    const gr = numericSpan(rs, r => gradeNumFrom(r.rock_grade, "yds"));
+    // Suppressed on a thin minority, because the span then describes the exception rather
+    // than the mountain. Mount Baker is the case: 2 of its 9 routes carry a rock grade (a
+    // 3rd-class band and a 4th-class step on two glacier climbs), and "3rd class to 4th
+    // class" across the top of a page whose other seven routes are Grade II-IV glacier and
+    // ice reads as "this is a scramble". A denominator underneath does not undo a headline.
+    if (gr && gr.said * 2 >= gr.of) {
+      const lo = shortGrade(gr.lo.r.rock_grade), hi = shortGrade(gr.hi.r.rock_grade);
+      out.push(["Rock difficulty", (lo === hi || gr.lo.v === gr.hi.v) ? lo : lo + " to " + hi, gr.said < gr.of ? gr.said + " of " + gr.of + " routes list a rock grade" : null]);
+    }
+
+    // Approach and gain vary legitimately by trailhead — Mount Baker's routes run 4.0 km to
+    // 25.7 km because they start on opposite sides of the mountain — so this is a range with
+    // the short one NAMED, never an average. An average of two trailheads describes neither.
+    const ap = numericSpan(rs, r => r.dist_km);
+    if (ap) {
+      const mi = km => uDistMi ? uDistMi(km * 0.621371) : (Math.round(km * 10) / 10) + " km";
+      out.push(["Approach", ap.lo.v === ap.hi.v ? mi(ap.lo.v) : mi(ap.lo.v) + " to " + mi(ap.hi.v), "Shortest is " + ap.lo.r.name + (ap.said < ap.of ? " · " + ap.said + " of " + ap.of + " routes give a distance" : "")]);
+    }
+    const gain = numericSpan(rs, r => r.gain_ft);
+    if (gain) {
+      const e = ft => uElev ? uElev(ft) : Math.round(ft).toLocaleString() + " ft";
+      out.push(["Elevation gain", gain.lo.v === gain.hi.v ? e(gain.lo.v) : e(gain.lo.v) + " to " + e(gain.hi.v), gain.said < gain.of ? gain.said + " of " + gain.of + " routes give a figure" : null]);
+    }
+
+    // Only worth a row when it says something the hero strap does not already carry.
+    const hp = numericSpan(rs, r => r.high_point_ft);
+    if (hp && (!area.elevation_ft || Math.abs(hp.hi.v - area.elevation_ft) > 50)) {
+      out.push(["High point", uElev ? uElev(hp.hi.v) : Math.round(hp.hi.v).toLocaleString() + " ft", "Highest point reached by a route here"]);
+    }
+    return out;
+  }, [routes, area.elevation_ft, uElev, uDistMi]);
+
+  // The access half is built separately because it is the part that must refuse to answer.
+  const access = useMemo(() => {
+    const rs = routes || [];
+    if (rs.length < 2) return null;
+    const family = rs.filter(r => ALPINE_FAMILY.includes(r.discipline));
+    if (family.length * 2 < rs.length) return null;
+    return [
+      ["Permit", sharedFact(rs, r => r.permit)],
+      // Two spellings of one fact live in this jsonb: `land_manager` on essentially every
+      // row, `landManager` on a few. Read both, exactly as the route page's ACCESS &
+      // REGULATIONS panel does — preferring one silently drops the other's routes.
+      ["Land manager", sharedFact(rs, r => accessOf(r).land_manager || accessOf(r).landManager)],
+      ["Parking / entrance", sharedFact(rs, r => accessOf(r).parking_pass || accessOf(r).passRequired)],
+    ].filter(x => x[1]);
+  }, [routes]);
+
+  if (!rows || !rows.length) return null;
+  const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5 };
+  return (
+    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 15px", marginBottom: 14 }}>
+      <div style={{ fontSize: 12, fontWeight: 800, color: C.blue, marginBottom: 10, letterSpacing: 0.4 }}>ACROSS EVERY ROUTE HERE</div>
+      {rows.map(([label, value, note]) => (
+        <div key={label} style={{ marginBottom: 10 }}>
+          <div style={lbl}>{label}</div>
+          <div style={{ fontSize: 13.5, color: C.text, fontWeight: 600, marginTop: 3, lineHeight: 1.45 }}>{value}</div>
+          {note ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>{note}</div> : null}
+        </div>
+      ))}
+      {access && access.length ? (
+        <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.borderLight }}>
+          <div style={{ ...lbl, color: C.amber, marginBottom: 8 }}>Access &amp; permits</div>
+          {access.map(([label, f]) => (
+            <div key={label} style={{ marginBottom: 9 }}>
+              <div style={lbl}>{label}</div>
+              {f.agreed
+                ? <div style={{ fontSize: 13, color: C.textSub, marginTop: 3, lineHeight: 1.5 }}>{f.value}{f.said < f.of ? <span style={{ color: C.textMuted }}>{" — stated by " + f.said + " of " + f.of + " routes"}</span> : null}</div>
+                /* Routes on the same summit can genuinely need different permits: Mount
+                   Stuart's Teanaway-side approach never enters the Enchantment quota
+                   boundary that its north-side routes do. Naming one of them here would be
+                   a wrong answer delivered with a mountain's authority, so the panel sends
+                   you to the route instead. */
+                : <div style={{ fontSize: 13, color: C.textMuted, marginTop: 3, lineHeight: 1.5, fontStyle: "italic" }}>Differs by route — check the one you are climbing.</div>}
+            </div>
+          ))}
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, fontStyle: "italic", lineHeight: 1.45 }}>Confirm current permits and closures with the land manager before you go.</div>
+        </div>
+      ) : null}
+      {/* NOT here, deliberately: a season window. Combining the routes' own `season` strings
+          means reading English — and these legitimately wrap the year end ("May-Oct (snow
+          climb Dec-Apr)"), so a min-to-max of the months mentioned renders Mount Stuart's
+          Cascadian Couloir as "Apr to Dec". The same class of mistake CLAUDE.md records for
+          `rappels` and for `season` itself. Season stays on the route, where it belongs. */}
     </div>
   );
 }
@@ -429,6 +611,10 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         </button>
       ) : null}
 
+      {/* Sits directly above the route rows it summarises, so the page reads: this is the
+          mountain, this is what is true of every way up it, here are the ways up. It renders
+          nothing at all unless the routes support it — see SummitBriefing's own gates. */}
+      {!loading && routes && routes.length ? <SummitBriefing area={area} routes={routes} uElev={uElev} uDistMi={uDistMi} C={C} /> : null}
       {loading && <div style={{ color: C.textMuted, fontSize: 12 }}>Loading…</div>}
       {/* Data outranks error, as in the state picker: a failed REFETCH leaves the previous
           children/routes intact, and hiding a list the user can still use is worse than showing
@@ -888,8 +1074,12 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   // level would render collapsed and the tree would open showing two rows.
   const [expanded, setExpanded] = useState(() => new Set([stateRoot.parent_id, stateRoot.id, ...(ancestorIds || [])].filter(Boolean)));
   const [q, setQ] = useState("");
-  const { data: results, isLoading: searching, error: searchError } = useAreaSearch(stateRoot.id, q.trim());
+  // 60 rather than the 40 the in-page search box uses: this is a full-screen list with
+  // nothing else competing for the height, so the same cap that suits an inline dropdown
+  // just truncates more often here.
+  const { data: results, isLoading: searching, error: searchError } = useAreaSearch(stateRoot.id, q.trim(), 60);
   const toggle = id => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
+  const total = areaSearchTotal(results);
 
   // Portal to <body> — this component mounts deep inside the tab content tree,
   // and an ancestor there creates its own stacking context, which traps a plain
@@ -901,28 +1091,60 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
         <button onClick={onClose} aria-label="Back" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, padding: "9px 13px", fontSize: 14, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{"← Back"}</button>
         <div style={{ minWidth: 0, flex: 1 }}>
           <div style={{ color: C.text, fontSize: 17, fontWeight: 800, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>All areas</div>
-          <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Tap a name to jump, ▸ to expand"}</div>
+          {/* The subtitle used to read "<state> — tap a name to jump, ▸ to expand", which
+              answers "what can I do here" and never "where am I". This screen is opened
+              from an area page and covers it completely, so without naming the area you
+              came from there is nothing on screen tying the tree back to it — the "You
+              are here" badge is the only marker and it can be many scrolls down a
+              collapsed tree. The instructions moved under the filter box, where they sit
+              beside the control they describe. */}
+          <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {current && current.id !== stateRoot.id ? "Viewing " + current.name + " · " + stateRoot.name : stateRoot.name}
+          </div>
         </div>
         <button onClick={onClose} aria-label="Close" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, width: 38, height: 38, fontSize: 18, cursor: "pointer" }}>{"×"}</button>
       </div>
       <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
-        <input aria-label="Filter areas & crags" value={q} onChange={e => setQ(e.target.value)} placeholder={"Filter areas & crags in " + stateRoot.name + "…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+        <input aria-label="Search areas, crags and peaks" value={q} onChange={e => setQ(e.target.value)} placeholder={"Search " + stateRoot.name + "’s areas, crags and peaks…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+        {/* Say what each of the two tap targets does. They look alike and do opposite
+            things: the name OPENS the area (closing this screen), the ▸ only reveals
+            what is inside it without going anywhere. */}
+        <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 7, lineHeight: 1.45 }}>
+          {q.trim()
+            ? (total > 0 ? "Best matches first — tap one to open its climbs." : "Searches every area under " + stateRoot.name + ", at any depth.")
+            : "Tap a name to open that area’s climbs · tap ▸ to see what’s inside it"}
+        </div>
       </div>
       <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
         {q.trim() ? (
           searching ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>Loading…</div>
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
           : !results || !results.length ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>{'No areas match "' + q.trim() + '"'}</div>
-          : results.map(m => (
-            <div key={m.id} {...clickable(() => onNavigate(m))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }}>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
-                <div style={{ fontSize: 11.5, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.parent_name || ""}</div>
+          : <>
+            {results.map(m => (
+              <div key={m.id} {...clickable(() => onNavigate(m))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer", background: m.id === current.id ? C.blueBg : "transparent" }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: m.id === current.id ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}{m.id === current.id ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+                  {/* The RPC has always returned area_type and this row threw it away, so a
+                      hit read as a bare name with no way to tell a summit from a boulder —
+                      while the in-page Areas search two screens over renders exactly this
+                      line. Same data, same shape, so the two searches now agree. */}
+                  <div style={{ fontSize: 11.5, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{[ATYPE[m.area_type] || m.area_type, m.parent_name].filter(Boolean).join(" · ")}</div>
+                </div>
+                {m.route_count > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{m.route_count + " climb" + (m.route_count !== 1 ? "s" : "")}</span> : null}
+                <span style={{ color: C.textMuted, fontSize: 16, flexShrink: 0 }}>{"›"}</span>
               </div>
-              {m.route_count > 0 ? <span style={{ fontSize: 11, fontWeight: 700, color: C.textSub }}>{m.route_count}</span> : null}
-              <span style={{ color: C.textMuted, fontSize: 16 }}>{"›"}</span>
-            </div>
-          ))
+            ))}
+            {/* Never truncate silently. Before 0147 this list was the alphabetically-first
+                40 of however many matched, with nothing on screen admitting it — so a
+                search for "mount" in Washington showed A–G of 216 and Mount Rainier read
+                as missing from the catalog. */}
+            {total > results.length ? (
+              <div style={{ padding: "14px 16px", textAlign: "center", color: C.textMuted, fontSize: 12, lineHeight: 1.5 }}>
+                {"Showing the " + results.length + " closest matches of " + total.toLocaleString() + " — keep typing to narrow it down."}
+              </div>
+            ) : null}
+          </>
         ) : (
           <DbAreaTreeRoots currentId={current.id} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
         )}
