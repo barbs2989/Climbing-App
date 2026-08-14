@@ -88,12 +88,44 @@ if (Object.keys(M).length < 10) {
 }
 // Both merge paths must still route through M. If either stops, every destination this
 // guard derives is a statement about code that no longer runs.
+const mergeAt = {};
 for (const [label, re] of [["local", /o\[M\[k\]\|\|k\]/], ["DB", /M\[f\]\|\|f/]]) {
-  if (!re.test(APP)) {
+  const m = re.exec(APP);
+  if (!m) {
     console.error(`\n${GUARD} FAILED — the ${label} merge path no longer files contributions through M.`);
     console.error("The destinations below are derived from M, so they can no longer be trusted.\n");
     process.exit(1);
   }
+  mergeAt[label] = m.index;
+}
+const LAST_MERGE = Math.max(mergeAt.local, mergeAt.DB);
+
+// ---------------------------------------------------------------------------------------
+// MIRRORS — and this is the correction to two earlier readings of this same code, including
+// this guard's own first version.
+//
+// A rename only creates a rivalry if the two spellings can DISAGREE. After both merge paths
+// the writer runs fix-ups, and one of them writes BOTH spellings of descent:
+//
+//     if(o.descent!=null)o.descentText=o.descent;
+//
+// so a real contribution leaves `route.descent === route.descentText`, and NO reader can pick
+// the wrong one — `descentBeta` returns the correction with or without its guard, including
+// under the plain length comparison that predates every change to it. #897 made it prefer
+// descentText and called that a fix; #915 made it prefer descent and called #897 "strictly
+// worse"; this guard then asserted #915's direction as a rule. All three are claims about a
+// distinction the writer deliberately erases, and each was derived from the `var M` line
+// WITHOUT reading the fix-ups that run after it.
+//
+// So mirrors are DETECTED, never declared, and the mirror itself becomes the invariant: while
+// it stands the rename is moot, and if it is ever deleted the rivalry becomes real and the
+// rename rule switches back on by itself. Position matters as much as presence — a mirror
+// upstream of a merge would be overwritten by it, so it must sit after BOTH.
+const MIRRORED = new Set();
+for (const m of APP.matchAll(/if\s*\(\s*o\.(\w+)\s*!=\s*null\s*\)\s*o\.(\w+)\s*=\s*o\.(\w+)\s*;/g)) {
+  if (m[1] !== m[3] || m.index < LAST_MERGE) continue;
+  MIRRORED.add(`${m[1]}|${m[2]}`);
+  MIRRORED.add(`${m[2]}|${m[1]}`);
 }
 
 // ---------------------------------------------------------------------------------------
@@ -131,11 +163,12 @@ const RIVALRIES = [
     guard: "_descEdited",
     everyReaderGates: false,
     precedence: "descentBeta",
-    // The rival here IS the form key's own name, which is exactly the trap: the CONTRIBUTION
-    // lands in `descent` (via M) while `descentText` holds the enrichment. Naming them the
-    // other way round is what #897 did, in both its fix AND its test.
-    checkRename: true,
-    why: "#897/#915 — picked by string length, then by the wrong side of the rename.",
+    // checkRename is NOT set here — it is DERIVED below from whether the writer still mirrors
+    // descent into descentText. While the mirror stands the two spellings are equal after any
+    // real contribution and the rename cannot be got wrong; three separate claims to the
+    // contrary (#897, #915, and this guard's own first version) all came from reading `var M`
+    // and stopping there.
+    why: "#897/#915 — picked by string length, then by the wrong side of the rename; the mirror makes both moot.",
   },
   {
     key: "rack",
@@ -151,7 +184,14 @@ const RIVALRIES = [
     why: "#907 — the RACK box read gearTiers.required while the form writes rack.",
   },
 ];
-for (const r of RIVALRIES) r.dest = M[r.key] || r.key;
+for (const r of RIVALRIES) {
+  r.dest = M[r.key] || r.key;
+  r.mirrored = MIRRORED.has(`${r.dest}|${r.rival}`);
+  // A rename is only worth policing where the two spellings can actually disagree. Anything
+  // explicitly declared in the registry still wins, so `rack` stays off for its own measured
+  // reason (it is written to BOTH sides, which is a mirror the writer performs differently).
+  if (r.checkRename === undefined) r.checkRename = r.dest !== r.rival && !r.mirrored;
+}
 
 // Function bodies are found by BALANCING BRACES over RAW source, deliberately not over a
 // comment/string-blanked copy. That blanker treats every quote as a string delimiter and
@@ -285,7 +325,10 @@ for (const r of RIVALRIES) {
     continue;
   }
   if (!r.checkRename) {
-    console.log(`  ${f.name}: consults ${r.guard} (no rename to get the wrong way round)`);
+    const why = r.mirrored
+      ? `the writer mirrors .${r.dest} into .${r.rival} after both merge paths, so either side returns the correction`
+      : "no rename to get the wrong way round";
+    console.log(`  ${f.name}: consults ${r.guard} (${why})`);
     continue;
   }
 
