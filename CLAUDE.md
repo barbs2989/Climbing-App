@@ -369,7 +369,12 @@ a build error, but a screen that renders wrong or not at all.
     is signed in as before anything else — otherwise a rejected session would quietly walk a
     demo identity and report green about the wrong account.
   - Needs `VITE_USE_DB=true` plus the Supabase url/anon key; it exits 1 rather than walking a
-    seed app. Not in `build` (browser automation), but it **does run in CI** since 2026-08-13.
+    seed app. Not in `build` (browser automation). It was wired into CI on 2026-08-13 (#919)
+    and **unwired again the same day**: it went red on main with `modal:inboxOpen` reporting
+    "added nothing on any of 6 tabs". That is unresolved, not dismissed — the Inbox's
+    empty-state copy has changed on main since the guard's one passing run, so it may be a
+    real regression in that modal rather than a fixture artifact. Hand-run for now; the
+    durable accounts and CI secrets are already in place, so re-wiring is a one-file change.
   - **It has two fixture modes, and which one runs says where it is.** Locally it creates a
     pair per run with the **service key** and destroys them after. In CI it signs in to two
     **durable** accounts with the **anon key only** — CI must never hold the service key, and
