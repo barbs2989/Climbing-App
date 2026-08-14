@@ -182,6 +182,31 @@ check("the pool query does NOT filter by discipline",
 check("the pool is ranked per slot, not once for the whole profile",
   /discSlots\s*\(/.test(sugCode) && /\.map\s*\(\s*s\s*=>/.test(sugCode));
 
+// ── 2b. the panel must be REACHABLE, not just correct ────────────────────────
+// Both components shipped `useState(false)` — collapsed on every render — so the ranking above
+// was invisible unless a climber happened to tap a disclosure on an area page. Correct rows
+// nobody opens are worth nothing, and that is not something the unit half can see.
+// The rule is specifically that it opens on HIGH-SIGNAL content (your objectives, or climbs you
+// were just looking at) and NOT on `total` — "More climbs in this area" is the alphabetical
+// fallback, and auto-opening for that would make the panel noise on every area page.
+for (const [label, src, sug] of [
+  ["ClimbMatchCore.jsx", CORE, CORE.slice(CORE.indexOf("function SuggestedClimbs("), CORE.indexOf("\nfunction ", CORE.indexOf("function SuggestedClimbs(") + 1))],
+  ["lib/DbAreaBrowser.jsx", DBB, DBB.slice(DBB.indexOf("function DbSuggestedClimbs("), DBB.indexOf("\nfunction ", DBB.indexOf("function DbSuggestedClimbs(") + 1))],
+]) {
+  const code = sug.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  check(`${label}: the panel is not hard-collapsed`,
+    !/\[\s*open\s*,\s*setOpen\s*\]\s*=\s*useState\(\s*false\s*\)/.test(code),
+    "useState(false) makes the ranking unreachable");
+  check(`${label}: it decides from content (autoOpen)`, /autoOpen/.test(code));
+  check(`${label}: autoOpen reads objectives and recents`,
+    /autoOpen\s*=\s*!!\(\s*objectives\.length\s*\|\|\s*recent\.length\s*\)/.test(code),
+    "must be the high-signal rows");
+  check(`${label}: autoOpen does NOT key on total`, !/autoOpen\s*=[^;]*\btotal\b/.test(code),
+    "opening on the alphabetical fallback would make it noise");
+  check(`${label}: a climber's own toggle still wins`,
+    /openManual\s*===?\s*null\s*\?\s*autoOpen\s*:\s*openManual/.test(code));
+}
+
 // ── 3. both readers must keep the two headings distinct ──────────────────────
 for (const [label, src] of [["ClimbMatchCore.jsx", CORE], ["lib/DbAreaBrowser.jsx", DBB]]) {
   check(`${label}: says "been climbing" for a logged discipline`, /been climbing/.test(src));

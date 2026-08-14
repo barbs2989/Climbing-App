@@ -84,7 +84,8 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and passed down.
 function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
-  const [open, setOpen] = useState(false);
+  // null = undecided, so content decides (see autoOpen below); once toggled, the climber wins.
+  const [openManual, setOpenManual] = useState(null);
   const recentIds = useRecentRouteIds();
   const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
   /* THE POOL IS NO LONGER FILTERED BY DISCIPLINE, and that is the actual fix.
@@ -123,6 +124,13 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
   }).filter(b => b.rows.length);
   const popular = (!objectives.length && !recent.length && !bands.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
   const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
+  /* Open on HIGH-SIGNAL rows only — your own objectives, or climbs you were just looking at.
+     NOT on `total`: "More climbs in this area" is the alphabetical fallback (only 6 routes in
+     the whole 205k catalog carry a star rating), and auto-opening for that would make the panel
+     noise on every area page. These arrive async, so the panel opens when the data lands. */
+  const autoOpen = !!(objectives.length || recent.length);
+  const open = openManual === null ? autoOpen : openManual;
+  const setOpen = fn => setOpenManual(typeof fn === "function" ? fn(open) : fn);
   if (!total) return null;
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];

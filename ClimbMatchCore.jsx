@@ -2497,7 +2497,12 @@ function AreaCrags({area,countIn,onOpenArea}){
   return <div style={{marginBottom:10}}><SL>{areaChildNoun(area.id)}</SL>{children.map(ch=>{const n=countIn(ch.id);return <div key={ch.id} onClick={()=>onOpenArea(ch)} style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:11,border:`1px solid ${C.borderHi}`,cursor:"pointer"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:ch.blurb?5:0}}><span style={{fontWeight:700,fontSize:15}}>{ch.name}</span><span style={{fontSize:12,color:n>0?C.blue:C.textMuted,fontWeight:600,flexShrink:0,marginLeft:8}}>{n} climb{n!==1?"s":""} →</span></div>{ch.blurb?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{ch.blurb}</div>:null}</div>;})}</div>;
 }
 function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
-  const [open,setOpen]=useState(false);
+  /* null = the climber has not decided, so the panel decides from its CONTENT (below).
+     It used to be useState(false) — collapsed always — which meant the ranking behind it was
+     invisible unless you happened to tap a disclosure on an area page. Once you toggle it your
+     choice wins for the rest of the session, which is why this is tri-state and not a boolean
+     recomputed on every render. */
+  const [openManual,setOpenManual]=useState(null);
   const recentIds=useRecentRouteIds();
   if(!area)return null;
   const inScope=ROUTES.filter(r=>inArea(r.mountainId,area.id));
@@ -2522,6 +2527,13 @@ function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
   const bands=slots.map(s=>{const rows=rankSimilarRoutes(pool.filter(r=>!claimed[r.id]),s,{limit:5});rows.forEach(r=>{claimed[r.id]=1;});return {slot:s,rows:rows};}).filter(b=>b.rows.length);
   const popular=(!objectives.length&&!recent.length&&!bands.length)?[...pool].sort((a,b)=>(b.activity||[]).length-(a.activity||[]).length).slice(0,5):[];
   const total=objectives.length+recent.length+bands.reduce((n,b)=>n+b.rows.length,0)+popular.length;
+  /* Open on HIGH-SIGNAL rows only — climbs you put on your own list, or ones you were just
+     looking at. Deliberately NOT on `total`: "More climbs in this area" is the alphabetical
+     fallback, and springing the panel open for that would make it noise on every area page and
+     teach people to collapse it permanently. */
+  const autoOpen=!!(objectives.length||recent.length);
+  const open=openManual===null?autoOpen:openManual;
+  const setOpen=fn=>setOpenManual(typeof fn==="function"?fn(open):fn);
   if(!total)return null;
   const discLabel=d=>(CAT[d]||{}).label||d;
   const bandTitle=s=>s.src==="viewed"?("Because you've been looking at "+discLabel(s.disc)):("Because you've been climbing "+discLabel(s.disc));
