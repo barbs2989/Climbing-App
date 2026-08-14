@@ -371,12 +371,28 @@ a build error, but a screen that renders wrong or not at all.
     is signed in as before anything else — otherwise a rejected session would quietly walk a
     demo identity and report green about the wrong account.
   - Needs `VITE_USE_DB=true` plus the Supabase url/anon key; it exits 1 rather than walking a
-    seed app. Not in `build` (browser automation). It was wired into CI on 2026-08-13 (#919)
-    and **unwired again the same day**: it went red on main with `modal:inboxOpen` reporting
-    "added nothing on any of 6 tabs". That is unresolved, not dismissed — the Inbox's
-    empty-state copy has changed on main since the guard's one passing run, so it may be a
-    real regression in that modal rather than a fixture artifact. Hand-run for now; the
-    durable accounts and CI secrets are already in place, so re-wiring is a one-file change.
+    seed app. Not in `build` (browser automation). It **runs in CI** via `render-guards.yml`.
+  - **It went red on main the day it was wired in (#919), was unwired (#935), and the red was
+    RIGHT** — which is the most useful thing in this entry. The one failing assertion,
+    `modal:inboxOpen: added nothing on any of 6 tabs`, was reporting a genuine defect: #890 had
+    left the Calendar's JSX fragment unclosed, so `;if(inboxOpen)return ` became **text inside
+    that fragment** and the Messages screen could not be opened at all. Confirmed with the
+    app's own button, not just the `?z=` opener. Fixed in #941; re-wired in #947 with a local
+    run green on main first (`modal:inboxOpen: 48 chars`, 59 screens, 119 assertions).
+    - **48 is the healthy number and 117 is the broken one**, as the settle note below already
+      records: the populated Inbox is just `← Back / Messages / Friends / Crews / START A CHAT
+      / Robin`, while the EMPTY state is longer because it carries explanatory copy.
+    - Two wrong hypotheses were shipped before the right one, and both are worth not
+      re-deriving. The **durable accounts colliding between concurrent CI runs** — dead, it
+      failed alone and failed on main. And **"the Inbox's empty-state copy changed, so the
+      assertion is stale"** — the copy really had changed, which made a fixture artifact look
+      likely; the modal was simply unreachable. A guard reporting one assertion against 117
+      passing ones reads like a flake and was not.
+    - So the rule this pays for: **a lone failing assertion in a guard whose whole purpose is
+      real data under a uuid is evidence, not noise.** Two sibling guards that need no auth
+      (`check:overlay-scroll`, `check:a11y-badges`) were reporting `inboxOpen` as never
+      mounting the entire time. When a guard that needs secrets looks flaky, check whether one
+      that does not already sees the same thing.
   - **It has two fixture modes, and which one runs says where it is.** Locally it creates a
     pair per run with the **service key** and destroys them after. In CI it signs in to two
     **durable** accounts with the **anon key only** — CI must never hold the service key, and
