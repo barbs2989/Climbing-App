@@ -65,7 +65,22 @@ async function ids(label, filter) {
 
 const dr = await ids("detailed_rack", "detailed_rack=not.is.null");
 const pn = await ids("pro_needs", "pro_needs=not.is.null");
-const gt = await ids("gear_tiers", "gear_tiers=not.is.null");
+
+// `gear_tiers` IS NOT A COLUMN, and that is the correct state -- do not "fix" it by adding one.
+// A 42703 here would read like a defect (the trap check:field-renders records: a missing column
+// and an unreachable database need opposite repairs), so it is asserted rather than queried.
+// route.gearTiers exists on SEED routes as a literal, and on a DB route it is CREATED CLIENT-SIDE
+// by the contribution merge: o.gearTiers = {...selRoute.gearTiers, required:gReq}. So a DB route
+// carries none until somebody corrects its rack -- which is exactly why the GearTiers panel
+// (gated on `route.gearTiers`) appears only after a contribution.
+{
+  const r = await fetch(`${U}/rest/v1/routes?select=gear_tiers&limit=1`, { headers: H });
+  const body = r.ok ? "" : await r.text();
+  const absent = !r.ok && /42703/.test(body);
+  console.log("gear_tiers".padEnd(16), absent
+    ? "  not a column (expected -- client-side shape only)"
+    : `  UNEXPECTED: got HTTP ${r.status}. If this is now a real column, re-read the merge.`);
+}
 
 if (dr && pn) {
   const union = new Set([...dr, ...pn]);
@@ -74,4 +89,3 @@ if (dr && pn) {
   const wa = [...union].filter((i) => i.startsWith("wa_")).length;
   console.log("  of which WA-prefixed:", wa);
 }
-if (gt) console.log("routes carrying gear_tiers (where a correction WOULD land):", gt.length);
