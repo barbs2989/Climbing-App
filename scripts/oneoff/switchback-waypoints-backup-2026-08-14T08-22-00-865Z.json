@@ -1,0 +1,68 @@
+{
+  "id": "wa_switchback_mountain_scramble",
+  "area_id": "wa_switchback_mountain",
+  "waypoints": [
+    {
+      "lat": 48.17084,
+      "lng": -120.312287,
+      "elev": 5370,
+      "name": "Foggy Dew Falls",
+      "note": "Steep switchback section passes a two-tiered cascade in a narrow cleft; last easy, reliable water before the trail breaks into open basin country.",
+      "type": "Water",
+      "distMi": 3.4
+    },
+    {
+      "lat": 48.1656171,
+      "lng": -120.3490177,
+      "elev": 7300,
+      "name": "Merchants Basin / Cooney Lake Trail #434 split",
+      "note": "Trail #417 tops out of timber into the open, wildflower-covered Merchants Basin below Sawtooth Ridge, where the Cooney Lake Trail #434 splits off toward Cooney Lake.",
+      "type": "Junction",
+      "distMi": 5.5
+    },
+    {
+      "lat": 48.17797,
+      "lng": -120.348647,
+      "elev": 7246,
+      "name": "Cooney Lake",
+      "note": "Larch-rimmed alpine lake with established camps near the outlet; last reliable water before climbing to the pass.",
+      "type": "Campsite",
+      "distMi": 8
+    },
+    {
+      "lat": 48.177027,
+      "lng": -120.352478,
+      "elev": 7900,
+      "name": "Cooney Pass",
+      "note": "7,900 ft saddle on Switchback's southeast side gains the crest of the Southeast Ridge, with views down into Merchants Basin and toward Sunrise Lake.",
+      "type": "Junction",
+      "distMi": 8.6
+    },
+    {
+      "lat": 48.176084,
+      "lng": -120.356309,
+      "elev": 8100,
+      "name": "Southeast Ridge scramble",
+      "note": "Class 2-3 rock scramble up loose, exposed talus/blocks on the ridge crest to the summit block; trip reports note strong, cold wind near the top.",
+      "type": "Hazard",
+      "distMi": 9.2
+    },
+    {
+      "lat": 48.2204,
+      "lng": -120.2678,
+      "elev": 4740,
+      "name": "Foggy Dew / Eagle Lakes Trailhead (FR 4340 Spur 300)",
+      "note": "Existing DB trailhead coordinate (48.179295,-120.252817) is ~5km off from the real trailhead lot; this corrected point matches both independent web sources and the route's own recorded GPS track start almost exactly.",
+      "type": "Trailhead",
+      "elevFt": 4740
+    },
+    {
+      "lat": 48.175612,
+      "lng": -120.358225,
+      "elev": 8321,
+      "name": "Switchback Mountain (Switchback Peak / Cooney Peak)",
+      "type": "Summit",
+      "elevFt": 8321
+    }
+  ]
+}
