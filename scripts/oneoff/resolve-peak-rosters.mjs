@@ -76,7 +76,7 @@ const ALIASES = {
   "borah": ["Mount Borah"],
   "lost river mountain": ["Lost River Peak"],
   // GNIS renamed Kit Carson Peak to "Kit Carson Mountain" in 1970, but climbers, 14ers.com and
-  // Wikipedia all still say Peak — and 0143 files it under the climbers' name because this is a
+  // Wikipedia all still say Peak — and 0144 files it under the climbers' name because this is a
   // climbing catalog. The roster carries the GNIS spelling, so the two are bridged here rather
   // than by loosening the matcher. Note "Kit Carson Mountain" is ALSO used for the whole massif
   // (Challenger Point, Kit Carson Peak, Columbia Point), which is why the two summits are
