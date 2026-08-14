@@ -1,0 +1,58 @@
+{
+ "zone": "Northern Pickets — Big Beaver and Whatcom Pass",
+ "_areas_note": "Crooked Thumb ADDED here after the Southern Pickets research flagged it as Northern. Berdeen Peak REMOVED — it is not on the Big Beaver or Whatcom Pass side at all, but west of the Pickets proper on Mystery Ridge above the Baker River, with its own 'Berdeen' cross-country zone that none of these camps serve.",
+ "areas": ["wa_mount_fury_west", "wa_phantom_peak", "wa_mount_crowder", "wa_mount_prophet", "wa_ghost_peak", "wa_whatcom_peak", "wa_crooked_thumb_peak"],
+ "sites": [
+  {
+   "name": "Luna Camp, Big Beaver Trail",
+   "type": "camp",
+   "capacity": "Two 4-person sites; party limit 4; pit toilet, food hang",
+   "water": "Big Beaver Creek runs beside camp — reliable all season",
+   "permit": "NPS wilderness permit from the Marblemount Wilderness Information Center; trail-corridor camp, reservable on Recreation.gov or walk-up. CLOSED under the Luna Fire closure as of the park's August 2026 list — confirm current status before building a trip around it.",
+   "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather than a destination. The climbers' path leaves the maintained trail roughly a mile and a half beyond and crosses Big Beaver Creek near the Access Creek confluence; whether that crossing is a log or a wade varies year to year and with runoff. No elevation is recorded because no confident figure was sourced."
+  },
+  {
+   "name": "Beaver Pass Camp",
+   "type": "camp",
+   "elev": 3620,
+   "capacity": "Mixed 4- and 12-person sites; party limit 12; group and stock sites",
+   "water": "Seasonal source near the saddle; the least dependable water on the Big Beaver trail and it can run thin in a dry late summer",
+   "permit": "NPS wilderness permit from Marblemount; trail-corridor camp, reservable or walk-up. Closed under the 2026 Luna Fire closure.",
+   "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with group and stock capacity, so it absorbs parties too big for the four-person camps below. A 1938 log shelter listed on the National Register stands at the pass; treat it as a historic structure rather than as shelter you can rely on. Because the camp sits on a divide rather than in a creek bottom, tank up lower down if the season has been dry."
+  },
+  {
+   "name": "Luna Col bivy, Luna cross-country zone",
+   "type": "bivy",
+   "elev": 7200,
+   "capacity": "Party limit 6; up to 6 parties per night in the Luna zone",
+   "water": "Snowmelt and small tarns only; expect to melt snow once the basin dries out late in the season",
+   "permit": "Wilderness permit required for the Luna cross-country zone. WALK-UP ONLY — this zone cannot be reserved in advance, so it is claimed in person at Marblemount. A party that has already driven and boated in can still be turned away if the night's slots are gone; carry a fallback itinerary.",
+   "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The brush on the Access Creek approach, which forces a bank change around 3,700 ft, is the part parties consistently underestimate."
+  },
+  {
+   "name": "Perfect Pass, Perfect Pass cross-country zone",
+   "type": "bivy",
+   "elev": 6300,
+   "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park",
+   "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+   "permit": "Wilderness permit for the Perfect Pass cross-country zone. WALK-UP ONLY and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+   "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the source, and there are no facilities of any kind."
+  },
+  {
+   "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "type": "camp",
+   "capacity": "Three 4-person sites; party limit 4; composting toilet; no campfires",
+   "water": "Brush Creek drainage — reliable",
+   "permit": "NPS wilderness permit from Marblemount; food hang or approved canister required. Listed as CLOSED for hazard trees on the park's August 2026 closure list, as is Graybeal Camp below it on Brush Creek. Campfires are prohibited here regardless of restrictions elsewhere.",
+   "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing begins. With both Whatcom Camp and Graybeal closed there is currently no legal trail camp close under the pass on that side, which pushes parties either back down the valley or straight up into the Tapto Lakes or Perfect Pass zones."
+  },
+  {
+   "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+   "type": "camp",
+   "capacity": "Twin Rocks: two 6-person sites, party limit 6. Stillwell: four 4-person sites, party limit 4",
+   "water": "Little Beaver Creek at both — reliable",
+   "permit": "NPS wilderness permit from Marblemount; trail-corridor camps, reservable or walk-up. Both closed under the 2026 Luna Fire closure, which covers Little Beaver from Ross Lake to Whatcom Pass.",
+   "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenger, and exit over Beaver Pass and down Big Beaver, or run it the other way. For the Northern Pickets they are through-camps on a long walk rather than climbing bases. The Ross Lake water taxi is chartered by the boat rather than per head, takes about six people, needs a reservation, and only runs during the resort's summer season — outside it, plan on walking in from Ross Dam and adding a day at each end."
+  }
+ ]
+}
