@@ -48,6 +48,36 @@ const BACKOFF_MS = 1500;
 // run against seed data on a fresh clone or in a worktree with no dotfiles, and the app then
 // never asks Supabase for anything. Refusing to run there would break the guard everywhere
 // except CI, which is the opposite of the point.
+// A single timed read that REPORTS rather than exits, for use when a guard has already
+// failed and needs to say whether the database is why.
+//
+// The preflight above catches a DEAD project. It cannot catch a DEGRADED one: a database
+// answering `routes?limit=1` in 900ms passes it comfortably and then still cannot fill a
+// route list inside a settle timeout. That gap produced a genuinely misleading failure on
+// 2026-08-13 — check:ui reported "this is the route list or the search box, not missing
+// data" while the actual cause was Postgres taking seconds per query. Guessing between the
+// two costs a CI cycle each time; measuring costs one request.
+export async function probeDbLatency() {
+  const env = loadEnv();
+  const url = env.VITE_SUPABASE_URL;
+  const key = env.VITE_SUPABASE_ANON_KEY;
+  if (!url || !key) return { state: "skipped" };
+  const started = Date.now();
+  try {
+    const r = await fetch(`${url}/rest/v1/routes?select=id&limit=1`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      signal: AbortSignal.timeout(PING_TIMEOUT_MS),
+    });
+    const ms = Date.now() - started;
+    return r.ok ? { state: "ok", ms } : { state: "error", ms, err: `HTTP ${r.status}` };
+  } catch (e) {
+    return {
+      state: "error", ms: Date.now() - started,
+      err: e && e.name === "TimeoutError" ? `no response within ${PING_TIMEOUT_MS / 1000}s` : String((e && e.message) || e),
+    };
+  }
+}
+
 export async function assertDbReachable(opts) {
   const label = (opts && opts.label) || "this guard";
   const env = loadEnv();
@@ -84,11 +114,17 @@ export async function assertDbReachable(opts) {
   console.log("");
   console.log("THE DATABASE IS UNREACHABLE — abandoning before walking anything.");
   console.log(`  ${lastErr}`);
-  console.log(`  ${label} feeds its screens from this database. With no data arriving nothing`);
-  console.log("  settles, so every screen would burn its full timeout and the run would end at the");
-  console.log("  job wall having proved nothing — check:overflow did precisely that on 2026-08-13,");
-  console.log("  cancelled at 25 minutes with 29 of 53 overlays walked and no failure message.");
-  console.log("  Stopping here instead. This is NOT a finding about the app: re-run it once the");
-  console.log("  project answers.");
+  // The consequence line is the CALLER's, because it has to be true of the guard printing it.
+  // A browser walk burns a settle timeout per screen; a column probe burns a query per column.
+  // Same verdict, different arithmetic, and a message that describes the wrong one reads as a
+  // guard that does not know what it does.
+  const why = (opts && opts.why)
+    || `${label} feeds its screens from this database. With no data arriving nothing settles, so`
+      + " every screen would burn its full timeout and the run would end at the job wall having"
+      + " proved nothing.";
+  for (const line of String(why).match(/.{1,86}(\s|$)/g) || [why]) console.log("  " + line.trim());
+  console.log("  Precedent: check:overflow was cancelled at 25 minutes on 2026-08-13 with 29 of 53");
+  console.log("  overlays walked and no failure message at all. Stopping here instead.");
+  console.log("  This is NOT a finding about the app: re-run it once the project answers.");
   process.exit(1);
 }

@@ -12,7 +12,7 @@
 //
 // Read-only. Reports; writes nothing.
 import { SUPABASE_URL, headers, anonKey, requireServiceKey, selectAll } from "../lib/supabase-env.mjs";
-import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS } from "./roster-data.mjs";
+import { CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS, ADK_46, IDAHO_12ERS } from "./roster-data.mjs";
 
 const LOOSE = !!process.env.LOOSE;   // opt-in only, for comparing precision
 const KEY = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })();
@@ -65,6 +65,23 @@ const ALIASES = {
   // belong in a climbing app at all, and it was missing purely on word order.
   "goode": ["Mount Goode"],                           // roster "Goode Mountain"; WA, 4 routes
   "olympus": ["Mount Olympus (West Peak)"],           // Olympic NP highpoint; WA, 6 routes
+  // Adirondack 46. The first is a real RENAME and the highest-risk mismatch on that list: East
+  // Dix became Grace Peak in 2014, so any catalog built from older data holds the old name. The
+  // rest are one-word/two-word spellings that both circulate widely.
+  "grace": ["East Dix"],
+  "table top": ["Tabletop Mountain", "Tabletop"],
+  "upper wolfjaw": ["Upper Wolf Jaw", "Upper Wolf Jaw Mountain"],
+  "lower wolfjaw": ["Lower Wolf Jaw", "Lower Wolf Jaw Mountain"],
+  // Idaho 12ers — both spellings are standard in the published sources, not guesses.
+  "borah": ["Mount Borah"],
+  "lost river mountain": ["Lost River Peak"],
+  // GNIS renamed Kit Carson Peak to "Kit Carson Mountain" in 1970, but climbers, 14ers.com and
+  // Wikipedia all still say Peak — and 0144 files it under the climbers' name because this is a
+  // climbing catalog. The roster carries the GNIS spelling, so the two are bridged here rather
+  // than by loosening the matcher. Note "Kit Carson Mountain" is ALSO used for the whole massif
+  // (Challenger Point, Kit Carson Peak, Columbia Point), which is why the two summits are
+  // separate rows with coordinates 0.4 km apart.
+  "kit carson": ["Kit Carson Peak"],
 };
 
 // SCAN FIRST, PROBE PER NAME AS A FALLBACK. Both paths exist because both fail, in opposite
@@ -125,7 +142,7 @@ try {
   // path is still reported, and DUMP refuses to emit a roster from it — see below.
   const token = nm => (key(nm) || norm(nm)).slice(0, 40);
   const wanted = new Set();
-  for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS]) {
+  for (const r of [CO_14ERS, CA_14ERS, STATE_HIGHPOINTS, CASCADE_VOLCANOES, DESERT_TOWERS, NP_HIGHPOINTS, ADK_46, IDAHO_12ERS]) {
     for (const e of r) {
       wanted.add(token(e.name));
       for (const alt of ALIASES[key(e.name)] || []) wanted.add(token(alt));
@@ -281,10 +298,12 @@ const c = report("State highpoints", STATE_HIGHPOINTS, null);
 const d = report("Cascade volcanoes", CASCADE_VOLCANOES, null);
 const e = report("Desert towers", DESERT_TOWERS, null);
 const f = report("NP highpoints", NP_HIGHPOINTS, null);
+const g = report("Adirondack 46", ADK_46, "new_york");
+const h = report("Idaho 12ers", IDAHO_12ERS, "idaho");
 
-const tot = [a, b, c, d, e, f].reduce((n, x) => n + x.total, 0);
-const res = [a, b, c, d, e, f].reduce((n, x) => n + x.ok, 0);
-const use = [a, b, c, d, e, f].reduce((n, x) => n + x.withRoutes, 0);
+const tot = [a, b, c, d, e, f, g, h].reduce((n, x) => n + x.total, 0);
+const res = [a, b, c, d, e, f, g, h].reduce((n, x) => n + x.ok, 0);
+const use = [a, b, c, d, e, f, g, h].reduce((n, x) => n + x.withRoutes, 0);
 console.log(`\n${res}/${tot} names resolve to an area; ${use} of those hold at least one route.`);
 console.log(`read via ${VIA.toUpperCase()}${VIA === "scan" ? "" : "  <-- DEGRADED: the probe path under-reports; these numbers are a FLOOR, not the answer"}`);
 console.log(`A roster entry whose area holds NO route is not an objective a climber can tick —\nit would render as a name with nothing behind it.`);
@@ -299,7 +318,7 @@ if (process.env.DUMP && VIA !== "scan") {
   process.exit(1);
 }
 if (process.env.DUMP) {
-  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS", "NP highpoints": "NP_HIGHPOINT_PEAKS" };
+  const varName = { "Colorado 14ers": "CO_14ER_PEAKS", "California 14ers": "CA_14ER_PEAKS", "State highpoints": "STATE_HIGHPOINT_PEAKS", "Cascade volcanoes": "CASCADE_VOLCANO_PEAKS", "Desert towers": "DESERT_TOWER_PEAKS", "NP highpoints": "NP_HIGHPOINT_PEAKS", "Adirondack 46": "ADK46_PEAKS", "Idaho 12ers": "ID12_PEAKS" };
   console.log("\n// ---- generated, paste into lib/lists.js ----");
   for (const [label, rows] of Object.entries(RESOLVED)) {
     console.log(`export const ${varName[label]} = [`);

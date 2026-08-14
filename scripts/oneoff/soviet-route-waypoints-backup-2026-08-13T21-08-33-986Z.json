@@ -1,0 +1,84 @@
+{
+  "id": "wa_soviet_route",
+  "area_id": "wa_bonanza_peak",
+  "waypoints": [
+    {
+      "lat": 48.199335,
+      "lng": -120.774078,
+      "elev": 3215,
+      "name": "Holden Village / Railroad Creek Trailhead",
+      "note": "Via ferry+bus to Holden Village, then Railroad Creek Trail ~3.5mi to Hart Lake (3,956ft), then off-trail up rock/heather terraces ~3,000ft to a camp near the 7,100ft pass between Bonanza and North Star Peak, then talus to the buttress base.",
+      "type": "Trailhead",
+      "elevFt": 3215,
+      "directions": "No road reaches this trailhead. Drive to Chelan or Field's Point Landing and take the Lady of the Lake ferry roughly four hours up the lake to Lucerne, then ride the Forest Service and Holden Village bus the remaining miles up to Holden Village at about 3,300 ft, where the Railroad Creek Trail begins. Check access before you commit to the ferry: FR 8301 between Lucerne and Holden, and Holden Village itself, closed after the December 2025 flood and landslide, under a Forest Service order running into 2027."
+    },
+    {
+      "lat": 48.2142371,
+      "lng": -120.8541992,
+      "elev": 3956,
+      "name": "Hart Lake",
+      "note": "Reliable, ice-cold water source and the last easy camp option before the route's steep terraces begin, per Cascade Alpine Guide beta.",
+      "type": "Water",
+      "distMi": 3.5,
+      "directions": "From Holden Village follow the Railroad Creek Trail (FST 1256) west up the valley about 3.5 miles to Hart Lake at 3,956 ft. Stay on the main valley trail the whole way; the Holden Lake Trail branches off partway along and is not your turn. The lake is the last easy water and the last straightforward camp before the off-trail ground starts."
+    },
+    {
+      "lat": 48.220816,
+      "lng": -120.857538,
+      "elev": 5500,
+      "name": "Rock and heather terraces",
+      "note": "Steep, loose rock-and-heather terraces gain most of the ~3,000 ft to high camp; exposed Class 3-4 scrambling in spots.",
+      "type": "Junction",
+      "distMi": 4.3,
+      "directions": "Leave the maintained trail at Hart Lake and fill water, because the terraces above hold very little of it. Climb out of the lake basin onto the rock and heather terraces on the west side of the drainage, staying left of the waterfalls and cliff bands that come down off Bonanza's west-facing buttress. There is no path above the lake, and the lower slopes are brushy and loose with exposed Class 3 to 4 scrambling in places, so this leg is routefinding rather than trail walking."
+    },
+    {
+      "lat": 48.227634,
+      "lng": -120.860998,
+      "elev": 7100,
+      "name": "High camp near North Star-Bonanza pass (~7,100 ft)",
+      "note": "Flat, parklike camp with water available, about 2.5 hours above Hart Lake, just south of the pass between North Star Mountain and Bonanza's Southwest Peak.",
+      "type": "Campsite",
+      "distMi": 5.3,
+      "directions": "Keep working up the terrace system as open forest gives way to heather benches and then blocky, loose ground, roughly 3,000 ft of gain above Hart Lake taking most parties two and a half to three hours. Aim for the 7,100 ft pass between North Star Mountain and Bonanza's Southwest Peak. Camp is the flat, parklike bench just south of the pass, with snowmelt water nearby, and it is the last water before the climb."
+    },
+    {
+      "lat": 48.228486,
+      "lng": -120.861431,
+      "elev": 7300,
+      "name": "Buttress base",
+      "note": "Under an hour across talus from camp to the start of the route, roughly 60 ft above the buttress's lowest point; first pitch is a narrow chimney.",
+      "type": "Junction",
+      "distMi": 5.6,
+      "directions": "From camp, cross the talus basin to the foot of the buttress, a little under an hour of walking on loose blocks with no trail. The climb starts at the toe of the buttress about 60 ft above its lowest point, where a narrow chimney takes the first pitch. Parties on a 5 AM start reach the base in time to begin climbing at first light."
+    },
+    {
+      "lat": 48.232747,
+      "lng": -120.863593,
+      "elev": 8300,
+      "name": "Crux pitches, middle third of buttress",
+      "note": "Three sustained pitches of 5.9-5.10a in the middle of the route, the technical crux above a horizontal bypass ledge and cave belay.",
+      "type": "Hazard",
+      "distMi": 6.1,
+      "directions": "Climb the buttress from the toe: a narrow chimney, then broad licheny face climbing along the crest where blocks are worth testing before you weight them, a steepening face that prompts the change into rock shoes, and a thin 5.9. Around pitch 5 the line steps onto the left, east wall to skirt a headwall directly above, and pitch 6 finishes at a sheltered cave alcove that is the standard belay before the hard climbing. Above the cave, sustained chimneys and stemming lead into the three consecutive 5.9 to 5.10a pitches that form the technical crux."
+    },
+    {
+      "lat": 48.237477,
+      "lng": -120.865994,
+      "elev": 9410,
+      "name": "Northeast Ridge traverse to West Peak",
+      "note": "Exposed, gendarmed ridge traverse (~2 hr) from the Southwest Peak to the West Peak before dropping off the NW side via talus and two ~200-ft rappels.",
+      "type": "Hazard",
+      "distMi": 6.8,
+      "directions": "Above the crux band, an easier pitch gains the sloping ramp that cuts diagonally across the buttress crest from east to west. That ramp is the key piece of routefinding on the climb, since it bypasses two headwalls that block a direct line. Follow it and the ledge system beyond onto a wildly exposed knife-edge connection to the upper tower, where the rock turns visibly redder and looser below a final overhanging headwall pitch topping out on the Southwest Peak at 9,320 ft. Only from that summit does the Northeast Ridge traverse toward the West Peak begin, about two hours of gendarmes turned mostly on 3rd and 4th class ledges with one short rappel."
+    },
+    {
+      "lat": 48.235,
+      "lng": -120.8722,
+      "elev": 9320,
+      "name": "Bonanza Peak - Southwest Peak (estimated position)",
+      "type": "Summit",
+      "elevFt": 9320
+    }
+  ]
+}

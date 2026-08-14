@@ -23,12 +23,14 @@ npm run check:icons # the app declares an icon, and every icon it names exists (
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
-npm run check:rappel-readers # no rappelDetail reader out-votes an agreed correction (in build)
+npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -43,6 +45,7 @@ npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
+npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
@@ -55,6 +58,7 @@ npm run check:rappel-single-rope # the headline rappel count is the single-rope 
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
@@ -65,6 +69,7 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -254,6 +259,30 @@ a build error, but a screen that renders wrong or not at all.
     turns this red on a PR whose author changed nothing. The failure separates the two
     cases by reading the app's own `No routes match.` empty state rather than guessing from
     body length, and says which it is; `--route` repoints it.
+  - **That discrimination is FIVE-way since #902, and the branch it gained is the one that
+    was being answered wrongly.** The old fall-through asserted *"the list did not report an
+    empty search, so this is the route list or the search box, **not missing data**"* — a
+    confident claim it had no evidence for. A list that never POPULATED looks identical: no
+    rows, no empty state. On 2026-08-13 that message sent a session hunting through
+    `DbAreaBrowser` while Postgres was taking seconds per query; the route opened fine on the
+    same commit once the database recovered. It now asks instead of inferring — is a spinner
+    still up (`looksLikeSpinner`), and how fast is the database **right now**
+    (`probeDbLatency`, a non-fatal sibling of `assertDbReachable`) — and every branch prints
+    the measured latency rather than a guess.
+    - `assertDbReachable` cannot cover this: it proves the project was alive **before** the
+      walk. A **degraded** project answers `routes?limit=1` in under a second, passes the
+      preflight comfortably, and still cannot fill a route list inside a settle timeout.
+      Dead versus slow are different failures and the preflight only sees the first.
+    - Skipped under `--url`, where local env describes a different deployment than the one
+      being walked — the same exemption the preflight already carries.
+    - The slow-DB wording is deliberately **advisory, not a verdict**: it says re-run once the
+      project answers in well under a second and only investigate the list if it fails again
+      on a healthy one. A guard that cannot be certain should say what it measured, not pick.
+    - Injection-tested: neutering the empty-state regex falls through to the new branches and
+      prints the latency; forcing the threshold to 0 fires the slow-DB branch; a nonexistent
+      `--route` still takes the renamed-or-deleted branch, so the ordering did not regress.
+      The still-loading branch is **not** injection-proven — forcing it needs a genuinely
+      degraded database, and that is recorded rather than claimed.
   - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
     four screens of a six-tab app no render guard had ever opened. `tap()` matches control
     text exactly, and these buttons carry the badge *inside* the control, so `textContent` is
@@ -340,8 +369,29 @@ a build error, but a screen that renders wrong or not at all.
     injected session must satisfy the same gate a production user does. It asserts *who* it
     is signed in as before anything else — otherwise a rejected session would quietly walk a
     demo identity and report green about the wrong account.
-  - Requires the **service key** and `VITE_USE_DB=true`; it exits 1 rather than walking a
-    seed app. Not in `build` or CI, and CI should not hold a service key.
+  - Needs `VITE_USE_DB=true` plus the Supabase url/anon key; it exits 1 rather than walking a
+    seed app. Not in `build` (browser automation), but it **does run in CI** since 2026-08-13.
+  - **It has two fixture modes, and which one runs says where it is.** Locally it creates a
+    pair per run with the **service key** and destroys them after. In CI it signs in to two
+    **durable** accounts with the **anon key only** — CI must never hold the service key, and
+    that requirement is exactly why this guard sat outside CI and went **~40 merged commits
+    without running**. "Hand-run" means "not run" on a loaded machine. The privileged half now
+    happens once, locally: `scripts/oneoff/create-ci-test-accounts.mjs` then
+    `seed-ci-test-fixture.mjs`.
+  - The durable pair is only acceptable because both profiles are **`discoverable=false`**, so
+    they cannot appear in partner browse — the objection against a permanent QA account.
+    `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
+    migration or column-default change could flip it.
+  - **Seeding as the users found something the service key had been hiding.** RLS refuses an
+    `INSERT` of a connection with `status:"accepted"` for *both* accounts (42501) — a real pair
+    must request, then accept. The old fixture wrote that row directly with the service key, so
+    it manufactured a state the app's own flow cannot produce. A group owner also cannot add a
+    member (403); the member seats themselves. This is what CLAUDE.md already warned about —
+    setup that bypasses RLS answers "does the screen render", never "is the policy right".
+  - Ruled out on the way, so nobody re-derives them: a dedicated test **project** (rejected),
+    and **per-run accounts on the anon key** — tempting since `mailer_autoconfirm` is true, but
+    there is no `delete_own_account` RPC and Supabase has no self-delete, so every run would
+    leak an auth user forever.
   - Setup uses the service key, which **bypasses RLS** — so a row existing here is no
     evidence a policy would have let a user create it. This answers "does the screen render
     correctly", never "is the policy right".
@@ -418,6 +468,44 @@ a build error, but a screen that renders wrong or not at all.
     verbatim though the column drives the screen.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
+  - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —
+    deriving it automatically was measured and REJECTED.** `dbRouteToCamel` reads 61 columns
+    against the 54 walked here, so 21 are unwalked; each was probed with a sentinel across all
+    three bases and six sub-tabs. **Every one reaches a screen.** Six are numeric and judged
+    only on "did the page change" (`length_m`, `gain_ft`, `loss_ft`, `dist_km`, `max_angle`,
+    `high_point_ft`, plus `alpine_draws`/`rope_length_m`), the four grade variants and
+    `rope_type`/`ascender` render outright, and the two that *looked* dead are both
+    **used-not-echoed**: `grade_system` selects a format via `gradeSystemFor()` and is never
+    printed, and `auto_generated` picks a provenance chip label in `lib/provenance.js` which
+    needs section content a bare route does not have. So a derived list would carry ~10
+    exemptions to report **zero** findings — bookkeeping that rots, in exchange for nothing.
+    Add a column here by hand when one is added, and re-run that measurement before automating
+    it. `check:field-renders`' subject is columns that reach a screen, not list maintenance.
+  - **A column with ZERO populated rows was unguarded by construction, which is the worst
+    possible moment for it.** The method pulls a REAL value, so a column nothing has written
+    yet has nothing to pull: it reported `NO DATA` and was never checked — exactly when you
+    most want to know the reader is wired, i.e. just after a migration adds the column and
+    before any backfill. `0135` shipped the write for `prot_rating`, `start_type`, `landing`,
+    `pads`, `rock` and `crux`, and #855 then had to prove they reach a screen with a **106-line
+    one-off**, because this guard structurally could not answer it. That one-off is now folded
+    in and deleted — a verification nobody runs is not a verification.
+    - `SENTINELS` injects a distinctive value (`ZZCRUXZZ`) onto a bare route and looks for it,
+      proving the **reader** independently of whether any row is populated. All six render, on
+      Overview, in the TECH STATS tiles.
+    - **Two traps, inherited from #855's probe rather than rediscovered.** `dbRouteToCamel`
+      emits **both** `rock` and `rockType` from the single `rock` column, so patching one
+      reports a healthy column as dead — mimic the MAPPER, never the column. And `pads` is
+      numeric: the tiles render through `<CountUp/>`, which is `useState(0)` reaching its
+      target only inside a `useEffect`, and effects do not run under `renderToStaticMarkup`.
+      So a numeric tile renders **0** and its value can never be asserted here — those are
+      judged on "did the page change", never on the number. Same warning `check:bare` carries.
+    - A third base (`BOULDER`) exists because `landing`, `pads` and `start_type` are shown on a
+      boulder problem and nowhere else; probing them from `crag` reports live columns as dead —
+      the discipline-gating trap this file already records for `RouteGearCheck`.
+    - `NEVER RENDERS (sentinel)` fails the run like any other unrendered column — matched with
+      `startsWith`, not `===`, or the whole sentinel class could report a defect and still exit
+      0. Injection-tested: deleting the `Crux` tile from `RouteDetail` fails naming `crux` and
+      printing the injected patch, and restoring it goes green.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46
@@ -475,6 +563,16 @@ a build error, but a screen that renders wrong or not at all.
       finds 8 matches, so a **sparse** column traverses most of the table; unordered it can
       stop at the first 8 it meets. Narrowing with `id=like.wa_*` does **not** rescue it
       (still timed out on all three).
+      - **Read those numbers as a RATIO, not an absolute, and here is the baseline that says
+        why.** Every figure above was taken while the project was already degrading. Measured
+        again the minute Postgres came back healthy, same three columns, ordering still in
+        place: `approach` **206ms**, `descent` **215ms**, `road` **205ms** — against timeouts
+        for all three an hour earlier. So the ordering is genuinely the more expensive plan
+        and the A/B stands, but it is ~200ms on a healthy database, comfortably inside the 3s
+        anon ceiling. It only becomes fatal when the database is *already* sick. Do not read
+        this note as "the ordered query is slow" and go optimise it; the query is fine, and on
+        2026-08-13 the actual fault was Postgres being unreachable
+        (`503 PGRST002`) while Storage and the gateway stayed healthy.
     - **Indexes were considered and rejected, deliberately.** Partial indexes
       (`(id) WHERE col IS NOT NULL`) would make the ordered query instant, but that is ~45 of
       them on a 205k-row table, maintained on every route write, serving **only this guard**:
@@ -1035,19 +1133,106 @@ a build error, but a screen that renders wrong or not at all.
     how both defects above were caught during an outage. It imports the functions rather than
     copying them; a mirrored copy would agree with the audit whatever the audit did.
   - Fails closed on an empty read: zero routes for a state is a broken scan, never a clean catalog.
-- **`check:rappel-readers`** enforces one sentence: **a function that reads
-  `route.rappelDetail` must gate it on `_rapEdited(route)`**, so a climber's agreed
-  correction out-votes the station-by-station enrichment rather than the reverse. #787 found
-  every reader preferred the enrichment, so on the 155 routes carrying a station list a
-  correction could pass the 3-agree gate and display **nothing**; it fixed the three readers
-  that existed and wrote the rule in a comment above them. #784 then added two more readers
-  and neither carried the guard — five readers, three guarded, and `rappelHeadingCount`
-  renders the section heading, which states a **number**. #791 repaired both.
-  - **Nothing caught it and nothing could**, which is the entire argument for a script over a
-    better comment: the merge was **clean** (the two PRs touch different lines), every gate
-    stayed **green** (the invariant is semantic — an unguarded reader is valid JS that renders
-    a number), and both new functions read as **correct in isolation**. Only a comment three
-    functions above them said otherwise, and nobody adding a sixth reader has to scroll there.
+**A climber's agreed correction must out-vote the enrichment — broken TWICE for real, and
+claimed a third time by three separate sessions who were all wrong.** `_rapEdited` (rappels,
+#787/#791) and `_rackEdited` (rack, #907) say the same sentence about a different column, and
+each was found separately because *the failure never looks like a bug*: the column is
+populated, the section renders, and a plausible value is on screen. Only the climber who made
+the correction knows the screen is wrong, and they have no way to report it.
+  - **`descentText` is NOT a third instance, and the story of how it kept looking like one is
+    the most useful thing here.** `M` maps `descentText`→`descent`, so it reads as a textbook
+    rename rivalry. But **after both merge paths** the writer runs fix-ups, and one of them is
+    `if(o.descent!=null)o.descentText=o.descent;` — its own comment says *"Write both
+    spellings; equal strings make the comparison moot."* So a real contribution leaves
+    `route.descent === route.descentText` and `descentBeta` returns the correction whichever
+    side it reads, **including under the plain length comparison that predates every change to
+    it**. #897 made it prefer `descentText` and called that a fix; #915 made it prefer
+    `descent` and called #897 "strictly worse"; `check:correction-readers` then shipped #915's
+    direction as a *rule*. Three claims, two of them contradicting each other, **all derived
+    from the `var M` line without reading the fix-ups below it**, and each validated by a
+    fixture that set only one of the two properties — so each confirmed what its author
+    already believed. **Read the whole writer before gating a reader**: look the form key up in
+    `M` *and* check the fix-ups that run after both merges (`gainM`→`gainFt`, `lossM`→`lossFt`,
+    `descent`→`descentText`, `rappels`→`_rappelsFromContrib`, `gReq`→`gearTiers.required`).
+  - The two real ones failed **differently**, which is why finding one did not find the next.
+    `rappelDetail` displayed **nothing**; `rack` was not discarded at all — the
+    contribute form's `rack` key merges into **`gearTiers.required`**, which `routeRackFor` does
+    not read, so the correction rendered in the GearTiers panel while the RACK box **kept
+    showing the value it replaced**. One Overview tab asserting two different racks for one
+    route, with nothing saying which is current, and the form still offering the superseded
+    text as "current" to the next climber.
+  - **The gate is load-bearing, not defensive**, and the rack case is the clearest example:
+    `gearTiers.required` is populated by seed data and enrichment on routes nobody has touched,
+    so preferring it unconditionally inverts the rule for the whole catalog. Proven rather than
+    argued — dropping `_rackEdited` fails two controls in
+    `scripts/oneoff/probe-rack-correction-reaches-the-rack-box.mjs`.
+  - **Only rendering can settle these.** Every identifier is bound, every column is populated,
+    and grep cannot tell "the correction reaches a screen" from "the correction reaches *the*
+    screen it was made on". The rack probe finds the hosting sub-tab rather than assuming it,
+    then slices the markup around the RACK heading — because the correction *was* on the tab,
+    just not in the box, and a tab-wide match reports that as fixed. Same vacuous-pass shape as
+    `check:bare` matching the Safety tab's "Fire & smoke" link.
+  - **`check:correction-readers` now enforces the general rule**, in the build. It used to be
+    `check:rappel-readers` and guarded only the first; `rack` was covered solely by a
+    `scripts/oneoff/` probe that **nothing runs**, so a third instance would have shipped
+    silently. See its own entry below.
+
+- **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
+  **every** contributable column rather than rappels alone: **where a contribute-form field
+  competes with an enrichment column, the reader must prefer the CLIMBERS' value once
+  `_contribFields` records that they agreed it.** The rule has broken twice, in shapes sharing
+  no code and no symptom — `rappelDetail` (#787/#791, readers preferred the station list so a
+  correction displayed **nothing**) and `rack` (#907, the RACK box read `gearTiers.required`
+  while the form writes `rack`, so the box the climber edited kept the value they had
+  replaced). Fixing one never found the next; **do not assume a third looks like either.**
+  - **It was widened because `rack` was guarded only by a `scripts/oneoff/` probe, and nothing
+    runs those.** The general rule was enforced nowhere, so a third instance would have shipped
+    in silence. That is the gap it closes, and it is why this is a build gate rather than a
+    probe.
+  - **Three rules.** (1) Every reader of `rappelDetail` must carry `_rapEdited`. (2) The named
+    **precedence** function — the one that chooses between the climbers' column and the
+    enrichment — must consult the guard, and where a rename is **live** must return the
+    **M destination**. (3) Fail closed on an **unregistered** `_<x>Edited` helper, since that
+    helper is the fingerprint of a third rivalry; a registered guard or precedence function
+    that no longer exists fails as stale.
+  - **The rename map is READ FROM THE APP, never restated**, and so is whether the rename still
+    matters. Both merge paths file a contribution through `var M` (`o[M[k]||k]` and `M[f]||f`),
+    and `M` carries `{descentText:"descent"}`. But **a rename only creates a rivalry if the two
+    spellings can disagree**, and after both merges the writer runs
+    `if(o.descent!=null)o.descentText=o.descent;` — so they cannot. The guard **detects mirrors
+    rather than declaring them**: while one stands, that rename is reported moot and skipped;
+    delete it and the rename rule switches back on by itself. Position is checked as well as
+    presence, since a mirror upstream of a merge would simply be overwritten by it.
+    - **This is the correction to three earlier readings of the same code**, including this
+      guard's own first version, which asserted #915's direction as a rule and would therefore
+      have failed a correct refactor. #897, #915 and that first draft each derived a rule from
+      the `var M` line and stopped there. It fails `ANCHOR LOST` if `var M` moves, and fails if
+      either merge path stops routing through it.
+  - **`everyReaderGates` is true for exactly one column, deliberately.** Asserting it for the
+    other two was this guard's own first-draft mistake: it flagged `hasPlanContent` (an
+    existence OR), `routeHasGlacierTravel` and `simulMentioned` (keyword blobs) and
+    `proseSources` — four functions that read `.descentText` correctly and make no precedence
+    decision. #915 had already swept the other 15 renames and said so. **A guard that flags
+    correct work teaches people to ignore it**, which is worse than the hole it closes.
+  - **`rack` is deliberately NOT rename-checked**, and that is measured: a rack contribution
+    is written to **both** `o.rack` and `o.gearTiers.required`, so returning
+    `gearTiers.required` under the guard really does hand back the climbers' value. It is the
+    same mirroring the descent fix-up performs, just done by the writer rather than by a
+    trailing assignment — **neither column can be got the wrong way round.**
+  - **No rename in the app currently needs policing**, which is a finding rather than a gap:
+    the sweep of all 15 `M` renames found no other reader making a display-precedence decision
+    across one. Rule 2 is armed and idle, and the mirror detection is what keeps it honest —
+    it will arm itself the moment a mirror is deleted.
+  - **Nothing caught the two real ones and nothing could**, which is the entire argument for a
+    script over a better comment: the merges were **clean** (the PRs touch different lines),
+    every gate stayed **green** (the invariant is semantic — an unguarded reader is valid JS
+    that renders a plausible value), and the new functions read as **correct in isolation**.
+    Only a comment three functions above them said otherwise, and nobody adding a sixth reader
+    has to scroll there.
+  - **What it does NOT settle, and could not:** whether the value reaches *the screen the
+    correction was made on*. `rack` rendered on the right tab and in the wrong box. Only
+    rendering answers that, which is what the `scripts/oneoff/` probe is for; this guard proves
+    the precedence decision, not the destination.
   - Scans **per function**, not per file, and that scoping is what keeps it honest: the long
     explanatory comment about this very rule sits at top level between functions, so a
     whole-file grep would report a phantom sixth reader. Function bodies come from balancing
@@ -1061,8 +1246,18 @@ a build error, but a screen that renders wrong or not at all.
     the app is clean. A plain `includes(".rappelDetail")` also matches `.rappelDetailX`, so
     that branch could never fire until the match was word-bounded (injection case 3, the
     second first-draft false pass).
-  - Injection-tested, 7 cases at the bottom of the script; **two of them failed on the first
-    draft and both were false passes**. Neither was visible by reading the script.
+  - Injection-tested, 9 cases plus 4 that pin the **mirror behaving as a switch** (mirror on +
+    reader flipped must PASS; mirror deleted + reader flipped must FAIL). **Two of the original
+    seven failed on the first draft and both were false passes**, neither visible by reading
+    it. Each case proves the edit **landed by checksum** before judging the guard — which
+    earned itself twice: case 1's pattern did not match at first and the harness reported
+    *"edit never landed"* rather than *"guard missed"*, and later the whole baseline went stale
+    the moment #915 merged (it was pinned to that branch, so two cases silently ran against a
+    file predating the rack work). **A harness baseline pinned to a branch rots when the branch
+    merges** — pin it to main. The widening added its own first-draft failure in the other
+    direction: `[^)]*` in the guarded-return pattern **cannot cross the `)` inside
+    `_descEdited(r)`**, so every reader reported as an unrecognised shape — noisy rather than
+    silent, and caught at once.
 - **`check:real-profile-rows`** enforces one sentence: **a row must not print a level or a
   trust score for someone who has neither.** Seed climbers carry `level` and enough history
   for `vScore()` to mean something; a real profile carries neither, so the subtitle renders
@@ -1098,13 +1293,13 @@ a build error, but a screen that renders wrong or not at all.
     resolver plus three fixes, and #776 then merged from a branch based on **pre-#778 main** —
     its squash silently **reverted all of it**. Clean merge, no conflict, every check green,
     and main went back to shipping the bugs. The only thing that would have noticed was a step
-    in a one-off nobody runs. Same reasoning as `check:rappel-readers`.
+    in a one-off nobody runs. Same reasoning as `check:correction-readers`.
   - A site passes when the **same expression** also consults real profiles — what `CrewCard`'s
     `mem` does (the #569 fix). That is a correct answer, not an exemption.
   - **Comments are stripped before any test**, and it is load-bearing: two call sites explain
     this rule in a comment that *names* `crewMemberById`, so leaving comments in would let a
     site pass on prose about the fix rather than the fix. The false pass
-    `check:rappel-readers` already records.
+    `check:correction-readers` already records.
   - Six exemptions, each with a **measured** reason (seed-only lists: `crewReqIn`,
     `crewJoinIn` twice, the seed invite card, `GuideDashboard`'s inquiries, and a
     notification whose result is guarded by `if(c)` so a miss opens nothing). A **stale**
@@ -1264,6 +1459,42 @@ a build error, but a screen that renders wrong or not at all.
     in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
     wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
     missed"* — **prove the injection landed before believing what the guard says about it.**
+- **`check:toast-reachable`** asserts that every screen `App` returns can **show a toast**.
+  `showToast` sets state, but the toast only appears if its renderer is mounted in whatever
+  `App` returned — and `App` returns **early on nine screens** (legal, session restore, auth,
+  password recovery, the profile editor, both guide screens, the calendar) while the toast
+  rendered only in the **final** return. On those nine the message went into state nothing was
+  rendering and the 2.6s timer then cleared it. **13 messages could never reach a user.** Static,
+  so it sits in `npm run build`.
+  - The three that matter: **all 11 guide-dashboard messages**, including four RLS-failure
+    warnings (a guide taps Save and the screen does nothing whether the write succeeded or the
+    database refused it — and those handlers were wrapped in try/catch *precisely* because "the
+    rejection became an unhandled promise and the button did nothing at all", so the wrap landed
+    and the toast still could not render); the guide application's **submit failure and only the
+    failure** (its success path calls `onClose()` so its toast appears, the `catch` does not);
+    and **"Join a group to create events"**, which is the *default* outcome of the Calendar's
+    "+ Create an event" button — `GROUPS` is empty behind `DEMO_FILLERS` and `joinedGroups`
+    starts empty, and the early `return` skips `setCalOpen(false)`. That is the **zero state**,
+    not an edge case.
+  - The fix is **one** `const _toastEl` hoisted above the early returns and referenced by all
+    nine — one definition, nine renderers, nothing to drift. The nine returns were edited **by
+    condition, never by line number**: this file packs many declarations onto one physical line,
+    and an unmatched anchor was made fatal rather than a silently shorter edit list.
+  - **No existing guard could see this, and the near-misses are the point.** `check:zindex`
+    enforces that the toast beats every other z-index; `check:overlay-portals` enforces that it
+    escapes the stacking context. Both ask whether a **mounted** toast is *visible*. Neither asks
+    whether it is mounted. A toast can satisfy every ceiling and portal rule in the app and still
+    be absent from the screen that fired it.
+  - **`check:zindex` went red the moment the fix landed**, because its anchor was the inline
+    `{toast&&` shape at the render site. That is the guard working — it refused to report on a
+    file it no longer understood. It now accepts the hoisted `_toastEl=toast&&` shape too, and
+    matching **neither** stays fatal.
+  - Scoped with Babel to **App's own top-level returns** — a `return null` inside a nested
+    component is not a screen. Fails **closed** three ways: a renamed `App`, a renamed
+    declaration, or fewer than five returns found each report a *broken scan*, never a clean app.
+  - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
+    checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
+    not a screen.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -1287,6 +1518,86 @@ a build error, but a screen that renders wrong or not at all.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
+  discipline that can benight a party, and that it merges its **two** stores into one section.
+  Static SSR, so it sits in `npm run build`.
+  - **The mount has already been silently lost once**, which is why this is a script and not the
+    comment it replaces. It lived on a dense line, main changed the same line, and the merge kept
+    main's copy — leaving the panel **defined and rendered nowhere**. Nothing caught it:
+    `check:dead-props` sees props, not unmounted components; `check:refs` sees bindings, and every
+    binding was fine; and `routes.bivy` was populated, so any coverage check looked healthy. The
+    repair left a comment saying "confirm BIVY still reaches the screen" — the exact shape
+    [[semantic-invariants-need-a-script]] records as rotting.
+  - **Two stores, one section.** `route.bivy` holds researched sites (capacity/water/permit/notes);
+    a **Campsite waypoint** is the same fact recorded on the track. Rendered apart, a route could
+    show a camp pin under WAYPOINTS while this panel said nothing — two answers to one question.
+    `campSites()` merges them and dedupes on **name**, the only field both stores reliably carry.
+  - **It moved off the Safety tab (2026-08-13) and gained `scrambling`.** Where you sleep is a
+    planning decision, not a hazard; on Safety it sat behind a tab nobody opens for logistics. And
+    a scramble that overruns benights a party exactly like an alpine route. The gate reads
+    `catOf(route)`, **not** `route.discipline`, because `catOf` folds `rock` into trad/sport first.
+  - It renders on a day-trippable route too, deliberately: the party that gets benighted on a
+    "car-to-car" route is precisely who needs it, so *no bivy plan* is not *no bivy*.
+  - **Count inside the panel, never across the tab.** The Planner also renders ROUTE TRACK and its
+    map legend, which name the same waypoint legitimately — a whole-tab count reads 2 for correct
+    code. The first run of this script did exactly that and reported a dedupe bug that did not
+    exist. The slice is bounded by the next heading, and a missing `ROUTE TRACK` fails as
+    `ANCHOR LOST` rather than passing.
+  - **Match the un-escaped text.** `renderToStaticMarkup` emits `CAMPING &amp; BIVY`; see
+    [[ssr-probes-must-match-escaped-html]]. Assertion 0 proves the probe can fire at all, so a
+    renamed heading reports `ANCHOR LOST` instead of a vacuously green run.
+  - **Known gap, printed rather than hidden:** `bivy` is **not contributable** — it is in neither
+    `FIELDS` nor `SS`, and the panel's edit pencil opens the *waypoints* editor. A climber cannot
+    add or correct a camp. That needs a structured array editor and is not built.
+  - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
+    own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
+    dropped the waypoint half of the merge).
+- **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
+  Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
+  coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by
+  different enrichment passes, neither reading the other, and nothing had ever compared them.
+  **155 of 630 WA routes disagreed by more than 500 m**, p95 15 km, worst 216 km. No coverage
+  check can see this: both columns are populated, both values are plausible coordinates.
+  - **The cause is name collision**, the same root cause as the route-id note above, one level up:
+    there are two "White River Trailhead"s in WA **130 km apart** and two "Lake Ann"s **79 km**
+    apart, so Little Tahoma carried the Lake Wenatchee White River and Black Peak carried Mount
+    Baker's Lake Ann. **A name is not an identity.**
+  - **It is user-visible, and the two surfaces disagree on which record wins.** `TrailheadCard`
+    (the only directions control on the Plan tab) reads `approach_logistics` **first**; the crag
+    Overview "Directions to crag" button reads the **pin** first. So on a disagreeing route the
+    trailhead you are sent to depends on which screen you are looking at. **Deliberately not
+    "fixed" by swapping a priority** — which record is right varies per route, so that would only
+    move the error. The repair is the data.
+  - **Distance to the peak names the guilty record; the pin-vs-blob comparison cannot.** Two
+    coordinates disagreeing says only that one is wrong. `scripts/oneoff/probe-logistics-trailhead-vs-peak.mjs`
+    anchors on the route's own peak from `areas` — a third, independent record — exactly as
+    `trackOffItsPeak` does in `audit:waypoints`. That settled the 7 gross cases in #886.
+    **Its MIRROR is empty**: at that scale the *pin* is never the far one, so the blob is the
+    wrong record every time. That asymmetry does **not** generalise downward — below 25 km the
+    pin is wrong at least as often, which is why the rest had to be read rather than measured.
+  - **Distance alone never condemns a trailhead.** 236 WA routes sit >8 km from their peak and
+    almost all are correct: Hozomeen, the Mox Peaks, Ragged Ridge and the Pasayten summits are
+    genuinely 28-31 km from the road. Eight such routes were deliberately left alone.
+  - **A shared `trailheadDirection` string is NOT a contamination fingerprint**, and the first
+    draft said it was. Measured, those repeats are mostly legitimate — "From the Ross Dam
+    Trailhead on SR-20" really is the access for **ten** routes across the Pickets and Ross Lake,
+    the Stehekin ferry really does serve Flora/Trapper/Tupshin. **Remote peaks share one distant
+    trailhead; that is what remote means.** Printed as context, never counted.
+  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m. What
+    remains is sub-kilometre slop plus peaks with two genuine approaches where **both records are
+    correct** — `wa_lundin_peak_west_ridge` is the clean example. Do not sweep those to zero.
+  - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
+    declare a **winner, never a coordinate**: the script reads both records off the row and copies
+    the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
+    needing a THIRD coordinate cannot be expressed at all** — the exclusion is structural rather
+    than a judgement made correctly 102 times. That is what made unreviewed subagent triage safe
+    to ship, with `scripts/oneoff/verify-slice-ac-fixes-reference-the-row.mjs` measuring which
+    recommendations actually referenced the row (26 of 34; the 8 that did not were one group, all
+    off by exactly 454 m).
+  - Read-only and fails closed on an empty read. **Not a build gate** — a property of the DB, not
+    the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
+    the service key only because the anon role's 3s `statement_timeout` cannot complete a read of
+    two jsonb columns over 8k rows, and it issues no write. Retries are printed, not absorbed.
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.

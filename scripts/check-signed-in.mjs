@@ -57,6 +57,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
+import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
 
@@ -166,8 +167,26 @@ try {
   }
   const page = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
 
-  log("creating fixture accounts...");
-  fixture = await createFixture(log);
+  // Two ways to get a signed-in account, and which one is available says where we are.
+  //
+  // LOCALLY: create a pair per run with the service key and destroy them after, so nothing
+  // is left in the production project.
+  //
+  // IN CI: sign in to two DURABLE accounts with the anon key. CI must never hold the service
+  // key, and that is why this guard sat outside CI for so long — ~40 merged commits with no
+  // run, because "hand-run" means "not run" on a loaded machine. The privileged work happened
+  // once, locally (scripts/oneoff/create-ci-test-accounts.mjs and seed-ci-test-fixture.mjs);
+  // all CI does is exchange a password for a session, which is what a browser does.
+  //
+  // The durable pair is marked discoverable=false so it cannot appear in partner browse, and
+  // durable-fixture re-checks that on every run rather than trusting the day it was set.
+  if (durableCredsPresent()) {
+    log("signing in to the durable CI accounts...");
+    fixture = await durableFixture(log);
+  } else {
+    log("creating fixture accounts...");
+    fixture = await createFixture(log);
+  }
   const pageErrors = [];
   page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 
@@ -523,7 +542,13 @@ try {
         console.error(`\nFIXTURE NOT FULLY REMOVED: ${leaked.join(", ")} — delete these by hand; a leftover profile shows up in partner search for real users.`);
         process.exitCode = 1;
       } else {
-        log("fixture accounts removed.");
+        // Say which thing actually happened. In durable mode nothing was created, so
+        // "accounts removed" would be a small lie about the one property that makes a
+        // permanent pair acceptable — and the next person reading a CI log would believe
+        // teardown ran when there was nothing to tear down.
+        log(durableCredsPresent()
+          ? "durable CI accounts left in place (nothing was created, so nothing was removed)."
+          : "fixture accounts removed.");
       }
     }
   }

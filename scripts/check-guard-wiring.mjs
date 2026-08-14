@@ -81,11 +81,6 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
-  "check-signed-in.mjs":
-    "requires the Supabase SERVICE KEY and VITE_USE_DB=true, and exits 1 rather than " +
-    "walking a seed app. CI must not hold a service key, so this is deliberately " +
-    "hand-run only. Setup with that key also bypasses RLS, so it answers 'does the " +
-    "screen render' and never 'is the policy right'.",
   "check-enrichment-traceable.mjs":
     "takes an enrichment BATCH FILE as its argument and verifies that every number and " +
     "load-bearing feature word in a generated segment also appears in that route's own " +
