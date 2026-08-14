@@ -1,26 +1,36 @@
 // Does a climber's agreed descent correction actually reach the screen?
 //
-// THIS TEST WAS WRONG IN #897 AND SO WAS THE FIX IT GUARDED. Both hand-modelled the merge,
-// and both got it backwards in the same direction, so they agreed with each other and passed.
+// THIS FILE HAS BEEN WRONG TWICE, IN OPPOSITE DIRECTIONS, AND PASSED BOTH TIMES. That is the
+// most useful thing in it, so read this before trusting any claim about descentBeta.
 //
-// The merge does NOT store a contribution under its form key. Both paths in ClimbMatch.jsx
-// write through a rename map:
+// The merge in ClimbMatch.jsx does TWO things to a descent contribution:
 //
-//     local:  o[M[k]||k] = CONV[k] ? CONV[k](e[k].value) : e[k].value
-//     DB:     var pk = M[f]||f ; ... o[pk] = ...
+//   1. writes it through the rename map M, which has {descentText:"descent"}
+//        local:  o[M[k]||k] = CONV[k] ? CONV[k](e[k].value) : e[k].value
+//        DB:     var pk = M[f]||f ; ... o[pk] = ...
+//      -> o.descent = the correction
 //
-// and `M` contains {descentText:"descent"}. So a correction submitted against the form key
-// `descentText` lands in **route.descent**, while **route.descentText** keeps the untouched
-// enrichment prose. #897 returned route.descentText when _descEdited was true -- i.e. it
-// returned the enrichment and discarded the correction, which is STRICTLY WORSE than the
-// length comparison it replaced (before it, a correction at least won when it was longer).
+//   2. then MIRRORS it back, AFTER both paths (added in #787):
+//        if(o.descent!=null) o.descentText = o.descent;
+//      -> o.descentText = the correction too
 //
-// The sibling _rapEdited got this right and is the model to copy: it reads route.rappels --
-// the M DESTINATION -- and uses the flag only to stop the enrichment suppressing it.
+// So a real contribution leaves route.descent === route.descentText, and descentBeta returns
+// the correction WHICHEVER side it prefers -- including under the plain length comparison that
+// predates both changes.
 //
-// So this test DERIVES the destination property from the real M map rather than asserting a
-// hand-written property name. A test that hand-models the writer cannot catch the writer and
-// the reader disagreeing; it can only confirm that the author believed the same thing twice.
+//   #897 set only descentText in its fixture and "proved" a fix that changed nothing.
+//   #915 set only descent in its fixture and "proved" a regression that did not exist,
+//        then asserted in its PR body that #897 had discarded the correction. It had not.
+//
+// Both omitted step 2. Measured by rendering both variants against a faithful fixture, they
+// are behaviourally identical. THE LESSON IS NOT "hand-modelling is fine if you are careful":
+// it is that a fixture built from a partial reading of the writer will confirm whatever the
+// author already believed. Derive what you can (this file reads M out of the source) and
+// detect the rest (mirrorsDescent) rather than typing in a shape.
+//
+// The genuine instance of this class is `rack` -- see
+// probe-rack-correction-reaches-the-rack-box.mjs, where the correction really could not reach
+// the RACK box and the fix is load-bearing.
 import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs";
@@ -44,6 +54,10 @@ function literalAfter(src, anchor) {
   for (; e < src.length; e++) { const c = src[e]; if (c === "{") d++; else if (c === "}") { d--; if (!d) break; } }
   return src.slice(k, e + 1);
 }
+// The mirror is what makes both readings of descentBeta equivalent. Detected, not assumed --
+// if it is ever removed, which side the reader prefers starts to matter and this test says so.
+function mirrorsDescent(src) { return /if\(o\.descent!=null\)o\.descentText=o\.descent;/.test(src.replace(/\s+/g, "")); }
+
 const mLit = literalAfter(cm, /\bvar M=\{/);
 if (!mLit) { fail("ANCHOR LOST: `var M={` not found -- cannot learn where a contribution lands"); process.exit(1); }
 const M = {};
@@ -112,10 +126,23 @@ const c0 = strip(render({ ...base, descent: "Reverse the ascent route.", descent
 if (!c0.includes("ZQENRICHZQ")) fail("CONTROL: with no contribution the enriched descent stopped rendering");
 else ok("control: with no contribution, the longer enriched prose wins");
 
-// ── THE CASE. Build the post-merge route the way the merge actually builds it: the
-//    correction goes to M[formKey], the enrichment column is untouched.
-const merged = { ...base, descentText: ENRICHMENT, _contribFields: [FORM_KEY] };
+// ── THE CASE. Build the post-merge route the way the merge ACTUALLY builds it, which took
+//    two attempts to get right and both wrong versions passed while claiming something false.
+//
+//    The merge does TWO things, and modelling either one alone gives a confident wrong answer:
+//      1. writes the contribution through M  ->  o.descent = correction
+//      2. then MIRRORS it back (#787)        ->  if(o.descent!=null) o.descentText = o.descent
+//
+//    #897's test set only descentText and "proved" a fix that changed nothing. #915's test set
+//    only descent and "proved" a regression that did not exist. Both omitted the mirror, in
+//    opposite directions. Set BOTH, because that is the state a real contribution produces.
+const mirrored = mirrorsDescent(cm);
+if (!mirrored) fail("the descent->descentText mirror is gone from ClimbMatch.jsx -- re-read the merge");
+else ok("the merge mirrors o.descent back into o.descentText (#787)");
+
+const merged = { ...base, _contribFields: [FORM_KEY] };
 merged[DEST] = CORRECTION;
+if (mirrored) merged.descentText = CORRECTION;
 const t1 = strip(render(merged, tab));
 const hasFix = t1.includes("ZQFIXZQ");
 const hasStale = t1.includes("ZQENRICHZQ");
@@ -123,7 +150,7 @@ console.log("");
 console.log("  after a descent correction merges:");
 console.log("    correction on screen        :", hasFix);
 console.log("    superseded enrichment shown :", hasStale);
-if (!hasFix) fail(`the correction (in route.${DEST}) does not reach the screen -- the reader prefers the enrichment`);
+if (!hasFix) fail(`the correction does not reach the screen (wrote route.${DEST}` + (mirrored ? " + the mirrored descentText" : "") + `)`);
 else if (hasStale) fail("both the correction and the superseded enrichment render");
 else ok("the correction replaces the enriched descent");
 
