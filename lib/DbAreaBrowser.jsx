@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useAreaTopContributors, useProfilesByIds, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useAreaSearch, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
@@ -52,8 +52,21 @@ const backRow = (onBack, title, C) => (
   </div>
 );
 
+// area_top_contributors returns raw auth uids, never names -- db.js says so above the hook,
+// and this rendered `c.contributor` straight into the row, so the crag page would have named
+// its top contributor as a uuid. Invisible so far only because the contributions ledger is
+// empty; the first climber to file anything would have seen it. Resolve through profiles, and
+// fall back to "Climber" rather than to the id, the same answer TopContributors gives.
+//
+// useProfilesByIds sits ABOVE the empty-data return on purpose: a hook after a conditional
+// return is the #377 shape and check:hooks fails the build for it.
 function DbTopContributors({ areaId, C, ActionIcon }) {
   const { data } = useAreaTopContributors(areaId, 3);
+  const profiles = useProfilesByIds((data || []).map((r) => r.contributor));
+  const nameOf = (uid) => {
+    const p = (profiles.data || []).find((pp) => pp.id === uid);
+    return (p && p.name) || "Climber";
+  };
   if (!data || !data.length) return null;
   const medal = ["#d4af37", "#c0c0c0", "#cd7f32"];
   return (
@@ -63,7 +76,7 @@ function DbTopContributors({ areaId, C, ActionIcon }) {
         <div key={c.contributor} style={{ display: "flex", alignItems: "center", gap: 9, marginTop: i ? 9 : 0 }}>
           <span style={{ width: 18, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><ActionIcon name="award" size={15} color={medal[i]} /></span>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.contributor}</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{nameOf(c.contributor)}</div>
             {i === 0 ? <span style={{ display: "inline-block", fontSize: 10.5, fontWeight: 700, color: C.amber, background: C.amberBg, padding: "1px 7px", borderRadius: 9, letterSpacing: 0.3, marginTop: 2 }}>{"★ Top Contributor"}</span> : null}
           </div>
           <span style={{ fontSize: 12, fontWeight: 700, color: C.textMuted, flexShrink: 0 }}>{c.n}</span>
