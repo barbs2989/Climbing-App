@@ -14,7 +14,16 @@ const j = async q => {
   if (!r.ok) throw new Error(r.status + " " + (await r.text()).slice(0, 140));
   return r.json();
 };
-// Mirrors routeSearchScore. Replicated, not imported — it is module-private in lib/db.js.
+// Mirrors routeSearchScore. REPLICATED, not imported — it is module-private in lib/db.js.
+//
+// THAT IS A KNOWN FLAW IN THIS PROBE, and it is the same class it exists to measure: a copy is a
+// FOSSIL the moment the real function is edited, so this would keep printing confident numbers
+// about a scorer that no longer exists — failing silently at exactly the moment a ranking change
+// made it matter. Prefer scripts/oneoff/measure-route-search-top-n.mjs, which LIFTS the scorer
+// out of lib/db.js by brace-matching, fails with ANCHOR LOST on a rename, and asserts the lifted
+// function's behaviour before believing any number it returns. Keep this one only for the
+// three-way BEFORE/SINGLE/SPLIT comparison, which that probe does not do; if the tiers below stop
+// matching lib/db.js, delete this file rather than repairing the copy.
 const score = (row, needle) => {
   const rn = String(row.name || "").toLowerCase();
   const an = String((row.areas && row.areas.name) || "").toLowerCase();
