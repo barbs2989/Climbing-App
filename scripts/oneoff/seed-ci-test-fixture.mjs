@@ -146,7 +146,21 @@ async function run() {
   if (!mateRow?.length) {
     await insertAsEither("group_members", { group_id: groupId, user_id: mate.id, role: "member" }, owner, mate, "group member");
   }
-  console.log(`  group owned by the fixture, mate seated as member`);
+  // Hide it. A public group is readable by everyone (`groups read public or member`) and
+  // useMyGroups() lists every group it can see, newest first — so this seeded group sat at the
+  // top of every real climber's Groups tab. The durable PROFILES were made discoverable=false
+  // for exactly this objection; the group they own was missed. Idempotent, so it also repairs
+  // a group seeded before this line existed.
+  //
+  // It has to be created public and flipped: inserting with visibility:'private' is refused
+  // with 42501 by the live RLS policy, which 0090's file does not describe. Measured, not read.
+  const { body: vis } = await as(owner, `groups?id=eq.${groupId}`, {
+    method: "PATCH", body: JSON.stringify({ visibility: "private" }),
+  });
+  if (vis?.[0]?.visibility !== "private") {
+    throw new Error(`could not make the seeded group private (got ${JSON.stringify(vis?.[0]?.visibility ?? vis)}) — it would show in every real user's Groups tab`);
+  }
+  console.log(`  group owned by the fixture, mate seated as member, visibility private`);
 
   // ---- the owner's own logbook shape, and the connection the Crew tab renders ----
   const solo = [

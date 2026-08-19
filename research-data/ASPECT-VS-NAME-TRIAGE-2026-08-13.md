@@ -1,7 +1,10 @@
 # Name vs aspect: 12 disagreements, and the `face` column decides most of them
 
 > **RESOLUTION LOG (updated 2026-08-13, after published-source research).**
-> **4 settled, 8 still open** (was 3/9 — the Ruth Mountain rename SQL sat written-but-unapplied for a day
+> **8 settled, 5 still open** (2026-08-14 round: Formidable merged, both Tatoosh rows and
+> Mount Christie renamed off published sources; see the sections at the foot of this file)
+>
+> ~~4 settled, 8 still open~~ (was 3/9 — the Ruth Mountain rename SQL sat written-but-unapplied for a day
 > and was applied on 2026-08-14; see the row below). The bar for acting is a *published* statement, not internal
 > agreement — the catalog is what is in doubt, so `face` agreeing with `aspect` raises suspicion
 > about the name but cannot supply the right one.
@@ -11,8 +14,8 @@
 > | `wa_forbidden_peak_east_face_catscratch` | **PHANTOM — not a route at all** | **DELETED.** See below. |
 > | `wa_ruth_mountain_south_slopes` | **NAME WRONG** | **RENAME APPLIED 2026-08-14** -> `North Face / Ruth Glacier`, verified by re-read; audit 10 -> 9 |
 > | `wa_chimney_rock_west_face` | **Idaho route, corroborated** | removal recommended, not applied — needs a human |
-> | `wa_spire_point_southwest_face` | **UNRESOLVED** | route naming needs Beckey; no source settles it |
-> | `wa_pinnacle_peak_tatoosh_r1`, `wa_plummer_peak_r1` | **name suspect, UNRESOLVED for rename** | data self-consistent; no published route name found |
+> | `wa_spire_point_southwest_face` | **UNRESOLVED — re-checked 2026-08-14** | searched again; Beckey's Cascade Alpine Guide really is the only comprehensive source for Ptarmigan-Traverse peaks and it is not online. Left alone. |
+> | `wa_pinnacle_peak_tatoosh_r1`, `wa_plummer_peak_r1` | **BOTH RENAMED 2026-08-14** | published descriptions of the SIDE were found — the missing piece. `North Gully` -> `South Gully`, `Southeast Slopes` -> `North Slopes`. |
 > | the remaining 6 | not yet researched | — |
 >
 > **`wa_forbidden_peak_east_face_catscratch` was the big one, and the answer was not a rename.**
@@ -184,3 +187,65 @@ of this merge that can destroy good data. They are in the snapshot to be judged 
 **`check:sql` refused this delete and was right to**: its twin test matches on NAME, and this
 pair's whole problem was a twin named differently. Overridden deliberately, with the twin
 confirmed present and the delete itself guarded on `exists(... south_face)`.
+
+---
+
+## 2026-08-14 round: three more settled, and two deliberately not
+
+Four of the remaining rows were researched against published sources. The bar this file set —
+a *published statement*, not internal agreement — held: it settled three and refused two.
+
+### Settled
+
+**`wa_pinnacle_peak_tatoosh_r1` — "Pinnacle Saddle / North Gully" -> "Pinnacle Saddle / South Gully".**
+aspect S, face "South face via gullies". The Mountaineers, willhiteweb and WTA trip reports all
+describe working "around the SOUTH side to steep paths up loose rock and rock gullies" from
+Pinnacle Saddle, and call the scramble "the south gully". Applied in
+`audits/sql/2026-08-14-tatoosh-saddle-route-directions.sql`.
+
+**`wa_plummer_peak_r1` — "Pinnacle Saddle / Southeast Slopes" -> "Pinnacle Saddle / North Slopes".**
+aspect N, face "North side/ridge directly above the Pinnacle-Plummer Saddle". SummitPost, Visit
+Rainier and WTA: approaching from the saddle "the trail passes on the NORTH flank of Plummer",
+and "snow often clings to these steep NORTHERN slopes". Same file.
+
+These two were flagged separately by the audit and turned out to be **the same mistake made twice
+on one saddle** — both rows name a direction that is neither the aspect nor the approach. Only the
+direction word changed; the "Pinnacle Saddle /" prefix is accurate for both and is kept.
+
+**`wa_mount_christie_west` — "West Slopes (Standard)" -> "North Couloir / Christie Glacier".**
+aspect N, and `face` already said "the peak's only well-documented line, approaching via its north
+side". The published standard is North Couloir -> North Saddle -> Christie Glacier -> East Col ->
+Southeast Ridge, and the Christie Glacier "resides in the north cirque below the main summit".
+**There is no published "West Slopes" route at all.** Applied in
+`audits/sql/2026-08-14-mount-christie-route-name.sql`.
+
+### Refused, with the reason
+
+**`wa_spire_point_southwest_face` — still unresolved, and this is a re-confirmation not a skip.**
+Searched again specifically to test whether the NAME might be the right half here (Spire Point's
+classic line really is often called the Southwest Face, which would make `aspect: E` the wrong
+one). Nothing online settles which face the catalog's row describes; Beckey's *Cascade Alpine
+Guide* is the only comprehensive source for Ptarmigan-Traverse peaks and it is not online. **Do
+not resolve this from `face` alone** — that is the internal-agreement shortcut this file rules out.
+
+**`wa_mount_cameron_standard` — not a two-way disagreement, a three-way one.** Name says Southeast
+Slopes, `aspect` says N, and `face` says "West ridge / false-summit traverse from Cameron Pass".
+The tiebreaker method this file is built on — *where `face` agrees with `aspect`, the name is the
+odd one out* — **does not apply**, because face and aspect disagree with each other too. Published
+sources say only "from Cameron Pass, turn up the ridge toward Cameron", which does not name a
+compass side. Needs a source that does, or a look at the row's waypoints.
+
+> **One published fact found later the same day, which narrows it without settling it.**
+> Wikipedia's Mount Cameron entry records that *"the **southeast aspect** rises over 3,300 feet
+> above the Dosewallips River in approximately one mile"* — i.e. the SE side is the big relief
+> face. The row's own grade is **class 2 scrambling**. A class 2 line up the steepest aspect on
+> the mountain is implausible, so "Southeast Slopes" is now doubly suspect. That still does not
+> supply the RIGHT name, and this file's bar is a published statement of what the route *is*,
+> not an argument about what it is not — so the row stays UNRESOLVED. Recorded so the next
+> session starts from here rather than re-searching Wikipedia.
+
+**`wa_himmelhorn_southeast_route`** was not researched this round — an obscure Southern Picket
+where the same Beckey problem is likely.
+
+**`wa_chimney_rock_west_face`** is unchanged and still needs a human: it is a corroborated Idaho
+route (Selkirk Crest) filed on a Washington peak, so its repair is a removal, not a rename.

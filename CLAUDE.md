@@ -230,14 +230,38 @@ a build error, but a screen that renders wrong or not at all.
     crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
     *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
     to render, so this cannot excuse a broken one.
-  - `postMenuFor` and `reactPickerFor` are exempt: they render **inside** the `openGroupId`
-    view and the `posts` they look up is a local of that IIFE, so no App-scope expression can
-    open them.
-  - **The hole it does not close, printed rather than hidden:** five overlay states live in
-    `RouteDetail.jsx`, and the opener injects into `App`, so no `?z=` can ever reach another
-    component's local state. They are walked only insofar as `check:ui` opens a route. The
-    script reports the count as a `note` — a known quantity beats an absence nobody can see,
-    which is the failure this whole guard is about.
+  - **`postMenuFor` and `reactPickerFor` were exempt as unreachable, and were not.** They
+    render *inside* the `openGroupId` view and the `posts` they read is a local of that IIFE —
+    but every piece of that screen is App state, so a payload can build it. A `prep` statement
+    injects a group into `createdGroups` (`ownerId: 0` satisfies the view's non-`_db`
+    `isCreator` branch), gives it a post via `setGroupPosts`, opens it with `setOpenGroupId`,
+    and only then sets the modal's own id. Both now mount — measured at 2,006 and 2,190 chars
+    by `check:zero`, which fails anything that adds nothing.
+    - Nothing here is DB-backed: group posts are client state, so **no fixture could seed
+      them**. A synthetic payload is the only way to reach these two in any of the walks.
+    - The lesson is the exemption, not the fix: "no App-scope expression can open them" was
+      true of the modal's *own* setter and false of the screen it lives in. An exemption is a
+      claim about reachability, and this one had not been tested.
+  - **The hole it used to print as a note is CLOSED**, and the note is why it got closed: the
+    opener injects into `App`, so no `?z=` could reach an overlay whose state lives in
+    `RouteDetail.jsx`, and those were walked only insofar as `check:ui` happens to open a route.
+    `routeDetailTransform()` now injects a second opener into RouteDetail's own component, so
+    they are opened directly like any other. All **54** (51 in App, 3 in RouteDetail) are
+    reachable. *A known quantity beats an absence nobody can see* — the count sat in the output
+    as a `note` until somebody fixed it, which is the argument for printing what you cannot yet
+    do rather than omitting it.
+  - **The count went five to three because DISCOVERY changed, not because overlays were
+    removed.** The five came from the old name shape (`[xOpen,setX]=useState(false)`); asking
+    instead what a state actually *renders* dropped two that were never modals. Do not read the
+    smaller number as a regression.
+  - **`shareOpen` exists in BOTH files, and that collision silently un-walked the App one.**
+    Overlay names are keys, so the second file's `shareOpen` overwrote the first and App's share
+    sheet stopped being opened while the summary still counted one. RouteDetail's states are
+    namespaced **`rd:`** for that reason. Any future second component needs the same treatment —
+    a bare name is not unique across files.
+  - Every vite config that calls `buildOpener` **must** also call `routeDetailTransform`, and the
+    guard asserts it (all 5 do). Wiring that a config can forget is wiring that one eventually
+    will: the configs already drifted once on which files they transformed.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
@@ -322,7 +346,7 @@ a build error, but a screen that renders wrong or not at all.
     shortest screen and a **correct** empty state, so the 400 default would fail working code.
     Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
     revived block fails naming the missing landmark.
-- **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
+- **`check:zero`** walks all six tabs and every overlay the app declares (49 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
   `friendReqIn` is `[5]`, `crewUnread` is `{crew_seed_tingey:2}`. So every branch that only
@@ -425,6 +449,29 @@ a build error, but a screen that renders wrong or not at all.
     they cannot appear in partner browse — the objection against a permanent QA account.
     `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
+  - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
+    the transferable half. All three fixture paths made their group `visibility:"public"`, and
+    `groups read public or member` plus `useMyGroups()` — which selects **every** group with no
+    filter, `order=created_at.desc` — put it at the **top** of every real climber's Groups tab.
+    Measured 2026-08-19: the live project held two groups and **both were fixtures**, so that
+    screen was 100% test data. All three now flip to private (#1015). *When you make a fixture
+    invisible, ask what it creates, not only what it is.*
+    - **Creating it private is refused — `42501`, RLS.** The live INSERT policy requires a group
+      to *start* public; `0090_groups.sql` says only `with check (auth.uid() = created_by)` and
+      no later insert policy exists in the migrations, so **the file and the live policy
+      disagree**. Create public, then `PATCH`. The owner still sees it: `groups_add_owner` seats
+      the creator, so `is_group_member` holds.
+    - **The mate joins BEFORE the flip**, deliberately. `group_members`' insert policy carries no
+      visibility clause *in the file* — and the file had just been shown wrong about the sibling
+      table, so the join stays on the path already proven. Exposure is ~1s, not the ~4min walk.
+    - **Crews are NOT affected**: `crews` RLS is `created_by = me OR I am a member`, with no
+      public class at all. Checked rather than assumed.
+  - **`sweepOrphans()` is age-gated (45 min), and must stay so.** It deletes every
+    `@climbmatch-qa.invalid` account and runs BEFORE each fixture, so ungated it deletes the
+    accounts of a run already in flight — two runs were observed overlapping in this project on
+    2026-08-19. The victim's rows simply stop existing, so its failure lands nowhere near the
+    cause **and passes on re-run**, which is exactly how a real defect gets filed as a flake. 45
+    minutes clears the 25-minute job wall, so a leak still has a bounded lifetime.
   - **The ACCOUNTS are durable; their DATA is not, and that distinction is load-bearing.** The
     accounts have to persist (CI holds no service key, and Supabase has no self-delete, so
     per-run *accounts* would leak forever). A shared *group* is a different matter: the walk
@@ -965,6 +1012,27 @@ a build error, but a screen that renders wrong or not at all.
     `aria-checked`, because a button role announces the control and silently drops the one
     thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
     exists for exactly this; the `aria-checked` is written beside it.
+  - **The baseline is a count, so it does not say what is LEFT — measured, because the
+    difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
+    classifies every remaining control by its **measured inline style**, and **58 of 210 are
+    modal backdrops that must never get a tab stop**. The real target is **152**, not 210:
+    `ClimbMatchCore.jsx` 101 real of 129, `ClimbMatch.jsx` 50 of 68, `RouteDetail.jsx` 1 of 8,
+    and all 5 in `lib/` are backdrops. Do not read the baseline as a to-do list.
+  - **Classify by style, never by the handler's name.** Proven on `RouteDetail`:
+    `setView(null)` reads like a close button and **is a backdrop**, while
+    `setPhotoLightbox({ph,key})` reads the same shape and **is a real control**. Naming would
+    have put both in the wrong bucket, in opposite directions. The measuring script resolves
+    `style={{...styles.overlay}}` spreads and normalises quotes — without that it contradicted
+    this file about `GpsSubmissionModal`'s two overlays, and **this file was right**: their
+    style lives in a shared object and is written `position:'fixed'`, single-quoted.
+  - **A `role` without a tab stop is usually `role="dialog"` and is CORRECT.** A scan for
+    "role but no tabIndex" returns 54 across these files and ~all are dialog containers, which
+    need no tab stop. Flagging them would be a guard that tells you to break working markup.
+    The shape actually worth finding is **role + tabIndex + NO key handler** — announced,
+    reachable, and inert, which is worse than a bare div because the app claims it works.
+    There was exactly one (the reaction chip in `ClimbMatchCore`, `aria-label="Add a
+    reaction"`), and it is fixed. That element is also why the guard counted 130 where a
+    role+tabIndex-skipping scan counted 129 — **the two scans disagreeing is what found it.**
   - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
     1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
     attributes are present.
