@@ -1768,6 +1768,24 @@ the correction knows the screen is wrong, and they have no way to report it.
       Fixed: 240 → 231, and its lone "WRONG TRACK" was itself a 17 m placeholder.
     - A point-count gate cannot see this (**nine points is not a suspicious number**) — the test
       has to be **extent**. Skipped routes are now named and counted, not dropped.
+    - **AND THE EXTENT TEST WAS NOT ENOUGH EITHER — a second unmeasurable class went uncounted in
+      both scripts until #977.** 201 of the 580 WA routes carrying a gpx store a line that IS the
+      route's own waypoint list joined up (median **four** points), so *"is the pin on its track?"*
+      is answered **yes by construction** — the track is a copy of the pins, not a second opinion.
+      162 of them span more than 2 km, so they clear the extent gate comfortably.
+      - **The correction was to the DENOMINATOR, not the findings**, which is why nobody noticed:
+        `audit:waypoint-track` still reports **254** routes disagreeing, and `audit:waypoints`
+        still **597** actionable. What changed is that the first went from claiming **455** routes
+        measured to **350**, and the second from 563 unmeasurable to **668**. So the track audit
+        was reporting 455 measured against 254 disagreeing — reading as **201 verified clean**,
+        of which **105 were never tested**. More than half its clean verdicts were vacuous.
+        **Overstated coverage is the false-pass direction.**
+      - The predicate lives in `lib/track.js`, shared with the route page's caveat and
+        `check:track-caveat` rather than copied a third time — these two scripts have already
+        drifted once on exactly this kind of gate, one bullet up.
+      - **The counts quoted two bullets above (218 and 240) predate all of this.** Re-measure
+        before quoting either; a headline count here has been wrong every single time it was
+        carried forward rather than re-run.
   - **It has twice reported far more problems than exist, and both times the fix was to the
     audit rather than to the data.** #834 took 878 → 753 (a backwards summit predicate flagging
     every out-and-back, a point-count placeholder test, a whole class of positionless waypoints
