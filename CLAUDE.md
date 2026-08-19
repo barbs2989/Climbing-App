@@ -1125,7 +1125,7 @@ a build error, but a screen that renders wrong or not at all.
     that did not exist. **plpgsql resolves column names when a statement first RUNS**, so nothing
     failed at deploy time, no guard went red, and the failure was reserved for the next admin to
     approve a route. Worst possible place for it: approval is admin-only and exercised by hand
-    rather than by CI. `0156` removed it.
+    rather than by CI. `0157` removed it.
     - The exemption replays every `add column`/`drop column` on `routes` in file order and keeps
       the **last** one. A hand-maintained list would be a second source of truth for the schema and
       would rot the moment the column came back; this appears and disappears by itself. Re-adding
