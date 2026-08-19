@@ -8352,3 +8352,100 @@ fresh independent read of the MP page.
 
 Next batch continues alphabetically after `wa_colonial_peak_west_ridge`
 (see progress file).
+
+## 2026-08-19 — Batch 121 (pass 3): Complete South Buttress, Concord Tower,
+Copper Peak, Corteo Peak, Crater Mountain, Crooked Thumb Peak (x2)
+
+Checked `wa_complete_south_buttress` (Cutthroat Peak),
+`wa_concord_tower_north_face` (Concord Tower), `wa_copper_peak_south_route`
+(Copper Peak), `wa_corteo_peak_southwest_ridge` (Corteo Peak),
+`wa_crater_mountain_standard_route` (Crater Mountain),
+`wa_crooked_thumb_peak_east_face`, `wa_crooked_thumb_peak_south_route`
+(Crooked Thumb Peak).
+
+**Fixed (SQL in `audits/sql/2026-08-19-batch-121.sql`):**
+- `wa_complete_south_buttress`: `dist_km` (6.44) matched this row's own
+  `itinerary.totalNote` almost exactly ("roughly 4.0 mi ... round trip"),
+  and the itinerary's `gainFt:3300` matches the top-level `gain_ft`
+  exactly, confirming the itinerary describes the same trip as the
+  top-level fields -- so `dist_km` was populated with the round-trip
+  figure rather than the one-way value the app expects (it renders round
+  trip as `dist_km*2`). Corrected to 3.22 (half).
+- `wa_concord_tower_north_face`: two fixes. `high_point_ft` (7569) matched
+  neither of the two elevations this row's own `data_quality.gaps` note
+  names as the live external dispute (7,560 ft MP/WTA/StephAbegg vs.
+  ~7,611-7,612 ft ListsOfJohn) nor this row's own summit waypoint
+  (elev 7611) -- internally self-contradictory regardless of which
+  external source is right. Reconciled to the row's own waypoint (7611).
+  Separately, `dist_km` (9.7) didn't match a one-way convention against
+  either same-row signal (summit waypoint distMi 2.3 mi = 3.70 km, or the
+  itinerary's round-trip "6" mi). Corrected to 3.70 km, matching the
+  waypoint.
+- `wa_copper_peak_south_route` and `wa_corteo_peak_southwest_ridge` shared
+  an identical `dist_km` (17.7) despite unrelated approaches (Holden
+  Village boat-in vs. Rainy Pass trailhead) and different waypoint-derived
+  one-way distances (5.5 mi vs 6.3 mi) -- the same value cannot be correct
+  for both. Corrected each to its own row's waypoint-derived one-way
+  mileage (8.85 km and 10.14 km respectively), both corroborated in the
+  same order of magnitude by external trip reports (Copper Peak: 8-9.72 mi
+  round trip per multiple sources; Corteo Peak: 9.8-11 mi round trip).
+- `wa_corteo_peak_southwest_ridge`: `grade_num` (2) didn't match its own
+  grade text ("Class 3-4"). The identical grade text on
+  `wa_copper_peak_south_route` in this same batch stores `grade_num=4` --
+  the same input shouldn't sort as two different grades. `grade_num` feeds
+  the finder RPCs' sort/filter, so this route was ranking as though
+  "Class 2". Corrected to 4 to match the sibling row.
+- `wa_crater_mountain_standard_route`: top-level `permit` field described
+  the North Cascades National Park Complex's NPS backcountry-permit
+  process (Recreation.gov reservation / Marblemount WIC walk-up), but
+  Crater Mountain is in the Pasayten Wilderness on Okanogan-Wenatchee
+  National Forest (USFS) land, confirmed externally (multiple sources).
+  This row's own `access.permit` field already stated the correct process
+  (free self-issue Pasayten Wilderness permit at the trailhead; the NPS
+  permit only applies if a trip continues into the adjoining National
+  Park). Corrected the top-level `permit` field to match.
+
+**Checked and still internally consistent, no new issues found:**
+`wa_crater_mountain_standard_route`'s other fields (elevation, gain_ft,
+FA left honestly null, hazards) all reconciled against USGS/Wikipedia
+elevation (8,132 ft, confirmed) and its own waypoints/approach text.
+Elevations for Cutthroat Peak (8,066 ft), Copper Peak (8,965 ft, also
+confirmed as 21st-highest/19th Bulger), Corteo Peak (8,107 ft), and
+Crooked Thumb Peak (8,129 ft) all matched external sources exactly. FA
+claims for `wa_concord_tower_north_face` (Beckey & Parrott, June 12 1956)
+and `wa_copper_peak_south_route` (Bennet/Courtwright/Hagman, August 1937)
+both independently confirmed.
+
+**Needs human verification (not fixed -- flagged only):**
+- `wa_concord_tower_north_face`: even after reconciling the row's internal
+  self-contradiction (see fix above), the peak's TRUE summit elevation
+  remains disputed between external sources themselves (7,560 ft per
+  Mountain Project/WTA/StephAbegg vs. ~7,611-7,612 ft per ListsOfJohn).
+  This run picked the value consistent with the row's own waypoint, not
+  the "true" figure -- a human with access to a primary survey source
+  should settle which cluster is right.
+- `wa_copper_peak_south_route`: the `corrections` field text is stale and
+  contradicts the row's own current content -- it explains a decision to
+  treat the route as the non-technical Olympics "Copper Mountain" (Class
+  2-3), but the actual stored content (waypoints, hazards, glacier travel,
+  Holden Village boat approach) is clearly and correctly the glaciated
+  Entiat Mountains Copper Peak (8,965 ft, confirmed). Looks like leftover
+  reasoning from an earlier draft, same shape as batch 120's Colonial Peak
+  stale-corrections flag. Cosmetic (not user-facing), left unchanged.
+- `wa_crooked_thumb_peak_east_face` / `wa_crooked_thumb_peak_south_route`:
+  both cite distinct 1963 Mountaineers first-ascent parties for their
+  specific named lines, while the peak's overall documented first ascent
+  is 1940 (Fred & Helmy Beckey) per Wikipedia. Plausible as route-specific
+  FAs distinct from the peak's FA (normal in climbing databases), but this
+  run's web access could not independently confirm either 1963 claim --
+  AAC Publications and Wikipedia were both unreachable via WebFetch
+  (network egress proxy blocks both domains). Left unchanged.
+
+Web access this run: WebSearch was reachable and did the load-bearing work
+(confirmed 5 peak elevations, 2 FA claims, and the Pasayten Wilderness vs.
+NPS jurisdiction question for Crater Mountain). WebFetch was blocked by the
+network egress proxy for en.wikipedia.org, consistent with prior runs'
+notes about mountainproject.com and publications.americanalpineclub.org.
+
+Next batch continues alphabetically after `wa_crooked_thumb_peak_south_route`
+(see progress file).

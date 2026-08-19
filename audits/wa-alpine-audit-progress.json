@@ -2,8 +2,8 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_colonial_peak_west_ridge",
-  "total_in_scope_last_count": 535,
+  "last_processed_id": "wa_crooked_thumb_peak_south_route",
+  "total_in_scope_last_count": 533,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
     {
@@ -2632,6 +2632,26 @@
         "wa_colchuck_peak_east_ridge (likely duplicate of wa_colchuck_peak_colchuck_glacier)",
         "wa_colonial_peak_west_ridge (stale id reference in corrections field)",
         "wa_colfax_peak_cosley_houston (V-thread hardware vs 'no rappelling' ambiguity)"
+      ]
+    },
+    {
+      "batch_number": 121,
+      "date": "2026-08-19",
+      "fixes_count": 7,
+      "fixes_sql": "audits/sql/2026-08-19-batch-121.sql",
+      "flagged_for_human_review": [
+        "wa_concord_tower_north_face (peak's true summit elevation still disputed externally: 7,560 ft MP/WTA/StephAbegg vs ~7,611-7,612 ft ListsOfJohn -- this run only reconciled the row's internal self-contradiction, not the external dispute)",
+        "wa_copper_peak_south_route (corrections field is stale/contradicts the row's own current content -- describes reasoning for treating the route as the non-technical Olympics 'Copper Mountain', but the actual stored content is clearly the glaciated Entiat Copper Peak route; cosmetic, not fixed)",
+        "wa_crooked_thumb_peak_east_face / wa_crooked_thumb_peak_south_route (both cite distinct 1963 Mountaineers FA parties for their specific lines, while the peak's overall documented FA is 1940 Fred & Helmy Beckey -- plausible as route-specific vs. peak FA, but unconfirmed by this run's web access; AAC Publications and Wikipedia were unreachable)"
+      ],
+      "route_ids": [
+        "wa_complete_south_buttress",
+        "wa_concord_tower_north_face",
+        "wa_copper_peak_south_route",
+        "wa_corteo_peak_southwest_ridge",
+        "wa_crater_mountain_standard_route",
+        "wa_crooked_thumb_peak_east_face",
+        "wa_crooked_thumb_peak_south_route"
       ]
     }
   ]
