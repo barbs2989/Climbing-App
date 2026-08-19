@@ -143,9 +143,28 @@ async function signIn(user) {
 // Retrying cleanup is not enough on its own: a process that is killed never reaches its
 // finally block at all. This is the backstop that makes leaks self-healing rather than
 // cumulative, and it runs BEFORE each fixture is created so a leak has a bounded lifetime.
+// A run's own fixture is minutes old, and this sweep runs BEFORE each fixture is created — so
+// without an age gate a second walk starting now deletes the accounts of one already in flight,
+// mid-assertion. That is not hypothetical: two runs were observed overlapping in this project on
+// 2026-08-19 (a local walk 5 minutes into its own fixture while CI held another). The victim's
+// failure would land nowhere near its cause — its rows simply stop existing — and re-running it
+// would appear to fix it, which is how a real defect gets filed as a flake.
+//
+// 45 minutes is comfortably past the 25-minute CI job wall, so anything older than this cannot
+// belong to a live run; a leak still has a bounded lifetime, just a longer one.
+const ORPHAN_MIN_AGE_MS = 45 * 60 * 1000;
+
 export async function sweepOrphans(log = () => {}) {
   const { body } = await auth("admin/users?per_page=200");
-  const stale = (body?.users || []).filter((u) => (u.email || "").endsWith(`@${DOMAIN}`));
+  const now = Date.now();
+  const mine = (body?.users || []).filter((u) => (u.email || "").endsWith(`@${DOMAIN}`));
+  // An unparseable created_at reads as age 0, i.e. too young to touch. Comparing NaN directly
+  // would make both filters below false and the account would fall out of the sweep silently —
+  // never deleted, never reported, which is the one outcome a leak backstop must not produce.
+  const ageOf = (u) => { const t = Date.parse(u.created_at); return Number.isFinite(t) ? now - t : 0; };
+  const live = mine.filter((u) => ageOf(u) < ORPHAN_MIN_AGE_MS);
+  if (live.length) log(`  leaving ${live.length} fixture account(s) younger than 45 min alone — another run may be using them`);
+  const stale = mine.filter((u) => ageOf(u) >= ORPHAN_MIN_AGE_MS);
   if (!stale.length) return 0;
   log(`  sweeping ${stale.length} fixture account(s) left by an earlier run`);
   for (const u of stale) {
@@ -227,7 +246,29 @@ export async function createFixture(log = () => {}) {
       throw new Error(`groups_add_owner trigger did not seat the creator as owner: ${JSON.stringify(ownerRow.body)}`);
     }
     await insert("group_members", { group_id: group.id, user_id: mate.id, role: "member" });
-    log(`  group ${group.id.slice(0, 8)} owned by the fixture, 1 other member`);
+    // Then hide it. `groups read public or member` makes a public group readable by everyone,
+    // and useMyGroups() lists every group it can see, newest first — so for the ~4 minutes a
+    // walk takes, a real climber's Groups tab is topped by "Fixture Alpine Club". The fixture
+    // PROFILES are kept out of partner browse for exactly this reason; the group they own was
+    // missed. Measured 2026-08-19 against the live project.
+    //
+    // Created public and flipped rather than inserted private, even though this path holds the
+    // service key and could write 'private' directly. Two reasons: the durable CI path CANNOT
+    // (the live INSERT policy refuses it, 42501) so this keeps the two fixtures producing the
+    // same row; and a group that was never public is a state the app's own flow cannot reach,
+    // which is the standard this repo already holds setup to.
+    // `rest()` does not ask for the changed rows back — insert() adds that header itself — and
+    // without it PostgREST answers 204 with no body, so the assertion below would fail on a
+    // write that worked. It is also the only way to tell a real change from the 200-with-zero-
+    // rows that a filter miss or an RLS refusal returns.
+    const hidden = await rest(`groups?id=eq.${group.id}`, {
+      method: "PATCH", body: JSON.stringify({ visibility: "private" }),
+      headers: { Prefer: "return=representation" },
+    });
+    if (!Array.isArray(hidden.body) || hidden.body[0]?.visibility !== "private") {
+      throw new Error(`could not make the fixture group private (HTTP ${hidden.status}): ${JSON.stringify(hidden.body).slice(0, 200)} — it would be listed in every real user's Groups tab`);
+    }
+    log(`  group ${group.id.slice(0, 8)} owned by the fixture, 1 other member, private`);
 
     await insert("objectives", { user_id: owner.id, route_id: ROUTE_ID });
     await insert("climb_logs", {

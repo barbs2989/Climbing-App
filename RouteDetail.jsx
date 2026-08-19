@@ -1401,7 +1401,7 @@ function ItineraryView({route,onSeeReports,onContribute,myItin,onSaveMyItin,crew
         "no route-specific trip report was found ... timing estimated from its relationship to
         Let it Burn/West Face". Sits beside the confidence chip because it is the sentence that
         chip is summarising. */}
-    {it&&it.sourceNote?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:12,paddingLeft:9,borderLeft:`2px solid ${C.border}`}}><span style={{fontWeight:700,color:C.textSub}}>Where these times come from — </span>{it.sourceNote}</div>:null}
+    
     {days.map((d,i)=><div key={i} style={{display:"flex",gap:10,marginBottom:11}}>
       <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.blue,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n||i+1}</div>{i<days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div>
       <div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}>

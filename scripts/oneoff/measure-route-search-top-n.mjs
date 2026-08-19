@@ -13,6 +13,10 @@
 // point here is to catch a ranking change. It is lifted by brace-matching over raw source and
 // compiled, so there is exactly one definition and a rename fails the run loudly.
 //
+// SEL MUST CARRY area_id — the named-place round-robin keys on it. Without it every row
+// shares the key `undefined` and the reservation collapses to one row, so this probe would
+// report a fix as working while it was not.
+//
 //   node scripts/oneoff/measure-route-search-top-n.mjs [--lim=8] [query ...]
 import fs from "fs";
 import path from "path";
@@ -52,34 +56,48 @@ const j = async q => {
   if (!r.ok) throw new Error(`${r.status} ${(await r.text()).slice(0, 140)}`);
   return r.json();
 };
-const SEL = "id,name,areas(name)";
+const SEL = "id,name,area_id,areas(name)";
 
 for (const q of TESTS) {
   const needle = q.toLowerCase();
-  const [byPrefix, byName, matched] = await Promise.all([
+  const [byPrefix, byName, matched, exact] = await Promise.all([
     j(`routes?select=${SEL}&name=ilike.${E(q + "%")}&limit=${LIM * 2}`),
     j(`routes?select=${SEL}&name=ilike.${E("%" + q + "%")}&limit=${LIM * 2}`),
     j(`areas?select=id,name,path&name=ilike.${E("%" + q + "%")}&order=route_count.desc&limit=5`),
+    j(`areas?select=id,name,path&name=ilike.${E(q)}&order=route_count.desc&limit=5`),
   ]);
   const matchedIds = matched.map(a => a.id), descIds = [];
   for (const a of matched.slice(0, 3).filter(a => a.path))
     for (const k of await j(`areas?select=id&path=cd.${E(a.path)}&route_count=gt.0&order=route_count.desc&limit=25`))
       if (!matchedIds.includes(k.id) && !descIds.includes(k.id)) descIds.push(k.id);
-  // Two capped queries, matched-first — the shape #954 landed on.
-  const [byMatched, byDesc] = await Promise.all([
+  // Three capped queries, exact-first — the exact-name area leg gets its own, because a
+  // bounded query whose POOL you enlarged is a different query.
+  const exactIds = exact.map(a => a.id).filter(id => !matchedIds.includes(id));
+  const [byMatched, byDesc, byExact] = await Promise.all([
     matchedIds.length ? j(`routes?select=${SEL}&area_id=in.(${matchedIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
     descIds.length ? j(`routes?select=${SEL}&area_id=in.(${descIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
+    exactIds.length ? j(`routes?select=${SEL}&area_id=in.(${exactIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
   ]);
 
   const seen = new Set(), merged = [];
-  for (const r of [...byPrefix, ...byName, ...byMatched, ...byDesc]) {
+  for (const r of [...byPrefix, ...byName, ...byExact, ...byMatched, ...byDesc]) {
     if (seen.has(r.id)) continue; seen.add(r.id); merged.push(r);
   }
   merged.sort((a, b) => routeSearchScore(b, needle) - routeSearchScore(a, needle));
-  const top = merged.slice(0, LIM);
+  const namedAll = merged.filter(r => {
+    const an = String((r.areas && r.areas.name) || "").toLowerCase();
+    return an === needle || an.replace(/^(mount|mt\.?|the)\s+/, "") === needle;
+  });
+  const oncePer = new Set(), firstOfEach = [], extras = [];
+  for (const r of namedAll) {
+    if (oncePer.has(r.area_id)) extras.push(r); else { oncePer.add(r.area_id); firstOfEach.push(r); }
+  }
+  const named = [...firstOfEach, ...extras].slice(0, 3);
+  const reserved = new Set(named.map(r => r.id));
+  const top = [...named, ...merged.filter(r => !reserved.has(r.id))].slice(0, LIM);
   const strong = top.filter(r => routeSearchScore(r, needle) >= 45).length;
 
-  console.log(`"${q}"   legs: prefix ${byPrefix.length} · name ${byName.length} · matched ${byMatched.length} · desc ${byDesc.length}`);
+  console.log(`"${q}"   legs: prefix ${byPrefix.length} · name ${byName.length} · exact ${byExact.length} · matched ${byMatched.length} · desc ${byDesc.length}`);
   console.log(`   TOP ${LIM}: ${top.length} row(s), ${strong} scoring >=45`);
   for (const r of top) {
     console.log(`      ${String(routeSearchScore(r, needle)).padStart(3)}  ${r.name}   [${(r.areas && r.areas.name) || "?"}]`);
