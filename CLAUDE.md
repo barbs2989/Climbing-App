@@ -229,9 +229,18 @@ a build error, but a screen that renders wrong or not at all.
     crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
     *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
     to render, so this cannot excuse a broken one.
-  - `postMenuFor` and `reactPickerFor` are exempt: they render **inside** the `openGroupId`
-    view and the `posts` they look up is a local of that IIFE, so no App-scope expression can
-    open them.
+  - **`postMenuFor` and `reactPickerFor` were exempt as unreachable, and were not.** They
+    render *inside* the `openGroupId` view and the `posts` they read is a local of that IIFE —
+    but every piece of that screen is App state, so a payload can build it. A `prep` statement
+    injects a group into `createdGroups` (`ownerId: 0` satisfies the view's non-`_db`
+    `isCreator` branch), gives it a post via `setGroupPosts`, opens it with `setOpenGroupId`,
+    and only then sets the modal's own id. Both now mount — measured at 2,006 and 2,190 chars
+    by `check:zero`, which fails anything that adds nothing.
+    - Nothing here is DB-backed: group posts are client state, so **no fixture could seed
+      them**. A synthetic payload is the only way to reach these two in any of the walks.
+    - The lesson is the exemption, not the fix: "no App-scope expression can open them" was
+      true of the modal's *own* setter and false of the screen it lives in. An exemption is a
+      claim about reachability, and this one had not been tested.
   - **The hole it does not close, printed rather than hidden:** five overlay states live in
     `RouteDetail.jsx`, and the opener injects into `App`, so no `?z=` can ever reach another
     component's local state. They are walked only insofar as `check:ui` opens a route. The
