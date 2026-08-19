@@ -974,6 +974,27 @@ a build error, but a screen that renders wrong or not at all.
     `aria-checked`, because a button role announces the control and silently drops the one
     thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
     exists for exactly this; the `aria-checked` is written beside it.
+  - **The baseline is a count, so it does not say what is LEFT — measured, because the
+    difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
+    classifies every remaining control by its **measured inline style**, and **58 of 210 are
+    modal backdrops that must never get a tab stop**. The real target is **152**, not 210:
+    `ClimbMatchCore.jsx` 101 real of 129, `ClimbMatch.jsx` 50 of 68, `RouteDetail.jsx` 1 of 8,
+    and all 5 in `lib/` are backdrops. Do not read the baseline as a to-do list.
+  - **Classify by style, never by the handler's name.** Proven on `RouteDetail`:
+    `setView(null)` reads like a close button and **is a backdrop**, while
+    `setPhotoLightbox({ph,key})` reads the same shape and **is a real control**. Naming would
+    have put both in the wrong bucket, in opposite directions. The measuring script resolves
+    `style={{...styles.overlay}}` spreads and normalises quotes — without that it contradicted
+    this file about `GpsSubmissionModal`'s two overlays, and **this file was right**: their
+    style lives in a shared object and is written `position:'fixed'`, single-quoted.
+  - **A `role` without a tab stop is usually `role="dialog"` and is CORRECT.** A scan for
+    "role but no tabIndex" returns 54 across these files and ~all are dialog containers, which
+    need no tab stop. Flagging them would be a guard that tells you to break working markup.
+    The shape actually worth finding is **role + tabIndex + NO key handler** — announced,
+    reachable, and inert, which is worse than a bare div because the app claims it works.
+    There was exactly one (the reaction chip in `ClimbMatchCore`, `aria-label="Add a
+    reaction"`), and it is fixed. That element is also why the guard counted 130 where a
+    role+tabIndex-skipping scan counted 129 — **the two scans disagreeing is what found it.**
   - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
     1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
     attributes are present.
