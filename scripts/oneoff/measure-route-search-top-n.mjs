@@ -13,6 +13,10 @@
 // point here is to catch a ranking change. It is lifted by brace-matching over raw source and
 // compiled, so there is exactly one definition and a rename fails the run loudly.
 //
+// SEL MUST CARRY area_id — the named-place round-robin keys on it. Without it every row
+// shares the key `undefined` and the reservation collapses to one row, so this probe would
+// report a fix as working while it was not.
+//
 //   node scripts/oneoff/measure-route-search-top-n.mjs [--lim=8] [query ...]
 import fs from "fs";
 import path from "path";

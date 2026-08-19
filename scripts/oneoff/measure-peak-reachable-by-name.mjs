@@ -21,6 +21,16 @@
 // records: a pasted replica measures a fossil the moment the real one is edited, and a
 // ranking change is precisely what this is watching for.
 //
+// THE POPULATION IS PEAKS THAT HOLD ROUTES *DIRECTLY*, not peaks with route_count > 0.
+// Those differ: route_count is a SUBTREE aggregate, so a peak modelled as a container
+// passes the second test while `area_id === peak.id` is false for every route it owns.
+// Counting those would inflate the denominator with rows that can never register a hit.
+//
+// SEL MUST CARRY area_id. The round-robin below keys on it, and without it every row
+// shares the key `undefined`, the reservation collapses to a single row, and this probe
+// reports success for a fix that is not working. An instrument has to carry the field the
+// thing it measures keys on.
+//
 // Read-only. Anon key. Fails closed on a short read — zero peaks makes every peak look
 // reachable, which is the false-pass direction.
 //
@@ -116,17 +126,31 @@ async function searchTopN(q) {
 const AREAS = [];
 let after = "";
 for (;;) {
-  const page = await j(`areas?select=id,name,route_count,area_type,path&order=id.asc&limit=1000${after ? `&id=gt.${E(after)}` : ""}`);
+  const page = await j(`areas?select=id,name,route_count,area_type,path,parent_id&order=id.asc&limit=1000${after ? `&id=gt.${E(after)}` : ""}`);
   AREAS.push(...page);
   if (page.length < 1000) break;
   after = page[page.length - 1].id;
 }
 if (AREAS.length < 1000) { console.error(`FAIL-CLOSED: read only ${AREAS.length} areas — a short read makes every peak look reachable`); process.exit(1); }
-let peaks = AREAS.filter(a => String(a.path || "").startsWith(PATH_PREFIX) && a.area_type === "peak" && a.route_count > 0);
+// `route_count` IS A SUBTREE AGGREGATE, so filtering on it alone counts CONTAINERS —
+// peaks whose routes all live in child areas. For those, `area_id === peak.id` is false
+// for every route they own, so they report unreachable as a MODELLING ARTIFACT and not as
+// a defect (Eldorado Peak, Baring Mountain and Mount Index are the three in WA today).
+// Quoting a rate over that population would understate the denominator.
+//
+// `trg_areas_leaf_xor` means an area holds child areas OR direct routes, never both, so a
+// peak with no children and route_count > 0 holds them directly. That is exact and costs
+// no extra query — parent_id is already in the page above.
+const HAS_KIDS = new Set(AREAS.map(a => a.parent_id).filter(Boolean));
+const withCount = AREAS.filter(a => String(a.path || "").startsWith(PATH_PREFIX) && a.area_type === "peak" && a.route_count > 0);
+let peaks = withCount.filter(a => !HAS_KIDS.has(a.id));
 if (!peaks.length) { console.error("FAIL-CLOSED: no peaks matched — the area_type vocabulary or the path prefix moved"); process.exit(1); }
 peaks.sort((a, b) => (b.route_count || 0) - (a.route_count || 0));
+const DIRECT = peaks.length;
+// Report the real denominator BEFORE --limit-peaks narrows it, or a sampled run prints its
+// sample size as though it were the population.
 if (MAXPEAKS) peaks = peaks.slice(0, MAXPEAKS);
-console.log(`${peaks.length} ${STATE.toUpperCase()} peaks hold routes. Replaying the search box for each, top ${LIM}.\n`);
+console.log(`${withCount.length} ${STATE.toUpperCase()} peaks have route_count > 0; ${DIRECT} of them hold routes DIRECTLY (the rest are containers — route_count is a subtree total). Replaying the search box for ${peaks.length === DIRECT ? "each" : `a sample of ${peaks.length}`}, top ${LIM}.\n`);
 
 const unreachable = [], partial = [];
 let done = 0;
