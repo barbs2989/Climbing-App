@@ -17,9 +17,9 @@
 > | D4 | `PRIVACY_CONTROLS_LIVE = false` | **OPEN BY DESIGN — do not flip.** The controls are not server-enforced; shipping them would promise a protection the backend does not deliver |
 > | E | Sign-up never named the Terms; no acceptance record | **FIXED** — #923 `5e18040` (notice + links), #934 (`POLICY_VERSION` stamped onto the profile by a trigger) |
 > | F1–F4 | Phantom payments processor, unsupported passkey advice, third-parties contradiction, ID-document sentence | **FIXED** — #914 |
-> | F5 | Emergency contact shared with a crew via float plan, disclosed on the sheet but not in §1 | **still open** — a wording question for the reviewer |
+> | F5 | Emergency contact shared with a crew via float plan, undisclosed | **FIXED** — both surfaces now say so; a float plan carrying your contact is the *point* of one, but neither document said it |
 >
-> **What is actually left is the lawyer read**, plus F5 and the D4 wording. The product no
+> **What is actually left is the lawyer read**, plus the D4 wording. The product no
 > longer contradicts itself: no `.example` addresses, no promise without a mechanism, and one
 > minimum age. Every fix was verified in a browser on the live site, not just in the bundle.
 >
