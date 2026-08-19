@@ -1829,6 +1829,41 @@ the correction knows the screen is wrong, and they have no way to report it.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+- **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
+  withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
+  as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
+  crevasse kit again. The question it does **not** ask is whether a suppression is *correct*, and
+  the two directions are not symmetric — the file's own header says wrongly dropping a crevasse
+  warning is dangerous while wrongly keeping one is merely noise.
+  - **The only way to suppress wrongly is evidence in a column `corpus()` does not read**, since a
+    glacier line is dropped only when `GLACIER_RE` finds nothing in it. That made the blind-column
+    set the whole attack surface, and it was two long: **`climbing_route`** (migration `0122`,
+    created to re-home climbing prose OUT of `approach` — which corpus() *does* read) and
+    **`approach_variants`**. So every route the enrichment touched moved its snow and glacier
+    sentences into a column the classifier could not see. **9 WA routes were live**, suppressing
+    advice while their own screens said *"Residual avalanche snow at the base"* and *"Colchuck
+    Glacier moraine"*. Nothing reported it and nothing could — populated column, rendered screen,
+    every coverage check green. Fixed; 10 verdicts moved, **all** toward keeping advice, none the
+    other way, and the restored line was proven **on screen** rather than in the verdict.
+  - **The obvious general fix is measurably WRONG and must not be re-derived.** Inverting corpus()
+    to read everything except a deny-list would make **112 of 296** WA alpine routes gain a new
+    signal — worst offender **`seasonal_hazards`, the column holding the "avalanche: N/A"
+    declaration itself**. Reading it as prose makes every row declaring avalanche *absent* read as
+    *present*, disabling the mechanism it belongs to. The allow-list stays.
+  - `approach_variants` is read **by key** (`name`, `notes`, `hazards`, `baseFinding`), never
+    flattened, because it carries a `season` key — flattening re-imports the Highway 20 mistake
+    under a new name. `CORPUS_COLUMNS` is exported as the single source of truth and the camelCase
+    spelling is **derived**, so a column added to it cannot be half-wired.
+  - **The blind-column scan is what stops the third instance**, because a comment saying "add new
+    prose columns to CORPUS_COLUMNS" would rot exactly as the last one did. It samples full rows,
+    finds every column outside the classifier carrying glacier/snow prose, and demands a reason in
+    `NOT_TERRAIN_EVIDENCE`. The declaration is demanded **late** — only once a column is both
+    populated *and* carrying a terrain word, i.e. exactly when it could change a verdict — so the
+    list stays at the 23 that matter rather than all 94 on the table. A **stale** entry fails too.
+    Injection-tested 4/4, each proving its edit landed by checksum; case 3 removes `approach` from
+    `CORPUS_COLUMNS` and requires it to surface, so the scan is shown to see the general defect
+    rather than only this one.
+  - Read-only; **not a build gate** (it reads the DB), same reasoning as `check:counts`.
 - **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
   Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
   coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by
