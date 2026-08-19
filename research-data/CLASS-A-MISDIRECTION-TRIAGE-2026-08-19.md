@@ -36,6 +36,29 @@ Wilson specifically"*. Three columns against one hedged pin.
 Fixed by **re-homing** the Cold Springs coordinate from `wa_mount_adams_south_climb`, which already
 stores it — nothing invented. The note also carried a source citation, which is gone.
 
+**Verified on the live site, and that is what found the rest of it.** The route page now shows
+*South Climb / Cold Springs Trailhead* at `46.13602, −121.49527` with no "Killen Creek" anywhere, and the
+new approach variant renders. But the **CAMPING & BIVY** section still lists two north-side camps:
+
+| bivy entry | side |
+|---|---|
+| Lunch Counter (9,300 ft) | south — correct |
+| Cold Springs / South Climb trailhead (5,600 ft) | south — correct |
+| Morrison Creek Campground (4,675 ft) | south — correct |
+| **High Camp (Adams Creek Meadows)** (6,900 ft) | **north — reached from Killen Creek** |
+| **Adams Glacier moraine bivy** (7,700 ft) | **north — under the Adams Glacier icefall** |
+
+Confirmed against the row, not the rendering. **The Killen Creek contamination was in two columns and
+only one was fixed** — the waypoint was visible to a row-level read, the `bivy` array only became
+obvious on screen, where the two lists sit side by side.
+
+**Deliberately not deleted, because the row contradicts itself about the descent first.** Its
+`descent_text` says to reverse down the South Climb to Cold Springs, while its `itinerary` day 2 offers
+*"Descend via the North Ridge (more direct from the NE side)"*. A party taking that option is on the
+north side — so whether these two camps are foreign or are the north-descent's staging ground depends
+on which descent the row means, and that has to be settled before anything is removed. The same
+"is it contamination or a documented second option?" question as `wa_mount_skokomish_standard` below.
+
 ### `wa_mount_hinman_hinman_glacier` — "north from La Bohn Gap"
 
 Settled by the row's **own waypoints**, the way Colchuck was: from its La Bohn Gap pin to its own summit
