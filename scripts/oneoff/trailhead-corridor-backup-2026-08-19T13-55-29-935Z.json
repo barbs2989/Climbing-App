@@ -1,0 +1,79 @@
+[
+  {
+    "id": "wa_mount_barnes_scramble",
+    "area_id": "wa_mount_barnes",
+    "waypoints": [
+      {
+        "lat": 47.9104598,
+        "lng": -123.7338335,
+        "elev": 4744,
+        "name": "Heart Lake",
+        "note": "Last reliable water and common camp before crossing High Divide; trip reports warn there is no water again until well past the Catwalk toward Eleven Bull Basin.",
+        "type": "Water",
+        "distMi": 7.85
+      },
+      {
+        "lat": 47.9054,
+        "lng": -123.7774,
+        "elev": 5474,
+        "name": "High Divide crest near Bogachiel Peak",
+        "note": "Corrected coordinate (Bogachiel Peak verified via Wikipedia/GNIS; previous value duplicated the trailhead). Maintained High Divide Trail tops out here; this is where the Bailey Range Traverse leaves the trail and drops off-trail east into Cat Basin toward Cat Peak. The exact off-trail departure point wasn't independently sourced, so this uses the peak itself as the anchor.",
+        "type": "Junction",
+        "distMi": 9
+      },
+      {
+        "lat": 47.92392006,
+        "lng": -123.78531996,
+        "elev": 5800,
+        "name": "The Catwalk (Cat Peak-Mt. Carrie arete)",
+        "note": "Narrow, exposed ridgeline with a few scrambling moves and roughly 3,000 ft of air to the valley floor; poorly defined in fog, not a place to be in wind or wet rock.",
+        "type": "Hazard",
+        "distMi": 12
+      },
+      {
+        "lat": 47.85093353333333,
+        "lng": -123.66939986666667,
+        "elev": 5400,
+        "name": "Upper Ferry Basin / Ferry Glacial Lake",
+        "note": "Open meadow below Mount Ferry with glacial lakes and streams for the last dependable water before the Bear Pass approach; established informal camp used by most Bailey Range parties.",
+        "type": "Campsite",
+        "distMi": 19
+      },
+      {
+        "lat": 47.814440270000006,
+        "lng": -123.61143982,
+        "elev": 5600,
+        "name": "Childs Glacier crossing",
+        "note": "Small glacier/permanent snowfield below Bear Pass; parties report needing ice axe and microspikes on firm snow, with crevasse-type terrain in Junkyard Basin just beyond.",
+        "type": "Hazard",
+        "distMi": 22.5
+      },
+      {
+        "lat": 47.7988003,
+        "lng": -123.5865998,
+        "elev": 5600,
+        "name": "Bear Pass",
+        "note": "Broad saddle marking the southeastern terminus of the Bailey Range proper; from here the route drops toward a flat meadow before angling southeast for the final Barnes approach.",
+        "type": "Junction",
+        "distMi": 24
+      },
+      {
+        "lat": 47.9678,
+        "lng": -123.5824,
+        "elev": 1200,
+        "name": "Whiskey Bend Trailhead",
+        "note": "Existing DB trailhead 'Sol Duc Trailhead' is incorrect for this route; correct approach is via Elwha River Trail from Whiskey Bend, not Sol Duc River Trail.",
+        "type": "Trailhead",
+        "elevFt": 1200
+      },
+      {
+        "lat": 47.7839245,
+        "lng": -123.5760872,
+        "elev": 5987,
+        "name": "Mount Barnes",
+        "type": "Summit",
+        "elevFt": 5987
+      }
+    ]
+  }
+]
