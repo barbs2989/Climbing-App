@@ -1,4 +1,4 @@
--- 0155 — reporting a photo, into a queue somebody can actually read.
+-- 0156 — reporting a photo, into a queue somebody can actually read.
 --
 -- 0152 gave admins the power to take a photo down and stopped there, because reporting needed
 -- a decision rather than a guess. This is that decision, and the thing that forced a new table
