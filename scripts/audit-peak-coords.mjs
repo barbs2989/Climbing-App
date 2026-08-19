@@ -94,12 +94,18 @@ const TOL = 400;   // ft. Comfortably past p99 on WA; a summit coordinate off by
                    // Forbidden's is 35 m out, Little Tahoma's 70 m. That is one phenomenon —
                    // a coordinate slightly off the top on very steep ground — not 17 defects.
                    //
-                   // Snapping them to the DEM maximum was considered and REJECTED. It would
-                   // DERIVE a new coordinate rather than copy an existing record, which is the
-                   // safety property every repair in this family has relied on; the gain is
-                   // ~50 m on peaks already essentially right; the method missed on 1 of the 3
-                   // tested (Goode, 66 ft out); and on glaciated summits the raster's date and
-                   // 1 m resolution stop being more authoritative than the survey elevation.
+                   // Snapping them to the DEM maximum was considered and REJECTED — and note
+                   // it was rejected DESPITE WORKING, which is the honest way round. Tested on
+                   // five: Forbidden 35 m, Shuksan 49 m, Stuart 70 m and Little Tahoma 70 m all
+                   // find a maximum matching the stored elevation, and only Goode misses (66 ft
+                   // out). So the method lands 4 times in 5.
+                   //
+                   // It is refused because it would DERIVE a new coordinate rather than copy an
+                   // existing record. Every repair in this family declares a winner between two
+                   // stored values, which is what makes inventing a wrong one impossible;
+                   // snapping gives that up to gain ~50 m on peaks already essentially right.
+                   // On glaciated summits the raster's date and 1 m resolution also stop being
+                   // more authoritative than the survey elevation it would overrule.
                    //
                    // The other 4 in that tail are ELEVATION questions, not coordinate ones —
                    // their coordinate IS a local maximum. None is actionable either: each peak's
