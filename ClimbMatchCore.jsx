@@ -1609,7 +1609,7 @@ function EditProfileScreen({draft,setDraft,onSave,onCancel}){
         <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:13,padding:14}}>
           <div style={{display:"flex",gap:12,alignItems:"center"}}><Av src={draft.avatar} size={48}/><div style={{minWidth:0}}>
             <div style={{fontSize:16,fontWeight:700,color:C.text}}>{draft.showRealName?(draft.name.trim()||"Your name"):("@"+(draft.username.trim()||"username"))}</div>
-            <div style={{fontSize:12,color:C.textSub,marginTop:1}}>{<Lbl s={"📍 "+(draft.location.trim()||"Location")+" · "+draft.level}/>}</div>
+            <div style={{fontSize:12,color:C.textSub,marginTop:1}}>{<Lbl s={"📍 "+(draft.location.trim()||"Location")+(draft.level?" · "+draft.level:"")}/>}</div>
           </div></div>
           {draft.bio.trim()?<div style={{fontSize:13,color:C.textSub,lineHeight:1.5,marginTop:10}}>{draft.bio}</div>:null}
           <div style={{display:"flex",flexWrap:"wrap",gap:5,marginTop:10}}>{draft.disciplines.map(d=><span key={d} style={{fontSize:12,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:6,padding:"2px 8px"}}>{d}</span>)}</div>
