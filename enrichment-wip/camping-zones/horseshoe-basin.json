@@ -1,7 +1,10 @@
 {
  "zone": "Horseshoe Basin — Cascade Pass and Stehekin",
  "_areas_note": "The NORTH CASCADES Horseshoe Basin near Cascade Pass, not the Pasayten one near Windy Peak. Two places share the name; different agency, different permits. The research was told to discard Pasayten sources.",
- "areas": ["wa_horseshoe_peak", "wa_hurry_up_peak"],
+ "areas": [
+  "wa_horseshoe_peak",
+  "wa_hurry_up_peak"
+ ],
  "sites": [
   {
    "name": "Basin Creek Camp",
@@ -24,7 +27,8 @@
    "type": "camp",
    "water": "Reliable — meltwater creek through the basin, though flow drops late in a dry summer",
    "permit": "NPS backcountry permit required; designated camp on the Recreation.gov system, and among the harder Cascade Pass sites to draw in midsummer.",
-   "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin within a long day, though the basin itself is still several miles and a substantial descent-then-climb away. Snow lingers here well into summer and the trail across the basin can be hard to follow when it does, so early-season parties should expect to navigate rather than follow tread."
+   "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin within a long day, though the basin itself is still several miles and a substantial descent-then-climb away. Snow lingers here well into summer and the trail across the basin can be hard to follow when it does, so early-season parties should expect to navigate rather than follow tread.",
+   "capacity": "A small designated backcountry camp — the number of sites is not published, and it is few enough that it goes early on summer weekends. Assume it may be full and carry a plan that does not depend on it."
   },
   {
    "name": "Sahale Glacier Camp",
@@ -41,7 +45,8 @@
    "elev": 5390,
    "water": "Reliable — the lake itself, plus its inlet and outlet streams",
    "permit": "NPS backcountry permit required; designated camping at the lake, reserved or walked up like the other Cascade Pass-area sites.",
-   "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass and the head of Horseshoe Basin. Water is the one thing never in question here, which matters if the alternative is Sahale Glacier Camp late in the season. The spur loses meaningful elevation off the arm, so factor the reclimb into the next day."
+   "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass and the head of Horseshoe Basin. Water is the one thing never in question here, which matters if the alternative is Sahale Glacier Camp late in the season. The spur loses meaningful elevation off the arm, so factor the reclimb into the next day.",
+   "capacity": "A small designated camp at the lake, site count not published. Treat it as a handful of spots rather than a place a large party can count on."
   },
   {
    "name": "Buckner cross-country zone bivy",
