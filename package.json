@@ -87,7 +87,8 @@
     "check:ci-cancel": "node scripts/check-ci-cancellation.mjs",
     "check:anniversary": "node scripts/check-anniversary.mjs",
     "check:rappel-single-rope": "node scripts/check-rappel-single-rope.mjs",
-    "check:correction-readers": "node scripts/check-correction-readers.mjs"
+    "check:correction-readers": "node scripts/check-correction-readers.mjs",
+    "audit:peak-coords": "node scripts/audit-peak-coords.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
