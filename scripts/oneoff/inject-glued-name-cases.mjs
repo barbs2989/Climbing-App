@@ -9,7 +9,9 @@
 // Usage:  node scripts/oneoff/inject-glued-name-cases.mjs [caseName ...]
 //
 //   route     revert RouteDetail's "Recently climbed" aria-label   -> must FAIL naming it
-//   arealatest revert AreaLatest's aria-label                      -> must FAIL naming it
+//   arealatest revert AreaLatest's aria-label                      -> must PASS: a recorded
+//              COVERAGE GAP (selArea is null, so the component never renders). Fails as stale
+//              if that coverage ever arrives.
 //   narrow    restore the glue AND narrow the needle to digits     -> must PASS (proves the
 //             widening is what catches it, not something else)
 //   opener    break the ?zr=1 route walk                           -> must FAIL, not pass
@@ -37,10 +39,27 @@ const CASES = {
     edits: [[RD, RD_LABEL, ""]],
   },
   arealatest: {
-    // MUST FAIL. The same defect one file over — the instance that was NOT reachable by the
-    // guard until the row became a real control.
-    expect: "fail",
-    want: /Attempt|Summited/,
+    // MUST PASS — and that is a recorded COVERAGE GAP, not an endorsement.
+    //
+    // `AreaLatest` carries the same glued-name defect as the route page's rows, and it was
+    // fixed in the same commit. But the guard cannot SEE it: the component renders as
+    // `selArea && …` on the Climbs tab and `selArea` starts null, so across a full 63-screen
+    // walk it returns null every time. Reverting its aria-label therefore changes nothing the
+    // guard can observe.
+    //
+    // Measured, not assumed, and one plausible fix was tried and REJECTED: an opener that
+    // called `setSelArea` really did put an area in state ("Kings Peak"), and the Climbs tab
+    // still rendered 979 characters with no report rows, because that tab drives its own
+    // browse navigation rather than reading `selArea` alone. See
+    // scripts/oneoff/probe-area-latest-reachable.mjs. Shipping that opener would have put a
+    // false reachability claim in the shared scaffold, which is the exact defect class this
+    // whole change set exists to correct.
+    //
+    // Kept as a case, expecting a pass, so the gap is TESTED rather than described: if the
+    // Climbs-tab navigation is ever driven and this starts being caught, this case fails and
+    // whoever did it is told to delete this note. A gap nothing asserts is a gap that rots.
+    expect: "pass",
+    want: null,
     edits: [[CORE, CORE_LABEL, ""]],
   },
   narrow: {
@@ -58,6 +77,53 @@ const CASES = {
   },
 };
 
+// Restoring on a SIGNAL is not enough, and this was learned by it failing. On a loaded box the
+// runs were reaped with SIGKILL, which **no in-process handler can catch** — so the handler
+// below is a convenience for the polite cases (Ctrl-C, SIGTERM) and cannot be the guarantee.
+//
+// The guarantee is this SENTINEL, which survives SIGKILL because it is on disk. Before the
+// first write, the harness records which files it is about to modify; after restoring, it
+// deletes the record. So a later run — or a human — can always tell an interrupted harness
+// from a clean tree, and put the files back from git. Checked at STARTUP, because the leak is
+// only dangerous while it is invisible: `git status` shows a plain "M" on files this work
+// legitimately edits, and the worst leak (the `opener` case renaming `window.__routeOpen`)
+// leaves a guard that is blind to the route screen while still printing prose about the flag.
+const SENTINEL = "scripts/oneoff/.inject-glued-name-INPROGRESS";
+
+if (fs.existsSync(SENTINEL)) {
+  const stale = fs.readFileSync(SENTINEL, "utf8").split("\n").filter(Boolean);
+  console.error("\n[harness] a previous run was interrupted and left these files injected:");
+  for (const f of stale) console.error("    " + f);
+  console.error("[harness] restoring them from git before starting.\n");
+  try {
+    execFileSync("git", ["checkout", "--", ...stale], { stdio: "inherit" });
+  } catch {
+    console.error("[harness] could not restore automatically — do it by hand, then re-run.");
+    process.exit(1);
+  }
+  fs.unlinkSync(SENTINEL);
+}
+
+// Every file this harness touches, with its pristine contents, so a signal handler can put
+// them all back on a catchable signal. Registered before any edit and cleared once reverted.
+const PRISTINE = new Map();
+let restoring = false;
+function restoreAll(why) {
+  if (restoring) return;
+  restoring = true;
+  let n = 0;
+  for (const [f, txt] of PRISTINE) {
+    try {
+      if (fs.readFileSync(f, "utf8") !== txt) { fs.writeFileSync(f, txt); n++; }
+    } catch {}
+  }
+  PRISTINE.clear();
+  if (n) console.error(`\n[harness] restored ${n} file(s) after ${why} — the working tree is clean.`);
+}
+for (const sig of ["SIGINT", "SIGTERM", "SIGHUP"]) process.on(sig, () => { restoreAll(sig); process.exit(130); });
+process.on("exit", () => restoreAll("exit"));
+process.on("uncaughtException", (e) => { restoreAll("an exception"); console.error(e); process.exit(1); });
+
 const pick = process.argv.slice(2).filter((a) => CASES[a]);
 const names = pick.length ? pick : Object.keys(CASES);
 const results = [];
@@ -66,6 +132,10 @@ for (const name of names) {
   const c = CASES[name];
   const originals = new Map();
   for (const [f] of c.edits) if (!originals.has(f)) originals.set(f, fs.readFileSync(f, "utf8"));
+  // Hand the same snapshots to the signal handler BEFORE writing anything, and record the
+  // file list on DISK so a SIGKILL cannot hide the injection.
+  for (const [f, txt] of originals) if (!PRISTINE.has(f)) PRISTINE.set(f, txt);
+  fs.writeFileSync(SENTINEL, [...originals.keys()].join("\n"));
   const before = new Map([...originals.keys()].map((f) => [f, sum(f)]));
 
   let landed = true;
@@ -84,6 +154,8 @@ for (const name of names) {
     } catch (e) { code = e.status == null ? -1 : e.status; out = (e.stdout || "") + (e.stderr || ""); }
   }
   for (const [f, s] of originals) fs.writeFileSync(f, s);
+  for (const f of originals.keys()) PRISTINE.delete(f);
+  try { fs.unlinkSync(SENTINEL); } catch {}
 
   const failed = code !== 0;
   const ok = !landed ? false

@@ -755,6 +755,27 @@ a build error, but a screen that renders wrong or not at all.
     at all. Making it a real control via `clickable()` is what **exposed** the glue, so both
     had to land together; `check:clickable`'s baseline drops by one. A defect can be hidden by
     a worse defect in the same element.
+  - **That `AreaLatest` fix is UNGUARDED, and the gap is pinned rather than described.** It
+    renders as `selArea && …` on the Climbs tab and `selArea` starts null, so across a full
+    63-screen walk the component returns null every time — reverting its `aria-label` is
+    **MISSED**. `ClassicClimbs` and `GettingThere` are invisible for the same reason. These are
+    not screens with no findings; they are **not screens**.
+    - **One obvious fix was built, measured, and REJECTED**, so nobody re-derives it: a `?za=1`
+      opener calling `setSelArea`. It genuinely put an area in state — verified, it selected
+      *Kings Peak* — and the Climbs tab **still rendered 979 characters with no report rows**,
+      because that tab drives its own browse navigation rather than reading `selArea` alone.
+      Shipping it would have added a **false reachability claim** to the shared scaffold, which
+      is the very defect class this entry is about. Closing this needs the browse navigation
+      driven (country → state → area), not one setter called.
+      `scripts/oneoff/probe-area-latest-reachable.mjs` is the measurement — a single page load,
+      because the full walk kept being reaped on a loaded box.
+    - The gap is **asserted**, not just written down: case `arealatest` in
+      `scripts/oneoff/inject-glued-name-cases.mjs` expects a **pass** and therefore fails as
+      **stale** the moment that coverage arrives. A gap nothing asserts is a gap that rots —
+      the standard `NEEDS_EXTRA_STATE` and `KNOWN` are already held to.
+    - Twice during this work a plausible story about this screen was wrong and only measurement
+      settled it (the flex-stacked `Routes` / `next door ›` spans; and "+5 controls must be the
+      four report rows"). On this component, do not reason from the markup or the counts.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
