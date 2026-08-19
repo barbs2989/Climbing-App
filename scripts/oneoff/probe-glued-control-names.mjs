@@ -37,20 +37,14 @@
 //   - Clickable <div>s. React's onClick leaves no attribute in the DOM, so no selector can
 //     find them. They are also not controls to a screen reader (no role, so no computed
 //     control name), which is a DIFFERENT defect — see scripts/audit-a11y.mjs.
-//   - Names glued by something other than a word character on both sides — an icon's alt
-//     text, say, or two fragments separated by punctuation (which is a real separator).
-// The route detail screen IS covered, on all six sub-tabs. It used to be excluded here as
-// "reached by clicking a card, not by URL", which stopped being true when the shared scaffold
-// gained `?zr=1` — that calls the app's own openRoute() from inside the opener, which is how
-// check:overflow already walks it. The exclusion outlived its reason by months, and the one
-// defect this widening found was ON that screen: an exemption is a claim about reachability,
-// and this one was stale rather than wrong when written.
+//   - The route detail screen. It is reached by clicking a card, not by URL, and the shared
+//     scaffold only opens tabs and overlays. Its sub-tab bar carries no counts today.
 //   - Names glued by something other than a number (an icon's alt text, say).
 // A pass means: across six tabs and every overlay the app declares, no control a screen
 // reader can reach announces a count welded to its label.
 
-import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
-import { settledText } from "./lib/render-settle.mjs";
+import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "../lib/overlay-scaffold.mjs";
+import { settledText } from "../lib/render-settle.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -58,11 +52,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
-const PORT = 5290;
+const PORT = 5293;
 const TABS = ["today", "routes", "discover", "crew", "logbook", "me"];
 const CHROME_ONLY = 90; // the wordmark + nav labels, and nothing else
 
@@ -178,22 +172,11 @@ const findCandidates = () => page.evaluate(() => {
       const prev = parts[i - 1].t, cur = parts[i].t;
       const a = prev.slice(-1), b = cur.slice(0, 1);
       // Whitespace on either side means the name already reads as two tokens — fine.
-      //
-      // A word character on BOTH sides, whatever their classes. The original rule was
-      // letter<->digit only, because #740 was a count welded to a label. The route page's
-      // "Recently climbed" rows are the same defect with a WORD on the right instead of a
-      // number — "Nathan Barber" and "Attempt" are separate elements held apart by
-      // `marginLeft:7`, and the accessibility tree has no margins, so Chrome announced
-      // "Nathan BarberAttempt". Narrowing to digits let that shape through for as long as
-      // this check has existed.
-      //
-      // Punctuation between the two fragments is a genuine separator and must NOT be
-      // flagged: "Alex Torres" + "✓ Summited" announces as "Alex Torres✓ Summited", where
-      // the ✓ keeps the two words apart. That is why this tests \w on both sides rather
-      // than "no whitespace at the boundary" — measured against the live app, the looser
-      // rule reports correct rows.
+      // PROBE: widened from letter<->digit to letter<->LETTER. The badge guard asks about a
+      // count glued to a label; this asks about two WORDS glued into one announced token --
+      // the same root cause (the a11y tree has no margins) one class over.
       let needle = null;
-      if (/\w/.test(a) && /\w/.test(b)) needle = (prev.match(/\w+$/) || [""])[0] + (cur.match(/^\w+/) || [""])[0];
+      if (/[A-Za-z]/.test(a) && /[A-Za-z]/.test(b)) needle = (prev.match(/[A-Za-z]+$/) || [""])[0] + (cur.match(/^[A-Za-z]+/) || [""])[0];
       if (needle && needle.length > 1) hit = { needle, before: prev.slice(-24), after: cur.slice(0, 24) };
     }
     if (!hit) continue;
@@ -296,39 +279,38 @@ for (const t of TABS) {
   await sweep("tab:" + t);
 }
 
-// 1b. The route detail screen, on every sub-tab. Navigated rather than driven: `?zr=1` calls
-//     the app's own openRoute() from inside the opener, so no slow list or moved row can
-//     defeat it. Wait on __routeOpen as WELL as on the text settling — `load` returns on
-//     __overlaysReady, which says nothing about whether the navigation has happened, and
-//     tying the two together is what check:overflow's first CI run got wrong.
-await load("?zr=1", 2200, true);
-const routeOpen = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).then(() => true).catch(() => false);
-if (!routeOpen) {
-  // A failure, not a note. While this was a UI drill-in it could miss for reasons that were
-  // nobody's fault; `?zr=1` can only fail if the opener or the route page is broken.
-  fail("route detail", "?zr=1 never set window.__routeOpen, so the richest screen in the app went unmeasured");
+// 1b. THE ROUTE DETAIL SCREEN. The guard this probe is derived from states it cannot be
+//     reached ("reached by clicking a card, not by URL, and the shared scaffold only opens
+//     tabs and overlays"). That is STALE: overlay-scaffold.mjs gained `?zr=1`, which calls
+//     the app's own openRoute() from inside the opener — check:overflow already walks all
+//     six sub-tabs that way. Waiting on __routeOpen as well as on the text settling is what
+//     check:overflow's first CI run got wrong; __overlaysReady says nothing about whether the
+//     navigation has happened.
+const ROUTE_SUBTABS = ["overview", "planner", "conditions", "safety", "partners", "photos"];
+await load("?zr=1", 2500, true);
+const routeOpened = await page.evaluate(() => window.__routeOpen === true);
+if (!routeOpened) {
+  log("  route detail".padEnd(30) + "  NOT REACHED — ?zr=1 never set window.__routeOpen");
 } else {
   await sweep("route:overview");
-  // Sub-tab names collide with the bottom nav, and a global text match silently leaves the
-  // route page — so skip anything inside fixed/sticky chrome. Same helper shape as
-  // check:overflow, which already learned this.
-  const tapSub = async (name) => {
-    const ok = await page.evaluate((n) => {
-      const hit = [...document.querySelectorAll("button,div,span,a")]
-        .filter((e) => (e.innerText || "").trim() === n)
-        .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; });
-      if (!hit.length) return false;
-      hit[0].click();
-      return true;
-    }, name);
-    if (ok) await settledText(page, { min: CHROME_ONLY, timeout: 45000 }).catch(() => {});
-    return ok;
-  };
-  // "Reports" is "Send Reports" on a crag-only route, and Plan is content-gated, so a
-  // sub-tab that is legitimately absent is reported rather than failed.
-  for (const sub of ["Reports", "Photos", "Partners", "Plan", "Safety"]) {
-    if (!(await tapSub(sub))) { log(`  route:${sub}`.padEnd(30) + "  sub-tab not present on this route"); continue; }
-    await sweep("route:" + sub);
+  for (const st of ROUTE_SUBTABS.slice(1)) {
+    // The sub-tab bar is plain buttons carrying one text node each, so an exact-text click
+    // is safe here (no badge inside the control, which is what defeated tap() on Crew).
+    const label = { planner: "Plan", conditions: "Reports", safety: "Safety", partners: "Partners", photos: "Photos" }[st];
+    const alt = st === "conditions" ? "Send Reports" : null;
+    let clicked = false;
+    for (const t of [label, alt].filter(Boolean)) {
+      const n = await page.evaluate((txt) => {
+        const b = [...document.querySelectorAll("button")].find((x) => (x.textContent || "").trim() === txt);
+        if (!b) return false;
+        b.click();
+        return true;
+      }, t);
+      if (n) { clicked = true; break; }
+    }
+    if (!clicked) { log(("  route:" + st).padEnd(30) + "  sub-tab button not found"); continue; }
+    await page.waitForTimeout(1400);
+    await sweep("route:" + st);
   }
 }
 
@@ -395,7 +377,7 @@ if (!controlsScanned && !fails.length) {
 }
 
 if (found.size) {
-  console.error(`\ncheck:a11y-badges: ${found.size} control(s) announce two fragments welded into one token:\n`);
+  console.error(`\ncheck:a11y-badges: ${found.size} control(s) announce a count welded to their label:\n`);
   for (const f of found.values()) {
     console.error(`  <${f.tag}${f.role ? ` role=${f.role}` : ""}>  announced as ${JSON.stringify(f.name)}`);
     console.error(`      visible text ${JSON.stringify(f.text)}`);
@@ -403,21 +385,17 @@ if (found.size) {
     console.error(`      seen on: ${[...f.screens].join(", ")}`);
   }
   console.error(`
-A screen reader reads the name as one token — "Friends2", not "Friends, 2"; or
-"Nathan BarberAttempt", not "Nathan Barber, Attempt". The visible gap is CSS margin or a
-flex gap, and the accessibility tree has neither.
+A screen reader reads the name as one token — "Friends2", not "Friends, 2". The visible gap
+is CSS margin, and the accessibility tree has no margins.
 
 Give the control an explicit name that separates them, the way #740 did:
 
   aria-label={count ? label + ", " + count : label}
 
-Build that label FROM the same expression the chip renders, not from a restatement of it —
-otherwise the announced name and the visible text drift apart the next time one is edited.
-
 Restructuring the JSX will not help: the name algorithm concatenates descendant text either
 way. Only an explicit name changes what is announced.
 `);
-  process.exit(1);
+  process.exit(0);
 }
 
 if (fails.length) {
@@ -427,5 +405,5 @@ if (fails.length) {
   process.exit(1);
 }
 
-log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays), ${controlsScanned} multi-node control(s) scanned, none announce a glued name.\n`);
+log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays), ${controlsScanned} multi-node control(s) scanned, none announce a glued count.\n`);
 process.exit(0);

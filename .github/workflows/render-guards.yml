@@ -160,7 +160,7 @@ jobs:
           if-no-files-found: warn
 
   a11y-badges:
-    name: No control announces a glued count
+    name: No control announces a glued name
     runs-on: ubuntu-latest
     # 50 overlays since #748 widened the scaffold's discovery (was 28). This check shares
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
