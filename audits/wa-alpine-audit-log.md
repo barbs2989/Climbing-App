@@ -8268,3 +8268,87 @@ WebFetch/direct domain access was not attempted separately this run.
 
 Next batch continues alphabetically after `wa_colchuck_peak_colchuck_glacier` (see progress
 file).
+
+## 2026-08-19 — Batch 120 (pass 3): Colchuck Peak (x4), Colfax Peak (x3),
+Colonial Peak
+
+Checked `wa_colchuck_peak_east_ridge`, `wa_colchuck_peak_holsten_hilden`,
+`wa_colchuck_peak_north_buttress_couloir`, `wa_colchuck_peak_northeast_couloir`
+(Colchuck Peak); `wa_colfax_peak_cosley_houston`,
+`wa_colfax_peak_kimchi_suicide_volcano`, `wa_colfax_peak_polish_route`
+(Colfax Peak); `wa_colonial_peak_west_ridge` (Colonial Peak).
+
+**Fixed (SQL in `audits/sql/2026-08-19-batch-120.sql`):**
+- `wa_colchuck_peak_east_ridge`: `gain_ft` (2800) didn't reconcile with its
+  own trailhead/summit waypoints (3,400 ft -> 8,705 ft = 5,305 ft), and all
+  three sibling Colchuck Peak routes sharing that exact trailhead/summit
+  already store ~5,300-5,305. Corrected to 5,305.
+- `wa_colchuck_peak_holsten_hilden`: `grade` field ("Grade IV, M6, AI3+")
+  contradicted this row's own `corrections` text, which documents choosing
+  Mountain Project's "Grade III, WI3, M6" as the primary value over the
+  2011 AAC first-ascent account's "IV, AI3+" grading. The stored grade was
+  the one the row's own note says was rejected. Corrected to match the
+  documented decision.
+- `wa_colchuck_peak_north_buttress_couloir`: `gain_ft` (6600) was an outlier
+  against the same trailhead/summit pair (5,305 ft net, matching the other
+  three Colchuck Peak siblings); no elevation loss/regain is described in
+  the approach that would explain the extra ~1,300 ft, and a Wenatchee
+  Outdoors trip report's "3,300 ft tent-to-tent" from a camp near Colchuck
+  Lake (5,574 ft) corroborates a total closer to 5,300-5,500 than 6,600.
+  Corrected to 5,305.
+- `wa_colfax_peak_polish_route`: `dist_km` (14.48) was roughly double the
+  sibling `wa_colfax_peak_cosley_houston`'s `dist_km` (7.49) despite this
+  row's own approach text stating "Same trailhead and lower approach as
+  Cosley-Houston" and this row's own summit waypoint carrying the identical
+  one-way `distMi` (4.5 mi = 7.24 km) as Cosley-Houston's. Corrected to
+  7.49 to match the one-way distance both the shared approach text and this
+  row's own waypoint mileage agree on.
+
+**Checked and still internally consistent, no new issues found:**
+`wa_colchuck_peak_northeast_couloir` (gain_ft, waypoints, grade all
+reconcile; the row's own claim of "3 deaths in Feb 2023" on this couloir is
+independently confirmed — NWAC's final report and multiple news sources
+both date the fatal slide to Feb 19, 2023, three climbers), and
+`wa_colfax_peak_kimchi_suicide_volcano` (thin data — one waypoint only —
+but nothing on file contradicts itself or an external source).
+
+**Needs human verification (not fixed — flagged only):**
+- **Likely duplicate route pair, not touched (guardrails forbid deletes):**
+  `wa_colchuck_peak_east_ridge` ("East Ridge (Non-Technical)") and
+  `wa_colchuck_peak_colchuck_glacier` ("Colchuck Glacier") both describe the
+  same physical line — near-identical waypoints (same trailhead, same
+  Colchuck Lake, same Colchuck Col approach), same glacier ascent/descent,
+  same summit. `wa_colchuck_peak_east_ridge`'s own `corrections` field
+  already half-concedes this ("It is the peak's original 1948 first-ascent
+  line and standard non-technical route"), and it's corroborated externally
+  — SummitPost/Beckey's Cascade Alpine Guide describe Colchuck's "East
+  Route" as "commonly called the Colchuck Glacier Route because most
+  parties attain the col from this direction," i.e. the same route under
+  two names. The two rows still disagree with each other on `gain_ft`
+  (now-corrected 5305 vs 5300) and `dist_km` (7.5 vs 8) — minor, but a sign
+  they were researched independently rather than as one route. This needs
+  a human dedup decision (which id/name is canonical, whether to merge or
+  redirect) rather than an audit-script fix — flagged, not resolved.
+- `wa_colonial_peak_west_ridge`: `corrections` field references a stale id
+  ("wa_colonial_peak_northeast") that does not match this row's actual id
+  ("wa_colonial_peak_west_ridge") or name — looks like leftover text from
+  before an earlier id/name correction was applied. Cosmetic (the field
+  isn't safety-relevant), left unchanged pending a decision on whether to
+  clean up or preserve as history.
+- `wa_colfax_peak_cosley_houston`: `rappels`/`descent_text` both state "no
+  rappelling on the standard descent," but `pro_needs` and `detailed_rack`
+  both list "V-thread hardware for descent." Could plausibly mean retreat/
+  bail gear rather than the standard descent, but the row doesn't say so
+  explicitly — left unchanged, flagging the ambiguity rather than guessing
+  which reading is intended.
+
+Web access this run: WebSearch reachable and useful (confirmed the Feb 2023
+avalanche fatality count/date, and the "East Route = Colchuck Glacier Route"
+naming from SummitPost/Beckey). WebFetch was blocked by the network egress
+proxy for both mountainproject.com and publications.americanalpineclub.org,
+so the Holsten-Hilden grade fix relies on the row's own internal
+documentation (its `corrections` field quoting MP directly) rather than a
+fresh independent read of the MP page.
+
+Next batch continues alphabetically after `wa_colonial_peak_west_ridge`
+(see progress file).

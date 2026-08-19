@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_colchuck_peak_colchuck_glacier",
+  "last_processed_id": "wa_colonial_peak_west_ridge",
   "total_in_scope_last_count": 535,
   "total_wa_alpine_or_mountaineering_tagged": 593,
   "batches": [
@@ -2612,6 +2612,27 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-08-14-batch-119.sql",
       "findings": "All 6 confirmed fixes this run independently re-derived the exact same defects already proposed in the unapplied 2026-08-06 batch-57/58 SQL (aspect E->W and emergency.nearestHospital on Chimney Rock, grade on Chiwawa Mountain SW route, rack/detailed_rack/watch_out on Chockstone Route, and safety-relevant rappels/watch_out/pitch_detail/length_m on Unicorn Peak's Classic Route pointing at a deprecated 'bleached snag' rappel anchor). Spot-checking ~8 UPDATEs across the whole batch history (30/42/43/50/55/56/70/90/100/114) shows fixes landed live through roughly batch 55 (2026-08-06) and NONE checked from batch 56 onward have -- flagging this pipeline gap as the main finding, see log. 2 flagged for human review: Chiwawa SW route's dist_km (30.58) contradicts its own data_quality.gaps claiming no reliable dist_km was found; Chimney Rock East Face Direct's 1954 FA still uncorroborated (carried over from batch 57). Clark Mountain West Ridge, Lane Peak Classic Route, and Colchuck Peak Colchuck Glacier checked clean, no new issues."
+    },
+    {
+      "batch_number": 120,
+      "date": "2026-08-19",
+      "route_ids": [
+        "wa_colchuck_peak_east_ridge",
+        "wa_colchuck_peak_holsten_hilden",
+        "wa_colchuck_peak_north_buttress_couloir",
+        "wa_colchuck_peak_northeast_couloir",
+        "wa_colfax_peak_cosley_houston",
+        "wa_colfax_peak_kimchi_suicide_volcano",
+        "wa_colfax_peak_polish_route",
+        "wa_colonial_peak_west_ridge"
+      ],
+      "fixes_sql": "audits/sql/2026-08-19-batch-120.sql",
+      "fixes_count": 4,
+      "flagged_for_human_review": [
+        "wa_colchuck_peak_east_ridge (likely duplicate of wa_colchuck_peak_colchuck_glacier)",
+        "wa_colonial_peak_west_ridge (stale id reference in corrections field)",
+        "wa_colfax_peak_cosley_houston (V-thread hardware vs 'no rappelling' ambiguity)"
+      ]
     }
   ]
 }
