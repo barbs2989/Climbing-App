@@ -45,10 +45,24 @@ for (const f of FILES) {
 // comment that NAMES crewMemberById, so leaving comments in would let a site pass on the
 // strength of prose about the fix rather than the fix — the false pass check:rappel-readers
 // records. Offsets are preserved so line numbers stay true.
+// A comment marker only counts in COMMENT POSITION — preceded by whitespace, a separator, or
+// start of file. Without that test a `/*` inside a STRING opens a phantom block comment. The
+// case that proved it is `accept="image/*"` on the profile editor's photo input: that MIME
+// wildcard blanked 15,575 characters of ClimbMatchCore from check:real-profile-rows and hid a
+// live "Location · undefined" bug from it (#1039).
+//
+// This guard loses NOTHING to it today — measured, 50 CLIMBERS lookups visible either way —
+// so this is insurance against the next `/*` in a string, not a repair. The three sibling
+// guards that scrub source (check-fire, check-seed-history, check-dead-flag-gates) are already
+// immune because they consume string literals BEFORE testing for comment markers; this one
+// tested for comments first, which is the whole difference.
+const COMMENT_POS = new Set(["\n", " ", "\t", ";", "{", "}", "(", ")", ",", "="]);
 function stripComments(src) {
   let out = "", i = 0, n = src.length;
   while (i < n) {
     const c = src[i], d = src[i + 1];
+    const prev = i === 0 ? "\n" : src[i - 1];
+    if (c === "/" && (d === "/" || d === "*") && !COMMENT_POS.has(prev)) { out += c; i++; continue; }
     if (c === "/" && d === "/") { while (i < n && src[i] !== "\n") { out += " "; i++; } continue; }
     if (c === "/" && d === "*") { const e = src.indexOf("*/", i + 2); const end = e < 0 ? n : e + 2; for (let k = i; k < end; k++) out += src[k] === "\n" ? "\n" : " "; i = end; continue; }
     out += c; i++;
