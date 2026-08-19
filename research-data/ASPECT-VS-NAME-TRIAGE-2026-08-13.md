@@ -124,3 +124,44 @@ own defect when a climber is choosing a line.
   `wa_luahna_peak_southwest_slope_southeast_ridge` — names carrying two directions, read backwards.
 - `wa_colfax_peak_fords_theatre`, `wa_marvin_s_ear`, `wa_lane_peak_r3` — no direction in the name at
   all; the possessive apostrophe was matching as "south".
+
+---
+
+## `wa_mount_formidable_north_ptarmigan` — researched 2026-08-14: NOT a rename. Probably a DUPLICATE.
+
+Flagged as name SE/N vs `aspect: S`. The name is indeed the travel direction again — the third
+instance after Little Annapurna and Ruth Mountain — but **the repair is not a rename, and
+attempting one would have made things worse.**
+
+Published sources agree the standard line is on the SOUTH side, reached over the Spider-Formidable
+col: The Mountaineers title their page *"Mount Formidable/**South Route**"*, SummitPost carries a
+*"**South Face**"* route page, and the route description crosses the col then "scramble[s] down
+into the basin beneath Mount Formidable's **south slopes**". So `aspect: S` and `face: "South Face
+/ South Slopes, via the Spider-Formidable col"` are correct and the name is the odd one out —
+the expected shape.
+
+**But Formidable already has a `South Face` row.** Its three routes are:
+
+| id | name | aspect | grade |
+|---|---|---|---|
+| `wa_mount_formidable_north_ptarmigan` | North Route via Ptarmigan Traverse | S | Alpine I-II, Class 3-4 |
+| `wa_mount_formidable_south_face` | South Face / Southeast Ledges | S | Grade III, Class 4 / low 5th |
+| `wa_northeast_face_direct` | Northeast Face Direct | NE | 5.6 |
+
+Renaming the first to "South Face" would collide with the second on one peak. And the two
+`overview` fields describe the same climb from different angles: the first says *"The standard,
+easiest way up Formidable: approach north from Cascade Pass over the Ptarmigan Traverse to the
+Spider-Formidable col, then cross to the peak's south slopes for a long, loose class 3-4
+scramble"*; the second is the **1938 Ptarmigan Climbing Club first-ascent line**, which *is* that
+standard route.
+
+**Left alone deliberately, and this needs a human.** A duplicate flag is a hypothesis — the
+Dragontail Peak incident destroyed Triple Couloirs on exactly this reasoning, and the two rows here
+carry *different grades* (Class 3-4 vs Class 4 / low 5th), which is consistent either with two
+sources grading one scramble differently or with two genuinely distinct south-side lines. Nothing
+in the catalog settles which. Note also that **no existing guard can see this**: the names differ,
+so `route_duplicate_names` is silent; it is a *semantic* duplicate, not a textual one.
+
+The decision is: merge the pair (and which id survives), or keep both and rename the first to
+something that does not collide — e.g. the approach-neutral *"South Route (Ptarmigan Traverse
+approach)"*. Both need a published source distinguishing the lines, which was not found.
