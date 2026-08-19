@@ -38,12 +38,6 @@ import { readFileSync, existsSync } from "node:fs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
-  // These two render INSIDE the openGroupId group view, not at App level: their JSX sits
-  // within that IIFE and the `posts` they look up is a local (`var posts=groupPosts[cl.id]`),
-  // so there is no App-scope expression that could open them. Reaching them means opening a
-  // group first, which is a different walk from "set a flag and see what mounts".
-  postMenuFor: "nested inside the openGroupId group view — `posts` is a local of that IIFE",
-  reactPickerFor: "nested inside the openGroupId group view — `posts` is a local of that IIFE",
 };
 
 // ---------------------------------------------------------------------------------------
@@ -74,6 +68,21 @@ export const NEEDS_EXTRA_STATE = {
 // in NEEDS_EXTRA_STATE fails the run (assertKnownOverlays), so a modal added tomorrow cannot
 // quietly go unwalked. That is the property the name-shape discovery lost.
 export const OVERLAY_PAYLOADS = {
+  // ---- reachable only by building the screen they live inside ----
+  //
+  // These two render INSIDE the openGroupId group view, and the `posts` they look up is a
+  // local of that IIFE — which is why they were exempt as unreachable. They are not
+  // unreachable; they need the screen around them to exist first, and every piece of that
+  // screen is App state the opener can set.
+  //
+  // `prep` runs before the payload: inject a group, give it a post, open the group. The view
+  // does createdGroups.concat(GROUPS).find(id) and returns null on a miss, so the group must
+  // be in createdGroups; ownerId:0 satisfies its non-_db isCreator branch; groupPosts[id] is
+  // what becomes the `posts` local. None of this is DB-backed — group posts are client state —
+  // so no fixture could seed them, and this is the only way to reach these two in any walk.
+  postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+  reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+
   // NOTE: a dialog state initialised to `false` needs no entry here — it is a flag whatever
   // it is called, and is opened with `true`. `confirmDelete` and `pastExpand` are the two
   // today. Only state that HOLDS something needs a payload.
@@ -424,7 +433,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
     if (s.kind === "dialog" && !OVERLAY_PAYLOADS[s.name]) return q + ":function(){}";
     const arg = s.kind === "flag" ? "true" : OVERLAY_PAYLOADS[s.name].expr;
     const why = JSON.stringify(s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].needsData || "its payload resolved empty in this fixture"));
-    return q + ":function(){try{var v=(" + arg + ");" +
+    const prep = (s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].prep || ""));
+    // `prep` builds the screen a nested modal lives inside, before its payload is evaluated.
+    return q + ":function(){try{" + prep + "var v=(" + arg + ");" +
       "if(v==null||v===\"\"){(window.__overlayNoPayload=window.__overlayNoPayload||{})[" + q + "]=" + why + ";return;}" +
       s.setter + "(v);}catch(e){" +
       "(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[" + q + "]=String(e&&e.message||e);}}";
