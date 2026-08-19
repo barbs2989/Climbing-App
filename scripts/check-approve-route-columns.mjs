@@ -149,7 +149,31 @@ const latest = defs[defs.length - 1];
 const union = new Map(); // column -> first file that wrote it
 for (const d of defs) for (const c of d.cols) if (!union.has(c)) union.set(c, d.file);
 const lost = [...union.keys()].filter((c) => !latest.cols.has(c));
-if (lost.length) {
+
+// A column the TABLE no longer has is the one legitimate reason to stop writing it, and #1020 is
+// the case: it dropped `routes.source`, swept the three pipeline loaders and two readers, and
+// missed this function — so the live approval inserted into a column that did not exist. plpgsql
+// resolves column names when the statement first RUNS, so nothing failed at deploy time and no
+// guard went red; the failure was reserved for the next admin to approve a route.
+//
+// This is DERIVED from the migrations, never declared. A hand-maintained exemption list would be a
+// second source of truth for the schema and would rot the moment a column came back. Replaying
+// every add/drop in file order and keeping the LAST one means the exemption appears and disappears
+// by itself. Re-adding the column re-arms the rule, which is the safe direction: the guard then
+// demands more of the approval rather than less.
+const dropped = new Set();
+for (const f of files) {
+  const sql = fs.readFileSync(path.join(MIGRATIONS, f), "utf8").replace(/--[^\n]*/g, "");
+  const re = /alter\s+table\s+(?:only\s+)?(?:public\.)?routes\s+([^;]*);/gis;
+  for (const m of sql.matchAll(re)) {
+    for (const c of m[1].matchAll(/\bdrop\s+column\s+(?:if\s+exists\s+)?"?([a-z_][a-z0-9_]*)"?/gi)) dropped.add(c[1].toLowerCase());
+    for (const c of m[1].matchAll(/\badd\s+column\s+(?:if\s+not\s+exists\s+)?"?([a-z_][a-z0-9_]*)"?/gi)) dropped.delete(c[1].toLowerCase());
+  }
+}
+const droppedLost = lost.filter((c) => dropped.has(c));
+const reallyLost  = lost.filter((c) => !dropped.has(c));
+for (const c of droppedLost) console.log(`   note  ${c} is not written any more, and routes no longer has it — dropped by a migration`);
+if (reallyLost.length) { const lost = reallyLost;
   fail.push(
     `${latest.file} defines the newest ${sigKey(latest.types)} but DROPS ${lost.length} column(s) an earlier definition wrote:\n` +
     lost.map((c) => `        ${c.padEnd(14)} first written by ${union.get(c)}`).join("\n") +
@@ -157,7 +181,8 @@ if (lost.length) {
     `        0128/0132 shipped. Base a rewrite on the CURRENT definition, not on the one it replaced.`
   );
 } else {
-  console.log(`\nrule 1  columns monotonic — newest definition writes all ${union.size} ever written  ok`);
+  console.log(`\nrule 1  columns monotonic — newest definition writes all ${union.size - droppedLost.length} still-existing column(s) ever written  ok` +
+    (droppedLost.length ? ` (${droppedLost.length} dropped from the table, so no longer written)` : ""));
 }
 
 // ── rule 2: exactly one live signature ───────────────────────────────────────
@@ -272,3 +297,13 @@ console.log(`\nok — ${FN} has one signature, writes every column any version w
 // 5. Rename the function in every migration -> "no definition found", exit 1, NOT a pass.
 // 6. Break the insert regex (e.g. match `insert into route `) -> every definition reports
 //    "no insert into routes found" rather than parsing an empty column set and passing.
+// 7. Remove a LIVE column (`crux`) from the newest definition's column list -> rule 1 must still
+//    FAIL naming crux / 0132. The dropped-column exemption must not have disarmed the rule
+//    generally. RUN, and note the trap it caught: the first attempt at this case patched
+//    ` crux, overview,` which is not how the file wraps that list, so the edit never landed and
+//    the guard's "ok" was about unmodified source. Prove the injection landed before believing
+//    the verdict.
+// 8. Add a migration re-adding the column (`alter table public.routes add column if not exists
+//    source text;`) -> rule 1 must RE-ARM and fail again, because the exemption is replayed from
+//    the migrations rather than declared in a list. RUN. This is the case that distinguishes a
+//    derived exemption from a hand-maintained one: a declared list would stay exempt forever.
