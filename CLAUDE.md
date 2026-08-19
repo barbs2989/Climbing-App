@@ -39,7 +39,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
-npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
@@ -666,9 +666,10 @@ a build error, but a screen that renders wrong or not at all.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
-- **`check:a11y-badges`** asks whether any control announces its badge count welded to its
-  label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
-  Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
+- **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
+  token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
+  bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
+  as **`"Friends2"`** — one token. Sighted users see a gap because it
   is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
   not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
   `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
@@ -676,7 +677,7 @@ a build error, but a screen that renders wrong or not at all.
     digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
     `Class 4` are all correct names. The defect is that the digit and the word come from
     **different DOM nodes**. A grade is one authored string in one text node; a badge is a
-    separate element. So it walks each control's text nodes, finds a letter↔digit transition
+    separate element. So it walks each control's text nodes, finds a word-character transition
     **across a node boundary**, and only then asks Chrome what it computed. An earlier
     string-matching attempt reported "none" while direct measurement showed three, and was
     binned rather than shipped.
@@ -685,6 +686,35 @@ a build error, but a screen that renders wrong or not at all.
     which changes no structure at all — reads as fixed, and why rearranging JSX cannot satisfy it.
   - Runs against the **populated** demo. A badge is `count ? <span>…`, so at zero there is no
     badge and nothing to find; check:zero's config would make this vacuous.
+  - **The needle was letter↔digit until 2026-08-19, and that narrowness let a whole class
+    through for as long as the check had existed.** #740 was a *count* welded to a label, so
+    the rule was written about digits. The route page's "Recently climbed" rows are the same
+    defect with a **word** on the right: `{aa.user}<span style={{marginLeft:7}}>{outcome}</span>`
+    announced as **`"Nathan BarberAttempt"`**. It is now `\w` on both sides, which subsumes the
+    original rule.
+    - **Punctuation between the fragments is a real separator and must NOT be flagged.**
+      `"Alex Torres" + "✓ Summited"` announces as `"Alex Torres✓ Summited"`, where the ✓ keeps
+      the words apart — so the test is `\w` on both sides, deliberately **not** "no whitespace
+      at the boundary". That looser rule reports correct rows, measured against the live app.
+    - **Chrome blockifies flex and block children and inserts a space between them**, which is
+      why the widening is far less noisy than it sounds: the crag-sibling nav's stacked
+      `Routes` / `next door ›` spans *look* like the same bug and announce correctly. Reasoning
+      from the markup called that a defect; the measurement overruled it. Only the inline
+      `marginLeft` shape actually glues.
+  - **The route detail screen IS covered, on all six sub-tabs**, and the exclusion that used to
+    sit here — *"reached by clicking a card, not by URL, and the shared scaffold only opens tabs
+    and overlays"* — was **stale rather than wrong when written**: the scaffold gained `?zr=1`
+    for `check:overflow`, which calls the app's own `openRoute()` from inside the opener. The
+    exclusion outlived its reason by months, and the one defect the widening found was **on that
+    screen**. Not reaching it is an exit-1, not a note, for the same reason `check:overflow`
+    upgraded it. Sub-tab clicks skip fixed/sticky chrome, because a sub-tab name collides with
+    the bottom nav and a global text match silently leaves the route page.
+  - **The sibling instance in `AreaLatest` needed TWO fixes, and one hid the other.** The same
+    row in `ClimbMatchCore.jsx` glued identically but was a bare `<div onClick>` — no role, so
+    a screen reader computed no control name for it and this guard's selector could not see it
+    at all. Making it a real control via `clickable()` is what **exposed** the glue, so both
+    had to land together; `check:clickable`'s baseline drops by one. A defect can be hidden by
+    a worse defect in the same element.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
@@ -697,8 +727,8 @@ a build error, but a screen that renders wrong or not at all.
     from the sweep. That was not hypothetical: it is why the second defect went unseen on the
     first run.
   - Does **not** cover clickable `<div>`s (React's onClick leaves no attribute, and a div with
-    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`) or
-    the route detail screen, which is reached by clicking rather than by URL.
+    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`),
+    nor a name glued by something that is not a word character on both sides.
   - Zero candidates anywhere is treated as a **failure**, not a pass: every control here is
     multi-node, so an empty scan means the scan broke.
   - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
