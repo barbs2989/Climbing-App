@@ -103,3 +103,36 @@ The useful move was **comparing ids, not counts**. The count went 22 -> 2 -> 16 
 runs, which reads like a regression and is not one: the 13 known-correct two-rope sequences are
 still flagged every run, by design, because rule 3 cannot see what a human decided. Only the
 set difference against the earlier writeups shows what is actually new.
+
+---
+
+## APPLIED 2026-08-19
+
+`scripts/oneoff/fix-two-rope-config-contradictions.mjs --apply`. It asserts every value against
+what this triage read and **refuses to write if a row has moved**, so it cannot overwrite
+someone else's edit; it then re-reads and reconciles, because a 200 is not evidence the data
+changed.
+
+| route | column | before | after |
+|---|---|---|---|
+| `wa_west_face_2` | `rappel_detail[].lengthM` | 50, 50, 50, 20 | null x4 |
+| | `rappels` | "4 double-rope rappels (~50m, 50m, 50m, 20m)" | "4 double-rope rappels down the West Face; per-station lengths unconfirmed" |
+| | `rappel_count_note` | null | records the contradiction and why both figures were dropped |
+| `wa_chimney_rock_west_face` | `gear` | "rope (single 50m sufficient)" | "two ropes, or a 60m lead rope plus a tag line (the Rappel Chimney rappel is rigged two-strand)" |
+| | `rappels` | "Single rope; downclimb ledges between rappels" | "2 rappels: … a second rope or tag line is required" |
+| | `rappel_detail[1].lengthM` | 30 | null (its own note calls the 30 m an estimate, not a source) |
+
+**No number was invented.** `wa_west_face_2`'s prose figure (30 m) was *not* written in place of
+the table's 50 m — substituting one unsourced number for another is the failure this rule
+already records. Both were dropped; `RappelTable` prints "—" for a null length and its total
+line says "N m across X of Y" when partial.
+
+Verified after the write:
+
+    check:rappel-lengths     rule-3 candidates 16 -> 14; neither route flagged.
+                             The remaining 14 are the known-correct two-rope
+                             sequences from the two earlier writeups.
+    check:rappel-single-rope ok — the headline count still cannot come from a
+                             length or an unstated rope setup.
+    audit:rappel-claims      3 flagged, unchanged, neither of these two among
+                             them (Buckner is the documented false positive).
