@@ -82,6 +82,31 @@ const REGISTRY = [
     source: "Two independent published sources agreeing to 4 dp (NPS publishes no coordinate)",
     sourceTier: "published",
   },
+  {
+    id: "wa_glacier_peak_disappointment_peak_cleaver",
+    area: "wa_glacier_peak",
+    // Both surviving approach waypoints are Trinity/Chiwawa landmarks — Buck Creek Pass at 9.5 mi
+    // and the Cool/Gerdine Basin camp reached from it — while the row named NORTH FORK SAUK,
+    // 20.2 mi away. Its own note says "existing DB trailhead (Trinity/Chiwawa) is wrong for this
+    // route" and its itinerary's day 1 is "Trailhead to Buck Creek Pass, 12 mi", which only makes
+    // sense from Trinity. The trailhead was corrected and nothing downstream was.
+    //
+    // WORTH KNOWING, because it explains why this class was convincing enough to write confident
+    // notes about: this coordinate is EXACTLY what wa_mount_berge_southwest_route was holding
+    // before the entry above replaced it. The swaps used REAL trailhead coordinates — just the
+    // wrong trailhead for the route. Berge's chain is the Little Giant Trail and it carried
+    // Trinity; Glacier Peak's chain is Buck Creek and it carried North Fork Sauk. A pin can be a
+    // perfectly good coordinate and still be the wrong record.
+    wrongNameRe: /north\s*fork\s*sauk/i,
+    th: {
+      type: "Trailhead",
+      name: "Trinity Trailhead (Chiwawa River Road, Buck Creek Trail #1513)",
+      lat: 48.071966, lng: -120.84999, elev: 2800, distMi: 0,
+      note: "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Trinity Trailhead, where Buck Creek Trail #1513 and Chiwawa River Trail #1550 enter the Glacier Peak Wilderness. This REPLACES a pin naming the North Fork Sauk River trailhead, 20.2 mi away on a different approach: both of this route's approach waypoints — Buck Creek Pass at 9.5 mi and the Cool/Gerdine Basin camp above it — are reached from Trinity, and the route's own itinerary begins 'Trailhead to Buck Creek Pass, 12 mi'.",
+    },
+    source: "Okanogan-Wenatchee National Forest — Trinity Trailhead",
+    sourceTier: "land-manager",
+  },
 ];
 for (const e of REGISTRY) {
   if (e.sourceTier !== "land-manager" && e.sourceTier !== "published") {
