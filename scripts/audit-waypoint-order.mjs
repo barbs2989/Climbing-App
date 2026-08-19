@@ -84,7 +84,21 @@ console.log("routes read (waypoints not null):", t.rows, " with a non-empty list
 console.log("routes where every waypoint has distMi:", t.allHaveDist, " partial:", t.partialDist);
 console.log("\nroutes listing the same place twice:", t.deduped, " duplicate pins removed:", t.dupPins,
   " of which had 2+ summit/topout pins:", t.dupSummits);
-console.log("routes whose waypoints render out of order:", t.reordered);
+// This number is ONLY about the routes orderWaypoints can actually order, and saying so is the
+// whole point of printing it this way. `orderWaypoints` sorts by distMi and returns the list
+// UNTOUCHED unless every pin has a finite one — so for a route missing a single distance the
+// app renders the stored order however wrong, and this audit reports it as in-order BY
+// CONSTRUCTION. Measured on WA: 435 of 1012 routes are in that state, and 64 of them list an
+// approach marker (a trail junction, a water source, a climbing area) AFTER the summit — the
+// Amphitheater Mountain cluster reads Trailhead, Summit, Topout, Junction, Climbing area on
+// five separate routes. An unqualified "0 out of order" over that population is the
+// vacuous-pass shape, so the denominator is stated with the verdict.
+const unsortable = t.withWp - t.allHaveDist;
+console.log(`routes whose waypoints render out of order: ${t.reordered}` +
+  ` — of the ${t.allHaveDist} this can order at all`);
+console.log(`  ${unsortable} more cannot be ordered (a pin is missing distMi), so they render in` +
+  ` STORED order and are counted as in-order here whatever that order is.`);
+console.log("  scripts/oneoff/probe-waypoint-order-coverage.mjs measures what is sitting in that gap.");
 if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 process.exit(0);
