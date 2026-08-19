@@ -1,14 +1,15 @@
 # Name vs aspect: 12 disagreements, and the `face` column decides most of them
 
 > **RESOLUTION LOG (updated 2026-08-13, after published-source research).**
-> **3 settled, 9 still open.** The bar for acting is a *published* statement, not internal
+> **4 settled, 8 still open** (was 3/9 — the Ruth Mountain rename SQL sat written-but-unapplied for a day
+> and was applied on 2026-08-14; see the row below). The bar for acting is a *published* statement, not internal
 > agreement — the catalog is what is in doubt, so `face` agreeing with `aspect` raises suspicion
 > about the name but cannot supply the right one.
 >
 > | route | verdict | action |
 > |---|---|---|
 > | `wa_forbidden_peak_east_face_catscratch` | **PHANTOM — not a route at all** | **DELETED.** See below. |
-> | `wa_ruth_mountain_south_slopes` | **NAME WRONG** | prose applied; rename SQL in `audits/sql/2026-08-13-ruth-mountain-rename.sql` |
+> | `wa_ruth_mountain_south_slopes` | **NAME WRONG** | **RENAME APPLIED 2026-08-14** -> `North Face / Ruth Glacier`, verified by re-read; audit 10 -> 9 |
 > | `wa_chimney_rock_west_face` | **Idaho route, corroborated** | removal recommended, not applied — needs a human |
 > | `wa_spire_point_southwest_face` | **UNRESOLVED** | route naming needs Beckey; no source settles it |
 > | `wa_pinnacle_peak_tatoosh_r1`, `wa_plummer_peak_r1` | **name suspect, UNRESOLVED for rename** | data self-consistent; no published route name found |
