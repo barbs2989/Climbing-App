@@ -242,11 +242,26 @@ a build error, but a screen that renders wrong or not at all.
     - The lesson is the exemption, not the fix: "no App-scope expression can open them" was
       true of the modal's *own* setter and false of the screen it lives in. An exemption is a
       claim about reachability, and this one had not been tested.
-  - **The hole it does not close, printed rather than hidden:** five overlay states live in
-    `RouteDetail.jsx`, and the opener injects into `App`, so no `?z=` can ever reach another
-    component's local state. They are walked only insofar as `check:ui` opens a route. The
-    script reports the count as a `note` — a known quantity beats an absence nobody can see,
-    which is the failure this whole guard is about.
+  - **The hole it used to print as a note is CLOSED**, and the note is why it got closed: the
+    opener injects into `App`, so no `?z=` could reach an overlay whose state lives in
+    `RouteDetail.jsx`, and those were walked only insofar as `check:ui` happens to open a route.
+    `routeDetailTransform()` now injects a second opener into RouteDetail's own component, so
+    they are opened directly like any other. All **54** (51 in App, 3 in RouteDetail) are
+    reachable. *A known quantity beats an absence nobody can see* — the count sat in the output
+    as a `note` until somebody fixed it, which is the argument for printing what you cannot yet
+    do rather than omitting it.
+  - **The count went five to three because DISCOVERY changed, not because overlays were
+    removed.** The five came from the old name shape (`[xOpen,setX]=useState(false)`); asking
+    instead what a state actually *renders* dropped two that were never modals. Do not read the
+    smaller number as a regression.
+  - **`shareOpen` exists in BOTH files, and that collision silently un-walked the App one.**
+    Overlay names are keys, so the second file's `shareOpen` overwrote the first and App's share
+    sheet stopped being opened while the summary still counted one. RouteDetail's states are
+    namespaced **`rd:`** for that reason. Any future second component needs the same treatment —
+    a bare name is not unique across files.
+  - Every vite config that calls `buildOpener` **must** also call `routeDetailTransform`, and the
+    guard asserts it (all 5 do). Wiring that a config can forget is wiring that one eventually
+    will: the configs already drifted once on which files they transformed.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
@@ -331,7 +346,7 @@ a build error, but a screen that renders wrong or not at all.
     shortest screen and a **correct** empty state, so the 400 default would fail working code.
     Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
     revived block fails naming the missing landmark.
-- **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
+- **`check:zero`** walks all six tabs and every overlay the app declares (49 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
   `friendReqIn` is `[5]`, `crewUnread` is `{crew_seed_tingey:2}`. So every branch that only
@@ -434,6 +449,29 @@ a build error, but a screen that renders wrong or not at all.
     they cannot appear in partner browse — the objection against a permanent QA account.
     `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
+  - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
+    the transferable half. All three fixture paths made their group `visibility:"public"`, and
+    `groups read public or member` plus `useMyGroups()` — which selects **every** group with no
+    filter, `order=created_at.desc` — put it at the **top** of every real climber's Groups tab.
+    Measured 2026-08-19: the live project held two groups and **both were fixtures**, so that
+    screen was 100% test data. All three now flip to private (#1015). *When you make a fixture
+    invisible, ask what it creates, not only what it is.*
+    - **Creating it private is refused — `42501`, RLS.** The live INSERT policy requires a group
+      to *start* public; `0090_groups.sql` says only `with check (auth.uid() = created_by)` and
+      no later insert policy exists in the migrations, so **the file and the live policy
+      disagree**. Create public, then `PATCH`. The owner still sees it: `groups_add_owner` seats
+      the creator, so `is_group_member` holds.
+    - **The mate joins BEFORE the flip**, deliberately. `group_members`' insert policy carries no
+      visibility clause *in the file* — and the file had just been shown wrong about the sibling
+      table, so the join stays on the path already proven. Exposure is ~1s, not the ~4min walk.
+    - **Crews are NOT affected**: `crews` RLS is `created_by = me OR I am a member`, with no
+      public class at all. Checked rather than assumed.
+  - **`sweepOrphans()` is age-gated (45 min), and must stay so.** It deletes every
+    `@climbmatch-qa.invalid` account and runs BEFORE each fixture, so ungated it deletes the
+    accounts of a run already in flight — two runs were observed overlapping in this project on
+    2026-08-19. The victim's rows simply stop existing, so its failure lands nowhere near the
+    cause **and passes on re-run**, which is exactly how a real defect gets filed as a flake. 45
+    minutes clears the 25-minute job wall, so a leak still has a bounded lifetime.
   - **The ACCOUNTS are durable; their DATA is not, and that distinction is load-bearing.** The
     accounts have to persist (CI holds no service key, and Supabase has no self-delete, so
     per-run *accounts* would leak forever). A shared *group* is a different matter: the walk
