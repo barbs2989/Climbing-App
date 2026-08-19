@@ -1,0 +1,681 @@
+{
+ "_README": [
+  "Approach variants — GLACIER PEAK / CHIWAWA / ENTIAT, Washington, 2026-08-19. 27 routes, 29 variants, every one carrying a baseFinding.",
+  "",
+  "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. Four ids in this",
+  "batch carry no peak name at all — wa_soviet_route and wa_don_t_climb_that_she_said, wa_borrowed_time and",
+  "wa_superalpine. The first is BONANZA PEAK, the second is filed under GLACIER PEAK, and the last two are SLOAN",
+  "PEAK. A name-shaped id is not evidence of which mountain you are on; every one of these was resolved by reading",
+  "area_id off the row.",
+  "",
+  "SCOPE was the 23 peaks named in the request. Every one exists in the catalog except that WHITE CHUCK MOUNTAIN",
+  "(wa_white_chuck_mountain, filed as a crag under Glacier Peak Wilderness) holds ZERO routes, so there was nothing",
+  "to enrich there. Across the other 22 peaks the catalog holds 49 routes, of which 33 had an EMPTY",
+  "approach_variants; 27 are written here and 6 were deliberately skipped — see _SKIPPED. The 16 routes that already",
+  "carried variants were not touched.",
+  "",
+  "Peaks in the same subtrees but NOT named in the request were left alone, to stay clear of the other agents:",
+  "Buckskin, Carne, Cloudy, Dark, Greenwood, Massie, Mount Lyall, North Star, Chalangin, Helmet Butte, Indian Head,",
+  "Sitkum Spire, Painted Mountain and Mount Saul all have empty rows and are still available.",
+  "",
+  "CONTAMINATION REJECTED during research, recorded so it is not re-introduced:",
+  "  - BUCK MOUNTAIN exists twice in Washington. The one in scope is wa_buck_mountain in the Chiwawa Ridge / DaKobed",
+  "    subtree at 48.0936, -120.9122, reached from Trinity and Buck Creek Pass. The Olympic Buck Mountain is a",
+  "    different peak in a different range and nothing was carried between them. (That row already had variants and",
+  "    was not edited; the check was made because Mount Berge's approaches share the Buck Creek trail.)",
+  "  - MOUNT FERNOW exists twice in Washington — the 9,249 ft Entiat peak (wa_mount_fernow, 48.1625, -120.8074) and",
+  "    a Wild Sky peak of the same name. Only the Entiat one borders this batch, and only via Leroy Basin, which the",
+  "    Mount Maude and Seven Fingered Jack rows already describe.",
+  "  - CLARK MOUNTAIN IS NOT MOUNT CLARK. The Clark in this region is wa_clark_mountain at 48.0500, -120.9686, whose",
+  "    Walrus Glacier and south-basin routes bound Luahna Peak's approach. Nothing from any Mount Clark was used.",
+  "  - COPPER PEAK: there is a Copper Peak in Michigan that dominates search results for the name. Every source used",
+  "    for wa_copper_peak is anchored to Holden Village, Railroad Creek and the Copper Creek boot trail, which no",
+  "    other Copper Peak has.",
+  "  - GLACIER PEAK, KENNEDY, WHITE CHUCK and BOULDER are all names that recur across this state and beyond. The",
+  "    Kennedy in this batch is the glacier on Glacier Peak's north-west flank; the Boulder Creek used for Luahna is",
+  "    the White River one, NOT the Boulder Creek on Mount Baker that serves the Boulder Glacier routes. Both",
+  "    catalogs contain a 'Boulder Basin' and they are 100 km apart.",
+  "  - 'NORTH RIDGE' and 'WEST RIDGE' as route names identify nothing. wa_bonanza_peak_north_ridge carries a beta",
+  "    field that begins 'From the Middle Fork Snoqualmie trailhead' — a valley on the far side of the Cascade crest",
+  "    with no connection to Bonanza Peak. That row was SKIPPED rather than repaired; see _DEFECTS.",
+  "",
+  "NO TIME, DISTANCE OR GAIN FIGURE IS WRITTEN IN THIS BATCH. Not one variant carries hours, distMi or gainFt. That",
+  "is a finding rather than an omission: on essentially every route here the published figures disagree with the",
+  "row's own columns, with each other, or mix one-way and round-trip conventions — Kololo's approach prose cites a",
+  "46.99 km round trip against a dist_km of 22.9; Fortress's two rows both record more loss than gain on an",
+  "out-and-back; Luahna's two rows differ by 3,250 ft of gain for the same summit from the same trailhead. Averaging",
+  "any of that would manufacture a number nobody published.",
+  "",
+  "_confidence values used here: 'corroborated' (two or more independent published sources agree on the base),",
+  "'single-source' (one published source plus the route row's own columns), 're-homed' (the material comes from the",
+  "route row's OWN approach / climbing_route / descent_text / waypoint prose and no external source was retrieved —",
+  "nothing was researched into these, and no source is claimed), and 'thin' (the base is real but under-published;",
+  "the entry says so in its own notes).",
+  "",
+  "Every URL in a _sources list was actually retrieved during this pass. Nothing was pattern-guessed. Where a base",
+  "finding is re-homed from the row's own columns the _sources list is EMPTY, which is the honest answer rather than",
+  "a plausible-looking citation."
+ ],
+ "wa_glacier_peak_kennedy_glacier": {
+  "area": "wa_glacier_peak",
+  "approach_variants": [
+   {
+    "name": "White Chuck River and Kennedy Ridge to the Glacier Creek camps",
+    "season": "Roughly Jun-Aug, and it is one of the shorter windows on the mountain — the upper Kennedy is a small, steep glacier that opens into a maze of 5-15 ft crevasses as the season runs on",
+    "notes": "The historic line starts at the White Chuck River Trailhead at the end of FR-23 and follows Trail #643 about four miles, then Kennedy Ridge Trail #639 for 1.7 miles to the Pacific Crest Trail near 5,000 ft. Turn north on the PCT and follow it about two miles to the Glacier Creek crossing, where there are established camps with reliable water near 5,300 ft. Four to five hours is the usual pack-in.\n\nFR-23 has been closed from milepost 3.7 to its end, so the reliably open option in recent seasons has been the North Fork Sauk Trail and the PCT over Red Pass to the same Glacier Creek camps. That is a much longer walk to the same place, and it changes nothing above camp.\n\nFrom the Glacier Creek camp a climbers' trail runs up a gully to the crest of Kennedy Ridge. Everything above is glacier, and the character of the day is set by how well you read the upper glacier rather than by any technical difficulty — the headwall at the top is about 40 degrees and short, while the crevasse field below it is the part parties spend hours on.",
+    "baseFinding": "THE START OF THE CLIMB IS BELOW YOU, NOT ABOVE YOU, AND THAT IS THE WHOLE TEST. From the Glacier Creek camp the climbers' trail climbs a gully to the CREST of Kennedy Ridge — and then you go DOWN off the far side, to climber's right, to the foot of the Kennedy Glacier. A party that tops the ridge and keeps climbing has left the route. If you have not lost height since the ridge crest, you have not reached the base.\n\nARRIVAL: the foot of the glacier, where ridge ground runs out into ice. Rope up there. On the lower glacier keep RIGHT; on the upper glacier take the CENTRE. That right-then-centre sequence is worth memorising before you leave camp, because the upper Kennedy is a maze and there is nothing to sight on inside it.\n\nTHE DISCRIMINATOR AGAINST FROSTBITE RIDGE, which shares this mountain flank and this camp: Frostbite rounds Kennedy Peak to the saddle between the VISTA and KENNEDY glaciers at about 8,000 ft, climbs the Kennedy to a saddle at about 8,800 ft, and then leaves the ice for the RIDGE. This route never leaves the ice. If you are standing on a saddle looking for a rock crest to follow, you are on Frostbite. If you are still roped on glacier at 9,500 ft heading for a bergschrund, you are on this one.\n\nTHE TOP END, AND IT IS A REAL DECISION POINT: the bergschrund sits at the head of the glacier. Reach it by climbing LEFT to the top of a snow dome and looking for a bridge from there — do not walk the schrund's length hunting for a gap at its lowest point. Above it the headwall runs about 40 degrees; stay LEFT of, but close to, the prominent rock outcrops, and that puts you on the crater rim.\n\nWHAT HUGGING THE LEFT WALL COSTS: parties commonly move under the Kennedy Peak wall on climber's left to simplify the crevasse problem. It works, and it buys the simplification with rockfall and serac exposure. That is a trade to make deliberately, not one to drift into.",
+    "hazards": [
+     "An upper glacier described by parties as a maze of 5-15 ft crevasses that needs deliberate, slow routefinding",
+     "Seracs on climber's left beneath the Kennedy Peak wall, where some parties have had to belay off bare glacier ice",
+     "Trading crevasse navigation for rockfall by hugging the left wall — the simplification is real and so is the cost",
+     "A bergschrund at the head of the glacier whose only crossing may be a single bridge found from the snow dome above it",
+     "8,200 ft of gain from a trailhead served by a road that has been closed at milepost 3.7, so the walk in may be far longer than the mileage on file"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_kololo_peaks_standard": {
+  "area": "wa_kololo_peaks",
+  "approach_variants": [
+   {
+    "name": "North Fork Sauk Trail #649 to White Pass, then the Foam Basin traverse and the White Chuck Glacier",
+    "season": "Roughly Jul-Sep. Late summer opens the crevasses so you can see and weave them; early season covers them with bridges you cannot read, and puts Red Creek and Lightning Creek in flood",
+    "notes": "From the North Fork Sauk Trailhead near 2,050 ft at the end of FR-49, Trail #649 runs about 5.5 miles up the valley on an easy grade through old growth, fording several tributaries. Red Creek is the first crossing that can actually stop you: manageable at normal flow, considerably higher during snowmelt or after rain, and worth a pole. Mackinaw Shelter at 2,950 ft is a possible camp but tight for a big party, and it is where the trail leaves the river — fill water there.\n\nAbove the shelter the trail climbs about 3.2 miles of sustained switchbacks to a meadow junction with the Pacific Crest Trail near 6,000 ft, then a quarter mile north on the PCT to White Pass at 5,900 ft. That is roughly nine miles and 4,800 ft from the car and the last easy water before the high traverse.\n\nMaintained trail ends at the pass. Traverse north below the White Mountain ridge into Foam Basin and White River Meadows around 6,300-6,500 ft — the usual base camp — either by way of Red Pass or by crossing snowfields to the notch west of Point 6770 and dropping into the White Chuck basin.\n\nAlmost nobody does this from the car in a day, and the round trip is long enough that the two published distances for it disagree; see _DEFECTS.",
+    "baseFinding": "THIS ROUTE HAS TWO ARRIVALS AND THEY ARE DIFFERENT KINDS OF THING. The first is where GLACIER TRAVEL starts, and the second is where the SCRAMBLING starts. Confusing them is how a party ends up unroped in the wrong place.\n\nGLACIER STARTS AT FOAM PASS. From camp climb to Foam Pass and step onto the White Chuck Glacier. Rope, axe and crampons go on here, not later — the crossing to Glacier Gap and then onto the White River Glacier is the whole of the day's crevasse exposure.\n\nSCRAMBLING STARTS AT THE 7,400 FT SADDLE, AND YOU GET THERE BY COUNTING RATHER THAN BY LOOKING. Off the glacier, gain the flat shoulder near 6,000 ft; follow the connecting ridge north-north-west over a bulge at 7,200 ft; cross the small basin below the east summit; then go WEST a quarter mile to a saddle at 7,400 ft. Shoulder, bulge, basin, saddle — four things in that order. If you have gone west without first crossing a basin, you are on the wrong side of the bulge.\n\nTHE ARRIVAL TEST AT THE SADDLE: from it, one ridge runs away from you forming the EAST EDGE OF THE WHITE RIVER GLACIER CIRQUE. That ridge is the route. If the ground ahead does not have a glacier cirque falling away on one side of it, you are not on the saddle you want.\n\nWHAT TOO FAR LOOKS LIKE: continuing east instead of west from the 7,200 ft bulge takes you to the EAST summit rather than the summit ridge — and this peak's own record does not agree on which of its two tops is higher, so bagging one of them is not proof of anything. See _DEFECTS before you decide you are done.\n\nONE THING TO EXPECT ON THE ICE RATHER THAN LOOK FOR: a roughly 200-yard band of exposed blue ice, a shallow icefall, on the White River Glacier. It is a crampon problem, not a navigation one, but it is the reason the descent takes longer than the map suggests.",
+    "hazards": [
+     "Open crevasses and a roughly 200-yard band of exposed blue ice on the White River Glacier, worse late season",
+     "Red Creek and Lightning Creek run high and fast in snowmelt — the first is an ordinary ford at normal flow and a stopper at high water",
+     "Twelve-plus miles one way with the last several off any maintained trail, so a navigation error is measured in hours",
+     "Snow bridges over the White Chuck Glacier that are unreadable under early-season cover",
+     "Road closures on FR-49 and the Mountain Loop Highway that can shut the west approach entirely, turning this into a much longer trip from the east"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_tenpeak_mountain_southeast": {
+  "area": "wa_tenpeak_mountain",
+  "approach_variants": [
+   {
+    "name": "White River Trail #1507 and the old sheep path into Thunder Basin",
+    "season": "Roughly Jul-Sep, while the snow between camp and the col is still continuous enough to walk and the summit rock is dry",
+    "notes": "From Coles Corner take Hwy 207 toward Lake Wenatchee, then White River Road (FR-6400) to its end at the White River / Indian Creek Trailhead near 2,300 ft. Hike White River Trail #1507 about six miles to the Thunder Creek crossing; there is an established camp right at the crossing.\n\nHalf a mile past Thunder Creek the maintained trail is left behind for an old, unmaintained sheep path that climbs the WEST side of the Thunder Creek drainage. This is the hard part of the walk in: avalanche debris, blowdown, and dense slide alder choking the tread up to about 5,000 ft. Above the alder it opens into a lower basin near 4,175 ft and then climbs steeply into Thunder Basin, an open basin of granite slabs and small tarns which is the standard high camp and has a direct view of the peak.\n\nThe row carries three different elevations for that camp; see _DEFECTS. Camp on the slabs by the tarns rather than at a number.\n\nA far longer alternative comes in from the west — North Fork Sauk Trail #649 past Mackinaw Shelter to the PCT, then cross-country over Boulder Pass and through the Napeequa to the peak's north and north-east side. Parties who have done it report twenty-plus stream crossings and heavy brush over three days. It is a different trip, not a shortcut.",
+    "baseFinding": "THE COL EAST OF THE SUMMIT BLOCK IS THE BASE, AND THE THING THAT CONFIRMS IT IS THE WIND. Parties who have stood there describe it as an incredibly windy notch below the east face — it is a gap on a ridge, so it funnels, and on a Cascade summit day you will feel it before you can see anything.\n\nGETTING THERE IS A SINGLE BEARING FROM CAMP: from Thunder Basin cross talus and snow toward the col that sits EAST of the summit block, near 8,000 ft. Crampons and an axe are normal for the snow, which stays firm in the morning. You are aiming for the gap beside the summit tower, not for the tower.\n\nTHE POSITIVE TEST FOR THE START OF THE CLIMBING: from the col the route takes a LOOSE GULLY ON THE LEFT for about 85 ft to a ledge system. Loose first, ledge second. If the first thing above the col is clean solid rock, or if you are moving right rather than left, you are not on it.\n\nTHE SECOND CONFIRMATION IS A CRACK. Above the ledge system the finish is a broken chimney with a good jam crack running up it, and that crack is the one genuinely positive hold-bearing feature on the summit block. Class 4 to easy fifth depending on conditions. If you are on a face with no chimney and no crack, you have drifted off the ledge system.\n\nWHAT IT IS NOT: this is a short summit block, not a wall. From the col to the top is roughly two rope lengths. If you have been climbing for hours above the col you are not on this route.\n\nRACK AND ROCK: everything from the col up is loose. Helmet, and space the party out — the gully drops what the leader pulls straight onto whoever is below.",
+    "hazards": [
+     "Loose, rotten rock in the summit gully and the broken chimney above it, directly over anyone belaying below",
+     "Dense slide alder choking the old sheep path to about 5,000 ft — the slowest half-mile of the approach by a wide margin",
+     "Crevasses on the small hanging glaciers crossed on the northern approach variations",
+     "Cornices and wind-loaded slopes on the approach ridgelines into early summer",
+     "White River Road has a repeated history of flash-flood washouts, so the drive is the first thing to verify"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_tenpeak_mountain_north_couloir": {
+  "area": "wa_tenpeak_mountain",
+  "approach_variants": [
+   {
+    "name": "Over the col west of Tenpeak and down the Honeycomb Glacier to the couloir's base",
+    "season": "Roughly Apr-Jul. This is a spring line: it wants continuous firm snow, and it has been climbed and skied as early as mid-April and as late as mid-July. By mid-summer the apron melts out and the couloir bakes to bare ice and scree",
+    "notes": "There is no short way to this side of the mountain. Parties reach it either from the White River Trailhead by way of the PCT and the upper White Chuck and Suiattle basins, or by dropping onto the Honeycomb from a high camp out on the Kololo Peaks — which is why it is most often climbed as one leg of a multi-day traverse rather than as an objective on its own.\n\nEither way the ground you cover on the day is the same: reach the col that sits immediately WEST of Tenpeak, cross onto the Honeycomb Glacier there, and lose height across the glacier before traversing in beneath the north side.\n\nThe couloir itself is roughly 1,200 ft of snow up to about 35 degrees — a boot-and-axe climb rather than a technical one — finishing on the north-west ridge, where a single short rock pitch of about 5.4 leads to the summit. That last pitch is the reason to carry a rope on a route that otherwise does not obviously need one.\n\nThis is the thinnest-documented line in this batch. What is written here comes from a small number of accounts and the route's own row; treat the couloir's condition as unknown until you can see it.",
+    "baseFinding": "YOU ARRIVE AT THIS ROUTE BY GOING DOWN, AND THAT IS THE TEST THAT SEPARATES IT FROM EVERY OTHER LINE ON THE PEAK. Cross the col WEST of Tenpeak onto the Honeycomb Glacier and then LOSE over a thousand feet down the glacier. If you crossed the col and immediately started climbing again, you are on the wrong side of the mountain and probably on the standard south-east line's ground.\n\nTHE HANDRAIL IS THE GLACIER AND THE MARKER IS A KNOLL. After the descent, climb to a small knoll and traverse from it into the foot of the couloir. The traverse is easy ground; the knoll is the point you leave the glacier proper. In cloud, the sequence is col, then descent, then one short rise, then a level traverse — four changes of direction, in that order.\n\nWHAT THE BASE LOOKS LIKE, AND THE SEASONAL TRAP THAT COMES WITH IT: early in the season the couloir runs out into a continuous snow apron and you simply walk onto it. By mid-July that apron has melted and the snow starts higher, above bare ground — so a late party finds a gap between the glacier and the climb that an April party never sees. Do not read a missing apron as being in the wrong place.\n\nTHE CONFIRMATION ONCE YOU ARE ON IT: about 1,200 ft of sustained snow at up to roughly 35 degrees, no steeper. If the ground stands up beyond that, or if you are on ice and rock rather than snow, you are either in the wrong gully or you are here too late in the year.\n\nTHE TOP-OUT IS NOT THE SUMMIT. The couloir finishes on the north-west ridge and there is still one short rock pitch, about 5.4, above it. A party that tops out and starts walking has stopped one pitch short.",
+    "hazards": [
+     "A committing position — once in the couloir the bailout is back down 1,200 ft of snow onto a glacier, hours from anywhere",
+     "Rockfall out of the cliff bands flanking the couloir, worse as the day warms",
+     "Crevasses on the Honeycomb and the upper Suiattle basins, crossed on the way in and again on the way out",
+     "A short rock pitch at the very top that a party carrying no rope cannot protect",
+     "Lightning exposure on wholly open upper-mountain terrain with no shelter for miles"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://turns-all-year.com/trip-reports/tenpeak-north-couloir-july-19-20"
+  ],
+  "_confidence": "thin"
+ },
+ "wa_mount_pugh_stujack": {
+  "area": "wa_mount_pugh",
+  "approach_variants": [
+   {
+    "name": "Mt. Pugh Trail #644 from FR-2095 to Stujack Pass",
+    "season": "Roughly mid-Jul-Oct. Before mid-July the permanent snowfield beside the upper ridge is the crux of the day and wants an axe; October is quiet and superb but the daylight runs short for a 5,300 ft climb",
+    "notes": "From Darrington, follow the Mountain Loop Highway south for roughly 12.5 to 14 miles — the sources differ — to a prominent Mount Pugh sign where FR-2095 branches left. It is narrow, one-lane and unpaved; the signed trailhead is on the right at the second switchback near 1,900 ft. Parking is a handful of cars, and the large pullout at the switchback below is the reliable overflow. Note that FR-2095 is gated 16 October to 1 June for wildlife, on top of any Mountain Loop Highway winter closure.\n\nTrail #644 climbs about 1.5 miles through old growth with several stream crossings to Lake Metan near 3,200 ft. That is the LAST RELIABLE WATER on the route — everything above is dry and fully sun-exposed, so tank up there.\n\nAbove the lake the trail rounds the north side and switchbacks hard up steep forest, breaking into an open boulder basin near 4,900 ft, and tops out at Stujack Pass at 5,700 ft after about 4.5 miles.\n\nThis is one of the largest elevation gains of any maintained Washington trail that reaches a true summit, and the trail is an old fire-lookout line that is eroding and sloughing in places.",
+    "baseFinding": "STUJACK PASS IS THE BASE, AND IT IS THE ONE PLACE ON THIS MOUNTAIN YOU CANNOT MISTAKE IN CLOUD: it is where the MAINTAINED TRAIL STOPS. Up to there you have graded tread and switchbacks under your feet; above it you have a rough climbers' path on heather and then blasted ledges on a crest. If you are still walking on built trail, you have not reached the pass. It also marks the Glacier Peak Wilderness boundary.\n\nWHAT HAPPENS IMMEDIATELY ABOVE IT, so you can confirm it from the other side: the path climbs LEFT out of the notch onto heather, contours the EAST side of the ridge, and crosses the head of a small permanent snowfield. Left, then east side, then snow. A path that stays on the crest straight out of the pass is not the route.\n\nTHE NEGATIVE MARKER IS ABOUT CAIRNS, AND IT HAS HURT PEOPLE HERE. Multiple parties warn against following whatever cairn appears next: stray cairns on this mountain lead toward vertical cliff bands that then need unplanned Class 4 downclimbing to escape. Several boot paths braid the upper ridge and they are NOT all equal. Pick the line that keeps the crest or the blasted ledges under you; do not let a rock pile choose for you.\n\nTHE HANDRAIL ABOVE THE PASS IS THE CREST ITSELF — a razorback with drops on both sides, skirting the head of a small glacier. It is only Class 2-3, and the consequence of a slip is out of all proportion to that grade. There is an iron ring on the short chimney section; use it as a handhold, and downclimb that section facing in, because the exposure faces you on the way down and every account says it feels worse descending.\n\nTHE SUMMIT IS NOT THE FLAT GROUND. The plateau at the top has a roughly 10 ft boulder at its edge that has to be scrambled to tag the true high point. Standing on the flat is not standing on the summit.",
+    "hazards": [
+     "Stray cairns above Stujack Pass that lead to cliff bands and force unplanned Class 4 downclimbing",
+     "A knife-edge crest where the climbing is Class 2-3 and the consequence of a slip is not — two fatal falls are on record on this mountain",
+     "A small permanent snowfield beside the upper ridge that holds hard snow early and late in the day",
+     "An eroding, sloughing old lookout trail, worst on the meadow and talus switchbacks below the pass",
+     "No water above Lake Metan at 1.5 miles, on a fully sun-exposed 5,300 ft climb"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_borrowed_time": {
+  "area": "wa_sloan_peak",
+  "approach_variants": [
+   {
+    "name": "Bedal Creek to the west face basin, then the central line beneath the dagger",
+    "season": "Deep winter — the first ascent was 19 January. It needs the west face frozen and the ice formed, which on this aspect means cold, settled weather rather than a date",
+    "notes": "From the Bedal Creek Trailhead at the end of FR-4096 off the Mountain Loop Highway near 2,800 ft, follow Bedal Creek Trail #705 up the drainage. FR-4096 is not plowed, so in winter the approach starts lower on the road and is normally skinned; travel eases considerably above about 3,700 ft.\n\nThe valley beneath the west face is reached around 5,000 ft. From there this route boots directly up the central weakness of the face to a flat basin below the first ice step, and the first ascent party reached that base at first light after leaving the car in the dark.\n\nThe climb is about 1,900 ft, six pitches, and the difficulty is front-loaded and then front-loaded again: WI5 out of the basin, WI4 in a corner, a WI3 gully beneath the dagger, then the M7 crux through overhanging rock on thin gear with three fixed pitons, a blue-ice traverse, and a long snow-and-ice headwall at 45 to 60 degrees to the summit ridge.\n\nTHREE WINTER LINES SHARE THIS FACE and the baseFinding below is about telling them apart.",
+    "baseFinding": "THE FACE HAS AN OBVIOUS LINE ON THE RIGHT AND THIS IS NOT IT. That single sentence sorts out most of the confusion here. The right-hand side of the west face carries the older, easier ice line; this route is the CENTRAL weakness, left of it. If you have walked to the most obvious continuous flow you can see and started up, you are on the wrong climb and on a much easier one.\n\nTHE ARRIVAL IS A FLAT BASIN, NOT A WALL. Boot straight up the central weakness of the face until the ground goes level: there is a flat basin immediately below the first ice step, and that flat is where the route starts. If you are still on a rising slope, you have not got there; if you are already swinging tools, you passed it.\n\nTHE FEATURE THAT NAMES THIS ROUTE IS A HANGING DAGGER, AND IT IS WHAT SEPARATES IT FROM THE LINE IT SHARES A START WITH. The lower pitches follow the older central route. That older route CUTS RIGHT to easier ground partway up the big rock band; the dagger hangs DIRECTLY ABOVE the point where it does. So the decision is not made at the base at all — it is made at the rock band, and the rule is: where the tracks go right, this route goes straight up under the dagger. A party that follows the rightward escape has climbed the other route.\n\nTHE GRADE IS THE CONFIRMATION. Above the schrund-free basin the first pitch is WI5 and steep. Pitch four is M7 through an overhang on thin gear with three fixed pitons in it — fixed pitons are the one hard physical confirmation on the route. If the hardest thing you have met is WI4 and there is no rock crux, you are on a neighbouring line.\n\nWHAT THE DESCENT MEANS FOR THE START: there is no rappelling this route to get out. You either finish and descend the standard line off the summit with rappels and a lot of downclimbing on sustained 60-degree ground, or you rappel the neighbouring ice line on V-threads. Decide which before you leave the basin, because both cost daylight.",
+    "hazards": [
+     "High-consequence, exposed belay stances the whole way up, with a crux led on thin gear",
+     "Solar warming of the west face bringing rockfall and debris onto the upper snow-and-ice headwall",
+     "A committing line — the escape is up, or a V-thread rappel descent of a different route",
+     "Winter approach on an unplowed road, so a benightment starts hours from the car",
+     "The route's condition cannot be judged from the valley; the dagger forms or it does not"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://publications.americanalpineclub.org/articles/13201216960",
+   "https://publications.americanalpineclub.org/articles/13201216588"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_superalpine": {
+  "area": "wa_sloan_peak",
+  "approach_variants": [
+   {
+    "name": "Bedal Creek on skis to the 5,000 ft meadow, then the right-hand line on the west face",
+    "season": "Late Nov to mid-Mar, most reliably Jan-Feb when a settled cold spell has let the ice form",
+    "notes": "From the Bedal Creek Trailhead on FR-4096 the approach is normally skinned — the road is not plowed, so in a normal winter the skinning starts below the trailhead. Four to five hours gets you into the Bedal Creek valley and the meadow beneath the west face around 5,000 ft. Parties commonly carry on up the spur ridge west of the peak to about 5,700 ft and leave skis there before the technical ground.\n\nThe climb is about 1,000 ft: an approach pitch of rambly ice, a solid near-vertical curtain of roughly 25 ft at WI4, then close to 60 m of fat WI3 in the main gully, 100 m and more of easier ground with ice smears through an easy chimney, and a short WI3 step before the upper snowfields.\n\nIt was first climbed to the snowfields rather than to the top; the continuation to the summit was done later. Above the ice there are several hundred feet of snowfield left before you are anywhere.",
+    "baseFinding": "THIS IS THE OBVIOUS LINE ON THE RIGHT SIDE OF THE FACE, AND \"OBVIOUS\" IS THE TEST RATHER THAN A FIGURE OF SPEECH. Standing in the meadow beneath the west face, the steep weakness on the RIGHT is the one that reads as a line from a distance. Every other winter route on this face is to its LEFT and none of them look as continuous. If you have walked left of centre looking for something better, you have left this route.\n\nSTART HEIGHT: about 5,700 ft, gained by climbing the spur ridge west of the peak out of the 5,000 ft meadow. That 700 ft of rise between the meadow and the start is the reason parties leave skis at the top of it — it is where walking stops.\n\nTHE POSITIVE TEST AT THE BASE: there are several flows in the bottom of the feature and any of them will get you started; they all lead into ONE ice gully proper. So do not stand and choose. Climb the easiest flow you can reach and expect the ground to funnel — if it does not funnel into a single gully within a rope length or two, you are not on it.\n\nTHE CONFIRMATION IS A CURTAIN, AND IT COMES SECOND. The first real difficulty is a solid, roughly 25 ft near-vertical curtain at WI4 above the rambly start, and above that close to a full rope length of fat WI3. Rambly first, curtain second. If your FIRST ground above the snow is steep and hard, you are on one of the harder lines to the left.\n\nTHE NEGATIVE MARKER THAT MATTERS MOST: the central weakness left of this route carries lines with a hanging dagger and an overhanging mixed crux on fixed pitons. If you find yourself under a dagger, or looking at fixed pins in overhanging rock, you are on a route two grades harder than the one you came for.\n\nWHERE IT ENDS IS NOT THE TOP. The ice runs out into upper snowfields several hundred feet below the summit. Finishing the ice is not finishing the mountain, and by then the west face has been in the sun.",
+    "hazards": [
+     "Wet loose avalanche on the steep upper snowfields becoming likely by midday",
+     "Rockfall and spindrift increasing through the afternoon as the west face warms",
+     "A descent choice that must be made in advance — V-threads down the line, or up and over to the standard descent",
+     "Unplowed road access, so a slow day ends with a long ski out in the dark",
+     "Ice that forms only in settled cold; a warm week can leave the whole feature unclimbable"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://climberkyle.com/2020/02/28/fa-sloan-peak-superalpine-wi3-4-1000/",
+   "https://publications.americanalpineclub.org/articles/13201216588"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bonanza_peak_northeast_buttress": {
+  "area": "wa_bonanza_peak",
+  "approach_variants": [
+   {
+    "name": "Holden Village to Holden Lake and Holden Pass, then the Mary Green's north margin to the buttress toe",
+    "season": "Roughly late Jun to mid-Jul for the easiest bergschrund and glacier margin; the buttress itself is dry rock and tolerates a later start into August",
+    "notes": "There is no road to this trailhead. Drive to Chelan or Field's Point Landing, take the passenger boat up Lake Chelan to Lucerne, and ride the village bus up to Holden Village near 3,300 ft. The whole trip is gated by a boat and bus timetable rather than by the weather window, so build the itinerary around sailing days. Both the road and the boat shuttle have been closed since the December 2025 flood and landslide — verify access exists before planning anything.\n\nFrom the village, Railroad Creek Trail #1256 runs about a mile up the valley on near-level grade to a signed fork. Turn RIGHT and climb roughly four miles and 1,700 ft of switchbacks to Holden Lake at about 5,280 ft, the usual first-night camp. Carry water up from the creek — there is none on the switchbacks.\n\nFrom the head of the lake a climbers' path gains about 1,100 ft over heather benches and rocky terraces to Holden Pass near 6,400 ft. That is effectively the last water; everything above has to be carried.\n\nWhat makes this route different from the standard line starts at the pass: instead of angling onto the glacier, it stays on benches and talus to climber's RIGHT of it. Expect about three more hours and a lot of gain above the pass, which is why this route's total is so much larger than the standard's.",
+    "baseFinding": "THE GLACIER IS THE HANDRAIL AND THE BUTTRESS TOE IS WHERE IT RUNS OUT. Once you have gained the Mary Green Glacier's northern edge around 7,800 ft, follow the glacier's climber's-RIGHT (north) margin west, then bend south-west along the foot of the north-east ridge to the glacier's upper south-west corner. The rock rib comes down into the ice there, around 8,350 ft. Walk the margin until the ice meets rock; that is the base, and you do not need to see the summit to find it.\n\nHOLDING THE MARGIN IS A TRADE, AND IT IS DELIBERATE: staying on the edge keeps crevasse exposure low and puts you underneath rock the entire way. Helmets on from the moment you start the traverse, not from the moment you start climbing.\n\nGETTING ONTO THE GLACIER IN THE FIRST PLACE — the step most parties get wrong: from Holden Pass make a RISING traverse west along the ridge over benches, talus and heather until a snowfield appears below a band of slabs, then scramble the slabs to the glacier's north edge. There is no single obvious line through the benches, the footing is loose, and it is real routefinding. If you are contouring flat rather than rising, you will end up under the slabs rather than on them.\n\nTHE DISCRIMINATOR AGAINST THE STANDARD ROUTE, WHICH LEAVES FROM THE SAME CAMP: the standard line goes UP THE GLACIER and it identifies itself by WATER — low-angle slabs with a waterfall running down them at roughly 7,000 to 7,300 ft. This route never touches those slabs and never crosses the glacier's middle. If you are climbing wet rock beside running water, you are on the standard route.\n\nTHE CONFIRMATION ONCE YOU ARE ON IT: the crest steepens and narrows IMMEDIATELY above the toe — several rope lengths of Class 4 and low fifth on and just right of the crest, running into sustained 5.6-5.7 with glacier falling away on both sides. If the ground above the toe stays broken and easy for a long way, you have started up the wrong rib.\n\nWHAT TOO FAR ALONG LOOKS LIKE: the licheny mid-buttress at about 9,000 ft is the sustained section, and from the toe to the summit is roughly four hours on the ridge. Reaching easy fourth-class crest with gendarmes to turn means you are near the top, not near the start.",
+    "hazards": [
+     "Rockfall the whole length of the glacier-margin traverse, because holding the margin puts you under rock rather than over crevasses",
+     "Loose, lichen-covered rock on the buttress with sustained 5.6-5.7 and wild exposure to the glacier below",
+     "A moat and steep snow crossing near the summit ridge that parties rope even when they scramble everything else",
+     "Route-finding through unmarked benches, talus and heather above Holden Pass, on loose footing, with no obvious line",
+     "Total dependence on a boat and bus timetable — and both have been closed since the December 2025 flood"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_soviet_route": {
+  "area": "wa_bonanza_peak",
+  "approach_variants": [
+   {
+    "name": "Railroad Creek Trail to Hart Lake, then the terraces to the North Star-Bonanza col",
+    "season": "Roughly late Aug into Sep, when the rock is driest",
+    "notes": "From Holden Village follow Railroad Creek Trail #1256 WEST up the valley about 3.5 miles to Hart Lake at about 3,956 ft. The Holden Lake Trail branches off partway along and is NOT your turn — stay on the main valley trail the whole way. Hart Lake is the last easy water and the last straightforward walking.\n\nLeave the maintained trail at the lake and fill up, because the ground above holds very little water. Climb out of the lake basin onto the rock-and-heather terraces on the true left (west) side of the drainage, staying LEFT of the waterfalls and cliff bands that come down off the west-facing buttress. Open forest gives way to heather benches and then blocky, loose ground — roughly 3,000 ft of gain, two and a half to three hours, and genuinely routefinding-heavy. There is no trail above Hart Lake.\n\nCamp is the flat ground near the 7,100 ft col between North Star Mountain and Bonanza's Southwest Peak, with snowmelt and tarns for water.\n\nThe wall above this camp is one of the largest in the Cascades and carries THREE routes. Telling them apart at the base is what the baseFinding below is for.",
+    "baseFinding": "THE BASE OF THE SOVIET IS A CHIMNEY, AND IT IS NOT AT THE LOWEST POINT OF THE BUTTRESS. From camp cross the talus basin to the foot of the buttress — a little under an hour of walking on loose blocks with no trail. The climb starts about 60 FT ABOVE THE LOWEST POINT OF THE TOE, where a narrow chimney takes the first pitch at 5.7. Narrow chimney, 5.7, roughly a rope length: that is the confirmation. If your first pitch is a face, or if it is harder than 5.7, you are not on it.\n\nLEFT TO RIGHT ACROSS THIS WALL, FACING IT FROM THE WEST, THE THREE ROUTES ARE: OREGONIAN, SOVIET, CASCADIAN. Learn that before you leave camp. The Soviet is the MIDDLE one, and the two neighbours identify themselves at the base by things you can see in poor light.\n\nHOW TO KNOW YOU HAVE NOT GONE TOO FAR LEFT: the Oregonian is reached by walking PAST this buttress to the north and crossing the toe of a small POCKET GLACIER. If you have put crampons on, or stepped onto snow to reach rock, you have walked past the Soviet.\n\nHOW TO KNOW YOU HAVE NOT GONE TOO FAR RIGHT: the Cascadian starts on WHITE SLABS beside a small caret-shaped snowpatch, and its opening pitch is an easy 5.4 scramble leading to an obvious large open book. Easy slabby ground and a big corner above means you are one route right of here.\n\nTHE ROUTE-FINDING KEY IS HIGH, NOT LOW, AND IT IS WORTH KNOWING FROM THE GROUND: around half height a SLOPING RAMP cuts diagonally across the buttress crest from east to west. That ramp is the whole line — it bypasses two headwalls that block anything direct. Below it there is a cave-like alcove used as a belay by both the first-ascent party and later parties, which is the one comfortable stance on the climb and a reliable position check.\n\nWHAT THE ROCK TELLS YOU: it is meta-granitic and mostly good, with bands of loose RED rock. Below the summit headwall the rock turns visibly redder and looser. Favour solid grey stone where the line allows — where you are on red rock, you are where the route is at its worst, not where you are off it.\n\nTHE DESCENT IS NOT A REVERSE. From the Southwest Peak you traverse the north-east ridge to the West Peak over gendarmes with one short rappel, then make two roughly 200 ft rappels down slabs on the north-west side. Anchors there have historically been improvised — a nut and a piton on one recorded descent — so carry cord and rack for them and a rope long enough for 200 ft raps.",
+    "hazards": [
+     "Rockfall from loose reddish rock bands, worst below the summit headwall",
+     "Almost no weather escape high on the route on a wall this size",
+     "A long descent traverse over a gendarmed ridge followed by two 200 ft rappels off anchors that are not fixed",
+     "Route-finding on the terraces above Hart Lake, which has no trail and is loose and brushy enough to be a crux of its own",
+     "Extreme remoteness and very few repeat ascents, so nothing about conditions can be inferred from recent traffic"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://cascadeclimbers.com/forum/topic/107541-tr-bonanza-peaks-southwest-summit-west-face-cascadian-route-v-510-08262023/",
+   "https://cascadeclimbers.com/forum/topic/92806-tr-bonanza-peak-washington-fa-the-oregonian-route-942013/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bonanza_peak_oregonian_route": {
+  "area": "wa_bonanza_peak",
+  "approach_variants": [
+   {
+    "name": "The North Star-Bonanza col, then past the Soviet buttress and across the pocket glacier",
+    "season": "Roughly Aug-Sep; the first ascent was in early September",
+    "notes": "The approach is the standard one for this side of the peak and is shared with the route next door: Lake Chelan ferry to Lucerne, village bus to Holden, Railroad Creek Trail #1256 west up the valley to Hart Lake at about 3,956 ft, then leave the trail and climb the rock-and-heather terraces on the west side of the drainage to camp near the 7,100 ft col between North Star Mountain and Bonanza's Southwest Peak.\n\nThe first-ascent party did not use it — ferry and road closures that year forced them into a roughly 32-mile one-way approach from the west up the Suiattle, including about ten miles of mountain biking, then the PCT to Suiattle Pass, Cloudy Pass and cross-country to the col. That was a workaround, not the route's approach, and it should not be copied unless the boat is out again.\n\nFrom the top of the col to the first climbing is about an hour and a half of talus and scree.\n\nThe route is roughly 2,200 ft with about 1,600 ft of independent ground, sustained 5.6-5.8 with moves to 5.9+, and it joins the route next door for the last 600 ft to the summit block.",
+    "baseFinding": "YOU REACH THIS ROUTE BY CROSSING SNOW, AND ITS NEIGHBOUR BY NOT CROSSING ANY. That is the cleanest test on this wall. From the col, traverse north-east PAST the Soviet Route's buttress — about an hour and a half, some of it excellent scree — and then make a rising traverse UP THE TOE OF A SMALL POCKET GLACIER. If you got to rock without touching snow or ice, you stopped one buttress short and you are at the Soviet.\n\nTHE EXACT POINT YOU GAIN ROCK: a FEW DOZEN YARDS UPHILL AND LEFT OF THE LOWEST POINT OF THE BUTTRESS, off the top of that pocket-glacier traverse. Not at the toe, and not on the right side.\n\nTHE CONFIRMATION IS INSTANT AND IT IS THE STRONGEST THING ON THIS PAGE: you are making NEAR-VERTICAL 5.8-5.9 MOVES IMMEDIATELY, from the first pitch. There is no easing-in. If the climbing above where you stepped onto rock is scrambly, or a chimney, or 5.7, you are on the Soviet buttress instead — that route starts with a narrow chimney 60 ft above its own toe and is a full grade easier out of the blocks.\n\nLEFT TO RIGHT ACROSS THE WALL, FACING IT FROM THE WEST: OREGONIAN, SOVIET, CASCADIAN. This is the LEFT-hand (northern) one, which is why the instruction is always \"keep walking\".\n\nTHE MID-ROUTE CHECKPOINT, which matters because the first ascent bivied there: seven pitches of moderate ground with harder moves, often loose, sparsely protected and lichenous but on the crest of the buttress, lead to a LOWER LEDGE flat enough to sleep on. Above it a near-vertical wall with several significant overhangs rises for more than 600 ft, and the way through is a small ledge system traversing LEFT to regain the crest — that pitch has the best rock on the climb. A party staring up at overhangs and thinking about rappelling is in the right place and looking at the wrong feature.\n\nWHERE IT STOPS BEING ITS OWN ROUTE: the last 600 ft are shared with the Soviet, and the two lines converge at a pinnacle around 8,700 ft before continuing to the Southwest Summit. Meeting another route's ground high up is expected here, not a sign you have wandered.",
+    "hazards": [
+     "Loose, sparsely protected and often lichen-covered rock on a long sustained buttress",
+     "A near-vertical 600 ft wall with significant overhangs directly above the bivy ledge, passed only by a small left-trending ledge system",
+     "Very few bail options once above the lower ledge, on a wall with no fixed gear",
+     "A rising traverse up the toe of a pocket glacier just to reach the rock, in approach shoes for most parties",
+     "Total dependence on the Lake Chelan boat and the Holden bus, both closed since the December 2025 flood"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://publications.americanalpineclub.org/articles/13201212584/Southwest-Bonanza-Peak-northwest-buttress-Oregonian-Route",
+   "https://cascadeclimbers.com/forum/topic/92806-tr-bonanza-peak-washington-fa-the-oregonian-route-942013/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bonanza_peak_cascadian_route": {
+  "area": "wa_bonanza_peak",
+  "approach_variants": [
+   {
+    "name": "The North Star-Bonanza col, then talus south to the white slabs beside the caret-shaped snowpatch",
+    "season": "Roughly Aug-Sep; the only ascent on record is late August, and its two neighbours were also climbed in late summer for the driest rock",
+    "notes": "Same approach as its neighbours and the same camp: drive to Chelan, ferry to Lucerne, bus to Holden Village, then about eleven miles of trail and cross-country to a camp near 7,000 ft at the North Star-Bonanza col. It is a full day of travel and approach before anything else happens.\n\nFrom camp the base is reached over talus. This route is on the WEST FACE proper rather than the north-west buttress its two neighbours share, and it tops out just right of the Southwest Summit.\n\nIt is sixteen pitches, just over 2,000 ft of net gain and about 2,800 ft of climbing, with a great deal of loose rock and several pitches where the protection is minimal and the holds are portable. Bail options near the summit roof systems are poor.\n\nThe descent from the Southwest Summit traverses to the Isella Glacier and follows an undulating line of steep rock and moraine at about two-thirds of the glacier's height, then crosses a notch in the south ridge back to the col camp — two ropes.",
+    "baseFinding": "THE FIRST PITCH BEGINS AT A SMALL CARET-SHAPED SNOWPATCH, AND YOU START JUST RIGHT OF IT. That patch is the marker the first-ascent party chose to record, and it is the only thing at the base of this wall that is a shape rather than a description. Walk the talus until you find it.\n\nTHE POSITIVE TEST IS A COLOUR CHANGE, AND IT IS EXCELLENT IN BAD LIGHT: pitch one is a 220 ft scramble at about 5.4 up WHITE SLABS to a stance below a large, steeper band of DARKER rock. White below, dark above, easy climbing. If your first pitch is hard, or if the rock is uniform, you are somewhere else.\n\nTHE SECOND CONFIRMATION IS ABOVE THE FIRST: from that stance you are aiming for an OBVIOUS, LARGE OPEN BOOK, which takes the second pitch at 5.8. A big open corner directly above easy white slabs is the pair of features that identifies this route. One without the other is not enough.\n\nLEFT TO RIGHT ACROSS THIS WALL, FACING IT FROM THE WEST: OREGONIAN, SOVIET, CASCADIAN. This is the RIGHT-hand one — looker's right of both older routes, which are on the north-west buttress and are out of view at the far left margin of the wall from here. If you can see two other lines to your left and none to your right, you are in the correct place.\n\nTHE NEGATIVE MARKER IS THE STRONGEST ON THIS PAGE, AND IT IS ABOUT WHAT LIES FURTHER RIGHT: the part of the wall to the right of this route, above the LONG SNOWFIELD, IS UNCLIMBED, and the party who looked hardest at it described it as atrocious. This route begins just right of a TINY snowpatch, not above a long one. If you are standing under a big snowfield, keep walking back left.\n\nWHERE IT EASES: difficulties relent only on reaching the ridge just south of the true summit, sixteen pitches up. There is no midway escape.",
+    "hazards": [
+     "Abundant loose rock over sixteen pitches, with several pitches on minimal protection and portable holds",
+     "Poor retreat options near the summit roof systems on a wall with no fixed gear",
+     "A descent that crosses the Isella Glacier and a notch in the south ridge, needing two ropes and daylight",
+     "Rock quality that varies pitch by pitch, including a choss band low on the route taken at 5.9R",
+     "Remoteness on the scale of a three-day weekend before the first pitch, on boat-and-bus access that is currently closed"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://publications.americanalpineclub.org/articles/13201216753",
+   "https://cascadeclimbers.com/forum/topic/107541-tr-bonanza-peaks-southwest-summit-west-face-cascadian-route-v-510-08262023/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bonanza_peak_west_ridge": {
+  "area": "wa_bonanza_peak",
+  "approach_variants": [
+   {
+    "name": "Railroad Creek Trail past the Holden Lake fork to Hart Lake, then the terraces to the 7,100 ft pass",
+    "season": "Roughly Jul-Oct; Aug-Sep for the driest ground on the terraces",
+    "notes": "This row is the APPROACH to the west side of the peak rather than a climb in its own right — it is how parties reach the base of the routes on the Southwest and West Peaks. Its own beta describes what happens above the pass in terms that nothing else on this mountain supports; see _DEFECTS before you rely on it.\n\nFrom Holden Village, follow Railroad Creek Trail #1256 west up the valley about 3 to 3.5 miles to Hart Lake at 3,956 ft. Then leave the maintained trail and climb cross-country — roughly two and a half hours, about 3,000 ft — up the rock and heather terraces on the west side of the drainage to the 7,100 ft pass between North Star Mountain and Bonanza's Southwest Peak.\n\nThere is no trail above Hart Lake and no reliable water between the lake and the tarns at the pass, so fill at both.",
+    "baseFinding": "THE ONE DECISION THAT MATTERS IS MADE ONE MILE FROM THE VILLAGE, AND IT IS A FORK. About a mile up Railroad Creek Trail the Holden Lake Trail branches off. TAKE THE MAIN VALLEY TRAIL, NOT THE FORK. The fork leads to Holden Lake, Holden Pass and the Mary Green Glacier — the routes on the OTHER SIDE of the mountain. Every hour you spend on the wrong branch is an hour walking away from this side of the peak, and the two never rejoin.\n\nTHE HANDRAIL IS THE VALLEY AND THE MARKER IS A LAKE. Stay beside Railroad Creek to Hart Lake, at about 3,956 ft, roughly three and a half miles in. Reaching a lake on the valley floor with maintained trail all the way to it means you took the correct branch. Reaching a lake after four miles of switchbacks climbing 1,700 ft out of the valley means you took the wrong one.\n\nARRIVAL: the flat ground of the 7,100 ft PASS between North Star Mountain and Bonanza's Southwest Peak, with snowmelt and tarns for water. It is a col, so it has ground falling away on two sides, and the wall you came for stands directly above it — under an hour of talus from camp to the foot of the buttress.\n\nTHE ROUTE-FINDING RULE ON THE TERRACES, AND IT IS THE ONLY ONE: waterfalls and cliff bands come down off the west-facing buttress. STAY LEFT OF THEM. Open forest gives way to heather benches and then blocky loose ground; there is no tread and no cairned line, so the negative marker is your handrail — if running water or a cliff band is on your left, you have drifted right and need to correct before the ground steepens.\n\nWHAT THIS ROW DOES NOT SETTLE: it describes Class 2-3 scrambling above 8,000 ft on this ridge, and no other account of this peak supports a scramble line there. Treat the pass as the destination and choose a documented route from it, rather than starting up the ridge on the strength of this row.",
+    "hazards": [
+     "Wholly untrailed terraces above Hart Lake with waterfalls and cliff bands to be skirted on the left, loose rock and brush throughout",
+     "No reliable water between Hart Lake and the tarns at the pass",
+     "Taking the Holden Lake fork by mistake, which commits you to the far side of the mountain",
+     "Exposed high camp at 7,100 ft that collects afternoon electrical activity",
+     "Boat-and-bus access to Holden Village that has been closed since the December 2025 flood"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_martin_peak_west_ridge": {
+  "area": "wa_martin_peak",
+  "approach_variants": [
+   {
+    "name": "Holden Village to Holden Pass, then east up the ridge",
+    "season": "Roughly Jul-Sep, with August the most reliable",
+    "notes": "Access is by Lake Chelan ferry from Chelan or Field's Point Landing to Lucerne Landing, then the Holden Village shuttle bus up eleven miles of gravel road and twelve switchbacks into the village. Both have been closed since the December 2025 flood; confirm they are running before anything else.\n\nFrom the village, Railroad Creek Trail #1256 runs a mile up-valley to the fork, then the Holden Lake Trail climbs about four miles and 1,700 ft to Holden Lake at 5,278 ft. Above the lake the climbers' path gains a further 1,100 ft over heather benches and rocky terraces to Holden Pass near 6,400 ft. This is the same camp Bonanza's routes use, and it is effectively the last water.\n\nThe rock on this route is loose crumbly schist and marble all the way up, and parties route-find by cairn rather than by feature. There is a fixed rappel anchor near the top for the crux step.",
+    "baseFinding": "HOLDEN PASS SERVES TWO MOUNTAINS AND THE DIRECTION YOU LEAVE IT IS THE WHOLE ROUTE-FINDING PROBLEM. The pass is the saddle BETWEEN Bonanza and Martin. Bonanza's routes go WEST from it, onto benches and the Mary Green Glacier. Martin's West Ridge goes EAST, straight up out of the pass. If you are traversing toward a glacier, you are on Bonanza's ground.\n\nSO THE BASE IS THE PASS ITSELF: no approach across a glacier, no basin, no traverse. The ridge rises directly out of the saddle and the scrambling starts where the heather runs out.\n\nTHE POSITIVE TEST IS WHICH SIDE OF THE CREST YOU ARE ON, AND IT REPEATS. Gain the ridge by a series of gullies and scramble on the RIGHT — the SOUTH — side of the crest, then repeat that pattern upward. Right side, gully, back toward the crest, right side again. A party on the north flank has left the route, and the north side of this crest is not the easier ground.\n\nIN FOG, FOLLOW CAIRNS HERE RATHER THAN FEATURES. The rock is uniformly crumbly schist and beige marble and one gully looks like the next; on this particular route cairn-following is the documented method rather than a bad habit. That is the opposite of the advice for the scramble on Mount Pugh, where cairns lead to cliffs — do not carry one peak's rule to the other.\n\nTHE ARRIVAL AT THE CRUX IS AN ANCHOR, WHICH IS RARE ON THIS MOUNTAIN. About 100 ft below the summit a steep, exposed Class 4 gully is the route's hardest ground, with good holds, and a FIXED RAPPEL ANCHOR has been observed beside it. Finding fixed hardware on this peak means you are 100 ft from the top and on the standard line. Finding none, on ground much harder than Class 4, means you are not.\n\nTHE LOOSE BEIGE-MARBLE GULLY partway up is the other named feature and it is on the south side of the crest, so it doubles as a position check: you should meet it while traversing right, not while on the crest.",
+    "hazards": [
+     "Loose, crumbly schist and marble across the entire route, on and off the crest",
+     "A short, exposed Class 4 step just below the summit — a fixed anchor is present but is not maintained by anyone",
+     "One gully looking exactly like the next on a route where cairns, not features, are the navigation",
+     "Sharing a camp with Bonanza parties and a pass with two mountains' worth of routes leaving it in opposite directions",
+     "Ferry and shuttle access to Holden Village, closed since the December 2025 flood"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_copper_peak_south_route": {
+  "area": "wa_copper_peak",
+  "approach_variants": [
+   {
+    "name": "Holden Village and the Copper Creek boot trail to the Copper Basin bench",
+    "season": "Roughly Jul-Sep, best in August; the snowfield below the ridge often still wants crampons and an axe into July",
+    "notes": "There is no drivable trailhead. Ferry from Chelan or Field's Point to Lucerne, shuttle up to Holden Village near 3,300 ft. Both have been closed since the December 2025 flood and landslide.\n\nFrom the village, walk the old mine road and Railroad Creek Trail about half a mile east to a large TAILINGS PILE around 3,320 ft, where the Copper Creek Trail branches off on the far side of the creek. A footbridge is the normal crossing; if it is out this becomes a ford and it runs highest in early season.\n\nAbove the tailings the boot trail turns steep at once, climbing about 0.7 mile of open burned hillside — loose footing in standing dead timber, unmaintained, slower than its half-mile suggests — before dropping into the Copper Creek drainage. It then parallels the creek south about three miles to an open bench at roughly 5,600 ft, which is the standard camp. Maps show maintained tread ending near 4,750 ft but the boot path continues; do not read the end of the mapped trail as the end of the path.\n\nFrom camp, ford Copper Creek to its WEST side and climb into the upper basin on talus and slabs, following the outlet stream that drains the glacier remnant on the peak's east face.",
+    "baseFinding": "THE ARRIVAL TEST IS A NOTCH, AND IT IS THE BEST NEGATIVE MARKER ON THIS PEAK: SEVERAL NOTCHES CUT THE SPUR RIDGE AND MOST OF THEM ARE CLASS 5 FROM BELOW. The one you want is THE HIGHEST NOTCH YOU CAN REACH EASILY, gained by a loose Class 3-4 gully on climber's RIGHT — the north side — near the top of the glacier. Picking it is the route. If the notch in front of you needs fifth-class moves to enter, it is the wrong notch and there is a better one further up and right.\n\nHOW YOU KNOW YOU ARE UNDER IT: you have crossed the glacier remnant on the east face, roped, and you are near its top. The glacier is a fraction of its mapped size and crevasses are usually minor and walkable around, but the moats along the rock margins are what show themselves late in the summer.\n\nTHE STREAM IS THE HANDRAIL FROM CAMP: leave the trail at the bench, ford to the west side, and follow the OUTLET STREAM that drains the glacier. It comes from the thing you are walking to, so in cloud it is a line you can follow uphill without seeing anything.\n\nWHAT HAPPENS IMMEDIATELY AFTER THE NOTCH, so you can confirm you took the right one: turn LEFT and traverse a short, steep snowfield — roughly a hundred feet of exposed side-hilling that usually wants crampons and is worth a belay if the surface has gone hard. Once on the crest, blocky Class 3 leads up the ridge to the summit. Notch, then a hundred feet of side-hill snow, then the crest. If there is no snow traverse beyond the notch, you are in a different one.\n\nTHE LAST OBSTACLE IS ONE MOVE, NOT A PITCH. A single short, exposed Class 3+ or 4 step sits just below the top, and some parties carry a short handline for one airy notch there — a fixed handline, not a rappel. If you are looking for rappel anchors on this route you will not find any; nothing on it is rappelled.\n\nA NOTE ON THE ROUTE'S NAME: the row calls this the South Route with a south-east aspect, and everything published about it describes the EAST-facing glacier remnant and the upper NORTH-EAST ridge. See _DEFECTS. Navigate by the glacier and the notch, not by the compass point in the name.",
+    "hazards": [
+     "Several notches in the spur ridge, most of them Class 5 from below — picking the wrong one is the route's real crux",
+     "Crevasses and rock-margin moats on the diminished glacier remnant, worst late summer",
+     "A short exposed Class 4 step below the summit ridge with no fixed protection",
+     "Standing dead timber and loose footing in the burn above the tailings pile",
+     "Two creek crossings that both run high in early-season melt, one of them dependent on a footbridge that may be out"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_dumbell_mountain_west": {
+  "area": "wa_dumbell_mountain",
+  "approach_variants": [
+   {
+    "name": "Phelps Creek Trail #1511 to Spider Meadow and upper Phelps Basin",
+    "season": "Late Jul-Sep. Before that the approach gully and the upper basin are full snow, wanting an axe and often crampons; snow returns to the upper mountain by late September",
+    "notes": "From the Phelps Creek Trailhead at about 3,500 ft at the end of FR-6211, follow Phelps Creek Trail #1511 north up the EAST side of the creek. It climbs gently — roughly 1,900 ft over five or six miles — through old and second growth, with several small side streams giving reliable water the whole way. After a heavy avalanche winter the tread threads graveyards of downed timber pushed across it from the slopes to the west.\n\nSpider Meadow near 5,150-5,400 ft is the last easy, reliable water. Walk the length of the meadow to its head, where the trail forks. THE FORK IS UNSIGNED: the left branch carries on toward Spider Gap and Larch Knob, and the Dumbell path is the RIGHT-hand one, an old climbers' trail into lower Phelps Basin. Most parties camp in the basin around 5,700 to 6,000 ft.\n\nA longer alternate reaches the same basin from the east over Spider Gap from Railroad Creek and Lyman Lake out of Holden Village — used by parties already doing that loop, not as a way in.\n\nNote that FR-6200 has been closed beyond Atkinson Flat under a storm-damage order, which blocks the drive to this trailhead entirely.",
+    "baseFinding": "THE APPROACH TO THE CLIMBING IS A CREEK, AND IT IS THE ONLY WAY THROUGH AN OTHERWISE CLIFFY FACE. From camp in upper Phelps Basin, leave the last of the boot path and head EAST-NORTH-EAST beside a TUMBLING SIDE CREEK. That creek cuts the one weakness in the cliffs above the basin; the broad talus-and-scree gully on Dumbell's south side follows it. If you are working up an open face with no water beside you, you are not in the breach.\n\nTHE FIRST ARRIVAL IS A NOTCH ON THE SOUTH-EAST SHOULDER, around 7,900 ft, reached by climbing that gully out of the basin directly south of the summit. Grass and heather give way to talus and — through about mid-August — moderate snow.\n\nTHEN COMES THE MEASUREMENT THAT DECIDES THE DAY, AND IT IS COUNTED IN YARDS RATHER THAN LOOKED FOR: FROM THE NOTCH, GO 100 TO 200 YARDS LEFT — WEST — AND TAKE THE GULLY THERE. Not the gully at the notch. Aim for the right-hand side of the south face, where the easiest gully system starts. Several parallel gullies and ledge lines look alike here and they do not all go: the wrong one cliffs you out below the summit ridge.\n\nWHAT CONFIRMS YOU CHOSE RIGHT: a little scrambling above that gully gains a SYSTEM OF LEDGES which then ZIG-ZAGS up onto the WEST RIDGE. Ledges that zig-zag rather than a continuous line, and a ridge crest at the top of them, is the confirmation. A gully that runs out against steeper rock with no ledge system is the wrong one — go back down and try further west.\n\nTHE SUMMIT WARNING IS REAL AND IT IS ABOUT LOOKALIKES: from the west ridge a few hundred feet of easy but exposed Class 3 leads to the top, and similar-looking notches and false summits near the top have sent parties astray. Keep track of which top you are on rather than assuming the first one is it.\n\nONE OBJECT TO KNOW ABOUT: a party has reported an unstable, truck-sized snow block perched on a slab near 8,000 ft in the direct south-face gully. Treat the direct line under it as loaded ground rather than a shortcut.",
+    "hazards": [
+     "Several parallel gullies and ledge systems on the south face that look identical and do not all go — the documented way to get cliffed out here",
+     "A reported truck-sized snow block perched on a slab near 8,000 ft in the direct south-face gully",
+     "Loose rock and rubble in the gully and on the summit ledges, with parties above you",
+     "Lookalike notches and false summits near the top",
+     "FR-6200 closed beyond Atkinson Flat under a storm-damage order, which blocks the standard drive entirely"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_chiwawa_mountain_southwest": {
+  "area": "wa_chiwawa_mountain",
+  "approach_variants": [
+   {
+    "name": "Trinity and the Chiwawa River Trail to Chiwawa Basin and the 6,300 ft benches",
+    "season": "Late Jun-Sep. The road to Trinity is often not melted out until mid-June, and the upper mountain and col hold snow into July in heavy years",
+    "notes": "Park at Trinity Trailhead near 2,800 ft at the end of Chiwawa River Road/FR-6200 by the old mine site. Start up-valley on Buck Creek Trail #1513 for about a mile and a half and BEAR RIGHT at the fork onto Chiwawa River Trail #1550, which takes over an old mining-road grade close to the river — water is reliable along all of this.\n\nAbout 3.7 more miles brings the signed Red Mountain Trail junction near 4,000 ft. This is the last water that is both obvious and easy to reach before the basin, so fill here. Bear LEFT into Chiwawa Basin rather than taking the right-hand switchbacks up Red Mountain.\n\nBeyond the junction the tread deteriorates, braids and climbs through forest toward the basin, with an unbridged ford of the Chiwawa headwater around 4,400 ft — manageable at summer flow, higher and pushier early. Above the ford the brush thickens and the tread fades: favour the more open, less-timbered ground along the EAST side of the basin, because drifting into the timber turns this into a bushwhack.\n\nCamp is on benches around 6,300 ft. Several lines reach them: the left-trending gully is the most direct and easiest going though it is wet, and the vegetated slopes beside the talus gullies are the better choice coming down.\n\nFR-6200 has been closed beyond Atkinson Flat under a storm-damage order, so Trinity is currently not reachable by vehicle.",
+    "baseFinding": "THE BASE IS A NOTCH IN SOMEBODY ELSE'S RIDGE, AND SAYING IT THAT WAY IS WHAT MAKES IT FINDABLE: the Fortress-Chiwawa col at about 7,200 ft is the NOTCH IN FORTRESS MOUNTAIN'S EAST RIDGE. From the 6,300 ft benches, traverse steep heather and aim for that notch. You are walking toward a gap on the skyline of the mountain NEXT DOOR, not toward the peak you are climbing.\n\nWHAT THE LAST STRETCH FEELS LIKE, so you know you are on it: the snow slope up to the col is moderate and then steepens noticeably in the final section below the notch, and the rock flanking it is loose and sandy. Stay on the snow or on the most solid line you can find rather than the flanking rock. A slope that stays uniformly moderate all the way to a gap is not this one.\n\nFROM THE COL THE ROUTE HAS NO SINGLE LINE AND THAT IS THE CORRECT ANSWER, NOT A GAP IN THE BETA: work up the south-west side on slabs, gullies and talus taking the path of least resistance. Nothing here is cairned or named.\n\nTHE NEGATIVE MARKER IS EXPLICIT AND IT HAS A STATED CONSEQUENCE: misidentifying the correct gully near the col leads to an exposed low-fifth-class DEAD END. If the ground you are on has stopped offering an easy option and is committing you to fifth-class moves, reverse and pick a different line — this route never needs them.\n\nTHE CRUX IS SHORT AND IT IS AT THE TOP: the step gaining the SUMMIT RIDGE is loose and exposed Class 2-3 and is the hardest ground on the route. After it, an easy traverse of about 100 ft to the WEST — to your right — reaches the top. If you gain a ridge and the summit is to your left, you are on the wrong section of crest.\n\nGOING BACK DOWN, USE A DIFFERENT LINE THAN YOU CAME UP FOR ONE STRETCH ONLY: below the benches, the vegetated slopes beside the talus gullies are the better descent, and the loose climber's-left skyline gully should be avoided.",
+    "hazards": [
+     "Misidentifying the gully near the col, which leads to an exposed low-fifth-class dead end",
+     "Loose, sandy rock flanking the col and loose talus on the upper mountain",
+     "Cornices and early-season snow at the Fortress-Chiwawa col",
+     "An unbridged ford of the Chiwawa headwater, and fading braided tread that becomes a bushwhack if you drift into timber",
+     "FR-6200 closed beyond Atkinson Flat, so Trinity is currently unreachable by vehicle"
+    ]
+   },
+   {
+    "name": "Phelps Creek variant to the col west of the summit",
+    "season": "Late Jun-Sep, as for the main line",
+    "notes": "A less-travelled alternative starts at the Phelps Creek Trailhead rather than Trinity. It bushwhacks to about 5,500 ft and follows a gully to the right of Point 5971 up to the col WEST of the summit, then takes easy Class 2 ground along the west ridge to the top.\n\nThis is the shorter line on paper and the rougher one on the ground: there is no tread on the bushwhack and no camp equivalent to the Chiwawa Basin benches. It is recorded here because it exists and is genuinely used, not because it is recommended over the Trinity approach.",
+    "baseFinding": "THIS VARIANT'S BASE IS A DIFFERENT COL FROM THE MAIN ROUTE'S, AND CONFUSING THE TWO PUTS YOU ON THE WRONG SIDE OF THE MOUNTAIN. The standard line goes to the FORTRESS-CHIWAWA col, which is SOUTH-WEST of the summit and is a notch in Fortress's east ridge. This variant goes to the col WEST of the summit, gained from Phelps Creek by a gully to the RIGHT of Point 5971.\n\nTHE TEST IS WHAT LIES ABOVE THE COL YOU REACH. From this one, the WEST RIDGE runs to the summit on easy Class 2 ground — a walk, essentially. From the Fortress-Chiwawa col you face slabs, gullies and talus on the south-west FACE with a loose Class 2-3 step at the top. If you have reached a col and the way on is a broad easy crest, you are on this variant. If it is a face with no obvious line, you are on the standard one.\n\nTHE APPROACH MARKER IS A NUMBERED POINT AND THAT IS ALL THERE IS: the gully is to the RIGHT of Point 5971. Nothing else about the bushwhack below it is published, which is why this is the second variant and not the first. Carry a track.",
+    "hazards": [
+     "An unmaintained bushwhack with no tread from about 5,500 ft and no published landmarks below the gully",
+     "No established camp on this side, so it commits you to a long day",
+     "Early-season snow in the gully and at the col",
+     "Loose rock on the west ridge, as everywhere on this peak"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_fortress_mountain_east_ridge": {
+  "area": "wa_fortress_mountain",
+  "approach_variants": [
+   {
+    "name": "Trinity and the Chiwawa River Trail to the Chiwawa-Fortress col",
+    "season": "Jun-Oct. Crampons and an axe are commonly used on the snow slopes crossing to the col even in late summer",
+    "notes": "From Trinity Trailhead near 2,800 ft at the end of FR-6200, follow the Buck Creek and Chiwawa River trails up-valley beneath Red Mountain to about 6,580 ft, then leave the trail and traverse diagonally up toward Chiwawa Mountain's east ridge, descending to the roughly 7,200 ft col between Chiwawa and Fortress. Some parties go over Chiwawa's summit first instead. Others approach by way of the Red Mountain Trail and Chiwawa Basin, fording the Chiwawa River — the same basin the Chiwawa Mountain route uses, which puts you on the col from below rather than from along the ridge.\n\nThe col is a common high camp and this route is very often combined with Chiwawa Mountain from it, which is the practical reason to camp there rather than lower.\n\nRock quality is notably BETTER on the East Ridge itself than in the gully that gains it or on Fortress's south-west face — the opposite of what most parties expect.\n\nFR-6200 has been closed beyond Atkinson Flat, adding roughly seven miles of road-walking each way.",
+    "baseFinding": "THE COL IS THE CAMP AND THE GULLY IS THE ROUTE, AND THEY ARE NOT THE SAME PLACE. From the roughly 7,200 ft Chiwawa-Fortress col, the East Ridge is gained by a LOOSE CLASS 3-4 GULLY. Standing on the col is not standing at the base; you still have a gully to find and climb before the ridge starts.\n\nTHE ROCK ITSELF IS THE CONFIRMATION, AND IT WORKS BACKWARDS FROM WHAT YOU WOULD GUESS: the gully is the loose ground and the ridge above it is the SOLID ground. So the test that you have topped out of the correct gully onto the correct crest is that the rock gets BETTER. If you have gained a crest and it is still rubble, you are on a subsidiary rib rather than the East Ridge.\n\nTHE DISCRIMINATOR AGAINST THE OTHER ROUTE ON THIS MOUNTAIN: the south-west face is reached from an entirely different valley — Buck Creek Trail and Pass No Pass at about 6,400 ft — and never comes near this col. If your approach involved a way-trail and a pass rather than a cross-country traverse off the Chiwawa River Trail, you are on the other side of the peak.\n\nTHE FINISH IS ONE MOVE AND IT IS UNPROTECTED IN PRACTICE: an exposed fourth-class step just below the summit, normally climbed unroped. That step is the route's crux and its arrival marker — reaching it means the ridge is behind you.\n\nCOMING BACK DOWN, THE HEAD OF THE GULLY IS THE THING TO FIND, and it is easier to walk past from above than from below. Follow the crest back until the ground drops away toward the col, and descend carefully; the gully is the loosest part of the day in both directions.\n\nIF YOU CONTINUE TO CHIWAWA MOUNTAIN from the col — which many parties do — note that its route works up the SOUTH-WEST side on slabs and talus from that same col, so the two climbs share a base and diverge immediately.",
+    "hazards": [
+     "Loose rock in the gully gaining the East Ridge from the col — the worst ground on the route, and reversed on the way down",
+     "An exposed, normally unroped fourth-class step on the final summit pitch",
+     "Cold thigh- to knee-deep fords of the Chiwawa River drainage on the Chiwawa Basin approach",
+     "Steep firm snow crossing to the col, wanting crampons and an axe even late in the season",
+     "About seven extra miles of road-walking each way while FR-6200 is closed beyond Atkinson Flat"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_fortress_mountain_southwest_face": {
+  "area": "wa_fortress_mountain",
+  "approach_variants": [
+   {
+    "name": "Buck Creek Trail #1513 and the Pass No Pass way-trail",
+    "season": "Jun-Oct, best Jul-Sep once the south-west face has melted out; an axe and sometimes crampons for early-season snow on the approach slopes below the pass",
+    "notes": "From Trinity Trailhead at 2,800 ft, follow Buck Creek Trail #1513 roughly nine to nine and a half miles, climbing through forest and an old avalanche debris field near 4,500 ft.\n\nThe turn is the thing to watch for and it is NOT MARKED: an unmarked junction with the Pass No Pass way-trail bears RIGHT at about 5,800 ft. Follow the way-trail to Pass No Pass near 6,400 ft and the alpine camping benches beyond it, from which the face and the south ridge come into view.\n\nSince 2026 storm damage has closed FR-6200 to vehicles beyond Atkinson Flat Campground around mile 16, adding roughly seven miles of road-walking each way before you even reach the trailhead.\n\nFrom a high camp in the Pass No Pass basin, parties report about three and a half to four hours up and two and a half to three back.",
+    "baseFinding": "THE PASS IS WHERE THE MOUNTAIN BECOMES VISIBLE, AND THAT IS THE ARRIVAL TEST: from Pass No Pass and the benches beyond it, Fortress's SOUTH-WEST FACE AND SOUTH RIDGE COME INTO VIEW. Below the pass you cannot see the peak at all. If you are still walking with no mountain in front of you, you have not crossed it.\n\nTHE CLIMBING STARTS AT A CHANGE OF SURFACE, NOT AT A FEATURE. From the basin below the pass, green slopes and scree steepen into Class 2-3 talus and slab. There is no step, no toe and no notch to arrive at — grass gives way to rock and that is the base.\n\nTHE NEGATIVE MARKER IS THE MOST USEFUL SENTENCE ON THIS ROUTE: THE DIRECT GULLY UP THE FACE IS THE LOOSEST GROUND ON THE MOUNTAIN. If you are in a defined gully with rubble moving under every step, you are on the line to avoid, not the line to take. Angle RIGHT onto slabbier rock, or follow the south ridge crest instead. A party in 2015 found and cairned an alternate Class 3 line over more solid blocky terrain to skier's right of the gully, and later parties have followed it — so cairns on solid blocky ground here are a good sign, which is the reverse of the situation in the gully.\n\nTHE DISCRIMINATOR AGAINST THE OTHER SIDE OF THIS PEAK: the East Ridge is reached from the Chiwawa-Fortress col at about 7,200 ft, approached cross-country off the Chiwawa River Trail, and it starts with a loose Class 3-4 gully onto a crest of notably better rock. Nothing on that route involves a way-trail or a named pass. If you walked over a pass to get here, you are on the south-west side.\n\nTHE SUMMIT BLOCK IS TALUS. There is no technical finish on this route; if you are looking at a fourth-class step you have wandered onto the east side's ground.",
+    "hazards": [
+     "The direct south-west gully is the loosest ground on the mountain and is directly above anyone below",
+     "Steep snow on the approach slopes below Pass No Pass into early summer, needing self-arrest skills",
+     "An unmarked way-trail junction at about 5,800 ft that is easy to walk past on a nine-mile approach",
+     "Creek crossings and brushy, indistinct trail lower down",
+     "Roughly seven extra miles of road-walking each way while FR-6200 is closed beyond Atkinson Flat"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_mount_maude_r3": {
+  "area": "wa_mount_maude",
+  "approach_variants": [
+   {
+    "name": "Phelps Creek and Leroy Basin to the west side of the peak",
+    "season": "Aug-Sep. This is explicitly a late-season line — it wants the snow gone and the rock dry",
+    "notes": "The lower approach is shared with the peak's north-side routes: Phelps Creek Trailhead at about 3,500 ft off FR-6211, Phelps Creek Trail #1511 to the Leroy Creek ford at roughly 3.5 miles, then the unmaintained Leroy Creek high route steeply up into Leroy Basin around 6,100-6,200 ft, where the established camps are. That climbers' trail gains about 1,200 ft per mile — it is short and steep and hot under an overnight pack.\n\nWhere this route parts company with its neighbours is at the basin: instead of heading for the Seven Fingered Jack / Maude col or the Icy Lake notch, it continues onto the peak's WEST side to reach the couloir system near the standard West / South Slopes ground.\n\nThe climb is short — roughly 450 m of mostly slabby Class 3 with two brief Class 4 steps — and it pairs naturally with a descent of the South Shoulder to make a loop back into Leroy Basin rather than a there-and-back.",
+    "baseFinding": "THE GULLY IS FOUND BY COUNTING, AND THE THING YOU COUNT FROM IS THE NORTH TOWER. From the west side of the mountain the route is THE SECOND GULLY TO THE RIGHT OF THE NORTH TOWER. Not the first, not the third. That is the entire identification, and it works in poor light because a tower is a silhouette rather than a texture.\n\nTHE POSITIVE TEST ONCE YOU ARE IN IT: the line takes the SHALLOW RIGHT FORK up slabby Class 3 rock on clean stone. Shallow, right, slabby, clean. A gully that stays a single deep cleft with no fork, or one whose rock is rubble rather than slab, is the wrong count.\n\nTHE SECOND CONFIRMATION IS A SIDEWAYS MOVE: after the first slabs the route steps RIGHT into ANOTHER couloir over a brief Class 4 step, then continues on sustained slabby Class 3 to the ridge crest. So the correct sequence is fork right, then move right again. If your gully runs straight to the crest with no lateral move and no short hard step, you are not on this line.\n\nWHAT THE TOP OF THE ROUTE IS NOT: gaining the ridge crest is not the summit. From the crest the route TRAVERSES SOUTH toward the main summit, passing around towers on the WEST — the right — side, with occasional brief Class 4 moves. If you top out and start going north, you are walking away from the peak.\n\nTHE DISCRIMINATORS AGAINST THIS PEAK'S OTHER ROUTES, all three of which start from the same basin: the North Face route crosses the Seven Fingered Jack / Maude col and then DESCENDS four hundred feet on the far side before it reaches anything; the ice-fall route goes through a notch at about 7,200 ft onto the Entiat Glacier. Both of those take you AWAY from the west side. If you have crossed a col or gone through a notch, you have left this route — it never leaves the peak's own west flank.\n\nCARRY THE MEANS TO PROTECT ONE MOVE, OR NOTHING. Most parties solo this; the Class 4 steps are brief and unprotected in practice, and there is nothing on the route that a rope helps with except those.",
+    "hazards": [
+     "Loose rock among the summit-ridge towers on the traverse south",
+     "Brief exposed Class 4 moves that most parties climb without protection",
+     "Miscounting the gullies from the North Tower, which puts you on unrecorded ground on the same face",
+     "A steep unmaintained climbers' trail into Leroy Basin gaining roughly 1,200 ft per mile",
+     "A late-season route on an east-side peak, so afternoon thunderstorms and smoke are the normal conditions"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_spectacle_buttes_west_route": {
+  "area": "wa_spectacle_buttes",
+  "approach_variants": [
+   {
+    "name": "Phelps Creek and Leroy Basin over Leroy and Freezer passes to the Ice Lakes basin",
+    "season": "Aug is the reliable month. Early-to-mid July can still hold snow and high water on the Freezer Pass traverse and at the washed-out stream bed; late September adds larch colour and takes away daylight",
+    "notes": "From the Phelps Creek Trailhead at about 3,500 ft, Phelps Creek Trail #1511 climbs the east side of the valley at roughly 275 ft per mile, crossing into the wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5. Immediately across the ford the unmaintained Leroy Creek high route branches steeply north-east and climbs 1.9 miles into Leroy Basin at about 5,400 ft, where the camps are. That half is hot and exposed under a pack.\n\nFrom camp pick up the Carne Mountain high trail — an old sheepherder track — south-east; it gives up a little height to cross the south fork of Leroy Creek before climbing to Leroy Pass at 6,850 ft. Cairns mark the way but several paths braid apart in the basin: stay on the LOWER and better-trodden line where they diverge.\n\nContinue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the boot paths come and go, so TRACK YOUR OWN LINE FOR THE RETURN.\n\nDrop north-east off the pass into the Ice Lakes basin, losing about 1,000 ft past the north end of Upper Ice Lake and down the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water.",
+    "baseFinding": "THE BASE IS AN OPEN BASIN FLOOR BETWEEN TWO SUMMITS AND THAT IS WHY IT IS FINDABLE IN CLOUD — you are not looking for a feature on a face, you are walking into a gap between the two Buttes at about 6,800 ft. The traverse eases into it. If the ground is still side-hilling and everything moves under your feet, you have not arrived.\n\nGETTING THERE, THE ONE PLACE PEOPLE GET HURT: from Lower Ice Lake the old Ice Lakes Trail fades and you SIDEHILL EAST AT ABOUT 6,600 FT on slippery scrub and loose rock with no tread. Keep the party STRUNG OUT IN A LINE rather than stacked one above another — almost everything here moves. About a third of a mile brings the lip of a WASHED-OUT GULLY. Downclimb the loose clay and scree into it and climb the far side back to ABOUT THE SAME ELEVATION.\n\nTHAT ELEVATION RULE IS THE NEGATIVE MARKER AND IT HAS A STATED CONSEQUENCE: DROPPING TOO LOW IN THE WASHOUT LEAVES YOU CLIFFED OUT. Cross at 6,600, not below it. This is also the last reliable water before the summit, so fill there.\n\nTHE CLIMBING STARTS AT A RAMP: from the basin floor, a SCREE-AND-TALUS RAMP of about 400 ft gains the crest of the south-west ridge. Ramp first, ridge second. If you are on the crest without having walked up 400 ft of scree, you got onto the ridge somewhere else.\n\nTHE SIDE RULE ON THE RIDGE, AND IT IS ABSOLUTE: broken crags and short cliff bands repeatedly force the route OFF the crest onto ledges on the SOUTH side. THE NORTH SIDE OF THE RIDGE IS CLIFFY AND SHOULD NOT BE ENTERED. If you have been pushed off the crest and the ground below you drops away in a way that feels wrong, check which side you stepped onto before you commit.\n\nTHE CRUX HAS AN ELEVATION: around 7,700 ft a spire forces a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike. Some parties call it low Class 4. That is the hardest ground and it is a single passage, not a section.\n\nCAIRNS HERE BLEND INTO THE ROCK. On the way up that costs time; on the way down it costs a great deal more, because from the summit block you have to find the crest again at about 8,100 ft. Pick the line up deliberately rather than drifting down the first ledge system that goes.",
+    "hazards": [
+     "A washed-out gully crossing at 6,600 ft where dropping too low cliffs you out",
+     "Sustained loose rock and talus on the ridge and the scree ramp, with real rockfall risk onto anyone below",
+     "The north side of the south-west ridge is cliffy and must not be entered when the crags force you off the crest",
+     "No reliable water beyond the washout crossing — carry four to five litres in summer heat",
+     "Cairns that blend into the surrounding rock across the Ice Lakes traverse and on the descent from the summit block"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_luahna_peak_east_slopes": {
+  "area": "wa_luahna_peak",
+  "approach_variants": [
+   {
+    "name": "Boulder Pass and the sheepherder's traverse to the col west of Clark Mountain, then the upper Richardson Glacier",
+    "season": "Jul-Sep, with August the most reliable. The Richardson has been reported thinning and breaking up in recent years, so a late-season party should expect it to be less straightforward than older accounts describe",
+    "notes": "From the White River Trailhead near 2,300 ft at the end of FR-6400, White River Trail #1507 runs almost level upstream through old growth for about four miles. The junction with Boulder Creek Trail #1562 sits roughly a quarter mile PAST the bridge over Boulder Creek — if you have crossed the creek and seen no sign, keep walking.\n\nTurn onto #1562 and climb gently through forest to the established camp at the creek crossing near 3,700 ft; whether that is a step-across or a genuine ford depends on the year. Above camp the trail switchbacks and climbs roughly 2,500-2,700 ft over about three miles into the open basin below Boulder Pass. Snow lingers in that basin well into summer, and the pass is the last of the maintained, easy-to-follow trail.\n\nAbove Boulder Pass the route becomes an unmaintained sheepherder's path that sidehills EAST across a series of cirques, losing roughly 1,000 ft as it traverses below Clark Mountain's south spur before regaining height near a 7,200 ft spur. That traverse is the route-finding crux of the approach: brushy, exposed to sidehill slips, and easy to lose in poor visibility or under snow.\n\nThis row also carries a set of waypoints describing a different line — over the pass, down to a ford of the Napeequa near 4,700 ft, and up to a high basin at 7,000 ft under the east face. Both are real ways to this mountain; see _DEFECTS.",
+    "baseFinding": "THE ARRIVAL AT THE CLIMBING IS A GLACIER, AND THE THING THAT GETS YOU TO IT IS A COL THAT BELONGS TO THE NEXT PEAK. From the 7,200 ft spur, make a RISING traverse across broad benches — often snow-covered well into summer — and easy Class 2 ledges to the roughly 7,600 ft COL WEST OF CLARK MOUNTAIN. You are navigating to a gap beside a different summit, which is what makes it findable: Clark is the big thing on your left.\n\nFROM THAT COL, THE ROUTE IS ONE RISING TRAVERSE ACROSS THE UPPER RICHARDSON GLACIER TO LUAHNA'S EAST RIDGE. Rope up at the col. The glacier crossing is the route; the ridge above it is a scramble west to the summit.\n\nTHE CRITICAL NEGATIVE MARKER IS ABOUT WHICH GLACIER YOU ARE ON, and this peak's own record has already been wrong about it once: THE PILZ AND BUTTERFLY GLACIERS ARE ON LUAHNA'S NORTH SLOPE AND BELONG TO A SEPARATE ROUTE APPROACHED FROM THE NAPEEQUA SIDE. This route uses the RICHARDSON, which lies to the SOUTH-EAST of the summit. If the glacier you have stepped onto is north of the peak, you are on the other mountain's business entirely.\n\nTHE SECOND NEGATIVE MARKER IS SIMPLER: if you never touched a glacier at all, you are on the south-west slopes and south-east ridge line, which is the other route on this peak and is deliberately glacier-free. Both finish on the same summit and neither is a variation of the other.\n\nCOMING DOWN, THE ONE PIECE OF TECHNICAL GROUND IS BELOW THE EAST RIDGE: a short, steep step reported as low Class 4 and sometimes verglassed in an adjacent gully. Strong parties downclimb it; a single 20-30 m rappel off a horn or block is common practice when it is wet or icy. There is no fixed anchor — carry webbing.\n\nDO NOT TAKE THE THUNDER CREEK EXIT ON THE STRENGTH OF THE MAP. Dropping south into Thunder Creek looks shorter and is reported slower and rougher, with heavy blowdown, avalanche debris and a boot path that disappears near the creek crossing. Reversing the ascent line over Boulder Pass is the reliable way out.",
+    "hazards": [
+     "Crevasses and moats on an upper Richardson Glacier that recent parties report thinning and breaking up",
+     "The sheepherder's traverse across the cirques — brushy, exposed to sidehill slips, and easy to lose in cloud or snow",
+     "A short low Class 4 step below the east ridge that can carry verglas and has no fixed anchor",
+     "Loose scree and rotten rock just below the summit block",
+     "A Thunder Creek exit that reads shorter on the map and is documented as slower, brushier and harder to follow"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_luahna_peak_southwest_slope_southeast_ridge": {
+  "area": "wa_luahna_peak",
+  "approach_variants": [
+   {
+    "name": "Boulder Basin high camp and the sheepherder's trail through four cirques",
+    "season": "Jul-Sep. A September ascent works but expect cold and the possibility of early snow on the traverse and the summit ledges",
+    "notes": "From the White River Trailhead near 2,300 ft, White River Trail #1507 and then Boulder Creek Trail #1562 lead to a ford and camp around 3,700 ft, and on up into Boulder Basin. High camp is a grassy knoll overlooking the basin at about 5,800 ft.\n\nFrom camp the route traverses a saddle into the White River drainage and then follows the old sheepherder's path across a chain of cirques. The path is fairly well defined but the FIRST cirque is where parties lose it and regain it repeatedly; the second, Clark Basin, is less brushy, more open and park-like with clear tread; the third, Luahna Basin, has good tread and is where parties describe camping as heaven on earth.\n\nThere is a great deal of up-and-down and side-hilling on this traverse — the elevation figure on file for this row is far larger than for the peak's other route, which is what all that sidehill costs.\n\nThis line is deliberately glacier-free, which is its whole reason to exist beside the other route on the peak.",
+    "baseFinding": "YOU FIND THE BASE OF THIS ROUTE BY COUNTING BASINS, AND THE ANSWER IS FOUR. From the Boulder Basin camp the sheepherder's path crosses cirques in order: BOULDER, then CLARK, then LUAHNA, and the peak's base sits above the FOURTH — Chalangin Basin. Nothing about the ground tells you which cirque you are in, but the character does: the first is where the path keeps disappearing, the second is open and park-like, the third has good tread. Count them.\n\nTHE INTERMEDIATE MARKER IS A NUMBER ON THE RIDGE: make a rising traverse across Luahna Basin toward the roughly 7,500 ft RIDGE POINT, then follow a faint trail across scree and talus ABOVE the fourth cirque to the peak's base. Above Chalangin Basin, not in it.\n\nTHE POSITIVE TEST AT THE BASE IS THE GRADE, AND IT IS EASIER THAN YOU EXPECT: the scramble begins on EASY CLASS 2 LEDGES on the SOUTH FACE, leading up to the right-hand skyline ridge. Class 2 ledges, south-facing, and a ridge on your right at the top of them. If your first ground is steep, or if you are on a glacier, or if the ledges lead left, you are not on it.\n\nTHE CONFIRMATION COMES HIGH AND IT IS ON THE WRONG SIDE OF THE MOUNTAIN: just beneath the summit the route crosses an EXPOSED CLASS 3+ TRAVERSE ON THE NORTH SIDE before the final Class 3 scramble straight up. So the sequence is south-face ledges, gain the ridge, cross to the NORTH beneath the summit, then straight up. A route that never leaves the sunny side has not reached the summit block.\n\nTHE NEGATIVE MARKER AGAINST THE PEAK'S OTHER ROUTE: the east slopes line crosses the upper RICHARDSON GLACIER from a col west of Clark Mountain and needs glacier gear. This route touches no glacier at all. If you are roping up for crevasses, you are on the other one, and it is a different day.\n\nA NOTE ON WHAT THE GUIDEBOOK SAYS VERSUS WHAT PARTIES FIND: this is described as a second-class line, and most parties meet a short Class 3 or better traverse or step to bypass a gap in the ridge below the true summit. Expect it rather than treat it as evidence you are off route.",
+    "hazards": [
+     "An exposed Class 3+ traverse on the NORTH side just beneath the summit, crossed with nothing to protect it",
+     "A long sidehilling traverse across four cirques with heavy elevation loss and regain, and a path that vanishes in the first one",
+     "Loose scree and rotten rock below the summit block",
+     "Lingering snow on the traverse and ledges early in the season",
+     "Remoteness measured in a day's walk from any road, with no cell coverage"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://trailcatjim.com/boulder-basin-luahna-peak-via-southwest-slope-southeast-ridge/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_mount_berge_southwest_route": {
+  "area": "wa_mount_berge",
+  "approach_variants": [
+   {
+    "name": "Little Giant Trail #1518 over the pass and down into the Napeequa",
+    "season": "Jul-Sep, August most reliable. The Chiwawa ford at the very start of this trail is waist-deep and swift in early season and is only reliably safe in late-summer and autumn low water",
+    "notes": "The Little Giant Trailhead sits at about 2,600 ft roughly mile 19 of Chiwawa River Road, three miles down-valley of Trinity. The trail begins with an UNBRIDGED FORD OF THE CHIWAWA RIVER, right at the start — there is no way around it and it is the gate on the whole approach.\n\nTrail #1518 then climbs steeply and badly-eroded to Little Giant Pass at 6,463 ft, with a small spring a few hundred feet below the pass at about 6,250 ft that is the last dependable water before the high basins. Maintained tread effectively ends at the pass.\n\nFrom the pass the route drops toward the Louis Creek and Napeequa basin, then follows a climbers' path upstream to the end of tread at the creek draining Berge's south-west side. A steep, intermittent boot track climbs through timber to treeline and opens into the south-west basin. A narrow notch at about 7,840 ft in the ridge crest links the Louis Creek basin to the Buck Creek and High Pass side beneath the south-west face, and gaining it is exposed scrambling.\n\nAll options to this peak are 15-plus miles round trip and are multi-day trips.",
+    "baseFinding": "THE BASE IS A BROAD SADDLE ON THE SOUTH SIDE AT ABOUT 7,650 FT, AND THE WAY YOU GET TO IT IS A SNOW FINGER RATHER THAN A SLOPE. Near a snowfield around 7,000 ft the line uses a SNOW FINGER AND ITS MOAT, plus steep heather, to reach that saddle below the final summit block. Looking for a walkable slope will not find it; looking for the place where snow runs up into a narrowing tongue against rock will.\n\nTHE SADDLE IS WHERE THE ROUTE LEAVES THE BASIN. Below it you are traversing basins; above it you are climbing rock bands and steep heather toward the summit ridge. If you are still contouring, you are below it.\n\nTHE NEGATIVE MARKER IS THE MOST IMPORTANT THING ON THIS PEAK AND IT IS ABOUT ASPECT: BERGE'S NORTH AND WEST FACES ARE CLIFFY. Parties must stay on the SOUTH-WEST side. Do not try to go straight up from High Pass — the direct line from the north does not go. If the ground above you is steepening into walls rather than rock bands and heather, you are on the wrong side of the mountain.\n\nTHE ROUTE-FINDING RULE LOWER DOWN IS A DESCENDING TRAVERSE, WHICH FEELS WRONG AND IS RIGHT: near 5,400 ft the described line drops across into meadows, and it is from those meadows that several scrambling lines reach the top. Losing height on an approach to a summit is expected here.\n\nTHE LAST OBSTACLE HAS AN ELEVATION AND A CHARACTER: an exposed gully near 7,800 ft with SLANTED SLABS and real exposure near its top. Holds and ledges are solid and the passage is straightforward, and a slip there would be consequential — helmet.\n\nTHE SUMMIT IS NOT ONE POINT. The TRUE, NORTH summit needs a short FOURTH-CLASS step, harder than the third-class south summit. Standing on the easier top is not standing on the mountain.",
+    "hazards": [
+     "An unbridged ford of the Chiwawa River at the very start of Little Giant Trail, waist-deep and swift outside late-season low water",
+     "Berge's north and west faces are cliffy and the direct line from High Pass does not go",
+     "A steep, badly eroded trail to Little Giant Pass and no maintained tread beyond it",
+     "An exposed gully of slanted slabs near 7,800 ft where a slip has serious consequences",
+     "A short fourth-class step to the true north summit, harder than the rest of the route"
+    ]
+   },
+   {
+    "name": "Trinity and Buck Creek, or the High Pass high route from Buck Creek Pass",
+    "season": "Jul-Sep, August most reliable",
+    "notes": "Two other ways reach the same mountain from the Trinity side.\n\nThe EAST approach: from Trinity, follow Chiwawa River Trail #1550 about two miles to the Buck Creek Trail #1513 junction, then Buck Creek Trail roughly four to five miles into the basin Berge shares with Mount Cleator and Buck Mountain on its east side.\n\nThe NORTH approach: continue past the Buck Creek junction to Buck Creek Pass, then take the climbers' path over High Pass and contour SOUTH under Berge's north side near Point 7839. This is the longest by mileage and has the least off-trail travel, which is the trade it offers.\n\nBoth involve unbridged or damaged creek crossings and both are multi-day. FR-6200 has been closed beyond Atkinson Flat under a storm-damage order, which affects the drive to Trinity.",
+    "baseFinding": "THE HIGH PASS APPROACH DELIVERS YOU TO THE WRONG SIDE OF THE MOUNTAIN ON PURPOSE, AND THE RULE IS THAT YOU MUST KEEP GOING AROUND. Contouring south under Berge's north side puts a cliffy face above you. THE CLIMB IS ON THE SOUTH-WEST SIDE. Carry on around until the ground above you is rock bands and steep heather rather than wall, and only then start up.\n\nTHE ARRIVAL IS THE SAME PLACE FOR EVERY APPROACH TO THIS PEAK: the broad SADDLE ON BERGE'S SOUTH SIDE AT ABOUT 7,650 FT, where the south-west slopes route leaves the basin. Whichever valley you came up, that saddle is what you are walking to.\n\nTHE APPROACH-SPECIFIC MARKER ON THE HIGH PASS LINE is a numbered point rather than a shape: you contour beneath Point 7839. If you are still north of it you have not gone far enough around.\n\nTHE 7,840 FT NOTCH IS THE LINK BETWEEN THE TWO SIDES and it is worth knowing exists whichever way you came: a narrow notch in the ridge crest connects the Louis Creek basin on the Napeequa side to the Buck Creek and High Pass side beneath the south-west face. Gaining it is exposed scrambling, and it is the reason the two approaches meet at all.\n\nAND THE SAME SUMMIT WARNING APPLIES: the true summit is the NORTH one and it takes a short fourth-class step. The south summit is third class and is not the top.",
+    "hazards": [
+     "Berge's north face is cliffy — the direct line from High Pass does not go, and this approach puts you underneath it",
+     "Unbridged or damaged creek crossings on both the Buck Creek and Napeequa approaches",
+     "Brush and blowdown on unmaintained climbers' paths above the end of tread",
+     "An exposed 7,840 ft notch linking the two sides of the ridge",
+     "FR-6200 closed beyond Atkinson Flat, affecting the drive to Trinity"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_mount_berge_east_ridge": {
+  "area": "wa_mount_berge",
+  "approach_variants": [
+   {
+    "name": "Buck Creek Trail, Mount Cleator's east ridge and the alder tunnel to the twin gendarmes",
+    "season": "Summer into autumn; carry an ice axe before August for lingering snow on the approach traverse",
+    "notes": "From the Trinity / Buck Creek Trailhead, hike roughly six miles of Buck Creek Trail through an old burn recovering in fireweed, then drop through a meadow and ford Buck Creek — an easy crossing in normal summer flow.\n\nAcross the creek, climb to the crest of MOUNT CLEATOR'S east ridge through logged and burned forest with a great deal of downed timber. The forest opens considerably above about 4,800 ft, and around 5,500 ft a faint trail appears and contours LEFT.\n\nThat faint path leads to an ALDER TUNNEL at the base of some cliffs. Breaking out of it, traverse slippery heather and blueberry slopes across a basin beneath a waterfall, then climb steep goat trails to a grassy knoll beside a talus field.\n\nThe route is nearly 2,000 vertical feet of generally low-angle, low- to mid-fifth granite, broken by a distinct notch and a burly 5.8 chimney crux, then towers and gendarmes to the summit. Rock is consistently solid enough for fast simul-climbing except at the crux — which is what makes this the peak's one technical line.",
+    "baseFinding": "TWO GENDARMES MARK THE START OF THE RIDGE, AND THE ROUTE GOES UP THE GULLY TO THEIR RIGHT — NOT BETWEEN THEM AND NOT TO THEIR LEFT. That is the whole identification, and it is a countable one: TWO towers side by side, and you take the weakness on the RIGHT-hand side of the pair.\n\nWHAT THE GULLY LOOKS LIKE, SO YOU DO NOT REJECT IT: it is mangy. Loose, easy to mid-fifth-class scrambling, with the upper section the loosest — parties have gone up it in running shoes with full overnight packs. It is not attractive and it is correct. A clean-looking line beside it is not the route.\n\nWHERE THE GULLY DELIVERS YOU, AND THIS IS WHERE THE CLIMBING PROPER STARTS: the NOTCH beside the twin gendarmes. Rope up there, not at the base of the gully.\n\nTHE APPROACH MARKER IMMEDIATELY BELOW IS A GRASSY KNOLL NEXT TO A TALUS FIELD, reached by steep goat trails out of the heather-and-blueberry basin under a waterfall. Grass, then talus, then two towers. If you are still in alder or on heather, you are below it.\n\nTHE ONE THING THAT WILL COST YOU THE MOST TIME LOWER DOWN is the contour at about 5,500 ft. The faint trail goes LEFT into an alder tunnel at the base of cliffs; the tunnel is the way through, not an obstacle to avoid. A party that stays on the ridge crest above it ends up cliffed against the same band the tunnel undercuts.\n\nTHE DESCENT DECISION IS MADE BEFORE YOU START: the recommended way back reverses the approach over the Berge-Cleator saddle, and the KEY IS A LEDGE TRAVERSE ABOVE THE LOWER SLABS which avoids losing and regaining height. Below that it is brushy, wet alder and steep heather back to the boot path. The alternative drops west via the High Pass trail, adds distance, and is really only worth it if you are also climbing Buck Mountain.",
+    "hazards": [
+     "Extensive loose rock along the ridge, including trundle-prone blocks at the 5.8 chimney crux",
+     "A loose mid-fifth-class approach gully climbed by most parties unroped with overnight packs",
+     "Weather closing in fast on the exposed upper ridge, where the towers all look alike in poor visibility",
+     "A wet, brushy, muddy descent traverse that is materially worse after rain",
+     "Heavy downed timber in the burn on Cleator's east ridge, and an alder tunnel that has to be found rather than avoided"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://climberkyle.com/2019/08/25/mt-berge-e-ridge-5-8/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_cardinal_peak_se_slopes": {
+  "area": "wa_cardinal_peak",
+  "approach_variants": [
+   {
+    "name": "North Fork Entiat Trail #1437 to the Pyramid Mountain junction, then the west-side basin",
+    "season": "Late May-Sep. In late May and June this is effectively a snow climb — the gully to the saddle holds 40-50 degree snow and wants an axe and crampons. By August it dries into loose Class 3 talus",
+    "notes": "From the end of FR-5606 at the North Fork Entiat Trailhead near 3,940 ft, take North Fork Entiat River Trail #1437. The lower trail is OUTSIDE the wilderness, so mountain bikes are legal on the first several miles and many parties use one on a 20-mile round trip.\n\nThe first six miles follow the river on a gentle forested grade, straight through old burn. The river is the last reliable water — everything above is dry — so fill before leaving the valley. Expect to work over, under and around blowdown, and to lose the tread briefly among downed timber; Grouse Creek is crossed on a log inside one of the worst of those stretches.\n\nA signed spur to Fern Lake splits off at about mile 6.1 — stay on #1437. Around mile 7 near 5,800 ft the trail bends sharply EAST and switchbacks about half a mile to its end at the Pyramid Mountain Trail #1433 junction near 6,600 ft. That junction is a useful timing landmark: the summit is roughly a mile from it.\n\nLeave the trail there and head east through sparse forest and then talus toward the peak's west and south-west flank. A camp flat sits around 7,100 ft in the open basin.",
+    "baseFinding": "THE BASE IS A GULLY THAT LEADS TO A GAP BETWEEN TWO SUMMITS, AND THE GAP IS WHAT YOU NAVIGATE TO — NOT THE PEAK. From the basin camp, contour onto the peak's WESTERN slopes and work SOUTH below the summit ridge across steep talus and scree until you are underneath the broad gully leading to the NOTCH BETWEEN THE NORTH AND MIDDLE SUMMITS, at about 8,300 ft. Every party uses that same notch whichever flank they approached from, so it is the one landmark this mountain has.\n\nTHE GULLY IS BROAD, NOT A CLEFT, AND IT FACES NORTH-WEST. Early season it is moderately steep snow up to about 40 degrees; later it is loose Class 2 talus and scree the whole way. If the feature above you is a narrow slot, or if it is not the widest weakness on that stretch of face, you are under the wrong one.\n\nTHE CONFIRMATION IS WHAT HAPPENS AT THE TOP OF IT: you arrive on a SADDLE with summits on BOTH sides of you. From there the ground is a ridge scramble along or just east of the crest. If you top out of a gully onto a single continuous slope rather than a gap, you are not there.\n\nTHE NEGATIVE MARKER IS ABOUT THE SUMMIT AND IT DECIDES WHETHER YOUR DAY IS OVER: the ridge from the saddle leads to the MIDDLE summit, which is non-technical and where most scramblers stop. The TRUE summit is the slightly higher SOUTH one, and reaching it takes a SHORT EXPOSED STEP — described historically as a vertical chimney onto a foot-wide summit ridge, unrated and treated by every account as the crux. If you have walked to a top without meeting a hard move, you are on the middle summit.\n\nTHE THING THAT SENDS PARTIES HERE FROM THE NORTH SIDE, worth knowing so you recognise it if you meet them: when the north ridge holds snow and verglas, parties abandon it and drop onto the east and south-east slopes below the summit ridge to finish — this route's ground. That is a documented retreat, not an error.\n\nSTOW CRAMPONS AT THE TOP OF THE GULLY if the rock above is dry. The exposure on the ridge is real and the moves near the top run Class 3 and arguably Class 4.",
+    "hazards": [
+     "A gully that is loose top to bottom in summer and 40-50 degree snow through June, with the whole party in the fall line",
+     "An exposed, sometimes-corniced summit ridge traverse of roughly 500 ft with genuine consequence",
+     "A short unrated technical step between the middle summit and the true south summit that many parties decline",
+     "Constant loose rock on the traverse below the summit ridge, so parties must not stack up",
+     "A dry, long approach through burn with heavy blowdown, and no water above the valley"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://ericsbasecamp.net/trips/NFEntiat2/NFEntiat2.htm"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_emerald_peak_se_ridge": {
+  "area": "wa_emerald_peak_entiat",
+  "approach_variants": [
+   {
+    "name": "North Fork Entiat to the Pyramid Mountain junction, then the basin between Saska and Emerald",
+    "season": "Mid-Jul-Sep for snow-free scrambling; late May and June need an axe and crampons for neve in the summit gullies. October is popular for larch colour and brings short days",
+    "notes": "From the North Fork Entiat River Trailhead near 3,940 ft at the end of FR-5606, take Trail #1437 upstream on a gentle grade — only about 1,300 ft of gain over six miles. The lower miles run through old burn and blowdown, so plan on working over and around deadfall rather than walking clean tread. Grouse Creek has been crossed on a logjam roughly 100 ft upstream of the trail crossing, or on a deteriorating footbridge, depending on the year.\n\nBear right at the Fern Lake fork and stay on #1437. Around mile 7 the trail swings sharply east and switchbacks half a mile to its end at the Pyramid Mountain Trail junction. In early season the tread gets hard to follow once snow patches start above roughly 4,800 ft.\n\nLeave the maintained trail at the junction and head west; the timber opens into a clearing within about a quarter mile. FILL AND TREAT WATER THERE — the valley bottom is the last easy water and there is little of it above.\n\nFrom the clearing the travel is cross-country: angle west then south-west, contouring below Cardinal Peak's west side toward the basin system south of Emerald. Expect to GIVE BACK 200-300 ft to skirt cliff bands before regaining the open basin floor around 6,900 ft. A camp flat sits near 7,000-7,100 ft.",
+    "baseFinding": "THE START OF THE CLIMBING IS THE UPPER BASIN WEDGED BETWEEN SASKA AND EMERALD, AND THE THING THAT LEADS YOU INTO IT IS RUNNING WATER. From the 6,900 ft basin, cross a shoulder near 7,100 ft and climb a gully system into that upper basin. THE SLABBY WATERCOURSE DRAINING IT GIVES THE MOST CONTINUOUS LINE and holds snow well into early summer — so in cloud, follow the drainage uphill rather than picking a gully by eye.\n\nTHE ARRIVAL IS A BENCH AT ABOUT 7,800 FT beneath the south-east side of the summit ridge. From there several scramble lines look much alike and NONE IS OBVIOUSLY BETTER THAN THE REST. That is the honest state of this route and it is why the rule below is a direction rather than a description.\n\nTHE RULE IS: WORK UP AND TO CLIMBERS' RIGHT TO STAY ON THE STANDARD LINE. Right, from the bench. If you have drifted left you are on one of the variations that this face is full of, and they do not all go.\n\nWHAT THE CORRECT GULLY DOES AT ITS TOP, which is the confirmation: it TOPS OUT AT A NOTCH IN THE SUMMIT RIDGE, and from that notch it is only a SHORT Class 2-3 scramble to the top — one described account calls it a very short Class 3 scramble near the top. So the test is proportion: if you have topped out of a gully and there is a great deal of climbing still above you, you are in the wrong gully.\n\nTHE SUMMIT IS TWO POINTS ABOUT 100 FT APART and the NORTH one is the true, marginally higher top. The south point is a noticeably steeper inclined slab and a slip off it runs down the EAST FACE. The whole summit area is small and drops away within a few paces in most directions, and several nearby lower rock points can be mistaken for the summit — so the exposure, not the difficulty, is what deserves attention at the top.\n\nWHAT THIS ROUTE IS NOT: it is not a ridge climb despite the name. The name describes the ridge and notch it gains relative to Cardinal Peak, which sits just to the south-east. The climbing is a gully and a short scramble.",
+    "hazards": [
+     "Loose rock and choss in the summit gullies, with several similar-looking gully and bench variations that do not all go",
+     "A small summit area with a steeply inclined south slab whose slip line runs down the east face",
+     "Lingering snow and possible cornices in the summit gullies through June",
+     "A dry approach above the valley bottom, with the last easy water a quarter mile past the trail's end",
+     "Unmaintained, log-choked trail sections from past wildfire damage on the lower six miles"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://ericsbasecamp.net/trips/NFEntiat2/NFEntiat2.htm"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_saska_peak_emerald_saska_col": {
+  "area": "wa_saska_peak",
+  "approach_variants": [
+   {
+    "name": "North Fork Entiat and the primitive Pyramid Creek Trail to the Emerald-Saska basin",
+    "season": "Mid-Jul-Sep once the col and summit gullies clear. October adds larch colour and early-snow risk; before mid-July carry an axe for lingering snow and ice",
+    "notes": "From the North Fork Entiat Trailhead near 3,880-3,940 ft at the end of FR-5606, the first four miles of Trail #1437 climb gently up the valley through old burn, where blowdown and washed-out sections make the going slower than the grade suggests. There is little shade and the valley bottom runs hot and dry — carry water.\n\nContinue up-valley another four miles, gaining roughly 3,000 ft from the trailhead, to the Pyramid Creek / Fern Lake junction. Sources put that junction anywhere from seven to nine miles in depending on how far up the road you were able to start. Fox Camp sits about a quarter mile north of it.\n\nFrom the junction take the primitive, unmaintained Pyramid Creek Trail EAST and climb about 1,000 ft over a mile to a mile and a half into the upper basin between Emerald and Saska, around 7,100 ft. The tread is intermittent. Pushing to that camp rather than stopping at the junction costs an extra hour on the approach day and returns about the same on summit day.\n\nThis is reported as the easiest and shortest of the Saska / Emerald / Cardinal trio's summit scrambles.",
+    "baseFinding": "THE BASE IS THE COL AND THE DIRECTION OFF IT IS WEST. From the basin camp, about 600 ft of gain on talus, scree or lingering snow reaches the EMERALD-SASKA COL at roughly 7,700 ft — a notch on the south ridge with a peak on either side. From the col, HEAD WEST toward Saska. Emerald is the other way. If you leave the col climbing east you are on the neighbouring peak's ground.\n\nTHE POSITIVE TEST IS THAT YOU DO NOT STAY ON THE CREST. The connecting ridge is narrow and knife-edged in places with steep drop-offs on both sides, so the usual line DROPS SLIGHTLY ONTO ITS WEST FLANK to pick up an OBVIOUS SCREE-AND-ROCK GULLY, then follows a CAIRNED RISING TRAVERSE back toward the crest. West flank, gully, cairned rising traverse. A party grimly balancing along the crest itself has missed the line rather than found the hard way.\n\nTHE FINISH IS COUNTED IN FEET, NOT FEATURES: roughly 300 ft of final Class 3 on loose blocks gains the top. Test every hold — nothing here is fixed and no rope is standard, although the last exposed moves are steep enough that some parties carry a short handline for them.\n\nTHE DESCENT MARKER IS A WARNING WITH A DOCUMENTED CONSEQUENCE: CLIFF BANDS SIT BELOW THE SOUTH-WEST FACE. Stay well clear of them when the ground is snow-covered or icy. A winter party misjudging that descent line in icy conditions lost a ski over those cliffs. In early-to-mid season the continuous snow below the col gives a glissade or boot-ski; by August and September the same ground is loose scree and dirt that has to be walked slowly.\n\nLOOSE ROCK IS THE THEME OF THE WHOLE CIRQUE. Helmet, and do not stack the party directly above one another, from the moment you leave the basin.",
+    "hazards": [
+     "Loose rock and rockfall throughout the Emerald-Saska col basin and along the summit ridge",
+     "Cliff bands below the south-west face that have caught descending parties in icy or snow-covered conditions",
+     "A narrow, sometimes knife-edged connecting crest that has to be avoided rather than followed",
+     "Lingering snow and ice in the col and summit gullies into early-to-mid July in heavy years",
+     "Heavy blowdown and washed-out sections on the lower North Fork Entiat Trail from past wildfires and storm damage"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "_SKIPPED": {
+  "_note": "Six routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason is a statement about what is published or about what the row is, not about effort.",
+  "wa_bonanza_peak_north_ridge": "CONTAMINATED ROW, AND THE CONTAMINATION IS IN THE FIELD THAT WOULD HAVE SUPPLIED THE BASE. Its beta reads 'From the Middle Fork Snoqualmie trailhead, approach via the alpine meadows to the north ridge base' — the Middle Fork Snoqualmie is roughly 120 km away across the Cascade crest and has no route to Bonanza Peak. Its grade is 'Class 2' on a peak whose standard route is Class 5.0-5.6 and whose every other line is Grade V. And its approach and pitch_detail describe the Mary Green Glacier's north edge and the upper rock band to a notch on the NE ridge, which is the STANDARD route's own upper section, already written on wa_bonanza_peak_mary_green_glacier. Writing a base here would mean either repeating the standard route's base finding under a different name or inventing one for a line nothing independently describes.",
+  "wa_cardinal_peak_nw_couloir_north_ridge": "POSITIONED ONLY RELATIVE TO ITS NEIGHBOURS, AND EMPTY OF EVERYTHING ELSE. The row carries no gain_ft, no dist_km, no high_point_ft and no length_m. Its whole approach is 'reached via the North Fork Entiat Trail to Saska Basin and Saska Pass, commonly combined with ascents of Saska Peak, Emerald Peak and Pinnacle Mountain on the same trip rather than as a dedicated single-peak approach', and its only locating claim is 'climbs a couloir on the northwest side to gain the north ridge'. The neighbouring Southeast Slopes row already describes a north-west-FACING gully on the same flank leading to the notch between the north and middle summits, so 'a couloir on the northwest side' does not separate the two. Every published account of this ridge is of parties ABANDONING it for snow and verglas and traversing onto the south-east slopes to finish — which is the other route.",
+  "wa_fortress_mountain_northeast_face": "NO INDEPENDENT BASE, BY THE ROW'S OWN ACCOUNT. Its approach column says in as many words that this line 'is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently', and its beta says very little beta exists online beyond a single forum report. The one concrete marker it holds — a fourth-class chimney that a party missed near an 8,500 ft col — is a DESCENT-finding note about a feature partway up the ridge, not the base of the climb. The row's id says northeast_face, its name says Northeast Ridge and its face field says both; see _DEFECTS.",
+  "wa_emerald_peak_west_route": "APPARENT DUPLICATE. wa_emerald_peak_west_route and wa_emerald_peak_se_ridge carry the SAME high_point_ft (8,422) and the SAME gain_ft (5,272), start from the same North Fork Entiat trailhead, and both describe climbing a scree gully to the summit block and finishing with a short Class 3 scramble on a summit split into two points about 100 ft apart with the north one true. The one substantive difference is that the West Route names an alternate approach by boat to Lucerne and the Emerald Park Trail, and nothing published says where on that trail you leave it for the peak's west flank. The SE Ridge row is the one written — it carries waypoints, a documented basin camp and the drainage line that leads into the upper basin. Writing both would put two base findings on what is probably one gully.",
+  "wa_mount_pugh_pika_slab": "THE ROW ITSELF SAYS THE LOCATION IS NOT PUBLISHED. Its beta records that the peak's area page 'describes an abundance of small crags immediately above the trail between Stujack Pass and the summit, of which Pika Slab is the one named route' and that 'detailed pitch-by-pitch beta, first-ascent info, and exact location are not published'. So the band is unmistakable — you walk through it — and the individual slab is not distinguishable from its neighbours by anything anyone has written down. Twenty feet of white slab above a trail, somewhere past a Class 3 rock step, is a description of the crag band rather than a test for this route. The approach itself is fully covered by wa_mount_pugh_stujack, which shares every foot of it.",
+  "wa_don_t_climb_that_she_said": "NO PUBLISHED APPROACH EXISTS AND THE ROW SAYS SO. Its approach column records that no route-specific trailhead or approach beta turned up in any guidebook, forum or trip-report source, and that the name reads like a locally-known label rather than a catalogued line. Everything else in that column is explicitly INFERRED from the row's own numbers ('based on the on-file numbers … expect an informal boot-path'). There is nothing to re-home and nothing to research. It is also almost certainly misfiled; see _DEFECTS."
+ },
+ "_DEFECTS": {
+  "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+  "bonanza_north_ridge_beta_is_from_another_range": "wa_bonanza_peak_north_ridge's beta begins 'From the Middle Fork Snoqualmie trailhead, approach via the alpine meadows to the north ridge base. Follow the ridge crest, staying on solid rock and stable talus. Most routefinding is straightforward and well-marked by cairns.' The Middle Fork Snoqualmie is on the west side of the Cascade crest roughly 120 km from Bonanza and no approach connects them; Bonanza has no drivable trailhead at all. The row's grade is also 'Class 2' where the peak's standard route is Class 5.0-5.6. Two independent contamination signals on one row.",
+  "bonanza_west_ridge_beta_describes_volcanic_rock": "wa_bonanza_peak_west_ridge's beta says the ridge 'becomes steeper above 8,000 ft with Class 2-3 scrambling on red volcanic rock'. Bonanza is meta-granitic orthogneiss — wa_soviet_route's own beta says so, and describes bands of loose RED rock within it, which is probably where the word came from. Nothing else on this peak supports a Class 2-3 scramble line on the west ridge: the Soviet's descent off the West Peak needs two roughly 200 ft rappels down slabs. The row's approach column (Hart Lake to the 7,100 ft North Star-Bonanza pass) is correct and is what the variant written here covers.",
+  "bonanza_northeast_buttress_contradicts_its_own_gain": "wa_bonanza_peak_northeast_buttress carries gain_ft 6,300 while its own approach prose explains 'this route's noticeably larger overall gain (~7,500')'. The column and the sentence beside it disagree by 1,200 ft. Its summit waypoint also reads 9,516 ft against a high_point_ft of 9,511.",
+  "bonanza_rows_disagree_on_holden_pass": "Holden Pass is given as 6,360 ft in wa_bonanza_peak_north_ridge and wa_bonanza_peak_northeast_buttress's approach prose, and as 6,400 ft in the waypoint and bivy records on the same rows. Small, but it is the high camp for three routes and two peaks.",
+  "cascadian_gain_ft_is_route_vertical_not_day_vertical": "wa_bonanza_peak_cascadian_route carries gain_ft 2,000, which is the route's own vertical gain as published, while every sibling row on this peak uses gain_ft for the whole day from the trailhead (wa_soviet_route 5,300, wa_bonanza_peak_northeast_buttress 6,300). One column, two conventions, on one peak.",
+  "kololo_disagrees_with_itself_on_which_summit_is_higher": "wa_kololo_peaks_standard's beta says the east summit at 8,243 ft is the true high point and the west is 8,220 ft. Its pitch_detail says 'Kololo Peaks has twin summits (an east summit near 8,160+ ft and the higher west/main summit)'. Its high_point_ft is 8,240 and its summit waypoint is named 'Kololo Peaks (west summit)' at 8,240. Three different answers to which top is higher, inside one row. wa_tenpeak_mountain_north_couloir independently calls Kololo 8,220 ft.",
+  "kololo_distance_prose_contradicts_the_column": "wa_kololo_peaks_standard's approach prose says 'the on-file 46.99 km distance reflects a round trip in the 28-29 mile range' while the row's dist_km is 22.9. The prose is describing a number the row does not hold.",
+  "tenpeak_thunder_basin_camp_has_three_elevations": "wa_tenpeak_mountain_southeast puts the standard Thunder Basin high camp at '~5,180 ft' in its approach prose and again at 5,180 in its beta, at 6,400 ft in its 'Thunder Basin high camp' waypoint, and at 6,200 ft in the shared bivy record ('Boulder Pass and Thunder Basin, White River'). Over a thousand feet of disagreement about where to sleep.",
+  "copper_peak_name_and_aspect_disagree_with_its_own_terrain": "wa_copper_peak_south_route is named the South Route with aspect SE, while its climbing_route, pitch_detail and every waypoint describe the EAST-facing Southeast Glacier remnant, a gully breaching the spur on the ridge's NORTH side, and the upper NORTHEAST Ridge to the summit. Its face field says 'Southeast Glacier/Face'. Navigating this route by its name or its aspect column would send a party to the wrong side of the peak.",
+  "fortress_northeast_row_has_three_names_for_one_line": "wa_fortress_mountain_northeast_face has id ...northeast_face, name 'Northeast Ridge', and face 'Northeast Face/Ridge (Fortress-Chiwawa saddle)'. Its own beta says the line 'is inaccurately described in Beckey's most recent Cascade Alpine Guide', so the ambiguity is not only ours. Separately its access.closures reads only 'Access road unplowed in winter' while both sibling rows on the same peak carry the FR-6200 storm closure beyond Atkinson Flat — stale bookkeeping on one row of three.",
+  "fortress_rows_lose_more_than_they_gain": "wa_fortress_mountain_east_ridge carries gain_ft 5,884 and loss_ft 7,900; wa_fortress_mountain_southwest_face carries gain_ft 5,884 and loss_ft 6,000. Both are out-and-back trips returning to the same trailhead, so gain and loss must match. The east ridge row is out by 2,016 ft.",
+  "luahna_east_slopes_holds_two_different_approaches": "wa_luahna_peak_east_slopes' approach prose describes the unmaintained sheepherder's path sidehilling EAST from Boulder Pass across Clark and Luahna basins, losing about 1,000 ft, to a 7,200 ft spur and then the 7,600 ft col west of Clark Mountain. Its WAYPOINTS describe a different line: over Boulder Pass, DOWN about 1,600 ft to an unbridged ford of the Napeequa at 4,700 ft, then 2,300 ft back up to a basin at 7,000 ft under the east face. Both are real ways to this peak and the row does not say which its numbers belong to.",
+  "luahna_east_slopes_beta_belongs_to_the_other_row": "wa_luahna_peak_east_slopes' beta reads 'The standard line climbs scree, talus, and broken ledges on Luahna's east/south-facing slopes to gain the south ridge, then follows the ridge crest… The route is glacier-free but crosses persistent snow and loose rock.' That is a description of wa_luahna_peak_southwest_slope_southeast_ridge, and it directly contradicts this row's own face field ('Upper Richardson Glacier to the East Ridge') and its climbing_route, which crosses the Richardson roped.",
+  "luahna_rows_disagree_by_3250_ft_of_gain": "wa_luahna_peak_east_slopes carries gain_ft 6,150 over dist_km 37.82; wa_luahna_peak_southwest_slope_southeast_ridge carries gain_ft 9,400 over dist_km 24.15. Same summit, same trailhead, and the larger gain is on the shorter distance.",
+  "emerald_west_route_duplicates_the_se_ridge_row": "wa_emerald_peak_west_route and wa_emerald_peak_se_ridge share high_point_ft (8,422) and gain_ft (5,272), start at the same trailhead and both describe a scree gully to a twin summit 100 ft across with the north point true. The West Route row puts that trailhead at 3,700 ft; the SE Ridge row and its waypoints put it at 3,940 ft. Probably one climb imported twice.",
+  "maude_nothing_couloir_distance_is_shorter_than_its_own_approach": "wa_mount_maude_r3 carries dist_km 6.4 with gain_ft 5,580, while its own approach prose describes reaching Leroy Basin at '~5 miles' — 8 km — before the route even starts. The distance column is smaller than the walk in.",
+  "glacier_peak_kennedy_trailhead_is_on_two_different_roads": "wa_glacier_peak_kennedy_glacier's approach and road columns put the White Chuck River Trailhead on White Chuck River Road (FS-23) off the Mountain Loop Highway, while its own waypoint of that name describes it as a 'road-end trailhead on Suiattle River Rd (FR 26), ~23.5 mi from Darrington'. Those are different valleys on opposite sides of the mountain. Its waypoints also route onto the Kennedy Glacier via a Vista-Kennedy saddle at 8,000 ft while its beta and pitch_detail descend off Kennedy Ridge to the FOOT of the glacier — two different lines onto the same ice.",
+  "spectacle_buttes_summit_row_names_only_one_butte": "wa_spectacle_buttes_west_route is named the West Route with a west aspect, while its climbing_route, descent_text and waypoints all describe the SOUTHWEST RIDGE, gained from the basin between the two Buttes. Its summit waypoint is 'South Spectacle Butte summit' although the area row is the plural 'Spectacle Buttes' — so the row silently commits to one of the two tops without saying so anywhere a reader would see it.",
+  "boulder_problem_filed_on_a_wilderness_peak": "wa_don_t_climb_that_she_said is a V0+ boulder problem with a 0.97 km approach and no elevation gain, filed under area_id wa_glacier_peak. Its single waypoint sits at 48.059012, -121.1235216 — roughly 6 km south-south-west of the Glacier Peak summit, deep inside the Glacier Peak Wilderness, many miles from any road. A sub-kilometre roadside boulder cannot be at that coordinate. Either the coordinate or the area_id is wrong, and the row's own approach column admits no source for the problem exists at all.",
+  "berge_southwest_row_mixes_three_approaches_into_one_set_of_numbers": "wa_mount_berge_southwest_route's approach describes three separate approaches from two different trailheads (Little Giant Trail #1518 at mile 19 of the Chiwawa River Road, Buck Creek from Trinity, and High Pass from Buck Creek Pass), while carrying a single dist_km of 38.6 and gain_ft of 9,200 and a single approach_logistics.trailhead of Little Giant. Nothing says which approach those numbers describe. Its high_point_ft is 7,948 against a summit waypoint of 7,951."
+ }
+}

@@ -1,0 +1,1024 @@
+{
+ "_README": [
+  "Approach variants — MOUNT RAINIER and the SOUTHERN WASHINGTON volcanoes and ranges, 2026-08-19.",
+  "42 routes, 42 variants, every one carrying a baseFinding.",
+  "",
+  "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. That matters",
+  "more here than in most batches, because SIX ids in this scope carry no peak name at all — wa_bread_loaf,",
+  "wa_scramble_route, wa_southwest_scramble, wa_east_ridge_8, wa_the_roof, wa_open_book_2, wa_fantasy_falls — and",
+  "TWO DIFFERENT ROUTES IN THIS BATCH ARE BOTH CALLED 'Classic Route': wa_classic_route_2 is on UNICORN PEAK and",
+  "wa_classic_route_3 is on LANE PEAK, four miles apart in the Tatoosh. A name-shaped id is not evidence of which",
+  "peak you are on, and here it is not even evidence of which climb.",
+  "",
+  "SCOPE WALKED: wa_mount_rainier, wa_liberty_cap, wa_point_success, wa_little_tahoma (all under",
+  "usa.washington.wa_sw_tacoma.wa_southwest_cascades), wa_mount_adams, wa_mount_st_helens, the Goat Rocks peaks",
+  "(wa_gilbert_peak, wa_ives_peak, wa_old_snowy_mountain) and the six Tatoosh Range peaks the catalog holds",
+  "(wa_castle_peak_tatoosh, wa_eagle_peak, wa_lane_peak, wa_pinnacle_peak_tatoosh, wa_plummer_peak,",
+  "wa_unicorn_peak). 59 routes in those areas; 13 already carried approach_variants and were NOT touched;",
+  "46 were empty. 42 are written here and 4 were deliberately skipped — see _SKIPPED.",
+  "",
+  "FOUR REQUESTED PLACES DO NOT EXIST IN THE CATALOG and so could not be covered: MOUNT AIX, AMERICAN RIDGE,",
+  "DENMAN PEAK and CHUTLA PEAK, plus WAHPENAYO PEAK. None has an area row, under any spelling, anywhere in the",
+  "Washington tree. Denman and Chutla are named in the prose of routes written here (Denman as the peak on the",
+  "far side of the Lane-Denman saddle, and as the wrong fork at Plummer's tarn) but neither carries a row of its",
+  "own. Note also that 'Curtis Gilbert' in the request is wa_gilbert_peak — Mount Curtis Gilbert and Gilbert Peak",
+  "are the same 8,184 ft Goat Rocks summit, one row, and it is covered. There is no separate Curtis Gilbert row.",
+  "",
+  "TWO STRUCTURAL SETS IN THIS BATCH ARE THE COLFAX SHAPE — several lines off one bench, told apart by a test",
+  "that works ABOVE the schrund plus a negative test — and they were written as sets rather than individually:",
+  "  - LANE PEAK'S NORTH FACE: three couloirs (LOVER'S LANE, THE ZIPPER, THE FLY, left to right) dropping onto one",
+  "    debris apron. Told apart by WIDTH (the Zipper narrows 40 ft to 20 ft; the Fly stays 40-50 ft), by a COUNT OF",
+  "    STEPS (the Zipper has up to three; the Fly has none), by ANGLE (Lover's Lane reaches ~60 degrees, the others",
+  "    ~45), and definitively by WHERE THEY TOP OUT (the Zipper at a dead tree in an east-ridge notch, the Fly at",
+  "    the west-ridge notch, Lover's Lane on the ridge ABOVE the Zipper — from which the standard descent rappels",
+  "    INTO the Zipper, so being able to look down into a neighbouring couloir is the confirmation).",
+  "  - UNICORN PEAK'S SUMMIT HORN: three lines within about 70 ft (THE ROOF, CLASSIC ROUTE, OPEN BOOK, left to",
+  "    right) that all finish at the same slung block. Told apart at the ground by TACTILE tests: a roof overhead",
+  "    and a chimney is The Roof; blocky open face with a piton at half height is the Classic Route; two wide",
+  "    left-leaning cracks that want big cams is Open Book. The left-to-right ordering is re-homed from the rows'",
+  "    own prose ('about 20 ft left of the Classic Route where the ridgeline meets the block' and 'about 50 ft",
+  "    right of the base of the Classic Route'), not inferred.",
+  "  - A THIRD SET IS RAINIER'S MOWICH FACE, and it is the same problem at a much larger scale: four climbs share",
+  "    one camp and one walk-in. They are separated by WHICH GLACIER you cross from the divide bivy and by WHERE",
+  "    THE HOURGLASS IS — the North Mowich Headwall's is in the first 50 ft, the Central Mowich Face's is at",
+  "    12,500 ft, and the Edmunds Headwall's schrund is turned beside TWIN GENDARMES.",
+  "  - AND A FOURTH, SMALLER: the FUHRER THUMB, which is the middle of three features seen from the upper Wilson",
+  "    Glacier — WILSON GLACIER HEADWALL, FUHRER THUMB, FUHRER FINGER, left to right. The Thumb is the narrow one;",
+  "    the Finger is the wide one with the hourglass. They merge at ~11,500 ft, so a misidentification cannot be",
+  "    detected above that height and must be settled at the bottom.",
+  "",
+  "RAINIER'S TRAILHEADS ARE THE OTHER STRUCTURAL PROBLEM, and every Rainier baseFinding names its side of the",
+  "mountain because a party at the wrong one is hours away. The routes written here leave from FIVE different",
+  "roadheads: PARADISE (Nisqually Icefall, Fuhrer Thumb, Kautz Headwall, Little Tahoma's Cowlitz/Ingraham line),",
+  "WHITE RIVER (Curtis Ridge, Willis Wall), FRYINGPAN CREEK on the Sunrise road (Little Tahoma's standard),",
+  "MOWICH LAKE (Mowich Face, North Mowich Headwall, Central Mowich Face, Edmunds Headwall) and WESTSIDE ROAD",
+  "(Sunset Ridge, Tahoma Glacier). Where routes share a camp the finding is which side of it they leave from:",
+  "the Mowich lines all DESCEND off the Ptarmigan Ridge camp rather than climbing from it, and the Little Tahoma",
+  "winter line leaves the Camp Muir track at 8,600 ft — 1,500 ft BELOW Camp Muir, so reaching that camp means",
+  "you have overshot.",
+  "",
+  "LIVE CLOSURES WERE NOT WRITTEN AS DURABLE DATA. Several rows in this scope store dated closure claims in their",
+  "own columns (see _DEFECTS). What is written here instead is the durable pattern: Mowich Lake Road is unpaved",
+  "and typically opens well after the east- and south-side roads, commonly not until July, and closes with the",
+  "first significant snow; highway access to it from the north has been interrupted for extended periods and",
+  "should be confirmed rather than assumed in either direction. Westside Road is gated to vehicles a few miles in",
+  "because of repeated Tahoma Creek flooding and the remainder is walked or biked. Stevens Canyon Road is gated",
+  "roughly mid-October to late May. No year is named anywhere in a variant.",
+  "",
+  "Contamination rejected during research, recorded so it is not re-introduced:",
+  "  - MOUNT ADAMS. There is a Mount Adams in New Hampshire's Presidential Range (5,799 ft, and the second-highest",
+  "    peak in the northeastern US, so it dominates a plain name search) and further Mount Adams summits elsewhere.",
+  "    Every Adams source used here is anchored to Killen Creek, Takhlakh Lake, the High Camp Trail, Cold Springs,",
+  "    Trout Lake or the Round the Mountain Trail, none of which any other Mount Adams has.",
+  "  - LYMAN GLACIER. There are TWO Lyman Glaciers in Washington: the one on Mount Adams used here, and a much",
+  "    better-documented one at Lyman Lake in the Glacier Peak Wilderness, about 100 miles north. Searches return",
+  "    the northern one first. Nothing from Lyman Lake, Spider Gap or Railroad Creek was used for any field.",
+  "  - PINNACLE PEAK. The one here is the 6,562 ft Tatoosh peak above Reflection Lakes. It is distinct from",
+  "    wa_pinnacle_mountain_entiat (a Sawtooth/Chelan peak), from the Enumclaw 'Pinnacle Peak' / Mount Peak, and",
+  "    from wa_central_pinnacle, wa_nw_pinnacle, wa_sw_pinnacle and wa_south_central_pinnacle, which are crags in",
+  "    the Chimney Rocks group near the Columbia Gorge and are in a different subtree entirely.",
+  "  - THE CASTLE. wa_castle_peak_tatoosh is NOT wa_castle_peak_pasayten, a peak of the same name 150 miles north",
+  "    in the Pasayten with four routes of its own. Nor is it any of the three Castle Rocks in the catalog",
+  "    (Tumwater Canyon x2, Glacier Peak Wilderness). Only Reflection Lakes / Pinnacle Saddle material was used.",
+  "  - SNOW LAKE and BENCH LAKE. The Unicorn Peak approach uses the Snow Lake in Mount Rainier National Park, on",
+  "    Stevens Canyon Road. Washington's famous Snow Lake is at Snoqualmie Pass, 60 miles north, and there is a",
+  "    Bench Lake beside it. Nothing from the Snoqualmie lakes was used.",
+  "  - EAGLE PEAK. The Tatoosh Eagle Peak above Longmire is one of many Eagle Peaks and Eagle Rocks in the",
+  "    catalog (wa_eagle_rock in the Stevens Pass region, wa_eagle_rock_a_k_a_school_rock in the Olympics,",
+  "    wa_bald_eagle_peak in the western Alpine Lakes). Only Longmire / Nisqually suspension bridge material was",
+  "    used.",
+  "  - GOAT MOUNTAIN vs the GOAT ROCKS. 'Goat' names a great deal of Washington. The Goat Ledges, Goat Ribs and",
+  "    Goat Creek used here are all in the Goat Rocks Wilderness on the Snowgrass Flat side; nothing was carried",
+  "    from Goat Mountain on the Mount Baker Highway, which another batch covers.",
+  "  - OLD SNOWY. Distinct from Snowy Mountain in the Pasayten. Only Snowgrass Flat / PCT material was used.",
+  "  - 'TAHOMA'. Tahoma is a name for Mount Rainier itself, and the catalog also holds a Tahoma Glacier route ON",
+  "    Rainier and a separate peak, LITTLE TAHOMA. wa_mount_rainier_tahoma_glacier and the three wa_little_tahoma",
+  "    routes are different mountains' worth of ground and were kept strictly apart.",
+  "  - CURTIS. Curtis Ridge is on Rainier's north side; Mount Curtis Gilbert is in the Goat Rocks; there is also a",
+  "    Curtis Glacier on Shuksan and a Camp Curtis on Rainier's Emmons side. Only the Winthrop-Glacier-side",
+  "    material was used for Curtis Ridge.",
+  "",
+  "No time, distance or gain figure is averaged. Where two sources disagreed, the field is omitted. Several",
+  "variants deliberately carry no hours at all.",
+  "",
+  "_confidence values used here: 'corroborated' (two or more independent published sources agree on the base),",
+  "'thin' (the base is real but under-published, and the variant says so), and 're-homed' (the material comes",
+  "from the route row's OWN approach / beta / descent_text / pitch_detail / climbing_route columns and no",
+  "external source was captured for it — nothing was researched into these, and _sources is empty by design).",
+  "Most of the Tatoosh and Goat Rocks entries are re-homed: those rows are unusually rich, and the base findings",
+  "in them are re-organisations of facts the rows already held, not new research."
+ ],
+ "wa_mount_rainier_nisqually_icefall": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Paradise, the Skyline Trail and the Nisqually Glacier to the lower bergschrund",
+    "season": "Roughly May-Jun. This is an early-season line: the icefall wants to be frozen, and hazard rises steeply through the summer as the glacier warms",
+    "notes": "From Paradise at about 5,400 ft, follow the Skyline Trail up past Glacier Vista and Pan Point, then leave it and drop west onto the Nisqually Glacier. This is the same access point the Wapowety Cleaver lines use. Rope up before you step onto ice; there is no maintained trail from here on and no reliable water once you leave Paradise, so plan on melting snow.\n\nAscend the Nisqually alongside the Wapowety Cleaver, gaining steadily to about 9,900 ft where the lower bergschrund marks the start of the technical ground — typically 40 to 50 ft of steep ice or snow to gain the icefall itself.\n\nAbove that the route threads broken, crevassed terrain in the upper Nisqually basin toward the top of the Wapowety Cleaver near 13,000 ft. That basin is the most time-consuming and the most dangerous section of the whole climb: it sits directly under active icefall and rockfall, and the correct tactic is to move through it without stopping to regroup. The seracs rearrange themselves every season, so expect to find your own way rather than follow anyone's line.",
+    "baseFinding": "THE CLIMBING STARTS AT THE LOWER BERGSCHRUND AT ABOUT 9,900 FT. Everything below that is glacier walking, and the whole recognition problem is not confusing that walking with progress.\n\nFIRST TEST, AND IT IS THE ONE THAT DECIDES THE DAY: which way you go at Glacier Vista. This route drops WEST off the Skyline Trail onto the Nisqually. If you are still walking uphill on maintained trail toward Pebble Creek and the Muir Snowfield, you are on the Camp Muir approach and the icefall is behind your left shoulder. Parties have made that mistake in the dark because the first mile is identical.\n\nSECOND TEST, AND IT WORKS IN CLOUD BECAUSE IT IS A SIDE, NOT A LANDMARK: the Wapowety Cleaver — the rock cleaver dividing the Nisqually from the Kautz — must stay on your LEFT the whole way up. If it has ended up on your right you have crossed onto the Kautz side of it and you are on the Kautz Glacier route.\n\nTHIRD TEST, POSITIVE: the schrund is the first steep ground on the route. If you have walked moderate glacier for hours and met nothing steeper than a crevasse crossing, you have not arrived — keep going, do not start climbing something because it is steep.\n\nTHE NEGATIVE TEST IS THE MOST USEFUL ONE HERE, AND IT INVERTS THE USUAL INSTINCT: a boot track is EVIDENCE YOU ARE WRONG. This route is circuitous enough and dangerous enough that it is rarely climbed in any given season. A trench underfoot on the Nisqually almost certainly belongs to parties walking to Camp Muir, not to anyone on this line.\n\nWHAT BEING TOO HIGH LOOKS LIKE: if you are in the upper basin with seracs above you and have not crossed a bergschrund, you have wandered into the icefall from the side rather than climbing into it, which is exactly the ground you least want to be standing still in.",
+    "hazards": [
+     "Active icefall with collapsing seracs directly above the upper basin",
+     "Complex crevasse and serac navigation that changes every season",
+     "Hazard rises rapidly with warming through the day, so the upper basin must be crossed early",
+     "Documented history of large slide activity in the icefall",
+     "No reliable water above Paradise"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_mount_rainier_curtis_ridge": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "White River, Glacier Basin, St Elmo Pass and the Winthrop Glacier traverse",
+    "season": "Roughly May-Jun, in cold stable conditions when the rock is frozen in place",
+    "notes": "From White River Campground, hike the Glacier Basin Trail about 3.5 miles and 1,700 ft to Glacier Basin near 5,900 ft — a broad basin with the last reliable running water and a common camp. Continue on climbers' path up to St Elmo Pass at about 7,400 ft, another 1,500 ft over roughly a mile of steepening scree and snow.\n\nAt the pass, rope up. Drop onto the Winthrop Glacier and contour west and southwest between roughly 7,200 and 7,400 ft, threading crevasses, to reach the base of Curtis Ridge on its east side.\n\nThis is the same corridor Liberty Ridge parties use, so in season there is often a boot track and other parties on it. Above St Elmo Pass there is no water at all.\n\nRockfall on the traverse concentrates in three places: immediately after you drop onto the glacier, roughly halfway across, and at the far end. Move through those, do not rest in them.",
+    "baseFinding": "THE APPROACH IS SHARED WITH LIBERTY RIDGE, SO THE ONLY QUESTION THAT MATTERS IS WHERE YOU STOP. Curtis Ridge is the FIRST ridge you meet after crossing the Winthrop. Liberty Ridge is beyond it, past the Carbon.\n\nCOUNT THE GLACIERS. Between St Elmo Pass and this base you cross ONE — the Winthrop. If you have dropped onto a SECOND glacier you are on the Carbon and you have walked past Curtis Ridge onto the Liberty Ridge approach.\n\nTHE POSITIVE TEST IS THE VIEW, AND IT IS UNMISTAKABLE ONCE YOU HAVE IT: at about 7,200 ft the ridge gives you snow-free rock ground with the Carbon Glacier and the Willis Wall opening up on the far side. Standing on Curtis Ridge you are looking ACROSS at Willis Wall, not up at it. If the great capped wall is not in front of you, you are not on the ridge yet.\n\nWHAT BEING SHORT LOOKS LIKE, AND IT HAPPENS IN THE DARK: if you walked INTO Glacier Basin and kept going up the valley, you missed the turn for St Elmo Pass. The pass is gained by leaving the basin, not by continuing through it.\n\nWHAT BEING LOW LOOKS LIKE: the traverse holds 7,200 to 7,400 ft deliberately. Losing height on the Winthrop puts you into longitudinal crevasses and gaping moats that run the same way you are walking, which is the worst orientation to fall into one.\n\nONE MORE THING WORTH KNOWING BEFORE YOU COMMIT: this ridge is more confusing and more committing than either of its famous neighbours, with 4th-class scrambling through rock bands and at least one rappel on the way UP. If the ground is going smoothly you may be on the wrong feature.",
+    "hazards": [
+     "Serac-threatened sections below the Willis Wall icecap",
+     "Loose rock and mixed ground with complex route-finding",
+     "Rockfall concentrated at three points on the Winthrop traverse",
+     "Longitudinal crevasses and gaping moats running along the line of travel",
+     "Remote position with a long exit and no water above St Elmo Pass"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountaineers.org/activities/routes-places/winthrop-glacier-traverse",
+   "https://www.mountainproject.com/route/110037673/curtis-ridge"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_willis_wall": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "White River, St Elmo Pass and the Winthrop-to-Carbon traverse under Curtis Ridge",
+    "season": "Cold, hard-frozen conditions only — a narrow and unpredictable late-spring window, and the route is more often not in condition than in it",
+    "notes": "The traditional approach was the Carbon River road to Ipsut Creek and up the Carbon Glacier. Carbon River access has been interrupted for long stretches by bridge and road failure on the state highway that serves it, and when it is out the Carbon side becomes a very long wilderness walk rather than a drive-in. Treat that as a thing to confirm rather than a fixed fact in either direction.\n\nThe approach most parties now use starts at White River Campground: Glacier Basin Trail to Glacier Basin, climbers' path to St Elmo Pass at about 7,400 ft, then rope up, drop onto the Winthrop and traverse west and around beneath Curtis Ridge onto the Carbon Glacier at about 7,300 ft.\n\nFrom the Carbon, walk up under the wall. Bivy sites exist in the Curtis Ridge access gully and on Curtis Ridge itself.\n\nThis is one of the most objectively dangerous pieces of ground in the range. The whole wall is capped by the summit icecap and swept by what comes off it. Nothing in the rack protects you from that; being there in the cold hours does.",
+    "baseFinding": "THE TEST IS WHAT IS ABOVE YOU, NOT WHAT IS IN FRONT OF YOU. Willis Wall is capped along its entire top by the hanging summit ice cliff, and all three of its ribs rise from the base of the wall directly above the Carbon Glacier, underneath that cliff. If you are standing beneath a face that is NOT capped by a continuous ice cliff, you are not under Willis Wall.\n\nTHE TWO WAYS TO BE WRONG ARE ON OPPOSITE SIDES, AND THE RIDGES NAME THEM. Willis Wall is bounded by CURTIS RIDGE on one side and LIBERTY RIDGE on the other. Facing the wall from the Carbon Glacier, Curtis Ridge is the rib you came around to get here and Liberty Ridge is the rib beyond the far edge of the wall. If you have walked past Liberty Ridge you are under Liberty Wall, which is a different wall with a different reputation.\n\nCOUNT THE GLACIERS: TWO. Winthrop, then Carbon. One means you stopped at Curtis Ridge.\n\nTHE ROW DOES NOT NAME A RIB, AND THAT IS THE FACT TO CARRY IN. This wall carries three distinct ribs, climbed in different years by different parties and of materially different character. Which one you are under is a decision to be made at the base, from photographs taken before you left, and not something the approach settles for you. Do not treat 'the base of Willis Wall' as though it were one start.\n\nWHAT BEING TOO LATE LOOKS LIKE: nothing visual. The wall does not change. Time of day is the variable that kills here, so the honest base finding is that arriving under it after the sun has been on the icecap means turning round, not looking harder for the rib.",
+    "hazards": [
+     "Extreme objective hazard from the hanging summit icecap seracs, along the entire wall",
+     "Continuous rockfall down the face",
+     "No easy retreat once committed; a long, serious approach on both sides",
+     "Crevassed glacier travel on the Winthrop and Carbon, and again on the summit icecap above",
+     "Carbon River road access is intermittently severed, which changes the approach from a drive-in to a multi-day walk"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://en.wikipedia.org/wiki/Willis_Wall",
+   "https://www.mountainproject.com/route/106475331/willis-wall",
+   "http://publications.americanalpineclub.org/articles/12197128800/Mount-Raniers-Willis-Wall-in-Winter"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_sunset_ridge": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Westside Road, Round Pass, St Andrews Park and the Puyallup Cleaver",
+    "season": "Roughly May-Jun, best frozen; typically out of condition by July",
+    "notes": "Park at the Westside Road gate near 2,900 ft, about a mile past the Nisqually entrance. The road is gravel and open to vehicles only for the first few miles; beyond that it is foot or bike travel, and has been that way for years because of flood damage in the Tahoma Creek drainage. Treat the walk as part of the route rather than as an inconvenience that might be lifted.\n\nWalk the road roughly 3.5 miles to Round Pass, then take the South Puyallup River Trail to the Wonderland Trail and on to St Andrews Park. Leave the trail there and climb north through alpine meadows onto the Puyallup Cleaver, passing Tokaloo Spire.\n\nLeave the cleaver at about 8,500 ft and traverse the Puyallup and South Mowich glaciers into the Sunset Amphitheater. Camps are used on Colonnade Ridge, on the Puyallup Cleaver near 9,000 ft, in the open near 9,600 ft, and at the bergschrund in the amphitheater itself.",
+    "baseFinding": "THE DECISION IS A LEAVING, NOT AN ARRIVING, AND IT HAPPENS AT ABOUT 8,500 FT ON THE PUYALLUP CLEAVER. Up to there you are simply walking a ridge. At 8,500 ft you step off it onto glacier and traverse. If you keep climbing the cleaver you will end up over on the Tahoma Glacier side and this route is gone.\n\nPASSING TOKALOO SPIRE IS THE CONFIRMATION THAT YOU ARE ON THE RIGHT CLEAVER. It is the named rock feature on the way up from St Andrews Park. No spire, no cleaver — you left the trail in the wrong place.\n\nTHE POSITIVE TEST AT THE BASE IS THAT THE GROUND CLOSES AROUND YOU. The Sunset Amphitheater is a bowl shut off by a headwall, with the serac band above it. If you are traversing open glacier that does not close into a bowl, you are still contouring and have not arrived — or you have dropped too low and are heading out across the South Mowich toward the Mowich Face, which is a different climb reached from a different trailhead on the far side of the mountain.\n\nTHE CLIMB'S OWN SIGNATURE IS TWO GENDARMES, AND IT CONFIRMS THE ROUTE RATHER THAN THE BASE. Above the steep ground the ridge runs as a knife edge BETWEEN TWO PROMINENT GENDARMES on notably loose, rotten volcanic rock. If the ridge above you has no pair of towers on it, you are on a neighbouring feature.\n\nWHAT THE CRUX LOOKS LIKE, SO YOU KNOW YOU ARE ON IT: roughly 1,000 ft of about 60-degree neve or ice, and it is the only sustained steep ground on the route. Anything shorter and you have not started; anything that keeps going far past that and you are on the amphitheater headwall rather than the ridge.",
+    "hazards": [
+     "Serac and icefall hazard above the Sunset Amphitheater",
+     "Rockfall in the amphitheater headwall",
+     "A long crevassed traverse of the Puyallup and South Mowich glaciers just to reach the base",
+     "Rotten volcanic rock on the knife-edge ridge between the gendarmes",
+     "Remote west-side position with a road walk at both ends of a very long day"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_mount_rainier_mowich_face": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Mowich Lake, Spray Park and the Ptarmigan Ridge camp, then across the North Mowich Glacier",
+    "season": "Roughly May-Jun for ice; the face bares out and starts shedding rock as it warms",
+    "notes": "Mowich Lake Road is unpaved and seasonal. In a normal year it opens well after the roads on the east and south sides of the park — commonly not until July — and closes with the first significant snow. Access to it along the state highway from the north has also been interrupted by bridge failure for extended periods, in which case Mowich Lake itself becomes a long wilderness walk from another park entrance. Confirm which of those two situations applies before you commit a trip to this side.\n\nFrom Mowich Lake, follow the Wonderland Trail roughly 3-4 miles through Spray Park, passing Spray Falls. Where the Wonderland begins to descend toward the Carbon River, leave it and head cross-country southeast BETWEEN ECHO ROCK AND OBSERVATION ROCK, picking up a climbers' path onto the lower slopes of Ptarmigan Ridge.\n\nCamps sit on the ridge between roughly 9,600 and 10,300 ft, some with old rock wind walls; these serve the Mowich Face, the Edmunds Headwall and Ptarmigan Ridge alike. From camp you DROP and traverse the North Mowich Glacier, roped, watching for fresh rockfall debris on the ice, to gain the base of the face.\n\nThere is no water above Spray Park and no maintained trail for the upper two-thirds of this approach.",
+    "baseFinding": "TWO NAMED ROCKS ARE THE ONLY HARD MARKERS ON THE WHOLE CROSS-COUNTRY SECTION, AND THEY WORK IN CLOUD BECAUSE THEY ARE BIG AND THEY ARE A PAIR. You leave the Wonderland Trail and go BETWEEN ECHO ROCK AND OBSERVATION ROCK. Not past one of them — between the two. If you can only see one rock, you do not yet know which one it is.\n\nTHE SECOND THING IS COUNTER-INTUITIVE AND IT IS WHERE PARTIES GO WRONG: FROM HIGH CAMP YOU GO DOWN. Camp is on Ptarmigan Ridge; the face is across the North Mowich Glacier from it. If you leave camp and start climbing, you are on Ptarmigan Ridge, which is a different route to a different top-out. Losing height off the ridge is correct and is the single clearest signal that you are on this climb and not its neighbour.\n\nTHE BERGSCHRUND IS THE ARRIVAL AND IT IS FREQUENTLY NOT PASSABLE DIRECT. It has to be turned, so budget time for looking rather than treating the schrund as a formality. Reaching a schrund you cannot cross straight over means you are probably in the right place.\n\nTHIS IS THE UMBRELLA FACE, NOT A SINGLE LINE, AND THAT IS THE MOST IMPORTANT THING TO CARRY IN. Four separate climbs share this wall and this camp — the North Mowich Headwall, the Central Mowich Face, the Edmunds Headwall, and Ptarmigan Ridge above and to the side of them. They are told apart by WHICH GLACIER you cross from camp and by WHAT THE FIRST GROUND ABOVE THE SCHRUND IS, not by the walk in, which is identical for all of them. Decide which one you are doing before you leave camp in the dark; there is roughly 4,000 ft of 40 to 55 degree ice and mixed ground above, and being one line out is not a thing you discover early.\n\nWHAT RETREAT LOOKS LIKE, BECAUSE IT IS NOT THE WAY YOU CAME: there is no walk-off from the top of this face. Topping out commits you to a carryover down the far side of the mountain to Paradise or White River and a shuttle back. Backing off means reversing the North Mowich Glacier, climbing about 1,000 ft of scree and talus near Observation Rock, and walking out through Spray Park.",
+    "hazards": [
+     "Sustained steep ice and snow with multiple line options and no obvious separation between them",
+     "Serac and rockfall hazard on the face; the North Mowich crossing collects the debris",
+     "A bergschrund that is frequently impassable direct and must be turned",
+     "Roped glacier travel with crevasses under thin snow bridges on both the drop from camp and the return",
+     "No walk-off: topping out commits the party to a carryover and a car shuttle",
+     "Seasonal road access on this side is late and has been interrupted for long periods"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+   "https://www.summitpost.org/mt-rainier-mowich-headwall-face/297239"
+  ],
+  "_confidence": "corroborated"
+ },
+ "rainier_north_mowich_headwall": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Mowich Lake and Spray Park to the bivy between the North Mowich and Edmunds glaciers",
+    "season": "Roughly Jun-Aug, climbed early in the day for rockfall",
+    "notes": "The approach is the Mowich Face approach and is shared with three other climbs: Mowich Lake, the Wonderland Trail through Spray Park, then cross-country southeast between Echo Rock and Observation Rock onto the climbers' path up lower Ptarmigan Ridge.\n\nThe bivouac for this route sits at roughly 9,600 to 10,000 ft on the divide BETWEEN the North Mowich and Edmunds glaciers. Two days to reach it is the normal plan rather than a cautious one.\n\nFrom the bivy the climbing starts almost at once. Above the hourglass, roughly 2,000 ft of about 45-degree snow leads to a rock band; the documented way through is to look for an arch in the rock on the right, traverse left, then work back right to gain the ice cap. In a low-snow year that band can demand unprotected loose 5th-class climbing, which is the part of this route that changes most from season to season.\n\nMowich Lake Road is unpaved and typically opens around July, and highway access from the north has been severed for extended periods. Confirm before committing.",
+    "baseFinding": "FOUR CLIMBS SHARE THIS WALL AND THIS CAMP. From the divide bivy the discriminator is WHICH GLACIER YOU CROSS AND WHERE THE HOURGLASS IS.\n\nTHE POSITIVE TEST, AND IT IS THE STRONG ONE: THIS ROUTE'S HOURGLASS IS LOW. Within 40 to 50 ft of leaving the bivy you should be in a STEEP CONSTRICTION OF MIXED ROCK AND ICE. First ground, immediately, right off the deck. That is the North Mowich Headwall's signature.\n\nTHE NEGATIVE THAT MATTERS MOST IS THE CENTRAL MOWICH FACE NEXT DOOR, AND IT ALSO HAS AN HOURGLASS — BUT AT 12,500 FT, NOT AT 10,000. So the question at the base is not 'is there an hourglass on this route' but 'is the hourglass HERE, NOW, in the first 50 ft'. If your first 2,000 ft is open snow with no constriction at all, you are on the Central Mowich Face and your hourglass is still two thousand feet above you.\n\nTHE OTHER NEGATIVE IS THE EDMUNDS HEADWALL, AND IT IS SETTLED BY THE SCHRUND: the Edmunds is entered by bypassing its bergschrund on climber's LEFT near a pair of TWIN GENDARMES. If you crossed the schrund beside two rock towers, you are on the Edmunds and you crossed the wrong glacier out of camp.\n\nSEQUENCE CHECK ONCE COMMITTED, IN ORDER: 40-50 ft hourglass of rock and ice, then roughly 2,000 ft of sustained 45-degree snow, then a rock band that has to be cleared. If the rock band arrives early, you are not on this line. If it never arrives, you traversed off onto the Central Mowich, which skirts the band entirely by going right.\n\nWHAT BEING TOO FAR ROUND LOOKS LIKE: if you left camp and CLIMBED rather than crossing a glacier, you are on Ptarmigan Ridge.",
+    "hazards": [
+     "A rock band crux that can require unprotected loose 5th-class climbing in low-snow years",
+     "Sustained steep ice with rockfall exposure — climb it early",
+     "Crevasses and avalanche debris on the glacier crossing out of camp",
+     "Remote position, two-day approach, and no quick retreat from high on the face",
+     "Seasonal and intermittently severed road access on this side of the park"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+   "https://www.summitpost.org/mt-rainier-mowich-headwall-face/297239"
+  ],
+  "_confidence": "corroborated"
+ },
+ "rainier_central_mowich_face": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Mowich Lake, Spray Park and lower Ptarmigan Ridge, then 1,000 ft down to the North Mowich Glacier",
+    "season": "Roughly Jun-Aug",
+    "notes": "Wonderland Trail from Mowich Lake about 4 miles to Spray Park, then the climbers' path up lower Ptarmigan Ridge. At about 8,300 ft the route DESCENDS roughly 1,000 ft onto the North Mowich Glacier and crosses to the base of the face.\n\nThere are two lines from about 12,500 ft. The original variation cuts LEFT into an hourglass of snow, ice and rock, gaining a ledge that leads to a 40-50 degree ramp to the top. The harder variation cuts RIGHT through a couple of AI2-3 ice steps and four to six pitches of 50-60 degree snow to the same high point.\n\nMowich Lake Road is unpaved and typically opens around July; highway access to it from the north has been severed for long periods. Confirm current access before planning around this trailhead.",
+    "baseFinding": "THE FIRST THING TO GET RIGHT IS THAT YOU LOSE A THOUSAND FEET ON THE WAY IN. At about 8,300 ft on lower Ptarmigan Ridge you stop climbing and drop onto the North Mowich Glacier. A party that keeps gaining height is on Ptarmigan Ridge, not on this face, and will not find out for hours.\n\nFOUR CLIMBS COME OFF THIS WALL AND THEY ARE SEPARATED BY WHERE THE STEEP GROUND IS, NOT BY THE WALK IN.\n\nTHE POSITIVE TEST FOR THIS ROUTE IS AN ABSENCE, WHICH IS UNUSUAL BUT IT IS THE RELIABLE ONE HERE: THERE IS NO CONSTRICTION LOW DOWN. You cross the schrund and climb open face. The hourglass on this route is HIGH — around 12,500 ft — not at the bottom. So if your first 50 ft above the schrund is a steep pinch of mixed rock and ice, you are on the North Mowich Headwall and you crossed too far round.\n\nTHE ROCK BAND SETTLES IT DEFINITIVELY, AND IT IS THE ONE PLACE THE TWO LINES BEHAVE OPPOSITELY. On this face, at the rock band you can TRAVERSE RIGHT SEVERAL HUNDRED FEET AND SKIRT THE BAND ENTIRELY. On the North Mowich Headwall you cannot: you have to clear the band, at 5th class in a lean year. If the band in front of you has to be climbed rather than walked around, you are one line over.\n\nSCHRUND CHECK: the bergschrund under the central face has been passed by a bypass through a rock band on climber's LEFT. If the only way across in front of you is beside a pair of twin gendarmes, that is the Edmunds Headwall's schrund and you are further round the mountain than you meant to be.\n\nCHOOSE YOUR VARIATION BEFORE 12,500 FT, NOT AT IT. Left is the original: an hourglass, a ledge, a 40-50 degree ramp. Right is harder: AI2-3 ice steps and four to six pitches of 50-60 degree snow. They rejoin, but you cannot swap once you are on one.",
+    "hazards": [
+     "Ice steps and steep snow with rockfall exposure",
+     "A 1,000 ft descent onto the glacier on the approach, which must be reclimbed if you retreat",
+     "Remote approach with limited bailout options",
+     "Crevasses on the North Mowich crossing",
+     "Seasonal and intermittently severed road access on this side of the park"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/106703081/central-mowich-face",
+   "http://upwardescape.blogspot.com/2012/08/central-mowich-face-mt-rainier.html"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_edmunds_headwall": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Mowich Lake and Spray Park to the 9,600 ft divide, then across to the Edmunds Glacier",
+    "season": "Roughly Jun-Jul; the headwall turns icier and starts shedding rock as summer goes on",
+    "notes": "Shared Mowich Face approach: Mowich Lake, the Wonderland Trail through Spray Park, then cross-country onto lower Ptarmigan Ridge and up to the bivouac at roughly 9,600 ft on the divide between the North Mowich and Edmunds glaciers. Rangers and climbing parties have both used that divide bivy as the base for this route.\n\nFrom there, cross the glacier to the foot of the headwall. Parties commonly leave the bivy around 2 am and reach the base a few hours later; the crossing runs beneath the ice cliff run-out coming off the upper mountain, so it is a place to move rather than a place to sort gear.\n\nThe headwall itself is sustained steep snow and ice from roughly 9,900 to 13,400 ft, and its character swings between firm penitente neve and a considerably icier chute depending on the year. Above it the route traverses toward Liberty Cap on ground that can be heavily penitente-covered and slow.\n\nMowich Lake Road is unpaved and typically opens around July; highway access from the north has been interrupted for extended periods.",
+    "baseFinding": "FOUR CLIMBS LEAVE THE SAME DIVIDE BIVY. THE SCHRUND IS WHAT TELLS THEM APART FOR THIS ONE.\n\nTHE POSITIVE TEST, AND IT IS A PAIR OF OBJECTS RATHER THAN A DESCRIPTION, WHICH IS WHY IT WORKS IN POOR LIGHT: the bergschrund bypass for the Edmunds Headwall is on CLIMBER'S LEFT, NEAR TWIN GENDARMES. Two rock towers, and you go left of the schrund beside them. No twin gendarmes means no Edmunds Headwall.\n\nTHE NEGATIVE AGAINST THE NEIGHBOUR ON ONE SIDE: the North Mowich Headwall opens with a 40 to 50 ft HOURGLASS of steep rock and ice within a rope length of the bivy. If your first ground is a tight mixed pinch rather than a schrund crossing beside gendarmes, you crossed the wrong glacier.\n\nTHE NEGATIVE AGAINST THE NEIGHBOUR ON THE OTHER SIDE: the Central Mowich Face's schrund is turned by a rock-band bypass on climber's left with no gendarmes at it, and its steep ground eases before 13,000 ft. This route is sustained a long way further — about 9,900 to 13,400 ft is the whole headwall.\n\nTHE CONDITION TEST TELLS YOU WHICH DAY YOU HAVE, AND IT IS WORTH MAKING AT THE SCHRUND RATHER THAN AT 12,000 FT: firm penitentes mean kicking and slow but secure progress; a bare icy chute means screws, and the same face is a different climb. Decide before you commit — there is no easy way off the middle of it.\n\nTHE TOP-OUT IS NOT THE MOUNTAIN'S SUMMIT. This route finishes at or below LIBERTY CAP, on the northwest rim, not at Columbia Crest. Standing on Liberty Cap and looking across at higher ground is correct, not a navigational error.",
+    "hazards": [
+     "Sustained steep snow and ice from about 9,900 to 13,400 ft",
+     "Rockfall and icefall down the headwall once it warms",
+     "Crevasses on the Edmunds and South Mowich approach",
+     "A glacier crossing beneath the upper-mountain ice cliff run-out",
+     "Penitente ground above the headwall that can make the exit far slower than the climb",
+     "Remote, committing position with no walk-off from the top of the face"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+   "https://turns-all-year.com/trip-reports/edmunds-headwall"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_fuhrer_thumb": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Paradise, the Nisqually crossing and the Wilson Glacier to the narrow couloir",
+    "season": "Roughly Apr-Jun; a south-facing snow line that wants a hard overnight freeze and an early start",
+    "notes": "From Paradise, drop southwest onto the Nisqually Moraine and onto the Nisqually Glacier, cross it westward, then work up the Wilson Gully, the Wilson Bench and the Wilson Chute on the west side of the glacier toward the camps near The Castle around 9,000-9,500 ft.\n\nFrom camp, continue northwest to the foot of the couloir. Summit day from that camp is commonly 5 to 7 hours.\n\nThe couloir is about 50-degree snow and ice. It merges with the Fuhrer Finger on the west side of the Nisqually at roughly 11,500 ft, so above that point the two routes are one.\n\nMost parties descend the Fuhrer Finger or the upper Kautz and the standard route back to Camp Muir and Paradise rather than reversing this line. There is no water above Paradise.",
+    "baseFinding": "STAND ON THE UPPER WILSON GLACIER AND LOOK UP. FROM LEFT TO RIGHT THE THREE FEATURES ARE: THE WILSON GLACIER HEADWALL, THE FUHRER THUMB, THE FUHRER FINGER. Learn that order before you leave the car — it is the only thing separating this route from its two neighbours in the dark, and all three start within a short distance of each other off the same bench of glacier.\n\nTHE THUMB IS THE MIDDLE ONE AND IT IS THE NARROW ONE. That is the whole test, and it is a shape test, which is what you want when you cannot see the mountain.\n\nTHE POSITIVE-NEGATIVE PAIR THAT SETTLES IT: THE FINGER IS WIDE AND FUNNELS THROUGH AN OBVIOUS HOURGLASS at around 10,000 ft on the eastern side of the headwall. THE THUMB IS THE NARROWER COULOIR IMMEDIATELY WEST OF IT. So if the gully in front of you is broad and necks down through a conspicuous hourglass, you are at the Finger and the Thumb is one gully to your LEFT as you face uphill. If you are looking at an open face rather than into a gully at all, you have gone one too far left and you are under the Wilson Glacier Headwall, which is a harder proposition than either couloir.\n\nCONFIRMATION ON THE CLIMB: the two couloirs MERGE at about 11,500 ft on the west side of the Nisqually. So being one gully out becomes invisible above that height, which cuts both ways — it means a mistake is survivable, and it means you cannot use the upper mountain to work out which one you climbed. Settle it at the bottom.\n\nWHAT BEING TOO EARLY IN THE APPROACH LOOKS LIKE: if you have not crossed the Nisqually Glacier westward, you have not started. Everything about this route is on the west side of that glacier, under The Castle and the Kautz Ice Cliff.",
+    "hazards": [
+     "Rockfall funnelling through a steep, narrow couloir with no shelter in it",
+     "Icefall off the Kautz Ice Cliff onto the approach traverse",
+     "Wet-snow avalanche on this south aspect once it warms — an early start is the protection",
+     "Crevasses on the Nisqually and Wilson glaciers",
+     "The Finger and the Thumb merge high, so a misidentification cannot be detected above 11,500 ft"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/fuhrer-finger-thumb/159008",
+   "https://www.summitpost.org/routes-from-wilson-glacier/30118",
+   "https://www.whereiskylemiller.com/mt-rainier/fuhrer-thumb/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_tahoma_glacier": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Westside Road and Tahoma Creek to St Andrews Rock, then the Sickle",
+    "season": "Roughly Jun-Aug, best in June; a west aspect that holds firmer snow later into the morning than the south-side routes",
+    "notes": "Park at the Westside Road gate at the Dry Creek trailhead near 2,900 ft. The road is gated to vehicles a few miles in because of repeated Tahoma Creek flooding and debris flows; the remainder is walked or biked, and has been for years. Plan the road as part of the climb.\n\nFrom the gate, take the Tahoma Creek Trail up to the Wonderland Trail near 5,600 ft, then onto the southern side of the Tahoma Glacier. Camps are used near Emerald Ridge lower down and around 9,800-10,400 ft near St Andrews Rock.\n\nThe glacier is climbed with a series of diagonal traverses: zigzag the south side to about 7,200 ft, then traverse back and forth around 9,000-10,000 ft to get through crevasse bands, then into the Sickle and out onto the plateau near 12,600 ft.\n\nCar-to-car this is a very long outing — a documented itinerary from the road closure ran about 21.5 miles.",
+    "baseFinding": "ST ANDREWS ROCK IS THE RECOGNITION POINT, AND THE THING THAT CONFIRMS IT IS THAT YOU GO DOWN.\n\nYou climb to a ridge just short of 10,000 ft BELOW ST ANDREWS ROCK, and then you DROP several hundred feet on a ramp onto the Tahoma Glacier proper at around 9,600 ft. Losing that height is correct. It is the clearest single signal that you are on this route: a party that never gives height back has stayed on the Puyallup Cleaver and is heading for Sunset Ridge, one drainage north.\n\nTHE SICKLE IS THE SECOND MARKER AND IT IS A SHAPE, NOT A PLACE. At about 11,200 ft the route enters a NARROW CHUTE THAT CURVES LEFT AROUND A CLIFF — the reason it is called the Sickle. If you are climbing straight up open glacier with no constriction and no cliff to curve around, you are still below it, whatever the altimeter says.\n\nCLIMB THE SICKLE ON ITS NORTH SIDE, KEEPING LEFT OF THE ICY RIDGES, to the plateau at about 12,600 ft. Topping the Sickle is the point at which you are out of the icefall run-out, and that is the honest marker for 'the dangerous part is behind you'.\n\nTHE NEGATIVE THAT MATTERS FOR TIMING RATHER THAN NAVIGATION: the traverse below the Sickle runs under its run-out zone, which funnels ice debris. There is no line through that avoids it. Being there in the dark and frozen is the only protection, so if you arrive at the base of the Sickle in the sun, the finding is that you should not be there, not that you should look for a better line.\n\nWHAT BEING ON THE WRONG SIDE LOOKS LIKE LOW DOWN: the route works the SOUTHERN side of the glacier from the Wonderland Trail at 5,600 ft. Drifting north early puts you into the crevasse bands the diagonal traverses exist to avoid.",
+    "hazards": [
+     "Complex crevasse navigation with several bands that have to be traversed around",
+     "Serac and icefall hazard in and below the Sickle, with unavoidable run-out exposure on the traverse",
+     "A long road walk at both ends and a very long car-to-car day",
+     "Route-finding on a committing west-side approach with no maintained trail above 5,600 ft",
+     "Thin late-season snow bridges over the upper glacier"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/tahoma-glacier/161584",
+   "https://cascadeclimbers.com/forum/topic/97643-tr-mt-rainier-tahoma-glacier-sickle-variation/",
+   "http://mountrainierclimbing.blogspot.com/2017/06/tahoma-glacier-conditions-6272017.html"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_rainier_kautz_headwall": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Paradise and the Muir route partway, then west to the Turtle and Camp Hazard",
+    "season": "Roughly mid-May to early Aug; the ice holds into summer but the approach and glacier conditions degrade quickly after the start of August",
+    "notes": "From Paradise at 5,400 ft, the common approach follows the Camp Muir route via the Skyline Trail and the Muir Snowfield partway, then cuts west. The route crosses the lower Nisqually, gains the Wilson Glacier and climbs to the Turtle Snowfield, with camps at The Castle around 9,200-9,500 ft and Camp Hazard at 10,800 ft at the top of the snowfield.\n\nRoped travel and crevasse-rescue readiness are needed from the moment you leave the Nisqually. Water is available from snowmelt lower down on the Comet Falls and Van Trump side but not once you are on glacier ice.\n\nRockfall and icefall off the Wapowety Cleaver and the Kautz Icefall are the approach-zone hazards; move through the exposed ground early and efficiently.",
+    "baseFinding": "THE HEADWALL AND THE STANDARD KAUTZ CHUTE ARE TWO DIFFERENT LINES OFF THE SAME CAMP, AND THE TEST IS HOW MANY STEEP STEPS YOU MEET.\n\nCOUNT TWO. This route presents as TWO ICE STEPS SEPARATED BY A BAND OF LOWER-ANGLE SNOW: the lower step around 50 degrees, the upper around 70. Step, bench, step. If you climb one sustained runnel and the angle then eases the whole way to the summit plateau, you were in the standard Kautz ice chute, not on the headwall.\n\nTHE UPPER STEP IS THE ONE THAT SETTLES IT — noticeably steeper and more sustained than the lower, needing two tools and screws in ice that is often harder or more brittle. The lower step is broad and stepped out and rarely steeper than about 35-40 degrees, and most parties get up it with a single tool and a couple of screws. If the harder ground came FIRST, you are not on this.\n\nWHERE YOU ROPE UP IS PART OF THE FINDING: on the Turtle or Wilson Glacier BELOW the headwall, often after a short rappel or a fixed-line downclimb off the bivy rock at Camp Hazard. Descending off camp before you climb is correct and is a good sign you are on the right line rather than walking out along the chute.\n\nTHE APPROACH HAS TWO STARTS AND THEY LAND IN THE SAME PLACE, SO DO NOT LET THE DIFFERENCE UNSETTLE YOU: Paradise and the Muir route cutting west, or the Comet Falls and Van Trump Park trail from a lower trailhead. Both cross the Nisqually onto the Wilson and climb the Turtle. If you find yourself on maintained trail beside a waterfall you are on the second of those, not lost.\n\nWHAT BEING TOO LATE LOOKS LIKE: seracs and rockfall off the Wapowety Cleaver and the Kautz Icefall hang over the steep ground. The upper step must be climbed efficiently and early. The honest reading of arriving at it warm and in the sun is to go down.",
+    "hazards": [
+     "Two steep ice steps beneath serac and rockfall from the Wapowety Cleaver and the Kautz Icefall",
+     "Brittle or hard ice on the upper step, with screws the only protection",
+     "Genuinely complex crevassed glacier travel on the Kautz approach",
+     "A short rappel or fixed-line downclimb off the Camp Hazard bivy rock to reach the base",
+     "Descent rappels are on ice anchors you build yourself; old ascent-placed threads must not be reused"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_bread_loaf": {
+  "area": "wa_mount_rainier",
+  "approach_variants": [
+   {
+    "name": "Silver Falls loop from the Ohanapecosh side",
+    "season": "Roughly late spring through fall, whenever the southeast corner of the park is open to vehicles",
+    "notes": "This is a single roadside boulder at about 1,900 ft in old forest, not an alpine objective, and the approach is a walk on maintained trail with essentially no gain.\n\nFrom the Ohanapecosh day-use area, follow the Silver Falls Loop about a mile. The loop can also be picked up from the Grove of the Patriarchs end via the Eastside Trail, which is the alternative when work on the campground side has closed the near entrance — that corridor has been under reconstruction in recent seasons, so check which end of the loop is open rather than assuming either.\n\nThe road serving this corner of the park is seasonal: normally open from late spring through fall and gated in winter.\n\nNo climbing permit is involved. The park's climbing permit and its blue-bag rules apply to parties travelling on glaciers or above 10,000 ft, which this is not; the park entrance fee still applies.",
+    "baseFinding": "THE TEST IS THAT YOU NEVER LEAVE THE TRAIL. The boulder sits a few feet off the Silver Falls Loop, roughly a mile round from the Ohanapecosh day-use area. If you have stepped off maintained tread, started bushwhacking, or gained more than about a hundred feet, you have walked past it — go back rather than searching uphill.\n\nTHE SHAPE IS THE NAME: a low boulder with a loaf-shaped top hold, climbed on its left side. One problem, a couple of moves.\n\nTHE STRONGEST NEGATIVE IS ABOUT THE WHOLE OUTING RATHER THAN THE LAST HUNDRED YARDS, AND IT IS WORTH STATING BECAUSE THIS ROUTE IS FILED UNDER THE MOUNTAIN: if you are on snow, on a glacier, or anywhere above a few thousand feet, you are not near this boulder and never will be. It is in low forest in the southeast corner of the park, tens of miles and twelve thousand feet from the summit routes filed beside it.\n\nWATER AND ESCAPE ARE NON-PROBLEMS HERE — the loop has running water nearby and you can walk out either way round it. That is the honest description; do not carry mountain planning onto it.",
+    "hazards": [
+     "Nothing alpine — the real risks are trail closures and construction in this corner of the park",
+     "Landing on forest floor with roots and uneven ground",
+     "Seasonal road closure to the southeast entrance in winter"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_frying_pan_whitman_glaciers": {
+  "area": "wa_little_tahoma",
+  "approach_variants": [
+   {
+    "name": "Fryingpan Creek, Summerland and Meany Crest to Whitman Notch",
+    "season": "Roughly Jun through Aug, best early July to early August — firm morning snow, drier rock, and bridges not yet melted out",
+    "notes": "Start at the Fryingpan Creek Trailhead near 3,800-3,900 ft on the Sunrise and White River Road, a few miles past the White River entrance station. Follow the signed trail up through old-growth beside Fryingpan Creek.\n\nAt roughly 3.2 miles and about 1,400 ft of gain there is an established footlog crossing of Fryingpan Creek — the main water and a spot that needs care in high runoff. Continue to Summerland at about 4.5 miles and roughly 5,900 ft: patrol cabin, pit toilet, bear wires, and the last reliable running water.\n\nFrom Summerland leave maintained trail and take the climbers' path northwest of the campground knoll, up steep tundra and snow on the Meany Snowfield to Meany Crest, a rock outcrop at roughly 7,350-7,500 ft with flat sites and stone wind breaks. This is the standard high camp.\n\nAbove Meany Crest gain the toe of the Fryingpan Glacier and rope up. Climb south and southwest across the lower apron to the broad notch between the Fryingpan and Whitman glaciers at about 9,000-9,100 ft, then traverse and climb the upper Whitman across a bergschrund to about 10,500-11,000 ft, where snow gives way to rock.\n\nThe basin holds heavy snow and the approach slopes can be avalanche terrain in soft early-season conditions. Afternoon whiteout and thunderstorm activity is common on Rainier's flanks.",
+    "baseFinding": "WHITMAN NOTCH AT ABOUT 9,100 FT IS THE ARRIVAL, AND YOU KNOW IT BY WHAT BECOMES VISIBLE RATHER THAN BY THE ALTIMETER: IT IS THE FIRST PLACE THE WHITMAN GLACIER COMES INTO VIEW. Until you can see a SECOND glacier on the far side, you have not reached the notch.\n\nTHE BASE OF THE CLIMBING PROPER IS HIGHER STILL, AND IT IS A CHANGE OF SURFACE: at about 10,500-11,000 ft the snow ends and a loose rock-and-scree gully begins. That transition is the base. The sequence above it is countable and in this order: gully, a SHORT step of about 6 ft, a gully-chimney, the summit notch, then an exposed scramble along the crest.\n\nTHE ROUTE-FINDING TRAP IS LOW, NOT HIGH, AND IT IS THE ONE THING ON THIS CLIMB THAT REGULARLY COMMITS PARTIES TO BAD GROUND: between Summerland and Meany Crest, IF YOU FIND YOURSELF CONTOURING CLIMBER'S RIGHT INTO A BOWL UNDER ROCK BANDS, YOU ARE CLIFFED OUT AND OFF THE LINE. The cairned and boot-packed line stays left of that bowl. Fix this by going back to the last cairn, not by traversing further.\n\nTHE SUMMIT-CREST TEST IS A NEGATIVE AND IT IS UNAMBIGUOUS: the last 30 to 100 ft is a narrow crumbling andesite crest with roughly 2,000 ft dropping away to the Emmons Glacier on the north side. If the ground is not falling away on both sides of you, you have not reached the true summit — you are on the notch or a subsidiary block below it.\n\nTIMING AS A FINDING: the andesite loosens as the sun works on it, and the crevasse bridges soften through the day. Being at the notch early is not tidiness, it is the whole plan.",
+    "hazards": [
+     "Loose volcanic rock and rockfall on the summit gully and crest, worsening through the day",
+     "Crevasses and weakening bridges on the Fryingpan and Whitman glaciers, worst in August and September",
+     "A bergschrund that is a step-across early season and a problem late",
+     "Cliff-out potential between Summerland and Meany Crest if the line drifts climber's right",
+     "Avalanche potential on the Meany Snowfield in soft or early-season conditions",
+     "Major exposure on the final crest, with about 2,000 ft to the Emmons on the north side"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+  "area": "wa_little_tahoma",
+  "approach_variants": [
+   {
+    "name": "Paradise and the Muir route to 8,600 ft, then east through the Cathedral Rocks notch",
+    "season": "Roughly Nov-May. This is the winter and early-spring line, used precisely when the White River road to Summerland is shut and the Fryingpan approach is unavailable",
+    "notes": "From the Paradise parking lot, climb the standard Camp Muir route to about 8,600 ft. Leave it there and traverse east onto the Paradise Glacier and across the Cowlitz, holding elevation to stay above the cliff and serac band below, then through a notch in the Cathedral Rocks cleaver and across the Ingraham Glacier to a snow or rock ramp at the base of Little Tahoma's south and east face near 8,900 ft.\n\nCamps are made on the Cowlitz or Ingraham glaciers, or on the more exposed Cathedral Rocks cleaver.\n\nAbove the ramp the route exits the upper Frying Pan Glacier's corner into a gully, climbs about two-thirds of it to a short step, continues up a gully-chimney to the summit notch, and finishes with a short loose scramble along the crest.\n\nThe Paradise road stays open far later into winter than the roads on the north and east sides, which is the whole reason this variant exists.",
+    "baseFinding": "THE DECISION IS AT 8,600 FT AND IT IS A LEAVING, NOT AN ARRIVING. You step off the Camp Muir track while still about 1,500 ft BELOW Camp Muir. IF YOU REACH CAMP MUIR YOU HAVE GONE TOO FAR — by a vertical quarter of a mile, on the busiest bootpack on the mountain, which is exactly why it happens.\n\nCOUNT WHAT YOU CROSS: THREE GLACIERS AND ONE ROCK CLEAVER, in this order — Paradise, Cowlitz, then a NOTCH IN CATHEDRAL ROCKS, then the Ingraham. If you have crossed the Cowlitz and walked into rock without finding a notch, you are BELOW the notch and need to regain height. The traverse deliberately holds elevation to stay above a serac and cliff band; drifting down is the error that feels easy at the time.\n\nTHE BASE IS A RAMP, AND IT IS THE ONLY ramp: a snow or rock ramp at about 8,900 ft leading onto the south and east face. Arriving at the foot of a face with no ramp means you are round the wrong side of it.\n\nTHE NEGATIVE THAT SEPARATES THIS FROM THE PEAK'S OTHER ROUTE: the standard line on Little Tahoma comes from the FRYINGPAN side, over Whitman Notch, from the east. This one comes from PARADISE, from the southwest, and never goes near Summerland or Meany Crest. If you are looking for a notch between two glaciers with the Whitman below you, you are on the other route.\n\nWHY THIS ROUTE EXISTS AND WHEN IT STOPS WORKING: it is the winter line, done before the Cowlitz and Ingraham become too broken to cross safely. Once those glaciers open up, the traverse is the hazard rather than the climb.",
+    "hazards": [
+     "Serac fall and crevasse hazard across an extended Cowlitz and Ingraham traverse",
+     "A cliff and serac band immediately below the traverse line, which is why elevation must be held",
+     "Wind-slab avalanche potential on the ramp gaining the face in early season",
+     "Loose rock in the summit gully-chimney and on the final crest scramble",
+     "A long committing traverse with the same ground to reverse on the way out"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_mount_adams_lava_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "approach_variants": [
+   {
+    "name": "Killen Creek, the PCT and High Camp, then across the lava fields to the Lava Glacier",
+    "season": "Roughly May-Jun. This is a cold-season face: it turns icy and starts shedding rock as the snowpack recedes later in summer",
+    "notes": "From the Killen Creek trailhead on the forest road near Takhlakh Lake at about 4,140 ft, follow Killen Creek Trail #113 roughly 3.1 miles through open lodgepole forest, crossing East Fork Adams Creek near mile 2.5, to the PCT at about 6,100 ft. Cross the PCT onto the High Camp Trail #10 for another mile to High Camp at Adams Creek Meadows, about 6,900 ft, on the edge of the Adams Glacier moraine.\n\nFrom High Camp this route is reached more directly than the Lyman: traverse off-trail east across the lava fields to the toe of the Lava Glacier, without needing to work around Lava Ridge.\n\nThe approach roads are gravel and seasonal, opening as snow clears.",
+    "baseFinding": "COUNT THE RIDGES. THAT IS THE WHOLE PROBLEM ON THIS SIDE OF THE MOUNTAIN, AND IT IS COUNTABLE IN CLOUD.\n\nFrom High Camp the features run in this order as you work east: the ADAMS GLACIER, then the NORTH RIDGE (the North Cleaver), then the LAVA GLACIER, then LAVA RIDGE, then the LYMAN GLACIER. Three glaciers, two ridges between them, in that order.\n\nTHIS ROUTE'S BASE IS AT THE HEAD OF THE LAVA GLACIER — SO YOU CROSS ONE RIDGE PAST THE NORTH RIDGE AND STOP. IF YOU HAVE ROUNDED OR CROSSED A SECOND RIDGE, YOU ARE AT THE LYMAN GLACIER AND ON A DIFFERENT CLIMB.\n\nTHE POSITIVE TEST IS A SHAPE, AND IT IS THE reason this route is worth doing: THE HEADWALL IS A TRIANGLE. It is the face closing between the North Ridge on one side and Lava Ridge on the other, the two of them converging above you. If the ground ahead is open glacier that does not narrow to a point, you are not under the headwall — you are on the glacier below it, and the apron will keep going for a while yet.\n\nTHE NEGATIVE THAT CATCHES PEOPLE IS THE NORTH RIDGE ITSELF, because it is the walk-off and it is right there: if you are climbing snow with a rocky cleaver on one hand and no closing headwall above, you are on the North Ridge, which is the descent for this route rather than the ascent.\n\nCONFIRMATION ONCE COMMITTED: about 45-degree neve, climbed nearly continuously without belays because stopping under it is worse than moving. The first ascent went from 8,500 ft to the summit in around five and a half hours. If you are placing gear on every rope length you are not moving the way this face wants to be moved.\n\nTIMING AS A FINDING: this face is graded for cold. Arriving at the triangle with the sun on it means going down, not looking for a better line.",
+    "hazards": [
+     "Steep ice and snow with serac hazard on a face that must be climbed continuously",
+     "Rockfall increasing sharply as the headwall warms",
+     "Crevasse navigation on the Lava Glacier apron",
+     "A long descent of the North Ridge on loose volcanic scree with rockfall onto parties below",
+     "Seasonal gravel road access that opens late in a heavy year"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://mazamas.org/activity/221/",
+   "https://www.summitpost.org/mount-adams/150198"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "area": "wa_mount_adams",
+  "approach_variants": [
+   {
+    "name": "Killen Creek and High Camp, then east past Lava Ridge to the Lyman at 8,000 ft",
+    "season": "Roughly Jun-Jul; climbed in late spring and early summer as moderate to steep snow and sometimes alpine ice",
+    "notes": "From the Killen Creek trailhead, follow Trail #113 through open dusty lodgepole forest. Around 2.5 miles you cross East Fork Adams Creek and its meadows — the last easy water before the high basin. The trees thin as the trail climbs rockier ground to the PCT at about 6,100 ft, roughly 3.1 miles in. Continue straight across onto High Camp Trail #10 for about a mile to High Camp at Adams Creek Meadows, near 6,900 ft.\n\nFrom High Camp the maintained trail is done. Traverse east and southeast off-trail across lava fields, across the toe of the Lava Glacier and around or over the toe of Lava Ridge, to the base of the Lyman Glacier at about 8,000 ft. This is glacier and talus travel with real route-finding, worst in a low-snow year; rope and crevasse-rescue gear are standard once on ice.\n\nMost of the route can be simul-climbed with a running belay on pickets. The standard descent is the North Ridge, not a reversal — long, loose volcanic scree, occasionally narrow, with a real chance of knocking rock onto parties below.",
+    "baseFinding": "COUNT THE RIDGES, AND FOR THIS ROUTE YOU MUST GET PAST TWO.\n\nEast of High Camp the order is: ADAMS GLACIER, NORTH RIDGE, LAVA GLACIER, LAVA RIDGE, LYMAN GLACIER. You cross the Lava Glacier and then go around or over the TOE OF LAVA RIDGE. Lava Ridge is the second ridge and it is the gate. If you have crossed only one ridge and stopped at a glacier, you are at the Lava Glacier Headwall — a different climb with a triangular face — not at the Lyman.\n\nTHE POSITIVE TEST IS A FORK, AND IT IS UNMISTAKABLE ONCE YOU ARE ON IT: THE LYMAN SPLITS AROUND A NARROW ROCK OUTCROP into two lobes. The north lobe is the original line; the south lobe runs 40-degree unbroken neve on its lower half and is broken by crevasses and serac walls on its upper half. A glacier that forks around an island of rock is the confirmation you are where you meant to be.\n\nTHE CRUX CONFIRMS IT A SECOND TIME, HIGHER: both lobes lead to a chute near 10,000 ft that runs anywhere from 45 to 65 degrees over about 50 ft depending on the year. One short steep chute, then easier snow to the summit plateau. If you meet no constriction at all, you are on a neighbouring glacier.\n\nTHE BASE ELEVATION IS THE THIRD CHECK: about 8,000 ft. Arriving on ice much higher than that means you gained the glacier well above its toe and may have come onto it over the ridge rather than around it, which is fine but changes where the lobes sit relative to you.\n\nWHAT THE DESCENT MEANS FOR THE APPROACH, AND IT IS WORTH DECIDING AT THE CAR: you do not come back this way. The walk-off is the North Ridge, back toward High Camp. So the ridge you counted past on the way in is not the ridge you come down.",
+    "hazards": [
+     "Crevasse and serac navigation on the Lyman, particularly on the south lobe's upper half",
+     "A short steep crux chute near 10,000 ft that varies from 45 to 65 degrees year to year",
+     "Long sustained high-altitude climbing with a late-season low-snow route-finding problem on the traverse",
+     "A descent down the North Ridge on loose rotten volcanic scree, with rockfall onto parties below",
+     "Seasonal gravel road access"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://cascadeclassics.org/MountAdams/North/Spring03/Lyman/LymanGlacier_Spring03.htm",
+   "https://www.mountainproject.com/route/120612241/lyman-glacier"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "approach_variants": [
+   {
+    "name": "Cold Springs and the Round the Mountain Trail east around the mountain",
+    "season": "Roughly May-Jun for the headwall itself; the surrounding east-side walls are rockfall-prone once warm",
+    "notes": "From the Cold Springs and South Climb trailhead at about 5,600 ft at the end of the forest road north of Trout Lake, follow South Climb Trail #183 about a mile up an old road bed to the junction with the Round the Mountain Trail.\n\nInstead of continuing north toward the Lunch Counter, follow the Round the Mountain Trail east and then north, contouring below the Crescent Glacier and around the mountain's eastern flank toward the Wilson and Klickitat glacier basins. This is a long, mostly off-trail traverse with route-finding, creek crossings, and exposure to rockfall directly below the headwall's cliff bands.\n\nThe Wilson descends from around 10,600 ft to a terminus near 7,400 ft, and it is split by a rock rib. Expect a full day to reach a camp near its toe before any summit attempt.\n\nThis is one of the least-visited and least-documented flanks of the mountain. The descent is not a reversal: parties top out and come down the standard South Climb to Cold Springs.",
+    "baseFinding": "THE DECISION HAPPENS ABOUT A MILE FROM THE CAR AND IT IS A TURNING, NOT AN ARRIVAL. At the junction of the South Climb Trail with the Round the Mountain Trail, the standard South Spur route goes NORTH toward the Lunch Counter; this route goes EAST. If you are climbing toward the Lunch Counter, you are on the standard South Climb and this route is already behind you.\n\nTHAT IS THE ONE ERROR WORTH GUARDING, BECAUSE IT IS RECOVERABLE ONLY BY WALKING BACK DOWN. Everything after it is a long contour.\n\nTHE POSITIVE TEST AT THE BASE IS A GLACIER SPLIT BY A ROCK RIB. The Wilson runs from about 10,600 ft down to about 7,400 ft and a rock rib divides it. A headwall above a glacier that is bisected by a rib is the confirmation. An unbroken glacier with no rib in it is not the Wilson.\n\nTHE SECOND POSITIVE IS ASPECT AND IT IS THE COARSEST BUT MOST RELIABLE: you must be on the EAST side of the mountain. Going around the eastern flank is the whole approach. If the sun is rising behind the mountain rather than in front of you, you have not come far enough round.\n\nTHE NEGATIVE THAT MATTERS FOR SAFETY RATHER THAN NAVIGATION: the contour runs directly beneath cliff bands that shed rock. It is a place to keep moving. Persistent rockfall on these east-side headwalls is among the reasons most of them remain unrepeated, so a rope-length of comfortable ground is not evidence the ground above you is quiet.\n\nWHAT BEING ON A NEIGHBOURING BASIN LOOKS LIKE: keep going round and you reach the Klickitat basin. The Wilson is the first of the two you meet coming from the south.",
+    "hazards": [
+     "Persistent rockfall from the east-side cliff bands, directly over the contouring approach",
+     "A steep ice and snow headwall with serac hazard",
+     "Crevasse navigation on the Wilson",
+     "A long, mostly off-trail traverse with creek crossings and route-finding, and a full day just to reach camp",
+     "Rarely climbed, so conditions cannot be inferred from recent traffic and rescue would be slow"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "thin"
+ },
+ "adams_northwest_ridge": {
+  "area": "wa_mount_adams",
+  "approach_variants": [
+   {
+    "name": "Killen Creek and High Camp, then the north-facing slope below the Adams Glacier terminus",
+    "season": "Roughly Jun-Jul, on neve",
+    "notes": "Forest roads from the Takhlakh Lake area to the Killen Creek trailhead, then Killen Creek Trail #113 to the PCT junction and High Camp Trail #10 to the meadow camp at about 6,900 ft.\n\nFrom camp, gain the north-facing slope that sits between the Adams Glacier and the crest of the Northwest Ridge. The line deliberately gains access BELOW the Adams Glacier terminus to avoid its crevasses and moats, then follows steepening 40 to 45 degree neve past a narrow rock-band pinch to the ridge crest near 10,000 ft and on to the summit.\n\nThe ridge crest itself is avoided on purpose: the rock on it is poor.\n\nDescent is along the North Ridge back to the Adams Glacier basin high camp, or in ski conditions the route itself can be reversed, threading the same rock-band pinch.",
+    "baseFinding": "THIS ROUTE IS THE GROUND BETWEEN TWO THINGS, SO THE TEST IS THAT YOU HAVE ONE ON EACH SIDE.\n\nAS YOU CLIMB, THE ADAMS GLACIER SHOULD BE ON YOUR RIGHT AND THE CREST OF THE NORTHWEST RIDGE ON YOUR LEFT. If both are on the same side of you, you are on one of them rather than between them, and you are not on this route.\n\nTHE ROCK IS THE NEGATIVE ON ONE SIDE, AND IT IS TACTILE, WHICH IS WHAT YOU WANT AT NIGHT: this line stays OFF the crest because the crest's rock is poor. If you are pulling on loose blocky rock instead of kicking steps in neve, you have drifted left onto the ridge.\n\nTHE CREVASSES ARE THE NEGATIVE ON THE OTHER SIDE: the route gains its ground BELOW the Adams Glacier terminus specifically so it does not have to deal with the glacier's crevasses and moats. If you are stepping across crevasses, you are too far right and on the Adams Glacier route, which is a different and harder climb.\n\nTHE POSITIVE, AND IT IS COUNTABLE: ONE CONSTRICTION. A narrow pinch through a rock band, ski-width or body-width, is the crux and the only place the route squeezes. If you have climbed a couple of thousand feet of 40 to 45 degree neve and met no constriction, the pinch is still above you and you are on route. If you met a constriction in the first rope length, you are somewhere else.\n\nWHAT THE PINCH MEANS FOR CONDITIONS: it gets tighter in a low-snow year, which is when it becomes the AI2-3 crux rather than a step. It is also a terrain trap — you are between cliff bands there with limited escape, so decide about it from below rather than at it.\n\nTOP-OUT CHECK: the route joins the NORTHWEST RIDGE CREST near 10,000 ft. Gaining a crest at that height is correct; gaining one much lower means you climbed onto the ridge early instead of past it.",
+    "hazards": [
+     "A terrain trap between cliff bands with limited escape once committed mid-route",
+     "A narrow rock-band pinch that tightens to AI2-3 in low-snow years",
+     "Crevasse and moat hazard where the route gains ground below the Adams Glacier terminus",
+     "Poor rock on the adjacent ridge crest, which is why the line avoids it",
+     "Sustained 40-45 degree neve with a running belay the only practical protection"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "adams_avalanche_glacier": {
+  "area": "wa_mount_adams",
+  "approach_variants": [
+   {
+    "name": "Cold Springs, then west around onto the southwest flank",
+    "season": "Roughly May-Jul; crevasse hazard grows through the season as the glaciers open up",
+    "notes": "From the Cold Springs trailhead, work around onto the mountain's southwest flank using the Round the Mountain trail system, and approach the glacier from below.\n\nThe climb is a gently sloping glacier ascent of the Avalanche and White Salmon glaciers, mostly moderate to steep snow to about 40 degrees, simul-climbable, with occasional ice work where the White Salmon has broken up. A steeper headwall variation exists where the two glaciers merge and can be alpine ice late in the season.\n\nDescent is south via the South Spur snowfields, or the snowfield beside the Avalanche and White Salmon glaciers, back toward the Morrison Creek and Cold Springs approach, glissading where conditions allow — so this is a loop off one trailhead rather than an out-and-back.\n\nForest roads to Cold Springs and Morrison Creek are gravel and open as snow clears.",
+    "baseFinding": "THE TEST IS WHICH SIDE OF THE SOUTH SPUR YOU ARE ON, AND IT IS A DECISION MADE LOW.\n\nFrom Cold Springs the standard South Climb goes up the SOUTH SPUR to the Lunch Counter at about 9,300 ft. This route leaves that line and works WEST, round onto the southwest flank, to the Avalanche and White Salmon glaciers. IF THE LUNCH COUNTER IS STILL AHEAD OF YOU OR ABOVE YOU, YOU HAVE NOT LEFT THE STANDARD ROUTE.\n\nTHE NEGATIVE HERE INVERTS THE USUAL INSTINCT AND IT IS THE MOST USEFUL SINGLE MARKER: YOU SHOULD MEET ALMOST NOBODY. The South Spur is the most-travelled route on this mountain and carries a trench and camps most of the season. This flank sees a fraction of that traffic. A boot pack underfoot is evidence you are still on the South Climb, not evidence you are on route.\n\nTHE POSITIVE TEST IS A JUNCTION OF TWO GLACIERS: the Avalanche and the White Salmon MERGE, and the headwall at that merge is the steeper variation. A single unbroken snow slope with no second glacier joining it is not the base — keep contouring.\n\nTHE CONDITION TEST DECIDES WHICH CLIMB YOU GET: the merge headwall is snow early and can break out into alpine ice late, which is why a spare tool and a couple of screws are worth carrying even though most of the route is a walk. If it is bare ice and you brought one axe, that is a finding about the day, not about the route.\n\nWHAT COMING BACK LOOKS LIKE, AND IT IS WHY THIS DOES NOT NEED A SHUTTLE: you descend SOUTH off the summit onto the South Spur snowfields and back toward the same trailhead. Reversing the ascent line is not the plan.",
+    "hazards": [
+     "Crevasse hazard that increases through the season as the glacier opens up",
+     "Alpine ice at the merge headwall late in the season, on a route otherwise climbed with one axe",
+     "Genuine glacier travel on a flank that sees very little traffic, so no track and no other parties",
+     "A long contour off the standard route with route-finding on the way round",
+     "Seasonal gravel road access"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "thin"
+ },
+ "wa_mount_st_helens_monitor_ridge": {
+  "area": "wa_mount_st_helens",
+  "approach_variants": [
+   {
+    "name": "Climbers Bivouac and the Ptarmigan Trail to the marked ridge",
+    "season": "Roughly Jun-Oct for the summer route; full winter conditions with ice axe and crampons can apply well into late spring",
+    "notes": "From the Climbers Bivouac trailhead at about 3,700 ft — the highest vehicle access on this side of the mountain — start on the signed Ptarmigan Trail #216A through open forest. It climbs a moderate 1,100 ft over about 2.25 miles to timberline near 4,800 ft. That is the last shade and the last practical water; a couple of small seasonal creeklets cross the lower trail and nothing is reliable above, so most parties carry everything from the car.\n\nAt timberline the trail ends and the route moves onto the open volcanic slopes of Monitor Ridge itself: a broad rib of old lava flows flanked by loose pumice and ash.\n\nA permit is required above 4,800 ft year-round and is checked at or near the trailhead.\n\nThere is no technical climbing here. It is a long, steep hike and scramble, and the difficulty is navigation and footing rather than terrain.",
+    "baseFinding": "THE POSTS ARE THE ROUTE, AND KNOWING WHERE THEY END IS THE WHOLE FINDING.\n\nFROM TIMBERLINE AT ABOUT 4,800 FT TO ABOUT 7,000 FT THE LINE IS MARKED BY LARGE WOODEN POSTS. They end at the monitoring equipment near 7,000 ft. Above that, the last roughly 1,300 ft to the crater rim is unmarked ash, pumice and scattered rock.\n\nSO THE TEST IN FOG IS A NEGATIVE AND IT IS EXACT: IF THE POSTS HAVE STOPPED AND YOU HAVE NOT PASSED THE MONITORING EQUIPMENT, YOU HAVE DRIFTED OFF THE LINE — you have not finished the marked section. Stop and go back to the last post you saw rather than continuing on a bearing. Losing the posts is the single biggest route-finding hazard on this climb, and a small drift puts you on steep loose off-route ground.\n\nTHE SURFACE TEST TELLS YOU WHETHER YOU ARE ON THE RIB OR BESIDE IT: the route climbs the ROCK RIBS of old lava. If you are sliding two steps back for every step up in loose ash, you are in the gullies beside the rib. Move onto the rock — it is both faster and a signal you have found the line again.\n\nTHE TOP IS NOT WHERE YOU THINK: the crater rim at about 8,363 ft is the top of the climbing, and the true high point is a walk along the rim from where you arrive. Do not treat first sight of the crater as the summit.\n\nAND THE RIM ITSELF IS A NEGATIVE, NOT A MARKER: it is corniced and unstable with a history of fall-throughs. Do not walk to the edge to work out where you are.",
+    "hazards": [
+     "Losing the wooden posts in fog or whiteout, which puts parties onto steep loose off-route ground",
+     "Unstable cornices and fall-through risk at the crater rim",
+     "Deep loose pumice and ash above 7,000 ft with poor footing in both directions",
+     "No water above the lower trail",
+     "Full winter conditions and avalanche terrain on the upper slopes well into late spring"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://fs.usda.gov/r06/giffordpinchot/recreation/monitor-ridge-climbing-route",
+   "https://www.mshinstitute.org/climbing-routes"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_st_helens_worm_flows": {
+  "area": "wa_mount_st_helens",
+  "approach_variants": [
+   {
+    "name": "Marble Mountain Sno-Park and the Swift Creek Trail to Worm Flow Ridge",
+    "season": "Roughly Nov-Jun, with the best conditions typically Feb-Apr when the snowpack is deep enough to bury the loose ash and consolidated enough to climb and glissade",
+    "notes": "From the Marble Mountain Sno-Park at about 2,700-2,800 ft, follow the Swift Creek Trail #244 north into forest, marked in winter by blue diamond blazes on the trees. It climbs steadily through timber for roughly 2 miles to about 3,700-3,750 ft, breaking out of the trees near Chocolate Falls on Swift Creek.\n\nJust above the falls, cross to the WEST side of Swift Creek. This ford can be swollen with meltwater in spring or after a warm spell, and the crossing point and its sign are often buried in winter snowpack.\n\nAbove treeline the route enters the open barren Worm Flows lava and mudflow terrain. Wooden posts mark the line from about 3,700 to roughly 4,800 ft; above that the posts thin out and occasional cairns, plus wands placed by parties, mark broad ridges and open slopes. The route follows Worm Flow Ridge past an old seismic monitoring station near 6,200 ft, then up snow and scree to merge with the summer Monitor Ridge line at about 7,400 ft, and roughly 850 ft more to the crater rim.\n\nA Sno-Park permit is required to park in the winter months. This is the standard winter and spring access because the summer trailhead on the far side is snow-gated.",
+    "baseFinding": "THREE HARD MARKERS, IN ORDER, AND THEY WORK BECAUSE THEY ARE OBJECTS RATHER THAN DESCRIPTIONS OF SLOPE — which matters here, since snow buries everything else.\n\nONE: CHOCOLATE FALLS, at about 3,700-3,750 ft, where the trail breaks out of the trees. You cross to the west side of Swift Creek JUST ABOVE THE FALLS. In winter the crossing point and its sign are usually under snow, so treat the falls themselves as the marker and never a sign.\n\nTWO: WOODEN POSTS, from about 3,700 to about 4,800 ft. Above 4,800 they thin to cairns and wands.\n\nTHREE: THE OLD SEISMIC MONITORING STATION near 6,200 ft on Worm Flow Ridge. This is the last hard object on the whole route and the best single confirmation you are on the ridge and not on one of the broad open slopes beside it.\n\nTHE NEGATIVE THAT CATCHES PARTIES LOW: if you have crossed Swift Creek and are STILL IN TREES, you crossed too low — below the falls. Regain the east bank and keep climbing to the treeline break.\n\nTHE MERGE AT ABOUT 7,400 FT IS THE LAST CHECK: from there you are on the summer Monitor Ridge line and it is roughly 850 ft to the rim.\n\nTHE MOST IMPORTANT FINDING ON THIS ROUTE IS ABOUT COMING DOWN, NOT GOING UP. Whiteout wrong-drainage descents are the documented failure here. From the rim the correct line is back down WORM FLOW RIDGE — a ridge, not a gully. Do not descend into a gully because it is going downhill; and record your bearings on the way up while you can still see the ridge you are on.",
+    "hazards": [
+     "Whiteout descents into the wrong drainage — the documented failure mode on this route",
+     "Avalanche terrain on loaded slopes and in gully bottoms after new snow or wind loading",
+     "Cornice collapse and unstable footing at the crater rim",
+     "A Swift Creek ford that can run fast with meltwater and whose crossing point is buried in winter",
+     "High wind exposure across the open upper mountain",
+     "No reliable water above Chocolate Falls"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-worm-flows-winter-climbing-route",
+   "https://www.mshinstitute.org/climbing-routes"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_gilbert_peak_meade_glacier": {
+  "area": "wa_gilbert_peak",
+  "approach_variants": [
+   {
+    "name": "Conrad Meadows and the South Fork Tieton to Klickton Divide",
+    "season": "Roughly Jul-Sep",
+    "notes": "Drive to the Conrad Meadows and South Fork Tieton trailhead at road's end, about 4,044 ft, reached by the Tieton Reservoir road and then the South Fork Tieton road off the highway west of Naches. The last several miles are gravel.\n\nHike Trail #1120 through Conrad Meadows, crossing Conrad Creek, into the Goat Rocks Wilderness and on toward Surprise Lake and Warm Lake. From there climb southwest to gain Klickton Divide near Point 6,882, then follow the ridge northwest toward the summit, mixing snow and rock with Gilbert in view most of the way.\n\nAn alternative from the same trailhead crosses the east side of the Conrad Glacier to a saddle east of the summit, drops onto the Meade, and climbs it — now largely persistent snowfields rather than a crevassed glacier — to a rock outcrop below the final pitch.\n\nThis is a long day: roughly 20 miles round trip with real gain, and limited water late in a dry season.",
+    "baseFinding": "GAINING KLICKTON DIVIDE IN THE RIGHT PLACE IS THE WHOLE ROUTE-FINDING PROBLEM, AND EVERYTHING BEFORE IT IS TRAIL.\n\nYou leave the trail beyond Warm Lake and climb SOUTHWEST to gain the divide near POINT 6,882. From there the ridge runs NORTHWEST to the peak. Two directions, in that order: southwest to gain, northwest to follow. Getting the second one wrong walks you away from the mountain along the same ridge.\n\nTHE POSITIVE THAT MAKES THIS A GENEROUS ROUTE IN CLEAR WEATHER, AND A HARSH ONE IN CLOUD: once you are on the divide, GILBERT IS IN VIEW ALMOST THE WHOLE WAY. If you cannot see the peak from the ridge you are either not on the divide or the day has closed in, and in the second case the ridge crest itself is the handrail.\n\nTHE BASE OF THE CLIMBING IS A NOTCH, AND THERE IS ONLY ONE. The route tops out with a steep snow and scree slope and then a SHORT, LOOSE CLASS 3 SCRAMBLE THROUGH A NOTCH to the true summit. Short is the operative word: the summit is immediately above the notch. If you have gone through a gap and the ground keeps rising well beyond it, you are at the wrong gap.\n\nTHE NEGATIVE THAT SEPARATES THIS FROM ITS SIBLING ON THE SAME PEAK: this line goes ONTO THE RIDGE. The other route from this trailhead goes UNDER the peak — across the east side of the Conrad Glacier to a saddle, then onto the Meade. If you find yourself roping up for glacier travel before you have been on a ridge, you are on that one instead.\n\nSELF-ARREST IS PART OF THE BASE FINDING HERE, NOT AN AFTERTHOUGHT: the snowfield below the summit is steep enough that the route assumes you can hold a slip on it. Arriving without an axe is a reason to turn round at the divide.",
+    "hazards": [
+     "A steep summit snowfield requiring solid self-arrest",
+     "Loose rock on the summit scramble, with rockfall risk between parties climbing close together",
+     "Receding glaciers that can still hide crevasses and moats early season",
+     "A long, remote round trip of roughly 20 miles with limited water in a dry year",
+     "Ridge navigation that depends on visibility once off the trail"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_gilbert_peak_conrad_glacier": {
+  "area": "wa_gilbert_peak",
+  "approach_variants": [
+   {
+    "name": "Conrad Meadows to the north side, the Conrad Glacier and the 7,200 ft saddle",
+    "season": "Roughly Jul-Sep; rated for summer and fall and not recommended in spring or winter conditions",
+    "notes": "From the South Tieton Creek and Conrad Meadows trailhead, approach the north side of the peak and ascend the EAST side of the Conrad Glacier to a saddle at about 7,200 ft. From the saddle, traverse onto the Meade Glacier, then finish over boulders, scree and a summit snowfield.\n\nThe Conrad is the more active of the peak's two small glaciers, so this line wants a rope, a harness and a crevasse-rescue kit rather than just an axe and crampons.\n\nDescent reverses the traverse: back over the saddle and down the Conrad to Conrad Meadows. It is normally done over two or more days given the long approach through the drainage and the talus.",
+    "baseFinding": "TWO GLACIERS WITH ONE SADDLE BETWEEN THEM. THAT SEQUENCE IS THE ROUTE AND IT IS THE TEST.\n\nYou climb the EAST side of the CONRAD GLACIER to a saddle at about 7,200 ft, and from that saddle you TRAVERSE ONTO A SECOND GLACIER — the Meade — before any of the summit ground. Glacier, saddle, glacier, then boulders, scree and a summit snowfield, in that order.\n\nTHE NEGATIVE AT THE SADDLE IS THE ONE WORTH CARRYING: IF YOU REACH A SADDLE AND THE GROUND BEYOND IT IS BOULDERS AND SCREE WITH NO SECOND GLACIER, YOU ARE ON THE WRONG SADDLE. This route's saddle opens onto ice. A saddle that opens onto rock belongs to the ridge line, which is the peak's other route from the same trailhead.\n\nTHE ELEVATION IS A CROSS-CHECK RATHER THAN A MARKER: about 7,200 ft. Well above that and you have climbed the glacier past its col; well below and you are still on the apron.\n\nWHICH SIDE OF THE GLACIER MATTERS AND IT IS EASY TO GET WRONG IN THE DARK: the EAST side of the Conrad. Drifting west takes you up the glacier's other flank and away from the saddle.\n\nTHE APPROACH-SIDE FINDING: this route comes at the peak from the NORTH. If you have climbed onto a long ridge with the peak in view along it, you are on the Klickton Divide line instead — a fine route, a different day, and it does not need a rope.",
+    "hazards": [
+     "Glacier travel on the Conrad, the more active of the peak's two glaciers",
+     "Loose rock, scree and boulder terrain below the summit",
+     "A long approach through the Conrad Creek drainage and talus",
+     "Not recommended in spring or winter conditions",
+     "A traverse between two glaciers with the same ground to reverse on the way out"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "thin"
+ },
+ "wa_gilbert_peak_west_route": {
+  "area": "wa_gilbert_peak",
+  "approach_variants": [
+   {
+    "name": "Snowgrass Flats and the Goat Ledges traverse to the black prow",
+    "season": "Roughly Jul-Sep, once the ledges are dry",
+    "notes": "Drive to the Berry Patch or Snowgrass Flat trailhead in the Chambers Lake area on the west side of the Goat Rocks, at about 4,650 ft, reached by forest road off the highway west of Packwood. Hike Snowgrass Trail #96 roughly 4 miles and about 2,000 ft along Goat Creek to Snowgrass Flats, a large subalpine meadow used as base camp.\n\nFrom camp, head cross-country and scramble east across the Goat Ledges and Goat Ribs — a series of rock ribs and shallow gullies — at roughly 7,400-7,600 ft toward Gilbert Peak. This is often combined with Old Snowy and Ives in a single traverse day.\n\nA lower variation holds a consistent traverse elevation of about 7,500 ft, which reduces exposure to rockfall knocked down by other parties.\n\nThe route is regarded by some as loose and dangerous. Careful route-finding along the correct band and on goat paths is what makes it a reasonable class 4 passage rather than a bad one.",
+    "baseFinding": "THE WHITE BAND IS THE ROUTE. THAT IS THE ENTIRE FINDING AND IT IS A COLOUR TEST, WHICH IS WHY IT SURVIVES BAD LIGHT.\n\nOn the Goat Ribs and Goat Ledges traverse at roughly 7,400-7,600 ft there is a band of SOLID, ABRASIVE, WHITE PYROCLASTIC AGGREGATE. It points at a NOTCH BEHIND A PROMINENT DARK ROCK TOWER — the black prow. So there are two objects to find and they are opposite colours: a white band and a dark tower, with the notch behind the tower.\n\nTHE NEGATIVE IS TACTILE AND IT TELLS YOU IMMEDIATELY, WITHOUT A VIEW: THE WHITE BAND IS SOLID AND ABRASIVE. THE ROCK ABOVE IT AND BELOW IT IS LOOSE. If the holds are moving under your hands you are off the band — traverse back to the white rather than pressing on.\n\nHOLD YOUR HEIGHT AT ABOUT 7,500 FT. Drifting HIGH is worse than drifting low: it puts you above the band and above other parties, in the position that generates the rockfall this traverse is notorious for. The low variation is a deliberate choice, not a mistake.\n\nTHE BASE OF THE CLIMBING IS THE NOTCH BEHIND THE BLACK PROW. Everything before it is traversing; the class 4 finish begins there. If you are scrambling steeply and you have not passed a dark tower, you have started up too early.\n\nWHAT GOING TOO FAR LOOKS LIKE: the traverse ends at the peak. If the ribs and gullies keep coming and you have not found a white band pointing anywhere, you are on the wrong tier of the mountain — go back to a rib you can identify and re-find the band, rather than gaining height to look.",
+    "hazards": [
+     "Significant rockfall on the Goat Ribs and Goat Ledges traverse, worst with parties stacked at different elevations",
+     "Loose andesite, pyroclastic breccia and tuff throughout the upper mountain",
+     "Steep, insecure sections approaching the summit block even in dry late-season conditions",
+     "Route-finding failure — the whole route depends on correctly identifying the white aggregate band",
+     "A class 4 downclimb through the notch on the way back, on the same loose ground"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_ives_peak_r1": {
+  "area": "wa_ives_peak",
+  "approach_variants": [
+   {
+    "name": "Snowgrass Trail, the PCT junction and the Old Snowy to Ives col",
+    "season": "Roughly late Jul through mid-Sep, once the crest and shaded gullies have melted out",
+    "notes": "Start at the Snowgrass trailhead, also called Berry Patch, at about 4,600 ft, reached by forest road off the highway west of Packwood. Follow Snowgrass Trail #96 south then east through dense forest; it drops slightly to cross Goat Creek on a plank crossing around the 2-mile mark, which is the only real water crossing and a reliable source.\n\nClimb through subalpine forest and meadow to Lower and then Upper Snowgrass Flat at roughly 6,400 ft, about 4 miles in — a broad wildflower meadow with good camping and small creeks, the last dependable water before the ridge. Continue a further 0.3 to 0.5 mile to the PCT junction at roughly 6,700-7,100 ft.\n\nLeave the PCT and head off-trail northeast, ascending talus and scree with no defined tread and only occasional cairns, toward the low col on the crest between Old Snowy Mountain and Ives Peak. The talus is unconsolidated and shifts underfoot.\n\nSnowfields linger on the approach slopes and in the col well into July — this basin can hold 25 to 40 ft of winter snowpack — so an axe is worth carrying for early and mid-season attempts.",
+    "baseFinding": "THE COL BETWEEN OLD SNOWY AND IVES IS THE ARRIVAL, AND YOU GET TO IT BY LEAVING A TRAIL, NOT BY FOLLOWING ONE.\n\nLeave the PCT at the junction area, roughly 6,700-7,100 ft, and go off-trail NORTHEAST up talus. There is no tread. Occasional cairns are the only marks. If you are still on maintained trail you have not started the route.\n\nYOU KNOW YOU ARE AT THE COL BECAUSE YOU ARE BETWEEN TWO PEAKS at about 7,250 ft — Old Snowy behind you, Ives ahead. A high point on one side only is not the col.\n\nTHE BUMP IS THE TRAP AND IT IS COUNTABLE: from the col the ridge crosses a ROUNDED INTERMEDIATE HIGH POINT before you reach the true summit block. THAT BUMP IS NOT THE SUMMIT. If you have not passed one rounded bump, you have not reached the summit block, whatever the ground in front of you looks like.\n\nTHE BASE OF THE SCRAMBLE IS A NOTCH BETWEEN TWO ROCK OUTCROPS, reached by a boot path up scree. And here is the test that settles it beyond doubt, because it is the opposite of what you expect at a summit block: ABOVE THE NOTCH IS A SHORT CLIFF BAND, AND THE ROUTE GOES DOWN FIRST. You downclimb slightly and traverse a narrow, exposed ledge to gain the upper south face, then scramble about 40 ft to climber's right on loose blocky rock to easy ground and the summit.\n\nSO: IF THE LINE IN FRONT OF YOU ONLY GOES UP, YOU ARE AT THE WRONG NOTCH. Having to lose a little height at the notch is the confirmation.\n\nDESCENT FINDING WORTH MAKING BEFORE YOU START: dropping straight southwest off the col into the basin is faster and is the loosest ground on the mountain. Traversing back over Old Snowy and down its established south-ridge path avoids the worst of it.",
+    "hazards": [
+     "Loose, unconsolidated talus and scree with higher consequence on the descent",
+     "Chossy volcanic andesite on the summit south face",
+     "An exposed narrow ledge traverse below the summit, reached by downclimbing",
+     "Lingering snowfields and a moat crossing near the col into July",
+     "Off-trail route-finding with no maintained summit path",
+     "Exposure to afternoon thunderstorms on an open crest"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_old_snowy_mountain_r1": {
+  "area": "wa_old_snowy_mountain",
+  "approach_variants": [
+   {
+    "name": "Snowgrass Flat, the PCT north, and the unmarked climbers' path to the south ridge",
+    "season": "Roughly mid-Jul through Sep, most reliable in August",
+    "notes": "From the Snowgrass Flats trailhead at about 4,600 ft at the end of the forest road, start on Trail 96. It climbs gently through forest roughly 2 miles to a junction with the old bypass trail — stay right on 96 for the more direct, less eroded line.\n\nAround 2.4 to 2.6 miles you reach the springs at the head of Snowgrass Creek just off the trail to the right, the last easy water before treeline. About 0.8 mile past that the trail fords Snowgrass Creek; there is no bridge, but logs and rocks usually allow a dry crossing except in heavy snowmelt.\n\nJust beyond the ford at about 3.9-4 miles and 6,400 ft the trail breaks into the open heather meadows of Snowgrass Flat. Camping is prohibited within the flat itself under wilderness regulations; parties camp at designated sites above or below it.\n\nContinue past the two trail junctions to the PCT at roughly 7,100 ft and turn right, north. Follow the PCT about 1.8 miles across rocky, increasingly exposed sidehill below Old Snowy's south ridge.\n\nRound trip is roughly 15.5 miles with about 3,600 ft of gain, typically 8.5 to 9.5 hours car to car. The access road has taken washout damage in past winters, so confirm before driving.",
+    "baseFinding": "THE TURN OFF THE PCT IS UNMARKED, AND IT IS THE ONLY THING ON THIS ROUTE YOU CAN GET WRONG.\n\nTHE TEST THAT WORKS IN FOG IS ABOUT MOTION, NOT LANDMARKS: the PCT here is SIDEHILLING — traversing across the slope. The climbers' path is THE FIRST THING THAT TURNS UPHILL AND STOPS CONTOURING, branching right, east, toward a rocky saddle on Old Snowy's south ridge. Take the first thing that climbs.\n\nTHE NEGATIVE IS EQUALLY MECHANICAL: IF THE PCT STARTS DESCENDING ON THE FAR SIDE OF THE MOUNTAIN, YOU HAVE WALKED PAST THE TURN. Go back; do not climb straight up from where you noticed.\n\nDISTANCE CROSS-CHECK: about 1.8 miles north of the Trail 96 junction at 7,100 ft, and the path switchbacks steeply for about half a mile from where you leave the trail.\n\nSECOND MARKER, AND IT SITS BEFORE THE TURN RATHER THAN AFTER IT: a persistent SNOWFIELD on the PCT below the summit lingers into July and is a well-documented trouble spot on the exposed sidehill traverse. Meeting it means the turn is still ahead of you. It is firmest and safest crossed in the morning.\n\nA SOFT CONFIRMATION AT THE SADDLE, WORTH KNOWING BECAUSE IT IS VISIBLE FROM A DISTANCE: many parties stash trekking poles there for the scramble. A cache of poles on a rocky saddle is a good sign you are at the right one.\n\nBASE OF THE SCRAMBLE: the last few hundred feet to the summit is Class 2-3 hands-and-feet on loose rock, moderately exposed but not technical. Loose talus and rock knocked down by parties above is the hazard, so do not stack directly below other climbers.\n\nAND A NEGATIVE THAT IS ABOUT VISIBILITY RATHER THAN GROUND: once you leave the PCT there is no maintained tread. Poor visibility is the recorded route-finding difficulty on this peak, and the honest response is to turn round at the PCT rather than to search for the spur.",
+    "hazards": [
+     "An unmarked, easily missed turn off the PCT — the route's one real navigation problem",
+     "A persistent snowfield on the PCT traverse below the summit, firm and icy in early morning",
+     "Loose rock and talus on the summit scramble, with rockfall risk to climbers below",
+     "High wind and lightning exposure on an open crest, with common afternoon thunderstorms",
+     "Route-finding difficulty in poor visibility once off the PCT",
+     "Unreliable cell coverage throughout the wilderness"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_castle_peak_tatoosh_southeast_face": {
+  "area": "wa_castle_peak_tatoosh",
+  "approach_variants": [
+   {
+    "name": "Reflection Lakes, Pinnacle Saddle and the scree traverse east to the Castle-Pinnacle col",
+    "season": "Roughly Jul-Sep for dry rock; the line is scrambled into June and October with snow on the approach",
+    "notes": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, or at the year-round Narada Falls lot when that road is snowed in. Take the signed Pinnacle Peak Trail from the south side of the road; it climbs steadily through forest and subalpine meadow for about 1.3 miles and 1,050 ft to the saddle at about 5,920 ft.\n\nFrom the saddle, do not climb Pinnacle. Traverse east across Pinnacle's south-facing scree and boulder field, holding roughly 6,000-6,200 ft, about another half mile of cross-country travel to the col between Pinnacle and The Castle.\n\nFrom the col, scramble onto Castle's south rib, make a short class-3 traverse onto the east flank, and follow the crack-chimney system up and right to a notch beside a natural rock horn. A brief exposed class 3-4 scramble along the summit crest reaches the true summit.\n\nStevens Canyon Road is gated and closed by snow roughly mid-October to late May or early June.",
+    "baseFinding": "TWO SADDLES, AND YOU WANT THE SECOND ONE. That is the whole approach problem and it is countable.\n\nThe maintained trail ends at PINNACLE SADDLE at about 5,920 ft — the notch between Pinnacle Peak and Plummer Peak. THAT IS NOT YOUR OBJECTIVE. From there you leave the trail and contour EAST across Pinnacle's south scree at 6,000-6,200 ft to a SECOND col, the one between Pinnacle and The Castle. The Castle's base is there.\n\nTHREE WAYS TO BE WRONG, AND EACH IS A DIFFERENT PEAK. Start climbing at the first saddle and you are on PINNACLE. Go west from the first saddle and you are heading for PLUMMER. Stop short on the traverse and you are on Pinnacle's south face rather than at the col.\n\nTHE BASE OF THE CLIMBING IS ONE FEATURE AND IT IS A HOLE, NOT A FACE: an OBVIOUS CRACK-CHIMNEY SYSTEM on the southeast and east flank, gained after a short class-3 traverse off the south rib. If you are on open face with no continuous crack to follow, you are off it — the easy-5th line is in the chimney.\n\nCONFIRMATION AT THE TOP OF THE PITCH, AND IT IS WORTH FINDING DELIBERATELY ON THE WAY UP BECAUSE YOU WILL WANT IT ON THE WAY DOWN: the chimney ends at a NOTCH BESIDE A NATURAL ROCK HORN. That horn is the rappel anchor. Carry your own webbing rather than trusting tat left there.\n\nTHE LAST NEGATIVE, AND IT COSTS PEOPLE THE SUMMIT: THE NOTCH IS NOT THE TOP. The true summit is the NORTHERNMOST block, reached by a short exposed scramble along the crest from the notch. If you have topped out of the chimney and stopped, you are one airy scramble short.",
+    "hazards": [
+     "Exposed, largely unprotected class 3-4 terrain along the summit ridge crest",
+     "A short 5th-class pitch with sparse natural protection",
+     "Loose volcanic rock on the approach scree traverse and off-route",
+     "Residual snow and ice on the shaded traverse into early summer",
+     "Rapid afternoon thunderstorm development typical of this range in summer"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_castle_peak_tatoosh_la_villa": {
+  "area": "wa_castle_peak_tatoosh",
+  "approach_variants": [
+   {
+    "name": "Reflection Lakes and the Pinnacle traverse to the taller summit spire",
+    "season": "Roughly Jul-Sep",
+    "notes": "The approach is shared with the standard Southeast Face: from Reflection Lakes at about 4,859 ft, take the Pinnacle Peak Trail 1.3 miles to the saddle, then contour east across Pinnacle's south scree to the base of Castle's southeast side, and scramble up broken third-class ground to reach the base of the summit block.\n\nThe climbing itself is short: about two-thirds of the pitch is easier ground, there is one solid cam placement, then three slabby crux moves, a jug pull, and easier climbing to a large belay ledge about 10 ft left of the true summit.\n\nFrom the belay ledge, traverse climber's right past the true summit to the heavily trafficked top-out shared with the Southeast Face, where slings are typically in place, and make a single short rappel back to the base of the technical section.\n\nStevens Canyon Road typically opens late May and closes with fall snowfall; Narada Falls is the winter and spring trailhead.",
+    "baseFinding": "SAME COL AND SAME BROKEN GROUND AS THE STANDARD ROUTE — SO THE DISCRIMINATOR IS NOT THE WALK IN, IT IS WHAT IS IN FRONT OF YOU AT THE FOOT OF THE SUMMIT BLOCK.\n\nTHIS ROUTE IS A DIHEDRAL ON THE TALLER OF THE SUMMIT SPIRES. THE STANDARD ROUTE IS A CRACK-CHIMNEY. So: A CORNER YOU STEM IS THIS ROUTE. A SLOT YOU GET INSIDE IS THE SOUTHEAST FACE. That single distinction separates a 5.7 with an 5.8 crux from an easy-5th scramble, and it is decided at the ground.\n\nTHE ORDERING WITHIN THE PITCH IS THE SECOND CONFIRMATION, AND IT IS COUNTABLE: roughly two-thirds of the pitch is easier climbing, THEN one good cam placement, THEN three slabby crux moves, THEN a jug pull, then easy ground to the ledge. IF THE HARD MOVES COME AT THE VERY START, YOU ARE NOT ON THIS ROUTE. The crux here is high on a short pitch, which is also why a fall from it has consequence — there are ledges below.\n\nTHE TOP-OUT TEST IS THE ONE THAT SETTLES IT AFTERWARDS: this pitch finishes on a LARGE BELAY LEDGE ABOUT 10 FT LEFT OF THE TRUE SUMMIT. Topping out level with the summit rather than on it is correct here. You then traverse climber's RIGHT, past the true summit, to reach the shared rappel station.\n\nSO THE NEGATIVE IS: IF YOU TOPPED OUT DIRECTLY AT A SLUNG HORN WITH OLD TAT ON IT, YOU CLIMBED THE STANDARD SOUTHEAST FACE. That horn is the shared descent anchor, not this route's finish.\n\nONE PRACTICAL FINDING FOR THE APPROACH SCRAMBLE ITSELF: the third-class ground below the block is exposed enough that a fall has real consequence. It is the part of this outing that is soloed by everyone and guarded by nobody.",
+    "hazards": [
+     "Exposed third-class scrambling with real fall potential just to reach the base of the pitch",
+     "A crux high on a short pitch, above ledges",
+     "Early-season snow and ice on the traverse from the saddle",
+     "Loose rock on the approach scramble and gully",
+     "Afternoon thunderstorms and exposure on the summit block and connecting ridge"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_scramble_route": {
+  "area": "wa_eagle_peak",
+  "approach_variants": [
+   {
+    "name": "Longmire, the Nisqually suspension bridge and the Eagle Peak Trail to the saddle",
+    "season": "Roughly Jul-Sep; the saddle can be corniced with lingering snow into June",
+    "notes": "The Eagle Peak trailhead is about 300 ft past the suspension bridge on the east side of the Nisqually River at Longmire, which is normally reachable year-round.\n\nThe maintained trail — about 7.2 miles round trip and nearly 3,000 ft of gain — climbs steeply through old-growth forest for roughly two miles to a stream crossing, continues about a mile to a meadow, then steepens over rocky ground for a final half mile to Eagle Peak Saddle at about 5,700-5,720 ft, where the maintained trail ends.\n\nThe saddle is exposed, with cliff edges that hold cornices into early summer. Everything above it is scrambling on a climbers' path.",
+    "baseFinding": "THE MAINTAINED TRAIL ENDS AT THE SADDLE, AND THE SADDLE IS NOT THE SUMMIT. Eagle Peak Saddle is about 5,700 ft; the summit is 5,958 ft, roughly a quarter mile east along the ridge. The trail ending is the start of the route, not the end of it.\n\nTHE BASE OF THE TECHNICAL GROUND IS A ROCK STEP WITH LOOSE HOLDS, reached by following the path EAST from the saddle. That step is class 4 and it is harder coming down than going up.\n\nTHE MOST USEFUL FINDING HERE IS ABOUT THE BYPASS, BECAUSE MOST PARTIES WANT IT AND IT IS BEHIND THEM BY THE TIME THEY NEED IT: GO LEFT 100 TO 200 FEET INTO A SHORT CLASS 3 GULLY, climb it to a ledge, and rejoin the main line at the TOP of the rock step. SO IF YOU ARE STANDING UNDER A LOOSE CLASS 4 STEP WONDERING WHETHER IT IS HARDER THAN ADVERTISED, YOU WALKED PAST THE BYPASS ONE TO TWO HUNDRED FEET BACK ON YOUR LEFT.\n\nTHE FALSE SUMMIT IS ON YOUR LEFT AND THE RULE IS SIMPLE: STAY RIGHT. If the high ground ahead of you is off to the left, that is the false summit, not the top.\n\nTHE RIDGE IS EXPOSED ON BOTH SIDES for the whole stretch above the saddle, on uneven ground. Ground that only falls away on one side means you are still on the approach path, not on the crest.\n\nAND ONE THING WORTH FIXING IN YOUR HEAD BEFORE YOU COMMIT, BECAUSE IT IS THE DESCENT THAT CATCHES PEOPLE: the crux step is harder downwards, with a blind foothold. Face outward, pivot right to face into the rock, then step down. Deciding that at the top of it in the rain is too late.",
+    "hazards": [
+     "Exposed terrain at the saddle with cliff edges and cornices into June — falls here are fatal",
+     "Loose holds on the class 4 rock step, which most parties should bypass",
+     "The crux step is harder to descend than to climb, with a blind foothold",
+     "Rockfall between parties on a narrow ridge",
+     "Steep meadow avalanche terrain in winter",
+     "Wet rock materially increases the scrambling difficulty"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_lane_peak_r1": {
+  "area": "wa_lane_peak",
+  "approach_variants": [
+   {
+    "name": "Reflection Lakes or Narada Falls, Tatoosh Creek and the debris apron under the north face",
+    "season": "Roughly Dec-Jun; most ascents are in winter and spring",
+    "notes": "Park at the Reflection Lakes pullout on Stevens Canyon Road when it is open, or at Narada Falls in winter and spring when the road is snow-gated — from Narada Falls a short steep climb of about 200 ft through open timber regains the road.\n\nWalk the road about half a mile to the 90-degree bend, then drop south through open forest toward Tatoosh Creek at about 4,500 ft. Rather than climbing right toward the south-face saddle, stay low and work into the basin directly below Lane Peak's north face.\n\nFrom the basin, hike up and across a large TRIANGULAR APRON of avalanche and rockfall debris fanning down from the base of the couloirs. From the top of that debris cone, angle climber's left and climb roughly 1,000 ft of couloir to a dead tree at a notch in the peak's east ridge, which marks the top of the technical climbing and the rappel point.\n\nRoughly 2 to 2.5 miles one-way with about 2,000 ft of gain to the notch, and no water past Tatoosh Creek. The basin and lower couloir cross avalanche terrain, so this is a start-early, read-the-forecast approach.",
+    "baseFinding": "LEFT TO RIGHT ON THIS FACE THE THREE COULOIRS ARE: LOVER'S LANE, THE ZIPPER, THE FLY. Learn that order before you leave the car. All three drop onto the same debris apron and on a busy weekend all three have parties on them at once, which means overhead hazard from other people as well as from the mountain.\n\nTHE ZIPPER IS THE MIDDLE ONE, AND IT IS THE ONE THAT LEANS LEFT AND SPLITS THE CENTRE OF THE FACE. From the top of the debris cone, angle CLIMBER'S LEFT. If you are working right, you are heading for the Fly.\n\nTHE STRONGEST TEST IS WIDTH, AND IT IS A THING YOU FEEL RATHER THAN SEE: THE ZIPPER NARROWS. About 40 ft wide at the base, closing to about 20 ft near the top. THE FLY IS BROAD — 40 to 50 ft — AND IT STAYS BROAD. If the walls are not closing in on you as you gain height, you are in the Fly, one couloir to your right, on easier ground than you came for.\n\nTHE SECOND TEST IS COUNTABLE AND IT IS THE ONE THAT SETTLES IT: THE ZIPPER HAS UP TO THREE SHORT STEPS — about 15 ft, then about 8 ft, then a 25 ft crux near the top. The Fly has none worth the name. IF YOU HAVE CLIMBED A THOUSAND FEET OF CONTINUOUS 45-DEGREE SNOW AND MET NO STEP AT ALL, YOU ARE NOT IN THE ZIPPER.\n\nTHE TOP-OUT IS AN OBJECT, WHICH IS THE BEST KIND OF CONFIRMATION: A DEAD TREE AT A NOTCH IN THE EAST RIDGE. That tree carries the fixed rappel slings. If you have topped out onto open ridge with no tree, you are on something else — Lover's Lane finishes on the ridge ABOVE this notch, and the Fly finishes at the west-ridge notch.\n\nWHAT THE ANGLE SHOULD DO: build from about 40 degrees to about 45 near the top. It does not exceed that. Ground steeper than 45 sustained means Lover's Lane, which reaches about 60.",
+    "hazards": [
+     "Avalanche terrain in the basin and lower couloir, with both loose-dry and wet-loose problems documented on this aspect",
+     "Overhead hazard from other parties — this face is busy on good winter weekends and all three couloirs get climbed at once",
+     "Variable ice and mixed conditions in the steps season to season",
+     "A rappel that is longer than a single 60 m rope doubled, and rope-snag potential on rock features",
+     "Short winter days leaving little margin for retreat",
+     "Rockfall and spindrift funnelling into the couloir from above"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_lane_peak_r2": {
+  "area": "wa_lane_peak",
+  "approach_variants": [
+   {
+    "name": "Reflection Lakes or Narada Falls to the debris apron, then the rightmost couloir",
+    "season": "Roughly Dec-Jun",
+    "notes": "Shared approach with the Zipper: from Reflection Lakes when the road is open, or from Narada Falls when it is gated, walk the road briefly and drop south into the basin toward Tatoosh Creek, then climb the debris triangle to the base of the couloir system. Roughly 2 miles with about 2,000 ft of gain; the approach usually takes 1.5 to 2 hours from the road to the couloir base.\n\nThe Fly is a broad couloir about 40 to 50 ft wide, predominantly snow at around 45 degrees, and is the easiest objective on the north face with fewer technical sections than the Zipper. The most efficient line follows the obvious broad gully, trending slightly right as you gain height.\n\nThe runout zone at the base is avalanche-prone, so stable snow is essential.\n\nFrom the top at the west-ridge notch, most parties continue round onto the South Face and descend the standard third and fourth class gully rather than reversing the couloir.",
+    "baseFinding": "LEFT TO RIGHT: LOVER'S LANE, THE ZIPPER, THE FLY. THE FLY IS THE RIGHTMOST, AND IT IS THE BROADEST.\n\nBREADTH IS THE TEST AND IT IS THE ONLY ONE YOU NEED AT THE BOTTOM: 40 to 50 ft wide, and IT STAYS THAT WIDE. IF THE COULOIR NARROWS TOWARD ABOUT 20 FT AND STARTS PUTTING SHORT ICE STEPS IN FRONT OF YOU, YOU ARE IN THE ZIPPER, ONE TO YOUR LEFT, ON HARDER GROUND THAN YOU CAME FOR.\n\nTHE SECOND TEST IS WHAT YOUR HANDS ARE DOING. This is the easiest line on the face — predominantly snow at about 45 degrees with no crux step. IF YOU ARE SWINGING TWO TOOLS INTO ICE, YOU ARE NOT ON THE FLY.\n\nTREND SLIGHTLY RIGHT AS YOU GAIN HEIGHT. That is the route's own shape, and drifting left at the base is exactly how parties end up in the Zipper.\n\nTHE TOP-OUT NAMES THE COULOIR RETROSPECTIVELY, WHICH IS WORTH KNOWING IF YOU HAD ANY DOUBT ON THE WAY UP: the Fly finishes at the WEST-RIDGE NOTCH. The Zipper finishes at a notch in the EAST ridge, at a DEAD TREE carrying rappel slings. If you topped out at a tree, you climbed the Zipper.\n\nA NEGATIVE THAT IS ABOUT PEOPLE RATHER THAN GROUND, AND IT IS SPECIFIC TO THIS FACE: on a good winter weekend all three couloirs carry parties at the same time, and a documented near-miss involved thirteen climbers and skiers spread across the three. Being able to see other parties is not confirmation you are in the right gully — it is a reason to watch what comes down.\n\nWHAT THE ANGLE SHOULD DO: about 40 to 45 degrees for the main gully, easing to 30-35 in the last few hundred feet to the ridge. It does not steepen near the top.",
+    "hazards": [
+     "An avalanche-prone runout zone at the base of the couloir",
+     "Overhead hazard from parties on the neighbouring couloirs and from rockfall out of the walls once the sun hits",
+     "Variable snow and ice conditions season to season",
+     "Short winter days",
+     "Wet-loose avalanche activity documented on the slopes below the peak"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_lane_peak_r3": {
+  "area": "wa_lane_peak",
+  "approach_variants": [
+   {
+    "name": "Narada Falls, under Denman Peak, and the first steep avalanche funnel",
+    "season": "Roughly Dec-May",
+    "notes": "Begin at the Narada Falls parking area, which is plowed and open year-round. Travel on skis or snowshoes along the closed Reflection Lakes road, then traverse steep hillsides under Denman Peak toward Lane Peak's base, turning sharply uphill at the first steep avalanche funnel to reach the base of the couloir.\n\nThe route is a north-facing couloir immediately climber's left of the Zipper, with two or three steeper ice and mixed sections needing screws or pickets, and an upper couloir that steepens to about 60 degrees before topping out on the ridge above the Zipper.\n\nFrom the top, the standard move is a rappel of more than 100 ft — a double rope is recommended — down into the adjacent Zipper couloir, then either downclimb the remaining Zipper snow or continue over to the standard South Face line and the Lane-Denman saddle.\n\nThe approach traverse is itself avalanche terrain.",
+    "baseFinding": "LEFT TO RIGHT: LOVER'S LANE, THE ZIPPER, THE FLY. THIS IS THE LEFTMOST — IMMEDIATELY CLIMBER'S LEFT OF THE ZIPPER.\n\nTHE APPROACH TEST IS A COUNT, AND IT IS THE ONE THAT WORKS ON A SKI TRACK IN THE DARK: traversing under DENMAN PEAK toward Lane's base, you turn sharply uphill AT THE FIRST STEEP AVALANCHE FUNNEL YOU MEET. FIRST, not second. IF YOU HAVE PASSED ONE FUNNEL AND CARRIED ON TO ANOTHER, YOU ARE AT THE ZIPPER.\n\nTHE CLIMBING TEST IS ANGLE, AND IT IS DECISIVE BECAUSE THIS ROUTE IS THE STEEPEST OF THE THREE: the upper couloir reaches about 60 degrees, with two or three steeper ice and mixed sections below it that want screws. IF NOTHING HAS EXCEEDED ABOUT 45 DEGREES, YOU ARE IN THE ZIPPER OR THE FLY.\n\nTHE TOP-OUT TEST IS THE DEFINITIVE ONE, AND IT IS UNIQUE TO THIS ROUTE: LOVER'S LANE FINISHES ON THE RIDGE ABOVE THE ZIPPER, AND THE STANDARD DESCENT IS A RAPPEL OF MORE THAN 100 FT FROM THAT RIDGE INTO THE ZIPPER ITSELF. SO IF YOU CAN LOOK DOWN INTO A NEIGHBOURING COULOIR FROM WHERE YOU TOPPED OUT, YOU ARE ON LOVER'S LANE. If instead you topped out at a DEAD TREE IN A NOTCH with slings on it, you climbed the Zipper.\n\nPLAN THE ROPE BEFORE YOU LEAVE THE CAR, BECAUSE THE TOP OF THIS ROUTE IS THE WRONG PLACE TO FIND OUT: the rappel is usually longer than 100 ft, so a single 70 m doubled will not reach cleanly in a normal year. Two ropes, or a very deliberate plan for downclimbing the first section.\n\nAND THE THING THAT MAKES THIS ROUTE'S DESCENT DIFFERENT FROM ITS NEIGHBOURS': you do not descend your own line. You rappel into somebody else's, which is a good reason to know where parties on the Zipper are before you pull the rope.",
+    "hazards": [
+     "Avalanche exposure on the approach traverse beneath Denman Peak",
+     "Steep sustained ice and mixed ground that can be harder than rated depending on conditions",
+     "A rappel that transfers the party into the adjacent Zipper couloir, with rockfall and rope-pull consequences for anyone below",
+     "A rappel usually longer than a single 70 m rope doubled",
+     "Short winter days on a north aspect"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_classic_route_3": {
+  "area": "wa_lane_peak",
+  "approach_variants": [
+   {
+    "name": "Tatoosh Creek, the timber band and the Lane-Denman saddle",
+    "season": "Roughly Jul-Sep",
+    "notes": "Start from the Reflection Lakes pullout on Stevens Canyon Road, open roughly late May through mid-October, or from Narada Falls when the road is gated — from Narada Falls a short steep climb of about 200 ft through open timber gains the road.\n\nWalk the road roughly half a mile to where it bends sharply and begins heading east. Leave the pavement there and drop south through sparse open forest to Tatoosh Creek at about 4,500 ft, losing a couple of hundred feet. Cross the creek — a rock-hop most of the season, more involved at peak snowmelt — and angle up a broad talus slope of about 250 vertical feet.\n\nAt the top of the talus, continue up through trees STAYING RIGHT of a short cliff band. Roughly 700 ft above the creek, near 5,200 ft, you break out of the trees onto open slopes and continue to the broad Lane-Denman saddle at about 5,440 ft.\n\nFrom the saddle, turn right and climb moderate open ground to the gully weakness in the southeast face. Follow it up, trending left near the top for a final short scramble to the summit. Round trip is a bit over 3 miles with roughly 1,400-1,500 ft of gain, and no water past Tatoosh Creek.",
+    "baseFinding": "THIS ROUTE IS ON THE OTHER SIDE OF THE MOUNTAIN FROM THE THREE COULOIRS, AND THE MISTAKE IT INVITES IS WALKING INTO THE NORTH-FACE BASIN WITH THE ICE CLIMBERS. The single clearest separator is Tatoosh Creek: THE COULOIR ROUTES STAY LOW IN THE BASIN. THIS ROUTE CROSSES THE CREEK AND CLIMBS THE OTHER SIDE.\n\nTHE SEQUENCE, EACH ITEM A CHECK, IN ORDER:\n1. Off the road at the 90-degree bend, south, down to Tatoosh Creek at about 4,500 ft. CROSS IT.\n2. Up a talus slope of about 250 vertical feet.\n3. Into trees, STAYING RIGHT OF A SHORT CLIFF BAND. This is the one place on the route where an error commits you to bad ground — the timber is brushy and drifting left cliffs you out. If you find yourself under rock in the trees, traverse back right before gaining more height.\n4. Break out of the trees about 700 ft above the creek, near 5,200 ft.\n5. Arrive at the broad LANE-DENMAN SADDLE at about 5,440 ft.\n\nTHE SADDLE TEST IS A COUNT OF PEAKS: you should have HIGH GROUND ON BOTH SIDES OF YOU — Lane on one hand, Denman on the other. A col with only one peak above it is not this saddle.\n\nFROM THE SADDLE, TURN RIGHT — WEST. DENMAN IS THE OTHER WAY, and it is an easy mistake in cloud because both directions climb.\n\nTHE BASE OF THE CLIMBING IS THE OBVIOUS GULLY WEAKNESS IN THE SOUTHEAST FACE, and it is the feature the route is named for. THE CONFIRMATION INSIDE IT IS AN OBJECT: a STURDY TREE roughly 200 ft up the climbing, which is the main anchor and the rappel point. Reaching a good tree in the gully means you are in the right gully.\n\nLAST: trend LEFT near the top for the final short scramble. Plentiful holds, minimal exposure — if it feels serious, you have drifted out of the gully onto the face.",
+    "hazards": [
+     "Cliffing out in the brushy timber band if the line drifts left of the cliff band",
+     "Loose rock and rockfall in the narrow summit gully, especially with parties above",
+     "Exposed fourth-class moves just below the true summit",
+     "Tatoosh Creek can be difficult during high spring runoff",
+     "Afternoon thunderstorms are common over this range in summer",
+     "Inconsistent glissade conditions in the gully once it melts out"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_southwest_scramble": {
+  "area": "wa_pinnacle_peak_tatoosh",
+  "approach_variants": [
+   {
+    "name": "Pinnacle Saddle, then east to the chute beside the western prominence",
+    "season": "Roughly Jul-Sep",
+    "notes": "From the signed Pinnacle Saddle trailhead on Stevens Canyon Road, across from the Reflection Lakes parking area, follow the maintained trail south. It switchbacks up through subalpine forest and meadow, passes beneath cliffs around 0.9 mile, and gains about 1,000-1,050 ft over 1.3 miles to the saddle at 5,920 ft between Pinnacle and Plummer.\n\nAt the saddle, leave the maintained tread and follow the unmaintained boot path roughly a quarter mile toward the western side of Pinnacle's south face, to the base of the obvious ascent chute.\n\nFrom there, hike and scramble a mix of scree and loose rock along or below the ridge on the most-travelled line to a chute east of the western prominence. The chute climbs on increasingly steep, exposed but better-cleaned rock to top out near the summit.\n\nStevens Canyon Road is gated in winter and spring, typically opening around late May and closing at the first significant snowfall.",
+    "baseFinding": "FROM PINNACLE SADDLE YOU GO EAST. PLUMMER PEAK IS WEST, AND THE BOOT PATHS FORK AT THE SADDLE, SO THIS IS A DECISION AND NOT A DEFAULT.\n\nTHE BASE IS DEFINED BY TWO OBJECTS AND THE RELATIONSHIP BETWEEN THEM: A WESTERN PROMINENCE, AND AN OBVIOUS CHUTE IMMEDIATELY EAST OF IT. About a quarter mile of boot path from the saddle. If you cannot identify a prominence, you cannot identify the chute — go on until you can see one, rather than starting up the first weakness.\n\nTHE POSITIVE TEST IS COUNTER-INTUITIVE, WHICH IS WHY IT IS WORTH CARRYING: THE CORRECT CHUTE GETS BETTER AS IT GETS STEEPER. The lower approach is scree and choss; the chute itself is progressively steeper AND progressively better-cleaned rock. SO IF THE ROCK IS GETTING LOOSER AS YOU CLIMB, YOU ARE IN THE WRONG GULLY. That is the reverse of what most loose volcanic scrambles do, and it is the most reliable signal on this route.\n\nSTAY ON THE MOST-TRAVELLED LINE ON THE APPROACH SCREE. There are multiple possible lines; the worst loose rock is off the beaten one.\n\nA CLEAN NEGATIVE ABOUT HARDWARE: THERE IS NO FIXED PROTECTION ANYWHERE ON THIS ROUTE. Only natural options exist — a few horns and trees near the top that can be slung. IF YOU FIND BOLTS, A PITON, OR A FIXED STATION, YOU ARE ON ONE OF THE PEAK'S ROPED LINES, NOT ON THE SCRAMBLE. The East Ridge, in particular, has an old piton and a fixed rappel anchor.\n\nDOWNCLIMB PLANNING AS PART OF THE FINDING: the class 4 section is more hazardous in descent than ascent because the rock is loose. Parties who intend to back off do it with an improvised sling on a horn or a tree near the top — worth spotting one on the way up.",
+    "hazards": [
+     "Loose rock and choss on the scree approach and lower chute",
+     "No fixed protection on the class 4 section; only natural horns and trees near the top",
+     "Increasing exposure in the upper chute as the rock steepens",
+     "Loose rock is more dangerous descending than ascending",
+     "Afternoon thunderstorms on a fully exposed south face"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_east_ridge_8": {
+  "area": "wa_pinnacle_peak_tatoosh",
+  "approach_variants": [
+   {
+    "name": "Pinnacle Saddle, then east behind Pinnacle to the Castle-Pinnacle col",
+    "season": "Roughly Jul-Sep",
+    "notes": "From the Reflection Lakes trailhead, follow the maintained Pinnacle Saddle Trail 1.3 miles and about 1,000-1,050 ft to the Pinnacle-Plummer saddle. From there, continue on unmaintained boot path east and behind Pinnacle toward Castle Peak to reach the Castle-Pinnacle col. Trip reports put that segment at roughly 2 to 3 hours and about 1,500 ft of gain.\n\nThe east ridge rises directly from the col. Pitch 1 scrambles mostly fourth-class ground to a belay ledge at a large dead tree. Pitch 2 is the crux: blocky mid-fifth climbing with an exposed traverse to a sandy belay bench carrying a fixed rappel anchor down the south face. Pitch 3 is mellow ground to the true summit, often simul-climbed or soloed.\n\nLoose rock and scree are a serious and repeatedly noted concern throughout.\n\nDescent is either the rappel off the pitch-2 bench down the south face, or over the summit and down the standard south-side scramble to Pinnacle Saddle — the second is only sensible if the leader already knows that line.",
+    "baseFinding": "THE BASE IS THE CASTLE-PINNACLE COL, NOT PINNACLE SADDLE, AND THE TWO ARE HALF A MILE AND ONE PEAK APART. The maintained trail ends at the saddle; you keep going EAST, on boot path, behind Pinnacle, toward The Castle.\n\nWHEN YOU ARE AT THE COL YOU CANNOT MISS THE ROUTE: THE EAST RIDGE RISES DIRECTLY FROM IT. If you are at a col and no defined ridge crest goes up from it toward Pinnacle, you are at the wrong col.\n\nTHE CONFIRMATIONS ARE OBJECTS, IN ORDER, AND EACH IS ONE OF A KIND ON THIS ROUTE:\nPITCH 1 — mostly fourth-class scrambling ending at a belay ledge AT A LARGE DEAD TREE. One tree, one ledge. If you have run out a full pitch and found no tree, you are not on the ridge.\nPITCH 2 — blocky mid-fifth climbing with an exposed traverse, an OLD PITON partway up, ending on a SANDY BELAY BENCH with a FIXED RAPPEL ANCHOR dropping the south face. Piton, then sand, then an anchor, in that order. Treat the piton as a backup clip and not as protection.\nPITCH 3 — mellow ground to the true summit.\n\nTHE NEGATIVE THAT MATTERS AT THE COL, BECAUSE TWO PEAKS SHARE IT: The Castle's own route also starts here. IF WHAT IS IN FRONT OF YOU IS A CRACK-CHIMNEY SYSTEM ON A ROCK FLANK RATHER THAN A DEFINED RIDGE CREST, YOU ARE FACING THE CASTLE AND YOU NEED TO TURN AROUND — Pinnacle is the other side of the col.\n\nTHE SECOND NEGATIVE, FOR PARTIES WHO CAME UP THE PEAK'S OTHER LINE BEFORE: this route does not start from Pinnacle Saddle and does not touch the south-face chute. If you are on scree below the south face you are on the scramble route.\n\nROPE PLANNING AS PART OF THE FINDING: the rappel off the pitch-2 bench is rope-stretching, and a 60 m rope may not reach the ground depending on where the anchor sits. Know that before you commit to it as your descent.",
+    "hazards": [
+     "Loose rock and scree throughout — a serious and repeatedly noted concern on this route",
+     "An old, unreliable piton at the pitch-2 crux traverse",
+     "A rope-stretching rappel that a 60 m rope may not complete",
+     "Exposure on the pitch-2 traverse with sparse natural protection",
+     "Rockfall onto the col and onto anyone approaching The Castle from the same place"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_pinnacle_peak_tatoosh_r1": {
+  "area": "wa_pinnacle_peak_tatoosh",
+  "approach_variants": [
+   {
+    "name": "Pinnacle Saddle and the south gully",
+    "season": "Roughly Jul-Sep; snow or verglas can linger in the gully into July in a cold year",
+    "notes": "From the Pinnacle Peak trailhead — a signed unnumbered trail directly across Stevens Canyon Road from the Reflection Lakes pullouts at about 4,860 ft — the maintained trail climbs at a steady, fairly steep grade through sparse subalpine forest. Around half a mile you get the first partial view of Rainier through the trees, then the trail switchbacks up through meadow. At about 1.25-1.3 miles and roughly 1,000-1,050 ft you top out at Pinnacle Saddle near 5,900-5,920 ft, where the maintained trail ends and the view opens south.\n\nCarry water from the car; there is no reliable source on the trail or in the gully except lingering snowmelt early in the season.\n\nPast the saddle the route becomes an unmaintained climbers' path. The rock is old, variable-quality lava flow — solid in places and rotten in others — so test holds and watch for loose blocks with parties above or below.\n\nThis is a fully exposed ridge with quick-building afternoon thunderstorms in summer; plan to be off the summit by early afternoon.",
+    "baseFinding": "FROM PINNACLE SADDLE, THE PEAK IS EAST. Pinnacle is the peak east of the saddle and Plummer is the peak west of it, and the boot paths fork there. GOING WEST FROM THE SADDLE PUTS YOU ON PLUMMER — a different summit, and a party can climb it believing it is this one.\n\nSO: CONTOUR OR SCRAMBLE EAST into the gully system on the south and southeast face.\n\nTHE SEQUENCE INSIDE THE GULLY IS WHAT TELLS YOU IT IS THE RIGHT ONE, AND ONE ITEM IN IT IS UNEXPECTED ENOUGH TO BE A REAL TEST: it starts as class 2 scree and blocky steps, steepens into sustained class 3 with real exposure over its upper third, THEN WORKS THROUGH A BAND OF TREES, then a final short scramble to the summit block. TREES HIGH IN THE GULLY ARE THE CONFIRMATION. A gully with no tree band in it is not this one.\n\nMULTIPLE GULLY LINES EXIST HERE, AND THE CORRECT ONE IS THE MOST TRAVELLED. The negative is tactile: if you are dislodging blocks with every step, you are off the beaten line. Loose rock is worst away from it.\n\nTHE EARLY-SEASON NEGATIVE IS A TURN-AROUND, NOT A ROUTE-FINDING PROBLEM, AND IT IS WORTH STATING PLAINLY: snow or verglas in this gully turns easy scrambling into a slip you cannot stop, on ground with no protection. That is the condition to go home on rather than to push through with an axe you are not going to be able to use in a chimney.\n\nONE MORE THING AT THE SADDLE THAT IS NOT A NAVIGATION MARKER BUT WILL BE THE FIRST THING YOU MEET: mountain goats here are habituated and come for the salt. They are not a sign you are on route.",
+    "hazards": [
+     "Loose, unstable rock through the south-facing summit gully",
+     "Steep dropoffs and exposure on sections of the maintained trail itself, not only above the saddle",
+     "Snow lingering in the summit gully into early or mid summer after the trail has melted out",
+     "Rockfall onto parties below on a heavily travelled line",
+     "Sudden afternoon thunderstorms on an exposed south Cascades ridge",
+     "No water anywhere on the trail or the scramble"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_plummer_peak_r1": {
+  "area": "wa_plummer_peak",
+  "approach_variants": [
+   {
+    "name": "Pinnacle Saddle, the tarn shelf and the north slopes",
+    "season": "Roughly Jul-Oct; a snowfield often crosses the boot path near the saddle into July",
+    "notes": "Park at the Reflection Lakes pullouts on Stevens Canyon Road. The signed Pinnacle Peak Trail leaves the south side of the road, directly across from the largest of the lakes.\n\nThe trail climbs moderately through mountain hemlock and Alaska yellow cedar for the first half-mile; around 0.5 mile you get a first partial view of Rainier, and at about 0.6 mile you cross a seasonal cascading creek — the only reliable water on the hike, and dry by late summer in a low-snow year. By 0.7 mile it breaks into open talus and heather below Pinnacle's cliffs and steepens noticeably. Lingering snow on these shaded north-facing switchbacks is the trail's main hazard, since a slip on hard morning snow above the talus can slide a hiker into rock. Around 0.9-1.0 mile the trail passes beneath the cliff bands on Pinnacle's north face, then switchbacks up a short exposed final pitch to Pinnacle Saddle at about 1.25-1.3 miles and roughly 5,920-5,960 ft.\n\nThe saddle is the trail's official end and the junction where unmaintained paths fork east toward Denman and The Castle and west toward Plummer.\n\nStevens Canyon Road is open roughly late May through late October and the small trailhead lot commonly fills by mid-morning on summer weekends.",
+    "baseFinding": "FROM PINNACLE SADDLE, PLUMMER IS WEST — the opposite direction from Pinnacle, and the paths fork right there.\n\nBUT THE SADDLE IS NOT THE DECISION POINT. THE TARN IS. Here is the sequence, and the middle item is the whole route-finding problem:\n1. Continue a short distance PAST the saddle and look for a climbers' path branching RIGHT, west.\n2. It crosses a FLAT ROCKY SHELF HOLDING A SEASONAL TARN. The tarn is the marker.\n3. AT THAT SHELF A FORK CONTINUES STRAIGHT TOWARD DENMAN PEAK. DO NOT TAKE IT. BEAR LEFT, south and uphill, onto the boot path climbing Plummer's open rocky north slopes.\n\nSO THE ENTIRE PROBLEM REDUCES TO ONE SENTENCE: AT THE TARN, STRAIGHT IS DENMAN AND LEFT IS PLUMMER.\n\nTHE NEGATIVE IS A MOTION TEST AND IT WORKS WITHOUT SEEING ANYTHING: IF YOU ARE STILL WALKING LEVEL, OR LOSING HEIGHT, YOU ARE ON THE DENMAN FORK. Plummer's path climbs from the tarn.\n\nTHE BASE OF THE HANDS-ON GROUND: the last few hundred feet is class 2-3 with a couple of short hands-on steps, and A FEW WELL-PLACED TREES AID THE FINAL MOVES. Trees on a summit slope at this height are unusual enough to be a confirmation.\n\nTHE SUMMIT IS SMALL AND THAT IS THE LAST CHECK — roughly 50 by 15 ft. If you are standing on a broad top, you are on the shoulder below it.\n\nEARLY-SEASON DETAIL THAT IS A REAL FORK RATHER THAN A CAUTION: a snowfield often crosses the boot path near the saddle into July. Either kick steps straight up it or skirt LEFT onto the rockier tread. Both rejoin near the top, so neither choice loses the route.",
+    "hazards": [
+     "Lingering snowfield on the steep shaded switchbacks below the saddle, icy in early morning — the most common problem spot",
+     "Steep, eroded, loose tread and exposed traverse sections on the upper approach trail",
+     "Afternoon thunderstorms and lightning on an exposed ridge and saddle with no shelter above treeline",
+     "Loose rock and thin tread on the final scramble, which feels more exposed descending",
+     "Winter avalanche terrain on the peak's slopes",
+     "No water past the seasonal creek low on the trail"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_unicorn_peak_r1": {
+  "area": "wa_unicorn_peak",
+  "approach_variants": [
+   {
+    "name": "Snow Lake, the northwest gully and Unicorn Col to the summit horn",
+    "season": "Roughly Jun-Sep; the approach gully holds firm snow through much of July",
+    "notes": "Start at the Snow Lake trailhead on Stevens Canyon Road, about 1.5 miles east of Reflection Lakes. The lot holds only about 25 cars and fills by mid-morning on summer weekends.\n\nFollow the maintained Snow Lake Trail through subalpine forest and meadow, past the Bench Lake junction, to Snow Lake at about 1.3-1.5 miles — the last reliable water. Skirt the lake's west and north shore, then leave the maintained tread where a climbers' path breaks off and climbs a steep drainage about half a mile into the large open bowl on Unicorn's northwest side, shared with Foss and West Unicorn.\n\nThe basin is loose talus and scree; through much of July the gully above the lake can still hold firm snow, so carry an axe and, in early season, crampons.\n\nFrom the basin, climb to the saddle on the peak's west side, then traverse and scramble east and around to approach the summit pinnacle from its south side — sustained class 2-3 on talus and blocky rock. About 2.4 miles one-way and 2,397 ft of gain to the base of the summit block, where the roped climbing starts.",
+    "baseFinding": "THE HORN IS THE POINT AND THE COL IS NOT. Unicorn Col, the saddle just west of the summit at about 6,400 ft, is where the route-finding stops feeling hard — but the summit is still a traverse away, EAST, and around onto the SOUTH side.\n\nTHE TEST AT THE COL IS A SHAPE: the summit block is a FREE-STANDING 50 TO 70 FT HORN, the thing the peak is named for. IF NOTHING IN FRONT OF YOU LOOKS LIKE A DETACHED TOWER, YOU HAVE NOT COME FAR ENOUGH EAST.\n\nTHE APPROACH NEGATIVE IS IN THE GULLY AND IT IS THE ONE THAT PUTS PARTIES ON BAD GROUND: aim for the MAIN gully out of the basin above Snow Lake, and AVOID THE STEEP HEADWALLS TO ITS LEFT. If the ground ahead gets steep and rocky rather than staying a talus or snow chute, you have drifted left. Go back down and across rather than pressing up.\n\nTHE TRAVERSE NEGATIVE IS ABOUT HEIGHT, NOT DIRECTION: the correct use trail traverses BELOW the cliffs on the south side, and it is easier travel than the loose scree above and below it. If you are scrambling up onto the ridge crest instead of contouring underneath it, you are above the path and on worse rock.\n\nAND THE THING THAT MATTERS MOST AT THE FOOT OF THE HORN: THREE SEPARATE LINES START WITHIN ABOUT 70 FT OF EACH OTHER THERE, and they run from easy fifth class to 5.6. LEFT TO RIGHT THEY ARE: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. All three finish at the same slung block, so the only place to get this right is at the bottom. Know which one you came for before you rope up.\n\nDESCENT FINDING, DECIDED BEFORE YOU START UP: most parties rappel the horn rather than downclimb it — a single-rope rappel of about 50 ft down the south side. The traditional anchor is an aging tree at the top of the block; many parties instead sling the rock horn on the south side, which carries slings and rings left by others. Both are climber-built and neither is maintained: inspect and back up before weighting anything. There are two rappel lines off that horn and they land in different places, so confirm which you are on.",
+    "hazards": [
+     "Loose talus and scree below the west saddle once the approach gully melts out, usually mid-to-late July",
+     "Wet-slide and cornice hazard in the northwest gully and bowl in late spring, with documented slide paths off the cliffs above Snow Lake",
+     "An exposed step near the top of the summit horn with real air below on the east side",
+     "Climber-built rappel anchors of uncertain age, including a tree reported as no longer sound",
+     "Afternoon thunderstorms in summer and unreliable cell coverage"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_classic_route_2": {
+  "area": "wa_unicorn_peak",
+  "approach_variants": [
+   {
+    "name": "Snow Lake and Unicorn Col to the middle line on the summit horn",
+    "season": "Roughly Jun-Sep",
+    "notes": "Shared approach with the peak's other summit-block lines: from the Snow Lake trailhead, take the maintained Snow Lake Trail about a mile and roughly 700 ft to Snow Lake, the last water. Skirt the west and north shore; the tread continues a short way over a tree-covered rise before petering out into talus.\n\nWork up and right toward the obvious talus and dirt gully on the peak's northwest side; a climbers' path picks up again on a heather bench near the top of the gully. Follow it into the basin, then climb moraine along the left side of the small permanent snow patch to Unicorn Col just west of the summit. A climbers' path traverses below the cliffs — easier travel than the scree either side — and leads east around the south side to the base of the summit horn.\n\nThe climb itself is a single pitch of blocky low-fifth-class climbing, about 40-50 ft, on the south and southeast face, with one fixed piton mid-pitch.\n\nRoughly 2.5-3 miles one-way and about 2,400 ft of gain.",
+    "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. All three start within about 70 ft of each other and all three finish at the same slung block, so the BOTTOM is the only place this can be got right.\n\nTHE CLASSIC ROUTE IS THE MIDDLE ONE, AND IT TAKES THE SOUTH AND SOUTHEAST FACE DIRECT — blocky low-fifth climbing straight up, one pitch of about 40-50 ft, with ONE FIXED PITON MID-PITCH. A piton at half height on open face is the positive confirmation.\n\nTHE DISTANCE TEST IS THE PRACTICAL ONE AND IT WORKS BY FEEL RATHER THAN BY SIGHT:\n  — THE ROOF STARTS ABOUT 20 FT TO YOUR LEFT, at the point where the RIDGELINE MEETS THE BLOCK.\n  — OPEN BOOK STARTS ABOUT 50 FT TO YOUR RIGHT, at TWO WIDE, LEFT-LEANING CRACKS.\n\nSO THE TWO NEGATIVES ARE TACTILE, WHICH IS WHAT YOU WANT WHEN THE HORN IS IN CLOUD: IF YOU ARE FIGHTING A WIDE AWKWARD CRACK THAT WANTS BIG CAMS, YOU HAVE WALKED PAST THIS ROUTE TO THE RIGHT AND YOU ARE ON OPEN BOOK. IF THERE IS A ROOF OVER YOUR HEAD AND YOU ARE IN A GULLY OR CHIMNEY, YOU HAVE GONE LEFT PAST IT AND YOU ARE ON THE ROOF, at 5.6.\n\nCHARACTER TEST: this is blocky face and crack climbing on the OPEN face. Not inside a chimney, not in a wide crack. If you are inside anything, you are on a neighbour.\n\nWHY IT MATTERS: this is the middle grade of the three — 5.4, against Open Book's easy fifth and The Roof's 5.6. Being one line out changes the grade in whichever direction you drifted, on a short pitch above broken ground.\n\nDESCENT DETAIL WORTH SETTLING AT THE TOP RATHER THAN OVER THE EDGE: there are effectively two rappel lines off the summit block, one dropping to the notch and the ground below the horn, the other landing on the snow patch side. A 30 m rope has been reported as just short depending on which one you use and on how open the moat is late season; 40 m removes the guesswork. Use the ROCK HORN — the old bleached snag some older reports mention is no longer sound.",
+    "hazards": [
+     "Loose blocks on the approach scramble to the base of the horn",
+     "A short exposed pitch above broken ground where a fall has real consequence",
+     "A rappel that may not reach the ground on a 30 m rope, particularly with an open moat late season",
+     "An old bleached snag at the top that is no longer a sound anchor",
+     "Two different rappel lines off the same block landing in different places"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_open_book_2": {
+  "area": "wa_unicorn_peak",
+  "approach_variants": [
+   {
+    "name": "Snow Lake and Unicorn Col to the rightmost line on the summit horn",
+    "season": "Roughly Jun-Sep",
+    "notes": "Identical approach to the peak's other summit-block lines: from the Snow Lake trailhead, the maintained trail about a mile and roughly 700 ft to Snow Lake, the last water. Past the lake the tread fades over a wooded rise; work up and right into the talus and dirt gully on the northwest side, where a climbers' path reappears on a heather bench near the top and leads into the basin beneath the summit block. Ascend moraine along the edge of the small basin snowfield to Unicorn Col, then follow the traversing use trail below the cliffs on the south side to the base of the horn.\n\nThis route takes the east-facing side of the pinnacle rather than the south face direct, and it is the easiest of the three summit-block lines — a step down from the Classic Route and well below The Roof.\n\nRoughly 2.5-3 miles one-way with about 2,400 ft of gain, mostly on climbers' path and talus once past Snow Lake.",
+    "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. OPEN BOOK IS THE RIGHTMOST AND THE EASIEST.\n\nTHE POSITIVE TEST IS UNMISTAKABLE AND IT IS A COUNT: TWO WIDE, LEFT-LEANING CRACKS, ABOUT 50 FT RIGHT OF THE CLASSIC ROUTE'S BASE. Two of them, wide, leaning left. From there the line climbs up and LEFT toward the anchor shared with the other routes.\n\nTHE NEGATIVE IS ABOUT CRACK WIDTH AND YOU FEEL IT IN THE FIRST FEW MOVES, WHICH IS EXACTLY WHEN YOU WANT TO KNOW: IF THE CRACK TAKES YOUR FINGERS AND HANDS COMFORTABLY, YOU ARE ON THE CLASSIC ROUTE, 50 FT TO YOUR LEFT, AT 5.4. Open Book's cracks are wide and awkward and want large cams — that awkwardness is the route, not a sign you are off it.\n\nTHE SECOND NEGATIVE IS OVERHEAD: IF THERE IS A ROOF ABOVE YOU, YOU HAVE WALKED THE ENTIRE WIDTH OF THE BLOCK AND YOU ARE ON THE ROOF AT 5.6 — the hardest of the three and the far left end of the list.\n\nORIENTATION TEST: this line is on the EAST-FACING side of the pinnacle. The Classic Route goes straight up the SOUTH face. If you are directly beneath the south face looking up at blocky ground with a piton visible at half height, you are one line to the left of here.\n\nDESCENT: the same shared anchor as the other two — the large rock horn on the south side, about 40-50 ft above the notch. AVOID THE OLD DEAD SNAG some older reports mention; it is no longer trustworthy. A 30 m rope has been found marginal or short depending on which of the two rappel lines you take off the horn, so 40 m removes the doubt. Downclimbing this line is viable given the grade, but it is still exposed near the top.",
+    "hazards": [
+     "Wide-crack climbing that is awkward and poorly protected without large cams",
+     "Loose rock in the gully and chimney terrain around the summit tower",
+     "Loose talus and scree below the west saddle once the approach gully melts out",
+     "An exposed step near the top of the horn with real air below on the east side",
+     "A 30 m rope that may not reach on one of the two rappel lines"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_the_roof": {
+  "area": "wa_unicorn_peak",
+  "approach_variants": [
+   {
+    "name": "Snow Lake and Unicorn Col to the leftmost line on the summit horn",
+    "season": "Roughly Jun-Sep",
+    "notes": "Same approach as the other summit-block lines: from the Snow Lake trailhead, the maintained trail about a mile and roughly 700 ft to Snow Lake for the last reliable water. Past the lake the tread fades over a wooded hump; contour up and right into the obvious northwest talus and dirt gully, where a heather-bench climbers' path reappears near the top and drops you into the basin under the peak. Climb the moraine beside the small basin snowfield to Unicorn Col, then follow the traversing use trail below the summit cliffs on the south side to the base of the horn — roughly 2.5-3 miles one-way and about 2,400 ft of gain.\n\nThis is the hardest and most exposed of the three summit-block lines, following a steeper and more sustained line than either neighbour, with an old piton at about half height.\n\nCarry a double-length runner or a cordelette. The top anchor for this line sits set back from the edge, so the rappel power-point has to be extended out to the lip to keep the rope running cleanly over the roof feature.",
+    "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. THE ROOF IS THE LEFTMOST AND THE HARDEST.\n\nTHE POSITIVE TEST IS A JUNCTION RATHER THAN A CRACK, WHICH IS WHY IT IS EASY TO FIND IN POOR LIGHT: IT STARTS ABOUT 20 FT LEFT OF THE CLASSIC ROUTE, AT THE POINT WHERE THE RIDGELINE MEETS THE SUMMIT BLOCK. Ridge into block — that meeting point is the marker.\n\nTHE FEATURE ITSELF IS THE SECOND CONFIRMATION AND IT IS OVERHEAD: A WIDE GULLY OR CHIMNEY RUNNING BENEATH A ROOF. You climb the gully, then STEP RIGHT UNDER THE ROOF onto a ledge, then up to the belay. IF THERE IS NO ROOF ABOVE YOU, YOU ARE NOT ON THIS ROUTE. There is an old piton at about half height.\n\nTHE TWO NEGATIVES, BOTH TO YOUR RIGHT:\n  — 20 FT RIGHT, blocky climbing straight up the open south face with a piton mid-pitch, and no roof: that is the CLASSIC ROUTE at 5.4.\n  — 70 FT RIGHT, two wide left-leaning cracks: that is OPEN BOOK at easy fifth.\nSo every way of being wrong here makes the climbing EASIER, not harder — which is the safer direction, but it also means nothing about the ground will warn you that you missed the route you came for.\n\nGRADE AS A CHECK: 5.6, noticeably burlier than the Classic Route's corner and well above Open Book. If it feels like the easiest thing on the block, you are not on it.\n\nAND THE ONE PIECE OF DESCENT PLANNING THAT HAS TO HAPPEN BEFORE YOU LEAVE THE GROUND: the top anchor for this line is SET BACK FROM THE EDGE. Extend it with a cordelette or long sling so the rope runs over the lip rather than dragging on the roof. Most parties rappel this line even if they downclimbed elsewhere on the peak, because reversing it is considerably more exposed than reversing its neighbours. A single-rope rappel of roughly 40-50 ft; 30 m has been reported marginal depending on which of the two lines off the horn you use, so 40 m removes the guesswork. Use the rock horn, not the retired snag.",
+    "hazards": [
+     "Loose rock reported in the gully and chimney section",
+     "The steepest and most exposed of the three summit-block lines, and awkward to reverse",
+     "A top anchor set back from the edge, which drags the rope over the roof unless extended",
+     "An old piton at half height that should not be treated as protection",
+     "A 30 m rope that may not reach on one of the two rappel lines"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_fantasy_falls": {
+  "area": "wa_unicorn_peak",
+  "approach_variants": [
+   {
+    "name": "Bench Lake and Snow Lake into the Unicorn Creek cirque, beneath the northwest face",
+    "season": "Roughly Dec-Mar, and only in a year when it forms at all",
+    "notes": "Drive Stevens Canyon Road to the Bench Lake and Snow Lake trailhead, on the south side of the road about 1.5 miles east of the Reflection Lakes parking area. From the trailhead near 4,550 ft, follow the trail 0.75 mile to Bench Lake, then a further half mile to Snow Lake at 4,685 ft, which sits in a glacial cirque directly below the peak.\n\nFrom the lake, continue up the Unicorn Creek drainage south and east into the upper cirque to the base of the northwest face. Roughly 1.5 to 2 miles and about 1,500 ft of gain from the car to the base of the ice.\n\nIn winter, when Stevens Canyon Road is gated, add about 3 miles of unplowed road from Narada Falls; one spring party on skis reported four hours from the car to the base of the climbing.\n\nThere are no fixed anchors on the face. Retreat means threads you build.",
+    "baseFinding": "THIS ROUTE IS ON THE OPPOSITE SIDE OF THE PEAK FROM EVERY OTHER ROUTE HERE, AND THAT IS THE FIRST AND CLEAREST FINDING. The summit-block lines are approached round to the SOUTH side via Unicorn Col. THIS ONE CLIMBS THE NORTHWEST FACE DIRECTLY OUT OF THE SNOW LAKE CIRQUE — you never go to the col at all. If you are traversing under cliffs on the south side of the peak, you are on the wrong side of the mountain for this climb.\n\nTHE APPROACH IS COUNTABLE AND ENTIRELY ON KNOWN GROUND: Bench Lake at about 0.75 mile, Snow Lake at 4,685 ft at about 1.25 miles, then up the Unicorn Creek drainage south and east into the upper cirque. SNOW LAKE SITS DIRECTLY BELOW THE FACE — the wall you are looking at from the lake is the wall you climb. There is no second cirque to confuse it with.\n\nTHE STRONGEST TEST IS THE ICE ITSELF, AND IT IS A GO OR NO-GO RATHER THAN A NAVIGATION AID: PITCH ONE IS SUSTAINED VERTICAL ICE. IF WHAT IS IN FRONT OF YOU IS 50-DEGREE SNOW, EITHER YOU ARE NOT AT THE ROUTE OR IT HAS NOT FORMED THIS YEAR. This climb does not always form, and there is nothing fixed to rappel off if you go up and find that out at half height.\n\nTHE SEQUENCE ABOVE CONFIRMS IT, IN ORDER: vertical ice, then about 50-degree ice, then steep rime and choss to the summit. If the climbing eases early and STAYS eased, you are on a snow line and not on this.\n\nAND THE THING THAT MAKES THIS COMMITTING RATHER THAN MERELY HARD: IT FINISHES ON THE SUMMIT. There is no walk-off from the top of the face. You rappel the summit block — about 50 ft, off the slung block on the south side rather than the retired snag — then downclimb the class 3 south slope and ridge WEST to the col at about 6,605 ft between Unicorn and West Unicorn, drop north into the basin, and follow it back to Snow Lake. In winter that descent is a serious undertaking on its own: the basin and gully are avalanche terrain, the col can be corniced, and you will likely be doing it in fading light. Know that ground before you start up it in the dark.",
+    "hazards": [
+     "The route does not form every year, and there are no fixed anchors on the face — retreat means V-threads",
+     "Rime and choss on the upper pitch",
+     "A committing descent off the summit in winter, through avalanche terrain in the basin and gully, often in fading light",
+     "A corniced col on the descent between Unicorn and West Unicorn",
+     "A cold, exposed northwest aspect with a long unplowed road walk when the highway is gated"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "_SKIPPED": {
+  "_note": "Four routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason is a statement about what the row IS, not about effort.",
+  "wa_liberty_cap_liberty_ridge_finish": "DUPLICATE ROW. This and wa_mount_rainier_liberty_ridge describe the same climb — Liberty Ridge, from White River over St Elmo Pass to the Carbon, finishing at Liberty Cap. Same high point (14,112 ft), gain within 8 ft of each other (9,700 vs 9,708), same trailhead, same first ascent party in 1935. Liberty Ridge has no variant that stops anywhere but Liberty Cap, so there is no second climb here for a second row to describe. The Rainier-filed row ALREADY CARRIES a variant with a base finding ('the base is the toe of the ridge on the Carbon Glacier, and the whole approach is a sequence of things you must leave'), and writing a second one would put two approaches and two base findings on one climb. See _DEFECTS.",
+  "wa_liberty_cap_ptarmigan_ridge_finish": "DUPLICATE ROW, same shape as the one above. This and wa_mount_rainier_ptarmigan_ridge both describe Ptarmigan Ridge finishing at Liberty Cap, same 14,112 ft high point, same 1935 first ascent by Bauer and Hossack. The Rainier-filed row already carries TWO variants — one from Mowich Lake and Spray Park, one from White River via St Elmo Pass — which are exactly the two approaches this row's own prose names. Nothing is left to say that is not already said on a row a climber is more likely to open. See _DEFECTS.",
+  "wa_little_tahoma_east_shoulder": "DUPLICATE ROW. This and wa_frying_pan_whitman_glaciers are the same climb under two names — Little Tahoma's standard line, which guidebooks call the East Shoulder AND the Fryingpan/Whitman Glaciers route. The rows agree on every measurable field: same first ascent (Flett and Garrison, 29 August 1894), same gain (7,600 ft), same distance (11.3 km), same grade, same season string, same hazards array, same two-entry pitch_detail. wa_frying_pan_whitman_glaciers carries a far longer approach with the cliff-out trap above Summerland and the Whitman Notch elevation, so that is the row written. See _DEFECTS.",
+  "wa_mount_adams_northwest_ridge": "POSITIONED ONLY RELATIVE TO ITS NEIGHBOUR. The entire approach on this row is one sentence: 'Same approach as the standard North Ridge route, via the Killen Creek Trail and PCT.' Its beta then describes 'the northwest face of the North Ridge' — which is the feature adams_northwest_ridge ('North Face of the Northwest Ridge') already describes, from the same camp, with the same aspect. There is no independent marker anywhere in the row: no bergschrund, no constriction, no named rock, no elevation at which anything happens. Its five pitches of AI1-2 could be told from its neighbour's three by counting rope lengths, but that is a test you can only apply once you are committed, which is the opposite of a base finding. Writing one here would mean inventing the one fact that matters. adams_northwest_ridge IS written, and its base finding is a genuine one (the Adams Glacier on your right, the ridge crest on your left, and one ski-width pinch through a rock band as the only constriction)."
+ },
+ "_DEFECTS": {
+  "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+  "wilson_glacier_headwall_waypoint_sends_you_to_the_wrong_side_of_the_mountain": "THE MOST SERIOUS ONE HERE. wa_mount_adams_wilson_glacier_headwall's approach prose and its approach_logistics BOTH say the trailhead is Cold Springs / South Climb (FR-8040, north of Trout Lake, on the SOUTH side of Mount Adams). Its waypoints array names 'Killen Creek Trailhead' at 46.2885,-121.5525 — the NORTH-side trailhead, on different forest roads, reached from Randle rather than Trout Lake, and about 25 road miles and two hours' driving away from where the prose sends you. A party navigating by the pin drives to the opposite side of the mountain from the route. The waypoint should be Cold Springs.",
+  "avalanche_glacier_row_names_three_incompatible_directions": "adams_avalanche_glacier's approach says 'traverse via round-the-mountain trail to the NORTHWEST side of Mount Adams, approach glacier directly from SOUTHWEST' — two directions in one sentence — while its aspect column says S and its beta says 'a gently sloping glacier ascent on the SW slopes'. Separately its approach_logistics.trailheadDirection says 'South from Randle, WA; accessible via Forest Road 23', but Randle and FR-23 are the approach to the KILLEN CREEK side, while the named trailhead is Cold Springs, which is reached from Trout Lake. The Avalanche and White Salmon glaciers are on the southwest flank; 'northwest' and 'Randle' are both wrong. The variant written here uses only the fields that agree.",
+  "pinnacle_south_gully_beta_contradicts_its_own_approach_and_points_at_the_wrong_peak": "wa_pinnacle_peak_tatoosh_r1's approach says 'contour or scramble EAST into the gully system on the peak's south/southeast face'. Its beta says 'From Pinnacle-Plummer saddle, scramble WEST/SOUTHWEST up obvious gullies'. Pinnacle Peak is EAST of the saddle and Plummer Peak is WEST of it — so the beta, read on its own, walks a party up Plummer believing it is Pinnacle. Two fields of one row giving opposite directions out of the same saddle, on the surface where the route-finding decision is made.",
+  "duplicate_liberty_cap_rows": "wa_liberty_cap holds exactly two routes and BOTH duplicate a Mount Rainier row. wa_liberty_cap_liberty_ridge_finish vs wa_mount_rainier_liberty_ridge (14,112 ft both, 9,700 vs 9,708 ft gain, same 1935 FA party, same trailhead) and wa_liberty_cap_ptarmigan_ridge_finish vs wa_mount_rainier_ptarmigan_ridge (14,112 ft both, same 1935 Bauer/Hossack FA). Both Rainier-filed rows already carry approach_variants; both Liberty Cap rows were empty. This is the same shape as the Ruth/Icy and Sherpa north-ridge pairs already on record: one climb, two areas, two rows. Confirm before deleting either half — the gain figures differ slightly and the Liberty Cap rows carry pitch_detail the Rainier rows do not.",
+  "duplicate_little_tahoma_standard_route": "wa_little_tahoma_east_shoulder and wa_frying_pan_whitman_glaciers agree on first ascent party AND date (J.B. Flett and Henry H. Garrison, 29 August 1894), gain (7,600), distance (11.3 km), grade, season string, the entire hazards array, and both pitch_detail entries including their lengthM values. They are one climb under two names. wa_little_tahoma_east_shoulder is the thinner row.",
+  "adams_northwest_ridge_pair_is_probably_one_face_under_two_names": "wa_mount_adams_northwest_ridge ('Northwest Ridge', 5 pitches, FA Molenaar/Johnson/Ostro/Startzell September 1960) and adams_northwest_ridge ('North Face of the Northwest Ridge', 3 pitches, FA Givler/LeBlond/McGowan 1967) carry DIFFERENT first ascents but describe the same ground: both are the snow/ice slope between the Adams Glacier and the Northwest Ridge crest, from the same High Camp, both aspect NW, both topping out on the crest. The first row's own name says 'Northwest Ridge' while its own pitch_detail says 'Lower WEST FACE of the NORTH Ridge' and 'tops out to join the NORTH Ridge crest' — three different features named in one row. Either the FAs are attached to the wrong rows, or one of these is a variation that should say so.",
+  "edmunds_headwall_waypoint_has_two_elevations_and_a_note_from_another_route": "wa_mount_rainier_edmunds_headwall's 'Mowich Lake Trailhead' waypoint now carries elev 4930 (correct for Mowich Lake) but elevFt 2900 (the Westside Road / Dry Creek gate elevation) on the SAME waypoint object — two elevation fields, 2,030 ft apart, on one pin. Its `note` on that pin reads 'Long approach (~10+ mi) via Westside Rd, South Puyallup Trail, Wonderland Trail to St Andrews Park, then Puyallup Cleaver', which is the SUNSET RIDGE / Tahoma-side approach from a different trailhead on the opposite side of the mountain, attached to a pin named for Mowich Lake. The known correction to this row appears to have updated `elev` and left `elevFt` and the note behind.",
+  "live_closure_prose_stored_as_permanent_in_road_and_approach_columns": "Three rows store dated closure claims as though they were durable facts. wa_mount_rainier_mowich_face.road.status: 'No public vehicle, bike, or foot access via SR-165 — the Fairfax/Carbon River Bridge was permanently closed by WSDOT in April 2025... as of the 2025 bridge closure'. wa_mount_rainier_willis_wall.approach and .road repeat it ('permanently closed since April 2025', 'indefinitely closed'). wa_old_snowy_mountain_r1.road.status: 'FR-21 sustained washout damage near milepost 3 in the December 2025 floods'. wa_bread_loaf.approach: 'the Silver Falls Trailhead inside Ohanapecosh Campground is closed in 2026 for the Ohanapecosh reconstruction project'. All four will age into false statements without anything reporting it. The durable pattern belongs in these columns and the current status belongs somewhere that is expected to be checked.",
+  "bread_loaf_is_a_v0_boulder_filed_on_the_mountain_and_carrying_the_mountain_s_permit_rules": "wa_bread_loaf is a two-metre V0 boulder problem at 1,914 ft beside the Silver Falls loop trail, filed under area_id wa_mount_rainier — the peak area whose other 19 routes are glacier climbs to 14,406 ft. Its access column then carries the full Mount Rainier CLIMBING permit block verbatim: 'Blue bags required for human waste above high camp — pack out and deposit only in barrels marked Human Waste at Camp Muir or the trailhead' and 'Check-out is required after every climb', for a roadside boulder. The access.fees field correctly notes no climbing permit applies; the access.rules field beside it contradicts that. Copied wholesale from the peak's routes.",
+  "observation_rock_area_is_filed_120_km_from_where_it_sits": "wa_observation_rock has path usa.washington.wa_sw_tacoma.wa_columbia_gorge.wa_observation_rock — filed under the COLUMBIA GORGE, whose other children sit at latitude 45.5-45.8. Its own coordinates are 46.90179,-121.80659, which is Mount Rainier's north side near Spray Park and the Ptarmigan Ridge approach, about 120 km north of every sibling in that region. It holds 0 routes, so nothing renders wrong today, but Observation Rock is a named landmark ON the Mowich Face approach written in this batch, which makes the misfiling likely to matter later.",
+  "trailhead_direction_truncated_at_the_first_period_in_six_rows": "Six rows in this scope have approach_logistics.trailheadDirection cut off mid-sentence at what looks like the first '.' in the source prose: wa_gilbert_peak_meade_glacier ('Drive to the Conrad Meadows / South Fork Tieton Trailhead (Trail #1120, elev.'), wa_ives_peak_r1 ('Start at the Snowgrass Trailhead (aka \"Berry Patch,\" elev.'), wa_old_snowy_mountain_r1 ('From the Snowgrass Flats Trailhead (end of FR-2150, elev.'), wa_scramble_route, wa_plummer_peak_r1 and wa_mount_st_helens_worm_flows. Each ends on the abbreviation 'elev.' or equivalent, which is what a naive sentence-splitter would do to '(elev. 4,044 ft)'. This is one bug producing six truncated fields, not six authoring mistakes.",
+  "gilbert_peak_two_trailhead_coordinates_1_4_km_apart": "wa_gilbert_peak_meade_glacier's trailhead waypoint is 46.508793,-121.280865; wa_gilbert_peak_conrad_glacier's is 46.5164,-121.263. Both are named for the Conrad Meadows / South Fork Tieton trailhead and both routes state they start at the same road's end, but the two pins are about 1.4 km apart. One of them is wrong and neither row carries a second record to settle which.",
+  "castle_peak_tatoosh_three_summit_elevations_and_a_road_name_from_another_trailhead": "wa_castle_peak_tatoosh_southeast_face has high_point_ft 6440, its own summit waypoint says 6640, and wa_castle_peak_tatoosh_la_villa's summit waypoint says 6460 — three figures for one summit. Separately, the SE Face row's road.name is 'Eagle Peak Trailhead, Longmire, Mount Rainier NP (Tatoosh Range access)', while its own driveNote correctly describes driving to the Reflection Lakes pullouts on Stevens Canyon Road. Eagle Peak is a different Tatoosh peak with a different trailhead ten miles away by road.",
+  "la_villa_has_no_grade_while_its_own_prose_states_one_twice": "wa_castle_peak_tatoosh_la_villa's grade column is null. Its beta says 'Listed on Mountain Project as a 5.7 trad route' and its pitch_detail says '5.7 (5.8 crux)'. A climber browsing The Castle sees an ungraded route beside an 'Easy 5th' one, on a peak where the two lines are 20 ft apart on the same summit block and the difference between them is the whole safety question.",
+  "worm_flows_aspect_is_recorded_as_west": "wa_mount_st_helens_worm_flows carries aspect 'W'. The Worm Flows are on the south to southeast side of Mount St Helens: the route starts at Marble Mountain Sno-Park on the south side, follows Swift Creek, and merges with the Monitor Ridge summer route, which is the south-side line. Aspect drives the sun and shade readout, so this one misstates a real planning input on a route where glissade timing depends on aspect."
+ }
+}
