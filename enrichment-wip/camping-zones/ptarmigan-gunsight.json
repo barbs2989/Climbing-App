@@ -1,0 +1,77 @@
+{
+ "zone": "Ptarmigan Traverse crest and the Gunsight Range",
+ "_areas_note": "Two trailheads serve this zone and they are 30 miles of glaciated crest apart. The north end is the Cascade Pass trailhead at the end of the Cascade River Road, from which parties cross Cache Col and drop south out of North Cascades National Park onto the traverse. The south end is the Downey Creek trailhead at mile 20 of the Suiattle River Road, from which the abandoned Bachelor Creek trail leads to Cub Lake and Itswoot Ridge. Old Guard Peak, Spire Point, Dome Peak, Sinister Peak and the three Gunsight Range summits are all on or immediately beside the crest between those two ends and all belong here; the Gunsight peaks in particular are most often reached from Downey Creek over Dome rather than from the Stehekin side, which needs a boat and a shuttle. Nothing from the Cascade River Road file is repeated: that one covers Boston Basin, Sahale Glacier Camp, Pelton Basin and Johannesburg Camp, which sit north of Cache Col inside the park, and none of them appear here. TWO PEAKS WERE REMOVED. Mount Buckindy sits at the head of Kindy Creek and its standard north-slope scramble is approached from a Cascade River Road spur low in the valley, with a Green Mountain approach off the Suiattle as the alternative; nothing about it goes through the traverse. Snowking Mountain is further west again, approached either from Found Creek on a lower Cascade River Road spur or from the Slide Lake trail off Illabot Creek Road. Both are their own trailheads and neither is served by Cascade Pass or by Downey Creek, so their ids are not in the areas list.",
+ "areas": ["wa_dome_peak", "wa_spire_point", "wa_sinister_peak", "wa_old_guard_peak", "wa_south_peak", "wa_middle_peak", "wa_north_peak"],
+ "sites": [
+  {
+   "name": "Kool-Aid Lake",
+   "type": "bivy",
+   "elev": 6320,
+   "capacity": "A handful of small heather and gravel platforms around a tiny tarn, comfortable for two or three parties and crowded beyond that. No facilities, no toilet, nothing built.",
+   "water": "The tarn itself plus snowmelt runnels feeding it. Reliable in July and through most of August, but it is a shallow pool with a small catchment and it can drop to a warm, silty puddle by September in a light snow year. Cache Col just above has no water at all, so parties camping high on the shoulder have to carry from here or melt snow.",
+   "permit": "Once you cross Cache Col you are out of North Cascades National Park and into Glacier Peak Wilderness, so no park permit covers this camp. Sign the free self-issue wilderness register instead. If you spend a night on the park side, including at Cascade Pass or on the shoulder below the Cache Glacier, that night does need an NPS wilderness permit collected in person at the Marblemount Wilderness Information Center. Campfires have no place at this elevation; carry a stove.",
+   "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical reason to know it exists even if you are only passing through. Published elevations vary by a couple of hundred feet, with figures around 6,300 the most common and one outlier several hundred feet higher, so treat the number as approximate rather than a waypoint. From here the day ahead crosses the Red Ledge and the Middle Cascade Glacier toward Old Guard Peak and Sentinel, and there are further ridge bivouacs at around 6,300 ft just past the Red Ledge if the lake is full or the hour is late. Early season this is a snow camp with easy water everywhere; late season it is bare heather and rock and the tarn is the only source."
+  },
+  {
+   "name": "Yang Yang Lakes",
+   "type": "bivy",
+   "elev": 5850,
+   "capacity": "Several unimproved sites in the heather between the two small lakes, enough for two or three parties. No toilet and no established platforms.",
+   "water": "Two lakes, which makes this the most dependable water on the northern half of the traverse. Nothing above it is reliable: the ridge camps toward Formidable and the ground up at Le Conte Pass are snowmelt-only late in the season, though the pass usually holds tarns into midsummer.",
+   "permit": "Glacier Peak Wilderness, free self-issue permit at the trailhead register. Camp at least 100 feet back from the lakeshores. No campfires; the ground here is thin alpine heather that does not recover.",
+   "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from the Le Conte Glacier above by a class 2 to 3 snow couloir and short scramble on the west side, or by two to three pitches of easy to moderate fifth class on the east ridge. Sentinel Peak is the other objective from here and the two are usually taken together. The descent into and climb out of this basin is steep on both sides, so parties running late often push instead to Le Conte Pass above and accept the thinner water. Snow lingers in the bowl well into July, which is when the camping is easiest and the heather is protected."
+  },
+  {
+   "name": "White Rock Lakes",
+   "type": "bivy",
+   "elev": 6200,
+   "capacity": "Open benches near the outlet of the larger lake and scattered spots around the basin, wind-exposed but roomy enough for several parties. Unimproved, no toilet.",
+   "water": "The lakes, fed by the snowfields and the Le Conte and Dana ice above them. Normally good all season, though the outlet stream can be reduced to a trickle late in a dry summer and the smaller pools go stagnant.",
+   "permit": "Glacier Peak Wilderness self-issue permit. Keep camps 100 feet from the water. Stoves only.",
+   "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome Peak and the Dana Glacier, which is the day that follows. Sinister Peak is not climbed from here directly, but this is the last camp with easy water before the ground gets serious: the Chickamin and Dome glaciers are the way to Sinister and to the Gunsight Range, and everything from here east is snow, ice and rock with no running water. It is a windy basin and the good sites are the sheltered ones near the outlet. Snow can cover the lakes into early July, which some parties prefer because it makes the camping flat and the water trivially available."
+  },
+  {
+   "name": "Itswoot Ridge",
+   "type": "bivy",
+   "elev": 5880,
+   "capacity": "A string of flat heather benches along the ridge rather than one site, so several parties can spread out without crowding each other. No toilet, no built platforms.",
+   "water": "Small running creeks below the lower benches, fed by snowfields on the north side of the ridge, and generally dependable through the normal climbing season. The higher benches toward the col dry out first, so drop back down for water rather than assuming it is there.",
+   "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek trailhead register, plus a Northwest Forest Pass or Interagency pass on the vehicle. No campfires up here.",
+   "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches it is moderate snow of about thirty degrees, or a scree-and-heather line on the left in late season, up to Spire Col at 7,760 ft, and from the col a short descending traverse onto the upper Dana Glacier puts you under the southeast and southwest faces of Spire Point. Dome Peak is the other objective, reached over the Dana Glacier and the Dome Glacier above. Reaching this ridge from the car is a full day with a heavy pack, so plan on arriving late and going nowhere else that evening."
+  },
+  {
+   "name": "Cub Lake",
+   "type": "camp",
+   "elev": 5338,
+   "capacity": "A well established camp at the lake with room for a few parties, plus meadow sites nearby. It is the most used ground in the southern half of the zone and it shows.",
+   "water": "The lake, reliable all season. This is the last certain water for anyone heading up onto the ridge and glaciers, and the first on the way out.",
+   "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass at the Downey Creek trailhead. Camp 100 feet back from the shore. Practically speaking no fires, and the site is heavily enough used that the surrounding wood is already gone.",
+   "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. It is the south-end hub: from the lake the trail climbs to Itswoot Ridge for Spire Point and Dome Peak, and everything on the Chickamin side including Sinister Peak and the Gunsight summits starts from the same ground. Because it is the established camp it also takes the impact, and there is a reasonable argument for camping on the ridge above instead where the ground is less worn, at the cost of carrying water. Coming out, this is where the traverse ends and the brush begins."
+  },
+  {
+   "name": "Bachelor Creek forest and meadow camps",
+   "type": "camp",
+   "elev": 4500,
+   "capacity": "Rough forest sites and a meadow flat near the head of the creek, party-sized only. Nothing established, no toilet.",
+   "water": "Bachelor Creek runs the whole way and is never the problem. The creek crossing itself can be, in high water or early season.",
+   "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass on the vehicle at Downey Creek. This is the one part of the zone low enough that a fire is not automatically out of the question, but the ground is wet forest and a stove is the sensible choice.",
+   "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two miles are tolerable, then it crosses to the south side and turns into slide alder and avalanche deadfall, with reports of sixty or more trees over the trail and long sections where following it is closer to bushwhacking than hiking. Parties routinely take nine to eleven hours from the car to Cub Lake and a slow group with heavy packs can lose the trail entirely. Splitting the approach with a night around the 4,500 ft meadows near the head of the creek is the honest answer for anyone who is not fast, and it is why some parties choose to enter from Cascade Pass and exit here rather than the other way round, so the brush is done downhill and with lighter packs. There is a north-side line through open forest paralleling the creek that some report as better than the trail itself. Everything about this approach is currently harder than the above suggests: the Suiattle River Road is closed to vehicles at about milepost 4 after flood damage, under an order running to the start of 2028 unless lifted sooner, which leaves roughly sixteen extra road miles each way to a trailhead at mile 20. The road also spent about a decade closed before reopening in 2014, so a long closure here is the normal state of affairs rather than a surprise. Confirm the road before committing to this end."
+  },
+  {
+   "name": "Spire Col bivouac",
+   "type": "bivy",
+   "capacity": "One or two small parties on the col itself, with further spots scattered along the ridge below it. Rock and snow, nothing flat and nothing built.",
+   "water": "None. Melt snow, or carry from the creeks below Itswoot Ridge. In late season the snow near the col can be gone entirely and then there is nothing at all.",
+   "permit": "Glacier Peak Wilderness self-issue permit. Camp on snow, rock or bare ground rather than on the heather. Pack out human waste; there is no toilet anywhere on this side of the zone.",
+   "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the section of snow that softens in the afternoon. It is fully exposed, cold, and windy, which is the trade. Parties heading on to Dome Peak sometimes use it too, though the Dome Glacier camps further east are better placed for that. Treat this as a fair-weather option: there is no shelter, and retreating from here in bad weather means downclimbing snow you came up in daylight."
+  },
+  {
+   "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+   "type": "bivy",
+   "capacity": "Rock rings and cleared platforms for one or two parties at a time. At the Dome-Chickamin col there is a flat, large, windy option on the west side and a smaller, harder, calmer one on the east. Nothing else, and no toilet.",
+   "water": "None running. Every drop is melted snow, and on bare ice years even that takes hunting for. Carry what you can from Cub Lake or the Itswoot Ridge creeks and plan the fuel for melting.",
+   "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek register. Camp on snow, rock or ice. Pack out human waste, which matters more here than anywhere else in the zone because the meltwater below runs straight into the glacier-fed creeks.",
+   "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and above quoted for it. From that eastern col the Chickamin Glacier is the highway to Sinister Peak, whose North Face and Southwest Route are both reached across it, and on to the three Gunsight Range summits beyond, which are granite spires ringed by the Chickamin and Blue glaciers and among the most remote objectives in the state. Parties on the Gunsight peaks routinely cross the Chickamin twice in a day from a camp on this ground. Season is short: the glaciers are best covered from July into August, later brings open crevasses and bare ice, and there is no water, no shelter and no quick way down from any of it."
+  }
+ ]
+}
