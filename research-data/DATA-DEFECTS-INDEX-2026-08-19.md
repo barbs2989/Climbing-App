@@ -5,7 +5,22 @@ file. That is six separate blocks, and **a finding nobody can see is a finding t
 rather than fixed** — this repo already carries three waypoint audits and four copies of a grade
 parser written by people who could not see the prior work. This is the index.
 
-**95 entries. 2 fixed. 4 already queued for a human. The rest are classified below.**
+**95 entries. 4 fixed. 4 already queued for a human. The rest are classified below.**
+
+> ## Read this first — two follow-ups correct this file
+>
+> **[CLASS-A-MISDIRECTION-TRIAGE-2026-08-19.md](CLASS-A-MISDIRECTION-TRIAGE-2026-08-19.md)** — all ten
+> remaining Class A rows read against the live rows. **The column attributions below were wrong on 4 of
+> the 10**, and in three cases the obvious repair would have run *backwards* and destroyed the correct
+> half. Two more rows are fixed there (Adams' trailhead pin, Hinman's direction).
+>
+> **[CLASS-C-TRAILHEAD-MEASURED-2026-08-19.md](CLASS-C-TRAILHEAD-MEASURED-2026-08-19.md)** — Class C
+> measured across all 8,365 WA routes rather than from what six batches happened to notice. The
+> truncation is **28 rows, not 10**; the rows invisible to `audit:trailhead-agreement` are **176, not
+> 14**; and the "sentence splitter" this file says to find at source **does not exist in the repo**.
+>
+> **The column names in the tables below are descriptions written while reading, not citations.**
+> Locate the offending phrase in the live row before concluding anything.
 
 Extracted from: `approach-variants-{baker,cascade-pass,olympics,pickets-wapass,snoqualmie,stuart}-2026-08-19.json`.
 
@@ -140,10 +155,13 @@ is correctly absent: it is in British Columbia.
 
 ## What to do with this
 
-1. **Class A is the one that matters to a climber today** — twelve rows that will send a party the
-   wrong way. Each needs the row read before anything is written, because which half is wrong varies.
+1. **Class A is done being triaged** — see the follow-up above. Four rows are now fixed; two are
+   genuinely **unresolved** because both approaches are published (Lincoln, Buckner); the rest need a
+   decision rather than more research. Four of the ten turned out to be one route's material sitting on
+   another row, which is the route-identity problem CLAUDE.md already records.
 2. **Class B needs you.** Deletes and merges, and the Triple Couloirs precedent says confirm both ids
    return rows before deleting either half.
-3. **Class C's truncation bug is worth finding at source** — 10 rows cut at an abbreviation is a
-   splitter, and it will do it again on the next import.
+3. **Class C's truncation has no source to find** — measured at 28 rows in two classes needing
+   opposite treatment, and nothing in the repo writes the field. The 176-row blind spot in
+   `audit:trailhead-agreement` is the more valuable half of that finding.
 4. **Class D must not be swept** — `dist_km` holds two conventions catalog-wide.
