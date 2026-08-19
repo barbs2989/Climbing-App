@@ -135,7 +135,10 @@ findings.sort((a, b) => (b.unpitched - a.unpitched) || (b.score - a.score));
 // The re-homing pass was specified as "re-home, never research", which means the source column
 // should have been trimmed. Nothing ever checked that it was, and it mostly was not: measured
 // on WA, 163 of 240 routes carrying both columns repeat at least one approach sentence inside
-// climbing_route, 429 sentences in all and many verbatim. Confirmed ON SCREEN rather than
+// climbing_route, 303 sentences in all and many verbatim. (An earlier probe said 429; its
+// sentence splitter broke guidebook prose at abbreviations — "(Pk. 8165)" counted as two
+// sentences — and the count here, from this file's own splitter, is the right one.) Confirmed
+// ON SCREEN rather than
 // inferred from the columns — the Planner tab renders APPROACH and CLIMBING ROUTE together, so
 // a reader is told the same thing twice in two sections they are meant to distinguish.
 //
