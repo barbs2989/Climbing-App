@@ -8695,3 +8695,51 @@ domain-specific. All findings rest on WebSearch's synthesized snippets rather th
 read; flagged items above name exactly which sub-claims would benefit from primary-source access.
 
 Next batch continues alphabetically after `wa_east_ridge_8` (see progress file).
+
+## 2026-08-19 — Pass 3, Batch 126
+
+Two peaks, 8 routes (Primus Peak 1, East Twin Needle 2, Eldorado Peak 5): East Slope (Primus);
+South Route, Thread of Ice (East Twin Needle); East Ridge, Northwest Couloir/Eldorado Glacier,
+North Ridge, Northeast Face, West Arete (Eldorado).
+
+**Fixed (SQL in `audits/sql/2026-08-19-batch-126.sql`):**
+- `wa_eldorado_peak_north_ridge`, `wa_eldorado_peak_west_arete`: both routes' own Summit
+  waypoint stored elev(Ft)=8868 for Eldorado Peak, while `high_point_ft` on these same two rows
+  -- and on all three sibling Eldorado routes in this batch -- says 8872. Wikipedia and a
+  dedicated elevation-survey source (countryhighpoints.com) both confirm 8,872.9 ft as the
+  correct modern figure, explaining 8,868 ft as an outdated USGS benchmark never precisely on
+  the true summit. Corrected both waypoints to 8872.
+- `wa_eldorado_peak_north_ridge`: `permit` column was NULL while its own `access.permit`
+  sub-field and all four Eldorado siblings in this batch carry identical NPS park-wide permit
+  text (no permit for day climbs; backcountry permit required for any overnight stay). Same
+  peak, same trailhead, same land manager as its siblings -- populated with their verified text.
+
+**Confirmed correct, no action:** Eldorado East Ridge FA (Blair/Grigg/Wilson/Winder, Aug 27,
+1933 -- matches Mountaineer annual + Wikipedia); Eldorado West Arete FA (Emerson & Gove, Aug 24,
+1969, IV 5.8 -- matches AAC Publications); East Twin Needle South Route FA (Wallace/Haley/Bunker,
+July 27, 2003 Southern Pickets enchainment -- matches AAC Publications); East Twin Needle Thread
+of Ice FA (Abegg & Wallace, June 27, 2009 -- matches the FA trip report title itself); Primus
+Peak elevation 8,508 ft (matches Wikipedia/WTA exactly).
+
+**Needs human verification (not fixed, flagged only):**
+- `wa_east_twin_needle_south_route`: `high_point_ft`/area `elevation_ft` both store 7868 for
+  East Twin Needle, but the route's own Summit waypoint stores elev=7840, and Wikipedia's Twin
+  Needles article gives "7,840+ ft" for the eastern (lower) needle against 7,936 ft for the
+  western one. The two DB figures disagree with each other by 28 ft, and Wikipedia's own figure
+  is an open-ended "+" (no precise survey found -- Peakbagger and Wikipedia itself were both
+  blocked for direct fetch this run). Not confident enough in either number to pick a winner;
+  left unchanged pending a primary source for the exact East Twin Needle summit elevation.
+
+**Sub-kilometer trailhead/summit coordinate slop checked and left alone per CLAUDE.md's
+documented threshold** (nothing exceeded ~500m): Eldorado's `approach_logistics` trailhead vs.
+waypoint trailhead disagree by ~294m on 2 of 5 routes and ~1m on the other 3 (both plausibly the
+parking area vs. the river-crossing start of the climbers' path); East Twin Needle South Route's
+two trailhead records disagree by ~454m (parking area vs. trail proper). Neither rises to the
+audit's action threshold.
+
+Web access this run: WebSearch did all the load-bearing work (elevations, FA dates/teams, grade
+cross-checks) via synthesized snippets from Wikipedia, AAC Publications, and Mountaineer/AAC
+primary sources. WebFetch was blocked for every domain attempted (Wikipedia, Peakbagger) --
+consistent with prior runs' notes.
+
+Next batch continues alphabetically after `wa_eldorado_peak_west_arete` (see progress file).
