@@ -1,0 +1,883 @@
+{
+  "_README": [
+    "Approach variants — Stuart Range / Enchantments, 2026-08-19. 30 routes, 32 variants, every one carrying a baseFinding.",
+    "",
+    "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. Nine of these",
+    "ids carry no peak name at all — wa_south_face_12 is Argonaut, wa_northeast_buttress_4 is Colchuck Peak,",
+    "wa_e_se_face is Witches Tower, wa_the_tipping_point is Colchuck Balanced Rock, wa_beckey_davis /",
+    "wa_stanley_burgner / wa_boving_christensen / wa_energizer_bunny are Prusik, wa_sherpa_glacier is filed under",
+    "MOUNT STUART (correctly — the Sherpa Glacier is on Stuart, not on Sherpa Peak) — and a name-shaped id is not",
+    "evidence of which peak you are on.",
+    "",
+    "Scope was the 13 named peaks plus the two sub-feature areas the catalog files beneath them",
+    "(wa_sherpa_balanced_rock, wa_colchuck_balanced_rock). 45 routes in those areas had an EMPTY approach_variants;",
+    "30 are written here and 15 were deliberately skipped — see _SKIPPED.",
+    "",
+    "Contamination rejected during research, recorded so it is not re-introduced:",
+    "  - 'Northeast Buttress' and 'Northeast Couloir' both exist on Colchuck Peak AND on other Mountain Project",
+    "    areas in the Northwest Region and British Columbia. Only the Central-East Cascades / Colchuck Peak pages",
+    "    were used.",
+    "  - 'North Ridge' on Sherpa Peak vs the North Ridge of Mount Stuart vs a North Ridge on Sherpa Balanced Rock —",
+    "    three different lines in one basin. Each was matched by FA party and pitch count, not by name.",
+    "  - Mount Stuart carries a DB row named 'North Face' whose own beta says no such named route exists on the",
+    "    mountain. No variant was written for it; see _SKIPPED and _DEFECTS.",
+    "  - Ingalls Creek and Ingalls Peak are two different places sharing a name in the same approach paragraph;",
+    "    the Gorillas wall is reached past Ingalls LAKE, the Cascadian and South Headwall from Ingalls CREEK.",
+    "",
+    "No time, distance or gain figure is averaged. Where two sources disagreed, the field is omitted."
+  ],
+
+  "wa_the_direct_north_ridge_w_gendarme": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Mountaineer Creek to the hanging valley, then straight to the toe of the ridge",
+        "season": "Roughly Jun-Sep. Early season the moat at the toe is filled and the walk-in is snow; late season the moat opens and the last few metres onto rock can be the awkward part of the day",
+        "notes": "From the Stuart Lake trailhead at the end of Eightmile Road (about 3,400 ft), follow the trail past the Colchuck Lake fork and keep going. Roughly a mile beyond that fork the maintained trail turns uphill and switchbacks away to the right for Stuart Lake. Leave it there and stay flat in the valley with Mountaineer Creek.\n\nCross the creek on logs — there is no canonical log and the crossing moves with the snowpack — then follow the south fork upstream. After a couple of miles the valley steepens; turn up a steep talus and boulder slope into the hanging valley beneath Sherpa Peak, where the bivy sites are. That flat ground under the glaciers is the arrival cue for camp.\n\nFrom the hanging valley the last leg is a faint climbers' path through trees and talus to the moraine, then up the edge of the moraine to rock.\n\nThe Direct start is the same climb as the Complete North Ridge with a lower-ridge variation on its first pitches; if you are looking at a row on this app for 'North Ridge (Complete)' as well, treat the approach as identical.",
+        "baseFinding": "KEEP THE ICE CLIFF GLACIER ON YOUR LEFT AND WALK UNTIL THE ROCK STOPS YOU. That single sentence is the whole test, and it works in cloud because it is about which side the ice is on rather than about seeing the summit. Climbing out of the hanging valley towards the mountain, the Ice Cliff Glacier must stay on your left the whole way. If it swings round to your right you have walked past the toe and out onto the Stuart Glacier side.\n\nThe toe itself is the lowest rock of the ridge, at roughly 6,600 ft, where the moraine runs into the buttress. You are at the correct place when there is nothing lower to climb — the ridge above you rises unbroken and the ground on either side falls away into a glacier.\n\nSECOND TEST, and it is what tells the Direct start from a wander onto the flank: the first belay is off a BIG LEDGE about 150 ft above the base of the toe, with a small tree on it. If you have not passed a big ledge with a tree inside the first rope length, you are not on the line. The three opening pitches are the hardest on the whole route — an awkward squeeze slot and then a long, sustained lieback crack on the left. If your first pitches feel easy, you have started too high and joined the ordinary ridge.\n\nWHAT GOING TOO FAR LOOKS LIKE: the ridge you are standing under gains a deep notch with flat bivy ground in it. That notch is where the Upper North Ridge starts, and reaching it on foot means you have skipped the 1,200 ft this route exists for.",
+        "hazards": [
+          "Log crossings of Mountaineer Creek that shift year to year and are worse under early-season snow",
+          "Rockfall and icefall off the Ice Cliff Glacier while traversing the moraine beneath it",
+          "An open moat between snow and rock at the toe late in the season",
+          "Loose rock and crumbly black lichen on the lower pitches",
+          "A committing 20-pitch route with the Great Gendarme high on it and no easy retreat once above the lower ridge"
+        ]
+      },
+      {
+        "name": "Ingalls Lake and Goat Pass, traversing east below the Stuart Glacier to the toe",
+        "season": "Roughly Jul-Sep, once the Ingalls Way trail is clear and the Stuart Glacier traverse is walkable",
+        "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, follow the Ingalls Way trail over Ingalls Pass and past Ingalls Lake toward Stuart Pass, then pick up the climbers' path onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass, about 7,600 ft — the col between Point 7893 and the West Ridge.\n\nThis is now the common way parties reach the ridge, and its advantage is that it puts you on the SOUTH side of the range where the descent also finishes, rather than committing you to a north-side camp you then have to walk back around to.\n\nFrom Goat Pass, do not drop onto the glacier and go up. Traverse EAST below the Stuart Glacier, staying above the large moraine mound, and aim for the toe.\n\nBivy sites exist at Goat Pass and at Stuart Pass. Published trailhead-to-base times for this variant vary widely enough that no figure is given here.",
+        "hours": "4-5",
+        "baseFinding": "STAY ABOVE THE MORAINE MOUND AND KEEP TRAVERSING. Coming from Goat Pass the mistake is vertical, not horizontal: the ground invites you to drop down onto the glacier or to climb up onto the ridge crest early, and both put you on the route above its start.\n\nThe line is a rising traverse east, above the large moraine mound below the Stuart Glacier, all the way to the toe. If you find yourself walking DOWN onto flat glacier ice you have dropped too low. If you find yourself scrambling onto ridge crest before you have gone round the end of the rock, you are on the west flank and above the toe.\n\nARRIVAL: the toe is the point where the buttress runs out into the moraine and there is nothing below it to climb, at roughly 6,600 ft. Confirm it the same way the north-side party does — from the toe, the Ice Cliff Glacier is on the far (east) side of the ridge and the Stuart Glacier is behind you to the west. If both glaciers are on the same side of you, you are not at the toe.\n\nAnd the same first-pitch check applies: the opening belay is a big ledge with a small tree roughly 150 ft up, and the first three pitches are the hardest of the route. Easy first pitches mean you started too high.",
+        "hazards": [
+          "Crevasses and a soft afternoon snow surface on the Stuart Glacier traverse",
+          "Loose moraine and talus on the traverse below the glacier",
+          "Route-finding error at Goat Pass in cloud, where dropping onto the glacier feels natural and is wrong",
+          "A long committing route with the Great Gendarme high on it",
+          "No water between the last melt stream and the summit"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+      "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+      "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+      "https://climberkyle.com/2021/07/18/mt-stuart-complete-north-ridge-5-9/"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_upper_north_ridge_w_great_gendarme": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Goat Pass and the Stuart Glacier to the fourth-class gully and the notch",
+        "season": "Roughly Jul-Sep; earlier the gully to the notch holds snow and the glacier crossing is simpler, later it is bare and looser",
+        "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, take the Ingalls Way trail over Ingalls Pass, past Ingalls Lake toward Stuart Pass, then the climbers' path onto the talus shoulder under Stuart's West Ridge and northwest to Goat Pass at about 7,600 ft.\n\nFrom Goat Pass, traverse ONTO and ACROSS the Stuart Glacier rather than along beneath it, aiming for a fourth-class gully that runs up to the obvious notch in the North Ridge. This is the difference between this route and the complete ridge in one sentence: the complete-ridge party traverses east BELOW the glacier to the toe, this party crosses the glacier and goes UP.\n\nThe notch is a bivy: there are two good sites in it, which is why parties who intend to climb the upper ridge in a day from a high camp use it.\n\nPublished descriptions of this route are frank that the last of the navigation is yours — one of them says outright to take a topographic map and work it out. Treat that as a real warning rather than as rhetoric.",
+        "baseFinding": "THE NOTCH IS A PLACE YOU CAN SIT DOWN, AND THAT IS THE TEST. There are two good bivy sites in it. If you have arrived somewhere on the crest with no flat ground, you are not at the notch — you have gained the ridge somewhere else along its length.\n\nThe approach to it is a fourth-class GULLY off the Stuart Glacier, not a scramble up the ridge flank. If the ground you are climbing is open face rather than a defined gully, you are not in the right line.\n\nORIENTATION AT THE NOTCH, which settles it: standing in the notch, the whole lower ridge falls away below you to the north and the Ice Cliff Glacier is on the far side of it. Everything above you is the upper ridge, and the Great Gendarme is roughly eight or nine pitches up from here. If the big tower is already below you, you have joined the crest above the notch and above two of the route's three named features.\n\nWHAT YOU HAVE DELIBERATELY GIVEN UP: about 1,200 ft of climbing, including the sustained lieback crack that is the hardest pitch on the complete ridge. So the notch is not a shortcut to be found by accident — a party that meant to climb the complete ridge and ends up here has walked past its own route. Confirm which climb you are on before you start up.",
+        "hazards": [
+          "Crevasses on the Stuart Glacier crossing",
+          "Loose rock in the fourth-class gully, with parties above you in it",
+          "Knife-edge exposure on the ridge above the notch",
+          "The Great Gendarme's offwidth high on the route, with retreat from there awkward",
+          "Cold wind on an exposed crest; parties routinely carry bivy kit"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+      "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+      "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_mount_stuart_the_gendarme": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Reached only by climbing the North Ridge — the base is a point on the route, not a place you walk to",
+        "season": "Roughly Jun-Sep, as for whichever North Ridge line you are on",
+        "notes": "There is no independent approach to this feature. The Great Gendarme is a tower high on Mount Stuart's North Ridge and you arrive at its base having already climbed either the complete ridge from the toe near 6,600 ft or the upper ridge from the notch above the Stuart Glacier. Reckon on roughly eight or nine pitches of ridge above the notch, and considerably more from the toe.\n\nWhat this entry is for is the decision made at its base, because the Gendarme is the one place on the ridge where there is a real choice and where a party that has not decided in advance loses time at 9,000 ft.\n\nBoth options are established. The tower goes in two pitches — a lieback, then the offwidth — and it can also be turned on ledges to the west, which is what the original 1956 ascent did and what most parties still do. The bypass is not an escape hatch invented by tired climbers; it is the older line.",
+        "baseFinding": "YOU ARE AT THE BASE WHEN THE RIDGE STOPS BEING SCRAMBLING AND STANDS UP IN FRONT OF YOU. Everything below is fourth to mid-fifth class on excellent granite that you have been moving together on. The Gendarme is where that ends: a steep tower blocking the crest, roughly 500 ft below the summit, and there is nothing else on the ridge it can be confused with.\n\nTHE DISCRIMINATOR IS WHETHER YOU CAN WALK ROUND IT. If a line of ledges leads off left (west) and lets you keep moving without roping up properly, you are at the bypass — the same place, and the decision point. If you are looking straight up at a clean lieback flake with an offwidth above it, you are at the climb.\n\nSO THE TEST IN FOG IS A NEGATIVE ONE, and it is worth stating because parties do get this wrong on the way to the summit: if you are still on the ridge and have not yet had to make that choice, the Gendarme is ahead of you and the summit is not. If you have made it and are back on blocky fourth and low-fifth ground, the Gendarme is behind you and the summit is close.\n\nA useful sanity check on the two pitches themselves: the second one has a reputation far worse than the climbing, and parties consistently report it going on good holds and jams with fixed gear in it. If the offwidth you are in feels desperate and unprotectable, look again at where you are — you may have entered the wrong crack on the tower.",
+        "hazards": [
+          "Arriving at the tower late in the day with the summit still above and no quick way off the ridge",
+          "1,000+ ft of exposure on both sides of the crest",
+          "Rockfall from parties above on a popular ridge",
+          "Cold wind, and an unplanned bivy if the choice at the base costs too long",
+          "Retreat from above the Gendarme is awkward in either direction"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+      "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+      "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_mount_stuart_stuart_glacier_couloir": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Mountaineer Creek to the basin, then west onto the Stuart Glacier",
+        "season": "Best while the couloir holds continuous snow and the steps take ice, roughly late spring into early summer; later the steps go rocky and the climbing turns mixed",
+        "notes": "From the Stuart Lake trailhead at the end of Eightmile Road, follow the trail about three miles to the Colchuck Lake turnoff and continue past it for roughly another mile. Where the Stuart Lake trail switchbacks up and to the right, veer LEFT to stay in the main valley — the same leaving point every north-side route on this mountain uses.\n\nFollow the valley about a mile and a half to where it steepens, then turn right and work up the steep slope into the small hanging valley above, the flat basin under the Sherpa and Ice Cliff glaciers at roughly 5,400 ft. Standard camp is here.\n\nFrom the basin the route continues WEST, round the far side of the North Ridge, onto the Stuart Glacier. Entry to the couloir is at about 7,800 ft.\n\nThe couloir itself runs 40-50 degree snow, narrows to a short steep step whose character depends entirely on the season, then a second shorter step, then opens into a wider snowfield leading to a notch in the West Ridge. Six pitches of mixed ground follow from that notch to the summit.",
+        "baseFinding": "THE NORTH RIDGE ROCK RIB DECIDES IT, AND THE SIDE IT IS ON IS THE ANSWER. From the basin you are looking at four things in a row: the Sherpa Glacier, the Ice Cliff Glacier, the enormous rock rib of the North Ridge, and beyond it the Stuart Glacier.\n\nYou want to be past the rib. So: if the North Ridge rib is on your LEFT (east) you are on the Stuart Glacier and correct. If it is still on your RIGHT you have not gone far enough west and are on the Ice Cliff side. That is the same test the Ice Cliff Glacier route uses, read in the opposite direction, and it is the reliable one in cloud because it does not depend on seeing the summit.\n\nSECOND TEST — WHAT THE COULOIR LEADS TO. This couloir does not go to the summit. It goes to a notch in the WEST RIDGE, which is on the far side of the mountain from where you camped. If the line you are looking up appears to head for the top of the peak, you are looking at the wrong feature.\n\nTHIRD, THE SHAPE. Entry is at about 7,800 ft and the couloir NARROWS above you before it widens again — moderate snow, then a short steep step, then a second shorter one, then an open snowfield. A line that is uniformly wide with no steps is not this one.\n\nAnd the negative test: no hanging ice cliff or serac band should be above you anywhere. If there is one, you are back on the Ice Cliff Glacier, on the wrong side of the rib.",
+        "hazards": [
+          "Crevasses on the Stuart Glacier below the couloir",
+          "Rockfall and wet-snow avalanche in the couloir as the day warms",
+          "The steep steps turning to bare ice or dry-tooling ground later in the season",
+          "Six pitches of mixed climbing above the notch, on the far side of the mountain from camp",
+          "An unmarked, often snow-covered off-trail turn out of the Mountaineer Creek valley"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "https://www.mountainproject.com/route/106245725/direct-north-ridge"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_sherpa_glacier": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Mountaineer Creek south fork to the basin under the Sherpa and Ice Cliff glaciers",
+        "season": "Roughly Jun-Jul while the glacier still carries continuous snow; it is also the standard early-season DESCENT off the north side, which is when most parties are on it",
+        "notes": "From the Stuart Lake trailhead, follow the Lake Stuart / Colchuck Lake trail past the fork and leave the maintained tread near the meadow at about 4,500 ft, heading southwest and following the south fork of Mountaineer Creek upstream.\n\nAfter a couple of miles a steep talus and boulder slope leads into the hanging valley beneath Sherpa Peak. This is the standard camp for the whole north side, and the flat ground itself is the arrival cue.\n\nThe glacier has three parts and it is worth knowing them before you set off in the dark: a lower snowfield, the glacier proper, and a steeper couloir in its northwest corner. Parties rope for the short glacier section and take the rope off above it.\n\nThis is a compact two-day outing, and it is the line most parties descend after climbing the Ice Cliff Glacier — so if you meet people coming down it at midday they are probably finishing a different climb.",
+        "baseFinding": "THE SHERPA IS THE ONE WITH NO ICE ABOVE IT, AND THAT IS THE WHOLE TEST. Standing in the basin facing the mountain, the three features run in this order from your left: Sherpa Glacier, then Ice Cliff Glacier, then the huge rock rib of the North Ridge.\n\nSo the Sherpa is the LEFTMOST — the easternmost — of the two glaciers, and it is the one with nothing hanging over it. The Ice Cliff, immediately to its right, carries an obvious hanging ice cliff and serac band partway up. If there is a serac above you, you are one glacier too far right.\n\nTOUCH TEST, and it is the one that works when you cannot see: the ground under the Ice Cliff is frozen avalanche debris mixed with fallen glacier ice, set solid — a talus field made of ice. The Sherpa's toe is ordinary snow over ordinary moraine. Standing on rubble made of ice is direct evidence you have drifted right.\n\nWHERE IT TAKES YOU, as a confirmation rather than a route description: the Sherpa tops out at a notch on Mount Stuart's upper NORTH RIDGE at roughly 7,600 ft, followed by a short scramble. It does not lead to the West Ridge — that is the Stuart Glacier Couloir, on the other side of the rock rib.\n\nAnd the steep part is in the glacier's NORTHWEST corner, not up its middle. If the steepest ground you can see is straight above the centre of the snowfield, look again at which feature you are under.",
+        "hazards": [
+          "Crevasses in the middle section of the glacier and an icefall at its toe",
+          "Wet-snow avalanche and rockfall onto the glacier as the day warms",
+          "Straying right into the Ice Cliff Glacier's serac fall zone in poor visibility",
+          "A steep, unmaintained talus climb into the hanging valley with no trail",
+          "Log crossings of Mountaineer Creek that move with the snowpack"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "https://wenatcheeoutdoors.org/2016/06/04/stuart-mt-via-sherpa-glacier/",
+      "https://turns-all-year.com/trip-reports/sherpa-glacier-couloir"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_mount_stuart_girth_pillar": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Ice Cliff Glacier to the top of the ice, then four easy pitches to the pillar",
+        "season": "Roughly Jun-Aug. The ice cliff step is shorter and more amenable early and gets steeper and barer as the season runs on, so the rock and the ice want opposite conditions",
+        "notes": "The approach is the Ice Cliff Glacier's approach, and everything said about that line applies here: from the Stuart Lake trailhead follow the trail past the Colchuck Lake junction, leave it where it turns uphill for Stuart Lake, cross Mountaineer Creek and follow the climbers' path in the valley bottom to the hanging basin under the glaciers. Moraine camps sit around 6,800-7,000 ft; the flat basin below at about 5,400 ft is the more common bivy.\n\nFrom camp the route ropes up and climbs the Ice Cliff Glacier itself. That glacier is the objective hazard of the day, not the pillar: icefall, spindrift and crevasses. Parties keep left to stay out from under the falling ice and swing wide right around the biggest crevasses.\n\nAt the top of the glacier is the ice cliff step, anywhere from ten to well over a hundred feet of 50-70 degree snow and ice.\n\nThere is no water above the moraine — carry it or melt.",
+        "baseFinding": "COUNT THE PITCHES ABOVE THE ICE, BECAUSE THE PILLAR IS NOT VISIBLE FROM THE GLACIER. From the top of the ice cliff step it is FOUR easy pitches to the base of the pillar, at roughly 8,200-8,400 ft. If you have done one or two and are already looking at hard cracks, you are on the face rather than on the pillar.\n\nWHAT THE PILLAR IS: a discrete steep feature on the northeast face above the icefall, and the thing that identifies it is that the climbing changes character completely. Four moderate pitches of ordinary alpine ground end, and the next pitch is an immediately steep hand crack that jogs right at its top and ends on a poor, small ledge. That handcrack is the entrance. If the ground above you keeps rambling at the same angle, you have not reached it.\n\nTHE SEQUENCE ABOVE CONFIRMS IT, and is worth carrying in your head because the first belay is a bad one and you will want to know you are committing to the right thing: steep hands, then a pitch that shuffles about ten feet LEFT off the belay to a thin crack and finger-jams through the crux out RIGHT, then perfect hands on steep dirty rock to the top of the pillar. Three pitches, no more.\n\nAND THE HARD RULE ABOUT BEING HERE AT ALL: there is no reasonable way to reverse this. Downclimbing or rappelling back into the icefall is worse than finishing, so arriving at the base of the pillar is a commitment to going over the top. Make that decision at the bottom of the glacier, not here.",
+        "hazards": [
+          "Icefall and serac collapse on the Ice Cliff Glacier — the route's principal danger",
+          "Crevasses and spindrift on the glacier",
+          "A steep ice cliff step whose height and hardness vary through the season",
+          "Large loose blocks near the top of the pillar",
+          "No retreat: reversing the route through the icefall is more dangerous than continuing over the summit",
+          "No water above the moraine camp"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "http://ericsbasecamp.net/trips/StuartIceCliff/StuartIceCliff.htm"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_south_headwall": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Longs Pass to Ingalls Creek, then the first major clearing west of Ulrich's Couloir",
+        "season": "Roughly Jun-Aug, with July the usual month; late season the loose ground below the headwall gets worse rather than better",
+        "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, take the Longs Pass trail up open pine and sage switchbacks to Longs Pass at roughly 6,200 ft. Stop here — this is the one place on the whole day where you can see the entire south side of the mountain at once, and five minutes spent picking out the headwall from the pass is worth an hour of guessing later.\n\nDrop off the north side of the pass on the steep, eroded boot path to Ingalls Creek, cross it, and join the Ingalls Creek trail.\n\nThen the key move: from where the Longs Pass trail meets Ingalls Creek, go WEST along the creek trail and take the first major clearing west of Ulrich's Couloir. That clearing is the line of ascent.\n\nAbove the clearing it is sustained scree and choss up to a cirque at about 8,700 ft. The technical climbing — five pitches, never harder than 5.7, plus a lot of fourth and easy fifth — starts up the centre of the headwall from there.",
+        "distMi": 2.5,
+        "baseFinding": "THE CIRQUE IS THE ARRIVAL, AND IT IS UNMISTAKABLE EVEN IN CLOUD BECAUSE IT CLOSES AROUND YOU. You climb loose ground for a long time and then the walls come up on three sides — very steep cliffs at about 8,700 ft with the summit directly above. That enclosure is the cue. Scree that keeps going with open ground on both sides means you are still below it.\n\nWHICH CLEARING, WHICH IS THE ACTUAL PROBLEM: from the Ingalls Creek trail, count west from where the Longs Pass trail came down to the creek. The correct line is the FIRST MAJOR CLEARING WEST of Ulrich's Couloir. Ulrich's is the big obvious gully; if you are ascending a defined gully rather than an open clearing, you are in Ulrich's itself and on a different route entirely. And if the clearing you picked is EAST of that point, you are heading for the Cascadian Couloir — the standard walk-up and the usual descent — which is easier ground and will not put you under a headwall.\n\nCONFIRMATION AT THE BASE: the technical pitches start up the CENTRE of the headwall, and they top out very close to the true summit. Nothing on this route is harder than 5.7. If the ground in front of you looks harder than that, you have drifted to one side of the centre.\n\nPREVIEW IT FROM LONGS PASS. This is the rare approach where the whole objective is visible from a trail junction two thirds of the way through the day, and a party that identifies the headwall and the correct clearing from the pass essentially cannot get this wrong afterwards.",
+        "hazards": [
+          "Frequent rockfall in the cirque and on the headwall, made worse by other parties",
+          "Sustained loose scree and choss on the ascent to the cirque, with no trail",
+          "A steep eroded descent path off Longs Pass, hard on the knees in both directions",
+          "An Ingalls Creek crossing that is a genuine ford in early-season snowmelt",
+          "Early-season snow and ice in the cirque",
+          "Afternoon thunderstorms with no shelter above the clearing"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/107554753/south-headwall",
+      "https://www.mountainproject.com/area/105996601/mt-stuart"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_gorillas_direct": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Ingalls Lake to the amphitheatre between Stuart Pass and Goat Pass",
+        "season": "Roughly late Jul-early Sep, once the snow below the wall has gone down enough to reach the start by a short scramble and before autumn storms",
+        "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, follow the Ingalls Way trail over Ingalls Pass and past Ingalls Lake toward Stuart Pass, then take the climbers' trail onto the talus shoulder below Stuart's West Ridge.\n\nThe wall these routes are on sits in the amphitheatre roughly MIDWAY BETWEEN STUART PASS AND GOAT PASS, rising about 1,000 ft out of the snow. It is known as the West Face Wall — worth saying plainly, because it faces west and some descriptions of the mountain's south side sweep it in with the south face, which sends parties looking on the wrong aspect.\n\nBivy sites are at Stuart Pass and at Goat Pass. Most parties camp at one of them and walk in to the wall in the morning.\n\nThe descent goes over the top: continue up the West Ridge to the summit, or take the main West Ridge gully down with scrambling and downclimbing, breaking right onto a large bench where a single-rope rappel gets you back toward the Stuart Pass bivies.",
+        "baseFinding": "WALK THE FOOT OF THE WALL UNTIL YOU FIND A SPLITTER YOU CAN PUT BOTH HANDS IN. The start is an obvious hand-and-finger splitter crack, and it does NOT begin at ground level — it starts on a small ledge about 15 to 25 feet above the snow or talus, reached by a short scramble. That gap between the ground and the first moves is the single best confirmation you are in the right place: a crack running all the way to the snow is not this one.\n\nWHERE ON THE WALL: you are in the amphitheatre between Stuart Pass and Goat Pass, roughly halfway between them, under about 1,000 ft of rock. If you are still on either pass you have not arrived; if the wall has ended and you are back on open talus you have walked past it.\n\nSHARED START, AND SAY IT OUT LOUD BEFORE YOU RACK UP: this route and the other two lines on this wall begin at the SAME crack and share the first four pitches. The differences are higher up, at the major ledge system splitting the wall — this route goes LEFT there where the original line continues right. So finding the base correctly does not settle which route you are on, and the choice has to be made deliberately at that ledge rather than followed.\n\nWHAT TO EXPECT ABOVE, as confirmation you started right: two pitches of corners and arêtes to a bolted anchor, then a long horizontal traverse rightwards on the third pitch. If nothing on your third pitch traverses, you are not on this line.",
+        "hazards": [
+          "Snow at the foot of the wall early in the season, making the short scramble to the start awkward",
+          "Long runouts between placements and hidden loose chockstones",
+          "A west-facing wall that gets full afternoon sun and afternoon weather",
+          "Topping out high on the West Ridge with a long descent still to do",
+          "An unplanned bivy is a real outcome; parties carry for it"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "https://www.mountainproject.com/route/106585178/gorillas-in-the-mist",
+      "http://publications.americanalpineclub.org/articles/12201009300/Mt-Stuart-Gorillas-in-the-Mist",
+      "http://blakeclimbs.blogspot.com/2009/07/gorillas-in-mist.html"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_king_kong_gorillas_direct_direct": {
+    "area": "wa_mount_stuart",
+    "approach_variants": [
+      {
+        "name": "Ingalls Lake to the West Face Wall — same base as the other two lines on the wall",
+        "season": "Late summer into early September, before autumn storms; the headwall is the point of the route and it wants dry rock",
+        "notes": "Identical to the approach for the other West Face Wall routes. From the Esmeralda Basin trailhead, the Ingalls Way trail over Ingalls Pass, past Ingalls Lake toward Stuart Pass, then the climbers' trail onto the talus shoulder below the West Ridge and on to the amphitheatre between Stuart Pass and Goat Pass. Camp at either pass.\n\nThis line is a direct start and direct finish grafted onto the existing routes: it climbs the first four pitches of the original line, steps left onto the middle pitches of the direct, and then breaks out onto its own two-pitch finish up an overhanging headwall splitter.\n\nBecause of that, none of the decisions on this climb are made at the bottom. The base is shared; what makes it this route is a pair of choices at the ledge system and again below the headwall.",
+        "baseFinding": "THE BASE IS THE SAME SPLITTER THE OTHER TWO ROUTES USE — a hand-and-finger crack starting on a small ledge 15 to 25 feet off the snow or talus, gained by a short scramble. There is no separate King Kong start to look for, and hunting for one is how parties waste an hour at first light.\n\nSO THE REAL ARRIVAL TEST IS THE WALL, NOT THE ROUTE: you want the amphitheatre roughly midway between Stuart Pass and Goat Pass, with about 1,000 ft of rock rising straight out of the snow above you. Anywhere still on a pass, or anywhere the wall has petered out into talus, is wrong. And the aspect is WEST — this wall takes the afternoon sun, so if you are standing under a face that has been in shade all afternoon you are on the wrong side of the mountain.\n\nWHERE THIS ROUTE ACTUALLY BECOMES ITSELF, which is what you have to know at the base because you cannot see it from there: four pitches up the original line, then LEFT onto the direct for two pitches, then the two-pitch finish. The connector out to the finish is a roof bulge and a stem-box on overhanging jugs; the headwall pitch above it is a splitter on a steeply overhanging wall with more than thirty metres of air under it and two fixed nuts at its top.\n\nIF YOU REACH A LEDGE SYSTEM AND SIMPLY CONTINUE RIGHT, you are on the original line and will finish on it. Nothing will stop you or tell you. The decision is yours and it is made in the middle of the wall.",
+        "hazards": [
+          "Significant runouts between protection placements",
+          "Loose rock with hidden chockstones",
+          "Thirty-plus metres of overhanging exposure on the headwall pitch, with retreat from it awkward",
+          "Alpine weather on a west-facing wall late in the season",
+          "An unplanned bivy is a documented outcome on this route"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+      "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "https://cascadeclimbers.com/forum/topic/100087-tr-mt-stuart-fa-king-kong-gorillas-in-the-mist-direct-direct-992016/"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_colchuck_peak_northeast_couloir": {
+    "area": "wa_colchuck_peak",
+    "approach_variants": [
+      {
+        "name": "Colchuck Lake and the true-right margin of the Colchuck Glacier",
+        "season": "Roughly Apr-Jun as a snow and ice climb; by high summer the entry moat opens and the couloir sheds rock",
+        "notes": "From the Stuart Lake trailhead at the end of Eightmile Road, follow Stuart Lake Trail about two and a half miles to the signed junction and fork RIGHT for Colchuck Lake — straight on goes to Stuart Lake and a different valley. Switchback up to Colchuck Lake at 5,570 ft, roughly four miles and 2,200 ft in, and fill water: it is the last easy source.\n\nTake the boot path along the lake's EAST shore, which is faster than the west, to the inlet at the south end. Leave the trail there and climb talus, heather benches or snow up the basin to the toe of the Colchuck Glacier at roughly 6,600-6,800 ft.\n\nNow the important part. Do NOT continue up-glacier toward the col — that is the Colchuck Glacier route. Traverse along the glacier's TRUE-RIGHT (climber's right) margin toward Colchuck Peak's north side, staying well right of the fall line under the face.\n\nIf Eightmile Road is gated in early season, add roughly four miles of road each way.",
+        "distMi": 4,
+        "gainFt": 2200,
+        "baseFinding": "THE COULOIRS COME IN ORDER, AND COUNTING THEM IS THE TEST. Walking up the Colchuck Glacier along its true-right margin you pass features in a fixed sequence, and this one is the SECOND deep slot you meet, not the first.\n\nLowest on the glacier: the North Buttress Couloir. Above it, and starting with two rope-lengths of ice below a hidden couloir: the Holsten-Hilden. HIGHER UP THE GLACIER than either: the Northeast Couloir — the one you want. Above and south of it: the rock of the Northeast Buttress.\n\nSO THE PAIRED CHECK IS SLOT-AND-RIB. You are correct when you are standing in an obvious narrow slot splitting the face, with the prominent rock buttress immediately to your SOUTH. If the buttress is not there, you are too low on the glacier. If you are scrambling onto the toe of that rock rather than into a slot, you are on the Northeast Buttress and on a fourteen-pitch rock route instead of a snow and ice one.\n\nTHE MOAT IS PART OF THE ARRIVAL, not an obstacle before it: gaining the couloir means crossing the moat at the glacier's edge, and it runs from a step-across in early season to an awkward downclimb by late summer. If you reach rock with no moat to cross at all, you have probably reached it somewhere it is filled and should confirm the slot above you before committing.\n\nWHAT IT DOES ABOVE, as confirmation: the couloir winds up, steepens, and runs into a steep WALL. The exit is along the base of that wall to the climber's LEFT, finishing on 60-plus degree snow or ice to the summit ridge. A couloir that simply keeps going without hitting a wall is not this one.",
+        "hazards": [
+          "Rockfall down the couloir once the sun reaches the face",
+          "An entry moat that can require an awkward downclimb by mid-to-late summer",
+          "Avalanche-prone slopes above Colchuck Lake in spring and early summer",
+          "Steep snow and ice to 60-plus degrees at the exit",
+          "Reversing the couloir is discouraged — plan on the Colchuck Glacier walk-off, which is long"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/111854129/northeast-couloir",
+      "https://www.mountainproject.com/route/112066235/holsten-hilden",
+      "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_northeast_buttress_4": {
+    "area": "wa_colchuck_peak",
+    "approach_variants": [
+      {
+        "name": "Colchuck Lake and the glacier's true-right margin to the lowest point of the buttress",
+        "season": "Roughly Jul-Sep for the rock; the moat crossing is easiest early and hardest in a lean year late",
+        "notes": "As for the Colchuck Glacier route: Stuart Lake trailhead, Stuart Lake Trail two and a half miles to the signed fork, right onto the Colchuck Lake Trail and up the switchbacks to Colchuck Lake at 5,570 ft — about four miles and 2,200 ft, and the last reliable water on the route.\n\nFollow the east-shore boot path to the inlet at the south end, then climb talus and snow up the basin to the toe of the Colchuck Glacier at roughly 6,600-6,800 ft. Instead of continuing toward the col, angle up and across the glacier's true-right margin toward the peak's northeast side.\n\nCross the moat where snow meets rock — a snow bridge or a wedged block in a good year, and the technical crux of the approach in a lean one. Parties do rope for this.\n\nGiven fourteen-plus pitches and a multi-stage approach, most parties either start well before dawn from the car or camp at Colchuck Lake and climb from there. There is no water above the lake.",
+        "distMi": 4,
+        "gainFt": 2200,
+        "baseFinding": "THE BUTTRESS IS THE ROCK JUST SOUTH OF THE COULOIR, AND THE COULOIR IS THE THING YOU LOOK FOR FIRST. It is easier to identify a deep slot in a face than a rib on it, so use the Northeast Couloir as your marker and then step south onto the rock beside it. If you are in a narrow snow slot, you are one feature too far north.\n\nARRIVAL IS THE LOWEST POINT OF THE ROCK. The commonly climbed start gains the buttress at its lowest point and heads for wide, broken cracks at about 5.8. Standing at the right place there is nothing lower to climb — the rock runs down into the glacier and the moat, and you had to cross that moat to reach it.\n\nTWO STARTS EXIST, AND MIXING THEM IS THE ROUTINE ERROR HERE. There is the more travelled version described above and an older, separate start; they do not meet until around the fifth pitch. So a party that steps onto rock wherever the moat happened to be crossable can find itself on neither, on unfamiliar ground, with no way to tell. Cross the moat where it puts you at the LOWEST rock, not where it is most convenient.\n\nCONFIRMATION IN THE FIRST TWO PITCHES: wide, broken cracks on generally solid rock leading to the crest below a large headwall, then a downclimb of about fifteen feet off the crest before ramps take you up and right. A start with no downclimb in the first few pitches is not this line.\n\nAND THE BAIL-OUT WARNING: this route has a real reputation for parties retreating because they cannot find the crux dihedral higher up. If the base was ambiguous, the rest of the day will be worse.",
+        "hazards": [
+          "A moat crossing that can be the technical crux of the day in a lean snow year",
+          "Two established starts that do not converge until around pitch five",
+          "Inconsistent rock — clean crack pitches interspersed with loose, mossy and lichened ground",
+          "Loose debris on the long rising ledge traverse, onto anyone below",
+          "No water above Colchuck Lake",
+          "A long walk-off down the Colchuck Glacier after a fourteen-pitch day"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "https://www.mountainproject.com/route/111854129/northeast-couloir",
+      "https://www.mountainproject.com/area/106620717/colchuck-peak"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_colchuck_peak_holsten_hilden": {
+    "area": "wa_colchuck_peak",
+    "approach_variants": [
+      {
+        "name": "Colchuck Lake and the glacier to the ice below the Hidden Couloir",
+        "season": "Winter and early spring, when the two ice pitches at the base are formed; the first ascent was in January",
+        "notes": "As for the other north-side lines: Stuart Lake trailhead, Stuart Lake Trail to the signed fork, right for Colchuck Lake and up the switchbacks to the lake at 5,570 ft, then the east-shore path to the inlet and up the basin to the Colchuck Glacier and moraine below the peak's northeast face.\n\nIn the season this route is in, expect the road to be gated well below the trailhead and the approach to be a longer day than the summer figures suggest. No trailhead-to-base time is given here because the published accounts are winter ones and vary too much to average.\n\nAbove the base the route runs two 60 m pitches of ice, several hundred feet of 50-60 degree snow trending up and left, then unconsolidated snow over rock, a short leftward traverse into a chimney at about M6, and a final steep band to a notch on the north ridge crest.\n\nA documented variation climbs the ice start and then continues up the Hidden Couloir itself and across the North Buttress — a more sustained moderate line and a genuinely different day.",
+        "baseFinding": "THE HIDDEN COULOIR IS THE MARKER AND THE ROUTE STARTS UNDERNEATH IT. This is the cleanest base identification on the whole face: find the Hidden Couloir, and the start is immediately BELOW it — two 60 m pitches of good ice leading up to its base.\n\nPOSITION ON THE GLACIER, which is how you find the couloir in the first place: this line sits BETWEEN the North Buttress Couloir and the Northeast Couloir. So walking up the glacier you pass the North Buttress Couloir first; the next thing is this. If you have already passed a second deep slot you have gone too high and are under the Northeast Couloir.\n\nTHE POSITIVE TEST IS THE ICE ITSELF. This is the only line on the face that begins with two full rope-lengths of continuous ice off the deck. If the ground in front of you is snow, or mixed, or rock, it is not the start — whatever else it might be.\n\nAND THE DIVERGENCE ABOVE, because it is decided a couple of pitches up and not at the bottom: from the top of the ice this route goes UP AND LEFT from the base of the Hidden Couloir onto difficult mixed ground. The variation instead climbs INTO the Hidden Couloir. Both start on the same ice. One is M6; the other is sustained moderate. Know which you have come for before you leave the second belay.\n\nIf you cannot find a couloir above your ice, you are not below the Hidden Couloir and should not assume the ice is the right ice.",
+        "hazards": [
+          "A winter approach with the road gated, in avalanche terrain above Colchuck Lake",
+          "Two rope-lengths of AI3 ice off the deck with committing ground above",
+          "Unconsolidated snow over rock above the ice — poor protection",
+          "An M6 chimney reached by a short traverse, with retreat from it difficult",
+          "Short winter daylight on a Grade IV route",
+          "Topping out on the north ridge crest, still a long way from the ordinary descent"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/112066235/holsten-hilden",
+      "https://www.mountainproject.com/route/111854129/northeast-couloir",
+      "https://www.mountainproject.com/route/109285140/north-buttress-couloir"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_colchuck_peak_east_ridge": {
+    "area": "wa_colchuck_peak",
+    "approach_variants": [
+      {
+        "name": "Colchuck Lake and the Colchuck Glacier to the col, then the ridge west to the summit",
+        "season": "Roughly Jul-Sep as a scramble; earlier the glacier is a snow climb and wants an axe and crampons",
+        "notes": "From the Stuart Lake trailhead at 3,400 ft, follow the Stuart Lake Trail about two and a half miles to the signed junction, fork right and switchback up to Colchuck Lake at about 5,570 ft — roughly four miles and 2,200 ft.\n\nFollow the boot path round the lake and across the boulder field at its south end into the basin, then climb the Colchuck Glacier toward the col between Colchuck Peak and Dragontail. Keep climber's right on the glacier to reduce exposure to rockfall coming off Dragontail's north face.\n\nFrom the col the route is the ridge running WEST to Colchuck's summit — Class 2-3, hands needed in places, no protection, generally solid granite with good friction.\n\nBe aware that this route's stored approach text in this catalog says to traverse NORTHEAST from the lake to reach the ridge base. That is the wrong direction: the peak lies south-west of the lake and the col lies south-east of the summit. Navigate from the glacier and the col, not from that sentence.",
+        "distMi": 4,
+        "gainFt": 2200,
+        "baseFinding": "THE COL IS THE BASE, AND YOU KNOW YOU ARE ON IT BECAUSE THE GROUND FALLS AWAY BEHIND YOU. Walking up the Colchuck Glacier you are in a closed basin; at the col the far side opens and drops south into the Ingalls Creek drainage. That change from enclosed to open is the arrival, and it happens whether or not you can see anything.\n\nTHEN TURN RIGHT. From the col, Colchuck Peak is WEST and Dragontail is EAST. The two peaks share this col, so a party that gains it in cloud and turns the wrong way is climbing a different mountain on a different route — and Dragontail's side of the col is not Class 2-3.\n\nTHE HANDS TEST: this ridge is Class 2-3. You will use your hands in places, and you should never need protection or a rope. If you find yourself on ground where you want gear, you have left the crest onto the north or south flank, and the correct answer is to come back to the crest rather than to press on.\n\nCONFIRMATION UNDERFOOT: the granite here is solid with good friction, unlike the loose scree of the glacier basin below. Rambling on loose rubble means you are still below the ridge proper.\n\nA WARNING WORTH CARRYING: this is also the standard DESCENT for the harder routes on the peak's north side, so parties will be coming down it. Meeting people descending is not evidence you are on the wrong line — it is evidence you are on the right one.",
+        "hazards": [
+          "Rockfall onto the Colchuck Glacier from Dragontail's north face — stay climber's right",
+          "Crevasses and a soft afternoon snow surface on the glacier",
+          "Exposure on the ridge crest despite the easy grade",
+          "Wandering off the crest onto steeper flanking ground in poor visibility",
+          "Afternoon thunderstorms on an exposed ridge with no shelter"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/area/106620717/colchuck-peak",
+      "https://www.mountainproject.com/route/111854129/northeast-couloir",
+      "https://www.mountainproject.com/route/114519372/northeast-buttress"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_stanley_burgner": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core Enchantments to the middle of the south face",
+        "season": "Roughly Jul-Sep, once Aasgard Pass is clear of the snow that bridges the creek beneath it",
+        "notes": "From the Stuart Lake trailhead, Stuart Lake Trail two and a half miles to the Colchuck Lake Trail junction, across Mountaineer Creek and up the switchbacks to Colchuck Lake at 5,570 ft. Boulder-hop the east shore to the boulder field at the south end, then climb Aasgard Pass — about 2,000 ft in 1.25 miles of steep loose scree, the physical crux of the approach. Into early July, snow can bridge a hidden creek and moat on the left side of the gully; that hazard has caused serious injuries and at least one death.\n\nFrom the pass at about 7,800 ft, drop gently into the upper Core basin and travel cross-country north over slabs and heather past Isolation and Tranquil Lake toward Gnome Tarn, the usual bivy. The base of the south face is roughly fifteen to twenty minutes from there.\n\nOvernight camping in the Core Zone needs a permit, so many parties do the whole thing in one long day instead.\n\nWhen Aasgard or this trailhead is closed, the Snow Lakes trail is the longer alternative, reaching the same face past Lake Viviane.",
+        "distMi": 7.5,
+        "gainFt": 4600,
+        "baseFinding": "THIS IS THE ROUTE IN THE MIDDLE, AND THAT IS THE FIRST AND MOST USEFUL FACT. Walking along the foot of the south face, the start sits at about the MIDDLE of the base. The lines on the left flank of the face all top out on the West Ridge; this one is the classic that goes to the actual summit.\n\nTHE FEATURE TEST: you are looking for a chimney system on steep white granite. Pitch one takes either a 5.6/5.7 chimney or a wide crack immediately LEFT of that chimney, and lands on low fifth-class ground with trees on it. Trees at the top of your first pitch is a good confirmation.\n\nHOW TO TELL IT FROM ITS TWO NEIGHBOURS, which is the actual problem on this face because three routes start within a hundred feet of each other:\n  - If you can see TWO PROMINENT V-SHAPES on the face and you are at a chimney to the LEFT of them, you are at Beckey-Davis — one route too far RIGHT.\n  - If you are about fifty feet LEFT of where you think the standard line is, you are at Der Sportsman, and its first pitch is 5.11+ rather than 5.7. A first pitch that feels desperate is the loudest possible signal you are on the wrong route.\n\nSTARTING COORDINATE, published for pitch one: roughly 47.48681, -120.78457. In fog with a GPS that is decisive; on a clear day the shape of the face is better.\n\nAND THE ARRIVAL CONFIRMATION HIGHER UP: pitch five squeezes between a chockstone into a flaring chimney, and pitch six is a left-facing corner to the SUMMIT. If your route runs out on the West Ridge instead of the summit, you are on one of the left-flank lines.",
+        "hazards": [
+          "Aasgard Pass: loose steep scree, and a hidden creek and moat under snow into early July with a fatal history",
+          "Avalanche on the pass in shoulder season",
+          "Unmarked cross-country travel over slabs and talus for the last stretch, with no tread",
+          "A flaring squeeze chimney at mid-height that is awkward with a pack",
+          "A shared north-side rappel descent that gets congested when several parties are on the face",
+          "Snafflehounds at the base and at bivy sites will chew boots and gear left out"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/105808515/stanley-burgner",
+      "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "https://www.mountainproject.com/route/107641573/der-sportsman"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_beckey_davis": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core to the chimney left of the two Vs",
+        "season": "Roughly Jul-Sep",
+        "notes": "The Core Enchantments approach, shared with every other line on this face: Stuart Lake trailhead, Stuart Lake Trail to the Colchuck Lake Trail junction, across Mountaineer Creek and up to Colchuck Lake at 5,570 ft, then the boulder field at the south end and Aasgard Pass — 2,000 ft in 1.25 miles of loose scree, hazardous under lingering snow into early July because of a creek and moat hidden beneath it.\n\nFrom the pass, cross-country north past Isolation and Tranquil Lake toward Gnome Tarn and the base of the south face, roughly 7.5 to 8 miles and 4,600 ft one way.\n\nIf the standard trailhead or the pass is shut — wildfire closures have done this — the Snow Lakes trail reaches the same face by a longer and less direct line past Lake Viviane and a climbers' path onto the south side of the peak. One party clocked that version at about ten miles and 6,000 ft.",
+        "distMi": 7.5,
+        "gainFt": 4600,
+        "baseFinding": "LOOK FOR TWO LARGE Vs AND START IN THE CHIMNEY TO THEIR LEFT. That is the whole identification, it is published in exactly those terms, and the accompanying note is that you cannot miss it. Two prominent V-shaped features on the south face; the route's first pitch takes the chimney immediately LEFT of them.\n\nCONFIRM WITH THE FIRST PITCH ITSELF: from the chimney you move LEFT and climb up on knobs to a belay, at about 5.7. Knobs after a leftward move out of a chimney is the signature. If you are pulling straight up out of the chimney with no traverse, look again.\n\nPOSITION RELATIVE TO ITS NEIGHBOUR, which is the check that catches the common error: this route is to the climber's RIGHT of the classic south-face line. So if you are at the middle of the base of the face, you are one route too far left. Walk RIGHT until the two Vs are on your right-hand side and you are at a chimney.\n\nAND A DISTANCE CHECK ON THE ROUTE AS A WHOLE: seven pitches, about 650 ft, running 5.5 to 5.9, with a long chimney-gully crossing to a big ledge partway up and a forced rightward dihedral as the crux. A four- or five-pitch route ending on the West Ridge is one of the shorter lines on the left flank, not this.\n\nIN CLOUD, when you cannot see the Vs from a distance, walk the foot of the face and count chimneys rather than guessing: the Vs are large features and they are visible from close under them even when the summit is not.",
+        "hazards": [
+          "Aasgard Pass: loose scree, and a hidden creek and moat under snow into early July",
+          "Avalanche on the pass in shoulder season",
+          "Unmarked cross-country travel for the final approach",
+          "Six rappels down the north face on ageing natural anchors — carry extra tat",
+          "A possible extra rappel from the West Ridge notch to regain the south-face base",
+          "Snafflehounds at the base will eat gear left unattended"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "https://www.mountainproject.com/route/105808515/stanley-burgner",
+      "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_prusik_peak_solid_gold": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core to the left flank of the south face",
+        "season": "Roughly Jul-Sep",
+        "notes": "As for the rest of the face: Stuart Lake trailhead at about 3,600 ft, Stuart Lake Trail two and a half miles to the signed Colchuck Lake Trail junction, right and across Mountaineer Creek — a rock-hop or log crossing, and the last easy water for a while — then 1.6 miles of switchbacks to Colchuck Lake at 5,570 ft.\n\nBoulder-hop the east shore to the boulder field at the south end, then Aasgard Pass: 2,000 ft in 1.25 miles of steep loose dirt and scree, cairned when snow-free. In early season, and often into July, snow bridges a hidden creek and moat on the left side of the gully; people have been badly hurt and killed there postholing or glissading into it.\n\nFrom the pass at 7,841 ft, drop into the upper Core past Isolation and Tranquil Lake and continue cross-country a mile or so north over slabs and heather benches toward Prusik Pass and Gnome Tarn. The start is fifteen to twenty minutes from a Gnome Tarn camp.",
+        "distMi": 7.5,
+        "gainFt": 4600,
+        "baseFinding": "GO TO THE OUTSIDE CORNER AND START JUST RIGHT OF IT. The left flank of the south face ends in an outside corner — the arête where the south face turns the corner onto the west side — and this route begins just to the RIGHT of it, on a right-leaning crack system leading to a stembox.\n\nTHAT CORNER IS THE ANCHOR FOR THE WHOLE LEFT END OF THE FACE, and the three routes here are placed off it:\n  - Left of the corner, on the west face proper: a line with a large roof at its base, sometimes called the Elephant Ear.\n  - Just right of the corner: this route.\n  - About 100 ft further right: another four-pitch line to the West Ridge.\nSo if you are under a roof, you have gone one route too far left; if you have walked a hundred feet right of the corner, one too far right.\n\nTHE HONEST WARNING ABOUT WHERE THIS ROUTE ENDS, because it is the best single check that you are on the left flank at all: this line and its immediate neighbours top out on the WEST RIDGE, not on the summit. Only the classic line at the middle of the face reaches the true summit. If you have come for the summit and started here, you have an extra scramble at the top and you started on the wrong route.\n\nSEQUENCE CHECK: right-leaning cracks to a stembox, then a roof and hand-crack pitch, then slabby and wide ground past a chimney with loose rock, then a final splitter corner. Five pitches, about 450 ft. A seven-pitch line with two big V-features low down is Beckey-Davis, well to your right.",
+        "hazards": [
+          "Aasgard Pass: loose steep scree, and a hidden creek and moat under snow into early July with a fatal history",
+          "Avalanche on the pass in shoulder season",
+          "Loose rock past the chimney at mid-height",
+          "Natural, non-bolted rappel anchors on the north side shared with several routes; inspect and back up old tat",
+          "Cross-country navigation over slabs with no tread for the last mile",
+          "Core Zone camping requires a permit that most parties do not have"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "https://www.mountainproject.com/area/105808510/prusik-peak",
+      "https://www.mountainproject.com/route/105808515/stanley-burgner"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_boving_christensen": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core, then a hundred feet right of the left-flank classic",
+        "season": "Roughly Jul-Sep",
+        "notes": "The shared Core Enchantments approach: Stuart Lake trailhead, Stuart Lake Trail to the Colchuck Lake Trail junction, across Mountaineer Creek and up to Colchuck Lake at 5,570 ft, then the boulder field at the south end and Aasgard Pass — 2,000 ft in 1.25 miles of loose scree, the crux of the walk in, dangerous under snow into early July and avalanche-prone in shoulder season.\n\nFrom the pass, cross-country north past Isolation and Tranquil Lake toward Gnome Tarn and the base of the south face — roughly 7.5 to 8 miles and 4,600 ft one way, the last stretch unmarked over slabs and talus.\n\nFour pitches, about 450 ft: a short crack and slab to a corner, a long exposed and somewhat dirty face-crack pitch, a corner with a bouldery move, and a finishing fingers-to-hands pitch to the ridge.",
+        "distMi": 7.5,
+        "gainFt": 4600,
+        "baseFinding": "PACE IT OFF FROM THE LEFT-FLANK CLASSIC: this route starts ABOUT 100 FEET TO THE RIGHT of it, on the west side of the south face. That is a measurable distance rather than a description, and it is the reason this entry is worth having — everything else on this end of the face is identified relative to the same outside corner.\n\nSO THE PROCEDURE IN POOR VISIBILITY IS TWO STEPS. First find the outside corner where the south face turns onto the west side. The classic left-flank line starts just right of that corner. Then walk right roughly a hundred feet along the base. That is where you are.\n\nWHAT TELLS YOU YOU HAVE OVERSHOT: keep walking right along the base and the ground under the middle of the face is where the summit route starts, and beyond that the two large V-features of the next line along. Reaching either means you have gone several hundred feet too far.\n\nWHAT TELLS YOU YOU ARE SHORT: a large roof at the base means you have crossed the corner onto the west face entirely and are two routes left.\n\nFIRST-PITCH CONFIRMATION: a SHORT crack and slab leading to a corner. It is not a long lead and it is not hard. The long, exposed, somewhat dirty face crack is the SECOND pitch. If your first pitch is long and dirty you have started one pitch too high or on the wrong line.\n\nAND THE TOP-OUT CHECK: this route finishes on the West Ridge, not the summit — the same as its two neighbours on this flank. That shared finish is why they share one rappel descent on the north side.",
+        "hazards": [
+          "Aasgard Pass: loose scree with a hidden creek and moat under early-season snow",
+          "A long, exposed and dirty second pitch",
+          "Natural non-bolted rappel anchors on the north side, periodically rebuilt as old tat accumulates",
+          "Unmarked cross-country approach over slabs and talus",
+          "Afternoon thunderstorms with a long walk back over the pass"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "https://www.mountainproject.com/area/105808510/prusik-peak"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_energizer_bunny": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core, round the corner onto the west face",
+        "season": "Roughly Jul-Sep. This one faces west rather than south, so it comes into the sun later in the day and is a cold morning start",
+        "notes": "The shared Core Enchantments approach: Stuart Lake trailhead, Stuart Lake Trail to the Colchuck Lake Trail junction, across Mountaineer Creek to Colchuck Lake at 5,570 ft, the boulder field at the south end, and Aasgard Pass — 2,000 ft of loose scree in 1.25 miles, hazardous under snow into early July.\n\nFrom the pass, cross-country north past Isolation and Tranquil Lake toward Gnome Tarn, roughly 7.5 to 8 miles and 4,600 ft one way from the trailhead.\n\nFive pitches, about 450 ft: a burly and somewhat dirty roof pitch straight off the deck, an exposed corner to a good ledge, a short aid section through steep ground, a fingery crack between two features, and then the final corner crack shared with the neighbouring line to finish.\n\nBecause it joins that neighbour near the top, it shares its descent: a single full-length rappel on the north side and about thirty minutes of scrambling back round to the base.",
+        "distMi": 7.5,
+        "gainFt": 4600,
+        "baseFinding": "THE ROOF AT GROUND LEVEL IS THE MARKER, AND IT IS THE ONLY ONE YOU NEED. This route starts underneath a large roof formation at the very base — climbing it is the first pitch, straight off the deck. No other line at this end of the peak starts under a roof. Standing under a big overhang means you are here.\n\nWHICH SIDE OF THE CORNER YOU ARE ON DECIDES IT. The south face turns an outside corner onto the west side. This route is LEFT of that corner, i.e. on the WEST face; the left-flank south-face classic is just RIGHT of it. So: corner on your right, roof over your head, west face — correct. Corner on your left and no roof — you have stepped back onto the south face and are on a different climb.\n\nASPECT AS A SANITY CHECK: this one faces WEST. If you have been standing in the sun all morning, you are on the south face and not here.\n\nMID-ROUTE CONFIRMATION: there is a pair of rock features partway up that the route is named for, with a steep fingery crack running between them. If you never pass between two distinct features, you are not on this line.\n\nAND THE TOP: this route joins its neighbour's final corner crack, so the last pitch is shared and the summit is not reached directly — you finish on the West Ridge. That shared finish is also why the rappel descent is the same one.",
+        "hazards": [
+          "Aasgard Pass: loose scree with a hidden creek and moat under early-season snow",
+          "A burly, dirty roof pitch immediately off the ground",
+          "A short aid section through steep terrain at mid-height",
+          "Shared natural rappel anchors on the north side that have been rebuilt and relocated over the years",
+          "A west aspect: late sun, cold mornings, and afternoon weather arriving unseen from behind the peak"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "https://www.mountainproject.com/area/105808510/prusik-peak"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_prusik_peak_der_sportsman": {
+    "area": "wa_prusik_peak",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass and the Core, fifty feet left of the standard south-face line",
+        "season": "Roughly Jul-Sep; the route is a hard rock climb and wants dry, warm granite",
+        "notes": "The Core Enchantments approach: Stuart Lake trailhead, Stuart Lake Trail 2.5 miles to the Colchuck Lake Trail junction, across Mountaineer Creek and up the switchbacks to Colchuck Lake at 5,570 ft. From the boulder field at the lake's south end, Aasgard Pass — 1.25 miles gaining about 2,000 ft of steep loose scree and dirt, the physical crux of the approach, with a hidden creek and moat under lingering snow into early July.\n\nFrom the pass at 7,841 ft, continue cross-country through the upper Core past Isolation and Tranquil Lake toward Prusik Pass and Gnome Tarn. Parties commonly bivy at the tarn, about twenty minutes from the base. There is no maintained trail for the last stretch.\n\nThe Snow Lakes trail is the longer alternative when Aasgard or the trailhead is closed: past Nada and Snow Lakes to Lake Viviane, then up and right toward Temple Lake and up climbers' paths through boulders to the base of the south face.",
+        "distMi": 7.5,
+        "baseFinding": "FIFTY FEET LEFT OF THE STANDARD SOUTH FACE ROUTE. That is the published position and it is a pace count, not a description — find the classic line at the middle of the base of the face, then walk left about fifty feet.\n\nTHE FIRST PITCH IS THE CHECK, AND IT IS A BRUTAL ONE. This route's opening pitch is 5.11+. The line fifty feet to your right opens at 5.6 or 5.7 in a chimney. There is no ambiguity between those two pieces of climbing: if you are cruising your first pitch, you are on the wrong route, and if you are fighting a tipsy crux entering a stembox, you are on this one.\n\nWHAT THE FIRST PITCH LOOKS LIKE FROM THE GROUND, so you can commit before you leave the deck: an easy, unappealing LEFT-SLANTING crack system leading up to a stance below an obvious stembox. The unremarkable start is deceptive and is exactly why the fifty-foot offset matters — the interesting rock is not visible from the base.\n\nBELAY CONFIRMATION: pitch one ends at a TWO-BOLT ANCHOR after liebacking and stemming up the right of twin cracks. Most of this face is natural gear; arriving at bolts is strong evidence you are on this line rather than on a neighbour.\n\nAND THE NAMED PITCH HIGHER UP: an undercling flake pitch that parties call the money pitch, then a committing corner where the route switches cracks. If you never leave one crack for another, you have wandered onto adjoining ground.\n\nDESCENT NOTE THAT AFFECTS THE APPROACH DECISION: this one rappels the north side in five, then needs one more rappel from the balanced-rock landmark at the base of the West Ridge to get back down to your packs.",
+        "hazards": [
+          "Aasgard Pass: loose steep scree with a hidden creek and moat under early-season snow, and a fatal history",
+          "A 5.11+ crux on the first pitch, so retreat decisions come early",
+          "A loose block in the finishing chimney",
+          "Mixed rappel anchors on the north side — one bolted station near the top, gear and slung naturals below",
+          "Unmarked cross-country approach over slabs and talus",
+          "Core Zone camping needs a permit"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "https://www.mountainproject.com/route/105808515/stanley-burgner",
+      "https://www.mountainproject.com/area/105808510/prusik-peak"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_witches_tower_south_face": {
+    "area": "wa_witches_tower",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass, then southwest across the Upper Enchantments to the col below the tower",
+        "season": "Roughly Jul-Sep; earlier the traverse from the pass is a snow crossing and the col wants an axe",
+        "notes": "From the Stuart Lake trailhead at about 3,400 ft, follow the Stuart Lake Trail south along Mountaineer Creek; at about 2.5 miles bear left at the signed junction onto the Colchuck Lake Trail. Cross Mountaineer Creek on logs and boulders — an awkward wet ford in early-season high water — and climb through forest and a boulder field to Colchuck Lake at 5,570 ft, roughly four miles in. Last reliable water.\n\nTake the climbers' path along the lake's east and south shore through talus to the foot of Aasgard Pass, then up the eroded boot track: roughly 2,200 ft in well under a mile of loose scree and blocks, holding snow and ice into July.\n\nFrom the pass at about 7,800 ft, work south to southwest across talus — initially as though heading for the snow route on Dragontail's east side — toward the tower, then up snow or Class 2 rock to the col just SOUTHWEST of it.\n\nFigure six and a half to seven miles one way with something like 4,700-4,900 ft of gain.",
+        "gainFt": 4800,
+        "baseFinding": "THE COL SOUTHWEST OF THE TOWER IS THE BASE, AND THE TOWER ITSELF IS THE LANDMARK — a distinct rock pinnacle standing alone at the west end of the Enchantments, dividing the upper basin between Little Annapurna and Dragontail. It is a pinnacle, not a summit on a ridge, so once you are close enough to see anything at all it is unambiguous.\n\nWHICH SIDE OF IT YOU WANT: the SOUTHWEST col. From the col the climbing goes up a sharp ridge for about 100 ft and then traverses a few feet RIGHT onto the south face. If the ground above your col does not narrow into a sharp ridge within the first hundred feet, you are at the wrong notch.\n\nTHE DISCRIMINATOR AGAINST THE OTHER ROUTES, and it is a clean one because the two cols are on opposite sides:\n  - Snow or Class 2 rock up to a col, sharp ridge above, traverse right onto the south face — this route.\n  - A col with a STEEP SNOWFIELD to cross before you reach rock — that is the west-side line, and the snowfield is the tell.\n  - Working EAST or SOUTHEAST from the pass toward light-coloured rock below Dragontail's south ridge, with no col involved at all — that is the east face line.\n\nARRIVAL CONFIRMED BY THE SUMMIT ITSELF: the top of this tower is guarded by a four-foot slot you have to jump. If you have scrambled to a high point and there was no slot, you are on a subsidiary block and not on the tower.\n\nGRADE CHECK: the hardest single move on this line is one 5.5 step-up after the Class 4 traverse. Ground that feels harder than that means you missed the traverse right and are climbing the face direct.",
+        "hazards": [
+          "Aasgard Pass: 2,200 ft of loose eroded scree with rockfall from parties above, holding snow into July",
+          "Serious exposure on the final approach scramble to the col",
+          "A four-foot slot that must be jumped to reach the true summit, with real consequence",
+          "Fast-building afternoon thunderstorms with no shelter in the Upper Enchantments",
+          "Protection on the 5.5 step can be hard to find",
+          "The downclimb off the south face is the crux for most parties"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/witches-tower/154282",
+      "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/",
+      "http://skookumtraveler.blogspot.com/2013/08/witches-tower-wa.html"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_witches_tower_southwest_corner": {
+    "area": "wa_witches_tower",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass to the same southwest col, taking the corner rather than the face traverse",
+        "season": "Roughly Jul-Sep",
+        "notes": "Identical to the south face approach as far as the col: Stuart Lake trailhead to Colchuck Lake at 5,570 ft, the boot path round the lake's east and south shore, Aasgard Pass at about 7,800 ft, then south across talus toward the tower and up snow or Class 2 rock to the col just southwest of it.\n\nPublished figures for the day put it at roughly six to eight hours and about 4,200 ft of gain from the trailhead to this point, which is a wide enough spread that it should be treated as a range rather than a plan.\n\nFrom the col the climbing is short: about 100 ft up the sharp ridge, a few feet right onto the south face at Class 4, a 5.5 step-up, a short face, and a scramble to the summit slot.\n\nWhat separates this entry from the south face one is not where you stand but what you do from there, so the useful content is in the base finding rather than in the walk.",
+        "baseFinding": "SAME COL, DIFFERENT FIRST MOVE — AND YOU SHOULD KNOW WHICH YOU ARE DOING BEFORE YOU LEAVE THE COL. From the col southwest of the tower, this line goes straight up the SHARP RIDGE ABOVE THE COL for about 100 ft. That ridge crest is the route. The south face line uses the same ground and then commits to the traverse right; both converge at the same Class 4 step and 5.5 move.\n\nSO THE ARRIVAL TEST IS THE COL, and it has three parts:\n  1. You reached it by ascending SNOW or CLASS 2 ROCK from the basin — not by crossing a steep snowfield, which is the west-side approach, and not by traversing across light rock under Dragontail's south ridge, which is the east face.\n  2. Above you the ground rises as a defined, narrow crest rather than as an open face.\n  3. The tower's summit block is directly above that crest, with the four-foot summit slot the last obstacle.\n\nIF THE CREST FEELS WRONG: the ridge is sharp and exposed, and the recorded warning about this line is that placements on the crux are tricky to find. That is a route-finding statement as much as a protection one — a leader who cannot find gear may be a few feet off the correct line, on ground with fewer features.\n\nAND THE COMMON MISTAKE: parties heading for the tower from Aasgard Pass drift too far EAST, toward Dragontail. If Dragontail's bulk is directly ahead of you rather than off to your right, you have gone past the tower.",
+        "hazards": [
+          "Aasgard Pass: loose steep scree, snow into July",
+          "Exposure on the sharp ridge above the col",
+          "Hard-to-find protection on the 5.5 crux",
+          "A four-foot summit slot that must be jumped",
+          "Afternoon thunderstorms with no shelter",
+          "Downclimbing the south face back to the col is the usual descent and is Class 2-3 with one harder step"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/witches-tower/154282",
+      "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_witches_tower_west_buttress": {
+    "area": "wa_witches_tower",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass to the col, then a steep snowfield crossing onto the west side",
+        "season": "Roughly Jul-Sep. The snowfield is the point of this variant and it is present through most of the usable season — carry an axe regardless of the date",
+        "notes": "As for the other routes on the tower: Stuart Lake trailhead, the Colchuck Lake Trail to Colchuck Lake at 5,570 ft, the boot path round the lake, and Aasgard Pass at about 7,800 ft. Then south across the basin to the col behind the tower.\n\nWhat is different here is the last few hundred feet. From the col a STEEP SNOWFIELD has to be crossed to reach the base of the buttress on the west side. An ice axe is the standard recommendation, and parties downclimb it in self-arrest position on the way out, which tells you the angle.\n\nThe climbing above is mostly Class 4 on solid granite with good holds, a short Class 5 chimney partway up, and a friction section to finish. Two pitches.\n\nThe descent combines rappelling and downclimbing, including an exposed ledge traverse, back to the col — so the snowfield gets crossed twice.",
+        "baseFinding": "THE SNOWFIELD IS THE ROUTE MARKER, AND IT IS THE CLEANEST ONE ON THE WHOLE TOWER. Of the tower's routes, this is the only one where the base is reached by crossing steep snow after the col. So: if you left the col and immediately started climbing rock, you are on one of the other lines. If you left the col, crossed a steep snowfield, and are now standing under rock on the WEST side, you are here.\n\nCARRY THAT AS A DECISION, NOT AN OBSERVATION. Arriving at the col without an axe means this route is off the table for the day, and that is a judgement to make at Colchuck Lake rather than at 8,400 ft.\n\nCONFIRMATION FROM THE ROCK: the buttress here is solid granite with good natural hand and footholds and it goes mostly at Class 4, with one short Class 5 CHIMNEY partway up and a friction face to finish. The other routes on the tower are characterised by a sharp ridge above the col and a traverse onto the south face; neither has a chimney. A chimney at mid-height is positive evidence you are on the west buttress.\n\nORIENTATION CHECK IN CLOUD: from the base you are on the far side of the tower from the Upper Enchantment lakes basin you walked in through. If the lakes are still below and behind you, you have not crossed to the west side.\n\nAND THE DESCENT MATTERS TO THE ARRIVAL DECISION: the way down involves an exposed ledge traverse and rappels back to the col, then the snowfield again in self-arrest position. This is the tower's most committing line and the base is where you commit.",
+        "hazards": [
+          "A steep snowfield crossing to reach the base, and again in descent — ice axe essential",
+          "Aasgard Pass: loose steep scree, snow into July",
+          "An exposed ledge traverse on the descent",
+          "A short Class 5 chimney mid-route with a pack",
+          "Afternoon thunderstorms with no shelter and a snow crossing between you and the way out"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/witches-tower/154282",
+      "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_e_se_face": {
+    "area": "wa_witches_tower",
+    "approach_variants": [
+      {
+        "name": "Aasgard Pass, then east and southeast to the light-coloured rock below Dragontail's south ridge",
+        "season": "Roughly Jul-Sep once the talus is clear; snow patches persist right up to the base into midsummer",
+        "notes": "From the Stuart Lake trailhead at about 3,400 ft, the Stuart Lake Trail to the signed fork at about 2.5 miles, left onto the Colchuck Lake Trail and across Mountaineer Creek, then up through forest and a boulder field to Colchuck Lake at 5,570 ft, roughly 4.3 miles. Last reliable water.\n\nSkirt the lake's east and south shore on climbers' trail through talus to the foot of Aasgard Pass, then up the eroded boot path — 2,200 to 2,500 ft in well under a mile of loose scree, boulders and lingering snow. This is the biggest hazard of the day and the place route-finding errors happen in cloud.\n\nFrom the pass at roughly 7,750-7,800 ft, the split from the other Witches Tower routes happens immediately. Instead of contouring west toward the col used by the south face and southwest corner lines, work EAST and SOUTHEAST across talus and boulders below Dragontail's south ridge, staying high along the rim of the basin, to reach the tower's east-facing side.\n\nNo water above Colchuck Lake beyond snowmelt trickles.",
+        "gainFt": 4400,
+        "baseFinding": "YOU NEVER GO TO A COL ON THIS ONE, AND THAT IS THE TEST. Every other route on the tower is reached by gaining a notch — the southwest col, or the col behind the tower. This line approaches the EAST side directly across talus, staying high along the rim of the basin under Dragontail's south ridge. If you find yourself climbing to a notch, you are on a different route.\n\nWHICH DIRECTION FROM THE PASS: east to southeast. The col routes go west and southwest. That is a genuine fork at the top of Aasgard Pass and it is made within a few minutes of arriving there, so decide before you top out rather than after.\n\nTHE ROCK IS THE MARKER: aim for the light-coloured, white granite face on the tower's east side. From below it, the route works up a series of ZIG-ZAGGING LEDGES to the summit — that stepped, ledgy character is what identifies it. A face that is continuous and blank in front of you is not the line, and there is a well-known short hand crack on one of the standard variations through it.\n\nGRADE CHECK: this is fourth class, one pitch, with little or no protection typically placed. If you are looking at sustained fifth-class climbing you have picked the wrong start on the face.\n\nAND THE SUMMIT CHECK COMMON TO THE WHOLE TOWER: the true summit is guarded by a four-foot slot that has to be jumped. No slot means no summit.\n\nHONEST LIMIT ON THIS ENTRY: the east side of the tower is less documented than the col routes, and published descriptions of the exact start line are thin. The direction from the pass, the white rock and the zig-zag ledges are solid; a precise first-move marker is not available and none is invented here.",
+        "hazards": [
+          "Aasgard Pass: 2,200-2,500 ft of loose eroded scree, snow and ice into July, rockfall from parties above",
+          "Blocky talus and short snow patches right up to the base",
+          "Little or no protection on the climbing itself",
+          "A four-foot summit slot that must be jumped",
+          "The descent is normally down the south face or southwest corner, i.e. NOT the way you came — you finish on the other side of the tower",
+          "No water above Colchuck Lake"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/witches-tower/154282",
+      "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/"
+    ],
+    "_confidence": "thin"
+  },
+
+  "wa_sherpa_peak_north_ridge": {
+    "area": "wa_sherpa_peak",
+    "approach_variants": [
+      {
+        "name": "Mountaineer Creek to the Sherpa-Argonaut basin, then talus west-northwest to the lower notch",
+        "season": "Roughly Jul-Sep once the talus is clear; the basin holds snow into early summer",
+        "notes": "From the Stuart Lake trailhead on Eightmile Road, follow the Stuart Lake Trail along Mountaineer Creek for roughly three and a half to four miles. Before the lakes, leave the maintained trail, cross Mountaineer Creek, and pick up a boot path and cairns climbing talus benches on the slope west of the creek — staying a couple of hundred feet above the trees before dropping back toward the water — aiming for the Sherpa-Argonaut basin.\n\nDo not follow cairns out into the boulder field: published accounts specifically warn that the cairned line invites you off the better path. Stay with the creek.\n\nAround 5,800 ft the ground steepens into sustained loose talus. The usual bivy is at the top of a talus field in the basin, and from there it is another hour and a half to two hours of talus-hopping to the toe of the ridge.\n\nA southern approach over Longs Pass and up Ingalls Creek exists but is a longer, less direct way to this particular route.",
+        "baseFinding": "AIM FOR THE DOUBLE V AND CAMP JUST INSIDE THE LOWER ONE. Approaching the Sherpa-Argonaut col from the basin, the skyline reads as two V-shaped notches. The bivy sits at the top of a talus field just inside the LOWER V, and that pairing — two Vs, camp inside the lower — is the most reliable landmark on this approach because it is a skyline shape rather than a feature you have to be close to.\n\nFROM THE BASIN, THE MOVE IS WEST-NORTHWEST AND UP A DEEP GULLY. Ascend talus west-northwest to a deep gully that runs to a NOTCH on the ridge at about 7,000 ft. That gully is the way onto the route; contour up and climber's RIGHT out of the basin to reach the base of that lower notch.\n\nARRIVAL: at the notch there are easy slabs that can be scrambled before you rope up. Easy slabs at a notch at roughly 7,000 ft, reached by a gully, with about 1,500 ft of ridge above you — that is the start.\n\nWHAT GETTING IT WRONG LOOKS LIKE, and it is expensive here: the ridge is largely Class 2-4 and you want to stay JUST ON THE EAST SIDE OF THE CREST. Straying onto the crest itself at the wrong point adds unavoidable 5.6-5.8 pitches on a route that is already long. So a party that gains the ridge somewhere other than the notch will find the climbing immediately harder than advertised — that is the signal to downclimb and traverse rather than to press on.\n\nCONFIRMATION LOW ON THE ROUTE: the first section ends with a roughly 25 m rappel from slings into a notch. If you have climbed a long way with no rappel, you are not on the ridge proper.",
+        "hazards": [
+          "Sustained loose talus above 5,800 ft, more tedious than technical but a long way",
+          "Misleading cairns that pull you off the creek into the boulder field",
+          "Blowdown on the unmaintained climbers' path",
+          "Straying onto the crest and adding unprotectable 5.6-5.8 ground",
+          "Large detached blocks making protection difficult on the upper pitches",
+          "A descent that is not a reversal of the route and is considered its trickiest part"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/north-ridge/314875",
+      "https://cascadeclimbers.com/forum/topic/103479-tr-sherpa-peak-north-ridge-north-ridge-variation-06132020/",
+      "https://www.lemkeclimbs.com/sherpa-peak-north-ridge-58.html",
+      "https://www.mountainproject.com/route/110930796/north-ridge"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_sherpa_balanced_rock_standard": {
+    "area": "wa_sherpa_balanced_rock",
+    "approach_variants": [
+      {
+        "name": "Longs Pass and Ingalls Creek to the Sherpa-Argonaut basin and Table Rock",
+        "season": "Roughly Jul-Sep once the gully system above Ingalls Creek is dry",
+        "notes": "From the Esmeralda / Longs Pass trailhead at the end of the North Fork Teanaway Road, take Longs Pass Trail #1229 through open pine and sage switchbacks about 2.5 miles and 1,950 ft to Longs Pass at roughly 6,200-6,400 ft.\n\nDrop off the north side on the steep eroded boot path, losing 1,400-1,600 ft over about a mile to Ingalls Creek at roughly 4,800 ft. Ford the creek — a rock-hop in low water, a real wet crossing in snowmelt — and follow the Ingalls Creek Trail west about half a mile to the Beverly-Turnpike junction at about 4,700 ft. That junction is the last dependable water before the alpine basin.\n\nA climbers' boot path switchbacks up through forest and talus from there; around 6,000 ft it narrows into a gully system. Traverse east several hundred feet to a divide between two gullies and drop into the EASTERN one, which leads toward Sherpa. Class 2 slopes above it reach Table Rock, a large flat boulder at about 7,400 ft in the Sherpa-Argonaut basin and the usual high bivy.\n\nCarry all your water above the Beverly-Turnpike junction; the upper basin is dry.",
+        "distMi": 6.5,
+        "baseFinding": "THE BASE IS A FREE-STANDING PILLAR, NOT A FACE, AND THAT IS WHY THIS ONE CANNOT BE MISTAKEN ONCE YOU ARE CLOSE. From Table Rock a short Class 3 scramble gains a notch just WEST of Sherpa's summit on the range divide, putting you on the crest EAST of the balanced rock. Follow the crest west over blocks and sandy exposed benches at Class 3-4 until you are standing at the foot of a detached granite pillar. That pillar is the route.\n\nTHE MOVE AT THE BASE IS THE PROOF: you cannot simply start climbing. Gaining the pedestal at the bottom needs a shoulder-stand off a partner, or a rope thrown or lassoed over the point of the pedestal. If you have found a start you can climb unaided, you are on the peak's ordinary ridge scrambling and not on this feature.\n\nSECOND CONFIRMATION, AND IT IS UNUSUAL FOR THE RANGE: above the pedestal the climbing is BOLT-PROTECTED FRICTION at about 5.7 to a flat top, with a single ageing bolt up there used to rappel back down. Bolts on Sherpa are rare enough that finding them is strong positive evidence.\n\nDIRECTION CHECK IN CLOUD: you arrive at the crest EAST of the pillar and walk WEST to it. If you are heading east along the crest you are walking toward Sherpa's true summit and away from the rock.\n\nAND A SCOPE WARNING WORTH READING BEFORE YOU COMMIT: this is not a route up the mountain. It is the technical feature near the summit, and most parties combine it with the Class 3-4 ridge traverse to Sherpa's main summit. If your objective was the peak, the pillar is an add-on rather than the way up.",
+        "hazards": [
+          "A steep, loose descent off Longs Pass in both directions",
+          "An Ingalls Creek ford that is a genuine crossing in early-season snowmelt",
+          "Loose rockfall-prone gully and basin terrain — helmets strongly advised",
+          "A dry upper basin: no water above the Beverly-Turnpike junction",
+          "An exposed Class 3-4 crest traverse to reach the pillar",
+          "A single ageing bolt as the rappel anchor off the top",
+          "The unroped downclimb back to camp can take as long as the technical pitch itself"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/sherpa-peak/152244",
+      "https://www.summitpost.org/north-ridge/314875",
+      "https://www.mountainproject.com/area/105996601/mt-stuart"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_south_face_12": {
+    "area": "wa_argonaut_peak",
+    "approach_variants": [
+      {
+        "name": "Beverly Turnpike and Fourth Creek Pass to an Ingalls Creek camp, then straight up the south side",
+        "season": "Roughly Jul-Sep. The brush is the reason: it is impassably wet in early season and the gully may hold snow in the shoulders",
+        "notes": "From the Beverly Turnpike trailhead at the end of FR-9737-112 off the North Fork Teanaway Road, at about 0.5 mile bear left onto signed Trail #1391. Taking the Bean Creek fork here is a commonly reported mistake, so read the sign.\n\nAt about 3.1 miles turn right onto Trail #1226.1, the Fourth Creek Trail; at about 3.6 miles you crest Fourth Creek Pass with the first open views of Argonaut, Colchuck and Dragontail. Descend the far side to roughly 6 miles and 4,200 ft, ford Ingalls Creek, and camp at the Fourth Creek confluence. Day one is about 6 miles and 2,000 ft.\n\nFrom camp, follow the Ingalls Creek Trail west about half a mile, then cut sharply left and north and climb straight upslope. Expect roughly 300 vertical feet of tangled forest and then close to 1,000 ft of dense slide alder above that — progress can drop to a few hundred feet an hour.\n\nAt about 5,200 ft the brush relents. Climb the LEFT side of a large drainage gully to about 6,600 ft, then the gully itself.",
+        "distMi": 6.5,
+        "gainFt": 2000,
+        "baseFinding": "TWO TESTS, ONE AT THE GULLY FORK AND ONE AT THE WALL, AND YOU NEED BOTH.\n\nFIRST, THE FORK AT ABOUT 7,100 FT. The gully you have been climbing splits. The standard line is the LEFT branch. The right branch also reaches the mountain but is far less travelled, so a party that drifts right will find progressively less sign of passage — that absence is the signal to come back down and cross over.\n\nSECOND, THE WALL ITSELF, and this is the one that matters in fog because the gully fork can be ambiguous under snow. At the base of the south face there are TWO SHORT LEFT-FACING CORNERS side by side. The route starts in the RIGHTMOST AND LARGER of the two. Not a corner — two corners, and you take the bigger, right-hand one. If there is only one corner in front of you, you are not at the start.\n\nWHAT THE CLIMBING SHOULD FEEL LIKE, as a check on all of the above: blocky, generally solid rock, three pitches, graded 5.6 — but an old-school 5.6 that parties consistently report climbing like modern 5.9 or harder. So sustained-feeling climbing is NOT evidence you are off route here. Watch for a few loose blocks low down.\n\nA SEPARATE FEATURE WORTH NOT CONFUSING WITH THE START: high on the mountain there is a 50-foot gully with a chockstone near its top, Class 4, taken by stepping right at the overhang, which tops out on the east ridge a short way from the summit. That is the finish of the ordinary scramble line, and this catalog's stored approach text for this route describes it as though it were the route. It is not the base of the 5.6 face climb, and a party navigating to it will end up on the scramble.",
+        "hazards": [
+          "Close to 1,000 ft of dense slide alder above 300 ft of jackstraw forest — the defining feature of the day",
+          "An Ingalls Creek ford that can be cold and swift early, and ice-covered in the shoulders",
+          "Loose blocks low on the route",
+          "Possible snow in the gully in the shoulder seasons — carry axe and crampons if in doubt",
+          "The descent rappels a chockstone gully where ropes are reported to hang up on the chockstone",
+          "A heavily worn sling anchor above that chockstone: inspect and back it up"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/argonaut-peak/climbers-log/152581",
+      "https://trailcatjim.com/argonaut-peak-attempt-via-fourth-creek-south-slope-northeast-ridge-2024/",
+      "https://www.mountainwerks.org/cma/2003/argonaut.html"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_argonaut_peak_northeast_couloir": {
+    "area": "wa_argonaut_peak",
+    "approach_variants": [
+      {
+        "name": "Mountaineer Creek off-trail to the basin under Argonaut's north face",
+        "season": "Roughly Apr-Jun as a snow climb; consistent snow starts around 4,700 ft in a normal spring",
+        "notes": "From the Stuart Lake trailhead, follow the trail past the Colchuck Lake split and then leave it, heading up toward Argonaut's north side. There is no maintained path for this and route choice through the lower ground is yours: the terrain is swampy in places, there is a log crossing of the creek, and there is a notorious slide-alder slope that is best avoided by taking nearby talus instead.\n\nConsistent snow generally starts around 4,700 ft. Above that, follow the drainage up toward the north face; parties have used snowshoes for much of this section.\n\nNothing published gives a reliable trailhead-to-base time for this approach, and the accounts that do quote figures are quoting whole days that also include a traverse of Colchuck, so no figure is given here.\n\nThe couloir above runs a constant, sustained 35-50 degrees for about 1,200 ft with no significant steps, narrowing as it goes, and exits on mid-fifth-class or icy ground onto the summit ridge system.",
+        "baseFinding": "THE COULOIR THAT NARROWS IS THE RIGHT ONE. This is the most useful in-fog property of the line: it holds a constant angle for its whole length and it TAPERS, from roughly fifty feet wide at the bottom to as little as ten feet near the top. A gully that stays the same width, or that has obvious steps and pitches in it, is not this feature.\n\nORIENTATION AGAINST THE ROCK: the couloir sits immediately EAST of the Northeast Buttress, so from inside the couloir the buttress rock is the bounding rib on its WEST side. Standing at the entrance with a defined rock rib to the west and open snow slopes to the east is the correct position; standing with rock on both sides in a short, steep slot means you are in one of the minor gullies rather than the main line.\n\nAND THE EXIT AS A CONFIRMATION: this couloir does NOT run to the summit. It finishes with one mid-fifth-class or icy pitch onto the summit-ridge system, followed by third and fourth class scrambling to distinctive A-frame summit blocks. A line that appears to run straight to the top is a different feature.\n\nHONEST LIMIT, STATED RATHER THAN PAPERED OVER: published accounts of this approach describe reaching the base without naming a landmark that distinguishes it from neighbouring gullies at close range — one first-hand report simply says they reached the base of the couloir. The shape of the couloir and the buttress on its west are real, corroborated tests; a specific arrival marker at the toe is not published and none is invented here. Scout the face from lower in the basin in good visibility before committing in the dark.",
+        "hazards": [
+          "A notorious slide-alder slope on the approach, best bypassed on talus",
+          "A log crossing of Mountaineer Creek and swampy ground below the snowline",
+          "1,200 ft of sustained 35-50 degree snow with avalanche and rockfall exposure as the day warms",
+          "A mid-fifth-class or icy exit pitch",
+          "A descent involving rappels down slabs and a traverse of a wet ledge into the east gully",
+          "No maintained trail on the approach and no reliable published timing for it"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://mountainflamingo.com/2012-05-19-argonaut-peak-ne-couloir/",
+      "https://www.summitpost.org/northeast-couloir/160858",
+      "https://www.summitpost.org/argonaut-peak/climbers-log/152581"
+    ],
+    "_confidence": "thin"
+  },
+
+  "wa_the_tipping_point": {
+    "area": "wa_colchuck_balanced_rock",
+    "approach_variants": [
+      {
+        "name": "Colchuck Lake, the Aasgard trail, then left through the brush to the base gully",
+        "season": "Roughly Jul-Sep; the traverse above the lake holds wet snow into July and has produced serious slips",
+        "notes": "From the Stuart Lake trailhead on FR 7601, take the Colchuck Lake Trail #1599 — four miles and 2,280 ft, a log-bridge crossing of Mountaineer Creek at about 1.5 miles, right at the Lake Stuart junction, then a boulder-moraine finish to the outlet in about two and a half to three hours. Fill water here; it is the last source.\n\nHead round toward the lake's south and east side onto the cairned Aasgard Pass climbers' trail and gain talus and heather to about 400 ft above the lake, thirty to forty minutes.\n\nThen leave it: break climber's LEFT through a dense band of slide alder and heather, fifteen to twenty minutes of real bushwhacking, to the obvious gully leading up to Colchuck Balanced Rock. The final scramble to the wall is loose third and fourth class; rope up if in doubt.\n\nReckon three and a half to four hours car to base.",
+        "distMi": 4,
+        "gainFt": 2280,
+        "baseFinding": "THE MARKER IS A BOLT WITH A BLACK HANGER ABOUT EIGHT FEET UP A LEFT-FACING CORNER, AND IT IS THE ONLY UNAMBIGUOUS THING AT THE BASE OF THIS WALL. Get to it in three steps.\n\nSTEP ONE — THE SANDY LEDGE. Scramble the base gully as for the wall's ordinary line until you reach the sandy ledge that every route here starts from. If you have not found a sandy ledge, you are still in the approach gully.\n\nSTEP TWO — TEN FEET AND STEP LEFT. From the sandy ledge, climb about ten feet of easy ground and step LEFT onto a small ledge. There is a TREE on it. A small ledge with a tree, one short step left of the sandy ledge, is the belay.\n\nSTEP THREE — LOOK UP. Above that ledge is a LEFT-FACING CORNER with a bolt roughly eight feet off the deck carrying a BLACK HANGER. That bolt is the confirmation, and it is why this route is worth a base finding while its neighbours are not: it is a fixed, findable object rather than a relative position.\n\nWHERE THIS SITS ON THE WALL: to the LEFT of both the ordinary west face line and the harder line beside it. So if you never stepped left off the sandy ledge, you are on one of those two instead.\n\nGRADE CHECK ON THE FIRST MOVES: getting off the ground is thoughtful 5.11 with a second punchy section midway. The wall's ordinary line starts far easier. If the first moves are casual, you are not on this route.\n\nAND A RETREAT FACT WORTH KNOWING BEFORE YOU LEAVE THE GROUND: the anchor at the top of the fourth pitch is the last point from which a rope reaches back down — two 40 m rappels return you to the base gully from there, with an intermediate anchor if your rope is short. Above it you are committed to finishing over the top.",
+        "hazards": [
+          "A wet-snow traverse above Colchuck Lake into July with a history of serious slips",
+          "Fifteen to twenty minutes of dense slide alder and heather to reach the gully",
+          "Loose third and fourth class scrambling in the base gully with parties above",
+          "No water above Colchuck Lake",
+          "Above the fourth-pitch anchor there is no rappel retreat — the route must be finished",
+          "A long walk-off round the peak after topping out"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "https://www.mountainproject.com/area/105806030/colchuck-balanced-rock",
+      "https://www.mountainproject.com/route/105806033/west-face"
+    ],
+    "_confidence": "corroborated"
+  },
+
+  "wa_cannon_mountain_south_slopes": {
+    "area": "wa_cannon_mountain",
+    "approach_variants": [
+      {
+        "name": "Snow Lakes trail to Perfection Lake, Prusik Pass and the Druid Plateau",
+        "season": "Roughly Jul-Sep; the cross-country section above Prusik Pass frequently holds snow into July",
+        "notes": "Start at the Snow Lakes trailhead, about four miles up Icicle Creek Road from Leavenworth. Follow Snow Lakes Trail #1553 through burn-scarred forest and switchbacks above Icicle Creek, past Nada and Snow Lakes at roughly six to seven miles, and on into the core basin — Lake Viviane, Leprechaun, Sprite, then Perfection Lake, by which point you have covered eight or nine miles and about 4,500 ft.\n\nAt the north side of Perfection Lake, leave the main trail on the scramblers' path that switchbacks up to Prusik Pass at about 7,460-7,500 ft. That junction is easy to miss and the pass is the last reliable water.\n\nFrom the pass everything is cross-country. Contour northwest across talus and heather benches at roughly 7,300-7,400 ft, keeping to the WEST side of the Lorelei Lakelets, then north to a broad rib at about 7,900-8,000 ft. From just below 8,000 ft turn northwest and climb steep talus and scree onto the Druid Plateau at about 8,350 ft.\n\nThere are no cairns and no tread above Prusik Pass. Round trip is 30-plus miles with 7,300-plus ft of gain, so essentially everyone camps.",
+        "baseFinding": "THE SUMMIT BLOCK IS A SEPARATE OBJECT AND THE PLATEAU IS NOT THE TOP. This is the failure mode on Cannon: parties gain the Druid Plateau at about 8,350 ft, find themselves on broad high ground, and treat arriving there as arriving. The actual climbing is a distinct BLOCK that only comes into view once you are on the plateau, across it to the west.\n\nSO THE TEST IS: can you see a discrete block of rock standing above the plateau surface? If you are on flat or gently rolling ground with nothing obviously above you, you have not crossed the plateau yet. Cross it and take the WESTERN slopes to the foot of the block.\n\nWHICH SIDE OF THE BLOCK, AND THIS IS THE PART THAT MATTERS IN CLOUD: the way up is a RAMP on the block's SOUTH side. It is the last fifteen feet or so to the true summit, low-angle friction slab with almost no positive holds. If you have walked round the block and found only steep unfriendly rock, you are on the wrong aspect — keep going round to the south.\n\nWHAT THE RIGHT GROUND FEELS LIKE: this is a friction problem, not a hold problem. Approach shoes with good rubber, or rock shoes, make a real difference, and the downclimb of the same ramp is the psychological crux of the day for most parties because low-angle slab is harder to read going down.\n\nSTAGING CHECK BELOW THE PLATEAU: from Prusik Pass you should pass the Lorelei Lakelets on their WEST side and reach a broad rib around 7,900-8,000 ft before turning northwest. If you passed the lakelets on their east, you are drifting toward the wrong drainage.",
+        "gainFt": 4500,
+        "hazards": [
+          "No cairns and no tread above Prusik Pass — serious route-finding on talus and heather",
+          "Snow frequently lingering on the cross-country section into July",
+          "An exposed, holdless friction slab for the final fifteen feet, harder to downclimb than to climb",
+          "Verglas on shaded ground into July, adding real exposure to otherwise easy terrain",
+          "No bail-out shelter: sun, lightning and afternoon storms on open high ground",
+          "Core Zone overnight permits are competitive and effectively required"
+        ]
+      },
+      {
+        "name": "Stuart Lake trailhead and the Cannon Creek basin — the shorter, rougher side",
+        "season": "Roughly Jul-Sep; the lower cross-country section is brushy and holds snow later than the trail does",
+        "notes": "The documented alternative reaches the same staging ground near the Druid Plateau from the north instead, out of the Stuart Lake trailhead: up the Mountaineer Creek valley and then cross-country into the Cannon Creek basin.\n\nThis is much shorter than the Snow Lakes walk, and that is the whole of its appeal. It is also markedly rougher: the lower section is brushy and there are cliff bands to negotiate, and there is no trail for any of it.\n\nCannon has no maintained trail to its summit by any line, so both approaches end in the same cross-country problem. What differs is how much of the day is spent on tread before that starts — nearly all of it on the Snow Lakes side, very little on this one.\n\nNo reliable published time or distance exists for this variant and none is given. Treat it as a full day of navigation rather than a walk with a scramble at the end.",
+        "baseFinding": "BOTH APPROACHES CONVERGE ON THE DRUID PLATEAU, SO THE BASE TEST IS IDENTICAL AND THE ARRIVAL TEST IS NOT. Coming from the north you reach the plateau area from the Cannon Creek basin rather than from Prusik Pass, so the Lorelei Lakelets and the broad rib are NOT on your route and cannot be used to confirm position — do not try to apply the southern approach's landmarks here.\n\nWHAT STILL HOLDS: the summit block is a distinct object standing above the plateau, reached across the plateau on its WESTERN slopes, and the way up it is a low-angle friction ramp on its SOUTH side, roughly the last fifteen feet to the true summit. Almost no positive holds. That is the base, and it is the same base for anyone who gets here.\n\nTHE NORTH-SIDE-SPECIFIC WARNING: the ground below the basin has CLIFF BANDS in it. Unlike the southern route, where the navigation problem is featureless open talus, here it is possible to be cliffed out and to have to lose height to get round. If you are on steepening ground with the basin still above you, come down and traverse rather than pushing on.\n\nAND A ROUTE-CHOICE NOTE: the northeast ridge is a separate line on this mountain and is described as an ascent route only, with most parties descending the Prusik Pass side. If you have come up from the north expecting to reverse it, check which line you are actually on before committing to that plan.",
+        "hazards": [
+          "Brushy lower cross-country with cliff bands to negotiate and no trail",
+          "No cairns or tread anywhere on the upper mountain",
+          "An exposed holdless friction ramp on the summit block",
+          "Snow and verglas on shaded ground into July",
+          "No published timing for this variant — plan conservatively",
+          "No bail-out shelter on the high ground"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/cannon-mountain/151181",
+      "https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "wa_cannon_mountain_northeast_ridge": {
+    "area": "wa_cannon_mountain",
+    "approach_variants": [
+      {
+        "name": "Eightmile trailhead and the burned slopes to the northeast ridge crest",
+        "season": "Mid to late summer, once the snow is off the ridge and out of the ground around Coney Lake",
+        "notes": "From US-2 at the west end of Leavenworth, follow Icicle Road about eight miles, then turn left onto the signed gravel Eightmile Road, cross Icicle Creek and climb about 1,100 ft to the large lot at the road end. A Northwest Forest Pass is required. This route starts at the Eightmile trailhead itself, not at the Stuart Lake trailhead further up the same road system.\n\nThe route climbs steep, bushy, loose burned slopes to gain the ridge crest, then follows and traverses beneath the crest, and finishes with a talus gully and a short scramble to the summit block.\n\nIt is described in the sources as an ascent route only. Most parties come down the other side of the mountain instead — Prusik Pass, the Upper Enchantment basin, down Aasgard Pass and out via Colchuck Lake to the Stuart Lake trailhead — which makes this a demanding roughly fifteen-mile loop with sustained Class 3 and bushwhacking, at least twelve hours car to car, and two different trailheads.\n\nPlan the car shuttle before you start walking.",
+        "baseFinding": "THE TOWERS ARE THE MARKER, AND THE INSTRUCTION IS TO GO UNDER THEM. The identifying feature of this ridge is a band of towers on the crest that CANNOT be climbed directly, and the route's answer to them is a loose traverse of about a third of a mile BELOW the crest. That traverse is the route's signature and its worst ground.\n\nSO THE TEST WHEN YOU GAIN THE CREST IS: keep going until the crest stops being walkable. When rock towers block the ridge in front of you, do not look for a way over them — drop onto the flank and traverse beneath. A party that finds itself scrambling technical rock on the crest has missed the traverse.\n\nAND THE ARRIVAL TEST AT THE OTHER END: the traverse ends at a TALUS GULLY. Talus, after loose sidehill traversing, is the cue that the towers are behind you. From the top of that gully it is a short scramble to the summit block.\n\nWHAT GOING TOO LOW LOOKS LIKE: the traverse is beneath the crest, not down in the basin. If you have lost enough height that the towers are well above you and you are on continuous scree, you will have to regain it — this is the most common way the traverse costs more than the third of a mile it looks like on a map.\n\nBEFORE ANY OF THAT — THE LOWER HALF IS THE REAL PROBLEM. Steep, bushy, loose burned slopes with no path, and this route is best done in mid to late summer once the snow is gone from around Coney Lake and off the ridge. Snow on the lower slopes turns an unpleasant ascent into a serious one.\n\nAND THE DIRECTIONAL WARNING: this is an ascent-only line. Do not plan to reverse it. The descent is over the top and down the far side of the mountain to a different trailhead.",
+        "hazards": [
+          "Steep, bushy, loose burned slopes with no trail on the lower half",
+          "A third of a mile of loose traversing below a band of unclimbable towers — the crux of the route",
+          "Sustained Class 3 scrambling and bushwhacking over a roughly fifteen-mile day",
+          "Descent is over the summit to a DIFFERENT trailhead: a car shuttle or a long road walk",
+          "At least twelve hours car to car, so an early start is not optional",
+          "Snow lingering around Coney Lake and on the ridge in early summer"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/cannon-mountain/151181",
+      "https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html"
+    ],
+    "_confidence": "single-source"
+  },
+
+  "_SKIPPED": {
+    "_note": "Fifteen routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason is a statement about what is published, not about effort.",
+    "wa_mount_stuart_north_face": "PHANTOM ROUTE — do not enrich. The row's own beta records that a search of Mountain Project's Mt Stuart area, SummitPost and Beckey summaries found no separately named 'North Face' route at this grade. The north side is divided among the North Ridge, Ice Cliff Glacier, Stuart Glacier Couloir and Girth Pillar, all of which have their own rows. Writing an approach for it would manufacture a base for a climb that does not exist. Same shape as the Cat Scratch Gullies row this project exists because of.",
+    "wa_der_dihedral": "One shared approach with Backbone Ridge and Serpentine Arete, and the row itself says the exact line is sparsely documented, the start is not well cairned, and parties should budget extra route-finding time. The only published position is relative — 'a couple of ridgelines short of Backbone Ridge, lower on the face' — which is not an in-fog test, and inventing a marker on a rarely climbed line is exactly the failure this field exists to prevent.",
+    "wa_sherpa_balanced_rock_north_ridge": "DUPLICATE ROW. Same FA party (Rick La Belle and Pat Derr, 1971), same 13 pitches, same route as wa_sherpa_peak_north_ridge, filed under a different area. Enriching both would put two approaches on one climb and two different base findings on one notch. See _DEFECTS.",
+    "wa_sherpa_balanced_rock_ne_couloir": "Filed under the Balanced Rock sub-area but describes a couloir on Sherpa Peak's northeast side. The only published identification is 'an obvious couloir on the northeast side', and the row itself notes a related pair of loosely named couloirs on the same face — so the one property that would make a base finding useful, which of several adjacent couloirs is the right one, is precisely what is not published.",
+    "wa_accendo_lunae_lib_west_face_var": "Colchuck Balanced Rock. Starts at the same point in the base gully as an existing route and diverges high on the wall. There is no distinct base to find, and its published position is stated relative to a neighbouring line rather than to anything on the ground.",
+    "wa_full_tilt_tempest_wall_free_version": "Colchuck Balanced Rock. Positioned only as 'a few hundred feet down the gully to the right of the West Face start', which is a relative bearing on a loose gully rather than a marker. No published feature at the start.",
+    "wa_leche_la_vaca": "Colchuck Balanced Rock. The row places it 'in this same base gully area on the left side of the wall, near Scarface' — near, not at. No sourced marker at the start.",
+    "wa_milk_n_honey": "Colchuck Balanced Rock. The row's own wording is 'sits in the same general wall area as The Scoop and Rikki Tikki Tavi, toward the right side of the formation'. General wall area is not a base finding.",
+    "wa_rikki_tikki_tavi": "Colchuck Balanced Rock. Positioned only as 'to the right of The Scoop'. Relative to a route you also have to identify first.",
+    "wa_scarface_3": "Colchuck Balanced Rock. Two published positions that do not agree — the row says 'the gully just left of the West Face route start', Mountain Project says 'several hundred feet to the right of the old NW Buttress line'. Left of one thing and right of another is not resolvable without a topo, and picking one would be inventing.",
+    "wa_the_balanced_rock": "Not a ground-up climb at all: a V2 boulder problem on top of the balanced summit block, reached only after climbing one of the peak's technical routes. Its 'approach' is another route's descent. Nothing to find.",
+    "wa_prusik_peak_sail_away": "Prusik. The row has an EMPTY approach field and the route was first climbed in August 2025 — too new for independent published base beta. Its pitch names are known; where P1 starts on the face relative to its neighbours is not.",
+    "wa_prusik_peak_taylor_wood_route": "Prusik. Empty approach field, first climbed August 2023, same problem: the pitch sequence is documented, the position of the start on the base of the face is not.",
+    "wa_prusik_peak_prayer_for_a_friend": "Prusik. Empty approach field. The published detail is entirely about the pitches and the 5.14a headwall; nothing locates the start along the base.",
+    "wa_prusik_peak_alpine_craggers_delight": "Prusik. Empty approach field. Described only as an 80-ft single pitch that finishes where another route's P1 ends — i.e. located relative to a route above it, not to anything on the ground."
+  },
+
+  "_DEFECTS": {
+    "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+    "duplicate_sherpa_north_ridge": "wa_sherpa_balanced_rock_north_ridge and wa_sherpa_peak_north_ridge share an FA party (Rick La Belle and Pat Derr, 1971), a pitch count (13) and a route description. Two rows, one climb, filed under two different areas.",
+    "duplicate_prusik_south_face": "wa_stanley_burgner (5.10a, 6p) and wa_prusik_peak_south_face_burgner_stanley (III 5.9+, 6p) look like the same climb under its two conventional name orders. The second already has approach_variants; the first did not, which is how the pair surfaced. Confirm before either is deleted — the grades differ.",
+    "possible_duplicate_stuart_north_ridge": "wa_the_direct_north_ridge_w_gendarme (5.9+, 20p) and wa_mount_stuart_north_ridge 'North Ridge (Complete)' (IV 5.9, 20p) may be one climb. wa_upper_north_ridge_w_great_gendarme (5.9, 18p) is NOT a duplicate of either — it genuinely starts at the notch above the Stuart Glacier and skips about 1,200 ft, which is the whole distinction this batch's base findings turn on.",
+    "phantom_row_stuart_north_face": "wa_mount_stuart_north_face is almost certainly not a real named route; the row's own beta says so. Candidate for deletion after confirming nothing else references it.",
+    "colchuck_east_ridge_direction_error": "wa_colchuck_peak_east_ridge's approach says 'From Colchuck Lake, traverse northeast to the east ridge base'. Colchuck Peak lies SOUTH-WEST of the lake and the col at the foot of the east ridge lies south-east of the summit. Traversing northeast from the lake walks away from the mountain.",
+    "argonaut_south_face_two_routes_in_one_row": "wa_south_face_12's approach text describes the ordinary south-side scramble finishing up a 50-ft chockstone gully to the east ridge, while its beta describes a 3-pitch 5.6 rock climb starting at two left-facing corners. Those read as two different lines sharing a row.",
+    "gorillas_wall_aspect_mislabelled_in_prose": "The approach text shared by wa_gorillas_direct and wa_the_direct_north_ridge_w_gendarme calls the Gorillas wall 'the South Face'. Sources consistently call it the West Face Wall and the rows' own aspect column says W. The prose sends parties to the wrong aspect of the mountain.",
+    "sherpa_balanced_rock_trailhead_disagreement": "wa_sherpa_balanced_rock_standard's approach text describes the Longs Pass / Esmeralda trailhead on the Teanaway side, while its waypoints list the Stuart Lake trailhead on the Icicle side as waypoint zero — opposite sides of the range. This is the audit:trailhead-agreement shape, in the waypoints rather than in approach_logistics.",
+    "beckey_davis_trailhead_note_contradicts_itself": "wa_beckey_davis's Stuart Lake Trailhead waypoint carries a note saying it is 'alternate access only, used when the standard Stuart Lake Trailhead approach is closed', and then names the Stuart Lake Trailhead as the standard. The note appears to have been written for the Snow Lakes trailhead and attached to the wrong waypoint.",
+    "upper_north_ridge_trailhead_flagged_in_its_own_waypoint": "wa_upper_north_ridge_w_great_gendarme's waypoint note already records that the DB lists the Stuart Lake trailhead while this variant is documented from the Ingalls Lake side. The approach_logistics still says Esmeralda; the two halves of the row have been reconciled in opposite directions at different times."
+  }
+}
