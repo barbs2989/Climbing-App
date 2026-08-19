@@ -1,7 +1,19 @@
 {
  "zone": "Northern Pickets — Big Beaver and Whatcom Pass",
- "_areas_note": "Crooked Thumb ADDED here after the Southern Pickets research flagged it as Northern. Berdeen Peak REMOVED — it is not on the Big Beaver or Whatcom Pass side at all, but west of the Pickets proper on Mystery Ridge above the Baker River, with its own 'Berdeen' cross-country zone that none of these camps serve.",
- "areas": ["wa_mount_fury_west", "wa_phantom_peak", "wa_mount_crowder", "wa_mount_prophet", "wa_ghost_peak", "wa_whatcom_peak", "wa_crooked_thumb_peak"],
+ "_areas_note": "Crooked Thumb ADDED here after the Southern Pickets research flagged it as Northern. Berdeen Peak REMOVED — it is not on the Big Beaver or Whatcom Pass side at all, but west of the Pickets proper on Mystery Ridge above the Baker River, with its own 'Berdeen' cross-country zone that none of these camps serve. Challenger, Luna Peak, Poltergeist Pinnacle and Spectre Peak were folded in from a later pass, along with the eastern Wiley Ridge approach, the Challenger Arm camp, the Easy Ridge ground, Tapto Lakes and the Luna Cirque floor. Kept as ONE zone deliberately: split out, those four summits would have lost Luna Col and Perfect Pass, which are the camps that actually serve them.",
+ "areas": [
+  "wa_mount_fury_west",
+  "wa_phantom_peak",
+  "wa_mount_crowder",
+  "wa_mount_prophet",
+  "wa_ghost_peak",
+  "wa_whatcom_peak",
+  "wa_crooked_thumb_peak",
+  "wa_mount_challenger",
+  "wa_poltergeist_pinnacle",
+  "wa_spectre_peak",
+  "wa_luna_peak"
+ ],
  "sites": [
   {
    "name": "Luna Camp, Big Beaver Trail",
@@ -53,6 +65,64 @@
    "water": "Little Beaver Creek at both — reliable",
    "permit": "NPS wilderness permit from Marblemount; trail-corridor camps, reservable or walk-up. Both closed under the 2026 Luna Fire closure, which covers Little Beaver from Ross Lake to Whatcom Pass.",
    "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenger, and exit over Beaver Pass and down Big Beaver, or run it the other way. For the Northern Pickets they are through-camps on a long walk rather than climbing bases. The Ross Lake water taxi is chartered by the boat rather than per head, takes about six people, needs a reservation, and only runs during the resort's summer season — outside it, plan on walking in from Ross Dam and adding a day at each end."
+  },
+  {
+   "name": "Challenger Arm camp",
+   "type": "camp",
+   "elev": 6800,
+   "capacity": "A few established tent platforms on the rock cleaver, with room to build more; the zone caps a party at 6 people",
+   "water": "Snowmelt off the Challenger Glacier immediately above, plus small tarns on the arm itself. Dependable while the glacier is running, and increasingly a matter of melting snow once the tarns dry in a hot late summer.",
+   "permit": "Challenger cross-country zone, on a park wilderness permit. Walk-up only — this zone cannot be booked ahead, so it is claimed in person at a wilderness information centre the day before or the morning of. Camp on rock, gravel or snow rather than heather, keep 100 ft back from water, no fires at all, and carry waste out in a blue bag once you are on snow or glacier.",
+   "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is the closest bed to Poltergeist Pinnacle, which is the south subsummit of Challenger itself and needs several pitches of real rock climbing off the glacier, and it shortens the glacier crossing to Spectre Peak on the crest to the south. Unlike Perfect Pass on the far side, the ground here is broken and there are genuinely several usable platforms, so it does not carry the same one-party bottleneck. Crevasse conditions on the arm change through the season and the bergschrund below the summit block is the usual sticking point late in the year."
+  },
+  {
+   "name": "Eiley Lake benches, lower Wiley Ridge",
+   "type": "bivy",
+   "capacity": "Two or three small parties spread along the benches; party limit 6",
+   "water": "The lake itself, and snowmelt in the hollows around it. This is the last dependable water for a long stretch of ridge, so tank up here rather than counting on anything higher.",
+   "permit": "Wilderness permit required, and this is cross-country ground rather than a designated camp — ask at the counter which zone the night is being written into, because the ridge straddles more than one. Walk-up only. No fires. Bury waste in a cathole below the snowline and carry it out above.",
+   "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit and back on the middle day rather than moving camp, because the ridge is slow going in both directions. The terrain opens out of the timber into heather at about 5,200 ft and the walking improves from there. Below treeline expect insects and plan on a tent or a properly sealed bivy bag rather than sleeping out. IMPORTANT: the whole Big Beaver approach that feeds this ridge sits inside the 2026 fire closure, so confirm the trail and Beaver Pass are open before planning around it."
+  },
+  {
+   "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "type": "bivy",
+   "elev": 6100,
+   "capacity": "One or two parties on gravel and heather benches; party limit 6",
+   "water": "Snowmelt and small tarns. Wiley Lake is rimmed by ice and holds water well into the season, but the basin's tarns are seasonal and a late-summer party should expect to hunt or melt.",
+   "permit": "Wilderness permit for the appropriate cross-country zone, walk-up only. Camp on snow, rock or bare ground and stay out of the heather meadows — this is the surface rule the park actually enforces up here. Fires prohibited, waste out in a blue bag once on snow.",
+   "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle knoll near 7,100 ft past Wiley Lake and then reaches Challenger Gap at the edge of the Challenger Glacier. Camping here rather than at Eiley Lake is the difference between a long summit day and a reasonable one, and it is the sensible base for Poltergeist Pinnacle, which needs the early start that a technical face demands. The ridge is deceptively slow — five miles as the crow flies feels like double that with the constant rise and fall — so parties routinely need a night lower down as well as this one."
+  },
+  {
+   "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "type": "bivy",
+   "capacity": "One party, often on a levelled snow platform or a single gravel ledge",
+   "water": "None. These are snow-and-rock bivouacs — carry water up or melt snow, and assume there is nothing to find.",
+   "permit": "Still inside the Challenger cross-country zone and still needs a wilderness permit with that night assigned to it. On the glacier the surface rule takes care of itself, but human waste MUST be carried out in a blue bag; there is no burying it here. No fires. Party limit 6.",
+   "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather than commit to a very long day from Perfect Pass or Challenger Arm. These are made rather than found — a platform stamped into snow, or a gravel patch on a rib — and quality is entirely a matter of what the party can dig. There is no shelter and no water, crevasse hazard is present wherever you put the tent, and it only makes sense with a settled forecast. Anyone unwilling to melt snow for every drop should sleep at Challenger Arm or Perfect Pass instead and accept the longer day."
+  },
+  {
+   "name": "Easy Ridge bivouac ground below Easy Peak",
+   "type": "bivy",
+   "capacity": "Small — one or two parties on the ridge crest; party limit 6",
+   "water": "Seasonal tarns scattered along the crest. Some hold water and some are dry in the same summer, which makes this the least predictable water on the route. Fill at the Chilliwack River before starting up.",
+   "permit": "Park wilderness permit required. This side is served by the wilderness information centres on both the Mount Baker Highway and at Marblemount, and the ranger will decide whether your night goes onto a designated camp or a cross-country zone — ask rather than assume, because the answer changes what the rest of the itinerary can say. Walk-up. Fires prohibited. Approved food storage required, and above treeline there is nothing to hang from, so a canister is the practical answer.",
+   "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climbed through to the western slope of the range. From the trailhead you go over Hannegan Pass and down past Boundary and Copper Creek camps, then ford the Chilliwack River just above where Easy Creek comes in, and climb about five miles of ridge to open ground above 6,000 ft, with Easy Peak at 6,615 ft carrying the anchors of an old lookout. The sting is what comes after: reaching Perfect Pass from here means descending roughly 1,000 ft to get around the Imperfect Impasse gap and climbing back up, which is why parties who intend to camp at Perfect Pass often prefer the Whatcom Pass side instead. Two days in before any climbing starts."
+  },
+  {
+   "name": "Tapto Lakes cross-country zone",
+   "type": "camp",
+   "capacity": "Camp anywhere among the lakes once permitted; standard 6-person party limit",
+   "water": "The lakes themselves — the most reliable high water anywhere in this file. Camp 100 ft back from the shore.",
+   "permit": "The ONE exception to walk-up permitting in this whole area: Tapto Lakes is one of only six cross-country zones the park lets you reserve in advance, alongside Boston Basin, Eldorado, Sulphide, Price and Triumph. Everything else in the Pickets is claimed at the counter on the day. Camp on bare ground, rock or snow rather than in the heather meadow, no fires, waste in a cathole.",
+   "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It looks straight across at Mount Challenger and the walls of Whatcom Peak. It is a scenic base more than a climbing camp — Perfect Pass is far closer to the glacier — but it matters for two reasons. It is bookable, so a party unwilling to gamble a four-day walk-in on a permit counter can guarantee at least one night. And with the trail camps under Whatcom Pass closed for hazard trees, it is one of the few legal beds left near the pass on that side."
+  },
+  {
+   "name": "Luna Cirque floor",
+   "type": "bivy",
+   "capacity": "One or two parties on sand, gravel and slab; party limit 6",
+   "water": "Meltwater running off the cirque walls, and a shallow seasonal lake on the floor that becomes warm sand as the summer dries it out. Early season is wet and late season is a search.",
+   "permit": "Luna cross-country zone, walk-up only — it cannot be reserved, and a party that has already driven, boated and walked in can still be turned away if the night's slots are taken. Carry a fallback itinerary. Camp on sand, rock or snow, 100 ft from water, no fires.",
+   "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes drop southeast into it rather than reversing the glacier. As a bed it is a long way below Luna Col, which remains the right camp for climbing Luna Peak itself; the value of the cirque is that it links the Access Creek and Wiley Ridge sides without going back over the top. Getting in and out is trackless in both directions and the brush low in Access Creek, which forces a bank change around 3,700 ft, is the part parties consistently underestimate."
   }
  ]
 }

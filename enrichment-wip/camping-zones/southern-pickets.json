@@ -1,7 +1,23 @@
 {
  "zone": "Southern Pickets — Goodell Creek and Terror Basin",
- "_areas_note": "Crooked Thumb Peak REMOVED — the research flagged it as NORTHERN Pickets, on the crest near Challenger and Phantom, approached from Whatcom/Perfect Pass. Different zones, different permits.",
- "areas": ["wa_mount_terror", "wa_east_twin_needle", "wa_west_twin_needle", "wa_east_mcmillan_spire", "wa_himmelhorn", "wa_ottohorn", "wa_frenzel_spitz", "wa_ed_wood_memorial_buttress"],
+ "_areas_note": "Crooked Thumb Peak REMOVED — the research flagged it as NORTHERN Pickets, on the crest near Challenger and Phantom, approached from Whatcom/Perfect Pass. Different zones, different permits. Seven more Southern Picket summits were added after a later pass found that this file already carried the camps that serve them — Terror Basin, Crescent Creek Basin and Stump Hollow name them directly — and only their ids were missing. No sites were changed.",
+ "areas": [
+  "wa_mount_terror",
+  "wa_east_twin_needle",
+  "wa_west_twin_needle",
+  "wa_east_mcmillan_spire",
+  "wa_himmelhorn",
+  "wa_ottohorn",
+  "wa_frenzel_spitz",
+  "wa_ed_wood_memorial_buttress",
+  "wa_mount_degenhardt",
+  "wa_the_pyramid_picket",
+  "wa_the_chopping_block",
+  "wa_mcmillan_spire_west",
+  "wa_little_mac_spire",
+  "wa_inspiration_peak",
+  "wa_the_rake"
+ ],
  "sites": [
   {
    "name": "Goodell Creek Campground, roadhead staging",
