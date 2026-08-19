@@ -106,13 +106,27 @@ true. Both spans move together or neither does; the script refuses if either is 
   lacks, while the twin carries `dist_km`, `high_point_ft` and `pitch_detail`.
   - Its variant contains a warning headed *"A NAMING WARNING THAT COULD SEND YOU TO ANOTHER MOUNTAIN"*
     which is **itself factually wrong** and dies with the row.
-- **`wa_mount_skokomish_standard`** — settled, and it is a **re-home**, not a rewrite. No published
-  Skokomish ascent uses Mildred Lakes; `waypoints[0..4]` are that trail, and the Mildred basin pin is
-  **3.6 km south** of the summit while every description puts the saddle NE. The row's own `approach`
-  diagnoses this correctly, and `waypoints[5]` is the right Putvin trailhead. Source rows:
-  `wa_mount_stone_lake_of_angels` and `wa_mount_stone_putvin`.
-  - This also settles the indexed Class C *"Lake of the Angels 1.2 km apart"*: **47.5966, −123.2736** is
-    the correct one.
+- **`wa_mount_skokomish_standard`** — **NOT a simple re-home. Attempted, then deliberately stopped.**
+  The navigational half is real and confirmed by the row's own text: its `approach` says the saddle is
+  at the **north-eastern** end of Skokomish, while the pin *labelled* that saddle sits **1.09 km south**
+  of the summit, and the Mildred basin pin is **3.6 km south**. The trailhead pin is also stranded at
+  index **5** of 7, so the list does not even start at the road.
+  - **But the row is describing two trips, and the second one is deliberate.** It already carries two
+    `approach_variants`, and the second is explicitly the Mildred Lakes approach, *recorded* as a
+    documented alternative with an honest limit about the unmaintained ground between the lakes and
+    Skokomish's south peak. `timing` and `itinerary` are then a **coherent two-day Mildred plan**
+    (basecamp in the Mildred basin, climb light on day 2).
+  - So replacing the waypoints alone would leave the pins saying Putvin while the itinerary and timing
+    still plan a Mildred basecamp — trading one internal contradiction for a **new** one. The fix is
+    either a full rewrite of `timing`/`itinerary` onto Putvin, or an explicit decision that the pins
+    belong to variant 2. That is a judgement about what the row *is*, so it is left alone.
+  - Two further defects found while reading: `overview` states the Mildred/Flapjack access is *"currently
+    closed"* by an order tied to a **2025 fire** — a dated closure stored as permanent prose — and no
+    coordinate exists anywhere for the 5,800 ft saddle the approach describes, so that pin cannot be
+    created without inventing one.
+  - The indexed Class C *"Lake of the Angels 1.2 km apart"* is **not settled in-catalog**: the two Stone
+    rows disagree (47.5966, −123.2736 vs 47.6024, −123.2611) and **both** are "westerly" of the summit
+    and both fit the stated 3.5 trail miles, so the row's own prose cannot choose between them.
 - **`wa_huckleberry_mountain_west_route`** — one route, not two. The `approach`, `descent_text`, `road`
   and `overview` are the **East Ridge's**, and the row's own overview denies the Middle Fork Snoqualmie
   access that `road.driveNote` asserts. Its `rappels` field, which the index called a defect, is
