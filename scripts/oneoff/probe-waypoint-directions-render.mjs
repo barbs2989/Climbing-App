@@ -37,11 +37,22 @@ await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle
 const { render, dbRouteToCamel } = require_(out);
 const key = anonKey();
 
-// One route from each wave: a DRIVE at index 0, and LEGS at index >=1.
+// One route from each wave: a DRIVE at index 0, and LEGS at index >=1. This pair is a PINNED
+// regression pair, so it is a legitimate default — unlike a default that silently substitutes
+// the LAST RUN's input, which is how a verifier ends up confirming the wrong batch and printing
+// green about it. `--route <id>[:<index>]` (repeatable) additionally probes a route from a later
+// wave; the pinned pair always runs, so a new case cannot quietly replace the regression check.
 const CASES = [
   ["wa_mount_stone_putvin", 0, "drive"],
   ["wa_monte_cristo_peak_scramble", 5, "leg"],
 ];
+for (let i = 2; i < process.argv.length; i++) {
+  if (process.argv[i] !== "--route") continue;
+  const spec = process.argv[++i];
+  if (!spec) throw new Error("--route needs an id, e.g. --route wa_foo:0");
+  const [id, idx] = spec.split(":");
+  CASES.push([id, Number(idx || 0), Number(idx || 0) === 0 ? "drive" : "leg"]);
+}
 let fails = 0;
 for (const [id, idx, kind] of CASES) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=*,areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,parent:parent_id(name))&id=eq.${id}`, { headers: headers(key) });
