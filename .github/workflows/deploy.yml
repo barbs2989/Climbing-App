@@ -67,7 +67,7 @@ jobs:
       - uses: actions/setup-node@v7
         if: steps.tip_early.outputs.current == 'true'
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       # `npm ci`, not `npm install`. package-lock.json is committed, but `npm
       # install` re-resolves the `^` ranges (vite ^5.4.0, @supabase/supabase-js
