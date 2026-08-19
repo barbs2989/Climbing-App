@@ -48,6 +48,24 @@
 >
 > Nothing here changes what is outstanding: **the lawyer read, plus the D4 wording.**
 
+> ### §E upgraded from "present" to **proven**, 2026-08-19
+>
+> Every check above is a *presence* check — the column exists, the constant is in the bundle,
+> the trigger is installed. None of that says the acceptance record actually gets written, and
+> `profiles.terms_accepted_version` was **null on all 5 rows**, so the path had never once run.
+> That is not a defect (no account has been created through the real form since 0145 shipped;
+> the only real account predates it) but it did mean an untested chain was being reported green.
+>
+> `scripts/oneoff/probe-terms-acceptance-trigger-fires.mjs` closes it by signing up exactly the
+> way the app does — anon key, `terms_version` in user metadata — reading the stamp back, and
+> deleting both accounts. Result: the version the client sent is stamped, with a time, and a
+> signup carrying **no** metadata leaves both columns null. Injection-tested 2/2.
+>
+> The live production bundle was confirmed to close the same loop: `signUp` is minified to
+> `options:{data:{name:o,terms_version:s}}` and its call site passes `POLICY_VERSION` as that
+> fourth argument, immediately after the 18-or-older guard returns. So the shown version and the
+> recorded version are the same constant, in production, by construction.
+
 **This is a factual consistency check, not legal advice, and no legal text was edited.**
 Every row is "the document says X; the code does Y", with the evidence. The remedy for each —
 build the mechanism, or amend the text — is the reviewer's decision, not this file's.
