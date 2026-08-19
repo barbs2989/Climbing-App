@@ -8449,3 +8449,101 @@ notes about mountainproject.com and publications.americanalpineclub.org.
 
 Next batch continues alphabetically after `wa_crooked_thumb_peak_south_route`
 (see progress file).
+
+## 2026-08-19 — Batch 122 (pass 3): Cutthroat Peak (Cauthorn-Wilson Couloir,
+East Face, Southeast Buttress, South Buttress, West Ridge), Dark Peak (Dark
+Glacier Route), Liberty Bell (Dark Side of Liberty), Sloan Peak (Diamond In
+The Rough)
+
+Checked `wa_cutthroat_peak_cauthorn_wilson_couloir`,
+`wa_cutthroat_peak_northeast_face` (name field: East Face),
+`wa_cutthroat_peak_southeast_buttress`, `wa_cutthroat_south_buttress`,
+`wa_cutthroat_west_ridge` (all Cutthroat Peak), `wa_dark_peak_dark_glacier_route`
+(Dark Peak), `wa_dark_side_of_liberty` (Liberty Bell), `wa_diamond_in_the_rough`
+(Sloan Peak).
+
+**Fixed (SQL in `audits/sql/2026-08-19-batch-122.sql`):**
+- Three Cutthroat Peak routes (`wa_cutthroat_peak_cauthorn_wilson_couloir`,
+  `wa_cutthroat_peak_northeast_face`, `wa_cutthroat_peak_southeast_buttress`)
+  stored a route *duration* ("13 hrs" / "12.5 hrs" / "12 hrs") in `commitment`
+  instead of an NCCS-style commitment grade. That field is rendered on the
+  route page as a "Commitment" badge in the TECHNICAL STATS composite-grade
+  panel and looked up against `COMMITMENT_EXPLAINERS` (a bare I-VI keyed map)
+  for an explainer sentence -- both broken by a duration string. Checked
+  against the rest of the WA catalog: the overwhelming majority of
+  `commitment` values are bare (or +/- modified) Roman numerals, and the
+  small minority of duration/prose values are almost all on non-technical
+  Class 2-4 scramble routes where an NCCS grade doesn't really apply. These
+  three are pitched, roped alpine rock/ice routes with their own
+  `rock_grade`/`pitch_detail`, so they belong with the numeral-grade
+  majority. Each row's own `grade` field already held a correctly-shaped
+  value ("III+", "III", "III"), and for the East Face route the "III"
+  matches AAC Publications' description of that exact 1976 Bard/Chouinard/
+  Cunningham line as "East Face (6 pitches, III 5.10)". Set `commitment` to
+  match each row's own `grade` field. Same defect class and same fix shape
+  as batch 118's Chair Peak `commitment` fixes.
+- `wa_dark_peak_dark_glacier_route`: three fields (top-level `permit`,
+  `access.permit`, `access.fees`) described the NPS backcountry permit
+  needed for this route's approach camps (Fivemile Camp, Swamp Creek Camp,
+  inside North Cascades National Park Complex) as free. NPS's own current
+  backcountry-permits page (confirmed via a corroborating Washington's
+  National Park Fund / WTA writeup, since WebFetch is blocked for nps.gov
+  as in prior runs) states a $10/person recreation fee plus a $6
+  non-refundable reservation fee applies, charged mid-May through early
+  October -- squarely inside this route's own `best_season` (Jun-Jul). The
+  top-level `permit` field also named the wrong permit entirely (the free
+  self-issue Glacier Peak Wilderness permit, which covers the Forest
+  Service ground around the peak itself, not the NPS-administered approach
+  camps -- this row's own `access.landManager` already correctly
+  distinguishes the two jurisdictions, so the fix only touches the fee/cost
+  claim, not that split). Rewrote all three fields to state the correct fee
+  and reservation process, keeping the existing NPS-vs-Wilderness structure.
+
+**Checked and still internally consistent, no new issues found:**
+Peak elevations for Cutthroat Peak (8,066 ft), Dark Peak (8,507 ft, 56th on
+the Bulger List), Liberty Bell Mountain (7,720+ ft) and Sloan Peak (7,835 ft)
+all matched external sources exactly. FA claims independently confirmed:
+Cutthroat Peak West Ridge (Adam/Bedayn/Davis, July 22 1937 -- also the
+peak's overall FA, matching this row's own note), Cutthroat South Buttress
+(Beckey/Gordon, 1958), Dark Side of Liberty (Schaefer/Lee free ascent,
+August 2019), Diamond In The Rough (Roberts/Workman, Sept 11 2011).
+
+**Needs human verification (not fixed -- flagged only):**
+- **Systemic, not isolated**: all 5 Cutthroat Peak routes in this batch
+  share an identical, verbatim `beta` field: "Grade II, 5.7 climbing. Short
+  approach from highway. Rock improves significantly higher on ridge. Fair
+  granite in approach, improves on ridge. Moderate exposure. Quick alpine
+  climb from Rainy Pass. Uncrowded route." This reads as a boilerplate
+  template applied across the whole peak rather than five distinct
+  descriptions, and it contradicts each route's own better-populated fields
+  on nearly every count: the "5.7" claim only matches one of the five
+  routes' `rock_grade` (East Face); the couloir route is a WI4 ice line
+  (nothing like "5.7 climbing"); "Grade II" matches only two of the five
+  routes' actual grade; and "short approach"/"quick alpine climb" reads
+  oddly next to the South Buttress's 12-pitch, 10.5-hour car-to-car day.
+  Writing five accurate, route-specific replacements is a research task
+  beyond a quick fact-check (this audit's SQL fixes reconcile against a
+  row's own other fields or an external source, not author new descriptive
+  prose from scratch) -- flagging for a dedicated enrichment pass rather
+  than guessing at replacement text.
+- `wa_cutthroat_south_buttress`: `alpine_grade`/`commitment` both store
+  "III", but the American Alpine Institute's own route profile page titles
+  it "Cutthroat Peak, S. Buttress (5.8, III+)". Left unchanged -- III vs
+  III+ is a minor, commonly-disputed rounding in guidebook/source grading
+  (other sources this run found describe it as plain III), not a clear
+  single-source error.
+- `wa_dark_peak_dark_glacier_route`: `access.landManager`/`access.rules`
+  claim the peak and upper basin/glacier themselves sit within the Glacier
+  Peak Wilderness (Okanogan-Wenatchee NF), distinct from the NPS-managed
+  Agnes Creek approach corridor. Plausible given Dark Peak's position on
+  the ridge between the Agnes Creek and Railroad Creek drainages, but
+  confirming the precise wilderness/park boundary would need authoritative
+  GIS/boundary data this run's web access could not verify. Left unchanged.
+
+Web access this run: WebSearch did the load-bearing work (5 elevations, 4 FA
+claims, the NPS backcountry permit fee structure). WebFetch was blocked by
+the network egress proxy for nps.gov, consistent with prior runs' notes
+about wikipedia.org, mountainproject.com and AAC Publications.
+
+Next batch continues alphabetically after `wa_diamond_in_the_rough`
+(see progress file).
