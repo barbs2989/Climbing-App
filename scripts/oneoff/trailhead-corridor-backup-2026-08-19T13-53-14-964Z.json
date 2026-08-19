@@ -1,0 +1,79 @@
+[
+  {
+    "id": "wa_mount_berge_southwest_route",
+    "area_id": "wa_mount_berge",
+    "waypoints": [
+      {
+        "lat": 48.026785265306124,
+        "lng": -120.83013922448978,
+        "elev": 2600,
+        "name": "Chiwawa River ford",
+        "note": "Unbridged ford of the Chiwawa River right at the trail's start — waist-deep and swift in early season, only reliably safe in late-summer/fall low water.",
+        "type": "Hazard",
+        "distMi": 0.1
+      },
+      {
+        "lat": 48.03475167346939,
+        "lng": -120.87912587755102,
+        "elev": 6250,
+        "name": "Spring below Little Giant Pass",
+        "note": "Small spring a few hundred feet below the pass; last dependable water before crossing into the high basins toward Berge.",
+        "type": "Water",
+        "distMi": 4.4
+      },
+      {
+        "lat": 48.035678,
+        "lng": -120.884822,
+        "elev": 6463,
+        "name": "Little Giant Pass",
+        "note": "Top of the steep, badly eroded Little Giant Trail; maintained tread ends here and the route drops toward the Louis Creek/Napeequa basin en route to Berge.",
+        "type": "Junction",
+        "distMi": 4.9
+      },
+      {
+        "lat": 48.07295689655172,
+        "lng": -120.91870944827586,
+        "elev": 7840,
+        "name": "Berge Ridge notch",
+        "note": "Narrow 7,840-ft notch in the ridge crest linking the Louis Creek basin to the Buck Creek/High Pass side beneath Berge's southwest face; exposed scrambling to gain it.",
+        "type": "Junction",
+        "distMi": 6.5
+      },
+      {
+        "lat": 48.089266413793105,
+        "lng": -120.93353520689655,
+        "elev": 7650,
+        "name": "Saddle south of Berge's summit",
+        "note": "Broad saddle on Berge's south side where the southwest-slopes route leaves the basin; ascend through rock bands and steep heather toward the summit ridge.",
+        "type": "Junction",
+        "distMi": 7.2
+      },
+      {
+        "lat": 48.09625620689655,
+        "lng": -120.93988910344827,
+        "elev": 7800,
+        "name": "Exposed gully below summit ridge",
+        "note": "Final gully has slanted slabs with real exposure near the top; solid holds and ledges ease passage but a slip here would be consequential — helmet recommended.",
+        "type": "Hazard",
+        "distMi": 7.5
+      },
+      {
+        "lat": 48.071966,
+        "lng": -120.84999,
+        "elev": 2800,
+        "name": "Trinity Trailhead (Chiwawa River / Buck Creek Trail #1513)",
+        "note": "Existing DB trailhead 'Little Giant Trailhead' is likely wrong for this route — it accesses a different trail (Little Giant Pass) on the opposite side of the Chiwawa River valley. The Southwest Route actually starts from Trinity Trailhead via the Buck Creek Trail.",
+        "type": "Trailhead",
+        "elevFt": 2800
+      },
+      {
+        "lat": 48.103246,
+        "lng": -120.946243,
+        "elev": 7951,
+        "name": "Mount Berge",
+        "type": "Summit",
+        "elevFt": 7951
+      }
+    ]
+  }
+]
