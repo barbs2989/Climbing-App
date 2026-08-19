@@ -1,0 +1,248 @@
+{
+  "_snapshot_of": "wa_mount_formidable_north_ptarmigan",
+  "_taken": "2026-08-14",
+  "_why": "Retired as a semantic duplicate of wa_mount_formidable_south_face (user decision: keep the South Face row). Captured in full BEFORE the delete so nothing this row held is destroyed. Its enrichment was strongest on the Ptarmigan Traverse LOGISTICS (bivy, access, road, climate, best_season) where the survivor is thinner; those fields were deliberately NOT overwritten onto the survivor, because longer is not the same as more correct for the South Face line. Promote from here if a later pass judges any of them better.",
+  "_survivor": "wa_mount_formidable_south_face",
+  "row": {
+    "id": "wa_mount_formidable_north_ptarmigan",
+    "area_id": "wa_mount_formidable",
+    "name": "North Route via Ptarmigan Traverse",
+    "discipline": "mountaineering",
+    "grade": "Alpine I-II, Class 3-4",
+    "grade_system": null,
+    "grade_num": null,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": "S",
+    "season": "Jul-Sep (best late Jul-Aug)",
+    "description": null,
+    "gear": [
+      "rope",
+      "harness",
+      "crevasse rescue kit",
+      "ice axe",
+      "crampons",
+      "helmet",
+      "light rock protection"
+    ],
+    "hazards": [
+      "Both the Cache Glacier and Middle Cascade Glacier are crevassed and require rope travel and crevasse-rescue readiness.",
+      "The south-face rock is loose and rockfall-prone, especially with parties stacked in the gullies.",
+      "Weather in the North Cascades is volatile and can change faster than forecast."
+    ],
+    "verif": null,
+    "source": "phase3-master-consolidated.json prior research",
+    "overview": "The standard, easiest way up Formidable: approach north from Cascade Pass over the Ptarmigan Traverse to the Spider-Formidable col, then cross to the peak's south slopes for a long, loose class 3-4 scramble to the summit.",
+    "beta": "This climb covers the first stage of the Ptarmigan Traverse and can be done as a 2-day trip (long summit day) or a more relaxed 3-day trip. It is an 'involved' climb: significant elevation gain/loss, two glacier crossings, and a genuinely difficult-to-navigate summit scramble through a sequence of gullies and a spur ridge on choss-quality rock.",
+    "turnaround": "Flexible out-and-back allows turnaround at any point along Red Ledges or Mix-Up Arm based on conditions and party fitness.",
+    "auto_generated": true,
+    "alpine_grade": null,
+    "rock_grade": "Class 3-4 (parties report occasional low-5th-class moves in the summit gully/cleft)",
+    "ice_grade": null,
+    "gain_ft": 10600,
+    "loss_ft": 10600,
+    "dist_km": 17.7,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": "Multi-day (3-5 days for full traverse)",
+    "face": "South Face / South Slopes, via the Spider-Formidable col",
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "comms": "Cell coverage in North Cascades National Park backcountry has many dead spots; the park explicitly advises against relying on a phone as an evacuation plan and recommends leaving a detailed trip plan with someone before departing.",
+    "descent": "Reverse the ascent: back over the Spider-Formidable col, down the Middle Cascade Glacier and Red Ledge to Kool-Aid Lake camp, then back up over Cache Col to Cascade Pass and the trailhead.",
+    "obj_haz": [
+      "crevasses on Cache and Middle Cascade Glaciers",
+      "loose rock/choss on the south slopes",
+      "cornice at Cache Col (early season)",
+      "glacier moat at Cache Col (late season)",
+      "route-finding hazard through multiple gullies"
+    ],
+    "waypoints": [
+      {
+        "lat": 48.47544,
+        "lng": -121.07503,
+        "elev": 3600,
+        "name": "Cascade Pass Trailhead",
+        "type": "Trailhead",
+        "distMi": 0,
+        "elevFt": 3600
+      },
+      {
+        "lat": 48.4683,
+        "lng": -121.06,
+        "elev": 5392,
+        "name": "Cascade Pass",
+        "type": "Junction",
+        "distMi": 3.7,
+        "elevFt": 5392
+      },
+      {
+        "lat": 48.4164,
+        "lng": -121.0672,
+        "elev": 8325,
+        "name": "Mount Formidable summit",
+        "type": "Summit",
+        "distMi": null,
+        "elevFt": 8325
+      }
+    ],
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+      "totalHrs": null,
+      "summitTimeHrs": 8.7,
+      "descentTimeHrs": 6.8,
+      "approachTimeHrs": 6,
+      "recommendedStart": "Early/alpine start from high camp given the long summit day and the need to cross glaciers before the snow softens."
+    },
+    "detailed_rack": "Full glacier travel kit (rope, harness, crevasse-rescue gear), ice axe and crampons for the Cache Col and Middle Cascade Glacier crossings, plus a light rack of rock protection and a few slings for the loose class 3-4/occasional 5th-class sections and for Red Ledge when snow-covered.",
+    "what_to_bring": [
+      "headlamp",
+      "trekking poles",
+      "overnight camp gear for 2-3 days",
+      "topographic map and compass (cell coverage unreliable)",
+      "sufficient water/water treatment (glacial melt sources)"
+    ],
+    "pro_tips": [
+      "Aim for the window between mid/late July and August: early enough that Cache Col isn't badly moated, but late enough that the Mixup Arm traverse and Cache Col cornice have melted out.",
+      "Carry rope and rock protection even though the route is rated a scramble; multiple parties have needed roped protection through the crux gully/cleft near the summit.",
+      "Bring full crevasse-rescue gear for the Cache Glacier and Middle Cascade Glacier crossings, not just an axe and crampons.",
+      "Budget for a genuinely long summit day; many parties camp at Kool-Aid Lake or just south of Red Ledge to shorten it."
+    ],
+    "watch_out": [
+      "Red Ledges exposure — Class 3 scrambling, loose/steep snow may require short Class 4 bypasses",
+      "Glacier travel on Mix-Up Arm — heather, talus, and snow travel",
+      "Multi-glacier crossing on the full Ptarmigan Traverse — crevasse exposure, rope team skills essential",
+      "Weather exposure and lightning risk on the high alpine ridge",
+      "Loose rock throughout the ridge traverse"
+    ],
+    "pro_needs": "Glacier/crevasse-rescue gear is the main protection need; a small rock rack (a few slings/cams/nuts) is worth carrying for the summit gully and any early-season snow on Red Ledge.",
+    "best_season": "Late July through August is the usual window. Earlier in the season the Mixup Arm traverse can be snow-covered with bad runout and Cache Col can carry a cornice; later in the season (September) Cache Col can become moated out and the loss of snow cover on the glaciers makes route-finding harder.",
+    "high_point_ft": 8325,
+    "aid_grade": null,
+    "approach": "Via Cascade Pass trailhead, part of the 35-mile Ptarmigan Traverse",
+    "descent_text": "Downclimb the summit gully/cleft and reverse the rising traverse across the south-side gullies back to the notch, cross the spur ridge, and climb back up to the Spider-Formidable col. From the col, descend the Middle Cascade Glacier, re-cross Red Ledge, and return to the Kool-Aid Lake camp; from there, reclimb to Cache Col and descend the Cache Glacier/Mixup Arm back to Cascade Pass and the trailhead. Multiple parties report finishing the descent to camp by headlamp given the length of the day.",
+    "bail": "Retreat is straightforward over most of the route by reversing the traverse back to Kool-Aid Lake or Cache Col; the real crux for bailing is the summit gully/cleft area, where downclimbing (or a short rappel) back into the basin is the way off if conditions or route-finding turn a party back.",
+    "pitch_detail": null,
+    "itinerary": "Commonly done as a 2-day trip (hike to a high camp near Kool-Aid Lake or just south of Red Ledge, then a long summit day and hike-out) or a more relaxed 3-day trip with an extra camp.",
+    "access": {
+      "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+      "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+      "rules": "Group size capped at 6 in off-trail cross-country zones (which includes Boston Basin/Eldorado approaches; 12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+      "permit": "North Cascades NP wilderness/backcountry camping permit (required for any overnight stay; day climbs need none)",
+      "closures": "Cascade River Road has a seasonal winter closure and may have additional washout-related closures; check the NPS road-conditions page before driving.",
+      "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+      "group_limit": 6,
+      "landManager": "North Cascades National Park Service Complex (National Park Service)",
+      "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"
+    },
+    "road": {
+      "name": "Cascade River Road",
+      "status": "Paved for roughly the first 20 miles from Marblemount, then gravel to the trailhead; check the NPS road-conditions page for washouts before driving.",
+      "driveNote": "23.1 mi from Marblemount (SR 20) to the Cascade Pass Trailhead (3,600 ft, about a 1-hour drive), ending in a loop parking area with a vault toilet.",
+      "seasonalGate": "Closed by snow in winter (historically near Eldorado Creek, around MP 20); NPS reopens the road to the trailhead as snowmelt and repairs allow, typically over late spring/early summer."
+    },
+    "climate": {
+      "fall": "September brings increasing storm frequency and the possibility of early snow, which can complicate route-finding and glacier crossings.",
+      "spring": "Heavy snowpack typically persists into June/July; approach and route are largely snow-covered.",
+      "summer": "July-August is the driest, most stable window and the standard climbing season, though glaciers are more open (crevasses more exposed).",
+      "winter": "Deep snowpack, high avalanche hazard, and a closed access road make winter ascents rare (the North Ridge has been climbed in winter, but the standard route is not a winter objective).",
+      "typical": "Wet, maritime-influenced alpine climate with a short weather-dependent climbing season; conditions can shift from clear to stormy within a day.",
+      "forecastZone": "North Cascades (see mountain-forecast.com's peak-specific Mount Formidable forecast)"
+    },
+    "emergency": {
+      "notes": "NPS explicitly warns cell coverage has many dead spots in the park backcountry and advises never relying on a phone as an evacuation plan; leave a detailed trip plan with someone before departing.",
+      "county": "Skagit County",
+      "rangerStation": "North Cascades Wilderness Information Center, Marblemount, (360) 854-7245",
+      "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA, (360) 424-4111 (Level III Emergency Department)",
+      "sheriffDispatch": "Skagit County Sheriff's Office, (360) 336-9450 (or 911)"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": {
+      "peakLat": 48.4164,
+      "peakLng": -121.0672,
+      "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+      "trailheadLat": 48.475497,
+      "trailheadLng": -121.075031,
+      "trailheadDirection": "From the Cascade Pass Trailhead at the end of Cascade River Road (~3,660 ft)"
+    },
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": "The given elevationFt was null; multiple sources (Wikipedia, Peakbagger, SummitPost, StephAbegg) confirm 8,325 ft. Note: most modern route write-ups (Mountaineers.org, StephAbegg, CountryHighpoints, TrailCatJim) label this same Cache-Col/Spider-Formidable-col line the 'South Route' (named for the face actually climbed), while it is approached from the north via the Ptarmigan Traverse -- consistent with, not contradicting, the given route name. Total distance/elevation figures (22 mi, 10,600 ft gain/loss) are round-trip trailhead-to-summit-to-trailhead figures from a single trip report (TrailCatJim) and are the best-sourced figures found; distKm (17.7) is derived as half that round-trip mileage converted to km.",
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": "outback",
+    "approach_variants": [
+      {
+        "name": "Cascade Pass and the Ptarmigan Traverse",
+        "notes": "Formidable sits deep on the Ptarmigan Traverse and is reached the same way as the south side: Cascade Pass trailhead at 3,600 ft, 3.7 miles of maintained trail to Cascade Pass at 5,392 ft, then bootpath only.\n\nFrom the pass, traverse south along Mix-Up Arm on heather, talus and snow, ascend the Cache Glacier to Cache Col at about 6,900 ft (corniced early), and make a descending traverse south-south-east to Kool-Aid Lake at 6,100 ft. South of there the Red Ledge is the crux of the walking — exposed, loose, and worse under snow — and beyond it a rough path leads about a mile to the Middle Cascade Glacier.\n\nParties on the north side of the peak generally camp further along the traverse, near Yang Yang Lakes, and work back up toward the mountain from there. This is a full multi-day mountaineering trip with no maintained trail after Cascade Pass, normally done as part of the traverse rather than as a there-and-back.",
+        "season": "Jul-Sep, best late Jul-Aug",
+        "hazards": [
+          "the Red Ledge — loose rock on an exposed shelf, worse when snow-covered",
+          "cornice at Cache Col early season",
+          "crevasses on the Cache and Middle Cascade glaciers",
+          "multi-day committing position with no maintained trail past Cascade Pass"
+        ],
+        "baseFinding": "The reliable checkpoints on the way in are all named ground rather than route features: Cache Col (a glacier col, corniced early season), Kool-Aid Lake (a small meltwater tarn — the standard camp, and the last obvious flat ground for a while), the Red Ledge (the only place on the traverse where you are moving across loose rock on an exposed shelf and thinking about a rope), and the Spider-Formidable col at 7,320 ft, reached by roping up the Middle Cascade Glacier's icefall.\n\nBe clear which side of the mountain you are aiming for before you leave camp, because the traverse passes both. The commonly climbed line from this ground is the south side, reached by descending east of the col and traversing west; a north-side line is a different objective on the far flank of the peak. No source consulted gave a specific, verifiable description of where the north-side climbing starts, so that last stretch is not recorded here rather than guessed at."
+      }
+    ],
+    "climbing_route": null,
+    "bivy": [
+      {
+        "elev": 6100,
+        "name": "Kool-Aid Lake",
+        "notes": "PLANNED first camp on the traverse, roughly three hours past Cascade Pass and the usual night one for a Formidable trip. Good sheltered ground and easy water. Mountain goats work the camp for salt — stow sweaty gear and pee well away from the sites. It is still a long day from here to the peak, so parties chasing a single summit day usually push higher.",
+        "water": "lake at camp",
+        "capacity": "several small parties; established sites around the tarn"
+      },
+      {
+        "elev": 7320,
+        "name": "Spider-Formidable Col",
+        "notes": "PLANNED high camp and the closest ground to the north side of the peak — the col is the only non-technical crossing of the Spider-Formidable wall and it puts you directly above the Middle Cascade Glacier. Fully exposed on a notch, so expect wind and no shelter at all in weather. The slab trickle is unreliable; confirm it before counting on it, and be prepared to melt. The col itself holds steep snow into the season and parties have needed hand lines to descend the far side.",
+        "water": "a trickle down nearby slabs when running; otherwise melt snow",
+        "capacity": "one to two tents on small levelled spots on the col"
+      },
+      {
+        "name": "Ridge benches above Yang Yang Lakes",
+        "notes": "PLANNED launching camp specifically noted by parties climbing Formidable, sitting on the ridge above the lakes with a much shorter summit day than camping at the lakes themselves. The trade is water: there is none up here except what you melt or carry from below. Gaining this ridgeline out of the lakes is the most consequential bit of travel in this section of the traverse.",
+        "water": "none — melt snow",
+        "capacity": "small; scattered flat spots on the ridge"
+      },
+      {
+        "elev": 5850,
+        "name": "Yang Yang Lakes",
+        "notes": "PLANNED camp on the south side of the col, the standard traverse night and the fallback when the col is windbound. Sheltered, easy water, and a comfortable place to sit out weather — but it is well below the peak and adds a steep, loose climb back to the ridge in the morning.",
+        "water": "lakes at camp",
+        "capacity": "several parties; established sites"
+      }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null
+  }
+}

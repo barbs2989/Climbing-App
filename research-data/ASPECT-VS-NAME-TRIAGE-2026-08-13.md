@@ -162,6 +162,25 @@ sources grading one scramble differently or with two genuinely distinct south-si
 in the catalog settles which. Note also that **no existing guard can see this**: the names differ,
 so `route_duplicate_names` is silent; it is a *semantic* duplicate, not a textual one.
 
-The decision is: merge the pair (and which id survives), or keep both and rename the first to
-something that does not collide — e.g. the approach-neutral *"South Route (Ptarmigan Traverse
-approach)"*. Both need a published source distinguishing the lines, which was not found.
+**RESOLVED 2026-08-14 — the user decided: merge the pair, keep the South Face row.** Applied via
+`audits/sql/2026-08-14-formidable-merge-duplicate.sql`. Formidable now lists two routes
+(`South Face / Southeast Ledges`, `Northeast Face Direct`); `audit:aspect-name` went 9 -> 8,
+routes 205,544 -> 205,543, `check:counts` clean across 47,638 areas.
+
+**Nothing was destroyed.** The retired row is snapshotted whole in
+`research-data/retired-wa_mount_formidable_north_ptarmigan-2026-08-14.json` (15,943 chars).
+Dependent rows were counted first across every `public` table carrying a `route_id` —
+climb_logs, contributions, crews, crew_listings, gps_submissions, hazard_votes, objectives,
+topo_lines — **all zero**, so the delete orphaned nothing.
+
+Only `bivy` was carried onto the survivor (2,081 chars of Ptarmigan Traverse camps, which the
+survivor lacked entirely), copied FROM THE ROW rather than from a literal so no value could be
+fabricated. **Fourteen columns that are LONGER on the retired row were deliberately not
+promoted** — access, road, climate, best_season, obj_haz, bail, detailed_rack, what_to_bring,
+pro_needs, commitment, face, season, rock_grade, discipline. Longer is not more correct, the
+survivor carries its own value for each, and overwriting a populated field is the one direction
+of this merge that can destroy good data. They are in the snapshot to be judged one at a time.
+
+**`check:sql` refused this delete and was right to**: its twin test matches on NAME, and this
+pair's whole problem was a twin named differently. Overridden deliberately, with the twin
+confirmed present and the delete itself guarded on `exists(... south_face)`.
