@@ -175,8 +175,34 @@ them would promise a protection the backend does not deliver. Per
 `privacy-controls-need-server-enforcement`, **do not flip this flag to satisfy an audit.** It
 is listed only because the policy describes controls a user cannot see.
 
-Also unchanged and worth repeating: the signed-in deletion branch has never been exercised by
-anyone — there is no standing test account — so gap 1 is read from source, not from a click.
+~~Also unchanged and worth repeating: the signed-in deletion branch has never been exercised by
+anyone — there is no standing test account — so gap 1 is read from source, not from a click.~~
+
+**Exercised 2026-08-19 — gap 1 is now measured, not inferred.**
+`scripts/oneoff/probe-signed-in-deletion-branch.mjs` creates a throwaway account on the reserved
+`.invalid` domain, signs in with the **anon key and a real password grant** (the way the app
+does), and sends exactly what `raiseDataRequest(uid,"delete",…)` sends. Six assertions, all
+passing, account and rows removed afterwards and the removal verified:
+
+- the insert is **accepted under RLS** (201) — this is the branch itself
+- the climber can **read their own open request back**
+- a self-raised `status='done'` is **refused** (403), so 0145's status constraint is real
+- a request **for another account** is refused (403)
+- the request **survives the climber trying to delete it** — "a request you can silently edit or
+  withdraw is not a record"
+
+Why this needed a probe rather than a read: the caller is
+`try{…}catch(_e){_dr="failed"}`, so an RLS refusal never surfaces as an error — it just picks a
+different toast. Source cannot distinguish "the write is permitted" from "the write is refused
+and the failure is swallowed".
+
+**One trap this pins.** The climber's DELETE answered **HTTP 200 while the row survived** —
+there is no delete policy, so it matched zero rows, and PostgREST reports success for that.
+Asserting the row count rather than the status code is the only reason it reads correctly. Same
+shape as [[sql-success-is-not-verification]].
+
+It is a hand-run probe and must stay one: it creates a real auth user, so it can never be a
+build gate.
 
 ## E. Nobody is told the Terms exist at the moment they accept them — NEW
 
