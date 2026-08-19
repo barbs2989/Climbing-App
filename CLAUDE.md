@@ -33,6 +33,7 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
+npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
