@@ -134,7 +134,6 @@ export function RouteProposalQueue() {
           <Row label="Hazards">{Array.isArray(v.haz) && v.haz.length ? v.haz.join(", ") : null}</Row>
           <Row label="Beta">{v.beta}</Row>
           {EXTRA_KEYS.map(function (p) { return <Row key={p[0]} label={p[1]}>{v[p[0]]}</Row>; })}
-          <Row label="Their source">{[v.source, v.sourceNote].filter(Boolean).join(" — ")}</Row>
           <Row label="Climbed it">{v.climbed ? "yes" : null}</Row>
           <Row label="Photos">{v.photoCount ? v.photoCount + " offered (not stored)" : null}</Row>
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>

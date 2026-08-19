@@ -1,0 +1,1074 @@
+{
+ "_README": [
+  "Approach variants — CASCADE PASS / ELDORADO core of the Washington North Cascades, 2026-08-19.",
+  "44 routes, 44 variants, every one carrying a baseFinding.",
+  "",
+  "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. Several ids in",
+  "this batch carry no peak name at all, and two of them are filed under an area whose own name is generic:",
+  "wa_tepeh_towers, wa_eldorado_peak_west_arete, wa_eldorado_peak_north_ridge and the rest of the Eldorado group all",
+  "sit under `wa_main_peak` — an area literally named 'Main Peak' beneath wa_eldorado_peak. wa_southeast_face is",
+  "SHARKFIN TOWER, wa_northwest_ridge is DORADO NEEDLE, wa_north_ridge_4 and wa_east_slope are PRIMUS PEAK,",
+  "wa_north_ridge_7 is AIGUILLE DE L'M, wa_northeast_ridge_1963_route is JOHANNESBURG, and wa_mount_logan_r1 / r2 are",
+  "the Banded and Douglas glacier routes on MOUNT LOGAN. A name-shaped id is not evidence of which peak you are on.",
+  "",
+  "SCOPE. The request named 23 peaks. 21 of them exist as areas in this catalog; Tepeh Towers exists only as a ROUTE",
+  "(wa_tepeh_towers, filed under wa_main_peak) and is covered here on that row. Two requested peaks have no Washington",
+  "row at all and could not be covered — see _SKIPPED for both, and note that BOTH carry a live name-collision risk.",
+  "Two areas beside the named peaks were included because the catalog files them inside the same Boston Basin subtree",
+  "and their routes were empty: wa_aiguille_de_l_m and wa_boston_basin (the latter holds no direct routes).",
+  "",
+  "53 routes across those areas had an EMPTY approach_variants. 44 are written here and 9 were deliberately skipped.",
+  "12 routes in scope ALREADY had variants and were not touched — including wa_forbidden_peak_west_ridge, which the",
+  "request explicitly protects, and wa_sharkfin_tower_southeast_ridge and wa_mount_torment_south_ridge, whose nulled",
+  "rappel lengths are recorded as settled and were not re-opened.",
+  "",
+  "CONTAMINATION REJECTED, recorded so it is not re-introduced:",
+  "  - AIGUILLE DE L'M is the loudest one and it came out the other way. The famous Aiguille de l'M is in CHAMONIX,",
+  "    FRANCE, and a Boston Basin area of that name reads instantly like an import error. It is not: Mountain Project",
+  "    carries a Washington area at 48.50663, -121.06681 — which matches this catalog's area coordinate exactly — and",
+  "    the American Alpine Institute has a route profile for its North Ridge. It is the cockscomb dividing the high",
+  "    Forbidden basin from Torment basin, with the Taboo Glacier on one side, and it was named by a guide for the",
+  "    resemblance. A deliberate echo, not a filing error. No Chamonix material was used for any field.",
+  "  - MOUNTAIN PROJECT'S 'Chockstone Route' (route id 111959715) IS NORTH EARLY WINTERS SPIRE AT WASHINGTON PASS,",
+  "    not Austera Peak. Both are Washington, both are in this catalog, and both have a chockstone; that page must",
+  "    never be used as a source for wa_austera_peak_chockstone_route. Caught and excluded during research.",
+  "  - MOUNT LOGAN: the famous one is in the YUKON and is Canada's highest peak; there is another in Utah. Only the",
+  "    9,087 ft North Cascades peak with the Douglas, Fremont and Banded glaciers was used.",
+  "  - MOUNT GOODE: there is a 13,092 ft Mount Goode in the Sierra Nevada near Bishop, California. Only the 9,200 ft",
+  "    peak above the North Fork of Bridge Creek was used.",
+  "  - STORM KING: three near-misses were found and rejected — a Storm King in Colorado's San Juans (an 18-pitch 5.7,",
+  "    FA Bliss/Jones 1974), Storm King Mountain in New York's Hudson Highlands, and MOUNT STORM KING in OLYMPIC",
+  "    National Park above Lake Crescent. The tell for the North Cascades one is that it carries NO 'Mount' prefix.",
+  "  - ELDORADO: 'West Arete' returned a Mountain Project page for ELDORADO CANYON STATE PARK, COLORADO. Excluded.",
+  "  - MAGIC MOUNTAIN is also a ski area, an amusement park, a peak in Idaho and one in California. Only the 7,610 ft",
+  "    Cascade Pass peak above Kool-Aid Lake and Pelton Basin was used.",
+  "  - BOSTON PEAK and CASCADE PEAK are both generic names; every source used is anchored to Boston Basin, the Quien",
+  "    Sabe Glacier or the Cascade-Johannesburg col.",
+  "",
+  "NO TIME, DISTANCE OR GAIN FIGURE IS WRITTEN INTO ANY VARIANT except one `hours` on the Aiguille de l'M, where a",
+  "single source states a half day from Boston Basin camp and nothing contradicts it. Everything else was omitted:",
+  "the catalog states Eldorado's own summit three different ways (8,868 / 8,872 / 8,873 ft) across rows in the same",
+  "area, Goode's Northeast Buttress moat is published at anywhere from 6,400 to 7,800 ft depending on the year the",
+  "party went, and Dorado Needle's Southwest Buttress is 9 pitches at 5.8 in one source and 13 at 5.7 in another.",
+  "Where sources disagreed the disagreement is stated in prose rather than averaged into a number.",
+  "",
+  "NO URL OR SOURCE NAME APPEARS IN ANY name / notes / baseFinding / hazards field. Sources are in `_sources` only.",
+  "Every URL in a _sources list was actually retrieved during this pass; nothing was pattern-guessed. Entries whose",
+  "material comes from the route row's OWN approach / climbing_route / descent_text prose carry an EMPTY _sources",
+  "and are labelled 're-homed'.",
+  "",
+  "_confidence values: 'corroborated' (two or more independent retrieved sources, or one source plus the row's own",
+  "columns agreeing on the base), 'single-source' (one retrieved source), 're-homed' (material comes from the row's",
+  "own columns; nothing was researched into it and no source is claimed), and 'thin' (the base is real but",
+  "under-published — the entry says so inside its own baseFinding)."
+ ],
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "approach_variants": [
+   {
+    "name": "Quien Sabe Glacier to Sharkfin Col, rappel onto the Boston Glacier, then north to the foot of the ridge",
+    "season": "Mid to late summer, for dry rock and a glacier that is still bridged where it matters",
+    "notes": "From the Boston Basin trailhead near 3,200 ft on Cascade River Road, the old Diamond Mine roadbed runs about a mile to the mine site, then the climbers' path climbs hard through forest with four stream crossings to treeline near 5,300 ft. Camp low at about 5,300 ft or high at about 6,400 ft.\n\nFrom high camp, follow the moraine and the west edge of the QUIEN SABE GLACIER up to about 7,500 ft and climb to SHARKFIN COL at 7,720 ft — roughly 10 ft of 5.7 rock and 200 ft of a class 3 gully to gain it, on loose scree underfoot.\n\nThe col is the commitment. From it you make a rappel of roughly 150 ft down a loose gully onto the BOSTON GLACIER; retreat after that means re-climbing to the col. Traverse north through crevassed ground toward the north end of the glacier, then re-ascend to the ridge.\n\nThree Forbidden routes cross Sharkfin Col and use this rappel. Where you LEAVE the Boston Glacier is what separates them, and that is what the baseFinding below is about.",
+    "hazards": [
+     "A rappel of about 150 ft down a loose gully off the col, with rope-snag on loose rock, and no easy retreat once you are down it",
+     "A heavily crevassed traverse of the Boston Glacier where a fall would be serious",
+     "A distinct moat where the glacier meets the North Ridge rock, sometimes needing technical work to exit, and worse late season",
+     "Steep snow gully sections on the ridge itself where a slip runs uncontrolled onto the Boston Glacier",
+     "A long, exposed crest with the descent on a completely different side of the mountain"
+    ],
+    "baseFinding": "FIRST, IDENTIFY SHARKFIN COL CORRECTLY, BECAUSE EVERYTHING AFTER IT IS COMMITTED. It is the LOW POINT ON THE RIDGE IMMEDIATELY LEFT OF SHARKFIN TOWER — a distinct rock tower stands beside it. A notch on that skyline with no tower beside it is not the col. You gain it by about 10 ft of 5.7 and a 200 ft class 3 gully; if you walked up to it, you are somewhere else.\n\nSECOND, ON THE BOSTON GLACIER, GO NORTH AND KEEP GOING. The base of this route is at the FAR NORTH END of the glacier, where the ice meets the foot of the ridge, and the crossing point is itself a notch rather than an arbitrary spot on the crest. You should pass a rock buttress on the way; if you have turned uphill without passing it, you have turned too early.\n\nTHE POSITIVE TEST AT THE BASE IS THE FIRST MOVE, AND IT IS UNAMBIGUOUS: THE CLIMBING STARTS WITH A SHORT, STEEP LEFT-FACING CORNER AT 5.6, STRAIGHT OFF THE COL AT THE FOOT OF THE RIDGE. That corner is the route's crux and it is the first thing you climb. IF THE FIRST GROUND ABOVE THE GLACIER IS 300 FT OF LOW-ANGLE ROCK LEADING TOWARD AN ICE PATCH, YOU ARE ON THE NORTHEAST FACE and you turned west off the glacier far too soon.\n\nAND YOU SHOULD BE AT A COL, NOT ON A FACE. The base is the gap between Boston and Forbidden: ground falls away on BOTH sides of you. If the mountain is above you and glacier below you and nothing behind, you are under a face, not at the col.\n\nCONFIRM AS YOU CLIMB: above the corner the crest passes a wildly exposed bivy platform — two small snow-free spots just below the crest on the northeast side — and above roughly 8,400 ft the rock notably improves. Poor rock all the way to the top means you never got onto the upper ridge."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/106450546/boston-basin",
+   "https://www.mountainproject.com/area/109252144/aiguille-de-lm"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_forbidden_peak_east_ridge": {
+  "area": "wa_forbidden_peak",
+  "approach_variants": [
+   {
+    "name": "East around the basin and up the loose gullies to the notch below the Solitary Gendarme",
+    "season": "Mid-July through September; August is the most reliable for dry granite",
+    "notes": "Same trailhead and Boston Basin climbers' trail as the West Ridge — the old Diamond Mine roadbed for about a mile, then a steep path with several creek crossings to treeline near 5,300 ft, then talus and heather to the usual high camp at 6,300-6,600 ft, roughly four to five miles and three to four hours from the car.\n\nFrom camp, do NOT cross toward the south-face couloir. Traverse climber's-left and east around the basin and gain the ridges and gullies flanking the glacier on Forbidden's east side, sometimes loosely called the Unnamed Glacier. This leg is the honest part of the route's reputation: a few hours over choss-covered slabs, loose rock and seepage, several small stream crossings, and usually a snow gully at the end that wants crampons or microspikes to gain the upper benches. Parties describe holding a bearing of roughly 058 degrees up the east side of that glacier.\n\nReckon five to six hours and over 5,000 ft above the trailhead to the notch — noticeably longer and far more route-finding than reaching the West Ridge notch.",
+    "hazards": [
+     "Hours of loose, choss-covered slabs and seepage on the approach, with real route-finding in poor visibility",
+     "A snow gully at the top of the approach that wants crampons even in midsummer",
+     "Aging fixed rappel anchors in the gendarme notches",
+     "Sustained exposure and complex route-finding over multiple gendarmes once on the crest",
+     "Afternoon thunderstorms on a long crest with no quick way off"
+    ],
+    "baseFinding": "THE LANDMARK IS A SINGLE TOWER WITH A NAME: THE SOLITARY GENDARME. The high bivy sits at roughly 8,000 ft, about 300 ft BELOW it, and the notch where the technical climbing starts is just above that bivy. A lone tower standing up on the crest, with the ridge running away west toward the summit, is the confirmation you are at the right place on a ridge that offers many wrong ones.\n\nWHY THAT MATTERS MORE HERE THAN ELSEWHERE: this crest carries several gendarmes and the ridge can be joined almost anywhere along it. Joining it high — past the gendarmes, with an unobstructed view of the summit and nothing in the way — means you have missed the route rather than found a shortcut. IF THERE IS NOTHING BETWEEN YOU AND THE SUMMIT, YOU ARE TOO HIGH.\n\nTHE FIRST MOVE TEST: from the notch you go LEFT around the first gendarme, then simul-climb easy blocks at about 5.4 on clean granite to gain the crest proper. Easy ground first, hard ground later. If your opening pitch is hard, you are not on the East Ridge Direct.\n\nTHE DIRECT LINE IS DEFINED BY REFUSING THE BYPASSES. Every gendarme here can be walked around on the north or south flank. A day that never once required a move you would rope up for means you have been taking the bypasses and are on the easier variant, not the Direct.\n\nCONFIRM AT THE CRUX, LATE: the 5.8 crux comes after climbing a steep pitch up the LAST gendarme and RAPPELLING DOWN ITS BACK SIDE into a narrow notch with a steep wall directly ahead. A notch you scrambled into rather than rappelled into is not that notch.\n\nDO NOT CONFUSE THIS RIDGE WITH THE EAST LEDGES. The Ledges are the loose descent traverse that stays WELL BELOW the crest and rejoins the ridge near the Solitary Gendarme. If you are traversing ledges rather than climbing a crest, you are on the descent line — the one that carries a documented fatality."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/107244142/east-ridge-direct"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_forbidden_peak_northwest_face": {
+  "area": "wa_forbidden_peak",
+  "approach_variants": [
+   {
+    "name": "All the way round to the Forbidden Glacier's north arm",
+    "season": "Mid summer, for the best balance of firm ice and dry rock",
+    "notes": "This is the hardest-to-reach established line on the peak and most parties treat it as three days.\n\nThe recorded approach goes the long way round: from the Boston Basin trailhead, three to four miles by the old mine road and the climbers' path with four stream crossings to high camp near 6,400 ft, often pushing on to a bench near 7,500 ft beside the Quien Sabe Glacier below Sharkfin Tower. Ascend the west side of the Quien Sabe to the notch above Sharkfin Col, rappel onto the Boston Glacier below the bergschrund, traverse that heavily crevassed glacier, and continue around to the NORTH ARM OF THE FORBIDDEN GLACIER on the mountain's other side.\n\nOther parties reach the same basin without the Boston Glacier at all — by dropping west off the North Ridge line, by rappelling from the West Ridge notch over crevasses and moats, or over Torment Col. All of them end in the same place, which is what the baseFinding uses.\n\nFrom the north arm, about 900 ft of 30 to 40-plus degree snow and ice leads to the base of the rock.",
+    "hazards": [
+     "Two crevassed glaciers before any climbing, with a large crevasse that opens around 7,600 ft in many seasons and can cost real time",
+     "A committing rappel off Sharkfin Col — retreat means re-climbing to the col",
+     "A moat or bergschrund where the snow pulls back from the foot of the rib",
+     "A shaded, cold aspect that holds hard ice late, and a face that tops out at a cornice near 8,375 ft",
+     "A descent on a completely different side of the mountain, by the West Ridge couloir"
+    ],
+    "baseFinding": "THE DECIDING FACT IS WHICH GLACIER YOU ARE STANDING ON, AND IT SETTLES THIS ROUTE AGAINST BOTH ITS NEIGHBOURS IN ONE LOOK. This route starts from the FORBIDDEN GLACIER'S NORTH ARM, on the mountain's WEST side. The North Ridge and the Northeast Face both start from the BOSTON GLACIER, on the east. If your approach ended on the Boston Glacier and you started climbing there, you are on one of those two, not this.\n\nTHE POSITIVE LANDMARK IS THE RIB. From the north arm an obvious rock rib runs roughly 1,800 ft up the face, with ICE ON BOTH SIDES OF IT — the face is two ice sections split by a narrow rock band. You should be able to see a continuous rib rising from where you stand. IF WHAT IS ABOVE YOU IS A BROAD, UNDIFFERENTIATED SNOW AND ICE SLOPE WITH NO RIB IN IT, YOU ARE NOT UNDER THIS ROUTE.\n\nTHE FIRST-MOVE TEST IS SNOW, NOT ROCK. Above the moat comes roughly 900 ft of 30 to 40-plus degree snow and ice BEFORE any technical rock. If you stepped off the glacier straight onto rock, you are on the Northeast Face — which begins with 300 ft of rock and only then reaches its ice.\n\nCOUNT THE GROUND ABOVE THE ICE: about 500 ft of somewhat loose 4th to low-5th, soloed or simul-climbed, leads to a KNIFE-EDGE RIDGE crossed at 5.6, and the 5.8 crux follows immediately after it. A knife edge is the confirmation that you are on the rib and not on ground beside it.\n\nAND THE LARGE CREVASSE AT ABOUT 7,600 FT IS A POSITION MARKER AS WELL AS A HAZARD — it opens on the approach in most seasons and is the thing most likely to make you detour; note where you crossed it, because you are not reversing this way."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/112030839/northwest-face"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_forbidden_peak_northeast_face": {
+  "area": "wa_forbidden_peak",
+  "approach_variants": [
+   {
+    "name": "Sharkfin Col, the schrund rappel and an ice wall, then west across the Boston Glacier to the ice patch",
+    "season": "Late spring to early summer, when the face still holds the best ice and snow",
+    "notes": "From the Boston Basin trailhead, three to four miles by the old mine road and the climbers' path with four stream crossings to high camp near 6,400 ft. Continue along the moraine and the west edge of the Quien Sabe Glacier to SHARKFIN COL at about 7,720 ft, gained by roughly 10 ft of 5.7 rock and a class 3 gully.\n\nThe first-ascent party rappelled from the col INTO the bergschrund and climbed a 15 ft vertical ice wall to get out of it onto the Boston Glacier. Expect the schrund to be the awkward part of the day before the climbing starts.\n\nFrom the glacier, traverse WEST — a short traverse, not the long northward one the North Ridge makes — to the base of the face.\n\nThis line is climbed rarely enough that no fixed gear should be assumed and modern first-hand descriptions are scarce; treat any description of it, including this one, as an outline.",
+    "hazards": [
+     "A rappel into a bergschrund and a 15 ft vertical ice wall to get out of it onto the glacier",
+     "A north-facing ice feature that has thinned over recent decades — verify there is ice deep enough to take a screw rather than assuming it",
+     "Everything on the face funnels through the ice patch, so it is the exposed spot for anything released from above",
+     "A remote position with a long, complex retreat and a descent by the West Ridge on the far side of the peak",
+     "So few ascents that conditions cannot be inferred from recent traffic"
+    ],
+    "baseFinding": "THE ICE PATCH IS THE LANDMARK AND YOUR POSITION RELATIVE TO IT IS THE WHOLE TEST. From the Boston Glacier a large, conspicuous patch of ice sits on the lower face — about 300 ft tall. YOU START ON ROCK BELOW AND TO THE LEFT (WEST) OF IT, NOT ON IT AND NOT TO ITS RIGHT.\n\nSO THE FIRST-MOVE TEST IS: ROCK FIRST, ICE SECOND. About 300 ft of rock, protected by a few pitons on the first ascent, comes before you reach the ice at all. IF YOU ARE SWINGING TOOLS WITHIN A ROPE-LENGTH OF LEAVING THE GLACIER, YOU HAVE STARTED TOO FAR RIGHT — you are on the patch itself rather than the rock beside it.\n\nCOUNT THE THREE SECTIONS IN ORDER: 300 ft of rock, then 300 ft of ice at about 50 degrees, then about 600 ft of steep-looking but upward-dipping slabs to the top. A route that stays on one medium the whole way is not this one.\n\nTELL IT FROM THE NORTH RIDGE BY HOW FAR YOU WALKED. Both cross Sharkfin Col and use the same schrund rappel. The North Ridge then traverses a long way NORTH to the far end of the Boston Glacier and starts at a col with ground falling away on both sides. This route turns WEST after a short traverse and starts under a face. If you walked past a rock buttress and kept going, you have gone to the North Ridge.\n\nA GENUINE NAMING TRAP, WORTH KNOWING BEFORE YOU LEAVE CAMP: Forbidden's 'northeast face route' is sometimes used loosely to mean a HIGH TRAVERSE BELOW THE EAST RIDGE that skirts the gendarmes — an easier, quite different line, and the one some descent descriptions mean. This route is the technical ice-patch face above the Boston Glacier. If the description you are following has you traversing under a ridge crest rather than climbing a face, you are reading about the other thing."
+   }
+  ],
+  "_sources": [
+   "http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_boston_peak_southeast_face": {
+  "area": "wa_boston_peak",
+  "approach_variants": [
+   {
+    "name": "Quien Sabe Glacier to the Sahale-Boston col, then the connecting ridge",
+    "season": "Jul-Sep",
+    "notes": "From the Boston Basin trailhead near 3,200 ft at about mile 21.7 of Cascade River Road, the unmaintained boot path climbs through forest and slide alder into Boston Basin, roughly 3.2 miles and 3,100 ft. Most parties camp at high camp near 6,400 ft; the low camp near 5,300 ft works for slower groups. Sahale Glacier Camp on the other side of the ridge serves the same objective for parties coming over Cascade Pass.\n\nAn alpine start is standard. Rope up the QUIEN SABE GLACIER — the big crevasses are low on the glacier and the direct line through them runs to about 45 degrees and is very exposed, so most parties take the left side and traverse in beneath Sharkfin Tower. Later in the season, end-run the bergschrund below the col by traversing climber's right, then cut back up-left above it to gain the SAHALE-BOSTON COL at about 8,200 ft.\n\nFrom the col the route follows the connecting ridge toward Boston: flat at first, then widening onto loose rock, staying generally right and on the crest.\n\nThe difficulty here is the rock quality, not the grade. This peak has a real fatality history and the descent — three rappels off fixed slings down the southeast side — should not be treated casually.",
+    "hazards": [
+     "Crevasses on the Quien Sabe, with a potentially poorly bridged bergschrund below the col that worsens through the season",
+     "Notoriously loose and rotten rock, with rockfall onto and within the party",
+     "Essentially unprotectable class 4 with real exposure on the knife-edge section",
+     "A short but exposed snow traverse on the col that wants axe and crampons",
+     "Aging natural rappel anchors on the descent — slung horns and blocks, not bolts"
+    ],
+    "baseFinding": "THE BASE IS THE SAHALE-BOSTON COL AT ABOUT 8,200 FT, AND THE COL IS THE ONE THING ON THIS ROUTE THAT IS HARD TO MISTAKE: it is the saddle shared with the Sahale trade route, so it carries traffic and it has ground falling away on both sides. If you gained a high point rather than a saddle, you are not there.\n\nTHE APPROACH TEST IS THE BERGSCHRUND. Later in the season the way onto the col is to traverse climber's RIGHT to end-run the schrund and then cut back up-LEFT above it. A party that walked onto the col without meeting a schrund has almost certainly come up in early-season conditions — fine, but it means the position cannot be confirmed that way and the ridge itself has to do it.\n\nTHE COUNTABLE SEQUENCE ON THE RIDGE, AND THE FALSE SUMMIT IS THE POINT OF IT: the crest steepens, widens, and then narrows to a KNIFE EDGE — that is where the route becomes genuinely exposed. At the high point of that ridge a FALSE SUMMIT stands in front of you. YOU DO NOT CLIMB IT. Make the class 4 downclimbing moves and follow the cairned line along the cliff edge to the RIGHT (east) around it. After about 100 ft of that bypass the Boston Glacier and the true summit pyramid come into view for the first time.\n\nTHE STRONGEST NEGATIVE TEST IS THE LAST ONE, AND IT WORKS IN FOG: YOU CROSS ABOUT 200 FT OF GLACIER ABOVE A BERGSCHRUND IMMEDIATELY BEFORE THE FINAL SUMMIT BLOCK. If you are scrambling loose rock to a high point and you have NOT crossed snow above a schrund in the last few minutes, that high point is the false summit and the mountain is not finished with you.\n\nTHE LAST FEATURE BEFORE THE TOP is a small ledge on the LEFT just short of the summit block, sometimes with a moat at it; above that it is class 3 on loose rock to the true summit."
+   }
+  ],
+  "_sources": [
+   "https://www.countryhighpoints.com/boston-peak-winter-ascent/",
+   "https://www.mountainproject.com/area/118250869/boston-peak"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_boston_peak_west_face": {
+  "area": "wa_boston_peak",
+  "approach_variants": [
+   {
+    "name": "The Quien Sabe's northwest corner to the lower of the two gullies",
+    "season": "Condition-dependent rather than calendar-dependent — documented ascents span a September first ascent on steep snow and a February first winter ascent",
+    "notes": "In winter the recorded approach is Cascade River Road to the Eldorado trailhead gate, then bike or ski up the Cascade Pass trail to the highest switchback near 6,400 ft, angling up and dropping into the Soldier Boy drainage, then a rising traverse to the QUIEN SABE GLACIER'S NORTHWEST CORNER. Rope up for the glacier crossing. In summer the standard Boston Basin approach reaches the same ground.\n\nThe face is used deliberately as the lower-consequence alternative to the Southeast Face when that side is too icy and too unprotected — which is worth knowing, because it means a party may arrive here having changed its mind rather than having planned it.\n\nFive pitches: two of steep snow heading northeast, a large gully east on the third, a fourth to about 200 ft north of the summit, and a fifth across an exposed ridge with a short rock step to the true top.",
+    "hazards": [
+     "A bergschrund near the base of the face",
+     "Crevasses on the Quien Sabe Glacier approach",
+     "Rime ice needing removal before anything can be climbed or protected, on the winter ascent",
+     "Rock bands between the gullies that are poor rock and poor protection — the gullies themselves protect better than the face between them",
+     "Loose rock characteristic of this peak, especially on the summit rock step"
+    ],
+    "baseFinding": "COUNT THE GULLIES: THERE ARE TWO PROMINENT ONES ON THIS FACE AND THE ROUTE TAKES THE LOWER. That is the one countable fact published about the start and it is the one to carry. A party at the base of the other gully is on a different piece of the face, with the rock band between them as the divider.\n\nTHE FIRST-MOVE TEST IS THE SCHRUND, AND ITS SOLUTION IS DIRECTIONAL: the bergschrund at the base is turned by climbing to CLIMBER'S RIGHT. If your way past the schrund went left, re-examine which gully you are under.\n\nCOUNT THE FIRST TWO BELAYS, WHICH ARE DESCRIBED BY WHAT THEY SIT UNDER RATHER THAN BY HEIGHT: two pitches of steep snow head NORTHEAST, the first belay UNDER A BULGE and the second WHERE A GULLY OPENS TO THE EAST. If your second stance is not at a place where a gully opens away east, the line is wrong.\n\nAND YOU ARE ON THE WRONG SIDE OF THE MOUNTAIN IF YOU CROSSED A COL. The Southeast Face — the standard route — is reached over the Sahale-Boston col at about 8,200 ft and shares that saddle with the Sahale trade route. This face is climbed straight off the northwest corner of the Quien Sabe with no col crossed at all. If you walked over a saddle to get where you are standing, you are under the standard route, not this one.\n\nTHE FINISH CONFIRMS IT: pitch four tops out about 200 ft NORTH of the summit and the last pitch crosses an exposed ridge with a short rock step to the true top. A route that deposits you on the summit directly has not been this one."
+   }
+  ],
+  "_sources": [
+   "https://www.countryhighpoints.com/boston-peak-winter-ascent/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_southeast_face": {
+  "area": "wa_sharkfin_tower",
+  "approach_variants": [
+   {
+    "name": "The correct gully off the Quien Sabe, then two pitches of the Southeast Ridge and a rappel to reach the face",
+    "season": "Jul-Sep, the same window as the Southeast Ridge; being steeper rock it sheds snow a little faster after an early-season storm",
+    "notes": "Cascade River Road about 21.7 miles from Marblemount to the small unsigned Boston Basin pulloff near 3,200-3,300 ft. The old mining road runs about 0.75 mile to a derelict mine site, then an unmaintained but well-travelled boot path climbs steeply through forest, crossing four small streams — top off bottles there — to treeline around 5,300 ft. Low camp sits on heather benches at 5,300-5,700 ft; a higher camp on the knoll above the green meadows at 6,300-6,400 ft cuts real time off summit day.\n\nFrom high camp, contour up open talus and slabs to the western edge of the Quien Sabe Glacier below Sharkfin Col. Rope up and traverse EAST along the top of the glacier several hundred feet to the base of the gully below the tower. If a bergschrund or seracs bar the direct line, class 3-4 slabs on the left give an alternate entry and rejoin the couloir about 100 ft up.\n\nThere is no separate approach to the Southeast FACE. You reach it by climbing the first two pitches of the Southeast Ridge and rappelling.",
+    "hazards": [
+     "Getting into the wrong gully: on 10 July 2005 a six-person party climbed a similar-looking but incorrect gully here, a climber was struck by rockfall during the roped traverse back toward the standard line, and minutes later a natural boulder anchor failed during the retreat rappel, killing three and seriously injuring a fourth",
+     "Loose rock and rockfall in the approach gully, worsening as the season progresses",
+     "Crevasse hazard on the upper Quien Sabe Glacier",
+     "The two-bolt station at the top of pitch 1 has no chains and no rap rings, and there is no anchor at all at the very base of pitch 1",
+     "Frequent bear activity at Boston Basin camps; food canisters required"
+    ],
+    "baseFinding": "THIS FACE IS NOT WALKED TO. IT IS RAPPELLED INTO — and that is the cleanest test on the whole tower. A party standing at its start has already climbed the first two pitches of the SOUTHEAST RIDGE and made two rappels of about 75 ft each from the fixed anchor at the top of pitch 2. A party that WALKED to where it is standing is at the Southeast Ridge notch, one route to the side.\n\nYOU CAN SEE THE FACE FROM THAT NOTCH, WHICH IS WHY THE MIX-UP HAPPENS: the clean southeast face is visible from the base of the Southeast Ridge and looks approachable. It is not, from there.\n\nIDENTIFY THE RIDGE NOTCH BY ITS ANCHOR, NOT BY ITS SHAPE: the two-bolt station at the top of pitch 1 carries NO chains and NO rap rings. That absence is a positive identification, and it is also a planning fact — you will be leaving a biner, a ring or a short cord to get down.\n\nBEFORE ANY OF THAT, GET THE APPROACH GULLY RIGHT, BECAUSE THIS IS WHERE PEOPLE HAVE DIED. Traverse east along the TOP of the Quien Sabe several hundred feet; the correct gully leads to a SNOW PATCH DIRECTLY AT THE TOWER'S BASE and then a short gully to the notch. A similar-looking gully nearby does not. If your gully does not deliver you to a snow patch at the foot of the tower, stop and re-check rather than continuing or traversing across — the 2005 accident happened during exactly that correction, not during the mistake.\n\nCONFIRM ON THE FIRST MOVES OF THE FACE ITSELF: pitch 1 steps onto a DETACHED BLOCK and then follows a widening finger-to-ring-lock seam that zig-zags just LEFT of the arete to a bolted anchor in a notch. If you are not standing on a detached block, you are not on this pitch."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/108338268/southeast-face",
+   "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+   "https://en.wikipedia.org/wiki/Sharkfin_Tower"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_north_ridge_7": {
+  "area": "wa_aiguille_de_l_m",
+  "approach_variants": [
+   {
+    "name": "Boston Basin toward the Cat Scratch gullies, then the notch right of the ridge",
+    "season": "Jun-Sep; July and August are the most settled, and snow can linger around camp into July",
+    "notes": "The Aiguille is a small formation, not a peak of its own: it is the cockscomb dividing the high Forbidden basin from Torment basin, with the Taboo Glacier on its west side and an unnamed glacier on its east, sitting just south of the Torment-Forbidden traverse line. It is named for its resemblance to the Chamonix aiguille of the same shape — a deliberate echo, and a coincidence worth being clear about rather than a filing error.\n\nApproach exactly as for Forbidden Peak: Cascade River Road about 21.7 miles to the small pullout near 3,200 ft opposite Johannesburg, the old Diamond Mine roadbed, then the steep unmaintained climbers' path with several stream crossings to treeline near 5,300 ft and the Boston Basin camps at about 5,300 and 6,400 ft.\n\nFrom camp, head up toward the Forbidden Gully / Cat Scratch gullies area and traverse to the notch. It is a half-day objective from camp, which is most of its appeal.",
+    "hazards": [
+     "Rockfall off the ridge and the tower is the primary hazard",
+     "Weather that builds fast, with afternoon thunderstorms usual",
+     "A very small, exposed tower top that many parties choose not to stand on",
+     "Approach terrain shared with Forbidden's West Ridge descent, so parties may be above you in the gullies"
+    ],
+    "baseFinding": "THE FORMATION IS THE EASY PART: THE AIGUILLE IS CONSPICUOUS ON ENTERING BOSTON BASIN and reads as the letter it is named for. Use it to orient the whole basin. The route is the harder part.\n\nTHE BASE IS THE NOTCH TO THE RIGHT OF THE NORTH RIDGE — you traverse to it from the Cat Scratch / Forbidden Gully side; you do not start at the toe of the ridge. A start at the very bottom of the crest is not this route.\n\nCOUNT THE PITCHES, BECAUSE THE COUNT IS THE ROUTE: THREE TO FOUR PITCHES OF FOURTH-CLASS SCRAMBLING TO THE BASE OF A TOWER, AND THEN ONE 40-FT PITCH TO ITS TOP. That is the whole climb. If you have run out four pitches and there is no tower standing in front of you, you are on the wrong side of the formation.\n\nTHE MOST IMPORTANT THING TO KNOW ABOUT THE TOP IS THAT IT IS NOT THE TOP. The route finishes on a subsidiary tower; the true high point of the Aiguille looks as though it is about to topple over and most parties deliberately stop short of it. So a summit that feels wrong is not evidence you are off route — on this formation it is the expected outcome, and it is the reason the descent is a single 40-ft rappel from where you stand.\n\nTELL IT FROM THE SOUTH RIDGE BY WHICH SIDE YOU WALKED ROUND. The two routes differ only in which flank of the same small formation is climbed from the same camp; the South Ridge is the longer, harder and much less documented of the two, and its start is not published — so if you are unsure which side you are on, the four-pitch scramble to a tower is the one that can be confirmed.",
+    "hours": "Half a day from Boston Basin camp"
+   }
+  ],
+  "_sources": [
+   "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+   "https://www.mountainproject.com/area/109252144/aiguille-de-lm"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_klawatti_peak_sw_buttress": {
+  "area": "wa_klawatti_peak",
+  "approach_variants": [
+   {
+    "name": "Eldorado ice cap to Klawatti Col, then the buttress that stands directly above camp",
+    "season": "Jul-Sep, once the Inspiration Glacier traverse and the moat at the foot of the buttress are reliably crossable",
+    "notes": "The whole approach is the Eldorado one: Cascade River Road to the Eldorado Creek trailhead near 2,100 ft, the river crossing, the steep unmaintained boot path through old growth to the boulder field, and up into Eldorado Creek / Roush Creek basin. Camp there or push on to the Eldorado-Inspiration Glacier camp near 7,500-7,600 ft.\n\nFrom that camp the day is glacier travel, not a trail. Rope up, cross the Inspiration Glacier well past Eldorado's summit, and continue north-northeast to KLAWATTI COL at about 7,800 ft, the saddle dividing the Klawatti and McAllister glaciers on Klawatti Peak's south side. This traverse is the navigational crux of the whole route — it is flat, featureless and whiteouts are routine, so carry a bearing or a track and be prepared to navigate blind. Parties commonly camp at the col itself.\n\nThree Klawatti routes leave from cols within half a mile of each other, and the baseFinding below is about telling them apart rather than about the walking. A wilderness permit for the Klawatti zone comes from the Marblemount ranger station.",
+    "hazards": [
+     "Crevasses on the Eldorado and Inspiration glaciers, worst near Eldorado's east ridge",
+     "Whiteout navigation on a flat, featureless ice cap with no handrail",
+     "A moat at the foot of the buttress where the glacier has pulled back from the rock",
+     "Rock repeatedly described as lousy and loose — test every hold rather than trusting the grade"
+    ],
+    "baseFinding": "THE BUTTRESS STANDS DIRECTLY ABOVE THE KLAWATTI CAMP AND IS MINUTES FROM IT — not a traverse away. That is the first thing that separates it from the peak's other two routes. If you have walked more than a few minutes from the saddle you have started the wrong climb.\n\nTHE DECIDING TEST IS WHAT IS ABOVE THE MOAT, AND IT IS A ONE-LOOK TEST. Cross the moat and the ground above is ROCK and keeps being rock: two or three short low-fifth pitches, then class 4, then scrambling. IF THERE ARE SEVERAL HUNDRED FEET OF 40-55 DEGREE SNOW ABOVE A SHORT ROCK STEP, YOU ARE ON THE SOUTH-FACING SNOW LINE THIS CATALOG FILES AS THE SOUTHEAST FACE, which starts from the same col and is a snow climb with one rock move rather than a rock climb. That difference decides whether you needed a rack or a second tool.\n\nTHE THIRD ROUTE IS AT A DIFFERENT COL ENTIRELY. The North Ridge starts from the KLAWATTI-AUSTERA col at about 7,900 ft, roughly 0.4 mile further along under Klawatti's west face — a separate notch a hundred feet higher, and one you have to solve rather than walk through. If you are walking a ridge crest north with a rock tower ahead of you, you have gone past this route to that one.\n\nWHAT THE COL LOOKS LIKE: a broad saddle with usable bivy sites on the south side, and the LOW point between the Klawatti Glacier on one side and the McAllister on the other — so from it you can see down both. A spot where the ground only falls away one way is not the col."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_klawatti_peak_southeast_face": {
+  "area": "wa_klawatti_peak",
+  "approach_variants": [
+   {
+    "name": "Klawatti Col and the south flank to the bergschrund below the face",
+    "season": "Late Jul-Aug once the schrund bridges have consolidated; a separate Apr-Jun window exists for the face as a firm corn-snow line",
+    "notes": "Identical approach to the SW Buttress as far as the col: Eldorado Creek trailhead near 2,100 ft, the Cascade River log crossing, the steep timbered climbers' path, the boulder field (stay climber's right — cairn lines trending left lead into cliffier ground), the basin at 5,500-5,800 ft, then Roush Creek and bivy sites at 6,100-6,400 ft at the toe of the Eldorado Glacier. Rope up there.\n\nClimb the Eldorado Glacier, then make the long, mostly flat traverse east and north across the Inspiration Glacier to KLAWATTI COL at about 7,800 ft. Reckon roughly 7-8 miles and over 6,500 ft of gain one way from the car to the foot of the climb, normally split over two or three days.\n\nFrom the col a short direct climb up the peak's south-facing flank reaches the base. Parties leave the col around 4 a.m. on purpose: this is a south-facing snow slope, icy in the pre-dawn shade and softening fast once the sun is on it, and it is roughly an hour and a half up and an hour down from the col.",
+    "hazards": [
+     "A bergschrund, and later in the season a moat, guarding the base of the face",
+     "Several hundred feet of 40-55 degree snow directly above the schrund, on ground where a slip does not stop",
+     "South aspect: icy before dawn, softening and wet-sliding by mid-morning",
+     "Whiteout on the Inspiration Glacier both ways — parties have been caught out right at the summit",
+     "A crumbly, elongated summit where the true high point is genuinely hard to identify"
+    ],
+    "baseFinding": "THE BASE IS THE BERGSCHRUND, AND THE SCHRUND IS THE ROUTE'S IDENTITY. From Klawatti Col you climb directly up the south flank until the snow pulls back from the rock. That gap — a schrund early, a moat late — is where the climbing starts, and the short 4th-to-easy-5th rock step that clears it is the technical crux of the whole route.\n\nYOU MUST BE AT THE COL ITSELF: if you are not standing at the LOW POINT of the ridge dividing the Inspiration and McAllister glacier systems, you are not below this route.\n\nTHE POSITIVE TEST IS WHAT COMES AFTER THE STEP: SNOW, AND A LOT OF IT. Above the rock step the route is several hundred feet of 40 to 55 degree snow — through a constriction, steepening over a pseudo-cornice bulge on the upper southwest side — to the top of the face, then an easy walk along the southwest ridge. IF THE ROCK KEEPS GOING ABOVE THE STEP, a second and third pitch of it and no snow slope, YOU ARE ON THE SOUTHWEST BUTTRESS, which leaves from the same col. One of these wants a rack, the other wants a picket and possibly a second tool.\n\nA SECOND CONFIRMATION THAT ALSO SERVES THE DESCENT: parties have found rappel slings on the EAST side of the constriction at the moat. A moat with old tat on its east side is the right one.\n\nDO NOT WALK ON PAST THE COL. The North Ridge leaves from the Klawatti-Austera col about 0.4 mile further, and the ground there is a ridge crest, not a snow face. If you can see a rock tower standing up on the crest ahead of you, you have overshot by a col.\n\nAT THE TOP THE SUMMIT IS THE HARD PART TO IDENTIFY, NOT THE BASE: the crest is crumbly and elongated, at least one party found no register and could not settle which bump was highest, and cairns mark a line back down the ridge toward the col. Note that line on the way up — it is the alternative to reversing the face."
+   }
+  ],
+  "_sources": [
+   "https://www.countryhighpoints.com/klawatti-peak-and-dorado-needle/",
+   "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_klawatti_peak_north_ridge": {
+  "area": "wa_klawatti_peak",
+  "approach_variants": [
+   {
+    "name": "One col further: Klawatti Col to the Klawatti-Austera col, then the crest",
+    "season": "Jul-Sep, when the crest and the connecting cols are snow-free enough to scramble",
+    "notes": "Cascade River Road to the Eldorado trailhead near 2,150 ft, then the standard Eldorado climbers' path: forest, boulder field, treeline, and camps in Eldorado Basin / Roush Creek around 6,000-6,300 ft. Climb the Eldorado Glacier snow dome to the notch on Eldorado's lower East Ridge near 7,500 ft, then traverse roughly a mile and a half north across the upper Inspiration Glacier to Klawatti Col at 7,800 ft.\n\nKlawatti Col is NOT the start of this route. Continue past it, along a lobe of the McAllister Glacier under Klawatti Peak's WEST FACE, about 0.4 mile to the next break in the ridge — the KLAWATTI-AUSTERA COL at about 7,900 ft. The scramble takes about an hour from that col, up to two hours if you count from Klawatti Col.",
+    "hazards": [
+     "Crevasses on the Inspiration and the upper McAllister lobe",
+     "A moat at the Klawatti-Austera col that ranges from class 4 to class 5 depending on where you cross it",
+     "Exposure on narrow sections of the crest, where route-finding is what keeps the grade at third class",
+     "Loose rock on the ledge traverses around The Smokestack"
+    ],
+    "baseFinding": "COUNT THE COLS: YOU WANT THE SECOND ONE. Klawatti Col at 7,800 ft is where the peak's other two routes start; this route starts at the KLAWATTI-AUSTERA col at about 7,900 ft, a further 0.4 mile north along the foot of Klawatti's west face and a hundred feet higher.\n\nTHE SECOND COL IDENTIFIES ITSELF BY BEING A PROBLEM, AND IT OFFERS A CHOICE OF TWO CROSSINGS — WHICH IS ITSELF THE CONFIRMATION. Receding snow leaves a moat here. The LOWEST notch is class 5 downclimbing; a crossing to the RIGHT (southeast) of the lowest notch is class 4. Parties have also found an old rappel anchor at this col and used it. A col you walked over without choosing between two ways down is Klawatti Col, one short.\n\nGAIN THE LOWER RIDGE ON ITS EAST SIDE — the crest itself is harder than it needs to be low down, and the east flank is the easy way onto it.\n\nTHE SMOKESTACK IS THE CONFIRMING LANDMARK AND IT IS UNMISTAKABLE. Class 3 scrambling up the crest brings you to a rock tower around 8,400 ft that the route is named around. YOU DO NOT CLIMB IT: go round it on its WEST side by a short gully and regain the crest above. A party that has climbed a tower on the ridge rather than walked around it has gone off route. A party that reached the summit without ever passing a tower was never on the North Ridge.\n\nNEGATIVE TEST FOR THE OTHER DIRECTION: if the ground in front of you is a snow face rather than a ridge crest, you are below the south-facing snow line and one col too far south.\n\nWHAT IS THIN HERE, SAID PLAINLY: this ridge is barely written up. The col elevations, the Smokestack and the east-side start come from the route's own record; the detail about the two crossings at the moat and the old anchor comes from accounts that could not be retrieved in full, so treat the crossing description as a warning to expect a choice rather than as a promise about which side is easier this year."
+   }
+  ],
+  "_sources": [],
+  "_confidence": "thin"
+ },
+ "wa_austera_peak_southwest_ridge": {
+  "area": "wa_austera_peak",
+  "approach_variants": [
+   {
+    "name": "Three glaciers and two cols to the Klawatti-Austera notch, then the chockstone chimney",
+    "season": "Mid-Jul to Aug, while the notch is still bridged and the three glacier crossings are consolidated",
+    "notes": "Drive Cascade River Road to the Eldorado Creek trailhead near mile 20 (about 2,100 ft) and find the log crossing of the Cascade River near the Eldorado Creek confluence — it has been rebuilt repeatedly after flood damage and can be an awkward single log, so scout it before committing. On the far bank the unsigned climbers' path pushes through swampy brush and devil's club into open old growth, gains roughly 1,500 ft, then breaks onto two wide talus fields. Above them an alpine meadow leads to a slabby ramp onto the toe of the Eldorado Glacier. Rope up and put crampons on there.\n\nCamp at Eldorado Creek Basin around 5,600 ft, Roush Creek Basin at 6,100-6,400 ft, or push to a high camp near Eldorado's East Ridge at 7,200-7,600 ft.\n\nFrom high camp the day is three miles of sustained glacier travel across three basins and two cols: the Eldorado/Inspiration Glacier (crevasses worst near Eldorado's east ridge), the upper Inspiration at about 7,800 ft to KLAWATTI COL, then past Klawatti Peak on its left and along the upper McAllister Glacier beneath Klawatti's west face for about 0.4 mile to the KLAWATTI-AUSTERA notch at about 7,900 ft. Guide figures for that leg are roughly 1,280 ft of ascent and 592 ft of descent over 2.8 miles, about four hours one way.\n\nAustera Peak is the HIGH POINT OF THE AUSTERA TOWERS ARÊTE rather than a separate peak, which is why the top of this climb needs as much care as the bottom.",
+    "hazards": [
+     "Crevasse fall on all three glaciers, worse as the season progresses and bridges soften",
+     "A moat gap at the Klawatti-Austera notch that often needs stemming or a rappel of about 75 ft to reach the upper Klawatti Glacier",
+     "Route-finding in flat light or whiteout on an open ice cap with no handrail",
+     "Loose rock on every exposed rock section of the tower — the false-summit approach is explicitly loose class 3",
+     "Rime and verglas icing the final chimney even in summer",
+     "A genuinely committing and remote position with long retreat times"
+    ],
+    "baseFinding": "THE BASE IS THE KLAWATTI-AUSTERA NOTCH AT ABOUT 7,900 FT, AND YOU IDENTIFY IT BY COUNTING COLS, NOT BY LOOKING AT AUSTERA. From the Inspiration Glacier you cross Klawatti Col first at about 7,800 ft — that one is not it. Keep Klawatti Peak on your right, follow its west face along the McAllister Glacier for about 0.4 mile, and the SECOND break in the ridge is the one. It sits a hundred feet higher than the first.\n\nTHE NOTCH ANNOUNCES ITSELF BY BEING A PROBLEM. It is not a walk-through: a moat gap has to be stemmed or rappelled — about 75 ft — to get down onto the upper Klawatti Glacier. IF YOU STEPPED THROUGH A COL WITHOUT HAVING TO SOLVE ANYTHING, YOU ARE STILL AT KLAWATTI COL. Old anchors have been found at the right notch; treat them as aging tat and back them up rather than as proof of position.\n\nABOVE THE NOTCH, COUNT THREE THINGS IN ORDER: broken 4th-class rock off the notch, then a short cliff band that many parties bypass on scree and ledges to the RIGHT (east) rather than climbing direct, then the chockstone gully at the base of the summit tower.\n\nTHE HARDEST THING TO GET RIGHT ON THIS PEAK IS NOT THE BASE, IT IS THE TOP, AND THE CHIMNEY IS THE TEST. Parties routinely finish on a FALSE SUMMIT a few feet short of the true one. The true summit is reached only by crossing a narrow, exposed ridge between the two blocks and then climbing the CHOCKSTONE CHIMNEY — roughly THREE jammed chockstones in about 60 ft, stemming and face moves on the chimney's LEFT wall. IF YOU HAVE NOT CROSSED A NARROW RIDGE AND CLIMBED A CHIMNEY, THE POINT YOU ARE STANDING ON IS THE FALSE SUMMIT. A class 3+ ledge bypass on the peak's east side reaches the same notch without the chimney, so a party that took it has not gone wrong — but it has not confirmed its position either."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/117615075/austera-peak",
+   "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/",
+   "https://en.wikipedia.org/wiki/Austera_Peak"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_austera_peak": {
+  "area": "wa_austera_peak",
+  "approach_variants": [
+   {
+    "name": "Eldorado camp, Klawatti Col, and the 75-ft rappel onto the Klawatti Glacier",
+    "season": "Aug is the usual window; the timing is set by the Inspiration, McAllister and Klawatti glaciers being safely negotiable rather than by the rock",
+    "notes": "This is the same day out as the Southwest Ridge row on this peak and the two describe substantially the same ground — see _DEFECTS.\n\nFrom the Eldorado / Inspiration Glacier high camp near 7,600 ft, rope up and traverse the Inspiration Glacier well past Eldorado's summit to Klawatti Col. Tepeh Towers are passed along this same traverse. From the col, follow the ridge line along the McAllister Glacier to a break at about 7,900 ft, where the standard sequence is a rappel of about 75 ft onto the Klawatti Glacier, then a traverse high and left across it toward Austera.\n\nThis is meaningfully further and more committing than simply topping out on Eldorado, and it is worth saying plainly: this route is NOT on Eldorado Peak, despite the catalog filing several of these objectives out of the same area.\n\nAustera Peak is the high point of the Austera Towers arête, not a free-standing summit, and it is the most accessible top in that group — which is exactly why parties end up on the wrong one.",
+    "hazards": [
+     "Crevasses on the Inspiration, McAllister and Klawatti glacier traverses",
+     "A moat at the rappel point that has to work in both directions",
+     "Loose rock on the final summit tower",
+     "Rime or verglas on the final chimney even in summer",
+     "Exposed climbing on the closing pitches above a remote glacier, with a long retreat"
+    ],
+    "baseFinding": "THE BASE IS A BREAK IN THE RIDGE AT ABOUT 7,900 FT THAT YOU RAPPEL INTO, NOT WALK THROUGH. That is the single most useful thing to know here: the correct notch takes about 75 ft of rope to get down onto the Klawatti Glacier, and on the way back it is roughly 75 ft of well-protected 5.5 to climb out. A gap you strolled through is Klawatti Col, one col short, at about 7,800 ft.\n\nGET THERE BY COUNTING, NOT BY SIGHTING AUSTERA. Cross the Inspiration to Klawatti Col; pass Klawatti Peak on your LEFT through that col; follow the ridge along the upper McAllister Glacier about 0.4 mile to the SECOND break. Austera is the high point of a whole arête of towers and picking it out from below is not a reliable way to navigate.\n\nABOVE THE GLACIER TRAVERSE THE CLIMBING IS SHORT AND COUNTABLE: a few hundred feet of 4th class gains a SUB-SUMMIT, and a further short pitch — about 30 to 50 ft of low fifth, taken around to the RIGHT on the northeast face — reaches the true top.\n\nTHE FALSE SUMMIT IS THE REAL HAZARD ON THIS PEAK, AND IT IS THE TEST THAT MATTERS. Parties top out a few feet short of the true summit again and again. THE TRUE SUMMIT IS REACHED ONLY AFTER CROSSING A NARROW, OFTEN SNOWY RIDGE BETWEEN TWO BLOCKS AND CLIMBING A SHORT CHIMNEY OR A FEW FEET OF LOW FIFTH BEYOND IT. If you got to where you are standing without a rope-worthy move and without crossing that ridge, you are on the false summit and the mountain is not finished with you.\n\nTHE MOAT BESIDE THE RAPPEL POINT is the thing most likely to change year to year; check it on the way in, because it has to work in the other direction at the end of the day."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/117615075/austera-peak",
+   "https://mazamas.org/activity/124/",
+   "https://en.wikipedia.org/wiki/Austera_Peak"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_east_slope": {
+  "area": "wa_primus_peak",
+  "approach_variants": [
+   {
+    "name": "Thunder Creek and Lucky Ridge to the Borealis Glacier and Lucky Pass",
+    "season": "Mid-July through August, while enough of the Borealis Glacier's snowpack remains to bridge crevasses; by late September the glacier is largely bare and the pass can be bullet ice and loose rock",
+    "notes": "Start at the Thunder Creek trailhead at Colonial Creek Campground on SR-20, just past milepost 130, near 1,200 ft. Follow the Thunder Creek Trail roughly six miles to McAllister Camp, then continue past Tricouni Camp around mile eight.\n\nA ford of Thunder Creek at a log jam is normally required and the bridge near McAllister Camp has been out in past years — check current NPS conditions rather than assuming a dry crossing.\n\nLeave the maintained trail at Tricouni Camp and climb the climbers' path up LUCKY RIDGE, the ridge between McAllister and Thunder creeks: roughly 4,000 ft of gain over a couple of miles through brush and devil's club, with two short cliff-band scrambles. Camp near the northeast corner of the proglacial lake at the toe of the Borealis Glacier around 6,000 ft, with the icefall in view above.\n\nRope up around 7,000 ft on the flat snow shelf and climb the glacier's EASTERN margin — the central icefall splits the lower and upper tiers and has caught parties who drifted climber's-left.",
+    "hazards": [
+     "A mandatory Thunder Creek ford with a powerful current, worse later in the day as snowmelt rises",
+     "The central icefall on the Borealis Glacier — stay on the eastern margin",
+     "Hidden crevasses that open both vertically and horizontally, and moats where snow pulls off rock, worst late season",
+     "Cloud and fog that move in on this glacier routinely",
+     "A long, remote approach with no cell coverage"
+    ],
+    "baseFinding": "THE BASE IS LUCKY PASS AT ABOUT 7,200 FT, AND THE PASS IDENTIFIES ITSELF BY WHAT IT DIVIDES: it is the notch at the HEAD of the Borealis Glacier between Primus and Tricouni Peak, and the route to Tricouni splits off east from the same spot. If the ground only falls away on one side of you, you are not at the pass.\n\nFROM THE PASS THE EAST SLOPE RISES DIRECTLY WEST — a bouldery class 3 slope, not a ridge crest and not a face. Trip reports describe the climbing above the pass as nothing more than a walk, which is the honest summary: the difficulty of this route is the creek, the brushy ridge and the glacier, all of which are behind you by the time you are at the pass.\n\nTHE COUNTING TEST IS THE FALSE SUMMIT, AND IT IS THE ONE THING ABOVE THE PASS THAT CAN GO WRONG. A false summit stands at about 8,270 ft. YOU TRAVERSE CLIMBER'S-LEFT AROUND IT — you do not go over it — and the true summit at 8,508 ft is beyond. If you reached a high point without having traversed around anything, you are 240 ft short.\n\nNEGATIVE TEST AGAINST THE PEAK'S OTHER ROUTES, AND IT WORKS BEFORE YOU EVER LEAVE THE CAR: this route is the only one reached from the THUNDER CREEK side. The South Ridge is reached from the Eldorado ice cap across five glaciers, and the North Ridge from an unnamed glacier north of the peak. If you walked up a creek trail from a campground on Highway 20, you are on this one."
+   }
+  ],
+  "_sources": [
+   "https://journeywithjoshua.com/trip-reports/primus-peak-borealis-glacier/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_primus_peak_south_ridge": {
+  "area": "wa_primus_peak",
+  "approach_variants": [
+   {
+    "name": "The far end of the Eldorado ice cap: five glaciers and a notch at the McAllister-Klawatti col",
+    "season": "Mid-July through August, when the glacier bridges are most consolidated and whiteout risk is lowest",
+    "notes": "This is the long way to Primus and it comes from the opposite side of the mountain to the East Slope. From the Eldorado Creek trailhead on Cascade River Road near 2,100 ft, cross the Cascade River, climb the steep root-laced boot path through timber, cross the boulder field around 4,000 ft following cairns on the right side of the talus, and reach the meadows of Eldorado Basin. Continue to the toe of the Eldorado Glacier and rope up — it is broken and thinly bridged in a normal-to-low snow year.\n\nFrom the upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col near 7,800 ft. Parties describe crossing the Inspiration's crevasse fields with zero visibility, so plan for it.\n\nSummit day from a Klawatti Col camp: downclimb or make a short rappel of about 50 ft through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier, rope up, and traverse east and north across it — probing, because this stretch has caught parties by surprise even in good visibility — to the foot of Primus's south side. Then unrope and walk.\n\nThe route crosses the Eldorado, Inspiration, McAllister, Klawatti and North Klawatti glaciers in sequence; Austera Towers is passed and bypassed on a short scree ramp along the glacier's eastern edge.",
+    "hazards": [
+     "A heavily crevassed North Klawatti and McAllister glacier system, especially late season",
+     "Thin, unreliable snow bridges by August and September — probe before committing weight",
+     "Complex glacier route-finding around Klawatti Col in poor visibility",
+     "A short technical step at the McAllister-Klawatti notch that has to be reversed at the end of the day",
+     "Extreme remoteness: a multi-day approach with no cell coverage"
+    ],
+    "baseFinding": "THE ONE FINDABLE FEATURE ON THIS ROUTE IS THE NOTCH AT THE McALLISTER-KLAWATTI COL, AND IT IS FINDABLE BECAUSE IT IS THE ONLY PLACE ALL DAY YOU NEED A ROPE FOR ROCK. It is a step of roughly 50 ft: downclimbed, hand-lined, or rappelled off a sling on a horn or block — there is no fixed hardware. If you have crossed a col without a technical step, you are not through it yet.\n\nAFTER THE NOTCH, THE TEST IS WHAT YOU ARE STANDING ON RATHER THAN WHAT YOU CAN SEE. You drop onto the NORTH KLAWATTI GLACIER and traverse east and north across it. The climbing begins where you take the rope OFF: snow-covered talus, class 2-3, straight to the 8,508 ft summit. There is no notch, no rib and no marked start above the glacier — the honest answer is that this route has no rock landmark at its base, and the col behind you is what tells you where you are.\n\nTHE NEGATIVE TEST IS THE STRONG ONE AND IT SETTLES THE WHOLE PEAK: THE OTHER STANDARD LINE ON PRIMUS IS REACHED FROM THUNDER CREEK, AND IT STARTS AT LUCKY PASS — a notch at the head of the Borealis Glacier where the route to Tricouni Peak splits off east. IF YOU ARE AT A PASS WITH A SECOND PEAK'S ROUTE LEAVING IT, YOU ARE ON THE EAST SLOPE AND YOU CAME UP THE WRONG VALLEY FOR THIS ROW. The two lines are on opposite sides of the mountain and share no ground below the summit.\n\nAND WATCH THE FALSE SUMMIT WHATEVER SIDE YOU CAME FROM: a false top stands around 8,270 ft and is passed on climber's-left. A high point reached without traversing round anything is not the summit."
+   }
+  ],
+  "_sources": [
+   "https://onehikeaweek.com/2015/06/21/primus-peak/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_north_ridge_4": {
+  "area": "wa_primus_peak",
+  "approach_variants": [
+   {
+    "name": "Round to the unnamed glacier north of the peak",
+    "season": "Mid-July through August; a documented late-September attempt found the crux notch glazed with bullet ice and the loose rock unbonded, which made the route markedly harder and more dangerous",
+    "notes": "This is a genuinely obscure line and every recorded approach to it is a variation on getting round to the mountain's NORTH side, which no other Primus route visits.\n\nThe first recorded ascent reached it from the Klawatti side: descend a couloir where the NORTH KLAWATTI GLACIER meets Primus's WEST RIDGE, then traverse an unnamed glacier north of Primus to the foot of the crest. The first-ascent account says in as many words that it was unlikely this approach had been used before.\n\nOther parties have come from the Thunder Creek side instead — the same trailhead, ford and Lucky Ridge climb as the East Slope, to a bivy near 6,000 ft at the toe of the Borealis Glacier — and then reached the ridge by circling the glacial lake at the glacier's terminus and crossing a short section of glacier to the base, rather than climbing the glacier toward Lucky Pass. One party took that line specifically because conditions at the standard Primus-Tricouni saddle were hazardous that day.\n\nThe ridge itself is about 1,000 ft and took the first-ascent party roughly an hour.",
+    "hazards": [
+     "Very loose, serrated rock along the entire crest — blocks and towers described as good but somewhat loose",
+     "A 5.6 crux notch with no fixed protection: natural gear and slung blocks only",
+     "Verglas glazing the notch in cool or wet weather, which is what defeated a late-September attempt",
+     "Committing retreat once above the crux — the recommended descent is the East Ridge to Lucky Pass, not this ridge",
+     "Glacier travel on an unnamed, rarely visited glacier with no established line"
+    ],
+    "baseFinding": "THE TEST IS WHICH SIDE OF THE MOUNTAIN YOU ARE ON, AND IT IS DECIDED BY WHETHER YOU HAD TO GO DOWN TO GET THERE. Every approach to this ridge involves LOSING height onto a glacier NORTH of Primus — down a couloir from the North Klawatti Glacier where it meets Primus's west ridge, or down and around the glacial lake at the Borealis Glacier's terminus. If your day has been a continuous climb, you have not reached this route.\n\nTHE NEGATIVE TEST IS UNAMBIGUOUS AND IT IS THE ONE TO CARRY: LUCKY PASS IS NOT THIS ROUTE. If you are standing at a col at about 7,200 ft at the head of the Borealis Glacier, with Tricouni Peak's route splitting off east, you are at the start of the East Slope — a class 3 walk. The North Ridge is reached by turning away from that pass, not through it.\n\nWHAT THE BASE ITSELF LOOKS LIKE: the foot of a 1,000 ft crest of blocks and towers, met from a glacier rather than from a notch. There is no published cairn, marker or fixed anchor at the start; the ridge is very rarely repeated and nothing on it should be assumed to be in place.\n\nCONFIRM ON THE GROUND YOU CLIMB, NOT ON THE APPROACH: the lower ridge is 3rd and 4th class blocks and towers; the upper ridge is BANDED ROCK at low fifth, and that banding is what the first-ascent party singled out. A ridge that stays third class to the summit is not this one — and a ridge that never carried you above a glacier on the peak's north side never was."
+   }
+  ],
+  "_sources": [
+   "http://publications.americanalpineclub.org/articles/12198716702/North-America-United-States-Washington-Cascades-Travel-in-the-Austera-Peak-Region-and-Primus-Peak-North-Ridge",
+   "http://drdirtbag.com/2016/07/24/primus/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_tepeh_towers": {
+  "area": "wa_main_peak",
+  "approach_variants": [
+   {
+    "name": "Forty-five minutes north-northwest off the Eldorado ice cap",
+    "season": "Once the Inspiration Glacier moat below the tower has opened enough to cross safely but before it becomes too wide late in the season — usually July or August, most often as part of an Eldorado/Klawatti/Austera traverse",
+    "notes": "Everything below the ice cap is the standard Eldorado approach: Cascade River Road to the Eldorado parking area near mile 20 at about 2,100 ft, backtrack a short way along the road to a safe crossing of the Cascade River (a large log or a braided ford, and it shifts year to year), then the steep unmaintained boot path gaining roughly 3,000-3,500 ft through old growth to a boulder field, across Eldorado Creek, and into the alpine meadows of Eldorado Creek basin — commonly five to six hours from the car. Push on to the Eldorado / Inspiration Glacier camp near 7,600 ft.\n\nFrom that camp it is roughly a 45-minute roped glacier walk north-northwest to where the towers rise out of the icecap. The towers sit at the saddle you cross anyway to get from the Inspiration Glacier onto the McAllister — so most parties pass beneath them on the way to Klawatti, Austera or Dorado Needle and climb one as a side objective. Round trip from camp is well under two hours.\n\nBe clear about what this row is: TEPEH TOWERS IS NOT ON ELDORADO PEAK, despite being filed under the same area. It is a separate formation further along the icecap.",
+    "hazards": [
+     "Hidden crevasses on the Inspiration Glacier approach — roped travel and crevasse rescue gear, not an unroped stroll",
+     "The moat where the glacier rests against the rock, which is the whole gate on this climb",
+     "Loose rock near the summit",
+     "Softening snow bridges on the return, which is the real time constraint on such a short objective"
+    ],
+    "baseFinding": "TEPEH TOWERS IS AN ARÊTE OF MANY SPIRES, NOT ONE TOWER — that is the first thing to understand, and it is why the base finding here has to be about the moat rather than about the skyline. The formation is a rock arête poking out of the icecap northwest of the Inspiration Glacier, with Eldorado to the west and Klawatti to the northeast, and it carries a great many small spires.\n\nSO THE PROCEDURE IS: CLIMB HIGH ON THE GLACIER UNTIL THE ICE IS RESTING AGAINST THE ROCK, AND CROSS THE MOAT THERE. You are looking for the point where the snow meets the rock cleanly enough to step across; that point, not a particular spire seen from a distance, is what you navigate to.\n\nTHE POSITIVE CONFIRMATION IS FIXED GEAR, AND IT IS THE ONLY DISCRIMINATOR PUBLISHED FOR THIS FORMATION: THE TOWER PARTIES CLIMB HAS RAPPEL ANCHORS DIRECTLY BELOW ITS SUMMIT. If you top out and there is no anchor below you, you have climbed a neighbouring spire — which is not dangerous here, but it is not the recorded line either.\n\nTHE LENGTH TEST IS SHORT AND UNAMBIGUOUS: ONE short low-fifth pitch above the moat, then scrambling to the top. If you are running out a second and third rope length, you are on something else on the same arête.\n\nWHAT IS HONESTLY NOT KNOWN: no published source names which of the spires is the climbed one or gives a way to tell it from its neighbours at a distance. That gap is stated here rather than filled — treat the anchor below the summit as the confirmation and the moat as the navigation."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119380248/tepeh-towers",
+   "https://climberkyle.com/2019/11/06/eldorado-peak-nw-ice-couloir-wi3/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_eldorado_peak_west_arete": {
+  "area": "wa_main_peak",
+  "approach_variants": [
+   {
+    "name": "Over the ice cap to Dorado Needle Col, then down into Marble Creek Cirque",
+    "season": "Mid to late summer once fully snow-free, with maximum daylight for a long climbing day; Cascade River Road is often not open until late June",
+    "notes": "Start at the Eldorado Creek trailhead on Cascade River Road, follow the climbers' trail up Eldorado Creek into the Roush Creek basin, and gain the Eldorado Glacier. Most parties treat this as three days: approach, climb, exit, with a base camp at the East Ridge site near 7,500 ft or on the western margin of the Eldorado Glacier.\n\nThe defining feature of the approach is that you must get DOWN to the base. The line runs from the ice cap across to the Dorado Needle Col area, then a loose fourth-class downclimb — accounts on the neighbouring line describe rappelling, steep névé downclimbing and moat work over roughly 1,000 ft of descent — into the MARBLE CREEK CIRQUE on Eldorado's west side, and the toe of the ridge is at the bottom of that.\n\nThis is a long day: parties have taken up to about 17 hours round trip from the East Ridge base camp, and an unplanned bivouac is a real possibility if the middle section goes slowly.\n\nA warning from parties who have done it: published route descriptions for this arête have been called inaccurate and sandbagged, and at least one party went off route immediately as a result. Trust the terrain over the topo.",
+    "hazards": [
+     "A loose fourth-class downclimb into the cirque that has to be reversed or bypassed at the end of the day",
+     "Rockfall and loose rock over the full length of the arête, including the opening pitch",
+     "Large moats on both sides of the ridge at its foot, and a building-sized snow remnant to keep clear of",
+     "Crevasses on the Eldorado and Inspiration glaciers that open through the summer",
+     "A confusing middle section where slow progress turns into a bivouac"
+    ],
+    "baseFinding": "YOU ARRIVE AT THIS ROUTE BY GOING DOWN, NOT UP, AND THAT IS THE FIRST CHECK. The toe of the arête sits at roughly 6,000 ft in the Marble Creek Cirque, reached only by a loose fourth-class downclimb off the Dorado Needle Col area. If your approach has been a continuous ascent from camp, you have not reached this route.\n\nTHE SEQUENCE AT THE BOTTOM IS COUNTABLE AND IT IS THE POSITIVE TEST: from the snow at the base, spooky scrambling on GLACIER-POLISHED SLABS leads to a STEEP, OPEN CHIMNEY FEATURE. Slabs first, chimney second. The rock climbing proper begins a couple of hundred feet above the toe of the ridge on its NORTH side.\n\nTHE FIRST PITCH CONFIRMS IT BY BEING BAD. The opening pitch is unbelievably loose 5.6 on the ridge crest. If your first pitch is clean and solid, you are on the wrong feature.\n\nTHERE IS A HARDER LINE ON THE SAME WALL AND IT IS WORTH KNOWING BEFORE YOU COMMIT: the SOUTHWEST ARÊTE — climbed in full only in 2022, about 3,600 ft at grade V 5.10 — takes the same cirque approach and a different arête. This route is the shorter 1969 line at about 2,800 ft, sustained 5.6-5.7 with an old-school 5.8 crux. IF THE CLIMBING IS RELENTLESSLY HARDER THAN MID-FIFTH FROM LOW DOWN, YOU ARE ON THE WRONG ARÊTE.\n\nCONFIRM AT THE CRUX: a set of rocky towers ends in a face traverse protected by a SINGLE IN-SITU PITON. One piton, one traverse. That is the hardest move on the route and it is the landmark for the upper half."
+   }
+  ],
+  "_sources": [
+   "http://mojoclimb.blogspot.com/2009/07/eldorado-peak-west-arete.html",
+   "https://www.mountainproject.com/route/116530206/west-arete",
+   "http://publications.americanalpineclub.org/articles/13201216384"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_eldorado_peak_north_ridge": {
+  "area": "wa_main_peak",
+  "approach_variants": [
+   {
+    "name": "Down the Inspiration Glacier to the ice-couloir notch, then snow onto the crest",
+    "season": "Summer, once the ridge is largely snow-free",
+    "notes": "The approach is the standard Eldorado one to the high camp on the Inspiration Glacier: Cascade River Road to the Eldorado Creek trailhead near 2,100 ft, the river crossing, the steep boot path, the boulder field, Eldorado Creek basin, and up the Eldorado Glacier to the East Ridge camp near 7,500-7,600 ft.\n\nFrom camp, the route goes DOWN before it goes up. Descend the Inspiration Glacier toward the notch used as the rappel point for the Northwest Ice Couloir — an obvious gap between the North Ridge and the first rock spire, at about 8,100 ft — and climb steep snow from there onto the North Ridge proper.\n\nThe ridge follows generally solid rock on its EASTERN aspect with good friction and incut holds, so the exposure toward the glacier side stays modest while the drop to the west is dramatic. Near the top you can finish directly up steeper ice and rock or join the classic East Ridge finish.",
+    "hazards": [
+     "Crevasses on the Inspiration Glacier both on the way to the notch and on the way back",
+     "Loose rock in places along the crest",
+     "Wind exposure high on the ridge",
+     "Wet rock, which raises the difficulty of this route noticeably rather than marginally"
+    ],
+    "baseFinding": "THE NOTCH IS THE LANDMARK, AND IT IS SHARED WITH ANOTHER ROUTE — WHICH IS WHY THE TEST IS WHAT YOU DO THERE, NOT WHERE YOU STAND. The gap you are looking for is the obvious notch between the North Ridge and the FIRST ROCK SPIRE along the crest, at about 8,100 ft, reached by descending the Inspiration Glacier from the East Ridge camp. That same notch is the rappel station for the Northwest Ice Couloir.\n\nSO: AT THE NOTCH, IF YOU ARE PUTTING A ROPE THROUGH AN ANCHOR AND GOING DOWN INTO THE CIRQUE ON THE OTHER SIDE, YOU ARE ON THE NORTHWEST COULOIR. IF YOU ARE CLIMBING STEEP SNOW UP OUT OF THE NOTCH ONTO A ROCK CREST, YOU ARE ON THE NORTH RIDGE. Two routes, one notch, opposite directions.\n\nTHE ROCK TELLS YOU WHICH SIDE OF THE CREST TO BE ON, AND THAT IS THE OTHER HALF OF THE ANSWER. This route stays on the ridge's EAST side — clean, solid rock with good friction and incut holds, snow on the northeast face below you keeping the exposure feeling manageable. IF THE DROP IS ON BOTH SIDES OR YOU HAVE DRIFTED WEST INTO SERIOUS AIR AND WORSE ROCK, COME BACK EAST.\n\nWHAT IS HONESTLY NOT PUBLISHED: no source names a single fixed starting point on this crest — one description says simply to climb the path of least resistance from your point of choice on the ridge. The notch is the findable thing; above it, the route is defined by staying east on the good rock rather than by a marked start. Sources also disagree on the grade, 5.6 against 5.7, so do not read a hard move as evidence you are off route."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119522766/north-ridge",
+   "https://www.mountainproject.com/route/110444620/northwest-ice-couloir"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_eldorado_peak_eldorado_glacier_nw": {
+  "area": "wa_main_peak",
+  "approach_variants": [
+   {
+    "name": "Rappel off the ice cap into the Marble Creek cirque, then the couloir splitting the northwest face",
+    "season": "Highly conditions-dependent. Early season, roughly May-June, can give steep thin ice and moderate mixed; mid-to-late summer the couloir is usually mostly snow with a few ice steps; a good cold snap in late October or November can bring in firm, well-bonded ice. Grade moves with it, roughly AI2-3 up to WI3 in lean conditions",
+    "notes": "Same trailhead and lower approach as the East Ridge: Eldorado trailhead at Cascade River Road mile 20 near 2,100 ft, the log crossing of the Cascade River about 90 ft downstream of the parking area, the steep timbered climbers' trail into a dry boulderfield around 4,500 ft, and on into Eldorado Creek Basin.\n\nFrom there this route diverges: rather than continuing over the ridge into Roush Basin for the standard camp, traverse the Roush Divide and ascend the Eldorado Glacier, trending toward the mountain's northwest side and the wild Marble Creek Cirque. High camp is either in Eldorado Creek / Roush Creek Basin or at the Eldorado-Inspiration site near 7,500-7,600 ft.\n\nThe usual way in is from above: follow the East Ridge glacier track to about 8,100 ft, traverse to the notch between the North Ridge and the first rock spire — the same notch some accounts call the Eldorado-Dean's Spire or Dean's Tower col — and RAPPEL from it into the cirque below. A full 60 m rope gets a party through in one; parties on shorter ropes have downclimbed the remainder. One party used a belayed downclimb of about 35 m plus two 30 m rappels to land within about 100 yards of the couloir. One recorded single-push ascent took roughly five hours from the trailhead to the couloir's base.\n\nThe alternative is simply to continue glacier travel around to the couloir's base at about 7,800 ft.",
+    "hazards": [
+     "An extreme funnel: the whole face feeds into a narrow confined couloir, so anything the leader dislodges lands on the belay",
+     "Crevasses on the Eldorado and Inspiration glaciers and a long featureless crossing that is disorienting in whiteout",
+     "A moat or bergschrund where the glacier meets the couloir, widening through the summer",
+     "Cornices and crevasses at the couloir's exit near the knife-edge ridge",
+     "Rappelling the couloir is the only retreat once you are high, and it is slow — the practical escape is over the top"
+    ],
+    "baseFinding": "ONCE YOU ARE IN THE CIRQUE THE ROUTE IS OBVIOUS, AND TWO SEPARATE PARTIES SAY SO IN NEARLY THE SAME WORDS: on looking up from below the rappel, one recorded instantly seeing the line — steep, fat and unmistakable. THE COULOIR SPLITS THE NORTHWEST FACE and there is nothing else in the cirque it could be confused with. So the navigation problem is not identifying the couloir; it is getting into the cirque at all.\n\nTHE NOTCH IS THE THING TO FIND, AND IT IS SHARED WITH THE NORTH RIDGE. It is the obvious gap between the North Ridge and the FIRST ROCK SPIRE, at about 8,100 ft, reached by traversing north from the East Ridge glacier track. AT THAT NOTCH THE TWO ROUTES GO OPPOSITE WAYS: rappel down the far side into the cirque and you are on this route; climb steep snow up onto the rock crest and you are on the North Ridge.\n\nTHE BASE ITSELF IS THE TRANSITION AT ABOUT 7,800 FT where the couloir meets the glacier — which is the usual place to find the moat or bergschrund, and it widens as summer goes on. Rope up on the glacier BEFORE you reach it.\n\nONE BRANCH POINT WORTH KNOWING: at least one party climbed a steep line just to CLIMBER'S LEFT of the main gut of the couloir rather than the gut itself. Both go; the gut is the route as described.\n\nCONFIRM ON THE CLIMBING: the line runs from about 7,800 ft to about 8,800 ft, roughly 1,000 ft, commonly described as eight 60 m pitches, and the character is a succession of short ice steps broken by lower-angle snow rather than one continuous wall. Steps around 70-80 degrees with occasional near-vertical bulges for a body length is right; sustained vertical ice for a full pitch is not this route in any season."
+   }
+  ],
+  "_sources": [
+   "https://climberkyle.com/2019/11/06/eldorado-peak-nw-ice-couloir-wi3/",
+   "https://engineeredforadventure.com/eldorado-peak-nw-couloir/",
+   "https://www.mountainproject.com/route/110444620/northwest-ice-couloir"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_northwest_ridge": {
+  "area": "wa_dorado_needle",
+  "approach_variants": [
+   {
+    "name": "Inspiration to McAllister, then the small col at the toe of the ridge",
+    "season": "Mid-July through September, depending on glacier and moat conditions",
+    "notes": "Shared Eldorado approach: from the large trailhead parking area on Cascade River Road near 2,100 ft, about 20 miles from Marblemount, backtrack a short way downstream to a log or ford crossing of the Cascade River and pick up the climbers' path on the far bank. The unmaintained boot path climbs through forest and then talus, gaining roughly 1,500 ft, before breaking into open slopes; stay right of the large windfall area and avoid crossing Eldorado Creek. Cairns and flagging lead up and right into a broad basin around 5,500-5,800 ft with scattered camps near 6,100 ft. Most parties push on to an Inspiration Glacier high camp near 7,400-7,600 ft — roughly 5.3 miles and 5,300 ft, five to six hours car to camp.\n\nFrom high camp, rope up and cross the Inspiration Glacier, pass through or near the TEPEH TOWERS saddle, and drop onto the McAllister Glacier, favouring its left (south) side to dodge a large crevasse that opens on the right later in the season.\n\nAscend the McAllister's steep upper apron, about 30 degrees, trending northwest to its top. This is the easiest established route on the peak and is commonly used as the descent for the harder ones.",
+    "hazards": [
+     "Crevasses on the McAllister Glacier, variable by year and generally avoidable",
+     "A large moat where the route gains the ridge, which deteriorates significantly by late summer",
+     "Aging and degraded rappel webbing left by past parties — one party reported an anchor block dislodging during a rappel here",
+     "Fractured rock with loose flakes prone to catching or dislodging the rope on the way down"
+    ],
+    "baseFinding": "THE BASE IS A SMALL COL AT THE TOE OF THE RIDGE, AT THE TOP OF THE McALLISTER GLACIER'S 30-DEGREE APRON, AND THE THING DIRECTLY ABOVE IT IS A LINE OF GENDARMES ON THE CREST. Gendarmes on the skyline above a small col at the top of the apron is the confirmation.\n\nCROSS THE MOAT AT THE COL, NOT AT THE SNOW GULLY. There is an alternative snow gully nearby that parties sometimes use to gain the ridge, and it is guarded by a LARGE MOAT that usually still needs a short rappel to bypass. The route's own start is easy fifth-class rock straight off the small col at the toe. If you are eyeing a snow gully with a big gap at its head, you are looking at the alternative, not the route.\n\nTHE LENGTH TEST IS DECISIVE ON THIS PEAK BECAUSE THE FOUR ROUTES ARE WILDLY DIFFERENT LENGTHS: this one is THREE pitches, each WELL UNDER 25 m. If you are running full rope lengths, or if you are still climbing after three, you are on the Southwest Buttress (nine pitches from the other side) or the East Ridge (a long day off a different col).\n\nA FIXED-GEAR CONFIRMATION, AND A WARNING WITH IT: the crest carries a lot of OLD FIXED SLINGS ON ROCK HORNS left by earlier parties, and higher up a PITON marks a slabby section leading to a V-SLOT GULLY. Plenty of tat on horns is a sign you are on the trade line — but it is aging tat, an anchor block has failed here before, and it should be backed up rather than trusted.\n\nAND KNOW WHICH SIDE OF THE NEEDLE YOU ARE ON: this route is reached by climbing the McAllister's apron NORTHWEST. The Southwest Buttress lines are reached by continuing to the MARBLE CREEK-McALLISTER PASS and dropping about 700 vertical ft to a snow gully below it. The East Ridge starts from the col between Point 8386 and the Needle. Three different cols; check which one you crossed."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/113288297/northwest-ridge",
+   "https://www.nps.gov/noca/blogs/dorado-needle-nw-ridge.htm"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_southwest_buttress": {
+  "area": "wa_dorado_needle",
+  "approach_variants": [
+   {
+    "name": "Marble Creek-McAllister pass, then 700 ft down to the snow gully at the toe",
+    "season": "Late July through August; the approach gully often holds firm snow into August, which helps the glacier travel but wants crampons on the gully",
+    "notes": "The hike in matches the East Ridge of Eldorado exactly: from the Eldorado trailhead on Cascade River Road, cross the river near the parking area (backtrack downstream for a log or ford), pick up the climbers' path on the west side of Eldorado Creek, and climb steeply through old-growth forest — no water on this stretch — to a talus field around 4,000 ft. Re-cross Eldorado Creek near a cairn at about 5,100 ft, switchback past 6,000 ft, and drop through a short class 3 gully into Roush Creek basin at 6,100-6,400 ft, which has reliable water and is a good lower camp or bail-out point.\n\nFrom the basin, ascend 20-30 degree snow onto the toe of the Eldorado Glacier around 7,500 ft — rope up from here on — and camp on rock or moraine near the glacier shoulder.\n\nWhere this route diverges is the final glacier traverse: cross the Inspiration Glacier and over onto the McAllister, heading for the MARBLE CREEK-McALLISTER PASS, generally crossing on the pass's east side. The base is then reached by a prominent gully, often snow-filled year round, that begins roughly 700 VERTICAL FEET BELOW THAT PASS and drops to the toe of the buttress on the peak's southwest side.",
+    "hazards": [
+     "A steep, often snow-filled approach gully to about 35 degrees",
+     "A moat guarding the base of the climb that can present an exposed, deep gap",
+     "Crevasses on the Eldorado, Inspiration and McAllister glaciers en route",
+     "Loose blocks in places on the upper buttress and unreliable holds described as traps",
+     "A large boulder balanced on an overhang ledge near the route",
+     "An exposed knife-edge summit ridge at the top"
+    ],
+    "baseFinding": "THE BASE IS THE TOE OF THE BUTTRESS AT THE FOOT OF A PROMINENT, OFTEN YEAR-ROUND SNOW GULLY, AND THE GULLY IS LOCATED BY DESCENDING — IT STARTS ABOUT 700 VERTICAL FEET BELOW THE MARBLE CREEK-McALLISTER PASS. If you have not lost roughly 700 ft from the pass, you are not at the gully yet.\n\nAT THE TOP OF THAT GULLY THERE IS A FORK, AND IT IS THE ONE THING ON THIS PEAK MOST WORTH GETTING RIGHT. THIS ROUTE GOES AROUND TO THE RIGHT. The Direct Southwest Buttress instead goes STRAIGHT UP from the same point to three vertical cracks. Same gully, two routes, one turn.\n\nTHE STRONGEST NEGATIVE TEST IS PUBLISHED AS A WARNING AND IT IS WORTH CARRYING VERBATIM: DO NOT CLIMB DIRECTLY BELOW THE RIDGE CREST AT THE START. That variation leads into unwanted 5.10 OVERHANGING TERRAIN ON LOOSE ROCK. If the ground turns overhanging at 5.10 low on the route, you are on the wrong side of the crest and should reverse rather than push on — this route's own crux is 5.8 in a corner and it comes at pitch five, not at the start.\n\nCONFIRM ON PITCH ONE: it is a FULL rope length, 55 to 57 m, up a corner and then slightly RIGHT, mostly 5.6 with one committing 5.7 or 5.8 move near the top, and the anchor is on cams to three inches in a crack. A short first pitch is not this route.\n\nAND CONFIRM BY WHICH COL YOU CROSSED: this line is reached over the Marble Creek-McAllister pass. The Northwest Ridge starts from a small col at the top of the McAllister's apron on the other side of the Needle and is only three short pitches; the East Ridge starts from the col between Point 8386 and the Needle."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/111927639/southwest-buttress"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_direct_southwest_buttress": {
+  "area": "wa_dorado_needle",
+  "approach_variants": [
+   {
+    "name": "Same gully as the standard buttress — the difference is one turn at its top",
+    "season": "Mid-July through September, when the approach glaciers are consolidated and the buttress is snow-free",
+    "notes": "The approach is the standard Southwest Buttress's, without exception: from the Cascade River Road trailhead near 2,100 ft, cross the river, climb the climbers' path through forest and talus into Eldorado / Roush Creek Basin, and on to an Inspiration Glacier high camp near 7,400-7,600 ft — about 5.8 miles and 5,500 ft from the car.\n\nFrom camp, cross the Inspiration Glacier to the Inspiration-McAllister col, descend onto the McAllister Glacier (the best passage is on its skier's right side near the steeper crevassed sections), and ascend the prominent, often snow-filled gully that runs from about 700 vertical feet below the Marble Creek-McAllister pass up to the base of the buttress. A rope may be wanted here: a moat guarding the base can present an exposed, deep gap.\n\nEverything to this point is shared with the 1985 standard line. The two routes part company at the top of the gully, and after two pitches they rejoin.",
+    "hazards": [
+     "Crevasse and moat crossings on the Eldorado, Inspiration and McAllister glaciers",
+     "A long, remote approach with no easy bail once you are on the buttress",
+     "Sustained 5.10 low on the route, which is the wrong place to discover the crux pitch is wet",
+     "Loose rock on the upper pitches once the two routes have rejoined"
+    ],
+    "baseFinding": "THE TWO ROUTES SHARE EVERY STEP OF THE APPROACH AND SEPARATE AT ONE POINT: THE TOP OF THE SNOW GULLY. THE STANDARD SOUTHWEST BUTTRESS TRAVERSES AROUND TO THE RIGHT THERE. THIS ROUTE GOES STRAIGHT UP.\n\nAND THEN THE CONFIRMATION IS COUNTABLE, WHICH IS AS GOOD AS THIS GETS ON AN ALPINE ROUTE: two direct-start pitches of fourth and low-fifth scrambling lead to THREE VERTICAL CRACKS. YOU CLIMB THE RIGHTMOST OF THE THREE. Not the left, not the middle — the rightmost, which starts around 5.8, turns strenuous at 5.10, and finishes with a MANTEL ONTO A LARGE BENCH.\n\nSO THE TEST IS: COUNT TO THREE, TAKE THE RIGHT-HAND ONE, AND EXPECT A MANTEL. If there are not three cracks in front of you, you have gone right at the top of the gully and you are on the standard line — a fine route, two grades easier, and the one you will end up on anyway.\n\nTHE SECOND PITCH IS THE OTHER HALF OF THE ANSWER: awkward 5.8+ climbing rejoins the original 1985 route AT A LARGE WHITE SLABBY ROCK. That white slab is the merge point and it is named in the route's own description. Once you are past it, the two lines are one and the remaining pitches to the summit ridge are the standard route's.\n\nSO THE DIRECT START IS TWO PITCHES LONG. IF YOU ARE THREE OR FOUR PITCHES IN AND STILL LOOKING FOR THE MERGE, YOU HAVE MISSED THE WHITE SLAB — the merge is early, not high."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119520213/direct-southwest-buttress"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_dorado_needle_east_ridge": {
+  "area": "wa_dorado_needle",
+  "approach_variants": [
+   {
+    "name": "Inspiration and McAllister to the col between Point 8386 and the Needle",
+    "season": "July through September, once glacier bridges and moats have stabilised but before the early-season storms return",
+    "notes": "Drive Cascade River Road from Marblemount about 20 miles to the Eldorado trailhead near 2,100 ft — the first ten miles paved, the rest rough gravel and high-clearance recommended. Hike the Eldorado climbers' trail through forest, cross the creek, and climb steeply to the Eldorado Glacier, then follow the East Ridge of Eldorado Peak to a high camp around 7,400 ft, roughly four miles and 6,000 ft of gain.\n\nFrom camp, rope up and traverse the Inspiration Glacier onto the McAllister Glacier to reach the COL BETWEEN POINT 8386 AND DORADO NEEDLE at about 7,600 ft. That col is the base.\n\nMost parties take eight to twelve hours round trip from high camp, and descend by the Northwest Ridge rather than reversing this line — which means the day ends on unfamiliar ground with rappels and a moat, so scout the Northwest Ridge's top as you pass it.",
+    "hazards": [
+     "Crevasse-fall potential on the Inspiration and McAllister glaciers",
+     "Loose, thinly protectable rock on the first pitch off the col — test every placement",
+     "A bottomless moat on the glacier traverse partway up the route, where the line steps off the ridge and back on",
+     "A complex, easy-to-misroute Northwest Ridge descent with moat and rappel-anchor hazards at the end of a long day"
+    ],
+    "baseFinding": "THE BASE IS A NAMED COL: THE ONE BETWEEN POINT 8386 AND DORADO NEEDLE, AT ABOUT 7,600 FT. The climbing starts immediately off it — steep, exposed mid-fifth moves straight from the col, no walk-in. IF YOU HAD TO TRAVEL FURTHER ALONG THE GLACIER AFTER CROSSING A COL BEFORE YOU FOUND ROCK, YOU ARE AT THE WRONG COL.\n\nTHE FIRST PITCH IDENTIFIES ITSELF BY BEING NASTY AND BY CARRYING A MARKER: it is a loose, poorly protectable 5.5, and A HORN WITH AN EXISTING SLING SITS ABOUT 100 FT UP. Loose rock plus a slung horn a rope-length up is the confirmation.\n\nTHERE IS AN ALTERNATIVE START AND IT HAS ITS OWN LANDMARK: a line beneath the 'CANNONBALL HOLE' to the RIGHT avoids that first loose section, at the cost of a moat crossing. A hole in the rock you could name is not a feature you find by accident — if you can see it, you are in the right place and you have a choice to make.\n\nTELL IT FROM ITS NEIGHBOURS BY LENGTH AND BY DIFFICULTY, BECAUSE ALL FOUR ROUTES ON THIS NEEDLE ARE DIFFERENT SIZES. This one is longer and a bit harder than the Northwest Ridge (three short pitches from a small col at the top of the McAllister apron) and easier than the Southwest Buttress (nine pitches from a gully 700 ft below the Marble Creek-McAllister pass). It follows the CENTRE portion of the rock on an obvious ridge line.\n\nTHE ROUTE STEPS OFF THE RIDGE PARTWAY UP AND THAT IS EXPECTED, NOT AN ERROR: after several ropelengths of class 3-4 you descend into a notch, traverse the glacier, and regain the ridge at a LEDGE MARKED BY QUARTZITE BANDS. Watch for a bottomless moat there. Pale banded rock on a ledge is the marker to aim for.\n\nAND THE FINISH IS COUNTABLE: two short rappels drop into the notch below the true summit, then TWO sustained 5.7 crack pitches to the top. If you have climbed one hard pitch and stood on a summit, you were on the sub-summit tower."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/112156952/east-ridge"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_northeast_ridge_1963_route": {
+  "area": "wa_johannesburg_mountain",
+  "approach_variants": [
+   {
+    "name": "Straight off the road end: the C-J couloir to the hanging glacier, then the leftmost rib",
+    "season": "Late June through September, once the road is open and the lower couloir approach holds consolidated snow",
+    "notes": "This is one of the shortest approaches in the range and one of the least forgiving. From the Cascade Pass trailhead at the end of Cascade River Road near 3,600 ft, walk a short way back down the road, descend a dirt embankment, ford or cross the infant Cascade River, and cross the terminal moraine and snowfield. Serious ground starts around 3,500 ft — you are on the route within an hour of the car.\n\nClimb PARTWAY up the Cascade-Johannesburg couloir to the hanging glacier on the RIGHT, then take the leftmost rib to the summit. Twelve pitches, about 4,000 ft.\n\nThe descent is a separate expedition: the East Ridge's loose 3rd and 4th class gendarme ledges to the Cascade-Johannesburg col, then either the couloir or 'Doug's Direct' — beneath the Triplets buttress, sidehilling steep heather, across Mixup Peak's north ridge and down to the Cache Glacier. Parties have taken four and a half to nine hours from the col.",
+    "hazards": [
+     "Hanging glaciers above the route — the Sill Glacier among them — that release ice and rock; parties describe rocks and ice bouncing for three or four seconds at a time",
+     "The mountain's standing reputation for rockfall, with loose rock reported across trip reports and a documented near-miss on a 2020 descent",
+     "Steep 45-60 degree snow on approach and descent with real fall consequence — one report calls the heather descent the most dangerous part of the trip",
+     "A Cascade River ford at the very start, which rises through the day",
+     "A routefinding-intensive descent with suspect rappel anchors, and a history of parties returning a day or two late"
+    ],
+    "baseFinding": "THE TEST FOR THIS ROUTE IS WHETHER YOU ARE TOUCHING VEGETATION, AND IT IS THE CLEANEST DISCRIMINATOR ON THE WHOLE FACE. This side of Johannesburg carries at least five named lines within a few hundred metres of each other, and most of them start with hundreds of feet of vertical bushwhacking — alder, turf, tree roots, tunnelling through near-vertical pines. THIS ROUTE DOES NOT. Its own published description ends with the words no bush climbing. IF YOU ARE PULLING ON TREES OR HEATHER TO MAKE UPWARD PROGRESS, YOU ARE ON THE NORTHEAST RIB OR THE NORTHEAST BUTTRESS, NOT ON THIS.\n\nSO THE SEQUENCE IS: STAY IN THE COULOIR. Do not break out onto rock low down. Climb the Cascade-Johannesburg couloir until a HANGING GLACIER appears on your RIGHT — that glacier is the landmark, and it is what you leave the couloir for. The Northeast Rib lines leave the couloir far lower, before it narrows.\n\nFROM THE HANGING GLACIER, TAKE THE LEFTMOST RIB. That is the whole route-finding instruction and the word that matters is leftmost. Several rib features present themselves at that shelf; the correct one is the far left of them.\n\nORIENT YOURSELF ON THE FACE AS A WHOLE BEFORE YOU START, BECAUSE IT IS CROWDED: running WEST to EAST across it the order is the Northeast Rib lines, then a route in a vertical cleft with a waterfall, then the Northeast Buttress. The Cascade-Johannesburg couloir is the broad snow line that separates Johannesburg from Cascade Peak, and this route uses it as a stairway rather than climbing it to the col.\n\nAND KNOW WHAT THE COULOIR ITSELF IS: it is the original 1938 line and the most popular one, finishing at the col rather than on any rib. If you are still in the snow at the top, you never left for the rib."
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119545324/northeast-ridge-1963-route",
+   "https://en.wikipedia.org/wiki/Johannesburg_Mountain",
+   "http://publications.americanalpineclub.org/articles/12200615500/North-America-United-States-Washington-Johannesburg-Mountain-The-CK-Route"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_johannesburg_mountain_northeast_rib_1951_route": {
+  "area": "wa_johannesburg_mountain",
+  "approach_variants": [
+   {
+    "name": "Down into the avalanche moat before the couloir narrows, then the left-hand rib",
+    "season": "Mid to late summer, July and August, once the rib is snow-free enough to climb but before it goes fully dry and looser",
+    "notes": "A quick approach directly from the car, which is the only quick thing about this route. From the Cascade Pass trailhead near 3,600 ft, descend to and cross the Cascade River, cross the terminal moraine, and gain the couloir apron.\n\nThe start is unusual and it is the route's signature: you DOWNCLIMB INTO AN AVALANCHE MOAT to gain the rock, around 4,400 ft, on sketchy lichen-covered dirty slabs.\n\nWhat follows is honest about itself — initial fourth class into dense vertical tree-root climbing, a slabby horizontal gully traverse of about 60 ft at 5.5 with minimal protection, steep heather taken by finger-pressing rather than by holds, and then roughly 700 ft of genuinely good 5.6 rock leading toward a bivy site near the glacier, two pitches below the summit.\n\nTwo starts exist: the original 1951 line, faster but with a scary 5.7 pitch, and a 1957 variation that starts lower and adds about 500 ft on more logical terrain to avoid it.",
+    "hazards": [
+     "Extensive loose rock and lichen-slick slabs from the very first moves",
+     "Vegetation-dependent, largely unprotectable terrain — the climbing is real but the protection often is not",
+     "Icefall and rockfall from the hanging glaciers 5,000 ft above the route",
+     "Rockfall on the shared East Ridge and Sill Glacier descent",
+     "A descent whose steep heather section is repeatedly named as the most dangerous part of the day"
+    ],
+    "baseFinding": "YOU GO DOWN TO GET ON. That is the base finding and it is unlike anything else on this side of the mountain: from the moraine you DOWNCLIMB INTO AN AVALANCHE MOAT to reach the rock, at roughly 4,400 ft. If you are stepping up onto rock rather than down into a gap, you have not found the start.\n\nTHE COUNTING TEST IS THE COULOIR'S SHAPE, AND IT SEPARATES THIS ROUTE FROM THE VARIATION THAT SHARES ITS NAME: LEAVE THE CASCADE-JOHANNESBURG COULOIR BEFORE IT NARROWS. The 1957 variation gains rock HIGHER, close to where the couloir visibly pinches down. IF YOU HAVE CLIMBED THE COULOIR UNTIL IT CONSTRICTS, YOU HAVE PASSED THIS ROUTE'S START.\n\nTHEN COUNT THE RIBS, BECAUSE THERE ARE TWO AND THEY ALMOST TOUCH DOWN LOW: two parallel ribs jut off the same buttress. THE 1951 ROUTE TAKES THE LEFT RIB. The 1957 route takes the more prominent RIGHT one. They nearly intersect at the bottom and only diverge as you gain height, which is exactly why the choice has to be made deliberately rather than by following the ground.\n\nTHE FIRST-MOVE TEST IS VEGETATION, AND HERE IT IS THE POSITIVE SIGN RATHER THAN THE WARNING: fourth-class ground leads straight into DENSE VERTICAL TREE-ROOT CLIMBING. If you are on clean rock from the start you are not on this rib — the 1963 Northeast Ridge, one line over, is explicitly the route with no bush climbing on it.\n\nAND IF YOU ARE STILL IN SNOW AT THE TOP, you climbed the couloir itself — the 1938 original — which finishes at the Cascade-Johannesburg col and never touches either rib."
+   }
+  ],
+  "_sources": [
+   "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+   "https://www.mountainwerks.org/cma/2004/joburg.html",
+   "http://publications.americanalpineclub.org/articles/12198518801/North-America-United-States-Washington-Cascade-Mountains-Johannesburg-Mountain-Northeast-Rib-Western-Rib-Variation-Winter-Ascent"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_magic_mountain_northwest_ridge": {
+  "area": "wa_magic_mountain",
+  "approach_variants": [
+   {
+    "name": "Kool-Aid Lake side: easy slopes southwest of the peak to the chimney and the notch",
+    "season": "Jul-Sep",
+    "notes": "Approach as for the South Ridge: Cascade River Road to the Cascade Pass trailhead near 3,600 ft, 3.7 miles of switchbacks to Cascade Pass at 5,392 ft, then leave the maintained trail for the Ptarmigan Traverse climbers' path — a rising traverse across Mixup Peak's flanks to the Cache Glacier around 6,000 ft and over CACHE COL at about 6,900 ft, then down about 600 ft toward Kool-Aid Lake at roughly 6,200 ft.\n\nFrom there, rather than dropping all the way to the lake and continuing to the Magic-Hurry-up col, continue onto the easy slopes on Magic Mountain's SOUTHWEST side and up to the base of the ridge and face.\n\nThe climbing is short: steep broken rock, then an easy chimney to a notch, then a traverse and a short finish on the northwest face.",
+    "hazards": [
+     "Broken Magic Mountain gneiss with no fixed anchors — a retreat means leaving slings on blocks",
+     "A crevassed Cache Glacier on the approach, about 35 degrees, going to bare ice with open marginal moats late in the season",
+     "An aspect that dries late and stays greasy after rain; wet lichen on gneiss is treacherous on class 4 ground",
+     "Almost no traffic, so no bootpack, no cairns and no cleaned-off rock",
+     "No cell coverage on a rarely visited side of the peak"
+    ],
+    "baseFinding": "THE NOTCH IMMEDIATELY NORTHWEST OF THE SUMMIT IS SHARED WITH THE NORTH FACE ROUTE, SO THE NOTCH ALONE CANNOT TELL YOU WHICH ROUTE YOU ARE ON. WHAT TELLS YOU IS HOW YOU GOT TO IT. This route reaches the notch from EASY WALKING SLOPES ON THE SOUTHWEST SIDE, off the Kool-Aid Lake basin, with no glacier involved. The North Face reaches the same notch from the Yawning Glacier on the far side of the mountain, with a schrund below it. IF YOU CROSSED A GLACIER TO GET WHERE YOU ARE STANDING, YOU ARE ON THE NORTH FACE.\n\nTHE SEQUENCE FROM THE BASE IS COUNTABLE AND IT ENDS IN A CHIMNEY: easy slopes to the base, then STEEP BROKEN ROCK, then an EASY CHIMNEY that leads to the notch. Rock first, chimney second, notch third. If you have not climbed a chimney, you have not reached the notch this route uses.\n\nTHE OTHER TEST IS WHAT YOU DID NOT CROSS. Two other routes leave from this same southwest side and both are identified by a feature this one lacks. THE WEST RIDGE CROSSES A BERGSCHRUND ON A POCKET GLACIER before it climbs anything — if you crossed a schrund, you are on the West Ridge. THE SOUTHWEST CIRQUE stays in the cirque and goes up HEATHER gullies — if you are on grass rather than rock, you are in the cirque. This route is dry walking, then rock, then a chimney.\n\nAND IF YOU CONTINUED TO THE MAGIC-HURRY-UP COL YOU HAVE GONE TOO FAR SOUTH: that col is the start of the South Ridge and of Hurry-Up Peak's own route, on the far side of this basin.\n\nFINISH CHECK: from the notch the summit is a short traverse and climb on the NORTHWEST FACE. If the notch you reached puts the summit a long way off, it is not the right notch."
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_magic_mountain_west_ridge": {
+  "area": "wa_magic_mountain",
+  "approach_variants": [
+   {
+    "name": "The pocket glacier under the west face, and the schrund that guards it",
+    "season": "Jul-Sep, with the bergschrund crossing and the pocket-glacier conditions varying by snow year",
+    "notes": "Approach by the general Cascade Pass and Ptarmigan Traverse access: Cascade Pass trailhead near 3,600 ft, the trail to Cascade Pass at 5,392 ft, then the climbers' path across Mixup Peak's flanks, over the Cache Glacier and Cache Col near 6,900 ft, and down toward the Kool-Aid Lake basin.\n\nFrom the basin, easy slopes on the west-southwest side lead to the small POCKET GLACIER under Magic Mountain's west face. That pocket glacier is the base area, and the bergschrund at its head is where the route begins.\n\nSeven pitches: shelves to a blocky open book, the 5.6 open book, the slab taken on its easier left side, and an easy chimney on the left to gain the crest between the false and main summits.",
+    "hazards": [
+     "A bergschrund below the west face whose difficulty varies by year and which can be the crux of the route by late summer",
+     "A crevassed Cache Glacier on the approach, about 35 degrees and bare ice late season",
+     "Broken gneiss with slung blocks for belays and no fixed gear",
+     "A thin slab pitch where protection is limited"
+    ],
+    "baseFinding": "THE BERGSCHRUND IS THE ROUTE'S IDENTITY AND IT IS THE ONE-LOOK TEST AGAINST BOTH ITS NEIGHBOURS ON THIS SIDE OF THE MOUNTAIN. THIS IS THE ONLY MAGIC MOUNTAIN ROUTE FROM THE KOOL-AID LAKE SIDE THAT CROSSES A SCHRUND. The Northwest Ridge walks up easy slopes to rock and a chimney; the Southwest Cirque goes up heather gullies. IF YOU HAVE NOT CROSSED A GAP BETWEEN GLACIER AND ROCK, YOU ARE NOT ON THE WEST RIDGE.\n\nTHE POSITIVE LANDMARK ABOVE THE SCHRUND IS A NAMED SHAPE: shelves lead up to a BLOCKY OPEN BOOK — a dihedral corner. That open book is the 5.6 crux and the best-protected pitch on the route. IF YOU CROSS THE SCHRUND AND FIND NO OPEN-BOOK CORNER ABOVE YOU, YOU HAVE CROSSED IT IN THE WRONG PLACE.\n\nCOUNT THE FOUR FEATURES IN ORDER, BECAUSE THEY ARE ALL DIFFERENT SHAPES: schrund, shelves, open book, slab. THE SLAB IS TAKEN ON ITS EASIER LEFT SIDE, not up the middle.\n\nTHE FINISH TELLS YOU WHICH SUMMIT YOU ARE UNDER: from below the ridge between the FALSE and MAIN summits, an easy chimney on the LEFT gains the crest. So the route deliberately arrives on the ridge BETWEEN the two tops — if the chimney you climbed put you straight onto a summit, you are on the false one and the ridge continues.\n\nAND THE SCHRUND HAS TO WORK IN BOTH DIRECTIONS: the descent reverses the chimney and slab, downclimbs the open book and re-crosses the schrund. Look at it on the way up with that in mind, because there is no walk-off from this side."
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_magic_mountain_north_face": {
+  "area": "wa_magic_mountain",
+  "approach_variants": [
+   {
+    "name": "Pelton Basin and the Yawning Glacier, then west across the glacier head to the face",
+    "season": "Jun-Aug; glacier cover and couloir conditions vary more year to year here than on the peak's south side",
+    "notes": "This route and the Northeast Couloir come at the mountain from the OTHER side to everything else on it. From the Cascade Pass trailhead near 3,600 ft, 3.7 miles to Cascade Pass at 5,392 ft, then cross the pass and descend east toward the Stehekin side. Pelton Basin Camp is about half a mile downhill and east of the pass.\n\nFrom Pelton Basin, climb easy slopes and a steep couloir onto the YAWNING GLACIER, which runs roughly 6,200 to 6,800 ft. Rope up. Follow the glacier southwest to the MAGIC-PELTON COL at 6,480 ft, between Magic Mountain and Pelton Peak.\n\nFrom the col this route does not go straight up. It bears back and crosses the HEAD of the glacier westward to reach the north face, where about 600 ft of steep class 4 rock leads to a notch immediately northwest of the summit.",
+    "hazards": [
+     "Crevasses on the Yawning Glacier — rope up rather than treating it as a snowfield",
+     "A steep couloir below the Magic-Pelton col that is exposed to rockfall",
+     "A schrund at the base of the rock that opens through the season and can be the crux by August",
+     "Broken, north-facing gneiss that is often wet or verglassed, with slung blocks for anchors and no fixed gear"
+    ],
+    "baseFinding": "TWO ROUTES LEAVE THE MAGIC-PELTON COL AND THE TEST IS WHETHER YOU WALK OR TRAVERSE. At the col at 6,480 ft, THE NORTHEAST COULOIR GOES STRAIGHT UP FROM WHERE YOU STAND. THIS ROUTE FIRST BEARS BACK AND CROSSES THE HEAD OF THE GLACIER TO THE WEST. IF YOU STARTED CLIMBING AT THE COL, YOU ARE IN THE COULOIR.\n\nTHE SECOND TEST IS WHAT IS UNDER YOUR HANDS, AND IT SETTLES THE SAME PAIR FROM THE OTHER END: this route is ROCK — about 600 ft of steep class 4 above a schrund. The Northeast Couloir is SNOW, 40 to 50 degrees for 2,000 ft. IF YOU ARE PLACING PICKETS YOU ARE IN THE COULOIR; IF YOU ARE SLINGING BLOCKS YOU ARE ON THE FACE.\n\nTHE SCHRUND AT THE BASE OF THE ROCK IS THE BASE ITSELF, and it is the thing that changes most between June and August — by late summer it can be the hardest move of the day.\n\nTHE FINISH IS A NOTCH IMMEDIATELY NORTHWEST OF THE SUMMIT, AND THAT NOTCH IS SHARED WITH THE NORTHWEST RIDGE, which reaches it from the peak's southwest side by easy walking slopes and a chimney. So arriving at the notch does not confirm which route you climbed — but it does confirm you are 600 ft above the glacier on the correct face, and the summit is a short scramble from there.\n\nAND YOU ARE ON THE WRONG SIDE OF THE MOUNTAIN ENTIRELY IF YOU CAME OVER CACHE COL: that is the Kool-Aid Lake approach, which serves the South Ridge, the West Ridge, the Northwest Ridge and the Southwest Cirque. This route and the Northeast Couloir come from Pelton Basin."
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_magic_mountain_northeast_couloir": {
+  "area": "wa_magic_mountain",
+  "approach_variants": [
+   {
+    "name": "Pelton Basin and the Yawning Glacier to the col, then straight up the line",
+    "season": "April to late June or early July as a snow line, but the road is the constraint: Cascade River Road usually does not open to the Cascade Pass trailhead until the end of June, so a spring ascent means a long road walk or ski from the gate, commonly starting at the Eldorado parking area. In practice late June and early July is the sweet spot, when the road opens and the couloir is still full",
+    "notes": "Cascade River Road 23.1 miles from Marblemount to the Cascade Pass trailhead near 3,600 ft. Hike 3.7 miles to Cascade Pass at 5,392 ft, cross it and descend east toward the Stehekin side; Pelton Basin Camp is about half a mile downhill and east of the pass, 4.9 miles and 1,800 ft from the trailhead including the camp spur.\n\nFrom Pelton Basin, climb easy slopes and a steep couloir onto the YAWNING GLACIER, rope up, and follow the glacier southwest to the MAGIC-PELTON COL at 6,480 ft. Ski parties also reach this cirque from the Cascade Pass side across the Yawning Glacier without dropping to Pelton Basin.\n\nSkiers know the northeast line as the Banana Couloir: roughly 2,000 ft winding down the shoulder, a lower half around 40-45 degrees, an upper section at 45-50, and a proper 50 at the very top.\n\nDecide your descent BEFORE you leave the col. Reversing the couloir is direct but puts you in a sun-exposed funnel; walking off the South Ridge to the Magic-Hurry-up col and Kool-Aid Lake avoids it entirely but lands you on the opposite side of the mountain.",
+    "hazards": [
+     "Cliff faces on both sides funnel rockfall down the line — one report calls the lower section potentially a bit of a garbage chute",
+     "Documented significant sluffing on spring snow, with large natural avalanches reported in the same zone later the same day",
+     "An upper couloir sustaining 45-50 degrees and reaching a proper 50 at the top, often a firm crust under a few inches of new snow",
+     "A crevassed Yawning Glacier on the approach and a sun-facing couloir below it, which shortens the descent window",
+     "Overhead hazard for the full length of the line",
+     "A cornice on the summit ridge in spring"
+    ],
+    "baseFinding": "AT THE MAGIC-PELTON COL AT 6,480 FT, THE COULOIR RISES DIRECTLY ABOVE YOU. THAT IS THE TEST: THE LINE STARTS AT THE COL, WITHOUT A TRAVERSE. If your next move after reaching the col is to bear back west across the head of the glacier, you are heading for the North Face — a rock route on the same mountain from the same col.\n\nSO: PICKETS AND FRONT POINTS MEAN YOU ARE IN THE RIGHT PLACE. This is snow, 40-45 degrees low down and 45-50 above, for about 2,000 ft. If you are slinging blocks and climbing class 4 rock, you have traversed onto the North Face.\n\nTHE SHAPE OF THE LINE IS THE CONFIRMATION: consistently steep but WIDE, with rock faces on BOTH sides that shed into the gut. A narrow slot, or an open face with no walls beside it, is not this feature. Move through the lower section rather than resting in it — those walls are what make it a funnel.\n\nBE AWARE THAT MORE THAN ONE NORTHEAST-FACING LINE IS DESCRIBED ON THIS MOUNTAIN AND THE PUBLISHED ACCOUNTS DO NOT FULLY AGREE ON WHICH IS WHICH. One is reached from a col on the northwest shoulder, one from a col named Alliteration Col, and one from the Magic-Pelton col — and at least one account treats two of these as different lines. The col you stand at is what identifies your line, not the couloir seen from below, so record which col you crossed and how high it was.\n\nAND THE SEASON IS A CHECK IN ITSELF: this is a snow route. The guidebook allows for rock or snow depending on the year, but if you have arrived to find loose rock rather than a filled line, the couloir is out of condition and it is the same funnel with nothing holding it together."
+   }
+  ],
+  "_sources": [
+   "https://engineeredforadventure.com/magic-mountain-ne-couloir-banana-couloir/",
+   "https://engineeredforadventure.com/pelton-w-face-magic-mtn-ne-face/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_cascade_peak_nw_chimney": {
+  "area": "wa_cascade_peak",
+  "approach_variants": [
+   {
+    "name": "Bivy at the C-J col, then across the moat onto the peak's northwest side",
+    "season": "Summer, once the moat below the northwest side is crossable — the one documented ascent is a July trip",
+    "notes": "Same approach as the East Ridge: Cascade River Road to the Cascade Pass trailhead, the Cascade Pass trail to the pass at 5,392 ft, then cross-country by way of Mixup Arm and the Cache Glacier to the CASCADE-JOHANNESBURG COL. The col sits directly between Cascade Peak and Johannesburg Mountain, and it is the staging point.\n\nFrom a bivy at the col, cross the moat below Cascade Peak's northwest side to reach the base of the route. One documented party started up around 9 a.m. the morning after bivying at the col.\n\nThree pitches. This route sees so few ascents that it should be treated as an unmaintained line rather than a climb with beta: the 2013 party found NO rappel anchors, NO pitons and NO summit register, and rated the crux first pitch nearer 5.10 than the guidebook's 5.8 because of the loose rock.\n\nBudget for building every anchor from scratch on the way down. That party's descent from the summit to the col took about four and a half hours.",
+    "hazards": [
+     "Extreme rockfall and loose rock on all three pitches",
+     "No fixed protection and no fixed anchors anywhere on the route — natural placements are the norm and can be poor",
+     "A moat below the northwest side that is the gate on the whole climb",
+     "So few ascents that neither conditions nor anchors can be assumed to be in place",
+     "A first pitch that has been found two grades harder than its guidebook rating"
+    ],
+    "baseFinding": "THE ABSENCE OF FIXED GEAR IS THE CONFIRMATION, AND IT IS AN UNUSUALLY RELIABLE ONE HERE. A 2013 party climbing this route found no rappel anchors, no pitons and no summit register on the entire peak. IF YOU ARRIVE AT A BASE WITH TAT, BOLTS OR A WORN START, YOU ARE NOT ON THE NORTHWEST CHIMNEY — everything around Cascade Pass that sees traffic shows it, and this does not.\n\nTHE BASE IS ACROSS A MOAT FROM THE CASCADE-JOHANNESBURG COL. You do not walk to it: from the col you cross the gap where the snow has pulled back from the peak's northwest side, and the route starts on the rock beyond. The col itself is unmistakable — it is the notch between Cascade Peak and Johannesburg, and it is where the C-J couloir tops out.\n\nCOUNT THREE PITCHES AND EXPECT THE MIDDLE ONE TO BE THE SHAPE THE ROUTE IS NAMED FOR: a broken, loose crack pitch first; then the CHIMNEY — aesthetic, sparsely protected, and wanting a large offset or Big Bro-style cam; then very loose fifth-class ground simul-climbed from a FALSE SUMMIT to the true summit. If there is no chimney on your second pitch, the line is wrong.\n\nAND THE FALSE SUMMIT IS PART OF THE ROUTE, NOT AN ERROR: the third pitch runs from it to the true top. Stopping at the first high point is stopping one pitch short.\n\nWHAT IS HONESTLY THIN HERE: beyond the guidebook entry and that single 2013 trip report there is essentially no published description of this line, and no elevation is recorded for its base. The col and the moat are what can be navigated to; everything above is the party's own route-finding."
+   }
+  ],
+  "_sources": [],
+  "_confidence": "re-homed"
+ },
+ "wa_hurry_up_peak_south_ridge": {
+  "area": "wa_hurry_up_peak",
+  "approach_variants": [
+   {
+    "name": "Cache Col to Kool-Aid Lake, then the col between Magic Mountain and Hurry-Up",
+    "season": "Mid-July through September; the Cache Col approach commonly holds firm snow into early July and wants an axe and crampons even after the peak itself is snow-free",
+    "notes": "From the Cascade Pass trailhead near 3,600 ft at the end of Cascade River Road — the upper gravel section is gated and often does not open until late June or July — follow the well-graded Cascade Pass trail 3.7 miles and about 1,800 ft to Cascade Pass at 5,392 ft. The last reliable trailside water is at the creek crossings low down, so fill up before the switchbacks.\n\nAt the pass leave the maintained tread for the climbers' path heading south-southeast, a rising traverse across snow or heather on Mixup Peak's flanks to the base of the CACHE GLACIER near 6,000 ft. Ascend moderate glacier and snow slopes to CACHE COL at about 6,900 ft. From the col, descend and traverse south-southeast about a mile over loose rock and heather benches to KOOL-AID LAKE at about 6,200 ft — the standard camp for this side of the Ptarmigan Traverse and the only dependable water in the basin.\n\nFrom camp the peak is a side trip: up toward the south flank, across a band of steep snow around 7,100 ft, then broken granite slabs to the ridge. About a mile and 1,400-1,500 ft above camp, roughly an hour to an hour and a half for a fit party.",
+    "hazards": [
+     "Crevasses and snow bridges on the Cache Glacier approach to Cache Col",
+     "Icy, steep snow on the Cache Col to Kool-Aid Lake descent, worse refrozen in the early morning or late in the day",
+     "A band of steep snow around 7,100 ft that wants an axe and crampons even mid-summer",
+     "Loose rock and multiple similar-looking gully lines on the granite benches — the main route-finding crux",
+     "Short but exposed moves along the summit ridge"
+    ],
+    "baseFinding": "THE BASE IS THE COL BETWEEN MAGIC MOUNTAIN AND HURRY-UP PEAK, gained from the Kool-Aid Lake basin, and the col is the last unambiguous feature of the day. Above it the route is route-finding rather than following a line: parties report several viable gully options through the granite benches and not all of them match the guidebook.\n\nSO THE TEST THAT MATTERS IS AT THE TOP, NOT THE BOTTOM, AND IT IS A COUNTABLE ONE. YOU WILL REACH A FALSE SUMMIT. FROM IT YOU MUST DROP ABOUT 80 FT INTO A DIRTY GULLY ON THE RIGHT-HAND (EAST) SIDE, then follow class 3-4 broken ledges that CORKSCREW AROUND THE EAST SIDE of the summit block, and the last 50 ft gains the true top. IF YOU HAVE NOT LOST 80 FT INTO A GULLY, THE HIGH POINT YOU ARE STANDING ON IS THE FALSE SUMMIT.\n\nTHAT DESCEND-THEN-CORKSCREW SEQUENCE IS THE ROUTE'S SIGNATURE. A summit reached directly off the ridge crest with no drop and no wrap-around is the wrong one.\n\nON THE WAY UP, THE STEEP SNOW BAND AROUND 7,100 FT IS THE POSITION CHECK: it sits between camp and the slabs, it is there most of the summer, and it is why you carry an axe on a class 3 scramble. If you gained the ridge without crossing snow, look again at where you left the basin.\n\nAND DO NOT CONFUSE THE COL WITH CACHE COL. Cache Col at about 6,900 ft is on the approach, between Magic Mountain and Mixup Peak, and it is where you cross the glacier. The Magic-Hurry-up col is on the far side of Kool-Aid Lake and is where this climb starts. Two cols, a mile and a descent apart.\n\nThe peak is also recorded under the names Ess Mountain and S Mountain, so a source describing 'the saddle between Magic and S Mountains' is describing this same col."
+   }
+  ],
+  "_sources": [
+   "https://en.wikipedia.org/wiki/Hurry-up_Peak"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_buckner_mountain_north_face": {
+  "area": "wa_buckner_mountain",
+  "approach_variants": [
+   {
+    "name": "Boston Basin, Sharkfin Col rappel, and south across the Boston Glacier to the schrund",
+    "season": "Late May through early July for the best face conditions",
+    "notes": "Start from the BOSTON BASIN trailhead near 3,200 ft, about 21.7 miles up Cascade River Road — a different and shorter drive than the Cascade Pass trailhead used for the southwest route. The climbers' path follows an old overgrown mining road about a mile to a former mine site, then a steep boot path through old growth with roughly four creek crossings, emerging above treeline near 5,300 ft into Boston Basin: about 2.5 miles and 3,100 ft, typically three to four hours. Camp low at about 5,300 ft or high at 6,300-6,400 ft; NPS permit required and camping restricted to the established sites.\n\nFrom high camp, follow the Quien Sabe Glacier route roped, and climb toward SHARKFIN COL rather than taking the loose class 3-4 scramble around Boston Peak. Many parties gain the ridge just east of the col, where a natural or fixed sling anchor is used for a short rappel — or, in leaner conditions, a steep no-fall-zone downclimb on crumbly mixed rock — onto the BOSTON GLACIER. Multiple trip reports flag this as the technical crux of the approach, sometimes harder than the climbing above.\n\nOnce on the Boston Glacier, rope up and traverse SOUTH toward the base of Buckner's north face, zig-zagging around the schrund and large crevasses near the toe, with some rock scrambling to bypass the gap. Many parties bivy on the glacier itself around 7,800 ft to shorten summit day.\n\nA second way in reaches the same glacier over Sahale and the Boston-Sahale col from Sahale Glacier Camp.",
+    "hazards": [
+     "A short rappel or a steep no-fall-zone downclimb off Sharkfin Col on crumbly mixed rock — the crux of the approach, and it has to be reversed",
+     "A viciously crevassed upper Boston Glacier with cracks scattered randomly across the ice",
+     "A bergschrund at the toe of the face that can run its full width, needing rock scrambling to bypass",
+     "Wind-scoured ice on some ascents and moderate powder on others — the face's character changes completely with conditions",
+     "Cornices on the summit ridge, and rockfall as the day warms"
+    ],
+    "baseFinding": "THE BASE IS THE BERGSCHRUND AT THE TOE OF THE FACE, ON THE BOSTON GLACIER, AND THE POSITION TEST IS DIRECTIONAL: from the col you traverse SOUTH across the glacier. If you turned north you are heading for Forbidden's north side.\n\nTHE ENTRY MOVE IS A ZIG-ZAG AND IT IS THE POSITIVE TEST: WORK CLIMBER'S LEFT OF THE BERGSCHRUND, THEN BACK RIGHT INTO THE CENTRE OF THE LOWER FACE, AND THEN STRAIGHT UP. Left, right, up. A party that crossed the schrund directly and started climbing where it stood has not found the line the face is climbed on.\n\nWHAT YOU ARE CLIMBING CONFIRMS IT: about 1,300 ft of 40-50 degree snow and ice, continuous, with no rock pitches. If you are on rock below the summit ridge, you have drifted off the face.\n\nTHE FINISH IS THE OTHER COUNTABLE POINT, AND GETTING IT WRONG COSTS TIME AT THE WORST MOMENT: continue straight up until UPPER ROCK CLIFFS force a rising traverse to the LEFT. Then, within about 200 ft of the summit, GO LEFT AROUND A CRAGGY ROCK OUTCROP at the end of those cliffs, and only then back right to the top. Both moves are left. A party that goes right at the cliff band has misread the finish.\n\nAND THE APPROACH ITSELF IS THE STRONGEST NEGATIVE TEST AGAINST THIS PEAK'S OTHER ROUTE: the Southwest Face is reached over Cascade Pass, Sahale Arm and Horseshoe Basin, on the opposite side of the mountain, and the two share no ground until the summit ridge. IF YOU WALKED PAST AN OLD MINE IN A BASIN AT 7,000 FT, YOU ARE ON THE SOUTHWEST ROUTE."
+   }
+  ],
+  "_sources": [
+   "https://en.wikipedia.org/wiki/Buckner_Mountain"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_buckner_mountain_southwest_face": {
+  "area": "wa_buckner_mountain",
+  "approach_variants": [
+   {
+    "name": "Sahale Arm and Horseshoe Basin to the cowskull snowfield",
+    "season": "Mid-July through September",
+    "notes": "Start at the Cascade Pass trailhead near 3,600 ft at the end of Cascade River Road. The maintained Cascade Pass trail switchbacks through old growth and traverses subalpine meadows to Cascade Pass at 5,400 ft, 3.7 miles and about 1,700 ft. From the pass take the Sahale Arm trail north through heather meadows, then over steepening rock and scree benches to the toe of the Sahale Glacier and SAHALE GLACIER CAMP near 7,600 ft — 5.9 miles and about 3,940 ft from the trailhead, and the standard base. NPS permit and bear canister required; camp only in the designated sites. Sahale Arm above the meadows is dry, so carry water or a filter.\n\nFrom camp the route goes off-trail and DOWNHILL first: descend Sahale Peak's south ridge on class 1-2 rock, then a short class 3 step into a notch near 6,800 ft, and traverse roughly two miles across HORSESHOE BASIN on talus, slabs and lingering snow, passing near the old DAVENPORT MINE around 7,000 ft, to reach the base of the southwest face.\n\nMost parties take two to three days for the roughly 20-mile round trip and 7,400 ft of gain, though strong parties have done it in one very long day.",
+    "hazards": [
+     "A steep, snow-filled cleft on Sahale's south ridge that must be downclimbed, exposed and fall-prone on firm early-season snow",
+     "Rockfall across the Horseshoe Basin traverse, which is loose and easy to lose the line on in both directions",
+     "Cliff bands below the basin ledge system — stay on the mid-elevation line rather than dropping",
+     "Steep snow on the cowskull with wet-slide potential in the afternoon; many parties run a picket belay",
+     "Loose scree and rubble above the snow, all the way to the summit ridge",
+     "An axe and crampons needed for steep snow patches into midsummer"
+    ],
+    "baseFinding": "THE ROUTE HAS A LANDMARK YOU CANNOT MISTAKE FOR ANYTHING ELSE, AND IT IS THE REASON THIS FACE IS NAVIGABLE AT ALL: A DISTINCTIVE COWSKULL-SHAPED SNOWFIELD HIGH ON THE FACE. Climbers describe it as looking like a ghost early in the season. Steepening southwest-facing snowfields lead to a snow chute and then to the cowskull itself, and if you cannot pick a cowskull out of the snow above you, you are under the wrong part of the face.\n\nTHE MID-APPROACH CHECKPOINT IS THE DAVENPORT MINE, around 7,000 ft, roughly midway across the Horseshoe Basin traverse. The ruins are unambiguous. If you have crossed the basin without passing old mine workings, you are on the wrong ledge line — and the ones below cliff out.\n\nAND THE APPROACH BEGINS BY LOSING HEIGHT, WHICH IS THE FIRST SANITY CHECK OF THE DAY: from Sahale Glacier Camp at 7,600 ft you descend Sahale's south ridge and a class 3 step into a notch near 6,800 ft before you traverse. If you have been climbing since camp, you have not started the route yet.\n\nABOVE THE COWSKULL, THE GROUND CHANGES CHARACTER AND THAT IS THE SIGNAL TO PUT THE CRAMPONS AWAY: step off the snow, then grovel up loose scree and rubble to the summit ridge, finishing with about 100 ft of class 2-3 rock. Snow the whole way to the top is not this route.\n\nKNOW WHICH SUMMIT YOU ARE AIMING FOR: Buckner has two nearly equal tops, the southwest at about 9,114 ft and the northeast about two feet lower, separated by a few hundred feet of ridge. This route reaches the SOUTHWEST one, which is the accepted high point; the northeast top needs the connecting ridge.\n\nTHE NEGATIVE TEST AGAINST THE NORTH FACE IS THE WHOLE MOUNTAIN: that route comes from Boston Basin, over Sharkfin Col and across the Boston Glacier, on the opposite side. If you rappelled off a col onto a glacier this morning, you are on the north side."
+   }
+  ],
+  "_sources": [
+   "https://en.wikipedia.org/wiki/Buckner_Mountain"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_goode_northeast_buttress": {
+  "area": "wa_mount_goode",
+  "approach_variants": [
+   {
+    "name": "Bridge Creek and the North Fork to the moat below the red ledges",
+    "season": "Mid to late July through September. The moat crossing is easiest once the glacier has receded, around the third week of July, and gets harder again as the season goes on",
+    "notes": "From the Bridge Creek / PCT trailhead off SR-20 near Rainy Pass, follow the Pacific Crest Trail southbound about ten miles, losing steadily along Bridge Creek, to the North Fork Bridge Creek junction near North Fork Camp. Turn up the North Fork Bridge Creek trail and head upstream; it gets brushier and less maintained the further you go, with a log crossing at Grizzly Creek.\n\nAround mile 13-14 the maintained tread effectively ends. Ford the North Fork — cold and sometimes knee deep, and easiest a few steps upstream at a cairn — then work up scree and third-class slabs on CLIMBER'S RIGHT of the large waterfall draining toward the Goode Glacier, which is the way to avoid the worst brush. Look for the alder tunnel: a boot-path corridor through the slide alder that saves a great deal of thrashing.\n\nCamp around the glacier toe at roughly 5,400-6,800 ft depending on how far you push. Plan on three to four days round trip.",
+    "hazards": [
+     "A moat and bergschrund at the toe of the buttress with a steep step of about 50 degrees where the route steps off the Goode Glacier onto rock — worse as the season goes on, and reported by some parties as impassable late",
+     "Open crevasses and overhead serac hazard on the Goode Glacier",
+     "Loose and wet rock on the approach slabs beside the waterfall",
+     "Cornices on the approach in early season",
+     "A route that is difficult to retreat from once high on the buttress — commit only with a stable weather window",
+     "A descent by the Southwest Couloir that several parties report taking 8-10 hours from summit to car"
+    ],
+    "baseFinding": "THE LANDMARK IS A COLOUR: THE RED LEDGES AT THE TOE OF THE BUTTRESS. Three independent accounts name them, and one quotes the guidebook doing so. You are looking for a band of RED ROCK where the Goode Glacier meets the foot of the buttress. If the rock in front of you is grey, keep looking along the toe.\n\nTHE BASE IS THE MOAT AT THOSE LEDGES, AND HOW YOU CROSS IT IS THE MEASURE OF THE SEASON: a collapsed or intact snow bridge, a jump, a downclimb, or a short rappel followed by re-climbing on the far side. Published elevations for this point range from about 6,400 to 7,800 ft across different years and different parties, which is a real disagreement rather than a single number — the glacier has retreated and the crossing point moves. NAVIGATE TO THE RED LEDGES, NOT TO AN ALTITUDE.\n\nABOVE THE MOAT, EXPECT ONE OR TWO PITCHES OF LOW FIFTH ON PRECARIOUS BLOCKS, TRENDING CLIMBER'S RIGHT to gain the buttress crest proper. If your first ground above the glacier is clean and solid, you are not on the toe.\n\nTELL IT FROM THE PEAK'S OTHER LONG ROUTE BY WHETHER YOU EVER TOUCHED THE GLACIER: MEGALODON RIDGE IS GAINED FROM THE EAST WITHOUT CROSSING THE GOODE GLACIER AT ALL. If you crossed a moat off glacier ice, you are on the Northeast Buttress. If you never left brush and rock, you are on Megalodon.\n\nCONFIRM AS YOU CLIMB: over 1,000 ft of 3rd and 4th class on the crest, often soloed or simul-climbed, then around 8,000 ft a short UNPROTECTABLE 5.7 SLAB on the crest that most parties deviate RIGHT to avoid, then roughly five pitches of 5.4-5.5 easing toward the summit. A route that is hard from the bottom is not this one."
+   }
+  ],
+  "_sources": [
+   "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/",
+   "https://engineeredforadventure.com/goode-mountain-northeast-buttress/",
+   "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_goode_mountain_megalodon_ridge": {
+  "area": "wa_mount_goode",
+  "approach_variants": [
+   {
+    "name": "Off the Bridge Creek trail to the toe of the arete descending northeast off the main ridge",
+    "season": "Late summer, August into September, once the approach bushwhack and the glacier are most passable; a long committing route that wants a stable weather window",
+    "notes": "From the Rainy Pass PCT trailhead near 4,800 ft, head south on the Pacific Crest Trail roughly nine to ten miles down Bridge Creek to the North Fork Bridge Creek junction near North Fork Camp, then up the increasingly brushy North Fork trail.\n\nWHERE TO LEAVE THE TRAIL IS DISPUTED AND BOTH VERSIONS ARE RECORDED HERE RATHER THAN AVERAGED. The first-ascent account describes leaving at an obvious CLEARING BEFORE GRIZZLY CREEK and climbing from there to the toe of the arete. The route's own catalog description instead has the party continue past Grizzly Creek to around trail-mile 14, ford the North Fork, work up scree and third-class slabs on climber's right of the large waterfall, and then commit to a steep sustained bushwhack through slide alder and timber for roughly the last half mile.\n\nEither way the objective is the same feature and the total approach is on the order of twelve or more miles with several thousand feet of gain before any roped climbing. Most parties bivy low on the ridge; water is reliable along Bridge Creek and scarce once you are on the rock, so tank up before you leave the creek.\n\nThe first ascent climbed its first fifth-class pitch at dusk and bivied on a bench, with the real difficulty starting the next morning.",
+    "hazards": [
+     "Hidden cliff bands inside the brush and loose footing on the slabs beside the waterfall",
+     "A very long sustained ridge — 2,800 to 3,000 ft of climbing with about 5,000 ft of exposure on one side and 4,000 on the other",
+     "Mostly simul-climbed with sparse belayed pitches, so long sections carry limited protection",
+     "Very few documented repeats, so beta and bail options are both thin",
+     "Benightment on the ridge is a real risk, and the standard descent drops into the Park Creek drainage on the far side of the mountain"
+    ],
+    "baseFinding": "THE FEATURE IS A CLEAN-LOOKING ARETE THAT DESCENDS NORTHEAST OFF THE MAIN RIDGE, AND YOU AIM FOR ITS TOE. That is what both accounts of this route agree on. It sits close beneath the Goode Glacier's lower icefall — near it, not on it.\n\nTHE SINGLE STRONGEST TEST IS THAT YOU NEVER CROSS THE GLACIER. The Northeast Buttress, the peak's other big route on this side, is reached by stepping off the Goode Glacier across a moat at a band of red rock. THIS ROUTE IS GAINED FROM THE EAST, FROM BRUSH AND ROCK, WITH NO GLACIER CROSSING AT ALL. If you have crampons on to reach your base, you are on the Buttress.\n\nTHE ARETE ANNOUNCES ITSELF BY BEING CLEAN. It is described as a clean-looking arete precisely because the ground around it is not — the last half mile of approach is slide alder and timber. Emerging from brush onto a distinct clean crest running down to the northeast is the confirmation.\n\nCOUNT THE FIRST STAGE: simul-climbing up the lower arete to a TOWER AT ABOUT 8,200 FT, then ONE RAPPEL off it, and only then running-belay climbing along the crest toward the southeast peak. A rappel early on a ridge you are ascending is a strong positional marker and it is the first one this route gives you.\n\nTHE CRUX IS LATE AND IT IS ABOVE THE GLACIER: three long pitches of 5.9-5.10 on the southeast peak headwall, with easier options further left, and then an overhanging 5.10 headwall above the Goode Glacier near Black Tooth Notch with an icy moat to negotiate. If you have met your hardest climbing in the first half of the day, you are on something else."
+   }
+  ],
+  "_sources": [
+   "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "area": "wa_mount_goode",
+  "approach_variants": [
+   {
+    "name": "The cairned ledge into the gully, and the black stairs inside it",
+    "season": "Late June through September depending on snow and ice in the couloir; an axe and crampons are often wanted for the gully approach even in summer",
+    "notes": "From the Bridge Creek / PCT trailhead on SR-20 near milepost 159 (about 4,875 ft), follow the Pacific Crest Trail southbound along Bridge Creek — losing roughly 2,000 ft over about 9.5 miles through forest — to the North Fork Camp junction, where the PCT crosses Bridge Creek. A footbridge there has been washed out in past years, so check NPS conditions rather than counting on it.\n\nTurn up the North Fork Bridge Creek trail, roughly seven miles regaining about 1,700 ft, growing brushier as you go until it peters out in the big cirque below Goode, Storm King and Mount Logan. Around mile 13-14 ford the North Fork — easier a short way upstream near a cairn — and pick up an intermittent boot path and cairns through talus and alder, including tunnel sections through the brush, toward the toe of the Goode Glacier.\n\nSome parties deliberately stay on moraine and talus rather than the glacier basin, because of icefall and audible rumbling from the seracs. Bivy near the glacier toe around 6,400-6,800 ft, or higher on ledges closer to the couloir. The whole approach is commonly 15-16 miles and 4,000-4,800 ft to high camp.\n\nThis is the peak's original route, first climbed in 1936, and it is also the descent for the Northeast Buttress and Megalodon Ridge — so expect to meet parties coming down it.",
+    "hazards": [
+     "A rockfall funnel: the couloir is loose and gets worse with multiple parties on it",
+     "Receding hidden-glacier snowbridges below 8,000 ft on the way to the gully",
+     "A demanding headwall of largely terrible rock near the top",
+     "Active rockfall and icefall noise from the Goode Glacier seracs beside the approach",
+     "A mouth that opens onto cliffy ground above a waterfall — the one real route-finding trap of the descent"
+    ],
+    "baseFinding": "THE ENTRY IS MARKED: A NARROW LEDGE WITH A CAIRN ON IT LEADS INTO THE SOUTHWEST GULLY. After skirting snow you scramble talus and loose scree to that ledge. A cairn on a narrow ledge is the confirmation; an unmarked scramble straight into a gully is not this entry.\n\nINSIDE THE GULLY THE TEST IS COLOUR, AND IT IS BOTH A ROUTE-FINDING AND A SAFETY INSTRUCTION: HUG THE LEFT SIDE, WHERE THE DARK ROCK IS SOLID. Parties call that band the black stairs and it offers cleaner scrambling than the middle of the gully. IF YOU ARE ON PALE, RUBBLY ROCK, YOU ARE IN THE GUT OF THE COULOIR AND ON THE LOOSE LINE.\n\nEXPECT ONE SHORT LOW-FIFTH PITCH LOW DOWN, then class 3 and 4 in the main gully, steepening near the notch between the summit and the West Tower.\n\nBLACK TOOTH NOTCH IS THE UPPER LANDMARK AND IT IS SHARED, SO IT IDENTIFIES THE MOUNTAIN RATHER THAN THE ROUTE: a foot-wide notch gained by an exposed class 4 traverse, with a fixed sling marking the crux step, and loose rock throughout. The Northeast Buttress and Megalodon Ridge both DESCEND through it; this is the only one of the three that climbs UP through it.\n\nAND THE MOST USEFUL NEGATIVE FACT IS ABOUT GOING DOWN, BECAUSE THAT IS WHEN IT BITES: the couloir's mouth opens onto cliffs above a WATERFALL. EXIT LEFT ONTO EASIER HEATHER BENCHES rather than continuing straight down. A party that is still descending the fall line when it hears water below has gone too far."
+   }
+  ],
+  "_sources": [
+   "https://onehikeaweek.com/2015/09/29/goode-mountain/",
+   "https://trailcatjim.com/mt-goode-via-southeast-couloir-upper-northeast-face/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_logan_r2": {
+  "area": "wa_mount_logan",
+  "approach_variants": [
+   {
+    "name": "Easy Pass, the Douglas Creek alder, then the west-side gully to the polished slabs",
+    "season": "June and July for the best glacier conditions",
+    "notes": "Start at the Easy Pass trailhead on SR-20 near milepost 151, about 3,700 ft. Hike 3.5 miles and 2,800 ft to Easy Pass at 6,500 ft, then descend 1.5 miles through alpine meadows and forest into Fisher Basin and down to the Fisher Creek valley floor and the established campsites.\n\nCross Fisher Creek on a large fallen log and travel the east side of the Douglas Creek valley on a faint climbers' path. THIS IS WHERE THE ROUTE IS ACTUALLY DECIDED. The transition from forest to open terrain runs into a vast field of slide alder and brush over ten feet high, virtually impenetrable in many directions, cut by small rocky stream channels — progress measured in inches per minute. One 2022 party was turned back at 4,200 ft by this alone, having covered half a mile an hour for seven hours. One account rates the route five stars for glacier travel and one star for the bushwhack, which is fair.\n\nAbove the brush, the way onto the glacier is a gully on the west side of the basin. Then it is glacier travel to the col and a short summit block.",
+    "hazards": [
+     "A slide-alder thicket over ten feet high that has defeated at least one party outright, with heavy mosquito and black-fly pressure",
+     "Cliff bands ringing the Fisher Basin cirque",
+     "Crevasses and glide cracks reported over 20 ft deep on the Douglas Glacier",
+     "A steep, exposed rock ramp of roughly 300 ft above camp that is hard to protect",
+     "Steep icy summit snow needing solid crampon and axe technique",
+     "Steep loose-rock switchbacks on the Easy Pass trail itself above mile 2.5"
+    ],
+    "baseFinding": "THE GULLY IS ON THE WEST SIDE OF THE BASIN AND IT IS IDENTIFIED BY WHAT IT DELIVERS YOU ONTO, NOT BY ITS ENTRANCE. It starts class 3, steepens quickly to class 4 or low fifth for a short section that is hard to protect, and TOPS OUT ON GLACIER-POLISHED SLABS. Polished slabs above a short steep step is the confirmation. From there it is about 1,500 vertical ft of scrambling on those slabs to the TOE OF THE DOUGLAS GLACIER.\n\nSO THE ORDER IS: BRUSH, GULLY, POLISHED SLABS, GLACIER. If you are on slabs without having climbed a short hard step, you have not been through the gully.\n\nTHE ROUTE JOINS ITS NEIGHBOUR NEAR THE TOP AND THAT IS EXPECTED: ascend the Douglas Glacier — steep at its head — to the COL, then traverse to meet the BANDED GLACIER and finish up the same class 3-4 summit block, about 300 vertical ft. A summit block reached without crossing to a second glacier means you are still on the Douglas side of the col.\n\nTHE APPROACH IS THE STRONGEST DISCRIMINATOR ON THIS MOUNTAIN, BECAUSE ALL THREE ROUTES END AT THE SAME SUMMIT BUT NONE OF THEM SHARE A VALLEY. This route comes from EASY PASS and the DOUGLAS CREEK drainage on the west. The Banded Glacier comes from Fisher Creek to a lake camp at 5,160 ft and crosses a col onto the Banded. The Fremont Glacier comes from Thunder Creek and PARK CREEK PASS on the southeast. If you passed Park Creek Pass this morning, you are not on the Douglas.\n\nAND THE HONEST GAP: no source publishes a countable marker for the gully entrance itself — it is described only as being on the west side of the basin. The polished slabs above it are the reliable confirmation, which means you find out you were right after the hard part."
+   }
+  ],
+  "_sources": [
+   "https://trailcatjim.com/mt-logan-attempt-via-douglas-glacier-2022/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area": "wa_mount_logan",
+  "approach_variants": [
+   {
+    "name": "Park Creek Pass and the heather traverse to the Fremont saddle and the hogsback",
+    "season": "July and August",
+    "notes": "The standard start is the Colonial Creek Campground trailhead on SR-20 near milepost 130, about 1,060-1,200 ft, and the Thunder Creek trail north for roughly 16-18 miles to the Thunder Basin camp area around 6,000 ft and on to Park Creek Pass. A southern alternative reaches the same pass from Stehekin: the High Bridge guard station near 1,600 ft, the Stehekin River trail to the Park Creek trailhead, then the Park Creek trail past Buckner Camp — with a creek crossing on a less-than-substantial footlog that is genuinely nerve-wracking in the dark.\n\nFrom Park Creek Pass leave the maintained trail and traverse gradually NORTHWARD around a broad ridge through open heather and high alpine terrain, roughly a mile and a half to two miles, crossing a rib around 7,600 ft and a steep gully through cliff bands around 7,350 ft that can hold snow or ice. That brings you to the FREMONT GLACIER SADDLE around 8,000-8,250 ft, where rock-outcrop bivy sites with nearby running water make the standard high camp.\n\nFrom camp it is about three and a half hours to the summit.",
+    "hazards": [
+     "Crevasses on the Fremont Glacier, generally small but present — rope up",
+     "A bergschrund that opens below the summit ridge as the snow finger melts out late season, and a moat where the glacier meets the crest",
+     "Exposed, often unroped class 3-4 scrambling on the summit ridge",
+     "Long unmaintained cross-country route-finding above the moraine camp",
+     "Footlog crossings over Thunder and Park creeks that are hazardous at night or in high water",
+     "No fixed anchors anywhere on the route — a rappel off the summit block has to be built from a horn, a chockstone or a picket"
+    ],
+    "baseFinding": "THE BASE IS THE HOGSBACK — the snow spine at the UPPER edge of the Fremont Glacier, on the peak's south ridge. You reach it by a gentle glacier crossing from the saddle camp, and there is a MOAT CROSSING to step from the snow onto the crest, which late in the season may have no bridge left at all. Snow spine plus a gap to step across is the confirmation you are at the start.\n\nTHEN COUNT THREE FEATURES IN ORDER, AND THE ORDER IS THE WHOLE ROUTE-FINDING PROBLEM: a class 3-4 ROCK PITCH gains a LEFT-SLANTING RAMP — a fault-line weakness in the cliff bands — to the summit ridge; then exposed class 2-3 LEDGES ON THE EAST SIDE of the ridge lead through a U-NOTCH between the summit tower and the south horn; then a final class 3-4 pitch of about 100 ft on good holds and solid rock reaches the tiny summit.\n\nTHE STRONGEST NEGATIVE TEST IS THE RAMP: IF YOU ARE TRYING TO CLIMB THE SUMMIT TOWER DIRECTLY FROM THE GLACIER, YOU HAVE MISSED IT. The ramp is the way through the cliff bands and it slants LEFT. Going straight at the tower puts you on ground the route deliberately avoids.\n\nTHE U-NOTCH IS THE SECOND CONFIRMATION AND IT IS A SHAPE, NOT A HEIGHT: a U-shaped gap between the summit tower and the south horn, reached by traversing ledges on the ridge's EAST flank. If you never dropped onto the east side, you did not take the ledges.\n\nAND KNOW WHICH SIDE OF THE MOUNTAIN YOU ARE ON BEFORE YOU START: this is the SOUTHEAST/SOUTHWEST approach, from Park Creek Pass. The Douglas Glacier route comes from Easy Pass and the Douglas Creek alder on the west; the Banded Glacier route comes from Fisher Creek and gains the northeast ridge at about 8,800 ft. All three finish on the same summit block and share nothing below it."
+   }
+  ],
+  "_sources": [
+   "https://trailcatjim.com/mt-logan-via-fremont-glacier-south-ridge-2018/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_logan_r1": {
+  "area": "wa_mount_logan",
+  "approach_variants": [
+   {
+    "name": "Fisher Creek to the lake camp, over the ridge onto the Banded Glacier",
+    "season": "June and July",
+    "notes": "Two ways in, and which one you use depends on whether SR-20 is open. The always-open option is the Thunder Creek trail from Colonial Creek Campground near 1,200 ft for about nine miles to the Fisher Creek trail junction, then the Fisher Creek trail about three miles — past a good log bridge with a handrail — to a lake camp near 5,160 ft below the Banded Glacier. Roughly thirteen miles one way. The shorter option is Easy Pass from SR-20 near milepost 151, over the pass at 6,500 ft and down into Fisher Basin, about ten miles, but the trailhead is gated by the highway's seasonal closure.\n\nFrom the lake camp, climb south-southeast to a low point on the ridge — some accounts call it Christmas Tree Col — which may need a rope for steep snow or a short glacier section. Drop onto the BANDED GLACIER on the far side and ascend it to the BANDED-DOUGLAS COL.\n\nThe last two thirds of this route is sustained off-trail goat-path route-finding, and the scree below the glacier is described as moving like a Newtonian fluid: much easier to ascend than to descend. Party size in this NPS zone is capped at six.",
+    "hazards": [
+     "A major crevasse crossed on a narrow snow bridge on the Banded Glacier",
+     "Talus lying on top of bullet-hard glacier ice, described as a pile of marbles — treacherous in a whiteout descent",
+     "Cliff bands above the lake camp",
+     "Loose chossy rock on the summit ridge and rockfall in the approach gullies",
+     "Heavy mosquitoes in the lake basin through June and July"
+    ],
+    "baseFinding": "THE CRITICAL TRANSITION IS NAMED IN THE ROUTE'S OWN DESCRIPTION AND IT IS A NEGATIVE TEST: GAIN THE NORTHEAST RIDGE ON SOLID ROCK AT ABOUT 8,800 FT RATHER THAN ATTEMPTING THE SUMMIT BLOCK DIRECTLY FROM THE GLACIER. That is the base of the climbing and it is the single thing this route can get wrong. If you are trying to climb off the ice straight at the summit, you have skipped the transition — cross the glacier until you can step onto solid rock on the ridge, and only then start up.\n\nGETTING THERE IS A SEQUENCE OF TWO COLS AND THEY ARE DIFFERENT THINGS. First, from the lake camp near 5,160 ft, climb south-southeast to a LOW POINT ON THE RIDGE — recorded in one account as Christmas Tree Col — and drop over it onto the Banded Glacier. Second, ascend the Banded to the BANDED-DOUGLAS COL, which is literally the saddle between the two named glaciers. A col you crossed to REACH ice, and a col you reached by climbing ice, are not the same feature.\n\nSO THE QUESTION THAT SETTLES YOUR POSITION IN FOG IS WHICH GLACIER IS UNDER YOU: this route travels between two named glaciers, so if you can identify which one you are standing on, you know which stage you are at. The Banded is the one you drop onto from the ridge above camp; the Douglas is on the far side of the col above.\n\nAND ALL THREE LOGAN ROUTES END ON THE SAME 300 FT OF CLASS 3-4 SUMMIT BLOCK, so the summit confirms nothing. What distinguishes them is entirely below: this one comes from FISHER CREEK and a lake camp; the Douglas Glacier route comes from Easy Pass and the Douglas Creek alder; the Fremont Glacier route comes from Park Creek Pass on the other side of the mountain.\n\nWATCH THE SCREE BELOW THE GLACIER ON THE WAY UP with the descent in mind — it is unstable enough that parties note it climbs far better than it downclimbs."
+   }
+  ],
+  "_sources": [
+   "https://stephabegg.com/trip-reports/washington/thunder-slam/"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_booker_mountain_northwest_route": {
+  "area": "wa_booker_mountain",
+  "approach_variants": [
+   {
+    "name": "Park Creek Pass, the sandy gully and the rocky point, then up to the Booker-Buckner col",
+    "season": "Mid to late summer, when the snowbridges near the Booker-Buckner col are still intact but consolidated. Conditions change year to year and can degrade within days",
+    "notes": "The usual approach is a multi-day backpack up the Thunder Creek trail from Colonial Creek Campground to Park Creek Pass — on the order of forty miles round trip with roughly 7,000 ft of cumulative gain — or as a leg of a Ptarmigan-style traverse linking Cascade Pass, Buckner and Park Creek Pass.\n\nFrom a camp near Park Creek Pass, this is a short day. Hike about 0.4 mile north on the Thunder Creek trail, pick up the climber's track, and traverse northeast: cross a BROAD SANDY GULLY at about 6,900 ft, roughly a mile from the pass, continue toward a SHARP ROCKY POINT at about 7,760 ft, then turn RIGHT and uphill on talus and snow to the col and its small glacier.\n\nThe col is around 8,100 ft and the scramble above it is class 2-3 with no technical rock. Booker sees roughly one party a year, so expect no boot track and no cairns.",
+    "hazards": [
+     "Crevasses and a bergschrund at the Booker-Buckner col, bypassed only on snowbridges of variable reliability — one such bridge collapsed within a week of another party crossing it, with climbers on both sides",
+     "Loose blocks in the summit gully, with rockfall released by climbers above as the route's principal hazard",
+     "Slick meltwater-run rock slabs for parties coming in from the Horseshoe Basin side",
+     "A remote, multi-day position far from any road or quick rescue",
+     "No boot track and no cairns — the route is walked by about one party a year"
+    ],
+    "baseFinding": "THIS ROUTE IS NAVIGATED BY A CHAIN OF THREE POSITIONS RATHER THAN ONE LANDMARK, AND THE CHAIN IS COUNTABLE IN FOG: A BROAD SANDY GULLY AT ABOUT 6,900 FT, roughly a mile from Park Creek Pass. Then a SHARP, ROCKY POINT AT ABOUT 7,760 FT. Then TURN RIGHT AND UPHILL to the col. Miss the gully and you are too low; pass the rocky point without turning and you are traversing past the peak.\n\nTHE BASE IS THE BOOKER-BUCKNER COL AT ABOUT 8,100 FT, and it is the col rather than the summit that the whole day is about: the upper snow and the glacier margin below it hold the crevasses, and the same snowbridges have to work on the way back down. Sound them, cross early while frozen, and note where you crossed.\n\nABOVE THE COL, A NORTH-FACING GULLY LEADS TOWARD THE SUMMIT WITH ONE SHORT CLASS 3 STEP. Keep to one side of it rather than the gut, and do not stack the party one above another.\n\nTHE ROUTE-FINDING TRAP IS AT THE TOP AND IT IS SPECIFIC: LEAVING THE GULLY TOO EARLY PUTS YOU ABOVE A SHORT WALL ON THE WEST, and forces an awkward traverse back on small ledges. Cut RIGHT out of the gully onto low-angle talus and scree, and walk those to the summit. If you find yourself edging along small ledges above a wall, you exited one notch too soon.\n\nTELL IT FROM THE PEAK'S OTHER WALK-UP BY HEIGHT: the South Ridge is gained across Horseshoe Basin at a permanent snowfield around 7,000-7,200 ft and trends to the ridge WEST of the summit. This route goes a thousand feet higher, to the col between Booker and Buckner. If you never got above 7,500 ft before starting to climb, you are on the South Ridge."
+   }
+  ],
+  "_sources": [
+   "https://stephabegg.com/trip-reports/washington/thunder-slam/",
+   "https://www.countryhighpoints.com/buckner-and-booker/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_booker_mountain_northeast_face": {
+  "area": "wa_booker_mountain",
+  "approach_variants": [
+   {
+    "name": "Head of Park Creek: easier cliffs to the small glacier, then right through the icefall",
+    "season": "Climbed historically in early-to-mid August; the window is narrow because it depends on a stable, well-bridged icefall and on residual snow and ice in the summit gully",
+    "notes": "A multi-day backpack toward Park Creek Pass and the head of Park Creek — from the Thunder Creek trail out of Colonial Creek Campground, or as part of a Buckner-area traverse — then camp near the base of the face for an alpine start.\n\nFrom camp the sequence is: climb easier cliffs to a small glacier at the base of the face, ascend LEFT up that glacier to an icefall, then traverse RIGHT through the icefall to reach the main rock wall. The first-ascent party described that crossing as genuinely exposed and frightening.\n\nThe face averages about 70 degrees and is over 3,000 ft high, on generally sound Cascade granodiorite and orthogneiss, apart from one band that is not. The first ascent was made in August 1964.\n\nThe descent is not the face: from the summit, take the ordinary route down to the Booker-Buckner col and back toward a Park Creek camp — which is what the first-ascent party did, reaching their camp just before dark.",
+    "hazards": [
+     "An icefall traversed on the approach, with crevasse and serac fall the standing hazard and the crossing itself described as frightening",
+     "A crumbly red rock stratum crossing the whole face at mid-height, which is where the rockfall comes from",
+     "Extreme remoteness — an incident on a 3,000 ft face this rarely climbed would be very hard to get help for",
+     "Heavy packs on class 4-5 ground, which the first-ascent account flags as compounding the difficulty"
+    ],
+    "baseFinding": "THE SEQUENCE IS COUNTABLE FROM BOTTOM TO TOP AND IT IS THE BEST THING THIS ROUTE HAS: EASIER CLIFFS, THEN A SMALL GLACIER, THEN LEFT UP IT TO AN ICEFALL, THEN RIGHT THROUGH THE ICEFALL TO THE ROCK. The direction reverses — left to reach the icefall, right to get through it — and that reversal is what tells you the crossing you are making is the intended one.\n\nTHE ROPE-UP POINT IS A LEDGE SYSTEM NEAR THE SECOND PROMINENT TREE, where the ledge makes its first descent. An oddly specific marker, and a genuinely countable one if the trees are visible.\n\nTHE MID-ROUTE CONFIRMATION IS A COLOUR AND IT CROSSES THE WHOLE FACE: a PROMINENT, CRUMBLY RED STRATUM at roughly half height. You cannot go round it — it spans the face — so meeting a red band of bad rock at mid-height is proof you are on the line and not beside it. It is also the crux and the rockfall source, so it is worth expecting.\n\nBETWEEN THOSE TWO, FOLLOW THE PROMINENT CENTRAL RIB essentially straight up. Near the top a 100-FT NOTCH is passed on steep snow or ice through a narrow gully angling across the rib, and then it is easier ground to the summit.\n\nAND THE NEGATIVE TEST IS THE WHOLE PEAK: Booker's other two routes are walks. If the ground you are on is class 2-3 talus, you are on the Northwest Route or the South Ridge — this is the only technical line on the mountain, and the first ascent said so in as many words."
+   }
+  ],
+  "_sources": [
+   "http://publications.americanalpineclub.org/articles/12196541002/North-America-United-States-Washington-Cascade-Mountains-Mount-Booker-Northeast-Face"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_booker_mountain_south_ridge": {
+  "area": "wa_booker_mountain",
+  "approach_variants": [
+   {
+    "name": "Horseshoe Basin at 6,400-6,600 ft to the north-facing gully and the permanent snowfield",
+    "season": "July through September, after Cascade River Road opens and once Horseshoe Basin's snowfields have consolidated; early attempts face more snow travel and less obvious route-finding, late ones find slopes melted to loose scree and slab",
+    "notes": "Drive Cascade River Road 23.1 miles from Marblemount to the Cascade Pass trailhead near 3,600 ft. Hike the Cascade Pass trail 3.7 miles and 1,700 ft to Cascade Pass at 5,392 ft, then continue up the Sahale Arm trail toward Sahale Glacier and Sahale Camp.\n\nLeave the maintained trail near Sahale Camp and descend cross-country into Horseshoe Basin by a snow-free gully on Sahale's south side around 6,600 ft. Traverse the basin staying roughly between 6,400 and 6,600 ft, past the Buckner buttress.\n\nMost parties combine Booker with Buckner on the same trip, since both share this approach and this traverse. Route-finding through Horseshoe Basin is the crux of the day; the climbing is not.",
+    "hazards": [
+     "Loose scree and slabby terrain throughout Horseshoe Basin, easy to lose the line on in both directions",
+     "Cliff bands flanking the south ridge that have to be route-found around",
+     "Rockfall potential in the gullies flanking the ridge",
+     "A remote position with no cell coverage and very infrequent traffic if a rescue is needed",
+     "A cross-country traverse and an exposed summit gully that are far more hazardous to reverse in the dark or after a thunderstorm has softened the snowfields"
+    ],
+    "baseFinding": "THE BASE IS A NORTH-FACING ROCK GULLY AND A PERMANENT SNOWFIELD AT ABOUT 7,000-7,200 FT, reached by crossing Horseshoe Basin rather than by climbing to any col. The snowfield is the marker: it is permanent, so it is there whatever the month, and the gully leads off it to the south-trending ridge WEST of Booker's summit.\n\nTHE HEIGHT IS THE TEST THAT SEPARATES THIS ROUTE FROM ITS NEIGHBOUR, AND IT IS A THOUSAND FEET WIDE. The Northwest Route starts at the BOOKER-BUCKNER COL at about 8,100 ft, reached from Park Creek Pass by way of a sandy gully at 6,900 ft and a sharp rocky point at 7,760 ft. THIS ROUTE STARTS A THOUSAND FEET LOWER AND ON THE OTHER SIDE. If you are standing at a col between two peaks, you are not on the South Ridge.\n\nTHE APPROACH TEST IS THAT YOU GO DOWN BEFORE YOU GO UP: from Sahale Camp you descend Sahale's south side through a snow-free gully near 6,600 ft into Horseshoe Basin and traverse at 6,400-6,600 ft. If your day has been a continuous climb from the trailhead, you have not reached the basin traverse yet.\n\nTHE FINISH IS SHORT AND EXPOSED AND IT IS THE ONE PIECE OF REAL CLIMBING: talus and slabs give way to a short, somewhat exposed 3rd-class gully or dike — locally described as taking a 4th-class step — to the summit.\n\nWHAT IS HONESTLY THIN HERE: this ridge is barely documented. The only outside mention found is of a party who ABANDONED the South Ridge for loose terrain and moved to the Northwest Route, finding existing rappel slings on the ridge — which suggests it is sometimes retreated from rather than climbed. Treat the snowfield and the gully as the navigation and expect to do your own route-finding above them."
+   }
+  ],
+  "_sources": [
+   "https://stephabegg.com/trip-reports/washington/thunder-slam/"
+  ],
+  "_confidence": "thin"
+ },
+ "wa_storm_king_southwest_scramble": {
+  "area": "wa_storm_king",
+  "approach_variants": [
+   {
+    "name": "The shared Goode approach to 7,400 ft, then the talus cirque and the right-most notch",
+    "season": "Late July through September; snow often lingers in the basin above about 7,400 ft into early August, so carry an axe and consider crampons even for a nominally dry climb",
+    "notes": "Storm King sits at the head of Thunder Creek and is one of the range's most remote summits — a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Goode's south side.\n\nThe most common is Thunder Creek: from Colonial Creek Campground on SR-20, the Thunder Creek trail roughly 13 miles with little gain to the McAllister Creek confluence, past Junction, Skagit Queen and Thunder Basin camps, then the Park Creek Pass trail junction and about two miles up to Two Mile Camp and the switchbacks to PARK CREEK PASS. Alternatives are McAlester Pass and Rainbow Creek from SR-20, or a boat or shuttle to Stehekin and High Bridge Camp then the Park Creek trail from the south. From Stehekin the boot path starts on the north side of a large whitish-rock washout about two miles up the trail, five minutes further into the woods.\n\nFrom Park Creek Pass, leave the maintained trail and traverse cross-country west-southwest across snow and talus, favouring climber's left, roughly a mile to the cirque below Storm King's east and west towers. A rib camp around 7,450 ft with nearby water is the usual base.\n\nFrom the cirque, a long and very loose talus and scree slope leads up toward the southwest gully system. Helmet on and space out — that slope is the approach's main hazard.",
+    "hazards": [
+     "Loose blocky rock on the talus approach and the summit ridge, with rockfall onto parties below",
+     "Lingering snow and ice in the basin and the summit gully into early August, and bullet-hard patches",
+     "An exposed class 4 ledge traverse just below the summit with real fall consequences",
+     "In-situ slings at the crux that are aging tat and need backing up before they are weighted",
+     "Extreme remoteness — assume a multi-day evacuation or a helicopter for any serious injury"
+    ],
+    "baseFinding": "THE MOST IMPORTANT THING TO KNOW ABOUT THIS APPROACH IS THAT BELOW 7,400 FT IT IS INDISTINGUISHABLE FROM GOODE MOUNTAIN'S. The same trail, the same basin, the same cairned climber's path. A party in fog below that elevation cannot tell from the ground which peak's route it is on. The split happens above it, where this route trends toward the towers while Goode's continue toward the glacier or Black Tooth Notch.\n\nTHE COUNTING TEST IS THE NOTCH, AND THE WORD IS RIGHT-MOST. There are several notches in the summit rocks; the route crosses at the RIGHT-MOST one. Most of the way up to it is loose scree and talus, which is what makes the notch worth confirming rather than guessing.\n\nCROSS TO THE NORTH SIDE OF THAT NOTCH AND THE GROUND CHANGES CHARACTER COMPLETELY: a fun ledge traverse on the BACKSIDE of the tower, roughly 70 ft, with two or three class 4 moves and full exposure. IF YOU HAVE NOT CROSSED TO THE NORTH SIDE, YOU HAVE NOT FOUND THE LEDGE TRAVERSE, and there is no version of this route that goes up the front.\n\nCONFIRM ON THE LEDGE: it includes a SQUEEZE UNDER A SLIGHT OVERHANG, and there are IN-SITU SLINGS at the crux left by earlier parties. A squeeze move plus old tat is the strongest positive confirmation on the climb — though the tat is aging and is not to be trusted with body weight without backup.\n\nTHE LAST MOVE IS A CHOICE, NOT A CRUX: a 15-ft solid class 4 face crack, or a wrap around its LEFT side on class 3 blocks. Both reach the register and the rappel slings.\n\nAND KNOW WHICH TOP YOU WANT: two 8,520-ft-plus points sit east of a triangulated 8,515 ft subsummit, and the EASTERNMOST is the true high point."
+   }
+  ],
+  "_sources": [
+   "https://stephabegg.com/trip-reports/washington/thunder-slam/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "_SKIPPED": {
+  "_note": "Nine routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason below is a statement about what is published or about what the row IS, not about effort.",
+  "wa_forbidden_peak_east_ledges": "NOT AN ASCENT LINE. The row's own approach says it in as many words: reached only from the summit of Forbidden after climbing another route, with no independent trailhead approach, since it is used almost exclusively as a descent. Its base is a horn near the summit. Writing a base finding would mean inventing a way to arrive at something you can only leave from. The Ledges are named as a NEGATIVE test inside the East Ridge Direct and Northeast Face entries instead, which is where a party is actually at risk of confusing them.",
+  "wa_northwest_ridge_2": "POSITIONED ONLY RELATIVE TO ITS NEIGHBOUR, AND THE ROW SAYS SO ITSELF. Boston Peak's Northwest Ridge has one recorded ascent — a leg of a 2018 traverse of the whole Boston Basin rim — and that party reached it by climbing Sharkfin Tower, descending from it, and traversing a steep hanging snow slope to the base of the crest. There is no independent approach to the foot of the ridge. The row's own approach paragraph is explicitly labelled a reasoned estimate from the area's standard access pattern rather than documented beta, and independent searching of Mountain Project, SummitPost, CascadeClimbers, Mountaineers.org, WTA and the AAC turned up no pitch-level description. 'The base of the ridge, at the bottom of a snow traverse from another summit' is not a fog test.",
+  "wa_austera_peak_chockstone_route": "IT IS THE TOP PITCH OF THE STANDARD ROUTE, NOT A ROUTE WITH ITS OWN BASE. The chockstone chimney is roughly 60 ft at 5.2 and sits in the gully directly below the notch between Austera's false and true summits — the guidebook frames it as one of two ways to reach that notch, the other being an exposed class 3-4 scramble round to the east. Its approach is the same glacier traverse, the same Klawatti-Austera notch and the same 75 ft rappel as wa_austera_peak_southwest_ridge, which already carries the chimney as its third pitch. Writing this row would put a second base finding on the same 60 ft of chimney. See _DEFECTS.",
+  "wa_south_ridge_6": "UNDER-PUBLISHED, AND ITS OWN ROW IS PARTLY BORROWED PROSE. The Aiguille de l'M's South Ridge has a grade and a pitch count on Mountain Project and nothing else — no start description, no landmark, no trip report. Its catalog approach paragraph is the North Ridge's boilerplate with a Forbidden West Ridge sentence left in it ('From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest'), which describes a different peak entirely. The North Ridge on the same formation IS written, and its baseFinding names the South Ridge as the undocumented side.",
+  "wa_goode_mountain_northeast_face": "NO INDEPENDENT BASE IS PUBLISHED, AND THE ROW'S OWN BETA APPEARS TO BE THE NORTHEAST BUTTRESS'S. Every source found either merges this line with the Southwest Couloir and Black Tooth Notch, or does not describe it at all; no account gives a moat or bergschrund crossing specific to a true northeast-face-from-the-glacier line. Meanwhile the row's beta reads 'Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class' — which is the Northeast Buttress's grade and character, not a spring snow-and-ice route, and its own season field says Apr-May. Writing a base here would mean either inventing one or copying the Buttress's red ledges onto a different line. See _DEFECTS.",
+  "wa_storm_king_north_face": "NOTHING TO RE-HOME. The row holds a name, an aspect, a first ascent (Emerson and Grove, 1978) and a gain figure, and its own beta says in as many words that it is documented only in brief first-ascent form with no pitch-by-pitch description, grade or length. Independent searching found exactly one titled trip report, which could not be retrieved, and every other North Face / North Ridge result resolved to a DIFFERENT Storm King — Colorado's San Juans, New York's Hudson Highlands, or Mount Storm King in the Olympics. Fabricating a start feature here is exactly how a foreign route gets onto a Washington peak.",
+  "wa_magic_mountain_southwest_cirque": "THERE IS NO LINE TO FIND. The route is 'climb any of the heathery gullies at the north or northeast head of the cirque' — the row itself records that there is no established line and no fixed gear anywhere in the cirque, and that two parties can be on quite different terrain a few metres apart. Independent searching returned the grade and nothing else. A baseFinding here could only say 'you are in the cirque', which does not answer how you know you have arrived at the start of the climbing. The cirque IS named as a negative test inside the Northwest Ridge and West Ridge entries — if you are on heather rather than rock, and you crossed no schrund, you are in it.",
+  "wa_eldorado_peak_northeast_face": "POSITIONED ONLY RELATIVE TO THE EAST RIDGE, ACROSS 700 FT OF ELEVATION. The row's own instruction is to follow the standard East Ridge glacier track and, at 'roughly 7,500-8,200 ft', leave it and angle up and right beneath a rock band. Research could not narrow that divergence point any further: the two routes share their entire start and only separate when a party traverses climber's-right off the ridge. A 700 ft window on an open glacier is not a marker, and the rock band is not described in a way that distinguishes it from the ground either side of it.",
+  "wa_south_ridge_4": "SUSPECTED PHANTOM, AND THE CATALOG HAS BEEN BURNED BY EXACTLY THIS BEFORE. No Mountain Project page, SummitPost page, CascadeClimbers trip report, AAJ entry or guidebook excerpt describing a distinct South Ridge on Eldorado Peak could be found. The only external mentions are guide-service marketing listing 'the classic East Ridge or South Ridge routes' with no technical content, and those companies' own detailed pages describe only the East Ridge. The row's own content is specific — an obvious crack to a 'U-notch', excellent cracks on the far side, a knife-edge finish — but nothing outside the row corroborates that such a line exists separately from the East Ridge, and this is the same shape as the Forbidden 'East Face / Catscratch' row that was deleted as a phantom. Confirm the route exists before enriching it. See _DEFECTS."
+ },
+ "_DEFECTS": {
+  "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+  "austera_three_rows_one_climb": "wa_austera_peak ('Austera Peak', Easy 5th), wa_austera_peak_southwest_ridge ('Southwest Ridge / McAllister Glacier', II 5.2, 3 pitches) and wa_austera_peak_chockstone_route ('Chockstone Route', 3 pitches) all describe the same day: Eldorado camp, Inspiration Glacier, Klawatti Col, the McAllister lobe, the Klawatti-Austera notch at 7,900 ft, a ~75 ft rappel onto the Klawatti Glacier, and a short tower. The Chockstone Route is the SW Ridge's own third pitch. Two rows are written here with the same base and the third is skipped; confirm before deleting any of them, since the aspect labels differ (NE vs SW) and only one carries a grade.",
+  "klawatti_southeast_face_may_be_the_south_face": "No source found describes a route named 'Southeast Face' on Klawatti Peak. What is documented from Klawatti Col is the SOUTH FACE — a bergschrund, a short 4th-to-easy-5th rock step to clear it, then several hundred feet of 40-55 degree snow — which is exactly what wa_klawatti_peak_southeast_face's own columns describe. A separately named Southeast RIDGE also appears in one search summary. The row's `aspect` is already 'S' while its name says southeast, so the row disagrees with itself.",
+  "klawatti_two_routes_claim_the_same_first_ascent": "wa_klawatti_peak_sw_buttress and wa_klawatti_peak_southeast_face both carry `fa` = 'Lloyd Anderson, Karl Boyer, Tom Gorton — July 7, 1940', which is the PEAK's first ascent. The same party and month is also on wa_northwest_ridge (Dorado Needle, July 1940). At most one of the two Klawatti routes can be the 1940 line; the other has inherited the peak's FA rather than its own.",
+  "goode_northeast_face_beta_looks_borrowed": "wa_goode_mountain_northeast_face has season 'Apr-May (spring snow/ice conditions)' and an FA of Beckey and Parrott 1954, but its `beta` reads 'Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing... Best climbing season: mid-July for snowmelt conditions' — the Northeast BUTTRESS's grade, character and season. The row contradicts itself and the beta appears to belong to the neighbouring route.",
+  "buckner_north_face_waypoints_describe_the_other_trailhead": "wa_buckner_mountain_north_face's approach prose is explicit and correct that it starts at the BOSTON BASIN trailhead, and says in as many words that this is 'a separate, shorter-drive trailhead than the Cascade Pass TH used for the SW route'. Its `approach_logistics.trailhead` says 'Cascade Pass Trailhead' and its waypoint list runs Cascade Pass Trailhead / Cascade Pass / Sahale Glacier Camp / Sahale-Boston col — i.e. the waypoints walk the OTHER approach from the one the prose drives to. Both approaches are real; the row holds one of each.",
+  "storm_king_trailhead_row_contradicts_its_own_waypoint": "wa_storm_king_southwest_scramble stores its trailhead as 'Colonial Creek Campground Trailhead' at 48.6855,-121.0925, and its first waypoint carries the same name at an elevation of 4,875 ft while describing SR-20 'at Rainy Pass (milepost ~158)' and a hike south on the Bridge Creek Trail/PCT. Colonial Creek Campground is at roughly 1,200 ft at milepost 130 — a different trailhead in a different drainage. The waypoint's own note already says the stored trailhead 'is a different, unconnected drainage well north of here and is very likely wrong', so the row is arguing with itself in writing.",
+  "eldorado_summit_height_stated_three_ways": "Within wa_main_peak, high_point_ft is 8872 on three rows, 8873 on wa_south_ridge_4, and the approach prose on several of them says 8,868 ft. wa_eldorado_peak_west_arete also carries 8872 while the area's East Ridge row uses 8868. Small, but it means no figure in this area can be quoted without picking one.",
+  "dorado_needle_east_ridge_waypoint_is_a_recommendation_not_a_place": "wa_dorado_needle_east_ridge's first waypoint is named 'Eldorado Creek trailhead (Cascade River Road mile 20)' and its note reads 'Existing DB value (48.492611,-121.117611) appears incorrect — does not match the confirmed roadside trailhead used by the other three Dorado Needle routes; recommend correcting to this value'. The waypoint carries no lat/lng of its own, so it is a note about a correction rather than a location, and nothing on the row states what the corrected value should be.",
+  "goode_northeast_buttress_trailhead_names_disagree_by_900m": "wa_mount_goode_northeast_buttress stores approach_logistics.trailhead as 'Bridge Creek Trailhead (Rainy Pass)' at 48.5075,-120.7312 and a waypoint 'Bridge Creek Trailhead' 0.9 km away. Its two sibling rows (wa_goode_mountain_southwest_couloir, wa_goode_mountain_megalodon_ridge) both use 'Rainy Pass PCT North Trailhead' at 48.5181,-120.7331. Three Goode routes, three slightly different start points for the same walk.",
+  "tepeh_towers_is_filed_on_eldorado_and_its_own_row_says_so": "wa_tepeh_towers is filed under wa_main_peak, the area beneath wa_eldorado_peak, and its own approach paragraph contains the sentence 'IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area'. Its summit waypoint sits 1.7 km from the area coordinate and its high_point_ft is 8,113 against Eldorado's 8,872. The same disclaimer sentence appears verbatim on wa_austera_peak and wa_klawatti_peak_sw_buttress, which are filed on their own peaks and do not need it — so the paragraph has been copied across rows and is only true on one of them.",
+  "primus_south_ridge_row_mixes_two_approaches": "wa_primus_peak_south_ridge's approach describes the Eldorado ice-cap traverse from Cascade River Road; its `beta` instead describes the Thunder Creek side ('Mountain Project rates the standard line (there called the East Slope) 3rd class... Most parties treat it as a 3-day trip with a high camp above Borealis Lake'); and its `turnaround` warns about re-crossing Thunder Creek and descending Lucky Ridge. Those are opposite sides of the mountain. Its waypoint list carries the Thunder Creek trailhead while its approach_logistics carries a note saying the Eldorado Creek trailhead was the previous value and is 21.5 km away.",
+  "requested_peaks_absent_from_the_catalog": "RIPSAW RIDGE has no Washington row of any kind — the only matches are co_ripsaw_ridge (on co_peak_c) and co_ripsaw_northeast_ridge (on co_arrowhead), both Colorado. THE TRIPLETS likewise has no North Cascades row; the only Washington match is wa_triplets_the, a 13-route crag under Rocks of Sharon in the SPOKANE area, 300 km away and a completely different formation. Neither absence is a contamination event today, but both are exactly the shape one becomes: a Colorado 'Ripsaw Ridge' and a Spokane 'Triplets' are what a name-based lookup would return for a Cascade Pass request."
+ }
+}

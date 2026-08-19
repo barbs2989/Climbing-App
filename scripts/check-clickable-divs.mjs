@@ -46,6 +46,15 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASELINE = path.join(ROOT, "scripts", "clickable-divs-baseline.json");
 const UPDATE = process.argv.includes("--update");
 
+// Roles that promise the user a control they can operate. Deliberately excludes structural
+// roles (dialog, region, status, banner, navigation, group, alert), which need neither a tab
+// stop nor a key handler and are correct as written.
+const INTERACTIVE_ROLES = new Set([
+  "button", "checkbox", "link", "menuitem", "menuitemcheckbox", "menuitemradio",
+  "option", "radio", "switch", "tab",
+]);
+const inert = [];
+
 // Elements the platform already makes focusable and operable. A click handler on any of
 // these is fine; <label> is here because clicking it operates the control it labels.
 const NATIVE = new Set(["button", "a", "input", "select", "textarea", "summary", "option", "label"]);
@@ -136,6 +145,38 @@ for (const rel of files) {
       if (!attrs.has("role")) missing.push("role");
       if (!attrs.has("tabIndex")) missing.push("tabIndex");
       if (!KEY_HANDLERS.some((k) => attrs.has(k))) missing.push("a key handler");
+
+      // A SEPARATE, WORSE CLASS, held at zero rather than baselined.
+      //
+      // A bare <div onClick> is invisible to a screen reader: it is announced as prose and
+      // skipped. An element carrying an INTERACTIVE role is announced as a control -- so the
+      // app states that it works -- and if it has no key handler, or no tab stop, it does
+      // not. Being told a button exists and having it do nothing is worse than never being
+      // offered it, which is why this is not allowed to sit in a baseline and be worked off
+      // "eventually". There was exactly one (the reaction chip in ClimbMatchCore, announced
+      // "Add a reaction", reachable by Tab, inert on Enter); it is fixed, so zero is holdable.
+      //
+      // Scoped to interactive roles ON PURPOSE. `role="dialog"` on a modal container needs no
+      // tab stop and no key handler, and there are ~54 of those across these files: a check
+      // that flagged them would be telling authors to break correct markup, which is the
+      // failure this file already records twice.
+      const roleAttr = p.node.attributes.find(
+        (a) => a.type === "JSXAttribute" && a.name && a.name.name === "role"
+      );
+      const roleVal = roleAttr && roleAttr.value && roleAttr.value.type === "StringLiteral" ? roleAttr.value.value : null;
+      if (roleVal && INTERACTIVE_ROLES.has(roleVal)) {
+        const broken = [];
+        if (!attrs.has("tabIndex")) broken.push("no tab stop");
+        if (!KEY_HANDLERS.some((k) => attrs.has(k))) broken.push("no key handler");
+        if (broken.length) {
+          inert.push({
+            file: rel, line: p.node.loc.start.line, tag, role: roleVal,
+            why: broken.join(" + "),
+            handler: src.slice(onClick.start, onClick.end).replace(/\s+/g, " ").slice(0, 60),
+          });
+        }
+      }
+
       if (missing.length) {
         offenders.push({
           file: rel, line: p.node.loc.start.line, tag, missing: missing.join(" + "),
@@ -172,6 +213,28 @@ if (UPDATE) {
 }
 
 const baseline = fs.existsSync(BASELINE) ? JSON.parse(fs.readFileSync(BASELINE, "utf8")) : {};
+// Reported BEFORE the count tests, and the order is load-bearing: those blocks exit, so an
+// inert control announced in the same commit that added a mouse-only one was silently never
+// reported. The injections caught that -- both real-defect cases came back "guard pass".
+// This class is the more severe one, so it must not be masked by a count it is unrelated to.
+if (inert.length) {
+  console.error("\ncheck:clickable FAILED — control(s) that ANNOUNCE themselves and do not work:\n");
+  for (const r of inert) {
+    console.error(`  ${r.file}:${r.line}  <${r.tag} role="${r.role}">  ${r.why}`);
+    console.error(`      ${r.handler}`);
+  }
+  console.error(`
+An interactive role tells a screen reader this is a usable control. Without a tab stop it
+cannot be reached; without a key handler Enter and Space do nothing. Either way the app is
+claiming something false, which is worse than a bare <div onClick> that is simply skipped.
+
+Spread the shared helper — {...clickable(fn)} — which supplies role, tabIndex and the key
+handler together, and keep any aria-label beside it (the helper names nothing).
+
+This is NOT baselined. It is held at zero.\n`);
+  process.exit(1);
+}
+
 const regressions = [];
 for (const [file, n] of Object.entries(counts)) {
   const allowed = baseline[file] || 0;
@@ -195,6 +258,7 @@ Enter and Space. role alone is worse than nothing: it announces a button that ca
 be used. Run with --update only when lowering the baseline.\n`);
   process.exit(1);
 }
+
 
 // A baseline that is higher than reality is stale bookkeeping: it silently re-opens room
 // for regressions someone already paid to close.

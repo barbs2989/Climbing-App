@@ -131,7 +131,7 @@ try {
     // 0141's eight, 0142's five and 0143's pitch table. The SQL writes whatever the proposal
     // carries — discipline gating is the FORM's job — so probing them all from one submission
     // is legitimate and covers every column the approval learned this session.
-    overview: "QA probe overview.", ropeType: "Single", ropeNote: "QA probe ropework.",
+    overview: "QA probe overview.", face: "QA probe face.", ropeType: "Single", ropeNote: "QA probe ropework.",
     ascender: "Yes", whatToBring: ["QA bring A", "QA bring B"], watchOut: ["QA watch A"],
     objHaz: ["QA objective hazard"],
     bestSeason: "QA probe best-season prose.", outingShape: "loop",
@@ -139,7 +139,7 @@ try {
     rack: ["Cams .3-3", "Nuts 1 set"],
     pitchDetail: [{ pitch: "P1", grade: "5.9", lengthM: 30, notes: "QA probe pitch one." },
                   { pitch: "P2", grade: "5.10a", notes: "QA probe pitch two." }],
-    areaName: area.name, source: "My own ascent", sourceNote: null, climbed: true, photoCount: 0,
+    areaName: area.name, climbed: true, photoCount: 0,
   };
   const ins = await rest(`contributions?select=*`, { method: "POST",
     body: JSON.stringify({ kind: "new_route", area_id: area.id, route_id: null, field: null, value: proposal }),
@@ -221,7 +221,7 @@ try {
   else ok("id minted as area_id || '_' || route_slug(name)");
 
   // ── 5. did every column land? ────────────────────────────────────────────────
-  step("read the row back — all 34 columns the proposal can fill");
+  step("read the row back — every column the proposal fills");
   const got = (await rest(`routes?select=*&id=eq.${encodeURIComponent(routeId)}`)).body?.[0];
   if (!got) throw new Error("approved route not readable");
 
@@ -233,7 +233,7 @@ try {
     descent_text: proposal.descentText, fa: proposal.fa, beta: proposal.beta,
     rappels: "2 raps", turnaround: "2pm", comms: "no signal",
     prot_rating: "R", start_type: "Stand", landing: "flat, clean", pads: 4,
-    rock: "granite", crux: proposal.crux, source: "community",
+    rock: "granite", crux: proposal.crux,
     overview: proposal.overview, face: proposal.face, rope_type: "Single",
     rope_note: proposal.ropeNote, ascender: "Yes",
     best_season: proposal.bestSeason, outing_shape: "loop",
@@ -249,11 +249,22 @@ try {
   if (!arrOk("hazards", "Rockfall")) bad(`hazards: ${JSON.stringify(got.hazards)}`);
   if (!got.gear || got.gear.pads !== "4") bad(`gear jsonb: ${JSON.stringify(got.gear)}`);
   // jsonb / text[] columns: compare structurally, not by ===
-  const deepIs = (k, want) => { const g = got[k]; return JSON.stringify(g) === JSON.stringify(want); };
+  // jsonb does not preserve key order, so stringifying the raw objects compares presentation
+  // rather than content and reports a correct round-trip as a failure. Sort keys at every depth.
+  const stable = (x) => Array.isArray(x) ? x.map(stable)
+    : (x && typeof x === "object")
+      ? Object.keys(x).sort().reduce((o,k)=>{o[k]=stable(x[k]);return o;},{})
+      : x;
+  const deepIs = (k, want) => JSON.stringify(stable(got[k])) === JSON.stringify(stable(want));
   if (!deepIs("what_to_bring", proposal.whatToBring)) bad(`what_to_bring: ${JSON.stringify(got.what_to_bring)}`);
   if (!deepIs("watch_out", proposal.watchOut)) bad(`watch_out: ${JSON.stringify(got.watch_out)}`);
   if (!deepIs("obj_haz", proposal.objHaz)) bad(`obj_haz: ${JSON.stringify(got.obj_haz)}`);
   if (!deepIs("rack", proposal.rack)) bad(`rack (text[], unnested from the jsonb array): ${JSON.stringify(got.rack)}`);
+  // 0155 dropped routes.source and 0156 stopped this function writing it. PostgREST omits a
+  // column that does not exist, so `undefined` here is the whole assertion: if someone re-adds
+  // the column AND the write, this fails rather than quietly reinstating a source on every route.
+  if (got.source !== undefined) bad(`source came back as ${JSON.stringify(got.source)} — routes.source was dropped in 0155 and nothing should write it`);
+  else ok("no source written — the dropped column stays dropped");
   if (!deepIs("pitch_detail", proposal.pitchDetail)) bad(`pitch_detail: ${JSON.stringify(got.pitch_detail)}`);
   else ok(`pitch_detail round-tripped ${proposal.pitchDetail.length} rows with their keys intact`);
   // the count must NOT have been derived from the pitch rows — on a walk-up they are stages

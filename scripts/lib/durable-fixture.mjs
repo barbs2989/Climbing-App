@@ -126,7 +126,33 @@ export async function durableFixture(log) {
   });
   assertHealthy(join, "seating the mate in this run's group");
   if (join.status >= 300) throw new Error(`the mate could not join this run's group (HTTP ${join.status}): ${(join.text || "").slice(0, 200)}`);
-  log(`  created this run's own group ${JSON.stringify(groupName)} — no other run can touch it`);
+
+  // AND THEN HIDE IT. `groups read public or member` makes a public group readable by
+  // everyone, and useMyGroups() selects every group with no filter, ordered created_at DESC
+  // — so while this walk runs, a real climber opening the Groups tab sees "CI Fixture Alpine
+  // Club (run 32274…)" at the TOP of their list. That is the same objection that made
+  // `discoverable=false` mandatory for the durable PROFILES, and it was never applied to the
+  // groups those accounts create. Measured 2026-08-19: the live project held two groups and
+  // both were fixtures, so a real user's Groups tab was 100% test data.
+  //
+  // The order here is measured, not guessed, and it is the only order that works:
+  //   * creating with visibility:'private' is refused outright — 42501, RLS. The live INSERT
+  //     policy requires a group to START public, which 0090's file does not say; the file and
+  //     the live policy disagree, so read this from the probe, not from the migration.
+  //   * the mate joins BEFORE the flip, deliberately. group_members' insert policy carries no
+  //     visibility clause in the file — but the file was already wrong once above, and a join
+  //     that silently started failing would break the walk's whole reason to exist (a uuid
+  //     member on the roster). Joining while public keeps that on the path already proven.
+  // Exposure therefore drops from the full ~4-minute walk to about a second.
+  const hide = await asUser(session, `groups?id=eq.${group.id}`, {
+    method: "PATCH", body: JSON.stringify({ visibility: "private" }),
+  });
+  assertHealthy(hide, "hiding this run's group from real users");
+  if (hide.json?.[0]?.visibility !== "private") {
+    throw new Error(`this run's group is still ${JSON.stringify(hide.json?.[0]?.visibility ?? "unknown")} (HTTP ${hide.status}) — it would be listed in every real user's Groups tab. Refusing to walk rather than exposing it.`);
+  }
+  group.visibility = "private";
+  log(`  created this run's own group ${JSON.stringify(groupName)}, private — no other run can touch it, and no real user can see it`);
 
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },

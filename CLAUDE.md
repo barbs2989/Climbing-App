@@ -33,13 +33,14 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
+npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
-npm run check:a11y-badges # no control announces its badge count welded to its label
+npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
@@ -231,14 +232,38 @@ a build error, but a screen that renders wrong or not at all.
     crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
     *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
     to render, so this cannot excuse a broken one.
-  - `postMenuFor` and `reactPickerFor` are exempt: they render **inside** the `openGroupId`
-    view and the `posts` they look up is a local of that IIFE, so no App-scope expression can
-    open them.
-  - **The hole it does not close, printed rather than hidden:** five overlay states live in
-    `RouteDetail.jsx`, and the opener injects into `App`, so no `?z=` can ever reach another
-    component's local state. They are walked only insofar as `check:ui` opens a route. The
-    script reports the count as a `note` — a known quantity beats an absence nobody can see,
-    which is the failure this whole guard is about.
+  - **`postMenuFor` and `reactPickerFor` were exempt as unreachable, and were not.** They
+    render *inside* the `openGroupId` view and the `posts` they read is a local of that IIFE —
+    but every piece of that screen is App state, so a payload can build it. A `prep` statement
+    injects a group into `createdGroups` (`ownerId: 0` satisfies the view's non-`_db`
+    `isCreator` branch), gives it a post via `setGroupPosts`, opens it with `setOpenGroupId`,
+    and only then sets the modal's own id. Both now mount — measured at 2,006 and 2,190 chars
+    by `check:zero`, which fails anything that adds nothing.
+    - Nothing here is DB-backed: group posts are client state, so **no fixture could seed
+      them**. A synthetic payload is the only way to reach these two in any of the walks.
+    - The lesson is the exemption, not the fix: "no App-scope expression can open them" was
+      true of the modal's *own* setter and false of the screen it lives in. An exemption is a
+      claim about reachability, and this one had not been tested.
+  - **The hole it used to print as a note is CLOSED**, and the note is why it got closed: the
+    opener injects into `App`, so no `?z=` could reach an overlay whose state lives in
+    `RouteDetail.jsx`, and those were walked only insofar as `check:ui` happens to open a route.
+    `routeDetailTransform()` now injects a second opener into RouteDetail's own component, so
+    they are opened directly like any other. All **54** (51 in App, 3 in RouteDetail) are
+    reachable. *A known quantity beats an absence nobody can see* — the count sat in the output
+    as a `note` until somebody fixed it, which is the argument for printing what you cannot yet
+    do rather than omitting it.
+  - **The count went five to three because DISCOVERY changed, not because overlays were
+    removed.** The five came from the old name shape (`[xOpen,setX]=useState(false)`); asking
+    instead what a state actually *renders* dropped two that were never modals. Do not read the
+    smaller number as a regression.
+  - **`shareOpen` exists in BOTH files, and that collision silently un-walked the App one.**
+    Overlay names are keys, so the second file's `shareOpen` overwrote the first and App's share
+    sheet stopped being opened while the summary still counted one. RouteDetail's states are
+    namespaced **`rd:`** for that reason. Any future second component needs the same treatment —
+    a bare name is not unique across files.
+  - Every vite config that calls `buildOpener` **must** also call `routeDetailTransform`, and the
+    guard asserts it (all 5 do). Wiring that a config can forget is wiring that one eventually
+    will: the configs already drifted once on which files they transformed.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
@@ -323,7 +348,7 @@ a build error, but a screen that renders wrong or not at all.
     shortest screen and a **correct** empty state, so the 400 default would fail working code.
     Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
     revived block fails naming the missing landmark.
-- **`check:zero`** walks all six tabs and every overlay the app declares (27 today) as a
+- **`check:zero`** walks all six tabs and every overlay the app declares (49 today) as a
   **brand-new account** sees them — every count zero, every list empty. It exists because
   `check:ui` walks the *seeded demo*: `bookmarks` is `["lcc","wasatch"]`, a crew exists,
   `friendReqIn` is `[5]`, `crewUnread` is `{crew_seed_tingey:2}`. So every branch that only
@@ -426,6 +451,29 @@ a build error, but a screen that renders wrong or not at all.
     they cannot appear in partner browse — the objection against a permanent QA account.
     `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
+  - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
+    the transferable half. All three fixture paths made their group `visibility:"public"`, and
+    `groups read public or member` plus `useMyGroups()` — which selects **every** group with no
+    filter, `order=created_at.desc` — put it at the **top** of every real climber's Groups tab.
+    Measured 2026-08-19: the live project held two groups and **both were fixtures**, so that
+    screen was 100% test data. All three now flip to private (#1015). *When you make a fixture
+    invisible, ask what it creates, not only what it is.*
+    - **Creating it private is refused — `42501`, RLS.** The live INSERT policy requires a group
+      to *start* public; `0090_groups.sql` says only `with check (auth.uid() = created_by)` and
+      no later insert policy exists in the migrations, so **the file and the live policy
+      disagree**. Create public, then `PATCH`. The owner still sees it: `groups_add_owner` seats
+      the creator, so `is_group_member` holds.
+    - **The mate joins BEFORE the flip**, deliberately. `group_members`' insert policy carries no
+      visibility clause *in the file* — and the file had just been shown wrong about the sibling
+      table, so the join stays on the path already proven. Exposure is ~1s, not the ~4min walk.
+    - **Crews are NOT affected**: `crews` RLS is `created_by = me OR I am a member`, with no
+      public class at all. Checked rather than assumed.
+  - **`sweepOrphans()` is age-gated (45 min), and must stay so.** It deletes every
+    `@climbmatch-qa.invalid` account and runs BEFORE each fixture, so ungated it deletes the
+    accounts of a run already in flight — two runs were observed overlapping in this project on
+    2026-08-19. The victim's rows simply stop existing, so its failure lands nowhere near the
+    cause **and passes on re-run**, which is exactly how a real defect gets filed as a flake. 45
+    minutes clears the 25-minute job wall, so a leak still has a bounded lifetime.
   - **The ACCOUNTS are durable; their DATA is not, and that distinction is load-bearing.** The
     accounts have to persist (CI holds no service key, and Supabase has no self-delete, so
     per-run *accounts* would leak forever). A shared *group* is a different matter: the walk
@@ -658,9 +706,10 @@ a build error, but a screen that renders wrong or not at all.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
-- **`check:a11y-badges`** asks whether any control announces its badge count welded to its
-  label. The Crew sub-tab bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so
-  Chrome computed the name as **`"Friends2"`** — one token. Sighted users see a gap because it
+- **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
+  token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
+  bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
+  as **`"Friends2"`** — one token. Sighted users see a gap because it
   is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
   not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
   `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
@@ -668,7 +717,7 @@ a build error, but a screen that renders wrong or not at all.
     digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
     `Class 4` are all correct names. The defect is that the digit and the word come from
     **different DOM nodes**. A grade is one authored string in one text node; a badge is a
-    separate element. So it walks each control's text nodes, finds a letter↔digit transition
+    separate element. So it walks each control's text nodes, finds a word-character transition
     **across a node boundary**, and only then asks Chrome what it computed. An earlier
     string-matching attempt reported "none" while direct measurement showed three, and was
     binned rather than shipped.
@@ -677,6 +726,35 @@ a build error, but a screen that renders wrong or not at all.
     which changes no structure at all — reads as fixed, and why rearranging JSX cannot satisfy it.
   - Runs against the **populated** demo. A badge is `count ? <span>…`, so at zero there is no
     badge and nothing to find; check:zero's config would make this vacuous.
+  - **The needle was letter↔digit until 2026-08-19, and that narrowness let a whole class
+    through for as long as the check had existed.** #740 was a *count* welded to a label, so
+    the rule was written about digits. The route page's "Recently climbed" rows are the same
+    defect with a **word** on the right: `{aa.user}<span style={{marginLeft:7}}>{outcome}</span>`
+    announced as **`"Nathan BarberAttempt"`**. It is now `\w` on both sides, which subsumes the
+    original rule.
+    - **Punctuation between the fragments is a real separator and must NOT be flagged.**
+      `"Alex Torres" + "✓ Summited"` announces as `"Alex Torres✓ Summited"`, where the ✓ keeps
+      the words apart — so the test is `\w` on both sides, deliberately **not** "no whitespace
+      at the boundary". That looser rule reports correct rows, measured against the live app.
+    - **Chrome blockifies flex and block children and inserts a space between them**, which is
+      why the widening is far less noisy than it sounds: the crag-sibling nav's stacked
+      `Routes` / `next door ›` spans *look* like the same bug and announce correctly. Reasoning
+      from the markup called that a defect; the measurement overruled it. Only the inline
+      `marginLeft` shape actually glues.
+  - **The route detail screen IS covered, on all six sub-tabs**, and the exclusion that used to
+    sit here — *"reached by clicking a card, not by URL, and the shared scaffold only opens tabs
+    and overlays"* — was **stale rather than wrong when written**: the scaffold gained `?zr=1`
+    for `check:overflow`, which calls the app's own `openRoute()` from inside the opener. The
+    exclusion outlived its reason by months, and the one defect the widening found was **on that
+    screen**. Not reaching it is an exit-1, not a note, for the same reason `check:overflow`
+    upgraded it. Sub-tab clicks skip fixed/sticky chrome, because a sub-tab name collides with
+    the bottom nav and a global text match silently leaves the route page.
+  - **The sibling instance in `AreaLatest` needed TWO fixes, and one hid the other.** The same
+    row in `ClimbMatchCore.jsx` glued identically but was a bare `<div onClick>` — no role, so
+    a screen reader computed no control name for it and this guard's selector could not see it
+    at all. Making it a real control via `clickable()` is what **exposed** the glue, so both
+    had to land together; `check:clickable`'s baseline drops by one. A defect can be hidden by
+    a worse defect in the same element.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
@@ -689,8 +767,8 @@ a build error, but a screen that renders wrong or not at all.
     from the sweep. That was not hypothetical: it is why the second defect went unseen on the
     first run.
   - Does **not** cover clickable `<div>`s (React's onClick leaves no attribute, and a div with
-    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`) or
-    the route detail screen, which is reached by clicking rather than by URL.
+    no role has no computed control name — a different defect, see `scripts/audit-a11y.mjs`),
+    nor a name glued by something that is not a word character on both sides.
   - Zero candidates anywhere is treated as a **failure**, not a pass: every control here is
     multi-node, so an empty scan means the scan broke.
   - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
@@ -966,6 +1044,51 @@ a build error, but a screen that renders wrong or not at all.
     `aria-checked`, because a button role announces the control and silently drops the one
     thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
     exists for exactly this; the `aria-checked` is written beside it.
+  - **A separate, WORSE class is held at ZERO rather than baselined: a control that
+    ANNOUNCES itself and does not work.** A bare `<div onClick>` is invisible to a screen
+    reader — announced as prose and skipped. An element carrying an **interactive** role is
+    announced as a usable control, so the app asserts it works; with no key handler, or no
+    tab stop, that assertion is false. Being told a button exists and having it do nothing is
+    worse than never being offered it, so it does not get to sit in a baseline and be worked
+    off later. There was exactly one — the reaction chip in `ClimbMatchCore`, announced
+    "Add a reaction", reachable by Tab, inert on Enter — and it is fixed, so zero is holdable.
+  - **Scoped to INTERACTIVE roles on purpose** (`button`, `checkbox`, `link`, `tab`,
+    `menuitem`, `switch`, `radio`, `option`). `role="dialog"` on a modal container needs
+    neither a tab stop nor a key handler and there are **~54** of those across these files; a
+    check that flagged them would be instructing authors to break correct markup — the same
+    failure as the 13 phantom shields, from the other direction. Injection case 3 pins it.
+  - **ORDER IS LOAD-BEARING, and it shipped wrong first.** The count blocks call
+    `process.exit(1)`, so with the inert test placed after them, a commit that both added a
+    mouse-only control *and* announced an inert one reported only the count — the inert
+    finding was unreachable in exactly the situation it exists for. It reported zero on a
+    clean tree throughout, which is indistinguishable from working. **Only the injections
+    caught it**: both real-defect cases came back `guard pass`. It now runs FIRST. Same
+    principle `check:field-renders` records — whichever block exits first is the only one
+    anyone reads.
+  - Injection-tested 4/4 (`scripts/oneoff/inject-inert-control-cases.mjs`), judged on whether
+    the **inert section specifically** fired rather than on exit code: these edits also perturb
+    the mouse-only count, and judging on exit code made a correct run read as a failure.
+  - **The baseline is a count, so it does not say what is LEFT — measured, because the
+    difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
+    classifies every remaining control by its **measured inline style**, and **58 of 210 are
+    modal backdrops that must never get a tab stop**. The real target is **152**, not 210:
+    `ClimbMatchCore.jsx` 101 real of 129, `ClimbMatch.jsx` 50 of 68, `RouteDetail.jsx` 1 of 8,
+    and all 5 in `lib/` are backdrops. Do not read the baseline as a to-do list.
+  - **Classify by style, never by the handler's name.** Proven on `RouteDetail`:
+    `setView(null)` reads like a close button and **is a backdrop**, while
+    `setPhotoLightbox({ph,key})` reads the same shape and **is a real control**. Naming would
+    have put both in the wrong bucket, in opposite directions. The measuring script resolves
+    `style={{...styles.overlay}}` spreads and normalises quotes — without that it contradicted
+    this file about `GpsSubmissionModal`'s two overlays, and **this file was right**: their
+    style lives in a shared object and is written `position:'fixed'`, single-quoted.
+  - **A `role` without a tab stop is usually `role="dialog"` and is CORRECT.** A scan for
+    "role but no tabIndex" returns 54 across these files and ~all are dialog containers, which
+    need no tab stop. Flagging them would be a guard that tells you to break working markup.
+    The shape actually worth finding is **role + tabIndex + NO key handler** — announced,
+    reachable, and inert, which is worse than a bare div because the app claims it works.
+    There was exactly one (the reaction chip in `ClimbMatchCore`, `aria-label="Add a
+    reaction"`), and it is fixed. That element is also why the guard counted 130 where a
+    role+tabIndex-skipping scan counted 129 — **the two scans disagreeing is what found it.**
   - Verified in a browser, not just statically — a focused area row (`South Central Utah ·
     1365 climbs`) opens on Enter. The static check cannot prove that; it only proves the
     attributes are present.
@@ -1052,6 +1175,22 @@ a build error, but a screen that renders wrong or not at all.
     RPC arguments and PostgREST resolves by name, so a mismatch is `PGRST202` and approval is
     impossible. Rules 1 and 2 are independent on purpose: a correct column list behind a
     lingering overload is still broken, and injection case 3 pins exactly that.
+  - **Rule 1's one exemption is a column the TABLE no longer has, and it is DERIVED rather than
+    declared.** #1020 dropped `routes.source`, swept the three pipeline loaders and two readers it
+    named in 0155's header, and missed this function — so the live approval inserted into a column
+    that did not exist. **plpgsql resolves column names when a statement first RUNS**, so nothing
+    failed at deploy time, no guard went red, and the failure was reserved for the next admin to
+    approve a route. Worst possible place for it: approval is admin-only and exercised by hand
+    rather than by CI. `0157` removed it.
+    - The exemption replays every `add column`/`drop column` on `routes` in file order and keeps
+      the **last** one. A hand-maintained list would be a second source of truth for the schema and
+      would rot the moment the column came back; this appears and disappears by itself. Re-adding
+      the column **re-arms** the rule, which is the safe direction — it then demands more of the
+      approval rather than less. Injection cases 7 and 8 pin both directions.
+    - Before dropping any column, ask `pg_proc` which functions still name it, **comments
+      stripped**. `check:schema` cannot answer this — it only asserts `lib/db.js` never reads a
+      missing column, and never looks inside a function body. Views need no such check: a
+      non-CASCADE `drop column` is *refused* if a view depends on it.
   - It strips **`--` line comments only**, deliberately not the blanker other guards use: these
     files are prose-heavy and 0135's own header names every column it writes, so a comment that
     *mentions* `grade_num` must not read as the insert writing it.
@@ -1640,9 +1779,26 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Match the un-escaped text.** `renderToStaticMarkup` emits `CAMPING &amp; BIVY`; see
     [[ssr-probes-must-match-escaped-html]]. Assertion 0 proves the probe can fire at all, so a
     renamed heading reports `ANCHOR LOST` instead of a vacuously green run.
-  - **Known gap, printed rather than hidden:** `bivy` is **not contributable** — it is in neither
-    `FIELDS` nor `SS`, and the panel's edit pencil opens the *waypoints* editor. A climber cannot
-    add or correct a camp. That needs a structured array editor and is not built.
+  - **`bivy` IS contributable now**, and the gap it closed is worth keeping: it used to be in
+    neither `FIELDS` nor `SS`, and the panel's edit pencil opened the *waypoints* editor — a
+    different store. So the ~380 routes carrying camping had all got it from an enrichment pass,
+    and the climber who actually slept there could not fix a word. It is a `type:"bivy"` FIELDS
+    entry with its own array editor beside the waypoints one, `bivy:1` in `SS`, and the pencil now
+    opens `sf-section-bivy`.
+    - **`structuredVal` writes `elev` in FEET**, converted through `uImp()` exactly as a waypoint
+      elevation is. That is load-bearing rather than tidy: the column already holds two conventions
+      (`elev` feet, legacy `elevM` metres), and writing a metric number into `elev` would put a
+      THIRD reading into a field `uElev()` treats as feet. `elevM` is never written — the read side
+      converts the legacy spelling and the write side must not add to it.
+    - **`check:contrib-shapes` caught the wiring before it shipped.** It models every non-structured
+      field as serialising to a string, so a new builder type must be added to its `STRUCTURED`
+      set; until `bivy` was, it correctly reported *"reader discards a string, and CONV has no
+      `bivy` entry"*. Keyed on the TYPE, so the next builder field is exempt automatically.
+    - The guard asserts the **contributed shape** renders, which is NOT the enrichment shape:
+      `structuredVal` emits every text key as a string (empty when left blank) where enrichment
+      omits keys it has nothing for. It also asserts blank strings do not become empty chips —
+      otherwise every contributed site would carry three or four blank pills, and no fixture built
+      from enrichment data would ever have shown it.
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
@@ -1738,6 +1894,73 @@ the correction knows the screen is wrong, and they have no way to report it.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+- **`audit:approach-scope`** finds routes whose `approach` keeps going past the base of the climb.
+  Its summary line **used to give advice that would have made things worse**, and that is the part
+  worth remembering: it said 254 findings "have NO pitch table, so that text has nowhere else to
+  live today". True when written; the `climbing_route` backfill has since run, and the real figure
+  is **15** — the other **239 already have it**. A 17x overstatement instructing whoever read it to
+  re-home text that is already re-homed, producing a **third** copy. Same failure as
+  `check:field-renders` telling an author to delete correct bookkeeping during an outage: an audit
+  still asserting something it no longer has evidence for.
+  - **The pass COPIED rather than MOVED.** CLAUDE.md specifies these batches as "re-home, never
+    research", which means trimming the source — nothing ever checked, and mostly it did not.
+    Two numbers, answering different questions, so do not quote one as the other: across all WA
+    routes with both columns, **163 of 240 repeat an approach sentence inside `climbing_route`
+    (429 sentences)**; among the routes this audit flags, **148 of 239 (303 sentences)**. Many are
+    verbatim.
+  - **Confirmed ON SCREEN, not inferred from the columns.** `APPROACH` and `CLIMBING ROUTE` are
+    both on the **Planner** tab, and the shared sentences print twice there — verified by rendering
+    the real `RouteDetail` over three real rows. Two columns overlapping is a fact about a table;
+    whether it is a defect is a question only rendering answers, which is the trap the rack
+    correction and `descent_text` both record.
+  - **Deliberately NOT swept, and do not bulk-trim `approach` against it.** Which copy is wrong is
+    a per-sentence judgement: the pass also copied *genuine approach content* into `climbing_route`
+    (`wa_mount_watson_scramble`), so for some rows the `climbing_route` copy is the wrong one. And
+    at least one paraphrase **dropped an antecedent** — `wa_bryant_peak_southeast_slopes` reads
+    "Ascend **the gully** favoring its far climber's-right side" in the approach against "Ascend
+    favoring its far climber's-right side" in `climbing_route`. Same shape as
+    `audit:trailhead-agreement`, but with **no third record** to settle it, so it needs reading in
+    reviewed batches rather than a transform.
+  - Per-row output is now the **action** rather than a fact (`TRIM the approach` / `MOVE` / `read
+    before touching`). Injection cases are a **pair** on purpose: `--inject=dup` copies a sentence
+    in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
+    it must fall to zero — `dup` alone would be passed by a detector that called everything a
+    duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
+  withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
+  as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
+  crevasse kit again. The question it does **not** ask is whether a suppression is *correct*, and
+  the two directions are not symmetric — the file's own header says wrongly dropping a crevasse
+  warning is dangerous while wrongly keeping one is merely noise.
+  - **The only way to suppress wrongly is evidence in a column `corpus()` does not read**, since a
+    glacier line is dropped only when `GLACIER_RE` finds nothing in it. That made the blind-column
+    set the whole attack surface, and it was two long: **`climbing_route`** (migration `0122`,
+    created to re-home climbing prose OUT of `approach` — which corpus() *does* read) and
+    **`approach_variants`**. So every route the enrichment touched moved its snow and glacier
+    sentences into a column the classifier could not see. **9 WA routes were live**, suppressing
+    advice while their own screens said *"Residual avalanche snow at the base"* and *"Colchuck
+    Glacier moraine"*. Nothing reported it and nothing could — populated column, rendered screen,
+    every coverage check green. Fixed; 10 verdicts moved, **all** toward keeping advice, none the
+    other way, and the restored line was proven **on screen** rather than in the verdict.
+  - **The obvious general fix is measurably WRONG and must not be re-derived.** Inverting corpus()
+    to read everything except a deny-list would make **112 of 296** WA alpine routes gain a new
+    signal — worst offender **`seasonal_hazards`, the column holding the "avalanche: N/A"
+    declaration itself**. Reading it as prose makes every row declaring avalanche *absent* read as
+    *present*, disabling the mechanism it belongs to. The allow-list stays.
+  - `approach_variants` is read **by key** (`name`, `notes`, `hazards`, `baseFinding`), never
+    flattened, because it carries a `season` key — flattening re-imports the Highway 20 mistake
+    under a new name. `CORPUS_COLUMNS` is exported as the single source of truth and the camelCase
+    spelling is **derived**, so a column added to it cannot be half-wired.
+  - **The blind-column scan is what stops the third instance**, because a comment saying "add new
+    prose columns to CORPUS_COLUMNS" would rot exactly as the last one did. It samples full rows,
+    finds every column outside the classifier carrying glacier/snow prose, and demands a reason in
+    `NOT_TERRAIN_EVIDENCE`. The declaration is demanded **late** — only once a column is both
+    populated *and* carrying a terrain word, i.e. exactly when it could change a verdict — so the
+    list stays at the 23 that matter rather than all 94 on the table. A **stale** entry fails too.
+    Injection-tested 4/4, each proving its edit landed by checksum; case 3 removes `approach` from
+    `CORPUS_COLUMNS` and requires it to surface, so the scan is shown to see the general defect
+    rather than only this one.
+  - Read-only; **not a build gate** (it reads the DB), same reasoning as `check:counts`.
 - **`audit:trailhead-agreement`** asks whether a route's two copies of its own trailhead agree.
   Every route stores it **twice** — a `waypoints[]` entry of `type:"Trailhead"` with a name and
   coordinate, and `approach_logistics.trailhead`/`trailheadLat`/`trailheadLng` — written by

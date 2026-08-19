@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-08-14",
+  "generatedAt": "2026-08-19",
   "tables": {
     "account_links": [
       "id",
@@ -117,6 +117,18 @@
       "id",
       "requester",
       "responded_at",
+      "status"
+    ],
+    "content_reports": [
+      "contribution_id",
+      "created_at",
+      "detail",
+      "id",
+      "reason",
+      "reporter",
+      "reviewed_at",
+      "reviewed_by",
+      "route_id",
       "status"
     ],
     "contributions": [
