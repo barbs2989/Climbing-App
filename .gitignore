@@ -31,3 +31,8 @@ supabase/.temp/
 
 # local Claude Code permissions — personal, not shared across clones
 .claude/settings.json
+
+# Interrupted-run marker written by scripts/oneoff/inject-glued-name-cases.mjs.
+# Its presence means a harness was killed mid-injection; the harness restores from git on
+# the next start. It must never be committed.
+scripts/oneoff/.inject-glued-name-INPROGRESS
