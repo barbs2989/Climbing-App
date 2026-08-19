@@ -139,7 +139,7 @@ try {
     rack: ["Cams .3-3", "Nuts 1 set"],
     pitchDetail: [{ pitch: "P1", grade: "5.9", lengthM: 30, notes: "QA probe pitch one." },
                   { pitch: "P2", grade: "5.10a", notes: "QA probe pitch two." }],
-    areaName: area.name, source: "My own ascent", sourceNote: null, climbed: true, photoCount: 0,
+    areaName: area.name, climbed: true, photoCount: 0,
   };
   const ins = await rest(`contributions?select=*`, { method: "POST",
     body: JSON.stringify({ kind: "new_route", area_id: area.id, route_id: null, field: null, value: proposal }),
