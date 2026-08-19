@@ -1915,6 +1915,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+- **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
+  place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
+  and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
+  **0 by construction**, and that is the entry worth reading.
+  - `orderWaypoints` sorts by `distMi` **only if every pin has a finite one**, else it returns the
+    list untouched. So a route missing a single distance renders in **stored order however wrong**,
+    and the audit compared that order against itself and found no difference. **482 of 1,012 WA
+    routes are orderable; 530 are not** — the "0" covered 48% of the catalog. The verdict was true
+    and its scope unstated; it now prints the denominator with it.
+  - **64 of the unsortable routes list an approach marker AFTER the summit** — a junction, water,
+    a campsite or a climbing area below the summit in a list read top to bottom. Five routes on
+    Amphitheater Mountain are identical: `Trailhead, Summit, Topout, Junction, Climbing area`.
+  - **A summit that is not last is NOT automatically wrong**, and both exclusions are measured:
+    a **descent** route legitimately starts at the top (`wa_forbidden_peak_east_ledges` is
+    Forbidden's standard way down, so summit-first is the correct reading order — judged on what
+    the pins AFTER the summit are called, since a descent line is rarely named one), and a **loop**
+    legitimately ends back at the trailhead.
+  - **Reported, never reordered.** The information that would justify a reordering is `distMi`,
+    which is exactly what these routes lack — most carry none at all. Reordering without it
+    replaces an order nobody chose with an order the author chose. The real fix is per-route
+    research to populate the distances.
+  - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
+    columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
+    denominator is before believing it.**
 - **`audit:approach-scope`** finds routes whose `approach` keeps going past the base of the climb.
   Its summary line **used to give advice that would have made things worse**, and that is the part
   worth remembering: it said 254 findings "have NO pitch table, so that text has nowhere else to
