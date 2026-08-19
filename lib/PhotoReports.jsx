@@ -1,7 +1,7 @@
-// The reviewer's queue for reported photos — the consume half of 0153.
+// The reviewer's queue for reported photos — the consume half of 0155.
 //
 // It exists because the report and the power to act on it were built in the wrong order: 0152
-// gave admins the ability to take a photo down, 0153 gave climbers the ability to report one,
+// gave admins the ability to take a photo down, 0155 gave climbers the ability to report one,
 // and without this screen a reviewer would have had to notice the report by querying the
 // database. A report nobody sees is the same as no report.
 //
