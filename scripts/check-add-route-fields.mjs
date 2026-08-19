@@ -190,6 +190,41 @@ const renderedNotDeclared = [...gated].filter((k) => !declared.has(k));
 if (renderedNotDeclared.length) fail(`an input is gated on ${renderedNotDeclared.join(", ")}, which no discipline declares — it can never render`);
 else ok("no input is gated on a field no discipline declares");
 
+/* 2b. NO FIELD MAY RENDER TWICE.
+   ---------------------------------------------------------------------------
+   #953 moved six inputs to the sections they belong under and left one behind: the whole
+   2,168-character "Pitch by pitch" builder rendered under BOTH "4 · The climb" and
+   "5 · Gear to bring" — byte-identical, twice on one form. Every gate above stayed green,
+   because each asks whether a field is declared, gated, storable and ordered. None asked HOW
+   MANY TIMES it renders.
+
+   Nothing else could see it either: check:dead-props reads props, check:refs reads bindings,
+   and duplicated JSX is valid and renders correctly — just twice. It was found by reading the
+   form's structure; this is that reading made repeatable.
+
+   NO DECLARED MAP, deliberately. A field->heading table would be bookkeeping that rots, and
+   every legitimate move would have to rewrite it. Counting render sites needs nothing
+   declared: one input per field is true by construction, whatever the layout becomes.
+
+   The completeness meter is already cut out of `arInputs` above, so every sf() counted here
+   is a render site rather than a readiness test. */
+const renderSites = [...arInputs.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+const siteCount = new Map();
+for (const f of renderSites) siteCount.set(f, (siteCount.get(f) || 0) + 1);
+/* A field legitimately appears twice when its GROUP is gated on the union of its own fields —
+   `{(sf("fa")||sf("crux"))?<div><div style={grp}>…` — so the gate and the input both count.
+   That is at most one extra, and only for a field named in such a union. A third occurrence,
+   or a second for a field no union mentions, is a duplicate render. */
+const unions = [...arInputs.matchAll(/\((?:\s*sf\("[A-Za-z0-9_]+"\)\s*\|\|)+\s*sf\("[A-Za-z0-9_]+"\)\s*\)/g)].map((m) => m[0]);
+const inUnion = new Set();
+for (const u of unions) for (const m of u.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)) inUnion.add(m[1]);
+const dupRenders = [...siteCount.entries()].filter(([f, n]) => n > (inUnion.has(f) ? 2 : 1));
+if (dupRenders.length) {
+  fail(`these fields render MORE THAN ONCE: ${dupRenders.map(([f, n]) => `${f} (${n} sites)`).join(", ")} — a climber sees ` +
+    `the same input twice, under two headings. Delete the copy in the wrong section and keep one. Duplicated JSX is ` +
+    `valid and renders correctly, which is why no other gate catches it.`);
+} else ok(`no field renders twice (${siteCount.size} fields, ${renderSites.length} sites, ${inUnion.size} legitimately in a group union)`);
+
 // 3. the ordering invariant this audit existed to fix
 const counts = Object.fromEntries(Object.entries(FIELDS).map(([d, v]) => [d, v.length]));
 const alpine = counts.alpine || 0;
