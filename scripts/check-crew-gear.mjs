@@ -81,6 +81,33 @@ const items = g => ((g && g.groups) || []).flatMap(x => x[1]);
   check("no route at all yields nothing", crewGearFor(null, "trad") === null);
 }
 
+// ── 4b. `rack` is read, not ignored ─────────────────────────────
+// routeRackFor used to stop at proNeeds, so a route whose rack lived in the `rack` column fell
+// through to the generic per-discipline table and was shown a stock list while its own rack sat
+// in the row — the descent_text shape (populated, rendered nowhere). Found on wa_west_face, and
+// measured as exactly ONE route in the WA alpine scope at the time; `rack` is populated on 419
+// WA routes overall, so "populated but unreadable" would keep recurring as enrichment fills it.
+{
+  const WF = { rack: ["Cams, single set 0.4-3\"", "Nuts, small-to-mid set", "8 alpine quickdraws", "Double 60m x 9mm ropes"] };
+  const r = routeRackFor(WF);
+  check("a rack stored in `rack` is readable at all", Array.isArray(r) && r.length === 4, JSON.stringify(r));
+  check("...returned verbatim, not paraphrased", !!r && r[0] === WF.rack[0] && r[3] === WF.rack[3]);
+  const g = crewGearFor(WF, "alpine");
+  check("...and the crew box calls it the route's OWN rack", !!g && labels(g).includes("On the rack"), labels(g).join(" | "));
+  check("...never the stock list", !!g && !labels(g).some(l => /typical/i.test(l)), labels(g).join(" | "));
+  // Precedence UNCHANGED — this may only turn a generic fallback into a real rack, never the reverse.
+  check("detailedRack still outranks rack",
+    JSON.stringify(routeRackFor({ detailedRack: "Single rack to #3.", rack: ["MUST NOT APPEAR"] })) === JSON.stringify(["Single rack to #3."]));
+  check("proNeeds still outranks rack",
+    JSON.stringify(routeRackFor({ proNeeds: "Rack to 4 inches", rack: ["MUST NOT APPEAR"] })) === JSON.stringify(["Rack to 4 inches"]));
+  check("an accepted correction still outranks all of them",
+    (routeRackFor({ _contribFields: ["rack"], gearTiers: { required: ["Corrected"] }, detailedRack: "old", rack: ["older"] }) || [])[0] === "Corrected");
+  check("an empty rack array is not a rack", routeRackFor({ rack: [] }) === null);
+  check("a blank string rack is not a rack", routeRackFor({ rack: "   " }) === null);
+  check("a string rack is wrapped, not spread into characters",
+    JSON.stringify(routeRackFor({ rack: "Light alpine rack" })) === JSON.stringify(["Light alpine rack"]));
+}
+
 // ── 5. a climber's correction still out-votes enrichment ─────────────────────
 // crewGearFor returns gearTiers wholesale, so the corrected rack reaches the crew card the
 // same way it reaches the RACK box. Pinned because the crew card is a THIRD reader of the
