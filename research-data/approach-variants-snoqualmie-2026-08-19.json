@@ -1,0 +1,1033 @@
+{
+ "_README": [
+  "Approach variants — Washington Snoqualmie Pass / Alpine Lakes, 2026-08-19. 39 routes, 42 variants, every one carrying a baseFinding.",
+  "",
+  "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. Five of these ids carry",
+  "no peak name at all — wa_south_face_7 and wa_east_ridge_7 are RED MOUNTAIN (Snoqualmie), wa_east_ridge_6 is MOUNT THOMSON,",
+  "wa_southwest_face and wa_east_face_variation are THE TOOTH, wa_south_gully_south_spur and wa_blood_sport are GUYE PEAK, and",
+  "wa_new_york_gully is SNOQUALMIE MOUNTAIN. A name-shaped id is not evidence of which peak you are on.",
+  "",
+  "Scope was the 24 named peaks plus Huckleberry Mountain, which sits in the same PCT corridor between Alaska Mountain and",
+  "Chikamin and is reached by the same walk. Areas queried: wa_alta_mountain, wa_bears_breast_mountain, wa_big_snow_mountain,",
+  "wa_bryant_peak, wa_cathedral_rock, wa_chair_peak, wa_chikamin_peak, wa_chimney_rock, wa_denny_mountain, wa_guye_peak,",
+  "wa_hibox_mountain, wa_huckleberry_mountain, wa_kaleetan_peak, wa_kendall_peak, wa_lemah_mountain, wa_lemah_two,",
+  "wa_mount_daniel, wa_mount_hinman, wa_mount_thomson, wa_overcoat_peak, wa_red_mountain_snoqualmie, wa_snoqualmie_mountain,",
+  "wa_summit_chief_mountain, wa_the_tooth, wa_three_queens. 68 routes live in them; 17 already carried approach_variants and",
+  "were not touched. Of the 51 with an EMPTY approach_variants, 39 are written here and 12 were deliberately skipped — see _SKIPPED.",
+  "",
+  "Contamination rejected during research, recorded so it is not re-introduced:",
+  "  - wa_chimney_rock_west_face is an IDAHO route (Selkirk Crest) filed on Washington's Chimney Rock and already flagged for",
+  "    removal. It was NOT enriched. Washington's Chimney Rock carries only East Face and East Face Direct, and both already",
+  "    have approach_variants.",
+  "  - 'East Ridge' on Red Mountain names THREE different things: the short bolted pitch above Red Pass that this DB row",
+  "    describes, a SummitPost page describing the whole saddle-to-summit traverse over two false summits, and a second",
+  "    SummitPost page describing a ridge traverse from Point 5720 near the Kendall Katwalk whose own author advises against",
+  "    repeating it. Each was matched by pitch count and by the ground it covers, not by name.",
+  "  - Mount Thomson is spelled Thompson on roughly half the published sources, and 'West Ridge' is a SummitPost page title",
+  "    shared with several unrelated peaks. Matched by the Bumblebee Pass approach and the 1940 Beckey first ascent.",
+  "  - 'Northeast Buttress' exists on Chair Peak and on Cathedral Rock, two peaks 40 km apart in this same batch, and the",
+  "    Cathedral Rock buttress is separately confused with its own 2003 variation. See _DEFECTS.",
+  "  - 'Southeast Gully' on Guye Peak and 'South Gully/South Spur' on Guye Peak are different lines on different aspects, and",
+  "    the South Gully additionally has TWO Mountain Project pages for its summer and winter forms with different grades and",
+  "    different trailheads. Both forms are written here as separate variants rather than merged.",
+  "",
+  "No time, distance or gain figure is averaged. Where two sources disagreed, the field is omitted. Where a base finding rests",
+  "on the DB row's own already-sourced enrichment rather than on a page read in this pass, _confidence says so in those words",
+  "and _sources is left EMPTY rather than filled with a URL that was not read."
+ ],
+ "wa_chair_peak_voie_de_chaise": {
+  "area": "wa_chair_peak",
+  "approach_variants": [
+   {
+    "name": "Alpental and the Source Lake talus to the Chair snow patch, then the east face scree",
+    "season": "Summer into autumn, once the snow patch below the face has shrunk and the rock is dry",
+    "notes": "From the Alpental lot at about 3,100 ft, take the summer trail toward Source Lake. Where the trail meets the talus field, do NOT drop down — dropping is the turn for The Tooth. Instead hold your height and gain 100 to 200 horizontal feet until you can pass small cliff bands on your right. Above them the tread improves and runs just below a waterfall.\n\nLeave the trail at a longer talus field, usually marked by a large cairn, and climb up and left on good paths between the talus to the permanent snow patch under the east face. Climb the snow patch to its top, then take the last 200 to 300 ft of loose scree, keeping hard against the base of the peak where the scree lies at a gentler angle.\n\nReckon two to three hours from the car to the foot of the route.",
+    "baseFinding": "THE LINE OF BOLTS IS THE TEST, AND IT IS THE ONLY ONE YOU NEED IN CLOUD. This is a fully bolted alpine sport line. Every other route that starts on this side of Chair Peak is climbed on gear. If you cannot see a bolt from the ground, you are not at the start of this route, whatever the terrain looks like.\n\nWHERE ALONG THE BASE: at the top of the scree there is a band of third and fourth class rock that guards the RIGHT-HAND side of Chair Peak. The route starts just past the LEFT edge of that band. So walk the base leftward until the guarding band ends, and the first bolted line past it is this one.\n\nWHAT PITCH ONE FEELS LIKE, as confirmation: a few tricky moves straight off the ground at about 5.7, and then it eases into sustained, clean 5.6 slab for roughly 120 ft. Hard slab on clean rock with bolts is right. Broken blocky ground, or a chimney, is not.\n\nHOW TO TELL IT FROM THE EAST FACE ROUTE, which is the mistake worth avoiding: the first-ascent party deliberately kept this line clear of the East Face, and the East Face both starts and finishes WELL TO THE RIGHT of it. So if you are at a gear start on broken rock, you have not walked far enough left along the base.\n\nAND THE DESCENT GIVES YOU A BACK-BEARING: the ordinary Chair Peak gully descent lands you only about a hundred feet uphill of this route's base. A party coming down that gully that walks a hundred feet downhill is standing at the start.",
+    "hazards": [
+     "The final 200-300 ft of approach scree is loose and sits directly under the face",
+     "A newer alpine line: loose pebbles and small rock still come off the upper pitches, and the last two pitches were left very dirty after cleaning",
+     "Several rappels leave under 5 ft of rope to spare on a 60m — knots in the ends are not optional",
+     "The eighth pitch must be belayed back down rather than rappelled, because rappelling it showers rock on anyone below",
+     "Parties stacked on the face: this and the East Face share the same descent gully"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+   "https://www.mountainproject.com/route/113233154/east-face"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_chair_peak_northwest_ridge": {
+  "area": "wa_chair_peak",
+  "approach_variants": [
+   {
+    "name": "East face approach to Thumbtack Rock, then the grassy gully over the divide",
+    "season": "Summer and autumn, once the ridge is free of snow",
+    "notes": "Follow the Northeast Buttress and east face approach from the Alpental lot: Snow Lake trail, the Source Lake fork, then the climbers' path and snow up the broad basin running southwest toward Chair's east face. About two hours in, that basin brings you to Thumbtack Rock, the small pinnacle every route on this side uses as its landmark.\n\nAt Thumbtack Rock the northwest ridge parts company with everything else. Turn RIGHT and climb a grassy gully that carries you over the ridge and around onto the northwest side, then head for the ridge itself.\n\nAbout 4.8 km and roughly 3,100 ft of gain from the car to the top.",
+    "distMi": 3.0,
+    "gainFt": 3138,
+    "baseFinding": "THUMBTACK ROCK IS THE DECISION POINT, AND THE TURN IS RIGHT AND UP A GRASSY GULLY. Everything else on this side of the mountain continues straight on up the basin to the foot of the east face. This route is the one that leaves at the Thumbtack and crosses the divide. A published fix for the Thumbtack is 10T 0616013E 5257415N. If you are still walking up the basin under a big east face, you have gone past the turn.\n\nTHE START ITSELF IS A SADDLE WITH TREES ON IT, and the first pitch goes up the gully to the LEFT of that saddle. Trees on a saddle, gully immediately left — that pairing is the arrival test, and both halves are visible from below in poor light.\n\nCONFIRMATION ONE PITCH UP, which is the strongest signal on the route: pitch one runs about 200 ft to the crest and you belay off trees on the SOUTH side of the ridge. From those trees you scramble down and left to a chimney-shaped feature with a CHOCKSTONE jammed at its top. You cannot see that chockstone from the trees; it becomes obvious as soon as you scramble across. A chockstone-capped chimney at the end of a short downward scramble means you are on the northwest ridge and nothing else.\n\nNEGATIVE TESTS: if your first pitch is bolted, you are on Voie de Chaise on the east face. If you are looking up at a big buttress from the head of the basin, you never made the Thumbtack turn.",
+    "hazards": [
+     "Poor, broken rock and runout ridge climbing — the route's own reputation is that the setting beats the climbing",
+     "A hard-to-protect move on a small vertical face of poor rock above the chockstone",
+     "Exposure on both sides of a narrow crest",
+     "A descent that goes SOUTH over false summits to find a rappel tree in the SECOND gully east — the first gully you meet is not it",
+     "Fixed rappel gear on the descent has been found set for snow conditions and out of reach on dry rock"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/117683574/northwest-ridge",
+   "https://www.summitpost.org/chair-peak/150834"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_chair_peak_west_ridge": {
+  "area": "wa_chair_peak",
+  "approach_variants": [
+   {
+    "name": "Alpental and the Northeast Buttress approach, then round onto the slabs on the west side",
+    "season": "Spring into mid-summer while the slabs still hold snow that can be crossed; a light axe and light crampons are the usual kit until midsummer, after which it goes on dry rock",
+    "notes": "Use the standard Chair Peak trailhead at Alpental, the same start the Northeast Buttress uses. From the basin, traverse slabby ground round onto the west side of the peak. Early in the season that slab traverse holds snow and can be cut by glide cracks, which is the part of this approach worth respecting rather than the walking.\n\nRoughly two to two and a half hours from the parking area to the foot of the route.",
+    "gainFt": 3138,
+    "baseFinding": "YOU ARE LOOKING FOR THE BOTTOM OF A NARROW COULOIR, NOT FOR THE CREST. The route does not start on the ridge. It starts up a narrow couloir about 220 ft long that delivers you to the LOW POINT of the west ridge, and only then does the climbing follow the crest.\n\nTHE TOWER IS THE MARKER. That low point sits immediately EAST of a distinct tower on the ridge. So find the tower, look east of it for the lowest saddle in the skyline, and the couloir is the direct line beneath that saddle. Tower on your left as you look up the couloir, low point of the ridge at its top: that is the start.\n\nWHAT THE FIRST TWO PITCHES SHOULD FEEL LIKE: two pitches of 5.7 in the gully to reach the top of it. If the couloir tops out on ground that is obviously not the lowest gap on the ridge, you are in the wrong gully and you will meet the tower rather than the ridge above it.\n\nWHICH SIDE OF THE MOUNTAIN, since this is the commonest gross error here: the standard descent for Chair Peak runs down a couloir on the SOUTH side into a narrow rappel gully. That is a different feature and it is a way down, not this route's way up. If you are on the side you approached from and staring at the east face, you have not gone round far enough.",
+    "hazards": [
+     "Early-season snow on the slab traverse, with glide cracks opening in it",
+     "Loose rock along the ridge crest",
+     "Sections of the crest with little available protection",
+     "The descent couloir on the south side funnels into the same narrow rappel gully every other Chair Peak route uses, so expect traffic above you"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/chair-peak/150834",
+   "https://www.mountainproject.com/area/118611264/summer-fall-rock"
+  ],
+  "_confidence": "row-derived: the DB row's own Pro Guiding-sourced description is the only published account of this line found; the couloir/tower/low-point sequence comes from it and was not independently corroborated"
+ },
+ "wa_the_tooth_indentured_servant": {
+  "area": "wa_the_tooth",
+  "approach_variants": [
+   {
+    "name": "Alpental to Pineapple Pass, then west along the base past The Tooth Fairy",
+    "season": "Roughly June to September on dry rock; the approach gully to Pineapple Pass holds snow into early summer and an axe is worth carrying then",
+    "notes": "Take the Snow Lake trail from Alpental, fork toward Source Lake, cross the talus and climb the steep gully to Pineapple Pass — the standard approach every route on this side of The Tooth shares.\n\nFrom the pass, keep going LEFT (west), past the foot of The Tooth Fairy, and continue along the base of the cliff. The route is a bolted line, so the walk is over ground the other routes here have already made obvious.\n\nAbout 4.8 km and 2,700 ft to the summit.",
+    "distMi": 3.0,
+    "gainFt": 2700,
+    "baseFinding": "COUNT OFF FROM THE TOOTH FAIRY AND FIND THE GULLY. This route starts roughly 500 ft climbers' LEFT of The Tooth Fairy, and the feature that fixes it is a LARGE GULLY THAT SPLITS THE CLIFF. The route takes the LEFT-HAND SIDE of that gully. So: Tooth Fairy behind you on the right, big cleaving gully in front of you, start on its left wall.\n\nTHE HARDWARE TEST, which works in any visibility: this is an all-bolt line. Quickdraws and nothing else. If you are pulling out cams to protect the first moves, you are on one of the peak's trad routes, not on this one.\n\nTHE FIRST-PITCH GRADE TEST: pitch one goes at 5.9 to 5.10a, with an easier 5.8 alternative start bolted to the RIGHT. If the first pitch is going at 5.4 you are round on the South Face; if it feels like broken fourth-class scrambling you have not left Pineapple Pass.\n\nAND A CONFIRMATION HIGHER UP FOR A PARTY THAT WANTS ONE: the third pitch CROSSES THE GULLY on a large chockstone, and the fourth pitch takes a V-slot at 5.10b. Crossing that gully mid-route on a chockstone is the signature of this line.\n\nFINALLY, WHERE IT PUTS YOU: the last bolted anchor is not the summit. One more bolt above it leads onto the North Ridge and about 100 m of unprotected scrambling to the true top. A route whose bolts run out at the summit is not this one.",
+    "hazards": [
+     "About 100 m of unprotected third and fourth class scrambling on the North Ridge above the last bolt to reach the true summit",
+     "An all-bolt sport line on an alpine peak, with alpine weather and no quick escape",
+     "Parties on the South Face and Tooth Fairy above and beside you sharing one descent",
+     "The approach gully to Pineapple Pass holds snow into early summer"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/124697175/indentured-servant",
+   "https://www.mountainproject.com/route/106378880/south-face"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_southwest_face": {
+  "area": "wa_the_tooth",
+  "approach_variants": [
+   {
+    "name": "Standard Tooth approach, but break off north of the Pineapple Pass gully",
+    "season": "Roughly June to September, once the approach snow has gone; heavy weekend traffic in that window",
+    "notes": "From the Alpental lot at about 3,100 ft, follow the Snow Lake trail about a mile and a half, fork toward Source Lake, cross the talus and start up toward Pineapple Pass on the standard line.\n\nThe difference is at the top. Do NOT finish the gully to the pass. Break off to the NORTH of it and climb the open books on the face above instead. This is the route parties take when the South Face is backed up, and it is deliberately the path of least resistance between The Tooth Fairy and the South Face.\n\nAbout 4.8 km and 2,500 ft from the car.",
+    "distMi": 3.0,
+    "gainFt": 2500,
+    "baseFinding": "THE ARRIVAL TEST IS A THING YOU DO NOT DO: DO NOT GO UP TO PINEAPPLE PASS. Hike the stable talus toward the pass and then leave it, heading NORTH of the gully that finishes at the pass. If you have stood in the notch at Pineapple Pass, you have overshot the start of this route and you are at the start of the South Face.\n\nWHAT YOU ARE LOOKING FOR ON THE ROCK: OPEN BOOKS. Pitches one and two climb open-book corners that begin north of the Pineapple Pass gully, and they lead to a LEFT-FACING SLAB. Corner, corner, then slab facing left. That sequence is the confirmation, and none of it requires seeing the summit.\n\nAND A THIRD-PITCH CHECK IF YOU ARE STILL UNSURE: pitch three finds THREE CRACKS running up to an overhang, and the route face-climbs to the LEFT of those three cracks. Three cracks under a roof, and you go left of them. If you are climbing the cracks themselves you have drifted right.\n\nHOW IT DIFFERS FROM ITS TWO NEIGHBOURS: The Tooth Fairy is further left again and goes at 5.9; the South Face starts from the notch at the top of the pass at 5.4. This route sits between them, both physically and in difficulty, at 5.5. If your first pitch feels like 5.9, you have gone too far left.\n\nA WARNING THAT BELONGS WITH THE FINDING: this face is loose, and it sits above the popular routes. Being on the correct start also means being above other people.",
+    "hazards": [
+     "Loose blocks on the open-book corner pitches",
+     "The route sits directly above the busy South Face — rockfall onto parties below is the documented concern here, not just a generic one",
+     "Rockfall risk to and from routes sharing the approach gully and the summit area",
+     "Descent route-finding: the broken west and north side offers several plausible gullies, and the loose east-side gully should not be rappelled"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/120386375/southwest-face",
+   "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+   "https://www.summitpost.org/the-tooth/150784"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_east_face_variation": {
+  "area": "wa_the_tooth",
+  "approach_variants": [
+   {
+    "name": "Alpental into the basin below the east face, avoiding the summer gully in winter",
+    "season": "Roughly December to April, and only when the upper mixed ground has built up enough snow and ice to climb and protect — first climbed in winter 1995 and genuinely condition-dependent",
+    "notes": "From the Alpental / Snow Lake trailhead at about 3,100 ft, hike or skin toward Source Lake, then turn south into the basin beneath The Tooth's east face.\n\nIn winter, do not use the summer approach path and gully that run directly below the east face. That line is avalanche terrain and the NWAC Snoqualmie Pass forecast is the pre-trip read, not an optional one. Take the broader basin instead and come at the face from open ground.\n\nAbout 3.2 km and 2,500 ft to the top.",
+    "distMi": 2.0,
+    "gainFt": 2500,
+    "baseFinding": "THIS ROUTE STARTS ON THE SUMMER EAST FACE, SO FINDING THE EAST FACE IS THE WHOLE PROBLEM, AND THE ANSWER IS TO GO PAST THE SOUTH FACE START. From the notch at the top of Pineapple Pass, where the South Face begins, walk RIGHT (north) along the base, underneath the east face. That is the published direction and it is a walk, not a climb.\n\nWHAT THE FIRST TWO PITCHES SHOULD FEEL LIKE: fourth class to about 5.5, on sub-par rock with tricky protection. Easy ground that is hard to protect is right for this face. If pitch one is clean and well protected you are somewhere else on the mountain.\n\nTHE MOVE THAT SEPARATES THIS FROM THE SUMMER ROUTE, and the point at which you will know for certain: after roughly two pitches on the summer line, this variation TRAVERSES LEFT about 30 ft, with little protection on the traverse, into a corner sitting below a steep rock barrier. That corner is the crux — 5.8-ish with one aid move, or M5 when it is iced. A leftward traverse into a corner under a barrier means you are on the variation; carrying straight on up means you are on the summer East Face.\n\nAND THE FINISH CONFIRMS IT: the last pitch is steep SNOW, belayed off small trees, trending slightly right to finish near the summit. A rock finish is the summer route.\n\nHONEST LIMIT: sources describe this line in these blocks rather than pitch by pitch. If the ice is not there, there is no route to find, and that is a real answer rather than a route-finding failure.",
+    "hazards": [
+     "Avalanche danger in the Source Lake basin and specifically in the summer gully below the east face — take the broad basin in winter",
+     "PG13: sustained runout climbing on marginal protection with real injury potential",
+     "Rockfall from above onto the east face",
+     "Steep unconsolidated snow on the final pitch, prone to sloughing",
+     "The descent is the South Face rappel line, shared with other parties, on a short winter day"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119628416/east-face",
+   "https://www.summitpost.org/the-tooth/150784"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_south_gully_south_spur": {
+  "area": "wa_guye_peak",
+  "approach_variants": [
+   {
+    "name": "Winter and spring: Commonwealth Basin from Summit West, straight at the gully",
+    "season": "Roughly December to April, once the gully has filled and consolidated — that is also exactly when the avalanche problem is live, so the NWAC Snoqualmie Pass forecast is a mandatory read",
+    "notes": "The fast winter line does not start at Alpental. Park at Summit West and walk the short distance to the start of the winter Commonwealth ski and snowshoe trail, which is usually well compacted. Cross the log and head directly at the route.\n\nWhere the ground steepens, trend far LEFT until you come up against huge cliffs, then go about 100 ft further left again and climb to the start of the gully. The whole approach is about a mile and takes roughly an hour on firm snow.\n\nThe adjacent Summit at Snoqualmie ski area does avalanche control on nearby slopes in season; check with the resort before a winter attempt.",
+    "baseFinding": "THE CLIFFS ARE THE MARKER, AND THE INSTRUCTION IS TO OVERSHOOT THEM BY 100 FT. Climbing the steepening slope you trend far left until you are stopped by huge cliffs. Those cliffs are not a wrong turn — they are the landmark. Go 100 ft further LEFT past them and then up, and you are at the mouth of the South Gully. A published fix for the start is roughly 47.4395, -121.4070.\n\nWHAT CONFIRMS IT ONCE YOU ARE IN: the gully begins at the cliffs that form it just above treeline, and after roughly 300 to 400 ft — about three 60 m pitches — you reach the FIRST CHOCKSTONE, sitting at a constriction in the canyon. That chockstone is the crux except in deep snow, and it can be passed either left or right. A SECOND chockstone follows about 50 ft beyond. First chockstone at a constriction, second one 50 ft above: no other gully on this side gives you that pair.\n\nTHE EXIT TEST FOR LATER: continue about 30 m past an ice or rock step of no more than 8 ft until you can see the end of the gully. It is possible to turn LEFT before the gully ends — look for TWO LARGE TREES and follow the ramp up climbers' left around the cliff to the South Spur.\n\nAND ONE DESCENT WARNING THAT PARTIES GET WRONG: do not rappel from the south summit. Traverse the ridge to the MIDDLE summit first, until you are looking directly at the north summit, and rappel from the tree there. Rappelling early has tempted more than one party.",
+    "hazards": [
+     "Avalanche: a confined south-facing gully below cliffs, adjacent to controlled ski terrain",
+     "Ski-area avalanche blasting on neighbouring slopes in season",
+     "Highly fractured, crumbly rhyolite with a documented fatal history from rockfall and breaking holds",
+     "Poor, deep slush and hidden moats at snow-to-rock transitions on the South Spur",
+     "Large overhanging cornices along the summit ridge and above the north summit"
+    ]
+   },
+   {
+    "name": "Summer and autumn: the south side of the peak from Alpental, as a dry scramble",
+    "season": "Roughly June to October as an easy-fifth-class rock scramble — a completely different and lower-consequence outing from the winter climb",
+    "notes": "From I-90 exit 52, follow Alpental Road up to the ski area. Guye Peak's rock rises directly above the parking area, so there is essentially no approach walk to the south-side routes. Respect the posted no-parking signs on the private sections of road; access on foot through the Alpental Community Club's private ground has been closed to climbers, so plan a line from public ground.\n\nOnce below the peak, find the obvious gully on the south side and scramble it.\n\nThe summer version of this line is not well loved: discontinuous rock, vegetation, deep pine needles and general gully looseness are what a dry ascent actually delivers.",
+    "gainFt": 2150,
+    "baseFinding": "THE GULLY IS THE OBVIOUS ONE ON THE SOUTH SIDE, AND THE TEST IS THAT IT FORCES YOU OUT LEFT. Walk round the south side until you are under the single obvious gully cleaving it. That is the whole identification at ground level; there is no second candidate on this aspect.\n\nTHE CONFIRMATION IS THE CHOCKSTONE, AND IT COMES EARLY. Scramble the gully until one or two chockstones jammed in it stop you and force you climbers' LEFT out onto the adjacent face for a short section before you regain the gully and follow the South Spur. If you can walk the gully to its top without ever being pushed onto the face, you are not in the right one.\n\nWHAT THE ROCK SHOULD FEEL LIKE: easy fifth class at most, protected by a small rack and slung trees, with parties sometimes rigging a hand line over the exposed ground above the chockstones. Anything sustained or steep is not this route.\n\nAND THE NEGATIVE TEST AGAINST ITS NEIGHBOURS: the big WEST face and the South Rib are separate features on other aspects. If you are looking at a large clean wall rather than into a vegetated cleft, you are round on the west side.",
+    "hazards": [
+     "Highly fractured, crumbly rhyolite; climber-triggered rockfall is very likely and the peak has a documented history of fatalities from rockfall and breaking holds",
+     "Rockfall multiplies with parties stacked in the gully — helmet on from the talus upward",
+     "Wet or mossy chockstone sections in shoulder-season conditions",
+     "Discontinuous rock, deep pine needles and vegetation make the dry version loose and unpleasant rather than technical",
+     "Access: private property on the walking approach, closed to climbers"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/118581881/south-gullysouth-spur",
+   "https://www.mountainproject.com/area/107316329/guye-peak",
+   "https://www.summitpost.org/guye-peak/150942"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_guye_peak_southeast_gully": {
+  "area": "wa_guye_peak",
+  "approach_variants": [
+   {
+    "name": "Old Commonwealth Basin trail to a bearing of 290 degrees, then straight up",
+    "season": "Winter and early spring, roughly January to April, when the gully is filled and consolidated. The ideal is a cold night followed by a clear cold morning; by late spring the sunlit half turns to slush and the route becomes a wet-avalanche problem",
+    "notes": "Start from the Pacific Crest Trail North / Snoqualmie Pass North trailhead at about 47.4284, -121.4155, just off I-90 exit 52. Follow the old Commonwealth Basin trail north for roughly 1.4 miles, or the bootpack that stands in for it in winter.\n\nWhen Guye lies directly west or northwest of you, leave the trail and go straight up the slope. The walking is short by Cascade standards; the difficulty is judging the snow on the slope between the trail and the gully, which is itself avalanche terrain on a loaded day.\n\nAbout 2.25 km and 2,100 ft of gain.",
+    "distMi": 1.4,
+    "gainFt": 2100,
+    "baseFinding": "TAKE A BEARING, BECAUSE THIS ONE CAN BE DONE BLIND. Walk the old Commonwealth Basin trail about 1.4 miles until the summit of Guye bears roughly 290 degrees — west-northwest — from you, then turn and go straight uphill. A published fix for the start of the route is about 47.4411, -121.4026. In cloud that pair of numbers settles it and nothing on the ground has to be seen.\n\nWHAT THE GROUND SHOULD DO, IN ORDER, ONCE YOU COMMIT: the route starts by going 45 degrees straight up. Only then does the gully proper develop, turning NORTHWEST for about 40 m and steepening as it turns. After that it runs directly at the summit, which stays visible for much of the climb on a clear day. If the ground you are on stays uniformly angled and never turns northwest, you are on the open slope beside the gully rather than in it.\n\nTHE ANGLE IS THE OTHER TEST: this is the steepest of Guye's gully lines. About 45 degrees for the first few hundred feet, then progressively steeper, reaching roughly 70 degrees near the top. A gully that stays moderate all the way is one of the peak's other lines.\n\nWHERE IT PUTS YOU: it finishes at the ridge between the TRUE and FALSE summits — not on a summit. If your line tops out on a summit block, it is not this one.\n\nAND A CONDITIONS TEST THAT IS PART OF THE FINDING HERE: roughly half the gully sits in shade and half in sun, which is what gives it solid snow under the surface. It also means the two halves can be in quite different condition on a warm day.",
+    "hazards": [
+     "Avalanche is the primary objective hazard — a confined gully below a summit ridge on a slope that loads readily",
+     "Sustained steep snow to about 70 degrees with essentially no protection; a fall in the upper section is unarrestable",
+     "Cornice formation at the exit onto the ridge between the true and false summits",
+     "Rapid sun-warming of the exposed half producing wet slides and rollerballs later in the day",
+     "Both descents — Cave Ridge west, Commonwealth east — cross avalanche terrain of their own, and the west bootpath is easily lost under snow"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/120238377/southeast-gully",
+   "https://www.summitpost.org/guye-peak/150942"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_blood_sport": {
+  "area": "wa_guye_peak",
+  "approach_variants": [
+   {
+    "name": "Alpental lot, boot path east along the base of the South Rib",
+    "season": "Roughly May to October. This south-facing crag low on the mountain dries early and stays dry late, but it bakes on a hot midsummer afternoon — mornings and shoulder seasons climb better",
+    "notes": "Park at the Alpental lot at the end of Alpental Road off I-90 exit 52. Take the boot path and old ski track up from the lot and traverse EAST along the base of Guye Peak's South Rib. The crag is passed on that traverse; it is roughly half a mile of walking and about 15 minutes, not an approach in any real sense.\n\nThis is a single 50 ft pitch that does not top out, so it is a crag visit rather than a mountain day.",
+    "baseFinding": "YOU CAN SEE THE CRAG FROM THE CAR PARK, AND THAT IS THE ANSWER IN BAD WEATHER. The cliff is visible from the west-most parking lots at the Summit West base area. Look at it from the road before you walk in, fix which lump of rock it is, and the walk becomes trivial.\n\nWHERE IT SITS RELATIVE TO THE PEAK: it is an isolated crag, separate from the rest of Guye, low down and near the base of the South Rib. If you are looking at the large WEST FACE, this cliff is just around the corner to the RIGHT of it and well below. So: west face on your left shoulder, corner, small isolated cliff low on the right.\n\nTHE MOVE OFF THE GROUND IS THE PROOF, AND IT IS UNMISTAKABLE. The pitch starts steeply off a LEFT-HAND SIDE-PULL, and the first piece is a #1 Camalot plugged into a POD, before you clip the first bolt. If there is no pod at head height taking a #1 and no bolt above it, you are at the wrong bit of rock.\n\nAND THE SHAPE OF THE WHOLE THING, as a final check: 50 ft, a rest ledge partway up, then a pumpy sequence moving left to a TWO-BOLT CHAIN ANCHOR. It does not top out. Any line here that continues into the mountain above is not this route.\n\nHONEST CAVEAT: this is a 2014 line with almost no recorded traffic, so the fixed gear is aging and seldom inspected.",
+    "hazards": [
+     "Rockfall from the South Rib and the loose slopes above the crag",
+     "Aging, seldom-inspected fixed hardware on a route with almost no recorded traffic",
+     "Poor rock quality typical of Guye Peak's fractured rhyolite even on a bolted line",
+     "South aspect low on the mountain bakes on hot afternoons"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/107316329/guye-peak",
+   "https://www.summitpost.org/guye-peak/150942"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_new_york_gully": {
+  "area": "wa_snoqualmie_mountain",
+  "approach_variants": [
+   {
+    "name": "Alpental groomer lot, the Phantom Slide, and the NW shoulder notch into Thunder Creek cirque",
+    "season": "Roughly December to March. A sustained cold snap usually gives the fattest ice; warm or dry winters leave it thin and force dry-tooling",
+    "notes": "Park at the groomer lot about 200 ft past the main Alpental day lot. Walk up the open south-facing hillside toward the Alpental waterfalls. At the foot of the falls, cut LEFT into the trees for roughly 100 ft and climb through two steep, usually snowed-up cliff bands. After about 300 ft of gain, move back RIGHT onto the Phantom Slide.\n\nThe Phantom Slide is a broad avalanche path that slides regularly, including on people on the upper apron. Check the NWAC forecast and time the crossing rather than lingering on it.\n\nClimb the slide to about 4,900 ft, then trend up and left through more open ground to a notch on the northwest shoulder near 5,200 ft. Reckon roughly one and a half to three hours car to base, and much of that depends on whether a skin track already exists — most of the approach is through thick trees.\n\nNo water on this approach in winter; melt snow.",
+    "distMi": 3.5,
+    "gainFt": 3100,
+    "baseFinding": "FROM THE NOTCH, DOWNCLIMB ABOUT 200 VERTICAL FEET AND TRAVERSE TO THE FIRST OBVIOUS GULLY. That is the published test and it is the one that works in cloud, because it is counted rather than seen: you are not identifying a gully by its shape from a distance, you are walking beneath the face from a fixed point and taking the first one you meet.\n\nWHY THAT MATTERS HERE MORE THAN ANYWHERE ELSE ON THIS PAGE: this face carries FIVE closely spaced ice and mixed lines — Pineapple Express, Blue Moon, New York Gully Direct, New York Gully and LA Express — and they are near enough together that racking up under the wrong one is the normal failure. Count from the notch, do not pick by appearance.\n\nTHE PITCH-ONE CONFIRMATION, AND IT IS A GOOD ONE: ascend roughly 200 ft up the gully and then take an OBVIOUS RAMP OUT TO THE LEFT, belaying from a quasi-cave. Gully, then a left-trending ramp, then a cave belay. If your first rope length does not offer a left ramp at about 200 ft, you are in a neighbouring line.\n\nTHE SECOND CONFIRMATION IS HIGHER AND UNAMBIGUOUS: the route runs up obvious weaknesses to a SMALL HEADWALL split by a 5.8 CRACK, historically aided and now freed. That crack is the route's signature. A line with no headwall crack is not New York Gully.\n\nAND A HONEST WARNING ABOUT THE APPROACH ITSELF: most of it is through thick timber and the published advice is to go with somebody who knows it or follow an existing skin track. Without a track, expect it to be slow and to be the part of the day where you lose time.",
+    "hazards": [
+     "The Phantom Slide is an active avalanche path and the approach crosses and climbs it",
+     "Five closely spaced lines on one face — racking up below the wrong one is the routine error",
+     "Loose, chossy rock on pitch two and through the box gully",
+     "Thin or absent ice most winters; be ready to dry-tool rather than swing",
+     "A cold, shaded northwest aspect with winter temperatures at the belays even on clear days",
+     "Alpental ski patrol conducts explosive avalanche control nearby",
+     "The descent finishes down the Southwest Slopes scramble, itself 3,100 ft of steep loose ground, or back down the Phantom Slide"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/107493225/new-york-gully",
+   "https://kurthicks.com/2012/02/18/snoqualmie-mountain-nw-face-topo/",
+   "https://cascadeclimbers.com/forum/topic/85202-updated-snoqualmie-mountain-nw-face-topo/"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_snoqualmie_mountain_standard_route": {
+  "area": "wa_snoqualmie_mountain",
+  "approach_variants": [
+   {
+    "name": "The unsigned boot path 50 ft below the Snow Lake trailhead sign",
+    "season": "Late July to September for a snow-free scramble; the upper gully commonly holds snow into July. Also climbed as a winter and spring snow route by parties competent to assess avalanche danger",
+    "notes": "Park in the Alpental lot at the end of Alpental Road; a Northwest Forest Pass is required at the kiosk.\n\nWalk toward the signed Snow Lake trailhead but do not take that trail. About 50 ft DOWNHILL (south) of the Snow Lake sign, an unsigned boot path and old roadbed drops into a band of slide alder. That is the shared start for both Guye Peak and Snoqualmie Mountain.\n\nThe path steepens at once and follows the Source Creek drainage through roots, talus and brush. At roughly a mile and 1,000 ft of gain a junction splits — the RIGHT fork goes to Guye Peak and Cave Ridge, and the Snoqualmie route continues left and straight. A third of a mile past that the path fords the creek by a 50 ft waterfall, the main water on route. A quarter mile beyond the crossing it breaks out of the trees onto the open west-facing slope below Cave Ridge and switchbacks up it for the final mile.\n\nAbout 3.8 miles round trip with 3,100 ft of gain, though sources differ on where the mileage is measured from.",
+    "gainFt": 3105,
+    "baseFinding": "THE APPROACH IS THE ROUTE HERE, SO THE FINDING IS ABOUT THREE JUNCTIONS RATHER THAN A CLIFF, AND EACH ONE HAS A PHYSICAL MARKER.\n\nFIRST, THE START: 50 ft DOWNHILL of the Snow Lake trailhead sign, into slide alder. It is an old roadbed, not a trail, and it is easy to walk straight past. If you are on wide, well-graded tread you are on the Snow Lake trail and you are on the wrong path from the first step.\n\nSECOND, THE FORK AT ABOUT A MILE AND 1,000 FT: right goes to Guye Peak and Cave Ridge, left and straight is Snoqualmie. Getting this wrong puts you on a different mountain, and it is the junction where parties most often go astray.\n\nTHIRD, THE WATERFALL: about a third of a mile past that fork the path fords the creek beside a roughly 50 ft waterfall. Crossing beside a waterfall is confirmation you are still on the Snoqualmie line, and it is the last reliable water.\n\nAND THE SUMMIT ITSELF HAS A TRAP WORTH KNOWING BEFORE YOU GET THERE: the trail-accessible summit is not the true one. A rugged pinnacle roughly 550 horizontal feet EAST was resurveyed in 2023 as about 3 ft higher, and reaching it needs an exposed fourth-class step. A party that walks to the top and stops has stopped 3 ft short, deliberately or not.",
+    "hazards": [
+     "A steep, loose, unmaintained climbers' path — easy to kick rock onto a party below",
+     "Snow lingering in the upper gully and switchbacks into July; an axe and the skill to use it may be needed",
+     "An exposed fourth-class step to reach the true east summit",
+     "Avalanche terrain on the approach slopes in winter and spring, with ski patrol control work nearby",
+     "The descent is looser and harder to control than the ascent; the gully funnels into trees and rock lower down, which matters if you glissade"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/111533537/snoqualmie-mountain"
+  ],
+  "_confidence": "row-derived: the 50-ft-below-the-sign start, the Guye fork and the waterfall ford come from the DB row's own sourced approach text"
+ },
+ "wa_denny_mountain_north_slopes": {
+  "area": "wa_denny_mountain",
+  "approach_variants": [
+   {
+    "name": "Alpental base area and the ski runs under the old Armstrong Express line",
+    "season": "Late spring to mid-July, after the resort closes but before the snow gullies melt out and expose looser rock and scree",
+    "notes": "Park at the large Alpental lot at the end of Alpental Road, about 3,100 ft. There is no signed trailhead and no maintained trail for Denny Mountain. Cross the base area and pick up boot tracks and climbers' paths on the north-facing slopes under the old Armstrong Express and Sessel chair lines.\n\nOn snow this is simple: walk the barren lower slopes a few hundred feet to snowline, put on crampons and axe, and follow the Lower International run into a small basin, then the steep Upper International run — a double-black pitch that holds firm snow late and is the crux in spring — to the top of the Edelweiss chairlift unloading station.\n\nDry, the same line is a rough boot path and scree scramble through slide alder, small hemlocks and huckleberry, with only intermittent flagging that does not reliably mark anything.\n\nAbout 2.5 to 2.8 miles and 2,500 ft one way.",
+    "distMi": 2.6,
+    "gainFt": 2500,
+    "baseFinding": "THIS PEAK GIVES YOU MAN-MADE LANDMARKS, WHICH IS UNUSUAL AND WORTH USING. Navigate by the ski runs and the lift, not by the mountain: Lower International, then the steep Upper International, then the TOP OF THE EDELWEISS CHAIRLIFT UNLOADING STATION. Standing at that lift station is the arrival test for the end of the approach, and it is a building — it does not disappear in cloud.\n\nWHERE THE REAL CLIMBING BEGINS: above the lift station, angle up the WIDE OPEN RAMP toward the summit horn, which changes underfoot from scree and heather to broken rock.\n\nTHE UNMISTAKABLE MARKER IS A FIXED STEEL CABLE. A short via-ferrata-style handline protects an exposed, down-sloping and often slick ledge traverse just below the top. There is nothing else like it on this mountain. If you have reached steep ground and there is no cable, you are not on the correct line to the summit block.\n\nAND THE TOP CONFIRMS ITSELF: past the cable, a short class 2-3 scramble through a NARROW ROCK CLEFT reaches a summit carrying an old radio-relay structure and a survey marker. Hardware on the summit is the final proof.\n\nTHE HARD PART, HONESTLY STATED: on dry ground the route-finding LOW on the mountain is the hazard, not the summit. The flagging is pink, white and blue, inconsistent, and does not reliably mark the line. In snow this problem disappears entirely, which is why the season here is spring rather than summer.",
+    "hazards": [
+     "Loose footing on scree and dirt once the snow has gone",
+     "Neck-deep slide alder and bramble low on the mountain in summer, with unreliable flagging",
+     "Ski-area infrastructure on the route",
+     "A brief exposed class 2-3 step and narrow ledge at the true summit",
+     "Avalanche terrain on these slopes when snow-covered"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/108471741/snoqualmie-pass-area"
+  ],
+  "_confidence": "row-derived: the ski-run, Edelweiss lift-station and fixed-cable sequence comes from the DB row's own sourced approach text; no independent route page was retrieved for this line"
+ },
+ "wa_bryant_peak_southeast_slopes": {
+  "area": "wa_bryant_peak",
+  "approach_variants": [
+   {
+    "name": "Source Lake and Great Scott Basin to the gully splitting Bryant's southeast face",
+    "season": "Roughly July to September once the gully has melted out; earlier the gully holds snow and needs an axe and crampons",
+    "notes": "From the Alpental day-use trailhead at about 3,120 ft, take the Snow Lake Trail #1013 through old avalanche brush and second growth. At roughly 1.8 miles and 720 ft of gain, a boot path splits LEFT (southwest) toward Source Lake while the main trail continues right toward Snow Lake Col.\n\nDrop briefly to cross Source Lake's outlet creek — the last dependable water — and follow the use trail along the lake's north and east shore into the open basin below The Tooth and Chair Peak. From there the tread becomes intermittent boot-track over boulders and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face.\n\nContour left (south) beneath the broken cliff bands on Bryant's east side and cross a talus field to the foot of the gully.\n\nAbout 9.5 miles round trip and on the order of 3,000 to 3,400 ft of gain; four to six hours trailhead to summit for a fit party.",
+    "gainFt": 3400,
+    "baseFinding": "THE THUMBTACK IS THE LANDMARK YOU WALK PAST, AND THE GULLY IS THE ONE IMMEDIATELY BEYOND IT. Contouring south beneath Bryant's east side you cross a talus field below the rock spire known locally as the Thumbtack. The mouth of the route's gully is at the far side of that talus. Spire behind you, steep scree-and-talus gully splitting the face in front of you.\n\nWHAT THE GULLY IS, IN OTHER WORDS: this is the same drainage backcountry skiers call the Bryant Couloir or the wonder gully. If your winter partner knows the ski line, they know the route.\n\nTHE FOOTING TEST TELLS YOU WHERE TO BE WITHIN IT: climb favouring the FAR CLIMBERS' RIGHT side of the gully, which is noticeably firmer than the loose centre and left. A party grinding up loose ground in the middle is in the correct gully and in the wrong part of it.\n\nWHERE IT DELIVERS YOU: the gully tops out on the BRYANT-CHAIR CONNECTING RIDGE, not on a summit. From there you work SOUTH over blocky ridge and talus to the base of the summit block. A gully that finishes on a summit is not this one.\n\nAND THE LAST STEP CHANGES CHARACTER WITH THE SNOW, which is worth knowing before you commit: with snow on the block the final scramble is easy class 3 with little real exposure. Dry, the only reasonable line goes round the NORTH — climbers' left — side on exposed and distinctly loose class 3. Test every hold.",
+    "hazards": [
+     "The gully is an active avalanche path in winter and spring; avoid it in unstable snow or soon after a storm",
+     "Loose scree, with the centre and left of the gully markedly worse than the right",
+     "The gully funnels rockfall from parties above",
+     "Lingering early-season snow, requiring axe and crampons",
+     "Exposed and loose class 3 on the north side of the summit block when the block is dry"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/117096449/bryant-peak"
+  ],
+  "_confidence": "row-derived: the Thumbtack talus, the gully and the climbers'-right footing rule come from the DB row's own sourced approach; the MP Bryant Peak area page confirms the peak and its position on the Chair connecting ridge"
+ },
+ "wa_cathedral_rock_northeast_buttress": {
+  "area": "wa_cathedral_rock",
+  "approach_variants": [
+   {
+    "name": "Cathedral Rock Trail to the pass, then a rising traverse under the east face",
+    "season": "July to September. The northeast side is shaded and dries slowly, so give it time after rain and expect approach snow into July",
+    "notes": "From I-90 exit 80 at Cle Elum, take SR-903 north through Roslyn and Ronald along Cle Elum Lake for about 14.8 miles, then gravel Cle Elum Valley Road / FR 4330 for 12.3 miles and the short NF-153 spur to the Cathedral Rock trailhead, Trail #1345, at about 3,350 ft. Sign the free self-issue wilderness permit.\n\nThe trail climbs through old growth to Nosh Nosh Wahtum, formerly Squaw Lake, at about 4,850 ft and 2.5 miles, then opens into meadow with Cathedral Rock ahead. At about 4 miles you reach Cathedral Pass at 5,550 ft and the PCT junction.\n\nWalk north on the PCT for a couple of minutes, then cut across the meadow to a stand of trees. Parties cache the gear they do not need on the climb there. From the trees, start a rising traverse under the east face, past the meadows, and then across a loose talus slope with the northeast buttress in sight.\n\nAbout 6.4 km and 3,400 ft.",
+    "distMi": 4.0,
+    "gainFt": 3400,
+    "baseFinding": "THE ROUTE STARTS AT THE TOP OF A SHORT, STEEP SNOWFIELD, AND THAT SNOWFIELD IS THE ARRIVAL TEST. Crossing the loose talus under the east face you come to it; it is short but steep enough that parties in approach shoes have picked their way up it holding stones for security. Reaching the top of that snow patch is reaching the start of the climbing.\n\nAND HERE IS THE MISTAKE PARTIES ACTUALLY MAKE AT THAT POINT, WHICH IS THE MOST USEFUL THING IN THIS ENTRY: at the top of the snow it is natural to exit RIGHT onto ledges and start up from there. That is wrong. A party that does it finds the ground harder than the fourth class the description promises, wanders left, right and up, and comes back down. The correct start is to exit back LEFT into the MOAT at the top of the snow, where the terrain is much easier.\n\nSO THE TEST IS A DIFFICULTY TEST: if your first moves off the snow feel harder than fourth class, you are on the wrong side of the snowfield. Go back and take the moat on the left.\n\nWHAT SHOULD FOLLOW: easy ground you can simul-climb, then a LEDGE SYSTEM that traverses RIGHTWARD toward the crest of the buttress. Beckey gives the buttress seven pitches, about 900 ft, at 5.7 and grade III. A route that is sustained from the first pitch is not it.\n\nAND ONE THING TO SETTLE BEFORE YOU LEAVE THE TREES: this peak is descended by the SOUTH side, not by reversing the buttress. Note where you came up.",
+    "hazards": [
+     "Loose, fractured andesite throughout — poor and unpredictable protection on every technical route on this peak",
+     "A short steep snowfield with loose and sharp rock below it, crossed by parties in approach shoes",
+     "The moat at the top of the snow",
+     "Rockfall down the gully systems from parties, wind and thaw",
+     "Descent route-finding on the shattered south and southwest flanks, where many plausible gullies cliff out",
+     "Summer convection over the Cascade crest, on an exposed tower with no cell coverage and a remote trailhead"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://www.cascadeclimber.com/cathedral_rock.htm",
+   "https://www.summitpost.org/cathedral-rock/654325",
+   "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_cathedral_rock_northeast_ridge_2003_variation": {
+  "area": "wa_cathedral_rock",
+  "approach_variants": [
+   {
+    "name": "Cathedral Pass, the gear-cache trees, and the traverse to the original route's first pitch",
+    "season": "Late July to September. Late August and September give the driest rock and the coldest, most stable air, which is worth waiting for where the protection is already marginal",
+    "notes": "Drive and hike as for the Northeast Buttress: Trail #1345 from the Cathedral Rock trailhead at about 3,350 ft, past Nosh Nosh Wahtum at 2.5 miles, to Cathedral Pass and the PCT junction at 5,550 ft and 4 miles. Sign the wilderness permit at the register.\n\nCut across the meadow to the stand of trees — the usual gear cache — and traverse under the east face across talus to the northeast side.\n\nThis variation does not have its own start on the ground: it begins where the ORIGINAL Northeast Ridge route finishes its first pitch. Mountain Project sends climbers to Beckey's Cascade Alpine Guide for that original start.\n\nAbout 6.4 km and 3,400 ft.",
+    "distMi": 4.0,
+    "gainFt": 3400,
+    "baseFinding": "BE CLEAR ABOUT WHAT YOU ARE LOOKING FOR: THIS ROUTE'S BASE IS THE TOP OF SOMEBODY ELSE'S FIRST PITCH. You find the original Northeast Ridge start — the short steep snowfield on the northeast side, exiting LEFT into the moat rather than right onto the harder ledges — climb its first pitch, and only then are you at the beginning of the 2003 line.\n\nTHE FEATURE THAT PROVES YOU ARE ON THE VARIATION AND NOT ON THE ORIGINAL, and this is the one to memorise, is YELLOW-SPECKLED ROCK. From the top of that first pitch, traverse LEFT and up over a short pitch of genuinely unstable class 4+ ground, aiming for a LEFT-HAND VERTICAL CRACK in a LEFT-FACING CORNER, identified by yellow-speckled rock with ROOFS ABOVE IT. Yellow speckles plus roofs above a left-facing corner is the target; nothing else on this side of the peak reads that way.\n\nTHE CONFIRMATION IS THE THIRD PITCH: it climbs that crack and exits over its LEFT side. It is the best pitch on the route, 5.7 to 5.8 and well protected — which is worth knowing precisely because everything below it is not. If pitch three is poorly protected choss, you are not in the corner you wanted.\n\nA HIGHER CHECK: above, the rock eases, and a short difficult LEFT-LEANING CRACK at 5.9+ comes before moderate terrain to the summit.\n\nAND THE HONEST WARNING THAT BELONGS IN A BASE FINDING HERE: the pitch you must cross to reach the good climbing is described by the first-ascent party as scary and unstable. Its own Mountain Project rating is PG13, and the route would carry more stars if not for that second pitch. Knowing that in advance is what stops a party assuming they are off route when the ground feels wrong.",
+    "hazards": [
+     "Shattered, friable andesite giving loose holds and unreliable protection",
+     "An explicitly unstable class 4+ section low on the route that must be crossed to reach the good climbing",
+     "PG13 protection with significant fall consequences",
+     "Rockfall onto belayers from a ridge littered with loose blocks",
+     "Six pitches at 5.9 plus a route-finding descent make benightment a real risk on a short day",
+     "No cell coverage and a remote gravel-access trailhead: slow rescue"
+    ]
+   }
+  ],
+  "_sources": [
+   "http://www.cascadeclimber.com/cathedral_rock.htm",
+   "https://www.summitpost.org/cathedral-rock/654325",
+   "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_mount_daniel_lynch_glacier": {
+  "area": "wa_mount_daniel",
+  "approach_variants": [
+   {
+    "name": "Cathedral Pass and Peggy's Pond, then the east ridge and Lynch draw",
+    "season": "Best while Pea Soup Lake is still frozen and the moat is closed. The Pea Soup approach becomes problematic from mid-July onward once the ice melts",
+    "notes": "Hike the Cathedral Rock Trail to Nosh Nosh Wahtum (formerly Squaw Lake) at 2.5 miles, continue to Cathedral Pass at 5,550 ft, then turn left (west) onto the PCT. In less than half a mile turn right (northwest) onto Trail #1375 — do NOT follow the PCT down toward Deep Lake. Follow #1375 past Cathedral Rock to Peggy's Pond at about 5,560 ft and camp there. This is the shorter approach with the longer summit day, and it avoids the brush of the alternative.\n\nFrom camp, climb to about 6,300 ft on the east ridge, then traverse BELOW the Daniel Glacier at 6,100 to 6,300 ft toward Lynch draw.\n\nTrailhead to camp is about 2.5 to 4 hours; camp to summit 5 to 7 hours.",
+    "baseFinding": "THE ARRIVAL TEST IS A LAKE YOU WALK ACROSS. Traversing below the Daniel Glacier you come to Lynch draw and, in season, to FROZEN PEA SOUP LAKE. Walk straight across it and get onto the ice ABOVE THE LOW ROCKS on its far side. That is the base of the Lynch Glacier, and standing on the lake surface is an unambiguous confirmation you are in the right basin.\n\nWHAT TO DO WHEN THE LAKE HAS MELTED OUT, WHICH IS THE COMMON CASE FROM MID-JULY: do not try to force the draw, which can be flooded. Instead climb the ridge SEPARATING the Daniel and Lynch glaciers for a couple of hundred yards to the FIRST MINOR NOTCH at about 6,600 ft. Drop roughly 100 ft off it to a snowfield hugging the ridge, then work climbers' LEFT via a second snowfield and rock benches onto the Lynch Glacier. First minor notch at 6,600 ft, then down 100 ft and left: that is a counted sequence rather than a described one, which is what you want in cloud.\n\nGETTING ONTO THE ICE, IN EITHER SEASON: early, take the snow finger on climbers' RIGHT. Late, bypass on climbers' LEFT by class 3 scrambling, and expect a moat at the transition. The loose rotten rock used to reach the ice is repeatedly reported as more dangerous than the glacier itself.\n\nAND THE TOP TELLS YOU WHICH SUMMIT IS WHICH: the glacier leads to the GAP BETWEEN THE TWO HIGHEST SUMMITS. From the notch, the WEST summit — on your RIGHT — is the true high point. Late in the season expect a detour around crevasses about two thirds of the way up.\n\nA SCOPE NOTE THAT MATTERS TO PEAK-LIST PARTIES: reaching the upper Daniel Glacier from Peggy's Pond by the Southeast Ridge or the Hyas Creek Glacier is a scramble and is not this route.",
+    "hazards": [
+     "Full-width crevasses opening late in the season across the Lynch Glacier",
+     "Loose, rotten rock on the ground used to gain and leave the ice — reported as the worst hazard on the route",
+     "A moat at the rock-to-ice transition that widens through the summer",
+     "Pea Soup Lake melting out and Lynch draw flooding from mid-July",
+     "Significant glacier recession, so old descriptions understate the rock and moat work"
+    ]
+   },
+   {
+    "name": "Deception Pass, Marmot and Jade Lakes, and Dip Top Gap from the east",
+    "season": "Early season, roughly June into July, before the moat opens",
+    "notes": "From the Deception Pass trailhead, hike to Marmot and Jade Lakes and continue to Dip Top Gap. From the gap, traverse WEST to the shoulder overlooking the Foss River drainage, then descend to the outlet of Pea Soup Lake.\n\nThis is the longer, eastern line into the same basin. It reaches the Lynch Glacier at the same point the Peggy's Pond approach does, and everything about identifying the ice is identical from the lake outlet onward.",
+    "baseFinding": "YOU ARE AIMING FOR THE OUTLET OF PEA SOUP LAKE, AND THE SHOULDER ABOVE THE FOSS RIVER IS THE WAYPOINT THAT GETS YOU THERE. From Dip Top Gap the traverse is WEST until you are on the shoulder looking down into the Foss River drainage; the descent from that shoulder lands at the lake outlet. If you are looking down into a drainage that is not the Foss, you have not traversed far enough west.\n\nFROM THE OUTLET THE FINDING IS THE SAME AS FROM PEGGY'S POND: get onto the ice ABOVE THE LOW ROCKS at the head of the lake. Early season, take the snow finger on climbers' RIGHT; late season, bypass by class 3 on climbers' LEFT and cross the moat. Then ascend the upper glacier toward the West Pyramid and the col between the Middle and True summits.\n\nTHE NEGATIVE TEST: this route is graded third class with only minor snow and ice difficulty. If you are on steep ice, you are not on the Lynch Glacier standard line.",
+    "hazards": [
+     "Crevasses across the full width of the glacier late in the season",
+     "The moat at the rock-to-ice transition",
+     "Loose rotten rock on the class 3 bypass",
+     "A long approach over Dip Top Gap with a descent to the lake that must be reversed on the way out"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+   "https://www.summitpost.org/lynch-glacier/159280"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_daniel_daniel_glacier": {
+  "area": "wa_mount_daniel",
+  "approach_variants": [
+   {
+    "name": "Cathedral Pass, the ledge traverse to Peggy's Pond, and the Southeast Ridge",
+    "season": "July to September. Snow can linger above the pond well into July and an axe is worth carrying then",
+    "notes": "From the Cathedral Rock / Deception Pass trailhead at the end of FR-4330, about 3,400 ft, take the signed Deception Pass / Cathedral Pass trail. At about 1.8 miles a signed junction splits right to Squaw Lake — stay left. The trail climbs another two miles into subalpine meadow and switchbacks to Cathedral Pass at about 5,500 ft and 4.2 to 4.5 miles, at the PCT junction.\n\nFrom the pass drop briefly toward Deep Lake on the PCT; a use path leaves at a switchback toward Peggy's Pond, or continue to the signed Peggy's Pond Trail #1375 junction. Either way the last half mile is a rough, primitive traverse across narrow ledges with real exposure to steep drop-offs. Go slowly with a pack; it feels harder than anything on the maintained trail.\n\nPeggy's Pond at about 5,560 ft, five to five and a half miles in, is the last reliable water and the last established camp.\n\nAbout 12 km and 5,100 ft.",
+    "distMi": 7.5,
+    "gainFt": 5100,
+    "baseFinding": "THE APPROACH HAS A HARD EDGE AND IT IS THE LEDGE TRAVERSE INTO PEGGY'S POND. That half-mile of narrow ledges with exposure is the last thing between trail and mountain, and it is the point at which a party knows it has left the walking behind. Peggy's Pond is the base camp and the last water.\n\nFROM THE POND, THE FINDING IS AN ALTITUDE AND A SHAPE: braided boot paths head northwest then west across heather benches and talus, gaining roughly 1,500 ft over about a mile, to the broad SOUTHEAST RIDGE at 6,800 to 7,000 ft. You are on the right ridge when it NARROWS WESTWARD with the HYAS CREEK GLACIER ON YOUR RIGHT and CIRCLE LAKE FAR BELOW ON YOUR LEFT. That pairing — glacier right, lake left — is the confirmation, and it does not need the summit to be visible.\n\nTHE NEXT CHECKPOINT IS A SADDLE AT ABOUT 7,600 FT between the East and Middle summits, reached by traversing climbers' trail and open scree BELOW the East Summit at 7,899 ft. The path is faint where it first leaves the ridge and well defined afterwards, so a faint start is not evidence you are off route.\n\nWHERE THE GLACIER COMES IN: to use the Daniel Glacier proper, enter it just NORTH of a prominent spire on the Northeast Ridge and traverse west across it to the Middle Summit.\n\nAND THE ONE THING NOT TO DO NEAR THE TOP: the true West Summit at 7,960 ft is reached over loose talus, lingering snowfields and the rocky margin of the Daniel Glacier remnant. Stay on the rock and scree spine. Wandering onto the glacier ice on the north side is where the crevasses are.",
+    "hazards": [
+     "An exposed, primitive ledge traverse into Peggy's Pond, harder than the trail that precedes it",
+     "An early creek crossing near the trailhead that can be a wet ford in high water",
+     "Loose talus and route-finding uncertainty below the East Summit",
+     "Real crevasses opening on the Daniel and Lynch glacier ice on the north side by late summer",
+     "Lingering snow into July that can require an axe on the slopes above the pond"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+   "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_mount_hinman_hinman_glacier": {
+  "area": "wa_mount_hinman",
+  "approach_variants": [
+   {
+    "name": "Necklace Valley to La Bohn Gap and the lakes",
+    "season": "July to September. Most parties make it a two or three day trip",
+    "notes": "Park at the Necklace Valley trailhead at about 1,650 ft at the end of FR 68 and start up Necklace Valley Trail #1062. The first five miles are deceptively flat, gaining only about 600 ft along the East Fork Foss River, entering the wilderness at about 1.5 miles.\n\nAround mile 5 the trail FORDS the East Fork Foss River — there is no bridge and it runs high and cold in early-season melt, so cross in the morning at low flow. Then it turns uphill in earnest, roughly 2,400 ft over three miles of steep, root-laced switchbacks. This is the real crux of the approach for tired legs.\n\nThe grade eases at Jade Lake at about 4,600 ft and eight to nine miles, then Emerald and Opal Lakes through the swampy Necklace Basin — good camping and reliable water, buggy in early summer.\n\nFrom the head of Necklace Basin the maintained trail ends. Continue cross-country on an established, cairned climbers' path through meadow and boulder talus, up and east roughly a mile to a mile and a half and over 1,000 ft, to La Bohn Gap and the La Bohn Lakes. That is the standard high camp: about 10 to 11 miles one way with over 5,000 ft of cumulative gain.",
+    "distMi": 10.5,
+    "gainFt": 6100,
+    "baseFinding": "LA BOHN GAP AND ITS LAKES ARE THE ARRIVAL, AND THE HONEST FINDING IS THAT THERE IS NO LONGER MUCH OF A GLACIER TO FIND. Measured in August 2022, the Hinman Glacier had largely disappeared, leaving stranded patches of snow and ice. So do not stand at the gap looking for a glacier front to identify. What you are looking for is the basin above the gap: mostly bare rock and permanent snowfield in most recent seasons, with crevasse and bergschrund hazard only in early season or after a big snow year.\n\nHOW YOU KNOW YOU ARE AT LA BOHN GAP: it is where the cairned climbers' path out of the head of Necklace Basin tops out at over 5,500 ft, with the La Bohn Lakes in it. If you are still in swampy lake-studded basin on maintained tread, you have not left Necklace Valley.\n\nWHICH WAY FROM THE GAP, AND THE TWO SOURCES DISAGREE, SO CARRY BOTH: the DB row's own approach text says the route continues NORTH from La Bohn Gap onto the glacier basin, while the Mountaineers route description says ascend EAST from La Bohn Lakes to the Hinman Glacier. Both agree the objective is the snowfield basin immediately above the lakes and that easy class 2 ridge and scree ground leads from it to the summit ridge. Do not average them; look for the basin, which is unmistakable once you are at the gap.\n\nTHE FINAL TEST IS A DISTANCE ALONG A RIDGE: from where you gain the summit ridge, the true summit at 7,492 ft is about HALF A MILE along it. A party that tops out on the ridge and stops is half a mile short.",
+    "hazards": [
+     "An unbridged ford of the East Fork Foss River around mile 5, high and cold in early-season melt",
+     "2,400 ft of steep root-laced switchbacks with a multi-day pack",
+     "Crevasse and bergschrund hazard on the lingering glacier remnant, mostly early season",
+     "Loose rock on the final class 2 scramble",
+     "Mosquitoes in the lake basins in early and mid summer",
+     "A long walk out from a remote camp if anything goes wrong"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-hinman-glacier",
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_mount_thomson_west_ridge": {
+  "area": "wa_mount_thomson",
+  "approach_variants": [
+   {
+    "name": "PCT to Bumblebee Pass, into the basin, then the lowest notch on the west ridge",
+    "season": "July to September",
+    "notes": "Park at the PCT North / Commonwealth Basin trailhead at Snoqualmie Pass, about 3,000 ft: cross under I-90, take the first right, lot on the right. Follow the PCT northbound through timber on long switchbacks for roughly 5.5 to 6 miles to the Kendall Katwalk at about 5,400 ft, a narrow ledge blasted into the rock of Kendall Peak's south side — solid underfoot, very exposed, and worth care if icy or windy.\n\nContinue north about a mile past the Katwalk, dropping slightly, to Ridge Lake at about 5,260 ft, the last reliable water and a common camp; roughly two to two and a half hours and about seven miles from the car.\n\nAbout 0.4 to 0.5 mile past Ridge Lake, watch for an unsigned but obvious climbers' boot path branching LEFT (west) off the PCT. It climbs a steep 200 ft to Bumblebee Pass at about 5,400 ft, above Alaska Lake. Drop off the far side into Bumblebee Basin, then contour and climb northwest across talus and scree toward the ridge.\n\nAbout 8 to 8.5 miles and 2,900 to 3,000 ft to the base, typically four to five hours for a fit party.",
+    "distMi": 8.25,
+    "gainFt": 5200,
+    "baseFinding": "AIM FOR THE LOWEST POINT IN THE RIDGE, AND KNOW IN ADVANCE THAT IT IS FURTHER LEFT THAN IT LOOKS. From Bumblebee Basin, scrambling up scree, the beginning of the ridge that you can see from below is NOT where you want to be. The notch you want is LEFT of it, at the ridge's lowest point, around 5,960 ft. That single correction is the most useful thing on this approach, because the eye pulls you right every time.\n\nTHE NOTCH IS SMALL, AND ITS SIZE IS THE CONFIRMATION: it holds about three people at most. If you have topped out on a broad, comfortable saddle, you are not at the start of the West Ridge.\n\nEXPECT SHORT FOURTH-CLASS SCRAMBLING AROUND GENDARMES to reach it. Once you top out on the ridge you scramble over a small gendarme, traversing rightward toward the crest, to gain the notch itself.\n\nTHE FIRST MOVE SETTLES IT ABSOLUTELY: pitch one begins with a STEP LEFT INTO A WELL-FEATURED CHIMNEY. That step-left-into-a-chimney is the signature of this route and is probably the crux of the whole climb. If your first pitch is a face or a slab, you are not in the right notch. The first two leads run up a series of chimneys in solid rock.\n\nAND THE OTHER ROUTE ON THIS PEAK IS ON THE OPPOSITE SIDE: the East Ridge is class 3-4 and is gained from a notch at about 5,600 ft on the ESE side, from the same basin. If you are on easy scrambling ground the whole way, you are on the East Ridge and you have circled to the wrong end of the mountain.",
+    "hazards": [
+     "The Kendall Katwalk, exposed and dangerous when icy or windy",
+     "Loose and eroded tread on both sides of the Bumblebee Pass boot path",
+     "Talus and scree in the basin below the ridge",
+     "A descent by the East Ridge, meaning a route-finding descent on unfamiliar ground at the end of a long day",
+     "A long day: many parties climb it car to car"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/110554093/west-ridge",
+   "https://www.summitpost.org/west-ridge/162848"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_east_ridge_6": {
+  "area": "wa_mount_thomson",
+  "approach_variants": [
+   {
+    "name": "PCT to Bumblebee Pass, into the south-face basin, then the heather-and-talus slope to the ESE notch",
+    "season": "July to September",
+    "notes": "From the PCT North trailhead at I-90 exit 52, about 3,000 ft, follow the PCT north through Commonwealth Basin and up the Kendall Ridge switchbacks. At roughly 5.5 to 5.7 miles you cross the Kendall Katwalk, the exposed cut in the cliff band most parties use as a progress checkpoint.\n\nContinue north past Ridge Lake and Gravel Lake, the last reliable water before the high basin, and on to the foot of Bumblebee Pass. A short, steep, unmaintained climbers' path with loose tread climbs to the 5,400 ft pass, then drops down the north side into the open basin directly below Mount Thomson's south face — the same basin West Ridge parties camp in.\n\nRoughly six to seven miles one way with about 3,600 ft of cumulative gain, since the up-and-over at Bumblebee adds height beyond the net summit gain. Three to five hours car to basin, nine to eleven hours round trip is typical.",
+    "distMi": 6.5,
+    "gainFt": 3600,
+    "baseFinding": "FROM THE BASIN, LOOK FOR THE STEEP HEATHER-AND-TALUS SLOPE THAT LEADS TO AN OBVIOUS NOTCH AT ABOUT 5,600 FT ON THE EAST-SOUTHEAST RIDGE. Heather and talus rather than clean rock is the signal you are on the correct slope; the West Ridge side is scree and gendarmes.\n\nTHE ALTITUDE IS THE DISCRIMINATOR BETWEEN THE PEAK'S TWO ROUTES, AND IT IS WORTH SETTING YOUR ALTIMETER FOR: this notch is at about 5,600 ft on the ESE side. The West Ridge notch is at about 5,960 ft on the other end of the mountain. Roughly 360 ft and a full traverse of the peak separate them.\n\nWHAT FOLLOWS CONFIRMS IT: from the notch, scramble up and TRAVERSE LEFT along the ridge crest on mostly class 2-3 ground to the base of the final summit block. Easy scrambling with a leftward traverse is right for this route. Chimneys and fifth-class corners are the West Ridge.\n\nAND THE ROUTE ENDS AT ONE SPECIFIC OBSTACLE, WHICH IS THE BEST CONFIRMATION OF ALL: a short, exposed 20 ft CLASS 4 STEP guarding the true summit. Most parties protect it with a rope or a handline. If you reached a summit without meeting that step, you are on a false one.\n\nUSEFUL CONTEXT: this is the easiest way up the peak and it is also the standard descent for West Ridge parties, so a party coming down at you is normal rather than a sign of a mistake.",
+    "hazards": [
+     "The Kendall Katwalk when icy or windy",
+     "Loose tread on the unmaintained Bumblebee Pass path, awkward with a pack",
+     "Loose talus and minor route-finding on the slope to the notch",
+     "A short but exposed class 4 step at the summit, downclimbed or rappelled on the way back",
+     "A long day with an up-and-over on the return"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/west-ridge/162848",
+   "https://www.mountainproject.com/route/110554093/west-ridge"
+  ],
+  "_confidence": "row-derived: the 5,600 ft ESE notch, the leftward class 2-3 traverse and the 20 ft class 4 summit step come from the DB row's own sourced text; the West Ridge sources corroborate the shared Bumblebee Pass approach and that the East Ridge is the standard descent"
+ },
+ "wa_south_face_7": {
+  "area": "wa_red_mountain_snoqualmie",
+  "approach_variants": [
+   {
+    "name": "PCT and Commonwealth Creek trail, then a heather traverse to the red gully",
+    "season": "June to October, once the heather bands and rock are dry and snow-free",
+    "notes": "From the PCT trailhead at I-90 exit 52, hike the Pacific Crest Trail north to the Commonwealth Creek trail junction, then follow that trail for about two miles until Red Mountain comes into view.\n\nLeave the trail and traverse on heather across the base of the mountain. The trail will often carry you too far WEST before you notice the peak, so expect to traverse back over the ridge and possibly downslope to reach the start.\n\nMost parties climb the whole thing unroped and rope up only if they want to.",
+    "baseFinding": "THE ROCK IS THE MARKER AND IT IS BRIGHT RED. You are looking for a low-angle gully or ramp of SOLID, BRIGHT RED rock at the base of the mountain — solid is the operative word, because it is the most solid rock on a peak otherwise famous for being fractured. The colour and the low angle together identify it; nothing else on this flank looks like it.\n\nAND THE OVERSHOOT TEST IS THE ONE TO REMEMBER, BECAUSE IT WORKS WITHOUT SEEING ANYTHING: IF YOU REACH RED MOUNTAIN POND, YOU HAVE GONE TOO FAR. Popping out of the trees on the flank of Red commonly puts a party too far west; the pond tells you so unambiguously. Turn back east and traverse on heather until the red gully appears.\n\nWHAT THE FIRST GROUND SHOULD FEEL LIKE: class 3, no gear required, two pitches of it. If you are pulling on anything hard from the ground you are not in the ramp.\n\nWHERE IT LEADS, SO YOU CAN CHECK YOURSELF LATER: you pop over a small ridge into the MAIN GULLY below the summit. Keep going up that until the summit block above you turns steep and roofy. That roofy steepening is the signal to move LEFT onto the class 2 hiking finish on the west side of the south ridge — or, if you want it, to continue directly up the block at class 4 or low 5 with a rope.",
+    "hazards": [
+     "Rockfall onto parties below where the route funnels through gullies",
+     "Loose rock typical of Red Mountain, though the south ramp is the most solid ground on the peak",
+     "A steep and roofy direct finish on the summit block that needs a rope",
+     "Route-finding on the traverse in, where the trail tends to carry you west past the start"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/119517789/south-face",
+   "https://www.summitpost.org/red-mountain-snoqualmie/150919"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_east_ridge_7": {
+  "area": "wa_red_mountain_snoqualmie",
+  "approach_variants": [
+   {
+    "name": "PCT to Red Pass, then the climbers' path up to the saddle",
+    "season": "Mid-summer into early autumn, once the Red Pass approach and the rock are dry",
+    "notes": "From the PCT trailhead at exit 52, hike the PCT north about two miles to the Commonwealth Creek / Red Mountain Trail #1033 junction. Follow that trail, crossing Commonwealth Creek, roughly 1.7 miles further, passing Red Mountain on your right and Red Pond on your left, to the Red Mountain Saddle — Red Pass — at about 5,320 ft. The old PCT dropped from here toward Goldmyer Hot Springs.\n\nFrom the saddle, follow a winding climbers' path up to the base of the route. Allow about two hours for the approach from the trailhead, more if there is snow.\n\nThis is a short technical add-on for parties already scrambling in the Red Pass and Commonwealth Basin area, not a day out on its own.",
+    "baseFinding": "THREE OVERSIZED BOLTS ARE THE PROOF, AND THEY ARE THE REASON THIS ROUTE IS FINDABLE AT ALL. The pitch carries THREE fixed bolts, described by everyone who has climbed it as monstrous — large enough that they make the route-finding, in the words of the route's own page, non-adventurous. If you are on a 30 m pitch of broken rock with three big bolts in it, you are on this route. If you cannot see a bolt, you are on the ridge somewhere else.\n\nWHAT THE PITCH IS: a very short 30 m lead, broken rock, past a SLAB SECTION and then a small section of more featured rock to the top. There are many variations and they are all easy. So the difficulty will not identify it; the hardware will.\n\nHOW TO GET TO IT FROM THE SADDLE, AND THE ONE THING TO KEEP STRAIGHT: from Red Pass the climbers' path winds WEST and up. Passing Red Mountain on your right and Red Pond on your left on the way in is the confirmation you are approaching the pass from the correct side.\n\nA NAMING WARNING THAT COULD SEND YOU TO ANOTHER MOUNTAIN, AND IT IS A REAL ONE: the published location text for this route refers to a saddle between Lundin and East Lundin peaks, while the approach it gives goes to Red Pass and then west, which is Red Mountain's ground rather than Lundin's. SummitPost separately carries TWO different pages called East Ridge on Red Mountain — one describing this saddle-to-summit line over two false summits, and one describing a ridge traverse from Point 5720 near the Kendall Katwalk, which its own author recommends nobody repeat. Three descriptions, one name. Fix the peak by the saddle and the three bolts, not by the route name.\n\nIF YOU CONTINUE OVER THE FALSE SUMMITS toward the main peak, the sequence from the Red Mountain Saddle is: up the southeast side of the first false summit, a 30 ft class 3 gully down at its northwest end, right (north) to the big notch, 50 ft up slabs on the far side, a contour across the heathery northeast side of the second false summit, over that summit, then 100 ft of class 3 down a moderate gully to the final notch at about 5,840 ft below the main summit.",
+    "hazards": [
+     "Loose, fractured red rock along this ridge system, more pronounced than on the south face",
+     "Short but real exposure on the summit block",
+     "Possible steep snow on the contour across the northeast side of the second false summit in early or late season",
+     "Aging fixed bolts of unknown provenance as the only in-situ protection"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/route/120989235/east-ridge",
+   "https://www.summitpost.org/east-ridge/162554",
+   "https://www.summitpost.org/east-ridge/329836"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_red_mountain_snoqualmie_standard": {
+  "area": "wa_red_mountain_snoqualmie",
+  "approach_variants": [
+   {
+    "name": "PCT and Commonwealth Creek trail to the cairn by the tarn, then the west-slope boot path",
+    "season": "July to October. Snow lingers in Commonwealth Basin and on the upper slope into early-to-mid July, and the fractured rock is genuinely unsafe wet, so late July to September is the sweet spot",
+    "notes": "Start at the Pacific Crest Trailhead at Snoqualmie Pass West, I-90 exit 52. Follow the rerouted PCT north roughly 2 to 2.5 miles of well-graded trail through old growth. At the signed junction, turn LEFT (west) onto Trail #1033, the Commonwealth Creek Trail, and follow it up Commonwealth Basin toward Red Pass. The trail parallels and crosses Commonwealth Creek, the one reliable water on the approach — fill up there, because the scramble slopes above are dry.\n\nAn older, partly overgrown Commonwealth Basin trail leaves about 20 yards up from the parking lot and switchbacks directly into the basin, rejoining near the same split. It is shorter, harder to follow, and not recommended in poor visibility.\n\nAbout 12.9 km round trip and 2,900 ft.",
+    "distMi": 8.0,
+    "gainFt": 2900,
+    "baseFinding": "THE TAKEOFF IS MARKED BY A CAIRN PLANTED IN THE MIDDLE OF THE PATH, AND THAT IS THE ARRIVAL TEST. As the trail levels out near a small tarn below Red Mountain's west slope, a cairn sits in the middle of the tread. That is where the scramble leaves the maintained trail. A cairn off to one side is not it; this one is in the way, deliberately.\n\nFROM THE CAIRN, WHAT THE GROUND SHOULD DO: a boot path climbs the west slope. It is intermittent and easy to lose on scree. THE RULE WHEN YOU LOSE IT IS TO STAY CLOSE TO THE RIDGE CREST ON CLIMBERS' RIGHT — the south side. That single rule replaces route-finding for the whole upper slope, and it also keeps you off the loose gut of the scree where you would be kicking rock onto people.\n\nWHAT THE LAST 900 FT SHOULD FEEL LIKE: a 30 to 40 degree slope of fractured, iron-stained RED rock, loose scree, heather and scattered alpine trees, alternating class 2 and low class 3, with no real exposure. Hands needed intermittently. If you are on genuinely exposed ground with real fall consequence, you have drifted off the line.\n\nAND THE MOST IMPORTANT NEGATIVE, WHICH IS ABOUT THE DESCENT BUT BELONGS HERE: do NOT traverse east or south off the summit toward the PCT near the Kendall Katwalk as a shortcut. That terrain becomes class 3 and 4 and cliffs out without a rope.\n\nHONEST NOTE ON THE ROCK: helmets are for the whole party, not just a leader. Red Mountain's rock is notoriously fractured and there are documented close calls with softball- and grapefruit-sized rock near the summit.",
+    "hazards": [
+     "Rockfall on loose, heavily fractured red rock, with documented close calls near the summit",
+     "Slick, dangerous rock when wet — an easy class 2 slope becomes unsafe in rain",
+     "Route-finding above the basin tarn where maintained trail becomes a cairned boot path",
+     "Lingering snow and postholing into early summer",
+     "Cliffed-out class 3-4 ground if a party tries to shortcut east toward the Kendall Katwalk"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/red-mountain-snoqualmie/150919",
+   "https://www.summitpost.org/red-mountain-south-ridge/541254"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_kendall_peak_standard": {
+  "area": "wa_kendall_peak",
+  "approach_variants": [
+   {
+    "name": "PCT north to the stump at 5,200 ft, then the boot path east",
+    "season": "June to October; snow can linger in the boot-path gully and on the PCT traverse below Kendall Gardens into early summer",
+    "notes": "From I-90 exit 52 the PCT northbound lot sits just off the ramp on a short dirt spur; a Northwest Forest Pass is required and the roughly 50-car lot fills early at weekends.\n\nFrom about 3,000 ft, follow the PCT north through second growth: first switchback at 0.6 mile, a switchback pair at 1.5 miles, the wilderness boundary at 2.0 miles where the forest opens into talus. The trail eases slightly downhill to the Commonwealth Creek Trail junction at 2.6 miles — stay RIGHT and straight on the PCT; the left-hand Commonwealth Basin trail is brushy and easy to mistake for the main tread. Two stream crossings near that junction are the last reliable water.\n\nBeyond, the PCT climbs under Kendall Peak's west flank through open talus and heather — Kendall Gardens, around mile 5 — then switchbacks directly below the peak at about 5.5 to 6 miles and 5,100 to 5,200 ft.\n\nAbout 7.4 km and 2,800 ft.",
+    "gainFt": 2800,
+    "baseFinding": "THE MARKER IS A STUMP, AND IT IS IN YOUR WAY. At about 5,200 ft on the switchbacks below the peak, a large, distinctive stump partially blocks the LEFT side of the trail. Roughly 15 FEET BEYOND IT a boot path forks RIGHT (east) and climbs straight uphill. That stump-then-fifteen-feet pairing is the whole finding, and it works in cloud because you feel the stump on the trail rather than having to spot the peak.\n\nWHAT FOLLOWS CONFIRMS IT: the final 400 to 500 vertical feet on that boot path are steep, loose dirt and scree with occasional hands-on class 2 moves, running to the NORTHERNMOST and highest summit. Steep loose dirt is right; if you are on rock and using your hands continuously, you are somewhere harder.\n\nTHE OVERSHOOT AND WHAT IT COSTS YOU, WHICH IS THE REASON TO CARE ABOUT THE STUMP: parties who miss it and carry on along the PCT to where it crosses the ridge on the east side can scramble the ridge crest south to the true summit instead. That line is class 3 to 4, has abundant loose rock, and is notably more exposed and dangerous. It is a real alternative, but it is not the standard route and you should choose it deliberately rather than by accident.\n\nAND THE PROGRESS CHECK BEFORE THE STUMP: Kendall Gardens, the open talus and heather at about mile 5, is the last obvious landmark below the switchbacks. If you have crossed the Kendall Katwalk you have gone a long way past the turn.",
+    "hazards": [
+     "Steep, loose dirt and scree on the final boot path",
+     "Lingering snow in the boot-path gully and on the PCT traverse into early summer",
+     "The class 3-4 ridge alternative, more exposed and loose than the standard route, entered by accident if the stump is missed",
+     "No water above the Commonwealth Creek crossings"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/108471741/snoqualmie-pass-area"
+  ],
+  "_confidence": "row-derived: the stump-and-fifteen-feet marker and the mileage sequence come from the DB row's own sourced approach text; no independent route page was retrieved for this line in this pass"
+ },
+ "wa_kendall_peak_cliff_north_face": {
+  "area": "wa_kendall_peak",
+  "approach_variants": [
+   {
+    "name": "PCT then the old Commonwealth Creek trail, stopping short of the creek",
+    "season": "Winter into early spring, when the two ice pitches have formed. Assess the avalanche slide path between the pitches before committing",
+    "notes": "From the PCT North trailhead, follow the PCT and, at an early fork, break LEFT onto the old, overgrown Commonwealth Creek trail. Follow it until the trees open out into a clearing where the cliff and its ice come into view.\n\nThis is a short approach on trail or on whatever bootpack exists. There is no fixed hardware on the climb — descent is two rappels off ice-screw or V-thread anchors from cord and slings you carry in.",
+    "baseFinding": "THE STOP SIGNAL IS A CREEK YOU MUST NOT CROSS. Follow the old Commonwealth Creek trail until the timber opens into a clearing with the cliff and the ice in front of you. DO NOT CROSS COMMONWEALTH CREEK. If you have crossed it, you have gone too far and the cliff is behind you. That is the cleanest fog test on this side of the pass, because a creek crossing is unmistakable underfoot even when you cannot see a cliff.\n\nTHE CLEARING IS THE OTHER HALF OF THE TEST: you are looking for the point where the trees end, not for a distance or a time. Overgrown trail, then open ground, then the ice. If you are still under timber you have not arrived.\n\nWHAT THE CLIMB SHOULD BE, AS CONFIRMATION: two pitches. Pitch one is the harder, sustained and near-vertical. Pitch two eases off and is belayed from a SMALL CAVE that offers some shelter. A cave belay at the top of the second pitch is the confirming feature.\n\nAND THE HAZARD THAT SITS INSIDE THE FINDING: there can be a snow slide path between the two pitches. Assess it before you commit to the first pitch, not from the belay above it.",
+    "hazards": [
+     "A slide path for snow between the two pitches — assess avalanche conditions before committing",
+     "No fixed anchors: descent is on ice screws or V-threads with cord you carry",
+     "A sustained, near-vertical first pitch on winter ice of variable formation",
+     "A north-facing cliff that stays cold and holds thin ice in lean winters"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/108471741/snoqualmie-pass-area"
+  ],
+  "_confidence": "row-derived: the do-not-cross-the-creek test and the cave belay come from the DB row's own sourced text; no independent page for this cliff was retrieved in this pass"
+ },
+ "wa_alta_mountain_scramble": {
+  "area": "wa_alta_mountain",
+  "approach_variants": [
+   {
+    "name": "Rachel Lake, Rampart Ridge, and the boulder gully to the 5,570 ft saddle",
+    "season": "July to October. The route should not be attempted with snow on the ridge",
+    "notes": "From the Rachel Lake trailhead at 2,800 ft, at the end of FS Rd 4930 off Kachess Lake Road from I-90 exit 62, take Rachel Lake Trail #1313. The first 2.75 miles follow Box Canyon Creek at a gentle grade with reliable water throughout.\n\nAt about mile 2.75 the trail crosses the creek and hits the section known locally as the mile from hell: a heavily rooted, rocky climb gaining roughly 1,300 ft in a mile with big step-ups and no switchbacks. It is the fitness crux of the day, not a technical one.\n\nAt Rachel Lake, 4,700 ft, a use trail branches right near the outhouse, skirts the lake's north side, and switchbacks steeply about half a mile to the Rampart Ridge crest at about 5,100 ft. At the ridge junction go LEFT (south) for Rampart Lakes, and follow the ridge and the east side of the lakes basin. Stay on maintained tread through the basin; the alpine turf is fragile and shortcut social trails are often deliberately blocked.\n\nAbout 6 to 6.5 miles and 3,000 ft to the saddle.",
+    "gainFt": 3300,
+    "baseFinding": "AT THE SOUTH END OF THE RAMPART LAKES, FIND A LARGE BOULDER GULLY WITH CLIFF BANDS ON ITS LEFT — THAT IS, ITS WEST — SIDE. Boulders in the gully, cliffs bounding it on the west: that pairing is the arrival test for the scramble takeoff, and it does not require seeing Alta.\n\nWHERE IT PUTS YOU: a boot path up that gully reaches a broad saddle at about 5,570 ft on the Rampart Ridge crest. Broad saddle at 5,570 ft is your altimeter confirmation. From there the route turns WEST along the crest toward Alta's summit block.\n\nWHAT THE RIDGE THEN DOES, SO YOU CAN COUNT YOUR WAY ALONG IT: THREE FALSE SUMMITS, class 2-3 rock steps, at least one near-vertical step of 6 to 8 ft with good holds and serious exposure, and a class 3 DOWNCLIMB crux near the top. A party that has crossed one bump and thinks it is at the summit is two bumps early.\n\nAND THE ONE PLACE WHERE THE FINDING IS A WARNING RATHER THAN A DIRECTION: there is a section where the path skirts a cliff edge. Fall consequences there are serious. This route should not be attempted with snow on the ridge, and it is not a place for anyone uneasy with heights or for dogs.\n\nA SECOND, INDEPENDENT DESCRIPTION OF THE SAME TAKEOFF: an unsigned climbers' path marked by a CAIRN leaves the maintained trail near the Rachel Lake / Lila Lake junction and climbs the south ridge. Steep, loose, big steps and no shade at first, then it moderates onto the knife-edge crest.",
+    "hazards": [
+     "Sustained exposure along the ridge crest, including a section skirting a cliff edge",
+     "Three false summits and a class 3 downclimb crux near the top",
+     "Loose rock and large step-ups on the initial climbers' path",
+     "Afternoon thunderstorms on a long exposed crest",
+     "Lingering snow in the approach gully in early season"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the boulder gully with cliff bands on its west side, the 5,570 ft saddle and the three false summits come from the DB row's own sourced approach text and its climbing_route entries. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_hibox_mountain_standard": {
+  "area": "wa_hibox_mountain",
+  "approach_variants": [
+   {
+    "name": "Rachel Lake Trail to the avalanche clearing, then the Hibox climbers' path over two cliff bands",
+    "season": "July to October",
+    "notes": "Start at the Rachel Lake trailhead, Trail #1313, about 2,800 ft, at the end of Box Canyon Road / FR-4930. The trail climbs gently through forest along Box Canyon Creek, easy class 1 walking.\n\nAt roughly 2 to 2.2 miles and about 3,300 ft the trail crosses a brushy avalanche-path clearing. That clearing is the key landmark, because Hibox's summit block comes into view on the ridge to the northeast from it.\n\nAbove the boot path the tread climbs steeply, mostly class 2 with fallen timber, about 500 vertical feet to a band of cliffs near 5,300 ft. Stay RIGHT of that first band, then work LEFT around a rock outcrop, continue through patchy timber to a SECOND, higher cliff band, and take the gully on the RIGHT through it. Above, a large sloping subalpine meadow funnels into loose talus and scree.\n\nNo reliable water past the lower forest. About 8 km and 3,900 ft.",
+    "distMi": 5.0,
+    "gainFt": 3900,
+    "baseFinding": "THE CLEARING IS THE FIRST TEST AND THE SUMMIT BLOCK IS ITS PROOF. At roughly 2 to 2.2 miles the maintained trail crosses a brushy avalanche clearing, and from it Hibox's summit block is visible on the ridge to the NORTHEAST. Just past that clearing — some parties say after the SECOND such clearing — watch the RIGHT, climbers'-right, side of the trail for an unmarked but well-established boot path heading northeast and uphill into the forest. It is easy to walk past if you are not looking.\n\nTHE TWO CLIFF BANDS ARE A COUNTED SEQUENCE, WHICH IS WHAT YOU WANT IN FOG: first band, pass it on the RIGHT; then LEFT around a rock outcrop; second band, take the gully on the RIGHT. Two bands, right then left then right. If you have passed only one band you are not yet on the upper mountain.\n\nAND HERE IS THE WRONG-TURN TRAP THAT MATTERS MOST, at the top: the talus tops out on the SOUTH side of the summit block, and the rock straight above you there is steeper and more broken than it looks. That is the spot where parties commit to the wrong line, and there is a deceptive gully on the SOUTHWEST side of the block that cliffs out at class 4. Do not climb what is above you.\n\nWHAT TO DO INSTEAD, WHICH IS THE ACTUAL BASE FINDING: work RIGHT, staying along the south side of the rock and heading EAST, on loose talus over a sloping bed, until a reasonable gully opens on the EAST side of the block. That east gully is the route. It stays easy until the top, where a short NOTCH or narrow chimney gives a bit of genuine class 3 on good, solid holds to a small summit platform.\n\nAND A DESCENT NOTE THAT BELONGS WITH THE FINDING: the boot path through the brushy avalanche clearings is easy to lose on the way down, especially in fog. Look back at the junction on the way up.",
+    "hazards": [
+     "An unsigned, easy-to-lose boot path through brushy avalanche clearings, especially confusing in fog and on descent",
+     "A deceptive gully on the southwest side of the summit block that cliffs out at class 4 — stay climbers' right of it",
+     "Loose talus and scree above about 4,600 ft with real rockfall risk onto parties below",
+     "An exposed class 3 notch and chimney on the summit block, whose downclimb is the part to think about before committing",
+     "Lingering snow and ice in the upper gully and basin into early summer"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the avalanche-clearing junction, the two-cliff-band sequence and the traverse-east-to-the-east-gully test come from the DB row's own sourced approach text and climbing_route entries. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_chikamin_peak_southeast_slopes": {
+  "area": "wa_chikamin_peak",
+  "approach_variants": [
+   {
+    "name": "PCT from Snoqualmie Pass, leaving the trail half a mile SHORT of Chikamin Pass",
+    "season": "July to September",
+    "notes": "From the PCT North trailhead, Trail #2000, off I-90 exit 52, the trail switchbacks through timber and avalanche paths, crosses beneath Kendall Peak, and reaches the Kendall Katwalk around mile 5 at about 5,400 ft — a good checkpoint, though not reliable water late in the season.\n\nContinue north past Ridge Lake at about mile 6.5, which has reliable camping and water, and the Alaska Lake and Joe Lake junctions, then along the rolling rocky PCT beneath Alaska and Huckleberry Mountains to the Huckleberry-Chikamin saddle around mile 10.25. The trail then contours below the Four Brothers and Chikamin's south face, passing the Park Lakes Trail junction.\n\nAbout 13.5 miles one way to the base of the gullies with roughly 4,600 ft of gain, so most parties camp at Ridge Lake or the 5,200 ft pack camp and make it a two or three day trip.",
+    "gainFt": 5400,
+    "baseFinding": "THE TEST IS TO LEAVE THE TRAIL BEFORE YOU REACH THE PASS, AND THAT IS COUNTER-INTUITIVE ENOUGH THAT IT IS THE WHOLE FINDING. At roughly mile 13.5 — about HALF A MILE SHORT of Chikamin Pass, near an established pack camp at about 5,200 ft — leave the PCT and climb steep grassy and heather slopes into the gully systems on the south and southeast face.\n\nTHE NEGATIVE IS EXPLICIT AND EXPENSIVE: do NOT continue to Chikamin Pass before cutting uphill. Doing so puts you in the middle of the FOUR BROTHERS, a band of cliffy towers that force technical terrain on a route that is otherwise a scramble. If you are standing at Chikamin Pass, you have overshot the turn.\n\nSO USE THE PACK CAMP AS THE MARKER: an established camp at about 5,200 ft on the trail, with the peak's south face above and the pass still ahead of you. Turn uphill there.\n\nWHAT THE GROUND SHOULD DO, IN ORDER: class 2 hiking low on grass and heather, then loose scree and dirt-and-heather slots in the upper gully, sustained class 3 as you gain Chikamin Ridge with some exposure near the crest, and finally a short, well-protected class 3-4 CHIMNEY or slot of about 10 ft right below the summit block, with roughly 75 more feet of easy scrambling above it to the top. A 10 ft chimney immediately below the summit horn is the confirming feature.\n\nSNOW CHANGES THE CHARACTER OF THE GULLY ENTIRELY: early in the season it is a steep, rubble-choked chute and an axe is needed.",
+    "hazards": [
+     "An unmarked gully turnoff near Chikamin Pass — overshooting puts you in the cliffy Four Brothers",
+     "Loose scree and rockfall in the upper gully system",
+     "A steep, snow-filled and rubble-choked gully in early season",
+     "Short but exposed class 3 moves on the summit horn",
+     "A long trail approach with camps well short of the peak"
+    ]
+   },
+   {
+    "name": "Mineral Creek and Park Lakes, then the gullies above Glacier Lake",
+    "season": "July to September",
+    "notes": "From the Mineral Creek trailhead, Trail #1331, at the end of FR-46 / Cooper Pass Road at about 2,400 ft, the trail is brushy low down but well trodden. It climbs steadily beside Mineral Creek to Park Lakes at 4.3 to 5.4 miles and about 2,570 ft of gain, and ties into the PCT.\n\nFrom the PCT / Park Lakes junction, head north toward the Spectacle Point saddle overlooking Spectacle Lake, then drop about a mile to Glacier Lake, a common camp, before climbing the southeast-slope gullies above it.\n\nThis is the shortest line in — day-trip feasible for a strong party at roughly 14 to 16.5 miles round trip — but the tread is rougher and there are creek crossings low down.",
+    "baseFinding": "FROM THIS SIDE THE ARRIVAL IS A LAKE, NOT A TRAIL JUNCTION: you climb the gullies directly ABOVE GLACIER LAKE. Standing at the lake with the southeast slopes rising in front of you is the arrival, and the lake is a hard landmark that cloud does not remove.\n\nWHAT THE GROUND BELOW THE GULLIES LOOKS LIKE, AS CONFIRMATION: brooks, waterfalls, tarns, heather benches, sandstone slabs and blocky breccia low down. Running water and heather benches are right for this side; if you are on bare scree from the lake upward, you have started too high.\n\nTHE TWO APPROACHES MEET ON THE SAME UPPER MOUNTAIN, so the finding from there is identical: loose scree and dirt-and-heather slots in the upper gully, sustained class 3 to the crest of Chikamin Ridge, and a short well-protected 10 ft class 3-4 chimney below the summit block with about 75 ft of easy scrambling above it.\n\nAND THE SAME NEGATIVE APPLIES ONCE YOU ARE ON THE PCT: do not wander south toward Chikamin Pass looking for a way up. The Four Brothers sit between the pass and the route.",
+    "hazards": [
+     "Brushy lower trail and creek crossings on the Mineral Creek approach",
+     "Loose scree and rockfall in the upper gullies",
+     "Exposure near the final ridge crest",
+     "Snow-filled gullies in early season"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the leave-the-PCT-half-a-mile-short rule, the Four Brothers negative and the 10 ft summit chimney come from the DB row's own sourced approach text and climbing_route entries. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_lemah_two_scramble": {
+  "area": "wa_lemah_two",
+  "approach_variants": [
+   {
+    "name": "Pete Lake and the PCT to the Lemah Creek climbers' path, then the col below the Main Peak",
+    "season": "July to September",
+    "notes": "From I-90 exit 80 at Roslyn / Salmon la Sac, drive SR-903 north 16.8 miles through Roslyn and past Cle Elum Lake, then west on FR-46 for 4.7 miles and right on FR-4616 for a mile to the Cooper Lake / Pete Lake trailhead.\n\nFollow Pete Lake Trail #1323 along the Cooper River about 4.5 miles to Pete Lake, continue past it and pick up the PCT southbound for roughly four more miles to the Lemah Creek crossing, then follow the PCT south under a mile.\n\nA faint, unmaintained climbers' trail leaves on the NORTH side of Lemah Creek, marked by occasional flagging, with deadfall and brush for the first 400 vertical feet. It passes waterfalls and swimming holes and reaches a meadow at about 3,600 ft where the creek breaks into shallow ponds — the common camp. A thick band of slide alder guards the far end of that meadow and is best bypassed through the timber to the north.\n\nAbout 12.9 km and 4,480 ft.",
+    "gainFt": 4480,
+    "baseFinding": "THE ARRIVAL YOU ARE AIMING FOR IS A COL, AND IT IS THE COL BETWEEN LEMAH TWO AND THE MAIN PEAK. From the 3,600 ft meadow camp, follow the drainage to about 5,000 ft where the Lemah Glacier remnant begins, climb to roughly 6,200 ft, then exit SOUTH — climbers' left — up a short cliff onto glacial remnants on the peak's southeast side, and traverse northwest to the base of that col. Everything technical on this route starts from the col; below it you are walking, scrambling class 2-3 cliff bands, and crossing snow.\n\nTHE CONFIRMING FEATURE ABOVE THE COL IS A CHUTE, AND ITS CHARACTER IS DISTINCTIVE: a snow slope and then a chute of mixed steep snow or ice and class 3-4 rock, OFTEN WITH WATER RUNNING DOWN IT. Running water in the chute is the signature of this line and is why parties carry crampons and an axe even in summer. That chute is the technical crux of the route.\n\nTHE ALTITUDE SEQUENCE IS THE FOG TEST: 3,600 ft camp, 5,000 ft glacier remnant, 6,200 ft, then exit left up a short cliff. Four altimeter checks and one turn, none of which needs the summit to be visible.\n\nAND THE NEGATIVE: if you are climbing toward a summit without having stood in a col between two distinct peaks, you are on the wrong feature. Lemah Two is the second of the Lemah summits and the Main Peak — Lemah Three — is the one across the col from you.\n\nPLAN THE DOWNCLIMB BEFORE YOU COMMIT TO THE CHUTE. Summit day here is long and parties frequently finish the descent to camp after dark.",
+    "hazards": [
+     "A faint, unmaintained climbers' trail with deadfall and brush for the first 400 vertical feet",
+     "A thick band of slide alder at the far end of the meadow camp",
+     "Steep snow or ice and class 3-4 rock in the crux chute, often with water running down it",
+     "A moat where the glacier remnant meets the rock",
+     "A long summit day with descents routinely finishing after dark — carry headlamps",
+     "Remote terrain with a multi-day walk out"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the meadow camp, the altitude sequence, the col and the water-running chute come from the DB row's own sourced approach and beta text. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_three_queens_middle_peak": {
+  "area": "wa_three_queens",
+  "approach_variants": [
+   {
+    "name": "Mineral Creek Trail, then off-trail through the vine maple to the south-side talus",
+    "season": "June to September",
+    "notes": "From the Mineral Creek trailhead at about 2,400 ft, cross the Kachess River ford, follow 1.7 miles of trail to the Mineral Creek crossing, then about a mile further through vine maple brush to the base of the long talus slope on Middle Peak's south side.\n\nThis shares the trailhead and initial trail with the East / Main Peak standard route, and the divergence is where you leave the trail into the brush.\n\nAbout 4.3 km beyond the road and 4,600 ft of gain.",
+    "gainFt": 4600,
+    "baseFinding": "THE NOTCH YOU WANT IS MARKED BY A CHOCKSTONE, AND THAT IS THE ONE UNAMBIGUOUS OBJECT ON THIS SIDE OF THE MOUNTAIN. The long south-side talus steepens toward the notch between the MAIN and MIDDLE peaks, and a chockstone sits in that notch. Chockstone in the gap between two summits: that is your arrival, and it is a thing rather than a description.\n\nFROM THE NOTCH THE LINE IS A LEDGE, NOT A RIDGE. Traverse a BROAD SOUTH-FACING LEDGE to a rock gable roughly 150 ft below the summit. If you are on a crest rather than on a wide ledge, you have taken the ridge instead of the traverse.\n\nAND THE CLIMBING ITSELF CONFIRMS IT: a solid, enjoyable CLASS 4 CHIMNEY runs directly from the gable to the top. Solid rock is worth noting because so little on this peak is. If the ground above the gable is loose scrambling rather than a defined chimney, you are not at the gable.\n\nTHE DESCENT IS THE MIRROR AND IT IS SHORT: two 60 ft rappels down the South Chimney regain the ledge system, then reverse the talus and the trail.\n\nHOW THIS DIFFERS FROM THE PEAK'S OTHER LINES: the standard scramble goes to the East / Main Peak and the West Peak is reached from Spectacle Point on a multi-day approach. If you have walked past the Main-Middle notch and are heading for a different summit, you are on a different route.",
+    "hazards": [
+     "An unbridged Kachess River ford at the trailhead",
+     "Off-trail travel through vine maple brush to reach the talus",
+     "Long loose talus below the notch",
+     "A class 4 chimney and a broad exposed ledge traverse",
+     "Rockfall onto anyone in the notch below the chimney"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the chockstone-marked Main-Middle notch, the broad south-facing ledge, the rock gable and the class 4 chimney come from the DB row's own sourced beta. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_three_queens_standard": {
+  "area": "wa_three_queens",
+  "approach_variants": [
+   {
+    "name": "Mineral Creek Trail to the break in the timber west of the waterfall gully",
+    "season": "July to September",
+    "notes": "From the Mineral Creek trailhead, Trail #1331, at roughly 2,360 to 2,400 ft via FR-4600 over Cooper Pass, the trail promptly crosses the Kachess River — look for logs, and wade if they are not there. It climbs gently north through second growth and brushy old avalanche paths, muddy in places with occasional blowdown.\n\nAt about 1.6 to 1.7 miles it crosses Mineral Creek itself, which carries enough current in early season that parties often lay a log rather than ford. The ruins of an old mine and mill sit just off-trail here — a landmark and the last good water.\n\nContinue upstream through brushy trail roughly another mile, to about the 2.7-mile mark.\n\nAbout 8.85 km, with 1,400 to 1,700 ft of off-trail gain above the trail.",
+    "gainFt": 6300,
+    "baseFinding": "THE TAKEOFF IS A BREAK IN THE TIMBER ON THE RIGHT, AND THE WAY TO GET IT RIGHT IS TO KNOW WHICH DRAINAGE IT IS NOT. At about 2.7 miles, between roughly 3,300 and 3,500 ft, watch on the RIGHT (west) for a break in the timber where an obvious boot and social path leaves the maintained trail and cuts west through 100 to 200 ft of vine maple brush to the base of the south-face talus.\n\nTHE DISCRIMINATOR: leave the trail WEST OF THE BROAD WATERFALL GULLY that drains the south face — NOT at the drainage directly above the Mineral Creek crossing. Trip reports flag exactly this junction as easy to get wrong in the brush, and the two drainages are the reason. Old mine ruins at the creek crossing, then roughly another mile, then the break past the waterfall gully.\n\nWHAT THE GROUND SHOULD DO ONCE YOU ARE OFF TRAIL, in order, so you can check yourself without seeing the peak: the lower 1,000 ft is moderately angled, largely stable LARGE talus. Above that the rock turns smaller and looser and funnels into choss gullies, class 2 with short class 3 steps. A snow ramp is commonly met around 5,200 ft and can persist into midsummer, so carry an axe early in the season.\n\nTHE FINAL 400 FT IS THE MOST EXPOSED GROUND ON THE ROUTE, with brief but genuine class 3 and blocks that shift underfoot. Guidebook descriptions calling this section class 3 are considered generous by parties who found it heads-up throughout.\n\nA CONFLICT IN THE RECORD, STATED RATHER THAN RESOLVED: this row also carries a description of an approach from a camp at Upper or Middle Park Lake, ascending to the Main-Middle notch and traversing onto a broad LEDGE SYSTEM ON THE NORTH FACE for the last 200 ft, because the crest directly above the notch degenerates into class 5. That is a different side of the mountain from the Mineral Creek south-talus line above. Both are documented; decide which you are climbing before you leave the car, and do not expect the markers from one to appear on the other.",
+    "hazards": [
+     "An unbridged Kachess River crossing at the trailhead and a Mineral Creek crossing with real current in early season",
+     "A brushy, easy-to-miss trail departure between two similar drainages",
+     "Loose rock and rockfall through the upper talus and choss gullies — helmets, and keep the group tight",
+     "A snow ramp around 5,200 ft persisting into midsummer",
+     "Brief but genuine class 3 with shifting blocks on the final 400 ft, harder than the guidebook grade suggests"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived: the trail-departure marker, the talus sequence and the exposed final 400 ft come from the DB row's own sourced approach text; the row's beta describes a different, north-side line and that conflict is recorded rather than resolved. No independent page for this line was retrieved in this pass, so _sources is deliberately empty rather than populated with a URL that was not read"
+ },
+ "wa_bears_breast_mountain_infinite_beauty": {
+  "area": "wa_bears_breast_mountain",
+  "approach_variants": [
+   {
+    "name": "Waptus River and the PCT, then the Shovel Creek fisherman's trail to the foot of the slab",
+    "season": "July to September; documented ascents cluster in August",
+    "notes": "From the Salmon La Sac trailhead, hike the Waptus River Trail about nine miles to Waptus Lake. The bridge has been out, so wade or rock-hop the river at the horse ford. Where the trail joins the PCT, head SOUTHBOUND (west).\n\nShortly before the PCT crosses the Waptus River, leave the trail and head northwest toward a faint shoulder and bench through flat, easy forest. Pick up a fisherman's trail on the southwest side of that bench and follow it toward Shovel Creek, then up and over the bench past an informal campsite with a GIANT CAIRN, where it starts to climb the shoulder on the EAST side of Shovel Creek.\n\nBefore long the trail leaves the forest straight onto talus. Easy talus walking brings you to Shovel Creek; cross where convenient.\n\nRoughly 13 miles to the base, five to six hours. Most parties camp near the Waptus River PCT bridge.",
+    "distMi": 13.0,
+    "gainFt": 4697,
+    "baseFinding": "CROSSING SHOVEL CREEK OFF THE TALUS PUTS YOU AT THE FOOT OF THE MEGA SLAB — THAT IS THE ARRIVAL, AND IT IS A CREEK CROSSING RATHER THAN A JUDGEMENT. The slab drops from the peak's southeast shoulder at about 6,700 ft all the way to Shovel Creek at about 3,700 ft, so there is no ambiguity about which piece of rock it is: it is the enormous unbroken sheet above you, one of the longest continuous sandstone slabs in North America.\n\nWHICH LINE ON THE SLAB IS THE REAL QUESTION HERE, AND FOR THIS ROUTE THE ANSWER IS A SINGLE WORD: LOWEST. Infinite Beauty begins at the LOWEST PART of the slab, on a SHALLOW RIB. Walk the base downhill until it stops going down, and start on the rib there.\n\nHOW THAT DISTINGUISHES IT FROM ITS NEIGHBOUR: Timeless Treasure climbs the MIDDLE of the slab. So if you have walked out along the base looking for a nicer-looking start, you are on Timeless Treasure. The lowest point is the whole distinction and it is decidable by walking downhill rather than by looking.\n\nWHAT THE ROCK SHOULD FEEL LIKE, AS CONFIRMATION: clean, solid, grippy low-angle stone with minimal breaks, and roughly 2,000 ft of sustained fourth class. Approach shoes or trail runners friction well on it and most of the slab is climbed unroped. If you are pulling into cracks or dodging vegetation, you are off the clean sheet.\n\nAND WHERE THE ROUTE ENDS ITS OWN IDENTITY: after about 2,000 ft the line naturally angles RIGHT and joins Timeless Treasure for brief, unexposed low-fifth moves up overlaps trending up and right to the southeast shoulder. Easy scrambling then leads to the summit block, where the rock quality noticeably deteriorates over the final three pitches.",
+    "hazards": [
+     "About 2,000 ft of unprotected friction slab, mostly climbed unroped",
+     "Rock quality deteriorating markedly on the final three summit-block pitches",
+     "No water on the slab — carry the whole climbing day's supply",
+     "A long, remote approach with no confirmed cell coverage",
+     "The Shovel Lake descent alternative involves loose dirt high, brush and cliff bands low, and heavy route-finding"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/127298931/bears-breast-mountain"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bears_breast_mountain_timeless_treasure": {
+  "area": "wa_bears_breast_mountain",
+  "approach_variants": [
+   {
+    "name": "Waptus River and the PCT, then the Shovel Creek track to the middle of the slab",
+    "season": "July to September",
+    "notes": "From the Salmon La Sac trailhead, follow the Waptus River Trail and the PCT roughly twelve flat miles to Waptus Lake and a camp near the Waptus River PCT bridge. The Waptus River bridge has been out, so plan on a ford at the horse crossing.\n\nFrom camp, an old, faint, unmaintained track parallels Shovel Creek through forest to a bench around 3,400 ft, then talus-hops to the base of the Mega Slab at roughly 3,700 ft.\n\nAbout 19.3 km one way and 4,697 ft of gain.",
+    "distMi": 12.0,
+    "gainFt": 4697,
+    "baseFinding": "SAME SLAB, DIFFERENT PLACE ON IT: THIS ROUTE TAKES THE MIDDLE. Once you have crossed Shovel Creek off the talus and are standing under the Mega Slab, walk along the base to its MIDDLE and start there. The slab runs from about 3,700 ft at the creek to the southeast shoulder at about 6,700 ft, so the middle is a real and findable place along a very long base.\n\nTHE DISCRIMINATOR AGAINST ITS NEIGHBOUR IS A SINGLE STEP: Infinite Beauty starts at the LOWEST point of the slab, on a shallow rib. If you are at the bottom end of the base, you are on Infinite Beauty. Walk up along the base until you are in the middle of the sheet.\n\nWHAT THE ROCK SHOULD FEEL LIKE: perfect stone, mostly fourth class with occasional low-fifth moves higher up. If it is broken or vegetated you have drifted off the clean centre of the slab.\n\nWHERE THE TWO ROUTES MERGE, AND WHY THAT MATTERS TO THE FINDING: both finish on the SAME three-pitch 5.6+ summit block. So being on the correct route matters for the first 2,000 ft and stops mattering above the shoulder. If you are already on the summit block and unsure which line you climbed, the question no longer has a practical answer.\n\nA PRACTICAL NOTE THAT IS PART OF THE FINDING HERE: most parties either reverse the slab, which is easy and secure, or descend toward Shovel Lake. Reversing is the recommended option precisely because you already know that ground.",
+    "hazards": [
+     "A long, remote approach with no confirmed reliable cell coverage",
+     "Loose rock and heavy route-finding on the Shovel Lake descent",
+     "No water on the slab itself",
+     "Deteriorating rock on the shared summit-block pitches"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/127298931/bears-breast-mountain"
+  ],
+  "_confidence": "corroborated"
+ },
+ "wa_bears_breast_mountain_southwest_face": {
+  "area": "wa_bears_breast_mountain",
+  "approach_variants": [
+   {
+    "name": "Middle Fork Snoqualmie and Williams Creek to Dutch Miller Gap, then a camp below the face",
+    "season": "July to September",
+    "notes": "From North Bend, take I-90 to exit 34, follow 468th Ave SE north 0.6 mile, then right onto Middle Fork Road, FS Road 56. Continue twelve miles as the pavement gives out and roughens, then about five more rough miles — high clearance recommended — to the Dutch Miller Gap trailhead at the old roadbed terminus, about 2,850 ft.\n\nHike the Middle Fork Snoqualmie / Williams Creek corridor roughly fifteen miles to Dutch Miller Gap, about four and three quarter hours, then continue to a camp below the southwest face. The whole outing is about 22 miles of trail.\n\nCamp to summit runs about six hours and summit to camp about four and three quarter, so budget a full day above camp.",
+    "distMi": 15.0,
+    "gainFt": 5400,
+    "baseFinding": "YOU ARE COUNTING GULLIES, AND THERE ARE EXACTLY TWO. The southwest face carries TWO PARALLEL GULLIES. Take the LEFT-HAND one. That is the entire base finding and it works in cloud because two parallel features are countable from close range without seeing the summit.\n\nWHAT THE LEFT GULLY SHOULD DELIVER: roughly 1,000 ft of class 3-4 ground ending at a RIDGE NOTCH NORTHWEST of the true summit. Notch on the ridge, summit up and to your southeast: that is the correct arrival at the technical climbing.\n\nTHE ROPED PART IS SHORT AND ITS SHAPE CONFIRMS THE LINE: three short pitches to 5.6 up the summit block from that notch. Not a long face climb — three pitches. If you are looking at hundreds of feet of steep rock above the notch, you are at the wrong notch.\n\nAND THE DESCENT MIRRORS IT EXACTLY, which is worth knowing before you start up: three single-rope rappels down the WEST side of the summit block back to the notch, then downclimb the class 3-4 gully. A 50 m rope suffices; a 60 m or two 50 m ropes is better for a party of three. Route-finding through the ledges on the way down is reported as the crux of the descent and slower than the ascent.\n\nHISTORICAL CONFIRMATION THAT THIS IS THE ORDINARY WAY UP THE PEAK: this face gave the mountain's first ascent, on 8 August 1939, by Fred Beckey at sixteen with Joe Barto and Wayne Swift.",
+    "hazards": [
+     "Loose, broken rock throughout the gully and the lower pitches",
+     "Marginal protection near an old, deteriorating piton at the pitch 1 crux",
+     "Complex, slow route-finding through ledges on the descent",
+     "A long, remote multi-day approach on a rough forest road with limited rescue access",
+     "No walk-off once on the roped summit block: the three rappels are the only reasonable retreat"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.mountainproject.com/area/127298931/bears-breast-mountain"
+  ],
+  "_confidence": "single-source"
+ },
+ "wa_big_snow_mountain_east_ridge_hardscrabble_route": {
+  "area": "wa_big_snow_mountain",
+  "approach_variants": [
+   {
+    "name": "The gated Middle Fork road to the Hardscrabble Lakes boot path",
+    "season": "July to September",
+    "notes": "Start at the Dingford Creek trailhead gate and walk — or mountain-bike, which is the sensible choice — the closed Middle Fork Snoqualmie River Road about seven miles.\n\nThe boot path for the Hardscrabble Lakes leaves roughly half a mile SHORT of the old Hardscrabble Horse Camp, across the road from a LARGE FALLEN LOG. Follow the climbers' path east through forest to upper Hardscrabble Lake.\n\nAbout 20 km and 5,300 ft, and very light foot traffic — do not expect a reliable boot path throughout.",
+    "distMi": 12.5,
+    "gainFt": 5300,
+    "baseFinding": "THE TRAIL DEPARTURE IS MARKED BY A FALLEN LOG ACROSS THE ROAD FROM IT, AND IT IS HALF A MILE SHORT OF THE HORSE CAMP. Those two facts together are what make it findable, because the boot path itself is unmarked. If you have reached the old Hardscrabble Horse Camp, you have gone about half a mile too far.\n\nTHE RULE THAT KEEPS YOU ALIVE ON THE WAY TO THE LAKES: climbing past the lower and upper Hardscrabble Lakes, STAY CLOSE TO THE INLET. Straying LEFT leads into cliff bands, and the east face and buttress above the lower lake drop directly into the water in steep walls. Inlet on your side, cliffs away to the left.\n\nFROM UPPER HARDSCRABBLE LAKE, THE SEQUENCE IS SHORT AND COUNTABLE: climb a gully to a COL, drop onto the OPEN GRANITE SLAB of the north slope, then follow the east ridge to the summit. Gully, col, granite slab, ridge. If you top the gully and are not looking at an open slab of granite, you are at the wrong col.\n\nWHAT THIS ROUTE IS NOT: the East BUTTRESS is a ten-pitch technical line on the same side of the mountain, reached from the LOWER lake rather than the upper one. If you are roping up, you are on the buttress and not on this route.",
+    "hazards": [
+     "The east face and buttress above lower Hardscrabble Lake are steep and cliffy — stay on the inlet-side path",
+     "A long, remote approach with no maintained trail for the final stretch",
+     "Very light foot traffic, so no dependable boot path",
+     "Early-season snow in the gully to the col",
+     "A multi-mile road walk out at the end of a long day"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-25.3475024231"
+  ],
+  "_confidence": "row-derived: the fallen-log marker, the half-mile-short-of-the-horse-camp rule and the stay-near-the-inlet rule come from the DB row's own sourced approach text"
+ },
+ "wa_big_snow_mountain_east_buttress": {
+  "area": "wa_big_snow_mountain",
+  "approach_variants": [
+   {
+    "name": "As for the East Ridge, but stopping at the LOWER Hardscrabble Lake",
+    "season": "July to September",
+    "notes": "Approach exactly as for the East Ridge / Hardscrabble route: walk or bike the gated Middle Fork Snoqualmie River Road to the Hardscrabble Lakes boot path — half a mile short of the old horse camp, across the road from a large fallen log — and follow the climbers' path east through forest.\n\nThe difference is that this route stops at the LOWER lake rather than continuing to the upper one.\n\nThis line sees very few repeat ascents, so beta is thin and any fixed anchors should be treated as unreliable.",
+    "gainFt": 5300,
+    "baseFinding": "THE LAKE TELLS YOU WHICH ROUTE YOU ARE ON: this one belongs to the LOWER Hardscrabble Lake, and the East Ridge belongs to the upper one. If you have walked on to the upper lake, you have passed the buttress.\n\nFROM THE LOWER LAKE THE SEQUENCE IS COUNTED, AND THE COUNT IS TWO: traverse the lake's LEFT — north — side, then scramble over TWO ROCK BANDS to reach the SOUTH side of the buttress at about 5,400 ft. Two bands and an altimeter reading of 5,400 ft is the arrival test. One band means you are not there yet.\n\nTHE FEATURE ITSELF IS UNMISTAKABLE ONCE YOU ARE UNDER IT: the east face and buttress drop directly into the lower lake in steep walls. A buttress rising straight out of the water below you and a south flank you have just scrambled onto is the correct position.\n\nWHAT THE CLIMBING SHOULD BE: ten pitches close to the crest, working under overhangs, on generally SOLID GRANITE — originally four pitches of class 4 followed by class 5 with occasional aid pitons, later freed at about 5.10. Solid granite close to a crest, with overhangs to work beneath, is the confirmation. Loose scrambling means you are on the ridge route instead.\n\nHONEST LIMIT, STATED BECAUSE IT MATTERS MORE THAN USUAL HERE: this is a thin record. The published position is the lake side, the two bands and the 5,400 ft elevation, and that is all. Nothing finer is documented, and the route sees so few ascents that no worn line will help you.",
+    "hazards": [
+     "The east face and buttress drop directly into lower Hardscrabble Lake in steep walls",
+     "Very few repeat ascents, so beta and any fixed anchors may be sparse or unreliable",
+     "The original ascent used aid pitons on the class 5 sections; free beta is secondhand",
+     "A long, remote approach with a road walk or bike out",
+     "No documented descent line for the buttress itself"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-25.3475024231"
+  ],
+  "_confidence": "row-derived and thin: the two-rock-bands, south-side and 5,400 ft position is the entire published identification, and it is recorded here as such rather than embellished"
+ },
+ "wa_big_snow_mountain_north_slope_dingford_route": {
+  "area": "wa_big_snow_mountain",
+  "approach_variants": [
+   {
+    "name": "Dingford Creek Trail to Myrtle Lake, then off-trail past Big Snow and Snowflake Lakes",
+    "season": "July to September, best once the gullies and couloir have melted out",
+    "notes": "Drive to the Dingford Creek trailhead gate via the Middle Fork Snoqualmie River Road / FSR 56, about eighteen miles from North Bend, with the last several miles rough gravel and high clearance recommended.\n\nHike the Dingford Creek Trail roughly 3.2 miles to the Hester Lake Trail junction, then continue LEFT (east) toward Myrtle Lake, about two miles more.\n\nFrom Myrtle Lake the maintained trail ends. Serious route-finding and bushwhacking start here and failed attempts from losing the line are common.\n\nAbout 9.7 km and 5,280 ft.",
+    "gainFt": 5280,
+    "baseFinding": "THREE LAKES IN ORDER ARE THE WHOLE NAVIGATION, AND THEY ARE THE ONLY THINGS ON THIS ROUTE THAT CLOUD CANNOT TAKE AWAY: MYRTLE, then BIG SNOW, then SNOWFLAKE. Leave the maintained trail at Myrtle Lake. Climb steep, increasingly brushy ground to Big Snow Lake. Then traverse RIGHT around Snowflake Lake. If you have not passed a lake in the last while, you are off the line.\n\nWHERE THE CLIMBING BEGINS: above Snowflake Lake, ascend gullies and chutes — a snow couloir early in the season — on the mountain's northwest flank to the upper rock fields. The transition from brush and heather to rock fields is the arrival at the climbing proper, and it is a change underfoot rather than a view.\n\nWHAT THE FINAL GROUND IS: class 2-3 scrambling across the upper rock fields to the summit. If you find yourself needing a rope, you have wandered into steeper ground than this route takes.\n\nTHE HONEST WARNING, WHICH IS THE MOST USEFUL SENTENCE HERE: there is no maintained trail beyond Myrtle Lake and light foot traffic keeps any boot path faint. Parties fail on this peak by losing the line rather than by finding the climbing hard. Carry a track, and treat the lake sequence as the route.",
+    "hazards": [
+     "No maintained trail beyond Myrtle Lake, and any boot path stays faint",
+     "Steep gullies and chutes above Big Snow Lake holding snow or ice well into summer",
+     "Crumbly, mossy rock in the chutes",
+     "Remote, seldom-visited terrain with real self-rescue implications",
+     "Rough gravel road access with high clearance recommended"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-25.3475024231"
+  ],
+  "_confidence": "row-derived: the Myrtle-Big Snow-Snowflake lake sequence and the northwest-flank chutes come from the DB row's own sourced approach text"
+ },
+ "wa_summit_chief_mountain_north_face": {
+  "area": "wa_summit_chief_mountain",
+  "approach_variants": [
+   {
+    "name": "Middle Fork Snoqualmie valley in spring, river braids and a camp below the face",
+    "season": "A narrow spring window, roughly March to April, while the ice and snowfields are in. This line forms only briefly and has almost no repeat trip-report history",
+    "notes": "Drive the Middle Fork Snoqualmie Road, NF-56, to its plowed or drivable end, then bike or hike the remaining distance — about a mile in the first-ascent party's case — into the valley.\n\nContinue on foot through snowy forest along the valley trail, crossing MULTIPLE BRAIDS of the Middle Fork Snoqualmie. Those crossings are the crux of the approach in high water and are unprotected. Then climb to a camp below the north face. The first-ascent party took about six and a half hours from vehicle to camp.",
+    "baseFinding": "THE FIRST AND MOST IMPORTANT FINDING IS WHETHER THERE IS ANYTHING TO FIND. This face is condition-only. The single published account is the first ascent, and it describes roughly 2,000 vertical feet linking runnels and couloirs, with the defining section being a RAMP HOLDING ABOUT 600 VERTICAL FEET OF WATER ICE at WI2 to WI3. If that ramp is not iced, there is no route at the base and no amount of searching will produce one. Look for the ramp from the valley before committing to the walk in.\n\nTHE ARRIVAL ITSELF IS A CAMP, NOT A NOTCH: you are aiming for camp below the face, and the base of the climb is the lowest runnel beneath the ice ramp. There is no published discriminating feature at ground level beyond the ramp, and this entry does not invent one.\n\nTHE SEQUENCE ABOVE, SO YOU CAN CHECK YOURSELF ONCE COMMITTED: about 600 ft of WI2-3 water ice on the ramp, then a first snowfield, then a second snowfield, then an AI2 exit step near the summit. Two distinct snowfields separated by easier ground is the confirmation you are on the line the first ascent took.\n\nA PROTECTION WARNING THAT BELONGS WITH THE FINDING BECAUSE IT COMES FROM THE ONLY PARTY WHO HAS BEEN THERE: they carried only two titanium ice screws and found that badly short for the ice actually encountered, supplementing with knifeblade pitons in compact rock between ice sections. Rock protection on the ice section is scarce. Carry a real screw rack.\n\nAND PLAN THE DESCENT BEFORE YOU START, BECAUSE RETREAT FROM HIGH ON THE FACE IS NOT SIMPLE: the first ascent did not reverse the route. They descended the SOUTHWEST side, downclimbing neve and making two 30 m rappels down a snow gully to a col west of the peak.\n\nREAD EVERYTHING ABOVE AS ONE PARTY'S CONDITIONS, NOT AS AN ANNUAL EXPECTATION.",
+    "hazards": [
+     "A rarely-climbed alpine ice route with essentially no repeat beta",
+     "Difficult, unprotected crossings of multiple river braids on the approach",
+     "Avalanche and wet-slide hazard on the spring approach and the snowfields",
+     "Near-constant spindrift funnelling down the runnels during and after storm; spindrift avalanches swept the face during the first ascent party's descent",
+     "Scarce rock protection between ice sections",
+     "A descent by an unfamiliar side of the peak at the end of a committing route"
+    ]
+   }
+  ],
+  "_sources": [],
+  "_confidence": "row-derived and deliberately thin: the only published account of this face is the 2004 first ascent, and this entry states what that account supports and nothing more"
+ },
+ "wa_huckleberry_mountain_east_ridge": {
+  "area": "wa_huckleberry_mountain",
+  "approach_variants": [
+   {
+    "name": "PCT past the Kendall Katwalk to a point due EAST of the summit, then straight up",
+    "season": "July to October",
+    "notes": "From the PCT North trailhead at Snoqualmie Pass, about 3,000 ft, hike the PCT northbound past Kendall Pass and the Kendall Katwalk to Ridge Lake, then past Alaska Pass and around Alaska Mountain to Huckleberry Flats. The Commonwealth Basin shortcut rejoins the PCT and saves about a mile, and is the recommended line.\n\nWalk on until you are essentially due EAST of Huckleberry's summit — roughly nine to ten miles in. That bearing is the trigger to leave the trail, not a named junction.\n\nMany parties make this two or three days with a camp at Ridge Lake or Gravel Lake; a fit party has done it car to car in about eleven and a half hours.\n\nAbout 17.4 km and 4,600 ft.",
+    "distMi": 10.5,
+    "gainFt": 4600,
+    "baseFinding": "LEAVE THE PCT WHEN THE SUMMIT IS DUE WEST OF YOU — A BEARING, NOT A LANDMARK, WHICH IS EXACTLY WHAT YOU WANT IN CLOUD. From that point head cross-country WEST up steep heather or talus.\n\nTHE BASE OF THE CLIMB IS WHERE THE MELLOW TERRAIN ENDS AND THE GROUND TURNS ROCKY, at about 6,100 ft, marked by a ROCKY BUTTRESS. That change underfoot is the arrival, and it is felt rather than seen.\n\nAND THEN COMES THE ONE DECISION THAT DECIDES WHICH ROUTE YOU CLIMB, WHICH IS THE MOST VALUABLE THING ON THIS PAGE. At the base of the rocks you have two options: LEFT takes you into a steep loose GULLY leading to a notch and the summit block — that is the older Beckey line, and it has turned parties around with rockfall. RIGHT takes you up the RIDGE on class 3+ terrain — that is the East Ridge, the historic first-ascent route, and it is what most parties now climb. If you are in a loose gully, you have gone left.\n\nHOW TO FOLLOW IT ONCE COMMITTED, BECAUSE IT DOES NOT LOOK OBVIOUS FROM BELOW: the route goes up the RIGHT side of the east ridge, essentially linking CLUMPS OF TREES, tree patch to tree patch. Looking up at it, the line is genuinely hard to piece together by eye; once you start, the next move is usually clear. Staying towards the RIGHT is correct at the beginning.\n\nCHECKPOINTS HIGHER UP: about halfway, maybe a little further, leave the ridge proper by heading LEFT on a short traverse to a BLOCKY RAMP, which you climb to a high point just before the summit block. Then descend about 20 ft to the NOTCH at the foot of the block — either straight down, or skiers' right and a class 3 traverse to a ramp leading down to the notch.\n\nTHE SUMMIT BLOCK ITSELF: go up the middle to an obvious SLABBY RAMP. From there either a short class 5 crack — one piece, a #1 Camalot at its start, is what the record describes — or follow the ramp climbers' LEFT to exposed class 3/4. Bring a 60 m rope: a 30 m is insufficient for the rappel off the block.\n\nSCALE OF THE THING, SO NOBODY UNDERESTIMATES IT: there is no walk-up on this mountain, the scrambling is stiff class 3 with class 4 moves, and one of the 1915 first-ascent party wrote his will on his shirt cuff over doubts he would survive the descent.",
+    "hazards": [
+     "Stiff class 3 with class 4 moves on an exposed ridge — not a beginners' scramble",
+     "A loose block at the notch below the summit block",
+     "A crumbly class 2 ledge traverse above a big cliff",
+     "Rockfall in the alternative Beckey gully on the left, which has turned parties around",
+     "No simple walk-off: a 60 m rope is needed for the rappel off the summit block",
+     "A very long day, with parties commonly splitting it over two or three"
+    ]
+   }
+  ],
+  "_sources": [
+   "https://www.summitpost.org/huckleberry-mountain-snoqualmie/1009936",
+   "https://www.mountaineers.org/explore/routes-places/huckleberry-mountain-east-face"
+  ],
+  "_confidence": "corroborated"
+ },
+ "_SKIPPED": {
+  "_note": "Twelve routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason is a statement about what is published, not about effort.",
+  "wa_chimney_rock_west_face": "CONTAMINATION — do not enrich. This row is an IDAHO route on the Selkirk Crest's Chimney Rock, filed on Washington's Chimney Rock, and is already flagged for removal. Washington's Chimney Rock has only the East Face and East Face Direct. Writing an approach for it would give a Washington base to a climb 200 km away in another state. Note also that the row's own aspect column says E while its name says West Face, which is the same defect seen from the other side.",
+  "wa_cathedral_rock_southeast_face_chimney": "The entire published record for this line is one sentence in Beckey's Cascade Alpine Guide calling it class 5.6 on the peak's southeast side. The row itself says no further pitch-by-pitch beta was found. Its only stated position is relative — 'on the face directly above, left of the ground taken by the ordinary Southwest Face route' — and on a peak whose shattered south and southwest flanks offer many plausible-looking gullies that cliff out, inventing a marker would be actively dangerous.",
+  "wa_cathedral_rock_northwest_couloir": "Positioned only as 'around toward the northwest side of the summit block', which is a bearing rather than a marker. It is also primarily used as a DESCENT after the Southwest Face or Northeast Buttress, so the chockstone that is its one distinctive feature is met on the way DOWN and cannot serve as an arrival test on the way up.",
+  "wa_snoqualmie_mountain_the_snostril": "Mountain Project's own beta for this route tells climbers to cross-reference New York Gully's approach and John Scurlock's aerial photographs of the face to find the start. That is an admission that the base is not findable from text. Its only stated position is 'a corner roughly halfway between the Thunder Basin exit gully and the Snot Couloir' — relative to two other features on a face carrying five closely spaced lines.",
+  "wa_snoqualmie_mountain_boogie_wonderland": "Positioned only as 'just right of the end of the Snot Couloir, around the end of the ridge that divides the right side of the NW Face'. Relative to a feature you must already have identified, on the face where mistaking one line for its neighbour is the routine error. An 18 m single pitch with no published coordinate or independent marker.",
+  "wa_lemah_two_goatshead_spire": "The sources identify this only by its location on Lemah Two's east spur, an approximate elevation, and the first-ascent party and date (Donald Goodman and John Mason, 8 August 1982, the upper of two towers). No published grade, pitch count or route description exists. There is nothing to find a base for.",
+  "wa_three_queens_west_peak": "The source trip report describes the whole climb as 'rock scramble and rock climb' from a camp at Spectacle Point. No feature, no notch, no gully, no pitch count. A base finding here would be entirely manufactured.",
+  "wa_tooth_chair_traverse": "This traverse begins on The Tooth's SUMMIT, reached by any Tooth route. Its base is another route's top-out, so the finding belongs to the South Face and already exists there. The same reasoning the Stuart batch applied to The Balanced Rock.",
+  "wa_chair_bryant_traverse": "Begins on Chair Peak's north ridge, i.e. at another route's summit, and the row itself records that the line is documented only informally with no dedicated Mountain Project, SummitPost or Peakbagger page. Both halves of the skip rule apply at once.",
+  "wa_bears_breast_mountain_se_mega_slab": "The SE Mega Slab is a FORMATION, not a line — Mountain Project's Bear's Breast area page calls it 'a prominent feature' of the mountain, the 3,000 ft sheet dropping from the southeast shoulder to Shovel Creek. The two routes that actually climb it, Infinite Beauty at the lowest point and Timeless Treasure up the middle, are separate rows and are both written in this batch. Writing a third base finding for the formation itself would put an invented start between two real ones. See _DEFECTS.",
+  "wa_huckleberry_mountain_west_route": "The row contradicts itself about which climb it is. It is graded Class 4 and filed as scrambling with a West aspect, but its first-ascent credit is the 2001 West Face (Gary Hehn and Dave Stephens), while its approach text describes the EAST RIDGE line to the 6,100 ft buttress and its rappels field says '4 raps down the east face'. Writing a base finding would mean choosing which of two routes the row is, and choosing wrong would send a party to the opposite side of the peak. See _DEFECTS.",
+  "wa_huckleberry_mountain_south_face": "Positioned only as 'near the right side of the south face' on steep, sandy, broken rock with shallow cracks, approached 'via the PCT above Joe Lake, then through heather and scree'. Right side of a face is not a marker, and the two-pitch line has no published coordinate, notch, gully or distinguishing feature at its base."
+ },
+ "_DEFECTS": {
+  "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+  "chimney_rock_west_face_is_an_idaho_route": "wa_chimney_rock_west_face is the Selkirk Crest (Idaho) Chimney Rock, filed on Washington's Chimney Rock. Already known and flagged for removal; re-confirmed here. Its own row carries the internal tell as well: name says 'West Face / South Summit' while the aspect column says E, and its approach text describes the Chimney Glacier bivy basin shared with the East Face.",
+  "cathedral_northeast_buttress_row_describes_the_2003_variation": "wa_cathedral_rock_northeast_buttress's beta is almost entirely a description of the 2003 variation — the loose class 4+ traverse, the yellow-speckled left-facing corner, the 5.9+ left-leaning crack — which is the whole subject of the separate row wa_cathedral_rock_northeast_ridge_2003_variation. The original 5.7 Beckey buttress is only named. Two rows, one description. The FA field on the buttress row admits it: it credits the 2003 direct-start variation and says the original party is undocumented.",
+  "bears_breast_se_mega_slab_is_a_formation_not_a_route": "wa_bears_breast_mountain_se_mega_slab has no grade, no pitch count and a beta paragraph describing the slab in general. Mountain Project's own area page treats the SE Mega Slab as a feature of the mountain, not a climb, and lists two routes on it. This row looks like a formation that was imported as a route, and it overlaps completely with wa_bears_breast_mountain_infinite_beauty and wa_bears_breast_mountain_timeless_treasure.",
+  "huckleberry_west_route_is_two_routes_in_one_row": "wa_huckleberry_mountain_west_route carries a West aspect, a Class 4 scrambling grade, a 2001 West Face first ascent, an approach that describes the EAST ridge line to the 6,100 ft buttress, and a rappels field reading '4 raps down the east face'. Its own beta paragraph then discusses all three routes on the peak at once. This reads as the peak's summary text attached to a route row.",
+  "three_queens_standard_approach_and_beta_are_on_opposite_sides": "wa_three_queens_standard's approach text is a detailed Mineral Creek line up the SOUTH-face talus, while its beta describes ascending from a camp at Upper or Middle Park Lake to the Main-Middle notch and traversing onto a ledge system on the NORTH face. Its aspect column says N. Three descriptions, two sides of the mountain. The variant written in this batch is explicitly the south-talus line and says so.",
+  "red_mountain_east_ridge_names_the_lundin_saddle": "wa_east_ridge_7's approach text says 'the route begins at the saddle between Lundin and East Lundin peaks' while the approach it gives runs to Red Pass and then WEST, which is Red Mountain's ground. The text is inherited verbatim from Mountain Project, so the error is upstream rather than introduced here — but a reader following the sentence rather than the directions walks onto a different mountain.",
+  "chair_northwest_ridge_two_incompatible_characterisations": "wa_chair_peak_northwest_ridge is stored as a 6-pitch 5.7 approached from Thumbtack Rock, which matches Mountain Project. SummitPost's Chair Peak page describes the Northwest Ridge as a class 3-4 SCRAMBLE from SNOW LAKE, first climbed in 1965 by Roger Jackson and Bonnie Krook. Different grade, different side, different approach, same name. The row's FA field is 'unknown', so nothing in the row resolves it.",
+  "guye_south_gully_trailhead_disagreement": "wa_south_gully_south_spur's approach_logistics names the Alpental / Snow Lake trailhead at 47.44542, -121.42353, its approach text tells you to park on Erste Strasse at the Alpental base, and the faster documented winter approach starts at SUMMIT WEST on the Commonwealth Basin side — the opposite side of the peak. The waypoint list carries only the Alpental option. This is the audit:trailhead-agreement shape, in the waypoints rather than in approach_logistics.",
+  "guye_south_gully_summer_and_winter_are_two_routes_in_one_row": "The row's grade field reads 'Easy 5th', its season field reads 'Dec-Apr for the snow/mixed version; Jun-Oct as a rock scramble', and its length_m is 457 while Mountain Project's summer page gives 800 ft and its winter page gives 1,500 ft over 4 pitches. Mountain Project keeps them as two separate routes with different grades. One row is holding both.",
+  "guye_blood_sport_topout_waypoint_is_wrong": "wa_blood_sport's waypoint list places a 'Topout' at 47.442, -121.411 at 3,400 ft — the same coordinate the row's other waypoint uses for Guye Peak's summit, 1,768 ft higher. The route explicitly does not top out; it is lowered from a two-bolt chain anchor 50 ft up. Both the type and the coordinate look wrong.",
+  "snoqualmie_standard_route_has_two_conflicting_junction_descriptions": "wa_snoqualmie_mountain_standard_route's approach text says the junction at about a mile splits RIGHT to Guye Peak and Cave Ridge while the Snoqualmie route continues left and straight. Its waypoint at 4,250 ft says the opposite: 'take the signed right branch here to climb toward the ridge — straight/left trends toward Guye Peak and Cave Ridge instead.' The two halves of the row give opposite instructions at what appears to be the same fork.",
+  "hinman_direction_off_la_bohn_gap": "wa_mount_hinman_hinman_glacier's approach text says the route continues NORTH from La Bohn Gap onto the glacier basin; the Mountaineers route description says ascend EAST from La Bohn Lakes to the Hinman Glacier. Not averaged in this batch — both are recorded in the baseFinding and the party is told to look for the basin rather than the bearing.",
+  "big_snow_dist_km_is_a_one_way_road_walk_short_of_the_route": "wa_big_snow_mountain_north_slope_dingford_route stores dist_km 9.7 against gain_ft 5,280, while wa_big_snow_mountain_east_ridge_hardscrabble_route stores 20.1 km for an approach that begins with a seven-mile road walk. The east-ridge figure looks right and the north-slope figure looks like it omits part of the approach; neither was changed.",
+  "chikamin_dist_km_38_6": "wa_chikamin_peak_southeast_slopes stores dist_km 38.62 with gain_ft 5,400. The row's own text gives 13.5 miles one way by the PCT and 14 to 16.5 miles round trip by Mineral Creek. 38.6 km is 24 miles, which matches neither figure and appears to be a PCT round trip conflated with the shorter approach.",
+  "three_queens_gain_ft_6300_against_a_6693_ft_summit": "wa_three_queens_standard stores gain_ft 6,300 from a 2,400 ft trailhead to a 6,693 ft summit — about 2,000 ft more than the terrain offers even allowing for undulation. wa_three_queens_middle_peak stores 4,600 ft for a shorter day on the same side. Neither was changed.",
+  "alta_dist_km_versus_its_own_text": "wa_alta_mountain_scramble stores dist_km 6.9 while its own approach text says roughly 6 to 6.5 MILES to the saddle alone and cites an on-file 19.3 km round trip. The stored value matches neither.",
+  "kendall_cliff_north_face_has_no_waypoints_or_trailhead": "wa_kendall_peak_cliff_north_face carries no waypoints, no approach_logistics, no dist_km, no gain_ft and no season — only an approach paragraph and a beta paragraph. It is the thinnest row in this scope that still has a usable base finding, which it has because of one good sentence ('do not cross Commonwealth Creek — if you do, you've gone too far') rather than because of its structured fields.",
+  "summit_chief_north_face_length_and_gain_unstated": "wa_summit_chief_mountain_north_face has no dist_km and no gain_ft, and its length_m of 610 is the face height rather than an approach figure. No gain figure was invented for this batch's variant: the field is omitted, because the only published account of the approach gives a time (about 6.5 hours vehicle to camp) and no elevation."
+ }
+}
