@@ -56,7 +56,25 @@ console.log(`what a BROKEN probe prints, so it is proved able to fail before any
 try { console.log(await selfTest()); }
 catch (e) { console.error("\n" + e.message); process.exit(1); }
 
-console.log(`\n${peaks.length} ${STATE.toUpperCase()} peaks carry both a coordinate and an elevation.\n`);
+// A peak with NO coordinate is worse than one with a wrong coordinate, and every screen here
+// filters `lat=not.is.null` first — so they are excluded by construction and no run mentions
+// them. Ask separately, or the emptiest rows are the ones nothing reports.
+const blind = await get(`areas?select=id,name,elevation_ft,route_count&area_type=eq.peak` +
+  `&id=like.${STATE}_*&lat=is.null&limit=1000`);
+const noCoord = blind.__err ? [] : blind;
+
+console.log(`\n${peaks.length} ${STATE.toUpperCase()} peaks carry both a coordinate and an elevation.`);
+if (blind.__err) console.log(`(could not check for coordinate-less peaks: ${blind.__err})`);
+else if (noCoord.length) {
+  console.log(`\n=== NO COORDINATE AT ALL (${noCoord.length}) ===`);
+  console.log(`Not screenable here, and not drawable anywhere. Recoverable only from a summit`);
+  console.log(`waypoint on one of the peak's own routes — never from a parent area, which is how`);
+  console.log(`the Picket placeholders arrived. See oneoff/fix-peaks-with-no-coordinate.mjs.\n`);
+  for (const b of noCoord.sort((x, y) => (y.route_count || 0) - (x.route_count || 0)))
+    console.log(`  ${b.id.padEnd(38)} ${String(b.route_count ?? 0).padStart(4)} rts  ` +
+      `${b.elevation_ft != null ? String(b.elevation_ft).padStart(6) + " ft" : "  no elev"}  ${b.name}`);
+} else console.log(`Every ${STATE.toUpperCase()} peak carries a coordinate.`);
+console.log();
 
 const results = [];
 let done = 0;
