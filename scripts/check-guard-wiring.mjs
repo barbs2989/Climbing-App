@@ -81,6 +81,14 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-function-columns.mjs":
+    "reads pg_proc and information_schema, which PostgREST does not expose, so it runs " +
+    "through `supabase db query --linked` — and that needs the MANAGEMENT API token, which " +
+    "can run arbitrary DDL. CI must not hold that, the same rule that kept check:signed-in's " +
+    "service key out of CI (it uses two durable anon-key accounts instead). There is no " +
+    "anon-key route to a function BODY, so unlike check:counts this cannot be put on a " +
+    "schedule with the credentials CI is allowed. Run it by hand after any `drop column`, " +
+    "which is the moment it exists for — CLAUDE.md says so beside the pg_proc query.",
   "check-enrichment-traceable.mjs":
     "takes an enrichment BATCH FILE as its argument and verifies that every number and " +
     "load-bearing feature word in a generated segment also appears in that route's own " +

@@ -78,6 +78,7 @@
     "check:claims": "node scripts/check-session-claims.mjs",
     "check:drift": "node scripts/check-deploy-drift.mjs",
     "check:counts": "node scripts/check-area-counts.mjs",
+    "check:function-columns": "node scripts/check-function-columns.mjs",
     "check:rappel-lengths": "node scripts/check-rappel-lengths.mjs",
     "check:field-renders": "node scripts/check-field-renders.mjs",
     "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs",

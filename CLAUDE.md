@@ -47,6 +47,7 @@ npm run check:challenge-rows # tick-list rows say something true, and the tick m
 npm run check:clickable # no NEW control that only a mouse can operate (in build)
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
+npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -1233,6 +1234,50 @@ a build error, but a screen that renders wrong or not at all.
   - It does **not** overlap `check:add-route-fields`, which guards the other end: what the form
     asks and whether its keys are in `SS`. A key can be in `SS` — so session-state merging
     works — and still be dropped by approval. That gap is exactly what shipped.
+- **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
+  rule 1 asks about one function: **does every column a stored function WRITES still exist?**
+  #1020 dropped `routes.source`, swept the five call sites its header names, and missed
+  `approve_new_route` — so the live approval inserted into a column that was gone. **plpgsql
+  resolves column names when a statement first RUNS**, so the drop deployed clean, `create or
+  replace` would also have succeeded, every gate stayed green, and the failure was reserved for
+  the next admin to approve a route. Reads the live DB, so **not** a build gate.
+  - **Two near misses explain why it had to be new.** `check:schema` asserts `lib/db.js` never
+    READS a missing column and never looks inside a function body — a function is the one place
+    SQL is *stored* rather than executed, which is exactly where this hides. And
+    `verify-migrations-applied.mjs` checks that objects EXIST by name: `merge_accounts` exists,
+    so it passes, while the live body is an older and broken version of the one 0035 defines.
+    **Existence is not agreement.**
+  - **It found two on its first run, both latent, and the second one is a trap worth reading
+    before touching it.** `auto_archive_crews` writes `crews.archived_at` and `crews.status`,
+    neither of which exists; it is in **no migration at all**, so it was made by hand in the SQL
+    editor, and nothing calls it. `merge_accounts` writes `crews.user_id`, which does not exist —
+    and **must not be repaired on its own**. 0136 records why: the function reassigns
+    `climb_logs.user_id`, `vouches.from_id` and `profiles.account_type` for two arbitrary uuids
+    with **no `auth.uid()` check**, and the throw on that first statement is the only thing
+    making it inert. Fixing the column arms an account-takeover primitive. It needs an ownership
+    gate written in the same change. Both are in `KNOWN`, which records **reasons, not passes**,
+    and a **stale** entry fails.
+    - The obvious repair — re-apply 0035, which has `created_by` and is plainly the intended
+      body — is precisely the dangerous one. *Read what a migration deliberately did NOT fix
+      before finishing the job for it.*
+  - **Scope is the WRITE targets only** (`insert into t (cols)`, `update t set col=`), stated in
+    the script rather than implied. Resolving arbitrary column references in WHERE clauses and
+    expressions needs real name resolution — aliases, CTEs, record variables — and a regex that
+    guesses reports correct code as broken, which is how a guard gets ignored. In practice a
+    function broken this way names the column on both sides: `auto_archive_crews` reads `status`
+    in its WHERE and was caught by its SET list.
+  - **It cannot run in CI, and that is a credential rule rather than a preference.** `pg_proc` is
+    not exposed through PostgREST, so it goes through `supabase db query --linked`, which needs
+    the **management API token** — a credential that can run arbitrary DDL. CI must not hold it,
+    the same rule that keeps `check:signed-in` on two durable anon-key accounts. There is no
+    anon-key route to a function body, so unlike `check:counts` this cannot be put on a schedule
+    with what CI is allowed. Declared in `check:guard-wiring`'s `EXCLUDED` with that reason.
+    **Run it by hand after any `drop column`** — the moment it exists for.
+  - Fails **closed** four ways, and the first is the one that matters: an unreachable database, no
+    JSON, an empty schema, or a write vocabulary that parses nothing are each reported as *nothing
+    was checked*, never as a clean catalog. Injection-tested; the 7 cases are at the bottom of the
+    script. Cases 6 and 7 pin the `KNOWN` map in both directions — removing a live entry must
+    surface it as a real failure, and a bogus name must report as stale.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
