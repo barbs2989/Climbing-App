@@ -135,6 +135,45 @@ if (bare.length) {
   process.exit(1);
 }
 
+// ── #890's OTHER variant: a ternary that fell OUTSIDE the braces ─────────────────────────
+// The pinned count above catches a return that was SWALLOWED. It cannot catch this one, because
+// the return still exists — it just renders the wrong thing. Wrapping a return in
+// <>{_toastEl}…</> turns a JS ternary into JSX CHILDREN unless it is braced:
+//
+//   return <>{_toastEl}realAuthGate?<AuthModal/>:<LoginScreen/></>   // literal "realAuthGate?"
+//                                                                   // and BOTH branches mount
+//   return <>{_toastEl}{realAuthGate?<AuthModal/>:<LoginScreen/>}</> // right
+//
+// #890 shipped this on THREE returns at once (the sign-in gate and both guide screens), fixed
+// in #934. Nothing prevented a fourth until now. Detected structurally: a JSXExpressionContainer
+// holding the toast, whose next sibling is JSXText that is not just whitespace. React renders
+// that text; there is no legitimate reason for prose to sit directly beside {_toastEl}.
+const stray = [];
+for (const p of screens) {
+  const a = p.node.argument;
+  if (!a || (a.type !== "JSXFragment" && a.type !== "JSXElement")) continue;
+  const kids = a.children || [];
+  kids.forEach((k, i) => {
+    if (k.type !== "JSXExpressionContainer") return;
+    if (!(k.expression && k.expression.type === "Identifier" && k.expression.name === TOAST_ID)) return;
+    const next = kids[i + 1];
+    if (next && next.type === "JSXText" && next.value.trim()) {
+      stray.push({ line: p.node.loc.start.line, text: next.value.trim().slice(0, 60) });
+    }
+  });
+}
+
+if (stray.length) {
+  console.error(`\ncheck:toast-reachable FAILED — ${stray.length} return(s) render TEXT beside {${TOAST_ID}}:`);
+  for (const s of stray) console.error(`  ClimbMatch.jsx:${s.line}  renders the literal text: ${JSON.stringify(s.text)}`);
+  console.error(`
+That text is almost always a ternary or && that lost its braces when the return was wrapped.
+JSX renders the condition as prose AND mounts BOTH branches — two screens stacked, with the
+condition printed above them. Brace it: return <>{${TOAST_ID}}{cond?<A/>:<B/>}</>;`);
+  process.exit(1);
+}
+
+console.log(`  no stray text beside the toast : ${screens.length} return(s) clean`);
 console.log(`\ncheck:toast-reachable: ok — every screen App returns can show a toast.`);
 
 // INJECTION CASES (re-run after any change to the traversal):
@@ -150,6 +189,13 @@ console.log(`\ncheck:toast-reachable: ok — every screen App returns can show a
 //      case the pinned count exists for; 4/4 verified 2026-08-14.
 //   7. Add a return (`if(false)return <>{_toastEl}<div/></>;`) -> must FAIL saying one was
 //      ADDED, and tell you to raise EXPECTED_RETURNS deliberately.
+//   8. Unbrace the auth-gate ternary (`{_toastEl}{realAuthGate?` -> `{_toastEl}realAuthGate?`,
+//      dropping the matching `}`) -> must FAIL quoting the literal text. This is #890's OTHER
+//      variant reproduced BYTE FOR BYTE, and unlike the swallowed-return one it reproduces
+//      cleanly. 4/4 verified 2026-08-14.
+//   9. Same on a guide screen (`{_toastEl}{USE_DB?`) -> must FAIL.
+//  10. Whitespace beside the toast (`{_toastEl}  <LegalView`) -> must still PASS. JSXText that
+//      is only whitespace is normal formatting; only non-blank prose is the defect.
 //
 // A NOTE ON REPRODUCING #890 EXACTLY, because it was tried and is a trap: removing only the
 // Calendar return's `</>` does NOT recreate the defect — it raises `SyntaxError: Unterminated
