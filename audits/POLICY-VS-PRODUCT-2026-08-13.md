@@ -1,5 +1,34 @@
 # Policy vs product — full review against `main` @ c7b25d3, 2026-08-13
 
+> ## ⚠️ STATUS 2026-08-14 — MOST OF THIS IS FIXED. READ THIS BOX FIRST.
+>
+> The findings below were accurate when written and are kept as the record of what was wrong
+> and how it was measured. **Do not act on the body of this document as a to-do list** — this
+> file's own rule is that reviewing stale facts is worse than not reviewing.
+>
+> | § | Finding | Status |
+> |---|---|---|
+> | A | "there is no server and nothing leaves your phone" | **FIXED** — #914 `5bbae91` |
+> | B | Terms said 13+, the sheet said 18+, nothing enforced | **FIXED** — owner chose **18+**; #934 `1ba49f3` adds an attestation gated in both the email and Google sign-up paths |
+> | C | All four contact routes dead (`.example` ×2, phantom "support", a Feedback button that sends nothing) | **FIXED** — #934: `data_requests` (migration **0145**, applied) + a Settings request sheet |
+> | D1 | Deletion promised, modal denied it | **FIXED** — records a real request before signing out |
+> | D2 | Export promised, button toasted "not available" | **FIXED** — raises a real request |
+> | D3 | Opt-out promised, no surface at all | **FIXED** — the control now exists |
+> | D4 | `PRIVACY_CONTROLS_LIVE = false` | **OPEN BY DESIGN — do not flip.** The controls are not server-enforced; shipping them would promise a protection the backend does not deliver |
+> | E | Sign-up never named the Terms; no acceptance record | **FIXED** — #923 `5e18040` (notice + links), #934 (`POLICY_VERSION` stamped onto the profile by a trigger) |
+> | F1–F4 | Phantom payments processor, unsupported passkey advice, third-parties contradiction, ID-document sentence | **FIXED** — #914 |
+> | F5 | Emergency contact shared with a crew via float plan, disclosed on the sheet but not in §1 | **still open** — a wording question for the reviewer |
+>
+> **What is actually left is the lawyer read**, plus F5 and the D4 wording. The product no
+> longer contradicts itself: no `.example` addresses, no promise without a mechanism, and one
+> minimum age. Every fix was verified in a browser on the live site, not just in the bundle.
+>
+> Two notes for whoever picks this up. **Migration 0145 is already applied** and was verified
+> object-by-object — `{"rows":[]}` is what DDL always answers, so it proves nothing on its own.
+> And its acceptance stamp deliberately does **not** live in `handle_new_user()`: the live
+> function carries `search_path=public` and schema-qualified names that exist in **no migration
+> file**, and 0070's header records that this exact bug "broke ALL signups for a day".
+
 **This is a factual consistency check, not legal advice, and no legal text was edited.**
 Every row is "the document says X; the code does Y", with the evidence. The remedy for each —
 build the mechanism, or amend the text — is the reviewer's decision, not this file's.
