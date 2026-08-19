@@ -8547,3 +8547,43 @@ about wikipedia.org, mountainproject.com and AAC Publications.
 
 Next batch continues alphabetically after `wa_diamond_in_the_rough`
 (see progress file).
+
+## Batch 123 (2026-08-19, pass 3)
+
+Checked: `wa_direct_north_buttress` (Bear Mountain, Direct North Buttress),
+`wa_direct_southwest_buttress` (Dorado Needle), `wa_direct_west_face` (Pernod
+Spire), `wa_dirty_sanchez` (Goose Egg Mountain), `wa_dolphin_chimney` (South
+Early Winters Spire), `wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer`,
+`wa_dorado_needle_east_ridge`.
+
+**Confirmed errors fixed (2):**
+- `wa_direct_north_buttress`: `road` described "Depot Creek Road (BC) via
+  Chilliwack River Road, from Chilliwack, BC" -- the approach for Redoubt and
+  Spickard, as this same row's own `bivy` list explicitly says ("NOT reachable
+  from the Hannegan Pass trailhead -- it must never be treated as an
+  alternative camp on that approach"). This row's own `approach` text and
+  `approach_logistics.trailhead` both consistently describe the Hannegan Pass
+  Trailhead (FR-32) approach instead. Reconciled `road` to match the rest of
+  the row.
+- `wa_dorado_needle_east_ridge`: the trailhead waypoint carried a `note`
+  reading "Existing DB value (48.492611,-121.117611) appears incorrect ...
+  recommend correcting to this value" -- but that "existing" value is exactly
+  what is currently stored (and matches `approach_logistics` and the
+  trailhead used by `wa_direct_southwest_buttress`). Stale scratch commentary
+  from an earlier correction pass; replaced with a plain, accurate note.
+
+**Clean (6):** `wa_direct_southwest_buttress`, `wa_direct_west_face`,
+`wa_dirty_sanchez`, `wa_dolphin_chimney`, `wa_dome_peak_dome_glacier`,
+`wa_dome_peak_indian_summer` -- no errors found. Checked a possible date
+conflict between the two Dome Peak routes over the Suiattle River Road (FR-26)
+closure ("December 2025 flood washout" vs. "USFS closure order effective April
+2, 2026") -- confirmed via web search these are NOT contradictory: the flood
+damage occurred in December 2025 and the formal USFS closure order took effect
+several months later, in April 2026. Both rows are correct.
+
+Web access this run: WebSearch confirmed the FR-26/Suiattle closure timeline
+and corroborated the Hannegan Pass approach for Bear Mountain's north side
+routes.
+
+Next batch continues alphabetically after `wa_dorado_needle_east_ridge` (see
+progress file).
