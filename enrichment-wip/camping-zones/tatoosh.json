@@ -1,0 +1,58 @@
+{
+ "zone": "Tatoosh Range — Unicorn, Lane and Pinnacle",
+ "_areas_note": "Mount Rainier NP, but NOT the Rainier climbing-fee regime: the research confirmed the climbing cost-recovery fee does not apply here, since these are not glacier objectives above high camp — a wilderness camping permit is all that is needed. White River Campground was flagged as belonging to the Sunrise/Emmons side, and the Tatoosh Wilderness south of the park boundary is Forest Service ground from Skate Creek, neither of which serves this approach.",
+ "areas": ["wa_unicorn_peak", "wa_lane_peak"],
+ "sites": [
+  {
+   "name": "Snow Lake Camp",
+   "type": "camp",
+   "elev": 4685,
+   "capacity": "2 designated individual tent sites, pit toilet",
+   "water": "Snow Lake itself, immediately adjacent and reliable all season; treat it",
+   "permit": "Mount Rainier NP wilderness permit, required year round. Reserve through Recreation.gov for the summer window, or take a walk-up permit in person at the Longmire Wilderness Information Center for a non-refundable fee. NO climbing cost-recovery fee applies here.",
+   "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so a weekend party without a reservation should assume it is taken. The trailhead is a short signed pullout on Stevens Canyon Road roughly a mile and a half east of Reflection Lakes, which means the camp is only reachable by car during the summer road season. Approaching Unicorn on snow in late spring is generally pleasanter than the loose slopes left behind in late summer, which argues for going early rather than for camping."
+  },
+  {
+   "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+   "type": "bivy",
+   "capacity": "Small parties only; standard park cross-country party limits apply",
+   "water": "Snowmelt runnels and small tarns while the snowpack lasts; unreliable to absent by late summer, so plan to carry or to melt",
+   "permit": "Wilderness permit, same system as an established camp, but issued for the CROSS-COUNTRY ZONE rather than a named site. The zone rules are the constraint: camp at least a quarter mile from any trail or road and 100 ft from water, on snow or durable ground rather than meadow.",
+   "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and it demands that you actually navigate to a legal spot rather than dropping the tent at the first flat bench. Snow camping is the cleanest version of this — once the pack is deep enough the surface question goes away and you are on durable ground by definition. Human waste must be packed out where there is no soil to dig in."
+  },
+  {
+   "name": "Reflection Lakes area winter snow camp",
+   "type": "bivy",
+   "capacity": "Parties up to 12; anything larger is directed to the designated Paradise group area",
+   "water": "None liquid in winter — melt snow",
+   "permit": "Winter wilderness permit, obtained IN PERSON at Longmire rather than online. Camping on snow is broadly allowed once the pack is deep enough, which the park sets at roughly two feet for the Reflection Lakes and Mazama Ridge side and five feet at Paradise itself. Blue bags for waste; food hung or in a hard-sided container.",
+   "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper and Lover's Lane, and Pinnacle and The Castle in winter dress, are routinely done car-to-car from the Narada Falls lot, and the honest variable on those routes is the approach and the snow stability, not where you slept. The reason to camp is the gate — the road above Longmire is closed overnight and reopens on a morning schedule, so a dawn start from a car is not available the way it is elsewhere. Habituated foxes here have a long record of working over unattended food."
+  },
+  {
+   "name": "Cougar Rock Campground",
+   "type": "camp",
+   "elev": 3180,
+   "capacity": "Around 173 individual sites plus 5 group sites",
+   "water": "Potable water at the campground; no hookups at any site",
+   "permit": "No wilderness permit — a developed campground. Reservations through Recreation.gov during the summer peak. Park entrance fee applies separately, and the park has used timed-entry reservations for the Nisqually/Paradise corridor in recent summers, which can affect what time you can drive up.",
+   "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late May into early autumn and is closed the rest of the year — which puts it out of reach for exactly the season the Lane Peak gullies are in. Book it if you want a bed for a Pinnacle or Unicorn day climb without dealing with the wilderness permit system at all."
+  },
+  {
+   "name": "Paradise designated winter group camping area",
+   "type": "camp",
+   "capacity": "Groups larger than 12; where oversized parties are required to go in winter",
+   "water": "Melt snow",
+   "permit": "Winter wilderness permit for group camping, arranged in person through Longmire. The area only opens once roughly five feet of snow has accumulated at Paradise, a deeper threshold than the two feet required lower down.",
+   "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a road walk, at the cost of camping in the busiest spot in the park. From here Lane Peak still means dropping to the Stevens Canyon Road and walking east, so it buys convenience of access rather than proximity to the climbs."
+  },
+  {
+   "name": "Ohanapecosh Campground",
+   "type": "camp",
+   "elev": 1914,
+   "capacity": "Roughly 179-188 individual sites when operating",
+   "water": "Potable water when open; no hookups",
+   "permit": "Developed campground, no wilderness permit. Recreation.gov reservation in season.",
+   "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been closed through 2026 for a rehabilitation project, so confirm its status before planning around it. When running it is low, forested and warm, which makes it a reasonable shoulder-season option when the higher campgrounds are shut."
+  }
+ ]
+}
