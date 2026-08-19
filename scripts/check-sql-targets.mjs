@@ -111,8 +111,17 @@ for (const stmt of statements) {
   // which mentions `routes`, so the loose test let it through and then checked the AREA
   // ids against the routes table — reporting three confident failures for rows that were
   // never routes. A guard that cries wolf is a guard people stop reading.
-  const tableMatch = stmt.match(/^\s*(?:delete\s+from|update)\s+([a-z_][a-z0-9_]*)/i);
-  const stmtTable = tableMatch ? tableMatch[1].toLowerCase() : null;
+  // A SCHEMA QUALIFIER IS NOT THE TABLE NAME. This captured the first identifier only, so
+  // `update public.areas set ...` reported its table as "public" — the run then died with
+  // PGRST205 "Could not find the table 'public.public'", or, with --table public, would have
+  // checked the ids against a table that does not exist. Migration files are the main thing
+  // this guard reads and they are exactly where a qualified name is idiomatic, so the guard
+  // was blind on its primary input. `only` is accepted for the same reason: it is valid SQL
+  // in front of the table and would otherwise be read as the table itself.
+  const IDENT = '(?:[a-z_][a-z0-9_]*|"[^"]+")';
+  const tableMatch = stmt.match(new RegExp(
+    `^\\s*(?:delete\\s+from|update)\\s+(?:only\\s+)?(?:${IDENT}\\s*\\.\\s*)?(${IDENT})`, 'i'));
+  const stmtTable = tableMatch ? tableMatch[1].replace(/^"|"$/g, "").toLowerCase() : null;
   // Remember what this file actually writes to. Skipping quietly is right for one
   // statement, but a file that touches ONLY other tables must not end on "nothing to
   // check" — that reads exactly like "checked, all good". See the report below.
