@@ -235,6 +235,15 @@ odd one out* — **does not apply**, because face and aspect disagree with each 
 sources say only "from Cameron Pass, turn up the ridge toward Cameron", which does not name a
 compass side. Needs a source that does, or a look at the row's waypoints.
 
+> **One published fact found later the same day, which narrows it without settling it.**
+> Wikipedia's Mount Cameron entry records that *"the **southeast aspect** rises over 3,300 feet
+> above the Dosewallips River in approximately one mile"* — i.e. the SE side is the big relief
+> face. The row's own grade is **class 2 scrambling**. A class 2 line up the steepest aspect on
+> the mountain is implausible, so "Southeast Slopes" is now doubly suspect. That still does not
+> supply the RIGHT name, and this file's bar is a published statement of what the route *is*,
+> not an argument about what it is not — so the row stays UNRESOLVED. Recorded so the next
+> session starts from here rather than re-searching Wikipedia.
+
 **`wa_himmelhorn_southeast_route`** was not researched this round — an obscure Southern Picket
 where the same Beckey problem is likely.
 
