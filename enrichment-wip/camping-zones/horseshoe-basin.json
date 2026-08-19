@@ -1,0 +1,55 @@
+{
+ "zone": "Horseshoe Basin — Cascade Pass and Stehekin",
+ "_areas_note": "The NORTH CASCADES Horseshoe Basin near Cascade Pass, not the Pasayten one near Windy Peak. Two places share the name; different agency, different permits. The research was told to discard Pasayten sources.",
+ "areas": ["wa_horseshoe_peak", "wa_hurry_up_peak"],
+ "sites": [
+  {
+   "name": "Basin Creek Camp",
+   "type": "camp",
+   "capacity": "3 sites, 12 people total",
+   "water": "Reliable — Basin Creek runs beside the camp all season",
+   "permit": "NPS backcountry permit required (North Cascades NP / Lake Chelan NRA); designated camp reserved by site on Recreation.gov, with roughly 40% of inventory held for walk-up the day before at Marblemount or Golden West in Stehekin. Per-person nightly fee plus a non-refundable reservation fee.",
+   "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box and its own privy. Capacity is tiny — three sites — so a party of four fills most of it and a weekend permit is not something to count on. From here the basin trail climbs roughly 1,300 ft in about 1.5 miles to the Black Warrior Mine and the waterfall headwall below Ripsaw Ridge and Buckner's north side."
+  },
+  {
+   "name": "Cottonwood Camp",
+   "type": "camp",
+   "capacity": "Several sites, including one that takes a larger group and a few small secluded ones",
+   "water": "Reliable — creek water a short walk below the camp",
+   "permit": "NPS backcountry permit required; designated camp, same Recreation.gov reservation and walk-up system as the rest of the complex.",
+   "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. ACCESS IS THE THING TO PLAN AROUND: the road washed out for the last time in 2003 and the Stehekin shuttle now turns around at High Bridge, so reaching Cottonwood from the boat means an extra day of walking the old roadbed rather than the bus ride older descriptions assume. Check the current shuttle schedule before committing — upper-valley service has varied year to year."
+  },
+  {
+   "name": "Pelton Basin Camp",
+   "type": "camp",
+   "water": "Reliable — meltwater creek through the basin, though flow drops late in a dry summer",
+   "permit": "NPS backcountry permit required; designated camp on the Recreation.gov system, and among the harder Cascade Pass sites to draw in midsummer.",
+   "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin within a long day, though the basin itself is still several miles and a substantial descent-then-climb away. Snow lingers here well into summer and the trail across the basin can be hard to follow when it does, so early-season parties should expect to navigate rather than follow tread."
+  },
+  {
+   "name": "Sahale Glacier Camp",
+   "type": "camp",
+   "elev": 7400,
+   "capacity": "4 sites, 4 people per site",
+   "water": "Unreliable — snowmelt and glacier runoff only, and the seasonal trickles commonly dry up by late summer",
+   "permit": "NPS backcountry permit required; one of the most contested designated camps in the park. Realistically needs the early-access lottery or the general on-sale window in late April.",
+   "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up from lower on the arm. For the Horseshoe Basin peaks it is a high camp rather than a basin camp — it serves approaches that cross Sahale Arm and drop toward Doubtful Lake and the head of the basin, and it puts you on the right side of the divide for Buckner's north aspect. Reported elevation varies slightly between sources."
+  },
+  {
+   "name": "Doubtful Lake Camp",
+   "type": "camp",
+   "elev": 5390,
+   "water": "Reliable — the lake itself, plus its inlet and outlet streams",
+   "permit": "NPS backcountry permit required; designated camping at the lake, reserved or walked up like the other Cascade Pass-area sites.",
+   "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass and the head of Horseshoe Basin. Water is the one thing never in question here, which matters if the alternative is Sahale Glacier Camp late in the season. The spur loses meaningful elevation off the arm, so factor the reclimb into the next day."
+  },
+  {
+   "name": "Buckner cross-country zone bivy",
+   "type": "bivy",
+   "capacity": "6 people per party, 6 parties per night in the zone",
+   "water": "Conditions-dependent — snowmelt and seasonal streams in the upper basin, dependable early, thin or gone by late season",
+   "permit": "NPS cross-country zone permit required, WALK-UP ONLY. Buckner is not among the zones that take advance reservations, so it cannot be booked on Recreation.gov and must be picked up in person, generally no more than a day ahead.",
+   "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading before you go: camp at least a mile from any designated camp and half a mile from any trail, out of sight, and only on snow, rock or bare ground. No meadow camping, nothing within 100 ft of water, no fires. Because the permit is walk-up only, a trip built around a zone bivy is one you cannot lock in ahead of time — carry a fallback."
+  }
+ ]
+}
