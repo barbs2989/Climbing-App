@@ -85,6 +85,28 @@ if (unread) console.log(`(${unread} peak(s) the DEM could not answer for — cou
 
 const TOL = 400;   // ft. Comfortably past p99 on WA; a summit coordinate off by a few tens of
                    // metres on steep ground still reads within this, so a flag is real relief.
+                   //
+                   // DO NOT LOWER THIS EXPECTING MORE BUGS — measured, and the answer is no.
+                   // At 150 ft the tail is 21 peaks, and 17 of them are Stuart, Shuksan,
+                   // Forbidden, Goode, Little Tahoma, Logan, Luna, Inspiration and friends,
+                   // whose claimed elevations are all CORRECT. A grid search around them finds
+                   // the true summit 35-100 m away, matching the stored elevation to ~40 ft:
+                   // Forbidden's is 35 m out, Little Tahoma's 70 m. That is one phenomenon —
+                   // a coordinate slightly off the top on very steep ground — not 17 defects.
+                   //
+                   // Snapping them to the DEM maximum was considered and REJECTED. It would
+                   // DERIVE a new coordinate rather than copy an existing record, which is the
+                   // safety property every repair in this family has relied on; the gain is
+                   // ~50 m on peaks already essentially right; the method missed on 1 of the 3
+                   // tested (Goode, 66 ft out); and on glaciated summits the raster's date and
+                   // 1 m resolution stop being more authoritative than the survey elevation.
+                   //
+                   // The other 4 in that tail are ELEVATION questions, not coordinate ones —
+                   // their coordinate IS a local maximum. None is actionable either: each peak's
+                   // summit pin carries an elevation that is an exact COPY of elevation_ft
+                   // (Lemah Two 7280/7280, Nooksack Tower 8285/8285, Lemah Mountain 7519/7519,
+                   // Chimney Rock 7727/7727), so there is no independent second record, and a
+                   // DEM sample must not overwrite a surveyed elevation.
 const flagged = read.filter(r => Math.abs(r.diff) > TOL).sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff));
 
 console.log(`\n=== COORDINATE IS NOT AT THE CLAIMED HEIGHT (${flagged.length}, >${TOL} ft) ===`);
