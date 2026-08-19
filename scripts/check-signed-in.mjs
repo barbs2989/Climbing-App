@@ -369,6 +369,22 @@ try {
   // this run's data. Falls back to the literal only if a fixture predates the field.
   const groupName = fixture.group?.name || "Fixture Alpine Club";
   if (await clickContaining(groupName)) {
+    /* AND a second, independent gap that per-run groups do not close. `isCreator` in
+       ClimbMatch.jsx reads `cl._db ? (!!uid && cl.ownerId === uid) : ...`, and `isMod` is
+       `isCreator || ...`. `ownerId` is fixed data no concurrent run can change — but `uid` is
+       the SIGNED-IN USER, and it resolves asynchronously after every reset() reload. The
+       session is in localStorage immediately (which is all the whoami check above proves)
+       while useSession() -> DB_UID lands later, so `!!uid` can still be false on a screen that
+       has otherwise settled. That is why #969 lost `+ Mod` AND `Make private/public` together
+       while `Owner` — a property of the member ROW, needing no identity — still rendered.
+
+       Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
+       that genuinely never renders still fails, with the same message, just later. */
+    await page.waitForFunction(
+      () => /[+\u2212-]\s?Mod\b/.test(document.body.innerText),
+      undefined,
+      { timeout: 15000 },
+    ).catch(() => {});
     const g = await capture("Group:detail");
     asserted++;
     // Case-insensitive: the crew card renders a first name ("Robin") while the group
