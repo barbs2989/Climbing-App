@@ -132,7 +132,9 @@ if (unpinned.length) {
 } else ok(`all ${MUST_COVER.length} pinned fields are still submitted at the top level`);
 
 // 1. every submitted key is one SS knows about, or is explicitly provenance
-const PROVENANCE = new Set(["areaName", "source", "sourceNote", "climbed", "photoCount"]);
+// `source` and `sourceNote` were here until the Source step was removed from the form: the app
+// no longer asks a contributor where their information came from, and must not start again.
+const PROVENANCE = new Set(["areaName", "climbed", "photoCount"]);
 const unknown = [...sentSet].filter((k) => !SS.has(k) && !PROVENANCE.has(k));
 if (unknown.length) fail(`the form submits ${unknown.length} key(s) that SS cannot apply: ${unknown.join(", ")}`);
 else ok(`all ${sentSet.size} submitted keys are in SS or declared provenance`);
