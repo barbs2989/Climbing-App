@@ -152,7 +152,7 @@ function inject(list) {
 }
 
 const t = { rows: 0, measurable: 0, skipNoCoord: 0, skipCoarse: 0, skipNoDist: 0, skipZero: 0,
-  skipNonMono: 0, pairs: 0, bad: 0, routes: 0 };
+  skipNonMono: 0, pairs: 0, bad: 0, routes: 0, legOnly: 0 };
 const findings = [];
 
 for (const r of inject(rows)) {
@@ -194,11 +194,29 @@ for (const r of inject(rows)) {
     if (!pts[i]) { t.skipNoCoord++; continue; }
     if (pts[i].coarse) { t.skipCoarse++; continue; }
     t.pairs++;
-    const straight = haversineMi(pts[0], pts[i]);
-    const short = straight - d[i];
-    if (short > ABS_MI && short > d[i] * REL) {
+    // TWO COMPARISONS, AND THE SECOND IS STRICTLY MORE SENSITIVE. From the trailhead catches a
+    // displaced index 0 and a pin belonging to another route. But a LEG can be impossible while
+    // the cumulative total is comfortable — Mount Appleton stores its pass at 7.3 mi and its
+    // summit at 8.0, a 0.7 mi leg between two pins 0.96 mi apart, and both totals clear the
+    // trailhead test easily. Found by an agent reading one row, not by the first version of
+    // this script. Report whichever contradiction is larger.
+    const fromTh = haversineMi(pts[0], pts[i]) - d[i];
+    let leg = -Infinity, legFrom = -1;
+    for (let j = i - 1; j >= 0; j--) {
+      if (!Number.isFinite(d[j]) || (j > 0 && d[j] === 0) || !pts[j] || pts[j].coarse) continue;
+      leg = haversineMi(pts[j], pts[i]) - (d[i] - d[j]);
+      legFrom = j;
+      break;
+    }
+    const useLeg = leg > fromTh;
+    const straight = useLeg ? haversineMi(pts[legFrom], pts[i]) : haversineMi(pts[0], pts[i]);
+    const stored = useLeg ? d[i] - d[legFrom] : d[i];
+    const short = useLeg ? leg : fromTh;
+    if (short > ABS_MI && short > Math.max(stored, 0) * REL) {
       t.bad++;
-      hits.push({ i, name: w[i].name || "", type: w[i].type || "", stored: d[i], straight, short });
+      if (useLeg) t.legOnly += fromTh > ABS_MI ? 0 : 1;
+      hits.push({ i, name: w[i].name || "", type: w[i].type || "", stored, straight, short,
+        from: useLeg ? legFrom : 0, fromName: useLeg ? (w[legFrom].name || `#${legFrom + 1}`) : "the trailhead" });
     }
   }
   if (hits.length) {
@@ -228,7 +246,7 @@ for (const f of findings.slice(0, LIST)) {
   const wst = f.worst;
   console.log(`${f.id}`);
   console.log(`   ${f.n} of ${f.of} pins impossible; worst is #${wst.i + 1} ${wst.type ? `[${wst.type}] ` : ""}${wst.name}`);
-  console.log(`   stored ${wst.stored.toFixed(1)} mi of trail, but the coordinate is ${wst.straight.toFixed(1)} mi away — short by ${wst.short.toFixed(1)} mi`);
+  console.log(`   stored ${wst.stored.toFixed(1)} mi of trail from ${wst.fromName}, but the two coordinates are ${wst.straight.toFixed(1)} mi apart — short by ${wst.short.toFixed(1)} mi`);
 }
 if (findings.length > LIST) console.log(`\n… ${findings.length - LIST} more (use --list ${findings.length})`);
 
@@ -240,7 +258,10 @@ if (findings.length > LIST) console.log(`\n… ${findings.length - LIST} more (u
 if (findings.length) {
   console.log(`\nThe CONTRADICTION is certain; WHICH half is wrong is not. A pin may be misplaced,`);
   console.log(`or a leg distance may have been stored where a cumulative one belongs. Read the row.`);
-  console.log(`A whole route flagged on every pin usually means waypoint[0] itself is the bad one.`);
+  console.log(`A whole route flagged on every pin usually means waypoint[0] itself is the bad one,`);
+  console.log(`and a SHRINKING shortfall up the list is that signature: on wa_mount_rahm_standard the`);
+  console.log(`gap runs 3.6, 2.0, 1.3, 0.6, 0.2 mi, which is one displaced origin rather than five`);
+  console.log(`bad distances. A shortfall confined to one leg points at that pin instead.`);
 }
 process.exit(0);
 
