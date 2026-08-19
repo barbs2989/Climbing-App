@@ -13,7 +13,7 @@
 //   node scripts/audit-route-terrain.mjs --state wa       # ids under a state prefix
 //   node scripts/audit-route-terrain.mjs --list 40        # print offending routes
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
-import { routeTerrain, fitAdvice, fitGear } from "../lib/terrain.js";
+import { routeTerrain, fitAdvice, fitGear, CORPUS_COLUMNS } from "../lib/terrain.js";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
@@ -27,7 +27,8 @@ const COLS = ["id", "name", "area_id", "discipline", "grade", "pitches", "season
   "description", "overview", "beta", "hazards", "obj_haz", "watch_out", "gear", "rack",
   "detailed_rack", "what_to_bring", "pro_needs", "assumed_gear", "approach", "descent",
   "descent_text", "bail", "turnaround", "pitch_detail", "seasonal_guidance",
-  "seasonal_hazards", "pro_tips", "features", "difficulty", "timing"].join(",");
+  "seasonal_hazards", "pro_tips", "features", "difficulty", "timing",
+  "climbing_route", "approach_variants"].join(",");
 
 const DISCS = ["alpine", "mountaineering", "ice", "mixed"];
 
@@ -118,6 +119,107 @@ if (offenders.length) {
     console.log(` ${o.id} — ${o.name} (${o.disc}) glacier=${o.glacier} snow=${o.snow} avy=${o.avalanche} · -${o.dropAdvice} advice -${o.dropGear} gear · ${o.why}`);
   }
 }
+// --- Is there a column carrying terrain prose that the classifier cannot see? ------------
+//
+// This is the failure that produced this section. `climbing_route` was added by migration
+// 0122 to re-home climbing prose OUT of `approach`, and corpus() was never told — so on 9 WA
+// routes the classifier suppressed avalanche advice while the route's own text described snow
+// at the base. Nothing reported it and nothing could: the column was populated, the screen
+// rendered it, and every coverage check was green. Only the classifier was blind.
+//
+// A comment saying "add new prose columns to CORPUS_COLUMNS" would have rotted exactly the
+// way the last one did. So the audit asks the question itself, every run.
+//
+// The declaration is demanded LATE on purpose. A column has to be both populated AND carrying
+// a glacier/snow word before it needs an entry here — which is precisely when it could change
+// a verdict, and not before. A column that can never affect the classifier never appears, so
+// this list stays at the handful that matter instead of growing to every column on the table.
+const NOT_TERRAIN_EVIDENCE = {
+  seasonal_hazards: "the N/A DECLARATION itself lives here, read structurally by saysNotApplicable(). Reading it as prose would make every row that declares avalanche absent read as avalanche present — it would disable the mechanism it belongs to.",
+  bivy: "camp sites. Describes where you sleep, not what the route crosses; snow at a bivy says nothing about the climb.",
+  access: "land manager, permits and road status. The access/calendar family corpus() already excludes by name.",
+  approach_logistics: "trailhead and driving logistics — same family as `road`, which is excluded by name.",
+  waypoints: "pin names and coordinates. A pin CALLED 'Snow Lake' is a proper noun, not a snow report.",
+  emergency: "rescue contacts and evacuation notes. Mentions winter conditions as a matter of course.",
+  data_quality: "confidence and gaps boilerplate — one sentence repeated 8,021 times catalog-wide, so it would flip every route at once or none.",
+  partner_requirements: "what a partner should be able to do. Real terrain signal, but phrased as a skill, and it is derived FROM the columns already read.",
+  rappel_detail: "per-station rappel table. Descent hardware, not terrain crossed.",
+  corrections: "the climber-correction ledger — historical values, including ones since replaced.",
+
+  // The calendar and access family. lib/terrain.js excludes these BY NAME in corpus()'s own
+  // comment, and the reason is on record: Southwest Rib on South Early Winters Spire kept an
+  // ice axe and crampons purely because its itinerary noted Highway 20 "closes with the first
+  // heavy snow". That is a fact about a road in November, not about a dry rock climb in July.
+  // These are the highest-volume entries in this list — climate 261 of 296 sampled rows, road
+  // 120, itinerary 102 — which is exactly why reading them would drown the signal.
+  climate: "calendar and weather narrative; mentions winter as a matter of course.",
+  season: "the climbing window. A window is not a terrain report, and see the season-is-prose note in CLAUDE.md.",
+  best_season: "the prose companion to `season`; same reason.",
+  timing: "start times and daylight budgeting; excluded by name in corpus().",
+  itinerary: "day-by-day logistics; excluded by name in corpus(). The Highway 20 case above.",
+  road: "driving and road-closure status; excluded by name in corpus().",
+  permit: "permit regime and quotas. Access logistics, seasonal by nature.",
+  comms: "cell and radio coverage; mentions winter access as a matter of course.",
+  crowds: "how busy the route gets, by season.",
+
+  // Grades. A grade is a difficulty, not a description of terrain crossed, and these already
+  // reach the classifier structurally — `grade` through YDS_RE, `ice`/`mixed` by discipline.
+  // Reading their text as prose would count the same signal twice through a second path.
+  grade: "the free grade; consumed structurally by YDS_RE, not as prose.",
+  alpine_grade: "commitment grade, consumed structurally. It also conflates Roman numerals with YDS class — see CLAUDE.md.",
+  ice_grade: "ice difficulty. `ice` and `mixed` are already treated as frozen disciplines by name.",
+
+  fa: "first-ascent history. A first WINTER ascent in 1963 says nothing about the terrain a party crosses today.",
+};
+
+const SNOWY = /\bglacier|glaciat(?:ed|ion)|crevasse|s[e\u00e9]racs?|icefall|bergschrund|schrund|snow\s*bridge|rope\s*team|\bsnowfield|\bsnow\s|\bsnowy|cornice|ice\s*axe|crampon|self[- ]arrest|glissad|snowpack|\bavalanche|\bavy\b/i;
+const flat = v => v == null ? "" :
+  typeof v === "string" ? v :
+  Array.isArray(v) ? v.map(flat).join("  ") :
+  typeof v === "object" ? Object.values(v).map(flat).join("  ") : String(v);
+
+async function blindScan() {
+  // One page of full rows. Sampled rather than exhaustive because this asks a question about
+  // COLUMNS, not routes — a column carrying terrain prose carries it on many rows, and a
+  // full-table select of every jsonb column moves tens of MB to learn the same thing. The
+  // sample size is printed rather than hidden, per the no-silent-caps rule.
+  const SAMPLE = 400;
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=*&discipline=eq.alpine` +
+    (STATE ? `&id=like.${STATE}_*` : "") + `&order=id.asc&limit=${SAMPLE}`;
+  const res = await fetch(url, { headers: headers(key) });
+  if (!res.ok) { console.log(`\nblind-column scan: SKIPPED (routes -> ${res.status})`); return; }
+  const rows = JSON.parse(await res.text());
+  if (!rows.length) { console.log("\nblind-column scan: SKIPPED (no rows)"); return; }
+
+  const known = new Set(CORPUS_COLUMNS);
+  known.add("approach_variants"); // read by key, see AV_PROSE_KEYS in lib/terrain.js
+  const carrying = new Map();
+  for (const r of rows) {
+    for (const [k, v] of Object.entries(r)) {
+      if (known.has(k)) continue;
+      const t = flat(v);
+      if (t && SNOWY.test(t)) carrying.set(k, (carrying.get(k) || 0) + 1);
+    }
+  }
+
+  const undeclared = [...carrying.keys()].filter(k => !(k in NOT_TERRAIN_EVIDENCE)).sort();
+  const stale = Object.keys(NOT_TERRAIN_EVIDENCE).filter(k => !carrying.has(k)).sort();
+
+  console.log(`\nblind-column scan (${rows.length} full rows sampled, ${Object.keys(rows[0]).length} columns):`);
+  console.log(`  columns outside the classifier that carry terrain prose: ${carrying.size} (all declared: ${undeclared.length === 0})`);
+  if (undeclared.length) {
+    console.log("\n  UNDECLARED — each of these carries glacier/snow prose the classifier cannot see.");
+    console.log("  Either add it to CORPUS_COLUMNS in lib/terrain.js, or record here WHY it is not evidence:");
+    for (const k of undeclared) console.log(`    ${k}  (${carrying.get(k)} of ${rows.length} sampled rows)`);
+  }
+  if (stale.length) {
+    console.log("\n  STALE declarations — no sampled row carries terrain prose in these, so the reason");
+    console.log("  recorded for them is describing data that has moved on:");
+    for (const k of stale) console.log(`    ${k}`);
+  }
+}
+await blindScan();
+
 // Report-only, like audit:area-parents: the exit code says "things to look at", never
 // "these are bugs". A route reading as rock is a candidate for review, not a defect.
 process.exit(0);
