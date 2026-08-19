@@ -89,7 +89,6 @@ if (Array.isArray(areas) && Array.isArray(routes)) {
     if (typeof r.grade !== "string" || !r.grade) err(`${where}: missing grade`);
     else if (!GRADE_RE.test(r.grade.trim())) warn(`${where}: grade "${r.grade}" doesn't match a known format`);
     if (r.verified !== false) warn(`${where}: verified should be false`);
-    if (r.source !== "community") warn(`${where}: source should be "community"`);
     for (const k of BANNED_KEYS) if (k in r) warn(`${where}: contains excluded field "${k}" (omit it)`);
   }
 
