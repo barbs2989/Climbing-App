@@ -362,7 +362,13 @@ try {
   asserted++;
   if (!toGroups) fail("Group:detail", "could not find the Groups sub-tab on the Crew screen");
   await page.waitForTimeout(2000);
-  if (await clickContaining("Fixture Alpine Club")) {
+  // THIS run's group, by name, not a constant. In CI the accounts are durable and shared, so
+  // a hardcoded name meant every concurrent run opened the same group and asserted on state
+  // the others were mutating — the #969 red that passed on re-run of the same SHA. The
+  // fixture now names its group per run; matching that name is what makes the assertion about
+  // this run's data. Falls back to the literal only if a fixture predates the field.
+  const groupName = fixture.group?.name || "Fixture Alpine Club";
+  if (await clickContaining(groupName)) {
     const g = await capture("Group:detail");
     asserted++;
     // Case-insensitive: the crew card renders a first name ("Robin") while the group
@@ -571,8 +577,11 @@ try {
         // "accounts removed" would be a small lie about the one property that makes a
         // permanent pair acceptable — and the next person reading a CI log would believe
         // teardown ran when there was nothing to tear down.
+        // Say what actually happened. In durable mode the ACCOUNTS persist but this run's
+        // GROUP does not, and claiming "nothing was created" would be false the moment the
+        // fixture started making one — the kind of small lie that makes a log untrustworthy.
         log(durableCredsPresent()
-          ? "durable CI accounts left in place (nothing was created, so nothing was removed)."
+          ? "durable CI accounts kept; this run's own group removed."
           : "fixture accounts removed.");
       }
     }

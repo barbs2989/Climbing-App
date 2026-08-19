@@ -40,6 +40,15 @@ function assertHealthy(res, what) {
   }
 }
 
+// A REST call as a given user's JWT — never the service key, which CI does not hold.
+const asUser = async (sess, path, init = {}) => readBody(await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+  ...init,
+  headers: {
+    apikey: ANON, Authorization: `Bearer ${sess.access_token}`,
+    "Content-Type": "application/json", Prefer: "return=representation", ...(init.headers || {}),
+  },
+}));
+
 async function signIn(email, password) {
   const res = await readBody(await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
     method: "POST",
@@ -78,12 +87,60 @@ export async function durableFixture(log) {
   }
 
   log(`  signed in as the durable CI accounts (anon key only, no service key)`);
+
+  // A GROUP PER RUN, not one shared group — this is the isolation the durable-account design
+  // was missing, and its absence produced non-deterministic reds on other people's PRs.
+  //
+  // The accounts have to be durable (no service key in CI, and no self-delete API, so per-run
+  // ACCOUNTS would leak forever). Their DATA does not. The walk opens group modals that mutate
+  // shared state — visibility, membership — and the assertions it makes are precisely about
+  // that state (`isCreator`'s "+ Mod" control, `isMod`'s visibility toggle). Two runs a minute
+  // apart therefore read each other's writes: on 2026-08-14 #969 failed on exactly that pair
+  // and passed on re-run of the same SHA, having changed no app code.
+  //
+  // Groups are safe to make per-run because, unlike auth users, an owner can delete their own:
+  // measured create 201 / mate-joins 201 / owner-deletes 200, row gone. So each run gets a
+  // uniquely named group and takes it away again.
+  const tag = process.env.GITHUB_RUN_ID
+    ? `run ${process.env.GITHUB_RUN_ID}${process.env.GITHUB_RUN_ATTEMPT ? "." + process.env.GITHUB_RUN_ATTEMPT : ""}`
+    : `local ${process.pid.toString(36)}${Date.now().toString(36).slice(-4)}`;
+  const groupName = `CI Fixture Alpine Club (${tag})`;
+
+  const mk = await asUser(session, "groups", {
+    method: "POST",
+    body: JSON.stringify({
+      created_by: session.user.id, name: groupName, blurb: "Per-run fixture for check:signed-in.",
+      location: "North Cascades", disciplines: ["alpine"], visibility: "public",
+    }),
+  });
+  assertHealthy(mk, "creating this run's group");
+  const group = mk.json?.[0];
+  if (!group?.id) throw new Error(`could not create this run's group (HTTP ${mk.status}): ${(mk.text || "").slice(0, 200)}`);
+
+  // The MATE seats themselves. A group owner cannot add a member (403) — that is the policy,
+  // and it is what a real join does; seeding it any other way would manufacture a state the
+  // app's own flow cannot reach.
+  const join = await asUser(mateSession, "group_members", {
+    method: "POST",
+    body: JSON.stringify({ group_id: group.id, user_id: mateSession.user.id, role: "member" }),
+  });
+  assertHealthy(join, "seating the mate in this run's group");
+  if (join.status >= 300) throw new Error(`the mate could not join this run's group (HTTP ${join.status}): ${(join.text || "").slice(0, 200)}`);
+  log(`  created this run's own group ${JSON.stringify(groupName)} — no other run can touch it`);
+
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },
     mate: { id: mateSession.user.id, email: mateEmail, name: mate.name },
+    group,
     session,
-    // Nothing was created, so nothing is removed. Returning [] matches createFixture's
-    // contract of "these are the rows I could not delete", which is genuinely empty here.
-    async cleanup() { return []; },
+    // The accounts stay; this run's group does not. Returning the names of rows that could
+    // NOT be removed matches createFixture's contract, so a leak is reported rather than
+    // accumulating silently in a live project.
+    async cleanup() {
+      const del = await asUser(session, `groups?id=eq.${group.id}`, { method: "DELETE" });
+      if (del.status >= 300) return [`group ${groupName} (HTTP ${del.status})`];
+      const left = await asUser(session, `groups?id=eq.${group.id}&select=id`);
+      return Array.isArray(left.json) && left.json.length ? [`group ${groupName} (still present after DELETE)`] : [];
+    },
   };
 }

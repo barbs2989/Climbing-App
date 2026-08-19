@@ -406,6 +406,25 @@ a build error, but a screen that renders wrong or not at all.
     they cannot appear in partner browse — the objection against a permanent QA account.
     `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
+  - **The ACCOUNTS are durable; their DATA is not, and that distinction is load-bearing.** The
+    accounts have to persist (CI holds no service key, and Supabase has no self-delete, so
+    per-run *accounts* would leak forever). A shared *group* is a different matter: the walk
+    opens group modals that mutate state, and the assertions it makes are precisely about that
+    state — `isCreator`'s `+ Mod` control and `isMod`'s visibility toggle. Two concurrent runs
+    therefore read each other's writes. That is not hypothetical: on 2026-08-14 **#969 failed
+    on exactly that pair and passed on re-run of the same SHA**, having changed no app code,
+    with another branch's run starting one minute later.
+    - So each run **creates its own group**, named from `GITHUB_RUN_ID` (or pid+time locally),
+      seats the mate in it, and **deletes it in teardown**. Groups are safe to make per-run
+      because an owner can delete their own — measured: create 201, mate-joins 201,
+      owner-deletes 200, row gone. Verified after a full local run: one group left in the
+      project, the permanent seeded one, no per-run leak.
+    - `check:signed-in` opens **`fixture.group.name`**, not a hardcoded string. A constant there
+      is what made every run open the same group in the first place.
+    - The mate **seats themselves** — a group owner cannot add a member (403). Seeding it any
+      other way manufactures a state the app's own flow cannot reach.
+    - Serialising the job with a `concurrency` group would also work, at the cost of queueing
+      every PR behind one browser walk. Isolation is cheaper and does not hide a real race.
   - **Seeding as the users found something the service key had been hiding.** RLS refuses an
     `INSERT` of a connection with `status:"accepted"` for *both* accounts (42501) — a real pair
     must request, then accept. The old fixture wrote that row directly with the service key, so
