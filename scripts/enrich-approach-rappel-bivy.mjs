@@ -208,8 +208,14 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,approach_variants,climbing_route,bivy";
-const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail"];
+const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy";
+// `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
+// It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
+// catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
+// name-vs-aspect research carry exactly that (Cameron's "North ridge" on a ridge gained due west,
+// Tye's backwards "(west side)"). `aspect` stays OUT — it drives the sun/shade readout and is a
+// classification, so it goes through SQL a human runs.
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face"];
 const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road"];
 // `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
 // they are verified — just not by either list.
@@ -217,7 +223,7 @@ const VERIFY_CUSTOM = ["waypoints", "rappel_detail"];
 // The allow-list for `set`. See the long note at its use site for where the line is drawn and why.
 const SETTABLE = new Set([
   "rappel_count_note", "rappels", "descent_text", "approach", "waypoints", "road",
-  "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail",
+  "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail", "face",
 ]);
 // A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
 // in the re-read select or `after[k]` is undefined, and in a verify group or the write is checked by
