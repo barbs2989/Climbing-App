@@ -93,6 +93,18 @@ let candidates = scoped.filter(r => r.approach && String(r.approach).trim().leng
 
 if (INJECT === "clean") candidates = candidates.map(r => ({ ...r, approach: "Walk the trail from the parking lot for two miles to the basin." }));
 if (INJECT === "dirty") candidates = candidates.slice(0, 3).map(r => ({ ...r, approach: r.approach + " From the notch, climb the first pitch at 5.6 and belay on the crest." }));
+// The duplication half needs its own pair, because its healthy output is a NUMBER and a broken
+// detector prints a number too. `dup` copies an approach sentence verbatim into climbing_route
+// and the count must rise; `nodup` replaces climbing_route with prose about something else
+// entirely and the count must fall to zero. Without the second case a detector that simply
+// returned "every sentence" would pass the first.
+if (INJECT === "dup") candidates = candidates.slice(0, 5).map(r => {
+  const first = sentences(r.approach)[0];
+  return first ? { ...r, climbing_route: [{ n: 1, label: "injected", notes: first }] } : r;
+});
+if (INJECT === "nodup") candidates = candidates.map(r => (Array.isArray(r.climbing_route) && r.climbing_route.length)
+  ? { ...r, climbing_route: [{ n: 1, label: "injected", notes: "Park in the paved lot beside the visitor centre and buy a coffee before starting the drive home." }] }
+  : r);
 
 const findings = [];
 for (const r of candidates) {
@@ -118,20 +130,84 @@ for (const r of candidates) {
 
 findings.sort((a, b) => (b.unpitched - a.unpitched) || (b.score - a.score));
 
+// --- Was the text MOVED, or only COPIED? --------------------------------------------------
+//
+// The re-homing pass was specified as "re-home, never research", which means the source column
+// should have been trimmed. Nothing ever checked that it was, and it mostly was not: measured
+// on WA, 163 of 240 routes carrying both columns repeat at least one approach sentence inside
+// climbing_route, 429 sentences in all and many verbatim. Confirmed ON SCREEN rather than
+// inferred from the columns — the Planner tab renders APPROACH and CLIMBING ROUTE together, so
+// a reader is told the same thing twice in two sections they are meant to distinguish.
+//
+// Similarity rather than string equality, because the pass was allowed to rewrite prose freely
+// and only pinned specifics. A paraphrase is still a duplicate to a reader.
+const STOP = new Set(("the a an and or of to in on at from for with by is are was were be been " +
+  "this that these those it its as up down out over under into onto then than but if you your " +
+  "we they he she which where when while about above below after before around near").split(" "));
+const contentWords = t => String(t).toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)
+  .filter(w => w.length > 3 && !STOP.has(w));
+// 0.6 is deliberately high. Both columns describe the same mountain, so a shared "summit",
+// "gully" and "snow" is expected and is NOT duplication.
+const DUP_SIM = 0.6;
+const jaccard = (a, b) => {
+  const A = new Set(contentWords(a)), B = new Set(contentWords(b));
+  if (A.size < 4 || B.size < 4) return 0;
+  let hit = 0;
+  for (const w of A) if (B.has(w)) hit++;
+  return hit / new Set([...A, ...B]).size;
+};
+const crProse = r => [].concat(r.climbing_route || [])
+  .map(v => (v && typeof v === "object") ? [v.label, v.notes].filter(Boolean).join(". ") : String(v))
+  .join("\n");
+const _dupCache = new Map();
+function dupCount(r) {
+  if (_dupCache.has(r.id)) return _dupCache.get(r.id);
+  const ap = sentences(r.approach), cr = sentences(crProse(r));
+  let n = 0;
+  if (ap.length && cr.length) for (const a of ap) if (cr.some(b => jaccard(a, b) >= DUP_SIM)) n++;
+  _dupCache.set(r.id, n);
+  return n;
+}
+
 const unp = findings.filter(f => f.unpitched);
 console.log(`\nscanned ${scoped.length} routes in scope "${STATE}" · ${candidates.length} have an approach worth reading`);
-console.log(`${findings.length} carry climbing description inside the approach — ${unp.length} of them have NO pitch table, so that text has nowhere else to live today.\n`);
+// The old line here said every unpitched finding's text "has nowhere else to live today",
+// which was true when this was written and is now false for most of them: the climbing_route
+// backfill has run. Following that advice would re-home text that is ALREADY re-homed and
+// produce a third copy. An audit that gives a confident instruction it has no evidence for is
+// the check:field-renders failure — it told an author to delete correct bookkeeping during an
+// outage — so the two populations are counted separately and each is told what to actually do.
+const homeless = unp.filter(f => !f.already);
+const rehomed = findings.filter(f => f.already);
+console.log(`${findings.length} carry climbing description inside the approach.`);
+console.log(`  ${homeless.length} unpitched with NO climbing_route yet — that text has nowhere else to live, so MOVE it.`);
+console.log(`  ${rehomed.length} already have climbing_route populated — for these the question is whether the approach was TRIMMED, not where the text should go.\n`);
 
 for (const f of findings.slice(0, LIMIT)) {
   const tag = f.unpitched ? "UNPITCHED" : "pitched";
-  console.log(`── ${f.r.name}  (${f.r.id})  [${f.r.discipline || "?"}, ${tag}]  score=${f.score} ${Math.round(f.ratio * 100)}% of sentences${f.already ? "  ·  climbing_route ALREADY set" : ""}`);
+  const dup = f.already ? dupCount(f.r) : 0;
+  const note = !f.already ? "  ·  no climbing_route yet — MOVE"
+    : dup ? `  ·  climbing_route set AND ${dup} approach sentence(s) repeat inside it — TRIM the approach`
+      : "  ·  climbing_route set, no repeated sentences — read before touching";
+  console.log(`── ${f.r.name}  (${f.r.id})  [${f.r.discipline || "?"}, ${tag}]  score=${f.score} ${Math.round(f.ratio * 100)}% of sentences${note}`);
   for (const fl of f.flagged.slice(0, 3)) console.log(`     "${fl.s.slice(0, 170)}${fl.s.length > 170 ? "…" : ""}"`);
   console.log("");
 }
 if (findings.length > LIMIT) console.log(`… ${findings.length - LIMIT} more (raise --limit)\n`);
 
-console.log("Report only — nothing was changed. Read each route before moving text into climbing_route.");
+const dupRoutes = findings.filter(f => f.already && dupCount(f.r) > 0);
+const dupTotal = dupRoutes.reduce((a, f) => a + dupCount(f.r), 0);
+console.log(`\nduplication: ${dupRoutes.length} of the ${rehomed.length} re-homed routes still repeat approach prose inside climbing_route (${dupTotal} sentences).`);
+console.log("The Planner tab renders both sections, so those routes state the same thing twice.");
+console.log("\nReport only — nothing was changed. Read each route before moving OR trimming text:");
+console.log("which copy is wrong is a per-sentence judgement, and some of the repeated prose is");
+console.log("genuine approach content wrongly copied INTO climbing_route rather than the reverse.");
 // Injection cases:
 //   --inject=clean  every approach replaced with pure walking prose -> must report 0 findings
 //   --inject=dirty  a climbing sentence appended to 3 approaches    -> those 3 must be flagged
+//   --inject=dup    an approach sentence copied into climbing_route -> duplication must RISE
+//   --inject=nodup  climbing_route replaced with unrelated prose    -> duplication must be 0
+// The last two are a pair on purpose: `dup` alone would be passed by a detector that called
+// every sentence a duplicate, which is the failure this repo keeps meeting from the other
+// side — a proxy wide enough to be satisfied by anything reports a clean sweep either way.
 process.exit(0);

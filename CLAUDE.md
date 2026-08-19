@@ -1863,6 +1863,38 @@ the correction knows the screen is wrong, and they have no way to report it.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+- **`audit:approach-scope`** finds routes whose `approach` keeps going past the base of the climb.
+  Its summary line **used to give advice that would have made things worse**, and that is the part
+  worth remembering: it said 254 findings "have NO pitch table, so that text has nowhere else to
+  live today". True when written; the `climbing_route` backfill has since run, and the real figure
+  is **15** — the other **239 already have it**. A 17x overstatement instructing whoever read it to
+  re-home text that is already re-homed, producing a **third** copy. Same failure as
+  `check:field-renders` telling an author to delete correct bookkeeping during an outage: an audit
+  still asserting something it no longer has evidence for.
+  - **The pass COPIED rather than MOVED.** CLAUDE.md specifies these batches as "re-home, never
+    research", which means trimming the source — nothing ever checked, and mostly it did not.
+    Two numbers, answering different questions, so do not quote one as the other: across all WA
+    routes with both columns, **163 of 240 repeat an approach sentence inside `climbing_route`
+    (429 sentences)**; among the routes this audit flags, **148 of 239 (303 sentences)**. Many are
+    verbatim.
+  - **Confirmed ON SCREEN, not inferred from the columns.** `APPROACH` and `CLIMBING ROUTE` are
+    both on the **Planner** tab, and the shared sentences print twice there — verified by rendering
+    the real `RouteDetail` over three real rows. Two columns overlapping is a fact about a table;
+    whether it is a defect is a question only rendering answers, which is the trap the rack
+    correction and `descent_text` both record.
+  - **Deliberately NOT swept, and do not bulk-trim `approach` against it.** Which copy is wrong is
+    a per-sentence judgement: the pass also copied *genuine approach content* into `climbing_route`
+    (`wa_mount_watson_scramble`), so for some rows the `climbing_route` copy is the wrong one. And
+    at least one paraphrase **dropped an antecedent** — `wa_bryant_peak_southeast_slopes` reads
+    "Ascend **the gully** favoring its far climber's-right side" in the approach against "Ascend
+    favoring its far climber's-right side" in `climbing_route`. Same shape as
+    `audit:trailhead-agreement`, but with **no third record** to settle it, so it needs reading in
+    reviewed batches rather than a transform.
+  - Per-row output is now the **action** rather than a fact (`TRIM the approach` / `MOVE` / `read
+    before touching`). Injection cases are a **pair** on purpose: `--inject=dup` copies a sentence
+    in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
+    it must fall to zero — `dup` alone would be passed by a detector that called everything a
+    duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
