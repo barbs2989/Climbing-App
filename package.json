@@ -25,6 +25,7 @@
     "audit:rappel-claims": "node scripts/audit-rappel-claims.mjs",
     "audit:aspect-name": "node scripts/audit-aspect-vs-name.mjs",
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
+    "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
     "audit:trailhead-agreement": "node scripts/audit-trailhead-agreement.mjs",
     "enrich:next-batch": "node scripts/next-climbing-route-batch.mjs",
     "enrich:apply": "node scripts/enrich-approach-rappel-bivy.mjs",
