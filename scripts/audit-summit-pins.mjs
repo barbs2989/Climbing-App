@@ -49,7 +49,7 @@ if (rows.__err || !rows.length) { console.error("READ FAILED / EMPTY — failing
 const ELEV_TOL = 12;   // feet. Two records naming one summit should agree on its height.
 const DIST_TOL = 300;  // metres. Below this the pin is on the summit for any practical purpose.
 
-const contradiction = [], subFeature = [], namedElsewhere = [];
+const contradiction = [], subFeature = [], namedElsewhere = [], missing = [];
 let judged = 0, noPin = 0, noPeakCoord = 0, inScope = 0;
 
 for (const r of rows) {
@@ -58,7 +58,7 @@ for (const r of rows) {
   if (a.lat == null || a.lng == null) { noPeakCoord++; continue; }
   const wps = (Array.isArray(r.waypoints) ? r.waypoints : []).filter(w => w && w.lat != null && w.lng != null);
   const pin = wps.find(w => wpType(w) === "Summit") || wps.find(w => wpType(w) === "Topout");
-  if (!pin) { noPin++; continue; }
+  if (!pin) { noPin++; missing.push({ id: r.id, disc: r.discipline, peak: a.name, wps: wps.length }); continue; }
   judged++;
   const m = Math.round(hav(pin.lat, pin.lng, a.lat, a.lng));
   if (m <= DIST_TOL) continue;
@@ -67,7 +67,8 @@ for (const r of rows) {
   const claimsSamePeak = pn && an && (pn === an || pn.includes(an) || an.includes(pn));
   const dElev = (pin.elev != null && a.elevation_ft != null) ? Math.abs(pin.elev - a.elevation_ft) : null;
   const rec = { id: r.id, disc: r.discipline, wp: pin.name, peak: a.name, m,
-                pinElev: pin.elev ?? null, peakElev: a.elevation_ft ?? null, dElev };
+                pinElev: pin.elev ?? null, peakElev: a.elevation_ft ?? null, dElev,
+                areaId: a.id, pinLat: pin.lat, pinLng: pin.lng, areaLat: a.lat, areaLng: a.lng };
 
   if (!claimsSamePeak) { namedElsewhere.push(rec); continue; }
   /* SAME NAME, and the elevations agree -> the two records describe ONE point and disagree only
@@ -80,6 +81,7 @@ for (const r of rows) {
 const by = k => (x, y) => y[k] - x[k];
 contradiction.sort(by("m")); subFeature.sort(by("m")); namedElsewhere.sort(by("m"));
 
+missing.sort((x,y)=>x.peak<y.peak?-1:1);
 const line = f => `  ${String(f.m).padStart(6)} m  ${f.id.padEnd(42)} [${f.disc.slice(0,5)}] ` +
   `${String(f.wp).slice(0,32).padEnd(32)} peak=${String(f.peak).slice(0,22).padEnd(22)}` +
   (f.dElev == null ? "  (no elev to compare)" : `  Δelev ${f.dElev} ft`);
@@ -95,7 +97,9 @@ console.log(`\n=== 1. COORDINATE CONTRADICTIONS (${contradiction.length}) ===`);
 console.log(`The pin names THIS peak and agrees on its ELEVATION, but sits >${DIST_TOL} m away.`);
 console.log(`One of the two coordinates is wrong. WHICH is not mechanically decidable — areas.lat/lng`);
 console.log(`has been wrong before (transposed pairs; a WA peak holding an Idaho route). Read both.`);
-console.log(`Where several routes on one peak share a pin, the PIN is the corroborated record.\n`);
+console.log(`Run with --terrain to let the GROUND decide: a summit is a local elevation maximum, which`);
+console.log(`is true whatever either record claims. Do NOT assume a pin shared by several routes is`);
+console.log(`the corroborated one — measured, Whatcom Peak's is shared by three and is not a summit.\n`);
 contradiction.forEach(f => console.log(line(f)));
 
 console.log(`\n=== 2. NAMED SUB-SUMMITS (${subFeature.length}) — NOT findings ===`);
@@ -105,5 +109,49 @@ subFeature.forEach(f => console.log(line(f)));
 console.log(`\n=== 3. PIN NAMES A DIFFERENT FEATURE (${namedElsewhere.length}) — NOT findings ===`);
 console.log(`e.g. six Rainier routes top out on Liberty Cap, 2.25 km from Columbia Crest, and say so.\n`);
 namedElsewhere.forEach(f => console.log(line(f)));
+
+console.log(`\n=== 4. NO SUMMIT PIN AT ALL (${missing.length}) ===`);
+console.log(`Not a wrong coordinate — a route map with nothing marking the top. Named rather than`);
+console.log(`counted, because a gap nobody can see is one nobody closes.\n`);
+missing.forEach(f => console.log(`  ${f.id.padEnd(46)} [${String(f.disc).slice(0,5)}] peak=${String(f.peak).slice(0,26).padEnd(26)} ${f.wps} other pin(s)`));
+
+// --- --terrain: let the GROUND adjudicate ------------------------------------------------------
+// The pin and the area disagree and neither can settle the other. The route's own track usually
+// cannot either -- on 201 of 580 WA routes it IS the pin list joined up. A summit is a local
+// elevation maximum, which is true whatever either record claims, so the DEM can.
+// Off by default: ~18 requests to a public federal service per (peak, pin) pair.
+if (process.argv.includes("--terrain")) {
+  const { summitProbe, selfTest } = await import("./lib/terrain.mjs");
+  console.log(`\n=== 5. TERRAIN ADJUDICATION ===`);
+  console.log(`calibration -- the expected result here is "no findings", which is also what a BROKEN`);
+  console.log(`probe prints, so prove it can fail before believing it:`);
+  console.log(await selfTest());
+
+  // Several routes on one peak share one pair of candidates. Probe each PAIR once.
+  const pairs = new Map();
+  for (const f of contradiction) {
+    const k = `${f.areaId}|${f.pinLat.toFixed(5)},${f.pinLng.toFixed(5)}`;
+    if (!pairs.has(k)) pairs.set(k, { f, routes: [] });
+    pairs.get(k).routes.push(f.id);
+  }
+  console.log(`\n${contradiction.length} route(s) -> ${pairs.size} distinct (peak, pin) pair(s)\n`);
+  const tally = {};
+  for (const [, { f, routes }] of pairs) {
+    const claim = f.pinElev ?? f.peakElev;
+    const tp = await summitProbe(f.pinLat, f.pinLng), ta = await summitProbe(f.areaLat, f.areaLng);
+    let v;
+    if (tp.isMax == null || ta.isMax == null) v = "no evidence -- the DEM could not answer";
+    else if (tp.isMax && !ta.isMax) v = "the PIN is the summit -> areas.lat/lng is wrong";
+    else if (ta.isMax && !tp.isMax) v = "the AREA is the summit -> the PIN is wrong";
+    else if (tp.isMax && ta.isMax)  v = "BOTH are local maxima -- two real summits, read it";
+    else                            v = "NEITHER is a summit -- both records suspect, read it";
+    tally[v] = (tally[v] || 0) + 1;
+    console.log(`${f.peak}  (${routes.length} route${routes.length > 1 ? "s" : ""}, ${f.m} m apart, claimed ${claim ?? "?"} ft)`);
+    console.log(`   PIN  ${String(Math.round(tp.centre ?? NaN)).padStart(6)} ft  ${tp.note}`);
+    console.log(`   AREA ${String(Math.round(ta.centre ?? NaN)).padStart(6)} ft  ${ta.note}`);
+    console.log(`   => ${v}\n`);
+  }
+  for (const [k, n] of Object.entries(tally)) console.log(`  ${String(n).padStart(3)}  ${k}`);
+}
 
 console.log(`\nreport-only: exit 0 regardless. ${contradiction.length} thing(s) to read.`);
