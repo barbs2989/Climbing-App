@@ -37,10 +37,27 @@ for (const f of FILES) {
 // Comments stripped first: the rows fixed by #715 and #868 explain this rule in prose that
 // names climberLine, and a scan that read comments would pass on the explanation rather than
 // the fix. Offsets preserved so line numbers stay true.
+// A comment marker only counts in COMMENT POSITION — preceded by whitespace, a separator, or
+// start of file. Without that test this stripper deleted 8% of the app from its own scan, and
+// the deletion was silent.
+//
+// The case that proved it: `accept="image/*"` on the profile editor's photo input. That `/*`
+// is a MIME wildcard inside an HTML attribute, and the old stripper read it as a block-comment
+// opener and blanked 15,575 characters up to the next `*/` — a region containing the profile
+// editor itself. So this guard could not see `"📍 "+(draft.location…)+" · "+draft.level`, which
+// rendered "Location · undefined" to every brand-new account until #1031 found it by RENDERING
+// the screen instead. Measured: 20 concatenation sites in the app, 19 visible before, 20 now.
+//
+// Same family as the `//`-in-a-URL trap check:dead-flag-gates records ("a regex strip ate real
+// code there"), but a different mechanism — `/*` inside a string, not `//`. Both fail the same
+// way: the guard reports a clean sweep over source it never read.
+const COMMENT_POS = new Set(["\n", " ", "\t", ";", "{", "}", "(", ")", ",", "="]);
 function stripComments(src) {
   let out = "", i = 0;
   while (i < src.length) {
     const c = src[i], d = src[i + 1];
+    const prev = i === 0 ? "\n" : src[i - 1];
+    if (c === "/" && (d === "/" || d === "*") && !COMMENT_POS.has(prev)) { out += c; i++; continue; }
     if (c === "/" && d === "/") { while (i < src.length && src[i] !== "\n") { out += " "; i++; } continue; }
     if (c === "/" && d === "*") { const e = src.indexOf("*/", i + 2); const end = e < 0 ? src.length : e + 2; for (let k = i; k < end; k++) out += src[k] === "\n" ? "\n" : " "; i = end; continue; }
     out += c; i++;
@@ -61,6 +78,20 @@ const CONCAT = [
 // A site is fine when the same expression is gated on the object being real, which is what
 // #715's fix does — that is a correct answer, not an exemption.
 const GATED = /_conn|_real|_profile|climberLine/;
+
+// A value TESTED BEFORE USE is honest by construction and needs no gate on the climber's
+// provenance: `draft.level ? " · "+draft.level : ""` cannot render "undefined" whoever the
+// object is. Requiring the SAME identifier keeps this tight — an unrelated `other.level?`
+// elsewhere in the window must not clear this site.
+//
+// Without it the guard flags its own fix. #1031 changed a dangling `+" · "+draft.level` into
+// exactly this shape, and the first run afterwards reported the corrected line as a defect —
+// a guard that flags correct work teaches people to ignore it, which is the one outcome this
+// suite cannot afford.
+function selfGated(around, obj) {
+  const o = obj.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(o + "\\.level\\s*(\\?|&&|\\|\\|)").test(around);
+}
 
 const ALLOW = [
   // Each reason MEASURED, not assumed — the collection feeding the row was read before the
@@ -88,6 +119,8 @@ for (const rel of FILES) {
       const from = Math.max(0, m.index - 260), to = Math.min(src.length, m.index + 260);
       const around = src.slice(from, to);
       if (GATED.test(around)) continue;
+      const objM = /([A-Za-z_$][\w$]*)\.level\b/.exec(m[0]);
+      if (objM && selfGated(around, objM[1])) continue;
       const hit = ALLOW.find((a) => around.includes(a.key));
       if (hit) { used.add(hit.key); continue; }
       const line = src.slice(0, m.index).split("\n").length;
