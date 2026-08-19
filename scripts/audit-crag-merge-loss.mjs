@@ -38,7 +38,7 @@ const live = async (id) => (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?i
 // Scalars only -- an array or object is judged by the emptiness rules above.
 const PLACEHOLDER_VALUE = /^\s*(unknown|unspecified|none|n\/?a|tbd|null|undefined|-{1,2}|\?+)\s*$/i;
 const empty = (v) => v === null || v === "" || (typeof v === "string" && PLACEHOLDER_VALUE.test(v)) || (Array.isArray(v) && !v.length) || (v && typeof v === "object" && !Array.isArray(v) && !Object.keys(v).length);
-const SKIP = new Set(["id", "area_id", "created_at", "updated_at", "name", "source"]);
+const SKIP = new Set(["id", "area_id", "created_at", "updated_at", "name"]);
 
 for (const [file, copyId, survId] of PAIRS) {
   const dump = JSON.parse(fs.readFileSync(`${ARCH}/${file}`, "utf8"));
