@@ -257,6 +257,24 @@ a build error, but a screen that renders wrong or not at all.
     line names the screen and the offending text but the surrounding copy is what tells you
     whether it is a real bug.
   - `--url <live URL>` points the same walk at the deployed site instead of a dev server.
+  - **That `--url` walk now runs on a SCHEDULE** (`.github/workflows/live-site-check.yml`,
+    every 6h + `workflow_dispatch`), closing the gap between "the code passes on a runner"
+    and "the app people load works". Every other browser guard walks a dev server built from
+    the checkout; `check:drift` asks about production but only compares **SHAs**, so it
+    reports "production serves the current tip" while the served bundle is blank — a correct
+    SHA and a broken app are identical from there. Between them sit the failures only
+    production has: a bad base path, a lazy chunk that 404s off the Pages base, a stale
+    service-worker precache, a build/runner env difference. The walk was possible for weeks
+    and ran only when somebody remembered, which is the #724 lesson exactly.
+    - It holds **no secrets**, and that is a property of `--url` rather than luck: with it
+      `check:ui` spawns no dev server and skips `assertDbReachable` (local env describes a
+      different deployment than the one being walked), so no Supabase credentials are needed.
+    - The URL is read from the **Pages deployment** (`gh api repos/.../pages`), never
+      hardcoded, so a repo rename cannot leave it walking a 404 and reporting whatever an
+      error page renders. It fails closed if that lookup returns nothing rather than guessing.
+    - `cancel-in-progress: true` is right **here and nowhere near a push-to-main guard**: a
+      superseded production walk asks about a site that has since been redeployed, so it has
+      no value. `check:ci-cancel` governs the push-triggered workflows; this is not one.
   - **The sample route detail is pinned by name** (`North Ridge (Complete)` in Washington
     under `USE_DB`, `West Slabs` in Utah on seed), so a rename or delete in the live DB
     turns this red on a PR whose author changed nothing. The failure separates the two
