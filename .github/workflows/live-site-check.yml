@@ -88,8 +88,46 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # RETRY ONCE, AND SAY SO. The first scheduled run of this failed with "the app never
+      # rendered its nav bar" while production was demonstrably fine -- the walk started at
+      # 15:14:54 and a deploy for 29c95fd was created at 15:14. Pages swaps the served bundle
+      # mid-deploy, so a walk that lands in that window sees a half-swapped site. Merges here
+      # land every few minutes, so this is a normal condition, not an edge case.
+      #
+      # A guard that flags correct work teaches people to ignore it, which would make this
+      # one worthless: it is unattended, and its whole value is that a failure means
+      # something. So a single failure is treated as inconclusive rather than as a verdict.
+      #
+      # The retry is PRINTED, never absorbed -- absorbing it would turn a measurable
+      # condition into an invisible one, the rule check:field-renders already records. The
+      # served bundle hash is logged before each attempt: if it CHANGED between them, a
+      # deploy really was in flight and the retry is explained rather than mysterious.
+      #
+      # A genuinely broken production fails both attempts, which is the only thing that
+      # turns this red.
       - name: The deployed app still works
-        run: npm run check:ui -- --url "${{ steps.site.outputs.url }}" --snapshot live-screens.json
+        run: |
+          URL="${{ steps.site.outputs.url }}"
+          bundle() { curl -sS "$URL" | grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' | head -1; }
+
+          B1=$(bundle); echo "attempt 1 — serving ${B1:-<no bundle found>}"
+          if npm run check:ui -- --url "$URL" --snapshot live-screens.json; then
+            exit 0
+          fi
+
+          echo "::notice::attempt 1 failed; production may have been mid-deploy. Waiting 120s and re-walking once."
+          sleep 120
+
+          B2=$(bundle); echo "attempt 2 — serving ${B2:-<no bundle found>}"
+          if [ "$B1" != "$B2" ]; then
+            echo "::notice::the served bundle changed between attempts ($B1 -> $B2) — a deploy was in flight during attempt 1."
+          fi
+          if npm run check:ui -- --url "$URL" --snapshot live-screens.json; then
+            echo "::warning::the live site walk passed on attempt 2 after failing attempt 1. If the bundle did NOT change above, this is a real flake worth investigating rather than a deploy window."
+            exit 0
+          fi
+          echo "::error::the live site walk failed twice, 120s apart. This is not a deploy window — production is broken."
+          exit 1
 
       # The failure line names the screen and the offending text, but the surrounding copy
       # is what tells you whether it is a real bug or a wording change. Same reasoning as
