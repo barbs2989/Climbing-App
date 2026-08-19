@@ -45,6 +45,12 @@ const arg = (n, d) => (process.argv.find(a => a.startsWith(`--${n}=`)) || `--${n
 const LIM = Number(arg("lim", 8));
 const STATE = String(arg("state", "wa")).toLowerCase();
 const MAXPEAKS = Number(arg("limit-peaks", 0));
+// The home-state hint the app derives from the climber's profile. Namesake peaks repeat
+// across the continent and eight slots cannot hold fourteen Chimney Rocks, so ORDER AMONG
+// NAMESAKES depends on where the climber is. Default it to the state being measured: the
+// question worth asking about a Washington peak is whether a climber IN Washington can reach
+// it. Pass --home= (empty) for the signed-out case, which is the pre-#1008 behaviour.
+const HOME = process.argv.some(x => x.startsWith("--home=")) ? arg("home", "") : "usa." + ({ wa: "washington" }[STATE] || "");
 const PATH_PREFIX = { wa: "usa.washington" }[STATE];
 if (!PATH_PREFIX) { console.error(`no path prefix known for --state=${STATE}`); process.exit(1); }
 
@@ -88,7 +94,7 @@ async function searchTopN(q) {
     j(`routes?select=${SEL}&name=ilike.${E(q + "%")}&limit=${LIM * 2}`),
     j(`routes?select=${SEL}&name=ilike.${E("%" + q + "%")}&limit=${LIM * 2}`),
     j(`areas?select=id,name,path&name=ilike.${E("%" + q + "%")}&order=route_count.desc&limit=5`),
-    j(`areas?select=id,name,path&name=ilike.${E(q)}&order=route_count.desc&limit=5`),
+    j(`areas?select=id,name,path&name=ilike.${E(q)}&order=route_count.desc&limit=25`),
   ]);
   const matchedIds = matched.map(a => a.id);
   const kids = await Promise.all(
@@ -96,14 +102,20 @@ async function searchTopN(q) {
       j(`areas?select=id&path=cd.${E(a.path)}&route_count=gt.0&order=route_count.desc&limit=25`)));
   const descIds = [];
   for (const k of kids) for (const a of k) if (!matchedIds.includes(a.id) && !descIds.includes(a.id)) descIds.push(a.id);
-  const exactIds = exact.map(a => a.id).filter(id => !matchedIds.includes(id));
-  const [byMatched, byDesc, byExact] = await Promise.all([
+  const atHome = a => !!HOME && (a.path === HOME || String(a.path || "").startsWith(HOME + "."));
+  const unclaimed = a => !matchedIds.includes(a.id);
+  // The home-state namesake gets its OWN query — pooling loses it, measured.
+  // NOT filtered by `unclaimed` — matchedIds is pooled and capped too, so it is no protection.
+  const homeExactIds = exact.filter(atHome).map(a => a.id).slice(0, 3);
+  const exactIds = exact.filter(a => !atHome(a)).filter(unclaimed).map(a => a.id).slice(0, 5);
+  const [byMatched, byDesc, byExact, byHomeExact] = await Promise.all([
     matchedIds.length ? j(`routes?select=${SEL}&area_id=in.(${matchedIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
     descIds.length ? j(`routes?select=${SEL}&area_id=in.(${descIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
     exactIds.length ? j(`routes?select=${SEL}&area_id=in.(${exactIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
+    homeExactIds.length ? j(`routes?select=${SEL}&area_id=in.(${homeExactIds.map(E).join(",")})&limit=${LIM * 2}`) : [],
   ]);
   const seen = new Set(), merged = [];
-  for (const r of [...byPrefix, ...byName, ...byExact, ...byMatched, ...byDesc]) {
+  for (const r of [...byPrefix, ...byName, ...byHomeExact, ...byExact, ...byMatched, ...byDesc]) {
     if (seen.has(r.id)) continue;
     seen.add(r.id); merged.push(r);
   }
@@ -112,8 +124,12 @@ async function searchTopN(q) {
     const an = String((r.areas && r.areas.name) || "").toLowerCase();
     return an === needle || an.replace(/^(mount|mt\.?|the)\s+/, "") === needle;
   });
+  const homeAreaIds = new Set(exact.concat(matched).filter(atHome).map(a => a.id));
+  const namedHomeFirst = HOME
+    ? namedAll.slice().sort((x, y) => (homeAreaIds.has(y.area_id) ? 1 : 0) - (homeAreaIds.has(x.area_id) ? 1 : 0))
+    : namedAll;
   const oncePer = new Set(), firstOfEach = [], extras = [];
-  for (const r of namedAll) {
+  for (const r of namedHomeFirst) {
     if (oncePer.has(r.area_id)) extras.push(r); else { oncePer.add(r.area_id); firstOfEach.push(r); }
   }
   const named = [...firstOfEach, ...extras].slice(0, 3);
@@ -150,6 +166,7 @@ const DIRECT = peaks.length;
 // Report the real denominator BEFORE --limit-peaks narrows it, or a sampled run prints its
 // sample size as though it were the population.
 if (MAXPEAKS) peaks = peaks.slice(0, MAXPEAKS);
+console.log(`home-state hint: ${HOME || "(none - signed-out behaviour)"}`);
 console.log(`${withCount.length} ${STATE.toUpperCase()} peaks have route_count > 0; ${DIRECT} of them hold routes DIRECTLY (the rest are containers — route_count is a subtree total). Replaying the search box for ${peaks.length === DIRECT ? "each" : `a sample of ${peaks.length}`}, top ${LIM}.\n`);
 
 const unreachable = [], partial = [];
