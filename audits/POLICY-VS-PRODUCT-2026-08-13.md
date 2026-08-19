@@ -29,6 +29,25 @@
 > function carries `search_path=public` and schema-qualified names that exist in **no migration
 > file**, and 0070's header records that this exact bug "broke ALL signups for a day".
 
+> ### Re-verified 2026-08-19 against `main` @ 048cd5b — every fixed row still holds.
+>
+> The status box above was measured at `c7b25d3`; main is ~40 commits past that. This file's own
+> rule is that reviewing stale facts is worse than not reviewing, so each row was re-checked
+> against `origin/main` (not a working tree — several sessions keep uncommitted edits in the
+> shared checkout).
+>
+> | § | Re-checked | Result |
+> |---|---|---|
+> | A | global "nothing leaves your phone" claim | **still gone.** One `leaves your phone` string remains and is a *different, scoped* claim: the float-plan form's "Nothing leaves your phone until you share". Float plans are React state only, so it is accurate |
+> | B | minimum age | **18+ present** |
+> | C | `.example` contact addresses | **0** |
+> | D1 | deletion | raises a real `raiseDataRequest(uid,"delete",…)` |
+> | D2/D3 | export, opt-out | raise real requests through the shared request sheet — `setDataReq("export")` / `setDataReq("optout")` feeding `raiseDataRequest(uid,dataReq,dataReqNote)`. **Note for the next checker:** grepping for a hardcoded `"export"` argument reports these as MISSING. They are parameterised, not absent |
+> | D4 | `PRIVACY_CONTROLS_LIVE` | **still `false`, still deliberate.** Do not flip it |
+> | E | `POLICY_VERSION` | present |
+>
+> Nothing here changes what is outstanding: **the lawyer read, plus the D4 wording.**
+
 **This is a factual consistency check, not legal advice, and no legal text was edited.**
 Every row is "the document says X; the code does Y", with the evidence. The remedy for each —
 build the mechanism, or amend the text — is the reviewer's decision, not this file's.
