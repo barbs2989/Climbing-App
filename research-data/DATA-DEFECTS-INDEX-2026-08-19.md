@@ -5,7 +5,7 @@ file. That is six separate blocks, and **a finding nobody can see is a finding t
 rather than fixed** — this repo already carries three waypoint audits and four copies of a grade
 parser written by people who could not see the prior work. This is the index.
 
-**95 entries. 1 fixed. 4 already queued for a human. The rest are classified below.**
+**95 entries. 2 fixed. 4 already queued for a human. The rest are classified below.**
 
 Extracted from: `approach-variants-{baker,cascade-pass,olympics,pickets-wapass,snoqualmie,stuart}-2026-08-19.json`.
 
@@ -23,9 +23,33 @@ Repaired by **re-homing** the East Face approach from `wa_liberty_bell_east_face
 own researched start position; the Blue Lake distance and gain figures were **dropped, not
 converted**, because they measure the other side. Verified on re-read.
 
+**`wa_sherpa_balanced_rock_standard` — four waypoints on the wrong side of the range.**
+The index recorded this as a 1-v-1 (approach says Teanaway, waypoints say Icicle), which is not
+decidable from the disagreement alone. It is **2-v-1**: the row also carries a 324-point gpx
+track, and that track is independent evidence — it is *not* the waypoint list joined up
+(checked, because 201 of 580 WA routes store one that is, and on those the question is answered
+yes by construction). The track spans 5.3 km, starts 5.3 km **south-west** of the peak in
+agreement with the approach prose, and ends 70 m from the summit.
+
+Measured off-track: Stuart Lake Trailhead **8.04 km**, Colchuck/Stuart fork 5.07, Mountaineer
+Creek 4.16, Sherpa-Argonaut north basin bivy 1.58. The three near-peak pins are 0.28, 0.03 and
+0.03 and were kept untouched. The bad pins lie **north-east** while the track runs south-west,
+so this is not the *partial track* false positive `audit:waypoint-track` exists to separate out
+(approach pins legitimately off a climb-only track, but in the same direction).
+
+The four were **deleted, and no replacement trailhead was invented.** Re-homing one onto the
+first gpx point is the obvious move and is wrong: the approach prose describes ~8 km of walking
+against a 5.3 km track, so the track does not start at the trailhead. The route keeps its
+trailhead named in prose and now carries no trailhead PIN — the safer state, since the crag
+Overview's "Directions to crag" reads the pin first and was sending parties to the opposite side
+of the Stuart Range.
+
+`scripts/oneoff/fix-sherpa-balanced-rock-wrong-side-waypoints.mjs`, asserted against the measured
+row and verified on re-read. Every remaining pin is now on the track.
+
 ---
 
-## CLASS A — MISDIRECTION: the row sends you somewhere it should not (12)
+## CLASS A — MISDIRECTION: the row sends you somewhere it should not (11 left of 12)
 
 The same shape as the fixed one. Each needs a read before writing, because the *correct* half varies.
 
@@ -34,7 +58,6 @@ The same shape as the fixed one. Each needs a read before writing, because the *
 | `wa_lincoln_peak_standard` / `_north_ridge` | approach uses FR-38/Rankin Creek and warns off Heliotrope; its own `descent_text` walks out to Heliotrope. The sibling mirrors the error the other way. |
 | `wa_mount_skokomish_standard` | prose says the on-file Mildred Lakes trailhead is wrong — **its waypoints still walk it step by step** |
 | `wa_buckner_mountain_north_face` | prose is explicit it starts at Boston Basin; waypoints describe the Cascade Pass trailhead |
-| `wa_sherpa_balanced_rock_standard` | approach is the Teanaway side (Longs Pass/Esmeralda); waypoints are the Icicle side (Stuart Lake) — **opposite sides of the range** |
 | `wa_three_queens_standard` | approach is a south-face Mineral Creek line; beta ascends from Park Lake to the Main-Middle notch |
 | `wa_primus_peak_south_ridge` | approach is the Eldorado ice-cap traverse; beta is the Thunder Creek side |
 | `wa_colchuck_peak_east_ridge` | "traverse northeast to the east ridge base" — the peak lies **south-west** of the lake |
