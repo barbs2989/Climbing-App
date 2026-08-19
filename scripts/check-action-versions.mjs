@@ -29,6 +29,14 @@ const WF = path.join(ROOT, ".github", "workflows");
 // The version this repo has moved to and verified. Raise a number here in the SAME commit
 // that raises it in the workflows. Each note records what was checked before the bump,
 // because a major bump is a decision and the reasoning is the expensive part.
+// The Node the guards THEMSELVES run on, which is a different question from the runtime
+// the actions use. Node 20 went end-of-life in April 2026 and CI ran it for four months
+// after; #899 fixed the actions and deliberately left this alone, because the local machine
+// was on 20 and a CI-only bump is exactly the CI/local drift this repo works to avoid.
+// Raised to 22 once that was settled. Raise it here in the SAME commit that raises it in
+// the workflows.
+const NODE_FLOOR = 22;
+
 const FLOORS = {
   // v5 moved to the Node 24 runtime; v7 is ESM and blocks fork-PR checkout under
   // pull_request_target / workflow_run -- neither trigger is used here.
@@ -100,6 +108,23 @@ for (const a of Object.keys(FLOORS))
   if (!inUse.has(a)) fail(`FLOORS declares ${a}, which no workflow uses. Stale bookkeeping — remove it.`);
 if ([...Object.keys(FLOORS)].every((a) => inUse.has(a))) ok(`no stale FLOORS entry`);
 
+// 4. The Node the guards run on. Same regression shape as an action pin and the same cause:
+// a new job copied from an older block. Comments are stripped above, so prose recording the
+// old value cannot read as a pin.
+const nodePins = [];
+for (const f of files) {
+  fs.readFileSync(path.join(WF, f), "utf8").split("\n").forEach((line, i) => {
+    const m = /node-version:\s*'?"?(\d+)/.exec(line.replace(/#.*$/, ""));
+    if (m) nodePins.push({ file: f, line: i + 1, major: Number(m[1]) });
+  });
+}
+if (!nodePins.length) dead(`scanned ${files.length} workflow file(s) and found NO node-version pins — the match is broken`);
+const oldNode = nodePins.filter((n) => n.major < NODE_FLOOR);
+for (const n of oldNode)
+  fail(`${n.file}:${n.line} pins node-version ${n.major}, below the ${NODE_FLOOR} this repo moved to. ` +
+       `Node ${n.major} is out of support; raise it, or raise NODE_FLOOR with a note saying why.`);
+if (!oldNode.length) ok(`all ${nodePins.length} node-version pin(s) are at or above ${NODE_FLOOR}`);
+
 console.log("");
 if (failures) {
   console.error(`check:action-versions FAILED — ${failures} problem(s).\n`);
@@ -113,3 +138,5 @@ console.log("check:action-versions ok — no workflow pins an action below the v
 //   3. FLOORS entry no workflow uses       -> FAIL as stale
 //   4. comment naming deploy-pages@v4      -> PASS (history, not a pin)
 //   5. break the `uses:` regex             -> DIED "found NO action pins", never ok
+//   6. pin node-version back to 20          -> FAIL naming file, line and NODE_FLOOR
+//   7. break the node-version regex         -> DIED "found NO node-version pins", never ok
