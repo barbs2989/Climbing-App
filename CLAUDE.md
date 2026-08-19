@@ -410,10 +410,15 @@ a build error, but a screen that renders wrong or not at all.
     accounts have to persist (CI holds no service key, and Supabase has no self-delete, so
     per-run *accounts* would leak forever). A shared *group* is a different matter: the walk
     opens group modals that mutate state, and the assertions it makes are precisely about that
-    state — `isCreator`'s `+ Mod` control and `isMod`'s visibility toggle. Two concurrent runs
-    therefore read each other's writes. That is not hypothetical: on 2026-08-14 **#969 failed
-    on exactly that pair and passed on re-run of the same SHA**, having changed no app code,
-    with another branch's run starting one minute later.
+    state. Two concurrent runs would therefore read each other's writes.
+    - **This is defence in depth, NOT the fix for #969, and the difference matters.** #976 was
+      merged claiming it was, and that claim was wrong. #969's `isCreator`/`isMod` failure was
+      **identity hydration lagging a settled screen** — diagnosed and fixed separately. The
+      tell rules the race out cleanly: of the five `Group:detail` assertions, `Owner` **passed**
+      while `+ Mod` and `Make private` failed. `Owner` is a property of the member ROW; the
+      other two are properties of **who is looking**. A concurrent run signed in as the same
+      owner cannot strip that owner's own creator status. Two runs starting 61 seconds apart
+      was correlation, and it was believed twice before the assertion detail settled it.
     - So each run **creates its own group**, named from `GITHUB_RUN_ID` (or pid+time locally),
       seats the mate in it, and **deletes it in teardown**. Groups are safe to make per-run
       because an owner can delete their own — measured: create 201, mate-joins 201,
