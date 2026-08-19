@@ -1143,6 +1143,22 @@ a build error, but a screen that renders wrong or not at all.
     RPC arguments and PostgREST resolves by name, so a mismatch is `PGRST202` and approval is
     impossible. Rules 1 and 2 are independent on purpose: a correct column list behind a
     lingering overload is still broken, and injection case 3 pins exactly that.
+  - **Rule 1's one exemption is a column the TABLE no longer has, and it is DERIVED rather than
+    declared.** #1020 dropped `routes.source`, swept the three pipeline loaders and two readers it
+    named in 0155's header, and missed this function — so the live approval inserted into a column
+    that did not exist. **plpgsql resolves column names when a statement first RUNS**, so nothing
+    failed at deploy time, no guard went red, and the failure was reserved for the next admin to
+    approve a route. Worst possible place for it: approval is admin-only and exercised by hand
+    rather than by CI. `0157` removed it.
+    - The exemption replays every `add column`/`drop column` on `routes` in file order and keeps
+      the **last** one. A hand-maintained list would be a second source of truth for the schema and
+      would rot the moment the column came back; this appears and disappears by itself. Re-adding
+      the column **re-arms** the rule, which is the safe direction — it then demands more of the
+      approval rather than less. Injection cases 7 and 8 pin both directions.
+    - Before dropping any column, ask `pg_proc` which functions still name it, **comments
+      stripped**. `check:schema` cannot answer this — it only asserts `lib/db.js` never reads a
+      missing column, and never looks inside a function body. Views need no such check: a
+      non-CASCADE `drop column` is *refused* if a view depends on it.
   - It strips **`--` line comments only**, deliberately not the blanker other guards use: these
     files are prose-heavy and 0135's own header names every column it writes, so a comment that
     *mentions* `grade_num` must not read as the insert writing it.
