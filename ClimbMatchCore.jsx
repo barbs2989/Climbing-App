@@ -2245,23 +2245,6 @@ function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,session,onSubmit
      the column identically, and the hint says one-per-line because that is what the reader's
      `join("\n")` implies — a comma-separated blob would render as a single bullet. */}
   {sf("alpineDraws")?<div><div style={lab}>{"Alpine draws"}</div><input aria-label="Alpine draws" value={alpineDraws} onChange={function(e){setAlpineDraws(e.target.value.replace(/[^0-9]/g,""));}} inputMode="numeric" placeholder="e.g. 8" style={fld}/></div>:null}
-  {sf("pitchDetail")?<div><div style={lab}>{"Pitch by pitch"}</div>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"0 0 7px"}}>{"One row per pitch — or per stage on a walk-up. This does not change the pitch count above."}</div>
-    {pitchRows.map(function(r,i){return <div key={"pr"+i} style={{border:"1px solid "+C.border,borderRadius:10,padding:9,marginBottom:8,background:C.surface}}>
-      <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:6}}>
-        <div style={{fontSize:11.5,fontWeight:800,color:C.textMuted,letterSpacing:0.3}}>{"PITCH "+(i+1)}</div>
-        <div style={{flex:1}}/>
-        <button onClick={function(){removePitchRow(i);}} aria-label={"Remove pitch "+(i+1)} style={{background:"none",border:"none",color:C.red,fontSize:12.5,fontWeight:700,padding:"2px 4px",cursor:"pointer"}}>{"Remove"}</button>
-      </div>
-      <div style={{display:"flex",gap:8}}>
-        <input aria-label={"Pitch "+(i+1)+" label"} value={r.pitch} onChange={function(e){setPitchAt(i,"pitch",e.target.value);}} placeholder="P1, or “Trailhead to meadows”" style={Object.assign({},fld,{flex:2})}/>
-        <input aria-label={"Pitch "+(i+1)+" grade"} value={r.grade} onChange={function(e){setPitchAt(i,"grade",e.target.value);}} placeholder="5.9" style={Object.assign({},fld,{flex:1})}/>
-        <input aria-label={"Pitch "+(i+1)+" length in metres"} value={r.lengthM} onChange={function(e){setPitchAt(i,"lengthM",e.target.value.replace(/[^0-9.]/g,""));}} inputMode="decimal" placeholder="m" style={Object.assign({},fld,{flex:1})}/>
-      </div>
-      <textarea aria-label={"Pitch "+(i+1)+" notes"} value={r.notes} onChange={function(e){setPitchAt(i,"notes",e.target.value);}} rows={2} placeholder="What the pitch is actually like, and where the belay is" style={Object.assign({},fld,{resize:"vertical",marginTop:6})}/>
-    </div>;})}
-    <button onClick={addPitchRow} aria-label="Add a pitch" style={{background:C.surface,border:"1.5px dashed "+C.border,borderRadius:10,color:C.blue,fontSize:13,fontWeight:800,padding:"9px 12px",width:"100%",cursor:"pointer"}}>{pitchRows.length?"+ Add another pitch":"+ Add the first pitch"}</button>
-  </div>:null}
   {sf("rack")?<div><div style={lab}>{"Rack, one item per line"}</div><textarea aria-label="Rack, one item per line" value={rack} onChange={function(e){setRack(e.target.value);}} rows={3} placeholder={"Cams .3-3\nNuts 1 set\n8 alpine draws"} style={Object.assign({},fld,{resize:"vertical"})}/></div>:null}
   {sf("whatToBring")?<div><div style={lab}>{"Route-specific essentials"}</div><textarea aria-label="Route-specific essentials" value={whatToBring} onChange={function(e){setWhatToBring(e.target.value);}} rows={3} placeholder={"One per line — the things THIS route needs that a general rack does not\ne.g. 6mm cord for the rap anchors\nhelmet, the gully is loose"} style={Object.assign({},fld,{resize:"vertical",fontFamily:"inherit"})}/></div>:null}<div style={{fontSize:12,color:C.textMuted,margin:"3px 0 10px"}}>{"Add counts and rack sizes so partners pack right."}</div>{gsec("qd")?Stepper("Quickdraws",gear.qd,v=>setCount("qd",v)):null}{gsec("screws")?Stepper("Ice screws",gear.screws,v=>setCount("screws",v)):null}{gsec("pads")?Stepper("Crash pads",gear.pads,v=>setCount("pads",v)):null}{gsec("cams")?Sized("Cams",CAMS,"cams"):null}{gsec("nuts")?Sized("Nuts / stoppers",NUTS,"nuts"):null}<div style={lab}>{"Other gear"}</div><div style={{display:"flex",gap:5,flexWrap:"wrap"}}>{otherList.map(it=>{const on=gear.items.indexOf(it)>=0;return <button key={it} onClick={()=>togItem(it)} style={sm(on)}>{it}</button>;})}</div></div>:null}
   {/* Rappel counts are ROPE-DEPENDENT — most apparent conflicts in the catalog are one rope
