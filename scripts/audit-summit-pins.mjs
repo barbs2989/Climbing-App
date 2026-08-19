@@ -112,8 +112,49 @@ namedElsewhere.forEach(f => console.log(line(f)));
 
 console.log(`\n=== 4. NO SUMMIT PIN AT ALL (${missing.length}) ===`);
 console.log(`Not a wrong coordinate — a route map with nothing marking the top. Named rather than`);
-console.log(`counted, because a gap nobody can see is one nobody closes.\n`);
-missing.forEach(f => console.log(`  ${f.id.padEnd(46)} [${String(f.disc).slice(0,5)}] peak=${String(f.peak).slice(0,26).padEnd(26)} ${f.wps} other pin(s)`));
+console.log(`counted, because a gap nobody can see is one nobody closes.`);
+console.log(`\nDO NOT BULK-FILL THESE FROM areas.lat/lng. Copying the peak's coordinate onto a route`);
+console.log(`asserts that the route tops out there, and several of these do not — wa_three_queens_`);
+console.log(`middle_peak and wa_three_queens_west_peak top out on named sub-summits, and the two`);
+console.log(`Mowich routes finish on Rainier's Liberty Cap, 2.25 km from Columbia Crest. The column`);
+console.log(`below is the measured evidence that the route reaches its peak, and a pin is only`);
+console.log(`justified where it says so.\n`);
+
+// Whether a pin can be JUSTIFIED is measured per route, not assumed. The route's own track is
+// the only record here that says where it ends — except where the track IS the waypoint list
+// joined up (lib/track.js), which proves nothing about a route that has no summit waypoint.
+const { trackIsJustTheWaypoints } = await import("../lib/track.js");
+const ids = missing.map(f => f.id);
+const tracks = ids.length
+  ? await get(`routes?id=in.(${ids.join(",")})&select=id,gpx,waypoints,areas(lat,lng)`)
+  : [];
+const tById = Object.fromEntries((tracks.__err ? [] : tracks).map(t => [t.id, t]));
+if (tracks.__err) console.log(`  (could not read tracks: ${tracks.__err} — evidence column omitted)\n`);
+
+for (const f of missing) {
+  const t = tById[f.id];
+  const gp = t && Array.isArray(t.gpx) ? t.gpx : [];
+  const A = t && t.areas;
+  let why;
+  if (!t) why = "not read";
+  else if (!A || A.lat == null) why = "peak has no coordinate";
+  else if (gp.length < 2) why = "NO TRACK — cannot justify a pin";
+  else if (trackIsJustTheWaypoints(gp, t.waypoints)) why = "track is its own pin list — proves nothing";
+  else {
+    let near = Infinity;
+    for (const p of gp) near = Math.min(near, hav(p[0], p[1], A.lat, A.lng));
+    why = near <= 150 ? `track reaches the peak (${Math.round(near)} m) — A PIN IS JUSTIFIED`
+                      : `track stops ${Math.round(near)} m short`;
+  }
+  console.log(`  ${f.id.padEnd(46)} [${String(f.disc).slice(0,5)}] peak=${String(f.peak).slice(0,22).padEnd(22)} ${why}`);
+}
+const justified = missing.filter(f => {
+  const t = tById[f.id]; const gp = t && Array.isArray(t.gpx) ? t.gpx : []; const A = t && t.areas;
+  if (!A || A.lat == null || gp.length < 2 || trackIsJustTheWaypoints(gp, t.waypoints)) return false;
+  let near = Infinity; for (const p of gp) near = Math.min(near, hav(p[0], p[1], A.lat, A.lng));
+  return near <= 150;
+}).length;
+console.log(`\n  ${justified} of ${missing.length} could be filled from the peak's own coordinate on this evidence.`);
 
 // --- --terrain: let the GROUND adjudicate ------------------------------------------------------
 // The pin and the area disagree and neither can settle the other. The route's own track usually
