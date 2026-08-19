@@ -4,6 +4,7 @@
 // dependency closure of RouteDetail minus everything reachable from any other
 // export); shared helpers stay in core and are imported below.
 import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy, memo } from "react";
+import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys.js";
 import { createPortal } from "react-dom";
 import { DISC_LABELS as DL } from "./lib/discLabels";
 /* rackFromText / _rackEdited / contribRack / routeRackFor / DISC_RACK moved to lib/rack.js so
@@ -1681,8 +1682,8 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      Anything the form does NOT offer (`_raw`, `permitZone`, a legacy `landManager`) survives,
      because the merge in ClimbMatch.jsx assigns over a copy of the existing object rather than
      replacing it. Replacing would silently delete enrichment nobody asked to remove. */
-  const ROAD_KEYS=[["name","Road / access point","e.g. Cascade River Road"],["driveNote","Drive notes","e.g. last 4 mi rough, high clearance helps"],["status","Road status","e.g. Open, Seasonal, Washed out"],["seasonalGate","Seasonal gate","e.g. gated at MP 18 until late June"]];
-  const ACCESS_KEYS=[["land_manager","Land manager","e.g. Mt. Baker-Snoqualmie NF (Skykomish RD)"],["parking_pass","Parking / entrance","e.g. Northwest Forest Pass at the trailhead"],["permit","Permit","e.g. None required / overnight permit needed"],["passRequired","Pass required","e.g. NPS backcountry permit"],["fees","Fees","e.g. None, or $5 per vehicle per day"],["closures","Seasonal closures","e.g. road gated Nov–May"],["rules","Rules & limits","e.g. bear canisters required in some camps"],["group_limit","Group size limit","e.g. 12"],["notes","How to apply","e.g. recreation.gov, released 2 weeks ahead"]];
+  
+  
   /* The PUBLISHED times — the guidebook figure the planner shows beside Scarf's Rule and, since
      #819, beside what parties actually logged. A fourth element marks a key numeric: these are
      hours and must merge back as NUMBERS, because every reader does arithmetic on them
@@ -1693,7 +1694,7 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      `sectionBreakdown` is NOT offered, and that is the whole reason the merge below copies
      rather than assigns: it is a nested array of {hrs,note,fromTo,section} on 546 routes, and a
      form that cannot author it must not be able to delete it. */
-  const TIMING_KEYS=[["totalHrs","Car-to-car total (hrs)","e.g. 11.5","num"],["approachTimeHrs","Approach (hrs)","e.g. 3","num"],["summitTimeHrs","To the summit (hrs)","e.g. 8","num"],["descentTimeHrs","Descent (hrs)","e.g. 3.5","num"],["recommendedStart","Recommended start","e.g. 5:00 AM from camp"]];
+  
   /* Keyed by input type, and the type is deliberately the same string as the route property, so
      one lookup serves the key list, the current value and the draft state. It replaces a
      `f.type==="road"?ROAD_KEYS:ACCESS_KEYS` ternary that appeared in four places — a third

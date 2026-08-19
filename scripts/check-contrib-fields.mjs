@@ -32,6 +32,13 @@ for (const f of ["RouteDetail.jsx", "ClimbMatch.jsx"]) {
   }
 }
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
+// lib/objKeys.js is not an app source (appSources walks the .jsx tree), so its absence would
+// throw a raw ENOENT that reads as a broken guard rather than a moved anchor. Say which it is.
+if (!fs.existsSync(path.join(ROOT, "lib/objKeys.js"))) {
+  console.error("ANCHOR LOST: lib/objKeys.js is missing — the road/access/timing sub-key lists");
+  console.error("live there and are shared by SuggestFix and AddRoute. Nothing below was checked.");
+  process.exit(1);
+}
 const rd = read("RouteDetail.jsx"), cm = read("ClimbMatch.jsx");
 
 // Anchored on the real declarations. A rename must fail loudly rather than yield an empty
@@ -102,11 +109,18 @@ if (dead.length) {
 // a single shape would fail on correct code. The claim here is only "something, somewhere,
 // mentions this key" — weak, but it is exactly strong enough to catch a typo or a rename, which
 // is the failure that actually happens.
+// The three lists moved to lib/objKeys.js when AddRoute started needing them too: core
+// cannot import RouteDetail (lazy-loaded, and it already imports FROM core), so a shared
+// module is the only way both forms can name one thing the same way. The READER side is
+// still searched across RouteDetail — that is where the panels live — but the DECLARATION
+// now lives in lib. Both files are required, so losing either is ANCHOR LOST rather than a
+// quietly narrower run.
+const objKeys = read("lib/objKeys.js");
 const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"]];
 for (const [constName, field] of OBJ_FIELDS) {
-  const m = rd.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
+  const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
-    console.error(`check:contrib-fields: ANCHOR LOST — ${constName} not found in RouteDetail.jsx.`);
+    console.error(`check:contrib-fields: ANCHOR LOST — ${constName} not found in lib/objKeys.js.`);
     console.error(`The sub-keys of the \`${field}\` field went unchecked, so this run proved less than it claims.`);
     process.exit(1);
   }
