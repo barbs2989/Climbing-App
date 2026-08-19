@@ -39,6 +39,19 @@
 //     control name), which is a DIFFERENT defect — see scripts/audit-a11y.mjs.
 //   - Names glued by something other than a word character on both sides — an icon's alt
 //     text, say, or two fragments separated by punctuation (which is a real separator).
+//   - THE selArea-GATED PANELS ON THE CLIMBS TAB, measured rather than assumed. `AreaLatest`,
+//     `ClassicClimbs` and `GettingThere` all render as `selArea && …`, and `selArea` starts
+//     null, so they are not screens-with-no-findings — they are not screens. This is NOT
+//     hypothetical: `AreaLatest` carries the SAME glued-name defect this check exists for
+//     (a climber's name welded to their ascent outcome), it was fixed in the same commit that
+//     widened the needle, and reverting that fix is MISSED by a full 63-screen run.
+//     Reaching it was attempted and does not work by setting `selArea` alone: an opener that
+//     called `setSelArea` put the area in state (verified — it selected "Kings Peak") and the
+//     Climbs tab still rendered 979 characters with no report rows, because that tab drives its
+//     own browse navigation. Closing this needs that navigation driven, not one setter called;
+//     see scripts/oneoff/probe-area-latest-reachable.mjs for the measurement, and case
+//     `arealatest` in scripts/oneoff/inject-glued-name-cases.mjs, which pins the gap so that
+//     it fails as STALE if the coverage ever arrives.
 // The route detail screen IS covered, on all six sub-tabs. It used to be excluded here as
 // "reached by clicking a card, not by URL", which stopped being true when the shared scaffold
 // gained `?zr=1` — that calls the app's own openRoute() from inside the opener, which is how
