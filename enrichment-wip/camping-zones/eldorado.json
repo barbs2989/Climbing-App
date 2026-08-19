@@ -1,0 +1,60 @@
+{
+ "zone": "Eldorado Peak and the Klawatti group",
+ "_areas_note": "Primus, Tricouni and 'The Needle' were REMOVED from this zone after the research flagged them as misassigned — Primus/Tricouni are approached via Thunder Creek to McAllister Camp, not Eldorado Creek, despite Primus sitting only ~4km away. Proximity is not approach.",
+ "areas": ["wa_main_peak", "wa_dorado_needle", "wa_klawatti_peak", "wa_austera_peak"],
+ "sites": [
+  {
+   "name": "Eldorado-Inspiration snow arm high camp",
+   "type": "camp",
+   "elev": 7500,
+   "capacity": "Very large — the flats above the col hold many parties, though the wilderness zone quota is what actually limits numbers",
+   "water": "Snowmelt only; carry a stove and fuel budgeted for melting, and fill before leaving, since the next dependable running water on the descent is thousands of feet lower",
+   "permit": "North Cascades National Park wilderness permit, required year round for any overnight stay. The Eldorado cross-country zone is quota-managed: roughly 60% reservable through Recreation.gov (a March early-access lottery, then a general window in late April), about 40% held for walk-ups between mid-May and mid-October. Cascade River Road permits must be collected IN PERSON at the Marblemount Wilderness Information Center. Not free — confirm current pricing when booking.",
+   "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens moraine and rock that some parties prefer. Tent platforms need to be stamped or dug and walled, since there is nothing between the camp and the wind. Camp on snow, rock or bare ground only, and keep well back from meltwater channels."
+  },
+  {
+   "name": "Eldorado East Ridge rock bivies",
+   "type": "bivy",
+   "capacity": "A handful of parties at most — a few flat rock patches, best suited to bivy sacks or one small tent apiece",
+   "water": "Seasonal. A trickle sometimes runs among the rocks near the site or off the south side in the afternoon and evening, but it dries as the season advances and should not be counted on",
+   "permit": "Same North Cascades wilderness permit and Eldorado cross-country zone quota as the snow camp; nothing about a rock bivy exempts it. Collect in person at Marblemount before the trip.",
+   "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. Sources put the site anywhere from roughly 7,500 to 7,800 ft, and the discrepancy is real rather than an error — how much rock is exposed, and therefore where you end up sleeping, depends on the year and the month. No single elevation is recorded here for that reason. It is more sheltered than the open snow arm but far smaller, so arriving late on a busy weekend often means going back onto the ice."
+  },
+  {
+   "name": "Eldorado Basin camp",
+   "type": "camp",
+   "elev": 6100,
+   "capacity": "Small — a scattering of level spots on the ridge and in the upper basin, enough for several parties spread out",
+   "water": "Reliable running water from basin streams through the climbing season; the first dependable water above the boulder fields",
+   "permit": "North Cascades wilderness permit for the Eldorado cross-country zone, in person at Marblemount. A BEAR CANISTER is required for camps below the glacier — the Wilderness Information Center loans them, but only in person, so factor that into the pickup stop.",
+   "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to summit day. Accounts describe usable ground from about 5,600 ft up through 6,200 ft, so treat the number as the middle of a band rather than a fixed site. Keep tents on durable ground, off the meadow, and 100 ft from water."
+  },
+  {
+   "name": "Roush Creek Basin camp",
+   "type": "camp",
+   "elev": 6300,
+   "capacity": "Small — a few tent spots, generally quieter than Eldorado Basin",
+   "water": "Creek water and snowmelt, usually reliable early and mid season; later in a dry summer it can be reduced to snow patches",
+   "permit": "North Cascades wilderness permit, Eldorado cross-country zone, in-person pickup at Marblemount. Bear canister required at this elevation, below the permanent snow.",
+   "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you did not gain on day one, and the boulder-field descent still has to be done in daylight on the way out."
+  },
+  {
+   "name": "Klawatti Col camp",
+   "type": "camp",
+   "elev": 7800,
+   "capacity": "Limited — snow benches near the col, suited to a small number of roped parties",
+   "water": "Snowmelt only, with no running water at any point in the season; plan fuel for every litre",
+   "permit": "North Cascades wilderness permit. Depending on how your itinerary is written this may fall in a DIFFERENT cross-country zone from Eldorado, so describe the whole traverse when you book or when you present the itinerary at the Wilderness Information Center rather than assuming one zone covers it.",
+   "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than a walk, and one section of the onward route to Klawatti involves negotiating a moat and a short rappel that varies enormously with the month. It is high, fully exposed and entirely on snow — build walls and expect the site to be somewhere slightly different from where the last party pitched."
+  },
+  {
+   "name": "Marble Creek Campground, Cascade River Road",
+   "type": "camp",
+   "elev": 1225,
+   "capacity": "22 sites, a mix of reservable and first-come",
+   "water": "No potable water supplied; treat creek water or bring your own",
+   "permit": "Forest Service campground, NOT park wilderness — no backcountry permit and no bear canister needed here, but a nightly fee applies. It does not substitute for the wilderness permit you still have to collect at Marblemount for the climb itself.",
+   "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day, so staying nearby avoids a pre-dawn drive from the west. There is no cell coverage, and the road above it continues to deteriorate toward the trailhead, so check current road status before committing a low-clearance car."
+  }
+ ]
+}

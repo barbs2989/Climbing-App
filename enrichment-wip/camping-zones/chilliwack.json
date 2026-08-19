@@ -1,0 +1,59 @@
+{
+ "zone": "Chilliwack Range and Hannegan Pass",
+ "_areas_note": "Declaring the region id expands to its subtree: NW Mox, SE Mox, Mount Rahm, Bear Mountain, Mount Custer, Mount Spickard, Mount Redoubt. THREE jurisdictions in one zone — the Hannegan trailhead is National Forest, the Chilliwack camps are National Park, and the Depot Creek approach starts in BRITISH COLUMBIA.",
+ "areas": ["wa_chilliwack_range"],
+ "sites": [
+  {
+   "name": "Hannegan Camp, below Hannegan Pass",
+   "type": "camp",
+   "capacity": "A handful of designated tent spots with a shared cooking area and a backcountry toilet; a second toilet sits at the pass itself",
+   "water": "Side streams and snowmelt near camp, but they are seasonal and can dry or go silty by late summer — treat everything and carry a reserve on a hot September approach",
+   "permit": "Mt Baker-Snoqualmie National Forest (Mount Baker Wilderness) — NO North Cascades National Park permit needed here, since the park boundary is still ahead at the pass. What you need is a Northwest Forest Pass or Interagency pass at the Hannegan trailhead; a Washington Discover Pass is NOT valid at this Forest Service fee site.",
+   "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far side — parking pass only, no Marblemount errand. Road conditions on FS 32 have been unreliable in recent seasons and access has at times stopped short of the trailhead, so confirm before committing to a long drive. The 2026 Chilliwack Complex closures were written to include trails and camps entering the park from this trailhead, which can leave the camp reachable while the country beyond the pass is not."
+  },
+  {
+   "name": "Boundary Camp",
+   "type": "camp",
+   "elev": 4400,
+   "capacity": "Three designated sites, each rated for up to four people, with a pit toilet",
+   "water": "A nearby subalpine stream normally runs through the climbing season, though it is a snowmelt source and thins out late",
+   "permit": "North Cascades National Park backcountry permit, obtained through the park's reservation system and picked up in person at Marblemount. Campfires are not allowed here.",
+   "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. With only three sites it books out on summer weekends, and a party arriving without a reservation has no legal fallback nearby. It is the natural first night for anything heading down the Chilliwack or up onto Copper Ridge. Fire closures in 2026 affected camps and trails on this side of the pass, so check the park's current closure page rather than assuming a reservation implies open ground."
+  },
+  {
+   "name": "Copper Lake Camp, Copper Ridge",
+   "type": "camp",
+   "elev": 5269,
+   "capacity": "Designated sites for parties of up to four, with a composting toilet and food-storage lockers",
+   "water": "The lake is immediately at hand and reliable all season — a real advantage on this ridge",
+   "permit": "North Cascades National Park backcountry permit, picked up at Marblemount. Food, rubbish and scented items must go in the provided lockers or an approved canister.",
+   "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes it the sensible high camp for anyone using the ridge as a high traverse toward the Chilliwack drainage rather than dropping straight into the valley. The ridge is exposed and the sites are small, so a party of more than four has to split across permits. Copper Ridge and the wider Copper Loop were inside the 2026 fire closure footprint, and burned ground stays hazardous for years afterward."
+  },
+  {
+   "name": "US Cabin Camp, Chilliwack River",
+   "type": "camp",
+   "capacity": "Four sites, split between a pair near the trail and a pair down by the river, with a pit toilet",
+   "water": "The Chilliwack River is a few steps away and runs year round, though it carries glacial silt and needs filtering rather than just treating",
+   "permit": "North Cascades National Park backcountry permit from Marblemount. Unlike the ridge camps this one has NO food-storage hardware, so bring a canister or be prepared to hang.",
+   "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a food locker is worth planning around, because the neighbouring camps have them and it is easy to assume continuity. Old-growth valley bottom means it stays cool and damp, so expect wet gear in the morning. The Chilliwack River Trail was among the 2026 closures and its status should be confirmed before a trip is built around it."
+  },
+  {
+   "name": "Ouzel Lake basin, head of Depot Creek",
+   "type": "camp",
+   "elev": 5700,
+   "capacity": "Open flat benches with room for several tents; informal, with no built sites, toilet or bear hardware",
+   "water": "The lake and its inlet streams are dependable through the season, fed from the glaciers above",
+   "permit": "THIS ONE IS DIFFERENT. The approach starts in BRITISH COLUMBIA — up Chilliwack Lake Road and onto the rough Depot Creek spur — and walks south across the international boundary on foot into Washington. There is no port of entry on this route, so the trip raises a genuine customs question in both directions that none of the Hannegan-side approaches do; sort out reporting obligations with the relevant border authorities before going, and carry passports. Once across, the camp is inside North Cascades National Park and a park backcountry permit applies, which is awkward given Marblemount is a long drive away on the other side of the range.",
+   "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting there involves a steep, brushy climb beside a large waterfall on ground that has at times had fixed line in place, and the condition of that section is variable and should not be counted on. Some parties push higher and bivy nearer the Depot Glacier for an earlier start, trading comfort for time. NOT reachable from the Hannegan Pass trailhead — it must never be treated as an alternative camp on that approach."
+  },
+  {
+   "name": "Basin below the Bear Mountain saddle",
+   "type": "bivy",
+   "elev": 6500,
+   "capacity": "Informal boulder-and-heather sites for a small party; no facilities of any kind",
+   "water": "Snowmelt and tarns in the basin, reliable in early summer and can fail entirely by late season — carry water up if the year has been dry",
+   "permit": "North Cascades National Park backcountry permit for a CROSS-COUNTRY ZONE rather than a designated camp, arranged at Marblemount. Zones are quota-limited with their own siting rules, so ask for the zone by name rather than assuming a valley camp reservation covers you.",
+   "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in — most parties treat it as a second or third night rather than something reachable from the road — and the ground above the trail is faint enough that route-finding matters. Sources disagree on how usable the alternative approach from Chilliwack Lake in British Columbia is, with the cross-border stretch reported at times as heavy bushwhacking, so the length of the trail-based approach from Hannegan Pass is the price of certainty."
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "zone": "Cascade River Road — Boston Basin and Cascade Pass",
+ "areas": ["wa_forbidden_peak", "wa_sharkfin_tower", "wa_boston_peak", "wa_mount_torment", "wa_johannesburg_mountain", "wa_cascade_peak", "wa_mixup_peak", "wa_magic_mountain", "wa_the_triad"],
+ "sites": [
+  {
+   "name": "Boston Basin lower camp",
+   "type": "camp",
+   "elev": 5300,
+   "capacity": "Zone quota is 6 parties per night for the whole Boston Basin cross-country zone, shared with the upper camp; maximum party size 12. Weekend permits go early.",
+   "water": "Meltwater creeks braid through the basin below the Quien Sabe and Boston glaciers and are normally reliable through the climbing season, though flow drops noticeably by late August and September in a light snow year.",
+   "permit": "NPS wilderness permit required for any overnight stay, and for all Cascade River Road trailheads it must be collected IN PERSON at the Marblemount Wilderness Information Center. Roughly 60% of capacity is reservable in advance through Recreation.gov, about 40% held for walk-ups the day of or day before. These permits are NO LONGER FREE — older write-ups still say they are, which is out of date; confirm current pricing when you book.",
+   "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. Sources differ on the exact elevation of the two Boston Basin camps — figures between roughly 5,300 and 5,700 ft are quoted for this one — so treat the number as approximate rather than a waypoint. Bear-resistant food storage is required."
+  },
+  {
+   "name": "Boston Basin upper (high) camp",
+   "type": "camp",
+   "elev": 6400,
+   "capacity": "Shares the same 6-party, 12-person Boston Basin zone quota as the lower camp; a handful of hardened tent platforms.",
+   "water": "Snowmelt runnels and glacier outflow are usually running nearby, but this is the less certain of the two camps late in the season — parties arriving in September should be ready to melt snow or carry it up from below.",
+   "permit": "Same NPS wilderness permit as the lower camp, collected in person at Marblemount; reservable portion on Recreation.gov, remainder held for walk-ups.",
+   "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces such as snow, rock or bare ground, while much of the practical guidance for Boston Basin says to use only the two established camps. In practice rangers direct climbers to the hardened sites, so plan on them and ask at Marblemount if you intend otherwise."
+  },
+  {
+   "name": "Sahale Glacier Camp",
+   "type": "camp",
+   "elev": 7400,
+   "capacity": "A small number of designated tent platforms ringed by rock windbreaks, booked individually rather than as a zone; one of the most sought-after camps in the park and it fills fast.",
+   "water": "Glacier melt runs beside the camp through summer and is generally dependable, but it is fed entirely by the shrinking Sahale Glacier, so flow is weakest late in a dry season and can require walking uphill toward the ice.",
+   "permit": "NPS wilderness permit for a specific designated SITE, not a zone; Cascade River Road permits must be collected in person at Marblemount. Most sites are reservable through Recreation.gov with roughly 40% held for walk-ups.",
+   "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is what the stacked rock walls around each site are for, and there is a composting toilet. Camping is confined to the marked sites — the arm below is closed to camping."
+  },
+  {
+   "name": "Pelton Basin",
+   "type": "camp",
+   "capacity": "A few designated sites including one that suits a larger party, plus smaller tucked-away spots; booked as individual sites.",
+   "water": "A creek runs through the basin just below the camp and is reliable across the normal summer season, which makes this the most dependable water of the Cascade Pass camps.",
+   "permit": "NPS wilderness permit for the specific site, obtained in person at Marblemount; a mix of Recreation.gov reservations and a walk-up allocation.",
+   "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the Middle Cascade Glacier approach to The Triad are all straightforward day objectives. It is lower and more sheltered than Sahale, which makes it the better choice in poor weather even though it costs extra vertical on summit day. No elevation is recorded because no confident figure was sourced."
+  },
+  {
+   "name": "Johannesburg Camp",
+   "type": "camp",
+   "capacity": "Three small primitive sites, so it is easily filled by one or two parties.",
+   "water": "A creek runs beside the sites and normally holds water through the season, being fed by drainage off the north side of Johannesburg Mountain rather than by a single small snowfield.",
+   "permit": "NPS wilderness permit required even though the camp is minutes from the car; Cascade River Road permits are issued in person at Marblemount, part reservable on Recreation.gov and part held for walk-ups. Approved bear-resistant food storage is required.",
+   "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Johannesburg Couloir, Cascade Peak, and any pre-dawn start where you want to be at the road end the night before. If it is full, Marble Creek and Mineral Park down the Cascade River Road are the car campgrounds, at the cost of driving the rough section twice."
+  },
+  {
+   "name": "Informal snow and rock bivouacs above the basins",
+   "type": "bivy",
+   "capacity": "Party-sized ledges and snow platforms only; no facilities, no toilet, and no reliable flat ground once the snow has melted out.",
+   "water": "Entirely snowmelt and therefore seasonal. Early in the summer there is running water almost everywhere; by late season the high ground can be bare rock with nothing running, so plan to carry water up or melt snow.",
+   "permit": "Still requires an NPS wilderness permit for the relevant cross-country zone, from Marblemount. Whether an unestablished high bivouac is acceptable in Boston Basin is genuinely CONTESTED — the general zone regulation allows camping on durable surfaces such as snow, rock or bare ground, while the site-specific guidance for Boston Basin says to use the two designated camps. Ask when you collect the permit rather than assuming.",
+   "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerary: they are exposed, they have no water once the snow goes, and the surrounding terrain is glaciated. Human waste must be packed out, and food still needs bear-resistant storage."
+  }
+ ]
+}
