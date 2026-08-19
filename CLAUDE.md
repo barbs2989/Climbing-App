@@ -1012,6 +1012,30 @@ a build error, but a screen that renders wrong or not at all.
     `aria-checked`, because a button role announces the control and silently drops the one
     thing that matters about it — whether it is currently ticked. `clickable(fn,{role})`
     exists for exactly this; the `aria-checked` is written beside it.
+  - **A separate, WORSE class is held at ZERO rather than baselined: a control that
+    ANNOUNCES itself and does not work.** A bare `<div onClick>` is invisible to a screen
+    reader — announced as prose and skipped. An element carrying an **interactive** role is
+    announced as a usable control, so the app asserts it works; with no key handler, or no
+    tab stop, that assertion is false. Being told a button exists and having it do nothing is
+    worse than never being offered it, so it does not get to sit in a baseline and be worked
+    off later. There was exactly one — the reaction chip in `ClimbMatchCore`, announced
+    "Add a reaction", reachable by Tab, inert on Enter — and it is fixed, so zero is holdable.
+  - **Scoped to INTERACTIVE roles on purpose** (`button`, `checkbox`, `link`, `tab`,
+    `menuitem`, `switch`, `radio`, `option`). `role="dialog"` on a modal container needs
+    neither a tab stop nor a key handler and there are **~54** of those across these files; a
+    check that flagged them would be instructing authors to break correct markup — the same
+    failure as the 13 phantom shields, from the other direction. Injection case 3 pins it.
+  - **ORDER IS LOAD-BEARING, and it shipped wrong first.** The count blocks call
+    `process.exit(1)`, so with the inert test placed after them, a commit that both added a
+    mouse-only control *and* announced an inert one reported only the count — the inert
+    finding was unreachable in exactly the situation it exists for. It reported zero on a
+    clean tree throughout, which is indistinguishable from working. **Only the injections
+    caught it**: both real-defect cases came back `guard pass`. It now runs FIRST. Same
+    principle `check:field-renders` records — whichever block exits first is the only one
+    anyone reads.
+  - Injection-tested 4/4 (`scripts/oneoff/inject-inert-control-cases.mjs`), judged on whether
+    the **inert section specifically** fired rather than on exit code: these edits also perturb
+    the mouse-only count, and judging on exit code made a correct run read as a failure.
   - **The baseline is a count, so it does not say what is LEFT — measured, because the
     difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
     classifies every remaining control by its **measured inline style**, and **58 of 210 are
