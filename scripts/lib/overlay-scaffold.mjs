@@ -38,13 +38,10 @@ import { readFileSync, existsSync } from "node:fs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
-  // Shape 3 (App early-return SCREEN), and the one this cannot open honestly. Its only
-  // non-null setter builds a large ME-derived object literal; a hand-written stand-in would be
-  // an INVENTED payload, and a wrong one renders a half-filled editor that reads like a broken
-  // screen instead of failing loudly. `sessionRestoring` deliberately gets NO entry — it is a
-  // derived const (`realAuthGate && session===undefined`), not state, so discovery cannot
-  // return it and an exemption naming it would be the stale bookkeeping this registry fails on.
-  editDraft: "an App early-return screen whose payload is a large ME-derived object literal — no expression here could be lifted rather than invented",
+  // `sessionRestoring` deliberately gets NO entry — it is a derived const
+  // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
+  // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
+  // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
 // ---------------------------------------------------------------------------------------
@@ -105,6 +102,20 @@ export const OVERLAY_PAYLOADS = {
   // call sites are setLegal("terms") and setLegal("privacy"); "terms" is the one the sign-in
   // gate links to. Lifted from the app, not invented, like every entry here.
   legal: { expr: '"terms"' },
+
+  // The profile editor, an App early-return SCREEN whose payload is a 386-character
+  // ME-derived object literal. `lift` EXTRACTS that literal from the app's own setter call
+  // site by balancing braces, rather than copying it here.
+  //
+  // Copying would satisfy "lifted, not invented" on the day it was written and then rot: it
+  // is a second copy of a shape that lives elsewhere, so adding a field to the draft would
+  // leave this one silently stale, opening a half-filled editor that reads like a broken
+  // screen rather than failing loudly. check:anniversary records exactly this trap and solves
+  // it the same way — extract the literal, never hand-write it.
+  //
+  // The expression references ME, weekOf and showRealName, all App scope, and the opener is
+  // injected inside App, so it evaluates where the app itself evaluates it.
+  editDraft: { lift: "setEditDraft({" },
 
 
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
@@ -453,6 +464,21 @@ export function routeDetailNames() {
   return _rdNames;
 }
 
+// Resolve a payload to a JS expression. `expr` is written here; `lift` is EXTRACTED from the
+// app's own source by balancing braces from a setter call site, so it cannot drift from the
+// shape the app actually sets. Fails loudly rather than returning a truncated literal, because
+// a half-extracted object would open a half-filled screen that reads like a product bug.
+function payloadExpr(name, code) {
+  const p = OVERLAY_PAYLOADS[name];
+  if (p.expr) return p.expr;
+  const at = code.indexOf(p.lift);
+  if (at < 0) throw new Error(`overlay-scaffold: payload for ${name} lifts from ${JSON.stringify(p.lift)}, which is not in the app source — the call site was renamed`);
+  const open = at + p.lift.length - 1;
+  const end = matchBrace(code, open);
+  if (end < 0) throw new Error(`overlay-scaffold: payload for ${name} lifts from ${JSON.stringify(p.lift)} but its braces do not balance`);
+  return code.slice(open, end + 1);
+}
+
 export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
   const at = code.indexOf(anchor);
   if (at < 0) throw new Error(`buildOpener: anchor not found: ${anchor}`);
@@ -493,7 +519,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
     // exempt screen fell through to `OVERLAY_PAYLOADS[name].expr` and died on undefined. The
     // kind decides how you OPEN it; only `flag` opens with plain `true`.
     if (s.kind !== "flag" && !OVERLAY_PAYLOADS[s.name]) return q + ":function(){}";
-    const arg = s.kind === "flag" ? "true" : OVERLAY_PAYLOADS[s.name].expr;
+    const arg = s.kind === "flag" ? "true" : payloadExpr(s.name, code);
     const why = JSON.stringify(s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].needsData || "its payload resolved empty in this fixture"));
     const prep = (s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].prep || ""));
     // `prep` builds the screen a nested modal lives inside, before its payload is evaluated.
