@@ -8626,3 +8626,72 @@ Web access this run: WebSearch confirmed all elevation, coordinate, and first-as
 above; no WebFetch attempts were needed.
 
 Next batch continues alphabetically after `wa_e_se_face` (see progress file).
+
+## Batch 125 (2026-08-19, pass 3)
+
+Checked: `wa_east_face` (Middle Peak / Middle Gunsight, Gunsight Range), `wa_east_face_6`
+(Chimney Rock), `wa_east_mcmillan_spire_west_ridge` (East McMillan Spire), `wa_east_ridge_2`
+(Snowking Mountain), `wa_east_ridge_3` (Silver Star Mountain), `wa_east_ridge_4` (Inspiration
+Peak), `wa_east_ridge_6` (Mount Thomson), `wa_east_ridge_8` (Pinnacle Peak, Tatoosh Range).
+
+**Confirmed errors fixed (5, across 4 routes):**
+- `wa_east_face`: the "Summit" waypoint stored `elev=8000` against the row's own
+  `high_point_ft=8200` for the same peak. Mountain Project's Gunsight Range page places the
+  range's four summits at 8,000-8,200 ft and names Middle Gunsight the range's highest point --
+  inconsistent with 8,000. Corrected the waypoint to 8200 to match `high_point_ft`.
+- `wa_east_face`: `fa` named the second first-ascensionist "Martins Putelis" -- no such climber
+  could be found anywhere. The real name is "Mahting Putelis," a documented Cascades
+  climber/guide credited alongside Sol Wertkin for other mid-2000s North Cascades FAs. Fixed the
+  transcription error; year (2006) and grade (5.10d) were independently corroborated and left
+  unchanged.
+- `wa_east_face_6`: `alpine_grade`/`commitment` read "Grade IV"/"IV" for a 3-pitch 5.3 route.
+  Three independent sources describing this exact route (Mountaineers.org, bivy.com,
+  trailcatjim.com) all grade it Grade II, and the row already contradicted itself -- its own
+  `climbing_route` pitch-4 notes read "...Grade II overall." Reconciled both fields to Grade II.
+- `wa_east_ridge_2`: the "Summit" waypoint stored `elev=7400` against `high_point_ft=7433`.
+  Wikipedia and an independent GPS database both give Snowking Mountain's true summit as 7,433
+  ft; Snowking also carries a subsidiary "Middle Peak" at 7,400 ft, the likely source of the
+  contaminated value. Corrected the waypoint to 7433.
+- `wa_east_ridge_4`: the "Summit" waypoint stored `elev=7880` against `high_point_ft=7891`.
+  Wikipedia gives Inspiration Peak's elevation as 7,891 ft, matching `high_point_ft`; the
+  waypoint was the outlier. Corrected to 7891.
+
+**Needs human verification (not fixed, flagged only):**
+- `wa_east_mcmillan_spire_west_ridge`: `fa` "Fred Beckey and Helmy Beckey, 1940" -- spelling
+  of "Helmy" is confirmed correct against AAC/Mountaineers.org obituary sources (not "Helmi" as
+  might be guessed). The 1940 date itself is only indirectly corroborated: sources consistently
+  document the Beckeys' 1940 FA of the *main* (West) McMillan Spire, but none found explicitly
+  names the *East* spire's West Ridge as a separate 1940 first ascent (they're joined by an easy
+  traverse, so a shared-trip ascent is plausible but unconfirmed). Left unchanged.
+- `wa_east_ridge_2`: `fa` "Hermann Ulrichs & Albert Heath, 1938" -- Ulrichs' own 1938 ascent of
+  Snowking is independently corroborated (Alpenglow Ski History, citing Ulrichs' personal
+  account), but no source found names "Albert Heath" as his partner on that climb. Left
+  unchanged -- absence of corroboration, not a contradicting source.
+  - Also worth noting for a future pass: `wa_east_ridge_2`'s `alpine_grade` is null despite a
+    2-pitch-free Class 2-3 route having a defined `commitment: II` -- not touched this run since
+    it's a missing value rather than a wrong one, and out of this run's scope (re-homing found
+    errors, not filling gaps).
+- `wa_east_ridge_3` (Silver Star, East Ridge): the FA field packs three separate historical
+  claims into one string. The 2000 Childs/Goldie continuous roped ascent and the 1932
+  Ulrichs/Pennington tower-traverse are each partially corroborated by NWMJ (alpenglow.org)
+  search snippets but could not be confirmed in full (WebFetch was blocked for every relevant
+  domain this run -- see below). The 1986 Beckey/Beckstead "NE Spur & East Ridge" sub-claim is
+  unconfirmed and possibly conflated with a documented 1965 Beckey/Beckstead FA on a *different*
+  peak (North Early Winters Spire); a real route named "NE Spur & East Ridge" does exist on
+  Silver Star but is graded III 5.8 in the one source found, not "Grade IV" as the DB's FA prose
+  states for that sub-claim. None of this rises to a confirmed, citable single fix, so left
+  unchanged pending access to a primary source (Beckey's guide or the AAJ archive).
+
+**Clean (3):** `wa_east_mcmillan_spire_west_ridge` (elevations 7,992/8,004 ft and summit
+coordinate all confirmed), `wa_east_ridge_6` (Mount Thomson: elevation, 1917 Hazard/French FA,
+and coordinate all confirmed), `wa_east_ridge_8` (Pinnacle Peak: elevation, coordinates, and the
+Tatoosh-vs-Rainier permit-policy distinction all confirmed against NPS/Wikipedia/SummitPost).
+
+Web access this run: WebSearch did the load-bearing work throughout (elevations, FA claims, grade
+cross-checks). WebFetch was blocked for every domain attempted this run (Wikipedia, Peakbagger,
+SummitPost, Mountain Project, AAC Publications, alpenglow.org, mountaineers.org, even
+example.com/google.com) -- consistent with prior runs' notes, but total this time rather than
+domain-specific. All findings rest on WebSearch's synthesized snippets rather than a direct page
+read; flagged items above name exactly which sub-claims would benefit from primary-source access.
+
+Next batch continues alphabetically after `wa_east_ridge_8` (see progress file).
