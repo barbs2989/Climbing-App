@@ -11,9 +11,23 @@
 // runs against the POPULATED demo for the same reason that config gives: at zero state most
 // of these sheets have nothing in them to click.
 //
-// Report-only. A control inside a modal legitimately changes nothing more often than one on a
-// tab does -- a radio already selected, a shield stopping propagation on the backdrop -- so
-// the output is candidates, not defects.
+// Report-only, and here is the blind spot that makes that mandatory rather than cautious.
+//
+// THE FINGERPRINT DOES NOT INCLUDE COMPUTED STYLE. It covers text, node count, dialogs, aria
+// state and scroll positions -- so a control whose only effect is to restyle ITSELF reads as
+// dead. Measured: this reported 9 of onboardOpen's controls as changing nothing (Rock,
+// Scrambling, Alpine, Mountaineering, Hiking, Bouldering, Ice, Mixed, Aid), and all nine work
+// fine -- clicking "Rock" takes it from rgb(22,27,34) to rgba(47,129,247,0.133). They are
+// multi-select chips, which is the single commonest control shape this probe cannot judge.
+//
+// Adding computed style to the fingerprint is NOT the obvious fix: a :hover or :focus-visible
+// rule left behind by the click would then make every control read as live, which is the
+// false-PASS direction and strictly worse. Use probe-toggle-state-announced.mjs to judge chips
+// -- it compares each control against its own siblings, which is what separates a toggle from
+// a tab from a dead button.
+//
+// Other legitimate no-ops: a radio already selected, a backdrop shield stopping propagation.
+// The output is candidates, not defects.
 import net from "node:net";
 import fs from "node:fs";
 import { spawn } from "node:child_process";
