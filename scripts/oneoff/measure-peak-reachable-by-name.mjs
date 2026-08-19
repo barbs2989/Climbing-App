@@ -50,9 +50,15 @@ const MAXPEAKS = Number(arg("limit-peaks", 0));
 // NAMESAKES depends on where the climber is. Default it to the state being measured: the
 // question worth asking about a Washington peak is whether a climber IN Washington can reach
 // it. Pass --home= (empty) for the signed-out case, which is the pre-#1008 behaviour.
-const HOME = process.argv.some(x => x.startsWith("--home=")) ? arg("home", "") : "usa." + ({ wa: "washington" }[STATE] || "");
-const PATH_PREFIX = { wa: "usa.washington" }[STATE];
-if (!PATH_PREFIX) { console.error(`no path prefix known for --state=${STATE}`); process.exit(1); }
+// The scope and the home-state hint are RESOLVED FROM THE DATABASE, not from a table in
+// this file. State areas are the children of the catalog roots and carry `path` = "usa.<slug>",
+// so a two-entry hardcoded map would go stale the moment the catalog gained a state — and,
+// worse, would silently measure the wrong subtree if a slug were ever renamed. Both are
+// filled in after the areas are read, below.
+//   --state=washington | wa | "New Mexico"   (id, abbreviation, or name — all resolve)
+let PATH_PREFIX = null;
+let HOME = null;
+const HOME_ARG = process.argv.some(x => x.startsWith("--home=")) ? arg("home", "") : null;
 
 // --- lift routeSearchScore out of lib/db.js -------------------------------------------------
 const src = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
@@ -158,7 +164,24 @@ if (AREAS.length < 1000) { console.error(`FAIL-CLOSED: read only ${AREAS.length}
 // peak with no children and route_count > 0 holds them directly. That is exact and costs
 // no extra query — parent_id is already in the page above.
 const HAS_KIDS = new Set(AREAS.map(a => a.parent_id).filter(Boolean));
-const withCount = AREAS.filter(a => String(a.path || "").startsWith(PATH_PREFIX) && a.area_type === "peak" && a.route_count > 0);
+// Resolve the scope now that the catalog is in hand. Accept the area id ("washington"), the
+// postal abbreviation ("wa"), or the display name ("New Mexico") — whichever the caller typed.
+const STATE_ROWS = AREAS.filter(a => /^[a-z_]+\.[a-z_]+$/.test(String(a.path || "")));
+const ABBR = { wa: "washington", or: "oregon", ca: "california", co: "colorado", ut: "utah", nv: "nevada", az: "arizona", id: "idaho", mt: "montana", wy: "wyoming", nm: "new_mexico" };
+const want = String(STATE).toLowerCase().replace(/\s+/g, "_");
+const stateRow = STATE_ROWS.find(a => a.id.toLowerCase() === want)
+  || STATE_ROWS.find(a => a.id.toLowerCase() === (ABBR[want] || ""))
+  || STATE_ROWS.find(a => String(a.name || "").toLowerCase().replace(/\s+/g, "_") === want);
+if (!stateRow) {
+  console.error(`FAIL-CLOSED: --state=${STATE} matches no state/province in the catalog. Known: ${STATE_ROWS.map(a => a.id).sort().join(", ").slice(0, 300)}...`);
+  process.exit(1);
+}
+PATH_PREFIX = stateRow.path;
+// Default the hint to the state being measured: the question worth asking about a Washington
+// peak is whether a climber IN Washington can reach it. --home= (empty) measures signed-out.
+HOME = HOME_ARG === null ? stateRow.path : HOME_ARG;
+console.log(`scope: ${stateRow.name} (${stateRow.path})`);
+const withCount = AREAS.filter(a => String(a.path || "").startsWith(PATH_PREFIX + ".") && a.area_type === "peak" && a.route_count > 0);
 let peaks = withCount.filter(a => !HAS_KIDS.has(a.id));
 if (!peaks.length) { console.error("FAIL-CLOSED: no peaks matched — the area_type vocabulary or the path prefix moved"); process.exit(1); }
 peaks.sort((a, b) => (b.route_count || 0) - (a.route_count || 0));
@@ -167,7 +190,7 @@ const DIRECT = peaks.length;
 // sample size as though it were the population.
 if (MAXPEAKS) peaks = peaks.slice(0, MAXPEAKS);
 console.log(`home-state hint: ${HOME || "(none - signed-out behaviour)"}`);
-console.log(`${withCount.length} ${STATE.toUpperCase()} peaks have route_count > 0; ${DIRECT} of them hold routes DIRECTLY (the rest are containers — route_count is a subtree total). Replaying the search box for ${peaks.length === DIRECT ? "each" : `a sample of ${peaks.length}`}, top ${LIM}.\n`);
+console.log(`${withCount.length} ${stateRow.name} peaks have route_count > 0; ${DIRECT} of them hold routes DIRECTLY (the rest are containers — route_count is a subtree total). Replaying the search box for ${peaks.length === DIRECT ? "each" : `a sample of ${peaks.length}`}, top ${LIM}.\n`);
 
 const unreachable = [], partial = [];
 let done = 0;
