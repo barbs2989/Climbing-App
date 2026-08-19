@@ -2346,6 +2346,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
 
+**A failed READ must not read as an empty one.** `check:writes` already forbids a success
+message in front of a write whose failure is unobservable; the read side had no such rule, and
+`lib/db.js` held three message fetches that answered a database error with `[]`. Every caller
+drew a conclusion from that emptiness:
+
+  - the two pagers (`fetchOlderCrewMessages`, `fetchOlderDirectMessages`) set
+    `crewMsgMore`/`dmMore` false — **permanently hiding the "load older" control** for that chat —
+    and toasted **"No earlier messages"**, while the `.catch` carrying the correct
+    *"Couldn't load earlier messages"* was **UNREACHABLE** because the fetch swallowed the error.
+    An error handler nobody can reach, already phrased right, is the tell that the distinction
+    was intended and lost.
+  - `fetchMyDirectMessages` feeds the Inbox, where `[]` renders **"No friend chats yet"** and
+    invites the user to go message somebody. Its caller latches `msgHydratedRef.current._threads`
+    **before** fetching, so that wrong answer stood for the whole session and never retried.
+
+  All three now throw, and the inbox caller releases its guard on failure so the next open
+  retries. **The old comment said returning `[]` was deliberate** — *"so a failed page-load can
+  never blank the chat"* — and that property is preserved, because the return value was never
+  what provided it: **no caller clears message state on rejection** (checked at all five sites
+  before changing it; both pagers catch/toast/reset, both hydration callers catch and no-op).
+  Reversing a documented decision needs evidence, and the evidence is the call sites.
+
+  Found by a deliberate sweep, not by luck: `scripts/oneoff/probe-silent-noop-preconditions.mjs`
+  walks `lib/*.js` and reports every conditional return in an exported function whose value a
+  caller cannot tell from a clean result — the input unchanged, `[]`, `{}`, `""`, `0`, `false`.
+  **205 conditional returns, 59 of that shape, 3 real.** The rest are correct guard clauses, so
+  it is a list to READ and must never become a defect count. Two were read and deliberately left:
+  `trackIsJustTheWaypoints()` returns "genuine track" for any line over 40 points, and
+  `claimMyCrewEmailInvites()` returns `0` for a missing RPC, so a broken deploy and an empty
+  inbox are the same number.
+
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
 (`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
