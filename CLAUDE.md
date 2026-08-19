@@ -1647,9 +1647,26 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Match the un-escaped text.** `renderToStaticMarkup` emits `CAMPING &amp; BIVY`; see
     [[ssr-probes-must-match-escaped-html]]. Assertion 0 proves the probe can fire at all, so a
     renamed heading reports `ANCHOR LOST` instead of a vacuously green run.
-  - **Known gap, printed rather than hidden:** `bivy` is **not contributable** — it is in neither
-    `FIELDS` nor `SS`, and the panel's edit pencil opens the *waypoints* editor. A climber cannot
-    add or correct a camp. That needs a structured array editor and is not built.
+  - **`bivy` IS contributable now**, and the gap it closed is worth keeping: it used to be in
+    neither `FIELDS` nor `SS`, and the panel's edit pencil opened the *waypoints* editor — a
+    different store. So the ~380 routes carrying camping had all got it from an enrichment pass,
+    and the climber who actually slept there could not fix a word. It is a `type:"bivy"` FIELDS
+    entry with its own array editor beside the waypoints one, `bivy:1` in `SS`, and the pencil now
+    opens `sf-section-bivy`.
+    - **`structuredVal` writes `elev` in FEET**, converted through `uImp()` exactly as a waypoint
+      elevation is. That is load-bearing rather than tidy: the column already holds two conventions
+      (`elev` feet, legacy `elevM` metres), and writing a metric number into `elev` would put a
+      THIRD reading into a field `uElev()` treats as feet. `elevM` is never written — the read side
+      converts the legacy spelling and the write side must not add to it.
+    - **`check:contrib-shapes` caught the wiring before it shipped.** It models every non-structured
+      field as serialising to a string, so a new builder type must be added to its `STRUCTURED`
+      set; until `bivy` was, it correctly reported *"reader discards a string, and CONV has no
+      `bivy` entry"*. Keyed on the TYPE, so the next builder field is exempt automatically.
+    - The guard asserts the **contributed shape** renders, which is NOT the enrichment shape:
+      `structuredVal` emits every text key as a string (empty when left blank) where enrichment
+      omits keys it has nothing for. It also asserts blank strings do not become empty chips —
+      otherwise every contributed site would carry three or four blank pills, and no fixture built
+      from enrichment data would ever have shown it.
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).

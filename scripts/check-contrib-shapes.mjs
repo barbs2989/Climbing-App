@@ -119,7 +119,7 @@ if (!FIELDS.length) die("parsed 0 entries out of FIELDS.");
 // multi, num, grade, rack — serialises to a STRING before it reaches the merge, which is the
 // only case this guard is about. Keyed on the TYPE, never on a field name, so a new builder
 // field is exempt automatically and a new textarea is not.
-const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access"]);
+const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access", "bivy"]);
 
 const readers = stripComments(RD + "\n" + CORE);
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real

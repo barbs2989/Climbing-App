@@ -187,6 +187,28 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a waypoint-derived site should say it is pinned on the track");
 }
 
+// ── 8c. THE CONTRIBUTED SHAPE RENDERS. `bivy` became contributable, and structuredVal() emits a
+//    specific object per site: every text key present as a STRING (empty when the climber left it
+//    blank) and `elev` as a number or null. That is not the shape enrichment writes — enrichment
+//    omits keys it has nothing for. If the panel rendered empty chips for blank strings, every
+//    contributed site would carry three or four blank pills, and no fixture built from enrichment
+//    data would ever show it.
+{
+  const contributed = [{ name: "Climber's camp", type: "bivy", elev: null, capacity: "", water: "", permit: "", notes: "" }];
+  const t = text(render(route("alpine", { bivy: contributed }), "planner"));
+  const start = t.indexOf(HEAD), after = t.indexOf("ROUTE TRACK", start);
+  if (start < 0) fail("a contributed-shape site did not render at all");
+  else {
+    const panel = t.slice(start, after > 0 ? after : start + 2000);
+    if (panel.includes("Climber's camp")) ok("a site in the CONTRIBUTED shape renders");
+    else fail("a site in the contributed shape did not render its name");
+    // Blank strings must not become chips. "Bivy" is the type chip and is expected.
+    const chips = (panel.match(/Water:/g) || []).length;
+    if (chips === 0) ok("blank strings do not render as empty chips");
+    else fail("a blank water string rendered a chip");
+  }
+}
+
 // ── 9. No camping data anywhere → no section, and no crash.
 if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
 else ok("no camping data renders no section");
