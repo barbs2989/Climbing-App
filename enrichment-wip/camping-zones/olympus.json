@@ -1,0 +1,42 @@
+{
+ "zone": "Mount Olympus — Hoh River approach",
+ "_areas_note": "SPLIT from Mount Constance deliberately. My own prompt conflated 'Constance Pass / Lake Constance' as one approach and the research corrected it — Olympus and Constance are 18 miles up the Hoh versus 3,400 ft in under two miles from Dosewallips, and neither peak's camps serve the other. Note also the catalog holds three areas named Mount Olympus (WA, UT, CA); this zone declares the WA id.",
+ "areas": ["wa_mount_olympus"],
+ "sites": [
+  {
+   "name": "Glacier Meadows — the standard Blue Glacier base camp",
+   "type": "camp",
+   "elev": 4300,
+   "capacity": "A cluster of individual sites plus a group site, under a nightly quota; the single most contested permit on this approach",
+   "water": "Reliable — meltwater creeks in the meadows; treat it, and expect it to run silty in hot weather",
+   "permit": "Olympic Wilderness Permit required, QUOTA-LIMITED, reserved on Recreation.gov. Bear canisters mandatory. Practically every party climbing Olympus wants this camp, so treat the permit as the crux of the trip rather than an afterthought.",
+   "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the moraine, drop onto the glacier and work up past the Snow Dome to the summit rock, generally quoted as four to six miles and around 3,500 ft of gain each way, so most parties leave in the dark. Sources differ on the elevation, giving anything between about 4,200 and 4,400 ft, which matters only because published gain figures vary with it. A ranger station and pit toilets are here in season."
+  },
+  {
+   "name": "Elk Lake Camp, Hoh River trail",
+   "type": "camp",
+   "elev": 2600,
+   "capacity": "A small handful of individual sites; it fills every summer night in season",
+   "water": "Reliable — Elk Lake itself, plus creeks nearby; treat everything",
+   "permit": "Olympic Wilderness Permit required and this is an explicitly quota-limited camp — reserve on Recreation.gov well ahead. Summer-season reservations open in mid-April and the popular Hoh camps can be gone the same morning.",
+   "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the switchbacks to Glacier Meadows, the lateral moraine and the whole Blue Glacier ahead before any climbing starts. Some parties deliberately take Elk Lake on the walk in and Glacier Meadows on the walk out, which spreads the permit demand across two nights. Pit toilet provided; food must be in an approved canister."
+  },
+  {
+   "name": "Lewis Meadows Camp, Hoh River trail",
+   "type": "camp",
+   "elev": 1000,
+   "capacity": "Several individual sites plus a designated group site; parties of seven or more must use the group site",
+   "water": "Reliable — the Hoh River runs alongside the camp all season",
+   "permit": "Olympic Wilderness Permit required, reserved on Recreation.gov; this stretch of the Hoh is not one of the tightly capped camps, so it is usually easier to obtain than the two above it.",
+   "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a permit for Elk Lake or Glacier Meadows, or when a late start makes the full seventeen miles unrealistic. Because it sits at around a thousand feet in dense rainforest, it does nothing to shorten the climbing day — expect to still be four to five hours below the glacier the next morning. Pit toilet provided; bear canister required."
+  },
+  {
+   "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+   "type": "bivy",
+   "capacity": "Informal — a scatter of tent platforms in the rock bands and on the dome itself; no designated sites and no facilities",
+   "water": "Snow and glacier melt only; you are melting or filtering meltwater, and there is no running source you can count on",
+   "permit": "Covered by an Olympic Wilderness Permit, but note that camping is NOT allowed between Glacier Meadows and the Blue Glacier — these sites are on the glacier side of that closure. Human waste must be packed out in blue bags, and bear canisters still apply.",
+   "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day into a short one and puts you above most of the morning cloud, at the cost of a much heavier pack up the moraine and a night with no liquid water. This is GLACIER camping — crevasse hazard, wind, and no shelter — so it suits parties already competent on the Blue Glacier rather than as a way of making the route easier. The exact spots shift year to year as the ice and moraine change, so no single elevation is recorded."
+  }
+ ]
+}
