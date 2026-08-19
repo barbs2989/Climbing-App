@@ -55,6 +55,7 @@
 
 import fs from "node:fs";
 import { selectAll, SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
+import { trackIsJustTheWaypoints } from "../lib/track.js";
 
 // ---------------------------------------------------------------------------
 // args
@@ -245,6 +246,7 @@ const POP = {
 
 const F = {
   unrouted: [],           // gpx too sparse to measure against
+  trackIsThePins: [],     // the "track" is this route's own pins joined up — agrees by construction
   noTrack: [],            // waypoints but no gpx at all
   multiTrailhead: [],
   trailheadOffLine: [],
@@ -430,6 +432,21 @@ for (const r of scoped) {
     F.unrouted.push({ ...tag, pts: track.length, spanM: m0(trackSpanM) });
     continue;
   }
+  /* A SECOND unmeasurable class the extent test above cannot reach: a track that IS this route's
+     own waypoint list joined by straight lines. These have real extent (162 of the 201 span more
+     than 2 km) and unremarkable point counts, so nothing here caught them.
+     Every geometry test below asks whether a pin agrees with the track. When the track is a COPY
+     of the pins, it agrees BY CONSTRUCTION — two records agreeing is one claim counted twice — so
+     a clean verdict here is not evidence and a finding would not be either. Measured on the
+     sibling audit: skipping these moved its "clean" count from 201 to 96, i.e. MORE THAN HALF ITS
+     CLEAN VERDICTS WERE VACUOUS. Overstated coverage is the false-pass direction, which is why
+     this is a skip-and-report rather than a footnote.
+     Predicate shared from `lib/track.js` with the route-page caveat and `check:track-caveat`,
+     never reimplemented — see the four-grade-parsers note in CLAUDE.md. */
+  if (trackIsJustTheWaypoints(r.gpx, r.waypoints)) {
+    F.trackIsThePins.push({ ...tag, pts: track.length, pins: wps.filter((w) => w.lat != null).length });
+    continue;
+  }
 
   const start = track[0], end = track[track.length - 1];
 
@@ -565,6 +582,7 @@ const TITLES = {
   outOfOrder: "WAYPOINTS ARE OUT OF SEQUENCE ALONG THE TRACK",
   noCoordinate: "WAYPOINT HAS NO COORDINATE — missing from the map (every renderer guards), present in the itinerary as text; no geometry test can see it. SOURCE the coordinate, never delete the waypoint",
   unrouted: "UNMEASURABLE — gpx is a 2-3 point placeholder, not a track",
+  trackIsThePins: "UNMEASURABLE — the gpx IS this route's own waypoints joined by straight lines",
   noTrack: "UNMEASURABLE — waypoints but no gpx at all",
   elevKeyWrong: "elevFt SET WITHOUT elev — the app reads w.elev, so this elevation never renders",
   typeCasing: "CANONICAL type IN THE WRONG CASE — the app has a branch for it and compares exact case, so it does not fire",
@@ -575,7 +593,11 @@ const TITLES = {
 // correct waypoints.
 const ORDER = ["trackOffItsPeak", "trailheadOffLine", "trailheadNotAtStart", "multiTrailhead", "summitOffLine", "trackNotEndingAtSummit",
   "summitMissing", "topoutOnPeak", "waypointOffLine", "outOfOrder", "truncatedTrack", "elevKeyWrong", "typeCasing",
-  "typeOffVocab", "noCoordinate", "unrouted", "noTrack"];
+  "typeOffVocab", "noCoordinate", "unrouted", "trackIsThePins", "noTrack"];
+// A category missing from ORDER is COLLECTED AND NEVER PRINTED. `trackIsThePins` was added to F
+// and to the labels and omitted here, and the run reported an unchanged tally with no sign that
+// 105 routes had been set aside — a silent drop, in the script whose whole discipline is naming
+// what it could not measure. Keep ORDER and the F initialiser in step.
 
 console.log(`\n${scoped.length} of ${routes.length} routes in scope carry waypoints.\n`);
 let actionable = 0;
@@ -587,7 +609,7 @@ for (const k of ORDER) {
      actionable would re-inflate the very total this pass deflated. It earns its place by saying
      WHICH LINE the pin findings were measured against, and by needing no summit waypoint to do
      it — not by being a new count. */
-  const informational = k === "unrouted" || k === "noTrack" || k === "truncatedTrack"
+  const informational = k === "unrouted" || k === "noTrack" || k === "trackIsThePins" || k === "truncatedTrack"
     || k === "typeOffVocab" || k === "trackOffItsPeak";
   if (!informational) actionable += v.length;
   console.log(`=== ${v.length}  ${TITLES[k]} ===`);
@@ -662,4 +684,4 @@ if (popRows.length) {
 
 console.log(`\nNothing was written to the database. ${actionable} waypoint problems warrant a look` +
   ` (exclusive findings, so this total sums);` +
-  ` ${F.unrouted.length + F.noTrack.length} routes could not be measured at all.`);
+  ` ${F.unrouted.length + F.noTrack.length + F.trackIsThePins.length} routes could not be measured at all.`);
