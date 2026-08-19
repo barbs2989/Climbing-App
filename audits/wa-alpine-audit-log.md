@@ -8587,3 +8587,42 @@ routes.
 
 Next batch continues alphabetically after `wa_dorado_needle_east_ridge` (see
 progress file).
+
+## Batch 124 (2026-08-19, pass 3)
+
+Checked: `wa_dragontail_peak_backbone_ridge`, `wa_dragontail_peak_east_ridge_aasgard_pass`
+(East Ridge / standard route), `wa_dragontail_peak_r1` (Hidden Couloir),
+`wa_dragontail_peak_r2` (Gerber-Sink), `wa_dragontail_peak_r3` (Pandora's Box / W
+Couloir), `wa_dragontail_peak_r4` (Triple Couloirs), `wa_dragontail_peak_serpentine_arete`,
+`wa_e_se_face` (Witches Tower, E/SE Face).
+
+**Confirmed errors fixed (1):**
+- `wa_dragontail_peak_backbone_ridge`: `descent_text` still cited a specific rappel-station
+  coordinate ("a documented rappel station near 47.479°N, 120.832°W") that the row's own
+  `rappel_count_note` says was already assessed as unverifiable and "removed as unsupported"
+  (it coincides suspiciously closely with the peak's own summit coordinates rather than a
+  real documented station fix), and that `rappel_detail` separately states is "not
+  independently documented in any source found." The removal was never actually applied to
+  `descent_text`, leaving the row contradicting its own correction note. Reconciled
+  `descent_text` to match `rappel_count_note`/`rappel_detail`.
+
+**Clean (7):** `wa_dragontail_peak_east_ridge_aasgard_pass`, `wa_dragontail_peak_r1`,
+`wa_dragontail_peak_r2`, `wa_dragontail_peak_r3`, `wa_dragontail_peak_r4`,
+`wa_dragontail_peak_serpentine_arete`, `wa_e_se_face` — no errors found. Verified against
+authoritative/secondary sources: Dragontail Peak summit elevation (8,840 ft, matches
+Wikipedia/Peakbagger); Witches Tower summit elevation and coordinates (8,566 ft,
+47.4766°N/-120.8255°W, matches Wikipedia within a few meters); first-ascent claims for
+Backbone Ridge (Weigelt/Bonneville 1970, Fin Direct by Cruver/Lewis 1975 — confirmed via
+SummitPost/AAC), Triple Couloirs (Joiner/Nelson/Seman, May 1974 — confirmed via American
+Alpine Institute), and Serpentine Arête (Hargis/Ossiander, 1973 — confirmed via multiple
+trip-report sources). Gerber-Sink's FA remains honestly unresolved in the row itself
+("exact given names/year not documented in sources found") and this run found nothing to
+add. Witches Tower's E/SE Face genuinely has no findable first-ascent record (row already
+says "unknown"); left unchanged. Cross-checked all seven Dragontail routes' shared
+`approach_logistics.peakLat/peakLng` and `high_point_ft` for internal agreement — all
+consistent with each other and with the external elevation.
+
+Web access this run: WebSearch confirmed all elevation, coordinate, and first-ascent facts
+above; no WebFetch attempts were needed.
+
+Next batch continues alphabetically after `wa_e_se_face` (see progress file).
