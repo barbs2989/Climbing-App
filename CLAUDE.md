@@ -1947,6 +1947,18 @@ the correction knows the screen is wrong, and they have no way to report it.
     favoring its far climber's-right side" in `climbing_route`. Same shape as
     `audit:trailhead-agreement`, but with **no third record** to settle it, so it needs reading in
     reviewed batches rather than a transform.
+  - **The TAIL queue is exhausted (batches 1-2, PRs #1040 and this one): 14 routes trimmed, 142
+    of 240 still duplicating.** The acceptance rule that emerged is checkable rather than a taste
+    call — **accept a trim only when the cut sentence corresponds to a NAMED `climbing_route`
+    section**. 14 of 62 candidates passed it. The rejections group into avalanche warnings,
+    crevasse hazards, gear advice, summit-identification facts, and approach content wrongly
+    copied INTO `climbing_route` — `wa_mix_up_peak_east_face`'s cut is explicitly about *"the
+    upper APPROACH gullies"*, so a sweep would have deleted the correct record there.
+  - **What remains cannot be done by that applier, structurally.** The 118 interior cases need a
+    sentence excised from mid-paragraph, which strands the connectives around it — repairing one
+    means **rewriting prose**, not deleting it. Truncation-only (`approach :=
+    approach.slice(0, cut)`, asserted to be a prefix of the original) is what made the batches
+    safe to run; it does not extend. Do not point the applier at the remainder.
   - Per-row output is now the **action** rather than a fact (`TRIM the approach` / `MOVE` / `read
     before touching`). Injection cases are a **pair** on purpose: `--inject=dup` copies a sentence
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
