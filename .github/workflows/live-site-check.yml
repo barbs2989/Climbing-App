@@ -1,0 +1,103 @@
+name: Live site check
+
+# Walks the DEPLOYED site, from outside every other check, and asks the one thing none of
+# them can: does the app people actually load still work?
+#
+# WHAT THIS COVERS THAT NOTHING ELSE DOES. Every browser guard here runs against a dev
+# server built from the checkout, so they all answer "does this code render on a runner".
+# `check:drift` asks about production but only compares SHAs -- it would report "production
+# serves the current tip of main" while the served bundle was blank, because a correct SHA
+# and a broken app look identical from there. Between them sit the failures that only
+# production has: a bad base path, a lazy chunk that 404s off the Pages base, a service
+# worker serving a stale precache, an env difference between the build and the runner.
+#
+# It exists because that walk was already possible and simply never scheduled --
+# `check:ui --url` has supported it for weeks and ran only when somebody remembered. This
+# repo's own lesson, recorded against #724: a guard that runs only when somebody remembers
+# is a guard you do not have. Same shape as check:drift, one level up.
+#
+# NO SECRETS, deliberately, and it is worth knowing why this is possible. With `--url`,
+# check:ui spawns no dev server and skips the DB preflight (local env describes a different
+# deployment than the one being walked), so this needs no Supabase credentials at all. A
+# scheduled job that holds no keys is one less place a key can leak from.
+#
+# A failing scheduled run emails the repo owner. That is the point: like the drift check,
+# its job is to notice silence.
+
+on:
+  schedule:
+    # Every 6 hours. The walk takes ~4 minutes and drives a real browser, so this is not a
+    # 30-minute poll like the drift check; it bounds how long a broken production can go
+    # unnoticed rather than catching it the moment it breaks.
+    - cron: "40 */6 * * *"
+  workflow_dispatch:
+
+# Never let production walks pile up behind each other. Unlike a guard that gates a merge,
+# a superseded run of this has no value: it would be asking about a site that has since
+# been redeployed. (check:ci-cancel governs workflows that run on PUSH to main, where a
+# cancelled run means an unchecked commit. Nothing here runs on push.)
+concurrency:
+  group: live-site-check
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    # A browser that never launches, or a production site that hangs, should fail in
+    # minutes rather than sit for the default six hours.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      # playwright-core is the only reason npm ci is needed here; the script itself talks
+      # to the live site over the network.
+      - run: npm ci
+
+      # Fail here, with a readable message, rather than inside playwright's launcher.
+      # playwright-core downloads no browser; it drives the Google Chrome that ships on
+      # the ubuntu-latest image. That is the only reason this can run in CI at all.
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so the live site cannot be walked."
+            echo "The repo depends on playwright-core, which ships no browser. Either pin a runner"
+            echo "image that includes Chrome, or add a browser install step here."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Read the URL from the Pages deployment rather than hardcoding it, so a repo rename
+      # (which vite.config.js's `base` already has to track) cannot leave this silently
+      # walking a 404 and reporting whatever an error page happens to render.
+      - name: Resolve the published site URL
+        id: site
+        run: |
+          URL=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .html_url 2>/dev/null || true)
+          if [ -z "$URL" ]; then
+            echo "::error::could not resolve the Pages URL for ${GITHUB_REPOSITORY} — refusing to guess."
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "walking $URL"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: The deployed app still works
+        run: npm run check:ui -- --url "${{ steps.site.outputs.url }}" --snapshot live-screens.json
+
+      # The failure line names the screen and the offending text, but the surrounding copy
+      # is what tells you whether it is a real bug or a wording change. Same reasoning as
+      # render-guards' ui-screens artifact.
+      - name: Upload the per-screen dump
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: live-screens
+          path: live-screens.json
+          if-no-files-found: ignore
