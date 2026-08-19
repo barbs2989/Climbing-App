@@ -47,8 +47,26 @@ for (let after = null; ;) {
 if (!rows.length) throw new Error("zero rows read — a clean answer here would be a false pass");
 console.log(`${rows.length} ${STATE} routes have BOTH approach and climbing_route populated\n`);
 
-const sentences = t => String(t || "").split(/(?<=[.;!?])\s+|\n+/)
-  .map(s => s.trim()).filter(s => s.length > 40);
+// A naive split on /(?<=[.;!?])\s+/ breaks guidebook prose at abbreviations — "a subsidiary
+// rock knob (Pk. 8165)" splits at "Pk." and counts one sentence as two. That made this probe
+// disagree with the tail lister by a sentence after a batch of trims. A real sentence starts
+// with a capital or an opening quote, so a following digit or lowercase means the period was
+// an abbreviation or a decimal.
+const sentences = t => {
+  const str = String(t || "");
+  const out = [];
+  let start = 0;
+  const re = /(?<=[.;!?])(\s+)|\n+/g;
+  let m;
+  while ((m = re.exec(str))) {
+    const next = str[m.index + m[0].length];
+    if (m[1] && next && !/[A-Z"'(\u201c]/.test(next)) continue;
+    out.push(str.slice(start, m.index));
+    start = m.index + m[0].length;
+  }
+  out.push(str.slice(start));
+  return out.map(x => x.trim()).filter(x => x.length > 40);
+};
 
 // Content words only. Stopwords and short tokens match everywhere and would make two unrelated
 // sentences about walking uphill look like the same sentence.

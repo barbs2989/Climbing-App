@@ -1904,9 +1904,14 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **The pass COPIED rather than MOVED.** CLAUDE.md specifies these batches as "re-home, never
     research", which means trimming the source — nothing ever checked, and mostly it did not.
     Two numbers, answering different questions, so do not quote one as the other: across all WA
-    routes with both columns, **163 of 240 repeat an approach sentence inside `climbing_route`
-    (429 sentences)**; among the routes this audit flags, **148 of 239 (303 sentences)**. Many are
-    verbatim.
+    routes with both columns, **149 of 240 repeat an approach sentence inside `climbing_route`
+    (303 sentences)**; among the routes this audit flags, **148 of 239**. Many are verbatim.
+    - **An earlier run of this said 429 sentences and that number was wrong** — the probe's
+      sentence splitter broke on abbreviations, counting *"a subsidiary rock knob (Pk. 8165)"* as
+      two sentences. The audit's own splitter was always right, which is why both scopes agree at
+      303. **A count is only as good as its tokeniser**; the same bug would have had a trim end an
+      approach mid-sentence on an unclosed parenthesis, and it was caught by reading the batch
+      rather than by any check.
   - **Confirmed ON SCREEN, not inferred from the columns.** `APPROACH` and `CLIMBING ROUTE` are
     both on the **Planner** tab, and the shared sentences print twice there — verified by rendering
     the real `RouteDetail` over three real rows. Two columns overlapping is a fact about a table;

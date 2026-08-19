@@ -36,8 +36,10 @@ means the source column gets trimmed. Nothing ever checked that it was, and most
 
 Two measurements, and they answer different questions — do not quote one as the other:
 
-- **All WA routes carrying both columns:** 240 routes; **163 repeat at least one approach
-  sentence inside `climbing_route`**, **429 sentences** in total.
+- **All WA routes carrying both columns:** 240 routes; **149 repeat at least one approach
+  sentence inside `climbing_route`**, **303 sentences** in total.
+  (First published as 429. That was inflated by a sentence splitter that broke on abbreviations —
+  see the correction note in this file's successor, `APPROACH-TRIM-BATCH1-2026-08-19.md`.)
 - **Only the routes this audit flags** (approach prose that runs past the base): 239 routes;
   **148 still repeat**, **303 sentences**.
 
