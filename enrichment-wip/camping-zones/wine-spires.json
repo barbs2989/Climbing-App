@@ -1,0 +1,67 @@
+{
+ "zone": "Silver Star and the Wine Spires",
+ "_areas_note": "TWO APPROACHES ON OPPOSITE SIDES OF ONE MOUNTAIN, kept in one zone deliberately because the peaks share them. Burgundy Col serves the WEST side and the Wine Spires; the Silver Star Creek basin camps serve the EAST/north drainage that reaches the glacier near its toe and are no use at all for Burgundy, Pernod, Chianti or Chablis. Each site says which side it serves — they must not be read as interchangeable for one objective. The region container wa_silver_star_and_wine_spires is DELIBERATELY NOT declared: CLAUDE.md records it as mis-parented (it contains neither Silver Star nor three of the four Wine Spires), and expanding it swallowed seven Kangaroo Ridge routes into this zone. Only explicit peak ids are declared.",
+ "areas": [
+  "wa_silver_star_mountain_okanogan",
+  "wa_burgundy_spire",
+  "wa_pernod_spire",
+  "wa_chianti_spire",
+  "wa_chablis_spire"
+ ],
+ "sites": [
+  {
+   "name": "Burgundy Col high camp — WEST side, the Wine Spires",
+   "type": "bivy",
+   "elev": 7800,
+   "capacity": "Two to four rock-ringed bivy platforms; roughly one is level enough for a two-person tent, so a large party should expect to sleep scattered or send some members back down",
+   "water": "No spring or stream. Parties melt snow from the lingering patches on the glacier side of the col, which normally hold into late summer but can be rock-hard in the morning or gone entirely in a dry, late season. Many simply haul all their water up the scree, which is the single heaviest decision on this approach.",
+   "permit": "None. Okanogan-Wenatchee National Forest, outside any designated wilderness — no quota, no reservation and no self-issue permit, unlike the North Cascades park zones a few miles west.",
+   "notes": "The narrow saddle between Burgundy Spire and the ridge, and the standard high camp for the Wine Spires and for the Silver Star Glacier approached from the highway side. Published elevations disagree by a couple of hundred feet, with figures from roughly 7,720 to 7,950 in circulation, so treat any single number as approximate. It is exposed to wind from both sides and several parties have dropped back down the west slope to sleep after a rough night. Camping here removes about 1,500 ft of the scree from summit day, which is most of the argument for carrying overnight gear up it."
+  },
+  {
+   "name": "Burgundy Creek bench camp — WEST side",
+   "type": "camp",
+   "elev": 6400,
+   "capacity": "Several established tent spots on a wooded bench, with a large boulder and an old fire ring as the usual landmark; comfortably three or four tents",
+   "water": "The most dependable water on this approach, but NOT from the obvious place. The creek shown on maps immediately east of the bench is frequently dry, while a spring roughly ten minutes north of camp keeps running well into September in most years. Confirm it before committing, and expect insects around it.",
+   "permit": "None required. Okanogan-Wenatchee National Forest, non-wilderness, so no permit or reservation applies.",
+   "notes": "The flat, sheltered alternative to sleeping at the col, in trees before the timbered rib gives way to open scree. Reports consistently call it the more pleasant camp of the two, at the cost of extra vertical on summit morning. Elevation is quoted anywhere from about 6,400 to 6,500 ft depending on which flat spot a party used. Its value is almost entirely the spring: if that has failed, the bench loses most of its advantage over the col."
+  },
+  {
+   "name": "Upper scree benches below Burgundy Col — WEST side",
+   "type": "bivy",
+   "elev": 7200,
+   "capacity": "Improvised, one or two small parties at most; flat ground has to be found or built rather than chosen",
+   "water": "Genuinely unreliable and conditions-dependent. At least one account found a trickle running here in a season when the bench camp creek below was dry, which makes it worth checking on the way up, but nothing about it is dependable enough to plan a camp around.",
+   "permit": "None. Non-wilderness National Forest land; no permit, quota or registration.",
+   "notes": "Not an established campsite so much as a fallback for a party that has run out of daylight or water partway up the talus. The main reason to know about them is that the water situation on this hillside is patchy rather than uniform, so a dry creek at the wooded bench does not necessarily mean a dry mountainside above it. Anyone counting on this should carry a stove and be prepared to find nothing."
+  },
+  {
+   "name": "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "type": "camp",
+   "elev": 6400,
+   "capacity": "Open alpine benches with room for several tents; sites are unimproved and parties spread out",
+   "water": "Reliable through the climbing season from the creek and from meltwater draining the glacier, and typically abundant under spring snow — a marked contrast to the col.",
+   "permit": "None. Same National Forest, non-wilderness status; no permit and no reservation, though the pullout is still gated by the seasonal highway closure.",
+   "notes": "SERVES THE EAST AND NORTH APPROACH up Silver Star Creek, which reaches the glacier near its toe rather than crossing Burgundy Col — it is no use for the Wine Spires on the west side. It is the better choice under spring snow cover, when the drainage skis or snowshoes well and the col approach is a loose, avalanche-prone mess. Later in the summer the same ground turns brushy, and the scree and talus above make it less appealing than the shorter western approach."
+  },
+  {
+   "name": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "type": "camp",
+   "elev": 4800,
+   "capacity": "Informal; flat ground on either side of the drainage, several parties",
+   "water": "Silver Star Creek runs here through the season, so water is not a planning constraint at this elevation",
+   "permit": "None required. Okanogan-Wenatchee National Forest, outside wilderness; standard dispersed-camping rules apply.",
+   "notes": "The drainage levels out near a cascade at about this height, roughly two miles up from the highway, and it is where many parties cross to the west side before continuing. It works as a low, sheltered camp for a ski approach or for a party that started late, but it leaves a long day to the summit. On the east approach it is a waypoint more often than a destination, with most parties pushing on to the upper basin."
+  },
+  {
+   "name": "Lone Fir Campground, SR 20",
+   "type": "camp",
+   "elev": 3600,
+   "capacity": "27 developed first-come, first-served sites for tents and small vehicles",
+   "water": "Developed campground with potable water when open; Early Winters Creek runs alongside",
+   "permit": "Per-night campground fee; no wilderness permit involved. The unmarked Silver Star Creek pullout that starts the west approach is not itself a signed fee site — check current signage rather than assuming either way.",
+   "notes": "A roadside vehicle campground rather than a site on any approach — it is for sleeping the night before, not for the climb. It opens around May and closes with the first serious snow, tracking the same window as everything else here. The whole area is gated by the SR 20 winter closure, which shuts in late November or early December and reopens in spring, with the date driven by avalanche work and storm damage rather than the calendar. In closed months the pullout is inside the gated section and the approach becomes a long ski or snowmobile trip."
+  }
+ ]
+}

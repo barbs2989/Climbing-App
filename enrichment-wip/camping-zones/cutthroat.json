@@ -1,0 +1,59 @@
+{
+ "zone": "Cutthroat Peak and Cutthroat Lake",
+ "_areas_note": "PER-ROUTE CAVEAT, handled by labelling rather than by exclusion. The research flagged that Cutthroat's NORTH RIDGE is approached from State Creek / the north side, not Cutthroat Creek, and the North Ridge is among the uncovered routes here. The developed campgrounds and the trailhead serve ANY approach, so they apply; the basin bivy is named and described as south-side-only so a north-side party cannot read it as theirs. State Creek itself is unresearched and awaits its own pass.",
+ "areas": ["wa_cutthroat_peak", "wa_cutthroat_wall", "wa_cutthroat_lake_crags", "wa_cutthroat_creek_wall_or_little_liberty_bell"],
+ "sites": [
+  {
+   "name": "Cutthroat Creek trailhead",
+   "type": "camp",
+   "elev": 4500,
+   "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers",
+   "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+   "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+   "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. Parties climbing the South Buttress or Southeast Buttress routinely sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out."
+  },
+  {
+   "name": "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+   "type": "bivy",
+   "capacity": "Several scattered one- and two-tent pads in the meadows and among the boulders; no established camp, so parties spread out",
+   "water": "A stream runs through the basin and is generally reliable through the climbing season, fed by snow patches under the peak. Late-season flow can thin, so carry capacity for a dry night in a hot September.",
+   "permit": "None. Dispersed camping on national forest land needs no permit, no reservation and no quota — the opposite of the North Cascades park zones a few miles west.",
+   "notes": "SERVES THE SOUTH AND SOUTHEAST ROUTES ONLY. The North Ridge is normally approached from the State Creek side, and this bivy does not help that party at all. From the trailhead a way-path leaves the Cutthroat Lake trail, drops to cross the creek and climbs meadows into the bowl under the south and southeast sides, roughly two hours with a pack. Parties camp here to take a long route in a single push rather than commit to a headlamp descent. Ground is a mix of heather bench and talus and the pads are small, so a large party will be split up. The meadows are thin and the basin sees enough traffic to show it."
+  },
+  {
+   "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+   "type": "camp",
+   "capacity": "Limited and regulated — the usable ground is set back from the water, so realistically a handful of small parties",
+   "water": "The lake and its inlet stream are dependable all season. Treat or filter.",
+   "permit": "No permit needed, but a hard rule applies: NO overnight camping within a quarter mile of Cutthroat Lake. Camp outside that radius and you are legal with no paperwork.",
+   "notes": "The lake sits about 1.8 miles in with roughly 500 ft of gain, in the basin under the peak's north and east sides. It is a pleasant place to stage, but the quarter-mile closure exists because the shoreline was being loved to death and it is enforced rather than advisory. For a climb of the south side you gain nothing by coming here — the climbers' path branches off well before the lake — so treat it as a rest-day or bad-weather option rather than a staging camp."
+  },
+  {
+   "name": "Cutthroat Wall base terrace",
+   "type": "bivy",
+   "elev": 5800,
+   "capacity": "A small flat area under the cliff; room for one or two parties at most",
+   "water": "No water on the terrace itself. Fill in Cutthroat Creek low on the approach and carry it up.",
+   "permit": "None — dispersed national forest camping, no permit and no quota.",
+   "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-to-car in a day, so a bivy here is for a late start or a two-day plan rather than standard practice. The wall faces away from morning sun, which makes an early camp less useful than it looks on the map. The crag is sometimes catalogued under Little Liberty Bell, which is the same approach and the same ground."
+  },
+  {
+   "name": "Lone Fir Campground",
+   "type": "camp",
+   "elev": 3600,
+   "capacity": "27 sites, tents and small RVs",
+   "water": "Potable water provided in season, shut off once the campground closes for the year.",
+   "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+   "notes": "The closest developed campground to the Cutthroat Creek trailhead, a short drive east on SR 20 along Early Winters Creek. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns."
+  },
+  {
+   "name": "Klipchuck Campground, with Early Winters nearby",
+   "type": "camp",
+   "elev": 2900,
+   "capacity": "46 sites, the largest campground on this stretch of highway",
+   "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+   "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+   "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend."
+  }
+ ]
+}
