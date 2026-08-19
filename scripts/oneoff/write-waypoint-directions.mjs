@@ -48,6 +48,27 @@ for (const id of ids) {
   if (dirs.length !== wps.length) {
     throw new Error(`${id}: batch has ${dirs.length} entries but the route has ${wps.length} waypoints — positional write refused`);
   }
+  // INDEX 0 IS THE DRIVE, NOT A LEG — and that changes which gates apply.
+  // Every ordering gate below exists because a leg from waypoint i-1 to waypoint i is
+  // meaningless when the array is out of order. Index 0 has no predecessor, so it asserts
+  // nothing about order: it carries the drive to the trailhead ("Getting here — From I-90
+  // Exit 62, follow Kachess Lake Road..."), which 98 WA routes already do. A payload that
+  // touches ONLY index 0 is therefore unaffected by a spliced or reversed array, and
+  // refusing it would deny the drive to exactly the routes whose data is worst —
+  // wa_mount_stuart_north_ridge and wa_mount_challenger_challenger_glacier among them.
+  // This is NOT a loosening: the trailhead gate below gets STRICTER in this mode, because
+  // the drive has to land on the trailhead's own card and nothing else.
+  const driveOnly = String(dirs[0] || "").trim() !== "" &&
+    dirs.slice(1).every((t) => String(t || "").trim() === "");
+  if (driveOnly) {
+    const t0 = String((wps[0] && wps[0].type) || "");
+    if (!/^trailhead$/i.test(t0)) {
+      throw new Error(`${id}: drive-only write refused — waypoint 1 is "${(wps[0] && wps[0].name) || "?"}" of type "${t0 || "(none)"}", not a Trailhead. ` +
+        `The drive renders on the first waypoint's own card, so writing it here would put road directions on a campsite or a summit. ` +
+        `Both wa_mount_constance_* routes start at the Lake Constance CAMPSITE and were caught by exactly this.`);
+    }
+  }
+
   // `directions` means "how do I get HERE from the previous waypoint", so it is only
   // meaningful if the array is in travel order. It often is not: `audit:waypoint-order`
   // reports 51 of 1,019 WA routes rendering out of order, typically with the summit listed
@@ -78,7 +99,7 @@ for (const id of ids) {
       impossible.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km straight-line vs ${wps[i].distMi}mi = ${trailKm.toFixed(1)}km of trail)`);
     }
   }
-  if (impossible.length) {
+  if (impossible.length && !driveOnly) {
     throw new Error(`${id}: coordinate(s) impossible — straight-line distance exceeds the recorded trail distance: ${impossible.join("; ")}. ` +
       `Trail distance can never be shorter than a straight line, so the lat/lng is wrong, not necessarily the order. The prose may still be writable once the coordinates are fixed.`);
   }
@@ -88,7 +109,7 @@ for (const id of ids) {
     const bad = [];
     let prev = null, prevI = -1;
     marks.forEach((m, i) => { if (m == null) return; if (prev != null && m < prev - 0.001) bad.push(`${prevI + 1}->${i + 1} (${prev} -> ${m} mi)`); prev = m; prevI = i; });
-    if (bad.length) {
+    if (bad.length && !driveOnly) {
       throw new Error(`${id}: waypoints are not in travel order (${bad.join(", ")}). ` +
         `Positional directions would describe legs that do not exist. Fix the order first — see npm run audit:waypoint-order.`);
     }
@@ -124,7 +145,7 @@ for (const id of ids) {
       prev = d; prevI = i;
     }
   }
-  if (backtrack.length) {
+  if (backtrack.length && !driveOnly) {
     throw new Error(`${id}: consecutive waypoints jump back toward the start by more than ${RETREAT_KM}km — ${backtrack.join("; ")}. ` +
       `distMi may look monotonic while the coordinates walk out and return; that is a lat/lng fault, and legs written against it would describe a trip nobody takes.`);
   }
@@ -148,7 +169,7 @@ for (const id of ids) {
         console.log(`  WARN ${id}: waypoint(s) before the summit sit slightly farther from the start than the summit — ${nearBy.join("; ")}.`);
         console.log(`       Could be a cirque approach, or the list could be walking past the summit and back. Check the approach/descent prose before trusting these legs.`);
       }
-      if (beyond.length) {
+      if (beyond.length && !driveOnly) {
         throw new Error(`${id}: waypoint(s) listed BEFORE the summit sit farther from the start than the summit does — ${beyond.join("; ")}. ` +
           `distMi is monotonic here, so the order check passes, but the sequence is not a single outward journey. Check the route's approach/descent prose before writing legs.`);
       }
@@ -161,7 +182,7 @@ for (const id of ids) {
   // check, because the offending waypoints carry no distMi at all, so only three marks are
   // known and those three ascend cleanly.
   const thIdx = wps.findIndex((w) => /^trailhead$/i.test(String((w && w.type) || "")));
-  if (thIdx > 0) {
+  if (thIdx > 0 && !driveOnly) {
     throw new Error(`${id}: the Trailhead is waypoint ${thIdx + 1} of ${wps.length}, not the first. ` +
       `Everything listed above it is either a different approach or out of sequence, and positional legs would describe junctions this route never passes.`);
   }
