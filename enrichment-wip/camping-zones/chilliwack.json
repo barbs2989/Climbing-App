@@ -1,7 +1,10 @@
 {
  "zone": "Chilliwack Range and Hannegan Pass",
- "_areas_note": "Declaring the region id expands to its subtree: NW Mox, SE Mox, Mount Rahm, Bear Mountain, Mount Custer, Mount Spickard, Mount Redoubt. THREE jurisdictions in one zone — the Hannegan trailhead is National Forest, the Chilliwack camps are National Park, and the Depot Creek approach starts in BRITISH COLUMBIA.",
- "areas": ["wa_chilliwack_range"],
+ "_areas_note": "Declaring the region id expands to its subtree: NW Mox, SE Mox, Mount Rahm, Bear Mountain, Mount Custer, Mount Spickard, Mount Redoubt. THREE jurisdictions in one zone — the Hannegan trailhead is National Forest, the Chilliwack camps are National Park, and the Depot Creek approach starts in BRITISH COLUMBIA. Indian Mountain was added after a later pass established it is not road-served at all: it stands above Brush Creek near Whatcom Pass, reached on foot over Hannegan Pass and down the Chilliwack, which is this file ground.",
+ "areas": [
+  "wa_chilliwack_range",
+  "wa_indian_mountain_baker"
+ ],
  "sites": [
   {
    "name": "Hannegan Camp, below Hannegan Pass",

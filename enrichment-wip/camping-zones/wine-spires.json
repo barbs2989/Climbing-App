@@ -1,12 +1,13 @@
 {
  "zone": "Silver Star and the Wine Spires",
- "_areas_note": "TWO APPROACHES ON OPPOSITE SIDES OF ONE MOUNTAIN, kept in one zone deliberately because the peaks share them. Burgundy Col serves the WEST side and the Wine Spires; the Silver Star Creek basin camps serve the EAST/north drainage that reaches the glacier near its toe and are no use at all for Burgundy, Pernod, Chianti or Chablis. Each site says which side it serves — they must not be read as interchangeable for one objective. The region container wa_silver_star_and_wine_spires is DELIBERATELY NOT declared: CLAUDE.md records it as mis-parented (it contains neither Silver Star nor three of the four Wine Spires), and expanding it swallowed seven Kangaroo Ridge routes into this zone. Only explicit peak ids are declared.",
+ "_areas_note": "TWO APPROACHES ON OPPOSITE SIDES OF ONE MOUNTAIN, kept in one zone deliberately because the peaks share them. Burgundy Col serves the WEST side and the Wine Spires; the Silver Star Creek basin camps serve the EAST/north drainage that reaches the glacier near its toe and are no use at all for Burgundy, Pernod, Chianti or Chablis. Each site says which side it serves — they must not be read as interchangeable for one objective. The region container wa_silver_star_and_wine_spires is DELIBERATELY NOT declared: CLAUDE.md records it as mis-parented (it contains neither Silver Star nor three of the four Wine Spires), and expanding it swallowed seven Kangaroo Ridge routes into this zone. Only explicit peak ids are declared. Whine Spire was added after a later pass established it sits on Silver Star north ridge, reached over Burgundy Col from the Silver Star Creek pullout — the camps already in this file. It had been grouped with the Hwy 20 corridor peaks, which do not serve it.",
  "areas": [
   "wa_silver_star_mountain_okanogan",
   "wa_burgundy_spire",
   "wa_pernod_spire",
   "wa_chianti_spire",
-  "wa_chablis_spire"
+  "wa_chablis_spire",
+  "wa_whine_spire"
  ],
  "sites": [
   {

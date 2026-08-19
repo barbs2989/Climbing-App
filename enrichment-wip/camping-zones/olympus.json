@@ -1,7 +1,10 @@
 {
  "zone": "Mount Olympus — Hoh River approach",
- "_areas_note": "SPLIT from Mount Constance deliberately. My own prompt conflated 'Constance Pass / Lake Constance' as one approach and the research corrected it — Olympus and Constance are 18 miles up the Hoh versus 3,400 ft in under two miles from Dosewallips, and neither peak's camps serve the other. Note also the catalog holds three areas named Mount Olympus (WA, UT, CA); this zone declares the WA id.",
- "areas": ["wa_mount_olympus"],
+ "_areas_note": "SPLIT from Mount Constance deliberately. My own prompt conflated 'Constance Pass / Lake Constance' as one approach and the research corrected it — Olympus and Constance are 18 miles up the Hoh versus 3,400 ft in under two miles from Dosewallips, and neither peak's camps serve the other. Note also the catalog holds three areas named Mount Olympus (WA, UT, CA); this zone declares the WA id. Mount Tom was added after two later passes agreed it is climbed exactly as Olympus is — Hoh River, Glacier Meadows, Snow Dome, then west — so every camp it uses is already in this file. It was removed from a Bailey Range zone and then from an Olympic-remainder zone rather than being given camps it does not use.",
+ "areas": [
+  "wa_mount_olympus",
+  "wa_mount_tom"
+ ],
  "sites": [
   {
    "name": "Glacier Meadows — the standard Blue Glacier base camp",
