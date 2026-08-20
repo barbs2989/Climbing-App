@@ -76,6 +76,12 @@ const NEEDLES = [
   // `previously published` is excluded after a negation: "they knew of no previously published
   // complete west-to-east crossing" is a first-ascent claim about the LITERATURE, not about this
   // record. Test the object -- the same correction this needle set has now needed three times.
+  // A RECORD DESCRIBING ITS OWN HISTORY. Found on the live app, not by a needle: "The on-file text
+  // used to group this route with the Nooksack and Ruth Creek side of the mountain." Subject-
+  // anchored, because "the trail used to cross here" and "the road no longer reaches the gate"
+  // are facts about the WORLD and correct writing -- only a sentence whose SUBJECT is the record
+  // qualifies.
+  ["record describing its own history", /(?:on-file text|this (?:page|entry|record)|the (?:record|description|stored text))\s+(?:used to|no longer|previously)\b|\bused to (?:be )?(?:say|read|list|name|group|state)\b/i],
   ["changelog about the data", /\bpreviously (?:listed|claimed|stored)\b|(?<!knew of no )(?<!no )\bpreviously published\b|rename is pending|prose has been corrected|removed as unsupported|were not sourced/i],
 ];
 
