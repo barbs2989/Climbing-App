@@ -96,6 +96,7 @@ npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
+npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired?
