@@ -11,6 +11,7 @@ npm run build      # production build to dist/ (runs check:refs + check:hooks fi
 npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
+npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
@@ -129,6 +130,44 @@ a build error, but a screen that renders wrong or not at all.
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
+- **`check:no-nul`** asserts that no source file holds a **literal NUL byte**. Git classifies a file
+  containing one as **binary**, so the whole file renders in a pull request as `Bin 0 -> 12464 bytes`
+  or as `+0/-0` and **nobody can read the diff**. Static — no browser, no DB, no network — so it sits
+  in `npm run build`, and it runs **first** in the chain: a reviewability defect is the cheapest
+  possible check and has no reason to sit behind fifty others.
+  - **THE CODE IS USUALLY CORRECT, WHICH IS EXACTLY WHY NOTHING CAUGHT IT.** NUL is the right
+    composite-key separator (`f + "\x00" + n`) and the right hold-aside sentinel *precisely because*
+    it cannot occur in the data. All three surviving instances were consistent, parsed, and ran. The
+    cost was never to behaviour — it was to **review**, and review is what this repo runs on: every
+    guard in this file exists because somebody read a diff.
+  - **The repair is never to remove the NUL**, and the guard's failure message says so. Write it as
+    the two-character escape `\x00`: identical at runtime, readable in a diff. A guard that pushed
+    authors to delete the byte would be telling them to break correct code.
+  - **#1213 FIXED ONE FILE OF FOUR, and that is the argument for a script over a fix.** #1210 shipped
+    `fix-approach-variants-working-language.mjs` with four NULs, on a change whose entire risk was
+    that a mechanical transform might damage good prose; #1213 repaired it by hand. Main still
+    carried **three more** — `audit-enrichment-bleed.mjs`, `measure-waypoint-finding-overlap.mjs`,
+    `verify-grade-parser-equivalence.mjs` — and a **fifth arrived the next day**, in a different file
+    by a different route: a `.join(" \x00 ")` where three spaces were intended. Two mechanisms
+    (deliberate sentinel, accidental separator), two days, five instances. *An instance fixed by hand
+    is not a class closed.*
+  - **The rewrite is VERIFIED EQUIVALENT rather than assumed, and a textual diff cannot show it** —
+    the whole point of the change is that the old text is undiffable.
+    `scripts/oneoff/fix-literal-nul-bytes.mjs` parses both versions with Babel and compares **every
+    `StringLiteral` and `TemplateElement` value in source order**, accepting the rewrite only if the
+    strings the program builds are identical (44, 34 and 63 strings, all matching). It refuses rather
+    than writes on any mismatch, an unparseable side, or a surviving NUL.
+  - **A commit that removes NULs still renders as binary**, because git marks a diff binary if
+    **either** side is and the parent blob is the one holding them. Proven rather than asserted: a
+    further edit against the de-NULed blob diffs as ordinary text.
+  - The guard **names the byte it forbids and must not contain one**, which is the cheapest possible
+    self-test — and it is asserted, not assumed. The fix script and the injection harness obey the
+    same rule through `String.fromCharCode(0)`.
+  - Fails **closed**: fewer than 500 source files found is reported as a broken walk, never as a
+    clean tree. Injection-tested 4/4 (`scripts/oneoff/inject-nul-byte-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must PASS** —
+    `\x00` written as an escape is the prescribed repair, so a guard flagging it would forbid its own
+    fix.
 - **`check:hooks`** catches hooks called outside a component body — the #377 bug
   (an invalid hook call inside a click handler). Also gated by `npm run build`.
 - **`check:dead-props`** asks two questions of every component: does it destructure a prop
