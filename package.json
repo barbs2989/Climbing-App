@@ -87,6 +87,7 @@
     "check:function-columns": "node scripts/check-function-columns.mjs",
     "check:function-drift": "node scripts/check-function-drift.mjs",
     "check:rappel-lengths": "node scripts/check-rappel-lengths.mjs",
+    "check:token-boxes": "node scripts/check-prose-in-token-boxes.mjs",
     "check:field-renders": "node scripts/check-field-renders.mjs",
     "check:a11y-badges": "node scripts/check-a11y-badge-names.mjs",
     "check:overflow": "node scripts/check-horizontal-overflow.mjs",

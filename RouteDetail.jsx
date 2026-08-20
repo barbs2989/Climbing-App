@@ -964,13 +964,24 @@ function ApproachVariants({route,onEdit}){
     <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>Which one is right depends on the season — read the window on each before you pick.</div>
     {vars.map((v,i)=>{
       const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
+      /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
+         routes) hold a paragraph instead — up to 392 characters. It rendered in a pill carrying
+         BOTH white-space:nowrap AND flex-shrink:0, so the text could neither wrap nor shrink and
+         a long value pushed the row past the edge of a 390px phone. Worse than the camping chips,
+         which at least wrapped into a blob.
+         Defended the way the header strap already defends the top-level `season` column, with the
+         same seasonShort() — and the full sentence renders as PROSE below rather than being lost,
+         because the explanation is worth reading, just not inside a pill. */
+      const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
+      const seasonPill=seasonShort(seasonFull);
       const facts=[v.hours?v.hours+(/\bh|hour/i.test(String(v.hours))?"":" hr"):null,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
       return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
           <div style={{fontSize:13.5,fontWeight:800,color:C.text,minWidth:0,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>
-          {v.season?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{v.season}</span>:null}
+          {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
         </div>
         {facts.length?<div style={{display:"flex",flexWrap:"wrap",gap:10,marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}</div>:null}
+        {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
         {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
         {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
           <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
