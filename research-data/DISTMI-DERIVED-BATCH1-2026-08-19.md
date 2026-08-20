@@ -63,6 +63,21 @@ The other 13 keep their order and still gained something: they move from *unsort
 the audit counted them as in-order by construction — to *auditable*. Sortable routes went
 482 → 499.
 
+## Cross-checked against the manufactured-coordinate finding
+
+A parallel session established that **63 WA routes have waypoint coordinates fabricated along a
+straight trailhead → summit line** — real elevations, invented positions — and warned explicitly
+that *"a real track is NOT evidence the pins are real: 22 of the 63 carry 100+ point tracks."*
+Deriving a distance by projecting a fabricated pin onto a genuine track would produce a
+confident number about a place nobody has been.
+
+**Measured, not reasoned: zero of these 17 routes appear in that list of 63.** The 100 m gate
+excludes them as a side effect — pins spaced along a straight line do not lie within 100 m of a
+real winding trail — but that is an explanation *after* the check, not a substitute for it.
+
+Anyone widening the gate later must re-run this intersection. At 400 m the qualifying set grows
+to 38 routes and the exclusion stops being automatic.
+
 ## Provenance, because this column now holds two kinds of number
 
 Every derived pin is stamped **`distFrom: "track"`**. `distMi` elsewhere holds researched
