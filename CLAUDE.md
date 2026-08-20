@@ -2475,6 +2475,19 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **The run test is only usable because the two agree.** 127 routes carry both tells, measured
     independently. A run of exactly 3 with no second tell is luck as often as fabrication (19 WA
     routes sit there), so 3-pin runs need corroboration and 4+ stand alone.
+  - **A RUN'S ENDPOINTS ARE ITS ANCHORS, and expanding `run x-y` into "pins x..y are fabricated"
+    sends a repair pass after pins that are already right.** Interpolation is drawn BETWEEN two
+    points somebody actually knew, and on these routes those two are overwhelmingly the trailhead
+    and the summit — the pair a research pass was most likely to have. Measured against an
+    independent record per pin (the route's `areas` row for a summit, its own `approach_logistics`
+    for a trailhead): of 72 endpoints flagged by the run test **and by nothing else**, 50 were
+    judgeable and **all 50 agreed, 49 of them to the metre. None disagreed.** The fabricated pins
+    are the run's INTERIOR. The script says so in its own output now, because the report was read
+    the wrong way once and the resulting worklist chased 97 correct pins across three passes.
+    - This is not a defect in the audit: it prints the run as a **range** and names the
+      decimal-computed pins **individually**, so the two claims were always distinguishable
+      (`wa_guye_peak_r1 · run 0-4 · computed pins 1,2,3,4` — pin 0 is the anchor). The over-claim was
+      in the consumer. *A range is not a list of findings.*
   - `--selftest` proves both detectors on constructed pin sets and **needs no database**. Its
     negative cases are the ones that matter — a detector that also fires on a winding approach turns
     188 findings into 188 arguments. Trap met while writing it: the obvious "real winding approach"

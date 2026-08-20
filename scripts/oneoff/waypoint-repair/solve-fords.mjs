@@ -80,8 +80,23 @@ for (let i = 0; i < ids.length; i += 40) {
 }
 if (!Object.keys(rows).length) { console.log("FAIL-CLOSED: empty read"); process.exit(1); }
 
+// A NAME CAN BE AN OFFSET FROM THE FORD RATHER THAN THE FORD. "Campsite below Tungsten Creek ford"
+// names a real ford and is not one: the pin is the campsite below it. Locating the crossing and
+// writing it there would put a confidently wrong coordinate in place of a fabricated one, which is
+// worse -- a fabricated pin looks odd, a real ford standing in for the camp beside it reads as data.
+// Same rule gate 5 applies to a label point standing in for a named PART of a feature.
+//
+// Nothing this reached had actually been written when it was found: the one offset name among the 64
+// candidates ("Campsite below Tungsten Creek ford") sat in the AMBIGUOUS bucket, and the applied set
+// was checked afterwards and is clean. It is refused here so that does not depend on luck.
+const OFFSET = /\b(above|below|beneath|under|near|beyond|between|past|toe of|base of|head of|foot of|side of|north of|south of|east of|west of)\b/i;
+
 const solved = [], ambiguous = [], nothing = [], errored = [];
 for (const c of cands) {
+  if (OFFSET.test(String(c.name || ""))) {
+    nothing.push({ c, why: "the name is an OFFSET from a ford, not the ford — the crossing is not this pin" });
+    continue;
+  }
   const w = (rows[c.route] || {}).waypoints || [];
   const pts = w.filter(p => p.lat != null).map(p => ({ lat: +p.lat, lng: +p.lng }));
   if (!pts.length) { errored.push({ c, why: "route has no located pins to bound the search" }); continue; }
