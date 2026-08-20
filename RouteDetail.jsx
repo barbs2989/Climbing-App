@@ -989,7 +989,7 @@ function ApproachVariants({route,onEdit}){
          same seasonShort() — and the full sentence renders as PROSE below rather than being lost,
          because the explanation is worth reading, just not inside a pill. */
       const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
-      const seasonPill=seasonShort(seasonFull);
+      const seasonPill=seasonShort(seasonFull,48);
       const facts=[v.hours?v.hours+(/\bh|hour/i.test(String(v.hours))?"":" hr"):null,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
       return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
@@ -2141,9 +2141,33 @@ function descentBeta(r){if(!r)return "";const a=String(r.descent||"").trim(),b=S
    wrapped over the cover photo and pushed the box open. The full text still shows in the season chip
    and CLIMATE & SEASON on the Conditions tab; the header only needs the window. */
 const _MON="Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?";
+/* A window can end on a SEASON as well as a month. "August to autumn", "Spring to autumn",
+   "Late summer into early September" are all real windows a climber can act on, and the
+   month-only pattern saw none of them — 50 of the 132 approach seasons that fell through to
+   the blunt truncation had a perfectly good window sitting in the text. Kept separate from
+   _MON so the two can be reasoned about apart. */
+const _SEAS="spring|summer|autumn|fall|winter";
+const _WHEN="(?:"+_MON+"|"+_SEAS+")";
 const _QUAL="(?:mid\\/late|early\\/mid|early|mid|late)[- ]?";
-const SEASON_WINDOW_RE=new RegExp("(?:"+_QUAL+")?(?:"+_MON+")\\s*(?:[-\u2013\u2014]|to|through|thru)\\s*(?:"+_QUAL+")?(?:"+_MON+")","i");
-function seasonShort(s){if(!s)return "";s=String(s).trim().replace(/\s+/g," ");if(s.length<=30)return s;const m=s.match(SEASON_WINDOW_RE);if(m)return m[0];const cut=s.split(/[;.(]/)[0].trim();return cut.length<=30?cut:cut.slice(0,29).replace(/[\s,;-]+$/,"")+"…";}
+const _SEP="\\s*(?:[-\u2013\u2014]|to|through|thru|into)\\s*";
+const SEASON_WINDOW_RE=new RegExp("(?:"+_QUAL+")?(?:"+_MON+")"+_SEP+"(?:"+_QUAL+")?(?:"+_MON+")","i");
+/* The same shape, but allowing a SEASON at either end. It is deliberately a SECOND pattern
+   tried AFTER the clause cut, not a widening of the first, and that ordering is the whole
+   point: widening the primary pattern regressed the header strap, because it started firing
+   on values whose first clause was already the better answer.
+   "Summer (rock) or late winter-spring (ice/mixed)" showed "Summer" and became
+   "late winter-spring" — the strap telling a climber a summer rock route is a winter route.
+   Measured, not spotted by eye; 13 header values moved and that one was plainly wrong. */
+const SEASON_WINDOW_WIDE_RE=new RegExp("(?:"+_QUAL+")?"+_WHEN+_SEP+"(?:"+_QUAL+")?"+_WHEN,"i");
+/* `max` is per CALL, because the two places this renders have different room. The HEADER STRAP
+   sits beside elevation and pitch count and wants 30; the APPROACHES pill owns its own row and
+   can hold more, and 33 of the 132 approach seasons that were being truncated already fitted 48
+   characters — chopped for no reason but a budget borrowed from the other surface. 48 is also
+   what check:token-boxes still counts as a token rather than a paragraph, so a value shown in
+   full here can never trip that guard.
+   The last resort now breaks on a WORD boundary: "Roughly January through the…" reads as a
+   sentence that stops, where "Roughly January through the e…" reads as a bug. */
+export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)return "";s=String(s).trim().replace(/\s+/g," ");if(s.length<=lim)return s;const m=s.match(SEASON_WINDOW_RE);if(m)return m[0];const cut=s.split(/[;.(]/)[0].trim();if(cut.length<=lim)return cut;const w2=s.match(SEASON_WINDOW_WIDE_RE);if(w2)return w2[0];const w=cut.lastIndexOf(" ",lim-1);const keep=w>Math.floor(lim/2)?cut.slice(0,w):cut.slice(0,lim-1);return keep.replace(/[\s,;-]+$/,"")+"…";}
 /* Route tags — list membership ("Fifty Classic Climbs", "Bulger"), what the climbing is
    like (from routes.features), and the derived warnings. Rendered from the SAME slugs
    Challenges and Lists match on, so a chip a climber can see is a chip a challenge can
