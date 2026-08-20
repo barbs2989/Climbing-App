@@ -31,6 +31,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
@@ -1940,6 +1941,27 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
     predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
     the direction that teaches people to ignore it), and renaming the heading.
+- **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
+  carries no sources — nothing asks a climber where their information came from, and nothing tells
+  them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
+  which is the entire argument for a script over a note: `verif.source` (rendered as
+  *"Unverified · Mountain Project + AAJ"*, and on 13 DB rows an internal review note that named
+  sources and leaked working language at climbers), the tick lists' own `source`, and
+  `itinerary.sourceNote`. The first sweep searched for the **word** "Source" and for identifiers it
+  had already found, so it walked past a field named `source` doing the same job elsewhere. Static
+  (Babel), so it sits in `npm run build`.
+  - **The rule is structural, and the precision is the point.** It flags a JSX expression that
+    EVALUATES to a property named `source`/`sources`/`sourceNote`. It deliberately does not flag
+    **"Water sources"** — a different meaning of the word, twelve times over in real climbing copy —
+    nor `re.source`, nor the provenance chip's `title="How this section was sourced: …"`, which is a
+    kept feature that names no source. A guard that flags correct work teaches people to ignore it.
+  - **A conditional whose BRANCHES are literals passes**, because the field is only the test:
+    `wp._source==="logged" ? "✓ From a logged climb" : "Submitted"` renders authored strings, not
+    provenance. Internal edit provenance is fine as long as it does not reach the screen verbatim.
+  - Fails **closed**: fewer than 5 files parsed, or fewer than 500 rendered expressions seen, is a
+    broken traversal rather than a clean app (it sees 4,461 today).
+  - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from
+    #1069 and #999, and case 3 must **pass**.
 - **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
   nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
   `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
