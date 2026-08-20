@@ -8789,3 +8789,51 @@ Web access this run: WebSearch did all the load-bearing work; WebFetch was block
 domain attempted (peakbagger.com, summitpost.org), consistent with every prior run's notes.
 
 Next batch continues alphabetically after `wa_forbidden_peak_east_ridge` (see progress file).
+
+## Batch 128 — pass 3 (2026-08-20)
+
+Routes: Forbidden Peak (North Ridge, Northeast Face, Northwest Face, West Ridge), Fortress
+Mountain (East Ridge, Northeast Face, Southwest Face), Fortune Peak (East Slope, Standard
+Route) — 9 routes across 3 peaks. This exact set was covered in pass 1 (batch 12) and pass 2;
+re-checked whether those fixes held and looked for new drift rather than re-litigating settled
+facts.
+
+**Confirmed error → fix in `sql/2026-08-20-batch-128.sql`:**
+- Fortune Peak, both routes (`wa_fortune_peak_east_slope`, `wa_fortune_peak_standard_route`):
+  the top-level `permit` column is NULL on both, even though each row's own
+  `access.permit` sub-field already correctly states a free self-issue Alpine Lakes Wilderness
+  permit is required at the Esmeralda Trailhead (confirmed against the USFS Okanogan-Wenatchee
+  Esmeralda Trailhead page: self-issue wilderness permit + separate $5/day or $30/yr day-use
+  fee). `RouteDetail.jsx`'s PERMIT box (~L1872) reads `route.permits` directly with no fallback
+  to `route.access.permit`, unlike the edit-form's own `cur:` default a few hundred lines up
+  which already falls back correctly — so that box renders nothing on either route today. Wrote
+  the already-verified `access.permit` value into the column the screen actually reads, per the
+  "before writing prose into a column, check where it renders" rule (CLAUDE.md, enrichment
+  section). Did not touch `RouteDetail.jsx` itself (app code is out of scope for this audit).
+
+**Confirmed correct, no action (re-verified against pass-1/pass-2 fixes, still holding):**
+Forbidden Peak elevation 8,815 ft and all four FA records — North Ridge (Beckey, Schwabland,
+Wilde, June 8 1952), Northeast Face (Cooper & Ferguson, Sept 15 1961), Northwest Face (Beckey &
+Cooper, July 1959), West Ridge (Anderson, F. Beckey, H. Beckey, Crooks, Lind, June 1 1940) —
+all match Wikipedia/AAC Publications/multiple independent sources on party and date. Fortress
+Mountain elevation 8,679 ft (Wikipedia; matches the pass-1 fix, still consistent across the
+area row and all three routes) and summit coordinates (48.15917, -120.93389, matches Wikipedia
+to 5 decimal places). Fortune Peak elevation 7,382 ft (Wikipedia). Fortress Mountain's
+Northeast Face→"Northeast Ridge" rename from pass 1 is still live with its `corrections` note
+intact. Trinity/Buck Creek Trailhead trail numbers (#1550 Chiwawa River, #1513 Buck Creek) and
+elevation (~2,800 ft) match USFS/Mountaineers pages.
+
+**Still flagged, not newly resolved (already on record from earlier passes, no new evidence
+this run):** Fortress Mountain East Ridge's `loss_ft` (7,900) still exceeds its own `gain_ft`
+(5,884) and sibling Southwest Face's `loss_ft` (6,000) for the same trailhead/summit pair with
+no alternate descent described — still no confirmed replacement value. Fortress Mountain
+Northeast Face's `access.land_manager` (single forest) vs `access.landManager` (adds Mt.
+Baker-Snoqualmie NF) conflict — general sources confirm the *peak* straddles both national
+forests, but confirming the Forest Service's actual ranger-district boundary against this
+specific ridge line was not possible this run (fs.usda.gov and wikipedia.org both blocked for
+direct WebFetch; WebSearch summaries weren't precise enough to adjudicate) — left flagged.
+
+Web access this run: WebSearch worked for everything above; WebFetch was blocked for every
+domain attempted (en.wikipedia.org, summitpost.org, fs.usda.gov), consistent with prior runs.
+
+Next batch continues alphabetically after `wa_fortune_peak_standard_route` (see progress file).
