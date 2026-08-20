@@ -787,6 +787,38 @@ a build error, but a screen that renders wrong or not at all.
     - Twice during this work a plausible story about this screen was wrong and only measurement
       settled it (the flex-stacked `Routes` / `next door ›` spans; and "+5 controls must be the
       four report rows"). On this component, do not reason from the markup or the counts.
+    - **NARROWED 2026-08-20: the COMPONENT is sound, so the remaining unknown is app wiring
+      alone.** `scripts/oneoff/probe-arealatest-ssr.mjs` renders `AreaLatest` directly with
+      `renderToStaticMarkup` — no browser, no dev server — and it produces a full section for
+      every seed area tried: `kings` 5,539 chars, `olympus` 3,435, `lcc` 4,488, `lcc_egg`
+      3,449, heading present in all four. So *"the component will not render for this data"* is
+      **dead**, and every browser attempt that failed was failing on the mount, not the render.
+      That distinction is what four consecutive browser attempts could not separate.
+    - **The gate is `routeView==="areas" && selArea`, and `routeView` DEFAULTS to `"areas"`** —
+      so that half is satisfied out of the box, and `selArea` is the only variable. Which makes
+      the `?za=1` result stranger, not clearer: it set `selArea` (verified: *Kings Peak*) and the
+      tab still rendered 979 characters, i.e. the `{selArea?null:<AreaBrowse/>}` branch — the one
+      that only shows when `selArea` is **falsy** at render time. Something is clearing or not
+      committing it; that is where the next attempt should start.
+    - **Four attempts, all measured, none reaching it**: the `?za=1` opener; and driven browse
+      paths to *Mount Olympus* (peak), *Little Cottonwood Canyon* (canyon) and *The Egg* (crag —
+      whose row is not even present under LCC). The drive itself works and navigates correctly
+      (`scripts/oneoff/probe-drive-to-area-latest.mjs` reports body length and heading at every
+      step); the first version of it simply aimed wrong, descending greedily into *White Pine
+      Boulders*, which carries no `activity` at all.
+    - **Aim at an area that HAS reports, computed rather than guessed.**
+      `scripts/oneoff/probe-which-area-has-activity.mjs` bundles core with esbuild and prints
+      every seed area whose subtree holds dated activity, with its click path: `kings` (5),
+      `mount_baker` (3), `olympus` (3), `angels` (2), `lcc_egg` / `lcc_crescent` /
+      `lcc_secret_garden` (3 each), `lcc_hellgate` (2), `co_telluride` (2). Two esbuild traps it
+      encodes: `--platform=neutral` cannot resolve Supabase's subpackages (use `node`), and
+      `lib/supabase.js` reads `import.meta.env` at module scope, so `--define:import.meta.env={}`
+      is required or the import throws before `ROUTES` is reachable.
+    - **An open question this raises and does NOT answer: does any real user ever see this
+      section?** A working, data-backed component that neither a state injection nor three driven
+      browse paths could put on screen is at least suspicious. That is a claim about the app, not
+      about the guard, and it is deliberately not asserted here — establishing it needs the
+      wiring question above settled first.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
