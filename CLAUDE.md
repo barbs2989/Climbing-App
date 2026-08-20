@@ -74,6 +74,7 @@ npm run check:read-failures # no failed read that a caller reads as an empty one
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:migrations # two migrations must never share a number (in build)
+npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
@@ -1124,6 +1125,51 @@ a build error, but a screen that renders wrong or not at all.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
+- **`check:rls`** guards three database-security invariants that were each broken in production,
+  and which **58 existing guards could not see** — not one of them was about RLS. All six defects
+  the 2026-08-19/20 audit found were on tables holding **zero rows**: a policy that has never been
+  asked to refuse anything has never been tested, and 21 of the 32 tables `lib/db.js` writes were
+  in that state. Static (migration files only — no DB, no network), so it sits in `npm run build`.
+  - **Rule 1 — a self-comparison inside a policy (`0163`).** `0042` wrote
+    `exists (select 1 from crew_members m where m.crew_id = crew_id ...)` meaning
+    *`crews_messages`*`.crew_id`. The subquery selects **from `crew_members`**, so the bare name
+    binds to the **inner** table and Postgres stored `m.crew_id = m.crew_id` — true for every row.
+    The membership test collapsed from "a member of THIS crew" to "a member of ANY crew", so any
+    confirmed member could post into any crew's chat. The SELECT policy two lines above qualified
+    its column and was correct, which is why **reads were scoped and writes were not**. The rule is
+    precise rather than heuristic: `alias.col = col` never means anything, so there is no correct
+    code it can flag.
+  - **Rule 2 — a `SECURITY DEFINER` function that does not list `pg_temp` (`0171`).** 14 were
+    wrong, and **seven of those said `set search_path = public`, which READS AS PINNED AND IS
+    NOT** — Postgres searches the temp schema **first**, ahead of everything in `search_path`,
+    whenever `pg_temp` is not itself named. `handle_new_user` was in that false-comfort group.
+    Injection case 3 exists for exactly this half, because a first draft only tests for *absent*.
+  - **Rule 3 — a table that never enables RLS.** No defect found (all 39 were enabled), but the
+    anon key ships in the bundle, so a table without RLS is world-readable. Cheap to assert,
+    unrecoverable to miss.
+  - **End-state REPLAY, never a syntax lint.** Most `create function ... security definer` in these
+    files set no `search_path`, because `0171` pinned them with `ALTER` afterwards — a rule
+    demanding the setting inside each `CREATE` would fail ~17 correct historical migrations, the
+    [[a-new-gate-breaks-work-already-in-flight]] trap. Every rule replays all files in order and
+    judges each object's **final** state, the technique `check:approve-route-columns` already uses.
+  - **It went BLIND to 35 policies in draft and still printed `ok`** — including the two it exists
+    to protect. Migrations are written `drop policy if exists "x"; create policy "x"`, and the
+    first version collected every CREATE and *then* applied every DROP, so the drop deleted the
+    policy the file had just rewritten. Events are now applied **in statement order**. Nothing
+    about the run looked wrong; it was caught only by diffing the parsed set against `pg_policy` on
+    the live database — **79 parsed against 114 live**. Now 122 = 114 public + 8 `storage.objects`,
+    with **zero** live-but-unparsed. Re-run that diff after any change to the parsing.
+  - A dropped table takes its policies with it, or the guard keeps checking policies on tables
+    nobody can fix (measured: `account_links` kept two after #1141 removed account linking).
+  - Fails **closed** three ways — zero tables, zero policies or zero definer functions parsed are
+    each reported as a broken scan, never a clean tree. `RLS_EXEMPT` is empty today and a **stale**
+    entry fails in both directions.
+  - **The live-catalog version of this check cannot run in CI**, which is why it is static:
+    PostgREST does not expose `pg_catalog`, and this repo's rule is that CI never holds privileged
+    credentials. Catching the shape where it is *written* is better than catching it in the
+    database a day later anyway.
+  - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
+    reproduced by un-qualifying `0163`.
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
