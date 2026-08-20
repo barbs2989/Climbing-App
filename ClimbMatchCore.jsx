@@ -451,10 +451,20 @@ function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
    One builder, used by both maps, so they cannot drift the way the three copies of WP_STYLE did.
    The FILL is solid rather than the legend's 13% tint because a tint is illegible over terrain
    tiles; colour and glyph — the two things that identify a type — are the same in both places. */
-function wpDivIcon(L,t,size,ring){
+function wpDivIcon(L,t,size,ring,derived){
   const s=size||20,col=wpColor(t),g=wpGlyph(t),bw=ring?3:2;
+  /* DERIVED markers are hollow and dashed; RECORDED ones are solid. That is a visual grammar rather
+     than decoration: a point the app worked out (a trailhead known only from approach_logistics, a
+     peak coordinate) must not read as an N+1st pin that somebody surveyed and put in the WAYPOINTS
+     list. Hollow-and-dashed is the language #1185 chose for exactly that distinction; carrying the
+     glyph and the type colour is what keeps it inside the legend instead of being a mystery dot.
+     The hollow form is also the LEGEND ROW's own look — tint, coloured border, coloured glyph — so
+     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart. */
+  const box=derived
+    ?'background:'+col+'22;border:'+bw+'px dashed '+(ring||col)+';color:'+col
+    :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
   return L.divIcon({className:"",iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2],
-    html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';box-shadow:0 1px 3px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1;color:#fff">'+g+'</div>'});
+    html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;'+box+';box-shadow:0 1px 3px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1">'+g+'</div>'});
 }
 /* type -> colour, for the call sites that index a plain map (`wc[wpType(wp)]`, `wc.Summit`).
    Index it with `wpType(w)`, NEVER the raw `w.type`. Both Leaflet marker call sites did the

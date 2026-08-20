@@ -65,6 +65,16 @@ ok(big.iconSize[0] === 28 && big.iconAnchor[0] === 14, "an explicit size still c
 const ringed = wpDivIcon(L, "Summit", 28, "#3b89f7");
 ok(String(ringed.html).includes("#3b89f7"), "the active ring colour reaches the markup");
 
+// The DERIVED variant: hollow and dashed, so a point the app worked out cannot read as a pin
+// somebody surveyed — but still carrying the glyph and the type colour, so it stays inside the
+// legend rather than being a mystery dot.
+const der = wpDivIcon(L, "Trailhead", 22, null, true);
+const sol = wpDivIcon(L, "Trailhead", 22);
+ok(/dashed/.test(String(der.html)), "a derived marker is DASHED, so it does not read as a recorded pin");
+ok(!/dashed/.test(String(sol.html)), "a recorded marker stays solid");
+ok(String(der.html).includes(WP_STYLE.Trailhead.glyph) && String(der.html).includes(WP_STYLE.Trailhead.color),
+  "the derived marker still carries its glyph and type colour, so the legend explains it");
+
 // Fail closed: a stub that silently produced nothing would pass every test above vacuously.
 ok(String(probe.html).length > 80, "the icon markup is non-trivial (a broken lift would render nothing)");
 
