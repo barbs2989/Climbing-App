@@ -3265,6 +3265,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     side of the range, which is exactly *why* no copy was possible. **"A sibling carries a block" is
     not "a donor exists."** It now refuses only on a sibling block naming a road the route's own
     prose names, and prints the different-road case as the reason a researched write was needed.
+- **AN ADMISSION THAT NOTHING IS KNOWN IS EVIDENCE; AN ADMISSION FOLLOWED BY SPECULATION IS A
+  DEFECT — and the second one printed an affirmative safety claim.** `wa_don_t_climb_that_she_said`'s
+  `approach` opened *"No route-specific trailhead or approach beta … turned up anywhere online"* and
+  then carried on for another 636 characters inventing one, ending **"nothing resembling glacier
+  travel, creek fording, or avalanche terrain given the minimal distance and zero gain."**
+  - **The row contradicts itself.** Its own overview places the boulder *"beside the White Chuck
+    Glacier basin, climbed almost in passing by parties on Glacier Peak's standard south-side
+    approach"* — a multi-day glaciated walk with real avalanche exposure. The `dist_km` 0.97 the
+    claim reasons from is the step **from a high camp**, not from a road. Same family as **#641**,
+    where a missing approach and a zero approach became indistinguishable and the return tile went
+    green: a number that means *"unknown"* read as *"none"*.
+  - The repair is a **prefix truncation** and the script asserts the result is a prefix of the
+    original, so it structurally cannot rewrite prose — the same constraint that made the
+    `audit:approach-scope` batches safe, and for the same reason (trimming interior sentences
+    strands the connectives around them).
+  - **The class is ONE, measured before acting**: across 8,365 WA routes, **13** carry a documented
+    negative — correct, and CLAUDE.md already records that writing over one is fabrication — and
+    **2** go on to speculate. The second, `wa_the_pyramid_picket_east_ridge`, is deliberately left
+    alone: *"parties would likely use the same general approach as the neighbouring route"* is a
+    **stated uncertainty**, and deleting it would remove an honest hedge.
+  - **The probe still flags 2 after the fix, and tightening it to print 0 would be fitting it to the
+    answer.** The hedge word is identical in the honest and the invented case (*expect*, *likely*,
+    *reads like*) — the retained admission itself contains *"reads like"*. The real discriminator is
+    whether a sentence asserts **terrain the row has no source for**, which no regex can see. It
+    stays a two-row reading list.
   **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
   area carries a researched block for that same road. (A) is evidence about *this* route; (B)
   supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a
