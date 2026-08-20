@@ -459,7 +459,18 @@ function wpDivIcon(L,t,size,ring,derived){
      list. Hollow-and-dashed is the language #1185 chose for exactly that distinction; carrying the
      glyph and the type colour is what keeps it inside the legend instead of being a mystery dot.
      The hollow form is also the LEGEND ROW's own look — tint, coloured border, coloured glyph — so
-     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart. */
+     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart.
+
+     WHO IS DERIVED, TODAY: the `hasPeak` fallback marker. It draws the MOUNTAIN's coordinate out of
+     `areas` when the route has no track and no waypoints of its own — a location the app worked out
+     to show you roughly where the climb is, not a point anybody surveyed for this route. The track
+     endpoints are NOT derived and stay solid: somebody walked that line, so its first and last
+     points are recorded observations.
+
+     #1185 (open) adds a derived TRAILHEAD marker and currently draws it as a dashed circleMarker
+     with no glyph — a colour-only dot the legend cannot explain, which is the defect the glyph work
+     removed everywhere else. It should call wpDivIcon(L,"Trailhead",22,null,true). Left for that
+     PR rather than edited underneath it. */
   const box=derived
     ?'background:'+col+'22;border:'+bw+'px dashed '+(ring||col)+';color:'+col
     :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
@@ -1302,7 +1313,7 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     hit.bindPopup(html);hit.bindTooltip(label,{direction:"top"});hit.addTo(map);
     const mk=L.marker([wp.lat,wp.lng],{icon:wpDivIcon(L,wpType(wp)),keyboard:false});
     mk.bindPopup(html);mk.bindTooltip(label,{direction:"top"});mk.addTo(map);markersRef.current[wi]=mk;
-    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
+    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
   const locate=()=>{if(!navigator.geolocation){setGeoErr("Location isn’t available on this device.");return;}setLocating(true);setGeoErr("");navigator.geolocation.getCurrentPosition(pos=>{setLocating(false);const L=window.L,map=mapRef.current;if(!L||!map)return;const la=pos.coords.latitude,ln=pos.coords.longitude,ac=pos.coords.accuracy||50;if(userRef.current){userRef.current.setLatLng([la,ln]);}else{userRef.current=L.circleMarker([la,ln],{radius:7,color:"#ffffff",weight:3,fillColor:C.green,fillOpacity:1}).addTo(map).bindTooltip("You are here",{direction:"top"});}if(accRef.current){accRef.current.setLatLng([la,ln]).setRadius(ac);}else{accRef.current=L.circle([la,ln],{radius:ac,color:C.green,weight:1,fillColor:C.green,fillOpacity:0.12}).addTo(map);}map.setView([la,ln],13);setLocatedOnce(true);},err=>{setLocating(false);setGeoErr(err&&err.code===1?"Location permission denied — enable it to see where you are on the route.":"Couldn’t get your location right now.");},{enableHighAccuracy:true,timeout:12000,maximumAge:30000});};
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
@@ -2929,7 +2940,7 @@ function LogAscent({route,onClose,onSave,connections,existing,onDelete,onAddBail
     </div>
   </div>,document.body);
 }
-function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catchCredits,onMessage,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById}){
+function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catchCredits,onMessage,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById,logsUnavailable,connectionsUnavailable}){
   const board=rankBoard,setBoard=setRankBoard;
   const [scope,setScope]=useState("overall");const [lbN,setLbN]=useState(15);
   const [areaId,setAreaId]=useState("usa");
@@ -3030,6 +3041,12 @@ function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catc
   const showMe=meIdx>=100;
   const myByRoute={};if(cur.routes)(logs||[]).forEach(l=>{if(l.routeId)(myByRoute[l.routeId]=myByRoute[l.routeId]||[]).push(l);});const rr=cur.routes?[...scopeRoutes].map(r=>{const a=(r.activity||[]).concat(myByRoute[r.id]||[]);const st=a.length?a.reduce((q,x)=>q+(x.stars||0),0)/a.length:0;return {r,reps:a.length,st};}).sort((a,b)=>b.reps-a.reps||b.st-a.st).slice(0,40):[];
   return (<div>
+    {/* Your OWN row is `{...ME,routesLogged:logs.length,vertYr,...}`, so a failed climb_logs read
+        does not blank this board -- it silently reports you as having climbed nothing and drops
+        you down it. The "0 climbs to go" shape again, on a screen whose whole subject is counts.
+        `check:outage` measured the screen changing and saying nothing; this is what changed. */}
+    {logsUnavailable?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own standing here is understated — this is not your real position.</div>:null}
+    {(connectionsUnavailable&&scope==="friends")?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your friends, so this board is unread rather than empty.</div>:null}
     <div style={SZ1}>{SCOPES.map(x=>{const on=scope===x[0];return <button key={x[0]} onClick={()=>setScope(x[0])} style={{flexShrink:0,padding:"7px 9px",borderRadius:16,border:`1.5px solid ${on?C.blue:C.border}`,background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:13,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"}}>{x[1]}</button>;})}</div>
     {scope==="near"?<div style={{marginBottom:10}}><div style={{fontSize:11.5,color:C.textMuted,marginBottom:7}}>{"Climbers based near "+ME.location}</div><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:7}}><span style={{fontSize:12.5,color:C.textSub,fontWeight:600}}>Distance</span><span style={{fontSize:13,fontWeight:700,color:C.blue}}>{!haveMyLoc()?"Needs your location":radiusMi>=9000?"Any distance":("Within "+uDistMi(radiusMi))}</span></div><input aria-label="Search radius in miles" type="range" min={10} max={260} step={10} value={radiusMi>=9000?260:radiusMi} onChange={e=>{const v=+e.target.value;setRadiusMi(v>=260?99999:v);}} style={{width:"100%",accentColor:C.blue,cursor:"pointer"}}/></div>:null}
     {scope==="area"?<div style={{marginBottom:10}}><div style={{display:"flex",alignItems:"center",gap:5,flexWrap:"wrap",marginBottom:aKids.length?8:7}}>{aChain.map((a,i)=><span key={a.id} style={{display:"flex",alignItems:"center",gap:5}}>{i>0?<span style={{color:C.textMuted,fontSize:12}}>›</span>:null}<span {...clickable(()=>{if(i<aChain.length-1)setAreaId(a.id);})} style={{fontSize:13,fontWeight:i===aChain.length-1?"700":"600",color:i===aChain.length-1?C.amber:C.blue,cursor:i<aChain.length-1?"pointer":"default"}}>{a.name}</span></span>)}</div>{aKids.length>0?<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{[...aKids].sort((a,b)=>acount(b.id)-acount(a.id)).map(a=><button key={a.id} onClick={()=>setAreaId(a.id)} style={{padding:"9px 11px",borderRadius:14,border:`1px solid ${C.border}`,background:C.surface,color:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>{a.name} <span style={{color:C.textMuted,fontWeight:400}}>{acount(a.id)}</span> ›</button>)}</div>:null}<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4,marginTop:aKids.length?9:7}}>Climbers with objectives in <span style={{color:C.amber,fontWeight:700}}>{aCur.name||"the USA"}</span> · {acount(areaId)} route{acount(areaId)!==1?"s":""}{aKids.length?" · tap a sub-area to narrow":""}.</div></div>:null}

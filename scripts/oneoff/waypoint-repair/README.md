@@ -33,6 +33,9 @@ None of these scripts uses an agent. Each locates a pin from a public record and
 | `triage-gazetteer.mjs` | splits gazetteer hits by feature GEOMETRY — point vs linear vs areal |
 | `measure-remaining.mjs` | how much is left — compares against the ORIGINAL coordinates |
 | `measure-confirmed-pin-elevations.mjs` | does the ground agree with the repaired pins? |
+| `confirm-elev-coords.mjs` | re-asks the authority: is this coordinate fixed by a NAME, or computed? |
+| `apply-elevations.mjs` | writes the ground elevation onto confirmed coordinates (`--apply`) |
+| `verify-elev-writes.mjs` | reads every waypoint of every touched route back through anon |
 | `reconcile-count.mjs` | PATCHes issued vs pins that actually moved |
 
 Solvers are read-only and print a dry run; `--apply` writes. Every write is re-read through the
@@ -149,3 +152,40 @@ It also sizes the thing every solver deliberately left behind. The applier print
 ONLY defect on them, and it is a separate repair against a separate column"* — that is **13 pins**,
 not a class, and `audit:waypoint-elevations` runs at `TOL = 2000` precisely because a tighter bound
 over pins with *fabricated* coordinates measures the wrong place.
+
+## …and 7 of those 13 are now repaired
+
+The question is never "is the gap big?" — it is **is the COORDINATE fixed by a name, or was it
+computed?**
+
+- **Fixed by a name** (a camp, a lake, a trailhead matched to a named record) — the position is
+  settled independently of any elevation, so a ground contradiction indicts the **elevation**.
+- **Computed** (a ford, a trail junction found by intersecting two geometries) — the coordinate and
+  the elevation come out of the same act, so a contradiction indicts the **coordinate**. Leave both
+  alone: writing an elevation there would make a possibly-wrong pin internally *consistent*, which is
+  worse than leaving it visibly odd.
+
+`confirm-elev-coords.mjs` decides that by **re-asking the authority at the coordinate the row holds
+today** rather than by reading the pin's name — gate 6 again. **7 of 13 came back confirmed, every one
+at 0 m**; the 6 that did not are the two trail junctions, the ford, and three others, all untouched.
+
+**Run ONE rule over the whole set.** A first pass split them — 4 decided from solver provenance, 9
+from the re-query — and the two procedures **disagreed on `Upper Dungeness Trailhead`**: provenance
+said write, the authority found no named feature within 200 m. Provenance says which script wrote a
+pin, not whether the coordinate is confirmable now. Two decision procedures for one question is how a
+wrong answer gets in through the weaker one.
+
+### One PATCH per route, and the verify step is what caught it
+
+`patchRow` rewrites the **entire** `waypoints` array. Two pins on the same route patched separately
+each send an array built from the *same stale read*, so **the second write silently reverts the
+first**. `wa_mount_duckabush_standard` has pins 2 and 3 in this batch: pin 3 was written, then pin 2's
+patch put pin 3's original 3600 back. Both PATCHes returned 200.
+
+Nothing about the run looked wrong. It was caught only because a write is never counted until it has
+been **read back through the anon role**, and `verify-elev-writes.mjs` checks *every* waypoint on
+every touched route rather than only the edited ones — the risk a per-pin check cannot see is a
+**neighbour** that moved. Final state: 7 written and verified, **0 collateral changes**.
+
+`elev` is in **FEET**. `elevM` is a legacy metric spelling the read side converts; the write side must
+never touch it, and a pin carrying one is refused rather than guessed at.

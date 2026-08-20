@@ -59,6 +59,7 @@ npm run check:function-drift # is the LIVE function the one the migrations descr
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
+npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
@@ -593,16 +594,66 @@ a build error, but a screen that renders wrong or not at all.
   - Two fixture modes, exactly as `check:signed-in`: per-run accounts on the **service key**
     locally, two **durable** accounts on the **anon key** in CI. That rule is why this could not
     be lifted out of `scripts/oneoff/` unchanged — it called `createFixture` unconditionally.
-  - Fails **closed** five ways, because every one of them prints identically to a clean app: the
+  - Fails **closed** six ways, because every one of them prints identically to a clean app: the
     healthy run not booting (no control), the failing run not booting (a boot failure is not a
-    data verdict), nothing intercepted, fewer than three screens differing, and an unreachable
-    database — `assertDbReachable` runs first so an outage reads as *the database is down* rather
-    than as the author's regression.
+    data verdict), nothing intercepted, fewer than three screens differing, a sub-tab click that
+    did not land, and an unreachable database — `assertDbReachable` runs first so an outage reads
+    as *the database is down* rather than as the author's regression.
+  - **THE COVERAGE GAP IT DECLARED WAS NOT EMPTY, and closing one sentence of it found four more
+    false statements.** The entry below used to say a further sub-tab is out of frame. The Crew
+    tab has **four** sub-views and this walked one: `crewView` defaults to `"crews"`, so Friends,
+    Groups and Requests were three screens no outage run had ever opened — and a screen that is
+    never opened has no findings for the same reason an empty query has no rows. Each is fed by
+    its own unflagged query, and each asserts absence in its own words: *"No friends yet"*,
+    *"0 joined"* / *"No groups yet"*, and **"No crew invites"** — which is the very sentence #734
+    already shipped over a real invite, arrived at from the read side this time.
+    - All three fail the same way and it is the shape this file keeps recording: the state is
+      hydrated by an effect that **returns early on a miss** (`if(accepted.length)`,
+      `if(!uid||!myGroupsQ.data)return;`) or read through a `||[]`, and sign-in clears it — so a
+      failed read and a genuinely empty account leave byte-identical state.
+    - Reached by **accessible name**, never by text: the badge count renders inside the button, so
+      `textContent` is `"Friends2"`. The count is in the `aria-label` too, and an outage empties it
+      back to a bare `"Friends"` — so the selector must accept both, which is what `tapByName`'s
+      `^label(,|$)` anchoring is for. **A selector demanding the count could not find the control
+      in exactly the state this guard creates.** That helper moved to `scripts/lib/tap-by-name.mjs`
+      rather than being copied, so `check:ui` and this cannot drift on how a sub-tab is reached.
+    - A sub-tab click that does not land leaves the **previous** view on screen, which compares
+      clean against its healthy twin and reads as a screen with nothing wrong. That is a
+      fail-closed path, not a note.
+  - **IT WAS WALKING FIVE TABS AND A DUPLICATE, NOT SIX, AND `NAV` HAS SEVEN.** `TABS` ended with
+    `"Me"` — and there is no control anywhere named "Me": `NAV`'s last two entries are labelled
+    **"Ranks"** and **"Profile"**. So that click matched nothing, the previous screen stayed up,
+    the **Logbook was measured twice under two names**, and two real tabs had never been opened.
+    - **The guard's own header called this a LIMITATION and left it**: *"Logbook and Me returned
+      identical text, so the Me click did not land"* — inherited from the probe, true, and read as
+      a quirk of two similar screens rather than as a missing tab. Identical char counts on two
+      different screens is not a coincidence to note, it is a navigation failure.
+    - **The evidence was in the output the whole time.** The per-screen preview filters out every
+      name in `TABS`, and `"Ranks"` and `"Profile"` kept appearing in it — they survived the
+      filter *because the guard did not know they were tabs*.
+    - Nav is clicked **by accessible name** now, and a nav click that does not land is fail-closed
+      like a sub-tab one. Correcting it also fixed a quieter thing: the healthy **Climbs** screen
+      went 554 → 1,293 chars, because the old text-click had been landing somewhere less complete
+      than the real area browser.
+    - **It found a defect on the first run of the corrected list.** `Leaderboards` builds your own
+      row as `{...ME,routesLogged:logs.length,vertYr,daysYr,…}`, so a failed `climb_logs` read does
+      not blank the board — it reports you as having climbed **nothing** and drops you down it,
+      silently. The `"0 climbs to go"` shape on a screen whose entire subject is counts.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
-    is honest. It covers the six tabs, the Logbook's Completed sub-tab and the Home revisit; a
-    surface behind an overlay or a further sub-tab is out of frame, and **4 of 28 query handles in
-    `App` carry a flag** — the rest are mostly lookups where emptiness is never asserted, but that
-    is a list to READ, not a coverage claim.
+    is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
+    sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
+    frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
+    emptiness is never asserted, but that is a list to READ, not a coverage claim.
+  - **NOTHING HAS YET ASKED about the Profile tab's own sections**, and that phrasing is
+    deliberate. `MyFiledReports` (`useMyFiledReports`) and `CatchLedger` (`useBelajCatches`) are
+    DB-backed and unflagged; the run reports Profile as `says-empty=YES` and rule 2 stays quiet
+    because those sections are empty in **both** runs — the fixture has no filed reports and no
+    catches. **An absence the fixture happens to share is unmeasurable, not absent** (the same
+    reason a zero-row column is unguarded by construction in `check:field-renders`).
+    - It IS reachable, though, and the friend-requests fix is the proof of method: the flag keys
+      on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
+      an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
+      on exactly that basis. One query at a time, as this guard's header already insists.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -1185,6 +1236,54 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+- **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
+  SQUASH silently delete what an earlier PR added?** That guard interrogates a **merge commit** —
+  *"every identifier either parent introduced survives"* — but PRs here land as **squash** merges,
+  so main's history contains no merge commit for them and the guard never runs on the thing that
+  actually ships. The recorded incident is exactly that shape: **#778** added a resolver plus three
+  fixes, **#776** was branched from *pre-#778* main, and its squash **reverted all of it** — clean
+  merge, no conflict, every check green, and main went back to shipping the bugs. Report-only,
+  read-only on git; **not a build gate**, because it is a property of HISTORY rather than of the
+  checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
+  - **VALIDATED AGAINST THE REAL INCIDENT, NOT A SYNTHETIC ONE.** Pointed at `53d563e` (#776's
+    commit) with a 3-commit window it reports **`crewMemberById` and `crewMemberUids`, added by
+    #778, removed by #776**, both classified SILENT. That is the strongest form of proof available
+    for a detector whose healthy output is "nothing found": it reproduces a defect that genuinely
+    happened, from history, with no injection.
+  - **AND THE FIRST DRAFT COULD NOT HAVE CAUGHT IT — only that validation showed why.** The patterns
+    tracked `export function` / `export const` / `package.json` entries, while #778's resolver was
+    `const crewMemberById=useCallback(function(id){…})` **inside the App component** — not exported,
+    not top-level. Every pattern walked straight past the one thing that was reverted. A
+    component-scoped helper is *precisely* what a stale-base squash drops, because it is the kind of
+    thing one PR adds and another's copy of the file never had. `hook-const` and a capitalised
+    `fn-decl` were added for that reason.
+  - **A REMOVAL IS NOT A DEFECT**, and that separation is the whole design — code is deleted
+    deliberately all the time, and an audit reporting every deletion is noise nobody reads. It asks
+    whether the removing commit was **about** the thing: named in its subject → *deliberate*; gone
+    in a commit about something else → **SILENT**, which is the shape worth reading.
+  - **Two presence backends, and the fast one is only correct when the checkout IS the ref.** Reading
+    the tree from disk is one pass; `git show` per file was ~1,500 subprocesses and took minutes.
+    Pointing it at any other commit falls back to `git grep` at that sha — slower, and how the
+    historical validation is possible at all. It **fails closed** if the checkout does not match the
+    ref (presence tested against the wrong tree reads as a revert that never happened) and if the
+    grep backend finds nothing at all.
+  - What it does **not** prove, stated in the script rather than implied: that no *behaviour* was
+    reverted. It tracks named definitions, not function bodies, so a merge that keeps a name and
+    drops its guard clause is invisible here — `check:correction-readers` exists for that shape.
+  - **500 COMMITS DEEP: 4 absent, 3 flagged SILENT, and NONE is a defect — the precision is recorded
+    rather than tuned away.** `activeCrewMemberIds` was **#776's own** local helper, dropped by #826
+    when it restored the resolvers #776 had reverted; `listSlug` was consolidated into
+    `routeInList` by #789 (*"One list vocabulary, not two"*), still guarded by `check:route-tags`,
+    120 assertions green; `check-rappel-readers.mjs` was **renamed** to `check-correction-readers.mjs`
+    by #926; `BivyPanel` was correctly classified deliberate and re-mounted. Four items across 500
+    commits is a reading list, not noise — the point is that each is settled in a minute.
+  - **THE OBVIOUS TIGHTENING WOULD HAVE EXCUSED #776 ITSELF, so it was measured and REJECTED.** All
+    three false SILENTs look like supersessions, which suggests excusing a removal when the same
+    commit ADDS a token sharing a significant word (`listSlug`→`routeInList` share *list*;
+    `check-rappel-readers`→`check-correction-readers` share *readers*). But **#776 removed
+    `crewMemberById`/`crewMemberUids` and added `activeCrewMemberIds` in the same commit** — sharing
+    *crew* and *member* — so that rule would have labelled the one real incident a rename and said
+    nothing. A detector tightened until its healthy output is empty is one that no longer fires.
 - **`check:migration-claims`** asks whether two **open PRs** claim the same migration
   number. `check:migrations` already refuses two files sharing a number in the checkout and
   runs inside `npm run build` — but it cannot see this failure, because when either PR is
@@ -1423,10 +1522,39 @@ a build error, but a screen that renders wrong or not at all.
     the mouse-only count, and judging on exit code made a correct run read as a failure.
   - **The baseline is a count, so it does not say what is LEFT — measured, because the
     difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
-    classifies every remaining control by its **measured inline style**, and **58 of 210 are
-    modal backdrops that must never get a tab stop**. The real target is **152**, not 210:
-    `ClimbMatchCore.jsx` 101 real of 129, `ClimbMatch.jsx` 50 of 68, `RouteDetail.jsx` 1 of 8,
-    and all 5 in `lib/` are backdrops. Do not read the baseline as a to-do list.
+    classifies every remaining control by its **measured inline style**. Do not read the
+    baseline as a to-do list.
+  - **THE SWEEP IS FINISHED, and the 62 that remain are all deliberate.** Measured: **58 are
+    modal backdrops** that must never get a tab stop, and the other **4 are avatars sitting
+    beside a sibling that runs the IDENTICAL handler and is already named** — a second tab
+    stop to the same destination is noise, not access. `scripts/oneoff/apply-keyboard-triad.mjs`
+    reports **0 convertible, 0 shadowed callees, 0 undefined handlers** across all three app
+    files. A number here is not a backlog; check what it is a number OF before sweeping.
+  - **The applier resolves the CALLEE through Babel scope, and that is not defensive.** Two
+    scopes in `ClimbMatchCore` declared a **local `clickable` that is a boolean gate**, so
+    wrapping their handlers produced `clickable(<boolean>)` — `"clickable2 is not a function"`,
+    and the error boundary replaced the entire Challenges panel. **`check:refs` passed the
+    whole time**: the identifier WAS bound. A binding check cannot tell *bound* from *bound to
+    something callable*, so scope resolution is the only thing that catches it.
+  - **`onClick={cond?undefined:fn}` is inert as a handler and a CRASH once converted**, because
+    `clickable()`'s key handler calls `onClick(e)` unconditionally. Make the SPREAD conditional
+    (`{...(cond?{}:clickable(fn))}`), which says what the ternary said: with no handler, this is
+    not a control.
+  - **THE NAME CHECK WAS TOO NARROW THREE TIMES, and every one failed CAUTIOUSLY** — a smaller
+    sweep, a plausible-sounding backlog, nothing red. That is why none of them announced itself,
+    and why all three were found by reading real markup rather than by reasoning about the
+    checker. An accessible name is computed from **all descendant text**:
+      - **direct children only** called `<div><div>{pubName(c)}</div></div>` unnamed and hid
+        **22 convertible controls**, which #1054 then reported as needing editorial decisions.
+      - **components stay opaque** — `<Av/>` renders an image with no text, and that IS why the
+        avatar announced as an unnamed button. This one is correct; keep it.
+      - **fragments were not descended** — `<>…</>` has no element name, so a labelled chip read
+        as unnamed.
+  - **Name a control from the expression the row ALREADY renders**, never a restatement:
+    `aria-label={"View "+pubName(c)+"’s profile"}`, so the announced name cannot drift from the
+    visible text when one is edited. Where several identical controls sit in a row, take the
+    index they already have (`"Open photo "+(i+1)`) — a row of identically-named buttons
+    announces as indistinguishable.
   - **Classify by style, never by the handler's name.** Proven on `RouteDetail`:
     `setView(null)` reads like a close button and **is a backdrop**, while
     `setPhotoLightbox({ph,key})` reads the same shape and **is a real control**. Naming would
@@ -2381,8 +2509,9 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
     find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
     result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
-    Coverage went **65% -> 72%**, derivable gain pairs 3,243 -> 3,521, and no new impossible value
-    appeared (camps above their own high point stayed at 16).
+    Coverage went **65% -> 75%** over six passes (501 rows), derivable gain pairs 3,243 -> 3,676,
+    and **no new impossible value appeared at any point** — camps above their own high point
+    stayed at 16 throughout, which is the gates holding rather than luck.
     - **CONTROL FIRST, because the expected output is "a plausible elevation" — which is exactly
       what a broken pipeline emits.** `probe-camp-elev-control.mjs` runs four places of known
       height through the identical path and reproduces all four within **68 ft**: Shield Lake
@@ -2417,6 +2546,33 @@ the correction knows the screen is wrong, and they have no way to report it.
       FEATURE TYPES that discriminate**. Whatcom Pass and Whatcom Camp are two places sharing a
       proper noun. *One distinctive token is not an identity* — the lesson this catalog already
       paid for at the level of whole names, one level finer.
+    - **THE TRAILING DESCRIPTION IS NOT NOISE — IT SAYS WHICH PART OF THE FEATURE YOU MEAN.** Once
+      the solver learned to search the LEADING proper noun ("Reflection Lakes area winter snow
+      camp" -> *Reflection Lakes*, which OSM maps), it also started throwing away the word that
+      says which part. Measured on that run: **5 of 11 results were wrong**, all the same way —
+      *"Iron Peak saddle dry camp"* took Iron Peak's **summit** (6,504 ft), *"Liberty Cap saddle"*
+      took Liberty Cap's summit (**14,118 ft**), *"Goode Glacier moraine"* took the glacier, and
+      *"Curtis Ridge camp"* took an `arete` running ~7,000-12,000 ft on Rainier. Every one had the
+      right name, the right county, a real feature and a real DEM reading.
+      - **The guard for this existed and had the shape of the bug it was guarding against.** It
+        was written *because* the hazard was predicted, then keyed on the `peak` TYPE against a
+        word list omitting `saddle`, with a linear set omitting `arete` and `glacier`. It fired
+        once and let four through — which reads exactly like a working gate. *A deny-list is
+        beaten by one more adjective*, twice in one change.
+      - The fix is structural, not another word: **if anything follows the leading proper noun
+        that names a PART of it, the leading-noun search is not offered at all.** Camp words stay
+        exempt, because "X camp" is the camp AT X rather than a different part of X.
+      - **Reading the output caught it; no gate did.** Only knowing that a saddle sits below its
+        summit separates those five from the six that are right.
+    - **A trailing generic CAMP word must not break an identity match**: "Pelton Basin" was
+      refused while the catalog held "Pelton Basin Camp" at 5,400 ft. Strip camp words from both
+      sides — never a FEATURE TYPE, which is the distinction the loose token gate got wrong.
+      Checked against the known-bad pairs: "Whatcom Camp" still does not equal "Whatcom Pass".
+    - **A statewide retry is gated on UNIQUENESS, not distance.** Some camps are legitimately far
+      from the peak — "Squire Creek Park & Campground" and "Whitehorse Community Park campground"
+      are valley staging a 25 km box can never reach. Widening the box would reopen the namesake
+      hole the box exists to close, so the retry accepts only if **exactly one** feature of that
+      name exists in Washington. One match cannot be the wrong one of several.
     - **Scoping was wrong twice before it was right.** `measure-missing-camp-elevations.mjs` first
       asked only whether another **bivy** entry knew a height (5 names) and never asked the
       **waypoint** store, which is 98% populated — the *check the existing files before
@@ -4057,6 +4213,19 @@ one click past where the probe walks, so nothing had reported it at all.
     does. The caller's `.catch` no-ops, the hydration `useEffect` returns on `!data`, state stays
     `[]`, and every render tests `!x.length` — so **loaded-and-empty and never-loaded are the same
     screen**. Nothing lied; the truth simply never arrived.
+  - **THE CLASS RAN THREE SUB-VIEWS DEEPER, and it was `check:outage`'s own declared coverage gap
+    that said where.** The Crew tab's Friends, Groups and Requests views are each fed by an
+    unflagged query (`useMyConnections`, `useMyGroups`, `useMyCrewInvites`) and each asserts
+    absence: *"No friends yet"*, *"0 joined"* / *"No groups yet"*, *"No crew invites"*. Four more
+    false statements, on a tab the guard already walked — one click in.
+    - **The lesson is about the gap, not the defect.** That guard's closing paragraph named
+      exactly one unchecked thing ("a further sub-tab is out of frame"), and reading it as a
+      worklist rather than as a caveat found real bugs within the hour. A stated limitation is a
+      pointer to work, and this repo has now had the same experience three times — the
+      `AreaLatest` note, the `check:field-renders` zero-row hole, and this.
+    - **A stated gap is only a pointer if somebody re-reads it.** Write coverage limits as
+      *"nothing has asked X"*, never as *"X is out of scope"*: the first invites the next session
+      to go and ask.
   - The repair is `xUnavailable` from that query's **`isError`**, one flag per query — the shape
     #1124 established for crews. `isError` deliberately rather than a blanket "the database is
     down": it is false while a query is in flight, so a slow read still reads as loading. #1140's

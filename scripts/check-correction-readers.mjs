@@ -331,6 +331,30 @@ if (!fns.length) {
 
 const problems = [];
 console.log(`  scanned              : ${fns.length} top-level functions in ${FILE}`);
+
+// HOW MUCH of those files did the scan actually read? This exists because the fail-closed
+// floors already here did NOT catch the destructured-parameter bug: they ask whether the scan
+// found nothing, and it found plenty — 121 functions and 7 rappelDetail readers — while
+// extracting 7.2% of the bytes, because every function with a destructured parameter list had
+// its body read as the parameter pattern. A floor on the COUNT cannot see that; only a floor on
+// the VOLUME can.
+//
+// Measured on the fixed extractor: 263,882 body chars of 489,450 bytes = 53.9%. The remainder is
+// legitimately outside `function` declarations (top-level constants, arrow components). The
+// broken extractor read 7.2%, so 30% separates them with ~1.8x headroom and still tolerates a
+// refactor that moves some code into arrow consts.
+const SCANNED = fns.reduce((n, f) => n + f.body.length, 0);
+const BYTES = FILES.reduce((n, f) => n + fs.statSync(path.join(ROOT, f)).size, 0);
+const PCT = (SCANNED / BYTES) * 100;
+console.log(`  scan volume          : ${SCANNED.toLocaleString()} body chars of ${BYTES.toLocaleString()} bytes (${PCT.toFixed(1)}%)`);
+if (PCT < 30) {
+  console.error(`\n${GUARD} FAILED — the scan read only ${PCT.toFixed(1)}% of ${FILE}.`);
+  console.error("Every rule below asks what a function body contains, so a body that was not");
+  console.error("extracted can neither read a rival column nor consult a guard — it silently");
+  console.error("passes every rule. That is how this guard came to cover 7.2% of its own subject");
+  console.error("while reporting green. Fix the extractor before trusting anything under it.\n");
+  process.exit(1);
+}
 console.log(`  rename map           : ${Object.keys(M).length} entries read from ClimbMatch.jsx's \`var M\``);
 
 // ---------------------------------------------------------------------------------------
