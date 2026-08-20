@@ -75,6 +75,8 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
+npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
+npm run audit:access-prose # road/permit sentences filed in a column that renders elsewhere
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
@@ -2315,6 +2317,74 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
+  paint, and which pins it will silently drop — rather than the geometry question the three
+  waypoint audits ask. It overlaps `audit:waypoints` on two of its three sections and exists
+  for the UI consequence, not the detection; see the honesty note at the end of this entry.
+  - **Two trailhead pins. Candidates, never defects**, and that is measured: of the two routes
+    that have tripped it, **one was a defect and one was correct data**.
+    `wa_mount_ballard_south` carried "Harts Pass" beside "Canyon Creek Trailhead" 18.3 km apart
+    while its approach text names only Canyon Creek and never mentions Harts Pass — wrong, and
+    repaired by **retyping rather than deleting** (`Trailhead/pass` normalises to `Trailhead` in
+    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). But
+    `wa_remmel_mountain_southeast_slope` carries "Thirtymile" and "Andrews Creek" and its own
+    approach describes both in full — *"Via Thirtymile: … Via Andrews Creek: …"* — which is a
+    peak with two genuine approaches, the case the `audit:trailhead-agreement` entry already
+    says not to sweep to zero. **Read the route's prose before touching either pin.**
+  - **Scope it by waypoints, NOT by discipline.** The first version filtered to alpine-family
+    disciplines and reported **zero** two-trailhead routes while `audit:waypoints` reported one:
+    Remmel is a walk-up filed as **`trad`**. A discipline label is not a reliable filter for a
+    question about the map, and none of these three questions is discipline-specific anyway.
+  - **Pins the map silently drops.** `GPXMap` skips `wp.lat == null` without a word, so such a
+    waypoint is listed under the map and absent from it — **40 pins across 16 WA routes** after
+    the repairs below, one of which (`wa_emerald_peak_west_route`) had a *single* waypoint, so
+    its map drew nothing at all.
+    - **`audit:waypoints` already had this category** ("WAYPOINT HAS NO COORDINATE — missing
+      from the map"), and the first draft of this entry claimed no existing audit could see it.
+      That was wrong. What nothing had noticed is the **UI** consequence: the row rendered as
+      ordinary text, so on the page it was indistinguishable from a placed one and tapping it
+      did nothing. The detection existed; the reader-side honesty did not. Check whether a
+      sibling audit already answers your question before claiming novelty for it.
+  - **`Number(null)` is 0, not NaN**, and the first run manufactured a finding because of it —
+    `wa_jack_mountain_northeast_glacier` reported a trailhead disagreement of **12,215 km**,
+    which is the distance from a real pin to (0, 0) in the Gulf of Guinea. A missing blob
+    coordinate had passed a `Number.isFinite` test. Null-check before coercing, and distrust a
+    distance finding that is absurdly large before believing the data is that bad.
+  - `--state all` is not a nicety: `id like 'wa_%'` misses the legacy `rainier_*`/`adams_*` ids,
+    4 of the 1,016 routes carrying waypoints, and they are Rainier and Adams.
+  - Report-only, read-only, fails closed on an empty read.
+- **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
+  somewhere else — the general form of the rule this file already states for `season`, `grade`
+  and `rappels`. **No coverage check can see it**: the column is populated and the prose is
+  accurate, so every existing guard reads it as healthy. Only asking what the sentence is ABOUT
+  separates them.
+  - It splits **DUPLICATE** (road/access already states the fact, so the display column is
+    repeating it) from **MISFILED** (road/access says nothing, so moving it would lose nothing).
+    Read both before changing either — a season sentence may legitimately use the road as its
+    boundary, and deleting it would destroy real seasonal advice.
+  - **`climate` and `timing` were in the first draft and came OUT after measuring**, which is why
+    the column list is short. They are keyed BY SEASON, so
+    `climate.bySeason.winter = "SR-20 closed over Washington Pass"` is not misfiled — it is the
+    correct answer to that field's own question. Between them they produced **693 of 1,017**
+    flags, nearly all of that shape. Measuring the detector's precision took it to **207 flags
+    across 164 routes**. A guard that reports correct work teaches people to ignore it.
+  - It walks a jsonb value's **string leaves**, never `JSON.stringify` output. The first draft
+    split the stringified JSON into "sentences" and produced fragments like
+    `road normally gated until May.","summer":"Warm and dry;` — half a value welded to the next
+    key, which no one wrote and neither test was really measuring.
+  - **The acted-on subset was `season` and only `season`**, because that column renders in the
+    header strap and this file already mandates a window there. 17 values were trimmed
+    ("Jun-Sep (subject to SR-20 seasonal road closure)" → "Jun-Sep"), each only after checking
+    that `road.seasonalGate` already carried the dropped clause in fuller form. 7 were left for
+    hand review because they are not a `<window> (<road note>)` shape — "Often in good condition
+    by May, but the Mowich Lake road frequently doesn't open until early July" is not a window,
+    and rewriting it is an editorial judgement rather than a mechanical trim.
+  - One road has many spellings and they do not compare as strings: `wa_honeymoon_sweet` says
+    "SR-20" in `season` and "State Route 20" in `road.name`, so a raw token test reported the
+    fact as uncovered and skipped a route identical in shape to five it had just trimmed.
+    Normalise both sides — but lift proper-noun road names from the **original** clause, since
+    normalising lowercases and a lowercased clause matches no `[A-Z]` pattern, which silently
+    emptied that half of the coverage test.
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
