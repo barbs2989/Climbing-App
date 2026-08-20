@@ -8837,3 +8837,55 @@ Web access this run: WebSearch worked for everything above; WebFetch was blocked
 domain attempted (en.wikipedia.org, summitpost.org, fs.usda.gov), consistent with prior runs.
 
 Next batch continues alphabetically after `wa_fortune_peak_standard_route` (see progress file).
+
+## Batch 129 — 2026-08-20 (pass 3)
+
+Checked 8 routes across 5 peaks: South Early Winters Spire (Free Mojo), Frenzel Spitz (South
+Route), Little Tahoma (Frying Pan/Whitman Glaciers), Ghost Peak (South Route), Gilbert Peak
+(Conrad Glacier, Meade Glacier, West Route), Glacier Peak (Cool Glacier/Gerdine Ridge).
+
+**Fixed (3):**
+- `wa_ghost_peak_south_route`: `descent_text`'s closing sentence still routed the exit via
+  "the Big Beaver Trail to Ross Lake and the dam" — contradicting this route's own approach
+  text, `approach_logistics.trailhead`, every waypoint, and the itinerary's own final two
+  legs, all of which agree the only access is Hannegan Pass Trailhead (the approach text
+  explicitly says Ross Lake/Big Beaver instead serves Luna Peak and Mount Fury further
+  south). A much earlier batch's note claims this exact contradiction was already fixed once
+  — evidently only part of the paragraph was corrected and this trailing sentence was missed.
+  Rewrote it to match the rest of the row.
+- `wa_gilbert_peak_conrad_glacier` / `wa_gilbert_peak_meade_glacier`: a continuation of a
+  land-manager contamination pattern a prior batch on this same peak already partly fixed —
+  the Cowlitz Valley RD/Gifford Pinchot NF value (correct only for `wa_gilbert_peak_west_route`'s
+  Snowgrass-side approach) had bled onto the two Naches-side Conrad Meadows routes. That
+  earlier fix touched `access.landManager` but missed `access.land_manager` on Meade Glacier
+  — the field `RouteDetail.jsx` actually reads first per `ac.land_manager||ac.landManager`,
+  so the wrong value was the one rendered even though the correct one sat right beside it —
+  and missed `emergency.rangerStation` entirely on Conrad Glacier. Both synced to "Naches
+  Ranger District, Okanogan-Wenatchee National Forest", matching the routes' own Conrad
+  Meadows/South Tieton approach text and the correct value already present elsewhere on both
+  rows. West Route audited clean and independently confirms Cowlitz Valley RD/Gifford Pinchot
+  NF is the correct value for its own genuinely west-side Snowgrass Flat approach — nothing
+  there was touched.
+
+**Investigated, left unchanged:** `wa_glacier_peak_cool_glacier_gerdine`'s FA field reads
+"A. H. Dubor" for a member of the 1897 USGS survey party. This looked at first like the
+misspelling a much earlier batch's note describes catching and fixing DB-wide — but that same
+note's own wording, re-read carefully plus a web check against Wikipedia/USGS-sourced
+material, confirms "Dubor" (the source material actually spells it "DuBor") is the *correct*
+form and "Dubois" was the DB-wide error a later batch fixed by restoring "Dubor". Left as-is;
+recorded here so a future pass doesn't "fix" it back to the wrong spelling a third time.
+
+**Clean, no action:** `wa_free_mojo` (FA, elevation, coordinates all externally consistent —
+Blake Herrington/Graham Zimmerman FA well corroborated); `wa_frenzel_spitz_south_route`
+(remote Southern Pickets objective, appropriately hedged FA attribution, internally
+consistent approach/descent/waypoint chain). `wa_frying_pan_whitman_glaciers` re-verified
+clean against a prior batch's fixes (trailhead, access notes, pitches, gain_ft all still
+holding); its existing `data_quality`-flagged likely-duplicate against
+`wa_little_tahoma_east_shoulder` persists unchanged — still a human/catalog-maintainer
+merge decision, not something this audit auto-fixes.
+
+Web access this run: WebSearch worked; did not attempt WebFetch on wikipedia.org (blocked in
+prior runs per earlier log entries).
+
+Next batch continues alphabetically after `wa_glacier_peak_cool_glacier_gerdine` (see
+progress file).
