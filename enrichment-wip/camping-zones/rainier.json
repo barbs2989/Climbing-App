@@ -1,6 +1,9 @@
 {
  "zone": "Mount Rainier",
- "areas": ["wa_mount_rainier"],
+ "areas": [
+  "wa_mount_rainier",
+  "wa_liberty_cap"
+ ],
  "sites": [
   {
    "name": "Camp Muir",
@@ -56,5 +59,6 @@
    "permit": "Mount Rainier National Park entrance applies, and the park has used timed-entry reservations for the Nisqually/Paradise corridor in recent summers, which can affect what time you can drive up on summit morning. Campsites are reservable through Recreation.gov and required during the peak midsummer window. This covers the campground only and is unrelated to the wilderness permit and climbing fee.",
    "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept open through the year, it is the least season-gated approach on the mountain, though the campground itself runs roughly late May to late September. It sits low and forested at just over 3,000 ft, which makes for comfortable sleeping but no acclimatisation value whatsoever. Book early, since it is one of only two campgrounds in the park taking reservations and fills on summer weekends."
   }
- ]
+ ],
+ "_areas_note": " Liberty Cap was added after a later pass: it is a subsummit of Rainier reached over Ptarmigan Ridge, served by the north-side camps already in this file."
 }

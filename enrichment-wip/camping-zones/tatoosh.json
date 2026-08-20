@@ -1,7 +1,14 @@
 {
  "zone": "Tatoosh Range — Unicorn, Lane and Pinnacle",
- "_areas_note": "Mount Rainier NP, but NOT the Rainier climbing-fee regime: the research confirmed the climbing cost-recovery fee does not apply here, since these are not glacier objectives above high camp — a wilderness camping permit is all that is needed. White River Campground was flagged as belonging to the Sunrise/Emmons side, and the Tatoosh Wilderness south of the park boundary is Forest Service ground from Skate Creek, neither of which serves this approach.",
- "areas": ["wa_unicorn_peak", "wa_lane_peak"],
+ "_areas_note": "Mount Rainier NP, but NOT the Rainier climbing-fee regime: the research confirmed the climbing cost-recovery fee does not apply here, since these are not glacier objectives above high camp — a wilderness camping permit is all that is needed. White River Campground was flagged as belonging to the Sunrise/Emmons side, and the Tatoosh Wilderness south of the park boundary is Forest Service ground from Skate Creek, neither of which serves this approach. The remaining Tatoosh summits were added after a later pass: this file cross-country bivy entry already names the basins below Unicorn AND The Castle, Snow Lake and Reflection Lakes serve Pinnacle and Plummer from the same pullouts, and Cougar Rock is the Longmire staging for Eagle Peak. Only the ids were missing.",
+ "areas": [
+  "wa_unicorn_peak",
+  "wa_lane_peak",
+  "wa_pinnacle_peak_tatoosh",
+  "wa_castle_peak_tatoosh",
+  "wa_plummer_peak",
+  "wa_eagle_peak"
+ ],
  "sites": [
   {
    "name": "Snow Lake Camp",
