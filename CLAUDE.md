@@ -10,6 +10,7 @@ npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ (runs check:refs + check:hooks first)
 npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
+npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
