@@ -2572,6 +2572,41 @@ the correction knows the screen is wrong, and they have no way to report it.
       decimal-computed pins **individually**, so the two claims were always distinguishable
       (`wa_guye_peak_r1 · run 0-4 · computed pins 1,2,3,4` — pin 0 is the anchor). The over-claim was
       in the consumer. *A range is not a list of findings.*
+    - **Corroborated independently by the GAZETTEER, which is worth more than the original
+      measurement.** `solve-gazetteer.mjs` asked GNIS for every remaining named pin: of 15 hits, the
+      **6 point-like ones were all run-test-only flags sitting 0–110 m from the real named feature**
+      (a Gap at 0 m, a Summit at 20 m, two Lakes at 110 m). An interpolation does not land 20 m from
+      a named summit by chance. 5 were new, so the provably-correct set is **55**, and the first
+      measurement (the route's own second record) and this one (a federal gazetteer) share no input.
+  - **THE GAZETTEER CANNOT FINISH THIS, and the negative result is recorded so nobody re-runs it.**
+    15 name hits across 728 candidate pins, **0 applicable**. Two separate reasons, and only the
+    second is about the data:
+    - The earlier probe's "not in GNIS" verdict came from a **crash**. It read `f.geometry.y` on
+      every layer, but **layer 5 (Landforms) returns `{points:[[x,y]]}` where layer 7 returns
+      `{x,y}`** — so every landform hit was `undefined` and it died on the first one (*Spider
+      Meadow*) after printing three "(not in GNIS)" lines. Layer 5 is where passes, basins, ridges
+      and summits live. Same family as the group layer and the unescaped Overpass body: **the
+      endpoint answered and the reader could not hear it.** Handle both shapes.
+    - Asked properly, **8 of the 15 are LINEAR or AREAL** — and *a label point cannot locate an
+      edge*. GNIS publishes one coordinate per feature; for a Summit/Gap/Lake/Falls that coordinate
+      IS the place, for a Stream/Ridge/Basin/Flat it is a cartographic label and the pin is somewhere
+      along the length or around the rim. **Layer 6 is named "Streams (Mouth)"** — it returns where a
+      creek ENDS, the one point on it a route never crosses. Every pin flagged by the **decimal**
+      test, i.e. genuinely arithmetic, landed in this bucket. **Triage by feature class before
+      distance**; sorting by how far a hit moves puts the useless ones on top.
+  - **The repaired pins agree with the GROUND, which no solver consulted.**
+    `measure-confirmed-pin-elevations.mjs` reads the DEM under all 427 repaired coordinates:
+    **411 (96.3%) within 400 ft, 12 off by 400–1000, 1 by more.** Coordinates from four independent
+    authorities landing on ground that matches an elevation written by a different pass corroborates
+    the pass as a whole. It also sizes what every solver deliberately left behind — the elevation
+    defect is **13 pins, not a class**. `audit:waypoint-elevations` keeps `TOL = 2000` because a
+    tighter bound over pins whose *coordinates* are fabricated measures the wrong place; that
+    objection does not apply once the coordinate is sourced, which is why this can be stated at 400.
+  - **Quote the audit's own count, not a snapshot's.** `fab-pins.json` expands run ranges into every
+    pin, so "728 remaining" overstates it; and repairing one pin can break a run's collinearity and
+    clear its neighbours too — 5 of the 6 gazetteer-confirmed routes are **no longer reported at
+    all**. The audit's line is the number: **computed coordinates 346 of 4,196 (8.2%), down from 481
+    (11.5%)**. [[when-an-audit-reports-zero-ask-its-denominator]] applies to non-zero counts as well.
   - `--selftest` proves both detectors on constructed pin sets and **needs no database**. Its
     negative cases are the ones that matter — a detector that also fires on a winding approach turns
     188 findings into 188 arguments. Trap met while writing it: the obvious "real winding approach"

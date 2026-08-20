@@ -28,7 +28,10 @@ None of these scripts uses an agent. Each locates a pin from a public record and
 | `recompute-derived.mjs` | redo a proposal's own computation from the primary sources |
 | `is-it-a-saddle.mjs` | DEM ring test: is a claimed col actually a col? |
 | `apply-solved.mjs` | write a solver's output, re-gating against the live row |
+| `solve-gazetteer.mjs` | GNIS name lookup for whatever is left (see the negative result below) |
+| `triage-gazetteer.mjs` | splits gazetteer hits by feature GEOMETRY — point vs linear vs areal |
 | `measure-remaining.mjs` | how much is left — compares against the ORIGINAL coordinates |
+| `measure-confirmed-pin-elevations.mjs` | does the ground agree with the repaired pins? |
 | `reconcile-count.mjs` | PATCHes issued vs pins that actually moved |
 
 Solvers are read-only and print a dry run; `--apply` writes. Every write is re-read through the
@@ -69,3 +72,46 @@ also be plausible for *this* route's own summit.
 **Count what changed, not what was written.** A successful PATCH is not evidence a value moved; many
 flagged pins were already correct and their "repair" is a no-op. `measure-remaining.mjs` compares
 against the recorded originals.
+
+## The gazetteer cannot finish this, and the reason is geometric
+
+`solve-gazetteer.mjs` asked GNIS for every remaining named pin. **15 name hits, 0 applicable.** That
+is a real negative result and it is recorded here so nobody spends another pass on it.
+
+An earlier probe had already concluded "not in GNIS", and **that verdict was reached by a crash**: it
+read `f.geometry.y` on every layer, but **layer 5 (Landforms) returns `{points:[[x,y]]}` while layer 7
+returns `{x,y}`**. So every landform hit came back `undefined` and the probe died on the first one
+(*Spider Meadow*) after printing three "(not in GNIS)" lines. Layer 5 is exactly where passes, basins,
+ridges, notches and summits live — most of what is left. Same family as the group layer and the
+unescaped POST body: the endpoint answered, the reader could not hear it. **Handle both shapes.**
+
+Asked properly, the class still does not resolve, for a better reason — **a label point cannot locate
+an edge**:
+
+- **8 of 15 hits are LINEAR or AREAL features.** GNIS publishes one coordinate per feature. For a
+  Summit, Gap, Lake or Falls that coordinate *is* the place; for a Stream, Ridge, Basin or Flat it is
+  a cartographic label, and the pin is somewhere along the length or around the rim. Layer 6 is named
+  **"Streams (Mouth)"** outright — it returns where a creek *ends*, which is the one point on it a
+  route never crosses. Every pin flagged by the **decimal** test (i.e. genuinely arithmetic) landed in
+  this bucket.
+- **6 of 15 were flagged by the run test only and sit 0–110 m from the real feature.** An
+  interpolation does not land 20 m from a named summit by chance. These were **anchors**, and the
+  right verdict is *confirmed*, not *repaired* — the same finding `measure-run-endpoints.mjs` reports,
+  arrived at independently through a different authority. 5 were new, taking the provably-correct set
+  from 50 to 55.
+- 1 held: a point feature that relocates 2.5 km *and* whose stored elevation the ground contradicts.
+
+So triage gazetteer hits **by feature class before distance**. Sorting them by how far they move puts
+the useless ones at the top.
+
+## The repaired pins agree with the ground
+
+`measure-confirmed-pin-elevations.mjs` reads the DEM under all 427 repaired coordinates — a record
+none of the solvers consulted. **411 (96.3%) agree within 400 ft; 12 are off by 400–1000; 1 by more.**
+Coordinates drawn from four independent authorities landing on ground that matches an elevation
+written by a different pass is corroboration of the pass as a whole.
+
+It also sizes the thing every solver deliberately left behind. The applier prints *"that is now the
+ONLY defect on them, and it is a separate repair against a separate column"* — that is **13 pins**,
+not a class, and `audit:waypoint-elevations` runs at `TOL = 2000` precisely because a tighter bound
+over pins with *fabricated* coordinates measures the wrong place.
