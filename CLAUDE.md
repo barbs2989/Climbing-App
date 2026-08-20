@@ -3168,9 +3168,25 @@ copies of one route. **Peak names live on `areas.name`; route names are just the
   every read from the app returned `57014` while the same query looked healthy in the SQL
   editor, where the `postgres` role has no timeout. A guard that always errors is a guard
   you do not have.
-- `id like 'wa_%'` is the reflex filter and it misses legacy ids like
-  `stuart_west_ridge` — 6 WA routes today. Filter by the area subtree when a coverage
-  percentage matters.
+- `id like 'wa_%'` is the reflex filter and it misses legacy ids. **Re-measured 2026-08-19: FOUR,
+  not six, and `stuart_west_ridge` is no longer one of them** — it was renamed to a peak-scoped id,
+  so the example this entry used to give sends you hunting for a row that does not exist. The live
+  four are `adams_avalanche_glacier`, `adams_northwest_ridge`, `rainier_central_mowich_face` and
+  `rainier_north_mowich_headwall`. Filter by the area subtree when a coverage percentage matters.
+  - **Match the state as a PATH SEGMENT, never a substring.** `path.includes("washington")` also
+    matches `ca_i_washington_column` (Washington Column, Yosemite) and `mo_washington_state_park`
+    (Missouri): it reported **64** missed routes where the truth is 4, i.e. 94% noise. An ltree path
+    is dot-separated — `split(".").includes("washington")`.
+  - **A per-row audit degrades gracefully under a narrow scope; a COMPARATIVE one fails in the
+    false-pass direction.** Dropping a row does not merely lose that row's finding, it removes the
+    evidence its neighbours are judged against. `audit:trailhead-road-agreement` lost a fifth Mowich
+    route that way — `rainier_central_mowich_face` holds the bridge-closure record, the prefix filter
+    dropped it, and `wa_liberty_cap_ptarmigan_ridge_finish` was left with nothing to contradict. It
+    now scans the whole catalog by default.
+  - **The remaining prefix-scoped audits were checked and are FINE, so do not sweep them.**
+    `audit:aspect-vs-name` and `audit:trailhead-agreement` are per-row — each compares a route
+    against *itself*. All four blind-spot routes were audited by hand: three agree to **0 m** and the
+    fourth carries no coordinate to compare. Rescoping them would gain nothing measurable.
 
 **The origin was one line in `scripts/pipeline/etl-state.mjs`**, which minted route ids as
 `PREFIX + "_" + slug(route name)` while the crag id (`mid`) sat unused in the same
