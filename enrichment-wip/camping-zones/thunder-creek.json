@@ -1,7 +1,13 @@
 {
  "zone": "Thunder Creek and Park Creek Pass",
- "_areas_note": "Mount Goode, Horseshoe Peak and Hurry-Up Peak REMOVED — the research flagged all three as misassigned. Goode is approached from Bridge Creek / North Fork Bridge Creek; Horseshoe and Hurry-Up are Horseshoe Basin objectives via Cascade Pass/Sahale Arm or Stehekin/Cottonwood. Neither route crosses Park Creek Pass. Primus and Tricouni, moved out of the Eldorado zone, are NOT added here either: their approach camp (McAllister) is not among these sites, so they await their own pass rather than being given camps that do not name their approach.",
- "areas": ["wa_booker_mountain", "wa_storm_king", "wa_mount_logan"],
+ "_areas_note": "Mount Goode, Horseshoe Peak and Hurry-Up Peak REMOVED — the research flagged all three as misassigned. Goode is approached from Bridge Creek / North Fork Bridge Creek; Horseshoe and Hurry-Up are Horseshoe Basin objectives via Cascade Pass/Sahale Arm or Stehekin/Cottonwood. Neither route crosses Park Creek Pass. Primus and Tricouni, moved out of the Eldorado zone, are NOT added here either: their approach camp (McAllister) is not among these sites, so they await their own pass rather than being given camps that do not name their approach. Snowfield Peak and The Needle were added after a later pass: both are Neve Glacier objectives and Neve Camp, already in this file, is their base.",
+ "areas": [
+  "wa_booker_mountain",
+  "wa_storm_king",
+  "wa_mount_logan",
+  "wa_snowfield_peak",
+  "wa_the_needle"
+ ],
  "sites": [
   {
    "name": "Neve Camp",
