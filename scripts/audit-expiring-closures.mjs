@@ -72,7 +72,65 @@ const AS_OF_PERIOD = /\bas of (early|mid|late)?[- ]?20\d\d\b|\bas of the 20\d\d 
 const SELF_LIMITING = /through (at least )?[a-z]{0,9}\.?\s*\d{0,2},?\s*20\d\d|expires? [^.]*20\d\d|until [a-z]+ \d{1,2},? 20\d\d|\b(?:effective\s+)?[a-z]{3,9}\.?\s*\d{1,2}(?:,?\s*20\d\d)?\s*[-–—]\s*[a-z]{3,9}\.?\s*\d{1,2},?\s*20\d\d|\b\d{1,2}\/\d{1,2}\/20\d\d\s*(?:through|[-–—])\s*(?:at least\s*)?\d{1,2}\/\d{1,2}\/20\d\d/i;
 const PERMANENT = /permanentl|decommission|no funded|will not be (re)?built|abandoned/i;
 
+// T0. THE CLAIM HAS ALREADY EXPIRED — the sharpest tier, and the one SELF_LIMITING was hiding.
+// That exclusion waves a value through the moment it names an end date, on the reasoning that the
+// reader can judge it. THAT IS A CLAIM ABOUT THE DATES AND NOTHING HAD EVER TESTED IT: a value
+// reading "in effect through at least Dec 31, 2025" is self-limiting AND, today, describes an
+// order that lapsed months ago. CLAUDE.md's own command block already promised this question was
+// asked. It was not.
+//
+// THE PRECISION RULE IS POSITIVE, DELIBERATELY. A date in the past is not an expired claim: most
+// dated prose here is a past-tense EVENT report ("a washout was reported in January 2026") or a
+// historical example ("as demonstrated by the ~17-month Dec 2024-May 2026 closure"), both of which
+// stay true forever. The tempting rule is a deny-list of history markers — was/had/e.g./since
+// rescinded — and this repo records that a deny-list is beaten by one more adjective. Asking
+// instead whether the value asserts the closure is IN FORCE needs no vocabulary of history.
+// Measured on the live catalog: 16 values name a lapsed end date, and this rule reports 2.
+const ONGOING = /\bin effect through\b|\bremains? (?:closed|in effect|active)\b|\bis (?:currently )?closed\b|\bcurrently closed\b|\bclosed until further notice\b|^\s*closed\b/i;
+// A value that names its end AND then says the order outlived it has ANSWERED the question itself.
+// Not a history adjective — the value explicitly addressing its own expiry.
+const SELF_ANSWERED = /\bstill (?:active|in effect|closed)\b|\bhas been extended\b|\bsince extended\b/i;
+
+const MON = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+const MRE = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\\.?";
+// A day-less month is taken as its LAST day, so a month still running never reads as expired.
+function monthDate(s) {
+  const m = s.match(new RegExp(`(${MRE})\\s*(\\d{1,2})?[,\\s]*\\s*(20\\d\\d)`, "i"));
+  if (!m) return null;
+  const mo = MON[m[1].slice(0, 3).toLowerCase()];
+  if (mo == null) return null;
+  const y = Number(m[3]), d = m[2] ? Number(m[2]) : null;
+  return { when: d != null ? new Date(y, mo, d) : new Date(y, mo + 1, 0), txt: m[0].trim() };
+}
+// Only a date a CLAUSE marks as an END counts. A bare date in the prose is a cause, not an expiry.
+function statedEnds(t) {
+  const out = [];
+  for (const m of t.matchAll(new RegExp(`${MRE}\\s*\\d{0,2},?\\s*(?:20\\d\\d)?\\s*[-\u2013\u2014]\\s*(${MRE}\\s*\\d{0,2},?\\s*20\\d\\d)`, "gi"))) {
+    const d = monthDate(m[1]); if (d) out.push(d);
+  }
+  for (const m of t.matchAll(new RegExp(`\\b(?:through|until|thru|expires?)\\s+(?:at least\\s+)?(${MRE}\\s*\\d{0,2},?\\s*20\\d\\d)`, "gi"))) {
+    const d = monthDate(m[1]); if (d) out.push(d);
+  }
+  for (const m of t.matchAll(/\b\d{1,2}\/\d{1,2}\/20\d\d\s*(?:through|[-\u2013\u2014])\s*(?:at least\s*)?(\d{1,2})\/(\d{1,2})\/(20\d\d)/g)) {
+    out.push({ when: new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2])), txt: m[0].trim() });
+  }
+  return out;
+}
+const TODAY = new Date();
+function expiredClaim(t) {
+  if (!ONGOING.test(t.trim()) || SELF_ANSWERED.test(t)) return null;
+  const ends = statedEnds(t);
+  if (!ends.length) return null;
+  // The LATEST stated end decides. An earlier one being past says nothing about the claim.
+  const last = ends.reduce((a, b) => (b.when > a.when ? b : a));
+  return last.when < TODAY ? last : null;
+}
+
 const TIERS = [
+  /* Ordered by severity, and t0 is FIRST because it is the only tier describing a statement that
+     is false NOW rather than one that will age into falsehood. `shelfLife:false` keeps the
+     SELF_LIMITING / PERMANENT exclusions off it — SELF_LIMITING is precisely what was hiding it. */
+  { key: "expired", fn: expiredClaim, shelfLife: false, title: "the claim has ALREADY EXPIRED — it asserts a closure past its own stated end date" },
   { key: "research-act", re: RESEARCH_ACT, title: "dates itself to when the RESEARCHER looked" },
   { key: "open-ended",   re: OPEN_ENDED,   title: "an OPEN-ENDED closure — the world resolves it, nothing here re-reads it" },
   { key: "as-of-period", re: AS_OF_PERIOD, title: "dated to a PERIOD, not a date the reader can judge" },
@@ -92,18 +150,25 @@ if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes car
 if (INJECT === "expiring") { values[0].text = "Closed indefinitely since October 2025 due to fire damage; no confirmed 2026 reopening as of the most recent update."; console.log(`[inject] ${values[0].id} ${values[0].field}: the Hopper sentence verbatim`); }
 if (INJECT === "clean") { for (const v of values) v.text = "Paved to the trailhead. Gate opens as snow clears."; console.log("[inject] every value rewritten as a durable statement; every tier must report 0"); }
 if (INJECT === "yearonly") { for (const v of values) v.text = "Impassable to vehicles at milepost 3.1 due to 2021 flood damage."; console.log("[inject] every value carries a YEAR naming a durable cause; every tier must report 0 — a year is not a shelf life"); }
+/* The expired tier's three cases. The two that must stay SILENT carry it: an always-fire rule
+   satisfied `expired` on its own, and it is the quiet pair that pins the precision. */
+if (INJECT === "expired") { for (const v of values) v.text = "Closed MP 3.7 to end per Forest Order (flood damage; in effect through at least Dec 31, 2020)."; console.log("[inject] every value asserts an ONGOING closure past its own stated end -> the expired tier must report all of them"); }
+if (INJECT === "expiredanswered") { for (const v of values) v.text = "Closed MP 3.7 to end per Forest Order (in effect through at least Dec 31, 2020, and still active per the latest alerts)."; console.log("[inject] the same value, but it ANSWERS its own expiry -> expired must report 0"); }
+if (INJECT === "pastreport") { for (const v of values) v.text = "The road was closed for culvert replacement July 9-Sept 22, 2020, and has since reopened."; console.log("[inject] a PAST-TENSE report naming a lapsed range -> expired must report 0; a date in the past is not an expired claim"); }
 
 const seen = new Set(), buckets = new Map(TIERS.map(t => [t.key, []]));
 let selfLimiting = 0, permanent = 0;
 for (const v of values) {
   for (const t of TIERS) {
-    if (!t.re.test(v.text)) continue;
+    const hit = t.fn ? t.fn(v.text) : (t.re.test(v.text) ? true : null);
+    if (!hit) continue;
+    if (hit !== true) v.expiredOn = hit.txt;
     const k = v.id + "\0" + v.field;
     if (seen.has(k)) break;              // tiers are exclusive and ordered by severity
     seen.add(k);
     // The exclusions are about SHELF LIFE, so they do not apply to t1: a value that leaks the
     // research act is bad copy whether or not the closure it describes names an end date.
-    if (t.key !== "research-act") {
+    if (t.key !== "research-act" && t.shelfLife !== false) {
       if (PERMANENT.test(v.text)) { permanent++; break; }
       if (SELF_LIMITING.test(v.text)) { selfLimiting++; break; }
     }
@@ -143,3 +208,9 @@ process.exitCode = 0;
 //   --inject=yearonly   every value carries a year naming a cause -> every tier must report 0,
 //                       which is the precision rule: a year is not a shelf life, and a detector
 //                       that flagged one would return most of the catalog and be ignored.
+//   --inject=expired    every value asserts an ongoing closure past its stated end -> ALL reported
+//   --inject=expiredanswered  the same value, self-answered ("still active")   -> expired reports 0
+//   --inject=pastreport a past-tense report naming a lapsed range              -> expired reports 0
+// The last two are the ones that matter. `expired` alone is satisfied by a rule that fires on any
+// past date, and that rule returns 16 values here of which 15 are correct past-tense prose. Only
+// the quiet pair pins the difference between "names an old date" and "asserts something untrue".
