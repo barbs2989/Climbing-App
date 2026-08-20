@@ -77,6 +77,8 @@ npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:w
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
+npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
+npm run audit:synthetic-waypoints # are the pins REAL, or spaced along a trailhead->summit line?
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
