@@ -23,6 +23,10 @@ import { fileURLToPath } from "node:url";
 import { appSources } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
+
+// Temporal-dead-zone reads, collected during the same traversal. Module scope so the report below
+// can see them; deliberately NOT baselined (see the block at the bottom).
+const tdz = new Map();
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASELINE = path.join(ROOT, "scripts", "undefined-refs-baseline.json");
 
@@ -89,7 +93,32 @@ function scan() {
           const fn = p.getFunctionParent();
           if (fn && fn.node.type !== "ArrowFunctionExpression") return;
         }
-        if (p.scope.hasBinding(name, { noGlobals: true })) return;
+        if (p.scope.hasBinding(name, { noGlobals: true })) {
+          // A BINDING IS NOT A GUARANTEE THE VALUE EXISTS YET. `const`/`let` are hoisted into the
+          // scope but sit in a temporal dead zone until their declarator runs, so a reference ABOVE
+          // the declaration throws a ReferenceError at runtime while satisfying every test above.
+          // This blanked the app for signed-in users in #1206: two flags were declared beside four
+          // siblings 11,000 characters above the `const myConnQ = useMyConnections(uid)` they read.
+          //
+          // It only threw when SIGNED IN, because the expression is `!!(uid && myConnQ && …)` and
+          // `uid &&` short-circuits before touching them when signed out. So check:ui,
+          // check:overlay-scroll and every other no-auth browser guard passed, while check:signed-in
+          // and check:outage both reported that the app never rendered its nav bar.
+          //
+          // Only a reference in the SAME function as the declaration can be a dead-zone read. One
+          // inside a nested function — a callback, a handler, a `useEffect` — runs later and is the
+          // normal, correct shape; flagging those would report most of this file.
+          const b = p.scope.getBinding(name);
+          if (b && (b.kind === "const" || b.kind === "let") &&
+              typeof p.node.start === "number" && typeof b.path.node.start === "number" &&
+              p.node.start < b.path.node.start &&
+              p.getFunctionParent() === b.path.getFunctionParent()) {
+            const owner = ownerOf(p);
+            const key = `${rel} :: TDZ:${name} :: ${owner}`;
+            if (!tdz.has(key)) tdz.set(key, { file: rel, name, owner, line: p.node.loc?.start.line, declLine: b.path.node.loc?.start.line });
+          }
+          return;
+        }
         const owner = ownerOf(p);
         const key = `${rel} :: ${name} :: ${owner}`;
         if (!found.has(key)) found.set(key, { file: rel, name, owner, line: p.node.loc?.start.line });
@@ -100,6 +129,18 @@ function scan() {
 }
 
 const found = scan();
+
+// The dead-zone findings are NOT baselined. An undefined reference can be a long-standing wart the
+// baseline defers; a dead-zone read is a runtime throw on a code path somebody is about to walk, and
+// there are none in the tree today, so zero is holdable.
+if (tdz.size) {
+  console.error(`\n${tdz.size} temporal dead zone read(s) — these throw at runtime and blank the app:\n`);
+  for (const t of tdz.values())
+    console.error(`  ${t.file}:${t.line}  '${t.name}' is read before its const/let declaration on line ${t.declLine}  (in ${t.owner})`);
+  console.error(`\nMove the declaration above the read, or the read below it. A binding exists, which is`);
+  console.error(`why every other check here passes — the VALUE does not exist yet.\n`);
+  process.exit(1);
+}
 
 if (process.argv.includes("--update")) {
   const out = [...found.keys()].sort();
