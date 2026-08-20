@@ -2016,12 +2016,21 @@ function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*
    renders as one muted line rather than a panel. `corrections` and `data_quality` went with
    the box on purpose: both are graded bookkeeping, and 501 of the corrections rows say
    "None — consistent across sources." Recorded in check:field-renders' KNOWN map. */
+/* Shows how far a route's data has been checked. It used to print `verif.source` beside that —
+   a citation on seed routes ("Mountain Project + AAJ") and, on DB routes, an internal review note
+   that named sources and leaked working language at climbers ("recommend spot-checking this
+   route_id", "identity review 2026-07-30"). The app carries no sources, so the note is gone and
+   the STATUS stays: this is the only place the route page discloses that its data is unchecked,
+   and dropping the signal to remove the citation would be the wrong trade.
+   It also stops calling a community-reported route "Unverified", which it did for every status
+   that was not literally "verified". */
 function VerifNote({route}){
   const v=route&&route.verif;
   if(!v||typeof v!=="object")return null;
-  const note=String(v.source||"").trim();
-  if(!note||String(v.status||"").toLowerCase()==="verified")return null;
-  return <div style={{marginBottom:12,paddingLeft:9,borderLeft:"2px solid "+C.amber+"66"}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>Unverified · </b>{note}</span></div>;
+  const st=String(v.status||"").toLowerCase();
+  if(!st||st==="verified")return null;
+  const note=st==="community"?"Community-reported":"Unverified";
+  return <div style={{marginBottom:12,paddingLeft:9,borderLeft:"2px solid "+C.amber+"66"}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>{note}</b></span></div>;
 }
 function ProtectionCard({route,myReports,onEdit}){
   const hasCams=route.cams&&route.cams.length;const hasRack=route.rack&&route.rack.length;
