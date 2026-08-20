@@ -42,6 +42,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
@@ -718,6 +719,51 @@ a build error, but a screen that renders wrong or not at all.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
+- **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
+  the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
+  researched string into an existing column, look at where that column renders* — which had been
+  broken **three** times by the time it was written, the third by a pass that had **read the rule**.
+  `season` took 232-char explanations into the header strap; `grade` took qualifiers into the pill;
+  `bivy[].capacity/.water/.permit` took up to **1,386 characters** into chips. Renders the real
+  `RouteDetail` over real rows and reads the markup, so it needs the DB — **not** a build gate; it
+  runs on every PR via `render-guards.yml`.
+  - **`check:field-renders` is the near miss, and the distinction is the whole point.** That guard
+    asks whether a column reaches a screen. All three of these did — correctly, in full, in the
+    wrong shape. **Reaching a screen and fitting the element it reaches are different questions.**
+  - **It found a FOURTH on its first real run**: `approach_variants[].season` in the APPROACHES
+    panel, a pill carrying **both** `white-space:nowrap` **and** `flex-shrink:0`, so the text could
+    neither wrap nor shrink. **534 of 801 variants (67%), across 470 routes**, up to 392 characters
+    — worse than the camping chips, which at least wrapped into a blob. Fixed with the app's own
+    `seasonShort()`, the same defence the header strap already uses, with the full sentence rendered
+    as prose in the card so nothing is lost (`probe-approach-season-onscreen.mjs` proves that half —
+    shortening a display field is a LOSS unless the text still lands somewhere).
+  - **TWO EARLIER DESIGNS WERE VACUOUS, and that is the most useful thing here.** Matching a
+    rendered `x.prop` to a column **by name** scored **0 of 7** on a real run: `q.status` is a guide
+    inquiry's, `v.season` a trip report's, `t.label` a route-tag chip's. Restricting to expressions
+    **rooted at `route.<col>`** then reported **ok against the very commit containing the camping
+    defect**, because the panel maps over `campSites(route)` — a helper's return value. Resolving
+    that needs interprocedural analysis. So it resolves **nothing**: it renders, and asks the markup
+    a question that needs no name and no scope.
+  - **A regex cannot read nested HTML, and it passed one injection anyway.** The first scanner was
+    `/<(\w+)[^>]*style="([^"]*)"[^>]*>([\s\S]*?)<\/\1>/g`, which consumes an element's children
+    when it matches the parent — it inspected **1,019** boxes where a real tag stack inspects
+    **4,491**, and it found the approach-season pill only by ACCIDENT (the outer flex div's match
+    terminated on its first child's `</div>`, leaving the pill exposed as the next match).
+    **Injection case 2 came back MISS and that is what exposed it.** A guard that catches one real
+    defect can still be blind to the next, and only an injection it FAILS will tell you.
+  - **Two exclusions, both measured, both about not reporting correct work.** A box that clips with
+    `overflow:hidden` + `text-overflow:ellipsis` degrades correctly (that alone took an early scan
+    from 104 candidates to 54, nearly all deliberately-ellipsised route names). And a box carrying
+    `word-break`/`overflow-wrap` has been **thought about** — the STAGES table is the measured case,
+    where a stage's `grade` really is terrain prose and the JSX already carries wrapping put there
+    by someone who found this exact problem. Reporting it would tell an author to undo a correct fix.
+  - Fails **closed** three ways: a failed catalog read is reported as a failed read and never as
+    "no prose in a chip", zero renders is a broken probe, and zero token-shaped boxes means the
+    shape test matches nothing.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
+    that matters**: it runs the guard against `RouteDetail.jsx` exactly as it stood at `6f82fc0`,
+    the commit before the camping collapse. Both earlier designs passed that tree. Two cases must
+    stay **quiet**, pinning the exclusions above.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
@@ -815,11 +861,30 @@ a build error, but a screen that renders wrong or not at all.
       encodes: `--platform=neutral` cannot resolve Supabase's subpackages (use `node`), and
       `lib/supabase.js` reads `import.meta.env` at module scope, so `--define:import.meta.env={}`
       is required or the import throws before `ROUTES` is reachable.
-    - **An open question this raises and does NOT answer: does any real user ever see this
-      section?** A working, data-backed component that neither a state injection nor three driven
-      browse paths could put on screen is at least suspicious. That is a claim about the app, not
-      about the guard, and it is deliberately not asserted here — establishing it needs the
-      wiring question above settled first.
+    - **ANSWERED 2026-08-20, and it is not a coverage gap at all: NO REAL USER EVER SEES THIS
+      SECTION.** `AreaLatest`, and its neighbours `ClassicClimbs` and `GettingThere`, are gated
+      on `selArea` — which is written **only on the seed catalog path**. `deploy.yml` sets
+      `VITE_USE_DB: "true"`, so production renders `DbAreaBrowser`, which receives
+      `onAreaContext={setDbAreaCtx}` and **never** `setSelArea`. This is the documented trap that
+      shipped #714's unreachable fire map (fixed in #731 by reading `dbAreaCtx || selArea`).
+      **The guard was reporting reality, not missing a screen.**
+    - **The tell was in the probe output all along.** The drive reported `country: ok` /
+      `state: ok` against selects labelled *"Select a country"* / *"Select a state"* — those are
+      **`DbAreaBrowser`'s**. The seed `AreaBrowse` has a single select labelled **"Jump to a
+      state"**. So the walk was in DB mode (the worktree symlinks `.env`/`.env.local` and vite
+      loads them) and `selArea` could never be set. Reading which select answered would have
+      ended four browser attempts immediately.
+    - **It is NOT the `dbAreaCtx || selArea` one-liner, and that is the part worth knowing before
+      quoting an estimate.** All three are also bound to the **seed `ROUTES`/`MOUNTAINS` arrays**:
+      `AreaLatest` early-returns on `ROUTES.some(r=>r.mountainId===area.id)` and builds rows from
+      `ROUTES.filter(r=>inArea(...))`; `GettingThere` walks `MOUNTAINS` by `parentId`, which
+      `dbAreaCtx`'s flat `{id,name,lat,lng,areaType}` does not carry. So a DB area renders nothing
+      even once the prop is fixed. Reviving them needs an area-subtree query over `climb_logs`
+      that does not exist — **feature work**, recorded in
+      `memory/three-climbs-tab-sections-dead-in-production.md` as an open decision.
+    - So **driving the browse navigation would not have helped either**, and the earlier note
+      here saying it would was wrong. The `arealatest` injection case still expects a pass, but
+      for this reason rather than for walk coverage.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
@@ -1364,7 +1429,17 @@ a build error, but a screen that renders wrong or not at all.
     the sibling guard's stated scope is write targets. Untracked, uncalled, hand-made; crew
     readiness is computed client-side by `datesAgreed`/`agreedDate`. The two guards' scopes are
     complementary rather than overlapping, and this is the case that shows it.
-  - Four `KNOWN` entries, each a claim about the live database, each failing when **stale**:
+  - **`auto_archive_crews` and `is_crew_ready` are GONE — dropped by `0167`, and the two bullets
+    above are history rather than current state.** Both were hand-made, broken on columns that
+    do not exist, referenced by nothing (checked against `pg_trigger`, `pg_proc.prosrc`,
+    `pg_policy` and the whole repo), and duplicated by working client-side code — the app
+    archives crews with `CREW_ARCHIVE_GRACE_DAYS = 3` and `isArchivedCrew()`, and computes
+    readiness with `isReady()`. The recorded reason for keeping them was that dropping a
+    function git has never seen destroys the only record of the intent; `0167` answers that by
+    reproducing **both bodies verbatim in the migration**, which puts them in version control
+    for the first time. `KNOWN` is down to `merge_accounts` here and `handle_new_user` in the
+    drift guard.
+  - Two `KNOWN` entries, each a claim about the live database, each failing when **stale**:
     `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
     account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
     0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
@@ -2032,9 +2107,68 @@ the correction knows the screen is wrong, and they have no way to report it.
     says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
     waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
     left the check **green**. The same two-surfaces trap this file records for `rappels`.
-  - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
-    predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
-    the direction that teaches people to ignore it), and renaming the heading.
+  - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
+    either predicate true (which must fail the *genuine*-track assertions — a false warning on good
+    data is the direction that teaches people to ignore it), and renaming the heading.
+  - **It also guards the SECOND thing a drawn line can be lying about: how much of the route it
+    covers.** A partial track is a *genuine* recording, so `trackIsJustTheWaypoints` is blind to it
+    by construction — and the page drew it with a **Download GPX** button underneath and said
+    nothing. `trackCoverage()` reports which end is missing and by how far; **68 WA routes** now
+    carry the sentence (62 missing the walk-in, 5 stopping short of the summit, 1 both).
+    - **The two ends are DIFFERENT facts and are asserted separately.** A missing approach means
+      the line begins up the mountain. A missing summit means somebody following it **runs out of
+      line while still climbing** — the dangerous half — so a check that fires on "is partial"
+      could not tell you which one broke.
+    - **The threshold is 2 km at both ends, and it is precedent rather than a fitted number** —
+      the same 2 km `audit:waypoints`' *"TRACK NEVER COMES WITHIN 2 km OF THE PEAK"* uses. It is
+      chosen against the measured distribution, not to produce a wanted answer: trailhead→track is
+      **bimodal**, p50 **41 m** (the line starts at the trailhead, as expected) against p90 **6.7
+      km**. Tightening the summit end to 1 km would flag 19 rather than 6, and those extra 13 are
+      **not attributable** — a line ending 1.2 km from the summit *pin* is equally consistent with
+      the pin being wrong, which is its own known defect class.
+    - The caveat **states the measured gap**, and the guard fails if it renders without one:
+      *"this track is incomplete"* is nothing a climber can plan around, and a sentence quietly
+      losing its number is how this degrades.
+    - It returns **null rather than guessing** on a stub, on a synthetic line (which already
+      carries the stronger caveat — two captions contradicting each other is worse than one), and
+      on a route with no Trailhead or Summit pin to judge against. All three are asserted.
+    - **Verified against the shape the reader actually gets, not the raw column**
+      (`probe-track-coverage-fires-live.mjs`). The app renders through
+      `dbRouteToCamel → normalizeWaypoints`, which coerces `lat`/`lng` — **contributed rows store
+      them as STRINGS** — and rewrites `type`. `pointOf` demands a real number and the pin lookup
+      matches on `type`, so either step could have made the caveat fire on **nothing** while the
+      column stayed populated. The probe **exits 1 on a zero count** for that reason.
+    - Independent corroboration that it measures the right thing: the summit-shortfall list is
+      Himmelhorn, West Twin Needle and Fuhrer Finger — routes `audit:waypoints` already reports
+      under `trackOffItsPeak`, reached by a different method. Each was checked with
+      `probe-whose-track-is-it.mjs` and **none is a foreign track**: every one starts at the
+      right trailhead and ends in the right massif, so *short* is the correct diagnosis.
+    - **A THIRD state exists because the first version got two routes wrong, and it is the most
+      useful thing in this entry.** On some routes the line and the pins are two **complete**
+      records of **different ways up the same peak**, and calling the line partial blames the
+      wrong half. `wa_mount_barnes_scramble` is the case: its own approach text names two
+      approaches — west via Sol Duc over the Bailey Range, east via the Elwha River Trail from
+      Whiskey Bend — and all **eight** of its waypoints are on the Sol Duc one while its
+      **438-point** gpx is the Elwha one. It rendered *"starts 18.9 km from the trailhead and
+      stops 6.4 km short of the summit"*, every number true and the accusation misdirected. The
+      same misattribution `audit:map-pins` warns about for two-trailhead routes, and the reason
+      that audit reports candidates rather than defects.
+      - **The discriminator is whether ANY of the route's own pins lie on the line**, with
+        per-type tolerances. A genuinely climb-only track still carries its **upper** pins — the
+        summit, the high camp, the col — because the recording does cover that stretch; only the
+        approach pins are off it. A track of a different approach carries **none**, because it
+        never passes any of the places the pins name. Measured: **66 partial, 2
+        different-approach** (Barnes and `wa_goode_mountain_northeast_face`).
+      - **Two placed pins are required.** With one, "no pin is on the line" is a coincidence away
+        from a wrong story, and the safe failure is the ordinary partial wording. Asserted.
+      - The sentence **does not pick a winner** — on a peak with two genuine approaches both
+        records are right, and nothing available here separates that from a line filed against
+        the wrong route. It says the two disagree and stops.
+      - **The live probe had the same bug one level up**: its ternary let a `differentApproach`
+        row fall through into the "stops short of summit" bucket, so it reported the two routes
+        it exists to separate as the very thing it had just stopped calling them. Order the
+        branches with the new state first. *A probe that misreports its own fix is the shape this
+        file keeps recording.*
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
@@ -2086,6 +2220,51 @@ the correction knows the screen is wrong, and they have no way to report it.
     core, so a static import both cycles and drags the route page into the main bundle). Same
     shape as `lib/rappels.js`, which is why that file was already in
     `check:correction-readers`' `FILES`; `lib/rack.js` was added to it in the same commit.
+- **"Specific to this route" is gone; `mergeGearList` folds it into the one list.** The route page
+  used to print the stock per-discipline kit and then a second box headed *Specific to this route*,
+  so a route naming "Helmet" got two Helmet bullets under two headings — a climber packing off that
+  page reads it as two things. `gearKey`/`sameGear`/`mergeGearList` in `RouteDetail.jsx` merge them:
+  the key collapses the **qualifier** and not the item (`"Crampons"` == `"Crampons (early/mid-season
+  or lingering-snow years)"`, `"Rope"` == `"ropes"`), the **richer wording wins in place**, and
+  genuinely different gear stays apart (`"Ice axe"` vs `"Ice tools"`, `"Warm layers"` vs
+  `"Weatherproof shell jacket and pants"`).
+  - Measured on the live catalog, not on fixtures: across the **600** WA routes carrying
+    `what_to_bring`, **633 duplicate lines removed on 409 of them**, and **0 routes lost a stock
+    item**. `scripts/oneoff/probe-gear-merge-dedupes.mjs` **lifts the three functions out of
+    `RouteDetail.jsx` by balancing braces** rather than copying them, with `ANCHOR LOST` if any is
+    renamed — a copy would agree with the source the day it was written and measure a fossil
+    afterwards, which is the whole question here.
+  - The **conditional** block keeps sole ownership of its items, so an item that is only needed in
+    early season does not also appear in the unconditional list.
+- **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
+  renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
+  two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
+  their own approach is a **4-mile** walk of closed railroad grade from the Barlow Pass gate, and
+  `wa_cordwood` carried *"Do not climb until you have personally assessed the loose blocks"* — a
+  safety instruction. All three removed (`fix-non-gear-packing-entries.mjs`), each only after
+  confirming the fact survives elsewhere: Cordwood's warning is in `hazards`, `watch_out` **and**
+  `beta` in fuller form.
+  - The two Monte Cristo entries are **wrong, not merely misfiled**, and the phrasing matches **The
+    Dikes** — a southeast-Washington basalt area whose approaches genuinely are "very short and
+    roadside". That is the cross-region duplicate-field-value fingerprint `audit:identity`
+    describes, landing in a gear column instead of a prose one.
+  - **Precision was 3 of 11 on the negation probe and 2 of 7 on the follow-up, and both bad buckets
+    are instructive.** `probe-what-to-bring-negations.mjs` flags a negation anywhere in the entry,
+    so it reports 8 correct entries whose *justification* contains one — *"headlamp — long days are
+    common even for parties that don't get lost"*, *"Gaiters and gear you do not mind soaking"*,
+    *"Northwest Forest Pass … (not needed at the #1587 US-2 trailhead)"*. Read the entry, never the
+    flag.
+  - **`probe-roadside-gear-contamination.mjs` reported 7 of 7 contradicted on its first run, with a
+    "consistent" bucket of ZERO — which is the tell.** It was matching any mileage in the approach,
+    and *"drive the Mt. Baker Highway 13.3 miles past Glacier"* is a **drive** to a genuinely
+    roadside cliff. Mileage now counts only inside a sentence that says somebody is on foot and does
+    not say they are in a car.
+  - **`dist_km` is deliberately excluded from that verdict**, and that was measured. Using it as a
+    floor condemned `wa_east_ridge` on a `dist_km` of 6.4 (= 4.0 mi) while its own approach — 
+    byte-identical to two sibling routes on the same spire — says the walk-up is *"around 20 minutes
+    or less"* from a road that *"runs almost directly beneath the formation"*. The gear note is
+    correct and the **6.4 is wrong**; that is an `audit:distances` finding, not a gear one. Prose is
+    the better record for *is this walk short*.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
@@ -2561,6 +2740,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Mowich *Lake*, and 48.7317,-121.0672 is Ross *Dam*, which sits at the bottom of a mile of
     trail off SR-20. The page hangs driving directions off that pin.
   - Report-only, read-only, fails closed on an empty read.
+- **The OFF-TRACK PIN backlog is mostly correct pins, and the headline count overstates it by a
+  lot.** `audit:waypoint-track` reports hundreds of routes with pins off the line, and the
+  instinct is to read that as a defect list. Measured, it is not.
+  `scripts/oneoff/probe-offtrack-triage.mjs` narrows it and each narrowing is a different
+  reason:
+  - **629 off-track pins → 464 worth looking at.** 64 routes carry a CLIMB-ONLY track (the gpx
+    never comes near the trailhead), so every approach pin on them is off the line **by
+    design** — 143 pins excused. A further 6 routes have a track that never reaches their own
+    summit pin, which is `audit:waypoints`' "TRACK NEVER COMES WITHIN 2 km OF THE PEAK": there
+    the **track** is the suspect record and researching the pins researches the wrong half, so
+    those 22 pins are set aside as one decision per route rather than a source per pin.
+  - **Then severity, not count.** Of the 464, only **13** are more than 20x their own pin
+    type's tolerance. A Junction 392 m off the line is a saddle marked at the ridge crest
+    rather than where the trail crosses it — not a different place.
+  - **And of those 13, the ones checked against a published coordinate were mostly ALREADY
+    RIGHT.** `wa_argonaut_peak_east_ridge`'s "Colchuck Lake" is stored at
+    `47.4919578,-120.8335801`, which is exactly the USGS coordinate; "PCT Junction near Lemah
+    Meadows" is stored at `47.4623,-121.2810` on two routes, exactly the published Lemah
+    Meadow coordinate. Those pins name a feature on a **different approach to the same peak**,
+    or a feature that is an area rather than a point. Of three researched, **one** was wrong.
+  - **The bar for writing a researched coordinate is that it lands on the route's own track**
+    (`verify-researched-pin-coords.mjs`). Cutthroat Pass on
+    `wa_tower_mountain_southwest_route` went 2,464 m off → **36 m** on substituting the USGS
+    value, which is agreement with a record nobody consulted while publishing it. The same
+    check **refused** Longs Pass on `wa_argonaut_peak_east_ridge`, where the USGS coordinate is
+    *further* from that route's track than the stored one — research alone would have written
+    a wrong fix there.
+  - **Do NOT "repair" a junction by interpolating along the track at its `distMi`.** It is
+    computable and it is fabrication — the same class as the 199 routes whose pins were
+    manufactured on a straight line, and the synthetic-waypoint audit would rightly flag it
+    later. A pin with no source stays where it is.
 - **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
   somewhere else — the general form of the rule this file already states for `season`, `grade`
   and `rappels`. **No coverage check can see it**: the column is populated and the prose is
@@ -2593,6 +2803,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Normalise both sides — but lift proper-noun road names from the **original** clause, since
     normalising lowercases and a lowercased clause matches no `[A-Z]` pattern, which silently
     emptied that half of the coverage test.
+  - **The remaining 192 flags are NOT a worklist, and the MISFILED half in particular is
+    mislabelled** — measured, so read this before working it. Reading the bucket, most of it is
+    correctly filed: a `best_season` reading *"roughly late June through September, once Cascade
+    River Road opens"* is a **season statement using the road as its boundary**, which is the
+    right answer to that column's own question; approach narrative in `beta` naming the trailhead
+    is approach narrative; a descent hazard in `watch_out` naming the trailhead is a hazard. The
+    entry above already grants that defence to `season`, and it applies unchanged to
+    `best_season`, `beta`, `overview` and `watch_out`. **The label promises "moving it would lose
+    nothing" and that is false for most rows.**
+  - The question actually worth asking is narrower, and it is the one the original Eldorado report
+    was about: **is the fact REACHABLE from the section that should carry it?** A climber taps ROAD
+    ACCESS or PERMITS; if that section is empty while the route's own prose knows the road is
+    gated, the page withholds what it knows — regardless of whether the prose sentence is well
+    filed. `scripts/oneoff/probe-access-prose-actionable.mjs` measures it: of **182** WA prose
+    sentences carrying a road fact, **180 sit on a route whose `road` or `approach_logistics`
+    block already speaks about the road**. Permits: **18 sentences, 0 unreachable.** So the
+    reachability defect is **2 routes**, not 190.
+  - **And those 2 were not worth fixing either, which is the transferable half.**
+    `wa_colchuck_balanced_rock_col_east_lake_side_approch` and `wa_northwest_face` have an empty
+    `road` block — but so do **1,371** WA routes that carry access apparatus
+    (`probe-road-block-coverage.mjs`: `road` populated on 1,038 of 8,365; 1,371 of the 2,424
+    routes carrying access/logistics/waypoints have neither `road` nor `approach_logistics`).
+    Those two surfaced only because **their prose happened to name a road**, which is a property
+    of the prose and not of the gap. Repairing them would be picking 2 arbitrary rows out of
+    1,371. The real item is road-block **coverage**, which is research rather than re-homing and
+    is outside "move this text somewhere else".
+  - So: the acted-on subset stays `season` and only `season`. The rest of this audit is context,
+    and the summary should be read as *"here is where a road is mentioned"*, never as a defect
+    count. Same shape as the off-track pin backlog (629 → 13, most of those correct) and the
+    trailhead disagreements (12 → 6): **a headline count in this dataset has overstated the work
+    every single time it was quoted without re-deriving the denominator.**
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping

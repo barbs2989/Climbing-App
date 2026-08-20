@@ -1,0 +1,71 @@
+-- Drop two hand-made crew functions that are broken, uncalled, and duplicated by working app code.
+--
+-- Both were created directly in the SQL editor — NO migration creates either, so git has never
+-- seen them. Both reference columns that do not exist, so both would throw on their first call.
+-- Two separate guards have been carrying a permanent `known` entry for them
+-- (check:function-columns for the write half, check:function-drift for the untracked half), and
+-- the reason recorded for leaving them was sound: "dropping a function that git has never seen
+-- destroys the only record of the intent."
+--
+-- THAT OBJECTION IS ANSWERED BY RECORDING THE BODIES HERE rather than by keeping broken functions
+-- in the database. Both are reproduced verbatim below, so the intent is now in version control for
+-- the first time — which it was not while they sat in the live schema.
+--
+-- Verified before dropping, not assumed. Nothing references either one: no trigger (pg_trigger),
+-- no other function body (pg_proc.prosrc, comments stripped), no RLS policy (pg_policy qual and
+-- with-check), and no app code, script or migration in the repository.
+--
+-- AND BOTH ARE ALREADY IMPLEMENTED, CORRECTLY, CLIENT-SIDE. That is what makes this a deletion
+-- rather than a repair:
+--   auto_archive_crews  archives 3 days after the agreed date. `CREW_ARCHIVE_GRACE_DAYS = 3` and
+--                       `isArchivedCrew()` in ClimbMatchCore do exactly that, and work.
+--   is_crew_ready       wants every accepted member plus a date, place and time. `isReady()` does
+--                       that, and `check:crew` guards it.
+-- So implementing the SQL versions would mean adding columns to back a second, redundant copy of
+-- working logic — a product decision nobody has asked for, not a repair.
+--
+-- ── auto_archive_crews, verbatim as it stood in the live database ─────────────────────────────
+--   CREATE OR REPLACE FUNCTION public.auto_archive_crews()
+--    RETURNS void
+--    LANGUAGE plpgsql
+--   AS $function$
+--   begin
+--     update crews set archived_at = now(), status = 'archived'
+--     where status in ('ready', 'climbing')
+--       and agreed_date is not null
+--       and (now()::date - agreed_date::date) >= 3
+--       and archived_at is null;
+--   end;
+--   $function$
+--
+--   Broken on: crews.archived_at and crews.status, neither of which exists.
+--
+-- ── is_crew_ready, verbatim ───────────────────────────────────────────────────────────────────
+--   CREATE OR REPLACE FUNCTION public.is_crew_ready(crew_id uuid)
+--    RETURNS boolean
+--    LANGUAGE plpgsql
+--   AS $function$
+--   declare
+--     crew crews;
+--   begin
+--     select * into crew from crews where id = crew_id;
+--     if crew is null then return false; end if;
+--
+--     return (
+--       crew.members @> (select jsonb_agg(jsonb_build_object('id', m->>'id', 'accepted', true))
+--                        from jsonb_array_elements(crew.members) as m
+--                        where m->'accepted' = 'true'::jsonb)
+--       and crew.agreed_date is not null
+--       and crew.meet_place is not null
+--       and crew.meet_time is not null
+--     );
+--   end;
+--   $function$
+--
+--   Broken on: crews.members, which does not exist. The crew's members live in `crew_members`.
+--
+-- If either is ever wanted, it comes back as a new migration with the columns it needs and an
+-- explicit decision to move that logic server-side — not as a silent restore.
+
+drop function if exists public.auto_archive_crews();
+drop function if exists public.is_crew_ready(uuid);
