@@ -2240,14 +2240,56 @@ the correction knows the screen is wrong, and they have no way to report it.
     directions** are asserted: a route with no rack of its own must add **no** list, or the stock
     quickdraw kit gets restated directly under the note that already says it. Injection-tested
     2/2, each restored to the pre-injection checksum.
-- **`wa_true_grit` carries another route's prose entirely — REPORT, do not repair.** The row is
-  filed at **Postal Wall, Frenchman Coulee** (a Vantage basalt sport crag, 47.025,-119.975) and
-  stores `sport 5.10c, 0 pitches`; its `overview` and `beta` describe *"a 5.8 trad rock line …
-  on **Vesper Peak's north face**"*, 150 km away in the Cascades. Discipline, grade and range all
-  disagree. **29 rows in the catalog are named "True Grit"** — the *a name is not an identity*
-  root cause this file already records for route ids, reaching a prose column instead of an id.
-  Found while scoping the gear work (`probe-true-grit-mismatch.mjs`); which half to delete needs
-  checking whether a real Vesper "True Grit" row exists to receive the prose, so it is left alone.
+- **`wa_true_grit` carried another route's prose entirely — FIXED, and the row was a MIX.** The row
+  is filed at **Postal Wall, Frenchman Coulee** (a Vantage basalt sport crag, 47.025,-119.975) and
+  stores `sport 5.10c, 0 pitches`; five of its text fields described *"a 5.8 trad rock line … on
+  **Vesper Peak's north face**"*, 150 km away in the Cascades. **29 rows in the catalog are named
+  "True Grit"** — the *a name is not an identity* root cause this file records for route ids,
+  reaching a prose column instead of an id.
+  - **The target row was identified rather than guessed**: `wa_true_grit_2` (Vesper Peak, alpine
+    5.8, 5 pitches, beside Ragged Edge 5.7) is that climb, and already carried the same facts in
+    far fuller form — a five-entry `pitch_detail`, its own rack, a 1,400-character approach. So
+    this was a stray **duplicate to clear**, not prose to move.
+  - **Its `hazards` is genuinely Frenchman Coulee** — *"Basalt columns fracture in dinner-plate
+    style … rattlesnakes … raptor nesting closures"* — and was kept. **A contaminated row is not
+    uniformly contaminated**; clear named fields, never blank the row.
+  - **Two evidence gates, deliberately kept distinguishable.** Gate A: the field NAMES something
+    only Vesper has (*Berdinka*, *Sunrise Mine*), and the Vesper row already says it, so clearing
+    cannot destroy the only copy — that cleared `overview`, `beta`, `approach`. Gate A correctly
+    **refused** `best_season` and `watch_out`, which describe alpine terrain but name no Vesper
+    place. Gate B settled those from the **crag** rather than the row: of the **110 routes in the
+    Frenchman Coulee subtree, `wa_true_grit` is the only one that records a season, the only one
+    with an approach, and the only one whose text mentions alpine terrain**. Gate B is armed only
+    once Gate A has already fired twice — *"unlike its siblings"* alone is far too weak, and would
+    let a thinly-enriched crag condemn its one well-documented route.
+  - **`season` = "Jun-Sep" is left UNRESOLVED and flagged**, not fixed. It is the only season in
+    those 110 routes, so it is certainly anomalous — but Jun-Sep being wrong for a desert crag is
+    knowledge about climbing rather than something the row proves, and replacing it would invent a
+    value.
+  - The sibling probe found its own vacuous zero on the way: `path=like.*` is invalid on an ltree
+    column (**42883**), and the `cd.` version before it used a hand-typed path missing the
+    intermediate `wa_frenchman_coulee_aka_vantage` segment — returning **200 with zero areas**,
+    which reads as *"this crag has no siblings"* rather than *"the query is wrong"*. Derive a
+    subtree path from a row that is in it, and fail closed on an empty result.
+- **`wa_phantom_peak_south_route`'s chain matched neither trailhead record because it matched BOTH
+  — FIXED.** `audit:trailhead-agreement` left this one unresolved, and reading the row settles it:
+  the route's own approach text names **two real approaches** ("Option one, the Luna Creek
+  approach: from Ross Lake Resort … to Luna Camp … Option two … Hannegan Trailhead → Ruth Creek
+  Trail → Chilliwack River Trail … Whatcom Pass"), and its seven waypoints are a **mix of both** —
+  Luna Camp and the Luna Creek bushwhack from one, the Crooked Thumb moraine camp and the
+  southwest-buttress saddle from the other. That is correct data for a two-approach peak.
+  - The defect is the **third** name. `approach_logistics.trailhead` said *"Nooksack Cirque
+    Trailhead (Trail #750)"*, which appears **nowhere in the route's own prose** and sits up a
+    different drainage — its nearest named areas are Shuksan Crag and Pan Dome Falls. The
+    waypoint pin says *Hannegan Pass Trailhead*, named verbatim in the approach text.
+  - Repaired by **declaring a winner and copying it** — the pin into the blob, no coordinate typed
+    anywhere in the script, so a fix needing a third coordinate cannot be expressed at all.
+  - **The resulting agreement is NOT evidence**, and that is worth knowing before someone quotes
+    it: the two records now agree at 0 m by construction, which is one claim counted twice. This
+    is not the trap [[do-not-create-a-trailhead-pin-from-the-logistics-copy]] describes, because
+    it corrects an existing record shown wrong by an **independent third source** (the route's own
+    prose) rather than manufacturing a second record from a copy — but the caveat on the *result*
+    is identical.
 - **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
   renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
   two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
