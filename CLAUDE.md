@@ -3027,7 +3027,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     block. Only **2 of 1,371 are mountaineering**, against 27.6% of the populated set. **A road block
     describes the DRIVE TO A WALK, and these routes describe no walk.**
   - Turned round — *of the routes that DO describe a walk, how many say nothing about the road?* —
-    it is **19 of 1,065 (1.8%)**, now **16**. Same turn that collapsed *"research gear for 4,938
+    it is **19 of 1,065 (1.8%)**, now **14**. Same turn that collapsed *"research gear for 4,938
     routes"* into 13 routes of re-homing. **A route enters on approach prose, a trailhead pin, a
     `dist_km` or a `gain_ft`** — any one of those means the page already sends a climber somewhere on
     foot, and therefore already implies a drive it is silent about.
@@ -3038,16 +3038,76 @@ the correction knows the screen is wrong, and they have no way to report it.
     conclusions for two reasons already on record: a peak can have **two genuine trailheads**
     (Lundin, Remmel, Carru, Howard), and a `road` block can **outlive the trailhead it described**
     (`audit:trailhead-road` section 2).
+  - **THE BUCKET TEST WAS "DOES THE PROSE MENTION A ROAD?" AND IT OVER-PROMISED — this audit's own
+    disease, committed by its own author, one release after it was written to cure it.** That test
+    filed three routes as RE-HOMING, i.e. fillable by copy. **Not one was.** The buckets are now
+    **COPY** (a same-area sibling block names *the road this route's own prose names*) and
+    **RESEARCH**, and today that reads **0 / 14**. The three refusals are each a different way the
+    old label was wrong, and all three are pinned as self-test cases:
+    - `wa_little_annapurna_south_face` names **Highway 97 / Ingalls Creek Road**; its one sibling
+      block is **Icicle Creek Road / FR 7601 to Stuart Lake**, the other side of the range. The row
+      says so itself — its overview reads *"the seldom-used Ingalls Creek/Crystal Creek side rather
+      than the Enchantments basin"*. The two-trailhead case, **stated outright by the row**, and a
+      bare sibling copy would have sent a party to the wrong trailhead.
+    - `wa_upper_castle_toprope_wall` names **US-2 in Tumwater Canyon at milepost 96.5**. **Zero road
+      blocks in the entire catalog name Tumwater**, and all **125** US-2 blocks are Stevens Pass /
+      Skykomish / Baring, 40-80 miles down the same highway. *"A drive has several named legs"* — a
+      true statement about the wrong stretch is not a donor.
+    - `wa_south_face_direct` had no donor **because it was filed on the wrong area** (below). The
+      missing block was the symptom; the area was the defect.
+  - **Roads are compared as IDENTIFIERS, never as sentences** — one road is spelled many ways
+    (`SR-20` / `State Route 20` / `Highway 20` / `North Cascades Highway`), so a string compare
+    reports agreement as disagreement. Numbered routes normalise to `#20`; proper-noun names
+    normalise to their distinctive word, behind a `GENERIC` stop-list — admitting a token every road
+    name shares (`road`, `creek`, `forest`) makes the match vacuous in the **wide** direction, the
+    mirror of a too-narrow proxy.
+  - **Donors stay scoped to the SAME AREA, and that scoping is what makes a bare highway number
+    admissible at all.** 283 WA routes carry a block naming `#20` and SR-20 runs 130 miles, so
+    state-wide the match is meaningless; within one crag it is the same pullout. **Do not widen the
+    scope without also strengthening the identifier test** — an injection case pins exactly that.
+  - **The self-test runs before any verdict, because the expected answer is a small number and today
+    it is ZERO — which is what a broken finder prints.** It drives the **real finder** over synthetic
+    routes rather than poking the helper, and that distinction earned itself immediately: a first
+    version compared two prose strings, declared the matcher broken because a Tumwater route and a
+    Stevens Pass block share `#2`, and was testing something the pipeline never does. **Following it
+    would have driven a "fix" that refused the one real copy this work made.** Injection-tested 5/5
+    (`inject-road-coverage-selftest-cases.mjs`), each case proving its edit landed by checksum, each
+    failing with a message naming its own defect; case 5 must **pass**.
+- **`wa_south_face_direct` was a Vasiliki Tower trad route filed on a UNIVERSITY OF WASHINGTON campus
+  crag — moved.** `wa_art_building` held four boulder problems (*East Enterance*, *North Problem*,
+  *NW Entrance*, *Pillar Problem*) and this one 5.10 multi-pitch line whose own prose is Burgundy Col
+  in the Wine Spires, ~190 km away. **"South Face Direct" exists in seven states** — the *a name is
+  not an identity* root cause this file records for route ids, landing on `area_id`.
+  - **Found by the road work, and that is not incidental**: it is one of the three routes above, and
+    the reason no donor could be found for it is that its area had no Washington Pass routes to
+    donate one. **A missing road block was the symptom; the area was the defect.** Once moved it
+    filled by copy from its real sibling, so the two scripts must stay in that order.
+  - **The discriminator is the NON-PROSE columns, and this is the general rule for the class.**
+    `wa_true_grit` is the recorded case where the *prose* was the contaminated half, and five prose
+    fields agreeing with each other is **one claim counted five times** — a contaminating write lands
+    in several text columns at once. Here `discipline` is **trad** while all four area-siblings are
+    bouldering, and `dist_km` is **4.8** while the row's own approach says *"roughly 3 miles to
+    Burgundy Col"* (= 4.83 km). Both are written by a different part of the pipeline, both agree with
+    the prose and disagree with the area, so **the area is the wrong half**.
+  - A **move**, not a dedup: Vasiliki held no row of that name, so nothing was duplicated. The
+    applier requires the destination to already hold the route this row calls itself a variation of
+    (*"South Face"*), so the target area is a **fact about the catalog** rather than a name somebody
+    typed — no coordinate, area name or path appears in the file.
+  - `route_count` is trigger-maintained on a route move and both leaves moved correctly (5→4, 2→3);
+    `check:counts` then confirmed **all 47,638 areas** agree with their subtree, so no ancestor
+    drifted.
   - **Geometric inheritance is unavailable here and that was measured, not assumed.** The obvious
     fix — cluster the silent routes on their trailhead coordinate and inherit from neighbours, the
     way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
     partly as having no `approach_logistics`, which is where the trailhead coordinate lives. The
     routes that need a road block are exactly the routes with no coordinate to cluster on.
-- **Four of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 15).
+- **Five of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 14).
   **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
   area carries a researched block for that same road. (A) is evidence about *this* route; (B)
   supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a
-  bare copy onto a row with no coordinate to corroborate it.
+  bare copy onto a row with no coordinate to corroborate it. The fifth (`wa_south_face_direct`)
+  only became reachable once its **area** was fixed, and the applier is **idempotent** so the four
+  earlier writes skip on a re-run rather than being re-applied.
   - **The gate was widened from a road NAME to a TRAILHEAD name, and that is the more general
     rule**: a route can describe its whole approach without ever naming the tarmac, and on a
     two-trailhead peak the **trailhead is the sharper evidence** because it is the thing that
@@ -3161,6 +3221,12 @@ the correction knows the screen is wrong, and they have no way to report it.
       conclusion that survives is only the narrow one — **the acted-on subset of `audit:access-prose`
       stays `season`** — because road coverage turned out to be a different audit's question, not
       because there was nothing there.
+      - **Precision on "prose naming a road is what makes a repair possible": NECESSARY, NOT
+        SUFFICIENT.** It was true of these two because a donor block existed for that same road.
+        Measured later against every such route, **3 named a road and none could be repaired** —
+        one names the road up the far side of the range, one names a highway no block in the
+        catalog describes at that milepost, and one had no donor because its **area** was wrong.
+        `audit:road-coverage`'s buckets were rewritten around that; see its entry.
   - So: the acted-on subset stays `season` and only `season`. The rest of this audit is context,
     and the summary should be read as *"here is where a road is mentioned"*, never as a defect
     count. Same shape as the off-track pin backlog (629 → 13, most of those correct) and the
