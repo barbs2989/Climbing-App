@@ -9297,3 +9297,77 @@ Web access this run: WebSearch and anon-key REST reads worked; WebFetch still bl
 egress proxy, so facts confirmed from WebSearch result summaries.
 
 Next batch continues after `wa_liberty_and_injustice_for_all` in the id-ordered scope.
+
+## Batch 137 — 2026-08-20 (pass 3)
+
+Routes: all 7 routes on Liberty Bell (Beckey Route, East Face, The Independence Route,
+Northwest Face, Overexposure, Serpentine Crack, Thin Red Line) plus Liberty Cap via
+Liberty Ridge (Mount Rainier).
+
+**2 auto-fixed, 2 flagged for human review.**
+
+**Fixed** (`audits/sql/2026-08-20-batch-137.sql`, validated with `check-sql-targets.mjs`):
+the SR-20 hairpin/pond pullout Trailhead waypoint used by `wa_liberty_bell_east_face` and
+`wa_liberty_bell_thin_red_line` correctly names itself "(east of Washington Pass)" and its
+own `directions` field says "the east-side pullout that every route on this wall uses, not
+the Blue Lake Trailhead" — but its `note` field is a stale copy of the *Blue Lake*
+Trailhead's note, reading "...about 1.5 mi **west** of Washington Pass." Internal
+self-contradiction inside the same row, no external source needed.
+`wa_liberty_bell_independence_route`'s copy of the identical waypoint already has a correct,
+non-contradictory note and was left alone.
+
+Hard facts otherwise checked clean: Liberty Bell summit 7,720 ft / 48.5154,-120.6584 (matches
+Wikipedia, and the row's own `high_point_ft` and summit waypoint agree with each other and
+with the trailhead-to-summit `gain_ft` arithmetic). FAs for Beckey Route (Beckey/O'Neil/Welsh,
+Sept 27 1946), Thin Red Line (Madsen/Schmitz 1967, FFA Rutherford/Schaefer Sept 2008), and
+Independence Route (Bertulis/McPherson 1966, FFA Risse/Hertel 1991) all confirmed exactly
+against independent sources (AAC Publications, climbing.com). Permit text for both areas
+confirmed against current NPS/USFS pages (Rainier's $82/yr climbing pass above 10,000 ft or
+on glaciers, still accurate for 2026; no WA Pass climbing permit, just a parking pass).
+Liberty Cap's `high_point_ft` (14,112 ft) is the still-current official/map elevation — its
+`overview` text separately and *correctly* cites the real Aug 2025 GPS resurvey
+(14,094.9 ft ± 0.1 ft, countryhighpoints.com/arXiv:2512.06567) as a distinct, more recent
+figure describing icecap thinning; the two are not in conflict, this is accurate reporting
+of two different real numbers and needed no fix.
+
+**Flagged, not fixed:**
+
+- `wa_liberty_bell_nw_face`: the free-FA team given for the Northwest Face
+  ("Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966") is suspiciously close to the
+  independently-documented FA team of a *different, named* Liberty Bell route, **Barber Pole**
+  ("S. Bill, C. Burgner, F. Tarver, 1966" per search results referencing that route
+  specifically). Could not confirm or rule out via the sources reachable this run — Mountain
+  Project, SuperTopo, thecrag.com and mountaineers.org are all blocked by the egress proxy for
+  WebFetch, and WebSearch snippets weren't decisive enough either way. Left unchanged; flagging
+  for a run with working WebFetch or manual guidebook check (Beckey's Cascade Alpine Guide is
+  the natural source).
+- `wa_liberty_cap_liberty_ridge_finish` appears to be a **duplicate** of the existing
+  `wa_mount_rainier_liberty_ridge` (area_id `wa_mount_rainier`) — same real climb (same FA
+  party/date: Daiber, Campbell, Borrow[s], Sept 28-Oct 1 1935; same ~9,700 ft gain; both top
+  out on Liberty Cap at 14,112 ft). Two things worth a human decision rather than an automated
+  merge: (1) `wa_mount_rainier_liberty_ridge`'s own `waypoints` are geographically incoherent —
+  they route White River Campground -> **Mowich Lake Camp** (46.952,-121.818, the NW side of
+  the mountain) -> "Puyallup Winthrop Junction Camp" -> **Puyallup Glacier** Serac Zone -> 
+  Liberty Cap, but the Puyallup Glacier is on the SW side of Rainier nowhere near Liberty
+  Ridge or the Winthrop Glacier, and Liberty Ridge's real approach (confirmed against NPS/
+  guidebook descriptions, and matching what `wa_liberty_cap_liberty_ridge_finish`'s own
+  waypoints already describe correctly) runs via Glacier Basin -> St. Elmo Pass -> Winthrop
+  Glacier -> Curtis Ridge -> Carbon Glacier -> Thumb Rock. (2) `wa_liberty_cap` is itself
+  parented as a *sibling* of `wa_mount_rainier` under `wa_southwest_cascades` rather than as
+  a child of it (same for `wa_point_success`) — the same flat-import fingerprint
+  `audit:area-parents` documents for the Liberty Bell Group case, but Mount Rainier has no
+  existing "massif" grouping area the way Liberty Bell Group does, so fixing it means either
+  reparenting these summit sub-points under `wa_mount_rainier` or leaving the flat structure
+  as an intentional convention for named sub-summits — a design call, not a one-line fix.
+  Recommend a human read both route rows side by side and decide whether to consolidate
+  (keeping the accurate waypoints) or keep both with `wa_mount_rainier_liberty_ridge`'s
+  waypoints corrected. Not touched this run — this is exactly the "duplicate flag is a
+  hypothesis, confirm both ids, do not delete unilaterally" case CLAUDE.md warns about, and
+  a merge/reparent is out of scope for a single UPDATE statement.
+
+Web access this run: WebSearch worked well (including confirming a genuine 2024-2025 Rainier
+summit GPS resurvey story); WebFetch remains blocked by the egress proxy for every climbing
+reference site tried (mountainproject.com, mountaineers.org, thecrag.com, supertopo.com), so
+the Northwest Face/Barber Pole question above could not be resolved from search snippets alone.
+
+Next batch continues after `wa_liberty_cap_liberty_ridge_finish` in the id-ordered scope.

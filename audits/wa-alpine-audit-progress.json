@@ -1,8 +1,8 @@
 {
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_liberty_and_injustice_for_all",
+    "last_processed_id": "wa_liberty_cap_liberty_ridge_finish",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -80,7 +80,7 @@
             "flagged_for_human_review": 15,
             "clean": 0,
             "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
         },
         {
             "batch_number": 5,
@@ -2927,6 +2927,21 @@
             "clean": 6,
             "sql_file": "audits/sql/2026-08-20-batch-136.sql",
             "note": "Clean on hard facts. All elevations, summit coords, FAs, permits and access roads verified/source-consistent (Le Conte 7762 exact vs Wikipedia; Glacier Peak Wilderness placement correct). Lemah main 7519 within documented 7463-7520 range, left as-is. Flagged (no auto-fix): wa_lane_peak_r3 bivy[0] 'Snow Lake Camp' note is written about Unicorn Peak (south-side Tatoosh) while Lane is approached from Narada Falls -- neighbour-peak bivy contamination in a soft jsonb field; wa_lexington_tower_east_face summit waypoint 'Lexington Tower notch' elev 7621 exceeds the verified 7560 summit and the route tops out below the true summit, so the notch elevation is impossible -- no authoritative notch value to substitute."
+        },
+        {
+            "batch_number": 137,
+            "date": "2026-08-20",
+            "route_ids": [
+                "wa_liberty_bell_beckey_route",
+                "wa_liberty_bell_east_face",
+                "wa_liberty_bell_independence_route",
+                "wa_liberty_bell_nw_face",
+                "wa_liberty_bell_overexposure",
+                "wa_liberty_bell_serpentine_crack",
+                "wa_liberty_bell_thin_red_line",
+                "wa_liberty_cap_liberty_ridge_finish"
+            ],
+            "findings_summary": "2 auto-fixed (stale west/east trailhead note contradiction on East Face + Thin Red Line); 2 flagged for human review (possible Northwest Face FA/FFA team mixup with the Barber Pole route; wa_liberty_cap_liberty_ridge_finish appears to duplicate wa_mount_rainier_liberty_ridge, whose own waypoints are geographically incoherent -- see log)."
         }
     ]
 }
