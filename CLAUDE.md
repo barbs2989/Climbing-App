@@ -815,11 +815,30 @@ a build error, but a screen that renders wrong or not at all.
       encodes: `--platform=neutral` cannot resolve Supabase's subpackages (use `node`), and
       `lib/supabase.js` reads `import.meta.env` at module scope, so `--define:import.meta.env={}`
       is required or the import throws before `ROUTES` is reachable.
-    - **An open question this raises and does NOT answer: does any real user ever see this
-      section?** A working, data-backed component that neither a state injection nor three driven
-      browse paths could put on screen is at least suspicious. That is a claim about the app, not
-      about the guard, and it is deliberately not asserted here — establishing it needs the
-      wiring question above settled first.
+    - **ANSWERED 2026-08-20, and it is not a coverage gap at all: NO REAL USER EVER SEES THIS
+      SECTION.** `AreaLatest`, and its neighbours `ClassicClimbs` and `GettingThere`, are gated
+      on `selArea` — which is written **only on the seed catalog path**. `deploy.yml` sets
+      `VITE_USE_DB: "true"`, so production renders `DbAreaBrowser`, which receives
+      `onAreaContext={setDbAreaCtx}` and **never** `setSelArea`. This is the documented trap that
+      shipped #714's unreachable fire map (fixed in #731 by reading `dbAreaCtx || selArea`).
+      **The guard was reporting reality, not missing a screen.**
+    - **The tell was in the probe output all along.** The drive reported `country: ok` /
+      `state: ok` against selects labelled *"Select a country"* / *"Select a state"* — those are
+      **`DbAreaBrowser`'s**. The seed `AreaBrowse` has a single select labelled **"Jump to a
+      state"**. So the walk was in DB mode (the worktree symlinks `.env`/`.env.local` and vite
+      loads them) and `selArea` could never be set. Reading which select answered would have
+      ended four browser attempts immediately.
+    - **It is NOT the `dbAreaCtx || selArea` one-liner, and that is the part worth knowing before
+      quoting an estimate.** All three are also bound to the **seed `ROUTES`/`MOUNTAINS` arrays**:
+      `AreaLatest` early-returns on `ROUTES.some(r=>r.mountainId===area.id)` and builds rows from
+      `ROUTES.filter(r=>inArea(...))`; `GettingThere` walks `MOUNTAINS` by `parentId`, which
+      `dbAreaCtx`'s flat `{id,name,lat,lng,areaType}` does not carry. So a DB area renders nothing
+      even once the prop is fixed. Reviving them needs an area-subtree query over `climb_logs`
+      that does not exist — **feature work**, recorded in
+      `memory/three-climbs-tab-sections-dead-in-production.md` as an open decision.
+    - So **driving the browse navigation would not have helped either**, and the earlier note
+      here saying it would was wrong. The `arealatest` injection case still expects a pass, but
+      for this reason rather than for walk coverage.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
