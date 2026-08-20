@@ -94,8 +94,13 @@ console.log("\nroutes listing the same place twice:", t.deduped, " duplicate pin
 // five separate routes. An unqualified "0 out of order" over that population is the
 // vacuous-pass shape, so the denominator is stated with the verdict.
 const unsortable = t.withWp - t.allHaveDist;
-console.log(`routes whose waypoints render out of order: ${t.reordered}` +
-  ` — of the ${t.allHaveDist} this can order at all`);
+// The wording matters and was backwards. This compares the STORED array against what
+// orderWaypoints produces, so a non-zero count means the app is CORRECTING those routes at
+// render time — they render in order, and it is the stored order that differs. Saying they
+// "render out of order" reported a fix as a defect. It went 0 -> 4 the moment distMi was
+// derived for 17 routes, which is the sort starting to work rather than anything breaking.
+console.log(`routes the app REORDERS at render time (stored order differs, screen is correct): ${t.reordered}` +
+  ` — of the ${t.allHaveDist} it can order at all`);
 console.log(`  ${unsortable} more cannot be ordered (a pin is missing distMi), so they render in` +
   ` STORED order and are counted as in-order here whatever that order is.`);
 console.log("  scripts/oneoff/probe-waypoint-order-coverage.mjs measures what is sitting in that gap.");
