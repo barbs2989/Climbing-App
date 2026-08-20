@@ -1042,6 +1042,18 @@ a build error, but a screen that renders wrong or not at all.
   - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
     which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
     a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - **Route detail is walked, and failing to reach it is an exit-1.** Its sub-tab bar
+    (`Overview / Plan / Reports / Safety / Partners / Photos`) is one of the four #1041 fixed,
+    and no tab walk reaches that screen — so for one commit the fix was guarded everywhere
+    except where it was made. Navigated rather than driven: `?zr=1` calls the app's own
+    `openRoute()` from inside the shared opener, the same mechanism `check:overflow` uses and
+    for the same reason. It waits on `window.__routeOpen` **as well as** on the text settling,
+    because settling says nothing about whether the navigation has happened yet. The
+    not-reached test runs **before any verdict is interpreted**, so a screen the guard silently
+    failed to open can never read as a screen with nothing wrong (injection case 4 pins that
+    ordering — it fires even though a healthy bar has already passed).
+  - It found the route page's star-rating group **already correct** (`aria-pressed`), which is
+    the useful shape of a negative result: the convention was there to follow.
   - Injection-tested, 3 cases at the bottom of the script, driven by `--strip-aria=` because the
     regression lives in the app rather than in the checker. Case 3 (break the scaffold anchor)
     must fail on the 58-character boot shell rather than pass over a blank app — the trap
