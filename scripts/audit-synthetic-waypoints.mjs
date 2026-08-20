@@ -246,6 +246,17 @@ console.log(`trailhead and summit are perfectly real, which is why the whole-rou
 console.log(`  computed coordinates : ${computedPins} pins of ${pinsSeen} (${(100 * computedPins / pinsSeen).toFixed(1)}%), on ${withComputed.length} routes`);
 console.log(`  usable collinear run : ${partial.filter(p => p.runUsable).length} routes`);
 console.log(`  BOTH tells agree on  : ${corroborated.length} routes — two independent methods, which is what makes the run test usable\n`);
+// A RUN'S ENDPOINTS ARE ITS ANCHORS, NOT ITS VICTIMS, and a repair pass that expands `run x-y` into
+// "pins x..y are fabricated" will chase pins that are already correct. Interpolation is drawn BETWEEN
+// two points somebody actually knew, and on these routes those two are overwhelmingly the trailhead
+// and the summit — the two a research pass was most likely to have. Measured 2026-08-20 against an
+// independent record per pin (the route's `areas` row for a summit, its own approach_logistics for a
+// trailhead): of 72 such endpoints, 50 were judgeable and **50 agreed, 49 of them to the metre. None
+// disagreed.** The fabricated pins are the run's INTERIOR, x+1..y-1.
+console.log(`  NOTE: a run's endpoints are its ANCHORS. Interpolation is drawn between two points that`);
+console.log(`  were known — here, almost always the trailhead and the summit. Expanding "run x-y" into`);
+console.log(`  "pins x..y are fabricated" chases correct pins: measured against an independent record,`);
+console.log(`  50 of 50 judgeable run endpoints agreed, 49 to the metre. Read the INTERIOR, x+1..y-1.\n`);
 for (const p of partial.slice(0, 60)) {
   const bits = [];
   if (p.runs.length) bits.push(`run${p.runs.length > 1 ? "s" : ""} ${p.runs.map(([x, y]) => `${x}-${y}`).join(",")}`);
