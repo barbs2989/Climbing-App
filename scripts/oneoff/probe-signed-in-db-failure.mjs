@@ -31,6 +31,26 @@
 // resolving to [], so the caller's existing catch can say "Couldn't load…" rather than the
 // list rendering its empty state.
 //
+// STILL BROKEN, MEASURED 2026-08-19 AFTER the crew fix (#1124) — the same class, more
+// surfaces. Run with DUMP=Logbook to see it. During an outage the Logbook tells an account
+// that HAS an objective, a log and a custom list:
+//
+//   "0 climbs to go"
+//   "Nothing here yet — find a route in the Climbs tab and tap the bookmark to save it"
+//   "No custom lists yet — tap + Create to build one."
+//   "No recent condition reports"
+//
+// Four false statements on one screen. This is systemic rather than a second one-off: every
+// list that hydrates from a query renders its EMPTY state when the read fails, because the
+// render tests `!x.length` and nothing distinguishes "loaded, none" from "never loaded".
+//
+// The crew repair is the template and it is small — derive `xUnavailable` from that query's
+// `isError`, swap the empty copy, suppress onboarding that assumes emptiness. What makes this
+// more than one more edit is that the Logbook draws on at least two further queries
+// (`useMyLists`, plus whatever feeds objectives/wishlist), so each needs its own flag AND its
+// own healthy-vs-failing run. Do them one query at a time; a blanket flag would claim the
+// database is down on a screen whose data merely has not arrived yet.
+//
 // LIMITATION, stated rather than papered over: Logbook and Me returned identical text (1097ch
 // each), so the "Me" click did not land and that pair is ONE screen measured twice, not two
 // findings. Home and Climbs changed but still render real content (Climbs shows the fire map,
@@ -128,6 +148,7 @@ try {
     if (!same) {
       const lines = text.split("\n").map((l) => l.trim()).filter(Boolean).filter((l) => !TABS.includes(l));
       console.log(`          -> ${JSON.stringify(lines.slice(0, 7))}`);
+      if (process.env.DUMP === t) console.log(`\n          FULL ${t} (failing):\n${text}\n`);
     }
   }
   if (!anyDbBacked) {
