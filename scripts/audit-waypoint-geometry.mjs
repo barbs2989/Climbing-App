@@ -51,6 +51,7 @@
 // Usage: npm run audit:waypoint-geometry [-- --state wa] [-- --selftest] [-- --ground]
 
 import { selectAll, requireServiceKey } from "./lib/supabase-env.mjs";
+import { elevationAt, offset } from "./lib/terrain.mjs";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -190,29 +191,24 @@ function selftest() {
 
 if (SELFTEST) selftest();
 
-/* USGS 3DEP point query. Sampled at the pin and at four neighbours ~30 m out: the spread is the
-   local relief, and without it a single reading cannot be told from a DEM artefact on steep ground.
-   Returns null rather than a number it does not have — a fabricated elevation here would be the
-   exact defect this audit exists to report. */
-const M_PER_DEG = 111320;
-async function epqs(lat, lng) {
-  const u = `https://epqs.nationalmap.gov/v1/json?x=${lng.toFixed(6)}&y=${lat.toFixed(6)}&units=Feet&wkid=4326&includeDate=false`;
-  for (let a = 0; a < 4; a++) {
-    try {
-      const r = await fetch(u, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(30000) });
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      const v = Number((await r.json())?.value);
-      if (Number.isFinite(v) && v > -1000) return v;
-      throw new Error("no value");
-    } catch { if (a === 3) return null; await new Promise(s => setTimeout(s, 1200 * (a + 1))); }
-  }
-  return null;
-}
+/* Ground sampling goes through lib/terrain.mjs's `elevationAt`, NOT a second copy of the EPQS
+   client. This repo already pays for what a duplicated numeric helper costs — check:grade-parser
+   exists because the same grade arithmetic lived in four scripts and had drifted into three
+   behaviours. terrain.mjs is also the one that documents the fail-closed contract: a reading that
+   cannot be obtained is null, never 0, because "no evidence" and "sea level" must never be
+   confused.
+
+   The sampling PATTERN is this audit's own: the pin plus four neighbours ~30 m out, whose spread is
+   the local relief. Without it a single reading cannot be told from a DEM artefact on steep ground,
+   and the relief is what the verdict's tolerance is made of. */
 async function sampleGround(lat, lng) {
-  const d = 30 / M_PER_DEG, dl = d / Math.cos(lat * Math.PI / 180);
   const vals = [];
-  for (const [y, x] of [[lat, lng], [lat + d, lng], [lat - d, lng], [lat, lng + dl], [lat, lng - dl]]) {
-    const v = await epqs(y, x); if (v != null) vals.push(v);
+  const v0 = await elevationAt(lat, lng);
+  if (v0 != null) vals.push(v0);
+  for (const b of [0, 90, 180, 270]) {
+    const [y, x] = offset(lat, lng, 30, b);
+    const v = await elevationAt(y, x);
+    if (v != null) vals.push(v);
   }
   if (!vals.length) return null;
   return { at: vals[0], relief: Math.round(Math.max(...vals) - Math.min(...vals)), n: vals.length };
