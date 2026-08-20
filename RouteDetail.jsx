@@ -27,7 +27,7 @@ import { clickable } from "./lib/clickable";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
-import { shortGrade, gradeDetail } from "./lib/grade";
+import { shortGrade, gradeDetail, cruxGrade } from "./lib/grade";
 import { routeTerrain, fitAdvice, fitGear, saysNotApplicable } from "./lib/terrain";
 import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
 import { mergeHazards } from "./lib/hazards";
@@ -659,7 +659,7 @@ function TechStats({route,onEdit}){
     :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
   let stats,note;
   if(disc==="bouldering"){
-    stats=[["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]];
+    stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
     if(hasDist)stats.unshift(["Approach",uDist(distKm),C.blue]);
     if(hasDist&&isOutBack)stats.splice(1,0,["Round trip",uDist(roundTripKm),C.blue]);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
@@ -684,7 +684,7 @@ function TechStats({route,onEdit}){
     if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
     if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
+    if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     /* The Rappels tile used to sit here, at the top of Overview, while every other rappel
@@ -700,7 +700,7 @@ function TechStats({route,onEdit}){
     if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
     if(hasDist)stats.push([distIsWholeTrip?"Distance":"Approach dist",uDist(distKm),C.blue]);
     if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
-    if(route.cruxGrade||route.grade)stats.push(["Crux grade",shortGrade(route.cruxGrade||route.grade),C.amber]);
+    if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
