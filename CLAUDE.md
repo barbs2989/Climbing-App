@@ -3096,6 +3096,20 @@ the correction knows the screen is wrong, and they have no way to report it.
   - `route_count` is trigger-maintained on a route move and both leaves moved correctly (5→4, 2→3);
     `check:counts` then confirmed **all 47,638 areas** agree with their subtree, so no ancestor
     drifted.
+  - **THE CLASS IS CLOSED — measured, and NO detector was built, because it would be a detector for
+    a class of one.** `probe-lone-discipline-outlier-routes.mjs` asks the cheap structural question
+    that found this row (a route whose *kind* of climbing is unique on its area, where the area's
+    other routes agree with each other) across all 8,365 WA routes on 1,835 areas: **58** such
+    routes, **1** of them a roped route on a boulder area, and **0** carrying a real approach its
+    siblings lack — the shape this one had. Sizing a class before writing a detector for it is the
+    discipline `audit:area-parents` records after its first draft shipped 12 real findings out of 41.
+    - The one hit, `wa_north_face_7` on **`wa_anderson_hall`** — another University of Washington
+      building, same subtree — was read and **left alone**. It is a bare stub: grade 5.8, no prose
+      of any kind, no approach, no `dist_km`. **Nothing says it is anywhere else**, and a campus
+      building's north face at 5.8 is ordinary buildering. The Vasiliki row was condemned on prose
+      naming a place 190 km away plus two non-prose columns agreeing with that prose; matching the
+      area's *name* is not evidence, and acting on it here would be the pattern-match this file
+      warns about throughout.
   - **Geometric inheritance is unavailable here and that was measured, not assumed.** The obvious
     fix — cluster the silent routes on their trailhead coordinate and inherit from neighbours, the
     way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
