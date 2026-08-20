@@ -3177,7 +3177,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     block. Only **2 of 1,371 are mountaineering**, against 27.6% of the populated set. **A road block
     describes the DRIVE TO A WALK, and these routes describe no walk.**
   - Turned round — *of the routes that DO describe a walk, how many say nothing about the road?* —
-    it is **19 of 1,065 (1.8%)**, now **14**. Same turn that collapsed *"research gear for 4,938
+    it is **19 of 1,065 (1.8%)**, now **4**. Same turn that collapsed *"research gear for 4,938
     routes"* into 13 routes of re-homing. **A route enters on approach prose, a trailhead pin, a
     `dist_km` or a `gain_ft`** — any one of those means the page already sends a climber somewhere on
     foot, and therefore already implies a drive it is silent about.
@@ -3211,6 +3211,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     normalise to their distinctive word, behind a `GENERIC` stop-list — admitting a token every road
     name shares (`road`, `creek`, `forest`) makes the match vacuous in the **wide** direction, the
     mirror of a too-narrow proxy.
+  - **A ROUTE'S APPROACH PROSE NAMES A TRAILHEAD, NOT TARMAC — and matching roads alone left FIVE
+    genuine copies sitting in RESEARCH.** *"From the PCT trailhead at Exit 52"*, *"Hike the trail
+    toward Libby Lake"*, *"From the Lightning Creek trailhead on Ross Lake"*: not one names a road,
+    and every one has a same-area sibling whose block is exactly that trailhead's drive. **The
+    applier had already widened its own gate from a road name to a trailhead name** (for
+    `wa_the_balanced_rock`, recorded below) — the widening was simply never carried back into the
+    audit, so the audit and the thing it feeds disagreed about what counts as a donor. **When you
+    widen a gate, widen the report that feeds it.**
+  - **The place signal gets its OWN, WEAKER bucket (`COPY?`), and folding it into `COPY` would be
+    the same over-promising one release after fixing it.** Measured on the 9 rows it reached: **5
+    real, 3 refused on reading, 1 unrelated**. A place match says *where to look*; only reading the
+    row says whether to copy. `PLACE_GENERIC` stop-lists colours and size words on top of the road
+    list — *"White Chuck Glacier"* and *"White Chuck Road"* are a real pair, but **Silver Creek,
+    Silver Lake and Silver Star are three unrelated places sharing a colour**. A road match
+    outranks a place match, so the strong bucket cannot be diluted; both are pinned by self-test.
+  - **The three `COPY?` refusals are recorded in the applier so they are not re-derived**, and each
+    is a distinct trap: `wa_north_star_mountain_cloudy_peak_traverse` names **two** ways in and the
+    only sibling block is the **closed** one (copying it answers "how do I get there?" with an
+    indefinite closure while the row says an open alternative exists — worse than silence);
+    `wa_mount_spickard_silver_glacier` has two real drives and the sibling covers one, the
+    two-trailhead trap however explicitly the row cross-references it; and
+    `wa_don_t_climb_that_she_said` place-matches *"White Chuck"* onto the **FR 23 White Chuck Road**
+    block — a different, closed valley — while its own overview puts it on Glacier Peak's
+    **south-side** North Fork Sauk approach. A true statement about the wrong leg of the wrong drive.
   - **Donors stay scoped to the SAME AREA, and that scoping is what makes a bare highway number
     admissible at all.** 283 WA routes carry a block naming `#20` and SR-20 runs 130 miles, so
     state-wide the match is meaningless; within one crag it is the same pullout. **Do not widen the
@@ -3265,7 +3289,60 @@ the correction knows the screen is wrong, and they have no way to report it.
     way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
     partly as having no `approach_logistics`, which is where the trailhead coordinate lives. The
     routes that need a road block are exactly the routes with no coordinate to cluster on.
-- **Five of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 14).
+- **FIFTEEN of the 19 are filled, and only TWO needed prose written** (19 → 4). Thirteen were
+  copies — five on a road name, five more once the gate was asked about **trailhead** names, and
+  three where research established only *which start the route uses* while the block itself was
+  still copied verbatim. The remaining four are deliberate refusals, listed in the applier.
+  - **The order matters and is the transferable part: EXHAUST THE COPY PATH BEFORE RESEARCHING.**
+    The bucket said 14 routes needed external sources; 12 of those did not. Research was still what
+    resolved three of them, but what it established was an **identity** (Cashmere's northeast ridge
+    starts at Eightmile Lake; Jefferson Pass sits on the same FR-2419 corridor; East McMillan's
+    2008 line is a Goodell Creek bushwhack), not a road fact — so the write stayed a verbatim copy
+    and no road prose was typed. **Researching a trailhead is cheap and safe; researching a road is
+    neither.**
+  - **`researched` is a SEPARATE, WEAKER GATE inside the same applier**, printed loudly, and
+    mutually exclusive with `evidence`: declaring both, or neither, is a malformed entry rather
+    than a lenient one. `evidence` rests on the row itself and is re-asserted at apply time;
+    `researched` rests on a judgement made outside the catalog.
+  - **The two hand-written blocks live in their OWN script (`fix-road-blocks-from-research.mjs`),
+    and the split is the point.** The sibling applier's safety is that a repair needing a fact the
+    catalog lacks *cannot be expressed*; typing road prose destroys that, so the weaker path states
+    a weaker property rather than blurring into the strong one by sharing a file. What replaces it:
+    a recorded `finding` per entry, a refusal if a real donor exists, re-read verification, and a
+    **structural refusal of any block containing a four-digit year** — a dated closure is true when
+    written and a lie afterwards, and `road.status`/`seasonalGate` have no expiry. The catalog
+    already carries several ("closed Dec 12, 2025-June 14, 2026"); this cannot add more.
+  - **Its first draft refused Little Annapurna, and the reason is this whole sweep's lesson re-made
+    one script later.** The guard was *"a same-area sibling already carries a block → this should be
+    a copy"* — but Little Annapurna's only sibling describes Icicle Creek and Stuart Lake, the other
+    side of the range, which is exactly *why* no copy was possible. **"A sibling carries a block" is
+    not "a donor exists."** It now refuses only on a sibling block naming a road the route's own
+    prose names, and prints the different-road case as the reason a researched write was needed.
+- **AN ADMISSION THAT NOTHING IS KNOWN IS EVIDENCE; AN ADMISSION FOLLOWED BY SPECULATION IS A
+  DEFECT — and the second one printed an affirmative safety claim.** `wa_don_t_climb_that_she_said`'s
+  `approach` opened *"No route-specific trailhead or approach beta … turned up anywhere online"* and
+  then carried on for another 636 characters inventing one, ending **"nothing resembling glacier
+  travel, creek fording, or avalanche terrain given the minimal distance and zero gain."**
+  - **The row contradicts itself.** Its own overview places the boulder *"beside the White Chuck
+    Glacier basin, climbed almost in passing by parties on Glacier Peak's standard south-side
+    approach"* — a multi-day glaciated walk with real avalanche exposure. The `dist_km` 0.97 the
+    claim reasons from is the step **from a high camp**, not from a road. Same family as **#641**,
+    where a missing approach and a zero approach became indistinguishable and the return tile went
+    green: a number that means *"unknown"* read as *"none"*.
+  - The repair is a **prefix truncation** and the script asserts the result is a prefix of the
+    original, so it structurally cannot rewrite prose — the same constraint that made the
+    `audit:approach-scope` batches safe, and for the same reason (trimming interior sentences
+    strands the connectives around them).
+  - **The class is ONE, measured before acting**: across 8,365 WA routes, **13** carry a documented
+    negative — correct, and CLAUDE.md already records that writing over one is fabrication — and
+    **2** go on to speculate. The second, `wa_the_pyramid_picket_east_ridge`, is deliberately left
+    alone: *"parties would likely use the same general approach as the neighbouring route"* is a
+    **stated uncertainty**, and deleting it would remove an honest hedge.
+  - **The probe still flags 2 after the fix, and tightening it to print 0 would be fitting it to the
+    answer.** The hedge word is identical in the honest and the invented case (*expect*, *likely*,
+    *reads like*) — the retained admission itself contains *"reads like"*. The real discriminator is
+    whether a sentence asserts **terrain the row has no source for**, which no regex can see. It
+    stays a two-row reading list.
   **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
   area carries a researched block for that same road. (A) is evidence about *this* route; (B)
   supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a

@@ -76,6 +76,107 @@ const PLAN = [
     evidence: "SR-20 mile marker 166 to Burgundy Col",
     why: "a 1994 variation of Vasiliki Tower's South Face whose own approach names that route's approach and the SR-20 mile-marker-166 pullout; the donor IS that South Face route, now a genuine area-sibling.",
   },
+
+  /* ── Batch 2 ────────────────────────────────────────────────────────────────────────────────
+     These five were sitting in the RESEARCH bucket and should never have been. `audit:road-coverage`
+     matched donors on ROAD identifiers, while a route's approach prose overwhelmingly names a
+     TRAILHEAD — "the PCT trailhead at Exit 52", "the trail toward Libby Lake", "the Lightning Creek
+     trailhead". The gate above had already been widened from a road name to a trailhead name for
+     `wa_the_balanced_rock`; that widening was simply never carried into the audit. So this is not
+     new evidence, it is the SAME rule applied consistently.
+     The two-source gate is unchanged: (A) the target's own prose names the start, (B) a same-area
+     sibling carries a researched block for it. */
+  {
+    target: "wa_east_ridge_7",
+    donor: "wa_red_mountain_snoqualmie_standard",
+    evidence: "From the PCT trailhead at Exit 52 (Snoqualmie Pass)",
+    why: "its own approach names the PCT trailhead at I-90 Exit 52, and the donor's block IS that trailhead's drive.",
+  },
+  {
+    target: "wa_south_face_7",
+    donor: "wa_red_mountain_snoqualmie_standard",
+    evidence: "From the PCT trailhead at Exit 52",
+    why: "same peak, same start named in its own approach; the donor is Red Mountain's standard route from that trailhead.",
+  },
+  {
+    target: "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+    donor: "wa_hoodoo_peak_sawtooth_scramble",
+    evidence: "Hike the trail toward Libby Lake",
+    why: "its own approach starts on the Libby Lake trail, and the donor's block is the FR 43/4340 drive to the Libby Lake Trailhead.",
+  },
+  /* HOZOMEEN HAS FOUR SIBLING BLOCKS DESCRIBING TWO DIFFERENT DRIVES, so "a sibling block exists"
+     decides nothing here — the two targets start from opposite ends of the massif and each takes
+     the block for ITS OWN start. Verified in `probe-hozomeen-donor-blocks-in-full.mjs` rather than
+     from the truncated listing, because the deciding text sits past a 240-char cut. */
+  {
+    target: "wa_hozomeen_mountain_south_peak_southwest_route",
+    donor: "wa_hozomeen_mountain_northeast_buttress",
+    evidence: "From the Hozomeen Lake/Willow Lake trailhead at Hozomeen Campground",
+    why: "it starts AT Hozomeen Campground, and the donor's block is the Silver-Skagit Road drive from Hope BC that ends there — the only donor naming both the campground and the Hozomeen Lake trailhead.",
+  },
+  {
+    target: "wa_hozomeen_mountain_south_peak_southeast_buttress",
+    donor: "wa_hozomeen_mountain_southeast_face",
+    evidence: "From the Lightning Creek trailhead on Ross Lake",
+    why: "it starts at Lightning Creek on Ross Lake, and the donor is the only block describing that end — SR-20 to Ross Lake Resort plus the water taxi, naming the Hozomeen/Lightning Creek area outright.",
+  },
+
+  /* ── Batch 3: the evidence is RESEARCHED, the block is still COPIED ──────────────────────────
+     These three name no trailhead a sibling describes, so gate (A) — the row's own prose — cannot
+     be met and they sat in RESEARCH. What external sources establish is only WHICH START they use;
+     the block itself is still copied verbatim from a same-area sibling, so the structural safety is
+     unchanged: no road name, status, gate or mileage is typed in this file for these either.
+     `researched` replaces `evidence` and is printed loudly, because this is a WEAKER gate — it
+     rests on a judgement made outside the catalog, where `evidence` rests on the row itself. */
+  {
+    target: "wa_cashmere_mountain_northeast_ridge",
+    donor: "wa_cashmere_mountain_west_ridge",
+    researched: "Cashmere's northeast ridge is reached from the Eightmile Lake trailhead via Lake Caroline and Windy Pass — the same start both siblings use. The row's own 'from the mountain's north side' describes the traverse below the summit pyramid, i.e. terrain ON the peak, not a different trailhead; that phrasing is what kept it out of the copy bucket.",
+    why: "same trailhead as both siblings; the donor's block is the Icicle Creek Road / FR 7601 drive to Eightmile Lake.",
+  },
+  {
+    target: "wa_mount_washington_olympic_winter_direct",
+    donor: "wa_mount_washington_olympic_standard",
+    researched: "The Jefferson Pass trailhead this route starts from lies on the SAME North Lake Cushman -> FR-24 -> FR-2419 corridor as the standard route, further along it. Parties on this winter route routinely park short of the trailhead and walk the snowed-in road, which is exactly what the donor's seasonalGate already says.",
+    why: "same road corridor; and for a Dec-Apr route the donor's 'not maintained for winter travel / can be gated or snowbound' is the single most load-bearing fact about the drive.",
+  },
+  {
+    target: "wa_east_mcmillan_spire_northeast_buttress",
+    donor: "wa_east_mcmillan_spire_west_ridge",
+    researched: "The 2008 first ascent reached the peak's north side by a Goodell Creek bushwhack — the same drive the sibling block describes, to the Upper Goodell Creek Group Campground off SR-20 near Newhalem. The row says only 'via the remnants of the McMillan Creek glaciers', which names the upper approach and no trailhead at all.",
+    why: "same peak, same trailhead, and the drive is unambiguous; only the walk beyond it differs from the sibling's.",
+  },
+
+  /* ── DELIBERATELY REFUSED, and recorded here so the next pass does not re-derive them ─────────
+     Each of these WOULD pass a mechanical place-name match and must not be copied:
+
+     wa_north_star_mountain_cloudy_peak_traverse — its own approach names TWO ways in (the
+       "currently-closed Lucerne/Holden Village/Railroad Creek trail from the east, or ... the open
+       Phelps Creek/Spider Gap trail from the west"). The only sibling block is the Holden one,
+       i.e. the CLOSED half. Copying it would answer "how do I get there?" with an indefinite
+       closure while the row itself says an open alternative exists — worse than saying nothing.
+
+     wa_mount_spickard_silver_glacier — two camps, two drives: a Ross Lake Resort water taxi to
+       Silver Creek, or the Depot Creek road from Chilliwack BC. The sibling covers only Depot
+       Creek. The row names it explicitly, but a block covering one of two real drives is the
+       two-trailhead trap (Lundin, Remmel, Carru, Howard) whatever the row cross-references.
+
+     wa_don_t_climb_that_she_said — its overview puts the boulder in the White Chuck Glacier basin
+       on Glacier Peak's SOUTH-side approach (North Fork Sauk / FR 49), while a place-name match on
+       "White Chuck" lands on the FR 23 White Chuck Road block, a different valley that is closed.
+       A true statement about the wrong leg of the wrong drive.
+
+     wa_mount_despair_northeast_buttress — the row says in as many words that it is "the opposite
+       (northeast) side of the peak from the standard Triumph Pass/Despair Lakes approach", which
+       is exactly what the sibling's Thornton Lakes block describes.
+
+     wa_little_annapurna_south_face — Ingalls Creek vs the sibling's Icicle Creek/Stuart Lake, the
+       other side of the range; the row's own overview says so.
+
+     wa_cashmere_mountain_northeast_ridge, wa_east_mcmillan_spire_northeast_buttress,
+     wa_mount_washington_olympic_winter_direct — their own prose names no trailhead a sibling
+       describes ("the mountain's north side", "the McMillan Creek glaciers", "Jefferson Pass").
+       Genuine research. */
 ];
 
 function leaves(v, out = []) {
@@ -109,12 +210,18 @@ for (const p of PLAN) {
   if (has(t.road)) problems.push("target ALREADY has a road block that is NOT this donor's — refusing to overwrite");
   if (has(t.approach_logistics)) problems.push("target has approach_logistics — it is not road-silent, re-measure");
   if (!has(d.road)) problems.push(`donor ${p.donor} has no road block to copy`);
-  if (!prose.includes(p.evidence)) problems.push(`target prose no longer contains the evidence quote "${p.evidence}"`);
+  /* Exactly one gate per entry, and never neither: `evidence` is a verbatim quote from the row's
+     own prose, re-asserted here so a row whose prose has since changed is refused rather than
+     written; `researched` is the weaker gate, where only the START was established outside the
+     catalog. Declaring both, or neither, is a malformed entry rather than a lenient one. */
+  if (Boolean(p.evidence) === Boolean(p.researched)) problems.push("entry must declare exactly one of `evidence` (quote from the row) or `researched` (external finding)");
+  else if (p.evidence && !prose.includes(p.evidence)) problems.push(`target prose no longer contains the evidence quote "${p.evidence}"`);
   if (t.area_id !== d.area_id) problems.push(`donor is on a different area (${d.area_id} vs ${t.area_id})`);
 
   console.log(`\n${p.target}`);
   console.log(`   donor    ${p.donor}   area=${t.area_id}`);
-  console.log(`   evidence "${p.evidence}"`);
+  if (p.evidence) console.log(`   evidence "${p.evidence}"   (quoted from the row itself)`);
+  else console.log(`   RESEARCHED GATE — the row itself does not name its start:\n      ${p.researched}`);
   console.log(`   why      ${p.why}`);
   if (problems.length) { for (const x of problems) console.log(`   REFUSED: ${x}`); continue; }
   for (const [k, v] of Object.entries(d.road)) if (typeof v === "string" && v.trim()) console.log(`   copy ${k}: ${v.slice(0, 150)}`);
