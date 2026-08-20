@@ -1034,8 +1034,35 @@ function campElevFt(s){
   if(s.elevM!=null)return s.elevM*3.28084;
   return null;
 }
+/* The TRAILHEAD is the only thing either number can be measured FROM, and the waypoint store is
+   its only record. Measured on the live catalog: of 800 routes carrying camping, 687 have a
+   trailhead elevation on a waypoint, ZERO have one only in `approach_logistics`, and the 2 that
+   carry both agree exactly — so there is no second source to reconcile and the figure cannot
+   depend on which record happened to be read. The other way this silently goes wrong is a route
+   with TWO trailheads, where "the" trailhead is arbitrary; measured at 0 of 757 camping routes,
+   so taking the first is safe here in a way it would not be catalog-wide. */
+function trailheadFt(route){
+  const ws=Array.isArray(route.waypoints)?route.waypoints:[];
+  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return campElevFt(ws[i]);
+  return null;
+}
+/* TRAIL distance, and only trail distance. A campsite WAYPOINT records distMi/distKm — the walked
+   path — on 410 of 445 sites. The researched `bivy` store records no distance under any spelling
+   (measured: 5,083 sites, zero distance-ish keys) and carries a coordinate on 4 of them, so there
+   is nothing to read and nothing to compute. A straight line between two points is NOT this
+   number and must never be substituted for it: a trail cannot be SHORTER than its own chord,
+   which is the entire premise of audit:waypoint-distances. A site with no recorded distance
+   therefore shows none, which is the honest answer rather than a plausible one. */
+function campDistMi(w){
+  if(!w)return null;
+  if(w.distMi!=null&&w.distMi!=="")return Number(w.distMi);
+  if(w.distKm!=null&&w.distKm!=="")return Number(w.distKm)/1.60934;
+  return null;
+}
 function campSites(route){
   const bivy=Array.isArray(route.bivy)?route.bivy:[];
+  const thFt=trailheadFt(route);
+  const gainOf=function(ft){return (ft==null||thFt==null)?null:ft-thFt;};
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
   const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
@@ -1045,8 +1072,12 @@ function campSites(route){
      basin site and a developed campground are both stored as `camp`, so the stronger word would
      be a false claim on every dispersed site. The capacity chip carries that distinction. */
   const TYPE={camp:"Camp",bivy:"Bivy",hut:"Hut"};
-  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:w&&w.elev,kind:null,notes:(w&&w.directions)||"",onTrack:true})));
+  /* The waypoint half reads its elevation through campElevFt() too, not `w.elev` raw. Waypoints
+     carry the same two conventions the bivy store does, so reading one spelling silently rendered
+     no elevation for the sites that use the other — and an elevation missing is also a GAIN
+     missing, so the defect compounds now rather than merely showing one blank. */
+  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:campDistMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1057,6 +1088,26 @@ function campSites(route){
    inside the disclosure, which is the right shape for a paragraph.
    Exported because this is the half a static guard can actually prove: whether the prose is
    SELECTED for display is a pure question; whether a tap reveals it is a browser one. */
+/* ONE chip, not two, because both numbers answer the same question — how far from the road is
+   this? — and repeating "the trailhead" on the same row reads as two unrelated facts.
+   A site BELOW the trailhead says "below" rather than rendering a negative gain. That is not
+   cosmetic: 527 of 3,243 comparable sites (16%) sit below their trailhead, and they are
+   overwhelmingly valley car-campgrounds — roadside vocabulary appears in 72% of them against 9%
+   of the sites above, a 63-point gap, so the population is real and not an artefact of bad
+   elevations. "-1,250 ft of gain" for a campground you DRIVE to is both ugly and the wrong
+   framing; "1,250 ft below the trailhead" is the same arithmetic worded as the fact it is, and
+   it tells a climber the useful thing — this is a valley basecamp, not a high camp.
+   A gain that rounds to zero is dropped rather than shown as "0 ft above", which is noise.
+   Exported for the same reason campDetail() is: what a site SAYS is a pure question a static
+   guard can answer, where whether it reaches the screen needs a render. */
+export function campFromTrailhead(s){
+  if(!s)return "";
+  const d=(s.distMi!=null&&isFinite(s.distMi))?uDistMi(s.distMi):null;
+  const g=(s.gainFt!=null&&isFinite(s.gainFt)&&Math.round(s.gainFt)!==0)?s.gainFt:null;
+  if(d==null&&g==null)return "";
+  const head=[d,g!=null?uElev(Math.abs(g)):null].filter(Boolean).join(" \u00b7 ");
+  return head+(g!=null?(g>0?" above":" below"):" from")+" the trailhead";
+}
 export function campDetail(b){
   return [["Capacity",b&&b.capacity],["Water",b&&b.water],["Permit",b&&b.permit]]
     .filter(function(r){return String(r[1]==null?"":r[1]).trim()!=="";});
@@ -1080,14 +1131,16 @@ function CampSite({b,i}){
   /* An explicit aria-label, because the row's own text nodes are a name and an elevation in
      separate elements and this app has been bitten by "Friends2" — a count welded to a label in
      the accessibility tree, where CSS margins do not exist. An authored name cannot glue. */
-  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"");
+  const fromTh=campFromTrailhead(b);
+  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"")+(fromTh?", "+fromTh:"");
   return <div style={{border:"1px solid "+C.border,borderRadius:10,marginBottom:8,overflow:"hidden"}}>
     <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{padding:"9px 11px",cursor:more?"pointer":"default"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:(b.kind||b.onTrack||more)?5:0}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:(b.kind||b.onTrack||more||fromTh)?5:0}}>
         <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{nm}</div>
         {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
       </div>
-      {(b.kind||b.onTrack||more)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6}}>
+      {(b.kind||b.onTrack||more||fromTh)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6}}>
+        {fromTh?<span style={{fontSize:11,fontWeight:700,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{fromTh}</span>:null}
         {b.kind?<span style={{fontSize:11,fontWeight:700,color:C.purple,background:C.card,border:"1px solid "+C.purple+"55",borderRadius:20,padding:"2px 9px"}}>{b.kind}</span>:null}
         {b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}
         {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>:null}

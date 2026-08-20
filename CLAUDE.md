@@ -2207,9 +2207,61 @@ the correction knows the screen is wrong, and they have no way to report it.
         offset in this one change (the probe's `i + 400`, this window), which is the argument for
         the rule rather than the instance: **a fixed window encodes a guess about the size of the
         thing you are looking at, and these files are exactly where that guess is wrong.**
-  - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
-    own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
-    dropped the waypoint half of the merge).
+  - **Every site now says WHERE IT IS — elevation, gain from the trailhead, distance from the
+    trailhead — and the SILENCE is the half worth guarding.** Two of those three are the shape this
+    catalog keeps fabricating, so all three were measured before any of them was rendered.
+    - **The two stores are wildly asymmetric, and that decides what can be shown.** Elevation:
+      65% of the 5,083 researched `bivy` sites, 98% of the 445 campsite waypoints. **Trail
+      distance: 92% of waypoints and ZERO of the bivy store — the key does not exist under any
+      spelling**, and only **4 of 5,083** carry a coordinate, so there is nothing to read and
+      nothing to compute. A site with no recorded distance shows none.
+    - **A straight line is NOT this number and must never be substituted.** A trail cannot be
+      shorter than its own chord — the premise of `audit:waypoint-distances` — so a great-circle
+      distance from the trailhead pin would be wrong *and* look authoritative. That is injection
+      case 7, and it is the assertion this section most exists for.
+    - **Gain is arithmetic, not research** (`site.elev - trailhead.elev`), so it inherits every
+      defect in the two numbers it subtracts. Three things were checked first: the waypoint is the
+      **only** trailhead-elevation record (687 routes; **0** carry one only in
+      `approach_logistics`; the 2 with both agree exactly), **no camping route has two trailheads**
+      (0 of 757, so "the" trailhead is not arbitrary here the way it would be catalog-wide), and
+      `bivy[].elev` holds **one** convention — 0 of 3,265 values are metres-like against the
+      route's own `high_point_ft`, unlike `dist_km` and `gain_ft`.
+    - **16% of sites sit BELOW their trailhead, and they are not bad data.** 527 of 3,243. Roadside
+      vocabulary appears in **72%** of them against **9%** of the sites above — a 63-point gap, so
+      the population is real: they are valley car-campgrounds you *drive* to, where
+      gain-from-the-trailhead is the wrong question. They render as **"1,250 ft below the
+      trailhead"**, never as a negative gain, which is the same arithmetic worded as the fact it
+      actually is and tells a climber the useful thing.
+    - **Two assertions in this section had to be scoped to the PANEL, and both were written
+      tab-wide first.** The Planner legitimately says "trailhead" in `TrailheadCard` and APPROACH,
+      so a tab-wide match reported correct code as broken; and the fixture's trailhead pin renders
+      its **longitude**, so a tab-wide scan for a minus sign flagged a correct app. This guard's
+      own header already recorded that mistake from the dedupe work — *it was then made twice
+      more in one sitting.* Count inside the panel.
+    - **The fixture trailhead needs COORDINATES, and injection case 7 is what found that.** Without
+      them the anti-fabrication assertion is inert: a derived chord needs two points, so a
+      coordinate-less fixture let the guard go green on an app that *was* deriving a distance.
+      Caught by the case MISSING, not by reading the guard.
+  - Injection-tested, 8 cases at the bottom of the script; the first 4 were run by hand and each
+    failed naming its own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`;
+    removed dedupe; dropped the waypoint half of the merge). Cases 6-8 are automated in
+    `scripts/oneoff/inject-camping-metric-cases.mjs` — **3/3**, each proving its edit landed by
+    checksum before the guard is believed.
+  - **The recorded worry that this gate fires on "sea-level desert scrambles" DOES NOT REPRODUCE,
+    and the note is retired rather than acted on.** `CampingPanel` already returns null with no
+    sites, so a lowland route can only draw the section if it *carries* camping data — and of the
+    **799** gated routes that do, **0** have a high point under 3,000 ft
+    (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
+    nothing, and narrowing it risks suppressing correct data.
+  - **The real gate defect points the OTHER way, and is left as an open product decision.**
+    `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,
+    6 pitches, with Access Creek Basin and Luna Col recorded — is filed `trad`, which `catOf()`
+    folds into the crag family, so its camping renders **nowhere**. It is the only such route
+    today. It is **not** a slipped label: the peak's 20-pitch North Buttress is `trad` too, so
+    big alpine rock routes carry that discipline by convention here. Fixing it means deciding when
+    a trad route counts as alpine, which is a policy question and not polish — do not widen the
+    gate without that decision, since section 3 deliberately asserts crag routes are *not* offered
+    the panel.
 - **`check:track-caveat`** asserts that a line drawn between a route's own waypoints does not pose
   as a recorded GPS track. **201 of the 580 WA routes carrying a `gpx` store a polyline whose every
   vertex IS one of that route's own waypoints** — median **four** points, 162 of them spanning more
