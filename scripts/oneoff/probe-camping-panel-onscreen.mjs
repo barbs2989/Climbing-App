@@ -73,9 +73,17 @@ for (const r of rows) {
   // The panel's OWN intro says "Anything marked on the track is also a pin under ROUTE TRACK",
   // so the first occurrence of that string sits INSIDE the panel, not after it. Cutting there
   // slices the panel at its own prose and every site reads as absent — which is exactly how a
-  // perfectly healthy panel looked like total failure on this probe's first run. Start looking
-  // for the real terminator past the intro.
-  const end = text.indexOf("ROUTE TRACK", i + 400);
+  // perfectly healthy panel looked like total failure on this probe's first run.
+  //
+  // The first fix was a fixed `i + 400` skip, and it broke the moment the panel got SHORTER:
+  // a collapsed 4-site panel is under 400 characters, so the offset stepped straight over the
+  // real ROUTE TRACK heading and the slice ran on into the gear section — reporting Ptarmigan
+  // Ridge as 2,496 chars when the panel is ~600. A magic offset encodes an assumption about
+  // the subject's size, and this probe exists precisely to change that size. Skip the intro's
+  // own sentence by MATCHING it instead, so the terminator is found by structure, not distance.
+  const intro = text.indexOf("pin under ROUTE TRACK", i);
+  const from = intro >= 0 && intro < i + 400 ? intro + "pin under ROUTE TRACK".length : i + 1;
+  const end = text.indexOf("ROUTE TRACK", from);
   const panel = text.slice(i, end > i ? end : text.length);
   const sites = (r.bivy || []).length;
   console.log(`${r.id}   [${r.discipline}]`);
