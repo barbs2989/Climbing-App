@@ -29,10 +29,17 @@
 // correctly, by every test here. Measured 2026-08-20: 180 of the 1,016 routes with pins would
 // caption (18%), while 371 pins of 4,195 carry more than 8 decimals and 3,353 sit at 4-6.
 //
-// Only the GROUND catches the rounded ones (`audit:waypoint-elevations`, 3,506 USGS requests),
-// which cannot run at render time. Closing that in the app needs the verdict PRECOMPUTED and
-// stored — a schema decision, not another predicate. `oneoff/probe-caveat-on-real-rows.mjs`
-// renders real rows and pins this limit so it stays visible.
+// THAT GAP IS NOW CLOSED, and the note it replaces was wrong about why it was hard. It said
+// closing it "needs the verdict PRECOMPUTED and stored — a schema decision". Precomputed, yes;
+// a schema decision, no. `lib/ground-checked-pins.js` is generated once by
+// `scripts/oneoff/build-ground-disagreement-index.mjs` and committed, so it needs no migration,
+// cannot corrupt `waypoints`, and arrives as a reviewable diff. Section 6 guards it.
+//
+// The published measurement SELF-INVALIDATES: each entry records the lat/lng/elev it was taken
+// for, and the reader re-checks all three against the live pin. Repair a coordinate and the entry
+// retires itself, so a stale flag can never start accusing a pin that is now correct — which would
+// be worse than the silence it replaced, the app being confidently wrong rather than quiet.
+// `oneoff/probe-caveat-on-real-rows.mjs` renders real rows and pins the coordinate-only limit.
 //
 // Static SSR (no browser, no DB), so it sits in `npm run build`.
 import { build } from "esbuild";
@@ -42,7 +49,10 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { waypointsAreOnOneLine, someWaypointsAreComputed, longestArithmeticRun, manufacturedWaypointCaveat,
+         groundDisagreementCaveat, waypointCaveat,
          SYNTHETIC_WAYPOINT_CAVEAT, COMPUTED_WAYPOINT_CAVEAT } from "../lib/track.js";
+import { GROUND_DISAGREEMENTS, GROUND_TOLERANCE_FT, GROUND_PINS_MEASURED } from "../lib/ground-checked-pins.js";
+const GROUND_ROUTE_IDS = Object.keys(GROUND_DISAGREEMENTS);
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -257,6 +267,112 @@ else if (someWaypointsAreComputed(THREE_RUN))
 else if (manufacturedWaypointCaveat(THREE_RUN))
   fail("a bare 3-pin run was captioned — measured, that is luck as often as fabrication");
 else ok("a bare 3-pin run with no second tell is NOT captioned");
+
+// ── 6. THE GROUND. Everything above reads the coordinates alone, so all of it is blind to a pin
+//    that was manufactured and then ROUNDED — no structural tell survives that. Of the 107 routes
+//    the DEM says carry a pin more than 2,000 ft from the ground beneath it, the tests above
+//    caption 29 and say nothing about the other 78. `lib/ground-checked-pins.js` is that
+//    measurement, precomputed because ~3,900 elevation requests cannot run at render time.
+//
+//    THE FIXTURES COME OUT OF THE SHIPPED INDEX rather than being written here. A hand-written
+//    entry proves the reader against a shape the real file might not have — the fossil problem
+//    `check:camping` records — and it would keep passing after the generator changed its output.
+if (!GROUND_ROUTE_IDS.length) {
+  fail("the ground index is EMPTY — either the generator failed or its output shape changed. "
+     + "Nothing below this line was checked, and a caption that covers 18% is being shipped as if it covered more.");
+} else {
+  ok(`the ground index carries ${GROUND_ROUTE_IDS.length} routes (${GROUND_PINS_MEASURED} pins measured)`);
+
+  // Every entry must actually clear the tolerance it claims. A generator that wrote its findings
+  // before applying the threshold would produce a caption on ordinary rounding slop, which is the
+  // 1,080-pin false finding `audit:waypoint-elevations` exists to avoid — shipped to climbers.
+  const slack = GROUND_ROUTE_IDS.flatMap(id => GROUND_DISAGREEMENTS[id])
+    .filter(e => !(Math.abs(e.elev - e.ground) > GROUND_TOLERANCE_FT));
+  if (slack.length) fail(`${slack.length} index entries do NOT exceed the ${GROUND_TOLERANCE_FT} ft tolerance they are filed under`);
+  else ok(`every index entry clears ${GROUND_TOLERANCE_FT} ft`);
+
+  const malformed = GROUND_ROUTE_IDS.flatMap(id => GROUND_DISAGREEMENTS[id])
+    .filter(e => ![e.lat, e.lng, e.elev, e.ground].every(Number.isFinite));
+  if (malformed.length) fail(`${malformed.length} index entries carry a non-numeric lat/lng/elev/ground`);
+  else ok("every index entry is fully numeric — the reader compares numbers, so a string can never match");
+
+  // A pin whose own coordinates are ALSO computed-precision would be captioned by the tests above
+  // anyway, so it cannot show that the ground adds anything. Pick one that only the ground finds.
+  const GID = GROUND_ROUTE_IDS.find(id =>
+    GROUND_DISAGREEMENTS[id].every(e => !someWaypointsAreComputed([{ lat: e.lat, lng: e.lng }])));
+  if (!GID) {
+    fail("every flagged pin also carries computed precision, so this section cannot show the ground adds anything. "
+       + "That would be a real finding about the data — check it before changing this guard.");
+  } else {
+    const ENTRIES = GROUND_DISAGREEMENTS[GID];
+    const GROUND_WPS = ENTRIES.map((e, i) => ({ name: `Ground ${i}`, type: "Junction", lat: e.lat, lng: e.lng, elev: e.elev }));
+
+    if (manufacturedWaypointCaveat(GROUND_WPS))
+      fail(`fixture: ${GID}'s pins already trip a coordinate-only test, so this proves nothing about the ground`);
+    else ok(`fixture: ${GID} is invisible to every coordinate-only test — only the ground finds it`);
+
+    const cav = groundDisagreementCaveat(GID, GROUND_WPS);
+    if (!cav) fail(`the ground caveat does not fire for ${GID}, whose pins are in the index verbatim`);
+    else ok("the ground caveat fires on a route whose live pins match the measurement");
+
+    // SELF-INVALIDATION, in all three directions. This is what makes a stored verdict safe to
+    // publish: repair the pin and the entry retires itself. Without it a fixed coordinate would
+    // keep being accused — confidently wrong, which is worse than the silence it replaced.
+    const moved = GROUND_WPS.map(w => ({ ...w, lat: Number((w.lat + 0.01).toFixed(5)) }));
+    if (groundDisagreementCaveat(GID, moved)) fail("moving the COORDINATE did not retire the measurement — a repaired pin would still be accused");
+    else ok("moving the coordinate retires the measurement");
+
+    const reElev = GROUND_WPS.map(w => ({ ...w, elev: w.elev + 1 }));
+    if (groundDisagreementCaveat(GID, reElev)) fail("correcting the ELEVATION did not retire the measurement");
+    else ok("correcting the elevation retires the measurement");
+
+    if (groundDisagreementCaveat("no_such_route_id", GROUND_WPS)) fail("a route id absent from the index still produced a caveat");
+    else ok("a route not in the index produces nothing");
+
+    // It must reach the screen, not merely return a string. A predicate nothing renders is the
+    // `descent_text` shape — populated on 1,021 routes and displayed on none.
+    if (!shows(route({ id: GID, waypoints: GROUND_WPS }), cav))
+      fail("the ground caveat never reaches the WAYPOINTS section — it returns a string nobody sees");
+    else ok("the ground caveat renders on the screen that shows the pins");
+
+    // It says the disagreement and refuses to say which half is wrong, because nothing measured
+    // can tell: a misplaced pin and a mistyped elevation produce an identical gap.
+    if (/\bpin is (?:in the )?wrong\b/i.test(cav) || !/Either/.test(cav))
+      fail("the caveat picks a side — nothing here can tell a misplaced pin from a wrong elevation");
+    else ok("the caveat reports the disagreement without claiming which half is wrong");
+
+    // ORDERING, and it is asserted in the direction that is NOT the intuitive one. Rating the
+    // ground first — a measurement outranks an inference — was tried and reverted: it silently
+    // REWORDED every route that already captioned. The table may only ever ADD a caption to a
+    // route that had none. Both cases below pin that, so a re-flip goes red rather than quietly
+    // changing 29 screens.
+    //
+    // Built by laying a synthetic line THROUGH a real index pin, so both conditions truly hold.
+    const P = ENTRIES[0];
+    const LA = { lat: P.lat - 0.035, lng: P.lng - 0.010 }, LB = { lat: P.lat + 0.035, lng: P.lng + 0.010 };
+    const BOTH = Array.from({ length: 9 }, (_, i) => {
+      const t = i / 8;
+      return { name: `L${i}`, type: "Junction", lat: LA.lat + (LB.lat - LA.lat) * t,
+        lng: LA.lng + (LB.lng - LA.lng) * t, elev: Math.round(P.elev - 1600 + 3200 * t) };
+    });
+    BOTH[4] = { ...BOTH[4], lat: P.lat, lng: P.lng, elev: P.elev };   // the midpoint IS the indexed pin
+    if (!waypointsAreOnOneLine(BOTH) || !groundDisagreementCaveat(GID, BOTH))
+      fail("fixture: the ordering case does not satisfy BOTH conditions, so it cannot test precedence");
+    else if (waypointCaveat(GID, BOTH) !== SYNTHETIC_WAYPOINT_CAVEAT)
+      fail("a one-pin ground finding displaced the whole-route warning — the stronger claim must win");
+    else ok("where the line test and the ground both fire, the whole-route warning wins");
+
+    // …and the COMPUTED wording survives a ground finding on the same route. It is a statement
+    // about several pins where the ground names one, so replacing it trades a broader true
+    // sentence for a narrower one — `wa_castle_peak_pasayten_scramble` is the measured case.
+    const GC = GROUND_WPS.concat([{ name: "calc", type: "Junction", lat: 48.51234567890123, lng: -121.11234567890123, elev: 4000 }]);
+    if (!someWaypointsAreComputed(GC) || !groundDisagreementCaveat(GID, GC))
+      fail("fixture: the mixed route does not satisfy BOTH tests, so precedence is untested");
+    else if (waypointCaveat(GID, GC) !== COMPUTED_WAYPOINT_CAVEAT)
+      fail("a ground finding displaced the computed-coordinate caption — the table may only ADD captions, never reword one");
+    else ok("a ground finding leaves an existing computed-coordinate caption alone");
+  }
+}
 
 console.log("");
 if (failures) { console.log(`${failures} failure(s).`); process.exit(1); }
