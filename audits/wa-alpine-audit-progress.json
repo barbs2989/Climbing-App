@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_guye_peak_southeast_gully",
+  "last_processed_id": "wa_hozomeen_mountain_southeast_face",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -2834,6 +2834,20 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-08-20-batch-131.sql",
       "note": "wa_goode_mountain_southwest_couloir: seasonal_hazards.crevasses claimed \"no documented glacier crossing\" while the row's own approach/waypoints/obj_haz all describe crossing the Goode Glacier -- self-contradiction, fixed. wa_gunrunner: waypoints[1] (Middle Peak/Gunsight Peak summit) stored elev 8000 against this row's own high_point_ft (8200), the sibling route wa_gunsight_peak_standard's summit waypoint for the same peak (8198), and Wikipedia's figure for Gunsight Peak (8,198 ft, Chelan County, Blue Glacier east / Chickamin Glacier west -- matching this row's own description) -- fixed to 8198. wa_gorillas_direct: FA year flagged for human review -- stored as 2011, but web sources conflict (one summary says established 2010 the year after Gorillas in the Mist (2009), another says 2011 per Mountain Project); WebFetch to Mountain Project/AAC/Alpinist was blocked by the egress proxy so the conflict could not be resolved this run. Remaining six routes (wa_gunnshy_peak_standard_route, wa_gunsight_peak_standard, and all three other Guye Peak routes) audited clean -- elevations, coordinates, land managers and FA records cross-checked externally (Gunsight Peak 8198ft, Gunn Peak 6244ft, Guye Peak 5168ft + 1912 FA party + Nov 2021 rockfall + 'at least eight' recorded fatalities all independently confirmed) and internally consistent."
+    },
+    {
+      "batch_number": 132,
+      "date": "2026-08-20",
+      "route_ids": [
+        "wa_hadley_peak_cougar_divide",
+        "wa_hadley_peak_skyline_divide",
+        "wa_helmet_butte_standard_route",
+        "wa_himmelhorn_southeast_route",
+        "wa_honeymoon_route",
+        "wa_hourglass_gully_winter",
+        "wa_hozomeen_mountain_north_peak_north_route",
+        "wa_hozomeen_mountain_southeast_face"
+      ]
     }
   ]
 }

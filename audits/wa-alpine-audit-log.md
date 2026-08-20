@@ -9023,3 +9023,76 @@ year unresolved rather than fixed or confidently left alone.
 
 Next batch continues after `wa_guye_peak_southeast_gully` in the current id-ordered scope (see
 progress file).
+
+## Batch 132 — 2026-08-20
+
+Checked `wa_hadley_peak_cougar_divide`, `wa_hadley_peak_skyline_divide`,
+`wa_helmet_butte_standard_route`, `wa_himmelhorn_southeast_route`, `wa_honeymoon_route`,
+`wa_hourglass_gully_winter`, `wa_hozomeen_mountain_north_peak_north_route`, and
+`wa_hozomeen_mountain_southeast_face`.
+
+**Fixed (SQL in `audits/sql/2026-08-20-batch-132.sql`):**
+- `wa_hadley_peak_cougar_divide` and `wa_hadley_peak_skyline_divide` both carried an
+  identical, contaminated `bivy[]` — 6 entries each, only 3 of which are actually about
+  Hadley Peak. The other 3 ("Crag View, Squak Glacier", "Upper Squak benches...", "Coleman
+  Glacier bivy under the Black Buttes north faces") describe camps for Sherman Peak's Squak
+  Glacier route and Mount Baker's Coleman Glacier/Black Buttes ice lines — a different
+  mountain, ~9 miles away, named explicitly in the notes text itself ("Colfax's three
+  north-side ice lines", "the Black Buttes"). Confirmed from the row's own content, no
+  external source needed. Trimmed both to the 3 genuine Hadley Peak entries.
+- `wa_hadley_peak_cougar_divide`'s own Summit waypoint (elev/elevFt) read 7470, 45 ft below
+  the sibling Skyline Divide route's summit waypoint for the same peak (7515) and below two
+  independent external sources (listsofjohn.com: 7,515 ft; PeakVisor, USGS-derived: 7,513
+  ft). Corrected to 7515.
+- `wa_hozomeen_mountain_southeast_face`: `high_point_ft` stored 8071, which is Hozomeen's
+  NORTH Peak elevation (confirmed via search: North Peak 8,071 ft, South Peak 8,003 ft) —
+  but this route's own Summit waypoint is "Hozomeen Mountain, South Peak" at 8003, matching
+  its name and its own Hazard waypoint ("Southeast buttress"). Corrected `high_point_ft` to
+  8003. Its `face` field also read "North Peak (main/highest summit)" — a fact about the
+  mountain, not a description of this route's own face — rewritten to "Southeast Buttress
+  (South Peak)" to match the route's own aspect field (E-SE) and hazard waypoint wording.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_himmelhorn_southeast_route`: `aspect`="NW" / `face`="Northwest Aspect" appears to
+  contradict the route's own name. Search turned up a Mountain Project route "Southeast
+  Gully" on Himmelhorn whose approach (Goodell Creek → Stump Hollow → Crescent Creek Basin →
+  Himmel-Otto Col) matches this row's waypoints closely, suggesting this is the same
+  historic FA line under a differently-cased name — which would mean "Southeast" is the
+  route's real name/orientation and the NW aspect field is wrong. Could not confirm the
+  actual compass aspect directly: WebFetch to mountainproject.com and Wikipedia was blocked
+  by the egress proxy this run (consistent with prior runs' notes). Left as-is.
+- `wa_hourglass_gully_winter` (Mount Index): FA "Jim Pritchard, Stan Jensen & Cecil Bailey
+  (1963)" could not be independently confirmed or contradicted by web search — not flagged
+  as wrong, just unverified this run.
+- `wa_honeymoon_route` (Mount Deception): FA "1965 Arnie & Diane Bloomer" could not be
+  independently confirmed by web search this run.
+- Mount Index's `high_point_ft` (6002) vs. its own Summit waypoint (5979) vs. external
+  sources (Peakbagger/Wikipedia converge on 5,991 ft NGVD29): a real three-way discrepancy,
+  but all three are within ~10-20 ft of each other, consistent with ordinary datum/survey
+  variance rather than a clear error. Not confident enough to pick a "correct" value; left
+  alone rather than guessing.
+
+Externally cross-checked and confirmed accurate: Helmet Butte's elevation (7,400 ft,
+matches `high_point_ft` exactly); Hozomeen Mountain North Peak's elevation (8,071 ft,
+matches both the north route's `high_point_ft` and its own summit waypoint); Himmelhorn's
+first ascent (Ed Cooper, Glen Denny, Joan & Joe Firey, George Whitmore, September 8, 1961 —
+matches this row's `fa` field verbatim, cross-checked against an independent search
+summary); Hozomeen's 1904 Boundary Survey first ascent (Sledge Tatum & George E. Loudon
+Jr., September 6, 1904 — matches `wa_hozomeen_mountain_southeast_face`'s `fa` field).
+Mount Deception's summit elevation (7,788 ft) and the Upper Dungeness/Royal Lake approach
+on `wa_honeymoon_route` were consistent with known geography and not flagged.
+
+`wa_helmet_butte_standard_route`'s large `bivy[]` (9 entries spanning Mackinaw Shelter,
+White Pass, Glacier Gap, Buck Creek Pass, Napeequa Valley, Boulder Pass/Thunder Basin, etc.)
+was considered for the same contamination pattern as Hadley Peak's, but all 9 sites sit
+within the same Glacier Peak Wilderness drainage system Helmet Butte is actually in (near
+Buck Creek Pass, reachable from several trailheads), unlike Hadley's entries which named a
+different, non-adjacent mountain outright. Left alone — no clear defect found.
+
+Web access this run: WebSearch worked throughout. WebFetch was blocked by the egress proxy
+for mountainproject.com, en.wikipedia.org, www.mountaineers.org, listsofjohn.com, and
+www.peakbagger.com — all cross-checks above relied on WebSearch result summaries and
+convergence across multiple independent domains rather than a single fetched page.
+
+Next batch continues after `wa_hozomeen_mountain_southeast_face` in the current id-ordered
+scope (see progress file).
