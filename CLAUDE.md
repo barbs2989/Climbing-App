@@ -87,6 +87,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
+npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
