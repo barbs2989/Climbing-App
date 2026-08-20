@@ -1426,6 +1426,17 @@ a build error, but a screen that renders wrong or not at all.
       severe and correctly so: its name leads with *West Face* and its aspect is `E`. That is
       independent corroboration, by a different method, of the separate finding that this row is an
       **Idaho** route (Selkirk Crest) filed on a Washington peak.
+      - **THAT SECOND FINDING WAS WRONG, and it is corrected here because acting on it would have
+        destroyed a correct route.** The row's own approach names the Pete Lake Trailhead off FR
+        4616, Pete Lake Trail #1323, the PCT, Chimney Creek, Sunrise Knob and the **Chimney
+        Glacier** — Washington's Chimney Rock in the Alpine Lakes Wilderness. Idaho's Selkirk
+        Chimney Rock has no glacier and no Pete Lake, and the catalog already holds a separate
+        `id_chimney_rock` tree (16 routes), so nothing needed moving either. The recommended
+        repair was a **deletion**. The real defect was the aspect, now fixed **E -> W**: name,
+        approach and `climbing_route` all say west, and only `aspect` said east — the peak's two
+        other routes are East Face lines, the likeliest source of the stray value. *"Corroborated
+        by a second method" is worth nothing when both methods inherited the same unchecked
+        premise*, and this one sat in three files for a week.
     - Measured after the fix: **14 findings against 502 comparable WA routes (2.8%)**, 11 of them
       faces. Judge a detector's precision on a real run before trusting a count — a first run here
       was 30% noise.

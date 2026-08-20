@@ -1,5 +1,28 @@
 # Name vs aspect: 12 disagreements, and the `face` column decides most of them
 
+**CORRECTED 2026-08-19 — the Idaho claim was WRONG, and acting on it would have destroyed a
+correct route.** `wa_chimney_rock_west_face`'s own approach names the **Pete Lake Trailhead off
+FR 4616**, **Pete Lake Trail #1323**, the **Pacific Crest Trail**, **Chimney Creek**, **Sunrise
+Knob** and the **Chimney Glacier** — Washington's Chimney Rock in the Alpine Lakes Wilderness
+(47.509, -121.286). Idaho's Selkirk Chimney Rock has neither a glacier nor a Pete Lake, and the
+catalog already holds its own separate Idaho tree (`id_chimney_rock`, 16 routes across east- and
+west-face crags), so nothing needed moving either. The recommended repair was a **deletion**;
+following it would have removed a real Washington alpine route — the Triple Couloirs shape this
+repo already has on record, where a duplicate *hypothesis* was acted on as a fact.
+
+The actual defect was the **aspect**, and it is now fixed (E -> W). Three records said west and
+one said east: the name *"West Face / South Summit (Standard)"*, the approach (*"...the obvious
+'Rappel Chimney' feature on the west face"*) and the `climbing_route` section, against
+`aspect: "E"`. `face` names a summit rather than a side, so it does not vote. The peak's other
+two routes are both East Face lines, which is the likeliest source of the stray E.
+
+**The lesson is about the record, not the row:** this claim sat in three files and was repeated
+as settled for a week without anybody re-reading the route. A corroboration is only as good as
+its evidence, and "two methods agree" means nothing when both inherited the same unchecked
+premise.
+
+
+
 > **RESOLUTION LOG (updated 2026-08-13, after published-source research).**
 > **8 settled, 5 still open** (2026-08-14 round: Formidable merged, both Tatoosh rows and
 > Mount Christie renamed off published sources; see the sections at the foot of this file)
@@ -13,7 +36,7 @@
 > |---|---|---|
 > | `wa_forbidden_peak_east_face_catscratch` | **PHANTOM — not a route at all** | **DELETED.** See below. |
 > | `wa_ruth_mountain_south_slopes` | **NAME WRONG** | **RENAME APPLIED 2026-08-14** -> `North Face / Ruth Glacier`, verified by re-read; audit 10 -> 9 |
-> | `wa_chimney_rock_west_face` | **Idaho route, corroborated** | removal recommended, not applied — needs a human |
+> | `wa_chimney_rock_west_face` | ~~Idaho route, corroborated~~ **WRONG — see the correction at the top of this file** | RESOLVED 2026-08-19: it is a Washington route; aspect E -> W |
 > | `wa_spire_point_southwest_face` | **UNRESOLVED — re-checked 2026-08-14** | searched again; Beckey's Cascade Alpine Guide really is the only comprehensive source for Ptarmigan-Traverse peaks and it is not online. Left alone. |
 > | `wa_pinnacle_peak_tatoosh_r1`, `wa_plummer_peak_r1` | **BOTH RENAMED 2026-08-14** | published descriptions of the SIDE were found — the missing piece. `North Gully` -> `South Gully`, `Southeast Slopes` -> `North Slopes`. |
 > | the remaining 6 | not yet researched | — |
@@ -95,7 +118,7 @@ own defect when a climber is choosing a line.
 
 - **`wa_chimney_rock_west_face`** — "West Face / South Summit (Standard)", aspect **`E`**, and
   **both** peers on this peak are "East Face" (`E`) and "East Face Direct" (`E`).
-  The approach-variant research independently concluded this row is an **Idaho** route (Selkirk
+  ~~The approach-variant research independently concluded this row is an **Idaho** route (Selkirk
   Crest, 48.619°N/-116.697°W) filed on Washington's Chimney Rock (47.508°N/-121.29°W), whose real
   catalog is exactly those two East Face lines. Two methods, one conclusion.
   **Recommended for removal, not auto-applied** — a `DELETE` needs a human, and this repo has already
@@ -247,5 +270,6 @@ compass side. Needs a source that does, or a look at the row's waypoints.
 **`wa_himmelhorn_southeast_route`** was not researched this round — an obscure Southern Picket
 where the same Beckey problem is likely.
 
-**`wa_chimney_rock_west_face`** is unchanged and still needs a human: it is a corroborated Idaho
+**`wa_chimney_rock_west_face`** is RESOLVED (2026-08-19) and was never an Idaho route — see the
+correction at the top of this file. What follows is the superseded reasoning: ~~a corroborated Idaho
 route (Selkirk Crest) filed on a Washington peak, so its repair is a removal, not a rename.
