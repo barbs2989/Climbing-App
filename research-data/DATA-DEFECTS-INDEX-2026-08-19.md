@@ -76,8 +76,8 @@ independent gpx track. So the first question for each is whether a third record 
 | `wa_primus_peak_south_ridge` | gpx 198 pts, 12.2 km, independent | **0 of 2 pins off-track** — no pin defect |
 | `wa_mount_hinman_hinman_glacier` | gpx 539 pts, 11.9 km, independent | **0 of 6 off-track** — no pin defect |
 | `wa_buckner_mountain_north_face` | gpx 261 pts, 6.1 km, independent | 1 of 7 off, and it is the **Sahale-Boston col at 0.85 km** — a real feature just past the tolerance, not misdirection |
-| `wa_three_queens_standard` | gpx 808 pts, 4.1 km, independent | 1 of 8 off (Mineral Creek log crossing, 0.50 km — on the threshold). **But the track never comes within 4 km of the peak** (starts 4.0, ends 4.01) — a separate `trackOffItsPeak` question |
-| `wa_south_face_12` (Argonaut) | gpx 221 pts, 9.1 km, independent | 0 of 7 off, **but the track never approaches the peak either** (starts 9.1, ends 9.02 km) — same separate question |
+| `wa_three_queens_standard` | gpx 808 pts, 4.1 km, independent | 1 of 8 off (Mineral Creek log crossing, 0.50 km — on the threshold). No other pin defect. |
+| `wa_south_face_12` (Argonaut) | gpx 221 pts, 9.1 km, independent | **0 of 7 off** — no pin defect |
 | `wa_huckleberry_mountain_west_route` | gpx 370 pts, independent | measured in full below — **needs a survey, not a fix** |
 | `wa_lincoln_peak_north_ridge` | gpx 8 pts | **COPY of its own waypoints** — unusable as evidence |
 | `wa_colchuck_peak_east_ridge` | gpx 3 pts | **COPY of its own waypoints** — unusable as evidence |
@@ -91,6 +91,33 @@ at all** once measured, so the CLASS A count overstates the pin work. And **two 
 that is merely their own waypoints joined up** — on those, "is the pin on the track" is answered
 yes by construction, so a future pass must not read their agreement as corroboration.
 
+
+### CORRECTION — the "track never approaches its peak" claim above was WRONG
+
+The first version of this table said `wa_three_queens_standard` and `wa_south_face_12` store a
+track that never comes within 4 km and 9 km of its own peak, and filed that as a separate
+`trackOffItsPeak` question. **That was measured from the track's FIRST and LAST point only.**
+
+Both tracks start and end at nearly the same coordinate — 12 m and 71 m apart. They are
+**out-and-backs**, so the endpoints are the trailhead twice and the summit sits in the MIDDLE.
+Endpoint distance says nothing about whether a track reaches its peak. Measured properly, over
+every point:
+
+| route | first→peak | last→peak | **closest approach** |
+|---|---|---|---|
+| `wa_south_face_12` | 9.08 km | 9.02 km | **5 m** (55% along) |
+| `wa_three_queens_standard` | 4.00 km | 4.01 km | **3 m** (51% along) |
+| `wa_huckleberry_mountain_west_route` | 2.84 km | 0.40 km | **7 m** (70% along) |
+
+All three reach their own summit. There is no `trackOffItsPeak` finding on any of them, and the
+extent figures in the table above are max pairwise distance, which for an out-and-back is
+roughly the one-way length — not a distance from the peak.
+
+`audit:waypoints`' own `trackOffItsPeak` test already uses the minimum over all points, which is
+why it never flagged these. The mistake was mine, in a one-off that sampled endpoints because
+that was cheap. **A track's relationship to a summit is a minimum, never an endpoint** —
+`scripts/oneoff/measure-track-closest-approach.mjs` measures it correctly and exists so this
+particular shortcut is not taken again.
 ### `wa_huckleberry_mountain_west_route` — measured, and deliberately NOT repaired
 
 This is the one that looked most like Sherpa (3 of 4 pins >500 m off its track) and is not the
