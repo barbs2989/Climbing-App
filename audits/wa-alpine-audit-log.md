@@ -9160,3 +9160,65 @@ worked without issue.
 Next batch continues after `wa_inspiration_peak_west_ridge` in the current
 id-ordered scope (see progress file) — `wa_j_tnar` excluded as a crag, so the
 next real candidates start at `wa_jack_mountain_nohokomeen_headwall`.
+
+---
+
+## Batch 134 — 2026-08-20 (Pass 3)
+
+Audited (id-ordered, after `wa_inspiration_peak_west_ridge`):
+`wa_jack_mountain_nohokomeen_headwall`, `wa_jack_mountain_northeast_glacier`,
+`wa_jack_mountain_south_face`, `wa_johannesburg_mountain_cj_couloir`,
+`wa_johannesburg_mountain_northeast_buttress`, `wa_kimtah_peak_scramble`,
+`wa_king_kong_gorillas_direct_direct`, `wa_klawatti_peak_southeast_face`.
+
+**Confirmed errors fixed (2):**
+
+- `wa_jack_mountain_south_face` and `wa_kimtah_peak_scramble` both carried the
+  identical stray line in `access.seasonal`: *"Cascade River Road (the access road
+  for these trailheads) has a history of washouts/closures…"* — boilerplate copied
+  from a Cascade Pass–area route. Neither is approached from Cascade River Road:
+  Jack's South Face is the **Canyon Creek Trailhead on SR-20** (Jackita Ridge →
+  Crater Mtn → Jerry Lakes; confirmed by the rows' own waypoints, `road.name`,
+  `access.landManager`, and SummitPost/Beckey), and Kimtah is the **Easy Pass
+  Trailhead on SR-20** near MP 151 (WTA/SummitPost). Corrected `access.seasonal` to
+  name SR-20 and the WSDOT pass report, re-homing each row's own `road`-block info
+  (same contamination fingerprint the trailhead-road audits track). Note the sibling
+  routes this batch — Johannesburg (both) and Klawatti — genuinely *do* use Cascade
+  River Road, so the line is correct there and was left alone.
+
+**Externally cross-checked and confirmed accurate:** Jack Mountain elevation 9,075 ft
+(all three routes; Wikipedia/PeakVisor); Johannesburg 8,200 ft (listsofjohn 8,212,
+within tolerance); Johannesburg CJ Couloir FA Calder Bressler, Bill Cox, Ray Clough,
+Tom Myers — July 26, 1938 (Wikipedia, verbatim); Kimtah 8,649 ft high-point within
+the "8,600+" figure and coordinates matching Wikipedia (48.585, −120.911), FA John
+Roper & Jerry Swanson June 1970 ("Gendarmes Peak", SummitPost); Klawatti 8,485 ft and
+FA Lloyd Anderson, Karl Boyer, Tom Gorton — July 7, 1940 (Wikipedia/SummitPost,
+verbatim); Mount Stuart 9,415 ft and King Kong FA Sol Wertkin/Tyree Johnson 2016,
+5.11d (AAC/CascadeClimbers) — the "Enchantment permit area" note is correct because
+the West Face sits in the **Stuart Zone**, one of the Enchantment Permit Area's quota
+zones.
+
+**Flagged for human review (2, not auto-fixed):**
+
+- `wa_jack_mountain_northeast_glacier`: the legacy `access.notes` stub says *"Best
+  season: August–September (least snow)"*, contradicting the row's own researched
+  `best_season`/`season` (early-season, **May–Jul**, "while the glacier is still
+  filled in and the bergschrund is closed") — the correct call for a heavily
+  crevassed north-cirque glacier line. The row also mixes two approaches: `waypoints`
+  list the **East Bank Trailhead** (11-mile approach) while `approach_logistics`
+  names **May Creek via Ross Lake shuttle**, and `gain_ft`/`dist_km` (4,501 / 5.6 km)
+  reflect the short shuttle approach. Needs a human to decide which approach the row
+  documents and reconcile season.
+- `wa_king_kong_gorillas_direct_direct`: `access.notes` describes the **Stuart Lake /
+  Icicle Creek (north-side)** trailhead — *"Parking: 20–30 car spaces… at Stuart Lake
+  trailhead. Dogs not allowed in Stuart Lake area. FR 7601 closes…"* — but this west-
+  face route is approached from the **Esmeralda Basin Trailhead (North Fork Teanaway
+  Rd)**, correctly given in the row's own waypoints/`approach_logistics`. Trailhead
+  contamination in `access.notes` (and `road.name`, which hedges "depending on
+  route/face"). Elevation, FA, grade and permit are all correct.
+
+Web access this run: WebSearch and the `npm run check:sql` live-DB check both worked;
+WebFetch remains blocked by the egress proxy (Wikipedia/SummitPost direct fetch 403),
+so facts were confirmed via WebSearch result summaries.
+
+Next batch continues after `wa_klawatti_peak_southeast_face` in the id-ordered scope.
