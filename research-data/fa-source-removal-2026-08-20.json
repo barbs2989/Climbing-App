@@ -1,0 +1,633 @@
+{
+ "_README": [
+  "Source citations removed from the first-ascent credit column, which RENDERS on the route page. 104 rows: 85 named a publisher or site, 19 talked about the record rather than the ascent.",
+  "",
+  "NOT the season/grade defect: fa renders in a wrapping div, so its 197 long values cost nothing structurally and most are legitimately detailed multi-party credits. Only the citation goes.",
+  "",
+  "Every name, date and party is kept, and five contested first-ascent records were RESTORED de-attributed after the first pass collapsed them - a disagreement about who or when is climbing history, not a citation."
+ ],
+ "wa_amphitheater_mountain_north_buttress": {
+  "area": "wa_amphitheater_mountain",
+  "set": {
+   "fa": "First ascent July 15, 1973 (party not recorded)"
+  }
+ },
+ "wa_beckey_davis": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "fa": "Fred Beckey and Dan Davis, 1962."
+  }
+ },
+ "wa_big_four_mountain_tower_route": {
+  "area": "wa_big_four_mountain",
+  "set": {
+   "fa": "Ben Guydelkon and Ron Miller, July 25, 1972 (one account dates it 1971)"
+  }
+ },
+ "wa_big_kangaroo_kearney_thomas": {
+  "area": "wa_big_kangaroo",
+  "set": {
+   "fa": "Alan Kearney with Jeff Thomas and Bill Thomas, early 1980s; route later free-climbed at its current grade."
+  }
+ },
+ "wa_big_snagtooth_west_ridge": {
+  "area": "wa_big_snagtooth",
+  "set": {
+   "fa": "Fred Beckey, Jerry O'Neil, and Charles Welsh, September 29, 1946 — the peak's overall first ascent; it is not confirmed that the 1946 party followed this exact line, but the West Ridge is the standard/easiest way to the summit block and is the natural original line."
+  }
+ },
+ "wa_booker_mountain_northeast_face": {
+  "area": "wa_booker_mountain",
+  "set": {
+   "fa": "Dan Davis and John Holland, August 22, 1964"
+  }
+ },
+ "wa_bread_loaf": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "fa": "Patricia P., July 22, 2020"
+  }
+ },
+ "wa_bryant_peak_southeast_slopes": {
+  "area": "wa_bryant_peak",
+  "set": {
+   "fa": "1926 - Anderson, Best, Maxwell, Shorrock, West, Wunderling (first ascent of Bryant Peak)"
+  }
+ },
+ "wa_burnt_boot_peak_north_ridge": {
+  "area": "wa_burnt_boot_peak",
+  "set": {
+   "fa": "Don Williamson, Bill Bucher, Tom Oas — reported 1972 (exact climb date not recorded; the ascent may have been the preceding season)"
+  }
+ },
+ "wa_cascade_peak_east_ridge": {
+  "area": "wa_cascade_peak",
+  "set": {
+   "fa": "Fred Beckey, Pete Schoening, and Phil Sharpe, July 23, 1950 — this is Cascade Peak's overall first ascent; it is not confirmed that the 1950 party's exact line matched today's named East Ridge, though it is the peak's easiest/standard route and most plausible match."
+  }
+ },
+ "wa_cashmere_mountain_west_ridge": {
+  "area": "wa_cashmere_mountain",
+  "set": {
+   "fa": "1900 - Robert A. Farmer, USGS survey party"
+  }
+ },
+ "wa_castle_peak_tatoosh_southeast_face": {
+  "area": "wa_castle_peak_tatoosh",
+  "set": {
+   "fa": "Not documented"
+  }
+ },
+ "wa_cathedral_peak_last_rites": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "Scott Bennett and Blake Herrington, August 2011"
+  }
+ },
+ "wa_cathedral_peak_pasayten_se_buttress": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "First ascent party unrecorded; route established July 1973"
+  }
+ },
+ "wa_cathedral_rock_standard": {
+  "area": "wa_cathedral_rock",
+  "set": {
+   "fa": "James Grieve, sometime between 1882 and 1896 — this is the historic original/easiest line up the peak, though the FA is recorded for the peak overall rather than pitch-by-pitch for this specific route."
+  }
+ },
+ "wa_chianti_spire_lichen_bouquet": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "fa": "Alan Kearney, John Culberson and Shaun Kelley, September 8, 1989. Another account gives the partners as M. Houston; the Kearney attribution and the year are consistent, the partners are not."
+  }
+ },
+ "wa_chianti_spire_north_face": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "fa": "Joe Hieb and Art Maki, September 1952 - this is the first ascent of Chianti Spire itself. The pair approached from a camp at the head of Silver Star Creek, climbed 500 ft of difficult rock to the notch between Chianti and Pernod, made a 250 ft rappel on the west face, and followed a loose gully to the Chianti-Burgundy notch, where \"this north face of Chianti Spire was found to hold the only route\"."
+  }
+ },
+ "wa_clast_from_the_past": {
+  "area": "wa_north_side",
+  "set": {
+   "fa": "Kevin Buselmeier, Jim Yoder & Brenden Sullivan (ground-up first ascent; reported August 2015)"
+  }
+ },
+ "wa_colfax_peak_polish_route": {
+  "area": "wa_colfax_peak",
+  "set": {
+   "fa": "Rogoz and partner, 2000 (attribution uncertain)"
+  }
+ },
+ "wa_colonial_peak_west_ridge": {
+  "area": "wa_colonial_peak",
+  "set": {
+   "fa": "William Degenhardt & Herbert Strandberg (Seattle Mountaineers), July 31, 1931 — this is the peak's first-ascent party and also the standard/easiest route line"
+  }
+ },
+ "wa_corteo_peak_southwest_ridge": {
+  "area": "wa_corteo_peak",
+  "set": {
+   "fa": "John Lehmann & Hermann Ulrichs, July 1935 — this is the peak's first ascent, made via the easiest route, class 4 scrambling; very likely the same line as today's Southwest Ridge standard route since it remains the peak's easiest, but the specific ridge used by the 1935 party is not recorded, so treat this as a strong inference rather than a certainty."
+  }
+ },
+ "wa_davis_peak_nc_north_face": {
+  "area": "wa_davis_peak_nc",
+  "set": {
+   "fa": "Dallas Kloke and Bryce Simon, July 1976 (another account dates it 1972; both name the same pair). First recorded winter ascent (and first recorded ascent of the line in winter conditions): Stuart Taylor and Ade Miller, March 13, 2005 — they climbed the couloir to the summit ridge at about 6,700 ft but did not continue to the summit."
+  }
+ },
+ "wa_del_campo_peak_standard": {
+  "area": "wa_del_campo_peak",
+  "set": {
+   "fa": "J.A. Juleen & party, 1912 (matches the peak's first ascent)"
+  }
+ },
+ "wa_dirty_sanchez": {
+  "area": "wa_goose_egg_mountain",
+  "set": {
+   "fa": "Joseph Puryear & Stoney Richards, March 2002 (exact date uncertain)"
+  }
+ },
+ "wa_dome_peak_indian_summer": {
+  "area": "wa_dome_peak",
+  "set": {
+   "fa": "First ascent approximately September 2, 2011 (party included Nate Farr)."
+  }
+ },
+ "wa_dorado_needle_east_ridge": {
+  "area": "wa_dorado_needle",
+  "set": {
+   "fa": "Joan and Joe Firey, Hans Hoesli, Dave Knudson, and Peter Renz — July 4, 1971 (this attribution is not certain)"
+  }
+ },
+ "wa_dumbell_mountain_west": {
+  "area": "wa_dumbell_mountain",
+  "set": {
+   "fa": "Richard Alt and George Fahey, 1932 — this is the peak's overall first ascent; it is presumed to have used this, the only recorded (easiest/scrambling) route, but the FA line is not explicitly named as the \"West Route\"."
+  }
+ },
+ "wa_east_ridge_3": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "set": {
+   "fa": "Geof Childs & Larry Goldie, September 14, 2000 (first continuous roped ascent); the ridge was earlier soloed unroped by Fred Beckey & Dave Beckstead in 1986 at roughly 5.8/Grade IV as the 'NE Spur & East Ridge,' and the broader ridge line traces back to a 1932 south-face/east-ridge combination climbed by Hermann Ulrichs and Oscar Pennington."
+  }
+ },
+ "wa_enchantment_peak_southwest_scramble": {
+  "area": "wa_enchantment_peak",
+  "set": {
+   "fa": "Fred Beckey and Ralph Widrig, September 20, 1948"
+  }
+ },
+ "wa_frenzel_spitz_south_route": {
+  "area": "wa_frenzel_spitz",
+  "set": {
+   "fa": "Ed Cooper, Glen Denny, Joan Firey, Joe Firey, George Whitmore — September 10, 1961 (peak first ascent; the aspect climbed by the 1961 Southern Pickets first-ascent campaign is not named, but the date matches the peak FA and this is the only route on record)"
+  }
+ },
+ "wa_full_tilt_tempest_wall_free_version": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "fa": "Seth Angivine, John Berry, Evelyn Cheng, Jared Otto, Megan Polk, Thomas Ramier, Craig Rankin, Tim Stedman and Abe Traven; first reported in May 2013"
+  }
+ },
+ "wa_garfield_mountain_preiss_route": {
+  "area": "wa_garfield_mountain",
+  "set": {
+   "fa": "Mike Preiss, solo/self-belayed, July 1999 (exact date within 7/20-22 1999 not settled)"
+  }
+ },
+ "wa_golden_horn_east_face": {
+  "area": "wa_golden_horn",
+  "set": {
+   "fa": "Joe Sambataro and Jason Schilling — June 27, 2015 (route name 'F*ck the Pain Away')"
+  }
+ },
+ "wa_golden_horn_southwest_route": {
+  "area": "wa_golden_horn",
+  "set": {
+   "fa": "Fred Beckey, Keith Rankin, and a third partner (name recorded variously as 'Charles Welsh' or 'Walsh') — September 18, 1946. This is also the peak's overall first ascent."
+  }
+ },
+ "wa_goode_mountain_megalodon_ridge": {
+  "area": "wa_mount_goode",
+  "set": {
+   "fa": "Blake Herrington and Sol Wertkin, September 6, 2007 (sometimes listed as 2008, which was a publication year for the writeup rather than the ascent year; the climb itself took place September 6, 2007)"
+  }
+ },
+ "wa_half_moon_southwest_slopes": {
+  "area": "wa_half_moon",
+  "set": {
+   "fa": "Helmy Beckey, Fred Beckey, and Walt Varney, June 17, 1942 -- via the peak's easiest (standard) line, the only ascent route on record."
+  }
+ },
+ "wa_jack_mountain_east_ridge": {
+  "area": "wa_jack_mountain",
+  "set": {
+   "fa": "Carl Skoog and Gordon Skoog, July 16, 1984 (the same pair climbed a variation of the east-ridge route on September 23, 1984)"
+  }
+ },
+ "wa_let_it_burn": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "fa": "Jens Holsten and Max Hasson, established ground-up over late August to early September; reported in 2011 as IV 5.12a"
+  }
+ },
+ "wa_lexington_tower_south_face": {
+  "area": "wa_lexington_tower",
+  "set": {
+   "fa": "Donald Cramer, Donald Anderson, Bruce Schuler, Fred Stanley (1965); another record lists this route as 1964 by Donald Anderson and Larry Scott at 5.7"
+  }
+ },
+ "wa_little_big_chief_mountain_northeast_face": {
+  "area": "wa_little_big_chief_mountain",
+  "set": {
+   "fa": "Likely the peak's original first-ascent line: Fred Beckey, Wayne Swift, Joe Barto & Campbell Brooks, August 1939 (the peak's easiest route is the Northeast Face, class 3-4; this specific route's FA is unrecorded)"
+  }
+ },
+ "wa_little_sister_south_couloir": {
+  "area": "wa_little_sister",
+  "set": {
+   "fa": "No rock/ice first ascent is recorded. The first known ski descent of the line was by Mark Allen during the first known ski traverse of the Twin Sisters Range, with Greg Balco, Paul Kimbrough and Chris Simmons, May 12-14, 2007 (some accounts date the traverse to 2006). Steph Abegg's January 31, 2015 party reported a suspected first winter ascent of Little Sister by this south-side ground."
+  }
+ },
+ "wa_marvin_s_ear": {
+  "area": "wa_morning_star_peak",
+  "set": {
+   "fa": "Morgan Zentler and Sheila Zentler, September 16, 2017; Zentler and Imran Rahman equipped the line earlier that season. Another record gives Sept. 2016."
+  }
+ },
+ "wa_mile_high_club": {
+  "area": "wa_morning_star_peak",
+  "set": {
+   "fa": "Darin Berdinka and Rad Roberts, September 12, 2015 (bolted top-down)"
+  }
+ },
+ "wa_milk_n_honey": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "fa": "Thomas Ramier, Craig Rankin and Abe Traven, August 24, 2010"
+  }
+ },
+ "wa_mix_up_peak_east_face": {
+  "area": "wa_mixup_peak",
+  "set": {
+   "fa": "Wesley Grande & Jack Kendrick, 1947 (peak first ascent, via what is understood to be this standard east-face line; the peak's easiest route is glacier travel plus Class 4 scrambling — not separately confirmed as this exact route's FA)"
+  }
+ },
+ "wa_mount_bigelow_tribute_to_richard": {
+  "area": "wa_mount_bigelow",
+  "set": {
+   "fa": "First ascent August 23, 2011 by a two-person party: a climber posting as 'wbk' and his partner Tim. Full surnames were not published, and the origin of the route name (Richard) is not known."
+  }
+ },
+ "wa_mount_fury_east_mongo_ridge": {
+  "area": "wa_mount_fury_west",
+  "set": {
+   "fa": "Wayne Wallace, solo — 2006 (month uncertain: July or August)"
+  }
+ },
+ "wa_mount_fury_west_west_ridge": {
+  "area": "wa_mount_fury_west",
+  "set": {
+   "fa": "Duke Watson, Phil Sharpe, Warren Spickard, Vic Josendal, and Maury Muzzy — August 19, 1958 (first ascent of West Peak)"
+  }
+ },
+ "wa_mount_johnson_standard": {
+  "area": "wa_mount_johnson",
+  "set": {
+   "fa": "Scott Osborn, Joe Halwax, John King, c. 1935 (a revised attribution; the ascent was long credited instead to Elvin Johnson & George Martin, 1940). This is the peak's first ascent via essentially the only natural line to the summit, not a separately recorded route FA."
+  }
+ },
+ "wa_mount_pugh_pika_slab": {
+  "area": "wa_mount_pugh",
+  "set": {
+   "fa": "Credited to \"Leland Windham 7/2023 or Harry Bedal & Nels Skaar 1919\" — i.e. the modern recorded ascent is Windham's in July 2023, with the tongue-in-cheek possibility that the trail builders climbed it while chipping the ridge route in 1918-19. No definitive first ascent is established."
+  }
+ },
+ "wa_mount_pulitzer_standard": {
+  "area": "wa_mount_pulitzer",
+  "set": {
+   "fa": "Doug Waali, Bob Wood, and Kent Heathershaw, 1961, via the east ridge"
+  }
+ },
+ "wa_mount_shuksan_white_salmon_glacier": {
+  "area": "wa_mount_shuksan",
+  "set": {
+   "fa": "Piley, Richards, Thompson — September 9, 1926 (spelling of names unverified)"
+  }
+ },
+ "wa_mount_steel_standard": {
+  "area": "wa_mount_steel",
+  "set": {
+   "fa": "First recorded ascent July 19, 1897 (party not recorded); William Gladstone Steel himself reportedly summited on August 24, 1906."
+  }
+ },
+ "wa_mount_terror_north_face": {
+  "area": "wa_mount_terror",
+  "set": {
+   "fa": "Charles Bell, Ed Cooper, David Hiser, Mike Swayne — 1961 (original North Buttress line, III 5.7); sometimes rounded to \"~1962 / thirty years after the 1932 FA\", but the more specific dating is 1961."
+  }
+ },
+ "wa_mount_terror_stoddard_buttress": {
+  "area": "wa_mount_terror",
+  "set": {
+   "fa": "John Stoddard, solo, July 16, 1984 (IV 5.8); an extended/left-side finish variant was climbed by Stoddard July 14-17, 1985 and is known as \"North Face, Left Side\" (5.8+)"
+  }
+ },
+ "wa_ne_couloir": {
+  "area": "wa_north_face_tiffany_mountain",
+  "set": {
+   "fa": "June 9, 2015 (first-ascent party not recorded; round trip from trailhead took 5 hours)"
+  }
+ },
+ "wa_ne_ridge": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "August 1973 — the first-ascent party is not recorded"
+  }
+ },
+ "wa_neve_glacier_west_ridge": {
+  "area": "wa_snowfield_peak",
+  "set": {
+   "fa": "William Degenhardt and Herbert Strandberg, August 1931"
+  }
+ },
+ "wa_north_tower_ridge_route": {
+  "area": "wa_north_face_tiffany_mountain",
+  "set": {
+   "fa": "June 13, 2015 (first-ascent party not recorded)"
+  }
+ },
+ "wa_osceola_peak_scramble": {
+  "area": "wa_osceola_peak",
+  "set": {
+   "fa": "1933 - Hermann Ulrichs and Richard Alt (first ascent of Osceola Peak; it is not recorded whether this first ascent used this exact SW-slope line, though it is the peak's standard/easiest route)."
+  }
+ },
+ "wa_ottohorn_west_ridge": {
+  "area": "wa_ottohorn",
+  "set": {
+   "fa": "Ed Cooper, Glen Denny, Joan Firey, Joe Firey and George Whitmore — September 10, 1961, Class III via the east ridge from the Otto-Himmel col. This route IS the first-ascent line."
+  }
+ },
+ "wa_painted_mountain_scramble": {
+  "area": "wa_painted_mountain",
+  "set": {
+   "fa": "circa 1897, Sam Strom (USGS survey party) -- first recorded ascent"
+  }
+ },
+ "wa_phantom_peak_west_ridge": {
+  "area": "wa_phantom_peak",
+  "set": {
+   "fa": "Eric Wehrly & Rolf Larson, July 30, 2021"
+  }
+ },
+ "wa_prusik_peak_alpine_craggers_delight": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "fa": "Unknown; first reported publicly by Justin Sackett (Sept 2022)."
+  }
+ },
+ "wa_prusik_peak_der_sportsman": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "fa": "Brooke Sandahl and partners, developed over roughly three years in the 1990s; exact year undated."
+  }
+ },
+ "wa_prusik_peak_solid_gold": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "fa": "Wayne Wallace and Tim Olson, 1989."
+  }
+ },
+ "wa_prusik_peak_west_ridge": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "fa": "Route dates to 1957; the specific first-ascent party is not recorded."
+  }
+ },
+ "wa_scarface_3": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "fa": "Colin B. and Nate F., August 15, 2010"
+  }
+ },
+ "wa_seven_fingered_jack_southwest_slopes": {
+  "area": "wa_seven_fingered_jack",
+  "set": {
+   "fa": "Richard Alt, 1932 (first ascent of the peak)"
+  }
+ },
+ "wa_snowfield_peak_neve_glacier": {
+  "area": "wa_snowfield_peak",
+  "set": {
+   "fa": "William Degenhardt and Herbert Strandberg, August 1931 — this Neve Glacier/West Ridge line is the only historically-documented route to the summit"
+  }
+ },
+ "wa_south_face_5": {
+  "area": "wa_inspiration_peak",
+  "set": {
+   "fa": "Bill Sumner and Mike Heath, June 18 (year unconfirmed — likely 1969, not independently corroborated)"
+  }
+ },
+ "wa_south_gully_south_spur": {
+  "area": "wa_guye_peak",
+  "set": {
+   "fa": "Unrecorded for either the summer or winter line"
+  }
+ },
+ "wa_south_rib": {
+  "area": "wa_guye_peak",
+  "set": {
+   "fa": "Unrecorded; the line is attributed to \"likely miners or other early explorers\""
+  }
+ },
+ "wa_south_ridge": {
+  "area": "wa_south_peak",
+  "set": {
+   "fa": "Unknown; first documented ascent by Blake Herrington & John Frieh, July 2006 (route first reported in 2008)"
+  }
+ },
+ "wa_southwest_rib_2": {
+  "area": "wa_crystal_lake_tower",
+  "set": {
+   "fa": "Pete and Judy Doorish, September 1982"
+  }
+ },
+ "wa_sperry_peak_east_face": {
+  "area": "wa_sperry_peak",
+  "set": {
+   "fa": "Mike Preiss and M. Bunker, September 24-25, 2002"
+  }
+ },
+ "wa_sperry_peak_standard": {
+  "area": "wa_sperry_peak",
+  "set": {
+   "fa": "Norval Grigg and Art Winder, 1927 - via the west ridge above Lake Elan, the same line as this standard route"
+  }
+ },
+ "wa_spider_mountain_north_face": {
+  "area": "wa_spider_mountain",
+  "set": {
+   "fa": "Dallas Kloke and Reed Tindall, 1972 (described as 'the hook-shaped snow finger leading directly to the summit'); first ski descent by Martin Volken and Peter Avolio, June 17, 2003"
+  }
+ },
+ "wa_star_peak_sawtooth_scramble": {
+  "area": "wa_star_peak_sawtooth",
+  "set": {
+   "fa": "1898 - USGS/GLO survey party including Albert H. Sylvester (first ascent of Star Peak)."
+  }
+ },
+ "wa_sw_couloir_and_face": {
+  "area": "wa_mount_shuksan",
+  "set": {
+   "fa": "August 16, 1980 (party not recorded)"
+  }
+ },
+ "wa_the_chopping_block_northeast_ridge": {
+  "area": "wa_the_chopping_block",
+  "set": {
+   "fa": "Firey party, 1970"
+  }
+ },
+ "wa_the_scoop_2": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "fa": "Matt Clifton, Evan Cabodi and Stewart Matthiesen — cleaned in June and freed on an August ascent (first ascent dated August 27, 2010)"
+  }
+ },
+ "wa_tower_arete": {
+  "area": "wa_north_face_tiffany_mountain",
+  "set": {
+   "fa": "June 16, 2015 (first-ascent party not recorded)"
+  }
+ },
+ "wa_west_face": {
+  "area": "wa_south_peak",
+  "set": {
+   "fa": "Unknown; climbed by Cliff Leight and a partner in the early 1990s — not to be confused with the much more famous 5.11+ 'West Face' testpiece on North Peak (North Gunsight), a separate route established by Jim Nelson & Carl Dietrich in 1986 and freed by Jens Holsten & Max Hasson in 2007."
+  }
+ },
+ "wa_wright_pond": {
+  "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+  "set": {
+   "fa": "Chris Wright, August 2010 — Wright-Pond (III 5.11 R, 800'), Cutthroat Creek Wall, WA. Described by the first-ascent party as the first established route on this wall."
+  }
+ },
+ "wa_bears_breast_mountain_se_mega_slab": {
+  "area": "wa_bears_breast_mountain",
+  "set": {
+   "fa": "2005 (party not recorded)"
+  }
+ },
+ "wa_bowling_alley_aka_regular_route": {
+  "area": "wa_south_face_3",
+  "set": {
+   "fa": "Brenden Sullivan and Jim Yoder (ground-up); exact year not recorded"
+  }
+ },
+ "wa_cathedral_rock_northeast_buttress": {
+  "area": "wa_cathedral_rock",
+  "set": {
+   "fa": "2003 direct-start variation: Mike Preiss & Mark Bunker (2003); first-ascent party of the original (easier, 5.7) Northeast Buttress line is not recorded."
+  }
+ },
+ "wa_chiwawa_mountain_southwest": {
+  "area": "wa_chiwawa_mountain",
+  "set": {
+   "fa": "Lorenz A. Nelson / Mountaineers party, 1921 (the peak's overall first ascent via its easiest scrambling line; not explicitly named \"Southwest Route\")"
+  }
+ },
+ "wa_clean_break": {
+  "area": "wa_juno_tower",
+  "set": {
+   "fa": "Bryan Burdo and Yann Merrand (mid-1980s; exact year not recorded)"
+  }
+ },
+ "wa_cobbles_101": {
+  "area": "wa_south_face_3",
+  "set": {
+   "fa": "Jim Yoder and Brenden Sullivan; exact year not recorded"
+  }
+ },
+ "wa_cutthroat_cauthorn_wilson": {
+  "area": "wa_cutthroat_peak",
+  "set": {
+   "fa": "Dan Cauthorn and Tim Wilson (year not recorded)"
+  }
+ },
+ "wa_dragontail_peak_r2": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "fa": "Gerber and Sink (route named for the first-ascent party; exact given names/year not recorded)"
+  }
+ },
+ "wa_johannesburg_mountain_northeast_rib_1951_route": {
+  "area": "wa_johannesburg_mountain",
+  "set": {
+   "fa": "1951 (first ascent party not identified)"
+  }
+ },
+ "wa_mount_constance_finger_traverse": {
+  "area": "wa_mount_constance",
+  "set": {
+   "fa": "Specific first ascent of the Finger Traverse route not recorded; became popular as an alternative to the Terrible Traverse"
+  }
+ },
+ "wa_northeast_buttress_4": {
+  "area": "wa_colchuck_peak",
+  "set": {
+   "fa": "Not documented (previously listed here as \"Mark Weigelt and Julie Brugger, 1970\" — that is actually the FA of Dragontail Peaks Backbone Ridge, climbed by Weigelt and John Bonneville, a different route on the neighboring peak; corrected 2026-07-31 pending this routes actual FA)"
+  }
+ },
+ "wa_northeast_ridge_1963_route": {
+  "area": "wa_johannesburg_mountain",
+  "set": {
+   "fa": "1963 (climbing party not recorded)"
+  }
+ },
+ "wa_south_face_2001_variation": {
+  "area": "wa_lundin_peak",
+  "set": {
+   "fa": "Mike Preiss & Don Preiss, 2004 (the route name \"2001 Variation\" reflects the year originally given; 2004 is the better-supported date, though not independently verified)"
+  }
+ },
+ "wa_the_incisor_scramble": {
+  "area": "wa_the_incisor",
+  "set": {
+   "fa": "1958 (climbing party not recorded)"
+  }
+ },
+ "wa_the_monk_le_gibet": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "July 1973 — the first-ascent party is not recorded"
+  }
+ },
+ "wa_the_monk_odine": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "September 1974 — the first-ascent party is not recorded"
+  }
+ },
+ "wa_the_monk_scabo": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "August 1973 — the first-ascent party is not recorded"
+  }
+ },
+ "wa_the_monk_west_cracks_left_crack": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "September 1977 — the first-ascent party is not recorded"
+  }
+ },
+ "wa_the_monk_west_cracks_right_crack": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "fa": "July 1975 — the first-ascent party is not recorded"
+  }
+ }
+}
