@@ -59,6 +59,7 @@ npm run check:function-drift # is the LIVE function the one the migrations descr
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
+npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
@@ -1235,6 +1236,54 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+- **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
+  SQUASH silently delete what an earlier PR added?** That guard interrogates a **merge commit** —
+  *"every identifier either parent introduced survives"* — but PRs here land as **squash** merges,
+  so main's history contains no merge commit for them and the guard never runs on the thing that
+  actually ships. The recorded incident is exactly that shape: **#778** added a resolver plus three
+  fixes, **#776** was branched from *pre-#778* main, and its squash **reverted all of it** — clean
+  merge, no conflict, every check green, and main went back to shipping the bugs. Report-only,
+  read-only on git; **not a build gate**, because it is a property of HISTORY rather than of the
+  checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
+  - **VALIDATED AGAINST THE REAL INCIDENT, NOT A SYNTHETIC ONE.** Pointed at `53d563e` (#776's
+    commit) with a 3-commit window it reports **`crewMemberById` and `crewMemberUids`, added by
+    #778, removed by #776**, both classified SILENT. That is the strongest form of proof available
+    for a detector whose healthy output is "nothing found": it reproduces a defect that genuinely
+    happened, from history, with no injection.
+  - **AND THE FIRST DRAFT COULD NOT HAVE CAUGHT IT — only that validation showed why.** The patterns
+    tracked `export function` / `export const` / `package.json` entries, while #778's resolver was
+    `const crewMemberById=useCallback(function(id){…})` **inside the App component** — not exported,
+    not top-level. Every pattern walked straight past the one thing that was reverted. A
+    component-scoped helper is *precisely* what a stale-base squash drops, because it is the kind of
+    thing one PR adds and another's copy of the file never had. `hook-const` and a capitalised
+    `fn-decl` were added for that reason.
+  - **A REMOVAL IS NOT A DEFECT**, and that separation is the whole design — code is deleted
+    deliberately all the time, and an audit reporting every deletion is noise nobody reads. It asks
+    whether the removing commit was **about** the thing: named in its subject → *deliberate*; gone
+    in a commit about something else → **SILENT**, which is the shape worth reading.
+  - **Two presence backends, and the fast one is only correct when the checkout IS the ref.** Reading
+    the tree from disk is one pass; `git show` per file was ~1,500 subprocesses and took minutes.
+    Pointing it at any other commit falls back to `git grep` at that sha — slower, and how the
+    historical validation is possible at all. It **fails closed** if the checkout does not match the
+    ref (presence tested against the wrong tree reads as a revert that never happened) and if the
+    grep backend finds nothing at all.
+  - What it does **not** prove, stated in the script rather than implied: that no *behaviour* was
+    reverted. It tracks named definitions, not function bodies, so a merge that keeps a name and
+    drops its guard clause is invisible here — `check:correction-readers` exists for that shape.
+  - **500 COMMITS DEEP: 4 absent, 3 flagged SILENT, and NONE is a defect — the precision is recorded
+    rather than tuned away.** `activeCrewMemberIds` was **#776's own** local helper, dropped by #826
+    when it restored the resolvers #776 had reverted; `listSlug` was consolidated into
+    `routeInList` by #789 (*"One list vocabulary, not two"*), still guarded by `check:route-tags`,
+    120 assertions green; `check-rappel-readers.mjs` was **renamed** to `check-correction-readers.mjs`
+    by #926; `BivyPanel` was correctly classified deliberate and re-mounted. Four items across 500
+    commits is a reading list, not noise — the point is that each is settled in a minute.
+  - **THE OBVIOUS TIGHTENING WOULD HAVE EXCUSED #776 ITSELF, so it was measured and REJECTED.** All
+    three false SILENTs look like supersessions, which suggests excusing a removal when the same
+    commit ADDS a token sharing a significant word (`listSlug`→`routeInList` share *list*;
+    `check-rappel-readers`→`check-correction-readers` share *readers*). But **#776 removed
+    `crewMemberById`/`crewMemberUids` and added `activeCrewMemberIds` in the same commit** — sharing
+    *crew* and *member* — so that rule would have labelled the one real incident a rename and said
+    nothing. A detector tightened until its healthy output is empty is one that no longer fires.
 - **`check:migration-claims`** asks whether two **open PRs** claim the same migration
   number. `check:migrations` already refuses two files sharing a number in the checkout and
   runs inside `npm run build` — but it cannot see this failure, because when either PR is
