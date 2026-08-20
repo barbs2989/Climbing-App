@@ -28,6 +28,7 @@
     "audit:aspect-name": "node scripts/audit-aspect-vs-name.mjs",
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
+    "audit:prose-citations": "node scripts/audit-prose-citations.mjs",
     "audit:expiring-closures": "node scripts/audit-expiring-closures.mjs",
     "audit:trailhead-agreement": "node scripts/audit-trailhead-agreement.mjs",
     "audit:trailhead-road": "node scripts/audit-trailhead-road-agreement.mjs",
