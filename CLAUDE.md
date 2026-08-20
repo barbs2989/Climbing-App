@@ -937,6 +937,28 @@ a build error, but a screen that renders wrong or not at all.
     authoring time. This re-asks on every PR run against whatever is open right now.
   - It fails **both** PRs, deliberately: they cannot both merge as they are, and naming only
     one would be picking a winner the script has no basis to pick.
+  - **It used to fail EVERY open PR, and that sentence above was describing an intention the
+    code did not implement.** `openPrMigrations()` reads `/pulls?state=open` and compares every
+    claim against every other with **nothing referencing the PR being built** — so a collision
+    between two other people's branches turned your unrelated PR red. Observed on **#1023**, an
+    accessibility fix adding **no migration at all**, red because #1016 and #1022 both claimed
+    `0153`; every other open PR was red for the same reason.
+    - That is exactly the objection this file uses to keep `check:counts` **out** of the build —
+      *"whoever caused it is not who sees red"* — and the natural reading of a red check on your
+      own PR is that you broke something. It was survivable only because `build` is the sole
+      **required** status check, so the red was noise rather than a gate.
+    - Now scoped: the run fails for a collision **this PR is party to**, and a collision between
+      other PRs is **printed and not fatal**. Scoping the failure must not become hiding the
+      finding — the two PRs that actually clash each go red on their own runs, which is what the
+      sentence above always claimed. The PR number comes from `GITHUB_REF`
+      (`refs/pull/N/merge`), falling back to the event payload; Actions sets it on every
+      `pull_request` run, so no workflow change was needed.
+    - **With no PR context at all — a local run — every collision is still fatal.** That is the
+      right default for a hand audit and it preserves the behaviour anyone has relied on.
+    - `--self=N` stands in for that context so the scoping is injection-testable without
+      opening pull requests. **The (a)/(c) pair is what makes the test meaningful:** an
+      always-pass implementation satisfies "unrelated PR passes" on its own, and an always-fail
+      one satisfies both "a party fails" and "the hand audit fails". Only the pair pins it.
   - **Fails closed with no token** — "nothing was checked" is reported as a failure, never as
     a pass. Same reasoning as `check:counts` refusing an empty read: the realistic failure
     mode of this guard is a false green about a repo it never looked at.

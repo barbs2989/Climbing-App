@@ -32,6 +32,35 @@ const argv = process.argv.slice(2);
 const injectPath = (argv.find((a) => a.startsWith("--inject=")) || "").split("=")[1];
 
 const die = (msg) => { console.error(msg); process.exit(1); };
+
+// WHICH PR IS THIS RUN FOR? Without this the guard fails EVERY open PR whenever any two
+// collide, which is not what its own docs claim ("it fails both PRs, deliberately") and not
+// what anyone wants: an author with no migration at all gets a red they did not cause and has
+// to read a log to find that out. Observed on #1023, an accessibility fix adding no migration,
+// red because #1016 and #1022 both claimed 0153.
+//
+// That is precisely the objection CLAUDE.md uses to keep check:counts OUT of the build —
+// "whoever caused it is not who sees red" — so the same reasoning applies here.
+//
+// A collision between two OTHER PRs is still PRINTED, just not fatal for this run: the two
+// PRs that actually collide each go red on their own runs, which is the documented behaviour.
+// Losing the signal would be worse than the false red.
+const selfPr = (() => {
+  const explicit = (argv.find((a) => a.startsWith("--self=")) || "").split("=")[1];
+  if (explicit) return Number(explicit);
+  // pull_request runs check out refs/pull/N/merge.
+  const m = /^refs\/pull\/(\d+)\//.exec(process.env.GITHUB_REF || "");
+  if (m) return Number(m[1]);
+  // Belt and braces: the event payload carries it too, and a future trigger might not set REF.
+  try {
+    const p = process.env.GITHUB_EVENT_PATH;
+    if (p && fs.existsSync(p)) {
+      const n = JSON.parse(fs.readFileSync(p, "utf8"))?.pull_request?.number;
+      if (n) return Number(n);
+    }
+  } catch {}
+  return null;
+})();
 const numOf = (p) => { const m = path.basename(p).match(/^(\d{4})_/); return m ? m[1] : null; };
 
 // ---- what is already on main -------------------------------------------------------
@@ -117,21 +146,35 @@ for (const pr of prs) {
   }
 }
 
-const problems = [];
+// A collision is FATAL for this run when this PR is one of the parties, and INFORMATIONAL
+// otherwise. With no PR context at all (a local run, or a push) every collision is fatal —
+// that is the right default for a hand audit, and it keeps the behaviour anyone has relied on.
+const problems = [];   // fail the run
+const others = [];     // print, do not fail
+const mine = (prNumbers) => selfPr == null || prNumbers.includes(selfPr);
 for (const [n, who] of [...claims.entries()].sort()) {
   // Two open PRs on the same number: whichever merges second breaks main's build.
   const distinctPrs = [...new Set(who.map((w) => w.pr.number))];
   if (distinctPrs.length > 1) {
-    problems.push(`  ${n} is claimed by ${distinctPrs.length} open PRs — whichever merges SECOND will break the build on main:\n` +
-      who.map((w) => `      #${w.pr.number}  ${w.file}\n              ${w.pr.title}`).join("\n"));
+    const msg = `  ${n} is claimed by ${distinctPrs.length} open PRs — whichever merges SECOND will break the build on main:\n` +
+      who.map((w) => `      #${w.pr.number}  ${w.file}\n              ${w.pr.title}`).join("\n");
+    (mine(distinctPrs) ? problems : others).push(msg);
     continue;
   }
   // A number already merged: this PR collides the moment it lands.
   // Skip when the merged file IS this PR's file (a PR that only edits an existing migration).
   const merged = onMain.get(n);
   if (merged && !who.some((w) => path.basename(w.file) === merged)) {
-    problems.push(`  ${n} is already on ${process.env.GITHUB_BASE_REF || "main"} as ${merged}, but #${who[0].pr.number} adds ${path.basename(who[0].file)}`);
+    const msg = `  ${n} is already on ${process.env.GITHUB_BASE_REF || "main"} as ${merged}, but #${who[0].pr.number} adds ${path.basename(who[0].file)}`;
+    (mine(distinctPrs) ? problems : others).push(msg);
   }
+}
+
+// Print the other PRs' collisions whatever the verdict. Scoping the FAILURE must not become
+// hiding the finding — that would turn a noisy guard into a blind one.
+if (others.length) {
+  console.log(`check:migration-claims: ${others.length} collision(s) between OTHER open PRs — not this run's problem, and each of those PRs is red on its own run:\n`);
+  others.forEach((p) => console.log(p + "\n"));
 }
 
 if (problems.length) {
@@ -139,13 +182,17 @@ if (problems.length) {
   problems.forEach((p) => console.error(p + "\n"));
   console.error("Renumber one of them to the next free number and push. Both PRs stay red until");
   console.error("that happens, which is the point: they cannot both merge as they are.\n");
+  if (selfPr != null) console.error(`Scoped to #${selfPr}: only collisions this PR is party to fail its run.\n`);
   console.error("This is the check that was missing on 2026-08-09, when two PRs merged three");
   console.error("seconds apart on 0103 and blocked every deploy until one was renumbered.");
   process.exit(1);
 }
 
 const claimed = [...claims.keys()].sort().join(", ");
-console.log(`check:migration-claims: ok — examined ${examined} open PR(s) including drafts; ${prs.length} add migrations (${claimed}), no number claimed twice.`);
+const verdict = selfPr == null
+  ? "no number claimed twice (hand audit — every open PR in scope)"
+  : `no collision involving #${selfPr}${others.length ? `, though ${others.length} other collision(s) are printed above` : ""}`;
+console.log(`check:migration-claims: ok — examined ${examined} open PR(s) including drafts; ${prs.length} add migrations (${claimed}); ${verdict}.`);
 
 // ---- injection cases (the fault lives on GitHub, so they are driven by --inject) -------
 // 1) two PRs, same number -> FAILS naming both PR numbers:
@@ -157,6 +204,15 @@ console.log(`check:migration-claims: ok — examined ${examined} open PR(s) incl
 //      [{"number":1,"title":"A","files":["supabase/migrations/0998_a.sql"]},
 //       {"number":2,"title":"B","files":["supabase/migrations/0999_b.sql"]}]
 // 4) no token and no --inject -> FAILS ("nothing was checked"), never a silent pass.
+// 6) SCOPING. `--self=N` stands in for the PR context CI supplies via GITHUB_REF, so the
+//    scoping is testable without opening pull requests:
+//      a) collision between #1 and #2, run as --self=3  -> PASSES, and PRINTS the collision.
+//         This is the #1023 case: an unrelated PR must not go red for someone else's clash.
+//      b) the same fixture run as --self=1               -> FAILS. A party to the collision
+//         must still be told, or scoping would have turned a real guard off.
+//      c) the same fixture with NO --self                -> FAILS, the hand-audit default.
+//    (a) and (c) are the pair that matters: either alone is satisfied by a broken
+//    implementation — always-pass satisfies (a), always-fail satisfies (b) and (c).
 // 5) DRAFT PRs are in scope, and --inject cannot test it (injection bypasses the API path
 //    where the draft filter lived). Measured against the live repo instead, on the same day:
 //      before: "ok — no open PR adds a migration."          <- #788 is a draft adding 0122
