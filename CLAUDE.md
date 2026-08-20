@@ -81,6 +81,7 @@ npm run audit:waypoint-order # is the waypoint LIST sensible — order and dupli
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
 npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
 npm run audit:access-prose # road/permit sentences filed in a column that renders elsewhere
+npm run audit:road-coverage # a route that describes a WALK but nothing about the ROAD to it
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
@@ -2993,6 +2994,86 @@ the correction knows the screen is wrong, and they have no way to report it.
     computable and it is fabrication — the same class as the 199 routes whose pins were
     manufactured on a straight line, and the synthetic-waypoint audit would rightly flag it
     later. A pin with no source stays where it is.
+- **`audit:road-coverage`** asks which routes describe a **walk** and say nothing about the **road**
+  to it. It exists to **replace the number 1,371**, which this file used to carry as an open item —
+  *"road-block coverage (1,371 WA routes with access apparatus but no road block) — genuine research,
+  not re-homing"*. That number is **not work**, and the shape of the error is the one recorded three
+  times already for `audit:terrain`, `audit:waypoint-order` and `audit:hazard-redundancy`: **ask what
+  a count is a count OF.** Read-only, report-only; **not a build gate** — a property of the DB, not
+  the checkout, same reasoning as `check:counts`.
+  - Those 1,371 qualify as "carrying access apparatus" **through `access` alone**, and `access` is the
+    **crag-level land-manager blob, not a per-route record**: **18 distinct blobs cover all 1,371
+    rows, one of them covering 1,128**. 54.9% are bouldering, 13.4% sport; **1.1% carry any approach
+    prose** and **0.3% a `dist_km`**, against 99.1% and 74.4% of the routes that *do* have a road
+    block. Only **2 of 1,371 are mountaineering**, against 27.6% of the populated set. **A road block
+    describes the DRIVE TO A WALK, and these routes describe no walk.**
+  - Turned round — *of the routes that DO describe a walk, how many say nothing about the road?* —
+    it is **19 of 1,065 (1.8%)**, now **16**. Same turn that collapsed *"research gear for 4,938
+    routes"* into 13 routes of re-homing. **A route enters on approach prose, a trailhead pin, a
+    `dist_km` or a `gain_ft`** — any one of those means the page already sends a climber somewhere on
+    foot, and therefore already implies a drive it is silent about.
+  - The needle is a **named road or a gate, never the bare word "road"** — *"walk the old road
+    grade"* is not a statement about driving. That is the same precision `audit:trailhead-road` had
+    to learn six separate times.
+  - **A SIBLING BLOCK IS A DONOR, NOT AN ANSWER**, and the audit prints donor counts rather than
+    conclusions for two reasons already on record: a peak can have **two genuine trailheads**
+    (Lundin, Remmel, Carru, Howard), and a `road` block can **outlive the trailhead it described**
+    (`audit:trailhead-road` section 2).
+  - **Geometric inheritance is unavailable here and that was measured, not assumed.** The obvious
+    fix — cluster the silent routes on their trailhead coordinate and inherit from neighbours, the
+    way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
+    partly as having no `approach_logistics`, which is where the trailhead coordinate lives. The
+    routes that need a road block are exactly the routes with no coordinate to cluster on.
+- **Four of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 15).
+  **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
+  area carries a researched block for that same road. (A) is evidence about *this* route; (B)
+  supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a
+  bare copy onto a row with no coordinate to corroborate it.
+  - **The gate was widened from a road NAME to a TRAILHEAD name, and that is the more general
+    rule**: a route can describe its whole approach without ever naming the tarmac, and on a
+    two-trailhead peak the **trailhead is the sharper evidence** because it is the thing that
+    differs. Exactly **one** route in the catalog converted (`wa_the_balanced_rock`), and it
+    converted on the strongest available form — its prose names the **donor routes**, not merely
+    the trailhead: a V2 problem on Colchuck Balanced Rock's summit block, `dist_km` 16.74 and
+    `gain_ft` 4,850, whose approach reads *"most commonly the West Face or Let It Burn, both
+    approached via the Stuart Lake Trailhead"*. Both named routes carry blocks.
+  - **The token comparison needs a stop-list or it goes vacuous in the WIDE direction**: the bare
+    word *"Trailhead"* is in every trailhead name and every donor block, so without stripping it
+    the gate matches everything. The mirror of the too-narrow proxy this file records elsewhere.
+  - **(A) is not ceremony, and Lundin proves it.** CLAUDE.md names Lundin Peak as the clean example
+    of a two-trailhead peak, and its siblings offer **both** — *"I-90 to Snoqualmie Pass, Exit 52"*
+    (PCT-North / Commonwealth Basin) and *"Alpental Road"*. A bare sibling copy would have been a
+    **coin flip**. The route's own approach says *"from the Snoqualmie Pass PCT-North trailhead
+    (I-90 Exit 52)"*, which picks the donor with no judgement required. `wa_northwest_face` is the
+    same shape from the other side: its approach says *"Same approach as the South Face"*, and
+    `wa_south_face` **is** the donor.
+  - **The applier declares a DONOR ROUTE ID and copies that row's `road` verbatim** — no road name,
+    status, gate or mileage is typed anywhere in the file, so **a repair needing a fact the catalog
+    does not already hold cannot be expressed**. Same structural safety as
+    `fix-trailhead-disagreements-batch4`'s "declare a winner, never a coordinate". The `evidence`
+    quote is **re-asserted against the live row at apply time**, so a target whose prose has since
+    changed is refused rather than written.
+  - **Only `road` is written, never `approach_logistics`.** That blob carries `trailheadLat/Lng`, and
+    [[do-not-create-a-trailhead-pin-from-the-logistics-copy]] is explicit that manufacturing a second
+    coordinate record from a copy yields two records agreeing **by construction** — one claim counted
+    twice. The road is a shared fact; the pin is not.
+  - `audit:trailhead-road` re-run after the writes: **0 contradictions, 0 wrong-road findings**, so
+    the copies did not create a disagreement in a cluster.
+  - **Confirmed ON SCREEN, not inferred from the column** — a populated column is not a rendered
+    one. `probe-copied-road-block-reaches-the-screen.mjs` renders the real `RouteDetail` over the
+    real rows through the real `dbRouteToCamel` and asserts the GETTING THERE heading **and** the
+    copied `road.name` **and** `road.status`. Two steps could each have dropped it silently and
+    only rendering exercises both: `dbRouteToCamel` carrying `road` at all (it does — and note
+    `road` appears **nowhere** in a grep of `lib/db.js`, since the two textual hits are
+    `broad`**cast**), and the panel being gated to the **Planner** tab.
+  - Trap met while writing that probe: `RouteDetail` needs the **full prop set** `check:bare`
+    passes, not just `route` — a short prop list throws `Cannot read properties of undefined`
+    naming the route id, which reads like a bad row rather than a bad harness.
+  - **Known and deliberately propagated:** the Vasiliki donor's `seasonalGate` names a specific
+    2025-26 closure window, hedged with *"exact dates varying by year"* — the
+    [[a-transient-closure-in-a-permanent-field-becomes-a-lie]] shape. It is pre-existing in the
+    donor, and editing it would mean typing road prose the applier structurally forbids. It belongs
+    to the transient-closure sweep, not to this one.
 - **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
   somewhere else — the general form of the rule this file already states for `season`, `grade`
   and `rappels`. **No coverage check can see it**: the column is populated and the prose is
@@ -3051,6 +3132,16 @@ the correction knows the screen is wrong, and they have no way to report it.
     of the prose and not of the gap. Repairing them would be picking 2 arbitrary rows out of
     1,371. The real item is road-block **coverage**, which is research rather than re-homing and
     is outside "move this text somewhere else".
+    - **BOTH HALVES OF THAT WERE WRONG, and `audit:road-coverage` is the correction — read it
+      before quoting the paragraph above.** The 1,371 is not a backlog (18 shared `access` blobs,
+      55% bouldering, 1.1% carrying any approach prose — routes that describe no walk), so the
+      real denominator is **19 of the 1,065 routes that DO describe a walk**. And these two are
+      **not arbitrary**: prose naming a road is precisely the evidence that makes a repair
+      possible, so "a property of the prose and not of the gap" had it backwards. Both were fixed
+      by copying a named sibling's block behind a two-source gate, along with a third. The
+      conclusion that survives is only the narrow one — **the acted-on subset of `audit:access-prose`
+      stays `season`** — because road coverage turned out to be a different audit's question, not
+      because there was nothing there.
   - So: the acted-on subset stays `season` and only `season`. The rest of this audit is context,
     and the summary should be read as *"here is where a road is mentioned"*, never as a defect
     count. Same shape as the off-track pin backlog (629 → 13, most of those correct) and the
