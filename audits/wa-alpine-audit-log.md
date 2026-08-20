@@ -9096,3 +9096,67 @@ convergence across multiple independent domains rather than a single fetched pag
 
 Next batch continues after `wa_hozomeen_mountain_southeast_face` in the current id-ordered
 scope (see progress file).
+
+## Batch 133 — 2026-08-20
+
+Checked `wa_hurry_up_peak_south_ridge`, `wa_icy_peak_ruth_icy_traverse`,
+`wa_icy_peak_southwest_route`, `wa_ingalls_peak_east_route`,
+`wa_ingalls_peak_south_ridge`, `wa_inner_constance_northwest_buttress`,
+`wa_inner_constance_standard`, and `wa_inspiration_peak_west_ridge`. (`wa_j_tnar`
+(Jötunheim), the next id after this batch, is `area_type: "crag"`, not a peak —
+correctly out of scope per the audit's own scope definition, so it was skipped
+without counting toward the batch.)
+
+**Fixed (SQL in `audits/sql/2026-08-20-batch-133.sql`):**
+- `wa_inner_constance_standard`: `road.status` claimed the Dosewallips Road washout
+  that closed vehicle access sits "roughly 5.5-6.5 miles from Hwy 101." That
+  contradicts the row's OWN waypoint list, whose "Dosewallips Road washout parking"
+  trailhead entry independently says the washout is "~9 mi from Hwy 101" — and
+  matches external sources (a USFS EIS summary and WTA trip reports both put the
+  washout at roughly 9-10 miles from Brinnon/Hwy 101). 5.5-6.5 miles turned out to
+  be a real number, just for a different leg: WTA reports the former Dosewallips
+  Campground/Ranger Station sits about 6.5 miles of closed roadbed *beyond* the
+  washout, not from the highway. Rewritten to state both distances correctly rather
+  than deleting the 5.5-6.5 figure, since it is genuine information once correctly
+  attributed.
+
+**Flagged for human review (not auto-fixed — real source disagreement, not a clear error):**
+- `wa_ingalls_peak_south_ridge`: the row's own `pitches` field says 4, but both of
+  its own waypoint notes describe the roped climbing as "three pitches." External
+  sources split the same way — Mountain Project describes it as both a 3-pitch
+  climb (efficient rope management) and a 4-pitch climb (5.4 with a 5.6 "Beckey
+  variation" pitch), so this reads as genuine party-to-party variation in how the
+  route is broken up rather than a database error. Left as-is.
+- Inner Constance's elevation disagrees by 2 ft between its own two routes:
+  `wa_inner_constance_northwest_buttress` stores `high_point_ft` 7670,
+  `wa_inner_constance_standard` stores 7672 (both in `high_point_ft` and its own
+  Summit waypoint). External sources also spread across this range (Wikipedia:
+  7,670 ft; listsofjohn.com: 7,667 ft), so — same as Mount Index in batch 132 —
+  this reads as ordinary datum/survey variance rather than a value confidently
+  correctable to one figure. Left alone rather than picking a winner.
+- `wa_inner_constance_northwest_buttress`'s FA ("Eric Hardee and Dan Coffey, 1983")
+  could not be independently confirmed or contradicted by web search this run.
+
+Externally cross-checked and confirmed accurate: Hurry-up Peak's elevation (7,821
+ft, PeakVisor) and its historical "Ess/S Mountain" alternate name; Icy Peak's
+elevation (7,073 ft, matching both `wa_icy_peak_ruth_icy_traverse` and
+`wa_icy_peak_southwest_route` exactly, per listsofjohn.com and Wikipedia);
+`wa_ingalls_peak_east_route`'s FA (Gene Prater, Bill Prater & Stan Butchart,
+November 1952 — matches SummitPost verbatim, order of names aside);
+`wa_ingalls_peak_south_ridge`'s FA (Keith Rankin & Ken Solberg, May 30, 1941 —
+matches The Mountaineers/SummitPost; Wikipedia's "Lankin" spelling looks like their
+own typo rather than a second source); and `wa_inspiration_peak_west_ridge`'s
+elevation (7,891 ft) and FA (Fred Beckey and Helmy Beckey, August 29, 1940) —
+both match Wikipedia exactly.
+
+`wa_inner_constance_northwest_buttress` is noticeably thinner than its sibling
+route — no `grade`, no `pitches`, no `gain_ft`/`loss_ft`, and only a single
+waypoint (the trailhead, no summit). Not a factual error and not fixed, just
+noted: nothing in it contradicts an external source, it is simply sparse.
+
+Web access this run: both WebSearch and the `npm run check:sql` live-DB check
+worked without issue.
+
+Next batch continues after `wa_inspiration_peak_west_ridge` in the current
+id-ordered scope (see progress file) — `wa_j_tnar` excluded as a crag, so the
+next real candidates start at `wa_jack_mountain_nohokomeen_headwall`.
