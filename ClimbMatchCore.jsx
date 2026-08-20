@@ -1737,6 +1737,30 @@ function Inbox({msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDe
     </div>
   </div>);
 }
+/* Asks an existing account to accept the current Terms and Privacy Policy.
+
+   NOT a dialog, deliberately, and not dismissible. `role="dialog"` would promise an escape —
+   and `check:dialog-dismiss` would rightly demand one — but an acceptance you can wave away is
+   not an acceptance. It is a notice with one action, which is what the schema already means by
+   acceptance: 0145's own column comment says the record means "the app showed version X and the
+   account was created anyway". This is that sentence for an account that already exists.
+
+   Reading first is offered rather than assumed: both documents open from here, and the notice is
+   still there when you come back, because nothing about reading them constitutes agreeing. */
+export function PolicyUpdateNotice({previous,busy,onRead,onAccept,z}){
+  return <div style={{position:"fixed",left:0,right:0,bottom:0,zIndex:z,background:C.surface,borderTop:"1px solid "+C.border,boxShadow:"0 -10px 40px rgba(0,0,0,0.45)",padding:"14px 16px calc(14px + env(safe-area-inset-bottom))",maxWidth:520,margin:"0 auto"}}>
+    <div style={{fontSize:14.5,fontWeight:700,color:C.text,marginBottom:5}}>{previous?"Our Terms and Privacy Policy have changed":"Please review our Terms and Privacy Policy"}</div>
+    <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:11}}>
+      {previous?"You accepted the "+policyVersionLabel(previous)+" version. ":"Your account predates the version we now publish. "}
+      {"The current one is dated "+policyVersionLabel(POLICY_VERSION)+". Carrying on using ClimbMatch means accepting it."}
+    </div>
+    <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
+      <button onClick={()=>onRead("terms")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Terms</button>
+      <button onClick={()=>onRead("privacy")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Privacy</button>
+      <button disabled={busy} onClick={onAccept} style={{flex:"1 1 100%",padding:"11px 12px",borderRadius:11,border:"1px solid rgba(0,0,0,0.22)",background:C.blue,color:"#fff",fontSize:14,fontWeight:700,cursor:busy?"default":"pointer",opacity:busy?0.6:1}}>{busy?"Recording…":"I accept"}</button>
+    </div>
+  </div>;
+}
 function ReportModal({climber,onClose,onSubmit,alreadyBlocked}){
   const reasons=["Harassment or abuse","Unsafe or dangerous behavior","Fake profile or impersonation","Inappropriate or threatening messages","Spam or scam","Someone is in danger","Other"];
   const [reason,setReason]=useState(null);const [detail,setDetail]=useState("");const [alsoBlock,setAlsoBlock]=useState(false);
