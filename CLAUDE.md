@@ -2032,9 +2032,68 @@ the correction knows the screen is wrong, and they have no way to report it.
     says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
     waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
     left the check **green**. The same two-surfaces trap this file records for `rappels`.
-  - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
-    predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
-    the direction that teaches people to ignore it), and renaming the heading.
+  - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
+    either predicate true (which must fail the *genuine*-track assertions — a false warning on good
+    data is the direction that teaches people to ignore it), and renaming the heading.
+  - **It also guards the SECOND thing a drawn line can be lying about: how much of the route it
+    covers.** A partial track is a *genuine* recording, so `trackIsJustTheWaypoints` is blind to it
+    by construction — and the page drew it with a **Download GPX** button underneath and said
+    nothing. `trackCoverage()` reports which end is missing and by how far; **68 WA routes** now
+    carry the sentence (62 missing the walk-in, 5 stopping short of the summit, 1 both).
+    - **The two ends are DIFFERENT facts and are asserted separately.** A missing approach means
+      the line begins up the mountain. A missing summit means somebody following it **runs out of
+      line while still climbing** — the dangerous half — so a check that fires on "is partial"
+      could not tell you which one broke.
+    - **The threshold is 2 km at both ends, and it is precedent rather than a fitted number** —
+      the same 2 km `audit:waypoints`' *"TRACK NEVER COMES WITHIN 2 km OF THE PEAK"* uses. It is
+      chosen against the measured distribution, not to produce a wanted answer: trailhead→track is
+      **bimodal**, p50 **41 m** (the line starts at the trailhead, as expected) against p90 **6.7
+      km**. Tightening the summit end to 1 km would flag 19 rather than 6, and those extra 13 are
+      **not attributable** — a line ending 1.2 km from the summit *pin* is equally consistent with
+      the pin being wrong, which is its own known defect class.
+    - The caveat **states the measured gap**, and the guard fails if it renders without one:
+      *"this track is incomplete"* is nothing a climber can plan around, and a sentence quietly
+      losing its number is how this degrades.
+    - It returns **null rather than guessing** on a stub, on a synthetic line (which already
+      carries the stronger caveat — two captions contradicting each other is worse than one), and
+      on a route with no Trailhead or Summit pin to judge against. All three are asserted.
+    - **Verified against the shape the reader actually gets, not the raw column**
+      (`probe-track-coverage-fires-live.mjs`). The app renders through
+      `dbRouteToCamel → normalizeWaypoints`, which coerces `lat`/`lng` — **contributed rows store
+      them as STRINGS** — and rewrites `type`. `pointOf` demands a real number and the pin lookup
+      matches on `type`, so either step could have made the caveat fire on **nothing** while the
+      column stayed populated. The probe **exits 1 on a zero count** for that reason.
+    - Independent corroboration that it measures the right thing: the summit-shortfall list is
+      Himmelhorn, West Twin Needle and Fuhrer Finger — routes `audit:waypoints` already reports
+      under `trackOffItsPeak`, reached by a different method. Each was checked with
+      `probe-whose-track-is-it.mjs` and **none is a foreign track**: every one starts at the
+      right trailhead and ends in the right massif, so *short* is the correct diagnosis.
+    - **A THIRD state exists because the first version got two routes wrong, and it is the most
+      useful thing in this entry.** On some routes the line and the pins are two **complete**
+      records of **different ways up the same peak**, and calling the line partial blames the
+      wrong half. `wa_mount_barnes_scramble` is the case: its own approach text names two
+      approaches — west via Sol Duc over the Bailey Range, east via the Elwha River Trail from
+      Whiskey Bend — and all **eight** of its waypoints are on the Sol Duc one while its
+      **438-point** gpx is the Elwha one. It rendered *"starts 18.9 km from the trailhead and
+      stops 6.4 km short of the summit"*, every number true and the accusation misdirected. The
+      same misattribution `audit:map-pins` warns about for two-trailhead routes, and the reason
+      that audit reports candidates rather than defects.
+      - **The discriminator is whether ANY of the route's own pins lie on the line**, with
+        per-type tolerances. A genuinely climb-only track still carries its **upper** pins — the
+        summit, the high camp, the col — because the recording does cover that stretch; only the
+        approach pins are off it. A track of a different approach carries **none**, because it
+        never passes any of the places the pins name. Measured: **66 partial, 2
+        different-approach** (Barnes and `wa_goode_mountain_northeast_face`).
+      - **Two placed pins are required.** With one, "no pin is on the line" is a coincidence away
+        from a wrong story, and the safe failure is the ordinary partial wording. Asserted.
+      - The sentence **does not pick a winner** — on a peak with two genuine approaches both
+        records are right, and nothing available here separates that from a line filed against
+        the wrong route. It says the two disagree and stops.
+      - **The live probe had the same bug one level up**: its ternary let a `differentApproach`
+        row fall through into the "stops short of summit" bucket, so it reported the two routes
+        it exists to separate as the very thing it had just stopped calling them. Order the
+        branches with the new state first. *A probe that misreports its own fix is the shape this
+        file keeps recording.*
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
@@ -2086,6 +2145,51 @@ the correction knows the screen is wrong, and they have no way to report it.
     core, so a static import both cycles and drags the route page into the main bundle). Same
     shape as `lib/rappels.js`, which is why that file was already in
     `check:correction-readers`' `FILES`; `lib/rack.js` was added to it in the same commit.
+- **"Specific to this route" is gone; `mergeGearList` folds it into the one list.** The route page
+  used to print the stock per-discipline kit and then a second box headed *Specific to this route*,
+  so a route naming "Helmet" got two Helmet bullets under two headings — a climber packing off that
+  page reads it as two things. `gearKey`/`sameGear`/`mergeGearList` in `RouteDetail.jsx` merge them:
+  the key collapses the **qualifier** and not the item (`"Crampons"` == `"Crampons (early/mid-season
+  or lingering-snow years)"`, `"Rope"` == `"ropes"`), the **richer wording wins in place**, and
+  genuinely different gear stays apart (`"Ice axe"` vs `"Ice tools"`, `"Warm layers"` vs
+  `"Weatherproof shell jacket and pants"`).
+  - Measured on the live catalog, not on fixtures: across the **600** WA routes carrying
+    `what_to_bring`, **633 duplicate lines removed on 409 of them**, and **0 routes lost a stock
+    item**. `scripts/oneoff/probe-gear-merge-dedupes.mjs` **lifts the three functions out of
+    `RouteDetail.jsx` by balancing braces** rather than copying them, with `ANCHOR LOST` if any is
+    renamed — a copy would agree with the source the day it was written and measure a fossil
+    afterwards, which is the whole question here.
+  - The **conditional** block keeps sole ownership of its items, so an item that is only needed in
+    early season does not also appear in the unconditional list.
+- **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
+  renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
+  two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
+  their own approach is a **4-mile** walk of closed railroad grade from the Barlow Pass gate, and
+  `wa_cordwood` carried *"Do not climb until you have personally assessed the loose blocks"* — a
+  safety instruction. All three removed (`fix-non-gear-packing-entries.mjs`), each only after
+  confirming the fact survives elsewhere: Cordwood's warning is in `hazards`, `watch_out` **and**
+  `beta` in fuller form.
+  - The two Monte Cristo entries are **wrong, not merely misfiled**, and the phrasing matches **The
+    Dikes** — a southeast-Washington basalt area whose approaches genuinely are "very short and
+    roadside". That is the cross-region duplicate-field-value fingerprint `audit:identity`
+    describes, landing in a gear column instead of a prose one.
+  - **Precision was 3 of 11 on the negation probe and 2 of 7 on the follow-up, and both bad buckets
+    are instructive.** `probe-what-to-bring-negations.mjs` flags a negation anywhere in the entry,
+    so it reports 8 correct entries whose *justification* contains one — *"headlamp — long days are
+    common even for parties that don't get lost"*, *"Gaiters and gear you do not mind soaking"*,
+    *"Northwest Forest Pass … (not needed at the #1587 US-2 trailhead)"*. Read the entry, never the
+    flag.
+  - **`probe-roadside-gear-contamination.mjs` reported 7 of 7 contradicted on its first run, with a
+    "consistent" bucket of ZERO — which is the tell.** It was matching any mileage in the approach,
+    and *"drive the Mt. Baker Highway 13.3 miles past Glacier"* is a **drive** to a genuinely
+    roadside cliff. Mileage now counts only inside a sentence that says somebody is on foot and does
+    not say they are in a car.
+  - **`dist_km` is deliberately excluded from that verdict**, and that was measured. Using it as a
+    floor condemned `wa_east_ridge` on a `dist_km` of 6.4 (= 4.0 mi) while its own approach — 
+    byte-identical to two sibling routes on the same spire — says the walk-up is *"around 20 minutes
+    or less"* from a road that *"runs almost directly beneath the formation"*. The gear note is
+    correct and the **6.4 is wrong**; that is an `audit:distances` finding, not a gear one. Prose is
+    the better record for *is this walk short*.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
@@ -2561,6 +2665,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Mowich *Lake*, and 48.7317,-121.0672 is Ross *Dam*, which sits at the bottom of a mile of
     trail off SR-20. The page hangs driving directions off that pin.
   - Report-only, read-only, fails closed on an empty read.
+- **The OFF-TRACK PIN backlog is mostly correct pins, and the headline count overstates it by a
+  lot.** `audit:waypoint-track` reports hundreds of routes with pins off the line, and the
+  instinct is to read that as a defect list. Measured, it is not.
+  `scripts/oneoff/probe-offtrack-triage.mjs` narrows it and each narrowing is a different
+  reason:
+  - **629 off-track pins → 464 worth looking at.** 64 routes carry a CLIMB-ONLY track (the gpx
+    never comes near the trailhead), so every approach pin on them is off the line **by
+    design** — 143 pins excused. A further 6 routes have a track that never reaches their own
+    summit pin, which is `audit:waypoints`' "TRACK NEVER COMES WITHIN 2 km OF THE PEAK": there
+    the **track** is the suspect record and researching the pins researches the wrong half, so
+    those 22 pins are set aside as one decision per route rather than a source per pin.
+  - **Then severity, not count.** Of the 464, only **13** are more than 20x their own pin
+    type's tolerance. A Junction 392 m off the line is a saddle marked at the ridge crest
+    rather than where the trail crosses it — not a different place.
+  - **And of those 13, the ones checked against a published coordinate were mostly ALREADY
+    RIGHT.** `wa_argonaut_peak_east_ridge`'s "Colchuck Lake" is stored at
+    `47.4919578,-120.8335801`, which is exactly the USGS coordinate; "PCT Junction near Lemah
+    Meadows" is stored at `47.4623,-121.2810` on two routes, exactly the published Lemah
+    Meadow coordinate. Those pins name a feature on a **different approach to the same peak**,
+    or a feature that is an area rather than a point. Of three researched, **one** was wrong.
+  - **The bar for writing a researched coordinate is that it lands on the route's own track**
+    (`verify-researched-pin-coords.mjs`). Cutthroat Pass on
+    `wa_tower_mountain_southwest_route` went 2,464 m off → **36 m** on substituting the USGS
+    value, which is agreement with a record nobody consulted while publishing it. The same
+    check **refused** Longs Pass on `wa_argonaut_peak_east_ridge`, where the USGS coordinate is
+    *further* from that route's track than the stored one — research alone would have written
+    a wrong fix there.
+  - **Do NOT "repair" a junction by interpolating along the track at its `distMi`.** It is
+    computable and it is fabrication — the same class as the 199 routes whose pins were
+    manufactured on a straight line, and the synthetic-waypoint audit would rightly flag it
+    later. A pin with no source stays where it is.
 - **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
   somewhere else — the general form of the rule this file already states for `season`, `grade`
   and `rappels`. **No coverage check can see it**: the column is populated and the prose is
@@ -2593,6 +2728,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Normalise both sides — but lift proper-noun road names from the **original** clause, since
     normalising lowercases and a lowercased clause matches no `[A-Z]` pattern, which silently
     emptied that half of the coverage test.
+  - **The remaining 192 flags are NOT a worklist, and the MISFILED half in particular is
+    mislabelled** — measured, so read this before working it. Reading the bucket, most of it is
+    correctly filed: a `best_season` reading *"roughly late June through September, once Cascade
+    River Road opens"* is a **season statement using the road as its boundary**, which is the
+    right answer to that column's own question; approach narrative in `beta` naming the trailhead
+    is approach narrative; a descent hazard in `watch_out` naming the trailhead is a hazard. The
+    entry above already grants that defence to `season`, and it applies unchanged to
+    `best_season`, `beta`, `overview` and `watch_out`. **The label promises "moving it would lose
+    nothing" and that is false for most rows.**
+  - The question actually worth asking is narrower, and it is the one the original Eldorado report
+    was about: **is the fact REACHABLE from the section that should carry it?** A climber taps ROAD
+    ACCESS or PERMITS; if that section is empty while the route's own prose knows the road is
+    gated, the page withholds what it knows — regardless of whether the prose sentence is well
+    filed. `scripts/oneoff/probe-access-prose-actionable.mjs` measures it: of **182** WA prose
+    sentences carrying a road fact, **180 sit on a route whose `road` or `approach_logistics`
+    block already speaks about the road**. Permits: **18 sentences, 0 unreachable.** So the
+    reachability defect is **2 routes**, not 190.
+  - **And those 2 were not worth fixing either, which is the transferable half.**
+    `wa_colchuck_balanced_rock_col_east_lake_side_approch` and `wa_northwest_face` have an empty
+    `road` block — but so do **1,371** WA routes that carry access apparatus
+    (`probe-road-block-coverage.mjs`: `road` populated on 1,038 of 8,365; 1,371 of the 2,424
+    routes carrying access/logistics/waypoints have neither `road` nor `approach_logistics`).
+    Those two surfaced only because **their prose happened to name a road**, which is a property
+    of the prose and not of the gap. Repairing them would be picking 2 arbitrary rows out of
+    1,371. The real item is road-block **coverage**, which is research rather than re-homing and
+    is outside "move this text somewhere else".
+  - So: the acted-on subset stays `season` and only `season`. The rest of this audit is context,
+    and the summary should be read as *"here is where a road is mentioned"*, never as a defect
+    count. Same shape as the off-track pin backlog (629 → 13, most of those correct) and the
+    trailhead disagreements (12 → 6): **a headline count in this dataset has overstated the work
+    every single time it was quoted without re-deriving the denominator.**
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
