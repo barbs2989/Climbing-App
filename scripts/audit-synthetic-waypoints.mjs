@@ -62,8 +62,24 @@ function offSegment(p, a, b) {
   return Math.hypot(px - t * bx, py - t * by);
 }
 
-const rows = await get(`routes?select=id,discipline,waypoints,gpx&discipline=in.(alpine,mountaineering,scrambling)&waypoints=not.is.null&limit=3000`);
-if (rows.__err || !rows.length) { console.error("READ FAILED / EMPTY — failing closed", rows.__err || ""); process.exit(1); }
+// EVERY discipline, not just the alpine three. The first version filtered to
+// alpine/mountaineering/scrambling and missed a `rock` route carrying the same fabrication.
+// Waypoints exist on ~1,016 routes and every one of them is WA, so this is the whole population.
+//
+// KEYSET-PAGINATED, because `limit=3000` DOES NOT DEFEAT PostgREST's server-side max-rows cap.
+// The single-query version returned exactly 1000 rows and reported 61 findings where the true
+// figure is 63 — and `rows.length` looked entirely healthy, which is the whole problem with a
+// silent cap. Hitting a round number exactly is treated as evidence of truncation below.
+let rows = [], page, after = "";
+do {
+  page = await get(`routes?select=id,discipline,waypoints,gpx&waypoints=not.is.null` +
+    `&order=id.asc&limit=1000` + (after ? `&id=gt.${after}` : ""));
+  if (page.__err) { console.error("READ FAILED — failing closed:", page.__err); process.exit(1); }
+  rows = rows.concat(page);
+  if (page.length) after = page[page.length - 1].id;
+} while (page.length === 1000);
+if (!rows.length) { console.error("READ EMPTY — failing closed"); process.exit(1); }
+if (rows.length % 1000 === 0) { console.error(`read exactly ${rows.length} rows — that is a cap, not a catalog. Failing closed.`); process.exit(1); }
 
 let considered = 0;
 const hits = [];
@@ -87,7 +103,7 @@ if (!considered) { console.error("no route had enough pins to judge — failing 
 hits.sort((x, y) => x.maxOff - y.maxOff || y.relief - x.relief);
 const exact = hits.filter(h => h.maxOff <= 20);
 
-console.log(`${rows.length} alpine/mountaineering/scrambling routes with waypoints`);
+console.log(`${rows.length} routes carry waypoints (every discipline, every state)`);
 console.log(`  ${considered} have >=${MIN_PINS} pins spanning >=${MIN_SPAN_M} m — enough to tell a line from a path\n`);
 console.log(`=== EVERY INTERMEDIATE PIN ON THE FIRST->LAST LINE (${hits.length}, within ${TOL} m) ===`);
 console.log(`Each carries >=${MIN_RELIEF} ft of claimed relief across those pins, so they are not a flat`);
@@ -96,6 +112,20 @@ console.log(`not a tolerance question — no real survey places a ford, a camp a
 for (const h of hits)
   console.log(`  ${h.maxOff <= 20 ? "EXACT" : "     "}  ${h.id.padEnd(56)} ${String(h.n).padStart(2)} pins · ` +
     `${String(h.span).padStart(3)} km · ${String(h.relief).padStart(5)} ft relief · off-line <=${String(h.maxOff).padStart(3)} m · track ${h.track} pts`);
+
+// A route can have BOTH fabrications. `trackIsJustTheWaypoints` catches a track that is merely
+// the pin list joined up; where that meets a synthetic pin list, the route's entire geometry —
+// line and pins alike — was manufactured from one straight line, and nothing on its map is a
+// record of anywhere.
+const { trackIsJustTheWaypoints } = await import("../lib/track.js");
+const byId = Object.fromEntries(rows.map(r => [r.id, r]));
+const bothFake = hits.filter(h => {
+  const r = byId[h.id], gp = Array.isArray(r.gpx) ? r.gpx : [];
+  return gp.length >= 2 && trackIsJustTheWaypoints(gp, r.waypoints);
+});
+console.log(`\n${bothFake.length} of the ${hits.length} ALSO have a track that is just the pin list joined up —`);
+console.log(`line and pins both manufactured, so nothing on those maps records anywhere:`);
+for (const h of bothFake) console.log(`  ${h.id}`);
 
 const withTrack = hits.filter(h => h.track >= 100).length;
 console.log(`\n${hits.length} of ${considered} routes (${Math.round(100 * hits.length / considered)}%). ` +
