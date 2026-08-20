@@ -3402,6 +3402,21 @@ way: PostgREST accepts a PATCH sent with the anon key and returns **200 with an
 empty array**, because RLS rejected every row. The write reports success and
 changes nothing.
 
+**The same trap runs on the READ side, and there it corrupts DECISIONS rather than writes.**
+An anon `count=exact` on an RLS-protected table returns **0 with a 200** whatever the table
+holds, indistinguishable from a genuinely empty table. Measured 2026-08-20: `climb_logs` reads
+**0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles`,
+`user_reports`, `contributions`, `vouches` and `belay_catches` are genuinely empty on both.
+
+That distinction is load-bearing here, because several decisions rest on a table being empty —
+the guide application review queue was deliberately **not built** because `guide_documents` had
+"0 rows live". That call is *verified correct* by the numbers above and should not be
+re-litigated; it was also one RLS policy away from being a decision made on nothing. So **when a
+row count is going to decide something, read it with `requireServiceKey()` and print the anon
+number beside it**, rather than assuming they agree.
+`scripts/oneoff/probe-latent-claims-anon-vs-service.mjs` does that for the tables whose
+emptiness is load-bearing; extend its list rather than writing another one-off.
+
 Pass `{ pageSize: 1000 }` to `selectAll` for anything scanning the whole `routes`
 table — the default 60 means ~3,400 round trips and takes over ten minutes.
 
