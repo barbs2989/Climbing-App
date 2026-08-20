@@ -3302,6 +3302,62 @@ drew a conclusion from that emptiness:
   `claimMyCrewEmailInvites()` returns `0` for a missing RPC, so a broken deploy and an empty
   inbox are the same number.
 
+**Throwing is NECESSARY AND NOT SUFFICIENT — the screen can still say you have none.**
+`check:read-failures` **passes** for `useMyObjectives`, `useMyLists` and `useUserLogs`: all three
+already `throw error`, exactly as it demands. And during an outage the Logbook told an account
+that HAS an objective, a log and a custom list, verbatim — *"0 climbs to go"*, *"Nothing here yet
+— find a route in the Climbs tab and tap the bookmark"*, *"No custom lists yet"*, *"No recent
+condition reports"*, and one sub-tab over *"0 logged"* above *"Log your completed climbs here"*.
+**Six false statements from three reads that all failed correctly.** #1140 measured four and
+recorded them; #1124 fixed the crew instance and #1147 the lists one, each taken one query at a
+time as those commits said it should be; this is the remaining two queries. The Completed pair is
+one click past where the probe walks, so nothing had reported it at all.
+  - **The guard's own stated limitation IS this hole**, and it says so: it does not attempt the
+    strong form, *"does anything downstream conclude absence from this emptiness?"* Something
+    does. The caller's `.catch` no-ops, the hydration `useEffect` returns on `!data`, state stays
+    `[]`, and every render tests `!x.length` — so **loaded-and-empty and never-loaded are the same
+    screen**. Nothing lied; the truth simply never arrived.
+  - The repair is `xUnavailable` from that query's **`isError`**, one flag per query — the shape
+    #1124 established for crews. `isError` deliberately rather than a blanket "the database is
+    down": it is false while a query is in flight, so a slow read still reads as loading. #1140's
+    warning was that a blanket flag replaces one false statement with another.
+  - **Flags do not map one-to-one onto sentences, so find the query rather than the string.**
+    `objectivesUnavailable` drives three surfaces, because RECENT CONDITION REPORTS is built from
+    `wishlist` — i.e. from that same read, two derivations away. `logsUnavailable` drives four,
+    `listsUnavailable` (#1147) one.
+  - **A sentence with TWO inputs lies in two directions.** *"N climbs to go"* is list length minus
+    logged climbs: objectives down gives *"0 climbs to go"* to somebody who has objectives; LOGS
+    down counts nothing as done and over-states what is left. The list case drops the badge (the
+    body already says why); the logs case falls back to what is still known — how many climbs are
+    on the list — and a line says nothing below is marked done, because the copy right above
+    promises that logged climbs show a ✓ and a missing tick otherwise reads as an unclimbed route.
+    One label serves the badge and the `aria-label`, so they cannot drift.
+  - **`ONLY=<table>` is what makes a per-flag verdict possible**, and it was added for this:
+    `probe-signed-in-db-failure.mjs` blocked `**/rest/v1/**` wholesale, so all three flags went
+    true together and no run could say which produced which sentence — nor whether one was a
+    blanket flag. Measured: `ONLY=objectives` (4 blocked, 34 through) leaves CUSTOM LISTS
+    rendering its real content, and `ONLY=user_lists` leaves MY OBJECTIVES rendering the real
+    objective **and RECENT CONDITION REPORTS showing its honest empty state**. That last clause is
+    the proof, not the fix.
+    - It isolates a **table, not a hook** — several hooks reading one table fail together
+      (blocking `objectives` also fails `useObjectiveCounts`). Stated rather than overclaimed.
+    - Matched on the path segment after `/rest/v1/`, **never as a substring**: PostgREST names
+      EMBEDDED tables in the query string (`select=*,crew_members(*)`), so a substring test fails
+      requests aimed at a different table. A run blocking **zero** requests now exits 1 — otherwise
+      every `IDENTICAL` verdict is a statement about a healthy app.
+  - **Measured non-finding, recorded so it is not re-derived:** the dumps show the fixture ticklist
+    as *"1 climb to go"* though the fixture seeds a log for that same route. `routeCompleted`
+    matches **capitalised** tick types (`Lead`, `Summit`, `Send`) and the fixture writes `"lead"`.
+    The app's own write path is capitalised, so this is a **fixture artifact**; confirmed against
+    the table, which holds exactly one row — the fixture's own. Deliberately not "fixed" by
+    lowercasing the reader: that is changing app behaviour to suit a fixture, and it would move
+    what `check:signed-in` sees.
+  - **Not closed, and not made a guard.** 4 of 28 query handles in `App` carry a flag (crews #1124,
+    lists #1147, objectives and logs here); the other 24 are a **list to READ**, not a defect count — most are lookups
+    (profiles by id, area names) where emptiness is never asserted to the user. A guard for the
+    strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
+    which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
+
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
 (`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
