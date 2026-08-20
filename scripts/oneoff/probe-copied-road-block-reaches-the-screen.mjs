@@ -20,7 +20,10 @@ import { selectAll } from "../lib/supabase-env.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 
-const IDS = ["wa_colchuck_balanced_rock_col_east_lake_side_approch", "wa_northwest_face", "wa_south_face_2001_variation"];
+/* wa_the_balanced_rock came from widening the gate to trailhead names; wa_south_face_direct came
+   from moving the row off a University of Washington campus crag onto Vasiliki Tower, where its
+   own prose has always put it, which is what gave it a real sibling to copy from. */
+const IDS = ["wa_colchuck_balanced_rock_col_east_lake_side_approch", "wa_northwest_face", "wa_south_face_2001_variation", "wa_the_balanced_rock", "wa_south_face_direct"];
 const rows = await selectAll("routes", "*", `id=in.(${IDS.join(",")})`, { pageSize: 100 });
 if (rows.length !== IDS.length) { console.error(`expected ${IDS.length} rows, got ${rows.length}`); process.exit(1); }
 

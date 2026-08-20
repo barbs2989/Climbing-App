@@ -65,6 +65,17 @@ const PLAN = [
     evidence: "Let It Burn, both approached via the Stuart Lake Trailhead",
     why: "a V2 problem on the summit block, reached only by climbing the peak (dist_km 16.74, gain_ft 4850); its own approach names Let It Burn as one of the two routes used to get there, and the donor IS that route.",
   },
+  /* Added only after `fix-south-face-direct-area` moved this row off wa_art_building — a University
+     of Washington campus crag holding four boulder problems — onto Vasiliki Tower, where its own
+     prose has always put it. It could not be reached before because the same-area donor rule was
+     looking for a Washington Pass road block among UW campus boulders. THE MISSING BLOCK WAS THE
+     SYMPTOM AND THE AREA WAS THE DEFECT; do not re-order these two scripts. */
+  {
+    target: "wa_south_face_direct",
+    donor: "wa_south_face",
+    evidence: "SR-20 mile marker 166 to Burgundy Col",
+    why: "a 1994 variation of Vasiliki Tower's South Face whose own approach names that route's approach and the SR-20 mile-marker-166 pullout; the donor IS that South Face route, now a genuine area-sibling.",
+  },
 ];
 
 function leaves(v, out = []) {

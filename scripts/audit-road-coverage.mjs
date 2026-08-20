@@ -17,10 +17,35 @@
 // ASK WHAT A COUNT IS A COUNT OF BEFORE TREATING IT AS A BACKLOG.
 //
 // It splits the findings the way every backlog here gets split:
-//   RE-HOMING  — the row's own prose already names a road; the fact is in the catalog.
-//   RESEARCH   — nothing in the row says anything about the drive.
-// and reports, for each, whether a SIBLING on the same area already carries a researched block,
-// because that is what decides whether a repair is a copy or a source hunt.
+//   COPY      — a sibling block already describes THE ROAD THIS ROUTE'S OWN PROSE NAMES.
+//   RESEARCH  — everything else.
+//
+// THE BUCKET TEST WAS "DOES THE PROSE MENTION A ROAD?" AND THAT OVER-PROMISED, WHICH IS THIS
+// AUDIT'S OWN DISEASE COMMITTED BY ITS OWN AUTHOR. Under that test it filed three routes as
+// RE-HOMING, i.e. fillable by copy. All three were checked by hand and NOT ONE was:
+//   - wa_little_annapurna_south_face names Highway 97 and Ingalls Creek Road; its one sibling
+//     block is Icicle Creek Road / FR 7601 to Stuart Lake — the OTHER SIDE OF THE RANGE. The row's
+//     own overview says it uses "the seldom-used Ingalls Creek/Crystal Creek side rather than the
+//     Enchantments basin", so a bare sibling copy would have sent a party to the wrong trailhead.
+//     The two-trailhead case (Lundin, Remmel, Carru, Howard), stated outright by the row.
+//   - wa_upper_castle_toprope_wall names US-2 at Tumwater Canyon milepost 96.5. ZERO road blocks
+//     exist anywhere in the catalog naming Tumwater, and all 125 US-2 blocks are Stevens Pass /
+//     Skykomish / Baring, 40-80 miles down the same highway. "A drive has several named legs" —
+//     a true statement about the wrong stretch of the same road is not a donor.
+//   - wa_south_face_direct had no donor because IT WAS FILED ON THE WRONG AREA: a Vasiliki Tower
+//     trad route sitting on wa_art_building, a University of Washington campus crag holding four
+//     boulder problems. The missing block was the symptom; the area was the defect. Moved, and it
+//     then filled by copy from its real sibling.
+//
+// So the test is now whether a donor block NAMES THE SAME ROAD, compared on road IDENTIFIERS rather
+// than on sentences — `audit:trailhead-road` records that one road is spelled many ways ("SR-20" /
+// "State Route 20" / "North Cascades Highway"), so a string comparison reports agreement as
+// disagreement. Routes whose prose names a road that no donor matches are counted separately: the
+// fact is in the catalog and the BLOCK is not, which is still a source hunt.
+//
+// Donors stay scoped to the SAME AREA deliberately. Widening to the subtree or the state makes the
+// identifier match vacuous in the wide direction — 283 WA routes carry a block naming "#20", and
+// SR-20 runs 130 miles.
 //
 // Report-only and read-only. NOT a build gate — a property of the DB, not the checkout, so no code
 // change can cause or fix it; same reasoning as `check:counts`.
@@ -59,18 +84,120 @@ const ROADISH = /\b(?:FS ?R?|FR|NF|USFS)[- ]?\d+\b|\b(?:SR|US|I)[- ]?\d+\b|\bHig
 const GATEISH = /\bgate(?:d)?\b|\bplowed\b|\bclosed (?:for|in|until|beyond|to vehicles)\b|\bopens? (?:in|by|around|~|about|early|mid|late)\b|\bwashed out\b|\bhigh[- ]clearance\b|\b4wd\b|\bpassenger car\b|\bsno[- ]?park\b|\bNorthwest Forest Pass\b/i;
 const proseOf = (r) => [r.approach, r.beta, r.overview].filter((x) => typeof x === "string").join("\n");
 
-const byArea = {};
-for (const r of rows) (byArea[r.area_id] = byArea[r.area_id] || []).push(r);
-const donorsFor = (r) => (byArea[r.area_id] || []).filter((s) => s.id !== r.id && (s.road || {}).name);
+/* Road IDENTIFIERS, not sentences. A numbered route normalises to "#20" however it is written; a
+   proper-noun road name normalises to its distinctive word. GENERIC is the stop-list — a token
+   every road name shares carries no information, and leaving one in makes the match vacuous in the
+   WIDE direction, which is the mirror of a too-narrow proxy and the failure that matters here. */
+const GENERIC = new Set(["forest", "service", "road", "creek", "river", "county", "national", "park", "trailhead", "access", "main", "north", "south", "east", "west", "upper", "lower", "old", "new"]);
+function roadIds(text) {
+  const out = new Set();
+  if (typeof text !== "string") return out;
+  for (const m of text.matchAll(/\b(?:FSR|FS|FR|NF|USFS|SR|US|I|Highway|Hwy|State Route|Interstate)[\s-]?(\d{1,4})\b/gi)) out.add(`#${m[1]}`);
+  for (const m of text.matchAll(/\b((?:[A-Z][a-zA-Z]+[\s-]){1,3})(?:Road|Rd|Highway|Hwy)\b/g)) {
+    for (const w of m[1].trim().split(/[\s-]+/)) { const k = w.toLowerCase(); if (!GENERIC.has(k)) out.add(k); }
+  }
+  return out;
+}
+
+/* SELF-TEST, RUN BEFORE ANY VERDICT IS PRINTED. The expected result of the COPY bucket is a small
+   number and today it is ZERO — which is exactly what a broken matcher prints. If roadIds() stops
+   extracting, every route gets an empty identifier set, nothing can ever match, and the audit
+   reports "0 copyable" as confidently as it reports a real finding. So the matcher has to prove it
+   can FIRE and that it can stay QUIET, on cases needing no database. The quiet cases are the ones
+   that matter: they pin the two real refusals above, so a future widening that re-admits them
+   fails here rather than silently returning a wrong worklist. */
+{
+  const T = (id, area, approach, road) => ({ id, area_id: area, discipline: "trad", approach, beta: null, overview: null, road: road || null, access: null, approach_logistics: null, waypoints: [], dist_km: 4.8, gain_ft: null });
+  const run = (rs, want) => findRoadSilent(rs).find((f) => f.r.id === want);
+  let bad = 0;
+  const expect = (label, got, kind) => { if (!got || got.kind !== kind) { console.error(`SELF-TEST FAIL — ${label}: expected ${kind}, got ${got ? got.kind : "no finding at all"}`); bad++; } };
+
+  /* FIRES: the real Vasiliki case that this audit's one applied copy came from. */
+  expect("same crag, same highway -> COPY", run([
+    T("t", "crag_a", "from the SR-20 pullout near mile marker 166 to Burgundy Col"),
+    T("d", "crag_a", "x", { name: "SR-20 highway pullout, Silver Star/Wine Spires area, Washington Pass" }),
+  ], "t"), "COPY");
+
+  /* FIRES across spellings — one road is written many ways, so a string compare would miss this. */
+  expect("State Route 20 vs Highway 20 -> COPY", run([
+    T("t", "crag_a", "take State Route 20 east to the trailhead"),
+    T("d", "crag_a", "x", { name: "Blue Lake Trailhead, Highway 20, Washington Pass" }),
+  ], "t"), "COPY");
+
+  /* QUIET: the Little Annapurna refusal. Same peak, and the only sibling block is the road up the
+     OTHER side of the range. This is the case the bucket test was widened to catch. */
+  expect("Ingalls Creek vs Icicle Creek on one peak -> RESEARCH", run([
+    T("t", "peak_a", "From Highway 97 south of the Y-junction, turn onto Ingalls Creek Road/Trailhead"),
+    T("d", "peak_a", "x", { name: "Icicle Creek Road to Forest Road 7601 (Mountaineer Creek Road)" }),
+  ], "t"), "RESEARCH");
+
+  /* QUIET: a block on a DIFFERENT area is never a donor, however well the roads match. This is what
+     keeps a bare highway number admissible — US-2 runs 300 miles and a Stevens Pass block is a true
+     statement about the wrong leg, but it can never reach a Tumwater Canyon route. */
+  expect("matching road on another area -> RESEARCH", run([
+    T("t", "crag_tumwater", "Castle Rock stands beside US-2 in Tumwater Canyon at milepost 96.5"),
+    T("d", "crag_stevens", "x", { name: "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2" }),
+  ], "t"), "RESEARCH");
+
+  /* QUIET: a generic token carries no information, and admitting one makes the match vacuous in the
+     WIDE direction — "road" is in every road name. */
+  expect("generic tokens do not match -> RESEARCH", run([
+    T("t", "crag_a", "walk the old road grade from the gate"),
+    T("d", "crag_a", "x", { name: "Forest Service Road 6024" }),
+  ], "t"), "RESEARCH");
+
+  /* And the walk gate itself: a route describing no walk is not a finding at all, whatever its
+     road block says. Without this the audit could silently drift back to the 1,371. */
+  {
+    const r = T("t", "crag_a", null); r.dist_km = null;
+    if (findRoadSilent([r]).length) { console.error(`SELF-TEST FAIL — a route describing no walk was reported as a finding.`); bad++; }
+  }
+  if (bad) { console.error(`\nRefusing to report: the finder is broken, so "0 copyable" would mean nothing.`); process.exit(1); }
+  console.log(`self-test: the finder fires on 2 cases, stays quiet on 3, and ignores a route with no walk.`);
+}
+
+/* The whole finding pass, as a function of the rows, so the self-test can drive THE REAL PIPELINE
+   over synthetic routes rather than poking a helper in isolation. That distinction earned itself
+   here: a first self-test compared two prose strings directly, declared the matcher broken because
+   a Tumwater route and a Stevens Pass block share the token "#2", and it was testing something the
+   pipeline never does — donors are scoped to the same AREA, and a crag is one place, so two routes
+   that can be donor and target cannot be 60 miles apart on the same highway. Testing the helper
+   would have driven a "fix" that refused the one real copy this audit has made. */
+function findRoadSilent(all) {
+  const byArea = {};
+  for (const r of all) (byArea[r.area_id] = byArea[r.area_id] || []).push(r);
+  /* SAME AREA, and that scoping is what makes a bare highway number admissible evidence at all.
+     283 WA routes carry a block naming "#20" and SR-20 runs 130 miles, so state-wide this match
+     would be meaningless; within one crag it is the same pullout. Do not widen the scope without
+     also strengthening the identifier test. */
+  const donorsFor = (r) => (byArea[r.area_id] || []).filter((s) => s.id !== r.id && has(s.road));
+
+  const out = [];
+  for (const r of all) {
+    if (!walks(r) || !roadSilent(r)) continue;
+    const p = proseOf(r);
+    const road = ROADISH.exec(p), gate = GATEISH.exec(p);
+    const want = roadIds(p);
+    const donors = donorsFor(r);
+    /* A donor qualifies only if its block names one of the same roads. A sibling that carries SOME
+       road block is not evidence about THIS route's drive — that is the whole Little Annapurna
+       lesson, where the only sibling described the opposite side of the range. */
+    const matched = donors.filter((s) => { const have = roadIds(leaves(s.road).join(" ")); return [...want].some((x) => have.has(x)); });
+    out.push({
+      r,
+      kind: matched.length ? "COPY" : "RESEARCH",
+      namesRoad: Boolean(road || gate),
+      token: (road && road[0]) || (gate && gate[0]) || null,
+      donors: donors.length,
+      matched: matched.length,
+      donorId: matched.length ? matched[0].id : null,
+    });
+  }
+  return out;
+}
 
 const walkers = rows.filter(walks);
-const findings = [];
-for (const r of walkers) {
-  if (!roadSilent(r)) continue;
-  const p = proseOf(r);
-  const road = ROADISH.exec(p), gate = GATEISH.exec(p);
-  findings.push({ r, kind: (road || gate) ? "RE-HOMING" : "RESEARCH", token: (road && road[0]) || (gate && gate[0]) || null, donors: donorsFor(r).length });
-}
+const findings = findRoadSilent(rows);
 
 /* Context, printed so nobody re-derives the misleading figure and reads it as work. */
 const enriched = rows.filter((r) => has(r.access) || has(r.approach_logistics) || has(r.waypoints));
@@ -78,22 +205,29 @@ const bareCount = enriched.filter(roadSilent).length;
 const blobs = new Set(enriched.filter((r) => roadSilent(r) && has(r.access)).map((r) => JSON.stringify(r.access)));
 
 const pct = (n, d) => (d ? `${(100 * n / d).toFixed(1)}%` : "n/a");
-const rehome = findings.filter((f) => f.kind === "RE-HOMING");
+const rehome = findings.filter((f) => f.kind === "COPY");
 const research = findings.filter((f) => f.kind === "RESEARCH");
+/* The middle case, counted so it cannot be mistaken for either end: the road IS named in the row's
+   own prose, so the fact is in the catalog — but no sibling carries a block for that road, so
+   there is nothing to copy and the repair is still a source hunt. */
+const namedNoDonor = research.filter((f) => f.namesRoad);
 
 console.log(`\n=== routes that describe a WALK but say nothing about the ROAD ===`);
 console.log(`${rows.length} ${STATE.toUpperCase()} routes`);
 console.log(`  ${walkers.length} describe a walk (approach prose | trailhead pin | dist_km | gain_ft)`);
 console.log(`  ${findings.length} of those carry NO road block and NO approach_logistics  (${pct(findings.length, walkers.length)})\n`);
-console.log(`  ${rehome.length} name a road in their OWN prose  -> RE-HOMING`);
-console.log(`  ${research.length} say nothing about the drive     -> RESEARCH`);
-console.log(`  ${findings.filter((f) => f.donors > 0).length} have a sibling on the same area already carrying a researched block`);
+console.log(`  ${rehome.length} have a sibling block for THE ROAD THEIR OWN PROSE NAMES  -> COPY`);
+console.log(`  ${research.length} do not                                                 -> RESEARCH`);
+console.log(`     of those, ${namedNoDonor.length} DO name a road in their own prose, but no sibling`);
+console.log(`     carries a block for it — the fact is in the catalog, the block is not.`);
+console.log(`  ${findings.filter((f) => f.donors > 0).length} have a sibling carrying SOME road block (not evidence about this route's drive)`);
 
-for (const bucket of [["RE-HOMING", rehome], ["RESEARCH", research]]) {
+for (const bucket of [["COPY", rehome], ["RESEARCH", research]]) {
   if (!bucket[1].length) continue;
   console.log(`\n--- ${bucket[0]} (${bucket[1].length}) ---`);
   for (const f of bucket[1].slice(0, LIMIT)) {
-    console.log(`  ${f.r.id.padEnd(50)} [${String(f.r.discipline).padEnd(9)}] ${String(f.donors).padStart(2)} sibling block(s)${f.token ? `   own prose: "${f.token}"` : ""}`);
+    const tail = f.donorId ? `   donor: ${f.donorId}` : `${f.donors} sibling block(s), ${f.matched} matching`;
+    console.log(`  ${f.r.id.padEnd(50)} [${String(f.r.discipline).padEnd(9)}] ${tail}${f.token ? `   own prose: "${f.token}"` : ""}`);
   }
   if (bucket[1].length > LIMIT) console.log(`  … ${bucket[1].length - LIMIT} more (raise --limit)`);
 }
@@ -104,7 +238,8 @@ console.log(`They qualify through \`access\` alone, which is a crag-level land-m
 console.log(`blobs cover all ${bareCount} rows. Mostly boulder and sport rows that describe no walk at all, so`);
 console.log(`there is no drive for a road block to describe. Ask what a count is a count OF.`);
 
-console.log(`\nA SIBLING BLOCK IS A DONOR, NOT AN ANSWER. A peak can have two genuine trailheads`);
-console.log(`(Lundin, Remmel, Carru, Howard), and a road block can outlive the trailhead it described`);
-console.log(`(audit:trailhead-road section 2). Copy one only when the route's OWN prose names the road.`);
+console.log(`\nA SIBLING BLOCK IS A DONOR, NOT AN ANSWER, and a matching one is still only a CANDIDATE.`);
+console.log(`A peak can have two genuine trailheads (Lundin, Remmel, Carru, Howard), and a road block can`);
+console.log(`outlive the trailhead it described (audit:trailhead-road section 2). The COPY bucket means`);
+console.log(`a copy is POSSIBLE, never that it is right — read the row before applying one.`);
 console.log(`Report only; nothing was changed.`);
