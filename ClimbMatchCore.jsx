@@ -3411,7 +3411,13 @@ const [clNames,setClNames]=useState({});const [clOpen,setClOpen]=useState(false)
         <div style={{fontSize:14.5,color:dn?C.textMuted:C.text,fontWeight:700,lineHeight:1.35}}>{r.name}</div>
         <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginTop:6}}>
           <DiscBadge id={catOf(r)} sm/>
-          <span style={{fontSize:11.5,fontWeight:800,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{r.grade}</span>
+          {/* gradeLabel(), not raw `r.grade`: this pill was the last route row in the app reading
+              the column directly, and grades run to 77 characters in the live catalog ("Grade III,
+              5.10a (5 pitches, 900 ft: P1 5.9+, P2 5.9, P3 5.6, P4 5.7, P5 5.7)"). A paragraph in a
+              pill is the `season`/`grade` defect CLAUDE.md records; every sibling row already goes
+              through shortGrade(). gradeLabel also reads the per-discipline grade fields in both
+              spellings, which raw `.grade` misses on an ice or alpine route. */}
+          <span style={{fontSize:11.5,fontWeight:800,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{gradeLabel(r)}</span>
           <span style={{display:"inline-flex",alignItems:"center",gap:3,fontSize:11.5,color:C.textMuted}}><ActionIcon name="pin" size={11} color={C.textMuted}/>{cragOf(r)}</span>
         </div>
       </div>
