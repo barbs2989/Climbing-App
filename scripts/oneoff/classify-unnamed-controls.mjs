@@ -65,6 +65,10 @@ traverse(ast, {
       return (nodes || []).some((c) => {
         if (c.type === "JSXText") return !!c.value.trim();
         if (c.type === "JSXExpressionContainer") return true;
+        // A FRAGMENT IS TRANSPARENT. <>...</> has no element name, so an element-only test
+        // returned false and called a labelled chip unnamed — the third variant of this same
+        // "the name check is too narrow" bug, after direct-children-only and components.
+        if (c.type === "JSXFragment") return textIn(c.children, depth + 1);
         if (c.type === "JSXElement") {
           const n = c.openingElement && c.openingElement.name;
           if (!n || n.type !== "JSXIdentifier") return false;
