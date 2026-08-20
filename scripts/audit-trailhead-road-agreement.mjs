@@ -29,15 +29,35 @@
 // both be. The repair needs the road's actual current status from outside the database, which is
 // research. Read both rows and check the road before changing either.
 //
-//   node scripts/audit-trailhead-road-agreement.mjs [--state wa] [--radius 500] [--all]
+//   node scripts/audit-trailhead-road-agreement.mjs [--radius 500] [--state wa]
+//
+// Scans the whole catalog by default. `--state wa` narrows it and PRINTS A WARNING, because an
+// id-prefix scope drops legacy ids and a comparative audit judged against a truncated cluster fails
+// in the false-pass direction. See the note beside RADIUS below.
 import fs from "fs";
 import path from "path";
 import { selectAll, anonKey } from "./lib/supabase-env.mjs";
 
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > 0 && process.argv[i + 1] ? process.argv[i + 1] : d; };
-const STATE = arg("state", "wa").toLowerCase();
+// SCOPE DEFAULTS TO THE WHOLE CATALOG, and that is a correction rather than a preference.
+//
+// It used to default to `id=like.wa_*`, and that filter SPLIT A CLUSTER AND HID A REAL DEFECT.
+// Five routes share the Mowich Lake trailhead, and `rainier_central_mowich_face` carries a LEGACY
+// id with no `wa_` prefix — so under the WA scope the row recording the permanent bridge closure
+// was filtered out, nothing was left for `wa_liberty_cap_ptarmigan_ridge_finish` to disagree with,
+// and it went on saying the road opens in July. CLAUDE.md already records the general trap:
+// "`id like 'wa_%'` is the reflex filter and it misses legacy ids."
+//
+// A comparative audit is far more exposed to this than a per-row one: dropping a row does not just
+// lose that row's finding, it removes the EVIDENCE its neighbours are judged against. Silent, and
+// in the false-pass direction.
+//
+// The whole catalog is affordable because the qualifying population is tiny — 205,543 routes, of
+// which 925 carry both a trailhead coordinate and road prose, and 922 of those are Washington. So
+// the "expensive" scope costs about a minute and the "cheap" one was buying nothing.
 const RADIUS = Number(arg("radius", 500));
-const ALL = process.argv.includes("--all");
+const STATE = arg("state", "").toLowerCase();
+const ALL = !STATE;
 
 const num = v => (v === null || v === undefined || v === "" ? null : Number.isFinite(+v) ? +v : null);
 const R = Math.PI / 180;
@@ -136,6 +156,7 @@ if (FIXTURE) {
   anonKey(); // fail loudly now rather than mid-scan
   const filter = ALL ? "" : `id=like.${STATE}_*`;
   console.log(`reading routes${ALL ? " (whole catalog)" : ` matching ${STATE}_*`} …`);
+  if (!ALL) console.log(`  NOTE: an id-prefix scope misses legacy ids, which can remove the evidence a cluster is judged against — this is how a fifth Mowich route stayed hidden. Prefer the default whole-catalog scan.`);
   rows = await selectAll("routes", "id,name,area_id,road,access,approach_logistics,waypoints", filter, { pageSize: 1000 });
 }
 // Fail closed: an empty read makes every cluster look consistent, which is the false-pass direction.

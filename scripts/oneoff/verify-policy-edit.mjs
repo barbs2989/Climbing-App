@@ -40,7 +40,13 @@ let bad = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 
-const EXPECTED = new Set(["PRIVACY/What we collect", "PRIVACY/Data retention", "PRIVACY/Sharing with others", "SHEET/What we don't do"]);
+// Which entries THIS change is allowed to touch. Passed on the command line so the script
+// survives its first use: pinned to one edit's set, it goes stale the moment that edit merges
+// and then reports "was meant to change and did not" about work that is already on main --
+// the rotting-baseline shape recorded for injection harnesses.
+//   node scripts/oneoff/verify-policy-edit.mjs "PRIVACY/What we collect" "SHEET/Age"
+const EXPECTED = new Set(process.argv.slice(2).length ? process.argv.slice(2)
+  : ["PRIVACY/What we collect", "PRIVACY/Data retention", "PRIVACY/Sharing with others", "SHEET/What we don't do"]);
 for (const k of ["TERMS", "PRIVACY", "SHEET"]) {
   if (before[k].length === now[k].length) ok(`${k}: still ${now[k].length} entries`);
   else { fail(`${k}: ${before[k].length} entries -> ${now[k].length}`); continue; }
@@ -56,11 +62,12 @@ for (const k of ["TERMS", "PRIVACY", "SHEET"]) {
 }
 // The claims that were false must be gone, not merely outnumbered.
 const flat = JSON.stringify(now);
-for (const dead of ["then delete or anonymize it", "basic device and usage data", "(hosting, maps)"]) {
+const DEFAULTS = !process.argv.slice(2).length;
+for (const dead of DEFAULTS ? ["then delete or anonymize it", "basic device and usage data", "(hosting, maps)"] : []) {
   if (flat.includes(dead)) fail(`the untrue phrasing survives: ${JSON.stringify(dead)}`);
   else ok(`gone: ${JSON.stringify(dead)}`);
 }
-for (const live of ["Deletion is not automated", "the mapping library", "photography used around the app", "We do not run analytics"]) {
+for (const live of DEFAULTS ? ["Deletion is not automated", "the mapping library", "photography used around the app", "We do not run analytics"] : []) {
   if (flat.includes(live)) ok(`present: ${JSON.stringify(live)}`);
   else fail(`missing: ${JSON.stringify(live)}`);
 }
