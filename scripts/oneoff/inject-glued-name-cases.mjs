@@ -47,17 +47,20 @@ const CASES = {
     // walk it returns null every time. Reverting its aria-label therefore changes nothing the
     // guard can observe.
     //
-    // Measured, not assumed, and one plausible fix was tried and REJECTED: an opener that
-    // called `setSelArea` really did put an area in state ("Kings Peak"), and the Climbs tab
-    // still rendered 979 characters with no report rows, because that tab drives its own
-    // browse navigation rather than reading `selArea` alone. See
-    // scripts/oneoff/probe-area-latest-reachable.mjs. Shipping that opener would have put a
-    // false reachability claim in the shared scaffold, which is the exact defect class this
-    // whole change set exists to correct.
+    // RESOLVED 2026-08-20 — and the reason is NOT walk coverage. `AreaLatest` is gated on
+    // `selArea`, which is written only on the SEED catalog path; production and this guard both
+    // run with `VITE_USE_DB` set, so the Climbs tab renders `DbAreaBrowser`, which is never
+    // handed `setSelArea`. **No real user sees this section either.** The guard is reporting
+    // reality, so a pass here is correct and driving the browse navigation would not change it.
     //
-    // Kept as a case, expecting a pass, so the gap is TESTED rather than described: if the
-    // Climbs-tab navigation is ever driven and this starts being caught, this case fails and
-    // whoever did it is told to delete this note. A gap nothing asserts is a gap that rots.
+    // Four attempts proved it the expensive way (a `?za=1` setSelArea opener; driven paths to a
+    // peak, a canyon and a crag). The cheap tell was in the output: the selects that answered
+    // were labelled "Select a country"/"Select a state" — DbAreaBrowser's — where the seed
+    // `AreaBrowse` has one labelled "Jump to a state".
+    //
+    // Still kept as a case so the claim is TESTED: if these sections are ever revived against
+    // the DB and this starts being caught, this case fails and whoever did it is told to delete
+    // the note. See memory/three-climbs-tab-sections-dead-in-production.md.
     expect: "pass",
     want: null,
     edits: [[CORE, CORE_LABEL, ""]],
