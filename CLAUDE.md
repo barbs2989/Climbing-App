@@ -1992,6 +1992,51 @@ the correction knows the screen is wrong, and they have no way to report it.
     core, so a static import both cycles and drags the route page into the main bundle). Same
     shape as `lib/rappels.js`, which is why that file was already in
     `check:correction-readers`' `FILES`; `lib/rack.js` was added to it in the same commit.
+- **"Specific to this route" is gone; `mergeGearList` folds it into the one list.** The route page
+  used to print the stock per-discipline kit and then a second box headed *Specific to this route*,
+  so a route naming "Helmet" got two Helmet bullets under two headings — a climber packing off that
+  page reads it as two things. `gearKey`/`sameGear`/`mergeGearList` in `RouteDetail.jsx` merge them:
+  the key collapses the **qualifier** and not the item (`"Crampons"` == `"Crampons (early/mid-season
+  or lingering-snow years)"`, `"Rope"` == `"ropes"`), the **richer wording wins in place**, and
+  genuinely different gear stays apart (`"Ice axe"` vs `"Ice tools"`, `"Warm layers"` vs
+  `"Weatherproof shell jacket and pants"`).
+  - Measured on the live catalog, not on fixtures: across the **600** WA routes carrying
+    `what_to_bring`, **633 duplicate lines removed on 409 of them**, and **0 routes lost a stock
+    item**. `scripts/oneoff/probe-gear-merge-dedupes.mjs` **lifts the three functions out of
+    `RouteDetail.jsx` by balancing braces** rather than copying them, with `ANCHOR LOST` if any is
+    renamed — a copy would agree with the source the day it was written and measure a fossil
+    afterwards, which is the whole question here.
+  - The **conditional** block keeps sole ownership of its items, so an item that is only needed in
+    early season does not also appear in the unconditional list.
+- **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
+  renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
+  two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
+  their own approach is a **4-mile** walk of closed railroad grade from the Barlow Pass gate, and
+  `wa_cordwood` carried *"Do not climb until you have personally assessed the loose blocks"* — a
+  safety instruction. All three removed (`fix-non-gear-packing-entries.mjs`), each only after
+  confirming the fact survives elsewhere: Cordwood's warning is in `hazards`, `watch_out` **and**
+  `beta` in fuller form.
+  - The two Monte Cristo entries are **wrong, not merely misfiled**, and the phrasing matches **The
+    Dikes** — a southeast-Washington basalt area whose approaches genuinely are "very short and
+    roadside". That is the cross-region duplicate-field-value fingerprint `audit:identity`
+    describes, landing in a gear column instead of a prose one.
+  - **Precision was 3 of 11 on the negation probe and 2 of 7 on the follow-up, and both bad buckets
+    are instructive.** `probe-what-to-bring-negations.mjs` flags a negation anywhere in the entry,
+    so it reports 8 correct entries whose *justification* contains one — *"headlamp — long days are
+    common even for parties that don't get lost"*, *"Gaiters and gear you do not mind soaking"*,
+    *"Northwest Forest Pass … (not needed at the #1587 US-2 trailhead)"*. Read the entry, never the
+    flag.
+  - **`probe-roadside-gear-contamination.mjs` reported 7 of 7 contradicted on its first run, with a
+    "consistent" bucket of ZERO — which is the tell.** It was matching any mileage in the approach,
+    and *"drive the Mt. Baker Highway 13.3 miles past Glacier"* is a **drive** to a genuinely
+    roadside cliff. Mileage now counts only inside a sentence that says somebody is on foot and does
+    not say they are in a car.
+  - **`dist_km` is deliberately excluded from that verdict**, and that was measured. Using it as a
+    floor condemned `wa_east_ridge` on a `dist_km` of 6.4 (= 4.0 mi) while its own approach — 
+    byte-identical to two sibling routes on the same spire — says the walk-up is *"around 20 minutes
+    or less"* from a road that *"runs almost directly beneath the formation"*. The gear note is
+    correct and the **6.4 is wrong**; that is an `audit:distances` finding, not a gear one. Prose is
+    the better record for *is this walk short*.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
