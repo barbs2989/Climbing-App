@@ -9265,3 +9265,35 @@ Web access this run: WebSearch and the anon-key REST reads worked; WebFetch rema
 blocked by the egress proxy, so facts were confirmed from WebSearch result summaries.
 
 Next batch continues after `wa_lane_peak_r2` in the id-ordered scope.
+
+## Batch 136 — 2026-08-20 (pass 3)
+
+Routes: wa_lane_peak_r3, wa_le_conte_mountain_northern_aspect, wa_lemah_mountain_east_route,
+wa_lemah_two_goatshead_spire, wa_lena_lake_to_mt_stone_traverse, wa_lewis_creek_route,
+wa_lexington_tower_east_face, wa_liberty_and_injustice_for_all.
+
+**Clean on hard facts; 0 auto-fixes, 2 flags.** Elevations, summit coordinates, FAs, permits
+and access roads all verified or source-consistent. Le Conte Mountain confirmed exact against
+Wikipedia (7,762 ft, 48.3794,-121.062) and its Glacier-Peak-Wilderness parent placement is
+correct, not a misfile. Lexington 7,560, Liberty Bell 7,720, Mount Stone 6,612, Gunn 6,244,
+Lane 6,012 all match. Lemah main stored 7,519 vs the commonly-cited 7,512 is within the row's
+own documented 7,463-7,520 source range (already flagged in data_quality pending LiDAR) — left
+unchanged. Lane Peak's Narada Falls approach and both Lemah routes' Pete Lake (Cle Elum-side)
+approach confirmed; no cross-drainage contamination in any road/access block this batch.
+
+**Flagged (no auto-fix):**
+
+- `wa_lane_peak_r3`: `bivy[0]` is "Snow Lake Camp" but its note is written about **Unicorn
+  Peak**, a different Tatoosh objective on the south side (Stevens Canyon Rd east of Reflection
+  Lakes). Lane Peak's north couloirs are approached from Narada Falls (confirmed by the route's
+  own approach and TRs). Looks like a neighbour-peak bivy note contaminating this route. Soft
+  jsonb field, no authoritative substitute camp, so flagged not fixed.
+- `wa_lexington_tower_east_face`: summit waypoint "Lexington Tower notch" stores elev 7,621 ft,
+  which is *above* the verified 7,560 ft summit and the row's own high_point_ft — impossible for
+  a notch the route reaches *below* the true summit. No authoritative notch elevation found, so
+  flagged rather than substituting a value.
+
+Web access this run: WebSearch and anon-key REST reads worked; WebFetch still blocked by the
+egress proxy, so facts confirmed from WebSearch result summaries.
+
+Next batch continues after `wa_liberty_and_injustice_for_all` in the id-ordered scope.
