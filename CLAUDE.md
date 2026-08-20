@@ -2381,8 +2381,9 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
     find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
     result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
-    Coverage went **65% -> 72%**, derivable gain pairs 3,243 -> 3,521, and no new impossible value
-    appeared (camps above their own high point stayed at 16).
+    Coverage went **65% -> 75%** over six passes (501 rows), derivable gain pairs 3,243 -> 3,676,
+    and **no new impossible value appeared at any point** — camps above their own high point
+    stayed at 16 throughout, which is the gates holding rather than luck.
     - **CONTROL FIRST, because the expected output is "a plausible elevation" — which is exactly
       what a broken pipeline emits.** `probe-camp-elev-control.mjs` runs four places of known
       height through the identical path and reproduces all four within **68 ft**: Shield Lake
@@ -2417,6 +2418,33 @@ the correction knows the screen is wrong, and they have no way to report it.
       FEATURE TYPES that discriminate**. Whatcom Pass and Whatcom Camp are two places sharing a
       proper noun. *One distinctive token is not an identity* — the lesson this catalog already
       paid for at the level of whole names, one level finer.
+    - **THE TRAILING DESCRIPTION IS NOT NOISE — IT SAYS WHICH PART OF THE FEATURE YOU MEAN.** Once
+      the solver learned to search the LEADING proper noun ("Reflection Lakes area winter snow
+      camp" -> *Reflection Lakes*, which OSM maps), it also started throwing away the word that
+      says which part. Measured on that run: **5 of 11 results were wrong**, all the same way —
+      *"Iron Peak saddle dry camp"* took Iron Peak's **summit** (6,504 ft), *"Liberty Cap saddle"*
+      took Liberty Cap's summit (**14,118 ft**), *"Goode Glacier moraine"* took the glacier, and
+      *"Curtis Ridge camp"* took an `arete` running ~7,000-12,000 ft on Rainier. Every one had the
+      right name, the right county, a real feature and a real DEM reading.
+      - **The guard for this existed and had the shape of the bug it was guarding against.** It
+        was written *because* the hazard was predicted, then keyed on the `peak` TYPE against a
+        word list omitting `saddle`, with a linear set omitting `arete` and `glacier`. It fired
+        once and let four through — which reads exactly like a working gate. *A deny-list is
+        beaten by one more adjective*, twice in one change.
+      - The fix is structural, not another word: **if anything follows the leading proper noun
+        that names a PART of it, the leading-noun search is not offered at all.** Camp words stay
+        exempt, because "X camp" is the camp AT X rather than a different part of X.
+      - **Reading the output caught it; no gate did.** Only knowing that a saddle sits below its
+        summit separates those five from the six that are right.
+    - **A trailing generic CAMP word must not break an identity match**: "Pelton Basin" was
+      refused while the catalog held "Pelton Basin Camp" at 5,400 ft. Strip camp words from both
+      sides — never a FEATURE TYPE, which is the distinction the loose token gate got wrong.
+      Checked against the known-bad pairs: "Whatcom Camp" still does not equal "Whatcom Pass".
+    - **A statewide retry is gated on UNIQUENESS, not distance.** Some camps are legitimately far
+      from the peak — "Squire Creek Park & Campground" and "Whitehorse Community Park campground"
+      are valley staging a 25 km box can never reach. Widening the box would reopen the namesake
+      hole the box exists to close, so the retry accepts only if **exactly one** feature of that
+      name exists in Washington. One match cannot be the wrong one of several.
     - **Scoping was wrong twice before it was right.** `measure-missing-camp-elevations.mjs` first
       asked only whether another **bivy** entry knew a height (5 names) and never asked the
       **waypoint** store, which is 98% populated — the *check the existing files before
