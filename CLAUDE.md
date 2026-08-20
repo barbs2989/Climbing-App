@@ -2270,11 +2270,34 @@ the correction knows the screen is wrong, and they have no way to report it.
       variation (*"Sol Duc Road"* / *"Sol Duc Hot Springs Road"* overlap on `duc`) while catching a
       name drawn from another drainage. Clusters below three routes are skipped — there is no
       majority to measure against, the same reason section 1 needs a cluster at all.
-    - **It is a HYPOTHESIS LIST and the output says so.** 47 in WA, precision **not** measured. A
-      peak with two genuine approaches looks exactly like this whichever one it records, and routes
-      legitimately share a trailhead while driving in from different roads. Do not sweep it.
-      `audit:area-parents` records the same discipline: *measure a detector's precision before
-      shipping it, not after.*
+    - **Its first draft shipped at ~25-30% precision, measured on a 20-row sample AFTER the fact,
+      and the dominant false positive was section 1's disease all over again: A DRIVE HAS SEVERAL
+      NAMED LEGS.** *"Ruth Creek Road (FSR 32)"* against a cluster keyed `hannegan` — Hannegan Pass
+      Road **is** FR 32; *"I-90 / Snoqualmie Pass"* against `alpental`, which is at Snoqualmie Pass;
+      *"Railroad Creek Road"* against `chelan, lucerne, holden`, the boat and the village you pass
+      through to reach it. Every needle over road prose has to be told that it describes more than
+      one road. **46 findings became 5.**
+      - The fix uses evidence already in the cluster: if a **neighbour's** own `driveNote` or status
+        mentions the road this row names, the two describe one journey and there is no finding.
+      - **The echo must come from a row that AGREES with the cluster**, or two identically-wrong
+        rows shield each other — `sitkum_glacier` and `frostbite_ridge` both named White Chuck Road
+        at a North Fork Sauk trailhead, each corroborating the other, and an unrestricted echo test
+        silently dropped **both**. A same-journey explanation is worth nothing from a row that has
+        the road wrong itself.
+      - **`driveNote` had to be added to that prose and was not there**: `roadFields()` covers
+        status/seasonalGate/notes for section 1's needles, while driveNote is exactly where a route
+        spells the drive out leg by leg. Found by an injection case, not by reading the code.
+      - **Entry to the scan was gated on road PROSE, so a route naming its road and saying nothing
+        else was invisible to section 2 entirely.** Also found by injection.
+    - **It is still a HYPOTHESIS LIST and the output says so.** 2 left in WA, neither verified. A
+      peak with two genuine approaches looks exactly like this whichever one it records. Do not
+      sweep it. `audit:area-parents` records the same discipline — *measure a detector's precision
+      before shipping it* — and this one is the counter-example that proves the rule: it was shipped
+      unmeasured, and measuring it afterwards found three quarters of the output was noise.
+    - **What a token test cannot catch: a `road.name` that lists SEVERAL roads.**
+      `wa_mount_meany_standard` named Whiskey Bend Road *and* Graves Creek Road at a North Fork
+      Quinault trailhead — three roads, none of them the right one — and passed, because one of them
+      contained the word the cluster shared.
     - **Placeholder names are split out** (2 in WA — *"Forest/park access road (verify per
       trailhead)"*). They are not wrong roads, they are absent ones, and the repairs are opposite:
       one wants research, the other wants a copy from a neighbour.

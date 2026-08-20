@@ -153,8 +153,11 @@ for (const r of rows) {
   }
   if (lat === null || lng === null) continue;
   const fields = roadFields(r);
-  if (!Object.keys(fields).length) continue;
-  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields, roadName: (r.road || {}).name,
+  // Section 1 needs road PROSE; section 2 needs only a road NAME. Gating entry on prose alone hid
+  // every route that names its road and says nothing else about it from section 2 entirely — found
+  // by an injection case, which is the whole argument for writing them.
+  if (!Object.keys(fields).length && !(r.road || {}).name) continue;
+  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields, roadName: (r.road || {}).name, driveNote: (r.road || {}).driveNote,
     closed: fire(fields, CLOSED, new RegExp(`${SEASONAL_CTX.source}|${OTHER_ROAD_CTX.source}`, "i")), open: fire(fields, OPEN, PAST_CTX) });
 }
 
@@ -260,9 +263,40 @@ for (const c of clusters) {
   for (const p of named) for (const t of rtoks(p.roadName)) freq.set(t, (freq.get(t) || 0) + 1);
   const core = [...freq.entries()].filter(([, n]) => n >= Math.ceil(named.length / 2)).map(([t]) => t);
   if (!core.length) continue; // the cluster does not agree on a road name; nothing to measure against
+  // A DRIVE HAS SEVERAL NAMED LEGS, and different rows name different ones. Comparing road NAMES
+  // alone therefore reports one journey described from two points along it: "Ruth Creek Road (FSR
+  // 32)" against a cluster whose core is `hannegan` — Hannegan Pass Road IS FR 32; "I-90 /
+  // Snoqualmie Pass" against `alpental`, which is at Snoqualmie Pass; "Railroad Creek Road" against
+  // `chelan, lucerne, holden`, which are the boat and the village you pass through to reach it.
+  // Measured on a 20-row sample of the first draft, that class was most of the output and precision
+  // sat near 25-30%.
+  //
+  // The evidence to tell them apart is already in the cluster: if a NEIGHBOUR's own driveNote or
+  // status mentions the road this row names, the two are describing one journey and there is no
+  // finding. Prose is read here rather than just `name`, because that is where a route spells the
+  // drive out leg by leg ("Mountain Loop Highway 19.7 mi to Sloan Creek Road (FR 49)").
+  //
+  // This is the same segment-blindness section 1 needed four separate rules for. Road prose is
+  // written about MORE THAN ONE ROAD, and every needle over it has to be told so.
+  // THE ECHO MUST COME FROM A ROW THAT AGREES WITH THE CLUSTER, or two identically-wrong rows
+  // shield each other: `sitkum_glacier` and `frostbite_ridge` both name White Chuck Road at a North
+  // Fork Sauk trailhead, each corroborating the other's error, and an unrestricted echo test
+  // silently dropped both. A same-journey explanation is only worth anything from a row that has
+  // the road right in the first place.
+  // `driveNote` MUST be in this prose and was not: `roadFields()` covers status/seasonalGate/notes
+  // for section 1's needles, but driveNote is precisely where a route spells the drive out leg by
+  // leg ("From Darrington, drive the Mountain Loop Highway 19.7 mi to Sloan Creek Road (FR 49)").
+  // Without it the same-journey test could not see the sentence that proves two names are one road.
+  // Found by an injection case, not by reading the code.
+  const clusterProse = named.filter(q => core.some(x => rtoks(q.roadName).has(x)))
+    .map(q => [q, [q.roadName, q.driveNote, ...Object.values(q.fields)].filter(Boolean).join(" ").toLowerCase()]);
   for (const p of named) {
     const t = rtoks(p.roadName);
     if (core.some(x => t.has(x))) continue;
+    const mine = [...t];
+    if (!mine.length) continue;
+    const echoed = clusterProse.some(([q, prose]) => q !== p && mine.some(x => prose.includes(x)));
+    if (echoed) continue; // a neighbour describes this road as part of the same drive
     mismatched.push({ p, core, peers: named.filter(q => q !== p).slice(0, 3) });
   }
 }
@@ -289,7 +323,7 @@ console.log(`${rows.length} routes read · ${pts.length} carry both a trailhead 
 console.log(`${clusters.length} trailhead cluster(s) within ${RADIUS} m · ${multi.length} shared by more than one route`);
 console.log(`${findings.length} cluster(s) where one route says the road is CLOSED and another says it OPENS.`);
 console.log(`${wrongRoad.length} route(s) whose road.name names a DIFFERENT road from their trailhead neighbours,`);
-console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0,2).map(m=>m.p.roadName).join('", "')}" …).`);
+if (vague.length) console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0, 2).map(m => m.p.roadName).join('", "')}" …).`);
 if (wrongRoad.length) {
   console.log(`\nSection 2 is a HYPOTHESIS LIST, weaker than section 1 and deliberately so: a route can`);
   console.log(`legitimately share a trailhead with routes that drive in from another road, and a peak with`);
