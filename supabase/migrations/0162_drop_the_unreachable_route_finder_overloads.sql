@@ -1,0 +1,45 @@
+-- Drop the narrow route-finder overloads. They are UNREACHABLE, and their existence is what
+-- makes the obvious minimal call fail.
+--
+-- `create or replace function` cannot replace across argument lists — a different argument list
+-- is a different function. 0015 created the finders, 0018 widened them with the filter params
+-- and 0019/0074 kept widening, and nothing ever dropped the originals. So Postgres holds two of
+-- each:
+--
+--   routes_in_subtree(text,text,text,integer,integer)                        -- 0015, narrow
+--   routes_in_subtree(text,text,text,numeric,numeric,numeric,integer,
+--                     integer,integer,text,integer,integer)                  -- current, wide
+--   routes_in_subtree_count(text,text,text)                                  -- 0015, narrow
+--   routes_in_subtree_count(text,text,text,numeric,numeric,numeric,
+--                           integer,integer,integer)                         -- current, wide
+--
+-- Same shape as the approve_new_route fork 0135 had to merge, and the reason 0128 drops the old
+-- signature before creating the new one. See the note in CLAUDE.md under
+-- check:approve-route-columns rule 2.
+--
+-- MEASURED, not argued. Probed through PostgREST with the anon key against a real area, with a
+-- bogus-parameter CONTROL first so that a success could mean something:
+--
+--   {root_id, zz_not_a_param}          404 PGRST202   <- control: the probe can detect a miss
+--   {root_id}                          300 PGRST203   <- AMBIGUOUS
+--   {root_id,q,disc,lim,off}           300 PGRST203   <- AMBIGUOUS (the narrow shape itself!)
+--   the app's full 12-arg call         200            <- the only shape that resolves
+--   count {root_id}                    300 PGRST203   <- AMBIGUOUS
+--   count's full 9-arg call            200
+--
+-- So the narrow versions cannot be called AT ALL — every argument set that matches them also
+-- matches the wide one, and PostgREST refuses to choose. Dropping them cannot break a working
+-- path, because there is no working path to them. What it fixes is the other half: today a
+-- caller passing just `{root_id}` gets a 300 with the hint "try renaming the parameters", which
+-- points at the wrong problem entirely. After this, that call resolves to the wide function on
+-- its defaults, which is what anyone writing it would expect.
+--
+-- The app itself is unaffected either way: lib/db.js:610 and :623 pass the full argument lists
+-- and already resolve to the wide functions. This is about the next caller, not the current one.
+--
+-- Types are spelled exactly as pg_get_function_arguments reports them, because a `drop function`
+-- names bare TYPES where a `create` names `name type` — parsing those two the same way is what
+-- made check:approve-route-columns' first draft report phantom overloads.
+
+drop function if exists public.routes_in_subtree(text, text, text, integer, integer);
+drop function if exists public.routes_in_subtree_count(text, text, text);
