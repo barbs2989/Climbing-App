@@ -2444,6 +2444,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Mowich *Lake*, and 48.7317,-121.0672 is Ross *Dam*, which sits at the bottom of a mile of
     trail off SR-20. The page hangs driving directions off that pin.
   - Report-only, read-only, fails closed on an empty read.
+- **The OFF-TRACK PIN backlog is mostly correct pins, and the headline count overstates it by a
+  lot.** `audit:waypoint-track` reports hundreds of routes with pins off the line, and the
+  instinct is to read that as a defect list. Measured, it is not.
+  `scripts/oneoff/probe-offtrack-triage.mjs` narrows it and each narrowing is a different
+  reason:
+  - **629 off-track pins → 464 worth looking at.** 64 routes carry a CLIMB-ONLY track (the gpx
+    never comes near the trailhead), so every approach pin on them is off the line **by
+    design** — 143 pins excused. A further 6 routes have a track that never reaches their own
+    summit pin, which is `audit:waypoints`' "TRACK NEVER COMES WITHIN 2 km OF THE PEAK": there
+    the **track** is the suspect record and researching the pins researches the wrong half, so
+    those 22 pins are set aside as one decision per route rather than a source per pin.
+  - **Then severity, not count.** Of the 464, only **13** are more than 20x their own pin
+    type's tolerance. A Junction 392 m off the line is a saddle marked at the ridge crest
+    rather than where the trail crosses it — not a different place.
+  - **And of those 13, the ones checked against a published coordinate were mostly ALREADY
+    RIGHT.** `wa_argonaut_peak_east_ridge`'s "Colchuck Lake" is stored at
+    `47.4919578,-120.8335801`, which is exactly the USGS coordinate; "PCT Junction near Lemah
+    Meadows" is stored at `47.4623,-121.2810` on two routes, exactly the published Lemah
+    Meadow coordinate. Those pins name a feature on a **different approach to the same peak**,
+    or a feature that is an area rather than a point. Of three researched, **one** was wrong.
+  - **The bar for writing a researched coordinate is that it lands on the route's own track**
+    (`verify-researched-pin-coords.mjs`). Cutthroat Pass on
+    `wa_tower_mountain_southwest_route` went 2,464 m off → **36 m** on substituting the USGS
+    value, which is agreement with a record nobody consulted while publishing it. The same
+    check **refused** Longs Pass on `wa_argonaut_peak_east_ridge`, where the USGS coordinate is
+    *further* from that route's track than the stored one — research alone would have written
+    a wrong fix there.
+  - **Do NOT "repair" a junction by interpolating along the track at its `distMi`.** It is
+    computable and it is fabrication — the same class as the 199 routes whose pins were
+    manufactured on a straight line, and the synthetic-waypoint audit would rightly flag it
+    later. A pin with no source stays where it is.
 - **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
   somewhere else — the general form of the rule this file already states for `season`, `grade`
   and `rappels`. **No coverage check can see it**: the column is populated and the prose is
