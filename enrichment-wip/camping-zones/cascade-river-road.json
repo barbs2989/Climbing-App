@@ -1,6 +1,17 @@
 {
  "zone": "Cascade River Road — Boston Basin and Cascade Pass",
- "areas": ["wa_forbidden_peak", "wa_sharkfin_tower", "wa_boston_peak", "wa_mount_torment", "wa_johannesburg_mountain", "wa_cascade_peak", "wa_mixup_peak", "wa_magic_mountain", "wa_the_triad"],
+ "areas": [
+  "wa_forbidden_peak",
+  "wa_sharkfin_tower",
+  "wa_boston_peak",
+  "wa_mount_torment",
+  "wa_johannesburg_mountain",
+  "wa_cascade_peak",
+  "wa_mixup_peak",
+  "wa_magic_mountain",
+  "wa_the_triad",
+  "wa_aiguille_de_l_m"
+ ],
  "sites": [
   {
    "name": "Boston Basin lower camp",
@@ -53,5 +64,6 @@
    "permit": "Still requires an NPS wilderness permit for the relevant cross-country zone, from Marblemount. Whether an unestablished high bivouac is acceptable in Boston Basin is genuinely CONTESTED — the general zone regulation allows camping on durable surfaces such as snow, rock or bare ground, while the site-specific guidance for Boston Basin says to use the two designated camps. Ask when you collect the permit rather than assuming.",
    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerary: they are exposed, they have no water once the snow goes, and the surrounding terrain is glaciated. Human waste must be packed out, and food still needs bear-resistant storage."
   }
- ]
+ ],
+ "_areas_note": " Aiguille de l M was added after a later pass: the catalog files it under Boston Basin, whose camps are already in this file."
 }

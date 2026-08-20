@@ -1,0 +1,987 @@
+{
+  "_README": [
+    "approach_variants for eleven MULTI-ROUTE alpine areas in the northern North Cascades plus three outliers filed in the same sweep (Raven Ridge in the Sawtooth, Snowking, and the Thunder Mountain / Slippery Slab Tower pair near Stevens Pass).",
+    "SCOPE WAS RE-QUERIED AND THE BRIEF'S COUNTS WERE STALE. Live counts by area_id: wa_jack_mountain 7 (brief said 5), wa_hozomeen_mountain 9 (brief said 2), and 2 each for the other nine areas - 34 routes in total. NOT ONE of the 34 had approach_variants, so every route in scope was a candidate.",
+    "27 routes written, 60 variants. 7 skipped, all recorded in _SKIPPED with the reason. Every skip is a row whose own approach column states that no approach is published, or that is empty, or that duplicates another row.",
+    "METHOD: re-homed from each row's own approach / waypoints / road columns, plus its siblings on the same peak, with web search used only to corroborate or to settle which of two sibling rows is right. Nothing was researched into existence: where a row says the approach is unpublished it was skipped rather than filled in. _confidence records which entries got outside corroboration ('corroborated'), which are purely re-homed ('re-homed'), and the one that rests on a row that contradicts itself ('thin', wa_trapper_mountain_south_slopes).",
+    "NO hours, distMi or gainFt were written on any variant. Several of these rows carry published figures that conflict with their own columns or mix one-way and round-trip conventions, and averaging them would manufacture a number nobody published.",
+    "NO source names, author names, URLs or years appear in any name / season / notes / baseFinding / hazards field. Provenance is in _sources only.",
+    "CONTAMINATION REJECTED - Jack Mountain. The name is shared with peaks in Montana, Idaho and elsewhere. Resolved on area_id wa_jack_mountain and the peak coordinate 48.7728,-120.9564; every variant is anchored on access this peak actually has (Ross Lake's east shore, or the Canyon Creek trailhead on the highway). No out-of-state Jack Mountain material was used.",
+    "CONTAMINATION REJECTED - Bear Mountain. One of the commonest peak names in North America. Resolved on area_id wa_bear_mountain_chilliwack and coordinate 48.9306,-121.3412 in the Chilliwack Range; corroboration was accepted only where it named the Chilliwack approach and the north buttress.",
+    "CONTAMINATION REJECTED - Thunder Mountain. There are several in this state alone. The target area sits at 47.6689,-121.1263 in the Stevens Pass region, reached from the crest trail at Trap Pass - NOT the Thunder Creek / Thunder Mountain ground in the North Cascades near Diablo, and not the Thunder Mountain in the Sawtooth. Material about the North Cascades Thunder Creek was discarded.",
+    "CONTAMINATION REJECTED - Trapper Mountain (48.4318,-121.0184) is a different peak from Trappers Peak above Thornton Lakes, which is reached from an entirely different road. Search results for the latter were discarded.",
+    "CONTAMINATION REJECTED - Sinister Peak vs Dome Peak. Sinister stands just under a mile EAST of Dome on the same crest and shares Dome's entire approach, so descriptions of the two are constantly interleaved. Dome's own summit block material was excluded; the baseFinding for both Sinister routes carries the east-of-the-neighbour test explicitly, because this is the mistake the terrain invites.",
+    "BORDER ROUTES ARE GENUINE, NOT IMPORTS. The Depot Creek approach used for Mount Spickard and Southeast Mox Peak really does start on the Canadian side of the boundary and cross it on foot at a marker, and Hozomeen's road access really is from the Canadian side. These are recorded as the rows state them, with the passport and gate-status caveats, and no Canadian peak was pulled in as a Washington one. Every entry's area matches the live routes.area_id.",
+    "NAME TRAP INSIDE THIS BATCH: two unrelated 'Crater Lake / Crater Creek' systems appear here. Jack Mountain's Crater Lake lies on the Canyon Creek and Jackita Ridge trail system off the highway; Raven Ridge's Crater Lake lies on the Gold Creek and FR 4340 system near Twisp. They are on opposite sides of the range. Both are described by road and trail rather than by name alone, and Raven Ridge's variants carry an explicit warning about it.",
+    "A SECOND NAME TRAP: 'Little Jack' is a subsidiary summit on Jack Mountain's southwest ridge and the old trail to it is the approach for that route - it is not a separate peak with its own routes.",
+    "ROUTE IDS WERE NOT TRUSTED. Every entry was resolved by querying routes by area_id and asserting routes.area_id on the row itself. Four ids in this batch are name-shaped rather than peak-scoped (wa_east_ridge_2 is on Snowking, wa_direct_north_buttress is on Bear Mountain, wa_neve_glacier_west_ridge is on Snowfield, wa_the_devils_club is on Southeast Mox), and one id contradicts its own route name (wa_southeast_mox_peak_se_rib is the West Ridge) - see _DEFECTS.",
+    "READ-ONLY. Nothing was written to the database, nothing was committed, and no file in the repository was touched."
+  ],
+  "_SKIPPED": {
+    "wa_jack_mountain_east_ridge": "The row states in its own words that no single approach is documented as standard and that no source gives a turn-by-turn approach for this line; the base is described only as 'low on the glacier on the east side'. Two access options exist for that flank but neither is tied to a point where this ridge is gained, so any baseFinding would be constructed rather than re-homed.",
+    "wa_jack_mountain_north_ridge": "The row states that no turn-by-turn approach is published and then borrows its terrain description wholesale from the Nohokomeen route's timber belt. Nothing fixes where the trail is left or where the ridge is gained, and the row itself calls the approach exploratory.",
+    "wa_jack_mountain_northeast_glacier": "69-character approach fragment ('North from May Creek; northeast face of mountain via glacier approach') and a probable duplicate of the Nohokomeen Glacier row, which starts at the same May Creek departure and climbs the same glaciated flank. Skipped as a duplicate rather than filled in; see _DEFECTS.",
+    "wa_hozomeen_mountain_north_peak_south_ridge": "Empty row - no approach, no grade, no description. This is the connecting ridge between the two Hozomeen summits, which is a notoriously rotten traverse that parties deliberately avoid; there is nothing in the row to re-home and inventing a base for it would be worse than leaving it blank.",
+    "wa_hozomeen_mountain_south_peak_north_ridge": "Empty row - the same connecting ridge seen from the other summit. Nothing to re-home.",
+    "wa_hozomeen_mountain_southwest_buttress": "Empty row - no approach, no grade, no description. The peak's south-west and west basin ground is covered by the two populated routes on that side; nothing in this row identifies which buttress it is.",
+    "wa_thunder_mountain_north_face": "The row states outright that the approach to the base of the north face specifically was not found, and that the only described access reaches the peak's SOUTH-EAST side from the upper lake. Writing a base-finding for the north face would mean deducing the base's position from aspect rather than re-homing it. The shared Trap Pass approach is captured on the sibling Slippery Slab Tower row."
+  },
+  "_DEFECTS": {
+    "wa_the_devils_club": "The row's approach prose and its own waypoints describe approaches on OPPOSITE SIDES of the massif. The prose is the Ross Lake / Little Beaver / Perry Creek line to the East Face; four of the six waypoints (Depot Creek Falls, Ouzel Lake, Redoubt Glacier Camp, base of the East Face headwall) belong to the Depot Creek / Redoubt Glacier approach used by the peak's West Ridge route. The Depot Creek Falls waypoint here is at 49.01,-121.36 while the sibling row records the same feature at 48.9773,-121.2848 - roughly 9 km apart. A party navigating by the pins would walk the wrong approach for the route the prose describes.",
+    "wa_southeast_mox_peak_se_rib": "Route id says 'se_rib' but the route name, the whole climbing description and the approach are the West Ridge. The id contradicts the row.",
+    "wa_direct_north_buttress": "The approach column does not describe this route's approach. It routes the party off the maintained trail near the Copper Ridge junction and up Bear Mountain's WEST ridge to a camp near 4,600 ft, then describes the summit going via the west ridge and upper north ridge or the Northwest Ridge - i.e. the standard route, on the other side of the peak. The sibling North Buttress row carries the correct approach for both north-side lines (Bear Creek, then the 6,480 ft saddle on the north-west ridge). Variants here were re-homed from the sibling; the row's own text was not repeated.",
+    "wa_trapper_mountain_south_slopes": "The row contradicts itself about which drainage reaches Trapper Lake. The prose says to follow the valley trail to the Devore Creek trail junction and then push off-trail UP THE DEVORE CREEK DRAINAGE into the Trapper Lake basin; the row's own waypoint note at that junction says the route 'continues upstream on the Stehekin River Trail rather than turning up Devore Creek', and the Trapper Lake note says the lake is reached from the UPPER Stehekin River Trail. The recorded coordinates make the prose look like the wrong half: the junction is recorded at 48.3162,-120.6801 and the lake at 48.44,-121.0036, roughly 25 km apart up-valley, while the row records the lake at 7.5 miles from the trailhead. Reported, not fixed - the variant written here deliberately does not repeat the Devore Creek claim and tells the party to plan that section from current maps.",
+    "wa_jack_mountain_south_face vs wa_jack_mountain_southeast_ridge_direct": "Two rows on one peak disagree about the same trail. The South Face says Canyon Creek is crossed on a log-and-plank crossing and gives roughly 3,400 ft in 4 miles to the trail junction; the Southeast Ridge Direct says the Trail #738 bridge is DESTROYED and the creek must be forded, and gives about 62 switchbacks and 3,900 ft in 3.7 miles to Crater Lake. Their two Canyon Creek trailhead waypoints also differ by roughly half a kilometre. The crossing is the first obstacle of the trip and the two records give opposite advice about it.",
+    "wa_snowking_mountain_standard vs wa_east_ridge_2": "The two Snowking rows describe the ridge junction differently and give OPPOSITE turns. The standard route says a cairned fork near 5,200 ft sends a fisherman's trail down toward Found Lake and to stay right and uphill; the East Ridge says there is an easy-to-miss junction at a saddle near Point 5116 and to go LEFT. They are most likely two different junctions on the same ridge, but nothing in either row says so, and a party reading both would have no way to tell. The variants written here keep each row's instruction with its own route and warn that the two are not the same fork.",
+    "wa_neve_glacier_west_ridge vs wa_snowfield_peak_neve_glacier": "Probable duplicate. The 'Standard Route' row's own description gains the west ridge by the class 3 gully near 7,700 ft and finishes up it, which is what the 'Neve Glacier / West Ridge' row is named for. One row is far richer than the other and they share a trailhead, a camp, a col and a glacier crossing. Both were written for, since a party landing on either needs the approach, but they should be reviewed as one route split in two.",
+    "wa_slippery_slab_tower_ne_face": "Two problems in one row. Its prose puts Trap Pass at about 5,800 ft while its own waypoint puts it at 5,050 ft. And FOUR waypoints share the identical coordinate 47.66888,-121.12634 - the base of the tower, the north-east face topout, the route start and the summit - so the row records the bottom and the top of a two-pitch face at the same point. The waypoint notes say these were corrected from an earlier error roughly 4.5 miles west; the correction appears to have collapsed them all onto the area coordinate.",
+    "wa_hozomeen_mountain_southeast_face": "The row's prose and its waypoints describe different approaches. The prose is the Hozomeen Lake trail from the campground at the head of the lake, leaving it near the lake outlet and climbing the south basin; the waypoints are the Lightning Creek landing, Willow Lake, the 5,000 ft shoulder and the 6,200 ft saddle beneath the SOUTH-EAST BUTTRESS - which is the sibling route's approach. One waypoint note admits this in as many words and flags that the intended route may be the easier southwest line. Both approaches are written here as separate variants rather than merged, but the row needs deciding.",
+    "wa_mount_spickard_silver_glacier": "Two of the three waypoints have null lat and lng - the Silver Lake camp at 6,763 ft and the Custer-Spickard saddle at 7,380 ft. The saddle is where this route starts, so the one waypoint a party most needs is positionless. Also note the waypoint type is lowercase 'pass' where the rest of the catalog uses capitalised types.",
+    "wa_hozomeen_mountain (three empty rows)": "wa_hozomeen_mountain_north_peak_south_ridge, wa_hozomeen_mountain_south_peak_north_ridge and wa_hozomeen_mountain_southwest_buttress carry no approach, no grade, no pitches and no description at all. Two of them are the same connecting ridge between the peaks seen from either end, which is a rotten traverse parties avoid; whether they should exist as routes is worth deciding before anything is written into them.",
+    "wa_jack_mountain_northeast_glacier": "69-character approach and no other content, describing the same May Creek departure and the same glaciated flank as wa_jack_mountain_nohokomeen_headwall. Likely a duplicate or a mis-split of the Nohokomeen route rather than a distinct line; the peak's documented glacier route is the Nohokomeen."
+  },
+  "wa_jack_mountain_nohokomeen_headwall": {
+    "area": "wa_jack_mountain",
+    "_why": "Jack has three unconnected approaches on three sides of the mountain; this route is the only one reached from Ross Lake, and the choice is made at the car.",
+    "_sources": [
+      "route row approach/waypoints/road columns (re-homed)",
+      "sibling rows wa_jack_mountain_southwest_ridge and wa_jack_mountain_north_ridge for the shared East Bank Trail detail",
+      "web corroboration of the May Creek departure and the glacier toe"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "East Bank Trail on foot from milepost 138, leaving it at May Creek",
+        "season": "Late May through July while the headwall is still a snow climb; the highway gate closes the season at both ends",
+        "notes": "Park at the East Bank Trailhead near milepost 138 at about 1,800 ft. The trail drops immediately to the bridge over Ruby Creek and then runs north along Ross Lake, mostly flat and fast, to the May Creek camp. This is the whole of the easy walking. At May Creek leave the trail and climb west to north-west, staying loosely between the creeks on the mountain's west side. Cliff bands start around 3,200 ft and are threaded on boot and game trails rather than climbed; snow generally begins around 4,800 to 5,000 ft. Three miles or so of that work reaches a flat camp just over 5,200 ft below the toe of the ice. Strong parties carry a second camp onto the upper glacier near 7,400 ft, which shortens summit day considerably.",
+        "baseFinding": "THE TIMBER BELT IS THE NAVIGATION, THE GLACIER TOE IS THE ARRIVAL. Leaving May Creek you are looking for weaknesses, not a line: the cliff bands from about 3,200 ft up are passed on boot and game trails that thread left and right, so a section that forces you to climb rock means you have pushed into the band rather than around it. The reliable signal that you are through is underfoot rather than overhead - continuous snow starting somewhere near 4,800 to 5,000 ft, and above that the timber gives out onto open ground.\n\nTHE CAMP IS A FLAT BENCH, NOT A VIEWPOINT. Just over 5,200 ft the ground levels into a flat bench directly below the toe of the ice. If you are on sloping heather with the ice still out of sight above you, keep going; if you are already on the ice you have walked past the bench.\n\nTHE HEADWALL IS ABOVE THE GLACIER, NOT AT ITS TOE. From the bench the glacier runs up in front of you at an easy angle for a long way before anything steepens. The route's steep ground is the wall at the head of that ice, directly beneath the summit. IF YOU ARE ROPING UP AND SWINGING TOOLS WITHIN MINUTES OF LEAVING CAMP, YOU ARE ON A SERAC OR A CREVASSE WALL LOW ON THE GLACIER, NOT ON THE HEADWALL. The headwall is only reached after the whole gentle bowl has been crossed and the ground ahead of you rears up as one continuous face rather than a series of rolls.\n\nA CROSS-CHECK AT THE TOP OF THE ICE: the summit should be directly above the headwall, not off to one side. If the wall in front of you tops out on a shoulder with more mountain visible beyond it, you have drifted around the bowl.",
+        "hazards": [
+          "steep brushy timber with cliff bands from about 3,200 ft, far worse to reverse than to ascend",
+          "crevasses on the Nohokomeen Glacier, thinly bridged late in the season",
+          "sustained steep snow on the headwall itself, with a long runout onto the glacier below",
+          "rockfall and icefall off the wall once the sun reaches it",
+          "a two to four day commitment with no quick way off the mountain"
+        ]
+      },
+      {
+        "name": "Water taxi up Ross Lake to the eastern shore, cutting out most of the trail",
+        "season": "Same window as the trail approach, but only once the boat service is running for the year",
+        "notes": "The resort at the south end of Ross Lake runs a water taxi that will drop parties on the eastern shore, which removes most of the flat trail miles and turns the approach into the off-trail climb alone. It has to be booked ahead and the schedule and drop points change, so confirm directly before building a trip around it. The trade is that you are committed to a pickup time on a lake with no road out, so build slack into the plan rather than into the summit day.",
+        "baseFinding": "FROM THE LANDING THE FIRST TASK IS TO GET ONTO THE TRAIL AND FIND MAY CREEK - the East Bank Trail runs along this shore and the departure point is the creek, not a bearing. Once you leave the trail at May Creek every marker is identical to the walk-in variant: cliff bands from around 3,200 ft passed on game trails, continuous snow near 4,800 to 5,000 ft, and the flat bench just over 5,200 ft below the toe of the ice.\n\nTHE ONE THING THE BOAT CHANGES IS YOUR MARGIN, NOT YOUR ROUTE. Parties dropped late in the day have started the timber belt in fading light, which is where the cliff bands become genuinely dangerous, because the passages through them are found by eye. If you cannot reach open ground above the bands in daylight, camp low rather than commit to the belt.\n\nTHE NEGATIVE MARKER IS THE SAME: if the ground ahead of you steepens into rock rather than easing onto snow, you are in a cliff band and should traverse to find the boot track rather than force it.",
+        "hazards": [
+          "fixed pickup times on a lake with no road out",
+          "the same steep brushy cliff-banded timber belt above the shore",
+          "arriving late enough that the timber belt is done in the dark",
+          "crevasses on the glacier above",
+          "no reliable communication once off the lake"
+        ]
+      },
+      {
+        "name": "Before the highway opens: the gate at milepost 134",
+        "season": "Late winter and early spring, before the highway is cleared, when the headwall holds its best snow",
+        "notes": "The highway closes each winter between the gate west of the trailhead and a second gate far to the east, and reopens somewhere between mid-April and early summer depending on the year's damage and snowpack. Parties wanting the headwall in condition have started at the closed gate and covered the road on bikes or skis to the trailhead before starting the walk in. Everything above that is unchanged, except that the snow line is far lower and the timber belt may go faster on skis than it does on foot in summer.",
+        "baseFinding": "THE ROAD SECTION IS NAVIGATION-FREE; THE APPROACH STILL STARTS AT MAY CREEK. Ride or ski the closed highway to the trailhead near milepost 138 and pick up the East Bank Trail there. The departure from the trail is the creek, as in summer.\n\nWHAT CHANGES IS WHERE THE SNOW STARTS. In this window continuous snow is likely to begin well below the 4,800 to 5,000 ft line that summer parties describe, which means the cliff bands between roughly 3,200 ft and there are being crossed on snow rather than on game trails. A band that would be walked around in August may be a loaded slope in April. IF THE PASSAGE YOU WOULD NORMALLY TAKE THROUGH A BAND IS A SMOOTH, WIND-LOADED RAMP RATHER THAN A BOOT TRACK, TREAT IT AS AVALANCHE TERRAIN AND NOT AS A ROUTE.\n\nThe flat bench just over 5,200 ft below the glacier toe may be buried and unrecognisable as a bench; in that case the arrival marker is the change of angle where the ground stops climbing and the ice begins running away ahead of you toward the wall.",
+        "hazards": [
+          "avalanche terrain through the timber belt and on the glacier approach in early season",
+          "a long road section on bike or ski before the trip proper starts",
+          "short daylight and cold, with a committing position",
+          "cornices on the upper mountain",
+          "the road gate opening date moves year to year and can strand a plan"
+        ]
+      }
+    ]
+  },
+  "wa_jack_mountain_south_face": {
+    "area": "wa_jack_mountain",
+    "_why": "The south side is reached by a completely different trailhead from the Ross Lake routes, and the party then has to pick between two camps and two different lines off the same shoulder.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_jack_mountain_southeast_ridge_direct for the shared trail description"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Canyon Creek trailhead, Crater Lake, and the traverse over the Jerry Glacier",
+        "season": "Mid-July through September, once the Jerry Glacier crossing is reasonable and before fresh snow lands on the loose face",
+        "notes": "From the Canyon Creek Trailhead at about 1,900 ft, cross Canyon Creek and follow Trail #738 as it switchbacks hard through forest - three and a half to four thousand feet of climbing with no water on it, so fill up at the creek. Bear left at the Crater Lake trail junction and contour to the lake basin, then pick the trail back up above the lake for long, hot, exposed switchbacks with nothing to drink on them. Somewhere between 6,700 and 7,200 ft leave the maintained tread and traverse to the gap between Crater Mountain's summit and its east peak at about 7,200 ft. From that saddle the route goes downhill onto the Jerry Glacier: snow-covered and crevassed enough for a rope and crampons early, often patchy or bare late, when a slip runs further. Descend off the ice into the Jerry Lakes basin and fill water - it is the last of it before the face.\n\nCheck the Canyon Creek crossing before you commit: it has been described both as a log-and-plank crossing and as a ford with the bridge gone, and it is the first obstacle of the trip.",
+        "baseFinding": "THE FACE IS FOUND BY A SLUNG BOULDER AND A HIDDEN BREAK, NOT BY A BEARING. From the Jerry Lakes basin, traverse the heather shelf and go through the notch just south of the lakes, then climb easily to a level shoulder on the southeast ridge near 7,000 to 7,200 ft. THIS SHOULDER IS THE DECISION POINT FOR THE WHOLE MOUNTAIN. For the South Face you now turn WEST and make a rising traverse on scree and dirt beneath the face, often moving in the shallow moat where old snow has pulled away from the rock.\n\nTHE POSITIVE MARKER IS A BOULDER WITH SLING MATERIAL ON IT, standing above the snow patches under the lower cliff band. The break in that band is a left-slanting ramp leading to a short class 4 step and then a hidden class 3 chimney, and IT STAYS INVISIBLE UNTIL YOU ARE ALMOST UNDERNEATH IT. Looking up from a distance and seeing no way through the band is the normal experience and is not evidence you are in the wrong place; looking up and seeing an obvious open gully is evidence that you are, because the break here is not obvious.\n\nIF YOU ARE CLIMBING THE CREST OF THE RIDGE ITSELF RATHER THAN TRAVERSING BENEATH A FACE, YOU HAVE STAYED ON THE SOUTHEAST RIDGE AND ARE ON THE OTHER ROUTE. The South Face leaves the ridge at the shoulder and does not return to it until well above the cliff band, near 8,600 ft, where a band of scree beside a snow patch delivers you back onto the crest.\n\nA CROSS-CHECK ABOVE THE BAND: 400 to 500 ft of class 3 ramps and ledges linked by harder steps, then easier ground. Sustained hard climbing straight off the chimney means you have taken the wrong line through the band.",
+        "hazards": [
+          "the Canyon Creek crossing at the very start, which has washed out",
+          "long waterless switchbacks on both trail sections",
+          "crevasses and moats on the Jerry Glacier, worse as a bare-ice slip hazard late in the season",
+          "fire-damaged forest and unstable ground near Jerry Lakes",
+          "loose rock on the face where holds pull off freely - keep the party spread sideways rather than stacked",
+          "route-finding for the ramp and hidden chimney, which are hard to relocate on the descent"
+        ]
+      },
+      {
+        "name": "Two camps at the end of the same approach: Jerry Lakes or Crater Creek Meadows",
+        "season": "Same window; the meadows camp holds water later into the season than snow patches by the lakes",
+        "notes": "The approach is identical as far as the Jerry Lakes basin and then forks on where you sleep. Camping at the lakes near 6,400 ft is the shorter day in and keeps water at the tent. Continuing over the notch just south of the lakes and dropping about six hundred feet into Crater Creek Basin puts camp in meadows near 6,000 ft north-west of Point 7,001 - a longer day in with a re-ascent at the end, but it starts summit day already on the right side of the notch and out of the wind.",
+        "baseFinding": "WHICHEVER CAMP YOU USE, THE ROUTE STARTS AT THE SAME PLACE: THE LEVEL SHOULDER ON THE SOUTHEAST RIDGE NEAR 7,000 TO 7,200 FT. From the lakes you reach it by crossing the notch south of the lakes and climbing back out of Crater Creek Basin; from the meadows camp you climb straight to it.\n\nTHE SHOULDER IS RECOGNISED BY BEING LEVEL. The ridge relents here into a flat step before it rears up again, and the ground to the west opens into the scree traverse under the face. If you are still climbing steadily with no let-up, you are below it.\n\nFROM THE SHOULDER THE SOUTH FACE GOES WEST AND DOWN-SLOPE OF THE CREST, ON SCREE AND DIRT, TOWARD SNOW PATCHES AND A SLUNG BOULDER UNDER A CONTINUOUS CLIFF BAND. If you find yourself scrambling directly up the crest above the shoulder you are on the Southeast Ridge line instead - a legitimate route, but not this one, and it has no slung boulder and no hidden chimney on it.",
+        "hazards": [
+          "a six hundred foot re-ascent out of Crater Creek Basin if you camp low",
+          "no water above the lakes or the meadows",
+          "exposed camps with weather coming over the crest",
+          "loose ground on the traverse under the face"
+        ]
+      }
+    ]
+  },
+  "wa_jack_mountain_southeast_ridge_direct": {
+    "area": "wa_jack_mountain",
+    "_why": "It shares every step of the South Face approach and then deliberately refuses the traverse that route makes - so the whole difference is one decision made at one shoulder.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_jack_mountain_south_face for the shared approach detail"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Canyon Creek trailhead, Crater Lake, and the traverse over the Jerry Glacier",
+        "season": "Mid-July through September, for dry rock on the crest and a crossable Jerry Glacier",
+        "notes": "Identical to the South Face as far as camp. From the Canyon Creek Trailhead near 1,900 ft, cross Canyon Creek - reported both as a log-and-plank crossing and as a ford with the bridge destroyed, so look at it before you commit - and grind up Trail #738's switchbacks through forest to the Crater Lake trail junction. Carry water from the creek; the hillside above has none. Continue past Crater Lake and up long exposed switchbacks, then leave the tread between about 6,700 and 7,200 ft and traverse to the saddle between Crater Mountain's summit and its east peak near 7,200 ft. Descend steep snow and the crevassed Jerry Glacier, cross the saddle above Jerry Lakes, and camp at the lakes near 6,400 ft or in the Crater Creek meadows near 6,000 ft.",
+        "baseFinding": "THE ROUTE IS THE CREST, AND THE TEST IS THAT YOU NEVER LEAVE IT. From camp climb to the level step on the southeast ridge at about 7,000 to 7,200 ft. That step is the start: the ridge above it is the route, and everything you climb from there should have ground falling away on BOTH sides of you.\n\nTHE NEGATIVE MARKER IS THE ONE THAT MATTERS HERE, BECAUSE THE WRONG TURN IS THE POPULAR ONE. From the same shoulder the South Face route turns WEST and makes a rising traverse on scree and dirt beneath the face, aiming for snow patches and a boulder with slings on it under a cliff band. IF YOU ARE WALKING SIDEWAYS ON SCREE WITH A WALL ABOVE YOU AND YOUR FEET IN A MOAT, YOU HAVE JOINED THE SOUTH FACE AND LEFT THIS ROUTE BEHIND. There is no slung boulder and no hidden chimney on the Direct.\n\nTHE POSITIVE TEST IS THE SHAPE OF THE GROUND UNDER YOUR HANDS: the crest gives continuous scrambling with occasional steps rather than a traverse across a face, and the exposure is symmetrical. When the crest throws up a step you cannot scramble, the answer is a short pitch on the crest or a brief turn on its flank, not a traverse that takes you a rope length or more away from it.\n\nA CROSS-CHECK HIGH ON THE ROUTE: near 8,600 ft the South Face rejoins the crest by way of a scree band beside a snow patch. If you are already on the crest well below that and stay on it, you and a South Face party will meet there having climbed two different mountains' worth of ground.",
+        "hazards": [
+          "the Canyon Creek crossing at the start",
+          "crevasses and steep neve on the Jerry Glacier both ways",
+          "loose blocks on the crest - the rock on this mountain pulls off freely",
+          "sustained exposure with rappels needed to reverse the steps",
+          "a long committing position with a multi-hour retreat to camp"
+        ]
+      },
+      {
+        "name": "Two camps at the end of the same approach: Jerry Lakes or Crater Creek Meadows",
+        "season": "Same window; the meadows hold running water later than the snow patches above the lakes",
+        "notes": "The fork is only about where you sleep. The lakes near 6,400 ft are the shorter day in with water at the tent. Crossing the notch just south of the lakes and dropping into Crater Creek Basin to camp in the meadows near 6,000 ft costs a descent and a re-ascent but starts summit day on the correct side of the notch, directly under the shoulder where the ridge is gained.",
+        "baseFinding": "BOTH CAMPS FEED THE SAME STARTING POINT - THE LEVEL STEP ON THE SOUTHEAST RIDGE BETWEEN ABOUT 7,000 AND 7,200 FT. From the lakes, cross the notch to the south and climb out of Crater Creek Basin to it; from the meadows, climb straight up to it.\n\nRECOGNISE THE STEP BY THE GROUND GOING FLAT. The ridge eases into a level shoulder before rearing up again, and that flat is where the climbing starts. If the angle has not relented, you are still below it.\n\nFROM THERE, STAY ON THE CREST. The moment the ground under you becomes a sidehill traverse on scree rather than a ridge with air on both sides, you have drifted onto the South Face's line beneath the cliff band. Turn back to the crest rather than continuing, because the two routes do not rejoin until near 8,600 ft.",
+        "hazards": [
+          "a six hundred foot re-ascent out of the basin from the meadows camp",
+          "no water above the lakes or meadows",
+          "wind-exposed camps",
+          "loose ground on the climb back to the shoulder"
+        ]
+      }
+    ]
+  },
+  "wa_jack_mountain_southwest_ridge": {
+    "area": "wa_jack_mountain",
+    "_why": "It leaves the same trailhead as the Nohokomeen route and then takes a different branch at a junction two and a half miles in - so the two parties walk together and then part at a fork neither can see from the car.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "The old Little Jack trail, taken as the rightmost branch of the junction on the East Bank Trail",
+        "season": "July through September, once the ridge is clear of snow and while the meadow water sources still run",
+        "notes": "Park at the Panther Creek and East Bank trailhead near milepost 138 at about 1,800 ft. Walk the East Bank Trail west for a little over two miles to a junction where several ways meet, and take the RIGHTMOST branch - this is the old Little Jack trail, cut a century ago to move pack animals up to the mountain's meadows, and it is neither signed nor maintained to the standard of the trail you have just left. It climbs steadily to Little Jack at about 6,745 ft, roughly four thousand eight hundred feet of gain from the junction. Water on the ridge is scarce and seasonal, so carry from low down rather than counting on the meadows.\n\nThis is the shortest line to the peak, and it is short in miles rather than in effort: the traverse from Little Jack to Jack is the part that takes the stamina.",
+        "baseFinding": "COUNT THE BRANCHES AT THE JUNCTION - THAT IS THE ONE NAVIGATION DECISION THE APPROACH ASKS OF YOU. Several ways meet a little over two miles along the East Bank Trail, and the Little Jack trail is the rightmost of them. A branch that keeps running level along the lake shore is the East Bank Trail continuing; a branch that starts climbing hard and does not stop is the one you want. IF YOU ARE STILL WALKING FLAT GROUND HALF AN HOUR PAST THE JUNCTION, YOU TOOK THE WRONG BRANCH.\n\nLITTLE JACK IS A SUMMIT AND IT IS NOT YOUR SUMMIT. The trail tops out on an open, meadowy high point at about 6,745 ft that was grazed rather than climbed - broad, grassy, and unmistakably the end of a graded pack trail. Reaching it means the trail's work is done, and everything beyond is cross-country on the crest.\n\nFROM LITTLE JACK, FOLLOW THE CREST NORTH TO THE NOTCH, THEN TRAVERSE ACROSS TO THE FOOT OF JACK'S SOUTHWEST RIDGE. The base you are looking for is where that traverse ends against the mountain proper and the ridge above you rises unbroken toward the summit. IF THE GROUND AHEAD OF YOU IS STILL ROLLING CREST WITH KNOLLS ON IT, YOU ARE BETWEEN THE TWO PEAKS AND NOT YET AT THE BASE; if you can see glacier ice below you on the far side, you have crossed too far around the mountain and are looking at the northern flank.\n\nTHE OTHER USEFUL CHECK IS UNDERFOOT: the pack trail is graded and evenly cut, the crest beyond Little Jack is not. If you are still on constructed tread, you have not yet left Little Jack behind.",
+        "hazards": [
+          "an unmaintained century-old pack trail that is easy to lose in the meadows",
+          "very little water once you leave the lake shore, and none reliable on the crest",
+          "a long exposed traverse between Little Jack and Jack with no bail-out",
+          "loose rock on Jack's ridge, and holds that pull",
+          "the descent reverses the whole traverse, so turnaround discipline matters more than usual here"
+        ]
+      }
+    ]
+  },
+  "wa_bear_mountain_chilliwack_north_buttress": {
+    "area": "wa_bear_mountain_chilliwack",
+    "_why": "Two countries offer approaches to the same wall and they are not interchangeable; and once at camp the route starts by going DOWN, which is where parties get it wrong.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_direct_north_buttress",
+      "web corroboration that the regular line takes the glacier on the buttress's climber's-left side"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Hannegan Pass and the Chilliwack River Trail to Bear Creek",
+        "season": "Late July through September, once the Chilliwack crossing has dropped and the buttress is dry",
+        "notes": "From the road end at about 3,100 ft, Trail #674 runs nearly level for the first mile and then climbs at a steady grade to Hannegan Pass at about 5,100 ft. Drop off the east side and continue down into the Chilliwack valley, bearing right at the park boundary onto the Chilliwack River Trail proper. The tread loses height past a backcountry camp to the Chilliwack River crossing - historically a hand-pulled cable car, and a serious ford if it is not running, so check its status before you plan around it - then runs down-valley past further camps to the Bear Creek confluence. The camp at that confluence has been closed since fire came through the drainage, so confirm it is open rather than assuming a bed there.\n\nAt Bear Creek the maintained trail ends. Ford the creek, which can be a genuinely committing crossing in snowmelt, and climb steep brushy timber eastward; higher the brush turns to huckleberry and slide alder before opening into meadows above Ruta Lake. Traverse the divide from there, skirting the loose south-facing slopes below two unnamed points and crossing a rock rib, to a broad saddle at about 6,480 ft with running water and heather tent sites. Most parties split this over two days.",
+        "baseFinding": "THE ROUTE BEGINS BY LOSING HEIGHT, AND THAT IS THE SINGLE MOST IMPORTANT THING TO KNOW AT CAMP. From the 6,480 ft saddle you drop down steep scree, trending climber's right, and cross several minor gullies to reach the toe of the small glacier remnant spilling out of the couloir below the buttress. ANY LINE THAT CLIMBS UPWARD FROM THE SADDLE TOWARD ROCK IS THE WRONG ONE.\n\nIDENTIFY THE SADDLE FIRST: it is broad, it has running water on it and flat heather sites, and it sits on the north-west ridge with the wall around the corner rather than above you. A saddle with no water and no camping is not it.\n\nAT THE ICE, THE POSITIVE TEST IS WHICH SIDE OF THE BUTTRESS YOU GO UP. This route climbs the glacier or neve on the CLIMBER'S-LEFT side of the buttress and then works into slabs that lead to a corner system - the corner is where the technical climbing starts. THE TOE OF THE BUTTRESS ITSELF, WHERE THE ROCK MEETS THE ICE ON THE RIGHT-HAND SIDE, IS THE START OF THE DIRECT AND NOT OF THIS ROUTE. If you are roping up at the very bottom of the rock rather than walking past it on snow, you are on the harder line.\n\nWATCH THE JOIN BETWEEN SNOW AND ROCK. A moat opens where the neve pulls away from the slabs and it deepens through the season; getting out of it onto the slabs is often the awkward move of the approach and it is worth an axe and crampons even in high summer.\n\nA CROSS-CHECK ONCE COMMITTED: the climbing above the corner runs up to about 5.10 with the hardest move an offwidth part-way up, and it finishes on the buttress top, from where a scramble gains the true summit. If your first pitch off the ice is already at your limit, you have started too low and too far right.",
+        "hazards": [
+          "a river crossing that depends on a cable car being in service",
+          "the Bear Creek ford in snowmelt",
+          "steep brushy timber and slide alder with no tread",
+          "loose south-facing traverse slopes below the divide points",
+          "rockfall and icefall out of the shrinking glacier in the couloir",
+          "a moat between neve and slab that worsens through the season",
+          "a position days from any road, on either side of the border"
+        ]
+      },
+      {
+        "name": "From the Chilliwack Lake road on the Canadian side",
+        "season": "Same window, and only with the paperwork in hand",
+        "notes": "There is a far shorter line to the same camp from the road on the Canadian side of the border - a fraction of the distance the Hannegan approach covers. It costs a legal border crossing, so passports and a plan for entering the country on foot are not optional, and the tread turns unmaintained and badly overgrown after the first mile or two, so the miles it saves are not all easy ones. Most parties starting in the United States take the long way rather than deal with it; parties already north of the border have the opposite calculation.",
+        "baseFinding": "THE APPROACH VARIANT CHANGES ONLY HOW YOU ARRIVE AT THE 6,480 FT SADDLE. Once there, everything is as for the long approach: the camp is the broad saddle with running water and heather sites on the north-west ridge, and the route starts by DROPPING off it on steep scree, trending climber's right, across several minor gullies to the toe of the glacier remnant beneath the couloir.\n\nTHE SAME TWO TESTS APPLY AT THE ICE. Go up the snow on the CLIMBER'S-LEFT side of the buttress into the slabs and the corner system. If you are tying in at the very toe of the rock where it meets the ice on the right, you are under the Direct.\n\nAND THE SAME NEGATIVE MARKER: gaining height straight from the saddle toward rock means you have not gone far enough down. The wall is below and around the corner from camp, not above it.",
+        "hazards": [
+          "an international border crossing on foot, with the documents and permissions that implies",
+          "unmaintained and heavily overgrown tread for most of the distance",
+          "the same loose divide traverse and the same glacier remnant beneath the buttress",
+          "a rescue that may involve two countries"
+        ]
+      }
+    ]
+  },
+  "wa_direct_north_buttress": {
+    "area": "wa_bear_mountain_chilliwack",
+    "_why": "It shares a camp and a walk-in with the regular North Buttress and then starts somewhere else entirely - on the opposite side of the same piece of ice.",
+    "_sources": [
+      "sibling row wa_bear_mountain_chilliwack_north_buttress for the approach (re-homed)",
+      "web corroboration that the toe of the direct buttress lies on the right of the glacier while the regular line continues up the glacier on the buttress's climber's left"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Hannegan Pass and the Chilliwack River Trail to Bear Creek",
+        "season": "Late July through September, for dry rock and a river crossing that is passable",
+        "notes": "From the road end at about 3,100 ft, Trail #674 climbs to Hannegan Pass near 5,100 ft, then drops off the east side into the Chilliwack valley, bearing right at the park boundary onto the Chilliwack River Trail. Past a backcountry camp the trail reaches the Chilliwack River crossing, historically a hand-pulled cable car and a serious ford without it, then continues down-valley to the Bear Creek confluence, where the maintained trail ends. The camp there has been closed since fire came through, so confirm rather than assume.\n\nFord Bear Creek, climb steep brushy timber east through huckleberry and slide alder into meadows above Ruta Lake, then traverse the divide - loose south-facing slopes below two unnamed points, and a rock rib - to the broad 6,480 ft saddle with running water and heather tent sites. Two days for most parties.",
+        "baseFinding": "THE DIRECT STARTS AT THE VERY BOTTOM OF THE ROCK, AND THAT IS WHAT SEPARATES IT FROM THE ROUTE IT SHARES A CAMP WITH. From the saddle you first go DOWN: steep scree trending climber's right, across several minor gullies, to the small glacier remnant filling the couloir below the wall.\n\nTHE TOE OF THE BUTTRESS LIES ON THE RIGHT-HAND SIDE OF THAT ICE, WHERE THE ROCK RUNS DOWN INTO THE SNOW. THAT JUNCTION IS THE START. You should be tying in with the whole buttress rising above you and no snow left to climb.\n\nTHE NEGATIVE MARKER IS UNAMBIGUOUS AND IT IS THE COMMON MISTAKE: THE REGULAR NORTH BUTTRESS WALKS PAST THIS TOE AND CONTINUES UP THE GLACIER ON THE BUTTRESS'S CLIMBER'S-LEFT SIDE, then moves onto slabs leading into a corner system well above the bottom of the rock. IF YOU ARE STILL WALKING ON SNOW WITH THE BUTTRESS RISING TO YOUR RIGHT, YOU HAVE WALKED PAST THE DIRECT AND ARE HEADING FOR THE REGULAR START. Turn round and go back to where rock meets ice.\n\nA SECOND CHECK IS HOW SOON IT GETS HARD. The Direct gives sustained climbing from low down, with an offwidth, thin cracks and steep crest pitches; the regular line gives a snow climb and slabs first. A long easy start means you are not on the Direct.\n\nWATCH THE MOAT AT THE JUNCTION. Where the neve has pulled away from the rock the gap deepens through the season and can be the hardest move of the day before any climbing has started.",
+        "hazards": [
+          "a river crossing dependent on a cable car being in service",
+          "the Bear Creek ford in snowmelt",
+          "steep brushy timber, slide alder, and a loose divide traverse",
+          "rockfall and icefall from the glacier remnant in the couloir",
+          "a deep moat at the toe of the buttress late in the season",
+          "sustained hard climbing days from the nearest road, with a descent onto the other side of the peak"
+        ]
+      },
+      {
+        "name": "From the Chilliwack Lake road on the Canadian side",
+        "season": "Same window, with passports",
+        "notes": "A much shorter walk to the same saddle camp exists from the road on the Canadian side, at the price of a legal border crossing on foot and an unmaintained, heavily overgrown tread after the first stretch. It is the natural choice for parties already north of the border and the awkward one for parties starting south of it.",
+        "baseFinding": "ARRIVAL DIFFERS, THE START DOES NOT. From the 6,480 ft saddle drop down steep scree trending climber's right, cross the minor gullies, and reach the glacier remnant under the couloir.\n\nTIE IN AT THE TOE OF THE ROCK ON THE RIGHT-HAND SIDE OF THE ICE, WHERE THE BUTTRESS RUNS DOWN INTO THE SNOW AND THERE IS NO MORE SNOW ABOVE YOU. If you find yourself climbing neve with the buttress on your right, you have passed the Direct's start and are on the regular route's line toward the slabs and corner.\n\nExpect the moat where snow has pulled back from the rock to be the first real obstacle, and expect the climbing to be hard immediately rather than after a snow lead.",
+        "hazards": [
+          "an international border crossing on foot",
+          "overgrown unmaintained tread",
+          "the same glacier remnant, moat and rockfall beneath the buttress",
+          "a cross-border rescue picture"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_southeast_face": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "Hozomeen has no road on the United States side, so the first decision is boat, gated border road, or a long trail from a different landing entirely - and the three put you on opposite sides of the massif.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling rows on the same peak for the alternate landings"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Water taxi up Ross Lake to the campground at the head of the lake",
+        "season": "July through September, once the brush is passable and the upper gullies have melted out",
+        "notes": "There is no public road to this end of the lake from the south. Drive to the trailhead near milepost 134, walk down to the resort, and take its water taxi north to the campground and ranger station at the head of the lake at about 1,650 ft. Everything below is measured from there.\n\nFrom the campground pick up the maintained lake-side trail, which climbs gently through open lush forest toward Hozomeen Lake. Reports differ on how far along it you should stay - anywhere from a mile and a half to four miles depending on where the party cut off - so budget for the longer figure. Leave the tread around 2,400 ft near the lake's outlet and start up cross-country, following the drainage east into the basin under the peak's south side. There is a genuinely bad brush section here: devil's club right at the creek crossing, and heavy deadfall from about 3,800 ft that reduces travel to a crawl. Fill water at the creek crossing or again in the basin near 5,000 ft, because everything above is dry.",
+        "baseFinding": "THE LADDER OF LANDMARKS ABOVE THE BASIN IS WHAT FIXES YOUR POSITION, AND THEY COME IN ORDER. Near 5,000 ft the drainage narrows into a boulder-choked gully with a bottleneck of large chockstones - IF YOUR GULLY HAS NO CHOCKSTONE BOTTLENECK IN IT, YOU ARE IN THE WRONG DRAINAGE and should traverse rather than climb. Above the chockstones the ground turns to tedious red scree and heather. The next confirmation is a striking slab wall at about 5,800 ft, passed rather than climbed. Above it the angle steepens to a broad saddle and basin near 6,800 ft with small flat tent-sized sites - the standard high camp, good for one or two tents and no more.\n\nFROM CAMP THE BASE OF THE ROUTE IS ANOTHER THOUSAND FEET OR SO ABOVE, GAINED ON SLABS AND CONNECTING GULLIES. You are looking for the point where the slabs run out against the face and the ridge proper takes over.\n\nCHECK WHICH SUMMIT IS ABOVE YOU. This route is on the SOUTH peak, which is the lower of the two main summits. If the tower above you is the higher, broader one and the other summit lies to the SOUTH of you, you have drifted north into the wrong cirque and are under the north peak.\n\nAND CHECK THAT YOU LEFT THE TRAIL AT ALL. The maintained tread is graded and obvious; the moment you are on it with easy walking under your feet, you are not on the approach any more. The departure is at a creek, at a lake outlet, not at a sign.",
+        "hazards": [
+          "a boat schedule that fixes both ends of the trip on a lake with no road out",
+          "devil's club at the creek crossing and heavy deadfall from about 3,800 ft",
+          "no water above the basin near 5,000 ft",
+          "a boulder-choked gully with chockstones to negotiate under a pack",
+          "loose, friable rock on the upper mountain",
+          "a tiny high camp that will not take a large party"
+        ]
+      },
+      {
+        "name": "By road from the north to the ranger station, subject to the border gate",
+        "season": "July through September, and only if the boundary is open",
+        "notes": "The campground and ranger station at the head of the lake can also be reached by driving a long gravel road south from the north side of the international boundary. That crossing has been closed to both vehicles and foot traffic, so this variant may simply not exist in the season you are planning for - confirm the gate's status before building a trip on it, because there is no way to discover it is shut except by arriving.\n\nIf it is open, the walk from the campground is identical to the boat variant: the maintained lake-side trail toward Hozomeen Lake, then off-trail at the outlet near 2,400 ft.",
+        "baseFinding": "ARRIVAL CHANGES, THE APPROACH DOES NOT. From the campground at about 1,650 ft the sequence is the same: maintained trail to the vicinity of Hozomeen Lake's outlet near 2,400 ft, then cross Hozomeen Creek and follow the drainage east into the south basin.\n\nTHE MARKERS ARE THE SAME LADDER, IN THE SAME ORDER: a boulder-choked gully with a bottleneck of large chockstones near 5,000 ft, red scree and heather above it, a striking slab wall at about 5,800 ft, and then a broad saddle and basin at about 6,800 ft with a few small flat tent sites. A drainage with no chockstone bottleneck is the wrong drainage.\n\nTHE SUMMIT TEST STILL APPLIES. This route is on the SOUTH peak, the lower of the two. If the higher, broader summit is directly above you and the other one lies south, you are under the north peak instead.",
+        "hazards": [
+          "a border gate that has been closed to vehicles and to walkers",
+          "a long gravel drive with no services at the end",
+          "the same devil's club, deadfall and dry upper slopes",
+          "loose rock and a small high camp"
+        ]
+      },
+      {
+        "name": "From the Lightning Creek landing on the lake's east shore, past Willow Lake",
+        "season": "July through September",
+        "notes": "A boat landing further down the east shore of the lake gives onto the east-bank trail system, which runs north past Willow Lake. Parties have used this to reach the south and south-east sides of the massif on foot rather than starting from the campground at the head of the lake. It is the longer walk of the two boat options and it approaches the peak from the south-east rather than from the west, so it suits parties heading for the south-east side of the south peak more than it suits the standard line.",
+        "baseFinding": "THE DEPARTURE FROM THE TRAIL IS JUST BEYOND WILLOW LAKE, AND THE LAKE IS THE MARKER. It is the last reliable water; everything above is dry until the basin, so this is where you fill.\n\nFROM THERE THE GROUND IS THE TEST RATHER THAN ANY TREAD: timber and avalanche debris first, then a ravine to cross, then steep dirt and brush climbing to open timber on the broad shoulder south of the peak. Reaching MEADOWS near 5,000 ft is the sign the worst of the brush is behind you.\n\nABOVE THE MEADOWS THE CLIFF BANDS ARE BYPASSED, NOT CLIMBED. If you are forced onto rock that wants a rope, traverse and look for the way round rather than committing to it - the way through here is a walking line, not a climbing one.\n\nTHE ARRIVAL IS A SADDLE AT ABOUT 6,200 FT DIRECTLY BENEATH THE BUTTRESS on the peak's south-east side, with no water on it. IF YOU HAVE ARRIVED SOMEWHERE WITH RUNNING WATER, YOU ARE NOT THERE YET. From that saddle the standard south-east face and the south-east buttress lines are both above you, so identify which feature you are under before starting up.",
+        "hazards": [
+          "a much longer walk than the head-of-lake landing",
+          "timber, avalanche debris and a ravine crossing with no tread",
+          "steep dirt and brush below the shoulder",
+          "no water between Willow Lake and the basin",
+          "cliff bands that must be bypassed in poor visibility"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_south_peak_southwest_route": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "It leaves the same trail as the standard south-side line but turns into a different basin, and the row that describes it is brief enough that a party would otherwise be guessing.",
+    "_sources": [
+      "route row approach column (re-homed)",
+      "sibling row wa_hozomeen_mountain_southeast_face for the shared trail and creek crossing"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "The lake-side trail from the campground, leaving it at the Hozomeen Lake outlet for the west basin",
+        "season": "July through September, once the west basin has melted out",
+        "notes": "From the campground and trailhead at roughly 1,650 to 1,720 ft, a maintained trail runs toward Hozomeen Lake. Climbers leave it near the lake's outlet, cross Hozomeen Creek, and push east into the peak's west basin through heavy deadfall and devil's club - the brush here is the defining feature of the approach rather than an incidental one. The basin gives onto a rib and gully system that leads to a high camp or bivouac around 4,900 to 5,000 ft, and above that to a saddle reported near 6,800 ft below the final pitches.\n\nGetting to the campground itself is the trip's first problem: either the resort water taxi up the lake, or the long gravel road down from the north side of the boundary, which has been closed to vehicles and walkers alike. Settle that before anything else.",
+        "baseFinding": "THE WEST BASIN IS ENTERED AT A CREEK CROSSING, NOT AT A VIEWPOINT. Leave the maintained trail near the outlet of Hozomeen Lake and cross Hozomeen Creek; if you are still on graded tread you have not left yet, and if you have not crossed water you are on the wrong side of the drainage.\n\nTHE BASIN ITSELF IS RECOGNISED BY WHAT STOPS: the deadfall and devil's club that define the lower push give out as the ground steepens into a rib and gully system. THAT RIB IS THE LINE - a gully with no rib beside it to escape onto is not the one, because the way up here uses both.\n\nTHE FIRST FIXED POINT IS THE BIVOUAC GROUND AT ABOUT 4,900 TO 5,000 FT, where the rib eases enough to lie down on. Above it the system continues to a saddle at roughly 6,800 ft, and that saddle is the base: the final pitches start from it.\n\nCHECK THE PEAK ABOVE YOU BEFORE COMMITTING. This is a route on the SOUTH peak, which is the lower of the two main summits. IF THE SUMMIT ABOVE YOU IS THE HIGHER, BROADER ONE AND THE OTHER LIES TO THE SOUTH, YOU HAVE GONE TOO FAR NORTH AND ARE IN THE NORTH PEAK'S GROUND. The connecting ridge between the two is notoriously rotten and is not a way to correct the error from above; go back down and around.",
+        "hazards": [
+          "heavy deadfall and devil's club through the whole lower basin",
+          "a creek crossing to enter the basin",
+          "loose rock on the rib and gully system",
+          "an exposed high bivouac with limited flat ground",
+          "reaching the trailhead at all, which depends on a boat schedule or a closed border gate"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_south_peak_southeast_buttress": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "It is the one line on the massif approached from the lake's east shore rather than its head, so a party using the usual campground start is on the wrong side of the mountain from the outset.",
+    "_sources": [
+      "route row approach and waypoint columns (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Lightning Creek landing and the east-bank trail past Willow Lake",
+        "season": "July through September",
+        "notes": "Take the boat landing on the lake's east shore rather than continuing to the head of the lake, and pick up the east-bank trail there. Follow it north past Willow Lake, which is the last reliable water. Beyond the lake the trail is left behind and the travel becomes timber and avalanche debris, a ravine to cross, and then steep dirt and brush up to open timber on the broad shoulder south of the peak. Meadows near 5,000 ft mark the end of the worst of it. From the meadows the cliff bands are bypassed on their west side rather than forced, and the ground leads to a saddle at about 6,200 ft directly beneath the buttress. The first ascent party bivouacked there, roughly six hours from the landing, and there is no water on it.",
+        "baseFinding": "WILLOW LAKE IS THE POINT OF DEPARTURE AND THE LAST WATER - FILL THERE, BECAUSE NOTHING ABOVE RUNS. Leave the trail just beyond it and turn east.\n\nTHE SEQUENCE UNDERFOOT IS THE NAVIGATION: timber and avalanche debris, then A RAVINE THAT MUST BE CROSSED, then steep dirt and brush. IF YOU HAVE NOT CROSSED A RAVINE, YOU HAVE NOT YET COMMITTED TO THE RIGHT LINE. Above the brush the timber opens onto a broad shoulder and then meadows near 5,000 ft.\n\nTHE CLIFF BANDS ARE PASSED ON THEIR WEST SIDE. Anything that wants a rope on this section means you have run into the band rather than round it.\n\nTHE BASE IS A DRY SADDLE AT ABOUT 6,200 FT WITH THE BUTTRESS DIRECTLY ABOVE IT. Two confirmations: the buttress above you is DIVIDED rather than a single clean rib, and the way onto it starts with a steep chimney low down - a face with no chimney at its foot is not this buttress. If your saddle has running water on it you are somewhere else, because this one has none.\n\nAND CHECK THE PEAK: this is the SOUTH peak, the lower of the two summits. The higher, broader summit should be to the north of you, not above you.",
+        "hazards": [
+          "the longest walk-in of the massif's options",
+          "avalanche debris and a ravine crossing with no tread",
+          "steep dirt and brush below the shoulder",
+          "no water above Willow Lake, and a dry bivouac at the saddle",
+          "friable rock on the buttress with scarce protection",
+          "a loose upper gully above the crux chimney"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_north_peak_north_route": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "The north peak is reached from the campground by a west-flank bushwhack that shares nothing with the south peak's basin, and the party has to know which side of the massif it is committing to before leaving the water.",
+    "_sources": [
+      "route row approach column (re-homed)",
+      "sibling row wa_hozomeen_mountain_northeast_buttress for the alternative from the north"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "The short loop trail at the ranger station, then the west flank to the heather knoll",
+        "season": "July through September, once the west flank is clear of snow",
+        "notes": "Start at the ranger station at the head of the lake at about 1,600 ft and pick up the short interpretive loop that begins there. Leave it eastward, cross Howlett Creek, and climb cross-country through moderately open forest on the mountain's western flank. There is no trail above the loop.\n\nThe forest goes reasonably on the way up and badly on the way down: parties consistently report dense brush and jackstraw deadfall as the time sink of the descent rather than of the ascent, so mark your line as you climb rather than trusting to memory.",
+        "baseFinding": "THE ARRIVAL IS A CHANGE OF VEGETATION, NOT A CHANGE OF ANGLE. Climb the west flank until the timber gives out onto a HEATHERY KNOLL at about 5,900 ft. That knoll is where the north ridge is gained and where the route starts. IF YOU ARE STILL IN TIMBER, OR IN JACKSTRAW DEADFALL AND BRUSH, YOU ARE BELOW IT - the knoll is open ground and unmistakable when you reach it.\n\nTHE RIDGE ABOVE THE KNOLL IS THE ROUTE, AND IT SHOULD HAVE AIR ON BOTH SIDES. If you are climbing a face with the crest still above you and to one side, you have gained the flank rather than the ridge and should traverse to the crest before continuing.\n\nCHECK WHICH SUMMIT YOU ARE UNDER. This is the NORTH peak, the higher and broader of the two main summits. THE OTHER SUMMIT SHOULD BE TO THE SOUTH OF YOU. If the higher ground lies north and you are looking up at a tower with a rotten connecting ridge running toward it, you are on the south peak's flank instead, and the ridge between them is not a way to correct that - it is a notoriously rotten traverse that parties deliberately avoid.\n\nA CROSS-CHECK ON THE DESCENT: you must find the knoll again to get back into the correct drainage. From above, the flank is uniform timber in every direction, and the drainage you came up is only identifiable from the knoll's position. Fix it before you leave it.",
+        "hazards": [
+          "no trail above the interpretive loop, and a descent through jackstraw deadfall and brush that is far slower than the ascent",
+          "a creek crossing at Howlett Creek",
+          "route-finding on a uniform forested flank with no landmarks below the knoll",
+          "steep snowfields low on the route in early season",
+          "loose class 3 and 4 rock on the ridge above",
+          "reaching the ranger station at all depends on a boat or on a closed border gate"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_northeast_buttress": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "Two ways reach the same north cirque and one of them saves miles and costs hours - and both start on the far side of an international boundary whose gate may be shut.",
+    "_sources": [
+      "route row approach column (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "The long way: the ridge trail from the north to a camp near the boundary high point",
+        "season": "July through September; the gravel road governs the season at its own end",
+        "notes": "There is no road to this peak from the south. From the highway on the north side of the boundary, follow the valley road south on gravel through the provincial park to the trailhead - a slow drive of well over an hour. Confirm the boundary gate's status before planning: the crossing at Hozomeen has been closed to both vehicle and foot traffic.\n\nFrom the trailhead, climb roughly four thousand feet on trail to the ridge junction, then turn south along the ridge over rolling ground to a camp near the boundary high point at about 6,345 ft. Take water from the three creeks in the forest below the ridge, because there is none again until you are well south of the boundary.",
+        "baseFinding": "FROM CAMP THE ROUTE STARTS BY LOSING HEIGHT - ABOUT 545 FT DOWN TO THE 5,800 FT SADDLE AT THE HEAD OF THE NORTH CIRQUE. ANY LINE THAT CLIMBS FROM THE CAMP IS THE WRONG WAY. The saddle is the low point at the head of a bowl, with the cirque falling away in front of you and the buttress rising on its far side.\n\nRECOGNISE THE CIRQUE BY ITS SHAPE: it is an enclosed bowl beneath the north side of the peak, not an open flank. If the ground ahead of you drops away into a valley rather than into a bowl with walls around it, you have gone off the ridge too early or too late.\n\nTHE BUTTRESS IS ON THE NORTH-EAST SIDE, so from the saddle it should stand between you and the sun in the middle of the day rather than in it. A wall you approach in full afternoon sun is on the wrong aspect.\n\nCHECK THE PEAK: this is the NORTH summit, the higher and broader of the two. The other main summit should lie to the south, connected by a rotten ridge that is not a usable link between them.\n\nWATER IS THE OTHER FIXED POINT. The last of it is the creeks in the forest below the ridge junction, well before camp. If you have passed those without filling, the correct move is to go back for water rather than to press on to a dry camp above a dry cirque.",
+        "hazards": [
+          "a boundary crossing that has been closed to vehicles and to walkers",
+          "a long gravel drive with no services",
+          "no water south of the creeks below the ridge junction",
+          "an exposed ridge camp",
+          "a 545 ft descent from camp that must be re-climbed at the end of the day",
+          "loose rock on the buttress"
+        ]
+      },
+      {
+        "name": "The short way: the border swath from the ranger station",
+        "season": "July through September, and slower than its distance suggests",
+        "notes": "A much shorter start leaves from the ranger station at the head of the lake, follows the short interpretive loop, and then bushwhacks east up the overgrown boundary swath, past a swamp, gaining about three thousand feet to a col near 6,300 ft where it joins the ridge. It saves miles and costs hours - the swath is overgrown rather than cleared, and the ground is steep and brushy. Reaching the ranger station itself means either the water taxi up the lake or the gated road from the north.",
+        "baseFinding": "THE SWATH IS THE HANDRAIL - IT IS A CLEARED LINE THROUGH FOREST THAT RUNS EAST, AND IF YOU ARE NOT ON IT YOU ARE NOT ON THE APPROACH. It is overgrown, so it looks like brush rather than like a corridor from inside it; the tell is that it is straight, and it does not wander with the terrain the way a game trail does.\n\nA SWAMP IS PASSED LOW DOWN. Reaching it confirms the line; never reaching it means you have drifted off the swath into ordinary forest.\n\nTHE JOIN IS A COL NEAR 6,300 FT, roughly three thousand feet above the start, where the swath's climbing ends against the ridge. From there the route is the same as the long approach: work along to the saddle at the head of the north cirque near 5,800 ft, WHICH MEANS LOSING HEIGHT AGAIN, and the buttress stands on the far side of the bowl.\n\nIF YOU ARRIVE ON A RIDGE AND THE GROUND BEYOND IS AN OPEN VALLEY RATHER THAN AN ENCLOSED BOWL, YOU ARE AT THE WRONG COL. The cirque is walled; the valley is not.",
+        "hazards": [
+          "an overgrown boundary swath that is steep, brushy and slow",
+          "a swamp low on the line",
+          "three thousand feet of unrelenting bushwhacking with no tread",
+          "no water on the upper half",
+          "reaching the ranger station depends on a boat schedule or a closed border gate"
+        ]
+      }
+    ]
+  },
+  "wa_hozomeen_mountain_west_face": {
+    "area": "wa_hozomeen_mountain",
+    "_why": "The approach from camp to the foot of this wall is a half-day objective of its own and it goes DOWN a loose gully first - the row says so, and nothing else on the peak does.",
+    "_sources": [
+      "route row approach column (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Ridge camp north of the peak, then the traverse down and across to the foot of the wall",
+        "season": "Mid-summer, and the base approach should be done in daylight",
+        "notes": "Two stages, and the second is what stops people. The first is a long day of eleven miles and more under heavy loads from the road on the north side of the boundary to a camp just north of the peak - the same ridge and boundary-swath ground the north-side routes use. Confirm the boundary gate's status before planning any of it.\n\nThe second stage is the approach from that camp to the base of the wall, which the first ascent party found tedious and painstaking and which took them four and a half hours. Budget it as a half-day objective in its own right and do it in daylight; there is no version of this traverse that goes well in the dark.",
+        "baseFinding": "THE FIRST MOVE OUT OF CAMP IS A DOWNCLIMB, NOT A CLIMB. A loose third-class gully drops from the ridge camp toward the west side, and the party who first did it called it dangerous but the lesser of two evils - meaning the alternatives were worse, not that the gully is good. IF YOU ARE GAINING HEIGHT ON LEAVING CAMP, YOU ARE ON THE WRONG SIDE OF THE RIDGE.\n\nBELOW THE GULLY THE TRAVERSE IS THE ROUTE-FINDING: SEVERAL PRECIPITOUS ROCKY RIBS, CROSSED ONE AFTER ANOTHER, ON STEEP UNSTABLE GROUND. Counting ribs is the only progress measure you have. A traverse that stays on one continuous slope without crossing ribs is not this one - it means you have dropped too far and are below the line, on ground that leads away from the wall rather than across to it.\n\nTHE ARRIVAL IS A LAUNCH POINT BENEATH THE WALL, with the face rising directly above and no further traversing to do. THE WALL FACES WEST, so it takes the afternoon sun and stands in shadow in the morning - if the face above you is lit at dawn, you are on the wrong aspect and have crossed too far around the peak.\n\nTIMING IS PART OF THE NAVIGATION HERE. Four and a half hours from camp to the base means a party that leaves at first light arrives late morning; a party that leaves late arrives with the wall in full sun and the loose ground behind them to reverse in the dark.",
+        "hazards": [
+          "a loose third-class gully downclimbed at the start of the day, and re-climbed at the end of it",
+          "several precipitous rock ribs on steep unstable ground",
+          "a base approach long enough to be its own objective",
+          "a west aspect that takes afternoon sun and afternoon rockfall",
+          "a boundary gate that has been closed to vehicles and walkers",
+          "a remote position with a heavy carry to camp"
+        ]
+      }
+    ]
+  },
+  "wa_mount_spickard_southwest": {
+    "area": "wa_mount_spickard",
+    "_why": "Two approaches from two different countries reach two different camps on opposite sides of the peak, and the point where you leave the drainage is before a saddle rather than at it.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_mount_spickard_silver_glacier for the lake-side alternative"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Depot Creek from the north side of the border to the lake camp",
+        "season": "Late July through September, for a crossable glacier and a passable creek",
+        "notes": "From the road washout at about 2,600 ft, reached by a rough spur off the lake road on the Canadian side, walk the old roadbed about nine minutes to an inconspicuous spur on the left, follow that spur four minutes to a T-junction, and bear right onto an extremely overgrown and sporadically muddy road for about thirty-five minutes. That brings you to the boundary obelisk, where there is a register - carry a passport, because this approach crosses the international border on foot.\n\nAbove the boundary the way becomes a crude but discernible climbers' path along the creek through old growth, easy where deadfall has been cut and full of uncut logs where it has not. About three miles in it reaches the falls, which are the real crux of the approach: wet slick boulders and slabs at their base, with steep steps rigged with an old fixed hand-line. Treat the line as an aid rather than as protection, and back it up with a heavy pack on.\n\nAbove the falls the path continues through meadow and upper valley to the lake at roughly 5,700 ft - flat sandy mostly treeless benches at the toe of the talus, the standard base camp for this peak and its neighbour, with reliable water.",
+        "baseFinding": "THE CRITICAL INSTRUCTION IS THAT YOU LEAVE THE DRAINAGE BEFORE THE PASS, NOT AT IT. From camp, ascend the broad talus couloir and stream drainage north to north-east toward the saddle at roughly 7,200 ft - but WELL BEFORE reaching that saddle, cut RIGHT around the toe of a steep rocky buttress into open heather and moraine basins.\n\nTHE NEGATIVE MARKER IS EXACT AND EASY TO USE: IF YOU HAVE ARRIVED AT THE SADDLE AND ARE LOOKING DOWN INTO THE CIRQUE ON THE FAR SIDE, YOU HAVE GONE TOO FAR. Go back down and find the buttress toe.\n\nTHE BUTTRESS TOE IS THE FEATURE - a steep rock nose that the couloir runs past on its left. Turning its foot puts you into open heather and moraine, which is different ground from the couloir you have been climbing, and that change underfoot is the confirmation.\n\nTHE BASE IS THE TOE OF THE SOUTH-WEST GLACIER, reached by traversing those basins. Rope up and put crampons on there rather than part-way across. THE LINE UP THE ICE IS ITS CLIMBER'S-RIGHT MARGIN, which holds hard snow and ice at thirty to forty degrees and relatively few crevasses; about half-way up, one poor-looking crevasse has to be crossed on a marginal bridge, so probe it and expect it to be worse late in the season.\n\nCONFIRM AT THE TOP OF THE ICE: a short steep loose rock gully at the glacier's head tops out on a low col on the south-west ridge, above the cirque. That col is where the summit scramble starts. If the ice runs you out onto a broad snow shoulder with no gully and no col, you have taken the glacier's centre or its left side instead of its right margin.",
+        "hazards": [
+          "an international border crossing on foot, with a register at the obelisk",
+          "a road that washes out and lengthens the walk without warning",
+          "wet slick boulders and slabs at the base of the falls, with an old fixed hand-line of unknown condition",
+          "crevasses on the south-west glacier and one marginal snow bridge on the standard line",
+          "a short steep loose gully at the head of the glacier",
+          "thirty-five to forty degree snow near the summit ridge"
+        ]
+      },
+      {
+        "name": "From Ross Lake by boat and up Silver Creek to the lake basin",
+        "season": "Late July through September, once the boat is running and the cross-country is clear of snow",
+        "notes": "The other side of the mountain is reached without leaving the United States. A booked water taxi runs a long way up Ross Lake to a drop at the mouth of Silver Creek at about 1,600 ft. A trail climbs the north side of the creek for roughly two and a half miles to an old cabin at about 2,900 ft, above which the way is cross-country with occasional blazes across slide alder and forest slopes to the camp in the Silver Lake basin at about 6,763 ft.\n\nThis puts you on the opposite side of the peak from the Depot Creek camp, so it changes which col you reach and in what order - plan the climb from this camp rather than translating a description written from the other one.",
+        "baseFinding": "THE OLD CABIN AT ABOUT 2,900 FT IS THE PROOF YOU ARE ON THE RIGHT SIDE OF THE CREEK. The trail climbs the NORTH side; if you have not passed a cabin by the time the trail gives out, you are on the wrong bank and should cross before the cross-country starts, not after.\n\nABOVE THE CABIN THE MARKERS ARE OCCASIONAL BLAZES ON TREES rather than tread. Blazes that stop appearing mean you have drifted; the slide alder will let you keep going anyway, which is why this is worth checking rather than assuming.\n\nTHE CAMP IS THE LAKE BASIN AT ABOUT 6,763 FT, and from it the route to this peak's south-west side goes up and over toward the col between it and its neighbour to the north-west.\n\nBE CLEAR WHICH ROUTE YOU ARE ON WHEN YOU ARRIVE. From this side the natural line gains the col at about 7,380 ft between the two peaks, which is where the glacier route on the north side starts. THE SOUTH-WEST ROUTE INSTEAD WANTS THE TOE OF THE SOUTH-WEST GLACIER, WHICH IS REACHED BY TRAVERSING INTO OPEN HEATHER AND MORAINE BASINS ROUND THE TOE OF A ROCK BUTTRESS, NOT BY GAINING A COL. If you find yourself standing in a saddle between two summits, you are on the other route's start.",
+        "hazards": [
+          "a booked boat on a lake with no road out, fixing both ends of the trip",
+          "slide alder and unmarked cross-country above the cabin",
+          "a long carry to a high camp",
+          "crevasses on the glaciers either side of the divide",
+          "a camp position that makes descriptions written from the other approach misleading"
+        ]
+      }
+    ]
+  },
+  "wa_mount_spickard_silver_glacier": {
+    "area": "wa_mount_spickard",
+    "_why": "This route starts at a col rather than on a face, and the two camps that reach it sit on opposite sides of the mountain in different countries.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_mount_spickard_southwest for the Depot Creek detail"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "From Ross Lake by boat and up Silver Creek to the lake basin camp",
+        "season": "Late July through September",
+        "notes": "Book a water taxi for the long run up Ross Lake and get dropped at the mouth of Silver Creek at about 1,600 ft. A trail climbs the north side of the creek roughly two and a half miles to an old cabin at about 2,900 ft; above that the route is cross-country with occasional blazes, across slide alder and forest slopes, to the camp in the Silver Lake basin at about 6,763 ft. This is the shorter side for this particular route and it keeps the whole trip inside the United States, at the cost of depending on a boat.",
+        "baseFinding": "THE ROUTE STARTS AT A COL, NOT ON A FACE, AND THE COL IS BETWEEN TWO PEAKS. From the lake basin camp, gain the WIDE GULLY ON THE NORTH SIDE OF THE SADDLE and climb it to the col at about 7,380 ft between this peak and its neighbour to the north-west. The glacier route begins there.\n\nRECOGNISE THE COL BY WHAT IS ON BOTH SIDES OF IT. You should be standing in a gap with a summit rising to either hand and ground falling away in front and behind. IF THE MOUNTAIN IS ABOVE YOU AND THERE IS NOTHING BEHIND YOU BUT THE SLOPE YOU CAME UP, YOU ARE ON A SHOULDER RATHER THAN THE COL.\n\nTHE GULLY IS THE POSITIVE MARKER ON THE WAY UP - a wide one, on the NORTH side of the saddle. A narrow gully, or one on the south side, is a different line.\n\nAND THE NEGATIVE MARKER THAT MATTERS MOST: THE SOUTH-WEST ROUTE ON THIS PEAK STARTS AT THE TOE OF A DIFFERENT GLACIER ON THE OTHER FLANK, reached by traversing round a rock buttress into heather and moraine basins rather than by gaining any col. If you are roping up at the foot of an icefall with no saddle in sight, you have started the other route.",
+        "hazards": [
+          "a booked boat on a lake with no road out",
+          "slide alder and unmarked cross-country above the old cabin",
+          "crevasses on the glacier above the col",
+          "a wide gully that collects anything falling from the slopes above it",
+          "a high camp with a long committing retreat"
+        ]
+      },
+      {
+        "name": "Depot Creek from the north side of the border, over the col between the two peaks",
+        "season": "Late July through September, and only with passports",
+        "notes": "The other way in starts on the Canadian side: a rough spur off the lake road to a washout at about 2,600 ft, an overgrown roadbed to the boundary obelisk and register, and then the climbers' path up the creek through old growth to the falls, whose wet slabs and old fixed hand-line are the crux of the walk-in. Above them the path leads to the lake camp at about 5,700 ft. From that camp the way to this route climbs toward and over the col between the two peaks rather than onto the south-west side.",
+        "baseFinding": "FROM THE DEPOT CREEK CAMP YOU ARE APPROACHING THE COL FROM THE OPPOSITE SIDE, so descriptions written from the other camp will have the gully and the col in the wrong relative positions - read the ground rather than the page.\n\nTHE FIXED POINT IS THE SAME: THE COL AT ABOUT 7,380 FT BETWEEN THIS PEAK AND ITS NEIGHBOUR TO THE NORTH-WEST. It is a gap with a summit on either hand and the glacier beyond. The wide gully on the col's north side is the connection to the basin on the far side.\n\nTHE TEST THAT YOU ARE AT THE RIGHT GAP is that BOTH summits are identifiable from it, and that the ice you are about to climb runs away from the col rather than up to it. A notch with only one summit beside it, or with no glacier beyond, is a different gap on the same ridge.\n\nDO NOT CONFUSE THIS START WITH THE SOUTH-WEST ROUTE, WHICH LEAVES THE SAME CAMP. That route turns right around the toe of a rock buttress well before any saddle and ropes up at the toe of a glacier on the other flank. IF YOU HAVE NOT GAINED A COL, YOU ARE NOT ON THIS ROUTE.",
+        "hazards": [
+          "an international border crossing on foot",
+          "wet slabs and an old fixed hand-line at the falls",
+          "an overgrown approach road that washes out",
+          "crevasses on the ice above the col",
+          "two routes leaving one camp, with the wrong turn costing a day"
+        ]
+      }
+    ]
+  },
+  "wa_southeast_mox_peak_se_rib": {
+    "area": "wa_southeast_mox_peak",
+    "_why": "There are two Mox summits side by side and the col between them is where parties commit to the wrong one; the approach is also long enough that the camp choice changes the shape of summit day.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Depot Creek from the north side of the border to the lake camp",
+        "season": "Late July through September, when the talus is out and the glacier is still bridged",
+        "notes": "From the parking on the abandoned logging spur off the lake road on the Canadian side at roughly 2,350 ft, walk the old roadway grade uphill, taking the left-hand fork, about a mile to the boundary marker, where you cross into the park and should sign in at the kiosk. Carry a passport.\n\nFrom there the way is an unmaintained, unmarked climbers' path through old growth for roughly three miles to the base of the falls - one of the tallest in the state - where the path climbs steep, often wet and slippery slabs along their left edge. A fixed handline is present at the crux scramble and this is the approach's main technical hazard: exposed greasy rock, far worse in the wet and worse again in the dark, and several parties have lost the tread here at night.\n\nAbove the falls the path eases through scrubby subalpine forest onto a broad outwash plain and reaches treeline, where most parties change into mountaineering boots. Class 3 tread gains roughly eight hundred feet into the glacier basin, where the lake is the usual first camp.",
+        "baseFinding": "THE COL BETWEEN THE TWO MOX SUMMITS IS THE WHOLE NAVIGATION, AND THE TRAP IS THAT THERE ARE TWO SUMMITS. From high camp, traverse east across snow and glacier beneath the southern side of the western summit toward the saddle between the two peaks, finishing with a steep thousand-foot climb over notoriously unstable sandy talus - helmets on well before the col.\n\nAT THE COL, CHECK WHICH TOWER YOU ARE UNDER. THIS ROUTE IS ON THE EASTERN SUMMIT, WHICH IS THE HARDER AND HIGHER OF THE PAIR. IF THE PEAK ABOVE YOU IS THE ONE YOU TRAVERSED BENEATH ON THE WAY IN, YOU ARE FACING THE WESTERN SUMMIT AND HAVE TURNED THE WRONG WAY OUT OF THE SADDLE.\n\nTHE SEQUENCE ABOVE THE COL IS A LADDER OF SPECIFIC SHAPES, IN ORDER, AND IT IS HOW YOU KNOW YOU ARE RIGHT: a ramp leading RIGHT past a snow patch into a gully; then class 4 scrambling up and right, exposed enough that many parties belay it, toward a notch in a ridge of gendarmes; then a short sequence of ledges that zig-zag right, left, right through that notch; then a brief DESCENT to a small flat area. THE FLAT SPOT AFTER A DOWNCLIMB IS THE CONFIRMATION - a line that only ever goes up has missed the notch.\n\nFROM THAT FLAT AREA, LOCATE THE CORRECT GULLY LEADING TO A HIGH NOTCH ON THE WEST RIDGE. That notch is where the roped climbing starts: two pitches of fifth class to the summit tower, then a short exposed scramble, kept roped, to the top. IF YOU ARE UNCOILING A ROPE AT THE COL ITSELF, YOU ARE HUNDREDS OF FEET TOO LOW.\n\nCarry water from camp. The glacier and the lake supply it below; the upper ridge does not.",
+        "hazards": [
+          "an international border crossing on foot with a register at the boundary",
+          "steep wet slabs beside the falls with a fixed handline of unknown condition, and a tread that parties lose in the dark",
+          "crevasses on the glacier, usually minor and avoidable in normal late-season conditions",
+          "a thousand feet of unstable sandy talus below the col, which is the dominant hazard of the upper approach",
+          "exposed class 4 ground on loose rock above the col that many parties belay",
+          "no water above camp"
+        ]
+      },
+      {
+        "name": "Two camps: the lake basin or the glacier saddle above it",
+        "season": "Same window; the higher camp is only worth it once the glacier is reasonable",
+        "notes": "The lake in the glacier basin is the common first camp and has water. Most parties then move camp three or four hours further up onto the glacier saddle at about 7,150 ft, which is flat glacier travel with minor and usually avoidable crevasse hazard in normal late-season conditions, and which puts the party far closer to the peaks for summit day. The trade is an exposed camp on ice with weather and visibility to consider, and a second carry.",
+        "baseFinding": "FROM EITHER CAMP THE ROUTE MEETS AT THE SAME PLACE: THE SADDLE BETWEEN THE TWO MOX SUMMITS, gained by traversing east beneath the western peak's southern side and then climbing a steep thousand feet of loose sandy talus.\n\nTHE HIGH CAMP'S OWN MARKER IS THAT IT SITS ON ROCK OUTCROPS AT THE GLACIER'S EDGE at the top of a broken buttress, rather than on open ice. Rope up there for the crevassed travel beyond; visibility on this ground is often poor, and the saddle is not visible from camp.\n\nAT THE SADDLE, THE SUMMIT YOU WANT IS THE EASTERN ONE - the higher and harder of the pair. The western summit is the one you traversed beneath on the way in, so if the tower above you is on the side you came from, you have turned the wrong way.\n\nTHE CONFIRMATION SEQUENCE IS THE SAME LADDER: ramp right past a snow patch into a gully, class 4 up and right to a notch in the gendarme ridge, ledges zig-zagging right-left-right through it, then a short DOWNCLIMB to a small flat area, and only then the gully to the high notch on the west ridge where the rope comes out.",
+        "hazards": [
+          "an exposed camp on the glacier edge with poor visibility common",
+          "a second carry to move camp",
+          "crevassed travel between the two camps",
+          "the same loose talus and exposed class 4 above the col",
+          "no water above the lake basin"
+        ]
+      }
+    ]
+  },
+  "wa_the_devils_club": {
+    "area": "wa_southeast_mox_peak",
+    "_why": "This face is approached from the opposite side of the range from every other route on the peak, and the choice of which bank of the creek to travel is the approach's only real decision.",
+    "_sources": [
+      "route row approach column (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Ross Lake to the Little Beaver landing, then the Perry Creek drainage",
+        "season": "Midsummer through early autumn; the creek travel is the governing factor rather than the climbing",
+        "notes": "Access starts on the water. From the trailhead near milepost 134 walk down to the resort and take its water taxi, or paddle, a long way up the lake to the dock at its northern end. From the dock follow the maintained but lightly travelled valley trail west, through cedar and fir with several brushy meadows and creek crossings, to a camp with a three-sided log shelter - the effective end of maintained tread for climbers headed toward this massif.\n\nBeyond the shelter there is no trail. This is a genuinely serious approach and not a formality: the first ascent party spent two days and roughly fourteen hours of actual travel in the rain covering under two miles from the lake to the base, and described it as one of the worst approaches in the range. Expect cold fords, soaked gear, and skin torn by devil's club and slide alder - the plant the route is named for. Water is everywhere and should be treated.",
+        "baseFinding": "THE SHELTER IS THE LAST FIXED OBJECT YOU WILL SEE - a three-sided log structure at the camp. Everything after it is read off the creek.\n\nSTAY IN OR BESIDE THE CREEKBED ITSELF AS LONG AS IT LETS YOU. Rock-hopping and easy scrambling in the bed is the fastest travel available and it holds to about 3,600 ft, where dense slide alder chokes the channel and forces you up a bank.\n\nTHE ONE DECISION OF THE APPROACH IS WHICH BANK, AND IT HAS A RIGHT ANSWER: TAKE THE SOUTH, TRUE-LEFT SIDE. It holds older, more open forest and fewer avalanche paths. THE NORTH SIDE IS A NEARLY IMPENETRABLE SLIDE-ALDER THICKET - so if you are swimming through continuous alder with no let-up and no open timber, YOU ARE ON THE WRONG BANK and the fix is to cross rather than to keep pushing.\n\nTHE CONFIRMATION THAT YOU CHOSE RIGHT COMES AS A CHANGE OF VEGETATION: above the alder band the forest opens into blueberry meadows and sparser timber, and travel speed roughly triples. If your speed has not changed, you have not cleared the band.\n\nTHE BASE IS THE CIRQUE AT THE HEAD OF THE DRAINAGE, beneath the connecting ridge that runs to the summit, with talus and season-dependent snowfields and moats guarding the toe of the face. THE FACE ITSELF IS THE FEATURE - a continuous wall of well over two thousand feet rising straight out of the cirque. IF THE GROUND ABOVE YOU IS BROKEN INTO LEDGES AND GULLIES RATHER THAN A SINGLE SUSTAINED FACE, YOU ARE UNDER THE FLANKING GROUND AND NOT UNDER THE ROUTE.\n\nWATCH THE MOAT WHERE SNOW MEETS ROCK AT THE TOE; how bad it is depends entirely on the season and it decides where the first pitch can start.",
+        "hazards": [
+          "a water taxi or a paddle up a long lake with no road out, fixing both ends of the trip",
+          "cold creek fords and continuously wet travel",
+          "devil's club and slide alder dense enough to stop progress on the wrong bank",
+          "avalanche paths on the north side of the drainage",
+          "moats between snowfield and rock at the toe of the face",
+          "a base days from any road with a very long retreat"
+        ]
+      }
+    ]
+  },
+  "wa_snowfield_peak_neve_glacier": {
+    "area": "wa_snowfield_peak",
+    "_why": "The approach is the crux of this peak rather than the climbing, and the party's real choice is where to camp before a long roped crossing with almost no visual reference points on it.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_neve_glacier_west_ridge",
+      "web corroboration of the Colonial Glacier and col sequence"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Pyramid Lake trail and the Pyramid Peak east ridge to the Colonial Glacier moraine camp",
+        "season": "Mid-July through September, once the climbers' path is clear of snow and the glacier bridges are still sound",
+        "notes": "From the signed gravel pullout on the north side of the highway near milepost 126.8 at about 1,150 ft, the maintained trail climbs steadily through old growth. Rock-hop the creek at roughly a mile - that crossing and the lake are the last easy water for several hours. At the lake, camping is prohibited, so it is a water stop only.\n\nLeave the maintained trail on the lake's south, right-hand side and pick up the unmaintained climbers' path. It is steep and brushy from the first steps and gains roughly two thousand feet in switchbacks onto Pyramid Peak's east ridge, then follows a narrow knolly crest with loose rock and short route-finding steps. Short of Pyramid Peak itself, do not climb it: drop slightly and traverse, often on lingering snow, to the terminal moraine and meltwater tarn at the foot of the Colonial Glacier. The moraine benches are the standard first camp and the tarn is the water. An overnight in the park needs a wilderness permit picked up on the way through.",
+        "baseFinding": "THE CAMP IS FOUND BY REFUSING A SUMMIT. The climbers' path leads toward Pyramid Peak and the correct move is to drop slightly BEFORE it and traverse across scree and boulders to the moraine. IF YOU HAVE SCRAMBLED TO A SUMMIT, YOU HAVE CLIMBED THE WRONG PEAK AND GONE PAST THE TRAVERSE. The arrival marker is a meltwater tarn sitting against a terminal moraine with the ice above it.\n\nFROM CAMP THE ROUTE IS A SEQUENCE OF THREE PIECES OF GROUND AND THEY MUST COME IN ORDER. First, rope up before leaving camp and climb the Colonial Glacier south past a rock feature on its east flank, on snow up to about thirty degrees, working around the moraine lake to a broad col near 6,840 ft. A STREAM RUNS AT THAT COL - a saddle with no water on it is not the right one.\n\nSecond, from the col you DROP roughly 150 to 250 ft onto the Neve Glacier and cross it roped. IF YOU ARE STILL GAINING HEIGHT AFTER THE COL, YOU HAVE NOT FOUND THE CROSSING. This is the stretch with no reference points, so track your line for the return; whiteout navigation here is the standing problem of the route.\n\nThird, leave the glacier on the peak's NORTH-WEST side near a prominent rock feature around 7,700 ft and gain the west ridge by a class 3 gully with one exposed rib crossing. That puts you three to four hundred vertical feet below the summit. IF YOU ARE STILL ON ICE WITH THE SUMMIT PYRAMID RISING STRAIGHT ABOVE YOU AND NO GULLY BESIDE IT, YOU HAVE CROSSED TOO FAR AND ARE UNDER THE FACE RATHER THAN THE RIDGE.\n\nThe finish is a long class 3 gully to a notch just below the true summit, then a short exposed traverse onto the south side and blocky scrambling. You downclimb that notch on the way out, so read it as you pass.",
+        "hazards": [
+          "a steep brushy unmaintained climbers' path with loose rock on the ridge crest",
+          "no water between the lake and the moraine tarn",
+          "crevasses on both glaciers, with bridges softening through the afternoon",
+          "a long crossing with almost no visual reference points, and whiteout navigation as the standing problem",
+          "one exposed rib crossing in the gully onto the west ridge",
+          "verglas or rime on the upper rock early in the season"
+        ]
+      },
+      {
+        "name": "Carrying through to the col camp above the Colonial Glacier",
+        "season": "Same window; only worth the extra carry once the glacier is reasonable",
+        "notes": "Instead of stopping at the moraine, some parties carry over the Colonial Glacier and camp at the broad col near 6,840 ft, where a stream supplies water. It costs a roped carry with overnight loads and puts the tent on an exposed saddle, and it buys a much shorter summit day: the Neve crossing begins immediately from camp rather than after a glacier climb.\n\nThe judgement is about weather rather than fitness. The col camp is committing in poor visibility, because the crossing beyond it has no landmarks; the moraine camp keeps you below the ice with an easy retreat.",
+        "baseFinding": "THE COL IS IDENTIFIED BY THREE THINGS AT ONCE: it is broad, it has a stream on it, and the ground beyond it DROPS onto a second, much larger glacier. A saddle that is dry, or one with nothing but rock beyond it, is not this col.\n\nFROM CAMP THE FIRST MOVE IS DOWNHILL - 150 to 250 ft onto the Neve - and then a roped crossing on which the cleanest line runs through the centre of the crevasse field. Bridges are usually sound by midsummer and need active route-finding around open slots. MARK YOUR OUTBOUND LINE. Coming back to a col you cannot see, across ground with no features, is the part of this route that goes wrong.\n\nLEAVE THE ICE ON THE PEAK'S NORTH-WEST SIDE around 7,700 ft, near the prominent rock feature there, and take the class 3 gully with its single exposed rib crossing onto the west ridge, three to four hundred feet below the summit. IF THERE IS NO GULLY WHERE YOU STEP OFF THE ICE, YOU HAVE GONE TOO FAR ACROSS.",
+        "hazards": [
+          "an exposed saddle camp with weather funnelling through it",
+          "a roped carry with overnight loads over crevassed ice",
+          "a featureless crossing that is committing in poor visibility from a high camp",
+          "softening snow bridges on the afternoon return",
+          "one exposed rib crossing in the gully onto the ridge"
+        ]
+      }
+    ]
+  },
+  "wa_neve_glacier_west_ridge": {
+    "area": "wa_snowfield_peak",
+    "_why": "Same approach as the standard line, and the whole difference is where you step off the ice - which is a decision made in the middle of a featureless glacier.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_snowfield_peak_neve_glacier for the detailed sequence"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Pyramid Lake trail and the Pyramid Peak east ridge to the Colonial Glacier moraine camp",
+        "season": "Mid-July through September",
+        "notes": "From the trailhead at about 1,150 ft on the highway, the maintained trail runs a little over two miles and fifteen hundred feet to the lake, where camping is prohibited. Continue on the rougher climbers' path along the lake's west side, which climbs steeply and directly - and with no water beyond this point - through talus and brush onto Pyramid Peak's east ridge and treeline camps near 5,400 ft. From there continue south to the terminal moraine of the Colonial Glacier, or to the col beyond it between about 6,000 and 6,800 ft, which is the usual base camp. The approach rather than the climbing is the crux of this route.",
+        "baseFinding": "THE WEST RIDGE IS GAINED FROM THE GLACIER BY A GULLY, AND THE GULLY IS THE POSITIVE MARKER. From camp, climb the Colonial Glacier to the broad col near 6,840 ft - it carries a stream, so a dry saddle is the wrong one - then drop 150 to 250 ft onto the Neve and cross it roped.\n\nLEAVE THE ICE ON THE PEAK'S NORTH-WEST SIDE, near the prominent rock feature there around 7,700 ft. THE ENTRY IS A CLASS 3 GULLY WITH ONE EXPOSED RIB CROSSING IN IT, and it tops out on the ridge three to four hundred vertical feet below the summit.\n\nTHE NEGATIVE MARKER IS THE ONE THAT MATTERS ON A GLACIER WITH NO LANDMARKS: IF YOU STEP OFF THE ICE ONTO ROCK THAT RISES STRAIGHT INTO THE SUMMIT PYRAMID WITH NO GULLY BESIDE IT, YOU HAVE CROSSED TOO FAR AND ARE UNDER THE FACE. Traverse back rather than committing upward - the face and the ridge are different propositions and the ridge is the easier ground.\n\nTHE SECOND CHECK IS THAT THE RIDGE HAS AIR ON BOTH SIDES. Once out of the gully you should be on a crest, not on a flank. A line that keeps a wall on one hand the whole way is not the ridge.\n\nAbove that the finish is common to both lines: a long class 3 gully to a notch just below the true summit, a short exposed traverse onto the south side, and blocky scrambling with one move that can feel low class 4. That notch is downclimbed on the exit, so read it on the way past.",
+        "hazards": [
+          "a steep brushy climbers' path with no water above the lake",
+          "loose rock and short route-finding steps on the Pyramid east ridge crest",
+          "crevasses on the Colonial and Neve glaciers",
+          "a featureless crossing where the exit point must be identified by the gully rather than by position",
+          "one exposed rib crossing in the entry gully",
+          "an exposed notch traverse near the summit, reversed on the way down"
+        ]
+      }
+    ]
+  },
+  "wa_raven_ridge_standard_route": {
+    "area": "wa_raven_ridge",
+    "_why": "Two drainages on the same side of the range lead to two different points on one long ridge, and the ridge carries a second, lower summit that parties top out on by mistake.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_raven_ridge_southeast_ridge_crater_lake",
+      "web corroboration of the loose gully above the lake and the neighbouring lower point west of the saddle"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Libby Creek road and Trail #415 to Libby Lake",
+        "season": "Late July through September, after the snow has left the gully and before it returns to it",
+        "notes": "From the highway south-east of Twisp, turn up the Libby Creek road and follow the forest road system - a turn onto the main forest road, then a left, then a right onto a spur, then a left onto a second spur - to the small trailhead between about 4,400 and 4,430 ft. Roadside parking takes roughly ten vehicles and there is no toilet and no water.\n\nTrail #415 climbs from there to Libby Lake. Watch for root holes and trail damage through the burned section in the lower and middle miles, which is uneven underfoot rather than hard to follow. A dilapidated cabin sits beside the trail high up and is used by some parties as a base camp.",
+        "baseFinding": "THE GULLY ABOVE THE LAKE IS THE ROUTE AND IT IS THE WORST GROUND OF THE DAY - that is how you know you are on it. From the lake basin, the line ascends a very loose gully to gain the ridge crest. Parties routinely exit the gully about half-way up onto the RIB THAT PARALLELS IT, because the rib holds more solid rock; the rib is an escape from the gully rather than an alternative to it, so if you cannot see the gully from the rib you have wandered.\n\nIF THE GROUND YOU ARE CLIMBING IS PLEASANT, YOU ARE NOT IN THE RIGHT GULLY. Several chutes rise out of this basin; the one that is the route is the one that leads to the saddle on the crest.\n\nTHE CRITICAL NEGATIVE MARKER IS ON THE RIDGE, NOT ON THE APPROACH: A SMALL PEAK STANDS JUST WEST OF THE SADDLE, AND IT IS NOT THE SUMMIT. Once on the crest the true high point is reached by an easy scramble EASTWARD along the ridge. IF YOU TOPPED OUT OF THE GULLY AND WENT LEFT TO A SUMMIT WITHIN A FEW MINUTES, YOU ARE ON THE LOWER POINT WEST OF THE SADDLE.\n\nTHE POSITIVE TEST AT THE TOP IS THE WALK. The true summit is a ridge scramble away over talus and large boulders, with intervening bumps, rather than an immediate high point above the gully. Ground you can traverse in minutes is the wrong answer here.\n\nAlso note the name trap in the roads and lakes on this side of the range: the drainage this variant uses and the one the south-east ridge uses have similarly named creeks and lakes on the same forest road system, so navigate by the road numbers and the trailhead you actually parked at rather than by the name of a lake.",
+        "hazards": [
+          "an extremely loose gully that is the defining hazard of the route",
+          "rockfall from parties above in a confined chute",
+          "burned-out trail with root holes underfoot in the lower miles",
+          "no water or facilities at the trailhead",
+          "loose talus and large boulders on the ridge traverse",
+          "a lower summit west of the saddle that is easily mistaken for the top"
+        ]
+      },
+      {
+        "name": "From the Crater Creek road and the lake basin, gaining the crest from the south-east",
+        "season": "Late July through September",
+        "notes": "The same summit is reached from the next drainage south. From the highway, take the Gold Creek road system on to forest road 4340 and then the Crater Creek spur to the trailhead at about 4,750 ft, where a day-use fee or an interagency pass is required. The maintained trail climbs a little under four miles to the lake, and from there the route continues off-trail up the south-east ridge to a col near 8,000 ft.\n\nThis avoids the loose gully entirely at the price of more off-trail ridge travel, so it is the better option for a party unhappy with a confined chute and the worse one for a party short of time.",
+        "baseFinding": "THE START OF THE CLIMBING IS WHERE THE MAINTAINED TRAIL ENDS AT THE LAKE AND THE RIDGE ABOVE IT BEGINS. The south-east ridge rises from the lake basin toward a col at about 8,000 ft - the ridge is the handrail and it should have ground falling away on both sides once you are established on it.\n\nIF YOU FIND YOURSELF IN A CONFINED, VERY LOOSE CHUTE, YOU HAVE DROPPED OFF THE CREST INTO ONE OF THE GULLIES ON ITS FLANK. That is the other route's ground, approached from the other drainage, and it is not where this line goes.\n\nAT THE COL, THE SUMMIT IS THE HIGH POINT ALONG THE CREST AND IT IS NOT THE FIRST BUMP. The ridge here carries several intervening high points, and a small peak stands west of the ridge saddle that is regularly mistaken for the top. THE TRUE SUMMIT IS THE EASTERN HIGH POINT; if you have gone west from a saddle and arrived quickly, you are on the wrong one.\n\nThe practical cross-check is talus. Reaching the true summit involves a tedious out-and-back over talus and large boulders rather than a quick step up from wherever you gained the crest.",
+        "hazards": [
+          "a long off-trail ridge with no tread and no water above the lake",
+          "loose talus and large boulders on the crest",
+          "flanking gullies that will pull a party off the ridge into very loose ground",
+          "a day-use fee area with a long forest road drive",
+          "intervening high points that hide the true summit"
+        ]
+      }
+    ]
+  },
+  "wa_raven_ridge_southeast_ridge_crater_lake": {
+    "area": "wa_raven_ridge",
+    "_why": "It shares a summit with the standard route but reaches it from a different drainage on a different forest road, and the two are easy to confuse because the lake names on this side of the range repeat.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_raven_ridge_standard_route"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Gold Creek and the Crater Creek spur to the lake, then the south-east ridge",
+        "season": "Late July through September, once the upper ridge is out of snow",
+        "notes": "From Twisp, run south on the highway to the Gold Creek loop and continue onto the Gold Creek road, which becomes forest road 4340 after several miles. Turn onto the Crater Creek spur and follow it a little under five miles to the trailhead at about 4,750 ft; a day-use fee or an interagency pass is required. The maintained trail climbs just under four miles and roughly two thousand two hundred feet to the lake. From the lake the route leaves the trail and follows the south-east ridge to a col near 8,000 ft and on to the summit.\n\nBe careful with names when planning this one: the lake and creek names in this part of the range repeat across neighbouring drainages, and there is an unrelated lake and mountain of the same name in a different part of the state entirely. Navigate by the road numbers you turned onto and the trailhead elevation you actually parked at.",
+        "baseFinding": "THE ROUTE LEAVES THE TRAIL AT THE LAKE - THERE IS NO TREAD BEYOND IT. From the lake basin the south-east ridge rises to the north-west toward a col at about 8,000 ft. THE RIDGE IS THE ROUTE AND THE TEST IS SYMMETRY: once established you should have ground falling away on both sides of you.\n\nIF THE GROUND CLOSES IN AND YOU ARE CLIMBING A CONFINED, EXTREMELY LOOSE CHUTE, YOU HAVE SLIPPED OFF THE CREST ONTO A FLANKING GULLY. Those gullies are the other route's ground, gained from the next drainage north, and they are notably worse rock than the crest.\n\nAT THE COL NEAR 8,000 FT THE SUMMIT IS ALONG THE CREST, NOT DIRECTLY ABOVE. A SMALL SEPARATE PEAK STANDS WEST OF THE RIDGE SADDLE AND IS ROUTINELY MISTAKEN FOR THE TOP; the true high point is the EASTERN one and reaching it is a tedious traverse over talus and large boulders past several intervening bumps.\n\nSO THE CONFIRMATION IS EFFORT, NOT ELEVATION: if you arrived at a summit within a few minutes of gaining the crest and did not cross bouldery bumps to get there, you are on the wrong high point and should look east along the ridge.",
+        "hazards": [
+          "no water and no tread above the lake",
+          "loose talus and boulder-hopping along the crest",
+          "flanking gullies with very poor rock that will draw a party off the ridge",
+          "a long forest road drive on a fee trailhead",
+          "several false summits between the col and the true high point"
+        ]
+      },
+      {
+        "name": "From the Libby Creek road and Trail #415, gaining the crest by the gully above the lake",
+        "season": "Late July through September, when the gully is free of snow",
+        "notes": "The other drainage reaches the same crest. From the Libby Creek road system - a turn onto the main forest road, a left, a right onto a spur and a left onto a second spur - park at the small roadside trailhead between about 4,400 and 4,430 ft, with no toilet and no water. Trail #415 leads to the lake, past a dilapidated cabin used by some parties as a camp, with root holes and burn damage underfoot in the lower and middle miles.\n\nThis approach is shorter to the crest and pays for it with a single very loose gully, which is the crux of that side of the mountain.",
+        "baseFinding": "FROM THE LAKE THE CREST IS GAINED BY A LOOSE GULLY, AND THE GULLY IS UNPLEASANT ENOUGH THAT ITS QUALITY IS THE CONFIRMATION. Parties commonly exit it about half-way up onto the parallel rib, which holds more solid rock, and return to it higher; the rib is a refuge beside the gully rather than a separate line, so keep the gully in sight.\n\nIF THE CHUTE YOU ARE IN IS SOLID AND ENJOYABLE, IT IS PROBABLY NOT THE ONE - several chutes rise out of this basin and the route's own is notorious.\n\nAT THE TOP THE SADDLE IS ON THE CREST, AND THE SUMMIT IS EAST OF IT. A SMALL PEAK STANDS JUST WEST OF THE SADDLE; a summit reached in a few minutes by turning left out of the gully is that lower point, not the top.\n\nTHE TRUE HIGH POINT COSTS A TRAVERSE over talus and large boulders past intervening bumps. Arriving without that traverse means you are in the wrong place. Coming from this side the ridge is joined further west than the south-east ridge joins it, which is exactly why this mistake is easier to make on this approach than on the other one.",
+        "hazards": [
+          "a very loose gully as the only way from the lake to the crest",
+          "rockfall onto a party strung out in a confined chute",
+          "burn damage and root holes on the lower trail",
+          "no water or facilities at the trailhead",
+          "the lower peak west of the saddle, which is easiest to mistake for the summit from this side"
+        ]
+      }
+    ]
+  },
+  "wa_sinister_peak_southwest_route": {
+    "area": "wa_sinister_peak",
+    "_why": "The peak stands within a mile of a much better known neighbour on the same crest, and the route is entered from a col on the far side of two glaciers - so knowing which col is the whole problem.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Downey Creek Trail #768 and the Bachelor Creek climbers' path",
+        "season": "Late July through September, once the overgrown section is passable and the creek has dropped",
+        "notes": "From the trailhead at about 1,450 ft on the river road, Trail #768 runs six and a half miles - easy, well graded, mostly flat forest walking with a suspension bridge crossing - to a camp at about 2,440 ft. The maintained trail ends there.\n\nContinue on the unmaintained Bachelor Creek climbers' path, staying on the north side of the creek at first and fording to the south side around 3,700 ft; treat that as a real crossing, harder and more dangerous in high water. Near 4,500 ft the tread largely disappears through a large old avalanche-debris zone, and this stretch is slow, brushy route-finding through slide alder and downed timber even in good conditions. Above the debris the path climbs to a pass near 5,900 ft, then drops about five hundred feet to a lake at about 5,338 ft. Most parties push on from there onto the ridge above at roughly 6,400 to 6,900 ft for high camp.",
+        "baseFinding": "THE ROUTE IS ENTERED AT A COL, AND THERE ARE TWO COLS IN A ROW - GETTING THE ORDER RIGHT IS THE NAVIGATION. From high camp, traverse climbers' paths and snow benches through the upper basins, staying near 7,000 ft, to gain the first glacier. Rope up before stepping onto the snow. Cross OVER the first col, then DESCEND the second, larger glacier to about 7,200 ft, then TRAVERSE RIGHT - eastward - across it.\n\nTHE COL YOU WANT IS AT ABOUT 7,640 FT AND IT SITS BETWEEN THIS PEAK AND ITS LARGER NEIGHBOUR TO THE WEST. A BERGSCHRUND GUARDS IT and can be hard to cross late in the season, sometimes needing a short rappel to get down onto or across it. THE SCHRUND IS THE CONFIRMATION AS MUCH AS THE OBSTACLE: a col reached without one is likely the first col, not the second.\n\nTHE POSITIVE TEST AT THE COL IS WHERE YOU GO NEXT: CONTOUR ON AN EASY SNOWFIELD ROUND TO THE PEAK'S SOUTH SIDE and climb a loose, unpleasant gully to gain the upper west ridge. IF YOU ARE STILL ON THE NORTH OR SHADED SIDE OF THE CREST WITH THE FACE ABOVE YOU, YOU HAVE NOT CONTOURED FAR ENOUGH ROUND.\n\nTHE MOST IMPORTANT NEGATIVE MARKER IS ABOUT WHICH MOUNTAIN YOU ARE ON. THE SUMMIT LIES JUST UNDER A MILE EAST OF ITS BETTER-KNOWN NEIGHBOUR ALONG THE CONNECTING RIDGE. If you have topped out on the summit block immediately above the first col you crossed, you are on the neighbour, not on this peak. Keep going east.\n\nThere is also a direct alternative from the col: an exposed class 3+ ridge taken straight from the saddle instead of the gully. Both finish on the same crest; the gully is the standard and the loose rock in it is the main hazard on the climb.",
+        "hazards": [
+          "a real creek ford at about 3,700 ft, dangerous in high water",
+          "an old avalanche-debris zone near 4,500 ft where the tread disappears into slide alder and downed timber",
+          "crevasses on both glaciers, with rope and rescue gear required",
+          "a bergschrund at the col that has needed a short rappel late in the season",
+          "very loose rock in the gully to the west ridge",
+          "a multi-day committing position with a long retreat"
+        ]
+      },
+      {
+        "name": "Two camps: the lake basin or the ridge above it",
+        "season": "Same window; the ridge camp is exposed to weather in a way the lake is not",
+        "notes": "The lake at about 5,338 ft is reached by dropping five hundred feet off the pass and has reliable water and good camping. The ridge above it, between roughly 6,400 and 6,900 ft, is the higher camp most parties use, with open views across to the peaks and a much shorter summit day. The trade is exposure and a further climb at the end of an already long day in.\n\nThe drop from the pass into the lake basin holds snow into midsummer, and on snow it is normally the crux navigation of the approach day.",
+        "baseFinding": "EITHER CAMP FEEDS THE SAME LINE: TRAVERSE THE UPPER BASINS NEAR 7,000 FT TO GAIN THE FIRST GLACIER, CROSS ITS COL, DESCEND THE SECOND GLACIER TO ABOUT 7,200 FT, AND TRAVERSE EAST TO THE 7,640 FT COL BETWEEN THIS PEAK AND ITS NEIGHBOUR.\n\nCOUNT THE COLS. The first is crossed and the second is the destination, with a bergschrund on it. Standing at a col with a large icefield behind you and the summit block immediately above is the FIRST col and the neighbouring peak, not this one.\n\nFROM THE CORRECT COL, CONTOUR ROUND ON EASY SNOW TO THE PEAK'S SOUTH SIDE AND FIND THE LOOSE GULLY. A route that climbs directly out of the col on exposed class 3+ crest is the direct variant rather than the standard, so choose it deliberately rather than by accident.\n\nIf you camped at the lake, budget the extra height gain into the morning; if you camped on the ridge, budget the wind into the night.",
+        "hazards": [
+          "a five-hundred-foot descent into the lake basin, on snow into midsummer",
+          "an exposed ridge camp",
+          "crevassed glaciers between camp and the col",
+          "a bergschrund guarding the col",
+          "no easy retreat once past the first col"
+        ]
+      }
+    ]
+  },
+  "wa_sinister_peak_north_face": {
+    "area": "wa_sinister_peak",
+    "_why": "It shares the whole multi-day approach with the standard route and then deliberately does not stop at the col that route uses - and a party that turns uphill too early ends up on the other side of the mountain.",
+    "_sources": [
+      "route row approach column (re-homed)",
+      "sibling row wa_sinister_peak_southwest_route for the shared approach detail"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Downey Creek and Bachelor Creek to the ridge camp, then across onto the northern icefield",
+        "season": "Late July through September for the approach; the face itself favours a firm, cold night",
+        "notes": "The walk-in is the standard route's: Trail #768 six and a half miles to the camp at about 2,440 ft, then the unmaintained Bachelor Creek path, a ford to the south side near 3,700 ft, the old avalanche-debris zone near 4,500 ft where the tread disappears into slide alder and downed timber, a pass near 5,900 ft, a lake at about 5,338 ft, and a high camp on the ridge above between roughly 6,400 and 6,900 ft.\n\nFrom camp the difference begins: continue over the col between the two glaciers at about 8,500 ft and descend onto the larger northern icefield, then traverse beneath the peak's north side to reach the foot of the face.",
+        "baseFinding": "THE DEFINING INSTRUCTION IS THAT YOU DO NOT TURN UPHILL AT THE COL THE STANDARD ROUTE USES. From the glacier col, descend onto the big icefield and KEEP TRAVERSING EAST BENEATH THE PEAK. The base of this route is out on that ice, under the face, not at any saddle.\n\nIF YOU HAVE CLIMBED TO A COL WITH A BERGSCHRUND ON IT AND ARE LOOKING AT AN EASY SNOWFIELD CONTOURING ROUND TO A SUNNY SIDE, YOU HAVE ARRIVED AT THE STANDARD ROUTE'S ENTRY AT ABOUT 7,640 FT AND GONE PAST YOUR OWN. Drop back onto the ice and continue east under the wall.\n\nTHE ASPECT IS THE OTHER TEST AND IT IS UNAMBIGUOUS. This face is the SHADED side. If the wall above you is in morning or afternoon sun while the icefield behind you is bright, you are round on the southern flank and looking at the wrong ground. The face should be holding shadow when the rest of the basin is not.\n\nAND CHECK THE MOUNTAIN, NOT JUST THE FACE. This summit sits just under a mile EAST of its larger and better-known neighbour along the connecting crest, and the same icefield runs beneath both. A north face reached quickly after crossing the first col is the neighbour's; keep traversing until the summit above you is the eastern one.\n\nWatch the bergschrund at the foot of the face, which is a separate feature from the one on the standard route's col and behaves differently through the season.",
+        "hazards": [
+          "the same ford, avalanche-debris zone and brushy climbers' path as the standard approach",
+          "a descent onto a large crevassed icefield with the return climb still to come",
+          "a long traverse beneath a face, exposed to anything coming off it",
+          "a bergschrund at the base of the face",
+          "a shaded north aspect that holds hard ice and cold, with a committing position",
+          "an approach that reaches its base by losing height, so retreat means re-climbing"
+        ]
+      },
+      {
+        "name": "From the col to the west, traversing the icefield from that side",
+        "season": "Midsummer through early autumn, and only as part of a larger traverse of the range",
+        "notes": "The first ascent came at the face from the other direction, from the col to the west, traversing the northern icefield across to the peak. That is the natural line for a party already high in this range on a multi-peak traverse rather than for a party walking in for this route alone; it involves no new trailhead but a great deal more glacier travel, and it should be planned as one leg of a bigger trip.",
+        "baseFinding": "ARRIVING FROM THE WEST, THE ICEFIELD IS THE HIGHWAY AND THE PEAK IS PICKED OFF IT. Traverse east along the ice beneath the crest until the summit above you is the EASTERN of the two on this section of ridge - the larger, better-known peak lies just under a mile to the west, so the first big north face you pass is not yours.\n\nTHE FACE IS THE SHADED ONE. If the wall you are approaching takes direct sun while the ice around you is in shadow, you are on the wrong aspect or the wrong peak.\n\nTHE BASE IS ON THE ICE ITSELF, BENEATH THE WALL, with a bergschrund at the junction. THERE IS NO COL INVOLVED - if you have climbed to a saddle to reach your start, you have joined the standard route's entry on the far side of the crest instead.\n\nBecause this arrival involves no fixed camp of its own, fix a retreat plan before crossing beneath the face: the ground you traverse in to reach it is the ground you must reverse to leave, and it is all crevassed.",
+        "hazards": [
+          "long committed glacier travel with no camp of its own",
+          "crevasses across the whole traverse",
+          "exposure beneath a face for the length of the approach",
+          "a bergschrund at the foot of the wall",
+          "a plan that only makes sense inside a larger traverse, so a retreat is a multi-day proposition"
+        ]
+      }
+    ]
+  },
+  "wa_snowking_mountain_standard": {
+    "area": "wa_snowking_mountain",
+    "_why": "The approach opens with a road walk and then depends on spotting one unsigned path leaving it, which is far harder to find from above on the way out than from below on the way in.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "web corroboration of the road walk and the ribbon-marked climbers' path"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "The closed Kindy Creek roadbed and the Kindy Ridge climbers' path to the lake meadows",
+        "season": "June through September",
+        "notes": "From Marblemount, drive the river road about fourteen miles and turn right onto forest road 1570, which crosses the river on a concrete bridge. Within roughly half a mile the right fork is blocked by boulders and washout; park at that Y-junction around 1,200 ft. The spur beyond is permanently closed to vehicles by windfall, brush and washouts, so the trip opens with a two to three mile road walk rather than at a trailhead.\n\nThe climbers' path above is unsigned and has no trail number, and it climbs hard through brush and then old growth on boot-beaten tread over roots and rock, with no water until well upslope. The grade eases at a boggy bench near 4,800 ft with room for a tent and seasonal water. Higher, a cairn-marked fork sends a fainter fisherman's trail down toward a lake; stay on the climbers' path. The ridge then rolls constantly over several small points rather than climbing steadily, before dropping to the meadows by the lake, which are the best camp on the route.",
+        "baseFinding": "THE HARDEST THING TO FIND ON THIS APPROACH IS THE PATH ITSELF, AND IT IS FOUND AT A FIREPIT. Walk the closed roadbed uphill through windfall and encroaching brush, crossing two large washouts, until the road ENDS at a small clearing with an old firepit. THE CLIMBERS' PATH LEAVES ON THE LEFT NEAR THAT CLEARING, unsigned and steep from its first step. FIX THE SPOT IN YOUR MIND ON THE WAY IN - from above, in fog, it is much harder to find, and parties overshoot it on the descent.\n\nTHE SECOND DECISION IS A CAIRNED FORK NEAR 5,200 FT. A fainter fisherman's trail drops away toward a lake; STAY RIGHT AND UPHILL ON THE CLIMBERS' PATH. IF YOU ARE LOSING HEIGHT TOWARD WATER, YOU HAVE TAKEN THE FISHERMAN'S TRAIL.\n\nEXPECT TO LOSE THE TREAD ON THE RIDGE AND NOT TO PANIC ABOUT IT. Through grass and boulders the path is faint and parties routinely lose it and pick it up again a few hundred feet higher. WHEN IN DOUBT, STAY ON THE CREST.\n\nTHE CLIMB PROPER STARTS ABOVE THE LAKE MEADOWS. Work round the lake to the head of its outlet stream. A ROCK WALL LINES THE EAST SIDE OF THAT OUTLET; drop toward the lake about fifty feet east of the stream and turn the END of the wall with a single class 3 move rather than trying to force the wall itself. From there climb the gentle granite buttress to the south-west onto slabs and benches, past small tarns, then traverse rocky slopes to a notch and take the short drop into the gap that puts you onto the glacier.\n\nROPE UP BEFORE STEPPING ONTO THE SNOW, NOT PART-WAY ACROSS. IF YOU ARE TRYING TO CLIMB A ROCK WALL BESIDE THE OUTLET STREAM, YOU HAVE MISSED THE TURN AROUND ITS END.",
+        "hazards": [
+          "an unsigned path leaving the roadbed that is easy to miss on the descent, especially in fog",
+          "two large washouts on the road walk, awkward in high snowmelt",
+          "no water between the road and the boggy bench near 4,800 ft",
+          "a faint ridge tread through grass and boulders that is routinely lost",
+          "crevasses and exposed blue ice on the glacier by mid to late summer",
+          "softening snow bridges on the afternoon return"
+        ]
+      },
+      {
+        "name": "Two camps: the lake meadows or the benches above them",
+        "season": "Same window; the higher benches are wind-exposed with limited flat ground",
+        "notes": "The meadows by the lake are the most established camp on the route, with reliable water and good tent sites. The rock and snow benches above, around 6,200 ft, shorten summit day but are exposed and take the wind, with limited flat ground for tents. Parties splitting the approach over two days also use the boggy bench near 4,800 ft as a low camp, where the water is seasonal and can be down to puddles late in the year.",
+        "baseFinding": "WHICHEVER CAMP YOU USE, THE CLIMB STARTS AT THE HEAD OF THE LAKE'S OUTLET STREAM. Work counterclockwise round the lake to the outlet. A ROCK WALL RUNS ALONG THE EAST SIDE OF IT - the move is to drop toward the lake about fifty feet east of the stream and turn the END of that wall with a single class 3 step. FORCING THE WALL DIRECTLY IS THE WRONG ANSWER AND IS HOW PARTIES GET STOPPED HERE.\n\nAbove the wall, climb the gentle granite buttress to the south-west, turning several small cliff bands above or below as they come, onto slabs and benches. Past the small tarns, traverse rocky slopes toward the notch and take the short drop into the gap onto the glacier.\n\nTHE ARRIVAL TEST IS THE NOTCH, NOT THE ANGLE. You should step DOWN into a gap to reach the ice. If you have walked onto snow without dropping through a notch, you are on a different bench and should keep traversing.\n\nCross the glacier to the south-west aiming straight at the peak and leave the snow for rock on the LEFT, where a faint scree path picks up. Sustained class 2 boulder-hopping with a few class 3 moves on the final blocks finishes it from the south-east ridge or the south slope.",
+        "hazards": [
+          "wind-exposed benches with limited flat ground",
+          "seasonal water at the low bench that can dry to puddles",
+          "cliff bands on the buttress that must be turned rather than climbed",
+          "a crevassed stretch of glacier below the notch",
+          "timing the return before the afternoon softens the bridges"
+        ]
+      }
+    ]
+  },
+  "wa_east_ridge_2": {
+    "area": "wa_snowking_mountain",
+    "_why": "It shares the first mile with the standard route and then turns the opposite way at a junction the row describes as easy to miss - which is exactly the kind of fork that costs a party a day.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_snowking_mountain_standard"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "The Kindy Creek roadbed and the ribbon-marked climbers' trail to the Point 5116 saddle",
+        "season": "June through September",
+        "notes": "From Marblemount, drive the river road about fourteen miles to the signed forest road 1570 junction and turn right. Cross the river on a concrete bridge and continue about half a mile to a Y-junction where the right fork is blocked by boulders; park there, at roughly 1,150 to 1,300 ft, because a long-standing washout keeps most parties from driving higher.\n\nA climbers' trail flagged with pink ribbon every fifty to a hundred and fifty feet leaves the old roadbed and climbs steeply and directly through old growth - about seventeen hundred vertical feet in its first mile, with few switchbacks - to a ridge saddle near Point 5116. From the saddle the route climbs roughly a thousand feet to Peak 5791, then traverses heather benches and meadows above the lake, crossing or contouring Peak 5860, to reach the base of the east ridge.",
+        "baseFinding": "THE JUNCTION AT THE SADDLE IS THE WHOLE POINT OF THIS APPROACH AND IT IS EASY TO MISS. At the ridge saddle near Point 5116, GO LEFT and climb about a thousand feet to Peak 5791. IF YOU FIND YOURSELF DROPPING TOWARD A LAKE, OR CONTOURING THE WEST SIDE OF THE CREST ON A FAINT TREAD, YOU HAVE TAKEN THE OTHER BRANCH AND ARE ON THE KINDY RIDGE LINE THAT SERVES THE STANDARD ROUTE.\n\nTHE PINK RIBBON IS THE HANDRAIL ON THE STEEP MILE BELOW. It is spaced closely enough that losing sight of it for long means you have drifted; the tread is rooty and eroded and very slick when wet, so on the descent the ribbon matters more than the ground does.\n\nABOVE THE SADDLE THE MARKERS ARE TWO NAMED HIGH POINTS IN ORDER: Peak 5791 first, then heather benches and meadows above the lake, then Peak 5860 crossed or contoured. YOU SHOULD PASS TWO DISTINCT POINTS BEFORE THE RIDGE BEGINS - arriving at what you take for the base without having crossed them means you are short.\n\nTHE BASE ITSELF IS WHERE THE EAST RIDGE RISES OUT OF THE GROUND ABOVE THE LAKE BASIN AND RUNS WEST TOWARD THE SUMMIT. IF THE GROUND AHEAD OF YOU IS A GLACIER RATHER THAN A RIDGE, YOU HAVE CONTOURED PAST THE RIDGE'S FOOT AND JOINED THE STANDARD ROUTE'S APPROACH TO THE ICE. The east ridge is rock and heather with air on both sides; the standard route crosses snow.\n\nNote that the two routes on this peak describe the ridge junctions differently and one says go left where the other says stay right at a fork. They are not the same fork. Follow the description belonging to the route you intend to climb and use the physical markers - a ribbon-marked steep mile, a saddle, then two high points - rather than reconciling the two.",
+        "hazards": [
+          "a rooty, eroded and very slick steep mile that is worse descending than ascending",
+          "an easy-to-miss junction at the saddle where the two routes on this peak diverge",
+          "no water on the steep climb from the roadbed",
+          "rolling ridge travel that takes longer than the distance suggests",
+          "an exposed camp and no bail-out once out on the ridge"
+        ]
+      },
+      {
+        "name": "Camping at the lake below the ridge",
+        "season": "Same window",
+        "notes": "The lake below the ridge is the common overnight for this route and turns it from a very long day into a comfortable two. The camping is in the meadows on the lake's east side and there is reliable water. Parties doing it in a day still pass through the same ground and should treat the lake as the last water before the ridge.",
+        "baseFinding": "FROM THE LAKE THE BASE OF THE EAST RIDGE IS GAINED BY CROSSING OR CONTOURING PEAK 5860 AND CONTINUING ON HEATHER BENCHES ABOVE THE BASIN. The ridge foot is where that benched ground runs out against the crest and the rock begins rising west toward the summit.\n\nTHE TEST IS THAT YOU ARE ON A CREST, NOT ON A BENCH. Once established the ground should fall away on both sides. Heather benches with a wall above you and the basin below are still the approach.\n\nAND THE NEGATIVE MARKER IS SNOW. IF YOU ARE STEPPING ONTO GLACIER ICE, YOU HAVE CONTOURED ROUND PAST THE FOOT OF THE RIDGE AND ARE ON THE STANDARD ROUTE'S GROUND. Turn back and gain the crest.\n\nCarry water from the lake. There is none on the ridge.",
+        "hazards": [
+          "no water above the lake",
+          "a wind-exposed basin camp",
+          "loose blocks where the ridge rises out of the benches",
+          "committing ridge travel with no easy descent off either side"
+        ]
+      }
+    ]
+  },
+  "wa_trapper_mountain_north_couloir": {
+    "area": "wa_trapper_mountain",
+    "_why": "The lake below the peak can be reached from two directions - a pass on the west or the valley on the east - and the row's own records disagree about the eastern one, so the western line is the one a party can actually follow.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "sibling row wa_trapper_mountain_south_slopes for the valley alternative"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Over the pass at the head of the river road, then east and down to the lake",
+        "season": "Spring into early summer, while the couloir still holds continuous snow",
+        "notes": "From the trailhead at the end of the river road, climb to the pass at about 5,392 ft - or to the nearby col used as an alternative when the pass is corniced - and then travel east, descending and traversing through the basin beyond, to the lake at about 4,170 ft, which sits just north-east of the peak. From the lake you boot or skin directly to the foot of the route, changing to crampons or ascent plates as the snow firms up higher.\n\nThis is the approach that suits the route's season: the couloir is a snow line, so the party wants it early, which is also when the pass is a straightforward snow climb rather than a scramble.",
+        "baseFinding": "THE COULOIR IS VISIBLE FROM THE LAKE AND THAT IS THE POINT OF APPROACHING FROM THIS SIDE. From the water, look south-west at the peak: THE ROUTE IS THE OBVIOUS NORTH-FACING SNOW LINE THAT SPLITS THE SUMMIT BLOCK ITSELF. Pick it out before you start moving, because from underneath the flanking gullies all look alike.\n\nTHE POSITIVE TEST IS WHERE THE LINE ENDS. IT MUST TOP OUT ON THE SUMMIT BLOCK, NOT ON THE RIDGE BESIDE IT. A couloir that finishes at a notch with more mountain above it and to one side is one of the flanking gullies and not the route.\n\nTHE SECOND TEST IS ASPECT. This is the NORTH side: it should be the shaded flank, holding firmer snow than anything around it in the morning and going soft late. IF THE SNOW YOU ARE STANDING ON IS IN EARLY SUN, YOU HAVE COME ROUND ONTO AN EASTERN OR WESTERN FLANK.\n\nTHE THIRD TEST IS CONTINUITY. The route is a single continuous line from the basin to the top of the block. If the snow you are following breaks into disconnected patches with rock steps between them, you are either too late in the season for it or on a different feature.\n\nAND CHECK THE MOUNTAIN. There is a similarly named peak elsewhere in the range that is reached from an entirely different valley and has nothing to do with this one. The confirmation here is that the lake lies immediately north-east of your peak and the summit stands directly across it from you.",
+        "hazards": [
+          "a corniced pass early in the season, with an alternative col that carries its own hazards",
+          "a descent east from the pass that must be re-climbed at the end of the day",
+          "avalanche terrain in the couloir and the basin below it in spring",
+          "wet-snow release and rockfall out of the couloir once the sun reaches the face",
+          "a remote basin with a long retreat and no trail on the eastern side"
+        ]
+      },
+      {
+        "name": "From the valley on the east, reaching the lake basin from below",
+        "season": "Summer, once the valley trail is open and the basin is snow-free enough to walk",
+        "notes": "The lake basin can also be reached from the valley to the east, which is entered by boat or floatplane and then by road and trail up the valley floor. This is the approach the other route on this peak uses, and it puts a party at the lake without any pass to cross.\n\nTreat the detail of it with caution. The published descriptions of this peak disagree about which drainage is followed off the valley trail and how far the lake is from the road, and the two accounts cannot both be right - so plan this variant from current maps and imagery rather than from a written description, and expect the off-trail section to be unmarked and steep.",
+        "baseFinding": "THE FIXED POINT ON THIS SIDE IS THE LAKE, AND EVERYTHING ABOVE IT IS READ OFF THE PEAK ITSELF. The lake sits immediately NORTH-EAST of the summit, so from the water the mountain stands to the south-west and the route faces you.\n\nTHE ROUTE IS THE CONTINUOUS NORTH-FACING SNOW LINE CLEAVING THE SUMMIT BLOCK. It must finish ON the block. A gully that tops out on the ridge to either side of the summit is a flanking line, not the route.\n\nUSE SHADE AS THE CONFIRMATION: the north side holds shadow while the basin around it is lit, and the snow in it stays firm longest in the morning.\n\nBECAUSE THE APPROACH FROM THIS SIDE IS UNMARKED, FIX YOUR LINE INTO THE BASIN ON THE WAY IN. There is no tread to follow back out, and the basin has no obvious exit when seen from above.",
+        "hazards": [
+          "an approach that depends on boat or floatplane schedules to reach the valley at all",
+          "an unmarked, steep off-trail push into the basin with no tread to follow out",
+          "conflicting written descriptions of which drainage is used, so navigate from maps rather than prose",
+          "avalanche terrain in the couloir in spring",
+          "a long committing distance from any road"
+        ]
+      }
+    ]
+  },
+  "wa_trapper_mountain_south_slopes": {
+    "area": "wa_trapper_mountain",
+    "_why": "The peak's easy side is the far side from the road, and the row's own approach description and its own waypoints disagree about which drainage gets you there.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed, with the internally contradicted drainage claim deliberately not repeated)",
+      "sibling row wa_trapper_mountain_north_couloir for the pass approach"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Up the valley from the landing, then off-trail into the lake basin",
+        "season": "Midsummer through early autumn, once the basin is walkable and the valley road and trail are open",
+        "notes": "There is no road to this side of the peak. Reach the valley by ferry or floatplane, then take the valley road or the park shuttle to a campground and pick up the valley trail from there. The lake below the peak is reached by leaving that trail and pushing off-trail and unmarked into the basin - a steep, poorly marked fisherman's path at best, and map-and-compass travel above it. Figure a full day of travel each way and plan on two or three days with a camp at or below the lake.\n\nOne caution about the paperwork rather than the ground: the written descriptions of this approach and the recorded waypoints for it name different drainages for that off-trail section, and the recorded distances do not match the recorded positions. Plan the departure point from current maps and imagery rather than from any single written description.",
+        "baseFinding": "THE LAKE IS THE ANCHOR AND THE ROUTE IS READ FROM IT. The lake sits immediately NORTH-EAST of the summit, so from the water the peak is to the south-west.\n\nLEAVE THE LAKE BASIN AND GAIN THE BROAD BASIN AND SLOPES DIRECTLY ABOVE IT ON THE SOUTH SIDE, aiming for the LOW POINT ON THE SUMMIT RIDGE rather than for the summit itself. There are no cairns and no path here; the terrain is the navigation.\n\nTHE GROUND CONFIRMS ITSELF AS YOU GAIN HEIGHT: loose unconsolidated talus interspersed with heather benches on a steep grade, with unstable footing and no established tread. NOTE YOUR ASCENT LINE, because on the descent one talus-and-heather slope looks exactly like the next and there is nothing to follow.\n\nTHE FINISH IS THE TEST THAT YOU CHOSE THE RIGHT SIDE. From the ridge the last stretch to the top is a short EXPOSED CLASS 3 SCRAMBLE. IF THE GROUND ABOVE YOU IS A STEEP CONTINUOUS SNOW LINE SPLITTING THE SUMMIT BLOCK, YOU HAVE COME ROUND ONTO THE NORTH SIDE AND ARE UNDER THE COULOIR ROUTE, which is a different proposition entirely and wants an axe, crampons and a season this route does not.\n\nAlso confirm the peak: a similarly named summit elsewhere in the range is approached from a completely different valley. The lake immediately north-east of your summit is what identifies this one.",
+        "hazards": [
+          "reaching the valley at all depends on a ferry or floatplane and a shuttle",
+          "an unmarked off-trail push into the basin with no reliable path",
+          "loose unconsolidated talus and steep heather benches with unstable footing",
+          "no tread to follow on the descent, on ground where every slope looks the same",
+          "an exposed class 3 finish off the ridge",
+          "conflicting records of the approach drainage, so the departure point must be planned from maps"
+        ]
+      },
+      {
+        "name": "Over the pass at the head of the river road and down to the lake from the west",
+        "season": "Late spring into summer, while the pass is straightforward and the basin beyond is still simple travel",
+        "notes": "The lake can also be reached from the other side of the range, by climbing to the pass at about 5,392 ft at the head of the river road - or the nearby col used when the pass is corniced - and then travelling east, descending and traversing through the basin beyond to the lake at about 4,170 ft.\n\nThis avoids the ferry and the unmarked valley push entirely, at the cost of a pass crossing in each direction and a descent that has to be re-climbed at the end of the trip.",
+        "baseFinding": "FROM THE PASS THE TRAVEL IS EAST AND DOWNHILL TO THE LAKE, so the arrival marker is water at about 4,170 ft with the peak standing to the SOUTH-WEST of it.\n\nFROM THE LAKE, THE SOUTH SLOPES ARE GAINED BY GOING ROUND THE PEAK, NOT UP THE SIDE FACING YOU. The face you can see from the lake is the northern one. THE ROUTE IS ON THE OPPOSITE FLANK - the broad basin and slopes above the lake basin on the south side, taken toward the low point on the summit ridge.\n\nTHE NEGATIVE MARKER IS THE SNOW LINE. IF YOU ARE LOOKING UP AT A CONTINUOUS COULOIR SPLITTING THE SUMMIT BLOCK AND ARE TEMPTED BY IT, THAT IS THE NORTH COULOIR ROUTE AND NOT THIS ONE. It is a snow climb with a different season and different equipment.\n\nTHE POSITIVE MARKERS ON THE ROUTE ARE UNDERFOOT: loose talus and heather benches on a steep grade, with no cairns, followed by an exposed class 3 scramble off the ridge to the top. Note your ascent line for the descent, because nothing here is marked.",
+        "hazards": [
+          "a corniced pass in early season",
+          "a descent from the pass that must be re-climbed on the way out",
+          "loose talus and heather with unstable footing and no tread",
+          "an exposed class 3 finish",
+          "a basin with no path and no obvious exit seen from above"
+        ]
+      }
+    ]
+  },
+  "wa_slippery_slab_tower_ne_face": {
+    "area": "wa_thunder_mountain_and_slippery_slab_tower",
+    "_why": "Two trailheads reach the same pass by very different means, and beyond the pass the tower and the mountain sit on one ridge - so the choice of trailhead and the choice of formation are two separate ways to end up in the wrong place.",
+    "_sources": [
+      "route row approach/waypoints columns (re-homed)",
+      "web corroboration of the two trailhead options and their relative gain"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tunnel Creek trail to the crest trail at the lake, then south to the pass",
+        "season": "July through September, once the crest trail is clear",
+        "notes": "From the forest road east of Skykomish, the Tunnel Creek trail climbs about eleven hundred and seventy feet in under a mile and a half from roughly 3,100 ft to a small lake on the crest, where it meets the long-distance crest trail. Turn south and follow that trail several miles to the pass at roughly 5,050 to 5,800 ft depending on which record you read.\n\nThis is the option with the least climbing and the easiest tread. It is a little longer along the crest than the other trailhead, and the walking is straightforward the whole way, which makes it the better choice with heavy loads or a late start.",
+        "baseFinding": "THE PASS IS THE GATE AND THE CLIMBERS' PATH LEAVES DIRECTLY FROM THE TOP OF IT. Do not look for it below the pass or beyond it: an unmaintained path runs SOUTH along the ridge from the pass itself. IF YOU ARE CASTING ABOUT ON THE TRAIL BELOW THE PASS FOR A JUNCTION, YOU HAVE NOT GOT HIGH ENOUGH.\n\nTHE TOWER IS A DISTINCT ROCK TOWER ON THAT CREST AND IT IS THE FIRST ONE. The face you want looks back toward the pass on the NORTH-EAST side, so from the path it presents itself as you approach rather than after you have passed it.\n\nTHE CRITICAL NEGATIVE MARKER IS THE MOUNTAIN FURTHER ALONG THE SAME RIDGE. If you have walked past the tower and are looking at a broad peak with a lake basin below it, YOU HAVE CONTINUED TO THE MOUNTAIN AND GONE PAST THE TOWER. Turn round; the tower is a slender formation and the mountain is not.\n\nTHE ROUTE CONFIRMS ITSELF ON THE SECOND PITCH: two pitches of easy fifth class, with the upper one DIAGONALLING LEFT INTO A GULLY AND FINISHING AT A LARGE BOULDER NEAR THE TOP. A line that runs straight up with no leftward gully, or that takes more than a couple of pitches, is not this face.\n\nOne more caution about names: there are several mountains called Thunder in this state and more than one formation of this sort on crest trails. The identifying combination here is a pass on the long-distance crest trail with an unmaintained path leaving its top southward, and a tower standing before the mountain on the same ridge.",
+        "hazards": [
+          "an unmaintained ridge path beyond the pass with no signage",
+          "a long enough round trip that many parties camp, so a day attempt commits to a late finish",
+          "loose rock on the tower and on the ridge approach to it",
+          "a two-pitch face that still needs a rope, a rack and a plan to get back down",
+          "no water on the ridge between the pass and the tower"
+        ]
+      },
+      {
+        "name": "Surprise Creek trail past the two lakes, then the switchbacks to the pass",
+        "season": "July through September",
+        "notes": "The other trailhead climbs the Surprise Creek trail past the first lake at about 4,500 ft and its neighbour, then switchbacks up to the same pass. It is roughly a mile shorter to the pass than the crest-trail option and costs several hundred feet more climbing, and it is in the trees for essentially the whole way, so it gives less to look at and less warning of the weather ahead.\n\nBoth trailheads meet at the pass and nothing above it differs.",
+        "baseFinding": "FROM THE PASS THE APPROACH IS IDENTICAL TO THE OTHER TRAILHEAD'S: AN UNMAINTAINED CLIMBERS' PATH LEAVES THE TOP OF THE PASS AND RUNS SOUTH ALONG THE RIDGE.\n\nTHE TOWER IS THE FIRST DISTINCT ROCK FORMATION ON THAT CREST, AND ITS NORTH-EAST FACE LOOKS BACK TOWARD THE PASS. Because this approach arrives at the pass from below and in trees, take a moment on the pass itself to pick the tower out along the crest before starting the path - it is much harder to identify from underneath.\n\nTHE NEGATIVE MARKER IS THE SAME AND IT IS THE ONE THAT MATTERS: THE MOUNTAIN LIES FURTHER ALONG THE SAME RIDGE, ABOVE A LAKE BASIN. A broad peak with lakes below it is not the tower. If you are walking under a mountainside rather than under a slender formation, you have gone too far.\n\nCONFIRM ON THE CLIMB ITSELF: two pitches of easy fifth class with the second diagonalling LEFT into a gully to a large boulder near the top. If your first pitch is hard or your route runs straight up a face for several rope lengths, you are not on it.",
+        "hazards": [
+          "more climbing than the other trailhead for a slightly shorter distance",
+          "forested trail the whole way, with little view of conditions ahead",
+          "an unmaintained ridge path beyond the pass",
+          "loose rock on the tower",
+          "no water on the ridge beyond the pass"
+        ]
+      }
+    ]
+  }
+}
