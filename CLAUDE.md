@@ -595,6 +595,20 @@ a build error, but a screen that renders wrong or not at all.
     sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
     with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
     verbatim though the column drives the screen.
+    - **A SEVENTH, added 2026-08-20 after it produced a wrong claim in a merged PR:
+      `dbRouteToCamel` opens `return { ...r, ... }`.** It SPREADS the raw row and then adds
+      camelCase aliases, so every snake_case column reaches the app whether or not the mapper
+      names it. `grep -c difficulty lib/db.js` returning **0** therefore proves nothing, and a
+      session concluded from exactly that grep that `difficulty` (8,029 routes) "was mapped by
+      NOTHING" and that DiffRadar was dark catalog-wide. Executing the pre-change mapper settled
+      it in one line: `.difficulty` came back intact, 70 keys. **Read the whole mapper — or just
+      run it — before concluding a column is unreached.** Same shape as the `descentText`
+      rivalry, where three sessions in a row derived a rule from one line of `var M` without
+      reading the fix-ups below it.
+      - What the episode DID leave behind is real and worth keeping: `difficulty` was absent from
+        `FIELDS`, so the guard that exists to catch a column reaching no screen had never asked
+        about it; and a rendered measurement (24,236 → 39,027 characters) that is a fact about
+        the DATA's value on a route that carries it, not evidence of a defect.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
   - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —

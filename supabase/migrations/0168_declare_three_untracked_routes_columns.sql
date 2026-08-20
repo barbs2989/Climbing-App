@@ -16,21 +16,25 @@
 -- reproducible, which is the entire point, and removing a column is a decision this migration
 -- has no basis to make. If they should go, that is their own migration with its own reasoning.
 --
--- `difficulty` is the one that matters. It was mapped by NOTHING: `dbRouteToCamel` contained no
--- reference to it at all, so `route.difficulty` was undefined on every DB-backed route and
--- DiffRadar's opening `if(!d) return null` fired catalog-wide. Measured by rendering the real
--- RouteDetail through react-dom/server: 24,236 characters without the column, 39,027 with it —
--- roughly 15,000 characters of route page, including all five axis labels, the per-discipline
--- explanatory blurbs, and the community axis-rating control, dark on all ~205k routes while
--- 8,029 of them held the data.
+-- CORRECTION (same day, before anyone relies on it). An earlier version of this header said
+-- `difficulty` "was mapped by NOTHING" and that the radar was dark on every DB-backed route.
+-- THAT WAS WRONG, and the error is worth recording because it is a trap this repo has already
+-- paid for once.
 --
--- That is the `descent_text` shape exactly (populated on 1,021 routes, rendered on none), and it
--- is why check:field-renders' FIELDS list being hand-maintained is a standing risk: a column
--- nobody adds to that list is invisible to the guard that exists to catch precisely this.
--- `difficulty` is now in FIELDS, and in SENTINELS with an anchor — every leaf is a number, so
--- there is no string to search for, but DiffRadar prints deterministic axis labels and returns
--- null without the prop, which makes "Route-finding appears only when the column is set" real
--- evidence rather than a "did the page change" coin flip.
+-- `dbRouteToCamel` opens `return { ...r, ... }` — it SPREADS the raw row and then adds camelCase
+-- aliases. So every snake_case column reaches the app whether or not the mapper names it, and
+-- `grep -c difficulty lib/db.js` returning 0 does NOT mean the field was missing. Verified by
+-- executing the pre-change mapper: it returns `.difficulty` intact, 70 keys. DiffRadar was
+-- rendering all along on routes that carry the column.
+--
+-- This is the same mistake CLAUDE.md records for `descentText`, where three sessions in a row
+-- derived a rule from one line without reading the rest of the writer. READ THE WHOLE MAPPER
+-- BEFORE CONCLUDING A COLUMN IS UNREACHED — a spread makes absence of a reference meaningless.
+--
+-- What remains true, and why this migration is still worth having: these three columns exist in
+-- the live database and in NO migration, so a database rebuilt from supabase/migrations/ would
+-- not have them, and `difficulty` is populated on 8,029 routes and read by the route page. That
+-- is a real reproducibility gap and it is what this closes.
 --
 -- Idempotent.
 
