@@ -28,7 +28,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { waypointsAreOnOneLine, someWaypointsAreComputed, manufacturedWaypointCaveat,
+import { waypointsAreOnOneLine, someWaypointsAreComputed, longestArithmeticRun, manufacturedWaypointCaveat,
          SYNTHETIC_WAYPOINT_CAVEAT, COMPUTED_WAYPOINT_CAVEAT } from "../lib/track.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -192,6 +192,58 @@ const both = text(render(route({ waypoints: SYNTH_WPS }), "planner"));
 if (both.includes(SYNTHETIC_WAYPOINT_CAVEAT) && both.includes(COMPUTED_WAYPOINT_CAVEAT))
   fail("both caveats rendered on one route — they must be mutually exclusive");
 else ok("a whole-line route shows the stronger wording only");
+
+// ── 5. AN INTERPOLATED RUN between two genuine pins. The third shape, and the one both tests above
+//    miss: the route as a whole is not a line, and the pins may carry ordinary precision. It also
+//    covers one-axis interpolation, where only the longitude was divided up — those pins are not
+//    collinear in the plane at all, so no distance-to-a-line test can reach them.
+//
+//    NOTE THE FIXTURE IS NOT ROUNDED, and that is the point rather than laziness: interpolation
+//    leaves full float precision, which is exactly why the real rows show 17 decimals. Rounding a
+//    fabricated pin to 5 decimals destroys the slope agreement AND the precision tell, so a
+//    hand-rounded fixture proves nothing and quietly tests the opposite of what it claims.
+const GENUINE_ENDS = [
+  { name: "Trailhead", type: "Trailhead", lat: 48.49, lng: -121.12, elev: 1000 },
+  { name: "Summit", type: "Summit", lat: 48.556, lng: -121.10, elev: 7900 },
+];
+const INTERPOLATED = Array.from({ length: 4 }, (_, i) => {
+  const t = i / 3;
+  return { name: `Mid ${i}`, type: "Junction",
+    lat: 48.505 + (48.545 - 48.505) * t, lng: -121.118 + 0.014 * t, elev: 2000 + i * 800 };
+});
+const RUN_ROUTE = [GENUINE_ENDS[0], ...INTERPOLATED, GENUINE_ENDS[1]];
+
+if (longestArithmeticRun(RUN_ROUTE) < 4)
+  fail(`predicate: a 4-pin interpolated run is not recognised (got ${longestArithmeticRun(RUN_ROUTE)})`);
+else ok("predicate: a run of pins laid along one bearing is recognised");
+
+if (waypointsAreOnOneLine(RUN_ROUTE))
+  fail("fixture: the run route is collinear end to end, so it proves nothing about PARTIAL fabrication");
+else ok("fixture: the run route is not a whole-route line, so it needs the run test");
+
+if (longestArithmeticRun(REAL_WPS) >= 3)
+  fail(`predicate: a real wandering approach shows a ${longestArithmeticRun(REAL_WPS)}-pin run — this would caption correct data`);
+else ok("predicate: a real approach has no arithmetic run");
+
+if (!shows(route({ waypoints: RUN_ROUTE }), COMPUTED_WAYPOINT_CAVEAT))
+  fail("a route with an interpolated run between genuine pins shows NO caveat");
+else ok("a route with an interpolated run says its coordinates were calculated");
+
+// A bare 3-run with no corroboration must NOT caption — measured, 19 WA routes sit there and
+// captioning them would be captioning correct data.
+const THREE_RUN = [GENUINE_ENDS[0],
+  ...Array.from({ length: 3 }, (_, i) => {
+    const t = i / 2;
+    return { name: `M${i}`, type: "Junction",
+      lat: Number((48.505 + 0.03 * t).toFixed(5)), lng: Number((-121.118 + 0.01 * t).toFixed(5)), elev: 2000 + i * 900 };
+  }), GENUINE_ENDS[1]];
+if (longestArithmeticRun(THREE_RUN) >= 4)
+  fail("fixture: the 3-run fixture produced a longer run, so it cannot test the floor");
+else if (someWaypointsAreComputed(THREE_RUN))
+  fail("fixture: the 3-run fixture carries computed precision, so the floor is not what is being tested");
+else if (manufacturedWaypointCaveat(THREE_RUN))
+  fail("a bare 3-pin run was captioned — measured, that is luck as often as fabrication");
+else ok("a bare 3-pin run with no second tell is NOT captioned");
 
 console.log("");
 if (failures) { console.log(`${failures} failure(s).`); process.exit(1); }
