@@ -238,7 +238,52 @@ console.log("\n--- a future-onset product is not presented as current ---");
 }
 
 console.log("\n--- an empty result and a failed read cannot render alike ---");
-for (const f of [MAP, PANEL]) {
+
+// The PANEL answers this differently from the MAP since it became alert-only, and the
+// difference is the point rather than an exemption. A map is a surface you OPENED to ask
+// the question, so it owes you an answer and says "no active wildfires". The route panel
+// is one section of a Safety tab you opened for other reasons, so on the ~all routes with
+// nothing burning nearby it renders nothing at all.
+//
+// That silence is only honest while a failed read is LOUD. If the error branch were ever
+// deleted, a dead federal service and a clean forecast would both render as an absent
+// section — the precise "an empty result and a failed read render alike" defect this
+// whole block exists to forbid, arrived at from the opposite direction. So the panel gets
+// the same ordering rule, asserted against its `return null` instead of against a claim:
+// the no-fires branch must return null, and must sit after both an error branch and a
+// read of the query's .data.
+{
+  const s = raw[PANEL];
+  const b = blank(s);
+  const nullAt = b.search(/if\s*\(\s*!\s*fires\.length\s*\)\s*return\s+null\s*;/);
+  const claim = s.match(/No active wildfire[^"'<]*/);
+  if (claim) {
+    fail(`${PANEL}:${lineOf(PANEL, s.indexOf(claim[0]))} the panel makes an affirmative "no wildfires" claim again — it is alert-only, so an empty result must render nothing`);
+  } else if (nullAt < 0) {
+    fail(`${PANEL}: the no-fires branch is not \`if (!fires.length) return null;\` — this guard cannot see how an empty result renders, so it cannot tell it apart from a failed read`);
+  } else {
+    ok(`${PANEL}: an empty result renders nothing (alert-only), not a "no wildfires" claim`);
+    const errAt = b.search(/\.error\b/);
+    const dataAt = b.search(/\.data\b/);
+    if (!/not a report that nothing is burning/.test(s)) {
+      fail(`${PANEL}: the error copy is gone — with no empty state left, a failed read would render an absent section exactly like a clean one`);
+    } else if (errAt < 0 || errAt > nullAt) {
+      fail(`${PANEL}:${lineOf(PANEL, nullAt)} the silent empty branch is not preceded by an error branch — a failed fetch would fall through to rendering nothing`);
+    } else if (dataAt < 0 || dataAt > nullAt) {
+      fail(`${PANEL}:${lineOf(PANEL, nullAt)} the silent empty branch is not preceded by a read of the query's .data — it cannot know the query settled`);
+    } else {
+      ok(`${PANEL}: the silent empty branch sits after both an error branch (line ${lineOf(PANEL, errAt)}) and a .data read (line ${lineOf(PANEL, dataAt)})`);
+    }
+    // The loading branch is load-bearing for the same reason, and it is also the anchor
+    // check:bare matches to prove the panel is mounted on the Safety tab at all — under
+    // renderToStaticMarkup no effect runs, so "checking" is the only thing it can ever see.
+    if (!/Checking federal fire reports/.test(s)) {
+      fail(`${PANEL}: the loading line is gone — an in-flight query would render as an absent section, and check:bare loses its only anchor for this panel`);
+    } else ok(`${PANEL}: an in-flight query still renders its checking line`);
+  }
+}
+
+for (const f of [MAP]) {
   const s = raw[f];
   // The affirmative "nothing is burning" claim...
   const claim = s.match(/No active wildfire[^"'<]*/);

@@ -33,6 +33,8 @@
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "audit:waypoint-order": "node scripts/audit-waypoint-order.mjs",
     "audit:waypoint-distances": "node scripts/audit-waypoint-distances.mjs",
+    "audit:map-pins": "node scripts/audit-route-map-pins.mjs",
+    "audit:access-prose": "node scripts/audit-misfiled-access-prose.mjs",
     "audit:rappels": "node scripts/audit-rappels.mjs",
     "audit:hazard-redundancy": "node scripts/audit-hazard-redundancy.mjs",
     "audit:fifty-classics": "node scripts/audit-fifty-classics.mjs",

@@ -72,20 +72,22 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   const tone = closeUncontained.length ? { c: C.red, bg: C.redBg } : fires.length ? { c: C.amber, bg: C.amberBg } : null;
 
   // The genuine empty state: the query succeeded, over a known point, and found none.
-  if (!fires.length) {
-    return (
-      <div style={wrap}>
-        <div style={hd}>Fire &amp; smoke</div>
-        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
-          {/* "of this route", not the area's name. A DB area name is often a crag SECTOR
-              label — the measured case was "(C) Main Wall, left side", which reads as
-              nonsense in a sentence about geography and is not a place anyone recognises. */}
-          No active wildfires reported within {radiusMi} miles of this route.
-        </div>
-        <Foot C={C} onOpenFireMap={onOpenFireMap} />
-      </div>
-    );
-  }
+  //
+  // This renders NOTHING rather than an affirmative "no active wildfires within 50 miles".
+  // The panel is an alert, not a status line: on the overwhelming majority of routes,
+  // on the overwhelming majority of days, nothing is burning nearby, and a section that
+  // appears on every route to say so is noise that trains people to scroll past the one
+  // time it says something. It fires only when there is a fire near this climb.
+  //
+  // **Absence stays unambiguous, and that is the whole reason the two branches above
+  // this one still render.** A silent nothing is only honest while a failed read is
+  // loud: q.error paints an amber box saying explicitly that this is not a report that
+  // nothing is burning, and q.isLoading paints the checking line. So the panel being
+  // absent can only mean the query settled and found none — never "we could not look".
+  // Delete either of those branches and this null becomes the exact failure
+  // `check:fire` exists to prevent, which is why that guard now asserts this branch
+  // returns null AND sits after both of them in source order.
+  if (!fires.length) return null;
 
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
