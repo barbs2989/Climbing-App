@@ -44,6 +44,20 @@ const CASES = [
       "  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],\"Trailhead\"))return campElevFt(ws[i]);\n  return null;",
       "  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],\"Trailhead\"))return campElevFt(ws[i]);\n  return 500;"),
   },
+  {
+    name: "9. revert campingGate() to the bare catOf() list (the Fury defect)",
+    want: /trad on a peak does NOT render|trad-is-alpine rule is not wired/i,
+    edit: (s) => s.replace(
+      'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);',
+      'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route));'),
+  },
+  {
+    name: "10. climbsAPeak() returns true unconditionally (the rule becomes 'always on')",
+    want: /trad on a CRAG renders camping|climbsAPeak returns true for a crag/i,
+    edit: (s) => s.replace(
+      '  return String(a.areaType||"").toLowerCase()==="peak";',
+      '  return true;'),
+  },
 ];
 
 let pass = 0;
