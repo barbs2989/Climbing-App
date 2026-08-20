@@ -21,6 +21,19 @@
 // 18 satisfy `trackIsJustTheWaypoints` as well, so on those neither the line nor the pins record
 // anywhere. The two predicates are independent and both are asserted here.
 //
+// WHAT THIS CANNOT SEE, measured rather than guessed. All three tests read only the COORDINATES,
+// so they catch fabrication that left a structural fingerprint and nothing else. Pins that were
+// manufactured and then ROUNDED to surveyed precision are invisible:
+// `wa_himmelhorn_southeast_route` claims 5,100-7,400 ft across five pins whose ground reads
+// 1,191-1,612, and its coordinates sit at 6 decimals and are not collinear — so no caveat renders,
+// correctly, by every test here. Measured 2026-08-20: 180 of the 1,016 routes with pins would
+// caption (18%), while 371 pins of 4,195 carry more than 8 decimals and 3,353 sit at 4-6.
+//
+// Only the GROUND catches the rounded ones (`audit:waypoint-elevations`, 3,506 USGS requests),
+// which cannot run at render time. Closing that in the app needs the verdict PRECOMPUTED and
+// stored — a schema decision, not another predicate. `oneoff/probe-caveat-on-real-rows.mjs`
+// renders real rows and pins this limit so it stays visible.
+//
 // Static SSR (no browser, no DB), so it sits in `npm run build`.
 import { build } from "esbuild";
 import { createRequire } from "module";
