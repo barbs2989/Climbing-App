@@ -65,11 +65,28 @@ if (!rows.length) { console.error(`FAIL — read 0 routes for scope "${STATE}". 
 const alpine = rows.filter((r) => ALPINE.has(norm(r.discipline)));
 const findings = { twoTrailheads: [], noCoord: [], thVsLogistics: [] };
 
-for (const r of alpine) {
+/* Scoped to EVERY route carrying waypoints, not to the alpine-discipline subset, and that
+   is a correction rather than a widening. The first version filtered on `discipline` and
+   therefore reported ZERO two-trailhead routes while `audit:waypoints` reported one:
+   `wa_remmel_mountain_southeast_slope` carries "Thirtymile Trailhead" and "Andrews Creek
+   Trailhead" 7.8 km apart and is filed as **trad**, though it is a walk-up. The discipline
+   label is not a reliable filter for a question about the map, and none of these three
+   questions is discipline-specific anyway — a second trailhead pin is wrong on a crag too.
+   The alpine count is still printed, because the request was scoped to alpine routes. */
+for (const r of rows) {
   const wps = Array.isArray(r.waypoints) ? r.waypoints.filter(Boolean) : [];
   if (!wps.length) continue;
 
-  // 1. Two trailhead pins. A route starts in one place; the map paints both.
+  /* 1. Two trailhead pins. REPORT-ONLY, and the reason is measured rather than assumed: of
+        the two routes that have ever tripped this, ONE was a defect and one was correct
+        data. `wa_mount_ballard_south` carried "Harts Pass" beside "Canyon Creek Trailhead"
+        while its approach text names only Canyon Creek and never mentions Harts Pass —
+        wrong, and fixed. `wa_remmel_mountain_southeast_slope` carries "Thirtymile" and
+        "Andrews Creek" and its approach text describes BOTH in full ("Via Thirtymile: …
+        Via Andrews Creek: …") — that is a peak with two genuine approaches, the case
+        CLAUDE.md's trailhead-agreement entry says explicitly not to sweep to zero.
+        So the question this asks is "does the route's own prose name one start or two?",
+        and only reading it answers that. Do not auto-fix from this list. */
   const ths = wps.filter(isTrailhead);
   if (ths.length > 1) {
     const placed = ths.filter(hasCoord);
@@ -110,6 +127,8 @@ console.log(`\n=== route map pin audit ===`);
 console.log(`scope "${STATE}" · ${rows.length} routes with waypoints · ${alpine.length} of them alpine-family`);
 
 console.log(`\n1. TWO OR MORE TRAILHEAD PINS — the map draws every one: ${findings.twoTrailheads.length} route(s)`);
+console.log(`   Candidates, NOT defects. Read the route's own approach text: a peak with two genuine`);
+console.log(`   approaches is correct data (wa_remmel_mountain_southeast_slope describes both in full).`);
 for (const f of findings.twoTrailheads.slice(0, LIMIT)) {
   console.log(`   ${f.id} — ${f.name}: ${f.n} trailhead pins${f.apartM != null ? `, ${f.apartM} m apart` : ""}`);
   console.log(`      ${f.names.join("  |  ")}`);

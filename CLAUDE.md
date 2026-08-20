@@ -2239,21 +2239,34 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
-- **`audit:map-pins`** asks what the route MAP actually draws, which none of the three waypoint
-  audits can. They all begin by filtering to pins that HAVE a coordinate and then ask "is this
-  pin on the line?", so the two questions a climber looking at the map is asking are invisible
-  to them by construction.
-  - **Two trailhead pins.** A route starts in one place; the map paints every `Trailhead`-typed
-    waypoint. Exactly **one** route in the catalog had two (`wa_mount_ballard_south`: "Harts
-    Pass" and "Canyon Creek Trailhead", 18.3 km apart). The repair **retypes rather than
-    deletes** — the row's own approach text names Canyon Creek and never mentions Harts Pass, so
-    the untrue part is calling a real pass a trailhead. `Trailhead/pass` normalises to
-    `Trailhead` in `WP_TYPE_MAP`, which is how it got drawn as one.
+- **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
+  paint, and which pins it will silently drop — rather than the geometry question the three
+  waypoint audits ask. It overlaps `audit:waypoints` on two of its three sections and exists
+  for the UI consequence, not the detection; see the honesty note at the end of this entry.
+  - **Two trailhead pins. Candidates, never defects**, and that is measured: of the two routes
+    that have tripped it, **one was a defect and one was correct data**.
+    `wa_mount_ballard_south` carried "Harts Pass" beside "Canyon Creek Trailhead" 18.3 km apart
+    while its approach text names only Canyon Creek and never mentions Harts Pass — wrong, and
+    repaired by **retyping rather than deleting** (`Trailhead/pass` normalises to `Trailhead` in
+    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). But
+    `wa_remmel_mountain_southeast_slope` carries "Thirtymile" and "Andrews Creek" and its own
+    approach describes both in full — *"Via Thirtymile: … Via Andrews Creek: …"* — which is a
+    peak with two genuine approaches, the case the `audit:trailhead-agreement` entry already
+    says not to sweep to zero. **Read the route's prose before touching either pin.**
+  - **Scope it by waypoints, NOT by discipline.** The first version filtered to alpine-family
+    disciplines and reported **zero** two-trailhead routes while `audit:waypoints` reported one:
+    Remmel is a walk-up filed as **`trad`**. A discipline label is not a reliable filter for a
+    question about the map, and none of these three questions is discipline-specific anyway.
   - **Pins the map silently drops.** `GPXMap` skips `wp.lat == null` without a word, so such a
-    waypoint is listed under the map and absent from it — measured at **44 pins across 17 WA
-    alpine routes**, one of which (`wa_emerald_peak_west_route`) has a single waypoint, so its
-    map drew nothing at all. This is the "not all the waypoints are clickable" report, and no
-    coverage check could reach it: the column is populated and the list renders.
+    waypoint is listed under the map and absent from it — **40 pins across 16 WA routes** after
+    the repairs below, one of which (`wa_emerald_peak_west_route`) had a *single* waypoint, so
+    its map drew nothing at all.
+    - **`audit:waypoints` already had this category** ("WAYPOINT HAS NO COORDINATE — missing
+      from the map"), and the first draft of this entry claimed no existing audit could see it.
+      That was wrong. What nothing had noticed is the **UI** consequence: the row rendered as
+      ordinary text, so on the page it was indistinguishable from a placed one and tapping it
+      did nothing. The detection existed; the reader-side honesty did not. Check whether a
+      sibling audit already answers your question before claiming novelty for it.
   - **`Number(null)` is 0, not NaN**, and the first run manufactured a finding because of it —
     `wa_jack_mountain_northeast_glacier` reported a trailhead disagreement of **12,215 km**,
     which is the distance from a real pin to (0, 0) in the Gulf of Guinea. A missing blob
