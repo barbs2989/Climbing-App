@@ -2458,6 +2458,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     **convention**, not an error, and reporting them would be reporting correct work. The other 88
     imply a start the row records nothing at. Same shape as `dist_km` holding two conventions at
     once — **this column has two readings too, and only one of them is wrong.**
+  - **THE 88 HAVE NO COMMON CAUSE — both stories were tested and BOTH DIED, so do not write a bulk
+    repair.** The findings look systematic (57 of 88 share a `gain_ft` with another finding, and the
+    shared values are round: 4000 six times, 4800 six, 1200 five, 2200 five), which reads as either a
+    value copied across siblings or a round number guessed instead of measured. Measured against the
+    **passing** population — the denominator the audit itself does not emit —
+    `probe-gain-findings-are-round-estimates.mjs` says neither holds. Roundness is a property of the
+    **column**, not of the defect: 73.9% of failures are a multiple of 100 against **63.5% of the 688
+    passing routes**, which is a 10-point lean and not a cause. And the contamination story fails in
+    the **opposite direction** — a failing route shares its gain with another route **64.8%** of the
+    time against **76.0%** for a passing one, so the defective rows are *less* duplicated than the
+    healthy ones.
+    - So these are 88 individually wrong numbers, not one import bug with 88 symptoms, and the repair
+      is per-route research. **A transform would have to invent a value**, which is the class this
+      file records for interpolated pins and halved rappel lengths. 23 of the 88 carry a non-round
+      gain (`wa_mount_rainier_edmunds_headwall` 8,470; `wa_mount_logan_r1` 7,027) — a guessing story
+      never explained those either.
+    - The transferable half is the method rather than the answer: **a pattern among findings is not
+      evidence until it is compared against the rows that pass.** Every count here that was quoted
+      without its denominator has overstated the work.
   - Elevations are read from `elev` (**feet**) with the legacy `elevM` spelling converted, because
     mixing them would put a silent 3.28x error into every comparison.
   - **`--json` must never be followed by `process.exit()`**, and this cost an hour to see. On a TTY
