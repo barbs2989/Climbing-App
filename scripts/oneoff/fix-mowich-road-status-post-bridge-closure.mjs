@@ -38,7 +38,11 @@ import { selectAll, patchRow, requireServiceKey } from "../lib/supabase-env.mjs"
 const APPLY = process.argv.includes("--apply");
 const key = requireServiceKey();
 const SOURCE = "wa_mount_rainier_mowich_face";
-const TARGETS = ["rainier_north_mowich_headwall", "wa_mount_rainier_edmunds_headwall", "rainier_central_mowich_face"];
+// wa_liberty_cap_ptarmigan_ridge_finish is a LATE ADDITION and the reason matters: the first run of
+// this fix was scoped from an `id=like.wa_*` audit, and `rainier_central_mowich_face` carries a
+// legacy id with no prefix — so the audit's Mowich cluster was truncated and this fifth route never
+// surfaced. Found only once audit:trailhead-road-agreement was rescoped to the whole catalog.
+const TARGETS = ["rainier_north_mowich_headwall", "wa_mount_rainier_edmunds_headwall", "rainier_central_mowich_face", "wa_liberty_cap_ptarmigan_ridge_finish"];
 
 const [src] = await selectAll("routes", "id,road,access,approach_logistics", `id=eq.${SOURCE}`, { pageSize: 3, key });
 if (!src) { console.error(`${SOURCE}: NOT FOUND`); process.exit(1); }

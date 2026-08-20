@@ -7,8 +7,11 @@
 // [[a-probe-that-copies-its-subject-measures-a-fossil]]
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 
+// FIVE, not four. The fifth was missed on the first pass because the audit that scoped it filtered
+// on `id=like.wa_*` and `rainier_central_mowich_face` has a legacy id, truncating the cluster.
 const IDS = ["wa_mount_rainier_mowich_face", "rainier_north_mowich_headwall",
-  "wa_mount_rainier_edmunds_headwall", "rainier_central_mowich_face"];
+  "wa_mount_rainier_edmunds_headwall", "rainier_central_mowich_face",
+  "wa_liberty_cap_ptarmigan_ridge_finish"];
 const K = anonKey();
 const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,road,access,approach_logistics&id=in.(${IDS.join(",")})`,
   { headers: { apikey: K, Authorization: "Bearer " + K }, signal: AbortSignal.timeout(60000) });
