@@ -2398,15 +2398,35 @@ the correction knows the screen is wrong, and they have no way to report it.
       **waypoint** store, which is 98% populated — the *check the existing files before
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
-  - **The real gate defect points the OTHER way, and is left as an open product decision.**
+  - **THE GATE IS `campingGate()`, AND THE RULE IS "TRAD IS ALPINE WHEN IT CLIMBS A PEAK"** — a
+    user decision, taken after the defect was measured rather than guessed at.
     `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,
-    6 pitches, with Access Creek Basin and Luna Col recorded — is filed `trad`, which `catOf()`
-    folds into the crag family, so its camping renders **nowhere**. It is the only such route
-    today. It is **not** a slipped label: the peak's 20-pitch North Buttress is `trad` too, so
-    big alpine rock routes carry that discipline by convention here. Fixing it means deciding when
-    a trad route counts as alpine, which is a policy question and not polish — do not widen the
-    gate without that decision, since section 3 deliberately asserts crag routes are *not* offered
-    the panel.
+    with Access Creek Basin and Luna Col recorded — is filed `trad`, which `catOf()` folds into the
+    crag family, so its camping rendered **nowhere**: the `descent_text` shape, populated and on
+    screen for nobody. It is **not** a slipped label — the same peak's 20-pitch North Buttress is
+    `trad` too, so big alpine rock routes carry that discipline by convention here. **Discipline
+    says what KIND of climbing; it does not say whether a party can be benighted**, which is the
+    question this panel asks.
+    - `campingGate(route)` = the five gated disciplines **OR** `climbsAPeak(route)`, which reads
+      `areaType` — the same field name on the seed `MOUNTAINS` tree and on a DB route's `_dbArea`.
+    - **`areaType` is the ONLY signal, deliberately.** A gain or pitch-count threshold is a
+      heuristic that one more adjective defeats, and this file already records `area_type` being
+      unreliable in **one** direction (Tiffany Mountain is typed a `crag` and its routes are a
+      6-pitch 5.8, a 5-pitch arete and an ice couloir). That direction is the SAFE one: such a
+      route keeps today's behaviour instead of gaining a panel it should not have.
+    - **Measured before shipping, both ways**: it admits exactly the one route, and across a
+      1,000-route crag-discipline sample **0%** sit on a peak-typed area — so it cannot leak
+      camping onto roadside crags. Widening it is also inert where there is no data, since
+      `CampingPanel` returns null with no sites.
+    - **WIRING IT TURNED THREE EXISTING ASSERTIONS RED, AND THEY WERE RIGHT TO GO RED.** The
+      fixture stamped `areaType:"peak"` on **every** probe route — harmless while the gate read
+      only the discipline, and instantly vacuous once peak-ness mattered, because every "crag
+      routes must not show camping" assertion was being made against a route the catalog calls a
+      peak. The area type is a fixture **parameter** now. *A fixture that cannot express the
+      distinction cannot test it* — the same shape as `check:token-boxes`' tick-list list id.
+    - Section 11 pins the rule in **both** directions, because a rule that only ever ADMITS is
+      indistinguishable from having no rule: trad on a peak renders, trad on a crag does not.
+      Injection cases 9 and 10 are the pair (revert the gate; make `climbsAPeak` always true).
 - **`check:track-caveat`** asserts that a line drawn between a route's own waypoints does not pose
   as a recorded GPS track. **201 of the 580 WA routes carrying a `gpx` store a polyline whose every
   vertex IS one of that route's own waypoints** — median **four** points, 162 of them spanning more
