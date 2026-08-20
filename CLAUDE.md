@@ -1364,7 +1364,17 @@ a build error, but a screen that renders wrong or not at all.
     the sibling guard's stated scope is write targets. Untracked, uncalled, hand-made; crew
     readiness is computed client-side by `datesAgreed`/`agreedDate`. The two guards' scopes are
     complementary rather than overlapping, and this is the case that shows it.
-  - Four `KNOWN` entries, each a claim about the live database, each failing when **stale**:
+  - **`auto_archive_crews` and `is_crew_ready` are GONE — dropped by `0167`, and the two bullets
+    above are history rather than current state.** Both were hand-made, broken on columns that
+    do not exist, referenced by nothing (checked against `pg_trigger`, `pg_proc.prosrc`,
+    `pg_policy` and the whole repo), and duplicated by working client-side code — the app
+    archives crews with `CREW_ARCHIVE_GRACE_DAYS = 3` and `isArchivedCrew()`, and computes
+    readiness with `isReady()`. The recorded reason for keeping them was that dropping a
+    function git has never seen destroys the only record of the intent; `0167` answers that by
+    reproducing **both bodies verbatim in the migration**, which puts them in version control
+    for the first time. `KNOWN` is down to `merge_accounts` here and `handle_new_user` in the
+    drift guard.
+  - Two `KNOWN` entries, each a claim about the live database, each failing when **stale**:
     `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
     account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
     0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
