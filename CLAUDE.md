@@ -31,6 +31,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
