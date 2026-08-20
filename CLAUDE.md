@@ -2197,6 +2197,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     the DATA: a checker cannot inject them by editing code and must not write to the live project.
     Two cases must fire and **four must stay silent** — the four are the tightenings above, so a
     needle re-widened in future fails rather than quietly returning noise.
+  - **Section 2 asks a different question and is deliberately WEAKER: does a route's `road.name`
+    even name this trailhead's road?** Section 1 is structurally blind to a row describing the
+    **wrong road entirely**, because a correct statement about the wrong road contradicts nobody.
+    `wa_mount_barnes_scramble` sat at the Sol Duc trailhead with `road.name` = *"Olympic Hot Springs
+    Road (to Whiskey Bend Trailhead)"*, a `status` about a flood washout and a `driveNote` promising
+    a 6.2-mile road walk — every sentence true, and every one about a road on the other side of the
+    Olympics.
+    - **This is a class the trailhead sweep CREATED**, so the detector is pointed at its author's
+      own work first. Moving a trailhead to settle a disagreement between a route's two copies of it
+      leaves the `road` block describing the road that was removed. Four were recorded as follow-up
+      when #1081 shipped; this is what finds them mechanically instead of from memory.
+    - **Comparative, not absolute**: a name is flagged only when the other routes at the same
+      trailhead agree on a road name it shares nothing with. That keeps it quiet on legitimate
+      variation (*"Sol Duc Road"* / *"Sol Duc Hot Springs Road"* overlap on `duc`) while catching a
+      name drawn from another drainage. Clusters below three routes are skipped — there is no
+      majority to measure against, the same reason section 1 needs a cluster at all.
+    - **It is a HYPOTHESIS LIST and the output says so.** 47 in WA, precision **not** measured. A
+      peak with two genuine approaches looks exactly like this whichever one it records, and routes
+      legitimately share a trailhead while driving in from different roads. Do not sweep it.
+      `audit:area-parents` records the same discipline: *measure a detector's precision before
+      shipping it, not after.*
+    - **Placeholder names are split out** (2 in WA — *"Forest/park access road (verify per
+      trailhead)"*). They are not wrong roads, they are absent ones, and the repairs are opposite:
+      one wants research, the other wants a copy from a neighbour.
   - Read-only, anon key, **fails closed** on an empty read: zero routes makes every cluster look
     consistent, which is the false-pass direction. Not a build gate — a property of the DB, not the
     checkout, so no code change can cause or fix it; same reasoning as `check:counts`.

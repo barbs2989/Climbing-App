@@ -49,6 +49,11 @@ const CASES = [
     why: "PAST-tense access is the sentence EXPLAINING a closure — reading it as a live claim silently drops a real finding",
     rows: [route("a", { status: "No public vehicle access — permanently closed", seasonalGate: "Formerly open to vehicles mid-July–mid-October; as of the 2025 bridge closure this is a 27-mile walk" }),
            route("b", { status: "Seasonal", seasonalGate: "Typically opens ~July" })] },
+
+  { name: "alternate", expect: 0,
+    why: "a closure the row LABELS as another road is correct context, not a contradiction (Sol Duc naming the Elwha-side road)",
+    rows: [route("a", { status: "Paved, open seasonally", seasonalGate: "Closed by snow in winter; the alternate Elwha-side road is permanently closed beyond Madison Falls" }),
+           route("b", { status: "Paved, generally open year-round to the trailhead area" })] },
 ];
 
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "th-road-"));

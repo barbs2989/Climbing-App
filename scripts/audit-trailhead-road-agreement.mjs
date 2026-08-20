@@ -91,6 +91,16 @@ const roadFields = r => {
 // sentence the match landed in rather than the whole field, because a row legitimately describes
 // both a winter gate and a permanent closure and only the second is a contradiction.
 const SEASONAL_CTX = /\b(seasonal|winter|snow|spring opening|each (?:spring|summer)|until (?:the )?(?:spring|summer|snow)|plow)/i;
+// A closure the row itself labels as belonging to a DIFFERENT road is not a claim about this
+// trailhead's road — it is useful context, correctly written. `wa_mount_appleton_standard` sits at
+// Sol Duc and its road block is entirely about Sol Duc Road; the flagged phrase is "the ALTERNATE
+// Elwha-side road (Olympic Hot Springs Rd) is permanently closed beyond Madison Falls". The
+// "beyond <the trailhead>" rule cannot reach it, because Madison Falls is genuinely not the Sol Duc
+// trailhead — that rule was deliberately written so this case would survive, on the belief it was
+// real. Reading the row is what settled it. This is the seventh tightening and every one has been
+// the same lesson: road prose describes MORE THAN ONE ROAD, and a needle blind to which road a
+// sentence is about will keep manufacturing contradictions out of correct writing.
+const OTHER_ROAD_CTX = /\b(alternate|alternative|the other|other side|[a-z]+-side\b|on the exit|exit\)|approach from the (?:north|south|east|west))/i;
 
 // An OPEN phrase in the PAST TENSE is not a claim that you can drive there — it is usually the
 // sentence explaining the closure. `wa_mount_rainier_ptarmigan_ridge` says "FORMERLY open to
@@ -144,8 +154,8 @@ for (const r of rows) {
   if (lat === null || lng === null) continue;
   const fields = roadFields(r);
   if (!Object.keys(fields).length) continue;
-  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields,
-    closed: fire(fields, CLOSED, SEASONAL_CTX), open: fire(fields, OPEN, PAST_CTX) });
+  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields, roadName: (r.road || {}).name,
+    closed: fire(fields, CLOSED, new RegExp(`${SEASONAL_CTX.source}|${OTHER_ROAD_CTX.source}`, "i")), open: fire(fields, OPEN, PAST_CTX) });
 }
 
 // --- cluster by coordinate (single-link, greedy) ------------------------------------------------
@@ -220,11 +230,73 @@ for (const f of findings) {
   if (rest.length) console.log(`  (${rest.length} more in this cluster make no clear claim either way)`);
 }
 
+// ─── SECTION 2: does a route's road.name even name THIS trailhead's road? ─────────────────────
+//
+// Section 1 asks whether siblings disagree about a road being OPEN. It is structurally blind to a
+// row describing the WRONG ROAD ENTIRELY, because a correct statement about the wrong road
+// contradicts nobody. `wa_mount_barnes_scramble` sits at the Sol Duc trailhead with `road.name` =
+// "Olympic Hot Springs Road (to Whiskey Bend Trailhead)" — every word of it true, and about a road
+// on the other side of the Olympics.
+//
+// This is a class I CREATED. Earlier batches in this sweep moved a route's trailhead to settle a
+// disagreement between its two copies of that trailhead, and left the `road` block describing the
+// road that was removed. So the detector is pointed at my own work first.
+//
+// The test is comparative, not absolute: a road name is flagged only when the OTHER routes at the
+// same trailhead agree on a name it shares nothing with. That is what keeps it quiet on legitimate
+// variation ("Sol Duc Road" / "Sol Duc Hot Springs Road" overlap on `duc`) while catching a name
+// drawn from a different drainage. A lone route at a trailhead has nothing to be compared against
+// and is never flagged — the same reason section 1 needs a cluster.
+const ROADSTOP = new Set(["road","rd","the","and","from","via","to","at","trailhead","th","access","park","national","forest","service","fs","fr","nf","hwy","highway","route","sr","us","county","main","north","south","east","west","upper","lower","river","creek","lake","pass","area","campground","entrance","becomes","off"]);
+const rtoks = x => new Set([...String(x || "").toLowerCase().matchAll(/[a-z]{3,}/g)].map(m => m[0]).filter(t => !ROADSTOP.has(t)));
+
+const mismatched = [];
+for (const c of clusters) {
+  if (c.length < 3) continue; // need a real majority to compare against
+  const named = c.filter(p => p.roadName);
+  if (named.length < 3) continue;
+  // How many siblings share each token? A token carried by most of the cluster identifies the road.
+  const freq = new Map();
+  for (const p of named) for (const t of rtoks(p.roadName)) freq.set(t, (freq.get(t) || 0) + 1);
+  const core = [...freq.entries()].filter(([, n]) => n >= Math.ceil(named.length / 2)).map(([t]) => t);
+  if (!core.length) continue; // the cluster does not agree on a road name; nothing to measure against
+  for (const p of named) {
+    const t = rtoks(p.roadName);
+    if (core.some(x => t.has(x))) continue;
+    mismatched.push({ p, core, peers: named.filter(q => q !== p).slice(0, 3) });
+  }
+}
+
+// A road name that is a PLACEHOLDER is a different finding from one naming the wrong drainage, and
+// they need opposite repairs — one wants research, the other wants a copy from a neighbour. Split,
+// so the count is not one bucket of two unrelated things.
+const VAGUE = /^(remote|forest\/park|various|multiple|approach|access|unpaved|paved|gravel|verify|n\/a|unknown|see |depends)/i;
+const vague = mismatched.filter(m => VAGUE.test(String(m.p.roadName).trim()));
+const wrongRoad = mismatched.filter(m => !VAGUE.test(String(m.p.roadName).trim()));
+
+for (const m of wrongRoad) {
+  console.log(`\n${"=".repeat(78)}\n${m.p.th}   — this route names a road its neighbours do not`);
+  console.log(`  ${m.p.id}`);
+  console.log(`      road.name: ${m.p.roadName}`);
+  console.log(`  ${m.peers.length} of its neighbours at this trailhead instead say:`);
+  for (const q of m.peers) console.log(`      ${q.id}: ${q.roadName}`);
+  console.log(`  shared road words in this cluster: ${m.core.join(", ")}`);
+}
+
 const multi = clusters.filter(c => c.length > 1);
 console.log(`\n${"=".repeat(78)}`);
 console.log(`${rows.length} routes read · ${pts.length} carry both a trailhead coordinate and road prose`);
 console.log(`${clusters.length} trailhead cluster(s) within ${RADIUS} m · ${multi.length} shared by more than one route`);
 console.log(`${findings.length} cluster(s) where one route says the road is CLOSED and another says it OPENS.`);
+console.log(`${wrongRoad.length} route(s) whose road.name names a DIFFERENT road from their trailhead neighbours,`);
+console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0,2).map(m=>m.p.roadName).join('", "')}" …).`);
+if (wrongRoad.length) {
+  console.log(`\nSection 2 is a HYPOTHESIS LIST, weaker than section 1 and deliberately so: a route can`);
+  console.log(`legitimately share a trailhead with routes that drive in from another road, and a peak with`);
+  console.log(`two approaches will look like this whichever one it records. Read the route before moving`);
+  console.log(`anything. What it is genuinely good at is the class this sweep CREATED — a trailhead moved`);
+  console.log(`to settle a disagreement, leaving the road block describing the road that was removed.`);
+}
 if (findings.length) {
   console.log(`\nReport only — this cannot say which row is right, only that they cannot both be.`);
   console.log(`A road is either gated or it is not; that fact does not vary by which climb you picked.`);
