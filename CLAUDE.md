@@ -2594,6 +2594,21 @@ the correction knows the screen is wrong, and they have no way to report it.
       creek ENDS, the one point on it a route never crosses. Every pin flagged by the **decimal**
       test, i.e. genuinely arithmetic, landed in this bucket. **Triage by feature class before
       distance**; sorting by how far a hit moves puts the useless ones on top.
+  - **OSM CANNOT FINISH THE COLS EITHER, and the reason is a rule worth having: A NAME MATCH IS NOT
+    AN IDENTITY MATCH.** GNIS misses *"Eye Col"*, *"Y Notch"*, *"Ottohorn-Himmelhorn Col"* because
+    they are **climbers' names** — guidebook and OSM, not federal (spot-checked: of ten such names
+    only two are in GNIS, a namesake 70 km off and an offset). OSM really does hold them; the control
+    corridor returns **Cache Col**, `natural=saddle`, no GNIS id. `solve-saddles.mjs` swept it: **46
+    candidates, 4 matches, 0 applicable** — every one denoted something *at* or *near* the pass.
+    `Red Pass contour (~4,200 ft)` against a pass at **5,389 ft**; `Boundary Trail bend toward Apex
+    Pass`; `Boulder Creek crossing / Boulder Pass Trail junction` **5.24 km and 2,697 ft** away.
+    - **Chasing prepositions catches ONE of the four. Test the OBJECT.** If the pin name carries a
+      structure noun the matched feature's name does not — *crossing*, *junction*, *contour*, *bend*,
+      *trail* — the pin is a different kind of thing standing near that feature.
+    - **Scope it to BORROWING a coordinate, never to COMPUTING one.** `solve-junctions.mjs` locates
+      *"X Trail / Y Trail junction"* by intersecting the two trails, which **is** the junction.
+      Checked against all 427 applied pins: **0 would be refused**, so the rule is new without being
+      retroactive — which is the check to run before adopting any tightened gate.
   - **The repaired pins agree with the GROUND, which no solver consulted.**
     `measure-confirmed-pin-elevations.mjs` reads the DEM under all 427 repaired coordinates:
     **411 (96.3%) within 400 ft, 12 off by 400–1000, 1 by more.** Coordinates from four independent

@@ -29,6 +29,7 @@ None of these scripts uses an agent. Each locates a pin from a public record and
 | `is-it-a-saddle.mjs` | DEM ring test: is a claimed col actually a col? |
 | `apply-solved.mjs` | write a solver's output, re-gating against the live row |
 | `solve-gazetteer.mjs` | GNIS name lookup for whatever is left (see the negative result below) |
+| `solve-saddles.mjs` | named cols/passes/notches from OSM `natural=saddle` (also a negative result) |
 | `triage-gazetteer.mjs` | splits gazetteer hits by feature GEOMETRY — point vs linear vs areal |
 | `measure-remaining.mjs` | how much is left — compares against the ORIGINAL coordinates |
 | `measure-confirmed-pin-elevations.mjs` | does the ground agree with the repaired pins? |
@@ -103,6 +104,39 @@ an edge**:
 
 So triage gazetteer hits **by feature class before distance**. Sorting them by how far they move puts
 the useless ones at the top.
+
+## OSM cannot finish the cols either — and a NAME MATCH IS NOT AN IDENTITY MATCH
+
+GNIS misses these for a good reason: *"Eye Col"*, *"Y Notch"*, *"Skyline Notch"*,
+*"Ottohorn-Himmelhorn Col"* are **climbers' names**. They live in guidebooks and in OSM, which
+climbers edit, not in a federal gazetteer. (Spot-checked, so this is the data and not the sweep: of
+ten such names only *Red Pass* and *Williams Lake* are in GNIS at all, and those were a namesake 70 km
+away and an offset.) OSM genuinely does hold this kind of name — the control corridor returns
+**Cache Col**, `natural=saddle`, with no GNIS id.
+
+`solve-saddles.mjs` swept it: **46 candidates, 4 name matches, 0 applicable.** All four denote
+something *at* or *near* the pass rather than the pass:
+
+| pin | matched | apart |
+| --- | --- | --- |
+| `Red Pass contour (~4,200 ft)` | Red Pass | the pass is at **5,389 ft** |
+| `Boundary Trail bend toward Apex Pass` | Apex Pass | 1.94 km |
+| `Boulder Creek crossing / Boulder Pass Trail junction` | Boulder Pass | **5.24 km, 2,697 ft** |
+| `Glacier Gap crevasse crossing` | Glacier Gap | 2.52 km |
+
+Chasing prepositions would have caught **one** of the four. **Test the object instead:** if the pin
+name carries a structure noun the matched feature's name does not — *crossing*, *junction*, *contour*,
+*bend*, *trail* — the pin is a different kind of thing standing near that feature.
+
+Scope it to **borrowing** a named feature's coordinate. It must not be applied to a solver that
+**computes** an intersection: `solve-junctions.mjs` legitimately locates *"X Trail / Y Trail junction"*
+by intersecting the two trails, which *is* the junction. Checked against everything already applied —
+**0 would be refused**, so the rule is new without being retroactive.
+
+The DEM alternative was measured and not built: a col between two named summits is genuinely
+computable (highest point on the lowest connecting path), but only ~5 distinct cols are of that
+shape, and the crude version is already a recorded failure — sampling the straight line between two
+summits landed 473 m off a point that is not a saddle, because a ridge is not a straight line.
 
 ## The repaired pins agree with the ground
 
