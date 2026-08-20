@@ -15,11 +15,24 @@
 //
 //   1. DUPLICATE       a non-trailhead pin on the trailhead's exact coordinate — the feature drawn
 //                      at the car. Type decides severity: a Crag or Base at a ROADSIDE cliff is
-//                      honest, a Topout or Summit there is not.
+//                      honest, a Topout or Summit there is not. BOTH are printed: only the
+//                      impossible-by-type ones used to be, so 15 of the 31 were counted in the
+//                      summary and never named, and a reader cannot check what nothing lists.
 //   2. SELF-CONTRADICTING  two pins sharing one coordinate while stating elevations >100 ft apart.
 //                      One point cannot be at two heights. This needs no external reference to
 //                      CONFIRM, which makes it the cleanest class here — though repairing it still
 //                      needs a real coordinate and is therefore not done by this script.
+//                      IT IS INDEPENDENT OF TYPE, and used not to be. Two uncommented exclusions
+//                      skipped any pair involving a Trailhead (deferring to 1) and any pair of the
+//                      same type (deferring to dedupeWaypoints) — and each deferred to something
+//                      that then DISCARDED the contradiction: category 1 printed only two types,
+//                      and dedupeWaypoints MERGES the pair. Between them they hid the largest
+//                      self-contradiction in the catalog, wa_little_tahoma_east_shoulder, which
+//                      puts "Summerland" (Campsite, 5,950 ft) and "Fryingpan Creek / Summerland
+//                      Trailhead" (3,816 ft) on ONE coordinate — 2,134 ft apart. 13 findings → 20.
+//                      Such a pair is now reported once and TAGGED with the other heading it also
+//                      belongs under, so the overlap is visible instead of being resolved by
+//                      dropping it.
 //   3. ORDER           a Summit pin that is not the highest pin on the route.
 //   4. ELEVGAP         a pin above the route's own stated high point.
 //
@@ -112,12 +125,26 @@ export function analyse(rows) {
 
     for (let i = 0; i < wps.length; i++) for (let j = i + 1; j < wps.length; j++) {
       const a = wps[i], b = wps[j];
-      if (/trailhead/.test(typeOf(a)) || /trailhead/.test(typeOf(b))) continue;
-      if (typeOf(a) === typeOf(b) || !same(a, b)) continue;
+      if (!same(a, b)) continue;
+      /* TWO EXCLUSIONS USED TO SIT HERE, each deferring to something that then threw the finding
+         away. Both were uncommented, and together they hid the largest self-contradiction in the
+         catalog.
+           - a pair involving a TRAILHEAD was skipped, deferring to the DUPLICATE test above. But
+             that test only PRINTS pins matching IMPOSSIBLE_AT_CAR (topout|summit), so the other 15
+             of its 31 were counted and never named. wa_little_tahoma_east_shoulder puts
+             "Summerland" (Campsite, 5,950 ft) and "Fryingpan Creek / Summerland Trailhead"
+             (3,816 ft) on ONE coordinate — 2,134 ft apart, and invisible in every run.
+           - a pair of the SAME type was skipped, deferring to dedupeWaypoints. That helper MERGES
+             them, so the contradiction is not reported anywhere; it is consumed.
+         "One point cannot be at two heights" is independent of type and is a stronger claim than
+         either. It is kept here and tagged, so the pair can still be reported once, under the
+         heading that fits it. */
+      const involvesTrailhead = /trailhead/.test(typeOf(a)) || /trailhead/.test(typeOf(b));
+      const sameType = typeOf(a) === typeOf(b);
       const ea = +a.elev, eb = +b.elev;
       const delta = (Number.isFinite(ea) && Number.isFinite(eb)) ? Math.abs(ea - eb) : null;
       out.identical.push({ id: r.id, a: `${a.type} | ${a.name} (${a.elev ?? "-"})`, b: `${b.type} | ${b.name} (${b.elev ?? "-"})`,
-        lat: +a.lat, lng: +a.lng, aElev: ea, bElev: eb, aName: a.name, bName: b.name,
+        lat: +a.lat, lng: +a.lng, aElev: ea, bElev: eb, aName: a.name, bName: b.name, involvesTrailhead, sameType,
         elevDelta: delta, selfContradicting: delta != null && delta > ELEV_SAME_POINT_FT });
     }
 
@@ -180,6 +207,19 @@ function selftest() {
     ["one coordinate at two heights is self-contradicting", [{ id: "x", waypoints: [{ type: "Base", name: "B", lat: 48, lng: -120, elev: 3000 }, { type: "Summit", name: "S", lat: 48, lng: -120, elev: 4000 }] }],
       o => o.identical.length === 1 && o.identical[0].selfContradicting],
     ["the same point within rounding is NOT flagged as contradicting", [{ id: "x", waypoints: [{ type: "Base", name: "B", lat: 48, lng: -120, elev: 3000 }, { type: "Summit", name: "S", lat: 48, lng: -120, elev: 3050 }] }],
+      o => o.identical.length === 1 && !o.identical[0].selfContradicting],
+    /* The two exclusions that used to sit in the identical loop each deferred to something that then
+       DISCARDED the finding. These pin both directions so they cannot come back as "already covered
+       elsewhere". The Campsite case is wa_little_tahoma_east_shoulder, 2,134 ft apart and the largest
+       self-contradiction in the catalog, invisible in every run before this. */
+    ["a TRAILHEAD pair still reports the elevation contradiction — the DUPLICATE test only prints topout/summit",
+      [{ id: "x", waypoints: [{ type: "Trailhead", name: "TH", lat: 46.8, lng: -121.6, elev: 3816 }, { type: "Campsite", name: "Camp", lat: 46.8, lng: -121.6, elev: 5950 }] }],
+      o => o.identical.length === 1 && o.identical[0].selfContradicting && o.identical[0].involvesTrailhead],
+    ["a SAME-TYPE pair still reports it — dedupeWaypoints would merge these and lose one",
+      [{ id: "x", waypoints: [{ type: "Hazard", name: "H1", lat: 47.4, lng: -120.7, elev: 7800 }, { type: "Hazard", name: "H2", lat: 47.4, lng: -120.7, elev: 7600 }] }],
+      o => o.identical.length === 1 && o.identical[0].selfContradicting && o.identical[0].sameType],
+    ["...and a same-type pair AGREEING on elevation is still not a contradiction",
+      [{ id: "x", waypoints: [{ type: "Hazard", name: "H1", lat: 47.4, lng: -120.7, elev: 7800 }, { type: "Hazard", name: "H2", lat: 47.4, lng: -120.7, elev: 7790 }] }],
       o => o.identical.length === 1 && !o.identical[0].selfContradicting],
     ["a col higher than the summit is CORRECT and must stay quiet", [{ id: "x", waypoints: [{ type: "Summit", name: "S", lat: 48, lng: -120, elev: 7663 }, { type: "Junction", name: "Col", lat: 48.1, lng: -120.1, elev: 7950 }] }],
       o => o.order.length === 1 && !o.order[0].topoutAboveSummit],
@@ -285,7 +325,11 @@ console.log(`4 ELEVGAP             pin above the route's own high point : ${out.
 if (selfC.length) {
   console.log(`\n--- SELF-CONTRADICTING: one point cannot be at two heights ---`);
   for (const h of selfC.sort((a, b) => b.elevDelta - a.elevDelta)) {
-    console.log(`  ${String(h.elevDelta).padStart(5)} ft apart  ${h.id}\n        ${h.a}\n        ${h.b}`);
+    // Say WHY a pair would otherwise have gone unreported, so the two older exclusions cannot creep
+    // back as "this is already covered elsewhere".
+    const also = [h.involvesTrailhead ? "also a DUPLICATE at the trailhead" : null,
+                  h.sameType ? "same type — dedupeWaypoints would MERGE these and lose one" : null].filter(Boolean);
+    console.log(`  ${String(h.elevDelta).padStart(5)} ft apart  ${h.id}${also.length ? `   [${also.join("; ")}]` : ""}\n        ${h.a}\n        ${h.b}`);
   }
 }
 if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
@@ -352,6 +396,16 @@ if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
 if (impossible.length) {
   console.log(`\n--- DRAWN AT THE CAR: a Topout or Summit on the trailhead coordinate ---`);
   for (const h of impossible) console.log(`  ${h.id}  ${h.pin}   (trailhead: ${h.trailhead})`);
+}
+/* The other 15 of the 31 were COUNTED IN THE SUMMARY AND NEVER NAMED, because only
+   IMPOSSIBLE_AT_CAR types were printed. A Campsite at the car is not impossible the way a Summit is
+   — it can be a real campground beside the trailhead — but it is still a feature drawn at the
+   parking, and a reader cannot check the ones nothing lists. Printed separately so the two claims
+   stay distinguishable: this is "worth a look", the block above is "cannot be true". */
+const otherAtCar = out.duplicate.filter(h => !h.impossible);
+if (otherAtCar.length) {
+  console.log(`\n--- ALSO ON THE TRAILHEAD COORDINATE (not impossible by type, but unlocated) ---`);
+  for (const h of otherAtCar) console.log(`  ${h.id}  ${h.pin}   (trailhead: ${h.trailhead})`);
 }
 if (out.order.length) {
   console.log(`\n--- SUMMIT IS NOT THE HIGHEST PIN ---`);
