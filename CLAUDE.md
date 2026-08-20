@@ -3622,6 +3622,30 @@ one click past where the probe walks, so nothing had reported it at all.
     - The heading above it, *"0 climbers found"*, is the **"0 climbs to go"** defect again:
       `filtered` is matched against that same empty list, so the count is a consequence of the
       failure rather than a search result. It reads `"Matches unavailable"` instead.
+  - **HOME carries two more, and they are the SIXTH and SEVENTH surface.** The JUMP BACK IN tiles
+    read *"My objectives · 0 routes"* and *"My crews · 0 crews"* to an account holding one of each
+    — `objs` is `wishlist.map(...)` and `activeCrews` is `crews.filter(...)`, so both are counts of
+    a list that never arrived. The `"0 climbs to go"` defect a third and fourth time. The tile
+    layout is **locked** by user decision, so only the caption changes; the two-row 3+4 grid is
+    untouched.
+    - **THE FIRST TAB WALKED IS EVIDENCE OF NOTHING, and this probe had been reporting it as
+      evidence since it was written.** `isError` is false while react-query is still retrying —
+      the property that makes the flag safe — so whichever tab settles first is read *before any
+      query has given up*. Observed in one run with `ONLY=objectives`: **Home said "0 routes"
+      while Partners and Logbook, later in the same run, both said broken.** The wiring was
+      correct and the measurement was not; taken at face value it would have sent somebody
+      debugging a working fix. The probe now re-walks Home at the end as `Home:revisited`, and it
+      reads *"couldn’t load"* there.
+    - **`says-broken` could not match the app's own copy.** The regex carried a **straight**
+      apostrophe (`couldn't`) and every string in this app uses a **curly** one, so that
+      alternative had never matched once — every `says-broken=YES` it has ever printed came from
+      *"try again"* or *"unavailable"* instead. A screen whose only honest sentence is
+      *"Couldn’t load …"* therefore read as `says-broken=no`. Same class as
+      [[ssr-probes-must-match-escaped-html]]: match the form the app actually renders.
+    - **The third tile, *"Saved areas · 0 areas"*, is HONEST and was left alone** — `bookmarks` is
+      client-only `useState` with no DB hydration at all, reset on sign-in, so there is no read to
+      fail. That it never persists for a real account is a separate gap, not an outage lie. Check
+      whether a count has a query behind it before flagging it.
     - **Two neighbouring strings on that screen were checked and deliberately left alone.**
       *"Loading climbers…"* is not a defect — the real-accounts panel already branches on
       `browseRes.error` with honest copy, and react-query was still retrying at settle time, so
