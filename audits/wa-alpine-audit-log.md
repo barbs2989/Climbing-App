@@ -8889,3 +8889,79 @@ prior runs per earlier log entries).
 
 Next batch continues alphabetically after `wa_glacier_peak_cool_glacier_gerdine` (see
 progress file).
+
+---
+
+## 2026-08-20 — Pass 3, Batch 130
+
+Eight routes across four peaks (Glacier Peak 4, Goat Mountain 1, Golden Horn 1, Mount Goode
+2): Disappointment Peak Cleaver (Cool Glacier), Frostbite Ridge, Kennedy Glacier, Sitkum
+Glacier (Glacier Peak); South Ridge / Standard Scramble (Goat Mountain); North Face (Golden
+Horn); Megalodon Ridge, Northeast Face (Goode).
+
+**Confirmed errors → fixes in `sql/2026-08-20-batch-130.sql`:**
+- `wa_goat_mountain_south_ridge`: `overview`, `descent`, and `watch_out[0]` all give the true
+  (east) summit's elevation as "6,891 ft" — not corroborated by any source found, and wrong.
+  Wikipedia and Peakbagger both independently give Goat Mountain (Whatcom County)'s true
+  summit as 6,844 ft with a 6,725 ft west/false summit — the latter already matches the
+  6,721 ft this row correctly stores in `beta`. Fixed all three prose occurrences to 6,844 ft
+  and corrected `high_point_ft` from 6,721 ft (the false summit) to 6,844 ft, since the row's
+  own overview/descent/watch_out describe the standard route continuing past the false summit
+  to the true one ("many parties turn around at the easier false summit rather than continue
+  ... to the true summit").
+- `wa_glacier_peak_kennedy_glacier`: `waypoints[0]` ("White Chuck River Trailhead")
+  stored elev/elevFt 1700, contradicting this same row's own `approach` field and sibling
+  route `wa_glacier_peak_sitkum_glacier`'s `approach` field, both of which give 2,350 ft for
+  this identical trailhead — corroborated by USFS/trip-report sources (2,300–2,350 ft).
+  Fixed to 2,350 ft. Same waypoint's `note` also claimed the trailhead sits on "Suiattle
+  River Rd (FR 26)", contradicting this row's own `road` field ("White Chuck Road (FR 23)")
+  and `approach` text ("White Chuck River Trailhead (FS-23...)"). FR 26/Suiattle River Road
+  is a different road entirely, used by sibling route `wa_glacier_peak_frostbite_ridge`'s
+  separate Milk Creek approach — the note reads like cross-route contamination. Rewrote it
+  to name FR 23, matching the rest of the row.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_glacier_peak_disappointment_peak_cleaver`: the route mixes two irreconcilable approach
+  narratives. `approach`/`overview`/`beta`/`hazards`/`road` consistently describe the real,
+  standard North Fork Sauk River Trail → White Pass → Glacier Gap approach (Pilot Ridge
+  junction, Red Creek ford, Mackinaw Shelter — all verifiable, all consistent with this peak's
+  three sibling routes in this same batch). But `waypoints`/`itinerary`/`timing`/`gpx` instead
+  describe a "Trinity Trailhead → Buck Creek Pass → Cool/Gerdine Basin" approach. The
+  `waypoints[0]` pin is self-contradictory on top of that: its coordinate (48.05832,
+  -121.28793) is verifiably the real North Fork Sauk River Trailhead — it matches a published
+  figure for that trailhead exactly, and matches the identical pin used by name on this same
+  peak's Frostbite Ridge and Sitkum Glacier routes in this batch — yet the pin's own `note`
+  claims this coordinate is "as published... for the Trinity Trailhead" (a real trailhead
+  roughly 26 miles away near 48.07,-120.85, on a different road system entirely) and says it
+  "REPLACES" a North Fork Sauk pin. That claim is false: the coordinate never changed, it is
+  still North Fork Sauk's. Whether Buck Creek Pass is a real, viable approach to this route at
+  all is also unconfirmed — nothing found ties Buck Creek Pass/Trinity to Glacier Peak's south
+  side climbing routes, only to unrelated Dakobed Range hiking objectives. Untangling this
+  needs either deleting the fabricated Trinity/Buck Creek Pass material and rebuilding
+  waypoints/itinerary/gpx to match the well-documented North Fork Sauk approach, or the
+  reverse — more than a mechanical fix, and not attempted here.
+- `wa_golden_horn_north_face`: `waypoints[0]`/`approach_logistics` pin the trailhead as "Rainy
+  Pass North Trailhead (PCT)" (48.5153,-120.73601 — externally confirmed as the real Rainy
+  Pass PCT north trailhead coordinate), but the row's own `approach` text says standard access
+  is instead "the Swamp Creek pullout on Hwy 20 (about 3 miles before Rainy Pass)" — a
+  separate, specific roadside parking spot, confirmed by name via multiple trip reports
+  (including one titled "Swamp Creek to Snowy Lakes" for this exact peak) as the real
+  climbers' approach, distinct from the much longer PCT-from-Rainy-Pass hiking route. No
+  authoritative source found gives exact coordinates for the Swamp Creek pullout itself, so
+  left flagged rather than guessing a replacement pin.
+
+`wa_glacier_peak_frostbite_ridge`, `wa_glacier_peak_sitkum_glacier`,
+`wa_goode_mountain_megalodon_ridge`, and `wa_goode_mountain_northeast_face` audited clean —
+Goode's summit coordinate/elevation (48°28'58"N 120°54'39"W, 9,220 ft) independently confirmed
+against Wikipedia and used consistently across all three Goode routes in this batch;
+Megalodon Ridge's FA date correction (2007, not 2008) already self-documents its own prior
+fix accurately; Sitkum/Frostbite's shared North Fork Sauk trailhead pin (48.0579,-121.2882,
+~2,100 ft) is internally consistent with itself and with the externally-confirmed figure.
+
+Web access this run: WebSearch worked throughout; WebFetch was blocked by the egress proxy
+for fs.usda.gov and naturalatlas.com (consistent with prior runs' notes that some domains are
+blocked) — relied on WebSearch's own summarization instead, which was sufficient here.
+
+Next batch continues after `wa_goode_mountain_northeast_face` in the current id-ordered scope
+(see progress file — live scope count has drifted slightly from the last recorded count,
+529 vs. 532, likely normal catalog churn since the last run).

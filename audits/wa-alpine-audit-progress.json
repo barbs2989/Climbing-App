@@ -1,9 +1,9 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_glacier_peak_cool_glacier_gerdine",
-  "total_in_scope_last_count": 532,
+  "last_processed_id": "wa_goode_mountain_northeast_face",
+  "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 590,
   "batches": [
     {
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -2796,6 +2796,24 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-08-20-batch-129.sql",
       "note": "wa_ghost_peak_south_route: descent_text's final sentence still sent the climber out via Ross Lake/Big Beaver Trail, contradicting the route's own approach text, trailhead, all waypoints, and itinerary (all say Hannegan Pass) -- a prior batch's note claims this exact contradiction was already fixed once, but only part of descent_text was corrected; fixed the remaining sentence. wa_gilbert_peak_conrad_glacier and wa_gilbert_peak_meade_glacier: continuation of the same West-Route-contamination pattern a prior batch already partly fixed on this peak (Cowlitz Valley RD/Gifford Pinchot NF land-manager value bleeding onto the Naches-side Conrad Meadows routes) -- that prior fix touched access.landManager but missed access.land_manager (the field RouteDetail actually reads per land_manager||landManager precedence) on Meade Glacier, and missed emergency.rangerStation entirely on Conrad Glacier; both fixed to match the Naches RD/Okanogan-Wenatchee NF value already correct elsewhere on both routes. wa_gilbert_peak_west_route audited clean and confirms the correct west-side Cowlitz Valley RD/Gifford Pinchot NF value where it belongs. wa_glacier_peak_cool_glacier_gerdine: FA field reads 'A. H. Dubor' -- initially suspected as the misspelling a much earlier batch's note describes fixing, but web-verified against Wikipedia/USGS sources that 'A. H. DuBor' (or 'Dubor') is the name actually used in sources for this 1897 USGS survey party member, not 'Dubois' -- left unchanged; a prior batch's own note ('fixed a repeated misspelling Dubois -> Dubor') confirms Dubor was the correction being restored, not the error. wa_free_mojo, wa_frenzel_spitz_south_route audited clean (both well-sourced, FA/coordinates/permit info externally consistent). wa_frying_pan_whitman_glaciers re-verified clean; its existing data_quality-flagged likely-duplicate against wa_little_tahoma_east_shoulder persists, unchanged, still a human/catalog-maintainer decision not an auto-fix."
+    },
+    {
+      "batch_number": 130,
+      "date": "2026-08-20",
+      "route_ids": [
+        "wa_glacier_peak_disappointment_peak_cleaver",
+        "wa_glacier_peak_frostbite_ridge",
+        "wa_glacier_peak_kennedy_glacier",
+        "wa_glacier_peak_sitkum_glacier",
+        "wa_goat_mountain_south_ridge",
+        "wa_golden_horn_north_face",
+        "wa_goode_mountain_megalodon_ridge",
+        "wa_goode_mountain_northeast_face"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "sql/2026-08-20-batch-130.sql"
     }
   ]
 }
