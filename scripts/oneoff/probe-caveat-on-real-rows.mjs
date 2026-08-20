@@ -27,7 +27,7 @@ import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { fileURLToPath } from "url";
-import { manufacturedWaypointCaveat, SYNTHETIC_WAYPOINT_CAVEAT, COMPUTED_WAYPOINT_CAVEAT } from "../../lib/track.js";
+import { groundDisagreementCaveat, SYNTHETIC_WAYPOINT_CAVEAT, COMPUTED_WAYPOINT_CAVEAT } from "../../lib/track.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require_ = createRequire(import.meta.url);
@@ -60,30 +60,52 @@ await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle
 const { render } = require_(out);
 const text = h => h.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-// FINGERPRINTED: the audit names these AND they left a structural tell, so the caption must fire.
+// FINGERPRINTED: the audit names these AND they left a structural tell, so the caption must fire —
+// through the COORDINATES, not the ground. Castle Peak is not whole-route collinear; it carries
+// 17-decimal pins, so it is the `computed` case. Labelling it `line` here was wrong, and the
+// mislabelling is what surfaced the ground-first ordering quietly rewording it.
 const FINGERPRINTED = ["wa_castle_peak_pasayten_scramble"];
-// ROUNDED: fabricated beyond doubt by the DEM, but structurally clean. The caption CANNOT see
-// these, and that is the documented limit rather than a regression. Listed so it stays visible.
+// ROUNDED: fabricated beyond doubt by the DEM, and structurally clean — no coordinate-only test
+// can reach them. THESE USED TO BE THE DOCUMENTED LIMIT: this file recorded that both render no
+// caveat at all and that closing it needed a schema decision. It did not; `lib/ground-checked-pins.js`
+// ships the measurement and both caption now. They stay here as the proof, and if either loses its
+// caption this probe goes red naming it.
 const ROUNDED = ["wa_himmelhorn_southeast_route", "wa_preacher_mountain_scramble"];
 // CONTROL: real routes. A caveat here would be worse than no caveat at all.
-const CONTROL = ["wa_mount_stuart_north_ridge", "wa_mount_baker_coleman_deming"];
+//
+// `wa_mount_stuart_north_ridge` WAS IN THIS LIST AND DID NOT BELONG, which is worth more than the
+// row it occupies. It was picked as an obvious control — the catalog's best-known route, and the one
+// `check:ui` pins as its sample — without anyone measuring its pins. The ground says Goat Pass claims
+// 7,600 ft where the ground reads 5,041, and every coordinate on the route is 3-decimal: the
+// manufactured-then-rounded class exactly. It moved to GROUND_ONLY. Assuming a famous route is clean
+// is the same mistake as reading a spot check as a distribution.
+const CONTROL = ["wa_mount_baker_coleman_deming", "wa_colchuck_peak_colchuck_glacier"];
+// GROUND_ONLY: no structural tell, so only the measurement finds them.
+const GROUND_ONLY = ["wa_mount_stuart_north_ridge"];
 
-const rows = await g(`routes?id=in.(${[...FINGERPRINTED, ...ROUNDED, ...CONTROL].join(",")})&select=*,areas(id,name,area_type,lat,lng,elevation_ft)`);
+const rows = await g(`routes?id=in.(${[...FINGERPRINTED, ...ROUNDED, ...GROUND_ONLY, ...CONTROL].join(",")})&select=*,areas(id,name,area_type,lat,lng,elevation_ft)`);
 if (!rows.length) { console.error("READ EMPTY — failing closed"); process.exit(1); }
 
 let bad = 0;
 for (const r of rows.sort((a, b) => a.id < b.id ? -1 : 1)) {
   const route = { ...r, gpxPts: r.gpx, mountainId: r.area_id,
     _dbArea: r.areas ? { id: r.areas.id, name: r.areas.name, areaType: r.areas.area_type, region: "Washington" } : null };
-  const cav = manufacturedWaypointCaveat(r.waypoints);
+  const kind = FINGERPRINTED.includes(r.id) ? "fingerprinted"
+    : ROUNDED.includes(r.id) ? "rounded" : GROUND_ONLY.includes(r.id) ? "ground-only" : "control";
+  // Read the caveat off the SCREEN, then name which of the three it is. Asking the predicate what
+  // it would say and asserting that instead is how a caption that returns a string nobody renders
+  // reads as working.
   const html = text(render(route, "planner"));
-  const onScreen = html.includes(SYNTHETIC_WAYPOINT_CAVEAT) || html.includes(COMPUTED_WAYPOINT_CAVEAT);
-  const kind = FINGERPRINTED.includes(r.id) ? "fingerprinted" : ROUNDED.includes(r.id) ? "rounded" : "control";
-  const want = kind === "fingerprinted";
-  const okRow = onScreen === want && (!want || !!cav);
+  const ground = groundDisagreementCaveat(r.id, r.waypoints);
+  const which = html.includes(SYNTHETIC_WAYPOINT_CAVEAT) ? "line"
+    : (ground && html.includes(ground)) ? "ground"
+    : html.includes(COMPUTED_WAYPOINT_CAVEAT) ? "computed" : "none";
+  const want = kind === "control" ? "none" : kind === "fingerprinted" ? "computed" : "ground";
+  const okRow = which === want;
   if (!okRow) bad++;
-  console.log(`${okRow ? "ok  " : "BAD "} ${r.id.padEnd(40)} ${kind.padEnd(14)} caveat=${onScreen ? (cav === SYNTHETIC_WAYPOINT_CAVEAT ? "line" : "computed") : "none"}`);
+  console.log(`${okRow ? "ok  " : "BAD "} ${r.id.padEnd(40)} ${kind.padEnd(14)} caveat=${which.padEnd(9)} (want ${want})`);
 }
 console.log(`\n${rows.length} real rows rendered, ${bad} wrong.`);
-console.log(`The 'rounded' rows showing no caveat is the DOCUMENTED LIMIT, not a bug — see the header.`);
+console.log(`The 'rounded' rows now caption THROUGH THE GROUND — they were the documented limit until`);
+console.log(`lib/ground-checked-pins.js shipped the measurement. A 'none' on either is a regression.`);
 process.exit(bad ? 1 : 0);
