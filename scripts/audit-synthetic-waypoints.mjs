@@ -48,6 +48,7 @@
 //   npm run audit:synthetic-waypoints
 //   npm run audit:synthetic-waypoints -- --tol 200
 import { readFileSync } from "node:fs";
+import { longestArithmeticRun } from "../lib/track.js";
 
 const root = new URL("..", import.meta.url).pathname;
 const env = {};
@@ -190,23 +191,11 @@ for (const r of rows) {
     if (Math.max(decimals(wps[i].lat), decimals(wps[i].lng)) > DP_MAX) { computed.push(i); computedPins++; }
   }
 
-  // Maximal runs of consecutive pins holding one bearing. Compare SLOPES rather than distances to
-  // a line: a run can be short in extent and still be arithmetic, and slope agreement to 0.2% over
-  // three legs is not something a trail does.
-  const runs = [];
-  const slope = (p, q) => (q.lng === p.lng ? Infinity : (q.lat - p.lat) / (q.lng - p.lng));
-  let start = 0;
-  for (let i = 0; i + 2 < P.length; i++) {
-    if (!P[i] || !P[i + 1] || !P[i + 2]) { start = i + 1; continue; }
-    const s1 = slope(P[i], P[i + 1]), s2 = slope(P[i + 1], P[i + 2]);
-    if (!(Number.isFinite(s1) && Number.isFinite(s2) && Math.abs(s1 - s2) <= Math.abs(s1) * SLOPE_TOL)) {
-      if (i + 2 - start >= MIN_RUN) runs.push([start, i + 1]);
-      start = i + 1;
-    }
-  }
-  if (P.length - start >= MIN_RUN && P.slice(start).every(Boolean)) runs.push([start, P.length - 1]);
-
-  const longest = runs.length ? Math.max(...runs.map(([x, y]) => y - x + 1)) : 0;
+  // The run detector lives in lib/track.js, because the ROUTE PAGE needs the same answer to decide
+  // whether to caption the list. Two copies of this rule would drift, and the screen would then
+  // disagree with the audit about which routes are fabricated — the four-grade-parsers shape.
+  const runs = [];   // kept for the per-route detail line below
+  const longest = longestArithmeticRun(wps);
   // A 3-pin run on its own is luck as often as fabrication — 19 WA routes sit there with no second
   // tell. Require 4, or a computed decimal somewhere on the row to corroborate it.
   const runUsable = longest >= 4 || (longest >= MIN_RUN && computed.length > 0);
