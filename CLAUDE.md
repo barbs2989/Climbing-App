@@ -3322,9 +3322,25 @@ one click past where the probe walks, so nothing had reported it at all.
     down": it is false while a query is in flight, so a slow read still reads as loading. #1140's
     warning was that a blanket flag replaces one false statement with another.
   - **Flags do not map one-to-one onto sentences, so find the query rather than the string.**
-    `objectivesUnavailable` drives three surfaces, because RECENT CONDITION REPORTS is built from
+    `objectivesUnavailable` drives five surfaces, because RECENT CONDITION REPORTS is built from
     `wishlist` — i.e. from that same read, two derivations away. `logsUnavailable` drives four,
     `listsUnavailable` (#1147) one.
+  - **A FLAG'S REACH IS NOT THE TAB ITS QUERY IS READ ON, and that is what made the Logbook fix look
+    finished when it was not.** Two of those five are on **Partners**, a different tab, reached
+    through `ME.objectiveIds = wishlist` — the legacy sync hack this file already warns not to
+    extend. It launders a failed read across the app: nothing on the Partners screen names the
+    objectives query, so grepping the Logbook for readers could never have found it. Measured under
+    a total outage, that screen told an account holding one objective **"You have no saved
+    objectives yet"** and then asked it to go save one. Same class, one screen further out.
+    - The heading above it, *"0 climbers found"*, is the **"0 climbs to go"** defect again:
+      `filtered` is matched against that same empty list, so the count is a consequence of the
+      failure rather than a search result. It reads `"Matches unavailable"` instead.
+    - **Two neighbouring strings on that screen were checked and deliberately left alone.**
+      *"Loading climbers…"* is not a defect — the real-accounts panel already branches on
+      `browseRes.error` with honest copy, and react-query was still retrying at settle time, so
+      *loading* was true. And *"No climbers match these filters"* is correct: that pool is the seed
+      example set, so the filters really do apply. Widening the fix to either would have been a
+      guard flagging correct work.
   - **A sentence with TWO inputs lies in two directions.** *"N climbs to go"* is list length minus
     logged climbs: objectives down gives *"0 climbs to go"* to somebody who has objectives; LOGS
     down counts nothing as done and over-states what is left. The list case drops the badge (the
