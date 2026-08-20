@@ -23,7 +23,7 @@ const require_ = createRequire(import.meta.url);
 /* wa_the_balanced_rock came from widening the gate to trailhead names; wa_south_face_direct came
    from moving the row off a University of Washington campus crag onto Vasiliki Tower, where its
    own prose has always put it, which is what gave it a real sibling to copy from. */
-const IDS = ["wa_colchuck_balanced_rock_col_east_lake_side_approch", "wa_northwest_face", "wa_south_face_2001_variation", "wa_the_balanced_rock", "wa_south_face_direct", "wa_east_ridge_7", "wa_south_face_7", "wa_hoodoo_peak_sawtooth_raven_ridge_traverse", "wa_hozomeen_mountain_south_peak_southwest_route", "wa_hozomeen_mountain_south_peak_southeast_buttress"];
+const IDS = ["wa_colchuck_balanced_rock_col_east_lake_side_approch", "wa_northwest_face", "wa_south_face_2001_variation", "wa_the_balanced_rock", "wa_south_face_direct", "wa_east_ridge_7", "wa_south_face_7", "wa_hoodoo_peak_sawtooth_raven_ridge_traverse", "wa_hozomeen_mountain_south_peak_southwest_route", "wa_hozomeen_mountain_south_peak_southeast_buttress", "wa_cashmere_mountain_northeast_ridge", "wa_mount_washington_olympic_winter_direct", "wa_east_mcmillan_spire_northeast_buttress", "wa_upper_castle_toprope_wall", "wa_little_annapurna_south_face"];
 const rows = await selectAll("routes", "*", `id=in.(${IDS.join(",")})`, { pageSize: 100 });
 if (rows.length !== IDS.length) { console.error(`expected ${IDS.length} rows, got ${rows.length}`); process.exit(1); }
 

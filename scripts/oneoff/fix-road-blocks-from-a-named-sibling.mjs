@@ -121,6 +121,32 @@ const PLAN = [
     why: "it starts at Lightning Creek on Ross Lake, and the donor is the only block describing that end — SR-20 to Ross Lake Resort plus the water taxi, naming the Hozomeen/Lightning Creek area outright.",
   },
 
+  /* ── Batch 3: the evidence is RESEARCHED, the block is still COPIED ──────────────────────────
+     These three name no trailhead a sibling describes, so gate (A) — the row's own prose — cannot
+     be met and they sat in RESEARCH. What external sources establish is only WHICH START they use;
+     the block itself is still copied verbatim from a same-area sibling, so the structural safety is
+     unchanged: no road name, status, gate or mileage is typed in this file for these either.
+     `researched` replaces `evidence` and is printed loudly, because this is a WEAKER gate — it
+     rests on a judgement made outside the catalog, where `evidence` rests on the row itself. */
+  {
+    target: "wa_cashmere_mountain_northeast_ridge",
+    donor: "wa_cashmere_mountain_west_ridge",
+    researched: "Cashmere's northeast ridge is reached from the Eightmile Lake trailhead via Lake Caroline and Windy Pass — the same start both siblings use. The row's own 'from the mountain's north side' describes the traverse below the summit pyramid, i.e. terrain ON the peak, not a different trailhead; that phrasing is what kept it out of the copy bucket.",
+    why: "same trailhead as both siblings; the donor's block is the Icicle Creek Road / FR 7601 drive to Eightmile Lake.",
+  },
+  {
+    target: "wa_mount_washington_olympic_winter_direct",
+    donor: "wa_mount_washington_olympic_standard",
+    researched: "The Jefferson Pass trailhead this route starts from lies on the SAME North Lake Cushman -> FR-24 -> FR-2419 corridor as the standard route, further along it. Parties on this winter route routinely park short of the trailhead and walk the snowed-in road, which is exactly what the donor's seasonalGate already says.",
+    why: "same road corridor; and for a Dec-Apr route the donor's 'not maintained for winter travel / can be gated or snowbound' is the single most load-bearing fact about the drive.",
+  },
+  {
+    target: "wa_east_mcmillan_spire_northeast_buttress",
+    donor: "wa_east_mcmillan_spire_west_ridge",
+    researched: "The 2008 first ascent reached the peak's north side by a Goodell Creek bushwhack — the same drive the sibling block describes, to the Upper Goodell Creek Group Campground off SR-20 near Newhalem. The row says only 'via the remnants of the McMillan Creek glaciers', which names the upper approach and no trailhead at all.",
+    why: "same peak, same trailhead, and the drive is unambiguous; only the walk beyond it differs from the sibling's.",
+  },
+
   /* ── DELIBERATELY REFUSED, and recorded here so the next pass does not re-derive them ─────────
      Each of these WOULD pass a mechanical place-name match and must not be copied:
 
@@ -184,12 +210,18 @@ for (const p of PLAN) {
   if (has(t.road)) problems.push("target ALREADY has a road block that is NOT this donor's — refusing to overwrite");
   if (has(t.approach_logistics)) problems.push("target has approach_logistics — it is not road-silent, re-measure");
   if (!has(d.road)) problems.push(`donor ${p.donor} has no road block to copy`);
-  if (!prose.includes(p.evidence)) problems.push(`target prose no longer contains the evidence quote "${p.evidence}"`);
+  /* Exactly one gate per entry, and never neither: `evidence` is a verbatim quote from the row's
+     own prose, re-asserted here so a row whose prose has since changed is refused rather than
+     written; `researched` is the weaker gate, where only the START was established outside the
+     catalog. Declaring both, or neither, is a malformed entry rather than a lenient one. */
+  if (Boolean(p.evidence) === Boolean(p.researched)) problems.push("entry must declare exactly one of `evidence` (quote from the row) or `researched` (external finding)");
+  else if (p.evidence && !prose.includes(p.evidence)) problems.push(`target prose no longer contains the evidence quote "${p.evidence}"`);
   if (t.area_id !== d.area_id) problems.push(`donor is on a different area (${d.area_id} vs ${t.area_id})`);
 
   console.log(`\n${p.target}`);
   console.log(`   donor    ${p.donor}   area=${t.area_id}`);
-  console.log(`   evidence "${p.evidence}"`);
+  if (p.evidence) console.log(`   evidence "${p.evidence}"   (quoted from the row itself)`);
+  else console.log(`   RESEARCHED GATE — the row itself does not name its start:\n      ${p.researched}`);
   console.log(`   why      ${p.why}`);
   if (problems.length) { for (const x of problems) console.log(`   REFUSED: ${x}`); continue; }
   for (const [k, v] of Object.entries(d.road)) if (typeof v === "string" && v.trim()) console.log(`   copy ${k}: ${v.slice(0, 150)}`);

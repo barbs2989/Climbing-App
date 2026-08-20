@@ -3124,7 +3124,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     block. Only **2 of 1,371 are mountaineering**, against 27.6% of the populated set. **A road block
     describes the DRIVE TO A WALK, and these routes describe no walk.**
   - Turned round — *of the routes that DO describe a walk, how many say nothing about the road?* —
-    it is **19 of 1,065 (1.8%)**, now **9**. Same turn that collapsed *"research gear for 4,938
+    it is **19 of 1,065 (1.8%)**, now **4**. Same turn that collapsed *"research gear for 4,938
     routes"* into 13 routes of re-homing. **A route enters on approach prose, a trailhead pin, a
     `dist_km` or a `gain_ft`** — any one of those means the page already sends a climber somewhere on
     foot, and therefore already implies a drive it is silent about.
@@ -3236,7 +3236,35 @@ the correction knows the screen is wrong, and they have no way to report it.
     way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
     partly as having no `approach_logistics`, which is where the trailhead coordinate lives. The
     routes that need a road block are exactly the routes with no coordinate to cluster on.
-- **TEN of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 9), in two batches — five on a road name, five more once the gate was asked about TRAILHEAD names too.
+- **FIFTEEN of the 19 are filled, and only TWO needed prose written** (19 → 4). Thirteen were
+  copies — five on a road name, five more once the gate was asked about **trailhead** names, and
+  three where research established only *which start the route uses* while the block itself was
+  still copied verbatim. The remaining four are deliberate refusals, listed in the applier.
+  - **The order matters and is the transferable part: EXHAUST THE COPY PATH BEFORE RESEARCHING.**
+    The bucket said 14 routes needed external sources; 12 of those did not. Research was still what
+    resolved three of them, but what it established was an **identity** (Cashmere's northeast ridge
+    starts at Eightmile Lake; Jefferson Pass sits on the same FR-2419 corridor; East McMillan's
+    2008 line is a Goodell Creek bushwhack), not a road fact — so the write stayed a verbatim copy
+    and no road prose was typed. **Researching a trailhead is cheap and safe; researching a road is
+    neither.**
+  - **`researched` is a SEPARATE, WEAKER GATE inside the same applier**, printed loudly, and
+    mutually exclusive with `evidence`: declaring both, or neither, is a malformed entry rather
+    than a lenient one. `evidence` rests on the row itself and is re-asserted at apply time;
+    `researched` rests on a judgement made outside the catalog.
+  - **The two hand-written blocks live in their OWN script (`fix-road-blocks-from-research.mjs`),
+    and the split is the point.** The sibling applier's safety is that a repair needing a fact the
+    catalog lacks *cannot be expressed*; typing road prose destroys that, so the weaker path states
+    a weaker property rather than blurring into the strong one by sharing a file. What replaces it:
+    a recorded `finding` per entry, a refusal if a real donor exists, re-read verification, and a
+    **structural refusal of any block containing a four-digit year** — a dated closure is true when
+    written and a lie afterwards, and `road.status`/`seasonalGate` have no expiry. The catalog
+    already carries several ("closed Dec 12, 2025-June 14, 2026"); this cannot add more.
+  - **Its first draft refused Little Annapurna, and the reason is this whole sweep's lesson re-made
+    one script later.** The guard was *"a same-area sibling already carries a block → this should be
+    a copy"* — but Little Annapurna's only sibling describes Icicle Creek and Stuart Lake, the other
+    side of the range, which is exactly *why* no copy was possible. **"A sibling carries a block" is
+    not "a donor exists."** It now refuses only on a sibling block naming a road the route's own
+    prose names, and prints the different-road case as the reason a researched write was needed.
   **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
   area carries a researched block for that same road. (A) is evidence about *this* route; (B)
   supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a
