@@ -10,6 +10,7 @@ npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ (runs check:refs + check:hooks first)
 npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
+npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
@@ -28,6 +29,7 @@ npm run check:crew-member-readers # no crew member id resolved against seed CLIM
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
+npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -96,6 +98,8 @@ npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, 
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
+npm run audit:expiring-closures # does a route state a closure that has already expired?
+npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -1090,6 +1094,18 @@ a build error, but a screen that renders wrong or not at all.
   - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
     which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
     a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - **Route detail is walked, and failing to reach it is an exit-1.** Its sub-tab bar
+    (`Overview / Plan / Reports / Safety / Partners / Photos`) is one of the four #1041 fixed,
+    and no tab walk reaches that screen — so for one commit the fix was guarded everywhere
+    except where it was made. Navigated rather than driven: `?zr=1` calls the app's own
+    `openRoute()` from inside the shared opener, the same mechanism `check:overflow` uses and
+    for the same reason. It waits on `window.__routeOpen` **as well as** on the text settling,
+    because settling says nothing about whether the navigation has happened yet. The
+    not-reached test runs **before any verdict is interpreted**, so a screen the guard silently
+    failed to open can never read as a screen with nothing wrong (injection case 4 pins that
+    ordering — it fires even though a healthy bar has already passed).
+  - It found the route page's star-rating group **already correct** (`aria-pressed`), which is
+    the useful shape of a negative result: the convention was there to follow.
   - Injection-tested, 3 cases at the bottom of the script, driven by `--strip-aria=` because the
     regression lives in the app rather than in the checker. Case 3 (break the scaffold anchor)
     must fail on the 58-character boot shell rather than pass over a blank app — the trap
@@ -2069,6 +2085,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:waypoint-placement`** asserts that a waypoint the map cannot draw **says so** rather than
+  offering a dead tap, and that **exactly one predicate** decides which waypoints those are. Static
+  plus one `renderToStaticMarkup` pass, so it sits in `npm run build`.
+  - **The behaviour already shipped and was described only in a COMMENT** — an unplaced row renders
+    *"No coordinate on file — this point is not on the map above"* and is deliberately **not** given
+    a tap handler, because a row that looks tappable and pans to nothing is worse than one that
+    explains itself. Nothing rendered it, so nothing would have noticed it disappearing. **The
+    comment had ALREADY gone stale**, claiming *"44 pins across 17 WA alpine routes"* against a
+    measured **39 across 16** — the [[semantic-invariants-need-a-script]] shape, caught in the act.
+  - **"Is this waypoint on the map?" was answered NINE ways.** `GPXMap` tested `w.lat != null` in
+    **eight** places — none checking `lng`, none checking finiteness — while `WaypointList` tested
+    both coordinates for a finite `Number`. All nine now call **`wpPlaced()`**.
+  - **This fixed no visible bug and that is stated rather than glossed**: measured across all
+    **4,230** live WA waypoints the two tests **agree**. It closes a split only a *contributed* value
+    can open, and contributed rows store lat/lng as **strings** — one numeric string is already in
+    the catalog. **The empty string is the case that bites**: `"" == null` is false so the map draws
+    the pin, and `Number("")` is `0` which **is** finite so the list calls it placed — the pin lands
+    at latitude 0 in the Gulf of Guinea. Same `Number(null) === 0` trap `audit:map-pins` records
+    from a 12,215 km "disagreement".
+  - **`0,0` is deliberately ACCEPTED as placed.** This predicate answers *does a coordinate exist*,
+    not *is it plausible*; rejecting it here would hide a bad pin from the audits whose job is to
+    find it.
+  - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
+    coordinate and flagging it would tell an author to break correct code.
+  - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
+    the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
+    dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
+    `lib/supabase.js` reads it at module scope.
+  - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
+    both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
+    pattern, not the guard, was wrong.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
@@ -2356,6 +2403,50 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
+    find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
+    result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
+    Coverage went **65% -> 72%**, derivable gain pairs 3,243 -> 3,521, and no new impossible value
+    appeared (camps above their own high point stayed at 16).
+    - **CONTROL FIRST, because the expected output is "a plausible elevation" — which is exactly
+      what a broken pipeline emits.** `probe-camp-elev-control.mjs` runs four places of known
+      height through the identical path and reproduces all four within **68 ft**: Shield Lake
+      6,706 against an independently researched 6,699, plus three the catalog already knew from
+      the *waypoint* store, so agreement is corroboration across methods rather than one claim
+      counted twice. Independent spot-checks after the fact: Three Fingers Lookout **6,851** (the
+      lookout is 6,854), Doubtful Lake 5,393, Tin Can Gap 5,752.
+    - **The refusals are most of the work and must not be "finished".** 86 names have no OSM
+      feature near the peak (a different source, not a guess); **66 are DISPERSED ZONES** —
+      *"Informal snow and rock bivouacs above the basins"* has no single height and a number there
+      invents precision the record cannot carry; 24 name several places at once, where one number
+      is a silent pick; 3 disagree with the catalog's own waypoint; 3 resolved only to a
+      **linear** feature.
+    - **A LINEAR FEATURE HAS NO SINGLE HEIGHT.** *"West Fork Agnes Creek"* matched an OSM
+      `stream`, whose label node hangs at an arbitrary point along a creek that drops thousands of
+      feet. A **lake** is deliberately NOT in that deny-list — a lake surface is flat, which is why
+      the Shield Lake control agreed to 7 ft. The exception is corroboration: once the waypoint
+      store independently agrees, the feature type stops mattering.
+    - **The WAYPOINT STORE IS A GATE, NOT A SOURCE**, and it earned that on its first run.
+      Agreement corroborates; a disagreement means one record is wrong, so it **refuses** rather
+      than picking — Skagit Queen Camp, catalog 4,000 ft against DEM 3,093 ft. Independent
+      research leans toward the DEM (the trail is snow-free to ~4,200 ft *above* the camp) but not
+      conclusively, so it stays unwritten. The `audit:trailhead-agreement` discipline: a fact
+      stored twice is a free consistency check.
+    - **THE CHEAP VERSION OF THIS WOULD HAVE WRITTEN ~700 WRONG NUMBERS, and the near miss is the
+      most useful thing here.** Re-homing an elevation from a same-named waypoint looked free.
+      With `solve-camps.mjs`' token gate it accepted **855 rows**; tightened to name IDENTITY it
+      accepts **151**. What the loose gate matched: a **town park in Darrington** given a ridge
+      camp's 4,900 ft, *"Luna Cirque floor"* given Luna Camp's valley 2,500 ft, and *"Whatcom
+      Camp, Brush Creek BELOW Whatcom Pass"* given Whatcom Pass's height. The fault was the
+      GENERIC list — it discards `pass`, `camp`, `lake`, `basin`, `creek` as noise, and **those are
+      FEATURE TYPES that discriminate**. Whatcom Pass and Whatcom Camp are two places sharing a
+      proper noun. *One distinctive token is not an identity* — the lesson this catalog already
+      paid for at the level of whole names, one level finer.
+    - **Scoping was wrong twice before it was right.** `measure-missing-camp-elevations.mjs` first
+      asked only whether another **bivy** entry knew a height (5 names) and never asked the
+      **waypoint** store, which is 98% populated — the *check the existing files before
+      researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
+      distinct names behind it.
   - **The real gate defect points the OTHER way, and is left as an open product decision.**
     `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,
     6 pitches, with Access Creek Basin and Luna Col recorded — is filed `trad`, which `catOf()`
@@ -2727,6 +2818,56 @@ the correction knows the screen is wrong, and they have no way to report it.
       decimal-computed pins **individually**, so the two claims were always distinguishable
       (`wa_guye_peak_r1 · run 0-4 · computed pins 1,2,3,4` — pin 0 is the anchor). The over-claim was
       in the consumer. *A range is not a list of findings.*
+    - **Corroborated independently by the GAZETTEER, which is worth more than the original
+      measurement.** `solve-gazetteer.mjs` asked GNIS for every remaining named pin: of 15 hits, the
+      **6 point-like ones were all run-test-only flags sitting 0–110 m from the real named feature**
+      (a Gap at 0 m, a Summit at 20 m, two Lakes at 110 m). An interpolation does not land 20 m from
+      a named summit by chance. 5 were new, so the provably-correct set is **55**, and the first
+      measurement (the route's own second record) and this one (a federal gazetteer) share no input.
+  - **THE GAZETTEER CANNOT FINISH THIS, and the negative result is recorded so nobody re-runs it.**
+    15 name hits across 728 candidate pins, **0 applicable**. Two separate reasons, and only the
+    second is about the data:
+    - The earlier probe's "not in GNIS" verdict came from a **crash**. It read `f.geometry.y` on
+      every layer, but **layer 5 (Landforms) returns `{points:[[x,y]]}` where layer 7 returns
+      `{x,y}`** — so every landform hit was `undefined` and it died on the first one (*Spider
+      Meadow*) after printing three "(not in GNIS)" lines. Layer 5 is where passes, basins, ridges
+      and summits live. Same family as the group layer and the unescaped Overpass body: **the
+      endpoint answered and the reader could not hear it.** Handle both shapes.
+    - Asked properly, **8 of the 15 are LINEAR or AREAL** — and *a label point cannot locate an
+      edge*. GNIS publishes one coordinate per feature; for a Summit/Gap/Lake/Falls that coordinate
+      IS the place, for a Stream/Ridge/Basin/Flat it is a cartographic label and the pin is somewhere
+      along the length or around the rim. **Layer 6 is named "Streams (Mouth)"** — it returns where a
+      creek ENDS, the one point on it a route never crosses. Every pin flagged by the **decimal**
+      test, i.e. genuinely arithmetic, landed in this bucket. **Triage by feature class before
+      distance**; sorting by how far a hit moves puts the useless ones on top.
+  - **OSM CANNOT FINISH THE COLS EITHER, and the reason is a rule worth having: A NAME MATCH IS NOT
+    AN IDENTITY MATCH.** GNIS misses *"Eye Col"*, *"Y Notch"*, *"Ottohorn-Himmelhorn Col"* because
+    they are **climbers' names** — guidebook and OSM, not federal (spot-checked: of ten such names
+    only two are in GNIS, a namesake 70 km off and an offset). OSM really does hold them; the control
+    corridor returns **Cache Col**, `natural=saddle`, no GNIS id. `solve-saddles.mjs` swept it: **46
+    candidates, 4 matches, 0 applicable** — every one denoted something *at* or *near* the pass.
+    `Red Pass contour (~4,200 ft)` against a pass at **5,389 ft**; `Boundary Trail bend toward Apex
+    Pass`; `Boulder Creek crossing / Boulder Pass Trail junction` **5.24 km and 2,697 ft** away.
+    - **Chasing prepositions catches ONE of the four. Test the OBJECT.** If the pin name carries a
+      structure noun the matched feature's name does not — *crossing*, *junction*, *contour*, *bend*,
+      *trail* — the pin is a different kind of thing standing near that feature.
+    - **Scope it to BORROWING a coordinate, never to COMPUTING one.** `solve-junctions.mjs` locates
+      *"X Trail / Y Trail junction"* by intersecting the two trails, which **is** the junction.
+      Checked against all 427 applied pins: **0 would be refused**, so the rule is new without being
+      retroactive — which is the check to run before adopting any tightened gate.
+  - **The repaired pins agree with the GROUND, which no solver consulted.**
+    `measure-confirmed-pin-elevations.mjs` reads the DEM under all 427 repaired coordinates:
+    **411 (96.3%) within 400 ft, 12 off by 400–1000, 1 by more.** Coordinates from four independent
+    authorities landing on ground that matches an elevation written by a different pass corroborates
+    the pass as a whole. It also sizes what every solver deliberately left behind — the elevation
+    defect is **13 pins, not a class**. `audit:waypoint-elevations` keeps `TOL = 2000` because a
+    tighter bound over pins whose *coordinates* are fabricated measures the wrong place; that
+    objection does not apply once the coordinate is sourced, which is why this can be stated at 400.
+  - **Quote the audit's own count, not a snapshot's.** `fab-pins.json` expands run ranges into every
+    pin, so "728 remaining" overstates it; and repairing one pin can break a run's collinearity and
+    clear its neighbours too — 5 of the 6 gazetteer-confirmed routes are **no longer reported at
+    all**. The audit's line is the number: **computed coordinates 346 of 4,196 (8.2%), down from 481
+    (11.5%)**. [[when-an-audit-reports-zero-ask-its-denominator]] applies to non-zero counts as well.
   - `--selftest` proves both detectors on constructed pin sets and **needs no database**. Its
     negative cases are the ones that matter — a detector that also fires on a winding approach turns
     188 findings into 188 arguments. Trap met while writing it: the obvious "real winding approach"
@@ -3693,6 +3834,91 @@ the correction knows the screen is wrong, and they have no way to report it.
     deliberate, which is exactly why D5 has to consult an external reference. Identical
     sibling names gave **0 catalog-wide**, i.e. dead code. *Measure a detector's precision
     before shipping it, not after.*
+- **`audit:expiring-closures`** asks whether a route states a closure that has a **shelf life** — a
+  fact the world will resolve, written into a field nothing ever re-reads. `road.status`,
+  `road.seasonalGate`, `road.driveNote`, `access.closures` and `access.seasonal` all render on the
+  route page and all hold free prose written once by an enrichment pass. So a closure written there
+  is correct on the day and a **lie** afterwards, with no symptom at all: the column is populated,
+  the section renders, every coverage check is green. **135 values on 102 WA routes** carry one.
+  - The case that produced the rule: `wa_mount_hopper_standard` said *"Closed indefinitely since
+    October 2025 … no confirmed 2026 reopening"*. FS-24 and the Staircase area reopened 8 July 2026,
+    so a climber reading it a year on is told the road is shut when it is open — the direction that
+    sends somebody to a different mountain, or to drive around a gate that is not there.
+  - **The precision rule, and without it this audit is noise: A YEAR IS NOT A SHELF LIFE.** 619 of
+    the 5,610 WA values carry a year and most name a durable **cause** — *"impassable at milepost
+    3.1 due to 2021 flood damage"* stays true until somebody repairs it, and the year is what makes
+    it informative rather than vague. What expires is a claim about the **current state** with no
+    date the reader can judge it by. `--inject=yearonly` pins that: every value rewritten to carry a
+    year naming a cause must report **0**.
+  - Three tiers, ordered by severity and **mutually exclusive** so one value cannot be counted
+    twice. **research-act** (10) — the copy dates itself to when the *researcher* looked (*"as of
+    this research date"*), which is the least useful possible phrasing *and* the only freshness
+    signal the value carries. **open-ended** (49) — *"indefinitely"*, *"no reopening estimate"*; the
+    Hopper shape. **as-of-period** (76) — *"as of mid-2026"*, *"currently"*, dated to a period the
+    reader cannot place.
+  - Two exclusions, **printed rather than silently dropped**: 26 values name an explicit end date
+    and 4 describe a permanent closure (a bridge with no funded replacement is exactly what these
+    fields are *for*). `SELF_LIMITING` had to learn the shape a closure order actually uses to state
+    its own expiry — a **date range** (`effective May 20-Dec 31, 2026`) as often as a `through`
+    clause; a first draft matched only through/until/expires and reported four orders that name
+    their own end date as though they named none.
+  - **The exclusions apply to the two shelf-life tiers only, never to research-act.** Leaking the
+    research act is a defect in the *copy* — it tells the reader when an author looked instead of
+    what is true — and that is wrong whether or not the closure also names an end date.
+  - **Report-only, and it must stay that way**; a bulk rewrite would do damage. **The road is not
+    the approach**: Staircase's road reopened while the North Fork Skokomish trail out of it stayed
+    closed, so clearing the road claim without reading the rest deletes a warning that still
+    applies. The phrase carrying the expiry is usually the only freshness signal the value has, so
+    **date it or drop the claim** — deleting the phrase alone leaves a bare assertion that ages
+    worse. And do not replace one with a closure that is true *today*; that reproduces the defect,
+    which is why the original sweep deliberately did **not** record a live fire closure it had just
+    confirmed.
+  - Read-only, anon key, fails closed on an empty read **and** on zero prose values. **Not a build
+    gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
+    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, 3 cases at the
+    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero.
+- **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
+  third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
+  `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
+  because these citations are free prose inside jsonb columns — every identifier is bound, the
+  column is populated, the section renders. Only reading the value finds them.
+  - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
+    `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
+    keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
+    sweep found **33 values on 32 WA routes**; all are now repaired, and the audit reports **0**.
+  - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
+    CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
+    number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where
+    our data came from — they are the live thing a climber is being told to go and check, and often
+    the only actionable line in the value. Naming the **agency** that issues a permit or closes a
+    road is operational too. A pattern that flags "names a third party" reports all 589, and
+    whoever works that list down deletes 589 phone numbers.
+  - **The word "source" on its own is useless here.** Waypoint notes say *"reliable water source"*
+    and *"Source Lake"* — a real place in the Alpental valley — so a bare `/source/i` returns 45 WA
+    notes of which **44** are water and place names. A citation is a **counted or qualified plural**
+    (*"multiple sources"*) or **sources doing something** (*"sources describe"*). That distinction
+    takes the waypoint-note count from 45 to 1.
+  - **The count is a FLOOR, not a total, and this was proven rather than hedged.** It is a deny-list
+    of publisher names, and one more phrasing beats it: the first sweep declared 33 and repaired 32,
+    then widening the sourcing-act pattern immediately surfaced **five more on four routes**,
+    including the one surviving waypoint note. The Lichtenberg fee prose also cited
+    `WenatcheeOutdoors`, which no pattern matched — it was found by reading. Re-scan with a
+    different pattern before calling the class closed.
+  - One exemption, measured: `wa_wolframite_mountain_scramble` names three associations as the
+    volunteers who **maintain** the Tungsten Mine site, which is content. A stale exemption
+    **fails**. `wa_nooksack_tower_south_face` needed one until `NAMED` was tightened to require a
+    guide word beside `Beckey` — "East Ridge/Beckey Route" is a route name — and is now excluded
+    **by construction**, which is why no entry for it survives.
+  - **Report-only; the repair is a REWRITE, not a deletion.** The citation is usually welded into a
+    sentence that also carries the road, the mileage or the fact — dropping an attribution prefix
+    from the Jack Mountain permit prose stranded its second `and that` clause with nothing to attach
+    to, the lowercase-fragment trap the waypoint-note sweep already recorded. Both repair scripts
+    (`scripts/oneoff/redact-road-access-citations.mjs` and `…-round2.mjs`) declare every edit as an
+    exact **find → replace** pair and refuse to run unless `find` matches **exactly once** in the
+    live value, so nothing can be invented and a stale table cannot half-apply.
+  - Read-only, anon key, fails closed on an empty read and on zero prose values. **Not a build
+    gate** — a property of the DB, not the checkout. Injection-tested, 2 cases; `--inject=liveonly`
+    must report **0 citations and every value as live**, which is the destructive direction.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
