@@ -107,9 +107,33 @@ traverse(ast, {
     if (mentionsUndefined(ex)) { undef.push(row); return; }
 
     // GUARD 3 — could a screen reader name it?
-    const kids = (p.parent && p.parent.children) || [];
-    const hasText = kids.some((c) =>
-      (c.type === "JSXText" && c.value.trim()) || (c.type === "JSXExpressionContainer"));
+    // RECURSIVE, because the accessible name is computed from ALL descendant text. The
+    // direct-children-only version OVER-REPORTED badly: it called
+    //
+    //   <div onClick={...}><div>{pubName(c)}</div></div>
+    //
+    // unnamed, when that is the climber's name one level down. On ClimbMatch.jsx it reported
+    // 27 unnamed where the truth is 6, so 22 safely convertible controls were skipped and
+    // #1054 understated what it could have done.
+    //
+    // Components stay OPAQUE: <Av/> renders an image with no text, which is exactly why the
+    // avatar announced as an unnamed button. Only lowercase host elements are descended into,
+    // so this still errs toward reporting rather than converting something unnameable.
+    const textIn = (nodes, depth) => {
+      if (depth > 4) return false;
+      return (nodes || []).some((c) => {
+        if (c.type === "JSXText") return !!c.value.trim();
+        if (c.type === "JSXExpressionContainer") return true;
+        if (c.type === "JSXElement") {
+          const n = c.openingElement && c.openingElement.name;
+          if (!n || n.type !== "JSXIdentifier") return false;
+          if (n.name[0] === n.name[0].toUpperCase()) return false; // component: opaque
+          return textIn(c.children, depth + 1);
+        }
+        return false;
+      });
+    };
+    const hasText = textIn((p.parent && p.parent.children) || [], 0);
     const labelled = names.has("aria-label") || names.has("aria-labelledby") || names.has("title");
     if (!hasText && !labelled) { unnamed.push(row); return; }
 
