@@ -21,6 +21,20 @@
 // fact. Rendered apart, a route could show a camp pin under WAYPOINTS while this panel said
 // nothing — two answers to one question.
 //
+// Since the sites are COLLAPSED (8d) it pins both directions of that, because a disclosure has
+// two ways to be wrong and only one of them is visible: prose still in the default view means
+// nothing was shortened, and prose no longer SELECTED means the disclosure did not hide it, it
+// deleted it — the `descent_text` shape, populated on 1,021 routes and rendered on none.
+//
+// WHAT IT CANNOT PROVE, stated rather than implied: that the tap works. SSR renders initial
+// state and cannot click, so this asserts the data is selected and that a labelled control
+// exists to reveal it. `check:clickable` holds announced-but-inert controls at ZERO and
+// requires the Enter/Space triad, and the tap itself is driven in a real browser by
+// scripts/oneoff/probe-camping-expand-onscreen.mjs — collapsed shows none of the prose, the
+// control found BY ACCESSIBLE NAME reveals all four fields, and a second tap closes it again.
+// Re-run that probe after any change to CampSite; it needs a dev server and Chrome, which is
+// why it is not in this build gate.
+//
 // SSR, no browser and no DB, so it sits in `npm run build` and cannot flake.
 
 import { build } from "esbuild";
@@ -37,7 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+import RouteDetail, { campDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -59,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = require_(out);
+const { render, campDetail } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -202,11 +217,55 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     const panel = t.slice(start, after > 0 ? after : start + 2000);
     if (panel.includes("Climber's camp")) ok("a site in the CONTRIBUTED shape renders");
     else fail("a site in the contributed shape did not render its name");
-    // Blank strings must not become chips. "Bivy" is the type chip and is expected.
-    const chips = (panel.match(/Water:/g) || []).length;
-    if (chips === 0) ok("blank strings do not render as empty chips");
-    else fail("a blank water string rendered a chip");
   }
+  // Blank strings must produce no detail row. This USED to be a markup scan for "Water:" chips,
+  // and the collapse silently made it vacuous — the chips are gone, so the count is 0 whatever
+  // campDetail() does, and a broken selector would have read as a pass. Asked of the pure
+  // function instead, where it is a real question again.
+  const blank = campDetail({ name: "Climber's camp", capacity: "", water: "", permit: "", notes: "" });
+  if (blank.length === 0) ok("blank contributed strings select no detail rows");
+  else fail(`a blank contributed site produced ${blank.length} detail row(s): ${JSON.stringify(blank)}`);
+}
+
+// ── 8d. THE COLLAPSE. `capacity`, `water` and `permit` hold PROSE — median 130 / 136 / 297
+//    characters on the live catalog, up to 1,386 — and they used to render as rounded chips,
+//    which put a paragraph inside a pill on 5,001 / 5,008 / 5,020 of 5,083 sites. The panel ran
+//    to 15,796 characters on one route, always fully expanded on a 390px phone.
+//
+//    Two directions, and BOTH matter. The prose must be out of the collapsed view (or nothing
+//    was shortened) and it must still be SELECTED for display (or the disclosure did not hide
+//    it, it deleted it — the `descent_text` shape: populated on 1,021 routes, rendered on none).
+{
+  const LONG = { name: "Prose camp", type: "camp", elev: 5000,
+    capacity: "CAPACITY_PROSE about how many tents fit and where they sit relative to the moraine.",
+    water: "WATER_PROSE about a melt stream that runs until late August and then stops entirely.",
+    permit: "PERMIT_PROSE about a quota area that must be booked well in advance of the trip.",
+    notes: "NOTES_PROSE about the walk in." };
+  const t = text(render(route("alpine", { bivy: [LONG] }), "planner"));
+  const start = t.indexOf(HEAD), after = t.indexOf("ROUTE TRACK", start + 1);
+  const panel = t.slice(start, after > start ? after : start + 3000);
+
+  const leaked = ["CAPACITY_PROSE", "WATER_PROSE", "PERMIT_PROSE", "NOTES_PROSE"].filter(k => panel.includes(k));
+  if (!leaked.length) ok("prose fields are collapsed out of the default view");
+  else fail(`the panel still renders prose before any tap: ${leaked.join(", ")} — the collapse is not doing its job`);
+
+  // The name, the elevation and the type are the AUTHORED, STRUCTURED fields and must survive
+  // the collapse — a row reduced to a chevron is not a summary.
+  for (const [what, needle] of [["the site name", "Prose camp"], ["the elevation", "5,000 ft"], ["the type", "Camp"]]) {
+    if (panel.includes(needle)) ok(`${what} survives the collapse`);
+    else fail(`${what} is missing from the collapsed row — nothing identifies this site`);
+  }
+
+  // And the prose must still be selected, so a tap has something to reveal.
+  const sel = campDetail(LONG).map(r => r[0]).join(",");
+  if (sel === "Capacity,Water,Permit") ok("capacity, water and permit are still selected for the expanded view");
+  else fail(`campDetail selected "${sel}" — the prose a tap should reveal is not being selected`);
+
+  // There must be a way IN. A collapsed row with no labelled control is data behind no door,
+  // and this app announces controls by their accessible name, so the label must name the site.
+  const raw = render(route("alpine", { bivy: [LONG] }), "planner");
+  if (/aria-label="[^"]*camping detail for Prose camp[^"]*"/.test(raw)) ok("the collapsed row carries a labelled expand control naming the site");
+  else fail("no aria-labelled expand control names the site — the prose is unreachable and unannounced");
 }
 
 // ── 9. No camping data anywhere → no section, and no crash.
@@ -224,3 +283,6 @@ process.exit(failures ? 1 : 0);
 //   3. Move the mount back to the safety line                 -> cases 1 and 2 both fail.
 //   4. Make campSites() return only route.bivy                -> case 4 fails (waypoint half).
 //   5. Remove the `seen` dedupe from campSites()              -> case 5 fails with 2 (want 1).
+// The five collapse cases (8c/8d) are automated in
+// scripts/oneoff/inject-camping-collapse-cases.mjs — 5/5, each proving its edit landed by
+// checksum first. Re-run it after any change to CampSite or campDetail.
