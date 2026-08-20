@@ -81,6 +81,7 @@ npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordin
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
 npm run audit:synthetic-waypoints # are the pins REAL, or spaced along a trailhead->summit line?
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
+npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -2151,6 +2152,80 @@ the correction knows the screen is wrong, and they have no way to report it.
     the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
     the service key only because the anon role's 3s `statement_timeout` cannot complete a read of
     two jsonb columns over 8k rows, and it issues no write. Retries are printed, not absorbed.
+- **`audit:trailhead-road`** asks the question one level out from `audit:trailhead-agreement`:
+  routes that share ONE trailhead must not disagree about whether the road to it is **open**. The
+  unit of truth is the road, not the route — a road is either gated or it is not, and that fact
+  cannot vary by which climb you picked at the end of it. So a cluster of routes on one trailhead is
+  a set of independent recordings of one fact, and a disagreement means at least one is wrong.
+  - **The case that produced it.** Four Mount Rainier routes share the Mowich Lake trailhead. ONE
+    recorded that WSDOT permanently closed the SR-165 Fairfax Bridge in April 2025 — sole public
+    access, no detour, no funding to replace it. The other three said "Seasonal, unpaved" with a
+    `seasonalGate` of **"Typically opens ~July"**. The gate is the dangerous half: it does not merely
+    omit the closure, it actively tells somebody to plan a July trip to a road with no public access.
+  - **No existing check could see it.** `audit:trailhead-agreement` compares a route's two copies of
+    its OWN trailhead and every Mowich row agreed with itself perfectly — the contradiction is
+    *between* routes. Every coverage check asks whether `road.status` is populated, and all four
+    were, in plausible well-written English. It renders on all four (`RouteDetail.jsx` ~2176 prints
+    `road.status — road.seasonalGate`), so every screen looked finished.
+  - **Clustering is by COORDINATE, not by name**, and that is load-bearing: the Mowich rows are
+    variously "Mowich Lake" and "Mowich Lake Trailhead", so a name key would have split the very
+    cluster this exists to find. Names are how this data disagrees; coordinates are how it identifies.
+  - **Precision went 36% to 100% across six tightenings, and every one was a needle flagging correct
+    work** — the direction that teaches people to ignore an audit. Recorded because each is a
+    distinct way road prose defeats a keyword scan, not six versions of one mistake:
+    1. **A blob cannot be judged.** Six fields were concatenated, so the text printed beside a
+       verdict was often not the text that matched — two "closed" rows displayed *"passable to
+       passenger cars"*. Matching is per-field now and the report prints the phrase **and its field**.
+    2. **"washed out"** fires constantly and nearly always about a repaired or beyond-the-trailhead
+       event. Dropped.
+    3. **"closed to vehicles" / "closed beyond" were TRIED and reverted** — they took the run 11 → 20
+       and every new finding was a seasonal gate (*"closed until the seasonal spring opening"*). A
+       seasonal closure is the same fact a sibling states from the other end of the year.
+    4. **A closure BEYOND the trailhead does not stop you reaching it.** Barlow Pass: eleven
+       consistent rows saying *"paved TO Barlow Pass; permanently closed BEYOND"*. Suppressed only
+       when the closure names the trailhead **itself** — so Sol Duc's *"closed beyond Madison Falls"*
+       survives, because that row is describing a different road entirely.
+    5. **The mirror is required, or the noise just moves.** *"Open to <somewhere short of the
+       trailhead>"* **agrees** the trailhead is unreachable — Trinity sits at the end of the Chiwawa
+       River Road, so *"Open to Atkinson Flat (~mile 16); closed beyond"* is not a rebuttal.
+    6. **A negation and a past tense are not claims.** *"**Not** plowed in winter"* was read as an
+       open road, and *"**Formerly** open to vehicles"* — the sentence *explaining* a closure — made a
+       row assert both and silently drop out of the report. That one was a false **negative** on a
+       real finding, which is the direction that matters.
+  - **Report-only, and it must stay so.** It cannot say which row is right, only that they cannot
+    both be. The repair needs the road's current status from outside the database — which is
+    research, not a copy. `audit:rappel-claims` carries the same warning for the same reason.
+  - Injection-tested 6/6 against a **synthetic catalog** (`--fixture`), because the faults live in
+    the DATA: a checker cannot inject them by editing code and must not write to the live project.
+    Two cases must fire and **four must stay silent** — the four are the tightenings above, so a
+    needle re-widened in future fails rather than quietly returning noise.
+  - **Section 2 asks a different question and is deliberately WEAKER: does a route's `road.name`
+    even name this trailhead's road?** Section 1 is structurally blind to a row describing the
+    **wrong road entirely**, because a correct statement about the wrong road contradicts nobody.
+    `wa_mount_barnes_scramble` sat at the Sol Duc trailhead with `road.name` = *"Olympic Hot Springs
+    Road (to Whiskey Bend Trailhead)"*, a `status` about a flood washout and a `driveNote` promising
+    a 6.2-mile road walk — every sentence true, and every one about a road on the other side of the
+    Olympics.
+    - **This is a class the trailhead sweep CREATED**, so the detector is pointed at its author's
+      own work first. Moving a trailhead to settle a disagreement between a route's two copies of it
+      leaves the `road` block describing the road that was removed. Four were recorded as follow-up
+      when #1081 shipped; this is what finds them mechanically instead of from memory.
+    - **Comparative, not absolute**: a name is flagged only when the other routes at the same
+      trailhead agree on a road name it shares nothing with. That keeps it quiet on legitimate
+      variation (*"Sol Duc Road"* / *"Sol Duc Hot Springs Road"* overlap on `duc`) while catching a
+      name drawn from another drainage. Clusters below three routes are skipped — there is no
+      majority to measure against, the same reason section 1 needs a cluster at all.
+    - **It is a HYPOTHESIS LIST and the output says so.** 47 in WA, precision **not** measured. A
+      peak with two genuine approaches looks exactly like this whichever one it records, and routes
+      legitimately share a trailhead while driving in from different roads. Do not sweep it.
+      `audit:area-parents` records the same discipline: *measure a detector's precision before
+      shipping it, not after.*
+    - **Placeholder names are split out** (2 in WA — *"Forest/park access road (verify per
+      trailhead)"*). They are not wrong roads, they are absent ones, and the repairs are opposite:
+      one wants research, the other wants a copy from a neighbour.
+  - Read-only, anon key, **fails closed** on an empty read: zero routes makes every cluster look
+    consistent, which is the false-pass direction. Not a build gate — a property of the DB, not the
+    checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.

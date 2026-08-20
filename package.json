@@ -27,6 +27,7 @@
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
     "audit:trailhead-agreement": "node scripts/audit-trailhead-agreement.mjs",
+    "audit:trailhead-road": "node scripts/audit-trailhead-road-agreement.mjs",
     "enrich:next-batch": "node scripts/next-climbing-route-batch.mjs",
     "enrich:apply": "node scripts/enrich-approach-rappel-bivy.mjs",
     "check:enrichment-traceable": "node scripts/check-enrichment-traceable.mjs",
