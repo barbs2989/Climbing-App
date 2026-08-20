@@ -77,10 +77,20 @@
 // own healthy-vs-failing run. Do them one query at a time; a blanket flag would claim the
 // database is down on a screen whose data merely has not arrived yet.
 //
-// LIMITATION, stated rather than papered over: Logbook and Me returned identical text (1097ch
-// each), so the "Me" click did not land and that pair is ONE screen measured twice, not two
-// findings. Home and Climbs changed but still render real content (Climbs shows the fire map,
-// which is not DB-backed). The Crew result is the solid one.
+// THE "Me" TAB WAS NEVER WALKED, and this header said so for months as a LIMITATION rather than
+// a bug: "Logbook and Me returned identical text, so the Me click did not land". Identical text
+// is not a quirk of two similar screens -- `NAV` has SEVEN entries and the last two are labelled
+// "Ranks" and "Profile". There is no control anywhere named "Me", so that click matched nothing,
+// the previous screen stayed up, and the Logbook was measured twice under two names while two
+// real tabs were never opened at all.
+//
+// The tell was sitting in the guard's own output the whole time: the per-screen preview filters
+// out every name in TABS, and "Ranks" and "Profile" kept appearing in it -- they survived the
+// filter precisely because the guard did not know they were tabs.
+//
+// So nav is clicked BY ACCESSIBLE NAME like the sub-tabs, and a click that does not land is
+// fail-closed rather than noted. A tab that is never opened has no findings for the same reason
+// an empty query has no rows, and "no findings" is what this guard prints when it is working.
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -88,6 +98,7 @@ import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.
 import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { SPINNER_RE } from "./lib/render-settle.mjs";
+import { tapByName } from "./lib/tap-by-name.mjs";
 
 const claim = (start) => new Promise((res, rej) => {
   let p = start;
@@ -101,7 +112,8 @@ const claim = (start) => new Promise((res, rej) => {
   go();
 });
 
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Me"];
+// The labels are `NAV[].label` verbatim, which are also the buttons' aria-labels.
+const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
 const ONLY = (process.env.ONLY || "").trim();
 const SUBTAB = "Logbook:Completed";
 // `isError` is FALSE while react-query is still retrying -- the property that makes an
@@ -111,7 +123,18 @@ const SUBTAB = "Logbook:Completed";
 // Home said "0 routes" while Partners and Logbook, later in the SAME run, both said broken.
 // A first-tab verdict is therefore evidence of nothing. Re-walk it once the rest has settled.
 const REVISIT = "Home:revisited";
-const REPORT = [...TABS, SUBTAB, REVISIT];
+// The Crew tab has FOUR sub-views and this walk was only ever measuring one of them. `crewView`
+// defaults to "crews", so the Crew screen captured above IS the Crews sub-view -- and the other
+// three are each fed by their own query, each of which asserts absence in its own words:
+//   Friends  <- useMyConnections   -> connections
+//   Groups   <- useMyGroups        -> joinedGroups
+//   Requests <- useMyCrewInvites   -> "No crew invites"
+// None of those three carries an xUnavailable flag, and all three are React state hydrated from
+// the query by an effect, so a failed read simply leaves the initial value -- loaded-and-empty
+// and never-loaded are the same screen. This is the shape #734 already shipped once on the
+// Requests view for a different root cause: a real invite under the words "No crew invites".
+const CREW_SUBS = ["Friends", "Groups", "Requests"];
+const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -224,16 +247,17 @@ async function walk(browser, base, session, fail) {
   }
   out.__booted = /Climbs|Partners|Logbook/.test(first) && first.length > 300;
   for (const t of TABS) {
-    const el = page.locator(`text="${t}"`).last();
-    if (await el.count()) await el.click({ timeout: 5000 }).catch(() => {});
-    out[t] = await waitOutFetch(page, fail);
+    if (await tapByName(page, t)) out[t] = await waitOutFetch(page, fail);
+    else {
+      out.__navFail = (out.__navFail || []).concat(t);
+      out[t] = "";
+    }
   }
   // The Logbook's sub-tabs are a screen each, and the four false statements #1140 found were
   // all on the DEFAULT one. "Completed" is fed by a different query (climb_logs) and asserts
   // emptiness just as loudly -- "0 logged", "Log your completed climbs here" -- so a walk that
   // stops at the default view reports half of this screen and reads as though it covered it.
-  const lb = page.locator(`text="Logbook"`).last();
-  if (await lb.count()) await lb.click({ timeout: 5000 }).catch(() => {});
+  if (!(await tapByName(page, "Logbook"))) out.__navFail = (out.__navFail || []).concat("Logbook (for Completed)");
   await settle(page);
   const comp = page.locator(`text="Completed"`).last();
   if (await comp.count()) await comp.click({ timeout: 5000 }).catch(() => {});
@@ -242,8 +266,25 @@ async function walk(browser, base, session, fail) {
   // clean result rather than as a miss. Say which it was.
   out[SUBTAB] = /My Ascents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
-  const home2 = page.locator(`text="Home"`).last();
-  if (await home2.count()) await home2.click({ timeout: 5000 }).catch(() => {});
+  // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
+  // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an
+  // outage empties it back to a bare "Friends" -- so the selector has to accept both, which is
+  // what tapByName's ^label(,|$) anchoring is for. A selector demanding the count could not find
+  // the control in precisely the state this guard creates.
+  // tapByName anchors at ^label(,|$), so "Crew" cannot select the "Crews" sub-tab beside it.
+  if (!(await tapByName(page, "Crew"))) out.__navFail = (out.__navFail || []).concat("Crew (for sub-views)");
+  await settle(page);
+  for (const sub of CREW_SUBS) {
+    if (await tapByName(page, sub)) out["Crew:" + sub] = await waitOutFetch(page, fail);
+    else {
+      // A sub-tab click that does not land leaves the PREVIOUS view on screen, and that reads
+      // as a clean twin of the healthy run rather than as a miss -- a false pass on a screen
+      // nobody looked at. Record it and fail the run instead of comparing whatever is there.
+      out.__navFail = (out.__navFail || []).concat("Crew:" + sub);
+      out["Crew:" + sub] = "";
+    }
+  }
+  if (!(await tapByName(page, "Home"))) out.__navFail = (out.__navFail || []).concat("Home (revisit)");
   out[REVISIT] = await waitOutFetch(page, fail);
   out.__blocked = blocked;
   out.__passed = passed;
@@ -360,6 +401,7 @@ try {
   else if (!bad.__booted) dead = "the app never came up on the FAILING run — this is a boot failure, not a data verdict";
   else if (!bad.__blocked) dead = "no request was intercepted, so every verdict above is a statement about a healthy app";
   else if (changed < 3) dead = `only ${changed} screen(s) differed between the two runs; the walk did not reach the DB-backed surfaces`;
+  else if (ok.__navFail || bad.__navFail) dead = `a tab or sub-tab click did not land (${[...new Set([...(ok.__navFail || []), ...(bad.__navFail || [])])].join(", ")}), so that screen was never on the page to be judged — this is how "Me" went unwalked for months`;
   if (dead) {
     console.log(`\ncheck:outage DID NOT RUN: ${dead}.`);
     process.exitCode = 1;

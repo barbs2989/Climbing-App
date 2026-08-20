@@ -18,11 +18,24 @@
 //                  and never judged, because it is measured before the reads settle).
 //   3. logbook   — revert #1155: MyAscents stops taking logsUnavailable.            MUST FAIL,
 //                  naming Logbook:Completed.
-//   4. nothing   — no edit at all.                                                  MUST PASS.
-//                  Without this the other three are satisfied by a guard that always fails.
+//   4. friends   — revert the Crew:Friends fix.                                    MUST FAIL,
+//                  naming Crew:Friends.
+//   5. groups    — revert the Crew:Groups fix.                                     MUST FAIL,
+//                  naming Crew:Groups.
+//   6. invites   — revert the Crew:Requests fix.                                   MUST FAIL,
+//                  naming Crew:Requests.
+//   7. ranks     — revert the Leaderboards fix.                                   MUST FAIL,
+//                  naming Ranks. This one is in ClimbMatchCore.jsx, not ClimbMatch.jsx.
+//   8. nothing   — no edit at all.                                                 MUST PASS.
+//                  Without this the others are satisfied by a guard that always fails.
 //
-// Case 4 is not decoration. Cases 1-3 alone are passed by `process.exitCode = 1` at the top of
-// the file; only the pair pins the guard to reporting something real.
+// Cases 4-6 also prove the WALK reaches those three sub-views at all, which is a separate claim
+// from whether the fix works: `crewView` defaults to "crews", so before this they were three
+// screens the guard had never opened, and a screen that is never opened has no findings for the
+// same reason an empty query has no rows.
+//
+// The "nothing" case is not decoration. The others alone are passed by `process.exitCode = 1` at
+// the top of the file; only the pair pins the guard to reporting something real.
 //
 // The fail-closed paths are cheaper to exercise by hand and are NOT run here:
 //   ONLY=nosuchtable npm run check:outage   -> "NOTHING WAS BLOCKED", exit 1
@@ -64,6 +77,46 @@ const CASES = {
     hits: 2,
     expect: "fail",
     names: /Logbook:Completed/,
+  },
+  // The three Crew sub-views. Each reverts ONE surface, because reverting all three at once
+  // cannot tell "the guard sees this screen" from "the guard sees the Crew tab behind it".
+  friends: {
+    file: "ClimbMatch.jsx",
+    // Neutralise the CONDITION rather than deleting a branch: cutting the ternary in half leaves
+    // unbalanced JSX, and an injection that produces a SYNTAX ERROR is not a catch -- the guard
+    // would fail on a blank app and read as though it had found the defect.
+    from: 'connectionsUnavailable?"Couldn’t load your friends',
+    to: 'false?"Couldn’t load your friends',
+    expect: "fail",
+    names: /Crew:Friends/,
+  },
+  groups: {
+    file: "ClimbMatch.jsx",
+    from: '{groupsUnavailable?"couldn’t load":joinedGroups.length+" joined"}',
+    to: '{joinedGroups.length+" joined"}',
+    expect: "fail",
+    names: /Crew:Groups/,
+  },
+  invites: {
+    file: "ClimbMatch.jsx",
+    from: '>{crewInvitesUnavailable?"Couldn’t load your crew invites":"No crew invites"}</div>',
+    to: '>No crew invites</div>',
+    expect: "fail",
+    names: /Crew:Requests/,
+  },
+  // The Ranks tab, which was NEVER WALKED until the TABS list was corrected: it said "Me",
+  // and NAV's last two entries are "Ranks" and "Profile". So this case pins two things at once
+  // -- that the fix works, and that the walk reaches a tab it used to skip entirely.
+  ranks: {
+    file: "ClimbMatchCore.jsx",
+    // The short form of this anchor matches TWICE: #1155 already put a logsUnavailable notice
+    // with identical styling in MyAscents. The harness REFUSED the case and said so, which is
+    // exactly what it is for -- an injection that edits the wrong one of two identical lines
+    // reads as "guard missed" when the guard never saw a change.
+    from: 'logsUnavailable?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own',
+    to: 'false?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own',
+    expect: "fail",
+    names: /Ranks/,
   },
   nothing: { expect: "pass" },
 };

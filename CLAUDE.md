@@ -588,16 +588,66 @@ a build error, but a screen that renders wrong or not at all.
   - Two fixture modes, exactly as `check:signed-in`: per-run accounts on the **service key**
     locally, two **durable** accounts on the **anon key** in CI. That rule is why this could not
     be lifted out of `scripts/oneoff/` unchanged — it called `createFixture` unconditionally.
-  - Fails **closed** five ways, because every one of them prints identically to a clean app: the
+  - Fails **closed** six ways, because every one of them prints identically to a clean app: the
     healthy run not booting (no control), the failing run not booting (a boot failure is not a
-    data verdict), nothing intercepted, fewer than three screens differing, and an unreachable
-    database — `assertDbReachable` runs first so an outage reads as *the database is down* rather
-    than as the author's regression.
+    data verdict), nothing intercepted, fewer than three screens differing, a sub-tab click that
+    did not land, and an unreachable database — `assertDbReachable` runs first so an outage reads
+    as *the database is down* rather than as the author's regression.
+  - **THE COVERAGE GAP IT DECLARED WAS NOT EMPTY, and closing one sentence of it found four more
+    false statements.** The entry below used to say a further sub-tab is out of frame. The Crew
+    tab has **four** sub-views and this walked one: `crewView` defaults to `"crews"`, so Friends,
+    Groups and Requests were three screens no outage run had ever opened — and a screen that is
+    never opened has no findings for the same reason an empty query has no rows. Each is fed by
+    its own unflagged query, and each asserts absence in its own words: *"No friends yet"*,
+    *"0 joined"* / *"No groups yet"*, and **"No crew invites"** — which is the very sentence #734
+    already shipped over a real invite, arrived at from the read side this time.
+    - All three fail the same way and it is the shape this file keeps recording: the state is
+      hydrated by an effect that **returns early on a miss** (`if(accepted.length)`,
+      `if(!uid||!myGroupsQ.data)return;`) or read through a `||[]`, and sign-in clears it — so a
+      failed read and a genuinely empty account leave byte-identical state.
+    - Reached by **accessible name**, never by text: the badge count renders inside the button, so
+      `textContent` is `"Friends2"`. The count is in the `aria-label` too, and an outage empties it
+      back to a bare `"Friends"` — so the selector must accept both, which is what `tapByName`'s
+      `^label(,|$)` anchoring is for. **A selector demanding the count could not find the control
+      in exactly the state this guard creates.** That helper moved to `scripts/lib/tap-by-name.mjs`
+      rather than being copied, so `check:ui` and this cannot drift on how a sub-tab is reached.
+    - A sub-tab click that does not land leaves the **previous** view on screen, which compares
+      clean against its healthy twin and reads as a screen with nothing wrong. That is a
+      fail-closed path, not a note.
+  - **IT WAS WALKING FIVE TABS AND A DUPLICATE, NOT SIX, AND `NAV` HAS SEVEN.** `TABS` ended with
+    `"Me"` — and there is no control anywhere named "Me": `NAV`'s last two entries are labelled
+    **"Ranks"** and **"Profile"**. So that click matched nothing, the previous screen stayed up,
+    the **Logbook was measured twice under two names**, and two real tabs had never been opened.
+    - **The guard's own header called this a LIMITATION and left it**: *"Logbook and Me returned
+      identical text, so the Me click did not land"* — inherited from the probe, true, and read as
+      a quirk of two similar screens rather than as a missing tab. Identical char counts on two
+      different screens is not a coincidence to note, it is a navigation failure.
+    - **The evidence was in the output the whole time.** The per-screen preview filters out every
+      name in `TABS`, and `"Ranks"` and `"Profile"` kept appearing in it — they survived the
+      filter *because the guard did not know they were tabs*.
+    - Nav is clicked **by accessible name** now, and a nav click that does not land is fail-closed
+      like a sub-tab one. Correcting it also fixed a quieter thing: the healthy **Climbs** screen
+      went 554 → 1,293 chars, because the old text-click had been landing somewhere less complete
+      than the real area browser.
+    - **It found a defect on the first run of the corrected list.** `Leaderboards` builds your own
+      row as `{...ME,routesLogged:logs.length,vertYr,daysYr,…}`, so a failed `climb_logs` read does
+      not blank the board — it reports you as having climbed **nothing** and drops you down it,
+      silently. The `"0 climbs to go"` shape on a screen whose entire subject is counts.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
-    is honest. It covers the six tabs, the Logbook's Completed sub-tab and the Home revisit; a
-    surface behind an overlay or a further sub-tab is out of frame, and **4 of 28 query handles in
-    `App` carry a flag** — the rest are mostly lookups where emptiness is never asserted, but that
-    is a list to READ, not a coverage claim.
+    is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
+    sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
+    frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
+    emptiness is never asserted, but that is a list to READ, not a coverage claim.
+  - **NOTHING HAS YET ASKED about the Profile tab's own sections**, and that phrasing is
+    deliberate. `MyFiledReports` (`useMyFiledReports`) and `CatchLedger` (`useBelajCatches`) are
+    DB-backed and unflagged; the run reports Profile as `says-empty=YES` and rule 2 stays quiet
+    because those sections are empty in **both** runs — the fixture has no filed reports and no
+    catches. **An absence the fixture happens to share is unmeasurable, not absent** (the same
+    reason a zero-row column is unguarded by construction in `check:field-renders`).
+    - It IS reachable, though, and the friend-requests fix is the proof of method: the flag keys
+      on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
+      an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
+      on exactly that basis. One query at a time, as this guard's header already insists.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -3786,6 +3836,19 @@ one click past where the probe walks, so nothing had reported it at all.
     does. The caller's `.catch` no-ops, the hydration `useEffect` returns on `!data`, state stays
     `[]`, and every render tests `!x.length` — so **loaded-and-empty and never-loaded are the same
     screen**. Nothing lied; the truth simply never arrived.
+  - **THE CLASS RAN THREE SUB-VIEWS DEEPER, and it was `check:outage`'s own declared coverage gap
+    that said where.** The Crew tab's Friends, Groups and Requests views are each fed by an
+    unflagged query (`useMyConnections`, `useMyGroups`, `useMyCrewInvites`) and each asserts
+    absence: *"No friends yet"*, *"0 joined"* / *"No groups yet"*, *"No crew invites"*. Four more
+    false statements, on a tab the guard already walked — one click in.
+    - **The lesson is about the gap, not the defect.** That guard's closing paragraph named
+      exactly one unchecked thing ("a further sub-tab is out of frame"), and reading it as a
+      worklist rather than as a caveat found real bugs within the hour. A stated limitation is a
+      pointer to work, and this repo has now had the same experience three times — the
+      `AreaLatest` note, the `check:field-renders` zero-row hole, and this.
+    - **A stated gap is only a pointer if somebody re-reads it.** Write coverage limits as
+      *"nothing has asked X"*, never as *"X is out of scope"*: the first invites the next session
+      to go and ask.
   - The repair is `xUnavailable` from that query's **`isError`**, one flag per query — the shape
     #1124 established for crews. `isError` deliberately rather than a blanket "the database is
     down": it is false while a query is in flight, so a slow read still reads as loading. #1140's

@@ -36,6 +36,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-settle.mjs";
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
+import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -262,36 +263,11 @@ const tap = async (text, i = 0) => {
   return true;
 };
 
-// Click a control by its ACCESSIBLE NAME instead of its text content.
-//
-// This exists because tap() cannot reach the Crew sub-tabs, and six attempts to make it
-// failed before the reason was clear. Those buttons render the badge count INSIDE the
-// control -- `<button>{label}{n?<span>{n}</span>:null}</button>` -- so textContent is
-// "Friends2", and every exact-text strategy tap() has (its own querySelectorAll filter and
-// Playwright's `text="…"`) misses. Worse, tap() then returns false SILENTLY, and a caller
-// that ignores the return value carries on clicking whatever is on screen: that is how a
-// flow came to be "checking" the Friends view while standing on a different tab entirely.
-//
-// #740 and #755 gave those buttons an explicit aria-label ("Friends, 2"), which is both the
-// a11y fix and a durable handle -- it is authored, so it does not move when the count does.
-// Match the label exactly or up to the ", " the count is appended after, never a substring:
-// a bare prefix match would let "Crews" also select "Crews, 2" on a different bar.
-const tapByName = async (label) => {
-  const ok = await page.evaluate((label) => {
-    const re = new RegExp("^" + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(,|$)");
-    const el = [...document.querySelectorAll("[aria-label]")].find((e) => {
-      if (!re.test((e.getAttribute("aria-label") || "").trim())) return false;
-      const r = e.getBoundingClientRect();
-      return r.width > 2 && r.height > 2;
-    });
-    if (!el) return false;
-    el.scrollIntoView({ block: "center" });
-    el.click();
-    return true;
-  }, label);
-  if (ok) await page.waitForTimeout(1600);
-  return ok;
-};
+// Click a control by its ACCESSIBLE NAME instead of its text content. The implementation, and
+// the six failed attempts that produced its anchoring rule, moved to scripts/lib/tap-by-name.mjs
+// when check:outage needed the same handle on the same bar -- one implementation, so the two
+// guards cannot drift on how a Crew sub-tab is reached.
+const tapByName = (label) => tapByNameOn(page, label);
 
 // Leaf elements whose trimmed text matches a DISCLOSURE pattern, in DOM order.
 //
