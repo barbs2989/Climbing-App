@@ -9222,3 +9222,46 @@ WebFetch remains blocked by the egress proxy (Wikipedia/SummitPost direct fetch 
 so facts were confirmed via WebSearch result summaries.
 
 Next batch continues after `wa_klawatti_peak_southeast_face` in the id-ordered scope.
+
+---
+
+## Batch 135 — 2026-08-20 (Pass 3)
+
+Audited (id-ordered, after `wa_klawatti_peak_southeast_face`):
+`wa_klawatti_peak_sw_buttress`, `wa_koala_krack`, `wa_kololo_peaks_standard`,
+`wa_kyes_peak_glaciated_scramble`, `wa_kyes_peak_northeast_ridge`, `wa_labor_pains`,
+`wa_lane_peak_r1` (The Zipper), `wa_lane_peak_r2` (The Fly).
+
+**Confirmed errors fixed: 0.** A genuinely clean batch on hard facts.
+
+**Externally cross-checked and confirmed accurate:** elevations all match
+Wikipedia/SummitPost/PeakVisor — Klawatti 8,485 ft, Kangaroo Temple 7,572 ft, Kololo
+8,200-8,240 ft (`high_point_ft` 8240 OK), Kyes 7,280+ ft, North Early Winters Spire
+7,760 ft, Lane Peak 6,012 ft. Summit coordinates all sit on the named peak and match
+the parent area (Kololo 48.0646,-121.0953 matches Wikipedia to the decimal). FAs:
+Labor Pains (Steve Risse & Donna McBain, Sep 1988) verbatim per SuperTopo/AAC; Klawatti
+(Anderson/Boyer/Gorton, Jul 7 1940); Kyes NE Ridge — AAC's 1968 FA report matches the
+row's Sep 14 1968 date and every route detail (Quartz Creek → Curry Gap, "most direct
+of three approaches", Class 3 to the SE corner). Access/road blocks each name the
+correct trailhead and drainage for their own approach — **no cross-drainage
+contamination this batch** (contrast batch 134's stray Cascade River Road lines).
+
+**Flagged for human review (2, not auto-fixed):**
+
+- `wa_kololo_peaks_standard`: the 1063-point `gpx` track is genuine from index 257
+  onward — it passes through the real North Fork Sauk trailhead (0.08 km off) and ends
+  on the summit — but the first ~257 points are a **spurious prefix segment** starting
+  42.7 km away at 48.2497,-121.6002, in a different drainage (Suiattle/White Chuck side)
+  that matches none of this route's three stated approaches. Looks like an unrelated
+  track fragment concatenated onto the front. Not auto-fixed: rewriting a 1000+ element
+  array by hand-SQL is the truncation-prone edit `check:sql` warns against, and it is a
+  track-cleanliness issue rather than a verifiable-fact error.
+- `wa_kyes_peak_northeast_ridge`: FA stored as "Mike Heath, September 14, 1968" — AAC's
+  FA report confirms the date and all route detail, but the **climber's name** could not
+  be confirmed from search snippets (WebFetch to AAC/SummitPost still 403s via the
+  proxy). Nothing contradicts it, so left as-is; noted for a future full-fetch run.
+
+Web access this run: WebSearch and the anon-key REST reads worked; WebFetch remains
+blocked by the egress proxy, so facts were confirmed from WebSearch result summaries.
+
+Next batch continues after `wa_lane_peak_r2` in the id-ordered scope.
