@@ -147,3 +147,142 @@ Its own comment records that the first version of that cue already missed one va
 widened once. This is the same widening, one step further out. Waypoint notes are that session's
 lane, so this is flagged rather than edited — two passes rewriting one field is how a merge silently
 reverts one of them.
+
+---
+
+## Findings rescued from prose that was about to be deleted
+
+A sweep removed 32 columns of **enrichment bookkeeping** — prose addressed to whoever maintains the
+database, rendered on the route page as beta. Thirteen ended their descent text with an instruction
+to a column (*"Set rappels to 0."*). That sweep is right, and it carries a risk worth naming:
+
+> **Some of those notes were the only place a real defect was recorded.** Deleting the note deletes
+> the record. These are moved here first, so the sweep loses nothing.
+
+### `wa_mamie_peak` holds four routes whose own trailhead is 130 km from where the area is filed
+
+`wa_blood_orgy`, `wa_ellation`, `wa_hail_satan`, `wa_woodland_critter_christmas`. All four store the
+**Hannegan Pass Trailhead** (Trail #674, FR-32) at 48.9105, −121.5894, and the area's own coordinate
+(48.91508, −121.58401) agrees with it — about 500 m away. That is the Ruth Creek valley off the
+Mount Baker Highway.
+
+The area chain is `wa_mamie_peak → North Cascades → Hwy 20 and North Cascades National Park`.
+Hannegan Pass is reached from SR 542, not Hwy 20, so the parentage is at least questionable.
+
+**Correcting the report that rescued it:** the deleted prose was paraphrased as "filed as a
+Washington Pass area". It is not — it is filed under Hwy 20 / NCNP. The concern survives the
+correction; the specific claim did not. `audit:area-parents` territory, report-only.
+
+### `wa_prusik_peak_der_sportsman` — `rappels` says 5, its own descent text describes 6
+
+The `rappel_count_note` existed only to reconcile the two. That note is now the count itself, so
+**unless the column is set to 6 the disagreement is recorded nowhere.** This is the class
+`audit:rappel-claims` exists for.
+
+### `wa_east_face_2` — the stored per-station rappel lengths are estimates, and said so
+
+Its `rappel_count_note` admitted the on-file station distances were derived from a single
+"roughly 120 ft double-rope rappel" description. `check:rappel-lengths` treats stored station
+distances as measured, so this row is a known-soft input to that guard.
+
+### `wa_lexington_tower_east_face` — headline count and prose describe different descents
+
+`rappels` is 0 for the walk-off, while the prose documents a 7 × 60 m double-rope face rappel
+alternative. Correct as data; the headline is the walk-off, which is the single-rope-count rule
+working as intended. Recorded because the two read as a contradiction.
+
+### `wa_mount_skokomish_standard` — a trailhead defect stated in prose, now stated only here
+
+The on-file approach described Mildred / Flapjack Lakes, which is the Mount Cruiser / Mount Lena
+approach out of the North Fork Skokomish, not the Putvin Trail / Lake of the Angels. The `approach`
+now leads with Putvin, but `approach_logistics.trailhead` and the Trailhead waypoint were **not**
+examined. Worth an `audit:trailhead-agreement` read on that row.
+
+### `wa_jack_mountain_south_face` — the row does not know which route it is
+
+Its beta pointed at a "Corrections" section that is not a rendered surface, and said the entry
+"likely maps onto" one of several class-4 Jack Mountain lines. Route identity, not prose.
+
+---
+
+## The Class B merge directions must be re-read against each row's own variants
+
+`CLASS-B-MEASURED-2026-08-19.md` says of `wa_east_ridge_7` that "the whole row is Lundin's East
+Ridge". **That is contradicted by evidence inside the row.** Its `approach_variants[0].baseFinding`
+carries a naming warning from an earlier pass that investigated this exact question:
+
+> the location text names the saddle between Lundin and East Lundin, while the approach it gives
+> goes to Red Pass and then west, *which is Red Mountain's ground rather than Lundin's*
+
+and traces the ridge onward to a notch at about **5,840 ft**, consistent with Red Mountain's 5,890
+rather than Lundin's 6,057.
+
+The merge was assembled and then **abandoned on that evidence**. Its `hazards` cannot be assigned
+either — *"loose, fractured red rock … more pronounced than on the south face"*, and **both** peaks
+carry a South Face route.
+
+Nothing was transferred and nothing deleted, so the pair is intact while it stays open. **Before
+acting on any Class B direction, read that row's own `approach_variants`** — the measured table was
+built from column presence, which cannot see an argument written inside a variant.
+
+---
+
+## The "on file" sweep, and what checking its findings actually showed
+
+63 more routes referred to the app's own stored values in prose a climber reads — *"matching the
+on-file 19.3 km round trip"*, *"no rappelling on file"*, and in one case the literal column
+expression **`rappels = 0`** printed as descent beta. Reworded, facts kept. The maintainer-voice
+scan now reads **0** across all 8,365 WA routes, from 92.
+
+The agents flagged six notes as possibly the sole record of a defect. **Three were checked against
+the live columns and did not hold** — worth recording, because it is the same lesson a third time:
+
+| claim | checked | verdict |
+|---|---|---|
+| `wa_northwest_buttress` FA "not 2020 as previously on file" | `fa` = *"M. Preiss & M. Bunker, 2000"* | **stale** — the column was already right |
+| `wa_live_free_or_die` "despite its grade label on file, not a boulder problem" | `discipline` alpine, 11 pitches, 366 m, 5.12− | **stale** — the columns already say so |
+| `wa_south_face_2001_variation` FA year unresolved | see below | **real** |
+
+A note saying "the stored value is wrong" is evidence about the moment it was written, not about the
+row today. Two of these were describing repairs that had since happened.
+
+### `wa_south_face_2001_variation` — the one that held, and it is two defects
+
+The route's **name and id both say 2001** while its `fa` resolves the first ascent to **2004**.
+
+And the `fa` column itself holds 240 characters of prose, including its own sourcing caveat:
+
+> Mike Preiss & Don Preiss, 2004 (route name "2001 Variation" reflects the year originally cited;
+> 2004 is better-sourced per the route's own "South Face Left" catalog listing for the same
+> climbers — not independently verified against a primary source)
+
+That is the *enrichment-prose-in-a-display-field* class CLAUDE.md records for `season`, `grade` and
+`rappels`, in a column nobody had checked. **Measured across the catalog: 7,830 WA routes carry
+`fa`; 197 run past 120 characters and 118 contain source or record talk.** Most long values are
+legitimately detailed credits (multi-party, multi-pitch first ascents), so this is *not* a
+197-row defect list — it needs reading before any sweep. Recorded, not swept.
+
+### `wa_gunsight_peak_standard` — a contamination warning that was the only one of its kind
+
+Deleted from `rappel_count_note`: *"Because the mis-attribution reached this row from another
+peak's route, treat other enrichment on it as suspect until checked."*
+
+The contamination itself survives in the rewritten prose — four rappel stations of 50/50/50/20 m
+that belong to **North** Gunsight Peak's West Face, a 5.11+ six-pitch rock route on a different
+summit, stored on a Class 5.6 glacier route. What is lost is the instruction to audit the rest of
+the row, so it is recorded here: **the remainder of this row's enrichment has never been
+re-checked.** Same shape as `wa_chimney_rock_west_face`.
+
+### Two elevation disagreements, both kept in the prose rather than deleted
+
+`wa_mount_hardy_snow_scramble` (8,097 ft stored vs 8,099 ft by survey) and
+`wa_ruth_peak_olympics_scramble` (6,841 ft stored vs ~6,850 ft) each noted a variance. Both are
+within survey tolerance and both now read as plain hedges to the climber rather than as commentary
+about the record.
+
+### `wa_chiwawa_mountain_southwest` — the jargon class is wider than the cue that found it
+
+Its `descent_text` contained the literal string `rappels = 0`. That is a column name and value
+rendered as prose, and it was caught only because the row happened to match an *"on file"* scan. A
+sweep for bare `column = value` expressions in prose columns would likely find more; the current
+scan's `writes to a column` cue covers the `set X to 0` phrasing but not every shape.
