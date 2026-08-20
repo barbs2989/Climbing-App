@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT } from "../lib/track.js";
+import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage } from "../lib/track.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -132,11 +132,63 @@ else ok("the caveat renders on a waypoint-polyline route");
 if (shows(route({ gpxPts: REAL, waypoints: WPS }))) fail("the caveat renders on a route with a GENUINE track — that is a false warning on good data");
 else ok("a genuine track carries no caveat");
 
+// ── 3. A PARTIAL track must say which end is missing.
+//
+//    Different question from section 2 and it needed its own fixture, because a partial track is
+//    a GENUINE recording — it just does not cover the whole route. Measured over the 378 WA
+//    routes carrying a real track and pins to judge against: 63 (16.9%) start more than 2 km from
+//    their own Trailhead pin, and 6 stop more than 2 km short of the summit. The page drew all of
+//    them with a "Download GPX" button beneath and said nothing.
+//
+//    The summit case is the one that matters most — somebody following the line runs out of it
+//    while still climbing — so it is asserted separately rather than folded into one "is partial"
+//    test. A check that fires on either end cannot tell you the dangerous half broke.
+const CLIMB_ONLY = REAL.filter(p => p[0] > 48.535);   // starts at the glacier, not the trailhead
+const STOPS_SHORT = REAL.filter(p => p[0] < 48.535);  // never reaches the summit
+const covText = r => text(render(r, "planner"));
+
+const covFull = trackCoverage(REAL, WPS);
+if (covFull) fail(`coverage: a track running trailhead-to-summit was called partial (${JSON.stringify(covFull)}) — a false warning on good data`);
+else ok("coverage: a track covering the whole route carries no partial caveat");
+
+if (trackCoverage(SYNTH, WPS)) fail("coverage: a SYNTHETIC line got a partial caveat too — it already carries the stronger one, and two captions contradict each other");
+else ok("coverage: a synthetic line is left to its own caveat");
+
+if (trackCoverage(REAL, [])) fail("coverage: with no pins to judge against, it must claim NOTHING rather than guess");
+else ok("coverage: no trailhead or summit pin means no claim");
+
+const covA = trackCoverage(CLIMB_ONLY, WPS);
+if (!covA || !covA.missingApproach) fail("coverage: a climb-only track (no walk-in recorded) was not detected");
+else if (covA.missingSummit) fail("coverage: a climb-only track was ALSO reported as stopping short of the summit — it reaches it");
+else ok(`coverage: a climb-only track is detected (${Math.round(covA.approachGapM)} m from the trailhead)`);
+
+const covS = trackCoverage(STOPS_SHORT, WPS);
+if (!covS || !covS.missingSummit) fail("coverage: a track stopping short of the summit was not detected — this is the dangerous half");
+else ok(`coverage: a track stopping short of the summit is detected (${Math.round(covS.summitGapM)} m)`);
+
+/* On screen, and stating the DISTANCE. "This track is incomplete" tells a climber nothing they
+   can plan around, so the sentence has to carry a measurement — and a rendered sentence with no
+   number in it is the way this silently degrades. */
+const shownA = covText(route({ gpxPts: CLIMB_ONLY, waypoints: WPS }));
+if (!/walk in is not in this line/i.test(shownA)) fail("the climb-only caveat does not reach the screen");
+else if (!/\d/.test((shownA.match(/The walk in is not in this line[^.]*\./i) || [""])[0])) fail("the climb-only caveat renders without a distance — it must say how far, not just that it is short");
+else ok("the climb-only caveat renders, with the gap measured");
+
+const shownS = covText(route({ gpxPts: STOPS_SHORT, waypoints: WPS }));
+if (!/stops .* short of the summit/i.test(shownS)) fail("the stops-short-of-the-summit caveat does not reach the screen");
+else ok("the stops-short caveat renders");
+
+if (/walk in is not in this line|short of the summit/i.test(covText(route({ gpxPts: REAL, waypoints: WPS }))))
+  fail("a complete track renders a partial-coverage caveat — a false warning on good data");
+else ok("a complete track renders no partial-coverage caveat");
+
 console.log();
 if (failures) { console.error(`check:track-caveat FAILED — ${failures} problem(s).`); process.exit(1); }
-console.log("ok — a line drawn between waypoints says so, and a real track is left alone");
+console.log("ok — a line drawn between waypoints says so, a partial one says which end is missing, and a real track is left alone");
 
-// Injection-tested, 3 cases:
+// Injection-tested, 5 cases:
 //   delete the caveat from RouteDetail's ROUTE TRACK block  -> assertion 2 fails
 //   make trackIsJustTheWaypoints always return true         -> the genuine-track assertions fail
 //   rename the ROUTE TRACK heading                          -> ANCHOR LOST, nothing reported clean
+//   delete the coverage caveat from the ROUTE TRACK block   -> section 3's two render tests fail
+//   make trackCoverage always report missingApproach        -> the false-warning assertions fail

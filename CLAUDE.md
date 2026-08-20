@@ -1938,9 +1938,40 @@ the correction knows the screen is wrong, and they have no way to report it.
     says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
     waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
     left the check **green**. The same two-surfaces trap this file records for `rappels`.
-  - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
-    predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
-    the direction that teaches people to ignore it), and renaming the heading.
+  - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
+    either predicate true (which must fail the *genuine*-track assertions — a false warning on good
+    data is the direction that teaches people to ignore it), and renaming the heading.
+  - **It also guards the SECOND thing a drawn line can be lying about: how much of the route it
+    covers.** A partial track is a *genuine* recording, so `trackIsJustTheWaypoints` is blind to it
+    by construction — and the page drew it with a **Download GPX** button underneath and said
+    nothing. `trackCoverage()` reports which end is missing and by how far; **68 WA routes** now
+    carry the sentence (62 missing the walk-in, 5 stopping short of the summit, 1 both).
+    - **The two ends are DIFFERENT facts and are asserted separately.** A missing approach means
+      the line begins up the mountain. A missing summit means somebody following it **runs out of
+      line while still climbing** — the dangerous half — so a check that fires on "is partial"
+      could not tell you which one broke.
+    - **The threshold is 2 km at both ends, and it is precedent rather than a fitted number** —
+      the same 2 km `audit:waypoints`' *"TRACK NEVER COMES WITHIN 2 km OF THE PEAK"* uses. It is
+      chosen against the measured distribution, not to produce a wanted answer: trailhead→track is
+      **bimodal**, p50 **41 m** (the line starts at the trailhead, as expected) against p90 **6.7
+      km**. Tightening the summit end to 1 km would flag 19 rather than 6, and those extra 13 are
+      **not attributable** — a line ending 1.2 km from the summit *pin* is equally consistent with
+      the pin being wrong, which is its own known defect class.
+    - The caveat **states the measured gap**, and the guard fails if it renders without one:
+      *"this track is incomplete"* is nothing a climber can plan around, and a sentence quietly
+      losing its number is how this degrades.
+    - It returns **null rather than guessing** on a stub, on a synthetic line (which already
+      carries the stronger caveat — two captions contradicting each other is worse than one), and
+      on a route with no Trailhead or Summit pin to judge against. All three are asserted.
+    - **Verified against the shape the reader actually gets, not the raw column**
+      (`probe-track-coverage-fires-live.mjs`). The app renders through
+      `dbRouteToCamel → normalizeWaypoints`, which coerces `lat`/`lng` — **contributed rows store
+      them as STRINGS** — and rewrites `type`. `pointOf` demands a real number and the pin lookup
+      matches on `type`, so either step could have made the caveat fire on **nothing** while the
+      column stayed populated. The probe **exits 1 on a zero count** for that reason.
+    - Independent corroboration that it measures the right thing: the summit-shortfall list is
+      Himmelhorn, West Twin Needle, Fuhrer Finger and Barnes — the routes `audit:waypoints`
+      already reports under `trackOffItsPeak`, reached by a different method.
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
