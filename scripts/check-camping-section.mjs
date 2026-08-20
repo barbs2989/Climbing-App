@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -83,10 +83,15 @@ const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ")
   .replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
 const HEAD = "CAMPING & BIVY";
-const route = (discipline, extra) => Object.assign({
+// The AREA TYPE is a parameter now, not a constant. It used to be hardcoded "peak" on every
+// fixture route — harmless while the gate read only the discipline, and instantly vacuous once
+// "trad is alpine when it climbs a peak" made peak-ness load-bearing: every crag assertion below
+// was being made against a route the catalog calls a peak. A fixture that cannot express the
+// distinction cannot test it.
+const route = (discipline, extra, areaType) => Object.assign({
   id: "probe_" + discipline, name: "Probe " + discipline, grade: "5.6", gradeSystem: "yds",
   discipline, pitches: 4, mountainId: "probe_area",
-  _dbArea: { id: "probe_area", name: "Probe Area", areaType: "peak", region: "Washington" },
+  _dbArea: { id: "probe_area", name: "Probe Area", areaType: areaType || "crag", region: "Washington" },
 }, extra || {});
 
 const SITE = { name: "Boston Basin", elev: 1890, capacity: "6 tents", water: "snowmelt", permit: "NPS permit", notes: "Toilet at the lower camp." };
@@ -100,7 +105,7 @@ const CRAG = ["trad", "sport", "bouldering"];
 let failures = 0;
 const fail = (m) => { console.log("  FAIL  " + m); failures++; };
 const ok = (m) => console.log("  ok    " + m);
-const has = (d, tab, extra) => text(render(route(d, extra), tab)).includes(HEAD);
+const has = (d, tab, extra, areaType) => text(render(route(d, extra, areaType), tab)).includes(HEAD);
 
 // ── 0. The probe must be able to FAIL. If a fixture carrying camping data cannot produce the
 //    heading on any tab, every assertion below is vacuous and the run proves nothing.
@@ -114,7 +119,7 @@ ok("probe is live — a route with camping data renders the section somewhere");
 
 // ── 1. It reaches the PLANNER tab, on every gated discipline.
 for (const d of GATED) {
-  if (has(d, "planner", { bivy: [SITE] })) ok(`${d}: renders on the Planner tab`);
+  if (has(d, "planner", { bivy: [SITE] }, "peak")) ok(`${d}: renders on the Planner tab`);
   else fail(`${d}: CAMPING & BIVY does NOT reach the Planner tab`);
 }
 
@@ -345,6 +350,39 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail(`campFromTrailhead can emit ${longest.length} chars, which is a paragraph in a pill`);
 }
 
+// ── 11. "TRAD IS ALPINE WHEN IT CLIMBS A PEAK." Both directions, because a rule that only ever
+//    ADMITS is indistinguishable from having no rule at all. wa_mount_fury_east_direct_east_ridge
+//    is the case: 8,322 ft in the Pickets, 9,500 ft of gain, two camps recorded, filed `trad`
+//    because that is what this catalog calls a big alpine rock route — and its camping rendered
+//    nowhere. discipline says what KIND of climbing; it does not say whether a party can be
+//    benighted, which is what this panel is about.
+{
+  for (const d of CRAG) {
+    if (has(d, "planner", { bivy: [SITE] }, "peak")) ok(`${d} ON A PEAK: renders — the Fury case`);
+    else fail(`${d} on a peak does NOT render CAMPING & BIVY — the trad-is-alpine rule is not wired`);
+  }
+  // ...and the other direction is what stops it becoming "always on". Section 3 above already
+  // asserts this for a crag-typed area; this states the pairing explicitly so the two cannot be
+  // read apart.
+  if (has("trad", "planner", { bivy: [SITE] }, "crag")) fail("trad on a CRAG renders camping — the rule has become 'always on'");
+  else ok("trad on a crag still does not render — the rule is peak-ness, not discipline-blindness");
+
+  // The pure gate, where the seed and DB spellings can both be pinned. They are the same field
+  // name on purpose (MOUNTAINS.areaType and _dbArea.areaType), so one test covers the shape.
+  if (climbsAPeak({ _dbArea: { areaType: "peak" } })) ok("climbsAPeak reads a DB route's area type");
+  else fail("climbsAPeak does not read _dbArea.areaType");
+  if (!climbsAPeak({ _dbArea: { areaType: "crag" } })) ok("a crag-typed area is not a peak");
+  else fail("climbsAPeak returns true for a crag");
+  if (!climbsAPeak({}) && !climbsAPeak(null)) ok("an unknown area is not a peak — silence, not a guess");
+  else fail("climbsAPeak guesses when the area type is unknown");
+  if (campingGate({ discipline: "alpine" })) ok("campingGate still admits alpine with no area at all");
+  else fail("campingGate stopped admitting alpine");
+  if (campingGate({ discipline: "trad", _dbArea: { areaType: "peak" } })) ok("campingGate admits trad on a peak");
+  else fail("campingGate does not admit trad on a peak");
+  if (!campingGate({ discipline: "sport", _dbArea: { areaType: "crag" } })) ok("campingGate refuses sport on a crag");
+  else fail("campingGate admits sport on a crag");
+}
+
 // ── 9. No camping data anywhere → no section, and no crash.
 if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
 else ok("no camping data renders no section");
@@ -363,6 +401,8 @@ process.exit(failures ? 1 : 0);
 //   6. Render the raw gain instead of the "below" wording     -> 10b fails on the negative number.
 //   7. Derive distMi from lat/lng for bivy sites              -> 10d fails (a chord is not a trail).
 //   8. Make trailheadFt() return a constant instead of null   -> 10e fails (a gain with no anchor).
+//   9. Revert campingGate() to the bare catOf() list           -> 11 fails naming trad on a peak.
+//  10. Make climbsAPeak() return true unconditionally          -> 11 fails on trad-on-a-CRAG.
 // The five collapse cases (8c/8d) are automated in
 // scripts/oneoff/inject-camping-collapse-cases.mjs — 5/5, each proving its edit landed by
 // checksum first. Re-run it after any change to CampSite or campDetail.
