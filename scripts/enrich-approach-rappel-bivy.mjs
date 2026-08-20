@@ -208,14 +208,14 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics";
+const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa";
 // `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
 // It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
 // catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
 // name-vs-aspect research carry exactly that (Cameron's "North ridge" on a ridge gained due west,
 // Tye's backwards "(west side)"). `aspect` stays OUT — it drives the sun/shade readout and is a
 // classification, so it goes through SQL a human runs.
-const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face"];
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa"];
 const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road", "approach_logistics"];
 // `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
 // they are verified — just not by either list.
@@ -224,6 +224,11 @@ const VERIFY_CUSTOM = ["waypoints", "rappel_detail"];
 const SETTABLE = new Set([
   "rappel_count_note", "rappels", "descent_text", "approach", "waypoints", "road",
   "overview", "beta", "hazards", "pro_tips", "watch_out", "pro_needs", "bail", "face",
+  // `fa` is settable because it RENDERS on the route page, so the no-sources rule reaches it: 85 WA
+  // values append an attribution ("per Wikipedia", "American Alpine Journal, 1965") to a real
+  // first-ascent credit. Note this is NOT the season/grade defect — fa renders in a wrapping div,
+  // so a long value costs nothing; only the citation has to go, never the ascent.
+  "fa",
   // approach_logistics is settable because a route stores its trailhead TWICE and the two copies
   // disagree on 42 WA routes (audit:trailhead-agreement). Repairing the blob was previously a
   // hand-written one-off per route; this puts it on the same guarded path as everything else —
