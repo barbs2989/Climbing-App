@@ -76,6 +76,21 @@ const EDITS = [
     to: null, sub: ["the non-technical south-side walk-off (see descent_text)", "the non-technical south-side walk-off"],
   },
   {
+    // A RECORD DESCRIBING ITS OWN HISTORY, found by reading the live app rather than by a needle.
+    // The autobiography goes; both climber facts stay -- where the approach IS, and the
+    // confusable side of the mountain it is NOT, which is the useful half of the sentence.
+    id: "wa_mount_shuksan_hanging_glacier", col: "approach_variants",
+    expect: "The on-file text used to group this route with",
+    to: null,
+    sub: [
+      "The on-file text used to group this route with the Nooksack and Ruth Creek side of the "
+        + "mountain. It does not belong there: route-specific sources put the Hanging Glacier and "
+        + "North Face approach in the White Salmon Creek drainage, one valley east of Price Lake.",
+      "The Hanging Glacier and North Face approach is in the White Salmon Creek drainage, one "
+        + "valley east of Price Lake — not on the Nooksack and Ruth Creek side of the mountain.",
+    ],
+  },
+  {
     // A station note inside a jsonb array, so this one is patched by index rather than wholesale.
     id: "wa_mount_torment_torment_forbidden_traverse", col: "rappel_detail", idx: 9, key: "notes",
     expect: "The previously claimed 55m length",
@@ -145,7 +160,7 @@ for (const e of EDITS) {
 if (!APPLY) { console.log("DRY RUN — pass --apply to write."); process.exit(0); }
 
 // Nothing may still be talking about the record rather than the mountain.
-const STILL = /\bpreviously (?:listed|claimed|published|stored)\b|removed as unsupported|were not sourced|rename is pending/i;
+const STILL = /\bpreviously (?:listed|claimed|published|stored)\b|removed as unsupported|were not sourced|rename is pending|on-file text used to/i;
 let bad = 0;
 for (const e of EDITS) {
   if (!cur.has(e.id)) continue;
