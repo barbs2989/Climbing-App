@@ -81,6 +81,7 @@ npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:w
 npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
 npm run audit:access-prose # road/permit sentences filed in a column that renders elsewhere
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
+npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
@@ -2380,6 +2381,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Read the jump from 63 to 199 as coverage that was missing, never as data that got worse.**
     Nothing changed in the catalog. The same lesson as `trackIsJustTheWaypoints` correcting a
     denominator rather than a finding: *overstated coverage is the false-pass direction.*
+- **`audit:gain`** asks whether a route's stored `gain_ft` is even POSSIBLE given its own
+  waypoints. A party that starts at a trailhead at X ft and stands on a summit at Y ft has gained
+  at least Y − X, so a row storing less than its own net rise is storing a number that cannot be
+  true — and no research is needed to say so, because the contradiction is inside the row. Same
+  family as the chord-vs-trail-mileage test. **88 of 800 comparable WA routes (11%)** fail it.
+  - **It is not cosmetic, and the chain was checked rather than assumed**: `routes.gain_ft` →
+    `dbRouteToCamel`'s `gainM: r.gain_ft/3.28084` → `scarfHrs(distKm, gainM, …)` → the Plan tab's
+    estimated summit time, estimated return, and "after dark" warning. Measured with the app's own
+    `scarfHrs`: `wa_mount_rainier_tahoma_glacier` stores 5,007 ft against a trailhead→summit rise
+    of 11,506 ft, which **understates its approach by 3.3 hours**. That is the #641 shape — a
+    number that quietly makes the return tile optimistic.
+  - **ONE-SIDED BY DESIGN.** Too little gain is impossible; too much is not, because a real route
+    rolls over intermediate bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **The obvious alternative explanation is HALF TRUE, which is why it is a filter and not a
+    footnote.** `gain_ft` may legitimately be measured from a high camp or the base of the climb
+    rather than from the trailhead. Of the 112 routes that fail the raw test, **24 have a waypoint
+    at exactly the elevation the stored gain implies** — `wa_mount_adams_adams_glacier` stores
+    5,150 against a "High Camp" pin at 7,000 ft, and 12,276 − 5,150 = 7,126. Those are a
+    **convention**, not an error, and reporting them would be reporting correct work. The other 88
+    imply a start the row records nothing at. Same shape as `dist_km` holding two conventions at
+    once — **this column has two readings too, and only one of them is wrong.**
+  - Elevations are read from `elev` (**feet**) with the legacy `elevM` spelling converted, because
+    mixing them would put a silent 3.28x error into every comparison.
+  - **`--json` must never be followed by `process.exit()`**, and this cost an hour to see. On a TTY
+    stdout is synchronous and the exit is harmless; on a **pipe** it is asynchronous, so exiting
+    truncates whatever has not flushed. The first consumer got valid-looking JSON cut off at a
+    *different byte on every run*, which reads as "this script emits broken JSON" when the output
+    is fine and the exit is the bug. The two modes are branches now. **Any script here that grows a
+    machine-readable mode inherits this trap.**
+  - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
+    not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
