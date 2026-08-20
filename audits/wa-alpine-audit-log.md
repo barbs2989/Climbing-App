@@ -8743,3 +8743,49 @@ primary sources. WebFetch was blocked for every domain attempted (Wikipedia, Pea
 consistent with prior runs' notes.
 
 Next batch continues alphabetically after `wa_eldorado_peak_west_arete` (see progress file).
+
+## 2026-08-20 — Pass 3, Batch 127
+
+Eight routes, seven peaks (all in Washington Cascades): Elephant Butte Standard Route, Elephant
+Head Standard, Energizer Bunny (Prusik Peak), Fire on the Mountain (Sloan Peak), Fish & Whistle
+(Vesper Peak), Flora Mountain Southwest Slope, Flycatcher Buttress (North Early Winters Spire),
+Forbidden Peak East Ridge Direct.
+
+**Confirmed correct, no action:** Elephant Butte elevation 7,380 ft (Wikipedia); Prusik Peak
+elevation 8,008 ft (Wikipedia); Sloan Peak elevation 7,835 ft (Wikipedia); Flora Mountain
+elevation 8,323 ft and FA (Leuthold & Metzger, Sept 11 1940) both match trailcatjim.com/
+countryhighpoints.com's lidar-revised figure and the peak's documented FA; North Early Winters
+Spire elevation 7,760 ft (SummitPost); Forbidden Peak elevation 8,815 ft (Wikipedia) and its
+East Ridge Direct FA (Beckey, Hieb, Cooper, Claunch, May 1958) and grade (III, 5.8) both match
+SummitPost/Mountaineers/multiple trip-report sources; Fire on the Mountain FA (Herrington &
+Roberts, 2009) matches AAC Publications/StephAbegg.com exactly; Flycatcher Buttress FA team and
+year (Marts, Don & King McPherson, 1965) corroborated, though the FFA credit to Burdo (1990,
+free solo) could not be independently confirmed or contradicted — left as-is. Fish & Whistle's
+FA (Berdinka, 2017) also could not be independently corroborated (route-setter info sits behind
+Mountain Project, which was not fetchable this run) but nothing contradicts it either — no
+action.
+
+**Needs human verification (not fixed, flagged only):**
+- `wa_elephant_head_standard`: `high_point_ft`=7990 could not be checked against any
+  authoritative source this run. This Elephant Head (Glacier Peak Wilderness, between the Dana
+  and Chickamin Glaciers near Dome Peak) is obscure enough that WebSearch returned only
+  Beckey-guide-style prose describing its location, never a summit elevation, and the two
+  candidate primary sources (Peakbagger, SummitPost) were both blocked for direct fetch. Left
+  unchanged pending a primary-source elevation figure.
+- `wa_energizer_bunny`: stored `grade`="5.10+ C1" (and `detailed_rack`/`gear` both describe a
+  "C1 aid section" on pitch 3). The FA party's own trip report (stephabegg.com, written by
+  co-first-ascensionist Steph Abegg) grades the route "5.10+ **A0**", not C1 — a real
+  distinction (A0 is aiding off gear/moves already in place vs. C1's clean hanging-aider
+  aiding). Since this is a difficulty-classification call by the party that put up the route,
+  not a plain factual transcription error, flagged for a human to reconcile rather than
+  auto-corrected.
+
+**Coordinates/waypoints checked and consistent:** all eight routes' `approach_logistics`
+peak/trailhead coordinates agree with their own `waypoints` array entries to within a few
+hundred meters or better (Elephant Head's two trailhead records differ by ~40m; the rest agree
+even more closely) — nothing near the ~500m action threshold.
+
+Web access this run: WebSearch did all the load-bearing work; WebFetch was blocked for every
+domain attempted (peakbagger.com, summitpost.org), consistent with every prior run's notes.
+
+Next batch continues alphabetically after `wa_forbidden_peak_east_ridge` (see progress file).

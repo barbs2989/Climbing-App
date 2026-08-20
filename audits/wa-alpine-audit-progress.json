@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 3,
-  "last_processed_id": "wa_eldorado_peak_west_arete",
+  "last_processed_id": "wa_forbidden_peak_east_ridge",
   "total_in_scope_last_count": 532,
   "total_wa_alpine_or_mountaineering_tagged": 590,
   "batches": [
@@ -2738,6 +2738,25 @@
         "wa_eldorado_peak_northeast_face",
         "wa_eldorado_peak_west_arete"
       ]
+    },
+    {
+      "batch_number": 127,
+      "date": "2026-08-20",
+      "route_ids": [
+        "wa_elephant_butte_standard_route",
+        "wa_elephant_head_standard",
+        "wa_energizer_bunny",
+        "wa_fire_on_the_mountain",
+        "wa_fish_whistle",
+        "wa_flora_mountain_southwest_slope",
+        "wa_flycatcher_buttress",
+        "wa_forbidden_peak_east_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "wa_elephant_head_standard: high_point_ft unverifiable this run (Peakbagger/SummitPost blocked, WebSearch found no elevation figure for this obscure peak). wa_energizer_bunny: FA party's own trip report grades the route 5.10+ A0, DB stores 5.10+ C1 -- a real aid-style distinction, flagged rather than auto-fixed since it's a subjective FA-party grading call, not a plain transcription error."
     }
   ]
 }
