@@ -40,6 +40,7 @@ npm run check:toast-reachable # every screen App returns can SHOW a toast (in bu
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
+npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
@@ -546,6 +547,57 @@ a build error, but a screen that renders wrong or not at all.
     label everyone sees, so reverting the `isCreator` fix left it **green**. Only injection
     found that. `+ Mod` is gated on `isCreator`, the visibility toggle on `isMod`; they are
     different questions and must be asserted separately.
+- **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
+  one sentence: **if an outage changes what a screen renders, that screen must SAY something went
+  wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
+  walk twice, healthy then failing, so a screen that is identical either way is seed-backed and
+  proves nothing while a screen that CHANGES is where the outage is visible. Runs on every PR via
+  `render-guards.yml`; not a build gate (browser + DB).
+  - **The assertion is in the POSITIVE form, and that is the whole design.** The tempting version
+    — *no screen may claim to be empty* — needs a list of every phrasing of nothing, and such a
+    list has already missed two real defects found by this very script: the Home tiles read
+    **"0 routes"** and **"0 crews"**, which no pattern of `no X yet` will ever match. Asking
+    whether the screen *acknowledges the fault* needs no vocabulary of absence. The empty-phrase
+    regex survives as a **reported** column and is never asserted on.
+  - **`check:read-failures` is the near miss, and its own comment states the gap.** That build
+    gate proves a failed read THROWS, and does not ask whether anything downstream concludes
+    absence from the resulting emptiness. Something does: the caller catches and no-ops, state
+    stays `[]`, and every render tests `!x.length` — so loaded-and-empty and never-loaded are the
+    same screen. **Nothing lies; the truth never arrives.** Every other browser guard walks a
+    healthy database, where the distinction does not exist.
+  - **`isError` IS FALSE WHILE REACT-QUERY RETRIES, so the first screen walked is evidence of
+    nothing.** That is the property making an `xUnavailable` flag safe — a slow read reads as
+    loading, not as broken — and it means a walk starting immediately measures every screen
+    before any read has given up, reporting a correctly-wired app as clean. Observed with
+    `ONLY=objectives`: **Home said "0 routes" while Partners and Logbook, later in the same run,
+    both said broken.** Taken at face value that sends somebody debugging a working fix. It now
+    waits for the outage to become **observable** rather than for a fixed number of seconds, and
+    re-walks Home at the end; the pair counts as ONE screen, so a single defect cannot fail the
+    run twice.
+  - **`says-broken` could not match the app's own copy.** The pattern carried a **straight**
+    apostrophe (`couldn't`) while every string in this app uses a **curly** one, so that
+    alternative had never matched once — every `says-broken=YES` it printed for months came from
+    *"try again"* or *"unavailable"* instead, and a screen whose only honest sentence is
+    *"Couldn’t load …"* read as clean. Same class as [[ssr-probes-must-match-escaped-html]].
+  - **`ONLY=<table>` fails exactly one PostgREST table** and is what makes a verdict attributable
+    to ONE query rather than to a blanket outage — with everything blocked, three flags on one
+    screen go true together and no run can say which produced which sentence. Matched on the path
+    segment after `/rest/v1/`, **never as a substring**: PostgREST names EMBEDDED tables in the
+    query string (`select=*,crew_members(*)`), so a substring test fails requests aimed elsewhere.
+    It isolates a **table, not a hook** — several hooks reading one table fail together.
+  - Two fixture modes, exactly as `check:signed-in`: per-run accounts on the **service key**
+    locally, two **durable** accounts on the **anon key** in CI. That rule is why this could not
+    be lifted out of `scripts/oneoff/` unchanged — it called `createFixture` unconditionally.
+  - Fails **closed** five ways, because every one of them prints identically to a clean app: the
+    healthy run not booting (no control), the failing run not booting (a boot failure is not a
+    data verdict), nothing intercepted, fewer than three screens differing, and an unreachable
+    database — `assertDbReachable` runs first so an outage reads as *the database is down* rather
+    than as the author's regression.
+  - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
+    is honest. It covers the six tabs, the Logbook's Completed sub-tab and the Home revisit; a
+    surface behind an overlay or a further sub-tab is out of frame, and **4 of 28 query handles in
+    `App` carry a flag** — the rest are mostly lookups where emptiness is never asserted, but that
+    is a list to READ, not a coverage claim.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
