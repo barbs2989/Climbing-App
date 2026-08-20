@@ -26,17 +26,17 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const WF = path.join(ROOT, ".github", "workflows");
 
-// The version this repo has moved to and verified. Raise a number here in the SAME commit
-// that raises it in the workflows. Each note records what was checked before the bump,
-// because a major bump is a decision and the reasoning is the expensive part.
-// The Node the guards THEMSELVES run on, which is a different question from the runtime
-// the actions use. Node 20 went end-of-life in April 2026 and CI ran it for four months
-// after; #899 fixed the actions and deliberately left this alone, because the local machine
-// was on 20 and a CI-only bump is exactly the CI/local drift this repo works to avoid.
-// Raised to 22 once that was settled. Raise it here in the SAME commit that raises it in
-// the workflows.
+// The Node the guards THEMSELVES run on, which is a different question from the runtime the
+// actions use. Node 20 went end-of-life in April 2026 and CI ran it for four months after;
+// #899 fixed the actions and deliberately left this alone, because the local machine was on
+// 20 and a CI-only bump is exactly the CI/local drift this repo works to avoid. Raised to 22
+// in #986 once that was settled. Raise it here in the SAME commit that raises it in the
+// workflows.
 const NODE_FLOOR = 22;
 
+// The action version this repo has moved to and verified. Raise a number here in the SAME
+// commit that raises it in the workflows. Each note records what was checked before the bump,
+// because a major bump is a decision and the reasoning is the expensive part.
 const FLOORS = {
   // v5 moved to the Node 24 runtime; v7 is ESM and blocks fork-PR checkout under
   // pull_request_target / workflow_run -- neither trigger is used here.
