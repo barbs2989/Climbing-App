@@ -2240,6 +2240,14 @@ the correction knows the screen is wrong, and they have no way to report it.
     directions** are asserted: a route with no rack of its own must add **no** list, or the stock
     quickdraw kit gets restated directly under the note that already says it. Injection-tested
     2/2, each restored to the pre-injection checksum.
+- **`wa_true_grit` carries another route's prose entirely — REPORT, do not repair.** The row is
+  filed at **Postal Wall, Frenchman Coulee** (a Vantage basalt sport crag, 47.025,-119.975) and
+  stores `sport 5.10c, 0 pitches`; its `overview` and `beta` describe *"a 5.8 trad rock line …
+  on **Vesper Peak's north face**"*, 150 km away in the Cascades. Discipline, grade and range all
+  disagree. **29 rows in the catalog are named "True Grit"** — the *a name is not an identity*
+  root cause this file already records for route ids, reaching a prose column instead of an id.
+  Found while scoping the gear work (`probe-true-grit-mismatch.mjs`); which half to delete needs
+  checking whether a real Vesper "True Grit" row exists to receive the prose, so it is left alone.
 - **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
   renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
   two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
