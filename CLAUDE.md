@@ -97,7 +97,7 @@ npm run enrich:next-batch  # next unpitched routes still needing a climbing_rout
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:rappels      # do a route's rappel fields agree with each other?
-npm run audit:hazard-redundancy # how often does KNOWN HAZARDS say the same thing twice?
+npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
@@ -2467,6 +2467,21 @@ the correction knows the screen is wrong, and they have no way to report it.
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
     it must fall to zero — `dup` alone would be passed by a detector that called everything a
     duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **`audit:hazard-redundancy` reports a WORKING FEATURE, and its old wording read as a defect
+  list.** It printed *"routes repeating at least one hazard: 661"* and *"repeated lines removed:
+  1,281"*, which invites a sweep. There is nothing to sweep: `mergeHazards` runs at **render**
+  time — `RouteDetail` calls `mergeHazards(route.hazards, _objHaz, route.watchOut)` — and drops
+  any line whose token set is a subset of one already kept. **Every line it counts is one the
+  merge already removes, and none of it reaches a climber twice.** Verified end to end
+  2026-08-20 rather than assumed: all three columns really are passed, and the KNOWN HAZARDS box
+  really is the caller. The summary now says the numbers are deduped at render, not defects.
+  - Only **101 of the 1,281** are character-for-character; the rest are token-subset near
+    duplicates, which is what makes the merge worth having rather than a plain `Set`.
+  - **This is the THIRD audit here whose number reads like a backlog and is not**, after
+    `audit:terrain` (which measures suppression the app performs) and `audit:waypoint-order`
+    (whose "0" was true only of the routes it could order). *When an audit reports a number, ask
+    what it is the number OF before treating it as work.*
+
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
