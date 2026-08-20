@@ -66,6 +66,13 @@ const IMPOSSIBLE_AT_CAR = /topout|summit/;
 const ELEV_SAME_POINT_FT = 100;   // two pins on one coordinate may differ by rounding, not by this
 const SUMMIT_MARGIN_FT = 60;      // below this, two records of one feature disagree by rounding
 const OVER_HIGH_POINT_FT = 200;
+/* Which pins CANNOT sit above the route's own high point. A summit, a topout or a base belongs to
+   the climb, so one of those above the high point is a contradiction. A landmark, a col, a camp or
+   a hazard does not: Columbia Crest is a landmark on a route that finishes on Liberty Cap 294 ft
+   lower, and Burgundy Col at 7,950 ft is crossed to reach a 7,663 ft summit. Category 3 already
+   carries that reasoning for cols; category 4 did not, and reported both of those as defects. Type
+   decides severity here exactly as it does for a pin drawn at the car — nothing is dropped. */
+const ON_THE_CLIMB = /summit|topout|base/;
 
 /* Adjudication thresholds. Stated before any data was looked at, deliberately: a margin fitted to
    the case it is meant to judge proves nothing, which is the trap audit:map-pins records for its own
@@ -110,7 +117,8 @@ export function analyse(rows) {
 
     if (Number.isFinite(+r.high_point_ft) && +r.high_point_ft > 0) {
       for (const w of withElev) if (+w.elev > +r.high_point_ft + OVER_HIGH_POINT_FT) {
-        out.elevgap.push({ id: r.id, pin: `${w.type} | ${w.name}`, elev: +w.elev, highPoint: +r.high_point_ft, over: +w.elev - +r.high_point_ft });
+        out.elevgap.push({ id: r.id, pin: `${w.type} | ${w.name}`, elev: +w.elev, highPoint: +r.high_point_ft,
+          lat: +w.lat, lng: +w.lng, over: +w.elev - +r.high_point_ft, impossible: ON_THE_CLIMB.test(typeOf(w)) });
       }
     }
   }
@@ -160,7 +168,11 @@ function selftest() {
     ["high_point_ft = 0 means UNKNOWN and must not compare", [{ id: "x", high_point_ft: 0, waypoints: [{ type: "Summit", name: "S", lat: 48, lng: -120, elev: 7000 }, { type: "Base", name: "B", lat: 48.1, lng: -120.1, elev: 5000 }] }],
       o => o.elevgap.length === 0],
     ["a pin genuinely above a known high point IS flagged", [{ id: "x", high_point_ft: 6785, waypoints: [{ type: "Summit", name: "S", lat: 48, lng: -120, elev: 7330 }, { type: "Base", name: "B", lat: 48.1, lng: -120.1, elev: 5000 }] }],
-      o => o.elevgap.length === 1],
+      o => o.elevgap.length === 1 && o.elevgap[0].impossible],
+    ["a LANDMARK above the high point is correct data — flagged, NOT impossible", [{ id: "x", high_point_ft: 14112, waypoints: [{ type: "landmark", name: "Columbia Crest", lat: 46.85, lng: -121.76, elev: 14389 }, { type: "Summit", name: "Liberty Cap", lat: 46.86, lng: -121.77, elev: 14112 }] }],
+      o => o.elevgap.length === 1 && !o.elevgap[0].impossible],
+    ["a COL above the high point is correct data too", [{ id: "x", high_point_ft: 7663, waypoints: [{ type: "Junction", name: "Burgundy Col", lat: 48.5, lng: -120.6, elev: 7950 }, { type: "Summit", name: "Vasiliki Tower", lat: 48.51, lng: -120.61, elev: 7663 }] }],
+      o => o.elevgap.length === 1 && !o.elevgap[0].impossible],
   ];
 
   /* The ground adjudication, driven with constructed elevations so it needs no network. The two
@@ -233,7 +245,7 @@ console.log(`${STATE}: ${rows.length} routes with waypoints\n`);
 console.log(`1 DUPLICATE           non-trailhead pin ON the trailhead   : ${out.duplicate.length}  (${impossible.length} impossible by type — Topout/Summit at the car)`);
 console.log(`2 SELF-CONTRADICTING  one coordinate, elevations >${ELEV_SAME_POINT_FT} ft apart: ${selfC.length}  (of ${out.identical.length} sharing a coordinate at all)`);
 console.log(`3 ORDER               summit is not the highest pin        : ${out.order.length}  (${out.order.filter(o => o.topoutAboveSummit).length} with a TOPOUT above its own summit)`);
-console.log(`4 ELEVGAP             pin above the route's own high point : ${out.elevgap.length}`);
+console.log(`4 ELEVGAP             pin above the route's own high point : ${out.elevgap.length}  (${out.elevgap.filter(e => e.impossible).length} impossible by type — a summit/topout/base of the climb itself)`);
 
 if (selfC.length) {
   console.log(`\n--- SELF-CONTRADICTING: one point cannot be at two heights ---`);
@@ -241,7 +253,7 @@ if (selfC.length) {
     console.log(`  ${String(h.elevDelta).padStart(5)} ft apart  ${h.id}\n        ${h.a}\n        ${h.b}`);
   }
 }
-if (GROUND && selfC.length) {
+if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
   console.log(`\n--- GROUND ADJUDICATION (USGS 3DEP): which of the two pins is actually placed there ---`);
   const cache = new Map();
   const tally = {};
@@ -264,6 +276,35 @@ if (GROUND && selfC.length) {
   console.log(`\n  ${JSON.stringify(tally)}`);
   console.log(`  A refusal is a result: forcing an inseparable pair into a winner manufactures an`);
   console.log(`  answer out of DEM noise, and this audit's whole subject is invented coordinates.`);
+
+  /* Category 4 asks the same question of a different pair: the pin's own elevation against the
+     route's stored high point. The pin has a coordinate, so the ground can say which of the two
+     records is the wrong one — and those are OPPOSITE repairs. A pin the ground corroborates means
+     `high_point_ft` is wrong, which is a scalar somebody can fix; a pin the ground contradicts means
+     the pin is, which needs a coordinate nobody has. Only the pins that are impossible by type are
+     asked, because a landmark or a col above the high point is correct data and has nothing to
+     adjudicate. */
+  const climbPins = out.elevgap.filter(e => e.impossible);
+  if (climbPins.length) {
+    console.log(`\n--- GROUND ADJUDICATION: which record is wrong, the pin or the stored high point? ---`);
+    const t2 = {};
+    for (const e of climbPins) {
+      const k = `${e.lat},${e.lng}`;
+      if (!cache.has(k)) cache.set(k, await sampleGround(e.lat, e.lng));
+      const g = cache.get(k);
+      const v = adjudicate(e.elev, e.highPoint, g);
+      const say = v.verdict === "a-placed" ? `the PIN is corroborated — \`high_point_ft\` (${e.highPoint}) is the wrong record`
+        : v.verdict === "b-placed" ? `the ground matches \`high_point_ft\` instead — the PIN is the wrong record`
+        : v.verdict === "neither" ? `NEITHER figure matches the ground here`
+        : v.verdict === "inseparable" ? `the ground CANNOT separate them — both sit within the ${v.tol} ft the terrain moves here`
+        : `no DEM reading`;
+      t2[v.verdict] = (t2[v.verdict] || 0) + 1;
+      console.log(`  ${e.id}  ${e.pin}`);
+      console.log(`      pin ${e.elev} ft | high_point ${e.highPoint} ft | ground ${g ? Math.round(g.at) + " ft (relief " + g.relief + ")" : "unavailable"}`);
+      console.log(`      -> ${say}`);
+    }
+    console.log(`\n  ${JSON.stringify(t2)}`);
+  }
 }
 if (impossible.length) {
   console.log(`\n--- DRAWN AT THE CAR: a Topout or Summit on the trailhead coordinate ---`);
@@ -275,7 +316,7 @@ if (out.order.length) {
 }
 if (out.elevgap.length) {
   console.log(`\n--- PIN ABOVE THE ROUTE'S OWN HIGH POINT ---`);
-  for (const h of out.elevgap) console.log(`  ${h.id}  ${h.pin}  ${h.elev} ft vs high point ${h.highPoint} ft  (+${h.over})`);
+  for (const h of out.elevgap) console.log(`  ${h.id}  ${h.pin}  ${h.elev} ft vs high point ${h.highPoint} ft  (+${h.over})${h.impossible ? "   [ON THE CLIMB — cannot be above its own high point]" : "   (landmark/col/camp — legitimately can be)"}`);
 }
 
 console.log(`\nReported, never repaired: fixing a pin means supplying a coordinate, and inventing one`);
