@@ -29,6 +29,7 @@ npm run check:crew-member-readers # no crew member id resolved against seed CLIM
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
+npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -2033,6 +2034,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:waypoint-placement`** asserts that a waypoint the map cannot draw **says so** rather than
+  offering a dead tap, and that **exactly one predicate** decides which waypoints those are. Static
+  plus one `renderToStaticMarkup` pass, so it sits in `npm run build`.
+  - **The behaviour already shipped and was described only in a COMMENT** — an unplaced row renders
+    *"No coordinate on file — this point is not on the map above"* and is deliberately **not** given
+    a tap handler, because a row that looks tappable and pans to nothing is worse than one that
+    explains itself. Nothing rendered it, so nothing would have noticed it disappearing. **The
+    comment had ALREADY gone stale**, claiming *"44 pins across 17 WA alpine routes"* against a
+    measured **39 across 16** — the [[semantic-invariants-need-a-script]] shape, caught in the act.
+  - **"Is this waypoint on the map?" was answered NINE ways.** `GPXMap` tested `w.lat != null` in
+    **eight** places — none checking `lng`, none checking finiteness — while `WaypointList` tested
+    both coordinates for a finite `Number`. All nine now call **`wpPlaced()`**.
+  - **This fixed no visible bug and that is stated rather than glossed**: measured across all
+    **4,230** live WA waypoints the two tests **agree**. It closes a split only a *contributed* value
+    can open, and contributed rows store lat/lng as **strings** — one numeric string is already in
+    the catalog. **The empty string is the case that bites**: `"" == null` is false so the map draws
+    the pin, and `Number("")` is `0` which **is** finite so the list calls it placed — the pin lands
+    at latitude 0 in the Gulf of Guinea. Same `Number(null) === 0` trap `audit:map-pins` records
+    from a 12,215 km "disagreement".
+  - **`0,0` is deliberately ACCEPTED as placed.** This predicate answers *does a coordinate exist*,
+    not *is it plausible*; rejecting it here would hide a bad pin from the audits whose job is to
+    find it.
+  - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
+    coordinate and flagging it would tell an author to break correct code.
+  - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
+    the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
+    dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
+    `lib/supabase.js` reads it at module scope.
+  - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
+    both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
+    pattern, not the guard, was wrong.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and

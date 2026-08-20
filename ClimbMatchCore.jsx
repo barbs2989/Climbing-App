@@ -376,7 +376,7 @@ function MDToolbar({taRef,value,onChange}){
     </button>
   </div>;
 }
-function gpxDownload(r,overridePts,overrideName){const pts=(overridePts&&overridePts.length)?overridePts:((r&&r.gpxPts)||[]);if(!pts.length)return;const seg=pts.map(pt=>{const lat=Array.isArray(pt)?pt[0]:pt.lat,lon=Array.isArray(pt)?pt[1]:pt.lon,ele=Array.isArray(pt)?pt[2]:pt.ele;return `<trkpt lat="${lat}" lon="${lon}">${ele!=null?`<ele>${ele}</ele>`:""}</trkpt>`;}).join("");const wpts=((r&&r.waypoints)||[]).map(w=>{const lat=(w&&w.lat!=null)?w.lat:(Array.isArray(w)?w[0]:null),lon=(w&&w.lng!=null)?w.lng:(Array.isArray(w)?w[1]:null),nm=((w&&(w.name||w.label))||"").replace(/[<>&]/g,"");return (lat!=null&&lon!=null)?`<wpt lat="${lat}" lon="${lon}"><name>${nm}</name></wpt>`:"";}).join("");const trkName=overrideName||((r&&r.name)||"Route");const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="ClimbMatch" xmlns="http://www.topografix.com/GPX/1/1">${wpts}<trk><name>${trkName.replace(/[<>&]/g,"")}</name><trkseg>${seg}</trkseg></trk></gpx>`;try{const blob=new Blob([gpx],{type:"application/gpx+xml"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(trkName.replace(/[^a-z0-9]+/gi,"_"))+".gpx";document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(url),1500);}catch(e){}}
+function gpxDownload(r,overridePts,overrideName){const pts=(overridePts&&overridePts.length)?overridePts:((r&&r.gpxPts)||[]);if(!pts.length)return;const seg=pts.map(pt=>{const lat=Array.isArray(pt)?pt[0]:pt.lat,lon=Array.isArray(pt)?pt[1]:pt.lon,ele=Array.isArray(pt)?pt[2]:pt.ele;return `<trkpt lat="${lat}" lon="${lon}">${ele!=null?`<ele>${ele}</ele>`:""}</trkpt>`;}).join("");const wpts=((r&&r.waypoints)||[]).map(w=>{const lat=(wpPlaced(w))?w.lat:(Array.isArray(w)?w[0]:null),lon=(w&&w.lng!=null)?w.lng:(Array.isArray(w)?w[1]:null),nm=((w&&(w.name||w.label))||"").replace(/[<>&]/g,"");return (lat!=null&&lon!=null)?`<wpt lat="${lat}" lon="${lon}"><name>${nm}</name></wpt>`:"";}).join("");const trkName=overrideName||((r&&r.name)||"Route");const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="ClimbMatch" xmlns="http://www.topografix.com/GPX/1/1">${wpts}<trk><name>${trkName.replace(/[<>&]/g,"")}</name><trkseg>${seg}</trkseg></trk></gpx>`;try{const blob=new Blob([gpx],{type:"application/gpx+xml"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(trkName.replace(/[^a-z0-9]+/gi,"_"))+".gpx";document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(url),1500);}catch(e){}}
 const WP_TYPES=["Trailhead","Junction","Water","Campsite","Summit","Topout","Hazard"];
 /* One place that says what a waypoint type looks like. It was three: GPXMap, WaypointMapPicker
    and the two waypoint lists in RouteDetail each carried their own copy of the same object
@@ -455,6 +455,18 @@ const WP_TYPE_MAP={trailhead:"Trailhead","trailhead/pass":"Trailhead",summit:"Su
   crag:"Crag","climbing area":"Crag",pass:"Pass",col:"Pass",saddle:"Pass",approach:"Approach",
   landmark:"Landmark",feature:"Landmark",viewpoint:"Landmark",waypoint:"Landmark",
   route_reference:"Landmark","area/route reference point":"Landmark"};
+/* IS THIS WAYPOINT ON THE MAP? ONE ANSWER, because there used to be NINE. GPXMap tested
+   `w.lat!=null` in eight places — none of them checking `lng` OR finiteness — while
+   WaypointList tested both coordinates for a finite Number. They agree on every one of the
+   4,230 live WA waypoints today, so this fixes no visible bug; it closes a LATENT split that
+   only a contributed value can open, and contributed rows store lat/lng as STRINGS.
+   The empty string is the case that bites: `"" == null` is FALSE so the map would draw the
+   pin, and `Number("")` is 0 which IS finite — so both halves call it placed and it lands at
+   latitude 0 in the Gulf of Guinea. That is the same `Number(null) === 0` trap audit:map-pins
+   already records, where a missing blob coordinate produced a 12,215 km "disagreement".
+   A row that says "not on the map above" while a pin sits there, or offers a tap that pans to
+   nothing, is the failure this prevents. Requires BOTH coordinates and rejects a blank. */
+export function wpPlaced(w){if(!w)return false;const la=w.lat,ln=w.lng;if(la==null||ln==null||la===""||ln==="")return false;return Number.isFinite(Number(la))&&Number.isFinite(Number(ln));}
 function wpType(w){const raw=String((w&&w.type)||"").trim();if(!raw)return "";const k=raw.toLowerCase();return WP_TYPE_MAP[k]||(raw.charAt(0).toUpperCase()+raw.slice(1));}
 function wpIs(w,t){return wpType(w)===t;}
 function guessWpType(name){const n=(name||"").toLowerCase();if(/trail\s*head|\bth\b|parking|gate/.test(n))return "Trailhead";if(/camp|bivy/.test(n))return "Campsite";if(/summit|peak|\btop\b/.test(n))return "Summit";if(/water|creek|spring|stream|lake/.test(n))return "Water";if(/junction|fork|split|trail/.test(n))return "Junction";if(/hazard|danger|crevasse|rockfall/.test(n))return "Hazard";if(/topout|top-out/.test(n))return "Topout";return "Junction";}
@@ -1200,11 +1212,11 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
   const wc=WP_COLORS;
   const ep=endpointLabels||{startLabel:"Start",startColor:C.green,finishLabel:"Finish",finishColor:C.red};
   const hasPts=pts&&pts.length>=2;
-  const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);
+  const wpPts=(waypoints||[]).filter(w=>wpPlaced(w));
   const hasWpLine=!hasPts&&wpPts.length>=2;
   const hasPeak=!hasPts&&!(waypoints&&waypoints.length)&&peakCoord&&peakCoord.lat!=null;
   const sig=hasPts?(pts.length+":"+pts[0][0]+","+pts[0][1]):((waypoints&&waypoints.length)?("w"+waypoints.length):(hasPeak?("p"+peakCoord.lat+","+peakCoord.lng):"none"));
-  useEffect(()=>{let cancelled=false;const init=()=>{if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});if(map.zoomControl)map.zoomControl.getContainer().style.marginTop="46px";L.tileLayer(MAP_TILE_URLS[baseLayer],{maxZoom:baseLayer==="topo"?17:19}).addTo(map);let b=null;if(hasPts){const ll=pts.map(p=>[p[0],p[1]]);const line=L.polyline(ll,{color:C.blue,weight:4,opacity:0.9}).addTo(map);b=line.getBounds();const nearWp=(pt)=>(waypoints||[]).some(w=>w&&w.lat!=null&&Math.hypot(pt[0]-w.lat,pt[1]-w.lng)<0.0015);
+  useEffect(()=>{let cancelled=false;const init=()=>{if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});if(map.zoomControl)map.zoomControl.getContainer().style.marginTop="46px";L.tileLayer(MAP_TILE_URLS[baseLayer],{maxZoom:baseLayer==="topo"?17:19}).addTo(map);let b=null;if(hasPts){const ll=pts.map(p=>[p[0],p[1]]);const line=L.polyline(ll,{color:C.blue,weight:4,opacity:0.9}).addTo(map);b=line.getBounds();const nearWp=(pt)=>(waypoints||[]).some(w=>wpPlaced(w)&&Math.hypot(pt[0]-w.lat,pt[1]-w.lng)<0.0015);
     // A generic Start/Finish dot is only worth drawing when no NAMED waypoint already says
     // what that end of the track is. The proximity test alone was not enough: Mount Olympus'
     // Blue Glacier standard route has a recorded track that stops ~0.9 km short of the
@@ -1212,7 +1224,7 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     // "Summit" pin and the mountain appeared to have two summits. A named waypoint is
     // strictly more informative than "Finish", and the dashed connector below still shows
     // that the track runs out before it.
-    const hasWpType=(...ts)=>(waypoints||[]).some(w=>w&&w.lat!=null&&ts.indexOf(String(w.type))>=0);
+    const hasWpType=(...ts)=>(waypoints||[]).some(w=>wpPlaced(w)&&ts.indexOf(String(w.type))>=0);
     if(!nearWp(ll[0])&&!hasWpType("Trailhead"))L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1}).addTo(map).bindTooltip(ep.startLabel,{direction:"top"});
     if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1}).addTo(map).bindTooltip(ep.finishLabel,{direction:"top"});
     // A named Trailhead/Summit can sit a little past where the recorded GPS track starts/stops
@@ -1220,10 +1232,10 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     // summit) without being wrong data. Rather than leave it as a stray dot, draw a short dashed
     // connector out to it — but only within CONNECT_DEG, so a genuinely different real-world
     // location (a different trailhead entirely) still reads as visually separate, not "connected".
-    const CONNECT_DEG=0.02;const connect=(trackPt,wp,color)=>{if(!wp||wp.lat==null)return;const d=Math.hypot(trackPt[0]-wp.lat,trackPt[1]-wp.lng);if(d>0.0015&&d<=CONNECT_DEG)L.polyline([trackPt,[wp.lat,wp.lng]],{color,weight:2,opacity:0.6,dashArray:"3,7"}).addTo(map);};
-    connect(ll[0],(waypoints||[]).find(w=>w&&w.lat!=null&&wpIs(w,"Trailhead")),wc.Trailhead);
-    connect(ll[ll.length-1],(waypoints||[]).find(w=>w&&w.lat!=null&&(wpIs(w,"Summit")||wpIs(w,"Topout"))),wc.Summit);
-    }else if(hasWpLine){const ordered=[...wpPts].sort((a,b2)=>(a.distMi??0)-(b2.distMi??0));const ll=ordered.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — connects known waypoints, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(wp==null||wp.lat==null)return;
+    const CONNECT_DEG=0.02;const connect=(trackPt,wp,color)=>{if(!wpPlaced(wp))return;const d=Math.hypot(trackPt[0]-wp.lat,trackPt[1]-wp.lng);if(d>0.0015&&d<=CONNECT_DEG)L.polyline([trackPt,[wp.lat,wp.lng]],{color,weight:2,opacity:0.6,dashArray:"3,7"}).addTo(map);};
+    connect(ll[0],(waypoints||[]).find(w=>wpPlaced(w)&&wpIs(w,"Trailhead")),wc.Trailhead);
+    connect(ll[ll.length-1],(waypoints||[]).find(w=>wpPlaced(w)&&(wpIs(w,"Summit")||wpIs(w,"Topout"))),wc.Summit);
+    }else if(hasWpLine){const ordered=[...wpPts].sort((a,b2)=>(a.distMi??0)-(b2.distMi??0));const ll=ordered.map(w=>[w.lat,w.lng]);const line=L.polyline(ll,{color:C.blue,weight:3,opacity:0.7,dashArray:"7,7"}).addTo(map);line.bindTooltip("Approximate line — connects known waypoints, not a recorded track",{direction:"top",sticky:true});b=line.getBounds();}markersRef.current={};(waypoints||[]).forEach((wp,wi)=>{if(!wpPlaced(wp))return;
     // Waypoints carried a hover tooltip and nothing else, so on a phone — which is what this
     // app is built for — tapping one did nothing at all, on every route. A tooltip is a
     // pointer affordance; a popup is what opens on tap. The 6px marker is also well under
@@ -2441,7 +2453,7 @@ function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}){
       if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;
       const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});
       applyBaseLayer(map,tileRef,baseLayer);
-      const withCoords=(waypoints||[]).filter(function(w){return w&&w.lat!=null&&w.lng!=null&&!isNaN(w.lat)&&!isNaN(w.lng);});
+      const withCoords=(waypoints||[]).filter(function(w){return wpPlaced(w)&&w.lng!=null&&!isNaN(w.lat)&&!isNaN(w.lng);});
       if(withCoords.length){map.fitBounds(L.latLngBounds(withCoords.map(function(w){return [w.lat,w.lng];})).pad(0.35));}
       else if(peakCoord&&peakCoord.lat!=null){map.setView([peakCoord.lat,peakCoord.lng],15);}
       else{map.setView([39.5,-98.5],4);}
@@ -2802,7 +2814,7 @@ function OverviewMap({onOpenClimb,onOpenArea,disc,filters,wishlist,scope}){useEf
   const [mapZoom,setMapZoom]=useState(4);
   const [mapBounds,setMapBounds]=useState(null);
   const mapDiv=useRef(null),mapRef=useRef(null),userRef=useRef(null),accRef=useRef(null),markRef=useRef(null),searchMarkRef=useRef(null),tileRef=useRef(null);const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false),[geoErr,setGeoErr]=useState(""),[locating,setLocating]=useState(false);const [baseLayer,setBaseLayer]=useState("sat");
-  const coordOf=r=>{const w=(r.waypoints||[]).find(x=>wpIs(x,"Trailhead"))||(r.waypoints||[])[0];if(w&&w.lat!=null)return [w.lat,w.lng];if(r.gpxPts&&r.gpxPts.length)return r.gpxPts[0];const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m&&m.lat!=null?[m.lat,m.lng]:null;};
+  const coordOf=r=>{const w=(r.waypoints||[]).find(x=>wpIs(x,"Trailhead"))||(r.waypoints||[])[0];if(wpPlaced(w))return [w.lat,w.lng];if(r.gpxPts&&r.gpxPts.length)return r.gpxPts[0];const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m&&m.lat!=null?[m.lat,m.lng]:null;};
   const labelOf=r=>{let m=MOUNTAINS.find(x=>x.id===r.mountainId),g=0;while(m&&m.parentId&&["crag","wall"].includes(m.type)&&g<4){m=MOUNTAINS.find(x=>x.id===m.parentId);g++;}return m?m.name:"";};
   const clusterLabel=climbs=>{if(!climbs.length)return "";const chains=climbs.map(r=>{const out=[];let m=MOUNTAINS.find(x=>x.id===r.mountainId),g=0;while(m&&g<9){out.push(m.id);m=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null;g++;}return out;});const first=chains[0];for(let qi=0;qi<first.length;qi++){const id=first[qi];if(chains.every(ch=>ch.indexOf(id)>=0)){const mm=MOUNTAINS.find(x=>x.id===id);if(mm)return mm.name;}}return labelOf(climbs[0]);};
   const effDisc=mapDisc!=null?mapDisc:disc;const SRC=ROUTES.filter(r=>((!effDisc||effDisc==="All")||rDiscs(r).includes(effDisc))&&(filters?passesFilters(r,filters):true));

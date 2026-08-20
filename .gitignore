@@ -44,3 +44,6 @@ scripts/oneoff/.inject-glued-name-INPROGRESS
 
 # Regenerable run artifact of scripts/oneoff/solve-camp-elevations.mjs (~10 min to rebuild).
 camp-elevation-proposals.json
+# check:waypoint-placement bundles its render probe INSIDE the project (node must resolve react
+# from the nearest node_modules). It removes the dir in a finally, but a killed run would leave one.
+.wpplace-*/
