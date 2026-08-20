@@ -131,3 +131,90 @@ four because they appear to be different climbs.
 **The transferable lesson:** *column presence tells you what a delete would cost; it cannot tell you
 whether the two rows are the same climb.* The evidence for that lives in the prose and, twice here,
 specifically inside an `approach_variant` — a column the first pass never opened.
+
+---
+
+# The five suspected phantoms, checked the same way
+
+A phantom is a row for something that may not be a route at all. These were listed alongside the
+pairs and had not been checked with the same care. Applying the same standard — judge the row, not
+the claim — **three of the five are not phantoms, and one of those three would have been a
+destructive delete.**
+
+| row | original claim | verdict |
+|---|---|---|
+| `wa_mount_stuart_north_face` | "its own beta says no such route is described anywhere" | **CONFIRMED phantom** |
+| `wa_american_border_peak_northeast_face` | "a placeholder … nothing else" | **holds** — genuinely empty |
+| `wa_south_ridge_4` | "only guide marketing carries the name" | **not a phantom** |
+| `wa_bears_breast_mountain_se_mega_slab` | "a formation, not a route" | **not a phantom** |
+| `wa_chimney_rock_west_face` | "an IDAHO route filed on a WA peak" | **STALE — do not delete** |
+
+## Confirmed: `wa_mount_stuart_north_face`
+
+The row denies itself, in two fields:
+
+> **beta:** No separately named "North Face" route matching this grade (IV, 5.8, AI2) is known on
+> the mountain. The north side is instead divided among the named North Ridge, Ice Cliff Glacier,
+> Stuart Glacier Couloir, and Girth Pillar routes…
+>
+> **overview:** …the setting for the mountain's hardest technical lines … **rather than a single
+> independent 'North Face' route**.
+
+Every named route it points at exists as a sibling on `wa_mount_stuart` — North Ridge (Complete),
+Ice Cliff Glacier, Stuart Glacier Couloir, Girth Pillar — checked, not assumed. What the row holds
+is a description of the north **side**, which is real content but is not a route.
+
+**No delete SQL is written for it**, and the reason is structural rather than caution: `check:sql`'s
+only-copy rule protects a delete by naming a **twin**, and a phantom has no twin by construction —
+that is what makes it a phantom. It is the same shape as the dissolve case, which needed its own
+exemption. Deciding what to do with the north-side prose is a judgement about where that content
+should live, not a dedup.
+
+## Holds: `wa_american_border_peak_northeast_face`
+
+12 populated fields and **no route data at all** — no grade, no pitches, no length, no approach, no
+descent, no waypoints. Only `beta`, `overview`, `hazards`, `gear`, `season` beside the name, aspect
+and high point. Its one sibling, `wa_american_border_peak_southeast_face`, is a real route (Grade
+III, 5.4, 3 pitches).
+
+## Not phantoms
+
+**`wa_south_ridge_4`** carries **23 populated fields** — grade 5.6, 4 pitches, 305 m, `pitch_detail`,
+4 waypoints, descent text, rappels. That is not marketing; it is a described climb. There **is** a
+real defect on this row, and it is a different one: its area is `wa_main_peak` (named *"Main Peak"*)
+while every sibling is `wa_eldorado_peak_*`. That is an **area-naming** problem for
+`audit:area-parents`, not a reason to delete a route.
+
+**`wa_bears_breast_mountain_se_mega_slab`** is a route with a start, a line and a summit: ~3,000 ft
+of low-angle sandstone slab from Shovel Creek to the ~6,700 ft south shoulder, then ~600 ft of
+exposed scrambling and a final loose pitch, reached by a multi-day approach up the Waptus River. Its
+`pitch_detail` records climbing times. "A formation, not a route" describes the *name*, not the row.
+
+## Stale, and this one matters most
+
+**`wa_chimney_rock_west_face` is not an Idaho route.** Measured against the live row: no mention of
+Idaho, the Selkirks, Priest Lake or Sandpoint anywhere in its prose or waypoints; it names Alpine
+Lakes landmarks throughout; its logistics give the **Pete Lake Trailhead (Trail #1323, FR-4616)**
+near Cooper Lake; its `aspect` is W, agreeing with its name *"West Face / South Summit
+(Standard)"*; and it holds **25 populated fields and 8 waypoints**.
+
+The claim rested partly on an `audit:aspect-name` finding of a 180° name-vs-aspect disagreement.
+**That disagreement is gone** — the row has been repaired since. Acting on the stale claim would
+have destroyed one of the better-populated routes in the catalog.
+
+---
+
+# Class B, all seventeen items
+
+**Actionable: 2.** The Little Tahoma dedup (merged; delete SQL written and checked) and the Mount
+Stuart North Face phantom (evidence confirmed; no SQL, for the reason above).
+
+**A decision, not a defect: 1.** American Border Peak's Northeast Face is a genuinely empty row.
+
+**Do not touch: 14.** Eleven pairs that are not duplicates, and three "phantoms" that are real
+routes — one of them repaired since the claim was written.
+
+**The pattern across all of it:** every one of these entries was a *hypothesis recorded as a
+finding*. Four separate claims checked today turned out to describe repairs that had already
+happened or suspicions that the row's own data contradicts. A defect list is evidence about the
+moment it was written; re-derive before acting, and especially before deleting.
