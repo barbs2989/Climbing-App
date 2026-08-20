@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail };
+import RouteDetail, { campDetail, campFromTrailhead } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail } = require_(out);
+const { render, campDetail, campFromTrailhead } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -268,6 +268,83 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("no aria-labelled expand control names the site — the prose is unreachable and unannounced");
 }
 
+// ── 10. EVERY SITE SAYS WHERE IT IS: its elevation, its gain from the trailhead, and its
+//    distance from the trailhead — and says nothing at all where the catalog records none of
+//    those. The silence is the half worth guarding: two of these three numbers are the shape this
+//    catalog keeps fabricating, and a plausible number is worse than a blank.
+{
+  // The trailhead carries COORDINATES, because a real trailhead pin does. Without them the
+  //     anti-fabrication case (d) is inert: a derived great-circle distance needs two points, so
+  //     a coordinate-less fixture made the guard go green on an app that WAS deriving one.
+  //     Found by injection case 7 missing, not by reading this.
+  const TH = { name: "Cascade Pass Trailhead", type: "Trailhead", elev: 1000, distMi: 0, lat: 48.475, lng: -121.075 };
+  const HIGH = { name: "High camp", elev: 3500, notes: "On the moraine." };
+  const LOW = { name: "Marble Creek Campground", elev: 400, notes: "Valley car campground." };
+
+  // (a) A site above the trailhead states the gain, in words, against the trailhead.
+  const up = text(render(route("alpine", { bivy: [HIGH], waypoints: [TH] }), "planner"));
+  if (/above the trailhead/.test(up)) ok("a site above the trailhead states its gain from the trailhead");
+  else fail("a site above the trailhead does NOT state its gain — the number reaches no screen");
+
+  // (b) A site BELOW the trailhead must never render as a negative gain. 16% of real sites sit
+  //     below theirs and they are overwhelmingly valley car-campgrounds, so "-600 ft" would be
+  //     both ugly and the wrong framing for somewhere you drive to.
+  //     Scoped to the PANEL for the negative-number test, and the reason is worth keeping: the
+  //     tab renders the trailhead pin's LONGITUDE (-121.075), so a tab-wide scan for a minus sign
+  //     reports a correct app as broken. Second time in this one section — the slice is not
+  //     optional here, it is the difference between a real finding and a coordinate.
+  const downAll = text(render(route("alpine", { bivy: [LOW], waypoints: [TH] }), "planner"));
+  const d0 = downAll.indexOf(HEAD), d1 = downAll.indexOf("ROUTE TRACK", d0 + 1);
+  const down = d0 < 0 ? "" : downAll.slice(d0, d1 > d0 ? d1 : d0 + 2000);
+  if (d0 < 0) fail("ANCHOR LOST: the panel did not render for the below-trailhead fixture");
+  else if (/below the trailhead/.test(down)) ok("a site below the trailhead is worded 'below', not shown as a negative gain");
+  else fail("a site below the trailhead does not say 'below the trailhead'");
+  if (/-\s?\d|\u2212\s?\d/.test(down.replace(/[^\S\n]+/g, " "))) fail("a NEGATIVE number rendered on a below-trailhead site");
+  else ok("no negative number renders anywhere in the below-trailhead PANEL");
+
+  // (c) A campsite WAYPOINT carrying a trail distance shows it. This is the only store that has
+  //     one, so a failure here means the distance half is wired to nothing.
+  const wpDist = Object.assign({}, WP, { distMi: 4.2, elev: 3000 });
+  const dist = text(render(route("alpine", { waypoints: [TH, wpDist] }), "planner"));
+  if (/4\.2 mi/.test(dist)) ok("a campsite waypoint's recorded TRAIL distance reaches the screen");
+  else fail("a campsite waypoint's distMi does not reach the screen");
+
+  // (d) THE ANTI-FABRICATION ASSERTION. A researched bivy site carries a coordinate on 4 of 5,083
+  //     rows and a distance on NONE, so a distance must never appear for one. The tempting bug is
+  //     computing a straight line from lat/lng: a trail cannot be shorter than its own chord, so
+  //     that number would be wrong AND look authoritative. This site has coordinates and no
+  //     distance; anything mileage-shaped on screen means somebody started deriving it.
+  const coordSite = { name: "Boston Basin", elev: 3000, lat: 48.48, lng: -121.06 };
+  const noDist = text(render(route("alpine", { bivy: [coordSite], waypoints: [TH] }), "planner"));
+  const camp = noDist.slice(noDist.indexOf("Boston Basin"), noDist.indexOf("Boston Basin") + 220);
+  if (/\d+(\.\d+)?\s?(mi|km)\b/.test(camp)) fail("a DISTANCE rendered for a bivy site that records none — it is being derived, and a chord is not a trail");
+  else ok("a bivy site with coordinates but no recorded distance shows NO distance");
+
+  // (e) No trailhead elevation → no gain. Not a zero, not a dash: silence.
+  //     Scoped to the PANEL, never the tab: the Planner legitimately says "trailhead" in
+  //     TrailheadCard and APPROACH, and a tab-wide match reports correct code as broken. This
+  //     guard's own header already records that mistake being made once; this is it a second time.
+  const noThAll = text(render(route("alpine", { bivy: [HIGH] }), "planner"));
+  const s0 = noThAll.indexOf(HEAD), s1 = noThAll.indexOf("ROUTE TRACK", s0 + 1);
+  if (s0 < 0) fail("ANCHOR LOST: the panel did not render for the no-trailhead fixture");
+  else {
+    const panel = noThAll.slice(s0, s1 > s0 ? s1 : s0 + 2000);
+    if (/the trailhead/.test(panel)) fail("a gain rendered with no trailhead elevation to measure from");
+    else ok("no trailhead elevation renders no gain — silence, not a zero");
+  }
+
+  // (f) The pure helper, where the cases real data may not reach can still be pinned.
+  if (campFromTrailhead({ distMi: null, gainFt: null }) === "") ok("a site with neither number says nothing");
+  else fail("campFromTrailhead invents a string for a site with no numbers");
+  if (campFromTrailhead({ distMi: null, gainFt: -1250 }) === "1,250 ft below the trailhead") ok("the below-trailhead wording is exact");
+  else fail(`below-trailhead wording drifted: ${JSON.stringify(campFromTrailhead({ distMi: null, gainFt: -1250 }))}`);
+  // It has to stay a CHIP. check:token-boxes calls anything over 60 characters a paragraph, and
+  // this string sits inside a rounded pill.
+  const longest = campFromTrailhead({ distMi: 88.88, gainFt: -12345 });
+  if (longest.length <= 60) ok(`the longest string it can emit is ${longest.length} chars — still a token`);
+  else fail(`campFromTrailhead can emit ${longest.length} chars, which is a paragraph in a pill`);
+}
+
 // ── 9. No camping data anywhere → no section, and no crash.
 if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
 else ok("no camping data renders no section");
@@ -283,6 +360,9 @@ process.exit(failures ? 1 : 0);
 //   3. Move the mount back to the safety line                 -> cases 1 and 2 both fail.
 //   4. Make campSites() return only route.bivy                -> case 4 fails (waypoint half).
 //   5. Remove the `seen` dedupe from campSites()              -> case 5 fails with 2 (want 1).
+//   6. Render the raw gain instead of the "below" wording     -> 10b fails on the negative number.
+//   7. Derive distMi from lat/lng for bivy sites              -> 10d fails (a chord is not a trail).
+//   8. Make trailheadFt() return a constant instead of null   -> 10e fails (a gain with no anchor).
 // The five collapse cases (8c/8d) are automated in
 // scripts/oneoff/inject-camping-collapse-cases.mjs — 5/5, each proving its edit landed by
 // checksum first. Re-run it after any change to CampSite or campDetail.
