@@ -66,6 +66,7 @@ npm run check:guard-wiring # every guard on disk actually RUNS, and is named her
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
+npm run check:read-failures # no failed read that a caller reads as an empty one (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:migrations # two migrations must never share a number (in build)
@@ -2392,7 +2393,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
 
-**A failed READ must not read as an empty one.** `check:writes` already forbids a success
+**A failed READ must not read as an empty one — and `check:read-failures` now enforces it.**
+That rule sat here as prose for exactly one commit, which is one longer than it should have:
+a semantic invariant in a comment rots, and this file records that lesson twice over
+(`check:correction-readers`, `check:crew-member-readers`). The script is the enforcement.
+  - It fails on any exported function in `lib/db.js` that answers a PostgREST `error` with an
+    **empty** value — `[]`, `{}`, `""`, `0`, `false`, or a bare `return` — unless the function is
+    in `DECLARED` **with a reason**. A **stale** declaration fails too, so the list cannot rot
+    into a description of code that is gone. One entry today: `claimMyCrewEmailInvites` degrades
+    on `PGRST202` specifically, which is an unapplied migration rather than a failed query.
+  - `null` and `undefined` are deliberately NOT "empty": a caller has to null-check them, so the
+    failure stays visible. Only values that read as *"there is nothing"* are forbidden.
+  - **It does not attempt the strong form** — *does anything downstream conclude absence from
+    this emptiness?* — which needs caller analysis across two 400kB files and would flag correct
+    guard clauses. A guard that flags correct work teaches people to ignore it, which is worse
+    than the hole it closes. It checks the half that is checkable.
+  - Matches the `error` **identifier** via the AST, never the word, so the prose above cannot
+    trip it — the false pass `check:ci-cancel` records from the other side. Fails **closed**:
+    fewer than 50 exported functions found, or an unparseable file, is reported as a broken scan
+    rather than a clean one.
+  - Injection-tested 5/5, each case proving its edit landed **by checksum** first. Cases 1 and 2
+    reproduce the real historical defect. **Both initially read as MISSED and the guard was
+    innocent** — the injection had left a comment fragment dangling, producing invalid JS, and
+    the guard failed closed on the parse instead of naming the function. *An injection that
+    produces a different failure is not a catch;* fix the case before doubting the check.
+  - Case 4 must **PASS**: a comment describing the forbidden shape is documentation.
+
+**The three that prompted it.** `check:writes` already forbids a success
 message in front of a write whose failure is unobservable; the read side had no such rule, and
 `lib/db.js` held three message fetches that answered a database error with `[]`. Every caller
 drew a conclusion from that emptiness:
