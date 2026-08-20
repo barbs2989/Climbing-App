@@ -30,7 +30,9 @@ export async function elevationAt(lat, lng, tries = 4) {
   return null;
 }
 
-const offset = (lat, lng, m, bearing) => {
+/** Move `m` metres along `bearing` from a coordinate. Exported so callers that need their own
+    sampling pattern build it on this one rather than re-deriving the spherical arithmetic. */
+export const offset = (lat, lng, m, bearing) => {
   const R = 6371000, d = m / R, b = bearing * Math.PI / 180, p = Math.PI / 180;
   const φ1 = lat * p, λ1 = lng * p;
   const φ2 = Math.asin(Math.sin(φ1) * Math.cos(d) + Math.cos(φ1) * Math.sin(d) * Math.cos(b));
