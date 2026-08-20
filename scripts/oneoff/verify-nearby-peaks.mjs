@@ -104,14 +104,18 @@ for (const [label, a] of [["a crag", CRAG], ["a peak with no coords", NOCOORD], 
   }
 }
 
-// ── 6. Outside Washington there are no `peak` rows at all, so the section must produce
-//    nothing rather than an empty panel that reads as a claim about the mountains.
+// ── 6. Where a peak has no PEAK-TYPED neighbour, the section must produce nothing rather than
+//    an empty panel that reads as a claim about the mountains rather than about our data.
+//    This used to be captioned "outside Washington", which is no longer true: measured
+//    2026-08-19, 39 Colorado peaks are typed and the panel is live on 37 of them. What the
+//    case actually pins is that CRAG-typed neighbours never produce rows — the fixture below
+//    is crags only, whatever state it sits in.
 {
   const utahCrags = [{ id: "ut_a", name: "A", area_type: "crag", lat: 40.6, lng: -111.7, route_count: 30 }];
   if (nearbyPeaksRows({ ...STUART, id: "ut_peak", lat: 40.6, lng: -111.7 }, utahCrags, 6).length === 0)
-    ok("no peak-typed neighbours -> empty (renders nothing outside WA)");
+    ok("no peak-typed neighbours -> empty (crag-typed areas never produce rows)");
   else fail("produced rows from crag-typed areas");
 }
 
-console.log(failures ? `\nverify-nearby-peaks: ${failures} failure(s).` : "\nverify-nearby-peaks: ok — selection is by distance, excludes stubs/crags/self, WA-shaped.");
+console.log(failures ? `\nverify-nearby-peaks: ${failures} failure(s).` : "\nverify-nearby-peaks: ok — selection is by distance, excludes stubs, crags and self; no state gate.");
 process.exit(failures ? 1 : 0);

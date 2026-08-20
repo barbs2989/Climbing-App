@@ -1,0 +1,98 @@
+579 wa routes read; 17 pass all three gates at 100 m
+
+  refused  365  already complete
+  refused   88  track IS the pins — circular
+  refused   86  a pin is more than 100 m off the track
+  refused    7  track shorter than 200 m
+  refused    6  a pin has no coordinate
+  refused    5  fewer than 2 pins
+  refused    5  track runs summit -> trailhead (reversed)
+
+4 of the 17 would RENDER in a different order afterwards:
+
+  wa_agnes_mountain_west_route — West Route
+    worst pin 14 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_buckhorn_marmot_pass — Southwest Slope via Marmot Pass
+    worst pin 51 m off the track; 2 of 3 distances derived
+    order now:   Trailhead,Junction,Summit
+    order after: Trailhead,Junction,Summit   (unchanged)
+
+  wa_dragontail_peak_r3 — Pandora's Box (W Couloir)
+    worst pin 46 m off the track; 1 of 7 distances derived
+    order now:   Trailhead,Campsite,Junction,Junction,Hazard,Summit,Junction
+    order after: Trailhead,Campsite,Junction,Junction,Junction,Hazard,Summit
+
+  wa_eldorado_peak_west_arete — West Arete
+    worst pin 20 m off the track; 2 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_liberty_bell_serpentine_crack — Serpentine Crack
+    worst pin 5 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_little_tahoma_east_shoulder — East Shoulder
+    worst pin 78 m off the track; 2 of 8 distances derived
+    order now:   Water,Campsite,Junction,Junction,Hazard,Junction,Trailhead,Summit
+    order after: Trailhead,Water,Campsite,Junction,Junction,Hazard,Summit,Junction
+
+  wa_mount_baker_boulder_glacier — Boulder Glacier / Boulder Cleaver
+    worst pin 30 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_mount_berge_southwest_route — Southwest Route
+    worst pin 87 m off the track; 1 of 8 distances derived
+    order now:   Trailhead,Hazard,Water,Junction,Junction,Junction,Hazard,Summit
+    order after: Trailhead,Hazard,Water,Junction,Junction,Junction,Hazard,Summit   (unchanged)
+
+  wa_mount_ellinor_standard — Standard Trail (Upper Trailhead, NFR 24)
+    worst pin 18 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_mount_logan_r1 — Banded Glacier
+    worst pin 23 m off the track; 2 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_mount_olympus_west_ridge — West Ridge
+    worst pin 66 m off the track; 3 of 4 distances derived
+    order now:   Trailhead,Summit,Campsite,Junction
+    order after: Trailhead,Campsite,Junction,Summit
+
+  wa_mount_stuart_girth_pillar — Girth Pillar
+    worst pin 21 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_north_gardner_mountain_southwest — Southwest Slopes / South Ridge
+    worst pin 61 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_north_twin_sister_west_ridge — West Ridge
+    worst pin 8 m off the track; 1 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+  wa_south_twin_sister_scramble — South Twin Sister Olivine Scramble
+    worst pin 65 m off the track; 1 of 2 distances derived
+    order now:   Summit,Trailhead
+    order after: Trailhead,Summit
+
+  wa_the_rake_traverse_route — Ridge Traverse Route
+    worst pin 8 m off the track; 2 of 8 distances derived
+    order now:   Trailhead,Water,Junction,Campsite,Hazard,Campsite,Hazard,Summit
+    order after: Trailhead,Water,Junction,Campsite,Hazard,Campsite,Hazard,Summit   (unchanged)
+
+  wa_whitehorse_mountain_nw_shoulder — Northwest Shoulder
+    worst pin 13 m off the track; 2 of 2 distances derived
+    order now:   Trailhead,Summit
+    order after: Trailhead,Summit   (unchanged)
+
+dry run — re-run with --apply to write.

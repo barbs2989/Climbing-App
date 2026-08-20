@@ -479,9 +479,15 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
 //     the peak above it share a summit pin — and past sweeps established that deduping on
 //     proximity destroys real rows. The >0 route filter is what removes the hollow import
 //     stubs (the two Early Winters Spires sit 8 m apart; only one holds routes).
-//   - It does not claim to work outside Washington. `area_type='peak'` is WA-only today, so
-//     elsewhere this finds nothing and renders NOTHING rather than an empty "no nearby peaks"
-//     panel, which would read as a fact about the mountains rather than about our data.
+//   - It does not gate on state, and it no longer needs to. That claim used to read "WA-only
+//     today" and is now WRONG: measured 2026-08-19, 445 areas are typed `peak` with coordinates
+//     and routes — 402 in Washington, 39 in Colorado, 2 each in California and Oregon — and this
+//     panel is LIVE on 37 of the 39 Colorado peaks, 28 of them showing a full six rows. What
+//     limits it is how many areas are typed `peak`, never the code, which is a plain lat/lng box.
+//     Where a peak genuinely has no neighbour inside the box (both California peaks, both Oregon
+//     ones) it renders NOTHING rather than an empty "no nearby peaks" panel, which would read as
+//     a fact about the mountains rather than about our data. Re-measure before repeating a
+//     coverage claim here; this one rotted within weeks.
 //   - It does not use one bounding box for lat and lng. A degree of longitude shrinks with
 //     latitude — at 48°N it is ~0.67 of a degree of latitude — so a square box searches ~50%
 //     too wide east-west up here and drags in peaks over a range.

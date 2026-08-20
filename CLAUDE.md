@@ -31,6 +31,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
@@ -82,7 +83,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
-npm run audit:synthetic-waypoints # are the pins REAL, or spaced along a trailhead->summit line?
+npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
@@ -1940,6 +1941,27 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested, 3 cases named at the bottom of the script; deleting the caveat, forcing the
     predicate true (which must fail the *genuine*-track assertions — a false warning on good data is
     the direction that teaches people to ignore it), and renaming the heading.
+- **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
+  carries no sources — nothing asks a climber where their information came from, and nothing tells
+  them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
+  which is the entire argument for a script over a note: `verif.source` (rendered as
+  *"Unverified · Mountain Project + AAJ"*, and on 13 DB rows an internal review note that named
+  sources and leaked working language at climbers), the tick lists' own `source`, and
+  `itinerary.sourceNote`. The first sweep searched for the **word** "Source" and for identifiers it
+  had already found, so it walked past a field named `source` doing the same job elsewhere. Static
+  (Babel), so it sits in `npm run build`.
+  - **The rule is structural, and the precision is the point.** It flags a JSX expression that
+    EVALUATES to a property named `source`/`sources`/`sourceNote`. It deliberately does not flag
+    **"Water sources"** — a different meaning of the word, twelve times over in real climbing copy —
+    nor `re.source`, nor the provenance chip's `title="How this section was sourced: …"`, which is a
+    kept feature that names no source. A guard that flags correct work teaches people to ignore it.
+  - **A conditional whose BRANCHES are literals passes**, because the field is only the test:
+    `wp._source==="logged" ? "✓ From a logged climb" : "Submitted"` renders authored strings, not
+    provenance. Internal edit provenance is fine as long as it does not reach the screen verbatim.
+  - Fails **closed**: fewer than 5 files parsed, or fewer than 500 rendered expressions seen, is a
+    broken traversal rather than a clean app (it sees 4,461 today).
+  - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from
+    #1069 and #999, and case 3 must **pass**.
 - **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
   nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
   `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
@@ -2001,6 +2023,36 @@ the correction knows the screen is wrong, and they have no way to report it.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+- **`audit:synthetic-waypoints` found 63 routes and 199 was the truth**, and the reason is a shape
+  worth recognising elsewhere: it asked its question **about the route as a whole**. Every
+  intermediate pin on the first→last line, AND ≥5 pins, AND ≥1,500 ft of relief — three gates
+  ANDed, so a route that is *partly* fabricated satisfies none of them and reads as clean.
+  - **Partial fabrication is the COMMON case, not an edge one.** A real trailhead and a real summit
+    with the middle filled in; or a run of pins interpolated between two *interior* pins.
+    `wa_mount_thomson_west_ridge` holds pins 2-7 on one bearing to six figures while pin 1 is
+    genuine — the whole-route test needs pin 1 on the line too, so it saw nothing. **136 of the 188
+    partial routes were invisible to the original test.**
+  - **One-axis interpolation defeats every geometric test.** The Dorado Needle rows interpolated
+    LONGITUDE alone: latitudes are clean 5-decimal values, longitudes run to 17. Nothing is
+    collinear in the plane. A first draft of the new detector asked whether a pin's latitude- and
+    longitude-fractions agree between the endpoints, reported 87 routes, and called those rows
+    clean while a diagnosis agent had proved them synthetic. **Both were right about different
+    things** — which is the tell that a detector is narrow rather than that a claim is wrong.
+  - So the strongest test needs **no geometry at all**: a surveyed coordinate is written to 4-6
+    decimals, and `-121.16888095238095` is 17 — that tail is 5/21, the floating-point residue of
+    dividing a span into equal parts. It is per-PIN, so it survives partial fabrication, and it is
+    not arguable. **481 pins of 4,195 (11.5%).**
+  - **The run test is only usable because the two agree.** 127 routes carry both tells, measured
+    independently. A run of exactly 3 with no second tell is luck as often as fabrication (19 WA
+    routes sit there), so 3-pin runs need corroboration and 4+ stand alone.
+  - `--selftest` proves both detectors on constructed pin sets and **needs no database**. Its
+    negative cases are the ones that matter — a detector that also fires on a winding approach turns
+    188 findings into 188 arguments. Trap met while writing it: the obvious "real winding approach"
+    fixture is a handful of pins lifted from a live row, and the live rows to hand are ones this
+    audit *flags*, so the case proved the opposite of its own label until it was hand-built.
+  - **Read the jump from 63 to 199 as coverage that was missing, never as data that got worse.**
+    Nothing changed in the catalog. The same lesson as `trackIsJustTheWaypoints` correcting a
+    denominator rather than a finding: *overstated coverage is the false-pass direction.*
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
