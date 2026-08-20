@@ -41,3 +41,6 @@ scripts/oneoff/.inject-glued-name-INPROGRESS
 # Raw DEM readings cached by scripts/oneoff/build-ground-disagreement-index.mjs so a re-run
 # costs no requests. Derived data — lib/ground-checked-pins.js is the committed product.
 .ground-readings-cache.json
+
+# Regenerable run artifact of scripts/oneoff/solve-camp-elevations.mjs (~10 min to rebuild).
+camp-elevation-proposals.json
