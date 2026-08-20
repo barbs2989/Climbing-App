@@ -245,6 +245,34 @@ for (const d of CRAG) {
   else ok("nearby fire: first section on Safety, above the float plan and the forecasts");
 }
 
+/* ── a SPORT route must be able to say it needs natural gear ─────────────────────────────────
+   RouteGearCheck takes an early branch for `sport` and renders a computed quickdraw note
+   instead of the RACK box. That is right for a pure sport line — the rack IS draws — and it
+   meant a sport route with one unbolted pitch had nowhere to say so.
+   `wa_technicians_of_the_sacred` is a 6-pitch 5.12c whose own pitch 6 reads "Hand crack,
+   natural gear; only unbolted pitch"; a party racking off that page brings draws and arrives
+   with nothing to place. Measured: 3 of 2,714 WA sport routes are in that position.
+   This belongs in check:bare because bare-vs-enriched is exactly the axis it fails on — the
+   quickdraw note renders identically either way, so nothing else here would notice.
+   Both directions are asserted: a stock rack must NOT be printed under the note, or it
+   restates the note above it and re-creates the duplication mergeGearList exists to remove. */
+{
+  const sportBase = { ...bare("sport", "5.12c"), pitches: 6 };
+  const OWN = "Natural gear for the pitch 6 hand crack — the only unbolted pitch on the route";
+  const withRack = text(render({ ...sportBase, rack: [OWN] }, "overview"));
+  if (!withRack.includes("What to bring")) fail("ANCHOR LOST: a sport route no longer renders the 'What to bring' box — this guard checked nothing");
+  else if (!withRack.includes("Natural gear for the pitch 6 hand crack"))
+    fail("sport gear: a sport route carrying its OWN rack does not show it — a route needing natural gear cannot say so");
+  else ok("sport gear: a sport route's own rack reaches the screen");
+
+  /* rackGeneric is decided by RouteDetail from routeRackFor(); with no rack of its own the
+     stock sport list is quickdraws, and printing it here would duplicate the note. */
+  const noRack = text(render(sportBase, "overview"));
+  if (/ON THIS ROUTE/.test(noRack))
+    fail("sport gear: a route with no rack of its own still prints an 'ON THIS ROUTE' list — that can only be the stock kit restated");
+  else ok("sport gear: a route with no rack of its own adds no list under the note");
+}
+
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(failures
   ? `\ncheck:bare — ${failures} problem(s).`
