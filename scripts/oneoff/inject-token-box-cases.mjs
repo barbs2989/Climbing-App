@@ -12,18 +12,20 @@ import { execSync } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
 
-const FILE = "RouteDetail.jsx";
-const original = fs.readFileSync(FILE, "utf8");
+const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx"];
+const ORIGINAL = Object.fromEntries(FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
 const CASES = [
   {
+    file: "RouteDetail.jsx",
     // The REAL defect, reproduced: put the raw season back in the pill.
     name: "1. approach variant season goes back into the nowrap pill (the real #4)",
     edit: (s) => s.replace(">{seasonPill}</span>:null}", ">{seasonFull}</span>:null}"),
     want: /box\(es\) hold text too long for their shape/,
   },
   {
+    file: "RouteDetail.jsx",
     // The camping defect's shape, reproduced on a live panel: render prose in a chip.
     name: "2. a camping site's water prose rendered as a chip again",
     edit: (s) => s.replace(
@@ -32,6 +34,7 @@ const CASES = [
     want: /box\(es\) hold text too long for their shape/,
   },
   {
+    file: "RouteDetail.jsx",
     // THE HISTORICAL DEFECT, verbatim. Not a synthetic edit: RouteDetail.jsx exactly as it stood
     // at 6f82fc0, the commit before the camping collapse, when capacity/water/permit rendered as
     // chips holding up to 1,386 characters. This is the case both earlier designs of this guard
@@ -42,6 +45,7 @@ const CASES = [
     want: /box\(es\) hold text too long for their shape/,
   },
   {
+    file: "RouteDetail.jsx",
     // MUST PASS. A box that explicitly accommodates long text has been thought about. The STAGES
     // table is the measured case — a stage's `grade` really is terrain prose, and its JSX already
     // carries word-break plus a wrapping parent, put there by someone who found this exact
@@ -53,6 +57,7 @@ const CASES = [
     want: null,
   },
   {
+    file: "RouteDetail.jsx",
     // MUST PASS. A long line in a box that clips with an ellipsis is correct handling, not a
     // defect — excluding these is what took an earlier scan from 104 candidates to 54.
     name: "3. long text in an ellipsis-clipping nowrap box (must PASS)",
@@ -61,10 +66,23 @@ const CASES = [
       '{seasonFull?<span style={{flexShrink:0,fontSize:11,color:C.blue,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",maxWidth:120}}>{seasonFull}</span>:null}'),
     want: null, // expect a clean run
   },
+  {
+    file: "ClimbMatchCore.jsx",
+    // Proves the SEVENTH screen is really inspected. ListsManager renders route columns into
+    // pills and lives in core, so mounting RouteDetail cannot reach it — which is how the last
+    // raw `r.grade` in the app survived every other guard. Grades run to 77 characters in the
+    // live catalog ("Grade III, 5.10a (5 pitches, 900 ft: P1 5.9+, ...)"). Without this case the
+    // extra screen could render nothing and the guard would still print ok.
+    name: "5. tick-list row goes back to raw r.grade (the seventh screen)",
+    edit: (s) => s.replace('borderRadius:20,padding:"2px 9px"}}>{gradeLabel(r)}</span>', 'borderRadius:20,padding:"2px 9px"}}>{r.grade}</span>'),
+    want: /box\(es\) hold text too long for their shape/,
+  },
 ];
 
 let pass = 0;
 for (const c of CASES) {
+  const FILE = c.file;
+  const original = ORIGINAL[FILE];
   const edited = c.edit(original);
   if (sum(edited) === sum(original)) {
     console.log(`MISS  ${c.name}\n      edit never landed (file unchanged) — fix the CASE, not the guard`);
@@ -84,7 +102,9 @@ for (const c of CASES) {
   else { console.log(`MISS   ${c.name}`); console.log("      guard said: " + out.trim().split("\n").slice(-1)[0]); }
 }
 
-fs.writeFileSync(FILE, original);
-if (sum(fs.readFileSync(FILE, "utf8")) !== sum(original)) { console.log("\nFAIL: RouteDetail.jsx was NOT restored"); process.exit(1); }
-console.log(`\n${pass}/${CASES.length} behaved correctly; RouteDetail.jsx restored (${sum(original)})`);
+for (const f of FILES) fs.writeFileSync(f, ORIGINAL[f]);
+for (const f of FILES) {
+  if (sum(fs.readFileSync(f, "utf8")) !== sum(ORIGINAL[f])) { console.log(`\nFAIL: ${f} was NOT restored`); process.exit(1); }
+}
+console.log(`\n${pass}/${CASES.length} behaved correctly; ${FILES.join(" + ")} restored`);
 process.exit(pass === CASES.length ? 0 : 1);

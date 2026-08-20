@@ -760,10 +760,40 @@ a build error, but a screen that renders wrong or not at all.
   - Fails **closed** three ways: a failed catalog read is reported as a failed read and never as
     "no prose in a chip", zero renders is a broken probe, and zero token-shaped boxes means the
     shape test matches nothing.
-  - Injection-tested **5/5** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
+  - **It walks a SEVENTH screen, and the route page is not the only place route columns land.**
+    `ListsManager` — the tick-list rows on the Logbook tab — renders route columns into pills and
+    lives in core, so mounting `RouteDetail` cannot reach it. That is how the **last raw
+    `r.grade`** in the app survived every guard: every sibling row goes through `shortGrade()`,
+    that one read the column directly, and grades run to **77 characters** in the live catalog
+    (`"Grade III, 5.10a (5 pitches, 900 ft: P1 5.9+, P2 5.9, P3 5.6, P4 5.7, P5 5.7)"`).
+    - **Adding the screen was measured first, not assumed.** Of **90** distinct token-shaped
+      expressions outside `RouteDetail`, exactly **one** was a route column; everything else is a
+      name or a count, which cannot be long. So this is the only screen worth the mount.
+    - **The fixture's list id MUST be `ul_obj`.** `ListsManager` splits `userLists` into the
+      objectives list (that exact id, rendered expanded) and custom lists, which stay collapsed
+      behind a `useState` SSR cannot click. With any other id the fixture rendered the panel
+      chrome and **no route row at all** — the seventh screen was coverage in name only, and the
+      guard reported a screen it had never inspected. Caught only because injection case 5
+      **missed**; the box count had gone up, which looked like coverage.
+  - **A SENTINEL route is rendered alongside the real ones**, because a sample can only find a box
+    holding a paragraph *today*. Long grades exist on ~36 rows catalog-wide, so a 40-row sample
+    never meets one and the tick-list pill was invisible to the sampled pass. The sentinel asks
+    the stronger question — *can this box receive one?* Same reasoning as `check:field-renders`'
+    `SENTINELS`: a column nothing has written yet is unguarded by construction.
+  - **`shortGrade()` had NO length bound, and the sentinel is what exposed it.** It cuts at the
+    qualifier delimiters in `CUTS` and then stops, so a grade containing none of them rendered in
+    full inside a nowrap pill — while its sibling `seasonShort()` has always capped. Now capped at
+    **48**, a number chosen to clear both bounds: the longest real `shortGrade` output is **34**
+    (`"Class 2 snow climb / non-technical"` — a real compound grade that must NOT be truncated),
+    and a cap at 60 would emit 60 + an ellipsis = **61** and trip the very guard it exists to
+    satisfy. Proven behaviour-neutral before shipping across **236** distinct grades with the long
+    shapes over-sampled (`verify-grade-cap-equivalence.mjs`): **2 differ, both synthetic**, and in
+    both the remainder moves into `gradeDetail` rather than being lost.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
     that matters**: it runs the guard against `RouteDetail.jsx` exactly as it stood at `6f82fc0`,
-    the commit before the camping collapse. Both earlier designs passed that tree. Two cases must
-    stay **quiet**, pinning the exclusions above.
+    the commit before the camping collapse. Both earlier designs passed that tree. **Case 5 pins
+    the seventh screen** — it reverts the tick-list row to raw `r.grade`, and it MISSED twice
+    before the fixture was right. Two cases must stay **quiet**, pinning the exclusions above.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
