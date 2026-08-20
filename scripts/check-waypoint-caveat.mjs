@@ -21,6 +21,19 @@
 // 18 satisfy `trackIsJustTheWaypoints` as well, so on those neither the line nor the pins record
 // anywhere. The two predicates are independent and both are asserted here.
 //
+// WHAT THIS CANNOT SEE, measured rather than guessed. All three tests read only the COORDINATES,
+// so they catch fabrication that left a structural fingerprint and nothing else. Pins that were
+// manufactured and then ROUNDED to surveyed precision are invisible:
+// `wa_himmelhorn_southeast_route` claims 5,100-7,400 ft across five pins whose ground reads
+// 1,191-1,612, and its coordinates sit at 6 decimals and are not collinear — so no caveat renders,
+// correctly, by every test here. Measured 2026-08-20: 180 of the 1,016 routes with pins would
+// caption (18%), while 371 pins of 4,195 carry more than 8 decimals and 3,353 sit at 4-6.
+//
+// Only the GROUND catches the rounded ones (`audit:waypoint-elevations`, 3,506 USGS requests),
+// which cannot run at render time. Closing that in the app needs the verdict PRECOMPUTED and
+// stored — a schema decision, not another predicate. `oneoff/probe-caveat-on-real-rows.mjs`
+// renders real rows and pins this limit so it stays visible.
+//
 // Static SSR (no browser, no DB), so it sits in `npm run build`.
 import { build } from "esbuild";
 import { createRequire } from "module";
@@ -28,7 +41,8 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { waypointsAreOnOneLine, SYNTHETIC_WAYPOINT_CAVEAT } from "../lib/track.js";
+import { waypointsAreOnOneLine, someWaypointsAreComputed, longestArithmeticRun, manufacturedWaypointCaveat,
+         SYNTHETIC_WAYPOINT_CAVEAT, COMPUTED_WAYPOINT_CAVEAT } from "../lib/track.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -76,8 +90,15 @@ const SYNTH_WPS = Array.from({ length: 8 }, (_, i) => {
     elev: Math.round(1000 + 6900 * t) };
 });
 // The same walk as it really is: a path that wanders off the direct line, as terrain forces.
+//
+// ROUNDED TO 5 DECIMALS, WHICH IS NOT COSMETIC. Built with raw float arithmetic these came out at
+// 14 decimals — `-121.10614285714287` — so the "real" fixture itself tripped the computed-coordinate
+// test and the COMPUTED caveat rendered on it. The assertion below missed that because it only
+// looked for the SYNTHETIC wording, i.e. it passed vacuously while the guard was captioning correct
+// data. A surveyed coordinate has 4-6 decimals; the fixture has to look like one.
 const REAL_WPS = SYNTH_WPS.map((w, i) => ({ ...w,
-  lng: w.lng + (i === 0 || i === 7 ? 0 : (i % 2 ? 0.011 : -0.009)) }));
+  lat: Number(w.lat.toFixed(5)),
+  lng: Number((w.lng + (i === 0 || i === 7 ? 0 : (i % 2 ? 0.011 : -0.009))).toFixed(5)) }));
 
 const route = extra => Object.assign({
   id: "probe_wp", name: "Probe", grade: "5.6", gradeSystem: "yds",
@@ -88,7 +109,7 @@ const route = extra => Object.assign({
 let failures = 0;
 const fail = m => { console.log("  FAIL  " + m); failures++; };
 const ok = m => console.log("  ok    " + m);
-const shows = r => text(render(r, "planner")).includes(SYNTHETIC_WAYPOINT_CAVEAT);
+const shows = (r, caveat = SYNTHETIC_WAYPOINT_CAVEAT) => text(render(r, "planner")).includes(caveat);
 
 console.log("check:waypoint-caveat\n");
 
@@ -125,8 +146,14 @@ else ok("predicate: a straight line with no relief across it is not a finding");
 if (!shows(route({ waypoints: SYNTH_WPS }))) fail("the caveat does not render on a route whose pins are on one line");
 else ok("the caveat renders on a synthetic-waypoint route");
 
-if (shows(route({ waypoints: REAL_WPS }))) fail("the caveat renders on a route whose waypoints are REAL — worse than not having it");
-else ok("the caveat stays off a route with real waypoints");
+// Assert NO caveat of EITHER wording. Checking only the synthetic one let the computed one render
+// on correct data unnoticed — an absent-wording test is not an absent-caption test.
+if (manufacturedWaypointCaveat(REAL_WPS))
+  fail(`a real-waypoint route would be captioned: "${String(manufacturedWaypointCaveat(REAL_WPS)).slice(0, 60)}..."`);
+else ok("predicate: a real route earns no caveat of either kind");
+if (shows(route({ waypoints: REAL_WPS })) || shows(route({ waypoints: REAL_WPS }), COMPUTED_WAYPOINT_CAVEAT))
+  fail("a caveat renders on a route whose waypoints are REAL — worse than not having one at all");
+else ok("neither caveat renders on a route with real waypoints");
 
 // ── 3. It is independent of the track caveat. A route can have real pins and a synthetic line, or
 //    manufactured pins beside a genuine 100+ point track; neither caption may stand in for the
@@ -141,13 +168,106 @@ if (!shows(route({ waypoints: SYNTH_WPS, gpxPts: longTrack })))
   fail("a genuine 200-point track suppressed the waypoint caveat — a real track is not evidence the pins are real");
 else ok("the caveat still renders when a genuine long track sits beside manufactured pins");
 
+// ── 4. PARTIAL FABRICATION — the case that matters most, and the one that gets WORSE as the data
+//    is repaired. A parallel session is replacing fabricated coordinates with real ones from GNIS
+//    and OSM. Replacing SOME of a route's pins breaks the collinearity the whole-route test
+//    depends on, so a half-repaired route would silently lose its caption while still carrying
+//    manufactured pins. Measured 2026-08-20: 187 routes carry fabricated pins by at least one
+//    test, against 52 that the whole-route test finds alone.
+//
+//    The per-pin tell is precision — a surveyed coordinate has 4-6 decimals, a computed one has 17.
+const HALF_REPAIRED = SYNTH_WPS.map((w, i) =>
+  i === 2 || i === 5 ? { ...w, lat: Number((w.lat + 0.02).toFixed(5)), lng: Number((w.lng - 0.017).toFixed(5)) }
+                     : { ...w, lat: w.lat, lng: w.lng });
+if (waypointsAreOnOneLine(HALF_REPAIRED))
+  fail("fixture: the half-repaired route is still collinear, so this case proves nothing — fix the fixture");
+else ok("fixture: repairing 2 of 8 pins does break the whole-route collinearity test, as expected");
+
+if (!someWaypointsAreComputed(HALF_REPAIRED))
+  fail("predicate: a route still holding computed 17-decimal coordinates is not recognised");
+else ok("predicate: a computed coordinate is recognised per-pin, so partial repair cannot hide it");
+
+if (!shows(route({ waypoints: HALF_REPAIRED }), COMPUTED_WAYPOINT_CAVEAT))
+  fail("A HALF-REPAIRED ROUTE LOST ITS CAPTION while still carrying manufactured pins");
+else ok("a half-repaired route still says its remaining coordinates were calculated");
+
+// Fully repaired: every coordinate surveyed-precision. Nothing to disclaim, and claiming
+// otherwise would caption correct data — the failure that teaches people to ignore a guard.
+const REPAIRED = REAL_WPS.map(w => ({ ...w, lat: Number(w.lat.toFixed(5)), lng: Number(w.lng.toFixed(5)) }));
+if (someWaypointsAreComputed(REPAIRED)) fail("predicate: surveyed-precision coordinates were called computed");
+else ok("predicate: 5-decimal coordinates are not called computed");
+if (manufacturedWaypointCaveat(REPAIRED)) fail("a fully repaired route still shows a caveat — captioning correct data");
+else ok("a fully repaired route shows no caveat at all");
+
+// The two wordings are mutually exclusive: the stronger whole-route claim wins where it applies,
+// and a route must never carry both.
+const both = text(render(route({ waypoints: SYNTH_WPS }), "planner"));
+if (both.includes(SYNTHETIC_WAYPOINT_CAVEAT) && both.includes(COMPUTED_WAYPOINT_CAVEAT))
+  fail("both caveats rendered on one route — they must be mutually exclusive");
+else ok("a whole-line route shows the stronger wording only");
+
+// ── 5. AN INTERPOLATED RUN between two genuine pins. The third shape, and the one both tests above
+//    miss: the route as a whole is not a line, and the pins may carry ordinary precision. It also
+//    covers one-axis interpolation, where only the longitude was divided up — those pins are not
+//    collinear in the plane at all, so no distance-to-a-line test can reach them.
+//
+//    NOTE THE FIXTURE IS NOT ROUNDED, and that is the point rather than laziness: interpolation
+//    leaves full float precision, which is exactly why the real rows show 17 decimals. Rounding a
+//    fabricated pin to 5 decimals destroys the slope agreement AND the precision tell, so a
+//    hand-rounded fixture proves nothing and quietly tests the opposite of what it claims.
+const GENUINE_ENDS = [
+  { name: "Trailhead", type: "Trailhead", lat: 48.49, lng: -121.12, elev: 1000 },
+  { name: "Summit", type: "Summit", lat: 48.556, lng: -121.10, elev: 7900 },
+];
+const INTERPOLATED = Array.from({ length: 4 }, (_, i) => {
+  const t = i / 3;
+  return { name: `Mid ${i}`, type: "Junction",
+    lat: 48.505 + (48.545 - 48.505) * t, lng: -121.118 + 0.014 * t, elev: 2000 + i * 800 };
+});
+const RUN_ROUTE = [GENUINE_ENDS[0], ...INTERPOLATED, GENUINE_ENDS[1]];
+
+if (longestArithmeticRun(RUN_ROUTE) < 4)
+  fail(`predicate: a 4-pin interpolated run is not recognised (got ${longestArithmeticRun(RUN_ROUTE)})`);
+else ok("predicate: a run of pins laid along one bearing is recognised");
+
+if (waypointsAreOnOneLine(RUN_ROUTE))
+  fail("fixture: the run route is collinear end to end, so it proves nothing about PARTIAL fabrication");
+else ok("fixture: the run route is not a whole-route line, so it needs the run test");
+
+if (longestArithmeticRun(REAL_WPS) >= 3)
+  fail(`predicate: a real wandering approach shows a ${longestArithmeticRun(REAL_WPS)}-pin run — this would caption correct data`);
+else ok("predicate: a real approach has no arithmetic run");
+
+if (!shows(route({ waypoints: RUN_ROUTE }), COMPUTED_WAYPOINT_CAVEAT))
+  fail("a route with an interpolated run between genuine pins shows NO caveat");
+else ok("a route with an interpolated run says its coordinates were calculated");
+
+// A bare 3-run with no corroboration must NOT caption — measured, 19 WA routes sit there and
+// captioning them would be captioning correct data.
+const THREE_RUN = [GENUINE_ENDS[0],
+  ...Array.from({ length: 3 }, (_, i) => {
+    const t = i / 2;
+    return { name: `M${i}`, type: "Junction",
+      lat: Number((48.505 + 0.03 * t).toFixed(5)), lng: Number((-121.118 + 0.01 * t).toFixed(5)), elev: 2000 + i * 900 };
+  }), GENUINE_ENDS[1]];
+if (longestArithmeticRun(THREE_RUN) >= 4)
+  fail("fixture: the 3-run fixture produced a longer run, so it cannot test the floor");
+else if (someWaypointsAreComputed(THREE_RUN))
+  fail("fixture: the 3-run fixture carries computed precision, so the floor is not what is being tested");
+else if (manufacturedWaypointCaveat(THREE_RUN))
+  fail("a bare 3-pin run was captioned — measured, that is luck as often as fabrication");
+else ok("a bare 3-pin run with no second tell is NOT captioned");
+
 console.log("");
 if (failures) { console.log(`${failures} failure(s).`); process.exit(1); }
 console.log("ok — manufactured waypoint coordinates say so on the screen that shows them.");
 
 // Injection-tested. Each case must fail this check, and re-run them after any change to the
 // predicate or the render site:
-//   1. delete the `{waypointsAreOnOneLine(...)?...}` block from RouteDetail  -> the render assertions fail
-//   2. make waypointsAreOnOneLine always return true                        -> the REAL_WPS assertions fail
-//   3. drop the relief test from the predicate                              -> the flat-traverse assertion fails
-//   4. rename the WAYPOINTS heading                                         -> ANCHOR LOST, exit 1, nothing claimed
+//   1. delete the caveat block from RouteDetail            -> the render assertions fail
+//   2. make waypointsAreOnOneLine always true              -> the real-waypoint assertions fail
+//   3. make someWaypointsAreComputed always FALSE          -> the half-repaired route loses its caption
+//   4. make someWaypointsAreComputed always TRUE           -> a real route gets captioned
+//   5. drop the relief test from the predicate             -> the flat-traverse assertion fails
+//   6. rename the WAYPOINTS heading                        -> ANCHOR LOST, exit 1, nothing claimed
+// All 6 caught 2026-08-20, each proving its edit landed by checksum first.

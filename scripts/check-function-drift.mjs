@@ -51,13 +51,11 @@ const fail = [];
 // migration — or stops existing — the claim is stale and this run fails, so the list cannot rot
 // into a description of a database that has moved on.
 const KNOWN = {
-  merge_accounts:
-    "DRIFT, and it MUST NOT be repaired on its own. The live body is older than 0035: it writes " +
-    "crews.user_id (which does not exist) where 0035 writes created_by, and lacks 0035's " +
-    "crew_members merge. 0136 records why the throw is load-bearing — the function reassigns " +
-    "climb_logs.user_id, vouches.from_id and profiles.account_type for two arbitrary uuids with " +
-    "NO auth.uid() check, so re-applying 0035 arms an account-takeover primitive. Needs an " +
-    "ownership gate written in the same change. Exposure is closed: 0136 revoked it to service_role.",
+  // merge_accounts was declared here until 0170 REMOVED the account-linking feature
+  // outright. The entry said the RPC must not be repaired without an ownership gate, and
+  // that gate was only worth writing if the feature was wanted — it was not: no UI, no
+  // caller, 0 rows in account_links, 0 linked profiles. So the liability went instead of
+  // being made safe. Same call 0167 made for the two dead crew functions.
 
   handle_new_user:
     "BENIGN. Differs from 0009 only in writing `public.profiles` where the migration writes " +
@@ -65,20 +63,11 @@ const KNOWN = {
     "repaired by editing 0009: an applied migration is history and must not be rewritten. If it " +
     "is ever worth aligning, a new migration re-creates the function with the qualified name.",
 
-  auto_archive_crews:
-    "UNTRACKED and broken. Writes crews.archived_at and crews.status, neither of which exists. " +
-    "No migration creates it, so it was made by hand in the SQL editor. Nothing calls it. " +
-    "Implementing it means two columns and a crew-archiving feature — a product decision, not a " +
-    "repair. See check:function-columns, which reports the column half.",
-
-  is_crew_ready:
-    "UNTRACKED and broken. Reads crew.members, and `crews` has no members column (it has " +
-    "created_by, dates, agreed_date, meet_place, meet_time, float_plan, cap, dismissed, " +
-    "date_forced, route_id, id, created_at). No migration creates it and nothing calls it — crew " +
-    "readiness is computed client-side by datesAgreed/agreedDate, which check:crew guards. " +
-    "check:function-columns cannot see this one: it only READS, and that guard's stated scope is " +
-    "write targets. Left rather than dropped, because a hand-made function is not in git and " +
-    "dropping it destroys the only record of the intent.",
+  // auto_archive_crews and is_crew_ready were declared here until 0167 dropped them. Both were
+  // hand-made, broken on columns that do not exist, referenced by nothing, and duplicated by
+  // working client-side code (isArchivedCrew/CREW_ARCHIVE_GRACE_DAYS, and isReady). Their bodies
+  // are recorded verbatim in that migration, so the intent is in git for the first time — which
+  // was the stated reason for keeping them.
 };
 
 // ── live catalog ─────────────────────────────────────────────────────────────

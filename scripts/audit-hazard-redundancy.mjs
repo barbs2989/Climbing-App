@@ -55,11 +55,25 @@ for (;;) {
 }
 
 console.log("\n=== hazard redundancy audit ===");
+// THESE NUMBERS MEASURE A WORKING FEATURE, NOT A BACKLOG, and the wording has to say so.
+// `mergeHazards` runs at render time — RouteDetail calls it as
+// mergeHazards(route.hazards, _objHaz, route.watchOut) — and drops any line whose token set is
+// a subset of one already kept. So every line counted here is one the merge ALREADY removes;
+// none of it reaches a climber twice. Read this as how much work the dedupe does.
+//
+// Verified 2026-08-20 rather than assumed: the three columns really are all passed, and the
+// KNOWN HAZARDS box really is the caller. Nothing here is actionable.
+//
+// It is the third audit in this repo whose count reads like a defect list and is not —
+// audit:terrain measures suppression the app performs, and audit:waypoint-order's "0" was true
+// only of the routes it could order. When an audit reports a number, ask what it is the number
+// OF before treating it as work.
 console.log("routes with a hazards list:", t.rows);
-console.log("routes repeating at least one hazard:", t.withDup);
-console.log("repeated lines removed:", t.lines, " of which character-for-character duplicates:", t.exact);
+console.log("routes where the merge has something to remove:", t.withDup,
+  "— these are DEDUPED at render, not defects");
+console.log("lines the merge removes:", t.lines, " of which character-for-character duplicates:", t.exact);
 if (out.length) {
-  console.log("\nexamples (lines no longer shown twice):");
+  console.log("\nexamples of what the merge removes (a climber never sees these twice):");
   for (const o of out) console.log(` ${o.id} — ${o.name}\n     ${o.dropped.map(d => JSON.stringify(d)).join("\n     ")}`);
 }
 process.exit(0);

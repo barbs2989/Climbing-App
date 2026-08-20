@@ -42,6 +42,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
@@ -97,7 +98,7 @@ npm run enrich:next-batch  # next unpitched routes still needing a climbing_rout
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:rappels      # do a route's rappel fields agree with each other?
-npm run audit:hazard-redundancy # how often does KNOWN HAZARDS say the same thing twice?
+npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
@@ -719,6 +720,51 @@ a build error, but a screen that renders wrong or not at all.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
+- **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
+  the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
+  researched string into an existing column, look at where that column renders* — which had been
+  broken **three** times by the time it was written, the third by a pass that had **read the rule**.
+  `season` took 232-char explanations into the header strap; `grade` took qualifiers into the pill;
+  `bivy[].capacity/.water/.permit` took up to **1,386 characters** into chips. Renders the real
+  `RouteDetail` over real rows and reads the markup, so it needs the DB — **not** a build gate; it
+  runs on every PR via `render-guards.yml`.
+  - **`check:field-renders` is the near miss, and the distinction is the whole point.** That guard
+    asks whether a column reaches a screen. All three of these did — correctly, in full, in the
+    wrong shape. **Reaching a screen and fitting the element it reaches are different questions.**
+  - **It found a FOURTH on its first real run**: `approach_variants[].season` in the APPROACHES
+    panel, a pill carrying **both** `white-space:nowrap` **and** `flex-shrink:0`, so the text could
+    neither wrap nor shrink. **534 of 801 variants (67%), across 470 routes**, up to 392 characters
+    — worse than the camping chips, which at least wrapped into a blob. Fixed with the app's own
+    `seasonShort()`, the same defence the header strap already uses, with the full sentence rendered
+    as prose in the card so nothing is lost (`probe-approach-season-onscreen.mjs` proves that half —
+    shortening a display field is a LOSS unless the text still lands somewhere).
+  - **TWO EARLIER DESIGNS WERE VACUOUS, and that is the most useful thing here.** Matching a
+    rendered `x.prop` to a column **by name** scored **0 of 7** on a real run: `q.status` is a guide
+    inquiry's, `v.season` a trip report's, `t.label` a route-tag chip's. Restricting to expressions
+    **rooted at `route.<col>`** then reported **ok against the very commit containing the camping
+    defect**, because the panel maps over `campSites(route)` — a helper's return value. Resolving
+    that needs interprocedural analysis. So it resolves **nothing**: it renders, and asks the markup
+    a question that needs no name and no scope.
+  - **A regex cannot read nested HTML, and it passed one injection anyway.** The first scanner was
+    `/<(\w+)[^>]*style="([^"]*)"[^>]*>([\s\S]*?)<\/\1>/g`, which consumes an element's children
+    when it matches the parent — it inspected **1,019** boxes where a real tag stack inspects
+    **4,491**, and it found the approach-season pill only by ACCIDENT (the outer flex div's match
+    terminated on its first child's `</div>`, leaving the pill exposed as the next match).
+    **Injection case 2 came back MISS and that is what exposed it.** A guard that catches one real
+    defect can still be blind to the next, and only an injection it FAILS will tell you.
+  - **Two exclusions, both measured, both about not reporting correct work.** A box that clips with
+    `overflow:hidden` + `text-overflow:ellipsis` degrades correctly (that alone took an early scan
+    from 104 candidates to 54, nearly all deliberately-ellipsised route names). And a box carrying
+    `word-break`/`overflow-wrap` has been **thought about** — the STAGES table is the measured case,
+    where a stage's `grade` really is terrain prose and the JSX already carries wrapping put there
+    by someone who found this exact problem. Reporting it would tell an author to undo a correct fix.
+  - Fails **closed** three ways: a failed catalog read is reported as a failed read and never as
+    "no prose in a chip", zero renders is a broken probe, and zero token-shaped boxes means the
+    shape test matches nothing.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
+    that matters**: it runs the guard against `RouteDetail.jsx` exactly as it stood at `6f82fc0`,
+    the commit before the camping collapse. Both earlier designs passed that tree. Two cases must
+    stay **quiet**, pinning the exclusions above.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
@@ -1384,7 +1430,17 @@ a build error, but a screen that renders wrong or not at all.
     the sibling guard's stated scope is write targets. Untracked, uncalled, hand-made; crew
     readiness is computed client-side by `datesAgreed`/`agreedDate`. The two guards' scopes are
     complementary rather than overlapping, and this is the case that shows it.
-  - Four `KNOWN` entries, each a claim about the live database, each failing when **stale**:
+  - **`auto_archive_crews` and `is_crew_ready` are GONE — dropped by `0167`, and the two bullets
+    above are history rather than current state.** Both were hand-made, broken on columns that
+    do not exist, referenced by nothing (checked against `pg_trigger`, `pg_proc.prosrc`,
+    `pg_policy` and the whole repo), and duplicated by working client-side code — the app
+    archives crews with `CREW_ARCHIVE_GRACE_DAYS = 3` and `isArchivedCrew()`, and computes
+    readiness with `isReady()`. The recorded reason for keeping them was that dropping a
+    function git has never seen destroys the only record of the intent; `0167` answers that by
+    reproducing **both bodies verbatim in the migration**, which puts them in version control
+    for the first time. `KNOWN` is down to `merge_accounts` here and `handle_new_user` in the
+    drift guard.
+  - Two `KNOWN` entries, each a claim about the live database, each failing when **stale**:
     `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
     account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
     0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
@@ -2485,6 +2541,21 @@ the correction knows the screen is wrong, and they have no way to report it.
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
     it must fall to zero — `dup` alone would be passed by a detector that called everything a
     duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **`audit:hazard-redundancy` reports a WORKING FEATURE, and its old wording read as a defect
+  list.** It printed *"routes repeating at least one hazard: 661"* and *"repeated lines removed:
+  1,281"*, which invites a sweep. There is nothing to sweep: `mergeHazards` runs at **render**
+  time — `RouteDetail` calls `mergeHazards(route.hazards, _objHaz, route.watchOut)` — and drops
+  any line whose token set is a subset of one already kept. **Every line it counts is one the
+  merge already removes, and none of it reaches a climber twice.** Verified end to end
+  2026-08-20 rather than assumed: all three columns really are passed, and the KNOWN HAZARDS box
+  really is the caller. The summary now says the numbers are deduped at render, not defects.
+  - Only **101 of the 1,281** are character-for-character; the rest are token-subset near
+    duplicates, which is what makes the merge worth having rather than a plain `Set`.
+  - **This is the THIRD audit here whose number reads like a backlog and is not**, after
+    `audit:terrain` (which measures suppression the app performs) and `audit:waypoint-order`
+    (whose "0" was true only of the routes it could order). *When an audit reports a number, ask
+    what it is the number OF before treating it as work.*
+
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
@@ -2551,9 +2622,29 @@ the correction knows the screen is wrong, and they have no way to report it.
     Trailhead on SR-20" really is the access for **ten** routes across the Pickets and Ross Lake,
     the Stehekin ferry really does serve Flora/Trapper/Tupshin. **Remote peaks share one distant
     trailhead; that is what remote means.** Printed as context, never counted.
-  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m. What
-    remains is sub-kilometre slop plus peaks with two genuine approaches where **both records are
-    correct** — `wa_lundin_peak_west_ridge` is the clean example. Do not sweep those to zero.
+  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m, and later work
+    to **5** — 620 of 625 comparable routes agreeing, **99.2%**, p50 0 m, p90 123 m, p95 258 m.
+  - **"What remains is sub-kilometre slop" was half wrong, and re-measuring 2026-08-20 settled it:
+    THERE IS NO SLOP LEFT. All five survivors are peaks with two genuine approaches, and the
+    disagreements are LARGE precisely because of it** — 15,180 m, 13,383 m, 7,829 m, 5,733 m. A
+    disagreement of that size is the signature of two real trailheads, not of a rounding error, so
+    reading the tail as slop points you at the wrong repair entirely. Each was read individually:
+    - `wa_mount_howard_south_slope` settles itself — its own `trailheadDirection` says *"**Two
+      common trailheads** on US-2 in Chelan County give access."*
+    - `wa_remmel_mountain_nw_ridge` (Thirtymile vs Andrews Creek) and `wa_mount_carru_scramble`
+      (Slate Peak vs Monument Creek) are the two this file already documents under
+      `audit:map-pins` as legitimately two-trailhead peaks.
+    - `wa_the_direct_north_ridge_w_gendarme` is Stuart's North Ridge, approached either over Longs
+      Pass from Esmeralda Basin or from the Stuart Lake trailhead. Both are standard.
+    - In every one, the row's own `trailheadDirection` agrees with the `approach_logistics` record,
+      so the *pin* is the second approach rather than an error.
+    **Do not sweep these.** `wa_lundin_peak_west_ridge` remains the clean example of the class.
+  - **A SHADOWED row is not a defect and the count moves when coordinates are filled.** The audit
+    also reports routes carrying a Trailhead pin with no coordinate while `approach_logistics` has
+    one. `wa_spire_mountain_scramble` became one in #1128: its pin names a point *"~Mile 10"* on
+    FR-63 that no source publishes, while the logistics record now holds the researched trailhead at
+    the end of that road. Same road system, different points, and the row went from **zero**
+    coordinates to one. Filling the pin would mean inventing the mile-10 coordinate.
   - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
     declare a **winner, never a coordinate**: the script reads both records off the row and copies
     the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
@@ -3404,6 +3495,21 @@ one file gets `undefined` for the other half. That fails silently in the worst
 way: PostgREST accepts a PATCH sent with the anon key and returns **200 with an
 empty array**, because RLS rejected every row. The write reports success and
 changes nothing.
+
+**The same trap runs on the READ side, and there it corrupts DECISIONS rather than writes.**
+An anon `count=exact` on an RLS-protected table returns **0 with a 200** whatever the table
+holds, indistinguishable from a genuinely empty table. Measured 2026-08-20: `climb_logs` reads
+**0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles`,
+`user_reports`, `contributions`, `vouches` and `belay_catches` are genuinely empty on both.
+
+That distinction is load-bearing here, because several decisions rest on a table being empty —
+the guide application review queue was deliberately **not built** because `guide_documents` had
+"0 rows live". That call is *verified correct* by the numbers above and should not be
+re-litigated; it was also one RLS policy away from being a decision made on nothing. So **when a
+row count is going to decide something, read it with `requireServiceKey()` and print the anon
+number beside it**, rather than assuming they agree.
+`scripts/oneoff/probe-latent-claims-anon-vs-service.mjs` does that for the tables whose
+emptiness is load-bearing; extend its list rather than writing another one-off.
 
 Pass `{ pageSize: 1000 }` to `selectAll` for anything scanning the whole `routes`
 table — the default 60 means ~3,400 round trips and takes over ten minutes.

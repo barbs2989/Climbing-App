@@ -1,0 +1,794 @@
+{
+ "_README": [
+  "The last 15 waypoint notes, written by hand because they are the hardest: almost every one is a",
+  "'This REPLACES a pin naming X' or 'Corrected <date>: prior entry pointed at Y' whose bookkeeping",
+  "framing has to go while the GEOGRAPHY it argues — which trailhead, how far the wrong one is, and",
+  "which of the route's own waypoints prove it — is the reason the pin is right and must survive.",
+  "Land managers (Okanogan-Wenatchee National Forest) are kept; they are who manages the ground, not",
+  "where the text came from. Estimated-position admissions are kept and reworded, never dropped."
+ ],
+ "wa_a_servant_to_liberty": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5143,
+     "lng": -120.6425,
+     "elev": 5160,
+     "name": "Washington Pass Hairpin Turnout",
+     "note": "This route starts from the East Face hairpin pullout, not the Blue Lake Trailhead, which serves the Beckey Route. Same hairpin turnout as the neighboring Kangaroo Temple routes.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.5155,
+     "lng": -120.6588,
+     "elev": 7720,
+     "name": "Liberty Bell Mountain",
+     "note": "True summit of Liberty Bell Mountain.",
+     "type": "Summit",
+     "distMi": 2
+    }
+   ]
+  }
+ },
+ "wa_alta_mountain_scramble": {
+  "area": "wa_alta_mountain",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.4009,
+     "lng": -121.2836,
+     "elev": 2800,
+     "name": "Rachel Lake Trailhead",
+     "note": "Trail #1313 start off FR 4930; Northwest Forest Pass plus self-issued wilderness permit required (USFS Rachel Lake Trailhead page).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From I-90 Exit 62, follow Kachess Lake Road to FS Road 4930 and drive it to the road end at about 2,800 ft. Trail #1313 leaves the parking area; a Northwest Forest Pass plus a self-issued wilderness permit are required at the board."
+    },
+    {
+     "lat": 47.4227,
+     "lng": -121.3292,
+     "elev": 4667,
+     "name": "Rachel Lake",
+     "note": "~4.1 mi from the trailhead, at the top of the steep, rooty 'mile from hell' climb.",
+     "type": "Water",
+     "distMi": 4.1,
+     "directions": "Trail #1313 runs beside Box Canyon Creek on gentle grade for roughly 2.75 miles, crossing several side streams and cascades — water is reliable the whole way, so there is no need to carry much from the car. Past the creek crossing the trail turns into the rooty, rocky boot-beaten climb locals call the 'mile from hell': about 1,300 ft of gain in a mile with large step-ups and no switchbacks. It is a fitness crux, not a technical one, but it is brutal under a full pack."
+    },
+    {
+     "lat": 47.42,
+     "lng": -121.334,
+     "elev": 5100,
+     "name": "Rampart Ridge / Rampart Lakes junction",
+     "note": "Ridge crest above Rachel Lake where the maintained trail splits toward Rampart Lakes and Lila Lake. Coordinate is a trail-guide interpolation (no exact published fix found), cross-checked against a nearby Rampart Lakes basin waypoint at 47.4182,-121.3376.",
+     "type": "Junction",
+     "distMi": 4.6,
+     "directions": "At the lake a use path branches off near the outhouse and skirts the north shore. From there it switchbacks steeply up rocky tread for about half a mile to the crest of Rampart Ridge, where the maintained trail splits toward Rampart Lakes and toward Lila Lake."
+    },
+    {
+     "lat": 47.4285,
+     "lng": -121.3332,
+     "elev": 5570,
+     "name": "Saddle below Alta's south ridge",
+     "note": "Top of the boulder gully on Rampart Ridge; start of the unmarked climbers' path toward the summit. Coordinate is a geometric interpolation (elevation-scaled) between the ridge junction and the summit — estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 5.3,
+     "directions": "Stay on maintained tread through the Rampart Lakes basin, keeping to the east side of the lakes — the alpine turf here is fragile and short-cut social trails are deliberately blocked with sticks and rock piles. At the far end of the lakes, find the base of a large boulder gully with cliff bands along its left side and follow the boot path up it to the broad saddle on the ridge crest. The gully is loose enough that parties should climb it one at a time."
+    },
+    {
+     "lat": 47.441131,
+     "lng": -121.331964,
+     "elev": 6275,
+     "name": "Alta Mountain summit",
+     "note": "Reached past several false summits along the exposed ridge crest.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "From the saddle an unmarked climbers' path leaves the maintained trail at a cairn and follows the ridge crest toward the summit block. It starts steep, loose and shadeless with large steps, then eases onto a narrow crest with sustained exposure: expect several class 2-3 moves, at least one near-vertical step of six to eight feet with good holds, a short class 3 downclimb near the top, and three or more false summits before the real one. Do not attempt this stretch with snow on the crest or on wet rock — the path skirts a cliff edge and the fall consequences are serious. Helmets are worth wearing for the loose rock."
+    }
+   ]
+  }
+ },
+ "wa_american_border_peak_southeast_face": {
+  "area": "wa_american_border_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.95176,
+     "lng": -121.63534,
+     "elev": 5200,
+     "name": "Twin Lakes Trailhead",
+     "note": "Start of the High Pass Trail; Northwest Forest Pass required at the trailhead.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Twin Lakes Road to its end at about 5,200 ft. The final miles are rough and deeply rutted, and many parties park short and walk them rather than risk the car. A Northwest Forest Pass is required; the signed High Pass Trail starts from the parking area."
+    },
+    {
+     "lat": 48.9539,
+     "lng": -121.6365,
+     "elev": 5960,
+     "name": "High Pass",
+     "note": "Leave the maintained trail here; drop and follow the climbers' path east/northeast toward the old Gargett Mine.",
+     "type": "Junction",
+     "distMi": 1,
+     "directions": "About a quarter mile up, the short spur to the Winchester Mountain lookout splits off — stay north on the High Pass Trail. It contours the west side of Winchester, dips through the minor saddle known as Low Pass with open views west to Tomyhoi, then climbs steadily to High Pass. This is maintained tread the whole way, roughly 750 ft of gain; Mount Baker comes into view south when you top out."
+    },
+    {
+     "lat": 48.97152,
+     "lng": -121.64847,
+     "elev": 5400,
+     "name": "Gargett Mine",
+     "note": "Old mine workings; last reliable water source until lingering snow patches high on the peak. Coordinate is the surveyed mine adit (elev 5708 ft) - parties camp in the basin just below at ~5400 ft.",
+     "type": "Water",
+     "distMi": 2.5,
+     "directions": "Leave the maintained tread at the pass and follow the climbers' path east and northeast, dropping about 550 ft to the old mine workings. Tent space here is limited, so most parties bivy rather than camp properly. Fill up: the mine creek is the last easy water until lingering snow patches high on the peak."
+    },
+    {
+     "lat": 48.9777,
+     "lng": -121.65278,
+     "elev": 6300,
+     "name": "Notch (Mt. Larrabee NW rib)",
+     "note": "Reached after a long, unmarked sidehill traverse below Larrabee's southwest and west flanks; drop slightly beyond into the red talus/moraine bowl. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 3.2,
+     "directions": "From the mine, traverse north across Larrabee's timbered southwest rib in the first quarter mile, then commit to a full mile of unmarked sidehill below Larrabee's west flank — steep talus, scree, heather and slick herbaceous slopes with no tread. A small scree chute at the end leads to the notch in Larrabee's rocky northwest rib. Do not start this traverse on wet grass or wet rock; helmets go on here and stay on, since rockfall is the defining hazard of the whole approach."
+    },
+    {
+     "lat": 48.98343,
+     "lng": -121.65678,
+     "elev": 6850,
+     "name": "South AmBo Saddle",
+     "note": "Scrambling and low 5th-class climbing begins here, below the rock feature climbers call 'De Gaulle's Nose'. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 3.8,
+     "directions": "Beyond the notch, descend a steep dirt chute between snow and rock, then contour at roughly 5,800 ft above the moraine bowl. From there angle north through a series of steep gullies and ribs to the saddle. Route-finding, not difficulty, is what costs time on this section, and the red talus is loose throughout."
+    },
+    {
+     "lat": 48.99524,
+     "lng": -121.66493,
+     "elev": 7998,
+     "name": "American Border Peak summit",
+     "note": "Views to Mt. Larrabee, Canadian Border Peak, and the Pickets.",
+     "type": "Summit",
+     "distMi": 4.3,
+     "directions": "Follow a faint climbers' path along the crest for about two hundred yards, then traverse right onto slabby red ledges near a rock rib. A cleft just left of the rib and more slabby ledges gain a flat step on top of it; a down-sloping bench then crosses to the mouth of a steep snow gully, where a tall snow fin splits the gully and you take a moat on either side or the hole through the fin itself. From the notch above, three pitches of the Great Chimney lead to the top — a 5.3 entry, a smooth 5.4 face move over a large chockstone, and a squeeze so tight that packs have to be pushed through ahead of the climber. Above the chimney a dirty slabby trough, a row of horns and gaps, and one dramatically exposed step-across finish the climb."
+    }
+   ]
+  }
+ },
+ "wa_bryant_peak_southeast_slopes": {
+  "area": "wa_bryant_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.44542,
+     "lng": -121.42353,
+     "elev": 2300,
+     "name": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+     "note": "multiple sources describe the Denny Creek Trail -> Hemlock Pass -> ridge -> SE talus field approach used specifically for this Southeast Slopes route.",
+     "type": "Trailhead",
+     "elevFt": 2300,
+     "directions": "Take I-90 to Exit 52, then follow Alpental Road to its end. Park at the Alpental day-use trailhead, at roughly 3,100 to 3,120 feet."
+    },
+    {
+     "lat": 47.429115,
+     "lng": -121.45393,
+     "elev": 3700,
+     "name": "Source Lake Trail junction",
+     "note": "Signed junction on Snow Lake Trail #1013; leave the main trail here and head toward Source Lake basin.",
+     "type": "Junction",
+     "distMi": 1.8
+    },
+    {
+     "lat": 47.432343,
+     "lng": -121.45366,
+     "elev": 4100,
+     "name": "Source Lake basin stream crossing",
+     "note": "Climbers' path fords the outlet stream draining Source Lake basin around 4,100 ft; last reliable water before the ascent gully, cairns mark the crossing.",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.436877,
+     "lng": -121.456524,
+     "elev": 4780,
+     "name": "Gully 'secret passage' below the cliffs",
+     "note": "An easy-to-miss rock passage at ~4,780 ft where the route leaves the open streambed gully and climbs NE along cliff bands into the upper basin.",
+     "type": "Junction",
+     "distMi": 2.7
+    },
+    {
+     "lat": 47.4599,
+     "lng": -121.4607,
+     "elev": 5080,
+     "name": "Thumbtack (rock tower), upper basin",
+     "note": "Prominent free-standing rock tower marking the talus basin between Bryant and Chair Peak; from here the route corkscrews southwest toward the Bryant-Chair gully.",
+     "type": "Junction",
+     "distMi": 3.1
+    },
+    {
+     "lat": 47.443575,
+     "lng": -121.464028,
+     "elev": 5500,
+     "name": "Bryant-Chair Peak gully / talus shoulder",
+     "note": "Steep, loose gully between the two peaks gains a talus shoulder on Bryant's ridge; helmets recommended, rockfall risk from parties above.",
+     "type": "Hazard",
+     "distMi": 3.6
+    },
+    {
+     "lat": 47.446762,
+     "lng": -121.464969,
+     "elev": 5700,
+     "name": "Summit block traverse",
+     "note": "Route stays left (south) of the talus field and traverses the south side of the west shoulder before the final scramble; exposed with loose rock, though holds are generally good.",
+     "type": "Hazard",
+     "distMi": 4.3
+    },
+    {
+     "lat": 47.451358,
+     "lng": -121.46092,
+     "elev": 5801,
+     "name": "Bryant Peak summit",
+     "type": "Summit",
+     "elevFt": 5801
+    }
+   ]
+  }
+ },
+ "wa_glacier_peak_disappointment_peak_cleaver": {
+  "area": "wa_glacier_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.05832,
+     "lng": -121.28793,
+     "elev": 2800,
+     "name": "North Fork Sauk River Trailhead",
+     "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Trinity Trailhead, where Buck Creek Trail #1513 and Chiwawa River Trail #1550 enter the Glacier Peak Wilderness. The North Fork Sauk River trailhead is 20.2 mi away on a different approach: both of this route's approach waypoints — Buck Creek Pass at 9.5 mi and the Cool/Gerdine Basin camp above it — are reached from Trinity, and the route's own itinerary begins 'Trailhead to Buck Creek Pass, 12 mi'.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.09,
+     "lng": -120.96,
+     "elev": 5800,
+     "name": "Buck Creek Pass",
+     "type": "Junction",
+     "distMi": 9.5,
+     "elevFt": 5800
+    },
+    {
+     "lat": 48.11,
+     "lng": -121.07,
+     "elev": 6800,
+     "name": "Cool/Gerdine Basin Camp",
+     "type": "Campsite",
+     "distMi": 14,
+     "elevFt": 6800
+    },
+    {
+     "lat": 48.1112273,
+     "lng": -121.1139922,
+     "elev": 10541,
+     "name": "Glacier Peak summit",
+     "type": "Summit",
+     "elevFt": 10541
+    }
+   ]
+  }
+ },
+ "wa_mount_barnes_scramble": {
+  "area": "wa_mount_barnes",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.9548,
+     "lng": -123.8349,
+     "elev": 1980,
+     "name": "Sol Duc Trailhead (end of Sol Duc Hot Springs Road)",
+     "note": "Sol Duc trailhead at the end of Sol Duc Hot Springs Road, the start of the High Divide / Bailey Range approach. Whiskey Bend is 11.7 mi away on the Elwha and approaches Mount Barnes from the opposite end, never passing Heart Lake — the first waypoint here. Every recorded distance on this route is consistent with a Sol Duc start.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.9104598,
+     "lng": -123.7338335,
+     "elev": 4744,
+     "name": "Heart Lake",
+     "note": "Last reliable water and common camp before crossing High Divide; there is no water again until well past the Catwalk toward Eleven Bull Basin.",
+     "type": "Water",
+     "distMi": 7.85
+    },
+    {
+     "lat": 47.9054,
+     "lng": -123.7774,
+     "elev": 5474,
+     "name": "High Divide crest near Bogachiel Peak",
+     "note": "Maintained High Divide Trail tops out here; this is where the Bailey Range Traverse leaves the trail and drops off-trail east into Cat Basin toward Cat Peak. The exact off-trail departure point is not recorded separately, so this marker sits on the peak itself.",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 47.92392006,
+     "lng": -123.78531996,
+     "elev": 5800,
+     "name": "The Catwalk (Cat Peak-Mt. Carrie arete)",
+     "note": "Narrow, exposed ridgeline with a few scrambling moves and roughly 3,000 ft of air to the valley floor; poorly defined in fog, not a place to be in wind or wet rock.",
+     "type": "Hazard",
+     "distMi": 12
+    },
+    {
+     "lat": 47.85093353333333,
+     "lng": -123.66939986666667,
+     "elev": 5400,
+     "name": "Upper Ferry Basin / Ferry Glacial Lake",
+     "note": "Open meadow below Mount Ferry with glacial lakes and streams for the last dependable water before the Bear Pass approach; established informal camp used by most Bailey Range parties.",
+     "type": "Campsite",
+     "distMi": 19
+    },
+    {
+     "lat": 47.814440270000006,
+     "lng": -123.61143982,
+     "elev": 5600,
+     "name": "Childs Glacier crossing",
+     "note": "Small glacier/permanent snowfield below Bear Pass; parties report needing ice axe and microspikes on firm snow, with crevasse-type terrain in Junkyard Basin just beyond.",
+     "type": "Hazard",
+     "distMi": 22.5
+    },
+    {
+     "lat": 47.7987,
+     "lng": -123.5863,
+     "elev": 5600,
+     "name": "Bear Pass",
+     "note": "Broad saddle marking the southeastern terminus of the Bailey Range proper; from here the route drops toward a flat meadow before angling southeast for the final Barnes approach.",
+     "type": "Junction",
+     "distMi": 24
+    },
+    {
+     "lat": 47.7839245,
+     "lng": -123.5760872,
+     "elev": 5987,
+     "name": "Mount Barnes",
+     "type": "Summit",
+     "elevFt": 5987
+    }
+   ]
+  }
+ },
+ "wa_mount_berge_southwest_route": {
+  "area": "wa_mount_berge",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.0266,
+     "lng": -120.829,
+     "elev": 2600,
+     "name": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)",
+     "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Little Giant Trailhead, where Little Giant Trail #1518 enters the Glacier Peak Wilderness. The Trinity trailhead is 3.28 mi up-valley on a different approach: this route's own first waypoint is the Chiwawa River ford at 0.1 mi, which sits 0.05 mi from this coordinate and shares its 2,600 ft elevation, and the chain above it runs to Little Giant Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Chiwawa River Road (Forest Road 6200) up-valley from WA-207 near Lake Wenatchee to the Little Giant Trailhead, on the right at about mile 19, roughly three miles before the road's end at Trinity. Forest Road 6200 has been closed beyond Atkinson Flat under a storm-damage order, so check current road status before driving up-valley."
+    },
+    {
+     "lat": 48.026785265306124,
+     "lng": -120.83013922448978,
+     "elev": 2600,
+     "name": "Chiwawa River ford",
+     "note": "Unbridged ford of the Chiwawa River right at the trail's start — waist-deep and swift in early season, only reliably safe in late-summer/fall low water.",
+     "type": "Hazard",
+     "distMi": 0.1
+    },
+    {
+     "lat": 48.03475167346939,
+     "lng": -120.87912587755102,
+     "elev": 6250,
+     "name": "Spring below Little Giant Pass",
+     "note": "Small spring a few hundred feet below the pass; last dependable water before crossing into the high basins toward Berge.",
+     "type": "Water",
+     "distMi": 4.4
+    },
+    {
+     "lat": 48.03568,
+     "lng": -120.88482,
+     "elev": 6463,
+     "name": "Little Giant Pass",
+     "note": "Top of the steep, badly eroded Little Giant Trail; maintained tread ends here and the route drops toward the Louis Creek/Napeequa basin en route to Berge.",
+     "type": "Junction",
+     "distMi": 4.9
+    },
+    {
+     "lat": 48.07295689655172,
+     "lng": -120.91870944827586,
+     "elev": 7840,
+     "name": "Berge Ridge notch",
+     "note": "Narrow 7,840-ft notch in the ridge crest linking the Louis Creek basin to the Buck Creek/High Pass side beneath Berge's southwest face; exposed scrambling to gain it.",
+     "type": "Junction",
+     "distMi": 6.5
+    },
+    {
+     "lat": 48.089266413793105,
+     "lng": -120.93353520689655,
+     "elev": 7650,
+     "name": "Saddle south of Berge's summit",
+     "note": "Broad saddle on Berge's south side where the southwest-slopes route leaves the basin; ascend through rock bands and steep heather toward the summit ridge.",
+     "type": "Junction",
+     "distMi": 7.2
+    },
+    {
+     "lat": 48.09625620689655,
+     "lng": -120.93988910344827,
+     "elev": 7800,
+     "name": "Exposed gully below summit ridge",
+     "note": "Final gully has slanted slabs with real exposure near the top; solid holds and ledges ease passage but a slip here would be consequential — helmet recommended.",
+     "type": "Hazard",
+     "distMi": 7.5
+    },
+    {
+     "lat": 48.10476,
+     "lng": -120.94257,
+     "elev": 7951,
+     "name": "Mount Berge",
+     "type": "Summit",
+     "distMi": 16.92,
+     "elevFt": 7951,
+     "distFrom": "track"
+    }
+   ]
+  }
+ },
+ "wa_mount_pershing_standard": {
+  "area": "wa_mount_pershing",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.545078,
+     "lng": -123.228973,
+     "elev": 2440,
+     "name": "Jefferson Creek Crossing (FR 2401)",
+     "note": "Faint climbers' path begins on the north side of the creek where FSR 2401 fords Jefferson Creek; park in the turnout just after the crossing (Northwest Forest Pass area, no formal trailhead sign).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Hoodsport, drive about 14 miles north on US 101 to the Hamma Hamma River Road (FR 25) and follow it roughly 6.5 miles to FR 2480. Take FR 2480 about 3 miles to FR 2401, then FR 2401 another 7 to 7.5 miles to where it crosses Jefferson Creek, in the Jefferson Lake trailhead area at about 2,440 feet. Park in the turnout just after the crossing — there is no formal trailhead sign, and it is a Northwest Forest Pass area. Confirm current road status with Olympic National Forest before you drive: FR 2480 and FR 2401 have a history of washouts and were briefly closed during the 2025 Hamma Fire, though that closure has since been rescinded."
+    },
+    {
+     "lat": 47.545606525,
+     "lng": -123.230998,
+     "elev": 2600,
+     "name": "Jefferson Creek (last reliable water)",
+     "note": "Path follows the north bank through old-growth forest, boulders, and windfall — fill up here, as the route goes dry once it climbs into the gully and basins above.",
+     "type": "Water",
+     "distMi": 0.3
+    },
+    {
+     "lat": 47.5486015,
+     "lng": -123.24247299999999,
+     "elev": 4300,
+     "name": "Rocky gully to 4,300' basin",
+     "note": "After several hundred feet of forest/brush the path makes a rising traverse into a rocky gully; climb the gully to a small basin at roughly 4,300 ft — this is also the point to aim for on the descent before dropping back to the creek.",
+     "type": "Junction",
+     "distMi": 2
+    },
+    {
+     "lat": 47.5507156,
+     "lng": -123.250573,
+     "elev": 5400,
+     "name": "Upper basin (cut left below summit)",
+     "note": "From the 4,300' basin continue straight up then cut left up a second gully into the basin east of the summit at about 5,400 ft, staged at the base of the final snow/rock gully.",
+     "type": "Junction",
+     "distMi": 3.2
+    },
+    {
+     "lat": 47.5514203,
+     "lng": -123.253273,
+     "elev": 5800,
+     "name": "Snow gully + Class 4 rock step",
+     "note": "45–50 degree snow leads to a short pitch of loose, brushy Class 4 rock gaining the summit ridge; carry an ice axe/crampons — this step has caught unprepared parties.",
+     "type": "Hazard",
+     "distMi": 3.6
+    },
+    {
+     "lat": 47.551948825,
+     "lng": -123.255298,
+     "elev": 6000,
+     "name": "Knife-edge ridge traverse",
+     "note": "Ridge crest is mostly Class 2–3 but narrows to a genuinely knife-edge section with one or two exposed Class 3/4 moves just before the summit block.",
+     "type": "Hazard",
+     "distMi": 3.9
+    },
+    {
+     "lat": 47.55194,
+     "lng": -123.25596,
+     "elev": 6154,
+     "name": "Mount Pershing, South Peak",
+     "note": "True (south) summit of the Pershing massif's three tops, 1.3 mi NNW of Mount Washington; allow a full day, historically about 11 hours car-to-car.",
+     "type": "Summit",
+     "distMi": 4
+    }
+   ]
+  }
+ },
+ "wa_northeast_buttress_4": {
+  "area": "wa_colchuck_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "FS Rd 7601 (Eightmile Creek Rd) off Icicle Creek Rd; standard approach to Colchuck Peak NE Buttress.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.478242,
+     "lng": -120.846403,
+     "elev": 8705,
+     "name": "Colchuck Peak summit",
+     "note": "This is Colchuck Peak's summit, not Mount Stuart's — a different, neighboring peak. The coordinate matches the summit waypoint already on this peak's sibling Colchuck Glacier / Northeast Couloir routes.",
+     "type": "Summit",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5574,
+     "name": "Colchuck Lake",
+     "type": "Junction",
+     "distMi": 4.1,
+     "elevFt": 5574
+    }
+   ]
+  }
+ },
+ "wa_sherpa_peak_north_ridge": {
+  "area": "wa_sherpa_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.52779,
+     "lng": -120.82082,
+     "elev": 3540,
+     "name": "Stuart Lake Trailhead (Eightmile Creek Rd #7601)",
+     "note": "This route's approach starts from the Stuart Lake Trailhead, not Esmeralda Basin ~9km away on the Teanaway side. Same Stuart Lake trailhead coordinate as the neighboring Upper North Ridge (Mount Stuart) route.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.471851,
+     "lng": -120.888882,
+     "elev": 8630,
+     "name": "Sherpa Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8630
+    }
+   ]
+  }
+ },
+ "wa_slippery_slab_tower_ne_face": {
+  "area": "wa_thunder_mountain_and_slippery_slab_tower",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.66798,
+     "lng": -121.140727,
+     "elev": 4512,
+     "name": "Surprise Lake",
+     "note": "Trail switchbacks above the lake to join the PCT. Surprise Lake sits at 4,500 ft. An earlier pin for it sat 5.2 mi west, the same ~4.5 mi westward error this route's other waypoints were already corrected for.",
+     "type": "Water",
+     "distMi": 4.7
+    },
+    {
+     "lat": 47.6744,
+     "lng": -121.124,
+     "elev": 5050,
+     "name": "Trap Pass",
+     "note": "PCT junction; the climbers path to Thunder Mountain and Slippery Slab Tower leaves directly from the top of the pass.",
+     "type": "Junction",
+     "distMi": 6
+    },
+    {
+     "lat": 47.66888,
+     "lng": -121.12634,
+     "elev": 6200,
+     "name": "Base of Slippery Slab Tower",
+     "note": "Corrected — an earlier coordinate (47.665,-121.22) sat ~4.5mi west of Trap Pass instead of continuing toward the tower, likely a data entry error. This pin (47.668645,-121.126119, elev 6356ft) matches the area's own registered location.",
+     "type": "Junction",
+     "distMi": 6.8
+    },
+    {
+     "lat": 47.66888,
+     "lng": -121.12634,
+     "elev": 6356,
+     "name": "Slippery Slab Tower NE Face Topout",
+     "note": "Corrected — an earlier coordinate (47.6636,-121.2226) was ~4.5mi off; this pin is cross-checked against the area's own registered location. Two-pitch 5.4; Pitch 2 diagonals left into a gully to a large boulder near the top.",
+     "type": "Topout",
+     "distMi": 7
+    },
+    {
+     "lat": 47.66888,
+     "lng": -121.12634,
+     "name": "Slippery Slab Tower NE Face (start)",
+     "type": "Route",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.7094,
+     "lng": -121.1065,
+     "elev": 3100,
+     "name": "Tunnel Creek Trailhead",
+     "note": "FS Rd 6095, ~13.2 mi east of Skykomish off US-2; approach is Tunnel Creek Trail -> PCT (Hope Lake) -> south to Trap Pass -> climbers trail to NE base of tower",
+     "type": "Trailhead",
+     "elevFt": 3100
+    },
+    {
+     "lat": 47.66888,
+     "lng": -121.12634,
+     "elev": 6356,
+     "name": "Slippery Slab Tower",
+     "type": "Summit",
+     "elevFt": 6356
+    }
+   ]
+  }
+ },
+ "wa_southeast_face": {
+  "area": "wa_sharkfin_tower",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.48055,
+     "lng": -121.07979,
+     "elev": 3200,
+     "name": "Boston Basin Trailhead (Cascade River Road)",
+     "note": "Turnout at old Diamond Mine Rd fork off Cascade River Rd; climbers trail to Boston Basin, Quien Sabe Glacier approach to Sharkfin Tower. SAFETY NOTE: a 2005 accident occurred here from parties entering the wrong approach gully, resulting in fatalities.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Cascade River Road roughly 21.7 miles from Marblemount to the small, unsigned Boston Basin pulloff at about 3,200-3,300 feet. It's a rough, sometimes rutted gravel road, so a bit of ground clearance helps. Park at the pulloff alongside the road. A Boston Basin wilderness permit is required for the trip."
+    },
+    {
+     "lat": 48.4996,
+     "lng": -121.0398,
+     "elev": 8120,
+     "name": "Sharkfin Tower summit",
+     "note": "This is Sharkfin Tower's summit, not Mount Torment's — a different, neighboring Boston Basin peak. The coordinate matches the summit waypoint already on this peak's sibling Southeast Ridge route.",
+     "type": "Summit",
+     "distMi": 0
+    },
+    {
+     "lat": 48.50051,
+     "lng": -121.04104,
+     "elev": 8120,
+     "name": "Sharkfin Tower Southeast Face",
+     "type": "Route",
+     "distMi": null,
+     "elevFt": 8120
+    }
+   ]
+  }
+ },
+ "wa_switchback_mountain_scramble": {
+  "area": "wa_switchback_mountain",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.179295,
+     "lng": -120.252817,
+     "elev": 3400,
+     "name": "Foggy Dew Trailhead (FR 4340-200, Trail #417)",
+     "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Foggy Dew Trailhead, where Foggy Dew Trail #417 begins. The Eagle Lakes / Crater Creek trailhead (4,740 ft) is ~2.9 mi away: Eagle Lakes Trail #431 runs to Martin and Cooney Lakes and never passes Foggy Dew Falls, which is the next waypoint here. Every recorded distance on this route is consistent with this trailhead and impossible from the other.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.17084,
+     "lng": -120.312287,
+     "elev": 5370,
+     "name": "Foggy Dew Falls",
+     "note": "Steep switchback section passes a two-tiered cascade in a narrow cleft; last easy, reliable water before the trail breaks into open basin country.",
+     "type": "Water",
+     "distMi": 3.4
+    },
+    {
+     "lat": 48.1656171,
+     "lng": -120.3490177,
+     "elev": 7300,
+     "name": "Merchants Basin / Cooney Lake Trail #434 split",
+     "note": "Trail #417 tops out of timber into the open, wildflower-covered Merchants Basin below Sawtooth Ridge, where the Cooney Lake Trail #434 splits off toward Cooney Lake.",
+     "type": "Junction",
+     "distMi": 5.5
+    },
+    {
+     "lat": 48.17808,
+     "lng": -120.34868,
+     "elev": 7246,
+     "name": "Cooney Lake",
+     "note": "Larch-rimmed alpine lake with established camps near the outlet; last reliable water before climbing to the pass.",
+     "type": "Campsite",
+     "distMi": 8
+    },
+    {
+     "lat": 48.177027,
+     "lng": -120.352478,
+     "elev": 7900,
+     "name": "Cooney Pass",
+     "note": "7,900 ft saddle on Switchback's southeast side gains the crest of the Southeast Ridge, with views down into Merchants Basin and toward Sunrise Lake.",
+     "type": "Junction",
+     "distMi": 8.6
+    },
+    {
+     "lat": 48.176084,
+     "lng": -120.356309,
+     "elev": 8100,
+     "name": "Southeast Ridge scramble",
+     "note": "Class 2-3 rock scramble up loose, exposed talus/blocks on the ridge crest to the summit block; expect strong, cold wind near the top.",
+     "type": "Hazard",
+     "distMi": 9.2
+    },
+    {
+     "lat": 48.17562,
+     "lng": -120.35821,
+     "elev": 8321,
+     "name": "Switchback Mountain (Switchback Peak / Cooney Peak)",
+     "type": "Summit",
+     "elevFt": 8321
+    }
+   ]
+  }
+ },
+ "wa_vanishing_point": {
+  "area": "wa_dolomite_tower",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2280,
+     "name": "Barclay Lake Trailhead (FR-6024)",
+     "note": "Barclay Lake Trailhead parking area; the approach follows the Barclay Lake trail before leaving it off-trail toward the tower.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2280,
+     "directions": "Leave US-2 near Baring and follow FR-6024 to its end at the Barclay Lake Trailhead, listed as 74920 NE Stevens Pass Hwy, Skykomish. Parking is at about 2,280 ft and the level Barclay Creek trail starts from the lot. The technical approach beyond the trail takes competent parties two and a half to four hours even with good beta, so parties going car-to-car start pre-dawn."
+    },
+    {
+     "lat": 47.784586,
+     "lng": -121.426684,
+     "elev": 2422,
+     "name": "Barclay Lake",
+     "note": "Trail continues past the lake toward Baring's north side.",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.7805,
+     "lng": -121.429,
+     "elev": 5200,
+     "name": "Dolomite Tower Base",
+     "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+     "type": "Junction",
+     "distMi": 3.8
+    },
+    {
+     "lat": 47.781,
+     "lng": -121.43,
+     "elev": 5900,
+     "name": "Vanishing Point Topout",
+     "note": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete.",
+     "type": "Topout",
+     "distMi": 4
+    },
+    {
+     "lat": 47.77918,
+     "lng": -121.43599,
+     "elev": 5708,
+     "name": "Dolomite Tower",
+     "type": "Summit",
+     "elevFt": 5708
+    }
+   ]
+  }
+ }
+}
