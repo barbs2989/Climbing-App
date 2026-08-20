@@ -65,20 +65,11 @@ const KNOWN = {
     "repaired by editing 0009: an applied migration is history and must not be rewritten. If it " +
     "is ever worth aligning, a new migration re-creates the function with the qualified name.",
 
-  auto_archive_crews:
-    "UNTRACKED and broken. Writes crews.archived_at and crews.status, neither of which exists. " +
-    "No migration creates it, so it was made by hand in the SQL editor. Nothing calls it. " +
-    "Implementing it means two columns and a crew-archiving feature — a product decision, not a " +
-    "repair. See check:function-columns, which reports the column half.",
-
-  is_crew_ready:
-    "UNTRACKED and broken. Reads crew.members, and `crews` has no members column (it has " +
-    "created_by, dates, agreed_date, meet_place, meet_time, float_plan, cap, dismissed, " +
-    "date_forced, route_id, id, created_at). No migration creates it and nothing calls it — crew " +
-    "readiness is computed client-side by datesAgreed/agreedDate, which check:crew guards. " +
-    "check:function-columns cannot see this one: it only READS, and that guard's stated scope is " +
-    "write targets. Left rather than dropped, because a hand-made function is not in git and " +
-    "dropping it destroys the only record of the intent.",
+  // auto_archive_crews and is_crew_ready were declared here until 0167 dropped them. Both were
+  // hand-made, broken on columns that do not exist, referenced by nothing, and duplicated by
+  // working client-side code (isArchivedCrew/CREW_ARCHIVE_GRACE_DAYS, and isReady). Their bodies
+  // are recorded verbatim in that migration, so the intent is in git for the first time — which
+  // was the stated reason for keeping them.
 };
 
 // ── live catalog ─────────────────────────────────────────────────────────────
