@@ -94,9 +94,12 @@ function CredentialRow({ cred, notify, refresh }) {
       {mode === "verify" ? (
         <div style={{ display: "flex", gap: 6, marginTop: 7, alignItems: "center", flexWrap: "wrap" }}>
           {/* Required, never defaulted — a guessed expiry either sidelines a valid guide or keeps
-              an expired one listed, and neither is visible afterwards. */}
+              an expired one listed, and neither is visible afterwards.
+              The <label htmlFor> below is correct and stays, but it cannot be the only name: both
+              it and the id are built from a runtime credential id, so no static check can pair
+              them, and "Expires" alone says nothing when several credentials are on screen. */}
           <label style={{ fontSize: 11.5, color: C.textMuted }} htmlFor={"exp-" + cred.id}>Expires</label>
-          <input id={"exp-" + cred.id} type="date" value={expires} onChange={(e) => setExpires(e.target.value)}
+          <input id={"exp-" + cred.id} type="date" aria-label={"Expiry date on the " + name + " credential"} value={expires} onChange={(e) => setExpires(e.target.value)}
             style={{ padding: "6px 8px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 12.5, fontFamily: "inherit" }} />
           <button disabled={busy || !expires} onClick={() => send("verified")}
             style={{ padding: "6px 11px", borderRadius: 8, border: "1px solid " + C.green + "55", background: C.greenBg, color: expires ? C.green : C.textMuted, fontSize: 12.5, fontWeight: 700, cursor: expires ? "pointer" : "default" }}>
