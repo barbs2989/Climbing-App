@@ -19,7 +19,8 @@ import _traverse from "@babel/traverse";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
+const FILES = process.argv.slice(2).length ? process.argv.slice(2)
+  : ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
 
 // A handler that does nothing observable. A single `console.*` still counts as empty from the
 // user's point of view — nobody has the console open on a phone.
