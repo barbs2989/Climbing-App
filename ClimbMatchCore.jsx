@@ -459,7 +459,18 @@ function wpDivIcon(L,t,size,ring,derived){
      list. Hollow-and-dashed is the language #1185 chose for exactly that distinction; carrying the
      glyph and the type colour is what keeps it inside the legend instead of being a mystery dot.
      The hollow form is also the LEGEND ROW's own look — tint, coloured border, coloured glyph — so
-     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart. */
+     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart.
+
+     WHO IS DERIVED, TODAY: the `hasPeak` fallback marker. It draws the MOUNTAIN's coordinate out of
+     `areas` when the route has no track and no waypoints of its own — a location the app worked out
+     to show you roughly where the climb is, not a point anybody surveyed for this route. The track
+     endpoints are NOT derived and stay solid: somebody walked that line, so its first and last
+     points are recorded observations.
+
+     #1185 (open) adds a derived TRAILHEAD marker and currently draws it as a dashed circleMarker
+     with no glyph — a colour-only dot the legend cannot explain, which is the defect the glyph work
+     removed everywhere else. It should call wpDivIcon(L,"Trailhead",22,null,true). Left for that
+     PR rather than edited underneath it. */
   const box=derived
     ?'background:'+col+'22;border:'+bw+'px dashed '+(ring||col)+';color:'+col
     :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
@@ -1302,7 +1313,7 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     hit.bindPopup(html);hit.bindTooltip(label,{direction:"top"});hit.addTo(map);
     const mk=L.marker([wp.lat,wp.lng],{icon:wpDivIcon(L,wpType(wp)),keyboard:false});
     mk.bindPopup(html);mk.bindTooltip(label,{direction:"top"});mk.addTo(map);markersRef.current[wi]=mk;
-    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
+    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
   const locate=()=>{if(!navigator.geolocation){setGeoErr("Location isn’t available on this device.");return;}setLocating(true);setGeoErr("");navigator.geolocation.getCurrentPosition(pos=>{setLocating(false);const L=window.L,map=mapRef.current;if(!L||!map)return;const la=pos.coords.latitude,ln=pos.coords.longitude,ac=pos.coords.accuracy||50;if(userRef.current){userRef.current.setLatLng([la,ln]);}else{userRef.current=L.circleMarker([la,ln],{radius:7,color:"#ffffff",weight:3,fillColor:C.green,fillOpacity:1}).addTo(map).bindTooltip("You are here",{direction:"top"});}if(accRef.current){accRef.current.setLatLng([la,ln]).setRadius(ac);}else{accRef.current=L.circle([la,ln],{radius:ac,color:C.green,weight:1,fillColor:C.green,fillOpacity:0.12}).addTo(map);}map.setView([la,ln],13);setLocatedOnce(true);},err=>{setLocating(false);setGeoErr(err&&err.code===1?"Location permission denied — enable it to see where you are on the route.":"Couldn’t get your location right now.");},{enableHighAccuracy:true,timeout:12000,maximumAge:30000});};
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
