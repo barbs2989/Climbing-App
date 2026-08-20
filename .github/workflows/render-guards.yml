@@ -371,6 +371,44 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
+  outage:
+    name: An outage never reads as an empty account
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:outage cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Same credential rule as the signed-in job below, and for the same reason: this walk
+      # needs a REAL account with real data, and CI must never hold the service key. It signs
+      # in to the two durable accounts with the ANON key, which is what a browser does.
+      #
+      # It runs the walk TWICE -- healthy, then with every PostgREST read answered 57014 -- and
+      # fails if a screen whose content changed says nothing about the failure. A screen that is
+      # identical either way is seed-backed and is reported as proving nothing.
+      - name: Walk a signed-in account with the database down
+        run: npm run check:outage
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
+
   signed-in:
     name: A real signed-in account still works
     runs-on: ubuntu-latest
