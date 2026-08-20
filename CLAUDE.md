@@ -2173,6 +2173,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     explains itself. Nothing rendered it, so nothing would have noticed it disappearing. **The
     comment had ALREADY gone stale**, claiming *"44 pins across 17 WA alpine routes"* against a
     measured **39 across 16** — the [[semantic-invariants-need-a-script]] shape, caught in the act.
+    (**38 across 16** since the sweep below; quote the probe, never this line.)
   - **"Is this waypoint on the map?" was answered NINE ways.** `GPXMap` tested `w.lat != null` in
     **eight** places — none checking `lng`, none checking finiteness — while `WaypointList` tested
     both coordinates for a finite `Number`. All nine now call **`wpPlaced()`**.
@@ -2188,6 +2189,42 @@ the correction knows the screen is wrong, and they have no way to report it.
     find it.
   - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
     coordinate and flagging it would tell an author to break correct code.
+  - **THE 39 UNPLACED PINS ARE 1 FINDABLE AND 38 REFUSALS, and the refusals are the result.**
+    `solve-unplaced-waypoints.mjs` swept every waypoint with no coordinate at all — a different set
+    from the *fabricated* pins, which have one. Coverage went 39 → 38.
+    - **The corroboration this repo normally uses is structurally unavailable here, and that is not
+      bad luck.** `verify-researched-pin-coords.mjs` writes a researched pin only when it lands on
+      the route's own gpx track — the bar that took Cutthroat Pass from 2,464 m to 36 m and
+      **refused** Longs Pass. Measured: **0 of the 16 routes carrying an unplaced pin has a track.**
+      A route whose pins were placed by an enrichment pass got its track from the same pass, so the
+      routes missing one are exactly the routes missing the other.
+    - So the gate is rebuilt from three records sharing no input: **GNIS** supplies the coordinate,
+      the **USGS DEM** supplies the ground under it, and **the row itself** states the waypoint's
+      elevation. Control first, from the catalog rather than from memory: four peaks whose
+      coordinates this repo already stores come back within ~20 ft of their known heights, and
+      *Headlee Pass* resolves to a DEM reading **42 ft** from the elevation the row independently
+      states. A fourth check then asks `audit:waypoint-geometry`'s question — the pin sits 21% off
+      the direct trailhead→summit line, which is what a pass on an approach is, and slots into the
+      route's own elevations at 2,400 → **4,720** → 5,700 → 5,800 → 6,214.
+    - **ARCGIS `LIKE` IS CASE-SENSITIVE, AND THAT NEARLY SHIPPED A UNIFORM, PLAUSIBLE, WRONG
+      FINDING.** The solver normalises search terms to lowercase; GNIS matched **nothing** for 25 of
+      the 39, and the run reported every one of them as *"a climbers' name, not a federal one"* —
+      a conclusion this catalog's own history makes entirely believable. It was caught **only**
+      because the control had already found Headlee Pass by hand, so a refusal for that pin was a
+      contradiction rather than a datum. `UPPER()` on both sides; 25 unresolved became 11. *When a
+      sweep's refusals all share one reason, suspect the sweep.*
+    - The refusal taxonomy is worth keeping, because each is a distinct way a name fails to be an
+      identity: **11** have no GNIS feature of that name near the peak (genuinely climbers' names —
+      *Porkbelly Ridge crest gain*, *Class 5 Step*); **8** name a **structure** the feature does not
+      — a camp, a junction, a crossing, a headwaters — so borrowing its coordinate is wrong by
+      however far the two stand apart; **13** match only a shared word (*Custer-Spickard Saddle* →
+      *Custer Ridge*; *Needle Pass* → *The Needles*; *Hidden Lake* → *Hidden Lake Peaks*); **4**
+      carry no distinctive proper noun at all (*North Peak Summit*); and **2** are refused by the
+      DEM. Those last two are the gate working: *"~5,300-ft saddle below Mt. Watson"* matched
+      **Mount Watson itself** at 6,181 ft, and a saddle below a summit is not the summit.
+    - **23 of the 39 are LINEAR or AREAL** — cliff bands, traverses, drainages, ridge crests — and a
+      label point cannot locate an edge. Those have no coordinate to find, not a coordinate nobody
+      has looked for.
   - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
     the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
     dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
