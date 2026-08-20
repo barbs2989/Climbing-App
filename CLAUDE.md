@@ -42,6 +42,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
@@ -718,6 +719,51 @@ a build error, but a screen that renders wrong or not at all.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
+- **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
+  the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
+  researched string into an existing column, look at where that column renders* — which had been
+  broken **three** times by the time it was written, the third by a pass that had **read the rule**.
+  `season` took 232-char explanations into the header strap; `grade` took qualifiers into the pill;
+  `bivy[].capacity/.water/.permit` took up to **1,386 characters** into chips. Renders the real
+  `RouteDetail` over real rows and reads the markup, so it needs the DB — **not** a build gate; it
+  runs on every PR via `render-guards.yml`.
+  - **`check:field-renders` is the near miss, and the distinction is the whole point.** That guard
+    asks whether a column reaches a screen. All three of these did — correctly, in full, in the
+    wrong shape. **Reaching a screen and fitting the element it reaches are different questions.**
+  - **It found a FOURTH on its first real run**: `approach_variants[].season` in the APPROACHES
+    panel, a pill carrying **both** `white-space:nowrap` **and** `flex-shrink:0`, so the text could
+    neither wrap nor shrink. **534 of 801 variants (67%), across 470 routes**, up to 392 characters
+    — worse than the camping chips, which at least wrapped into a blob. Fixed with the app's own
+    `seasonShort()`, the same defence the header strap already uses, with the full sentence rendered
+    as prose in the card so nothing is lost (`probe-approach-season-onscreen.mjs` proves that half —
+    shortening a display field is a LOSS unless the text still lands somewhere).
+  - **TWO EARLIER DESIGNS WERE VACUOUS, and that is the most useful thing here.** Matching a
+    rendered `x.prop` to a column **by name** scored **0 of 7** on a real run: `q.status` is a guide
+    inquiry's, `v.season` a trip report's, `t.label` a route-tag chip's. Restricting to expressions
+    **rooted at `route.<col>`** then reported **ok against the very commit containing the camping
+    defect**, because the panel maps over `campSites(route)` — a helper's return value. Resolving
+    that needs interprocedural analysis. So it resolves **nothing**: it renders, and asks the markup
+    a question that needs no name and no scope.
+  - **A regex cannot read nested HTML, and it passed one injection anyway.** The first scanner was
+    `/<(\w+)[^>]*style="([^"]*)"[^>]*>([\s\S]*?)<\/\1>/g`, which consumes an element's children
+    when it matches the parent — it inspected **1,019** boxes where a real tag stack inspects
+    **4,491**, and it found the approach-season pill only by ACCIDENT (the outer flex div's match
+    terminated on its first child's `</div>`, leaving the pill exposed as the next match).
+    **Injection case 2 came back MISS and that is what exposed it.** A guard that catches one real
+    defect can still be blind to the next, and only an injection it FAILS will tell you.
+  - **Two exclusions, both measured, both about not reporting correct work.** A box that clips with
+    `overflow:hidden` + `text-overflow:ellipsis` degrades correctly (that alone took an early scan
+    from 104 candidates to 54, nearly all deliberately-ellipsised route names). And a box carrying
+    `word-break`/`overflow-wrap` has been **thought about** — the STAGES table is the measured case,
+    where a stage's `grade` really is terrain prose and the JSX already carries wrapping put there
+    by someone who found this exact problem. Reporting it would tell an author to undo a correct fix.
+  - Fails **closed** three ways: a failed catalog read is reported as a failed read and never as
+    "no prose in a chip", zero renders is a broken probe, and zero token-shaped boxes means the
+    shape test matches nothing.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
+    that matters**: it runs the guard against `RouteDetail.jsx` exactly as it stood at `6f82fc0`,
+    the commit before the camping collapse. Both earlier designs passed that tree. Two cases must
+    stay **quiet**, pinning the exclusions above.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name

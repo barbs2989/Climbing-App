@@ -226,6 +226,29 @@ jobs:
           VITE_USE_DB: "true"
           VITE_DEMO_AUTOLOGIN: "true"
 
+  token-boxes:
+    name: No value-sized box holds a paragraph
+    runs-on: ubuntu-latest
+    # SSR only — no browser, no dev server. The cost is one bounded catalog read plus 240
+    # renders, ~40s healthy. The headroom is for a degraded Supabase: the read is a single
+    # request and fails closed rather than retrying, so this cannot sit spinning.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: No column's prose lands in a chip
+        run: npm run check:token-boxes
+        env:
+          # Read-only, anon key. Same stance as field-renders below: `routes` is publicly
+          # readable and CI has no business holding a key that bypasses RLS.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
   field-renders:
     name: Enriched columns reach a screen
     runs-on: ubuntu-latest
