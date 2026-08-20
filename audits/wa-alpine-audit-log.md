@@ -9371,3 +9371,78 @@ reference site tried (mountainproject.com, mountaineers.org, thecrag.com, supert
 the Northwest Face/Barber Pole question above could not be resolved from search snippets alone.
 
 Next batch continues after `wa_liberty_cap_liberty_ridge_finish` in the id-ordered scope.
+
+## Batch 138 (2026-08-20, pass 3)
+
+Routes: `wa_liberty_cap_ptarmigan_ridge_finish`, `wa_liberty_crack`, `wa_liberty_crack_free`,
+`wa_liberty_traverse`, `wa_lichtenberg_mountain_west_face_west_rib`,
+`wa_lincoln_peak_north_ridge`, `wa_lincoln_peak_standard`,
+`wa_little_big_chief_mountain_northeast_face`.
+
+**2 confirmed elevation errors, SQL in `audits/sql/2026-08-20-batch-138.sql`:**
+
+- `wa_liberty_crack.high_point_ft` stored 7746. No source found anywhere gives that
+  figure for Liberty Bell Mountain; Wikipedia, mountainzone.com and peakvisor.com all
+  agree on 7,720 ft. The route's own sibling `wa_liberty_crack_free` already stores
+  7720 for the identical summit, and a prior batch in this same audit (137, same day)
+  independently confirmed 7,720 ft for `wa_liberty_bell_beckey_route` against the same
+  source. Fixed to 7720.
+- `wa_lincoln_peak_north_ridge` and `wa_lincoln_peak_standard` both stored
+  `high_point_ft` 9101, and `wa_lincoln_peak_standard`'s summit waypoint also stored
+  elev/elevFt 9101. Every source checked (Wikipedia, PeakVisor, WTA, peakery,
+  stevensong.com) consistently gives Lincoln Peak as "9,080+ ft"; nothing gives 9,101.
+  `wa_lincoln_peak_north_ridge`'s own `corrections` column, a leftover note from an
+  earlier enrichment pass, already flagged this exact discrepancy and recommended
+  9,085 ft citing Wikipedia's Black Buttes article as the more precise figure — the
+  correction was apparently written but never applied to `high_point_ft` or to either
+  route's waypoints. Fixed both routes' `high_point_ft` and both summit waypoints to
+  9085.
+
+**Checked clean, no fix needed:**
+
+- Little Big Chief Mountain: 7,225 ft and 47.5297,-121.2567 peak coordinate both
+  confirmed exactly against Wikipedia/Peakbagger. The row's own `corrections` note
+  already correctly flags Mountain Project's rival 7,213 ft as the outlier.
+- Lichtenberg Mountain's true 5,844 ft summit (matching the route's own `pro_tips`
+  claim) confirmed against Wikipedia/listsofjohn.com. The route's own `high_point_ft`
+  of 5,800 ft is for a distinct, little-documented sub-summit ("the Lichtenhorn") with
+  no independent source to check it against — left alone rather than guessed at.
+- Liberty Crack's FA (Steve Marts, Fred Stanley, Don McPherson, July 16-18 1965) and
+  its #24 spot on Roper & Steck's Fifty Classic Climbs of North America both confirmed
+  against multiple sources (AAC Publications, Wikipedia, climbing.com).
+- Liberty Crack (Free)'s FFA history (Sandahl's partial 1991 free lead, full free
+  ascent by Herrington/Hadley in 2016 building on Schaefer/Lee's work on the crux and
+  slab pitches) is broadly consistent with Blake Herrington's own trip report and AAC
+  Publications — not contradicted by anything found.
+- Lincoln Peak's X Couloir standard route: FA (Fred Beckey, Wesley Grande, John
+  Rupley, Herb Staley, July 22 1956) and SW-Face/X-Couloir routing both confirmed. The
+  route's own `corrections` field hedges toward an "east face" description that does
+  NOT match reality (every source agrees this is a southwest-face route) — that
+  leftover uncertainty note was correctly never applied to the row's actual fields, so
+  nothing needed fixing.
+- `wa_liberty_cap_ptarmigan_ridge_finish`'s waypoints (Liberty Cap at 14,097 ft per
+  the Aug. 2025 GPS resurvey vs. `high_point_ft` 14,112 ft as the traditional
+  official/map figure, Columbia Crest noted as historic-but-superseded) mirror the
+  exact same legitimate two-figure distinction confirmed for a sibling Liberty
+  Cap route in batch 137 — not an inconsistency. Its Mowich Lake / SR-165 Fairfax
+  Bridge permanent closure text (April 2025, WSDOT, no detour) matches the same fact
+  already documented elsewhere in this repo's own history.
+- Ptarmigan Ridge FA (Wolf Bauer and Jack Hossack) confirmed to the summer of 1935;
+  the stored exact date "September 8, 1935" could not be independently confirmed or
+  contradicted (sources found only say "summer 1935" / gave a two-day ascent with no
+  exact date) — left as stored since nothing found disputes it.
+
+`npm run check:sql -- audits/sql/2026-08-20-batch-138.sql` passes: all 5 write targets
+exist, no DELETE removes an only copy. It also warns the file (4.4KB) is over the
+Supabase SQL Editor's ~4KB safe-paste size — split it into two pastes and verify each
+lands before running the next.
+
+Web access this run: WebSearch worked well throughout. WebFetch is still blocked by
+the egress proxy for every reference domain tried (en.wikipedia.org), so all
+confirmations above come from WebSearch's aggregated snippets across multiple
+independent sites rather than a direct primary-source read — flagged here in case a
+future run with working WebFetch wants to double-check the Wikipedia infobox figures
+directly.
+
+Next batch continues after `wa_little_big_chief_mountain_northeast_face` in the
+id-ordered scope.
