@@ -15,6 +15,7 @@
     "check:rls": "node scripts/check-rls.mjs",
     "check:migration-claims": "node scripts/check-migration-claims.mjs",
     "check:merge-survival": "node scripts/check-merge-survival.mjs",
+    "audit:silent-reverts": "node scripts/audit-silent-reverts.mjs",
     "check:overlays": "node scripts/check-overlay-portals.mjs",
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
