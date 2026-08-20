@@ -66,6 +66,58 @@ row and verified on re-read. Every remaining pin is now on the track.
 
 ## CLASS A — MISDIRECTION: the row sends you somewhere it should not (11 left of 12)
 
+**All 11 measured 2026-08-19 against a third record — `scripts/oneoff/measure-class-a-misdirection-rows.mjs`.**
+Each was recorded here as a 1-v-1 (prose says one place, waypoints say another), and a 1-v-1 is
+*not decidable from the disagreement*. The Sherpa row above was settled because it carried an
+independent gpx track. So the first question for each is whether a third record exists at all:
+
+| row | third record | verdict |
+|---|---|---|
+| `wa_primus_peak_south_ridge` | gpx 198 pts, 12.2 km, independent | **0 of 2 pins off-track** — no pin defect |
+| `wa_mount_hinman_hinman_glacier` | gpx 539 pts, 11.9 km, independent | **0 of 6 off-track** — no pin defect |
+| `wa_buckner_mountain_north_face` | gpx 261 pts, 6.1 km, independent | 1 of 7 off, and it is the **Sahale-Boston col at 0.85 km** — a real feature just past the tolerance, not misdirection |
+| `wa_three_queens_standard` | gpx 808 pts, 4.1 km, independent | 1 of 8 off (Mineral Creek log crossing, 0.50 km — on the threshold). **But the track never comes within 4 km of the peak** (starts 4.0, ends 4.01) — a separate `trackOffItsPeak` question |
+| `wa_south_face_12` (Argonaut) | gpx 221 pts, 9.1 km, independent | 0 of 7 off, **but the track never approaches the peak either** (starts 9.1, ends 9.02 km) — same separate question |
+| `wa_huckleberry_mountain_west_route` | gpx 370 pts, independent | measured in full below — **needs a survey, not a fix** |
+| `wa_lincoln_peak_north_ridge` | gpx 8 pts | **COPY of its own waypoints** — unusable as evidence |
+| `wa_colchuck_peak_east_ridge` | gpx 3 pts | **COPY of its own waypoints** — unusable as evidence |
+| `wa_lincoln_peak_standard` | none | no third record — needs a human read |
+| `wa_mount_skokomish_standard` | none | no third record — needs a human read |
+| `wa_east_ridge_7` (Red Mountain) | none | no third record; also has **no trailhead in either store** |
+| `wa_south_gully_south_spur` (Guye) | none | no third record — needs a human read |
+
+Two things worth carrying from that table. **Five of the eleven turn out to have no pin defect
+at all** once measured, so the CLASS A count overstates the pin work. And **two rows store a gpx
+that is merely their own waypoints joined up** — on those, "is the pin on the track" is answered
+yes by construction, so a future pass must not read their agreement as corroboration.
+
+### `wa_huckleberry_mountain_west_route` — measured, and deliberately NOT repaired
+
+This is the one that looked most like Sherpa (3 of 4 pins >500 m off its track) and is not the
+same shape at all. Bearings from the summit:
+
+```
+gpx    0%   2.84 km SW      waypoints  Trailhead (PCT, Snoqualmie)  7.89 km SW
+gpx   30%   0.86 km SW                 Joe Lake                     6.61 km SW
+gpx   70%   0.01 km (summit)           "West Face Talus Basin"      5.17 km  S  (198 deg)
+gpx  100%   0.40 km  E                 Summit                       0.05 km
+```
+
+The track approaches from the **south-west**, crosses the summit, and **ends 0.40 km east** of it.
+The approach prose says you arrive "roughly due **east** of the summit"; `climbing_route` labels
+the technical section "**East** Ridge/East Face"; the row's name is "**West** Route" and its
+aspect is **W**; and the pin named "West Face Talus Basin" actually lies **south** (198 deg).
+
+So this is not 2-v-1 — it is at least four records disagreeing, and the two trailhead-side pins
+are off-track only because the track covers the last 2.8 km of a 9-10 mile approach, which is
+the **PARTIAL** case `audit:waypoint-track` exists to separate out and is *not* a defect.
+
+Nothing was written. The name-vs-aspect half is precisely why `audit:aspect-name` is permanently
+report-only: the first repair of that shape (Little Annapurna) was backwards, and applying it
+would have turned a shady north slog sunny. This row needs a survey against an external source,
+not a decision from its own columns.
+
+
 The same shape as the fixed one. Each needs a read before writing, because the *correct* half varies.
 
 | row | the contradiction |
