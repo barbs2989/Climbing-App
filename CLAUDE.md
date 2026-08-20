@@ -1907,6 +1907,35 @@ the correction knows the screen is wrong, and they have no way to report it.
       omits keys it has nothing for. It also asserts blank strings do not become empty chips —
       otherwise every contributed site would carry three or four blank pills, and no fixture built
       from enrichment data would ever have shown it.
+  - **It also pins the COLLAPSE, in both directions, because a disclosure has two failure modes
+    and only one of them is visible.** Prose still in the default view means nothing was
+    shortened; prose no longer **selected** by `campDetail()` means the disclosure did not hide
+    it, it deleted it — the `descent_text` shape, populated on 1,021 routes and rendered on none.
+    A third assertion requires a **labelled** expand control naming the site, since data behind
+    an unannounced door is unreachable for anyone not using a mouse.
+    - **The collapse silently made an existing assertion VACUOUS, which is the transferable
+      part.** Case 8c counted `Water:` chips to prove a blank contributed string renders no chip
+      — and once the chips were gone that count is 0 whatever the code does, so a broken
+      selector would have read as a pass. It asks `campDetail()` directly now. **When you delete
+      the markup an assertion was scanning, the assertion does not fail — it stops meaning
+      anything.** Re-read the guard, not just its exit code, after changing what it looks at.
+    - What it **cannot** prove, stated in the script rather than implied: that the tap works. SSR
+      renders initial state and cannot click. `check:clickable` covers the keyboard triad and
+      holds announced-but-inert controls at zero, and the tap is driven in a real browser by
+      `scripts/oneoff/probe-camping-expand-onscreen.mjs` (dev server + Chrome, so not a build
+      gate): collapsed shows none of the prose, the control found **by accessible name** reveals
+      all four fields, and a second tap closes it. Seed `ROUTES` carry no `bivy`, so the sites
+      are injected in memory by `scripts/camping-expand.config.mjs` — the same never-edit-the-
+      source pattern `zero-state.config.mjs` and `anniversary.config.mjs` use.
+      - That config asserts **ROUTES[0] is a discipline the camping gate admits**, and the
+        assertion earned itself on its first run: a seed reshuffle would otherwise leave the
+        probe opening a route with no panel and reporting the disclosure broken when it is fine.
+      - It found that by **failing on a fixed 4,000-char window** used to read the route's
+        discipline — ROUTES[0] is far longer, since it carries `communityTracks`, `activity` and
+        `gpx` inline, so it read `undefined`. It balances braces now. That is the **third** magic
+        offset in this one change (the probe's `i + 400`, this window), which is the argument for
+        the rule rather than the instance: **a fixed window encodes a guess about the size of the
+        thing you are looking at, and these files are exactly where that guess is wrong.**
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
@@ -3047,7 +3076,36 @@ value, put the reasoning somewhere else.**
   "depends on the descent chosen" rather than defaulting to 0. See
   [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
 
+- **`bivy[].capacity` / `.water` / `.permit` are CHIPS, and the camping enrichment filled all
+  three with paragraphs.** Measured on the live catalog: median **130 / 136 / 297** characters
+  and up to **1,386**, so **5,001 / 5,008 / 5,020 of 5,083** sites carried prose inside a
+  rounded pill (`borderRadius:20, padding:"2px 9px"`). The panel reached **15,796 characters**
+  on one route and was always fully expanded on a 390px phone. This is the same defect as
+  `season` and `grade` above, committed by a pass that had *read this section* — the two named
+  columns were avoided and three unnamed ones took the identical hit, because the rule was
+  remembered as a fact about `season` and `grade` rather than as a question to ask of any
+  column. **Ask the question of the column you are actually writing.**
+  - Defended reader-side, the way `seasonShort()` and `shortGrade()` defend theirs: the pill is
+    gone, the sites are **collapsed** to name + elevation + type, and the prose renders as a
+    labelled block inside the disclosure. `check:camping` pins both directions — prose out of
+    the default view, and prose still *selected* by `campDetail()`, since a disclosure that
+    stops selecting has not hidden the data, it has deleted it.
+  - **A derived "water · no permit" summary line was designed, measured and REJECTED**, and the
+    measurement is worth not repeating (`scripts/oneoff/measure-camping-verdict-vocabulary.mjs`).
+    A keyword rule leaves **44% of permits and 30% of waters** in no bucket at all, and where it
+    *does* fire it is wrong in the dangerous direction: *"Free self-issued wilderness permit at
+    the Killen Creek trailhead"* reads as **no permit** to any negation rule, and a self-issued
+    permit is one you still have to fill in. Being wrong about a permit costs a fine; being
+    wrong about water sends a party up dry. Same refusal as `rappels` above — **do not read a
+    fact out of English prose**, least of all a safety- or money-adjacent one.
+  - The measuring script's own first-clause splitter cut *"Cascade Volcano Pass (Mt. Adams)"* at
+    the abbreviation, which is the tokeniser trap `audit:approach-scope` already records. **A
+    count is only as good as its tokeniser**, including the count you are using to decide
+    whether a rule is safe.
+
 The rule generalises: **before writing a researched string into an existing column, look at
 where that column renders.** `npm run check:field-renders` will tell you; a column that
 reaches a header, a pill, a chip or a table cell takes a value, and its explanation belongs
-in the prose column beside it.
+in the prose column beside it. Note what that guard could **not** catch here: it asks whether a
+column reaches a screen, and all three of these did — correctly, in full, in the wrong shape.
+**Reaching a screen and fitting the element it reaches are different questions.**

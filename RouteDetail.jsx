@@ -1021,6 +1021,57 @@ function campSites(route){
   return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
     .concat(wps.map(w=>({name:w&&w.name,elev:w&&w.elev,kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
+/* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
+   catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
+   sites carried a paragraph inside a rounded pill. That is the failure CLAUDE.md already records
+   for `season` (a window that got a 232-char explanation) and `grade` (a grade that got a
+   qualifier): enrichment prose written into a DISPLAY field. The repair is the one those two
+   took — defend it on the READ side. The pill is gone and the prose renders as a labelled block
+   inside the disclosure, which is the right shape for a paragraph.
+   Exported because this is the half a static guard can actually prove: whether the prose is
+   SELECTED for display is a pure question; whether a tap reveals it is a browser one. */
+export function campDetail(b){
+  return [["Capacity",b&&b.capacity],["Water",b&&b.water],["Permit",b&&b.permit]]
+    .filter(function(r){return String(r[1]==null?"":r[1]).trim()!=="";});
+}
+/* One site, collapsed to the fields that are AUTHORED AND STRUCTURED — name, elevation, type,
+   and whether it is pinned on the track. Deliberately NOT a derived "water · no permit" summary,
+   which was the obvious design and was measured before being rejected
+   (scripts/oneoff/measure-camping-verdict-vocabulary.mjs): a keyword rule leaves 44% of permits
+   and 30% of waters in no bucket at all, and where it DOES fire it is wrong in the dangerous
+   direction — "Free self-issued wilderness permit at the Killen Creek trailhead" reads as *no
+   permit* to any negation rule, and a self-issued permit is one you still have to fill in.
+   Being wrong about a permit costs a fine; being wrong about water sends a party up dry. This is
+   the same refusal the rappel columns already record: do not read a fact out of English prose.
+   So the summary line carries only what somebody wrote into a field that holds a VALUE, and the
+   prose is one tap away rather than one guess away. */
+function CampSite({b,i}){
+  const [open,setOpen]=useState(false);
+  const detail=campDetail(b);
+  const more=detail.length>0||!!String((b&&b.notes)||"").trim();
+  const nm=(b&&b.name)||("Camp "+(i+1));
+  /* An explicit aria-label, because the row's own text nodes are a name and an elevation in
+     separate elements and this app has been bitten by "Friends2" — a count welded to a label in
+     the accessibility tree, where CSS margins do not exist. An authored name cannot glue. */
+  const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"");
+  return <div style={{border:"1px solid "+C.border,borderRadius:10,marginBottom:8,overflow:"hidden"}}>
+    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{padding:"9px 11px",cursor:more?"pointer":"default"}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:(b.kind||b.onTrack||more)?5:0}}>
+        <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{nm}</div>
+        {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
+      </div>
+      {(b.kind||b.onTrack||more)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6}}>
+        {b.kind?<span style={{fontSize:11,fontWeight:700,color:C.purple,background:C.card,border:"1px solid "+C.purple+"55",borderRadius:20,padding:"2px 9px"}}>{b.kind}</span>:null}
+        {b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}
+        {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>:null}
+      </div>:null}
+    </div>
+    {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,padding:"10px 11px"}}>
+      {detail.map(function(r,ri){return <div key={ri} style={{marginBottom:9}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,letterSpacing:0.5,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>;})}
+      {b.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{b.notes}</div>:null}
+    </div>:null}
+  </div>;
+}
 function CampingPanel({route,onEdit}){
   const sites=campSites(route);
   if(!sites.length)return null;
@@ -1031,20 +1082,7 @@ function CampingPanel({route,onEdit}){
         4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
         that are not there. Claim it only when at least one site actually is on the track. */}
     <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
-    {sites.map((b,i)=><div key={i} style={{border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:8}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:4}}>
-        <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{b.name||("Camp "+(i+1))}</div>
-        {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
-      </div>
-      {(b.kind||b.capacity||b.water||b.permit||b.onTrack)?<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:b.notes?6:0}}>
-        {b.kind?<span style={{fontSize:11,fontWeight:700,color:C.purple,background:C.card,border:"1px solid "+C.purple+"55",borderRadius:20,padding:"2px 9px"}}>{b.kind}</span>:null}
-        {b.capacity?<span style={{fontSize:11,fontWeight:700,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{b.capacity}</span>:null}
-        {b.water?<span style={{fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px"}}>{"Water: "+b.water}</span>:null}
-        {b.permit?<span style={{fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px"}}>{b.permit}</span>:null}
-        {b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}
-      </div>:null}
-      {b.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{b.notes}</div>:null}
-    </div>)}
+    {sites.map((b,i)=><CampSite key={i} b={b} i={i}/>)}
   </div>;
 }
 function PitchComments({targetId,comments,onAdd}){
