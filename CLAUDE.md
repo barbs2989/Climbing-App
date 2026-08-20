@@ -2161,6 +2161,66 @@ the correction knows the screen is wrong, and they have no way to report it.
     afterwards, which is the whole question here.
   - The **conditional** block keeps sole ownership of its items, so an item that is only needed in
     early season does not also appear in the unconditional list.
+- **"Do online research on gear" is 13 routes of RE-HOMING, not 4,938 of research — measured.**
+  4,938 roped WA routes carry no rack. That number is not a worklist: **4,908 of them populate
+  zero or one text column each** — catalog stubs literally named `10a Right` and `#1`, where no
+  published rack exists to find and `DISC_RACK`'s honest *"Typical … rack — not this route's own"*
+  is already the right answer. Turn the question round and it collapses: of the **594** roped
+  routes that have been **written up**, **568 already carry a rack**. Only **30** are written up
+  and rackless. *"Rackless" and "un-enriched" are very nearly the same population.*
+  - Of those 30, **13 already STATE their protection inside their own `pitch_detail`** — *"3 bolts
+    plus small gear for crux"*, *"small nuts/cams"*, *"protect w/ #5 Camalot"*, *"Hand crack,
+    natural gear; only unbolted pitch"*. Surfacing that into `gear` is **re-homing**, the same
+    operation the `climbing_route` sweep performs, and it is verifiable the same way.
+    `fix-derive-rack-from-pitch-detail.mjs` writes them behind a traceability gate and refuses
+    the whole run if any entry names something the row does not.
+  - **The other 17 are deliberately left alone, and that is the load-bearing half.** Five Goose
+    Egg routes carry an overview a previous pass wrote saying, in as many words, *"no published
+    approach, pitch-by-pitch, or gear beta was found beyond this record"*. That is a **documented
+    negative result**; writing a plausible rack over it is fabrication. Same for the Hozomeen,
+    Molar Tooth, Mole and Pyramid lines, whose own beta says the protection is unrecorded or
+    disputed. **A previous pass's recorded failure to find something is evidence, not a gap.**
+  - Entries carry **only what is specific to the route**. `DISC_ASSUMED` already supplies rope,
+    harness, quickdraws, helmet, shoes and a nut tool, and `mergeGearList` folds the two together
+    — restating them would rebuild the duplication that work removed.
+  - **The traceability checker had FOUR bugs and every one flagged CORRECT work**, which is the
+    direction that teaches people to ignore a guard, committed by the guard's own author. Each is
+    a different way a text comparison lies: `leaves()` returns only string **values**, so
+    `pitch_detail`'s `"pitch": 1` never entered the source and every pitch number read as
+    invented; keeping `.` in the token pattern (so `5.10` survives) left **sentence periods**
+    attached, so the source's `belay.` and `cams.` never matched; keeping `-` made `tip-jamming`
+    one token so `tip` missed; and demanding generic connectives be quoted demands a **copy**
+    rather than a rewrite, which is the opposite of re-homing. The stemmer also needed the
+    **trailing-`e` strip this file already records for `check:enrichment-traceable`** — without
+    it `traverse` and `traverses` never meet.
+  - It carries a **self-test that runs on every invocation**, because every entry passing is
+    exactly what a broken checker prints. The positive cases matter as much as the negative ones:
+    a checker tightened until it rejects everything is no more useful than one that accepts
+    everything. Numbers stay strict — `pitch N` is stripped **before** that test, or any small
+    number could launder itself through a pitch index.
+  - **Verified on screen, and the render found a defect the write could not.**
+    `routeRackFor()` reads `contribRack → detailedRack → proNeeds → route.rack` and **not**
+    `route.gear`; the write lands only through `dbRouteToCamel`'s
+    `rack: toArr(r.rack).length ? toArr(r.rack) : gearArr(r.gear)` fallback, so a populated
+    `routes.rack` would have shadowed all 13 silently. Checked: all 13 rows have it empty.
+- **A SPORT route could not say it needs natural gear, on any tab.** `RouteGearCheck` takes an
+  early branch for `sport`, computes a quickdraw count from bolt counts and returns — so the RACK
+  box never renders and the route's own rack reaches **nothing**. Right for a pure sport line,
+  where the rack IS draws; a lie for the exception. `wa_technicians_of_the_sacred` is a 6-pitch
+  5.12c whose own pitch 6 reads *"Hand crack, natural gear; only unbolted pitch"*, and a party
+  racking off that page brings draws and arrives with nothing to place.
+  - Measured at **3 of 2,714** WA sport routes (`probe-sport-routes-needing-natural-gear.mjs`),
+    and the measurement is the story: the first run said **19**, and **17 of those were routes
+    saying "no trad gear needed" / "Fully bolted; no natural gear required"** — the exact opposite
+    of the thing being looked for. **A negation is not a claim**, the same trap
+    `check:rappel-lengths` records for *"Not plowed in winter"*. The 19th was `wa_lady_slipper`, a
+    fully bolted 5.5, matched on *"tie a **stopper** knot"* — a knot, not a nut. Fix the **phrase**,
+    never the word list.
+  - Guarded in **`check:bare`**, because bare-vs-enriched is exactly the axis it fails on — the
+    quickdraw note renders identically either way, so nothing else would notice. **Both
+    directions** are asserted: a route with no rack of its own must add **no** list, or the stock
+    quickdraw kit gets restated directly under the note that already says it. Injection-tested
+    2/2, each restored to the pre-injection checksum.
 - **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
   renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
   two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
