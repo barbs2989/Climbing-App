@@ -103,24 +103,61 @@ for (const m of code.matchAll(/\.from\(\s*["'`]([A-Za-z_][A-Za-z0-9_]*)["'`]\s*\
   problems.push({ line: lineOf(m.index), msg: `.from("${m[1]}") — no such table` });
 }
 
-// 3. Explicit column lists in .select("a,b"), scoped to the nearest preceding
-//    .from(). Embedded resources — foo(...) — are stripped and not validated
-//    here; they are covered by rule 2 when they name a table.
-for (const m of code.matchAll(/\.from\(\s*["'`]([A-Za-z_][A-Za-z0-9_]*)["'`]\s*\)\s*\.select\(\s*["'`]([^"'`]*)["'`]/g)) {
-  const [, table, list] = m;
+// 3. Explicit column lists in .select("a,b"), scoped to the nearest preceding .from() —
+//    INCLUDING the columns inside embedded resources, foo(...).
+//
+//    Embeds used to be stripped here and left to rule 2, which only checks that the embedded
+//    TABLE exists. That left the worse half unguarded: a bad column inside an embed makes
+//    PostgREST answer 42703 and fail the ENTIRE query, where a bad top-level column costs one
+//    field. Measured — `guide_documents(… created_at)` (the column is `uploaded_at`) sailed
+//    through a full `npm run build` and rendered the whole screen as its error state.
+//
+//    Splitting has to respect parens: a comma inside foo(a,b) is not a top-level separator.
+const splitTop = (list) => {
+  const out = [];
+  let depth = 0, cur = "";
+  for (const ch of list) {
+    if (ch === "(") depth++;
+    else if (ch === ")") depth--;
+    else if (ch === "," && depth === 0) { out.push(cur); cur = ""; continue; }
+    cur += ch;
+  }
+  out.push(cur);
+  return out.map((x) => x.trim()).filter(Boolean);
+};
+
+// Embeds come in four shapes. Three name a table and can be checked:
+//   profiles(name)                    plain
+//   author:profiles(name)             aliased
+//   profiles!some_fkey(name)          disambiguated by FK name
+// The fourth embeds through a FOREIGN KEY COLUMN — sender:sender_id(name) — and naming the
+// target table needs FK metadata the snapshot does not carry. Those are SKIPPED and COUNTED,
+// never silently dropped: an unvalidated thing you cannot see is how this gap survived.
+const skippedEmbeds = [];
+const checkList = (table, list, line) => {
   const cols = TABLES[table];
-  if (!cols) continue; // already reported by rule 2
-  let flat = list;
-  for (let guard = 0; guard < 20 && /\(/.test(flat); guard++) {
-    flat = flat.replace(/[A-Za-z_][A-Za-z0-9_.:]*\([^()]*\)/g, "");
-  }
-  for (const raw of flat.split(",")) {
-    const tok = raw.trim();
-    if (!tok || tok === "*") continue;
+  if (!cols) return; // rule 2 already reported it
+  for (const tok of splitTop(list)) {
+    const open = tok.indexOf("(");
+    if (open >= 0) {
+      const head = tok.slice(0, open).trim();
+      const close = tok.lastIndexOf(")");
+      const inner = close > open ? tok.slice(open + 1, close) : "";
+      let target = head.includes(":") ? head.split(":").pop() : head;
+      target = target.split("!")[0].trim();
+      if (TABLES[target]) checkList(target, inner, line);
+      else skippedEmbeds.push(head);
+      continue;
+    }
     const col = (tok.includes(":") ? tok.split(":").pop() : tok).trim();
-    if (!col || col === "*" || !/^[A-Za-z_][A-Za-z0-9_]*$/.test(col)) continue;
-    if (!cols.includes(col)) problems.push({ line: lineOf(m.index), msg: `.from("${table}").select(...) requests "${col}" — no such column` });
+    // `count` is a PostgREST aggregate, not a column; `*` is everything.
+    if (!col || col === "*" || col === "count") continue;
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(col)) continue;
+    if (!cols.includes(col)) problems.push({ line, msg: `.select(...) requests "${table}.${col}" — no such column` });
   }
+};
+for (const m of code.matchAll(/\.from\(\s*["'`]([A-Za-z_][A-Za-z0-9_]*)["'`]\s*\)\s*\.select\(\s*["'`]([^"'`]*)["'`]/g)) {
+  checkList(m[1], m[2], lineOf(m.index));
 }
 
 if (problems.length) {
@@ -130,7 +167,10 @@ if (problems.length) {
   console.error(`  node scripts/refresh-schema-snapshot.mjs\n`);
   process.exit(1);
 }
-console.log(`check-schema: ok — lib/db.js matches the ${snapshot.generatedAt} snapshot (${Object.keys(TABLES).length} tables).`);
+const skipNote = skippedEmbeds.length
+  ? ` ${new Set(skippedEmbeds).size} embed(s) join through a foreign-key column (${[...new Set(skippedEmbeds)].sort().join(", ")}) and are not column-checked — the snapshot carries no FK metadata.`
+  : "";
+console.log(`check-schema: ok — lib/db.js matches the ${snapshot.generatedAt} snapshot (${Object.keys(TABLES).length} tables).${skipNote}`);
 
 /* Injection-tested 2026-08-12, six cases, all as expected. Three must FAIL and three must
    PASS, and the passes are the point — a blanker that is too eager turns a build gate off:
