@@ -48,6 +48,43 @@
 >
 > Nothing here changes what is outstanding: **the lawyer read, plus the D4 wording.**
 
+> ### NEW 2026-08-20 — trip reports are shared now, and §3 does not mention them
+>
+> A memory note from 2026-08-07 recorded that *"nothing real is shared at all"* — the query that
+> reads another climber's trip report carried a **NOT WIRED UP YET** comment. **That is no longer
+> true.** `useRouteTripReports` is used three times in `RouteDetail.jsx` and the comment is gone
+> from `lib/db.js`, so other climbers' real trip reports render on the route page.
+>
+> **The product side is in good shape, and that is worth saying first.** There is a real
+> per-report control — `role="group" aria-label="Who can see this report"`, three options with
+> `aria-pressed`, each explaining itself (*"members of this climb's crew can see it. It won't
+> feed the route's conditions."*). `trip_report_visibility` is `private | crew | public`,
+> defaulting to `crew` (0037); `0081` makes `public` readable by anyone including signed-out.
+> Both live rows are `crew`, and an anonymous read returns 0 — RLS behaves.
+>
+> **The gap is the Policy.** §1 lists "climbing logs" among what is collected. §3, *"What others
+> can see"*, describes the public profile and the float-plan emergency contact — and **does not
+> mention trip reports being visible to a crew or to the public at all**, nor what one contains.
+> Measured from `TripReport`, a shared report renders:
+>
+> - **"Climbed with" — your partners' names**, each clickable through to a profile;
+> - **the GPS track of the climb, with a Download GPX control**;
+> - the **day-by-day itinerary** (hours, distances, gain/loss, timed schedule);
+> - photos, exact date, conditions and the full write-up.
+>
+> **Two things for counsel, both factual rather than legal conclusions:**
+>
+> 1. §3 is the section a reader consults to learn what others see. Trip reports are now one of
+>    the largest things others see, and it is silent on them. §3's existing phrase — *"the fields
+>    you choose to make visible"* — arguably covers it, and a reviewer may think that is thin for
+>    a GPS track and an itinerary.
+> 2. **A report set to `public` names third parties.** Your partners appear by name, publicly,
+>    without themselves choosing it. That is the same shape as Q3 (the emergency contact who
+>    never agreed to anything), on a surface that is public rather than crew-scoped.
+>
+> Nothing here is a defect in the code. It is a description gap, found by re-checking a stale
+> note rather than trusting it.
+
 > ### D4 measured precisely, 2026-08-20 — the one product-side wording decision left
 >
 > D4 has been carried as "OPEN BY DESIGN — do not flip it" without stating what a reader is
