@@ -2548,9 +2548,29 @@ the correction knows the screen is wrong, and they have no way to report it.
     Trailhead on SR-20" really is the access for **ten** routes across the Pickets and Ross Lake,
     the Stehekin ferry really does serve Flora/Trapper/Tupshin. **Remote peaks share one distant
     trailhead; that is what remote means.** Printed as context, never counted.
-  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m. What
-    remains is sub-kilometre slop plus peaks with two genuine approaches where **both records are
-    correct** — `wa_lundin_peak_west_ridge` is the clean example. Do not sweep those to zero.
+  - The repairs (#878, #886, #898, #900) took it to **42**, 93.3% agreeing, p95 701 m, and later work
+    to **5** — 620 of 625 comparable routes agreeing, **99.2%**, p50 0 m, p90 123 m, p95 258 m.
+  - **"What remains is sub-kilometre slop" was half wrong, and re-measuring 2026-08-20 settled it:
+    THERE IS NO SLOP LEFT. All five survivors are peaks with two genuine approaches, and the
+    disagreements are LARGE precisely because of it** — 15,180 m, 13,383 m, 7,829 m, 5,733 m. A
+    disagreement of that size is the signature of two real trailheads, not of a rounding error, so
+    reading the tail as slop points you at the wrong repair entirely. Each was read individually:
+    - `wa_mount_howard_south_slope` settles itself — its own `trailheadDirection` says *"**Two
+      common trailheads** on US-2 in Chelan County give access."*
+    - `wa_remmel_mountain_nw_ridge` (Thirtymile vs Andrews Creek) and `wa_mount_carru_scramble`
+      (Slate Peak vs Monument Creek) are the two this file already documents under
+      `audit:map-pins` as legitimately two-trailhead peaks.
+    - `wa_the_direct_north_ridge_w_gendarme` is Stuart's North Ridge, approached either over Longs
+      Pass from Esmeralda Basin or from the Stuart Lake trailhead. Both are standard.
+    - In every one, the row's own `trailheadDirection` agrees with the `approach_logistics` record,
+      so the *pin* is the second approach rather than an error.
+    **Do not sweep these.** `wa_lundin_peak_west_ridge` remains the clean example of the class.
+  - **A SHADOWED row is not a defect and the count moves when coordinates are filled.** The audit
+    also reports routes carrying a Trailhead pin with no coordinate while `approach_logistics` has
+    one. `wa_spire_mountain_scramble` became one in #1128: its pin names a point *"~Mile 10"* on
+    FR-63 that no source publishes, while the logistics record now holds the researched trailhead at
+    the end of that road. Same road system, different points, and the row went from **zero**
+    coordinates to one. Filling the pin would mean inventing the mile-10 coordinate.
   - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
     declare a **winner, never a coordinate**: the script reads both records off the row and copies
     the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
