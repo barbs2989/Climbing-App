@@ -22,8 +22,10 @@
 //                  naming Crew:Friends.
 //   5. groups    — revert the Crew:Groups fix.                                     MUST FAIL,
 //                  naming Crew:Groups.
-//   6. invites   — revert the Crew:Requests fix.                                   MUST FAIL,
-//                  naming Crew:Requests.
+//   6. invites   — revert the crew-invites heading.                                MUST PASS,
+//                  and that is a recorded coverage GAP, not a success: the fixture has no
+//                  pending crew invite, so "No crew invites" is on screen in both runs and
+//                  neither rule can see it. See the case for the stale-bookkeeping rule.
 //   7. ranks     — revert the Leaderboards fix.                                   MUST FAIL,
 //                  naming Ranks. This one is in ClimbMatchCore.jsx, not ClimbMatch.jsx.
 //   8. nothing   — no edit at all.                                                 MUST PASS.
@@ -97,12 +99,25 @@ const CASES = {
     expect: "fail",
     names: /Crew:Groups/,
   },
+  // THE CREW-INVITES HEADING IS UNMEASURABLE WITH THIS FIXTURE, and this case records that
+  // rather than pretending otherwise. It was written as expect:"fail" and MISSED -- correctly.
+  //
+  // "No crew invites" is on screen in the HEALTHY run too, because the fixture's mate JOINS the
+  // crew rather than being left invited, so there is no pending invite either way. Rule 2 only
+  // flags a claim the OUTAGE INTRODUCED, so it stays quiet, and rule 1 is satisfied by the
+  // friend-requests section beside it, which does say something went wrong. The fix is real; the
+  // guard simply cannot see it. An absence the fixture happens to share is unmeasurable, not
+  // absent -- the same reason a zero-row column is unguarded by construction elsewhere.
+  //
+  // So it expects a PASS, and it is a STALE-BOOKKEEPING alarm: give the fixture a pending crew
+  // invite and this case starts reporting FALSE POSITIVE, which is the signal that the coverage
+  // arrived and the case should become expect:"fail". Same shape as check:a11y-badges' arealatest
+  // case, which asserts its own gap so the gap cannot rot.
   invites: {
     file: "ClimbMatch.jsx",
     from: '>{crewInvitesUnavailable?"Couldn’t load your crew invites":"No crew invites"}</div>',
     to: '>No crew invites</div>',
-    expect: "fail",
-    names: /Crew:Requests/,
+    expect: "pass",
   },
   // The Ranks tab, which was NEVER WALKED until the TABS list was corrected: it said "Me",
   // and NAV's last two entries are "Ranks" and "Profile". So this case pins two things at once
@@ -126,6 +141,23 @@ if (!wanted.length) {
   console.log("name at least one case: " + Object.keys(CASES).join(" "));
   process.exit(1);
 }
+
+// Every bad outcome prints the guard's own table and its verdict lines. A case that misbehaves
+// with no evidence cannot be acted on: "the guard did not catch it", "that screen did not settle
+// on a loaded box so it compared equal and was skipped", and "it failed on a DIFFERENT screen"
+// look identical from an exit code, and they need three different repairs.
+const TABLE_RE = /CHANGED|IDENTICAL|ok —|FAILED|DID NOT RUN|— the outage introduced|nothing on it says/;
+const dump = (out) => {
+  const rows = out.split("\n").filter((l) => TABLE_RE.test(l));
+  if (rows.length) return rows.map((l) => "      " + l.trim()).join("\n");
+  // No table at all means the guard never reached its verdict -- it threw. Show the tail so the
+  // reason is visible instead of leaving a blank block under a confident-sounding label.
+  return out.split("\n").filter(Boolean).slice(-10).map((l) => "      | " + l.trim()).join("\n");
+};
+// A guard that THREW is not a guard that disagreed. Exit 1 from a crash (a dev server that never
+// came up on a loaded box, a browser launch failure) would otherwise be filed as "failed for the
+// wrong reason", which reads as a defect in the checker and sends you editing a correct file.
+const crashed = (out) => !TABLE_RE.test(out);
 
 let bad = 0;
 for (const name of wanted) {
@@ -162,7 +194,12 @@ for (const name of wanted) {
     const failed = r.status !== 0;
     const dead = /DID NOT RUN/.test(out);
 
-    if (dead) {
+    if (!dead && crashed(out)) {
+      console.log(`  INCONCLUSIVE — the guard produced no per-screen table, so it threw rather ` +
+        `than reaching a verdict. This is an environment failure, not a catch and not a miss.`);
+      console.log(dump(out));
+      bad++;
+    } else if (dead) {
       console.log(`  INCONCLUSIVE — the guard reported it did not run. That is not a catch.`);
       console.log("  " + (out.match(/check:outage DID NOT RUN.*/) || [""])[0]);
       bad++;
@@ -170,14 +207,21 @@ for (const name of wanted) {
       console.log(`  caught, and named the right screen (exit ${r.status})`);
     } else if (c.expect === "fail" && failed) {
       console.log(`  FAILED FOR THE WRONG REASON — exit ${r.status} but ${c.names} is not in the output.`);
+      console.log(dump(out));
       bad++;
     } else if (c.expect === "fail") {
       console.log(`  MISSED — the guard passed with the fix reverted.`);
+      // Print the guard's own per-screen table. A miss with no evidence cannot be acted on:
+      // "the guard did not catch it" and "that screen did not settle on a loaded box, so it
+      // compared equal and was skipped" look identical from the exit code alone, and they need
+      // opposite repairs.
+      console.log(dump(out));
       bad++;
     } else if (c.expect === "pass" && !failed) {
       console.log(`  passed, as it must on a clean tree`);
     } else {
       console.log(`  FALSE POSITIVE — the guard failed on an unmodified tree.`);
+      console.log(dump(out));
       bad++;
     }
   } finally {
