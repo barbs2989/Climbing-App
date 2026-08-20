@@ -31,6 +31,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
@@ -49,6 +50,7 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
+npm run check:function-drift # is the LIVE function the one the migrations describe?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -786,6 +788,38 @@ a build error, but a screen that renders wrong or not at all.
     - Twice during this work a plausible story about this screen was wrong and only measurement
       settled it (the flex-stacked `Routes` / `next door ›` spans; and "+5 controls must be the
       four report rows"). On this component, do not reason from the markup or the counts.
+    - **NARROWED 2026-08-20: the COMPONENT is sound, so the remaining unknown is app wiring
+      alone.** `scripts/oneoff/probe-arealatest-ssr.mjs` renders `AreaLatest` directly with
+      `renderToStaticMarkup` — no browser, no dev server — and it produces a full section for
+      every seed area tried: `kings` 5,539 chars, `olympus` 3,435, `lcc` 4,488, `lcc_egg`
+      3,449, heading present in all four. So *"the component will not render for this data"* is
+      **dead**, and every browser attempt that failed was failing on the mount, not the render.
+      That distinction is what four consecutive browser attempts could not separate.
+    - **The gate is `routeView==="areas" && selArea`, and `routeView` DEFAULTS to `"areas"`** —
+      so that half is satisfied out of the box, and `selArea` is the only variable. Which makes
+      the `?za=1` result stranger, not clearer: it set `selArea` (verified: *Kings Peak*) and the
+      tab still rendered 979 characters, i.e. the `{selArea?null:<AreaBrowse/>}` branch — the one
+      that only shows when `selArea` is **falsy** at render time. Something is clearing or not
+      committing it; that is where the next attempt should start.
+    - **Four attempts, all measured, none reaching it**: the `?za=1` opener; and driven browse
+      paths to *Mount Olympus* (peak), *Little Cottonwood Canyon* (canyon) and *The Egg* (crag —
+      whose row is not even present under LCC). The drive itself works and navigates correctly
+      (`scripts/oneoff/probe-drive-to-area-latest.mjs` reports body length and heading at every
+      step); the first version of it simply aimed wrong, descending greedily into *White Pine
+      Boulders*, which carries no `activity` at all.
+    - **Aim at an area that HAS reports, computed rather than guessed.**
+      `scripts/oneoff/probe-which-area-has-activity.mjs` bundles core with esbuild and prints
+      every seed area whose subtree holds dated activity, with its click path: `kings` (5),
+      `mount_baker` (3), `olympus` (3), `angels` (2), `lcc_egg` / `lcc_crescent` /
+      `lcc_secret_garden` (3 each), `lcc_hellgate` (2), `co_telluride` (2). Two esbuild traps it
+      encodes: `--platform=neutral` cannot resolve Supabase's subpackages (use `node`), and
+      `lib/supabase.js` reads `import.meta.env` at module scope, so `--define:import.meta.env={}`
+      is required or the import throws before `ROUTES` is reachable.
+    - **An open question this raises and does NOT answer: does any real user ever see this
+      section?** A working, data-backed component that neither a state injection nor three driven
+      browse paths could put on screen is at least suspicious. That is a claim about the app, not
+      about the guard, and it is deliberately not asserted here — establishing it needs the
+      wiring question above settled first.
   - Overlay discovery and the `?z=` opener come from `scripts/lib/overlay-scaffold.mjs`, shared
     with the checks above, so they cannot drift on which modals exist — and when #748 widened
     that discovery from a name shape to **behaviour**, this check inherited the wider walk for
@@ -1309,6 +1343,37 @@ a build error, but a screen that renders wrong or not at all.
     was checked*, never as a clean catalog. Injection-tested; the 7 cases are at the bottom of the
     script. Cases 6 and 7 pin the `KNOWN` map in both directions — removing a live entry must
     surface it as a real failure, and a bogus name must report as stale.
+- **`check:function-drift`** is the sibling question, and the one no gate on the checkout can
+  answer: **is the function running in production the one this repository describes?**
+  `verify-migrations-applied.mjs` checks objects EXIST by name — `merge_accounts` exists, so it
+  passes, while the live body is an OLDER version than 0035 defines (it writes `crews.user_id`
+  where 0035 writes `created_by`, and lacks 0035's whole crew_members merge). **Existence is not
+  agreement.** Reads the live DB, so **not** a build gate.
+  - Two findings: **DRIFT** (a live body differing from the newest migration that defines it) and
+    **UNTRACKED** (a live function no migration creates at all — nothing in git describes it,
+    nobody reviewed it, and rebuilding from migrations would not produce it).
+  - **The first run reported SEVEN drifting functions and FIVE were false**, which is the entry
+    worth reading before trusting a count here. Five differed only by **two spaces of leading
+    indent** per line, re-applied from a differently-indented source; and `compute_trust_score`
+    differed by exactly its `--` **comment lines**, the live copy having been created
+    comment-free, every statement byte-for-byte identical. Whitespace runs are collapsed and
+    comments stripped before comparing — 7 → 3 → 2 as each class came out. A detector that
+    reports a function correct in every statement is one people learn to ignore.
+  - **It found `is_crew_ready`, which `check:function-columns` structurally cannot.** That
+    function reads `crew.members` and `crews` has no `members` column — but it only READS, and
+    the sibling guard's stated scope is write targets. Untracked, uncalled, hand-made; crew
+    readiness is computed client-side by `datesAgreed`/`agreedDate`. The two guards' scopes are
+    complementary rather than overlapping, and this is the case that shows it.
+  - Four `KNOWN` entries, each a claim about the live database, each failing when **stale**:
+    `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
+    account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
+    0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
+    hand-made functions. **An applied migration is history and must not be rewritten** — aligning
+    `handle_new_user` would take a new migration, not an edit to 0009.
+  - Fails **closed**: an unreachable database, no JSON, an empty catalog, fewer than 20 migrations,
+    or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
+    the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
+    classes the first run actually produced.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -1907,6 +1972,35 @@ the correction knows the screen is wrong, and they have no way to report it.
       omits keys it has nothing for. It also asserts blank strings do not become empty chips —
       otherwise every contributed site would carry three or four blank pills, and no fixture built
       from enrichment data would ever have shown it.
+  - **It also pins the COLLAPSE, in both directions, because a disclosure has two failure modes
+    and only one of them is visible.** Prose still in the default view means nothing was
+    shortened; prose no longer **selected** by `campDetail()` means the disclosure did not hide
+    it, it deleted it — the `descent_text` shape, populated on 1,021 routes and rendered on none.
+    A third assertion requires a **labelled** expand control naming the site, since data behind
+    an unannounced door is unreachable for anyone not using a mouse.
+    - **The collapse silently made an existing assertion VACUOUS, which is the transferable
+      part.** Case 8c counted `Water:` chips to prove a blank contributed string renders no chip
+      — and once the chips were gone that count is 0 whatever the code does, so a broken
+      selector would have read as a pass. It asks `campDetail()` directly now. **When you delete
+      the markup an assertion was scanning, the assertion does not fail — it stops meaning
+      anything.** Re-read the guard, not just its exit code, after changing what it looks at.
+    - What it **cannot** prove, stated in the script rather than implied: that the tap works. SSR
+      renders initial state and cannot click. `check:clickable` covers the keyboard triad and
+      holds announced-but-inert controls at zero, and the tap is driven in a real browser by
+      `scripts/oneoff/probe-camping-expand-onscreen.mjs` (dev server + Chrome, so not a build
+      gate): collapsed shows none of the prose, the control found **by accessible name** reveals
+      all four fields, and a second tap closes it. Seed `ROUTES` carry no `bivy`, so the sites
+      are injected in memory by `scripts/camping-expand.config.mjs` — the same never-edit-the-
+      source pattern `zero-state.config.mjs` and `anniversary.config.mjs` use.
+      - That config asserts **ROUTES[0] is a discipline the camping gate admits**, and the
+        assertion earned itself on its first run: a seed reshuffle would otherwise leave the
+        probe opening a route with no panel and reporting the disclosure broken when it is fine.
+      - It found that by **failing on a fixed 4,000-char window** used to read the route's
+        discipline — ROUTES[0] is far longer, since it carries `communityTracks`, `activity` and
+        `gpx` inline, so it read `undefined`. It balances braces now. That is the **third** magic
+        offset in this one change (the probe's `i + 400`, this window), which is the argument for
+        the rule rather than the instance: **a fixed window encodes a guess about the size of the
+        thing you are looking at, and these files are exactly where that guess is wrong.**
   - Injection-tested, 5 cases at the bottom of the script; 4 were run and each failed naming its
     own defect (deleted mount → `ANCHOR LOST` + exit 1; dropped `scrambling`; removed dedupe;
     dropped the waypoint half of the merge).
@@ -2346,11 +2440,34 @@ the correction knows the screen is wrong, and they have no way to report it.
       variation (*"Sol Duc Road"* / *"Sol Duc Hot Springs Road"* overlap on `duc`) while catching a
       name drawn from another drainage. Clusters below three routes are skipped — there is no
       majority to measure against, the same reason section 1 needs a cluster at all.
-    - **It is a HYPOTHESIS LIST and the output says so.** 47 in WA, precision **not** measured. A
-      peak with two genuine approaches looks exactly like this whichever one it records, and routes
-      legitimately share a trailhead while driving in from different roads. Do not sweep it.
-      `audit:area-parents` records the same discipline: *measure a detector's precision before
-      shipping it, not after.*
+    - **Its first draft shipped at ~25-30% precision, measured on a 20-row sample AFTER the fact,
+      and the dominant false positive was section 1's disease all over again: A DRIVE HAS SEVERAL
+      NAMED LEGS.** *"Ruth Creek Road (FSR 32)"* against a cluster keyed `hannegan` — Hannegan Pass
+      Road **is** FR 32; *"I-90 / Snoqualmie Pass"* against `alpental`, which is at Snoqualmie Pass;
+      *"Railroad Creek Road"* against `chelan, lucerne, holden`, the boat and the village you pass
+      through to reach it. Every needle over road prose has to be told that it describes more than
+      one road. **46 findings became 5.**
+      - The fix uses evidence already in the cluster: if a **neighbour's** own `driveNote` or status
+        mentions the road this row names, the two describe one journey and there is no finding.
+      - **The echo must come from a row that AGREES with the cluster**, or two identically-wrong
+        rows shield each other — `sitkum_glacier` and `frostbite_ridge` both named White Chuck Road
+        at a North Fork Sauk trailhead, each corroborating the other, and an unrestricted echo test
+        silently dropped **both**. A same-journey explanation is worth nothing from a row that has
+        the road wrong itself.
+      - **`driveNote` had to be added to that prose and was not there**: `roadFields()` covers
+        status/seasonalGate/notes for section 1's needles, while driveNote is exactly where a route
+        spells the drive out leg by leg. Found by an injection case, not by reading the code.
+      - **Entry to the scan was gated on road PROSE, so a route naming its road and saying nothing
+        else was invisible to section 2 entirely.** Also found by injection.
+    - **It is still a HYPOTHESIS LIST and the output says so.** 2 left in WA, neither verified. A
+      peak with two genuine approaches looks exactly like this whichever one it records. Do not
+      sweep it. `audit:area-parents` records the same discipline — *measure a detector's precision
+      before shipping it* — and this one is the counter-example that proves the rule: it was shipped
+      unmeasured, and measuring it afterwards found three quarters of the output was noise.
+    - **What a token test cannot catch: a `road.name` that lists SEVERAL roads.**
+      `wa_mount_meany_standard` named Whiskey Bend Road *and* Graves Creek Road at a North Fork
+      Quinault trailhead — three roads, none of them the right one — and passed, because one of them
+      contained the word the cluster shared.
     - **Placeholder names are split out** (2 in WA — *"Forest/park access road (verify per
       trailhead)"*). They are not wrong roads, they are absent ones, and the repairs are opposite:
       one wants research, the other wants a copy from a neighbour.
@@ -3189,9 +3306,25 @@ copies of one route. **Peak names live on `areas.name`; route names are just the
   every read from the app returned `57014` while the same query looked healthy in the SQL
   editor, where the `postgres` role has no timeout. A guard that always errors is a guard
   you do not have.
-- `id like 'wa_%'` is the reflex filter and it misses legacy ids like
-  `stuart_west_ridge` — 6 WA routes today. Filter by the area subtree when a coverage
-  percentage matters.
+- `id like 'wa_%'` is the reflex filter and it misses legacy ids. **Re-measured 2026-08-19: FOUR,
+  not six, and `stuart_west_ridge` is no longer one of them** — it was renamed to a peak-scoped id,
+  so the example this entry used to give sends you hunting for a row that does not exist. The live
+  four are `adams_avalanche_glacier`, `adams_northwest_ridge`, `rainier_central_mowich_face` and
+  `rainier_north_mowich_headwall`. Filter by the area subtree when a coverage percentage matters.
+  - **Match the state as a PATH SEGMENT, never a substring.** `path.includes("washington")` also
+    matches `ca_i_washington_column` (Washington Column, Yosemite) and `mo_washington_state_park`
+    (Missouri): it reported **64** missed routes where the truth is 4, i.e. 94% noise. An ltree path
+    is dot-separated — `split(".").includes("washington")`.
+  - **A per-row audit degrades gracefully under a narrow scope; a COMPARATIVE one fails in the
+    false-pass direction.** Dropping a row does not merely lose that row's finding, it removes the
+    evidence its neighbours are judged against. `audit:trailhead-road-agreement` lost a fifth Mowich
+    route that way — `rainier_central_mowich_face` holds the bridge-closure record, the prefix filter
+    dropped it, and `wa_liberty_cap_ptarmigan_ridge_finish` was left with nothing to contradict. It
+    now scans the whole catalog by default.
+  - **The remaining prefix-scoped audits were checked and are FINE, so do not sweep them.**
+    `audit:aspect-vs-name` and `audit:trailhead-agreement` are per-row — each compares a route
+    against *itself*. All four blind-spot routes were audited by hand: three agree to **0 m** and the
+    fourth carries no coordinate to compare. Rescoping them would gain nothing measurable.
 
 **The origin was one line in `scripts/pipeline/etl-state.mjs`**, which minted route ids as
 `PREFIX + "_" + slug(route name)` while the crag id (`mid`) sat unused in the same
@@ -3254,7 +3387,36 @@ value, put the reasoning somewhere else.**
   "depends on the descent chosen" rather than defaulting to 0. See
   [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
 
+- **`bivy[].capacity` / `.water` / `.permit` are CHIPS, and the camping enrichment filled all
+  three with paragraphs.** Measured on the live catalog: median **130 / 136 / 297** characters
+  and up to **1,386**, so **5,001 / 5,008 / 5,020 of 5,083** sites carried prose inside a
+  rounded pill (`borderRadius:20, padding:"2px 9px"`). The panel reached **15,796 characters**
+  on one route and was always fully expanded on a 390px phone. This is the same defect as
+  `season` and `grade` above, committed by a pass that had *read this section* — the two named
+  columns were avoided and three unnamed ones took the identical hit, because the rule was
+  remembered as a fact about `season` and `grade` rather than as a question to ask of any
+  column. **Ask the question of the column you are actually writing.**
+  - Defended reader-side, the way `seasonShort()` and `shortGrade()` defend theirs: the pill is
+    gone, the sites are **collapsed** to name + elevation + type, and the prose renders as a
+    labelled block inside the disclosure. `check:camping` pins both directions — prose out of
+    the default view, and prose still *selected* by `campDetail()`, since a disclosure that
+    stops selecting has not hidden the data, it has deleted it.
+  - **A derived "water · no permit" summary line was designed, measured and REJECTED**, and the
+    measurement is worth not repeating (`scripts/oneoff/measure-camping-verdict-vocabulary.mjs`).
+    A keyword rule leaves **44% of permits and 30% of waters** in no bucket at all, and where it
+    *does* fire it is wrong in the dangerous direction: *"Free self-issued wilderness permit at
+    the Killen Creek trailhead"* reads as **no permit** to any negation rule, and a self-issued
+    permit is one you still have to fill in. Being wrong about a permit costs a fine; being
+    wrong about water sends a party up dry. Same refusal as `rappels` above — **do not read a
+    fact out of English prose**, least of all a safety- or money-adjacent one.
+  - The measuring script's own first-clause splitter cut *"Cascade Volcano Pass (Mt. Adams)"* at
+    the abbreviation, which is the tokeniser trap `audit:approach-scope` already records. **A
+    count is only as good as its tokeniser**, including the count you are using to decide
+    whether a rule is safe.
+
 The rule generalises: **before writing a researched string into an existing column, look at
 where that column renders.** `npm run check:field-renders` will tell you; a column that
 reaches a header, a pill, a chip or a table cell takes a value, and its explanation belongs
-in the prose column beside it.
+in the prose column beside it. Note what that guard could **not** catch here: it asks whether a
+column reaches a screen, and all three of these did — correctly, in full, in the wrong shape.
+**Reaching a screen and fitting the element it reaches are different questions.**

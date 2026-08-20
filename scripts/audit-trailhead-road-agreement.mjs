@@ -29,15 +29,35 @@
 // both be. The repair needs the road's actual current status from outside the database, which is
 // research. Read both rows and check the road before changing either.
 //
-//   node scripts/audit-trailhead-road-agreement.mjs [--state wa] [--radius 500] [--all]
+//   node scripts/audit-trailhead-road-agreement.mjs [--radius 500] [--state wa]
+//
+// Scans the whole catalog by default. `--state wa` narrows it and PRINTS A WARNING, because an
+// id-prefix scope drops legacy ids and a comparative audit judged against a truncated cluster fails
+// in the false-pass direction. See the note beside RADIUS below.
 import fs from "fs";
 import path from "path";
 import { selectAll, anonKey } from "./lib/supabase-env.mjs";
 
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > 0 && process.argv[i + 1] ? process.argv[i + 1] : d; };
-const STATE = arg("state", "wa").toLowerCase();
+// SCOPE DEFAULTS TO THE WHOLE CATALOG, and that is a correction rather than a preference.
+//
+// It used to default to `id=like.wa_*`, and that filter SPLIT A CLUSTER AND HID A REAL DEFECT.
+// Five routes share the Mowich Lake trailhead, and `rainier_central_mowich_face` carries a LEGACY
+// id with no `wa_` prefix — so under the WA scope the row recording the permanent bridge closure
+// was filtered out, nothing was left for `wa_liberty_cap_ptarmigan_ridge_finish` to disagree with,
+// and it went on saying the road opens in July. CLAUDE.md already records the general trap:
+// "`id like 'wa_%'` is the reflex filter and it misses legacy ids."
+//
+// A comparative audit is far more exposed to this than a per-row one: dropping a row does not just
+// lose that row's finding, it removes the EVIDENCE its neighbours are judged against. Silent, and
+// in the false-pass direction.
+//
+// The whole catalog is affordable because the qualifying population is tiny — 205,543 routes, of
+// which 925 carry both a trailhead coordinate and road prose, and 922 of those are Washington. So
+// the "expensive" scope costs about a minute and the "cheap" one was buying nothing.
 const RADIUS = Number(arg("radius", 500));
-const ALL = process.argv.includes("--all");
+const STATE = arg("state", "").toLowerCase();
+const ALL = !STATE;
 
 const num = v => (v === null || v === undefined || v === "" ? null : Number.isFinite(+v) ? +v : null);
 const R = Math.PI / 180;
@@ -136,6 +156,7 @@ if (FIXTURE) {
   anonKey(); // fail loudly now rather than mid-scan
   const filter = ALL ? "" : `id=like.${STATE}_*`;
   console.log(`reading routes${ALL ? " (whole catalog)" : ` matching ${STATE}_*`} …`);
+  if (!ALL) console.log(`  NOTE: an id-prefix scope misses legacy ids, which can remove the evidence a cluster is judged against — this is how a fifth Mowich route stayed hidden. Prefer the default whole-catalog scan.`);
   rows = await selectAll("routes", "id,name,area_id,road,access,approach_logistics,waypoints", filter, { pageSize: 1000 });
 }
 // Fail closed: an empty read makes every cluster look consistent, which is the false-pass direction.
@@ -153,8 +174,11 @@ for (const r of rows) {
   }
   if (lat === null || lng === null) continue;
   const fields = roadFields(r);
-  if (!Object.keys(fields).length) continue;
-  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields, roadName: (r.road || {}).name,
+  // Section 1 needs road PROSE; section 2 needs only a road NAME. Gating entry on prose alone hid
+  // every route that names its road and says nothing else about it from section 2 entirely — found
+  // by an injection case, which is the whole argument for writing them.
+  if (!Object.keys(fields).length && !(r.road || {}).name) continue;
+  pts.push({ id: r.id, name: r.name, lat, lng, th: String(name || "?"), fields, roadName: (r.road || {}).name, driveNote: (r.road || {}).driveNote,
     closed: fire(fields, CLOSED, new RegExp(`${SEASONAL_CTX.source}|${OTHER_ROAD_CTX.source}`, "i")), open: fire(fields, OPEN, PAST_CTX) });
 }
 
@@ -260,9 +284,40 @@ for (const c of clusters) {
   for (const p of named) for (const t of rtoks(p.roadName)) freq.set(t, (freq.get(t) || 0) + 1);
   const core = [...freq.entries()].filter(([, n]) => n >= Math.ceil(named.length / 2)).map(([t]) => t);
   if (!core.length) continue; // the cluster does not agree on a road name; nothing to measure against
+  // A DRIVE HAS SEVERAL NAMED LEGS, and different rows name different ones. Comparing road NAMES
+  // alone therefore reports one journey described from two points along it: "Ruth Creek Road (FSR
+  // 32)" against a cluster whose core is `hannegan` — Hannegan Pass Road IS FR 32; "I-90 /
+  // Snoqualmie Pass" against `alpental`, which is at Snoqualmie Pass; "Railroad Creek Road" against
+  // `chelan, lucerne, holden`, which are the boat and the village you pass through to reach it.
+  // Measured on a 20-row sample of the first draft, that class was most of the output and precision
+  // sat near 25-30%.
+  //
+  // The evidence to tell them apart is already in the cluster: if a NEIGHBOUR's own driveNote or
+  // status mentions the road this row names, the two are describing one journey and there is no
+  // finding. Prose is read here rather than just `name`, because that is where a route spells the
+  // drive out leg by leg ("Mountain Loop Highway 19.7 mi to Sloan Creek Road (FR 49)").
+  //
+  // This is the same segment-blindness section 1 needed four separate rules for. Road prose is
+  // written about MORE THAN ONE ROAD, and every needle over it has to be told so.
+  // THE ECHO MUST COME FROM A ROW THAT AGREES WITH THE CLUSTER, or two identically-wrong rows
+  // shield each other: `sitkum_glacier` and `frostbite_ridge` both name White Chuck Road at a North
+  // Fork Sauk trailhead, each corroborating the other's error, and an unrestricted echo test
+  // silently dropped both. A same-journey explanation is only worth anything from a row that has
+  // the road right in the first place.
+  // `driveNote` MUST be in this prose and was not: `roadFields()` covers status/seasonalGate/notes
+  // for section 1's needles, but driveNote is precisely where a route spells the drive out leg by
+  // leg ("From Darrington, drive the Mountain Loop Highway 19.7 mi to Sloan Creek Road (FR 49)").
+  // Without it the same-journey test could not see the sentence that proves two names are one road.
+  // Found by an injection case, not by reading the code.
+  const clusterProse = named.filter(q => core.some(x => rtoks(q.roadName).has(x)))
+    .map(q => [q, [q.roadName, q.driveNote, ...Object.values(q.fields)].filter(Boolean).join(" ").toLowerCase()]);
   for (const p of named) {
     const t = rtoks(p.roadName);
     if (core.some(x => t.has(x))) continue;
+    const mine = [...t];
+    if (!mine.length) continue;
+    const echoed = clusterProse.some(([q, prose]) => q !== p && mine.some(x => prose.includes(x)));
+    if (echoed) continue; // a neighbour describes this road as part of the same drive
     mismatched.push({ p, core, peers: named.filter(q => q !== p).slice(0, 3) });
   }
 }
@@ -289,7 +344,7 @@ console.log(`${rows.length} routes read · ${pts.length} carry both a trailhead 
 console.log(`${clusters.length} trailhead cluster(s) within ${RADIUS} m · ${multi.length} shared by more than one route`);
 console.log(`${findings.length} cluster(s) where one route says the road is CLOSED and another says it OPENS.`);
 console.log(`${wrongRoad.length} route(s) whose road.name names a DIFFERENT road from their trailhead neighbours,`);
-console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0,2).map(m=>m.p.roadName).join('", "')}" …).`);
+if (vague.length) console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0, 2).map(m => m.p.roadName).join('", "')}" …).`);
 if (wrongRoad.length) {
   console.log(`\nSection 2 is a HYPOTHESIS LIST, weaker than section 1 and deliberately so: a route can`);
   console.log(`legitimately share a trailhead with routes that drive in from another road, and a peak with`);
