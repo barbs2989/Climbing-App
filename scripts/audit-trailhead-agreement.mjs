@@ -72,6 +72,18 @@ const norm = s => String(s || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ")
   .replace(/\s+/g, " ").trim();
 
 let both = 0, agree = 0, shadowed = 0;
+/* WHAT THIS AUDIT CANNOT SEE, COUNTED RATHER THAN DROPPED. The comparison needs a coordinate on
+   BOTH sides, so every row missing one silently left the run and the headline percentage was a
+   share of a denominator nobody stated. Measured 2026-08-19: 176 WA rows carry a trailhead NAME in
+   approach_logistics with no coordinate beside it, against the 14 the defect index had recorded —
+   23% of every row that carries a direction at all. An unstated denominator reads as a guarantee
+   ([[when-an-audit-reports-zero-ask-its-denominator]]), and overstated coverage is the false-pass
+   direction, so these are now reported as their own class.
+
+   They split by whether the row has ANY trailhead position, because the two need opposite repairs:
+   a row whose PIN still has a coordinate can be reconciled from itself, while a row with neither
+   has no trailhead position at all and needs research. */
+let logNoCoord = 0, logNoCoordPinHas = 0, noPositionAtAll = 0;
 const findings = [], dists = [], shadows = [];
 for (const r of rows) {
   const al = (r.approach_logistics && typeof r.approach_logistics === "object"
@@ -89,7 +101,15 @@ for (const r of rows) {
     shadowed++;
     if (shadows.length < 12) shadows.push({ id: r.id, pin: typed.name, log: al.trailhead, lLat, lLng });
   }
-  if (lLat === null || lLng === null || !w) continue;
+  if (lLat === null || lLng === null || !w) {
+    /* Count the miss before dropping it. `al.trailhead` is the NAME, so a row that names a
+       trailhead and cannot place it is the class that hides from this audit entirely. */
+    if (al && String(al.trailhead || "").trim() && (lLat === null || lLng === null)) {
+      logNoCoord++;
+      if (w) logNoCoordPinHas++; else noPositionAtAll++;
+    }
+    continue;
+  }
   both++;
   const d = Math.round(hav(num(w.lat), num(w.lng), lLat, lLng));
   dists.push(d);
@@ -107,6 +127,13 @@ const q = p => sorted.length ? sorted[Math.min(sorted.length - 1, Math.floor(sor
 console.log(`${STATE}: ${rows.length} routes · ${both} carry BOTH a trailhead pin and approach_logistics coords`);
 console.log(`agree within ${MIN_M} m: ${agree} (${pct(agree, both)})   disagree: ${findings.length}`);
 console.log(`separation: p50 ${q(0.5)} m · p90 ${q(0.9)} m · p95 ${q(0.95)} m · max ${q(1)} m\n`);
+
+console.log(`-- NOT COMPARABLE: ${logNoCoord} routes NAME a trailhead in approach_logistics but --`);
+console.log(`   store no coordinate for it, so they never enter the ${both} above. This audit is`);
+console.log(`   silent about them by construction — it compares two coordinates, and one is absent.`);
+console.log(`   ${logNoCoordPinHas} of them still have a coordinate on the waypoint pin, so the row can be`);
+console.log(`   reconciled from itself; the other ${noPositionAtAll} carry NO trailhead position at all and`);
+console.log(`   need research, not repair. Read the agreement percentage above against ${both}, not ${rows.length}.\n`);
 
 console.log(`-- SHADOWED: ${shadowed} routes carry a Trailhead pin with NO coordinate while --`);
 console.log(`   approach_logistics holds a usable one. RouteDetail picks the pin by type alone,`);
