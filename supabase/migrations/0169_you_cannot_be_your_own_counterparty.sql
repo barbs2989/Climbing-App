@@ -36,9 +36,9 @@ alter table belay_catches
   add constraint belay_catches_not_self check (belayer_id <> climber_id);
 
 comment on constraint vouches_not_self on vouches is
-  'A vouch is a trust signal FROM SOMEONE ELSE (0167). useClimberVouches counts every row with '
+  'A vouch is a trust signal FROM SOMEONE ELSE (0169). useClimberVouches counts every row with '
   'to_id = the climber, so a self-vouch would be counted as one.';
 
 comment on constraint belay_catches_not_self on belay_catches is
-  'You cannot belay yourself (0167). Separate from the open question of whether the other party '
+  'You cannot belay yourself (0169). Separate from the open question of whether the other party '
   'must confirm a catch — see the migration header.';

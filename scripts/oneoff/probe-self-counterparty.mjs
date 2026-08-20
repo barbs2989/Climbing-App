@@ -84,7 +84,7 @@ try {
 }
 process.exit(fail ? 1 : 0);
 
-// MEASURED on the live project, before and after 0167:
+// MEASURED on the live project, before and after 0169:
 //
 //                                  before        after
 //   A vouches for B                landed        landed   <- MUST keep working
@@ -92,7 +92,7 @@ process.exit(fail ? 1 : 0);
 //   A vouches for A                201 <-BUG     no row
 //   A logs catching A              201 <-BUG     no row
 //
-// STILL OPEN, and deliberately not fixed by 0167: A can log a catch with belayer_id = A and
+// STILL OPEN, and deliberately not fixed by 0169: A can log a catch with belayer_id = A and
 // climber_id = ANY stranger, unbounded, crediting itself with catches for people it has never
 // climbed with. Whether that needs the other party's confirmation is a product decision, not a
 // constraint — the UI already speaks of "partners confirmed", which suggests an intended model.
