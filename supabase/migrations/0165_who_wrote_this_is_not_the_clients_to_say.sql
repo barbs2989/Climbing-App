@@ -58,10 +58,10 @@ create policy "anyone can file a report open" on user_reports for insert with ch
 );
 
 comment on column contributions.contributor is
-  'The contributor''s auth uid. RLS pins this to auth.uid() (0164) — consensus counts DISTINCT '
+  'The contributor''s auth uid. RLS pins this to auth.uid() (0165) — consensus counts DISTINCT '
   'contributors, so a client-supplied value lets one account manufacture "3 climbers agree".';
 
 comment on column user_reports.reporter is
   'The reporter''s auth uid, or NULL for a signed-out report (deliberate: being logged out must '
-  'not block someone being harassed). RLS pins it to null-or-auth.uid() (0164) so a report '
+  'not block someone being harassed). RLS pins it to null-or-auth.uid() (0165) so a report '
   'cannot be filed under another account.';
