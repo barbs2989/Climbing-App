@@ -3988,6 +3988,31 @@ value, put the reasoning somewhere else.**
   `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
   falling back to a cut at `;`/`.`/`(` — but it is a *repair*, and it can only ever show
   less than what was written.
+  - **Shortening is only half a fix; audit what the box ACTUALLY SAYS afterwards.** When the
+    same defence was pointed at `approach_variants[].season`, **15% (132 of 885)** fell through
+    to its last-resort truncation and read as nonsense — `"Roughly January through the e…"`,
+    `"Same window, and only with th…"`. Three causes wanting three different repairs: **25%
+    already fitted 48 characters** (the 30-char budget is a HEADER-STRAP constraint, and the
+    approach pill owns its own row — `seasonShort(s, max)` now takes a per-call budget); **38%
+    had a real window whose ends are SEASONS not months** (`"August to autumn"`, `"Late summer
+    into early September"`); **37% genuinely long**, which now truncate on a **word boundary**
+    so the pill reads as a sentence that stops rather than a bug. **132 → 44 (15% → 5%)**, both
+    mechanical causes at zero.
+  - **WIDENING THE PRIMARY PATTERN CAUSED A REGRESSION, and only measuring the OTHER caller
+    caught it.** The rungs run window → clause-cut → truncate, so a widened window **preempts**
+    values whose first clause was already the better answer:
+    `"Summer (rock) or late winter-spring (ice/mixed)"` showed `"Summer"` and became
+    `"late winter-spring"` — the strap telling a climber a summer rock route is a winter route.
+    The season-word pattern is therefore a **separate, later** fallback tried only after the
+    clause cut fails, never a widening of the first. Header diffs went 13 → 8, and the remaining
+    8 are all word-boundary improvements.
+    **When you change a shared display helper, diff the other caller's output over real data** —
+    `scripts/oneoff/verify-season-short-header-unchanged.mjs` loads the function from a git ref
+    and from the working tree and compares across every distinct catalog value.
+  - **Point the audit at the surface it claims to describe.** That audit called
+    `seasonShort(full)` with the default 30 while the app passes 48, so it was measuring the
+    header strap while reporting on the approach panel — its "already fits" bucket stayed stuck
+    at 33 until that was corrected.
 - **`grade` is a GRADE.** It reaches the compact route rows on an area page and the header
   pill, where there is room for `5.9` and not for `"5.11b/c (6c+ French, E4 6a British)"`
   or `"4th class, described by guidebook sources as 'probably low 5th to most'"`.
