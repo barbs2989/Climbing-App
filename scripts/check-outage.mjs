@@ -91,6 +91,27 @@
 // So nav is clicked BY ACCESSIBLE NAME like the sub-tabs, and a click that does not land is
 // fail-closed rather than noted. A tab that is never opened has no findings for the same reason
 // an empty query has no rows, and "no findings" is what this guard prints when it is working.
+//
+// NOTHING HAS YET ASKED about the Profile tab's own sections, and that phrasing is deliberate --
+// write a coverage limit as "nothing has asked X", never as "X is out of scope", because the
+// first invites the next session to go and ask and the second reads as a decision already made.
+// The paragraph above is what happened when somebody finally read one of these as a worklist.
+//
+// Concretely: MyFiledReports (useMyFiledReports) and CatchLedger (useBelajCatches) are DB-backed
+// and carry no xUnavailable flag. This run reports Profile as says-empty=YES and rule 2 stays
+// quiet, because those sections are empty in BOTH runs -- the fixture has no filed reports and
+// no catches. An absence the fixture happens to share is UNMEASURABLE, not absent; the same
+// reason a zero-row column is unguarded by construction in check:field-renders. The crew-invites
+// HEADING is in that same position and its injection case records it.
+//
+// It is reachable, though, and the friend-requests fix is the proof of method: the flag keys on
+// isError, NOT on whether any row exists, so gating the copy changes the screen under an outage
+// whether or not the fixture has data. One query at a time, as the note above already insists.
+//
+// A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
+// of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
+// equal to its healthy twin, and be skipped rather than judged. Re-run a miss on a quiet machine
+// before believing it, and read the per-screen table the harness now prints on a miss.
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -156,7 +177,13 @@ const EMPTY_RE = /no .* yet|nothing here|none yet|get started|add your first|no 
 // recently found here were counts: "0 routes" and "0 crews" on the Home tiles, and "0 climbs to
 // go" in the Logbook. A vocabulary of absence that cannot spell zero misses the commonest way
 // this app claims to have nothing.
-const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno (climbs|crews|routes|areas|objectives)\b|\b0 (climb|crew|route|area|objective|logged)/i;
+// The zero-count half of this list has now been short THREE times, and each miss was one more
+// noun rather than a different idea: "0 routes"/"0 crews" (the Home tiles), "0 climbs to go" and
+// "0 logged" (the Logbook), and "0 joined" (the Groups sub-view, found by an injection that
+// MISSED). A vocabulary of absence that cannot spell the noun in front of it is the shorter
+// worklist this repo keeps recording -- so when a screen is added, check what its counts are
+// called before trusting a quiet run.
+const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno (climbs|crews|routes|areas|objectives)\b|\b0 (climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
 
 const settle = async (page) => {
   let last = "", same = 0;
