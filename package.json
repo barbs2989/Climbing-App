@@ -34,6 +34,7 @@
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "audit:waypoint-order": "node scripts/audit-waypoint-order.mjs",
     "audit:waypoint-distances": "node scripts/audit-waypoint-distances.mjs",
+    "audit:gain": "node scripts/audit-gain-vs-waypoints.mjs",
     "audit:map-pins": "node scripts/audit-route-map-pins.mjs",
     "audit:access-prose": "node scripts/audit-misfiled-access-prose.mjs",
     "audit:note-voice": "node scripts/audit-waypoint-note-voice.mjs",

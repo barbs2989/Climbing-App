@@ -142,7 +142,11 @@ console.log(`Either the coordinate is wrong or the elev is, and it goes BOTH way
 console.log(`9,440 ft is right and its pin is 4,883 ft too low, while Canyon Creek Trailhead's pin is`);
 console.log(`right and its 6,760 ft is wrong. Read both before writing either. Grouped by route,`);
 console.log(`because a route whose pins came from one bad pass is ONE defect, not ${bad.length}.\n`);
-for (const [r, ps] of Object.entries(byRoute).sort((a, b) => b[1].length - a[1].length).slice(0, 40)) {
+// EVERY route, not the worst 40. A truncated list reads as the whole finding — cross-referencing
+// this against the structural audit to size the caption's blind spot silently measured 40 routes
+// and would have reported that fraction as the answer. `check:field-renders` records the same
+// rule: a cap that is not announced is indistinguishable from complete coverage.
+for (const [r, ps] of Object.entries(byRoute).sort((a, b) => b[1].length - a[1].length)) {
   console.log(`  ${r}  (${ps.length} pin${ps.length > 1 ? "s" : ""})`);
   for (const p of ps.slice(0, 6))
     console.log(`      ${String(p.diff > 0 ? "+" + p.diff : p.diff).padStart(7)} ft  ${p.type.padEnd(12)} claims ${String(p.elev).padStart(6)}, ground ${String(Math.round(p.ground)).padStart(6)}  "${String(p.name || "").slice(0, 40)}"`);

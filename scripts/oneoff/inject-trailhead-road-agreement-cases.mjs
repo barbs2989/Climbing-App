@@ -1,10 +1,14 @@
 // Injection cases for audit:trailhead-road-agreement.
 //
-// The audit reports 3 findings against Washington. Three is also what a BROKEN scan prints, and the
-// six tightenings that took it from 11 to 3 each removed a class of match — so the live risk is no
-// longer noise, it is a needle that has been narrowed until it matches nothing real. These cases
-// hold both directions: the two shapes it exists to catch must FIRE, and the four correct shapes it
+// The audit now reports ZERO against the whole catalog, on both sections. Zero is also exactly what
+// a BROKEN scan prints, and every one of the seven tightenings that took section 1 from 11 findings
+// to 0 REMOVED a class of match — so the live risk is no longer noise, it is a needle narrowed until
+// it matches nothing real. These cases are the only thing separating those two readings, and they
+// hold both directions: the shapes the audit exists to catch must FIRE, and the correct shapes it
 // was taught to ignore must STAY silent.
+//
+// Keep this header honest. A count here that has drifted from the live run is the stale-bookkeeping
+// failure the `KNOWN` and `NEEDS_EXTRA_STATE` maps elsewhere in this repo are held to.
 //
 // It runs against a synthetic catalog, not the live database — the faults are in the data, and this
 // checker cannot write. `--fixture` makes the audit read a JSON file instead of Supabase.
