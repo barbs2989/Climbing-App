@@ -74,6 +74,13 @@ const FIELDS = [
   ["seasonal_guidance", "seasonalGuidance"], ["seasonal_hazards", "seasonalHazards"],
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],
   ["pitch_detail", "pitchDetail"], ["rappel_detail", "rappelDetail"], ["rappel_count_note", "rappelCountNote"],
+  // `difficulty` is the 5-axis profile {physical,technical,exposure,commitment,routefinding}
+  // that DiffRadar draws. It was populated on 8,029 routes and mapped by NOTHING — dbRouteToCamel
+  // had no reference to it at all — so `DiffRadar`'s `if(!d) return null` fired on every
+  // DB-backed route and ~15,000 characters of route page were dark catalog-wide. Measured:
+  // 24,236 chars without it, 39,027 with. Exactly the descent_text shape, and exactly why this
+  // list being hand-maintained is the risk the comment below already names.
+  ["difficulty", "difficulty"],
   // 0122's three. This list is HAND-MAINTAINED, so a new column is invisible here until someone
   // adds it — and these three were the ones most worth watching: `bivy`'s panel has already been
   // left defined and mounted NOWHERE once, by a merge that kept main's copy of the dense line the
@@ -339,6 +346,14 @@ const SENTINELS = {
   rock: { base: BASES.crag, patch: { rock: "ZZROCKZZ", rockType: "ZZROCKZZ" } },
   crux: { base: BASES.crag, patch: { crux: "ZZCRUXZZ" } },
   pads: { base: BOULDER, patch: { pads: 7 }, numeric: true },
+  // `difficulty` is the 5-axis profile DiffRadar draws. Every leaf is a NUMBER, so there is no
+  // string to search for and the ordinary probe reports it UNPROVABLE — but its rendering has a
+  // deterministic text anchor, because DiffRadar prints its own axis labels and returns null
+  // without the prop. Judge it on that, not on "did the page change": the weaker test passes on
+  // any incidental difference, and this column was dark on the entire catalog until #1020's
+  // sibling audit found dbRouteToCamel had no reference to it at all.
+  difficulty: { base: BASES.crag, anchor: "Route-finding",
+    patch: { difficulty: { physical: 4, technical: 5, exposure: 3, commitment: 2, routefinding: 1 } } },
 };
 
 // Render a sentinel-patched route across every sub-tab and report where it landed. Numeric
@@ -355,6 +370,9 @@ function assessSentinel(col) {
     try { without = txt(render(spec.base, tab)); } catch { /* shape may throw */ }
     if (withField && withField !== without) changed = true;
     if (needle && withField.includes(needle)) hits.push(tab);
+    // An all-numeric column can still have a deterministic ANCHOR in what it renders. Requiring
+    // the anchor to be absent WITHOUT the field is what makes it evidence rather than decoration.
+    else if (spec.anchor && withField.includes(spec.anchor) && !without.includes(spec.anchor)) hits.push(tab);
   }
   return { hits, changed, needle };
 }

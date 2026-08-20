@@ -77,13 +77,9 @@ const KNOWN = {
     "repaired on its own — see 0136: the throw is the only thing making an ungated " +
     "account-merge RPC safe. Needs an auth.uid() ownership gate written at the same time.",
 
-  auto_archive_crews:
-    "Writes crews.archived_at and crews.status, neither of which exists. It is in NO migration " +
-    "— nothing in supabase/migrations/ creates it — so it was made by hand in the SQL editor and " +
-    "has never been in version control. Nothing calls it: no app code, no trigger, no cron. " +
-    "Implementing it means adding two columns and a crew-archiving feature, which is a product " +
-    "decision, not a repair. Left for that decision rather than dropped, because dropping a " +
-    "function that git has never seen destroys the only record of the intent.",
+  // auto_archive_crews was declared here until 0167 dropped it — see that migration, which
+  // records its body verbatim. Nothing referenced it and the app already archives crews
+  // client-side with CREW_ARCHIVE_GRACE_DAYS.
 };
 
 // ── one round trip: the writing functions, plus every public column ──────────
