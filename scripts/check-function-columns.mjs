@@ -56,26 +56,11 @@ const fail = [];
 // fails, so the list cannot rot into a description of code that is gone. Same standard as
 // check:field-renders' KNOWN map and check:zero's NEEDS_EXTRA_STATE.
 const KNOWN = {
-  // DO NOT "FIX" THIS ONE. The missing column is the only thing keeping it inert, and 0136 says
-  // so in as many words: merge_accounts reassigns climb_logs.user_id, vouches.from_id, sets
-  // profiles.account_type='secondary' + primary_account_id and inserts account_links, for TWO
-  // ARBITRARY uuids, with NO auth.uid() check tying the caller to either one. Its first statement
-  // is `update crews set user_id = …` and crews.user_id does not exist, so it throws and the whole
-  // function rolls back. Repairing that one statement without also writing an ownership gate turns
-  // it into an account-takeover primitive.
-  //
-  // The live body is ALSO an older version than the migration that defines it — 0035 writes
-  // `created_by` (correct) and carries a crew_members merge statement the live body does not have.
-  // So 0035 never took. Re-applying 0035 is exactly the dangerous repair described above; it is the
-  // obvious move and it is wrong. Exposure is already closed either way: 0136 revoked execute to
-  // service_role only.
-  //
-  // The real fix is an ownership gate in the body, written when account linking (0035 Phase 3/4)
-  // is actually built. Until then this entry is what stops somebody helpfully "repairing" it.
-  merge_accounts:
-    "Live body drifted from 0035 and writes crews.user_id, which does not exist. MUST NOT be " +
-    "repaired on its own — see 0136: the throw is the only thing making an ungated " +
-    "account-merge RPC safe. Needs an auth.uid() ownership gate written at the same time.",
+  // merge_accounts was declared here until 0170 REMOVED the account-linking feature
+  // outright. The entry said the RPC must not be repaired without an ownership gate, and
+  // that gate was only worth writing if the feature was wanted — it was not: no UI, no
+  // caller, 0 rows in account_links, 0 linked profiles. So the liability went instead of
+  // being made safe. Same call 0167 made for the two dead crew functions.
 
   // auto_archive_crews was declared here until 0167 dropped it — see that migration, which
   // records its body verbatim. Nothing referenced it and the app already archives crews

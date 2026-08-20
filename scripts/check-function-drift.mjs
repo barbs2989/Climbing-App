@@ -51,13 +51,11 @@ const fail = [];
 // migration — or stops existing — the claim is stale and this run fails, so the list cannot rot
 // into a description of a database that has moved on.
 const KNOWN = {
-  merge_accounts:
-    "DRIFT, and it MUST NOT be repaired on its own. The live body is older than 0035: it writes " +
-    "crews.user_id (which does not exist) where 0035 writes created_by, and lacks 0035's " +
-    "crew_members merge. 0136 records why the throw is load-bearing — the function reassigns " +
-    "climb_logs.user_id, vouches.from_id and profiles.account_type for two arbitrary uuids with " +
-    "NO auth.uid() check, so re-applying 0035 arms an account-takeover primitive. Needs an " +
-    "ownership gate written in the same change. Exposure is closed: 0136 revoked it to service_role.",
+  // merge_accounts was declared here until 0170 REMOVED the account-linking feature
+  // outright. The entry said the RPC must not be repaired without an ownership gate, and
+  // that gate was only worth writing if the feature was wanted — it was not: no UI, no
+  // caller, 0 rows in account_links, 0 linked profiles. So the liability went instead of
+  // being made safe. Same call 0167 made for the two dead crew functions.
 
   handle_new_user:
     "BENIGN. Differs from 0009 only in writing `public.profiles` where the migration writes " +
