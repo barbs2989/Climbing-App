@@ -50,6 +50,39 @@ try {
   page.on("pageerror", e => console.log("  PAGE ERROR:", String(e).slice(0, 160)));
   await page.goto(`http://127.0.0.1:${PORT}/Climbing-App/?zr=1`, { waitUntil: "commit", timeout: 180000 });
   await page.waitForFunction("window.__routeOpen===true", null, { timeout: 180000 });
+  // `__routeOpen` means the OPENER FIRED, not that the page rendered. RouteDetail is a lazy chunk
+  // and vite compiles it on first request, so the screen sits on "Loading climb…" — 213 characters —
+  // for a long time on a loaded box. Clicking then finds no sub-tabs and reads as a missing map.
+  // [[lazy-chunk-cold-compile-reads-as-blank]]
+  await page.waitForFunction(
+    "document.body.innerText.length>600 && !/Loading climb/.test(document.body.innerText)",
+    null, { timeout: 180000 });
+
+  // THE MAP IS ON THE PLANNER SUB-TAB for a non-crag route, and `?zr=1` opens the route on
+  // Overview — so the first version of this probe waited 120s for a `.leaflet-container` that was
+  // never going to render, and read as an environment failure. Click through first.
+  //
+  // Scoped away from fixed/sticky chrome deliberately: CLAUDE.md records that a route sub-tab name
+  // collides with the bottom nav, so a global text match silently leaves the route page.
+  const clicked = await page.evaluate(() => {
+    const inChrome = el => { for (let n = el; n; n = n.parentElement) { const p = getComputedStyle(n).position; if (p === "fixed" || p === "sticky") return true; } return false; };
+    for (const el of document.querySelectorAll("button,[role=button],div,span")) {
+      const t = (el.textContent || "").trim();
+      if ((t === "Plan" || t === "Planner") && !inChrome(el) && el.getClientRects().length) { el.click(); return t; }
+    }
+    return null;
+  });
+  console.log(`  sub-tab clicked: ${clicked || "(none found)"}`);
+  if (!clicked) {
+    // Do not guess at labels twice — ask the page what it is showing.
+    const diag = await page.evaluate(() => ({
+      len: document.body.innerText.length,
+      head: document.body.innerText.slice(0, 200).replace(/\s+/g, " "),
+      controls: [...document.querySelectorAll("button,[role=button]")].map(e => (e.textContent || "").trim()).filter(Boolean).slice(0, 40),
+    }));
+    console.log(`  body ${diag.len} chars: ${diag.head}`);
+    console.log(`  controls: ${diag.controls.join(" | ")}`);
+  }
   // Leaflet loads from a CDN inside the app; give the tiles and markers time to attach.
   await page.waitForSelector(".leaflet-container", { timeout: 120000 });
   await page.waitForFunction("document.querySelectorAll('.leaflet-marker-icon').length>0", null, { timeout: 120000 });
@@ -64,10 +97,23 @@ try {
   const ok = (c, m) => { console.log(`${c ? "ok  " : "FAIL"}  ${m}`); if (!c) fail++; };
   console.log("");
   ok(found.length > 0, "the map drew at least one marker");
-  ok(found.every(f => /leaflet-div-icon/.test(f.cls)), "every marker is a div icon, not a bare circle");
+  // NOT `leaflet-div-icon`: wpDivIcon passes className:"" on purpose, because Leaflet's default
+  // div-icon class paints a white box and border behind the circle. The first run of this probe
+  // asserted that class and FAILED on correct code — a test that would have had me "fix" a working
+  // renderer to satisfy it.
+  //
+  // What actually separates a div icon from the old circleMarker is stronger anyway: a circleMarker
+  // is an SVG <path> in the overlay pane and does not match `.leaflet-marker-icon` AT ALL, so these
+  // six matching already proves it. The glyph text is the second half — an SVG path cannot carry it.
+  ok(found.every(f => /leaflet-marker-icon/.test(f.cls) && f.text),
+    "every marker is an HTML marker carrying glyph text, which a circleMarker cannot be");
   ok(found.every(f => GLYPHS.includes(f.text)), `every marker's text is a glyph WP_STYLE declares (${found.map(f => f.text).join(" ")})`);
   ok(found.every(f => /#|rgb/.test(f.bg)), "every marker carries its type colour as a background");
 
+  // Scroll the map into view before the screenshot — the Plan tab is long and the first version of
+  // this probe captured the panels ABOVE the map, an image that proved nothing about the markers.
+  await page.evaluate(() => { const m = document.querySelector(".leaflet-container"); if (m) m.scrollIntoView({ block: "center" }); });
+  await new Promise(r => setTimeout(r, 2500));
   const shot = path.join(ROOT, "scripts/oneoff/_map-markers.png");
   await page.screenshot({ path: shot });
   console.log(`\nscreenshot: ${shot}`);
