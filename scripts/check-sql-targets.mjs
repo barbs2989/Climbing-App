@@ -70,13 +70,42 @@ const statements = code.split(";").map(s => s.trim()).filter(Boolean);
 // scalar subquery are not mistaken for the statement's own write targets. Only groups
 // containing `select` are dropped — an ordinary `id in ('a','b')` list is preserved.
 function stripSubqueries(sql) {
-  let out = sql, prev;
-  do {
-    prev = out;
-    out = out.replace(/\(([^()]*)\)/gi, (whole, inner) => (/\bselect\b/i.test(inner) ? " " : whole));
-  } while (out !== prev);
-  return out;
+  // Remove every parenthesised group that contains a SELECT, and leave all other parens ALONE.
+  //
+  // Two earlier versions of this were each wrong in an opposite direction, so both are pinned by
+  // cases in scripts/oneoff/inject-strip-subquery-cases.mjs.
+  //
+  // (1) The innermost-only loop deleted a group only once it contained no parens of its own, so a
+  //     FUNCTION CALL anywhere in a subquery — jsonb_array_length(x), count(*), coalesce(a,b) —
+  //     stayed forever, the enclosing `exists (select ...)` never became innermost, and the
+  //     subquery was never stripped. Its ids then counted as write targets: it FAILED the guarded
+  //     delete while passing the unguarded one, exactly backwards.
+  //
+  // (2) Unwrapping non-select groups instead fixed that and broke `id in ('a','b')` — the parens
+  //     the IN-list matcher needs were gone, so those delete targets became INVISIBLE. A missed
+  //     target is the false-pass direction and is worse than the bug being fixed.
+  //
+  // So: match parens properly and remove only what is actually a subquery.
+  let out = sql;
+  for (;;) {
+    let depth = 0, start = -1, removed = false;
+    for (let i = 0; i < out.length; i++) {
+      const c = out[i];
+      if (c === "(") { if (depth === 0) start = i; depth++; }
+      else if (c === ")") {
+        depth--;
+        if (depth === 0 && start >= 0) {
+          const group = out.slice(start, i + 1);
+          if (/\bselect\b/i.test(group)) { out = out.slice(0, start) + " " + out.slice(i + 1); removed = true; break; }
+          start = -1;
+        }
+        if (depth < 0) depth = 0; // unbalanced input: do not loop forever
+      }
+    }
+    if (!removed) return out;
+  }
 }
+
 
 const targets = []; // { kind, id, stmt }
 const createdIds = new Set(); // ids this file INSERTs, so later statements may target them
@@ -268,7 +297,21 @@ for (const t of deletes) {
   // sits on the same area as the target proves nothing — in a dedup that area is usually
   // the one being emptied, so the "twin" is about to be deleted too. (Same-name rows keep
   // their original handling: a same-area namesake already short-circuits above.)
-  const candidates = [...sameName, ...byId.filter(b => !sameName.some(s => s.id === b.id) && b[SCOPE_COL] !== row[SCOPE_COL])];
+  // The different-area requirement above is right for `areas` and WRONG for `routes`, and the
+  // stated reason says why: "in a dedup that area is usually the one being emptied". That is a
+  // claim about dissolving a container. Two ROUTE rows describing one climb sit on the SAME peak
+  // by definition — Little Tahoma's "East Shoulder" and "Frying Pan / Whitman Glaciers" agree on
+  // all eight identity facts and share wa_little_tahoma — so on `routes` the rule had no case for
+  // the commonest dedup there is, and could only be satisfied by not using it.
+  //
+  // So a same-area twin counts on `routes`, with the condition that makes it safe: the asserted
+  // twin must NOT itself be deleted by this file. That is the failure the different-area rule was
+  // really guarding against — asserting a survivor that is about to go too — and testing it
+  // directly is stronger than the area proxy.
+  const deletedHere = new Set(targets.filter(x => x.kind === "delete").map(x => x.id));
+  const sameAreaTwinOk = b => SCOPE_COL === "area_id" && !deletedHere.has(b.id);
+  const candidates = [...sameName, ...byId.filter(b => !sameName.some(s => s.id === b.id)
+    && (b[SCOPE_COL] !== row[SCOPE_COL] || sameAreaTwinOk(b)))];
 
   const elsewhere = candidates.filter(s => s.id !== t.id);
   if (!elsewhere.length) { onlyCopy.push({ ...t, name: row.name, area: row[SCOPE_COL] }); continue; }
@@ -305,7 +348,7 @@ if (onlyCopy.length) {
 }
 
 if (crossArea.length) {
-  console.log(`INFO  ${crossArea.length} cross-area DELETE(s) — twin is on another area and IS named in an EXISTS guard:`);
+  console.log(`INFO  ${crossArea.length} DELETE(s) whose twin is asserted by id in an EXISTS guard (twin's scope shown):`);
   for (const c of crossArea) console.log(`        ${c.id}  ("${c.name}" on ${c.area})  twin: ${c.twin}`);
   console.log(`      Allowed: the guard makes each statement a no-op if its twin is gone at run time.\n`);
 }
