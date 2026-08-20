@@ -44,6 +44,7 @@ npm run check:overlay-scroll # no overlay pane may chain its scroll to the page 
 npm run check:field-renders # every enriched route column actually reaches a screen
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
+npm run check:selected-state # a control that LOOKS selected must SAY it is selected
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
@@ -954,6 +955,42 @@ a build error, but a screen that renders wrong or not at all.
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
   - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+- **`check:selected-state`** asks whether a control that **looks** selected **says** it is.
+  Until #1041 the primary nav was the only one that did — `aria-current={tab===n.id?"page":undefined}`,
+  literally the only `aria-current` in the codebase, against **zero** `aria-selected` and **zero**
+  `role="tab"`. Every other tab bar and every toggle chip marked its state with a background
+  colour and nothing else, so a screen reader announced `"Crews, 1"` identically whether or not
+  it was the view you were on. #1041 and #1062 fixed **21 controls** across 4 tab bars (Crew,
+  both Logbook bars, RouteDetail's sub-tabs) and 4 toggle groups (onboarding's disciplines and
+  availability, PartnerSearch's availability filter and its ✓ Verified / Speed match pair).
+  Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+  - **No sibling guard asks this, and the two nearest ones show why it is separate.**
+    `check:a11y-names` asks whether a control **has** a name; `check:a11y-badges` asks whether
+    that name has a count welded into it. A mute tab bar passes both. #740 gave these exact
+    buttons their `aria-label`s *because* the announced name was wrong — and left the **state**
+    out in the same commit, which is how a fix and its own gap shipped together.
+  - **BEHAVIOURAL, NOT VISUAL, and the first draft was wrong in the direction that matters.**
+    "A sibling row where exactly one control has a different background" also describes a
+    **primary action button**: that draft reported `[Accept | Decline]`,
+    `[Edit profile | Settings]` and `[Share profile | View public profile]` as tab bars with an
+    unannounced selection. None has a selected state to announce, and a guard that flags correct
+    work is one people learn to ignore. The shape is identified by **doing** it — click a
+    control, then look at its **siblings**: siblings also changed → a tab bar, wants
+    `aria-current`; siblings unchanged → an independent toggle, wants `aria-pressed`; the
+    control vanished → it navigated and is not stateful at all. Markup cannot separate those —
+    all three are a `<button>` with a conditional background.
+  - **Fails closed in BOTH directions, and the second test earned itself immediately.** "No
+    stateful controls found" is a broken detector; so is "nothing announces its selection",
+    because the primary nav is known to. The colour-only draft was blind to the nav — it marks
+    its active tab with weight and colour rather than a background — and that assertion is what
+    caught the blindness instead of a clean-looking run.
+  - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
+    which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
+    a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - Injection-tested, 3 cases at the bottom of the script, driven by `--strip-aria=` because the
+    regression lives in the app rather than in the checker. Case 3 (break the scaffold anchor)
+    must fail on the 58-character boot shell rather than pass over a blank app — the trap
+    `check:overlay-scroll` records.
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
