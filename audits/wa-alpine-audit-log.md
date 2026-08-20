@@ -8965,3 +8965,61 @@ blocked) — relied on WebSearch's own summarization instead, which was sufficie
 Next batch continues after `wa_goode_mountain_northeast_face` in the current id-ordered scope
 (see progress file — live scope count has drifted slightly from the last recorded count,
 529 vs. 532, likely normal catalog churn since the last run).
+
+## 2026-08-20 — Pass 3, Batch 131
+
+Nine routes across five peaks (Mount Goode 1, Mount Stuart 1, Gunnshy Peak 1, Middle/Gunsight
+Peak 2, Guye Peak 4): Southwest Couloir (Goode); Gorillas Direct (Stuart); Standard Route
+(Gunnshy, Barclay Lake approach); Gunrunner, Standard Route (Gunsight Peaks Traverse); West
+Face, North Route ("Hidden Ridge"), Improbable Traverse, Southeast Gully (Guye).
+
+**Confirmed errors → fixes in `sql/2026-08-20-batch-131.sql`:**
+- `wa_goode_mountain_southwest_couloir`: `seasonal_hazards.crevasses` claimed "N/A — route is
+  described in the on-file beta as snow/scree/rock with no documented glacier crossing." That
+  directly contradicts the rest of this same row: `approach` and `waypoints` describe crossing
+  the Goode Glacier from the lateral-moraine camp to reach the couloir base (a waypoint of
+  type Hazard is literally named "Goode Glacier crossing"), `obj_haz` lists
+  "crevasses/moat on the Goode Glacier portion of the approach," and
+  `approach_variants[0].hazards` warns of "receding hidden-glacier snowbridges below 8,000 ft."
+  Rewrote `crevasses` to describe the real (non-technical, standard-line) glacier crossing
+  instead of denying it exists.
+- `wa_gunrunner`: `waypoints[1]` ("Middle Peak (Gunsight Range)", the route's own Summit-type
+  waypoint) stored `elev: 8000` — about 200 ft below this same row's own `high_point_ft`
+  (8200), below sibling route `wa_gunsight_peak_standard`'s summit waypoint for the identical
+  peak (8198 ft, essentially the same lat/lng), and below the externally-confirmed figure:
+  Wikipedia's "Gunsight Peak" entry (Chelan County; Blue Glacier to the east, Chickamin
+  Glacier to the west — matching this row's own hazard/waypoint descriptions) gives 8,198 ft.
+  Corrected the waypoint to 8198.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_gorillas_direct`: `fa` reads "Sol Wertkin, Jens Holsten & Mark Westman, 2011." Web
+  search independently confirms the climbers and the route (a direct variation adding five
+  pitches to Gorillas in the Mist, established the year before by Herrington/Holsten/Wertkin
+  in 2009), but is split on the year: one summary states "established in 2010," a second says
+  "FA'd in 2011... However, another source indicates the Gorillas Direct route was FA'd in
+  2010." WebFetch to Mountain Project, the AAC publications archive, and Alpinist's newswire
+  (the pages that would settle it) were all blocked by the egress proxy this run, so the
+  conflict could not be resolved — left as-is per the "don't guess" instruction.
+
+`wa_gunnshy_peak_standard_route`, `wa_gunsight_peak_standard`,
+`wa_guye_peak_improbable_traverse`, `wa_guye_peak_r1`, `wa_guye_peak_r2`, and
+`wa_guye_peak_southeast_gully` audited clean. Externally cross-checked and confirmed: Gunn
+Peak's elevation (Wikipedia: 6,244 ft — this route's own `pro_tips` already hedges "6,240'-
+6,244'," which brackets the correct figure rather than being wrong); Guye Peak's summit
+elevation (5,168 ft, matches all four Guye routes' `high_point_ft`/waypoints, `wa_guye_peak_r1`
+is 1 ft off at 5169 — too small to be worth a fix); the 1912 first-ascent party (Hazlehurst,
+Abel, Dubuar, Hard) as recorded on two of the four Guye routes; the November 2021 rockfall's
+~30×40 ft scar and "at least eight" recorded climbing fatalities on Guye Peak, both stated in
+`wa_guye_peak_improbable_traverse`'s hazards; and Gunrunner's own FA (Herrington & Hilden, July
+9, 2007, IV 5.10 A1, 18 pitches, four-summit Gunsight traverse) against an AAC Publications
+listing. `wa_gunsight_peak_standard` is already unusually well self-documented — its own
+`data_quality.gaps` already flags an unresolved prominence conflict (518 ft vs. 546 ft) and an
+unconfirmed FA party, so those known gaps were not re-flagged.
+
+Web access this run: WebSearch worked throughout. WebFetch was blocked by the egress proxy for
+mountainproject.com, publications.americanalpineclub.org, and alpinist.com — consistent with
+prior runs' notes that some domains are blocked — which is what left the Gorillas Direct FA
+year unresolved rather than fixed or confidently left alone.
+
+Next batch continues after `wa_guye_peak_southeast_gully` in the current id-ordered scope (see
+progress file).
