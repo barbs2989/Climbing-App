@@ -13,25 +13,63 @@ export const MAP_TILE_URLS = {
 // Injects the Leaflet CDN css/js once (dedupes what used to be 4 copy-pasted
 // bootstraps) and calls onReady once window.L is available, or onError if the
 // script fails to load.
+// Leaflet comes from a CDN, so whatever that host returns EXECUTES in this app's origin with
+// the signed-in session available. Until now nothing pinned what it may return: the loader
+// handled the script *failing* with some care (see the captive-portal branch below) and not at
+// all the possibility of it being *substituted*.
+//
+// `integrity` fixes that -- the browser hashes the response and refuses to apply it on a
+// mismatch. `crossorigin` is not optional beside it: without it a cross-origin subresource is
+// opaque, cannot be hashed, and is rejected outright. cdnjs answers
+// `access-control-allow-origin: *`, checked rather than assumed.
+//
+// THE URL AND ITS HASH LIVE IN ONE OBJECT ON PURPOSE. They are a pair, and a version bump that
+// updates only the URL takes down every map in the app -- which is the one way this change can
+// make things worse than leaving it unpinned. Get a new hash from the publisher, never by
+// hashing whatever you happened to download:
+//   curl -s 'https://api.cdnjs.com/libraries/leaflet/<version>?fields=sri'
+// These are cdnjs's own published sha512 values, confirmed byte-identical to what the CDN
+// actually served on 2026-08-19.
+const LEAFLET = {
+  version: "1.9.4",
+  css: {
+    url: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css",
+    sri: "sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==",
+  },
+  js: {
+    url: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js",
+    sri: "sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==",
+  },
+};
+
 export function loadLeaflet(onReady, onError) {
   if (window.L) { onReady(); return; }
   if (!document.getElementById("leaflet-css")) {
     const lk = document.createElement("link");
     lk.id = "leaflet-css"; lk.rel = "stylesheet";
-    lk.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+    // Both attributes must be set BEFORE the element is appended -- appending starts the
+    // fetch, and an integrity set afterwards is simply ignored. Same below for the script.
+    lk.crossOrigin = "anonymous";
+    lk.integrity = LEAFLET.css.sri;
+    lk.href = LEAFLET.css.url;
     document.head.appendChild(lk);
   }
   let sc = document.getElementById("leaflet-js");
   if (!sc) {
     sc = document.createElement("script");
     sc.id = "leaflet-js";
-    sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+    sc.crossOrigin = "anonymous";
+    sc.integrity = LEAFLET.js.sri;
+    sc.src = LEAFLET.js.url;
     // Record the outcome ON the element. A later consumer cannot learn it any other
     // way: `load` and `error` are one-shot events, so a listener attached after the
     // script has already settled never fires. Both terminal states below were
     // unreachable-by-callback before this, and each one strands a map.
     sc.dataset.state = "loading";
     sc.onload = () => { sc.dataset.state = window.L ? "loaded" : "error"; if (window.L) onReady(); else if (onError) onError(); };
+    // A REFUSED INTEGRITY HASH LANDS HERE, not anywhere new: the browser treats it as a load
+    // failure, so a wrong or stale hash degrades to the caller's "map unavailable" state
+    // rather than breaking the page. Verified by injecting a bad hash, not assumed.
     sc.onerror = () => { sc.dataset.state = "error"; if (onError) onError(); };
     document.body.appendChild(sc);
   } else if (sc.dataset.state === "error") {
