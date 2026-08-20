@@ -35,23 +35,32 @@ async function readAll() {
 const rows = await readAll();
 if (!rows.length) { console.error("FAIL — read 0 routes"); process.exit(1); }
 
-const approachOnly = [], summitOnly = [], both = [];
+const approachOnly = [], summitOnly = [], both = [], differing = [];
 for (const r of rows) {
   const cov = trackCoverage(r.gpx, norm(r.waypoints));
   if (!cov) continue;
-  (cov.missingApproach && cov.missingSummit ? both : cov.missingApproach ? approachOnly : summitOnly)
-    .push({ id: r.id, name: r.name, cov });
+  const rec = { id: r.id, name: r.name, cov };
+  /* differentApproach FIRST. It is not a partial track at all, and the earlier version of this
+     probe let it fall through the ternary into "stops short of summit" — reporting the two
+     routes it exists to separate as the thing it had just stopped calling them. */
+  if (cov.differentApproach) differing.push(rec);
+  else if (cov.missingApproach && cov.missingSummit) both.push(rec);
+  else if (cov.missingApproach) approachOnly.push(rec);
+  else summitOnly.push(rec);
 }
-const total = approachOnly.length + summitOnly.length + both.length;
+const total = approachOnly.length + summitOnly.length + both.length + differing.length;
 console.log(`\n=== the shipped trackCoverage(), run on live rows ===`);
 console.log(`${rows.length} WA routes with a track and waypoints`);
 console.log(`  ${total} will now carry a partial-track caveat`);
 console.log(`     walk-in missing only:        ${approachOnly.length}`);
 console.log(`     stops short of summit only:  ${summitOnly.length}`);
 console.log(`     both ends missing:           ${both.length}`);
+console.log(`     different approach entirely: ${differing.length}   (not partial — the line and the pins are two complete records of different ways up)`);
 if (!total) { console.error(`\nFAIL — the caveat fires on NOTHING. The distribution probe found 63 + 6 on the raw column, so a zero here means the normalized shape is not reaching the reader.`); process.exit(1); }
 
 console.log(`\n--- stops short of the summit (the dangerous half) ---`);
 for (const f of summitOnly.concat(both)) console.log(`  ${f.id.padEnd(48)} ${trackCoverageCaveat(f.cov)}`);
+console.log(`\n--- a DIFFERENT approach, not a partial track: ${differing.length} ---`);
+for (const f of differing) console.log(`  ${f.id.padEnd(48)} ${f.cov.pins} pins, none on the line`);
 console.log(`\n--- walk-in missing (first 12 of ${approachOnly.length}) ---`);
 for (const f of approachOnly.slice(0, 12)) console.log(`  ${f.id.padEnd(48)} ${trackCoverageCaveat(f.cov)}`);

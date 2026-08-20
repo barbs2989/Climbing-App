@@ -1970,8 +1970,36 @@ the correction knows the screen is wrong, and they have no way to report it.
       matches on `type`, so either step could have made the caveat fire on **nothing** while the
       column stayed populated. The probe **exits 1 on a zero count** for that reason.
     - Independent corroboration that it measures the right thing: the summit-shortfall list is
-      Himmelhorn, West Twin Needle, Fuhrer Finger and Barnes — the routes `audit:waypoints`
-      already reports under `trackOffItsPeak`, reached by a different method.
+      Himmelhorn, West Twin Needle and Fuhrer Finger — routes `audit:waypoints` already reports
+      under `trackOffItsPeak`, reached by a different method. Each was checked with
+      `probe-whose-track-is-it.mjs` and **none is a foreign track**: every one starts at the
+      right trailhead and ends in the right massif, so *short* is the correct diagnosis.
+    - **A THIRD state exists because the first version got two routes wrong, and it is the most
+      useful thing in this entry.** On some routes the line and the pins are two **complete**
+      records of **different ways up the same peak**, and calling the line partial blames the
+      wrong half. `wa_mount_barnes_scramble` is the case: its own approach text names two
+      approaches — west via Sol Duc over the Bailey Range, east via the Elwha River Trail from
+      Whiskey Bend — and all **eight** of its waypoints are on the Sol Duc one while its
+      **438-point** gpx is the Elwha one. It rendered *"starts 18.9 km from the trailhead and
+      stops 6.4 km short of the summit"*, every number true and the accusation misdirected. The
+      same misattribution `audit:map-pins` warns about for two-trailhead routes, and the reason
+      that audit reports candidates rather than defects.
+      - **The discriminator is whether ANY of the route's own pins lie on the line**, with
+        per-type tolerances. A genuinely climb-only track still carries its **upper** pins — the
+        summit, the high camp, the col — because the recording does cover that stretch; only the
+        approach pins are off it. A track of a different approach carries **none**, because it
+        never passes any of the places the pins name. Measured: **66 partial, 2
+        different-approach** (Barnes and `wa_goode_mountain_northeast_face`).
+      - **Two placed pins are required.** With one, "no pin is on the line" is a coincidence away
+        from a wrong story, and the safe failure is the ordinary partial wording. Asserted.
+      - The sentence **does not pick a winner** — on a peak with two genuine approaches both
+        records are right, and nothing available here separates that from a line filed against
+        the wrong route. It says the two disagree and stops.
+      - **The live probe had the same bug one level up**: its ternary let a `differentApproach`
+        row fall through into the "stops short of summit" bucket, so it reported the two routes
+        it exists to separate as the very thing it had just stopped calling them. Order the
+        branches with the new state first. *A probe that misreports its own fix is the shape this
+        file keeps recording.*
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,

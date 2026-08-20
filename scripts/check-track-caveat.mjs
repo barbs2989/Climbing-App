@@ -162,6 +162,27 @@ if (!covA || !covA.missingApproach) fail("coverage: a climb-only track (no walk-
 else if (covA.missingSummit) fail("coverage: a climb-only track was ALSO reported as stopping short of the summit — it reaches it");
 else ok(`coverage: a climb-only track is detected (${Math.round(covA.approachGapM)} m from the trailhead)`);
 
+/* A line that passes NONE of the route's own pins is not a partial track — it is a record of a
+   different way up the peak, and blaming the line there points the reader at the wrong half.
+   wa_mount_barnes_scramble is the real case: eight waypoints on the Sol Duc/Bailey Range
+   approach, a 438-point gpx of the Elwha River Trail, and both complete. */
+const ELSEWHERE = REAL.map(p => [p[0] + 0.30, p[1] + 0.30]);
+const covD = trackCoverage(ELSEWHERE, WPS);
+if (!covD || !covD.differentApproach) fail("coverage: a line passing NONE of the route's pins was reported as a partial track — that blames the wrong record");
+else if (covD.missingApproach || covD.missingSummit) fail("coverage: a different-approach line must not ALSO claim a missing end — the two are different findings");
+else ok("coverage: a line passing none of the route's own pins is called a different approach, not a partial track");
+
+if (trackCoverage(ELSEWHERE, WPS.slice(0, 1))) {
+  const one = trackCoverage(ELSEWHERE, WPS.slice(0, 1));
+  if (one.differentApproach) fail("coverage: ONE pin off the line is not enough evidence for a different-approach claim");
+  else ok("coverage: with a single pin it falls back to the ordinary partial wording rather than telling a story");
+}
+
+const shownD = covText(route({ gpxPts: ELSEWHERE, waypoints: WPS }));
+if (!/different ways up this peak/i.test(shownD)) fail("the different-approach caveat does not reach the screen");
+else if (/walk in is not in this line|short of the summit/i.test(shownD)) fail("the different-approach route ALSO renders a partial caveat — two sentences contradicting each other");
+else ok("the different-approach caveat renders, and the partial wording does not");
+
 const covS = trackCoverage(STOPS_SHORT, WPS);
 if (!covS || !covS.missingSummit) fail("coverage: a track stopping short of the summit was not detected — this is the dangerous half");
 else ok(`coverage: a track stopping short of the summit is detected (${Math.round(covS.summitGapM)} m)`);
@@ -186,9 +207,10 @@ console.log();
 if (failures) { console.error(`check:track-caveat FAILED — ${failures} problem(s).`); process.exit(1); }
 console.log("ok — a line drawn between waypoints says so, a partial one says which end is missing, and a real track is left alone");
 
-// Injection-tested, 5 cases:
+// Injection-tested, 6 cases:
 //   delete the caveat from RouteDetail's ROUTE TRACK block  -> assertion 2 fails
 //   make trackIsJustTheWaypoints always return true         -> the genuine-track assertions fail
 //   rename the ROUTE TRACK heading                          -> ANCHOR LOST, nothing reported clean
 //   delete the coverage caveat from the ROUTE TRACK block   -> section 3's two render tests fail
 //   make trackCoverage always report missingApproach        -> the false-warning assertions fail
+//   drop the different-approach branch                      -> a line passing no pin reads as partial
