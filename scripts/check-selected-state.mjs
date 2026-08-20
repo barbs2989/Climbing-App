@@ -51,7 +51,7 @@ import { assertDbReachable } from "./lib/db-preflight.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
-const TABS = arg("tabs", "Home,Climbs,Discover,Crew,Logbook,Profile").split(",");
+const TABS = arg("tabs", "Home,Climbs,Discover,Crew,Logbook,Profile").split(",").filter(Boolean);
 // Onboarding is walked as an OVERLAY because that is where the worst instance lived: the
 // "WHAT DO YOU DO?" chips are the first thing a new climber is asked and the field is marked
 // required. It is not reachable from a tab walk.
@@ -232,9 +232,13 @@ const tap = async (t) => {
   return ok;
 };
 
-const load = async (qs, tab) => {
+const load = async (qs, tab, awaitRoute) => {
   await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
   await page.waitForFunction(() => (document.body?.innerText || "").length > 200, { timeout: 60000 }).catch(() => {});
+  // Wait on the NAVIGATION as well as on the text settling. `?zr=1` calls the app's own
+  // openRoute() from inside the injected opener, and settling says nothing about whether that
+  // has happened yet — the race check:overflow's first CI run got wrong.
+  if (awaitRoute) await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 }).catch(() => {});
   await settledText(page, { timeout: 45000 }).catch(() => {});
   if (tab && tab !== "Home") { await tap(tab); await page.waitForTimeout(900); }
 };
@@ -253,13 +257,21 @@ if (!booted.hasNav || booted.chars < 200) {
 }
 
 const screens = [
-  ...TABS.map((t) => ({ name: t, qs: `?zt=${t === "Home" ? "today" : "today"}`, tab: t })),
+  ...TABS.map((t) => ({ name: t, qs: `?zt=today`, tab: t })),
   ...OVERLAYS.map((o) => ({ name: `overlay:${o}`, qs: `?zt=me&z=${o}`, tab: null })),
+  // Route detail carries its OWN sub-tab bar (Overview / Plan / Reports / Safety / Partners /
+  // Photos) and #1041 fixed it — but no tab walk reaches that screen, so the fix shipped
+  // unguarded. Navigated rather than driven: `?zr=1` calls the app's own openRoute() from
+  // inside the shared opener, which no slow list, differently-rendered row or moved <select>
+  // label can defeat. Same reasoning, and the same mechanism, as check:overflow.
+  { name: "route detail", qs: "?zr=1", tab: null, awaitRoute: true },
 ];
 
 const tabBars = [], toggles = [], seen = new Set();
+let routeReached = false;
 for (const s of screens) {
-  await load(s.qs, s.tab);
+  await load(s.qs, s.tab, s.awaitRoute);
+  if (s.awaitRoute) routeReached = await page.evaluate(() => window.__routeOpen === true);
   const first = await snapshot();
   if (!first.length) { log(`  ${s.name.padEnd(18)} no grouped controls on screen`); continue; }
   const key = (x) => x.group + "#" + x.label + "#" + x.nth;
@@ -284,7 +296,7 @@ for (const s of screens) {
     // check:a11y-names' job rather than this one's. Counted and reported, never a verdict.
     if (!c.label) { unnamed += kids.length; seen.add(group); continue; }
 
-    await load(s.qs, s.tab);
+    await load(s.qs, s.tab, s.awaitRoute);
     const before = await snapshot();
     const b = before.find((x) => key(x) === key(c));
     if (!b) continue;
@@ -335,6 +347,17 @@ for (const t of toggles) {
   if (!okAttr) { mute.push(t); fails.push(`toggle ${JSON.stringify(t.label)} in [${t.group}] on ${t.screen}: turning it on changes only its colour — it needs aria-pressed`); }
 }
 
+// Route detail must have been REACHED, not merely attempted. It is the screen #1041 fixed a
+// sub-tab bar on, and a screen this guard silently failed to open would take that fix back out
+// of coverage without anyone noticing — the invisible-coverage-hole shape. check:overflow
+// upgraded exactly this from a note to an exit-1 for the same reason: the only ways `?zr=1`
+// fails to land are a broken opener or a broken route page, and both are worth going red for.
+if (!routeReached) {
+  console.error("\ncheck:selected-state FAILED — ?zr=1 never opened the route detail screen.");
+  console.error("Its sub-tab bar is one of the bars #1041 fixed, so this run did not check it.");
+  await browser.close(); stopServer(); process.exit(1);
+}
+
 // Fail closed, both ends.
 if (!tabBars.length && !toggles.length) {
   console.error("\ncheck:selected-state FAILED — found NO stateful controls anywhere.");
@@ -372,6 +395,11 @@ console.log("check:selected-state: ok — every control that looks selected says
 //   3. Break `ANCHOR` in scripts/overlay-scroll.config.mjs.
 //        FAILED (exit 1) with "the app did not render (58 chars of text, nav present)" —
 //        the boot-shell case, not a green run over a blank app.
+//   4. Change the route-detail screen's qs from "?zr=1" to "?zr=" so the opener cannot land.
+//        FAILED (exit 1) naming route detail — AND it fired even though a healthy tab bar had
+//        already passed on an earlier screen, which is the ordering that matters: the
+//        not-reached test runs BEFORE any verdict is interpreted, so a screen this guard
+//        silently failed to open can never read as a screen with nothing wrong.
 //
 // CASE 1 PASSED THE FIRST TIME IT WAS RUN, AND THAT WAS THE INJECTION BEING WRONG RATHER THAN
 // THE GUARD BEING RIGHT. The strip used to run once per load(); this guard then CLICKS, React

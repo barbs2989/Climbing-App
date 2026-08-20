@@ -48,6 +48,37 @@
 >
 > Nothing here changes what is outstanding: **the lawyer read, plus the D4 wording.**
 
+> ### D4 measured precisely, 2026-08-20 — the one product-side wording decision left
+>
+> D4 has been carried as "OPEN BY DESIGN — do not flip it" without stating what a reader is
+> promised versus what exists. That is the fact counsel needs, so here it is measured rather
+> than characterised.
+>
+> **Privacy Policy §3 ("What others can see") says:** *"Other climbers see your public profile
+> **as governed by your privacy settings** — your username or real name, and **the fields you
+> choose to make visible**."*
+>
+> **What exists:** `PRIVACY_CONTROLS_LIVE = false` (`ClimbMatchCore.jsx`) hides **four**
+> controls, among them "who can see my profile" and "who can invite you". The code comment on
+> the flag states the position plainly: that setting *"is one of the four controls behind
+> PRIVACY_CONTROLS_LIVE=false and **is not enforced yet**"*. So the controls are neither
+> reachable in the UI **nor** server-enforced if they were shown.
+>
+> So §3 describes per-field visibility settings that a climber cannot reach and that would not
+> be honoured. **The in-app sheet is already honest about this** — its "Visible to others"
+> section says only *"You choose what goes on your profile"*, which is true (you control what
+> you enter). It is the Policy that overstates.
+>
+> **The decision is amend-or-build, and it is the reviewer's, not engineering's:**
+> - **Amend** §3 to describe what exists — you choose what to put on your profile; per-field
+>   visibility controls are not offered yet — matching the sheet's wording. Cheap, and the
+>   documents already contain the honest formulation to copy.
+> - **Build** the four controls *and enforce them server-side*. Note that shipping them
+>   unenforced would convert a wording gap into a promise the backend does not keep, which is
+>   why the flag is deliberately `false`. **Do not flip it to satisfy an audit.**
+>
+> Everything else product-side is closed. This plus the lawyer read is the whole remainder.
+
 > ### §E upgraded from "present" to **proven**, 2026-08-19
 >
 > Every check above is a *presence* check — the column exists, the constant is in the bundle,

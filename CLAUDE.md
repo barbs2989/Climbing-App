@@ -29,6 +29,7 @@ npm run check:crew-member-readers # no crew member id resolved against seed CLIM
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
+npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -98,6 +99,7 @@ npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of t
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired?
+npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -1042,6 +1044,18 @@ a build error, but a screen that renders wrong or not at all.
   - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
     which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
     a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - **Route detail is walked, and failing to reach it is an exit-1.** Its sub-tab bar
+    (`Overview / Plan / Reports / Safety / Partners / Photos`) is one of the four #1041 fixed,
+    and no tab walk reaches that screen — so for one commit the fix was guarded everywhere
+    except where it was made. Navigated rather than driven: `?zr=1` calls the app's own
+    `openRoute()` from inside the shared opener, the same mechanism `check:overflow` uses and
+    for the same reason. It waits on `window.__routeOpen` **as well as** on the text settling,
+    because settling says nothing about whether the navigation has happened yet. The
+    not-reached test runs **before any verdict is interpreted**, so a screen the guard silently
+    failed to open can never read as a screen with nothing wrong (injection case 4 pins that
+    ordering — it fires even though a healthy bar has already passed).
+  - It found the route page's star-rating group **already correct** (`aria-pressed`), which is
+    the useful shape of a negative result: the convention was there to follow.
   - Injection-tested, 3 cases at the bottom of the script, driven by `--strip-aria=` because the
     regression lives in the app rather than in the checker. Case 3 (break the scaffold anchor)
     must fail on the 58-character boot shell rather than pass over a blank app — the trap
@@ -2021,6 +2035,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
     row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
     absent data fails the four emptiness assertions.
+- **`check:waypoint-placement`** asserts that a waypoint the map cannot draw **says so** rather than
+  offering a dead tap, and that **exactly one predicate** decides which waypoints those are. Static
+  plus one `renderToStaticMarkup` pass, so it sits in `npm run build`.
+  - **The behaviour already shipped and was described only in a COMMENT** — an unplaced row renders
+    *"No coordinate on file — this point is not on the map above"* and is deliberately **not** given
+    a tap handler, because a row that looks tappable and pans to nothing is worse than one that
+    explains itself. Nothing rendered it, so nothing would have noticed it disappearing. **The
+    comment had ALREADY gone stale**, claiming *"44 pins across 17 WA alpine routes"* against a
+    measured **39 across 16** — the [[semantic-invariants-need-a-script]] shape, caught in the act.
+  - **"Is this waypoint on the map?" was answered NINE ways.** `GPXMap` tested `w.lat != null` in
+    **eight** places — none checking `lng`, none checking finiteness — while `WaypointList` tested
+    both coordinates for a finite `Number`. All nine now call **`wpPlaced()`**.
+  - **This fixed no visible bug and that is stated rather than glossed**: measured across all
+    **4,230** live WA waypoints the two tests **agree**. It closes a split only a *contributed* value
+    can open, and contributed rows store lat/lng as **strings** — one numeric string is already in
+    the catalog. **The empty string is the case that bites**: `"" == null` is false so the map draws
+    the pin, and `Number("")` is `0` which **is** finite so the list calls it placed — the pin lands
+    at latitude 0 in the Gulf of Guinea. Same `Number(null) === 0` trap `audit:map-pins` records
+    from a 12,215 km "disagreement".
+  - **`0,0` is deliberately ACCEPTED as placed.** This predicate answers *does a coordinate exist*,
+    not *is it plausible*; rejecting it here would hide a bad pin from the audits whose job is to
+    find it.
+  - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
+    coordinate and flagging it would tell an author to break correct code.
+  - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
+    the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
+    dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
+    `lib/supabase.js` reads it at module scope.
+  - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
+    both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
+    pattern, not the guard, was wrong.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
@@ -3806,6 +3851,48 @@ the correction knows the screen is wrong, and they have no way to report it.
     gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
     reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, 3 cases at the
     bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero.
+- **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
+  third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
+  `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
+  because these citations are free prose inside jsonb columns — every identifier is bound, the
+  column is populated, the section renders. Only reading the value finds them.
+  - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
+    `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
+    keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
+    sweep found **33 values on 32 WA routes**; all are now repaired, and the audit reports **0**.
+  - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
+    CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
+    number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where
+    our data came from — they are the live thing a climber is being told to go and check, and often
+    the only actionable line in the value. Naming the **agency** that issues a permit or closes a
+    road is operational too. A pattern that flags "names a third party" reports all 589, and
+    whoever works that list down deletes 589 phone numbers.
+  - **The word "source" on its own is useless here.** Waypoint notes say *"reliable water source"*
+    and *"Source Lake"* — a real place in the Alpental valley — so a bare `/source/i` returns 45 WA
+    notes of which **44** are water and place names. A citation is a **counted or qualified plural**
+    (*"multiple sources"*) or **sources doing something** (*"sources describe"*). That distinction
+    takes the waypoint-note count from 45 to 1.
+  - **The count is a FLOOR, not a total, and this was proven rather than hedged.** It is a deny-list
+    of publisher names, and one more phrasing beats it: the first sweep declared 33 and repaired 32,
+    then widening the sourcing-act pattern immediately surfaced **five more on four routes**,
+    including the one surviving waypoint note. The Lichtenberg fee prose also cited
+    `WenatcheeOutdoors`, which no pattern matched — it was found by reading. Re-scan with a
+    different pattern before calling the class closed.
+  - One exemption, measured: `wa_wolframite_mountain_scramble` names three associations as the
+    volunteers who **maintain** the Tungsten Mine site, which is content. A stale exemption
+    **fails**. `wa_nooksack_tower_south_face` needed one until `NAMED` was tightened to require a
+    guide word beside `Beckey` — "East Ridge/Beckey Route" is a route name — and is now excluded
+    **by construction**, which is why no entry for it survives.
+  - **Report-only; the repair is a REWRITE, not a deletion.** The citation is usually welded into a
+    sentence that also carries the road, the mileage or the fact — dropping an attribution prefix
+    from the Jack Mountain permit prose stranded its second `and that` clause with nothing to attach
+    to, the lowercase-fragment trap the waypoint-note sweep already recorded. Both repair scripts
+    (`scripts/oneoff/redact-road-access-citations.mjs` and `…-round2.mjs`) declare every edit as an
+    exact **find → replace** pair and refuse to run unless `find` matches **exactly once** in the
+    live value, so nothing can be invented and a stale table cannot half-apply.
+  - Read-only, anon key, fails closed on an empty read and on zero prose values. **Not a build
+    gate** — a property of the DB, not the checkout. Injection-tested, 2 cases; `--inject=liveonly`
+    must report **0 citations and every value as live**, which is the destructive direction.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
