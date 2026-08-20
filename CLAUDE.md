@@ -644,6 +644,34 @@ a build error, but a screen that renders wrong or not at all.
     sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
     frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
     emptiness is never asserted, but that is a list to READ, not a coverage claim.
+  - **RULE 2's VOCABULARY HAS NOW BEEN SHORT THREE TIMES, and every miss was one more NOUN rather
+    than a different idea.** `"0 routes"`/`"0 crews"` (the Home tiles), `"0 climbs to go"`/`"0
+    logged"` (the Logbook), and `"0 joined"` (Crew:Groups) — the last found by an injection that
+    **MISSED**, not by reading. A vocabulary of absence that cannot spell the noun in front of it
+    is the [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape: it fails as a shorter
+    worklist, silently. When a screen is added, check what its counts are CALLED before trusting a
+    quiet run.
+  - **The crew-invites HEADING is unmeasurable with this fixture, and its injection case records
+    that rather than pretending.** `"No crew invites"` is on screen in the **healthy** run too —
+    the fixture's mate JOINS the crew rather than staying invited — so rule 2 sees nothing
+    introduced and rule 1 is satisfied by the friend-requests section beside it. The fix is real;
+    the guard cannot see it. The case expects a **PASS** and is a stale-bookkeeping alarm: give
+    the fixture a pending invite and it starts reporting FALSE POSITIVE, which is the signal that
+    the coverage arrived. Same shape as `check:a11y-badges`' `arealatest` case.
+  - **A GUARD THAT THREW IS NOT A GUARD THAT DISAGREED.** Exit 1 from a crash — a dev server that
+    never came up on a loaded box — was being filed by the harness as *"failed for the wrong
+    reason"*, which reads as a defect in the checker and sends you editing a correct file. A run
+    that produced **no per-screen table** is now reported INCONCLUSIVE, and every bad outcome
+    prints the guard's own table: *"it did not catch it"*, *"that screen never settled so it
+    compared equal and was skipped"* and *"it failed on a DIFFERENT screen"* are identical from an
+    exit code and need three different repairs.
+  - **A MISS ON A LOADED BOX IS NOT EVIDENCE.** The `ranks` case reported MISSED at a load average
+    of ~450 and CAUGHT at ~260 **on the same commit**. Re-run a miss on a quiet machine before
+    believing it — [[chrome-ext-has-no-site-permissions]] is the same lesson from the other end.
+  - **THE INJECTION HARNESS EDITS THE APP FILES IN PLACE, so do not commit while it runs.** #1190
+    was committed mid-suite and captured whichever revert happened to be live, shipping to main
+    without the crew-invites gate — the branch was not what the green run measured. Check
+    `git status` is clean *and* that no injection job is in flight before `git add`.
   - **NOTHING HAS YET ASKED about the Profile tab's own sections**, and that phrasing is
     deliberate. `MyFiledReports` (`useMyFiledReports`) and `CatchLedger` (`useBelajCatches`) are
     DB-backed and unflagged; the run reports Profile as `says-empty=YES` and rule 2 stays quiet
