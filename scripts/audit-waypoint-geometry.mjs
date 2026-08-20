@@ -48,14 +48,16 @@
 // local relief is larger than the disagreement and the ground cannot separate them. Forcing those
 // into a winner would manufacture an answer out of noise.
 //
-// Usage: npm run audit:waypoint-geometry [-- --state wa] [-- --selftest] [-- --ground]
+// Usage: npm run audit:waypoint-geometry [-- --state wa|all] [-- --selftest] [-- --ground]
 
 import { selectAll, requireServiceKey } from "./lib/supabase-env.mjs";
 import { elevationAt, offset } from "./lib/terrain.mjs";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
-const STATE = arg("--state", "wa");
+/* `all` is the CATALOG, not a state, and it is the honest default for this audit — see the note by
+   the read below. `--state wa` still narrows. */
+const STATE = arg("--state", "all");
 const SELFTEST = argv.includes("--selftest");
 const GROUND = argv.includes("--ground");
 
@@ -73,6 +75,14 @@ const OVER_HIGH_POINT_FT = 200;
    carries that reasoning for cols; category 4 did not, and reported both of those as defects. Type
    decides severity here exactly as it does for a pin drawn at the car — nothing is dropped. */
 const ON_THE_CLIMB = /summit|topout|base/;
+/* A `Summit` pin is very often NOT this route's top. On a crag route or a subsidiary spire the
+   PARENT massif's summit gets a Summit-typed pin: Junior's Farm is a 10-pitch trad route on
+   Mossness Wall carrying `Summit | Tyler Peak (6364)` beside its own `Topout (4800)`, and
+   wa_blood_sport is a sport crag at 3,400 ft carrying `Summit | Guye Peak (5168)`. Measured on WA:
+   of the routes carrying BOTH pins, 13 have the summit far above the topout against 31 where the
+   two agree — so this is a pattern, not a handful. Where a route has its own topout well below, the
+   two records describe different points and NEITHER is necessarily wrong. */
+const PARENT_GAP_FT = 200;
 
 /* Adjudication thresholds. Stated before any data was looked at, deliberately: a margin fitted to
    the case it is meant to judge proves nothing, which is the trap audit:map-pins records for its own
@@ -84,10 +94,15 @@ const MIN_TOL_FT = 120;
 
 /* The analysis, separated from the I/O so --selftest can drive it with constructed rows. */
 export function analyse(rows) {
-  const out = { duplicate: [], identical: [], order: [], elevgap: [] };
+  const out = { duplicate: [], identical: [], order: [], elevgap: [], comparable: 0, uncomparable: [] };
   for (const r of rows) {
     const wps = (r.waypoints || []).filter(placed);
-    if (wps.length < 2) continue;
+    /* A route with fewer than two placed pins has NOTHING TO COMPARE, so it reports clean whatever
+       is wrong with it. Counted rather than skipped in silence: "no findings" over an unstated
+       denominator reads as a guarantee, and three of the four routes this audit gained when its id
+       filter was widened are exactly this shape. */
+    if (wps.length < 2) { out.uncomparable.push(r.id); continue; }
+    out.comparable++;
 
     const th = wps.find(w => /trailhead/.test(typeOf(w)));
     if (th) for (const w of wps) {
@@ -117,8 +132,13 @@ export function analyse(rows) {
 
     if (Number.isFinite(+r.high_point_ft) && +r.high_point_ft > 0) {
       for (const w of withElev) if (+w.elev > +r.high_point_ft + OVER_HIGH_POINT_FT) {
+        /* Does this route carry its OWN topout, well below the pin? Then the pin is naming a peak
+           the route does not finish on, and neither record is necessarily wrong — see PARENT_GAP_FT. */
+        const ownTop = wps.find(x => /topout/.test(typeOf(x)) && Number.isFinite(+x.elev));
+        const parentSummit = /summit/.test(typeOf(w)) && ownTop && +w.elev - +ownTop.elev > PARENT_GAP_FT;
         out.elevgap.push({ id: r.id, pin: `${w.type} | ${w.name}`, elev: +w.elev, highPoint: +r.high_point_ft,
-          lat: +w.lat, lng: +w.lng, over: +w.elev - +r.high_point_ft, impossible: ON_THE_CLIMB.test(typeOf(w)) });
+          lat: +w.lat, lng: +w.lng, over: +w.elev - +r.high_point_ft, impossible: ON_THE_CLIMB.test(typeOf(w)),
+          parentSummit: !!parentSummit, ownTopout: ownTop ? `${ownTop.name} (${+ownTop.elev})` : null });
       }
     }
   }
@@ -173,6 +193,12 @@ function selftest() {
       o => o.elevgap.length === 1 && !o.elevgap[0].impossible],
     ["a COL above the high point is correct data too", [{ id: "x", high_point_ft: 7663, waypoints: [{ type: "Junction", name: "Burgundy Col", lat: 48.5, lng: -120.6, elev: 7950 }, { type: "Summit", name: "Vasiliki Tower", lat: 48.51, lng: -120.61, elev: 7663 }] }],
       o => o.elevgap.length === 1 && !o.elevgap[0].impossible],
+    ["a Summit pin far above the route's OWN topout names the parent peak", [{ id: "x", high_point_ft: 4916, waypoints: [{ type: "Topout", name: "The Full Montey", lat: 47.89, lng: -123.13, elev: 4800 }, { type: "Summit", name: "Tyler Peak", lat: 47.9, lng: -123.14, elev: 6364 }] }],
+      o => o.elevgap.length === 1 && o.elevgap[0].parentSummit && o.elevgap[0].ownTopout === "The Full Montey (4800)"],
+    ["a route with one placed pin is counted as NOT examined, never as clean", [{ id: "one", waypoints: [{ type: "Summit", name: "S", lat: 48, lng: -120, elev: 7000 }, { type: "Base", name: "B", elev: 5000 }] }],
+      o => o.comparable === 0 && o.uncomparable.length === 1 && o.uncomparable[0] === "one"],
+    ["a route that really DOES top out on its summit is not called a parent-peak pin", [{ id: "x", high_point_ft: 5000, waypoints: [{ type: "Topout", name: "T", lat: 48, lng: -120, elev: 7300 }, { type: "Summit", name: "S", lat: 48.01, lng: -120.01, elev: 7330 }] }],
+      o => o.elevgap.every(e => !e.parentSummit)],
   ];
 
   /* The ground adjudication, driven with constructed elevations so it needs no network. The two
@@ -227,8 +253,16 @@ async function sampleGround(lat, lng) {
 }
 
 const key = requireServiceKey();
-const rows = await selectAll("routes", "id,name,area_id,waypoints,high_point_ft",
-  `waypoints=not.is.null&id=like.${STATE}_*`, { pageSize: 150, key });
+/* SCOPED TO THE CATALOG BY DEFAULT, and the reason is a measurement rather than caution: of the
+   1,016 routes in the whole catalog that carry waypoints, 1,012 are `wa_` and the other FOUR are the
+   legacy ids CLAUDE.md warns about — adams_avalanche_glacier, adams_northwest_ridge,
+   rainier_central_mowich_face, rainier_north_mowich_headwall. Outside Washington no route has a
+   waypoint at all.
+   So `id=like.wa_*` was not a state filter, it was a 4-route blind spot, and the four it dropped are
+   Rainier and Adams. Widening costs nothing because the cost is set by the routes that carry pins,
+   not by the 205k-row table. */
+const filter = STATE === "all" ? "waypoints=not.is.null" : `waypoints=not.is.null&id=like.${STATE}_*`;
+const rows = await selectAll("routes", "id,name,area_id,waypoints,high_point_ft", filter, { pageSize: 150, key });
 /* Fails closed: an empty or short read makes every route look clean, which is the false-pass
    direction this whole audit family exists to prevent. */
 if (rows.length < 100) {
@@ -241,7 +275,8 @@ const out = analyse(rows);
 const selfC = out.identical.filter(h => h.selfContradicting);
 const impossible = out.duplicate.filter(d => d.impossible);
 
-console.log(`${STATE}: ${rows.length} routes with waypoints\n`);
+console.log(`${STATE}: ${rows.length} routes with waypoints — ${out.comparable} comparable, ` +
+  `${out.uncomparable.length} carrying fewer than 2 placed pins and therefore NOT examined\n`);
 console.log(`1 DUPLICATE           non-trailhead pin ON the trailhead   : ${out.duplicate.length}  (${impossible.length} impossible by type — Topout/Summit at the car)`);
 console.log(`2 SELF-CONTRADICTING  one coordinate, elevations >${ELEV_SAME_POINT_FT} ft apart: ${selfC.length}  (of ${out.identical.length} sharing a coordinate at all)`);
 console.log(`3 ORDER               summit is not the highest pin        : ${out.order.length}  (${out.order.filter(o => o.topoutAboveSummit).length} with a TOPOUT above its own summit)`);
@@ -293,8 +328,16 @@ if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
       if (!cache.has(k)) cache.set(k, await sampleGround(e.lat, e.lng));
       const g = cache.get(k);
       const v = adjudicate(e.elev, e.highPoint, g);
-      const say = v.verdict === "a-placed" ? `the PIN is corroborated — \`high_point_ft\` (${e.highPoint}) is the wrong record`
-        : v.verdict === "b-placed" ? `the ground matches \`high_point_ft\` instead — the PIN is the wrong record`
+      /* THE VERDICT IS ABOUT AN ELEVATION, NOT ABOUT MEMBERSHIP. The ground corroborating a pin's
+         height does not establish that the pin is on THIS route, and the first version of this
+         message said it did — it told the reader `high_point_ft` was the wrong record on rows where
+         both records are right and describe different points. Acting on that would corrupt correct
+         data, which is the shape check:field-renders already records for its own stale advice. */
+      const say = v.verdict === "a-placed"
+        ? (e.parentSummit
+            ? `the pin's ELEVATION is corroborated, but the route has its own topout at ${e.ownTopout} — so this Summit pin names a peak the route does not finish on, and neither record need be wrong`
+            : `the pin's elevation is corroborated by the ground, so the stored high point (${e.highPoint}) is the record to check first`)
+        : v.verdict === "b-placed" ? `the ground matches the stored high point instead — the PIN is the record to check first`
         : v.verdict === "neither" ? `NEITHER figure matches the ground here`
         : v.verdict === "inseparable" ? `the ground CANNOT separate them — both sit within the ${v.tol} ft the terrain moves here`
         : `no DEM reading`;
@@ -316,7 +359,10 @@ if (out.order.length) {
 }
 if (out.elevgap.length) {
   console.log(`\n--- PIN ABOVE THE ROUTE'S OWN HIGH POINT ---`);
-  for (const h of out.elevgap) console.log(`  ${h.id}  ${h.pin}  ${h.elev} ft vs high point ${h.highPoint} ft  (+${h.over})${h.impossible ? "   [ON THE CLIMB — cannot be above its own high point]" : "   (landmark/col/camp — legitimately can be)"}`);
+  for (const h of out.elevgap) console.log(`  ${h.id}  ${h.pin}  ${h.elev} ft vs high point ${h.highPoint} ft  (+${h.over})` +
+    (h.parentSummit ? `   (names the PARENT peak — this route tops out at ${h.ownTopout})`
+      : h.impossible ? "   [ON THE CLIMB — cannot be above its own high point]"
+      : "   (landmark/col/camp — legitimately can be)"));
 }
 
 console.log(`\nReported, never repaired: fixing a pin means supplying a coordinate, and inventing one`);
