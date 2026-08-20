@@ -73,6 +73,9 @@ const claim = (start) => new Promise((res, rej) => {
 });
 
 const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Me"];
+const ONLY = (process.env.ONLY || "").trim();
+const SUBTAB = "Logbook:Completed";
+const REPORT = [...TABS, SUBTAB];
 const settle = async (page) => {
   let last = "", same = 0;
   for (let i = 0; i < 45; i++) {
@@ -89,11 +92,26 @@ async function walk(browser, base, session, fail) {
     ({ key, value }) => { try { window.localStorage.setItem(key, value); } catch {} },
     { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(session)) },
   );
-  let blocked = 0;
+  let blocked = 0, passed = 0;
   if (fail) {
     // Only the DATA path. Auth must keep working or the app would simply sign us out, which
     // is a different screen from "signed in, data unavailable" and not the one being studied.
+    //
+    // ONLY=<table> fails exactly ONE PostgREST table and lets the rest through. That is what
+    // makes a per-flag verdict possible: with everything blocked, three flags on one screen go
+    // true together and the run cannot tell you which of them produced which sentence -- nor
+    // whether one is a blanket flag firing on data that merely had not arrived. #1140 asked for
+    // a per-query healthy-vs-failing run, and this is the mechanism for it.
+    //
+    // Matched on the path segment after /rest/v1/, never as a substring: PostgREST names
+    // EMBEDDED tables in the query string (select=*,crew_members(*)), so a substring test would
+    // also fail requests aimed at a different table entirely.
+    const only = (process.env.ONLY || "").trim();
     await page.route("**/rest/v1/**", async (route) => {
+      if (only) {
+        const m = /\/rest\/v1\/([^?/]+)/.exec(route.request().url());
+        if (!m || m[1] !== only) { passed++; return route.continue(); }
+      }
       blocked++;
       return route.fulfill({ status: 500, contentType: "application/json",
         body: JSON.stringify({ code: "57014", message: "canceling statement due to statement timeout" }) });
@@ -108,7 +126,22 @@ async function walk(browser, base, session, fail) {
     if (await el.count()) await el.click({ timeout: 5000 }).catch(() => {});
     out[t] = await settle(page);
   }
+  // The Logbook's sub-tabs are a screen each, and the four false statements #1140 found were
+  // all on the DEFAULT one. "Completed" is fed by a different query (climb_logs) and asserts
+  // emptiness just as loudly -- "0 logged", "Log your completed climbs here" -- so a walk that
+  // stops at the default view reports half of this screen and reads as though it covered it.
+  const lb = page.locator(`text="Logbook"`).last();
+  if (await lb.count()) await lb.click({ timeout: 5000 }).catch(() => {});
+  await settle(page);
+  const comp = page.locator(`text="Completed"`).last();
+  if (await comp.count()) await comp.click({ timeout: 5000 }).catch(() => {});
+  const compText = await settle(page);
+  // A sub-tab click that does not land leaves the DEFAULT view on screen, which reads as a
+  // clean result rather than as a miss. Say which it was.
+  out[SUBTAB] = /My Ascents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
+    ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
   out.__blocked = blocked;
+  out.__passed = passed;
   await page.close();
   return out;
 }
@@ -130,12 +163,23 @@ try {
   const ok = await walk(browser, base, fixture.session, false);
   console.log(`app on screen: ${ok.__booted ? "yes" : "NO"}`);
 
-  console.log("\n--- database FAILING (every read 57014) ---");
+  console.log(ONLY
+    ? `\n--- database FAILING for /rest/v1/${ONLY} ONLY (57014); every other read succeeds ---`
+    : "\n--- database FAILING (every read 57014) ---");
   const bad = await walk(browser, base, fixture.session, true);
-  console.log(`app on screen: ${bad.__booted ? "yes" : "NO"}  (${bad.__blocked} reads blocked)\n`);
+  console.log(`app on screen: ${bad.__booted ? "yes" : "NO"}  (${bad.__blocked} reads blocked` +
+    (ONLY ? `, ${bad.__passed} let through` : "") + `)\n`);
+  // A zero here means the interception never matched, and every verdict below would then be a
+  // statement about a HEALTHY app. Fail loudly rather than printing a clean-looking table.
+  if (!bad.__blocked) {
+    console.log(ONLY
+      ? `NOTHING WAS BLOCKED. No request hit /rest/v1/${ONLY} during the walk -- check the table name.`
+      : "NOTHING WAS BLOCKED. The interception never fired; nothing below was measured.");
+    process.exitCode = 1;
+  }
 
   let anyDbBacked = false;
-  for (const t of TABS) {
+  for (const t of REPORT) {
     const same = ok[t] === bad[t];
     if (!same) anyDbBacked = true;
     const text = bad[t] || "";

@@ -34,6 +34,7 @@
     "audit:waypoints": "node scripts/audit-waypoints.mjs",
     "audit:waypoint-order": "node scripts/audit-waypoint-order.mjs",
     "audit:waypoint-distances": "node scripts/audit-waypoint-distances.mjs",
+    "audit:gain": "node scripts/audit-gain-vs-waypoints.mjs",
     "audit:map-pins": "node scripts/audit-route-map-pins.mjs",
     "audit:access-prose": "node scripts/audit-misfiled-access-prose.mjs",
     "audit:note-voice": "node scripts/audit-waypoint-note-voice.mjs",
@@ -99,6 +100,7 @@
     "check:correction-readers": "node scripts/check-correction-readers.mjs",
     "audit:peak-coords": "node scripts/audit-peak-coords.mjs",
     "audit:waypoint-elevations": "node scripts/audit-waypoint-elevations.mjs",
+    "audit:waypoint-geometry": "node scripts/audit-waypoint-geometry.mjs",
     "audit:synthetic-waypoints": "node scripts/audit-synthetic-waypoints.mjs",
     "check:no-sources": "node scripts/check-no-rendered-sources.mjs",
     "check:waypoint-caveat": "node scripts/check-waypoint-caveat.mjs"

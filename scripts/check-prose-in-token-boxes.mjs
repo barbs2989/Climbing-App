@@ -49,8 +49,29 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+import { ListsManager } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
+// The tick-list route rows. They render route columns into pills and live in core, so
+// mounting RouteDetail cannot reach them - which is exactly how the last raw r.grade in the
+// app survived every other guard. Props are the minimum ListsManager needs to draw one row.
+// (No backticks anywhere in here: this whole block sits inside a template literal, and one
+// backtick terminates it - which is how this failed to parse the first time.)
+export function renderLists(route) {
+  // id MUST be "ul_obj": ListsManager splits userLists into the OBJECTIVES list (that exact id,
+  // rendered expanded) and custom lists, which stay collapsed behind a useState SSR cannot click.
+  // With any other id the fixture rendered the panel chrome and NO route row at all - coverage in
+  // name only, and the guard would have reported a screen it never actually inspected.
+  const list = { id: "ul_obj", name: "My Objectives", routeIds: [route.id] };
+  return renderToStaticMarkup(
+    React.createElement(QueryClientProvider, { client: qc },
+      React.createElement(ListsManager, {
+        userLists: [list], setUserLists: noop, logs: [], onOpen: noop, crews: [],
+        onFindPartners: noop, onOpenCrew: noop, onOpenLog: noop, onLogClimb: noop,
+        crewMsgs: {}, routeById: (id) => (id === route.id ? route : null),
+        objDates: {}, onSetObjDate: noop, onCreateList: noop, onUpdateList: noop,
+      })));
+}
 export function render(route, tab) {
   return renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
@@ -69,7 +90,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = require_(out);
+const { render, renderLists } = require_(out);
 
 const camel = (r) => { const o = { ...r }; for (const [k, v] of Object.entries(r)) o[k.replace(/_([a-z])/g, (_, c) => c.toUpperCase())] = v; return o; };
 const unesc = (s) => s.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -152,11 +173,32 @@ function leafBoxes(html) {
 const TABS = ["overview", "conditions", "planner", "safety", "photos", "ranks"];
 const findings = new Map();
 let boxes = 0, rendered = 0;
-for (const r of rows) {
+
+// A SENTINEL route, rendered alongside the real ones. The sample can only ever find a box
+// holding a paragraph TODAY; this asks the stronger question — can this box RECEIVE one? Grades
+// run to 77 characters in the live catalog but on only ~36 rows, so a 40-row sample never sees
+// one, and the tick-list pill that read raw `r.grade` was invisible to the sampled pass.
+// Same reasoning as check:field-renders' SENTINELS: a column nothing has written yet is
+// unguarded by construction, which is exactly when you most want the reader checked.
+const SENTINEL = "ZZ" + "x".repeat(120) + "ZZ";
+const sentinelRoute = () => {
+  const base = rows[0];
+  const o = {};
+  for (const [k, v] of Object.entries(base)) o[k] = typeof v === "string" ? SENTINEL : v;
+  return o;
+};
+const ALL = rows.concat([sentinelRoute()]);
+for (const r of ALL) {
   const route = Object.assign(camel(r), { mountainId: r.area_id, _dbArea: { id: r.area_id, name: "Probe", areaType: "peak", region: "Washington" } });
-  for (const tab of TABS) {
+  for (const tab of TABS.concat(["lists"])) {
     let html;
-    try { html = render(route, tab); } catch { continue; }
+    // `lists` is not a RouteDetail sub-tab — it is the tick-list manager on the Logbook tab,
+    // added because the route page is not the only screen that renders route columns into
+    // pills. It was measured before being added: of 90 distinct token-shaped expressions
+    // outside RouteDetail, exactly ONE was a route column (`r.grade`, raw, in this row), and
+    // grades run to 77 characters in the live catalog. Everything else there is a name or a
+    // count, which cannot be long.
+    try { html = tab === "lists" ? renderLists(route) : render(route, tab); } catch { continue; }
     rendered++;
     for (const b of leafBoxes(html)) {
       boxes++;
@@ -175,9 +217,9 @@ for (const r of rows) {
 if (!rendered) { console.log("FAIL: rendered nothing — the probe is broken"); process.exit(1); }
 if (!boxes) { console.log(`FAIL: ${rendered} renders and ZERO token-shaped leaf boxes found — the shape test matches nothing`); process.exit(1); }
 
-console.log(`${rows.length} enriched routes x ${TABS.length} sub-tabs = ${rendered} renders; ${boxes} token-shaped leaf box(es) inspected`);
+console.log(`${rows.length} enriched routes x ${TABS.length + 1} screens = ${rendered} renders; ${boxes} token-shaped leaf box(es) inspected`);
 console.log(`threshold: text longer than ${LONG} characters inside a value-sized box\n`);
-if (!findings.size) { console.log("check:token-boxes: ok — no token-shaped box on the route page holds a paragraph."); process.exit(0); }
+if (!findings.size) { console.log("check:token-boxes: ok — no token-shaped box holds a paragraph, on any screen walked or for the sentinel."); process.exit(0); }
 
 console.log(`${findings.size} box(es) hold text too long for their shape:\n`);
 [...findings.values()].sort((a, b) => b.max - a.max).forEach((f) => {

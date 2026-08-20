@@ -188,7 +188,44 @@ const RIVALRIES = [
     checkRename: false,
     why: "#907 — the RACK box read gearTiers.required while the form writes rack.",
   },
+  {
+    key: "ropeLen",
+    rival: "ropeLengthM",
+    guard: "_ropeEdited",
+    everyReaderGates: false,
+    precedence: "RouteRackBox",
+    // checkRename is FALSE and the reason is measured, not inherited. `M` does not rename
+    // ropeLen at all, so `dest === key` and there is no rename to get the wrong way round; the
+    // rivalry is between the contributed spelling and a separate ENRICHMENT column. The derived
+    // rule would switch on here (dest !== rival, no mirror) and then demand the precedence
+    // function return the M destination — but this precedence lives in a component that returns
+    // a rendered line, not a column, so that test cannot apply.
+    //
+    // Unlike `rack`, nothing mirrors the two sides: `rack` is written to BOTH o.rack and
+    // o.gearTiers.required, while a ropeLen contribution writes only o.ropeLen. That is exactly
+    // why the two can disagree and why this needed a guard at all.
+    checkRename: false,
+    why: "the RACK box preferred ropeLengthM unconditionally, so an agreed rope-length correction was invisible on the 295 WA routes carrying the enrichment number.",
+  },
 ];
+// Keyed `rivalry|functionName`. The note above the RIVALRIES list said EXEMPT was deliberately
+// absent rather than empty, and to add it when a real case appeared WITH the reason. This is
+// that case, and it only became visible when the body extractor was fixed — see topLevelFunctions.
+const EXEMPT = {
+  // RappelTable RENDERS the station list; it does not adjudicate between the two columns. Its
+  // read is a presence check (`if(!route.rappelDetail||!route.rappelDetail.length)return null`)
+  // followed by mapping the stations out. The seven readers that answer "how many rappels does
+  // this route have" all gate, and they are where #787/#791 actually broke.
+  //
+  // NOT a claim that the screen is beyond question. If climbers correct the COUNT, a station
+  // table still listing more stations puts two answers on one tab — the contradiction shape the
+  // `rack` case records. Whether the table should then be suppressed, or captioned as superseded,
+  // is a product decision about hiding real per-station lengths, so it is surfaced rather than
+  // decided here. Delete this entry the moment that is settled.
+  // Keyed on the rivalry's `key` (the FORM field, "rap"), not the column it rivals.
+  "rap|RappelTable": true,
+};
+
 for (const r of RIVALRIES) {
   r.dest = M[r.key] || r.key;
   r.mirrored = MIRRORED.has(`${r.dest}|${r.rival}`);
@@ -215,7 +252,25 @@ function topLevelFunctions(src) {
   const re = /\n(?:export\s+)?function ([A-Za-z_$][\w$]*)\s*\(/g;
   let m;
   while ((m = re.exec(src))) {
-    const open = src.indexOf("{", m.index + m[0].length - 1);
+    // Find the end of the PARAMETER LIST first, then the body brace after it. Taking the first
+    // `{` after the `(` reads a DESTRUCTURED parameter list as the body: for
+    // `function RouteRackBox({route,onEditRack,...}){...}` the first brace opens the pattern, so
+    // balancing from there ends at the parameter list and the extracted "body" is
+    // `{route,onEditRack,rack,onSeeReports,rackGeneric}` — a few dozen characters of a component
+    // thousands long. Every such function was therefore scanned as if it were empty: it could
+    // neither read a rival column nor consult a guard, so it could never fail a rule. That is a
+    // coverage hole of the kind this repo keeps finding — silent by construction, because a
+    // function that contributes nothing looks exactly like a function with nothing to say.
+    // Caught only because registering the ropeLen rivalry made a KNOWN reader report as absent.
+    let p = m.index + m[0].length - 1; // sits on the "(" of the parameter list
+    let pd = 0, afterParams = -1;
+    for (let k = p; k < src.length; k++) {
+      const c = src[k];
+      if (c === "(") pd++;
+      else if (c === ")" && --pd === 0) { afterParams = k + 1; break; }
+    }
+    if (afterParams < 0) continue;
+    const open = src.indexOf("{", afterParams);
     if (open < 0) continue;
     let depth = 0, end = -1;
     for (let k = open; k < src.length; k++) {
@@ -297,10 +352,21 @@ for (const r of RIVALRIES) {
     console.log(`  .${r.rival.padEnd(14)}     : ${readers.length} reader(s) (precedence checked at ${r.precedence}, not every read)`);
     continue;
   }
-  const unguarded = readers.filter((f) => !tok(r.guard).test(f.code));
-  console.log(`  .${r.rival.padEnd(14)}     : ${readers.length} reader(s), ${readers.length - unguarded.length} carry ${r.guard}`);
+  const unguarded = readers.filter((f) => !tok(r.guard).test(f.code) && !EXEMPT[`${r.key}|${f.name}`]);
+  const claimed = readers.filter((f) => EXEMPT[`${r.key}|${f.name}`]);
+  console.log(`  .${r.rival.padEnd(14)}     : ${readers.length} reader(s), ${readers.length - unguarded.length - claimed.length} carry ${r.guard}${claimed.length ? `, ${claimed.length} exempt` : ""}`);
   for (const f of unguarded) {
     problems.push(`${f.name} (${FILE}:${f.line}) reads .${r.rival} without ${r.guard} — ${r.why}`);
+  }
+  // A stale exemption fails, the same standard NEEDS_EXTRA_STATE and KNOWN are held to: an
+  // entry naming a function that no longer reads the column is bookkeeping describing code
+  // that is gone, and it would quietly excuse the next function to take that name.
+  for (const key of Object.keys(EXEMPT)) {
+    if (!key.startsWith(`${r.key}|`)) continue;
+    const name = key.slice(r.key.length + 1);
+    if (!readers.some((f) => f.name === name)) {
+      problems.push(`EXEMPT names ${name} for rivalry "${r.key}", but no such function reads .${r.rival} any more — remove the entry rather than leaving it to excuse a future reader.`);
+    }
   }
 }
 

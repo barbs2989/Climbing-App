@@ -82,10 +82,12 @@ npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:w
 npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
 npm run audit:access-prose # road/permit sentences filed in a column that renders elsewhere
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
+npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
+npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
@@ -595,6 +597,20 @@ a build error, but a screen that renders wrong or not at all.
     sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
     with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
     verbatim though the column drives the screen.
+    - **A SEVENTH, added 2026-08-20 after it produced a wrong claim in a merged PR:
+      `dbRouteToCamel` opens `return { ...r, ... }`.** It SPREADS the raw row and then adds
+      camelCase aliases, so every snake_case column reaches the app whether or not the mapper
+      names it. `grep -c difficulty lib/db.js` returning **0** therefore proves nothing, and a
+      session concluded from exactly that grep that `difficulty` (8,029 routes) "was mapped by
+      NOTHING" and that DiffRadar was dark catalog-wide. Executing the pre-change mapper settled
+      it in one line: `.difficulty` came back intact, 70 keys. **Read the whole mapper — or just
+      run it — before concluding a column is unreached.** Same shape as the `descentText`
+      rivalry, where three sessions in a row derived a rule from one line of `var M` without
+      reading the fix-ups below it.
+      - What the episode DID leave behind is real and worth keeping: `difficulty` was absent from
+        `FIELDS`, so the guard that exists to catch a column reaching no screen had never asked
+        about it; and a rendered measurement (24,236 → 39,027 characters) that is a fact about
+        the DATA's value on a route that carries it, not evidence of a defect.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
   - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —
@@ -760,10 +776,40 @@ a build error, but a screen that renders wrong or not at all.
   - Fails **closed** three ways: a failed catalog read is reported as a failed read and never as
     "no prose in a chip", zero renders is a broken probe, and zero token-shaped boxes means the
     shape test matches nothing.
-  - Injection-tested **5/5** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
+  - **It walks a SEVENTH screen, and the route page is not the only place route columns land.**
+    `ListsManager` — the tick-list rows on the Logbook tab — renders route columns into pills and
+    lives in core, so mounting `RouteDetail` cannot reach it. That is how the **last raw
+    `r.grade`** in the app survived every guard: every sibling row goes through `shortGrade()`,
+    that one read the column directly, and grades run to **77 characters** in the live catalog
+    (`"Grade III, 5.10a (5 pitches, 900 ft: P1 5.9+, P2 5.9, P3 5.6, P4 5.7, P5 5.7)"`).
+    - **Adding the screen was measured first, not assumed.** Of **90** distinct token-shaped
+      expressions outside `RouteDetail`, exactly **one** was a route column; everything else is a
+      name or a count, which cannot be long. So this is the only screen worth the mount.
+    - **The fixture's list id MUST be `ul_obj`.** `ListsManager` splits `userLists` into the
+      objectives list (that exact id, rendered expanded) and custom lists, which stay collapsed
+      behind a `useState` SSR cannot click. With any other id the fixture rendered the panel
+      chrome and **no route row at all** — the seventh screen was coverage in name only, and the
+      guard reported a screen it had never inspected. Caught only because injection case 5
+      **missed**; the box count had gone up, which looked like coverage.
+  - **A SENTINEL route is rendered alongside the real ones**, because a sample can only find a box
+    holding a paragraph *today*. Long grades exist on ~36 rows catalog-wide, so a 40-row sample
+    never meets one and the tick-list pill was invisible to the sampled pass. The sentinel asks
+    the stronger question — *can this box receive one?* Same reasoning as `check:field-renders`'
+    `SENTINELS`: a column nothing has written yet is unguarded by construction.
+  - **`shortGrade()` had NO length bound, and the sentinel is what exposed it.** It cuts at the
+    qualifier delimiters in `CUTS` and then stops, so a grade containing none of them rendered in
+    full inside a nowrap pill — while its sibling `seasonShort()` has always capped. Now capped at
+    **48**, a number chosen to clear both bounds: the longest real `shortGrade` output is **34**
+    (`"Class 2 snow climb / non-technical"` — a real compound grade that must NOT be truncated),
+    and a cap at 60 would emit 60 + an ellipsis = **61** and trip the very guard it exists to
+    satisfy. Proven behaviour-neutral before shipping across **236** distinct grades with the long
+    shapes over-sampled (`verify-grade-cap-equivalence.mjs`): **2 differ, both synthetic**, and in
+    both the remainder moves into `gradeDetail` rather than being lost.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-token-box-cases.mjs`), and **case 0 is the one
     that matters**: it runs the guard against `RouteDetail.jsx` exactly as it stood at `6f82fc0`,
-    the commit before the camping collapse. Both earlier designs passed that tree. Two cases must
-    stay **quiet**, pinning the exclusions above.
+    the commit before the camping collapse. Both earlier designs passed that tree. **Case 5 pins
+    the seventh screen** — it reverts the tick-list row to raw `r.grade`, and it MISSED twice
+    before the fixture was right. Two cases must stay **quiet**, pinning the exclusions above.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
@@ -2296,14 +2342,56 @@ the correction knows the screen is wrong, and they have no way to report it.
     directions** are asserted: a route with no rack of its own must add **no** list, or the stock
     quickdraw kit gets restated directly under the note that already says it. Injection-tested
     2/2, each restored to the pre-injection checksum.
-- **`wa_true_grit` carries another route's prose entirely — REPORT, do not repair.** The row is
-  filed at **Postal Wall, Frenchman Coulee** (a Vantage basalt sport crag, 47.025,-119.975) and
-  stores `sport 5.10c, 0 pitches`; its `overview` and `beta` describe *"a 5.8 trad rock line …
-  on **Vesper Peak's north face**"*, 150 km away in the Cascades. Discipline, grade and range all
-  disagree. **29 rows in the catalog are named "True Grit"** — the *a name is not an identity*
-  root cause this file already records for route ids, reaching a prose column instead of an id.
-  Found while scoping the gear work (`probe-true-grit-mismatch.mjs`); which half to delete needs
-  checking whether a real Vesper "True Grit" row exists to receive the prose, so it is left alone.
+- **`wa_true_grit` carried another route's prose entirely — FIXED, and the row was a MIX.** The row
+  is filed at **Postal Wall, Frenchman Coulee** (a Vantage basalt sport crag, 47.025,-119.975) and
+  stores `sport 5.10c, 0 pitches`; five of its text fields described *"a 5.8 trad rock line … on
+  **Vesper Peak's north face**"*, 150 km away in the Cascades. **29 rows in the catalog are named
+  "True Grit"** — the *a name is not an identity* root cause this file records for route ids,
+  reaching a prose column instead of an id.
+  - **The target row was identified rather than guessed**: `wa_true_grit_2` (Vesper Peak, alpine
+    5.8, 5 pitches, beside Ragged Edge 5.7) is that climb, and already carried the same facts in
+    far fuller form — a five-entry `pitch_detail`, its own rack, a 1,400-character approach. So
+    this was a stray **duplicate to clear**, not prose to move.
+  - **Its `hazards` is genuinely Frenchman Coulee** — *"Basalt columns fracture in dinner-plate
+    style … rattlesnakes … raptor nesting closures"* — and was kept. **A contaminated row is not
+    uniformly contaminated**; clear named fields, never blank the row.
+  - **Two evidence gates, deliberately kept distinguishable.** Gate A: the field NAMES something
+    only Vesper has (*Berdinka*, *Sunrise Mine*), and the Vesper row already says it, so clearing
+    cannot destroy the only copy — that cleared `overview`, `beta`, `approach`. Gate A correctly
+    **refused** `best_season` and `watch_out`, which describe alpine terrain but name no Vesper
+    place. Gate B settled those from the **crag** rather than the row: of the **110 routes in the
+    Frenchman Coulee subtree, `wa_true_grit` is the only one that records a season, the only one
+    with an approach, and the only one whose text mentions alpine terrain**. Gate B is armed only
+    once Gate A has already fired twice — *"unlike its siblings"* alone is far too weak, and would
+    let a thinly-enriched crag condemn its one well-documented route.
+  - **`season` = "Jun-Sep" is left UNRESOLVED and flagged**, not fixed. It is the only season in
+    those 110 routes, so it is certainly anomalous — but Jun-Sep being wrong for a desert crag is
+    knowledge about climbing rather than something the row proves, and replacing it would invent a
+    value.
+  - The sibling probe found its own vacuous zero on the way: `path=like.*` is invalid on an ltree
+    column (**42883**), and the `cd.` version before it used a hand-typed path missing the
+    intermediate `wa_frenchman_coulee_aka_vantage` segment — returning **200 with zero areas**,
+    which reads as *"this crag has no siblings"* rather than *"the query is wrong"*. Derive a
+    subtree path from a row that is in it, and fail closed on an empty result.
+- **`wa_phantom_peak_south_route`'s chain matched neither trailhead record because it matched BOTH
+  — FIXED.** `audit:trailhead-agreement` left this one unresolved, and reading the row settles it:
+  the route's own approach text names **two real approaches** ("Option one, the Luna Creek
+  approach: from Ross Lake Resort … to Luna Camp … Option two … Hannegan Trailhead → Ruth Creek
+  Trail → Chilliwack River Trail … Whatcom Pass"), and its seven waypoints are a **mix of both** —
+  Luna Camp and the Luna Creek bushwhack from one, the Crooked Thumb moraine camp and the
+  southwest-buttress saddle from the other. That is correct data for a two-approach peak.
+  - The defect is the **third** name. `approach_logistics.trailhead` said *"Nooksack Cirque
+    Trailhead (Trail #750)"*, which appears **nowhere in the route's own prose** and sits up a
+    different drainage — its nearest named areas are Shuksan Crag and Pan Dome Falls. The
+    waypoint pin says *Hannegan Pass Trailhead*, named verbatim in the approach text.
+  - Repaired by **declaring a winner and copying it** — the pin into the blob, no coordinate typed
+    anywhere in the script, so a fix needing a third coordinate cannot be expressed at all.
+  - **The resulting agreement is NOT evidence**, and that is worth knowing before someone quotes
+    it: the two records now agree at 0 m by construction, which is one claim counted twice. This
+    is not the trap [[do-not-create-a-trailhead-pin-from-the-logistics-copy]] describes, because
+    it corrects an existing record shown wrong by an **independent third source** (the route's own
+    prose) rather than manufacturing a second record from a copy — but the caveat on the *result*
+    is identical.
 - **A packing list has no negative form, and three entries were exploiting that.** `what_to_bring`
   renders as bullets under WHAT TO BRING, so every entry reads as *carry this*. Three were not gear:
   two Monte Cristo routes said **"Approach shoes unnecessary beyond a short roadside walk"** while
@@ -2394,6 +2482,56 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Read the jump from 63 to 199 as coverage that was missing, never as data that got worse.**
     Nothing changed in the catalog. The same lesson as `trackIsJustTheWaypoints` correcting a
     denominator rather than a finding: *overstated coverage is the false-pass direction.*
+- **`audit:gain`** asks whether a route's stored `gain_ft` is even POSSIBLE given its own
+  waypoints. A party that starts at a trailhead at X ft and stands on a summit at Y ft has gained
+  at least Y − X, so a row storing less than its own net rise is storing a number that cannot be
+  true — and no research is needed to say so, because the contradiction is inside the row. Same
+  family as the chord-vs-trail-mileage test. **88 of 800 comparable WA routes (11%)** fail it.
+  - **It is not cosmetic, and the chain was checked rather than assumed**: `routes.gain_ft` →
+    `dbRouteToCamel`'s `gainM: r.gain_ft/3.28084` → `scarfHrs(distKm, gainM, …)` → the Plan tab's
+    estimated summit time, estimated return, and "after dark" warning. Measured with the app's own
+    `scarfHrs`: `wa_mount_rainier_tahoma_glacier` stores 5,007 ft against a trailhead→summit rise
+    of 11,506 ft, which **understates its approach by 3.3 hours**. That is the #641 shape — a
+    number that quietly makes the return tile optimistic.
+  - **ONE-SIDED BY DESIGN.** Too little gain is impossible; too much is not, because a real route
+    rolls over intermediate bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **The obvious alternative explanation is HALF TRUE, which is why it is a filter and not a
+    footnote.** `gain_ft` may legitimately be measured from a high camp or the base of the climb
+    rather than from the trailhead. Of the 112 routes that fail the raw test, **24 have a waypoint
+    at exactly the elevation the stored gain implies** — `wa_mount_adams_adams_glacier` stores
+    5,150 against a "High Camp" pin at 7,000 ft, and 12,276 − 5,150 = 7,126. Those are a
+    **convention**, not an error, and reporting them would be reporting correct work. The other 88
+    imply a start the row records nothing at. Same shape as `dist_km` holding two conventions at
+    once — **this column has two readings too, and only one of them is wrong.**
+  - **THE 88 HAVE NO COMMON CAUSE — both stories were tested and BOTH DIED, so do not write a bulk
+    repair.** The findings look systematic (57 of 88 share a `gain_ft` with another finding, and the
+    shared values are round: 4000 six times, 4800 six, 1200 five, 2200 five), which reads as either a
+    value copied across siblings or a round number guessed instead of measured. Measured against the
+    **passing** population — the denominator the audit itself does not emit —
+    `probe-gain-findings-are-round-estimates.mjs` says neither holds. Roundness is a property of the
+    **column**, not of the defect: 73.9% of failures are a multiple of 100 against **63.5% of the 688
+    passing routes**, which is a 10-point lean and not a cause. And the contamination story fails in
+    the **opposite direction** — a failing route shares its gain with another route **64.8%** of the
+    time against **76.0%** for a passing one, so the defective rows are *less* duplicated than the
+    healthy ones.
+    - So these are 88 individually wrong numbers, not one import bug with 88 symptoms, and the repair
+      is per-route research. **A transform would have to invent a value**, which is the class this
+      file records for interpolated pins and halved rappel lengths. 23 of the 88 carry a non-round
+      gain (`wa_mount_rainier_edmunds_headwall` 8,470; `wa_mount_logan_r1` 7,027) — a guessing story
+      never explained those either.
+    - The transferable half is the method rather than the answer: **a pattern among findings is not
+      evidence until it is compared against the rows that pass.** Every count here that was quoted
+      without its denominator has overstated the work.
+  - Elevations are read from `elev` (**feet**) with the legacy `elevM` spelling converted, because
+    mixing them would put a silent 3.28x error into every comparison.
+  - **`--json` must never be followed by `process.exit()`**, and this cost an hour to see. On a TTY
+    stdout is synchronous and the exit is harmless; on a **pipe** it is asynchronous, so exiting
+    truncates whatever has not flushed. The first consumer got valid-looking JSON cut off at a
+    *different byte on every run*, which reads as "this script emits broken JSON" when the output
+    is fine and the exit is the bug. The two modes are branches now. **Any script here that grows a
+    machine-readable mode inherits this trap.**
+  - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
+    not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
@@ -3182,6 +3320,62 @@ drew a conclusion from that emptiness:
   `trackIsJustTheWaypoints()` returns "genuine track" for any line over 40 points, and
   `claimMyCrewEmailInvites()` returns `0` for a missing RPC, so a broken deploy and an empty
   inbox are the same number.
+
+**Throwing is NECESSARY AND NOT SUFFICIENT — the screen can still say you have none.**
+`check:read-failures` **passes** for `useMyObjectives`, `useMyLists` and `useUserLogs`: all three
+already `throw error`, exactly as it demands. And during an outage the Logbook told an account
+that HAS an objective, a log and a custom list, verbatim — *"0 climbs to go"*, *"Nothing here yet
+— find a route in the Climbs tab and tap the bookmark"*, *"No custom lists yet"*, *"No recent
+condition reports"*, and one sub-tab over *"0 logged"* above *"Log your completed climbs here"*.
+**Six false statements from three reads that all failed correctly.** #1140 measured four and
+recorded them; #1124 fixed the crew instance and #1147 the lists one, each taken one query at a
+time as those commits said it should be; this is the remaining two queries. The Completed pair is
+one click past where the probe walks, so nothing had reported it at all.
+  - **The guard's own stated limitation IS this hole**, and it says so: it does not attempt the
+    strong form, *"does anything downstream conclude absence from this emptiness?"* Something
+    does. The caller's `.catch` no-ops, the hydration `useEffect` returns on `!data`, state stays
+    `[]`, and every render tests `!x.length` — so **loaded-and-empty and never-loaded are the same
+    screen**. Nothing lied; the truth simply never arrived.
+  - The repair is `xUnavailable` from that query's **`isError`**, one flag per query — the shape
+    #1124 established for crews. `isError` deliberately rather than a blanket "the database is
+    down": it is false while a query is in flight, so a slow read still reads as loading. #1140's
+    warning was that a blanket flag replaces one false statement with another.
+  - **Flags do not map one-to-one onto sentences, so find the query rather than the string.**
+    `objectivesUnavailable` drives three surfaces, because RECENT CONDITION REPORTS is built from
+    `wishlist` — i.e. from that same read, two derivations away. `logsUnavailable` drives four,
+    `listsUnavailable` (#1147) one.
+  - **A sentence with TWO inputs lies in two directions.** *"N climbs to go"* is list length minus
+    logged climbs: objectives down gives *"0 climbs to go"* to somebody who has objectives; LOGS
+    down counts nothing as done and over-states what is left. The list case drops the badge (the
+    body already says why); the logs case falls back to what is still known — how many climbs are
+    on the list — and a line says nothing below is marked done, because the copy right above
+    promises that logged climbs show a ✓ and a missing tick otherwise reads as an unclimbed route.
+    One label serves the badge and the `aria-label`, so they cannot drift.
+  - **`ONLY=<table>` is what makes a per-flag verdict possible**, and it was added for this:
+    `probe-signed-in-db-failure.mjs` blocked `**/rest/v1/**` wholesale, so all three flags went
+    true together and no run could say which produced which sentence — nor whether one was a
+    blanket flag. Measured: `ONLY=objectives` (4 blocked, 34 through) leaves CUSTOM LISTS
+    rendering its real content, and `ONLY=user_lists` leaves MY OBJECTIVES rendering the real
+    objective **and RECENT CONDITION REPORTS showing its honest empty state**. That last clause is
+    the proof, not the fix.
+    - It isolates a **table, not a hook** — several hooks reading one table fail together
+      (blocking `objectives` also fails `useObjectiveCounts`). Stated rather than overclaimed.
+    - Matched on the path segment after `/rest/v1/`, **never as a substring**: PostgREST names
+      EMBEDDED tables in the query string (`select=*,crew_members(*)`), so a substring test fails
+      requests aimed at a different table. A run blocking **zero** requests now exits 1 — otherwise
+      every `IDENTICAL` verdict is a statement about a healthy app.
+  - **Measured non-finding, recorded so it is not re-derived:** the dumps show the fixture ticklist
+    as *"1 climb to go"* though the fixture seeds a log for that same route. `routeCompleted`
+    matches **capitalised** tick types (`Lead`, `Summit`, `Send`) and the fixture writes `"lead"`.
+    The app's own write path is capitalised, so this is a **fixture artifact**; confirmed against
+    the table, which holds exactly one row — the fixture's own. Deliberately not "fixed" by
+    lowercasing the reader: that is changing app behaviour to suit a fixture, and it would move
+    what `check:signed-in` sees.
+  - **Not closed, and not made a guard.** 4 of 28 query handles in `App` carry a flag (crews #1124,
+    lists #1147, objectives and logs here); the other 24 are a **list to READ**, not a defect count — most are lookups
+    (profiles by id, area names) where emptiness is never asserted to the user. A guard for the
+    strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
+    which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
 
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
