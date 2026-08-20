@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+// Does a route's `road.name` name a road its OWN driveNote never mentions?
+//
+// audit:trailhead-road section 2 asks the neighbouring question and needs a CLUSTER to ask it: a
+// row's road name is compared against what the other routes at the same trailhead agree on, so it
+// is silent below three routes and silent whenever the cluster is wrong together. This asks inside
+// ONE ROW, against the row's own driving directions, and needs no neighbours at all.
+//
+// wa_glacier_peak_kennedy_glacier is the case: road.name "White Chuck Road (FR 23)" and a status
+// about its MP 3.7 closure, above a driveNote that drives the Mountain Loop Highway to Sloan Creek
+// Road (FR 49) and an access.closures about the FR 49 corridor. The page names one road and gives
+// directions up another.
+import { selectAll } from "../lib/supabase-env.mjs";
+
+// Roads are compared as IDENTIFIERS, never as sentences — one road has many spellings. Numbered
+// routes normalise to their number; proper-noun names to their distinctive words.
+const GENERIC = new Set(["road", "rd", "roads", "creek", "river", "forest", "service", "fs", "fsr",
+  "fr", "nf", "trailhead", "th", "access", "the", "and", "or", "to", "via", "county", "state",
+  "highway", "hwy", "route", "sr", "us", "national", "park", "spur", "main", "north", "south",
+  "east", "west", "upper", "lower", "old", "new", "pass", "lake", "mountain", "valley"]);
+
+function roadIds(t) {
+  const out = new Set();
+  if (typeof t !== "string") return out;
+  // FR 49 / FSR 6200 / FS Road 23 / Forest Road 2329 / SR-20 / US-2 / I-90 / Highway 165
+  for (const m of t.matchAll(/\b(?:fr|fsr|fs|nf|forest\s+(?:service\s+)?road|county\s+road|sr|us|i|highway|hwy|state\s+route|route)[\s.\-#]*(\d{1,5})\b/gi)) out.add("#" + m[1]);
+  for (const m of t.matchAll(/\b(?:road|rd)\s*(\d{2,5})\b/gi)) out.add("#" + m[1]);
+  // Proper-noun road names: "White Chuck Road", "Sloan Creek Road", "Mountain Loop Highway"
+  for (const m of t.matchAll(/\b((?:[A-Z][a-z]+\s+){1,3})(?:Road|Rd\.?|Highway|Hwy)\b/g)) {
+    for (const w of m[1].trim().split(/\s+/)) {
+      const k = w.toLowerCase();
+      if (!GENERIC.has(k) && k.length > 2) out.add(k);
+    }
+  }
+  return out;
+}
+
+const rows = await selectAll("routes", "id,name,road,access", "road.not.is.null", { pageSize: 1000 });
+if (!rows.length) { console.error("FAIL — read 0 routes. Refusing to report a clean result about data this never saw."); process.exit(1); }
+
+let comparable = 0;
+const findings = [];
+for (const r of rows) {
+  const nm = r.road?.name;
+  const drive = [r.road?.driveNote, r.road?.status, r.road?.seasonalGate].filter((x) => typeof x === "string").join("   ");
+  if (typeof nm !== "string" || !nm.trim() || !drive.trim()) continue;
+  const want = roadIds(nm);
+  if (!want.size) continue;                       // no identifier in the name — nothing to compare
+  const driveNote = r.road?.driveNote;
+  if (typeof driveNote !== "string" || driveNote.trim().length < 40) continue; // no real directions
+  comparable++;
+  const have = roadIds(driveNote);
+  if (!have.size) continue;                       // directions name no road — a different gap
+  const shared = [...want].some((k) => have.has(k));
+  if (!shared) findings.push({ id: r.id, nm, want: [...want], have: [...have], driveNote });
+}
+
+console.log(`${rows.length} routes carry a road block; ${comparable} have BOTH a named road and real directions.`);
+console.log(`${findings.length} name a road their own driveNote never mentions.\n`);
+for (const f of findings.slice(0, 30)) {
+  console.log(`${f.id}`);
+  console.log(`   road.name : ${f.nm}   -> ${f.want.join(", ")}`);
+  console.log(`   driveNote : ${f.driveNote.replace(/\s+/g, " ").slice(0, 200)}   -> ${f.have.join(", ")}\n`);
+}

@@ -4001,7 +4001,50 @@ the correction knows the screen is wrong, and they have no way to report it.
     it informative rather than vague. What expires is a claim about the **current state** with no
     date the reader can judge it by. `--inject=yearonly` pins that: every value rewritten to carry a
     year naming a cause must report **0**.
-  - Three tiers, ordered by severity and **mutually exclusive** so one value cannot be counted
+  - **T0 `expired` ASKS THE QUESTION THE COMMAND BLOCK ALREADY PROMISED, and `SELF_LIMITING` was
+    what hid it.** That exclusion waves a value through the moment it names an end date, on the
+    reasoning that the reader can judge it — **a claim about those dates that nothing had ever
+    tested**. `wa_glacier_peak_kennedy_glacier` reads *"Closed MP 3.7 to end per MBS National Forest
+    order (Dec 2024 flood damage; in effect through at least Dec 31, 2025)"*: self-limiting, and
+    today an assertion its own sentence has outlived. The one-line description in CLAUDE.md's
+    command block has said *"does a route state a closure that has already expired?"* since the
+    audit was written; until now the script asked whether one **would**.
+  - **THE PRECISION RULE IS POSITIVE, AND THE MEASUREMENT IS WHY.** 16 values name a lapsed end
+    date and **15 of them are correct** — past-tense event reports (*"a washout was reported in
+    January 2026"*) and historical examples (*"as demonstrated by the ~17-month Dec 2024-May 2026
+    closure"*), both of which stay true forever. The tempting rule is a deny-list of history markers
+    — was / had / e.g. / since rescinded — and this repo records that a deny-list is beaten by one
+    more adjective. Asking instead whether the value asserts the closure is **in force** needs no
+    vocabulary of history at all: 16 → 2. `SELF_ANSWERED` takes the second, `wa_sitkum_spire_standard`,
+    which names its own end date **and then says the order is still active per spring 2026 alerts** —
+    not a history adjective, the value explicitly addressing its own expiry.
+  - **Purely additive, proven by set diff rather than by the totals.** Before/after finding sets are
+    identical but for the one newly surfaced row: nothing moved tier, nothing was lost. Worth doing
+    that way — the headline count is unchanged at 135, so reading the totals alone would say the
+    tier had done nothing.
+  - Injection-tested 6/6, and **the two that must stay SILENT are the ones that matter**:
+    `--inject=expired` is satisfied by any rule that fires on a past date, and that rule reports 15
+    correct values here. `--inject=expiredanswered` and `--inject=pastreport` are what separate
+    *names an old date* from *asserts something untrue*.
+  - **The row is REPORTED, NOT REPAIRED, and the reason is a second defect inside it.** Its
+    `road.name` is *White Chuck Road (FR 23)* and its `road.status` is about that road's MP 3.7
+    closure — above a `driveNote` that drives the Mountain Loop Highway to **Sloan Creek Road (FR
+    49)** and an `access.closures` about the FR 49 corridor. Its four Glacier Peak siblings all name
+    FR 49, and two of them say in as many words that *"The White Chuck Road (FR 23) approach from
+    the north is a different start"*. So the page names one road and gives directions up another,
+    and which half is wrong is a judgement no column settles — the `audit:trailhead-road` section 2
+    shape, inside a single row rather than across a cluster.
+  - **TWO detectors were built for that and both were measured and REJECTED — recorded so nobody
+    re-derives them.** *Forest order numbers* looked ideal, since an order number is an exact
+    identifier needing none of the six tightenings `audit:trailhead-road` required: the catalog
+    cites **5 distinct orders and 0 are disputed**, so it is a detector for a class of zero
+    (`probe-forest-order-agreement.mjs`). And *`road.name` against the row's own `driveNote`*
+    reports **57**, dominated by tokeniser failures rather than findings — `"Salmon La Sac Rd
+    (WA-903)"` against a driveNote saying *"Hwy 903"* is one road, and the extractor missed both the
+    `WA-` prefix and the proper noun because it only reads names followed by *Road*/*Highway*. It
+    would need `audit:trailhead-road`'s whole *a drive has several named legs* apparatus rebuilt.
+    `probe-road-name-vs-own-drivenote.mjs` is kept as the measurement, not wired.
+  - Four tiers, ordered by severity and **mutually exclusive** so one value cannot be counted
     twice. **research-act** (10) — the copy dates itself to when the *researcher* looked (*"as of
     this research date"*), which is the least useful possible phrasing *and* the only freshness
     signal the value carries. **open-ended** (49) — *"indefinitely"*, *"no reopening estimate"*; the
