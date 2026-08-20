@@ -2340,6 +2340,50 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
+    find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
+    result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
+    Coverage went **65% -> 72%**, derivable gain pairs 3,243 -> 3,521, and no new impossible value
+    appeared (camps above their own high point stayed at 16).
+    - **CONTROL FIRST, because the expected output is "a plausible elevation" — which is exactly
+      what a broken pipeline emits.** `probe-camp-elev-control.mjs` runs four places of known
+      height through the identical path and reproduces all four within **68 ft**: Shield Lake
+      6,706 against an independently researched 6,699, plus three the catalog already knew from
+      the *waypoint* store, so agreement is corroboration across methods rather than one claim
+      counted twice. Independent spot-checks after the fact: Three Fingers Lookout **6,851** (the
+      lookout is 6,854), Doubtful Lake 5,393, Tin Can Gap 5,752.
+    - **The refusals are most of the work and must not be "finished".** 86 names have no OSM
+      feature near the peak (a different source, not a guess); **66 are DISPERSED ZONES** —
+      *"Informal snow and rock bivouacs above the basins"* has no single height and a number there
+      invents precision the record cannot carry; 24 name several places at once, where one number
+      is a silent pick; 3 disagree with the catalog's own waypoint; 3 resolved only to a
+      **linear** feature.
+    - **A LINEAR FEATURE HAS NO SINGLE HEIGHT.** *"West Fork Agnes Creek"* matched an OSM
+      `stream`, whose label node hangs at an arbitrary point along a creek that drops thousands of
+      feet. A **lake** is deliberately NOT in that deny-list — a lake surface is flat, which is why
+      the Shield Lake control agreed to 7 ft. The exception is corroboration: once the waypoint
+      store independently agrees, the feature type stops mattering.
+    - **The WAYPOINT STORE IS A GATE, NOT A SOURCE**, and it earned that on its first run.
+      Agreement corroborates; a disagreement means one record is wrong, so it **refuses** rather
+      than picking — Skagit Queen Camp, catalog 4,000 ft against DEM 3,093 ft. Independent
+      research leans toward the DEM (the trail is snow-free to ~4,200 ft *above* the camp) but not
+      conclusively, so it stays unwritten. The `audit:trailhead-agreement` discipline: a fact
+      stored twice is a free consistency check.
+    - **THE CHEAP VERSION OF THIS WOULD HAVE WRITTEN ~700 WRONG NUMBERS, and the near miss is the
+      most useful thing here.** Re-homing an elevation from a same-named waypoint looked free.
+      With `solve-camps.mjs`' token gate it accepted **855 rows**; tightened to name IDENTITY it
+      accepts **151**. What the loose gate matched: a **town park in Darrington** given a ridge
+      camp's 4,900 ft, *"Luna Cirque floor"* given Luna Camp's valley 2,500 ft, and *"Whatcom
+      Camp, Brush Creek BELOW Whatcom Pass"* given Whatcom Pass's height. The fault was the
+      GENERIC list — it discards `pass`, `camp`, `lake`, `basin`, `creek` as noise, and **those are
+      FEATURE TYPES that discriminate**. Whatcom Pass and Whatcom Camp are two places sharing a
+      proper noun. *One distinctive token is not an identity* — the lesson this catalog already
+      paid for at the level of whole names, one level finer.
+    - **Scoping was wrong twice before it was right.** `measure-missing-camp-elevations.mjs` first
+      asked only whether another **bivy** entry knew a height (5 names) and never asked the
+      **waypoint** store, which is 98% populated — the *check the existing files before
+      researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
+      distinct names behind it.
   - **The real gate defect points the OTHER way, and is left as an open product decision.**
     `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,
     6 pitches, with Access Creek Basin and Luna Col recorded — is filed `trad`, which `catOf()`
