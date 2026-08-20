@@ -66,6 +66,24 @@
 > fourth argument, immediately after the 18-or-older guard returns. So the shown version and the
 > recorded version are the same constant, in production, by construction.
 
+> ### §C/D1–D3 likewise, 2026-08-19 — the contact channel is now MEASURED, not reasoned
+>
+> `data_requests` had never held a row either, so every statement about its RLS was read off
+> `pg_policy`. That matters more than it sounds: `roles` is null on all three policies, i.e. they
+> apply to **PUBLIC including `anon`**, and the only thing refusing an anonymous insert is
+> `user_id = auth.uid()` evaluating to NULL.
+>
+> `scripts/oneoff/probe-data-requests-rls.mjs` exercises it with two real accounts and real JWTs.
+> All six hold: a signed-in user can raise a request (201); anon is refused (401); a **forged
+> `status`** is refused (403), so nobody can file a request pre-closed; a request cannot be filed
+> as another user (403); each account reads **only its own**; and a non-admin cannot close one.
+>
+> No defect found — which is the honest result, and it is worth more than the same sentence
+> derived from the policy text. Injection-tested 2/2, the second by pointing the cross-user read
+> at the **service key** so RLS is genuinely bypassed: the probe reports the leak, so it can see
+> one. Note for anyone re-testing the UPDATE: PostgREST answers **200 with `[]`** when RLS matched
+> no row, so a refused update and a successful one share a status code — count rows, not status.
+
 **This is a factual consistency check, not legal advice, and no legal text was edited.**
 Every row is "the document says X; the code does Y", with the evidence. The remedy for each —
 build the mechanism, or amend the text — is the reviewer's decision, not this file's.
