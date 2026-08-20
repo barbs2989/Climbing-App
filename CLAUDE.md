@@ -2507,6 +2507,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     Normalise both sides — but lift proper-noun road names from the **original** clause, since
     normalising lowercases and a lowercased clause matches no `[A-Z]` pattern, which silently
     emptied that half of the coverage test.
+  - **The remaining 192 flags are NOT a worklist, and the MISFILED half in particular is
+    mislabelled** — measured, so read this before working it. Reading the bucket, most of it is
+    correctly filed: a `best_season` reading *"roughly late June through September, once Cascade
+    River Road opens"* is a **season statement using the road as its boundary**, which is the
+    right answer to that column's own question; approach narrative in `beta` naming the trailhead
+    is approach narrative; a descent hazard in `watch_out` naming the trailhead is a hazard. The
+    entry above already grants that defence to `season`, and it applies unchanged to
+    `best_season`, `beta`, `overview` and `watch_out`. **The label promises "moving it would lose
+    nothing" and that is false for most rows.**
+  - The question actually worth asking is narrower, and it is the one the original Eldorado report
+    was about: **is the fact REACHABLE from the section that should carry it?** A climber taps ROAD
+    ACCESS or PERMITS; if that section is empty while the route's own prose knows the road is
+    gated, the page withholds what it knows — regardless of whether the prose sentence is well
+    filed. `scripts/oneoff/probe-access-prose-actionable.mjs` measures it: of **182** WA prose
+    sentences carrying a road fact, **180 sit on a route whose `road` or `approach_logistics`
+    block already speaks about the road**. Permits: **18 sentences, 0 unreachable.** So the
+    reachability defect is **2 routes**, not 190.
+  - **And those 2 were not worth fixing either, which is the transferable half.**
+    `wa_colchuck_balanced_rock_col_east_lake_side_approch` and `wa_northwest_face` have an empty
+    `road` block — but so do **1,371** WA routes that carry access apparatus
+    (`probe-road-block-coverage.mjs`: `road` populated on 1,038 of 8,365; 1,371 of the 2,424
+    routes carrying access/logistics/waypoints have neither `road` nor `approach_logistics`).
+    Those two surfaced only because **their prose happened to name a road**, which is a property
+    of the prose and not of the gap. Repairing them would be picking 2 arbitrary rows out of
+    1,371. The real item is road-block **coverage**, which is research rather than re-homing and
+    is outside "move this text somewhere else".
+  - So: the acted-on subset stays `season` and only `season`. The rest of this audit is context,
+    and the summary should be read as *"here is where a road is mentioned"*, never as a defect
+    count. Same shape as the off-track pin backlog (629 → 13, most of those correct) and the
+    trailhead disagreements (12 → 6): **a headline count in this dataset has overstated the work
+    every single time it was quoted without re-deriving the denominator.**
 - **The `climbing_route` sweep** is a pipeline, not a single script, and the three parts are
   separate on purpose. `audit:approach-scope` REPORTS (for a human to read);
   `enrich:next-batch` emits a WORKLIST (for a batch to consume); `enrich:apply` WRITES. Keeping
