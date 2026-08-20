@@ -75,7 +75,14 @@ const claim = (start) => new Promise((res, rej) => {
 const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Me"];
 const ONLY = (process.env.ONLY || "").trim();
 const SUBTAB = "Logbook:Completed";
-const REPORT = [...TABS, SUBTAB];
+// `isError` is FALSE while react-query is still retrying -- the property that makes an
+// xUnavailable flag safe (a slow read reads as loading, not as broken). It also means
+// WHICHEVER TAB IS WALKED FIRST is measured before any read has settled into an error, so
+// it reports says-broken=no however well it is wired. Observed on Home with ONLY=objectives:
+// Home said "0 routes" while Partners and Logbook, later in the SAME run, both said broken.
+// A first-tab verdict is therefore evidence of nothing. Re-walk it once the rest has settled.
+const REVISIT = "Home:revisited";
+const REPORT = [...TABS, SUBTAB, REVISIT];
 const settle = async (page) => {
   let last = "", same = 0;
   for (let i = 0; i < 45; i++) {
@@ -140,6 +147,9 @@ async function walk(browser, base, session, fail) {
   // clean result rather than as a miss. Say which it was.
   out[SUBTAB] = /My Ascents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
+  const home2 = page.locator(`text="Home"`).last();
+  if (await home2.count()) await home2.click({ timeout: 5000 }).catch(() => {});
+  out[REVISIT] = await settle(page);
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();
@@ -183,7 +193,7 @@ try {
     const same = ok[t] === bad[t];
     if (!same) anyDbBacked = true;
     const text = bad[t] || "";
-    const broken = /couldn't|could not|failed|error|try again|retry|unavailable|problem|went wrong|offline/i.test(text);
+    const broken = /couldn[\u2019']t|could not|failed|error|try again|retry|unavailable|problem|went wrong|offline/i.test(text);
     const empty = /no .* yet|nothing here|none yet|get started|add your first|no results|no climbs|no crews|no routes/i.test(text);
     console.log(`${t.padEnd(9)} healthy ${String((ok[t]||"").length).padStart(5)}ch  failing ${String(text.length).padStart(5)}ch  ` +
       `${same ? "IDENTICAL (seed-backed, proves nothing)" : `CHANGED  says-broken=${broken ? "YES" : "no"}  says-empty=${empty ? "YES" : "no"}`}`);
