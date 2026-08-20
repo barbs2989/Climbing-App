@@ -81,6 +81,12 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-function-drift.mjs":
+    "reads pg_proc.prosrc and compares it against the migrations, so it needs the MANAGEMENT " +
+    "API token for the same reason its sibling check-function-columns does — CI must not hold a " +
+    "credential that can run arbitrary DDL. Run it by hand after applying any migration that " +
+    "creates or replaces a function, which is the moment it exists for: it answers 'did that " +
+    "actually take', which no gate on the checkout can.",
   "check-function-columns.mjs":
     "reads pg_proc and information_schema, which PostgREST does not expose, so it runs " +
     "through `supabase db query --linked` — and that needs the MANAGEMENT API token, which " +

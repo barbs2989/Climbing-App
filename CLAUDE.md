@@ -50,6 +50,7 @@ npm run check:clickable # no NEW control that only a mouse can operate (in build
 npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
+npm run check:function-drift # is the LIVE function the one the migrations describe?
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -1342,6 +1343,37 @@ a build error, but a screen that renders wrong or not at all.
     was checked*, never as a clean catalog. Injection-tested; the 7 cases are at the bottom of the
     script. Cases 6 and 7 pin the `KNOWN` map in both directions — removing a live entry must
     surface it as a real failure, and a bogus name must report as stale.
+- **`check:function-drift`** is the sibling question, and the one no gate on the checkout can
+  answer: **is the function running in production the one this repository describes?**
+  `verify-migrations-applied.mjs` checks objects EXIST by name — `merge_accounts` exists, so it
+  passes, while the live body is an OLDER version than 0035 defines (it writes `crews.user_id`
+  where 0035 writes `created_by`, and lacks 0035's whole crew_members merge). **Existence is not
+  agreement.** Reads the live DB, so **not** a build gate.
+  - Two findings: **DRIFT** (a live body differing from the newest migration that defines it) and
+    **UNTRACKED** (a live function no migration creates at all — nothing in git describes it,
+    nobody reviewed it, and rebuilding from migrations would not produce it).
+  - **The first run reported SEVEN drifting functions and FIVE were false**, which is the entry
+    worth reading before trusting a count here. Five differed only by **two spaces of leading
+    indent** per line, re-applied from a differently-indented source; and `compute_trust_score`
+    differed by exactly its `--` **comment lines**, the live copy having been created
+    comment-free, every statement byte-for-byte identical. Whitespace runs are collapsed and
+    comments stripped before comparing — 7 → 3 → 2 as each class came out. A detector that
+    reports a function correct in every statement is one people learn to ignore.
+  - **It found `is_crew_ready`, which `check:function-columns` structurally cannot.** That
+    function reads `crew.members` and `crews` has no `members` column — but it only READS, and
+    the sibling guard's stated scope is write targets. Untracked, uncalled, hand-made; crew
+    readiness is computed client-side by `datesAgreed`/`agreedDate`. The two guards' scopes are
+    complementary rather than overlapping, and this is the case that shows it.
+  - Four `KNOWN` entries, each a claim about the live database, each failing when **stale**:
+    `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
+    account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
+    0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
+    hand-made functions. **An applied migration is history and must not be rewritten** — aligning
+    `handle_new_user` would take a new migration, not an edit to 0009.
+  - Fails **closed**: an unreachable database, no JSON, an empty catalog, fewer than 20 migrations,
+    or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
+    the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
+    classes the first run actually produced.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
