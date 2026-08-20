@@ -79,7 +79,7 @@ const enrichRoute = (route) => {
   }
   return out;
 };
-const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",orange:"#f0883e",pink:"#ff77c8",yellow:"#f2d669"};
+const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",orange:"#f0883e",pink:"#ff77c8",yellow:"#f2d669",lime:"#8fd14f",cyan:"#22c1e0",indigo:"#7d7cf5",magenta:"#e05fd8",brown:"#b5794a"};
 const HERO_BG="linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN="inset 0 1px 0 rgba(255,255,255,0.07)";
 const SZ1={display:"flex",gap:6,overflowX:"auto",marginBottom:8,paddingBottom:2};
@@ -407,26 +407,65 @@ const WP_STYLE={
     130 WA routes, and Base/Crag/Pass/Approach/Landmark were indistinguishable from each other.
     The two maps disagreed about how many kinds of waypoint exist and the renderer lost.
 
-    Why not five new hues: the palette carries nine chromatic colours and the eight above spend
-    them. Minting near-duplicates (amber beside yellow, blueSolid beside blue) would damage the
-    eight that currently work — and REUSING a hue would be worse than grey, because a Crag drawn
-    in Campsite purple is not merely ambiguous, it is a wrong navigational claim. Grey says
-    "context, not a waypoint you act on", which is exactly what these five are.
-    So the glyph carries the whole distinction here, which is the principle stated above rather
+    THEY SHARED ONE GREY UNTIL 2026-08-20, and the argument for that has been overtaken rather
+    than overruled. It ran: the palette's nine chromatic hues are spent on the eight types above,
+    minting near-duplicates would damage them, and reusing a hue would be WORSE than grey because
+    a Crag drawn in Campsite purple is a wrong navigational claim rather than merely an ambiguous
+    one. Every step of that is still true — and all of it assumed COLOUR ALONE had to carry the
+    distinction, which stopped being the case when the map started drawing the glyph.
+
+    With a glyph on the marker a near-duplicate hue is no longer a wrong claim, it is a second
+    signal agreeing with the first, so the five now take their own colours. They are new tokens
+    rather than reused ones, chosen to sit in the gaps the eight leave (~92 lime, ~196 cyan,
+    ~239 indigo, ~300 magenta, and a desaturated brown that separates from orange by saturation
+    rather than hue). The old note is kept above because the reasoning is right and the reader
+    needs to know what changed to make it not apply.
+
+    The glyph still carries the primary distinction, which is the principle stated above rather
     than an exception to it. All five are Geometric-Shapes/math characters with no emoji
     presentation variant — a char that renders as emoji ignores `color` and would reintroduce
     the very bug this fixes. Approach is the DASHED arrow U+21E2 rather than a plain "→": the
     plain arrow appears 104 times in this app as ordinary copy ("See all →", "A → B"), so as a
     pin glyph it would read as punctuation rather than as a type, and no render assertion could
     tell the two apart. A glyph used elsewhere as prose is not a glyph. */
- Base:{color:C.textSub,glyph:"⊥"},
- Crag:{color:C.textSub,glyph:"▩"},
- Pass:{color:C.textSub,glyph:"◡"},
- Approach:{color:C.textSub,glyph:"⇢"},
- Landmark:{color:C.textSub,glyph:"◉"}
+ Base:{color:C.lime,glyph:"⊥"},
+ Crag:{color:C.brown,glyph:"▩"},
+ Pass:{color:C.cyan,glyph:"◡"},
+ Approach:{color:C.indigo,glyph:"⇢"},
+ Landmark:{color:C.magenta,glyph:"◉"}
 };
 function wpColor(t){return (WP_STYLE[t]&&WP_STYLE[t].color)||C.textSub;}
 function wpGlyph(t){return (WP_STYLE[t]&&WP_STYLE[t].glyph)||"📍";}
+/* THE MAP DREW COLOUR-ONLY DOTS WHILE THE LEGEND PROMISED AN ICON. WP_STYLE carries a colour AND a
+   glyph, and the comment above it explains why the glyph exists: colour alone fails for red-green
+   deficiency on exactly the Trailhead/Summit/Hazard trio, and fails for everyone on a sunlit phone.
+   That reasoning was applied to the legend and the waypoint list and never to the map itself — every
+   marker GPXMap and WaypointMapPicker drew was an `L.circleMarker` with a `fillColor` and nothing in
+   it. So the legend said "◈ Trailhead" and the map showed a green dot.
+
+   It is worst for the five DESCRIPTIVE types (Base/Crag/Pass/Approach/Landmark), which deliberately
+   share one neutral colour and are separated by glyph ALONE — so on the map they were, and had
+   always been, completely indistinguishable from one another. The fix that gave them glyphs reached
+   the legend and the list; the renderer it was written for never got it.
+
+   One builder, used by both maps, so they cannot drift the way the three copies of WP_STYLE did.
+   The FILL is solid rather than the legend's 13% tint because a tint is illegible over terrain
+   tiles; colour and glyph — the two things that identify a type — are the same in both places. */
+function wpDivIcon(L,t,size,ring,derived){
+  const s=size||20,col=wpColor(t),g=wpGlyph(t),bw=ring?3:2;
+  /* DERIVED markers are hollow and dashed; RECORDED ones are solid. That is a visual grammar rather
+     than decoration: a point the app worked out (a trailhead known only from approach_logistics, a
+     peak coordinate) must not read as an N+1st pin that somebody surveyed and put in the WAYPOINTS
+     list. Hollow-and-dashed is the language #1185 chose for exactly that distinction; carrying the
+     glyph and the type colour is what keeps it inside the legend instead of being a mystery dot.
+     The hollow form is also the LEGEND ROW's own look — tint, coloured border, coloured glyph — so
+     "derived" reads as the legend swatch and "recorded" reads as its filled counterpart. */
+  const box=derived
+    ?'background:'+col+'22;border:'+bw+'px dashed '+(ring||col)+';color:'+col
+    :'background:'+col+';border:'+bw+'px solid '+(ring||"#fff")+';color:#fff';
+  return L.divIcon({className:"",iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-s/2],
+    html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;'+box+';box-shadow:0 1px 3px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;font-size:'+Math.round(s*0.55)+'px;line-height:1">'+g+'</div>'});
+}
 /* type -> colour, for the call sites that index a plain map (`wc[wpType(wp)]`, `wc.Summit`).
    Index it with `wpType(w)`, NEVER the raw `w.type`. Both Leaflet marker call sites did the
    latter, so they bypassed the normaliser the rest of the app goes through and drew a grey dot
@@ -1225,8 +1264,14 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     // strictly more informative than "Finish", and the dashed connector below still shows
     // that the track runs out before it.
     const hasWpType=(...ts)=>(waypoints||[]).some(w=>wpPlaced(w)&&ts.indexOf(String(w.type))>=0);
-    if(!nearWp(ll[0])&&!hasWpType("Trailhead"))L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1}).addTo(map).bindTooltip(ep.startLabel,{direction:"top"});
-    if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1}).addTo(map).bindTooltip(ep.finishLabel,{direction:"top"});
+    /* The track endpoints follow the legend too WHEN THEY NAME A LEGEND TYPE. On an alpine route
+       endpointLabels is literally {startLabel:"Trailhead", finishLabel:"Summit"}, so these are the
+       same two types the legend lists and drawing them as bare dots was the same mismatch. A
+       non-alpine route labels them "Start"/"Finish", which are positions on a GPS track rather than
+       waypoint types — those keep a plain dot, because giving them a Trailhead glyph would assert a
+       type nobody recorded. */
+    if(!nearWp(ll[0])&&!hasWpType("Trailhead"))(WP_STYLE[ep.startLabel]?L.marker(ll[0],{icon:wpDivIcon(L,ep.startLabel),keyboard:false}):L.circleMarker(ll[0],{radius:6,color:"#ffffff",weight:2,fillColor:ep.startColor,fillOpacity:1})).addTo(map).bindTooltip(ep.startLabel,{direction:"top"});
+    if(!nearWp(ll[ll.length-1])&&!hasWpType("Summit","Topout"))(WP_STYLE[ep.finishLabel]?L.marker(ll[ll.length-1],{icon:wpDivIcon(L,ep.finishLabel),keyboard:false}):L.circleMarker(ll[ll.length-1],{radius:6,color:"#ffffff",weight:2,fillColor:ep.finishColor,fillOpacity:1})).addTo(map).bindTooltip(ep.finishLabel,{direction:"top"});
     // A named Trailhead/Summit can sit a little past where the recorded GPS track starts/stops
     // (the recorder often starts the track after leaving the car, or loses lock near an exposed
     // summit) without being wrong data. Rather than leave it as a stray dot, draw a short dashed
@@ -1255,9 +1300,9 @@ function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp}){
     const label=(wp.type?wp.type+": ":"")+(wp.name||"");
     const hit=L.circleMarker([wp.lat,wp.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true});
     hit.bindPopup(html);hit.bindTooltip(label,{direction:"top"});hit.addTo(map);
-    const mk=L.circleMarker([wp.lat,wp.lng],{radius:6,color:"#ffffff",weight:2,fillColor:wc[wpType(wp)]||C.textSub,fillOpacity:0.95});
+    const mk=L.marker([wp.lat,wp.lng],{icon:wpDivIcon(L,wpType(wp)),keyboard:false});
     mk.bindPopup(html);mk.bindTooltip(label,{direction:"top"});mk.addTo(map);markersRef.current[wi]=mk;
-    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.circleMarker([peakCoord.lat,peakCoord.lng],{radius:8,color:"#ffffff",weight:2,fillColor:C.orange,fillOpacity:1}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
+    if(!b){b=L.latLngBounds([[wp.lat,wp.lng]]);}else{b.extend([wp.lat,wp.lng]);}});if(b&&b.isValid()){map.fitBounds(b.pad(0.25));}else if(hasPeak){L.marker([peakCoord.lat,peakCoord.lng],{icon:wpDivIcon(L,"Summit",24),keyboard:false}).addTo(map).bindTooltip(peakCoord.name||"Peak location",{direction:"top"});map.setView([peakCoord.lat,peakCoord.lng],12);}else{map.setView([39.5,-98.5],4);}boundsRef.current=b;mapRef.current=map;setReady(true);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;userRef.current=null;accRef.current=null;}};},[sig,fullscreen,baseLayer]);
   const locate=()=>{if(!navigator.geolocation){setGeoErr("Location isn’t available on this device.");return;}setLocating(true);setGeoErr("");navigator.geolocation.getCurrentPosition(pos=>{setLocating(false);const L=window.L,map=mapRef.current;if(!L||!map)return;const la=pos.coords.latitude,ln=pos.coords.longitude,ac=pos.coords.accuracy||50;if(userRef.current){userRef.current.setLatLng([la,ln]);}else{userRef.current=L.circleMarker([la,ln],{radius:7,color:"#ffffff",weight:3,fillColor:C.green,fillOpacity:1}).addTo(map).bindTooltip("You are here",{direction:"top"});}if(accRef.current){accRef.current.setLatLng([la,ln]).setRadius(ac);}else{accRef.current=L.circle([la,ln],{radius:ac,color:C.green,weight:1,fillColor:C.green,fillOpacity:0.12}).addTo(map);}map.setView([la,ln],13);setLocatedOnce(true);},err=>{setLocating(false);setGeoErr(err&&err.code===1?"Location permission denied — enable it to see where you are on the route.":"Couldn’t get your location right now.");},{enableHighAccuracy:true,timeout:12000,maximumAge:30000});};
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
@@ -1414,7 +1459,7 @@ function PhotoStrip({photos,onAdd}){
   const [view,setView]=useState(null);
   if((!photos||!photos.length)&&!onAdd)return null;
   return <div>
-    <div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:6,marginBottom:12}}>{(photos||[]).map((ph,i)=><img loading="lazy" decoding="async" key={i} src={ph} alt="" onError={onImgErr(FALLBACK_COVER)} onClick={()=>setView(ph)} style={{width:150,height:104,borderRadius:11,objectFit:"cover",flexShrink:0,border:`1px solid ${C.border}`,cursor:"pointer"}}/>)}{onAdd?<label aria-label="Add photo" style={{width:120,height:104,borderRadius:11,flexShrink:0,border:`1.5px dashed ${C.border}`,background:C.surface,color:C.textMuted,fontSize:12.5,fontWeight:600,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4}}><span style={{fontSize:23,lineHeight:1}}>+</span>Add photo<input type="file" accept="image/*" onChange={e=>{const f=e.target.files&&e.target.files[0];if(f)onAdd(URL.createObjectURL(f));e.target.value="";}} style={{display:"none"}}/></label>:null}</div>
+    <div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:6,marginBottom:12}}>{(photos||[]).map((ph,i)=><img loading="lazy" decoding="async" key={i} src={ph} alt="" onError={onImgErr(FALLBACK_COVER)} {...clickable(()=>setView(ph))} aria-label={"Open photo "+(i+1)} style={{width:150,height:104,borderRadius:11,objectFit:"cover",flexShrink:0,border:`1px solid ${C.border}`,cursor:"pointer"}}/>)}{onAdd?<label aria-label="Add photo" style={{width:120,height:104,borderRadius:11,flexShrink:0,border:`1.5px dashed ${C.border}`,background:C.surface,color:C.textMuted,fontSize:12.5,fontWeight:600,cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4}}><span style={{fontSize:23,lineHeight:1}}>+</span>Add photo<input type="file" accept="image/*" onChange={e=>{const f=e.target.files&&e.target.files[0];if(f)onAdd(URL.createObjectURL(f));e.target.value="";}} style={{display:"none"}}/></label>:null}</div>
     {view?createPortal(<div onClick={()=>setView(null)} role="dialog" aria-label="Photo viewer" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.92)",zIndex:99999,display:"flex",alignItems:"center",justifyContent:"center",padding:20}}><img loading="lazy" decoding="async" src={view} alt="" onError={onImgErr(FALLBACK_COVER)} style={{maxWidth:"100%",maxHeight:"100%",borderRadius:12,objectFit:"contain"}}/><button onClick={()=>setView(null)}  style={{position:"absolute",top:16,right:16,background:"rgba(255,255,255,0.15)",border:"none",color:"white",borderRadius:"50%",width:36,height:36,fontSize:19,cursor:"pointer",lineHeight:1}} aria-label="Close">×</button></div>,document.body):null}
   </div>;
 }
@@ -2477,7 +2522,7 @@ function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord}){
     (waypoints||[]).forEach(function(w,i){
       if(!w||w.lat==null||w.lng==null||isNaN(w.lat)||isNaN(w.lng))return;
       const isActive=i===activeIdx;
-      const mk=L.circleMarker([w.lat,w.lng],{radius:isActive?9:6,color:isActive?C.blue:"#ffffff",weight:isActive?3:2,fillColor:wc[wpType(w)]||C.textSub,fillOpacity:1});
+      const mk=L.marker([w.lat,w.lng],{icon:wpDivIcon(L,wpType(w),isActive?28:20,isActive?C.blue:null),keyboard:false});
       mk.bindTooltip((w.type||"")+(w.name?": "+w.name:""),{direction:"top"});mk.addTo(map);markersRef.current.push(mk);
     });
   },[waypoints,activeIdx,peakCoord]);
@@ -3534,7 +3579,7 @@ function Challenges({catchTotal,logs,onOpen,who,onOpenReport,givenVouches,catche
    objective carries an AREA id, so the default would count zero forever. */const cpl=t&&d>=t;/* Was `if(!d) return null` — a list you have not started was hidden, so the tick-list
    only appeared once you no longer needed telling it existed. Show it when it HAS
    members; still hide the ones the catalog cannot populate at all, which would
-   otherwise be a row of permanent 0-of-N chips. */if(!d&&!(L.routes&&L.routes.length))return null;return <span key={L.key} onClick={()=>{setScopeF(L.scope);setShowLists(true);}} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,fontWeight:600,padding:"6px 11px",borderRadius:20,cursor:"pointer",background:cpl?`${L.col}1a`:C.surface,color:cpl?L.col:C.textSub,border:`1px solid ${cpl?L.col:C.border}`}}><><ActionIcon name={{"🏆":"award","🎯":"target","🏔️":"mountain","❄️":"snowflake","🧗":"flag","⛰️":"mountain","🌋":"mountain","🌲":"mountain","🍁":"mountain","☀️":"mountain","🚩":"flag","⭐":"award","🏞️":"mountain","📈":"chart","👑":"award","🌍":"explore","📖":"doc","🏜️":"mountain"}[L.icon]||"target"} size={12} color={cpl?L.col:C.textSub}/>{" "+L.label+" "+d+"/"+t}</></span>;})}</div><button onClick={()=>{setScopeF("All");setShowLists(true);}} style={{width:"100%",padding:"9px",background:C.surface,border:`1px solid ${C.border}`,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",marginBottom:4}}>{"Browse all "+lists.length+" curated lists →"}</button>{showLists?createPortal(<div style={{position:"fixed",inset:0,zIndex:97000,background:C.bg,display:"flex",flexDirection:"column"}}><div style={{display:"flex",alignItems:"center",gap:10,padding:"14px 16px",borderBottom:`1px solid ${C.border}`,flexShrink:0}}><div style={{fontSize:16,fontWeight:800,flex:1}}>Challenges & Lists</div><button onClick={()=>setShowLists(false)} style={{width:36,height:36,borderRadius:16,border:`1px solid ${C.border}`,background:C.surface,color:C.textSub,fontSize:17,lineHeight:1,cursor:"pointer"}} aria-label="Close">×</button></div><div style={{display:"flex",gap:7,flexWrap:"wrap",padding:"11px 16px",borderBottom:`1px solid ${C.borderLight}`,flexShrink:0}}>{["All"].concat(SCOPES).map(sc=>{const on=scopeF===sc;return <span key={sc} {...clickable(()=>setScopeF(sc))} style={{fontSize:12,fontWeight:700,padding:"6px 12px",borderRadius:20,cursor:"pointer",whiteSpace:"nowrap",background:on?C.blueSolid:C.surface,color:on?"#fff":C.textSub,border:`1px solid ${on?C.blue:C.border}`}}>{sc}</span>;})}</div><div style={{minHeight:0,flex:1,overflowY:"auto",WebkitOverflowScrolling:"touch",padding:"12px 16px 40px"}}>{TYPES.map(TY=>lists.some(L=>typeOf(L)===TY[0]&&(scopeF==="All"||L.scope===scopeF))?<div key={TY[0]} style={{marginBottom:6}}><div style={{fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,margin:"20px 2px 8px",borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{TY[1]}</div><div style={{display:"flex",flexDirection:"column",gap:9}}>
+   otherwise be a row of permanent 0-of-N chips. */if(!d&&!(L.routes&&L.routes.length))return null;return <span key={L.key} {...clickable(()=>{setScopeF(L.scope);setShowLists(true);})} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,fontWeight:600,padding:"6px 11px",borderRadius:20,cursor:"pointer",background:cpl?`${L.col}1a`:C.surface,color:cpl?L.col:C.textSub,border:`1px solid ${cpl?L.col:C.border}`}}><><ActionIcon name={{"🏆":"award","🎯":"target","🏔️":"mountain","❄️":"snowflake","🧗":"flag","⛰️":"mountain","🌋":"mountain","🌲":"mountain","🍁":"mountain","☀️":"mountain","🚩":"flag","⭐":"award","🏞️":"mountain","📈":"chart","👑":"award","🌍":"explore","📖":"doc","🏜️":"mountain"}[L.icon]||"target"} size={12} color={cpl?L.col:C.textSub}/>{" "+L.label+" "+d+"/"+t}</></span>;})}</div><button onClick={()=>{setScopeF("All");setShowLists(true);}} style={{width:"100%",padding:"9px",background:C.surface,border:`1px solid ${C.border}`,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",marginBottom:4}}>{"Browse all "+lists.length+" curated lists →"}</button>{showLists?createPortal(<div style={{position:"fixed",inset:0,zIndex:97000,background:C.bg,display:"flex",flexDirection:"column"}}><div style={{display:"flex",alignItems:"center",gap:10,padding:"14px 16px",borderBottom:`1px solid ${C.border}`,flexShrink:0}}><div style={{fontSize:16,fontWeight:800,flex:1}}>Challenges & Lists</div><button onClick={()=>setShowLists(false)} style={{width:36,height:36,borderRadius:16,border:`1px solid ${C.border}`,background:C.surface,color:C.textSub,fontSize:17,lineHeight:1,cursor:"pointer"}} aria-label="Close">×</button></div><div style={{display:"flex",gap:7,flexWrap:"wrap",padding:"11px 16px",borderBottom:`1px solid ${C.borderLight}`,flexShrink:0}}>{["All"].concat(SCOPES).map(sc=>{const on=scopeF===sc;return <span key={sc} {...clickable(()=>setScopeF(sc))} style={{fontSize:12,fontWeight:700,padding:"6px 12px",borderRadius:20,cursor:"pointer",whiteSpace:"nowrap",background:on?C.blueSolid:C.surface,color:on?"#fff":C.textSub,border:`1px solid ${on?C.blue:C.border}`}}>{sc}</span>;})}</div><div style={{minHeight:0,flex:1,overflowY:"auto",WebkitOverflowScrolling:"touch",padding:"12px 16px 40px"}}>{TYPES.map(TY=>lists.some(L=>typeOf(L)===TY[0]&&(scopeF==="All"||L.scope===scopeF))?<div key={TY[0]} style={{marginBottom:6}}><div style={{fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,margin:"20px 2px 8px",borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{TY[1]}</div><div style={{display:"flex",flexDirection:"column",gap:9}}>
     {lists.filter(L=>typeOf(L)===TY[0]&&(scopeF==="All"||L.scope===scopeF)).map(L=>{const inCat=L.quiver?0:L.routes.length;const d=L.quiver?discsSent.length:L.routes.filter(L.doneBy||(r=>got(r.id))).length;/* A peak list supplies its own test: `got(id)` matches a LOGGED ROUTE id, and a peak
    objective carries an AREA id, so the default would count zero forever. */const t=L.total||(L.quiver?allDiscs.length:L.routes.length);const pct=t?Math.round(d/t*100):0;const cpl=t&&d>=t;const isOpen=open===L.key;const extra=L.total?L.total-inCat:0;
       return <div key={L.key} style={{background:C.card,borderRadius:12,border:`1px solid ${cpl?L.col:C.border}`,overflow:"hidden"}}>

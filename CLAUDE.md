@@ -96,6 +96,7 @@ npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
+npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired?
@@ -2149,12 +2150,36 @@ the correction knows the screen is wrong, and they have no way to report it.
     tried first and called the existing, working `⚑` and `⚠` defects (both are `Emoji=Yes` but
     `Emoji_Presentation=No`); widening it by name would have hidden the next real one. `U+FE0F`
     is checked separately, so `"⚠️"` fails where bare `"⚠"` passes.
-  - **The five new types share one neutral colour on purpose.** The palette carries nine
-    chromatic hues and the eight existing types spend them; minting near-duplicates would damage
-    the eight that work, and **reusing** a hue would be worse than grey — a Crag drawn in
-    Campsite purple is not ambiguous, it is a wrong navigational claim. These five are
-    descriptive rather than navigational, so the glyph carries the distinction, which is the
-    principle the `WP_STYLE` comment already states rather than an exception to it.
+  - **THE MAP DREW COLOUR-ONLY DOTS WHILE THE LEGEND PROMISED AN ICON, and that had been true
+    since the glyphs were added.** `WP_STYLE` carries a colour *and* a glyph, and the glyph exists
+    because colour alone fails for red-green deficiency on exactly the Trailhead/Summit/Hazard trio
+    and fails for everyone on a sunlit phone. That reasoning was applied to the legend and to the
+    waypoint list and **never to the renderer it was written for**: every marker `GPXMap` and
+    `WaypointMapPicker` drew was an `L.circleMarker` with a `fillColor` and nothing inside it. The
+    legend said `◈ Trailhead`; the map showed a green dot.
+    - Worst for the five descriptive types, which shared one colour and were separated by glyph
+      **alone** — so on the map they were completely indistinguishable from each other, which is
+      the very defect adding the glyphs was meant to fix.
+    - `wpDivIcon(L,type,size,ring)` is the single builder both maps use, so they cannot drift the
+      way the three copies of `WP_STYLE` did. The fill is solid rather than the legend's 13% tint
+      because a tint is illegible over terrain tiles; **colour and glyph — the two things that
+      identify a type — are the same in both places.**
+    - Track endpoints follow the legend **when they name a legend type**: an alpine route's
+      `endpointLabels` is literally `{startLabel:"Trailhead", finishLabel:"Summit"}`. A non-alpine
+      route labels them `Start`/`Finish`, which are positions on a GPS track rather than waypoint
+      types, so those keep a plain dot — giving them a Trailhead glyph would assert a type nobody
+      recorded.
+  - **The five descriptive types now have their own colours, and the old argument for sharing grey
+    was OVERTAKEN rather than overruled.** It ran: the palette's nine chromatic hues are spent on
+    the eight navigational types, minting near-duplicates would damage them, and **reusing** a hue
+    would be worse than grey — a Crag drawn in Campsite purple is not ambiguous, it is a wrong
+    navigational claim. Every step of that is still true, and all of it assumed **colour alone** had
+    to carry the distinction. Once the map draws the glyph, a near-duplicate hue is no longer a
+    wrong claim but a second signal agreeing with the first. Five new tokens (`lime`, `cyan`,
+    `indigo`, `magenta`, `brown`) sit in the gaps the eight leave; the glyph still carries the
+    primary distinction. `probe-map-icons-match-the-legend.mjs` pins 13 unique colours, 13 unique
+    glyphs, and that every marker embeds both — lifting `WP_STYLE` and `wpDivIcon` from source with
+    `ANCHOR LOST` rather than copying them.
   - **`Approach` is the dashed `⇢`, not `→`** — the plain arrow appears **104 times** in this app
     as ordinary copy (`See all →`), so as a pin glyph it reads as punctuation, *and* no render
     assertion could tell the pin from a link. A glyph used elsewhere as prose is not a glyph.
