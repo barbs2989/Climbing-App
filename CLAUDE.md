@@ -3124,7 +3124,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     block. Only **2 of 1,371 are mountaineering**, against 27.6% of the populated set. **A road block
     describes the DRIVE TO A WALK, and these routes describe no walk.**
   - Turned round — *of the routes that DO describe a walk, how many say nothing about the road?* —
-    it is **19 of 1,065 (1.8%)**, now **14**. Same turn that collapsed *"research gear for 4,938
+    it is **19 of 1,065 (1.8%)**, now **9**. Same turn that collapsed *"research gear for 4,938
     routes"* into 13 routes of re-homing. **A route enters on approach prose, a trailhead pin, a
     `dist_km` or a `gain_ft`** — any one of those means the page already sends a climber somewhere on
     foot, and therefore already implies a drive it is silent about.
@@ -3158,6 +3158,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     normalise to their distinctive word, behind a `GENERIC` stop-list — admitting a token every road
     name shares (`road`, `creek`, `forest`) makes the match vacuous in the **wide** direction, the
     mirror of a too-narrow proxy.
+  - **A ROUTE'S APPROACH PROSE NAMES A TRAILHEAD, NOT TARMAC — and matching roads alone left FIVE
+    genuine copies sitting in RESEARCH.** *"From the PCT trailhead at Exit 52"*, *"Hike the trail
+    toward Libby Lake"*, *"From the Lightning Creek trailhead on Ross Lake"*: not one names a road,
+    and every one has a same-area sibling whose block is exactly that trailhead's drive. **The
+    applier had already widened its own gate from a road name to a trailhead name** (for
+    `wa_the_balanced_rock`, recorded below) — the widening was simply never carried back into the
+    audit, so the audit and the thing it feeds disagreed about what counts as a donor. **When you
+    widen a gate, widen the report that feeds it.**
+  - **The place signal gets its OWN, WEAKER bucket (`COPY?`), and folding it into `COPY` would be
+    the same over-promising one release after fixing it.** Measured on the 9 rows it reached: **5
+    real, 3 refused on reading, 1 unrelated**. A place match says *where to look*; only reading the
+    row says whether to copy. `PLACE_GENERIC` stop-lists colours and size words on top of the road
+    list — *"White Chuck Glacier"* and *"White Chuck Road"* are a real pair, but **Silver Creek,
+    Silver Lake and Silver Star are three unrelated places sharing a colour**. A road match
+    outranks a place match, so the strong bucket cannot be diluted; both are pinned by self-test.
+  - **The three `COPY?` refusals are recorded in the applier so they are not re-derived**, and each
+    is a distinct trap: `wa_north_star_mountain_cloudy_peak_traverse` names **two** ways in and the
+    only sibling block is the **closed** one (copying it answers "how do I get there?" with an
+    indefinite closure while the row says an open alternative exists — worse than silence);
+    `wa_mount_spickard_silver_glacier` has two real drives and the sibling covers one, the
+    two-trailhead trap however explicitly the row cross-references it; and
+    `wa_don_t_climb_that_she_said` place-matches *"White Chuck"* onto the **FR 23 White Chuck Road**
+    block — a different, closed valley — while its own overview puts it on Glacier Peak's
+    **south-side** North Fork Sauk approach. A true statement about the wrong leg of the wrong drive.
   - **Donors stay scoped to the SAME AREA, and that scoping is what makes a bare highway number
     admissible at all.** 283 WA routes carry a block naming `#20` and SR-20 runs 130 miles, so
     state-wide the match is meaningless; within one crag it is the same pullout. **Do not widen the
@@ -3212,7 +3236,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     way `audit:trailhead-road` clusters — reaches **1 of 1,371**, because *road-silent* is defined
     partly as having no `approach_logistics`, which is where the trailhead coordinate lives. The
     routes that need a road block are exactly the routes with no coordinate to cluster on.
-- **Five of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 14).
+- **TEN of the 19 were filled by COPYING A NAMED SIBLING, behind a two-source gate** (19 → 9), in two batches — five on a road name, five more once the gate was asked about TRAILHEAD names too.
   **(A)** the route's **own prose** names the trailhead or road, and **(B)** a sibling on the same
   area carries a researched block for that same road. (A) is evidence about *this* route; (B)
   supplies the block. Neither alone is enough — (A) gives a road name and no status, (B) alone is a

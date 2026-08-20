@@ -35,6 +35,16 @@ const CASES = [
     expect: "fail",
   },
   {
+    name: "place stop-list emptied — a shared colour word becomes a place identity",
+    edit: (s) => s.replace(/const PLACE_GENERIC = new Set\(\[[^\]]*\]\);/, "const PLACE_GENERIC = new Set([]);"),
+    expect: "fail",
+  },
+  {
+    name: "placeIds returns nothing — the five trailhead-named copies fall back to RESEARCH",
+    edit: (s) => s.replace("function placeIds(text) {\n  const out = new Set();", "function placeIds(text) {\n  const out = new Set(); return out;"),
+    expect: "fail",
+  },
+  {
     name: "the walk gate removed — the audit drifts back toward the 1,371 it exists to replace",
     edit: (s) => s.replace("    if (!walks(r) || !roadSilent(r)) continue;", "    if (!roadSilent(r)) continue;"),
     expect: "fail",

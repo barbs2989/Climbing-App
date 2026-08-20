@@ -18,7 +18,18 @@
 //
 // It splits the findings the way every backlog here gets split:
 //   COPY      — a sibling block already describes THE ROAD THIS ROUTE'S OWN PROSE NAMES.
-//   RESEARCH  — everything else.
+//   COPY?     — a sibling block describes THE PLACE IT STARTS FROM, but names no road in common.
+//   RESEARCH  — neither.
+//
+// COPY? IS A SEPARATE AND WEAKER BUCKET ON PURPOSE, and the reason is measured rather than assumed.
+// A roads-only test put FIVE genuine copies in RESEARCH, because a route's approach prose names a
+// TRAILHEAD far more often than it names tarmac — "the PCT trailhead at Exit 52", "the trail toward
+// Libby Lake", "the Lightning Creek trailhead on Ross Lake". (The applier had already widened its
+// own gate from a road name to a trailhead name; that widening was simply never carried back here,
+// so the audit and the thing it feeds disagreed.) But the place signal is noisier: on the 9 rows it
+// reached, 5 were real, 3 were refused on reading, 1 was unrelated. Folding it into COPY would
+// repeat the over-promising recorded below, one release after fixing it. A place match says WHERE
+// TO LOOK; only reading the row says whether to copy.
 //
 // THE BUCKET TEST WAS "DOES THE PROSE MENTION A ROAD?" AND THAT OVER-PROMISED, WHICH IS THIS
 // AUDIT'S OWN DISEASE COMMITTED BY ITS OWN AUTHOR. Under that test it filed three routes as
@@ -89,12 +100,38 @@ const proseOf = (r) => [r.approach, r.beta, r.overview].filter((x) => typeof x =
    every road name shares carries no information, and leaving one in makes the match vacuous in the
    WIDE direction, which is the mirror of a too-narrow proxy and the failure that matters here. */
 const GENERIC = new Set(["forest", "service", "road", "creek", "river", "county", "national", "park", "trailhead", "access", "main", "north", "south", "east", "west", "upper", "lower", "old", "new"]);
+/* Extra stop-words that only bite on PLACE names. A colour or a compass word in front of a place
+   noun is not an identity — "White Chuck Glacier" and "White Chuck Road" are a real pair, but
+   "Silver Creek" / "Silver Lake" / "Silver Star" are three unrelated places sharing a colour, and
+   admitting one makes the match vacuous in the WIDE direction. */
+const PLACE_GENERIC = new Set(["white", "black", "silver", "green", "red", "blue", "big", "little", "long", "high", "middle", "first", "second", "the", "a", "of", "and", "group", "wilderness", "state", "mount", "mt"]);
 function roadIds(text) {
   const out = new Set();
   if (typeof text !== "string") return out;
   for (const m of text.matchAll(/\b(?:FSR|FS|FR|NF|USFS|SR|US|I|Highway|Hwy|State Route|Interstate)[\s-]?(\d{1,4})\b/gi)) out.add(`#${m[1]}`);
   for (const m of text.matchAll(/\b((?:[A-Z][a-zA-Z]+[\s-]){1,3})(?:Road|Rd|Highway|Hwy)\b/g)) {
     for (const w of m[1].trim().split(/[\s-]+/)) { const k = w.toLowerCase(); if (!GENERIC.has(k)) out.add(k); }
+  }
+  return out;
+}
+
+/* PLACE identifiers — a SECOND, deliberately weaker signal, because a route's approach prose
+   overwhelmingly names a TRAILHEAD rather than the tarmac: "the PCT trailhead at Exit 52", "the
+   trail toward Libby Lake", "the Lightning Creek trailhead on Ross Lake". Matching roads alone put
+   FIVE genuine copies in the RESEARCH bucket — the same widening the applier had already made for
+   `wa_the_balanced_rock` and which was never carried back here.
+   It stays a separate bucket rather than being folded into `roadIds` because it is measurably
+   noisier, and the entry that this audit's own bucket labels must not over-promise is one release
+   old. Measured on the 9 it reaches: 5 real, 3 refused on reading, 1 unrelated. */
+const PLACE_NOUN = "Lake|Lakes|Creek|Pass|Campground|Camp|Village|Basin|Canyon|River|Trailhead|Trail|Resort|Glacier|Peak|Mountain|Butte|Ridge";
+function placeIds(text) {
+  const out = new Set();
+  if (typeof text !== "string") return out;
+  /* A freeway exit number is the sharpest trailhead identifier there is on the I-90 corridor, and
+     it appears in prose with no road token beside it. */
+  for (const m of text.matchAll(/\bExit\s+(\d{1,4})\b/gi)) out.add(`exit-${m[1]}`);
+  for (const m of text.matchAll(new RegExp(`\\b((?:[A-Z][a-zA-Z]+[\\s-]){1,3})(?:${PLACE_NOUN})\\b`, "g"))) {
+    for (const w of m[1].trim().split(/[\s-]+/)) { const k = w.toLowerCase(); if (!GENERIC.has(k) && !PLACE_GENERIC.has(k)) out.add(k); }
   }
   return out;
 }
@@ -146,6 +183,29 @@ function roadIds(text) {
     T("d", "crag_a", "x", { name: "Forest Service Road 6024" }),
   ], "t"), "RESEARCH");
 
+  /* FIRES on the PLACE signal, which is what five genuine copies needed. Neither side names a
+     road at all — the route says "the PCT trailhead at Exit 52", the block says "I-90 Exit 52 to
+     PCT North". A roads-only matcher scores this RESEARCH, which is what it did. */
+  expect("trailhead named, no road named -> COPY?", run([
+    T("t", "crag_a", "From the PCT trailhead at Exit 52 (Snoqualmie Pass), hike north to Commonwealth Creek"),
+    T("d", "crag_a", "x", { name: "I-90 Exit 52 to PCT North (Commonwealth Basin) Trailhead" }),
+  ], "t"), "COPY?");
+
+  /* A ROAD match must outrank a place match, so the strong bucket cannot be diluted by the weak
+     one. Both signals are present here and the verdict must be COPY, not COPY?. */
+  expect("road match outranks place match -> COPY", run([
+    T("t", "crag_a", "from the SR-20 pullout near Blue Lake Trailhead"),
+    T("d", "crag_a", "x", { name: "Blue Lake Trailhead, Highway 20, Washington Pass" }),
+  ], "t"), "COPY");
+
+  /* QUIET: a colour shared by two unrelated places is not an identity. Silver Creek (Ross Lake),
+     Silver Lake and Silver Star are three different places, and admitting the colour makes the
+     place match vacuous in the WIDE direction — the same failure the road stop-list prevents. */
+  expect("a shared colour word is not a place identity -> RESEARCH", run([
+    T("t", "crag_a", "a trail climbs Silver Creek to the Silver Lake basin camp"),
+    T("d", "crag_a", "x", { name: "Silver Star Creek Road to the gate" }),
+  ], "t"), "RESEARCH");
+
   /* And the walk gate itself: a route describing no walk is not a finding at all, whatever its
      road block says. Without this the audit could silently drift back to the 1,371. */
   {
@@ -153,7 +213,7 @@ function roadIds(text) {
     if (findRoadSilent([r]).length) { console.error(`SELF-TEST FAIL — a route describing no walk was reported as a finding.`); bad++; }
   }
   if (bad) { console.error(`\nRefusing to report: the finder is broken, so "0 copyable" would mean nothing.`); process.exit(1); }
-  console.log(`self-test: the finder fires on 2 cases, stays quiet on 3, and ignores a route with no walk.`);
+  console.log(`self-test: the finder fires on 4 cases (2 road, 1 place, 1 precedence), stays quiet on 4, and ignores a route with no walk.`);
 }
 
 /* The whole finding pass, as a function of the rows, so the self-test can drive THE REAL PIPELINE
@@ -178,19 +238,25 @@ function findRoadSilent(all) {
     const p = proseOf(r);
     const road = ROADISH.exec(p), gate = GATEISH.exec(p);
     const want = roadIds(p);
+    const wantPlace = placeIds(p);
     const donors = donorsFor(r);
     /* A donor qualifies only if its block names one of the same roads. A sibling that carries SOME
        road block is not evidence about THIS route's drive — that is the whole Little Annapurna
        lesson, where the only sibling described the opposite side of the range. */
     const matched = donors.filter((s) => { const have = roadIds(leaves(s.road).join(" ")); return [...want].some((x) => have.has(x)); });
+    /* The weaker signal, kept separate: the block names the same PLACE the route starts from. */
+    const placeMatched = donors.filter((s) => { const have = placeIds(leaves(s.road).join(" ")); return [...wantPlace].some((x) => have.has(x)); });
+    const winner = matched[0] || placeMatched[0] || null;
     out.push({
       r,
-      kind: matched.length ? "COPY" : "RESEARCH",
+      kind: matched.length ? "COPY" : placeMatched.length ? "COPY?" : "RESEARCH",
       namesRoad: Boolean(road || gate),
       token: (road && road[0]) || (gate && gate[0]) || null,
       donors: donors.length,
       matched: matched.length,
-      donorId: matched.length ? matched[0].id : null,
+      placeMatched: placeMatched.length,
+      donorId: winner ? winner.id : null,
+      shared: winner ? [...(matched.length ? want : wantPlace)].filter((x) => (matched.length ? roadIds(leaves(winner.road).join(" ")) : placeIds(leaves(winner.road).join(" "))).has(x)) : [],
     });
   }
   return out;
@@ -206,6 +272,7 @@ const blobs = new Set(enriched.filter((r) => roadSilent(r) && has(r.access)).map
 
 const pct = (n, d) => (d ? `${(100 * n / d).toFixed(1)}%` : "n/a");
 const rehome = findings.filter((f) => f.kind === "COPY");
+const placeOnly = findings.filter((f) => f.kind === "COPY?");
 const research = findings.filter((f) => f.kind === "RESEARCH");
 /* The middle case, counted so it cannot be mistaken for either end: the road IS named in the row's
    own prose, so the fact is in the catalog — but no sibling carries a block for that road, so
@@ -216,17 +283,18 @@ console.log(`\n=== routes that describe a WALK but say nothing about the ROAD ==
 console.log(`${rows.length} ${STATE.toUpperCase()} routes`);
 console.log(`  ${walkers.length} describe a walk (approach prose | trailhead pin | dist_km | gain_ft)`);
 console.log(`  ${findings.length} of those carry NO road block and NO approach_logistics  (${pct(findings.length, walkers.length)})\n`);
-console.log(`  ${rehome.length} have a sibling block for THE ROAD THEIR OWN PROSE NAMES  -> COPY`);
-console.log(`  ${research.length} do not                                                 -> RESEARCH`);
-console.log(`     of those, ${namedNoDonor.length} DO name a road in their own prose, but no sibling`);
+console.log(`  ${rehome.length} have a sibling block for THE ROAD their own prose names   -> COPY   (strong)`);
+console.log(`  ${placeOnly.length} have one for the PLACE they start from, but not the road  -> COPY?  (candidate)`);
+console.log(`  ${research.length} have neither                                             -> RESEARCH`);
+console.log(`     of the RESEARCH rows, ${namedNoDonor.length} DO name a road in their own prose, but no sibling`);
 console.log(`     carries a block for it — the fact is in the catalog, the block is not.`);
 console.log(`  ${findings.filter((f) => f.donors > 0).length} have a sibling carrying SOME road block (not evidence about this route's drive)`);
 
-for (const bucket of [["COPY", rehome], ["RESEARCH", research]]) {
+for (const bucket of [["COPY", rehome], ["COPY?", placeOnly], ["RESEARCH", research]]) {
   if (!bucket[1].length) continue;
   console.log(`\n--- ${bucket[0]} (${bucket[1].length}) ---`);
   for (const f of bucket[1].slice(0, LIMIT)) {
-    const tail = f.donorId ? `   donor: ${f.donorId}` : `${f.donors} sibling block(s), ${f.matched} matching`;
+    const tail = f.donorId ? `donor ${f.donorId}${f.shared.length ? ` [${f.shared.join(",")}]` : ""}` : `${f.donors} sibling block(s), 0 matching`;
     console.log(`  ${f.r.id.padEnd(50)} [${String(f.r.discipline).padEnd(9)}] ${tail}${f.token ? `   own prose: "${f.token}"` : ""}`);
   }
   if (bucket[1].length > LIMIT) console.log(`  … ${bucket[1].length - LIMIT} more (raise --limit)`);

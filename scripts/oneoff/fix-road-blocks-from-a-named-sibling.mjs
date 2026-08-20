@@ -76,6 +76,81 @@ const PLAN = [
     evidence: "SR-20 mile marker 166 to Burgundy Col",
     why: "a 1994 variation of Vasiliki Tower's South Face whose own approach names that route's approach and the SR-20 mile-marker-166 pullout; the donor IS that South Face route, now a genuine area-sibling.",
   },
+
+  /* ── Batch 2 ────────────────────────────────────────────────────────────────────────────────
+     These five were sitting in the RESEARCH bucket and should never have been. `audit:road-coverage`
+     matched donors on ROAD identifiers, while a route's approach prose overwhelmingly names a
+     TRAILHEAD — "the PCT trailhead at Exit 52", "the trail toward Libby Lake", "the Lightning Creek
+     trailhead". The gate above had already been widened from a road name to a trailhead name for
+     `wa_the_balanced_rock`; that widening was simply never carried into the audit. So this is not
+     new evidence, it is the SAME rule applied consistently.
+     The two-source gate is unchanged: (A) the target's own prose names the start, (B) a same-area
+     sibling carries a researched block for it. */
+  {
+    target: "wa_east_ridge_7",
+    donor: "wa_red_mountain_snoqualmie_standard",
+    evidence: "From the PCT trailhead at Exit 52 (Snoqualmie Pass)",
+    why: "its own approach names the PCT trailhead at I-90 Exit 52, and the donor's block IS that trailhead's drive.",
+  },
+  {
+    target: "wa_south_face_7",
+    donor: "wa_red_mountain_snoqualmie_standard",
+    evidence: "From the PCT trailhead at Exit 52",
+    why: "same peak, same start named in its own approach; the donor is Red Mountain's standard route from that trailhead.",
+  },
+  {
+    target: "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+    donor: "wa_hoodoo_peak_sawtooth_scramble",
+    evidence: "Hike the trail toward Libby Lake",
+    why: "its own approach starts on the Libby Lake trail, and the donor's block is the FR 43/4340 drive to the Libby Lake Trailhead.",
+  },
+  /* HOZOMEEN HAS FOUR SIBLING BLOCKS DESCRIBING TWO DIFFERENT DRIVES, so "a sibling block exists"
+     decides nothing here — the two targets start from opposite ends of the massif and each takes
+     the block for ITS OWN start. Verified in `probe-hozomeen-donor-blocks-in-full.mjs` rather than
+     from the truncated listing, because the deciding text sits past a 240-char cut. */
+  {
+    target: "wa_hozomeen_mountain_south_peak_southwest_route",
+    donor: "wa_hozomeen_mountain_northeast_buttress",
+    evidence: "From the Hozomeen Lake/Willow Lake trailhead at Hozomeen Campground",
+    why: "it starts AT Hozomeen Campground, and the donor's block is the Silver-Skagit Road drive from Hope BC that ends there — the only donor naming both the campground and the Hozomeen Lake trailhead.",
+  },
+  {
+    target: "wa_hozomeen_mountain_south_peak_southeast_buttress",
+    donor: "wa_hozomeen_mountain_southeast_face",
+    evidence: "From the Lightning Creek trailhead on Ross Lake",
+    why: "it starts at Lightning Creek on Ross Lake, and the donor is the only block describing that end — SR-20 to Ross Lake Resort plus the water taxi, naming the Hozomeen/Lightning Creek area outright.",
+  },
+
+  /* ── DELIBERATELY REFUSED, and recorded here so the next pass does not re-derive them ─────────
+     Each of these WOULD pass a mechanical place-name match and must not be copied:
+
+     wa_north_star_mountain_cloudy_peak_traverse — its own approach names TWO ways in (the
+       "currently-closed Lucerne/Holden Village/Railroad Creek trail from the east, or ... the open
+       Phelps Creek/Spider Gap trail from the west"). The only sibling block is the Holden one,
+       i.e. the CLOSED half. Copying it would answer "how do I get there?" with an indefinite
+       closure while the row itself says an open alternative exists — worse than saying nothing.
+
+     wa_mount_spickard_silver_glacier — two camps, two drives: a Ross Lake Resort water taxi to
+       Silver Creek, or the Depot Creek road from Chilliwack BC. The sibling covers only Depot
+       Creek. The row names it explicitly, but a block covering one of two real drives is the
+       two-trailhead trap (Lundin, Remmel, Carru, Howard) whatever the row cross-references.
+
+     wa_don_t_climb_that_she_said — its overview puts the boulder in the White Chuck Glacier basin
+       on Glacier Peak's SOUTH-side approach (North Fork Sauk / FR 49), while a place-name match on
+       "White Chuck" lands on the FR 23 White Chuck Road block, a different valley that is closed.
+       A true statement about the wrong leg of the wrong drive.
+
+     wa_mount_despair_northeast_buttress — the row says in as many words that it is "the opposite
+       (northeast) side of the peak from the standard Triumph Pass/Despair Lakes approach", which
+       is exactly what the sibling's Thornton Lakes block describes.
+
+     wa_little_annapurna_south_face — Ingalls Creek vs the sibling's Icicle Creek/Stuart Lake, the
+       other side of the range; the row's own overview says so.
+
+     wa_cashmere_mountain_northeast_ridge, wa_east_mcmillan_spire_northeast_buttress,
+     wa_mount_washington_olympic_winter_direct — their own prose names no trailhead a sibling
+       describes ("the mountain's north side", "the McMillan Creek glaciers", "Jefferson Pass").
+       Genuine research. */
 ];
 
 function leaves(v, out = []) {
