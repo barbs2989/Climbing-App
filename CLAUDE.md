@@ -1522,10 +1522,39 @@ a build error, but a screen that renders wrong or not at all.
     the mouse-only count, and judging on exit code made a correct run read as a failure.
   - **The baseline is a count, so it does not say what is LEFT — measured, because the
     difference decides what the next sweep should touch.** `scripts/oneoff/measure-clickable-remainder.mjs`
-    classifies every remaining control by its **measured inline style**, and **58 of 210 are
-    modal backdrops that must never get a tab stop**. The real target is **152**, not 210:
-    `ClimbMatchCore.jsx` 101 real of 129, `ClimbMatch.jsx` 50 of 68, `RouteDetail.jsx` 1 of 8,
-    and all 5 in `lib/` are backdrops. Do not read the baseline as a to-do list.
+    classifies every remaining control by its **measured inline style**. Do not read the
+    baseline as a to-do list.
+  - **THE SWEEP IS FINISHED, and the 62 that remain are all deliberate.** Measured: **58 are
+    modal backdrops** that must never get a tab stop, and the other **4 are avatars sitting
+    beside a sibling that runs the IDENTICAL handler and is already named** — a second tab
+    stop to the same destination is noise, not access. `scripts/oneoff/apply-keyboard-triad.mjs`
+    reports **0 convertible, 0 shadowed callees, 0 undefined handlers** across all three app
+    files. A number here is not a backlog; check what it is a number OF before sweeping.
+  - **The applier resolves the CALLEE through Babel scope, and that is not defensive.** Two
+    scopes in `ClimbMatchCore` declared a **local `clickable` that is a boolean gate**, so
+    wrapping their handlers produced `clickable(<boolean>)` — `"clickable2 is not a function"`,
+    and the error boundary replaced the entire Challenges panel. **`check:refs` passed the
+    whole time**: the identifier WAS bound. A binding check cannot tell *bound* from *bound to
+    something callable*, so scope resolution is the only thing that catches it.
+  - **`onClick={cond?undefined:fn}` is inert as a handler and a CRASH once converted**, because
+    `clickable()`'s key handler calls `onClick(e)` unconditionally. Make the SPREAD conditional
+    (`{...(cond?{}:clickable(fn))}`), which says what the ternary said: with no handler, this is
+    not a control.
+  - **THE NAME CHECK WAS TOO NARROW THREE TIMES, and every one failed CAUTIOUSLY** — a smaller
+    sweep, a plausible-sounding backlog, nothing red. That is why none of them announced itself,
+    and why all three were found by reading real markup rather than by reasoning about the
+    checker. An accessible name is computed from **all descendant text**:
+      - **direct children only** called `<div><div>{pubName(c)}</div></div>` unnamed and hid
+        **22 convertible controls**, which #1054 then reported as needing editorial decisions.
+      - **components stay opaque** — `<Av/>` renders an image with no text, and that IS why the
+        avatar announced as an unnamed button. This one is correct; keep it.
+      - **fragments were not descended** — `<>…</>` has no element name, so a labelled chip read
+        as unnamed.
+  - **Name a control from the expression the row ALREADY renders**, never a restatement:
+    `aria-label={"View "+pubName(c)+"’s profile"}`, so the announced name cannot drift from the
+    visible text when one is edited. Where several identical controls sit in a row, take the
+    index they already have (`"Open photo "+(i+1)`) — a row of identically-named buttons
+    announces as indistinguishable.
   - **Classify by style, never by the handler's name.** Proven on `RouteDetail`:
     `setView(null)` reads like a close button and **is a backdrop**, while
     `setPhotoLightbox({ph,key})` reads the same shape and **is a real control**. Naming would
