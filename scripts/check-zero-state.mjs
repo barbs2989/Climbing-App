@@ -325,6 +325,7 @@ if (!overlays.length) {
 // thing #637 broke. Overlays that genuinely cannot be reached by flag alone are exempt BY
 // NAME in NEEDS_EXTRA_STATE, each recording its real gate, and a name there that stops
 // being an overlay fails, so the exemption list cannot rot in silence.
+const _maskDigits = (l) => String(l).replace(/\d+/g, "#");
 const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
 assertKnownOverlays(overlays, fail);
 const noPayload = new Set();
@@ -345,8 +346,16 @@ for (const name of overlays) {
     }), name);
     if (d.er) { threw = d.er; break; }
     if (d.np) { empty = d.np; break; }
-    const before = new Set(dump["tab:" + t] || []);
-    if (lines.some((l) => !before.has(l))) { landed = { tab: t, lines }; break; }
+    // Mask digits, for the reason render-settle.mjs already states: it "absorbs a clock and a
+    // CountUp without absorbing a section that appeared". Raw line sets do NOT survive an
+    // animated counter. The Profile tab's Trust score is a <CountUp/>, so between the closed
+    // baseline and this capture it can land on a different number -- one differing line, "19",
+    // is enough to declare the overlay mounted HERE and `break` before ever trying the tab that
+    // owns it. Measured on main @ ebd16d9: `modal:unfinishedOpen` was captured on the Profile
+    // tab and failed for a landmark that lives on Home, and the ONLY novel line was "19".
+    // `landed.lines` keeps the RAW text, so landmark assertions still read real content.
+    const before = new Set((dump["tab:" + t] || []).map(_maskDigits));
+    if (lines.some((l) => !before.has(_maskDigits(l)))) { landed = { tab: t, lines }; break; }
   }
   if (threw) {
     fail("modal:" + name, `the opener threw while building its payload: ${threw}`);

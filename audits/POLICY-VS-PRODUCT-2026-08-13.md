@@ -48,6 +48,74 @@
 >
 > Nothing here changes what is outstanding: **the lawyer read, plus the D4 wording.**
 
+> ### NEW 2026-08-20 — trip reports are shared now, and §3 does not mention them
+>
+> A memory note from 2026-08-07 recorded that *"nothing real is shared at all"* — the query that
+> reads another climber's trip report carried a **NOT WIRED UP YET** comment. **That is no longer
+> true.** `useRouteTripReports` is used three times in `RouteDetail.jsx` and the comment is gone
+> from `lib/db.js`, so other climbers' real trip reports render on the route page.
+>
+> **The product side is in good shape, and that is worth saying first.** There is a real
+> per-report control — `role="group" aria-label="Who can see this report"`, three options with
+> `aria-pressed`, each explaining itself (*"members of this climb's crew can see it. It won't
+> feed the route's conditions."*). `trip_report_visibility` is `private | crew | public`,
+> defaulting to `crew` (0037); `0081` makes `public` readable by anyone including signed-out.
+> Both live rows are `crew`, and an anonymous read returns 0 — RLS behaves.
+>
+> **The gap is the Policy.** §1 lists "climbing logs" among what is collected. §3, *"What others
+> can see"*, describes the public profile and the float-plan emergency contact — and **does not
+> mention trip reports being visible to a crew or to the public at all**, nor what one contains.
+> Measured from `TripReport`, a shared report renders:
+>
+> - **"Climbed with" — your partners' names**, each clickable through to a profile;
+> - **the GPS track of the climb, with a Download GPX control**;
+> - the **day-by-day itinerary** (hours, distances, gain/loss, timed schedule);
+> - photos, exact date, conditions and the full write-up.
+>
+> **Two things for counsel, both factual rather than legal conclusions:**
+>
+> 1. §3 is the section a reader consults to learn what others see. Trip reports are now one of
+>    the largest things others see, and it is silent on them. §3's existing phrase — *"the fields
+>    you choose to make visible"* — arguably covers it, and a reviewer may think that is thin for
+>    a GPS track and an itinerary.
+> 2. **A report set to `public` names third parties.** Your partners appear by name, publicly,
+>    without themselves choosing it. That is the same shape as Q3 (the emergency contact who
+>    never agreed to anything), on a surface that is public rather than crew-scoped.
+>
+> Nothing here is a defect in the code. It is a description gap, found by re-checking a stale
+> note rather than trusting it.
+
+> ### D4 measured precisely, 2026-08-20 — the one product-side wording decision left
+>
+> D4 has been carried as "OPEN BY DESIGN — do not flip it" without stating what a reader is
+> promised versus what exists. That is the fact counsel needs, so here it is measured rather
+> than characterised.
+>
+> **Privacy Policy §3 ("What others can see") says:** *"Other climbers see your public profile
+> **as governed by your privacy settings** — your username or real name, and **the fields you
+> choose to make visible**."*
+>
+> **What exists:** `PRIVACY_CONTROLS_LIVE = false` (`ClimbMatchCore.jsx`) hides **four**
+> controls, among them "who can see my profile" and "who can invite you". The code comment on
+> the flag states the position plainly: that setting *"is one of the four controls behind
+> PRIVACY_CONTROLS_LIVE=false and **is not enforced yet**"*. So the controls are neither
+> reachable in the UI **nor** server-enforced if they were shown.
+>
+> So §3 describes per-field visibility settings that a climber cannot reach and that would not
+> be honoured. **The in-app sheet is already honest about this** — its "Visible to others"
+> section says only *"You choose what goes on your profile"*, which is true (you control what
+> you enter). It is the Policy that overstates.
+>
+> **The decision is amend-or-build, and it is the reviewer's, not engineering's:**
+> - **Amend** §3 to describe what exists — you choose what to put on your profile; per-field
+>   visibility controls are not offered yet — matching the sheet's wording. Cheap, and the
+>   documents already contain the honest formulation to copy.
+> - **Build** the four controls *and enforce them server-side*. Note that shipping them
+>   unenforced would convert a wording gap into a promise the backend does not keep, which is
+>   why the flag is deliberately `false`. **Do not flip it to satisfy an audit.**
+>
+> Everything else product-side is closed. This plus the lawyer read is the whole remainder.
+
 > ### §E upgraded from "present" to **proven**, 2026-08-19
 >
 > Every check above is a *presence* check — the column exists, the constant is in the bundle,
