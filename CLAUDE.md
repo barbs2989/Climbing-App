@@ -96,6 +96,7 @@ npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, 
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
+npm run audit:expiring-closures # does a route state a closure that has already expired?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -3643,6 +3644,49 @@ the correction knows the screen is wrong, and they have no way to report it.
     deliberate, which is exactly why D5 has to consult an external reference. Identical
     sibling names gave **0 catalog-wide**, i.e. dead code. *Measure a detector's precision
     before shipping it, not after.*
+- **`audit:expiring-closures`** asks whether a route states a closure that has a **shelf life** — a
+  fact the world will resolve, written into a field nothing ever re-reads. `road.status`,
+  `road.seasonalGate`, `road.driveNote`, `access.closures` and `access.seasonal` all render on the
+  route page and all hold free prose written once by an enrichment pass. So a closure written there
+  is correct on the day and a **lie** afterwards, with no symptom at all: the column is populated,
+  the section renders, every coverage check is green. **135 values on 102 WA routes** carry one.
+  - The case that produced the rule: `wa_mount_hopper_standard` said *"Closed indefinitely since
+    October 2025 … no confirmed 2026 reopening"*. FS-24 and the Staircase area reopened 8 July 2026,
+    so a climber reading it a year on is told the road is shut when it is open — the direction that
+    sends somebody to a different mountain, or to drive around a gate that is not there.
+  - **The precision rule, and without it this audit is noise: A YEAR IS NOT A SHELF LIFE.** 619 of
+    the 5,610 WA values carry a year and most name a durable **cause** — *"impassable at milepost
+    3.1 due to 2021 flood damage"* stays true until somebody repairs it, and the year is what makes
+    it informative rather than vague. What expires is a claim about the **current state** with no
+    date the reader can judge it by. `--inject=yearonly` pins that: every value rewritten to carry a
+    year naming a cause must report **0**.
+  - Three tiers, ordered by severity and **mutually exclusive** so one value cannot be counted
+    twice. **research-act** (10) — the copy dates itself to when the *researcher* looked (*"as of
+    this research date"*), which is the least useful possible phrasing *and* the only freshness
+    signal the value carries. **open-ended** (49) — *"indefinitely"*, *"no reopening estimate"*; the
+    Hopper shape. **as-of-period** (76) — *"as of mid-2026"*, *"currently"*, dated to a period the
+    reader cannot place.
+  - Two exclusions, **printed rather than silently dropped**: 26 values name an explicit end date
+    and 4 describe a permanent closure (a bridge with no funded replacement is exactly what these
+    fields are *for*). `SELF_LIMITING` had to learn the shape a closure order actually uses to state
+    its own expiry — a **date range** (`effective May 20-Dec 31, 2026`) as often as a `through`
+    clause; a first draft matched only through/until/expires and reported four orders that name
+    their own end date as though they named none.
+  - **The exclusions apply to the two shelf-life tiers only, never to research-act.** Leaking the
+    research act is a defect in the *copy* — it tells the reader when an author looked instead of
+    what is true — and that is wrong whether or not the closure also names an end date.
+  - **Report-only, and it must stay that way**; a bulk rewrite would do damage. **The road is not
+    the approach**: Staircase's road reopened while the North Fork Skokomish trail out of it stayed
+    closed, so clearing the road claim without reading the rest deletes a warning that still
+    applies. The phrase carrying the expiry is usually the only freshness signal the value has, so
+    **date it or drop the claim** — deleting the phrase alone leaves a bare assertion that ages
+    worse. And do not replace one with a closure that is true *today*; that reproduces the defect,
+    which is why the original sweep deliberately did **not** record a live fire closure it had just
+    confirmed.
+  - Read-only, anon key, fails closed on an empty read **and** on zero prose values. **Not a build
+    gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
+    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, 3 cases at the
+    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
   `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
