@@ -1,0 +1,939 @@
+{
+  "_README": [
+    "approach_variants for multi-route areas in the Mountain Loop Highway corridor, the central Cascades and the Olympics.",
+    "Scope: every route in the 13 target areas that had NO approach_variants on the live table at the time of writing.",
+    "Live counts differ from the worklist that was handed over — re-queried and used the live numbers: M&M Wall holds 5 routes (not 4), Goose Egg 7 (not 2), Morning Star 4 (not 3), Pinto Rock's West Face 3 (not 2), and Three Fingers' South Peak row ALREADY carries approach_variants, so 39 rows were in scope rather than the 30 the worklist implied.",
+    "31 routes written, 8 skipped, 1 out of scope. Every entry carries an 'area' equal to the live routes.area_id, verified mechanically against a fresh read.",
+    "READ-ONLY. Nothing was written to the database and nothing in the repo was touched.",
+    "",
+    "WHY THESE AREAS: every one holds several routes off one trailhead, so 'you are at the right trailhead' does not mean 'you are under the right line'. Each baseFinding therefore names something you can see, touch or count at the foot of the climb, and where the row supports it, a negative marker naming the neighbouring line you have reached by mistake.",
+    "",
+    "IDENTITY RESOLUTION — every area was resolved by area_id AND coordinate before any search, because most of these names collide:",
+    "  wa_south_peak (48.30571, -120.99439) is the South Peak of the GUNSIGHT RANGE in the Glacier Peak Wilderness, east of Dome Peak. REJECTED: the South Peak of Three Fingers (48.1699, -121.6879) — which is a separate area in this very batch; the South Peak of Mount Index; and every other 'South Peak' in the state. Confirmed by the row's own Downey Creek / Bachelor Creek / Itswoot Ridge approach and by the Blue Glacier and Chickamin Glacier both being named in its descent prose — those glaciers are Gunsight Range features.",
+    "  wa_west_face_6 (46.32448, -121.92476) is a sub-face of PINTO ROCK in the Gifford Pinchot National Forest, southern Washington Cascades — parent area wa_pinto_rock, reached from Randle by NF-25 / NF-28 / NF-77. REJECTED: the West Face route on Gunsight South Peak (route id wa_west_face, also in this batch, 300 km north); the West Face of Mount Index; the West Face of North Early Winters Spire. Note that this batch contains BOTH an AREA called 'West Face' and a ROUTE called 'West Face', on different mountains.",
+    "  wa_three_fingers (48.169895, -121.687865) is the three-towered peak in the Boulder River Wilderness above the Mountain Loop Highway, reached by Trail #641 over Goat Flats and Tin Can Gap. REJECTED: Three Fingered Jack in Oregon; Three Fingers in BC; and the several Three Finger Jack / Three Fingers summits in the Great Basin. Confirmed by the Queest-Alb Glacier and the Tupso Pass road closure both appearing in the rows.",
+    "  wa_shuksan_crag (48.90581, -121.6776) is a roadside cliff on unpaved Hannegan Pass Road (FR 32), about 9 km north-northwest of Mount Shuksan's summit (48.831, -121.601). It is NOT on Mount Shuksan and holds no alpine climbing. REJECTED: every route on Mount Shuksan itself, and the Shuksan Arm.",
+    "  wa_mount_carrie (47.894273, -123.649285) is in the BAILEY RANGE of the OLYMPICS, inside Olympic National Park — not the Cascades. Every approach starts on the park's north side at the Sol Duc road end. REJECTED: any Cascades peak, and the Hurricane Ridge visitor area, which is a viewpoint across trailless glaciated terrain and has no established route to this peak despite one of the two rows being NAMED for it.",
+    "  wa_morning_star_peak (48.003885, -121.490955) is the Mountain Loop peak above Headlee Pass and the Sunrise Mine basin. REJECTED: Morning Star Peak in Colorado's Sawatch; Morningstar Peak, BC. Confirmed by the Sunrise Mine Trail #707 and Headlee Pass appearing in the rows.",
+    "  wa_goose_egg_mountain (46.64938, -121.10525) is the Tieton River peak east of Rimrock Lake on US-12. REJECTED: Goose Egg Mountain in Natrona County, Wyoming; Goose Egg Mountain, Montana; Goose Egg Hill, Idaho.",
+    "  wa_gunn_peak (47.8162914, -121.4479383) is the Wild Sky Wilderness peak above Barclay Lake near Baring. REJECTED: Gunn Peak, BC; Gunnison-area summits; and Gunnshy Peak (Pt 6218), an adjacent and separately named summit.",
+    "  wa_kyes_peak, wa_mount_pilchuck, wa_mount_teneriffe, wa_little_big_chief_mountain and wa_m_m_wall_aka_supercave_wall each resolved to a single Washington feature with no competing namesake found.",
+    "",
+    "ROUTE IDS LIE — as expected, most of these ids are derived from the route NAME and say nothing about the peak. Every one was resolved through its area_id and the resolution is stated in each entry's _why. The worst offenders here: wa_west_face, wa_south_ridge and wa_accidental_discharge_east_face all sit on Gunsight South Peak; wa_northwest_face_4 sits on Little Big Chief; wa_nest_route, wa_spectacle_route and wa_wild_wild_west all sit on Pinto Rock's West Face; wa_three_fingers_r1 and _r2 are the North and Middle summits of Three Fingers.",
+    "",
+    "NO hours, distances or elevation gains were written into any variant. Several of these areas store one-way and round-trip figures side by side on rows that share a trailhead (see _DEFECTS), so any figure written here would have been an average nobody published.",
+    "",
+    "NO source names, URLs, author names or years appear in any name/season/notes/baseFinding/hazards field. Provenance is in _sources only."
+  ],
+
+  "_SKIPPED": {
+    "wa_bowl_packer": "Goose Egg. The row holds a name, a grade and a pitch count and nothing else — no approach, aspect, face, season, gear, hazards, beta, descent or pitch detail. No published description of where it starts on the wall was found. Goose Egg's south/east cliff carries seven routes off one climbers' trail, so a variant that could only repeat the shared spring-and-trail approach would tell a party they are at the right cliff and nothing about which of seven lines they are under — precisely the failure this batch exists to fix.",
+    "wa_commandho_pillar": "Goose Egg. Same as Bowl Packer: grade and pitch count only, no start-location detail found. The route name implies a pillar feature but nothing in the row or in what could be read publicly says where that pillar sits relative to the two documented lines.",
+    "wa_ignorant_bliss": "Goose Egg. Grade and pitch count only; no approach or start description in the row and none found.",
+    "wa_southeast_arete": "Goose Egg. Grade and pitch count only. The name implies an aspect the row does not record (aspect is null), and the area's other rows disagree with each other about whether this cliff faces south or east — see _DEFECTS. Guessing an arete's position from a name on a cliff whose own orientation is in dispute would be an invented variant.",
+    "wa_spoil_ill": "Goose Egg. Grade and pitch count only; no start-location detail in the row and none found.",
+    "wa_nest_route": "Pinto Rock, West Face. The row stores pitches: 0, no beta, no pitch detail and no descent — its entire content is the shared NF-77 road approach, which is byte-identical in all three West Face rows. No published description of where this line starts on the face was found. Writing a variant would mean copying the neighbouring route's start, which is the exact contamination this batch is meant to prevent.",
+    "wa_spectacle_route": "Pinto Rock, West Face. Identical situation to Nest Route: pitches: 0, no route-specific content of any kind, no published start description found.",
+    "wa_lewis_creek_route": "Gunn Peak. This row duplicates wa_gunn_peak_southeast_route. Its approach text, its descent text and its crux are all the standard Barclay Creek climbers' path, Tailgunner Pass and the 'hidden ramp' — the same line, described twice, and its own face field says so ('the standard route'). Nothing in the row describes an approach up Lewis Creek, which is the historic first-ascent line the route is named for and for which no modern description was found. Variants were written once, on the better-documented row. Reported in _DEFECTS rather than fixed."
+  },
+
+  "_DEFECTS": {
+    "wa_mount_carrie_se_route": "The route NAME is 'Southeast Route via Hurricane Ridge / Cat Basin', and the first sentence of its own approach column says there is no established route to this peak from Hurricane Ridge — that it is separated from the Bailey Range by miles of trailless glaciated terrain and functions only as a viewpoint. The name asserts an approach the row itself denies. Also: dist_km is 40.2 here against 20.9 on wa_mount_carrie_standard, for the same trailhead and the same approach as far as Cat Basin — one is a round trip and one is one-way, stored in the same column in the same area.",
+    "wa_lewis_creek_route": "Named for the Lewis Creek approach; its approach, descent and pitch detail all describe the Barclay Creek climbers' path, Tailgunner Pass and the hidden ramp, i.e. the same standard route as wa_gunn_peak_southeast_route. Two rows, one climb. Neither row describes Lewis Creek.",
+    "wa_northwest_face_4": "The approach's route-specific closing sentence reads 'the Northwest Face is visible on the peak's east side across that valley', which is self-contradictory. The peak stands on the EAST SIDE OF SUMMIT CHIEF VALLEY, so the face you are looking at from the valley floor is the northwest one. The published account this appears to be re-homed from says the objective is visible on the east side of the valley, not on the east side of the peak. One word moved and inverted the geometry.",
+    "wa_little_big_chief_mountain_west_route": "Named 'West Route', aspect NW, face 'Northwest Face' — colliding head-on with wa_northwest_face_4, whose face is 'Northwest Face (a.k.a. Falcon Route)'. Worse, the row's climbing_route describes a west-ridge/west-face line reached from Chief Creek while its beta describes a crux notch on the NORTHEAST ridge and a southwest-face finish. Two different routes' material is stored in one row, and the aspect field agrees with neither half.",
+    "wa_morning_star_peak_standard": "pitch_detail describes a route that the rest of the row does not: a river-valley approach, a main gully/slabs to a 3,700 ft basin, a traverse of snow-covered slabs to a southeast-ridge notch at 5,600 ft. The row's own approach, climbing_route and descent_text all describe Headlee Pass and the south ridge above it, and Headlee Pass appears nowhere in pitch_detail. A party reading the tiles would plan a different climb from the one the prose describes.",
+    "wa_mile_high_club|wa_beyond_redlining|wa_marvin_s_ear": "Four names for two towers, and the stored names cannot be used to tell the routes apart. Mile High Club's face says 'Vegan Tower (subsidiary summit at 5,280')'; Beyond Redlining's says 'Vega North Tower (West Face)'; both approach texts say 'Eros Tower / Vega North Tower'; Marvin's Ear's says 'Vega Tower'. Mile High Club and Beyond Redlining share one summit and therefore one tower; Marvin's Ear is on a genuinely different tower, reached by a different gully. As stored, a party would reasonably read 'Vega Tower' and 'Vega North Tower' as the same place, which is the one reading that puts them at the wrong base. Also: dist_km reads 9.33 / 9.01 / 4.3 across three routes sharing one trailhead and one traverse, so the column holds both conventions.",
+    "wa_dirty_sanchez|wa_ride_the_lightning_2": "Both rows set aspect S and face 'South wall of Goose Egg Mountain', the area blurb says '800-foot south wall', and the approach text on both rows says 'the popular rock routes on the eastern cliffs'. The waypoint on both rows is named 'Goose Egg Mountain East Cliffs' and is typed 'Summit' while carrying the summit coordinate. Three records, two orientations, and a base waypoint filed as a summit.",
+    "wa_three_fingers_r1|wa_three_fingers_south_peak_lookout": "The North Peak summit waypoint and the South Peak lookout summit waypoint carry the IDENTICAL coordinate 48.169895, -121.687865, and the area's own lat/lng is that same value. Two distinct summits — the true high point and the lookout — plot at one point.",
+    "wa_three_fingers_r2": "The Middle Peak summit waypoint (48.175, -121.688) plots NORTH of the North Peak waypoint (48.1699) and north of the 'Col between Middle and North Finger' waypoint (48.1670) stored on wa_three_fingers_r1. The three fingers' stated north-to-south order is geometrically impossible as the coordinates stand. The waypoint note already discloses the position is approximate; the note does not say it is on the wrong side of its own neighbours.",
+    "wa_mount_teneriffe_standard_route": "approach_logistics.trailhead reads 'Mount Si Trailhead' while the row's own approach text and every one of its waypoints name the Mount Teneriffe Trailhead, 2.9 miles further up SE Mount Si Road. A party navigating from the logistics blob would park at the wrong lot.",
+    "wa_mount_pilchuck_east_ridge": "beta says '10 miles round trip' while dist_km is 8 (about 5 miles) — the two cannot both be right for the same trip. high_point_ft is 5324 against the area's elevation_ft of 5341. The row also carries no waypoints at all, unlike its sibling.",
+    "wa_south_peak (all three routes)": "The summit waypoint's own note discloses that the coordinate is a geometric estimate rather than a sourced fix, and that the verified position it was estimated FROM (48.30571, -120.99439) belongs to MIDDLE Peak. That estimated-from coordinate is what the area row stores as wa_south_peak's own lat/lng — so the area is currently pinned on its neighbouring summit. Separately, wa_west_face on this peak has no descent, gear, hazards or beta of any kind, only pitch detail.",
+    "wa_golden_age": "season holds a sentence rather than a window: 'established May-Jun (top-down, using spring snow); climbable through summer'. That column renders in the route header strap beside elevation and pitch count.",
+    "wa_last_chance_for_gas_aka_tricky_start|wa_little_big_chief_mountain_west_route|wa_little_big_chief_mountain_northeast_face|wa_northwest_face_4|wa_marvin_s_ear|wa_mount_teneriffe_standard_route|wa_the_l_h_route_free_variation": "Source names, site names, author names and publication names are sitting in RENDERED prose columns, against the product rule. Examples: a beta that opens 'Photos on Mountain Project show...'; a beta naming a trip-report author and their website twice, plus a guidebook author; a descent_text naming an author and a website; a beta citing a journal and its parent club; a face field ending 'per AAC'; a pitch_detail note ending 'per WTA'; a beta naming a first-ascensionist. These belong in provenance metadata, not on screen.",
+    "clusters.txt": "The handed-over worklist is stale against the live table on five of the thirteen areas (M&M Wall 4 vs 5 live, Goose Egg 2 vs 7, Morning Star 3 vs 4, Pinto West Face 2 vs 3) and lists wa_three_fingers_south_peak_lookout as needing work when it already carries approach_variants."
+  },
+
+  "wa_ellen_pea": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "_why": "Resolved through area_id to M&M Wall (Supercave Wall), the south-facing granite wall above SR-20 roughly three miles east of Washington Pass. This is the wall's right-hand line and the one that climbs through the Supercave itself; its base is on the wall's UPPER ledge, which is the discriminator against the apron route below.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, waypoints, hazards, descent_text",
+      "https://waynewallace.wordpress.com/2015/06/09/supercave-ellen-pea-route-mm-wall/",
+      "https://cascadeclimbers.com/forum/topic/88616-tr-mampm-wall-the-supercave-ellen-pea-9242012/",
+      "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Supercave gully to the upper ledge",
+        "season": "Late June to September, once the gully has melted out and the lower pitches have dried; the highway over the pass is gated shut all winter, so there is no cold-season access at all.",
+        "notes": "Park at the roadside pullout near milepost 166 and start straight uphill to the north — there is no trail and no sign. Head for the talus at the foot of the gully that splits the wall; the gully forces you briefly out to the left before you rejoin it higher. Two ledge systems break the wall. The lower one comes first; keep going past it to the upper ledge, where the long routes start. The wall faces due south and there is no shade below the cave, so on a hot day the approach is the hottest part of the route.",
+        "baseFinding": "Get onto the UPPER of the wall's two ledge systems — not the first ledge you meet coming up the gully. Then walk right. This is the right-hand line on the wall and the huge cave that gives the wall its name is directly above you, not off to one side. The check on the ground is the first pitch itself: a left-facing corner about forty metres long that runs to a stance directly beneath a pair of TWIN CRACKS SLANTING LEFT. Count the corner's length and look for the twin cracks above the first stance — that pair is unique on this section of wall. Negative markers: if the corner above you is short, slabby and only about twenty-five metres to its anchor, you have drifted left into the middle of the wall and are under the eleven-pitch line; if you are standing on a treed ledge that two separate lines leave from, you are further left again. And if the cave is high above you but you are on a narrow ledge with one lone bolt at ground level, you never left the lower ledge and are on the three-pitch apron route.",
+        "hazards": [
+          "Loose talus and creek-bed footing in the approach gully, with rockfall from anyone above you in it",
+          "Full south-facing sun on the whole approach with no shade until the cave",
+          "Water and seepage on the lower pitches persists into early summer in wet years",
+          "The highway is gated closed through winter and well into spring, so the approach can be unreachable by car"
+        ]
+      }
+    ]
+  },
+
+  "wa_the_tiger": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "_why": "Resolved through area_id to M&M Wall (Supercave Wall) at Washington Pass. This is the centre line of the wall, and it shares its ground-level start with the free variation of the original aid route — so the base does not discriminate the two and the FIRST BELAY does.",
+    "_sources": [
+      "row columns: approach, face, beta, pitch_detail, hazards, descent_text",
+      "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger",
+      "https://www.climbing.com/news/beautiful-new-testpiece-in-north-cascades/"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Supercave gully to the upper ledge",
+        "season": "July to September; the highway over the pass is gated shut through winter and into spring, so the wall is car-inaccessible for roughly half the year.",
+        "notes": "From the roadside pullout near milepost 166, go directly uphill to the north through talus and forest toward the gully below the wall, taking the forced dogleg out left and back in. Pass the lower ledge and keep going to the upper ledge. There is an exposed easy-fifth step in the gully on the way, so this is not a walk with your hands in your pockets. Rockfall in the gully is worse when another party is above you and worse again after rain.",
+        "baseFinding": "On the upper ledge, work to the CENTRE of the wall — this line is neither the right-hand cave line nor the apron below. The start is a treed ledge, and it is shared: two routes leave from the same spot, so identify it by the ledge and the trees, then identify the ROUTE by where you stop. The first pitch here is short — a slabby left-facing corner, about twenty-five metres, ending at a belay well below the first roof. Negative markers: if you run the same corner out to more than sixty metres and finish at a pin-and-gear anchor tucked under a roof, you are on the free variation of the old aid line, which shares this ground; if the corner you started up is forty metres long and leads to a stance under twin left-slanting cracks, you are on the right-hand cave line; and if you are on a narrow ledge below the whole wall with a single bolt beside you, you stopped one ledge too low.",
+        "hazards": [
+          "Loose talus and an exposed easy-fifth step in the approach gully",
+          "Rockfall in the gully, particularly with parties above or after rain",
+          "South-facing aspect gives full-day sun and real heat in summer",
+          "Two routes leave the same treed ledge — confirm which anchor you are heading for before you commit to a rope length"
+        ]
+      }
+    ]
+  },
+
+  "wa_the_l_h_route_free_variation": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "_why": "Resolved through area_id to M&M Wall (Supercave Wall) at Washington Pass. It follows the original aid line up the wall and shares its ground-level start with the centre eleven-pitch route, so this entry's whole job is telling the two apart above the ledge.",
+    "_sources": [
+      "row columns: approach, face, beta, pitch_detail, hazards, descent_text",
+      "https://www.climbing.com/news/beautiful-new-testpiece-in-north-cascades/",
+      "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Supercave gully to the shared treed-ledge start",
+        "season": "June to September, once the gully is clear; no access while the highway over the pass is gated for winter.",
+        "notes": "Same walk-in as the wall's other long routes: from the pullout near milepost 166 go straight uphill north into the talus below the gully, out left where it forces you, back into the gully, past the lower ledge, and on to the upper ledge. Allow more time than the distance suggests — the ground is talus, loose, and steepens near the top.",
+        "baseFinding": "The start is the treed ledge in the middle of the wall, and it is NOT unique to this route — the eleven-pitch centre line begins from the same place. What identifies this climb is the first rope length. Stay in the left-facing corner and run it well past the point where a short pitch would end: this line's first belay is a PIN-AND-GEAR ANCHOR set beneath a roof, more than twice the length of the neighbouring route's first pitch, and there is no bolted station at the short-pitch height on this line. Above, the giveaway is the fixed gear: old pitons left from the original aid ascent stud the line and appear on no other route on the wall — treat every one of them as decoration, not protection. Negative markers: if you clip into a bolted anchor about twenty-five metres up, you have taken the centre line's first belay; if you started from a broad ledge on the wall's right-hand side beneath the big cave with twin left-slanting cracks above, you are on the cave route entirely.",
+        "hazards": [
+          "Loose talus in the approach gully and rockfall from parties above",
+          "Old fixed pitons from the original aid ascent remain in place and must not be trusted",
+          "Very few repeat ascents, so expect route-finding uncertainty from the first pitch onward",
+          "The cave traverse higher up holds loose rock and stays cold and damp"
+        ]
+      }
+    ]
+  },
+
+  "wa_the_exorcism_of_mark_hanna": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "_why": "Resolved through area_id to M&M Wall (Supercave Wall) at Washington Pass. Unlike the wall's three long routes, this one starts on the LOWER apron, so the discriminator is which of the two ledge systems you stop at — the routes above it are roughly ten minutes further up the same gully.",
+    "_sources": [
+      "row columns: approach, face, beta, pitch_detail, hazards, descent_text",
+      "https://waynewallace.wordpress.com/2015/06/09/supercave-ellen-pea-route-mm-wall/"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Supercave gully to the LOWER ledge",
+        "season": "June to September; the highway over the pass is gated closed for the winter and the approach is unreachable by car until it reopens.",
+        "notes": "From the roadside pullout near milepost 166, head straight uphill to the north into the talus below the gully, take the short forced dogleg out left, and rejoin the gully. This route is the one climb here that does NOT need the full walk-in — stop at the first ledge system rather than continuing to the upper one. Everything above you is a different, much longer route, so it is worth being certain you are low before you rack up.",
+        "baseFinding": "Stop at the LOWER of the wall's two ledge systems — the first one you reach, before the talus steepens for the last stretch. This line climbs the apron BELOW the wall's long routes, not the wall proper. Walk the lower ledge and look for a SINGLE BELAY BOLT on a small ledge: it is the only piece of fixed gear at ground level here, and it marks the start. Confirm it from the rock immediately above: the first pitch is easy, taking small wires in cracks as well as bolts, so if the wall above your head is steep, clean and blank you are in the wrong place. Sight upward for the second confirmation — the start of the right-hand cave route is directly above you, and the tennis-court-sized cave that names the wall is higher still, not overhead. Negative marker: if you are standing on a broad ledge with several routes' worth of bolted anchors along it and the cave dominates the view above, you have carried on to the UPPER ledge and are roughly ten minutes above this climb; drop back down the gully.",
+        "hazards": [
+          "Loose talus in the approach gully",
+          "Rockfall from parties on the long routes above the lower ledge",
+          "South-facing exposure — the apron bakes in full summer sun with no shade",
+          "The single ground-level bolt is the only marker; there is no cairn or path along the lower ledge"
+        ]
+      }
+    ]
+  },
+
+  "wa_golden_age": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "_why": "Resolved through area_id to M&M Wall (Supercave Wall) at Washington Pass. This route has no walking approach at all — its base is on the wall's midway ledge system and is reached only by climbing the lower pitches of one of the neighbouring lines, which is why it gets two genuine variants rather than one.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, hazards, descent_text",
+      "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Via the centre route's lower pitches",
+        "season": "Summer, once the wall has dried; the pitches used to reach it are the same ones that seep into early summer in wet years.",
+        "notes": "There is no way to walk to this climb. Do the usual gully approach from the pullout near milepost 166 to the wall's upper ledge, then climb the lower pitches of the centre eleven-pitch line to the shared midway ledge system and traverse left from there. Rack for the pitches you are climbing to get there as well as for this route.",
+        "baseFinding": "You are looking for a TWO-BOLT ANCHOR sitting on the midway ledge, and the trees are what place it: the anchor is on the ledge BELOW a stand of trees, not level with them and not above them. Traverse LEFT along the ledge until the trees are above you and the two bolts are at your feet. Confirm it from the rock: the first pitch off this anchor is a technical corner with loose chockstones at its hardest moves, so if what rises from your anchor is a clean face or a slab you are at the wrong station. Negative markers: if the anchor you have clipped is one of the bolted rappel stations belonging to the route you just climbed, you have not traversed at all; if the trees are still off to your left, you have not traversed far enough.",
+        "hazards": [
+          "No ground approach — a retreat means reversing or rappelling somebody else's route",
+          "Loose and deteriorating rock on the lowest pitches and again high on the line",
+          "Belays are bolted but not all of them are rigged for rappel, so this is not a line to bail down",
+          "Everything below you is occupied ground; manage rockfall onto parties on the route you climbed in on"
+        ]
+      },
+      {
+        "name": "Via the right-hand cave route's lower pitches",
+        "season": "Summer, once the wall has dried.",
+        "notes": "The same idea from the other side: climb the lower pitches of the right-hand cave line off the upper ledge to reach the shared midway ledge system, then traverse left. This is the longer leftward traverse of the two, so allow for it, and note that this is also the line most parties use to get back DOWN afterwards.",
+        "baseFinding": "From the midway ledge, traverse LEFT — further than from the centre line — until you find the TWO-BOLT ANCHOR set on the ledge directly BELOW a stand of trees. The trees are the test: below them, not beside them. The first pitch above the anchor is a technical corner holding loose chockstones at the crux, which distinguishes it from the clean faces either side. Negative markers: if you are still passing bolted rappel stations that belong to the route you climbed up, keep traversing; if you have reached ground where the ledge system ends and the wall closes down, you have gone past it.",
+        "hazards": [
+          "No ground approach; escape means rappelling a neighbouring line",
+          "Loose and deteriorating rock low and high on the route",
+          "Not all belays are rappel-rigged, so plan the descent before you leave the ledge",
+          "Long leftward traverse on a ledge with loose material on it"
+        ]
+      }
+    ]
+  },
+
+  "wa_accidental_discharge_east_face": {
+    "area": "wa_south_peak",
+    "_why": "Resolved through area_id to the South Peak of the Gunsight Range (Glacier Peak Wilderness, east of Dome Peak) — NOT the South Peak of Three Fingers, which is a separate area in this same batch. This is the peak's east face, which rises straight out of the Blue Glacier, so the base is a moat problem rather than a walking problem.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent, descent_text, gear, hazards, waypoints",
+      "http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+      "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Downey Creek and the southern Ptarmigan corridor",
+        "season": "July to September, once the bushwhacking is out of snow and the glaciers are travellable.",
+        "notes": "The long way in from the west. Start at the Downey Creek trailhead off the Suiattle River Road and work through the southern end of the Ptarmigan Traverse corridor — Itswoot Ridge, Cub Lake and Bachelor Creek — on rugged, largely off-trail ground with real bushwhacking and glacier travel. Budget a full day, often two, before you are anywhere near rock. This is an experienced-mountaineers approach and nothing about it is a walk-in.",
+        "baseFinding": "The east face of this peak rises directly out of the glacier, so the base of the climb is the ice-to-rock junction and the MOAT is the marker. Traverse the glacier under the east side until you find the point where the face rears up clean out of the ice rather than sitting back behind broken ground. The start is a finger-and-hand crack system you can step into straight out of the moat and follow for about a rope length to a ledge — if you cannot enter the crack from the moat without first scrambling talus, you are not at it. Expect the moat to be open and to need gear or a bridge; a recorded rappel back onto this glacier from above hung free over it, so the gap at the bottom is a permanent feature of this side rather than a bad year. Negative markers: if the wall in front of you is catching afternoon sun, you have crossed the crest and are on the WEST side of the peak; if you are looking up at a pair of clean dihedrals side by side, you are around on the ridge south of the summit at the start of the ridge route.",
+        "hazards": [
+          "Open moat between glacier ice and the foot of the face; it hangs free enough that a rappel to the glacier has come off the rock well above the snow",
+          "Loose, poor-quality rock from the first pitch upward",
+          "Glacier travel with crevasse hazard on the approach and directly below the climb",
+          "Multi-day committing approach with no realistic quick exit"
+        ]
+      },
+      {
+        "name": "Agnes Creek from the east",
+        "season": "July to September.",
+        "notes": "The other documented way into this range comes from the east, via the lake ferry and the long trail up Agnes Creek before leaving it for the brush. Parties using it camp on rock ridges above the glacier below the peaks rather than pushing on the same day. It is not a shortcut — the bushwhack off the trail takes most of a day on its own — but it puts you on the glacier side of the crest, which is the side this route starts from.",
+        "baseFinding": "Camping on the ridges above the glacier puts you looking straight across at the east faces, which is the one view that makes this route findable: pick the line before you drop onto the ice, because from the glacier itself the faces foreshorten and the individual crack systems disappear. On the ice, work under the peak until the face rises clean from the moat and a finger-and-hand crack can be entered directly out of it. Negative marker: the peak is the southernmost of the four named summits on this short crest, so if you are still under a summit with more towers to the south of you, you are one peak too far north.",
+        "hazards": [
+          "Long approach with a full day of brush before any alpine ground",
+          "Crevasses and a persistent moat at the foot of the east faces",
+          "Loose rock throughout the climb",
+          "The peak is one of four closely spaced summits on one crest, easily confused from below"
+        ]
+      }
+    ]
+  },
+
+  "wa_south_ridge": {
+    "area": "wa_south_peak",
+    "_why": "Resolved through area_id to the South Peak of the Gunsight Range — the id is derived from the route name and says nothing about the peak. The ridge route starts SOUTH of the summit on the ridge's west side, which is what separates it from the west face route that starts directly under the summit.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/",
+      "https://www.mountainproject.com/area/106324284/the-gunsight-range"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Downey Creek and the southern Ptarmigan corridor",
+        "season": "July to September, once the approach is out of snow.",
+        "notes": "From the Downey Creek trailhead on the Suiattle River Road, work through the southern end of the Ptarmigan Traverse corridor over Itswoot Ridge and Cub Lake and up Bachelor Creek. Off-trail, brushy, and with glacier travel before you reach the peaks; a full day or two of approach is normal. Once in the basin, this route is reached from the lake side rather than from the glacier under the east faces.",
+        "baseFinding": "Do not start under the summit — walk SOUTH along the foot of the ridge past it. The start is a PAIR of clean dihedrals side by side on the ridge's WEST flank, and the pair is the test: two obvious corners, either of which will take you to the crest, with nothing else of the kind nearby. Both give about a rope length of climbing on chickenheads and good face features once you step right out of the corner. The second confirmation is overhead and unmistakable: look along the ridge crest above you for the CANNONHOLE, a gap punched clean through the ridge, which the route traverses on its second pitch. If you cannot see a hole through the crest from where you are standing, you are not below this line. Negative markers: if you are under a single chimney tucked into the left side of a face directly beneath the summit, you have stopped short and are at the west face route; if you are on glacier ice with a moat between you and the rock, you have gone round to the east side entirely.",
+        "hazards": [
+          "Long, committing off-trail approach with glacier travel",
+          "The cannonhole gap on the traverse pitch is exposed and the feature is relatively young rock",
+          "Weather-window dependent — this is a remote crest with no quick way off",
+          "Both start dihedrals look alike; picking the wrong one is harmless, picking the wrong FACE is not"
+        ]
+      }
+    ]
+  },
+
+  "wa_west_face": {
+    "area": "wa_south_peak",
+    "_why": "Resolved through area_id to the South Peak of the Gunsight Range. Note that this batch also contains an AREA named 'West Face' (wa_west_face_6, a sub-face of Pinto Rock 300 km south) — the two are unrelated and neither name identifies a mountain. This is the face directly under the summit, which is what separates it from the ridge route starting south of the peak.",
+    "_sources": [
+      "row columns: approach, pitch_detail, waypoints",
+      "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Downey Creek and the southern Ptarmigan corridor",
+        "season": "July to September.",
+        "notes": "The standard way in: Downey Creek trailhead off the Suiattle River Road, then the southern end of the Ptarmigan Traverse corridor over Itswoot Ridge and Cub Lake and up Bachelor Creek, with bushwhacking and glacier travel and a full day or two of approach before the rock. The row carries almost nothing else — no descent, no gear list, no hazards — so treat everything above the base as needing your own assessment on the day.",
+        "baseFinding": "Stay on the WEST side of the peak and stop DIRECTLY BENEATH THE SUMMIT — do not carry on south along the foot of the ridge. The start is a CHIMNEY on the left-hand side of the face, and 'chimney' is the physical test: a body-width slot you climb inside, not a corner you lieback. From it the route runs four roughly equal rope lengths, traversing right onto the open face at the top of the first, so the second confirmation is that the ground above the chimney opens out rather than continuing as a crack. Negative markers: if you are looking at TWO clean dihedrals side by side and you can see a hole punched through the ridge crest above, you have walked too far south and are under the ridge route; if the rock above you rises straight out of glacier ice with a moat at its foot, you have crossed to the east face.",
+        "hazards": [
+          "Long committing off-trail approach with glacier travel",
+          "The row carries no hazard, gear or descent information of its own — plan the way off before you leave the base",
+          "Remote crest with no quick exit if weather closes in",
+          "Three routes on three aspects of one small summit; confirm which side of the peak you are on before racking up"
+        ]
+      }
+    ]
+  },
+
+  "wa_mile_high_club": {
+    "area": "wa_morning_star_peak",
+    "_why": "Resolved through area_id to Morning Star Peak on the Mountain Loop Highway. The route is not on the peak's own summit — it climbs the southwest arete of the northernmost tower on the ridge running north from the summit, which is the tower this row calls Vegan Tower and its two neighbours call Eros Tower or Vega North Tower. Its base and Beyond Redlining's are metres apart on the same tower; Marvin's Ear is on a different tower entirely.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, hazards, descent_text, waypoints",
+      "http://publications.americanalpineclub.org/articles/13201213721/Morning-Star-Peak-Vegan-Tower-Mile-High-Club",
+      "https://www.mountainproject.com/route/112553808/mile-high-club"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Sunrise Mine Trail to the cairned talus traverse",
+        "season": "June to September. Steep snow lies against the base and in the approach gully into June, and in a heavy year parties have found the base still buried in late May.",
+        "notes": "Start at the Sunrise Mine trailhead at the end of the forest road. The first mile crosses two unbridged creeks — a log, a root crossing and one more insistent ford — so expect wet feet and treat them seriously in early-season high water. The trail then climbs steadily through forest to the LAST MAJOR SWITCHBACK before it starts zigzagging steeply up toward the pass. That switchback is where you leave the trail; the pass is NOT. From there a cairned line traverses northeast across talus. Route-finding markers on the traverse, in order: pass just above a large FLAT-TOPPED BOULDER near the first stand of trees, thread a natural gap through those trees into a second open talus field, cross heather and more talus, cross a strip of trees near a rocky bluff. A seep just below the gully is the only reliable water and only runs mid-season.",
+        "baseFinding": "The traverse ends at the obvious RED GULLY on the right-hand side of the buttress. From the gully, scramble up and LEFT on rubble-strewn ledges to a LONE FIR TREE, then follow a narrow ledge about twenty feet to a SINGLE BOLTED BELAY — one bolt, on a ledge, past one tree. That belay is the start of the first pitch and there is nothing else like it on this tower. Negative markers: if you are standing on open talus under a dark grey face with TWO LARGE BOULDERS at its foot and a long line of bolts running away up a fifty-five-metre pitch, you are one line LEFT of here, on the west-face route that shares this tower's summit; if you left the traverse into a gully on the RIGHT-HAND (east) side of the tower and climbed cedar and heather to a notch on the skyline, you are on the neighbouring tower entirely and the route above you is a different climb.",
+        "hazards": [
+          "Two unbridged creek crossings in the first mile, serious in early-season high water",
+          "Loose talus on the cairned traverse, exposed in places",
+          "Steep lingering snow in the approach gully into June",
+          "Loose rock on the rubble ledges below the first belay — manage what you kick down onto anyone behind",
+          "The turnoff from the trail is unmarked and is at the switchback, not at the pass; parties without a track have overshot it"
+        ]
+      }
+    ]
+  },
+
+  "wa_beyond_redlining": {
+    "area": "wa_morning_star_peak",
+    "_why": "Resolved through area_id to Morning Star Peak. This route shares a summit with Mile High Club, so it is on the SAME tower — the northernmost one on the ridge north of the peak — and starts a few metres left of it on the west face. Getting to the right tower is not enough here; the two starts are within sight of each other.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, hazards, descent_text",
+      "https://www.mountainproject.com/route/119290727/beyond-redlining",
+      "http://publications.americanalpineclub.org/articles/13201213721/Morning-Star-Peak-Vegan-Tower-Mile-High-Club"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Sunrise Mine Trail to the cairned talus traverse",
+        "season": "June to September. This face is west-facing and stays shaded and cold until roughly midday; significant snow can lie at the base from December through May.",
+        "notes": "Sunrise Mine trailhead, then the trail for about two and a half miles through the two unbridged creek crossings and up through forest to the LAST MAJOR SWITCHBACK before the final zigzags toward the pass — leave the trail there, not at the pass. A cairned traverse then runs northeast across talus toward the tower, crossing two separate talus fields separated by strips of subalpine trees and passing just above a large flat-topped boulder near the first stand of trees. The boot path is well established in season because three routes share it. Top up water at the seep by the red-rock outcrop in the gully; there is none higher.",
+        "baseFinding": "Stay on the talus at the foot of the tower's WEST face — do not go up into the red gully on the right. Find the TWO LARGEST BOULDERS at the base of the tower and look straight up: the start is on the DARK GREY FACE directly above them. The confirmation is the bolt count — the first pitch is a single fifty-five-metre rope length with sixteen bolts in it, so if what you are under is short, or has only a handful of bolts, it is not this. Negative markers: if you have scrambled up and left on loose ledges past a LONE FIR to a SINGLE bolt on a narrow ledge, you are on the arete route one line to your right, which shares this tower's summit but not its face; if you left the traverse into a gully on the RIGHT-HAND side of the tower and gained a notch on the skyline ridge through cedar and heather, you are on the next tower along.",
+        "hazards": [
+          "Two unbridged creek crossings in the first mile",
+          "Loose talus on the traverse and party-inflicted rockfall across several pitches",
+          "West-facing and shaded until around midday, so cold starts are the norm",
+          "Steep snow against the base into early summer, which makes the last stretch of talus and the step onto rock its own small crux",
+          "The fifty-five-metre opening pitch commits you before any real bail option"
+        ]
+      }
+    ]
+  },
+
+  "wa_marvin_s_ear": {
+    "area": "wa_morning_star_peak",
+    "_why": "Resolved through area_id to Morning Star Peak. Unlike its two neighbours this route is on a SEPARATE tower — the one immediately right (east) of the tower carrying Mile High Club and Beyond Redlining — and is reached by branching off the shared traverse into a gully rather than continuing to the open talus at the west face. The stored tower names do not make this clear (see _DEFECTS), so the gully is the discriminator.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, hazards, descent_text",
+      "http://publications.americanalpineclub.org/articles/13201214561/Morning-Star-Peak-Vega-Tower-Marvins-Ear",
+      "https://www.mountainproject.com/area/112553799/morning-star-peak"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Sunrise Mine Trail, then the east-side gully",
+        "season": "June to September; spring snow lies low on the route and in the gully.",
+        "notes": "Share the standard approach as far as the traverse: Sunrise Mine trailhead, two and a half miles of trail through the unbridged creek crossings to the LAST MAJOR SWITCHBACK before the pass zigzags, then the cairned northeast traverse across two talus fields. The difference comes at the end. Where the boot path for the other two routes carries on toward the open talus at the foot of the main west face, this one BRANCHES OFF into a gully on the RIGHT — the east side of the northern tower. The gully is steeper, more vegetated and slower than the open talus, and route-finding matters more on it than anywhere else on the approach.",
+        "baseFinding": "Follow the gully on the east side of the tower up through CEDAR AND HEATHER — vegetation is the test, because the neighbouring routes' approach is bare talus and this one is not. The gully leads to a NOTCH ON THE SKYLINE RIDGE. From the notch, the last stretch is loose third-class with a few exposed fourth-class moves, landing on a GRASSY LEDGE that is the first belay. Confirm at the belay by looking up: the first bolt on this route is set notably HIGH above the stance and there are only about four bolts in the whole first rope length, so you scramble before you clip. Negative markers: if you are on open talus at the foot of the tower with two big boulders or a red gully in front of you, you never branched off and you are under the other tower's two routes; if you have found a single bolted belay on a narrow ledge past a lone fir, that is the arete route on the wrong tower.",
+        "hazards": [
+          "Loose blocks in the vegetated gully, particularly with parties above",
+          "Steeper and more route-finding-dependent final approach than the neighbouring routes",
+          "Loose rock on the belay ledges throughout the climb",
+          "Spring snow low on the route",
+          "Two unbridged creek crossings in the first mile of trail"
+        ]
+      }
+    ]
+  },
+
+  "wa_morning_star_peak_standard": {
+    "area": "wa_morning_star_peak",
+    "_why": "Resolved through area_id to Morning Star Peak. This is the peak's own summit scramble, and the key discriminator against the three rock routes sharing the trailhead is that it stays on the maintained trail all the way to the pass instead of leaving it at the switchback below.",
+    "_sources": [
+      "row columns: approach, climbing_route, descent_text, gear, hazards, waypoints",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-15.092056489535",
+      "https://en.wikipedia.org/wiki/Morning_Star_Peak"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Sunrise Mine Trail over Headlee Pass",
+        "season": "July to September. Snow lingers in the pass gully and on north-facing ground into July, and an ice axe is worth carrying until it has gone.",
+        "notes": "From the Sunrise Mine trailhead, take the trail the whole way. The first mile crosses two unbridged creeks — a log crossing, a root crossing and a more substantial ford — which need real caution in early season or after rain. Beyond them the trail climbs steadily through forest and then tightens into ever-sharper switchbacks up a narrow rocky couloir. The last quarter mile below the pass is the notorious part: steep, with tread periodically wrecked by snow and rockfall and a genuine risk from rock kicked down by parties above. Unlike the three rock routes on this peak, do NOT leave the trail at the switchback lower down.",
+        "baseFinding": "The scrambling starts at HEADLEE PASS itself — the notch where the trail finally tops out of the rockfall chute and the ground opens northward. The test that you are at the pass and not at a false top inside the chute is water: the outlet stream just beyond the pass runs strong for most of the season and is the last reliable water of the day, so if there is no stream on the far side you have not topped out yet. From the pass, leave the maintained tread and work north along and below the peak's south ridge over talus and heather benches. Cairns mark parts of the line and stop entirely higher up, so the real check is that the ground steepens continuously into rock and gully terrain rather than easing off. Negative marker: if you have left the trail lower down on open talus, following cairns northeast toward a rock tower, you are on the climbers' traverse to the towers north of the peak and you are heading for a bolted rock route, not the summit scramble.",
+        "hazards": [
+          "Notorious rockfall chute immediately below the pass — a helmet is worth wearing on the trail here, not just above it",
+          "Difficult ford about half a mile from the trailhead; seasonal log crossings are often washed out in high runoff",
+          "Lingering steep snow in the pass gully and on north-facing terrain into July",
+          "Loose talus and heather sidehilling above the pass with only sparse cairns",
+          "A steep gully partway up the scramble is often icy; parties commonly move onto the rock rib to its right to avoid it"
+        ]
+      }
+    ]
+  },
+
+  "wa_little_big_chief_mountain_northeast_face": {
+    "area": "wa_little_big_chief_mountain",
+    "_why": "Resolved through area_id to Little Big Chief Mountain, southwest of Dutch Miller Gap in the Alpine Lakes Wilderness — the peak beside, and distinct from, its larger namesake Summit Chief. Three routes on this peak are reached from three different trailheads; this one goes to the gap itself and climbs directly out of it.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/little-big-chief-mountain/421526",
+      "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Middle Fork Snoqualmie to Dutch Miller Gap",
+        "season": "July to September; recorded ascents cluster in August and September. The upper cirque holds snow well into summer, so carry an axe.",
+        "notes": "The standard way. From the Middle Fork Snoqualmie road end, follow the Dutch Miller Gap trail up the valley for a long day — roughly fourteen to fifteen miles — passing the horse camp and the Williams Lake trail junction on the way to the gap. Most parties break this over two days and camp near Williams Lake or at the gap. There is no cross-country detour for this route: stay on the trail to the top.",
+        "baseFinding": "The climbing starts DIRECTLY ABOVE THE GAP. From the low point of Dutch Miller Gap, turn onto the peak immediately southwest of it — the first ground above the trail that needs hands is the start, roughly five hundred feet of heather and rock steps rising onto the northeast ridge. The physical test is the sequence: heather steps give way to an OPEN BENCH, and above the bench you cross a SNOWFIELD into a cirque below the east face; if you have not crossed snow you have not reached the cirque, and the two short belayed pitches to the summit start from it. At the top of the first of those pitches, move climber's LEFT for the direct finish. Negative markers: if you left the trail at a small steel bridge well below the gap and dropped south into a side valley, you are heading for the long gully-and-crack route on the far side of the mountain; if you are looking up nine hundred feet of talus at a prominent left-trending gully, you are under that route and not this one.",
+        "hazards": [
+          "Snow lingering in the approach cirque well into summer, with variable soft, icy or moat-riddled conditions",
+          "Loose rock on the heather and rock steps, on the ridge and on the face",
+          "No cell coverage, and a remote position that makes rescue difficult",
+          "The gap is a trail high point with several ways off it — confirm you are on the southwest side before committing"
+        ]
+      },
+      {
+        "name": "Necklace Valley and La Bohn Gap from the north",
+        "season": "July to September.",
+        "notes": "A longer alternative from the other side of the divide: the Necklace Valley trail off the Foss River road, over La Bohn Gap, then down to Dutch Miller Gap. It joins the standard line at the gap, so everything above is identical. Worth knowing about mainly as a through-trip option or if the Middle Fork road end is not usable.",
+        "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming from the north you drop TO the gap rather than climbing to it, so the check is that you have finished descending and the peak is now above you on the left. The climbing begins at the first hands-on heather-and-rock steps above the gap, leading to an open bench and then a snowfield crossing into the cirque below the east face. Negative marker: if you are still descending and the ground ahead keeps dropping into a valley, you have passed the gap and are heading down the Middle Fork.",
+        "hazards": [
+          "Long approach over a second pass, with snow on La Bohn Gap into summer",
+          "Loose rock above the gap",
+          "Remote, rescue-difficult terrain with no cell coverage"
+        ]
+      },
+      {
+        "name": "Pete Lake and Summit Chief camp from the east",
+        "season": "July to September.",
+        "notes": "The eastern option, from a camp near Pete Lake and Summit Chief. It does not reach Dutch Miller Gap at all — it comes at the peak's northeast basin from the other side and joins the route higher up. It is the approach that puts the ridge notch in your path, which the trail-to-the-gap line avoids.",
+        "baseFinding": "From camp, work into the peak's NORTHEAST BASIN. The route is guarded by a RIDGE NOTCH, and the notch is identified by a single feature: a LARGE VERTICAL CRACK forming a low-fifth-class step that most parties rope up for. If the notch you have reached can be walked through, it is not this one. Above the notch the ground eases and joins the snowfield and cirque used by the trail approach. Negative marker: if you are standing in a broad trail saddle with tread underfoot, you are at Dutch Miller Gap and on the standard line, where no such crack step exists.",
+        "hazards": [
+          "Exposed low-fifth-class crux move at the ridge notch, which most parties belay",
+          "Route-finding through the northeast basin's cliff bands",
+          "Loose rock throughout",
+          "Remote with no cell coverage"
+        ]
+      }
+    ]
+  },
+
+  "wa_northwest_face_4": {
+    "area": "wa_little_big_chief_mountain",
+    "_why": "Resolved through area_id to Little Big Chief Mountain — the id is derived from the route name and appears on no other evidence. This is the long face route reached from Summit Chief Valley, and it is the one route on the peak that leaves the Middle Fork trail BEFORE Dutch Miller Gap. The row's own approach text garbles the geometry (see _DEFECTS); the correct reading is that the peak stands on the east side of Summit Chief Valley.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+      "https://cascadeclimbers.com/forum/topic/107543-tr-little-big-chief-northwest-face-falcon-route/"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Middle Fork Snoqualmie, then cross-country into Summit Chief Valley",
+        "season": "August to September for the documented ascents; snow can linger in the approach gully system earlier in the summer.",
+        "notes": "Do NOT walk the trail to Dutch Miller Gap. From the Middle Fork Snoqualmie road end, head up the valley on the trail until you reach a SMALL STEEL BRIDGE, well short of the gap — that bridge is the turnoff. Leave the trail there and travel cross-country in a southerly direction into the mouth of Summit Chief Valley, then up the valley to a camp at around the level where the timber thins. From camp the peak is on the EAST SIDE OF THE VALLEY: look across and up, not back at the trail.",
+        "baseFinding": "From the valley camp, the base is at the TOP OF A TALUS FIELD roughly nine hundred feet above you, and the marker at its top is a PROMINENT LEFT-TRENDING GULLY. That gully is the start: the first several rope lengths climb it at fourth and low-fifth class and can be moved together. The physical test is the direction of the gully — it leans LEFT as it rises, and it is the dominant weakness on this side of the peak; a gully that runs straight up or leans right is not it. Above the gully system the climbing becomes continuous crack and groove work on sound rock, so if you are still on broken talus-strewn ground after nine hundred feet of gully you have not reached the route proper. Negative markers: if you have tread underfoot and are standing in a saddle with a trail crossing it, you walked past the steel bridge and are at Dutch Miller Gap on the other route; if you are climbing heather and rock steps directly out of a saddle toward an open bench and a snowfield, that is the gap route too.",
+        "hazards": [
+          "Loose rock on the approach talus and on the lower pitches",
+          "Exposed, unprotected final ridge pitch to the summit",
+          "Residual snow and ice on the pocket glacier and the polished slabs used on the descent, into midsummer",
+          "The turnoff is a small bridge on a long valley trail with no sign — miss it and you commit to a very long day getting back"
+        ]
+      }
+    ]
+  },
+
+  "wa_little_big_chief_mountain_west_route": {
+    "area": "wa_little_big_chief_mountain",
+    "_why": "Resolved through area_id to Little Big Chief Mountain. This route is unique on the peak in approaching from the SOUTH, from the Salmon La Sac side up the Waptus River — a completely different trailhead from the other two routes, which both start on the Middle Fork Snoqualmie. Note the row mixes two routes' material (see _DEFECTS); the variants below follow the row's own climbing_route and approach, which describe the west-side line.",
+    "_sources": [
+      "row columns: approach, climbing_route, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/little-big-chief-mountain/421526"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Waptus River Trail from Salmon La Sac",
+        "season": "July to September. The lakeshore stretch holds steep snowfields into early summer and the river ford is far more serious during snowmelt.",
+        "notes": "The southern approach, and a long one — most parties treat it as a two- or three-day trip rather than a push. From the Salmon La Sac road end, take the Waptus River trail east into the wilderness. The first mile rolls over low forested hills before the trail settles into a long gentle grade beside the river, crossing many small feeder creeks — water is reliable the whole way — and skirting boggy meadow and old burn. Around the seven-to-eight mile mark stay on the Waptus River trail rather than forking north toward Spade Lake. The river crossing below Waptus Lake is a genuine FORD: the old hiker bridge washed out and was never replaced, so expect knee-deep water in normal summer flow. Past the outlet the trail runs the lake's southeast shore, a stretch that holds steep snow into early summer. Continue toward Lake Ivanhoe and the Chief Creek drainage; most parties camp near the Chief Creek ford.",
+        "baseFinding": "From the Chief Creek crossing, faint switchbacks climb open slopes toward the peak's west ridge. The base of the climbing proper is where the TREES STOP: below the treeline you are on a trackable, if faint, boot line, and above it there is no tread at all, only continuous heather benches and talus with loose scree — that transition is the start, and there is no cairn, anchor or marker at it. The confirming feature comes much higher and is the one technical spot on the route: the final few hundred feet narrow onto an exposed summit ridge with a NARROW ROCK NOTCH just below the top, and if your line never reaches a notch you have drifted off it. Negative markers: if you are on maintained tread, you have not left the Waptus River trail yet; if you find yourself on the far side of the mountain looking down a valley toward a steel bridge on a river trail, you have crossed the divide into the Middle Fork drainage and are above the routes approached from the north.",
+        "hazards": [
+          "Unbridged Waptus River ford near the lake — cold, swift, and far more serious in snowmelt",
+          "Steep snowfields on the lake's southeast shore into early summer",
+          "Loose scree and route-finding, rather than any single obstacle, as the main hazard on the upper slopes",
+          "Exposed low-fifth-class notch below the summit ridge that some parties rope",
+          "Loose rock throughout — no fixed or bolted anchors are reported anywhere on this peak"
+        ]
+      },
+      {
+        "name": "Direct creek line below Lake Ivanhoe",
+        "season": "July to September.",
+        "notes": "A commonly cited variation that shortens the upper approach. Rather than continuing all the way to the Chief Creek camp, leave the main trail a short distance south of Lake Ivanhoe and follow the creek that drains from there into the Waptus River, gaining the peak's west side more directly. Everything below that point is identical to the standard approach, including the river ford.",
+        "baseFinding": "Leave the trail where the creek draining toward the Waptus meets it, a short distance south of Lake Ivanhoe, and use the creek as your handrail — the creek line IS the route-finding, because there is no path. The base of the climbing is again the point where the timber thins out and the ground becomes unbroken heather bench and talus running up toward the west ridge crest. The check that you are on the right drainage is that it leads you up onto the WEST side of the peak, with the summit ridge above and to your right as you climb. Negative marker: if the creek is taking you away from the peak rather than under it, or you find yourself dropping toward a lake, you are on the wrong drainage — this line gains ground continuously from the moment you leave the trail.",
+        "hazards": [
+          "No path at all above the trail; the creek is the only handrail",
+          "Loose scree and brush on the lower slopes",
+          "Same unbridged Waptus ford and snow-holding lakeshore as the standard approach",
+          "Exposed notch below the summit ridge"
+        ]
+      }
+    ]
+  },
+
+  "wa_ride_the_lightning_2": {
+    "area": "wa_goose_egg_mountain",
+    "_why": "Resolved through area_id to Goose Egg Mountain on the Tieton River east of Rimrock Lake — not the Wyoming or Montana peaks of the same name. This is the right-hand of the two documented lines on the main cliff, and it is the one the climbers' trail actually ends at, which makes it the easier of the pair to find and the reference point for finding the other.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/goose-egg-mountain/958001",
+      "https://chossclimbers.com/testing/us/washington/tieton-cragging/ride-the-lightning/",
+      "https://www.mountainproject.com/area/108022255/goose-egg-mountain"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tieton Road spring and the climbers' trail",
+        "season": "May to October — the area melts out early and stays climbable late, but it bakes in midsummer.",
+        "notes": "From the highway west of Naches, carry on past the Rimrock Lake dam and turn south onto the reservoir road. Drive a couple of miles down it and park in one of the pullouts a short way past a SPRING marked by a SPLIT-RAIL FENCE — the fence is the landmark, not a sign or a sign-board. Walk back to the spring and pick up the steep climbers' trail that leaves from the right-hand side of it. The trail is short but steep and gains the base directly. Rattlesnakes are documented on both the approach and at the cliff base, so watch where you put hands and feet in the scrub.",
+        "baseFinding": "The trail itself is the marker for this route: it climbs from the spring and TERMINATES at the base of this climb. Where the boot track stops gaining height and you are standing under rock with no path continuing upward, you are there. Confirm by looking up — the opening pitches run up a face directly below a PROMINENT ROOF, and the first four or five belay stations are BOLTED, which is unusual on this cliff and does not carry through to the upper pitches. Count them if in doubt: bolted anchors low, natural gear higher. Negative markers: if you have carried on past the end of the trail and are TRAVERSING LEFT along the foot of the cliff, you are walking toward the other documented line and will end up under a low-angle mossy slab rather than a roof; if the first thing above you is easy moss-and-face climbing to a TREE belay, you have gone too far left.",
+        "hazards": [
+          "Loose material sits on the slopes above the cliff and comes down — helmets on from the base",
+          "Rattlesnakes documented on the approach trail and at the cliff base",
+          "A past rockfall event closed part of this area for over a month; rockfall exposure here is recurring rather than theoretical",
+          "Steep, loose climbers' trail with poor footing when dry and dusty",
+          "Loose rock increases with height on this route, and a hanging boulder field sits above the top pitches"
+        ]
+      }
+    ]
+  },
+
+  "wa_dirty_sanchez": {
+    "area": "wa_goose_egg_mountain",
+    "_why": "Resolved through area_id to Goose Egg Mountain, Tieton River. This is the LEFT-hand of the two documented lines on the main cliff. It is the harder of the two to find because the climbers' trail does not lead to it — the trail ends at its neighbour and you have to keep walking.",
+    "_sources": [
+      "row columns: approach, face, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/goose-egg-mountain/958001",
+      "https://www.mountainproject.com/area/108022255/goose-egg-mountain"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tieton Road spring, climbers' trail, then left along the base",
+        "season": "May to October.",
+        "notes": "Drive past the Rimrock Lake dam, turn south onto the reservoir road, and park in a pullout a short distance past the SPRING with the SPLIT-RAIL FENCE around it. Walk back to the spring and take the steep climbers' trail leaving its right-hand side. That trail does not go to this route — it goes to the neighbouring line — so plan on a traverse along the base once it runs out. Watch for rattlesnakes on the approach and at the cliff foot.",
+        "baseFinding": "Do NOT stop where the climbers' trail ends: that is the neighbouring route's base, on the right-hand end of the cliff. Continue LEFT along the foot of the wall. The start is on the SECOND OBVIOUS RIB you come to — count ribs, not steps or minutes. Confirm from the rock immediately above: the first pitch here is easy, on face holds and MOSS-COVERED SLAB, and it finishes at a TREE BELAY. That combination — mossy low-angle slab to a tree — is the test. Negative markers: if the wall above you is steep and relatively clean with a PROMINENT ROOF overhead and bolted belay stations on the first few pitches, you are back at the right-hand route where the trail ended; if you have counted only one rib, keep going.",
+        "hazards": [
+          "Loose material on the slopes above the cliff, with rockfall from parties above",
+          "Rattlesnakes documented on the approach and at the cliff base",
+          "A past rockfall event closed part of this area for over a month — treat the exposure as recurring",
+          "Traversing the cliff base is on loose ground below the routes; a helmet from the spring onward is the sensible call",
+          "The upper pitches include an exposed knife-edge traverse with loose blocks and thin protection"
+        ]
+      }
+    ]
+  },
+
+  "wa_excavation_aka_the_crack": {
+    "area": "wa_shuksan_crag",
+    "_why": "Resolved through area_id and coordinate to Shuksan Crag, a small roadside cliff on unpaved Hannegan Pass Road — about nine kilometres north-northwest of Mount Shuksan's summit and carrying no alpine climbing whatsoever. This is the wall's prominent crack line and it is the reference feature for locating its neighbour.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.mountainproject.com/area/109879766/shuksan-crag",
+      "https://www.fs.usda.gov/r06/mbs/recreation/hannegan-pass-road-32"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Hannegan Pass Road pullout",
+        "season": "Spring to autumn for the rock line while the road is open; the same line is used as a cold-season dry-tooling and mixed practice route.",
+        "notes": "Drive the highway east through Glacier and continue about thirteen miles to an unpaved turn on the LEFT — the Hannegan Pass forest road — just before the highway crosses the river near the milepost. Follow the forest road a fraction of a mile, a couple of minutes' driving, to a pullout. The crag is the obvious cliff on the left, a few feet off the road. The bolts on this wall are old and rusty: the accepted practice is to walk or scramble around to the TOP and rig a top-rope from the tree above, so factor the walk-around into the approach rather than treating this as a lead from the pullout.",
+        "baseFinding": "The wall is only about fifty feet high and holds a small handful of lines, so this comes down to picking the right one off the road. This is THE CRACK — the wall's most obvious continuous crack system, the one feature you can jam from the ground. Three things confirm it. The start is MILDLY OVERHANGING and holds the pumpiest move on the climb low down. Partway up the crack is broken by a MUDDY LEDGE, which is what gave the route its name. Above that the crack thins and is well protected to the top. A STATIC ROPE is normally left rigged from a tree above this line, so a fixed line hanging down the crack is a positive marker. Negative marker: if the line you are under is blank and technical for its first ten feet with nothing to jam from the ground, you are on the harder route immediately to the RIGHT — that one's whole crux is packed into the first ten feet and it has no crack at ground level.",
+        "hazards": [
+          "Aging, unreplaced bolts throughout the crag — do not weight or lead on them",
+          "Loose and muddy sections mid-route, especially at and around the ledge",
+          "Roadside setting, so there is minimal but real traffic exposure while rigging",
+          "The fixed static line above the route is left gear of unknown age — inspect it rather than trusting it"
+        ]
+      }
+    ]
+  },
+
+  "wa_last_chance_for_gas_aka_tricky_start": {
+    "area": "wa_shuksan_crag",
+    "_why": "Resolved through area_id and coordinate to Shuksan Crag on Hannegan Pass Road, not Mount Shuksan. This line sits immediately right of the crag's prominent crack, so the crack is the landmark and this route is located relative to it.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.mountainproject.com/area/109879766/shuksan-crag"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Hannegan Pass Road pullout",
+        "season": "Spring to autumn for the rock grade while the road is open; also used as a cold-season dry-tooling line.",
+        "notes": "East on the highway through Glacier for about thirteen miles, then the unpaved Hannegan Pass forest road on the LEFT just before the highway crosses the river near the milepost. A couple of minutes up the forest road there is a pullout, and the crag is the obvious cliff on the left a few feet from the road. The bolts on this line, like the rest of the wall's, are old and rusty, so the normal practice is to walk around to the top of the cliff and rig a top-rope from above rather than leading it — build that walk-around into the approach.",
+        "baseFinding": "Find the wall's PROMINENT CRACK first — the one continuous, jammable crack line on this short wall, usually with a fixed static rope hanging down it — and then move IMMEDIATELY RIGHT. This route is the line just right of that crack. The physical test is the first ten feet: this start is technical and pumpy with no crack to jam and no easy way to stand up off the ground, and the crux of the whole route is in that opening sequence. If you can jam from the ground, you are on the wrong line. Negative markers: if a muddy ledge breaks the climbing partway up the line above you and the crack continues thinner to the top, you have stepped back left onto the crack route; if you have walked well past the crack and the wall has changed character, you have gone too far right.",
+        "hazards": [
+          "Aging, unreplaced bolts on this line and across the crag — top-rope rather than lead",
+          "The tricky, pumpy crux is right off the ground, so a fall there lands near the deck",
+          "Roadside setting with minimal but real traffic exposure while rigging",
+          "Any fixed line or anchor found in place is of unknown age"
+        ]
+      }
+    ]
+  },
+
+  "wa_gunn_peak_southeast_route": {
+    "area": "wa_gunn_peak",
+    "_why": "Resolved through area_id to Gunn Peak, the high point of the Wild Sky Wilderness above Barclay Lake near Baring. The peak's other row (wa_lewis_creek_route) describes this same climb and is skipped as a duplicate, so this entry carries the peak's approach. The crux of finding the base here is a ramp that cannot be seen until you are underneath it.",
+    "_sources": [
+      "row columns: approach, climbing_route, descent_text, beta, pitch_detail, gear, hazards, waypoints",
+      "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+      "https://www.summitpost.org/gunn-peak/151026",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-28-0108283079"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Barclay Creek climbers' path — summer line",
+        "season": "June to September. Early June parties meet significant lingering snow and heavy brush; late July through August is typically the clearest.",
+        "notes": "From the Barclay Lake trailhead, do NOT take the maintained lake trail. Walk back down the access road about a quarter mile and pick up the old deactivated spur road — parties who know it often park at the spur's gated start instead of the main lot. Follow the old roadbed a hundred or two hundred yards to a FIRE-PIT CLEARING, turn right, and pick up the unmarked but well-trodden climbers' path. It drops to the creek and crosses on a log jam or by rock-hopping near the DOWNSTREAM TIP OF A SMALL MID-CHANNEL ISLAND; this crossing is the main early-season hazard. On the far bank the path swings west, then north, and starts climbing in earnest through sustained tight switchbacks in second-growth timber. Two decision points follow. Around thirty-six to thirty-eight hundred feet the path forks near a BAND OF EXPOSED ROCK — stay RIGHT and do not scramble the outcrop straight ahead, which is a known trap; the correct line keeps traversing climber's-left beneath a cliff band. Then around forty-four hundred feet the summer line bends LEFT up a brushy weakness in the cliff band rather than continuing up the couloir, which holds snow late. Huckleberry and heather meadows lead to the saddle at about fifty-four hundred feet, the last reliable water.",
+        "baseFinding": "From the saddle, drop about a hundred feet off the crest to skirt a cliff band and boulder-hop up the TALUS FAN toward the upper tree benches directly below the peak's south face. The base of the technical ground is the top of that fan — and the feature you are looking for CANNOT BE SEEN FROM BELOW. A ramp cuts up the face from the top of the talus and only appears once you are underneath it, which is exactly why parties overshoot by continuing up the rockslide. The unmistakable test is the single step at the ramp's foot: a boulder with TWO options off it, a left-hand line past a CHOCKSTONE that takes a steep low-fifth move, and a right-hand line, steeper and more exposed but on solid holds, which is what most parties take. If there is no boulder with a two-way step above it, you are not at the ramp. Negative marker: if you are still grinding up loose rockslide with no ramp cutting off to either side, you have gone past the entry — the ramp is entered FROM the talus, not from the top of it. Higher up, the next landmark is a keyhole notch through the ridge to the north side; if you have not passed the ramp step you will not reach it.",
+        "hazards": [
+          "Steep brush — alder, devil's club and salmonberry — on the lower approach",
+          "Log-jam crossing of the creek is slick and runs high in spring",
+          "The fork near the exposed rock band around thirty-six to thirty-eight hundred feet is a known route-finding trap; the outcrop ahead is not the way",
+          "Loose rock on the talus fan and at the ramp",
+          "No reliable water above the creek and the waterfall ravine in late summer",
+          "Cairns thin out badly above treeline and the boot path fades in the talus; route-finding rather than difficulty is the main hazard here",
+          "Multiple search-and-rescue incidents have occurred on this peak"
+        ]
+      },
+      {
+        "name": "Tailgunner couloir — snow-season line",
+        "season": "Late spring, while the couloir holds continuous consolidated snow. Once it starts melting out it becomes the wrong answer and the summer line through the brushy weakness is correct.",
+        "notes": "The same start — the spur road, the fire-pit clearing, the creek crossing at the island, and the switchbacks up through the timber. The difference comes at about forty-four hundred feet: instead of bending left into the brushy weakness in the cliff band, the snow-season line continues directly up the couloir to the saddle. This same couloir is a documented WRONG TURN in summer and an avalanche path, so it is only reasonable when it is a continuous snow climb and conditions have been assessed.",
+        "baseFinding": "The couloir tops out at the same saddle as the summer line, so the base of the climbing is identical: drop about a hundred feet off the crest to skirt the cliff band, then boulder-hop up the talus fan to the upper tree benches below the south face. The ramp at the top of the fan is invisible until you are under it; identify it by the BOULDER at its foot with a two-way step above — a left-hand chockstone move at low fifth, or a steeper, more exposed line on good holds to the right. Negative marker: if you are still on snow when you expect to be on talus, you have carried on above the saddle into the wrong basin; the couloir delivers you to a saddle, and the talus fan starts on the far side of it.",
+        "hazards": [
+          "Avalanche hazard — this couloir is an active path and holds snow late",
+          "Snow conditions vary hour to hour on it; assess before committing",
+          "Everything the summer line carries below the cliff band, including the brushy lower approach and the creek crossing at higher spring flow",
+          "The ramp above is harder to protect and downclimb when wet or holding snow, and it is the one place on this peak where parties commonly rappel"
+        ]
+      }
+    ]
+  },
+
+  "wa_kyes_peak_glaciated_scramble": {
+    "area": "wa_kyes_peak",
+    "_why": "Resolved through area_id to Kyes Peak, the high point of the Monte Cristo group above Blanca Lake. This is the south-ridge scramble from the Blanca Lake trailhead, and it is a different trailhead entirely from the peak's other route, which comes from the Quartz Creek side to the north.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://en.wikipedia.org/wiki/Kyes_Peak"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Blanca Lake Trail to Virgin Lake, then the south-ridge climbers' path",
+        "season": "July to October. Early season adds snow on the ridge and makes the glacier variant the safer of the two.",
+        "notes": "From the Blanca Lake trailhead at the end of the North Fork road, follow the lake trail north into the wilderness. It climbs immediately in a long series of roughly thirty switchbacks, gaining most of the day's easy elevation over the first three miles to a ridge crest — muddy, rooty and icy in wet or early-season conditions. From the ridge the trail DROPS about six hundred feet to Virgin Lake, a good overnight camp and the last easy reliable water before the off-trail climbing. This is where the single most common navigation error happens.",
+        "baseFinding": "At Virgin Lake, do NOT continue downhill on the main tread — that goes to the big turquoise lake below and away from the peak. Instead pick up the faint, UNSIGNED climbers' path leaving the lake into the woods toward the ridge. It gains the peak's south ridge and follows it northeast, staying on the ridge's EAST side to get round minor gendarmes, levels out around fifty-three hundred feet, crosses to the WEST side around fifty-eight hundred, then climbs steep heather and scree working around cliff bands. The technical ground starts at a NOTCH beside a subsidiary point, reached across a boulder field — the notch is the first place the ridge is blocked by a rock step you cannot walk around, and above it the rock turns loose and pebbly for the scramble to the summit ridge. Negative markers: if you are on obvious maintained tread descending toward a turquoise, silty lake, you took the main trail at Virgin Lake and are heading away from the peak; if you are roped up on a glacier, you are on the alternative line rather than this one.",
+        "hazards": [
+          "The unsigned turnoff at Virgin Lake is the commonest error on this peak",
+          "Route-finding on the faint ridge path, which is easy to lose in brush",
+          "Loose, crumbly rock on the summit block with real exposure",
+          "Dense blueberry brush and heather on the ridge, worse late in the season",
+          "A long single push with a likely after-dark return unless camped at the lake"
+        ]
+      },
+      {
+        "name": "Columbia Glacier from the Blanca Lake basin",
+        "season": "July to October. Best when the glacier is snow-covered enough to bridge but firm enough to travel; midday summer slush makes it slow and sliding.",
+        "notes": "The alternative line onto the upper mountain, and several parties pair it with the ridge path — one for the way up, one for the way down. From Virgin Lake, take the main tread down into the basin, cross or skirt the lake's south shore on logs and boulders (poles help), then work up the boulder field and heather slopes above the north shore to the glacier toe. Stay on the glacier's EAST side; the west-side ice is noticeably steeper.",
+        "baseFinding": "The base of the rock is the glacier's exit, and it is a specific and short one: about fifty feet of ledgy, somewhat loose third-class ground taking you off the ice onto rock, after which you traverse RIGHT toward the peak's southwest side and join the ridge line higher up. The test is the exit itself — a short ledgy step, not a long climb; if you are looking at hundreds of feet of rock rising straight off the ice, you are at the wrong point on the glacier's edge. Once on rock, the pebbly, loose 'kitty litter' ground and two narrow catwalks leading toward the summit block confirm you are on the standard line. Negative marker: if you are still gaining height on ice with cliffs above you and the summit off to the side, you have gone too far up the glacier past the exit.",
+        "hazards": [
+          "Crevasses on the Columbia Glacier — low-angle but real, especially where snow is soft",
+          "Soft, sliding midday slush in summer",
+          "Wading or log-crossing the lake outlet stream",
+          "Loose, crumbly rock on the lateral moraine and at the glacier exit",
+          "Camping is banned within half a mile of the big lake, so plan the overnight around Virgin Lake"
+        ]
+      }
+    ]
+  },
+
+  "wa_kyes_peak_northeast_ridge": {
+    "area": "wa_kyes_peak",
+    "_why": "Resolved through area_id to Kyes Peak. This route does NOT use the Blanca Lake approach that the peak's other route uses — it comes in from the north off the Quartz Creek trail, over Curry Gap and across a different glacier, which is the single most important thing to get right about it.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Quartz Creek Trail over Curry Gap and the Pride Glacier",
+        "season": "June to September; spring ski ascents and descents of this side are also recorded.",
+        "notes": "This is a different trailhead from the peak's scramble route — do not start at the Blanca Lake road end. Begin at the North Fork Sauk and Quartz Creek trailhead on the Darrington side and follow the Quartz Creek trail about four miles to Curry Gap, at the junction with the Bald Eagle Mountain trail. From the gap, head west and southwest along an up-and-down ridge toward the peak, leaving the ridge where the ground allows to cross the glacier west-northwest toward the cliffs below the neighbouring summit. The route-finding hazard on this leg is the cliff bands in the basin, not the glacier.",
+        "baseFinding": "The base of the climbing is where the GLACIER MEETS ROCK on the peak's northeast side, at about six thousand feet, and the physical test is which hand the ice is on. The line climbs third-class rock along the CLIMBER'S-LEFT EDGE of the glacier, so once you are on rock the ice should stay on your RIGHT the whole way up to the summit's southeast corner. If the ice is on your left, you have crossed to the wrong edge. The second confirmation is what you passed: the cliffs below the neighbouring summit are an AIMING MARK on the crossing, not the objective — you traverse beneath them and then turn up onto rock. Negative markers: if you are still on low-angle ice with cliffs directly overhead and the summit well off to one side, you are under the neighbouring peak rather than this one; if you have come up a faint climbers' path from a small lake with a subsidiary point beside you, you are on the south-ridge scramble from the other side of the mountain.",
+        "hazards": [
+          "Crevasse-fall hazard on the glacier crossing",
+          "Cliff-band route-finding in the basin between the gap and the glacier",
+          "Rockfall on the third-class band above the glacier",
+          "The up-and-down ridge between the gap and the glacier is longer in practice than it looks on a map"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_carrie_standard": {
+    "area": "wa_mount_carrie",
+    "_why": "Resolved through area_id to Mount Carrie in the Bailey Range of the OLYMPICS, inside Olympic National Park — not a Cascades peak. Both routes on this peak share one approach as far as Cat Basin and diverge above it; this one gains the glacier in the northeast cirque, which is what separates it from the scree line on the south side.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Sol Duc road end, High Divide and the Catwalk to Cat Basin",
+        "season": "July to September, once the divide is out of snow and before autumn weather closes the traverse.",
+        "notes": "Every approach to this peak starts on the park's NORTH side. From the highway west of the big lake, turn onto the hot-springs road and drive to the road-end trailhead. Hike past the falls, continue past the Deer Lake junction, and climb to Heart Lake — the last reliable water and camp before you leave maintained trail. From there gain the High Divide crest and follow it south and west to where the maintained trail ends. Beyond that an unmaintained boot path crosses the exposed south side of the peak at the end of the divide and then the CATWALK, a narrow airy ridge crest linking the divide to the Bailey Range, to reach Cat Basin. Most parties camp at Heart Lake or in Cat Basin and climb from there. Carry water from Heart Lake; there is none between it and the summit.",
+        "baseFinding": "From the basin camp, this route gains the peak's NORTHEAST CIRQUE and the glacier in it — the discriminator is that you rope up, and you rope up before you step onto ice. The base of the climbing is the head of that glacier, at around sixty-eight hundred feet, where the ice ends against the summit pyramid: look for the point where the upper lip of the glacier abuts rock, with a bergschrund or moat between the two, and start the scramble there. The glacier flows north-northeast in a chute confined by an arete and the neighbouring summit, so the ice should be running away DOWNHILL AND NORTHEAST behind you as you turn onto the rock. Negative marker: if you are kicking up loose south-facing scree in full sun with no crevasses anywhere and no ice to be seen, you are on the scramble line on the peak's south side and are on the other route.",
+        "hazards": [
+          "The Catwalk — an exposed sharp ridge crest with high consequence, and thin crumbly ledges with major exposure on the south side of the peak just before it",
+          "Crevasse hazard on the glacier and a bergschrund or moat near the summit block depending on season",
+          "Seracs and icefall in the confined chute",
+          "Loose rock and exposed scrambling on the summit pyramid",
+          "No reliable water between Heart Lake and the summit",
+          "Unsigned, unmaintained route beyond the trail's end; a long way from help"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_carrie_se_route": {
+    "area": "wa_mount_carrie",
+    "_why": "Resolved through area_id to Mount Carrie in the Bailey Range, Olympic National Park. The route's stored NAME claims a Hurricane Ridge approach that its own text denies exists (see _DEFECTS); the real approach is the same north-side Sol Duc line the peak's other route uses, diverging above Cat Basin onto the south side rather than onto the glacier.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Sol Duc road end, High Divide and the Catwalk to Cat Basin",
+        "season": "August to September, once the high traverse is clear of snow; an ice axe is still worth carrying for the summit basin.",
+        "notes": "Start at the road-end trailhead on the hot-springs road on the park's north side. Hike past the falls, on past the Deer Lake junction, and up to Heart Lake — the last reliable water. Climb to the High Divide crest and follow it south and west to the end of the maintained trail, then take the unmaintained path over the exposed south side of the peak at the divide's end and across the CATWALK to Cat Basin. Do NOT plan an approach from Hurricane Ridge: it is a viewpoint separated from this range by miles of trailless glaciated terrain and there is no established route to this peak from it, despite what the route's name suggests.",
+        "baseFinding": "From the basin camp, the line follows the peak's SOUTHWEST RIDGE — grassy and rocky walking at first — and the base of the real climbing is where that ridge stops being walkable crest and you have to CONTOUR OFF IT into a broad, steep, loose SOUTH-FACING SCREE BASIN at around sixty-five hundred feet. The test that you are in the right basin: it is loose, unstable scree in the sun, and the TRUE SUMMIT sits at its FAR RIGHT-HAND END, not at the high point directly above where you enter it. Finish on scree and snow. Negative markers: if you have roped up and are travelling on ice with crevasses, you are on the glacier variation on the northeast side of the peak; if you are still walking a grassy crest with no need to leave it, you have not reached the contour yet and are short of the basin.",
+        "hazards": [
+          "The Catwalk — exposed, sharp, and a fall there could be fatal",
+          "Thin, crumbly ledges with major exposure on the south side of the peak just before the Catwalk",
+          "Steep, loose, unstable scree in the summit basin",
+          "Early-season snow in the basin, where an ice axe is advisable",
+          "No water between Heart Lake and the summit",
+          "Unmaintained and unsigned beyond the divide, requiring solid off-trail route-finding"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_pilchuck_standard_route": {
+    "area": "wa_mount_pilchuck",
+    "_why": "Resolved through area_id to Mount Pilchuck in the Mountain Loop corridor. The peak's two routes use two different trailheads on opposite sides of the mountain — this one comes up the south side on the maintained trail from the forest road.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Mount Pilchuck Road to the trailhead",
+        "season": "July to October. The trail is typically snow-covered into early or midsummer in some years, and traction is commonly needed through June.",
+        "notes": "From Granite Falls take the highway east and then the Mountain Loop about ten or eleven miles to the ranger station. Continue about a mile past it, cross the river, and turn south onto the Mount Pilchuck road. Follow it roughly seven miles — a mix of paved and rough washboarded gravel that varies year to year with maintenance — to the trailhead parking area at around three thousand feet.",
+        "baseFinding": "The scrambling starts where the forest tread runs out at the OPEN TALUS AND BOULDER FIELD below the summit headwall, and the marker there is paint, not tread: the route across the boulders is carried by ORANGE BLAZES PAINTED ON THE ROCKS. If you are following blazes on boulders rather than a footpath, you are on route; if you are following a footpath, you have not reached the boulder field yet. The finish is unmistakable — twenty to thirty feet of hands-on boulder scrambling to a short FIXED STEEL LADDER whose rungs can spin underfoot, leading onto the lookout deck. Negative markers: if you find yourself descending an open brushy clearing to the WEST of the trail, you have wandered onto the old ski-area slope, which looks like a shortcut and has contributed to lost-hiker rescues; and if you are following a creek up a gulch from a small lake with no blazes anywhere, you are on the peak's other route, which comes from a completely different trailhead on the far side.",
+        "hazards": [
+          "Fatal falls have occurred on the exposed final scramble and lookout rocks, particularly in wet or icy conditions",
+          "Search and rescue is called to this peak several times a season, mostly for lost or injured parties on the boulder field and the old ski-slope ground",
+          "Snow obscures the trail and the painted boulder-field markers into early summer",
+          "The fixed ladder's rungs can spin underfoot"
+        ]
+      },
+      {
+        "name": "From the Heather Lake trailhead when the road is gated",
+        "season": "Shoulder season, when the forest road is closed below the trailhead — common in spring and autumn.",
+        "notes": "In years when the road is gated below the trailhead, the walk starts from the Heather Lake trailhead instead, adding roughly five miles and substantial gain each way. Everything above the normal trailhead is identical, so this is a road-walk variant rather than a different climb, but it changes a half-day into a long one and is worth confirming before driving out.",
+        "baseFinding": "You are aiming for the same starting point as the standard approach — the trailhead parking area at around three thousand feet — and from there the base of the scrambling is the same: the open talus and boulder field below the summit headwall, marked by ORANGE BLAZES PAINTED ON THE BOULDERS rather than by tread. The finish is the short fixed steel ladder onto the lookout deck. Negative marker: if you are still on road grade rather than trail, you have not reached the trailhead yet; the boulder field is well above it.",
+        "hazards": [
+          "A much longer day than the standard start, with the same exposed finish at the end of it",
+          "Same fall and route-finding hazards on the boulder field and summit rocks",
+          "Snow more likely on the upper mountain in the shoulder seasons when this variant applies"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_pilchuck_east_ridge": {
+    "area": "wa_mount_pilchuck",
+    "_why": "Resolved through area_id to Mount Pilchuck. This route uses a completely different trailhead from the peak's standard trail — it comes in from the east off a different forest road and leaves the maintained network at a lake, which is the discriminator that matters most here.",
+    "_sources": [
+      "row columns: approach, beta, descent_text, gear, hazards"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Pinnacle Lake Trail, Iodine Gulch and the Bathtub Lakes basin",
+        "season": "August to October, best after snowmelt; spring travel needs an axe and traction, and snow and ice can persist in the gulch into early summer.",
+        "notes": "Do not use the standard Mount Pilchuck road — this is a different trailhead on the other side of the mountain. From the ranger station on the Mountain Loop, continue east about four and a half miles and turn onto the Schweitzer Creek forest road, signed for the lakes. Follow it under three miles to a junction, take the RIGHT fork, and continue a further mile and a half on rough road to the Pinnacle Lake trailhead at around twenty-seven hundred feet — a small lot of perhaps fifteen cars with no toilet. Hike the maintained trail to the lake. Beyond the lake there is no maintained trail at all, so this is genuine off-trail navigation from that point on.",
+        "baseFinding": "The off-trail climbing starts at the SOUTHWEST SHORE OF THE LAKE, where the maintained tread ends and the creek enters. Walk round the lake to that corner and pick up the creek — the creek line IS the route from there, because there is nothing else. Follow it up through the gulch to its top; two distinct STEEP STEPS inside the gulch are the crux of the day and are the confirmation you are in the right drainage. At the top of the gulch, turn RIGHT and continue a short distance to the basin holding the small lakes, then scramble WEST to reach the summit. Negative markers: if you are still on continuous, obviously maintained trail, you have not left it yet — the trail does not go beyond the lake; and if you are crossing an open boulder field following ORANGE PAINTED BLAZES toward a fixed steel ladder, you have come up the peak's standard trail from the opposite side of the mountain.",
+        "hazards": [
+          "No maintained trail beyond the lake — real off-trail navigation, bushwhacking and scrambling through loose rock and brush",
+          "Two distinct steep sections within the gulch",
+          "Snow and ice persist in the gulch into early summer, needing an axe and traction",
+          "Many parties treat the small-lakes basin as the objective and turn round there; the summit scramble west of it is additional off-trail ground"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_teneriffe_standard_route": {
+    "area": "wa_mount_teneriffe",
+    "_why": "Resolved through area_id to Mount Teneriffe above North Bend, immediately north of its more famous neighbour. Both routes on this peak leave the SAME trailhead and share the first two and a half miles, so the discriminator is what happens at the falls junction — this route stays on the graded trail there.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Mount Teneriffe Trail from the paved trailhead",
+        "season": "March to November, best from June to October. Snow lingers on the upper mountain and ridge crest into June and makes an otherwise easy trail steep and icy.",
+        "notes": "From the freeway exit into North Bend, continue through town and turn north onto the road running below the peaks. Carry on about three miles PAST the neighbouring peak's trailhead to the paved seventy-car lot — this is the Teneriffe trailhead, not the Si one, and the two are easy to confuse. A short access path switchbacks up to an old logging-road grade, which climbs gently for a mile and a half through young forest and meadow. The trailhead gate closes seasonally about an hour before dusk; vehicles left past closing risk being locked in.",
+        "baseFinding": "The checkpoint is the SIGNED SPUR down to the falls at about two and a half to three miles — everything before it is old road grade, everything after it is narrower trail on switchbacks. Stay on the graded, signed trail there. Continue through the switchbacks, past a viewpoint over the valley to the north, and on to a SADDLE at around forty-two hundred feet where the trail dips before the final stretch. The base of the only hands-on ground on this route is above that saddle: a short rocky step at the true summit, about a mile further on, needing sure footing but nothing more. Negative marker: if you have left the graded tread at the falls junction onto a steep boot track of roots and rock climbing the fall line beside the falls, you are on the unofficial ridge line and are committed to a much steeper day.",
+        "hazards": [
+          "Seasonal snow on the upper mountain and ridge crest into June, creating steep icy sections on otherwise easy trail",
+          "No reliable water beyond the falls — carry what you need for the round trip",
+          "The trailhead gate closes seasonally about an hour before dusk"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_teneriffe_kamikaze_trail": {
+    "area": "wa_mount_teneriffe",
+    "_why": "Resolved through area_id to Mount Teneriffe above North Bend. This is the unofficial boot track up the southwest ridge, sharing the first two and a half miles with the standard trail from the same trailhead. It is the route that LEAVES the graded trail at the falls junction, which is the only thing separating the two on the ground.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, gear, hazards, waypoints"
+    ],
+    "_confidence": "re-homed",
+    "approach_variants": [
+      {
+        "name": "Standard trail to the falls junction, then the unofficial boot track",
+        "season": "May to October. Snow lingers near the ridge crest into early summer, and the track is markedly more slip-prone when wet.",
+        "notes": "Start from the same paved trailhead as the standard route — the Teneriffe lot, three miles past the neighbouring peak's trailhead, not that one. Take the graded trail up the access path and along the old logging-road grade to the SIGNED FALLS JUNCTION at about two and a half to three miles. Everything to here is shared. From near the falls the unofficial track leaves and climbs the forested southwest flank directly, and it is steep, rocky and eroded rather than graded.",
+        "baseFinding": "At the signed falls junction, leave the maintained trail. The boot track BYPASSES THE FALLS ON CLIMBER'S RIGHT — that is the physical test, because the falls themselves are the landmark and the track goes round them on one specific side. Above the bypass the tread changes character completely: it stops switchbacking and climbs the FALL LINE on roots and rock, gaining a SADDLE on the southwest ridge. From the saddle the route is a direct, largely switchback-free push up the open ridge crest through meadow and a rock band, with a short scramble move at the true summit. Negative markers: if the trail underfoot is still graded, signed and switchbacking with the falls spur behind you, you missed the turnoff and are on the maintained trail; and if you are dipping to a saddle after a viewpoint over the valley, having never left graded tread, that is the standard trail's saddle, not this ridge.",
+        "hazards": [
+          "The unofficial track is steep, root- and rock-covered and prone to erosion, and is worse on descent than on ascent",
+          "Wet or mossy rock on the ridge raises slip risk sharply compared with the standard trail",
+          "Route-finding on the boot track is less obvious than on the signed trail, especially in poor visibility",
+          "Loose rock and minor exposure on the ridge crest, with lingering snow near the crest into early summer"
+        ]
+      }
+    ]
+  },
+
+  "wa_wild_wild_west": {
+    "area": "wa_west_face_6",
+    "_why": "Resolved through area_id to the West Face sub-area of PINTO ROCK in the Gifford Pinchot National Forest of southern Washington — reached from Randle, not from anywhere in the Mountain Loop or Alpine Lakes. The area is named 'West Face', which identifies no mountain on its own; the route id is likewise name-derived. This is the only one of the area's three routes with a described start.",
+    "_sources": [
+      "row columns: approach, beta, pitch_detail, descent_text, hazards, waypoints",
+      "https://www.summitpost.org/pinto-rock/151275",
+      "https://www.mountainproject.com/area/110771649/west-face"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Road walk from the pullout to the foot of the wall",
+        "season": "June to October.",
+        "notes": "From Randle, head south and follow the main forest road roughly nineteen miles, then turn off at the signed meadows turning and follow the next road under three miles before turning again onto the last one. That final road is rough and wants high clearance; follow it about two miles until the rock appears, then carry on to the large pullout where the climbers' trail is obvious. From the pullout, simply walk up the road toward the wall and onto its base. There is no cell service on the approach or at the crag.",
+        "baseFinding": "Go to the LOWEST TOE of the West Face — the point where the wall's base comes down closest to the road, rather than anywhere along its higher flanks. The start is a short PROW, and the test is bolts you can count: TWO of them, low, on the prow, within reach from the ground. Confirm from the pitches above — the first climbs a short face onto clean ramps to a ledge belay, and the second traverses across a SADDLE to a CHAIN ANCHOR, which is a distinctive shape for a second pitch and not something a neighbouring line does. Negative marker: if you are under a long face with no bolts within reach of the ground and the only protection on offer is slinging the embedded cobbles and knobs, you are on one of the older knob-slinging lines rather than this bolted one.",
+        "hazards": [
+          "Volcanic tuff-breccia studded with cobbles and knobs that can pop loose without warning",
+          "Rough gravel approach roads needing high clearance",
+          "No cell service on the approach or at the crag",
+          "The formation's base wraps a long way; the toe is a specific point, not a general area"
+        ]
+      },
+      {
+        "name": "Around the East Face and through the Gap",
+        "season": "June to October.",
+        "notes": "The other way onto this side of the formation, and the one to use if you are coming from routes on the far side. From the same pullout, take the climbers' trail around the EAST face of the rock — this trail traverses the whole formation — and pass through the deep gully that splits it, then drop down to the LEFT onto the West Face's base. It is longer than walking up the road but it links the two sides without returning to the car.",
+        "baseFinding": "Having dropped down and left out of the walk-through gully, keep descending along the base until you reach the LOWEST TOE of the West Face — the far low point of the wall, not the first rock you meet after the gap. The start is a short PROW carrying TWO bolts within reach of the ground. Confirm above: a short face to clean ramps and a ledge belay, then a traverse across a saddle to a chain anchor. Negative markers: if the deep walk-through gully is still behind and ABOVE you and you have not dropped down and left, you are on the flank rather than at the foot of the face; if you are looking at a long unbolted face where knobs are the only protection, you are on an older line.",
+        "hazards": [
+          "Volcanic tuff-breccia with loose cobbles and knobs",
+          "The traverse round the formation is on climbers' trail with loose ground below the walls",
+          "Rough approach roads needing high clearance",
+          "No cell service anywhere on the approach or at the crag"
+        ]
+      }
+    ]
+  },
+
+  "wa_three_fingers_r1": {
+    "area": "wa_three_fingers",
+    "_why": "Resolved through area_id and coordinate to Three Fingers in the Boulder River Wilderness above the Mountain Loop Highway — not Three Fingered Jack in Oregon and not the BC summit. This row is the NORTH Peak, the peak's true high point, which is a different tower from the lookout summit and from the middle tower. The base is a col you must climb a thousand feet to reach, which is the clearest discriminator on the mountain.",
+    "_sources": [
+      "row columns: approach, climbing_route, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/three-fingers/150549",
+      "https://chasingdonutscom.wordpress.com/2021/07/26/the-3-fingers-of-three-fingers/",
+      "https://en.wikipedia.org/wiki/Queest-alb_Glacier"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Trail #641 from Tupso Pass over Goat Flats and Tin Can Gap",
+        "season": "July to September. Crevasses open on the glacier by midsummer and bare ice with a moat appears late in the season; an axe is a year-round item on this peak.",
+        "notes": "Note the access before anything else: the road up to the historic trailhead has a permanent washout, so the day starts with a long bike or walk past the vehicle gate before the trail proper begins. From the trailhead, the trail climbs through forest to the small lake at about two and a half miles — last easy water, and no fires or camping within two hundred feet of it. Continue up into the open meadows of the flats at about four and a half miles, the best camping on the route, then a further couple of miles to the GAP at roughly six miles, where the maintained tread ends and most parties bivy. The gap gives the first real view of the three summits and of the glacier below them.",
+        "baseFinding": "From the gap, drop about four hundred feet off-trail down snow and talus onto the glacier, cross it, and CLIMB BACK UP roughly a thousand feet on the far side to the COL BETWEEN THE MIDDLE AND NORTH TOWERS. That col is the base of the climbing, and the thousand-foot re-ascent is the discriminator: this is the only one of the three summits whose route requires you to gain a col before you touch its rock. From the col the line is a RAMP that leads LEFT and then angles RIGHT into a SHALLOW CHIMNEY — the chimney is the check, being the one chimney breaching the block from this col, and it is fourth class with a move or two of low fifth. Above it an exposed fourth-class ridge leads to a grassy ramp and the summit. Negative markers: if you are standing under THREE STACKED WOODEN LADDERS bolted into the rock, you are at the lookout summit at the southern end of the ridge, two towers away; if you have climbed a short face straight off the glacier with no col gained, you are on the middle tower's south face.",
+        "hazards": [
+          "Glacier travel with real crevasse risk crossing to the col",
+          "A moat between rock and ice that widens through the season, with bare ice by late summer",
+          "Loose rock in the chimney and ramp system",
+          "No established trail or cairned route above the gap — route-finding is entirely on you",
+          "The descent is a committing series of rappels, and some stations are fixed slings of unknown age",
+          "Fog on the glacier traverse has triggered multiple multi-hour rescues on this mountain"
+        ]
+      }
+    ]
+  },
+
+  "wa_three_fingers_r2": {
+    "area": "wa_three_fingers",
+    "_why": "Resolved through area_id and coordinate to Three Fingers above the Mountain Loop Highway. This is the MIDDLE summit — the least-climbed and least-documented of the three towers, with no lookout and no col approach. Distinguishing it from its two neighbours is the entire job here, and the row itself warns it is lightly documented.",
+    "_sources": [
+      "row columns: approach, climbing_route, beta, pitch_detail, descent_text, gear, hazards, waypoints",
+      "https://www.summitpost.org/three-fingers/150549"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Trail #641 to Tin Can Gap, then a glacier-side camp",
+        "season": "Summer. The moat and any open crevasses drive the timing more than the rock does.",
+        "notes": "Identical approach to the other two summits as far as the glacier: the long bike or walk past the permanent road washout to the trailhead, then the trail to the small lake at about two and a half miles, the open meadows at about four and a half, and the GAP at roughly six to seven miles where the maintained tread ends. From the gap drop about four hundred feet off-trail onto the glacier and cross it. Most parties bivy on or near the glacier below the peaks rather than trying all three summits in a push, and this route in particular is normally done from such a camp rather than from the gap.",
+        "baseFinding": "From the glacier-side camp, this summit's SOUTH FACE is reached by a short climb and traverse straight to the foot of the peak — and the discriminator against its northern neighbour is the absence of a col: you do NOT gain a saddle first and you do not climb a thousand feet on the far side of the glacier before touching rock. If you have gained a col, you are on the wrong tower. The face is BROADER than it looks from the ice, so pick the line from the glacier before you start up; the lower rock is solid third and fourth class and it turns looser and more broken higher, which is the confirmation you are on the described line rather than a cleaner variation. Negative markers: if you are following a ramp leftward into a shallow chimney out of a saddle, you are on the northern tower's route; if you are under three stacked wooden ladders pinned into the rock, you are at the lookout summit at the far southern end of the ridge.",
+        "hazards": [
+          "Loose, suspect rock in the upper part of the scramble, with rockfall onto anyone below",
+          "Glacier travel and crevasse risk on the shared approach",
+          "A moat between rock and ice that widens through the season",
+          "Very little published route detail for this summit — treat it as a lightly documented alpine objective and be prepared to route-find",
+          "Fog on the glacier has triggered multiple multi-hour rescues on this mountain"
+        ]
+      }
+    ]
+  }
+}
