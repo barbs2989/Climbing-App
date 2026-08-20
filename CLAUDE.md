@@ -2374,6 +2374,45 @@ the correction knows the screen is wrong, and they have no way to report it.
     distance finding that is absurdly large before believing the data is that bad.
   - `--state all` is not a nicety: `id like 'wa_%'` misses the legacy `rainier_*`/`adams_*` ids,
     4 of the 1,016 routes carrying waypoints, and they are Rainier and Adams.
+  - **The trailhead PIN and the `approach_logistics` blob disagreeing is mostly NOT a defect,
+    and the ratio is measured: of 12, six were repaired and six are correct data.** The route
+    page reads the two in opposite orders (TrailheadCard takes the blob, the map draws the
+    pin), so a disagreement means the two surfaces send you to different places — but on a
+    peak with two genuine approaches, *both* records are right and sweeping them to zero is
+    the damage. `wa_lundin_peak_west_ridge` is the case `audit:trailhead-agreement` already
+    names; Carru, Howard, Remmel and Stuart's North Ridge are four more whose own prose
+    describes both starts in full.
+  - **The chord-vs-trail test settles the ones that ARE defects, with no research and no
+    judgement** (`scripts/oneoff/probe-trailhead-by-chain-geometry.mjs`). A waypoint's
+    straight-line distance from the trailhead can never exceed the trail mileage recorded on
+    it — the trail is the walked path, the straight line is the chord. So the route's own
+    waypoint chain is a **third record** that adjudicates between the two that merely
+    disagree, exactly as `trackOffItsPeak` anchors on the peak coordinate instead of trying
+    to referee a pin against a line. On `wa_chikamin_peak_southeast_slopes`, "Kendall
+    Katwalk" is recorded at 6.6 trail miles — 10.62 km — and sits **11.30 km** straight-line
+    from the Mineral Creek pin, against 3.7 km from the PCT North blob. The chain is the PCT
+    approach; the pin was the route's *other*, genuine approach placed as though it were the
+    start.
+    - **Tolerance must be mean, and this is where the method nearly failed.** At 15% slack it
+      rated that 11.30-across-10.62 as fine and returned "both fit" — a false pass on the one
+      test that can settle these. Even at 3% it survived, because a 0.4 km floor covered the
+      gap **by 20 metres**. Slack covers a mileage rounded to one decimal and a hand-placed
+      pin, and nothing else.
+    - **Do not let a fitted ratio vote.** Drafts added a median and then a near-the-start mean
+      of chord/trail, and every margin tried was one chosen because it produced the answer
+      already believed about Chikamin. Those numbers are printed as context and excluded from
+      the verdict; only the physical invariant decides. A threshold fitted to the case it is
+      meant to judge proves nothing — the same failure as a fixture that sets only the
+      property its author already believed in.
+    - It answers **"neither"** as readily as it picks a winner, and that matters:
+      `wa_phantom_peak_south_route`'s chain is the Big Beaver/Luna Creek approach while its
+      two records name Hannegan Pass and Nooksack Cirque. A test that always chooses one of
+      the two offered answers would have picked a wrong one.
+  - **A small distance is not a small error.** Two disagreements looked like 642 m and 541 m
+    of rounding, and both were the same defect: the pin held the coordinate of the **named
+    feature** rather than of a trailhead — 46.93872,-121.86149 is Wikipedia's coordinate for
+    Mowich *Lake*, and 48.7317,-121.0672 is Ross *Dam*, which sits at the bottom of a mile of
+    trail off SR-20. The page hangs driving directions off that pin.
   - Report-only, read-only, fails closed on an empty read.
 - **`audit:access-prose`** finds road-access and permit sentences filed in a column that renders
   somewhere else — the general form of the rule this file already states for `season`, `grade`
