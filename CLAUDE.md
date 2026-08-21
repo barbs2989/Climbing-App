@@ -2254,6 +2254,43 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **`0,0` is deliberately ACCEPTED as placed.** This predicate answers *does a coordinate exist*,
     not *is it plausible*; rejecting it here would hide a bad pin from the audits whose job is to
     find it.
+  - **A TENTH PREDICATE APPEARED ONE PR AFTER THE SWEEP, WAS FLAGGED IN REVIEW, AND MERGED ANYWAY.**
+    Section 1 is scoped to `GPXMap`'s body for a good reason — `peakCoord.lat!=null` is a legitimate
+    test of a PEAK coordinate and flagging it would tell an author to break correct code. The cost is
+    that a placement test written **anywhere else** is invisible by construction, and #1215's
+    `trailheadPoint()` duly wrote one: `w.lat!=null&&w.lng!=null` for the pin, and `w.lat!=null`
+    alone — **no lng at all** — for the name-matched fallback. *A review comment is not a guard.*
+    - **The empty-string case is the bad one, and it defeats the very fix #1215 shipped.** `"" !=
+      null` is true, so the pin branch returned `{lat:"",lng:""}` and, because it returns **early**,
+      **shadowed the `approach_logistics` coordinate the function exists to reach** — the fallback
+      skipped in exactly the case it was added for, with `derived:false` so no marker is drawn
+      either. A lat with no lng gave the Directions button `destination=47.5,undefined`.
+    - **Section 1b is structural and scoped BY THE DATA SOURCE, not by the variable name**: a
+      coordinate comparison inside a callback that is **iterating waypoints** is a placement test
+      whatever the parameter is called, and a test on a peak, a user position or an area cannot
+      reach it. The receiver is resolved through **Babel scope**, so `const wps=route.waypoints||[]`
+      counts — matching on the name alone would have missed the shape that actually got through.
+      Only a **comparison** counts; a plain read (`.map(w=>[w.lat,w.lng])`) is a correct consumer of
+      a placed pin and flagging it would condemn every one of them.
+    - **It found THREE MORE on its first run, all in `RouteDetail`**, which is the argument for the
+      widening rather than a second hand-fix. One is an **eleventh predicate — `wpPlaced` re-inlined
+      character for character** inside `pickForecastWaypoints`; behaviour-identical today (`+x` and
+      `Number(x)` agree), so a drift risk rather than a live defect, and exactly what the sweep
+      existed to remove. The other two gate **whether GETTING THERE renders** and **whether the
+      Download GPX button is offered** on a coordinate the map cannot draw — so the app would build
+      a GPX file from a `wpt` with a missing or empty `lng`.
+    - **Behaviour-neutral, and measured rather than asserted.**
+      `verify-trailhead-point-equivalence.mjs` runs the pre-change expression and the shipped
+      function over every route carrying waypoints: **1,016 compared, 942 resolving, 0 differ.** The
+      reference is a verbatim copy of the old expression (correct — the original is gone, so a copy
+      is the only second opinion available) while the function under test is **extracted from source
+      with `ANCHOR LOST`**, because a copy of *that* would agree with itself whatever the app did.
+      The four synthetic cases carry the point: the shapes the catalog does not hold **yet**.
+    - The `approach_logistics` branch goes through `wpPlaced({lat,lng})` too. It is the same question
+      about a different store, and `trailheadLat:""` fails identically.
+    - Injection-tested **11/11**. Case 8 is the real historical defect, `trailheadPoint()` exactly as
+      #1215 merged it. **Cases 10 and 11 must stay SILENT** and are what make the rule worth having —
+      a peak coordinate and a plain read of a placed pin are both correct code.
   - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
     coordinate and flagging it would tell an author to break correct code.
   - **THE 39 UNPLACED PINS ARE 1 FINDABLE AND 38 REFUSALS, and the refusals are the result.**
