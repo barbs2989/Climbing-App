@@ -116,6 +116,32 @@ export async function durableFixture(log) {
     ? `run ${process.env.GITHUB_RUN_ID}${process.env.GITHUB_RUN_ATTEMPT ? "." + process.env.GITHUB_RUN_ATTEMPT : ""}${process.env.GITHUB_JOB ? "-" + process.env.GITHUB_JOB : ""}`
     : `local ${process.pid.toString(36)}${Date.now().toString(36).slice(-4)}`;
   const groupName = `CI Fixture Alpine Club (${tag})`;
+
+  // SWEEP WHAT EARLIER RUNS LEFT, and this is the half that actually mattered. Teardown deletes
+  // this run's group by id in a `finally`, which a cancelled or killed job never reaches -- so
+  // every such run leaks a group owned by the durable account, and nothing has ever removed them.
+  // Measured 2026-08-21: the live project held 17 groups, of which 15 were CI fixture leftovers
+  // going back to 2026-08-13 and ZERO were real. `useMyGroups()` selects every group with no
+  // filter, so that pile is the Groups tab every walk sees, and check:signed-in picks the group
+  // to open BY NAME -- two rows sharing a name (which a run without the GITHUB_JOB tag above still
+  // produces) let it walk one group while another job tears that one down.
+  //
+  // sweepOrphans() cannot cover this: it removes @climbmatch-qa.invalid ACCOUNTS, and these
+  // groups belong to the durable pair, which must never be deleted.
+  //
+  // AGE-GATED at 45 minutes for the same reason sweepOrphans is, and getting that wrong is worse
+  // than the leak: ungated, this deletes the group of a run already in flight, whose failure then
+  // lands nowhere near the cause and passes on re-run. 45 min clears the 25-minute job wall.
+  const staleBefore = new Date(Date.now() - 45 * 60 * 1000).toISOString();
+  const stale = await asUser(session, `groups?select=id&created_by=eq.${session.user.id}` +
+    `&name=like.CI%20Fixture%20Alpine%20Club*&created_at=lt.${staleBefore}`);
+  const staleRows = Array.isArray(stale.json) ? stale.json : [];
+  let swept = 0;
+  for (const g of staleRows) {
+    const d = await asUser(session, `groups?id=eq.${g.id}`, { method: "DELETE" });
+    if (d.status < 300) swept++;
+  }
+  if (staleRows.length) log(`  swept ${swept}/${staleRows.length} fixture group(s) left by earlier runs (older than 45 min)`);
   // Same route the rest of the fixture uses. crews.route_id is NOT NULL.
   const CREW_ROUTE_ID = "wa_mount_baker_north_ridge";
 
