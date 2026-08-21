@@ -108,6 +108,7 @@ npm run audit:approach-scope # does a route's approach text run past the base of
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:camp-elevations # are the camp elevations already ON SCREEN right? (99% are)
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -2719,6 +2720,50 @@ the correction knows the screen is wrong, and they have no way to report it.
       **waypoint** store, which is 98% populated — the *check the existing files before
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
+- **`audit:camp-elevations`** asks whether the camp elevations **already on screen** are right.
+  3,821 bivy sites carry one, almost all written by enrichment, and nothing had ever checked them.
+  `audit:waypoint-elevations` asks this of the waypoint store; the bivy store is 11x larger, feeds
+  the same panel, and had never been asked. **A blank says "unknown" honestly; a wrong number says
+  something false on a screen a climber plans a night out from.** Read-only, report-only, anon key
+  — **not** a build gate (it reads the DB and the gazetteer).
+  - **THE RESULT IS A NEGATIVE ONE AND THAT IS THE POINT: 168 of 170 agree within 400 ft (99%).**
+    The enrichment's camp elevations are sound. Of the two that did not, **one was the audit's own
+    wrong-feature match** and one was real.
+  - **The real one is a recognisable failure: the TRAILHEAD's height written into the camp's
+    field.** "Hardscrabble Horse Camp, Middle Fork Snoqualmie" stored **1,400 ft on 21 rows**; the
+    DEM at its OSM coordinate reads **2,828**, and a published description of the walk gives the
+    trailhead at 1,400 then ~1,400 ft of gain to the camp. Two methods agreeing to ~28 ft, and
+    1,400 is exactly the number the second one names as the START. Fixed by
+    `fix-hardscrabble-camp-elevation.mjs`, which declares the expected current value and refuses
+    if the row no longer holds it.
+  - **A ONE-WORD QUERY IS NOT AN IDENTITY, and that produced the false one.** Stripping `basin`
+    from *"Bedal Basin, below the north side of Bedal Peak"* left **"Bedal"**, which matched a
+    **hamlet** on the Mountain Loop Highway — 3,796 ft below the basin, and reported as the worst
+    finding in the run. Settlements are named after the landforms beside them. The leading-noun
+    path already required two words; the tail-strip path did not.
+  - **Section 1 needs no gazetteer, so it covers ALL 3,821 sites — and its number is a READING
+    LIST, not a defect count.** 19 camps sit above their route's own high point, and reading them
+    with the area name attached shows **most are correct**: a traverse camp on a neighbouring
+    higher summit ("South Twin Sister summit bivies" serves four lower Sisters), or an over-broad
+    zone assignment (`wa_ellation`, 5,000 ft, carries Ruth Mountain's 7,100 ft summit camp from
+    7 km away). Neither is a wrong elevation. The script says so in its own output, because
+    *when an audit reports a number, ask what it is the number OF.*
+  - **The name-matching gates are IMPORTED from `scripts/lib/camp-names.mjs`**, the same module
+    `solve-camp-elevations.mjs` writes through. A solver and an audit that disagree about "the
+    same place" would either bless the solver's mistakes or report correct work as broken — the
+    four-grade-parsers shape, and the three-waypoint-audits-with-different-tolerances shape.
+  - **A STRUCTURE NOUN THE MATCHED FEATURE LACKS MEANS A DIFFERENT PLACE STANDING NEAR IT.**
+    *"Blue Lake trailhead roadside parking"* is the pullout on SR-20 at ~5,200 ft; the gazetteer
+    matches **Blue Lake**, up the trail at 6,264 ft. Two of the first three findings were this.
+    The rule already existed in this repo — the saddle solver records *"test the OBJECT"* — and
+    had simply never been carried across. `trailhead`, `parking`, `junction`, `crossing`, `ford`
+    and the rest now sit in `SUBFEATURE` beside `saddle` and `moraine`.
+  - Fails **closed** four ways: a failed read, zero routes, zero names attempted, and a gazetteer
+    that places nothing are each reported as a broken scan rather than a clean catalog.
+  - **The controls are the same four `probe-camp-elev-control.mjs` runs**, re-run after every
+    change to the matching logic, because the expected output here — a plausible elevation — is
+    exactly what a broken pipeline emits.
+
   - **THE GATE IS `campingGate()`, AND THE RULE IS "TRAD IS ALPINE WHEN IT CLIMBS A PEAK"** — a
     user decision, taken after the defect was measured rather than guessed at.
     `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,
