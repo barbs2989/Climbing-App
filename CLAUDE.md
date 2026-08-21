@@ -109,6 +109,7 @@ npm run check:rappel-lengths # can the rope a route describes actually reach the
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run audit:camp-elevations # are the camp elevations already ON SCREEN right? (99% are)
+npm run audit:camp-route-fit  # is this camp plausibly usable FOR THIS ROUTE? (6 candidates)
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -2736,6 +2737,36 @@ the correction knows the screen is wrong, and they have no way to report it.
       **waypoint** store, which is 98% populated — the *check the existing files before
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
+- **`audit:camp-route-fit`** asks the question `audit:camp-elevations` surfaced and could not
+  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, is
+  offered *"Ruth Mountain summit camp"* at 7,100 ft — a real camp with a correct elevation, on a
+  different mountain 7.2 km away. A zone file handed every camp in a corridor to every route in
+  it. **The elevations are right; the PAIRING is noise.** Report-only, read-only; not a build gate.
+  - **THE OBVIOUS SIGNAL IS FAR TOO WEAK, and saying why is the point.** *"The camp names a
+    different peak"* describes almost every CORRECT camp: Boston Basin serves Boston, Forbidden
+    and Sahale, and a shared camp is the entire purpose of a zone file. Elevation alone is no
+    better — *"South Twin Sister summit bivies"* (6,932 ft) correctly serves four lower Sisters
+    because it IS the range high point.
+  - **What separates them is DISTANCE AND MAGNITUDE TOGETHER**: South Twin is 288 ft above North
+    Twin and adjacent; Ruth Mountain is 2,100 ft above Mamie Peak and 7.2 km away. Camps carry no
+    coordinates (4 of 5,083), but a camp that NAMES a peak inherits that peak's coordinate from
+    the catalog's own `areas` table — so the distance is measurable without inventing anything.
+  - **Precision was measured BEFORE promotion**, the standard `audit:area-parents` set by shipping
+    41 findings of which 12 were real. Of **5,070** (route, camp) pairs, **315** name a different
+    distinctive peak, and **6** clear both dials. The script prints the whole distance × elevation
+    grid so the thresholds can be judged rather than trusted — fitting one to the case that
+    prompted the detector proves nothing.
+  - **Each finding carries its OWN corroboration, from a third record: the route's prose.** If a
+    route names the peak its camp names, parties really do stage there. **5 of the 6 never mention
+    it** — and not for want of prose: Mount Stickney has 3,969 characters and never says Spire
+    Mountain. The camp entry itself is excluded, since it is the thing under suspicion.
+  - A peak name is only usable when it is **distinctive and unique in the catalog** — "Middle
+    Peak", "North Peak" and "The Tower" exist many times over, so matching them says nothing about
+    which is meant. 431 of 447 peaks qualify.
+  - **It must never become a sweep.** A shared corridor camp is correct, and the one corroborated
+    finding shows why: `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-area
+    camps are defensible — Ruth's **summit** camp still is not. The repair is a judgement per row.
+
 - **`audit:camp-elevations`** asks whether the camp elevations **already on screen** are right.
   3,821 bivy sites carry one, almost all written by enrichment, and nothing had ever checked them.
   `audit:waypoint-elevations` asks this of the waypoint store; the bivy store is 11x larger, feeds
