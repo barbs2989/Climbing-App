@@ -369,6 +369,28 @@ a build error, but a screen that renders wrong or not at all.
     - `cancel-in-progress: true` is right **here and nowhere near a push-to-main guard**: a
       superseded production walk asks about a site that has since been redeployed, so it has
       no value. `check:ci-cancel` governs the push-triggered workflows; this is not one.
+  - **It also asserts that two screens counting the SAME list agree** (`scripts/lib/screen-counts.mjs`),
+    on the text it has already captured, so it costs no extra walk. #1203 is why: the Profile said
+    *"My objectives · 3 active"* while the Logbook said *"4 climbs to go"* about one list, because the
+    Profile had forked the app's completion test and counted a route you TURNED AROUND on as done.
+    Every assertion here passed — each number was well-formed, each screen rendered, nothing was
+    `NaN`. Nobody was comparing them.
+    - **The relations are NOT all equality, and an equality would have gone red on correct
+      behaviour.** Home's *"N routes"* is the TOTAL; *"N climbs to go"* and *"N active"* are
+      total-minus-completed. They coincide today only because nothing in the seed demo is completed,
+      so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
+      a three-way equality fires on working code.
+    - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
+      go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
+      was tried and silently stopped finding the badge on the one snapshot carrying the defect —
+      #1181's leaked comment sits between the heading and the number and pushes it out of range.
+    - Fails **closed**: a heading that moved, a screen the walk never captured, or a relation with a
+      missing side is reported as `NOT COMPARED`, never as agreement. Deleting the Profile from a
+      snapshot made an early version report *nothing*, because the group still had two readable
+      counts and the pair quietly had an undefined half.
+    - Case-tested 7/7 against REAL captures, no browser needed
+      (`scripts/oneoff/inject-screen-count-cases.mjs`). Case 2 is not synthetic — it is the actual
+      pre-#1203 recording, the standard `check:rls` case 1 is held to.
   - **The sample route detail is pinned by name** (`North Ridge (Complete)` in Washington
     under `USE_DB`, `West Slabs` in Utah on seed), so a rename or delete in the live DB
     turns this red on a PR whose author changed nothing. The failure separates the two
