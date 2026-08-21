@@ -9446,3 +9446,70 @@ directly.
 
 Next batch continues after `wa_little_big_chief_mountain_northeast_face` in the
 id-ordered scope.
+
+---
+
+## 2026-08-21 — Pass 3, Batch 139
+
+Ten routes across nine peaks (Little Mac Spire, Little Sister x2, Little Tahoma x2,
+Liberty Bell, Lizard Mountain, Luahna Peak, Phantom Peak, Luna Peak): Southwest Route
+(Little Mac Spire); North Face, West Face (Little Sister); Cowlitz/Ingraham Glaciers,
+East Shoulder (Little Tahoma); Live Free or Die!™ (Liberty Bell); South Route
+(Lizard Mountain); Southwest Slope - Southeast Ridge (Luahna Peak); Luna Glacier
+(Phantom Peak); Southeast Slopes (Luna Peak).
+
+**Confirmed error → fix in `sql/2026-08-21-batch-139.sql`:**
+- `wa_live_free_or_die` (Liberty Bell East Face): `grade`/`rock_grade` stored as
+  "5.12-" but both primary sources — Blake Herrington's own AAC Publications writeup
+  of the 2017 FA and the Mountain Project route page — give 5.12+ ("mostly 5.10-5.11
+  thin face climbing" with "a few short bouldery bits in the 5.12 range" at the
+  crux). No source found gives 5.12-. `grade_num` (12) is unaffected by the
+  qualifier and left alone.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_little_mac_spire_southwest_route`'s `high_point_ft` (7,736 ft) disagrees with
+  its own summit waypoint (7,680 ft — whose own note already admits "no
+  independently surveyed summit coordinate found for this minor Southern Pickets
+  spire") and with two external citations (AAC Publications' "Walking the Fence"
+  Southern Picket enchainment article, stephabegg.com) that both give 7,992 ft for
+  "Little Mac Spire." Not auto-fixed because those same two sources describe 7,992 ft
+  as East McMillan Spire's elevation as well — this reads as an identity question
+  (is "Little Mac Spire" a genuinely distinct, separately-surveyed summit in the
+  Southern Pickets, or an informal name that the sources fold into East McMillan
+  Spire?) rather than a simple wrong-number fix, and needs a human to settle which
+  before any write touches this row's elevation.
+
+**Clean (checked, nothing to fix):**
+- Little Sister (Twin Sisters Range) 6,600 ft confirmed on both the North Face and
+  West Face rows (SummitPost/Wikipedia consistent).
+- Little Tahoma 11,138 ft confirmed on both routes. East Shoulder's FA (J.B. Flett
+  and Henry H. Garrison, August 29, 1894, first recorded ascent via this line from
+  Summerland) confirmed exactly.
+- Luahna Peak 8,445 ft confirmed — Wikipedia states "the true summit is 8,445 feet"
+  verbatim; listsofjohn.com's independent 8,450 ft is within normal survey variance,
+  not a conflict.
+- Luna Peak (Picket Range) 8,311 ft confirmed exactly (Wikipedia, PeakVisor). FA
+  (Bill Cox and Will F. Thompson, early September 1938) confirmed exactly.
+- Phantom Peak / Luna Glacier route: `high_point_ft` 8,016 ft is consistent with
+  every source's "8,000+ ft" (nothing publishes a more precise figure to compare
+  against). FA (Fred and Helmy Beckey, 1940, during their Picket Range excursions)
+  confirmed.
+- Lizard Mountain's stored 7,420 ft vs. a single source's 7,408 ft (2,258 m,
+  PeakVisor) is a 12 ft difference with no second corroborating figure found — left
+  alone as ordinary survey/LIDAR variance, not treated as a confirmed error.
+- `wa_little_sister_west_face`'s FA (Darin Berdinka, June 21, 2013) could not be
+  independently confirmed or contradicted (an obscure, recent FA of the kind usually
+  only documented on Mountain Project, which — like every reference site tried this
+  run — is blocked for direct fetch); left as stored since nothing found disputes it.
+
+`npm run check:sql -- audits/sql/2026-08-21-batch-139.sql` passes: both write
+targets exist on the live row, no DELETE involved.
+
+Web access this run: same as every prior run — WebSearch worked throughout and was
+the sole source of every confirmation above; WebFetch/curl are blocked by the
+network egress policy for every reference domain tried this run (en.wikipedia.org,
+www.mountainproject.com, listsofjohn.com, www.nps.gov, blakeclimbs.blogspot.com) —
+all confirmations rest on WebSearch's aggregated snippets rather than a direct
+primary-source read.
+
+Next batch continues after `wa_luna_peak_southeast_slopes` in the id-ordered scope.
