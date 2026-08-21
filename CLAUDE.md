@@ -1539,11 +1539,30 @@ a build error, but a screen that renders wrong or not at all.
   - `preventDefault` on Space is required (Space scrolls the page), and the handler ignores
     events whose `target` is not the row itself, so a nested delete button keeps its Enter.
   - **The baseline is a per-file count, i.e. a ratchet** — the number may go down, never up.
-    It deliberately cannot see a one-for-one swap in the same file. A stable per-control key
-    would be better and is not available: this codebase packs many declarations onto one
-    physical line, so a line number does not identify a control, and handler text repeats
-    verbatim (`()=>openRoute(r)` many times over). A stale baseline (higher than reality)
-    **fails**, so bookkeeping cannot quietly re-open room for regressions.
+    A stable per-control key would be better and is not available: this codebase packs many
+    declarations onto one physical line, so a line number does not identify a control, and
+    handler text repeats verbatim (`()=>openRoute(r)` many times over). A stale baseline
+    (higher than reality) **fails**, so bookkeeping cannot quietly re-open room for
+    regressions.
+  - **THE ONE-FOR-ONE SWAP IS NO LONGER A BLIND SPOT, because the sweep finishing made a
+    stronger assertion possible.** A count cannot see "fix one control, add another in the
+    same file" — the number does not move. That was unavoidable at 247 remaining. It is not
+    now: every one of the 62 left is classified, so the guard asserts the CLASSIFICATION
+    rather than the number. **A control that is neither a BACKDROP (measured style,
+    `{...styles.x}` spreads resolved and quotes normalised) nor listed in `DUPLICATES` with a
+    reason is a NEW defect whatever the count says.** A stale `DUPLICATES` entry fails too.
+  - **ORDER IS LOAD-BEARING HERE FOR THE SECOND TIME.** The count blocks call
+    `process.exit(1)`, so with the classification test placed after them a swap that also
+    perturbed the count fired the *regression* block and exited before the classification
+    ran — the injections reported **`guard pass` on the very case it exists for**. It runs
+    first now, the same fix the inert check needed. Whichever block exits first is the only
+    one anyone reads.
+  - Injection-tested 4/4 (`scripts/oneoff/inject-clickable-swap-cases.mjs`). Case 2 is the
+    swap: convert a declared duplicate AND un-convert another control, so the count is
+    unchanged and only the classification can see it. Case 3 must **pass** — a new backdrop
+    is correct. **A parse error is not a catch**: the first harness scored two cases on
+    malformed JSX that never reached the guard's logic, so invalid JSX is now rejected as a
+    harness bug rather than counted.
   - Two exemptions, both measured rather than assumed. `onClick={e=>e.stopPropagation()}` is
     a **shield**, not a control — it stops a click inside a sheet reaching the backdrop, and
     demanding a tab stop there would put a focusable "button" that does nothing in front of
