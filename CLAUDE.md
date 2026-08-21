@@ -684,20 +684,36 @@ a build error, but a screen that renders wrong or not at all.
     sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
     frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
     emptiness is never asserted, but that is a list to READ, not a coverage claim.
-  - **RULE 2's VOCABULARY HAS NOW BEEN SHORT THREE TIMES, and every miss was one more NOUN rather
-    than a different idea.** `"0 routes"`/`"0 crews"` (the Home tiles), `"0 climbs to go"`/`"0
-    logged"` (the Logbook), and `"0 joined"` (Crew:Groups) — the last found by an injection that
-    **MISSED**, not by reading. A vocabulary of absence that cannot spell the noun in front of it
-    is the [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape: it fails as a shorter
-    worklist, silently. When a screen is added, check what its counts are CALLED before trusting a
-    quiet run.
-  - **The crew-invites HEADING is unmeasurable with this fixture, and its injection case records
-    that rather than pretending.** `"No crew invites"` is on screen in the **healthy** run too —
-    the fixture's mate JOINS the crew rather than staying invited — so rule 2 sees nothing
-    introduced and rule 1 is satisfied by the friend-requests section beside it. The fix is real;
-    the guard cannot see it. The case expects a **PASS** and is a stale-bookkeeping alarm: give
-    the fixture a pending invite and it starts reporting FALSE POSITIVE, which is the signal that
-    the coverage arrived. Same shape as `check:a11y-badges`' `arealatest` case.
+  - **RULE 2's VOCABULARY HAS NOW BEEN SHORT FOUR TIMES, and the fourth is the instructive one
+    because the fix for the third did not prevent it.** `"0 routes"`/`"0 crews"` (the Home tiles),
+    `"0 climbs to go"`/`"0 logged"` (the Logbook), `"0 joined"` (Crew:Groups), and **`"No crew
+    invites"`** (Crew:Requests) — the last two found by injections that **MISSED**, not by reading.
+    The `no X` branch demanded the noun **immediately** after `no`, so it matched `"no crews"` and
+    could not match `"no CREW INVITES"`: **one intervening word defeated it.** It now allows up to
+    two words between, singular or plural. This is the
+    [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape and it fails as a *shorter
+    worklist*, silently — nothing about a quiet run looks wrong. It is still a deny-list and will
+    be short again; when a screen is added, check what its emptiness is CALLED.
+  - **THE STALE-BOOKKEEPING ALARM FIRED, AND CLOSING IT TOOK TWO FIXES, NOT ONE.** The
+    crew-invites heading used to be unmeasurable: `"No crew invites"` was on screen in the
+    **healthy** run too, because the fixture's mate JOINS the crew rather than staying invited, so
+    rule 2 saw nothing introduced and rule 1 was satisfied by the friend-requests section beside
+    it. A real gate on main that no guard could see. Its injection case therefore expected a
+    **PASS**, as an alarm rather than a success.
+    - The fixture now seats the owner as **INVITED in a second crew owned by the mate** — it has
+      to be a second crew, since the owner is already *confirmed* in the first and there is
+      nowhere in it to hang a pending invite. The **mate** does the inviting because that is what
+      the live policy requires (`join or invite` demands `invited_by = auth.uid()` AND that you
+      created the crew, or are seating yourself at a status other than confirmed); seeding it as
+      the owner would manufacture a state the app's own flow cannot reach.
+    - **The fixture alone did not close it** — the case still MISSED, because rule 2's vocabulary
+      could not spell `"No crew invites"` either. *Two independent reasons a surface is invisible
+      can hide behind one another*; fixing the one you predicted does not prove the other is not
+      there. Only re-running the injection showed it.
+    - Per-run and deleted in teardown, like the group and for the same reason: it is state the
+      walk asserts on, so two concurrent runs would read each other's writes. Unlike the group it
+      needs no visibility flip — `crews` RLS is `created_by = me OR I am a member`, with no public
+      class, so it cannot surface in a real climber's app.
   - **A GUARD THAT THREW IS NOT A GUARD THAT DISAGREED.** Exit 1 from a crash — a dev server that
     never came up on a loaded box — was being filed by the harness as *"failed for the wrong
     reason"*, which reads as a defect in the checker and sends you editing a correct file. A run
