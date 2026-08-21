@@ -170,6 +170,7 @@ const REVISIT = "Home:revisited";
 // and never-loaded are the same screen. This is the shape #734 already shipped once on the
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
+const ROUTE = "RouteDetail";
 const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
@@ -335,6 +336,45 @@ async function walk(browser, base, session, fail) {
   }
   if (!(await tapByName(page, "Home"))) out.__navFail = (out.__navFail || []).concat("Home (revisit)");
   out[REVISIT] = await waitOutFetch(page, fail);
+  // The route page, and it is NAVIGATED rather than driven. Climbs -> area -> row is three UI
+  // steps that check:ui already reports as intermittent, and importing that flake into a guard
+  // whose whole value is a clean healthy-vs-failing diff would be worse than not walking it.
+  // `?zr=1` calls the app's own openRoute() from inside the opener, which no slow list or moved
+  // control can defeat -- the same mechanism check:overflow uses.
+  //
+  // WHAT THIS DOES AND DOES NOT REACH, stated because the opener's own line is `openRoute(ROUTES[0])`
+  // -- a SEED route, not one from the catalog. That does not make the stop vacuous: RouteDetail
+  // calls useRouteTripReports(USE_DB ? route.id : null), so the query runs for whatever id is open
+  // and errors under an outage whether or not any row would have come back. `reportsUnavailable` is
+  // keyed on isError, not on whether rows exist, which is the same property that made the
+  // friend-requests flag measurable against a fixture with no data.
+  //
+  // But a seed route also arrives with its OWN `activity`, so the consensus is not empty in either
+  // run and only the caption above it can move. If this screen compares identical in both runs the
+  // guard will say so in its normal seed-backed wording -- read that as "this stop measured
+  // nothing", not as "the route page is fine", and open a CATALOG route instead. First CI run
+  // decides it; do not assume from here.
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 120000 });
+  const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
+    .then(() => true).catch(() => false);
+  if (!opened) {
+    // Fail closed. Without the route open this is the Home tab, which would compare equal to its
+    // healthy twin and read as a clean result for a screen nobody looked at.
+    out.__navFail = (out.__navFail || []).concat(ROUTE + " (?zr=1 never set window.__routeOpen)");
+    out[ROUTE] = "";
+  } else {
+    // THE RELOAD RESETS REACT-QUERY'S RETRY CLOCK, so the outage has to be waited out again here.
+    // Measuring straight after the navigation reports a correctly-wired page as clean, which is
+    // the same mistake the boot wait above exists to prevent -- one navigation later.
+    let rt = await waitOutFetch(page, fail);
+    if (fail) {
+      for (let i = 0; i < 25 && !BROKEN_RE.test(rt); i++) {
+        await new Promise((r) => setTimeout(r, 1000));
+        rt = await waitOutFetch(page, fail);
+      }
+    }
+    out[ROUTE] = rt;
+  }
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();
@@ -348,7 +388,13 @@ await assertDbReachable({ label: "check:outage" });
 
 const port = await claim(5460);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+// --config is what makes the route page reachable. scripts/signed-in.config.mjs is the right
+// one of the five: it is built for a REAL signed-in account and rewrites NOTHING about state
+// (unlike zero-state.config.mjs, which forces a brand-new account and would silently walk the
+// wrong app here). It calls buildOpener + routeDetailTransform, and both are inert without a
+// `?z=`/`?zr=` parameter, so every screen walked before the route page is measured exactly as
+// it was before this changed.
+const server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 const up = async () => { for (let i = 0; i < 90; i++) { try { if ((await fetch(base)).ok) return true; } catch {} await new Promise(r => setTimeout(r, 1000)); } return false; };
 if (!await up()) { server.kill(); throw new Error("dev server never came up"); }
