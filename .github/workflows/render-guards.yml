@@ -312,10 +312,15 @@ jobs:
   selected-state:
     name: A selected control says it is selected
     runs-on: ubuntu-latest
-    # Clicks every grouped control on 6 tabs plus the onboarding overlay, reloading between
-    # each so one click cannot poison the next. Measured at ~10m locally; headroom, not an
-    # expected duration.
-    timeout-minutes: 25
+    # Walks 58 screens: 6 tabs, every overlay the app declares (discovered, not listed) and
+    # the route detail page, clicking one representative per control group and reloading only
+    # when a click actually disturbed the page.
+    #
+    # 40 minutes is derived, not guessed: the 8-screen version measured 3m27s in CI, of which
+    # ~30s is server start, giving ~22s/screen and ~21m for 58. The wall-clock figure from a
+    # local run is NOT usable for this — the last one read 317m real against 10m37s of CPU,
+    # which is a loaded developer box starving the process, not the guard being slow.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

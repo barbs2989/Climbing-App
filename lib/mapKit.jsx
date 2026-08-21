@@ -107,7 +107,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C }) {
   return (
     <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
       {[["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].map(([k, lbl]) => (
-        <button key={k} onClick={() => setBaseLayer(k)} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (baseLayer === k ? C.blue : C.border), background: baseLayer === k ? C.blueBg : C.surface, color: baseLayer === k ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>
+        <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (baseLayer === k ? C.blue : C.border), background: baseLayer === k ? C.blueBg : C.surface, color: baseLayer === k ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>
       ))}
     </div>
   );
