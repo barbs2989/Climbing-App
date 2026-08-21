@@ -108,6 +108,21 @@
 // isError, NOT on whether any row exists, so gating the copy changes the screen under an outage
 // whether or not the fixture has data. One query at a time, as the note above already insists.
 //
+// NOTHING HAS YET ASKED about the ROUTE DETAIL screen, which is the most-visited surface in the
+// app and reads from three DB queries of its own -- useRouteTripReports, useAreaTopos and
+// useProfilesByIds. That is not an oversight in the walk so much as a property of how this guard
+// starts the app: it spawns PLAIN vite, so the overlay scaffold's opener is absent and `?zr=1` --
+// the mechanism check:overflow uses to call the app's own openRoute() from inside the page -- is
+// not available here. Driving the UI to a route instead (Climbs -> area -> row) is the path
+// check:ui already reports as intermittent, so it would import a flake into a guard whose whole
+// value is a clean healthy-vs-failing diff.
+//
+// #1220 made that screen's copy honest anyway (`reportsUnavailable`, `toposUnavailable`), and
+// proved the branch by rendering ConsensusPanel directly in
+// scripts/oneoff/probe-consensus-outage-copy.mjs -- which is a component test, NOT a walk, and so
+// says nothing about whether the flag reaches the screen under a real outage. Wiring the scaffold
+// config into the spawn above is the way to close it, and re-running that probe is not.
+//
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
 // equal to its healthy twin, and be skipped rather than judged. Re-run a miss on a quiet machine
