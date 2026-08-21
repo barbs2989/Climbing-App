@@ -9587,3 +9587,77 @@ right, and is why the AAC quote was re-fetched a second, more specific way befor
 the Vega Tower finding as solid.
 
 Next batch continues after `wa_mesahchie_peak_west_ridge` in the id-ordered scope.
+
+## Batch 141 (pass 3), 2026-08-21
+
+Scope: `wa_mix_up_peak_east_face`, `wa_mojo_rising`, `wa_mount_adams_adams_glacier`,
+`wa_mount_adams_lava_glacier_headwall`, `wa_mount_adams_lyman_glacier`,
+`wa_mount_adams_mazama_glacier_headwall`, `wa_mount_adams_north_ridge`,
+`wa_mount_adams_northwest_ridge`, `wa_mount_adams_south_climb`,
+`wa_mount_adams_wilson_glacier_headwall`. First batch to leave the North Cascades scope
+and pick up Mount Adams (10 of its 10 routes fall in this batch's alphabetical window plus
+two stragglers from the Cascade Pass / Washington Pass area).
+
+**4 confirmed errors, fixed** (`audits/sql/2026-08-21-batch-141.sql`):
+- Lava Glacier Headwall and Lyman Glacier both stored an identical boilerplate `descent`
+  field ("retracing the ascent when possible") that contradicts each row's own, more
+  detailed `descent_text`, which correctly describes a North Ridge walk-off — never a
+  reversal of the technical icefall/headwall itself, which is not something parties
+  downclimb. Corrected both to match their own `descent_text`.
+- Wilson Glacier Headwall's `season` field ('Jul-Sep') directly contradicted its own
+  `best_season` ('May to June') and its own `hazards` text warning that rockfall increases
+  sharply as the headwall warms and that early-season, cold conditions are essential —
+  i.e. the header-strap season window was pointing climbers at exactly the warm-season
+  conditions the row's own hazard advice warns against. Corrected to 'May-Jun', matching
+  the sibling Adams Glacier / Lava Glacier Headwall routes' early-season windows.
+- Mazama Glacier Headwall's `permit` field carried only the generic Gifford Pinchot NF
+  "Mt. Adams Climbing Pass" text (copied verbatim onto every other Mount Adams route this
+  batch), despite this route's own `approach` field starting from Bird Creek Road on the
+  Yakama Reservation side and its own `watch_out` field separately flagging a Yakama Nation
+  Tract-D tribal-use permit requirement. The `permit` field itself — the one a climber
+  would check for definitive access rules — named a Forest Service pass that does not
+  govern that tribal land. Confirmed via web search (Yakama Nation Tract D / Bird Creek
+  Meadows day-use permit, purchased at the Mirror Lake gate, area open to non-tribal-member
+  visitors only part of the year) and corrected to state the correct permit regime, without
+  hardcoding an exact fee or seasonal open date (transient facts; see CLAUDE.md's standing
+  warning against writing those into a permanent field).
+
+**Confirmed correct, no fix needed:** Mix-up Peak East Face's FA (Wesley Grande & Jack
+Kendrick, 1947) and elevation (7,440 ft) — both matched independently by Wikipedia/peakery.
+Mojo Rising's FA (Mark Allen, Joel Kauffman, Tom Smith, Oct 13-14 2006) matched exactly
+against a CascadeClimbers.com trip report and Mountain Project. South Early Winters
+Spire's elevation (7,807 ft) and FA (Kenneth Adam, Raffi Bedayn, W. Kenneth Davis, July 20
+1937) both matched Wikipedia. Adams Glacier's FA (Fred Beckey, Dave Lind, Robert Mulhall,
+July 1945) matched an AAC Publications excerpt (via search snippet) almost verbatim,
+including the approach/icefall detail. Mount Adams's 1854 first-ascent credit (A.G. Aiken,
+Edward J. Allen, Andrew J. Burge) matched one of two variant historical rosters that
+sources disagree on (the other gives Glenn Aiken/Allen/Col. B.F. Shaw) — the row already
+hedges this appropriately ("believed to have followed this ridge/cleaver"), so left as is.
+Mount Adams's summit elevation (12,276 ft) and coordinates, Mix-up Peak's coordinates, and
+the general Cascade Volcano Pass permit terms (above 7,000 ft, May 1-Sep 30, per-trip on
+Recreation.gov) all confirmed against USFS-derived search results. Lava Glacier Headwall's
+FA (Edward Cooper and Mike Swayne, July 3, 1961) and the Northwest Ridge's FA (Molenaar,
+Johnson, Ostro, Startzell, September 1960) could not be independently confirmed or
+contradicted — AAC Publications and Mazamas, the two sources most likely to carry them,
+are both blocked by network egress policy this run (see below); left unflagged per this
+audit's rule not to guess.
+
+**Flagged for human review, not auto-fixed:** the Mount Adams glacier/headwall routes'
+`dist_km` values (Adams Glacier 28.16, Lava Glacier Headwall 26.55, Lyman Glacier 37.3,
+Wilson Glacier Headwall 27.04 — all one-way per the app's convention) look implausibly long
+against the ~4-mile Killen-Creek-trailhead-to-High-Camp approach documented in these same
+rows' own `approach` text (confirmed via search: Killen Creek Trail + High Camp Trail is
+~4.1 mi to High Camp at 6,900 ft). By contrast, `wa_mount_adams_north_ridge` stores
+`dist_km: 5.6` (3.5 mi one-way), which looks too *short* given that same ~4-mile approach
+plus the additional distance to the summit. This has the shape of the `dist_km`
+one-way-vs-round-trip convention split CLAUDE.md already documents for this column
+(`audit:distances`) rather than a one-off typo, and this audit has no authoritative
+one-way-mileage figure to pin an exact correct value against for any of the five rows — so
+none were changed. Worth a look with `npm run audit:distances -- --state wa` or by hand.
+
+Web access this run: WebSearch worked throughout and was the sole source for every
+confirmation above. Direct WebFetch to reference domains (en.wikipedia.org,
+publications.americanalpineclub.org, mazamas.org, www.nps.gov) was blocked by network
+egress policy on every attempt this run — consistent with prior batches' notes on this.
+
+Next batch continues after `wa_mount_adams_wilson_glacier_headwall` in the id-ordered scope.
