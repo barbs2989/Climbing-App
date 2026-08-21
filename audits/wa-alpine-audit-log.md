@@ -9513,3 +9513,77 @@ all confirmations rest on WebSearch's aggregated snippets rather than a direct
 primary-source read.
 
 Next batch continues after `wa_luna_peak_southeast_slopes` in the id-ordered scope.
+
+---
+
+## 2026-08-21 — Pass 3, Batch 140
+
+Six peaks, 10 routes (Lundin Peak 1, Magic Mountain 4, Martin Peak 1, Morning Star Peak 1,
+McMillan Spire West 2, Mesahchie Peak 1): South Face Left (Lundin); North Face, Northeast
+Couloir, South Ridge/Southeast Slopes, West Ridge (Magic Mountain); West Ridge (Martin
+Peak); Marvin's Ear (Morning Star Peak/Vega Tower); Southwest Ridge, West Ridge/Southwest
+Approach (McMillan Spire West); West Ridge/Southwest Gully (Mesahchie Peak).
+
+No SQL fixes this batch — the one real finding needs a human rewrite decision across
+several prose fields, not a value patch (see below).
+
+**Flagged for human review (not auto-fixed):**
+- `wa_marvin_s_ear`: the row's `face`, `overview`, `beta`, `approach`, `rope_note`, and
+  waypoint/itinerary notes all describe the route as climbing **Vega Tower** itself ("climbs
+  the skyline ridge of Vega Tower... the first technical route up Vega Tower's west ridge
+  proper... only one other technical line (Starshot Ridge) existed on Vega Tower"). The
+  primary source — Morgan Zentler's own AAC Publications first-ascent writeup, quoted
+  directly — says the opposite: "This route is located on the tower to the climbers right
+  of Vega Tower." So per the FA climber's own account, Marvin's Ear is on a *different,
+  unnamed* tower next to Vega Tower, not on Vega Tower proper. This isn't a single wrong
+  value — the Vega Tower identity is woven through six fields including a specific claim
+  about *Vega Tower's* own route history (Starshot Ridge being its only prior technical
+  line) that would be misattributed if left as-is. Same shape as the wa_cascade_peak_east_
+  ridge / wa_boston_peak_southwest_face cases from earlier passes: needs a human to decide
+  how to rewrite the prose (the correct tower has no name in any source found), not a
+  mechanical field patch. FA date/party/grade (Sept 16, 2017, Morgan & Sheila Zentler, III
+  5.10b, 800 ft) all confirmed correct against the same AAC source and left alone.
+
+**Clean (checked, nothing to fix):**
+- Lundin Peak 6,057 ft confirmed (Wikipedia/PeakVisor). The route's own hazard note citing
+  a documented fatal fall on descent (AAC, 1980) confirmed exactly against AAC Publications'
+  "Fall on Rock, Climbing Unroped — Washington, Lundin Peak": Jerry Pruitt, Oct 11, 1980,
+  ~600 ft fall near the false summit on a Mountaineers club climb.
+- Magic Mountain 7,610 ft confirmed (Wikipedia) across all 4 routes on this peak (North
+  Face, Northeast Couloir, South Ridge, West Ridge all share the summit elevation
+  correctly). South Ridge's FA (Bressler, Ray Clough, Cox, Myers, July 1938) confirmed
+  against Wikipedia/the Ptarmigan Traverse's own history — one source spells the second
+  name "Ralph Clough," another (describing the same 1938 Ptarmigan Traverse first crossing)
+  spells it "Ray W. Clough" matching this row; not treated as an error since sources
+  themselves disagree on the spelling.
+- Martin Peak 8,509 ft confirmed (Wikipedia). FA (Everett Darr and Ida Zacher, July 1936)
+  confirmed — Wikipedia independently gives "Ida Zacher Darr, July 1936" (her later married
+  name) for the same date.
+- McMillan Spire West 8,004 ft confirmed on both routes (Wikipedia/countryhighpoints.com);
+  the row's own pre-existing `corrections` note already discloses the 8,000/8,004/8,041 ft
+  spread across sources and keeps 8,004, which this run agrees is the best-supported figure.
+  FA (Fred and Helmy Beckey) confirmed to 1940 on both routes; the specific date (Aug 29)
+  could not be independently confirmed or contradicted.
+- Mesahchie Peak 8,795 ft confirmed (Wikipedia/PeakVisor). Row's own "first climbed in
+  1966" confirmed exactly (Wikipedia).
+
+**Observation, not flagged (no external source to check it against):** `wa_martin_peak_
+west_ridge` stores `grade_num: 2` for a `rock_grade` of "Class 3-4" — every other WA route
+sharing that identical rock_grade string in the DB stores `grade_num` 3 or 4 (checked: 10
+other rows). `grade_num` is a value the app's own pipeline derives from the grade string,
+not a fact sourced from a guidebook or land manager, so per this audit's scope it isn't
+something to "fix" against an authoritative source — noting it here in case it's worth a
+pipeline/parser look (see CLAUDE.md's `check:grade-parser`), not proposing a row-level SQL
+change for it.
+
+Web access this run: same pattern as recent runs — WebSearch worked throughout; direct
+WebFetch/curl to reference domains (en.wikipedia.org, publications.americanalpineclub.org,
+mountainproject.com) remains blocked by network egress policy, so confirmations rest on
+WebSearch's aggregated snippets. One WebSearch summary for Marvin's Ear initially reported
+a conflicting FA date ("Fourth of July weekend"); a follow-up, more targeted query against
+the same AAC article corrected this to "September 16," matching the row — noted here since
+it's a reminder that a single WebSearch summary can misreport even when its own source is
+right, and is why the AAC quote was re-fetched a second, more specific way before treating
+the Vega Tower finding as solid.
+
+Next batch continues after `wa_mesahchie_peak_west_ridge` in the id-ordered scope.

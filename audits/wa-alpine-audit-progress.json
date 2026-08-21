@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_luna_peak_southeast_slopes",
+    "last_processed_id": "wa_mesahchie_peak_west_ridge",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -2982,6 +2982,27 @@
             "clean": 8,
             "sql_file": "audits/sql/2026-08-21-batch-139.sql",
             "note": "wa_live_free_or_die grade/rock_grade '5.12-' -> '5.12+' (AAC Publications FA writeup by Blake Herrington + Mountain Project route page both give 5.12+; no source anywhere gives 5.12-). Flagged: wa_little_mac_spire_southwest_route's high_point_ft (7736) disagrees with its own summit waypoint (7680, which the row's own note already admits is an unsurveyed approximation) and with two external citations (AAC Publications' 'Walking the Fence' article, stephabegg.com) both giving 7992 ft -- but those same sources describe 7992 as East McMillan Spire's elevation too, so this is an identity question (is 'Little Mac Spire' a distinct, separately-surveyed summit, or folded into East McMillan Spire?) for a human to resolve before any elevation write. Clean: Little Sister (Twin Sisters) 6600 ft confirmed on both North Face and West Face rows; Little Tahoma 11138 ft confirmed on both routes, East Shoulder's FA (Flett & Garrison, Aug 29 1894, via Summerland) confirmed exactly; Luahna Peak 8445 ft confirmed (Wikipedia states 'true summit is 8,445 feet' verbatim); Luna Peak 8311 ft and FA (Cox & Thompson, Sept 1938) confirmed exactly; Phantom Peak/Luna Glacier route 8016 ft consistent with every source's '8,000+ ft', FA (Fred & Helmy Beckey, 1940) confirmed; Lizard Mountain's 7420 ft vs one source's 7408 ft is a 12 ft single-source variance, left alone as ordinary survey noise, not a confirmed error."
+        },
+        {
+            "batch_number": 140,
+            "date": "2026-08-21",
+            "route_ids": [
+                "wa_lundin_peak_south_face_left",
+                "wa_magic_mountain_north_face",
+                "wa_magic_mountain_northeast_couloir",
+                "wa_magic_mountain_south_ridge",
+                "wa_magic_mountain_west_ridge",
+                "wa_martin_peak_west_ridge",
+                "wa_marvin_s_ear",
+                "wa_mcmillan_spire_west_southwest_ridge",
+                "wa_mcmillan_spire_west_west_ridge",
+                "wa_mesahchie_peak_west_ridge"
+            ],
+            "confirmed_errors_fixed": 0,
+            "flagged_for_human_review": 1,
+            "clean": 9,
+            "sql_file": null,
+            "note": "No SQL fixes this batch. Flagged: wa_marvin_s_ear's face/overview/beta/approach/rope_note fields all describe the route as climbing Vega Tower itself, but the primary source -- Morgan Zentler's own AAC Publications FA writeup, quoted directly -- says 'This route is located on the tower to the climbers right of Vega Tower', i.e. a different, unnamed tower. The Vega Tower identity (including a specific claim about Vega Tower's own prior route history) is woven through six fields, so this needs a human rewrite decision rather than a value patch; the correct tower has no name in any source found. FA date/party/grade (Sept 16 2017, Morgan & Sheila Zentler, III 5.10b) confirmed correct against the same AAC source and left alone. Clean: Lundin Peak 6057 ft confirmed, its 1980 fatal-fall hazard note confirmed exactly against the AAC accident report (Jerry Pruitt, Oct 11 1980); Magic Mountain 7610 ft confirmed across all 4 routes, South Ridge FA (Bressler/Clough/Cox/Myers, July 1938) confirmed (one source spells the second name 'Ralph', another describing the same 1938 Ptarmigan Traverse crossing spells it 'Ray W.' matching this row -- not treated as an error); Martin Peak 8509 ft and FA (Everett Darr & Ida Zacher, July 1936) confirmed; McMillan Spire West 8004 ft confirmed on both routes (row's pre-existing corrections note already discloses the 8000/8004/8041 spread and this run agrees 8004 is best-supported), FA year 1940 (Beckey brothers) confirmed, exact day unconfirmed; Mesahchie Peak 8795 ft and 'first climbed in 1966' confirmed. Observation only (not sourced externally, not fixed): wa_martin_peak_west_ridge's grade_num=2 for rock_grade 'Class 3-4' is an outlier vs. 10 other WA rows sharing that exact rock_grade string (all grade_num 3 or 4) -- a pipeline-parser question, not a fact this audit can source against a guidebook or land manager."
         }
     ]
 }
