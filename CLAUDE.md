@@ -2328,6 +2328,50 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Injection-tested **11/11**. Case 8 is the real historical defect, `trailheadPoint()` exactly as
       #1215 merged it. **Cases 10 and 11 must stay SILENT** and are what make the rule worth having —
       a peak coordinate and a plain read of a placed pin are both correct code.
+  - **A TWELFTH RESOLVER, AND THIS ONE WAS LIVE ON 290 ROUTES.** #1222's own closing note said its
+    rule is scoped to array-method callbacks and a placement test written as a plain expression
+    would still slip past. Reading that as a **worklist** rather than a caveat found
+    `TrailheadCard`, the Plan tab's directions control, resolving
+    `approach_logistics.trailheadLat` **first** and the pin second — the exact **opposite**
+    precedence to `trailheadPoint()`, which the map and both "Directions to…" buttons use. So the
+    map drew a pin in one place while the card's Directions link, its copy-to-clipboard value and
+    its "To the peak" bearing all pointed somewhere else. CLAUDE.md has recorded that split as
+    user-visible since the trailhead sweep; #1215 converted two of the three surfaces.
+    - **290 of the 942 routes that resolve a trailhead (31%)**, and the fix is CONSISTENCY, not a
+      verdict on which record is true. This file is explicit that swapping a priority to settle the
+      *data* disagreement would only move the error — that stays `audit:trailhead-agreement`'s
+      subject. A page must simply not offer two destinations for one trailhead.
+    - **THE NAME DOES NOT SIMPLY FOLLOW THE COORDINATE, and measuring is what settled it.** Taking
+      the pin's name wholesale changed **530** cards and nearly all were **downgrades** — *"Killen
+      Creek Trailhead (Trail #113, FR-2329)"* losing its road and trail number to a bare *"Killen
+      Creek Trailhead"*. `approach_logistics.trailhead` is the curated field.
+    - **The boundary is measured, not chosen.** The split runs **continuously to 457 m** (p50 46,
+      p90 290 — one trailhead recorded twice, imprecisely) and then jumps straight to **5,733 m**,
+      with nothing in between. So the name follows the coordinate only past 1 km, which lands in a
+      genuine void rather than on a fitted threshold: **exactly 4 cards change name**, and all four
+      are the peaks with two GENUINE approaches this file already names (Carru, Stuart's North
+      Ridge, Remmel, Howard), where the logistics name really is describing the other one.
+    - **The elevation is the PIN's, so it may only be shown beside the PIN's coordinate.** Two
+      cards lose their elevation tile and both are correct: one pin is unplaced with no logistics
+      coordinate either, and the other is `wa_spire_mountain_scramble`, which this file already
+      records as pin and logistics being **different points on the same road** — its 1,156 ft
+      belongs to the *"~Mile 10"* pin, not to the researched trailhead at the road's end.
+    - **`trailheadPoint()` now carries `alt`** — the other record's point, when one exists and was
+      not chosen — so that **nothing else has to read `trailheadLat` at all**. A second reader is
+      how the split happened; section 1c enforces that there is never one again.
+    - **Section 1c is parsed with Babel, deliberately.** Three comments in these two files NAME
+      `trailheadLat` while explaining this very rule, and a textual scan would fail on its own
+      documentation — while the blanker other guards use is unsafe here for the reason
+      `check:overlay-discovery` records. It also fails **closed**: if core stops reading the column
+      at all, `trailheadPoint()` has lost its fallback and that is reported rather than passing.
+    - Verified by `verify-trailheadcard-consolidated.mjs`, which **extracts the shipped card's
+      resolution lines from `RouteDetail.jsx` with `ANCHOR LOST`** rather than re-typing them:
+      **card-vs-map split 0**, 290 coordinates moved, 4 names changed, 0 cards lost, 0 coordinates
+      lost.
+    - Injection-tested **14/14**. The fail-closed case is the one worth knowing about: a first
+      version renamed only the first of four reads on the same line, so the counter still saw reads
+      and the case reported MISS — **the edit landed by checksum without creating the defect it
+      names.** Checksum movement proves an edit happened, not that it was the right one.
   - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
     coordinate and flagging it would tell an author to break correct code.
   - **THE 39 UNPLACED PINS ARE 1 FINDABLE AND 38 REFUSALS, and the refusals are the result.**
