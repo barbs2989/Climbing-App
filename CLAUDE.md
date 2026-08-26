@@ -16,6 +16,7 @@ npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
+npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
@@ -132,6 +133,59 @@ a build error, but a screen that renders wrong or not at all.
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
+- **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
+  has SEVEN tabs and five browser guards walked six.** `NAV` is
+  today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
+  `check:overlay-scroll`, `check:signed-in` and `check:zero` each hard-coded the same six, omitting
+  `ranks`. Static — migration-free, no browser, no DB — so it sits in `npm run build`.
+  - **Not drift: the same wrong list copied five times.** `ranks` has been in `NAV` since the first
+    commit and every one of those guards was written long afterwards, so none of them ever lost the
+    tab — they never had it. `check:outage` had the identical hole and it was fixed **by hand** (its
+    own header records walking *"five tabs and a duplicate"*); nothing carried that across, and
+    nothing could. Same argument for a script over a note as `check:crew-member-readers`.
+  - **The Leaderboards screen was not empty, which is the point.** Its `YOU` badge is a separate
+    `<span>` held off the climber's name by `marginLeft`, and the row is a `clickable()` control, so
+    Chrome announced **`"@nathanclimbsYOU"`** — precisely the #740 defect `check:a11y-badges` exists
+    for, on the one screen it could not see. A coverage hole is invisible by construction: *a screen
+    nobody opens is not a screen with no findings, it is not a screen.*
+  - **It caught a foreign entry the other way round too.** `check:token-boxes` walked a ROUTE
+    sub-tab called `ranks`, which does not exist — the bar is
+    overview/planner/conditions/safety/partners/photos — so it spent a walk on an id the route page
+    has no branch for and **never inspected Partners at all**, while its own header claimed six
+    sub-tabs.
+  - **Both vocabularies are READ from the app, never restated**: `NAV` from `ClimbMatch.jsx`, the
+    sub-tab bar from `RouteDetail.jsx`, each with `ANCHOR LOST` if it moves. Any array of string
+    literals under `scripts/` holding **three or more** members of one vocabulary is a list *of* that
+    vocabulary and must then hold all of it and nothing foreign. Three is the threshold because a
+    list naming three of these ids is not doing so by accident, while a lone `"today"` or `"photos"`
+    is more likely a different concept entirely.
+  - `scripts/oneoff/` is excluded: a one-off probe is scoped to whatever it was written to measure
+    and has no business being held to full coverage.
+  - **`PARTIAL_ON_PURPOSE` records reasons, not passes**, and is keyed on the exact values —
+    an exemption is a claim about *one* list, so any edit has to be re-justified rather than
+    inheriting somebody else's reasoning. Three entries today (`check:anniversary`'s notification
+    surfaces, `check:camping`'s can-this-probe-fail list, `check:ui`'s second interactive sweep). A
+    **stale** entry fails three ways — completed, changed, or gone — and the diagnosis names which,
+    because *"you finished it, drop the exemption"* and *"you changed it, say why"* need different
+    repairs.
+  - **An earlier version had the COMPLETE branch behind the values key, where nothing could reach
+    it.** Dead code in a guard reads as coverage and is not; **only the injection found it**, since
+    the branch never fired on a clean tree either.
+  - Fails **closed** four ways: a missing `NAV`, a missing sub-tab bar, a vocabulary that parsed
+    short (a two-entry `NAV` would make every list look complete), fewer than 20 scripts walked, or
+    zero lists classified.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-screen-list-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically. Cases 1 and 2 are the real
+    historical defects. **Cases 5 and 8 must stay SILENT** — a complete list and a below-threshold
+    list are both correct work, and a guard that flagged them would tell authors to break it.
+  - The `YOU` badge sits on **two** controls and a walk can only ever see one: the list row, and a
+    your-rank card gated on `meIdx >= 100`. Six climbers are on the demo board and six on the
+    `check:signed-in` fixture, so **no fixture in the repo can reach that card**. Both go through one
+    `lbRowName()` so they cannot drift, and
+    `scripts/oneoff/probe-leaderboard-your-rank-card.mjs` seeds 120 climbers into the exported seed
+    array (in the probe, never in the app) to render it — `"#126, Nathan Barber, you, Salt Lake City,
+    UT, 0 pts"`. It also asserts the badge **still renders**: a probe that passed because the badge
+    was deleted would be certifying the feature's removal.
 - **`check:no-nul`** asserts that no source file holds a **literal NUL byte**. Git classifies a file
   containing one as **binary**, so the whole file renders in a pull request as `Bin 0 -> 12464 bytes`
   or as `+0/-0` and **nobody can read the diff**. Static — no browser, no DB, no network — so it sits

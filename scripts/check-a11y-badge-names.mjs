@@ -76,7 +76,7 @@ const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5290;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
 const CHROME_ONLY = 90; // the wordmark + nav labels, and nothing else
 
 const log = (...a) => console.log(...a);
@@ -357,7 +357,7 @@ assertKnownOverlays(overlays, fail);
 // Some overlays are scoped to one screen, so opening them from the wrong tab renders
 // nothing and the sweep would scan a bare tab and call it clean. Take the first tab where
 // the overlay actually adds text — the same approach check:zero settled on.
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
 // Compare LINE SETS, not text length — the same test check:zero uses. Length is the wrong
 // question: an overlay that replaces the tab's content rather than adding to it can leave
 // the total the same or SHORTER, and a length test then reports a perfectly good modal as

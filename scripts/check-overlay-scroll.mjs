@@ -165,7 +165,7 @@ const load = async (qs, settle) => {
   await page.waitForTimeout(settle);
 };
 
-const TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
+const TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
 const seen = new Map();       // overlay name -> finding rows
 const notReached = [];
 let checkedOverlays = 0, checkedScrollers = 0, noPayload = 0;
