@@ -397,9 +397,27 @@ try {
     // The fixture group has exactly two members. Every count on this screen must agree
     // with the roster under it: the header count added 1 for "me" whenever it could not
     // find the seed id 0 in the list, so a DB group always over-counted by one.
-    for (const m of g.matchAll(/(\d+) members|MEMBERS · (\d+)|Members · (\d+)/gi)) {
-      const n = Number(m[1] ?? m[2] ?? m[3]);
-      if (n !== 2) fail("Group:detail", `a member count reads ${n} for a 2-member group (${JSON.stringify(m[0])}) — it disagrees with the roster below it`);
+    // SCOPED TO THE ROSTER HEADING, because the capture is not only the detail view.
+    //
+    // This used to scan the WHOLE screen for /(\d+) members/ and require every match to be 2. The
+    // Group:detail capture also contains the browse list underneath it — "EXPLORE BY AREA", then a
+    // CARD for each group, each rendering "Based in X · N members". So any OTHER group with a
+    // different member count failed this assertion, on app code that was never wrong.
+    //
+    // That is the whole of the intermittency recorded in memory as
+    // group-member-count-intermittent-reads-1: it failed 2/2 in CI, where the durable accounts
+    // accumulate groups, and 1/6 locally, where each run makes its own — the asymmetry an unscoped
+    // read over a browse list predicts exactly. Confirmed from a --dump: three matches on that
+    // screen, only two of which belong to the detail view.
+    //
+    // "MEMBERS · N" is the roster heading and appears only in the detail view. The header count
+    // beside the group name is the SAME expression in the app, so asserting the heading covers
+    // both; a bare "N members" cannot be attributed to a particular group and is not asserted.
+    const memHead = /MEMBERS · (\d+)/i.exec(g);
+    if (!memHead) {
+      fail("Group:detail", "the MEMBERS · N roster heading is not on screen — the detail view did not render, so its member count was never checked");
+    } else if (Number(memHead[1]) !== 2) {
+      fail("Group:detail", `the roster heading reads ${JSON.stringify(memHead[0])} for a 2-member group — the count disagrees with the members the fixture created`);
     }
     asserted++;
     // The account that created this group is its owner, and must be told so. modIds
