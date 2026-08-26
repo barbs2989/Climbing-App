@@ -182,12 +182,34 @@ const REVISIT = "Home:revisited";
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
 const ROUTE = "RouteDetail";
-// The PHOTOS sub-tab, added because a flag landed on it. `toposUnavailable` (#1221) has been
-// honest copy that no walk exercised since the day it shipped -- proven only by a component
-// render, which says nothing about whether it reaches a screen under a real outage. The rule
-// this file already states for the route page's six sub-tabs is "click one when a flag lands
-// on it", and one has. The other five stay unwalked and that is a cost decision, not a claim
-// they are fine.
+// The PHOTOS sub-tab. IT WAS ADDED FOR THE WRONG REASON and is kept because of what that found,
+// which is the more useful record of the two.
+//
+// The reason given was `toposUnavailable` (#1221) -- honest copy no walk had exercised. Topos are
+// NOT on this tab: TopoSection renders on OVERVIEW, which the stop above already walks, and this
+// tab's own copy says so ("use the topo section on the Overview tab"). The premise was checkable
+// in one grep and was not checked.
+//
+// The click found a different defect on its first run anyway:
+//   RouteDetail:Photos  healthy 895ch  failing 674ch  CHANGED  says-broken=no  says-empty=YES
+// Under an outage the tab said "No photos yet -- be the first to add one." and invited the climber
+// to go add one. `shown` is routePhotos.concat(dbPhotos).concat(quickPhotos): routePhotos comes
+// from route.activity, COMPOSED from useRouteTripReports on a DB route, and dbPhotos from
+// useRouteContributions. Two reads, one sentence. That string had been inspected by hand the same
+// day, traced to `route.activity`, and correctly cleared for want of evidence -- reading found it,
+// only walking found that it lies.
+//
+// So: walking a screen nothing has walked is worth doing independently of why you walked it.
+//
+// WHAT IS STILL UNPROVEN, stated because the wrong reason above would otherwise read as settled:
+// `toposUnavailable` is masked. It renders on Overview, and Overview is already says-broken=YES
+// from `reportsUnavailable`, so rule 1 is satisfied whether or not the topos copy ever flips.
+// Proving it needs a run that fails ONLY the topos read -- `ONLY=topo_photos` -- and that mode
+// cannot currently pass its own fail-closed floor (it demands >=3 screens differ and exists to
+// make one differ). Read its per-screen table, not its exit code. Nothing has yet asked this.
+//
+// The other four sub-tabs stay unwalked: no flag lives on them, and each is two more settles in
+// each of two runs. That is a cost decision, not a claim they are fine.
 const ROUTE_PHOTOS = "RouteDetail:Photos";
 // REPORT is the SOLE enumerator for both the per-screen table and the two rules, so a screen
 // captured into `out` and left out of this list is measured and never judged -- the guard walks

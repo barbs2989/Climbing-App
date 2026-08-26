@@ -773,9 +773,19 @@ a build error, but a screen that renders wrong or not at all.
       That tri-state prop plus `===` at the reader is the pattern to copy.
     - **The route page reaches OVERVIEW and PHOTOS only**, because `?zr=1` opens `ROUTES[0]`.
       Overview is enough for `reportsUnavailable` (two of its six render sites are in that branch,
-      and the first CI run measured healthy 5239ch against failing 5013ch); Photos is where
-      `toposUnavailable` lives. The other four sub-tabs are a **cost** decision — two more settles
-      each, in each of two runs — and no flag lives on them. Click one when a flag lands on it.
+      and the first CI run measured healthy 5239ch against failing 5013ch). **Photos was added for
+      `toposUnavailable` and that premise was WRONG** — topos render in `TopoSection` on **Overview**,
+      and the Photos tab's own copy says so. The click is kept because it caught a different defect
+      on its first run: the tab said *"No photos yet — be the first to add one."* under an outage,
+      from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
+      (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
+      **Walking a screen nothing has walked is worth doing independently of why you walked it.**
+      - **`toposUnavailable` is MASKED and nothing has yet proven it reaches a screen.** Overview is
+        already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
+        topos copy flips. It needs a run failing only that read (`ONLY=topo_photos`), and that mode
+        cannot pass its own fail-closed floor today — read its table, not its exit code.
+      - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
+        — and no flag lives on them. Click one when a flag lands on it.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
