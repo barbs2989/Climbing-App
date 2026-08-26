@@ -1163,6 +1163,15 @@ a build error, but a screen that renders wrong or not at all.
   - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
     which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
     a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - **ITS CI TIMEOUT WAS DERIVED FROM THE FAST KIND OF SCREEN AND THE JOB WAS CANCELLED AT THE
+    WALL — which reported NO FAILURE.** 40 minutes was extrapolated from the 8-screen version
+    (3m27s in CI), giving ~22s/screen; but those 8 were all **tabs**, and an overlay costs
+    roughly double because it renders *over* a tab and the guard probes both. Measured on the
+    real run: **49 of 58 screens in 38m01s, 367 groups, 6.2s/group, 46.6s/screen** — ~47m for a
+    full walk. The PR read green with 14 checks passing and this one silently having measured
+    nothing, which is the `check:ci-cancel` hole arriving by a different route. Now 75m.
+    **Sample the slow kind of screen before deriving a timeout from the fast kind**, and treat a
+    `cancel` bucket as a red, never as an absence.
   - **Overlays are DISCOVERED, not listed, and a hand-picked list is what put this guard wrong
     twice in one day.** It shipped walking six tabs and onboarding, which left RouteDetail's
     sub-tab bar uncovered — one of the four #1041 fixed — and left the **Inbox** modal's
