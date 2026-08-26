@@ -376,7 +376,18 @@ async function walk(browser, base, session, fail) {
         body: JSON.stringify({ code: "57014", message: "canceling statement due to statement timeout" }) });
     });
   }
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 120000 });
+  // 180s, NOT 120s, and this changed when the spawn gained --config: the scaffold transform runs
+  // on top of a cold module graph, so the FIRST load is slower than plain vite ever was.
+  //
+  // Measured rather than predicted: at 120s this threw `page.goto: Timeout 120000ms exceeded`
+  // while `up()` had ALREADY answered, i.e. the server was serving and the browser was still
+  // waiting on the first module graph. That failure mode is the worst kind for this guard --
+  // it produces no per-screen table, so it reads as a broken app rather than a slow one, and
+  // the harness can only report it as INCONCLUSIVE.
+  //
+  // RESTORED after a merge silently reverted it (see the commit message): #1243 is an ANCESTOR
+  // of this branch and the value was 120000 anyway.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
   const out = {};
   let first = await settle(page);
   // react-query RETRIES with backoff, so `isError` -- the signal every xUnavailable flag is
@@ -483,7 +494,8 @@ async function walk(browser, base, session, fail) {
   // says-broken=YES. So a seed route is enough and no catalog route is needed. Kept as the reason
   // rather than deleted, because the next person widening this walk needs to know which half of
   // the screen can move and which cannot.
-  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 120000 });
+  // Same 180s for the same reason: this is a fresh page load, so it can pay a cold compile too.
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 180000 });
   const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
     .then(() => true).catch(() => false);
   if (!opened) {
