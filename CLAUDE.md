@@ -614,6 +614,34 @@ a build error, but a screen that renders wrong or not at all.
       table, so the join stays on the path already proven. Exposure is ~1s, not the ~4min walk.
     - **Crews are NOT affected**: `crews` RLS is `created_by = me OR I am a member`, with no
       public class at all. Checked rather than assumed.
+  - **THE CREW HAD NO SWEEP, AND THE TABLE WITHOUT A BACKSTOP IS THE ONE WHOSE LEAKS YOU CAN
+    SEE.** Measured 2026-08-26: the live project held **15 crews, 13 of them owned by `CI Fixture
+    Mate`** — one per guard run from 16:06 to 19:41 on a single day, plus one from 2026-08-13.
+    Groups looked clean over exactly the same period, and that was the **stale-group sweep** doing
+    its job rather than teardown doing its job. A failed group delete is quietly repaired 45
+    minutes later; a failed crew delete was forever.
+    - **`sweepOrphans()` structurally cannot reach these.** It removes `@climbmatch-qa.invalid`
+      ACCOUNTS and deletes what they created first — but the invite crew belongs to the **durable
+      mate**, which must never be deleted. Precisely the reason the group sweep exists, one table
+      over, and nobody carried it across when the invite crew was added.
+    - Swept **as the mate**, who created them: the delete policy is `auth.uid() = created_by`
+      (`0036`), and the owner is only an invited member. Age-gated at the same 45 minutes, since
+      ungated it deletes the crew of a run already in flight.
+    - **The selector is dry-run against live rows rather than reasoned about**
+      (`scripts/oneoff/probe-stale-fixture-crew-sweep.mjs`), because the sweep only ever executes
+      in CI — it needs the durable mate's session, and a local machine cannot sign in as the mate.
+      That is exactly the situation where a sweep quietly matches the wrong rows. Measured: 10
+      matched, 2 held back by the age gate, and the **permanent seeded crew** — owned by `CI
+      Fixture Owner`, the one `check:signed-in` walks — correctly **not** matched. Over-matching
+      here would delete real climbers' trip parties, which is far worse than the leak.
+    - A sweep that finds rows and removes none now says so. *"found 11, removed 0"* and *"found
+      0"* need opposite reactions and print identically if only one number is logged.
+  - **`check:outage` THREW AWAY THE LEAK REPORT, which is why this went unseen.** `cleanup()`
+    returns a list of what it could not remove; `check:signed-in` prints that list and exits 1,
+    while `check:outage` called it for its side effect alone. So a teardown failure was
+    undetectable from the outside and the thing that eventually found it was a hand count of live
+    rows. It now reports and exits 1, and catches a throw rather than letting it replace the run's
+    real verdict.
   - **`sweepOrphans()` is age-gated (45 min), and must stay so.** It deletes every
     `@climbmatch-qa.invalid` account and runs BEFORE each fixture, so ungated it deletes the
     accounts of a run already in flight — two runs were observed overlapping in this project on
