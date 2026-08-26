@@ -171,7 +171,13 @@ const REVISIT = "Home:revisited";
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
 const ROUTE = "RouteDetail";
-const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT];
+// REPORT is the SOLE enumerator for both the per-screen table and the two rules, so a screen
+// captured into `out` and left out of this list is measured and never judged -- the guard walks
+// it, prints nothing about it, and passes. The first version of the route-page stop did exactly
+// that: RouteDetail was absent here, the table showed the same twelve screens as before, and the
+// run went green having asked nothing. Caught by reading the table for the row that should have
+// been added rather than by the exit code. ADD A NEW STOP HERE, not just to the walk.
+const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
