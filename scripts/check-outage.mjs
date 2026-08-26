@@ -219,7 +219,50 @@ const EMPTY_RE = /no .* yet|nothing here|none yet|get started|add your first|no 
 // So the branch now allows up to two words between "no" and the noun, and the nouns are singular
 // or plural. It is still a deny-list and it will still be short one day; when a screen is added,
 // check what its emptiness is CALLED before trusting a quiet run.
-const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
+//
+// A FIFTH way it was short, and this one was found by asking the question the paragraph above
+// tells you to ask rather than by an injection missing. The pattern was written as one literal
+// with the two branches spelled out separately, and they had DRIFTED: `lists`, `reports`,
+// `catches` and `vouches` were spellable after "no" and NOT after "0". Nothing proves any of
+// those four renders as a zero count today -- `c.reportCount` only reaches the screen when a
+// consensus exists, so "0 reports" is not currently reachable -- so this is not a defect being
+// fixed, it is the DENY-LIST DISEASE one level up: the vocabulary disagreed with itself about
+// which nouns exist, and a hand-maintained second copy is how the next omission arrives.
+//
+// So the nouns are declared once and both branches are BUILT from them. That is the difference
+// between an invariant and a promise: the halves can no longer drift, whatever anyone adds.
+const ABSENCE_NOUNS = ["climb", "crew", "route", "area", "objective", "friend", "group", "invite",
+  "list", "report", "catch", "vouch", "photo", "topo", "partner", "message"];
+// A count can be followed by a VERB instead of a noun -- "0 logged", "0 joined" -- and both of
+// those are real misses this guard has already paid for.
+const ABSENCE_VERBS = ["logged", "joined", "confirmed"];
+const _plural = (n) => n + (/(?:ch|sh|s|x)$/.test(n) ? "(?:es)?" : "s?");
+const _NOUNS = ABSENCE_NOUNS.map(_plural).join("|");
+const CLAIMS_NONE_RE = new RegExp(
+  "no .* yet|nothing here|none yet|no results" +
+  `|\\bno(?: \\w+){0,2} (?:${_NOUNS})\\b` +
+  `|\\b0 (?:${_NOUNS}|${ABSENCE_VERBS.join("|")})\\b`, "i");
+// EVERY PHRASING THIS GUARD HAS EVER MISSED, as an executable assertion rather than as the
+// paragraph above. Four of these were real defects that shipped, and each was found only when
+// somebody widened the pattern by hand; a comment recording them rots, and this repo has the
+// scar to prove it. A rewrite that drops one fails here, before a browser is started.
+for (const phrase of ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
+                      "No crew invites", "No custom lists", "no friends yet", "No groups yet"]) {
+  if (!CLAIMS_NONE_RE.test(phrase)) {
+    console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`
+      + " which is a phrasing it was widened to catch. Widen it back before walking anything.");
+    process.exit(1);
+  }
+}
+// ...and the mirror, so a vocabulary widened until it matches ordinary copy fails too. A rule
+// that fires on every screen is the same as a rule that fires on none.
+for (const phrase of ["Recent condition reports", "Your crews", "Log a climb", "3 climbs to go"]) {
+  if (CLAIMS_NONE_RE.test(phrase)) {
+    console.error(`check:outage: rule 2's vocabulary now matches ${JSON.stringify(phrase)}, which`
+      + " is ordinary copy. It would report a healthy screen as claiming emptiness.");
+    process.exit(1);
+  }
+}
 
 const settle = async (page) => {
   let last = "", same = 0;
