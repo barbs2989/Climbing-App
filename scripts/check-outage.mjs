@@ -329,17 +329,7 @@ async function walk(browser, base, session, fail) {
         body: JSON.stringify({ code: "57014", message: "canceling statement due to statement timeout" }) });
     });
   }
-  // 180s, NOT 120s, and this changed when the spawn gained --config. The scaffold transform runs
-  // `enforce: "pre"` over a 400,000-character file, so vite's FIRST cold compile is measurably
-  // slower than plain vite's -- check:signed-in, which has used this same config all along, was
-  // already at 180s here and at every other goto.
-  //
-  // Measured rather than predicted: at 120s this threw `page.goto: Timeout 120000ms exceeded`
-  // while `up()` had ALREADY answered, i.e. the server was serving and the browser was still
-  // waiting on the first module graph. That failure mode is the worst kind for this guard --
-  // it produces no per-screen table, so it reads as a broken app rather than a slow one, and
-  // the harness can only report it as INCONCLUSIVE.
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 120000 });
   const out = {};
   let first = await settle(page);
   // react-query RETRIES with backoff, so `isError` -- the signal every xUnavailable flag is
@@ -420,8 +410,7 @@ async function walk(browser, base, session, fail) {
   // guard will say so in its normal seed-backed wording -- read that as "this stop measured
   // nothing", not as "the route page is fine", and open a CATALOG route instead. First CI run
   // decides it; do not assume from here.
-  // Same 180s for the same reason: this is a fresh page load, so it can pay a cold compile too.
-  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 120000 });
   const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
     .then(() => true).catch(() => false);
   if (!opened) {
