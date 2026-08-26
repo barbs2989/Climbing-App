@@ -4739,6 +4739,20 @@ the correction knows the screen is wrong, and they have no way to report it.
       2026 NF alerts"*. And `access.closures` still says the FR 49 corridor runs *"to this
       trailhead"*, which is false here while its wilderness-wide first clause is true — clearing the
       whole value would lose a true statement, so it needs an edit rather than a deletion.
+    - **BOTH ARE NOW REPAIRED, and neither needed research — the catalog held both answers.**
+      `wa_sitkum_spire_standard` records the SAME order (`#06-05-25-02`, FS Road 23, *"from
+      milepost 3.7 to its terminus at FS Road 27"*, MBS) as **"Still closed as of spring 2026 per
+      Mt. Baker-Snoqualmie NF alerts"** — verified across every value in the catalog that mentions
+      that road or milepost, rather than assumed from *"same road, same milepost"*, which is
+      exactly the near-identity this file records being burned by. The expiry clause is replaced by
+      the order number and that current status; the FR 49 clause is **excised** from
+      `access.closures`, keeping its true wilderness-wide statement and the ranger contact.
+      **T0 now reports 0 across the whole catalog**, and `audit:trailhead-road` stays clean in
+      every section.
+    - **Note what the first repair TRADES, because it is a real cost and not a dodge**: T0 (a
+      statement that is false NOW) becomes T3 (`as-of-period`, a statement that will age). That is
+      the right direction and it puts this row exactly where its donor already sits — but it is not
+      a value that has stopped needing re-reading, and the audit will keep saying so.
     - **`wa_glacier_peak_sitkum_glacier` is the MIRROR and is deliberately left alone.** Its
       `road.name` and trailhead say FR 49 while its `approach` prose opens *"From the White Chuck
       River Trailhead (2,350 ft, end of White Chuck River Road/FR 23)"*. That is not the same defect
