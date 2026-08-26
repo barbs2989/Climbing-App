@@ -782,8 +782,9 @@ a build error, but a screen that renders wrong or not at all.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
       - **`toposUnavailable` is MASKED and nothing has yet proven it reaches a screen.** Overview is
         already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
-        topos copy flips. It needs a run failing only that read (`ONLY=topo_photos`), and that mode
-        cannot pass its own fail-closed floor today — read its table, not its exit code.
+        topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
+        `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
+        segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
       - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
         — and no flag lives on them. Click one when a flag lands on it.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
