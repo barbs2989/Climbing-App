@@ -90,6 +90,38 @@ const CASES = [
       "function _readProbe(r){return (r.waypoints||[]).filter(wpPlaced).map(w=>[w.lat,w.lng]);}\nfunction RouteDetail({route,"),
     expect: "pass",
   },
+  /* Section 1c: ONE trailhead resolver. Case 12 is the real historical defect — TrailheadCard
+     resolving approach_logistics first, the opposite precedence to the map, which split 290
+     routes. Case 14 must stay SILENT: a comment NAMING the column is documentation, and three of
+     them explain this very rule. */
+  {
+    name: "a second trailhead resolver — TrailheadCard reading logistics itself, as it did",
+    file: "rd",
+    edit: (s) => s.replace(
+      "  const tp=trailheadPoint(route);",
+      "  const tp=trailheadPoint(route);const _x=al.trailheadLat!=null?al.trailheadLat:null;"),
+    expect: "fail",
+  },
+  {
+    name: "trailheadPoint loses its logistics fallback — the guard must fail closed, not pass",
+    file: "core",
+    /* The WHOLE line, not just its first pair. A first version renamed only the wpPlaced() call and
+       left `{lat:Number(al.trailheadLat)…}` two tokens later, so the fail-closed counter still saw
+       reads and the case reported MISS — the edit landed by checksum without creating the defect it
+       names. Checksum movement proves an edit happened, not that it was the right one. */
+    edit: (s) => s.replace(
+      /const _logi=wpPlaced\(\{lat:al\.trailheadLat[^\n]*?:null;/,
+      "const _logi=null;"),
+    expect: "fail",
+  },
+  {
+    name: "a COMMENT naming trailheadLat is documentation, not a resolver",
+    file: "rd",
+    edit: (s) => s.replace(
+      "function TrailheadCard({route,onEdit}){",
+      "/* al.trailheadLat and al.trailheadLng are read only by trailheadPoint(). */\nfunction TrailheadCard({route,onEdit}){"),
+    expect: "pass",
+  },
   {
     name: "untouched source must PASS — the harness must not be what turns it red",
     file: "core",

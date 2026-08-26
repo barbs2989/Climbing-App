@@ -126,6 +126,45 @@ if (!/wpPlaced\(/.test(rd)) fail("RouteDetail never calls wpPlaced().");
 /* The old inline expression must not come back alongside the helper — two answers is the defect. */
 if (/Number\.isFinite\(Number\(wp\.lat\)\)/.test(rd)) fail("RouteDetail has re-inlined the finite-coordinate test; wpPlaced() is the single answer.");
 
+/* ── 1c. ONE trailhead resolver ────────────────────────────────────────────────────────────────
+   `trailheadPoint()` answers "where does this route start". A SECOND reader of
+   approach_logistics.trailheadLat is how the app came to hold two answers: TrailheadCard resolved
+   logistics FIRST and the pin second — the exact opposite precedence — so on 290 routes the map
+   drew a pin in one place while the Plan card's Directions link, its copy-to-clipboard value and
+   its "To the peak" bearing all pointed somewhere else.
+
+   Parsed with Babel rather than matched textually, deliberately: three comments in these two files
+   NAME `trailheadLat` while explaining this very rule, and a scan that read them would fail on its
+   own documentation. The blanker other guards use is unsafe here for the reason check:overlay-
+   discovery records — JSX body text is full of apostrophes. An AST has neither failure mode. */
+{
+  const _t2 = (await import("@babel/traverse")).default;
+  const traverse2 = _t2.default || _t2;
+  const { parse: parse2 } = await import("@babel/parser");
+  const LOGI = /^trailheadL(at|ng)$/;
+
+  for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
+    let ast;
+    try { ast = parse2(src, { sourceType: "module", plugins: ["jsx"] }); }
+    catch (e) { fail(`could not parse ${label} to look for trailhead resolvers (${String(e.message).slice(0, 80)})`); continue; }
+
+    let seen = 0;
+    traverse2(ast, {
+      MemberExpression(path) {
+        if (path.node.computed || !LOGI.test(path.node.property.name || "")) return;
+        seen++;
+        const fn = path.getFunctionParent();
+        const name = fn && (fn.node.id?.name
+          || (fn.parentPath.isVariableDeclarator() && fn.parentPath.node.id.name));
+        if (name === "trailheadPoint") return;
+        fail(`${label}: ${path.node.property.name} is read outside trailheadPoint() (in ${name || "an anonymous function"}) — that is a second trailhead resolver, and two of them is the defect.`);
+      },
+    });
+    // Fails CLOSED in core: trailheadPoint must actually be reading the column it falls back to.
+    if (label === "ClimbMatchCore.jsx" && !seen) fail("no approach_logistics trailhead coordinate is read anywhere in core — trailheadPoint() has lost its fallback, or the scan broke.");
+  }
+}
+
 /* ── 2. The predicate's own behaviour, on the cases that decide it ─────────────────────────── */
 {
   const m = core.match(/export function wpPlaced\(w\)\{[\s\S]{0,400}?\n/);
