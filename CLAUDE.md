@@ -84,6 +84,7 @@ npm run check:migrations # two migrations must never share a number (in build)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:coord-origin # is every coordinate a route stores actually NEAR the route?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
@@ -4375,6 +4376,65 @@ the correction knows the screen is wrong, and they have no way to report it.
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
+- **`audit:coord-origin`** asks whether every coordinate a route stores is actually **near the
+  route**, anchored on its own `areas.lat/lng`. Read-only, report-only; **not** a build gate — a
+  property of the DB rather than of the checkout, the reasoning that keeps `check:counts` out.
+  - **THE GAP IS STRUCTURAL, AND IT IS WHY FOUR AUDITS WERE ALL SILENT.** Every existing geometric
+    audit compares a route's records against **one another** — `audit:waypoints` (pins vs its own
+    track), `audit:waypoint-track` (same question, other tolerances), `audit:waypoint-geometry`
+    (pins vs each other), `audit:trailhead-agreement` (the two trailhead copies). When a **whole
+    blob is foreign** those records agree with each other perfectly, and *two records agreeing is
+    one claim counted twice*. A wholesale contamination is invisible to all of them by
+    construction. The AREA coordinate is a third record none of them derives from.
+  - **`audit:identity` is the near miss and its own section 2 says why it cannot help**: it looks
+    for prose **naming a foreign peak**. The founding blob names no peak at all — only *"Pacific
+    Crest Trailhead at Rainy Pass"* and *"South-southwest via open timber basin"*. The
+    contamination was in the COORDINATES, which are the most identifying thing in the row and were
+    the one thing nothing compared.
+  - **THE FOUNDING CASE: two out-of-state routes carrying Washington's Cutthroat Peak wholesale.**
+    `ar_cutthroat` (an **Arkansas** 5.11d sport route) and `az_cutthroat_trout` (an **Arizona**
+    5.9+ trad route) each stored a peak coordinate **10 m from `wa_cutthroat_peak`**, plus its
+    trailhead name, trailhead coordinate and trailhead direction — every field. The only thing
+    either shares with that peak is the word *Cutthroat* in its **route name**. `a name is not an
+    identity`, landing on coordinates this time rather than on an id or on prose. It was
+    user-visible: `TrailheadCard` would send an Arkansas sport climber to SR-20 and state a
+    bearing and distance to a summit 2,698 km away.
+  - **It also found the RESIDUE OF A REPAIR THIS FILE RECORDS AS DONE.** The `wa_true_grit` entry
+    above says the row was fixed — overview, beta and approach cleared, the genuinely-Coulee
+    hazards correctly kept. Both **waypoints** were missed and still sat 160 km away on Vesper
+    Peak. *An instance fixed by hand is not a class closed*, and the audit that would have caught
+    the remainder did not exist.
+  - **50 km is deliberately LOOSE, and the looseness is the point.** Three other audits already ask
+    whether a pin is precise; this one asks only whether the coordinate is in the right part of the
+    continent. A remote Pasayten summit really is ~30 km from its road and this file records 236 WA
+    routes legitimately over 8 km from their peak — a tight bound would rediscover those and bury
+    the thing this exists for.
+  - Fails **closed** four ways: zero routes, zero areas (every route would be unanchored and the
+    run would report a clean catalog), zero coordinates examined, and routes whose area carries no
+    coordinate are **counted and reported as not a clean verdict** rather than dropped.
+  - Injection-tested. `--inject=clean` is the case that matters: every coordinate moved onto its
+    own area must report **0**, which is what proves the audit measures distance rather than
+    always firing. `--inject=foreign` moves one pin to Everest and must report it.
+  - **TWO OTHER HYPOTHESES WERE MEASURED FIRST AND BOTH CAME BACK EMPTY**, recorded so nobody
+    re-derives them. *A read that never STARTED reading as one still in flight* — React Query v5
+    leaves a disabled query `isPending` forever, and `lib/db.js` gates 64 queries on things like
+    `enabled: !!id` — is a real mechanism and the app does not do it: **0** of the 21 lines that
+    render arriving-soon copy are gated on `isPending`, and the `!ready` ones are map-tile
+    readiness rather than a query. And *`check:read-failures` scans only `lib/db.js` while five
+    files do reads* is a genuine scope gap (186 of 248 exported functions) with **nothing in it**:
+    applying the guard's own lifted predicate to `lib/auth.js`, `lib/offline.js`, `lib/fire.js` and
+    `lib/mapKit.jsx` finds zero sites, and the single hit in `lib/db.js` is the one already
+    declared. *Measure the class before building the detector* — the discipline `audit:area-parents`
+    records after its first draft shipped 12 real findings out of 41.
+  - **Four findings, THREE different repairs** (`fix-foreign-coordinates.mjs`), because they are
+    three different defects: a wholesale foreign blob is **cleared**; a route whose every other
+    column also describes the far place is **misfiled and moves**; a stray pin among correct ones
+    would be a pin to fix. No coordinate is typed anywhere in that script — every operation is a
+    clear or a move to a declared area id, and the move is gated on **the row's own pins being
+    within 10 km of the destination**, so a wrong destination cannot be expressed.
+    `wa_up_in_arms` moved to `wa_concord_tower` on that gate: all eight siblings on `wa_upper_wall`
+    are 0-pitch crag routes and it is 6 pitches — the same non-prose discriminator that settled
+    `wa_south_face_direct`. `check:counts` confirms all 47,638 areas still agree afterwards.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
