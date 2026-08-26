@@ -11,9 +11,12 @@
 //     row agreed with itself perfectly. The contradiction is BETWEEN routes, not within one.
 //   - Every coverage check asks whether `road.status` is populated. All four were populated, with
 //     plausible, well-written English. A wrong answer and a right one are identical from there.
-//   - The route page renders this (`RouteDetail.jsx` ~2176 prints `road.status — road.seasonalGate`,
-//     ~2181 prints "Seasonal closures" from `ac.closures || ac.closure || ac.seasonal`), so the
-//     screen looks finished on every one of them.
+//   - The route page renders this — RouteDetail's GETTING THERE panel prints
+//     `road.status+(road.seasonalGate?" — "+road.seasonalGate:"")`, and "Seasonal closures" from
+//     `ac.closures || ac.closure || ac.seasonal` — so the screen looks finished on every one of
+//     them. (Cited by EXPRESSION, not by line: this file packs many declarations onto one physical
+//     line and the numbers this once carried had already drifted ~300 lines. A comment naming a
+//     line number is a claim that rots silently; one naming an expression can be grepped.)
 //
 // THE UNIT OF TRUTH IS THE ROAD, NOT THE ROUTE. A road is either gated or it is not; that fact
 // cannot vary by which climb you picked at the end of it. So a cluster of routes sharing one
