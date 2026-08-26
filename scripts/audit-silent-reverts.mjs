@@ -29,6 +29,37 @@
 // That rule would have EXCUSED #776, the incident this exists for: it removed crewMemberById and
 // crewMemberUids while adding activeCrewMemberIds in the same commit, sharing "crew" and "member".
 // Four items across 500 commits is a reading list, not noise. Leave it noisy and short.
+//
+// IT ALSO TRACKS WHOLE FILES, and until 2026-08-26 it did not — which is how it missed the biggest
+// instance of the very thing it exists for. #1248 merged from a stale base and DELETED four files
+// belonging to three merged PRs (#1244, #1239, #1240) plus reverted #1239's live app fix; this
+// audit printed `0 of them are ABSENT at HEAD`. Every pattern above matches a NAMED DEFINITION, and
+// a deleted file only leaves one behind if it happened to export something. Neither deleted
+// waypoint-repair script does — one is top-level statements, the other's helpers are lowercase and
+// unexported. The blindness scaled with how ORDINARY the file was, which is the worst possible
+// direction: a script that exports nothing is the kind this repo writes most of.
+//
+// VALIDATED AGAINST THE REAL INCIDENT, not a synthetic one — the strongest proof available for a
+// detector whose healthy output is "nothing found". `--ref 68bb307 --commits 12` reports all four
+// deleted files, each attributed to #1248 and each named with the merged PR that added it.
+//
+// AND THE FILE RULE NEEDED A DISCRIMINATOR, because on subject matching alone its precision is 0%.
+// Over 500 commits it reports 7 files and ALL SEVEN ARE PROMOTIONS — a one-off probe becoming a
+// named guard (measure-horizontal-overflow -> check:overflow, probe-trailhead-vs-logistics ->
+// audit:trailhead-agreement, probe-signed-in-db-failure -> check:outage, and four more). A detector
+// whose every hit is correct work is one people learn to ignore.
+//   The discriminator is STRUCTURAL, and deliberately NOT a similarity test — see the paragraph
+//   above for why that would have excused #776. A PROMOTION removes ONE file, the one it
+//   supersedes, added by ONE earlier commit. A STALE-BASE SQUASH removes SEVERAL, added by SEVERAL
+//   DIFFERENT PRs, because it is carrying a whole old tree forward. Measured in both directions:
+//   each of the 7 promotions is one file from one commit and none trips it; #1248 trips it with 4
+//   files from 3 commits.
+//   It is EMPHASIS, never suppression. Single-file removals are still printed in full.
+//
+// A RENAME IS NOT A DELETION. Additions are detected by git's `new file mode` marker, which a
+// rename does not carry, so a moved file is never recorded as added and can never be reported as
+// gone; and the removal lookup passes -M --name-status so an R shows as a rename rather than a D.
+// This repo renames guards (check-rappel-readers.mjs -> check-correction-readers.mjs, #926).
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -62,6 +93,27 @@ const PATTERNS = [
   /* Capitalised only: a lowercase `function x(` is often a throwaway inner helper, while a
      capitalised one is a component or a named domain helper whose loss blanks a screen. */
   { kind: "fn-decl", re: /^\+\s*function ([A-Z][\w$]*)\s*\(/gm, file: /\.(jsx?|mjs)$/ },
+  /* OUTAGE FLAGS, AND THIS ONE WAS ADDED BECAUSE THE AUDIT MISSED A REAL REVERT. On 2026-08-26
+     #1239 shipped `filedReportsUnavailable` and `catchesUnavailable`; #1248 merged 57 minutes
+     later from a branch based before it and removed BOTH, along with `CatchLedger`'s matching
+     prop and #1239's own probe file. Its subject and body are entirely about milepost clustering
+     in `audit:trailhead-road` and never mention the app. This audit reported `0 of them are
+     ABSENT at HEAD` for that window.
+     Why every pattern above walked past it: an `xUnavailable` flag is neither exported nor
+     top-level nor a useCallback/useMemo -- it is declared MID-DECLARATOR on a dense line, as
+     `const myFiledQ=useMyFiledReports(!!uid),filedReportsUnavailable=!!(uid&&myFiledQ&&myFiledQ.isError),...`.
+     So the match cannot be anchored to the start of a line.
+     It is worth its own pattern rather than a general widening, for the reason the header above
+     gives: these are the single most collision-prone declarations in the repo right now -- 11 of
+     them, added across ~6 PRs by parallel sessions all editing the SAME two dense lines in
+     `ClimbMatch.jsx`. And their loss is invisible by construction. The revert was internally
+     CONSISTENT (component prop removed as well as the call-site argument), so `check:dead-props`
+     stayed green, the screen still rendered, and the only symptom is a sentence that is false
+     exactly when nobody is looking.
+     Measured for noise before shipping: against #1239's own diff it finds precisely the two
+     reverted names and nothing else. The convention is established (`<noun>Unavailable`), so this
+     is a named class rather than "every identifier" -- the haystack the header warns about. */
+  { kind: "outage-flag", re: /^\+.*?\b([A-Za-z_$][\w$]*Unavailable)\s*=/gm, file: /\.(jsx?|mjs)$/ },
 ];
 
 const commits = git("rev-list", "--first-parent", `-n${N}`, REF).trim().split("\n").filter(Boolean);
@@ -95,6 +147,25 @@ if (fastPath) {
   present = (tok) => { if (!memo.has(tok)) memo.set(tok, probe(tok)); return memo.get(tok); };
 }
 
+/* A WHOLE FILE IS A DEFINITION TOO, and until 2026-08-26 nothing here could see one vanish.
+   #1248 merged from a stale base and DELETED five files belonging to three merged PRs —
+   solve-selfcontradicting.mjs (176 lines), probe-gnis-refusals-are-real.mjs (71),
+   probe-catch-ledger-outage-copy.mjs (72), probe-live-sw-prune.mjs (111) and a README section.
+   This audit reported `0 of them are ABSENT at HEAD` for that window.
+
+   Why every pattern above walked past it: they all match a NAMED DEFINITION, and a deleted file
+   only leaves one behind if it happened to export something. Neither waypoint-repair script does —
+   one is top-level statements, the other's helpers are lowercase and unexported. So the guard whose
+   whole subject is stale-base squashes was blind to the largest one in this repo's history, and its
+   blindness scaled with how ordinary the file was: a script that exports nothing is exactly the
+   kind this repo writes most of.
+
+   Tracked by PATH, not by content, because there is no token to search for. Free of extra
+   subprocesses: the per-commit diff is already split per file above, and git marks an addition with
+   `new file mode`. */
+const FILE_OF_INTEREST = /\.(jsx?|mjs|json|sql)$/;
+const addedFiles = new Map(); // path -> {sha, subject}
+
 const added = new Map(); // token -> {kind, sha, subject}
 for (const sha of commits.slice().reverse()) {
   let diff = "";
@@ -104,6 +175,13 @@ for (const sha of commits.slice().reverse()) {
   const parts = diff.split(/^diff --git a\/(\S+) b\/\S+$/m);
   for (let i = 1; i < parts.length; i += 2) {
     const path = parts[i], body = parts[i + 1] || "";
+    /* `new file mode` marks an addition. A RENAME does not carry it — git's rename detection emits
+       `rename from`/`rename to` instead — so a file that merely moved is never recorded as added
+       here, and cannot later be reported as deleted. That matters: this repo renames guards
+       (check-rappel-readers.mjs -> check-correction-readers.mjs) and a rename is not a revert. */
+    if (FILE_OF_INTEREST.test(path) && /^new file mode /m.test(body) && !path.startsWith("node_modules/")) {
+      addedFiles.set(path, { sha, subject });
+    }
     for (const p of PATTERNS) {
       if (!p.file.test(path)) continue;
       p.re.lastIndex = 0;
@@ -112,18 +190,120 @@ for (const sha of commits.slice().reverse()) {
   }
 }
 
+/* Existence at HEAD, by the same two backends the token test uses and for the same reason. */
+let fileExists;
+if (fastPath) {
+  const tracked = new Set(git("ls-files").trim().split("\n"));
+  fileExists = (p) => tracked.has(p);
+} else {
+  fileExists = (p) => { try { git("cat-file", "-e", `${HEAD}:${p}`); return true; } catch { return false; } };
+}
+const goneFiles = [...addedFiles.entries()].filter(([p]) => !fileExists(p));
+
 
 const missing = [...added.entries()].filter(([tok]) => !present(tok));
 
 console.log(`walked ${commits.length} first-parent commits of ${REF}`);
 console.log(`${added.size} tracked definition(s) added in that window`);
-console.log(`${missing.length} of them are ABSENT at HEAD\n`);
+console.log(`${missing.length} of them are ABSENT at HEAD`);
+console.log(`${addedFiles.size} file(s) added in that window, ${goneFiles.length} since deleted\n`);
+
+/* Fail closed. An 80-commit window of this repo always adds files, so zero is a broken scan and
+   not a quiet history — the same reasoning the empty-commit-list and short-blob checks above use. */
+if (!addedFiles.size) {
+  console.error(`FAIL — no added files found across ${commits.length} commits; a broken scan, not a clean history.`);
+  process.exit(1);
+}
+
+/* Deleted files are reported BEFORE the token verdict and can fail the run on their own. Ordering
+   is load-bearing here for the reason check:clickable records: whichever block exits first is the
+   only one anyone reads, and the old code returned `ok` and exit 0 the moment `missing` was empty —
+   which is exactly the state #1248 left, with five files gone. */
+let fileSilent = 0;
+const fileRemover = new Map(); // path -> {sha, subject, renamedTo} — kept so the grouping below
+                               // needs no second `git log` per file.
+if (goneFiles.length) {
+  console.log(`--- FILES ADDED AND THEN DELETED ---`);
+  for (const [path, info] of goneFiles) {
+    let removedBy = "", removedSubject = "", renamedTo = "";
+    try {
+      /* -M so a RENAME reports as R, never as a deletion. --name-status gives the letter, which is
+         the only thing separating "this moved" from "this was reverted". */
+      const log = git("log", "--first-parent", "-M", "--name-status", "--format=%H%x09%s", `${info.sha}..${HEAD}`, "--", path);
+      const lines = log.split("\n");
+      for (let i = 0; i < lines.length; i++) {
+        const st = lines[i].match(/^R\d*\t(\S+)\t(\S+)/) || lines[i].match(/^D\t(\S+)/);
+        if (!st) continue;
+        for (let j = i - 1; j >= 0; j--) {
+          const h = lines[j].match(/^([0-9a-f]{40})\t(.*)$/);
+          if (h) { removedBy = h[1]; removedSubject = h[2]; break; }
+        }
+        if (lines[i].startsWith("R")) renamedTo = st[2];
+        break;
+      }
+    } catch { /* leave blank */ }
+    fileRemover.set(path, { sha: removedBy, subject: removedSubject, renamedTo });
+    if (renamedTo) { console.log(`  renamed     ${path}\n      -> ${renamedTo}  (a move is not a revert)`); continue; }
+    const base = path.split("/").pop().replace(/\.(jsx?|mjs|json|sql)$/, "");
+    const deliberate = removedSubject && (removedSubject.includes(path) || removedSubject.toLowerCase().includes(base.toLowerCase()));
+    if (!deliberate) fileSilent++;
+    console.log(`${deliberate ? "  deliberate  " : "  ** SILENT   "}${path}`);
+    console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
+    console.log(`      removed   ${removedBy ? removedBy.slice(0, 8) : "(not found)"}  ${removedSubject.slice(0, 96)}`);
+  }
+  console.log(`\n  ${fileSilent} file(s) vanished in a commit that does NOT name them.`);
+
+  /* WHICH OF THOSE IS WORTH READING FIRST, measured rather than guessed. Over 500 commits this
+     rule reports 7 files and ALL SEVEN ARE PROMOTIONS — a one-off probe becoming a named guard:
+     measure-horizontal-overflow -> check:overflow (#827), probe-trailhead-vs-logistics ->
+     audit:trailhead-agreement (#905), probe-signed-in-db-failure -> check:outage (#1177),
+     check-rappel-readers -> check-correction-readers (#926), and three more. Precision on subject
+     matching alone is therefore 0%, and a detector whose every hit is correct work is one people
+     learn to ignore.
+
+     The discriminator is STRUCTURAL, not a similarity test — the header above is explicit that a
+     rename/supersession test would have excused #776, which removed two resolvers and added a
+     same-stem third in one commit. A PROMOTION removes ONE file, the one it supersedes, added by
+     ONE earlier commit. A STALE-BASE SQUASH removes SEVERAL, added by SEVERAL DIFFERENT PRs,
+     because it is carrying a whole old tree forward. Measured: each of the 7 promotions is one
+     file from one PR; #1248 was 4 files from 3 PRs.
+
+     Reported as EMPHASIS, never as suppression. A single-file removal is still printed — the
+     multi-PR one just says so, because that is the shape that has actually cost this repo work. */
+  const byRemover = new Map();
+  for (const [path, info] of goneFiles) {
+    const r = fileRemover.get(path);
+    if (!r || !r.sha || r.renamedTo) continue;
+    if (!byRemover.has(r.sha)) byRemover.set(r.sha, { subject: r.subject, paths: [], adders: new Set() });
+    const e = byRemover.get(r.sha);
+    e.paths.push(path); e.adders.add(info.sha);
+  }
+  const multi = [...byRemover.entries()].filter(([, e]) => e.adders.size > 1);
+  if (multi.length) {
+    console.log(`\n  ** ONE COMMIT REMOVED FILES ADDED BY SEVERAL DIFFERENT ONES — the stale-base shape:`);
+    for (const [sha, e] of multi) {
+      console.log(`     ${sha.slice(0, 8)}  ${e.subject.slice(0, 88)}`);
+      console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — read this one FIRST`);
+    }
+  } else {
+    console.log(`  No commit removed files added by more than one other, so none has the stale-base`);
+    console.log(`  fingerprint. Over 500 commits every hit of this rule has been a PROMOTION.`);
+  }
+  console.log(`\n  A file deleted on purpose is fine; one deleted by a merge about something else is`);
+  console.log(`  the #1248 shape — four files across three merged PRs, and nothing reported it.\n`);
+}
 
 if (!missing.length) {
-  console.log(`ok — nothing added in the last ${commits.length} commits has since vanished.`);
+  if (!goneFiles.length) console.log(`ok — nothing added in the last ${commits.length} commits has since vanished.`);
   console.log(`\nWhat this does NOT prove: that no BEHAVIOUR was reverted. It tracks named`);
-  console.log(`definitions, not the bodies of functions — a merge that kept a name and dropped its`);
-  console.log(`guard clause is invisible here. check:correction-readers exists for that shape.`);
+  console.log(`definitions and whole files, not the bodies of functions — a merge that kept a name`);
+  console.log(`and dropped its guard clause is invisible here. check:correction-readers exists for`);
+  console.log(`that shape.`);
+  /* Exit 0 even with file findings. This audit is REPORT-ONLY and never exits non-zero for a
+     finding — only for a broken scan — because a removal is not a defect and the first real run of
+     the file rule proves why: its single hit is #1229 PROMOTING a one-off probe into a guard
+     (check-area-name-embed.mjs), which is a supersession, not a revert. Going red on that would
+     make the audit argue with correct work, the failure its own header spends a paragraph on. */
   process.exit(0);
 }
 
