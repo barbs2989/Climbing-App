@@ -1511,10 +1511,18 @@ function StartLocationForm({onSubmit,onCancel,peakCoord}){
 
 
 
-function CatchLedger({ledger}){
+function CatchLedger({ledger,unavailable}){
   if(!ledger)return null;
-  return <div style={{background:C.card,borderRadius:12,padding:"15px 16px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:13}}>VERIFIED CATCH LEDGER</div><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:9,marginBottom:14}}>{[["Total Catches",ledger.totalCatches,C.blue],["High-Factor",ledger.highFactorCatches,C.amber],["Partners Signed",ledger.partnersSigned,C.green]].map(x=><div key={x[0]} style={{textAlign:"center",background:C.surface,borderRadius:9,padding:"12px 6px"}}><div style={{fontSize:19,fontWeight:700,color:x[2]}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>)}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:7}}>High-factor catch ratio</div><Bar val={ledger.totalCatches>0?Math.round((ledger.highFactorCatches/ledger.totalCatches)*100):0} color={C.amber}/>{/* With no catches lastCatch is "", which rendered a dangling "Last verified catch: · 0". */}
-  <div style={{fontSize:12,color:C.textMuted,marginTop:10}}>{ledger.lastCatch?("Last verified catch: "+ledger.lastCatch+" · "+ledger.partnersSigned+" partners confirmed"):"No verified catches yet — log a belay and ask your partner to confirm it."}</div></div>;
+  /* `unavailable` is the belay_catches read having FAILED, not the account having no
+     catches. Those two produce a byte-identical ledger — totalCatches 0 and lastCatch ""
+     — so without it this card tells a climber who has caught falls that they have caught
+     none, and invites them to go log one. A dash says the number did not arrive; a 0 in a
+     strip of three counts reads as a measurement. FullProfile renders another climber's
+     ledger through the same component and passes nothing, which is correct: that data
+     comes down with the profile rather than from this query. */
+  const _n=(v)=>unavailable?"—":v;
+  return <div style={{background:C.card,borderRadius:12,padding:"15px 16px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:13}}>VERIFIED CATCH LEDGER</div><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:9,marginBottom:14}}>{[["Total Catches",_n(ledger.totalCatches),C.blue],["High-Factor",_n(ledger.highFactorCatches),C.amber],["Partners Signed",_n(ledger.partnersSigned),C.green]].map(x=><div key={x[0]} style={{textAlign:"center",background:C.surface,borderRadius:9,padding:"12px 6px"}}><div style={{fontSize:19,fontWeight:700,color:x[2]}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>)}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:7}}>High-factor catch ratio</div><Bar val={unavailable||!(ledger.totalCatches>0)?0:Math.round((ledger.highFactorCatches/ledger.totalCatches)*100)} color={C.amber}/>{/* With no catches lastCatch is "", which rendered a dangling "Last verified catch: · 0". */}
+  <div style={{fontSize:12,color:C.textMuted,marginTop:10}}>{ledger.lastCatch?("Last verified catch: "+ledger.lastCatch+" · "+ledger.partnersSigned+" partners confirmed"):unavailable?"Couldn’t load your catch record — try again in a moment.":"No verified catches yet — log a belay and ask your partner to confirm it."}</div></div>;
 }
 function SpeedProfile({climber,editable,override,onSave,appConns,setAppConns}){
   const [edit,setEdit]=useState(null);
