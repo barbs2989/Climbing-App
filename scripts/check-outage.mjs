@@ -123,12 +123,15 @@
 // flag keys on isError, not on whether rows exist, which is the same property that made the
 // friend-requests flag measurable against a fixture holding no data.
 //
-// NOTHING HAS YET ASKED about `toposUnavailable` or `useProfilesByIds`. Topos render on the
-// PHOTOS sub-tab and this stop does not click it, so that flag is honest copy no walk has ever
-// exercised -- #1220 proved its branch by rendering ConsensusPanel directly in
-// scripts/oneoff/probe-consensus-outage-copy.mjs, which is a component test and not a walk. The
-// route page has six sub-tabs; walking them is six more settles in each of two runs, so it is a
-// cost question rather than a reachability one now. Click one when a flag lands on it.
+// `toposUnavailable` IS asked now, and the paragraph that used to sit here is why: it said topos
+// render on the PHOTOS sub-tab, that this stop did not click it, and that the flag was therefore
+// honest copy no walk had ever exercised -- then closed with "click one when a flag lands on it".
+// One had. The Photos stop below is that click.
+//
+// NOTHING HAS YET ASKED about `useProfilesByIds`, nor about the other FOUR route sub-tabs -- Plan,
+// Reports, Safety, Partners. No flag lives on any of them today, and each is two more settles in
+// each of two runs, so leaving them is a COST decision and not a claim they are fine. The rule
+// stands: click one when a flag lands on it.
 //
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
@@ -178,13 +181,20 @@ const REVISIT = "Home:revisited";
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
 const ROUTE = "RouteDetail";
+// The PHOTOS sub-tab, added because a flag landed on it. `toposUnavailable` (#1221) has been
+// honest copy that no walk exercised since the day it shipped -- proven only by a component
+// render, which says nothing about whether it reaches a screen under a real outage. The rule
+// this file already states for the route page's six sub-tabs is "click one when a flag lands
+// on it", and one has. The other five stay unwalked and that is a cost decision, not a claim
+// they are fine.
+const ROUTE_PHOTOS = "RouteDetail:Photos";
 // REPORT is the SOLE enumerator for both the per-screen table and the two rules, so a screen
 // captured into `out` and left out of this list is measured and never judged -- the guard walks
 // it, prints nothing about it, and passes. The first version of the route-page stop did exactly
 // that: RouteDetail was absent here, the table showed the same twelve screens as before, and the
 // run went green having asked nothing. Caught by reading the table for the row that should have
 // been added rather than by the exit code. ADD A NEW STOP HERE, not just to the walk.
-const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE];
+const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE, ROUTE_PHOTOS];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -246,8 +256,9 @@ const CLAIMS_NONE_RE = new RegExp(
 // paragraph above. Four of these were real defects that shipped, and each was found only when
 // somebody widened the pattern by hand; a comment recording them rots, and this repo has the
 // scar to prove it. A rewrite that drops one fails here, before a browser is started.
-for (const phrase of ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
-                      "No crew invites", "No custom lists", "no friends yet", "No groups yet"]) {
+const MUST_SPELL = ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
+  "No crew invites", "No custom lists", "no friends yet", "No groups yet"];
+for (const phrase of MUST_SPELL) {
   if (!CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`
       + " which is a phrasing it was widened to catch. Widen it back before walking anything.");
@@ -256,13 +267,18 @@ for (const phrase of ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 jo
 }
 // ...and the mirror, so a vocabulary widened until it matches ordinary copy fails too. A rule
 // that fires on every screen is the same as a rule that fires on none.
-for (const phrase of ["Recent condition reports", "Your crews", "Log a climb", "3 climbs to go"]) {
+const MUST_STAY_QUIET = ["Recent condition reports", "Your crews", "Log a climb", "3 climbs to go"];
+for (const phrase of MUST_STAY_QUIET) {
   if (CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary now matches ${JSON.stringify(phrase)}, which`
       + " is ordinary copy. It would report a healthy screen as claiming emptiness.");
     process.exit(1);
   }
 }
+// Say so. A self-test that prints nothing on success is indistinguishable in a CI log from one
+// that was deleted, and this repo's own rule is that a guard's proxy should fail LOUD -- which is
+// worth nothing if its presence is invisible when it passes.
+console.log(`rule 2 vocabulary: ${MUST_SPELL.length} historical phrasings spelled, ${MUST_STAY_QUIET.length} lines of ordinary copy quiet`);
 
 const settle = async (page) => {
   let last = "", same = 0;
@@ -405,11 +421,13 @@ async function walk(browser, base, session, fail) {
   // keyed on isError, not on whether rows exist, which is the same property that made the
   // friend-requests flag measurable against a fixture with no data.
   //
-  // But a seed route also arrives with its OWN `activity`, so the consensus is not empty in either
-  // run and only the caption above it can move. If this screen compares identical in both runs the
-  // guard will say so in its normal seed-backed wording -- read that as "this stop measured
-  // nothing", not as "the route page is fine", and open a CATALOG route instead. First CI run
-  // decides it; do not assume from here.
+  // A seed route also arrives with its OWN `activity`, so the consensus is not empty in either run
+  // and only the caption above it can move. That was written here as an open question -- "if this
+  // screen compares identical, read it as 'this stop measured nothing' and open a CATALOG route
+  // instead" -- and the first CI run ANSWERED it: healthy 5239ch against failing 5013ch, CHANGED,
+  // says-broken=YES. So a seed route is enough and no catalog route is needed. Kept as the reason
+  // rather than deleted, because the next person widening this walk needs to know which half of
+  // the screen can move and which cannot.
   await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 120000 });
   const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
     .then(() => true).catch(() => false);
@@ -430,7 +448,25 @@ async function walk(browser, base, session, fail) {
       }
     }
     out[ROUTE] = rt;
+    // Photos, for `toposUnavailable`. Clicked by ACCESSIBLE NAME like every other sub-tab here,
+    // and skipping fixed/sticky chrome matters more on this screen than anywhere else: the route
+    // sub-tab names collide with the bottom nav, so a global text match silently leaves the route
+    // page and measures a tab instead -- the trap CLAUDE.md records for exactly these six names.
+    if (await tapByName(page, "Photos")) {
+      let pt = await waitOutFetch(page, fail);
+      if (fail) {
+        for (let i = 0; i < 25 && !BROKEN_RE.test(pt); i++) {
+          await new Promise((r) => setTimeout(r, 1000));
+          pt = await waitOutFetch(page, fail);
+        }
+      }
+      out[ROUTE_PHOTOS] = pt;
+    } else {
+      out.__navFail = (out.__navFail || []).concat(ROUTE_PHOTOS);
+      out[ROUTE_PHOTOS] = "";
+    }
   }
+  if (!opened) out[ROUTE_PHOTOS] = "";
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();
