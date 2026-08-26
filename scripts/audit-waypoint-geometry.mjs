@@ -62,9 +62,23 @@
 //
 // It answers about half, and the honest half is the half it REFUSES. On a steep wall the DEM reads
 // somewhere ON the wall, so a reading between the two stated elevations means neither pin is placed
-// and both inherited a crag-level coordinate. Measured on WA: 6 of 13 pairs attributed, 7 where the
-// local relief is larger than the disagreement and the ground cannot separate them. Forcing those
-// into a winner would manufacture an answer out of noise.
+// and both inherited a crag-level coordinate. Forcing those into a winner would manufacture an
+// answer out of noise.
+//
+// MEASURED ON WA: 9 of 20 pairs attributed, 10 the ground cannot separate, 1 where NEITHER pin is
+// placed. That line used to read "6 of 13" and was left behind when this category was widened from
+// 13 findings to 20 — the counts stayed right while the sentence describing them went stale, which
+// is the failure CLAUDE.md records for audits generally. RE-RUN `--ground` WHENEVER CATEGORY 2
+// CHANGES, and quote this run rather than a remembered number.
+//
+// AND ATTRIBUTION IS WHERE IT ENDS, which was worth proving rather than assuming. All 9 attributed
+// pins were put through the gazetteer (scripts/oneoff/waypoint-repair/solve-selfcontradicting.mjs):
+// 0 solvable. 8 carry a climbers' name no federal gazetteer holds — Summerland, Jötunheim, Whine
+// Spire, Ice Box, Slippery Slab — and the ninth is an offset ("Pinto Rock base (end of NF-77)"),
+// which is not Pinto Rock. Those refusals share ONE reason, which is the tell that hid the layer-5
+// geometry bug, so they were re-asked with the weakest possible query (`UPPER(gaz_name) LIKE`)
+// across all 15 GNIS layers by probe-gnis-refusals-are-real.mjs: still nothing. The class is
+// mechanically exhausted, and repairing these needs a coordinate that does not exist anywhere.
 //
 // Usage: npm run audit:waypoint-geometry [-- --state wa|all] [-- --selftest] [-- --ground]
 
