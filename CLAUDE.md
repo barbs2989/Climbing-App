@@ -4507,6 +4507,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     the north is a different start"*. So the page names one road and gives directions up another,
     and which half is wrong is a judgement no column settles — the `audit:trailhead-road` section 2
     shape, inside a single row rather than across a cluster.
+  - **SETTLED, AND THE FIRST READING OF IT WAS WRONG.** "Which half is wrong is a judgement no
+    column settles" was itself the mistake: it was a judgement about the SIBLINGS, and the row had
+    the answer. Counting what each of its own records votes for — `road.name` *White Chuck Road (FR
+    23)*, `approach_logistics.trailhead` *White Chuck River Trailhead*, its Trailhead **waypoint**
+    the same, and its `approach` opening *"from the White Chuck River Trailhead (FS-23, currently
+    closed)"* — the row says White Chuck four ways, and only `road.driveNote` and `access.closures`
+    say FR 49. **The `driveNote` shares its first FIFTY characters with three siblings'**: copied
+    from a neighbour, the mechanism `audit:trailhead-road` section 2 exists for.
+    - I had guessed the opposite — that `road.name` was the stray, because four of five siblings
+      name FR 49. *Reasoning from the neighbours rather than from the row* is the same error as
+      reading a subtree aggregate as evidence about a row, and it would have deleted the one field
+      that was right.
+    - **The repair is a DELETION, deliberately not a rewrite.** No White Chuck `driveNote` exists
+      anywhere in the catalog to copy, so writing one would be research typed into a repair script —
+      the thing `fix-road-blocks-from-a-named-sibling.mjs` is built to make impossible. Removing a
+      false direction loses nothing: `road.name` and `road.status` still name the road and its
+      closure, and the route's own approach prose describes the walk.
+      `audit:trailhead-road` reports 0 contradictions in every section afterwards.
+    - **TWO THINGS ARE STILL REPORTED RATHER THAN REPAIRED, and both are one sentence of research
+      away rather than a judgement.** The `road.status` expiry (T0 above) — and note the catalog
+      already holds the answer on a DIFFERENT route: `wa_sitkum_spire_standard` records the same FS
+      Road 23 order, same MP 3.7, as *"originally through Dec 31, 2025, and still active per spring
+      2026 NF alerts"*. And `access.closures` still says the FR 49 corridor runs *"to this
+      trailhead"*, which is false here while its wilderness-wide first clause is true — clearing the
+      whole value would lose a true statement, so it needs an edit rather than a deletion.
+    - **`wa_glacier_peak_sitkum_glacier` is the MIRROR and is deliberately left alone.** Its
+      `road.name` and trailhead say FR 49 while its `approach` prose opens *"From the White Chuck
+      River Trailhead (2,350 ft, end of White Chuck River Road/FR 23)"*. That is not the same defect
+      inverted: the Sitkum Glacier route is historically approached from White Chuck and parties use
+      North Fork Sauk now that FR 23 is shut, so the road block may be CURRENT and the prose
+      HISTORICAL. Which is right is a question about the world, not about the catalog.
   - **TWO detectors were built for that and both were measured and REJECTED — recorded so nobody
     re-derives them.** *Forest order numbers* looked ideal, since an order number is an exact
     identifier needing none of the six tightenings `audit:trailhead-road` required: the catalog
