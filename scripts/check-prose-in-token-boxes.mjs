@@ -170,7 +170,7 @@ function leafBoxes(html) {
   return out;
 }
 
-const TABS = ["overview", "conditions", "planner", "safety", "photos", "ranks"];
+const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners"];
 const findings = new Map();
 let boxes = 0, rendered = 0;
 

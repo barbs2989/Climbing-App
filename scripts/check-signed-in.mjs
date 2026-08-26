@@ -488,7 +488,7 @@ try {
   // certifies a modal nobody looked at, which is strictly worse than asking for a second
   // distinguishing line -- and `render-settle` already masks digits for exactly this reason.
   const lineKey = (l) => l.trim().replace(/\d+/g, "#");
-  const TABS = ["me", "today", "crew", "routes", "logbook", "discover"];
+  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks"];
   const baselines = {};
   for (const t of TABS) {
     await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });
