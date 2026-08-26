@@ -9755,3 +9755,69 @@ Web access this run: WebSearch worked throughout. Direct WebFetch to reference d
 (fs.usda.gov) was blocked by network egress policy, consistent with prior batches' notes.
 
 Next batch continues after `wa_mount_constance_north_chute` in the id-ordered scope.
+
+## Batch 144 — 2026-08-26 (pass 3)
+
+Routes: `wa_mount_constance_terrible_traverse`, `wa_mount_constance_west_arete` (Mount
+Constance); `wa_mount_crowder_northeast_ridge`, `wa_mount_crowder_southwest_route` (Mount
+Crowder); `wa_mount_cruiser_nw_face_corner`, `wa_mount_cruiser_south_corner` (Mount Cruiser);
+`wa_mount_custer_standard` (Mount Custer); `wa_mount_daniel_daniel_glacier` (Mount Daniel).
+
+**Process note before the findings: this exact 8-route batch was already audited in pass 2**
+(Batch 80, 2026-08-08, five parallel research agents) — SQL was drafted
+(`audits/sql/2026-08-08-batch-80.sql`) but has evidently never been applied to the live
+database. A direct read of all 8 rows today shows every one of batch 80's fixes still
+outstanding except one (Cruiser South Corner's `road.status`, which is now correct — either
+applied by hand or a partial/earlier pass; its sibling route and everything else was not).
+Rather than skip re-verifying since "it was already found," each item below was independently
+re-confirmed against a fresh source today (18 days on, facts can go stale either direction),
+and a new SQL file was written reflecting the current live state rather than assuming batch
+80's file is still accurate to paste as-is.
+
+**Confirmed errors, fixed (SQL in `audits/sql/2026-08-26-batch-144.sql`):**
+- `wa_mount_constance_west_arete`: `gear` array called the rock "granite," contradicting this
+  same row's own `descent_text` ("pillow-basalt rock"). Re-confirmed via WA DNR and NPS
+  geology pages: Mount Constance is Eocene pillow basalt, Crescent Formation — not granite.
+- `wa_mount_crowder` (area) + both routes' `approach_logistics.peakLat/peakLng`: summit
+  coordinate (48.7976266, -121.352631) is a ~50 m outlier. Re-confirmed via Wikipedia
+  (48.7977°N 121.3519°W), matching the Northeast Ridge route's own summit waypoint
+  (48.79778/-121.35194) — a second coordinate source was mixed into the area row and both
+  routes' logistics blocks.
+- `wa_mount_cruiser_nw_face_corner`: `road.status` still says "Closed as of 2026 due to the
+  Bear Gulch Fire closure order," directly contradicting sibling route South Corner (same
+  trailhead, same road), whose `road.status` correctly says the road reopened. Re-confirmed
+  via WebSearch against fs.usda.gov/r06/olympic (Bear Gulch Fire page): FR-24 and the
+  Staircase entrance reopened July 8, 2026 and remain open as of this audit (Aug 26) — only
+  FS-2451/Copper Creek Trail, not used by this route, stay closed.
+- `wa_mount_cruiser_nw_face_corner`: `access.closures` separately claims the same road/
+  entrance closed "through at least Oct 1, 2026" — same stale claim, same fix. Flapjack
+  Lakes Trail/Gladys Divide (this route's actual approach) is left marked closed — WebSearch
+  today (AllTrails/WTA) still shows the Gladys Divide Primitive Trail closed for burn-scar
+  recovery with no reopening date, so that part of the existing text is still accurate.
+- `wa_mount_daniel` (area) `prominence_ft` (3508): re-confirmed via WebSearch — sources
+  consistently give 3,480 ft.
+- `wa_mount_daniel_daniel_glacier` `max_angle` (56): re-confirmed against The Mountaineers'
+  own route page (mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier),
+  "Grade II with 35 degrees snow and/or ice" — this row's own `beta` text matches that page's
+  description almost verbatim.
+
+**Still flagged, not fixed (no new source found, unchanged from batch 80):** Mount Crowder
+Southwest Route's `fa` field and its own `corrections` field still directly contradict each
+other on whether the 1962 FA party climbed this line or the NE Ridge. Both Cruiser routes'
+`permit` field still claims a Northwest Forest Pass is required, contradicting each row's own
+`access.passRequired` ("no Northwest Forest Pass needed... inside the National Park
+boundary") — not confirmed enough to pick a side. Mount Cruiser NW Face/Corner's existence/
+grade/FA (Wayne Wallace & David Parker, 2004) still not independently corroborated beyond a
+low-confidence search snippet.
+
+**Confirmed correct, no fix needed:** Mount Custer Standard's elevation (8,630 ft),
+prominence (1,230 ft — note the row's own `data_quality.gaps` cites a different, unconfirmed
+1,314 ft figure, unchanged, text-only), FA (Dawe/Mason/Teichman, 1958), and Depot Creek
+approach all re-corroborated. Mount Crowder's 1962 FA party (Magnusson/Ardussi/Mech/
+Schmechel) confirmed. Mount Cruiser South Corner's road status (see above) and Olympic NP
+permit/fee structure confirmed.
+
+Web access this run: WebSearch worked throughout. Direct WebFetch to reference domains
+(fs.usda.gov) was blocked by network egress policy, consistent with prior batches' notes.
+
+Next batch continues after `wa_mount_daniel_daniel_glacier` in the id-ordered scope.

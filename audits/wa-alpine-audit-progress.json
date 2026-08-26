@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_mount_constance_north_chute",
+    "last_processed_id": "wa_mount_daniel_daniel_glacier",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3057,6 +3057,23 @@
                 "wa_mount_constance_north_chimney",
                 "wa_mount_constance_north_chute"
             ]
+        },
+        {
+            "batch_number": 144,
+            "date": "2026-08-26",
+            "route_ids": [
+                "wa_mount_constance_terrible_traverse",
+                "wa_mount_constance_west_arete",
+                "wa_mount_crowder_northeast_ridge",
+                "wa_mount_crowder_southwest_route",
+                "wa_mount_cruiser_nw_face_corner",
+                "wa_mount_cruiser_south_corner",
+                "wa_mount_custer_standard",
+                "wa_mount_daniel_daniel_glacier"
+            ],
+            "findings_fixed": 6,
+            "findings_summary": "This exact batch was already audited in pass 2 (batch 80, 2026-08-08); all 5 fixes drafted there (Constance West Arete gear granite->basalt, Crowder area+2 routes coordinate outlier, Cruiser NW Face/Corner stale Bear Gulch Fire road status) were re-confirmed still live/uncorrected in the DB 18 days later and independently re-verified against fresh sources today, plus a 6th (Cruiser NW Face/Corner access.closures, also drafted in batch 80 but unapplied). Recommend applying audits/sql/2026-08-26-batch-144.sql (supersedes the unapplied 2026-08-08-batch-80.sql) rather than letting a future pass re-find the same items a third time. Mount Custer Standard and the Crowder FA self-contradiction remain as previously flagged (no new source found); Cruiser permit vs access.passRequired NW-Forest-Pass contradiction also still open, unresolved.",
+            "sql_file": "audits/sql/2026-08-26-batch-144.sql"
         }
     ]
 }
