@@ -868,11 +868,33 @@ function TrailheadCard({route,onEdit}){
   const [copied,setCopied]=useState(false);
   const al=route.approachLogistics||{};
   const wp=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||null;
-  const name=al.trailhead||(wp&&wp.name)||null;
-  const lat=al.trailheadLat!=null?al.trailheadLat:(wp&&wp.lat!=null?Number(wp.lat):null);
-  const lng=al.trailheadLng!=null?al.trailheadLng:(wp&&wp.lng!=null?Number(wp.lng):null);
-  const hasCoord=lat!=null&&lng!=null&&!isNaN(lat)&&!isNaN(lng);
-  const elev=(wp&&wp.elev!=null)?wp.elev:null;
+  /* THE DESTINATION COMES FROM trailheadPoint(), THE SAME FUNCTION THE MAP AND BOTH "Directions
+     to…" BUTTONS USE. This card resolved approach_logistics FIRST and the pin second — the exact
+     opposite precedence — so on 290 routes the map drew a pin in one place while this card's
+     Directions link, its copy-to-clipboard value and its "To the peak" bearing all pointed
+     somewhere else. CLAUDE.md has recorded that split as user-visible since the trailhead sweep;
+     #1215 consolidated two of the three surfaces and this is the third.
+     Consistency is the whole fix. WHICH record is true stays a data question — CLAUDE.md is
+     explicit that swapping a priority to settle that would only move the error — but a page must
+     not offer two destinations for one trailhead. */
+  const tp=trailheadPoint(route);
+  const lat=tp?Number(tp.lat):null,lng=tp?Number(tp.lng):null;
+  const hasCoord=!!tp;
+  /* THE NAME DOES NOT SIMPLY FOLLOW THE COORDINATE, and measuring is what settled it: taking the
+     pin's name wholesale changed 530 cards and nearly all were DOWNGRADES — "Killen Creek
+     Trailhead (Trail #113, FR-2329)" losing its road and trail number to a bare "Killen Creek
+     Trailhead". approach_logistics.trailhead is the curated field and where both records mean the
+     same place it is simply better copy.
+     It is only wrong when the two records mean DIFFERENT places, and the measured distribution
+     says where that boundary is rather than leaving it to taste: the split runs CONTINUOUSLY to
+     457 m (p50 46, p90 290 — one trailhead recorded twice, imprecisely) and then jumps straight to
+     5,733 m. Nothing lies between. The four beyond it are peaks with two GENUINE approaches, where
+     the logistics name really is describing the other one, so those four take the pin's name. */
+  const _nameFollows=!!(tp&&!tp.derived&&tp.alt&&distMiles(tp,tp.alt)*1609.34>1000);
+  const name=(_nameFollows&&tp.name)?tp.name:(al.trailhead||(wp&&wp.name)||(tp&&tp.name)||null);
+  /* The elevation is the PIN's, so it may only be shown beside the PIN's coordinate. Printing a
+     pin's height next to a logistics coordinate welds two records into one claim. */
+  const elev=(tp&&wp&&wpPlaced(wp)&&Number(wp.lat)===Number(tp.lat)&&Number(wp.lng)===Number(tp.lng)&&wp.elev!=null)?wp.elev:null;
   const road=route.road||{};
   // Straight-line only, and labelled as such — the trail is always longer, and a "distance to
   // the peak" a climber mistook for trail mileage would understate the day.

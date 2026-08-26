@@ -22,10 +22,9 @@
 //                  naming Crew:Friends.
 //   5. groups    — revert the Crew:Groups fix.                                     MUST FAIL,
 //                  naming Crew:Groups.
-//   6. invites   — revert the crew-invites heading.                                MUST PASS,
-//                  and that is a recorded coverage GAP, not a success: the fixture has no
-//                  pending crew invite, so "No crew invites" is on screen in both runs and
-//                  neither rule can see it. See the case for the stale-bookkeeping rule.
+//   6. invites   — revert the crew-invites heading.                                MUST FAIL,
+//                  naming Crew:Requests. It expected a PASS until the fixture gained a
+//                  pending invite; that PASS was a stale-bookkeeping alarm and it fired.
 //   7. ranks     — revert the Leaderboards fix.                                   MUST FAIL,
 //                  naming Ranks. This one is in ClimbMatchCore.jsx, not ClimbMatch.jsx.
 //   8. nothing   — no edit at all.                                                 MUST PASS.
@@ -99,25 +98,25 @@ const CASES = {
     expect: "fail",
     names: /Crew:Groups/,
   },
-  // THE CREW-INVITES HEADING IS UNMEASURABLE WITH THIS FIXTURE, and this case records that
-  // rather than pretending otherwise. It was written as expect:"fail" and MISSED -- correctly.
+  // THE ALARM FIRED AND THIS CASE CHANGED BECAUSE OF IT.
   //
-  // "No crew invites" is on screen in the HEALTHY run too, because the fixture's mate JOINS the
-  // crew rather than being left invited, so there is no pending invite either way. Rule 2 only
-  // flags a claim the OUTAGE INTRODUCED, so it stays quiet, and rule 1 is satisfied by the
-  // friend-requests section beside it, which does say something went wrong. The fix is real; the
-  // guard simply cannot see it. An absence the fixture happens to share is unmeasurable, not
-  // absent -- the same reason a zero-row column is unguarded by construction elsewhere.
+  // It used to expect a PASS, with a comment saying the crew-invites heading was unmeasurable:
+  // "No crew invites" was on screen in the HEALTHY run too, because the fixture's mate JOINED
+  // the crew rather than staying invited. Rule 2 only flags a claim the OUTAGE INTRODUCED, so it
+  // stayed quiet, and rule 1 was satisfied by the friend-requests section beside it -- leaving a
+  // real gate on main that no guard could see. An absence the fixture happens to share is
+  // unmeasurable, not absent.
   //
-  // So it expects a PASS, and it is a STALE-BOOKKEEPING alarm: give the fixture a pending crew
-  // invite and this case starts reporting FALSE POSITIVE, which is the signal that the coverage
-  // arrived and the case should become expect:"fail". Same shape as check:a11y-badges' arealatest
-  // case, which asserts its own gap so the gap cannot rot.
+  // The fixture now seats the owner as INVITED in a second crew owned by the mate, so the
+  // healthy run shows a pending invite and the failing run must say it could not be read. That
+  // is the coverage arriving, which is exactly what the PASS was there to prompt -- so the case
+  // becomes expect:"fail" rather than being quietly deleted.
   invites: {
     file: "ClimbMatch.jsx",
     from: '>{crewInvitesUnavailable?"Couldn’t load your crew invites":"No crew invites"}</div>',
     to: '>No crew invites</div>',
-    expect: "pass",
+    expect: "fail",
+    names: /Crew:Requests/,
   },
   // The Ranks tab, which was NEVER WALKED until the TABS list was corrected: it said "Me",
   // and NAV's last two entries are "Ranks" and "Profile". So this case pins two things at once

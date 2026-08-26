@@ -548,11 +548,16 @@ function wpIs(w,t){return wpType(w)===t;}
 function trailheadPoint(route){
   if(!route)return null;
   const wps=route.waypoints||[],al=route.approachLogistics||{};
+  /* `alt` is the OTHER record's point when one exists and was not the one chosen. It is here so
+     that NOTHING ELSE has to read approach_logistics.trailheadLat — this function owns the whole
+     trailhead question, and a second reader is how the precedence split happened in the first
+     place. check:waypoint-placement enforces that it stays the only one. */
+  const _logi=wpPlaced({lat:al.trailheadLat,lng:al.trailheadLng})?{lat:Number(al.trailheadLat),lng:Number(al.trailheadLng),name:al.trailhead||"Trailhead"}:null;
   const pin=wps.find(w=>wpIs(w,"Trailhead")&&wpPlaced(w));
-  if(pin)return{lat:pin.lat,lng:pin.lng,name:pin.name||pin.label||"Trailhead",derived:false};
-  if(wpPlaced({lat:al.trailheadLat,lng:al.trailheadLng}))return{lat:al.trailheadLat,lng:al.trailheadLng,name:al.trailhead||"Trailhead",derived:true};
+  if(pin)return{lat:pin.lat,lng:pin.lng,name:pin.name||pin.label||"Trailhead",derived:false,alt:_logi};
+  if(_logi)return{lat:_logi.lat,lng:_logi.lng,name:_logi.name,derived:true,alt:null};
   const named=wps.find(w=>wpPlaced(w)&&/trailhead|parking|\bth\b/i.test(String(w.name||w.label||"")));
-  return named?{lat:named.lat,lng:named.lng,name:named.name||named.label||"Trailhead",derived:false}:null;
+  return named?{lat:named.lat,lng:named.lng,name:named.name||named.label||"Trailhead",derived:false,alt:null}:null;
 }
 function guessWpType(name){const n=(name||"").toLowerCase();if(/trail\s*head|\bth\b|parking|gate/.test(n))return "Trailhead";if(/camp|bivy/.test(n))return "Campsite";if(/summit|peak|\btop\b/.test(n))return "Summit";if(/water|creek|spring|stream|lake/.test(n))return "Water";if(/junction|fork|split|trail/.test(n))return "Junction";if(/hazard|danger|crevasse|rockfall/.test(n))return "Hazard";if(/topout|top-out/.test(n))return "Topout";return "Junction";}
 function parseGpxText(text){try{const doc=new DOMParser().parseFromString(text,"application/xml");if(doc.getElementsByTagName("parsererror").length)return null;const num=function(v){const n=parseFloat(v);return isNaN(n)?null:n;};const wpts=Array.from(doc.getElementsByTagName("wpt")).map(function(el){const lat=num(el.getAttribute("lat")),lon=num(el.getAttribute("lon"));if(lat==null||lon==null)return null;const nameEl=el.getElementsByTagName("name")[0];const eleEl=el.getElementsByTagName("ele")[0];const nm=nameEl?nameEl.textContent.trim():"";const elev=eleEl?num(eleEl.textContent):null;return {lat:lat,lng:lon,name:nm,elev:elev!=null?Math.round(elev*3.28084):null,type:guessWpType(nm)};}).filter(Boolean);const trkpts=Array.from(doc.getElementsByTagName("trkpt")).map(function(el){const lat=num(el.getAttribute("lat")),lon=num(el.getAttribute("lon"));if(lat==null||lon==null)return null;const eleEl=el.getElementsByTagName("ele")[0];const elev=eleEl?num(eleEl.textContent):null;return [lat,lon,elev!=null?Math.round(elev*3.28084):null];}).filter(Boolean);if(!wpts.length&&!trkpts.length)return null;return {waypoints:wpts,track:trkpts};}catch(e){return null;}}
