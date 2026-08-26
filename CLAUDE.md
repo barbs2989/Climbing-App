@@ -16,6 +16,7 @@ npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
 npm run check:boot # index.html's boot placeholder still matches the real nav
+npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
@@ -84,6 +85,7 @@ npm run check:migrations # two migrations must never share a number (in build)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run audit:area-parents # is every area filed under the place it belongs to?
+npm run audit:coord-origin # is every coordinate a route stores actually NEAR the route?
 npm run audit:waypoints    # is each waypoint actually on the route's own gpx track?
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
@@ -133,6 +135,59 @@ a build error, but a screen that renders wrong or not at all.
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
+- **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
+  has SEVEN tabs and five browser guards walked six.** `NAV` is
+  today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
+  `check:overlay-scroll`, `check:signed-in` and `check:zero` each hard-coded the same six, omitting
+  `ranks`. Static — migration-free, no browser, no DB — so it sits in `npm run build`.
+  - **Not drift: the same wrong list copied five times.** `ranks` has been in `NAV` since the first
+    commit and every one of those guards was written long afterwards, so none of them ever lost the
+    tab — they never had it. `check:outage` had the identical hole and it was fixed **by hand** (its
+    own header records walking *"five tabs and a duplicate"*); nothing carried that across, and
+    nothing could. Same argument for a script over a note as `check:crew-member-readers`.
+  - **The Leaderboards screen was not empty, which is the point.** Its `YOU` badge is a separate
+    `<span>` held off the climber's name by `marginLeft`, and the row is a `clickable()` control, so
+    Chrome announced **`"@nathanclimbsYOU"`** — precisely the #740 defect `check:a11y-badges` exists
+    for, on the one screen it could not see. A coverage hole is invisible by construction: *a screen
+    nobody opens is not a screen with no findings, it is not a screen.*
+  - **It caught a foreign entry the other way round too.** `check:token-boxes` walked a ROUTE
+    sub-tab called `ranks`, which does not exist — the bar is
+    overview/planner/conditions/safety/partners/photos — so it spent a walk on an id the route page
+    has no branch for and **never inspected Partners at all**, while its own header claimed six
+    sub-tabs.
+  - **Both vocabularies are READ from the app, never restated**: `NAV` from `ClimbMatch.jsx`, the
+    sub-tab bar from `RouteDetail.jsx`, each with `ANCHOR LOST` if it moves. Any array of string
+    literals under `scripts/` holding **three or more** members of one vocabulary is a list *of* that
+    vocabulary and must then hold all of it and nothing foreign. Three is the threshold because a
+    list naming three of these ids is not doing so by accident, while a lone `"today"` or `"photos"`
+    is more likely a different concept entirely.
+  - `scripts/oneoff/` is excluded: a one-off probe is scoped to whatever it was written to measure
+    and has no business being held to full coverage.
+  - **`PARTIAL_ON_PURPOSE` records reasons, not passes**, and is keyed on the exact values —
+    an exemption is a claim about *one* list, so any edit has to be re-justified rather than
+    inheriting somebody else's reasoning. Three entries today (`check:anniversary`'s notification
+    surfaces, `check:camping`'s can-this-probe-fail list, `check:ui`'s second interactive sweep). A
+    **stale** entry fails three ways — completed, changed, or gone — and the diagnosis names which,
+    because *"you finished it, drop the exemption"* and *"you changed it, say why"* need different
+    repairs.
+  - **An earlier version had the COMPLETE branch behind the values key, where nothing could reach
+    it.** Dead code in a guard reads as coverage and is not; **only the injection found it**, since
+    the branch never fired on a clean tree either.
+  - Fails **closed** four ways: a missing `NAV`, a missing sub-tab bar, a vocabulary that parsed
+    short (a two-entry `NAV` would make every list look complete), fewer than 20 scripts walked, or
+    zero lists classified.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-screen-list-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically. Cases 1 and 2 are the real
+    historical defects. **Cases 5 and 8 must stay SILENT** — a complete list and a below-threshold
+    list are both correct work, and a guard that flagged them would tell authors to break it.
+  - The `YOU` badge sits on **two** controls and a walk can only ever see one: the list row, and a
+    your-rank card gated on `meIdx >= 100`. Six climbers are on the demo board and six on the
+    `check:signed-in` fixture, so **no fixture in the repo can reach that card**. Both go through one
+    `lbRowName()` so they cannot drift, and
+    `scripts/oneoff/probe-leaderboard-your-rank-card.mjs` seeds 120 climbers into the exported seed
+    array (in the probe, never in the app) to render it — `"#126, Nathan Barber, you, Salt Lake City,
+    UT, 0 pts"`. It also asserts the badge **still renders**: a probe that passed because the badge
+    was deleted would be certifying the feature's removal.
 - **`check:no-nul`** asserts that no source file holds a **literal NUL byte**. Git classifies a file
   containing one as **binary**, so the whole file renders in a pull request as `Bin 0 -> 12464 bytes`
   or as `+0/-0` and **nobody can read the diff**. Static — no browser, no DB, no network — so it sits
@@ -1406,6 +1461,35 @@ a build error, but a screen that renders wrong or not at all.
     120 assertions green; `check-rappel-readers.mjs` was **renamed** to `check-correction-readers.mjs`
     by #926; `BivyPanel` was correctly classified deliberate and re-mounted. Four items across 500
     commits is a reading list, not noise — the point is that each is settled in a minute.
+  - **IT HAPPENED AGAIN ON 2026-08-26, THIS AUDIT REPORTED `0`, AND THAT IS WHY IT NOW HAS AN
+    `outage-flag` PATTERN.** #1239 shipped `filedReportsUnavailable` and `catchesUnavailable` at
+    10:17; **#1248 merged 57 minutes later from a branch based before it and removed both** — plus
+    `CatchLedger`'s matching prop and #1239's own probe file. #1248's subject and body are entirely
+    about milepost clustering in `audit:trailhead-road` and never mention the app. Restored by
+    cherry-picking #1239 onto main.
+    - **Every pattern above walked past it, for a reason worth stating precisely:** an
+      `xUnavailable` flag is not exported, not top-level, and not a `useCallback`/`useMemo`. It is
+      declared **mid-declarator** on a dense line —
+      `const myFiledQ=useMyFiledReports(!!uid),filedReportsUnavailable=!!(uid&&myFiledQ&&myFiledQ.isError),…`
+      — so no start-of-line anchor can reach it. This is the audit's own header's point (*"a
+      component-scoped helper is exactly what a stale-base squash drops"*) landing on a shape its
+      patterns could not express.
+    - **NOTHING ELSE COULD SEE IT EITHER, because the revert was internally CONSISTENT**: the
+      component lost `unavailable` from its signature *and* the call site lost the argument, so
+      `check:dead-props` stayed green, the screen still rendered, and the only symptom is a
+      sentence that is false exactly when nobody is looking. That consistency is the general reason
+      a stale-base squash is invisible — it reverts a whole change, not half of one.
+    - **Worth its own pattern rather than a general widening.** These are the most collision-prone
+      declarations in the repo right now: **11 of them, added across ~6 PRs by parallel sessions
+      all editing the SAME two dense lines** in `ClimbMatch.jsx`. Measured for noise before
+      shipping — against #1239's diff it finds precisely the two reverted names, and across **150
+      first-parent commits it adds 0 findings** (114 tracked, 0 absent). `<noun>Unavailable` is an
+      established convention, so this is a named class rather than the haystack the header warns
+      about.
+    - **Validated against the real incident**, the standard this audit already sets: pointed at
+      `68bb307` with a 10-commit window it names both flags, the PR that added them and the PR that
+      removed them, classified SILENT. A 6-commit window reports clean — **the window has to reach
+      the ADDING commit**, which is the operational trap when using this audit to check a suspicion.
   - **THE OBVIOUS TIGHTENING WOULD HAVE EXCUSED #776 ITSELF, so it was measured and REJECTED.** All
     three false SILENTs look like supersessions, which suggests excusing a removal when the same
     commit ADDS a token sharing a significant word (`listSlug`→`routeInList` share *list*;
@@ -2471,6 +2555,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **23 of the 39 are LINEAR or AREAL** — cliff bands, traverses, drainages, ridge crests — and a
       label point cannot locate an edge. Those have no coordinate to find, not a coordinate nobody
       has looked for.
+  - **IT COST 37s AND NOW COSTS 20s, and the profile is recorded because the obvious suspect was
+    wrong.** A build-chain guard is paid by every author and every CI run. The suspects were the
+    esbuild bundle and the SSR render; measured, the bundle is **0.4s** and both renders together
+    are **0.5s**. The cost was **parsing 1.5 MB of JSX twice** — sections 1b and 1c each parsed and
+    traversed both files independently (14.6s + 7.5s) — and Babel **scope resolution**, which ran on
+    every array-method receiver whether or not the receiver text had already answered the question.
+    One parse and one traverse per file with both visitors, and `getBinding` only when the name has
+    not already matched. Same ASTs by construction, so nothing asserted changed.
+    - **Quote 37s, not the 2m29s this was first measured at.** That reading was taken while the box
+      was running injection suites and CI for several sessions at once — the
+      [[chrome-ext-has-no-site-permissions]] lesson, which is about load rather than Chrome. A
+      timing taken on a loaded box is not a profile.
+    - **The probe process rendered in 0.5s and then sat for another 2.4s** waiting for the event
+      loop to drain, and that linger is **unbounded**: one long-lived timer or retrying fetch added
+      to the app and this build gate HANGS rather than fails, which is the worst way for a guard to
+      break. It writes its markup to a FILE and calls `process.exit(0)` — a file, not stdout,
+      because this repo already records that `process.exit()` truncates a **pipe**, and
+      `writeFileSync` completes before exit by construction so the two fixes do not fight.
+    - The payload carries **no newline**; the two markers delimit it. A `\n` inside the generated
+      probe collapsed into a real newline and broke the string literal — sidestepping the escape
+      beats adding another backslash to it.
+    - **Re-run the 14 injection cases after any change here, and judge on those rather than on the
+      clock.** An optimisation that makes an assertion VACUOUS still prints `ok` and still runs
+      faster. 14/14 after the change, including the four that must stay silent.
   - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
     the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
     dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
@@ -3772,6 +3880,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Read-only, anon key, **fails closed** on an empty read: zero routes makes every cluster look
     consistent, which is the false-pass direction. Not a build gate — a property of the DB, not the
     checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+  - **SECTION 3 CLUSTERS BY MILEPOST, BECAUSE SECTIONS 1 AND 2 CONTRADICT THIS AUDIT'S OWN HEADER.**
+    That header says *"the unit of truth is the ROAD, not the route"* — and both sections cluster by
+    **trailhead coordinate** within 500 m. A road serves many trailheads, so two routes describing
+    ONE closure from different trailheads never meet. This audit reported **0 across all 205,543
+    routes** while the catalog said both *"Closed as of Dec 2025 — Mountain Loop Highway landslide at
+    MP 37.5 blocks access"* and *"Open (… reopened mid-May 2026 after a landslide closure near
+    milepost 37.5)"*. 49 routes name that corridor across **17 trailheads**.
+    - **A MILEPOST is the key that works**: an exact point on an exact road, naming one closure
+      EVENT. The road NAME alone is far too broad — on that corridor it also covers the Monte Cristo
+      Road, separately and legitimately vehicle-closed, and an ordinary winter gate. Forest ORDER
+      NUMBERS were measured and rejected earlier as a detector for a class of zero; mileposts had
+      not been tried.
+    - **PRECISION WAS MEASURED BEFORE IT SHIPPED and the first run was 33%** — 3 disputed, 1 real,
+      the same precision section 2 shipped at and was rightly criticised for. Four suppressions,
+      each a distinct way road prose defeats this key, **all four found by READING the output rather
+      than trusting the count**: **seasonal** (a gate that closes every winter and reopens every
+      spring says both, truthfully — without it the four largest clusters were SR-20 winter
+      mileposts, MP 134 across **62** routes; 271 of 514 mentions suppressed); **hypothetical**
+      (*"…when fully open"* is a counterfactual, and it put two Suiattle routes in the lifted column
+      while their own status said CLOSED); **a bare "Closed"** (the in-force needle demanded *"is
+      closed"*/*"closes"*, so *"Closed to vehicles at the Glacier Creek bridge (~MP 3.0)"* matched
+      NOTHING and the row counted only as lifted, on a HISTORICAL reopening narrated inside it);
+      and **a route on both sides is NARRATING, not disputing** — judged per ROUTE, never per value.
+    - `wa_kololo_peaks_standard` was the one finding and is **fixed**: three rows record the
+      reopening against its one, and the reopening is the later claim, so the repair needed no
+      research at all. `fix-kololo-stale-mountain-loop-closure.mjs` **re-asserts both witness rows
+      at apply time** — if the catalog stops recording the reopening the script has no basis and
+      refuses.
+    - Injection-tested **5/5**, and the **four that must stay SILENT are the point**: a case proving
+      only that it fires is satisfied by a detector that flags everything.
+
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
@@ -4312,6 +4451,65 @@ the correction knows the screen is wrong, and they have no way to report it.
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
+- **`audit:coord-origin`** asks whether every coordinate a route stores is actually **near the
+  route**, anchored on its own `areas.lat/lng`. Read-only, report-only; **not** a build gate — a
+  property of the DB rather than of the checkout, the reasoning that keeps `check:counts` out.
+  - **THE GAP IS STRUCTURAL, AND IT IS WHY FOUR AUDITS WERE ALL SILENT.** Every existing geometric
+    audit compares a route's records against **one another** — `audit:waypoints` (pins vs its own
+    track), `audit:waypoint-track` (same question, other tolerances), `audit:waypoint-geometry`
+    (pins vs each other), `audit:trailhead-agreement` (the two trailhead copies). When a **whole
+    blob is foreign** those records agree with each other perfectly, and *two records agreeing is
+    one claim counted twice*. A wholesale contamination is invisible to all of them by
+    construction. The AREA coordinate is a third record none of them derives from.
+  - **`audit:identity` is the near miss and its own section 2 says why it cannot help**: it looks
+    for prose **naming a foreign peak**. The founding blob names no peak at all — only *"Pacific
+    Crest Trailhead at Rainy Pass"* and *"South-southwest via open timber basin"*. The
+    contamination was in the COORDINATES, which are the most identifying thing in the row and were
+    the one thing nothing compared.
+  - **THE FOUNDING CASE: two out-of-state routes carrying Washington's Cutthroat Peak wholesale.**
+    `ar_cutthroat` (an **Arkansas** 5.11d sport route) and `az_cutthroat_trout` (an **Arizona**
+    5.9+ trad route) each stored a peak coordinate **10 m from `wa_cutthroat_peak`**, plus its
+    trailhead name, trailhead coordinate and trailhead direction — every field. The only thing
+    either shares with that peak is the word *Cutthroat* in its **route name**. `a name is not an
+    identity`, landing on coordinates this time rather than on an id or on prose. It was
+    user-visible: `TrailheadCard` would send an Arkansas sport climber to SR-20 and state a
+    bearing and distance to a summit 2,698 km away.
+  - **It also found the RESIDUE OF A REPAIR THIS FILE RECORDS AS DONE.** The `wa_true_grit` entry
+    above says the row was fixed — overview, beta and approach cleared, the genuinely-Coulee
+    hazards correctly kept. Both **waypoints** were missed and still sat 160 km away on Vesper
+    Peak. *An instance fixed by hand is not a class closed*, and the audit that would have caught
+    the remainder did not exist.
+  - **50 km is deliberately LOOSE, and the looseness is the point.** Three other audits already ask
+    whether a pin is precise; this one asks only whether the coordinate is in the right part of the
+    continent. A remote Pasayten summit really is ~30 km from its road and this file records 236 WA
+    routes legitimately over 8 km from their peak — a tight bound would rediscover those and bury
+    the thing this exists for.
+  - Fails **closed** four ways: zero routes, zero areas (every route would be unanchored and the
+    run would report a clean catalog), zero coordinates examined, and routes whose area carries no
+    coordinate are **counted and reported as not a clean verdict** rather than dropped.
+  - Injection-tested. `--inject=clean` is the case that matters: every coordinate moved onto its
+    own area must report **0**, which is what proves the audit measures distance rather than
+    always firing. `--inject=foreign` moves one pin to Everest and must report it.
+  - **TWO OTHER HYPOTHESES WERE MEASURED FIRST AND BOTH CAME BACK EMPTY**, recorded so nobody
+    re-derives them. *A read that never STARTED reading as one still in flight* — React Query v5
+    leaves a disabled query `isPending` forever, and `lib/db.js` gates 64 queries on things like
+    `enabled: !!id` — is a real mechanism and the app does not do it: **0** of the 21 lines that
+    render arriving-soon copy are gated on `isPending`, and the `!ready` ones are map-tile
+    readiness rather than a query. And *`check:read-failures` scans only `lib/db.js` while five
+    files do reads* is a genuine scope gap (186 of 248 exported functions) with **nothing in it**:
+    applying the guard's own lifted predicate to `lib/auth.js`, `lib/offline.js`, `lib/fire.js` and
+    `lib/mapKit.jsx` finds zero sites, and the single hit in `lib/db.js` is the one already
+    declared. *Measure the class before building the detector* — the discipline `audit:area-parents`
+    records after its first draft shipped 12 real findings out of 41.
+  - **Four findings, THREE different repairs** (`fix-foreign-coordinates.mjs`), because they are
+    three different defects: a wholesale foreign blob is **cleared**; a route whose every other
+    column also describes the far place is **misfiled and moves**; a stray pin among correct ones
+    would be a pin to fix. No coordinate is typed anywhere in that script — every operation is a
+    clear or a move to a declared area id, and the move is gated on **the row's own pins being
+    within 10 km of the destination**, so a wrong destination cannot be expressed.
+    `wa_up_in_arms` moved to `wa_concord_tower` on that gate: all eight siblings on `wa_upper_wall`
+    are 0-pitch crag routes and it is 6 pitches — the same non-prose discriminator that settled
+    `wa_south_face_direct`. `check:counts` confirms all 47,638 areas still agree afterwards.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
   the question `check:counts` cannot reach. `route_count` is verified against the subtree an
   area *has*, so it is exactly correct about a **wrong tree**; the ltree paths were
@@ -4444,6 +4642,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     the north is a different start"*. So the page names one road and gives directions up another,
     and which half is wrong is a judgement no column settles — the `audit:trailhead-road` section 2
     shape, inside a single row rather than across a cluster.
+  - **SETTLED, AND THE FIRST READING OF IT WAS WRONG.** "Which half is wrong is a judgement no
+    column settles" was itself the mistake: it was a judgement about the SIBLINGS, and the row had
+    the answer. Counting what each of its own records votes for — `road.name` *White Chuck Road (FR
+    23)*, `approach_logistics.trailhead` *White Chuck River Trailhead*, its Trailhead **waypoint**
+    the same, and its `approach` opening *"from the White Chuck River Trailhead (FS-23, currently
+    closed)"* — the row says White Chuck four ways, and only `road.driveNote` and `access.closures`
+    say FR 49. **The `driveNote` shares its first FIFTY characters with three siblings'**: copied
+    from a neighbour, the mechanism `audit:trailhead-road` section 2 exists for.
+    - I had guessed the opposite — that `road.name` was the stray, because four of five siblings
+      name FR 49. *Reasoning from the neighbours rather than from the row* is the same error as
+      reading a subtree aggregate as evidence about a row, and it would have deleted the one field
+      that was right.
+    - **The repair is a DELETION, deliberately not a rewrite.** No White Chuck `driveNote` exists
+      anywhere in the catalog to copy, so writing one would be research typed into a repair script —
+      the thing `fix-road-blocks-from-a-named-sibling.mjs` is built to make impossible. Removing a
+      false direction loses nothing: `road.name` and `road.status` still name the road and its
+      closure, and the route's own approach prose describes the walk.
+      `audit:trailhead-road` reports 0 contradictions in every section afterwards.
+    - **TWO THINGS ARE STILL REPORTED RATHER THAN REPAIRED, and both are one sentence of research
+      away rather than a judgement.** The `road.status` expiry (T0 above) — and note the catalog
+      already holds the answer on a DIFFERENT route: `wa_sitkum_spire_standard` records the same FS
+      Road 23 order, same MP 3.7, as *"originally through Dec 31, 2025, and still active per spring
+      2026 NF alerts"*. And `access.closures` still says the FR 49 corridor runs *"to this
+      trailhead"*, which is false here while its wilderness-wide first clause is true — clearing the
+      whole value would lose a true statement, so it needs an edit rather than a deletion.
+    - **`wa_glacier_peak_sitkum_glacier` is the MIRROR and is deliberately left alone.** Its
+      `road.name` and trailhead say FR 49 while its `approach` prose opens *"From the White Chuck
+      River Trailhead (2,350 ft, end of White Chuck River Road/FR 23)"*. That is not the same defect
+      inverted: the Sitkum Glacier route is historically approached from White Chuck and parties use
+      North Fork Sauk now that FR 23 is shut, so the road block may be CURRENT and the prose
+      HISTORICAL. Which is right is a question about the world, not about the catalog.
   - **TWO detectors were built for that and both were measured and REJECTED — recorded so nobody
     re-derives them.** *Forest order numbers* looked ideal, since an order number is an exact
     identifier needing none of the six tightenings `audit:trailhead-road` required: the catalog

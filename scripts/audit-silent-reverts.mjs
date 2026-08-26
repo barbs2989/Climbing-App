@@ -62,6 +62,27 @@ const PATTERNS = [
   /* Capitalised only: a lowercase `function x(` is often a throwaway inner helper, while a
      capitalised one is a component or a named domain helper whose loss blanks a screen. */
   { kind: "fn-decl", re: /^\+\s*function ([A-Z][\w$]*)\s*\(/gm, file: /\.(jsx?|mjs)$/ },
+  /* OUTAGE FLAGS, AND THIS ONE WAS ADDED BECAUSE THE AUDIT MISSED A REAL REVERT. On 2026-08-26
+     #1239 shipped `filedReportsUnavailable` and `catchesUnavailable`; #1248 merged 57 minutes
+     later from a branch based before it and removed BOTH, along with `CatchLedger`'s matching
+     prop and #1239's own probe file. Its subject and body are entirely about milepost clustering
+     in `audit:trailhead-road` and never mention the app. This audit reported `0 of them are
+     ABSENT at HEAD` for that window.
+     Why every pattern above walked past it: an `xUnavailable` flag is neither exported nor
+     top-level nor a useCallback/useMemo -- it is declared MID-DECLARATOR on a dense line, as
+     `const myFiledQ=useMyFiledReports(!!uid),filedReportsUnavailable=!!(uid&&myFiledQ&&myFiledQ.isError),...`.
+     So the match cannot be anchored to the start of a line.
+     It is worth its own pattern rather than a general widening, for the reason the header above
+     gives: these are the single most collision-prone declarations in the repo right now -- 11 of
+     them, added across ~6 PRs by parallel sessions all editing the SAME two dense lines in
+     `ClimbMatch.jsx`. And their loss is invisible by construction. The revert was internally
+     CONSISTENT (component prop removed as well as the call-site argument), so `check:dead-props`
+     stayed green, the screen still rendered, and the only symptom is a sentence that is false
+     exactly when nobody is looking.
+     Measured for noise before shipping: against #1239's own diff it finds precisely the two
+     reverted names and nothing else. The convention is established (`<noun>Unavailable`), so this
+     is a named class rather than "every identifier" -- the haystack the header warns about. */
+  { kind: "outage-flag", re: /^\+.*?\b([A-Za-z_$][\w$]*Unavailable)\s*=/gm, file: /\.(jsx?|mjs)$/ },
 ];
 
 const commits = git("rev-list", "--first-parent", `-n${N}`, REF).trim().split("\n").filter(Boolean);

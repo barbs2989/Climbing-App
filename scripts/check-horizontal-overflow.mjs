@@ -43,7 +43,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argvSelfTestOnly = process.argv.slice(2).includes("--selftest-only");
 const WIDTH = 390, HEIGHT = 844;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
 const log = (...a) => console.log(...a);
 
 async function claimPort(start, span = 40) {
