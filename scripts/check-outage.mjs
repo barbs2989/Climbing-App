@@ -184,7 +184,15 @@ const ROUTE = "RouteDetail";
 // that: RouteDetail was absent here, the table showed the same twelve screens as before, and the
 // run went green having asked nothing. Caught by reading the table for the row that should have
 // been added rather than by the exit code. ADD A NEW STOP HERE, not just to the walk.
-const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE];
+// The Logbook's FOURTH sub-tab. Its state is `lists` and its BUTTON SAYS "Areas" — a stop keyed
+// on the state name would never find the control, and would fail closed on a screen sitting right
+// there. #1238 put `searchesUnavailable` on this view and shipped it saying, in as many words,
+// that no walk reached it; this is that stop.
+const SUBTAB2 = "Logbook:Areas";
+// REPORT is the sole enumerator for BOTH the per-screen table and the two rules. #1234's first
+// version left its new stop out of it, so the guard opened the page, waited out the retry clock,
+// judged nothing, and passed. Adding a stop to the walk is not adding it to the guard.
+const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -372,6 +380,30 @@ async function walk(browser, base, session, fail) {
   // clean result rather than as a miss. Say which it was.
   out[SUBTAB] = /My Ascents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
+  // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `saved_searches`
+  // feeds a card here that says "No saved searches yet -- save a filter set from the Climbs page."
+  // to an account that has some; #1238 flagged it and could not demonstrate it, because
+  // `logbookTab` defaults to "objectives" and this walk stopped at that view and Completed.
+  //
+  // Clicked by TEXT, because these four buttons carry their own text and `aria-current`, and no
+  // aria-label -- tapByName queries [aria-label] and nothing else, so it would return false on a
+  // control sitting right there. The quoted `text="Areas"` is EXACT, which is what keeps it off
+  // "Saved areas" and "0 areas" on the same screen.
+  if (!(await tapByName(page, "Logbook"))) out.__navFail = (out.__navFail || []).concat("Logbook (for Areas)");
+  await settle(page);
+  const areas = page.locator(`text="Areas"`).last();
+  if (await areas.count()) await areas.click({ timeout: 5000 }).catch(() => {});
+  const areasText = await waitOutFetch(page, fail);
+  // Landmarks from the view's own cards, never from the copy under test: asserting on "saved
+  // searches" would make the landing check pass or fail for the same reason the VERDICT does,
+  // and a stop that cannot tell "did not land" from "landed and said nothing" is worse than none.
+  // CASE-INSENSITIVE, and that is not defensive tidying: these headings are uppercased in CSS and
+  // `innerText` returns the TRANSFORMED text, so the screen says "SAVED SEARCHES" where the source
+  // says "Saved searches". A case-sensitive match reported this stop as never landing while the
+  // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
+  // WITH`. Matching either case also survives someone dropping the text-transform later.
+  out[SUBTAB2] = /saved areas|offline library|saved searches/i.test(areasText)
+    ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Areas view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an
   // outage empties it back to a bare "Friends" -- so the selector has to accept both, which is
