@@ -12,6 +12,25 @@
 // REPORT-ONLY. The repair is a judgement per row (does this route keep this camp?), and a shared
 // corridor camp is CORRECT, so this must never become a sweep.
 //
+// THIS UNDER-REPORTS ITS OWN CLASS, AND THE WIDER VERSION WAS MEASURED AND REJECTED.
+// Reading the repair context for the 6 findings showed the problem is larger than the 6:
+// Mount Pilchuck (5,324 ft) carries EIGHT camps and SEVEN belong to other mountains — Three
+// Fingers (the Lookout, Tin Can Gap, Goat Flats, Saddle Lake), Whitehorse (x2) and Big Four.
+// Only "Bathtub Lakes basin, east of Mount Pilchuck" is actually its own. This audit caught
+// exactly ONE of those seven, because it requires the camp to name a distinctive UNIQUE PEAK and
+// "Tin Can Gap", "Goat Flats" and "Saddle Lake" name no peak at all.
+//
+// The obvious widening — drop the peak requirement and flag any camp whose name the route's own
+// prose never mentions — was built and measured (measure-foreign-camp-lists.mjs) and is NOT
+// shipped. Across 765 routes the ratio is smooth across every bucket with a median near 40-50%:
+// a route not mentioning most of its camps is NORMAL, so >=75% is not an outlier, it is 130
+// routes. The worst hit had 603 characters of prose — thin, not defective.
+//
+// So the prose test is CORROBORATION ON TOP OF a geometric signal, not a detector on its own.
+// That is why it is folded in per-finding here rather than used to select findings. Closing the
+// rest of this class needs a signal that says which TRAILHEAD a camp serves, which the catalog
+// does not record.
+//
 // WHY THE OBVIOUS SIGNAL IS TOO WEAK ON ITS OWN. "The camp names a different peak" describes
 // almost every correct camp in the catalog: Boston Basin serves Boston, Forbidden and Sahale, and
 // a shared camp is the entire point of a zone file. Elevation alone is no better — a traverse camp
