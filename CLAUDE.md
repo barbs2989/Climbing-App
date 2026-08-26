@@ -4968,6 +4968,80 @@ one click past where the probe walks, so nothing had reported it at all.
     strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
     which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
 
+**A GUARD CLAUSE ON A FAILED READ CAN BLOCK A BRANCH THAT NEEDS NO READ — and that is not an
+honesty defect, it is a correctness one.** Every entry above is about a screen *saying* something
+false. This is the shape one step worse: the app already held the answer, off the **session**, and
+a database guard clause stopped it reaching the branch that used it. App's verification hydration
+opened `if(!uid||verifHydratedRef.current||myVerificationQ.data==null)return;` — and two lines
+down computed `sessionEmailConfirmed` from `session.user.email_confirmed_at`, which needs no query
+at all. So a `verification_records` read that failed for its own reasons left a verified climber
+reading as **unverified**: Home's setup checklist told them *"Verify to boost your trust"*, and
+their own Résumé showed an amber **"Unverified"** chip.
+  - **It also blocked the REPAIR.** `verifyMyEmail()` is called only inside that effect, so the one
+    write that would have created the missing record could not fire either. The state could not
+    recover for the rest of the session — a failed read that makes itself permanent.
+  - **THE RECORD READ IS REDUNDANT, AND THAT IS PROVEN FROM THE MIGRATION RATHER THAN FROM A
+    CONFIG SETTING.** `0085`'s `verify_my_email()` reads `auth.users` itself and raises *"email is
+    not confirmed"* unless `email_confirmed_at` is set, so an email record with status `verified`
+    **cannot exist** for an unconfirmed account. The record is derivable from the session; the
+    session is not derivable from the record. That makes the session the authority and the record
+    a **fallback** — the exact inversion the guard clause had. It was tempting to argue this from
+    `mailer_autoconfirm` being true, which is weaker: that is a project setting somebody can change,
+    while the RPC's precondition is a property of the schema.
+  - The record read **stays**, for the reverse case: a stale session issued before confirmation. So
+    the change is strictly more permissive in **both** directions and can un-verify nobody. Only
+    give up when neither source has anything to say.
+  - **THE FALLBACK ALONE IS DEAD CODE, AND ONLY A RUNTIME MEASUREMENT SHOWED IT.** With the session
+    fallback in place and nothing else changed, the browser walk still reported the outage
+    INTRODUCING *"Verify to boost your trust"*. The logic reads correctly, an extracted-from-source
+    probe passed 5/5, and the screen was unmoved — because **the sign-in reset erases this effect's
+    work microseconds after it happens**. Effects fire in declaration order, and the `[uid]` reset
+    is declared ~200 lines below: on the uid transition it clears `verifHydratedRef` *and* calls
+    `setVerified(false)`. So the fallback decides, and the reset immediately unmakes the decision
+    **and** the latch that would have stopped it being remade.
+    - What gets it running again is a dependency changing **after** the reset. On the healthy path
+      that is `data` going `undefined -> []`. On the failing path `data` stays `undefined` forever
+      and nothing else moves — so the effect never ran a third time and a verified climber stayed
+      unverified for the whole session. `myVerificationQ.status` goes `"pending" -> "error"`, after
+      the reset, and is the trigger the failing path was missing.
+    - **The tell was in the invocation log, not in the screen**: the HEALTHY run's third invocation
+      records `latched=false`, though its second invocation had already met the condition that sets
+      the latch. A ref that is false after something set it true is somebody else clearing it. No
+      amount of reading the effect could produce that — it is a fact about two effects' ordering.
+    - `scripts/oneoff/probe-verification-under-outage.mjs` + `verif-debug.config.mjs` are what
+      measured it: an **in-memory** transform (the source is never edited, as
+      `zero-state.config.mjs` and `anniversary.config.mjs` do it) injects a render reporter *and*
+      an invocation log, and one page load per run answers it. Both fail closed — a moved anchor
+      throws rather than yielding an empty log, which would read as *"the effect never ran"*, one
+      of the answers it exists to distinguish.
+    - **THREE HYPOTHESES DIED ON MEASUREMENT BEFORE THE RIGHT ONE**, and all three were plausible
+      from reading: *the fixture session lacks `email_confirmed_at`* (it does not — a probe creates
+      an account and signs in exactly as the fixture does, and the token endpoint returns it); *the
+      sign-in reset clobbers it* — **half right, and the half that was wrong is instructive**: the
+      `if(prev!=null){setVerified(false)…}` branch really cannot fire on a first load, but a
+      *second* `setVerified(false)` sits in the same effect under a plain `if(uid)`, which does;
+      and *a trigger seeds a verified record* (no migration inserts into `verification_records`
+      except `verify_my_email()` itself). **Reading found the right effect and the wrong line in
+      it.**
+  - **NO FLAG WAS ADDED, deliberately.** The one case a `verifUnavailable` flag would cover —
+    session not confirmed *and* the read failed — cannot arise while every account's email is
+    confirmed, so the flag would be unmeasurable by construction: the
+    `check:field-renders` zero-row hole in a new place. The fix removes the dependency instead of
+    captioning it.
+  - **The sweep for a second instance found ONE, and it is this one.** Six other hydration effects
+    open on a query (`if(!uid||!myCrewsQ.data)return` and friends), and every one of their bodies
+    reads only that query's rows — there is no non-DB branch to strand. Mechanically:
+    `myVerificationQ` is the **only** effect in `App` whose dependency array names `session`. So
+    this is a closed class, not a backlog.
+  - Proven by `scripts/oneoff/probe-verification-survives-its-own-read.mjs` — **no browser, no
+    database**, which is the point: its five cases include ones live data cannot produce on demand
+    (an unconfirmed session, a stale session). It **extracts the effect body from `ClimbMatch.jsx`
+    with `ANCHOR LOST`** rather than copying it, and fails closed on a short slice — every case
+    would "pass" against a body that does nothing. Injection-tested by reverting the inner guard to
+    `if(recs==null)return;`, which keeps the anchor intact and reproduces the defect exactly:
+    **one** case fails and the other four stay green, so the probe is specific rather than firing
+    on any change.
+
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
 (`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped

@@ -558,7 +558,23 @@ try {
     if (!same) {
       const lines = text.split("\n").map((l) => l.trim()).filter(Boolean).filter((l) => !TABS.includes(l));
       console.log(`          -> ${JSON.stringify(lines.slice(0, 7))}`);
-      if (process.env.DUMP === t) console.log(`\n          FULL ${t} (failing):\n${text}\n`);
+      /* DUMP=<screen> prints the SET DIFFERENCE, not the failing text alone. Printing one side
+         only is unreadable in the way that matters: the row already tells you the screen changed,
+         and the question is always WHICH lines. A single-sided dump makes you infer the delta from
+         a character count, which is how a session concluded that a 66-character difference "must
+         be" a particular sentence -- it was, but nothing in the output said so, and the same
+         reasoning would have been wrong about any screen with two changes that nearly cancel. */
+      if (process.env.DUMP === t) {
+        const norm = (x) => (x || "").split("\n").map((l) => l.trim()).filter(Boolean);
+        const h = norm(ok[t]), f = norm(text);
+        const hs = new Set(h), fs = new Set(f);
+        const gained = f.filter((l) => !hs.has(l)), lost = h.filter((l) => !fs.has(l));
+        console.log(`\n          ${t}: ONLY in the FAILING run (the outage introduced these):`);
+        console.log(gained.length ? gained.map((l) => "            + " + l).join("\n") : "            (none)");
+        console.log(`          ${t}: ONLY in the HEALTHY run (the outage removed these):`);
+        console.log(lost.length ? lost.map((l) => "            - " + l).join("\n") : "            (none)");
+        console.log(`\n          FULL ${t} (failing):\n${text}\n`);
+      }
     }
   }
   if (!anyDbBacked) {
