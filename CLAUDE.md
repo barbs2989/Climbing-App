@@ -3775,6 +3775,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Read-only, anon key, **fails closed** on an empty read: zero routes makes every cluster look
     consistent, which is the false-pass direction. Not a build gate — a property of the DB, not the
     checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+  - **SECTION 3 CLUSTERS BY MILEPOST, BECAUSE SECTIONS 1 AND 2 CONTRADICT THIS AUDIT'S OWN HEADER.**
+    That header says *"the unit of truth is the ROAD, not the route"* — and both sections cluster by
+    **trailhead coordinate** within 500 m. A road serves many trailheads, so two routes describing
+    ONE closure from different trailheads never meet. This audit reported **0 across all 205,543
+    routes** while the catalog said both *"Closed as of Dec 2025 — Mountain Loop Highway landslide at
+    MP 37.5 blocks access"* and *"Open (… reopened mid-May 2026 after a landslide closure near
+    milepost 37.5)"*. 49 routes name that corridor across **17 trailheads**.
+    - **A MILEPOST is the key that works**: an exact point on an exact road, naming one closure
+      EVENT. The road NAME alone is far too broad — on that corridor it also covers the Monte Cristo
+      Road, separately and legitimately vehicle-closed, and an ordinary winter gate. Forest ORDER
+      NUMBERS were measured and rejected earlier as a detector for a class of zero; mileposts had
+      not been tried.
+    - **PRECISION WAS MEASURED BEFORE IT SHIPPED and the first run was 33%** — 3 disputed, 1 real,
+      the same precision section 2 shipped at and was rightly criticised for. Four suppressions,
+      each a distinct way road prose defeats this key, **all four found by READING the output rather
+      than trusting the count**: **seasonal** (a gate that closes every winter and reopens every
+      spring says both, truthfully — without it the four largest clusters were SR-20 winter
+      mileposts, MP 134 across **62** routes; 271 of 514 mentions suppressed); **hypothetical**
+      (*"…when fully open"* is a counterfactual, and it put two Suiattle routes in the lifted column
+      while their own status said CLOSED); **a bare "Closed"** (the in-force needle demanded *"is
+      closed"*/*"closes"*, so *"Closed to vehicles at the Glacier Creek bridge (~MP 3.0)"* matched
+      NOTHING and the row counted only as lifted, on a HISTORICAL reopening narrated inside it);
+      and **a route on both sides is NARRATING, not disputing** — judged per ROUTE, never per value.
+    - `wa_kololo_peaks_standard` was the one finding and is **fixed**: three rows record the
+      reopening against its one, and the reopening is the later claim, so the repair needed no
+      research at all. `fix-kololo-stale-mountain-loop-closure.mjs` **re-asserts both witness rows
+      at apply time** — if the catalog stops recording the reopening the script has no basis and
+      refuses.
+    - Injection-tested **5/5**, and the **four that must stay SILENT are the point**: a case proving
+      only that it fires is satisfied by a detector that flags everything.
+
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.

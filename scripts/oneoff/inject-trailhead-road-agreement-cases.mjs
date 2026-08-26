@@ -97,6 +97,51 @@ const CASES2 = [
     rows: [road("a", "Chiwawa River Road"), road("b", "Sloan Creek Road (FR 49)")] },
 ];
 
+
+/* --- section 3: the MILEPOST key ---------------------------------------------------------------
+   Two must FIRE and three must stay SILENT, and the silent three are the ones that matter: this
+   detector's first real run was 33% precise (3 disputed, 1 real) and every false positive was one
+   of these shapes. A case that only proves it fires would be satisfied by a detector that flags
+   everything. */
+const mproute = (id, road, access) => ({ id, name: id, area_id: "wa_bogus", road, access: access || {}, approach_logistics: TH, waypoints: [] });
+
+const CASES3 = [
+  { name: "dispute", expect: 1,
+    why: "the real one: MP 37.5 reopened per one route, still blocking per another.",
+    rows: [
+      mproute("a", { name: "Mountain Loop Highway", status: "Closed as of Dec 2025 - Mountain Loop Highway landslide at MP 37.5 blocks access to FR 49" }),
+      mproute("b", { name: "Mountain Loop Highway", status: "Open, the Mountain Loop Highway reopened mid-May 2026 after a landslide near milepost 37.5" }),
+    ] },
+
+  { name: "seasonal", expect: 0,
+    why: "a winter gate legitimately says BOTH — closes every winter, reopens every spring. Without this suppression the four largest clusters were SR-20 gate mileposts (MP 134 across 62 routes).",
+    rows: [
+      mproute("a", { name: "North Cascades Highway", status: "SR-20 closes every winter at milepost 134 due to avalanche hazard" }),
+      mproute("b", { name: "North Cascades Highway", status: "SR-20 seasonal gate at milepost 134; typically reopened by late May" }),
+    ] },
+
+  { name: "hypothetical", expect: 0,
+    why: "\"...when fully open\" is a counterfactual, not a claim the road is open. It put two Suiattle routes in the LIFTED column while their own status said CLOSED.",
+    rows: [
+      mproute("a", { name: "Suiattle River Road", status: "Suiattle River Road is CLOSED to vehicles at approximately milepost 4.5" }),
+      mproute("b", { name: "Suiattle River Road", status: "Closed at milepost 4.5", driveNote: "Normally about 2.5-3 hours from Seattle via the Suiattle River Road when fully open" }),
+    ] },
+
+  { name: "narration", expect: 0,
+    why: "one route narrating its road over time — a bare \"Closed\" now, plus an OLD reopening of a different washout — is not disagreeing with anybody. Judged per ROUTE, not per value.",
+    rows: [
+      mproute("a", { name: "Glacier Creek Road", status: "Closed to vehicles at the Glacier Creek bridge (~MP 3.0) due to December 2025 flood damage. A 2021 washout was patched with a bypass reopened in November 2023." }),
+      mproute("b", { name: "Glacier Creek Road", status: "Closed to all vehicles at MP 3.0 (Glacier Creek bridge)" }),
+    ] },
+
+  { name: "opento", expect: 0,
+    why: "\"closed at MP X\" and \"open to MP X\" are the SAME fact — shut beyond that point. The mirror section 1 already had to learn.",
+    rows: [
+      mproute("a", { name: "Chiwawa River Road", status: "Closed to vehicles beyond milepost 16" }),
+      mproute("b", { name: "Chiwawa River Road", status: "Open to Atkinson Flat at milepost 16; closed beyond" }),
+    ] },
+];
+
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "th-road-"));
 let pass = 0, fail = 0;
 for (const c of CASES) {
@@ -127,6 +172,24 @@ for (const c of CASES2) {
   const ok = got === c.expect;
   ok ? pass++ : fail++;
   console.log(`${ok ? "ok  " : "FAIL"}  s2:${c.name.padEnd(11)} expected ${c.expect}, got ${got === -1 ? "NO COUNT LINE" : got}`);
+  console.log(`        ${c.why}`);
+  if (!ok) console.log(out.split("\n").filter(l => l.trim()).slice(-14).map(l => "        | " + l).join("\n"));
+}
+
+
+console.log("");
+for (const c of CASES3) {
+  const f = path.join(dir, `s3-${c.name}.json`);
+  fs.writeFileSync(f, JSON.stringify(c.rows));
+  let out = "";
+  try {
+    out = execFileSync("node", ["scripts/audit-trailhead-road-agreement.mjs", "--fixture", f], { encoding: "utf8" });
+  } catch (e) { out = String((e.stdout || "") + (e.stderr || "")); }
+  const m = out.match(/(\d+) where one closure gets two answers/);
+  const got = m ? Number(m[1]) : -1;
+  const ok = got === c.expect;
+  ok ? pass++ : fail++;
+  console.log(`${ok ? "ok  " : "FAIL"}  s3:${c.name.padEnd(11)} expected ${c.expect}, got ${got === -1 ? "NO COUNT LINE" : got}`);
   console.log(`        ${c.why}`);
   if (!ok) console.log(out.split("\n").filter(l => l.trim()).slice(-14).map(l => "        | " + l).join("\n"));
 }
