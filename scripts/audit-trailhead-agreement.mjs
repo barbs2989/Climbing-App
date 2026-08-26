@@ -30,6 +30,12 @@ const key = requireServiceKey();
    invented three findings 12,000 km wide — off-Africa null-island pins that do not exist; every
    coordinate in the catalog is either real or null. Test for null BEFORE coercing.
    [[fail-open-coercion-hides-missing-data]], walked into by a script written to find that class. */
+/* This is a SECOND placement predicate — the app has wpPlaced(). Deliberately not imported: an
+   audit is a second opinion about the data, and one that shares the app's function agrees with it
+   by construction. But two implementations of one rule is how this repo got four grade parsers and
+   a tenth placement test, so the equivalence is MEASURED rather than assumed —
+   scripts/oneoff/probe-audit-placement-gate-equivalence.mjs lifts wpPlaced() and compares the two
+   over the shapes contributed rows actually store ("", " ", [], false, a bare lat). 16/16 today. */
 const num = v => (v === null || v === undefined || v === "" ? null
   : Number.isFinite(+v) ? +v : null);
 
@@ -80,9 +86,19 @@ let both = 0, agree = 0, shadowed = 0;
    ([[when-an-audit-reports-zero-ask-its-denominator]]), and overstated coverage is the false-pass
    direction, so these are now reported as their own class.
 
-   They split by whether the row has ANY trailhead position, because the two need opposite repairs:
-   a row whose PIN still has a coordinate can be reconciled from itself, while a row with neither
-   has no trailhead position at all and needs research. */
+   They split by whether the row has ANY trailhead position, because the two are different states:
+   a row whose PIN still has a coordinate knows where it starts, while a row with neither does not
+   and needs research. NEITHER is repaired by copying one record into the other — this audit's only
+   value is that the two were written by passes that never read each other, and a copy retires that
+   evidence while reporting a 0 m agreement it did not earn.
+   [[do-not-create-a-trailhead-pin-from-the-logistics-copy]]
+
+   The positionless bucket is decided by pin TYPE, while trailheadPoint() has a THIRD branch this
+   does not model — a placed waypoint whose NAME matches /trailhead|parking/, whatever its type. So
+   the bucket COULD have been calling rows positionless that the app resolves anyway. Measured
+   rather than argued (probe-audit-vs-app-trailhead-resolution.mjs): 0 of the 10 resolve, so the
+   phrase "need research" is earned. Re-run it if that branch changes — a negative result here is
+   a fact about today's data, not a property of the test. */
 let logNoCoord = 0, logNoCoordPinHas = 0, noPositionAtAll = 0;
 const findings = [], dists = [], shadows = [];
 for (const r of rows) {
@@ -90,10 +106,11 @@ for (const r of rows) {
     && !Array.isArray(r.approach_logistics)) ? r.approach_logistics : null;
   const lLat = al ? num(al.trailheadLat) : null, lLng = al ? num(al.trailheadLng) : null;
   const wps = Array.isArray(r.waypoints) ? r.waypoints : [];
-  /* The app's reader picks the trailhead by TYPE ALONE and only then tests the coordinate, so a
-     typed-but-uncoordinated pin short-circuits the `||` chain and hides a usable
-     approach_logistics coordinate sitting on the same row. Count that separately — it is a
-     reader defect, not a disagreement. */
+  /* A pin TYPED Trailhead with no coordinate beside a usable logistics one. This was a reader
+     defect when the audit was written — the pin short-circuited the chain and hid the good
+     coordinate — and is not one now: wpPlaced() gates every branch of trailheadPoint(). Still
+     counted separately, because it is not a DISAGREEMENT either: the two records name two
+     different places and only one of them has a position. See the SHADOWED block below. */
   const typed = wps.find(x => x && String(x.type || "").toLowerCase() === "trailhead");
   const w = wps.find(x => x && String(x.type || "").toLowerCase() === "trailhead"
     && num(x.lat) !== null && num(x.lng) !== null);
@@ -131,14 +148,26 @@ console.log(`separation: p50 ${q(0.5)} m · p90 ${q(0.9)} m · p95 ${q(0.95)} m 
 console.log(`-- NOT COMPARABLE: ${logNoCoord} routes NAME a trailhead in approach_logistics but --`);
 console.log(`   store no coordinate for it, so they never enter the ${both} above. This audit is`);
 console.log(`   silent about them by construction — it compares two coordinates, and one is absent.`);
-console.log(`   ${logNoCoordPinHas} of them still have a coordinate on the waypoint pin, so the row can be`);
-console.log(`   reconciled from itself; the other ${noPositionAtAll} carry NO trailhead position at all and`);
-console.log(`   need research, not repair. Read the agreement percentage above against ${both}, not ${rows.length}.\n`);
+console.log(`   ${logNoCoordPinHas} of them still carry a coordinate on the waypoint pin, so the row is not`);
+console.log(`   positionless — but do NOT copy it across to "reconcile" them. These two records are`);
+console.log(`   worth comparing only while they are INDEPENDENT, and a copy agrees by construction:`);
+console.log(`   it would move ${logNoCoordPinHas} rows into the agreeing column having checked nothing.`);
+console.log(`   The other ${noPositionAtAll} carry NO trailhead position at all and need research, not repair.`);
+console.log(`   Read the agreement percentage above against ${both}, not ${rows.length}.\n`);
 
+/* THIS BLOCK USED TO ASSERT THE BUTTON WAS BROKEN, AND IT WAS TRUE WHEN WRITTEN. #1183 swept nine
+   placement tests into wpPlaced(); #1213/#1215/#1222 put it on EVERY branch of trailheadPoint(),
+   so an uncoordinated pin no longer short-circuits the chain — it falls through to the logistics
+   copy, the button drives there, and the map draws that point dashed as derived. Verified against
+   the live row by scripts/oneoff/probe-shadowed-trailhead-button.mjs rather than by reading the
+   source. An audit still asserting something it no longer has evidence for gives WRONG ADVICE, and
+   here the advice pointed at a fabrication. [[semantic-invariants-need-a-script]] */
 console.log(`-- SHADOWED: ${shadowed} routes carry a Trailhead pin with NO coordinate while --`);
-console.log(`   approach_logistics holds a usable one. RouteDetail picks the pin by type alone,`);
-console.log(`   so the "Directions to trailhead" button finds it, fails its own lat!=null test,`);
-console.log(`   and returns null — the good coordinate beside it is never reached.`);
+console.log(`   approach_logistics holds a usable one. NOT A DEFECT — trailheadPoint() falls`);
+console.log(`   through to the logistics coordinate, so the button drives there and the map draws`);
+console.log(`   it dashed. Reported because the two records name DIFFERENT PLACES on one row.`);
+console.log(`   Do NOT "close" it by copying that coordinate onto the pin: it would invent a`);
+console.log(`   position nothing published, and a record and a copy of itself always agree.`);
 for (const s of shadows) console.log(`   ${s.id}\n      pin "${s.pin}" (no coords)  ->  log "${s.log}" @${s.lLat},${s.lLng}`);
 console.log("");
 
