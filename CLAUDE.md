@@ -1464,6 +1464,34 @@ a build error, but a screen that renders wrong or not at all.
   - What it does **not** prove, stated in the script rather than implied: that no *behaviour* was
     reverted. It tracks named definitions, not function bodies, so a merge that keeps a name and
     drops its guard clause is invisible here — `check:correction-readers` exists for that shape.
+  - **IT ALSO TRACKS WHOLE FILES, and until 2026-08-26 it did not — which is how it missed the
+    biggest instance of the thing it exists for.** `#1248` merged from a stale base and **deleted
+    four files belonging to three merged PRs** (#1244, #1239, #1240), *and* reverted #1239's live
+    app fix — and this audit printed `0 of them are ABSENT at HEAD`. Every pattern matches a NAMED
+    DEFINITION, and a deleted file only leaves one behind if it happened to **export** something.
+    Neither deleted waypoint-repair script does: one is top-level statements, the other's helpers
+    are lowercase and unexported. **The blindness scaled with how ORDINARY the file was**, which is
+    the worst direction — a script that exports nothing is the kind this repo writes most of.
+  - **VALIDATED AGAINST THE REAL INCIDENT, not a synthetic one.** `--ref 68bb307 --commits 12`
+    reports all four deleted files, each attributed to #1248 and each named with the merged PR that
+    added it. Same standard the definition half already meets by reproducing #776.
+  - **The file rule needed a discriminator, because on subject matching alone its precision is 0%.**
+    Over 500 commits it reports **7 files and all seven are PROMOTIONS** — a one-off probe becoming
+    a named guard (`measure-horizontal-overflow` → `check:overflow`, `probe-trailhead-vs-logistics`
+    → `audit:trailhead-agreement`, `probe-signed-in-db-failure` → `check:outage`, and four more). A
+    detector whose every hit is correct work is one people learn to ignore.
+    - The discriminator is **structural, and deliberately NOT a similarity test** — the entry above
+      records why that would have excused #776. **A promotion removes ONE file, added by ONE earlier
+      commit; a stale-base squash removes SEVERAL, added by SEVERAL DIFFERENT PRs**, because it is
+      carrying a whole old tree forward. Measured both ways: none of the 7 promotions trips it,
+      #1248 trips it with 4 files from 3 commits.
+    - It is **emphasis, never suppression**. Single-file removals are still printed in full, and the
+      run still exits 0 — a removal is not a defect, and going red on a promotion would make the
+      audit argue with correct work.
+  - **A RENAME IS NOT A DELETION.** Additions are detected by git's `new file mode` marker, which a
+    rename does not carry, so a moved file is never recorded as added and can never be reported as
+    gone; the removal lookup also passes `-M --name-status` so an `R` reads as a rename. This repo
+    renames guards (`check-rappel-readers.mjs` → `check-correction-readers.mjs`, #926).
   - **500 COMMITS DEEP: 4 absent, 3 flagged SILENT, and NONE is a defect — the precision is recorded
     rather than tuned away.** `activeCrewMemberIds` was **#776's own** local helper, dropped by #826
     when it restored the resolvers #776 had reverted; `listSlug` was consolidated into
