@@ -688,8 +688,34 @@ try {
   let dead = null;
   if (!ok.__booted) dead = "the app never came up on the HEALTHY run, so there is no control to compare against";
   else if (!bad.__booted) dead = "the app never came up on the FAILING run — this is a boot failure, not a data verdict";
-  else if (!bad.__blocked) dead = "no request was intercepted, so every verdict above is a statement about a healthy app";
-  else if (changed < 3) dead = `only ${changed} screen(s) differed between the two runs; the walk did not reach the DB-backed surfaces`;
+  else if (!bad.__blocked) dead = ONLY
+    ? `ONLY=${ONLY} intercepted nothing. PostgREST names EMBEDDED tables in the query string (select=*,crew_members(*)), so this is matched on the path segment after /rest/v1/ and never as a substring — check the table is the one actually requested`
+    : "no request was intercepted, so every verdict above is a statement about a healthy app";
+  // THE FLOOR IS 3 FOR A FULL OUTAGE AND 1 UNDER `ONLY=`, and that is not a loosening -- it is
+  // the same question asked of the right run. With every read failing, fewer than three differing
+  // screens means the walk never reached the DB-backed surfaces. With ONE table failed, exactly
+  // one screen differing is the DESIGNED outcome: that is what ONLY is for, and it is the only
+  // way to attribute a sentence to a single query rather than to a blanket outage.
+  //
+  // Before this, ONLY's exit code was decided by NOISE -- and the careful version of that
+  // sentence matters, because the first version of it was wrong. "ONLY can never pass" is FALSE:
+  // measured on `saved_searches`, one run exited 1 ("only 1 screen differed") and a later run on
+  // the same app and the same query exited 0 with three, the third being Home differing by TWO
+  // CHARACTERS with says-broken=no. So the floor did not block ONLY outright; it made the verdict
+  // depend on incidental churn elsewhere in the app, which is worse than blocking it -- a tool
+  // that passes for the wrong reason teaches you to trust it.
+  //
+  // Scoping the floor removes that coupling: under ONLY the run is judged on whether the screens
+  // fed by THAT table are honest, not on how many unrelated screens happened to move.
+  //
+  // What this deliberately does NOT do is mask digits when comparing the two runs. That would
+  // kill clock- and count-churn in one line and blind rule 1 to "0 routes" / "0 crews" / "0
+  // climbs to go" -- the exact class this guard exists for. Time-derived churn on Home can still
+  // make a screen read as CHANGED; the per-screen line prints both lengths, so a two-character
+  // difference is visible as noise to anyone reading the table.
+  else if (changed < (ONLY ? 1 : 3)) dead = ONLY
+    ? `ONLY=${ONLY} changed no screen at all. Either no walked screen reads that table, or the name is wrong — it is matched on the path segment after /rest/v1/, never as a substring`
+    : `only ${changed} screen(s) differed between the two runs; the walk did not reach the DB-backed surfaces`;
   else if (ok.__navFail || bad.__navFail) dead = `a tab or sub-tab click did not land (${[...new Set([...(ok.__navFail || []), ...(bad.__navFail || [])])].join(", ")}), so that screen was never on the page to be judged — this is how "Me" went unwalked for months`;
   if (dead) {
     console.log(`\ncheck:outage DID NOT RUN: ${dead}.`);
