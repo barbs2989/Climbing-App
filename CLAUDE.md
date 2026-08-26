@@ -3544,12 +3544,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     there are two "White River Trailhead"s in WA **130 km apart** and two "Lake Ann"s **79 km**
     apart, so Little Tahoma carried the Lake Wenatchee White River and Black Peak carried Mount
     Baker's Lake Ann. **A name is not an identity.**
-  - **It is user-visible, and the two surfaces disagree on which record wins.** `TrailheadCard`
-    (the only directions control on the Plan tab) reads `approach_logistics` **first**; the crag
-    Overview "Directions to crag" button reads the **pin** first. So on a disagreeing route the
-    trailhead you are sent to depends on which screen you are looking at. **Deliberately not
-    "fixed" by swapping a priority** — which record is right varies per route, so that would only
-    move the error. The repair is the data.
+  - **It WAS user-visible as a precedence split, and that half is CLOSED — do not re-derive it.**
+    `TrailheadCard` read `approach_logistics` first while the map and both "Directions to…"
+    buttons read the **pin** first, so the trailhead you were sent to depended on which screen you
+    were looking at. #1215 converted two surfaces and **#1231 converted the third**; all three now
+    resolve through `trailheadPoint()`. What stands unchanged is the reasoning: **the fix was
+    CONSISTENCY, never swapping a priority** — which record is right varies per route, so a
+    priority swap only moves the error. The repair is still the data.
+    - **The consolidation left the PROSE behind, and that was a live defect for one commit.**
+      #1231's `_nameFollows` rule takes the pin's NAME past a measured 1,000 m gap — exactly the
+      four two-approach peaks — while the directions line underneath kept rendering
+      `al.trailheadDirection`, which is the **logistics** record. So the card read *"Thirtymile
+      Trailhead"* above *"From the Andrews Creek Trailhead…"*: one card, two starts 7.8 km apart.
+      Measured on screen by `probe-trailheadcard-name-vs-directions.mjs` — **3 of the 4**; Mount
+      Howard is already honest because its own prose says *"Two common trailheads on US-2 in
+      Chelan County give access."* The prose is now **attributed, not suppressed** (*"Directions
+      on file describe a different start — <name>:"*), because on these routes the second approach
+      is real and dropping it would lose the only description of it. Deliberately NOT worded as
+      *"this peak has two approaches"*: the rule fires on **distance**, and a disagreement says one
+      record is wrong, not which.
+      - Two false-positive classes were measured out of that probe first, both over-reporting.
+        Scoping to the **tab** flagged all four on the strength of approach prose that legitimately
+        names both starts (the `count inside the panel` rule `check:camping` records); scoping to
+        the whole **card** then flagged Howard on `road.name` — *"Forest Road 657 (Merritt Lake…)"*
+        — which is a `audit:trailhead-road` section 2 question, not this one. The claim has to be
+        narrow: the card's TITLE against the card's own DIRECTIONS line.
   - **Distance to the peak names the guilty record; the pin-vs-blob comparison cannot.** Two
     coordinates disagreeing says only that one is wrong. `scripts/oneoff/probe-logistics-trailhead-vs-peak.mjs`
     anchors on the route's own peak from `areas` — a third, independent record — exactly as
@@ -3839,8 +3858,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     4 of the 1,016 routes carrying waypoints, and they are Rainier and Adams.
   - **The trailhead PIN and the `approach_logistics` blob disagreeing is mostly NOT a defect,
     and the ratio is measured: of 12, six were repaired and six are correct data.** The route
-    page reads the two in opposite orders (TrailheadCard takes the blob, the map draws the
-    pin), so a disagreement means the two surfaces send you to different places — but on a
+    page USED to read the two in opposite orders (TrailheadCard took the blob, the map drew the
+    pin), so a disagreement sent you to two different places; #1215/#1231 consolidated all three
+    surfaces onto `trailheadPoint()` and that split is gone. The data question is untouched: on a
     peak with two genuine approaches, *both* records are right and sweeping them to zero is
     the damage. `wa_lundin_peak_west_ridge` is the case `audit:trailhead-agreement` already
     names; Carru, Howard, Remmel and Stuart's North Ridge are four more whose own prose
