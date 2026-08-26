@@ -32,6 +32,7 @@
 // Fails closed in the other direction too: walking zero screens is a failure, not a pass.
 import { NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 import { settledText } from "./lib/render-settle.mjs";
+import { tapByText } from "./lib/tap-by-text.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
@@ -241,15 +242,12 @@ for (const t of TABS) {
 // Ported from scripts/oneoff/measure-horizontal-overflow.mjs (#818), which this replaces.
 log("");
 const ROUTE = "North Ridge (Complete)";
+// The matching itself now lives in scripts/lib/tap-by-text.mjs, so check:outage drives the route
+// sub-tabs by the same rule rather than by a second copy of it -- the fixed/sticky filter is the
+// subtle half and a copy would drift. Settling stays here, because this guard settles on text
+// while check:outage has an outage's retry clock to wait out.
 const tap = async (name) => {
-  const ok = await page.evaluate((n) => {
-    const hit = [...document.querySelectorAll("button,div,span,a")].filter((e) => (e.innerText || "").trim() === n)
-      // A sub-tab name can collide with the bottom nav, and a global match silently leaves
-      // the route page. Skip anything inside a fixed/sticky chrome element.
-      .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; });
-    if (!hit.length) return false;
-    hit[0].click(); return true;
-  }, name);
+  const ok = await tapByText(page, name);
   if (ok) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
   return ok;
 };

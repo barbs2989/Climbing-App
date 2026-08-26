@@ -760,9 +760,40 @@ a build error, but a screen that renders wrong or not at all.
       silently. The `"0 climbs to go"` shape on a screen whose entire subject is counts.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
-    sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
-    frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
-    emptiness is never asserted, but that is a list to READ, not a coverage claim.
+    sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
+    surface behind an **overlay** is still out of frame, and **10 of 28 query handles in `App`
+    carry a flag** (plus 2 in `RouteDetail`) — the rest are mostly lookups where emptiness is
+    never asserted, but that is a list to READ, not a coverage claim.
+    - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
+      re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
+      so a missing reporter degrades to a generic label rather than printing `undefined` or
+      inventing a level; and `useFullProfile`'s "Listed in partner search" toggle sits inside a
+      `myProfileRowQ.data` gate, while the value it hands PartnerSearch is read as
+      **`meListed===false`** — a strict check written precisely so UNKNOWN is not treated as OFF.
+      That tri-state prop plus `===` at the reader is the pattern to copy.
+    - **The route page reaches OVERVIEW and PHOTOS only**, because `?zr=1` opens `ROUTES[0]`.
+      Overview is enough for `reportsUnavailable` (two of its six render sites are in that branch,
+      and the first CI run measured healthy 5239ch against failing 5013ch). **Photos was added for
+      `toposUnavailable` and that premise was WRONG** — topos render in `TopoSection` on **Overview**,
+      and the Photos tab's own copy says so. The click is kept because it caught a different defect
+      on its first run: the tab said *"No photos yet — be the first to add one."* under an outage,
+      from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
+      (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
+      **Walking a screen nothing has walked is worth doing independently of why you walked it.**
+      - **`toposUnavailable` is MASKED and nothing has yet proven it reaches a screen.** Overview is
+        already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
+        topos copy flips. It needs a run failing only that read (`ONLY=topo_photos`), and that mode
+        cannot pass its own fail-closed floor today — read its table, not its exit code.
+      - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
+        — and no flag lives on them. Click one when a flag lands on it.
+    - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
+      other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
+      `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
+      `check:overflow` — extracted verbatim (proven byte-identical with whitespace stripped) rather
+      than copied, because its **fixed/sticky filter** is the load-bearing half: a route sub-tab
+      name collides with the bottom nav, so a global text match does not miss, it returns **true**
+      having navigated elsewhere, and the caller then measures a tab believing it is on the route
+      page. Settling stays with the caller.
   - **RULE 2's VOCABULARY HAS NOW BEEN SHORT FOUR TIMES, and the fourth is the instructive one
     because the fix for the third did not prevent it.** `"0 routes"`/`"0 crews"` (the Home tiles),
     `"0 climbs to go"`/`"0 logged"` (the Logbook), `"0 joined"` (Crew:Groups), and **`"No crew

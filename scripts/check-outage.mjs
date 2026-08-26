@@ -123,12 +123,15 @@
 // flag keys on isError, not on whether rows exist, which is the same property that made the
 // friend-requests flag measurable against a fixture holding no data.
 //
-// NOTHING HAS YET ASKED about `toposUnavailable` or `useProfilesByIds`. Topos render on the
-// PHOTOS sub-tab and this stop does not click it, so that flag is honest copy no walk has ever
-// exercised -- #1220 proved its branch by rendering ConsensusPanel directly in
-// scripts/oneoff/probe-consensus-outage-copy.mjs, which is a component test and not a walk. The
-// route page has six sub-tabs; walking them is six more settles in each of two runs, so it is a
-// cost question rather than a reachability one now. Click one when a flag lands on it.
+// `toposUnavailable` IS asked now, and the paragraph that used to sit here is why: it said topos
+// render on the PHOTOS sub-tab, that this stop did not click it, and that the flag was therefore
+// honest copy no walk had ever exercised -- then closed with "click one when a flag lands on it".
+// One had. The Photos stop below is that click.
+//
+// NOTHING HAS YET ASKED about `useProfilesByIds`, nor about the other FOUR route sub-tabs -- Plan,
+// Reports, Safety, Partners. No flag lives on any of them today, and each is two more settles in
+// each of two runs, so leaving them is a COST decision and not a claim they are fine. The rule
+// stands: click one when a flag lands on it.
 //
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
@@ -142,6 +145,7 @@ import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { SPINNER_RE } from "./lib/render-settle.mjs";
 import { tapByName } from "./lib/tap-by-name.mjs";
+import { tapByText } from "./lib/tap-by-text.mjs";
 
 const claim = (start) => new Promise((res, rej) => {
   let p = start;
@@ -178,6 +182,47 @@ const REVISIT = "Home:revisited";
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
 const ROUTE = "RouteDetail";
+// The PHOTOS sub-tab. IT WAS ADDED FOR THE WRONG REASON and is kept because of what that found,
+// which is the more useful record of the two.
+//
+// The reason given was `toposUnavailable` (#1221) -- honest copy no walk had exercised. Topos are
+// NOT on this tab: TopoSection renders on OVERVIEW, which the stop above already walks, and this
+// tab's own copy says so ("use the topo section on the Overview tab"). The premise was checkable
+// in one grep and was not checked.
+//
+// The click found a different defect on its first run anyway:
+//   RouteDetail:Photos  healthy 895ch  failing 674ch  CHANGED  says-broken=no  says-empty=YES
+// Under an outage the tab said "No photos yet -- be the first to add one." and invited the climber
+// to go add one. `shown` is routePhotos.concat(dbPhotos).concat(quickPhotos): routePhotos comes
+// from route.activity, COMPOSED from useRouteTripReports on a DB route, and dbPhotos from
+// useRouteContributions. Two reads, one sentence. That string had been inspected by hand the same
+// day, traced to `route.activity`, and correctly cleared for want of evidence -- reading found it,
+// only walking found that it lies.
+//
+// So: walking a screen nothing has walked is worth doing independently of why you walked it.
+//
+// WHAT IS STILL UNPROVEN, stated because the wrong reason above would otherwise read as settled:
+// `toposUnavailable` is masked. It renders on Overview, and Overview is already says-broken=YES
+// from `reportsUnavailable`, so rule 1 is satisfied whether or not the topos copy ever flips.
+// Proving it needs a run that fails ONLY the topos read -- `ONLY=topo_photos` -- and that mode
+// cannot currently pass its own fail-closed floor (it demands >=3 screens differ and exists to
+// make one differ). Read its per-screen table, not its exit code. Nothing has yet asked this.
+//
+// The other four sub-tabs stay unwalked: no flag lives on them, and each is two more settles in
+// each of two runs. That is a cost decision, not a claim they are fine.
+const ROUTE_PHOTOS = "RouteDetail:Photos";
+// ONE name for the page-load budget, used at BOTH gotos, and that is a merge defence rather
+// than tidiness. It was written as two bare 180000 literals and a stale-base squash reverted
+// BOTH to 120000 on main (#1243 is an ancestor of main and neither value survived), which
+// `audit:silent-reverts` cannot see -- it tracks named DEFINITIONS, not values, and says so in
+// its own output. A single constant cannot be half-reverted, and a diff that changes it is one
+// readable line rather than two numbers buried in call sites.
+//
+// 180s, NOT 120s: the spawn gained --config, so the scaffold transform runs on a cold module
+// graph and the FIRST load is slower than plain vite ever was. Measured -- at 120s this threw
+// `page.goto: Timeout 120000ms exceeded` while `up()` had already answered, which produces no
+// per-screen table and so reads as a broken app rather than a slow one.
+const PAGE_LOAD_MS = 180000;
 // REPORT is the SOLE enumerator for both the per-screen table and the two rules, so a screen
 // captured into `out` and left out of this list is measured and never judged -- the guard walks
 // it, prints nothing about it, and passes. The first version of the route-page stop did exactly
@@ -189,10 +234,10 @@ const ROUTE = "RouteDetail";
 // there. #1238 put `searchesUnavailable` on this view and shipped it saying, in as many words,
 // that no walk reached it; this is that stop.
 const SUBTAB2 = "Logbook:Areas";
-// REPORT is the sole enumerator for BOTH the per-screen table and the two rules. #1234's first
-// version left its new stop out of it, so the guard opened the page, waited out the retry clock,
-// judged nothing, and passed. Adding a stop to the walk is not adding it to the guard.
-const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE];
+// Both sides added a stop to this list -- Logbook:Areas from main, RouteDetail:Photos here.
+// They are independent, so the merge is the UNION: dropping either silently un-walks a screen
+// whose walk code is already below (out[SUBTAB2] and out[ROUTE_PHOTOS] are both written).
+const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE, ROUTE_PHOTOS];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -254,8 +299,9 @@ const CLAIMS_NONE_RE = new RegExp(
 // paragraph above. Four of these were real defects that shipped, and each was found only when
 // somebody widened the pattern by hand; a comment recording them rots, and this repo has the
 // scar to prove it. A rewrite that drops one fails here, before a browser is started.
-for (const phrase of ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
-                      "No crew invites", "No custom lists", "no friends yet", "No groups yet"]) {
+const MUST_SPELL = ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
+  "No crew invites", "No custom lists", "no friends yet", "No groups yet"];
+for (const phrase of MUST_SPELL) {
   if (!CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`
       + " which is a phrasing it was widened to catch. Widen it back before walking anything.");
@@ -264,13 +310,18 @@ for (const phrase of ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 jo
 }
 // ...and the mirror, so a vocabulary widened until it matches ordinary copy fails too. A rule
 // that fires on every screen is the same as a rule that fires on none.
-for (const phrase of ["Recent condition reports", "Your crews", "Log a climb", "3 climbs to go"]) {
+const MUST_STAY_QUIET = ["Recent condition reports", "Your crews", "Log a climb", "3 climbs to go"];
+for (const phrase of MUST_STAY_QUIET) {
   if (CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary now matches ${JSON.stringify(phrase)}, which`
       + " is ordinary copy. It would report a healthy screen as claiming emptiness.");
     process.exit(1);
   }
 }
+// Say so. A self-test that prints nothing on success is indistinguishable in a CI log from one
+// that was deleted, and this repo's own rule is that a guard's proxy should fail LOUD -- which is
+// worth nothing if its presence is invisible when it passes.
+console.log(`rule 2 vocabulary: ${MUST_SPELL.length} historical phrasings spelled, ${MUST_STAY_QUIET.length} lines of ordinary copy quiet`);
 
 const settle = async (page) => {
   let last = "", same = 0;
@@ -337,7 +388,18 @@ async function walk(browser, base, session, fail) {
         body: JSON.stringify({ code: "57014", message: "canceling statement due to statement timeout" }) });
     });
   }
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 120000 });
+  // 180s, NOT 120s, and this changed when the spawn gained --config: the scaffold transform runs
+  // on top of a cold module graph, so the FIRST load is slower than plain vite ever was.
+  //
+  // Measured rather than predicted: at 120s this threw `page.goto: Timeout 120000ms exceeded`
+  // while `up()` had ALREADY answered, i.e. the server was serving and the browser was still
+  // waiting on the first module graph. That failure mode is the worst kind for this guard --
+  // it produces no per-screen table, so it reads as a broken app rather than a slow one, and
+  // the harness can only report it as INCONCLUSIVE.
+  //
+  // RESTORED after a merge silently reverted it (see the commit message): #1243 is an ANCESTOR
+  // of this branch and the value was 120000 anyway.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: PAGE_LOAD_MS });
   const out = {};
   let first = await settle(page);
   // react-query RETRIES with backoff, so `isError` -- the signal every xUnavailable flag is
@@ -437,12 +499,15 @@ async function walk(browser, base, session, fail) {
   // keyed on isError, not on whether rows exist, which is the same property that made the
   // friend-requests flag measurable against a fixture with no data.
   //
-  // But a seed route also arrives with its OWN `activity`, so the consensus is not empty in either
-  // run and only the caption above it can move. If this screen compares identical in both runs the
-  // guard will say so in its normal seed-backed wording -- read that as "this stop measured
-  // nothing", not as "the route page is fine", and open a CATALOG route instead. First CI run
-  // decides it; do not assume from here.
-  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 120000 });
+  // A seed route also arrives with its OWN `activity`, so the consensus is not empty in either run
+  // and only the caption above it can move. That was written here as an open question -- "if this
+  // screen compares identical, read it as 'this stop measured nothing' and open a CATALOG route
+  // instead" -- and the first CI run ANSWERED it: healthy 5239ch against failing 5013ch, CHANGED,
+  // says-broken=YES. So a seed route is enough and no catalog route is needed. Kept as the reason
+  // rather than deleted, because the next person widening this walk needs to know which half of
+  // the screen can move and which cannot.
+  // Same 180s for the same reason: this is a fresh page load, so it can pay a cold compile too.
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: PAGE_LOAD_MS });
   const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
     .then(() => true).catch(() => false);
   if (!opened) {
@@ -462,7 +527,32 @@ async function walk(browser, base, session, fail) {
       }
     }
     out[ROUTE] = rt;
+    // Photos, for `toposUnavailable`. Clicked by TEXT, not by accessible name, and that is the
+    // opposite of every other sub-tab in this file for a reason worth stating: tapByName queries
+    // `[aria-label]` ONLY, and these six buttons carry `aria-current` plus their own text and no
+    // label -- they need none, because nothing pollutes their textContent the way the Crew bar's
+    // badge count does. Pointing tapByName here returns false on a control sitting right there,
+    // and this stop would fail closed on a guard bug rather than a defect. Checked against the
+    // source before shipping, not discovered by a red run.
+    //
+    // tapByText skips fixed/sticky chrome, which is the load-bearing half: a route sub-tab name
+    // collides with the bottom nav, so a global text match does not miss -- it silently NAVIGATES
+    // AWAY and returns true, and the caller then measures a tab believing it is on the route page.
+    if (await tapByText(page, "Photos")) {
+      let pt = await waitOutFetch(page, fail);
+      if (fail) {
+        for (let i = 0; i < 25 && !BROKEN_RE.test(pt); i++) {
+          await new Promise((r) => setTimeout(r, 1000));
+          pt = await waitOutFetch(page, fail);
+        }
+      }
+      out[ROUTE_PHOTOS] = pt;
+    } else {
+      out.__navFail = (out.__navFail || []).concat(ROUTE_PHOTOS);
+      out[ROUTE_PHOTOS] = "";
+    }
   }
+  if (!opened) out[ROUTE_PHOTOS] = "";
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();
