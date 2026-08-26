@@ -108,20 +108,27 @@
 // isError, NOT on whether any row exists, so gating the copy changes the screen under an outage
 // whether or not the fixture has data. One query at a time, as the note above already insists.
 //
-// NOTHING HAS YET ASKED about the ROUTE DETAIL screen, which is the most-visited surface in the
-// app and reads from three DB queries of its own -- useRouteTripReports, useAreaTopos and
-// useProfilesByIds. That is not an oversight in the walk so much as a property of how this guard
-// starts the app: it spawns PLAIN vite, so the overlay scaffold's opener is absent and `?zr=1` --
-// the mechanism check:overflow uses to call the app's own openRoute() from inside the page -- is
-// not available here. Driving the UI to a route instead (Climbs -> area -> row) is the path
-// check:ui already reports as intermittent, so it would import a flake into a guard whose whole
-// value is a clean healthy-vs-failing diff.
+// THE ROUTE DETAIL screen is walked now, and the paragraph that used to sit here explaining why
+// it could not be is kept in outline because its REASON was removed rather than worked around.
+// It said the guard spawns PLAIN vite, so the overlay scaffold's opener is absent and `?zr=1` is
+// unavailable; the spawn below now passes scripts/signed-in.config.mjs, which calls buildOpener
+// and routeDetailTransform. Both are inert without a `?z=`/`?zr=` parameter, so every screen
+// walked before the route page is measured exactly as it was before that changed.
 //
-// #1220 made that screen's copy honest anyway (`reportsUnavailable`, `toposUnavailable`), and
-// proved the branch by rendering ConsensusPanel directly in
-// scripts/oneoff/probe-consensus-outage-copy.mjs -- which is a component test, NOT a walk, and so
-// says nothing about whether the flag reaches the screen under a real outage. Wiring the scaffold
-// config into the spawn above is the way to close it, and re-running that probe is not.
+// WHAT THE STOP ACTUALLY REACHES, stated narrowly because `?zr=1` opens ROUTES[0] -- a SEED
+// route, not one from the catalog -- and lands on the OVERVIEW sub-tab. That is enough for
+// `reportsUnavailable`, and it was checked before the first CI run rather than hoped for: two of
+// its six render sites are inside the `tab==="overview"` branch, and the caption above the
+// consensus flips whether or not the seed route's own `activity` fills the panel below it. The
+// flag keys on isError, not on whether rows exist, which is the same property that made the
+// friend-requests flag measurable against a fixture holding no data.
+//
+// NOTHING HAS YET ASKED about `toposUnavailable` or `useProfilesByIds`. Topos render on the
+// PHOTOS sub-tab and this stop does not click it, so that flag is honest copy no walk has ever
+// exercised -- #1220 proved its branch by rendering ConsensusPanel directly in
+// scripts/oneoff/probe-consensus-outage-copy.mjs, which is a component test and not a walk. The
+// route page has six sub-tabs; walking them is six more settles in each of two runs, so it is a
+// cost question rather than a reachability one now. Click one when a flag lands on it.
 //
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
