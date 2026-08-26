@@ -36,6 +36,7 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
+npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
@@ -1513,6 +1514,23 @@ a build error, but a screen that renders wrong or not at all.
     the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
+  - **TWO MORE WAYS A RUN GOES MISSING WITHOUT REPORTING A FAILURE, both met on #1229 and both
+    the same shape as the cancellation above: `gh pr checks` can only report on runs that
+    EXIST.** Neither is a flake to re-run past — each needs a different action.
+    - **A PR opened while CONFLICTING gets NO checks at all**, because GitHub cannot build the
+      merge ref, and resolving the conflict later does **not** retroactively trigger them —
+      only a fresh `synchronize` (a push) does. `gh pr checks` prints *"no checks reported"*
+      and **exits 0**, which a waiter loop reads as "nothing pending, therefore done". Wait for
+      checks to **appear** before waiting for them to finish, and treat none-ever-appearing as
+      its own failure.
+    - **A `startup_failure` run has ZERO jobs, so it contributes zero checks** — the PR showed
+      **4 passing of the 15 every other PR gets**, with nothing red. `Render guards` had failed
+      to start; the workflow file was byte-identical to main's and parsed with all six jobs, so
+      it was transient rather than a bad file on the branch. It **cannot be re-run**
+      (`This workflow run cannot be retried`), so it also needs a new push.
+    - The tell in both cases is the **count**, never the colour. Compare the number of checks
+      against a sibling PR before reading green as green, and `gh run list --branch <b>` to see
+      whether a workflow ran **at all** — a run that never existed is invisible from the PR.
   - **Comments are stripped before anything is matched**, and that is load-bearing here: both
     workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
     scan that read comments would pass on the strength of an explanation. Same trap
@@ -3588,6 +3606,23 @@ the correction knows the screen is wrong, and they have no way to report it.
     FR-63 that no source publishes, while the logistics record now holds the researched trailhead at
     the end of that road. Same road system, different points, and the row went from **zero**
     coordinates to one. Filling the pin would mean inventing the mile-10 coordinate.
+    - **The audit’s own SHADOWED prose asserted a defect that had since been FIXED, and the wrong
+      advice pointed straight at that fabrication.** It said RouteDetail *“picks the pin by type
+      alone … and returns null”*, which was true when written and stopped being true at #1213/#1215
+      — `wpPlaced()` now gates every branch of `trailheadPoint()`, so an uncoordinated pin falls
+      through to the logistics copy, the Directions button drives there, and the map draws that
+      point **dashed as derived**. Anyone acting on the stale sentence would have “repaired” a
+      working button by writing the mile-10 coordinate the bullet above forbids.
+      `scripts/oneoff/probe-shadowed-trailhead-button.mjs` settles it against the **live row** by
+      lifting the real functions with `ANCHOR LOST`, rather than by reading the source — the same
+      standard `check:field-renders` earned when an outage had it telling an author to delete
+      correct bookkeeping. **Re-read an audit’s advice, not just its counts, after the code it
+      describes has moved.**
+    - The **NOT COMPARABLE** block had the mirror of it: 153 rows carry a pin coordinate and no
+      logistics one, and the copy described them as able to be *“reconciled from itself”*. Copying
+      either record onto the other manufactures a 0 m agreement — **this audit is only worth
+      running while the two records are independent**, so a copy would move 153 rows into the
+      agreeing column having checked nothing. Both directions now say so outright.
   - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
     declare a **winner, never a coordinate**: the script reads both records off the row and copies
     the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
