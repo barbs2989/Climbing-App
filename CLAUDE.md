@@ -2450,6 +2450,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **23 of the 39 are LINEAR or AREAL** — cliff bands, traverses, drainages, ridge crests — and a
       label point cannot locate an edge. Those have no coordinate to find, not a coordinate nobody
       has looked for.
+  - **IT COST 37s AND NOW COSTS 20s, and the profile is recorded because the obvious suspect was
+    wrong.** A build-chain guard is paid by every author and every CI run. The suspects were the
+    esbuild bundle and the SSR render; measured, the bundle is **0.4s** and both renders together
+    are **0.5s**. The cost was **parsing 1.5 MB of JSX twice** — sections 1b and 1c each parsed and
+    traversed both files independently (14.6s + 7.5s) — and Babel **scope resolution**, which ran on
+    every array-method receiver whether or not the receiver text had already answered the question.
+    One parse and one traverse per file with both visitors, and `getBinding` only when the name has
+    not already matched. Same ASTs by construction, so nothing asserted changed.
+    - **Quote 37s, not the 2m29s this was first measured at.** That reading was taken while the box
+      was running injection suites and CI for several sessions at once — the
+      [[chrome-ext-has-no-site-permissions]] lesson, which is about load rather than Chrome. A
+      timing taken on a loaded box is not a profile.
+    - **The probe process rendered in 0.5s and then sat for another 2.4s** waiting for the event
+      loop to drain, and that linger is **unbounded**: one long-lived timer or retrying fetch added
+      to the app and this build gate HANGS rather than fails, which is the worst way for a guard to
+      break. It writes its markup to a FILE and calls `process.exit(0)` — a file, not stdout,
+      because this repo already records that `process.exit()` truncates a **pipe**, and
+      `writeFileSync` completes before exit by construction so the two fixes do not fight.
+    - The payload carries **no newline**; the two markers delimit it. A `\n` inside the generated
+      probe collapsed into a real newline and broke the string literal — sidestepping the escape
+      beats adding another backslash to it.
+    - **Re-run the 14 injection cases after any change here, and judge on those rather than on the
+      clock.** An optimisation that makes an assertion VACUOUS still prints `ok` and still runs
+      faster. 14/14 after the change, including the four that must stay silent.
   - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
     the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
     dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
