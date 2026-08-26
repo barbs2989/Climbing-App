@@ -164,6 +164,12 @@ export async function durableFixture(log) {
   // this project on 2026-08-19. Narrowed by `created_by` AND `route_id` rather than by a name,
   // because `crews` has no name column; the mate is a fixture account nobody else can post as,
   // so no real climber's crew can be caught by it.
+  //
+  // WHAT A CREW DELETE TAKES WITH IT, checked in the migrations rather than assumed, because a
+  // sweep is the wrong place to discover a cascade: `crew_members.crew_id` and
+  // `crews_messages.crew_id` are ON DELETE CASCADE (0036, 0042) so the membership and chat rows
+  // go cleanly, and `climb_logs.crew_id` is ON DELETE SET NULL (0037) -- a climber's LOG survives
+  // its crew being removed. Had that one cascaded, this sweep would destroy real logged climbs.
   const staleCrews = await asUser(mateSession,
     `crews?select=id&created_by=eq.${mateSession.user.id}` +
     `&route_id=eq.${CREW_ROUTE_ID}&created_at=lt.${staleBefore}`);
