@@ -509,7 +509,13 @@ try {
     if (!same && !broken && !isRouteSub) findings.push({ screen: t, why: "nothing on it says anything went wrong", text });
     else if (!same && lying.length) findings.push({ screen: t, why: `the outage introduced ${JSON.stringify(lying.slice(0, 4))}`, text });
     console.log(`${t.padEnd(9)} healthy ${String((ok[t]||"").length).padStart(5)}ch  failing ${String(text.length).padStart(5)}ch  ` +
-      `${same ? "IDENTICAL (seed-backed, proves nothing)" : `CHANGED  says-broken=${broken ? "YES" : "no"}  says-empty=${empty ? "YES" : "no"}`}`);
+      // An EMPTY pair is not a seed-backed screen -- it is a screen that was never opened, and
+      // saying "proves nothing" for the right reason matters: "this screen has no DB data behind
+      // it" and "this sub-tab is absent, or its click did not land" need opposite responses, and
+      // the first reads as a finished measurement.
+      `${same
+        ? (text ? "IDENTICAL (seed-backed, proves nothing)" : "NOT OPENED (absent on this route, or the click did not land)")
+        : `CHANGED  says-broken=${broken ? "YES" : "no"}  says-empty=${empty ? "YES" : "no"}`}`);
     // Print what the climber ACTUALLY sees. The broken/empty regexes are a summary and have
     // been wrong before; the text is the evidence.
     if (!same) {
