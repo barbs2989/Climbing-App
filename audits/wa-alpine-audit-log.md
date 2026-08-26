@@ -9821,3 +9821,67 @@ Web access this run: WebSearch worked throughout. Direct WebFetch to reference d
 (fs.usda.gov) was blocked by network egress policy, consistent with prior batches' notes.
 
 Next batch continues after `wa_mount_daniel_daniel_glacier` in the id-ordered scope.
+
+## Batch 145 — 2026-08-26 (pass 3)
+
+Routes: `wa_mount_daniel_lynch_glacier` (Mount Daniel); `wa_mount_deception_standard` (Mount
+Deception); `wa_mount_degenhardt_southwest_route` (Mount Degenhardt); `wa_mount_despair_east_route`
+(Mount Despair); `wa_mount_fairchild_standard` (Mount Fairchild); `wa_mount_formidable_south_face`
+(Mount Formidable); `wa_mount_fury_east_mongo_ridge`, `wa_mount_fury_west_west_ridge` (Mount Fury
+West Peak); `wa_mount_fury_east_southeast_glaciers` (Mount Fury East Peak); `wa_mount_goode_northeast_buttress`
+(Mount Goode).
+
+**Confirmed errors, fixed (SQL in `audits/sql/2026-08-26-batch-145.sql`):**
+- `wa_mount_fury_east_southeast_glaciers`: `waypoints[2]` ("Big Beaver Landing") stored
+  lat/lng (48.819748, -121.279546) that put it ~11 miles up-valley, essentially on top of
+  the very next waypoint (Luna Camp) — contradicting this same waypoint's own note ("roughly
+  4.6 mi up-lake from Ross Dam, at Ross Lake's full-pool elevation") and its own `distMi`
+  (5.9, vs Luna Camp's 17.4). Re-confirmed via WebSearch (Mountaineers.org "Ross Dam & Big
+  Beaver Creek", Ross Lake Resort water-taxi FAQ): Big Beaver Landing is the water-taxi drop
+  at the mouth of Big Beaver Creek on Ross Lake, ~6 trail miles from Ross Dam — matching the
+  elevation already on file (1,602 ft, Ross Lake's own full-pool elevation) and matching the
+  sibling `wa_mount_fury_west_west_ridge` route's own, independently-recorded coordinate for
+  the identical landing (48.77563, -121.0658). Three-way corroboration: the row's own prose,
+  an external source, and a sibling route's independent record all agree on the same point,
+  none of which is the stored coordinate.
+- `wa_mount_fury_east_mongo_ridge`: `fa` field hedged "month uncertain: July or August" for
+  Wayne Wallace's solo FA, contradicting this same row's own `beta` field ("first ascended
+  August 24-27, 2006"). Re-confirmed via three independent sources — AAC Publications ("Mt.
+  Fury, West Peak, Mongo Ridge"), a Cascade Climbers trip report titled "Mongo Ridge-W.Fury
+  F.A.- VI-5.10- 8/28/2006", and Alpinist's climbing note — all agreeing on August 24-28,
+  2006 (started 4am Aug 24, topped out and walked out by the 28th). No source gives a July
+  date. Also independently confirms this route's `area_id` (`wa_mount_fury_west`) is correct
+  — every source describes Mongo Ridge as the southwest buttress of Mount Fury's *West* Peak,
+  despite the route id itself saying "east" (an id-naming quirk, not a data error worth
+  touching — renaming a route's primary key is outside this audit's remit and risks breaking
+  FK references in `activity`/`contributions`).
+
+**Confirmed correct, no fix needed:** Mount Despair's FA (Beckey, Anderson, Kelley, July 2,
+1939 — WTA corroborates both the party and the older 7,292 ft figure already noted in this
+row's own `data_quality.gaps`); Mount Fairchild's FA (Pruitt/Baker/Christiansen/Etten, 1963);
+Mount Fury West Peak's FA (Watson/Sharpe/Spickard/Josendal/Muzzy, mid-August 1958); Mount
+Formidable's FA (Bressler/Clough/Cox/Myers, July 25 1938, inaugural Ptarmigan Traverse); Mount
+Goode NE Buttress's first winter ascent (Pilling/Mascioli, March 3-5 1984, AAC Publications
+account matches almost verbatim). Mount Deception's elevation (7,788 ft) confirmed against
+listsofjohn.com/Wikipedia; the 2 ft difference against this route's own summit waypoint
+(7,786 ft) is de minimis survey/rounding noise, not flagged. Mount Fury West Peak's
+elevation (8,303 ft, area row) sits inside the ±10 ft margin of the Gilbertson 2022
+theodolite survey (~8,305 ft) already cited in this row's own `corrections` field.
+
+**Flagged, not fixed:** `wa_mount_degenhardt_southwest_route`'s `fa` field is a bare "1931"
+with no party named. Wikipedia and Peakvisor both credit William Degenhardt and Herbert
+Strandberg — but a second search turned up a source giving 1932 for the same two climbers,
+so the sources disagree on the year itself. Per audit rules, not fixed; needs human
+verification before either the year or the party names are written in.
+
+**Not independently re-verified this pass** (already self-flagged in each row's own
+`data_quality.gaps`, no new corroborating or contradicting source found): Mount Degenhardt's
+prominence figure choice (already resolved to 280 ft in a prior pass, consistent across
+sources); Mount Formidable's route-variant attribution (South Face vs. Southeast Ledges) to
+the 1938 FA party; Mount Fury West Peak's FA specifically for the *West* summit (as opposed
+to the peak generally) and its connecting-ridge descent rappel count.
+
+Web access this run: WebSearch worked throughout; WebFetch to en.wikipedia.org and
+alpenglow.org was blocked by network egress policy, consistent with prior batches.
+
+Next batch continues after `wa_mount_goode_northeast_buttress` in the id-ordered scope.

@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_mount_daniel_daniel_glacier",
+    "last_processed_id": "wa_mount_goode_northeast_buttress",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3074,6 +3074,25 @@
             "findings_fixed": 6,
             "findings_summary": "This exact batch was already audited in pass 2 (batch 80, 2026-08-08); all 5 fixes drafted there (Constance West Arete gear granite->basalt, Crowder area+2 routes coordinate outlier, Cruiser NW Face/Corner stale Bear Gulch Fire road status) were re-confirmed still live/uncorrected in the DB 18 days later and independently re-verified against fresh sources today, plus a 6th (Cruiser NW Face/Corner access.closures, also drafted in batch 80 but unapplied). Recommend applying audits/sql/2026-08-26-batch-144.sql (supersedes the unapplied 2026-08-08-batch-80.sql) rather than letting a future pass re-find the same items a third time. Mount Custer Standard and the Crowder FA self-contradiction remain as previously flagged (no new source found); Cruiser permit vs access.passRequired NW-Forest-Pass contradiction also still open, unresolved.",
             "sql_file": "audits/sql/2026-08-26-batch-144.sql"
+        },
+        {
+            "batch_number": 145,
+            "date": "2026-08-26",
+            "route_ids": [
+                "wa_mount_daniel_lynch_glacier",
+                "wa_mount_deception_standard",
+                "wa_mount_degenhardt_southwest_route",
+                "wa_mount_despair_east_route",
+                "wa_mount_fairchild_standard",
+                "wa_mount_formidable_south_face",
+                "wa_mount_fury_east_mongo_ridge",
+                "wa_mount_fury_east_southeast_glaciers",
+                "wa_mount_fury_west_west_ridge",
+                "wa_mount_goode_northeast_buttress"
+            ],
+            "findings_fixed": 2,
+            "findings_summary": "Fixed a geometrically-wrong Big Beaver Landing waypoint on wa_mount_fury_east_southeast_glaciers (coordinates were ~11mi off, contradicting the waypoint's own note/distMi and the sibling West Ridge route's independently-correct coordinate) and a stale month-uncertain hedge on wa_mount_fury_east_mongo_ridge.fa (three independent sources confirm Aug 24-28, 2006, matching this row's own beta field). Confirmed correct via external sources and left unchanged: Despair FA (Beckey/Anderson/Kelley 1939), Fairchild FA (1963), West Fury West Peak FA (1958), Formidable FA (1938 Ptarmigan Traverse party), Goode NE Buttress first winter ascent (Pilling/Mascioli 1984). Flagged, not fixed: Mount Degenhardt's fa field (bare \"1931\", no party) could be enriched with Degenhardt & Strandberg, but sources conflict on the year itself (1931 vs 1932) -- needs human verification rather than a guessed fix.",
+            "sql_file": "audits/sql/2026-08-26-batch-145.sql"
         }
     ]
 }
