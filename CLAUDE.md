@@ -108,6 +108,8 @@ npm run audit:approach-scope # does a route's approach text run past the base of
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:camp-elevations # are the camp elevations already ON SCREEN right? (99% are)
+npm run audit:camp-route-fit  # is this camp plausibly usable FOR THIS ROUTE? (6 candidates)
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -705,20 +707,36 @@ a build error, but a screen that renders wrong or not at all.
     sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
     frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
     emptiness is never asserted, but that is a list to READ, not a coverage claim.
-  - **RULE 2's VOCABULARY HAS NOW BEEN SHORT THREE TIMES, and every miss was one more NOUN rather
-    than a different idea.** `"0 routes"`/`"0 crews"` (the Home tiles), `"0 climbs to go"`/`"0
-    logged"` (the Logbook), and `"0 joined"` (Crew:Groups) — the last found by an injection that
-    **MISSED**, not by reading. A vocabulary of absence that cannot spell the noun in front of it
-    is the [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape: it fails as a shorter
-    worklist, silently. When a screen is added, check what its counts are CALLED before trusting a
-    quiet run.
-  - **The crew-invites HEADING is unmeasurable with this fixture, and its injection case records
-    that rather than pretending.** `"No crew invites"` is on screen in the **healthy** run too —
-    the fixture's mate JOINS the crew rather than staying invited — so rule 2 sees nothing
-    introduced and rule 1 is satisfied by the friend-requests section beside it. The fix is real;
-    the guard cannot see it. The case expects a **PASS** and is a stale-bookkeeping alarm: give
-    the fixture a pending invite and it starts reporting FALSE POSITIVE, which is the signal that
-    the coverage arrived. Same shape as `check:a11y-badges`' `arealatest` case.
+  - **RULE 2's VOCABULARY HAS NOW BEEN SHORT FOUR TIMES, and the fourth is the instructive one
+    because the fix for the third did not prevent it.** `"0 routes"`/`"0 crews"` (the Home tiles),
+    `"0 climbs to go"`/`"0 logged"` (the Logbook), `"0 joined"` (Crew:Groups), and **`"No crew
+    invites"`** (Crew:Requests) — the last two found by injections that **MISSED**, not by reading.
+    The `no X` branch demanded the noun **immediately** after `no`, so it matched `"no crews"` and
+    could not match `"no CREW INVITES"`: **one intervening word defeated it.** It now allows up to
+    two words between, singular or plural. This is the
+    [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape and it fails as a *shorter
+    worklist*, silently — nothing about a quiet run looks wrong. It is still a deny-list and will
+    be short again; when a screen is added, check what its emptiness is CALLED.
+  - **THE STALE-BOOKKEEPING ALARM FIRED, AND CLOSING IT TOOK TWO FIXES, NOT ONE.** The
+    crew-invites heading used to be unmeasurable: `"No crew invites"` was on screen in the
+    **healthy** run too, because the fixture's mate JOINS the crew rather than staying invited, so
+    rule 2 saw nothing introduced and rule 1 was satisfied by the friend-requests section beside
+    it. A real gate on main that no guard could see. Its injection case therefore expected a
+    **PASS**, as an alarm rather than a success.
+    - The fixture now seats the owner as **INVITED in a second crew owned by the mate** — it has
+      to be a second crew, since the owner is already *confirmed* in the first and there is
+      nowhere in it to hang a pending invite. The **mate** does the inviting because that is what
+      the live policy requires (`join or invite` demands `invited_by = auth.uid()` AND that you
+      created the crew, or are seating yourself at a status other than confirmed); seeding it as
+      the owner would manufacture a state the app's own flow cannot reach.
+    - **The fixture alone did not close it** — the case still MISSED, because rule 2's vocabulary
+      could not spell `"No crew invites"` either. *Two independent reasons a surface is invisible
+      can hide behind one another*; fixing the one you predicted does not prove the other is not
+      there. Only re-running the injection showed it.
+    - Per-run and deleted in teardown, like the group and for the same reason: it is state the
+      walk asserts on, so two concurrent runs would read each other's writes. Unlike the group it
+      needs no visibility flip — `crews` RLS is `created_by = me OR I am a member`, with no public
+      class, so it cannot surface in a real climber's app.
   - **A GUARD THAT THREW IS NOT A GUARD THAT DISAGREED.** Exit 1 from a crash — a dev server that
     never came up on a loaded box — was being filed by the harness as *"failed for the wrong
     reason"*, which reads as a defect in the checker and sends you editing a correct file. A run
@@ -1544,11 +1562,30 @@ a build error, but a screen that renders wrong or not at all.
   - `preventDefault` on Space is required (Space scrolls the page), and the handler ignores
     events whose `target` is not the row itself, so a nested delete button keeps its Enter.
   - **The baseline is a per-file count, i.e. a ratchet** — the number may go down, never up.
-    It deliberately cannot see a one-for-one swap in the same file. A stable per-control key
-    would be better and is not available: this codebase packs many declarations onto one
-    physical line, so a line number does not identify a control, and handler text repeats
-    verbatim (`()=>openRoute(r)` many times over). A stale baseline (higher than reality)
-    **fails**, so bookkeeping cannot quietly re-open room for regressions.
+    A stable per-control key would be better and is not available: this codebase packs many
+    declarations onto one physical line, so a line number does not identify a control, and
+    handler text repeats verbatim (`()=>openRoute(r)` many times over). A stale baseline
+    (higher than reality) **fails**, so bookkeeping cannot quietly re-open room for
+    regressions.
+  - **THE ONE-FOR-ONE SWAP IS NO LONGER A BLIND SPOT, because the sweep finishing made a
+    stronger assertion possible.** A count cannot see "fix one control, add another in the
+    same file" — the number does not move. That was unavoidable at 247 remaining. It is not
+    now: every one of the 62 left is classified, so the guard asserts the CLASSIFICATION
+    rather than the number. **A control that is neither a BACKDROP (measured style,
+    `{...styles.x}` spreads resolved and quotes normalised) nor listed in `DUPLICATES` with a
+    reason is a NEW defect whatever the count says.** A stale `DUPLICATES` entry fails too.
+  - **ORDER IS LOAD-BEARING HERE FOR THE SECOND TIME.** The count blocks call
+    `process.exit(1)`, so with the classification test placed after them a swap that also
+    perturbed the count fired the *regression* block and exited before the classification
+    ran — the injections reported **`guard pass` on the very case it exists for**. It runs
+    first now, the same fix the inert check needed. Whichever block exits first is the only
+    one anyone reads.
+  - Injection-tested 4/4 (`scripts/oneoff/inject-clickable-swap-cases.mjs`). Case 2 is the
+    swap: convert a declared duplicate AND un-convert another control, so the count is
+    unchanged and only the classification can see it. Case 3 must **pass** — a new backdrop
+    is correct. **A parse error is not a catch**: the first harness scored two cases on
+    malformed JSX that never reached the guard's logic, so invalid JSX is now rejected as a
+    harness bug rather than counted.
   - Two exemptions, both measured rather than assumed. `onClick={e=>e.stopPropagation()}` is
     a **shield**, not a control — it stops a click inside a sheet reaching the backdrop, and
     demanding a tab stop there would put a focusable "button" that does nothing in front of
@@ -2276,6 +2313,43 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **`0,0` is deliberately ACCEPTED as placed.** This predicate answers *does a coordinate exist*,
     not *is it plausible*; rejecting it here would hide a bad pin from the audits whose job is to
     find it.
+  - **A TENTH PREDICATE APPEARED ONE PR AFTER THE SWEEP, WAS FLAGGED IN REVIEW, AND MERGED ANYWAY.**
+    Section 1 is scoped to `GPXMap`'s body for a good reason — `peakCoord.lat!=null` is a legitimate
+    test of a PEAK coordinate and flagging it would tell an author to break correct code. The cost is
+    that a placement test written **anywhere else** is invisible by construction, and #1215's
+    `trailheadPoint()` duly wrote one: `w.lat!=null&&w.lng!=null` for the pin, and `w.lat!=null`
+    alone — **no lng at all** — for the name-matched fallback. *A review comment is not a guard.*
+    - **The empty-string case is the bad one, and it defeats the very fix #1215 shipped.** `"" !=
+      null` is true, so the pin branch returned `{lat:"",lng:""}` and, because it returns **early**,
+      **shadowed the `approach_logistics` coordinate the function exists to reach** — the fallback
+      skipped in exactly the case it was added for, with `derived:false` so no marker is drawn
+      either. A lat with no lng gave the Directions button `destination=47.5,undefined`.
+    - **Section 1b is structural and scoped BY THE DATA SOURCE, not by the variable name**: a
+      coordinate comparison inside a callback that is **iterating waypoints** is a placement test
+      whatever the parameter is called, and a test on a peak, a user position or an area cannot
+      reach it. The receiver is resolved through **Babel scope**, so `const wps=route.waypoints||[]`
+      counts — matching on the name alone would have missed the shape that actually got through.
+      Only a **comparison** counts; a plain read (`.map(w=>[w.lat,w.lng])`) is a correct consumer of
+      a placed pin and flagging it would condemn every one of them.
+    - **It found THREE MORE on its first run, all in `RouteDetail`**, which is the argument for the
+      widening rather than a second hand-fix. One is an **eleventh predicate — `wpPlaced` re-inlined
+      character for character** inside `pickForecastWaypoints`; behaviour-identical today (`+x` and
+      `Number(x)` agree), so a drift risk rather than a live defect, and exactly what the sweep
+      existed to remove. The other two gate **whether GETTING THERE renders** and **whether the
+      Download GPX button is offered** on a coordinate the map cannot draw — so the app would build
+      a GPX file from a `wpt` with a missing or empty `lng`.
+    - **Behaviour-neutral, and measured rather than asserted.**
+      `verify-trailhead-point-equivalence.mjs` runs the pre-change expression and the shipped
+      function over every route carrying waypoints: **1,016 compared, 942 resolving, 0 differ.** The
+      reference is a verbatim copy of the old expression (correct — the original is gone, so a copy
+      is the only second opinion available) while the function under test is **extracted from source
+      with `ANCHOR LOST`**, because a copy of *that* would agree with itself whatever the app did.
+      The four synthetic cases carry the point: the shapes the catalog does not hold **yet**.
+    - The `approach_logistics` branch goes through `wpPlaced({lat,lng})` too. It is the same question
+      about a different store, and `trailheadLat:""` fails identically.
+    - Injection-tested **11/11**. Case 8 is the real historical defect, `trailheadPoint()` exactly as
+      #1215 merged it. **Cases 10 and 11 must stay SILENT** and are what make the rule worth having —
+      a peak coordinate and a plain read of a placed pin are both correct code.
   - Scoped to **GPXMap's body**, not the file: `peakCoord.lat!=null` is a legitimate test of a peak
     coordinate and flagging it would tell an author to break correct code.
   - **THE 39 UNPLACED PINS ARE 1 FINDABLE AND 38 REFUSALS, and the refusals are the result.**
@@ -2704,6 +2778,80 @@ the correction knows the screen is wrong, and they have no way to report it.
       **waypoint** store, which is 98% populated — the *check the existing files before
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
+- **`audit:camp-route-fit`** asks the question `audit:camp-elevations` surfaced and could not
+  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, is
+  offered *"Ruth Mountain summit camp"* at 7,100 ft — a real camp with a correct elevation, on a
+  different mountain 7.2 km away. A zone file handed every camp in a corridor to every route in
+  it. **The elevations are right; the PAIRING is noise.** Report-only, read-only; not a build gate.
+  - **THE OBVIOUS SIGNAL IS FAR TOO WEAK, and saying why is the point.** *"The camp names a
+    different peak"* describes almost every CORRECT camp: Boston Basin serves Boston, Forbidden
+    and Sahale, and a shared camp is the entire purpose of a zone file. Elevation alone is no
+    better — *"South Twin Sister summit bivies"* (6,932 ft) correctly serves four lower Sisters
+    because it IS the range high point.
+  - **What separates them is DISTANCE AND MAGNITUDE TOGETHER**: South Twin is 288 ft above North
+    Twin and adjacent; Ruth Mountain is 2,100 ft above Mamie Peak and 7.2 km away. Camps carry no
+    coordinates (4 of 5,083), but a camp that NAMES a peak inherits that peak's coordinate from
+    the catalog's own `areas` table — so the distance is measurable without inventing anything.
+  - **Precision was measured BEFORE promotion**, the standard `audit:area-parents` set by shipping
+    41 findings of which 12 were real. Of **5,070** (route, camp) pairs, **315** name a different
+    distinctive peak, and **6** clear both dials. The script prints the whole distance × elevation
+    grid so the thresholds can be judged rather than trusted — fitting one to the case that
+    prompted the detector proves nothing.
+  - **Each finding carries its OWN corroboration, from a third record: the route's prose.** If a
+    route names the peak its camp names, parties really do stage there. **5 of the 6 never mention
+    it** — and not for want of prose: Mount Stickney has 3,969 characters and never says Spire
+    Mountain. The camp entry itself is excluded, since it is the thing under suspicion.
+  - A peak name is only usable when it is **distinctive and unique in the catalog** — "Middle
+    Peak", "North Peak" and "The Tower" exist many times over, so matching them says nothing about
+    which is meant. 431 of 447 peaks qualify.
+  - **It must never become a sweep.** A shared corridor camp is correct, and the one corroborated
+    finding shows why: `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-area
+    camps are defensible — Ruth's **summit** camp still is not. The repair is a judgement per row.
+
+- **`audit:camp-elevations`** asks whether the camp elevations **already on screen** are right.
+  3,821 bivy sites carry one, almost all written by enrichment, and nothing had ever checked them.
+  `audit:waypoint-elevations` asks this of the waypoint store; the bivy store is 11x larger, feeds
+  the same panel, and had never been asked. **A blank says "unknown" honestly; a wrong number says
+  something false on a screen a climber plans a night out from.** Read-only, report-only, anon key
+  — **not** a build gate (it reads the DB and the gazetteer).
+  - **THE RESULT IS A NEGATIVE ONE AND THAT IS THE POINT: 168 of 170 agree within 400 ft (99%).**
+    The enrichment's camp elevations are sound. Of the two that did not, **one was the audit's own
+    wrong-feature match** and one was real.
+  - **The real one is a recognisable failure: the TRAILHEAD's height written into the camp's
+    field.** "Hardscrabble Horse Camp, Middle Fork Snoqualmie" stored **1,400 ft on 21 rows**; the
+    DEM at its OSM coordinate reads **2,828**, and a published description of the walk gives the
+    trailhead at 1,400 then ~1,400 ft of gain to the camp. Two methods agreeing to ~28 ft, and
+    1,400 is exactly the number the second one names as the START. Fixed by
+    `fix-hardscrabble-camp-elevation.mjs`, which declares the expected current value and refuses
+    if the row no longer holds it.
+  - **A ONE-WORD QUERY IS NOT AN IDENTITY, and that produced the false one.** Stripping `basin`
+    from *"Bedal Basin, below the north side of Bedal Peak"* left **"Bedal"**, which matched a
+    **hamlet** on the Mountain Loop Highway — 3,796 ft below the basin, and reported as the worst
+    finding in the run. Settlements are named after the landforms beside them. The leading-noun
+    path already required two words; the tail-strip path did not.
+  - **Section 1 needs no gazetteer, so it covers ALL 3,821 sites — and its number is a READING
+    LIST, not a defect count.** 19 camps sit above their route's own high point, and reading them
+    with the area name attached shows **most are correct**: a traverse camp on a neighbouring
+    higher summit ("South Twin Sister summit bivies" serves four lower Sisters), or an over-broad
+    zone assignment (`wa_ellation`, 5,000 ft, carries Ruth Mountain's 7,100 ft summit camp from
+    7 km away). Neither is a wrong elevation. The script says so in its own output, because
+    *when an audit reports a number, ask what it is the number OF.*
+  - **The name-matching gates are IMPORTED from `scripts/lib/camp-names.mjs`**, the same module
+    `solve-camp-elevations.mjs` writes through. A solver and an audit that disagree about "the
+    same place" would either bless the solver's mistakes or report correct work as broken — the
+    four-grade-parsers shape, and the three-waypoint-audits-with-different-tolerances shape.
+  - **A STRUCTURE NOUN THE MATCHED FEATURE LACKS MEANS A DIFFERENT PLACE STANDING NEAR IT.**
+    *"Blue Lake trailhead roadside parking"* is the pullout on SR-20 at ~5,200 ft; the gazetteer
+    matches **Blue Lake**, up the trail at 6,264 ft. Two of the first three findings were this.
+    The rule already existed in this repo — the saddle solver records *"test the OBJECT"* — and
+    had simply never been carried across. `trailhead`, `parking`, `junction`, `crossing`, `ford`
+    and the rest now sit in `SUBFEATURE` beside `saddle` and `moraine`.
+  - Fails **closed** four ways: a failed read, zero routes, zero names attempted, and a gazetteer
+    that places nothing are each reported as a broken scan rather than a clean catalog.
+  - **The controls are the same four `probe-camp-elev-control.mjs` runs**, re-run after every
+    change to the matching logic, because the expected output here — a plausible elevation — is
+    exactly what a broken pipeline emits.
+
   - **THE GATE IS `campingGate()`, AND THE RULE IS "TRAD IS ALPINE WHEN IT CLIMBS A PEAK"** — a
     user decision, taken after the defect was measured rather than guessed at.
     `wa_mount_fury_east_direct_east_ridge` — 8,322 ft in the Picket Range, **9,500 ft of gain**,

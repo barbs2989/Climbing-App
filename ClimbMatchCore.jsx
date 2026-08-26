@@ -533,13 +533,25 @@ function wpIs(w,t){return wpType(w)===t;}
    marker can cover, and the case the map must draw differently. Do NOT close this by writing a
    Trailhead waypoint instead: a manufactured pin reads as a recorded one, and a record and a copy
    of itself always agree. */
+/* EVERY BRANCH ASKS wpPlaced(), and that is not tidiness. #1183 swept nine placement tests into one
+   predicate; this function was written one PR later with a TENTH — `w.lat!=null&&w.lng!=null` for
+   the pin, and `w.lat!=null` alone, no lng at all, for the name-matched fallback. Both accept a
+   coordinate the map cannot draw, and contributed rows store lat/lng as STRINGS:
+     - `""` passes `!= null`, so the pin branch returned {lat:"",lng:""} and, because it returns
+       EARLY, SHADOWED the approach_logistics coordinate this function exists to reach. The
+       fallback skipped in exactly the case it was added for, and derived:false so no marker drawn.
+     - a lat with no lng gave the Directions button `destination=47.5,undefined`.
+   The logistics record goes through the same predicate rather than a bare null test, because it is
+   the same question about a different store and `trailheadLat:""` fails identically.
+   Measured before changing it: 0 routes in the catalog reach either shape today, so this is a
+   correctness fix with no behaviour change — the same honest position #1183 took. */
 function trailheadPoint(route){
   if(!route)return null;
   const wps=route.waypoints||[],al=route.approachLogistics||{};
-  const pin=wps.find(w=>wpIs(w,"Trailhead")&&w.lat!=null&&w.lng!=null);
+  const pin=wps.find(w=>wpIs(w,"Trailhead")&&wpPlaced(w));
   if(pin)return{lat:pin.lat,lng:pin.lng,name:pin.name||pin.label||"Trailhead",derived:false};
-  if(al.trailheadLat!=null&&al.trailheadLng!=null)return{lat:al.trailheadLat,lng:al.trailheadLng,name:al.trailhead||"Trailhead",derived:true};
-  const named=wps.find(w=>w&&w.lat!=null&&/trailhead|parking|\bth\b/i.test(String(w.name||w.label||"")));
+  if(wpPlaced({lat:al.trailheadLat,lng:al.trailheadLng}))return{lat:al.trailheadLat,lng:al.trailheadLng,name:al.trailhead||"Trailhead",derived:true};
+  const named=wps.find(w=>wpPlaced(w)&&/trailhead|parking|\bth\b/i.test(String(w.name||w.label||"")));
   return named?{lat:named.lat,lng:named.lng,name:named.name||named.label||"Trailhead",derived:false}:null;
 }
 function guessWpType(name){const n=(name||"").toLowerCase();if(/trail\s*head|\bth\b|parking|gate/.test(n))return "Trailhead";if(/camp|bivy/.test(n))return "Campsite";if(/summit|peak|\btop\b/.test(n))return "Summit";if(/water|creek|spring|stream|lake/.test(n))return "Water";if(/junction|fork|split|trail/.test(n))return "Junction";if(/hazard|danger|crevasse|rockfall/.test(n))return "Hazard";if(/topout|top-out/.test(n))return "Topout";return "Junction";}

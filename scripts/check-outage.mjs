@@ -108,6 +108,21 @@
 // isError, NOT on whether any row exists, so gating the copy changes the screen under an outage
 // whether or not the fixture has data. One query at a time, as the note above already insists.
 //
+// NOTHING HAS YET ASKED about the ROUTE DETAIL screen, which is the most-visited surface in the
+// app and reads from three DB queries of its own -- useRouteTripReports, useAreaTopos and
+// useProfilesByIds. That is not an oversight in the walk so much as a property of how this guard
+// starts the app: it spawns PLAIN vite, so the overlay scaffold's opener is absent and `?zr=1` --
+// the mechanism check:overflow uses to call the app's own openRoute() from inside the page -- is
+// not available here. Driving the UI to a route instead (Climbs -> area -> row) is the path
+// check:ui already reports as intermittent, so it would import a flake into a guard whose whole
+// value is a clean healthy-vs-failing diff.
+//
+// #1220 made that screen's copy honest anyway (`reportsUnavailable`, `toposUnavailable`), and
+// proved the branch by rendering ConsensusPanel directly in
+// scripts/oneoff/probe-consensus-outage-copy.mjs -- which is a component test, NOT a walk, and so
+// says nothing about whether the flag reaches the screen under a real outage. Wiring the scaffold
+// config into the spawn above is the way to close it, and re-running that probe is not.
+//
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
 // equal to its healthy twin, and be skipped rather than judged. Re-run a miss on a quiet machine
@@ -177,13 +192,20 @@ const EMPTY_RE = /no .* yet|nothing here|none yet|get started|add your first|no 
 // recently found here were counts: "0 routes" and "0 crews" on the Home tiles, and "0 climbs to
 // go" in the Logbook. A vocabulary of absence that cannot spell zero misses the commonest way
 // this app claims to have nothing.
-// The zero-count half of this list has now been short THREE times, and each miss was one more
-// noun rather than a different idea: "0 routes"/"0 crews" (the Home tiles), "0 climbs to go" and
-// "0 logged" (the Logbook), and "0 joined" (the Groups sub-view, found by an injection that
-// MISSED). A vocabulary of absence that cannot spell the noun in front of it is the shorter
-// worklist this repo keeps recording -- so when a screen is added, check what its counts are
-// called before trusting a quiet run.
-const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno (climbs|crews|routes|areas|objectives)\b|\b0 (climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
+// THIS LIST HAS NOW BEEN SHORT FOUR TIMES, and every miss was one more way of saying nothing
+// rather than a different idea: "0 routes"/"0 crews" (the Home tiles), "0 climbs to go"/"0 logged"
+// (the Logbook), "0 joined" (Crew:Groups), and "No crew invites" (Crew:Requests) -- the last two
+// found by injections that MISSED, not by reading.
+//
+// The fourth is the instructive one, because the fix for the third did not prevent it. The "no X"
+// branch demanded the noun IMMEDIATELY after "no", so it matched "no crews" and could not match
+// "no CREW INVITES": one intervening word defeated it. That is the deny-list shape exactly -- it
+// fails as a SHORTER WORKLIST, silently, and nothing about a quiet run looks wrong.
+//
+// So the branch now allows up to two words between "no" and the noun, and the nouns are singular
+// or plural. It is still a deny-list and it will still be short one day; when a screen is added,
+// check what its emptiness is CALLED before trusting a quiet run.
+const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
 
 const settle = async (page) => {
   let last = "", same = 0;
