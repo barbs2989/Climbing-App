@@ -370,6 +370,28 @@ a build error, but a screen that renders wrong or not at all.
     - `cancel-in-progress: true` is right **here and nowhere near a push-to-main guard**: a
       superseded production walk asks about a site that has since been redeployed, so it has
       no value. `check:ci-cancel` governs the push-triggered workflows; this is not one.
+  - **It also asserts that two screens counting the SAME list agree** (`scripts/lib/screen-counts.mjs`),
+    on the text it has already captured, so it costs no extra walk. #1203 is why: the Profile said
+    *"My objectives · 3 active"* while the Logbook said *"4 climbs to go"* about one list, because the
+    Profile had forked the app's completion test and counted a route you TURNED AROUND on as done.
+    Every assertion here passed — each number was well-formed, each screen rendered, nothing was
+    `NaN`. Nobody was comparing them.
+    - **The relations are NOT all equality, and an equality would have gone red on correct
+      behaviour.** Home's *"N routes"* is the TOTAL; *"N climbs to go"* and *"N active"* are
+      total-minus-completed. They coincide today only because nothing in the seed demo is completed,
+      so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
+      a three-way equality fires on working code.
+    - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
+      go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
+      was tried and silently stopped finding the badge on the one snapshot carrying the defect —
+      #1181's leaked comment sits between the heading and the number and pushes it out of range.
+    - Fails **closed**: a heading that moved, a screen the walk never captured, or a relation with a
+      missing side is reported as `NOT COMPARED`, never as agreement. Deleting the Profile from a
+      snapshot made an early version report *nothing*, because the group still had two readable
+      counts and the pair quietly had an undefined half.
+    - Case-tested 7/7 against REAL captures, no browser needed
+      (`scripts/oneoff/inject-screen-count-cases.mjs`). Case 2 is not synthetic — it is the actual
+      pre-#1203 recording, the standard `check:rls` case 1 is held to.
   - **The sample route detail is pinned by name** (`North Ridge (Complete)` in Washington
     under `USE_DB`, `West Slabs` in Utah on seed), so a rename or delete in the live DB
     turns this red on a PR whose author changed nothing. The failure separates the two
@@ -2829,6 +2851,22 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **It must never become a sweep.** A shared corridor camp is correct, and the one corroborated
     finding shows why: `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-area
     camps are defensible — Ruth's **summit** camp still is not. The repair is a judgement per row.
+  - **IT UNDER-REPORTS ITS OWN CLASS, and the wider version was measured and REJECTED.** Reading
+    the repair context showed the problem is bigger than the 6: **Mount Pilchuck (5,324 ft) carries
+    eight camps and SEVEN belong to other mountains** — Three Fingers (the Lookout, Tin Can Gap,
+    Goat Flats, Saddle Lake), Whitehorse (×2) and Big Four; only *"Bathtub Lakes basin, east of
+    Mount Pilchuck"* is its own. This audit caught **one** of the seven, because it requires the
+    camp to name a distinctive UNIQUE peak and "Tin Can Gap"/"Goat Flats"/"Saddle Lake" name none.
+    - The obvious widening — flag any camp whose name the route's prose never mentions — was built
+      (`measure-foreign-camp-lists.mjs`) and is **not shipped**. Across 765 routes the ratio is
+      smooth across every bucket with a median near **40-50%**, so a route not mentioning most of
+      its camps is NORMAL: ≥75% is not an outlier, it is **130 routes**, and the worst hit had 603
+      characters of prose — thin, not defective.
+    - **The prose test is corroboration ON TOP OF a geometric signal, not a detector on its own.**
+      That is why it is folded in per-finding rather than used to select findings.
+    - **A partial repair would be worse than none here**: removing only the flagged Three Fingers
+      Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
+      class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
 
 - **`audit:camp-elevations`** asks whether the camp elevations **already on screen** are right.
   3,821 bivy sites carry one, almost all written by enrichment, and nothing had ever checked them.

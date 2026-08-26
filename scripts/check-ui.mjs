@@ -37,6 +37,7 @@ import { fileURLToPath } from "node:url";
 import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-settle.mjs";
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
+import { checkScreenCounts } from "./lib/screen-counts.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -735,6 +736,14 @@ try {
 } finally {
   await browser.close();
   if (server) server.kill();
+}
+
+// Two screens counting the SAME list must not disagree — the mechanisable half of #1203, where
+// the Profile said "3 active" while the Logbook said "4 climbs to go" about one list. Every
+// assertion above passed: the numbers were well-formed, the screens rendered, nothing was NaN.
+// Nobody was comparing them. Runs on the text already captured, so it costs no extra walk.
+for (const r of checkScreenCounts(screens)) {
+  fail("counts:" + r.group, (r.kind === "unmeasured" ? "NOT COMPARED — " : "") + r.msg);
 }
 
 if (SNAPSHOT) { fs.writeFileSync(SNAPSHOT, JSON.stringify(screens, null, 1)); log(`\nwrote ${SNAPSHOT} (${Object.keys(screens).length} screens)`); }
