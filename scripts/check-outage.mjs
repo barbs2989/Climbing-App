@@ -211,6 +211,18 @@ const ROUTE = "RouteDetail";
 // The other four sub-tabs stay unwalked: no flag lives on them, and each is two more settles in
 // each of two runs. That is a cost decision, not a claim they are fine.
 const ROUTE_PHOTOS = "RouteDetail:Photos";
+// ONE name for the page-load budget, used at BOTH gotos, and that is a merge defence rather
+// than tidiness. It was written as two bare 180000 literals and a stale-base squash reverted
+// BOTH to 120000 on main (#1243 is an ancestor of main and neither value survived), which
+// `audit:silent-reverts` cannot see -- it tracks named DEFINITIONS, not values, and says so in
+// its own output. A single constant cannot be half-reverted, and a diff that changes it is one
+// readable line rather than two numbers buried in call sites.
+//
+// 180s, NOT 120s: the spawn gained --config, so the scaffold transform runs on a cold module
+// graph and the FIRST load is slower than plain vite ever was. Measured -- at 120s this threw
+// `page.goto: Timeout 120000ms exceeded` while `up()` had already answered, which produces no
+// per-screen table and so reads as a broken app rather than a slow one.
+const PAGE_LOAD_MS = 180000;
 // REPORT is the SOLE enumerator for both the per-screen table and the two rules, so a screen
 // captured into `out` and left out of this list is measured and never judged -- the guard walks
 // it, prints nothing about it, and passes. The first version of the route-page stop did exactly
@@ -387,7 +399,7 @@ async function walk(browser, base, session, fail) {
   //
   // RESTORED after a merge silently reverted it (see the commit message): #1243 is an ANCESTOR
   // of this branch and the value was 120000 anyway.
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: PAGE_LOAD_MS });
   const out = {};
   let first = await settle(page);
   // react-query RETRIES with backoff, so `isError` -- the signal every xUnavailable flag is
@@ -495,7 +507,7 @@ async function walk(browser, base, session, fail) {
   // rather than deleted, because the next person widening this walk needs to know which half of
   // the screen can move and which cannot.
   // Same 180s for the same reason: this is a fresh page load, so it can pay a cold compile too.
-  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: PAGE_LOAD_MS });
   const opened = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 })
     .then(() => true).catch(() => false);
   if (!opened) {
