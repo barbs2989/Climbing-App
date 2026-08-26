@@ -891,6 +891,19 @@ function TrailheadCard({route,onEdit}){
      5,733 m. Nothing lies between. The four beyond it are peaks with two GENUINE approaches, where
      the logistics name really is describing the other one, so those four take the pin's name. */
   const _nameFollows=!!(tp&&!tp.derived&&tp.alt&&distMiles(tp,tp.alt)*1609.34>1000);
+  /* WHEN THE TITLE FOLLOWED THE PIN, THE DIRECTIONS PROSE BELOW IS ABOUT THE OTHER RECORD, and
+     unlabelled it makes the card contradict itself: #1231 correctly flipped the NAME on the four
+     routes past the 1,000 m gap and left `al.trailheadDirection` — which is the LOGISTICS record —
+     rendering underneath it. Measured on screen (probe-trailheadcard-name-vs-directions.mjs): 3 of
+     the 4 read as e.g. "Thirtymile Trailhead" titled above "From the Andrews Creek Trailhead…",
+     two starts 7.8 km apart on one card. The fourth is already honest, because its own prose says
+     "Two common trailheads on US-2 in Chelan County give access."
+     ATTRIBUTED RATHER THAN SUPPRESSED: on these routes the other approach is real and worth
+     keeping, and dropping it would lose the only description of it. And deliberately NOT worded as
+     "this peak has two approaches" — the rule fires on DISTANCE, and CLAUDE.md is explicit that a
+     disagreement says one record is wrong, not which. "Directions on file describe a different
+     start" is true either way. */
+  const _dirIsOther=_nameFollows&&!!al.trailhead;
   const name=(_nameFollows&&tp.name)?tp.name:(al.trailhead||(wp&&wp.name)||(tp&&tp.name)||null);
   /* The elevation is the PIN's, so it may only be shown beside the PIN's coordinate. Printing a
      pin's height next to a logistics coordinate welds two records into one claim. */
@@ -925,7 +938,7 @@ function TrailheadCard({route,onEdit}){
       {onEdit?<EditIconButton onClick={onEdit} title="Edit trailhead and approach"/>:null}
     </div>
     {tiles.length?<div style={{display:"grid",gridTemplateColumns:"repeat("+tiles.length+",1fr)",gap:7,marginBottom:9}}>{tiles.map(t=><div key={t[0]} style={{background:C.card,borderRadius:8,padding:"7px 8px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:t[2],overflowWrap:"anywhere"}}>{t[1]}</div><div style={{fontSize:10.5,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{t[0]}</div></div>)}</div>:null}
-    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:9}}>{dir}</div>:null}
+    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:9}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
     {(road.name||road.status||gate)?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.card,borderRadius:8,padding:"7px 9px",marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>{"Road · "}</span>{[road.name,road.status,gate].filter(Boolean).join(" — ")}</div>:null}
     {hasCoord?<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
       <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none"}}>Drive here</a>
