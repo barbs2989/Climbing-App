@@ -2344,6 +2344,25 @@ a build error, but a screen that renders wrong or not at all.
       aspect would manufacture findings with total confidence — the exact failure this audit's
       first run already produced from a different cause. Only pins within a kilometre are quoted;
       the rest are counted and **explicitly refused**.
+    - **THE FIRST ROW THE GEOMETRY ACTUALLY SETTLED IS REPAIRED**, and it is worth recording what
+      "decidable" had to mean before a field driving the sun/shade readout was touched.
+      `wa_spire_point_southwest_face` stored `aspect: "E"` — morning sun on a line that catches
+      afternoon sun. **FOUR independent records** said southwest: the route's own **name**; its
+      **beta** (*"The south face is accessed from Spire Col at 7,760 feet"*); its **descent_text**
+      (*"Descend the same southwest face line"*); and the **geometry**, where the *"Class 4 summit
+      chimney"* pin bears **240°** from the Summit pin at 92 m, with Spire Col at 231 m and every
+      approach pin WSW. Against them stood `aspect` and `face`, which are **one** claim — the same
+      enrichment — so their agreeing with each other is not corroboration.
+    - **The overview's "east" is about the DANA GLACIER, not the route**, which is the kind of
+      thing a keyword scan over prose would have counted as a vote. Directions in prose have to be
+      read for what they modify.
+    - **`face` is corrected in the same write.** Fixing only the aspect would leave FACE / WHERE ON
+      THE PEAK rendering *"East Face"* beside a southwest sun readout — one screen, two answers.
+      Both replacement values come from the row itself; nothing is researched.
+    - The applier **re-measures the geometry leg** rather than quoting it, and refuses if the
+      chimney does not bear into the S/W half — so the argument has to still hold at apply time,
+      not merely when it was written. 4 findings → 3, and the two the geometry refuses to speak on
+      are untouched.
     - Measured on the four live findings, it refuses on **two of four** — closest pins 6.0 km and
       1.8 km out — and speaks on the other two. `wa_spire_point_southwest_face` becomes decidable:
       its name says SW, its aspect says E, and *Spire Col* sits **138 m WSW** of the summit pin. It
