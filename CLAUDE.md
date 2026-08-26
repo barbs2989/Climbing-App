@@ -1385,6 +1385,35 @@ a build error, but a screen that renders wrong or not at all.
     120 assertions green; `check-rappel-readers.mjs` was **renamed** to `check-correction-readers.mjs`
     by #926; `BivyPanel` was correctly classified deliberate and re-mounted. Four items across 500
     commits is a reading list, not noise — the point is that each is settled in a minute.
+  - **IT HAPPENED AGAIN ON 2026-08-26, THIS AUDIT REPORTED `0`, AND THAT IS WHY IT NOW HAS AN
+    `outage-flag` PATTERN.** #1239 shipped `filedReportsUnavailable` and `catchesUnavailable` at
+    10:17; **#1248 merged 57 minutes later from a branch based before it and removed both** — plus
+    `CatchLedger`'s matching prop and #1239's own probe file. #1248's subject and body are entirely
+    about milepost clustering in `audit:trailhead-road` and never mention the app. Restored by
+    cherry-picking #1239 onto main.
+    - **Every pattern above walked past it, for a reason worth stating precisely:** an
+      `xUnavailable` flag is not exported, not top-level, and not a `useCallback`/`useMemo`. It is
+      declared **mid-declarator** on a dense line —
+      `const myFiledQ=useMyFiledReports(!!uid),filedReportsUnavailable=!!(uid&&myFiledQ&&myFiledQ.isError),…`
+      — so no start-of-line anchor can reach it. This is the audit's own header's point (*"a
+      component-scoped helper is exactly what a stale-base squash drops"*) landing on a shape its
+      patterns could not express.
+    - **NOTHING ELSE COULD SEE IT EITHER, because the revert was internally CONSISTENT**: the
+      component lost `unavailable` from its signature *and* the call site lost the argument, so
+      `check:dead-props` stayed green, the screen still rendered, and the only symptom is a
+      sentence that is false exactly when nobody is looking. That consistency is the general reason
+      a stale-base squash is invisible — it reverts a whole change, not half of one.
+    - **Worth its own pattern rather than a general widening.** These are the most collision-prone
+      declarations in the repo right now: **11 of them, added across ~6 PRs by parallel sessions
+      all editing the SAME two dense lines** in `ClimbMatch.jsx`. Measured for noise before
+      shipping — against #1239's diff it finds precisely the two reverted names, and across **150
+      first-parent commits it adds 0 findings** (114 tracked, 0 absent). `<noun>Unavailable` is an
+      established convention, so this is a named class rather than the haystack the header warns
+      about.
+    - **Validated against the real incident**, the standard this audit already sets: pointed at
+      `68bb307` with a 10-commit window it names both flags, the PR that added them and the PR that
+      removed them, classified SILENT. A 6-commit window reports clean — **the window has to reach
+      the ADDING commit**, which is the operational trap when using this audit to check a suspicion.
   - **THE OBVIOUS TIGHTENING WOULD HAVE EXCUSED #776 ITSELF, so it was measured and REJECTED.** All
     three false SILENTs look like supersessions, which suggests excusing a removal when the same
     commit ADDS a token sharing a significant word (`listSlug`→`routeInList` share *list*;
