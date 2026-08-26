@@ -344,11 +344,37 @@ try {
   // fails on any uncaught page error, and a component that throws during render leaves a
   // near-empty screen, which the floor above catches.
   let chatOpened = false;
+  let chatText = "";
   for (const label of ["Crew chat", "Chat", "Messages"]) {
-    if (await clickText(label)) { chatOpened = true; await capture("Crew:chat", { min: 200 }); break; }
+    if (await clickText(label)) { chatOpened = true; chatText = await capture("Crew:chat", { min: 200 }); break; }
   }
   asserted++;
   if (!chatOpened) fail("Crew:chat", "could not open the crew chat — the screen that blanked in #569 went unwalked");
+
+  // The chat header says "You + N climbers" over a chip row that renders a "You" chip and then
+  // every member. The hydration guarantees a climberId 0 entry for the signed-in climber
+  // (`mid(u) = u===uid ? 0 : u`, and a 0 row is prepended when absent), so a naive N counts YOU
+  // as one of the others -- the header claims one more person than is in the crew, and your own
+  // handle appears as a chip beside "You". Assert the header against the fixture, whose crew is
+  // exactly you plus the mate, and against the chips, so a future off-by-one in either fails.
+  if (chatOpened) {
+    asserted++;
+    const head = /You \+ (\d+) climbers?/.exec(chatText);
+    if (!head) {
+      fail("Crew:chat", "the \"You + N climbers\" header is not on screen — it was renamed, so the crew size was never checked");
+    } else if (Number(head[1]) !== 1) {
+      fail("Crew:chat", `the header reads ${JSON.stringify(head[0])} for a crew of you plus one other — "You" is being added to a count that already includes you`);
+    }
+    // The chip row beside it renders a "You" chip and then the SAME array, so a wrong count and
+    // your own handle appearing as a second chip are one defect, not two -- the count is the half
+    // that can be asserted without predicting whether pubFirst renders a handle or a first name
+    // (it differs between the local and CI fixtures, and an assertion that cannot fire only
+    // certifies).
+    asserted++;
+    if (!/\bYou\b/.test(chatText)) {
+      fail("Crew:chat", "the chat does not name the signed-in climber at all — the \"You\" chip is gone, so the header's count has nothing to be relative to");
+    }
+  }
 
   // --- Group management: #680's ground. -----------------------------------------------
   // The fixture OWNS this group, so the owner controls must render, and the uuid member
