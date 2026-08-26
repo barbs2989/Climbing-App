@@ -262,7 +262,7 @@ const tap = async (t) => {
   return ok;
 };
 
-const load = async (qs, tab, awaitRoute) => {
+const load = async (qs, tab, awaitRoute, subTab) => {
   await page.goto(base + qs, { waitUntil: "domcontentloaded", timeout: 120000 });
   await page.waitForFunction(() => (document.body?.innerText || "").length > 200, { timeout: 60000 }).catch(() => {});
   // Wait on the NAVIGATION as well as on the text settling. `?zr=1` calls the app's own
@@ -271,6 +271,36 @@ const load = async (qs, tab, awaitRoute) => {
   if (awaitRoute) await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 }).catch(() => {});
   await settledText(page, { timeout: 45000 }).catch(() => {});
   if (tab && tab !== "Home") { await tap(tab); await page.waitForTimeout(900); }
+  /* A ROUTE SUB-TAB, clicked the way its two sibling guards already click it — a plain <button>
+     whose text is exactly the label. NOT tapByName: that matches an AUTHORED aria-label and this
+     bar carries only aria-current, which is why six attempts to reach this screen failed before
+     #1235. And no fixed/sticky filter: that rule belongs to check:overflow, where it exists for
+     the BOTTOM NAV, and here it excludes the very bar we want. */
+  if (subTab) {
+    const landed = await page.evaluate((t) => {
+      const b = [...document.querySelectorAll("button")].find(x => x.textContent.trim() === t);
+      if (!b) return false;
+      b.click();
+      return true;
+    }, subTab);
+    if (!landed) throw new Error(`check:selected-state — no <button> with text "${subTab}" on the route page. Either the sub-tab bar was rebuilt or that tab is content-gated off for this route; a click that does not land leaves the PREVIOUS screen up, which compares clean and reads as a screen with nothing wrong.`);
+    /* DELIBERATELY NOT WAITING FOR LEAFLET, and the first version of this did.
+       lib/mapKit loads Leaflet from cdnjs.cloudflare.com and its tiles from OSM / ArcGIS /
+       OpenTopoMap. All external. So `waitForFunction(() => window.L)` makes this guard depend on
+       a CDN: on a runner that cannot reach it, every one of this screen's reloads burns the full
+       timeout. A guard whose runtime depends on a third party is flaky by construction — the
+       reason playwright-core is used here in the first place, so no browser is ever downloaded.
+       (An earlier version of this comment blamed a 24-minute CI job on that wait. THAT WAS
+       WRONG and is corrected here rather than quietly dropped: measured afterwards, this guard
+       takes ~42 minutes on main WITHOUT this screen, so the job was not hanging and this wait
+       was not why. The CDN dependency is still worth removing on its own merits; it just did
+       not cause what it was credited with.)
+       It is also unnecessary. The control this screen exists to measure — the shared
+       BaseLayerToggle — is a REACT component rendered as a SIBLING of the map container, outside
+       the `mapFail ? … : null` branch, so it is on screen whether Leaflet loads or not. Settling
+       the text is the same signal every other screen here uses, and it needs no network. */
+    await settledText(page, { timeout: 20000 }).catch(() => {});
+  }
 };
 
 // THE FALSE-PASS GUARD. Vite reports a throwing transform as a per-request internal error and
@@ -295,12 +325,24 @@ const screens = [
   // inside the shared opener, which no slow list, differently-rendered row or moved <select>
   // label can defeat. Same reasoning, and the same mechanism, as check:overflow.
   { name: "route detail", qs: "?zr=1", tab: null, awaitRoute: true },
+  /* THE ROUTE MAP, which no guard of this kind had ever reached. `?zr=1` lands on Overview and
+     GPXMap is not there — measured: L=false, 0 containers, 0 markers on Overview against L=true,
+     1 container, 6 markers, 6 tiles one click later. So this screen is a click away, not a page
+     away, and until now it was simply never opened here.
+     It matters because the map carries the shared BaseLayerToggle (Satellite / Topo / Street),
+     which #1233 fixed across "every map" — and this is the guard whose entire subject is a
+     control that LOOKS selected saying so. The fix is CORRECT today (Satellite carries
+     aria-current), so this adds no finding; what it adds is that a regression there stops being
+     silent on the richest map in the app.
+     Its two sibling guards already tap "Plan" (check-horizontal-overflow.mjs, and
+     check-a11y-badge-names.mjs), so this is the same walk they do, not a new mechanism. */
+  { name: "route detail · Plan", qs: "?zr=1", tab: null, awaitRoute: true, subTab: "Plan" },
 ];
 
 const tabBars = [], toggles = [], seen = new Set();
 let routeReached = false;
 for (const s of screens) {
-  await load(s.qs, s.tab, s.awaitRoute);
+  await load(s.qs, s.tab, s.awaitRoute, s.subTab);
   if (s.awaitRoute) routeReached = await page.evaluate(() => window.__routeOpen === true);
   const first = await snapshot();
   if (!first.length) { log(`  ${s.name.padEnd(18)} no grouped controls on screen`); continue; }
@@ -343,7 +385,7 @@ for (const s of screens) {
       // left the screen exactly as it was — that is what "changed nothing" means — so the next
       // candidate can be tried straight away. Reloading unconditionally tripled the number of
       // navigations and put a full discovery run (58 screens) past the CI job timeout.
-      if (dirty) { await load(s.qs, s.tab, s.awaitRoute); dirty = false; }
+      if (dirty) { await load(s.qs, s.tab, s.awaitRoute, s.subTab); dirty = false; }
       const snap0 = await snapshot();
       const b0 = snap0.find((x) => key(x) === key(cand));
       if (!b0) continue;
@@ -461,6 +503,13 @@ console.log("check:selected-state: ok — every control that looks selected says
 //        already passed on an earlier screen, which is the ordering that matters: the
 //        not-reached test runs BEFORE any verdict is interpreted, so a screen this guard
 //        silently failed to open can never read as a screen with nothing wrong.
+//
+//   5. Change the Plan screen's `subTab: "Plan"` to a label no button carries, then
+//        `--tabs= --overlays=` to walk only the route screens.
+//        FAILED (exit 1) naming the label — the sub-tab click is fail-closed. That is the whole
+//        risk this screen adds: a click that does not land leaves the PREVIOUS screen up, so the
+//        guard would measure Overview twice, find its already-passing sub-tab bar, and report a
+//        clean sweep having never opened the map. Same shape as case 4 one level in.
 //
 // CASE 1 PASSED THE FIRST TIME IT WAS RUN, AND THAT WAS THE INJECTION BEING WRONG RATHER THAN
 // THE GUARD BEING RIGHT. The strip used to run once per load(); this guard then CLICKS, React
