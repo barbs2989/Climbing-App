@@ -42,6 +42,7 @@ const require_ = createRequire(import.meta.url);
 let esbuild = null, esbuildErr = "";
 try { esbuild = require_("esbuild"); } catch (e) { esbuildErr = String(e.message || e); }
 let bad = 0;
+const logiSeenShared = new Map();
 const fail = (m) => { console.error(`FAIL — ${m}`); bad++; };
 
 /* ── 1. ONE definition, and every site uses it ─────────────────────────────────────────────── */
@@ -84,26 +85,51 @@ if (!/wpPlaced\(/.test(rd)) fail("RouteDetail never calls wpPlaced().");
   const ARRAY_METHODS = new Set(["find", "filter", "some", "every", "findIndex", "findLast", "flatMap"]);
   const WAYPOINTY = /waypoints|\bwps\b/i;
 
+  /* ONE parse and ONE traverse per file, shared by 1b and 1c. They used to parse both files
+     independently — 1.5 MB of JSX twice over — which cost more than everything else in this guard
+     put together (14.6s + 7.5s of a 37s run). A guard in the build chain is paid by every author
+     and every CI run, so the duplication is worth removing; the ASTs are identical by
+     construction, so nothing about what is asserted changes. */
+  const parsed = [];
   for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
-    let ast;
-    try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
-    catch (e) { fail(`could not parse ${label} to look for placement tests (${String(e.message).slice(0, 80)})`); continue; }
+    try { parsed.push([label, src, parse(src, { sourceType: "module", plugins: ["jsx"] })]); }
+    catch (e) { fail(`could not parse ${label} to look for placement tests (${String(e.message).slice(0, 80)})`); }
+  }
+  /* Section 1c's rule, run in the same pass rather than a second one. */
+  const LOGI = /^trailheadL(at|ng)$/;
+  const logiSeen = logiSeenShared;
 
+  for (const [label, src, ast] of parsed) {
     const found = [];
+    logiSeen.set(label, 0);
     traverse(ast, {
+      MemberExpression(path) {
+        if (path.node.computed || !LOGI.test(path.node.property.name || "")) return;
+        logiSeen.set(label, logiSeen.get(label) + 1);
+        const fn = path.getFunctionParent();
+        const name = fn && (fn.node.id?.name
+          || (fn.parentPath.isVariableDeclarator() && fn.parentPath.node.id.name));
+        if (name === "trailheadPoint") return;
+        fail(`${label}: ${path.node.property.name} is read outside trailheadPoint() (in ${name || "an anonymous function"}) — that is a second trailhead resolver, and two of them is the defect.`);
+      },
       CallExpression(path) {
         const c = path.node.callee;
         if (c.type !== "MemberExpression" || c.computed || !ARRAY_METHODS.has(c.property.name)) return;
 
         // Is the thing being iterated a waypoint list? Read the receiver, and if it is a bare
         // identifier, read what it was ASSIGNED — that is what makes `wps` count.
+        // The binding lookup is the single most expensive call in this guard, so it runs ONLY when
+        // the receiver text has not already answered the question. Same verdict, far fewer lookups:
+        // `route.waypoints.find(...)` never needs scope resolution at all.
         let recv = src.slice(c.object.start, c.object.end);
-        if (c.object.type === "Identifier") {
+        if (!WAYPOINTY.test(recv)) {
+          if (c.object.type !== "Identifier") return;
           const b = path.scope.getBinding(c.object.name);
           const init = b && b.path.node && b.path.node.init;
-          if (init) recv += " " + src.slice(init.start, init.end);
+          if (!init) return;
+          recv += " " + src.slice(init.start, init.end);
+          if (!WAYPOINTY.test(recv)) return;
         }
-        if (!WAYPOINTY.test(recv)) return;
 
         const cb = path.node.arguments[0];
         if (!cb || !/FunctionExpression|ArrowFunctionExpression/.test(cb.type)) return;
@@ -137,32 +163,11 @@ if (/Number\.isFinite\(Number\(wp\.lat\)\)/.test(rd)) fail("RouteDetail has re-i
    NAME `trailheadLat` while explaining this very rule, and a scan that read them would fail on its
    own documentation. The blanker other guards use is unsafe here for the reason check:overlay-
    discovery records — JSX body text is full of apostrophes. An AST has neither failure mode. */
+/* Its rule now runs inside 1b's single traverse above — same assertions, one pass instead of a
+   second parse of both files. The fail-closed check it carries is asserted just below. */
 {
-  const _t2 = (await import("@babel/traverse")).default;
-  const traverse2 = _t2.default || _t2;
-  const { parse: parse2 } = await import("@babel/parser");
-  const LOGI = /^trailheadL(at|ng)$/;
-
-  for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
-    let ast;
-    try { ast = parse2(src, { sourceType: "module", plugins: ["jsx"] }); }
-    catch (e) { fail(`could not parse ${label} to look for trailhead resolvers (${String(e.message).slice(0, 80)})`); continue; }
-
-    let seen = 0;
-    traverse2(ast, {
-      MemberExpression(path) {
-        if (path.node.computed || !LOGI.test(path.node.property.name || "")) return;
-        seen++;
-        const fn = path.getFunctionParent();
-        const name = fn && (fn.node.id?.name
-          || (fn.parentPath.isVariableDeclarator() && fn.parentPath.node.id.name));
-        if (name === "trailheadPoint") return;
-        fail(`${label}: ${path.node.property.name} is read outside trailheadPoint() (in ${name || "an anonymous function"}) — that is a second trailhead resolver, and two of them is the defect.`);
-      },
-    });
-    // Fails CLOSED in core: trailheadPoint must actually be reading the column it falls back to.
-    if (label === "ClimbMatchCore.jsx" && !seen) fail("no approach_logistics trailhead coordinate is read anywhere in core — trailheadPoint() has lost its fallback, or the scan broke.");
-  }
+  const coreSeen = logiSeenShared.get("ClimbMatchCore.jsx") || 0;
+  if (!coreSeen) fail("no approach_logistics trailhead coordinate is read anywhere in core — trailheadPoint() has lost its fallback, or the scan broke.");
 }
 
 /* ── 2. The predicate's own behaviour, on the cases that decide it ─────────────────────────── */
@@ -214,8 +219,9 @@ const R=(wps)=>renderToStaticMarkup(React.createElement(QueryClientProvider,{cli
 const MIX=[{name:"Trailhead Alpha",type:"Trailhead",lat:47.5,lng:-121.4,elev:2000,distMi:0},
            {name:"Ghost Junction",type:"Junction",lat:null,lng:null,elev:4000,distMi:2}];
 const NONE=[{name:"Ghost Junction",type:"Junction",lat:null,lng:null,elev:4000,distMi:2}];
-console.log("@@MIX@@"+R(MIX));
-console.log("@@NONE@@"+R(NONE));
+import {writeFileSync as __w} from "node:fs";
+__w(process.argv[2], "@@MIX@@"+R(MIX)+"@@NONE@@"+R(NONE));
+process.exit(0);
 `);
   if (!esbuild) { fail(`esbuild could not be resolved (${esbuildErr}) — the render probe could not run, so NOTHING below was checked. Run npm install.`); throw new Error("no esbuild"); }
   esbuild.buildSync({
@@ -233,9 +239,14 @@ console.log("@@NONE@@"+R(NONE));
     logLevel: "silent",
   });
   /* process.execPath, not "node" — the guard must run under the same runtime that launched it. */
-  const res = execFileSync(process.execPath, [join(tmp, "b.mjs")], { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
-  const grab = (k) => { const i = res.indexOf(`@@${k}@@`); if (i < 0) return null; const j = res.indexOf("\n", i); return res.slice(i + k.length + 4, j < 0 ? undefined : j); };
-  const mix = grab("MIX"), none = grab("NONE");
+  const outFile = join(tmp, "markup.txt");
+  execFileSync(process.execPath, [join(tmp, "b.mjs"), outFile], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 64 * 1024 * 1024 });
+  const res = readFileSync(outFile, "utf8");
+  /* The two markers delimit the payload, so it carries no newline and needs no escaping inside the
+     generated probe — a `\\n` there collapsed into a real newline and broke the string literal. */
+  const iM = res.indexOf("@@MIX@@"), iN = res.indexOf("@@NONE@@");
+  const mix = iM < 0 || iN < 0 ? null : res.slice(iM + 7, iN);
+  const none = iN < 0 ? null : res.slice(iN + 8);
   if (!mix || !none) fail("the render probe produced no markup — a broken probe, not a clean app.");
   else {
     /* renderToStaticMarkup escapes; match the escaped form. Proving the probe CAN fire comes

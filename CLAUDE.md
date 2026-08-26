@@ -37,6 +37,7 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
+npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
@@ -1567,6 +1568,23 @@ a build error, but a screen that renders wrong or not at all.
     the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
+  - **TWO MORE WAYS A RUN GOES MISSING WITHOUT REPORTING A FAILURE, both met on #1229 and both
+    the same shape as the cancellation above: `gh pr checks` can only report on runs that
+    EXIST.** Neither is a flake to re-run past — each needs a different action.
+    - **A PR opened while CONFLICTING gets NO checks at all**, because GitHub cannot build the
+      merge ref, and resolving the conflict later does **not** retroactively trigger them —
+      only a fresh `synchronize` (a push) does. `gh pr checks` prints *"no checks reported"*
+      and **exits 0**, which a waiter loop reads as "nothing pending, therefore done". Wait for
+      checks to **appear** before waiting for them to finish, and treat none-ever-appearing as
+      its own failure.
+    - **A `startup_failure` run has ZERO jobs, so it contributes zero checks** — the PR showed
+      **4 passing of the 15 every other PR gets**, with nothing red. `Render guards` had failed
+      to start; the workflow file was byte-identical to main's and parsed with all six jobs, so
+      it was transient rather than a bad file on the branch. It **cannot be re-run**
+      (`This workflow run cannot be retried`), so it also needs a new push.
+    - The tell in both cases is the **count**, never the colour. Compare the number of checks
+      against a sibling PR before reading green as green, and `gh run list --branch <b>` to see
+      whether a workflow ran **at all** — a run that never existed is invisible from the PR.
   - **Comments are stripped before anything is matched**, and that is load-bearing here: both
     workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
     scan that read comments would pass on the strength of an explanation. Same trap
@@ -2486,6 +2504,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **23 of the 39 are LINEAR or AREAL** — cliff bands, traverses, drainages, ridge crests — and a
       label point cannot locate an edge. Those have no coordinate to find, not a coordinate nobody
       has looked for.
+  - **IT COST 37s AND NOW COSTS 20s, and the profile is recorded because the obvious suspect was
+    wrong.** A build-chain guard is paid by every author and every CI run. The suspects were the
+    esbuild bundle and the SSR render; measured, the bundle is **0.4s** and both renders together
+    are **0.5s**. The cost was **parsing 1.5 MB of JSX twice** — sections 1b and 1c each parsed and
+    traversed both files independently (14.6s + 7.5s) — and Babel **scope resolution**, which ran on
+    every array-method receiver whether or not the receiver text had already answered the question.
+    One parse and one traverse per file with both visitors, and `getBinding` only when the name has
+    not already matched. Same ASTs by construction, so nothing asserted changed.
+    - **Quote 37s, not the 2m29s this was first measured at.** That reading was taken while the box
+      was running injection suites and CI for several sessions at once — the
+      [[chrome-ext-has-no-site-permissions]] lesson, which is about load rather than Chrome. A
+      timing taken on a loaded box is not a profile.
+    - **The probe process rendered in 0.5s and then sat for another 2.4s** waiting for the event
+      loop to drain, and that linger is **unbounded**: one long-lived timer or retrying fetch added
+      to the app and this build gate HANGS rather than fails, which is the worst way for a guard to
+      break. It writes its markup to a FILE and calls `process.exit(0)` — a file, not stdout,
+      because this repo already records that `process.exit()` truncates a **pipe**, and
+      `writeFileSync` completes before exit by construction so the two fixes do not fight.
+    - The payload carries **no newline**; the two markers delimit it. A `\n` inside the generated
+      probe collapsed into a real newline and broke the string literal — sidestepping the escape
+      beats adding another backslash to it.
+    - **Re-run the 14 injection cases after any change here, and judge on those rather than on the
+      clock.** An optimisation that makes an assertion VACUOUS still prints `ok` and still runs
+      faster. 14/14 after the change, including the four that must stay silent.
   - Two traps the probe hit, both already recorded here: the esbuild bundle **must be written inside
     the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
     dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
@@ -3598,12 +3640,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     there are two "White River Trailhead"s in WA **130 km apart** and two "Lake Ann"s **79 km**
     apart, so Little Tahoma carried the Lake Wenatchee White River and Black Peak carried Mount
     Baker's Lake Ann. **A name is not an identity.**
-  - **It is user-visible, and the two surfaces disagree on which record wins.** `TrailheadCard`
-    (the only directions control on the Plan tab) reads `approach_logistics` **first**; the crag
-    Overview "Directions to crag" button reads the **pin** first. So on a disagreeing route the
-    trailhead you are sent to depends on which screen you are looking at. **Deliberately not
-    "fixed" by swapping a priority** — which record is right varies per route, so that would only
-    move the error. The repair is the data.
+  - **It WAS user-visible as a precedence split, and that half is CLOSED — do not re-derive it.**
+    `TrailheadCard` read `approach_logistics` first while the map and both "Directions to…"
+    buttons read the **pin** first, so the trailhead you were sent to depended on which screen you
+    were looking at. #1215 converted two surfaces and **#1231 converted the third**; all three now
+    resolve through `trailheadPoint()`. What stands unchanged is the reasoning: **the fix was
+    CONSISTENCY, never swapping a priority** — which record is right varies per route, so a
+    priority swap only moves the error. The repair is still the data.
+    - **The consolidation left the PROSE behind, and that was a live defect for one commit.**
+      #1231's `_nameFollows` rule takes the pin's NAME past a measured 1,000 m gap — exactly the
+      four two-approach peaks — while the directions line underneath kept rendering
+      `al.trailheadDirection`, which is the **logistics** record. So the card read *"Thirtymile
+      Trailhead"* above *"From the Andrews Creek Trailhead…"*: one card, two starts 7.8 km apart.
+      Measured on screen by `probe-trailheadcard-name-vs-directions.mjs` — **3 of the 4**; Mount
+      Howard is already honest because its own prose says *"Two common trailheads on US-2 in
+      Chelan County give access."* The prose is now **attributed, not suppressed** (*"Directions
+      on file describe a different start — <name>:"*), because on these routes the second approach
+      is real and dropping it would lose the only description of it. Deliberately NOT worded as
+      *"this peak has two approaches"*: the rule fires on **distance**, and a disagreement says one
+      record is wrong, not which.
+      - Two false-positive classes were measured out of that probe first, both over-reporting.
+        Scoping to the **tab** flagged all four on the strength of approach prose that legitimately
+        names both starts (the `count inside the panel` rule `check:camping` records); scoping to
+        the whole **card** then flagged Howard on `road.name` — *"Forest Road 657 (Merritt Lake…)"*
+        — which is a `audit:trailhead-road` section 2 question, not this one. The claim has to be
+        narrow: the card's TITLE against the card's own DIRECTIONS line.
   - **Distance to the peak names the guilty record; the pin-vs-blob comparison cannot.** Two
     coordinates disagreeing says only that one is wrong. `scripts/oneoff/probe-logistics-trailhead-vs-peak.mjs`
     anchors on the route's own peak from `areas` — a third, independent record — exactly as
@@ -3768,6 +3829,37 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Read-only, anon key, **fails closed** on an empty read: zero routes makes every cluster look
     consistent, which is the false-pass direction. Not a build gate — a property of the DB, not the
     checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+  - **SECTION 3 CLUSTERS BY MILEPOST, BECAUSE SECTIONS 1 AND 2 CONTRADICT THIS AUDIT'S OWN HEADER.**
+    That header says *"the unit of truth is the ROAD, not the route"* — and both sections cluster by
+    **trailhead coordinate** within 500 m. A road serves many trailheads, so two routes describing
+    ONE closure from different trailheads never meet. This audit reported **0 across all 205,543
+    routes** while the catalog said both *"Closed as of Dec 2025 — Mountain Loop Highway landslide at
+    MP 37.5 blocks access"* and *"Open (… reopened mid-May 2026 after a landslide closure near
+    milepost 37.5)"*. 49 routes name that corridor across **17 trailheads**.
+    - **A MILEPOST is the key that works**: an exact point on an exact road, naming one closure
+      EVENT. The road NAME alone is far too broad — on that corridor it also covers the Monte Cristo
+      Road, separately and legitimately vehicle-closed, and an ordinary winter gate. Forest ORDER
+      NUMBERS were measured and rejected earlier as a detector for a class of zero; mileposts had
+      not been tried.
+    - **PRECISION WAS MEASURED BEFORE IT SHIPPED and the first run was 33%** — 3 disputed, 1 real,
+      the same precision section 2 shipped at and was rightly criticised for. Four suppressions,
+      each a distinct way road prose defeats this key, **all four found by READING the output rather
+      than trusting the count**: **seasonal** (a gate that closes every winter and reopens every
+      spring says both, truthfully — without it the four largest clusters were SR-20 winter
+      mileposts, MP 134 across **62** routes; 271 of 514 mentions suppressed); **hypothetical**
+      (*"…when fully open"* is a counterfactual, and it put two Suiattle routes in the lifted column
+      while their own status said CLOSED); **a bare "Closed"** (the in-force needle demanded *"is
+      closed"*/*"closes"*, so *"Closed to vehicles at the Glacier Creek bridge (~MP 3.0)"* matched
+      NOTHING and the row counted only as lifted, on a HISTORICAL reopening narrated inside it);
+      and **a route on both sides is NARRATING, not disputing** — judged per ROUTE, never per value.
+    - `wa_kololo_peaks_standard` was the one finding and is **fixed**: three rows record the
+      reopening against its one, and the reopening is the later claim, so the repair needed no
+      research at all. `fix-kololo-stale-mountain-loop-closure.mjs` **re-asserts both witness rows
+      at apply time** — if the catalog stops recording the reopening the script has no basis and
+      refuses.
+    - Injection-tested **5/5**, and the **four that must stay SILENT are the point**: a case proving
+      only that it fires is satisfied by a detector that flags everything.
+
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
   every value is a plausible coordinate. Read-only, anon key, fails closed on an empty read.
@@ -3893,8 +3985,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     4 of the 1,016 routes carrying waypoints, and they are Rainier and Adams.
   - **The trailhead PIN and the `approach_logistics` blob disagreeing is mostly NOT a defect,
     and the ratio is measured: of 12, six were repaired and six are correct data.** The route
-    page reads the two in opposite orders (TrailheadCard takes the blob, the map draws the
-    pin), so a disagreement means the two surfaces send you to different places — but on a
+    page USED to read the two in opposite orders (TrailheadCard took the blob, the map drew the
+    pin), so a disagreement sent you to two different places; #1215/#1231 consolidated all three
+    surfaces onto `trailheadPoint()` and that split is gone. The data question is untouched: on a
     peak with two genuine approaches, *both* records are right and sweeping them to zero is
     the damage. `wa_lundin_peak_west_ridge` is the case `audit:trailhead-agreement` already
     names; Carru, Howard, Remmel and Stuart's North Ridge are four more whose own prose

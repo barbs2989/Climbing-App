@@ -341,12 +341,94 @@ for (const m of wrongRoad) {
   console.log(`  shared road words in this cluster: ${m.core.join(", ")}`);
 }
 
+
+// --- section 3: cluster by MILEPOST, because a road serves many trailheads -----------------------
+/* SECTIONS 1 AND 2 CLUSTER BY TRAILHEAD COORDINATE, AND THIS FILE'S OWN HEADER SAYS "THE UNIT OF
+   TRUTH IS THE ROAD, NOT THE ROUTE." Those two sentences do not agree. A road serves many
+   trailheads, so two routes describing ONE closure from different trailheads never land in the same
+   500 m cluster — and this audit reported 0 across all 205,543 routes while the catalog said both
+   "Closed as of Dec 2025 — Mountain Loop Highway landslide at MP 37.5 blocks access" and "Open
+   (Mountain Loop Highway reopened mid-May 2026 after a landslide closure near milepost 37.5)".
+   49 routes name that corridor across 17 trailheads.
+
+   A MILEPOST is the key that works: an exact point on an exact road, naming one closure EVENT. The
+   road NAME alone is far too broad — on that corridor it also covers the Monte Cristo Road, which
+   is separately and legitimately vehicle-closed, and an ordinary winter gate. Forest ORDER NUMBERS
+   were measured and rejected earlier as a detector for a class of zero; mileposts had not been
+   tried.
+
+   PRECISION WAS MEASURED BEFORE THIS SHIPPED, and the first run was 33% — 3 disputed of which 1 was
+   real, the same precision section 2 shipped at and was rightly criticised for. Four suppressions,
+   each a distinct way road prose defeats this key, all four found by READING the output rather than
+   by trusting the count:
+     1. SEASONAL — a gate that closes every winter and reopens every spring says both, truthfully.
+        Without it the four largest clusters were SR-20 winter mileposts (MP 134 across 62 routes,
+        MP 171 across 48, MP 120 across 20, MP 178 across 18). 271 of 514 mentions.
+     2. HYPOTHETICAL — "Normally 2.5-3 hours from Seattle ... when fully open" is a counterfactual,
+        not a claim the road is open. Same family as the negation trap section 1 records.
+     3. A BARE "Closed" — IN_FORCE demanded "is closed"/"closes", so "Closed to vehicles at the
+        Glacier Creek bridge (~MP 3.0)" matched NOTHING and the row counted only as lifted, on a
+        HISTORICAL reopening narrated inside it (a 2021 washout bypassed in Nov 2023) with nothing
+        to do with the current closure. Past tense is excluded so narration cannot read as a
+        current claim.
+     4. A ROUTE ON BOTH SIDES IS NARRATING, NOT DISPUTING — judged per ROUTE, not per value.
+   With all four, 1 disputed and it was the real one.
+
+   "closed at MP X" and "open to MP X" are the SAME fact (shut beyond that point) — the mirror
+   section 1 already had to learn — so the contradiction tested is lifted-vs-in-force only. */
+const MP_RE = /\b(?:milepost|mile ?post|mile marker|\bMP)\.?\s*(\d{1,3}(?:\.\d)?)/gi;
+const SEASONAL_MP = /\b(seasonal|winter|snow(?:pack|fall)?|avalanche|each (?:spring|summer|winter)|every winter|gated|gate[sd]? (?:in|for)|plow|spring opening|typically (?:opens|closes))/i;
+const HYPOTHETICAL = /\b(?:when|once|if|until|before)\b[^.;]{0,40}\bopen/i;
+const LIFTED = /\breopen(?:ed|ing)?\b|\brepairs? (?:reopened|completed)|\bnow open\b|\bfully open\b|\bopen for the season\b/i;
+const MP_IN_FORCE = /(?<!was )(?<!were )(?<!been )(?<!previously )(?<!formerly )\bclosed?\b|\bcloses\b|\bblocks?\b|\bimpassable\b/i;
+const MPSTOP = new Set([...ROADSTOP, "mile", "milepost"]);
+const mptoks = x => [...new Set([...String(x || "").toLowerCase().matchAll(/[a-z]{3,}/g)].map(m => m[0]).filter(t => !MPSTOP.has(t)))];
+
+const mpItems = [];
+for (const r of rows) {
+  const rd = r.road && typeof r.road === "object" ? r.road : {};
+  const ac = r.access && typeof r.access === "object" ? r.access : {};
+  const vals = { "road.name": rd.name, "road.status": rd.status, "road.driveNote": rd.driveNote,
+    "road.seasonalGate": rd.seasonalGate, "access.closures": ac.closures, "access.seasonal": ac.seasonal };
+  for (const [k, v] of Object.entries(vals)) {
+    if (typeof v !== "string") continue;
+    for (const m of v.matchAll(MP_RE)) {
+      const idTokens = mptoks(rd.name).length ? mptoks(rd.name) : mptoks(v);
+      const seasonal = SEASONAL_MP.test(v), hypo = HYPOTHETICAL.test(v);
+      mpItems.push({ id: r.id, field: k, mp: m[1], v, idTokens,
+        lifted: !seasonal && !hypo && LIFTED.test(v), inForce: !seasonal && MP_IN_FORCE.test(v) });
+    }
+  }
+}
+const mpClusters = [];
+for (const it of mpItems) {
+  const c = mpClusters.find(c => c.mp === it.mp && c.tokens.some(t => it.idTokens.includes(t)));
+  if (c) { c.items.push(it); for (const t of it.idTokens) if (!c.tokens.includes(t)) c.tokens.push(t); }
+  else mpClusters.push({ mp: it.mp, tokens: [...it.idTokens], items: [it] });
+}
+const mpFindings = [];
+for (const c of mpClusters) {
+  if (new Set(c.items.map(i => i.id)).size < 2) continue;
+  const liftedRaw = new Set(c.items.filter(i => i.lifted).map(i => i.id));
+  const forceRaw = new Set(c.items.filter(i => i.inForce).map(i => i.id));
+  const lifted = [...liftedRaw].filter(id => !forceRaw.has(id));
+  const inForce = [...forceRaw].filter(id => !liftedRaw.has(id));
+  if (lifted.length && inForce.length) mpFindings.push({ c, lifted, inForce });
+}
+for (const f of mpFindings) {
+  console.log(`\nMP ${f.c.mp} (${f.c.tokens.slice(0, 4).join("/")}) — one closure, two answers:`);
+  console.log(`   REOPENED per: ${f.lifted.join(", ")}`);
+  console.log(`   IN FORCE per: ${f.inForce.join(", ")}`);
+  for (const i of f.c.items) console.log(`      ${i.id} ${i.field}: ${i.v.slice(0, 150)}`);
+}
+
 const multi = clusters.filter(c => c.length > 1);
 console.log(`\n${"=".repeat(78)}`);
 console.log(`${rows.length} routes read · ${pts.length} carry both a trailhead coordinate and road prose`);
 console.log(`${clusters.length} trailhead cluster(s) within ${RADIUS} m · ${multi.length} shared by more than one route`);
 console.log(`${findings.length} cluster(s) where one route says the road is CLOSED and another says it OPENS.`);
 console.log(`${wrongRoad.length} route(s) whose road.name names a DIFFERENT road from their trailhead neighbours,`);
+console.log(`${mpClusters.length} milepost cluster(s) · ${mpFindings.length} where one closure gets two answers (section 3).`);
 if (vague.length) console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0, 2).map(m => m.p.roadName).join('", "')}" …).`);
 if (wrongRoad.length) {
   console.log(`\nSection 2 is a HYPOTHESIS LIST, weaker than section 1 and deliberately so: a route can`);
