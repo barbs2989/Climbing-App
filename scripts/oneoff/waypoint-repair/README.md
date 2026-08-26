@@ -189,3 +189,47 @@ every touched route rather than only the edited ones — the risk a per-pin chec
 
 `elev` is in **FEET**. `elevM` is a legacy metric spelling the read side converts; the write side must
 never touch it, and a pin carrying one is refused rather than guessed at.
+
+---
+
+## Self-contradicting pins: attributed, then exhausted
+
+`audit:waypoint-geometry` category 2 finds two pins sharing one coordinate while stating elevations
+more than 100 ft apart. **One point cannot be at two heights**, so it needs no external reference to
+prove a contradiction — but it is silent on which half caused it, and repairing it still needs a
+real coordinate.
+
+`--ground` answers the first question by sampling the USGS 3DEP elevation at the shared coordinate:
+whichever stated elevation the terrain actually has is the pin that belongs there. **#1211 widened
+the category from 13 findings to 20 and nobody re-ran that adjudication**, so seven pairs had never
+been asked. Re-run: **9 attributed, 10 the relief cannot separate, 1 where neither pin is placed.**
+
+Seven of the nine attributions run the same way — a **topout or a summit given the coordinate of a
+point lower down**, the crag getting one coordinate that every pin then inherits. The exception is
+`wa_bowling_alley_aka_regular_route` / `wa_cobbles_101`, where the *trailhead* inherited the
+**summit's** coordinate, so the Directions button drives to the top of the rock.
+
+### The nine are not repairable, and that is the result
+
+`solve-selfcontradicting.mjs` puts every attributed pin through the same gates as
+`solve-gazetteer.mjs`. **0 of 9 solvable.** Eight carry a **climbers' name no federal gazetteer
+holds** — Summerland, Jötunheim, Whine Spire, Ice Box, Slippery Slab — and the ninth is an
+**offset**, `Pinto Rock base (end of NF-77)`, which is not Pinto Rock.
+
+**Eight refusals sharing one reason is the tell that hid the layer-5 geometry bug**, so they were
+re-asked the weakest possible question — `UPPER(gaz_name) LIKE '%token%'` across **all 15 GNIS
+layers** rather than the exact name on four (`probe-gnis-refusals-are-real.mjs`). Still nothing;
+only *Pinto Rock* exists federally, and that is the pin already correctly placed. The refusals are
+about the data.
+
+Two traps that probe encodes:
+- **A group layer cannot be queried.** Layers 0/4/9/11 are `expand for more` containers and answer
+  `Invalid or missing input parameters`; layer 8 is Antarctica and has no `state_alpha`. Those are
+  the service saying *wrong question*, never *nothing found* — mistaking them for a failed sweep
+  would wrongly discredit the refusals. Their children (1/2/3, 5/6/7, 12/13/14) hold the features.
+- **`UPPER()` on BOTH sides.** ArcGIS `LIKE` is case-sensitive, and normalising one side is what
+  once reported 25 present names as missing.
+
+So the class is **mechanically exhausted** like the fabricated-pin classes before it. A repair here
+needs a coordinate that exists in no reachable source, and inventing one is the defect this whole
+audit family was built to catch.
