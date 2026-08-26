@@ -16,10 +16,20 @@
 import { chromium } from "playwright-core";
 
 const SITE = "https://barbs2989.github.io/Climbing-App/";
+// BOTH families, because they gate differently and the first version of this probe only
+// covered one. `catOf()` folds bouldering/sport/trad into the crag family, where `cragOnly` is
+// true and the Plan tab is absent; scrambling is alpine-family, where Plan renders. Testing
+// only crag routes would have left the branch that #641 lived in unwalked — the same
+// discipline-gating trap CLAUDE.md records for `RouteGearCheck` and `check:field-renders`.
+//
+// Measured 2026-08-20: alpine, ice, mixed and mountaineering have NO fully-bare routes in the
+// catalog — every one carries at least some enrichment — so scrambling is the only alpine-family
+// discipline this can be asked of with real data.
 const ROUTES = process.argv.slice(2).length ? process.argv.slice(2) : [
-  "wa_corridor_traverse",   // bouldering V4
-  "wa_nebula",              // sport 5.8
-  "wa_the_metronome",       // sport 5.11+
+  "wa_corridor_traverse",   // bouldering V4      crag family
+  "wa_nebula",              // sport 5.8          crag family
+  "wa_spring_kitten",       // trad 5.10b         crag family (catOf folds trad in)
+  "wa_gully_1",             // scrambling 3rd     ALPINE family — the only bare one available
 ];
 // A CRAG route labels the conditions tab "Send Reports" (`cragOnly?"Send Reports":"Reports"`),
 // so each entry lists every label it can carry. Getting this wrong is not a missed screen — the
