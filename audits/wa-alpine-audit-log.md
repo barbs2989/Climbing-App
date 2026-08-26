@@ -9661,3 +9661,45 @@ publications.americanalpineclub.org, mazamas.org, www.nps.gov) was blocked by ne
 egress policy on every attempt this run — consistent with prior batches' notes on this.
 
 Next batch continues after `wa_mount_adams_wilson_glacier_headwall` in the id-ordered scope.
+
+## Batch 142 — 2026-08-26 (pass 3)
+
+Routes: `wa_mount_anderson_eel_glacier` (Mount Anderson, Olympics);
+`wa_mount_baker_boulder_glacier`, `wa_mount_baker_boulder_park_cleaver`,
+`wa_mount_baker_cockscomb_ridge`, `wa_mount_baker_coleman_deming`,
+`wa_mount_baker_coleman_headwall`, `wa_mount_baker_easton_glacier`,
+`wa_mount_baker_north_ridge` (Mount Baker).
+
+**Confirmed error, fixed:** four Mount Baker routes sharing the Glacier Creek Road (FR
+39)/Heliotrope Ridge Trailhead each stored a *different* characterization of the December
+2025 flood washout — two said repair work ran "through the end of October 2026," one said
+repairs would begin "after July 15, 2026, targeting reopening by late September 2026," and
+one said the Forest Service "has not announced a repair timeline." Sibling routes on one
+trailhead disagreeing about whether the road is open is the `audit:trailhead-road` shape.
+Checked against live sources: the Mt. Baker-Snoqualmie NF's own press release ("Forest
+Service Has Opened Glacier Creek Road") and Cascadia Daily News ("Glacier Creek Road
+reopens following washout repairs," Aug 20 2026) both confirm the road fully reopened to
+vehicles on August 20, 2026 — before any of the four projected dates. All four `road`
+values reconciled to the same current status in `audits/sql/2026-08-26-batch-142.sql`.
+
+**Confirmed correct, no fix needed:** Mount Anderson's `high_point_ft` (7330, East Peak)
+and the West Peak true-high-point figure (7,365 ft) both matched Wikipedia's Mount
+Anderson (Washington) page; the row's own `data_quality.gaps` already discloses the
+elevation-varies-by-source uncertainty honestly, so nothing to change there. Cockscomb
+Ridge's FA (Chuck Murley, John Musser, E. Vielbig, July 4 1961) was corroborated by an AAC
+Publications article on the route whose author appears to be the third named climber.
+Boulder Glacier's FA text already self-disqualifies ("specific individuals not confirmed
+in available sources") rather than asserting a fabricated roster — correctly hedged on
+file, no fix needed.
+
+**Not independently confirmed or contradicted, left unflagged/unfixed per this audit's
+rule against guessing:** Coleman Headwall's FA (Ed Cooper, Phil Bartow, Donald Grimlund,
+David Nicholson, August 1957) — no corroborating or contradicting source turned up this
+run. Mount Anderson's 1920 FA (Fairman B. Lee + 13-person party) was not re-checked this
+pass.
+
+Web access this run: WebSearch worked throughout, including for the road-status finding.
+Direct WebFetch to reference domains (cascadiadaily.com, fs.usda.gov) was blocked by
+network egress policy, consistent with prior batches' notes on this.
+
+Next batch continues after `wa_mount_baker_north_ridge` in the id-ordered scope.
