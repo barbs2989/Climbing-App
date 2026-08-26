@@ -9949,3 +9949,70 @@ nominatim.openstreetmap.org were all blocked by the network egress proxy (403 at
 tunnel) — consistent with prior batches' experience with Wikipedia/alpenglow.org.
 
 Next batch continues after `wa_mount_logan_r1` in the id-ordered scope.
+
+## 2026-08-26 — Pass 3, Batch 147
+
+Ten routes across seven peaks: `wa_mount_logan_r2` (Douglas Glacier), `wa_mount_mathias_scramble`
+(Bailey Range Scramble), `wa_mount_maude_r1` (North Face), `wa_mount_maude_r2` (Entiat Ice
+Fall), `wa_mount_mystery_standard` (Standard Scramble), `wa_mount_olympus_blue_glacier` (Blue
+Glacier), `wa_mount_olympus_west_ridge` (West Ridge), `wa_mount_persis_the_hexorcist` (The
+Hexorcist), `wa_mount_persis_west_ridge` (West Ridge), `wa_mount_pilchuck_east_ridge` (East
+Ridge / Iodine Gulch-Bathtub Lakes).
+
+**Fixed:** `wa_mount_mathias_scramble`'s first waypoint contradicted itself: its own note said
+"start of the Sol Duc/High Divide approach into the Bailey Range" but its stored coordinates
+were the real Hoh River Trailhead's — identical to the coordinate this same batch's two Mount
+Olympus routes correctly use for that trailhead, at 578 ft. The waypoint's own stated elevation
+(1950 ft) never matched Hoh at all; it closely matches the real Sol Duc Falls Trailhead
+(~1,882-1,950 ft, ~47.955249,-123.835839 per NPS/trip-report sources), which is the documented
+start of the Bailey Range Traverse this same waypoint's note describes and which the row's
+remaining six waypoints (High Divide, Eleven Bull Basin, Ferry Basin, Blizzard Pass, Camp Pan)
+trace in full. The row's own `gain_ft` (6130) only reconciles with the waypoint elevation
+profile if this first point sits at ~1950 ft, corroborating the elevation and pointing at the
+name/coordinates as the error. Corrected the name and coordinates to the Sol Duc Falls
+Trailhead the note already claimed to be; left elevation, note, type, and distMi untouched.
+
+**Flagged, not fixed — needs human verification:**
+- `wa_mount_mathias_scramble`'s `approach`/`beta`/`approach_logistics` describe an entirely
+  different corridor to the summit (Hoh River Trail → Blue Glacier → Snow Dome → Hoh Glacier,
+  with no mention of Sol Duc/High Divide/Eleven Bull Basin/Ferry Basin/Blizzard Pass/Camp Pan)
+  than the `waypoints` array traces. Both are real, documented ways to reach Mount Mathias — a
+  direct approach via the Hoh Glacier, and the full Bailey Range Traverse from Sol Duc — but
+  this one row currently presents them as a single undifferentiated route. Deciding whether to
+  split these into two routes, pick one as canonical, or document both is an editorial call
+  outside what a database correction can settle.
+- `wa_mount_maude_r1` (North Face): `dist_km` (6.4 km = 3.98 mi one-way) is roughly half the
+  distance its own `waypoints` array implies (summit waypoint `distMi: 8`, i.e. ~12.9 km). This
+  is an unmaintained, off-trail alpine approach with no authoritative one-way mileage source
+  found to adjudicate which figure (if either) is right, so left unchanged rather than guessed.
+  Note `wa_mount_maude_r2` shares the identical `dist_km`/`gain_ft`/`high_point_ft` with r1,
+  suggesting these may be peak-level defaults rather than per-route measurements.
+- `wa_mount_olympus_west_ridge`'s FA ("1964, Gary Maykut, Len Miller, and Joe Witte") could not
+  be independently corroborated — WebSearch found only the general 1907 Mount Olympus FA and no
+  route-specific 1964 record, and WebFetch to SummitPost/Mountaineers/AAJ was blocked by this
+  environment's network egress policy. Not contradicted by anything found, so left unchanged.
+
+**Confirmed correct via external sources, left unchanged:** Mount Maude North Face FA (Fred
+Beckey, Don Gordon, John Rupley, Herb Staley, June 16 1957 — AAC Publications); Mount Olympus
+West Peak FA ("Lorenz A. Nelson party (The Mountaineers), Aug 13, 1907" — matches "L.A. Nelson"
+led party per multiple sources, Belmore Browne's separate Middle Peak ascent days earlier is a
+different peak/party and not in conflict); Mount Mathias FA (Yves Eriksson and Jim Hawkins,
+1957, west face — Wikipedia/PeakVisor); Mount Persis FA for the West Ridge (first recorded
+ascent 1917, Harry B. Hinman — matches Wikipedia/Mountaineers, consistent with Hinman's
+documented Everett-Mountaineers-era first ascents elsewhere in this state); Mount Mystery's
+hazards-field fatality note (Sean Allen, 38, of Port Angeles, died descending near the south
+end/Del Monte ridgeline in July 2022 after an apparent ~40 ft fall, per NPS/Columbian/KOMO/
+Outside — the row's own hedge on cause, "conditions were a factor," matches reporting that the
+fall was attributed to poor visibility) — left unchanged as accurate. Mount Mystery elevation
+(7,639 ft) and Mount Persis elevation (5,464 ft) also independently reconfirmed.
+
+Ran `audit-waypoints.mjs`, `audit-alpine-gain.mjs`, and `audit-route-identity.mjs` against the
+live WA catalog as a cross-check; none of this batch's 10 routes appeared in any of their
+findings — expected for the Mathias waypoint defect, since it's a naming/identity
+self-contradiction rather than a geometric off-track or gain-arithmetic problem, and this route
+has no gpx track for the geometric checks to measure against.
+
+Web access this run: WebSearch worked throughout. WebFetch to summitpost.org was blocked by the
+network egress proxy (403 at the CONNECT tunnel), consistent with prior batches.
+
+Next batch continues after `wa_mount_pilchuck_east_ridge` in the id-ordered scope.

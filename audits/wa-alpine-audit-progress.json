@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_mount_logan_r1",
+    "last_processed_id": "wa_mount_pilchuck_east_ridge",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3114,23 +3114,23 @@
             "sql_file": "audits/sql/2026-08-26-batch-146.sql"
         },
         {
-            "batch_number": 146,
+            "batch_number": 147,
             "date": "2026-08-26",
             "route_ids": [
-                "wa_mount_hardy_snow_scramble",
-                "wa_mount_hinman_hinman_glacier",
-                "wa_mount_howard_south_slope",
-                "wa_mount_index_north_peak_traverse",
-                "wa_mount_index_northeast_buttress",
-                "wa_mount_johnson_standard",
-                "wa_mount_lago_south_slope_south_face",
-                "wa_mount_larrabee_south_ridge",
-                "wa_mount_logan_fremont_glacier",
-                "wa_mount_logan_r1"
+                "wa_mount_logan_r2",
+                "wa_mount_mathias_scramble",
+                "wa_mount_maude_r1",
+                "wa_mount_maude_r2",
+                "wa_mount_mystery_standard",
+                "wa_mount_olympus_blue_glacier",
+                "wa_mount_olympus_west_ridge",
+                "wa_mount_persis_the_hexorcist",
+                "wa_mount_persis_west_ridge",
+                "wa_mount_pilchuck_east_ridge"
             ],
             "findings_fixed": 1,
-            "findings_summary": "Fixed wa_mount_logan_r1 (Banded Glacier): approach text described only the Thunder Creek/Fisher Creek Trail with no mention of Easy Pass, while the row's own beta/road/access fields all agree Easy Pass (SR-20 MP151, ~10mi one-way) is the standard shorter approach and Thunder Creek (~13mi) is the alternate -- rewrote approach to lead with Easy Pass, re-homing facts already in the row. Flagged, not fixed (needs human verification): wa_mount_logan_r1 gain_ft/loss_ft (7027/13000) and dist_km (19.3km) do not reconcile with each other or with the row's own waypoint distMi (14.51mi to summit) under any reading of the route as out-and-back or point-to-point; and area wa_north_peak_2 (Mount Index North Peak, used by wa_mount_index_northeast_buttress) carries a coordinate (47.77453,-121.58093) essentially identical to sibling area wa_main_peak_2 (47.77453,-121.58094) -- North and Main Peak are distinct summits (5,357ft vs 5,991ft) so this looks like a copied/duplicate coordinate, but no independent source for North Peak's true coordinate could be obtained (external web fetches to Wikipedia/Peakbagger/SummitPost/listsofjohn are blocked by this environment's network egress policy) so no fix was written. Confirmed correct via external sources and left unchanged: Mount Hardy elevation/FA (Schmerling & Ulrichs 1933, 8099ft), Mount Hinman elevation/FA (1928, named 1934, 7492ft, glacier declared dead 2022), Mount Howard elevation (7063ft), Mount Lago elevation/FA (Ulrichs & Alt 1933, 8745ft), Mount Larrabee FA/elevation (McArthur party Sept 11 1908, 7865ft), Mount Logan elevation/FA (Wernstedt 1926, 9087ft), Mount Index North Peak 1929 FA already correctly hedged in the row as disputed (Chute/Kaartinen, date uncertain per NWMJ). Also ran audit-waypoints/audit-alpine-gain/audit-route-identity against the live WA catalog and none of this batch's 10 routes were flagged by those structural checks.",
-            "sql_file": "audits/sql/2026-08-26-batch-146.sql"
+            "findings_summary": "Fixed wa_mount_mathias_scramble: waypoints[0] contradicted itself -- its own note said 'start of the Sol Duc/High Divide approach into the Bailey Range' but its coordinates (47.86028,-123.93472) were the real Hoh River Trailhead's (matching this batch's two Mount Olympus routes' correct use of that same coordinate at 578ft), while its stated elevation (1950ft) matches nothing at Hoh but closely matches the real Sol Duc Falls Trailhead (~1,882-1,950ft, ~47.955249,-123.835839) that the note describes and that the row's remaining six waypoints (High Divide, Eleven Bull Basin, Ferry Basin, Blizzard Pass, Camp Pan) trace in full; the row's own gain_ft (6130) only reconciles with the waypoint elevation profile at ~1950ft, corroborating the elevation and pointing at the name/coordinates as the error. Corrected name+coordinates to the Sol Duc Falls Trailhead the note already claimed. Flagged, not fixed (needs human verification): wa_mount_mathias_scramble's approach/beta/approach_logistics describe an entirely different corridor (Hoh River Trail/Blue Glacier/Snow Dome/Hoh Glacier) than its own waypoints array (Sol Duc/High Divide/Bailey Range Traverse) -- both are real documented approaches to Mathias but the row presents them as one undifferentiated route, an editorial call outside a database fix; wa_mount_maude_r1's dist_km (6.4km=3.98mi one-way) is roughly half its own waypoints' implied one-way distance (summit distMi:8=~12.9km), no authoritative mileage source found for this off-trail approach to adjudicate; wa_mount_olympus_west_ridge's FA (1964, Maykut/Miller/Witte) could not be independently corroborated (not contradicted either) -- WebFetch to SummitPost/Mountaineers/AAJ blocked by network egress policy. Confirmed correct via external sources and left unchanged: Mount Maude North Face FA (Beckey/Gordon/Rupley/Staley, June 16 1957, AAC Publications), Mount Olympus West Peak FA (L.A. Nelson party, Aug 13 1907), Mount Mathias FA (Eriksson & Hawkins, 1957), Mount Persis West Ridge FA (Harry B. Hinman, 1917), Mount Mystery's hazards-field fatality note (Sean Allen, 38, July 2022, Del Monte ridgeline -- matches NPS/news reporting), Mount Mystery elevation (7639ft) and Mount Persis elevation (5464ft). Also ran audit-waypoints/audit-alpine-gain/audit-route-identity against the live WA catalog and none of this batch's 10 routes were flagged by those structural checks.",
+            "sql_file": "audits/sql/2026-08-26-batch-147.sql"
         }
     ]
 }
