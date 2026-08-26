@@ -203,6 +203,14 @@ const SCAN = `(() => {
     // demanding aria-pressed of it would be the wrong fix. NOTE: no backticks in here -- this
     // whole function lives inside the SCAN template literal, and one backtick ends the string.
     if (el.getAttribute("aria-expanded") !== null) return "aria-expanded";
+    // aria-checked is the FIFTH answer, and leaving it out was a live false-failure waiting to
+    // happen rather than a hypothetical: role="checkbox" + aria-checked is already the app's
+    // convention for two controls check:clickable converted, and the nine privacy switches now
+    // use role="switch" + aria-checked. A switch sits beside a text div so it forms a group of
+    // one and never reaches this guard today -- but the moment two sit on one row, a guard that
+    // did not know aria-checked would report correct markup as mute, which is the one failure
+    // mode this check has already produced three times.
+    if (el.getAttribute("aria-checked") !== null) return "aria-checked";
     return null;
   };
   const groups = new Map();

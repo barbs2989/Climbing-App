@@ -49,6 +49,7 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
+npm run check:control-names # a control says WHAT IT IS; a switch says what it is SET TO (in build)
 npm run check:overflow # nothing runs off the right-hand edge of a 390px phone
 npm run check:anniversary # the climb-anniversary notification still reaches a screen
 npm run check:challenge-rows # tick-list rows say something true, and the tick matches the row
@@ -1252,6 +1253,50 @@ a build error, but a screen that renders wrong or not at all.
     regression lives in the app rather than in the checker. Case 3 (break the scaffold anchor)
     must fail on the 58-character boot shell rather than pass over a blank app — the trap
     `check:overlay-scroll` records.
+- **`check:control-names`** asserts that a control says **what it is**, and that a switch says
+  **what it is set to**. Static (Babel over the app sources), so it sits in `npm run build`.
+  - **Found by reading a sibling guard's own SKIPPED counter.** `check:selected-state` printed
+    *"14 control(s) skipped as unnameable"* on the Crew tab and pointed at `check:a11y-names` —
+    **wrong advice**, and the wrongness is why this guard exists. That guard covers **form**
+    controls (input/select/textarea) and can never report a `<button>`; `check:clickable` covers
+    **non-native** clickables (a div with onClick) and cannot either; and `check:selected-state`
+    needs **two** button-like siblings on one row to form a group, so a lone switch beside its
+    text label is a group of one and drops out before it is ever measured. Three guards, and the
+    nine switches were outside all of them. Same shape as [[a-stated-limitation-is-a-worklist]]:
+    the number was printed for months and read as bookkeeping.
+  - **The nine switches are ALL privacy or visibility settings** — leaderboards, real name,
+    precise location, partner-browse listing, online status, résumé visibility. **Three announced
+    no name at all and eight announced no state**, so a screen reader said `"button"` and the user
+    could not learn whether their real name was being shown. The visible label sits in a **sibling
+    div**, so nothing links the two. Now `role="switch"` + `aria-checked`, taken from each
+    control's **own background condition** — never a second one invented beside it, the mistake
+    that produced `UNITS===u[0]` in #1233.
+  - **`aria-pressed` is ACCEPTED, not rewritten.** One switch already announced correctly; a guard
+    demanding a single spelling tells the author to swap working markup for different working
+    markup, which `check:selected-state` had already done once.
+  - **THE NAMING RULE WAS TOO NARROW AND REPORTED 11 WHERE THE TRUTH WAS 3.** An accessible name
+    comes from **all descendant text**, and components are opaque — correctly, since `<Av/>` and
+    `<ActionIcon/>` render none, which is exactly why an icon-only button announces as nothing.
+    But `<Lbl s={"← Back"}/>` is this app's **own label component**: it maps a leading icon
+    character to an `ActionIcon` and renders **the rest of the string**, so those buttons really
+    do announce as *"Back"*. Treating it as opaque condemned **eight correctly-named controls**.
+    It must be recognised in **both child positions** — these are written `{<Lbl …/>}`, inside an
+    expression container, and a version handling only bare children still reported all eight.
+    Third time this repo has recorded the same too-narrow name test; see `check:clickable`.
+  - **Fails closed on BOTH floors, and the second one was measurably not enough at first.** Fewer
+    than 200 button-like elements is a broken traversal. The switch floor was `!switches`, i.e.
+    "at least one" — and **injection case 6 restyled the geometry in `ClimbMatch.jsx` only, the
+    single switch in `ClimbMatchCore.jsx` satisfied that test, and the guard reported `ok` having
+    checked 1 of 9.** A **partial** restyle is how a shape test actually dies, not a simultaneous
+    one. The floor is 5: well below 9 so ordinary churn does not trip it, well above what a
+    partial restyle leaves.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-control-name-cases.mjs`), each case proving
+    its edit landed **by checksum**. **Case 5 must PASS** (aria-pressed accepted). **Case 4 makes
+    two claims in one edit** — it swaps a `<Lbl>` for a text-less component and must **fail**,
+    which proves both that the button is scanned at all and that `Lbl` is what names it; the
+    no-op attribute edit it replaced proved neither and would have passed against a guard that
+    never looked at that button.
+
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
