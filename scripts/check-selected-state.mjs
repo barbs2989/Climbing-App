@@ -284,10 +284,19 @@ const load = async (qs, tab, awaitRoute, subTab) => {
       return true;
     }, subTab);
     if (!landed) throw new Error(`check:selected-state — no <button> with text "${subTab}" on the route page. Either the sub-tab bar was rebuilt or that tab is content-gated off for this route; a click that does not land leaves the PREVIOUS screen up, which compares clean and reads as a screen with nothing wrong.`);
-    /* Leaflet is loaded on demand, so window.L becoming defined is the real signal the map
-       mounted. Waiting on text alone returns before a single tile or control exists. */
-    await page.waitForFunction(() => typeof window.L !== "undefined", null, { timeout: 45000 }).catch(() => {});
-    await settledText(page, { timeout: 30000 }).catch(() => {});
+    /* DELIBERATELY NOT WAITING FOR LEAFLET, and the first version of this did — which is how it
+       hung in CI for 24 minutes against a 2-minute local run.
+       lib/mapKit loads Leaflet from cdnjs.cloudflare.com and its tiles from OSM / ArcGIS /
+       OpenTopoMap. All external. So `waitForFunction(() => window.L)` makes this guard depend on
+       a CDN: fine on a developer's machine, and on a runner that cannot reach it every one of
+       this screen's reloads burns the full timeout. A guard whose runtime depends on a third
+       party is flaky by construction — the reason playwright-core is used here in the first
+       place, so no browser is ever downloaded.
+       It is also unnecessary. The control this screen exists to measure — the shared
+       BaseLayerToggle — is a REACT component rendered as a SIBLING of the map container, outside
+       the `mapFail ? … : null` branch, so it is on screen whether Leaflet loads or not. Settling
+       the text is the same signal every other screen here uses, and it needs no network. */
+    await settledText(page, { timeout: 20000 }).catch(() => {});
   }
 };
 

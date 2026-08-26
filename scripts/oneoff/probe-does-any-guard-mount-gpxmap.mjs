@@ -64,6 +64,21 @@ const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
 page.setDefaultNavigationTimeout(120000);
 
+/* BLOCK_CDN=1 reproduces the CI condition. lib/mapKit fetches Leaflet from cdnjs.cloudflare.com
+   and tiles from OSM / ArcGIS / OpenTopoMap, so a runner that cannot reach them never defines
+   window.L — which is why waiting on it hung a CI job for 24 minutes against a 2-minute local run.
+   The point of the flag is to prove the OPPOSITE claim: the BaseLayerToggle is a React sibling of
+   the map container, outside the mapFail branch, so it renders anyway and needs no network. */
+const BLOCK_CDN = process.env.BLOCK_CDN === "1";
+if (BLOCK_CDN) {
+  console.log("BLOCK_CDN=1 — aborting every request to the Leaflet CDN and the tile servers\n");
+  await page.route("**/*", (route) => {
+    const u = route.request().url();
+    if (/cdnjs\.cloudflare\.com|tile\.openstreetmap\.org|server\.arcgisonline\.com|tile\.opentopomap\.org/.test(u)) return route.abort();
+    return route.continue();
+  });
+}
+
 const snap = async (label) => {
   const r = await page.evaluate(() => ({
     hasL: typeof window.L !== "undefined",
