@@ -28,6 +28,7 @@
     "audit:rappel-claims": "node scripts/audit-rappel-claims.mjs",
     "audit:aspect-name": "node scripts/audit-aspect-vs-name.mjs",
     "audit:camp-elevations": "node scripts/audit-camp-elevations.mjs",
+    "audit:camp-route-fit": "node scripts/audit-camp-route-fit.mjs",
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
     "audit:prose-citations": "node scripts/audit-prose-citations.mjs",
