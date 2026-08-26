@@ -3612,6 +3612,23 @@ the correction knows the screen is wrong, and they have no way to report it.
     FR-63 that no source publishes, while the logistics record now holds the researched trailhead at
     the end of that road. Same road system, different points, and the row went from **zero**
     coordinates to one. Filling the pin would mean inventing the mile-10 coordinate.
+    - **The audit’s own SHADOWED prose asserted a defect that had since been FIXED, and the wrong
+      advice pointed straight at that fabrication.** It said RouteDetail *“picks the pin by type
+      alone … and returns null”*, which was true when written and stopped being true at #1213/#1215
+      — `wpPlaced()` now gates every branch of `trailheadPoint()`, so an uncoordinated pin falls
+      through to the logistics copy, the Directions button drives there, and the map draws that
+      point **dashed as derived**. Anyone acting on the stale sentence would have “repaired” a
+      working button by writing the mile-10 coordinate the bullet above forbids.
+      `scripts/oneoff/probe-shadowed-trailhead-button.mjs` settles it against the **live row** by
+      lifting the real functions with `ANCHOR LOST`, rather than by reading the source — the same
+      standard `check:field-renders` earned when an outage had it telling an author to delete
+      correct bookkeeping. **Re-read an audit’s advice, not just its counts, after the code it
+      describes has moved.**
+    - The **NOT COMPARABLE** block had the mirror of it: 153 rows carry a pin coordinate and no
+      logistics one, and the copy described them as able to be *“reconciled from itself”*. Copying
+      either record onto the other manufactures a 0 m agreement — **this audit is only worth
+      running while the two records are independent**, so a copy would move 153 rows into the
+      agreeing column having checked nothing. Both directions now say so outright.
   - **The applier pattern is the transferable part.** `fix-trailhead-disagreements-batch4/5.mjs`
     declare a **winner, never a coordinate**: the script reads both records off the row and copies
     the winner into the loser. So nothing can be invented, no coordinate is retyped, and **a fix
