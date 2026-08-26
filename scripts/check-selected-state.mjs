@@ -48,14 +48,31 @@ import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { settledText } from "./lib/render-settle.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
+import { overlayStates, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
 const TABS = arg("tabs", "Home,Climbs,Discover,Crew,Logbook,Profile").split(",").filter(Boolean);
-// Onboarding is walked as an OVERLAY because that is where the worst instance lived: the
-// "WHAT DO YOU DO?" chips are the first thing a new climber is asked and the field is marked
-// required. It is not reachable from a tab walk.
-const OVERLAYS = arg("overlays", "onboardOpen").split(",").filter(Boolean);
+// EVERY overlay the app declares, DISCOVERED rather than listed.
+//
+// A hand-picked list is what put this guard wrong twice in one day. It shipped walking six
+// tabs and onboarding, which left RouteDetail's sub-tab bar — one of the four #1041 fixed —
+// uncovered; and it left the Inbox modal's Friends/Crews bar, a SIXTH mute bar of exactly the
+// shape #1041 fixed, undiscovered until somebody grepped for it by hand. A list of screens
+// rots the moment a screen is added, and the hole it leaves is invisible by construction:
+// nothing reports a screen that was never opened.
+//
+// Discovery is shared with check:zero, check:signed-in and check:overlay-scroll via
+// overlay-scaffold.mjs, so the four cannot drift on which modals exist. The cost is bounded by
+// the group-level dedupe below: an overlay renders over the tab behind it, so nearly every
+// group it shows has already been measured, and only genuinely new bars are clicked.
+const OVERLAYS = (() => {
+  const explicit = process.argv.find((a) => a.startsWith("--overlays="));
+  if (explicit) return explicit.slice(11).split(",").filter(Boolean);
+  return overlayStates(fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8"))
+    .map((s) => s.name)
+    .filter((n) => !NEEDS_EXTRA_STATE[n]);
+})();
 // An injection hook, so a case can prove this guard fails when the app regresses without
 // anyone editing the app. Not used in a normal run.
 const STRIP = arg("strip-aria", "");
@@ -181,6 +198,11 @@ const SCAN = `(() => {
     if (cur && cur !== "false") return "aria-current";
     if (el.getAttribute("aria-selected") !== null) return "aria-selected";
     if (el.getAttribute("aria-pressed") !== null) return "aria-pressed";
+    // A DISCLOSURE announces with aria-expanded, and it is a genuine third answer rather than
+    // a loophole. Climb with them again is a setClimbAgainOpen toggle that OPENS A PANEL, so
+    // demanding aria-pressed of it would be the wrong fix. NOTE: no backticks in here -- this
+    // whole function lives inside the SCAN template literal, and one backtick ends the string.
+    if (el.getAttribute("aria-expanded") !== null) return "aria-expanded";
     return null;
   };
   const groups = new Map();
@@ -290,23 +312,48 @@ for (const s of screens) {
     if (seen.has(group)) continue;
     const counts = {};
     for (const k of kids) counts[k.sig] = (counts[k.sig] || 0) + 1;
-    const majority = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
-    const c = kids.find((k) => k.sig === majority) || kids[0];
+    // Order candidates by how COMMON their signature is: the most common is the one least
+    // likely to be the currently-selected member, so clicking it has something to change.
+    const order = kids.slice().sort((x, y) => counts[y.sig] - counts[x.sig]);
     // A control with no accessible name cannot be named in a failure message, and naming it is
     // check:a11y-names' job rather than this one's. Counted and reported, never a verdict.
-    if (!c.label) { unnamed += kids.length; seen.add(group); continue; }
+    if (!order[0].label) { unnamed += kids.length; seen.add(group); continue; }
 
-    await load(s.qs, s.tab, s.awaitRoute);
-    const before = await snapshot();
-    const b = before.find((x) => key(x) === key(c));
-    if (!b) continue;
-    if (!(await clickOne(c))) continue;
-    await page.waitForTimeout(1000);
-    await settledText(page, { timeout: 20000 }).catch(() => {});
-    const after = await snapshot();
-    const a = after.find((x) => key(x) === key(c));
-    if (!a) continue;                                   // navigated away: not a stateful control
-    if (a.sig === b.sig) continue;                      // nothing about it changed: not stateful
+    // TRY MORE THAN ONE MEMBER, and the Inbox bar is why.
+    //
+    // On a TWO-member bar the signature counts tie 1-1, so "most common" picks arbitrarily —
+    // and if it picks the tab that is already selected, the click changes nothing and the whole
+    // bar reads as "not stateful" and drops silently out of coverage. That is exactly how the
+    // Inbox's Friends/Crews bar measured 0 stateful while being a real, mute tab bar. Trying
+    // the next member until one actually moves fixes the tie and every already-selected case
+    // with it.
+    let b = null, a = null, before = null, after = null, c = null;
+    let dirty = true;   // first candidate always needs a clean load
+    for (const cand of order.slice(0, 3)) {
+      if (!cand.label) continue;
+      // Reload only when the PAGE was actually disturbed. A candidate that changed nothing
+      // left the screen exactly as it was — that is what "changed nothing" means — so the next
+      // candidate can be tried straight away. Reloading unconditionally tripled the number of
+      // navigations and put a full discovery run (58 screens) past the CI job timeout.
+      if (dirty) { await load(s.qs, s.tab, s.awaitRoute); dirty = false; }
+      const snap0 = await snapshot();
+      const b0 = snap0.find((x) => key(x) === key(cand));
+      if (!b0) continue;
+      if (!(await clickOne(cand))) continue;
+      await page.waitForTimeout(1000);
+      await settledText(page, { timeout: 20000 }).catch(() => {});
+      const snap1 = await snapshot();
+      const a0 = snap1.find((x) => key(x) === key(cand));
+      if (!a0) { dirty = true; continue; }              // navigated away: not a stateful control
+      // Only a click that moved SOMETHING dirties the page. Compare the whole snapshot, not
+      // just this control: a click can change a sibling or open a panel while leaving the
+      // control itself alone, and carrying on from there would measure the wrong screen.
+      if (JSON.stringify(snap1) !== JSON.stringify(snap0)) dirty = true;
+      if (a0.sig === b0.sig) continue;                  // already selected, or simply not stateful
+      c = cand; b = b0; a = a0; before = snap0; after = snap1;
+      break;
+    }
+    if (!c) continue;
     seen.add(group);
     // Did any SIBLING also change? That is what separates a tab bar from an independent toggle.
     const sibsMoved = before.some((x) => x.group === c.group && key(x) !== key(c)
@@ -334,12 +381,18 @@ for (const s of screens) {
 log("");
 const mute = [];
 for (const t of tabBars) {
-  const okAttr = t.says === "aria-current" || t.says === "aria-selected";
+  // ANY of the four announces. Demanding aria-current SPECIFICALLY of a tab bar was a real
+  // over-strictness: the log modal visibility row [Everyone|Just me] already carries
+  // aria-pressed, and this reported it as mute — i.e. it would have told an author to swap
+  // working markup for different working markup. Which attribute best fits a mutually
+  // exclusive group is a refinement; this guard asks only whether the state is announced
+  // AT ALL, which is the part that was actually missing across 21 controls.
+  const okAttr = !!t.says;
   log(`  ${okAttr ? "ok  " : "MUTE"}  tab bar  ${t.screen.padEnd(16)} [${t.group}] -> ${JSON.stringify(t.label)}  ${okAttr ? "via " + t.says : "announces NOTHING"}`);
   if (!okAttr) { mute.push(t); fails.push(`tab bar [${t.group}] on ${t.screen}: selecting ${JSON.stringify(t.label)} changes only its colour — it needs aria-current (or aria-selected with role=tab)`); }
 }
 for (const t of toggles) {
-  const okAttr = t.says === "aria-pressed" || t.says === "aria-selected" || t.says === "aria-current";
+  const okAttr = !!t.says;
   // Name the GROUP, not just the label. "Weekends" appears in two different rows on the
   // profile screen -- the AVAIL_OPTS chips and the quick-set row -- so a label alone sends
   // whoever reads this to the wrong one.

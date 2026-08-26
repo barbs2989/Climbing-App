@@ -1290,6 +1290,39 @@ a build error, but a screen that renders wrong or not at all.
   - It reuses `scripts/overlay-scroll.config.mjs` verbatim rather than adding a fifth scaffold,
     which is also how it reaches **onboarding**: the `WHAT DO YOU DO?` chips are the first thing
     a new climber is asked, the field is marked required, and no tab walk can reach them.
+  - **ITS CI TIMEOUT WAS DERIVED FROM THE FAST KIND OF SCREEN AND THE JOB WAS CANCELLED AT THE
+    WALL — which reported NO FAILURE.** 40 minutes was extrapolated from the 8-screen version
+    (3m27s in CI), giving ~22s/screen; but those 8 were all **tabs**, and an overlay costs
+    roughly double because it renders *over* a tab and the guard probes both. Measured on the
+    real run: **49 of 58 screens in 38m01s, 367 groups, 6.2s/group, 46.6s/screen** — ~47m for a
+    full walk. The PR read green with 14 checks passing and this one silently having measured
+    nothing, which is the `check:ci-cancel` hole arriving by a different route. Now 75m.
+    **Sample the slow kind of screen before deriving a timeout from the fast kind**, and treat a
+    `cancel` bucket as a red, never as an absence.
+  - **Overlays are DISCOVERED, not listed, and a hand-picked list is what put this guard wrong
+    twice in one day.** It shipped walking six tabs and onboarding, which left RouteDetail's
+    sub-tab bar uncovered — one of the four #1041 fixed — and left the **Inbox** modal's
+    `Friends / Crews` bar, a sixth mute bar of exactly the shape #1041 fixed, undiscovered
+    until somebody grepped for it by hand. Discovery is shared with `check:zero`,
+    `check:signed-in` and `check:overlay-scroll`, so the four cannot drift on which modals
+    exist. Walking all 58 screens found **19 more mute controls across 11 overlays**, including
+    the shared map layer bar, the units toggle, the profile modal's sub-tabs, five groups
+    inside the log-a-climb modal, and the belay ledger's `I caught X / X caught me` — the
+    direction of a safety record, conveyed by colour alone.
+  - **ANY of the four attributes counts, and demanding a specific one was a real
+    over-strictness.** An early verdict required `aria-current` of anything shaped like a tab
+    bar, and reported the log modal's `[Everyone | Just me]` — which already carries
+    `aria-pressed` — as mute, i.e. it told the author to swap working markup for different
+    working markup. `aria-expanded` is a genuine third answer too: *Climb with them again* is
+    a disclosure, so `aria-pressed` would have been the wrong fix. The guard asks only whether
+    the state is announced **at all**, which is the part that was missing across all 21.
+  - **A TWO-member bar breaks a majority tie-break**, so it tries more than one member. On
+    `[Friends | Crews]` the signature counts tie 1-1; picking the already-selected tab means
+    the click changes nothing and the whole bar drops silently out of coverage as "not
+    stateful". That is exactly how the Inbox bar measured 0 stateful while being mute.
+  - **Its own comments must contain no backticks**: `says()` lives inside the `SCAN` template
+    literal, and one backtick ends the string. It failed loudly on parse, which is the right
+    direction, but the trap is easy to re-introduce.
   - **Route detail is walked, and failing to reach it is an exit-1.** Its sub-tab bar
     (`Overview / Plan / Reports / Safety / Partners / Photos`) is one of the four #1041 fixed,
     and no tab walk reaches that screen — so for one commit the fix was guarded everywhere
