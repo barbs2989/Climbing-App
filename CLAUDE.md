@@ -1492,6 +1492,23 @@ a build error, but a screen that renders wrong or not at all.
     the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
+  - **TWO MORE WAYS A RUN GOES MISSING WITHOUT REPORTING A FAILURE, both met on #1229 and both
+    the same shape as the cancellation above: `gh pr checks` can only report on runs that
+    EXIST.** Neither is a flake to re-run past — each needs a different action.
+    - **A PR opened while CONFLICTING gets NO checks at all**, because GitHub cannot build the
+      merge ref, and resolving the conflict later does **not** retroactively trigger them —
+      only a fresh `synchronize` (a push) does. `gh pr checks` prints *"no checks reported"*
+      and **exits 0**, which a waiter loop reads as "nothing pending, therefore done". Wait for
+      checks to **appear** before waiting for them to finish, and treat none-ever-appearing as
+      its own failure.
+    - **A `startup_failure` run has ZERO jobs, so it contributes zero checks** — the PR showed
+      **4 passing of the 15 every other PR gets**, with nothing red. `Render guards` had failed
+      to start; the workflow file was byte-identical to main's and parsed with all six jobs, so
+      it was transient rather than a bad file on the branch. It **cannot be re-run**
+      (`This workflow run cannot be retried`), so it also needs a new push.
+    - The tell in both cases is the **count**, never the colour. Compare the number of checks
+      against a sibling PR before reading green as green, and `gh run list --branch <b>` to see
+      whether a workflow ran **at all** — a run that never existed is invisible from the PR.
   - **Comments are stripped before anything is matched**, and that is load-bearing here: both
     workflows now explain this rule in prose that *names* `github.sha` and `github.ref`, so a
     scan that read comments would pass on the strength of an explanation. Same trap
