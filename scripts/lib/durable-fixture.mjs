@@ -101,10 +101,47 @@ export async function durableFixture(log) {
   // Groups are safe to make per-run because, unlike auth users, an owner can delete their own:
   // measured create 201 / mate-joins 201 / owner-deletes 200, row gone. So each run gets a
   // uniquely named group and takes it away again.
+  // PER-RUN IS NOT PER-JOB, and that gap failed a run on 2026-08-21. `check:outage` and
+  // `check:signed-in` are two jobs of the SAME workflow, so they share GITHUB_RUN_ID and
+  // GITHUB_RUN_ATTEMPT and both built the identical group name. Measured on run 32450076698:
+  // both started 05:18:41, outage finished 05:21:49, and signed-in failed at 05:22:47 with
+  // "a member count reads 1 for a 2-member group". Teardown deletes BY ID so it cannot remove
+  // the sibling's row -- but check:signed-in picks the group to open BY NAME, so with two rows
+  // sharing a name it can walk the OTHER job's group and watch that job tear it down underneath.
+  //
+  // The symptom is the tell this repo already records for the ungated sweepOrphans: the victim's
+  // rows stop existing, the failure lands nowhere near the cause, and it passes on re-run --
+  // which is exactly how a real defect gets filed as a flake. GITHUB_JOB separates them.
   const tag = process.env.GITHUB_RUN_ID
-    ? `run ${process.env.GITHUB_RUN_ID}${process.env.GITHUB_RUN_ATTEMPT ? "." + process.env.GITHUB_RUN_ATTEMPT : ""}`
+    ? `run ${process.env.GITHUB_RUN_ID}${process.env.GITHUB_RUN_ATTEMPT ? "." + process.env.GITHUB_RUN_ATTEMPT : ""}${process.env.GITHUB_JOB ? "-" + process.env.GITHUB_JOB : ""}`
     : `local ${process.pid.toString(36)}${Date.now().toString(36).slice(-4)}`;
   const groupName = `CI Fixture Alpine Club (${tag})`;
+
+  // SWEEP WHAT EARLIER RUNS LEFT, and this is the half that actually mattered. Teardown deletes
+  // this run's group by id in a `finally`, which a cancelled or killed job never reaches -- so
+  // every such run leaks a group owned by the durable account, and nothing has ever removed them.
+  // Measured 2026-08-21: the live project held 17 groups, of which 15 were CI fixture leftovers
+  // going back to 2026-08-13 and ZERO were real. `useMyGroups()` selects every group with no
+  // filter, so that pile is the Groups tab every walk sees, and check:signed-in picks the group
+  // to open BY NAME -- two rows sharing a name (which a run without the GITHUB_JOB tag above still
+  // produces) let it walk one group while another job tears that one down.
+  //
+  // sweepOrphans() cannot cover this: it removes @climbmatch-qa.invalid ACCOUNTS, and these
+  // groups belong to the durable pair, which must never be deleted.
+  //
+  // AGE-GATED at 45 minutes for the same reason sweepOrphans is, and getting that wrong is worse
+  // than the leak: ungated, this deletes the group of a run already in flight, whose failure then
+  // lands nowhere near the cause and passes on re-run. 45 min clears the 25-minute job wall.
+  const staleBefore = new Date(Date.now() - 45 * 60 * 1000).toISOString();
+  const stale = await asUser(session, `groups?select=id&created_by=eq.${session.user.id}` +
+    `&name=like.CI%20Fixture%20Alpine%20Club*&created_at=lt.${staleBefore}`);
+  const staleRows = Array.isArray(stale.json) ? stale.json : [];
+  let swept = 0;
+  for (const g of staleRows) {
+    const d = await asUser(session, `groups?id=eq.${g.id}`, { method: "DELETE" });
+    if (d.status < 300) swept++;
+  }
+  if (staleRows.length) log(`  swept ${swept}/${staleRows.length} fixture group(s) left by earlier runs (older than 45 min)`);
   // Same route the rest of the fixture uses. crews.route_id is NOT NULL.
   const CREW_ROUTE_ID = "wa_mount_baker_north_ridge";
 
@@ -154,7 +191,7 @@ export async function durableFixture(log) {
     throw new Error(`this run's group is still ${JSON.stringify(hide.json?.[0]?.visibility ?? "unknown")} (HTTP ${hide.status}) — it would be listed in every real user's Groups tab. Refusing to walk rather than exposing it.`);
   }
   group.visibility = "private";
-  log(`  created this run's own group ${JSON.stringify(groupName)}, private — no other run can touch it, and no real user can see it`);
+  log(`  created this job's own group ${JSON.stringify(groupName)}, private — no other JOB or run can touch it, and no real user can see it`);
 
   // A per-run crew owned by the MATE, with the owner left INVITED and never confirmed.
   //
