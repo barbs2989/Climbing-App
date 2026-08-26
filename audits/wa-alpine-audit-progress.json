@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_mount_goode_northeast_buttress",
+    "last_processed_id": "wa_mount_logan_r1",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3093,6 +3093,44 @@
             "findings_fixed": 2,
             "findings_summary": "Fixed a geometrically-wrong Big Beaver Landing waypoint on wa_mount_fury_east_southeast_glaciers (coordinates were ~11mi off, contradicting the waypoint's own note/distMi and the sibling West Ridge route's independently-correct coordinate) and a stale month-uncertain hedge on wa_mount_fury_east_mongo_ridge.fa (three independent sources confirm Aug 24-28, 2006, matching this row's own beta field). Confirmed correct via external sources and left unchanged: Despair FA (Beckey/Anderson/Kelley 1939), Fairchild FA (1963), West Fury West Peak FA (1958), Formidable FA (1938 Ptarmigan Traverse party), Goode NE Buttress first winter ascent (Pilling/Mascioli 1984). Flagged, not fixed: Mount Degenhardt's fa field (bare \"1931\", no party) could be enriched with Degenhardt & Strandberg, but sources conflict on the year itself (1931 vs 1932) -- needs human verification rather than a guessed fix.",
             "sql_file": "audits/sql/2026-08-26-batch-145.sql"
+        },
+        {
+            "batch_number": 146,
+            "date": "2026-08-26",
+            "route_ids": [
+                "wa_mount_hardy_snow_scramble",
+                "wa_mount_hinman_hinman_glacier",
+                "wa_mount_howard_south_slope",
+                "wa_mount_index_north_peak_traverse",
+                "wa_mount_index_northeast_buttress",
+                "wa_mount_johnson_standard",
+                "wa_mount_lago_south_slope_south_face",
+                "wa_mount_larrabee_south_ridge",
+                "wa_mount_logan_fremont_glacier",
+                "wa_mount_logan_r1"
+            ],
+            "findings_fixed": 1,
+            "findings_summary": "Fixed wa_mount_logan_r1 (Banded Glacier): approach text described only the Thunder Creek/Fisher Creek Trail with no mention of Easy Pass, while the row's own beta/road/access fields all agree Easy Pass (SR-20 MP151, ~10mi one-way) is the standard shorter approach and Thunder Creek (~13mi) is the alternate -- rewrote approach to lead with Easy Pass, re-homing facts already in the row. Flagged, not fixed (needs human verification): wa_mount_logan_r1 gain_ft/loss_ft (7027/13000) and dist_km (19.3km) do not reconcile with each other or with the row's own waypoint distMi (14.51mi to summit) under any reading of the route as out-and-back or point-to-point; and area wa_north_peak_2 (Mount Index North Peak, used by wa_mount_index_northeast_buttress) carries a coordinate (47.77453,-121.58093) essentially identical to sibling area wa_main_peak_2 (47.77453,-121.58094) -- North and Main Peak are distinct summits (5,357ft vs 5,991ft) so this looks like a copied/duplicate coordinate, but no independent source for North Peak's true coordinate could be obtained (external web fetches to Wikipedia/Peakbagger/SummitPost/listsofjohn are blocked by this environment's network egress policy) so no fix was written. Confirmed correct via external sources and left unchanged: Mount Hardy elevation/FA (Schmerling & Ulrichs 1933, 8099ft), Mount Hinman elevation/FA (1928, named 1934, 7492ft, glacier declared dead 2022), Mount Howard elevation (7063ft), Mount Lago elevation/FA (Ulrichs & Alt 1933, 8745ft), Mount Larrabee FA/elevation (McArthur party Sept 11 1908, 7865ft), Mount Logan elevation/FA (Wernstedt 1926, 9087ft), Mount Index North Peak 1929 FA already correctly hedged in the row as disputed (Chute/Kaartinen, date uncertain per NWMJ). Also ran audit-waypoints/audit-alpine-gain/audit-route-identity against the live WA catalog and none of this batch's 10 routes were flagged by those structural checks.",
+            "sql_file": "audits/sql/2026-08-26-batch-146.sql"
+        },
+        {
+            "batch_number": 146,
+            "date": "2026-08-26",
+            "route_ids": [
+                "wa_mount_hardy_snow_scramble",
+                "wa_mount_hinman_hinman_glacier",
+                "wa_mount_howard_south_slope",
+                "wa_mount_index_north_peak_traverse",
+                "wa_mount_index_northeast_buttress",
+                "wa_mount_johnson_standard",
+                "wa_mount_lago_south_slope_south_face",
+                "wa_mount_larrabee_south_ridge",
+                "wa_mount_logan_fremont_glacier",
+                "wa_mount_logan_r1"
+            ],
+            "findings_fixed": 1,
+            "findings_summary": "Fixed wa_mount_logan_r1 (Banded Glacier): approach text described only the Thunder Creek/Fisher Creek Trail with no mention of Easy Pass, while the row's own beta/road/access fields all agree Easy Pass (SR-20 MP151, ~10mi one-way) is the standard shorter approach and Thunder Creek (~13mi) is the alternate -- rewrote approach to lead with Easy Pass, re-homing facts already in the row. Flagged, not fixed (needs human verification): wa_mount_logan_r1 gain_ft/loss_ft (7027/13000) and dist_km (19.3km) do not reconcile with each other or with the row's own waypoint distMi (14.51mi to summit) under any reading of the route as out-and-back or point-to-point; and area wa_north_peak_2 (Mount Index North Peak, used by wa_mount_index_northeast_buttress) carries a coordinate (47.77453,-121.58093) essentially identical to sibling area wa_main_peak_2 (47.77453,-121.58094) -- North and Main Peak are distinct summits (5,357ft vs 5,991ft) so this looks like a copied/duplicate coordinate, but no independent source for North Peak's true coordinate could be obtained (external web fetches to Wikipedia/Peakbagger/SummitPost/listsofjohn are blocked by this environment's network egress policy) so no fix was written. Confirmed correct via external sources and left unchanged: Mount Hardy elevation/FA (Schmerling & Ulrichs 1933, 8099ft), Mount Hinman elevation/FA (1928, named 1934, 7492ft, glacier declared dead 2022), Mount Howard elevation (7063ft), Mount Lago elevation/FA (Ulrichs & Alt 1933, 8745ft), Mount Larrabee FA/elevation (McArthur party Sept 11 1908, 7865ft), Mount Logan elevation/FA (Wernstedt 1926, 9087ft), Mount Index North Peak 1929 FA already correctly hedged in the row as disputed (Chute/Kaartinen, date uncertain per NWMJ). Also ran audit-waypoints/audit-alpine-gain/audit-route-identity against the live WA catalog and none of this batch's 10 routes were flagged by those structural checks.",
+            "sql_file": "audits/sql/2026-08-26-batch-146.sql"
         }
     ]
 }

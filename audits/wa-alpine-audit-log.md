@@ -9885,3 +9885,67 @@ Web access this run: WebSearch worked throughout; WebFetch to en.wikipedia.org a
 alpenglow.org was blocked by network egress policy, consistent with prior batches.
 
 Next batch continues after `wa_mount_goode_northeast_buttress` in the id-ordered scope.
+
+## Batch 146 — 2026-08-26
+
+Routes: `wa_mount_hardy_snow_scramble`, `wa_mount_hinman_hinman_glacier`,
+`wa_mount_howard_south_slope`, `wa_mount_index_north_peak_traverse`,
+`wa_mount_index_northeast_buttress`, `wa_mount_johnson_standard`,
+`wa_mount_lago_south_slope_south_face`, `wa_mount_larrabee_south_ridge`,
+`wa_mount_logan_fremont_glacier`, `wa_mount_logan_r1`.
+
+**Fixed:** `wa_mount_logan_r1` (Banded Glacier) — `approach` described only the Thunder
+Creek/Fisher Creek Trail as though it were the route's approach, with no mention of Easy
+Pass. But this row's own `beta`, `road`, and `access` fields all agree that Easy Pass
+(SR-20 near milepost 151, ~10 mi one-way to the lake camp) is the *standard*, shorter
+approach, and that Thunder Creek (~13 mi one-way, from Colonial Creek Campground) is
+explicitly "a longer, always-open alternate ... useful when Easy Pass Trailhead is gated."
+`descent_text` also defaults to exiting back out over Easy Pass. Rewrote `approach` to lead
+with Easy Pass and note Thunder Creek as the alternate, re-homing facts already present in
+the row rather than inventing anything.
+
+**Flagged, not fixed — needs human verification:**
+- `wa_mount_logan_r1`'s `gain_ft`/`loss_ft` (7027/13000) don't reconcile with each other, or
+  with the row's own waypoint `distMi` for the summit (14.51 mi = 23.3 km, against a
+  `dist_km` of 19.3 km = 12 mi), under either an out-and-back or a point-to-point reading of
+  the route. No confident replacement numbers could be derived from the row itself.
+- Area `wa_north_peak_2` (Mount Index North Peak, the target of
+  `wa_mount_index_northeast_buttress` and of the traverse in
+  `wa_mount_index_north_peak_traverse`) carries a coordinate (47.77453, -121.58093)
+  essentially identical to sibling area `wa_main_peak_2`'s (47.77453, -121.58094) — under 2 m
+  apart. North Peak (5,357 ft) and Main Peak (5,991 ft) are distinct summits of the Index
+  massif roughly separated along a north-south ridge, so this looks like a copied/duplicate
+  coordinate rather than North Peak's real location. Could not obtain an independent
+  coordinate for North Peak specifically to propose a fix — WebFetch to Wikipedia, Peakbagger,
+  SummitPost, and listsofjohn were all blocked by this environment's network egress policy,
+  and WebSearch's synthesized snippets didn't surface an exact coordinate for the North Peak
+  alone (only Main Peak's, which matched `wa_main_peak_2` closely: 47°46'28"N 121°34'51"W).
+
+**Confirmed correct via external sources, left unchanged:** Mount Hardy elevation (8,099 ft)
+and FA (Sidney Schmerling & Hermann Ulrichs, 1933); Mount Hinman elevation (7,492 ft), FA
+(1928, named 1934 for Dr. Harry B. Hinman), and the Hinman Glacier "declared dead in 2022"
+claim (KUOW/Boise State Public Radio, Jan 2023 reporting on a 2022 finding); Mount Howard
+elevation (7,063 ft); Mount Lago elevation (8,745 ft) and FA (Hermann Ulrichs & Dick Alt,
+1933); Mount Larrabee elevation (7,865 ft) and FA (James J. McArthur survey party, Sept 11
+1908); Mount Logan elevation (9,087 ft) and FA (Lage Wernstedt, 1926, solo). Mount Johnson's
+elevation (7,680 ft) confirmed; its `fa` field's "revised attribution" hedge (Osborn/
+Halwax/King c.1935 vs. the long-credited Johnson/Martin 1940) was left as-is — already an
+honest hedge, not contradicted by anything found. `wa_mount_index_northeast_buttress`'s FA
+("July 1929, Lionel Chute & Victor Kaartinen, disputed/uncertain") matches an NWMJ history
+piece noting Chute himself gave conflicting dates for the ascent (July 4 1929 vs. later
+July 5 1930) — the row's existing hedge is accurate, left unchanged. Mount Logan Fremont
+Glacier's `overview` says the route climbs the glacier's "southwest side"; search results on
+which flank Fremont Glacier actually sits were internally contradictory (one summary said
+southwest, another said southeast) and are most likely conflating the Fremont/Douglas glacier
+articles — too unreliable to act on either way, left unchanged.
+
+Ran `audit-waypoints.mjs`, `audit-alpine-gain.mjs`, and `audit-route-identity.mjs` against
+the live WA catalog (2,525 areas / 8,369 routes) as a cross-check; none of this batch's 10
+routes appeared in any of their findings.
+
+Web access this run: WebSearch worked throughout. WebFetch/curl to en.wikipedia.org,
+peakbagger.com, summitpost.org, listsofjohn.com, mountaineers.org, and
+nominatim.openstreetmap.org were all blocked by the network egress proxy (403 at the CONNECT
+tunnel) — consistent with prior batches' experience with Wikipedia/alpenglow.org.
+
+Next batch continues after `wa_mount_logan_r1` in the id-ordered scope.
