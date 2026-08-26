@@ -61,6 +61,68 @@ else {
   if (!/wpPlaced\(/.test(body)) fail("GPXMap never calls wpPlaced() — it is deciding placement some other way.");
 }
 if (!/wpPlaced\(/.test(rd)) fail("RouteDetail never calls wpPlaced().");
+
+/* ── 1b. A TENTH PREDICATE, BORN OUTSIDE GPXMap ─────────────────────────────────────────────────
+   Section 1 is scoped to GPXMap's body for a good reason — `peakCoord.lat!=null` is a legitimate
+   test of a PEAK coordinate and flagging it would tell an author to break correct code. The cost
+   of that scoping is that a placement test written ANYWHERE ELSE is invisible by construction, and
+   one duly appeared one PR after the sweep: `trailheadPoint()` decided placement with
+   `w.lat!=null&&w.lng!=null`, and with `w.lat!=null` alone — no lng at all — in its fallback. It
+   was flagged in review and merged anyway, which is the argument for a guard over a comment.
+
+   THE RULE IS STRUCTURAL AND SCOPED BY THE DATA SOURCE, NOT BY THE VARIABLE NAME: a coordinate
+   test inside a callback that is ITERATING WAYPOINTS is a placement test whatever the parameter is
+   called, and a test on a peak, a user position or an area cannot reach it. The receiver is
+   resolved through Babel scope, so `const wps=route.waypoints||[]` counts — naming alone would
+   miss exactly the shape that got through. */
+{
+  /* The CJS interop dance the sibling guards already do — `.default` is a function under some
+     resolutions and the namespace object under others, and the wrong one throws at the call. */
+  const _t = (await import("@babel/traverse")).default;
+  const traverse = _t.default || _t;
+  const { parse } = await import("@babel/parser");
+  const ARRAY_METHODS = new Set(["find", "filter", "some", "every", "findIndex", "findLast", "flatMap"]);
+  const WAYPOINTY = /waypoints|\bwps\b/i;
+
+  for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
+    let ast;
+    try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+    catch (e) { fail(`could not parse ${label} to look for placement tests (${String(e.message).slice(0, 80)})`); continue; }
+
+    const found = [];
+    traverse(ast, {
+      CallExpression(path) {
+        const c = path.node.callee;
+        if (c.type !== "MemberExpression" || c.computed || !ARRAY_METHODS.has(c.property.name)) return;
+
+        // Is the thing being iterated a waypoint list? Read the receiver, and if it is a bare
+        // identifier, read what it was ASSIGNED — that is what makes `wps` count.
+        let recv = src.slice(c.object.start, c.object.end);
+        if (c.object.type === "Identifier") {
+          const b = path.scope.getBinding(c.object.name);
+          const init = b && b.path.node && b.path.node.init;
+          if (init) recv += " " + src.slice(init.start, init.end);
+        }
+        if (!WAYPOINTY.test(recv)) return;
+
+        const cb = path.node.arguments[0];
+        if (!cb || !/FunctionExpression|ArrowFunctionExpression/.test(cb.type)) return;
+        const body = src.slice(cb.start, cb.end);
+        // Already asking the one predicate? Then this is the fix, not the defect.
+        if (/wpPlaced\s*\(/.test(body)) return;
+        // A COMPARISON on .lat or .lng is a placement decision. A plain read (`[w.lat, w.lng]`)
+        // is not, and flagging it would condemn every correct consumer of a placed pin.
+        const cmp = body.match(/\.\s*(?:lat|lng)\s*(?:[!=]==?\s*(?:null|undefined)|\)?\s*\?)/g)
+          || body.match(/Number\.isFinite\s*\(\s*Number\?\.?\s*\(?[A-Za-z_$][\w$]*\s*\.\s*(?:lat|lng)/g);
+        if (cmp) found.push({ recv: recv.split(" ")[0], snippet: body.replace(/\s+/g, " ").slice(0, 96) });
+      },
+    });
+
+    for (const f of found) {
+      fail(`${label}: a placement test on a waypoint list (${f.recv}) that does not go through wpPlaced() — ${f.snippet}`);
+    }
+  }
+}
 /* The old inline expression must not come back alongside the helper — two answers is the defect. */
 if (/Number\.isFinite\(Number\(wp\.lat\)\)/.test(rd)) fail("RouteDetail has re-inlined the finite-coordinate test; wpPlaced() is the single answer.");
 

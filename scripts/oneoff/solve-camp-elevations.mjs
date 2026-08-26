@@ -26,6 +26,14 @@ dns.setDefaultResultOrder("ipv4first"); // AAAA records here are unroutable; see
 import fs from "fs";
 import { SUPABASE_URL, anonKey, headers, requireServiceKey } from "../lib/supabase-env.mjs";
 import { elevationAt } from "../lib/terrain.mjs";
+// THE NAME-MATCHING GATES LIVE IN ONE PLACE, shared with audit-camp-elevations.mjs.
+// They were inline here first, and creating the shared module without rewiring this
+// file left the writer on the OLD copies for one commit: the audit refused a Blue Lake
+// TRAILHEAD camp matching the lake 1,064 ft above it, while the solver would still have
+// written it. A checker and a writer that disagree about "the same place" is the exact
+// shape this module exists to prevent.
+import { norm, core, ident, placeOf, distinctiveTokens, leadingProper,
+         searchCandidates, ZONE, MULTI, SUBFEATURE, LINEAR, TAIL } from "../lib/camp-names.mjs";
 
 const APPLY = process.argv.includes("--apply");
 const LIMIT = Number((process.argv.find((a) => a.startsWith("--limit=")) || "--limit=9999").split("=")[1]);
@@ -61,43 +69,23 @@ const wpRows = await q("routes?select=id,area_id,waypoints&waypoints=not.is.null
 const arr = (v) => (Array.isArray(v) ? v : []);
 const has = (v) => v != null && String(v).trim() !== "";
 const ftOf = (b) => (has(b.elev) ? Number(b.elev) : has(b.elevM) ? Number(b.elevM) * 3.28084 : null);
-const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
 
 // A dispersed zone has no point to look up. These words say "somewhere around here", not "here".
-const ZONE = /\b(dispersed|informal|improvised|bivies|bivouacs|pullouts|cross-country|anywhere|various|scattered|numerous|several|wherever|on-wall|ledges|benches|meadows|camps|sites)\b/i;
 // Two places joined. " and " between two capitalised names, or a slash.
 // "Apex Pass and the high ground west of Wolframite" names two places and the second one is not
 // capitalised, so requiring a capital after "and" let it through. Erring toward refusal is right
 // here: a wrong single number is worse than a blank.
-const MULTI = /\b\w+\s+and\s+([A-Z]|the\s+\w+)|\//;
 
 // The searchable place is the FIRST clause: "Shield Lake, north of Prusik Pass" -> "Shield Lake".
 // Everything after a comma or dash in these entries is a locator, not part of the name.
-const placeOf = (name) => String(name || "").split(/[,—–(]|\s-\s/)[0].trim();
 // Landform, direction and camp words describe a place without NAMING one. A name built only from
 // these ("basin below the east peak") identifies nothing.
-const RELATIVE = new Set(["basin", "below", "above", "east", "west", "north", "south", "middle",
-  "upper", "lower", "the", "peak", "camp", "camps", "campsite", "bivy", "bivouac", "ridge", "creek",
-  "lake", "lakes", "col", "pass", "saddle", "glacier", "high", "low", "under", "near", "beside",
-  "valley", "meadow", "meadows", "side", "face", "summit", "top", "base", "and", "of", "at", "on"]);
-const distinctiveTokens = (x) => new Set(norm(x).split(" ").filter((t) => t.length > 2 && !RELATIVE.has(t)));
 const pickType = (withElev) => String((withElev[0] && withElev[0].h && withElev[0].h.type) || "");
 /* THE PLACE IS OFTEN A LEADING PROPER NOUN WITH A DESCRIPTION TRAILING IT, and searching the
    whole string finds nothing: "Reflection Lakes area winter snow camp" is Reflection Lakes,
    "Paradise designated winter group camping area" is Paradise, "Luna Cirque floor" is Luna
    Cirque. Take the run of Capitalised words at the front (allowing lowercase joiners like "of"
    and "the"), which is what a gazetteer actually holds. */
-const leadingProper = (name) => {
-  const toks = String(name || "").trim().split(/\s+/);
-  const out = [];
-  for (const t of toks) {
-    if (/^[A-Z][A-Za-z'’.-]*$/.test(t)) out.push(t);
-    else if (out.length && /^(of|the|and|de|la)$/i.test(t)) out.push(t);
-    else break;
-  }
-  while (out.length && /^(of|the|and|de|la)$/i.test(out[out.length - 1])) out.pop();
-  return out.join(" ");
-};
 /* A SUMMIT'S HEIGHT IS NOT ITS BASIN'S. Once the leading-proper-noun search is allowed, a name
    like "Amphitheater Mountain upper basin" can match the MOUNTAIN — and writing the summit
    elevation for a camp in the basin below it is a wrong number that looks like a right one.
@@ -114,7 +102,6 @@ const leadingProper = (name) => {
    one change — so the rule is now structural rather than type-specific: if anything follows the
    leading proper noun that names a PART of it, the leading-noun search is not offered at all.
    Camp words are exempt, because "X camp" is the camp at X rather than a different part of X. */
-const SUBFEATURE = /\b(basin|floor|tarns?|cirque|meadows?|valley|bench(es)?|lakes?|creek|below|under|beneath|saddle|col|notch|shoulder|spur|moraine|shelf|gully|couloir|face|buttress|slopes?|flank|headwall|bowl|glacier|ridge|arete|crest|summit|toe|snout)\b/i;
 
 async function nominatim(name, box) {
   const u = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=10&viewbox=${box.minLng},${box.maxLat},${box.maxLng},${box.minLat}&bounded=1&q=${encodeURIComponent(name)}`;
@@ -131,8 +118,6 @@ async function nominatim(name, box) {
 const CROSS_FT = 400; // wider than the controls' worst miss (68 ft) by a large margin, so this
                       // fires on a real disagreement rather than on DEM sampling noise.
 const region = (id) => String((areaOf.get(id) || {}).path || "").split(".").slice(0, 4).join(".");
-const NOISE = /\b(the|a|an|and|at|on|in|of|for|from|to)\b/g;
-const core = (x) => norm(x).replace(NOISE, " ").replace(/\s+/g, " ").trim();
 /* "X Camp" is the camp AT X, so a trailing generic camp word must not break an identity match:
    "Pelton Basin" was refused while the catalog held "Pelton Basin Camp" at 5,400 ft.
    This strips only CAMP words, never a FEATURE TYPE — which is the whole distinction the loose
@@ -140,8 +125,6 @@ const core = (x) => norm(x).replace(NOISE, " ").replace(/\s+/g, " ").trim();
    does not equal "Whatcom Pass" -> "whatcom pass"; "Luna Camp" -> "luna" still does not equal
    "Luna Cirque floor"; "Whitehorse Ridge Camp" -> "whitehorse ridge" still does not equal
    "Whitehorse Community Park campground" -> "whitehorse community park". */
-const CAMPWORD = /\s+(camp|camps|campsite|campsites|campground|camp site)$/;
-const ident = (x) => { let v = core(x); let prev; do { prev = v; v = v.replace(CAMPWORD, ""); } while (v !== prev); return v; };
 
 const wpElev = new Map();     // core name -> [elevations]              (the CROSS-CHECK index)
 const wpByRegion = new Map(); // core name + "|" + region -> [{elev,from}]  (the DONOR index)
@@ -223,16 +206,7 @@ for (const [, w] of [...work.entries()].sort((a, b) => b[1].sites.length - a[1].
      Only POINT-LIKE tails are stripped. `creek`, `ridge` and `valley` are deliberately absent:
      those are LINEAR, so the parent feature has no single height and stripping to them would
      reintroduce exactly the defect the linear gate exists to stop. */
-  const TAIL = /\s+(basin|floor|tarns?|area|bench(es)?|shelf|cirque)$/i;
-  const alt = TAIL.test(w.place) ? w.place.replace(TAIL, "").trim() : null;
-  const lead = leadingProper(w.place);
-  // What is LEFT after the proper noun decides whether the proper noun alone is the right query.
-  const rest = lead ? String(w.place).slice(lead.length) : "";
-  const leadOk = lead && lead !== w.place && lead !== alt && distinctiveTokens(lead).size
-    && norm(lead).split(" ").length >= 2 && !SUBFEATURE.test(rest);
-  const candidates = [w.place]
-    .concat(alt && distinctiveTokens(alt).size ? [alt] : [])
-    .concat(leadOk ? [lead] : []);
+  const candidates = searchCandidates(w.display);
   let hits = null, usedPlace = w.place;
   for (const cand of candidates) {
     hits = await nominatim(cand, box);
@@ -298,8 +272,6 @@ for (const [, w] of [...work.entries()].sort((a, b) => b[1].sites.length - a[1].
     rej(`matched the SUMMIT (${pickType(withElev)}) for a name describing ground below it — a peak's height is not its basin's`);
     continue;
   }
-  const LINEAR = new Set(["stream", "river", "path", "track", "valley", "ridge", "wood", "forest",
-    "cliff", "canal", "arete", "glacier", "moraine", "gully", "couloir", "spur", "crest"]);
   const crossEarly = wpElev.get(norm(w.place)) || [];
   if (LINEAR.has(String(pickType(withElev)) ) && !crossEarly.some((e) => Math.abs(e - Math.round(withElev[0].g)) <= CROSS_FT)) {
     rej(`located only a ${pickType(withElev)} — a linear feature has no single height`);

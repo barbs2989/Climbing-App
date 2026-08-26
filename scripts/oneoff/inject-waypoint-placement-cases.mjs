@@ -53,6 +53,43 @@ const CASES = [
     edit: (s) => s.replace("const wpPts=(waypoints||[]).filter(w=>wpPlaced(w));", "const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);"),
     expect: "fail",
   },
+  /* Section 1b: a placement test born OUTSIDE GPXMap. Case 8 is the real historical defect —
+     trailheadPoint() exactly as #1215 merged it, flagged in review and merged anyway. Cases 10 and
+     11 must stay SILENT, and they are what make the rule worth having: a peak coordinate and a
+     plain read of a placed pin are both correct code, and a guard that flagged either would be
+     telling an author to break something that works. */
+  {
+    name: "trailheadPoint() as #1215 merged it — a tenth predicate outside GPXMap",
+    file: "core",
+    edit: (s) => s.replace(
+      'const pin=wps.find(w=>wpIs(w,"Trailhead")&&wpPlaced(w));',
+      'const pin=wps.find(w=>wpIs(w,"Trailhead")&&w.lat!=null&&w.lng!=null);'),
+    expect: "fail",
+  },
+  {
+    name: "...and its fallback, which tested lat and never lng at all",
+    file: "core",
+    edit: (s) => s.replace(
+      "const named=wps.find(w=>wpPlaced(w)&&/trailhead|parking",
+      "const named=wps.find(w=>w&&w.lat!=null&&/trailhead|parking"),
+    expect: "fail",
+  },
+  {
+    name: "a PEAK coordinate tested for null must stay quiet — not a waypoint",
+    file: "rd",
+    edit: (s) => s.replace(
+      "function RouteDetail({route,",
+      "function _peakProbe(a){return (a.peaks||[]).filter(p=>p.lat!=null&&p.lng!=null);}\nfunction RouteDetail({route,"),
+    expect: "pass",
+  },
+  {
+    name: "READING a placed pin's coordinates is not a placement decision",
+    file: "rd",
+    edit: (s) => s.replace(
+      "function RouteDetail({route,",
+      "function _readProbe(r){return (r.waypoints||[]).filter(wpPlaced).map(w=>[w.lat,w.lng]);}\nfunction RouteDetail({route,"),
+    expect: "pass",
+  },
   {
     name: "untouched source must PASS — the harness must not be what turns it red",
     file: "core",
