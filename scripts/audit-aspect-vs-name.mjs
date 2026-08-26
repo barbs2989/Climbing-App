@@ -113,13 +113,52 @@ export function judge(r) {
   return { nd, ad, kind, d, hit: d >= limitFor(kind) };
 }
 
+/* THE ROW'S OWN PINS ARE A THIRD RECORD, and neither the name nor the aspect derives from them.
+   `face` is deliberately NOT used as evidence: it and `aspect` come from the same enrichment, so
+   their agreeing is one claim counted twice. This is how CLAUDE.md records
+   wa_little_annapurna_south_slopes being settled — its "base of south slopes" waypoint sat NORTH
+   of the summit, and that is what showed the ASPECT was right and the NAME was wrong.
+
+   AND THE DISTANCE DECIDES WHETHER THE GEOMETRY MAY SPEAK AT ALL. A pin at the base of the climb
+   says which way the face points. A trailhead 11 km away says which way you WALK IN, and a party
+   routinely approaches from one side and climbs another — reading that as an aspect would
+   manufacture findings with total confidence, which is the failure this audit's own history
+   records from its first run. So only pins within a kilometre are quoted; the rest are counted and
+   explicitly refused. */
+const NEAR_KM = 1.0;
+function sideOf(r) {
+  const num = (v) => (v == null || v === "" || !Number.isFinite(Number(v)) ? null : Number(v));
+  const wps = (r.waypoints || []).map(w => ({ ...w, lat: num(w && w.lat), lng: num(w && w.lng) })).filter(w => w.lat != null);
+  if (!wps.length) return null;
+  const anchor = wps.find(w => /summit|topout/i.test(String(w.type || "") + String(w.name || "")));
+  if (!anchor) return null;
+  const R = Math.PI / 180;
+  const km = (p, q) => 2 * 6371 * Math.asin(Math.sqrt(Math.sin((q.lat - p.lat) * R / 2) ** 2
+    + Math.cos(p.lat * R) * Math.cos(q.lat * R) * Math.sin((q.lng - p.lng) * R / 2) ** 2));
+  const brg = (p, q) => {
+    const y = Math.sin((q.lng - p.lng) * R) * Math.cos(q.lat * R);
+    const x = Math.cos(p.lat * R) * Math.sin(q.lat * R) - Math.sin(p.lat * R) * Math.cos(q.lat * R) * Math.cos((q.lng - p.lng) * R);
+    return (Math.atan2(y, x) / R + 360) % 360;
+  };
+  const C16 = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+  const others = wps.filter(w => w !== anchor).map(w => ({ w, d: km(anchor, w) })).filter(x => x.d > 0.02);
+  if (!others.length) return null;
+  const near = others.filter(x => x.d <= NEAR_KM).sort((a, b) => a.d - b.d);
+  if (!near.length) {
+    const closest = others.sort((a, b) => a.d - b.d)[0];
+    return `${others.length} pin(s), closest ${closest.d.toFixed(1)} km away — an APPROACH direction, not a face; the geometry CANNOT speak here`;
+  }
+  return near.slice(0, 3).map(x => `${C16[Math.round(brg(anchor, x.w) / 22.5) % 16]} at ${Math.round(x.d * 1000)} m (${x.w.name || x.w.type})`).join(", ")
+    + " — pins this close describe the FACE";
+}
+
 // Everything below needs the database, so it runs only when this file is EXECUTED. Importing it for
 // the assertions above must not open a connection.
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (!isMain) { /* imported for testing */ }
 else {
 const { selectAll } = await import("./lib/supabase-env.mjs");
-const rows = await selectAll("routes", "id,name,area_id,aspect,face,discipline",
+const rows = await selectAll("routes", "id,name,area_id,aspect,face,discipline,waypoints",
   `id=like.${STATE}\\_*`, { pageSize: 1000 });
 if (!rows.length) { console.error(`FAILED — zero routes read for state "${STATE}". A guard that reports absence must not treat an empty read as a clean catalog.`); process.exit(1); }
 
@@ -140,6 +179,8 @@ for (const h of hits) {
   console.log(`${String(h.d).padStart(3)}°  ${h.r.id}`);
   console.log(`      name "${h.r.name}" says ${h.nd.toUpperCase()}, aspect says ${String(h.r.aspect).toUpperCase()}  [${h.kind}]`);
   if (h.r.face) console.log(`      face: ${String(h.r.face).replace(/\s+/g, " ").slice(0, 120)}`);
+  const g = sideOf(h.r);
+  if (g) console.log(`      geometry: ${g}`);
 }
 console.log(`\n${hits.length} disagreement(s): ${hits.filter(h => h.kind === "face").length} face (a single plane — a real contradiction), ${hits.filter(h => h.kind !== "face").length} ridge/other (opposed, so worth a look).`);
 console.log(`\nEITHER SIDE MAY BE THE WRONG ONE. Read the row before changing anything: aspect drives`);

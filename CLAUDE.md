@@ -2259,6 +2259,24 @@ a build error, but a screen that renders wrong or not at all.
     - Measured after the fix: **14 findings against 502 comparable WA routes (2.8%)**, 11 of them
       faces. Judge a detector's precision on a real run before trusting a count — a first run here
       was 30% noise.
+  - **THE ROW'S OWN PINS ARE A THIRD RECORD, and the audit now prints what they say.** Name vs
+    aspect alone genuinely cannot be decided — that is why this is report-only — but a route's
+    waypoints derive from neither, and they are exactly what settled
+    `wa_little_annapurna_south_slopes`: its *"base of south slopes"* pin sat **north** of the
+    summit. `face` is deliberately NOT used as evidence, because it and `aspect` come from the same
+    enrichment and their agreeing is one claim counted twice.
+    - **DISTANCE DECIDES WHETHER THE GEOMETRY MAY SPEAK AT ALL.** A pin at the base of the climb
+      says which way the face points; a trailhead 11 km out says which way you WALK IN, and a party
+      routinely approaches from one side and climbs another. Reading an approach bearing as an
+      aspect would manufacture findings with total confidence — the exact failure this audit's
+      first run already produced from a different cause. Only pins within a kilometre are quoted;
+      the rest are counted and **explicitly refused**.
+    - Measured on the four live findings, it refuses on **two of four** — closest pins 6.0 km and
+      1.8 km out — and speaks on the other two. `wa_spire_point_southwest_face` becomes decidable:
+      its name says SW, its aspect says E, and *Spire Col* sits **138 m WSW** of the summit pin. It
+      is still not repaired here, because report-only is the rule and aspect drives the sun/shade
+      readout; what changed is that the reader no longer has to go and derive the geometry
+      themselves.
   - The DB half runs only when the file is **executed**, so `scripts/oneoff/verify-aspect-vs-name-logic.mjs`
     can import the real `judge`/`dirInName`/`landform` and pin them **without a database** — which is
     how both defects above were caught during an outage. It imports the functions rather than
