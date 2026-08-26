@@ -209,7 +209,11 @@ if (offText) {
     // Offline, a spinner that can never resolve is its own defect — see
     // memory/prose-must-not-start-with-loading. Reported, not failed: it may still settle.
     if (/Loading…|Loading\.\.\./i.test(after)) {
-      console.log('   NOTE: a "Loading…" is still on screen offline — check it resolves or is replaced by an honest line rather than spinning forever');
+      // ANSWERED by probe-live-offline-loading.mjs, so this is context rather than an open
+      // question: sampled past this point it clears by ~t+8s and is replaced by "Couldn't
+      // refresh just now — showing what loaded last." plus the downloaded child areas. This
+      // probe stops at 6.2s, which is mid-resolution — do not read it as a stuck spinner.
+      console.log('   NOTE: a "Loading…" is on screen at this instant. Measured elsewhere: it clears by ~8s into an honest line plus the downloaded areas (probe-live-offline-loading.mjs). Not a stuck spinner.');
     }
     if (/Couldn.t load|check your connection/i.test(after) && shown.length) {
       console.log("   NOTE: an error line renders ALONGSIDE working offline data — 'data outranks error' may not hold on this path");
