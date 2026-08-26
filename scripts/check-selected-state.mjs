@@ -284,14 +284,17 @@ const load = async (qs, tab, awaitRoute, subTab) => {
       return true;
     }, subTab);
     if (!landed) throw new Error(`check:selected-state — no <button> with text "${subTab}" on the route page. Either the sub-tab bar was rebuilt or that tab is content-gated off for this route; a click that does not land leaves the PREVIOUS screen up, which compares clean and reads as a screen with nothing wrong.`);
-    /* DELIBERATELY NOT WAITING FOR LEAFLET, and the first version of this did — which is how it
-       hung in CI for 24 minutes against a 2-minute local run.
+    /* DELIBERATELY NOT WAITING FOR LEAFLET, and the first version of this did.
        lib/mapKit loads Leaflet from cdnjs.cloudflare.com and its tiles from OSM / ArcGIS /
        OpenTopoMap. All external. So `waitForFunction(() => window.L)` makes this guard depend on
-       a CDN: fine on a developer's machine, and on a runner that cannot reach it every one of
-       this screen's reloads burns the full timeout. A guard whose runtime depends on a third
-       party is flaky by construction — the reason playwright-core is used here in the first
-       place, so no browser is ever downloaded.
+       a CDN: on a runner that cannot reach it, every one of this screen's reloads burns the full
+       timeout. A guard whose runtime depends on a third party is flaky by construction — the
+       reason playwright-core is used here in the first place, so no browser is ever downloaded.
+       (An earlier version of this comment blamed a 24-minute CI job on that wait. THAT WAS
+       WRONG and is corrected here rather than quietly dropped: measured afterwards, this guard
+       takes ~42 minutes on main WITHOUT this screen, so the job was not hanging and this wait
+       was not why. The CDN dependency is still worth removing on its own merits; it just did
+       not cause what it was credited with.)
        It is also unnecessary. The control this screen exists to measure — the shared
        BaseLayerToggle — is a REACT component rendered as a SIBLING of the map container, outside
        the `mapFail ? … : null` branch, so it is on screen whether Leaflet loads or not. Settling
