@@ -20,6 +20,7 @@
     "check:ui": "node scripts/check-ui.mjs",
     "check:schema": "node scripts/check-schema-drift.mjs",
     "schema:refresh": "node scripts/refresh-schema-snapshot.mjs",
+    "audit:coord-origin": "node scripts/audit-coord-origin.mjs",
     "audit:identity": "node scripts/audit-route-identity.mjs",
     "audit:distances": "node scripts/audit-distances.mjs",
     "audit:area-parents": "node scripts/audit-area-parents.mjs",
