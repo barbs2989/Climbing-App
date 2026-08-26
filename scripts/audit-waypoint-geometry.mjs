@@ -13,11 +13,16 @@
 // no track, so it reaches the ~430 routes the track audits structurally cannot, and it cannot be
 // satisfied by a synthetic track.
 //
-//   1. DUPLICATE       a non-trailhead pin on the trailhead's exact coordinate — the feature drawn
-//                      at the car. Type decides severity: a Crag or Base at a ROADSIDE cliff is
-//                      honest, a Topout or Summit there is not. BOTH are printed: only the
-//                      impossible-by-type ones used to be, so 15 of the 31 were counted in the
-//                      summary and never named, and a reader cannot check what nothing lists.
+//   1. DUPLICATE       a non-trailhead pin on the trailhead's exact coordinate. Type decides
+//                      severity: a Crag or Base at a ROADSIDE cliff is honest, a Topout or Summit
+//                      there is not. BOTH are printed: only the impossible-by-type ones used to be,
+//                      so 15 of the 31 were counted in the summary and never named, and a reader
+//                      cannot check what nothing lists.
+//                      IT USED TO BE HEADED "DRAWN AT THE CAR", which is a structural fact plus an
+//                      interpretation — and only the fact is safe. Two pins on one coordinate means
+//                      at most one is placed; WHICH one moved is not decidable from coordinates.
+//                      `--ground` decides it, and overturns the presumption on 2 of the 16: see
+//                      trailheadIsTheMovedPin().
 //   2. SELF-CONTRADICTING  two pins sharing one coordinate while stating elevations >100 ft apart.
 //                      One point cannot be at two heights. This needs no external reference to
 //                      CONFIRM, which makes it the cleanest class here — though repairing it still
@@ -57,9 +62,23 @@
 //
 // It answers about half, and the honest half is the half it REFUSES. On a steep wall the DEM reads
 // somewhere ON the wall, so a reading between the two stated elevations means neither pin is placed
-// and both inherited a crag-level coordinate. Measured on WA: 6 of 13 pairs attributed, 7 where the
-// local relief is larger than the disagreement and the ground cannot separate them. Forcing those
-// into a winner would manufacture an answer out of noise.
+// and both inherited a crag-level coordinate. Forcing those into a winner would manufacture an
+// answer out of noise.
+//
+// MEASURED ON WA: 9 of 20 pairs attributed, 10 the ground cannot separate, 1 where NEITHER pin is
+// placed. That line used to read "6 of 13" and was left behind when this category was widened from
+// 13 findings to 20 — the counts stayed right while the sentence describing them went stale, which
+// is the failure CLAUDE.md records for audits generally. RE-RUN `--ground` WHENEVER CATEGORY 2
+// CHANGES, and quote this run rather than a remembered number.
+//
+// AND ATTRIBUTION IS WHERE IT ENDS, which was worth proving rather than assuming. All 9 attributed
+// pins were put through the gazetteer (scripts/oneoff/waypoint-repair/solve-selfcontradicting.mjs):
+// 0 solvable. 8 carry a climbers' name no federal gazetteer holds — Summerland, Jötunheim, Whine
+// Spire, Ice Box, Slippery Slab — and the ninth is an offset ("Pinto Rock base (end of NF-77)"),
+// which is not Pinto Rock. Those refusals share ONE reason, which is the tell that hid the layer-5
+// geometry bug, so they were re-asked with the weakest possible query (`UPPER(gaz_name) LIKE`)
+// across all 15 GNIS layers by probe-gnis-refusals-are-real.mjs: still nothing. The class is
+// mechanically exhausted, and repairing these needs a coordinate that does not exist anywhere.
 //
 // Usage: npm run audit:waypoint-geometry [-- --state wa|all] [-- --selftest] [-- --ground]
 
@@ -144,7 +163,8 @@ export function analyse(rows) {
       const ea = +a.elev, eb = +b.elev;
       const delta = (Number.isFinite(ea) && Number.isFinite(eb)) ? Math.abs(ea - eb) : null;
       out.identical.push({ id: r.id, a: `${a.type} | ${a.name} (${a.elev ?? "-"})`, b: `${b.type} | ${b.name} (${b.elev ?? "-"})`,
-        lat: +a.lat, lng: +a.lng, aElev: ea, bElev: eb, aName: a.name, bName: b.name, involvesTrailhead, sameType,
+        lat: +a.lat, lng: +a.lng, aElev: ea, bElev: eb, aName: a.name, bName: b.name,
+        aType: typeOf(a), bType: typeOf(b), involvesTrailhead, sameType,
         elevDelta: delta, selfContradicting: delta != null && delta > ELEV_SAME_POINT_FT });
     }
 
@@ -193,6 +213,30 @@ export function adjudicate(aElev, bElev, ground) {
   if (absolute || comparative) return { verdict: near === "a" ? "a-placed" : "b-placed", dA, dB, tol, by: absolute ? "tolerance" : "dominance" };
   if (dA > tol && dB > tol) return { verdict: "neither", dA, dB, tol };
   return { verdict: "inseparable", dA, dB, tol };
+}
+
+/* CATEGORY 1 PRESUMES THE TRAILHEAD IS THE ANCHOR, AND THE GROUND CAN OVERTURN THAT.
+   "DRAWN AT THE CAR: a Topout or Summit on the trailhead coordinate" is a structural fact plus an
+   interpretation, and only the fact is safe: the two pins share a coordinate, so at most one is
+   placed — but which one moved is not something a coordinate comparison can say. Measured on WA,
+   the presumption is BACKWARDS on 2 of the 16: wa_bowling_alley_aka_regular_route and
+   wa_cobbles_101 read 5,092 ft on the ground against a Summit stating 5,118 (off 26) and a
+   Trailhead stating 4,700 (off 392). The summit is where it belongs; the TRAILHEAD was moved onto
+   it, so nothing is at the car and the Directions button drives to the top of the rock.
+
+   Left alone, that heading sends a reader to fix the summit pin — which is correct — and to leave
+   the trailhead wrong. This repo has shipped that exact mistake once already: audit:aspect-name's
+   first report named the aspect as the defect when the NAME was the wrong half, and applying it
+   would have turned a shady north slog sunny. An audit that names the wrong record is worse than
+   one that names none.
+
+   Returns the trailhead's own name when the ground says the trailhead is the pin that moved, so
+   the caller can say which record it means. Pure, so the self-test needs no network. */
+export function trailheadIsTheMovedPin(h, verdict) {
+  const isTh = t => /trailhead/.test(String(t || ""));
+  if (verdict === "a-placed" && isTh(h.bType) && !isTh(h.aType)) return h.bName;
+  if (verdict === "b-placed" && isTh(h.aType) && !isTh(h.bType)) return h.aName;
+  return null;   // no verdict, or the trailhead is the one the ground corroborates
 }
 
 /* Constructed rows, no database. The negative cases matter as much as the positives: a detector
@@ -250,6 +294,25 @@ function selftest() {
     ["two pins the relief cannot separate REFUSE a verdict", () => adjudicate(4800, 4916, { at: 4885, relief: 135 }).verdict === "inseparable"],
     ["a reading between both pins says NEITHER is placed", () => adjudicate(7900, 8420, { at: 8167, relief: 60 }).verdict === "neither"],
     ["no DEM reading is reported as unavailable, never as a verdict", () => adjudicate(100, 900, null).verdict === "unavailable"],
+    /* Category 1's presumption, pinned in BOTH directions. A rule that only ever fires cannot be
+       told from having no rule, and one that fires on the wrong record is the audit:aspect-name
+       mistake. The fixture is wa_bowling_alley_aka_regular_route's real numbers. */
+    ["[cat 1] the ground can name the TRAILHEAD as the pin that moved, not the summit", () => {
+      const h = { aType: "trailhead", aName: "Pinto Rock base (end of NF-77)", bType: "summit", bName: "Pinto Rock summit" };
+      return trailheadIsTheMovedPin(h, adjudicate(4700, 5118, { at: 5092, relief: 212 }).verdict) === "Pinto Rock base (end of NF-77)";
+    }],
+    ["[cat 1] ...and when the ground corroborates the TRAILHEAD it says nothing — the other pin moved", () => {
+      const h = { aType: "trailhead", aName: "TH", bType: "campsite", bName: "Summerland" };
+      return trailheadIsTheMovedPin(h, adjudicate(3816, 5950, { at: 3839, relief: 31 }).verdict) === null;
+    }],
+    ["[cat 1] an inseparable pair attributes NOTHING, so no heading is overturned on noise", () => {
+      const h = { aType: "trailhead", aName: "TH", bType: "topout", bName: "T" };
+      return trailheadIsTheMovedPin(h, adjudicate(3543, 3800, { at: 3668, relief: 407 }).verdict) === null;
+    }],
+    ["[cat 1] a pair with no trailhead in it is never attributed to a trailhead", () => {
+      const h = { aType: "base", aName: "B", bType: "summit", bName: "S" };
+      return trailheadIsTheMovedPin(h, adjudicate(3765, 5500, { at: 3914, relief: 547 }).verdict) === null;
+    }],
   ];
   let bad = 0;
   for (const [label, rows, ok] of cases) {
@@ -313,6 +376,9 @@ if (rows.length < 100) {
 
 const out = analyse(rows);
 const selfC = out.identical.filter(h => h.selfContradicting);
+/* Routes where --ground overturned category 1's presumption. Empty without --ground, so the
+   headings below stay silent about a direction nothing measured rather than guessing one. */
+const trailheadMoved = new Map();
 const impossible = out.duplicate.filter(d => d.impossible);
 
 console.log(`${STATE}: ${rows.length} routes with waypoints — ${out.comparable} comparable, ` +
@@ -351,6 +417,8 @@ if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
     const off = d => d == null ? "?" : Math.round(d);
     console.log(`      ground ${g ? `${Math.round(g.at)} ft (relief ${g.relief} ft)` : "unavailable"}   ${h.a} off ${off(v.dA)} | ${h.b} off ${off(v.dB)}`);
     console.log(`      -> ${say}${v.by ? `   [by ${v.by}]` : ""}`);
+    const moved = trailheadIsTheMovedPin(h, v.verdict);
+    if (moved) trailheadMoved.set(h.id, moved);
   }
   console.log(`\n  ${JSON.stringify(tally)}`);
   console.log(`  A refusal is a result: forcing an inseparable pair into a winner manufactures an`);
@@ -394,8 +462,17 @@ if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
   }
 }
 if (impossible.length) {
-  console.log(`\n--- DRAWN AT THE CAR: a Topout or Summit on the trailhead coordinate ---`);
-  for (const h of impossible) console.log(`  ${h.id}  ${h.pin}   (trailhead: ${h.trailhead})`);
+  console.log(`\n--- ON THE TRAILHEAD COORDINATE: a Topout or Summit, which cannot both be true ---`);
+  console.log(`    Which pin MOVED is not decidable from coordinates alone — run --ground to attribute it.`);
+  for (const h of impossible) {
+    const moved = trailheadMoved.get(h.id);
+    console.log(`  ${h.id}  ${h.pin}   (trailhead: ${h.trailhead})`);
+    /* The one line that must not be missed: without it the heading sends a reader to fix the pin
+       named on the line above, which is the pin the ground says is RIGHT. */
+    if (moved) console.log(`      ^ the GROUND says this pin is placed and "${moved}" is not — the TRAILHEAD is the record to fix, not this one`);
+  }
+  const overturned = impossible.filter(h => trailheadMoved.has(h.id)).length;
+  if (overturned) console.log(`    ${overturned} of ${impossible.length} are the trailhead moved onto the feature, not the feature drawn at the car.`);
 }
 /* The other 15 of the 31 were COUNTED IN THE SUMMARY AND NEVER NAMED, because only
    IMPOSSIBLE_AT_CAR types were printed. A Campsite at the car is not impossible the way a Summit is
