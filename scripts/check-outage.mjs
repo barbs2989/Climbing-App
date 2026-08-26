@@ -192,13 +192,20 @@ const EMPTY_RE = /no .* yet|nothing here|none yet|get started|add your first|no 
 // recently found here were counts: "0 routes" and "0 crews" on the Home tiles, and "0 climbs to
 // go" in the Logbook. A vocabulary of absence that cannot spell zero misses the commonest way
 // this app claims to have nothing.
-// The zero-count half of this list has now been short THREE times, and each miss was one more
-// noun rather than a different idea: "0 routes"/"0 crews" (the Home tiles), "0 climbs to go" and
-// "0 logged" (the Logbook), and "0 joined" (the Groups sub-view, found by an injection that
-// MISSED). A vocabulary of absence that cannot spell the noun in front of it is the shorter
-// worklist this repo keeps recording -- so when a screen is added, check what its counts are
-// called before trusting a quiet run.
-const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno (climbs|crews|routes|areas|objectives)\b|\b0 (climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
+// THIS LIST HAS NOW BEEN SHORT FOUR TIMES, and every miss was one more way of saying nothing
+// rather than a different idea: "0 routes"/"0 crews" (the Home tiles), "0 climbs to go"/"0 logged"
+// (the Logbook), "0 joined" (Crew:Groups), and "No crew invites" (Crew:Requests) -- the last two
+// found by injections that MISSED, not by reading.
+//
+// The fourth is the instructive one, because the fix for the third did not prevent it. The "no X"
+// branch demanded the noun IMMEDIATELY after "no", so it matched "no crews" and could not match
+// "no CREW INVITES": one intervening word defeated it. That is the deny-list shape exactly -- it
+// fails as a SHORTER WORKLIST, silently, and nothing about a quiet run looks wrong.
+//
+// So the branch now allows up to two words between "no" and the noun, and the nouns are singular
+// or plural. It is still a deny-list and it will still be short one day; when a screen is added,
+// check what its emptiness is CALLED before trusting a quiet run.
+const CLAIMS_NONE_RE = /no .* yet|nothing here|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/i;
 
 const settle = async (page) => {
   let last = "", same = 0;

@@ -105,6 +105,8 @@ export async function durableFixture(log) {
     ? `run ${process.env.GITHUB_RUN_ID}${process.env.GITHUB_RUN_ATTEMPT ? "." + process.env.GITHUB_RUN_ATTEMPT : ""}`
     : `local ${process.pid.toString(36)}${Date.now().toString(36).slice(-4)}`;
   const groupName = `CI Fixture Alpine Club (${tag})`;
+  // Same route the rest of the fixture uses. crews.route_id is NOT NULL.
+  const CREW_ROUTE_ID = "wa_mount_baker_north_ridge";
 
   const mk = await asUser(session, "groups", {
     method: "POST",
@@ -154,19 +156,72 @@ export async function durableFixture(log) {
   group.visibility = "private";
   log(`  created this run's own group ${JSON.stringify(groupName)}, private — no other run can touch it, and no real user can see it`);
 
+  // A per-run crew owned by the MATE, with the owner left INVITED and never confirmed.
+  //
+  // check:outage documented this as a blind spot about itself: "No crew invites" was on screen
+  // in the HEALTHY run too, because the mate JOINS the durable crew rather than staying invited.
+  // The outage introduced nothing, so rule 2 stayed quiet and rule 1 was satisfied by the
+  // friend-requests section beside it -- leaving the gate #1212 put in front of that sentence
+  // real and unverifiable. An absence the fixture happens to share is unmeasurable, not absent.
+  //
+  // PER-RUN for the same reason the group is: this is state the walk asserts on, so two
+  // concurrent runs sharing one invite would read each other's writes.
+  //
+  // Unlike the group, this needs no visibility flip. `crews` RLS is created_by = me OR I am a
+  // member, with no public class at all, so it cannot surface in a real climber's app the way
+  // a public group did.
+  const mkCrew = await asUser(mateSession, "crews", {
+    method: "POST",
+    body: JSON.stringify({
+      created_by: mateSession.user.id, route_id: CREW_ROUTE_ID, dates: ["2026-10-04"],
+      meet_place: "Coleman Deming TH", meet_time: "05:00", cap: 3,
+    }),
+  });
+  assertHealthy(mkCrew, "creating this run's invite crew");
+  const inviteCrew = mkCrew.json?.[0];
+  if (!inviteCrew?.id) throw new Error(`could not create this run's invite crew (HTTP ${mkCrew.status}): ${(mkCrew.text || "").slice(0, 200)}`);
+
+  // The MATE does the inviting, because that is what the live policy requires: `join or invite`
+  // demands invited_by = auth.uid() AND (you created the crew, or you are seating yourself at a
+  // status other than confirmed). Doing it as the owner would manufacture a state the app's own
+  // flow cannot reach -- the trap this repo already records for the accepted connection.
+  for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    const seat = await asUser(mateSession, "crew_members", {
+      method: "POST",
+      body: JSON.stringify({ crew_id: inviteCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
+    });
+    assertHealthy(seat, `seating ${status} member in this run's invite crew`);
+    if (seat.status >= 300) throw new Error(`could not seat the ${status} member (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
+  }
+  log(`  created this run's invite crew ${inviteCrew.id.slice(0, 8)}, owned by the mate, owner INVITED and not confirmed`);
+
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },
     mate: { id: mateSession.user.id, email: mateEmail, name: mate.name },
     group,
+    inviteCrew,
     session,
-    // The accounts stay; this run's group does not. Returning the names of rows that could
-    // NOT be removed matches createFixture's contract, so a leak is reported rather than
-    // accumulating silently in a live project.
+    // The accounts stay; this run's group and invite crew do not. Returning the names of rows
+    // that could NOT be removed matches createFixture's contract, so a leak is reported rather
+    // than accumulating silently in a live project.
     async cleanup() {
+      const leaked = [];
       const del = await asUser(session, `groups?id=eq.${group.id}`, { method: "DELETE" });
-      if (del.status >= 300) return [`group ${groupName} (HTTP ${del.status})`];
-      const left = await asUser(session, `groups?id=eq.${group.id}&select=id`);
-      return Array.isArray(left.json) && left.json.length ? [`group ${groupName} (still present after DELETE)`] : [];
+      if (del.status >= 300) leaked.push(`group ${groupName} (HTTP ${del.status})`);
+      else {
+        const left = await asUser(session, `groups?id=eq.${group.id}&select=id`);
+        if (Array.isArray(left.json) && left.json.length) leaked.push(`group ${groupName} (still present after DELETE)`);
+      }
+      // Deleted BY THE MATE, who created it -- the owner is only an invited member and the
+      // crews delete policy is the creator's. crew_members is ON DELETE CASCADE, so the two
+      // membership rows go with it.
+      const dc = await asUser(mateSession, `crews?id=eq.${inviteCrew.id}`, { method: "DELETE" });
+      if (dc.status >= 300) leaked.push(`invite crew ${inviteCrew.id} (HTTP ${dc.status})`);
+      else {
+        const left = await asUser(mateSession, `crews?id=eq.${inviteCrew.id}&select=id`);
+        if (Array.isArray(left.json) && left.json.length) leaked.push(`invite crew ${inviteCrew.id} (still present after DELETE)`);
+      }
+      return leaked;
     },
   };
 }

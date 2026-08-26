@@ -225,6 +225,36 @@ export async function createFixture(log = () => {}) {
     }
     log(`  crew ${crew.id.slice(0, 8)} with 2 confirmed members`);
 
+    // A SECOND crew, owned by the MATE, with the owner left INVITED rather than confirmed.
+    //
+    // This exists because of a blind spot check:outage documented about itself. "No crew
+    // invites" was on screen in the HEALTHY run too -- the mate JOINS the first crew rather
+    // than staying invited -- so the outage introduced nothing, rule 2 stayed quiet, and rule 1
+    // was satisfied by the friend-requests section beside it. The gate #1212 put in front of
+    // that sentence was therefore real and UNVERIFIABLE, and its injection case had to expect a
+    // PASS. An absence the fixture happens to share is unmeasurable, not absent.
+    //
+    // It has to be a second crew: the owner is already a CONFIRMED member of the first one, so
+    // there is nowhere in it to hang a pending invite for them.
+    //
+    // The MATE creates it and does the inviting, because that is what the live policy requires:
+    // `join or invite` demands invited_by = auth.uid() AND (the crew's created_by is you, or you
+    // are seating yourself at a status other than confirmed). Seeding it as the owner would
+    // manufacture a state the app's own flow cannot reach -- the trap this file already records
+    // for the accepted connection.
+    const inviteCrew = await insert("crews", {
+      created_by: mate.id,
+      route_id: ROUTE_ID,
+      dates: ["2026-10-04"],
+      meet_place: "Coleman Deming TH",
+      meet_time: "05:00",
+      cap: 3,
+    });
+    track("crews", `id=eq.${inviteCrew.id}`);
+    await insert("crew_members", { crew_id: inviteCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await insert("crew_members", { crew_id: inviteCrew.id, user_id: owner.id, status: "invited", invited_by: mate.id });
+    log(`  crew ${inviteCrew.id.slice(0, 8)} owned by the mate, with the owner INVITED and not confirmed`);
+
     // A group the owner OWNS, with a uuid member -- the state #680 fixed. Without the
     // member row the roster is a single self-row and the per-member controls never render,
     // so the interesting half of that fix would go unwalked.
