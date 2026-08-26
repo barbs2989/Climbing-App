@@ -108,20 +108,22 @@
 // isError, NOT on whether any row exists, so gating the copy changes the screen under an outage
 // whether or not the fixture has data. One query at a time, as the note above already insists.
 //
-// NOTHING HAS YET ASKED about the ROUTE DETAIL screen, which is the most-visited surface in the
-// app and reads from three DB queries of its own -- useRouteTripReports, useAreaTopos and
-// useProfilesByIds. That is not an oversight in the walk so much as a property of how this guard
-// starts the app: it spawns PLAIN vite, so the overlay scaffold's opener is absent and `?zr=1` --
-// the mechanism check:overflow uses to call the app's own openRoute() from inside the page -- is
-// not available here. Driving the UI to a route instead (Climbs -> area -> row) is the path
-// check:ui already reports as intermittent, so it would import a flake into a guard whose whole
-// value is a clean healthy-vs-failing diff.
+// THE ROUTE DETAIL SCREEN IS WALKED NOW, and the note that used to sit here is why. It said
+// "nothing has yet asked" about the most-visited surface in the app, named the cause -- this
+// guard spawned PLAIN vite, so the overlay scaffold's opener was absent and `?zr=1` unavailable
+// -- and named the fix: wire the scaffold config into the spawn. That is done; the spawn below
+// uses scripts/signed-in.config.mjs, the same config its sibling check:signed-in already used.
 //
-// #1220 made that screen's copy honest anyway (`reportsUnavailable`, `toposUnavailable`), and
-// proved the branch by rendering ConsensusPanel directly in
-// scripts/oneoff/probe-consensus-outage-copy.mjs -- which is a component test, NOT a walk, and so
-// says nothing about whether the flag reaches the screen under a real outage. Wiring the scaffold
-// config into the spawn above is the way to close it, and re-running that probe is not.
+// It matters because #1221 made that screen's copy honest (`reportsUnavailable`,
+// `toposUnavailable`) and could only prove it by rendering ConsensusPanel directly in
+// scripts/oneoff/probe-consensus-outage-copy.mjs. That is a COMPONENT TEST, NOT A WALK: it says
+// the branch renders, never that the flag reaches the screen under a real outage. Two flags on
+// the busiest screen in the app were therefore shipped unverifiable, which is the same position
+// the crew-invites gate was in before the fixture gained a pending invite.
+//
+// Driving the UI instead (Climbs -> area -> row) was rejected for the reason the old note gave:
+// check:ui reports that path as intermittent, and a flake in a guard whose whole value is a
+// clean healthy-vs-failing diff is worse than a gap.
 //
 // A MISS ON A LOADED BOX IS NOT EVIDENCE. The ranks injection reported MISSED at a load average
 // of ~450 and CAUGHT at ~260, same commit: under heavy load a screen can fail to settle, compare
@@ -170,7 +172,21 @@ const REVISIT = "Home:revisited";
 // and never-loaded are the same screen. This is the shape #734 already shipped once on the
 // Requests view for a different root cause: a real invite under the words "No crew invites".
 const CREW_SUBS = ["Friends", "Groups", "Requests"];
-const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT];
+// Reached by NAVIGATION rather than by driving the list, via the scaffold's `?zr=1`.
+const ROUTEPAGE = "Route detail";
+// AND ITS SUB-TABS, because opening the route lands on Overview and #1221's two flags are not
+// there: `reportsUnavailable` gates "No reports yet — be the first to log this climb" and
+// `toposUnavailable` gates "No topo yet", which live on Reports and Photos. Walking the route
+// page without its sub-tabs measured one sixth of it and reported the flags as covered -- the
+// first injection of this case MISSED for exactly that reason.
+// Each entry is [key, ...names it may render under]. The Reports tab is literally
+// `cragOnly ? "Send Reports" : "Reports"`, so a single exact name misses it on a crag route --
+// measured: it reported 0 characters, i.e. the click never landed, and the row read as a
+// seed-backed screen rather than as an unopened one.
+const ROUTE_SUBS = [["Reports", "Reports", "Send Reports"], ["Photos", "Photos"],
+  ["Partners", "Partners"], ["Plan", "Plan"], ["Safety", "Safety"]];
+const REPORT = [...TABS, SUBTAB, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT,
+  ROUTEPAGE, ...ROUTE_SUBS.map((x) => "Route:" + x[0])];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -272,7 +288,11 @@ async function walk(browser, base, session, fail) {
         body: JSON.stringify({ code: "57014", message: "canceling statement due to statement timeout" }) });
     });
   }
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 120000 });
+  // 180s, matching check:signed-in, which uses this same config. The scaffold transform runs
+  // `enforce: "pre"` over a 400,000-character file, so vite's FIRST compile after a cold start
+  // is measurably slower than plain vite -- 120s timed out here while `up()` had already
+  // answered, which reads as a broken app rather than as a slow one.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
   const out = {};
   let first = await settle(page);
   // react-query RETRIES with backoff, so `isError` -- the signal every xUnavailable flag is
@@ -335,6 +355,60 @@ async function walk(browser, base, session, fail) {
   }
   if (!(await tapByName(page, "Home"))) out.__navFail = (out.__navFail || []).concat("Home (revisit)");
   out[REVISIT] = await waitOutFetch(page, fail);
+  // LAST, because `?zr=1` is a fresh page load: it resets react-query, so every read starts over
+  // and `isError` is false again for the first seconds. That is the same trap the first tab has
+  // -- see the observability wait above -- so this needs its own, or the busiest screen in the
+  // app would be measured before any read had given up and would report clean however it is
+  // wired. Doing it last also leaves the Home revisit measuring a settled app rather than one
+  // that has just been reloaded.
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.waitForFunction(() => window.__routeOpen === true, { timeout: 60000 }).catch(() => {});
+  let rd = await waitOutFetch(page, fail);
+  if (fail) {
+    for (let i = 0; i < 25 && !BROKEN_RE.test(rd); i++) {
+      await new Promise((r) => setTimeout(r, 1000));
+      rd = await page.evaluate(() => document.body.innerText || "");
+    }
+  }
+  // Fail closed exactly like a sub-tab that did not land. A route page that never opened leaves
+  // whatever was on screen before, which compares clean against its healthy twin and reads as a
+  // screen with nothing wrong.
+  if (await page.evaluate(() => window.__routeOpen === true)) {
+    out[ROUTEPAGE] = rd;
+    // Sub-tab names COLLIDE WITH THE BOTTOM NAV -- "Reports", "Photos", "Partners" are all
+    // route sub-tabs and nav-adjacent words -- and a global text match silently leaves the
+    // route page, which then compares clean against its healthy twin. So skip anything inside
+    // fixed or sticky chrome, the same rule check:a11y-badge-names and check:overflow use.
+    for (const [key, ...names] of ROUTE_SUBS) {
+      const hit = await page.evaluate((ns) => {
+        // BUTTONS ONLY. The sub-tab bar is `<button>{label}</button>`, and a wider query takes
+        // the FIRST element in DOM order whose text matches -- which on Overview is a section
+        // heading reading "Reports", not the tab. Clicking it does nothing, the view does not
+        // change, and the row then reads 0 characters as though the tab were absent. Measured:
+        // Photos/Partners/Plan/Safety all landed and only Reports did not.
+        const el = [...document.querySelectorAll("button")]
+          .filter((e) => ns.includes((e.innerText || "").trim()))
+          .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; })[0];
+        if (!el) return false;
+        el.click();
+        return true;
+      }, names);
+      // A sub-tab can be legitimately ABSENT -- "Reports" is "Send Reports" on a crag-only
+      // route and Plan is content-gated -- so this is recorded, never failed. Both runs record
+      // the same empty string, so the pair compares equal and is skipped rather than becoming a
+      // phantom finding.
+      const t = hit ? await waitOutFetch(page, fail) : "";
+      // TWO SCREENS WITH IDENTICAL TEXT ARE ONE SCREEN, whatever you named them -- the lesson
+      // the "Me" tab already taught this guard. A sub-tab click that matched nothing leaves
+      // Overview on screen, and recording that as Route:Reports both invents coverage and
+      // measures the same page twice.
+      out["Route:" + key] = t && t === rd ? "" : t;
+    }
+  } else {
+    out.__navFail = (out.__navFail || []).concat(`${ROUTEPAGE} (?zr=1 never opened a route)`);
+    out[ROUTEPAGE] = "";
+    for (const [key] of ROUTE_SUBS) out["Route:" + key] = "";
+  }
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();
@@ -348,7 +422,12 @@ await assertDbReachable({ label: "check:outage" });
 
 const port = await claim(5460);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+// Spawned with the SAME config check:signed-in uses, which adds the overlay scaffold and with
+// it `?zr=1` -- the mechanism that calls the app's own openRoute() from inside the page. Plain
+// vite is what kept the route detail screen out of this walk; see the ROUTE DETAIL note above.
+// The config touches identity not at all, so the injected session still supplies `uid` exactly
+// as production does.
+const server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 const up = async () => { for (let i = 0; i < 90; i++) { try { if ((await fetch(base)).ok) return true; } catch {} await new Promise(r => setTimeout(r, 1000)); } return false; };
 if (!await up()) { server.kill(); throw new Error("dev server never came up"); }
@@ -415,7 +494,19 @@ try {
     const introduced = text.split("\n").map((l) => l.trim()).filter(Boolean)
       .filter((l) => !okLines.has(l) && !TABS.includes(l));
     const lying = introduced.filter((l) => CLAIMS_NONE_RE.test(l) && !BROKEN_RE.test(l));
-    if (!same && !broken) findings.push({ screen: t, why: "nothing on it says anything went wrong", text });
+    // RULE 1 IS SKIPPED ON ROUTE SUB-TABS, and this is not a softening -- it is the same
+    // double-counting rule Home already gets. A sub-tab shares the route page's chrome, and
+    // that chrome changes under an outage: measured, every one of the five differed from its
+    // healthy twin by EXACTLY 221 characters, the same delta as the route page itself. So
+    // "this screen changed" is not attributable to the sub-tab; it is the page's change, and
+    // the page is already judged once as ROUTEPAGE. Left in, it reported four correct screens
+    // as defects on an unmodified tree -- the direction that teaches people to ignore a guard.
+    //
+    // Rule 2 still applies to them, and it is the one that matters here: an absence claim the
+    // outage INTRODUCED is attributable to the sub-tab that renders it, which is precisely how
+    // "No reports yet" and "No topo yet" are caught.
+    const isRouteSub = t.startsWith("Route:");
+    if (!same && !broken && !isRouteSub) findings.push({ screen: t, why: "nothing on it says anything went wrong", text });
     else if (!same && lying.length) findings.push({ screen: t, why: `the outage introduced ${JSON.stringify(lying.slice(0, 4))}`, text });
     console.log(`${t.padEnd(9)} healthy ${String((ok[t]||"").length).padStart(5)}ch  failing ${String(text.length).padStart(5)}ch  ` +
       `${same ? "IDENTICAL (seed-backed, proves nothing)" : `CHANGED  says-broken=${broken ? "YES" : "no"}  says-empty=${empty ? "YES" : "no"}`}`);

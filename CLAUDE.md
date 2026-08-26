@@ -679,10 +679,43 @@ a build error, but a screen that renders wrong or not at all.
       row as `{...ME,routesLogged:logs.length,vertYr,daysYr,…}`, so a failed `climb_logs` read does
       not blank the board — it reports you as having climbed **nothing** and drops you down it,
       silently. The `"0 climbs to go"` shape on a screen whose entire subject is counts.
+  - **THE ROUTE DETAIL SCREEN IS WALKED NOW — the most-visited surface in the app, and the guard
+    could not reach it because it span PLAIN vite.** The scaffold's opener was absent, so `?zr=1`
+    did nothing. The spawn now uses `scripts/signed-in.config.mjs`, the config its sibling
+    `check:signed-in` already used, and the walk covers the route page plus five sub-tabs — 18
+    screens. The old note naming this gap said *"wiring the scaffold config into the spawn is the
+    way to close it, and re-running that probe is not"*; it was right on both counts.
+    - **`page.goto` needs 180s with this config, not 120s.** The scaffold transform is
+      `enforce: "pre"` over a 400,000-character file, so vite's first cold compile is slower than
+      plain vite's. At 120s it timed out while `up()` had already answered — which reads as a
+      broken app rather than a slow one. `check:signed-in` was already at 180s.
+    - **RULE 1 IS DELIBERATELY SKIPPED ON ROUTE SUB-TABS, and that is a double-counting rule
+      rather than a softening.** A sub-tab shares the page's chrome, and that chrome changes under
+      an outage: measured, all five differed from their healthy twin by **exactly 221 characters**
+      — the same delta as the page itself. So *"this screen changed"* is not attributable to the
+      sub-tab, and the page is already judged once as its own row. Left in, it reported **four
+      correct screens as defects on an unmodified tree**. Rule 2 still applies to them, and it is
+      the rule that matters there.
+    - **A GREEN INJECTION IS WORTH NOTHING UNTIL THE CLEAN-TREE CASE IS GREEN BESIDE IT.** The
+      `routedetail` case reported **CAUGHT** while rule 1 was still firing on sub-tabs — it was
+      passing on that 221-character chrome delta, not on the defect. Scoping rule 1 removed the
+      four false positives *and* that spurious catch together.
+    - Sub-tabs are clicked as **`button` only**. A wider query takes the first element in DOM
+      order whose text matches, which on Overview is a *heading* reading "Reports" — clicking it
+      does nothing, the view never changes, and the row then reads 0 characters as though the tab
+      were absent. Photos/Partners/Plan/Safety landed and only Reports did not, which is what made
+      it look like a data quirk rather than a selector bug. A sub-tab whose text equals Overview's
+      is recorded as not-landed: **two screens with identical text are one screen.**
+    - **#1221's two flags are still NOT measurable, and the case says so rather than vanishing.**
+      `?zr=1` opens `ROUTES[0]`, a **seed** route whose own `activity` is non-empty, so the
+      *"No reports yet"* branch cannot render whatever the flag does; and *"No topo yet"* is on
+      screen in the **healthy** run too, because the fixture's area has no topos. Two independent
+      blockers, so fixing either alone leaves the case passing. Closing it means opening a route
+      with no seed activity (or a DB route) and seeding a topo for its area.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
-    sub-views and the Home revisit — 12 screens; a surface behind an **overlay** is still out of
-    frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
+    sub-views, the Home revisit and the route page with five sub-tabs — 18 screens; a surface
+    behind an **overlay** is still out of frame, and **7 of 28 query handles in `App` carry a flag** — the rest are mostly lookups where
     emptiness is never asserted, but that is a list to READ, not a coverage claim.
   - **RULE 2's VOCABULARY HAS NOW BEEN SHORT FOUR TIMES, and the fourth is the instructive one
     because the fix for the third did not prevent it.** `"0 routes"`/`"0 crews"` (the Home tiles),

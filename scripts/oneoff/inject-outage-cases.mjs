@@ -27,7 +27,10 @@
 //                  pending invite; that PASS was a stale-bookkeeping alarm and it fired.
 //   7. ranks     — revert the Leaderboards fix.                                   MUST FAIL,
 //                  naming Ranks. This one is in ClimbMatchCore.jsx, not ClimbMatch.jsx.
-//   8. nothing   — no edit at all.                                                 MUST PASS.
+//   8. routedetail — revert BOTH of #1221's route-page flags.                      MUST PASS,
+//                  and that is a recorded GAP, not a success. The walk reaches that screen now,
+//                  but neither gated branch can render with this fixture. See the case.
+//   9. nothing   — no edit at all.                                                 MUST PASS.
 //                  Without this the others are satisfied by a guard that always fails.
 //
 // Cases 4-6 also prove the WALK reaches those three sub-views at all, which is a separate claim
@@ -131,6 +134,44 @@ const CASES = {
     to: 'false?<div style={{fontSize:12,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 10px",marginBottom:9,lineHeight:1.45}}>Couldn’t load your climbs, so your own',
     expect: "fail",
     names: /Ranks/,
+  },
+  // THE ROUTE PAGE IS WALKED NOW, AND #1221'S TWO FLAGS ARE STILL NOT MEASURABLE. This case
+  // expects a PASS and says why, rather than disappearing -- the same stale-bookkeeping alarm
+  // the `invites` case was, and that one fired within the day.
+  //
+  // What the walk gained is real: the route page and five sub-tabs are now compared healthy vs
+  // failing, and rule 2 watches every one of them. What it cannot do is exercise these two
+  // branches, for two INDEPENDENT reasons -- and the pair is the point, because fixing either
+  // alone leaves the case passing:
+  //
+  //   * `?zr=1` opens ROUTES[0], a SEED route, and its own `activity` array is non-empty. The
+  //     "No reports yet -- be the first to log this climb" branch renders only when there is no
+  //     activity AT ALL, and seed activity does not depend on the database. So the branch cannot
+  //     render under an outage on this route, whatever the flag does.
+  //   * "No topo yet" IS on screen under an outage -- and it is on screen in the HEALTHY run
+  //     too, because the fixture's area has no topos. Rule 2 flags only what the outage
+  //     INTRODUCED, so it correctly stays quiet. An absence the fixture happens to share is
+  //     unmeasurable, not absent.
+  //
+  // Closing it means opening a route with NO seed activity (or a DB route) and seeding a topo
+  // for its area. Then this case becomes expect:"fail" with names:/Route[ :]/.
+  //
+  // AN EARLIER VERSION OF THIS CASE REPORTED "CAUGHT" AND WAS WRONG, which is why the wording
+  // above is so specific. Rule 1 was still firing on route sub-tabs then, and every sub-tab
+  // differs from its healthy twin by the SAME 221 characters -- the page's shared chrome. The
+  // case was passing on that delta, not on the defect. Scoping rule 1 off sub-tabs removed four
+  // false positives on an unmodified tree AND that spurious catch together. A green injection is
+  // worth nothing until the clean-tree case is green beside it.
+  routedetail: {
+    file: "RouteDetail.jsx",
+    from: "Unavailable?",
+    to: "Unavailable&&false?",
+    // FOUR, not three: `grep -c` counts LINES and one dense line carries two of these. The
+    // harness refused the case over it, which is exactly its job -- an injection that edits
+    // fewer sites than it means to reads as "guard missed" when the guard saw a screen still
+    // carrying half its fix.
+    hits: 4,
+    expect: "pass",
   },
   nothing: { expect: "pass" },
 };
