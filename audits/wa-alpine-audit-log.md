@@ -9703,3 +9703,55 @@ Direct WebFetch to reference domains (cascadiadaily.com, fs.usda.gov) was blocke
 network egress policy, consistent with prior batches' notes on this.
 
 Next batch continues after `wa_mount_baker_north_ridge` in the id-ordered scope.
+
+## Batch 143 — 2026-08-26 (pass 3)
+
+Routes: `wa_mount_baker_park_glacier_headwall`, `wa_mount_baker_squak_glacier` (Mount
+Baker); `wa_mount_blum_north_ridge` (Mount Blum); `wa_mount_buckindy_scramble` (Mount
+Buckindy); `wa_mount_carrie_standard` (Mount Carrie); `wa_mount_challenger_challenger_glacier`
+(Mount Challenger); `wa_mount_christie_west` (Mount Christie); `wa_mount_constance_finger_traverse`,
+`wa_mount_constance_north_chimney`, `wa_mount_constance_north_chute` (Mount Constance).
+
+**No confirmed errors this batch — a clean batch on hard facts.**
+
+**Confirmed correct, no fix needed:** peak elevations and summit coordinates for Baker,
+Buckindy, Carrie, Challenger, Christie and Constance all matched Wikipedia/USGS-derived
+figures closely (Buckindy 48.351145,-121.206615 vs Wikipedia 48.3515,-121.2061; Carrie
+47.894273,-123.649285 vs 47.894242,-123.649295; Christie 47.698005,-123.545585 vs
+47.698021,-123.545417; Constance 7,756 ft vs Wikipedia's 7,756 ft). First ascents for
+Mount Challenger's Glacier route (Dickert/Hossack/MacGowan, Sept 7 1936), Mount Constance
+(Schellin & Smith, 1922 — row already hedges the exact chimney sequence as undocumented),
+Mount Buckindy (Grimlund/Nicholson/Trueblood, Aug 28 1955) and Mount Blum's North Ridge
+(Hutchinson/Leatherman/Weigelt, Sept 16 1972 — matched an AAC Publications route report
+almost verbatim) all confirmed.
+
+**Road/closure claims checked for currency, all accurate:** Mount Blum's North and South
+Ridge routes both cite the Baker Lake Road (FR-11) closure at Shannon Creek Bridge for
+bridge-deck repair, July 15-Aug 31 2026 — confirmed via a Mt. Baker-Snoqualmie NF alert and
+a Pacific NW Trail post, and (as of this run, Aug 26) still inside its stated window rather
+than stale. Dosewallips Road, cited by all three Mount Constance routes with slightly
+different phrasing, is confirmed still closed to vehicles since the January 2002 washout
+with no scheduled repair — the phrasing differences are not a contradiction (audit:trailhead-
+road's "sibling routes disagreeing about whether a road is open" shape does NOT apply here;
+all three agree on the substance).
+
+**Worth noting, not a defect:** `wa_mount_buckindy_scramble` is a real two-approach route
+(Green Mountain Trailhead via Suiattle River Rd/FR-26 to the south, or Kindy Creek Rd/FR-1570
+off Cascade River Rd to the north — both genuine per Mazamas/trip-report sources), and its
+`road`, `approach`, `approach_logistics` and `descent_text` fields already document both
+correctly, including that FR-26 is currently closed at MP 4 under USFS closure order
+#06-05-26-01 (Apr 2 2026-Jan 1 2028) after a 75-ft-deep washout — confirmed exactly via the
+MBS NF alert page. This is the CLAUDE.md "peak with two genuine approaches" case (cf. Lundin
+Peak) handled correctly on the row already, not a `road`-vs-`approach` mismatch to fix.
+
+**Not independently confirmed or contradicted, left unflagged per this audit's rule against
+guessing:** Mount Baker's Coleman Headwall commitment-grade comparison note on Park Glacier
+Headwall (unchanged, pre-existing hedge); Hannegan Pass Road's (Mount Challenger) "recent
+storm damage" note is vague and hedged with "check current alerts" rather than asserting an
+active closure, and current USFS info shows no active 2026 closure notice, so nothing to
+change there either way.
+
+Web access this run: WebSearch worked throughout. Direct WebFetch to reference domains
+(fs.usda.gov) was blocked by network egress policy, consistent with prior batches' notes.
+
+Next batch continues after `wa_mount_constance_north_chute` in the id-ordered scope.
