@@ -145,6 +145,51 @@ export async function durableFixture(log) {
   // Same route the rest of the fixture uses. crews.route_id is NOT NULL.
   const CREW_ROUTE_ID = "wa_mount_baker_north_ridge";
 
+  // THE SAME SWEEP FOR CREWS, WHICH HAD NONE. Measured 2026-08-26: the live project held 15
+  // crews and 13 belonged to `CI Fixture Mate`, one per guard run from 16:06 through 19:41 on a
+  // single day, plus one from 2026-08-13. Groups looked clean over that same period, and that
+  // was the sweep above doing its job rather than teardown doing its job -- a failed group
+  // delete is quietly repaired 45 minutes later, a failed crew delete is forever. The asymmetry
+  // is what hid it: the table WITHOUT a backstop is the one whose leaks are visible.
+  //
+  // sweepOrphans() structurally cannot reach these. It removes @climbmatch-qa.invalid ACCOUNTS
+  // and deletes what they created first; this crew belongs to the DURABLE mate, which must never
+  // be deleted. Exactly the reason the group sweep exists, one table over.
+  //
+  // Swept AS THE MATE, who created them: the crews delete policy is `auth.uid() = created_by`
+  // (0036), and the owner is only an invited member here.
+  //
+  // Age-gated at the same 45 minutes, for the reason the comment above spells out -- ungated,
+  // this deletes the crew of a run already in flight, and two concurrent runs were observed in
+  // this project on 2026-08-19. Narrowed by `created_by` AND `route_id` rather than by a name,
+  // because `crews` has no name column; the mate is a fixture account nobody else can post as,
+  // so no real climber's crew can be caught by it.
+  //
+  // WHAT A CREW DELETE TAKES WITH IT, checked in the migrations rather than assumed, because a
+  // sweep is the wrong place to discover a cascade: `crew_members.crew_id` and
+  // `crews_messages.crew_id` are ON DELETE CASCADE (0036, 0042) so the membership and chat rows
+  // go cleanly, and `climb_logs.crew_id` is ON DELETE SET NULL (0037) -- a climber's LOG survives
+  // its crew being removed. Had that one cascaded, this sweep would destroy real logged climbs.
+  const staleCrews = await asUser(mateSession,
+    `crews?select=id&created_by=eq.${mateSession.user.id}` +
+    `&route_id=eq.${CREW_ROUTE_ID}&created_at=lt.${staleBefore}`);
+  const staleCrewRows = Array.isArray(staleCrews.json) ? staleCrews.json : [];
+  let sweptCrews = 0;
+  for (const c of staleCrewRows) {
+    const d = await asUser(mateSession, `crews?id=eq.${c.id}`, { method: "DELETE" });
+    if (d.status < 300) sweptCrews++;
+  }
+  // Reported even when it removes NOTHING it found, because "found 11, removed 0" and "found 0"
+  // need opposite reactions and print identically if only one number is logged. A sweep that
+  // silently fails is the same defect as the teardown that silently failed.
+  if (staleCrewRows.length) {
+    log(`  swept ${sweptCrews}/${staleCrewRows.length} fixture crew(s) left by earlier runs (older than 45 min)`);
+    if (sweptCrews < staleCrewRows.length) {
+      log(`  WARNING: ${staleCrewRows.length - sweptCrews} stale crew(s) refused deletion — that is ` +
+        `the delete policy or the mate's session, not the sweep. They accumulate until it is fixed.`);
+    }
+  }
+
   const mk = await asUser(session, "groups", {
     method: "POST",
     body: JSON.stringify({

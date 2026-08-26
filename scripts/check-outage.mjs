@@ -740,6 +740,24 @@ try {
   // cleanup(), NOT teardown() — the wrong name plus a .catch() would silently leak two real
   // accounts into the production project, where a fake climber shows up in partner search.
   // Caught by reading the fixture's API before running, not after.
-  if (fixture) await fixture.cleanup();
+  //
+  // AND ITS RETURN VALUE IS THE POINT, which this threw away until 2026-08-26. `cleanup()`
+  // returns a list of what it could NOT remove; check:signed-in prints that list and exits 1,
+  // this ignored it. So a teardown failure here was undetectable from the outside, and the
+  // measurement that eventually found it was a hand count of live rows: 13 fixture crews owned
+  // by the durable mate, one per guard run across a single day.
+  //
+  // A throw is caught rather than propagated, for the same reason: an exception in teardown
+  // would otherwise replace the run's real verdict with a cleanup error, and the leak would
+  // still not be named.
+  if (fixture) {
+    const leaked = await fixture.cleanup().catch((e) => [`cleanup threw: ${e.message}`]);
+    if (Array.isArray(leaked) && leaked.length) {
+      console.error(`\nFIXTURE NOT FULLY REMOVED: ${leaked.join(", ")}`);
+      console.error("These stay in the live project until a later run's age-gated sweep reaches");
+      console.error("them, and a crew owned by the DURABLE mate is never reached by sweepOrphans.");
+      process.exitCode = 1;
+    }
+  }
   server.kill();
 }
