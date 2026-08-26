@@ -145,6 +145,7 @@ import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { SPINNER_RE } from "./lib/render-settle.mjs";
 import { tapByName } from "./lib/tap-by-name.mjs";
+import { tapByText } from "./lib/tap-by-text.mjs";
 
 const claim = (start) => new Promise((res, rej) => {
   let p = start;
@@ -448,11 +449,18 @@ async function walk(browser, base, session, fail) {
       }
     }
     out[ROUTE] = rt;
-    // Photos, for `toposUnavailable`. Clicked by ACCESSIBLE NAME like every other sub-tab here,
-    // and skipping fixed/sticky chrome matters more on this screen than anywhere else: the route
-    // sub-tab names collide with the bottom nav, so a global text match silently leaves the route
-    // page and measures a tab instead -- the trap CLAUDE.md records for exactly these six names.
-    if (await tapByName(page, "Photos")) {
+    // Photos, for `toposUnavailable`. Clicked by TEXT, not by accessible name, and that is the
+    // opposite of every other sub-tab in this file for a reason worth stating: tapByName queries
+    // `[aria-label]` ONLY, and these six buttons carry `aria-current` plus their own text and no
+    // label -- they need none, because nothing pollutes their textContent the way the Crew bar's
+    // badge count does. Pointing tapByName here returns false on a control sitting right there,
+    // and this stop would fail closed on a guard bug rather than a defect. Checked against the
+    // source before shipping, not discovered by a red run.
+    //
+    // tapByText skips fixed/sticky chrome, which is the load-bearing half: a route sub-tab name
+    // collides with the bottom nav, so a global text match does not miss -- it silently NAVIGATES
+    // AWAY and returns true, and the caller then measures a tab believing it is on the route page.
+    if (await tapByText(page, "Photos")) {
       let pt = await waitOutFetch(page, fail);
       if (fail) {
         for (let i = 0; i < 25 && !BROKEN_RE.test(pt); i++) {
