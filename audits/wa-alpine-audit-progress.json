@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_northwest_ridge",
+    "last_processed_id": "wa_olympus_summit_block_west_edge",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3301,6 +3301,25 @@
             "findings_fixed": 5,
             "findings_summary": "Fixed five confirmed errors across four peaks; three routes (Argonaut Peak NW Arete, Little Big Chief NW Face, South Early Winters Spire Boving-Pollock) were clean on review -- already thoroughly researched with honest data_quality gaps flagged where sources conflict. (1) wa_northeast_ridge_1963_route (Johannesburg Mountain): summit waypoint elev/elevFt read 8066 against this row's own high_point_ft (8200) and the area's elevation_ft (8200); externally corroborated at 8,212 ft (ListsOfJohn) / 8,218 ft (PeakVisor, 2505m) -- corrected the outlying waypoint to 8200. (2) Same route's road field named 'Boston Basin trailhead' as the destination, but this row's own waypoints[0]/approach_logistics.trailhead both correctly name 'Cascade Pass Trailhead' -- a different, later trailhead on the same Cascade River Road (Boston Basin is a separate, earlier stop serving Forbidden Peak/Sharkfin Tower per this row's own bivy list). Re-homed to the route's own trailhead, and folded in a current access fact verified via NPS (nps.gov/noca road-conditions and 'Cascade River Road Closure at Eldorado Creek' pages, checked 2026-08-27): the road is presently gated to vehicles at mile 20 (Eldorado Creek), with the final ~3 mi/1,500 vert ft to Cascade Pass Trailhead open to bikes/pedestrians only -- noted with a 'confirm before driving' hedge since it's a live closure, not a permanent fact. (3) wa_northwest_buttress (Sloan Peak): access.land_manager and access.rules both named 'Glacier Peak Wilderness', contradicting three other wilderness fields on the same row (landManager, permitZone, _raw.wilderness_zone) all correctly saying 'Henry M. Jackson Wilderness' -- confirmed via USFS Sloan Peak Trail 648 pages and Wikipedia's Henry M. Jackson Wilderness article. access.seasonal also named 'Suiattle River Road (FSR 26), the primary Glacier Peak access' -- an unrelated road this route (Bedal Creek Trailhead via FR-4096) never uses. Corrected the wilderness name in both fields and dropped the irrelevant Suiattle River Road clause, keeping the correct Mountain Loop Highway seasonal-gate sentence already on file. (4) wa_northwest_face_2 (Kangaroo Temple): summit waypoint elev read 7238 against this row's own high_point_ft (7572) and the area's elevation_ft (7572); externally corroborated at 7,572 ft (Wikipedia 'The Temple (Washington)', SummitPost) -- corrected. (5) wa_northwest_mox_peak_standard (Northwest Mox Peak): access.seasonal described 'Cascade River Road' washout history, but this route is approached entirely from British Columbia via Depot Creek Road (per this same row's own road.name/driveNote and access.closures fields) -- Cascade River Road serves the unrelated Cascade Pass/Eldorado area on the opposite side of the range. Re-homed to describe Depot Creek Road, consistent with the correct road.seasonalGate field already on file. wa_northwest_ridge (Dorado Needle) was read as a cross-check for the Cascade River Road content and confirmed as the genuine, correctly-sourced owner of that trailhead's data, including its own current 'closed to vehicles at mile 20 (Eldorado) as of June 2026' road.status note, which independent WebSearch confirmed is still accurate as of this pass.",
             "sql_file": "audits/sql/2026-08-27-batch-157.sql"
+        },
+        {
+            "batch_number": 158,
+            "date": "2026-08-27",
+            "route_ids": [
+                "wa_northwest_ridge_2",
+                "wa_nw_face_var_remsberg_variation",
+                "wa_nw_ridge_2",
+                "wa_old_guard_peak_east_side_route",
+                "wa_old_guard_peak_southwest_route",
+                "wa_old_snowy_mountain_r1",
+                "wa_olympus_blue_glacier_east_ramps",
+                "wa_olympus_summit_block_west_edge"
+            ],
+            "confirmed_errors_fixed": 8,
+            "flagged_for_human_review": 0,
+            "clean": 2,
+            "sql_file": "audits/sql/2026-08-27-batch-158.sql",
+            "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review \u2014 both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed \u2014 the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
         }
     ]
 }

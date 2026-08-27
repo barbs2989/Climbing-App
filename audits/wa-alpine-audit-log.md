@@ -10823,3 +10823,92 @@ value.
 
 Next batch continues after `wa_northwest_ridge` in the id-ordered scope
 (148 routes remain unaudited this pass after this batch).
+
+## 2026-08-27 — Pass 3, Batch 158
+
+Routes: `wa_northwest_ridge_2` (Boston Peak), `wa_nw_face_var_remsberg_variation`
+(Liberty Bell Mountain), `wa_nw_ridge_2` (Colchuck Balanced Rock),
+`wa_old_guard_peak_east_side_route` and `wa_old_guard_peak_southwest_route`
+(Old Guard Peak), `wa_old_snowy_mountain_r1` (Old Snowy Mountain),
+`wa_olympus_blue_glacier_east_ramps` and `wa_olympus_summit_block_west_edge`
+(Mount Olympus).
+
+Two routes were clean on review: `wa_old_guard_peak_east_side_route` (not
+actually a stub despite its thin structured fields — its prose fields
+carry a full, internally consistent East Side Route writeup and a shared,
+detailed bivy-site sequence for the whole Ptarmigan Traverse corridor) and
+`wa_olympus_summit_block_west_edge` (trailhead-to-summit net rise matches
+`gain_ft` exactly; corrections field already honestly reconciles a
+multi-source elevation/gain disagreement).
+
+Eight fixes, across five peaks:
+
+- **`wa_nw_face_var_remsberg_variation`** (Liberty Bell Mountain) — the
+  trailhead waypoint's `elev` (5200 ft) contradicted this same row's own
+  `approach_logistics.trailheadDirection` text ("...5,400 ft"). Externally
+  corroborated: The Mountaineers' Blue Lake (Washington Pass) trail page
+  gives the Blue Lake Trailhead as 5,400 ft. Corrected the waypoint.
+- **`wa_northwest_ridge_2`** (Boston Peak) — three separate defects.
+  First, the "Lower Boston Basin Camp" waypoint (explicitly typed
+  Campsite) was stored at 5,700 ft, contradicting this same row's own
+  `access._raw.special_requirements` text, which states Boston Basin's two
+  designated camps are "low camp (~5,300 ft) and high camp (~6,400 ft)" —
+  externally corroborated via SummitPost's Boston Basin logistical-centers
+  page. Corrected to 5,300 ft. Second and third, both `descent_text` and
+  `rappels` pointed toward a nonexistent "Southwest Face" descent route —
+  Boston Peak's only routes on file are this ridge, West Face (no descent
+  beta), and Southeast Face, and the Southeast Face row's own rappels/
+  descent_text ("3 x 25-30m rappels to snow"... "to the snow at the head
+  of the Boston Glacier, near the base of the Sahale–Boston col") is
+  word-for-word the route this row is describing. Corrected the route
+  name and aligned the vague, internally-inconsistent `rappels` summary
+  ("3–5 rappels... south-face... Boston–Sahale col") with the sibling
+  route's authoritative count and destination.
+- **`wa_nw_ridge_2`** (Colchuck Balanced Rock) — `gain_ft` (4,760) is
+  physically impossible given this same row's own trailhead waypoint
+  (Stuart Lake Trailhead, 3,400 ft) and summit/`high_point_ft`/area
+  elevation (8,240 ft, externally corroborated exactly via Wikipedia): a
+  party starting at 3,400 ft finishing on an 8,240 ft summit has gained at
+  least 4,840 ft regardless of route wiggles. `pitches` is 0 on this row,
+  so no climbing-vertical credit reduces that floor. Raised `gain_ft` to
+  the physical minimum and reworded the `approach` sentence that had
+  quoted the now-impossible "roughly 4,760 ft of total gain" trip-report
+  figure, stating the net-rise arithmetic honestly as a floor instead of
+  inventing a precise total the record doesn't support.
+- **`wa_old_snowy_mountain_r1`** (Old Snowy Mountain) — `access.fees`
+  claimed a Northwest Forest Pass/day fee is "required at the Snowgrass
+  Flats (Trail #96) trailhead", directly contradicting this same row's own
+  `access.parking_pass` field ("Not required at Snowgrass Flat; required
+  at Berry Patch trailhead"). Externally corroborated (WTA and USFS
+  Gifford Pinchot NF Trail #96 pages): no pass is required at Snowgrass
+  Flats itself, only at the overflow Berry Patch trailhead. Corrected
+  `access.fees` to match.
+- **`wa_old_guard_peak_southwest_route`** — `access.land_manager` and
+  `access.parking_pass` both carried literal stray leading/trailing
+  double-quote characters baked into the string value itself (an
+  escaping artifact from the prior fix already recorded in this row's own
+  `corrections` field), so the app would render both fields wrapped in
+  literal quotation marks on screen. Stripped the stray quotes; text
+  unchanged otherwise.
+- **`wa_olympus_blue_glacier_east_ramps`** — `access.notes` carried the
+  identical stray-quote artifact (same defect class, different row/column,
+  same "batch 15" copy-paste-contamination cleanup this row's own
+  `corrections` field references). Stripped the stray quotes.
+
+All eight fixes were validated against the live database before being
+written to SQL: `npm run check:sql` confirmed every target id exists and
+flagged no unguarded statements, and each WHERE guard was independently
+re-checked with a live REST read immediately before writing the file, to
+confirm it matches exactly the current stored value.
+
+One item read but not auto-fixed: `wa_old_guard_peak_southwest_route`'s
+`emergency.sheriffDispatch`/`county` names Skagit County alongside Chelan
+as a bordering jurisdiction, while its sibling
+`wa_old_guard_peak_east_side_route` names Snohomish instead of Skagit (both
+agree on Chelan). Old Guard Peak sits close to a genuine three-county
+boundary area and neither claim could be confidently resolved against an
+authoritative source in this pass — left for human review rather than
+guessed at.
+
+Next batch continues after `wa_olympus_summit_block_west_edge` in the
+id-ordered scope.
