@@ -6295,6 +6295,23 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     (`||{id:id,name:"Climber"}`), `dbPhotoProfiles` deliberately renders the photo unattributed,
     `crewProfilesQ` returns null by documented design. **The miss behaviour is per-call-site**, so
     a rule about "what `useProfilesByIds` does on a miss" cannot be stated once.
+  - **THE STATED WORKLIST IS NOW READ, AND IT WAS ONE DEFECT IN TWENTY.** This entry's own header
+    used to say *"10 of 28 query handles in `App` carry a flag … the rest are a list to READ"*.
+    Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
+    catches one above) and 19 are non-findings, each for its own reason. The ones worth not
+    re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
+    at all and `AscentPyramid` gates on `logs.length` before falling back to the stored pyramid;
+    `crewInviteRoutesQ` falls back through `routeById` to null; `hzVotesQ` leaves prior votes in
+    place rather than clearing them; and **`policyQ` handles its own error inline**
+    (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read
+    failed — the only handle that already did this.
+  - **NO DETECTOR FOR THE TWO-QUERY SHAPE, because the class is TWO and both are settled.** Every
+    `useEffect` in the three app files that bails on more than one `X.data` was enumerated: exactly
+    **2** exist — the catches one (now covered) and the vouches one (uncovered **by design**, since
+    its fallback is seed data rather than an empty list). Same refusal as the forest-order-number
+    detector: *a detector for a class this small is the thing this repo keeps declining to build.*
+    A per-handle "needs no flag" registry was also rejected — there are **63** such handles across
+    the three files, most not DB reads at all, so it would be ~49 justifications that rot.
 
 **A COUNT AND THE LIST UNDER IT WERE TWO DERIVATIONS OF ONE FACT, ON ONE SCREEN.** `check:ui`
 asserts that two SCREENS counting the same list agree (#1203). The group detail view did it to
