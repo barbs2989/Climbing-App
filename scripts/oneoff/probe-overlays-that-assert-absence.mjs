@@ -14,15 +14,46 @@
 // the first number would have been reported as a finding.
 import fs from "node:fs";
 import path from "node:path";
+import { parse } from "@babel/parser";
+import _traverse from "@babel/traverse";
 import { overlayStates } from "../lib/overlay-scaffold.mjs";
+const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 
-const CLAIMS = /no .{0,30}? yet|nothing here|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
+const CLAIMS = /no .{0,30}? yet|nothing here(?=\s*(?:yet\b|[.<—,)]|$))|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
+const app = maskComments(appRaw, "ClimbMatch.jsx");
+const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
 const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailable)/g)].map((m) => m[1]))];
+
+/* COMMENTS ARE MASKED OUT OF THE SOURCE, so a claim written in prose cannot be reported as copy.
+   v4 had that bug and it produced a whole phantom row: `feedbackOpen`'s only claim was the phrase
+   "nothing here" inside a block comment in ClimbMatchCore.jsx explaining why reason formatting uses
+   plain-text markers. Nothing renders it.
+
+   NOT a regex strip. This repo has had one eat real code at a URL's `//`, and a hand-rolled scanner
+   that tracks quotes to avoid that desynchronises on an apostrophe in JSX text (`don't`). Babel has
+   neither failure mode: it reports exact comment RANGES, and masking those in place preserves every
+   offset, so the window slice and bodyOf() below are unaffected.
+
+   A GLOBAL "is this string rendered somewhere?" test was tried first and is WRONG: "nothing here"
+   IS real copy elsewhere in the app, so the comment match passed anyway and the count did not move.
+   Position is the whole question — masking answers it, set-membership cannot. */
+function maskComments(src, label) {
+  let ast;
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  catch (e) { console.error(`FAIL — could not parse ${label}: ${e.message}`); process.exit(1); }
+  const cs = ast.comments || [];
+  /* Fail closed. Zero comments in a 400kB file of this repo's prose density means the parse
+     returned something unusable, and masking nothing would silently restore the v4 behaviour. */
+  if (cs.length < 50) { console.error(`FAIL — ${label} reported only ${cs.length} comments; a broken parse, not a terse file.`); process.exit(1); }
+  const buf = src.split("");
+  for (const c of cs) for (let i = c.start; i < c.end; i++) if (buf[i] !== "\n") buf[i] = " ";
+  return buf.join("");
+}
 
 // Skip the PARAMETER LIST before balancing the body, or a destructured signature ends the walk
 // before the body starts.
@@ -87,29 +118,35 @@ if (!rows.some((r) => r.name === "inboxOpen")) {
 const CHECKED = {
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
-  contribOpen: "Contributions receives `items={contribs}`, a useState client value, not a query",
   logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
   giveVouchWith: 'same "No climbs match." filter copy',
   quickLogFor: 'same "No climbs match." filter copy',
   profileModal: "FullProfile's vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   eventInvite: "renders FullProfile; same reason",
-  shareOpen: 'the "No route" hits are FILTER copy — "No routes match." / "No routes match these filters." — true whatever loaded',
-  notifOpen: "same filter copy, picked up from AddRoute/Contributions in the 3000-char window",
-  addRouteOpen: "same filter copy",
-  onboardOpen: "same filter copy",
   crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
-  feedbackOpen: 'MATCHED INSIDE A COMMENT, not rendered copy: the "nothing here" is prose in ClimbMatchCore.jsx explaining why reason formatting uses plain-text markers. See the scanner note below.',
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
 };
 
-/* THE SCANNER READS COMMENTS AS COPY, and `feedbackOpen` above is the proof — its only claim is a
-   sentence inside a block comment. That inflates the count with rows that render nothing.
-   NOT fixed with a regex strip: this repo has already had one eat real code at a URL's `//`, and a
-   stateful scanner that tracks quotes desynchronises on an apostrophe in JSX text. The correct fix
-   is to collect JSXText and StringLiteral values with Babel and match only those, the way
-   check:no-rendered-sources does. Left undone deliberately — this is a one-off measurement, every
-   current row is resolved above, and a half-safe strip would be worse than a known limitation.
-   IF A NEW ROW APPEARS, check whether its claim is actually rendered before believing it. */
+/* v5 — WHAT THE PREVIOUS NOTE HERE SAID IS NOW WRONG, AND THE CORRECTION IS THE POINT.
+   It said the scanner read comments as copy, named `feedbackOpen` as the proof, and left the fix
+   undone as a "known limitation". Two of those three claims were false:
+
+   1. The fix is done — comments are masked by Babel RANGE above, offsets preserved.
+   2. `feedbackOpen` was never a comment match. Masking removed three rows and it SURVIVED. Its
+      claim is real rendered copy on ClimbMatch.jsx:693 — "nothing here is sent anywhere. Copy your
+      note to keep it." — the feedback sheet's PRIVACY line. I had grepped only ClimbMatchCore.jsx
+      and attributed it to a comment there; the incomplete grep produced a confident wrong reason.
+
+   That exposed the bigger defect: `nothing here` matched sentences where it means NONE OF THIS
+   CONTENT rather than YOU HAVE NO ITEMS. Terms says "Nothing here creates a partnership,
+   employment, or agency relationship" — rendered legal copy, no masking removes it. The phrase now
+   has to END a clause (`yet`, `.`, `<`, `—`, `,`, `)`, end), which keeps all three genuine uses
+   ("Nothing here yet.", "Nothing here.", "Nothing here yet — find a route...") and drops both
+   false ones.
+
+   TOGETHER: 23 rows -> 16, and 15 ungated -> 9. SEVEN of the original rows were phantoms, and six
+   of the CHECKED reasons written against them were removed as stale by this file's own test. A
+   count is only as good as what it is a count OF. */
 
 const ungatedAll = rows.filter((x) => !x.gated.length);
 const stale = Object.keys(CHECKED).filter((n) => rows.some((r) => r.name === n && r.gated.length));
@@ -120,7 +157,15 @@ if (stale.length) {
   console.log(`STALE: ${stale.join(", ")} now name a flag, so their CHECKED entry is describing code that has moved. Remove it.\n`);
 }
 console.log("CHECKED — ungated for a reason, verified by reading the component:");
-for (const r of checked) console.log(`  ${r.name.padEnd(20)} ${CHECKED[r.name]}`);
+for (const r of checked) {
+  console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
+  console.log(`  ${"".padEnd(20)} ${CHECKED[r.name]}`);
+}
+/* A CHECKED entry for an overlay that no longer asserts absence AT ALL is stale too, and the
+   `stale` test above cannot see it — that one only fires when the name reappears WITH a flag.
+   Masking comments removed two rows outright, which is exactly this case. */
+const vanished = Object.keys(CHECKED).filter((n) => !rows.some((r) => r.name === n));
+if (vanished.length) console.log(`\n  STALE (no longer assert absence at all — remove): ${vanished.join(", ")}`);
 console.log("\nNOT YET READ — nothing reachable in that text names an xUnavailable flag:");
 for (const r of ungated) {
   console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
