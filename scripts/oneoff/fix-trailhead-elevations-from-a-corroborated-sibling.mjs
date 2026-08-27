@@ -37,6 +37,11 @@ const TARGETS = [
   { route: "wa_energizer_bunny",                pin: "Stuart Lake Trailhead",      was: 1300, donor: "wa_argonaut_peak_northeast_couloir" },
   { route: "wa_beckey_davis",                   pin: "Stuart Lake Trailhead",      was: 1300, donor: "wa_argonaut_peak_northeast_couloir" },
   { route: "wa_stanley_burgner",                pin: "Stuart Lake Trailhead",      was: 1300, donor: "wa_argonaut_peak_northeast_couloir" },
+  // The tenth, and the only one the sweep across every OTHER pin type turned up. Both routes store
+  // the IDENTICAL coordinate for this junction and disagree about its height by 750 ft; the ground
+  // there reads 2,682-2,842. They share their whole approach chain (Royal Creek Camp, Royal Lake, at
+  // identical coordinates too), so one route's copy of one pin simply carries the wrong number.
+  { route: "wa_mount_mystery_standard",         pin: "Royal Basin Trail junction", was: 1900, donor: "wa_mount_johnson_standard" },
 ];
 
 const DRY = process.argv.includes("--dry");
