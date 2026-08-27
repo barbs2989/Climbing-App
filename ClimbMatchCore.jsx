@@ -4045,6 +4045,23 @@ function GettingThere({area}){
 function PullToRefresh({onRefresh,children}){const [d,setD]=useState(0);const [busy,setBusy]=useState(false);const sy=useRef(0),pull=useRef(false);return <div onTouchStart={function(e){if(window.scrollY<=0&&!busy){sy.current=e.touches[0].clientY;pull.current=true;}}} onTouchMove={function(e){if(!pull.current||busy)return;var dy=e.touches[0].clientY-sy.current;if(dy>0&&window.scrollY<=0)setD(Math.min(80,dy*0.5));else setD(0);}} onTouchEnd={function(){if(!pull.current)return;pull.current=false;if(d>50&&!busy){setBusy(true);setD(46);setTimeout(function(){setBusy(false);setD(0);if(onRefresh)onRefresh();},850);}else setD(0);}}><div style={{height:d,overflow:"hidden",display:"flex",alignItems:"flex-end",justifyContent:"center",transition:pull.current?"none":"height .26s ease"}}>{d>6?<div style={{position:"relative",paddingBottom:9,opacity:Math.min(1,d/40)}}><span className={busy?"cm-spin":undefined} style={{fontSize:19,display:"inline-block",transform:busy?"none":"rotate("+Math.min(200,d*2.6)+"deg)"}}>{"\u21bb"}</span></div>:null}</div>{children}</div>;}
 function ReactionPicker({onPick,onClose}){return createPortal(<div onClick={onClose} role="dialog" aria-label="React" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:9700,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,maxHeight:"62vh",overflowY:"auto",overscrollBehavior:"contain",borderRadius:"16px 16px 0 0",border:"1px solid "+C.border,padding:16}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}><div style={{fontSize:14,fontWeight:700,color:C.text}}>React</div><button onClick={onClose} aria-label="Close" style={{width:32,height:32,borderRadius:16,border:"none",background:C.surface,color:C.textSub,fontSize:16,cursor:"pointer"}}>✕</button></div><div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8}}>{REACTIONS.map(function(r){return <button key={r.k} onClick={()=>onPick(r.k)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:4,padding:"10px 4px",borderRadius:12,border:"1px solid "+C.border,background:C.surface,cursor:"pointer"}}><span style={{fontSize:22,lineHeight:1}}>{r.e}</span><span style={{fontSize:10,fontWeight:700,color:C.textSub,textAlign:"center"}}>{r.l}</span></button>;})}</div></div></div>,document.body);}
 var _cbBatch=[],_cbTimer=null,_toastT=null,_celebTimer=null;
+/* PLACED HERE DELIBERATELY, at the bottom of core beside the other setters, and NOT beside the
+   waypoint helpers where it first went. `cnt===1?" climb":" climbs"` reads as a `"key":"value"`
+   pair, and WP_TYPE_MAP is a multi-line object literal that check:wp-styles parses by scanning
+   from its declaration -- so the function landed INSIDE that block and the guard correctly
+   reported a raw spelling (" climb") with no WP_STYLE entry. The guard was right; the placement
+   was wrong. Keep string-literal pairs out of that region. */
+/* THE LINE UNDER A STATE ON THE "MANAGE AREAS" SCREEN, and it had no third thing to say.
+   `cnt` is `dbSt ? dbSt.route_count : (st ? areaMatchCount(st.id) : 0)`, where dbSt comes from
+   `useStates()`. When that read FAILS dbSt is undefined for every state, and the seed MOUNTAINS
+   fallback holds only four (California, Colorado, Utah, Washington) -- so 46 of 50 states fell to
+   cnt=0 and the screen said "Catalog coming soon" about catalogs holding thousands of climbs.
+   Worse than the usual shape of this class: a false claim about the PRODUCT rather than about the
+   climber's own data, on the one screen whose whole purpose is downloading a catalog FOR use with
+   no signal -- so it was wrong exactly when somebody needed it.
+   A pure function so check:outage-copy can execute all three branches without rendering App. */
+export function stateCatalogLine(cnt,name,unavailable,suffix){if(cnt)return cnt+(cnt===1?" climb":" climbs")+" in the catalog"+(suffix||"");if(unavailable)return "Couldn’t load the catalog list — this is not a claim that "+name+" has no climbs. Check your connection and try again.";return "Catalog coming soon";}
+
 export function __set_UNITS(v){UNITS=v;}
 export function __set_DB_UID(v){DB_UID=v;}
 export function __set_RESPONSE_RATES(v){RESPONSE_RATES=v;}
