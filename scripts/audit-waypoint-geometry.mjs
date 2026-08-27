@@ -94,6 +94,15 @@ const SELFTEST = argv.includes("--selftest");
 const GROUND = argv.includes("--ground");
 
 const same = (a, b) => Math.abs(+a.lat - +b.lat) < 1e-6 && Math.abs(+a.lng - +b.lng) < 1e-6;
+/* Metres between two pins. Needed for category 5, which asks the same question as category 2 over a
+   radius rather than at a point; `same` is left alone because the DUPLICATE test also uses it and
+   "a pin ON the trailhead" is a different claim from "a pin NEAR another pin". */
+const metres = (a, b) => {
+  const R = 6371000, rad = d => d * Math.PI / 180;
+  const dy = rad(+b.lat - +a.lat), dx = rad(+b.lng - +a.lng);
+  const q = Math.sin(dy / 2) ** 2 + Math.cos(rad(+a.lat)) * Math.cos(rad(+b.lat)) * Math.sin(dx / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(q));
+};
 const placed = w => w && w.lat != null && w.lng != null;
 const typeOf = w => String(w?.type || "").toLowerCase();
 const IMPOSSIBLE_AT_CAR = /topout|summit/;
@@ -123,10 +132,14 @@ const PARENT_GAP_FT = 200;
 const TIGHT_FT = 60;
 const DOMINATES = 3;
 const MIN_TOL_FT = 120;
+/* Category 5. NEAR_M is the placement slop audit:waypoint-elevations measured against real tracks
+   (118-183 m for non-summit pins), not a number picked to produce a wanted count. */
+const NEAR_M = 150;
+const NEAR_ELEV_FT = 1000;
 
 /* The analysis, separated from the I/O so --selftest can drive it with constructed rows. */
 export function analyse(rows) {
-  const out = { duplicate: [], identical: [], order: [], elevgap: [], comparable: 0, uncomparable: [] };
+  const out = { duplicate: [], identical: [], nearby: [], order: [], elevgap: [], comparable: 0, uncomparable: [] };
   for (const r of rows) {
     const wps = (r.waypoints || []).filter(placed);
     /* A route with fewer than two placed pins has NOTHING TO COMPARE, so it reports clean whatever
@@ -140,6 +153,30 @@ export function analyse(rows) {
     if (th) for (const w of wps) {
       if (w === th || /trailhead/.test(typeOf(w)) || !same(w, th)) continue;
       out.duplicate.push({ id: r.id, pin: `${w.type} | ${w.name}`, impossible: IMPOSSIBLE_AT_CAR.test(typeOf(w)), trailhead: th.name });
+    }
+
+    /* 5. NEARLY co-located, elevations far apart. Category 2 needs an IDENTICAL coordinate, and
+       measured over WA that is 2 of 39 such pairs — the other 37 sit 30-150 m apart and were
+       invisible to every check in the repo. The mechanism reads clearly once you look at a row: on
+       wa_preacher_mountain_scramble the "5,200 ft tarn" is 34 m from the "Rainy Creek bridge" at
+       1,200 ft, on ground the DEM reads at 1,375. The chain's names and elevations ascend perfectly
+       sensibly while its COORDINATES stall and repeat earlier ones.
+         150 m is the placement slop audit:waypoint-elevations measured, so two pins inside it are
+       indistinguishable positions rather than two nearby places; 1,000 ft is far more than any
+       hillside spans in 150 m and far more than a rounded estimate explains.
+         IT DOES NOT SAY WHICH HALF IS WRONG, and must not. At 138 m "Spire Col" claims 7,000 ft on
+       ground reading 7,671 — that col is real and near that summit, so its COORDINATE is likely
+       right and its ELEVATION wrong, the opposite repair from the co-located cases. Read both. */
+    for (let i = 0; i < wps.length; i++) for (let j = i + 1; j < wps.length; j++) {
+      const a = wps[i], b = wps[j];
+      if (same(a, b)) continue;                       // category 2 owns those
+      const d = metres(a, b);
+      const ea = +a.elev, eb = +b.elev;
+      if (!(d <= NEAR_M) || !Number.isFinite(ea) || !Number.isFinite(eb)) continue;
+      const gap = Math.abs(ea - eb);
+      if (gap < NEAR_ELEV_FT) continue;
+      out.nearby.push({ id: r.id, metres: d, elevDelta: gap,
+        a: `${a.type} | ${a.name} (${a.elev ?? "-"})`, b: `${b.type} | ${b.name} (${b.elev ?? "-"})` });
     }
 
     for (let i = 0; i < wps.length; i++) for (let j = i + 1; j < wps.length; j++) {
@@ -259,6 +296,28 @@ function selftest() {
     ["a TRAILHEAD pair still reports the elevation contradiction — the DUPLICATE test only prints topout/summit",
       [{ id: "x", waypoints: [{ type: "Trailhead", name: "TH", lat: 46.8, lng: -121.6, elev: 3816 }, { type: "Campsite", name: "Camp", lat: 46.8, lng: -121.6, elev: 5950 }] }],
       o => o.identical.length === 1 && o.identical[0].selfContradicting && o.identical[0].involvesTrailhead],
+    /* Category 5. The real case is wa_preacher_mountain_scramble: a "5,200 ft tarn" 34 m from a
+       1,200 ft creek bridge. ~0.0004 deg of latitude is ~44 m. */
+    ["two pins 44 m apart claiming 4,000 ft apart cannot both be right",
+      [{ id: "x", waypoints: [{ type: "Junction", name: "bridge", lat: 47.5393, lng: -121.5349, elev: 1200 },
+                              { type: "Junction", name: "tarn", lat: 47.5397, lng: -121.5349, elev: 5200 }] }],
+      o => o.nearby.length === 1 && Math.round(o.nearby[0].elevDelta) === 4000],
+    /* MUST STAY SILENT. Both are correct data, and a detector that fires on them turns the category
+       into noise people learn to skip. */
+    ["44 m apart with a believable 300 ft between them is NOT a finding",
+      [{ id: "x", waypoints: [{ type: "Junction", name: "a", lat: 47.5393, lng: -121.5349, elev: 5200 },
+                              { type: "Junction", name: "b", lat: 47.5397, lng: -121.5349, elev: 5500 }] }],
+      o => o.nearby.length === 0],
+    ["4,000 ft apart and 2 km apart is an ordinary approach, NOT a finding",
+      [{ id: "x", waypoints: [{ type: "Junction", name: "a", lat: 47.5393, lng: -121.5349, elev: 1200 },
+                              { type: "Junction", name: "b", lat: 47.5573, lng: -121.5349, elev: 5200 }] }],
+      o => o.nearby.length === 0],
+    /* An IDENTICAL coordinate belongs to category 2 and must not be counted twice — the double-count
+       this audit already had to fix once when its categories overlapped. */
+    ["an identical coordinate stays with category 2 and is NOT also reported as nearby",
+      [{ id: "x", waypoints: [{ type: "Base", name: "B", lat: 48, lng: -120, elev: 3000 },
+                              { type: "Summit", name: "S", lat: 48, lng: -120, elev: 5000 }] }],
+      o => o.identical.length === 1 && o.nearby.length === 0],
     ["a SAME-TYPE pair still reports it — dedupeWaypoints would merge these and lose one",
       [{ id: "x", waypoints: [{ type: "Hazard", name: "H1", lat: 47.4, lng: -120.7, elev: 7800 }, { type: "Hazard", name: "H2", lat: 47.4, lng: -120.7, elev: 7600 }] }],
       o => o.identical.length === 1 && o.identical[0].selfContradicting && o.identical[0].sameType],
@@ -387,6 +446,7 @@ console.log(`1 DUPLICATE           non-trailhead pin ON the trailhead   : ${out.
 console.log(`2 SELF-CONTRADICTING  one coordinate, elevations >${ELEV_SAME_POINT_FT} ft apart: ${selfC.length}  (of ${out.identical.length} sharing a coordinate at all)`);
 console.log(`3 ORDER               summit is not the highest pin        : ${out.order.length}  (${out.order.filter(o => o.topoutAboveSummit).length} with a TOPOUT above its own summit)`);
 console.log(`4 ELEVGAP             pin above the route's own high point : ${out.elevgap.length}  (${out.elevgap.filter(e => e.impossible).length} impossible by type — a summit/topout/base of the climb itself)`);
+console.log(`5 NEARLY CO-LOCATED   <=${NEAR_M} m apart, >=${NEAR_ELEV_FT} ft apart in height : ${out.nearby.length}  (on ${new Set(out.nearby.map(n => n.id)).size} routes; category 2 needs an IDENTICAL coordinate and sees almost none of these)`);
 
 if (selfC.length) {
   console.log(`\n--- SELF-CONTRADICTING: one point cannot be at two heights ---`);
@@ -396,6 +456,15 @@ if (selfC.length) {
     const also = [h.involvesTrailhead ? "also a DUPLICATE at the trailhead" : null,
                   h.sameType ? "same type — dedupeWaypoints would MERGE these and lose one" : null].filter(Boolean);
     console.log(`  ${String(h.elevDelta).padStart(5)} ft apart  ${h.id}${also.length ? `   [${also.join("; ")}]` : ""}\n        ${h.a}\n        ${h.b}`);
+  }
+}
+if (out.nearby.length) {
+  console.log(`\n--- NEARLY CO-LOCATED: no terrain holds both of these claims ---`);
+  console.log(`Which half is wrong is NOT decided here and the two repairs are opposite. Where the pins`);
+  console.log(`are all but on top of each other the coordinate was copied; at the far end of the radius`);
+  console.log(`the two places may be genuinely distinct and the ELEVATION the wrong record. Read both.\n`);
+  for (const h of out.nearby.sort((a, b) => b.elevDelta - a.elevDelta)) {
+    console.log(`  ${String(Math.round(h.elevDelta)).padStart(5)} ft apart, ${String(Math.round(h.metres)).padStart(3)} m away  ${h.id}\n        ${h.a}\n        ${h.b}`);
   }
 }
 if (GROUND && (selfC.length || out.elevgap.some(e => e.impossible))) {
