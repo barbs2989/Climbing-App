@@ -1539,7 +1539,9 @@ a build error, but a screen that renders wrong or not at all.
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
 - **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
-  SQUASH silently delete what an earlier PR added?** That guard interrogates a **merge commit** —
+  SQUASH silently delete what an earlier PR added?** **It RUNS on every push to main now**
+  (`.github/workflows/silent-revert-check.yml`), which it did not for most of its life — see the
+  wiring note at the end of this entry. That guard interrogates a **merge commit** —
   *"every identifier either parent introduced survives"* — but PRs here land as **squash** merges,
   so main's history contains no merge commit for them and the guard never runs on the thing that
   actually ships. The recorded incident is exactly that shape: **#778** added a resolver plus three
@@ -1669,6 +1671,34 @@ a build error, but a screen that renders wrong or not at all.
     `crewMemberById`/`crewMemberUids` and added `activeCrewMemberIds` in the same commit** — sharing
     *crew* and *member* — so that rule would have labelled the one real incident a rename and said
     nothing. A detector tightened until its healthy output is empty is one that no longer fires.
+  - **IT RAN NOWHERE UNTIL 2026-08-26, and the day it was wired is the argument for wiring it.**
+    On that one day: `#1248` removed four files and two flags belonging to three merged PRs,
+    `#1267` removed four more flags (restored by `#1277` an hour later), and `#1249` changed a
+    timeout back that nothing noticed for hours. Every one was found by a person happening to
+    look — the #724 shape exactly, where `check:overlay-scroll` had gone red on main and nobody
+    knew because nothing ran it.
+    - **PUSH-triggered, not scheduled, unlike the other drift workflows.** Drift in a database
+      appears at an unknown time, so you poll. A silent revert appears at a KNOWN one — the merge
+      — and the useful report names that merge while its author is still around. A schedule would
+      tell you tomorrow morning.
+    - **`--fail-on-silent` is OPT-IN, so the report-only contract is untouched.** Run by hand it
+      still exits 0 for any finding and 1 only for a broken scan. The gate is deliberately
+      narrower than "any SILENT row" and reuses the audit's own two discriminators: a SILENT
+      **definition** removal, or one commit removing files added by **several different** commits
+      (the stale-base fingerprint). A **single-file** removal never trips it — over 500 commits
+      every hit of that rule was a PROMOTION, and a gate that argues with correct work is one
+      people learn to ignore.
+    - Proven against the real history rather than a fixture, both ways: `--ref 2bd9a5d --commits 40`
+      exits **1** naming 4 reverted definitions, `--ref 68bb307 --commits 12` exits **1** naming
+      `68bb3074 removed 4 file(s) added by 3 different commits`, current main exits **0**, and the
+      same #1267 window WITHOUT the flag exits **0**.
+    - **`fetch-depth: 0` is load-bearing and the script now enforces it.** `actions/checkout`
+      defaults to depth 1, so the audit would walk ONE commit, find nothing missing and report
+      green having asked almost nothing — a fail-open introduced BY the wiring. A walk shorter
+      than `--commits` is a note by default and **fatal** under `--fail-on-silent`.
+    - **80 commits, because the window must reach the ADDING commit.** #1239 was reverted 27
+      commits later; a 12-commit window reports that exact history clean. Measured across nine
+      12-commit windows of recent history: 0 findings, i.e. a short window is quiet *and blind*.
 - **`check:migration-claims`** asks whether two **open PRs** claim the same migration
   number. `check:migrations` already refuses two files sharing a number in the checkout and
   runs inside `npm run build` — but it cannot see this failure, because when either PR is
