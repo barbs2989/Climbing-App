@@ -2695,6 +2695,26 @@ a build error, but a screen that renders wrong or not at all.
     figures and says which one the times used.
   - **ONE-SIDED, like the audit.** Too little gain is impossible; too much is not, because a real
     route rolls over bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **THE CLIMBING VERTICAL IS CREDITED FIRST, and getting that wrong is how this shipped a defect.**
+    `scarfHrs` is the HIKE leg and `techHrs` the CLIMBING leg, so `gain_ft` is the **approach**
+    gain — trailhead to the base — not trailhead to summit. Summit − trailhead therefore includes
+    vertical the PITCHES already account for. As first merged the caveat accused **36 of 87** routes
+    whose gain was fine: `wa_liberty_traverse` is **26 pitches over a 2,520 ft rise**, so the walk
+    accounts for none of it and its stored 2,001 ft is entirely plausible. Subtract `pitches × 35 m`
+    (the app's own default) before judging; a route with no pitch count subtracts nothing, matching
+    what the app credits it for **time**. **87 → 51.**
+  - The quoted figure is the **walking** rise for the same reason — naming the whole-outing rise
+    beside a claim about the approach overstates it by exactly the climbing. Tahoma Glacier still
+    reads 11,506 ft because it records **no pitches**; checked, not assumed.
+  - **It was found by asking the same question of the SIBLING column, and that non-finding is why.**
+    The `dist_km` version produced **160 candidates and all were noise** — `dist_km` is approach-only
+    while a summit waypoint's cumulative `distMi` includes the climbing, so the two measure different
+    things. Realising that is what turned the objection back onto `gain_ft`, where it applied.
+    Two traps inside that measurement: `max(distMi)` picks up **return-leg pins**
+    (`wa_mount_rahm_standard`'s furthest is *"Trailhead / border return"*), and scoping to the summit
+    pin was necessary but **not** sufficient. Sinuosity against the straight-line chord is
+    **unimodal** (p50 1.78), so `distMi` is NOT holding two conventions — that hypothesis is dead,
+    do not re-derive it.
   - **The 300 ft slack is the audit's own, not a fresh threshold.** The shortfall distribution is
     **continuous** — p50 805 ft, p90 2,774, max 6,499 — with no void to cut at, so a magnitude bar
     would be fitted to the answer. Routes that RECORD something at the implied start are excluded:

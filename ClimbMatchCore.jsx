@@ -165,13 +165,26 @@ const gainBelowOwnPins=route=>{
   if(!th.length||!su.length)return null;
   const top=Math.max.apply(null,su),bottom=Math.min.apply(null,th);
   const rise=top-bottom;
-  if(!(rise>0)||g>=rise-300)return null;
+  /* CREDIT THE CLIMBING FIRST. `scarfHrs` is the HIKE leg and `techHrs` the climbing leg, so
+     `gain_ft` is the APPROACH gain — trailhead to the base — not trailhead to summit. Subtracting
+     the vertical the app itself attributes to the pitches (count x 35 m, its own default) is what
+     keeps this from accusing a correct value: wa_liberty_traverse is 26 pitches over a 2,520 ft
+     rise, so the walk accounts for NONE of it and its stored 2,001 ft is entirely plausible.
+     Measured: this is the difference between 87 routes flagged and 51, and all 36 it removes are
+     ones where the pitch count alone could explain the gap. A route with no pitch count subtracts
+     nothing, which matches what the app credits it for time. */
+  const _p=_uNum(route.pitches);
+  const climbFt=(_p&&_p>0)?_p*35*3.28084:0;
+  const walkRise=rise-climbFt;
+  if(!(rise>0)||!(walkRise>0)||g>=walkRise-300)return null;
   /* A row that RECORDS something at the height the stored gain implies is using the documented
      convention - measured from a high camp or the base of the climb - and is not wrong. */
   const implied=top-g;
   const recorded=wps.map(_wpElevFt).filter(n=>n!==null).some(n=>Math.abs(n-implied)<=300);
   if(recorded)return null;
-  return {gainFt:g,riseFt:rise,shortFt:rise-g};
+  /* riseFt is the WALKING rise the sentence is about, not the whole-outing rise — quoting the
+     latter beside a claim about the approach would overstate by the climbing vertical. */
+  return {gainFt:g,riseFt:Math.round(walkRise),shortFt:Math.round(walkRise-g),climbFt:Math.round(climbFt)};
 };
 const routeAscentFt=route=>{if(route.gainFt!=null&&route.gainFt>0)return route.gainFt;const itin=(route.itinerary&&route.itinerary.days&&route.itinerary.days.length)?route.itinerary.days.reduce((a,d)=>a+(d.gainFt||0),0):0;return itin||route.gainFt||null;};
 const uMass=lb=>uImp()?lb+" lb":Math.round(lb*0.4536)+" kg";
