@@ -102,6 +102,11 @@ const agrees = [
      the column (measured: 219x 5, 141x 4, 84x 3, 42x 2, 12x 1), and the enum row stores that
      number rather than a phrase. */
   ["crowds", { solitudeRating: 4 }, { solitudeRating: 4 }, "two climbers pick the same solitude rating"],
+  /* difficulty is the best-behaved field in the sweep: 8,029 routes, every axis an INTEGER 1-5
+     with exactly five distinct values. Five pickers, so agreement is byte-identical. */
+  ["difficulty", { physical: 3, technical: 4, exposure: 2, commitment: 1, routefinding: 2 },
+    { technical: 4, physical: 3, routefinding: 2, exposure: 2, commitment: 1 },
+    "same five axes, keys in a different order"],
   ["partnerRequirements", { fitnessSpec: { hiking: "1,000 ft/hr" } },
     { fitnessSpec: { hiking: "1,000 FT/HR " } }, "same nested fitness fact, different typing"],
   /* A NESTED number compares exactly through _agreeJson — JSON.stringify(4.8) and (4.9) are
@@ -138,6 +143,7 @@ const differ = [
      inside _agreeJson changed NOTHING they assert and the case reported a false pass. Day order
      is a fact: day 1 approach / day 2 summit is not day 1 summit / day 2 approach. */
   ["crowds", { solitudeRating: 4 }, { solitudeRating: 2 }, "different solitude ratings"],
+  ["difficulty", { exposure: 2 }, { exposure: 5 }, "different exposure ratings"],
   // Tolerance must not swallow a genuinely different walk: 4.8 vs 9.5 miles is another approach.
   ["approachVariants", [{ name: "Snow Creek trail", distMi: 4.8 }], [{ name: "Snow Creek trail", distMi: 9.5 }],
     "same name, a distance twice as long"],
@@ -161,6 +167,6 @@ if (normEditStr("5.10a") !== normEditStr("5.10b")) ok("normEditStr keeps distinc
 else fail("normEditStr collapsed two different grades");
 
 clean();
-if (cases < 23) dead(`only ${cases} case(s) ran`);
+if (cases < 26) dead(`only ${cases} case(s) ran`);
 console.log(`\ncheck:consensus-clustering: ${cases} case(s), ${failures} failure(s)`);
 process.exit(failures ? 1 : 0);

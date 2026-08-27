@@ -208,7 +208,7 @@ console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a
 const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
   ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
   ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
-  ["LOGISTICS_KEYS", "approachLogistics"]];
+  ["LOGISTICS_KEYS", "approachLogistics"], ["DIFFICULTY_KEYS", "difficulty"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
