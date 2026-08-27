@@ -1,18 +1,12 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-08-19",
+  "generatedAt": "2026-08-27",
   "tables": {
-    "account_links": [
-      "id",
-      "linked_at",
-      "primary_id",
-      "secondary_id",
-      "status"
-    ],
     "areas": [
       "area_type",
       "avy_zone",
       "blurb",
+      "coords_approx",
       "dominant_discipline",
       "elevation",
       "elevation_ft",
@@ -25,8 +19,7 @@
       "path",
       "prominence_ft",
       "region",
-      "route_count",
-      "source"
+      "route_count"
     ],
     "belay_catches": [
       "belayer_id",
@@ -406,6 +399,7 @@
     ],
     "routes": [
       "access",
+      "access_checked_at",
       "aid_grade",
       "alpine_draws",
       "alpine_grade",

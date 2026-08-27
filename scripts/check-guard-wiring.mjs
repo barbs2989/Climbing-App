@@ -81,6 +81,14 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-column-drift.mjs":
+    "fetches PostgREST's OpenAPI root, which returns 401 to the anon key and so needs the " +
+    "SERVICE key — the credential this repo keeps out of CI, the same rule that put " +
+    "check:signed-in on two durable anon-key accounts. Unlike check:counts it cannot be put " +
+    "on a schedule with what CI is allowed, because there is no anon-key route to the schema. " +
+    "Run it by hand after any migration, and after any DDL applied out of band — which is the " +
+    "moment it exists for: it found a live column that no migration, and no commit in the whole " +
+    "history, describes.",
   "check-function-drift.mjs":
     "reads pg_proc.prosrc and compares it against the migrations, so it needs the MANAGEMENT " +
     "API token for the same reason its sibling check-function-columns does — CI must not hold a " +

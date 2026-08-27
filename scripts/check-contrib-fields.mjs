@@ -116,7 +116,61 @@ if (dead.length) {
 // now lives in lib. Both files are required, so losing either is ANCHOR LOST rather than a
 // quietly narrower run.
 const objKeys = read("lib/objKeys.js");
-const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"]];
+/* Every file that renders one of these objects. A reader outside this list is invisible, and an
+   invisible reader reads as a dead sub-key — the direction that tells an author to delete working
+   wiring, so a file that cannot be read is fatal rather than skipped. */
+const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
+const readerCorpus = READER_FILES.map((f) => {
+  try { return read(f); } catch {
+    console.error(`check:contrib-fields: cannot read ${f}, which holds panel readers — the scan would under-report.`);
+    process.exit(1);
+  }
+}).join("\n");
+if (readerCorpus.length < 200000) {
+  console.error(`check:contrib-fields: reader corpus is only ${readerCorpus.length} chars — the walk broke.`);
+  process.exit(1);
+}
+/* A destructure names the key with no dot in front of it, so collect the names bound out of
+   `= <anything>.field` and treat those as reads too. Scoped to that field's own destructuring
+   rather than to every `{a,b}` in 1.5MB of JSX, which would make the test vacuous. */
+function readsSubKey(corpus, field, key) {
+  if (new RegExp("\\." + key + "\\b").test(corpus)) return true;
+  const pats = [...corpus.matchAll(new RegExp("\\{([^{}]{0,300})\\}\\s*=\\s*[A-Za-z_$][\\w$]*\\." + field + "\\b", "g"))];
+  return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
+}
+
+/* THE THREE LISTS MUST AGREE, and a mismatch is a BLANK SHEET rather than a missing field.
+   renderInput does `OBJ_STATE[f.type][0]` for any type in OBJ_KEYS, so a type registered in
+   OBJ_KEYS with no OBJ_STATE entry throws on the first render of the contribute sheet — the
+   climber taps a pencil and gets nothing. And a type with no FIELDS entry is a section id that
+   scrolls nowhere, which is the defect that had four `gear` pencils opening a section the form
+   never rendered. Cheap to assert, invisible until somebody opens the sheet. */
+const objKeysTypes = [...(rd.match(/const OBJ_KEYS=\{([^}]*)\}/) || [, ""])[1]
+  .matchAll(/([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
+const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\};/) || [, ""])[1]
+  .matchAll(/([A-Za-z_$][\w$]*)\s*:\s*\[/g)].map((m) => m[1]);
+if (objKeysTypes.length < 3) {
+  console.error("check:contrib-fields: parsed fewer than 3 OBJ_KEYS types — ANCHOR LOST.");
+  process.exit(1);
+}
+const noState = objKeysTypes.filter((t) => !objStateTypes.includes(t));
+if (noState.length) {
+  console.error(`check:contrib-fields: ${noState.length} OBJ_KEYS type(s) have no OBJ_STATE entry: ${noState.join(", ")}`);
+  console.error("renderInput reads OBJ_STATE[f.type][0], so opening the contribute sheet throws.");
+  process.exit(1);
+}
+const noField = objKeysTypes.filter((t) => !new RegExp('\\{k:"' + t + '"').test(rd));
+if (noField.length) {
+  console.error(`check:contrib-fields: ${noField.length} OBJ_KEYS type(s) are in no FIELDS entry: ${noField.join(", ")}`);
+  console.error("The editor exists and the form never offers it, so nothing can reach the column.");
+  process.exit(1);
+}
+console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a form field`);
+
+const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
+  ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
+  ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
+  ["LOGISTICS_KEYS", "approachLogistics"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
@@ -129,7 +183,14 @@ for (const [constName, field] of OBJ_FIELDS) {
     console.error(`check:contrib-fields: parsed 0 sub-keys out of ${constName} — the scan broke.`);
     process.exit(1);
   }
-  const unread = subKeys.filter((k) => !new RegExp("\\." + k + "\\b").test(rd));
+  // TWO WAYS A SUB-KEY IS READ, and testing only the first reported five correct panels as
+  // dead. `.key` is the obvious one. But CrowdsPanel, PartnerRequirementsPanel and
+  // SeasonalGuidancePanel DESTRUCTURE — `const {estimatePerSeason, peakTraffic,
+  // solitudeRating} = route.crowds` — which contains no `.estimatePerSeason` anywhere. And
+  // those panels live in EnrichmentPanels.jsx while this scanned RouteDetail.jsx alone, so the
+  // readers were in a file the guard never opened. Same shape as this repo's "grep the app, not
+  // just lib/db.js".
+  const unread = subKeys.filter((k) => !readsSubKey(readerCorpus, field, k));
   if (unread.length) {
     console.error(`check:contrib-fields: ${unread.length} sub-key(s) of \`${field}\` are offered by the form and read by nothing:\n`);
     for (const k of unread) console.error(`  ${field}.${k}`);

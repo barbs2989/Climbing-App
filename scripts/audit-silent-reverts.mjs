@@ -277,7 +277,44 @@ if (fastPath) {
    Tracked by PATH, not by content, because there is no token to search for. Free of extra
    subprocesses: the per-commit diff is already split per file above, and git marks an addition with
    `new file mode`. */
-const FILE_OF_INTEREST = /\.(jsx?|mjs|json|sql)$/;
+/* `.yml` IS TRACKED, AND ITS ABSENCE WAS A HOLE IN EXACTLY THIS AUDIT'S OWN SUBJECT. The extension
+   list was jsx/mjs/json/sql, so a merge deleting a WORKFLOW was invisible here -- and CI wiring is
+   the one kind of loss that reports nothing on its own. A guard whose workflow vanishes does not go
+   red; the PR check list simply gets shorter, and this repo already records that "the tell is the
+   COUNT, never the colour" and that nobody reads counts. #724 is the precedent: check:overlay-scroll
+   had gone red on main and nobody knew, because nothing ran it.
+
+   It was not hypothetical when it was found. `silent-revert-check.yml` was ADDED (#1290) and DELETED
+   (#1321) inside this audit's own 120-commit window, and the audit -- running on every merge, over
+   that exact window -- reported nothing either time. It could not see its own sibling workflow
+   disappear.
+
+   MEASURED BEFORE WIDENING, over ALL first-parent history rather than a sample: 10 .yml files added,
+   1 absent at HEAD, and it classifies SILENT because #1321 names the workflows it consolidated by PR
+   number rather than by filename. Within a 120-commit window it is 2 added and 1 absent. So the
+   widening costs ONE extra printed row and ZERO extra gate trips, because a single-file SILENT
+   removal deliberately does not trip --fail-on-silent. The case that WOULD trip it is the one worth
+   catching: a stale-base squash carrying a workflow away alongside files from other commits, which
+   is the #1248 shape with CI wiring in it.
+
+   DO NOT A/B THIS BY COMPARING TWO RUNS TAKEN AT DIFFERENT HEADS. The before/after readings looked
+   like 158 files added and then 179 -- twenty-one more, which is nowhere near the two .yml files the
+   window actually contains. The window had SLID fourteen commits between the two runs, and the whole
+   difference is that slide. A count from this audit is a statement about a window, so hold the ref
+   fixed or compute the delta directly with `git log --diff-filter=A` over the same range.
+
+   THE STRONGER VERSION -- tracking individual JOBS inside a workflow -- WAS MEASURED AND REJECTED.
+   Across 46 commits touching .github/workflows/ exactly two jobs have ever been removed (`reverts`,
+   `signed-in`) and BOTH are named in their own commit subject, so a detector would report 2 findings
+   and 0 real: the 0%-precision class this file already refuses to gate on. A 2-space YAML key is not
+   specific to a job either -- `push`, `workflow_dispatch` and `group` all sit at that indent, and two
+   of the four keys the scan found were `on:` entries rather than jobs. Do not re-derive it without
+   re-measuring; the class may grow.
+
+   Nothing else needs widening. Presence for a file is `fileExists`, which reads the tree and is
+   extension-agnostic; only COLLECTION was filtered. The token/definition half stays JS-shaped,
+   because there is no named definition inside a workflow that this audit could search the tree for. */
+const FILE_OF_INTEREST = /\.(jsx?|mjs|json|sql|ya?ml)$/;
 const addedFiles = new Map(); // path -> {sha, subject}
 
 const added = new Map(); // token -> {kind, sha, subject}

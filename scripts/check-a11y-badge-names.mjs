@@ -77,6 +77,16 @@ const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : 
 const DUMP = argOf("--dump");
 const PORT = 5290;
 const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
+
+// --only=route walks JUST the route detail screen, for the injection suite: the full sweep is 65
+// screens and an injection needs two runs of it. It REDUCES COVERAGE, so it can never print the
+// normal verdict -- a flag that makes a partial run look complete is exactly the false pass every
+// guard in this file is built to refuse. Not for CI, and the build does not pass it.
+const ONLY = (process.argv.find((x) => x.startsWith("--only=")) || "").slice(7);
+if (ONLY && ONLY !== "route") {
+  console.error(`--only=${ONLY} is not a thing; the only reduced walk is --only=route`);
+  process.exit(1);
+}
 const CHROME_ONLY = 90; // the wordmark + nav labels, and nothing else
 
 const log = (...a) => console.log(...a);
@@ -156,6 +166,108 @@ page.setDefaultTimeout(30000);
 const cdp = await page.context().newCDPSession(page);
 await cdp.send("Accessibility.enable");
 await cdp.send("DOM.enable");
+
+// SECTION 2 — the same defect OFF a control, which section 1 cannot see.
+//
+// Section 1 judges by the CONTROL NAME Chrome computed, which is the right instrument and the
+// reason it is trustworthy: an aria-label fix changes no structure at all and correctly reads as
+// fixed. It is also why it is scoped to controls -- a plain <div> has no computed name, so a
+// widened selector would find candidates and drop every one at the confirm step.
+//
+// That scope let a real defect through. The route page's conditions list rendered
+// {pat.label}{pat.when ? <span style={{marginLeft:7}}>...</span> : null} as
+// "Best windowmid-Jul to early Sep", on a plain heading div. Same shape as #740, invisible here.
+//
+// THE INSTRUMENT IS innerText, AND THE OBVIOUS ALTERNATIVE WAS TESTED AND REJECTED. The tempting
+// judgement is the AX tree StaticText nodes, on the theory that Chrome merges adjacent inline
+// text into one. Measured on four synthetic shapes, Accessibility.getPartialAXTree with
+// fetchRelatives returned NO StaticText at all for both inline cases -- the two that matter.
+// innerText separates all four correctly, because it is computed from LAYOUT, which is the same
+// thing that decides whether a separator exists:
+//
+//   inline + margin   "Best windowmid-Jul"      <- glued
+//   flex row          "Best window\nmid-Jul"
+//   inline + space    "Best window mid-Jul"
+//   block child       "Best window\nmid-Jul"
+//
+// THREE FILTERS, EVERY ONE OF THEM A FALSE POSITIVE THIS SCAN ACTUALLY PRODUCED:
+//
+//   not rendered  A display:none GRANDPARENT is missed by checking the parent's display, and
+//                 inside one innerText falls back to textContent -- which carries no separators,
+//                 so EVERY boundary in the subtree looks glued. All three findings of one early
+//                 run were the seed area browser, dead under USE_DB, with zero-area rects.
+//   local text    A body-wide includes() matches a short numeric needle like "31" somewhere else
+//                 on a busy page. The nearest common ancestor is the smallest rendered text that
+//                 must contain both fragments.
+//   visual gap    The app wordmark is two spans, "Climb" and "Match", flush against each other.
+//                 A screen reader says "ClimbMatch", which is exactly what the eye reads. The
+//                 defect is a gap the eye GETS and the accessibility tree does not, so contiguous
+//                 fragments are correct and must not be reported.
+//
+// No backticks anywhere in this literal: one ends the string. Same trap check:selected-state
+// records, and it bit again while this was being written.
+// A REAL FUNCTION, NOT A TEMPLATE STRING, and that is a bug fix rather than a preference. As a
+// template literal this body read `/\w/`, which JS evaluates to `/w/` -- a regex matching the
+// LETTER w. The scan therefore matched almost nothing and reported a clean app; the injection is
+// what caught it, since the guard was green either way. A template literal also cannot contain a
+// backtick, the trap check:selected-state records and which bit here too. page.evaluate takes a
+// function, exactly as findCandidates above does, and neither hazard exists.
+const scanOffControl = () => page.evaluate(() => {
+  const CTRL = "button,summary,select,a[href],[role=button],[role=tab],[role=link],[role=menuitem],[role=checkbox],[role=switch],[role=option]";
+  const out = [];
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const parts = [];
+  let n;
+  while ((n = w.nextNode())) {
+    if (!n.textContent || !n.parentElement) continue;
+    parts.push({ t: n.textContent, owner: n.parentElement, node: n });
+  }
+  let examined = 0;
+  for (let i = 1; i < parts.length; i++) {
+    if (parts[i].owner === parts[i - 1].owner) continue;
+    examined++;
+    const prev = parts[i - 1].t, cur = parts[i].t;
+    // \w on BOTH sides, never "no whitespace": punctuation is a genuine separator, so a chip
+    // that starts with a tick, arrow or star announces fine and must not be reported.
+    if (!/\w/.test(prev.slice(-1)) || !/\w/.test(cur.slice(0, 1))) continue;
+    const needle = (prev.match(/\w+$/) || [""])[0] + (cur.match(/^\w+/) || [""])[0];
+    if (needle.length < 2) continue;
+    const el = parts[i].owner;
+    if (el.closest(CTRL) || parts[i - 1].owner.closest(CTRL)) continue;
+    const rr = (node) => { const r = document.createRange(); r.selectNodeContents(node); return r.getBoundingClientRect(); };
+    let gap = 0, sameLine = false;
+    try {
+      const ra = rr(parts[i - 1].node), rb = rr(parts[i].node);
+      // NOT RENDERED means nothing is announced, and it is a false positive this scan actually
+      // produced: a display:none GRANDPARENT is missed by checking the parent's display, and
+      // inside one innerText falls back to textContent -- which carries no separators, so every
+      // boundary in the subtree looks glued. All three findings of one early run were the seed
+      // area browser, dead under USE_DB, with zero-area rects.
+      if ((!ra.width && !ra.height) || (!rb.width && !rb.height)) continue;
+      sameLine = Math.abs(ra.bottom - rb.bottom) <= 4;
+      gap = rb.left - ra.right;
+    } catch { continue; }
+    // EXCLUDE ONLY THE VISUALLY CONTIGUOUS CASE. Requiring a shared visual line MISSED the real
+    // defect at 390px, where the chip WRAPS -- and a soft inline wrap puts no separator into
+    // innerText (measured: the wrapped case still reads "Best windowlate spring to fall"). A
+    // block child does get a newline and is already excluded by the text test below. The only
+    // thing to excuse is the app wordmark: "Climb" and "Match", flush, announced as the eye reads.
+    if (sameLine && gap < 2) continue;
+    // LOCAL, NOT body-wide. A body-wide includes() matches a short numeric needle like "31"
+    // elsewhere on a busy page, reporting fragments layout had actually separated.
+    let anc = parts[i - 1].owner;
+    while (anc && !anc.contains(el)) anc = anc.parentElement;
+    if (!anc || !(anc.innerText || "").includes(needle)) continue;
+    out.push({
+      needle, gap: Math.round(gap), sameLine,
+      before: prev.slice(-26), after: cur.slice(0, 26),
+      tag: el.tagName.toLowerCase(),
+      style: (el.getAttribute("style") || "").replace(/\s+/g, " ").slice(0, 70),
+      ctx: (anc.textContent || "").trim().replace(/\s+/g, " ").slice(0, 70),
+    });
+  }
+  return { out, examined };
+});
 
 // Find controls whose visible text is assembled from more than one node, with a letter/digit
 // transition exactly at a node boundary. This runs in the page and only MARKS candidates —
@@ -281,10 +393,20 @@ const dump = {};
 let screensWalked = 0;
 let controlsScanned = 0;
 
+const foundOff = new Map();
+let boundariesExamined = 0;
+
 async function sweep(label) {
   const cands = await findCandidates();
   controlsScanned += cands.length;
   const confirmed = await confirm(cands);
+  const off = await scanOffControl();
+  boundariesExamined += off.examined;
+  for (const h of off.out) {
+    const key = h.needle + "|" + h.style;
+    if (!foundOff.has(key)) foundOff.set(key, { ...h, screens: new Set() });
+    foundOff.get(key).screens.add(label);
+  }
   screensWalked++;
   // Record the candidates too, not just the hits. A dump of "0 confirmed" tells you nothing
   // about whether the scan was looking at anything; the candidate list is how you check that
@@ -304,7 +426,7 @@ async function sweep(label) {
 }
 
 // 1. Every main tab.
-for (const t of TABS) {
+for (const t of ONLY ? [] : TABS) {
   await load(`?zt=${t}`, 2200, true);
   await sweep("tab:" + t);
 }
@@ -347,13 +469,13 @@ if (!routeOpen) {
 
 // 2. Every overlay the app declares. Discovered from source via the shared scaffold, so a
 //    modal added tomorrow is swept without anyone registering it here.
-const overlays = await page.evaluate(() => window.__overlays || []);
-if (!overlays.length) {
+const overlays = ONLY ? [] : await page.evaluate(() => window.__overlays || []);
+if (!overlays.length && !ONLY) {
   fail("scaffold", "no overlay states were discovered — the scaffold did not run, and nothing below was actually checked");
-} else {
+} else if (!ONLY) {
   log(`\n  ${overlays.length} overlay states discovered\n`);
 }
-assertKnownOverlays(overlays, fail);
+if (!ONLY) assertKnownOverlays(overlays, fail);
 // Some overlays are scoped to one screen, so opening them from the wrong tab renders
 // nothing and the sweep would scan a bare tab and call it clean. Take the first tab where
 // the overlay actually adds text — the same approach check:zero settled on.
@@ -364,7 +486,7 @@ const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "r
 // never mounted and silently drops it from the sweep. That is how coverage rots quietly.
 const lines = () => page.evaluate(() => (document.body.innerText || "").split("\n").map((s) => s.trim()).filter(Boolean));
 const tabLines = {};
-for (const t of OVERLAY_TABS) {
+for (const t of ONLY ? [] : OVERLAY_TABS) {
   await load(`?zt=${t}`, 1200, true);
   tabLines[t] = new Set(await lines());
 }
@@ -407,6 +529,35 @@ if (!controlsScanned && !fails.length) {
   process.exit(1);
 }
 
+// Section 2 scans BOUNDARIES, not controls, so it needs its own floor: this app assembles text
+// from many nodes on every screen, and zero boundaries examined means the walker broke rather
+// than that the app is one big text node.
+if (!boundariesExamined && !fails.length) {
+  console.error("\ncheck:a11y-badges: section 2 examined NO cross-element text boundaries at all across " + screensWalked + " screens.");
+  console.error("That is a broken walker, not a clean app. Refusing to report a pass.\n");
+  process.exit(1);
+}
+
+if (foundOff.size) {
+  console.error(`\ncheck:a11y-badges: ${foundOff.size} place(s) OFF a control read as one welded token:\n`);
+  for (const f of foundOff.values()) {
+    console.error(`  <${f.tag} style="${f.style}">  reads as ${JSON.stringify(f.needle)}  (a ${f.gap}px gap the a11y tree does not have)`);
+    console.error(`      glued at ${JSON.stringify(f.before)} + ${JSON.stringify(f.after)}`);
+    console.error(`      in: ${JSON.stringify(f.ctx)}`);
+    console.error(`      seen on: ${[...f.screens].join(", ")}`);
+  }
+  console.error(`
+These are not controls, so no aria-label applies -- there is no name to fix. Put a real
+separator into the TEXT, or let layout supply one:
+
+  {label}{" "}{cond ? <span style={{marginLeft:7}}>{value}</span> : null}
+
+A margin is not a separator. Only a character in the text, or a block/flex boundary that makes
+the browser insert one, changes what is read out.
+`);
+  process.exit(1);
+}
+
 if (found.size) {
   console.error(`\ncheck:a11y-badges: ${found.size} control(s) announce two fragments welded into one token:\n`);
   for (const f of found.values()) {
@@ -440,5 +591,33 @@ if (fails.length) {
   process.exit(1);
 }
 
-log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays), ${controlsScanned} multi-node control(s) scanned, none announce a glued name.\n`);
+if (ONLY) {
+  log(`\ncheck:a11y-badges: PARTIAL RUN (--only=${ONLY}) — ${screensWalked} screen(s) only, tabs and overlays SKIPPED.`);
+  log(`  section 1: ${controlsScanned} control(s); section 2: ${boundariesExamined} boundar(ies). No findings.`);
+  log("  This is not a pass. Run without --only before believing the app is clean.\n");
+  process.exit(0);
+}
+log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays).`);
+log(`  section 1: ${controlsScanned} multi-node control(s) scanned, none announce a glued name.`);
+// Say what section 2 covered. A verdict naming only section 1 would leave the next reader
+// unable to tell from the output that the off-control scan exists at all -- which is how a
+// coverage hole gets rediscovered rather than read.
+log(`  section 2: ${boundariesExamined} cross-element text boundar(ies) examined, none read as one welded token.\n`);
 process.exit(0);
+
+// INJECTION — scripts/oneoff/inject-glued-offcontrol-case.mjs, and re-run it after ANY change to
+// section 2. It removes the {" "} from RouteDetail's conditions list, which is the tree that
+// really shipped "Best windowmid-Jul to early Sep", and drives this guard with --only=route.
+//
+// SECTION 2 SHIPPED BROKEN AND EVERY SIGNAL SAID OTHERWISE. Its first version was a template
+// literal, and inside one `\w` is an escape that collapses to a literal "w" -- so the needle
+// regex was /w/ and the scan matched almost nothing. It reported a clean app across 65 screens.
+// Nothing looked wrong: the guard was green before the widening and after it, the fail-closed
+// floor was satisfied (it counts boundaries EXAMINED, which is a real number whether or not the
+// needle logic works), and "0 findings" was the expected answer. Only the injection against a
+// defect that had genuinely shipped told the truth.
+//
+// Two consequences worth keeping. The scan is a FUNCTION passed to page.evaluate, as
+// findCandidates is, so neither the escaping trap nor the backtick trap can return. And a floor
+// that counts work done is not evidence that the work was correct -- the same lesson
+// check:dup-attrs records for its element counter.
