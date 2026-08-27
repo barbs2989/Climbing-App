@@ -6107,6 +6107,13 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
     - The probe's own fixture was wrong in the other direction: seed climbers really do carry
       `level:"Intermediate"`, so test climbers without one made every seed row look like the defect.
       **Check the seed shape before "fixing" the app to satisfy a fixture.**
+  - **`mods` has the same root cause with a different symptom: a DANGLING LABEL.** It is
+    `modIds.map(_asMember).filter(Boolean)`, so a failed profiles read empties it — and the word
+    **"Moderators"** rendered with nothing after it, the #654 shape (*"Last verified catch: · 0
+    partners confirmed"*). The whole **span** is gated, not just its text: an empty span is still a
+    flex item and still adds the row gap. Asserted in **both** directions — a failed read really
+    does empty `mods` (so the gate is not decorative) and a healthy one keeps them (so it is not
+    over-eager).
   - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
     the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
     recorded that the underlying disagreement was still real; this is that, closed.
