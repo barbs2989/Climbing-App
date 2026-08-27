@@ -2100,16 +2100,20 @@ a build error, but a screen that renders wrong or not at all.
     `verify-migrations-applied.mjs` checks that objects EXIST by name: `merge_accounts` exists,
     so it passes, while the live body is an older and broken version of the one 0035 defines.
     **Existence is not agreement.**
-  - **It found two on its first run, both latent, and the second one is a trap worth reading
-    before touching it.** `auto_archive_crews` writes `crews.archived_at` and `crews.status`,
-    neither of which exists; it is in **no migration at all**, so it was made by hand in the SQL
-    editor, and nothing calls it. `merge_accounts` writes `crews.user_id`, which does not exist —
-    and **must not be repaired on its own**. 0136 records why: the function reassigns
-    `climb_logs.user_id`, `vouches.from_id` and `profiles.account_type` for two arbitrary uuids
-    with **no `auth.uid()` check**, and the throw on that first statement is the only thing
-    making it inert. Fixing the column arms an account-takeover primitive. It needs an ownership
-    gate written in the same change. Both are in `KNOWN`, which records **reasons, not passes**,
-    and a **stale** entry fails.
+  - **It found two on its first run, both latent — and BOTH ARE NOW GONE, so read this as history.**
+    `auto_archive_crews` wrote `crews.archived_at`/`crews.status`, neither of which exists, and was
+    in **no migration at all** (hand-made in the SQL editor, called by nothing); `0167` dropped it,
+    reproducing its body verbatim so the intent stays in version control. `merge_accounts` wrote
+    `crews.user_id`, which does not exist, and `0170` dropped it with the whole account-linking
+    feature — `account_links` held **0 rows**.
+    - **The reason it was removed rather than repaired is the part worth keeping.** It reassigned
+      `climb_logs.user_id`, `vouches.from_id` and `profiles.account_type` for two arbitrary uuids
+      with **no `auth.uid()` check**, and the throw on that first statement was the only thing
+      making it inert. *Fixing the column would have armed an account-takeover primitive*, so a
+      repair had to add an ownership gate in the same change — and removing an unused feature beat
+      writing that gate. **Do not go looking for this function; it is not there.** `KNOWN` in both
+      guards is down to `handle_new_user` alone, verified by running them: `check:function-columns`
+      ok over 11 writing functions, `check:function-drift` 45 of 46 agreeing with 1 declared.
     - The obvious repair — re-apply 0035, which has `created_by` and is plainly the intended
       body — is precisely the dangerous one. *Read what a migration deliberately did NOT fix
       before finishing the job for it.*
@@ -2160,14 +2164,15 @@ a build error, but a screen that renders wrong or not at all.
     readiness with `isReady()`. The recorded reason for keeping them was that dropping a
     function git has never seen destroys the only record of the intent; `0167` answers that by
     reproducing **both bodies verbatim in the migration**, which puts them in version control
-    for the first time. `KNOWN` is down to `merge_accounts` here and `handle_new_user` in the
-    drift guard.
-  - Two `KNOWN` entries, each a claim about the live database, each failing when **stale**:
-    `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
-    account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
-    0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
-    hand-made functions. **An applied migration is history and must not be rewritten** — aligning
-    `handle_new_user` would take a new migration, not an edit to 0009.
+    for the first time. `KNOWN` is now **empty** here and `handle_new_user` alone in the drift
+    guard — `merge_accounts` was the last entry and `0170` dropped it.
+  - **ONE `KNOWN` entry** now, a claim about the live database that fails when **stale**:
+    `handle_new_user` (benign — live writes `public.profiles` where 0009 writes `profiles`, so the
+    **live** copy is the safer one, since it does not depend on `search_path`). `merge_accounts`
+    and the two untracked hand-made functions were declared here and are gone: `0167` dropped
+    `auto_archive_crews` and `is_crew_ready`, `0170` dropped `merge_accounts`. **An applied
+    migration is history and must not be rewritten** — aligning `handle_new_user` would take a new
+    migration, not an edit to 0009.
   - Fails **closed**: an unreachable database, no JSON, an empty catalog, fewer than 20 migrations,
     or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
     the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
