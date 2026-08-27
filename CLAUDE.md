@@ -1033,6 +1033,32 @@ a build error, but a screen that renders wrong or not at all.
       fails exactly **1**, naming the broken link. The healthy-side cases stay green in both — a
       state whose catalog genuinely is not built yet must still say so, and a count already in hand
       must not be overwritten by an error.
+  - **AND AN EARLY-RETURN SCREEN, which is the other half of the same blind spot.** `App` returns
+    early for nine screens and the **guide dashboard** is one, so it is not a tab `check:outage`
+    walks — and being a `position:fixed; inset:0` full-screen view with no `role="dialog"`,
+    `check:overlay-discovery` does not classify it as an overlay either.
+    - `useGuideProfile(uid)` handed back `undefined` for **two opposite states**: a climber who has
+      genuinely never applied, and a read that **failed** (react-query leaves `data` undefined on
+      error). The screen collapsed them, so an approved guide whose profile did not load was told
+      *"You haven't applied to guide yet."* above *"Settings → Become a guide starts an
+      application."* — a false claim about the user's own **history**, offering the wrong remedy.
+      Worse than the usual *"you have none"*.
+    - `check:read-failures` cannot see it: that guard scans **`lib/db.js`** and proves a failed read
+      throws, which `useGuideProfile` does. The conclusion is drawn at the reader.
+    - **The rest of the guide surfaces are CLEAN, checked rather than assumed** — `DbGuideDashboard`
+      already gates *"No inquiries yet."* and *"No reviews yet."* on `inqError`/`revError`, and
+      `DbGuides` gates *"No guides listed yet."* and *"No reviews yet."* on `guidesError`/`revError`.
+      Only the profile read was ungated.
+    - **`isGuideVerified(credentials || [])` is deliberately NOT gated**: a failed credentials read
+      drops the ✓ badge, which is **under**-claiming rather than a false statement, and there is no
+      second source to fall back to (unlike `check:verification-fallback`, where the session carries
+      the answer). Recorded so it is not re-derived as a defect.
+    - Executed rather than rendered, and here that is not convenience: the dashboard needs a session,
+      a portal and four queries, and it lives in `lib/` so it is not in the core bundle. `lib/db.js`
+      is ~164kB against core's ~1.1MB, so the second esbuild is cheap.
+    - Injection-tested: reverting the copy fails **3**; dropping the flag at the call site fails
+      exactly **1**, naming the broken link. The three never-applied cases stay green in both — a
+      climber who really has not applied must still be told where to.
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
