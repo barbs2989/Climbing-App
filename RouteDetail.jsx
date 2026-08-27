@@ -1262,13 +1262,30 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp}){
   if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
   if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
   const hikeInputsComplete=_missHike.length===0;const hikeCoversWholeDay=gainCoversWholeOuting(route);
+  /* ...and that flag now reaches the RETURN, not just the label. `hikeCoversWholeDay` is true when
+     the row's gain and loss agree to within 3% — 433 of the 484 WA rows that qualify have them
+     EXACTLY equal, which is a round trip or a traverse ending at its start elevation, not a
+     coincidence on a one-way approach. For those rows the tile is already relabelled "On foot" and
+     TECH STATS already says "Total ascent is the whole day from the trailhead, not just the walk
+     in" — and then the return leg added another 75% of that same walk on top. Label and arithmetic
+     contradicting each other on one screen: wa_ptarmigan_traverse read `21.6hr On foot` and then
+     put Est. return 16.2 hr after Est. summit.
+
+     SCOPED TO THE WALK BRANCH, and getting that wrong nearly shipped a second defect. A pitched
+     route's return is `techH*0.7` — the descent of the CLIMB, which the walk never double-counted
+     — so short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a
+     real descent leg from the 212 whole-outing rows that carry pitches. Only the `hikeH*0.75`
+     branch is affected.
+
+     This moves Est. return EARLIER, which is normally the dangerous direction; it is safe here
+     only because the figure removed was never a second leg, it was the first one counted twice. */
   /* A gain PRESENT and contradicted, as opposed to absent. _missHike above names what is
      missing; this names what is impossible. Both make the number below a floor, so they are
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
-  const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:hikeH*0.75);
+  const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
   const fmt=h=>{let total=Math.round(h*60);const day=Math.floor(total/1440);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   const late=retH>18.5,sumLate=!publishedIsWholeDay&&sumH>13,multiDay=route.campOptions&&route.campOptions.some(c=>c.stars>0);
   // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
