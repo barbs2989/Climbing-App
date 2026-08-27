@@ -68,6 +68,7 @@ npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
+npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -2403,6 +2404,55 @@ a build error, but a screen that renders wrong or not at all.
     or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
     the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
     classes the first run actually produced.
+- **`check:column-drift`** asks `check:function-drift`'s question of **tables**: is the live schema
+  the one the migrations describe? Reads the live DB, so **not** a build gate.
+  - **THE INCIDENT IT WAS WRITTEN FOR: `routes.access_checked_at` is live, holds 39 stamped rows,
+    is anon-readable — and NO migration, NO commit anywhere in history, and NO reader mentions
+    it.** The DATA shipped to production; the CODE did not. Found by verifying a memory note that
+    claimed the feature had landed: migration `0172`, `lib/road.js`, `accessCheckedLine()` and a
+    guard are all described in that note and none exists. *Verify a memory's file and column names
+    before recommending work on them* — the rule was already written down and this is what it
+    catches.
+  - **Three guards sit beside this and none can see it.** `check:schema` is a build gate asking
+    exactly one direction — does `lib/db.js` READ a column the snapshot lacks; an EXTRA column
+    breaks nothing it tests. `check:function-columns` asks whether columns a stored FUNCTION writes
+    still exist, again only looking for absence. `check:migrations` refuses two files sharing a
+    number, and a migration nobody wrote has no number to collide with. Schema described nowhere is
+    invisible by construction — the `check:overlay-discovery` shape.
+  - **REFRESHING THE SNAPSHOT WOULD HAVE MADE IT WORSE, which is why section A asks the MIGRATIONS
+    rather than the cache.** `scripts/schema-snapshot.json` is a committed cache of the live schema
+    and the only record of the database inside the repo, so `npm run schema:refresh` silently
+    **absorbs** an undescribed column — after which `lib/db.js` may legally read a column no
+    migration creates, a rebuild from migrations produces an app reading a column that does not
+    exist, and every gate stays green. The baseline-regenerated-until-it-asserts-nothing failure,
+    with teeth.
+  - **Section C found the snapshot stale from THREE separate merged migrations** — `areas.source`
+    and `account_links` dropped but still listed, `areas.coords_approx` and `access_checked_at`
+    live but absent. Nothing had noticed, because the refresh instruction is a comment in a script
+    header. That staleness is not inert: `check:schema` is a **build gate**, so a column live but
+    missing from the snapshot makes a **correct reader fail the build**, while a column dropped
+    live but still in the snapshot lets a reader of a DROPPED column **pass** — which is the #372
+    defect that guard exists to prevent. Snapshot refreshed in the same commit; the guard is what
+    stops it rotting again.
+  - **Precision was measured before it shipped**, because a detector over 179 migration files is
+    exactly the kind that returns a page of noise: across 41 live tables and 479 live columns,
+    section A reports **1**, section B reports **0**. The migration directory describes the
+    database almost exactly, which is what makes the one exception worth reading.
+  - **Replays statements in SOURCE ORDER, and the first version did not.** `0036_crews_persistence`
+    does `drop table if exists crews cascade;` and re-creates it **in the same file**, so applying
+    every CREATE and then every DROP wiped the table the file had just built and reported all ten
+    of its columns as undescribed. `check:rls` records the identical defect from the policy side.
+  - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
+    parsed columns, an unreachable database, and a live schema exposing zero tables.
+  - `KNOWN` declares a column as live-and-undescribed **with a reason**, and a **stale** entry
+    fails — so when the missing migration lands, this says so and the entry is deleted.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
+    `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
+    section**, never on the exit code — a mutation that adds a column also makes the fixture
+    disagree with the snapshot, so section C fires too and every case would look alike from an
+    exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
+    dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
+    breaking their mechanism and confirming they then fire.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
