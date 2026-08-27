@@ -134,10 +134,48 @@ if (readerCorpus.length < 200000) {
    `= <anything>.field` and treat those as reads too. Scoped to that field's own destructuring
    rather than to every `{a,b}` in 1.5MB of JSX, which would make the test vacuous. */
 function readsSubKey(corpus, field, key) {
+  /* A DOTTED key is read if its leaf is named, OR if something enumerates the parent —
+     `Object.entries(fitnessSpec).map(([k,v]) => k+": "+v)` renders every key and names none of
+     them, so a by-name test calls a working row dead. Requiring the enumeration (not merely the
+     parent being present) keeps this from excusing a parent nobody reads. */
+  if (key.indexOf(".") >= 0) {
+    const [parent, leaf] = key.split(".");
+    if (new RegExp("\\." + leaf + "\\b").test(corpus)) return true;
+    const enumerated = new RegExp("Object\\.(entries|keys|values)\\(\\s*" + parent + "\\s*\\)").test(corpus);
+    return enumerated && readsSubKey(corpus, field, parent);
+  }
   if (new RegExp("\\." + key + "\\b").test(corpus)) return true;
   const pats = [...corpus.matchAll(new RegExp("\\{([^{}]{0,300})\\}\\s*=\\s*[A-Za-z_$][\\w$]*\\." + field + "\\b", "g"))];
   return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
 }
+
+/* EVERY EDIT PENCIL MUST OPEN A SECTION THAT EXISTS. A section heading's pencil calls
+   setFixOpenSection(id), and the sheet scrolls with querySelector("#sf-section-"+id) — ids come
+   from each FIELDS key, plus two hardcoded ones. A name with no field returns null, so the sheet
+   opens at the top and scrolls NOWHERE, and the climber has to find the field themselves.
+
+   Four pencils did exactly that with "gear": `gear` is in SS but the form's field is `rack` (M
+   renames gear->rack). Nothing threw, nothing rendered wrong, and the only symptom was a pencil
+   that did four fifths of its job. A separate defect had the CLIMBING ROUTE pencil open
+   "pitchDetail" — a section that exists but edits a DIFFERENT column, so the correction landed
+   under ROUTE BETA while CLIMBING ROUTE kept its old text. This catches the first shape; only
+   reading the reader catches the second. */
+const pencilIds = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+if (pencilIds.length < 10) {
+  console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
+  process.exit(1);
+}
+const sectionIds = new Set([...rd.matchAll(/\{k:"([A-Za-z0-9_]+)"/g)].map((m) => m[1]));
+// Two sections are rendered with a literal id rather than from a FIELDS key.
+for (const extra of ["bailout", "startLocation"]) sectionIds.add(extra);
+const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
+if (orphanPencils.length) {
+  const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;
+  console.error(`check:contrib-fields: ${n} edit pencil(s) open a section that does not exist: ${orphanPencils.join(", ")}`);
+  console.error('The sheet opens at the top and scrolls nowhere — querySelector("#sf-section-<id>") returns null.');
+  process.exit(1);
+}
+console.log(`  ${pencilIds.length} edit pencil(s) open a section that exists`);
 
 /* THE THREE LISTS MUST AGREE, and a mismatch is a BLANK SHEET rather than a missing field.
    renderInput does `OBJ_STATE[f.type][0]` for any type in OBJ_KEYS, so a type registered in
@@ -170,7 +208,7 @@ console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a
 const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
   ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
   ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
-  ["LOGISTICS_KEYS", "approachLogistics"]];
+  ["LOGISTICS_KEYS", "approachLogistics"], ["DIFFICULTY_KEYS", "difficulty"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
@@ -178,7 +216,16 @@ for (const [constName, field] of OBJ_FIELDS) {
     console.error(`The sub-keys of the \`${field}\` field went unchecked, so this run proved less than it claims.`);
     process.exit(1);
   }
-  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_]+)","/g)].map((x) => x[1]);
+  /* The dot matters: a DOTTED sub-key (`fitnessSpec.hiking`) writes into a nested object, and a
+     pattern without `.` skipped those silently — this printed "3 sub-key(s) offered" against a
+     list of five and passed. A parser that quietly drops entries is the vacuous-coverage shape
+     this file exists to prevent, so the count is asserted against the list below. */
+  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_][a-zA-Z_.]*)","/g)].map((x) => x[1]);
+  const declared = (m[1].match(/\["/g) || []).length;
+  if (subKeys.length !== declared) {
+    console.error(`check:contrib-fields: parsed ${subKeys.length} of ${declared} entries in ${constName} — the sub-key pattern is dropping some.`);
+    process.exit(1);
+  }
   if (!subKeys.length) {
     console.error(`check:contrib-fields: parsed 0 sub-keys out of ${constName} — the scan broke.`);
     process.exit(1);

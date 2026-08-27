@@ -122,7 +122,10 @@ if (!FIELDS.length) die("parsed 0 entries out of FIELDS.");
 const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access", "bivy",
   // Keyed jsonb objects rendered by their own panel. Each reuses the generic OBJ_KEYS editor,
   // so they serialise to an object exactly as road/access do.
-  "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics"]);
+  "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics",
+  // `sections` builds the {n,label,class,notes} array ClimbingRouteTable reads, exactly as
+  // `pitches` builds pitchDetail's — structuredVal emits the shape, so no CONV applies.
+  "sections", "variants", "difficulty"]);
 
 const readers = stripComments(RD + "\n" + CORE);
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real

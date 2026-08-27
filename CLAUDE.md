@@ -83,6 +83,7 @@ npm run check:a11y-names # every control a screen reader reaches has a name (in 
 npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
+npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
@@ -2877,6 +2878,45 @@ a build error, but a screen that renders wrong or not at all.
     on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
     alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
     on a count alone. Routes with no estimate are counted and reported, never scored.
+- **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
+  as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
+  three contributors must land in the same cluster or the correction sits pending **forever** —
+  which makes `sameEditValue`, not the form or `SS`, the thing that decides whether a correction can
+  ever go live. It was **exact for everything except numbers**. Static (bundles core and executes the
+  real comparison), so it sits in `npm run build`.
+  - **TWO WAYS IT COULD NOT BE REACHED, and the first is a defect this repo had already fixed one
+    layer up.** `togMulti` appends chips in **click order** (`arr.concat([o])`) and the comparison
+    preserved array order, so two climbers picking the same hazards in a different order produced
+    different JSON and **never clustered**. `_stableJson`'s own comment describes exactly this for
+    object KEY order — *"the 3-agree gate can never be reached and both suggestions sit pending
+    forever"* — and it was fixed for keys and left for arrays. Worst on `haz`/`objHaz`, the fields
+    most likely to actually be corrected.
+  - The second is wording: *"Northwest Forest Pass"* / *"northwest forest pass"* / *"Northwest Forest
+    Pass."* are one fact and were three clusters. This app writes **curly** apostrophes, so text
+    typed in the form and text pasted from elsewhere never matched either — the same
+    straight-vs-curly trap `check:outage`'s `says-broken` pattern already records.
+  - **NORMALISATION IS FOR GROUPING ONLY, which is what makes it safe.** The merge stores
+    `win.value` — one contributor's verbatim text — so nothing here changes what a climber reads. It
+    only decides who counts as agreeing with whom.
+  - **DELIBERATELY NOT FUZZY, and the negative assertions are the point.** No edit distance, no
+    stemming, no synonyms: a loose rule does not under-report, because a cluster of three **WINS**,
+    so it would publish a value nobody agreed on. Case, whitespace, quote style and a trailing full
+    stop are differences in *typing*; anything past that is a difference in *claim*. Six "must NOT
+    cluster" cases pin it, including *"a 5.8 slab"* vs *"a 5.10 slab"*.
+  - **`SET_FIELDS` is declared, never global, because order is a FACT elsewhere** — waypoints are a
+    sequence along the route, `pitchDetail` is pitch order, `itinerary` is days. The guard asserts it
+    covers every `type:"multi"` field in the form, and fails on a **stale** entry, so a new chip field
+    cannot quietly go back to being order-sensitive.
+  - **An injection MISSED and found a hole in the guard rather than a false alarm.** Sorting every
+    array inside `_agreeJson` changed nothing the waypoint and pitch cases assert, because those two
+    have their **own branches above it** — so the only ordered field that actually flows through
+    `_agreeJson` is `itinerary`. That case was added and the injection then fired. *A case that
+    passes may be testing a path the defect cannot reach.*
+  - Fails **closed**: a missing export, fewer than three chip fields parsed, or fewer than 16 cases
+    are each a broken guard — every "must not cluster" assertion passes against a comparison that
+    returns false for everything. Injection-tested **6/6**, each proving its edit landed by checksum
+    and restoring the file byte-identically. Case 1 is the real historical rule; cases 4 and 5 make
+    it **looser** and must both fail.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
