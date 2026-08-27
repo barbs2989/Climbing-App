@@ -884,8 +884,9 @@ a build error, but a screen that renders wrong or not at all.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
     sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
-    surface behind an **overlay** is still out of frame, and **10 of 28 query handles in `App`
-    carry a flag** (plus 2 in `RouteDetail`) — the rest are mostly lookups where emptiness is
+    surface behind an **overlay** is still out of frame, and **13 of the 25 `lib/db.js` query handles
+    called in `App` carry a flag** (plus 2 in `RouteDetail`) — re-measure rather than quoting this, it has
+    moved twice — the rest are mostly lookups where emptiness is
     never asserted, but that is a list to READ, not a coverage claim.
     - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
       re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
@@ -903,7 +904,7 @@ a build error, but a screen that renders wrong or not at all.
       from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
       (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
-      - **`toposUnavailable` is MASKED and nothing has yet proven it reaches a screen.** Overview is
+      - **`toposUnavailable` is MASKED to THIS guard, and `check:topo-outage-copy` is what proved it.** Overview is
         already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
         topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
         `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
@@ -973,6 +974,37 @@ a build error, but a screen that renders wrong or not at all.
       an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
       on exactly that basis. One query at a time, as this guard's header already insists.
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
+  - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
+    than paying for a second 400,000-character esbuild run**, which is the cost this entry already
+    weighs below when it declines to fold into `check:outage-copy`. The name is narrower than the
+    contents; the rename was deliberately NOT done in the same change, because this guard shipped
+    hours earlier from another session and this repo has now recorded **three** collisions in one day
+    from two sessions editing one thing.
+    - `comments` on the route page is `(dbComments.data||[])`, so a failed `useComments` read and a
+      pitch nobody has commented on left **byte-identical** state, and the box said *"No comments yet
+      — be the first to add beta for this exact pitch."* to a climber whose pitch may already carry
+      beta. `check:read-failures` passes on `useComments` — it throws exactly as required — which is
+      that guard's own stated limitation: it never asks whether anything downstream concludes ABSENCE.
+    - **NOTHING ELSE REACHES THIS BOX.** `check:outage` walks the route page but only Overview and
+      Photos, and `PitchComments` renders inside an **expanded** pitch — `PitchTable` holds
+      `useState(null)`, so no pitch is open until somebody taps one, and no SSR guard can click.
+      Rendering the COMPONENT directly steps around the expansion state entirely.
+    - It takes the flag as a **prop**, which is what makes both branches reachable at all: this
+      guard's own header records that react-query does not surface a cached error under
+      `renderToStaticMarkup`, so a flag read off a hook *inside* the component under test is
+      unprovable.
+    - **THE RENDER PROVES THE COPY AND NOT THE WIRING, and the wiring is the half a stale-base squash
+      takes.** The component is rendered with the prop handed to it directly, so a merge dropping
+      `commentsUnavailable={…}` from any call site would deliver `undefined`, read as falsy, and every
+      copy assertion would still pass while the box went back to lying. The four-link chain across two
+      files is asserted as **source** for that reason — `check:dead-props` covers *a call site passes
+      a prop nothing destructures*, and the exact opposite is covered by neither of its directions.
+    - Injection-tested both halves: reverting the copy fails **3** cases and leaves the healthy-side
+      three green (specific, not firing on any change); dropping the prop from the `<RouteDetail>`
+      call site fails exactly **1**, naming the broken link.
+    - **The shared `Comments` component is deliberately NOT gated**, checked rather than assumed: it
+      renders the list when non-empty and **nothing** when empty — no absence copy anywhere in it — so
+      a failed read makes it render less, never make a false claim.
   `toposUnavailable` was the one outage flag **nothing had ever proven**, and `check:outage`'s own
   header said why: rule 1 asks whether a screen ACKNOWLEDGES the fault, and Overview is already
   `says-broken=YES` from `reportsUnavailable`, so the topo copy is **masked** — rule 1 passes
