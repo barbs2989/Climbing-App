@@ -1,37 +1,40 @@
 name: Silent reverts
 
-# Asks, after every merge to main, whether that merge silently deleted something an
-# earlier PR added (npm run audit:silent-reverts).
+# Did the merge that just landed quietly delete work an earlier PR added?
 #
-# WHY THIS RUNS ON PUSH AND NOT ON A PULL REQUEST. A stale-base squash is created BY THE
-# MERGE: the branch's copy of a dense line is the old one, git resolves the line in the
-# branch's favour, and the flags an earlier PR added vanish. Nothing about the branch in
-# isolation is wrong, so a pull_request run has nothing to see. The push is the event.
+# This repo squash-merges, so `check:merge-survival` -- which interrogates a MERGE COMMIT and
+# asserts every identifier either parent introduced survives -- never runs on the thing that
+# actually ships. A branch based before PR A, squashed after it, carries the old tree forward:
+# clean merge, no conflict, every check green, and A is gone.
 #
-# WHY IT EXISTED AND STILL LET THREE THROUGH. The audit was written after #776 reverted
-# #778 and has never been wired to anything — it ran when somebody remembered. On
-# 2026-08-26 alone, #1248 dropped two outage flags belonging to #1239, #1253 restored
-# them, and #1267 dropped four (three of them the same ones) 57 minutes later. Every one
-# was found by hand. This is the check:overlay-scroll lesson exactly: a guard that runs
-# only when somebody remembers is a guard you do not have.
+# It is not hypothetical and it is not rare. On 2026-08-26 alone, #1248 removed four files and two
+# flags belonging to three merged PRs; #1267 removed four more flags, restored by #1277 an hour
+# later; #1249 changed a timeout back and nothing noticed for hours. Every one was found by a
+# person happening to look. `audit:silent-reverts` exists for exactly this and, for most of its
+# life, ran nowhere -- the same failure #724 records for check:overlay-scroll, which had gone red
+# on main and nobody knew.
 #
-# It does NOT gate anything. The merge has already happened; going red is the whole
-# mechanism, and it lands on the person who merged, which is the person who caused it.
+# WHY PUSH AND NOT PULL_REQUEST. A stale-base squash is created BY THE MERGE: the branch's copy of
+# a dense line is the old one, git resolves the line in the branch's favour, and an earlier PR's
+# additions vanish. Nothing about the branch in isolation is wrong, so a pull_request run has
+# nothing to see. It gates nothing -- the merge has already happened; going red IS the mechanism,
+# and it lands on whoever merged, which is whoever caused it.
 #
-# TWO SESSIONS BUILT THIS WORKFLOW WITHIN THE HOUR (#1288 and #1290) and both merged, so every
-# push to main ran the same audit twice. They are consolidated here rather than one being
-# picked, because THEY FAILED ON DIFFERENT HALVES and the union is strictly better:
+# NOT a build gate, for the reason the other drift checks record: this is a property of HISTORY,
+# not of the checkout. No PR can cause or cure a revert that has not happened yet, so failing
+# `npm run build` would block unrelated authors on a condition they cannot affect.
 #
-#   --fail-on outage-flag   (#1288)  a SILENT removal of an `xUnavailable` flag. Catches #1248
-#                                    AND #1267. #1267 deleted no files at all, so the file rule
-#                                    below is silent on it — verified: `git show 2bd9a5d
-#                                    --diff-filter=D` is empty.
-#   --fail-on-silent        (#1290)  one commit removing files added by SEVERAL different
-#                                    commits — the stale-base fingerprint. Catches #1248, and
-#                                    would catch a pure-file revert that carries no flag, which
-#                                    the flag rule cannot see.
-#
-# Neither is a superset. Running both in one job costs one checkout instead of two.
+# THIS FILE IS THE MERGE OF TWO WORKFLOWS THAT ASKED THE SAME QUESTION. Two sessions wired this
+# audit independently -- `silent-reverts.yml` (--commits 120 --fail-on outage-flag) and
+# `silent-revert-check.yml` (--commits 80 --fail-on-silent) -- and both ran on every merge, so each
+# push paid for two runners and a reader saw two similarly-named checks about one question. They
+# were not complementary: --fail-on-silent is STRICTLY BROADER in kind, provably so from control
+# flow rather than by measurement. `silentKinds` is only ever added to inside the same
+# `if (!deliberate)` branch that increments `silent`, and `if (silent) GATE.push(...)` runs before
+# the --fail-on block, so a non-empty silentKinds always exits under --fail-on-silent first and the
+# --fail-on comparison is unreachable. --fail-on-silent also gates on the multi-commit file
+# fingerprint, which --fail-on never does. The ONLY thing the other workflow had that this lacked
+# was the larger window, so the larger window is what survives.
 
 on:
   push:
@@ -39,12 +42,12 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # `github.sha` is UNIQUE per commit, so main runs never share a group and never queue
-  # behind one another. That is load-bearing and `cancel-in-progress` alone does NOT
-  # achieve it: `cancel-in-progress: false` only protects a run already IN PROGRESS, while
-  # GitHub cancels a still-PENDING run unconditionally when a newer run joins its group —
-  # and a cancelled run reports no failure, so the merge would read as checked by a guard
-  # that never ran on it. check:ci-cancellation pins this shape.
+  # Grouped by SHA, never by ref. `check:ci-cancel` exists because the opposite was believed here:
+  # cancel-in-progress:false protects a run already IN PROGRESS, while GitHub cancels a still-
+  # PENDING run unconditionally when a newer one joins its group. Sharing one group across main
+  # pushes is what BUILDS the queue that makes a run cancellable -- and a cancelled run reports no
+  # failure, so the merge would read as checked by something that never ran. That is the precise
+  # defect this workflow exists to catch, so being subject to it would be its own joke.
   group: silent-reverts-${{ github.sha }}
   cancel-in-progress: false
 
@@ -59,32 +62,34 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          # THE DEFAULT DEPTH OF 1 MAKES THIS AUDIT VACUOUS, not merely limited: its whole
-          # subject is history, so a one-commit clone gives it one commit to walk and it
-          # would report a clean tree having examined nothing. Full history is the input.
+          # THE DEFAULT DEPTH OF 1 MAKES THIS AUDIT VACUOUS, not merely limited: its whole subject
+          # is history, so a one-commit clone gives it one commit to walk and it would report a
+          # clean tree having examined nothing -- a fail-open introduced BY the wiring. The script
+          # refuses a walk shorter than --commits under --fail-on-silent for that reason.
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
 
-      # The window has to reach the ADDING commit or a clean result means nothing — the
-      # trap this audit's own notes record, where --commits 6 reported clean on an
-      # incident that --commits 10 caught. A stale branch can be weeks old: #1238's flag
-      # was added 30 first-parent commits before the merge that dropped it. 120 is
-      # generous and costs seconds, because presence is one pass over the checkout.
+      # No `npm ci`. The script shells out to git and reads the working tree, so it needs no
+      # dependencies -- and it keeps working when the build is broken, which is exactly when a bad
+      # merge is most likely to have landed.
       #
-      # BOTH failure conditions, and NEITHER is "any finding". The audit stays report-only by
-      # default because a removal is not a defect: over 500 commits every hit of its file rule
-      # has been a PROMOTION, and every generic-token finding a supersession or a rename, so
-      # failing on those would make it argue with correct work. The two opt-ins are the classes
-      # with a different measured precision — the outage-flag one is 3 for 3 real reverts with 0
-      # findings across 300 commits of a healthy tree, and --fail-on-silent fires only on the
-      # multi-adder fingerprint, never on a single-file removal.
-      # 120, the larger of the two windows the duplicates chose (#1290 used 80). The window must
-      # reach the ADDING commit or a clean result means nothing, and a stale branch can be weeks
-      # old — #1238's flag was added 30 first-parent commits before the merge that dropped it. The
-      # cost is seconds, because presence is one pass over the checkout.
+      # --ref HEAD, not origin/main: a push run checks out the pushed commit and has no
+      # remote-tracking branch to compare against. HEAD also keeps the audit on its FAST presence
+      # backend, which reads the tree from disk in one pass; any other ref falls back to `git grep`
+      # per file, which is minutes rather than seconds.
+      #
+      # 120 commits because the window must reach the ADDING commit, not merely the removing one.
+      # #1239's flag was added 30 first-parent commits before the merge that dropped it, and this
+      # audit's own notes record --commits 6 reporting clean on an incident --commits 10 caught.
+      # Measured across nine 12-commit windows of recent history: 0 findings, i.e. a short window
+      # is quiet AND blind.
+      #
+      # --fail-on-silent is opt-in and narrower than "any finding": it fires on a SILENT definition
+      # removal, or on one commit removing files added by SEVERAL different commits -- the
+      # stale-base fingerprint. A single-file removal never trips it, because over 500 commits
+      # every hit of that rule was a PROMOTION (a one-off probe becoming a named guard), and a gate
+      # that argues with correct work is one people learn to ignore.
       - name: Nothing an earlier PR added has silently vanished
-        run: npm run audit:silent-reverts -- --ref HEAD --commits 120 --fail-on outage-flag --fail-on-silent
+        run: node scripts/audit-silent-reverts.mjs --ref HEAD --commits 120 --fail-on-silent
