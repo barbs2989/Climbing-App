@@ -12,6 +12,7 @@ npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
+npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
