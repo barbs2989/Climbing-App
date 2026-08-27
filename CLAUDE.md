@@ -6246,6 +6246,19 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
     flex item and still adds the row gap. Asserted in **both** directions — a failed read really
     does empty `mods` (so the gate is not decorative) and a healthy one keeps them (so it is not
     over-eager).
+  - **A DETECTOR FOR THIS CLASS WAS MEASURED AND REJECTED — do not re-derive it.** The tempting
+    generalisation is *"a heading counts one array while the next sibling renders another"*, since
+    `check:ui` only compares counts across two SCREENS and nothing compares a heading against the
+    rows beneath it on ONE. Two scopings were tried against the three app files: whole-subtree gave
+    **14,538** distinct (counts, renders) pairs and adjacent-sibling gave **1,308**. Neither is a
+    reading list. The cause is structural rather than a tuning problem — this app is one ~400 kB
+    line of deeply-nested JSX, so a "sibling" is routinely an entire screen and collects every
+    `.length` and every `.map` beneath it.
+    - **And a `.length`-based scan could not have found the real defect anyway**: the count was the
+      hoisted variable `_memN`, so it has to be resolved through scope to the array it measures —
+      after which legitimate cases (*"3 of 12 selected"*, *"showing 6 of 40"*, a filtered subset
+      counted beside its parent list) still dominate. A guard that flags correct work is one people
+      learn to ignore.
   - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
     the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
     recorded that the underlying disagreement was still real; this is that, closed.
