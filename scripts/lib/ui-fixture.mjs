@@ -32,6 +32,7 @@
 // policy allows anything -- see scripts/lib/ notes and the real-JWT probes for that.
 
 import { SUPABASE_URL, requireServiceKey, anonKey, headers } from "./supabase-env.mjs";
+import { POLICY_VERSION } from "../../lib/policy.js";
 
 // Never a routable domain. .invalid is reserved by RFC 2606 precisely so it can never
 // resolve, so a stray confirmation mail cannot reach a real inbox.
@@ -114,9 +115,22 @@ async function createUser(tag, name) {
   const stamp = `${process.pid.toString(36)}${Math.random().toString(36).slice(2, 8)}`;
   const email = `ui-${tag}-${stamp}@${DOMAIN}`;
   const password = `Qa!${Math.random().toString(36).slice(2, 12)}Aa1`;
+  // `terms_version` rides along exactly as lib/auth.js sends it on a real signup, so 0145's
+  // handle_new_user() trigger stamps profiles.terms_accepted_version.
+  //
+  // WITHOUT IT THE FIXTURE MANUFACTURES A STATE THE APP'S OWN FLOW CANNOT PRODUCE: an account
+  // with no acceptance on record. PolicyUpdateNotice then fired -- correctly -- on all 63
+  // screens of every check:signed-in and check:outage walk, telling an account created seconds
+  // ago that it "predates the version we now publish", and putting a fixed 200px panel over the
+  // bottom of every screen those guards measure. Same rule this file already follows for the
+  // connection row and the group membership: seed the state the app would reach, never one it
+  // could not.
   const { status, body } = await auth("admin/users", {
     method: "POST",
-    body: JSON.stringify({ email, password, email_confirm: true, user_metadata: { name } }),
+    body: JSON.stringify({
+      email, password, email_confirm: true,
+      user_metadata: { name, terms_version: POLICY_VERSION },
+    }),
   });
   if (status >= 300 || !body?.id) throw new Error(`admin create user failed (${status}): ${JSON.stringify(body)}`);
   return { id: body.id, email, password, name };
@@ -301,9 +315,26 @@ export async function createFixture(log = () => {}) {
     log(`  group ${group.id.slice(0, 8)} owned by the fixture, 1 other member, private`);
 
     await insert("objectives", { user_id: owner.id, route_id: ROUTE_ID });
+    // A LOGGED ASCENT, which is what this row was always meant to be. Two fields made it
+    // something the app's own form cannot produce, and between them the walk never saw a
+    // populated logbook at all:
+    //
+    //   stars      absent -> App files the row by `row.stars == null`, and a null-starred row
+    //              goes to condReports, NOT to `logs`. So AT A GLANCE read "Climbs logged 0",
+    //              the pyramid stayed empty, and the row rendered on no screen the walk opens.
+    //              LogAscent writes `stars: scout ? undefined : stars` with stars defaulting to
+    //              5, so on the app's own path a null star rating means a CONDITIONS report and
+    //              nothing else.
+    //   tick_type  "lead" lowercase -> routeCompleted() matches a capitalised vocabulary
+    //              ({Summit, Send, Onsight, Flash, Redpoint, Lead, Follow, Top-rope, Repeat}),
+    //              so the tick never counted and the ticklist read "1 climb to go" above a
+    //              seeded log for that very route.
+    //
+    // Recorded before as a fixture artifact, with the note that the READER must not be
+    // lowercased to suit a fixture. Correct — this is the other direction.
     await insert("climb_logs", {
       user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04",
-      discipline: "alpine", tick_type: "lead", party_size: 2, notes: "Fixture log.",
+      discipline: "alpine", tick_type: "Lead", stars: 4, party_size: 2, notes: "Fixture log.",
     });
     await insert("saved_searches", { user_id: owner.id, name: "Cascades alpine", query: { state: "Washington", disc: ["alpine"] } });
     await insert("user_lists", { user_id: owner.id, name: "Fixture ticklist", icon: "star", route_ids: [ROUTE_ID], shared: false });

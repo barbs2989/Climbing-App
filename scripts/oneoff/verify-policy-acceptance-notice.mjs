@@ -7,9 +7,15 @@
 import { spawn } from "node:child_process";
 import net from "node:net";
 import fs from "node:fs";
-import pwPkg from "/Users/nathanbarber/dev/Climbing-App/node_modules/playwright-core/index.js";
-const { chromium } = pwPkg;
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/top-contributors-photo-crew-resume";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { chromium } from "playwright-core";
+// ROOT FROM THIS FILE, never a hardcoded worktree. It used to name
+// .claude/worktrees/top-contributors-photo-crew-resume, which no longer exists -- so every
+// dynamic import below threw and this verification could not run at all. While that worktree
+// DID exist it was worse than dead: it silently measured a different branch's code than the
+// one you ran it in, the defect CLAUDE.md records for measure-which-tab-renders-each-field.mjs.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const { createFixture, sessionForStorage, STORAGE_KEY } = await import(ROOT + "/scripts/lib/ui-fixture.mjs");
 const { loadEnv } = await import(ROOT + "/scripts/lib/supabase-env.mjs");
 const { POLICY_VERSION } = await import(ROOT + "/lib/policy.js");
@@ -27,11 +33,19 @@ try {
   f = await createFixture(() => {});
   const sess = await signIn(f.owner);
 
-  // The fixture creates accounts through the admin API, which sends no terms metadata — the
-  // same state every real account on this project is in. Confirmed rather than assumed.
+  // THE UN-ACCEPTED STATE IS CREATED HERE, not inherited from the fixture. This used to rely on
+  // the fixture creating accounts through the admin API with no terms metadata -- true when
+  // written, and not the fixture's promise to keep: ui-fixture.mjs now sends terms_version so
+  // that it stops manufacturing an account state the app's own signup cannot produce, and this
+  // assertion would have started failing with "fixture already carried an acceptance". A probe
+  // that needs a state should PUT the subject in it, not depend on a sibling's side effect.
+  await fetch(`${SB}/rest/v1/profiles?id=eq.${f.owner.id}`, {
+    method: "PATCH", headers: svcH,
+    body: JSON.stringify({ terms_accepted_version: null, terms_accepted_at: null }),
+  });
   const before = await stored(f.owner.id);
-  if (!before.terms_accepted_version) ok("the account starts with NO acceptance recorded — the real-world state");
-  else fail("fixture already carried an acceptance: " + JSON.stringify(before));
+  if (!before.terms_accepted_version) ok("the account starts with NO acceptance recorded — the state an existing account is in");
+  else fail("could not clear the acceptance: " + JSON.stringify(before));
 
   const port = await (async () => { for (let p = 5980; p < 6020; p++) { const free = await new Promise((res) => { const s = net.createServer(); s.once("error", () => res(false)); s.once("listening", () => s.close(() => res(true))); s.listen(p, "127.0.0.1"); }); if (free) return p; } })();
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
