@@ -13,6 +13,7 @@ npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
+npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
@@ -195,6 +196,88 @@ a build error, but a screen that renders wrong or not at all.
     array (in the probe, never in the app) to render it — `"#126, Nathan Barber, you, Salt Lake City,
     UT, 0 pts"`. It also asserts the badge **still renders**: a probe that passed because the badge
     was deleted would be certifying the feature's removal.
+- **`check:dup-attrs`** asserts that no declaration is written **twice in one place** — a JSX
+  attribute on one element, or a key in one object literal. The later one wins and the earlier one
+  is **dead**. Static (Babel), so it sits in `npm run build`.
+  - **esbuild ALREADY REPORTS BOTH, AND THAT IS EXACTLY WHY THREE SHIPPED.** `npm run build`
+    printed `Duplicate "aria-current" attribute in JSX element` and `Duplicate key "border" in
+    object literal` on every run, and still exited **0** — a warning inside a sixty-second log is
+    indistinguishable from noise. This whole file exists on the premise that the failure mode here
+    is not a build error but a screen that renders wrong; a warning is not a check.
+  - **One of the three was a real override.** The crew date chip set `border:"1px solid "+C.blueDim`
+    and then `border:"1.5px solid "+C.blueDim` in the same style object, so the 1px never ran. The
+    rendered value matches the float-plan button beside it, which is what says 1.5px was meant.
+  - **The other two are the fingerprint of an applier that double-applied**, and they were mine:
+    #1308 and #1322 both reached the same two controls and neither asked whether `aria-current` was
+    already there. Identical expressions, so nothing announces wrongly today — and the same slip
+    with two **different** expressions silently drops the first and announces the wrong state, with
+    nothing on screen to show for it. Batch 5's first version *did* check; rewriting it to
+    enumerate-then-insert dropped the idempotence guard.
+  - **No exemptions, deliberately.** There is no correct reason to write one name twice in one
+    element or one object literal, so there is no list here that can rot. Overriding a **spread** is
+    a different shape (`{...base, color:"red"}` is a spread and a key, not two keys) and is not
+    reported; nor are two **computed** keys, which are not knowably the same key.
+  - The repair (`scripts/oneoff/fix-duplicate-declarations.mjs`) removes the dead half **by AST byte
+    range, never by text** — `aria-current={sel?…}` and `aria-current={on?…}` occur four and six
+    times across these files, so a textual replace would cut a different, correct control. It always
+    removes the **earlier** declaration, which makes the rewrite behaviour-neutral by construction:
+    whatever the file does today it does with the later one, and that is the one left standing.
+  - Fails **closed** on a parse error and on an element/object floor. **What that floor does NOT
+    prove, learned from injection case 6 rather than assumed:** it asks whether the traversal *ran*,
+    not whether the *detection* ran. The case first returned after `elements++`, so the counter saw
+    thousands and the guard passed with duplicate-finding disabled — correct for what a floor means,
+    and not a substitute for the cases.
+  - Injection-tested **6/6**, each proving its edit landed **by checksum**. Cases 1 and 2 are the
+    real defects, reproduced by re-inserting exactly what the fixer removed. **Cases 4 and 5 must
+    PASS** — a spread override and a pair of computed keys are both correct code.
+- **`check:bottom-panels`** asserts that a **fixed panel anchored to the bottom of the viewport
+  reserves the space it covers**. `position:fixed` takes a panel out of the layout, so nothing below
+  it moves and scrolling never gets content out from under it — the panel is pinned to the
+  **viewport**, not the page. A dismissible one is fine; one that cannot be dismissed makes the
+  bottom of every screen unreachable for as long as it is up. Static, so it sits in `npm run build`.
+  - **`PolicyUpdateNotice` was that panel.** Measured at 390×844 by
+    `scripts/oneoff/probe-policy-notice-covers-content.mjs`: **201px of an 844px viewport, hiding 39
+    controls across six tabs** — the whole app footer (**Settings, Privacy, About us**) on every one
+    of them, so the notice asking you to review the Privacy Policy was covering the Privacy link.
+    Home also lost *Recent friend activity*, the Logbook *Show 1 more report*, the Profile *Edit
+    profile*.
+  - **Not a legacy-account state.** It fires whenever `profiles.terms_accepted_version` differs from
+    `POLICY_VERSION` — i.e. **every signed-in account, every time the policy is bumped**, which its
+    own copy has a branch for (*"Our Terms and Privacy Policy have changed"*). Its
+    non-dismissibility is deliberate and correct; the missing reservation was the defect.
+  - **THE PROBE MEASURED THE WRONG SCROLLER FIRST, AND REPORTED A SMALLER, DIFFERENT FINDING.** It
+    scrolled `#appscroll` — which is `overflowY:auto` and looks like the scroller — and got
+    `905/905`, "fits, no scroll", on every tab. The **document** is the scroller here
+    (`documentElement` 1115 against an 844 viewport). So the first run's 25 findings were about the
+    **default** scroll position dressed up as a statement about the bottom of the screen. Scrolling
+    the real scroller took it to **39**, and moved the covered set from mid-page tiles to the
+    footer. **Report the scroll you performed, or a claim about "the bottom" is unfalsifiable.**
+  - **HIT-TESTED, NOT COMPARED BY RECTANGLE**, and only a **fixed** blocker counts. A bare
+    centre-point test reported 6 "covered" controls in the **control** run, with no panel on screen
+    at all — a button whose centre lands on a sibling chip, a span over an icon, a select under a
+    relative button. Every one is ordinary layout adjacency and every one of their blockers is
+    `static`/`relative`/`absolute`. Counting them made the probe's own fail-closed branch say **NOT
+    ATTRIBUTABLE** about a finding that is real.
+  - **The control run is the load-bearing half**: the same walk against the ordinary config, where
+    the notice does not exist. It reports **0 on every tab**, so the 39 are attributable. The probe
+    also refuses a run in which the notice never rendered — which would otherwise print a clean
+    sweep about a screen with no panel on it.
+  - **A GUARD FOR A CLASS OF ONE, AND THE SECOND RULE IS WHY IT EARNS ITS PLACE.** There is exactly
+    one bottom-anchored fixed panel in the app (the other `position:"fixed"` match is a full-screen
+    overlay, which covers everything on purpose and is out of scope). Rule 1 is **anti-revert**: the
+    reservation is one `paddingBottom` on `#appscroll` driven by the same flag that mounts the
+    panel, and a stale-base squash that keeps the flag and drops that clause changes **no
+    identifier** — invisible to `audit:silent-reverts`, which says so in its own closing caveat.
+    Rule 2 is **class growth**: a second such panel must be declared here with a reason, so the next
+    author answers the question rather than rediscovering it.
+  - **Its own declaration rule was too loose and injection case 2 caught it.** Testing
+    `text.includes(style)` let a brand-new panel whose style merely *starts* the same way
+    (`…bottom:0,height:40`) inherit the existing declaration and pass silently — the exact failure
+    the rule exists to prevent, committed by the rule. Declarations are matched **by offset** now,
+    and a declared style that appears more than once in its file fails as **ambiguous**.
+  - Fails **closed**: finding no bottom-anchored panel at all is a broken scan, and a declared panel
+    that no longer exists fails as **stale**. Injection-tested **5/5**; **case 3 must PASS** (a
+    full-screen overlay is out of scope) and case 1 is the real revert.
 - **`check:no-nul`** asserts that no source file holds a **literal NUL byte**. Git classifies a file
   containing one as **binary**, so the whole file renders in a pull request as `Bin 0 -> 12464 bytes`
   or as `+0/-0` and **nobody can read the diff**. Static — no browser, no DB, no network — so it sits

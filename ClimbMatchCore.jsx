@@ -1890,8 +1890,29 @@ function Inbox({dmUnavailable,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCre
 
    Reading first is offered rather than assumed: both documents open from here, and the notice is
    still there when you come back, because nothing about reading them constitutes agreeing. */
-export function PolicyUpdateNotice({previous,busy,onRead,onAccept,z}){
-  return <div style={{position:"fixed",left:0,right:0,bottom:0,zIndex:z,background:C.surface,borderTop:"1px solid "+C.border,boxShadow:"0 -10px 40px rgba(0,0,0,0.45)",padding:"14px 16px calc(14px + env(safe-area-inset-bottom))",maxWidth:520,margin:"0 auto"}}>
+export function PolicyUpdateNotice({previous,busy,onRead,onAccept,z,onHeight}){
+  /* Reports its own height so the page can make room for it.
+
+     It is `position:fixed`, so it takes no space in the layout and sits over whatever is at the
+     bottom of the viewport -- and it is not dismissible, so scrolling never gets content out
+     from under it. Measured at 390x844: 201px of an 844px viewport, covering 39 controls across
+     six tabs, including the whole app footer (Settings, Privacy, About us) on every one. The
+     notice asking you to review the Privacy Policy was covering the Privacy link.
+
+     MEASURED, never a constant: the three buttons wrap at narrow widths and the first line has
+     two different wordings, so its height is a function of the viewport and of `previous`. A
+     hardcoded number is right until someone edits the copy. ResizeObserver rather than a
+     one-shot read for the same reason -- a rotation or a keyboard changes it after mount. */
+  const _ref=useRef(null);
+  useEffect(function(){
+    const el=_ref.current; if(!el||!onHeight) return;
+    const send=function(){onHeight(Math.ceil(el.getBoundingClientRect().height));};
+    send();
+    if(typeof ResizeObserver==="undefined") return;
+    const ro=new ResizeObserver(send); ro.observe(el);
+    return function(){ro.disconnect();onHeight(0);};
+  },[onHeight,previous,busy]);
+  return <div ref={_ref} style={{position:"fixed",left:0,right:0,bottom:0,zIndex:z,background:C.surface,borderTop:"1px solid "+C.border,boxShadow:"0 -10px 40px rgba(0,0,0,0.45)",padding:"14px 16px calc(14px + env(safe-area-inset-bottom))",maxWidth:520,margin:"0 auto"}}>
     <div style={{fontSize:14.5,fontWeight:700,color:C.text,marginBottom:5}}>{previous?"Our Terms and Privacy Policy have changed":"Please review our Terms and Privacy Policy"}</div>
     <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:11}}>
       {previous?"You accepted the "+policyVersionLabel(previous)+" version. ":"Your account predates the version we now publish. "}

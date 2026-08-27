@@ -32,6 +32,7 @@
 // policy allows anything -- see scripts/lib/ notes and the real-JWT probes for that.
 
 import { SUPABASE_URL, requireServiceKey, anonKey, headers } from "./supabase-env.mjs";
+import { POLICY_VERSION } from "../../lib/policy.js";
 
 // Never a routable domain. .invalid is reserved by RFC 2606 precisely so it can never
 // resolve, so a stray confirmation mail cannot reach a real inbox.
@@ -114,9 +115,22 @@ async function createUser(tag, name) {
   const stamp = `${process.pid.toString(36)}${Math.random().toString(36).slice(2, 8)}`;
   const email = `ui-${tag}-${stamp}@${DOMAIN}`;
   const password = `Qa!${Math.random().toString(36).slice(2, 12)}Aa1`;
+  // `terms_version` rides along exactly as lib/auth.js sends it on a real signup, so 0145's
+  // handle_new_user() trigger stamps profiles.terms_accepted_version.
+  //
+  // WITHOUT IT THE FIXTURE MANUFACTURES A STATE THE APP'S OWN FLOW CANNOT PRODUCE: an account
+  // with no acceptance on record. PolicyUpdateNotice then fired -- correctly -- on all 63
+  // screens of every check:signed-in and check:outage walk, telling an account created seconds
+  // ago that it "predates the version we now publish", and putting a fixed 200px panel over the
+  // bottom of every screen those guards measure. Same rule this file already follows for the
+  // connection row and the group membership: seed the state the app would reach, never one it
+  // could not.
   const { status, body } = await auth("admin/users", {
     method: "POST",
-    body: JSON.stringify({ email, password, email_confirm: true, user_metadata: { name } }),
+    body: JSON.stringify({
+      email, password, email_confirm: true,
+      user_metadata: { name, terms_version: POLICY_VERSION },
+    }),
   });
   if (status >= 300 || !body?.id) throw new Error(`admin create user failed (${status}): ${JSON.stringify(body)}`);
   return { id: body.id, email, password, name };
