@@ -1995,8 +1995,19 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      `f.type==="road"?ROAD_KEYS:ACCESS_KEYS` ternary that appeared in four places — a third
      object field would have had to be added to all four, and missing one reads as a field that
      renders but never submits. */
+/* A sub-key may be DOTTED (`fitnessSpec.hiking`). partner_requirements.fitnessSpec is an
+     OBJECT on 473 of 504 populated routes — 460 carry `hiking` and 455 `packWeight` — so a single
+     text row there would offer to replace a structured fact with a sentence. The panel renders
+     both shapes, so nothing would break; it would just be a quiet downgrade, and one that could
+     never be agreed anyway because free prose cannot cluster. */
+  const _dget=function(o,p){var q=String(p).split("."),v=o;for(var i=0;i<q.length;i++){if(v==null||typeof v!=="object")return undefined;v=v[q[i]];}return v;};
+  const _dset=function(o,p,val){var q=String(p).split("."),r=Object.assign({},o||{}),t=r;for(var i=0;i<q.length-1;i++){t[q[i]]=Object.assign({},t[q[i]]||{});t=t[q[i]];}t[q[q.length-1]]=val;return r;};
   const OBJ_KEYS={road:ROAD_KEYS,access:ACCESS_KEYS,timing:TIMING_KEYS,crowds:CROWDS_KEYS,partnerRequirements:PARTNER_KEYS,seasonalGuidance:SEASONAL_KEYS,emergency:EMERGENCY_KEYS,approachLogistics:LOGISTICS_KEYS};
-  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=o[k[0]];return (v==null||String(v).trim()==="")?null:k[1]+": "+v;}).filter(Boolean).join(" · ");};
+/* An enum row stores the CODE the column already holds (solitudeRating is a number 1-5 on
+     499 routes, not a phrase), and shows the label. Printing the raw code in the summary line
+     would make the collapsed field read "solitude: 4". */
+  const objLabel=function(k,v){if(k[3]!=="enum"||!k[4])return v;var hit=k[4].filter(function(o){return String(o[0])===String(v);})[0];return hit?hit[1]:v;};
+  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=_dget(o,k[0]);return (v==null||String(v).trim()==="")?null:k[1]+": "+v;}).filter(Boolean).join(" · ");};
   const _clip=function(s){return s.length>44?s.slice(0,44)+"…":s;};
   /* `cur` drives three things, and "—" is load-bearing in all of them: the collapsed summary
      line, `wasEmpty` (which decides whether one climber can fill a blank or three must agree),
@@ -2007,7 +2018,7 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
   const road=vals.road||{};const setRoad=function(k,v){setVals(function(p){var o=Object.assign({},p.road||{});o[k]=v;return Object.assign({},p,{road:o});});};
   const access=vals.access||{};const setAccess=function(k,v){setVals(function(p){var o=Object.assign({},p.access||{});o[k]=v;return Object.assign({},p,{access:o});});};
   const timingCur=function(r){var s=objStr(TIMING_KEYS,r&&r.timing);return s?_clip(s):"—";};
-  const objSet=function(field){return function(k,v){setVals(function(p){var o=Object.assign({},p[field]||{});o[k]=v;var n={};n[field]=o;return Object.assign({},p,n);});};};
+  const objSet=function(field){return function(k,v){setVals(function(p){var o=_dset(p[field]||{},k,v);var n={};n[field]=o;return Object.assign({},p,n);});};};
   const timing=vals.timing||{};const setTiming=objSet("timing");
   const objCur=function(keys){return function(r,f){var s=objStr(keys,r&&r[f]);return s?_clip(s):"—";};};
   const crowdsCur=objCur(CROWDS_KEYS),partnerCur=objCur(PARTNER_KEYS),seasonalCur=objCur(SEASONAL_KEYS),emergencyCur=objCur(EMERGENCY_KEYS),logisticsCur=objCur(LOGISTICS_KEYS);
@@ -2126,9 +2137,9 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
          so a climber is correcting one line of nine and needs to see which. Leaving a box empty
          leaves that key untouched — structuredVal drops blanks, and the merge assigns over the
          existing object — so nobody has to retype eight correct facts to fix the ninth. */
-      return <div>{_ks.map(function(k){var on=_cur[k[0]];return <div key={k[0]} style={{marginBottom:9}}>
+      return <div>{_ks.map(function(k){var on=_dget(_cur,k[0]);if(on!=null&&typeof on==="object")on=objLabel(k,on);else if(on!=null&&k[3]==="enum")on=objLabel(k,on);return <div key={k[0]} style={{marginBottom:9}}>
         <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3,marginBottom:4}}>{k[1]}</div>
-        <input aria-label={k[1]} value={_val[k[0]]||""} onChange={function(e){_set(k[0],e.target.value);}} placeholder={k[2]} style={fld}/>
+        {k[3]==="enum"?<select aria-label={k[1]} value={_dget(_val,k[0])==null?"":String(_dget(_val,k[0]))} onChange={function(e){_set(k[0],e.target.value);}} style={fld}><option value="">Not sure</option>{k[4].map(function(o){return <option key={String(o[0])} value={String(o[0])}>{o[1]}</option>;})}</select>:<input aria-label={k[1]} value={_dget(_val,k[0])==null?"":_dget(_val,k[0])} onChange={function(e){_set(k[0],e.target.value);}} placeholder={k[2]} inputMode={k[3]==="num"?"numeric":undefined} style={fld}/>}
         {on?<div style={{fontSize:11,color:C.textMuted,marginTop:3,lineHeight:1.4}}>{"On file: "+on}</div>:null}
       </div>;})}<div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{"Leave anything you don't know blank — blank means unchanged, not cleared."}</div></div>;}
     if(f.type==="itinerary"){return <ItineraryEditor itin={itin} onChange={setItin}/>;}
@@ -2168,13 +2179,13 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
      write side should not add to it. */
   var _e=String(b.elev||"").trim();var _n=_e?parseInt(_e,10):null;
   return {name:String(b.name).trim(),type:b.type||"camp",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
-});if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_src[k[0]];if(v==null)return;v=String(v).trim();if(!v)return;
+});if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_dget(_src,k[0]);if(v==null)return;v=String(v).trim();if(!v)return;
 /* A key marked numeric merges back as a NUMBER. The hour fields are arithmetic — the planner
    derives the summit time as totalHrs-approachTimeHrs-descentTimeHrs — so a string would
    concatenate instead of subtract, silently. Non-numeric input is dropped rather than stored
    as text, because a bad number is worse here than a missing one: the tile still renders.
    group_limit keeps its integer parse, now declared on the key rather than hardcoded here. */
-_o[k[0]]=(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):((k[0]==="group_limit"&&/^[0-9]+$/.test(v))?parseInt(v,10):v);if(_o[k[0]]===undefined)delete _o[k[0]];});return _o;}if(CANON[f.k])return CANON[f.k](filledStr(f));return filledStr(f);};
+var _pv=(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):(k[3]==="enum")?((k[4]||[]).some(function(o){return typeof o[0]==="number";})?(isFinite(parseFloat(v))?parseFloat(v):undefined):v):((k[0]==="group_limit"&&/^[0-9]+$/.test(v))?parseInt(v,10):v);if(_pv===undefined)return;/* dotted keys write nested, so `fitnessSpec.hiking` lands inside the object the panel reads */if(String(k[0]).indexOf(".")>=0){_o=_dset(_o,k[0],_pv);}else{_o[k[0]]=_pv;}});return _o;}if(CANON[f.k])return CANON[f.k](filledStr(f));return filledStr(f);};
   const submit=function(){var dc=discContribs();if(!changedFields.length&&!dc.length)return;changedFields.forEach(function(f){var c={type:"edit",field:f.k,label:f.label,value:structuredVal(f),wasEmpty:(!f.cur||f.cur==="—"),routeId:route.id,note:note,title:route.name,area:mtnOf(route),meta:f.label+": "+(f.cur||"—")+" → "+filledStr(f),status:"review",when:"just now"};if(onSubmit)onSubmit(c);});dc.forEach(function(c){if(onSubmit)onSubmit(c);});setSentN(changedFields.length+dc.length);setSent(true);};
   const totalUpdates=changedFields.length+(discChanged?(disc==="trad"||disc==="sport"?2:1):0);const canSubmit=totalUpdates>0;
   const submitLbl=!canSubmit?"Fill in any one field to submit":totalUpdates>1?("Submit "+totalUpdates+" updates"):(allEmpty&&!discChanged?"Add to route":"Submit update");
