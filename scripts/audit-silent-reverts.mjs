@@ -296,6 +296,17 @@ if (!addedFiles.size) {
    only one anyone reads, and the old code returned `ok` and exit 0 the moment `missing` was empty —
    which is exactly the state #1248 left, with five files gone. */
 let fileSilent = 0;
+/* Full commit message (subject + body) for the deliberate/silent classification, cached because
+   this is called once per removed file and the same commit usually removes several. */
+const _bodyCache = new Map();
+const bodyOf = (sha) => {
+  if (!_bodyCache.has(sha)) {
+    let t = "";
+    try { t = git("show", "-s", "--format=%B", sha); } catch { t = ""; }
+    _bodyCache.set(sha, t);
+  }
+  return _bodyCache.get(sha);
+};
 const fileRemover = new Map(); // path -> {sha, subject, renamedTo} — kept so the grouping below
                                // needs no second `git log` per file.
 if (goneFiles.length) {
@@ -321,7 +332,16 @@ if (goneFiles.length) {
     fileRemover.set(path, { sha: removedBy, subject: removedSubject, renamedTo });
     if (renamedTo) { console.log(`  renamed     ${path}\n      -> ${renamedTo}  (a move is not a revert)`); continue; }
     const base = path.split("/").pop().replace(/\.(jsx?|mjs|json|sql)$/, "");
-    const deliberate = removedSubject && (removedSubject.includes(path) || removedSubject.toLowerCase().includes(base.toLowerCase()));
+    /* THE HEADER SAYS "message OR BODY" AND THIS READ ONLY THE SUBJECT, which made the deliberate
+       branch nearly unreachable: a subject is ~72 characters and a path like
+       `scripts/oneoff/probe-inbox-outage-copy.mjs` does not fit beside a sentence explaining why
+       it went. Measured on the commit that found this -- a consolidation naming BOTH retired
+       probes in its body -- the audit reported both SILENT and then flagged itself as "the
+       stale-base shape". A detector that cannot be satisfied by doing the right thing teaches
+       people to ignore it, which is the failure this audit's own header warns about twice.
+       The body is fetched once per removing commit and cached: `git show -s --format=%B`. */
+    const removedText = removedBy ? bodyOf(removedBy) : removedSubject;
+    const deliberate = removedText && (removedText.includes(path) || removedText.toLowerCase().includes(base.toLowerCase()));
     if (!deliberate) fileSilent++;
     console.log(`${deliberate ? "  deliberate  " : "  ** SILENT   "}${path}`);
     console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
@@ -350,11 +370,24 @@ if (goneFiles.length) {
   for (const [path, info] of goneFiles) {
     const r = fileRemover.get(path);
     if (!r || !r.sha || r.renamedTo) continue;
-    if (!byRemover.has(r.sha)) byRemover.set(r.sha, { subject: r.subject, paths: [], adders: new Set() });
+    if (!byRemover.has(r.sha)) byRemover.set(r.sha, { subject: r.subject, namedText: bodyOf(r.sha), paths: [], adders: new Set() });
     const e = byRemover.get(r.sha);
     e.paths.push(path); e.adders.add(info.sha);
   }
-  const multi = [...byRemover.entries()].filter(([, e]) => e.adders.size > 1);
+  /* ...and a commit that NAMES every file it removed is not this shape whatever the counts say.
+     A CONSOLIDATION -- two probes merged into one guard -- removes several files added by several
+     PRs and is indistinguishable from a stale-base squash on the structural test alone. What
+     separates them is the thing the deliberate/silent classification already computed: a squash
+     about milepost clustering does not mention the probe files it drops, and a consolidation
+     names them because that is what its commit message is FOR. Without this, the audit told the
+     author of a correct consolidation to "read this one FIRST", which is the same
+     flagging-correct-work failure the paragraph above warns about. */
+  const multi = [...byRemover.entries()]
+    .filter(([, e]) => e.adders.size > 1)
+    .filter(([, e]) => !e.paths.every((path) => e.namedText
+      && (e.namedText.includes(path)
+        || e.namedText.toLowerCase().includes(
+          path.split("/").pop().replace(/\.(jsx?|mjs|json|sql)$/, "").toLowerCase()))));
   if (multi.length) {
     console.log(`\n  ** ONE COMMIT REMOVED FILES ADDED BY SEVERAL DIFFERENT ONES — the stale-base shape:`);
     for (const [sha, e] of multi) {
@@ -406,7 +439,9 @@ for (const [tok, info] of missing) {
   /* Was the removing commit about this thing? The token itself appearing in its subject is the
      strongest signal; a bare name fragment is the weaker one. */
   const stem = tok.replace(/^(check|audit):/, "").replace(/^scripts\/|\.mjs$/g, "");
-  const deliberate = removedSubject && (removedSubject.includes(tok) || removedSubject.toLowerCase().includes(stem.toLowerCase()));
+  // Same subject-only bug as the file classifier above; see the comment there.
+  const removedText2 = removedBy ? bodyOf(removedBy) : removedSubject;
+  const deliberate = removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase()));
   if (!deliberate) { silent++; silentKinds.add(info.kind); }
   console.log(`${deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
   console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
