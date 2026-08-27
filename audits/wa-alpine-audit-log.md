@@ -10912,3 +10912,93 @@ guessed at.
 
 Next batch continues after `wa_olympus_summit_block_west_edge` in the
 id-ordered scope.
+
+## 2026-08-27 — Pass 3, Batch 159
+
+Checked: `wa_olympus_traverse` (Mount Olympus), `wa_open_book_2` (Unicorn
+Peak), `wa_ottohorn_southeast_route` / `wa_ottohorn_west_ridge` (Ottohorn),
+`wa_overcoat_peak_southeast_route` (Overcoat Peak), `wa_pernod_spire_standard`
+(Pernod Spire), `wa_phantom_peak_south_route` / `wa_phantom_peak_west_ridge`
+(Phantom Peak).
+
+Two fixes:
+
+- **`wa_phantom_peak_south_route`** — `approach_logistics.trailhead` and this
+  row's own Trailhead waypoint (3,120 ft at 48.9101,-121.5927) both correctly
+  name Hannegan Pass Trailhead, but the same blob's `trailheadDirection`
+  sub-field still named a different, wrong trailhead — "Nooksack Cirque
+  Trailhead at the end of FR-34 off Hannegan Pass Road (FR-32)". Nooksack
+  Cirque Trailhead is real but unrelated: FR-34 splits off FR-32 only ~1 mile
+  in and dead-ends at a separate parking area serving the Nooksack Cirque
+  Trail (#750) toward the base of Mount Shuksan, not toward Whatcom
+  Pass/Perfect Pass and the Pickets (confirmed via the USFS Nooksack Cirque
+  Trail #750 and Hannegan Pass Road 32 pages). This looks like the residue of
+  an earlier trailhead-agreement fix on this row (documented in CLAUDE.md)
+  that updated `trailhead` and the pin but not `trailheadDirection`.
+  Corrected the direction text to match the row's own trailhead/pin.
+- **`wa_ottohorn_west_ridge`** — `loss_ft` (400) was inconsistent with this
+  same row's own `gain_ft` (7240) and its own descent narrative. `gain_ft`
+  correctly matches the net rise from the row's own Trailhead waypoint
+  (~600 ft per its own `itinerary` field) to the summit (7,840 ft, matching
+  `high_point_ft` and the area row). The route's own `descent_text` describes
+  a full out-and-back to the same trailhead ("reverse the approach over the
+  Barrier"), like every other round-trip route in this batch (all of which
+  store `gain_ft == loss_ft`). A round trip from a 7,840 ft summit back to a
+  ~600 ft trailhead cannot lose only 400 ft. Corrected `loss_ft` to match
+  `gain_ft`.
+
+Two flagged for human review rather than fixed, since no authoritative source
+could be found to resolve them within this pass:
+
+- **`wa_pernod_spire_standard`** — `descent_text` disagrees with this same
+  row's own `rappel_detail`/`rappel_count_note` on three points: rappel count
+  (`descent_text` says "on the order of 4-5 rappels total" into the Silver
+  Star Glacier basin directly off the back side; `rappel_detail`/
+  `rappel_count_note` describe exactly 3 — one off the true summit, then two
+  down Chablis Spire's east-face route to that route's base); the first
+  rappel's anchor (`rappel_detail` says bolted — "new bolt + old original
+  1/4-inch bolt with hanger, backed by 2 equalized pitons"; `descent_text`
+  says "natural ... rather than bolted" for that same first rappel); and
+  whether the descent passes via Chablis Spire's route at all (only
+  `rappel_detail`/`rappel_count_note` mention Chablis). This is safety-
+  relevant (anchor trust, rope length, rappel count) so it wasn't guessed at.
+  WebSearch could not turn up a trip report or guidebook excerpt detailed
+  enough to adjudicate, and SummitPost/AAC Publications/WTA are blocked by
+  this environment's network egress proxy, so a definitive primary source
+  could not be checked directly.
+- **`wa_open_book_2`** — the stored Snow Lake Trailhead elevation (waypoint:
+  4,400 ft; approach text: "~4,500 ft") looks too high by the row's own
+  arithmetic: its own `bivy` entry puts Snow Lake itself at 4,685 ft, and the
+  approach text says the trail gains "about 700 ft" from the trailhead to the
+  lake — 4,685−700 ≈ 3,985 ft, roughly 400-500 ft below what's stored as the
+  trailhead elevation. Secondary search results (BaldHiker, TrailPosse) also
+  point to a trailhead nearer 4,000 ft. Couldn't confirm a precise figure
+  because WTA and NPS (the two sources that would normally settle this) are
+  both blocked by the network egress proxy in this environment, and this
+  wasn't confident enough on secondary sources alone to write a fix — a
+  ~400-500 ft elevation change would also perturb the route's `gain_ft`
+  floor, so getting it wrong would introduce a new error rather than fix one.
+
+Four routes were clean on review. `wa_olympus_traverse` already carries a
+documented prior correction (its own `corrections` field) and is internally
+consistent across its waypoints, `rope_note`, `high_point_ft` and the area
+row. `wa_ottohorn_southeast_route` and `wa_overcoat_peak_southeast_route`
+were previously examined in this project's own audit history (referenced in
+CLAUDE.md's `audit:rappel-claims` and gear-check entries) and reconfirmed
+correct here — `wa_overcoat_peak_southeast_route`'s two-rappel account is
+consistent across `rappels`/`rappel_detail`/`rappel_count_note`/
+`descent_text`, and its trailhead waypoint sits ~450 m from its own
+`approach_logistics` pin, under this project's own 500 m disagreement
+threshold. `wa_phantom_peak_west_ridge`'s `gain_ft` (1916) matches its own
+`beta` text, which places the technical start at a 6,100 ft saddle
+(8,016−6,100=1,916) — the documented "high camp" gain convention, not an
+error, and the same figure independently matches `wa_phantom_peak_south_route`'s
+own 6,100 ft southwest-buttress-saddle waypoint the same way.
+
+Validated against the live database before writing: `npm run check:sql`
+confirmed both write targets exist and no statement is unguarded, and each
+WHERE guard was re-checked with a live REST read immediately before writing
+the file.
+
+Next batch continues after `wa_phantom_peak_west_ridge` in the id-ordered
+scope.
