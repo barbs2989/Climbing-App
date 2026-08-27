@@ -69,6 +69,7 @@ npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
+npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -113,7 +114,7 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
-npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES place one named point in two places?
+npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES disagree about one named point? (place, and height)
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
@@ -1298,6 +1299,51 @@ a build error, but a screen that renders wrong or not at all.
   is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
   not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
   `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
+  - **SECTION 2 ASKS THE SAME QUESTION OFF A CONTROL, because the scope above let a real defect
+    through.** Section 1 judges by the **computed control name**, which is what makes it
+    trustworthy — an `aria-label` fix changes no structure at all and correctly reads as fixed —
+    and it is also why it is scoped to controls: a plain `<div>` has no computed name, so a
+    widened selector would find candidates and drop every one at the confirm step. The route
+    page's conditions list rendered `{pat.label}{pat.when?<span style={{marginLeft:7}}>…</span>
+    :null}` as **"Best windowmid-Jul to early Sep"** on a plain heading div. Same shape as #740,
+    invisible here by construction.
+    - **The instrument is `innerText`, and the obvious alternative was tested and REJECTED.** The
+      tempting judgement is the AX tree's `StaticText` nodes, on the theory that Chrome merges
+      adjacent inline text into one. Measured on four synthetic shapes,
+      `Accessibility.getPartialAXTree` with `fetchRelatives` returned **no StaticText at all** for
+      both inline cases — the two that matter. `innerText` separates all four correctly, because
+      it is computed from **layout**, which is the same thing that decides whether a separator
+      exists.
+    - **Three filters, and every one is a false positive the scan actually produced.** *Not
+      rendered*: a `display:none` **grandparent** is missed by checking the parent's display, and
+      inside one `innerText` falls back to `textContent`, which carries no separators — so every
+      boundary in the subtree looks glued (all three findings of one early run were the seed area
+      browser, dead under `USE_DB`, with zero-area rects). *Local text*: a body-wide `includes()`
+      matches a short numeric needle like `"31"` elsewhere on a busy page. *Visual gap*: the app
+      wordmark is two spans, `Climb` and `Match`, flush against each other, and "ClimbMatch" is
+      exactly what the eye reads — the defect is a gap the eye **gets** and the accessibility tree
+      does not.
+    - **A SHARED VISUAL LINE IS NOT REQUIRED, and requiring it MISSED the real defect.** At 390px
+      that chip **wraps**, and a soft inline wrap puts no separator into `innerText` — measured,
+      the wrapped case still reads `"Best windowlate spring to fall"`. A block child does get a
+      newline and is already excluded by the text test. So the only thing excused is the
+      *contiguous* case.
+    - **IT SHIPPED BROKEN AND EVERY SIGNAL SAID OTHERWISE.** The first version was a template
+      literal, and inside one `\w` is an escape that collapses to a literal `w` — so the needle
+      regex was `/w/` and the scan matched almost nothing while reporting a clean app across 65
+      screens. The guard was green before the widening and after it; the fail-closed floor was
+      satisfied, because **it counts boundaries EXAMINED, which is a real number whether or not
+      the needle logic works**; and "0 findings" was the expected answer. Only the injection
+      against a defect that had genuinely shipped told the truth. The scan is a **function**
+      passed to `page.evaluate` now, as `findCandidates` is, so neither the escaping trap nor the
+      backtick trap can return. *A floor that counts work done is not evidence the work was
+      correct* — the same lesson `check:dup-attrs` records for its element counter.
+    - **The verdict names BOTH sections**, so the next reader can tell from the output that the
+      off-control scan exists rather than rediscovering the hole.
+    - **`--only=route` reduces the walk for the injection suite and can never print a pass.** The
+      full sweep is 65 screens and an injection needs two runs of it; a flag that let a partial run
+      look complete would be the exact false pass this file is built to refuse, so it prints
+      `PARTIAL RUN … tabs and overlays SKIPPED` and says outright that it is not a pass.
   - **Structural, not lexical, and that distinction is the whole check.** Scanning names for a
     digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
     `Class 4` are all correct names. The defect is that the digit and the word come from
@@ -1794,6 +1840,30 @@ a build error, but a screen that renders wrong or not at all.
     - It is **emphasis, never suppression**. Single-file removals are still printed in full, and the
       run still exits 0 — a removal is not a defect, and going red on a promotion would make the
       audit argue with correct work.
+  - **IT TRACKS `.yml` NOW, AND NOT DOING SO WAS A HOLE IN ITS OWN SUBJECT.** The extension list was
+    `jsx|mjs|json|sql`, so a merge deleting a **workflow** was invisible — and CI wiring is the one
+    kind of loss that reports nothing by itself: a guard whose workflow vanishes does not go red, the
+    PR check list merely gets shorter, and `check:ci-cancel` already records that *the tell is the
+    COUNT, never the colour*. Not hypothetical: `silent-revert-check.yml` was **added (#1290) and
+    deleted (#1321) inside this audit's own 120-commit window**, and the audit — running on every
+    merge, over that exact window — reported nothing either time. **It could not see its own sibling
+    workflow disappear.**
+    - Measured before widening, over ALL first-parent history: **10 `.yml` added, 1 absent**, and it
+      classifies SILENT because #1321 names the workflows it consolidated by PR number rather than by
+      filename. One extra printed row, **zero** extra gate trips — a single-file SILENT removal does
+      not trip `--fail-on-silent`. What WOULD trip it is the case worth catching: a stale-base squash
+      carrying a workflow away alongside files from other commits, the #1248 shape with CI wiring in it.
+    - **The stronger version — tracking individual JOBS — was measured and REJECTED.** Across 46
+      commits touching `.github/workflows/`, exactly two jobs have ever been removed (`reverts`,
+      `signed-in`) and **both are named in their own commit subject**, so a detector would report 2
+      findings and 0 real. A 2-space YAML key is not specific to a job either: `push`,
+      `workflow_dispatch` and `group` sit at that indent, and two of the four keys the scan found were
+      `on:` entries. Re-measure before re-deriving it.
+    - **A COUNT FROM THIS AUDIT IS A STATEMENT ABOUT A WINDOW.** The before/after looked like 158
+      files added then 179 — twenty-one more, against the two `.yml` the window actually holds. The
+      window had **slid fourteen commits** between the two runs and that slide is the whole
+      difference. Hold the ref fixed, or compute the delta with `git log --diff-filter=A` over one
+      range.
   - **A RENAME IS NOT A DELETION.** Additions are detected by git's `new file mode` marker, which a
     rename does not carry, so a moved file is never recorded as added and can never be reported as
     gone; the removal lookup also passes `-M --name-status` so an `R` reads as a rename. This repo
@@ -2404,6 +2474,55 @@ a build error, but a screen that renders wrong or not at all.
     or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
     the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
     classes the first run actually produced.
+- **`check:column-drift`** asks `check:function-drift`'s question of **tables**: is the live schema
+  the one the migrations describe? Reads the live DB, so **not** a build gate.
+  - **THE INCIDENT IT WAS WRITTEN FOR: `routes.access_checked_at` is live, holds 39 stamped rows,
+    is anon-readable — and NO migration, NO commit anywhere in history, and NO reader mentions
+    it.** The DATA shipped to production; the CODE did not. Found by verifying a memory note that
+    claimed the feature had landed: migration `0172`, `lib/road.js`, `accessCheckedLine()` and a
+    guard are all described in that note and none exists. *Verify a memory's file and column names
+    before recommending work on them* — the rule was already written down and this is what it
+    catches.
+  - **Three guards sit beside this and none can see it.** `check:schema` is a build gate asking
+    exactly one direction — does `lib/db.js` READ a column the snapshot lacks; an EXTRA column
+    breaks nothing it tests. `check:function-columns` asks whether columns a stored FUNCTION writes
+    still exist, again only looking for absence. `check:migrations` refuses two files sharing a
+    number, and a migration nobody wrote has no number to collide with. Schema described nowhere is
+    invisible by construction — the `check:overlay-discovery` shape.
+  - **REFRESHING THE SNAPSHOT WOULD HAVE MADE IT WORSE, which is why section A asks the MIGRATIONS
+    rather than the cache.** `scripts/schema-snapshot.json` is a committed cache of the live schema
+    and the only record of the database inside the repo, so `npm run schema:refresh` silently
+    **absorbs** an undescribed column — after which `lib/db.js` may legally read a column no
+    migration creates, a rebuild from migrations produces an app reading a column that does not
+    exist, and every gate stays green. The baseline-regenerated-until-it-asserts-nothing failure,
+    with teeth.
+  - **Section C found the snapshot stale from THREE separate merged migrations** — `areas.source`
+    and `account_links` dropped but still listed, `areas.coords_approx` and `access_checked_at`
+    live but absent. Nothing had noticed, because the refresh instruction is a comment in a script
+    header. That staleness is not inert: `check:schema` is a **build gate**, so a column live but
+    missing from the snapshot makes a **correct reader fail the build**, while a column dropped
+    live but still in the snapshot lets a reader of a DROPPED column **pass** — which is the #372
+    defect that guard exists to prevent. Snapshot refreshed in the same commit; the guard is what
+    stops it rotting again.
+  - **Precision was measured before it shipped**, because a detector over 179 migration files is
+    exactly the kind that returns a page of noise: across 41 live tables and 479 live columns,
+    section A reports **1**, section B reports **0**. The migration directory describes the
+    database almost exactly, which is what makes the one exception worth reading.
+  - **Replays statements in SOURCE ORDER, and the first version did not.** `0036_crews_persistence`
+    does `drop table if exists crews cascade;` and re-creates it **in the same file**, so applying
+    every CREATE and then every DROP wiped the table the file had just built and reported all ten
+    of its columns as undescribed. `check:rls` records the identical defect from the policy side.
+  - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
+    parsed columns, an unreachable database, and a live schema exposing zero tables.
+  - `KNOWN` declares a column as live-and-undescribed **with a reason**, and a **stale** entry
+    fails — so when the missing migration lands, this says so and the entry is deleted.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
+    `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
+    section**, never on the exit code — a mutation that adds a column also makes the fixture
+    disagree with the snapshot, so section C fires too and every case would look alike from an
+    exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
+    dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
+    breaking their mechanism and confirming they then fire.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -2417,6 +2536,34 @@ a build error, but a screen that renders wrong or not at all.
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
     exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - **EIGHT keyed objects now, not two, and widening the form exposed TWO holes in this guard.**
+    `crowds`, `partnerRequirements`, `seasonalGuidance`, `emergency` and `approachLogistics` all
+    rendered on the route page and could be corrected by nobody — the **`bivy` shape**, which had
+    already shipped once. They reuse the generic `OBJ_KEYS` editor, so they needed key specs and
+    no new component: `renderInput` keys off `f.type` and reads `route[f.type]`, which is why the
+    field key and the type are deliberately the same string.
+    - **The sub-key test scanned `RouteDetail.jsx` ALONE, and three of the five panels live in
+      `EnrichmentPanels.jsx`** — so their readers were in a file the guard never opened. Same
+      shape as [[grep-the-app-not-just-the-db-layer]].
+    - **And it tested for `.key`, which a DESTRUCTURING reader does not contain.**
+      `const {estimatePerSeason, peakTraffic, solitudeRating} = route.crowds` reads all three and
+      writes none of them with a dot. Together these two reported **five correct panels as dead**
+      — the direction that tells an author to delete working wiring. The destructure test is
+      scoped to `= <x>.<field>`, never to every `{a,b}` in 1.5 MB of JSX, which would make it
+      vacuous. Proven still sharp by misspelling a key and watching it fail by name.
+  - **It also asserts OBJ_KEYS / OBJ_STATE / FIELDS agree, because a mismatch is a BLANK SHEET.**
+    `renderInput` does `OBJ_STATE[f.type][0]`, so a type registered in `OBJ_KEYS` with no state
+    entry **throws on the first render of the contribute sheet** — the climber taps a pencil and
+    gets nothing. A type with no `FIELDS` entry is the milder half: a section id that scrolls
+    nowhere. Injection-tested by removing one state entry, which fails naming the type.
+  - **`sling_rack` is NOT the cheap text field it looks like**, and this is why the sweep stopped
+    where it did: `fmtSlingRack` returns `null` for a plain string, so a text box there would be
+    contributable and render **nothing** — the very defect the sweep exists to remove. Six columns
+    still need editors that do not exist (`approach_variants`, `climbing_route`, `climate`,
+    `seasonal_hazards`, `sling_rack`, `difficulty`); four must **never** be writable (`verif`,
+    `corrections`, `data_quality`, `gear_confidence` are trust and provenance records, and a write
+    path lets a climber forge their own verification). See
+    [[climbing-route-edit-pencil-writes-elsewhere]].
   - **It asks the same question one level down for the two jsonb fields.** `road` and `access`
     are objects, so passing the column check proves nothing about the individual sub-keys the
     form offers. `ROAD_KEYS` / `ACCESS_KEYS` are checked against the file for a reader, because
@@ -2565,6 +2712,32 @@ a build error, but a screen that renders wrong or not at all.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+- **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
+  only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
+  catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
+  public and which `0146` excluded **on purpose** — so the app promised a summit nobody may stand
+  on was on its way. Proven on screen rather than inferred: chip `Colorado 14ers 0/53`, card
+  expanded 1032 → 2550 chars, the sentence read back verbatim.
+  - **The second defect is worse than the copy.** `cpl = d >= t`, so at `t = 53` the card could
+    **never** read Complete: a climber who ticks every achievable Colorado 14er sits at 52/53
+    forever.
+  - **Fixed by this file's own precedent, not a new rule.** Desert Towers hit exactly this and the
+    TOTAL was corrected **30 → 27**, on the reasoning that the advertised number is what you can
+    tick *here*; Colorado had been left at 53. `total: 52` deletes the false sentence outright
+    (`extra` becomes 0) instead of rewording it, and makes Complete reachable.
+  - **52 is only honest because the card says why.** `LDESC.co14` now states that the standard list
+    counts 53 and that Mount Bross is not among these 52 because its summit is closed to the
+    public. Without that, 52 is a number that disagrees with every guidebook — **do not "correct"
+    it back**, and never "finish" the list by adding Bross: a tick list is an invitation to go
+    climb something.
+  - The generic sentence carries a comment saying what it is FOR — a gap the catalog really can
+    close — so nobody points it at a permanent ceiling again. `audit:list-coverage` now reports all
+    six rosters complete and advertised-not-in-catalog **1 → 0**.
+  - Guarded in **`check:challenge-rows`** (CI, not the build). It expands the Colorado card
+    **separately**, because that guard's existing expansion takes whichever roster card sorts
+    shortest and was never guaranteed to be this one — *a guard that might look at the right card
+    is not a guard.* `scripts/oneoff/probe-colorado-14ers-ceiling-copy.mjs` is the before/after
+    measurement, and it fails closed on a card that never expanded.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
@@ -4135,6 +4308,38 @@ the correction knows the screen is wrong, and they have no way to report it.
     and measuring showed why: the agreeing routes store **the same point at different precisions**
     (48.8829219, 48.883737, 48.8837, 48.88374 ...), all within ~100 m, so no two are byte-equal and
     an exact-match mode **refuses a unanimous cluster**.
+  - **SECTION 2 IS THE MIRROR, and it lives here rather than in a SIXTH waypoint audit.** Section 1
+    asks whether two routes disagree about **where** a named point is; section 2 asks whether they
+    disagree about **how high** it is while storing the **identical** coordinate. Same question over
+    the same pairs, so folding it in costs one read instead of another script. The coordinate being
+    byte-identical is what makes it the mirror: the position is agreed, so **only the number can be
+    wrong**. **32 findings, 23 of them TRAILHEADS.**
+    - **`audit:waypoint-elevations` cannot see it.** That audit flags a pin the TERRAIN refuses, so a
+      disagreement between two rows at one coordinate is invisible whenever both values sit inside
+      the terrain box. **#1320 repaired exactly one instance of this class and it was found BY HAND.**
+    - **Keyed on the coordinate rounded to 4 dp (~11 m), which is required rather than sloppy**: rows
+      store one point at different precisions (48.8837373 vs 48.8837), so an exact match finds almost
+      nothing — the lesson the modal-coordinate attempt already paid for.
+    - **THE MINORITY IS SOMETIMES THE CORRECT ROW**, which is the whole argument for adjudicating
+      against the ground rather than the vote. At the *SR-20 Wine Spires pullout* **four** routes said
+      2,200 or 3,450 ft and **one** said 4,300; the ground reads 4,198-4,579 and admits **only the
+      lone dissenter**. A majority rule would have taken the correct row and repaired it into
+      agreement with four wrong ones.
+    - **DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY.** Two threshold artefacts would each
+      have produced a confident wrong write: *Upper Dungeness Trailhead*, where the ground refuses
+      2,970 ft by **17 feet** and the route's own prose independently says 2,960; and *Lake of the
+      Woods*, where the surviving value is admitted only by **13 feet** while the ground box refuses
+      it outright. So the rule is that the surviving value must sit inside the ground box (or within
+      50 ft) and every replaced value at least **300 ft** outside — a 6x gap.
+    - **9 repaired** (`scripts/oneoff/fix-same-coordinate-elevation-disagreements.mjs`), 32 -> 26.
+      **26 are deliberately left**: 23 where the ground admits EVERY stated value, so the spread is
+      inside the terrain's own noise; 1 where it refuses every value (that is section 1's question,
+      not this one); and the two artefacts above.
+    - **It caught an incomplete repair made HOURS EARLIER by the same session.**
+      `fix-trailhead-elevations-from-a-corroborated-sibling` moved three *Stuart Lake Trailhead* rows
+      to 3,400 ft and left `wa_boving_christensen` at 2,930, because that sweep only examined pins
+      the TERRAIN refuses and 2,930 sat inside the flat tolerance. *An instance fixed by hand is not
+      a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
@@ -5928,6 +6133,24 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
     number, taking the roster length while the heading took the fudged one.
   - `grpProfilesUnavailable` says so when the read failed, because with the placeholder the count is
     right either way and the screen would otherwise present *"A climber"* as if it were the name.
+  - **SHOWING YOU AT ALL WOKE A LATENT `check:real-profile-rows` DEFECT, and CI caught it.** The
+    row's subtitle is `c._profile ? "Owner"/"Moderator"/"Member" : (c.level+" · "+vScore(c))`, and
+    `_asMember` hands back **bare `ME`**, which carries no `_profile`. A real signed-in account has
+    no seed `level` and no vouches, so your own row rendered **"undefined · 0"** — invisible until
+    this roster started listing you. `check:signed-in` failed on `postMenuFor`/`reactPickerFor`,
+    whose payload opens a synthetic `ownerId:0` group with **no members**, i.e. precisely the
+    fudge case.
+    - **`check:real-profile-rows` passes either way and structurally cannot see it.** That gate asks
+      whether the concatenation is **gated**; this one is. The defect was handing it an object that
+      **fails** the gate. *Gating an expression and satisfying that gate are different questions* —
+      the same distinction as `check:field-renders` (does the column reach a screen) versus
+      `check:token-boxes` (does it fit the element it reaches).
+    - **The first fix keyed on `m.id===_meGid` and never fired.** `ME.id` is **0 signed in or out**,
+      so the resolved object can never equal a uuid `_meGid`; it has to key on the id being
+      **mapped**. Caught by the probe, not by reading it.
+    - The probe's own fixture was wrong in the other direction: seed climbers really do carry
+      `level:"Intermediate"`, so test climbers without one made every seed row look like the defect.
+      **Check the seed shape before "fixing" the app to satisfy a fixture.**
   - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
     the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
     recorded that the underlying disagreement was still real; this is that, closed.

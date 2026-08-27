@@ -119,4 +119,53 @@ console.log(`Washington really does hold two Cathedral Passes and several Snow L
 console.log(`be right, and "repairing" one would destroy correct data.\n`);
 for (const s of namesake) console.log(`  ${s.max.toFixed(0).padStart(4)} km  "${String(s.raw).slice(0, 46)}"  on ${s.pins.length} routes`);
 
+/* ---------------------------------------------------------------------------------------------
+ * SECTION 2 — THE MIRROR: same place, different HEIGHT.
+ *
+ * Section 1 asks whether two routes disagree about WHERE a named point is. This asks whether they
+ * disagree about HOW HIGH it is while storing the identical coordinate. Same question — do two
+ * routes agree about this named place? — over the same pairs, so it lives here rather than in a
+ * SIXTH waypoint audit. The coordinate being byte-identical is what makes it the mirror: the
+ * position is agreed, so only the number can be wrong.
+ *
+ * NOTHING ELSE LOOKS FOR IT. audit:waypoint-elevations flags a pin the TERRAIN refuses, so a
+ * disagreement between two rows at one coordinate is invisible to it whenever both values sit
+ * inside the terrain box. PR #1320 repaired exactly one instance of this class and it was found
+ * BY HAND.
+ *
+ * KEYED ON THE COORDINATE ROUNDED TO 4 dp (~11 m), which is required rather than sloppy: rows
+ * store one point at different precisions (48.8837373 vs 48.8837), so an exact match finds almost
+ * nothing — the lesson the modal-coordinate attempt in the batch-1 applier already paid for.
+ * ------------------------------------------------------------------------------------------- */
+const MIN_SPREAD_FT = 100;
+const byCoord = new Map();
+for (const [n, pins] of byName) for (const p of pins) {
+  if (!Number.isFinite(p.elev)) continue;
+  const k = `${n}|${p.lat.toFixed(4)}|${p.lng.toFixed(4)}`;
+  if (!byCoord.has(k)) byCoord.set(k, []);
+  byCoord.get(k).push(p);
+}
+const sameSpot = [];
+for (const [, pins] of byCoord) {
+  if (new Set(pins.map(p => p.route)).size < 2) continue;
+  const es = pins.map(p => p.elev);
+  const spread = Math.max(...es) - Math.min(...es);
+  if (spread >= MIN_SPREAD_FT) sameSpot.push({ pins, spread });
+}
+sameSpot.sort((a, b) => b.spread - a.spread);
+
+console.log(`\n\n=== SAME PLACE, DIFFERENT HEIGHT: ${sameSpot.length} ===`);
+console.log(`One coordinate, two or more routes, and they disagree by ${MIN_SPREAD_FT} ft or more about how high`);
+console.log(`it is. The position is AGREED, so only the number can be wrong.\n`);
+console.log(`ADJUDICATE AGAINST THE GROUND, NEVER THE VOTE — and demand a SEPARATION rather than a`);
+console.log(`verdict at the boundary. Measured: at the SR-20 Wine Spires pullout FOUR routes said`);
+console.log(`2,200 or 3,450 ft and ONE said 4,300; the ground admitted only the lone dissenter. And`);
+console.log(`two boundary artefacts would each have produced a confident wrong write — one value`);
+console.log(`refused by 17 ft (with the route's own prose corroborating it) and one admitted by 13.\n`);
+for (const f of sameSpot) {
+  const p0 = f.pins[0];
+  console.log(`  ${String(Math.round(f.spread)).padStart(5)} ft  ${String(p0.type || "?").padEnd(10)} "${String(p0.raw).slice(0, 40)}"  @ ${p0.lat.toFixed(4)},${p0.lng.toFixed(4)}`);
+  for (const p of [...f.pins].sort((a, b) => a.elev - b.elev)) console.log(`             ${String(p.elev).padStart(6)} ft  ${p.route}`);
+}
+
 console.log(`\nreport-only: exit 0`);

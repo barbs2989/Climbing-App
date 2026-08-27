@@ -148,6 +148,38 @@ try {
   if (!/\d{1,3},\d{3} ft|\d{1,3},\d{3} m/.test(text)) {
     fail.push("no elevation on any row — the peak branch never rendered, so this run proves nothing about peak objectives");
   }
+
+  /* A CARD MUST NOT ADVERTISE A TOTAL IT CAN NEVER REACH. Colorado is the only list with a
+     permanent ceiling: the standard roster is 53 and Mount Bross is excluded on purpose, because
+     its summit is privately owned and closed to the public (0146). While `total` stayed 53 the
+     card read `0 / 53`, `cpl` is `d>=t` so it could never say Complete, and the gap rendered as
+     "+ 1 more on the full list — fills in as the catalog grows" — a promise about a summit nobody
+     is allowed to stand on. Desert Towers hit the same thing and the TOTAL was corrected (30->27);
+     this asserts Colorado stays corrected too, and that the reason is on screen rather than
+     leaving 52 unexplained.
+
+     Expanded separately from the card above, because that one takes whichever roster card sorts
+     shortest — it is not guaranteed to be this one, and a guard that might look at the right card
+     is not a guard. */
+  const co = await page.evaluate(() => {
+    const els = [...document.querySelectorAll("div")];
+    const hits = els.filter(e => /^Colorado 14ers/.test((e.textContent || "").trim()) && e.getBoundingClientRect().width > 0);
+    const hit = hits.sort((a, b) => (a.textContent || "").length - (b.textContent || "").length)[0];
+    if (!hit) return null;
+    hit.click();
+    return true;
+  });
+  if (!co) fail.push("no Colorado 14ers card on screen — its ceiling copy was not checked");
+  else {
+    await page.waitForTimeout(1200);
+    const t2 = await page.evaluate(() => document.body.innerText || "");
+    if (/fills in as the catalog grows/i.test(t2)) {
+      fail.push('the Colorado card says the missing peak "fills in as the catalog grows" — Mount Bross is closed to the public and is never being added');
+    }
+    if (/\/\s*53\b/.test(t2)) fail.push("the Colorado card advertises 53, a total only 52 achievable peaks can reach");
+    if (!/Mount Bross/i.test(t2)) fail.push("the Colorado card does not name Mount Bross, so its 52 is unexplained");
+    if (!/closed to the public/i.test(t2)) fail.push("the Colorado card does not say why Mount Bross is excluded");
+  }
 } catch (e) {
   fail.push("threw: " + String(e.message).split("\n")[0]);
 }
