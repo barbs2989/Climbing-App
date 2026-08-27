@@ -92,12 +92,22 @@ function run({ db, mem, profiles, isMod, meGid, climbers, ME }) {
   // eslint-disable-next-line no-new-func
   const f = new Function("cl", "mem", "_profMap", "cById", "ME", "isMod", "_meGid",
     `${ASMEMBER}; ${ROSTER_IDS} ${ROSTER} ${COUNT}
-     return { count: _memN, rows: _roster.length, ids: _rosterIds.length, names: _roster.map(function(m){return m&&m.name;}) };`);
+     return { count: _memN, rows: _roster.length, ids: _rosterIds.length,
+              names: _roster.map(function(m){return m&&m.name;}),
+              // A row without _profile falls to the subtitle branch c.level + " · " + vScore(c).
+              // NO BACKTICKS IN HERE — this comment lives inside a template literal, and one ends it.
+              unlevelled: _roster.filter(function(m){return m && !m._profile && m.level===undefined;}).map(function(m){return m.name;}) };`);
   return f(cl, mem, _profMap, cById, ME, isMod, meGid);
 }
 
+// ME carries NO `level` and no vouches once signed in — that is the whole point of
+// check:real-profile-rows — and its `id` stays 0 whether signed in or out, so it can never equal a
+// uuid `_meGid`. Both facts are load-bearing here and both were got wrong first.
 const ME = { id: 0, name: "Nathan" };
-const CLIMBERS = [{ id: 5, name: "Robin" }, { id: 6, name: "Sam" }];
+// Seed climbers DO carry a level (`level:"Intermediate"` and friends live in ClimbMatchCore.jsx),
+// so a fixture without one makes every seed row look like the defect. Checked against the source
+// rather than assumed — an early run flagged "Robin" and the fixture was the thing that was wrong.
+const CLIMBERS = [{ id: 5, name: "Robin", level: "Intermediate" }, { id: 6, name: "Sam", level: "Advanced" }];
 
 // `want` is who is ACTUALLY in the group — the thing both the number and the rows describe.
 const CASES = [
@@ -118,11 +128,15 @@ const CASES = [
 console.log("case                                                              in group  count  rows  verdict");
 for (const c of CASES) {
   const r = run(c.args);
-  const ok = r.count === r.rows && r.rows === c.want;
+  const ok = r.count === r.rows && r.rows === c.want && !r.unlevelled.length;
   if (!ok) bad++;
   console.log("  " + c.name.padEnd(62) + String(c.want).padStart(7) + String(r.count).padStart(7) + String(r.rows).padStart(6) +
     "  " + (ok ? "ok" : "** WRONG"));
   console.log("        rows: " + (r.names.length ? r.names.join(", ") : "(nothing at all)"));
+  // The subtitle prints `c.level+" · "+vScore(c)` for any row without `_profile`. A real account
+  // has neither, so such a row renders "undefined · 0" — check:real-profile-rows' shape. This
+  // caught a regression THIS change introduced: putting ME in the roster made the latent case live.
+  if (r.unlevelled.length) console.log("        ** would render \"undefined · 0\" for: " + r.unlevelled.join(", "));
 }
 
 // The three surfaces must be one number, not three. `membObjs` is deliberately still the MENTION
