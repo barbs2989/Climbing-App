@@ -315,9 +315,26 @@ export async function createFixture(log = () => {}) {
     log(`  group ${group.id.slice(0, 8)} owned by the fixture, 1 other member, private`);
 
     await insert("objectives", { user_id: owner.id, route_id: ROUTE_ID });
+    // A LOGGED ASCENT, which is what this row was always meant to be. Two fields made it
+    // something the app's own form cannot produce, and between them the walk never saw a
+    // populated logbook at all:
+    //
+    //   stars      absent -> App files the row by `row.stars == null`, and a null-starred row
+    //              goes to condReports, NOT to `logs`. So AT A GLANCE read "Climbs logged 0",
+    //              the pyramid stayed empty, and the row rendered on no screen the walk opens.
+    //              LogAscent writes `stars: scout ? undefined : stars` with stars defaulting to
+    //              5, so on the app's own path a null star rating means a CONDITIONS report and
+    //              nothing else.
+    //   tick_type  "lead" lowercase -> routeCompleted() matches a capitalised vocabulary
+    //              ({Summit, Send, Onsight, Flash, Redpoint, Lead, Follow, Top-rope, Repeat}),
+    //              so the tick never counted and the ticklist read "1 climb to go" above a
+    //              seeded log for that very route.
+    //
+    // Recorded before as a fixture artifact, with the note that the READER must not be
+    // lowercased to suit a fixture. Correct — this is the other direction.
     await insert("climb_logs", {
       user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04",
-      discipline: "alpine", tick_type: "lead", party_size: 2, notes: "Fixture log.",
+      discipline: "alpine", tick_type: "Lead", stars: 4, party_size: 2, notes: "Fixture log.",
     });
     await insert("saved_searches", { user_id: owner.id, name: "Cascades alpine", query: { state: "Washington", disc: ["alpine"] } });
     await insert("user_lists", { user_id: owner.id, name: "Fixture ticklist", icon: "star", route_ids: [ROUTE_ID], shared: false });
