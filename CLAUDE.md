@@ -5264,6 +5264,48 @@ their own Résumé showed an amber **"Unverified"** chip.
     **one** case fails and the other four stay green, so the probe is specific rather than firing
     on any change.
 
+**THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
+doing it.** `fetchMyDirectMessages` throws on a database error — `check:read-failures` made sure of
+that — and its caller's `.catch` releases the retry latch so a reopen can recover. Neither told the
+SCREEN: `msgs` stays `{}` and the Inbox renders *"No friend chats yet"* over *"Message a partner
+from their profile and your chats will live here."* A climber who HAS conversations is told they
+have none and invited to start one. `dmThreadsUnavailable` is set in that same catch and cleared at
+the top of the success path — **before** its `if(!rows.length)return`, because an account with
+genuinely no threads takes that early return and a flag left set there swaps one false statement
+for another.
+  - **`check:outage` cannot measure this, twice over.** It is behind an **overlay**, which no
+    outage walk opens; and the fixture has no DM threads, so the section is empty in the healthy
+    run too and rule 2 sees nothing introduced. `scripts/oneoff/probe-inbox-outage-copy.mjs`
+    renders the real `Inbox` instead — 3 cases, injection-tested by reverting the gate (exactly one
+    case fails, the other two stay green), with a **1,818-character** render asserted so the
+    negative cases cannot pass vacuously.
+    - Two bundling traps, both of which read as the fix not working: `Inbox` calls a react-query
+      hook, so the render needs a `QueryClientProvider`; and **`@tanstack/react-query` must be
+      `--external`**, or esbuild inlines its own copy and the provider you wrapped around the
+      component is a different module instance with a different context. The error is still
+      *"No QueryClient set"* with a provider plainly in place.
+  - **The crew half is NOT the same defect, and that was checked rather than assumed.**
+    *"No crew chats yet"* is driven by `crewMsgs`, hydrated per **opened crew** rather than by a
+    bulk read, so an account that has never opened a crew chat is legitimately empty there. One
+    query at a time, as this file's outage entries already insist.
+  - **`scripts/oneoff/probe-overlays-that-assert-absence.mjs` sizes the remaining gap**, and its
+    version history is the useful part because every earlier version printed a SMALL, reassuring
+    number and was blind:
+    - **v1 said 1 of 53** — an overlay rendered `if(x)return <>…` has no `x&&`/`x?` marker at all,
+      and the copy lives in the COMPONENT rather than in the region.
+    - **v2 still said 1** — brace-balancing FROM that early return meets `{_toastEl}` and closes
+      immediately, so the component the overlay renders is never reached.
+    - **v3 said 7, still missing the Inbox** — `function Inbox({…})` has DESTRUCTURED PARAMS whose
+      braces open and close before the body, so the balancer returned **150 characters of
+      parameter list** as the component. That is exactly the trap
+      [[a-guard-can-scan-13-percent-and-report-green]] records.
+    - Each was caught only by a **fail-closed assertion that a KNOWN instance must appear**.
+      Without it the first number would have been reported as a finding.
+    - The honest figure is **23 of 53 overlays assert absence, and only one was gated**. Read the
+      attribution rather than the count: components are collected from a 3,000-character window,
+      so an overlay rendered beside others picks up their copy too. The rows naming ONE component
+      are the clean ones.
+
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
 (`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
