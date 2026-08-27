@@ -1059,6 +1059,36 @@ a build error, but a screen that renders wrong or not at all.
     - Injection-tested: reverting the copy fails **3**; dropping the flag at the call site fails
       exactly **1**, naming the broken link. The three never-applied cases stay green in both — a
       climber who really has not applied must still be told where to.
+  - **THE SAME READ, ONE SCREEN OVER, COSTS DATA RATHER THAN TRUST — and that one is the reason to
+    finish a census rather than stop at the first finding.** `DbGuideApply` reads the same guide
+    profile to decide what to show:
+
+        if (existing && existing.status !== "draft" && existing.status !== "rejected") → status screen
+        otherwise                                                                     → the FORM
+
+    `existing` is undefined both when nobody has applied **and** when the read failed, so a failed
+    read fell through and showed an approved guide a **blank application**.
+    `submitGuideApplication()` is an **`upsert` on `guide_profiles` keyed by the user's own id**, so
+    submitting it would overwrite a live listing back to `"submitted"` — title, base location and
+    all — with whatever was typed into the empty form.
+    - So the screen **refuses** rather than guessing. Blocking a first-time applicant during a
+      transient error costs a retry; letting an approved guide overwrite their own listing costs
+      the listing. Not symmetric, so the safe branch is not the permissive one.
+    - **ORDER IS THE INVARIANT, and it is asserted rather than assumed.** The refusal must come
+      **before** the branch that tests `existing`, because `existing` is exactly the value that
+      could not be read — a guard placed after it is unreachable in the case it exists for. That is
+      the ordering trap `check:clickable` already records, where a block after an exiting one never
+      ran. Injection-tested by **moving the guard after** the status branch, leaving it present:
+      exactly **1** assertion fires, and the presence-only ones stay green, so the ordering check is
+      not redundant with them.
+  - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
+    and both defects were the guide pair above. The other seven are non-findings with reasons, so
+    nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
+    from `DEMO_FILLERS` — client state, no read to fail; **EditProfileScreen**'s *"No certifications
+    added yet"* / *"No skills added yet"* describe `editDraft`, a `useState(null)` seeded when the
+    climber taps Edit; **LegalView** asserts no absence at all; **AuthModal**'s *"no account to
+    federate yet"* is explanatory OAuth copy, not a claim about stored data; and **Inbox** was
+    already gated. *Ask what fills a list before treating its empty state as an outage lie.*
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
