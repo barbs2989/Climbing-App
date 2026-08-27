@@ -107,6 +107,7 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
+npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES place one named point in two places?
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
@@ -3889,6 +3890,54 @@ the correction knows the screen is wrong, and they have no way to report it.
     machine-readable mode inherits this trap.**
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+- **`audit:cross-route-pins`** asks whether **two routes place the same named point in two different
+  places**. It is a FIFTH waypoint audit and that needs justifying, because this file already records
+  that of the four existing ones **two ask the same question with different tolerances**. This one is
+  their **complement** rather than another take: every one of them is scoped to a **single route** —
+  a pin against its own track (`audit:waypoints`, `audit:waypoint-track`), pins against each other on
+  one route (`audit:waypoint-geometry`), a route's two copies of its own trailhead
+  (`audit:trailhead-agreement`), a pin against its own area (`audit:coord-origin`). *"Two routes
+  disagree about where a named place is"* is invisible to all five **by construction**. Its unit is a
+  **NAME**, not a route, which is why it could not be folded into `audit:waypoint-geometry` without
+  changing what that audit's rows mean. Read-only, report-only; **not** a build gate — a property of
+  the DB rather than the checkout, the reasoning that keeps `check:counts` out.
+  - **The signal is trustworthy because agreement is the NORM, and that is measured on every run
+    rather than quoted.** Of 537 waypoint names carried by more than one WA route, **424 (79%) agree
+    within 500 m**. So a multi-kilometre gap is ~20x the ordinary spread, not ordinary noise. Eleven
+    routes placed *Hannegan Pass* together and one placed it **5.3 km** away.
+  - **TRIAGE BY FEATURE CLASS BEFORE DISTANCE** — the rule this repo already paid for in the GNIS
+    work, where 8 of 15 hits were linear or areal. A ford, a wilderness boundary, a ridge crest has
+    **extent**, so two routes meeting it at different points are **both right**; only a point —
+    trailhead, camp, pass, col, lake, falls — has one location to be wrong about. Without this the
+    detector reports correct data: *"Olympic National Park Boundary"* spans **31.7 km** because the
+    boundary does, and *"Chiwawa River ford"* spans **15.9 km** because the river does.
+  - **A NAMESAKE IS NOT A DEFECT and is printed separately rather than suppressed.** Washington
+    genuinely holds two *Cathedral Passes* **173 km** apart, two *Snow Lakes*, two *Myrtle Lakes*,
+    several *High Camps*. Both rows are correct, and an audit reporting them is one people learn to
+    ignore — but hiding the judgement would stop a reader checking it.
+  - **IT DELIBERATELY DOES NOT PICK A WINNER, and measuring is what forced that.** A majority is
+    **not independent evidence**: ten routes sharing an approach chain may have inherited one
+    enrichment pass's coordinate, so ten agreeing records can be **one claim counted ten times**.
+    Adjudicating needs a source descending from none of them — the USGS 3DEP ground — and on the
+    first 8 findings that check **REFUSED HALF**. For *Lake Constance* the ground fits the
+    **OUTLIER** better than the majority (4,667-4,776 ft against 4,378-4,577), so the vote alone
+    would have "repaired" toward the weaker record. For *High Camp* the ground refuses **both**.
+  - **Four were repaired** (`scripts/oneoff/fix-outlying-pins-against-the-majority.mjs`), each with
+    three independent lines agreeing — the majority, a matching stated elevation, and the ground
+    refusing the outlier: *Royal Lake* on `wa_honeymoon_route` sat **7.5 km** away on ground **2,500
+    ft below** the height it claimed; *Hannegan Pass* on `wa_icy_peak_southwest_route` **1,600 ft
+    above**; *Lake Serene* on `wa_philadelphia_mountain_scramble` **1,678 ft above**; *Fred's Lake*
+    on `wa_mount_carru_scramble`. Candidates went **25 -> 21**, agreement **79% -> 80%**.
+  - **It is not cosmetic**: `gpxDownload` writes waypoints into the GPX file a climber carries into
+    the field, so a displaced pin is exported as well as drawn and panned to.
+  - **The repair copies ONE NAMED DONOR ROW, never a centroid or a mode.** Averaging would mint a
+    coordinate no row holds — precisely the fabrication this catalog already carries **346** examples
+    of, committed by the repair rather than by an enrichment pass. A **mode** does not work either,
+    and measuring showed why: the agreeing routes store **the same point at different precisions**
+    (48.8829219, 48.883737, 48.8837, 48.88374 ...), all within ~100 m, so no two are byte-equal and
+    an exact-match mode **refuses a unanimous cluster**.
+  - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
+    matching nothing are each a broken scan, never a clean catalog.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
