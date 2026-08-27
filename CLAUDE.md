@@ -85,6 +85,7 @@ npm run check:action-versions # no workflow pins an action below the version we 
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 npm run check:read-failures # no failed read that a caller reads as an empty one (in build)
+npm run check:outage-flag-reach # no outage flag that is computed and then read by nothing (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:migrations # two migrations must never share a number (in build)
@@ -5366,6 +5367,64 @@ drew a conclusion from that emptiness:
   `trackIsJustTheWaypoints()` returns "genuine track" for any line over 40 points, and
   `claimMyCrewEmailInvites()` returns `0` for a missing RPC, so a broken deploy and an empty
   inbox are the same number.
+
+- **`check:outage-flag-reach`** asks the last question in that chain: **is the flag read by
+  anything at all?** 17 `xUnavailable` flags now live across the three app files, added by ~10 PRs
+  from parallel sessions all editing the **same two dense lines**. Declaring one is the easy half;
+  it only does something if a component consumes it. Static (Babel over the app sources), so it
+  sits in `npm run build`.
+  - **Three sibling guards are each structurally blind to a dead one**, which is the whole argument.
+    `check:outage` compares a healthy walk against a failing one — a flag reaching no screen changes
+    no copy, so that screen compares **equal** and is *skipped*, reported as "seed-backed, proves
+    nothing" rather than as a defect; its verdict on a dead flag is silence. `check:dead-props` asks
+    about props a component declares or a call site passes, never about a local `const`.
+  - **And `audit:silent-reverts` cannot see it either, by its own admission.** That audit gained an
+    `outage-flag` pattern precisely because these are the shape a stale-base squash drops — but it
+    tracks **names**, so a merge that keeps the declaration and drops the JSX *read* leaves the name
+    in place and it reports **0**. Its closing caveat already says so: *"a merge that kept a name and
+    dropped its guard clause is invisible here."* This is that shape, one column over, and injection
+    case 1 is exactly it.
+  - **COUNTED AS IDENTIFIER NODES, NEVER AS TEXT — a measured defect in this guard's own first
+    draft, not caution.** It began as a regex over comment-stripped source, and the lazy block-comment
+    strip removed **101,636 characters from `RouteDetail.jsx` — 21% of the file** — because a
+    comment-opening sequence inside a **string literal** starts a phantom comment running to the next
+    real terminator. One casualty was the live read of `toposUnavailable`, so the scan reported a
+    **working flag as DEAD**: the direction that sends an author to "fix" correct code. A hand-rolled
+    scanner tracking quotes to dodge that desynchronises on an apostrophe in JSX text. An AST has
+    neither failure mode **and needs no mask at all** — a comment naming a flag is not an identifier,
+    and neither is a string. Cases 3 and 4 pin both.
+  - **The declaration is resolved through Babel SCOPE, never by matching `VariableDeclarator.id`,
+    and the narrow test was wrong in BOTH shapes this app uses.** `const [x,setX]=useState()` puts
+    the name inside an `ArrayPattern`, and a flag delivered as a **prop** is declared by destructuring
+    in the receiving component's parameter list. Both `dmThreadsUnavailable` and `dmUnavailable`
+    reported as *"referenced but never declared"* — a confident accusation against two healthy flags.
+    A **JSX attribute name** is also not a variable reference: `<Inbox dmUnavailable={dmThreadsUnavailable}/>`
+    holds **one** read, and counting the attribute credited a prop-passed flag with a phantom read at
+    its own call site.
+  - A setter is **not** a flag (`setDmThreadsUnavailable` matches the name shape), and a dead setter
+    wants a different repair. Fails **closed**: fewer than 10 flags found is a broken scan or a moved
+    convention, never a clean sweep.
+  - **SECTION 2 ENFORCES THE NAMING KEY RATHER THAN ASSUMING IT.** Section 1 finds flags by the
+    `*Unavailable` suffix, so a future flag called `photosBroken` is invisible to it and the guard
+    prints **ok** — the false-pass direction, and the too-narrow-proxy trap this file records
+    repeatedly. So an `isError`-derived **binding** that does not carry the convention is itself a
+    failure. Measured before shipping: **18 `.isError` references, 14 of them named bindings and all
+    14 already on the convention** — zero counterexamples, so the rule is new without being
+    retroactive. The other 4 are inline uses in an `if`/`return`, consumed on the spot; not bindings,
+    so they cannot go dead and are out of scope **by construction** rather than by exemption, which
+    is why this needs no allow-list to rot. Injection case 6 renames one flag consistently — the app
+    still works, section 1 goes blind, and section 2 must catch it.
+  - **What a pass does NOT mean**, stated in the script rather than implied: that the receiving
+    component reads the prop (`check:dead-props`' question), or that the copy it flips is honest
+    (`check:outage`'s). It answers exactly one thing.
+  - **Cheaper than a gate already in the chain, measured rather than assumed** — and the first
+    reading was load, not cost. 37s wall on a box at load average **221** is not a profile; the real
+    figure is **6.2s CPU**, against **7.5s** for `check:refs` on the same box moments later. Compare
+    against a sibling on the same box, never against a clock.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-outage-flag-reach-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must stay
+    QUIET**: a flag removed *entirely* is `audit:silent-reverts`' subject, and failing on it would
+    make two guards argue over one commit.
 
 **Throwing is NECESSARY AND NOT SUFFICIENT — the screen can still say you have none.**
 `check:read-failures` **passes** for `useMyObjectives`, `useMyLists` and `useUserLogs`: all three
