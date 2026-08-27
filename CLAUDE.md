@@ -24,6 +24,7 @@ npm run check:seed-history # seed climbs must never be attributed to a real acco
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
+npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
@@ -5349,6 +5350,57 @@ the correction knows the screen is wrong, and they have no way to report it.
     having loaded nothing at all.
   - Injection-tested: reverting each of the three dead gates fails the run and names the
     line; restoring makes it green.
+- **`check:seed-only-surfaces`** asserts that every component reachable **only** through the
+  `!USE_DB` branch is declared as production-dead. The Climbs tab is
+  `USE_DB ? <DbAreaBrowser/> : <AreaView/>` and `deploy.yml` sets `VITE_USE_DB: "true"`, so the
+  whole seed half renders for **nobody** — while rendering perfectly in every local demo. Static
+  (Babel over the app sources, ~1s), so it sits in `npm run build`.
+  - **THE MEMORY NOTE IT REPLACES HAD ALREADY COST DAYS, THREE SEPARATE TIMES.** #714 shipped a
+    fire map gated on the seed-only `selArea` and it reached nobody until #731 read
+    `dbAreaCtx || selArea`. An offline-honesty item sat on a backlog for **19 days** as *"AreaView
+    gates children/routes behind `!error`"* — true in the code and worthless to fix, because
+    `AreaView` is one of these. And **four browser attempts** were spent trying to make a guard
+    reach `AreaLatest`, on the assumption that the walk was broken; the walk was reporting reality.
+    `QuickMatch` carries a hand-written comment saying it is unreachable — **a comment is not a
+    guard**, and the nine components beside it carried no such note.
+  - **The recorded count was THREE and the measured count is TEN.** `AreaBrowse`, `AreaCrags`,
+    `OverviewMap`, `RouteFinder` and `SuggestedClimbs` were dead too and nothing said so. All five
+    have live DB counterparts (`DbAreaTreeRoots`/`StatePicker`, `DbAreaTree`, `NearMePanel`,
+    `RouteFinderPanel`, `DbSuggestedClimbs`), so they are superseded rather than lost — but *"it
+    was replaced"* and *"we forgot to wire it"* are the two things a reader cannot tell apart
+    without a reason written down, which is what `SEED_ONLY` is for.
+  - **REACHABILITY MUST BE TRANSITIVE, and a one-hop version is wrong in BOTH directions.**
+    Measured while writing it: a direct *"is it rendered outside the region?"* test called
+    `SearchSplit` and `ViewToggle` dead, and both are live — the
+    [[a-dead-seed-component-is-not-a-dead-feature]] trap that already caused `DbAreaTree` to be
+    rebuilt when it existed. The mirror is just as real: a component rendered only **inside** a
+    seed-only host is itself seed-only, and a one-hop scan calls it live. The live closure is
+    computed from `App` with the seed region's edges **pruned** — that pruning is the whole
+    mechanism, since an edge from `App` into the seed branch is exactly the edge production does
+    not have.
+  - **Reviving one of the three with no counterpart was COSTED and is not viable — the blocker is
+    DATA, and it is the same defect wearing the other hat.** `AreaLatest` needs a
+    `climb_logs`-by-subtree query that does not exist, and `climb_logs` holds **1 row**
+    catalog-wide (service key, 2026-08-27 — re-measure with
+    `scripts/oneoff/probe-latent-claims-anon-vs-service.mjs`, which already owns that count; an
+    **anon** read returns 0 for it whatever the table holds) — so the section would be empty for every area in the
+    catalog. `ClassicClimbs` filters on `classic`, true on **56 of 205,543 routes (0.03%)**, and
+    `routes_in_subtree` takes no such parameter, so it needs a migration to render 0.03% of a
+    catalog. Both would recreate the very defect they were meant to fix, which is what
+    `probe-top-rated-subtree.mjs` already stopped once for a *"Best rated here"* section.
+    `GettingThere` needs no counterpart: its one unique capability — a directions link to the crag
+    — is already ported into `DbAreaBrowser`, and the rest showed one arbitrary representative
+    route's `access` as the **area's** fact.
+  - Fails **closed** five ways, each of which prints identically to a clean app: a missing or
+    duplicated `!USE_DB` branch (`ANCHOR LOST`), a file that does not parse, fewer than 100
+    components, fewer than 100 render sites, and a located-but-empty seed region.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-seed-only-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring byte-identically. **Case 6 must stay SILENT** — a
+    component rendered on *both* paths is correct work, and a guard flagging it would tell authors
+    to un-wire live code. Case 5 pins the transitivity. Two harness bugs read as guard misses
+    first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
+    renaming a definition without renaming its entry in Core's export list makes the file
+    unparseable — *an injection that produces a different failure is not a catch.*
 
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
