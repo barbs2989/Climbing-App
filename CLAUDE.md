@@ -1298,6 +1298,51 @@ a build error, but a screen that renders wrong or not at all.
   is CSS margin, and *the accessibility tree has no margins*. #740 fixed that one bar but could
   not answer the next question — is there another? There was: the **Inbox modal's own tab bar**,
   `"Friends2"` and `"Crews1"`, fixed in the same commit as this check.
+  - **SECTION 2 ASKS THE SAME QUESTION OFF A CONTROL, because the scope above let a real defect
+    through.** Section 1 judges by the **computed control name**, which is what makes it
+    trustworthy — an `aria-label` fix changes no structure at all and correctly reads as fixed —
+    and it is also why it is scoped to controls: a plain `<div>` has no computed name, so a
+    widened selector would find candidates and drop every one at the confirm step. The route
+    page's conditions list rendered `{pat.label}{pat.when?<span style={{marginLeft:7}}>…</span>
+    :null}` as **"Best windowmid-Jul to early Sep"** on a plain heading div. Same shape as #740,
+    invisible here by construction.
+    - **The instrument is `innerText`, and the obvious alternative was tested and REJECTED.** The
+      tempting judgement is the AX tree's `StaticText` nodes, on the theory that Chrome merges
+      adjacent inline text into one. Measured on four synthetic shapes,
+      `Accessibility.getPartialAXTree` with `fetchRelatives` returned **no StaticText at all** for
+      both inline cases — the two that matter. `innerText` separates all four correctly, because
+      it is computed from **layout**, which is the same thing that decides whether a separator
+      exists.
+    - **Three filters, and every one is a false positive the scan actually produced.** *Not
+      rendered*: a `display:none` **grandparent** is missed by checking the parent's display, and
+      inside one `innerText` falls back to `textContent`, which carries no separators — so every
+      boundary in the subtree looks glued (all three findings of one early run were the seed area
+      browser, dead under `USE_DB`, with zero-area rects). *Local text*: a body-wide `includes()`
+      matches a short numeric needle like `"31"` elsewhere on a busy page. *Visual gap*: the app
+      wordmark is two spans, `Climb` and `Match`, flush against each other, and "ClimbMatch" is
+      exactly what the eye reads — the defect is a gap the eye **gets** and the accessibility tree
+      does not.
+    - **A SHARED VISUAL LINE IS NOT REQUIRED, and requiring it MISSED the real defect.** At 390px
+      that chip **wraps**, and a soft inline wrap puts no separator into `innerText` — measured,
+      the wrapped case still reads `"Best windowlate spring to fall"`. A block child does get a
+      newline and is already excluded by the text test. So the only thing excused is the
+      *contiguous* case.
+    - **IT SHIPPED BROKEN AND EVERY SIGNAL SAID OTHERWISE.** The first version was a template
+      literal, and inside one `\w` is an escape that collapses to a literal `w` — so the needle
+      regex was `/w/` and the scan matched almost nothing while reporting a clean app across 65
+      screens. The guard was green before the widening and after it; the fail-closed floor was
+      satisfied, because **it counts boundaries EXAMINED, which is a real number whether or not
+      the needle logic works**; and "0 findings" was the expected answer. Only the injection
+      against a defect that had genuinely shipped told the truth. The scan is a **function**
+      passed to `page.evaluate` now, as `findCandidates` is, so neither the escaping trap nor the
+      backtick trap can return. *A floor that counts work done is not evidence the work was
+      correct* — the same lesson `check:dup-attrs` records for its element counter.
+    - **The verdict names BOTH sections**, so the next reader can tell from the output that the
+      off-control scan exists rather than rediscovering the hole.
+    - **`--only=route` reduces the walk for the injection suite and can never print a pass.** The
+      full sweep is 65 screens and an injection needs two runs of it; a flag that let a partial run
+      look complete would be the exact false pass this file is built to refuse, so it prints
+      `PARTIAL RUN … tabs and overlays SKIPPED` and says outright that it is not a pass.
   - **Structural, not lexical, and that distinction is the whole check.** Scanning names for a
     digit beside a letter returns a haystack in a climbing app — `5.10a`, `V4`, `WI3`, `M6`,
     `Class 4` are all correct names. The defect is that the digit and the word come from
