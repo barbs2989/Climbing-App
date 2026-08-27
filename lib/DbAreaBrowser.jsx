@@ -568,7 +568,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         </div>
         {(() => { const parts = [area.region && area.region !== area.name ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null].filter(Boolean); return parts.length ? <div style={{ fontSize: 12, color: C.textSub }}>{parts.join(" · ")}</div> : null; })()}
         {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
-        {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin and any distance shown are rough.</div> : null}
+        {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
         {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
         <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
@@ -582,6 +582,23 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
         <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>View map</button>
         <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>Objectives</button>
+        {/* DIRECTIONS TO THE AREA. The only such link in the app lived in `GettingThere`, which is
+            gated on the seed-only `selArea` and so has never rendered for a real climber — so with
+            VITE_USE_DB=true there was no way to navigate to a crag at all. RouteDetail's three
+            directions links are trailhead-level, a different question from "where is this crag".
+            An <a>, not a button, because it leaves the app; rel=noopener with target=_blank. */}
+        {/* ONLY where a destination is actionable. Every area carries a coordinate, including
+            `country`, `state`, `region` and `range` — and "Directions to Colorado" routes you to a
+            state centroid, which is noise at best and misleading at worst. A crag, peak or wall has
+            somewhere you can actually park. Caught by the probe printing its own aria-label. */}
+        {["crag", "peak", "wall"].includes(area.area_type) && area.lat != null && area.lng != null ? (
+          <a
+            href={"https://www.google.com/maps/dir/?api=1&destination=" + area.lat + "," + area.lng}
+            target="_blank" rel="noopener noreferrer"
+            aria-label={"Directions to " + area.name + (area.coords_approx ? " (approximate location)" : "")}
+            style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+          >Directions</a>
+        ) : null}
       </div>
       <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
