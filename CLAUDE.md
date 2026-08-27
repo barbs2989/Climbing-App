@@ -3339,6 +3339,13 @@ the correction knows the screen is wrong, and they have no way to report it.
     the project** (node resolves `react` from the nearest `node_modules`, and a bundle in the OS temp
     dir throws `ERR_MODULE_NOT_FOUND`), and `--define:import.meta.env={}` is required because
     `lib/supabase.js` reads it at module scope.
+  - **A THIRD, and it does not announce itself: `--jsx=automatic` is REQUIRED.** esbuild defaults to
+    the CLASSIC runtime, which emits `React.createElement` and needs `React` in the bundle's module
+    scope — it is not there, so the render dies with `React is not defined`. On a loaded box it
+    exhausts the heap on the way and dies with **`Ineffective mark-compacts near heap limit`**
+    instead, which reads as a memory problem and invites `--max-old-space-size`. `check:bare` passes
+    the flag (`jsx: "automatic"`, `loader: {".jsx": "jsx"}`); copy that invocation rather than
+    writing a fresh one.
   - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
     both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
     pattern, not the guard, was wrong.
