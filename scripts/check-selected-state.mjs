@@ -67,11 +67,25 @@ const TABS = arg("tabs", "Home,Climbs,Discover,Crew,Logbook,Profile").split(",")
 // the group-level dedupe below: an overlay renders over the tab behind it, so nearly every
 // group it shows has already been measured, and only genuinely new bars are clicked.
 const OVERLAYS = (() => {
+  /* An EXPLICIT list is the caller's choice and is obeyed, including an empty one — that is how
+     `--overlays=` runs the fast screens only, which render-guards.yml uses on pull requests.
+     DISCOVERY is different: it must find the real set, and finding almost none means the walk
+     broke rather than that the app lost its modals. Without this the split is unsafe in exactly
+     one direction — PRs deliberately pass an empty list, so a discovery failure on main would
+     quietly walk 8 screens there too and nothing would ever say so. Fail closed, the same rule
+     every other guard here applies to a short read. */
   const explicit = process.argv.find((a) => a.startsWith("--overlays="));
   if (explicit) return explicit.slice(11).split(",").filter(Boolean);
-  return overlayStates(fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8"))
+  const found = overlayStates(fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8"))
     .map((s) => s.name)
     .filter((n) => !NEEDS_EXTRA_STATE[n]);
+  if (found.length < 20) {
+    console.error(`check:selected-state — overlay discovery found only ${found.length} overlay(s) in ClimbMatch.jsx. ` +
+      `The app declares ~50, so this is a broken scan, not a smaller app. Nothing below was checked. ` +
+      `(Pass --overlays=<names> or --overlays= to choose a set deliberately.)`);
+    process.exit(1);
+  }
+  return found;
 })();
 // An injection hook, so a case can prove this guard fails when the app regresses without
 // anyone editing the app. Not used in a normal run.
@@ -510,6 +524,13 @@ console.log("check:selected-state: ok — every control that looks selected says
 //        risk this screen adds: a click that does not land leaves the PREVIOUS screen up, so the
 //        guard would measure Overview twice, find its already-passing sub-tab bar, and report a
 //        clean sweep having never opened the map. Same shape as case 4 one level in.
+//
+//   6. Raise the OVERLAYS discovery floor above the real count (`found.length < 200`).
+//        FAILED (exit 1) before starting a server, naming the count it found. That floor is what
+//        makes the PR/main split safe: render-guards.yml passes `--overlays=` on a pull request,
+//        so an EXPLICIT empty set is normal and cannot be treated as suspicious — which means a
+//        DISCOVERY failure on main would otherwise walk 8 screens there too and look identical
+//        to a healthy fast run. Explicit is obeyed; discovered-and-almost-empty is fatal.
 //
 // CASE 1 PASSED THE FIRST TIME IT WAS RUN, AND THAT WAS THE INJECTION BEING WRONG RATHER THAN
 // THE GUARD BEING RIGHT. The strip used to run once per load(); this guard then CLICKS, React
