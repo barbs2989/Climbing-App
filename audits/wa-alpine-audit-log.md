@@ -10475,3 +10475,100 @@ snippets rather than full source pages. Flagged the one case where that mattered
 
 Next batch continues after `wa_mount_teneriffe_standard_route` in the id-ordered
 scope (188 routes remained unaudited this pass before this batch; 180 remain after).
+
+## 2026-08-27 — Pass 3, Batch 154
+
+Four peaks, 8 routes (Mount Terror 4: North Face, East Ridge [id
+southeast_face], Stoddard Buttress, West Ridge; Mount Thomson 1: West Ridge;
+Mount Tom 1: Glacier/Scramble Route; Mount Torment 2: South Ridge,
+Torment-Forbidden Traverse). One confirmed fix applied to all four Terror
+routes; three items flagged for human review; one previously-flagged item
+from an earlier batch resolved by this run's research.
+
+- **All four `wa_mount_terror_*` routes**: `gain_ft` was an identical 6000 on
+  every route, which is physically impossible against each route's own data
+  — every route's approach starts at the shared 600 ft Goodell Creek
+  trailhead and tops out at the shared 8151 ft summit (`high_point_ft`, and
+  `areas.wa_mount_terror.elevation_ft` — both externally confirmed exact
+  matches for Mount Terror's published elevation), a one-way net rise of
+  7551 ft that a stored 6000 ft cannot cover. `wa_mount_terror_north_face`'s
+  own waypoint list corroborates this from its own data alone: summing only
+  its ascending segments (including the dip into the 5800 ft Terror Basin
+  bivy) gives 7951 ft. External trip reports for the Goodell Creek approach
+  independently describe an elevation range of 600–8151 ft (~7,500 ft net)
+  and one logs ~12,500 ft gained-and-lost round trip — both far above 6000
+  ft. Corrected all four to 7551 ft, the exact net-rise floor computed from
+  each row's own `high_point_ft` minus its own trailhead waypoint elevation
+  — conservative and fully derivable from each row's own stored data, rather
+  than an invented number (the true figure may run somewhat higher, per the
+  7951 ft implied by the north face route's own waypoints).
+
+Flagged, not fixed — needs human verification:
+- `wa_mount_terror_stoddard_buttress`'s `fa` field claims two separate
+  events: "John Stoddard, solo, July 16, 1984 (IV 5.8)" for the main route,
+  plus "an extended/left-side finish variant... climbed by Stoddard July
+  14-17, 1985" called "North Face, Left Side" (5.8+). Two independent web
+  searches (an AAC/AAJ 1985 publication summary and a separate secondary
+  account) both describe the July 14–17 dates and the "North Face, Left
+  Side" name as referring to the *same* 1984 solo ascent that traverses left
+  of the 1961 Cooper route to gain the buttress crest — i.e. this reads as
+  one climb, not a distinct route climbed a year later. WebFetch is blocked
+  for every domain tried in this environment (AAC publications, alpenglow.org,
+  Mountain Project), so the primary AAJ text could not be read directly to
+  fully settle whether "1985" and the second grade (5.8+) are a genuine
+  second ascent or a fabricated split of one event. Left as-is per audit
+  policy rather than guessing at a rewrite.
+- `wa_mount_terror_north_face` / `southeast_face` `dist_km` (28.97 / 32.99,
+  ~18mi / ~20.5mi) look roughly double a real-world figure: an independent
+  trip report cites a ~19-mile round trip for this approach, and the app is
+  documented (CLAUDE.md) to render round-trip distance as `dist_km * 2` —
+  so if these values are meant to be one-way per that convention, the app
+  would display ~36–41 miles round trip, well above the ~19 mile figure
+  found externally. Not confident enough in the exact intended one-way value
+  to write a specific correction (CLAUDE.md explicitly warns this column
+  holds mixed conventions catalog-wide and warns against bulk-normalizing
+  it), so flagging rather than fixing.
+- `wa_mount_thomson_west_ridge`'s `fa` ("Fred Beckey, Helmy Beckey, Robert
+  Craig & William Ford, 1940") could not be confirmed or refuted by any
+  source found — ruled out as a simple copy from Forbidden Peak's real 1940
+  FA (that party was Lloyd Anderson, Fred Beckey, Helmy Beckey, Jim Crooks,
+  Dave Lind — different companions), but no source directly corroborates
+  this specific claim for Mount Thomson either. Left as unverified.
+
+Confirmed correct and left unchanged: Mount Terror elevation (8151 ft, exact
+external match); North Face FA (Bell/Cooper/Hiser/Swayne, July 1961, exact
+match including the "sometimes rounded to ~1962" detail already in the row);
+the "East Ridge" name/route on Mount Terror (confirmed as a real, distinct
+route — slabs to the Degenhardt–Terror saddle then a steep final ridge —
+matching this row's own hazards text about that same saddle traverse almost
+verbatim); Stoddard Buttress's core FA (Stoddard, solo, 1984, traversing left
+of the 1961 route); Mount Torment elevation (8120+ ft) and prominence (200
+ft, exact match); South Ridge FA (Cooper & Sellers, July 1958, exact match)
+and grade (Grade II, 5.4, exact match); Torment-Forbidden Traverse FA (Cooper
+& Sellers, July 1958, exact match, including the historical detail that
+Cooper first scouted the traverse in May 1958 with Beckey/Hieb/Gordon before
+returning with Sellers that July); Mount Tom elevation (7076 ft), the White
+Glacier "westernmost glacier in the contiguous US" / Mount Tom "westernmost
+7,000+ ft peak in the Lower 48" claims, and FA (Meany party incl. Thomas
+Martin, 1914) — all exact external matches; Mount Thomson elevation (6554
+ft, exact match).
+
+Resolved from a previous batch (not part of this batch's route set, found
+incidentally while researching Mount Torment's history): batch 153 flagged
+`wa_mount_stuart_north_ridge`'s `fa`/`overview` disagreement over the 1956
+FA partner's name ("Don Claunch" vs. "Don Gordon") as needing human
+verification. This run turned up strong, specific corroboration (an AAC
+obituary and a SuperTopo forum thread titled "Don 'Claunch' Gordon") that
+Don Claunch and Don Gordon are the same person — born Donald Gordon Claunch,
+he climbed under "Claunch" in early publications and under "Gordon" from
+the 1960s on. Both fields are correct as written; no data conflict exists
+and no fix is needed. Recording this here so the flag isn't re-investigated.
+
+Note: WebFetch remains blocked for every domain tried in this environment
+(AAC publications, Wikipedia, alpenglow.org, Mountain Project) — all
+verification here again relied on WebSearch result snippets rather than
+full source pages, same limitation batch 153 recorded.
+
+Next batch continues after `wa_mount_torment_torment_forbidden_traverse` in
+the id-ordered scope (172 routes remain unaudited this pass after this
+batch).
