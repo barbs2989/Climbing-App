@@ -52,7 +52,17 @@ import { overlayStates, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
-const TABS = arg("tabs", "Home,Climbs,Discover,Crew,Logbook,Profile").split(",").filter(Boolean);
+// THE LABELS NAV ACTUALLY CARRIES. This list used to say "Discover", which is the tab's ID and
+// NOT its label -- NAV renders it as "Partners" -- and it omitted "Ranks" altogether. tap()
+// matches on text, so "Discover" matched nothing, returned false, and the PREVIOUS screen
+// stayed up: this guard measured five tabs and a duplicate for as long as it existed, and
+// never opened Ranks at all. That is the identical defect check:outage records in its own
+// header, and it slipped past check:screen-lists because that guard only inspected ARRAYS
+// of string literals while this list is a comma-joined STRING (fixed in the same change).
+//
+// It was not academic: the Partners tab carries [Find partners | Join a crew | Hire a guide],
+// which marks its selection with border, background AND colour and announced nothing.
+const TABS = arg("tabs", "Home,Climbs,Partners,Crew,Logbook,Ranks,Profile").split(",").filter(Boolean);
 // EVERY overlay the app declares, DISCOVERED rather than listed.
 //
 // A hand-picked list is what put this guard wrong twice in one day. It shipped walking six
@@ -90,6 +100,10 @@ const OVERLAYS = (() => {
 // An injection hook, so a case can prove this guard fails when the app regresses without
 // anyone editing the app. Not used in a normal run.
 const STRIP = arg("strip-aria", "");
+// --name-dump prints the MARKUP of every control that rendered no name. The count has been
+// printed since this guard was written and read as bookkeeping; the markup is what makes it
+// actionable. Off by default so a normal run stays readable.
+const NAME_DUMP = process.argv.includes("--name-dump");
 
 const log = (s) => console.log(s);
 const fails = [];
@@ -198,7 +212,13 @@ const SCAN = `(() => {
   // the sibling dead-control probes for adding computed style to a fingerprint.
   if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
   const vis = (el) => { const r = el.getBoundingClientRect(); return r.width > 8 && r.height > 8; };
-  const lab = (el) => (el.getAttribute("aria-label") || el.textContent || "").trim().replace(/\\s+/g, " ").slice(0, 30);
+  // A title attribute counts: Chrome falls back to it for the accessible name when there is no
+  // aria-label and no text. Leaving it out did not merely mislabel these controls, it made
+  // the guard SKIP their whole group -- the Crew tab's weekly availability grid (7 days x 2
+  // periods, all title-named) was never measured, and duly shipped announcing its selected
+  // state in colour alone. The "N skipped as unnameable" line was printing all along.
+  const lab = (el) => (el.getAttribute("aria-label") || el.textContent
+    || el.getAttribute("title") || "").trim().replace(/\\s+/g, " ").slice(0, 30);
   const sig = (el) => { const c = getComputedStyle(el); return [c.backgroundColor, c.color, c.borderColor, c.fontWeight].join("~"); };
   // PRESENCE announces, not the value "true", and getting this wrong produced a false
   // failure on correct code. This guard clicks the majority-signature member of a group, so
@@ -228,6 +248,22 @@ const SCAN = `(() => {
     return null;
   };
   const groups = new Map();
+  // SCOPING THIS SCAN TO THE OPEN DIALOG WAS MEASURED AND REJECTED. Recorded because the saving
+  // is real and the idea will occur to somebody else.
+  //
+  // The cost is real: --dump-groups over all 58 screens measures 415 group-probes, of which only
+  // 42 are inside a dialog. On overlay screens 326 of 368 are the TAB BEHIND the overlay, walked
+  // again 51 times, and at ~6.2s per group that is most of a 45-minute job.
+  //
+  // The argument for scoping was that every overlay opens with ?zt=me, so the background is always
+  // the Profile tab, which is walked first on its own -- nothing could be lost. THAT PREMISE IS
+  // FALSE for the overlays that inject state: postMenuFor and reactPickerFor put a whole GROUP
+  // VIEW on screen behind their dialog, and no other walked screen reaches it. A before/after diff
+  // of the measured controls (not the counts -- the SET) showed exactly two lost:
+  //     overlay:postMenuFor   [Newest|Most reacted|Saved]   the group feed sort bar
+  //     overlay:settingsOpen  [ft mi|m km]                  the units toggle
+  // Both are controls #1233 had just fixed. A 25% saving is not worth two controls of coverage,
+  // and this repo's own rule is that a skipped check is worth less than a runner minute.
   for (const el of document.querySelectorAll("button,[role='button'],[role='tab'],[role='checkbox']")) {
     if (!vis(el)) continue;
     const p = el.parentElement; if (!p) continue;
@@ -284,7 +320,18 @@ const load = async (qs, tab, awaitRoute, subTab) => {
   // has happened yet — the race check:overflow's first CI run got wrong.
   if (awaitRoute) await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 }).catch(() => {});
   await settledText(page, { timeout: 45000 }).catch(() => {});
-  if (tab && tab !== "Home") { await tap(tab); await page.waitForTimeout(900); }
+  if (tab && tab !== "Home") {
+    // FAIL CLOSED. A tap that matches nothing leaves the PREVIOUS screen up, so the guard would
+    // measure it twice under two names and report the second as a screen with nothing wrong --
+    // which is exactly how "Discover" went unwalked here for this guard's whole life.
+    if (!(await tap(tab))) {
+      console.error(`\ncheck:selected-state FAILED — no control on screen is named ${JSON.stringify(tab)}.`);
+      console.error("The tab was never opened, so nothing on it was checked. Check NAV's labels in");
+      console.error("ClimbMatch.jsx: this list holds LABELS, not tab ids.");
+      await browser.close(); stopServer(); process.exit(1);
+    }
+    await page.waitForTimeout(900);
+  }
   /* A ROUTE SUB-TAB, clicked the way its two sibling guards already click it — a plain <button>
      whose text is exactly the label. NOT tapByName: that matches an AUTHORED aria-label and this
      bar carries only aria-current, which is why six attempts to reach this screen failed before
@@ -353,6 +400,27 @@ const screens = [
   { name: "route detail · Plan", qs: "?zr=1", tab: null, awaitRoute: true, subTab: "Plan" },
 ];
 
+const DUMP = process.argv.includes("--dump-groups");
+if (DUMP) {
+  let totG = 0, inDlg = 0;
+  for (const s of screens) {
+    await load(s.qs, s.tab, s.awaitRoute, s.subTab);
+    const r = await page.evaluate((scan) => {
+      const all = eval(scan);
+      const dlgs = [...document.querySelectorAll('[role="dialog"]')];
+      const groups = new Map();
+      for (const c of all) if (!groups.has(c.group)) groups.set(c.group, c.el);
+      let inside = 0;
+      for (const [, el] of groups) if (dlgs.some((d) => d.contains(el))) inside++;
+      return { groups: groups.size, dialogs: dlgs.length, inside };
+    }, SCAN);
+    totG += r.groups; inDlg += r.inside;
+    console.log(`  ${s.name.padEnd(24)} groups=${String(r.groups).padStart(3)} dialogs=${r.dialogs} inDialog=${r.inside}`);
+  }
+  console.log(`\nTOTAL groups across all screens: ${totG}; inside a dialog: ${inDlg}; outside: ${totG - inDlg}`);
+  await browser.close(); stopServer(); process.exit(0);
+}
+
 const tabBars = [], toggles = [], seen = new Set();
 let routeReached = false;
 for (const s of screens) {
@@ -372,6 +440,7 @@ for (const s of screens) {
   for (const c of first) if (!byGroup.has(c.group)) byGroup.set(c.group, []);
   for (const c of first) byGroup.get(c.group).push(c);
   let measured = 0, unnamed = 0;
+  const unnamedGroups = [];
   for (const [group, kids] of byGroup) {
     if (seen.has(group)) continue;
     const counts = {};
@@ -381,7 +450,7 @@ for (const s of screens) {
     const order = kids.slice().sort((x, y) => counts[y.sig] - counts[x.sig]);
     // A control with no accessible name cannot be named in a failure message, and naming it is
     // check:a11y-names' job rather than this one's. Counted and reported, never a verdict.
-    if (!order[0].label) { unnamed += kids.length; seen.add(group); continue; }
+    if (!order[0].label) { unnamed += kids.length; unnamedGroups.push(group); seen.add(group); continue; }
 
     // TRY MORE THAN ONE MEMBER, and the Inbox bar is why.
     //
@@ -438,8 +507,27 @@ for (const s of screens) {
     if (!back || back.sig !== b.sig) continue;          // one-way: an action, not a toggle
     toggles.push(row); measured++;
   }
+  if (NAME_DUMP && unnamedGroups.length) {
+    const details = await page.evaluate(([scan, keys]) => {
+      const all = eval(scan);
+      const out = [];
+      for (const k of keys) {
+        const el = all.find((x) => x.group === k);
+        if (el) out.push(el.el.outerHTML.replace(/\s+/g, " ").slice(0, 160));
+      }
+      return out;
+    }, [SCAN, unnamedGroups]);
+    for (const d of details) log(`      UNNAMED  ${d}`);
+  }
   log(`  ${s.name.padEnd(18)} ${String(byGroup.size).padStart(3)} group(s), ${measured} stateful` +
-      (unnamed ? `, ${unnamed} control(s) skipped as unnameable (see check:a11y-names)` : ""));
+      // NOT check:a11y-names, which is what this used to say. That guard covers FORM controls
+      // (input/select/textarea) and can never report a <button>, so the advice sent a reader
+      // to a guard that structurally cannot answer -- and cost real time before anyone
+      // checked. check:control-names is the one that covers these STATICALLY. Note the two
+      // can legitimately disagree: that guard treats a dynamic expression as a possible name
+      // (a deliberate floor), while this reads the name actually RENDERED, so a control whose
+      // name is dynamic and empty in practice is counted here and not there.
+      (unnamed ? `, ${unnamed} control(s) skipped as unnameable (rendered no name; see check:control-names)` : ""));
 }
 
 log("");
