@@ -385,6 +385,27 @@ if (goneFiles.length) {
           if (h) { removedBy = h[1]; removedSubject = h[2]; break; }
         }
         if (lines[i].startsWith("R")) renamedTo = st[2];
+      /* A PATHSPEC HIDES THE OTHER HALF OF A RENAME, so `-M` above can never fire. Git pairs a
+         delete with an add by similarity, and `-- <path>` filters the add out of the very diff
+         the pairing needs -- so the query asks "was this path renamed" in a form that can only
+         ever answer "deleted". Measured on this repo's own history: 4c01aa0 promoted
+         scripts/oneoff/probe-verification-survives-its-own-read.mjs to
+         scripts/check-verification-fallback.mjs, and `git log -M --name-status -- <path>` reports
+         D while `git show --name-status -M` on the same commit reports R078. Lowering the
+         similarity threshold does not help, because similarity is not what is missing.
+
+         This matters beyond one file: promoting a probe to a named guard is a RECURRING operation
+         here (the header lists seven of them), so without this every future promotion reads as a
+         silent revert -- the audit accusing the repo of the thing it exists to catch, on correct
+         work. Re-asked without the pathspec, once, and only when a deletion was found. */
+      if (!renamedTo && lines[i].startsWith("D") && removedBy) {
+        try {
+          for (const l of git("show", "--name-status", "-M", "--format=", removedBy).split("\n")) {
+            const r = l.match(/^R\d*\t(\S+)\t(\S+)/);
+            if (r && r[1] === path) { renamedTo = r[2]; break; }
+          }
+        } catch { /* leave it reported as a deletion */ }
+      }
         break;
       }
     } catch { /* leave blank */ }
