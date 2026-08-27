@@ -2349,6 +2349,42 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
+  and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
+  needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
+  comment is right: lengths catch every route that records them, prose catches only the few that
+  describe their setup. What it could not catch is the other direction, **a row whose recorded
+  lengths fit one rope while the row itself says they do not.**
+  - `wa_east_face_2` is the case. Two stations, lengths `[35, null]` → `single70` → the header read
+    **`RAPPELS · 2 rappels`** and `rappelSingleRopeWarning()` — the amber line written for a
+    single-rope party to read *before they leave the car* — was **silent**. The row says twice that
+    it must not be: its count note reads *"a single rope does not link the stations"* and the
+    station's own `pull` note repeats *"Two 60 m ropes are the standard kit for this descent and a
+    single rope will not link these two stations."*
+  - **The length rule was resting on a number the same row disclaims.** That note continues
+    *"Per-station distances are not published; the listed values are estimates … and should not be
+    planned around"* — and the 35 that produced `single70` is one of them. Nulling it does not help
+    (no lengths → no verdict → still no warning); the fix is to read what the row **states**.
+  - **A STATED requirement carries no distance, so `max` is null and neither reader may quote one.**
+    Inventing a metre figure on a safety line is the class this file records under half a dozen
+    other column names. The header says `two ropes` rather than `two ropes (longest N m)`, and the
+    warning names no distance it does not have.
+  - **THE ESCAPE IS PER SENTENCE AND IT IS THE WHOLE PRECISION RULE.** *"Double-rope rappel (or two
+    single-rope rappels)"* is **not** a two-rope requirement — one rope works and costs one extra
+    rappel, which is the `singleRopeExceeds` path's job. **Seven catalog rows are that shape** and
+    none may match, because a false rope warning is how a real one stops being read. Per sentence
+    rather than per row, so a requirement stated about one station is not cancelled by an
+    alternative offered about another.
+  - **Behaviour-diffed across every row rather than asserted**: 151 station tables, old module vs
+    new, **exactly 1 header and 1 warning changed**, the gained warning justified by the row's own
+    words, and **0 rows lost a warning**. Injection-tested — reverting `lib/rappels.js` fails 7 of
+    the new cases by name, and the four negative cases stay silent in both directions.
+  - **Measured NON-finding, so nobody re-derives it as a defect:** 9 rows disclaim their own station
+    lengths, and 3 of those show a warning quoting a metre figure (`wa_action_potential`,
+    `wa_liberty_bell_thin_red_line`, `wa_ultramega_ok`). Each is **correct anyway** — their notes
+    say the figures *assume near-full-length double-rope rappels*, i.e. the lengths are derived from
+    the two-rope conclusion rather than evidence for it — and each note renders directly beneath the
+    warning, so the screen self-corrects. Do not "fix" these by dropping the number.
 - **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
   `descent_text` says are not made. Both describe the same descent of the same climb, so a
   disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its
