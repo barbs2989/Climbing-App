@@ -144,7 +144,7 @@ const TIERS = [
   { key: "as-of-period", re: AS_OF_PERIOD, title: "dated to a PERIOD, not a date the reader can judge" },
 ];
 
-const rows = await selectAll("routes", "id,name,area_id,road,access",
+const rows = await selectAll("routes", "id,name,area_id,road,access,access_checked_at",
   `id=like.${STATE}_*&or=(road.not.is.null,access.not.is.null)`, { pageSize: 1000 });
 if (!rows.length) { console.error(`FAIL — read 0 ${STATE} routes. Refusing to report a clean result about data this never saw.`); process.exit(1); }
 
@@ -153,7 +153,12 @@ for (const r of rows) for (const [col, key] of FIELDS) {
   const v = r[col] && typeof r[col] === "object" ? r[col][key] : null;
   // roadName rides along for --json consumers: a closure is grouped by the ROAD, and a driveNote
   // often names the destination rather than the road it runs on.
-  if (typeof v === "string" && v.trim()) values.push({ id: r.id, name: r.name, area: r.area_id, field: `${col}.${key}`, text: v.replace(/\s+/g, " ").trim(), roadName: (r.road && typeof r.road === "object" && typeof r.road.name === "string") ? r.road.name.replace(/\s+/g, " ").trim() : null });
+  // `checked` rides along so the report can rank by STALENESS rather than only by tier. 0172 added
+  // routes.access_checked_at — the date somebody last read this row's road/access claims against a
+  // primary source — which is what makes this audit's own instruction, "date it or drop the claim",
+  // followable at last. A NULL is not a defect and is not treated as one: it is the honest state of
+  // every row written before the column existed.
+  if (typeof v === "string" && v.trim()) values.push({ id: r.id, name: r.name, area: r.area_id, checked: r.access_checked_at || null, field: `${col}.${key}`, text: v.replace(/\s+/g, " ").trim(), roadName: (r.road && typeof r.road === "object" && typeof r.road.name === "string") ? r.road.name.replace(/\s+/g, " ").trim() : null });
 }
 if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes carry road/access, and 0 carry any prose in them. Every test below would be vacuous.`); process.exit(1); }
 
@@ -202,6 +207,26 @@ for (const t of TIERS) {
   say("");
 }
 
+/* STALENESS, which is a different question from tier and is the one this audit could never ask.
+   A tier says what SHAPE a claim is; the checked date says how OLD it is. An open-ended closure read
+   against a Forest Service alert last week is fine — the reader can see that. The same words with no
+   date behind them are the actual problem, and until 0172 there was no way to tell them apart. */
+if (flagged) {
+  const dated = new Set(), undated = new Set();
+  for (const t of TIERS) for (const h of buckets.get(t.key)) (h.checked ? dated : undated).add(h.id);
+  const recent = new Set();
+  const CUTOFF = Date.now() - 365 * 24 * 3600 * 1000;
+  for (const t of TIERS) for (const h of buckets.get(t.key)) {
+    if (h.checked && Date.parse(h.checked) >= CUTOFF) recent.add(h.id);
+  }
+  say(`── STALENESS — how old are these claims?`);
+  say(`   ${dated.size} route(s) record when their road/access was last checked; ${recent.size} within the last year.`);
+  say(`   ${undated.size} record nothing, so nothing on screen or in this report can say how old they are.`);
+  say(`   A NULL is not a defect — it is the honest state of every row written before 0172 added the`);
+  say(`   column. It IS the reason "date it or drop the claim" was unfollowable, and the reason the`);
+  say(`   undated rows are where to spend research first.\n`);
+}
+
 if (flagged) {
   say("These are CANDIDATES, not findings, and a bulk rewrite would do damage:");
   say("  - THE ROAD IS NOT THE APPROACH. Staircase's road reopened while the trail out of it stayed shut;");
@@ -216,7 +241,7 @@ if (JSON_OUT) {
      payload that silently lost the tiering would be worse than no mode at all — it would look like
      a clean backlog. Refuse rather than emit one. */
   const out = TIERS.flatMap(t => buckets.get(t.key).map(h =>
-    ({ id: h.id, name: h.name, tier: t.key, field: h.field, text: h.text, roadName: h.roadName || null })));
+    ({ id: h.id, name: h.name, tier: t.key, field: h.field, text: h.text, roadName: h.roadName || null, checked: h.checked || null })));
   if (out.length !== flagged) { console.error(`FAIL — serialised ${out.length} of ${flagged} flagged values`); process.exitCode = 1; }
   else console.log(JSON.stringify({ state: STATE, routes: rows.length, values: values.length, flagged, findings: out }, null, 1));
 }

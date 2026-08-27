@@ -77,6 +77,7 @@ const ASMEMBER = SRC.slice(aStart, aEnd);              // ends at `}` — supply
 const ROSTER_IDS = stmt("var _rosterIds=", "var _rosterIds=");
 const ROSTER = stmt("var _roster=", "var _roster=");
 const COUNT = stmt("var _memN=", "var _memN=");
+const MODS = stmt("var mods=", "var mods=");
 
 console.log("lifted from ClimbMatch.jsx:");
 console.log("  _rosterIds: " + ROSTER_IDS);
@@ -84,20 +85,22 @@ console.log("  _roster   : " + ROSTER.slice(0, 118) + "...");
 console.log("  _memN     : " + COUNT);
 console.log("");
 
-function run({ db, mem, profiles, isMod, meGid, climbers, ME }) {
+function run(args) {
+  const { db, mem, profiles, isMod, meGid, climbers, ME } = args;
   const cl = { _db: db };
   const _profMap = {};
   for (const p of profiles) _profMap[p.id] = p;
   const cById = (id) => climbers.find((c) => c.id === id);
   // eslint-disable-next-line no-new-func
-  const f = new Function("cl", "mem", "_profMap", "cById", "ME", "isMod", "_meGid",
-    `${ASMEMBER}; ${ROSTER_IDS} ${ROSTER} ${COUNT}
+  const f = new Function("cl", "mem", "modIds", "_profMap", "cById", "ME", "isMod", "_meGid",
+    `${ASMEMBER}; ${ROSTER_IDS} ${ROSTER} ${COUNT} ${MODS}
      return { count: _memN, rows: _roster.length, ids: _rosterIds.length,
               names: _roster.map(function(m){return m&&m.name;}),
               // A row without _profile falls to the subtitle branch c.level + " · " + vScore(c).
               // NO BACKTICKS IN HERE — this comment lives inside a template literal, and one ends it.
-              unlevelled: _roster.filter(function(m){return m && !m._profile && m.level===undefined;}).map(function(m){return m.name;}) };`);
-  return f(cl, mem, _profMap, cById, ME, isMod, meGid);
+              unlevelled: _roster.filter(function(m){return m && !m._profile && m.level===undefined;}).map(function(m){return m.name;}),
+              mods: mods.length };`);
+  return f(cl, mem, args.modIds || [], _profMap, cById, ME, isMod, meGid);
 }
 
 // ME carries NO `level` and no vouches once signed in — that is the whole point of
@@ -150,6 +153,14 @@ const structural = [
   ["count is the rendered length", /var _memN=_roster\.length;/.test(SRC)],
   ["no second copy of the old compound count", !/mem\.length\+\(isMod&&mem\.indexOf\(_meGid\)<0\?1:0\)/.test(SRC)],
   ["mentions still take the RESOLVED list", SRC.includes("mentionCandidates={membObjs}")],
+  // A DANGLING LABEL. `mods` is `modIds.map(_asMember).filter(Boolean)`, so a failed profiles read
+  // empties it and the word "Moderators" rendered with nothing after it — the #654 shape. The whole
+  // SPAN is gated, not just its text: an empty span is still a flex item and still adds the gap.
+  ["Moderators label is gated on having any", SRC.includes("{mods.length?<span")],
+  ["...and mods really does empty on a failed read (so the gate is not decorative)",
+    run({ db: true, mem: ["u1"], modIds: ["u1"], profiles: [], isMod: true, meGid: "uME", climbers: CLIMBERS, ME }).mods === 0],
+  ["...while a healthy read keeps them (so the gate is not over-eager)",
+    run({ db: true, mem: ["u1"], modIds: ["u1"], profiles: [{ id: "u1", name: "Robin" }], isMod: true, meGid: "uME", climbers: CLIMBERS, ME }).mods === 1],
 ];
 for (const [label, held] of structural) {
   if (!held) bad++;

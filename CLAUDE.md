@@ -37,6 +37,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
@@ -82,6 +83,7 @@ npm run check:pitch-split # a pitch_detail entry reaches the section describing 
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
+npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
@@ -884,8 +886,9 @@ a build error, but a screen that renders wrong or not at all.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
     sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
-    surface behind an **overlay** is still out of frame, and **10 of 28 query handles in `App`
-    carry a flag** (plus 2 in `RouteDetail`) — the rest are mostly lookups where emptiness is
+    surface behind an **overlay** is still out of frame, and **13 of the 25 `lib/db.js` query handles
+    called in `App` carry a flag** (plus 2 in `RouteDetail`) — re-measure rather than quoting this, it has
+    moved twice — the rest are mostly lookups where emptiness is
     never asserted, but that is a list to READ, not a coverage claim.
     - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
       re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
@@ -903,7 +906,7 @@ a build error, but a screen that renders wrong or not at all.
       from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
       (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
-      - **`toposUnavailable` is MASKED and nothing has yet proven it reaches a screen.** Overview is
+      - **`toposUnavailable` is MASKED to THIS guard, and `check:topo-outage-copy` is what proved it.** Overview is
         already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
         topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
         `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
@@ -973,6 +976,37 @@ a build error, but a screen that renders wrong or not at all.
       an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
       on exactly that basis. One query at a time, as this guard's header already insists.
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
+  - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
+    than paying for a second 400,000-character esbuild run**, which is the cost this entry already
+    weighs below when it declines to fold into `check:outage-copy`. The name is narrower than the
+    contents; the rename was deliberately NOT done in the same change, because this guard shipped
+    hours earlier from another session and this repo has now recorded **three** collisions in one day
+    from two sessions editing one thing.
+    - `comments` on the route page is `(dbComments.data||[])`, so a failed `useComments` read and a
+      pitch nobody has commented on left **byte-identical** state, and the box said *"No comments yet
+      — be the first to add beta for this exact pitch."* to a climber whose pitch may already carry
+      beta. `check:read-failures` passes on `useComments` — it throws exactly as required — which is
+      that guard's own stated limitation: it never asks whether anything downstream concludes ABSENCE.
+    - **NOTHING ELSE REACHES THIS BOX.** `check:outage` walks the route page but only Overview and
+      Photos, and `PitchComments` renders inside an **expanded** pitch — `PitchTable` holds
+      `useState(null)`, so no pitch is open until somebody taps one, and no SSR guard can click.
+      Rendering the COMPONENT directly steps around the expansion state entirely.
+    - It takes the flag as a **prop**, which is what makes both branches reachable at all: this
+      guard's own header records that react-query does not surface a cached error under
+      `renderToStaticMarkup`, so a flag read off a hook *inside* the component under test is
+      unprovable.
+    - **THE RENDER PROVES THE COPY AND NOT THE WIRING, and the wiring is the half a stale-base squash
+      takes.** The component is rendered with the prop handed to it directly, so a merge dropping
+      `commentsUnavailable={…}` from any call site would deliver `undefined`, read as falsy, and every
+      copy assertion would still pass while the box went back to lying. The four-link chain across two
+      files is asserted as **source** for that reason — `check:dead-props` covers *a call site passes
+      a prop nothing destructures*, and the exact opposite is covered by neither of its directions.
+    - Injection-tested both halves: reverting the copy fails **3** cases and leaves the healthy-side
+      three green (specific, not firing on any change); dropping the prop from the `<RouteDetail>`
+      call site fails exactly **1**, naming the broken link.
+    - **The shared `Comments` component is deliberately NOT gated**, checked rather than assumed: it
+      renders the list when non-empty and **nothing** when empty — no absence copy anywhere in it — so
+      a failed read makes it render less, never make a false claim.
   `toposUnavailable` was the one outage flag **nothing had ever proven**, and `check:outage`'s own
   header said why: rule 1 asks whether a screen ACKNOWLEDGES the fault, and Overview is already
   `says-broken=YES` from `reportsUnavailable`, so the topo copy is **masked** — rule 1 passes
@@ -2639,6 +2673,61 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
+  is stated rather than quoted silently. A party on the summit that started at the trailhead has
+  gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
+  figure. It is not decoration: `dbRouteToCamel` maps it to `gainM`, `scarfHrs()` turns it into the
+  approach estimate, and that feeds **Est. summit**, **Est. return** and the **After dark** warning.
+  Static SSR (no browser, no DB), so it sits in `npm run build`.
+  - **87 WA routes**, every one of which moves the estimate: median **0.44 hr** understated, worst
+    **3.59 hr** — `wa_mount_rainier_tahoma_glacier` stores **5,007 ft** against **11,506 ft**
+    between its own two pins, and the Plan tab said nothing. Erring SHORT on *"are you down before
+    dark"* is the #641 direction: an affirmative that reads green.
+  - **`audit:gain` has reported this class for months and the READER half was never asked.** That
+    audit's own entry concludes the DATA repair is per-route research, because *"a transform would
+    have to invent a value"* — true, and silent about the screen. **Stating what the row's own pins
+    prove needs no research at all.** Same split as the rappel work: the data fix needs a source,
+    the honesty fix does not.
+  - **IT REPORTS, IT DOES NOT SUBSTITUTE.** Which record is wrong is not decidable here — the row
+    may be measuring from a high camp it never recorded — and TECH STATS renders `gain_ft`, so
+    feeding the planner a different number would put two answers on one screen
+    ([[changing-which-record-wins-leaves-the-neighbouring-field-behind]]). The caveat names both
+    figures and says which one the times used.
+  - **ONE-SIDED, like the audit.** Too little gain is impossible; too much is not, because a real
+    route rolls over bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **The 300 ft slack is the audit's own, not a fresh threshold.** The shortfall distribution is
+    **continuous** — p50 805 ft, p90 2,774, max 6,499 — with no void to cut at, so a magnitude bar
+    would be fitted to the answer. Routes that RECORD something at the implied start are excluded:
+    that is the documented high-camp convention (24 routes), and flagging them would accuse correct
+    work.
+  - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
+    **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
+    while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
+    all 3,969 elevations are `elev`. The two-convention trap this file records for the *bivy* store
+    does not reach the waypoint store.
+  - Injection-tested, and **it caught a vacuous assertion of my own**: `11,506 ft` is also the
+    summit pin's elevation in the waypoint list below, so a tab-wide `includes` for it **passed
+    with the caveat deleted**. Scoped to the sentence — *count inside the panel, never across the
+    tab*. Three injections, each pinning one rule: removing the render fails 4 assertions, breaking
+    the one-sidedness fails the above-the-rise case, breaking the recorded-start exclusion fails the
+    high-camp case.
+  - **A measured structural note, so nobody contrives a case for it:** near the boundary the slack
+    rule and the recorded-start rule **coincide by construction** — `implied = summit − gain`, so as
+    the gain approaches the rise the implied start approaches the trailhead pin, which is recorded.
+    Breaking the slack alone therefore leaves those cases silent.
+  - **VERIFIED ON THE LIVE CATALOG, and that run corrected the invariant rather than the code.**
+    The guard proves the caveat on a synthetic route; `scripts/oneoff/probe-gain-caveat-on-live-rows.mjs`
+    renders **real rows through the real `dbRouteToCamel`** (which hands the app METRES) and
+    `normalizeWaypoints`, either of which could have silenced it with every fixture assertion still
+    green. First run: **80 of 87 fired, 7 missed** — which read as a defect in the fix and was not.
+    All seven are crag-family (`trad`/`sport`) routes whose Plan tab renders **no time estimate at
+    all**: no *Est. summit*, no *Est. return*. **With no estimate there is no false claim**, so the
+    caveat is correctly absent. Asserting the data-only form would have driven a "fix" to working
+    code — the failure this file records under half a dozen other names.
+  - So the invariant is **not** *"the data contradicts"* but *"the SCREEN quotes an estimate built
+    on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
+    alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
+    on a count alone. Routes with no estimate are counted and reported, never scored.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
@@ -3411,6 +3500,49 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
+  a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
+  `npm run build`.
+  - **`routes` had 94 columns and not one was a date, which is the ROOT of the expiring-closures
+    class rather than a detail of it.** `audit:expiring-closures`' standing instruction is *"date it
+    or drop the claim"* and there was nowhere to put the date, so the app could not show a reader how
+    old a road claim was and nothing could rank ~118 flagged values by staleness.
+    `probe-can-a-road-claim-be-dated.mjs` is the measurement, and note the asymmetry it found: a
+    `contributions` row CAN be dated (`created_at`, since `0002`), so a **climber's** correction is
+    datable while the enrichment pass that wrote the original is not. That runs the wrong way round.
+  - **`0172` adds `access_checked_at`, and what it MEANS is the load-bearing part.** It records that
+    somebody read this route's road/access claims **against a primary source** on that date — *not*
+    when the row was last written. So it is deliberately **not** defaulted, **not** trigger-set, and
+    **not** stamped by `patchRow()`: a mechanical stamp on every write would date a typo fix as a
+    verification, and the column would become a write timestamp wearing a freshness label.
+  - **NULL is the honest backfill and it is the whole point.** We do not know when the existing prose
+    was written, so `now()` would assert that 205,492 stale claims were checked today — fabricating
+    the verifications the column exists to expose. 39 routes are stamped, each against a named alert
+    read on 2026-08-27; **Harts Pass is deliberately excluded** because its research came back
+    UNSETTLEABLE, and *a failed check is not a check*.
+  - **`check:field-renders` structurally cannot answer this**, which is why a separate guard exists:
+    that one pulls a REAL value and looks for it on screen, and this column's value is an ISO
+    timestamp rendering as `27 Aug 2026`. It is a **used-not-echoed** column, the same category as
+    `grade_system`, and would be reported as `NEVER RENDERS` on a working feature.
+  - **The date is hand-formatted, never `toLocaleDateString`, and that is ASSERTED.** A locale date
+    emits a different string per machine, so any assertion about the line would pass on the author's
+    box and fail in CI — and `DLOCALE` is a global a signed-in user can change.
+  - **Silence on an undated route is a DECISION, not a gap.** Saying *"age not recorded"* is more
+    informative and would change what ~1,000 WA road blocks say at once, which is a product call;
+    showing a date where one exists is additive. The guard pins the silence so it cannot drift into
+    a catalog-wide banner by accident.
+  - **It states the date and stops** — no staleness verdict, no *"worth re-checking"* past some
+    threshold. That would be the app adding a judgement on top of its one fact, with an invented
+    threshold; the column's value is that the reader can judge the age themselves.
+  - **"Checked", never "verified"**, and asserted: an alert read on a Tuesday can be superseded on
+    the Wednesday. The column records the reading, not a guarantee about the world.
+  - Fails **closed**: a missing export, a thin render, or a GETTING THERE panel that never appeared
+    are each a broken probe — every *must NOT contain* assertion passes against a component that
+    rendered nothing. Scoped to the **panel**, never the tab, the mistake the camping work made three
+    times in one sitting. Injection-tested **5/5**
+    (`scripts/oneoff/inject-access-checked-cases.mjs`), each case proving its edit landed **by
+    checksum** and restoring the file byte-identically. **Case 4 must PASS** — a comment naming the
+    render site is documentation, and a guard flagging it would forbid explaining itself.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -6107,6 +6239,13 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
     - The probe's own fixture was wrong in the other direction: seed climbers really do carry
       `level:"Intermediate"`, so test climbers without one made every seed row look like the defect.
       **Check the seed shape before "fixing" the app to satisfy a fixture.**
+  - **`mods` has the same root cause with a different symptom: a DANGLING LABEL.** It is
+    `modIds.map(_asMember).filter(Boolean)`, so a failed profiles read empties it — and the word
+    **"Moderators"** rendered with nothing after it, the #654 shape (*"Last verified catch: · 0
+    partners confirmed"*). The whole **span** is gated, not just its text: an empty span is still a
+    flex item and still adds the row gap. Asserted in **both** directions — a failed read really
+    does empty `mods` (so the gate is not decorative) and a healthy one keeps them (so it is not
+    over-eager).
   - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
     the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
     recorded that the underlying disagreement was still real; this is that, closed.
