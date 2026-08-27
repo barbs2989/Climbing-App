@@ -457,7 +457,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           {(show.fires ? fires.slice(0, LIST_CAP) : []).map(f => {
             const open = sel === f.id, color = fireColor(f, C), mi = ref ? fireDistMi(ref.lat, ref.lng, f.lat, f.lng) : null;
             return (
-              <button key={f.id} onClick={() => flyTo(f)}
+              <button key={f.id} onClick={() => flyTo(f)} aria-current={open ? "true" : undefined}
                 style={{ textAlign: "left", border: "1px solid " + (open ? color : C.border), background: open ? C.card : C.surface, borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4, width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />

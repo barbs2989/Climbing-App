@@ -295,7 +295,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           {['paste', 'upload', 'devices'].map((t) => (
             <button
               key={t}
-              onClick={() => setTab(t)}
+              onClick={() => setTab(t)} aria-current={tab === t ? "true" : undefined}
               style={{
                 ...styles.tab,
                 borderBottom: tab === t ? `2px solid ${C.accent}` : '1px solid ' + C.border,

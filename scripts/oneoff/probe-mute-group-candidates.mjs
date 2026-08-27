@@ -20,7 +20,22 @@
 // colour/borderColor) driven by a CONDITIONAL, and NONE of the siblings carrying any of the five
 // announcing attributes.
 //
-// MEASURED 2026-08-26: 672 groups examined, 9 candidates, ONE real -- and the 8 rejects are worth
+// WORKED TO COMPLETION: 55 candidates -> 6, and the SIX THAT REMAIN ARE ALL CORRECT WORK. Keep
+// them in mind before "finishing" this list -- each is a distinct reason a control legitimately
+// styles itself conditionally without announcing a selection:
+//
+//   send(q)                quick-reply chip; no conditional style of its own, flagged via a sibling
+//   onClaim(g)             its TITLE changes with `my`, so the accessible NAME already carries it
+//   setSaved(true)         a submit whose background tracks form validity
+//   bumpRack(key)          a COUNTER (qty), not a selection
+//   setShareOpen / onLog   text changes: {logged?"✓ Logged":"Log ascent?"} announces the state
+//
+// The 49 that were real were fixed across #1308 and the batch after it. Each took the condition
+// the row ALREADY used -- where a row declares `const on=...` or `const sel=...`, that is what the
+// attribute reads, never a comparison re-derived beside it.
+//
+// EARLIER MEASUREMENT, kept because the numbers moved for reasons worth knowing: 672 groups
+// examined, 9 candidates, ONE real -- and the 8 rejects are worth
 // knowing, because they are the whole reason this cannot be a gate:
 //
 //   FIVE are ACTION PAIRS -- [Cancel | Confirm], [Cancel | Save]. One is styled as the primary
