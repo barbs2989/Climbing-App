@@ -2346,6 +2346,21 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
+  - **ITS CURRENT THREE CANDIDATES ARE ALL NON-FINDINGS, read 2026-08-26 and recorded so the next
+    reader does not re-derive them.** Two share one mechanism, and it is the one this entry's own
+    warning names: **a no-rappel ALTERNATIVE is not a denial of the stated count.**
+    `wa_mount_mystery_standard` claims 2 and its descent text *confirms* two single-rope rappels —
+    it trips on a trailing note about a longer high-route exit "with no rappels required", which
+    the text itself labels *"a valid but distinct high-route variant, not the standard
+    reverse-the-ascent descent"*. `wa_overcoat_peak_southeast_route` claims 2 and its text says
+    *"most parties do NOT free-downclimb the full corner — instead, build two rappels"*; it trips
+    on *"Some parties instead find they can downclimb the full chimney/ledge system"*. The third,
+    `wa_buckner_mountain_north_face`, is the case this entry already documents.
+  - **Do NOT tighten the needle to make those three go away.** An alternative and a contradiction
+    are the same words in a different frame, and a rule strict enough to separate them would be
+    fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
+    records. The audit is report-only and says so; three candidates a reader can settle in a
+    minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
