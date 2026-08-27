@@ -103,6 +103,7 @@
     "check:drift": "node scripts/check-deploy-drift.mjs",
     "check:counts": "node scripts/check-area-counts.mjs",
     "check:function-columns": "node scripts/check-function-columns.mjs",
+    "check:column-drift": "node scripts/check-column-drift.mjs",
     "check:function-drift": "node scripts/check-function-drift.mjs",
     "check:rappel-lengths": "node scripts/check-rappel-lengths.mjs",
     "check:token-boxes": "node scripts/check-prose-in-token-boxes.mjs",
