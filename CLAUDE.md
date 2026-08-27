@@ -5001,7 +5001,12 @@ the correction knows the screen is wrong, and they have no way to report it.
   - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
     `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
-    sweep found **33 values on 32 WA routes**; all are now repaired, and the audit reports **0**.
+    sweep found **33 values on 32 WA routes**, all repaired — the ROAD/ACCESS section reports **3**
+    today, and those three are hedges (*"not documented in any source found"*), not attributions.
+    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: on
+      main 2026-08-26 it reports **611 values on 396 routes**, nearly all in `rappel_count_note`,
+      `rappel_detail` and `beta`. The road/access sweep closed road/access; the ROUTE PROSE section
+      is a standing reading list and always was. A per-section count is not the audit's verdict.
   - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
     CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
     number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where
