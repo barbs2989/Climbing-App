@@ -127,17 +127,47 @@ for (const f of files) {
     fail(`${rel(f)} did not parse (${e.message.slice(0, 80)}) — it was NOT checked`);
     continue;
   }
+  // A list of screens is not always an ARRAY. check:selected-state wrote its tab list as a
+  // COMMA-JOINED STRING -- arg("tabs", "Home,Climbs,Discover,...").split(",") -- so it was
+  // invisible to this guard by construction, and duly shipped tapping "Discover", a label the
+  // nav does not carry (it is "Partners"), while omitting "Ranks" entirely. A tap that matches
+  // nothing leaves the previous screen up, so that guard measured FIVE TABS AND A DUPLICATE for
+  // as long as it existed: exactly the defect check:outage's header already records, in a
+  // different guard, evading the gate written to prevent it.
+  //
+  // A delimited string is checked only when it is SPLIT on that delimiter -- a prose sentence
+  // that happens to contain commas is not a list, and the .split() is what says the author meant
+  // one. The vocabulary test below is unchanged, so the >= 3 threshold still does the deciding.
+  const stringLists = [];
   traverse(ast, {
-    ArrayExpression(p) {
-      const els = p.node.elements;
-      if (els.length < 3 || !els.every((e) => e && e.type === "StringLiteral")) return;
-      const vals = els.map((e) => e.value);
+    CallExpression(p) {
+      const c = p.node.callee;
+      if (c.type !== "MemberExpression" || !c.property || c.property.name !== "split") return;
+      const arg0 = p.node.arguments[0];
+      if (!arg0 || arg0.type !== "StringLiteral" || !arg0.value) return;
+      // The receiver may be the literal itself, or a call that defaults to one (arg("tabs", "...")).
+      const lits = [];
+      const grab = (n, d) => {
+        if (!n || d > 3) return;
+        if (n.type === "StringLiteral") { lits.push(n); return; }
+        if (n.type === "CallExpression") n.arguments.forEach((a) => grab(a, d + 1));
+        if (n.type === "LogicalExpression") { grab(n.left, d + 1); grab(n.right, d + 1); }
+      };
+      grab(c.object, 0);
+      for (const lit of lits) {
+        const vals = lit.value.split(arg0.value).map((x) => x.trim()).filter(Boolean);
+        if (vals.length >= 3) stringLists.push({ vals, line: lit.loc.start.line });
+      }
+    },
+  });
+
+  const classify = (vals, line) => {
       for (const [kind, members, human] of VOCAB) {
         if (vals.filter((v) => members.includes(v)).length < 3) continue;
         classified++;
         const missing = members.filter((m) => !vals.includes(m));
         const foreign = vals.filter((v) => !members.includes(v));
-        const entry = { file: rel(f), kind, values: vals.join(","), line: p.node.loc.start.line, missing, foreign };
+        const entry = { file: rel(f), kind, values: vals.join(","), line, missing, foreign };
         seen.push(entry);
         if (!missing.length && !foreign.length) return;
         const declared = PARTIAL_ON_PURPOSE.find((d) => d.file === entry.file && d.kind === kind && d.values === entry.values);
@@ -148,8 +178,16 @@ for (const f of files) {
         fail(`${entry.file}:${entry.line} is a list of ${human} and ${parts.join("; ")}\n      it holds [${vals.join(", ")}]\n      A screen nobody opens is not a screen with no findings. Add the missing one, or declare the subset in PARTIAL_ON_PURPOSE with the reason it is correct.`);
         return;
       }
+  };
+
+  traverse(ast, {
+    ArrayExpression(p) {
+      const els = p.node.elements;
+      if (els.length < 3 || !els.every((e) => e && e.type === "StringLiteral")) return;
+      classify(els.map((e) => e.value), p.node.loc.start.line);
     },
   });
+  for (const sl of stringLists) classify(sl.vals, sl.line);
 }
 
 if (!classified) {
