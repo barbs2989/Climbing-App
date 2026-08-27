@@ -965,16 +965,38 @@ a build error, but a screen that renders wrong or not at all.
     was committed mid-suite and captured whichever revert happened to be live, shipping to main
     without the crew-invites gate — the branch was not what the green run measured. Check
     `git status` is clean *and* that no injection job is in flight before `git add`.
-  - **NOTHING HAS YET ASKED about the Profile tab's own sections**, and that phrasing is
-    deliberate. `MyFiledReports` (`useMyFiledReports`) and `CatchLedger` (`useBelajCatches`) are
-    DB-backed and unflagged; the run reports Profile as `says-empty=YES` and rule 2 stays quiet
-    because those sections are empty in **both** runs — the fixture has no filed reports and no
-    catches. **An absence the fixture happens to share is unmeasurable, not absent** (the same
-    reason a zero-row column is unguarded by construction in `check:field-renders`).
-    - It IS reachable, though, and the friend-requests fix is the proof of method: the flag keys
-      on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
-      an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
-      on exactly that basis. One query at a time, as this guard's header already insists.
+  - **THE PROFILE TAB'S OWN SECTIONS ARE NOW ASKED AND PROVEN, and this entry used to say the
+    opposite in two different ways.** It read *"NOTHING HAS YET ASKED … `MyFiledReports` and
+    `CatchLedger` are DB-backed and **unflagged** … an absence the fixture happens to share is
+    **unmeasurable**"*. Both halves are wrong now, and they were wrong for different reasons.
+    - **"Unflagged" went stale.** `filedReportsUnavailable` and `catchesUnavailable` shipped in
+      #1239, were dropped by #1248's stale-base squash, and were restored in #1253. Both are read
+      today — the first gates a *Reports you've filed* block, the second drives the AT A GLANCE
+      tile (`"—"` / *"couldn't load"*) and is handed to `CatchLedger` as a prop.
+    - **"Unmeasurable" was never true once the flags existed**, and the paragraph's own sub-bullet
+      said why without applying it to itself: the flag keys on `isError`, **not on whether any row
+      exists**, so a failed read CHANGES the screen whether or not the fixture has data. The
+      sections being empty in both runs is beside the point; what the outage adds is copy that was
+      not there.
+    - **Measured, one query at a time, which is what makes each verdict attributable:**
+
+          ONLY=user_reports    Profile 1797ch -> 1882ch  CHANGED  says-broken=YES
+          ONLY=belay_catches   Profile 1797ch -> 1780ch  CHANGED  says-broken=YES
+
+      Every other screen was IDENTICAL in the first run, so nothing else can account for it. The
+      two move the length in **opposite directions** — one adds a *couldn't load* block, the other
+      collapses a tile — which is independent evidence they are different code paths rather than
+      one flag being seen twice. `belay_catches` also changes **RouteDetail** at the same character
+      count, caught because this guard compares LINE SETS rather than length.
+    - **Guarded by the DEFAULT run, not only by a hand-typed `ONLY=`.** Under a blanket outage both
+      reads fail like every other, so the Profile changes and rule 1 demands it acknowledge the
+      fault — which it does. `ONLY=` was needed to make the verdict ATTRIBUTABLE to one query
+      apiece, not to make it visible; with everything blocked, three flags on one screen go true
+      together and no run can say which produced which sentence.
+    - **The lesson is the entry, not the flags.** A stated gap that has since closed is worse than
+      no note: it sits in the worklist looking like work. When a limitation here is acted on, come
+      back and either delete it or replace it with the measurement — the same standard
+      `PARTIAL_ON_PURPOSE` and `KNOWN` are held to, applied to prose.
 - **`check:outage-copy`** asserts that an overlay tells a **failed read** apart from an **empty
   account**, by rendering the real component in both states. Two overlays today (`Inbox`,
   `FriendsList`), plus one surface that is neither an overlay nor a tab. Static (SSR of
