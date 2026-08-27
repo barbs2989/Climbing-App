@@ -1608,13 +1608,18 @@ a build error, but a screen that renders wrong or not at all.
   checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
   - **TWO SESSIONS WIRED IT WITHIN THE HOUR AND BOTH MERGED**, so for a while every push to main
     ran the same audit twice (#1288 `silent-reverts.yml`, #1290 `silent-revert-check.yml`).
-    Consolidated into ONE workflow rather than picking a winner, because **they failed on different
-    halves and neither is a superset**: `--fail-on outage-flag` catches a silent `xUnavailable`
-    removal (both #1248 and #1267 — and #1267 deleted **no files at all**, verified with
-    `git show 2bd9a5d --diff-filter=D`), while `--fail-on-silent` fires on one commit removing
-    files added by SEVERAL others — the stale-base fingerprint — which would catch a pure-file
-    revert carrying no flag. Both flags now run in one job, and each was re-proven to fire on its
-    own incident after the merge. See [[parallel-sessions-cause-redundant-prs]].
+    Consolidated into one workflow (#1321), then **corrected by #1328 — and the correction is the
+    part worth reading, because the first consolidation kept a redundancy on a claim that was
+    wrong.** #1321 ran BOTH flags, arguing they *"failed on different halves and neither is a
+    superset"*. That is false: `--fail-on-silent` also fires on a SILENT definition removal, and it
+    is tested **before** the `--fail-on` block, so a non-empty `silentKinds` exits there first and
+    the `--fail-on` comparison is unreachable. Measured on the real incidents rather than argued —
+    `--fail-on-silent` **alone** exits 1 at `2bd9a5d` (#1267, four reverted flags, **no files
+    deleted at all**, verified with `git show 2bd9a5d --diff-filter=D`), exits 1 at `68bb307`
+    (#1248, four files across three commits) and exits **0** on healthy main. One flag, both
+    incidents. See [[parallel-sessions-cause-redundant-prs]] — and note the shape: *"neither
+    subsumes the other" is a control-flow claim about the script, so read the script rather than
+    reasoning from what each flag is named for.*
   - **IT NOW RUNS ON EVERY MERGE (`.github/workflows/silent-reverts.yml`), and until then it ran
     when somebody REMEMBERED — which is how three of these shipped in a single day.** #1248 dropped
     two outage flags belonging to #1239; #1253 restored them; #1267 dropped four, three of them the
