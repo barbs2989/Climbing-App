@@ -1,0 +1,70 @@
+name: Silent reverts
+
+# Asks, after every merge to main, whether that merge silently deleted something an
+# earlier PR added (npm run audit:silent-reverts).
+#
+# WHY THIS RUNS ON PUSH AND NOT ON A PULL REQUEST. A stale-base squash is created BY THE
+# MERGE: the branch's copy of a dense line is the old one, git resolves the line in the
+# branch's favour, and the flags an earlier PR added vanish. Nothing about the branch in
+# isolation is wrong, so a pull_request run has nothing to see. The push is the event.
+#
+# WHY IT EXISTED AND STILL LET THREE THROUGH. The audit was written after #776 reverted
+# #778 and has never been wired to anything — it ran when somebody remembered. On
+# 2026-08-26 alone, #1248 dropped two outage flags belonging to #1239, #1253 restored
+# them, and #1267 dropped four (three of them the same ones) 57 minutes later. Every one
+# was found by hand. This is the check:overlay-scroll lesson exactly: a guard that runs
+# only when somebody remembers is a guard you do not have.
+#
+# It does NOT gate anything. The merge has already happened; going red is the whole
+# mechanism, and it lands on the person who merged, which is the person who caused it.
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  # `github.sha` is UNIQUE per commit, so main runs never share a group and never queue
+  # behind one another. That is load-bearing and `cancel-in-progress` alone does NOT
+  # achieve it: `cancel-in-progress: false` only protects a run already IN PROGRESS, while
+  # GitHub cancels a still-PENDING run unconditionally when a newer run joins its group —
+  # and a cancelled run reports no failure, so the merge would read as checked by a guard
+  # that never ran on it. check:ci-cancellation pins this shape.
+  group: silent-reverts-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  silent-reverts:
+    name: A merge did not silently revert a merged PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # THE DEFAULT DEPTH OF 1 MAKES THIS AUDIT VACUOUS, not merely limited: its whole
+          # subject is history, so a one-commit clone gives it one commit to walk and it
+          # would report a clean tree having examined nothing. Full history is the input.
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # The window has to reach the ADDING commit or a clean result means nothing — the
+      # trap this audit's own notes record, where --commits 6 reported clean on an
+      # incident that --commits 10 caught. A stale branch can be weeks old: #1238's flag
+      # was added 30 first-parent commits before the merge that dropped it. 120 is
+      # generous and costs seconds, because presence is one pass over the checkout.
+      #
+      # --fail-on outage-flag, and ONLY that kind. The audit stays report-only by default
+      # because a removal is not a defect: over 500 commits every hit of its file rule has
+      # been a promotion, and every generic-token finding a supersession or a rename, so
+      # failing on those would make it argue with correct work. The outage-flag class is
+      # the one with a different measured precision — 3 for 3 real reverts, and 0 findings
+      # across 300 commits of a healthy tree.
+      - name: Nothing an earlier PR added has silently vanished
+        run: npm run audit:silent-reverts -- --ref HEAD --commits 120 --fail-on outage-flag

@@ -68,6 +68,20 @@ const ROOT = new URL("..", import.meta.url).pathname;
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
+
+/* --fail-on <kind>[,<kind>] — exit 1 when a SILENT finding is of one of these kinds.
+   OFF BY DEFAULT, and that default is not timidity: this audit is report-only because a removal
+   is not a defect, and over 500 commits every hit of the FILE rule has been a promotion while
+   every generic-token finding was a supersession or a rename. Going red on those would make it
+   argue with correct work — the failure its own header spends a paragraph on.
+
+   The outage-flag kind is the one with a different MEASURED precision, which is why this is a
+   named flag rather than a blanket --strict. It is a high-collision class: 15 flags across ~8
+   PRs all editing the same two dense lines of ClimbMatch.jsx, and every silent removal of one so
+   far has been a genuine stale-base revert — #1248 took two, #1267 took four, three of those
+   twice within a day. Against a healthy tree it is quiet: 0 absent across 300 first-parent
+   commits. */
+const FAIL_ON = new Set(String(arg("--fail-on", "")).split(",").map((x) => x.trim()).filter(Boolean));
 const N = Number(arg("--commits", 80));
 const REF = String(arg("--ref", "origin/main"));
 
@@ -372,6 +386,7 @@ if (!missing.length) {
 /* For each missing token, find the commit that removed it and judge whether that commit was ABOUT
    it. `git log -S` is expensive, so it runs only for the handful that are actually missing. */
 let silent = 0;
+const silentKinds = new Set();
 for (const [tok, info] of missing) {
   let removedBy = "", removedSubject = "";
   try {
@@ -392,7 +407,7 @@ for (const [tok, info] of missing) {
      strongest signal; a bare name fragment is the weaker one. */
   const stem = tok.replace(/^(check|audit):/, "").replace(/^scripts\/|\.mjs$/g, "");
   const deliberate = removedSubject && (removedSubject.includes(tok) || removedSubject.toLowerCase().includes(stem.toLowerCase()));
-  if (!deliberate) silent++;
+  if (!deliberate) { silent++; silentKinds.add(info.kind); }
   console.log(`${deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
   console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
   console.log(`      removed   ${removedBy ? removedBy.slice(0, 8) : "(not found)"}  ${removedSubject.slice(0, 96)}`);
@@ -401,3 +416,10 @@ for (const [tok, info] of missing) {
 console.log(`\n${silent} of ${missing.length} vanished in a commit that does NOT name them — read those.`);
 console.log(`A removal is not a defect. This separates "deleted on purpose" from "deleted by a merge`);
 console.log(`that was about something else", which is the shape #776 had when it reverted #778.`);
+
+const fatal = [...silentKinds].filter((k) => FAIL_ON.has(k));
+if (fatal.length) {
+  console.error(`\nFAIL — a SILENT removal of kind ${fatal.join(", ")}, which --fail-on treats as a defect.`);
+  console.error(`Restore it, or say in the commit subject that you are removing it on purpose.`);
+  process.exit(1);
+}
