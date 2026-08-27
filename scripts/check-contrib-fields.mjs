@@ -149,6 +149,34 @@ function readsSubKey(corpus, field, key) {
   return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
 }
 
+/* EVERY EDIT PENCIL MUST OPEN A SECTION THAT EXISTS. A section heading's pencil calls
+   setFixOpenSection(id), and the sheet scrolls with querySelector("#sf-section-"+id) — ids come
+   from each FIELDS key, plus two hardcoded ones. A name with no field returns null, so the sheet
+   opens at the top and scrolls NOWHERE, and the climber has to find the field themselves.
+
+   Four pencils did exactly that with "gear": `gear` is in SS but the form's field is `rack` (M
+   renames gear->rack). Nothing threw, nothing rendered wrong, and the only symptom was a pencil
+   that did four fifths of its job. A separate defect had the CLIMBING ROUTE pencil open
+   "pitchDetail" — a section that exists but edits a DIFFERENT column, so the correction landed
+   under ROUTE BETA while CLIMBING ROUTE kept its old text. This catches the first shape; only
+   reading the reader catches the second. */
+const pencilIds = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+if (pencilIds.length < 10) {
+  console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
+  process.exit(1);
+}
+const sectionIds = new Set([...rd.matchAll(/\{k:"([A-Za-z0-9_]+)"/g)].map((m) => m[1]));
+// Two sections are rendered with a literal id rather than from a FIELDS key.
+for (const extra of ["bailout", "startLocation"]) sectionIds.add(extra);
+const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
+if (orphanPencils.length) {
+  const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;
+  console.error(`check:contrib-fields: ${n} edit pencil(s) open a section that does not exist: ${orphanPencils.join(", ")}`);
+  console.error('The sheet opens at the top and scrolls nowhere — querySelector("#sf-section-<id>") returns null.');
+  process.exit(1);
+}
+console.log(`  ${pencilIds.length} edit pencil(s) open a section that exists`);
+
 /* THE THREE LISTS MUST AGREE, and a mismatch is a BLANK SHEET rather than a missing field.
    renderInput does `OBJ_STATE[f.type][0]` for any type in OBJ_KEYS, so a type registered in
    OBJ_KEYS with no OBJ_STATE entry throws on the first render of the contribute sheet — the
