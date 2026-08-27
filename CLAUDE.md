@@ -36,6 +36,7 @@ npm run check:provenance   # every wired section heading still shows how it was 
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -85,6 +86,7 @@ npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
+npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
@@ -1034,6 +1036,32 @@ a build error, but a screen that renders wrong or not at all.
       fails exactly **1**, naming the broken link. The healthy-side cases stay green in both — a
       state whose catalog genuinely is not built yet must still say so, and a count already in hand
       must not be overwritten by an error.
+  - **AND AN EARLY-RETURN SCREEN, which is the other half of the same blind spot.** `App` returns
+    early for nine screens and the **guide dashboard** is one, so it is not a tab `check:outage`
+    walks — and being a `position:fixed; inset:0` full-screen view with no `role="dialog"`,
+    `check:overlay-discovery` does not classify it as an overlay either.
+    - `useGuideProfile(uid)` handed back `undefined` for **two opposite states**: a climber who has
+      genuinely never applied, and a read that **failed** (react-query leaves `data` undefined on
+      error). The screen collapsed them, so an approved guide whose profile did not load was told
+      *"You haven't applied to guide yet."* above *"Settings → Become a guide starts an
+      application."* — a false claim about the user's own **history**, offering the wrong remedy.
+      Worse than the usual *"you have none"*.
+    - `check:read-failures` cannot see it: that guard scans **`lib/db.js`** and proves a failed read
+      throws, which `useGuideProfile` does. The conclusion is drawn at the reader.
+    - **The rest of the guide surfaces are CLEAN, checked rather than assumed** — `DbGuideDashboard`
+      already gates *"No inquiries yet."* and *"No reviews yet."* on `inqError`/`revError`, and
+      `DbGuides` gates *"No guides listed yet."* and *"No reviews yet."* on `guidesError`/`revError`.
+      Only the profile read was ungated.
+    - **`isGuideVerified(credentials || [])` is deliberately NOT gated**: a failed credentials read
+      drops the ✓ badge, which is **under**-claiming rather than a false statement, and there is no
+      second source to fall back to (unlike `check:verification-fallback`, where the session carries
+      the answer). Recorded so it is not re-derived as a defect.
+    - Executed rather than rendered, and here that is not convenience: the dashboard needs a session,
+      a portal and four queries, and it lives in `lib/` so it is not in the core bundle. `lib/db.js`
+      is ~164kB against core's ~1.1MB, so the second esbuild is cheap.
+    - Injection-tested: reverting the copy fails **3**; dropping the flag at the call site fails
+      exactly **1**, naming the broken link. The three never-applied cases stay green in both — a
+      climber who really has not applied must still be told where to.
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
@@ -2742,6 +2770,39 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:return-leg`** asserts the planner does not re-add a walk its own figures already
+  covered. `hikeH = scarfHrs(distKm, gainM, lossM)` is charged for gain **and** loss, so on a row
+  where those are the whole outing it is already the round trip — and `retH` then added
+  `hikeH * 0.75` on top. **196 WA routes, median +7.67 hr.** Static SSR, so it sits in `npm run build`.
+  - **The app already knew.** `gainCoversWholeOuting` (|loss−gain|/gain ≤ 3%) relabels the tile
+    **"On foot"** and TECH STATS says *"Total ascent is the whole day from the trailhead, not just
+    the walk in"* — and the return leg ignored both. `wa_ptarmigan_traverse` read `21.6hr On foot`
+    with Est. return **16.2 hr after** Est. summit. Label and arithmetic contradicting each other on
+    one screen.
+  - **The premise is solid because 433 of the 484 qualifying rows have gain EXACTLY equal to loss** —
+    a round trip, or a traverse ending at its start elevation. Not a coincidence on a one-way
+    approach. Checked before any code was written, after #1361 shipped a defect for want of exactly
+    that step.
+  - **SCOPED TO THE WALK BRANCH, and the first draft was not.** A pitched route's return is
+    `techH * 0.7` — the descent of the **climb**, which the walk never double-counted — so
+    short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a real leg
+    from **212** rows. Caught before shipping, by a count that did not reconcile (88 "unexplained"
+    against 50 unmatched) rather than by a red guard. Injection case 2 pins it.
+  - **IT DROPS THE "After dark" WARNING ON 102 ROUTES, and that was the decision.** `late` is
+    `retH > 18.5`, so a smaller return means fewer warnings. Keeping them would mean preserving a
+    known double-count as an invisible safety margin that only these 196 routes get — and *a false
+    warning is how a real one stops being read*, the rule this file states for rope warnings and
+    caveats alike. A warning firing off a number the code knows is wrong is not a safety feature.
+  - **NOTHING HAS YET ASKED whether the base walk model is optimistic**, and that is the honest
+    residual. `scarfHrs` at "intermediate" gives ~1,970 ft/hr of ascent, which puts Bonanza's 7,000 ft
+    round trip at ~7.4 hr on foot. If that is fast it is fast on **every** route, including the ~700
+    one-way ones this does not touch — a uniform question needing real party times, which this repo
+    does not have. Do not answer it by restoring the double-count.
+  - Injection-tested both directions, each restoring byte-identically: reverting the fix fails
+    *"Est. return equals Est. summit"*, and the over-broad first draft fails *"a PITCHED
+    whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
+    (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
+    **49** one-way or pitched rows keep their leg, **0** lost.
 - **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
   is stated rather than quoted silently. A party on the summit that started at the trailhead has
   gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
@@ -3612,6 +3673,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:pitch-discount`** guards the climbing-time discount two ways: that the curve has the
+  properties its comment claims, and that the planner **says** it applied. Promoted out of
+  `scripts/oneoff/`, where it had been proving both and **running nowhere** — the shape this file
+  records under `check:field-renders` (*"a verification nobody runs is not a verification"*) and
+  `check:guard-wiring` (*"a guard authored, injection-tested, documented and never wired in looks,
+  from every vantage point anyone checks, exactly like a guard that passes"*). Static SSR + esbuild,
+  **0.8s CPU** against `check:waypoint-placement`'s 6.3s on the same box, so it sits in `npm run build`.
+  - **What it protects is the "down before dark" answer.** `techHrs` discounts per-pitch time on
+    easy ground, and that number feeds Est. summit / Est. return. Erring short there is the #641
+    direction — an affirmative that reads green. The curve assertions are the ones a future edit
+    breaks silently: **never shortens** an estimate against the old step, **monotone**, **bounded to
+    [0.5, 1]**, and an **unparsed grade or NaN cannot earn a discount**.
+  - **The step became a taper and the boundary MOVED with it** — 5.6 went from full discount to
+    none, cutting the worst single-grade jump from **2.17x to 1.44x**. An earlier version of this
+    probe asserted the disclosure was PRESENT at 5.6 and caught that drift by failing. **Keep the
+    model and the message pinned together here, or they separate silently.**
+  - Asserts **both directions** — present at 5.5 and 5.4, absent at 5.6, 5.10a and with no pitches —
+    plus an `ANCHOR` that the estimate tiles rendered at all, without which every "absent" is
+    vacuous. Injection-tested on promotion: a flat `pitchedFraction` returning 0.2 fails four named
+    assertions and exits 1.
+  - **Promoting a one-off changes its DEPTH, and `ROOT` was `../..`.** It failed loudly — esbuild
+    could not resolve the app files — rather than silently measuring the wrong tree, which is how
+    `measure-which-tab-renders-each-field.mjs` reported another branch's code for weeks. Check the
+    root resolution of anything moved out of `scripts/oneoff/`.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -6362,7 +6447,14 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
     catches one above) and 19 are non-findings, each for its own reason. The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
-    at all and `AscentPyramid` gates on `logs.length` before falling back to the stored pyramid;
+    at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
+    on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
+    `resumeLogs` also feeds **`Resume`**, a different component, where `all=[...baked,...live]` is
+    empty for a real DB climber and the not-editable branch says *"<Name> hasn't shared any climbs
+    here."* `scripts/oneoff/probe-resume-outage-copy.mjs` renders all three states and proves it:
+    the string is present with `unavailable:false` and gone with `unavailable:true`. **One handle
+    can feed two components, and a verdict about one of them is not a verdict about the handle.**
+    Now flagged with `resumeLogsUnavailable`;
     `crewInviteRoutesQ` falls back through `routeById` to null; `hzVotesQ` leaves prior votes in
     place rather than clearing them; and **`policyQ` handles its own error inline**
     (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read

@@ -9,7 +9,7 @@ import {
   useGuideProfile, useGuideCredentials, useGuideInquiries, useGuideReviews,
   updateGuideProfile, addGuideCredential, resubmitGuideCredential,
   updateInquiryStatus, postGuideReply, reconcileGuideVerification,
-  isGuideVerified, CERT_TRACK_LABELS,
+  isGuideVerified, guideProfileMissingCopy, CERT_TRACK_LABELS,
 } from "./db";
 
 const SECTIONS = [["credentials", "Credentials"], ["inquiries", "Inquiries"], ["reviews", "Reviews"], ["profile", "Profile"]];
@@ -26,7 +26,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   const [section, setSection] = useState("credentials");
   useEffect(() => { if (uid) reconcileGuideVerification(uid).catch(() => {}); }, [uid]);
 
-  const { data: profile, refetch: refetchProfile } = useGuideProfile(uid);
+  const { data: profile, refetch: refetchProfile, isError: profileError } = useGuideProfile(uid);
   const { data: credentials, refetch: refetchCreds } = useGuideCredentials(uid);
   const { data: inquiries, refetch: refetchInq, isLoading: inqLoading, isError: inqError } = useGuideInquiries(uid);
   const { data: reviews, refetch: refetchReviews, isLoading: revLoading, isError: revError } = useGuideReviews(uid);
@@ -106,8 +106,8 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           SIGNPOSTING, not a second entry point: it names a control that already exists rather
           than adding one. The application form is reachable from Settings today, and routing
           more people into it is a product decision, not a layout repair. */}
-      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>You haven't applied to guide yet.</div>
-      <div style={{ marginTop: 8, textAlign: "center", color: C.textMuted, fontSize: 12.5, lineHeight: 1.5 }}>{"Settings → Become a guide starts an application."}</div>
+      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>{guideProfileMissingCopy(profileError).head}</div>
+      <div style={{ marginTop: 8, textAlign: "center", color: C.textMuted, fontSize: 12.5, lineHeight: 1.5 }}>{guideProfileMissingCopy(profileError).body}</div>
     </div>, document.body);
   }
 

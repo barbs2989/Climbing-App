@@ -763,6 +763,27 @@ function BetaDiff({route}){
   const tags=Object.keys(tagCount).sort((a,b)=>tagCount[b]-tagCount[a]).slice(0,5);const latest=acts[0];
   return <div style={{background:"linear-gradient(155deg,#0f1e14,#10241a)",border:"1px solid "+C.greenDim,borderRadius:13,padding:"13px 14px",marginBottom:13}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><div style={{fontSize:14,fontWeight:700,color:C.green}}>What’s changed</div><span style={{fontSize:11.5,fontWeight:700,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:6,padding:"2px 7px"}}>{"✓ "+acts.length+" verified report"+(acts.length!==1?"s":"")}</span></div><div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:tags.length?10:0}}>{recent.length+" recent part"+(recent.length!==1?"ies":"y")+" checked in. Latest: "+(latest.user?latest.user.split(" ")[0]:"a climber")+" on "+fmtShort(latest.date)+(latest.tickType?" · "+latest.tickType:"")+"."}</div>{tags.length?<div><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>What recent parties are flagging</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{tags.map(t=><span key={t} style={{fontSize:11.5,fontWeight:600,color:C.text,background:C.card,border:"1px solid "+C.border,borderRadius:7,padding:"3px 8px"}}>{t}{tagCount[t]>1?" ×"+tagCount[t]:""}</span>)}</div></div>:null}</div>;
 }
+/* A PITCH ROW IS A CONTROL, and its "CRUX" badge is a separate <span> held off the grade by
+   `marginLeft:6`. The accessibility tree has no margins, so a pitch graded "5.9" announced as
+   "5.9CRUX" — the #740 defect, on a row where the glued half is the word that says this is the
+   hardest and most consequential pitch on the climb.
+   check:a11y-badges exists for exactly this and is GREEN, because it reaches the route page with
+   `?zr=1`, which opens ROUTES[0] — `kings_hf`, a scramble whose `pitchDetail` is null, so no pitch
+   row renders in that walk at all. Seven of the fourteen seed routes WOULD render it. A screen
+   nobody opens is not a screen with no findings; see check:screen-lists for the same shape one
+   level up.
+   Note "5.9+" was already safe and "5.9" was not: the rule is a word character on BOTH sides, and
+   `+` separates the two fragments on its own. Built from the row's own values so the announced
+   name cannot drift from the visible one.
+   The STAGES row below carries the same markup and is NOT a control — no role, so nothing computes
+   a name for it — which puts it outside this class rather than fixed by it. */
+function pitchRowName(p,isOpen){
+  const bits=["Pitch "+p._badge];
+  if(p.grade)bits.push(String(p.grade));
+  if(p.crux)bits.push("crux");
+  if(p._title)bits.push(String(p._title));
+  return bits.join(", ")+(isOpen?", expanded":", collapsed");
+}
 function PitchTable({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
   const [open,setOpen]=useState(null);useEffect(function(){if(focus!=null)setOpen(focus);},[focus]);
   if(!route.pitchDetail||!route.pitchDetail.length)return null;
@@ -786,7 +807,7 @@ function PitchTable({route,focus,onEdit,comments,commentsUnavailable,onCommentAd
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8,gap:10,flexWrap:"wrap"}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.blue,whiteSpace:"nowrap"}}>{lbl+" · "+((route.pitches&&route.pitches>pitches.length)?(pitches.length+" of "+route.pitches):pitches.length)}</div><ProvChip prov={sectionProvenance(route,"pitchDetail")}/></div><div style={{display:"flex",alignItems:"center",gap:8,marginLeft:"auto"}}><div style={{fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"4px 9px",whiteSpace:"nowrap"}}>Tap for detail</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit pitch descriptions"/>:null}</div></div>
     {pitches.map((p,idx)=>{const isOpen=open===idx;return <div key={p._n+"-"+idx} id={"pitch-"+idx} style={{border:"1px solid "+(focus===idx?C.blue:C.border),borderRadius:10,marginBottom:8,boxShadow:focus===idx?"0 0 0 1px "+C.blue:"none",scrollMarginTop:"80px"}}>
-      <div {...clickable(()=>setOpen(isOpen?null:idx))} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",cursor:"pointer"}}><div style={{width:26,height:26,borderRadius:7,background:p.crux?C.amberBg:C.surface,border:`1px solid ${p.crux?C.amber:C.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:p.crux?C.amber:C.textSub}}>{"P"+p._badge}</div><div style={{flex:1,minWidth:0}}>{p._title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p._title}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:4,gap:8,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.amber,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p.grade}{p.crux?<span style={{color:C.red,fontSize:12,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span><span style={{fontSize:12,color:C.textMuted,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",marginLeft:"auto"}}>{hasLengths?(p.lengthM!=null?uLen(p.lengthM):"—"):null}{hasLengths?<span style={{opacity:0.6}}> · {uLen(pitches.slice(0,idx+1).reduce((a,pp)=>a+(pp.lengthM||0),0))} up</span>:null} <span style={{color:C.blue,fontWeight:700,marginLeft:3}}>{isOpen?"▾":"▸ more"}</span></span></div>{p._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{p._note}</div>:null}</div></div>
+      <div {...clickable(()=>setOpen(isOpen?null:idx))} aria-label={pitchRowName(p,isOpen)} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",cursor:"pointer"}}><div style={{width:26,height:26,borderRadius:7,background:p.crux?C.amberBg:C.surface,border:`1px solid ${p.crux?C.amber:C.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:p.crux?C.amber:C.textSub}}>{"P"+p._badge}</div><div style={{flex:1,minWidth:0}}>{p._title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p._title}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:4,gap:8,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.amber,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p.grade}{p.crux?<span style={{color:C.red,fontSize:12,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span><span style={{fontSize:12,color:C.textMuted,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",marginLeft:"auto"}}>{hasLengths?(p.lengthM!=null?uLen(p.lengthM):"—"):null}{hasLengths?<span style={{opacity:0.6}}> · {uLen(pitches.slice(0,idx+1).reduce((a,pp)=>a+(pp.lengthM||0),0))} up</span>:null} <span style={{color:C.blue,fontWeight:700,marginLeft:3}}>{isOpen?"▾":"▸ more"}</span></span></div>{p._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{p._note}</div>:null}</div></div>
       {isOpen?<div style={{padding:"0 11px 11px"}}><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:9}}>{[["Length",p.lengthM!=null?uLen(p.lengthM):"—",C.blue],["Bolts (this pitch)",p.bolts!=null?String(p.bolts):"—",C.amber],["Anchor",p.anchor||"—",/bolt/i.test(p.anchor||"")?C.green:C.blue]].map(s=><div key={s[0]} style={{background:C.surface,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>)}</div><PitchConsensus p={p} onSuggestFix={onEdit}/><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:8,textTransform:"uppercase",letterSpacing:0.5,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Photos</div>{p.photos&&p.photos.length?<PhotoRow items={p.photos} w={160} h={108}/>:<div style={{background:C.surface,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+p._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></div>:null}
     </div>;})}
   </div>;
@@ -1262,13 +1283,30 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp}){
   if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
   if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
   const hikeInputsComplete=_missHike.length===0;const hikeCoversWholeDay=gainCoversWholeOuting(route);
+  /* ...and that flag now reaches the RETURN, not just the label. `hikeCoversWholeDay` is true when
+     the row's gain and loss agree to within 3% — 433 of the 484 WA rows that qualify have them
+     EXACTLY equal, which is a round trip or a traverse ending at its start elevation, not a
+     coincidence on a one-way approach. For those rows the tile is already relabelled "On foot" and
+     TECH STATS already says "Total ascent is the whole day from the trailhead, not just the walk
+     in" — and then the return leg added another 75% of that same walk on top. Label and arithmetic
+     contradicting each other on one screen: wa_ptarmigan_traverse read `21.6hr On foot` and then
+     put Est. return 16.2 hr after Est. summit.
+
+     SCOPED TO THE WALK BRANCH, and getting that wrong nearly shipped a second defect. A pitched
+     route's return is `techH*0.7` — the descent of the CLIMB, which the walk never double-counted
+     — so short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a
+     real descent leg from the 212 whole-outing rows that carry pitches. Only the `hikeH*0.75`
+     branch is affected.
+
+     This moves Est. return EARLIER, which is normally the dangerous direction; it is safe here
+     only because the figure removed was never a second leg, it was the first one counted twice. */
   /* A gain PRESENT and contradicted, as opposed to absent. _missHike above names what is
      missing; this names what is impossible. Both make the number below a floor, so they are
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
-  const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:hikeH*0.75);
+  const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
   const fmt=h=>{let total=Math.round(h*60);const day=Math.floor(total/1440);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   const late=retH>18.5,sumLate=!publishedIsWholeDay&&sumH>13,multiDay=route.campOptions&&route.campOptions.some(c=>c.stars>0);
   // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
