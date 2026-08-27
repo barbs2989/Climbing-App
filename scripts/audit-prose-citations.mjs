@@ -68,6 +68,14 @@ const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakba
 // cannot differ on an elevation or fail to document a length.
 const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b/i;
 // Go and look at this yourself, now — operational, and it must never be swept.
+/* `data_quality` IS DELIBERATELY NOT SCANNED, and it is the whole reason this widening had to be
+   measured rather than swept. It carries 288 of the 302 hits -- by far the largest column -- and
+   it RENDERS NOWHERE: `.gaps` appears zero times in RouteDetail.jsx and ClimbMatchCore.jsx, and
+   the two page-level graders built on `data_quality.confidence` were deleted as noise long ago.
+   The standing rule is that no SOURCE reaches a screen. A column that reaches no screen cannot
+   break it, and adding it here would bury eleven real findings under 288 that nobody should act
+   on -- a detector whose output is 96% noise is one people stop reading.
+   If `data_quality` ever starts rendering, add it: the citations are still in there. */
 const LIVE = /fs\.usda\.gov|nps\.gov|wsdot|weather\.gov|recreation\.gov|\(\d{3}\)\s*\d{3}-\d{4}/i;
 
 // Flagged and deliberately not a citation. A stale entry fails.
@@ -99,7 +107,16 @@ for (const r of rows) {
 const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_text", "descent",
   "beta", "overview", "watch_out", "best_season", "approach", "approach_variants", "climbing_route",
   "itinerary", "bivy", "pitch_detail", "gear", "what_to_bring", "pro_tips", "hazards", "obj_haz",
-  "seasonal_guidance", "seasonal_hazards", "climate", "emergency", "crowds", "partner_requirements"];
+  "seasonal_guidance", "seasonal_hazards", "climate", "emergency", "crowds", "partner_requirements",
+  /* ADDED 2026-08-26 after measuring what this audit could not see. `fa` RENDERS -- `route.fa` on
+     the route page -- and was never opened, so a citation in it was on screen and uncounted.
+     ONLY `fa`. `road` and `access` also render and also carry citations, and are deliberately NOT
+     added: this audit already scans them on a SEPARATE path with its own ROAD/ACCESS section in
+     the output, so listing them here scans them TWICE. Measured -- doing so took the route-prose
+     corpus from 126,112 values to 153,869 and inflated the headline while finding nothing new.
+     READ THE OUTPUT'S SECTION HEADINGS BEFORE WIDENING A COLUMN LIST.
+     `data_quality` is excluded for the opposite reason -- see the note above LIVE. */
+  "fa"];
 function leaves(v, out = []) {
   if (typeof v === "string") { if (v.trim()) out.push(v); return out; }
   if (Array.isArray(v)) { for (const x of v) leaves(x, out); return out; }
