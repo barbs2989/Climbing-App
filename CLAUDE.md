@@ -2547,15 +2547,25 @@ a build error, but a screen that renders wrong or not at all.
     of its columns as undescribed. `check:rls` records the identical defect from the policy side.
   - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
     parsed columns, an unreachable database, and a live schema exposing zero tables.
-  - `KNOWN` declares a column as live-and-undescribed **with a reason**, and a **stale** entry
-    fails — so when the missing migration lands, this says so and the entry is deleted.
+  - **`KNOWN` IS EMPTY, AND THE ONE ENTRY IT EVER HELD PROVED THE CONTRACT AGAINST A REAL EVENT.**
+    `routes.access_checked_at` was declared for exactly one day, with a reason predicting that the
+    repair would be another session's migration landing. **#1347** landed it
+    (`0172_road_access_can_carry_a_date.sql`, `lib/road.js`, `check:access-checked-line`), the next
+    run went red as **stale bookkeeping**, and the entry came out. Nobody had to remember it
+    existed — which is the whole point of a declaration that fails when it stops being true, and
+    it is validation an injection cannot give.
+  - **The stale assertion needs a TEST HOOK precisely because the healthy state is an empty map.**
+    `--known table.column=reason` adds a declaration at run time and is used only by the injection
+    harness. An assertion that can run only while the tree is unhealthy is not an assertion —
+    the same reason `check:field-renders` injects `SENTINELS` for columns with zero rows.
   - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
     `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
     section**, never on the exit code — a mutation that adds a column also makes the fixture
     disagree with the snapshot, so section C fires too and every case would look alike from an
     exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
     dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
-    breaking their mechanism and confirming they then fire.
+    breaking their mechanism and confirming they then fire. The `stale-known` case supplies its
+    own declaration through `--known`, since there is no longer one in the file to make stale.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
