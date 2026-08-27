@@ -975,6 +975,42 @@ a build error, but a screen that renders wrong or not at all.
       on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
       an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
       on exactly that basis. One query at a time, as this guard's header already insists.
+- **`check:outage-copy`** asserts that an overlay tells a **failed read** apart from an **empty
+  account**, by rendering the real component in both states. Two overlays today (`Inbox`,
+  `FriendsList`), plus one surface that is neither an overlay nor a tab. Static (SSR of
+  `ClimbMatchCore.jsx`), so it sits in `npm run build`.
+  - **IT NOW COVERS A SURFACE EVERY GUARD WAS OUT OF FRAME FOR.** The **Manage areas** screen lists
+    all 50 `US_STATES` with a line under each, driven by `cnt` =
+    `dbSt ? dbSt.route_count : (st ? areaMatchCount(st.id) : 0)`, where `dbSt` comes from
+    `useStates()`. When that read **fails**, `dbSt` is undefined for every state and the seed
+    `MOUNTAINS` fallback holds only **four** (California, Colorado, Utah, Washington) — so **46 of
+    50** read *"Catalog coming soon"*, dimmed, with the row's own click handler returning early so
+    it could not even be tapped.
+    - **Worse than the usual shape of this class, twice over.** It is a false claim about the
+      **product** rather than about the climber's own data; and it lands on the one screen whose
+      whole purpose is downloading a catalog **for use without a signal**, so it was wrong exactly
+      when somebody needed it.
+    - **Three near misses, each instructive.** `check:outage` walks seven tabs and this is not a
+      tab. `check:overlay-absence` walks what `check:overlay-discovery` finds, and that discovery is
+      **behavioural** — it wants `role="dialog"` as the region's first element, while this is a
+      `position:fixed; inset:0; zIndex:200` full-screen view with **no role**: an overlay to a
+      climber and not one to any guard. And even had it been discovered, that guard's `CLAIMS`
+      vocabulary is a deny-list of *"no X yet"* / *"0 X"* / *"nothing here"* shapes — **"Catalog
+      coming soon" matches none of them**, the
+      [[a-deny-list-detector-is-defeated-by-one-more-adjective]] failure this file already records
+      **four** times for `check:outage`'s rule 2, arriving a fifth time in a different guard.
+    - **Adding `role="dialog"` would pull the screen into four separate walks** and is a bigger
+      change than the fix; recorded rather than done.
+    - The copy is a **pure function** (`stateCatalogLine`, in core) so all three branches are
+      **executed** rather than rendered — this line lives in `App`, which no SSR guard stands up.
+    - **THE WIRING IS ASSERTED AS SOURCE BESIDE IT**, because executing the function proves the
+      sentence and not that App still calls it. A stale-base squash takes exactly that half: the
+      flag arrives `undefined`, reads as falsy, and every copy assertion still passes while 46
+      states go back to having no catalog.
+    - Injection-tested: removing the outage branch fails **2**; dropping the flag at the call site
+      fails exactly **1**, naming the broken link. The healthy-side cases stay green in both — a
+      state whose catalog genuinely is not built yet must still say so, and a count already in hand
+      must not be overwritten by an error.
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already

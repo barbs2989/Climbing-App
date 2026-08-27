@@ -150,7 +150,98 @@ try {
     }
   }
 
-  if (ran < 7) dead(`only ${ran} assertion(s) ran; expected at least 7`);
+  /* ---- A SURFACE THAT IS NOT AN OVERLAY, AND WAS OUT OF FRAME FOR EVERY GUARD ----
+
+     "Manage areas" lists all 50 US_STATES with a line under each. That line is driven by `cnt`,
+     which is `dbSt ? dbSt.route_count : (st ? areaMatchCount(st.id) : 0)` where dbSt comes from
+     `useStates()`. When that read fails, dbSt is undefined for every state and the seed MOUNTAINS
+     fallback holds only FOUR of them -- so 46 of 50 read "Catalog coming soon", dimmed, with the
+     row's own click handler returning early so it could not even be tapped.
+
+     Worse than the usual shape of this class in two ways. It is a false claim about the PRODUCT
+     rather than about the climber's own data; and it lands on the one screen whose entire purpose
+     is downloading a catalog FOR use without a signal, so it was wrong exactly when somebody
+     needed it.
+
+     NOTHING COULD HAVE SEEN IT, and the three near misses are each instructive:
+       - check:outage walks seven tabs; this is not a tab.
+       - check:overlay-absence walks the overlays check:overlay-discovery finds, and discovery is
+         behavioural -- it wants role="dialog" as the region's first element. This screen is a
+         `position:fixed; inset:0; zIndex:200` full-screen view with NO role, so it is an overlay to
+         a climber and not one to any guard. (Adding the role would pull it into four separate
+         walks and is a bigger change than this one; recorded rather than done.)
+       - and even had it been discovered, that guard's CLAIMS vocabulary is a deny-list of
+         "no X yet" / "0 X" / "nothing here" shapes. "Catalog coming soon" matches none of them --
+         the a-deny-list-is-beaten-by-one-more-adjective failure CLAUDE.md already records FOUR
+         times for check:outage's rule 2, arriving a fifth time in a different guard.
+
+     Executed rather than rendered: the copy is a pure function precisely so all three branches can
+     be reached without standing up App, which is where this line lives. */
+  const stateCatalogLine = mod.stateCatalogLine;
+  if (typeof stateCatalogLine !== "function") {
+    dead("stateCatalogLine is not exported from ClimbMatchCore.jsx — ANCHOR LOST");
+  }
+  const SOON = "Catalog coming soon";
+
+  ran++;
+  const broke = stateCatalogLine(0, "Montana", true, "");
+  if (!broke.includes(SOON) && /couldn’t load/i.test(broke)) {
+    ok("stateCatalogLine: a failed states read says so instead of \"Catalog coming soon\"");
+  } else {
+    fail(`stateCatalogLine: a failed read still reads as a state with no catalog — "${broke}"`);
+  }
+
+  ran++;
+  if (broke.includes("Montana") && /not a claim/i.test(broke)) {
+    ok("stateCatalogLine: names the state and says the count is unknown rather than zero");
+  } else {
+    fail("stateCatalogLine: the outage line does not say the catalog is unknown rather than absent");
+  }
+
+  /* The honest branch is what stops this being a blanket rewrite. A state whose catalog genuinely
+     has not been loaded yet must still say so -- that sentence is true for most of the 50. */
+  ran++;
+  const soon = stateCatalogLine(0, "Montana", false, "");
+  if (soon === SOON) ok("stateCatalogLine: with a healthy read, an unbuilt catalog still says so");
+  else fail(`stateCatalogLine: lost its genuine "coming soon" state — "${soon}"`);
+
+  /* A state WITH a catalog must report it whatever the flag says: a failed refetch must not hide a
+     count already in hand, and must not overwrite it with an error. */
+  ran++;
+  const populated = stateCatalogLine(8366, "Washington", true, " · 2h ago");
+  if (populated.includes("8366 climbs in the catalog") && !/couldn’t load/i.test(populated)) {
+    ok("stateCatalogLine: an already-loaded count still renders under the flag");
+  } else {
+    fail(`stateCatalogLine: the flag suppressed or overwrote a count already in hand — "${populated}"`);
+  }
+
+  ran++;
+  if (stateCatalogLine(1, "Utah", false, "").includes("1 climb in the catalog")) {
+    ok("stateCatalogLine: singular stays singular");
+  } else {
+    fail("stateCatalogLine: lost its singular form");
+  }
+
+  /* THE WIRING, not just the copy. Executing the function proves the sentence; it does not prove
+     App still calls it, or still computes the flag. A stale-base squash takes exactly that half --
+     the flag would arrive undefined, read as falsy, and every assertion above would still pass
+     while the screen went back to claiming 46 states have no catalog. */
+  const CHAIN = [
+    ["ClimbMatch.jsx", "const statesUnavailable=!!(USE_DB&&dbStatesQ&&dbStatesQ.isError);",
+     "App no longer computes the flag from the states query"],
+    ["ClimbMatch.jsx", "stateCatalogLine(cnt,nm,statesUnavailable,",
+     "the Manage areas line no longer goes through stateCatalogLine with the flag"],
+  ];
+  for (const [f, needle, why] of CHAIN) {
+    ran++;
+    if (fs.readFileSync(path.join(ROOT, f), "utf8").includes(needle)) {
+      ok(`wiring: ${f} — ${why.replace("no longer ", "")}`);
+    } else {
+      fail(`wiring: ${why} (${f} no longer contains \`${needle}\`)`);
+    }
+  }
+
+  if (ran < 14) dead(`only ${ran} assertion(s) ran; expected at least 14`);
 
   if (failures) {
     console.error(`\ncheck:outage-copy FAILED — ${failures} assertion(s).`);
