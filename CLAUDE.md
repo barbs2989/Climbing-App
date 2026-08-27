@@ -83,6 +83,7 @@ npm run check:pitch-split # a pitch_detail entry reaches the section describing 
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
+npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
@@ -2640,6 +2641,61 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
+  is stated rather than quoted silently. A party on the summit that started at the trailhead has
+  gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
+  figure. It is not decoration: `dbRouteToCamel` maps it to `gainM`, `scarfHrs()` turns it into the
+  approach estimate, and that feeds **Est. summit**, **Est. return** and the **After dark** warning.
+  Static SSR (no browser, no DB), so it sits in `npm run build`.
+  - **87 WA routes**, every one of which moves the estimate: median **0.44 hr** understated, worst
+    **3.59 hr** — `wa_mount_rainier_tahoma_glacier` stores **5,007 ft** against **11,506 ft**
+    between its own two pins, and the Plan tab said nothing. Erring SHORT on *"are you down before
+    dark"* is the #641 direction: an affirmative that reads green.
+  - **`audit:gain` has reported this class for months and the READER half was never asked.** That
+    audit's own entry concludes the DATA repair is per-route research, because *"a transform would
+    have to invent a value"* — true, and silent about the screen. **Stating what the row's own pins
+    prove needs no research at all.** Same split as the rappel work: the data fix needs a source,
+    the honesty fix does not.
+  - **IT REPORTS, IT DOES NOT SUBSTITUTE.** Which record is wrong is not decidable here — the row
+    may be measuring from a high camp it never recorded — and TECH STATS renders `gain_ft`, so
+    feeding the planner a different number would put two answers on one screen
+    ([[changing-which-record-wins-leaves-the-neighbouring-field-behind]]). The caveat names both
+    figures and says which one the times used.
+  - **ONE-SIDED, like the audit.** Too little gain is impossible; too much is not, because a real
+    route rolls over bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **The 300 ft slack is the audit's own, not a fresh threshold.** The shortfall distribution is
+    **continuous** — p50 805 ft, p90 2,774, max 6,499 — with no void to cut at, so a magnitude bar
+    would be fitted to the answer. Routes that RECORD something at the implied start are excluded:
+    that is the documented high-camp convention (24 routes), and flagging them would accuse correct
+    work.
+  - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
+    **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
+    while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
+    all 3,969 elevations are `elev`. The two-convention trap this file records for the *bivy* store
+    does not reach the waypoint store.
+  - Injection-tested, and **it caught a vacuous assertion of my own**: `11,506 ft` is also the
+    summit pin's elevation in the waypoint list below, so a tab-wide `includes` for it **passed
+    with the caveat deleted**. Scoped to the sentence — *count inside the panel, never across the
+    tab*. Three injections, each pinning one rule: removing the render fails 4 assertions, breaking
+    the one-sidedness fails the above-the-rise case, breaking the recorded-start exclusion fails the
+    high-camp case.
+  - **A measured structural note, so nobody contrives a case for it:** near the boundary the slack
+    rule and the recorded-start rule **coincide by construction** — `implied = summit − gain`, so as
+    the gain approaches the rise the implied start approaches the trailhead pin, which is recorded.
+    Breaking the slack alone therefore leaves those cases silent.
+  - **VERIFIED ON THE LIVE CATALOG, and that run corrected the invariant rather than the code.**
+    The guard proves the caveat on a synthetic route; `scripts/oneoff/probe-gain-caveat-on-live-rows.mjs`
+    renders **real rows through the real `dbRouteToCamel`** (which hands the app METRES) and
+    `normalizeWaypoints`, either of which could have silenced it with every fixture assertion still
+    green. First run: **80 of 87 fired, 7 missed** — which read as a defect in the fix and was not.
+    All seven are crag-family (`trad`/`sport`) routes whose Plan tab renders **no time estimate at
+    all**: no *Est. summit*, no *Est. return*. **With no estimate there is no false claim**, so the
+    caveat is correctly absent. Asserting the data-only form would have driven a "fix" to working
+    code — the failure this file records under half a dozen other names.
+  - So the invariant is **not** *"the data contradicts"* but *"the SCREEN quotes an estimate built
+    on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
+    alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
+    on a count alone. Routes with no estimate are counted and reported, never scored.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
