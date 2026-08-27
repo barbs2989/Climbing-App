@@ -46,6 +46,14 @@ const flag = n => { const i = args.indexOf("--" + n); if (i >= 0 && args[i + 1] 
 const INJECT = flag("inject");
 const STATE = flag("state") || "wa";
 const FULL = args.includes("--full");
+/* --json exists so nothing has to RE-DERIVE this classification. A grouping pass over the same
+   backlog wrote its own shelf-life needle, and being looser than these tiers it reported ~20 routes
+   in the Suiattle corridor where this audit reports ONE — a worklist inflated by a second classifier
+   nobody was comparing against. Same shape as the four grade parsers.
+   NOTE: this file ends on `process.exitCode`, never `process.exit()`. Do not "tidy" that — on a PIPE
+   an explicit exit truncates stdout mid-write, which reads as a script that emits broken JSON. */
+const JSON_OUT = args.includes("--json");
+const say = (...a) => { if (!JSON_OUT) console.log(...a); };
 
 // Every rendered prose field that can carry a closure. `access.notes` and `access.closureNote` are
 // included because a closure lands in them often enough to matter — 197 of the marked WA values.
@@ -143,7 +151,9 @@ if (!rows.length) { console.error(`FAIL — read 0 ${STATE} routes. Refusing to 
 const values = [];
 for (const r of rows) for (const [col, key] of FIELDS) {
   const v = r[col] && typeof r[col] === "object" ? r[col][key] : null;
-  if (typeof v === "string" && v.trim()) values.push({ id: r.id, name: r.name, area: r.area_id, field: `${col}.${key}`, text: v.replace(/\s+/g, " ").trim() });
+  // roadName rides along for --json consumers: a closure is grouped by the ROAD, and a driveNote
+  // often names the destination rather than the road it runs on.
+  if (typeof v === "string" && v.trim()) values.push({ id: r.id, name: r.name, area: r.area_id, field: `${col}.${key}`, text: v.replace(/\s+/g, " ").trim(), roadName: (r.road && typeof r.road === "object" && typeof r.road.name === "string") ? r.road.name.replace(/\s+/g, " ").trim() : null });
 }
 if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes carry road/access, and 0 carry any prose in them. Every test below would be vacuous.`); process.exit(1); }
 
@@ -179,28 +189,38 @@ for (const v of values) {
 
 const flagged = TIERS.reduce((n, t) => n + buckets.get(t.key).length, 0);
 const routes = new Set(TIERS.flatMap(t => buckets.get(t.key)).map(v => v.id));
-console.log(`${rows.length} ${STATE} routes carry a road/access object; ${values.length} prose values across ${FIELDS.length} rendered fields.`);
-console.log(`${flagged} value(s) on ${routes.size} route(s) state something with a shelf life.`);
-console.log(`excluded, and NOT silently: ${selfLimiting} name an explicit end date, ${permanent} describe a permanent closure.\n`);
+say(`${rows.length} ${STATE} routes carry a road/access object; ${values.length} prose values across ${FIELDS.length} rendered fields.`);
+say(`${flagged} value(s) on ${routes.size} route(s) state something with a shelf life.`);
+say(`excluded, and NOT silently: ${selfLimiting} name an explicit end date, ${permanent} describe a permanent closure.\n`);
 
 for (const t of TIERS) {
   const hits = buckets.get(t.key);
-  console.log(`── ${t.key.toUpperCase()} — ${t.title}: ${hits.length} value(s) on ${new Set(hits.map(h => h.id)).size} route(s)`);
+  say(`── ${t.key.toUpperCase()} — ${t.title}: ${hits.length} value(s) on ${new Set(hits.map(h => h.id)).size} route(s)`);
   const show = FULL ? hits : hits.slice(0, 8);
-  for (const h of show) console.log(`   ${h.id}  ${h.field}\n      ${h.text.slice(0, FULL ? 400 : 190)}${h.text.length > (FULL ? 400 : 190) ? "…" : ""}`);
-  if (!FULL && hits.length > show.length) console.log(`   … ${hits.length - show.length} more (pass --full)`);
-  console.log("");
+  for (const h of show) say(`   ${h.id}  ${h.field}\n      ${h.text.slice(0, FULL ? 400 : 190)}${h.text.length > (FULL ? 400 : 190) ? "…" : ""}`);
+  if (!FULL && hits.length > show.length) say(`   … ${hits.length - show.length} more (pass --full)`);
+  say("");
 }
 
 if (flagged) {
-  console.log("These are CANDIDATES, not findings, and a bulk rewrite would do damage:");
-  console.log("  - THE ROAD IS NOT THE APPROACH. Staircase's road reopened while the trail out of it stayed shut;");
-  console.log("    clearing the road claim without reading the rest deletes a warning that still applies.");
-  console.log("  - the phrase carrying the expiry is usually the only freshness signal the value has, so date it");
-  console.log("    or drop the claim — deleting the phrase alone leaves a bare assertion that ages worse.");
-  console.log("  - and do not replace one with a closure that is true TODAY. That reproduces the defect.");
+  say("These are CANDIDATES, not findings, and a bulk rewrite would do damage:");
+  say("  - THE ROAD IS NOT THE APPROACH. Staircase's road reopened while the trail out of it stayed shut;");
+  say("    clearing the road claim without reading the rest deletes a warning that still applies.");
+  say("  - the phrase carrying the expiry is usually the only freshness signal the value has, so date it");
+  say("    or drop the claim — deleting the phrase alone leaves a bare assertion that ages worse.");
+  say("  - and do not replace one with a closure that is true TODAY. That reproduces the defect.");
 }
-process.exitCode = 0;
+
+if (JSON_OUT) {
+  /* The whole point is that a consumer gets THIS classification rather than approximating it, so a
+     payload that silently lost the tiering would be worse than no mode at all — it would look like
+     a clean backlog. Refuse rather than emit one. */
+  const out = TIERS.flatMap(t => buckets.get(t.key).map(h =>
+    ({ id: h.id, name: h.name, tier: t.key, field: h.field, text: h.text, roadName: h.roadName || null })));
+  if (out.length !== flagged) { console.error(`FAIL — serialised ${out.length} of ${flagged} flagged values`); process.exitCode = 1; }
+  else console.log(JSON.stringify({ state: STATE, routes: rows.length, values: values.length, flagged, findings: out }, null, 1));
+}
+process.exitCode = process.exitCode || 0;
 
 // Injection-tested:
 //   --inject=expiring   the Hopper sentence on the first value  -> must appear under research-act
@@ -214,3 +234,8 @@ process.exitCode = 0;
 // The last two are the ones that matter. `expired` alone is satisfied by a rule that fires on any
 // past date, and that rule returns 16 values here of which 15 are correct past-tense prose. Only
 // the quiet pair pins the difference between "names an old date" and "asserts something untrue".
+//
+// Re-run all six after touching the output path. --json routes every report line through say(), so
+// a mistake there is silent on stdout and invisible in the exit code; the cases are what notice.
+// Verified after adding --json: clean 0/0/0/0, yearonly 0/0/0/0, expiredanswered 0, pastreport 0,
+// expired 5609, expiring 1 under research-act.
