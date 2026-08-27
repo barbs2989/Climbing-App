@@ -592,6 +592,49 @@ try {
     await capture(`modal:${name}`, { min: 30, tab: opened.tab });
   }
 
+  // The TRIP RECAP asks you to mark who showed, and its own copy says no-shows lower reliability
+  // and feed the trust score. It built its roster as a hardcoded "You" row concatenated with EVERY
+  // crew member -- and `members` always carries a climberId 0 row for the signed-in climber -- so a
+  // two-person crew listed three, the third being you under your own display name. Both rows
+  // carried `cid: 0`, so they keyed the same entry in `recapMarks` and marking one flipped the
+  // other. Same shape as the crew chat (#1269), on a screen where the duplicate is actionable.
+  //
+  // Asserted on the text the sweep above already captured, so it costs no extra walk. The owner's
+  // display name is what `crewMemberById(0)` resolves to, so its presence IS the duplicate.
+  {
+    // SCOPE THE READ TO THE MODAL. `capture()` records the whole SCREEN, and this overlay opens
+    // over the Profile tab, which legitimately shows the account holder's own name — so an
+    // unscoped search for it fails on a working fix. (I made exactly this mistake writing this
+    // assertion, and it is the third time today: a fixed window or a whole-screen read is not a
+    // section.) The modal runs from its title to its submit button.
+    const _whole = screens["modal:recapId"];
+    const _a = _whole === undefined ? -1 : _whole.indexOf("Trip recap");
+    const _b = _a < 0 ? -1 : _whole.indexOf("Confirm attendance", _a);
+    const recap = (_a >= 0 && _b > _a) ? _whole.slice(_a, _b) : undefined;
+    if (_whole === undefined) {
+      log("  recap roster: not checked — modal:recapId was skipped or never opened");
+    } else if (recap === undefined) {
+      asserted++;
+      fail("modal:recapId", "could not find the recap between its title and \"Confirm attendance\" — it was renamed, so the roster was NOT checked");
+    } else {
+      asserted++;
+      if (!/\bYou\b/.test(recap)) {
+        fail("modal:recapId", "the recap does not list a \"You\" row, so there is nothing for the duplicate check to be relative to");
+      } else if (recap.includes(fixture.owner.name)) {
+        fail("modal:recapId",
+          `the signed-in climber is listed twice — a "You" row and a ${JSON.stringify(fixture.owner.name)} row. ` +
+          "Both carry cid 0, so they share one attendance mark and one React key.");
+      }
+      asserted++;
+      // …and the OTHER member must still be there. A roster that dropped everyone would satisfy
+      // the check above and be a worse screen than the one it replaced.
+      const mateFirst = fixture.mate.name.split(" ")[0];
+      if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
+        fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+      }
+    }
+  }
+
   if (DUMP) {
     fs.writeFileSync(DUMP, JSON.stringify(screens, null, 2));
     log(`\nwrote ${DUMP} (${Object.keys(screens).length} screens)`);
