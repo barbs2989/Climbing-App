@@ -109,7 +109,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
           <div><div style={{ fontSize: 15, fontWeight: 700 }}>Guide dashboard</div><div style={{ fontSize: 12, color: C.textSub }}>{"Status: " + profile.status + (newInquiries ? " · " + newInquiries + " new inquiries" : "")}</div></div>
         </div>
-        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
+        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 15px", marginBottom: 14 }}>
