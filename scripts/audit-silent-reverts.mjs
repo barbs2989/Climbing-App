@@ -113,8 +113,49 @@ const PATTERNS = [
      Measured for noise before shipping: against #1239's own diff it finds precisely the two
      reverted names and nothing else. The convention is established (`<noun>Unavailable`), so this
      is a named class rather than "every identifier" -- the haystack the header warns about. */
-  { kind: "outage-flag", re: /^\+.*?\b([A-Za-z_$][\w$]*Unavailable)\s*=/gm, file: /\.(jsx?|mjs)$/ },
+  /* PRESENCE FOR THIS KIND IS THE ASSIGNMENT, NOT THE NAME — and the bare-name test let #1267
+     through while this very comment was one of the reasons it did.
+
+     #1267 dropped catchesUnavailable, filedReportsUnavailable, searchesUnavailable and
+     photosUnavailable from ClimbMatch.jsx. This audit reported 0 absent even with a window
+     reaching the adding commits, because presence searches the whole tree for the bare token and
+     all four names still appeared at that commit in `scripts/audit-silent-reverts.mjs` — in the
+     paragraph above, which names the two flags #1239 shipped — and in a probe's prose. The guard
+     built for this class was kept green by its own documentation of the class. Exactly the trap
+     CLAUDE.md records for check:ci-cancel and check:correction-readers, from the other side.
+
+     A flag is DEFINED by being assigned, so `name[ ]*=` is the honest presence test rather than a
+     workaround, and it keeps the property the bare token was chosen for: a flag that moved to
+     another file still matches. The shape is written so one string is valid both as a JS RegExp
+     source and as a POSIX ERE for `git grep -E`, since the two backends must agree. */
+  /* ONE MATCH PER LINE WAS THE THIRD REASON #1267 READ AS CLEAN, and the comment above had
+     already named the constraint it then failed to satisfy: "the match cannot be anchored to the
+     start of a line". The regex was `^\+.*?\b(…)Unavailable\s*=` — anchored anyway, and `^` plus a
+     lazy prefix can only ever match ONCE per line, because after the first match `^` has no
+     further line start to bind to. This repo declares these flags many-to-a-line by design, so
+     every flag after the first on a changed line was invisible. Measured on #1238's own diff: the
+     added line carries several, and `searchesUnavailable` was never collected at any window size.
+     Fixed by scanning the ADDED LINES ONLY (`scan: "added"`) with an unanchored regex, so being
+     on an added line is a property of the corpus rather than of the match. The other patterns keep
+     their `^\+` anchoring and their existing behaviour — one identifier per line is the shape they
+     look for. */
+  { kind: "outage-flag", re: /\b([A-Za-z_$][\w$]*Unavailable)\s*=/g, file: /\.(jsx?|mjs)$/,
+    scan: "added", presence: (name) => name + "[ ]*=" },
 ];
+
+/* THIS FILE MUST NOT BE EVIDENCE ABOUT THE APP, and leaving it in the corpus is what let #1267's
+   removal of `filedReportsUnavailable` read as clean. Presence searches the whole tree, this file
+   is a `.mjs` in it, and the comment above the outage-flag pattern quotes the real declarator —
+   `…,filedReportsUnavailable=!!(…),…` — including the assignment. So at 2bd9a5d that token existed
+   in exactly ONE tracked file: this one. The guard cited its own documentation of the defect as
+   proof the defect had not happened.
+
+   Same trap CLAUDE.md records for check:ci-cancel (a comment naming the forbidden concurrency
+   group) and check:correction-readers (two readers explaining the rule in prose that names
+   `_rapEdited`), and it is worse here because the citation is self-referential: the better this
+   file explains a class, the blinder it gets to it. Excluding one path is narrow, but it is the
+   only path whose content is guaranteed to name every class this audit tracks. */
+const SELF = "scripts/audit-silent-reverts.mjs";
 
 const commits = git("rev-list", "--first-parent", `-n${N}`, REF).trim().split("\n").filter(Boolean);
 if (!commits.length) { console.error(`FAIL — no commits from ${REF}; a broken walk, not a clean history.`); process.exit(1); }
@@ -133,18 +174,18 @@ const fastPath = headSha === HEAD;
 let headBlob = "", present;
 if (fastPath) {
   const headFiles = git("ls-files").trim().split("\n")
-    .filter((f) => /\.(jsx?|mjs|json)$/.test(f) && !f.startsWith("node_modules"));
+    .filter((f) => /\.(jsx?|mjs|json)$/.test(f) && !f.startsWith("node_modules") && f !== SELF);
   for (const f of headFiles) { try { headBlob += readFileSync(join(ROOT, f), "utf8") + "\n"; } catch { /* gone */ } }
   if (headBlob.length < 100000) { console.error(`FAIL — read only ${headBlob.length} chars across ${headFiles.length} files; a broken read, not a small repo.`); process.exit(1); }
-  present = (tok) => headBlob.includes(tok);
+  present = (tok, ere) => (ere ? new RegExp(ere).test(headBlob) : headBlob.includes(tok));
 } else {
   console.log(`note: ${REF} (${HEAD.slice(0, 8)}) is not this checkout (${headSha.slice(0, 8)}) — asking git directly, which is slower.`);
   /* Fail closed: if git grep cannot find a token that certainly exists, the backend is broken and
      EVERY token would read as reverted. Probe with something the repo has always had. */
-  const probe = (t) => { try { git("grep", "-q", "-F", t, HEAD, "--", "*.json", "*.jsx", "*.mjs", "*.js"); return true; } catch { return false; } };
+  const probe = (t, ere) => { try { git("grep", "-q", ere ? "-E" : "-F", ere || t, HEAD, "--", "*.json", "*.jsx", "*.mjs", "*.js", `:!${SELF}`); return true; } catch { return false; } };
   if (!probe("\"scripts\"")) { console.error(`FAIL — the git-grep backend found nothing at ${HEAD.slice(0, 8)}; nothing below was checked.`); process.exit(1); }
   const memo = new Map();
-  present = (tok) => { if (!memo.has(tok)) memo.set(tok, probe(tok)); return memo.get(tok); };
+  present = (tok, ere) => { const k = ere || tok; if (!memo.has(k)) memo.set(k, probe(tok, ere)); return memo.get(k); };
 }
 
 /* A WHOLE FILE IS A DEFINITION TOO, and until 2026-08-26 nothing here could see one vanish.
@@ -182,10 +223,28 @@ for (const sha of commits.slice().reverse()) {
     if (FILE_OF_INTEREST.test(path) && /^new file mode /m.test(body) && !path.startsWith("node_modules/")) {
       addedFiles.set(path, { sha, subject });
     }
+    /* `+++ b/path` also starts with '+' and is not code; including it would let a path fragment
+       match a pattern. */
+    let addedBody = null;
+    /* SELF is excluded from COLLECTION and ATTRIBUTION too, not only from the presence test.
+       Excluding it from presence alone was still self-citation, just displaced: the comments below
+       quote real declarators, so scanning this file's own diff ADDED `filedReportsUnavailable` to
+       the tracked set (credited to the commit that wrote the comment), and `git log -S` then named
+       that same commit as the REMOVER of all four flags — a commit which touches no app file at
+       all. Measured on 306df79a. The rule is one line longer than it looks: a guard must not treat
+       its own text as evidence, in ANY of the three places it reads the repo. */
+    if (path === SELF) continue;
     for (const p of PATTERNS) {
       if (!p.file.test(path)) continue;
+      let corpus = body;
+      if (p.scan === "added") {
+        if (addedBody === null) {
+          addedBody = body.split("\n").filter((l) => l.startsWith("+") && !l.startsWith("+++")).join("\n");
+        }
+        corpus = addedBody;
+      }
       p.re.lastIndex = 0;
-      for (const m of body.matchAll(p.re)) added.set(m[1], { kind: p.kind, sha, subject });
+      for (const m of corpus.matchAll(p.re)) added.set(m[1], { kind: p.kind, sha, subject });
     }
   }
 }
@@ -201,7 +260,10 @@ if (fastPath) {
 const goneFiles = [...addedFiles.entries()].filter(([p]) => !fileExists(p));
 
 
-const missing = [...added.entries()].filter(([tok]) => !present(tok));
+const PRESENCE_OF = new Map(PATTERNS.filter((p) => p.presence).map((p) => [p.kind, p.presence]));
+const presenceEre = (rec) => { const f = PRESENCE_OF.get(rec.kind); return f ? f(rec.tok) : null; };
+const missing = [...added.entries()]
+  .filter(([tok, rec]) => !present(tok, presenceEre({ ...rec, tok })));
 
 console.log(`walked ${commits.length} first-parent commits of ${REF}`);
 console.log(`${added.size} tracked definition(s) added in that window`);
@@ -313,8 +375,16 @@ let silent = 0;
 for (const [tok, info] of missing) {
   let removedBy = "", removedSubject = "";
   try {
-    const log = git("log", "--first-parent", "-S", tok, "--format=%H%x09%s", `${info.sha}..${HEAD}`).trim();
-    const first = log.split("\n").filter(Boolean).pop();
+    const log = git("log", "--first-parent", "-S", tok, "--format=%H%x09%s", `${info.sha}..${HEAD}`, "--", ".", `:!${SELF}`).trim();
+    /* THE NEWEST COUNT-CHANGE IS THE REMOVAL, and `.pop()` — the oldest — named the wrong PR the
+       first time this ran on a real multi-commit history. `-S` reports every commit where the
+       number of occurrences CHANGED, additions included, so between the adding commit and HEAD
+       there can be several. The token is absent at HEAD, so the last change before HEAD is the one
+       that left it absent; anything older is a commit that touched the count and did not end it.
+       Measured on #1267: `-S catchesUnavailable` reports 2bd9a5d (#1267, which really did delete
+       the four assignments) and b211d89 (#1266, which merely ADDED a prose mention naming the flag
+       in a probe). `.pop()` blamed #1266 — a PR about fixture crews that never touched the app. */
+    const first = log.split("\n").filter(Boolean)[0];
     if (first) { const [h, ...rest] = first.split("\t"); removedBy = h; removedSubject = rest.join("\t"); }
   } catch { /* leave blank */ }
 

@@ -99,6 +99,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
+npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the tolerance, not a constant
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
@@ -2100,16 +2101,20 @@ a build error, but a screen that renders wrong or not at all.
     `verify-migrations-applied.mjs` checks that objects EXIST by name: `merge_accounts` exists,
     so it passes, while the live body is an older and broken version of the one 0035 defines.
     **Existence is not agreement.**
-  - **It found two on its first run, both latent, and the second one is a trap worth reading
-    before touching it.** `auto_archive_crews` writes `crews.archived_at` and `crews.status`,
-    neither of which exists; it is in **no migration at all**, so it was made by hand in the SQL
-    editor, and nothing calls it. `merge_accounts` writes `crews.user_id`, which does not exist —
-    and **must not be repaired on its own**. 0136 records why: the function reassigns
-    `climb_logs.user_id`, `vouches.from_id` and `profiles.account_type` for two arbitrary uuids
-    with **no `auth.uid()` check**, and the throw on that first statement is the only thing
-    making it inert. Fixing the column arms an account-takeover primitive. It needs an ownership
-    gate written in the same change. Both are in `KNOWN`, which records **reasons, not passes**,
-    and a **stale** entry fails.
+  - **It found two on its first run, both latent — and BOTH ARE NOW GONE, so read this as history.**
+    `auto_archive_crews` wrote `crews.archived_at`/`crews.status`, neither of which exists, and was
+    in **no migration at all** (hand-made in the SQL editor, called by nothing); `0167` dropped it,
+    reproducing its body verbatim so the intent stays in version control. `merge_accounts` wrote
+    `crews.user_id`, which does not exist, and `0170` dropped it with the whole account-linking
+    feature — `account_links` held **0 rows**.
+    - **The reason it was removed rather than repaired is the part worth keeping.** It reassigned
+      `climb_logs.user_id`, `vouches.from_id` and `profiles.account_type` for two arbitrary uuids
+      with **no `auth.uid()` check**, and the throw on that first statement was the only thing
+      making it inert. *Fixing the column would have armed an account-takeover primitive*, so a
+      repair had to add an ownership gate in the same change — and removing an unused feature beat
+      writing that gate. **Do not go looking for this function; it is not there.** `KNOWN` in both
+      guards is down to `handle_new_user` alone, verified by running them: `check:function-columns`
+      ok over 11 writing functions, `check:function-drift` 45 of 46 agreeing with 1 declared.
     - The obvious repair — re-apply 0035, which has `created_by` and is plainly the intended
       body — is precisely the dangerous one. *Read what a migration deliberately did NOT fix
       before finishing the job for it.*
@@ -2160,14 +2165,15 @@ a build error, but a screen that renders wrong or not at all.
     readiness with `isReady()`. The recorded reason for keeping them was that dropping a
     function git has never seen destroys the only record of the intent; `0167` answers that by
     reproducing **both bodies verbatim in the migration**, which puts them in version control
-    for the first time. `KNOWN` is down to `merge_accounts` here and `handle_new_user` in the
-    drift guard.
-  - Two `KNOWN` entries, each a claim about the live database, each failing when **stale**:
-    `merge_accounts` (drift, and see `check:function-columns` — repairing it arms an
-    account-takeover primitive), `handle_new_user` (benign: live writes `public.profiles` where
-    0009 writes `profiles`, so the **live** copy is the safer one), and the two untracked
-    hand-made functions. **An applied migration is history and must not be rewritten** — aligning
-    `handle_new_user` would take a new migration, not an edit to 0009.
+    for the first time. `KNOWN` is now **empty** here and `handle_new_user` alone in the drift
+    guard — `merge_accounts` was the last entry and `0170` dropped it.
+  - **ONE `KNOWN` entry** now, a claim about the live database that fails when **stale**:
+    `handle_new_user` (benign — live writes `public.profiles` where 0009 writes `profiles`, so the
+    **live** copy is the safer one, since it does not depend on `search_path`). `merge_accounts`
+    and the two untracked hand-made functions were declared here and are gone: `0167` dropped
+    `auto_archive_crews` and `is_crew_ready`, `0170` dropped `merge_accounts`. **An applied
+    migration is history and must not be rewritten** — aligning `handle_new_user` would take a new
+    migration, not an edit to 0009.
   - Fails **closed**: an unreachable database, no JSON, an empty catalog, fewer than 20 migrations,
     or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
     the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
@@ -2344,6 +2350,25 @@ a build error, but a screen that renders wrong or not at all.
       aspect would manufacture findings with total confidence — the exact failure this audit's
       first run already produced from a different cause. Only pins within a kilometre are quoted;
       the rest are counted and **explicitly refused**.
+    - **THE FIRST ROW THE GEOMETRY ACTUALLY SETTLED IS REPAIRED**, and it is worth recording what
+      "decidable" had to mean before a field driving the sun/shade readout was touched.
+      `wa_spire_point_southwest_face` stored `aspect: "E"` — morning sun on a line that catches
+      afternoon sun. **FOUR independent records** said southwest: the route's own **name**; its
+      **beta** (*"The south face is accessed from Spire Col at 7,760 feet"*); its **descent_text**
+      (*"Descend the same southwest face line"*); and the **geometry**, where the *"Class 4 summit
+      chimney"* pin bears **240°** from the Summit pin at 92 m, with Spire Col at 231 m and every
+      approach pin WSW. Against them stood `aspect` and `face`, which are **one** claim — the same
+      enrichment — so their agreeing with each other is not corroboration.
+    - **The overview's "east" is about the DANA GLACIER, not the route**, which is the kind of
+      thing a keyword scan over prose would have counted as a vote. Directions in prose have to be
+      read for what they modify.
+    - **`face` is corrected in the same write.** Fixing only the aspect would leave FACE / WHERE ON
+      THE PEAK rendering *"East Face"* beside a southwest sun readout — one screen, two answers.
+      Both replacement values come from the row itself; nothing is researched.
+    - The applier **re-measures the geometry leg** rather than quoting it, and refuses if the
+      chimney does not bear into the S/W half — so the argument has to still hold at apply time,
+      not merely when it was written. 4 findings → 3, and the two the geometry refuses to speak on
+      are untouched.
     - Measured on the four live findings, it refuses on **two of four** — closest pins 6.0 km and
       1.8 km out — and speaks on the other two. `wa_spire_point_southwest_face` becomes decidable:
       its name says SW, its aspect says E, and *Spire Col* sits **138 m WSW** of the summit pin. It
@@ -3133,9 +3158,10 @@ the correction knows the screen is wrong, and they have no way to report it.
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
 - **`audit:camp-route-fit`** asks the question `audit:camp-elevations` surfaced and could not
-  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, is
+  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, was
   offered *"Ruth Mountain summit camp"* at 7,100 ft — a real camp with a correct elevation, on a
-  different mountain 7.2 km away. A zone file handed every camp in a corridor to every route in
+  different mountain 7.2 km away and 2,100 ft above the top of an 800 ft rock buttress.
+  **FIXED** by `scripts/oneoff/fix-ellation-summit-camp.mjs`; kept here as the founding case. A zone file handed every camp in a corridor to every route in
   it. **The elevations are right; the PAIRING is noise.** Report-only, read-only; not a build gate.
   - **THE OBVIOUS SIGNAL IS FAR TOO WEAK, and saying why is the point.** *"The camp names a
     different peak"* describes almost every CORRECT camp: Boston Basin serves Boston, Forbidden
@@ -3158,9 +3184,13 @@ the correction knows the screen is wrong, and they have no way to report it.
   - A peak name is only usable when it is **distinctive and unique in the catalog** — "Middle
     Peak", "North Peak" and "The Tower" exist many times over, so matching them says nothing about
     which is meant. 431 of 447 peaks qualify.
-  - **It must never become a sweep.** A shared corridor camp is correct, and the one corroborated
-    finding shows why: `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-area
-    camps are defensible — Ruth's **summit** camp still is not. The repair is a judgement per row.
+  - **It must never become a sweep**, and the one corroborated finding is also the demonstration:
+    `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-AREA camps are defensible
+    even on a crag route — Ruth's **summit** camp was not. Repaired by removing **one** entry of
+    six, leaving the four other Ruth/Icy/Nooksack camps (Ruth Arm 5,900, the Ruth-Icy notch 6,600,
+    the Price Lake shoulder 5,900, Nooksack Cirque 3,000) untouched. The repair is a judgement per
+    row, and the script's declared-state contract enforces that: it names the entry, the elevation
+    AND the count it expects, so a re-run REFUSES rather than widening.
   - **IT UNDER-REPORTS ITS OWN CLASS, and the wider version was measured and REJECTED.** Reading
     the repair context showed the problem is bigger than the 6: **Mount Pilchuck (5,324 ft) carries
     eight camps and SEVEN belong to other mountains** — Three Fingers (the Lookout, Tin Can Gap,
@@ -3203,8 +3233,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     LIST, not a defect count.** 19 camps sit above their route's own high point, and reading them
     with the area name attached shows **most are correct**: a traverse camp on a neighbouring
     higher summit ("South Twin Sister summit bivies" serves four lower Sisters), or an over-broad
-    zone assignment (`wa_ellation`, 5,000 ft, carries Ruth Mountain's 7,100 ft summit camp from
-    7 km away). Neither is a wrong elevation. The script says so in its own output, because
+    zone assignment (`wa_ellation`, 5,000 ft, carried Ruth Mountain's 7,100 ft summit camp from
+    7 km away — since removed, though its four other Ruth-area camps correctly remain). Neither is
+    a wrong elevation. The script says so in its own output, because
     *when an audit reports a number, ask what it is the number OF.*
   - **The name-matching gates are IMPORTED from `scripts/lib/camp-names.mjs`**, the same module
     `solve-camp-elevations.mjs` writes through. A solver and an audit that disagree about "the
@@ -3658,6 +3689,23 @@ the correction knows the screen is wrong, and they have no way to report it.
     defect is **13 pins, not a class**. `audit:waypoint-elevations` keeps `TOL = 2000` because a
     tighter bound over pins whose *coordinates* are fabricated measures the wrong place; that
     objection does not apply once the coordinate is sourced, which is why this can be stated at 400.
+    - **`--ground` answers that objection without tightening anything**, and is the reason the flat
+      number no longer has to be the only option: it bounds each pin's uncertainty (rounding box +
+      the measured ~183 m placement slop) and asks the DEM what heights that box actually contains,
+      so the tolerance *widens by itself* exactly where the coordinate is least trustworthy. On
+      gentle ground it is far stricter than 2,000 and on a headwall far looser. **249 pins on 166
+      routes, 151 of them invisible to the flat test.** A 208-pin sample had estimated ~133 and
+      ~114 — **quote the run, never the extrapolation**, the rule this file states for
+      `fab-pins.json` two bullets down. Its top finding is Camp Schurman, the case the flat
+      threshold's own comment names, so where the two overlap they agree.
+    - **It also killed the hypothesis that prompted it.** A rounded coordinate (≤2 dp, ~1.1 km of
+      slop, **100 of 4,196 WA pins**) looked like a third fabrication fingerprint beside the long
+      decimal tail and the collinear run. It is not: coarse pins fail this at **4.1%** against
+      precise pins' **2.7%**. And the first version of the measurement said 23 rather than 7 —
+      because its box was the *rounding* box alone, which for a precise pin is ±5 m and ignores the
+      placement slop entirely, so the two populations were judged by different standards and the
+      "control" compared nothing. **Reading this audit's own header is what caught a 3× overcount**;
+      the new instrument was internally consistent and wrong throughout.
   - **Quote the audit's own count, not a snapshot's.** `fab-pins.json` expands run ranges into every
     pin, so "728 remaining" overstates it; and repairing one pin can break a run's collinearity and
     clear its neighbours too — 5 of the 6 gazetteer-confirmed routes are **no longer reported at
@@ -5239,6 +5287,78 @@ their own Résumé showed an amber **"Unverified"** chip.
     `if(recs==null)return;`, which keeps the anchor intact and reproduces the defect exactly:
     **one** case fails and the other four stay green, so the probe is specific rather than firing
     on any change.
+
+**THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
+doing it.** `fetchMyDirectMessages` throws on a database error — `check:read-failures` made sure of
+that — and its caller's `.catch` releases the retry latch so a reopen can recover. Neither told the
+SCREEN: `msgs` stays `{}` and the Inbox renders *"No friend chats yet"* over *"Message a partner
+from their profile and your chats will live here."* A climber who HAS conversations is told they
+have none and invited to start one. `dmThreadsUnavailable` is set in that same catch and cleared at
+the top of the success path — **before** its `if(!rows.length)return`, because an account with
+genuinely no threads takes that early return and a flag left set there swaps one false statement
+for another.
+  - **`check:outage` cannot measure this, twice over.** It is behind an **overlay**, which no
+    outage walk opens; and the fixture has no DM threads, so the section is empty in the healthy
+    run too and rule 2 sees nothing introduced. `scripts/oneoff/probe-inbox-outage-copy.mjs`
+    renders the real `Inbox` instead — 3 cases, injection-tested by reverting the gate (exactly one
+    case fails, the other two stay green), with a **1,818-character** render asserted so the
+    negative cases cannot pass vacuously.
+    - Two bundling traps, both of which read as the fix not working: `Inbox` calls a react-query
+      hook, so the render needs a `QueryClientProvider`; and **`@tanstack/react-query` must be
+      `--external`**, or esbuild inlines its own copy and the provider you wrapped around the
+      component is a different module instance with a different context. The error is still
+      *"No QueryClient set"* with a provider plainly in place.
+  - **The crew half is NOT the same defect, and that was checked rather than assumed.**
+    *"No crew chats yet"* is driven by `crewMsgs`, hydrated per **opened crew** rather than by a
+    bulk read, so an account that has never opened a crew chat is legitimately empty there. One
+    query at a time, as this file's outage entries already insist.
+  - **`scripts/oneoff/probe-overlays-that-assert-absence.mjs` sizes the remaining gap**, and its
+    version history is the useful part because every earlier version printed a SMALL, reassuring
+    number and was blind:
+    - **v1 said 1 of 53** — an overlay rendered `if(x)return <>…` has no `x&&`/`x?` marker at all,
+      and the copy lives in the COMPONENT rather than in the region.
+    - **v2 still said 1** — brace-balancing FROM that early return meets `{_toastEl}` and closes
+      immediately, so the component the overlay renders is never reached.
+    - **v3 said 7, still missing the Inbox** — `function Inbox({…})` has DESTRUCTURED PARAMS whose
+      braces open and close before the body, so the balancer returned **150 characters of
+      parameter list** as the component. That is exactly the trap
+      [[a-guard-can-scan-13-percent-and-report-green]] records.
+    - Each was caught only by a **fail-closed assertion that a KNOWN instance must appear**.
+      Without it the first number would have been reported as a finding.
+    - The honest figure is **23 of 53 overlays assert absence, and only one was gated**. Read the
+      attribution rather than the count: components are collected from a 3,000-character window,
+      so an overlay rendered beside others picks up their copy too. The rows naming ONE component
+      are the clean ones.
+
+**A FLAG THAT ALREADY EXISTED REACHED SIX PLACES AND NOT THE TWO OVERLAYS IT IS ABOUT.**
+`connectionsUnavailable` has been in `ClimbMatch.jsx` since #1224. Both surfaces fed by
+`connections` are overlays, and neither had it: `FriendsList` renders *"No friends yet."* and the
+mutual-friends sheet renders *"No mutual friends yet."*, so an outage told a climber with partners
+that they had none — on the one screen whose whole subject is who you climb with.
+  - **Found by the overlay measurement, not by grep**
+    (`scripts/oneoff/probe-overlays-that-assert-absence.mjs`): `friendsOpen` came out ungated, and
+    following its component into `ClimbMatchCore.jsx` confirmed both the empty state and a prop
+    list with no flag in it. Adding a flag is not the same as *delivering* it, and the delivery is
+    what a per-screen measurement asks about.
+  - **ONLY THE NO-FRIENDS BRANCH IS GATED, and the other two must stay ungated.** `FriendsList`
+    has three empty strings; *"None of your friends share your saved objectives yet"* and *"No
+    friends match"* are claims about the **filter the user just set**, applied to whatever did
+    load. They are true during an outage. Gating them would replace correct copy with an error,
+    which is the direction that teaches people to ignore a fix. The probe asserts it directly —
+    it renders with friends present AND the flag on, and fails if the outage copy appears.
+  - **Two candidates were checked and REJECTED, which is the more useful half.**
+    - `areaTreeOpen` -> `AreaTree({selArea,…})`. `selArea` is seed-only and dead in production
+      ([[three-climbs-tab-sections-dead-in-production]]), so there is no DB read to fail. Its
+      *"No areas"* cannot be an outage lie.
+    - `profileModal`/`eventInvite` -> `FullProfile`'s *"No vouches yet"* / *"No objectives listed
+      yet"* come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile
+      **never carries**. Those lists are empty for a real profile always, not because of an
+      outage — the `check:real-profile-rows` class, which already has a guard. **An empty section
+      is not evidence of this defect; ask what fills it.**
+  - `scripts/oneoff/probe-friends-outage-copy.mjs` renders the real `FriendsList`: 3 cases plus
+    the filter assertion, injection-tested (reverting the gate fails exactly one case), with a
+    1,036-character render asserted so the negative cases cannot pass vacuously. Same two bundling
+    traps as the Inbox probe — the provider, and `@tanstack/react-query` as `--external`.
 
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
