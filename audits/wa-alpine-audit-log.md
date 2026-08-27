@@ -10328,3 +10328,89 @@ routes) or the Shuksan zone itself (Shuksan routes); no contamination found.
 
 Next batch continues after `wa_mount_shuksan_price_glacier` in the id-ordered scope
 (204 routes remained unaudited this pass before this batch; 196 remain after).
+
+## 2026-08-27 — Pass 3, Batch 152
+
+Five peaks, 8 routes (Shuksan 2, Spickard 2, St. Helens 2, Steel 1, Stuart 1):
+Sulphide Glacier, White Salmon Glacier (Shuksan); Silver Glacier, Southwest
+Route (Spickard); Monitor Ridge, Worm Flows (St. Helens); First Divide
+(Steel); Girth Pillar (Stuart). Seven confirmed fixes, mostly the
+`audit:camp-route-fit` corridor-zone-file shape (a bivy list built for one
+route/area handed wholesale to another), corroborated externally.
+
+- **wa_mount_shuksan_white_salmon_glacier** (2 findings): `bivy` held 6
+  entries, 3 of which (Sulphide Glacier camp, Sulphide Glacier high camp,
+  Shannon Ridge crest camps) are the SOUTH side of Shuksan — the wholly
+  separate Sulphide Glacier route's own approach (this batch's sibling
+  `wa_mount_shuksan_sulphide_glacier` has a clean 3-entry bivy list of its
+  own and does not reciprocally carry any north-side entries), while this
+  route is entirely north side (Lake Ann Trail/Austin Pass/SR-542).
+  Trimmed to the 3 entries genuinely its own (Lake Ann basin; Fisher
+  Chimneys camps at 6,800 ft, matching this route's own Winnie's Slide
+  waypoint; North Face bivy, whose own note says it shares this route's
+  early approach). Also fixed the same 9127-vs-9131 summit waypoint defect
+  batch 151 already fixed on two sibling Shuksan routes — this one wasn't
+  in that batch so it carried the defect forward.
+- **wa_mount_st_helens_monitor_ridge** and **wa_mount_st_helens_worm_flows**
+  (2 findings each, identical on both rows): `bivy` held 7 entries, 5 of
+  which (Snowgrass Flat, Goat Lake basin, Dana Yelverton Shelter site,
+  Chambers Lake Campground, Conrad Meadows/Surprise Lake) are GOAT ROCKS
+  WILDERNESS camps near Packwood/White Pass — a separate mountain range
+  roughly 60+ miles away, reached via US-12/FR-21, explicitly staging Old
+  Snowy Mountain/Ives Peak/Gilbert Peak per their own notes. Externally
+  confirmed as Goat Rocks Wilderness, not St. Helens. Trimmed both rows to
+  the 2 legitimate entries (Climbers Bivouac, Marble Mountain Sno-Park).
+  Also fixed Marble Mountain Sno-Park's elevation (2700/2680 → 2800 ft,
+  across both bivy entries and worm_flows's own trailhead waypoint): the
+  row's own approach text says 2,800 ft, gain_ft only reconciles with
+  high_point_ft at a 2,800 ft trailhead, and external sources confirm
+  2,800 ft.
+- **wa_mount_steel_first_divide**: `bivy`'s last entry ("Belview and the
+  Six Ridge camps — for Mount Olson only") explicitly disclaims relevance
+  to this route in its OWN text ("This entry exists for Mount Olson and
+  for nothing else in the zone" / "NOTHING ABOUT THIS SHARES GROUND WITH
+  THE SAWTOOTH OR FIRST DIVIDE PEAKS"), while this same array's "Home
+  Sweet Home" entry confirms Mount Steel is a First Divide peak. Removed
+  the self-disclaiming entry — no external source needed, the row states
+  the contradiction itself.
+- **wa_mount_spickard_southwest**: summit waypoint elev (8983) disagreed
+  with this row's own `high_point_ft` (8979) and with sibling
+  `wa_mount_spickard_silver_glacier` (8979 on both its high_point_ft AND
+  its own summit waypoint — internally self-consistent). External sources
+  confirm 8,979 ft as the traditional/most-cited figure (recent lidar
+  suggests 8,978 ft; nothing supports 8,983, which appears only in
+  `areas.wa_mount_spickard.elevation_ft`, the likely source of the stray
+  value). Corrected to 8979.
+
+Flagged, not fixed: `wa_mount_stuart_girth_pillar`'s bivy array (Ingalls
+Creek basin, Headlight Basin, Upper Ingalls Creek meadows, Lake Stuart,
+Goat Pass, North Ridge notch) covers the Cascadian/West Ridge/Complete
+North Ridge/Stuart Glacier Couloir approaches, but none corresponds to
+THIS route's own stated camp ("moraine camps around 6,800-7,000 ft"
+beneath the Ice Cliff Glacier). Unlike the St. Helens/Steel cases above,
+none of the 6 entries explicitly disclaims relevance and Stuart's several
+approaches connect via shared passes, so pruning is a judgment call rather
+than a stated fact — needs a human decision (add the route's own camp,
+prune the unrelated entries, or leave as a shared-massif reference list).
+`wa_mount_spickard_silver_glacier`'s waypoints has 2 of 3 entries (Silver
+Lake camp, Custer-Spickard Saddle) with null lat/lng — needs real
+GPS/survey data, not a DB-only fix, same shape as
+`wa_mount_sefrit_southeast_ridge` in batch 151.
+
+Needs human verification: Mount St. Helens's per-climber permit fee ($20
+in the row) has conflicting external listings ($15 vs $20 both appear in
+current sources) — left as-is per policy of not guessing when sources
+conflict.
+
+Confirmed correct and left unchanged: Mount Steel elevation (6,225 ft,
+exact) and First Divide trail distance (row: 12.7 mi vs external ~13.1 mi,
+within normal tolerance); Mount St. Helens permit quota (350/day
+Apr1–May14, 110/day May15–Oct31) and fee comparisons ($82 Rainier Cost
+Recovery Fee, $20 Adams Climbing Pass), both exact externally; Girth
+Pillar's pitch-by-pitch grades (P1 5.10, P2 5.11− crux, P3 5.10+) matched
+externally verbatim; NCNP wilderness permit fee ($10/person + $6
+reservation fee) exact externally.
+
+Next batch continues after `wa_mount_stuart_girth_pillar` in the
+id-ordered scope (196 routes remained unaudited this pass before this
+batch; 188 remain after).
