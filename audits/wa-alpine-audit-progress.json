@@ -1,8 +1,8 @@
 {
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_mount_rainier_fuhrer_finger",
+    "last_processed_id": "wa_mount_rainier_nisqually_icefall",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -80,7 +80,7 @@
             "flagged_for_human_review": 15,
             "clean": 0,
             "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
         },
         {
             "batch_number": 5,
@@ -3148,6 +3148,23 @@
             "findings_fixed": 3,
             "findings_summary": "Fixed wa_mount_pilchuck_standard_route: bivy held 8 camping entries, 7 describing camps on Three Fingers Mountain, Whitehorse Mountain, and Big Four Mountain -- the exact defect CLAUDE.md's audit:camp-route-fit entry already names for this route by hand, apparently never applied to the live row. Cleared bivy to NULL, matching the route's own text (single-day out-and-back, no camping). Also fixed wa_mount_pilchuck_east_ridge (already audited in batch 147, touched here only because it shares the identical contaminated bivy array): trimmed to keep only the one entry (Bathtub Lakes basin) genuinely about that route. Fixed wa_mount_rainier_edmunds_headwall: waypoints[0] elevFt (2900) contradicted its own elev (4930, the correct figure for Mowich Lake per external sources) -- corrected elevFt to match. Flagged, not fixed: Mount Rainier summit elevation is under active survey dispute (14,392-14,406 ft across sources); Camp Schurman elevation is internally inconsistent across this batch's own rows (9,400 vs 9,440 ft, a third source says 9,460); Camp Muir elevation has competing published figures (10,080/10,100/10,188 ft); Fuhrer Finger's FA may omit a 5th 1920 party member (\"Peyton Farrer\"), corroborated by two searches but not a primary source (WebFetch blocked); wa_mount_rahm_standard's gpx track is internally inconsistent with its own waypoint order and does not reach its summit waypoint (audit:waypoints, live DB) -- needs real GPS data to repair, not a DB-only fix. Confirmed correct via external sources: Mount Rahm FA/elevation, Mount Price elevation, Curtis Ridge FA (and its accurate SR-165 Fairfax Bridge closure note), Rainier's 1870 FA via Gibraltar Ledges correctly distinguished from the Disappointment Cleaver route, Emmons-Winthrop FA (1884). wa_mount_price_hester_lake_route's bivy is a legitimate shared Middle Fork Snoqualmie corridor zone file (Price/Garfield/Teneriffe/Preacher/Treen), not a contamination defect. Ran audit:waypoints/gain/identity/waypoint-order/rappels against the live WA catalog for all 8 routes: no findings besides the Rahm waypoints issue above; Fuhrer Finger's own \"track stops short of summit\" flag matches the already-documented, accepted case in CLAUDE.md.",
             "sql_file": "audits/sql/2026-08-27-batch-148.sql"
+        },
+        {
+            "batch_number": 149,
+            "date": "2026-08-27",
+            "route_ids": [
+                "wa_mount_rainier_fuhrer_thumb",
+                "wa_mount_rainier_gibraltar_ledges",
+                "wa_mount_rainier_ingraham_direct",
+                "wa_mount_rainier_kautz_glacier",
+                "wa_mount_rainier_kautz_headwall",
+                "wa_mount_rainier_liberty_ridge",
+                "wa_mount_rainier_mowich_face",
+                "wa_mount_rainier_nisqually_icefall"
+            ],
+            "findings_fixed": 2,
+            "findings_summary": "Fixed wa_mount_rainier_liberty_ridge: 3 of 5 waypoints (\"Mowich Lake Camp\", \"Puyallup Winthrop Junction Camp\", \"Puyallup Glacier Serac Zone\") plus the whole gpx track sat near Mowich Lake/the Puyallup Glacier on Rainier's NW side, while every prose field on the row (approach, approach_variants, descent_text, approach_logistics) consistently describes only the White River/St. Elmo Pass/Winthrop Glacier/Curtis Ridge/Carbon Glacier corridor on the north side -- the standard, externally-documented approach (Mountaineers.org/SummitPost/AAC route history; no source describes a Mowich- or Puyallup-side approach to Liberty Ridge, that area belongs to this same batch's unrelated Mowich Face route). audit:waypoints (live DB) independently flagged both the trailhead (10,428m off this gpx) and summit (663m off) as far from the track, consistent with the whole track being foreign rather than partial. Removed the 3 foreign waypoints and replaced gpx with the two endpoints the row's own prose corroborates (trailhead, summit); a real intermediate chain (St. Elmo Pass, Curtis Ridge, Carbon Glacier, Thumb Rock) needs GPS/survey data this audit cannot source, flagged for a human. Fixed wa_mount_rainier_kautz_headwall: waypoints[0] was self-contradictory -- named \"Paradise (Skyline Trail)\" with a note saying \"Distinct from Paradise lot\", carrying Paradise's real coordinates but an elevation (3600ft) matching nothing at Paradise (~5,400ft). The route's own text names the real alternate as Comet Falls Trailhead (~3,650ft), and this route's own gpx already starts at [46.779,-121.7823] -- Comet Falls Trailhead's real, externally-published location (NPS/WTA) almost exactly. Corrected the waypoint's coordinates to match its own gpx and the external source, renamed out of the contradiction. Confirmed correct via external sources and left unchanged: all 5 checkable FA claims in this batch (Fuhrer Thumb, Kautz Glacier, Nisqually Icefall all exact matches; Liberty Ridge's \"Will Borrow\" confirmed as the same person as \"Jim Borrow\" per Mountaineers.org, not a name error; Mowich Face's own hedge about unconfirmed FA years is the correct posture and was left as-is). audit:distances errored on the whole catalog (stale routes.source column reference, not a batch-specific issue) -- flagged, out of scope to fix (scripts/ is off-limits). audit:identity/waypoint-order/gain found nothing for this batch; audit:rappels and the Gibraltar Ledges waypoints flag are both the usual benign patterns already documented elsewhere in this catalog, not new findings.",
+            "sql_file": "audits/sql/2026-08-27-batch-149.sql"
         }
     ]
 }

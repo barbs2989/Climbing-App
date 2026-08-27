@@ -10116,3 +10116,95 @@ batches — corroboration relied on WebSearch's synthesized snippets rather than
 fetches, which is why the Fuhrer Finger fifth-climber name above was flagged rather than fixed.
 
 Next batch continues after `wa_mount_rainier_fuhrer_finger` in the id-ordered scope.
+
+## Batch 149 — 2026-08-27
+
+Routes: wa_mount_rainier_fuhrer_thumb, wa_mount_rainier_gibraltar_ledges,
+wa_mount_rainier_ingraham_direct, wa_mount_rainier_kautz_glacier,
+wa_mount_rainier_kautz_headwall, wa_mount_rainier_liberty_ridge,
+wa_mount_rainier_mowich_face, wa_mount_rainier_nisqually_icefall (all peak-scoped,
+Mount Rainier's own catalog of named technical routes — continuing the id-ordered
+scope after `wa_mount_rainier_fuhrer_finger`).
+
+**2 fixes applied**, both waypoint/gpx contamination rather than prose errors — see
+`audits/sql/2026-08-27-batch-149.sql` for the exact statements and reasoning:
+
+- `wa_mount_rainier_liberty_ridge`: 3 of its 5 waypoints and its whole gpx track sat
+  near Mowich Lake / the Puyallup Glacier on the mountain's NW side, while every prose
+  field on the row (approach, approach_variants, descent_text, approach_logistics) is
+  internally consistent and describes only the White River → St. Elmo Pass → Winthrop
+  Glacier → Curtis Ridge → Carbon Glacier corridor on the north side — the standard,
+  externally-documented approach (Mountaineers.org, SummitPost, AAC route history).
+  No source found describes a Mowich/Puyallup approach to Liberty Ridge; that area
+  belongs to the unrelated Mowich Face route sitting in this same batch, whose own
+  "Mowich Lake Trailhead" waypoint is ~4 km from the contaminated points. The app's
+  own `audit:waypoints` independently flagged both the trailhead (10,428 m off this
+  gpx) and the summit (663 m off) — consistent with the whole track being foreign
+  rather than a partial recording. Removed the 3 foreign waypoints and replaced the
+  gpx with the two endpoints the row's own prose does corroborate (trailhead,
+  summit). Flagged, not attempted: a real intermediate waypoint chain (St. Elmo Pass,
+  Curtis Ridge, Carbon Glacier toe, Thumb Rock) needs GPS/survey data this audit
+  cannot source — left for a human, same posture as the Rahm gpx flag in batch 148.
+- `wa_mount_rainier_kautz_headwall`: waypoints[0] was self-contradictory — named
+  "Paradise (Skyline Trail)" while its own note said "Distinct from Paradise lot",
+  carried Paradise's real coordinates (46.78669,-121.73454, matching every other
+  Paradise waypoint in this batch) but an elevation (3600 ft) that matches nothing at
+  Paradise (~5,400 ft). The route's own approach text names the real alternate as
+  Comet Falls Trailhead (~3,650 ft), and this route's own gpx track already starts at
+  [46.779,-121.7823] — which is Comet Falls Trailhead's real, externally-published
+  location (NPS/WTA: 46.7790,-121.7823, elev 3,650 ft) almost exactly. Corrected the
+  waypoint's coordinates to match its own gpx and the external source, and renamed it
+  out of the Paradise/not-Paradise contradiction.
+
+**Confirmed correct via external sources and left unchanged:** all five checkable FA
+claims in this batch. Fuhrer Thumb (Jim Wickwire, Charlie Raymond, Tom Stewart, May
+27, 1972) — exact match. Kautz Glacier (1857 Kautz/Craig party to ~12,000 ft, first
+full ascent June 26-28, 1920 by Hans Fuhrer, Heinie Fuhrer, Roger Toll, Harry Myers)
+— matches NPS/Mountaineers/AAI accounts including the "Wapowety" guide detail.
+Nisqually Icefall (Dee Molenaar, Bob Craig, July 15, 1948) — matches the AAC
+publication account almost verbatim, including the ~10-hour ice-work detail and the
+~13,000 ft finish near Wapowety Cleaver already on file. Liberty Ridge's "Ome Daiber,
+Will Borrow, and Arnold Campbell, Sept 28-Oct 1, 1935" is correct — "Will Borrow" and
+"Jim Borrow" both refer to Will H. Borrow Jr. per Mountaineers.org's account; this
+looked like a possible name error at first glance and was not one. Mowich Face's FA
+field already hedges "exact years for these could not be confirmed in available
+sources" for the South/North Mowich variants — that hedge itself is the correct
+posture; nothing in this run's searches resolved it further, so left as-is.
+
+As a byproduct of the Fuhrer Thumb FA check, this run's search also surfaced a name
+for `wa_mount_rainier_fuhrer_finger`'s FA party — "Peyton Farrer" as the fifth
+climber alongside Hans Fuhrer, Joseph Hazard, Heinie Fuhrer, and Thomas Hermans (per
+SummitPost/Mazamas) — which is the exact name batch 148 flagged as unconfirmed after
+WebFetch to primary sources was blocked. That route is outside this batch's scope
+(already processed in batch 148) so it was not touched here; worth a human glance at
+`audits/sql` or a follow-up batch note if this corroboration is judged sufficient.
+
+Also ran `audit:waypoints`, `audit:distances`, `audit:identity`, `audit:waypoint-order`,
+and `audit:rappels` against the live WA catalog, grepped for this batch's 8 route ids.
+`audit:identity`, `audit:waypoint-order`, and the alpine-gain-vs-track-length probe
+(`scripts/audit-alpine-gain.mjs`, run directly — `audit:gain` is documented in CLAUDE.md
+but is not actually wired into package.json; not touched, out of scope) found nothing
+for this batch. `audit:distances` errored on every route in the catalog, not just this
+batch: `column routes.source does not exist` — that script still queries a column
+`#1020`/`0157` removed per CLAUDE.md's own audit:approve-route-columns entry; flagging
+for a human rather than touching scripts/. `audit:rappels` flagged Kautz Glacier
+(4→5) and Kautz Headwall (2→3) on its usual "prose mentions more rappels than the
+detail table lists" pattern — both are ordinary station-count variability already
+covered by each route's own `rappel_count_note` (Kautz Glacier's explicitly says NPS
+range is "2-5... depending on rope length/number of ropes"), not a new finding.
+`audit:waypoints` also flagged Gibraltar Ledges (trailhead 5,487 m off its own track,
+summit 786 m short) — its 18-point gpx track only covers roughly Camp Muir to just
+below the summit, the same "genuine partial recording" shape already accepted
+elsewhere in this catalog (e.g. Fuhrer Finger), not the wholesale-foreign-track shape
+Liberty Ridge showed; left unfixed as a legitimate partial track.
+
+Note: `npm run check:sql -- audits/sql/2026-08-27-batch-149.sql` passed cleanly — both
+write targets confirmed live, no destructive statements, no warnings this time.
+
+Web access this run: WebSearch worked throughout and was sufficient to confirm all
+findings above (Comet Falls Trailhead coordinates from NPS/WTA, Liberty Ridge FA and
+approach history from Mountaineers.org/AAC/SummitPost, Kautz/Nisqually Icefall FA from
+NPS/AAC). WebFetch was blocked by the network egress proxy for every external domain
+tried (AAC publications PDF), consistent with every prior batch.
+
+Next batch continues after `wa_mount_rainier_nisqually_icefall` in the id-ordered scope.
