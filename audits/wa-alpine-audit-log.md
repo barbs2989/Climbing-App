@@ -10208,3 +10208,70 @@ NPS/AAC). WebFetch was blocked by the network egress proxy for every external do
 tried (AAC publications PDF), consistent with every prior batch.
 
 Next batch continues after `wa_mount_rainier_nisqually_icefall` in the id-ordered scope.
+
+## 2026-08-27 — Pass 3, Batch 150
+
+Routes: wa_mount_rainier_ptarmigan_ridge, wa_mount_rainier_sunset_ridge,
+wa_mount_rainier_tahoma_glacier, wa_mount_rainier_willis_wall,
+wa_mount_redoubt_south_face, wa_mount_seattle_noyes_basin,
+wa_mount_seattle_seattle_creek, wa_mount_sefrit_bloody_head_couloir.
+
+Six confirmed fixes, all internal-consistency findings (row's own itinerary/waypoint
+data disagreeing with its own summary fields) corroborated externally where a claim
+was checkable. WebSearch was reachable this session (unlike every prior batch's note
+that WebFetch was blocked) and was used for FA/elevation corroboration below.
+
+- **wa_mount_rainier_tahoma_glacier**: `gain_ft` (5007) contradicted its own
+  itinerary day-sum (12000) and its own `totalNote` ("~12,000 ft gain"); net rise
+  trailhead→summit (11,506 ft) corroborates. This is the literal example CLAUDE.md's
+  `audit:gain` entry cites for this route — apparently never applied to the live row.
+  Fixed to 12000.
+- **wa_mount_rainier_willis_wall**: waypoint[0] (White River Campground) carried
+  `elev:4400` but `elevFt:2320`, and its own `directions` text repeated the wrong
+  2,320 ft figure. NPS/recreation.gov put White River Campground at ~4,440 ft
+  (matches `elev` and this batch's sibling Ptarmigan Ridge route at the same
+  trailhead). Fixed `elevFt` and the directions text to 4,400 ft.
+- **wa_mount_rainier_sunset_ridge**: two fixes. (1) `fa` credited only two of the
+  1938 FA party — mountaineers.org's own route page names a third, Don Woods; added.
+  (2) `descent_text` ("Descend Emmons-Winthrop to White River") was boilerplate
+  copied from this batch's Ptarmigan Ridge/Willis Wall rows (both legitimately exit
+  that way) but is the wrong side of the mountain for this west-side route — the
+  row's own itinerary Day 4 already reverses via Puyallup Cleaver/Westside Road, and
+  mountaineers.org states the standard descent is Disappointment Cleaver to Paradise
+  with a car shuttle back to Westside Road, matching the row's own totalNote about
+  needing a shuttle. Rewrote to match.
+- **wa_mount_redoubt_south_face**: `gain_ft`/`loss_ft` (5000/null) contradicted its
+  own itinerary day-sum (6400 both ways) and its own totalNote ("~6,400 ft round
+  trip"); net rise (6,369 ft) corroborates. Fixed both to 6400.
+- **wa_mount_seattle_noyes_basin** and **wa_mount_seattle_seattle_creek**: shared
+  `bivy` array of 8 entries, only 1 ("Low Divide") actually about a camp either
+  route's own approach uses (North Fork Quinault → Low Divide); the other 7 describe
+  Elwha-corridor camps (Mount Norton/Bailey Range, via Whiskey Bend) and East Fork
+  Quinault camps (Anderson's Thumb, via Graves Creek) — confirmed via the peak's
+  third route (`wa_mount_seattle_south`) that no Mount Seattle route uses either of
+  those drainages. Textbook `audit:camp-route-fit` contamination (a corridor zone
+  file handed to every peak/route in the region), same shape as batch 148's
+  wa_mount_pilchuck fix. Trimmed both rows to the one relevant entry.
+
+Flagged, not fixed (outside this batch's route list): wa_mount_sefrit_southeast_ridge
+states its shared Hannegan Campground trailhead at "~2,950 ft" while this batch's
+wa_mount_sefrit_bloody_head_couloir (identical trailhead/coordinates) says "~3,120 ft"
+and search corroborates ~3,100 ft — southeast_ridge looks like the outlier but wasn't
+audited this round. wa_mount_seattle_south (third Mount Seattle route) very likely
+carries the identical bivy contamination since it shares the same North Fork Quinault
+approach — check when it comes up next pass.
+
+Needs human verification: wa_mount_rainier_tahoma_glacier's FA ("with a dog", 1891) —
+external sources confirm Van Trump and Riley via the Tahoma Glacier in 1891 but did
+not corroborate or contradict the Drewry name or the dog.
+
+Confirmed correct and left unchanged: wa_mount_rainier_ptarmigan_ridge FA (Bauer/
+Hossack 1935), wa_mount_rainier_willis_wall FA (Bell 1961 solo, Wickwire's own 1963
+East Rib ascent), wa_mount_redoubt_south_face FA (Cherry/Ross 1930) and elevation
+(8,969 ft, reconfirmed against Wikipedia — already fixed in a prior pass per the
+row's own `corrections` note). audit:waypoints/gain/identity/waypoint-order run
+against the live WA catalog for all 8 routes: no findings beyond the gain_ft issues
+already fixed above.
+
+Next batch continues after `wa_mount_sefrit_bloody_head_couloir` in the id-ordered
+scope (212 routes remained unaudited this pass before this batch; 204 remain after).
