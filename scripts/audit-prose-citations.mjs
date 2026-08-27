@@ -56,7 +56,17 @@ const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakba
 // valley) — a broad /source/i returns 45 WA notes of which 44 are water and place names. A
 // citation is a COUNTED or QUALIFIED plural ("multiple sources") or sources doing something
 // ("sources describe"). That distinction takes the waypoint-note count from 45 to 1.
-const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b/i;
+// A SOURCE THAT DISAGREES, OR FAILS TO SAY, IS STILL A CITATION — and the list above covered only
+// sources ASSERTING. Every verb in it (describe/state/report/say/agree/list/indicate/confirm) is a
+// source making a claim, so the whole other half of how this catalog talks about its own
+// provenance was invisible: "Sources differ on the elevation", "depending on the source", "no
+// source gives exact sizes", "not stated in source", "the source doesn't give an exact figure".
+// Those are the dominant shape once you look outside road/access.
+//
+// They are safe to add BECAUSE THEY ARE INFORMATIONAL VERBS. The water-source trap this comment
+// already warns about does not reach them: a creek can BE a source and can be seasonal, but it
+// cannot differ on an elevation or fail to document a length.
+const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b/i;
 // Go and look at this yourself, now — operational, and it must never be swept.
 const LIVE = /fs\.usda\.gov|nps\.gov|wsdot|weather\.gov|recreation\.gov|\(\d{3}\)\s*\d{3}-\d{4}/i;
 
@@ -80,7 +90,36 @@ for (const r of rows) {
     if (w && typeof w.note === "string" && w.note.trim()) values.push({ id: r.id, field: `waypoints[${i}].note`, kind: "waypoint note", text: w.note.replace(/\s+/g, " ").trim() });
   });
 }
+// ROUTE PROSE — the other 20+ climber-facing columns. This audit read road/access/waypoints only,
+// which is 3 of them, so a clean result was a statement about a ninth of the prose on the page.
+//
+// Read COLUMN BY COLUMN rather than by widening the select above: this repo records a wide jsonb
+// select over 8k rows timing out on the anon role's 3s statement_timeout, and a per-column read is
+// the shape already proven to complete.
+const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_text", "descent",
+  "beta", "overview", "watch_out", "best_season", "approach", "approach_variants", "climbing_route",
+  "itinerary", "bivy", "pitch_detail", "gear", "what_to_bring", "pro_tips", "hazards", "obj_haz",
+  "seasonal_guidance", "seasonal_hazards", "climate", "emergency", "crowds", "partner_requirements"];
+function leaves(v, out = []) {
+  if (typeof v === "string") { if (v.trim()) out.push(v); return out; }
+  if (Array.isArray(v)) { for (const x of v) leaves(x, out); return out; }
+  if (v && typeof v === "object") { for (const x of Object.values(v)) leaves(x, out); return out; }
+  return out;
+}
+let proseCols = 0;
+for (const col of PROSE_COLS) {
+  let got;
+  try { got = await selectAll("routes", `id,${col}`, `id=like.${STATE}_*&${col}=not.is.null`, { pageSize: 1000 }); }
+  catch (e) { console.error(`FAIL — ${col} read threw (${String(e.message || e)}). Refusing to report a clean result about a column this never read.`); process.exit(1); }
+  proseCols++;
+  for (const r of got) for (const [i, s] of leaves(r[col]).entries()) {
+    values.push({ id: r.id, field: `${col}[${i}]`, kind: "route prose", text: s.replace(/\s+/g, " ").trim() });
+  }
+}
+if (proseCols !== PROSE_COLS.length) { console.error(`FAIL — read ${proseCols} of ${PROSE_COLS.length} prose columns.`); process.exit(1); }
+
 if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes and 0 prose values. Every test below would be vacuous.`); process.exit(1); }
+if (!values.some(v => v.kind === "route prose")) { console.error("FAIL — 0 route-prose values across every column. The widened scan is not reading."); process.exit(1); }
 
 if (INJECT === "cite") { values[0].text = "The road is open to the trailhead, per SummitPost and several trip reports."; console.log(`[inject] a citation onto ${values[0].id} ${values[0].field}`); }
 if (INJECT === "liveonly") { for (const v of values) v.text = "Call the Mt. Baker Ranger District at (360) 854-2553 and check fs.usda.gov/alerts before driving."; console.log("[inject] every value is a LIVE reference; the citation count must be 0 and the live count must be every value"); }
@@ -97,12 +136,12 @@ for (const v of values) {
 const stale = EXEMPT.filter(e => !hitKeys.has(e[0] + "\0" + e[1]));
 
 const group = k => hits.filter(h => h.kind === k);
-console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${values.filter(v => v.kind === "road/access").length} road/access, ${values.filter(v => v.kind === "waypoint note").length} waypoint notes).`);
+console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${values.filter(v => v.kind === "road/access").length} road/access, ${values.filter(v => v.kind === "waypoint note").length} waypoint notes, ${values.filter(v => v.kind === "route prose").length} route prose).`);
 console.log(`${hits.length} value(s) on ${new Set(hits.map(h => h.id)).size} route(s) name a third party as the source of a claim.`);
 console.log(`${live.length} value(s) on ${new Set(live.map(h => h.id)).size} route(s) carry a LIVE land-manager reference — operational, and NOT a finding.`);
 console.log(`${EXEMPT.length} exempt, ${stale.length} stale.\n`);
 
-for (const kind of ["road/access", "waypoint note"]) {
+for (const kind of ["road/access", "waypoint note", "route prose"]) {
   const g = group(kind);
   console.log(`── ${kind.toUpperCase()}: ${g.length} value(s) on ${new Set(g.map(h => h.id)).size} route(s)`);
   const show = FULL ? g : g.slice(0, 10);

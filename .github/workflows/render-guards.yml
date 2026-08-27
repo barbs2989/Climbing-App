@@ -312,9 +312,11 @@ jobs:
   selected-state:
     name: A selected control says it is selected
     runs-on: ubuntu-latest
-    # Walks 58 screens: 6 tabs, every overlay the app declares (discovered, not listed) and
-    # the route detail page, clicking one representative per control group and reloading only
-    # when a click actually disturbed the page.
+    # ON PUSH TO MAIN walks 58 screens: 6 tabs, every overlay the app declares (discovered, not
+    # listed) and the route detail page (Overview and Plan), clicking one representative per
+    # control group and reloading only when a click actually disturbed the page.
+    # ON A PULL REQUEST it walks the fast screens only — see the step's own note for why and for
+    # the measurement. The timeout below is sized for the main run; a PR run is ~5 minutes.
     #
     # 75 minutes is derived from a MEASURED 58-screen run, and the first derivation was wrong
     # in a way worth recording. It extrapolated from the 8-screen version (3m27s in CI, ~30s of
@@ -345,8 +347,26 @@ jobs:
           fi
           google-chrome --version
 
+      # SPLIT BY EVENT, because 42 minutes on every pull request buys nothing a merge-time run
+      # does not. Measured on main: 3m43s at 8 screens (19:02 run) against 42m33s at 58 (21:41
+      # run) — an 11.4x rise from #1233's expansion, invisible because a slower guard still goes
+      # green. NOTHING STOPS BEING CHECKED: a mute control introduced inside an overlay is caught
+      # when the branch merges instead of while it is in review, the same trade check:ui's
+      # live-site walk already makes by running on a schedule.
+      #
+      # `--overlays=` is an EXPLICIT empty list, which the guard obeys. Discovery finding almost
+      # nothing is fatal instead — see the fail-closed note on OVERLAYS. That asymmetry is what
+      # makes this split safe: the PR run is deliberately narrow, and a BROKEN main run cannot
+      # masquerade as one.
       - name: Selection is announced, not just coloured
-        run: npm run check:selected-state
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "pull request — walking the fast screens (tabs, onboarding, route detail + Plan)."
+            echo "The 50-overlay sweep runs on push to main; see the note above."
+            npm run check:selected-state -- --overlays=
+          else
+            npm run check:selected-state
+          fi
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app under
           # test is not the one that ships.

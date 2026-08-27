@@ -68,6 +68,33 @@ const ROOT = new URL("..", import.meta.url).pathname;
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
+
+/* --fail-on <kind>[,<kind>] — exit 1 when a SILENT finding is of one of these kinds.
+   OFF BY DEFAULT, and that default is not timidity: this audit is report-only because a removal
+   is not a defect, and over 500 commits every hit of the FILE rule has been a promotion while
+   every generic-token finding was a supersession or a rename. Going red on those would make it
+   argue with correct work — the failure its own header spends a paragraph on.
+
+   The outage-flag kind is the one with a different MEASURED precision, which is why this is a
+   named flag rather than a blanket --strict. It is a high-collision class: 15 flags across ~8
+   PRs all editing the same two dense lines of ClimbMatch.jsx, and every silent removal of one so
+   far has been a genuine stale-base revert — #1248 took two, #1267 took four, three of those
+   twice within a day. Against a healthy tree it is quiet: 0 absent across 300 first-parent
+   commits. */
+const FAIL_ON = new Set(String(arg("--fail-on", "")).split(",").map((x) => x.trim()).filter(Boolean));
+/* --fail-on-silent turns this report into an ALARM, and it is OPT-IN so the default contract is
+   untouched: run by hand, this audit still exits 0 for any finding and 1 only for a broken scan,
+   because a removal is not a defect and its own header spends a paragraph on why going red at
+   correct work would make people ignore it.
+   The gate is DELIBERATELY NARROWER than "any SILENT row", and it reuses this script's own two
+   discriminators rather than inventing a third:
+     - a SILENT *definition* removal, which is the #776/#1248/#1267 shape;
+     - a commit that removed files added by SEVERAL DIFFERENT commits, the stale-base fingerprint.
+   A single-file SILENT removal does NOT trip it. Over 500 commits every hit of that rule was a
+   PROMOTION (a one-off probe becoming a named guard), so precision there is 0% and a gate on it
+   would argue with correct work — the exact failure this file warns about. */
+const FAIL_ON_SILENT = argv.includes("--fail-on-silent");
+const GATE = [];
 const N = Number(arg("--commits", 80));
 const REF = String(arg("--ref", "origin/main"));
 
@@ -113,11 +140,71 @@ const PATTERNS = [
      Measured for noise before shipping: against #1239's own diff it finds precisely the two
      reverted names and nothing else. The convention is established (`<noun>Unavailable`), so this
      is a named class rather than "every identifier" -- the haystack the header warns about. */
-  { kind: "outage-flag", re: /^\+.*?\b([A-Za-z_$][\w$]*Unavailable)\s*=/gm, file: /\.(jsx?|mjs)$/ },
+  /* PRESENCE FOR THIS KIND IS THE ASSIGNMENT, NOT THE NAME — and the bare-name test let #1267
+     through while this very comment was one of the reasons it did.
+
+     #1267 dropped catchesUnavailable, filedReportsUnavailable, searchesUnavailable and
+     photosUnavailable from ClimbMatch.jsx. This audit reported 0 absent even with a window
+     reaching the adding commits, because presence searches the whole tree for the bare token and
+     all four names still appeared at that commit in `scripts/audit-silent-reverts.mjs` — in the
+     paragraph above, which names the two flags #1239 shipped — and in a probe's prose. The guard
+     built for this class was kept green by its own documentation of the class. Exactly the trap
+     CLAUDE.md records for check:ci-cancel and check:correction-readers, from the other side.
+
+     A flag is DEFINED by being assigned, so `name[ ]*=` is the honest presence test rather than a
+     workaround, and it keeps the property the bare token was chosen for: a flag that moved to
+     another file still matches. The shape is written so one string is valid both as a JS RegExp
+     source and as a POSIX ERE for `git grep -E`, since the two backends must agree. */
+  /* ONE MATCH PER LINE WAS THE THIRD REASON #1267 READ AS CLEAN, and the comment above had
+     already named the constraint it then failed to satisfy: "the match cannot be anchored to the
+     start of a line". The regex was `^\+.*?\b(…)Unavailable\s*=` — anchored anyway, and `^` plus a
+     lazy prefix can only ever match ONCE per line, because after the first match `^` has no
+     further line start to bind to. This repo declares these flags many-to-a-line by design, so
+     every flag after the first on a changed line was invisible. Measured on #1238's own diff: the
+     added line carries several, and `searchesUnavailable` was never collected at any window size.
+     Fixed by scanning the ADDED LINES ONLY (`scan: "added"`) with an unanchored regex, so being
+     on an added line is a property of the corpus rather than of the match. The other patterns keep
+     their `^\+` anchoring and their existing behaviour — one identifier per line is the shape they
+     look for. */
+  { kind: "outage-flag", re: /\b([A-Za-z_$][\w$]*Unavailable)\s*=/g, file: /\.(jsx?|mjs)$/,
+    scan: "added", presence: (name) => name + "[ ]*=" },
 ];
+
+/* THIS FILE MUST NOT BE EVIDENCE ABOUT THE APP, and leaving it in the corpus is what let #1267's
+   removal of `filedReportsUnavailable` read as clean. Presence searches the whole tree, this file
+   is a `.mjs` in it, and the comment above the outage-flag pattern quotes the real declarator —
+   `…,filedReportsUnavailable=!!(…),…` — including the assignment. So at 2bd9a5d that token existed
+   in exactly ONE tracked file: this one. The guard cited its own documentation of the defect as
+   proof the defect had not happened.
+
+   Same trap CLAUDE.md records for check:ci-cancel (a comment naming the forbidden concurrency
+   group) and check:correction-readers (two readers explaining the rule in prose that names
+   `_rapEdited`), and it is worse here because the citation is self-referential: the better this
+   file explains a class, the blinder it gets to it. Excluding one path is narrow, but it is the
+   only path whose content is guaranteed to name every class this audit tracks. */
+const SELF = "scripts/audit-silent-reverts.mjs";
 
 const commits = git("rev-list", "--first-parent", `-n${N}`, REF).trim().split("\n").filter(Boolean);
 if (!commits.length) { console.error(`FAIL — no commits from ${REF}; a broken walk, not a clean history.`); process.exit(1); }
+/* A SHALLOW CLONE IS THE FAIL-OPEN THIS WIRING WOULD OTHERWISE INTRODUCE, and it is worth being
+   explicit about because it prints identically to a clean history. `actions/checkout` defaults to
+   fetch-depth 1, so `--commits 80` walks ONE commit, tracks whatever that commit added, finds
+   nothing missing, and reports "nothing vanished" — green, and having asked almost nothing.
+   The check above only catches ZERO commits, which a depth-1 clone does not produce.
+   Short is fine for a hand run on a young repo, so it is a NOTE by default and FATAL only under
+   --fail-on-silent, where the whole point is that a green run means something. The real revert
+   this exists for sat 27 commits behind the merge that reverted it, so a window that does not
+   reach the ADDING commit cannot see it — CLAUDE.md already records that as the operational trap
+   when using this audit to check a suspicion. */
+if (commits.length < N) {
+  const msg = `walked only ${commits.length} of the ${N} commits asked for — the clone is shallow`;
+  if (FAIL_ON_SILENT) {
+    console.error(`FAIL — ${msg}. A short window cannot see a revert whose ADDING commit is outside it`);
+    console.error(`(the #1267 revert sat 27 commits behind the merge). Use actions/checkout with fetch-depth: 0.`);
+    process.exit(1);
+  }
+  console.log(`  note: ${msg}; findings below are bounded by that.`);
+}
 const HEAD = commits[0];
 
 /* HEAD's content, once. Testing presence by SEARCHING THE WHOLE TREE is both faster and more
@@ -133,18 +220,18 @@ const fastPath = headSha === HEAD;
 let headBlob = "", present;
 if (fastPath) {
   const headFiles = git("ls-files").trim().split("\n")
-    .filter((f) => /\.(jsx?|mjs|json)$/.test(f) && !f.startsWith("node_modules"));
+    .filter((f) => /\.(jsx?|mjs|json)$/.test(f) && !f.startsWith("node_modules") && f !== SELF);
   for (const f of headFiles) { try { headBlob += readFileSync(join(ROOT, f), "utf8") + "\n"; } catch { /* gone */ } }
   if (headBlob.length < 100000) { console.error(`FAIL — read only ${headBlob.length} chars across ${headFiles.length} files; a broken read, not a small repo.`); process.exit(1); }
-  present = (tok) => headBlob.includes(tok);
+  present = (tok, ere) => (ere ? new RegExp(ere).test(headBlob) : headBlob.includes(tok));
 } else {
   console.log(`note: ${REF} (${HEAD.slice(0, 8)}) is not this checkout (${headSha.slice(0, 8)}) — asking git directly, which is slower.`);
   /* Fail closed: if git grep cannot find a token that certainly exists, the backend is broken and
      EVERY token would read as reverted. Probe with something the repo has always had. */
-  const probe = (t) => { try { git("grep", "-q", "-F", t, HEAD, "--", "*.json", "*.jsx", "*.mjs", "*.js"); return true; } catch { return false; } };
+  const probe = (t, ere) => { try { git("grep", "-q", ere ? "-E" : "-F", ere || t, HEAD, "--", "*.json", "*.jsx", "*.mjs", "*.js", `:!${SELF}`); return true; } catch { return false; } };
   if (!probe("\"scripts\"")) { console.error(`FAIL — the git-grep backend found nothing at ${HEAD.slice(0, 8)}; nothing below was checked.`); process.exit(1); }
   const memo = new Map();
-  present = (tok) => { if (!memo.has(tok)) memo.set(tok, probe(tok)); return memo.get(tok); };
+  present = (tok, ere) => { const k = ere || tok; if (!memo.has(k)) memo.set(k, probe(tok, ere)); return memo.get(k); };
 }
 
 /* A WHOLE FILE IS A DEFINITION TOO, and until 2026-08-26 nothing here could see one vanish.
@@ -182,10 +269,28 @@ for (const sha of commits.slice().reverse()) {
     if (FILE_OF_INTEREST.test(path) && /^new file mode /m.test(body) && !path.startsWith("node_modules/")) {
       addedFiles.set(path, { sha, subject });
     }
+    /* `+++ b/path` also starts with '+' and is not code; including it would let a path fragment
+       match a pattern. */
+    let addedBody = null;
+    /* SELF is excluded from COLLECTION and ATTRIBUTION too, not only from the presence test.
+       Excluding it from presence alone was still self-citation, just displaced: the comments below
+       quote real declarators, so scanning this file's own diff ADDED `filedReportsUnavailable` to
+       the tracked set (credited to the commit that wrote the comment), and `git log -S` then named
+       that same commit as the REMOVER of all four flags — a commit which touches no app file at
+       all. Measured on 306df79a. The rule is one line longer than it looks: a guard must not treat
+       its own text as evidence, in ANY of the three places it reads the repo. */
+    if (path === SELF) continue;
     for (const p of PATTERNS) {
       if (!p.file.test(path)) continue;
+      let corpus = body;
+      if (p.scan === "added") {
+        if (addedBody === null) {
+          addedBody = body.split("\n").filter((l) => l.startsWith("+") && !l.startsWith("+++")).join("\n");
+        }
+        corpus = addedBody;
+      }
       p.re.lastIndex = 0;
-      for (const m of body.matchAll(p.re)) added.set(m[1], { kind: p.kind, sha, subject });
+      for (const m of corpus.matchAll(p.re)) added.set(m[1], { kind: p.kind, sha, subject });
     }
   }
 }
@@ -201,7 +306,10 @@ if (fastPath) {
 const goneFiles = [...addedFiles.entries()].filter(([p]) => !fileExists(p));
 
 
-const missing = [...added.entries()].filter(([tok]) => !present(tok));
+const PRESENCE_OF = new Map(PATTERNS.filter((p) => p.presence).map((p) => [p.kind, p.presence]));
+const presenceEre = (rec) => { const f = PRESENCE_OF.get(rec.kind); return f ? f(rec.tok) : null; };
+const missing = [...added.entries()]
+  .filter(([tok, rec]) => !present(tok, presenceEre({ ...rec, tok })));
 
 console.log(`walked ${commits.length} first-parent commits of ${REF}`);
 console.log(`${added.size} tracked definition(s) added in that window`);
@@ -220,6 +328,17 @@ if (!addedFiles.size) {
    only one anyone reads, and the old code returned `ok` and exit 0 the moment `missing` was empty —
    which is exactly the state #1248 left, with five files gone. */
 let fileSilent = 0;
+/* Full commit message (subject + body) for the deliberate/silent classification, cached because
+   this is called once per removed file and the same commit usually removes several. */
+const _bodyCache = new Map();
+const bodyOf = (sha) => {
+  if (!_bodyCache.has(sha)) {
+    let t = "";
+    try { t = git("show", "-s", "--format=%B", sha); } catch { t = ""; }
+    _bodyCache.set(sha, t);
+  }
+  return _bodyCache.get(sha);
+};
 const fileRemover = new Map(); // path -> {sha, subject, renamedTo} — kept so the grouping below
                                // needs no second `git log` per file.
 if (goneFiles.length) {
@@ -245,7 +364,16 @@ if (goneFiles.length) {
     fileRemover.set(path, { sha: removedBy, subject: removedSubject, renamedTo });
     if (renamedTo) { console.log(`  renamed     ${path}\n      -> ${renamedTo}  (a move is not a revert)`); continue; }
     const base = path.split("/").pop().replace(/\.(jsx?|mjs|json|sql)$/, "");
-    const deliberate = removedSubject && (removedSubject.includes(path) || removedSubject.toLowerCase().includes(base.toLowerCase()));
+    /* THE HEADER SAYS "message OR BODY" AND THIS READ ONLY THE SUBJECT, which made the deliberate
+       branch nearly unreachable: a subject is ~72 characters and a path like
+       `scripts/oneoff/probe-inbox-outage-copy.mjs` does not fit beside a sentence explaining why
+       it went. Measured on the commit that found this -- a consolidation naming BOTH retired
+       probes in its body -- the audit reported both SILENT and then flagged itself as "the
+       stale-base shape". A detector that cannot be satisfied by doing the right thing teaches
+       people to ignore it, which is the failure this audit's own header warns about twice.
+       The body is fetched once per removing commit and cached: `git show -s --format=%B`. */
+    const removedText = removedBy ? bodyOf(removedBy) : removedSubject;
+    const deliberate = removedText && (removedText.includes(path) || removedText.toLowerCase().includes(base.toLowerCase()));
     if (!deliberate) fileSilent++;
     console.log(`${deliberate ? "  deliberate  " : "  ** SILENT   "}${path}`);
     console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
@@ -274,16 +402,30 @@ if (goneFiles.length) {
   for (const [path, info] of goneFiles) {
     const r = fileRemover.get(path);
     if (!r || !r.sha || r.renamedTo) continue;
-    if (!byRemover.has(r.sha)) byRemover.set(r.sha, { subject: r.subject, paths: [], adders: new Set() });
+    if (!byRemover.has(r.sha)) byRemover.set(r.sha, { subject: r.subject, namedText: bodyOf(r.sha), paths: [], adders: new Set() });
     const e = byRemover.get(r.sha);
     e.paths.push(path); e.adders.add(info.sha);
   }
-  const multi = [...byRemover.entries()].filter(([, e]) => e.adders.size > 1);
+  /* ...and a commit that NAMES every file it removed is not this shape whatever the counts say.
+     A CONSOLIDATION -- two probes merged into one guard -- removes several files added by several
+     PRs and is indistinguishable from a stale-base squash on the structural test alone. What
+     separates them is the thing the deliberate/silent classification already computed: a squash
+     about milepost clustering does not mention the probe files it drops, and a consolidation
+     names them because that is what its commit message is FOR. Without this, the audit told the
+     author of a correct consolidation to "read this one FIRST", which is the same
+     flagging-correct-work failure the paragraph above warns about. */
+  const multi = [...byRemover.entries()]
+    .filter(([, e]) => e.adders.size > 1)
+    .filter(([, e]) => !e.paths.every((path) => e.namedText
+      && (e.namedText.includes(path)
+        || e.namedText.toLowerCase().includes(
+          path.split("/").pop().replace(/\.(jsx?|mjs|json|sql)$/, "").toLowerCase()))));
   if (multi.length) {
     console.log(`\n  ** ONE COMMIT REMOVED FILES ADDED BY SEVERAL DIFFERENT ONES — the stale-base shape:`);
     for (const [sha, e] of multi) {
       console.log(`     ${sha.slice(0, 8)}  ${e.subject.slice(0, 88)}`);
       console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — read this one FIRST`);
+      GATE.push(`${sha.slice(0, 8)} removed ${e.paths.length} file(s) added by ${e.adders.size} different commits`);
     }
   } else {
     console.log(`  No commit removed files added by more than one other, so none has the stale-base`);
@@ -304,25 +446,41 @@ if (!missing.length) {
      the file rule proves why: its single hit is #1229 PROMOTING a one-off probe into a guard
      (check-area-name-embed.mjs), which is a supersession, not a revert. Going red on that would
      make the audit argue with correct work, the failure its own header spends a paragraph on. */
+  if (FAIL_ON_SILENT && GATE.length) {
+    console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
+    for (const g of GATE) console.log(`  ${g}`);
+    process.exit(1);
+  }
   process.exit(0);
 }
 
 /* For each missing token, find the commit that removed it and judge whether that commit was ABOUT
    it. `git log -S` is expensive, so it runs only for the handful that are actually missing. */
 let silent = 0;
+const silentKinds = new Set();
 for (const [tok, info] of missing) {
   let removedBy = "", removedSubject = "";
   try {
-    const log = git("log", "--first-parent", "-S", tok, "--format=%H%x09%s", `${info.sha}..${HEAD}`).trim();
-    const first = log.split("\n").filter(Boolean).pop();
+    const log = git("log", "--first-parent", "-S", tok, "--format=%H%x09%s", `${info.sha}..${HEAD}`, "--", ".", `:!${SELF}`).trim();
+    /* THE NEWEST COUNT-CHANGE IS THE REMOVAL, and `.pop()` — the oldest — named the wrong PR the
+       first time this ran on a real multi-commit history. `-S` reports every commit where the
+       number of occurrences CHANGED, additions included, so between the adding commit and HEAD
+       there can be several. The token is absent at HEAD, so the last change before HEAD is the one
+       that left it absent; anything older is a commit that touched the count and did not end it.
+       Measured on #1267: `-S catchesUnavailable` reports 2bd9a5d (#1267, which really did delete
+       the four assignments) and b211d89 (#1266, which merely ADDED a prose mention naming the flag
+       in a probe). `.pop()` blamed #1266 — a PR about fixture crews that never touched the app. */
+    const first = log.split("\n").filter(Boolean)[0];
     if (first) { const [h, ...rest] = first.split("\t"); removedBy = h; removedSubject = rest.join("\t"); }
   } catch { /* leave blank */ }
 
   /* Was the removing commit about this thing? The token itself appearing in its subject is the
      strongest signal; a bare name fragment is the weaker one. */
   const stem = tok.replace(/^(check|audit):/, "").replace(/^scripts\/|\.mjs$/g, "");
-  const deliberate = removedSubject && (removedSubject.includes(tok) || removedSubject.toLowerCase().includes(stem.toLowerCase()));
-  if (!deliberate) silent++;
+  // Same subject-only bug as the file classifier above; see the comment there.
+  const removedText2 = removedBy ? bodyOf(removedBy) : removedSubject;
+  const deliberate = removedText2 && (removedText2.includes(tok) || removedText2.toLowerCase().includes(stem.toLowerCase()));
+  if (!deliberate) { silent++; silentKinds.add(info.kind); }
   console.log(`${deliberate ? "  deliberate " : "  ** SILENT "}${info.kind.padEnd(13)} ${tok}`);
   console.log(`      added by  ${info.sha.slice(0, 8)}  ${info.subject.slice(0, 96)}`);
   console.log(`      removed   ${removedBy ? removedBy.slice(0, 8) : "(not found)"}  ${removedSubject.slice(0, 96)}`);
@@ -331,3 +489,19 @@ for (const [tok, info] of missing) {
 console.log(`\n${silent} of ${missing.length} vanished in a commit that does NOT name them — read those.`);
 console.log(`A removal is not a defect. This separates "deleted on purpose" from "deleted by a merge`);
 console.log(`that was about something else", which is the shape #776 had when it reverted #778.`);
+
+if (silent) GATE.push(`${silent} definition(s) vanished in a commit that does not name them`);
+if (FAIL_ON_SILENT && GATE.length) {
+  console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
+  for (const g of GATE) console.log(`  ${g}`);
+  console.log(`\nThis is an ALARM, not a verdict: read the rows above before reverting anything.`);
+  console.log(`Run without --fail-on-silent for the report-only behaviour.`);
+  process.exit(1);
+}
+
+const fatal = [...silentKinds].filter((k) => FAIL_ON.has(k));
+if (fatal.length) {
+  console.error(`\nFAIL — a SILENT removal of kind ${fatal.join(", ")}, which --fail-on treats as a defect.`);
+  console.error(`Restore it, or say in the commit subject that you are removing it on purpose.`);
+  process.exit(1);
+}

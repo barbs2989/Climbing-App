@@ -1,5 +1,19 @@
 // Does email verification survive a failed `verification_records` read?
 //
+// PROMOTED FROM scripts/oneoff/ AFTER THE FIX IT GUARDS WAS SILENTLY REVERTED. #1256 shipped
+// it; #1267 -- a switch-accessibility PR whose subject and body never mention any of this --
+// merged from a stale base and put the effect back to its defective form. #1277 restored the
+// four outage FLAGS that same squash dropped and missed this, because this revert changed no
+// NAME: `myVerificationQ` still exists, the effect still exists, and only its guard clause and
+// dependency array went back. `audit:silent-reverts` reports 0 on it and says so in its own
+// closing caveat -- it tracks named definitions and whole files, not function bodies.
+//
+// WHAT ACTUALLY CAUGHT IT WAS THE `ANCHOR LOST` BELOW, run by hand. That is the mechanism that
+// works for a BEHAVIOUR revert, and it is worth nothing sitting in scripts/oneoff/ where
+// nothing runs it. Hence the promotion: it is static, needs no browser and no database, and
+// costs milliseconds, so it belongs in the build chain rather than in a directory of probes
+// somebody has to remember.
+//
 // The defect: App's verification hydration opened `if(!uid||verifHydratedRef.current||
 // myVerificationQ.data==null)return;`. That guard is about the DATABASE, and the branch it
 // guards is not -- `session.user.email_confirmed_at` comes off the SESSION and needs no query
@@ -27,7 +41,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// scripts/, not scripts/oneoff/ -- one level up since the promotion.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = path.join(ROOT, "ClimbMatch.jsx");
 
 const OPEN = "useEffect(function(){if(!uid||verifHydratedRef.current)return;";
@@ -37,7 +52,13 @@ const src = fs.readFileSync(SRC, "utf8");
 const i = src.indexOf(OPEN);
 if (i < 0) {
   console.error("ANCHOR LOST: the verification effect's opening no longer reads\n  " + OPEN);
-  console.error("Nothing was measured. Re-anchor this probe rather than deleting it.");
+  console.error("");
+  console.error("Nothing was measured. Two very different things produce this, and they need");
+  console.error("opposite responses:");
+  console.error("  * the effect was deliberately refactored -> re-anchor this guard;");
+  console.error("  * the effect was REVERTED by a stale-base squash -> restore it. #1267 did");
+  console.error("    exactly that to #1256, and audit:silent-reverts cannot see it because no");
+  console.error("    NAME changed. Check `git log -S \"myVerificationQ.status\" -- ClimbMatch.jsx`.");
   process.exit(1);
 }
 const j = src.indexOf(CLOSE, i);
