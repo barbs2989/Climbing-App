@@ -5306,6 +5306,36 @@ for another.
       so an overlay rendered beside others picks up their copy too. The rows naming ONE component
       are the clean ones.
 
+**A FLAG THAT ALREADY EXISTED REACHED SIX PLACES AND NOT THE TWO OVERLAYS IT IS ABOUT.**
+`connectionsUnavailable` has been in `ClimbMatch.jsx` since #1224. Both surfaces fed by
+`connections` are overlays, and neither had it: `FriendsList` renders *"No friends yet."* and the
+mutual-friends sheet renders *"No mutual friends yet."*, so an outage told a climber with partners
+that they had none — on the one screen whose whole subject is who you climb with.
+  - **Found by the overlay measurement, not by grep**
+    (`scripts/oneoff/probe-overlays-that-assert-absence.mjs`): `friendsOpen` came out ungated, and
+    following its component into `ClimbMatchCore.jsx` confirmed both the empty state and a prop
+    list with no flag in it. Adding a flag is not the same as *delivering* it, and the delivery is
+    what a per-screen measurement asks about.
+  - **ONLY THE NO-FRIENDS BRANCH IS GATED, and the other two must stay ungated.** `FriendsList`
+    has three empty strings; *"None of your friends share your saved objectives yet"* and *"No
+    friends match"* are claims about the **filter the user just set**, applied to whatever did
+    load. They are true during an outage. Gating them would replace correct copy with an error,
+    which is the direction that teaches people to ignore a fix. The probe asserts it directly —
+    it renders with friends present AND the flag on, and fails if the outage copy appears.
+  - **Two candidates were checked and REJECTED, which is the more useful half.**
+    - `areaTreeOpen` -> `AreaTree({selArea,…})`. `selArea` is seed-only and dead in production
+      ([[three-climbs-tab-sections-dead-in-production]]), so there is no DB read to fail. Its
+      *"No areas"* cannot be an outage lie.
+    - `profileModal`/`eventInvite` -> `FullProfile`'s *"No vouches yet"* / *"No objectives listed
+      yet"* come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile
+      **never carries**. Those lists are empty for a real profile always, not because of an
+      outage — the `check:real-profile-rows` class, which already has a guard. **An empty section
+      is not evidence of this defect; ask what fills it.**
+  - `scripts/oneoff/probe-friends-outage-copy.mjs` renders the real `FriendsList`: 3 cases plus
+    the filter assertion, injection-tested (reverting the gate fails exactly one case), with a
+    1,036-character render asserted so the negative cases cannot pass vacuously. Same two bundling
+    traps as the Inbox probe — the provider, and `@tanstack/react-query` as `--external`.
+
 **When is a screen finished rendering?** Every browser guard has to answer that before it
 reads the DOM, and `scripts/lib/render-settle.mjs` is the single answer they share
 (`check:ui`, `check:zero`, `check:signed-in`). It settles on the text having **stopped
