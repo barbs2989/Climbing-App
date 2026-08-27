@@ -98,7 +98,16 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   if (!profile) {
     return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 }}>
       <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+      {/* Says where to apply, because this screen is reachable in exactly this state and had no
+          way out of it. Settings offers a guide-dashboard button unconditionally, directly under
+          "Become a guide", so a climber who has not applied lands here on a screen that states
+          the problem and offers only Back -- 40 characters, the smallest screen in the app.
+
+          SIGNPOSTING, not a second entry point: it names a control that already exists rather
+          than adding one. The application form is reachable from Settings today, and routing
+          more people into it is a product decision, not a layout repair. */}
       <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>You haven't applied to guide yet.</div>
+      <div style={{ marginTop: 8, textAlign: "center", color: C.textMuted, fontSize: 12.5, lineHeight: 1.5 }}>{"Settings → Become a guide starts an application."}</div>
     </div>, document.body);
   }
 
