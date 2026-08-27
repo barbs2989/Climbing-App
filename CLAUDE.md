@@ -99,6 +99,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
+npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the tolerance, not a constant
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
@@ -3658,6 +3659,23 @@ the correction knows the screen is wrong, and they have no way to report it.
     defect is **13 pins, not a class**. `audit:waypoint-elevations` keeps `TOL = 2000` because a
     tighter bound over pins whose *coordinates* are fabricated measures the wrong place; that
     objection does not apply once the coordinate is sourced, which is why this can be stated at 400.
+    - **`--ground` answers that objection without tightening anything**, and is the reason the flat
+      number no longer has to be the only option: it bounds each pin's uncertainty (rounding box +
+      the measured ~183 m placement slop) and asks the DEM what heights that box actually contains,
+      so the tolerance *widens by itself* exactly where the coordinate is least trustworthy. On
+      gentle ground it is far stricter than 2,000 and on a headwall far looser. **249 pins on 166
+      routes, 151 of them invisible to the flat test.** A 208-pin sample had estimated ~133 and
+      ~114 — **quote the run, never the extrapolation**, the rule this file states for
+      `fab-pins.json` two bullets down. Its top finding is Camp Schurman, the case the flat
+      threshold's own comment names, so where the two overlap they agree.
+    - **It also killed the hypothesis that prompted it.** A rounded coordinate (≤2 dp, ~1.1 km of
+      slop, **100 of 4,196 WA pins**) looked like a third fabrication fingerprint beside the long
+      decimal tail and the collinear run. It is not: coarse pins fail this at **4.1%** against
+      precise pins' **2.7%**. And the first version of the measurement said 23 rather than 7 —
+      because its box was the *rounding* box alone, which for a precise pin is ±5 m and ignores the
+      placement slop entirely, so the two populations were judged by different standards and the
+      "control" compared nothing. **Reading this audit's own header is what caught a 3× overcount**;
+      the new instrument was internally consistent and wrong throughout.
   - **Quote the audit's own count, not a snapshot's.** `fab-pins.json` expands run ranges into every
     pin, so "728 remaining" overstates it; and repairing one pin can break a run's collinearity and
     clear its neighbours too — 5 of the 6 gazetteer-confirmed routes are **no longer reported at

@@ -25,11 +25,44 @@
 // inherent precision and calls it a defect. Only a gap far larger than that mechanism can
 // manufacture is evidence — nothing innocent puts Camp Schurman 4,883 ft below itself.
 //
+// --ground ASKS THE TERRAIN TO SET THE TOLERANCE INSTEAD OF FIXING IT AT 2,000 ft.
+//
+// The flat number is right about the mechanism and blunt about the answer: 2,000 ft is what steep
+// ground plus a rounded guess can manufacture, so it is the correct bound ON STEEP GROUND and far
+// too loose everywhere else. Nothing innocent puts a camp 800 ft above a valley floor that varies
+// by 160 ft across the whole radius of its own uncertainty.
+//
+// So bound the uncertainty and ask what it can actually explain here. A pin's true position lies
+// within its ROUNDING box (a coordinate at 2 dp is one of many points that round to it, ~+/-550 m)
+// plus the PLACEMENT slop measured above (~183 m, 40 m for a surveyed summit). Sample the ground
+// across that box: those are the heights this pin could hold with nothing wrong. A claim outside
+// them is not explained by the mechanism the 2,000 ft allows for.
+//
+// MEASURED BEFORE SHIPPING, and the measurement corrected itself twice. Over a 208-pin sample, the
+// box built from ROUNDING ALONE reported 23 attributable disagreements; folding in the placement
+// slop measured in the paragraph above took that to 7. A first pass would have over-reported 3x,
+// and what caught it was reading that paragraph rather than trusting the new instrument. It also
+// killed the hypothesis that prompted it — a rounded coordinate (<=2 dp, 100 of 4,196 WA pins)
+// looked like a fabrication fingerprint beside the long decimal tail and the collinear run, and is
+// not one: coarse pins fail this at 4.1% against precise pins' 2.7%.
+//
+// THE CENSUS, not that sample: 1,253 of 3,495 pins are near enough the threshold to qualify, and
+// **249 pins on 166 routes** land beyond what their own terrain can explain — **151 of them
+// invisible to the flat 2,000 ft tolerance**. The 208-pin sample had estimated ~133 and ~114, so
+// quote the run and never the extrapolation. Its top finding is Camp Schurman, which the paragraph
+// above already names, so where the two tests overlap they agree.
+//
+// The grid UNDER-states a box's true range, and understating it manufactures findings, so a box
+// too rugged for 9 points to describe is reported as NOT ATTRIBUTABLE rather than as clean or as a
+// defect. Costs 8 extra requests per pin, over pins that can possibly qualify — hence opt-in, and
+// compose it with --sample on a first run.
+//
 // USGS 3DEP, 1 m raster, one request per waypoint. Report-only, exit 0.
 //
 //   npm run audit:waypoint-elevations                 # WA alpine/mountaineering/scrambling
 //   npm run audit:waypoint-elevations -- --sample 400 # a random subset, to see the distribution
 //   npm run audit:waypoint-elevations -- --type Trailhead
+//   npm run audit:waypoint-elevations -- --ground     # terrain sets the tolerance, not a constant
 import { readFileSync } from "node:fs";
 import { elevationAt, selfTest } from "./lib/terrain.mjs";
 
@@ -46,7 +79,44 @@ const argv = process.argv.slice(2);
 const arg = n => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : null; };
 const SAMPLE = Number(arg("--sample") || 0);
 const ONLY = arg("--type");
+const GROUND = argv.includes("--ground");
 const CONC = 5;
+
+// --- the terrain-set tolerance, as a pure function so it can be proven without a network ---
+// Placement slop in metres, from this file's own measurement above. A summit is surveyed; a
+// junction, campsite or hazard elevation is a hand-placed guess. Taking the TOP of the measured
+// 118-183 m band deliberately: over-stating the uncertainty errs toward silence, and a report that
+// flags correct work is one people learn to ignore.
+const SLOP_M = t => /summit|topout/i.test(String(t || "")) ? 40 : 183;
+const FLOOR_FT = 250;        // below this a gap is inside the 9-point grid's own noise
+const RELIEF_SHARE = 0.5;    // ...and inside terrain this rugged, the grid has missed the extremes
+const FLAT_ENOUGH = 800;     // a box rougher than this is not described by 9 points at all
+const MIN_GAP = 500;
+const dpOf = v => { const s = String(v); const i = s.indexOf("."); return i < 0 ? 0 : s.length - i - 1; };
+
+// Deliberately NOT exported. This file opens with top-level await against the database, so an
+// import to reach one pure function would run the whole audit — an attractive nuisance. The
+// self-test below runs on every --ground invocation instead, which is where it gets read anyway.
+/** { gap, relief, attributable } — gap is 0 when the box explains the claim. */
+function boxVerdict(elevRaw, samples) {
+  const elev = Number(elevRaw);
+  const known = samples.filter(v => v != null).map(Number);
+  if (known.length < 7) return { gap: null, relief: null, attributable: false, note: `read ${known.length}/9` };
+  const lo = Math.min(...known), hi = Math.max(...known), relief = hi - lo;
+  const margin = Math.max(FLOOR_FT, RELIEF_SHARE * relief);
+  const gap = elev < lo - margin ? lo - margin - elev : elev > hi + margin ? elev - (hi + margin) : 0;
+  return { lo, hi, relief, margin, gap, attributable: gap >= MIN_GAP && relief < FLAT_ENOUGH };
+}
+
+/** The 9 points bounding what rounding and placement slop together could explain. */
+function boxGrid(lat, lng, type) {
+  const M_LAT = 111320, cos = Math.cos(lat * Math.PI / 180);
+  const halfLat = (0.5 * 10 ** -dpOf(lat) * M_LAT + SLOP_M(type)) / M_LAT;
+  const halfLng = (0.5 * 10 ** -dpOf(lng) * M_LAT * cos + SLOP_M(type)) / (M_LAT * cos);
+  const pts = [];
+  for (const dy of [-1, 0, 1]) for (const dx of [-1, 0, 1]) if (dy || dx) pts.push([lat + dy * halfLat, lng + dx * halfLng]);
+  return pts;   // 8 — the centre is already read by the main pass
+}
 
 async function get(p, tries = 5) {
   for (let a = 0; a < tries; a++) {
@@ -151,4 +221,78 @@ for (const [r, ps] of Object.entries(byRoute).sort((a, b) => b[1].length - a[1].
   for (const p of ps.slice(0, 6))
     console.log(`      ${String(p.diff > 0 ? "+" + p.diff : p.diff).padStart(7)} ft  ${p.type.padEnd(12)} claims ${String(p.elev).padStart(6)}, ground ${String(Math.round(p.ground)).padStart(6)}  "${String(p.name || "").slice(0, 40)}"`);
 }
+if (GROUND) {
+  // The verdict logic is proven with no network first. Its expected output over a healthy catalog
+  // is "almost nothing", which is exactly what a broken one prints — so make it fail on demand
+  // before believing a quiet run. Both directions: the rugged and inside-the-box cases must stay
+  // SILENT, or this reports the data's own precision as a defect the way the 400 ft threshold did.
+  const CASES = [
+    ["flat box, claim far above",   6000, [4300, 4340, 4380, 4400, 4420, 4440, 4460, 4480, 4500], true],
+    ["flat box, claim far below",   4000, [7100, 7150, 7200, 7250, 7300, 7350, 7400, 7420, 7440], true],
+    // A REAL 600 ft gap that is disqualified ONLY by the box being too rugged to describe. Written
+    // first as elev 6000 against this box, where the claim lands INSIDE it — so the case passed
+    // while never exercising the relief gate at all. An assertion that holds for the wrong reason
+    // is the same false comfort as an injection that passes out of frame.
+    ["real gap, but RUGGED box",    7700, [3800, 4200, 4600, 5000, 5400, 5800, 5900, 5950, 6000], false],
+    ["claim inside the box",        5200, [5000, 5050, 5100, 5150, 5200, 5250, 5300, 5350, 5400], false],
+    ["outside, but inside margin",  5600, [5000, 5100, 5200, 5250, 5300, 5350, 5380, 5400, 5420], false],
+    ["gap present but under 500",   5900, [5000, 5100, 5200, 5250, 5300, 5350, 5380, 5400, 5420], false],
+  ];
+  const fails = [];
+  for (const [label, elev, samples, want] of CASES) {
+    const v = boxVerdict(elev, samples);
+    if (v.attributable !== want) fails.push(`  ${label}: wanted ${want}, got ${v.attributable} (gap ${v.gap}, relief ${v.relief})`);
+  }
+  // "no evidence" and "no defect" must not be the same value, or an unreadable box reads as clean.
+  const blind = boxVerdict(6000, [4300, 4340, null, null, null, null, null, null, null]);
+  if (blind.gap !== null || blind.attributable) fails.push(`  unreadable box did not fail closed: ${JSON.stringify(blind)}`);
+  if (fails.length) { console.error(`\n--ground verdict logic is not trustworthy:\n${fails.join("\n")}`); process.exit(1); }
+  console.log(`\n--ground verdict logic: ${CASES.length + 1}/${CASES.length + 1} self-tests pass`);
+
+  // A pin nearer the ground than the margin floor can NEVER qualify: the centre reading lies inside
+  // [lo,hi] by construction, so a claim above `hi` is at least `margin` above the centre too, and
+  // margin is never below FLOOR_FT. So this pre-filter is exact rather than a sampling shortcut —
+  // it discards no possible finding, and it is what keeps the request count survivable.
+  const cands = read.filter(p => Math.abs(p.diff) > FLOOR_FT && !p.unit);
+  console.log(`${cands.length} of ${read.length} pins are far enough from the ground to possibly qualify` +
+    ` (${cands.length * 8} extra DEM requests)\n`);
+
+  let n = 0;
+  async function box(q) { for (;;) { const p = q.shift(); if (!p) return;
+    const vals = [];
+    for (const [y, x] of boxGrid(Number(p.lat), Number(p.lng), p.type)) vals.push(await elevationAt(y, x, 3));
+    p.box = boxVerdict(p.elev, [...vals, p.ground]);
+    if (++n % 25 === 0) process.stderr.write(`  ${n}/${cands.length}\r`); } }
+  const bq = cands.slice();
+  await Promise.all(Array.from({ length: CONC }, () => box(bq)));
+  process.stderr.write("".padEnd(24) + "\r");
+
+  const unread = cands.filter(p => p.box.gap === null);
+  const hits = cands.filter(p => p.box.attributable).sort((a, b) => b.box.gap - a.box.gap);
+  const rough = cands.filter(p => p.box.gap > 0 && !p.box.attributable);
+
+  // Grouped by route for the reason the flat section already gives: a route whose pins came from
+  // one bad enrichment pass is ONE defect, not N, and a per-pin list overstates the work.
+  const gRoute = {};
+  for (const p of hits) (gRoute[p.route] ||= []).push(p);
+  console.log(`\n=== BEYOND WHAT THE TERRAIN CAN EXPLAIN (${hits.length} pins on ${Object.keys(gRoute).length} routes) ===`);
+  console.log(`The box is everywhere this pin could truly be. A claim outside it is not accounted for`);
+  console.log(`by the rounded-estimate-plus-slop mechanism the flat ${TOL} ft tolerance allows for.`);
+  console.log(`WHICH record is wrong is not decided here — read both, as above. And no repair follows`);
+  console.log(`from this alone: where the named place's published height matches the stored elev, the`);
+  console.log(`COORDINATE is the bad half, and a pin with no source stays where it is.\n`);
+  for (const [r, ps] of Object.entries(gRoute).sort((a, b) => b[1].length - a[1].length)) {
+    console.log(`  ${r}  (${ps.length} pin${ps.length > 1 ? "s" : ""})`);
+    for (const p of ps.sort((a, b) => b.box.gap - a.box.gap)) {
+      const seen = Math.abs(p.diff) > TOL ? "" : `  [invisible to the flat ${TOL} ft test]`;
+      console.log(`      ${String(Math.round(p.box.gap)).padStart(5)} ft beyond  ${p.type.padEnd(12)} claims ${String(p.elev).padStart(6)}, box spans ${Math.round(p.box.lo)}-${Math.round(p.box.hi)} (relief ${Math.round(p.box.relief)})  "${String(p.name || "").slice(0, 34)}"${seen}`);
+    }
+  }
+  console.log(`\nNOT ATTRIBUTABLE (${rough.length}): the box is too rugged for 9 points to describe, or the`);
+  console.log(`gap is inside the grid's own noise. Reported rather than dropped — silent truncation`);
+  console.log(`reads as coverage. ${unread.length} box(es) the DEM could not answer for.`);
+  const unseen = hits.filter(p => Math.abs(p.diff) <= TOL).length;
+  console.log(`\n${unseen} of ${hits.length} would not have been reported by the flat ${TOL} ft tolerance.`);
+}
+
 console.log(`\nreport-only: exit 0 regardless. ${Object.keys(byRoute).length} route(s) to read.`);
