@@ -76,9 +76,52 @@ if (!rows.some((r) => r.name === "inboxOpen")) {
   process.exit(1);
 }
 
-const ungated = rows.filter((x) => !x.gated.length);
-console.log(`${states.length} overlay states; ${rows.length} assert absence; ${ungated.length} ungated\n`);
-console.log("UNGATED — nothing reachable in that text names an xUnavailable flag:");
+/* UNGATED IS NOT THE SAME AS UNCHECKED, and leaving it undifferentiated is how a count gets
+   re-derived from scratch every time somebody runs this. An overlay needs a flag only if a FAILED
+   READ could produce the sentence; where the copy comes from seed constants, from client state, or
+   from a filter the user just set, there is no read to fail and gating it would replace correct
+   copy with an error — the mistake already made once on FriendsList's "No friends match".
+
+   Each entry is a REASON, verified by reading the component, not a pass. A name here that starts
+   naming a flag is stale bookkeeping and is reported as such below. */
+const CHECKED = {
+  areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
+  logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
+  contribOpen: "Contributions receives `items={contribs}`, a useState client value, not a query",
+  logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
+  giveVouchWith: 'same "No climbs match." filter copy',
+  quickLogFor: 'same "No climbs match." filter copy',
+  profileModal: "FullProfile's vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
+  eventInvite: "renders FullProfile; same reason",
+  shareOpen: 'the "No route" hits are FILTER copy — "No routes match." / "No routes match these filters." — true whatever loaded',
+  notifOpen: "same filter copy, picked up from AddRoute/Contributions in the 3000-char window",
+  addRouteOpen: "same filter copy",
+  onboardOpen: "same filter copy",
+  crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
+  feedbackOpen: 'MATCHED INSIDE A COMMENT, not rendered copy: the "nothing here" is prose in ClimbMatchCore.jsx explaining why reason formatting uses plain-text markers. See the scanner note below.',
+  legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
+};
+
+/* THE SCANNER READS COMMENTS AS COPY, and `feedbackOpen` above is the proof — its only claim is a
+   sentence inside a block comment. That inflates the count with rows that render nothing.
+   NOT fixed with a regex strip: this repo has already had one eat real code at a URL's `//`, and a
+   stateful scanner that tracks quotes desynchronises on an apostrophe in JSX text. The correct fix
+   is to collect JSXText and StringLiteral values with Babel and match only those, the way
+   check:no-rendered-sources does. Left undone deliberately — this is a one-off measurement, every
+   current row is resolved above, and a half-safe strip would be worse than a known limitation.
+   IF A NEW ROW APPEARS, check whether its claim is actually rendered before believing it. */
+
+const ungatedAll = rows.filter((x) => !x.gated.length);
+const stale = Object.keys(CHECKED).filter((n) => rows.some((r) => r.name === n && r.gated.length));
+const ungated = ungatedAll.filter((r) => !CHECKED[r.name]);
+const checked = ungatedAll.filter((r) => CHECKED[r.name]);
+console.log(`${states.length} overlay states; ${rows.length} assert absence; ${ungatedAll.length} ungated — ${checked.length} of those CHECKED and explained, ${ungated.length} not yet read\n`);
+if (stale.length) {
+  console.log(`STALE: ${stale.join(", ")} now name a flag, so their CHECKED entry is describing code that has moved. Remove it.\n`);
+}
+console.log("CHECKED — ungated for a reason, verified by reading the component:");
+for (const r of checked) console.log(`  ${r.name.padEnd(20)} ${CHECKED[r.name]}`);
+console.log("\nNOT YET READ — nothing reachable in that text names an xUnavailable flag:");
 for (const r of ungated) {
   console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
   console.log(`  ${" ".repeat(20)} via ${r.followed.join(", ") || "(inline)"}`);

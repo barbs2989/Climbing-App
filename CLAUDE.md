@@ -2346,6 +2346,21 @@ a build error, but a screen that renders wrong or not at all.
     with a rappel sequence its own text calls an emergency option while discouraging that descent
     entirely, and Stickney's bare "1" became "0-1, conditions- and party-dependent". Leading with
     the wrong descent is its own defect even when every fact is true.
+  - **ITS CURRENT THREE CANDIDATES ARE ALL NON-FINDINGS, read 2026-08-26 and recorded so the next
+    reader does not re-derive them.** Two share one mechanism, and it is the one this entry's own
+    warning names: **a no-rappel ALTERNATIVE is not a denial of the stated count.**
+    `wa_mount_mystery_standard` claims 2 and its descent text *confirms* two single-rope rappels —
+    it trips on a trailing note about a longer high-route exit "with no rappels required", which
+    the text itself labels *"a valid but distinct high-route variant, not the standard
+    reverse-the-ascent descent"*. `wa_overcoat_peak_southeast_route` claims 2 and its text says
+    *"most parties do NOT free-downclimb the full corner — instead, build two rappels"*; it trips
+    on *"Some parties instead find they can downclimb the full chimney/ledge system"*. The third,
+    `wa_buckner_mountain_north_face`, is the case this entry already documents.
+  - **Do NOT tighten the needle to make those three go away.** An alternative and a contradiction
+    are the same words in a different frame, and a rule strict enough to separate them would be
+    fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
+    records. The audit is report-only and says so; three candidates a reader can settle in a
+    minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
@@ -5001,7 +5016,12 @@ the correction knows the screen is wrong, and they have no way to report it.
   - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
     `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
-    sweep found **33 values on 32 WA routes**; all are now repaired, and the audit reports **0**.
+    sweep found **33 values on 32 WA routes**, all repaired — the ROAD/ACCESS section reports **3**
+    today, and those three are hedges (*"not documented in any source found"*), not attributions.
+    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: on
+      main 2026-08-26 it reports **611 values on 396 routes**, nearly all in `rappel_count_note`,
+      `rappel_detail` and `beta`. The road/access sweep closed road/access; the ROUTE PROSE section
+      is a standing reading list and always was. A per-section count is not the audit's verdict.
   - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
     CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
     number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where

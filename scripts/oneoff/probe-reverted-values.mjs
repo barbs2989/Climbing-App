@@ -34,6 +34,23 @@
 // PAGE_LOAD_MS) the same window reports **9**, and the timeout row is gone. That before/after is
 // the strongest thing available for a detector whose healthy output is "nothing found".
 //
+// THE OBVIOUS PRECISION FIX WAS TRIED AND MEASURED DEAD — recorded so it is not re-derived.
+// A bad revert undoes an ADDITION; a restoration undoes a REMOVAL. So classify each finding by
+// whether the reverted commit made its line longer or shorter, and suppress the removals.
+// Measured over 60 commits: **12 of 13 findings classify as neither**, because this codebase
+// writes 10,000-character single lines and adding an `xUnavailable` flag is a rounding error on
+// that length. Substring containment fails for the same reason — the insertion is mid-line, not
+// at either end. The dense style that makes this repo's merges collide is the same thing that
+// defeats the discriminator for detecting the collisions.
+//
+// What DOES show up in the output is flip-flopping: `const myFiledQ=...` and the CatchLedger row
+// each appear twice in one window, which is the A->B->A->B chain of #1239/#1248/#1253/#1267. A
+// line fought over twice is the highest-value row to read, and it needs no classifier.
+//
+// So the honest position stands: this reports a READING LIST. `audit:silent-reverts` gates CI on
+// definitions and whole files; VALUES remain uncovered by any workflow, and #1243's reverted
+// timeout is the demonstration.
+//
 // Report-only, git-only (no DB, no network, no browser). Run it after a batch of merges.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
