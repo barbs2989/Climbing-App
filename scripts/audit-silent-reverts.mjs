@@ -82,6 +82,19 @@ const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] 
    twice within a day. Against a healthy tree it is quiet: 0 absent across 300 first-parent
    commits. */
 const FAIL_ON = new Set(String(arg("--fail-on", "")).split(",").map((x) => x.trim()).filter(Boolean));
+/* --fail-on-silent turns this report into an ALARM, and it is OPT-IN so the default contract is
+   untouched: run by hand, this audit still exits 0 for any finding and 1 only for a broken scan,
+   because a removal is not a defect and its own header spends a paragraph on why going red at
+   correct work would make people ignore it.
+   The gate is DELIBERATELY NARROWER than "any SILENT row", and it reuses this script's own two
+   discriminators rather than inventing a third:
+     - a SILENT *definition* removal, which is the #776/#1248/#1267 shape;
+     - a commit that removed files added by SEVERAL DIFFERENT commits, the stale-base fingerprint.
+   A single-file SILENT removal does NOT trip it. Over 500 commits every hit of that rule was a
+   PROMOTION (a one-off probe becoming a named guard), so precision there is 0% and a gate on it
+   would argue with correct work — the exact failure this file warns about. */
+const FAIL_ON_SILENT = argv.includes("--fail-on-silent");
+const GATE = [];
 const N = Number(arg("--commits", 80));
 const REF = String(arg("--ref", "origin/main"));
 
@@ -173,6 +186,25 @@ const SELF = "scripts/audit-silent-reverts.mjs";
 
 const commits = git("rev-list", "--first-parent", `-n${N}`, REF).trim().split("\n").filter(Boolean);
 if (!commits.length) { console.error(`FAIL — no commits from ${REF}; a broken walk, not a clean history.`); process.exit(1); }
+/* A SHALLOW CLONE IS THE FAIL-OPEN THIS WIRING WOULD OTHERWISE INTRODUCE, and it is worth being
+   explicit about because it prints identically to a clean history. `actions/checkout` defaults to
+   fetch-depth 1, so `--commits 80` walks ONE commit, tracks whatever that commit added, finds
+   nothing missing, and reports "nothing vanished" — green, and having asked almost nothing.
+   The check above only catches ZERO commits, which a depth-1 clone does not produce.
+   Short is fine for a hand run on a young repo, so it is a NOTE by default and FATAL only under
+   --fail-on-silent, where the whole point is that a green run means something. The real revert
+   this exists for sat 27 commits behind the merge that reverted it, so a window that does not
+   reach the ADDING commit cannot see it — CLAUDE.md already records that as the operational trap
+   when using this audit to check a suspicion. */
+if (commits.length < N) {
+  const msg = `walked only ${commits.length} of the ${N} commits asked for — the clone is shallow`;
+  if (FAIL_ON_SILENT) {
+    console.error(`FAIL — ${msg}. A short window cannot see a revert whose ADDING commit is outside it`);
+    console.error(`(the #1267 revert sat 27 commits behind the merge). Use actions/checkout with fetch-depth: 0.`);
+    process.exit(1);
+  }
+  console.log(`  note: ${msg}; findings below are bounded by that.`);
+}
 const HEAD = commits[0];
 
 /* HEAD's content, once. Testing presence by SEARCHING THE WHOLE TREE is both faster and more
@@ -393,6 +425,7 @@ if (goneFiles.length) {
     for (const [sha, e] of multi) {
       console.log(`     ${sha.slice(0, 8)}  ${e.subject.slice(0, 88)}`);
       console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — read this one FIRST`);
+      GATE.push(`${sha.slice(0, 8)} removed ${e.paths.length} file(s) added by ${e.adders.size} different commits`);
     }
   } else {
     console.log(`  No commit removed files added by more than one other, so none has the stale-base`);
@@ -413,6 +446,11 @@ if (!missing.length) {
      the file rule proves why: its single hit is #1229 PROMOTING a one-off probe into a guard
      (check-area-name-embed.mjs), which is a supersession, not a revert. Going red on that would
      make the audit argue with correct work, the failure its own header spends a paragraph on. */
+  if (FAIL_ON_SILENT && GATE.length) {
+    console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
+    for (const g of GATE) console.log(`  ${g}`);
+    process.exit(1);
+  }
   process.exit(0);
 }
 
@@ -451,6 +489,15 @@ for (const [tok, info] of missing) {
 console.log(`\n${silent} of ${missing.length} vanished in a commit that does NOT name them — read those.`);
 console.log(`A removal is not a defect. This separates "deleted on purpose" from "deleted by a merge`);
 console.log(`that was about something else", which is the shape #776 had when it reverted #778.`);
+
+if (silent) GATE.push(`${silent} definition(s) vanished in a commit that does not name them`);
+if (FAIL_ON_SILENT && GATE.length) {
+  console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
+  for (const g of GATE) console.log(`  ${g}`);
+  console.log(`\nThis is an ALARM, not a verdict: read the rows above before reverting anything.`);
+  console.log(`Run without --fail-on-silent for the report-only behaviour.`);
+  process.exit(1);
+}
 
 const fatal = [...silentKinds].filter((k) => FAIL_ON.has(k));
 if (fatal.length) {
