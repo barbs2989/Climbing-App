@@ -393,9 +393,10 @@ for (const r of rows) {
   for (const [k, v] of Object.entries(vals)) {
     if (typeof v !== "string") continue;
     for (const m of v.matchAll(MP_RE)) {
-      const idTokens = mptoks(rd.name).length ? mptoks(rd.name) : mptoks(v);
+      const nameTokens = mptoks(rd.name);
+      const idTokens = nameTokens.length ? nameTokens : mptoks(v);
       const seasonal = SEASONAL_MP.test(v), hypo = HYPOTHETICAL.test(v);
-      mpItems.push({ id: r.id, field: k, mp: m[1], v, idTokens,
+      mpItems.push({ id: r.id, field: k, mp: m[1], v, idTokens, fromName: !!nameTokens.length,
         lifted: !seasonal && !hypo && LIFTED.test(v), inForce: !seasonal && MP_IN_FORCE.test(v) });
     }
   }
@@ -422,6 +423,63 @@ for (const f of mpFindings) {
   for (const i of f.c.items) console.log(`      ${i.id} ${i.field}: ${i.v.slice(0, 150)}`);
 }
 
+/* SECTION 4: SAME ROAD, TWO POSITIONS FOR ONE GATE.
+   Section 3 keys on the MILEPOST, so a disagreement ABOUT the milepost can never form a
+   cluster — the two claims land in different buckets and are never compared. That is the
+   blind spot this closes, and it is a property of the clustering key rather than of the
+   needle: [[a-detectors-clustering-key-decides-what-it-can-see]].
+
+   Found by reading the Suiattle cluster by hand: five routes describe ONE closure event
+   (December 2025 atmospheric-river flood, USFS order 06-05-26-03, April 2026 - January 2028)
+   and place its gate at MP 4 on two routes and MP 4.5 on three. A party planning off the
+   first walks half a mile it did not budget for; off the second, it drives to a gate that
+   is not there.
+
+   The unit is the ROAD, not the milepost and not the trailhead — one road carries one gate
+   per closure event, and routes reaching it from different trailheads still describe the
+   same gate. Clustering by road name alone is what this file's own header calls far too
+   broad, so three things narrow it: only IN-FORCE mentions count (seasonal gates and
+   hypotheticals are already stripped by section 3's tests), a route stating SEVERAL
+   mileposts is describing several gates rather than disagreeing with anyone, and the
+   identity tokens come from road.name with ROADSTOP applied, so "River"/"Creek"/"Road"
+   cannot merge two unrelated roads. */
+const roadClusters = new Map();
+for (const it of mpItems) {
+  // road.name only. The prose fallback section 3 uses is a guess at which road a sentence is
+  // about, and a guess cannot support a claim that two routes contradict each other.
+  if (!it.inForce || !it.fromName) continue;
+  // EXACT identity, never overlap. Overlap CHAINS: a Ptarmigan Traverse route whose road.name
+  // is "Cascade River Road (north approach) or Suiattle River Road (south approach)" shares a
+  // token with each, so an overlap test merges two unrelated roads into one cluster and reports
+  // Cascade's MP 20 winter gate as a third position for Suiattle's flood gate. Measured: that
+  // draft reported 6 findings of which at least 2 were this. A route naming two roads now keys
+  // to its own bucket and simply finds no partner, which is the correct answer for a value that
+  // does not say which road the milepost belongs to.
+  const key = [...it.idTokens].sort().join("|");
+  if (!roadClusters.has(key)) roadClusters.set(key, { tokens: it.idTokens, items: [] });
+  roadClusters.get(key).items.push(it);
+}
+const posFindings = [];
+for (const c of roadClusters.values()) {
+  const byRoute = new Map();
+  for (const i of c.items) { if (!byRoute.has(i.id)) byRoute.set(i.id, new Set()); byRoute.get(i.id).add(i.mp); }
+  // A route naming several mileposts is describing several gates on one road, which is ordinary
+  // and true. Only routes committing to ONE position can contradict each other.
+  const single = [...byRoute.entries()].filter(([, mps]) => mps.size === 1)
+                                       .map(([id, mps]) => [id, [...mps][0]]);
+  if (single.length < 2) continue;
+  const distinct = [...new Set(single.map(([, mp]) => mp))];
+  if (distinct.length < 2) continue;
+  const nums = distinct.map(Number).sort((a, b) => a - b);
+  posFindings.push({ c, single, distinct, spread: nums[nums.length - 1] - nums[0] });
+}
+posFindings.sort((a, b) => b.spread - a.spread);
+for (const f of posFindings) {
+  console.log(`
+${f.c.tokens.slice(0, 4).join("/")} — one gate, ${f.distinct.length} positions (spread ${f.spread.toFixed(1)} mi):`);
+  for (const [id, mp] of f.single.sort((a, b) => Number(a[1]) - Number(b[1]))) console.log(`   MP ${String(mp).padEnd(6)} ${id}`);
+}
+
 const multi = clusters.filter(c => c.length > 1);
 console.log(`\n${"=".repeat(78)}`);
 console.log(`${rows.length} routes read · ${pts.length} carry both a trailhead coordinate and road prose`);
@@ -429,6 +487,7 @@ console.log(`${clusters.length} trailhead cluster(s) within ${RADIUS} m · ${mul
 console.log(`${findings.length} cluster(s) where one route says the road is CLOSED and another says it OPENS.`);
 console.log(`${wrongRoad.length} route(s) whose road.name names a DIFFERENT road from their trailhead neighbours,`);
 console.log(`${mpClusters.length} milepost cluster(s) · ${mpFindings.length} where one closure gets two answers (section 3).`);
+console.log(`${roadClusters.size} road cluster(s) · ${posFindings.length} where one gate is given two POSITIONS (section 4).`);
 if (vague.length) console.log(`  plus ${vague.length} whose road.name is a placeholder rather than a road ("${vague.slice(0, 2).map(m => m.p.roadName).join('", "')}" …).`);
 if (wrongRoad.length) {
   console.log(`\nSection 2 is a HYPOTHESIS LIST, weaker than section 1 and deliberately so: a route can`);
