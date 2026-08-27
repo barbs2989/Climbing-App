@@ -1533,8 +1533,20 @@ function SpeedProfile({climber,editable,override,onSave,appConns,setAppConns}){
   {hikingSpeed>0?<><div style={{background:C.surface,borderRadius:9,padding:9,marginBottom:8}}><div style={{fontSize:17,fontWeight:700,color:C.green}}>{uRateN(hikingSpeed).toLocaleString()}</div><div style={{fontSize:12,color:C.textMuted}}>{uRateUnit()+" gain"}</div><div style={{fontSize:12,color:C.textSub,marginTop:3}}>Trail / Approach</div></div><div style={{padding:"8px 10px",background:C.surface,borderRadius:8,fontSize:12,color:C.textSub}}>{hikingSpeed>=1400?"Fast mover — long alpine days":hikingSpeed>=1100?"Moderate pace — most objectives":hikingSpeed>=800?"Relaxed pace":"Building fitness"}</div></>:<div style={{padding:"10px 11px",background:C.surface,borderRadius:9,fontSize:12,color:C.textSub,lineHeight:1.45}}>{editable?"Not set yet — add your typical trail gain rate so partner matches and time estimates use your real pace.":"Not shared yet."}</div>}</div>;
 }
 function SpeedCompat({a,b}){
-  const diff=Math.abs((a.hikingSpeedFtHr||950)-(b.hikingSpeedFtHr||950)),ok=diff<300,pct=Math.max(0,Math.min(100,100-Math.round(diff/5)));
-  return <div style={{background:ok?C.greenBg:C.amberBg,borderRadius:10,padding:"10px 12px",border:`1px solid ${ok?C.greenDim:C.amber+"44"}`}}><div style={{fontSize:12,fontWeight:700,color:ok?C.green:C.amber,marginBottom:5}}>SPEED COMPATIBILITY</div><div style={{display:"flex",gap:8,alignItems:"center",marginBottom:6}}><div style={{flex:1,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700}}>{uRateN(a.hikingSpeedFtHr||0).toLocaleString()}</div><div style={{fontSize:12,color:C.textMuted}}>{"You"+(a.speedSelfReported?" (self-reported)":"")}</div></div><div style={{fontSize:17}}>{ok?"✓":"✕"}</div><div style={{flex:1,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700}}>{uRateN(b.hikingSpeedFtHr||0).toLocaleString()}</div><div style={{fontSize:12,color:C.textMuted}}>{b.name.split(" ")[0]}</div></div></div><Bar val={pct} color={ok?C.green:C.amber}/><div style={{fontSize:12,color:C.textSub,marginTop:5}}>{ok?`Within ${uRateN(diff)}${uRateUnit()} — well matched`:`${uRateN(diff)}${uRateUnit()} difference — discuss pace`}</div></div>;
+  /* TWO FALLBACKS FOR ONE MISSING VALUE, FOUR LINES APART. `diff` substituted 950 for a pace
+     nobody had recorded while the number on screen substituted 0, so a climber who has never set
+     a pace saw "0 · You" beside "1,400 · Alex" and the verdict "450 ft/hr difference — discuss
+     pace". 1,400 - 0 is not 450: the panel was comparing them against an invented 950, colouring
+     itself from it, and telling them to discuss a pace they never gave. The #654 shape (a seed
+     climber's 950 shown as a new user's own) in a place the sweep did not reach.
+     `compat()` had the same defect and its comment records the fix -- `hikingSpeedFtHr||1000` on
+     both sides made every difference 0 -- so it now scores pace only when BOTH are known and
+     counts the gap as unknown otherwise. That is the rule here too: with a pace missing there is
+     no comparison to make, and saying so is the only honest thing on offer. */
+  const _pa=Number(a.hikingSpeedFtHr)||0,_pb=Number(b.hikingSpeedFtHr)||0,_them=String(b.name||"They").split(" ")[0];
+  if(!_pa||!_pb)return <div style={{background:C.surface,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:5}}>SPEED COMPATIBILITY</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.45}}>{(!_pa&&!_pb)?("Neither of you has recorded a trail pace, so there is nothing to compare yet."):(!_pa?("Add your typical trail gain rate and this will compare it with "+_them+"’s."):(_them+" hasn’t recorded a trail pace, so there is nothing to compare yet."))}</div></div>;
+  const diff=Math.abs(_pa-_pb),ok=diff<300,pct=Math.max(0,Math.min(100,100-Math.round(diff/5)));
+  return <div style={{background:ok?C.greenBg:C.amberBg,borderRadius:10,padding:"10px 12px",border:`1px solid ${ok?C.greenDim:C.amber+"44"}`}}><div style={{fontSize:12,fontWeight:700,color:ok?C.green:C.amber,marginBottom:5}}>SPEED COMPATIBILITY</div><div style={{display:"flex",gap:8,alignItems:"center",marginBottom:6}}><div style={{flex:1,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700}}>{uRateN(_pa).toLocaleString()}</div><div style={{fontSize:12,color:C.textMuted}}>{"You"+(a.speedSelfReported?" (self-reported)":"")}</div></div><div style={{fontSize:17}}>{ok?"✓":"✕"}</div><div style={{flex:1,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700}}>{uRateN(_pb).toLocaleString()}</div><div style={{fontSize:12,color:C.textMuted}}>{_them}</div></div></div><Bar val={pct} color={ok?C.green:C.amber}/><div style={{fontSize:12,color:C.textSub,marginTop:5}}>{ok?`Within ${uRateN(diff)}${uRateUnit()} — well matched`:`${uRateN(diff)}${uRateUnit()} difference — discuss pace`}</div></div>;
 }
 function VouchCard({v}){
   const labels={belay:"Belay",communication:"Communication",punctuality:"Punctuality",gear:"Gear Prep",fitness:"Fitness",safety:"Safety"},avg=Object.values(v.ratings).reduce((s,x)=>s+x,0)/Object.keys(v.ratings).length;
@@ -2088,7 +2100,12 @@ const filtered=ALL_CLIMBERS.filter(c=>{
     if(levelF!=="All"&&c.level!==levelF)return false;
     if(verifiedOnly&&!c.verified)return false;
     if(vScore(c)<minTrust)return false;
-    if(speedMatch&&Math.abs((c.hikingSpeedFtHr||0)-(ME.hikingSpeedFtHr||950))>400)return false;
+    /* Same invented 950 as SpeedCompat above, but this one HID PEOPLE: a candidate with no
+       recorded pace scored |0 - 950| = 950 and was filtered out, so "Speed match" quietly
+       excluded everyone who has not set one — measured against a number the searcher never
+       gave either. A pace nobody recorded is UNKNOWN, not a mismatch, which is the rule
+       compat() already follows. */
+    if(speedMatch){const _mp=Number(ME.hikingSpeedFtHr)||0,_cp=Number(c.hikingSpeedFtHr)||0;if(_mp&&_cp&&Math.abs(_cp-_mp)>400)return false;}
     if(discF!=="All"&&!(c.disciplines||[]).includes(discF))return false;
     if(availF.length){const _av=availOf(c);if(!_av.length||!availMatch(_av,availF))return false;}
     if(mode==="objectives"&&!c.objectiveIds.some(id=>ME.objectiveIds.includes(id)))return false;
