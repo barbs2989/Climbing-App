@@ -45,6 +45,7 @@ npm run check:photo-contract # route photos keep their ordering, refusal and gat
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
+npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -883,6 +884,56 @@ a build error, but a screen that renders wrong or not at all.
       on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
       an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
       on exactly that basis. One query at a time, as this guard's header already insists.
+- **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
+  `toposUnavailable` was the one outage flag **nothing had ever proven**, and `check:outage`'s own
+  header said why: rule 1 asks whether a screen ACKNOWLEDGES the fault, and Overview is already
+  `says-broken=YES` from `reportsUnavailable`, so the topo copy is **masked** — rule 1 passes
+  whether or not it flips. Reading that stated frame as a worklist found the flag **half-wired**.
+  Static (SSR + a pure function), so it sits in `npm run build`.
+  - **The headline flipped and the explanation under it did not.** An outage read *"Couldn’t load
+    the topos"* and then *"A topo overlays the route line… **Got a clear shot? Add it** and draw the
+    line so the next party can follow it."* above an **Add a topo photo** button — an honest
+    headline over a body still presuming there is nothing there.
+  - **It is the ONLY one, measured rather than assumed, so no detector for the class was built.**
+    All 17 `xUnavailable` flags and every render site were swept: every sibling conditions its
+    explanation too, several saying so outright (`sibsUnavailable` *"this is not a claim that there
+    are none"*, `crewInvitesUnavailable` *"do not read this as none waiting"*). A `groupsUnavailable`
+    hit was a **false positive of the sweep's own heuristic** — its body really is conditioned. *A
+    detector for a class of one is the thing this repo keeps refusing to build.*
+  - **REACT-QUERY DOES NOT SURFACE A CACHED ERROR UNDER `renderToStaticMarkup`, and that is why
+    this had never been proven.** Measured directly: with the cache in `status:"error"` the hook
+    returns `{status:"pending", isError:false, isLoading:true}`, so `TopoSection` takes its
+    *"Loading topo photos…"* branch and never reaches the empty state — neither `retry:false` nor
+    `refetchOnMount:false` nor `staleTime:Infinity` changes it. **That is why every provable sibling
+    (`ConsensusPanel`, `CatchLedger`, `FriendsList`, `Inbox`) takes its flag as a PROP**: a flag read
+    off a hook INSIDE the component under test is unreachable to SSR. Same family as *effects do not
+    run under `renderToStaticMarkup`*.
+    - So the decision comes out instead of the query going up: **`topoEmptyCopy(unavailable)`** is a
+      pure exported function, the way `seasonShort()` and `campDetail()` are. Half one **executes**
+      both branches; half two **renders** the healthy one end to end, which proves that function's
+      output reaches the markup. What it does **not** prove — that the failing branch's markup
+      appears in a browser — is stated in the script rather than implied.
+    - **The two renders came back BYTE-IDENTICAL at 505 characters first**, because a cache with no
+      entry is `pending` and both sides were measuring the loading branch. Four assertions failed
+      against a branch that was never under test. The tell was the lengths matching *exactly*; the
+      guard now fails closed under 900 characters for that reason.
+  - Two traps beyond the ones its siblings record. `RouteDetail.jsx` **imports `USE_DB` without
+    re-exporting it**, so reading it off that bundle gives `undefined` — the fail-closed check then
+    reported *"the flag can never fire"*, catching the guard rather than the app; a generated entry
+    re-exports both. And **`createClient` builds a RealtimeClient AT CONSTRUCTION**, which needs a
+    `WebSocket` constructor — native on node 22, absent on 20 — so it is stubbed explicitly rather
+    than passing in CI and dying on a contributor's machine.
+  - **A GATE, NOT A PROBE, because this exact fix is the invisible kind**: it changes a string and a
+    call, not a NAME, so `audit:silent-reverts` cannot see a stale-base squash undoing it — that
+    audit says so in its own caveat and #1267 is the recorded incident. Deliberately **not** folded
+    into `check:outage-copy`: that guard merged two probes to stop esbuild reading one 400kB file
+    twice, and `TopoSection` is in a different file, so there is no bundle to share.
+  - Fails **closed**: a missing export, a thin render, or fewer than 8 cases are each a broken
+    guard. Injection-tested **5/5** (`scripts/oneoff/inject-topo-outage-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the
+    real historical defect. **Case 3 must fail on the HEALTHY side** — deleting the invitation from
+    both states also silences case 1, so a guard asserting only the outage half would go green on a
+    blanket rewrite that turned a correct empty state into an error message.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
