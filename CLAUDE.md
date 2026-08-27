@@ -47,6 +47,7 @@ npm run check:photo-contract # route photos keep their ordering, refusal and gat
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
+npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -86,6 +87,7 @@ npm run check:action-versions # no workflow pins an action below the version we 
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
 npm run check:read-failures # no failed read that a caller reads as an empty one (in build)
+npm run check:outage-flag-reach # no outage flag that is computed and then read by nothing (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:migrations # two migrations must never share a number (in build)
@@ -109,10 +111,11 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
+npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES place one named point in two places?
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
-npm run audit:expiring-closures # does a route state a closure that has already expired?
+npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
@@ -967,6 +970,56 @@ a build error, but a screen that renders wrong or not at all.
       on `isError`, **not on whether any row exists**, so gating the copy changes the screen under
       an outage whether or not the fixture has data — `Crew:Requests` went `says-empty=YES` → `no`
       on exactly that basis. One query at a time, as this guard's header already insists.
+- **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
+  `toposUnavailable` was the one outage flag **nothing had ever proven**, and `check:outage`'s own
+  header said why: rule 1 asks whether a screen ACKNOWLEDGES the fault, and Overview is already
+  `says-broken=YES` from `reportsUnavailable`, so the topo copy is **masked** — rule 1 passes
+  whether or not it flips. Reading that stated frame as a worklist found the flag **half-wired**.
+  Static (SSR + a pure function), so it sits in `npm run build`.
+  - **The headline flipped and the explanation under it did not.** An outage read *"Couldn’t load
+    the topos"* and then *"A topo overlays the route line… **Got a clear shot? Add it** and draw the
+    line so the next party can follow it."* above an **Add a topo photo** button — an honest
+    headline over a body still presuming there is nothing there.
+  - **It is the ONLY one, measured rather than assumed, so no detector for the class was built.**
+    All 17 `xUnavailable` flags and every render site were swept: every sibling conditions its
+    explanation too, several saying so outright (`sibsUnavailable` *"this is not a claim that there
+    are none"*, `crewInvitesUnavailable` *"do not read this as none waiting"*). A `groupsUnavailable`
+    hit was a **false positive of the sweep's own heuristic** — its body really is conditioned. *A
+    detector for a class of one is the thing this repo keeps refusing to build.*
+  - **REACT-QUERY DOES NOT SURFACE A CACHED ERROR UNDER `renderToStaticMarkup`, and that is why
+    this had never been proven.** Measured directly: with the cache in `status:"error"` the hook
+    returns `{status:"pending", isError:false, isLoading:true}`, so `TopoSection` takes its
+    *"Loading topo photos…"* branch and never reaches the empty state — neither `retry:false` nor
+    `refetchOnMount:false` nor `staleTime:Infinity` changes it. **That is why every provable sibling
+    (`ConsensusPanel`, `CatchLedger`, `FriendsList`, `Inbox`) takes its flag as a PROP**: a flag read
+    off a hook INSIDE the component under test is unreachable to SSR. Same family as *effects do not
+    run under `renderToStaticMarkup`*.
+    - So the decision comes out instead of the query going up: **`topoEmptyCopy(unavailable)`** is a
+      pure exported function, the way `seasonShort()` and `campDetail()` are. Half one **executes**
+      both branches; half two **renders** the healthy one end to end, which proves that function's
+      output reaches the markup. What it does **not** prove — that the failing branch's markup
+      appears in a browser — is stated in the script rather than implied.
+    - **The two renders came back BYTE-IDENTICAL at 505 characters first**, because a cache with no
+      entry is `pending` and both sides were measuring the loading branch. Four assertions failed
+      against a branch that was never under test. The tell was the lengths matching *exactly*; the
+      guard now fails closed under 900 characters for that reason.
+  - Two traps beyond the ones its siblings record. `RouteDetail.jsx` **imports `USE_DB` without
+    re-exporting it**, so reading it off that bundle gives `undefined` — the fail-closed check then
+    reported *"the flag can never fire"*, catching the guard rather than the app; a generated entry
+    re-exports both. And **`createClient` builds a RealtimeClient AT CONSTRUCTION**, which needs a
+    `WebSocket` constructor — native on node 22, absent on 20 — so it is stubbed explicitly rather
+    than passing in CI and dying on a contributor's machine.
+  - **A GATE, NOT A PROBE, because this exact fix is the invisible kind**: it changes a string and a
+    call, not a NAME, so `audit:silent-reverts` cannot see a stale-base squash undoing it — that
+    audit says so in its own caveat and #1267 is the recorded incident. Deliberately **not** folded
+    into `check:outage-copy`: that guard merged two probes to stop esbuild reading one 400kB file
+    twice, and `TopoSection` is in a different file, so there is no bundle to share.
+  - Fails **closed**: a missing export, a thin render, or fewer than 8 cases are each a broken
+    guard. Injection-tested **5/5** (`scripts/oneoff/inject-topo-outage-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the
+    real historical defect. **Case 3 must fail on the HEALTHY side** — deleting the invitation from
+    both states also silences case 1, so a guard asserting only the outage half would go green on a
+    blanket rewrite that turned a correct empty state into an error message.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -1639,13 +1692,18 @@ a build error, but a screen that renders wrong or not at all.
   checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
   - **TWO SESSIONS WIRED IT WITHIN THE HOUR AND BOTH MERGED**, so for a while every push to main
     ran the same audit twice (#1288 `silent-reverts.yml`, #1290 `silent-revert-check.yml`).
-    Consolidated into ONE workflow rather than picking a winner, because **they failed on different
-    halves and neither is a superset**: `--fail-on outage-flag` catches a silent `xUnavailable`
-    removal (both #1248 and #1267 — and #1267 deleted **no files at all**, verified with
-    `git show 2bd9a5d --diff-filter=D`), while `--fail-on-silent` fires on one commit removing
-    files added by SEVERAL others — the stale-base fingerprint — which would catch a pure-file
-    revert carrying no flag. Both flags now run in one job, and each was re-proven to fire on its
-    own incident after the merge. See [[parallel-sessions-cause-redundant-prs]].
+    Consolidated into one workflow (#1321), then **corrected by #1328 — and the correction is the
+    part worth reading, because the first consolidation kept a redundancy on a claim that was
+    wrong.** #1321 ran BOTH flags, arguing they *"failed on different halves and neither is a
+    superset"*. That is false: `--fail-on-silent` also fires on a SILENT definition removal, and it
+    is tested **before** the `--fail-on` block, so a non-empty `silentKinds` exits there first and
+    the `--fail-on` comparison is unreachable. Measured on the real incidents rather than argued —
+    `--fail-on-silent` **alone** exits 1 at `2bd9a5d` (#1267, four reverted flags, **no files
+    deleted at all**, verified with `git show 2bd9a5d --diff-filter=D`), exits 1 at `68bb307`
+    (#1248, four files across three commits) and exits **0** on healthy main. One flag, both
+    incidents. See [[parallel-sessions-cause-redundant-prs]] — and note the shape: *"neither
+    subsumes the other" is a control-flow claim about the script, so read the script rather than
+    reasoning from what each flag is named for.*
   - **IT NOW RUNS ON EVERY MERGE (`.github/workflows/silent-reverts.yml`), and until then it ran
     when somebody REMEMBERED — which is how three of these shipped in a single day.** #1248 dropped
     two outage flags belonging to #1239; #1253 restored them; #1267 dropped four, three of them the
@@ -1659,14 +1717,27 @@ a build error, but a screen that renders wrong or not at all.
     - **`fetch-depth: 0` is not a nicety.** The default depth of 1 makes this audit **vacuous
       rather than merely limited**: its subject is history, so a one-commit clone gives it one
       commit to walk and it reports a clean tree having examined nothing.
-    - **`--fail-on outage-flag`, and ONLY that kind.** The default stays report-only and that is
-      deliberate — over 500 commits every hit of the file rule has been a **promotion** and every
-      generic-token finding a supersession or a rename, so failing on those would make the audit
-      argue with correct work. `outage-flag` is the one class with a different **measured**
-      precision: 3 for 3 genuine reverts, and **0 findings across 300 first-parent commits** of a
-      healthy tree. Proven in both directions before shipping — exit 0 on today's main at 120
-      commits, exit 1 on `--ref 2bd9a5d` naming the kind, and exit 0 there **without** the flag, so
-      the documented report-only behaviour is unchanged.
+    - **IT WAS WIRED TWICE, BY TWO SESSIONS, AND BOTH RAN ON EVERY MERGE.** `silent-reverts.yml`
+      (`--commits 120 --fail-on outage-flag`) and `silent-revert-check.yml`
+      (`--commits 80 --fail-on-silent`) asked one question with two runners and two similarly-named
+      checks, and a reader had no way to know they were the same thing. They were **not**
+      complementary, and the proof is control flow rather than a measurement: `silentKinds` is only
+      added to inside the same `if(!deliberate)` branch that increments `silent`, and
+      `if(silent) GATE.push(…)` runs **before** the `--fail-on` block — so a non-empty `silentKinds`
+      always exits under `--fail-on-silent` first and the `--fail-on` comparison is **unreachable**.
+      `--fail-on-silent` also gates on the multi-commit file fingerprint, which `--fail-on` never
+      does. So it is strictly broader in kind; the only thing the other file had was the **larger
+      window**, and that is what survives the merge. One workflow now: `--commits 120
+      --fail-on-silent`, no `npm ci` (the script shells out to git, so it keeps working when the
+      build is broken — which is when a bad merge is most likely to have landed).
+    - **`--fail-on outage-flag` is still supported and is what to reach for by hand**, because the
+      default stays report-only and that is deliberate — over 500 commits every hit of the file rule
+      has been a **promotion** and every generic-token finding a supersession or a rename, so
+      failing on those would make the audit argue with correct work. `outage-flag` is the one class
+      with a different **measured** precision: 3 for 3 genuine reverts, and **0 findings across 300
+      first-parent commits** of a healthy tree. Proven in both directions before shipping — exit 0
+      on today's main at 120 commits, exit 1 on `--ref 2bd9a5d` naming the kind, and exit 0 there
+      **without** the flag, so the documented report-only behaviour is unchanged.
     - **The window must reach the ADDING commit or a clean result means nothing** — the trap this
       entry already records, where `--commits 6` reported clean on an incident `--commits 10`
       caught. A stale branch can be weeks old: #1238's flag was added **30** first-parent commits
@@ -2420,6 +2491,42 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
+  and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
+  needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
+  comment is right: lengths catch every route that records them, prose catches only the few that
+  describe their setup. What it could not catch is the other direction, **a row whose recorded
+  lengths fit one rope while the row itself says they do not.**
+  - `wa_east_face_2` is the case. Two stations, lengths `[35, null]` → `single70` → the header read
+    **`RAPPELS · 2 rappels`** and `rappelSingleRopeWarning()` — the amber line written for a
+    single-rope party to read *before they leave the car* — was **silent**. The row says twice that
+    it must not be: its count note reads *"a single rope does not link the stations"* and the
+    station's own `pull` note repeats *"Two 60 m ropes are the standard kit for this descent and a
+    single rope will not link these two stations."*
+  - **The length rule was resting on a number the same row disclaims.** That note continues
+    *"Per-station distances are not published; the listed values are estimates … and should not be
+    planned around"* — and the 35 that produced `single70` is one of them. Nulling it does not help
+    (no lengths → no verdict → still no warning); the fix is to read what the row **states**.
+  - **A STATED requirement carries no distance, so `max` is null and neither reader may quote one.**
+    Inventing a metre figure on a safety line is the class this file records under half a dozen
+    other column names. The header says `two ropes` rather than `two ropes (longest N m)`, and the
+    warning names no distance it does not have.
+  - **THE ESCAPE IS PER SENTENCE AND IT IS THE WHOLE PRECISION RULE.** *"Double-rope rappel (or two
+    single-rope rappels)"* is **not** a two-rope requirement — one rope works and costs one extra
+    rappel, which is the `singleRopeExceeds` path's job. **Seven catalog rows are that shape** and
+    none may match, because a false rope warning is how a real one stops being read. Per sentence
+    rather than per row, so a requirement stated about one station is not cancelled by an
+    alternative offered about another.
+  - **Behaviour-diffed across every row rather than asserted**: 151 station tables, old module vs
+    new, **exactly 1 header and 1 warning changed**, the gained warning justified by the row's own
+    words, and **0 rows lost a warning**. Injection-tested — reverting `lib/rappels.js` fails 7 of
+    the new cases by name, and the four negative cases stay silent in both directions.
+  - **Measured NON-finding, so nobody re-derives it as a defect:** 9 rows disclaim their own station
+    lengths, and 3 of those show a warning quoting a metre figure (`wa_action_potential`,
+    `wa_liberty_bell_thin_red_line`, `wa_ultramega_ok`). Each is **correct anyway** — their notes
+    say the figures *assume near-full-length double-rope rappels*, i.e. the lengths are derived from
+    the two-rope conclusion rather than evidence for it — and each note renders directly beneath the
+    warning, so the screen self-corrects. Do not "fix" these by dropping the number.
 - **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
   `descent_text` says are not made. Both describe the same descent of the same climb, so a
   disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its
@@ -3937,6 +4044,54 @@ the correction knows the screen is wrong, and they have no way to report it.
     machine-readable mode inherits this trap.**
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+- **`audit:cross-route-pins`** asks whether **two routes place the same named point in two different
+  places**. It is a FIFTH waypoint audit and that needs justifying, because this file already records
+  that of the four existing ones **two ask the same question with different tolerances**. This one is
+  their **complement** rather than another take: every one of them is scoped to a **single route** —
+  a pin against its own track (`audit:waypoints`, `audit:waypoint-track`), pins against each other on
+  one route (`audit:waypoint-geometry`), a route's two copies of its own trailhead
+  (`audit:trailhead-agreement`), a pin against its own area (`audit:coord-origin`). *"Two routes
+  disagree about where a named place is"* is invisible to all five **by construction**. Its unit is a
+  **NAME**, not a route, which is why it could not be folded into `audit:waypoint-geometry` without
+  changing what that audit's rows mean. Read-only, report-only; **not** a build gate — a property of
+  the DB rather than the checkout, the reasoning that keeps `check:counts` out.
+  - **The signal is trustworthy because agreement is the NORM, and that is measured on every run
+    rather than quoted.** Of 537 waypoint names carried by more than one WA route, **424 (79%) agree
+    within 500 m**. So a multi-kilometre gap is ~20x the ordinary spread, not ordinary noise. Eleven
+    routes placed *Hannegan Pass* together and one placed it **5.3 km** away.
+  - **TRIAGE BY FEATURE CLASS BEFORE DISTANCE** — the rule this repo already paid for in the GNIS
+    work, where 8 of 15 hits were linear or areal. A ford, a wilderness boundary, a ridge crest has
+    **extent**, so two routes meeting it at different points are **both right**; only a point —
+    trailhead, camp, pass, col, lake, falls — has one location to be wrong about. Without this the
+    detector reports correct data: *"Olympic National Park Boundary"* spans **31.7 km** because the
+    boundary does, and *"Chiwawa River ford"* spans **15.9 km** because the river does.
+  - **A NAMESAKE IS NOT A DEFECT and is printed separately rather than suppressed.** Washington
+    genuinely holds two *Cathedral Passes* **173 km** apart, two *Snow Lakes*, two *Myrtle Lakes*,
+    several *High Camps*. Both rows are correct, and an audit reporting them is one people learn to
+    ignore — but hiding the judgement would stop a reader checking it.
+  - **IT DELIBERATELY DOES NOT PICK A WINNER, and measuring is what forced that.** A majority is
+    **not independent evidence**: ten routes sharing an approach chain may have inherited one
+    enrichment pass's coordinate, so ten agreeing records can be **one claim counted ten times**.
+    Adjudicating needs a source descending from none of them — the USGS 3DEP ground — and on the
+    first 8 findings that check **REFUSED HALF**. For *Lake Constance* the ground fits the
+    **OUTLIER** better than the majority (4,667-4,776 ft against 4,378-4,577), so the vote alone
+    would have "repaired" toward the weaker record. For *High Camp* the ground refuses **both**.
+  - **Four were repaired** (`scripts/oneoff/fix-outlying-pins-against-the-majority.mjs`), each with
+    three independent lines agreeing — the majority, a matching stated elevation, and the ground
+    refusing the outlier: *Royal Lake* on `wa_honeymoon_route` sat **7.5 km** away on ground **2,500
+    ft below** the height it claimed; *Hannegan Pass* on `wa_icy_peak_southwest_route` **1,600 ft
+    above**; *Lake Serene* on `wa_philadelphia_mountain_scramble` **1,678 ft above**; *Fred's Lake*
+    on `wa_mount_carru_scramble`. Candidates went **25 -> 21**, agreement **79% -> 80%**.
+  - **It is not cosmetic**: `gpxDownload` writes waypoints into the GPX file a climber carries into
+    the field, so a displaced pin is exported as well as drawn and panned to.
+  - **The repair copies ONE NAMED DONOR ROW, never a centroid or a mode.** Averaging would mint a
+    coordinate no row holds — precisely the fabrication this catalog already carries **346** examples
+    of, committed by the repair rather than by an enrichment pass. A **mode** does not work either,
+    and measuring showed why: the agreeing routes store **the same point at different precisions**
+    (48.8829219, 48.883737, 48.8837, 48.88374 ...), all within ~100 m, so no two are byte-equal and
+    an exact-match mode **refuses a unanimous cluster**.
+  - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
+    matching nothing are each a broken scan, never a clean catalog.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
@@ -5099,10 +5254,34 @@ the correction knows the screen is wrong, and they have no way to report it.
     worse. And do not replace one with a closure that is true *today*; that reproduces the defect,
     which is why the original sweep deliberately did **not** record a live fire closure it had just
     confirmed.
+  - **`--json` EXISTS SO NOTHING RE-DERIVES THE TIERING, and it was added because something already
+    had.** `group-stale-closures-by-event` is the consumer — it turns this backlog into a research
+    worklist by closure EVENT rather than by route — and its first version wrote its own shelf-life
+    needle. Being looser than these four tiers (which apply the `SELF_LIMITING` and `PERMANENT`
+    exclusions), it swept **~20 routes in the Suiattle corridor where this audit flags exactly ONE**:
+    the other 19 already cite closure order `#06-05-26-03` and its end date, which is the very form
+    this audit treats as acceptable. **Anyone working that list would have been "fixing" nineteen
+    correct rows.** The four-grade-parsers shape, arriving as a second classifier for a report rather
+    than as a second implementation of a function.
+    - The consumer's **event key** inflated it a second way, in the opposite direction to the one
+      [[a-detectors-clustering-key-decides-what-it-can-see]] records: keying on order-number →
+      road+milepost → first token of `road.name` **splits one closure across several groups**
+      whenever rows spell the road differently or only some cite the order. FR 6200 appeared three
+      times, Hozomeen three times — so *"4 of 57 events done"* credited four settled events with 20
+      routes when they cover **36 of 98**. A key too narrow to see a class costs findings; a key too
+      narrow to *unify* one makes finished work look unfinished.
+    - The payload **refuses rather than emitting a short one** — a serialisation that quietly lost
+      the tiering reads as a clean backlog, which is the false-pass direction.
+    - The script ends on `process.exitCode`, never `process.exit()`. Do not "tidy" that: on a **pipe**
+      an explicit exit truncates stdout mid-write, and the symptom is a script that appears to emit
+      broken JSON at a different byte every run.
   - Read-only, anon key, fails closed on an empty read **and** on zero prose values. **Not a build
     gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
-    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, 3 cases at the
-    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero.
+    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, **6** cases at the
+    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero, and
+    `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
+    the output path** — `--json` routes every report line through `say()`, so a mistake there is
+    silent on stdout and invisible in the exit code.
 - **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
   third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
@@ -5277,6 +5456,64 @@ drew a conclusion from that emptiness:
   `trackIsJustTheWaypoints()` returns "genuine track" for any line over 40 points, and
   `claimMyCrewEmailInvites()` returns `0` for a missing RPC, so a broken deploy and an empty
   inbox are the same number.
+
+- **`check:outage-flag-reach`** asks the last question in that chain: **is the flag read by
+  anything at all?** 17 `xUnavailable` flags now live across the three app files, added by ~10 PRs
+  from parallel sessions all editing the **same two dense lines**. Declaring one is the easy half;
+  it only does something if a component consumes it. Static (Babel over the app sources), so it
+  sits in `npm run build`.
+  - **Three sibling guards are each structurally blind to a dead one**, which is the whole argument.
+    `check:outage` compares a healthy walk against a failing one — a flag reaching no screen changes
+    no copy, so that screen compares **equal** and is *skipped*, reported as "seed-backed, proves
+    nothing" rather than as a defect; its verdict on a dead flag is silence. `check:dead-props` asks
+    about props a component declares or a call site passes, never about a local `const`.
+  - **And `audit:silent-reverts` cannot see it either, by its own admission.** That audit gained an
+    `outage-flag` pattern precisely because these are the shape a stale-base squash drops — but it
+    tracks **names**, so a merge that keeps the declaration and drops the JSX *read* leaves the name
+    in place and it reports **0**. Its closing caveat already says so: *"a merge that kept a name and
+    dropped its guard clause is invisible here."* This is that shape, one column over, and injection
+    case 1 is exactly it.
+  - **COUNTED AS IDENTIFIER NODES, NEVER AS TEXT — a measured defect in this guard's own first
+    draft, not caution.** It began as a regex over comment-stripped source, and the lazy block-comment
+    strip removed **101,636 characters from `RouteDetail.jsx` — 21% of the file** — because a
+    comment-opening sequence inside a **string literal** starts a phantom comment running to the next
+    real terminator. One casualty was the live read of `toposUnavailable`, so the scan reported a
+    **working flag as DEAD**: the direction that sends an author to "fix" correct code. A hand-rolled
+    scanner tracking quotes to dodge that desynchronises on an apostrophe in JSX text. An AST has
+    neither failure mode **and needs no mask at all** — a comment naming a flag is not an identifier,
+    and neither is a string. Cases 3 and 4 pin both.
+  - **The declaration is resolved through Babel SCOPE, never by matching `VariableDeclarator.id`,
+    and the narrow test was wrong in BOTH shapes this app uses.** `const [x,setX]=useState()` puts
+    the name inside an `ArrayPattern`, and a flag delivered as a **prop** is declared by destructuring
+    in the receiving component's parameter list. Both `dmThreadsUnavailable` and `dmUnavailable`
+    reported as *"referenced but never declared"* — a confident accusation against two healthy flags.
+    A **JSX attribute name** is also not a variable reference: `<Inbox dmUnavailable={dmThreadsUnavailable}/>`
+    holds **one** read, and counting the attribute credited a prop-passed flag with a phantom read at
+    its own call site.
+  - A setter is **not** a flag (`setDmThreadsUnavailable` matches the name shape), and a dead setter
+    wants a different repair. Fails **closed**: fewer than 10 flags found is a broken scan or a moved
+    convention, never a clean sweep.
+  - **SECTION 2 ENFORCES THE NAMING KEY RATHER THAN ASSUMING IT.** Section 1 finds flags by the
+    `*Unavailable` suffix, so a future flag called `photosBroken` is invisible to it and the guard
+    prints **ok** — the false-pass direction, and the too-narrow-proxy trap this file records
+    repeatedly. So an `isError`-derived **binding** that does not carry the convention is itself a
+    failure. Measured before shipping: **18 `.isError` references, 14 of them named bindings and all
+    14 already on the convention** — zero counterexamples, so the rule is new without being
+    retroactive. The other 4 are inline uses in an `if`/`return`, consumed on the spot; not bindings,
+    so they cannot go dead and are out of scope **by construction** rather than by exemption, which
+    is why this needs no allow-list to rot. Injection case 6 renames one flag consistently — the app
+    still works, section 1 goes blind, and section 2 must catch it.
+  - **What a pass does NOT mean**, stated in the script rather than implied: that the receiving
+    component reads the prop (`check:dead-props`' question), or that the copy it flips is honest
+    (`check:outage`'s). It answers exactly one thing.
+  - **Cheaper than a gate already in the chain, measured rather than assumed** — and the first
+    reading was load, not cost. 37s wall on a box at load average **221** is not a profile; the real
+    figure is **6.2s CPU**, against **7.5s** for `check:refs` on the same box moments later. Compare
+    against a sibling on the same box, never against a clock.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-outage-flag-reach-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must stay
+    QUIET**: a flag removed *entirely* is `audit:silent-reverts`' subject, and failing on it would
+    make two guards argue over one commit.
 
 **Throwing is NECESSARY AND NOT SUFFICIENT — the screen can still say you have none.**
 `check:read-failures` **passes** for `useMyObjectives`, `useMyLists` and `useUserLogs`: all three

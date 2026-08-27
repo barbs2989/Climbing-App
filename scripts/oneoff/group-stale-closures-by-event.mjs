@@ -1,69 +1,99 @@
 // Group the expiring-closure backlog by CLOSURE EVENT, not by route.
 //
-// audit:expiring-closures reports 129 values on 97 routes, and researching 129 times would be the
+// audit:expiring-closures reports 126 values on 95 routes, and researching 126 times would be the
 // wrong unit: one closure serves many routes. FR 6200 beyond Atkinson Flat covers Carne, Dumbell,
-// Helmet Butte, Buck and Chiwawa at once; Harts Pass covers Blizzard, Carru and the Pasayten
-// trailheads. Research once per event, apply to every row that cites it.
+// Buck and Chiwawa at once; the Suiattle order covers a dozen Glacier Peak and Ptarmigan Traverse
+// lines. Research once per event, apply to every row that cites it.
 //
-// The event key is, in order of strength:
-//   1. a FOREST ORDER NUMBER — exact, and the thing to search for. One road carries several
-//      concurrent orders, so the road name alone finds the wrong one. That near miss is recorded in
-//      [[stale-closure-grind-is-half-viable-and-blind-to-missing-ones]]: the USFS "Harts Pass Road
-//      restriction" page is the standing 2014 trailer order, not the Dec 2025 storm closure.
-//   2. road identity + milepost — the same key audit:trailhead-road section 3 uses.
-//   3. road identity alone — weakest, and flagged as such.
+// IT RE-DERIVED THE AUDIT'S CLASSIFICATION AND WAS LOOSER THAN IT — TWO INFLATIONS, BOTH SILENT.
+// The first version wrote its own shelf-life needle (`\bcurrently\b|\bindefinitel|as of …`) and its
+// own event key, and got both wrong in the direction that manufactures work:
 //
-// Report-only. Prints a research worklist ordered by how many routes each event unblocks.
-import { selectAll } from "../lib/supabase-env.mjs";
+//   1. A SECOND CLASSIFIER. Its needle matched far more than the audit's four tiers, which apply
+//      SELF_LIMITING and PERMANENT exclusions. In the Suiattle corridor it swept ~20 routes where
+//      the audit flags exactly ONE — the other 19 already cite closure order 06-05-26-03 and its
+//      end date, which is the very form the audit treats as acceptable. Anyone working that list
+//      would have been "fixing" nineteen correct rows. Same shape as the four grade parsers.
+//      It now consumes `audit:expiring-closures --json`. ONE classifier, and this file is not it.
+//
+//   2. A KEY THAT SPLITS ONE EVENT. Keying on order-number > road+milepost > first distinctive
+//      token of road.name fragments a single closure across several groups whenever rows spell the
+//      road differently or only some cite the order: FR 6200 appeared THREE times, Hozomeen three
+//      times. So "4 of 57 events done" credited four settled events with 20 routes when they cover
+//      36 of 98. Finished work looked unfinished.
+//      [[a-detectors-clustering-key-decides-what-it-can-see]] — recorded for a key too narrow to
+//      SEE a class; this is the same property costing coverage the other way round.
+//
+// Report-only. Prints what the settled events already cover, then the true remainder.
+import { execFileSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const FIELDS = ["status", "seasonalGate", "driveNote"];
-const ACC = ["closures", "seasonal"];
-const SHELF = /\bindefinitel|no reopening (?:estimate|date)|no estimated (?:repair|reopening)|until further notice|as of (?:mid|early|late|the )?[- ]?\d{4}|as of the \d{4}|\bcurrently\b/i;
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-const rows = await selectAll("routes", "id,name,road,access", "id=like.wa_*", { pageSize: 1000 });
-if (!rows.length) { console.error("empty read — refusing to report"); process.exit(1); }
+/* Events already researched, matched on what their rows SAY rather than on the key that grouped
+   them — the key is the thing shown wrong above. Each is a claim that the research was done and
+   applied; an entry matching nothing is reported as stale rather than passing silently. */
+const SETTLED = [
+  { name: "FR 6200 / Atkinson Flat", note: "still closed, order #06-17-07-2026-11 (20 May 2026 - 31 Dec 2027)",
+    re: /06-17-07-2026-11|atkinson flat|chiwawa river road|FR ?6200|forest road 6200|phelps creek/i },
+  { name: "Cascade River Road / MP 20", note: "gated at Eldorado MP 20; 9 rows correct, 1 live error fixed",
+    re: /cascade river road|eldorado (?:creek )?(?:trailhead )?\(?(?:MP|milepost) ?20|boston basin/i },
+  { name: "Harts Pass / FS 5400", note: "NOT SETTLEABLE — public sources stop at May 2026",
+    re: /harts pass|FS ?(?:road )?5400/i },
+  { name: "Silver-Skagit / Hozomeen", note: "correct, no edit — Border 2 Fire still active (NPS, 10 Aug 2026)",
+    re: /silver[- ]skagit|hozomeen|border 2 fire|international boundary/i },
+  { name: "Suiattle River Road (FR 26)", note: "still closed, order #06-05-26-03 (2 Apr 2026 - 1 Jan 2028) — verified vs the USFS alert",
+    re: /suiattle|06-05-26-03|downey creek/i },
+];
 
-const ORDER = /\b(\d{2}-\d{2}-\d{2}-\d{4}-\d{2}|\d{2}-\d{2}-\d{2}-\d{2})\b/;
-const MP = /\b(?:milepost|mile ?post|\bMP)\.?\s*(\d{1,3}(?:\.\d)?)/i;
-const STOP = new Set(["road","rd","the","and","from","via","to","at","trailhead","th","access","park","national",
-  "forest","service","fs","fr","nf","hwy","highway","route","sr","us","county","main","north","south","east","west",
-  "upper","lower","river","creek","lake","pass","area","campground","entrance","off","mile","milepost","closed","closure"]);
-const rtoks = x => [...new Set([...String(x || "").toLowerCase().matchAll(/[a-z]{4,}/g)].map(m => m[0]).filter(t => !STOP.has(t)))];
-
-const events = new Map();
-let values = 0;
-for (const r of rows) {
-  const rd = r.road && typeof r.road === "object" ? r.road : {};
-  const ac = r.access && typeof r.access === "object" ? r.access : {};
-  const vals = [];
-  for (const f of FIELDS) if (typeof rd[f] === "string") vals.push([`road.${f}`, rd[f]]);
-  for (const f of ACC) if (typeof ac[f] === "string") vals.push([`access.${f}`, ac[f]]);
-  for (const [field, v] of vals) {
-    if (!SHELF.test(v)) continue;
-    values++;
-    const ord = ORDER.exec(v), mp = MP.exec(v);
-    const toks = rtoks(rd.name).length ? rtoks(rd.name) : rtoks(v);
-    const key = ord ? `order:${ord[1]}`
-      : mp && toks.length ? `road:${toks[0]}|mp:${mp[1]}`
-      : toks.length ? `road:${toks[0]}` : "unkeyed";
-    const strength = ord ? "ORDER" : (mp && toks.length) ? "road+mp" : toks.length ? "road only" : "unkeyed";
-    if (!events.has(key)) events.set(key, { key, strength, routes: new Set(), samples: [] });
-    const e = events.get(key);
-    e.routes.add(r.id);
-    if (e.samples.length < 2) e.samples.push({ id: r.id, field, v: v.slice(0, 170) });
-  }
+let payload;
+try {
+  payload = JSON.parse(execFileSync("node", [path.join(ROOT, "scripts/audit-expiring-closures.mjs"), "--json"],
+    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, cwd: ROOT }));
+} catch (e) {
+  console.error(`FAIL — could not read the audit's classification: ${String(e.message).slice(0, 200)}`);
+  process.exit(1);
+}
+if (!payload || !Array.isArray(payload.findings) || !payload.findings.length) {
+  console.error("FAIL — the audit returned no findings. Refusing to report an empty worklist, which is\nindistinguishable from a clean backlog."); process.exit(1);
 }
 
-const list = [...events.values()].sort((a, b) => b.routes.size - a.routes.size);
-console.log(`${values} shelf-life value(s) across ${new Set([...events.values()].flatMap(e => [...e.routes])).size} route(s)`);
-console.log(`grouped into ${list.length} closure event(s)\n`);
-console.log(`${list.filter(e => e.strength === "ORDER").length} keyed by FOREST ORDER NUMBER (exact — search for this, never the road name)`);
-console.log(`${list.filter(e => e.strength === "road+mp").length} keyed by road + milepost · ${list.filter(e => e.strength === "road only").length} by road alone · ${list.filter(e => e.strength === "unkeyed").length} unkeyed\n`);
+const covered = new Map(SETTLED.map(s => [s.name, { routes: new Set(), values: 0, note: s.note }]));
+const rest = [];
+for (const f of payload.findings) {
+  const hay = `${f.text} ${f.roadName || ""}`;
+  const hit = SETTLED.find(s => s.re.test(hay));
+  if (hit) { const c = covered.get(hit.name); c.routes.add(f.id); c.values++; }
+  else rest.push(f);
+}
+
+console.log(`${payload.flagged} flagged value(s) on ${new Set(payload.findings.map(f => f.id)).size} route(s), from audit:expiring-closures\n`);
+console.log("ALREADY RESEARCHED — what each settled event actually covers:\n");
+let stale = 0;
+for (const [name, c] of covered) {
+  if (!c.values) { console.log(`   STALE  ${name} — matches nothing in the backlog now; re-check or drop the entry`); stale++; continue; }
+  console.log(`   ${String(c.values).padStart(3)} value(s) / ${String(c.routes.size).padStart(2)} route(s)  ${name}`);
+  console.log(`                          ${c.note}`);
+}
+const cv = [...covered.values()].reduce((n, c) => n + c.values, 0);
+console.log(`\n   ${cv} of ${payload.flagged} value(s) (${Math.round(cv / payload.flagged * 100)}%) belong to an event already researched.\n`);
+
+// Group the remainder by ROAD NAME, which is the honest key once the order numbers are spent.
+const byRoad = new Map();
+for (const f of rest) {
+  const road = (f.roadName || "(no road.name)").trim();
+  if (!byRoad.has(road)) byRoad.set(road, { routes: new Set(), values: [], });
+  const g = byRoad.get(road); g.routes.add(f.id); g.values.push(f);
+}
+const list = [...byRoad.entries()].sort((a, b) => b[1].routes.size - a[1].routes.size || b[1].values.length - a[1].values.length);
+console.log(`REMAINING: ${new Set(rest.map(f => f.id)).size} route(s), ${rest.length} value(s), in ${list.length} road group(s)\n`);
 console.log("WORKLIST — most routes unblocked first:\n");
-for (const e of list.slice(0, 18)) {
-  console.log(`${String(e.routes.size).padStart(3)} route(s)  [${e.strength}]  ${e.key}`);
-  for (const s of e.samples) console.log(`            ${s.id} ${s.field}: ${s.v}`);
-  console.log("");
+for (const [road, g] of list.slice(0, 20)) {
+  console.log(`${String(g.routes.size).padStart(3)} route(s) / ${g.values.length} value(s)  ${road}`);
+  const s = g.values[0];
+  console.log(`      [${s.tier}] ${s.id} ${s.field}: ${s.text.slice(0, 150)}`);
 }
-const top = list.slice(0, 10).reduce((n, e) => n + e.routes.size, 0);
-console.log(`The top 10 events cover ${top} of the affected routes — research once each, apply to every row citing them.`);
+const top = list.slice(0, 10).reduce((n, e) => n + e[1].routes.size, 0);
+console.log(`\nThe top 10 road groups cover ${top} of the ${new Set(rest.map(f => f.id)).size} remaining routes.`);
+if (stale) { console.error(`\n${stale} SETTLED entry(s) matched nothing — bookkeeping is stale.`); process.exitCode = 1; }
