@@ -1553,6 +1553,15 @@ a build error, but a screen that renders wrong or not at all.
   merge, no conflict, every check green, and main went back to shipping the bugs. Report-only,
   read-only on git; **not a build gate**, because it is a property of HISTORY rather than of the
   checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
+  - **TWO SESSIONS WIRED IT WITHIN THE HOUR AND BOTH MERGED**, so for a while every push to main
+    ran the same audit twice (#1288 `silent-reverts.yml`, #1290 `silent-revert-check.yml`).
+    Consolidated into ONE workflow rather than picking a winner, because **they failed on different
+    halves and neither is a superset**: `--fail-on outage-flag` catches a silent `xUnavailable`
+    removal (both #1248 and #1267 — and #1267 deleted **no files at all**, verified with
+    `git show 2bd9a5d --diff-filter=D`), while `--fail-on-silent` fires on one commit removing
+    files added by SEVERAL others — the stale-base fingerprint — which would catch a pure-file
+    revert carrying no flag. Both flags now run in one job, and each was re-proven to fire on its
+    own incident after the merge. See [[parallel-sessions-cause-redundant-prs]].
   - **IT NOW RUNS ON EVERY MERGE (`.github/workflows/silent-reverts.yml`), and until then it ran
     when somebody REMEMBERED — which is how three of these shipped in a single day.** #1248 dropped
     two outage flags belonging to #1239; #1253 restored them; #1267 dropped four, three of them the
