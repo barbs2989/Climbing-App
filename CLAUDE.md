@@ -84,6 +84,7 @@ npm run check:route-tags # real list prose still reaches a list key, and each ke
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
+npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
@@ -2741,6 +2742,39 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:return-leg`** asserts the planner does not re-add a walk its own figures already
+  covered. `hikeH = scarfHrs(distKm, gainM, lossM)` is charged for gain **and** loss, so on a row
+  where those are the whole outing it is already the round trip — and `retH` then added
+  `hikeH * 0.75` on top. **196 WA routes, median +7.67 hr.** Static SSR, so it sits in `npm run build`.
+  - **The app already knew.** `gainCoversWholeOuting` (|loss−gain|/gain ≤ 3%) relabels the tile
+    **"On foot"** and TECH STATS says *"Total ascent is the whole day from the trailhead, not just
+    the walk in"* — and the return leg ignored both. `wa_ptarmigan_traverse` read `21.6hr On foot`
+    with Est. return **16.2 hr after** Est. summit. Label and arithmetic contradicting each other on
+    one screen.
+  - **The premise is solid because 433 of the 484 qualifying rows have gain EXACTLY equal to loss** —
+    a round trip, or a traverse ending at its start elevation. Not a coincidence on a one-way
+    approach. Checked before any code was written, after #1361 shipped a defect for want of exactly
+    that step.
+  - **SCOPED TO THE WALK BRANCH, and the first draft was not.** A pitched route's return is
+    `techH * 0.7` — the descent of the **climb**, which the walk never double-counted — so
+    short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a real leg
+    from **212** rows. Caught before shipping, by a count that did not reconcile (88 "unexplained"
+    against 50 unmatched) rather than by a red guard. Injection case 2 pins it.
+  - **IT DROPS THE "After dark" WARNING ON 102 ROUTES, and that was the decision.** `late` is
+    `retH > 18.5`, so a smaller return means fewer warnings. Keeping them would mean preserving a
+    known double-count as an invisible safety margin that only these 196 routes get — and *a false
+    warning is how a real one stops being read*, the rule this file states for rope warnings and
+    caveats alike. A warning firing off a number the code knows is wrong is not a safety feature.
+  - **NOTHING HAS YET ASKED whether the base walk model is optimistic**, and that is the honest
+    residual. `scarfHrs` at "intermediate" gives ~1,970 ft/hr of ascent, which puts Bonanza's 7,000 ft
+    round trip at ~7.4 hr on foot. If that is fast it is fast on **every** route, including the ~700
+    one-way ones this does not touch — a uniform question needing real party times, which this repo
+    does not have. Do not answer it by restoring the double-count.
+  - Injection-tested both directions, each restoring byte-identically: reverting the fix fails
+    *"Est. return equals Est. summit"*, and the over-broad first draft fails *"a PITCHED
+    whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
+    (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
+    **49** one-way or pitched rows keep their leg, **0** lost.
 - **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
   is stated rather than quoted silently. A party on the summit that started at the trailhead has
   gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
