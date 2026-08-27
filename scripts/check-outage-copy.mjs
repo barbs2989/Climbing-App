@@ -241,7 +241,98 @@ try {
     }
   }
 
-  if (ran < 14) dead(`only ${ran} assertion(s) ran; expected at least 14`);
+  /* ---- AN EARLY-RETURN SCREEN, WHICH IS THE OTHER HALF OF THE SAME BLIND SPOT ----
+
+     `App` returns early for nine screens; the guide dashboard is one. So it is not a tab that
+     check:outage walks, and -- being a `position:fixed; inset:0` full-screen view with no
+     role="dialog" -- check:overlay-discovery does not classify it as an overlay either. Exactly
+     where the Manage areas defect sat.
+
+     `useGuideProfile(uid)` handed back `undefined` for TWO OPPOSITE STATES: a climber who has
+     genuinely never applied, and a read that failed (react-query leaves `data` undefined on error).
+     The screen collapsed them into one sentence, so an approved guide whose profile did not load
+     was told "You haven't applied to guide yet." and pointed at the application form. A false claim
+     about the user's own HISTORY, offering the wrong remedy -- worse than the usual "you have none".
+
+     Executed rather than rendered, and here that is not a convenience: the dashboard needs a
+     session, a portal and four queries, and it lives in lib/ rather than core so it is not in the
+     bundle above. lib/db.js is ~164kB against core's ~1.1MB, so the second esbuild is cheap. */
+  const dbOut = path.join(ROOT, `.outage-db-${process.pid}.mjs`);
+  try {
+    execFileSync("npx", ["esbuild", path.join(ROOT, "lib/db.js"),
+      "--bundle", "--format=esm", "--platform=node",
+      `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "true", VITE_SUPABASE_URL: "https://probe.invalid", VITE_SUPABASE_ANON_KEY: "probe" })}`,
+      "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
+      "--log-level=error", "--outfile=" + dbOut], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
+  } catch {
+    fs.rmSync(dbOut, { force: true });
+    dead("esbuild could not bundle lib/db.js");
+  }
+  if (typeof globalThis.WebSocket === "undefined") {
+    globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
+  }
+  const dbMod = await import(dbOut + "?t=" + Date.now());
+  fs.rmSync(dbOut, { force: true });
+  const guideProfileMissingCopy = dbMod.guideProfileMissingCopy;
+  if (typeof guideProfileMissingCopy !== "function") {
+    dead("guideProfileMissingCopy is not exported from lib/db.js — ANCHOR LOST");
+  }
+
+  const gBroke = guideProfileMissingCopy(true);
+  const gNever = guideProfileMissingCopy(false);
+  if (!gBroke || !gNever || !gBroke.head || !gBroke.body || !gNever.head || !gNever.body) {
+    dead("guideProfileMissingCopy did not return head and body for both states");
+  }
+
+  ran++;
+  if (/couldn’t load/i.test(gBroke.head)) ok("guide profile, failed read: the headline says the read failed");
+  else fail(`guide profile, failed read: headline does not report a failure — "${gBroke.head}"`);
+
+  ran++;
+  if (!/haven’t applied|haven't applied/i.test(gBroke.head + gBroke.body)) {
+    ok("guide profile, failed read: does not deny that you applied");
+  } else {
+    fail("guide profile, failed read: still tells an approved guide they never applied");
+  }
+
+  ran++;
+  if (/not a claim/i.test(gBroke.body)) ok("guide profile, failed read: says the state is unknown, not absent");
+  else fail("guide profile, failed read: the body does not say the read failed rather than the application being absent");
+
+  /* The honest branch is what stops this being a blanket rewrite: a climber who really has not
+     applied must still be told where to. */
+  ran++;
+  if (/haven’t applied|haven't applied/i.test(gNever.head)) ok("guide profile, never applied: still says so");
+  else fail(`guide profile, never applied: lost its genuine empty state — "${gNever.head}"`);
+
+  ran++;
+  if (/become a guide/i.test(gNever.body)) ok("guide profile, never applied: still signposts the application");
+  else fail("guide profile, never applied: the signpost to the application form was removed");
+
+  ran++;
+  if (!/couldn’t load/i.test(gNever.head + gNever.body)) ok("guide profile, never applied: claims no failure");
+  else fail("guide profile, never applied: reports a failure that did not happen");
+
+  /* Wiring, for the reason stated above the states block: executing the function proves the
+     sentence, not that the screen still calls it or still reads the flag. */
+  const GCHAIN = [
+    ["lib/DbGuideDashboard.jsx", "isError: profileError } = useGuideProfile(uid);",
+     "the dashboard no longer reads isError off the guide-profile query"],
+    ["lib/DbGuideDashboard.jsx", "guideProfileMissingCopy(profileError).head",
+     "the no-profile headline no longer goes through the copy function with the flag"],
+    ["lib/DbGuideDashboard.jsx", "guideProfileMissingCopy(profileError).body",
+     "the no-profile body no longer goes through the copy function with the flag"],
+  ];
+  for (const [f, needle, why] of GCHAIN) {
+    ran++;
+    if (fs.readFileSync(path.join(ROOT, f), "utf8").includes(needle)) {
+      ok(`wiring: ${f.split("/").pop()} — ${why.replace("no longer ", "")}`);
+    } else {
+      fail(`wiring: ${why} (${f} no longer contains \`${needle}\`)`);
+    }
+  }
+
+  if (ran < 23) dead(`only ${ran} assertion(s) ran; expected at least 23`);
 
   if (failures) {
     console.error(`\ncheck:outage-copy FAILED — ${failures} assertion(s).`);
