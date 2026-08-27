@@ -187,6 +187,23 @@ const pubCard = await cardText("ZZOPENZZ");
 if (pubCard && /Open to all/.test(pubCard)) ok("a PUBLIC open group still reads \"Open to all\"");
 else fail("a public open group no longer says \"Open to all\" — the label now reads private for everything: " + JSON.stringify((pubCard || "").slice(0, 120)));
 
+// ── Run 2c: a group's "Based in" clause. Location is OPTIONAL — the Create button gates on the
+//    name alone — and the line was built as `"📍 Based in "+cl.location+" · N members"`, so a group
+//    without one read "📍 Based in  · 1 member". check:zero's own dump carries the before/after for
+//    the EMPTY case (its overlay probe group has no location); this fixture's groups DO have one,
+//    which is the half that dump cannot show. A helper that always dropped the clause would satisfy
+//    the empty case on its own.
+const locCard = await cardText("ZZOPENZZ");
+if (locCard === null) {
+  fail("the located probe group is not on screen — the \"Based in\" clause was never checked");
+} else if (!/Based in Bellingham, WA/.test(locCard)) {
+  fail("a group WITH a location no longer says where it is based: " + JSON.stringify(locCard.slice(0, 140)));
+} else if (/Based in\s+·/.test(locCard)) {
+  fail("the location clause renders with nothing in it: " + JSON.stringify(locCard.slice(0, 140)));
+} else {
+  ok("a group with a location still reads \"Based in Bellingham, WA\"");
+}
+
 // ── Run 3: raise the climber above the bar and press the SAME control. A gate that always
 //    refuses is not a gate.
 if (!(await loadGroups("?ztrust=1&ztboost=1"))) {
