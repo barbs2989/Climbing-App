@@ -104,6 +104,14 @@ const agrees = [
   ["crowds", { solitudeRating: 4 }, { solitudeRating: 4 }, "two climbers pick the same solitude rating"],
   ["partnerRequirements", { fitnessSpec: { hiking: "1,000 ft/hr" } },
     { fitnessSpec: { hiking: "1,000 FT/HR " } }, "same nested fitness fact, different typing"],
+  /* A NESTED number compares exactly through _agreeJson — JSON.stringify(4.8) and (4.9) are
+     different strings — so two parties measuring the same walk were two clusters. distMi and
+     gainFt are the facts different parties genuinely measure differently, so they compare with a
+     tolerance, the way pitchDetail's lengthM already did. */
+  ["approachVariants", [{ name: "Snow Creek trail", distMi: 4.8, gainFt: 4200 }],
+    [{ name: "snow creek trail", distMi: 4.9, gainFt: 4180 }], "same walk in, measured slightly differently"],
+  ["approachVariants", [{ name: "Colchuck", hazards: ["No water above the lake", "Loose talus"] }],
+    [{ name: "Colchuck", hazards: ["Loose talus", "No water above the lake"] }], "same hazards listed in a different order"],
 ];
 for (const [k, a, b, why] of agrees) {
   cases++;
@@ -130,6 +138,10 @@ const differ = [
      inside _agreeJson changed NOTHING they assert and the case reported a false pass. Day order
      is a fact: day 1 approach / day 2 summit is not day 1 summit / day 2 approach. */
   ["crowds", { solitudeRating: 4 }, { solitudeRating: 2 }, "different solitude ratings"],
+  // Tolerance must not swallow a genuinely different walk: 4.8 vs 9.5 miles is another approach.
+  ["approachVariants", [{ name: "Snow Creek trail", distMi: 4.8 }], [{ name: "Snow Creek trail", distMi: 9.5 }],
+    "same name, a distance twice as long"],
+  ["approachVariants", [{ name: "Snow Creek trail" }], [{ name: "Colchuck Lake trail" }], "different approaches"],
   ["itinerary", { days: [{ n: 1, title: "Approach to camp" }, { n: 2, title: "Summit day" }] },
     { days: [{ n: 2, title: "Summit day" }, { n: 1, title: "Approach to camp" }] },
     "itinerary day order is reversed"],
@@ -149,6 +161,6 @@ if (normEditStr("5.10a") !== normEditStr("5.10b")) ok("normEditStr keeps distinc
 else fail("normEditStr collapsed two different grades");
 
 clean();
-if (cases < 19) dead(`only ${cases} case(s) ran`);
+if (cases < 23) dead(`only ${cases} case(s) ran`);
 console.log(`\ncheck:consensus-clustering: ${cases} case(s), ${failures} failure(s)`);
 process.exit(failures ? 1 : 0);
