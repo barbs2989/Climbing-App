@@ -42,6 +42,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
+npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
@@ -5263,6 +5264,28 @@ their own Résumé showed an amber **"Unverified"** chip.
   - The record read **stays**, for the reverse case: a stale session issued before confirmation. So
     the change is strictly more permissive in **both** directions and can un-verify nobody. Only
     give up when neither source has anything to say.
+  - **IT WAS SILENTLY REVERTED IN FULL, AND THE RESTORE THAT FOLLOWED THE SAME SQUASH MISSED IT.**
+    #1267 — a switch-accessibility PR whose subject and body never mention any of this — merged
+    from a stale base and put this effect back to `if(!uid||verifHydratedRef.current||
+    myVerificationQ.data==null)return`. #1277 restored the four outage FLAGS that same squash
+    dropped and did not touch this, because **this revert changed no NAME**: `myVerificationQ`
+    still exists, the effect still exists, and only its guard clause and dependency array went
+    back. `audit:silent-reverts` reports **0** on it — and says so in its own closing caveat,
+    *"a merge that kept a name and dropped its guard clause is invisible here"*. That caveat is
+    now a recorded incident rather than a hypothetical.
+    - **What caught it was `ANCHOR LOST`**, from the probe written beside the fix, run by hand.
+      An extracted-from-source probe with a fail-closed anchor **is** a behaviour-revert detector
+      — the one mechanism that works where a name-based audit cannot — and it is worth nothing in
+      `scripts/oneoff/`, which nothing runs. So it is promoted to
+      **`check:verification-fallback`** and sits in the build chain: static, no browser, no
+      database, milliseconds.
+    - Its failure message names **both** causes and their opposite repairs (a deliberate refactor
+      wants a re-anchor; a stale-base squash wants a restore) and gives the `git log -S` that
+      separates them. A guard that can only say *"something moved"* sends the next reader to
+      edit correct code.
+    - Injection-tested against the **real historical revert**, not a synthetic edit: both forms
+      are lifted from the commits themselves (`35b923d` and `35b923d^`), so the case reproduces
+      exactly what #1267 did, and the restore returns the file to its pre-injection checksum.
   - **THE FALLBACK ALONE IS DEAD CODE, AND ONLY A RUNTIME MEASUREMENT SHOWED IT.** With the session
     fallback in place and nothing else changed, the browser walk still reported the outage
     INTRODUCING *"Verify to boost your trust"*. The logic reads correctly, an extracted-from-source
