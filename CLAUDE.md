@@ -112,7 +112,7 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
-npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES place one named point in two places?
+npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES disagree about one named point? (place, and height)
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
@@ -4091,6 +4091,38 @@ the correction knows the screen is wrong, and they have no way to report it.
     and measuring showed why: the agreeing routes store **the same point at different precisions**
     (48.8829219, 48.883737, 48.8837, 48.88374 ...), all within ~100 m, so no two are byte-equal and
     an exact-match mode **refuses a unanimous cluster**.
+  - **SECTION 2 IS THE MIRROR, and it lives here rather than in a SIXTH waypoint audit.** Section 1
+    asks whether two routes disagree about **where** a named point is; section 2 asks whether they
+    disagree about **how high** it is while storing the **identical** coordinate. Same question over
+    the same pairs, so folding it in costs one read instead of another script. The coordinate being
+    byte-identical is what makes it the mirror: the position is agreed, so **only the number can be
+    wrong**. **32 findings, 23 of them TRAILHEADS.**
+    - **`audit:waypoint-elevations` cannot see it.** That audit flags a pin the TERRAIN refuses, so a
+      disagreement between two rows at one coordinate is invisible whenever both values sit inside
+      the terrain box. **#1320 repaired exactly one instance of this class and it was found BY HAND.**
+    - **Keyed on the coordinate rounded to 4 dp (~11 m), which is required rather than sloppy**: rows
+      store one point at different precisions (48.8837373 vs 48.8837), so an exact match finds almost
+      nothing — the lesson the modal-coordinate attempt already paid for.
+    - **THE MINORITY IS SOMETIMES THE CORRECT ROW**, which is the whole argument for adjudicating
+      against the ground rather than the vote. At the *SR-20 Wine Spires pullout* **four** routes said
+      2,200 or 3,450 ft and **one** said 4,300; the ground reads 4,198-4,579 and admits **only the
+      lone dissenter**. A majority rule would have taken the correct row and repaired it into
+      agreement with four wrong ones.
+    - **DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY.** Two threshold artefacts would each
+      have produced a confident wrong write: *Upper Dungeness Trailhead*, where the ground refuses
+      2,970 ft by **17 feet** and the route's own prose independently says 2,960; and *Lake of the
+      Woods*, where the surviving value is admitted only by **13 feet** while the ground box refuses
+      it outright. So the rule is that the surviving value must sit inside the ground box (or within
+      50 ft) and every replaced value at least **300 ft** outside — a 6x gap.
+    - **9 repaired** (`scripts/oneoff/fix-same-coordinate-elevation-disagreements.mjs`), 32 -> 26.
+      **26 are deliberately left**: 23 where the ground admits EVERY stated value, so the spread is
+      inside the terrain's own noise; 1 where it refuses every value (that is section 1's question,
+      not this one); and the two artefacts above.
+    - **It caught an incomplete repair made HOURS EARLIER by the same session.**
+      `fix-trailhead-elevations-from-a-corroborated-sibling` moved three *Stuart Lake Trailhead* rows
+      to 3,400 ft and left `wa_boving_christensen` at 2,930, because that sweep only examined pins
+      the TERRAIN refuses and 2,930 sat inside the flat tolerance. *An instance fixed by hand is not
+      a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
