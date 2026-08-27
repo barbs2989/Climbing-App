@@ -10572,3 +10572,70 @@ full source pages, same limitation batch 153 recorded.
 Next batch continues after `wa_mount_torment_torment_forbidden_traverse` in
 the id-ordered scope (172 routes remain unaudited this pass after this
 batch).
+
+## 2026-08-27 — Pass 3, Batch 155
+
+Seven peaks, 8 routes (Mount Triumph 1: Northeast Ridge; Cathedral Peak 1: NE
+Ridge [id `wa_ne_ridge`]; Needle Peak 1: North Ridge; Snowfield Peak 1: Neve
+Glacier/West Ridge; North Early Winters Spire 1: Northwest Corner
+[Boving-Pollack]; Nooksack Tower 2: North Face [Beckey-Schmidtke], South
+Face; Lexington Tower 1: North Face [id `wa_north_face_3`]). Two confirmed
+fixes applied to one route; everything else checked out or was left
+unverified rather than guessed at.
+
+- **`wa_nooksack_tower_beckey_route`** — two findings on the same row.
+  (1) `gain_ft`/`loss_ft` stored 5735, which the row's own 8 waypoints rule
+  out: they climb strictly monotonically (no recorded descent anywhere)
+  from the 2,200 ft trailhead to the 8,285 ft summit (matching
+  `high_point_ft` and `areas.wa_nooksack_tower.elevation_ft`). Summing the
+  row's own ascending segments (400+1311+1989+400+1000+600+385) gives a
+  6,085 ft net-rise floor — 350 ft above the stored value, and a party
+  cannot gain less than its own waypoints record. Corrected to 6085 for
+  both `gain_ft` and `loss_ft` (this route reverses its own line back to
+  camp per `descent_text`, so ascent and descent gain should match) — the
+  exact floor derivable from this row alone, not an invented figure.
+  (2) `overview` names itself "The East Ridge (Beckey-Schmidtke) route,"
+  contradicting the row's own `name` ("North Face (Beckey-Schmidtke
+  Route)"), `face` ("North Face / NE Face"), `beta` (an ice couloir "on the
+  north face" into a "north arête"), and all 10 `pitch_detail` entries
+  (snow/ice couloir → "4th class... along the north arête"). AAC
+  Publications' first-ascent account and Wikipedia both confirm Beckey and
+  Schmidtke's July 5, 1946 climb went up the north-face ice couloir and
+  north arête; the route is universally called the "North Face" or
+  Beckey-Schmidtke route, never an East Ridge. Corrected the one mislabeled
+  clause to "The North Face (Beckey-Schmidtke) route"; the rest of the
+  sentence, including the FA date/party, is unchanged and was already
+  correct.
+
+Confirmed correct and left unchanged (all exact external matches unless
+noted): Mount Triumph FA (Joan & Joe Firey, 1965) and Northeast Ridge route
+description; Cathedral Peak elevation (8,606 ft NAVD88); North Early
+Winters Spire Northwest Corner FA (Paul Boving & Steve Pollack/Pollock,
+Sept 25 1976 — a pitch-count discrepancy vs. external sources, 5 vs 7, is
+already recorded in the row's own `data_quality.gaps` as a known variable
+and needed no new flag); Snowfield Peak FA (William Degenhardt & Herbert
+Strandberg, August 1931 — corroborated independently by the nearby Mount
+Degenhardt bearing the same climber's name); Nooksack Tower South Face FA
+(Ben Manfredi & Klubberud, July 2002); Lexington Tower North Face FA (Tim
+Kelley & Dick McGowan, July 5 1954); Needle Peak North Ridge's
+Herrington/Halder Needle-to-Bonanza traverse account (Aug 19–20, 2006,
+matching an independent trip-report summary's dates and sequence).
+
+Flagged, not fixed — needs human verification:
+- Mount Triumph's stored elevation (7,270 ft summit waypoint /
+  `high_point_ft`; 7,260 ft `areas.elevation_ft`) reads 20–30 ft higher than
+  Wikipedia's "7,240+ ft" figure. That is inside normal cross-source survey
+  variance for a contour-rounded ("+") figure rather than a clear
+  contradiction, so left as-is rather than guessed at.
+- Needle Peak's elevation (7,896 ft) could not be independently confirmed
+  or refuted — no authoritative source turned up in this pass distinct from
+  this catalog itself. Left as-is.
+
+`wa_ne_ridge` (Cathedral Peak) and `wa_needle_peak_north_ridge`'s
+`dist_km`/`timing` fields were checked for the usual double-counting/
+one-way-vs-round-trip issues this catalog carries elsewhere and found
+internally consistent with each row's own approach-length prose; no fix
+needed.
+
+Next batch continues after `wa_north_face_3` in the id-ordered scope (164
+routes remain unaudited this pass after this batch).
