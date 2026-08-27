@@ -5852,6 +5852,42 @@ for another.
       so an overlay rendered beside others picks up their copy too. The rows naming ONE component
       are the clean ones.
 
+**A COUNT AND THE LIST UNDER IT WERE TWO DERIVATIONS OF ONE FACT, ON ONE SCREEN.** `check:ui`
+asserts that two SCREENS counting the same list agree (#1203). The group detail view did it to
+itself: the heading was `mem.length + (isMod && mem.indexOf(_meGid) < 0 ? 1 : 0)` while the roster
+below was `mem` **minus anything that failed to resolve**. They agreed only by luck. Measured with
+the app's own lifted expressions, **4 of 5 cases disagreed**
+(`scripts/oneoff/probe-group-roster-vs-count.mjs`).
+  - **The reachable one is the DEFAULT state of every group you create.** A locally-created group
+    is `memberIds:[], ownerId:0, moderatorIds:[0]` — so `mem` is empty, `isMod` is true, the fudge
+    fires, and the screen reads **"Members · 1" above an empty list**. The fudge existed *because*
+    the creator is not in `memberIds`; it added them to the NUMBER, and nothing could add them to
+    the ROWS, because the roster called `cById(id)` directly and `cById(0)` is `undefined` — `ME`
+    is not in `CLIMBERS`. `_asMember` had the `id===0?ME` branch the roster needed and the roster
+    did not call it.
+  - **A failed profiles read emptied the roster while the heading still claimed N.**
+    `useProfilesByIds` correctly throws, so `.data` is undefined, `||[]` leaves `_profMap` empty,
+    and `_asMember` returns **null for every member** — "Members · 2" above nothing at all. The
+    same query's OTHER call site degrades to a generic label instead (`p&&p.name||"A climber"`,
+    which this file already blesses), so **one query had two miss behaviours: one degrades, one
+    silently drops the person.**
+  - Fixed **by construction**, not by a matching rule: `_roster` is the list that renders and
+    `_memN` is its length, so the number and the rows cannot disagree. A member who cannot be
+    resolved renders as a placeholder rather than vanishing, and the creator is added to the LIST
+    rather than to the number.
+  - **`membObjs` is deliberately left alone as the MENTION list.** It also feeds
+    `mentionCandidates` and `notifyMentions`, and a placeholder must never become an @-mention
+    candidate — so the display roster is a second array rather than a widening of that one.
+  - **The `_memN` hoist was already there and said it existed "so the compound count is written
+    once" — and the roster heading held a second copy of the same expression.** A hoist is not a
+    single source of truth until every site uses it. The "Show all N members" button was a **third**
+    number, taking the roster length while the heading took the fudged one.
+  - `grpProfilesUnavailable` says so when the read failed, because with the placeholder the count is
+    right either way and the screen would otherwise present *"A climber"* as if it were the name.
+  - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
+    the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
+    recorded that the underlying disagreement was still real; this is that, closed.
+
 **A FLAG THAT ALREADY EXISTED REACHED SIX PLACES AND NOT THE TWO OVERLAYS IT IS ABOUT.**
 `connectionsUnavailable` has been in `ClimbMatch.jsx` since #1224. Both surfaces fed by
 `connections` are overlays, and neither had it: `FriendsList` renders *"No friends yet."* and the
