@@ -2564,6 +2564,32 @@ a build error, but a screen that renders wrong or not at all.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+- **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
+  only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
+  catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
+  public and which `0146` excluded **on purpose** — so the app promised a summit nobody may stand
+  on was on its way. Proven on screen rather than inferred: chip `Colorado 14ers 0/53`, card
+  expanded 1032 → 2550 chars, the sentence read back verbatim.
+  - **The second defect is worse than the copy.** `cpl = d >= t`, so at `t = 53` the card could
+    **never** read Complete: a climber who ticks every achievable Colorado 14er sits at 52/53
+    forever.
+  - **Fixed by this file's own precedent, not a new rule.** Desert Towers hit exactly this and the
+    TOTAL was corrected **30 → 27**, on the reasoning that the advertised number is what you can
+    tick *here*; Colorado had been left at 53. `total: 52` deletes the false sentence outright
+    (`extra` becomes 0) instead of rewording it, and makes Complete reachable.
+  - **52 is only honest because the card says why.** `LDESC.co14` now states that the standard list
+    counts 53 and that Mount Bross is not among these 52 because its summit is closed to the
+    public. Without that, 52 is a number that disagrees with every guidebook — **do not "correct"
+    it back**, and never "finish" the list by adding Bross: a tick list is an invitation to go
+    climb something.
+  - The generic sentence carries a comment saying what it is FOR — a gap the catalog really can
+    close — so nobody points it at a permanent ceiling again. `audit:list-coverage` now reports all
+    six rosters complete and advertised-not-in-catalog **1 → 0**.
+  - Guarded in **`check:challenge-rows`** (CI, not the build). It expands the Colorado card
+    **separately**, because that guard's existing expansion takes whichever roster card sorts
+    shortest and was never guaranteed to be this one — *a guard that might look at the right card
+    is not a guard.* `scripts/oneoff/probe-colorado-14ers-ceiling-copy.mjs` is the before/after
+    measurement, and it fails closed on a card that never expanded.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
