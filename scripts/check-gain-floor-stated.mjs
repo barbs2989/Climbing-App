@@ -96,7 +96,10 @@ const CAVEAT = /Lower bound — the recorded gain of ([^ ]+ (?:ft|m)) is less th
 const cav = base.match(CAVEAT);
 eq("the caveat renders", !!cav, true);
 eq("...quoting the RECORDED gain", cav ? cav[1] : null, "5,007 ft");
-eq("...and the pin-derived rise", cav ? cav[2] : null, "11,506 ft");
+/* 11,047 not 11,506: the fixture's 4 pitches account for ~459 ft, and the sentence is about
+   the WALK. Quoting the whole-outing rise beside a claim about the approach would overstate
+   it by exactly the climbing vertical. */
+eq("...and the pin-derived rise, NET of the climbing", cav ? cav[2] : null, "11,047 ft");
 eq("...and saying which one the times used", /figured on the smaller number/.test(cav ? cav[3] : ""), true);
 
 console.log("\nand must NOT fire on correct data");
@@ -109,6 +112,26 @@ eq("a gain equal to the rise is silent", /trailhead and summit pins/.test(planOf
 eq("a recorded high camp at the implied start is silent", /trailhead and summit pins/.test(planOf(route({
   waypoints: route().waypoints.concat([{ n: 3, type: "Campsite", name: "High camp", elev: 9399, lat: 46.83, lng: -121.78 }]),
 }))), false);
+/* THE CLIMBING VERTICAL IS CREDITED FIRST, and this is the case that corrects #1353 as merged.
+   `scarfHrs` is the HIKE leg and `techHrs` the climbing leg, so `gain_ft` is the APPROACH gain,
+   not trailhead-to-summit. A route whose pitch count alone explains the gap has a perfectly
+   plausible gain and must NOT be accused: wa_liberty_traverse is 26 pitches over a 2,520 ft rise,
+   so the walk accounts for none of it. Measured on the live catalog, this is the difference
+   between 87 routes flagged and 51 — 36 of them were false. */
+eq("pitches account for the gap -> silent", /trailhead and summit pins/.test(planOf(route({
+  gainM: 2001 / 3.28084, pitches: 26,
+  waypoints: [
+    { n: 1, type: "Trailhead", name: "TH", elev: 3000, lat: 46.8, lng: -121.8 },
+    { n: 2, type: "Summit", name: "Summit", elev: 5520, lat: 46.85, lng: -121.76 },
+  ],
+}))), false);
+eq("...and the SAME route with no pitches is still stated", /trailhead and summit pins/.test(planOf(route({
+  gainM: 2001 / 3.28084, pitches: 0,
+  waypoints: [
+    { n: 1, type: "Trailhead", name: "TH", elev: 3000, lat: 46.8, lng: -121.8 },
+    { n: 2, type: "Summit", name: "Summit", elev: 5520, lat: 46.85, lng: -121.76 },
+  ],
+}))), true);
 eq("no pins -> silent", /trailhead and summit pins/.test(planOf(route({ waypoints: null }))), false);
 eq("no summit pin -> silent", /trailhead and summit pins/.test(planOf(route({
   waypoints: [{ n: 1, type: "Trailhead", name: "Road gate", elev: 2900, lat: 46.8, lng: -121.8 }],

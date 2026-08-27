@@ -78,7 +78,12 @@ const predict = (r) => {
   const su = wps.filter((w) => ty(w).includes("summit")).map(ef).filter((n) => n !== null);
   if (!th.length || !su.length) return false;
   const top = Math.max(...su), rise = top - Math.min(...th);
-  if (!(rise > 0) || g >= rise - 300) return false;
+  /* Credit the climbing vertical to the technical leg before judging the WALK's gain — scarfHrs is
+     the hike leg and techHrs the climbing leg. Without this the prediction accuses 36 routes whose
+     pitch count alone explains the gap. */
+  const p = Number(r.pitches) > 0 ? Number(r.pitches) : 0;
+  const walkRise = rise - p * 35 * 3.28084;
+  if (!(rise > 0) || !(walkRise > 0) || g >= walkRise - 300) return false;
   const implied = top - g;
   return !wps.map(ef).filter((n) => n !== null).some((n) => Math.abs(n - implied) <= 300);
 };
