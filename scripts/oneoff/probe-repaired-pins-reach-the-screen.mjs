@@ -59,6 +59,11 @@ const CASES = [
   { route: "wa_playing_not_spraying", pin: "SR-20 Wine Spires pullout", want: "4,300", pr: "#1348 elevation" },
   { route: "wa_gray_wolf_ridge_se_slopes", pin: "Baldy summit", want: "6,827", pr: "#1340 position" },
   { route: "wa_honeymoon_route", pin: "Royal Lake", want: "5,100", pr: "#1333 position" },
+  /* `absent` is REQUIRED for this case, and the reason is worth keeping: a plain includes() of
+     "Stuart Lake Trailhead" was ALSO true BEFORE the repair, because the quoted form CONTAINS the
+     unquoted substring. The assertion that proves anything here is that the QUOTED form is gone —
+     and the &quot; unescaping in the text normaliser below is what lets it see one. */
+  { route: "wa_stanley_burgner", pin: "Stuart Lake Trailhead", want: "3,400", pr: "unwrapped name", absent: '"Stuart Lake Trailhead"' },
 ];
 
 const key = requireServiceKey();
@@ -81,7 +86,7 @@ for (const c of CASES) {
     const text = html.replace(/<[^>]+>/g, " ")
       .replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'")
       .replace(/\s+/g, " ");
-    const named = text.includes(c.pin), valued = text.includes(c.want);
+    const named = text.includes(c.pin), valued = text.includes(c.want) && (!c.absent || !text.includes(c.absent));
     if (!best || (named && valued)) best = { tab, named, valued, len: html.length, text };
     if (named && valued) break;
   }
@@ -89,7 +94,7 @@ for (const c of CASES) {
   const ok = best.named && best.valued;
   if (!ok) bad++;
   console.log(`  ${ok ? "ok  " : "FAIL"}  ${c.route}  (${c.pr}, tab=${best.tab})`);
-  console.log(`         "${c.pin}" on screen: ${best.named};  corrected value "${c.want}" on screen: ${best.valued};  ${best.len} chars`);
+  console.log(`         "${c.pin}" on screen: ${best.named};  corrected value "${c.want}" on screen: ${best.valued}${c.absent ? `;  ${JSON.stringify(c.absent)} absent: ${!best.text.includes(c.absent)}` : ""};  ${best.len} chars`);
   if (!ok) {
     const i = best.text.indexOf(c.pin.slice(0, 14));
     if (i >= 0) console.log(`         around it: ...${best.text.slice(Math.max(0, i - 50), i + 170)}...`);
