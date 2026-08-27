@@ -17,6 +17,21 @@ name: Silent reverts
 #
 # It does NOT gate anything. The merge has already happened; going red is the whole
 # mechanism, and it lands on the person who merged, which is the person who caused it.
+#
+# TWO SESSIONS BUILT THIS WORKFLOW WITHIN THE HOUR (#1288 and #1290) and both merged, so every
+# push to main ran the same audit twice. They are consolidated here rather than one being
+# picked, because THEY FAILED ON DIFFERENT HALVES and the union is strictly better:
+#
+#   --fail-on outage-flag   (#1288)  a SILENT removal of an `xUnavailable` flag. Catches #1248
+#                                    AND #1267. #1267 deleted no files at all, so the file rule
+#                                    below is silent on it — verified: `git show 2bd9a5d
+#                                    --diff-filter=D` is empty.
+#   --fail-on-silent        (#1290)  one commit removing files added by SEVERAL different
+#                                    commits — the stale-base fingerprint. Catches #1248, and
+#                                    would catch a pure-file revert that carries no flag, which
+#                                    the flag rule cannot see.
+#
+# Neither is a superset. Running both in one job costs one checkout instead of two.
 
 on:
   push:
@@ -60,11 +75,16 @@ jobs:
       # was added 30 first-parent commits before the merge that dropped it. 120 is
       # generous and costs seconds, because presence is one pass over the checkout.
       #
-      # --fail-on outage-flag, and ONLY that kind. The audit stays report-only by default
-      # because a removal is not a defect: over 500 commits every hit of its file rule has
-      # been a promotion, and every generic-token finding a supersession or a rename, so
-      # failing on those would make it argue with correct work. The outage-flag class is
-      # the one with a different measured precision — 3 for 3 real reverts, and 0 findings
-      # across 300 commits of a healthy tree.
+      # BOTH failure conditions, and NEITHER is "any finding". The audit stays report-only by
+      # default because a removal is not a defect: over 500 commits every hit of its file rule
+      # has been a PROMOTION, and every generic-token finding a supersession or a rename, so
+      # failing on those would make it argue with correct work. The two opt-ins are the classes
+      # with a different measured precision — the outage-flag one is 3 for 3 real reverts with 0
+      # findings across 300 commits of a healthy tree, and --fail-on-silent fires only on the
+      # multi-adder fingerprint, never on a single-file removal.
+      # 120, the larger of the two windows the duplicates chose (#1290 used 80). The window must
+      # reach the ADDING commit or a clean result means nothing, and a stale branch can be weeks
+      # old — #1238's flag was added 30 first-parent commits before the merge that dropped it. The
+      # cost is seconds, because presence is one pass over the checkout.
       - name: Nothing an earlier PR added has silently vanished
-        run: npm run audit:silent-reverts -- --ref HEAD --commits 120 --fail-on outage-flag
+        run: npm run audit:silent-reverts -- --ref HEAD --commits 120 --fail-on outage-flag --fail-on-silent
