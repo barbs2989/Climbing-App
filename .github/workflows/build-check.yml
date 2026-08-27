@@ -38,6 +38,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  overlay-absence:
+    # Static — no browser, no database, no secrets — but ~10s, nearly all of it Babel parsing two
+    # 400kB JSX files. `maskComments` needs a real parse because POSITION is the question: a regex
+    # comment-strip ate real code when this repo tried it. A build-chain guard is paid by every
+    # author on every build, so that cost belongs here rather than in `npm run build`.
+    #
+    # What it protects: two overlays shipped telling a climber they had nothing when a read had
+    # merely failed (#1276 Inbox, #1287 friends list). The other nine were then read and explained.
+    # All of that is a SNAPSHOT — a new overlay with a DB-backed empty state would be caught only
+    # if somebody remembered to re-run a probe in scripts/oneoff/, which nothing executes.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: No overlay reads a failed read as an empty account
+        run: node scripts/check-overlay-absence.mjs
+
   merge-survival:
     # A `pull_request` checkout IS merge(head, base), so HEAD here is exactly the merge this
     # guard exists to interrogate: did resolving it silently delete something either side had

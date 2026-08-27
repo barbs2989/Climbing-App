@@ -1,4 +1,25 @@
-// Which overlays can LIE about emptiness under an outage? -- v4, and the version history is the
+// Does every overlay that asserts ABSENCE either gate that claim on a failed read, or have a
+// recorded reason why it cannot lie?
+//
+// PROMOTED FROM scripts/oneoff/ BECAUSE THE CLASS WAS CLOSED ONCE, BY SOMETHING NOTHING RUNS.
+// Two overlays were shipped saying the wrong thing when a read failed -- the Inbox (#1276) and
+// the friends list (#1287) -- and the remaining 9 were then read and explained. All of that is
+// a snapshot: a NEW overlay with a DB-backed empty state would be caught only if somebody
+// remembered to re-run a probe in a directory nothing executes. That is the same argument
+// check:verification-fallback and check:outage-copy were promoted on, and this is the third
+// instance of it.
+//
+// A WORKFLOW JOB, NOT A BUILD GATE, and the reason is measured rather than assumed. maskComments
+// parses both 400kB JSX files with Babel because position is the whole question -- a regex
+// comment-strip ate real code when this repo tried it -- and two parses of that size cost ~9s of
+// the ~10.7s run. Profiling first blamed the char-level masking and bodyOf(), which together are
+// under a second; that profile was measuring a REWRITE of maskComments rather than the one the
+// guard calls, which is the fossil trap this repo records for probes that copy their subject.
+// A build-chain guard is paid by every author on every build, so ~10s belongs in CI.
+//
+// It FAILS on an overlay that asserts absence, is ungated, and is not explained in CHECKED --
+// see the block below. Printing it was not enough: the file already printed a NOT YET READ
+// section and exited 0, so a new one would have scrolled past even if anybody had run it.
 // point: every earlier version printed a SMALL, reassuring number and was blind.
 //
 //   v1  "1 of 53"  -- an overlay rendered `if(x)return <>...` has no `x&&`/`x?` marker, and the
@@ -16,11 +37,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { overlayStates } from "../lib/overlay-scaffold.mjs";
+import { overlayStates } from "./lib/overlay-scaffold.mjs";
 const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// scripts/, not scripts/oneoff/ — one level up since the promotion.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 
@@ -171,9 +193,29 @@ for (const r of ungated) {
   console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
   console.log(`  ${" ".repeat(20)} via ${r.followed.join(", ") || "(inline)"}`);
 }
+if (!ungated.length) console.log("  (none)");
 console.log("\nREAD THE ATTRIBUTION, NOT THE COUNT. Components are collected from a 3000-char");
 console.log("window after the render site, so an overlay rendered NEXT TO others picks up their");
 console.log("copy as well as its own -- `dashOpen` listing Inbox is that, not a finding. The rows");
 console.log("with ONE followed component are the clean ones. The count is an upper bound.");
 console.log(`\nGATED (${rows.length - ungated.length}): `
   + (rows.filter((x) => x.gated.length).map((r) => `${r.name}[${r.gated.join(",")}]`).join(", ") || "(none)"));
+
+/* THE VERDICT. An overlay that asserts absence, names no flag, and carries no recorded reason is
+   either a live defect of the #1276/#1287 shape or an entry somebody owes CHECKED. Both want a
+   human, so this exits 1 rather than printing into a log nobody opens -- which is exactly what
+   this file did as a probe, and why the class could be closed once and quietly re-open.
+
+   Read the ATTRIBUTION, not the count, before writing a CHECKED entry: components come from a
+   3000-char window, so an overlay rendered beside others picks up their copy too. The rows naming
+   ONE component are the clean ones. */
+if (ungated.length) {
+  console.error(`\ncheck:overlay-absence FAILED — ${ungated.length} overlay(s) assert absence with`);
+  console.error("no flag and no recorded reason. Either gate the copy on the read that feeds it,");
+  console.error("or add a CHECKED entry saying why that copy cannot be an outage lie (seed-backed,");
+  console.error("filter text, or a field a DB-derived object never carries).");
+  process.exitCode = 1;
+} else {
+  console.log(`\nok — ${rows.length} overlay(s) assert absence: ${rows.length - ungated.length} gated,`
+    + ` ${Object.keys(CHECKED).length} explained, 0 unexamined.`);
+}

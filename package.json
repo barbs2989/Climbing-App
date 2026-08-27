@@ -124,7 +124,8 @@
     "check:area-name-embed": "node scripts/check-area-name-embed.mjs",
     "check:control-names": "node scripts/check-control-names.mjs",
     "check:verification-fallback": "node scripts/check-verification-fallback.mjs",
-    "check:outage-copy": "node scripts/check-outage-copy.mjs"
+    "check:outage-copy": "node scripts/check-outage-copy.mjs",
+    "check:overlay-absence": "node scripts/check-overlay-absence.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
