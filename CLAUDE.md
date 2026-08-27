@@ -110,7 +110,7 @@ npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of t
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
-npm run audit:expiring-closures # does a route state a closure that has already expired?
+npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
@@ -5051,10 +5051,34 @@ the correction knows the screen is wrong, and they have no way to report it.
     worse. And do not replace one with a closure that is true *today*; that reproduces the defect,
     which is why the original sweep deliberately did **not** record a live fire closure it had just
     confirmed.
+  - **`--json` EXISTS SO NOTHING RE-DERIVES THE TIERING, and it was added because something already
+    had.** `group-stale-closures-by-event` is the consumer — it turns this backlog into a research
+    worklist by closure EVENT rather than by route — and its first version wrote its own shelf-life
+    needle. Being looser than these four tiers (which apply the `SELF_LIMITING` and `PERMANENT`
+    exclusions), it swept **~20 routes in the Suiattle corridor where this audit flags exactly ONE**:
+    the other 19 already cite closure order `#06-05-26-03` and its end date, which is the very form
+    this audit treats as acceptable. **Anyone working that list would have been "fixing" nineteen
+    correct rows.** The four-grade-parsers shape, arriving as a second classifier for a report rather
+    than as a second implementation of a function.
+    - The consumer's **event key** inflated it a second way, in the opposite direction to the one
+      [[a-detectors-clustering-key-decides-what-it-can-see]] records: keying on order-number →
+      road+milepost → first token of `road.name` **splits one closure across several groups**
+      whenever rows spell the road differently or only some cite the order. FR 6200 appeared three
+      times, Hozomeen three times — so *"4 of 57 events done"* credited four settled events with 20
+      routes when they cover **36 of 98**. A key too narrow to see a class costs findings; a key too
+      narrow to *unify* one makes finished work look unfinished.
+    - The payload **refuses rather than emitting a short one** — a serialisation that quietly lost
+      the tiering reads as a clean backlog, which is the false-pass direction.
+    - The script ends on `process.exitCode`, never `process.exit()`. Do not "tidy" that: on a **pipe**
+      an explicit exit truncates stdout mid-write, and the symptom is a script that appears to emit
+      broken JSON at a different byte every run.
   - Read-only, anon key, fails closed on an empty read **and** on zero prose values. **Not a build
     gate** — a property of the DB, not the checkout, so no code change can cause or fix it; same
-    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, 3 cases at the
-    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero.
+    reasoning as `check:counts` and `audit:trailhead-agreement`. Injection-tested, **6** cases at the
+    bottom of the script; `--inject=clean` and `--inject=yearonly` must both **PASS** with zero, and
+    `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
+    the output path** — `--json` routes every report line through `say()`, so a mistake there is
+    silent on stdout and invisible in the exit code.
 - **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
   third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
