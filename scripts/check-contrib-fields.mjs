@@ -133,6 +133,23 @@ if (readerCorpus.length < 200000) {
 /* A destructure names the key with no dot in front of it, so collect the names bound out of
    `= <anything>.field` and treat those as reads too. Scoped to that field's own destructuring
    rather than to every `{a,b}` in 1.5MB of JSX, which would make the test vacuous. */
+/* Is this object read WITHOUT naming its keys? Two shapes do that, and both called correct rows
+   dead when the guard only looked for `.key`:
+     Object.entries(x) / keys / values   — renders every key, names none (fitnessSpec)
+     const c = route.x; ... c[k]         — a dynamic index driven by a table (climate seasons) */
+function readsGenerically(corpus, obj) {
+  if (new RegExp("Object\\.(entries|keys|values)\\(\\s*" + obj + "\\s*\\)").test(corpus)) return true;
+  /* `const cl=route.climate` ... `cl[k]`. EVERY binding, not the first: `.match()` returns the
+     earliest, which here was the contribute form's own `const climateV=vals.climate` — so the
+     check asked whether the EDITOR's state was dynamically indexed and answered no about a
+     reader that plainly is. Same trap as taking the first commit from a log instead of the right
+     one. */
+  for (const m of corpus.matchAll(new RegExp("(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*[A-Za-z_$][\\w$]*\\." + obj + "\\b", "g"))) {
+    if (new RegExp("\\b" + m[1] + "\\[[A-Za-z_$][\\w$]*\\]").test(corpus)) return true;
+  }
+  return new RegExp("\\.\\s*" + obj + "\\s*\\[[A-Za-z_$][\\w$]*\\]").test(corpus);
+}
+
 function readsSubKey(corpus, field, key) {
   /* A DOTTED key is read if its leaf is named, OR if something enumerates the parent —
      `Object.entries(fitnessSpec).map(([k,v]) => k+": "+v)` renders every key and names none of
@@ -141,9 +158,15 @@ function readsSubKey(corpus, field, key) {
   if (key.indexOf(".") >= 0) {
     const [parent, leaf] = key.split(".");
     if (new RegExp("\\." + leaf + "\\b").test(corpus)) return true;
-    const enumerated = new RegExp("Object\\.(entries|keys|values)\\(\\s*" + parent + "\\s*\\)").test(corpus);
-    return enumerated && readsSubKey(corpus, field, parent);
+    return readsGenerically(corpus, parent) && readsSubKey(corpus, field, parent);
   }
+  /* A key can also be read GENERICALLY off the field itself. CLIMATE & SEASON does
+     `const cl=route.climate; const sv=k=>cl[k]||_bs[k]` and drives it from a table of quoted
+     season names — so `.summer` appears nowhere and a by-name test called four working rows dead.
+     Requiring the key to appear as a quoted literal AS WELL keeps this from waving through a key
+     nothing mentions: the generic read proves the mechanism, the literal proves this key is one of
+     the ones fed to it. */
+  if (readsGenerically(corpus, field) && new RegExp('"' + key + '"').test(corpus)) return true;
   if (new RegExp("\\." + key + "\\b").test(corpus)) return true;
   const pats = [...corpus.matchAll(new RegExp("\\{([^{}]{0,300})\\}\\s*=\\s*[A-Za-z_$][\\w$]*\\." + field + "\\b", "g"))];
   return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
@@ -208,7 +231,8 @@ console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a
 const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
   ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
   ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
-  ["LOGISTICS_KEYS", "approachLogistics"], ["DIFFICULTY_KEYS", "difficulty"]];
+  ["LOGISTICS_KEYS", "approachLogistics"], ["DIFFICULTY_KEYS", "difficulty"],
+  ["CLIMATE_KEYS", "climate"], ["SEASHAZ_KEYS", "seasonalHazards"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
   if (!m) {
