@@ -21,7 +21,11 @@ import { build } from "esbuild";
 
 // Resolved, never hardcoded: a pinned worktree path makes a probe silently measure another
 // branch's code, which is how measure-which-tab-renders-each-field.mjs lied for weeks.
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+// `..` and not `../..`: this lives in scripts/ since being promoted out of scripts/oneoff/, and the
+// depth changed with it. It failed LOUDLY (esbuild could not resolve the app files) rather than
+// silently measuring the wrong tree, which is the direction that matters — a pinned or mis-resolved
+// root is how measure-which-tab-renders-each-field.mjs reported another branch's code for weeks.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";

@@ -36,6 +36,7 @@ npm run check:provenance   # every wired section heading still shows how it was 
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -3606,6 +3607,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:pitch-discount`** guards the climbing-time discount two ways: that the curve has the
+  properties its comment claims, and that the planner **says** it applied. Promoted out of
+  `scripts/oneoff/`, where it had been proving both and **running nowhere** — the shape this file
+  records under `check:field-renders` (*"a verification nobody runs is not a verification"*) and
+  `check:guard-wiring` (*"a guard authored, injection-tested, documented and never wired in looks,
+  from every vantage point anyone checks, exactly like a guard that passes"*). Static SSR + esbuild,
+  **0.8s CPU** against `check:waypoint-placement`'s 6.3s on the same box, so it sits in `npm run build`.
+  - **What it protects is the "down before dark" answer.** `techHrs` discounts per-pitch time on
+    easy ground, and that number feeds Est. summit / Est. return. Erring short there is the #641
+    direction — an affirmative that reads green. The curve assertions are the ones a future edit
+    breaks silently: **never shortens** an estimate against the old step, **monotone**, **bounded to
+    [0.5, 1]**, and an **unparsed grade or NaN cannot earn a discount**.
+  - **The step became a taper and the boundary MOVED with it** — 5.6 went from full discount to
+    none, cutting the worst single-grade jump from **2.17x to 1.44x**. An earlier version of this
+    probe asserted the disclosure was PRESENT at 5.6 and caught that drift by failing. **Keep the
+    model and the message pinned together here, or they separate silently.**
+  - Asserts **both directions** — present at 5.5 and 5.4, absent at 5.6, 5.10a and with no pitches —
+    plus an `ANCHOR` that the estimate tiles rendered at all, without which every "absent" is
+    vacuous. Injection-tested on promotion: a flat `pitchedFraction` returning 0.2 fails four named
+    assertions and exits 1.
+  - **Promoting a one-off changes its DEPTH, and `ROOT` was `../..`.** It failed loudly — esbuild
+    could not resolve the app files — rather than silently measuring the wrong tree, which is how
+    `measure-which-tab-renders-each-field.mjs` reported another branch's code for weeks. Check the
+    root resolution of anything moved out of `scripts/oneoff/`.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
