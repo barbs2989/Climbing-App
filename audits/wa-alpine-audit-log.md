@@ -10414,3 +10414,64 @@ reservation fee) exact externally.
 Next batch continues after `wa_mount_stuart_girth_pillar` in the
 id-ordered scope (196 routes remained unaudited this pass before this
 batch; 188 remain after).
+
+## 2026-08-27 — Pass 3, Batch 153
+
+Two peaks, 8 routes (Mount Stuart 6: Ice Cliff Glacier, North Face, North Ridge
+(Complete), Stuart Glacier Couloir, The Gendarme, West Ridge; Mount Teneriffe 2:
+Kamikaze Trail, Standard Route). Four confirmed fixes, both a coordinate defect and
+a factual driving-directions error, corroborated externally.
+
+- **wa_mount_stuart_north_face** and **wa_mount_stuart_the_gendarme**: both routes'
+  "Mount Stuart summit" waypoint stored `lng -120.9022`, off by ~0.0009° (~68 m at
+  this latitude) from the peak's own established coordinate (47.475118,
+  -120.903144) — which matches `areas.wa_mount_stuart` AND the summit waypoint
+  already used correctly on this same batch's `wa_mount_stuart_ice_cliff_glacier`.
+  Externally confirmed against the USGS-cited Mount Stuart summit coordinate
+  (47.4751179 N, 120.9031444 W). Corrected both to 47.475118, -120.903144.
+- **wa_mount_teneriffe_kamikaze_trail** and **wa_mount_teneriffe_standard_route**:
+  both routes' `road.driveNote` (and the standard route's own `approach` text) cited
+  "I-90 Exit 31 (North Bend)" for reaching SE Mount Si Road via North Bend Way.
+  WSDOT's own interchange documentation identifies Exit 31 as SR-202/Bendigo Blvd
+  into downtown North Bend, not the Mount Si Road corridor; WTA and Mountaineers
+  driving directions for this exact trailhead both cite Exit 32 (436th Ave SE) then
+  North Bend Way then SE Mount Si Road — the identical route this catalog's text
+  describes, just under the wrong exit number. Corrected Exit 31 → Exit 32 in all
+  three fields.
+
+Needs human verification: `wa_mount_stuart_north_ridge`'s `fa` field and its own
+`overview` field disagree about the 1956 first-ascent partner name (`fa`: "Don
+Claunch & John Rupley"; `overview`: "John Rupley and Don Gordon"), and this is not a
+typo unique to this catalog — web sources are split the same way (some cite Claunch,
+some cite Gordon) with no accessible source authoritative enough to resolve it
+(Beckey's *Cascade Alpine Guide*, the likely tie-breaker, was not reachable from this
+environment). Per audit policy, not guessing at a fix when sources conflict.
+Separately, `fa`'s parenthetical (Beckey & Marts 1963 "lower-ridge variation"; no
+mention of the Gendarme's 1964 direct ascent) and `overview`'s account (Gendarme
+first climbed directly by Wickwire & Stanley in 1964; no mention of a 1963
+Beckey/Marts ascent) may describe different, non-contradictory achievements (first
+ascent above the Gendarme vs. first direct ascent of the Gendarme pitch itself vs.
+the 1970 Hargis/Ossiander toe-to-summit line) — externally corroborated the 1964
+Wickwire/Stanley Gendarme credit specifically, but left both fields as-is since
+untangling which claims are complementary vs. conflicting needs a source this
+environment could not reach.
+
+Confirmed correct and left unchanged: Mount Stuart elevation (9,415 ft, exact USGS
+match); `wa_mount_stuart_ice_cliff_glacier` FA (Bill & Gene Prater, Dave Mahre, Aug 5
+1957 — exact external match); `wa_mount_stuart_stuart_glacier_couloir` FA (Helmy
+Beckey & Larry Strathdee, June 1944 — exact external match); `wa_mount_stuart_west_ridge`
+FA (Lex Maxwell, Fred Llewellyn & John Vertrees, Aug 1935 — exact external match,
+and external sources independently confirm Beckey was *not* on this ascent,
+consistent with his absence from this row); Mount Teneriffe elevation (4,788 ft,
+exact external match); Enchantment Permit Area rules cited on all five Stuart routes
+(May 15–Oct 31 quota season, Feb 15–Mar 1 Recreation.gov lottery window, ~25%
+walk-up release, 8-person group cap) — all externally corroborated for the 2026
+season.
+
+Note: WebFetch was unavailable in this environment (egress blocked for every domain
+tried, including nps.gov) — all verification here relied on WebSearch result
+snippets rather than full source pages. Flagged the one case where that mattered
+(North Ridge FA) rather than treating a snippet as conclusive.
+
+Next batch continues after `wa_mount_teneriffe_standard_route` in the id-ordered
+scope (188 routes remained unaudited this pass before this batch; 180 remain after).
