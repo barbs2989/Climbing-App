@@ -1,6 +1,7 @@
 // Injection cases for audit:trailhead-road-agreement.
 //
-// The audit now reports ZERO against the whole catalog, on both sections. Zero is also exactly what
+// The audit reports ZERO against the whole catalog on sections 1, 2 and 3, and ONE on section 4
+// (Suiattle River Road, seven routes, MP 4 against MP 4.5). Zero is also exactly what
 // a BROKEN scan prints, and every one of the seven tightenings that took section 1 from 11 findings
 // to 0 REMOVED a class of match — so the live risk is no longer noise, it is a needle narrowed until
 // it matches nothing real. These cases are the only thing separating those two readings, and they
@@ -142,6 +143,56 @@ const CASES3 = [
     ] },
 ];
 
+/* --- section 4: the ROAD key ------------------------------------------------------------------
+   Section 3 keys on the MILEPOST, so a disagreement ABOUT the milepost lands in two buckets and is
+   never compared. Section 4 keys on the ROAD instead. One must FIRE and four must stay SILENT, and
+   `tworoads` is the load-bearing one: the first draft clustered on token OVERLAP with a growing
+   token set, which chains, and it reported 6 findings where 1 was real — a Ptarmigan Traverse row
+   naming both Cascade River Road and Suiattle River Road merged the two into one cluster and
+   reported Cascade's MP 20 winter gate as a third position for Suiattle's flood gate. */
+const CASES4 = [
+  { name: "positions", expect: 1,
+    why: "the real one: seven live routes put ONE flood gate on FR 26 at both MP 4 and MP 4.5",
+    rows: [
+      mproute("a", { name: "Suiattle River Road (FR 26)", status: "Closed to motor vehicles beyond milepost 4 due to flood damage" }),
+      mproute("b", { name: "Suiattle River Road (Forest Road 26)", status: "CLOSED to motorized vehicles at approximately milepost 4.5 due to washout damage" }),
+    ] },
+
+  // ROW ORDER IS LOAD-BEARING AND THIS CASE WAS VACUOUS WITHOUT IT. Chaining merges into whichever
+  // cluster it meets first, so with the two-road row LAST the single-road rows have already formed
+  // separate clusters and nothing merges: the case reported 0 against the chaining version too, and
+  // therefore proved nothing. Measured with the two-road row FIRST: chaining 1, exact identity 0.
+  // A case that passes against the implementation it exists to reject is not a case.
+  { name: "tworoads", expect: 0,
+    why: "a row naming TWO roads must not chain them into one cluster — this is the over-merge that made the first draft 6 findings where 1 was real",
+    rows: [
+      mproute("c", { name: "Cascade River Road (north approach) or Suiattle River Road (south approach)", status: "Closed at milepost 20" }),
+      mproute("a", { name: "Cascade River Road", status: "Closed to vehicles beyond milepost 20" }),
+      mproute("b", { name: "Suiattle River Road", status: "Closed to vehicles at milepost 4" }),
+    ] },
+
+  { name: "twogates", expect: 0,
+    why: "a road really can carry two gates, and a route naming BOTH is describing them, not disagreeing with anyone",
+    rows: [
+      mproute("a", { name: "Suiattle River Road", status: "Closed at milepost 4; a second washout blocks the road again at milepost 12" }),
+      mproute("b", { name: "Suiattle River Road", status: "Closed to vehicles at milepost 4" }),
+    ] },
+
+  { name: "seasonal", expect: 0,
+    why: "a winter gate and a washout are two different gates on one road, and comparing them reports correct work",
+    rows: [
+      mproute("a", { name: "Cascade River Road", status: "Closed at milepost 8 by the Marble Creek washout" }),
+      mproute("b", { name: "Cascade River Road", seasonalGate: "Snow-gated each winter at milepost 20" }),
+    ] },
+
+  { name: "noname", expect: 0,
+    why: "with no road.name the identity is a GUESS at which road the sentence is about, and a guess cannot support a claim that two routes contradict each other",
+    rows: [
+      mproute("a", { status: "Closed to vehicles at milepost 4 by flood damage" }),
+      mproute("b", { status: "Closed to vehicles at milepost 9 by flood damage" }),
+    ] },
+];
+
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "th-road-"));
 let pass = 0, fail = 0;
 for (const c of CASES) {
@@ -190,6 +241,23 @@ for (const c of CASES3) {
   const ok = got === c.expect;
   ok ? pass++ : fail++;
   console.log(`${ok ? "ok  " : "FAIL"}  s3:${c.name.padEnd(11)} expected ${c.expect}, got ${got === -1 ? "NO COUNT LINE" : got}`);
+  console.log(`        ${c.why}`);
+  if (!ok) console.log(out.split("\n").filter(l => l.trim()).slice(-14).map(l => "        | " + l).join("\n"));
+}
+
+console.log("");
+for (const c of CASES4) {
+  const f = path.join(dir, `s4-${c.name}.json`);
+  fs.writeFileSync(f, JSON.stringify(c.rows));
+  let out = "";
+  try {
+    out = execFileSync("node", ["scripts/audit-trailhead-road-agreement.mjs", "--fixture", f], { encoding: "utf8" });
+  } catch (e) { out = String((e.stdout || "") + (e.stderr || "")); }
+  const m = out.match(/(\d+) where one gate is given two POSITIONS/);
+  const got = m ? Number(m[1]) : -1;
+  const ok = got === c.expect;
+  ok ? pass++ : fail++;
+  console.log(`${ok ? "ok  " : "FAIL"}  s4:${c.name.padEnd(11)} expected ${c.expect}, got ${got === -1 ? "NO COUNT LINE" : got}`);
   console.log(`        ${c.why}`);
   if (!ok) console.log(out.split("\n").filter(l => l.trim()).slice(-14).map(l => "        | " + l).join("\n"));
 }

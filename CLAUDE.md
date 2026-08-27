@@ -118,7 +118,7 @@ npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
-npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
+npm run audit:trailhead-road # routes sharing ONE trailhead/road — open? same road? same gate?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -4445,6 +4445,44 @@ the correction knows the screen is wrong, and they have no way to report it.
       refuses.
     - Injection-tested **5/5**, and the **four that must stay SILENT are the point**: a case proving
       only that it fires is satisfied by a detector that flags everything.
+  - **SECTION 4 CLUSTERS BY ROAD, BECAUSE SECTION 3'S KEY CANNOT SEE A DISAGREEMENT ABOUT ITS OWN
+    KEY.** Section 3 buckets by the MILEPOST and asks in-force vs lifted — so two routes describing
+    one gate at two different mileposts land in two buckets and are **never compared**. It reported
+    **0** across all 205,543 routes while seven Suiattle River Road routes put one flood gate at
+    **MP 4** on four of them and **MP 4.5** on the other three. A party planning off the first walks
+    half a mile it did not budget for; off the second, it drives to a gate that is not there. This is
+    [[a-detectors-clustering-key-decides-what-it-can-see]] exactly, and it is a property of the key
+    rather than of the needle — the same class as sections 1 and 2 clustering by trailhead when the
+    unit of truth is the road.
+    - **The identity is the road's own `road.name`, matched EXACTLY, never by token overlap.**
+      Overlap **chains**: a Ptarmigan Traverse row whose name is *"Cascade River Road (north
+      approach) or Suiattle River Road (south approach)"* shares a token with each, so an overlap
+      test merges two unrelated roads and reports Cascade's MP 20 winter gate as a third position
+      for Suiattle's flood gate. Measured: that draft reported **6** findings of which at least 2
+      were this, and the exact-identity key reports **1**. A row naming two roads now keys to its
+      own bucket and finds no partner, which is the right answer for a value that does not say
+      which road the milepost belongs to.
+    - Three further narrowings, each a real shape rather than a guess: only **in-force** mentions
+      count (section 3's seasonal and hypothetical suppressions already do that work); a route
+      naming **several** mileposts is describing several gates and cannot contradict anyone; and a
+      route with **no `road.name`** is excluded, because section 3's prose fallback is a *guess* at
+      which road a sentence is about and a guess cannot support a claim that two routes disagree.
+    - **THE ONE LIVE FINDING IS NOT A DATA ERROR, AND THE RESEARCH IS RECORDED SO NOBODY REDOES
+      IT.** Both numbers are true of different things: the MBS alert for order **06-05-26-03**
+      (2 Apr 2026 – 1 Jan 2028) closes FR 26 **at milepost 4**, while **MP 4.5 is where the road is
+      washed out**. The formal order does not name a milepost at all — it describes the closure from
+      *"the intersection with Suiattle Mountain Road"* by legal land description — and the alert page
+      itself carries both numbers. `wa_spire_point_southwest_face` names that same junction and calls
+      it MP 4.5. So the catalog is reproducing an ambiguity that exists at the source, which is why
+      **this was NOT swept**: picking 4 over 4.5 would manufacture a certainty the record does not
+      carry. The repair, if anyone takes it, is to identify the gate by the **junction** rather than
+      by a milepost — and that is prose research, so it belongs behind
+      `fix-road-blocks-from-research.mjs`' weaker `researched` gate, never a bulk transform.
+    - Injection-tested **5/5** (1 fires, 4 silent), and `tworoads` is the one that matters. **ROW
+      ORDER is load-bearing there and the case was VACUOUS without it**: chaining merges into
+      whichever cluster it meets first, so with the two-road row LAST nothing merges and the case
+      reported 0 against the chaining version too. With it FIRST: chaining **1**, exact identity
+      **0**. *A case that passes against the implementation it exists to reject is not a case.*
 
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
