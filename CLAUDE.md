@@ -68,6 +68,7 @@ npm run check:drift# does the live site actually serve the current tip of main?
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
+npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)
 npm run check:migration-claims # do two OPEN PRs claim the same migration number?
 npm run check:sql -- fix.sql # would this hand-written SQL actually match anything? (run before handing it over)
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
@@ -112,13 +113,13 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
-npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES place one named point in two places?
+npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES disagree about one named point? (place, and height)
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
 npm run audit:trailhead-agreement # a route stores its trailhead TWICE — do the two copies agree?
 npm run audit:expiring-closures # does a route state a closure that has already expired? (--json for consumers)
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
-npm run audit:trailhead-road # routes sharing ONE trailhead — do they agree the road is open?
+npm run audit:trailhead-road # routes sharing ONE trailhead/road — open? same road? same gate?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -2427,6 +2428,55 @@ a build error, but a screen that renders wrong or not at all.
     or a definition pattern that parses nothing are each *nothing was checked*. Injection-tested;
     the 7 cases are at the bottom of the script, and cases 6 and 7 pin the two false-positive
     classes the first run actually produced.
+- **`check:column-drift`** asks `check:function-drift`'s question of **tables**: is the live schema
+  the one the migrations describe? Reads the live DB, so **not** a build gate.
+  - **THE INCIDENT IT WAS WRITTEN FOR: `routes.access_checked_at` is live, holds 39 stamped rows,
+    is anon-readable — and NO migration, NO commit anywhere in history, and NO reader mentions
+    it.** The DATA shipped to production; the CODE did not. Found by verifying a memory note that
+    claimed the feature had landed: migration `0172`, `lib/road.js`, `accessCheckedLine()` and a
+    guard are all described in that note and none exists. *Verify a memory's file and column names
+    before recommending work on them* — the rule was already written down and this is what it
+    catches.
+  - **Three guards sit beside this and none can see it.** `check:schema` is a build gate asking
+    exactly one direction — does `lib/db.js` READ a column the snapshot lacks; an EXTRA column
+    breaks nothing it tests. `check:function-columns` asks whether columns a stored FUNCTION writes
+    still exist, again only looking for absence. `check:migrations` refuses two files sharing a
+    number, and a migration nobody wrote has no number to collide with. Schema described nowhere is
+    invisible by construction — the `check:overlay-discovery` shape.
+  - **REFRESHING THE SNAPSHOT WOULD HAVE MADE IT WORSE, which is why section A asks the MIGRATIONS
+    rather than the cache.** `scripts/schema-snapshot.json` is a committed cache of the live schema
+    and the only record of the database inside the repo, so `npm run schema:refresh` silently
+    **absorbs** an undescribed column — after which `lib/db.js` may legally read a column no
+    migration creates, a rebuild from migrations produces an app reading a column that does not
+    exist, and every gate stays green. The baseline-regenerated-until-it-asserts-nothing failure,
+    with teeth.
+  - **Section C found the snapshot stale from THREE separate merged migrations** — `areas.source`
+    and `account_links` dropped but still listed, `areas.coords_approx` and `access_checked_at`
+    live but absent. Nothing had noticed, because the refresh instruction is a comment in a script
+    header. That staleness is not inert: `check:schema` is a **build gate**, so a column live but
+    missing from the snapshot makes a **correct reader fail the build**, while a column dropped
+    live but still in the snapshot lets a reader of a DROPPED column **pass** — which is the #372
+    defect that guard exists to prevent. Snapshot refreshed in the same commit; the guard is what
+    stops it rotting again.
+  - **Precision was measured before it shipped**, because a detector over 179 migration files is
+    exactly the kind that returns a page of noise: across 41 live tables and 479 live columns,
+    section A reports **1**, section B reports **0**. The migration directory describes the
+    database almost exactly, which is what makes the one exception worth reading.
+  - **Replays statements in SOURCE ORDER, and the first version did not.** `0036_crews_persistence`
+    does `drop table if exists crews cascade;` and re-creates it **in the same file**, so applying
+    every CREATE and then every DROP wiped the table the file had just built and reported all ten
+    of its columns as undescribed. `check:rls` records the identical defect from the policy side.
+  - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
+    parsed columns, an unreachable database, and a live schema exposing zero tables.
+  - `KNOWN` declares a column as live-and-undescribed **with a reason**, and a **stale** entry
+    fails — so when the missing migration lands, this says so and the entry is deleted.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
+    `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
+    section**, never on the exit code — a mutation that adds a column also makes the fixture
+    disagree with the snapshot, so section C fires too and every case would look alike from an
+    exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
+    dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
+    breaking their mechanism and confirming they then fire.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
   merge will actually apply. `var SS={…}` in `ClimbMatch.jsx` is an **allow-list**, consulted
   by both merge paths (the local `routeEdits` one and the DB one that counts distinct
@@ -2588,6 +2638,32 @@ a build error, but a screen that renders wrong or not at all.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+- **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
+  only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
+  catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
+  public and which `0146` excluded **on purpose** — so the app promised a summit nobody may stand
+  on was on its way. Proven on screen rather than inferred: chip `Colorado 14ers 0/53`, card
+  expanded 1032 → 2550 chars, the sentence read back verbatim.
+  - **The second defect is worse than the copy.** `cpl = d >= t`, so at `t = 53` the card could
+    **never** read Complete: a climber who ticks every achievable Colorado 14er sits at 52/53
+    forever.
+  - **Fixed by this file's own precedent, not a new rule.** Desert Towers hit exactly this and the
+    TOTAL was corrected **30 → 27**, on the reasoning that the advertised number is what you can
+    tick *here*; Colorado had been left at 53. `total: 52` deletes the false sentence outright
+    (`extra` becomes 0) instead of rewording it, and makes Complete reachable.
+  - **52 is only honest because the card says why.** `LDESC.co14` now states that the standard list
+    counts 53 and that Mount Bross is not among these 52 because its summit is closed to the
+    public. Without that, 52 is a number that disagrees with every guidebook — **do not "correct"
+    it back**, and never "finish" the list by adding Bross: a tick list is an invitation to go
+    climb something.
+  - The generic sentence carries a comment saying what it is FOR — a gap the catalog really can
+    close — so nobody points it at a permanent ceiling again. `audit:list-coverage` now reports all
+    six rosters complete and advertised-not-in-catalog **1 → 0**.
+  - Guarded in **`check:challenge-rows`** (CI, not the build). It expands the Colorado card
+    **separately**, because that guard's existing expansion takes whichever roster card sorts
+    shortest and was never guaranteed to be this one — *a guard that might look at the right card
+    is not a guard.* `scripts/oneoff/probe-colorado-14ers-ceiling-copy.mjs` is the before/after
+    measurement, and it fails closed on a card that never expanded.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
@@ -4115,6 +4191,38 @@ the correction knows the screen is wrong, and they have no way to report it.
     and measuring showed why: the agreeing routes store **the same point at different precisions**
     (48.8829219, 48.883737, 48.8837, 48.88374 ...), all within ~100 m, so no two are byte-equal and
     an exact-match mode **refuses a unanimous cluster**.
+  - **SECTION 2 IS THE MIRROR, and it lives here rather than in a SIXTH waypoint audit.** Section 1
+    asks whether two routes disagree about **where** a named point is; section 2 asks whether they
+    disagree about **how high** it is while storing the **identical** coordinate. Same question over
+    the same pairs, so folding it in costs one read instead of another script. The coordinate being
+    byte-identical is what makes it the mirror: the position is agreed, so **only the number can be
+    wrong**. **32 findings, 23 of them TRAILHEADS.**
+    - **`audit:waypoint-elevations` cannot see it.** That audit flags a pin the TERRAIN refuses, so a
+      disagreement between two rows at one coordinate is invisible whenever both values sit inside
+      the terrain box. **#1320 repaired exactly one instance of this class and it was found BY HAND.**
+    - **Keyed on the coordinate rounded to 4 dp (~11 m), which is required rather than sloppy**: rows
+      store one point at different precisions (48.8837373 vs 48.8837), so an exact match finds almost
+      nothing — the lesson the modal-coordinate attempt already paid for.
+    - **THE MINORITY IS SOMETIMES THE CORRECT ROW**, which is the whole argument for adjudicating
+      against the ground rather than the vote. At the *SR-20 Wine Spires pullout* **four** routes said
+      2,200 or 3,450 ft and **one** said 4,300; the ground reads 4,198-4,579 and admits **only the
+      lone dissenter**. A majority rule would have taken the correct row and repaired it into
+      agreement with four wrong ones.
+    - **DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY.** Two threshold artefacts would each
+      have produced a confident wrong write: *Upper Dungeness Trailhead*, where the ground refuses
+      2,970 ft by **17 feet** and the route's own prose independently says 2,960; and *Lake of the
+      Woods*, where the surviving value is admitted only by **13 feet** while the ground box refuses
+      it outright. So the rule is that the surviving value must sit inside the ground box (or within
+      50 ft) and every replaced value at least **300 ft** outside — a 6x gap.
+    - **9 repaired** (`scripts/oneoff/fix-same-coordinate-elevation-disagreements.mjs`), 32 -> 26.
+      **26 are deliberately left**: 23 where the ground admits EVERY stated value, so the spread is
+      inside the terrain's own noise; 1 where it refuses every value (that is section 1's question,
+      not this one); and the two artefacts above.
+    - **It caught an incomplete repair made HOURS EARLIER by the same session.**
+      `fix-trailhead-elevations-from-a-corroborated-sibling` moved three *Stuart Lake Trailhead* rows
+      to 3,400 ft and left `wa_boving_christensen` at 2,930, because that sweep only examined pins
+      the TERRAIN refuses and 2,930 sat inside the flat tolerance. *An instance fixed by hand is not
+      a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
@@ -4469,6 +4577,44 @@ the correction knows the screen is wrong, and they have no way to report it.
       refuses.
     - Injection-tested **5/5**, and the **four that must stay SILENT are the point**: a case proving
       only that it fires is satisfied by a detector that flags everything.
+  - **SECTION 4 CLUSTERS BY ROAD, BECAUSE SECTION 3'S KEY CANNOT SEE A DISAGREEMENT ABOUT ITS OWN
+    KEY.** Section 3 buckets by the MILEPOST and asks in-force vs lifted — so two routes describing
+    one gate at two different mileposts land in two buckets and are **never compared**. It reported
+    **0** across all 205,543 routes while seven Suiattle River Road routes put one flood gate at
+    **MP 4** on four of them and **MP 4.5** on the other three. A party planning off the first walks
+    half a mile it did not budget for; off the second, it drives to a gate that is not there. This is
+    [[a-detectors-clustering-key-decides-what-it-can-see]] exactly, and it is a property of the key
+    rather than of the needle — the same class as sections 1 and 2 clustering by trailhead when the
+    unit of truth is the road.
+    - **The identity is the road's own `road.name`, matched EXACTLY, never by token overlap.**
+      Overlap **chains**: a Ptarmigan Traverse row whose name is *"Cascade River Road (north
+      approach) or Suiattle River Road (south approach)"* shares a token with each, so an overlap
+      test merges two unrelated roads and reports Cascade's MP 20 winter gate as a third position
+      for Suiattle's flood gate. Measured: that draft reported **6** findings of which at least 2
+      were this, and the exact-identity key reports **1**. A row naming two roads now keys to its
+      own bucket and finds no partner, which is the right answer for a value that does not say
+      which road the milepost belongs to.
+    - Three further narrowings, each a real shape rather than a guess: only **in-force** mentions
+      count (section 3's seasonal and hypothetical suppressions already do that work); a route
+      naming **several** mileposts is describing several gates and cannot contradict anyone; and a
+      route with **no `road.name`** is excluded, because section 3's prose fallback is a *guess* at
+      which road a sentence is about and a guess cannot support a claim that two routes disagree.
+    - **THE ONE LIVE FINDING IS NOT A DATA ERROR, AND THE RESEARCH IS RECORDED SO NOBODY REDOES
+      IT.** Both numbers are true of different things: the MBS alert for order **06-05-26-03**
+      (2 Apr 2026 – 1 Jan 2028) closes FR 26 **at milepost 4**, while **MP 4.5 is where the road is
+      washed out**. The formal order does not name a milepost at all — it describes the closure from
+      *"the intersection with Suiattle Mountain Road"* by legal land description — and the alert page
+      itself carries both numbers. `wa_spire_point_southwest_face` names that same junction and calls
+      it MP 4.5. So the catalog is reproducing an ambiguity that exists at the source, which is why
+      **this was NOT swept**: picking 4 over 4.5 would manufacture a certainty the record does not
+      carry. The repair, if anyone takes it, is to identify the gate by the **junction** rather than
+      by a milepost — and that is prose research, so it belongs behind
+      `fix-road-blocks-from-research.mjs`' weaker `researched` gate, never a bulk transform.
+    - Injection-tested **5/5** (1 fires, 4 silent), and `tworoads` is the one that matters. **ROW
+      ORDER is load-bearing there and the case was VACUOUS without it**: chaining merges into
+      whichever cluster it meets first, so with the two-road row LAST nothing merges and the case
+      reported 0 against the chaining version too. With it FIRST: chaining **1**, exact identity
+      **0**. *A case that passes against the implementation it exists to reject is not a case.*
 
 - **`audit:waypoints`** asks whether each waypoint actually sits on the route's own gpx track —
   a geometry question no column-coverage check can reach, since every field is populated and
@@ -5837,6 +5983,60 @@ for another.
       attribution rather than the count: components are collected from a 3,000-character window,
       so an overlay rendered beside others picks up their copy too. The rows naming ONE component
       are the clean ones.
+
+**A COUNT AND THE LIST UNDER IT WERE TWO DERIVATIONS OF ONE FACT, ON ONE SCREEN.** `check:ui`
+asserts that two SCREENS counting the same list agree (#1203). The group detail view did it to
+itself: the heading was `mem.length + (isMod && mem.indexOf(_meGid) < 0 ? 1 : 0)` while the roster
+below was `mem` **minus anything that failed to resolve**. They agreed only by luck. Measured with
+the app's own lifted expressions, **4 of 5 cases disagreed**
+(`scripts/oneoff/probe-group-roster-vs-count.mjs`).
+  - **The reachable one is the DEFAULT state of every group you create.** A locally-created group
+    is `memberIds:[], ownerId:0, moderatorIds:[0]` — so `mem` is empty, `isMod` is true, the fudge
+    fires, and the screen reads **"Members · 1" above an empty list**. The fudge existed *because*
+    the creator is not in `memberIds`; it added them to the NUMBER, and nothing could add them to
+    the ROWS, because the roster called `cById(id)` directly and `cById(0)` is `undefined` — `ME`
+    is not in `CLIMBERS`. `_asMember` had the `id===0?ME` branch the roster needed and the roster
+    did not call it.
+  - **A failed profiles read emptied the roster while the heading still claimed N.**
+    `useProfilesByIds` correctly throws, so `.data` is undefined, `||[]` leaves `_profMap` empty,
+    and `_asMember` returns **null for every member** — "Members · 2" above nothing at all. The
+    same query's OTHER call site degrades to a generic label instead (`p&&p.name||"A climber"`,
+    which this file already blesses), so **one query had two miss behaviours: one degrades, one
+    silently drops the person.**
+  - Fixed **by construction**, not by a matching rule: `_roster` is the list that renders and
+    `_memN` is its length, so the number and the rows cannot disagree. A member who cannot be
+    resolved renders as a placeholder rather than vanishing, and the creator is added to the LIST
+    rather than to the number.
+  - **`membObjs` is deliberately left alone as the MENTION list.** It also feeds
+    `mentionCandidates` and `notifyMentions`, and a placeholder must never become an @-mention
+    candidate — so the display roster is a second array rather than a widening of that one.
+  - **The `_memN` hoist was already there and said it existed "so the compound count is written
+    once" — and the roster heading held a second copy of the same expression.** A hoist is not a
+    single source of truth until every site uses it. The "Show all N members" button was a **third**
+    number, taking the roster length while the heading took the fudged one.
+  - `grpProfilesUnavailable` says so when the read failed, because with the placeholder the count is
+    right either way and the screen would otherwise present *"A climber"* as if it were the name.
+  - **SHOWING YOU AT ALL WOKE A LATENT `check:real-profile-rows` DEFECT, and CI caught it.** The
+    row's subtitle is `c._profile ? "Owner"/"Moderator"/"Member" : (c.level+" · "+vScore(c))`, and
+    `_asMember` hands back **bare `ME`**, which carries no `_profile`. A real signed-in account has
+    no seed `level` and no vouches, so your own row rendered **"undefined · 0"** — invisible until
+    this roster started listing you. `check:signed-in` failed on `postMenuFor`/`reactPickerFor`,
+    whose payload opens a synthetic `ownerId:0` group with **no members**, i.e. precisely the
+    fudge case.
+    - **`check:real-profile-rows` passes either way and structurally cannot see it.** That gate asks
+      whether the concatenation is **gated**; this one is. The defect was handing it an object that
+      **fails** the gate. *Gating an expression and satisfying that gate are different questions* —
+      the same distinction as `check:field-renders` (does the column reach a screen) versus
+      `check:token-boxes` (does it fit the element it reaches).
+    - **The first fix keyed on `m.id===_meGid` and never fired.** `ME.id` is **0 signed in or out**,
+      so the resolved object can never equal a uuid `_meGid`; it has to key on the id being
+      **mapped**. Caught by the probe, not by reading it.
+    - The probe's own fixture was wrong in the other direction: seed climbers really do carry
+      `level:"Intermediate"`, so test climbers without one made every seed row look like the defect.
+      **Check the seed shape before "fixing" the app to satisfy a fixture.**
+  - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
+    the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
+    recorded that the underlying disagreement was still real; this is that, closed.
 
 **A FLAG THAT ALREADY EXISTED REACHED SIX PLACES AND NOT THE TWO OVERLAYS IT IS ABOUT.**
 `connectionsUnavailable` has been in `ClimbMatch.jsx` since #1224. Both surfaces fed by
