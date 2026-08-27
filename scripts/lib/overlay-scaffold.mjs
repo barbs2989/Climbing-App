@@ -36,7 +36,11 @@ import { readFileSync, existsSync } from "node:fs";
 // trust — and assertKnownOverlays() below fails if a name here has stopped being an
 // overlay at all, which is how a list like this normally rots.
 export const NEEDS_EXTRA_STATE = {
-  areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
+  // Was "rendered as `areaTreeOpen && selArea`". Still needs an area selected first, but the
+  // gate is now `areaTreeOpen && dbAreaCtx` for the DB overlay, falling back to `selArea` for
+  // the seed one — `selArea` alone is what made this overlay unreachable in production, since
+  // deploy.yml ships VITE_USE_DB=true and only the seed browse path ever writes it.
+  areaTreeOpen: "rendered as `areaTreeOpen && (dbAreaCtx || selArea)` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
