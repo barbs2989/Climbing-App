@@ -3133,9 +3133,10 @@ the correction knows the screen is wrong, and they have no way to report it.
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
 - **`audit:camp-route-fit`** asks the question `audit:camp-elevations` surfaced and could not
-  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, is
+  answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, was
   offered *"Ruth Mountain summit camp"* at 7,100 ft — a real camp with a correct elevation, on a
-  different mountain 7.2 km away. A zone file handed every camp in a corridor to every route in
+  different mountain 7.2 km away and 2,100 ft above the top of an 800 ft rock buttress.
+  **FIXED** by `scripts/oneoff/fix-ellation-summit-camp.mjs`; kept here as the founding case. A zone file handed every camp in a corridor to every route in
   it. **The elevations are right; the PAIRING is noise.** Report-only, read-only; not a build gate.
   - **THE OBVIOUS SIGNAL IS FAR TOO WEAK, and saying why is the point.** *"The camp names a
     different peak"* describes almost every CORRECT camp: Boston Basin serves Boston, Forbidden
@@ -3158,9 +3159,13 @@ the correction knows the screen is wrong, and they have no way to report it.
   - A peak name is only usable when it is **distinctive and unique in the catalog** — "Middle
     Peak", "North Peak" and "The Tower" exist many times over, so matching them says nothing about
     which is meant. 431 of 447 peaks qualify.
-  - **It must never become a sweep.** A shared corridor camp is correct, and the one corroborated
-    finding shows why: `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-area
-    camps are defensible — Ruth's **summit** camp still is not. The repair is a judgement per row.
+  - **It must never become a sweep**, and the one corroborated finding is also the demonstration:
+    `wa_ellation`'s own prose places it in the Ruth Creek valley, so Ruth-AREA camps are defensible
+    even on a crag route — Ruth's **summit** camp was not. Repaired by removing **one** entry of
+    six, leaving the four other Ruth/Icy/Nooksack camps (Ruth Arm 5,900, the Ruth-Icy notch 6,600,
+    the Price Lake shoulder 5,900, Nooksack Cirque 3,000) untouched. The repair is a judgement per
+    row, and the script's declared-state contract enforces that: it names the entry, the elevation
+    AND the count it expects, so a re-run REFUSES rather than widening.
   - **IT UNDER-REPORTS ITS OWN CLASS, and the wider version was measured and REJECTED.** Reading
     the repair context showed the problem is bigger than the 6: **Mount Pilchuck (5,324 ft) carries
     eight camps and SEVEN belong to other mountains** — Three Fingers (the Lookout, Tin Can Gap,
@@ -3203,8 +3208,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     LIST, not a defect count.** 19 camps sit above their route's own high point, and reading them
     with the area name attached shows **most are correct**: a traverse camp on a neighbouring
     higher summit ("South Twin Sister summit bivies" serves four lower Sisters), or an over-broad
-    zone assignment (`wa_ellation`, 5,000 ft, carries Ruth Mountain's 7,100 ft summit camp from
-    7 km away). Neither is a wrong elevation. The script says so in its own output, because
+    zone assignment (`wa_ellation`, 5,000 ft, carried Ruth Mountain's 7,100 ft summit camp from
+    7 km away — since removed, though its four other Ruth-area camps correctly remain). Neither is
+    a wrong elevation. The script says so in its own output, because
     *when an audit reports a number, ask what it is the number OF.*
   - **The name-matching gates are IMPORTED from `scripts/lib/camp-names.mjs`**, the same module
     `solve-camp-elevations.mjs` writes through. A solver and an audit that disagree about "the
