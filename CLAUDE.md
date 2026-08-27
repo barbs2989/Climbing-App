@@ -1544,7 +1544,7 @@ a build error, but a screen that renders wrong or not at all.
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
 - **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
   SQUASH silently delete what an earlier PR added?** **It RUNS on every push to main now**
-  (`.github/workflows/silent-revert-check.yml`), which it did not for most of its life — see the
+  (`.github/workflows/silent-reverts.yml`), which it did not for most of its life — see the
   wiring note at the end of this entry. That guard interrogates a **merge commit** —
   *"every identifier either parent introduced survives"* — but PRs here land as **squash** merges,
   so main's history contains no merge commit for them and the guard never runs on the thing that
@@ -1566,14 +1566,27 @@ a build error, but a screen that renders wrong or not at all.
     - **`fetch-depth: 0` is not a nicety.** The default depth of 1 makes this audit **vacuous
       rather than merely limited**: its subject is history, so a one-commit clone gives it one
       commit to walk and it reports a clean tree having examined nothing.
-    - **`--fail-on outage-flag`, and ONLY that kind.** The default stays report-only and that is
-      deliberate — over 500 commits every hit of the file rule has been a **promotion** and every
-      generic-token finding a supersession or a rename, so failing on those would make the audit
-      argue with correct work. `outage-flag` is the one class with a different **measured**
-      precision: 3 for 3 genuine reverts, and **0 findings across 300 first-parent commits** of a
-      healthy tree. Proven in both directions before shipping — exit 0 on today's main at 120
-      commits, exit 1 on `--ref 2bd9a5d` naming the kind, and exit 0 there **without** the flag, so
-      the documented report-only behaviour is unchanged.
+    - **IT WAS WIRED TWICE, BY TWO SESSIONS, AND BOTH RAN ON EVERY MERGE.** `silent-reverts.yml`
+      (`--commits 120 --fail-on outage-flag`) and `silent-revert-check.yml`
+      (`--commits 80 --fail-on-silent`) asked one question with two runners and two similarly-named
+      checks, and a reader had no way to know they were the same thing. They were **not**
+      complementary, and the proof is control flow rather than a measurement: `silentKinds` is only
+      added to inside the same `if(!deliberate)` branch that increments `silent`, and
+      `if(silent) GATE.push(…)` runs **before** the `--fail-on` block — so a non-empty `silentKinds`
+      always exits under `--fail-on-silent` first and the `--fail-on` comparison is **unreachable**.
+      `--fail-on-silent` also gates on the multi-commit file fingerprint, which `--fail-on` never
+      does. So it is strictly broader in kind; the only thing the other file had was the **larger
+      window**, and that is what survives the merge. One workflow now: `--commits 120
+      --fail-on-silent`, no `npm ci` (the script shells out to git, so it keeps working when the
+      build is broken — which is when a bad merge is most likely to have landed).
+    - **`--fail-on outage-flag` is still supported and is what to reach for by hand**, because the
+      default stays report-only and that is deliberate — over 500 commits every hit of the file rule
+      has been a **promotion** and every generic-token finding a supersession or a rename, so
+      failing on those would make the audit argue with correct work. `outage-flag` is the one class
+      with a different **measured** precision: 3 for 3 genuine reverts, and **0 findings across 300
+      first-parent commits** of a healthy tree. Proven in both directions before shipping — exit 0
+      on today's main at 120 commits, exit 1 on `--ref 2bd9a5d` naming the kind, and exit 0 there
+      **without** the flag, so the documented report-only behaviour is unchanged.
     - **The window must reach the ADDING commit or a clean result means nothing** — the trap this
       entry already records, where `--commits 6` reported clean on an incident `--commits 10`
       caught. A stale branch can be weeks old: #1238's flag was added **30** first-parent commits
