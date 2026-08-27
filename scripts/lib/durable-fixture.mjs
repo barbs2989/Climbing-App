@@ -14,6 +14,7 @@
 // except cleanup(), which is a no-op that reports nothing leaked, because nothing was made.
 
 import { SUPABASE_URL, anonKey } from "./supabase-env.mjs";
+import { POLICY_VERSION } from "../../lib/policy.js";
 // Re-exported from ui-fixture so the two modes cannot disagree about the storage contract.
 // Safe to import now that its service-key lookup is lazy.
 export { sessionForStorage, STORAGE_KEY } from "./ui-fixture.mjs";
@@ -84,6 +85,38 @@ export async function durableFixture(log) {
   // the day they were made — a later migration or backfill could flip a column default.
   if (mate.discoverable !== false) {
     throw new Error(`the CI mate profile is discoverable — it can surface in partner browse for real users. Set discoverable=false before running again.`);
+  }
+
+  // THE DURABLE ACCOUNTS PREDATE 0145's TRIGGER, so nothing ever stamped their acceptance and
+  // PolicyUpdateNotice fired on every screen of every CI run -- a fixed, non-dismissible 200px
+  // panel over the bottom of everything these guards measure, and 216 characters of constant
+  // text inflating every screen's length. The per-run fixture is fixed at creation
+  // (scripts/lib/ui-fixture.mjs sends terms_version, exactly as lib/auth.js does on a real
+  // signup); these accounts already exist, so they are stamped here instead.
+  //
+  // The account updates its OWN profile row on its OWN JWT, which is precisely what
+  // acceptCurrentPolicy() does in the app -- no service key, and nothing CI is not allowed to
+  // hold. Idempotent: it reads first and writes only when the version differs, so a re-run is
+  // one extra GET.
+  const pol = await readBody(await fetch(
+    `${SUPABASE_URL}/rest/v1/profiles?id=eq.${session.user.id}&select=terms_accepted_version`,
+    { headers: { apikey: ANON, Authorization: `Bearer ${session.access_token}` } },
+  ));
+  assertHealthy(pol, "reading the owner's policy acceptance");
+  if (pol.json?.[0]?.terms_accepted_version !== POLICY_VERSION) {
+    const stamp = await readBody(await fetch(
+      `${SUPABASE_URL}/rest/v1/profiles?id=eq.${session.user.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          apikey: ANON, Authorization: `Bearer ${session.access_token}`,
+          "Content-Type": "application/json", Prefer: "return=representation",
+        },
+        body: JSON.stringify({ terms_accepted_version: POLICY_VERSION, terms_accepted_at: new Date().toISOString() }),
+      },
+    ));
+    assertHealthy(stamp, "stamping the owner's policy acceptance");
+    log(`  stamped the durable owner's policy acceptance (${POLICY_VERSION})`);
   }
 
   log(`  signed in as the durable CI accounts (anon key only, no service key)`);
