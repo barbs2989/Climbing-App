@@ -167,11 +167,24 @@ const load = async (qs, settle) => {
 
 const TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
 const seen = new Map();       // overlay name -> finding rows
-const notReached = [];
+const notReached = [];        // changed NOTHING on any tab — a real failure to open
+const notFixed = [];          // opened, but is not a fixed overlay — out of this guard's subject
 let checkedOverlays = 0, checkedScrollers = 0, noPayload = 0;
 
 // Warm once so the first real navigation is not paying for the module graph.
 await load("?zt=today", 2500);
+
+/* A BARE reading of each tab, so "this overlay changed nothing" can be told from "this overlay is
+   not a fixed sheet". SEVEN navigations for the whole run, not one per overlay — a per-overlay
+   baseline would double a walk that already opens 51 modals across 7 tabs.
+   Recorded even if a tab fails to render: a null baseline makes the comparison below fall through
+   to the old behaviour for that tab rather than inventing a verdict from a missing number. */
+const baseChars = {};
+for (const t of TABS) {
+  await load(`?zt=${t}`, 2200);
+  const n = await page.evaluate(() => (document.body.innerText || "").replace(/\d/g, "").length);
+  baseChars[t] = n > 0 ? n : null;
+}
 
 // THE FALSE-PASS GUARD. Vite reports a throwing transform as a per-request internal error
 // and keeps serving, so a lost anchor does NOT stop the run — it produces a blank app in
@@ -200,7 +213,7 @@ for (const name of overlays) {
     log(`  ${name}`.padEnd(26) + "skipped — " + NEEDS_EXTRA_STATE[name]);
     continue;
   }
-  let landed = null, empty = null;
+  let landed = null, empty = null, opened = null;
   for (const t of TABS) {
     await load(`?zt=${t}&z=${name}`, 2200);
     // A payload that resolved empty in the seeded demo (no groups or events — both sit
@@ -210,13 +223,42 @@ for (const name of overlays) {
     if (d) { empty = d; break; }
     const r = await scan();
     if (r.roots > 0) { landed = { tab: t, ...r }; break; }
+    /* NO QUALIFYING ROOT IS NOT "IT NEVER MOUNTED", and reporting it as such put four permanent
+       residents in that bucket. `isOverlayRoot` demands a VISIBLE position:fixed div at least
+       half the viewport wide and a quarter tall — correct for this guard, whose subject is a
+       pane that chains its scroll to the page behind a sheet. An INLINE dropdown satisfies none
+       of it and has no page behind it to chain to.
+       Measured against the baseline below: trustOpen (+461 chars), unfinishedOpen (+236),
+       alertsOpen (+752) and legal (+868) all OPEN and have ZERO fixed elements between them.
+       check:zero mounts all four. So the old line said "never mounted" about overlays that
+       demonstrably mount, and handed them to a guard that already confirms them.
+       The cost was not the wording. A bucket that always holds four is a bucket where a FIFTH —
+       an overlay that genuinely stopped opening — arrives unnoticed. Separating the two is what
+       makes an empty `notReached` mean something. */
+    if (baseChars[t] != null) {
+      /* DIGITS ARE MASKED ON BOTH SIDES, and the first version of this did not do it — it
+         reported `unfinishedOpen (me, +1 chars)` and `alertsOpen (me, +1 chars)`, latching onto
+         a ONE-CHARACTER difference as proof a modal had opened. It had not: those two open on
+         `today` at +236 and +752, and the +1 on `me` is a clock or a count moving by a digit.
+         render-settle.mjs masks digits for exactly this reason, and a verdict built on unmasked
+         text is a verdict a ticking number can fabricate.
+         The LARGEST delta across tabs wins rather than the first non-zero, so the tab reported
+         is the one where the thing actually opened. */
+      const chars = await page.evaluate(() => (document.body.innerText || "").replace(/\d/g, "").length);
+      const delta = chars - baseChars[t];
+      if (delta !== 0 && (!opened || Math.abs(delta) > Math.abs(opened.delta))) opened = { tab: t, delta };
+    }
   }
   if (empty) {
     log(`  ${name}`.padEnd(26) + "skipped — nothing to open it about in the demo: " + empty);
     noPayload++;
     continue;
   }
-  if (!landed) { notReached.push(name); continue; }
+  if (!landed) {
+    if (opened) notFixed.push(`${name} (${opened.tab}, ${opened.delta >= 0 ? "+" : ""}${opened.delta} chars)`);
+    else notReached.push(name);
+    continue;
+  }
   checkedOverlays++;
   checkedScrollers += landed.scrollers.length;
   const bad = landed.scrollers.filter((s) => !s.contained);
@@ -249,8 +291,13 @@ await browser.close();
 stopServer();
 
 // Say what was NOT covered rather than letting the summary imply full coverage.
+if (notFixed.length) {
+  log(`\n  ${notFixed.length} overlay(s) OPENED but are not fixed sheets, so this guard has no subject for them:`);
+  for (const n of notFixed) log(`    ${n}`);
+  log(`  (An inline dropdown has no page behind it to chain its scroll to. These are not gaps.)`);
+}
 if (notReached.length) {
-  log(`\n  ${notReached.length} overlay(s) never mounted on any tab, so nothing was checked for them: ${notReached.join(", ")}`);
+  log(`\n  ${notReached.length} overlay(s) changed NOTHING on any tab, so nothing was checked for them: ${notReached.join(", ")}`);
   log("  (check:zero owns the assertion that an overlay mounts at all — this check only reports it.)");
 }
 
@@ -262,3 +309,18 @@ console.error(`\ncheck:overlay-scroll: ${fails.length} region(s) that would scro
 for (const f of fails) console.error("  " + f);
 console.error("");
 process.exit(1);
+
+// INJECTION CASES
+//   1. Append a suffix to the `z` param so no overlay can be opened
+//      (`?zt=${t}&z=${name}ZZNOPEZZ`).
+//        FAILED (exit 1). ALL 54 landed in `notReached` and ZERO in `notFixed`, and the
+//        scaffold guard fired: "only 0 of 54 openable overlays mounted — the opener is not
+//        working". That is the case this split exists to survive: `notFixed` must never be able
+//        to ABSORB a genuine failure to open, or it would be worse than the bucket it replaced.
+//      Note the run is much slower under this injection — nothing ever lands, so every overlay
+//      walks all 7 tabs instead of exiting on the first hit. Slow is expected; a fast pass is not.
+//   2. Remove the digit masking from the baseline/delta comparison.
+//        Reported `unfinishedOpen (me, +1 chars)` and `alertsOpen (me, +1 chars)` — a ONE-CHARACTER
+//        delta read as proof a modal opened, on the WRONG TAB. Both actually open on `today`, at
+//        +234 and +736. A clock or a count moving by a digit is enough to fabricate that verdict,
+//        which is why render-settle.mjs masks digits and why this does too.
