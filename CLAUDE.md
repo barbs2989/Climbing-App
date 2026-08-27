@@ -37,6 +37,7 @@ npm run check:wp-styles    # the app can DRAW every waypoint type it recognises 
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
+npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
@@ -3411,6 +3412,49 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+- **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
+  a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
+  `npm run build`.
+  - **`routes` had 94 columns and not one was a date, which is the ROOT of the expiring-closures
+    class rather than a detail of it.** `audit:expiring-closures`' standing instruction is *"date it
+    or drop the claim"* and there was nowhere to put the date, so the app could not show a reader how
+    old a road claim was and nothing could rank ~118 flagged values by staleness.
+    `probe-can-a-road-claim-be-dated.mjs` is the measurement, and note the asymmetry it found: a
+    `contributions` row CAN be dated (`created_at`, since `0002`), so a **climber's** correction is
+    datable while the enrichment pass that wrote the original is not. That runs the wrong way round.
+  - **`0172` adds `access_checked_at`, and what it MEANS is the load-bearing part.** It records that
+    somebody read this route's road/access claims **against a primary source** on that date — *not*
+    when the row was last written. So it is deliberately **not** defaulted, **not** trigger-set, and
+    **not** stamped by `patchRow()`: a mechanical stamp on every write would date a typo fix as a
+    verification, and the column would become a write timestamp wearing a freshness label.
+  - **NULL is the honest backfill and it is the whole point.** We do not know when the existing prose
+    was written, so `now()` would assert that 205,492 stale claims were checked today — fabricating
+    the verifications the column exists to expose. 39 routes are stamped, each against a named alert
+    read on 2026-08-27; **Harts Pass is deliberately excluded** because its research came back
+    UNSETTLEABLE, and *a failed check is not a check*.
+  - **`check:field-renders` structurally cannot answer this**, which is why a separate guard exists:
+    that one pulls a REAL value and looks for it on screen, and this column's value is an ISO
+    timestamp rendering as `27 Aug 2026`. It is a **used-not-echoed** column, the same category as
+    `grade_system`, and would be reported as `NEVER RENDERS` on a working feature.
+  - **The date is hand-formatted, never `toLocaleDateString`, and that is ASSERTED.** A locale date
+    emits a different string per machine, so any assertion about the line would pass on the author's
+    box and fail in CI — and `DLOCALE` is a global a signed-in user can change.
+  - **Silence on an undated route is a DECISION, not a gap.** Saying *"age not recorded"* is more
+    informative and would change what ~1,000 WA road blocks say at once, which is a product call;
+    showing a date where one exists is additive. The guard pins the silence so it cannot drift into
+    a catalog-wide banner by accident.
+  - **It states the date and stops** — no staleness verdict, no *"worth re-checking"* past some
+    threshold. That would be the app adding a judgement on top of its one fact, with an invented
+    threshold; the column's value is that the reader can judge the age themselves.
+  - **"Checked", never "verified"**, and asserted: an alert read on a Tuesday can be superseded on
+    the Wednesday. The column records the reading, not a guarantee about the world.
+  - Fails **closed**: a missing export, a thin render, or a GETTING THERE panel that never appeared
+    are each a broken probe — every *must NOT contain* assertion passes against a component that
+    rendered nothing. Scoped to the **panel**, never the tab, the mistake the camping work made three
+    times in one sitting. Injection-tested **5/5**
+    (`scripts/oneoff/inject-access-checked-cases.mjs`), each case proving its edit landed **by
+    checksum** and restoring the file byte-identically. **Case 4 must PASS** — a comment naming the
+    render site is documentation, and a guard flagging it would forbid explaining itself.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
