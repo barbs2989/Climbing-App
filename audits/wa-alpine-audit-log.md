@@ -10275,3 +10275,56 @@ already fixed above.
 
 Next batch continues after `wa_mount_sefrit_bloody_head_couloir` in the id-ordered
 scope (212 routes remained unaudited this pass before this batch; 204 remain after).
+
+## 2026-08-27 — Pass 3, Batch 151
+
+Two peaks, 8 routes (Mount Sefrit 2, Mount Shuksan 6): Southeast Ridge, Southwest Ridge
+(Sefrit); Fisher Chimneys, Hanging Glacier, North Face, Northeast Ridge, Northwest Arête,
+Price Glacier (Shuksan). Six confirmed fixes, all internal-consistency findings (a row's
+own fields disagreeing with each other or with a sibling route on the same peak),
+corroborated externally.
+
+- **wa_mount_sefrit_southwest_ridge**: `approach_logistics.trailheadDirection` was
+  truncated in the live DB to 23 characters ("From Glacier, drive Mt.") — not a
+  display artifact, the stored value itself cuts off there. Re-homed the complete
+  sentence from this same row's own `approach` field, which describes the identical
+  drive and trailhead in full.
+- **wa_mount_sefrit_southeast_ridge**: its own `approach` and
+  `approach_logistics.trailheadDirection` both gave the shared Hannegan Campground
+  trailhead as "about 2,950 ft" while this row's OWN `bivy[0]` entry for the
+  identical spot reads 3,100 ft — an in-row contradiction batch 150 had already
+  flagged (via sibling `wa_mount_sefrit_bloody_head_couloir`'s "~3,120 ft") but left
+  unfixed since this route wasn't in that batch. External search corroborates
+  ~3,120 ft (WTA/USFS-derived). Corrected both prose fields to match the row's own
+  bivy figure, "~3,100 ft".
+- **wa_mount_shuksan_hanging_glacier** and **wa_mount_shuksan_northwest_arete** (2
+  findings each): both carried a summit waypoint at `elev`/`elevFt` 9127,
+  contradicting Hanging Glacier's own `high_point_ft` (9131), the parent area's
+  `elevation_ft` (9131), all four other Shuksan routes in this batch (Fisher
+  Chimneys/North Face/NE Ridge/Price Glacier all read 9131), and the consistently
+  cited official figure externally (9,131 ft). Corrected both to 9131, and filled
+  Northwest Arête's null `high_point_ft` to 9131 to match. Both routes also shared a
+  "White Salmon Road (hairpin) TH" waypoint with no elevation recorded at all, while
+  sibling `wa_mount_shuksan_north_face` records `elev:3500` for the identical
+  coordinates; filled both from the sibling, externally corroborated (Mt. Baker Ski
+  Area's White Salmon base area is published at 3,500 ft).
+
+Flagged, not fixed: `wa_mount_sefrit_southeast_ridge` carries no `waypoints` or `gpx`
+at all (both null) — needs real GPS/survey data, not a DB-only fix, same shape as
+`wa_mount_rahm_standard` in batch 148. FA fields on four of the six Shuksan routes
+(Fisher Chimneys, Hanging Glacier, North Face, NE Ridge) already carry their own
+"(year/exact party not confirmed by available sources)" hedge; web search could not
+resolve them further, consistent with the audit's own policy of marking rather than
+guessing.
+
+Confirmed correct and left unchanged: Mount Sefrit's summit elevation (7,191 ft) and
+FA (Jim Irving and Brick Spouse, 1930), both exact externally; Price Glacier's FA
+(Beckey/Schwabland/Granston, 1945) and its Fifty Classics inclusion, both exact
+externally; Lake Ann Trailhead elevation (row: 4,770 ft vs. external ~4,700 ft) is
+within normal tolerance, not flagged. Bivy arrays on all 8 routes checked for
+cross-mountain contamination (the `audit:camp-route-fit` shape from prior batches) —
+every entry genuinely describes either the shared Ruth/Icy/Nooksack corridor (Sefrit
+routes) or the Shuksan zone itself (Shuksan routes); no contamination found.
+
+Next batch continues after `wa_mount_shuksan_price_glacier` in the id-ordered scope
+(204 routes remained unaudited this pass before this batch; 196 remain after).
