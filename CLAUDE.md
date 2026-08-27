@@ -2416,6 +2416,34 @@ a build error, but a screen that renders wrong or not at all.
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
     exemption that stops being submitted anywhere **fails**, so the list cannot rot.
+  - **EIGHT keyed objects now, not two, and widening the form exposed TWO holes in this guard.**
+    `crowds`, `partnerRequirements`, `seasonalGuidance`, `emergency` and `approachLogistics` all
+    rendered on the route page and could be corrected by nobody — the **`bivy` shape**, which had
+    already shipped once. They reuse the generic `OBJ_KEYS` editor, so they needed key specs and
+    no new component: `renderInput` keys off `f.type` and reads `route[f.type]`, which is why the
+    field key and the type are deliberately the same string.
+    - **The sub-key test scanned `RouteDetail.jsx` ALONE, and three of the five panels live in
+      `EnrichmentPanels.jsx`** — so their readers were in a file the guard never opened. Same
+      shape as [[grep-the-app-not-just-the-db-layer]].
+    - **And it tested for `.key`, which a DESTRUCTURING reader does not contain.**
+      `const {estimatePerSeason, peakTraffic, solitudeRating} = route.crowds` reads all three and
+      writes none of them with a dot. Together these two reported **five correct panels as dead**
+      — the direction that tells an author to delete working wiring. The destructure test is
+      scoped to `= <x>.<field>`, never to every `{a,b}` in 1.5 MB of JSX, which would make it
+      vacuous. Proven still sharp by misspelling a key and watching it fail by name.
+  - **It also asserts OBJ_KEYS / OBJ_STATE / FIELDS agree, because a mismatch is a BLANK SHEET.**
+    `renderInput` does `OBJ_STATE[f.type][0]`, so a type registered in `OBJ_KEYS` with no state
+    entry **throws on the first render of the contribute sheet** — the climber taps a pencil and
+    gets nothing. A type with no `FIELDS` entry is the milder half: a section id that scrolls
+    nowhere. Injection-tested by removing one state entry, which fails naming the type.
+  - **`sling_rack` is NOT the cheap text field it looks like**, and this is why the sweep stopped
+    where it did: `fmtSlingRack` returns `null` for a plain string, so a text box there would be
+    contributable and render **nothing** — the very defect the sweep exists to remove. Six columns
+    still need editors that do not exist (`approach_variants`, `climbing_route`, `climate`,
+    `seasonal_hazards`, `sling_rack`, `difficulty`); four must **never** be writable (`verif`,
+    `corrections`, `data_quality`, `gear_confidence` are trust and provenance records, and a write
+    path lets a climber forge their own verification). See
+    [[climbing-route-edit-pencil-writes-elsewhere]].
   - **It asks the same question one level down for the two jsonb fields.** `road` and `access`
     are objects, so passing the column check proves nothing about the individual sub-keys the
     form offers. `ROAD_KEYS` / `ACCESS_KEYS` are checked against the file for a reader, because

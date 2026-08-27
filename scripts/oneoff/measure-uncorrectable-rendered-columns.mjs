@@ -5,11 +5,25 @@
 // the WAYPOINTS editor — a different store. So ~380 routes carried camping written by an
 // enrichment pass and the climber who had actually slept there could not fix a word.
 //
-// THIS IS A READING LIST, NOT A DEFECT COUNT. Most of the 22 are correctly uncontributable:
+// THIS IS A READING LIST, NOT A DEFECT COUNT. Most of what it prints is correctly uncontributable:
 // derived (`corrections`, `data_quality`, `gear_confidence`, `verif`, `lists`), owned by another
 // flow (`gpx`/`elev_pts` go through GpsSubmissionModal), or enrichment blobs nobody would hand-
 // edit. The point is to see the set and read it, the way `audit:terrain`'s number is a working
 // feature rather than a backlog.
+//
+// FIVE WERE WIRED after this was written — `crowds`, `partnerRequirements`, `seasonalGuidance`,
+// `emergency` and `approachLogistics` are contributable now through the generic OBJ_KEYS editor,
+// taking the count 21 -> 16. Of what is left: FOUR must never become writable (`verif`,
+// `corrections`, `data_quality`, `gear_confidence` are trust and provenance records — a write
+// path lets a climber forge their own verification), TWO belong to GpsSubmissionModal (`gpx`,
+// `elev_pts`), `lists` is curated tick-list membership, and THREE are already reachable through
+// another field (`desc`/`description` fold into overview/beta; `pro_tips` renders concatenated
+// with `beta`, which is contributable). That leaves SIX needing an editor that does not exist
+// yet: approach_variants, climbing_route, climate, seasonal_hazards, sling_rack, difficulty.
+//
+// `sling_rack` looks like a cheap text field and is NOT: fmtSlingRack returns null for a plain
+// string, so a text box there would be contributable and render nothing — the very defect this
+// measures. It needs a structured builder like the rack one.
 //
 // ONE OF THEM IS THE BIVY SHAPE EXACTLY, and it is why this was written down rather than left as
 // a count: `climbing_route`.
@@ -49,8 +63,12 @@ const SS = new Set([...ssSeg.slice(0, ssSeg.indexOf("};"))
 const mi = app.indexOf("var M=");
 if (mi < 0) { console.error("ANCHOR LOST: var M= — the rename map moved."); process.exit(1); }
 const mSeg = app.slice(mi, app.indexOf("}", mi) + 1);
-const M = {};
-for (const m of mSeg.matchAll(/([A-Za-z_][A-Za-z0-9_]*)\s*:\s*"([^"]+)"/g)) M[m[1]] = m[2];
+/* BOTH DIRECTIONS. The first version of this script checked M forward only and reported
+   `permits` as uncorrectable: M holds `permit:"permits"`, so the FORM key is `permit` and the
+   ROUTE property is `permits`, and only the reverse lookup finds it. That is this repo's
+   "read the whole mapper" lesson, and it cost one phantom finding out of 22. */
+const M = {}, RM = {};
+for (const m of mSeg.matchAll(/([A-Za-z_][A-Za-z0-9_]*)\s*:\s*"([^"]+)"/g)) { M[m[1]] = m[2]; RM[m[2]] = m[1]; }
 
 // The columns proven to reach a screen. Reusing check:field-renders' own list rather than
 // restating it, so the two cannot drift on which columns render.
@@ -79,7 +97,7 @@ if (SS.size < 40 || rendered.length < 40) {
 const missing = [];
 let contributable = 0;
 for (const col of rendered.sort()) {
-  const keys = [camel(col), col, ALIAS[col]].filter(Boolean);
+  const keys = [camel(col), col, ALIAS[col], RM[camel(col)], RM[col]].filter(Boolean);
   if (keys.some((k) => SS.has(k) || SS.has(M[k]))) contributable++;
   else missing.push(col);
 }
@@ -87,5 +105,6 @@ for (const col of rendered.sort()) {
 console.log(`rendered columns: ${rendered.length}   contributable: ${contributable}   not: ${missing.length}\n`);
 for (const c of missing) console.log("  " + c);
 console.log(`
-Read this as a list, not a backlog. The one worth acting on is climbing_route — see the header:
-its section carries an edit pencil that writes to pitchDetail, which renders somewhere else.`);
+Read this as a list, not a backlog — the header says which entries are deliberate. The one still
+worth acting on is climbing_route: its section's edit pencil writes to pitchDetail, which renders
+in a different section.`);
