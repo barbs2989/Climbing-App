@@ -1717,7 +1717,26 @@ function ItineraryView({route,onSeeReports,onContribute,myItin,onSaveMyItin,crew
   </div>;
 }
 function popInterest(r){return CLIMBERS.filter(c=>c.objectiveIds&&c.objectiveIds.indexOf(r.id)>=0).length;}
-function TopoSection({route}){
+/* The topo box's two states, as a function rather than two ternaries in the JSX, for the reason
+   seasonShort() and campDetail() are functions: it can be RUN. react-query does not surface a
+   cached error under renderToStaticMarkup -- it reports `pending` and masks it -- so a flag read
+   off a hook inside this component is unreachable to an SSR probe, which is exactly why every
+   sibling (ConsensusPanel, CatchLedger, FriendsList, Inbox) takes its flag as a PROP and is
+   provable. TopoSection owns its own query, so the decision comes out instead of the query going
+   up. check:topo-outage-copy executes both branches and renders the healthy one end to end.
+
+   The failing branch must not invite the first topo. The headline already flipped; the
+   explanation under it did not, so an outage read "Couldn't load the topos" and then "Got a clear
+   shot? Add it..." -- honest headline, and a body still presuming there is nothing there. */
+export function topoEmptyCopy(unavailable){
+  return unavailable
+    ?{head:"Couldn’t load the topos",
+      body:"A topo may already be on file for this route — this one list just didn’t load, so this is not a claim that there is none. Check your connection and try again."}
+    :{head:"No topo yet",
+      body:"A topo overlays the route line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it."};
+}
+
+export function TopoSection({route}){
   const areaId=route.mountainId;
   const [localPhotos,setLocalPhotos]=useState([]);
   const [localLines,setLocalLines]=useState({});
@@ -1730,7 +1749,7 @@ function TopoSection({route}){
   const [err,setErr]=useState(null);
   const [viewerIdx,setViewerIdx]=useState(null);
   const [drawFor,setDrawFor]=useState(null);
-  const dbTopos=useAreaTopos(USE_DB?areaId:null);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);
+  const dbTopos=useAreaTopos(USE_DB?areaId:null);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);const topoCopy=topoEmptyCopy(toposUnavailable);
 
   const photos=USE_DB
     ?(dbTopos.data||[]).map(function(t){return {id:t.id,url:topoPhotoUrl(t.storage_path),db:true,storagePath:t.storage_path,
@@ -1788,8 +1807,8 @@ function TopoSection({route}){
     {!photos.length?
       <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:13,padding:"22px 16px",textAlign:"center"}}>
         <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
-        <div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:4}}>{toposUnavailable?"Couldn’t load the topos":"No topo yet"}</div>
-        <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>A topo overlays the route line and markers on a photo of the wall, face, or line. Got a clear shot? Add it and draw the line so the next party can follow it.</div>
+        <div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:4}}>{topoCopy.head}</div>
+        <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>{topoCopy.body}</div>
         <button onClick={pickFile} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add a topo photo</button>
       </div>
     :<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:2}}>
