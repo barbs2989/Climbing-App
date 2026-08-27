@@ -10639,3 +10639,95 @@ needed.
 
 Next batch continues after `wa_north_face_3` in the id-ordered scope (164
 routes remain unaudited this pass after this batch).
+
+## 2026-08-27 — Pass 3, Batch 156
+
+Eight routes on eight peaks (Castle Peak 1: North Face/Left Buttress "Fight
+or Flight"; Concord Tower 1: North Face Var. Right (Directisimo); North
+Gardner Mountain 1: Northwest Couloir; Whatcom Peak 1: North Ridge;
+Cutthroat Peak 1: North Ridge [id `wa_north_ridge_3`]; Primus Peak 1: North
+Ridge [id `wa_north_ridge_4`]; Colchuck Peak 1: Northeast Buttress; Mount
+Formidable 1: Northeast Face Direct). Three confirmed errors fixed across
+two of the eight routes plus one area record; the rest checked out or were
+left unverified rather than guessed at.
+
+- **`wa_north_face_left_buttress`** (Castle Peak, Pasayten Wilderness) —
+  `road` described Stehekin ferry access and the Bridge Creek Trailhead off
+  SR-20, near-word-for-word identical to this same batch's
+  `wa_northeast_face_direct` (Mount Formidable), where that text is
+  genuinely correct. Castle Peak sits at 48.98°N right on the Canadian
+  border; Stehekin (~48.3°N) and Bridge Creek (~48.5°N) are a different
+  range over 50 miles south. This row's own `approach` text and waypoints
+  already correctly describe the real access — BC Hwy 3 to the Monument
+  78/Windy Joe Trailhead in Manning Park (the more common, Canada-side
+  approach), or SR-20 to Ross Dam plus a Ross Lake boat/hike (US side).
+  Re-homed `road` from this row's own approach text; nothing new
+  researched or invented.
+- **`wa_northeast_buttress_4`** (Colchuck Peak, Northeast Buttress) —
+  `watch_out` was stored as a single jsonb string (every sibling route in
+  this batch stores it as a proper array) describing an unrelated
+  mixed/ice route: M4 mixed climbing pitches, an "ice bulge (A2-3 rating)"
+  pitch, a heavily corniced rappel descent, and the giveaway —
+  "wind-loaded terrain near Snoqualmie Pass." Colchuck Peak is in the
+  Enchantments near Leavenworth, 60+ miles from Snoqualmie Pass in a
+  different range, and this row's own `overview` describes "Colchuck's
+  premier ROCK route... mostly solid granite," a summer 5.8+ rock climb —
+  not mixed ice. Replaced with a proper jsonb array built only from this
+  row's own already-correct `hazards` field and `climbing_route` pitch
+  notes (the variable moat crossing, loose/mossy rock in the lower
+  dihedral, the blind-cam 5.9 crux, the long 17–21hr car-to-car day) —
+  re-homed, not researched.
+- **`areas.wa_concord_tower.elevation_ft`** was 7611, contradicting the
+  peak's own route row (`wa_north_face_var_right_directisimo`), whose
+  `high_point_ft` and summit waypoint were already corrected to 7560 in an
+  earlier pass citing external sources. Confirmed independently here via
+  two separate WebSearch queries, both returning SummitPost's figure of
+  7,560 ft for Concord Tower (immediately south of Liberty Bell, 7,720
+  ft); 7,611 appears in no source found. The area record was evidently
+  never updated when the route record was fixed in the earlier pass —
+  brought into agreement.
+
+Confirmed correct and left unchanged (external sources checked): Castle
+Peak elevation (8,343 ft — matches Wikipedia and a Country Highpoints
+differential-GPS survey against a superseded 8,306 ft quad figure);
+Whatcom Peak elevation (7,574 ft — matches Wikipedia); Mount Formidable
+elevation (8,325 ft — matches Wikipedia); North Gardner Mountain elevation
+(8,956 ft) and Primus Peak elevation (8,508 ft) — both match Wikipedia;
+Primus Peak North Ridge FA (Mark Bebie, 1986, matching Mountain
+Project/trip-report sources).
+
+Flagged, not fixed — needs human verification or left as previously
+flagged:
+- Colchuck Peak Northeast Buttress's first ascent remains undocumented.
+  This was already flagged pending in a 2026-07-31 pass (the row's
+  original FA credit was discovered to actually belong to Dragontail's
+  Backbone Ridge, a different route on the neighboring peak, and was
+  corrected to "Not documented" at that time). Searched again this pass
+  for a specific FA party/date for this route — SummitPost, Mountain
+  Project, AAC, and American Alpine Institute sources all describe the
+  Beckey and Kearney start variations and modern trip reports, but none
+  gives an original first-ascent date. Left as "Not documented" rather
+  than guessed at.
+- Whatcom Peak North Ridge's FA-to-line attribution remains flagged from
+  a prior pass (the 1936 Berry/Buchanan first ascent of the peak itself is
+  well corroborated, but no source specifically ties that ascent to the
+  North Ridge line as opposed to another route). Not re-investigated this
+  pass; left as previously flagged.
+
+`wa_north_ridge_2` (Whatcom Peak)'s `gain_ft`/`loss_ft` of 7700 were
+checked against its three waypoints (3,120 ft trailhead → 5,206 ft
+Whatcom Pass → 7,574 ft summit, net rise 4,454 ft) and found plausible
+rather than contradictory: the real trail undulates well below the
+sparse three-waypoint record (descending from ~5,050 ft Hannegan Pass
+down into the Chilliwack River valley before climbing back to Whatcom
+Pass), which the row's own `approach` text describes, so no fix was made
+absent a documented elevation profile.
+
+All three fixes were validated against the live database before being
+written to SQL: `npm run check:sql` confirmed every target id exists (run
+separately against `routes` and `areas`), and each WHERE guard was
+independently re-checked with a live REST read to confirm it matches
+exactly the current stored value before the fix would apply.
+
+Next batch continues after `wa_northeast_face_direct` in the id-ordered
+scope (156 routes remain unaudited this pass after this batch).
