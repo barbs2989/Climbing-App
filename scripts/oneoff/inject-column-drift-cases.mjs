@@ -30,9 +30,13 @@ const CASES = [
     why: "a migration describes it and the live database does not have it — merged, never applied",
     mutate: (s) => { s.routes = s.routes.filter((c) => c !== "grade_num"); } },
 
-  { name: "stale-known", section: "KNOWN", expect: /KNOWN names "routes\.access_checked_at"/,
-    why: "the declared column stops being live, so the claim is stale and the list cannot rot",
-    mutate: (s) => { s.routes = s.routes.filter((c) => c !== "access_checked_at"); } },
+  // KNOWN is EMPTY on a healthy tree — the one entry it ever held came out when #1347 landed the
+  // missing migration and this guard went red by itself. So the declaration is supplied on the
+  // command line: an assertion that can only run while the tree is unhealthy is not an assertion.
+  { name: "stale-known", section: "KNOWN", expect: /KNOWN names "routes\.zz_declared"/,
+    why: "a declared column that stops being live is a stale claim, and the list must not rot",
+    args: ["--known", "routes.zz_declared=a column declared for this test"],
+    mutate: () => {} },
 
   // --- must stay SILENT ------------------------------------------------------------------
   { name: "view-is-not-a-table", section: "A", expect: null,
@@ -50,7 +54,7 @@ for (const c of CASES) {
   const f = path.join(dir, `${c.name}.json`);
   fs.writeFileSync(f, JSON.stringify(s));
   let out = "";
-  try { out = execFileSync("node", ["scripts/check-column-drift.mjs", "--fixture", f], { encoding: "utf8" }); }
+  try { out = execFileSync("node", ["scripts/check-column-drift.mjs", "--fixture", f, ...(c.args || [])], { encoding: "utf8" }); }
   catch (e) { out = String((e.stdout || "") + (e.stderr || "")); }
 
   // slice the section this case is about, so a finding in a NEIGHBOURING section cannot be

@@ -53,15 +53,29 @@ const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > 0 ? pr
 // Every name is a claim that this column is live, undescribed, and that somebody has looked. The
 // moment a migration describes it the claim is stale and this run fails, so the list cannot rot.
 const KNOWN = {
-  "routes.access_checked_at":
-    "UNTRACKED, and the incident this guard was written for. Applied to the live database by " +
-    "hand on 2026-08-27 with 39 rows stamped and anon-readable; there is no migration, no " +
-    "commit anywhere in history mentioning the name, and no reader — so the column holds real " +
-    "verification dates that no screen shows. Do NOT write the migration from here without " +
-    "checking for a parallel session's branch first: the stamps are same-day, so the author is " +
-    "probably still working. The repair is their migration landing, at which point this entry " +
-    "goes stale and this guard will say so.",
+  // routes.access_checked_at was declared here for exactly one day. It was applied to the live
+  // database by hand on 2026-08-27 with 39 rows stamped and anon-readable, while the repo held no
+  // migration, no commit anywhere in history mentioning the name, and no reader — the data had
+  // shipped to production and the code had not. #1347 landed the missing half
+  // (0172_road_access_can_carry_a_date.sql, lib/road.js, check:access-checked-line), this guard
+  // went red as STALE bookkeeping on the next run, and the entry came out.
+  //
+  // That is the contract validated against a REAL event rather than an injection: the entry was
+  // written predicting the repair, the repair landed from another session, and the declaration
+  // failed by itself without anybody remembering it existed. Injection case `stale-known` pins
+  // the same behaviour synthetically.
 };
+
+
+// TEST-ONLY: `--known table.column=reason` adds a declaration at run time. The stale-bookkeeping
+// assertion is the one thing that cannot be tested when KNOWN is in its correct state — empty —
+// and an assertion that only works while the tree is unhealthy is not an assertion. Used solely by
+// scripts/oneoff/inject-column-drift-cases.mjs.
+for (let i = 0; i < process.argv.length - 1; i++) {
+  if (process.argv[i] !== "--known") continue;
+  const [k, ...rest] = process.argv[i + 1].split("=");
+  KNOWN[k] = rest.join("=") || "declared on the command line (test)";
+}
 
 const dead = (what) => {
   console.error(`\ncheck:column-drift FAILED — ${what}.`);
