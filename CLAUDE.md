@@ -6226,6 +6226,40 @@ for another.
       so an overlay rendered beside others picks up their copy too. The rows naming ONE component
       are the clean ones.
 
+**AN OUTAGE FLAG KEYED ON ONE QUERY, WHERE THE RENDER DEPENDS ON TWO.** The belay ledger hydrates
+from `myCatchesQ` (the rows) **and** `catchFriendProfilesQ` (the names), and its effect bails on
+either — `if(catchFriendIds.length&&!catchFriendProfilesQ.data)return;`. A failed query's `.data`
+stays `undefined` forever, so with the rows up and the profiles down that line returns every time,
+`catchesHydratedRef` is never set, and the ledger stays empty. `catchesUnavailable` keyed on
+`myCatchesQ.isError` **alone**, so it was **false**, and `CatchLedger` renders `unavailable?"—":v`
+— presenting 0 catches as a measurement.
+  - **The component's own comment describes this outcome exactly**: *"without it this card tells a
+    climber who has caught falls that they have caught none, and invites them to go log one."* The
+    flag was right; its input was one query short. **Ask what a render DEPENDS on, not which query
+    it is named after.**
+  - The flag had to **move below both queries**: it sat above `catchFriendProfilesQ`, and the note
+    beside it already warns that a flag reading a `const` from higher up the component is the
+    **#1206 TDZ blank screen**.
+  - **No `catchFriendIds.length` guard is needed**, and that is a fact about the hook rather than a
+    simplification: `useProfilesByIds` is `enabled: !!key`, so with no ids it never runs and a
+    disabled react-query cannot be in error.
+  - Proven by `scripts/oneoff/probe-two-query-renders-one-flag.mjs` — no browser, no DB, since "one
+    query up and one down" is not a state live data produces on demand. Guard clauses are matched
+    **exactly and asserted unique** rather than sliced to the next `return;`: the anchor itself ends
+    in one, so slicing ran on and swallowed hundreds of lines.
+  - **Its fourth case failed until the FIXTURE was corrected, not the fix.** Setting `profilesError`
+    with an empty id list manufactures a state the hook cannot reach, and made a correct fix look
+    over-eager. Same trap as the seed-climber `level` below — *check whether the fixture can occur
+    before changing the app to satisfy it.*
+  - **The vouches hydration has the identical shape and is NOT the same defect** — measured, so it
+    is not re-derived. `givenVouches` initialises to **seed** data, so a failed hydration falls back
+    to a seed vouch rather than to an empty list. That is the seed-shown-to-a-real-account concern
+    `check:seed-history` covers, not an emptiness lie, and it needs no flag.
+  - Sweep result for the sibling call sites of `useProfilesByIds`: `dmUnreadProfilesQ` degrades
+    (`||{id:id,name:"Climber"}`), `dbPhotoProfiles` deliberately renders the photo unattributed,
+    `crewProfilesQ` returns null by documented design. **The miss behaviour is per-call-site**, so
+    a rule about "what `useProfilesByIds` does on a miss" cannot be stated once.
+
 **A COUNT AND THE LIST UNDER IT WERE TWO DERIVATIONS OF ONE FACT, ON ONE SCREEN.** `check:ui`
 asserts that two SCREENS counting the same list agree (#1203). The group detail view did it to
 itself: the heading was `mem.length + (isMod && mem.indexOf(_meGid) < 0 ? 1 : 0)` while the roster
