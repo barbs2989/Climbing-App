@@ -2699,7 +2699,21 @@ function _agreeSet(v){
   if(!Array.isArray(v))return _agreeJson(v);
   return "["+v.map(_agreeJson).slice().sort().join(",")+"]";
 }
-function sameEditValue(k,a,b){if(k==="waypoints"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(w,i){return wpClose(w,b[i]);});}if(k==="pitchDetail"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(p,i){var q=b[i]||{};return normEditStr(p.grade||"")===normEditStr(q.grade||"")&&normEditStr(p.gear||"")===normEditStr(q.gear||"")&&numsClose(p.lengthM||0,q.lengthM||0,0.1,3);});}if(NUM_FIELD_TOL[k])return numsClose(a,b,NUM_FIELD_TOL[k][0],NUM_FIELD_TOL[k][1]);if(SET_FIELDS[k]){try{return _agreeSet(a)===_agreeSet(b);}catch(e){return a===b;}}if(Array.isArray(a)||Array.isArray(b)||(a&&typeof a==="object")||(b&&typeof b==="object")){try{return _agreeJson(a)===_agreeJson(b);}catch(e){return a===b;}}if(typeof a==="string"||typeof b==="string")return normEditStr(a)===normEditStr(b);return a===b;}
+function sameEditValue(k,a,b){if(k==="waypoints"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(w,i){return wpClose(w,b[i]);});}if(k==="pitchDetail"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(p,i){var q=b[i]||{};return normEditStr(p.grade||"")===normEditStr(q.grade||"")&&normEditStr(p.gear||"")===normEditStr(q.gear||"")&&numsClose(p.lengthM||0,q.lengthM||0,0.1,3);});}if(NUM_FIELD_TOL[k])return numsClose(a,b,NUM_FIELD_TOL[k][0],NUM_FIELD_TOL[k][1]);/* NESTED numbers compare EXACTLY through _agreeJson, because JSON.stringify(4.8) and
+   JSON.stringify(4.9) are different strings. NUM_FIELD_TOL only reaches top-level field keys, so
+   an approach variant measured at 4.8 and 4.9 miles was two clusters for one walk — the precise
+   thing pitchDetail already solves one branch up with numsClose on lengthM. A distance and a gain
+   are the two facts here that different parties genuinely measure differently, so they get the
+   same treatment; `hours` stays a string because 27% of stored values are ranges ("3-4"). */
+if(k==="approachVariants"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;
+  return a.every(function(v,i){var w=b[i]||{};
+    return normEditStr(v.name||"")===normEditStr(w.name||"")
+      &&normEditStr(v.season||"")===normEditStr(w.season||"")
+      &&normEditStr(v.notes||"")===normEditStr(w.notes||"")
+      &&_agreeSet(Array.isArray(v.hazards)?v.hazards:[])===_agreeSet(Array.isArray(w.hazards)?w.hazards:[])
+      &&numsClose(v.distMi==null?0:v.distMi,w.distMi==null?0:w.distMi,0.1,0.2)
+      &&numsClose(v.gainFt==null?0:v.gainFt,w.gainFt==null?0:w.gainFt,0.1,50);});}
+if(SET_FIELDS[k]){try{return _agreeSet(a)===_agreeSet(b);}catch(e){return a===b;}}if(Array.isArray(a)||Array.isArray(b)||(a&&typeof a==="object")||(b&&typeof b==="object")){try{return _agreeJson(a)===_agreeJson(b);}catch(e){return a===b;}}if(typeof a==="string"||typeof b==="string")return normEditStr(a)===normEditStr(b);return a===b;}
 /* Object comparison used to be a bare JSON.stringify, which is KEY-ORDER SENSITIVE. That was
    harmless while the only object fields were `rap` ({count,lengthM}) and `topo` ({photo}), both
    built by one code path in one order. It stops being harmless the moment a climber can author

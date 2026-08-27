@@ -1,4 +1,8 @@
-// Does a CONTRIBUTED climbing_route section reach the CLIMBING ROUTE box?
+// Do CONTRIBUTED array rows reach the boxes that render them?
+//
+// Covers both array editors added for the contribute sweep: climbing_route's sections and
+// approach_variants' ways in. Both had a pencil that opened a DIFFERENT column's editor, so
+// both are new paths from the form to a panel, and neither is exercised by any other guard.
 //
 // A populated column is not a rendered one — that is the `descent_text` lesson (1,021 routes
 // populated, rendered on none) and the rack one (the correction reached the right TAB and the
@@ -33,8 +37,9 @@ try {
 } catch { dead("esbuild could not bundle RouteDetail.jsx"); }
 
 const mod = await import(out + "?t=" + Date.now());
-const { ClimbingRouteTable } = mod;
+const { ClimbingRouteTable, ApproachVariants } = mod;
 if (typeof ClimbingRouteTable !== "function") dead("RouteDetail.jsx does not export ClimbingRouteTable — ANCHOR LOST");
+if (typeof ApproachVariants !== "function") dead("RouteDetail.jsx does not export ApproachVariants — ANCHOR LOST");
 
 // Exactly what structuredVal({type:"sections"}) emits for two filled rows.
 const submitted = [
@@ -69,7 +74,41 @@ const sparse = renderToStaticMarkup(React.createElement(ClimbingRouteTable,
 if (sparse.includes("Only a label") && sparse.length > 300) ok("a label-only section still renders");
 else fail("a label-only section does not render");
 
+/* ---- approach_variants ----
+   Exactly what structuredVal({type:"variants"}) emits. The numbers are NUMBERS here on purpose:
+   the editor holds them as strings while typing and parses on submit, and a numeric string would
+   both render differently and break the tolerant comparison that lets two parties who measured
+   4.8 and 4.9 miles agree. `hazards` is an array; the editor collects it as one-per-line text. */
+const vSubmitted = [{
+  name: "Snow Creek trail, log crossing and the climbers' trail",
+  season: "Jul-Sep", distMi: 4.8, gainFt: 4200, hours: "3-4",
+  notes: "Brushy above the log crossing; the climbers' trail is easy to lose in the dark.",
+  hazards: ["No water above the lake", "Loose talus in the upper approach"],
+}];
+let vMarkup;
+try {
+  vMarkup = renderToStaticMarkup(React.createElement(ApproachVariants,
+    { route: { ...route, approachVariants: vSubmitted }, onEdit: null }));
+} catch (e) { dead("ApproachVariants threw: " + (e && e.message)); }
+if (vMarkup.length < 400) dead(`ApproachVariants rendered only ${vMarkup.length} characters`);
+const vHas = (t) => vMarkup.includes(t.replace(/&/g, "&amp;").replace(/'/g, "&#x27;"));
+for (const [what, txt] of [
+  ["the way-in name", "Snow Creek trail, log crossing"],
+  ["the notes", "easy to lose in the dark"],
+  ["the first hazard", "No water above the lake"],
+  ["the second hazard", "Loose talus in the upper approach"],
+]) {
+  cases++;
+  if (vHas(txt)) ok(`variants: ${what} reaches the panel`);
+  else fail(`variants: ${what} does NOT render — the contributed shape and the reader's keys have drifted`);
+}
+/* The distance and gain render through the app's unit formatters, so the raw number is not
+   asserted — what matters is that the row is not silently dropped for carrying them. */
+cases++;
+if (vMarkup.length > 700) ok(`variants: a fully filled row renders (${vMarkup.length}ch)`);
+else fail(`variants: a filled row rendered only ${vMarkup.length} characters`);
+
 clean();
-if (cases < 7) dead(`only ${cases} case(s) ran`);
-console.log(`\nprobe-climbing-route-contribution-renders: ${cases} case(s), ${failures} failure(s)  [${markup.length}ch]`);
+if (cases < 12) dead(`only ${cases} case(s) ran`);
+console.log(`\nprobe-contributed-arrays-render: ${cases} case(s), ${failures} failure(s)  [${markup.length}ch]`);
 process.exit(failures ? 1 : 0);

@@ -125,7 +125,7 @@ const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access
   "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics",
   // `sections` builds the {n,label,class,notes} array ClimbingRouteTable reads, exactly as
   // `pitches` builds pitchDetail's — structuredVal emits the shape, so no CONV applies.
-  "sections"]);
+  "sections", "variants"]);
 
 const readers = stripComments(RD + "\n" + CORE);
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real
