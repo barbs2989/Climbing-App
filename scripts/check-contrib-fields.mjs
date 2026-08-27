@@ -134,6 +134,16 @@ if (readerCorpus.length < 200000) {
    `= <anything>.field` and treat those as reads too. Scoped to that field's own destructuring
    rather than to every `{a,b}` in 1.5MB of JSX, which would make the test vacuous. */
 function readsSubKey(corpus, field, key) {
+  /* A DOTTED key is read if its leaf is named, OR if something enumerates the parent —
+     `Object.entries(fitnessSpec).map(([k,v]) => k+": "+v)` renders every key and names none of
+     them, so a by-name test calls a working row dead. Requiring the enumeration (not merely the
+     parent being present) keeps this from excusing a parent nobody reads. */
+  if (key.indexOf(".") >= 0) {
+    const [parent, leaf] = key.split(".");
+    if (new RegExp("\\." + leaf + "\\b").test(corpus)) return true;
+    const enumerated = new RegExp("Object\\.(entries|keys|values)\\(\\s*" + parent + "\\s*\\)").test(corpus);
+    return enumerated && readsSubKey(corpus, field, parent);
+  }
   if (new RegExp("\\." + key + "\\b").test(corpus)) return true;
   const pats = [...corpus.matchAll(new RegExp("\\{([^{}]{0,300})\\}\\s*=\\s*[A-Za-z_$][\\w$]*\\." + field + "\\b", "g"))];
   return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
@@ -178,7 +188,16 @@ for (const [constName, field] of OBJ_FIELDS) {
     console.error(`The sub-keys of the \`${field}\` field went unchecked, so this run proved less than it claims.`);
     process.exit(1);
   }
-  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_]+)","/g)].map((x) => x[1]);
+  /* The dot matters: a DOTTED sub-key (`fitnessSpec.hiking`) writes into a nested object, and a
+     pattern without `.` skipped those silently — this printed "3 sub-key(s) offered" against a
+     list of five and passed. A parser that quietly drops entries is the vacuous-coverage shape
+     this file exists to prevent, so the count is asserted against the list below. */
+  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_][a-zA-Z_.]*)","/g)].map((x) => x[1]);
+  const declared = (m[1].match(/\["/g) || []).length;
+  if (subKeys.length !== declared) {
+    console.error(`check:contrib-fields: parsed ${subKeys.length} of ${declared} entries in ${constName} — the sub-key pattern is dropping some.`);
+    process.exit(1);
+  }
   if (!subKeys.length) {
     console.error(`check:contrib-fields: parsed 0 sub-keys out of ${constName} — the scan broke.`);
     process.exit(1);

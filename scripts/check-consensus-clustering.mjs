@@ -97,6 +97,13 @@ const agrees = [
   ["overview", "the climber’s left ramp", "the climber's left ramp", "curly vs straight apostrophe"],
   ["road", { name: "Cascade River Rd", status: "Open" }, { status: "open", name: "cascade river rd." },
     "same road block, different key order and typing"],
+  /* The reason a picker is worth more than a text box: two climbers choosing the same option are
+     byte-identical, so the 3-agree gate is actually reachable. solitudeRating is a NUMBER 1-5 in
+     the column (measured: 219x 5, 141x 4, 84x 3, 42x 2, 12x 1), and the enum row stores that
+     number rather than a phrase. */
+  ["crowds", { solitudeRating: 4 }, { solitudeRating: 4 }, "two climbers pick the same solitude rating"],
+  ["partnerRequirements", { fitnessSpec: { hiking: "1,000 ft/hr" } },
+    { fitnessSpec: { hiking: "1,000 FT/HR " } }, "same nested fitness fact, different typing"],
 ];
 for (const [k, a, b, why] of agrees) {
   cases++;
@@ -122,6 +129,7 @@ const differ = [
      pitchDetail each have their own branch above it, so an injection that sorted every array
      inside _agreeJson changed NOTHING they assert and the case reported a false pass. Day order
      is a fact: day 1 approach / day 2 summit is not day 1 summit / day 2 approach. */
+  ["crowds", { solitudeRating: 4 }, { solitudeRating: 2 }, "different solitude ratings"],
   ["itinerary", { days: [{ n: 1, title: "Approach to camp" }, { n: 2, title: "Summit day" }] },
     { days: [{ n: 2, title: "Summit day" }, { n: 1, title: "Approach to camp" }] },
     "itinerary day order is reversed"],
@@ -141,6 +149,6 @@ if (normEditStr("5.10a") !== normEditStr("5.10b")) ok("normEditStr keeps distinc
 else fail("normEditStr collapsed two different grades");
 
 clean();
-if (cases < 16) dead(`only ${cases} case(s) ran`);
+if (cases < 19) dead(`only ${cases} case(s) ran`);
 console.log(`\ncheck:consensus-clustering: ${cases} case(s), ${failures} failure(s)`);
 process.exit(failures ? 1 : 0);
