@@ -6322,7 +6322,14 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
     catches one above) and 19 are non-findings, each for its own reason. The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
-    at all and `AscentPyramid` gates on `logs.length` before falling back to the stored pyramid;
+    at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
+    on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
+    `resumeLogs` also feeds **`Resume`**, a different component, where `all=[...baked,...live]` is
+    empty for a real DB climber and the not-editable branch says *"<Name> hasn't shared any climbs
+    here."* `scripts/oneoff/probe-resume-outage-copy.mjs` renders all three states and proves it:
+    the string is present with `unavailable:false` and gone with `unavailable:true`. **One handle
+    can feed two components, and a verdict about one of them is not a verdict about the handle.**
+    Now flagged with `resumeLogsUnavailable`;
     `crewInviteRoutesQ` falls back through `routeById` to null; `hzVotesQ` leaves prior votes in
     place rather than clearing them; and **`policyQ` handles its own error inline**
     (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read
