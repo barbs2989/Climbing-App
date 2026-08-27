@@ -1546,6 +1546,32 @@ a build error, but a screen that renders wrong or not at all.
   merge, no conflict, every check green, and main went back to shipping the bugs. Report-only,
   read-only on git; **not a build gate**, because it is a property of HISTORY rather than of the
   checkout, so no code change can cause or fix it (the reasoning that keeps `check:counts` out).
+  - **IT NOW RUNS ON EVERY MERGE (`.github/workflows/silent-reverts.yml`), and until then it ran
+    when somebody REMEMBERED — which is how three of these shipped in a single day.** #1248 dropped
+    two outage flags belonging to #1239; #1253 restored them; #1267 dropped four, three of them the
+    same ones, **57 minutes later**. Every one was found by hand. Same lesson `check:overlay-scroll`
+    records: *a guard that runs only when somebody remembers is a guard you do not have.*
+    - **On PUSH, not on a pull request**, because a stale-base squash is created **by the merge**:
+      the branch's copy of a dense line is the old one, git resolves the line in its favour, and an
+      earlier PR's additions vanish. Nothing about the branch in isolation is wrong, so a
+      `pull_request` run has nothing to see. It gates nothing — the merge has already happened;
+      going red *is* the mechanism, and it lands on whoever merged, which is whoever caused it.
+    - **`fetch-depth: 0` is not a nicety.** The default depth of 1 makes this audit **vacuous
+      rather than merely limited**: its subject is history, so a one-commit clone gives it one
+      commit to walk and it reports a clean tree having examined nothing.
+    - **`--fail-on outage-flag`, and ONLY that kind.** The default stays report-only and that is
+      deliberate — over 500 commits every hit of the file rule has been a **promotion** and every
+      generic-token finding a supersession or a rename, so failing on those would make the audit
+      argue with correct work. `outage-flag` is the one class with a different **measured**
+      precision: 3 for 3 genuine reverts, and **0 findings across 300 first-parent commits** of a
+      healthy tree. Proven in both directions before shipping — exit 0 on today's main at 120
+      commits, exit 1 on `--ref 2bd9a5d` naming the kind, and exit 0 there **without** the flag, so
+      the documented report-only behaviour is unchanged.
+    - **The window must reach the ADDING commit or a clean result means nothing** — the trap this
+      entry already records, where `--commits 6` reported clean on an incident `--commits 10`
+      caught. A stale branch can be weeks old: #1238's flag was added **30** first-parent commits
+      before the merge that dropped it. 120 costs seconds, because presence is one pass over the
+      checkout.
   - **VALIDATED AGAINST THE REAL INCIDENT, NOT A SYNTHETIC ONE.** Pointed at `53d563e` (#776's
     commit) with a 3-commit window it reports **`crewMemberById` and `crewMemberUids`, added by
     #778, removed by #776**, both classified SILENT. That is the strongest form of proof available
