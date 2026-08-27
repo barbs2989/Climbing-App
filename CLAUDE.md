@@ -5934,6 +5934,24 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
     number, taking the roster length while the heading took the fudged one.
   - `grpProfilesUnavailable` says so when the read failed, because with the placeholder the count is
     right either way and the screen would otherwise present *"A climber"* as if it were the name.
+  - **SHOWING YOU AT ALL WOKE A LATENT `check:real-profile-rows` DEFECT, and CI caught it.** The
+    row's subtitle is `c._profile ? "Owner"/"Moderator"/"Member" : (c.level+" · "+vScore(c))`, and
+    `_asMember` hands back **bare `ME`**, which carries no `_profile`. A real signed-in account has
+    no seed `level` and no vouches, so your own row rendered **"undefined · 0"** — invisible until
+    this roster started listing you. `check:signed-in` failed on `postMenuFor`/`reactPickerFor`,
+    whose payload opens a synthetic `ownerId:0` group with **no members**, i.e. precisely the
+    fudge case.
+    - **`check:real-profile-rows` passes either way and structurally cannot see it.** That gate asks
+      whether the concatenation is **gated**; this one is. The defect was handing it an object that
+      **fails** the gate. *Gating an expression and satisfying that gate are different questions* —
+      the same distinction as `check:field-renders` (does the column reach a screen) versus
+      `check:token-boxes` (does it fit the element it reaches).
+    - **The first fix keyed on `m.id===_meGid` and never fired.** `ME.id` is **0 signed in or out**,
+      so the resolved object can never equal a uuid `_meGid`; it has to key on the id being
+      **mapped**. Caught by the probe, not by reading it.
+    - The probe's own fixture was wrong in the other direction: seed climbers really do carry
+      `level:"Intermediate"`, so test climbers without one made every seed row look like the defect.
+      **Check the seed shape before "fixing" the app to satisfy a fixture.**
   - **This is NOT what produced `check:signed-in`'s intermittent red** — that was the guard reading
     the whole capture, browse list included, and is fixed. `memory/group-member-count-intermittent-reads-1.md`
     recorded that the underlying disagreement was still real; this is that, closed.
