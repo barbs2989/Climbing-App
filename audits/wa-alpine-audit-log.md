@@ -10016,3 +10016,103 @@ Web access this run: WebSearch worked throughout. WebFetch to summitpost.org was
 network egress proxy (403 at the CONNECT tunnel), consistent with prior batches.
 
 Next batch continues after `wa_mount_pilchuck_east_ridge` in the id-ordered scope.
+
+---
+
+## 2026-08-27 — Pass 3, Batch 148
+
+Eight routes (Pilchuck, Price, Rahm, and five on Rainier): Mount Pilchuck Trail (Standard
+Route); Hester Lake Route (Price); Standard Route / Glacier (Rahm); Curtis Ridge,
+Disappointment Cleaver, Edmunds Headwall, Emmons–Winthrop Glacier, Fuhrer Finger (Rainier).
+
+**Confirmed errors → fixes in `sql/2026-08-27-batch-148.sql`:**
+- `wa_mount_pilchuck_standard_route`: its `bivy` field held 8 camping entries, 7 of which
+  describe camps on three entirely different mountains — Three Fingers Lookout, Tin Can Gap,
+  Goat Flats, and Saddle Lake (all Three Fingers Mountain), two Whitehorse Mountain entries,
+  and one Big Four Mountain entry. This is the exact defect CLAUDE.md's `audit:camp-route-fit`
+  entry already documents by name for this route ("Mount Pilchuck carries eight camps and
+  seven belong to other mountains"), evidently never applied to the live DB. The 8th entry
+  (Bathtub Lakes basin) is genuinely about Pilchuck but says of itself "It has no bearing on
+  the standard summit trail...and none needed" — consistent with the route's own
+  overview/descent_text/itinerary/bail, which all describe a single-day out-and-back hike with
+  no camping. Cleared `bivy` to NULL.
+- `wa_mount_pilchuck_east_ridge` (not in this batch's route list — already audited in batch
+  147 — but flagged here because it carries the byte-identical contaminated `bivy` array found
+  via the row above, discovered only because the two Pilchuck routes share the same corridor
+  and the same copy-pasted data). Trimmed to keep only the Bathtub Lakes basin entry, whose own
+  text says "This is the only real camp on Pilchuck..." — i.e. the correct value for *this*
+  route's own east-side approach; removed the same 7 foreign entries.
+- `wa_mount_rainier_edmunds_headwall`: waypoints[0] ("Mowich Lake Trailhead") carried
+  self-contradictory elevation fields — `elev: 4930` (correct; Mowich Lake itself sits at
+  4,929 ft per Wikipedia/NPS-adjacent sources) vs `elevFt: 2900` (no known feature at that
+  height on this approach, and every other waypoint on this route and across the rest of the
+  batch has `elev == elevFt`). Corrected `elevFt` to 4930.
+
+**Flagged for human review, not auto-fixed (sources conflict or judgment required):**
+- Mount Rainier's true summit elevation is under active dispute across recent surveys
+  (Columbia Crest measured as low as 14,392 ft by 2022 LiDAR; a 2024 survey found a different
+  point on the southwest rim, ~14,399-14,400 ft, may now be the actual high point). The DB's
+  `high_point_ft: 14406` used across the Rainier routes here is a reasonable, commonly-cited
+  figure but not a settled one — left unchanged rather than picking a side of an open dispute.
+- Camp Schurman's elevation is internally inconsistent across this batch: `wa_mount_rainier_
+  emmons_glacier` stores 9,400 ft (matching a park-ranger-run conditions blog) while Curtis
+  Ridge, Disappointment Cleaver, Edmunds Headwall, and Fuhrer Finger all store 9,440 ft
+  (matching Outdoor Project). A third figure, 9,460 ft, is attributed to an NPS climbing
+  guide PDF. Three credible-looking sources disagree by up to 60 ft; not resolved here.
+- Camp Muir's elevation (10,080 ft in the DB, used consistently across Disappointment Cleaver,
+  Edmunds Headwall, and Fuhrer Finger) also has competing figures in circulation (10,080 /
+  10,100 / 10,188 ft depending on source) — left unchanged for the same reason.
+- `wa_mount_rainier_fuhrer_finger`'s `fa` field names four climbers (Hans Fuhrer, Heine Fuhrer,
+  Joseph Hazard, Thomas Hermans) and the date (July 2, 1920), all confirmed correct. Two
+  independent web searches also surfaced a fifth party member, "Peyton Farrer" (spelling
+  possibly "Farrar" in some records), but WebFetch to primary sources (Mountaineers.org,
+  SummitPost) was blocked by the network egress proxy, so the spelling could not be confirmed
+  against a primary citation — flagged rather than added to the row.
+- `wa_mount_rahm_standard`: `npm run audit:waypoints -- --state wa` (run against the live DB
+  this batch) flags this route on several structural grounds — its gpx track's endpoint is
+  10,871 m from its own "Mount Rahm summit" waypoint (does not reach the summit), two waypoint
+  pairs are out of sequence along the recorded track (e.g. "Depot Creek Falls crossing" sits
+  *after* "Lake Ouzel camp" in track order, though the waypoint list puts it before), and three
+  waypoints (including both trailhead entries) sit >2 km off the track. All other content on
+  this row (FA, elevation, hazards, approach description) checked out correct against external
+  sources. This pattern — track internally inconsistent with the row's own waypoint order,
+  rather than just a partial/truncated recording — suggests the gpx track may not actually
+  correspond to this route's documented line, but repairing a gpx track needs real GPS survey
+  data this audit has no access to. Flagged for a human with route-specific track data.
+
+**Confirmed correct via external sources and left unchanged:** Mount Rahm elevation (8,485/
+8,486 ft — 1 ft of internal rounding noise between `high_point_ft` and the summit waypoint,
+not worth a fix) and FA (Joe Hutton, Peggy Hutton, Roy Mason, 1955); Mount Price elevation
+(5,587 ft); Curtis Ridge FA (Gene Prater, Marcel Schuster) and its careful, accurate SR-165
+Fairfax Bridge closure note; Mount Rainier's 1870 FA via Gibraltar Ledges (Hazard Stevens,
+P.B. Van Trump) correctly distinguished from the Disappointment Cleaver route on that row;
+Emmons-Winthrop FA (Rev. J. Warner Fobes, George James, Richard O. Wells, Aug 20, 1884).
+`wa_mount_price_hester_lake_route`'s `bivy` field is a legitimate shared-corridor zone file
+(Middle Fork Snoqualmie valley camps serving Price, Garfield, Teneriffe, Preacher, Treen) —
+each entry is specific and non-contradictory about which peak(s) it serves and corroborates
+rather than conflicts with the route's own text, matching the "shared corridor camp is
+correct" pattern CLAUDE.md documents (e.g. Boston Basin) rather than the Pilchuck defect above.
+
+Also ran `audit:waypoints`, `audit:gain`, `audit:identity`, `audit:waypoint-order`, and
+`audit:rappels` against the live WA catalog scoped to this batch's 8 routes: no findings from
+gain, identity, waypoint-order, or rappels; the one waypoints finding (Rahm) is written up
+above. Fuhrer Finger's own "SUMMIT IS NOT ON THE TRACK" / "TRACK DOES NOT REACH THE SUMMIT"
+flags (track ends ~3 km short of Columbia Crest) were checked and are the already-documented,
+accepted case in CLAUDE.md's `audit:waypoints` entry ("Fuhrer Finger from Paradise" is listed
+among routes whose track legitimately starts at the correct trailhead and just stops short —
+consistent with this route's own beta, which says the recorded line merges into the Kautz
+Glacier route around 13,500 ft, well below the true summit) — not a new finding.
+
+Note: `npm run check:sql -- audits/sql/2026-08-27-batch-148.sql` passed (both write targets'
+ids confirmed live, no destructive DELETEs) but printed two warnings worth relaying: the
+Pilchuck-east-ridge UPDATE's id predicate wasn't parsed by the checker's regex (a false
+negative — the id was independently verified against the live DB and the "OK every target id
+exists" line covers it), and the file is ~4KB, just over the SQL-editor paste-size soft limit —
+split it into ~1.5KB chunks when pasting rather than pasting the whole file at once.
+
+Web access this run: WebSearch worked throughout; WebFetch was blocked by the network egress
+proxy for every external domain tried (Wikipedia, mountaineers.org), consistent with prior
+batches — corroboration relied on WebSearch's synthesized snippets rather than primary-source
+fetches, which is why the Fuhrer Finger fifth-climber name above was flagged rather than fixed.
+
+Next batch continues after `wa_mount_rainier_fuhrer_finger` in the id-ordered scope.
