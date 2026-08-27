@@ -1793,6 +1793,30 @@ a build error, but a screen that renders wrong or not at all.
     - It is **emphasis, never suppression**. Single-file removals are still printed in full, and the
       run still exits 0 — a removal is not a defect, and going red on a promotion would make the
       audit argue with correct work.
+  - **IT TRACKS `.yml` NOW, AND NOT DOING SO WAS A HOLE IN ITS OWN SUBJECT.** The extension list was
+    `jsx|mjs|json|sql`, so a merge deleting a **workflow** was invisible — and CI wiring is the one
+    kind of loss that reports nothing by itself: a guard whose workflow vanishes does not go red, the
+    PR check list merely gets shorter, and `check:ci-cancel` already records that *the tell is the
+    COUNT, never the colour*. Not hypothetical: `silent-revert-check.yml` was **added (#1290) and
+    deleted (#1321) inside this audit's own 120-commit window**, and the audit — running on every
+    merge, over that exact window — reported nothing either time. **It could not see its own sibling
+    workflow disappear.**
+    - Measured before widening, over ALL first-parent history: **10 `.yml` added, 1 absent**, and it
+      classifies SILENT because #1321 names the workflows it consolidated by PR number rather than by
+      filename. One extra printed row, **zero** extra gate trips — a single-file SILENT removal does
+      not trip `--fail-on-silent`. What WOULD trip it is the case worth catching: a stale-base squash
+      carrying a workflow away alongside files from other commits, the #1248 shape with CI wiring in it.
+    - **The stronger version — tracking individual JOBS — was measured and REJECTED.** Across 46
+      commits touching `.github/workflows/`, exactly two jobs have ever been removed (`reverts`,
+      `signed-in`) and **both are named in their own commit subject**, so a detector would report 2
+      findings and 0 real. A 2-space YAML key is not specific to a job either: `push`,
+      `workflow_dispatch` and `group` sit at that indent, and two of the four keys the scan found were
+      `on:` entries. Re-measure before re-deriving it.
+    - **A COUNT FROM THIS AUDIT IS A STATEMENT ABOUT A WINDOW.** The before/after looked like 158
+      files added then 179 — twenty-one more, against the two `.yml` the window actually holds. The
+      window had **slid fourteen commits** between the two runs and that slide is the whole
+      difference. Hold the ref fixed, or compute the delta with `git log --diff-filter=A` over one
+      range.
   - **A RENAME IS NOT A DELETION.** Additions are detected by git's `new file mode` marker, which a
     rename does not carry, so a moved file is never recorded as added and can never be reported as
     gone; the removal lookup also passes `-M --name-status` so an `R` reads as a rename. This repo
