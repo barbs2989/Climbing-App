@@ -166,8 +166,35 @@ const PATTERNS = [
      on an added line is a property of the corpus rather than of the match. The other patterns keep
      their `^\+` anchoring and their existing behaviour — one identifier per line is the shape they
      look for. */
-  { kind: "outage-flag", re: /\b([A-Za-z_$][\w$]*Unavailable)\s*=/g, file: /\.(jsx?|mjs)$/,
-    scan: "added", presence: (name) => name + "[ ]*=" },
+  /* A FLAG DECLARED BY `useState` IS ASSIGNED TO A DESTRUCTURING PATTERN, NOT TO ITS OWN NAME,
+     and `name[ ]*=` cannot see that. Measured on the real declaration #1276 shipped:
+
+       const msgHydratedRef=useRef({}),[dmThreadsUnavailable,setDmThreadsUnavailable]=useState(false)
+
+     collection returned [] and presence returned false. So that flag was never TRACKED, which
+     means its removal could never have been reported at any window size -- the same total
+     blindness #1267 exploited, arrived at from the other direction.
+
+     THE SHAPE EXISTS FOR A REASON AND WILL RECUR. Every other flag derives from react-query's
+     `isError` and is recomputed each render (`var x=!!(uid&&q&&q.isError)`). A read done through a
+     PROMISE has no `isError` to read, so its flag must persist across renders -- which means
+     `useState`. `fetchMyDirectMessages` is one; `fetchCrewMessages` and both pagers are the same
+     shape and would take the same treatment.
+
+     Collection may use a lookahead (JS only). PRESENCE MAY NOT: it is handed to `git grep -E` on
+     the slow backend as well as to `new RegExp`, and POSIX ERE has no lookarounds. Hence the
+     alternation, which both engines accept.
+
+     THE OBVIOUS CLASS `[^]]` IS WRONG, AND IT IS WRONG IN ONLY ONE ENGINE -- which is why it has
+     to be tested in both rather than reasoned about. POSIX ERE reads `[^]]` as "not a ]"; JS reads
+     `[^]` as ITS OWN construct meaning "any character", so `[^]]*` parses as (any char) followed
+     by a literal `]`. Measured: presence built that way returned true from `grep -E` and FALSE
+     from `new RegExp` on the same line. `[^=]` is unambiguous in both, and `=` is a natural
+     barrier here -- a destructuring pattern has none before its own `]=`. */
+  { kind: "outage-flag",
+    re: /\b([A-Za-z_$][\w$]*Unavailable)\b(?:\s*=|(?=[^\[\]\n]{0,80}\]\s*=))/g,
+    file: /\.(jsx?|mjs)$/, scan: "added",
+    presence: (name) => name + "[ ]*=|\\[[^=]*" + name + "[^=]*\\][ ]*=" },
 ];
 
 /* THIS FILE MUST NOT BE EVIDENCE ABOUT THE APP, and leaving it in the corpus is what let #1267's
@@ -358,6 +385,27 @@ if (goneFiles.length) {
           if (h) { removedBy = h[1]; removedSubject = h[2]; break; }
         }
         if (lines[i].startsWith("R")) renamedTo = st[2];
+      /* A PATHSPEC HIDES THE OTHER HALF OF A RENAME, so `-M` above can never fire. Git pairs a
+         delete with an add by similarity, and `-- <path>` filters the add out of the very diff
+         the pairing needs -- so the query asks "was this path renamed" in a form that can only
+         ever answer "deleted". Measured on this repo's own history: 4c01aa0 promoted
+         scripts/oneoff/probe-verification-survives-its-own-read.mjs to
+         scripts/check-verification-fallback.mjs, and `git log -M --name-status -- <path>` reports
+         D while `git show --name-status -M` on the same commit reports R078. Lowering the
+         similarity threshold does not help, because similarity is not what is missing.
+
+         This matters beyond one file: promoting a probe to a named guard is a RECURRING operation
+         here (the header lists seven of them), so without this every future promotion reads as a
+         silent revert -- the audit accusing the repo of the thing it exists to catch, on correct
+         work. Re-asked without the pathspec, once, and only when a deletion was found. */
+      if (!renamedTo && lines[i].startsWith("D") && removedBy) {
+        try {
+          for (const l of git("show", "--name-status", "-M", "--format=", removedBy).split("\n")) {
+            const r = l.match(/^R\d*\t(\S+)\t(\S+)/);
+            if (r && r[1] === path) { renamedTo = r[2]; break; }
+          }
+        } catch { /* leave it reported as a deletion */ }
+      }
         break;
       }
     } catch { /* leave blank */ }
