@@ -10731,3 +10731,95 @@ exactly the current stored value before the fix would apply.
 
 Next batch continues after `wa_northeast_face_direct` in the id-ordered
 scope (156 routes remain unaudited this pass after this batch).
+
+## 2026-08-27 — Pass 3, Batch 157
+
+Routes: `wa_northeast_ridge_1963_route` (Johannesburg Mountain),
+`wa_northwest_arete` (Argonaut Peak), `wa_northwest_buttress` (Sloan Peak),
+`wa_northwest_face_2` (Kangaroo Temple), `wa_northwest_face_4` (Little Big
+Chief Mountain), `wa_northwest_face_boving_pollock` (South Early Winters
+Spire), `wa_northwest_mox_peak_standard` (Northwest Mox Peak),
+`wa_northwest_ridge` (Dorado Needle).
+
+Three routes were clean on review and needed no changes — all three are
+already thoroughly researched, with genuine source conflicts (mostly FA
+date/party attribution) already honestly flagged in `data_quality.gaps`
+rather than guessed at: Argonaut Peak's Northwest Arête, Little Big
+Chief's Northwest Face (which has its own careful reconciliation of a
+Mountain Project vs. AAC pitch-count disagreement recorded in
+`corrections`), and South Early Winters Spire's Northwest Face
+(Boving-Pollock).
+
+Five fixes, across four peaks:
+
+- **`wa_northeast_ridge_1963_route`** (Johannesburg Mountain) — two
+  separate defects. First, the summit waypoint's `elev`/`elevFt` read
+  8066/8066 against this same row's own `high_point_ft` (8200) and the
+  parent area's `elevation_ft` (8200, `areas.wa_johannesburg_mountain`).
+  Externally corroborated: ListsOfJohn gives 8,212 ft, PeakVisor gives
+  2,505 m (8,218 ft); nothing found anywhere near 8,066. Corrected the
+  outlying waypoint to 8200. Second, `road.name`/`road.status` described
+  arrival at the "Boston Basin trailhead" / "Boston Basin pulloff" — a
+  separate, earlier stop on Cascade River Road (~mile 21, serving
+  Forbidden Peak and Sharkfin Tower, per this row's own `bivy` entries).
+  This row's own `waypoints[0]` and `approach_logistics.trailhead` both
+  already correctly name "Cascade Pass Trailhead," the literal end of the
+  road, as this route's real start. Re-homed `road` to the trailhead this
+  row's own data already names, and folded in a current access fact not
+  previously on file: per NPS (nps.gov/noca "Cascade River Road Closure at
+  Eldorado Creek" and the road-conditions page, checked 2026-08-27), the
+  road is presently gated to vehicles at Eldorado Creek (mile 20) due to
+  2025–26 flood/landslide damage, with the final ~3 miles / 1,500 vertical
+  ft to Cascade Pass Trailhead open to bikes and pedestrians only — this
+  directly affects reaching this route's own trailhead, so it's phrased
+  with a "confirm the current gate location" hedge rather than stated as a
+  permanent fact, matching the road's pre-existing `seasonalGate` note.
+- **`wa_northwest_buttress`** (Sloan Peak) — `access.land_manager` and
+  `access.rules` both named "Glacier Peak Wilderness," contradicting three
+  other wilderness-designation fields on the same row
+  (`access.landManager`, `access.permitZone`,
+  `access._raw.wilderness_zone`) which all correctly say "Henry M. Jackson
+  Wilderness (103,297 acres)." Confirmed via USFS's Sloan Peak Trail 648
+  recreation pages and Wikipedia's Henry M. Jackson Wilderness article —
+  Sloan Peak sits in Henry M. Jackson, and Glacier Peak Wilderness is a
+  separate designation entirely, reached from an unrelated trailhead
+  system. `access.seasonal` also named "Suiattle River Road (FSR 26), the
+  primary Glacier Peak access" — a road this Sloan Peak route (Bedal Creek
+  Trailhead via FR-4096, per this row's own `road` field) never uses at
+  all. Corrected the wilderness name in both fields and dropped the
+  irrelevant Suiattle River Road clause, keeping the correct Mountain Loop
+  Highway seasonal-gate sentence already on file (and corroborated by this
+  row's own `road.seasonalGate`).
+- **`wa_northwest_face_2`** (Kangaroo Temple) — summit waypoint `elev` read
+  7238 against this row's own `high_point_ft` (7572) and the area's
+  `elevation_ft` (7572, `areas.wa_kangaroo_temple`). Externally
+  corroborated at 7,572 ft (Wikipedia's "The Temple (Washington)" article,
+  SummitPost). Corrected the outlying waypoint.
+- **`wa_northwest_mox_peak_standard`** (Northwest Mox Peak) —
+  `access.seasonal` described "Cascade River Road" washout/closure
+  history, but this route is approached entirely from British Columbia via
+  Chilliwack Lake Road/Depot Creek Road (per this same row's own
+  `road.name`/`road.driveNote` and `access.closures` fields, which already
+  correctly describe Depot Creek Road washouts). Cascade River Road serves
+  the unrelated Cascade Pass/Eldorado area on the opposite side of the
+  range and does not reach this peak. Re-homed to describe this row's own
+  access road, consistent with the correct `road.seasonalGate` field
+  already on file.
+
+`wa_northwest_ridge` (Dorado Needle) was read partly as a cross-check: it
+is the genuine, correctly-sourced owner of the Cascade River Road /
+Eldorado Creek Trailhead content that turned up misplaced on the
+Johannesburg row above, and its own `road.status` note — "closed to
+vehicles at mile 20 (Eldorado) as of June 2026 due to flood/landslide
+damage" — was independently confirmed via WebSearch against NPS sources
+to still be accurate as of this pass (2026-08-27); no change needed there.
+
+All five fixes were validated against the live database before being
+written to SQL: `npm run check:sql` confirmed every target id exists, and
+each WHERE guard (including the `->>'key' = '<value>'` jsonb equality
+checks) was independently re-checked with a live REST read immediately
+before writing the file, to confirm it matches exactly the current stored
+value.
+
+Next batch continues after `wa_northwest_ridge` in the id-ordered scope
+(148 routes remain unaudited this pass after this batch).
