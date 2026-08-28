@@ -3776,10 +3776,25 @@ the correction knows the screen is wrong, and they have no way to report it.
       the rappel counts and the camping permit verdict were both refused. Here **~85% is an explicit
       numeric field** on the pitch object, not prose, so a fix could read those and ignore prose
       entirely.
-    - **Deliberately NOT swept.** It moves a safety-adjacent estimate in **both** directions (p10
-      27 m shortens times, p90 59 m lengthens them), so it is a decision about the model rather than
-      a defect repair. Recorded with the numbers so that decision can be made rather than
-      rediscovered.
+    - **CORRECTED, AND THE CORRECTION KILLS THE CASE FOR CHANGING ANYTHING. A `pitch_detail` ENTRY
+      IS NOT ALWAYS ONE PITCH.** The figures above (50.6%, mean 39.9 m) counted **stage
+      aggregates** as pitch lengths: `pitch` is a string on many routes — *"1-13 (roped/simul-climbed
+      sections)"* at **396 m**, *"Approach (unroped)"* at **305 m**, *"Section 1: Beckey Route
+      (Liberty Bell)"* at **152 m** — and the `lengthM` beside it covers the whole stage. This file
+      already records that shape under `check:pitch-split`; the measurement did not apply it.
+      Counting only entries whose `pitch` is a NUMBER, and bounding to 10-100 m:
+
+          usable (2+ single-pitch entries)   152 of 451  (33.7%, not 50.6%)
+          implied average                    p10 26m   p50 35m   p90 53m
+          mean                               37.3m against the assumed 35m
+
+      **The default is now exactly the median.** The mean differs by 6.6%, on a third of
+      multi-pitch routes, in both directions.
+    - **So the change was NOT made, and that is the finding.** Reading each route's own lengths
+      would move a safety-adjacent estimate by a few percent, both ways, to replace a constant that
+      already sits on the median. The measurement is worth keeping; the fix is not worth the risk.
+      **A count is only as good as its tokeniser** — the same lesson `audit:approach-scope` records,
+      and the reason the first version of this note overstated by half.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
