@@ -11002,3 +11002,123 @@ the file.
 
 Next batch continues after `wa_phantom_peak_west_ridge` in the id-ordered
 scope.
+
+## 2026-08-28 — Pass 3, Batch 160
+
+Checked: `wa_point_success_south_side` (Point Success), `wa_poltergeist_pinnacle`
+(filed under Mount Challenger) / `wa_poltergeist_pinnacle_north_route` (filed
+under Poltergeist Pinnacle), `wa_primus_peak_south_ridge` (Primus Peak),
+`wa_prusik_peak_der_sportsman` / `wa_prusik_peak_south_face_burgner_stanley` /
+`wa_prusik_peak_west_ridge` (Prusik Peak), `wa_ragged_edge` (Vesper Peak).
+
+No SQL fixes this batch — everything found was either already correct or
+needed a human judgment call this pass couldn't safely make alone. Five
+flagged for review, three confirmed clean.
+
+**Likely duplicate route, flagged rather than acted on** (this audit's own
+guardrails forbid deleting/moving rows, and CLAUDE.md documents a real data-
+loss incident from an earlier session acting alone on a duplicate hypothesis
+— see `wa_dragontail_peak_triple_couloirs` in CLAUDE.md's SQL-editor section):
+
+- **`wa_poltergeist_pinnacle`** — this row and `wa_poltergeist_pinnacle_north_route`
+  both describe what appears to be the same, single documented climb of
+  Poltergeist Pinnacle: the East Face (Grade IV, 5.9), first climbed by Dan
+  Aylward and Forrest Murphy on July 3-4, 2004, via a shield of dark granite
+  streaked with white dikes (confirmed against the AAC Publications write-up
+  and a CascadeClimbers.com trip report titled "Poltergeist Pinnacle (Mt.
+  Challenger)- East Face (New Route) 7/4/2004"). Both rows' own `fa` fields
+  independently agree almost word for word ("Dan Aylward & Forrest Murphy,
+  July 3-4, 2004" vs "Dan Aylward and Forrest Murphy, 2004"). The two rows
+  differ mainly in filing: `wa_poltergeist_pinnacle_north_route` is correctly
+  filed under `area_id = wa_poltergeist_pinnacle` (its own peak, elevation
+  8198/8200 ft) and its approach (Hannegan Pass Trailhead → Easy Ridge →
+  Perfect Pass) matches the AAC account exactly. `wa_poltergeist_pinnacle` is
+  filed under `area_id = wa_mount_challenger` — a neighboring but distinct
+  peak (elevation 8207 ft, its own separate summit ~0.09 mi/145 m north,
+  which checks out against both rows' area coordinates) — and describes a
+  different, unconfirmed approach via Ross Dam Trailhead and a Big
+  Beaver/Little Beaver-style multi-day approach that doesn't match any
+  source found for this climb. `wa_mount_challenger`'s `route_count` is 2,
+  and its other route (`wa_mount_challenger_challenger_glacier`, topping out
+  at 8207 ft) is Mount Challenger's own real route — so `wa_poltergeist_pinnacle`
+  looks like a second, misfiled copy of the East Face route that should
+  either be moved to its own peak's area (creating a name/content collision
+  with `..._north_route` needing a manual merge) or removed once a human
+  confirms nothing else references it. Not attempted here — this needs a
+  duplicate-hypothesis confirmation and possibly a DELETE, both outside this
+  audit's guardrails.
+
+Four flagged for human verification — each blocked on a primary source
+(WTA/NPS/USFS are all blocked by this environment's network egress proxy,
+consistent with prior batches) or on a genuine internal contradiction this
+pass couldn't resolve alone:
+
+- **`wa_prusik_peak_der_sportsman`** and **`wa_prusik_peak_south_face_burgner_stanley`**
+  — both store their shared "Stuart Lake Trailhead" waypoint (47.5278/47.5282,
+  -120.8205/-120.82036) at 3,400 ft. Two independent secondary sources
+  (Wenatchee Outdoors-derived and leavenworth.org) both put the real Stuart
+  Lake Trailhead at approximately 2,930 ft — a ~470 ft gap, large enough to
+  matter for `gain_ft`. WTA's own page and the USFS Okanogan-Wenatchee page
+  for Stuart Lake Trail #1599 (the two sources that would normally settle
+  this outright) are both blocked here, so this wasn't confident enough on
+  secondary sources alone to write a fix.
+- **`wa_prusik_peak_west_ridge`** — its own Trailhead waypoint is internally
+  contradictory: it's named "Stuart Lake Trailhead (Trail #1599)" and carries
+  the exact same coordinates the two sibling routes above use for Stuart Lake
+  Trailhead, but its elevation is stored as 1,300 ft (nowhere close to Stuart
+  Lake TH's ~2,930-3,400 ft) — and its own note admits "this route's own
+  recorded GPS track starts at Snow Lakes TH, not Stuart Lake TH." Search
+  results put Snow Lakes Trailhead at ~1,400 ft, matching the stored
+  elevation far better than the stored name/coordinates do. The row's own
+  `gain_ft`/`loss_ft` (6,200 / 4,608) are also more consistent with a
+  point-to-point Snow Lakes-in/Stuart Lake-out Enchantments traverse
+  (8,008−~1,300≈6,700 gain; 8,008−3,400=4,608 loss, an exact match) than
+  with an out-and-back from Stuart Lake TH alone. This reads like the
+  waypoint's name+coordinates were copied from a sibling route while its
+  elevation correctly reflects a different real start point — but fixing it
+  means substituting real Snow Lakes Trailhead coordinates, which weren't
+  pinned precisely enough by search results here to write with confidence
+  on a navigation-relevant field.
+- **`wa_point_success_south_side`** — its `access.fees` states a "$12 per
+  person per night" wilderness camping fee for Mount Rainier during peak
+  season. The $82 per-person annual climbing cost-recovery fee and the $6
+  non-refundable reservation fee both check out exactly against NPS-sourced
+  search results. The camping fee doesn't: sources describe a 2025
+  restructuring to $10/person/night, with one more recent (2026) source
+  saying $8/person/night — neither matches $12, but the two disagree with
+  each other and the NPS wilderness-camping page itself is blocked here, so
+  a specific replacement figure wasn't confirmed precisely enough to write.
+- **`wa_primus_peak_south_ridge`** — named "South Ridge / McAllister Glacier"
+  and its summit waypoint describes a "McAllister Glacier aspect" reached via
+  Lucky Pass or the Eldorado ice cap traverse. Wikipedia places McAllister
+  Glacier in a cirque near Dorado Needle, not Primus Peak; the well-
+  documented established route matching this row's own approach (Thunder
+  Creek Trailhead) is Beckey's "Borealis Glacier" route on Primus's north
+  side. McAllister Glacier is part of the same interconnected
+  Inspiration-McAllister-Klawatti icecap system used to reach Primus from
+  the south (via Eldorado Creek/Rouch Creek and Lucky Pass, which the row's
+  own note also names), so "McAllister Glacier aspect" may be a reasonable
+  informal description of approaching Primus off that icecap rather than an
+  outright naming error — low confidence either way, flagged rather than
+  guessed at.
+
+Three clean on review: **`wa_ragged_edge`** (grade 5.7, 6 pitches, and FA
+"Darin Berdinka, Gene Pires, August 18, 2013" all confirmed exactly against
+CascadeClimbers.com/Mountaineers.org trip-report accounts of the route's
+first ascent on Vesper Peak's north face); **`wa_prusik_peak_south_face_burgner_stanley`**
+(grade III 5.9+, 6 pitches/~650 ft, FA "1968" all confirmed against
+Mountaineers.org/Climbing.com/StephAbegg.com, which further agree the FA
+party was Ron Burgner and Fred Stanley, all-free save two points of aid);
+**`wa_prusik_peak_der_sportsman`** (grade 5.11+ is a reasonable rounding of
+the externally-cited 5.11c/d, 6 pitches/650 ft, FA "Brooke Sandahl and
+partners, developed over roughly three years in the 1990s" matches
+theCrag/CascadeClimbers.com's account of Sandahl's original ascent almost
+verbatim). All three routes' `fa` fields were already populated and accurate
+— no gaps to fill.
+
+All six area-level coordinates touched this batch (Point Success, Mount
+Challenger, Poltergeist Pinnacle, Primus Peak, Prusik Peak, Vesper Peak)
+checked against known real-world summit coordinates/elevations and are
+correctly placed; no bounding-box problems found.
+
+Next batch continues after `wa_ragged_edge` in the id-ordered scope.
