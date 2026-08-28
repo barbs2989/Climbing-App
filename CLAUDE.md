@@ -1104,6 +1104,24 @@ a build error, but a screen that renders wrong or not at all.
       ENTRY POINT is gated on the read, not whether the form is.
     - Incidental, recorded rather than acted on: `updateTopoLine` is imported by all three app
       files and **called by none of them**. Dead wiring, not a defect.
+  - **THE MIRROR CLASS IS ALSO EMPTY: an OPTIMISTIC change that survives a failed write.** Every
+    `.catch` on a `lib/db.js` write call was read (69 write functions, 84 call sites). **29 restore
+    state** — a setter, a named undo handler, or a `refetch`. **Four are optimistic and say so**,
+    which is correct rather than a defect: `sendCrewMessage`/`sendDirectMessage` toast *"it's on
+    your screen but not saved"*, and `markCrewRead`/`markDmThreadRead` clear a read badge that a
+    reload restores from the server — a read marker is not the climber's content, and there is no
+    success message in front of it, so `check:writes`' rule is untouched.
+    - **The remaining candidates were PROXIMITY NOISE, and the cause is worth naming.** A first
+      scan reported eight, on the rule *"a `set*` call appears within 500 characters before the
+      write"*. On a file that packs a whole component's props onto one physical line, "before" is
+      not "in the same handler": `onInviteByEmail`'s catch was scored against `onInviteMember`'s
+      `setCrewInvite`, several props away. Both crew-invite sites in fact call their `done()`
+      callback **only inside `.then`**, so no optimistic mutation exists to revert.
+    - The first version of that scan also called five genuine reverts unguarded, because it looked
+      for `set[A-Z]` and the app writes `_setVis(_pv)`, `_setMods(cmod)`, `catch(_undoLeave)`,
+      `catch(cmFail)` and `_restore(setCondReports, …)`. **A too-narrow proxy manufactures
+      findings here rather than hiding them** — it would have sent somebody to "fix" five correct
+      handlers.
   - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
     and both defects were the guide pair above. The other seven are non-findings with reasons, so
     nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
