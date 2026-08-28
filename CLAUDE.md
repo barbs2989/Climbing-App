@@ -2833,6 +2833,20 @@ a build error, but a screen that renders wrong or not at all.
     whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
     (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
     **49** one-way or pitched rows keep their leg, **0** lost.
+  - **THREE SIBLING SUSPICIONS WERE MEASURED AND ARE NON-FINDINGS — read this before re-deriving
+    them.** The planner mixes conventions in several places and most of them turn out fine:
+    - **`relief` falls back to `highPointFt - 0`** when a route has no `elevPts`, which would be
+      the height above SEA LEVEL rather than the route's vertical extent. The *"Vertical relief"*
+      tile is gated on `hasElevPts`, so that branch is unreachable for display. Dead, not wrong.
+    - **`avgGrade` divides an ascent by `effDistKm`** without consulting `gainIsWholeOuting` or
+      `distIsWholeTrip`, both of which sit two lines away. Ambiguous rather than wrong — gain over a
+      ONE-WAY distance *is* the ascent's average grade — and the distribution is sane: **771 routes,
+      p50 12.2%, p90 25.1%, exactly ONE over 100%.** The steep tail (Johannesburg's NE Buttress at
+      90%, Big Four's Spindrift Couloir at 85%) is real alpine ground, not arithmetic.
+    - **`gain_ft` holding the CLIMB's height instead of the approach's** is **4 rows of 676** (plus
+      12 within 5%), so it is a handful of per-route judgements, not a class. `wa_liberty_traverse`
+      is one — gain 2,001 ft == its own `routeFt`, over 26 pitches — which is independent
+      corroboration of why `check:gain-floor-stated` must credit the climbing vertical first.
 - **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
   is stated rather than quoted silently. A party on the summit that started at the trailhead has
   gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
