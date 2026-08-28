@@ -36,6 +36,7 @@ npm run check:provenance   # every wired section heading still shows how it was 
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
+npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
@@ -82,8 +83,10 @@ npm run check:a11y-names # every control a screen reader reaches has a name (in 
 npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
+npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
+npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
@@ -2797,6 +2800,39 @@ a build error, but a screen that renders wrong or not at all.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
+- **`check:return-leg`** asserts the planner does not re-add a walk its own figures already
+  covered. `hikeH = scarfHrs(distKm, gainM, lossM)` is charged for gain **and** loss, so on a row
+  where those are the whole outing it is already the round trip — and `retH` then added
+  `hikeH * 0.75` on top. **196 WA routes, median +7.67 hr.** Static SSR, so it sits in `npm run build`.
+  - **The app already knew.** `gainCoversWholeOuting` (|loss−gain|/gain ≤ 3%) relabels the tile
+    **"On foot"** and TECH STATS says *"Total ascent is the whole day from the trailhead, not just
+    the walk in"* — and the return leg ignored both. `wa_ptarmigan_traverse` read `21.6hr On foot`
+    with Est. return **16.2 hr after** Est. summit. Label and arithmetic contradicting each other on
+    one screen.
+  - **The premise is solid because 433 of the 484 qualifying rows have gain EXACTLY equal to loss** —
+    a round trip, or a traverse ending at its start elevation. Not a coincidence on a one-way
+    approach. Checked before any code was written, after #1361 shipped a defect for want of exactly
+    that step.
+  - **SCOPED TO THE WALK BRANCH, and the first draft was not.** A pitched route's return is
+    `techH * 0.7` — the descent of the **climb**, which the walk never double-counted — so
+    short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a real leg
+    from **212** rows. Caught before shipping, by a count that did not reconcile (88 "unexplained"
+    against 50 unmatched) rather than by a red guard. Injection case 2 pins it.
+  - **IT DROPS THE "After dark" WARNING ON 102 ROUTES, and that was the decision.** `late` is
+    `retH > 18.5`, so a smaller return means fewer warnings. Keeping them would mean preserving a
+    known double-count as an invisible safety margin that only these 196 routes get — and *a false
+    warning is how a real one stops being read*, the rule this file states for rope warnings and
+    caveats alike. A warning firing off a number the code knows is wrong is not a safety feature.
+  - **NOTHING HAS YET ASKED whether the base walk model is optimistic**, and that is the honest
+    residual. `scarfHrs` at "intermediate" gives ~1,970 ft/hr of ascent, which puts Bonanza's 7,000 ft
+    round trip at ~7.4 hr on foot. If that is fast it is fast on **every** route, including the ~700
+    one-way ones this does not touch — a uniform question needing real party times, which this repo
+    does not have. Do not answer it by restoring the double-count.
+  - Injection-tested both directions, each restoring byte-identically: reverting the fix fails
+    *"Est. return equals Est. summit"*, and the over-broad first draft fails *"a PITCHED
+    whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
+    (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
+    **49** one-way or pitched rows keep their leg, **0** lost.
 - **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
   is stated rather than quoted silently. A party on the summit that started at the trailhead has
   gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
@@ -2872,6 +2908,45 @@ a build error, but a screen that renders wrong or not at all.
     on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
     alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
     on a count alone. Routes with no estimate are counted and reported, never scored.
+- **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
+  as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
+  three contributors must land in the same cluster or the correction sits pending **forever** —
+  which makes `sameEditValue`, not the form or `SS`, the thing that decides whether a correction can
+  ever go live. It was **exact for everything except numbers**. Static (bundles core and executes the
+  real comparison), so it sits in `npm run build`.
+  - **TWO WAYS IT COULD NOT BE REACHED, and the first is a defect this repo had already fixed one
+    layer up.** `togMulti` appends chips in **click order** (`arr.concat([o])`) and the comparison
+    preserved array order, so two climbers picking the same hazards in a different order produced
+    different JSON and **never clustered**. `_stableJson`'s own comment describes exactly this for
+    object KEY order — *"the 3-agree gate can never be reached and both suggestions sit pending
+    forever"* — and it was fixed for keys and left for arrays. Worst on `haz`/`objHaz`, the fields
+    most likely to actually be corrected.
+  - The second is wording: *"Northwest Forest Pass"* / *"northwest forest pass"* / *"Northwest Forest
+    Pass."* are one fact and were three clusters. This app writes **curly** apostrophes, so text
+    typed in the form and text pasted from elsewhere never matched either — the same
+    straight-vs-curly trap `check:outage`'s `says-broken` pattern already records.
+  - **NORMALISATION IS FOR GROUPING ONLY, which is what makes it safe.** The merge stores
+    `win.value` — one contributor's verbatim text — so nothing here changes what a climber reads. It
+    only decides who counts as agreeing with whom.
+  - **DELIBERATELY NOT FUZZY, and the negative assertions are the point.** No edit distance, no
+    stemming, no synonyms: a loose rule does not under-report, because a cluster of three **WINS**,
+    so it would publish a value nobody agreed on. Case, whitespace, quote style and a trailing full
+    stop are differences in *typing*; anything past that is a difference in *claim*. Six "must NOT
+    cluster" cases pin it, including *"a 5.8 slab"* vs *"a 5.10 slab"*.
+  - **`SET_FIELDS` is declared, never global, because order is a FACT elsewhere** — waypoints are a
+    sequence along the route, `pitchDetail` is pitch order, `itinerary` is days. The guard asserts it
+    covers every `type:"multi"` field in the form, and fails on a **stale** entry, so a new chip field
+    cannot quietly go back to being order-sensitive.
+  - **An injection MISSED and found a hole in the guard rather than a false alarm.** Sorting every
+    array inside `_agreeJson` changed nothing the waypoint and pitch cases assert, because those two
+    have their **own branches above it** — so the only ordered field that actually flows through
+    `_agreeJson` is `itinerary`. That case was added and the injection then fired. *A case that
+    passes may be testing a path the defect cannot reach.*
+  - Fails **closed**: a missing export, fewer than three chip fields parsed, or fewer than 16 cases
+    are each a broken guard — every "must not cluster" assertion passes against a comparison that
+    returns false for everything. Injection-tested **6/6**, each proving its edit landed by checksum
+    and restoring the file byte-identically. Case 1 is the real historical rule; cases 4 and 5 make
+    it **looser** and must both fail.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
@@ -3628,6 +3703,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:pitch-discount`** guards the climbing-time discount two ways: that the curve has the
+  properties its comment claims, and that the planner **says** it applied. Promoted out of
+  `scripts/oneoff/`, where it had been proving both and **running nowhere** — the shape this file
+  records under `check:field-renders` (*"a verification nobody runs is not a verification"*) and
+  `check:guard-wiring` (*"a guard authored, injection-tested, documented and never wired in looks,
+  from every vantage point anyone checks, exactly like a guard that passes"*). Static SSR + esbuild,
+  **0.8s CPU** against `check:waypoint-placement`'s 6.3s on the same box, so it sits in `npm run build`.
+  - **What it protects is the "down before dark" answer.** `techHrs` discounts per-pitch time on
+    easy ground, and that number feeds Est. summit / Est. return. Erring short there is the #641
+    direction — an affirmative that reads green. The curve assertions are the ones a future edit
+    breaks silently: **never shortens** an estimate against the old step, **monotone**, **bounded to
+    [0.5, 1]**, and an **unparsed grade or NaN cannot earn a discount**.
+  - **The step became a taper and the boundary MOVED with it** — 5.6 went from full discount to
+    none, cutting the worst single-grade jump from **2.17x to 1.44x**. An earlier version of this
+    probe asserted the disclosure was PRESENT at 5.6 and caught that drift by failing. **Keep the
+    model and the message pinned together here, or they separate silently.**
+  - Asserts **both directions** — present at 5.5 and 5.4, absent at 5.6, 5.10a and with no pitches —
+    plus an `ANCHOR` that the estimate tiles rendered at all, without which every "absent" is
+    vacuous. Injection-tested on promotion: a flat `pitchedFraction` returning 0.2 fails four named
+    assertions and exits 1.
+  - **Promoting a one-off changes its DEPTH, and `ROOT` was `../..`.** It failed loudly — esbuild
+    could not resolve the app files — rather than silently measuring the wrong tree, which is how
+    `measure-which-tab-renders-each-field.mjs` reported another branch's code for weeks. Check the
+    root resolution of anything moved out of `scripts/oneoff/`.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -6378,7 +6477,14 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
     catches one above) and 19 are non-findings, each for its own reason. The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
-    at all and `AscentPyramid` gates on `logs.length` before falling back to the stored pyramid;
+    at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
+    on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
+    `resumeLogs` also feeds **`Resume`**, a different component, where `all=[...baked,...live]` is
+    empty for a real DB climber and the not-editable branch says *"<Name> hasn't shared any climbs
+    here."* `scripts/oneoff/probe-resume-outage-copy.mjs` renders all three states and proves it:
+    the string is present with `unavailable:false` and gone with `unavailable:true`. **One handle
+    can feed two components, and a verdict about one of them is not a verdict about the handle.**
+    Now flagged with `resumeLogsUnavailable`;
     `crewInviteRoutesQ` falls back through `routeById` to null; `hzVotesQ` leaves prior votes in
     place rather than clearing them; and **`policyQ` handles its own error inline**
     (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read
