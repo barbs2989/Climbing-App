@@ -6334,6 +6334,22 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     place rather than clearing them; and **`policyQ` handles its own error inline**
     (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read
     failed — the only handle that already did this.
+  - **RE-VERIFIED BY THE GATE AT THE RENDER SITE, not by the fallback at the call site**, which is
+    the method that catches the resumeLogsQ class. All 12 remaining unflagged handles are safe:
+    `policyQ` checks `!policyQ.error` inline; `hzVotesQ` early-returns leaving prior votes;
+    `myGuideInquiriesQ` yields a count of 0 and the badge hides; `dbBookmarkNamesQ` renders
+    `{nm||"Saved area"}`; `crewInviteRoutesQ` falls through `routeById` to null; `crewProfilesQ`
+    returns null by design; `dmUnreadProfilesQ` degrades to `{name:"Climber"}`; `myVerificationQ`
+    has the session fallback `check:verification-fallback` pins.
+    - **`myProfileRowQ` is the one worth knowing about, because its CALL SITE is wrong and only its
+      RENDER SITE saves it.** `discoverable` falls back to **`false`** on a failed read, and that
+      value drives *"You are not listed while others browse."* plus a switch announcing OFF — a
+      false claim about a PRIVACY setting, and `toggleDiscoverable` computes `!discoverable`, so it
+      would write from a state nobody chose. It is safe purely because the whole row is gated
+      `{(USE_DB&&uid&&myProfileRowQ.data)?…}`, so a failed read renders no row at all. The sibling
+      consumer four lines down does it properly with `:undefined` — the same value, handled two
+      ways in one component. **Ask whether a failed read can REACH the copy, never whether the
+      value has a sensible default.**
   - **NO DETECTOR FOR THE TWO-QUERY SHAPE, because the class is TWO and both are settled.** Every
     `useEffect` in the three app files that bails on more than one `X.data` was enumerated: exactly
     **2** exist — the catches one (now covered) and the vouches one (uncovered **by design**, since
