@@ -3803,6 +3803,22 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+  - **THE WHOLE PATH IS BUILT AND CARRYING NO DATA, and that is a fact about USAGE, not a defect.**
+    Measured 2026-08-28 with the service key: `climb_logs` holds **1 row**, and **0** rows populate
+    any of `approach_minutes`, `climb_minutes`, `descent_minutes`, `car_to_car_minutes`. Every link
+    works — all four are in `syncLogToDb`'s write payload, in `TRIP_REPORT_COLS` on the read, and
+    this guard proves the render. There is simply nothing to render yet.
+  - **So a green run here does NOT mean the feature is delivering.** It means the reader is wired
+    ahead of the data — the `check:field-renders` `SENTINELS` situation, and the right state to be
+    in — but do not read it as evidence that climbers' times are reaching anyone.
+  - **It is the precondition for the two open modelling questions this file records**: the
+    `techHrs` grade cliff, and whether `scarfHrs`' base rate runs optimistic (see
+    `check:return-leg`). Both stop at the same wall — nothing measures how long parties actually
+    take — and both become answerable when this table fills, not before. **Do not answer either by
+    guessing a curve**; that is the fabrication these notes keep refusing.
+  - **An ANON count says 0 whatever the table holds**, so measure this with `requireServiceKey()`.
+    A future "is there data yet?" check run on the anon key would answer no, confidently and
+    wrongly.
 - **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
   a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
   `npm run build`.
