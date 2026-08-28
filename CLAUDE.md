@@ -1084,6 +1084,26 @@ a build error, but a screen that renders wrong or not at all.
       ran. Injection-tested by **moving the guard after** the status branch, leaving it present:
       exactly **1** assertion fires, and the presence-only ones stay green, so the ordering check is
       not redundant with them.
+  - **AND SO IS THE CLASS THE SECOND ONE BELONGS TO: a WRITE that destroys data after a failed
+    read. Measured across all 45 write functions in `lib/db.js`; the answer is ONE, and it is
+    fixed, so no detector is warranted.** A detector for a class of one is the thing this repo
+    keeps refusing to build.
+    - **Six `upsert`s, and five cannot destroy anything by construction**: `addVerification`,
+      `castHazardVote`, `giveVouch`, `markCrewRead` and `setCommentReaction` each build a small
+      self-contained row **entirely from their own arguments** and consult no existing data.
+      `submitGuideApplication` was the only one taking an opaque `fields` object that IS the whole
+      row — which is exactly why it could overwrite a live listing.
+    - **Of 24 `update`s, 17 name their own columns** (`{ status }`, `{ read: true }`,
+      `{ likes: next }`) and are deltas that cannot blank a neighbouring field. Of the 7 that take a
+      caller-supplied object, two build the patch internally, and the remaining five are safe for a
+      reason worth stating precisely: **their entry point is a ROW produced by the very read in
+      question**, so a failed read leaves no row to tap and the form is unreachable.
+    - **THAT is what made the guide application different, and it is the transferable rule.** Its
+      entry point is a Settings button offered **unconditionally**, so the form was reachable while
+      the read that would have blocked it had failed. When auditing this class, ask whether the
+      ENTRY POINT is gated on the read, not whether the form is.
+    - Incidental, recorded rather than acted on: `updateTopoLine` is imported by all three app
+      files and **called by none of them**. Dead wiring, not a defect.
   - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
     and both defects were the guide pair above. The other seven are non-findings with reasons, so
     nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
