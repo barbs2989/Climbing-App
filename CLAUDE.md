@@ -3727,6 +3727,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     could not resolve the app files — rather than silently measuring the wrong tree, which is how
     `measure-which-tab-renders-each-field.mjs` reported another branch's code for weeks. Check the
     root resolution of anything moved out of `scripts/oneoff/`.
+  - **THE OTHER INPUT TO THAT ESTIMATE IS ASSUMED ON EVERY DB ROUTE, AND HALF OF THEM STATE IT.**
+    The climbing leg is `techHrs(route.pitches, route.avgPitchLength || 35, gn(route.grade))`, and
+    `routes` has **no pitch-length column** — only `pitches` and `pitch_detail` — while
+    `avgPitchLength` is not produced by `dbRouteToCamel` and exists on **seed routes only**. So the
+    `|| 35` fires on all 205,492 DB routes. Measured by
+    `scripts/oneoff/measure-assumed-pitch-length.mjs` over 451 multi-pitch routes carrying
+    `pitch_detail`: **50.6% state a length on 2+ pitches**, p50 **36 m**, mean **39.9 m**.
+    - **35 is well chosen, not invented** — it sits on the median — so this is NOT the fabrication
+      class. The narrower finding is that on half these routes the app HAS the number and
+      substitutes a constant, on a value feeding Est. summit / Est. return.
+    - **The deciding measurement is WHERE the number comes from**, because this file's standing rule
+      is *do not read a fact out of English prose*, least of all a safety-adjacent one — the reason
+      the rappel counts and the camping permit verdict were both refused. Here **~85% is an explicit
+      numeric field** on the pitch object, not prose, so a fix could read those and ignore prose
+      entirely.
+    - **Deliberately NOT swept.** It moves a safety-adjacent estimate in **both** directions (p10
+      27 m shortens times, p90 59 m lengthens them), so it is a decision about the model rather than
+      a defect repair. Recorded with the numbers so that decision can be made rather than
+      rediscovered.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
