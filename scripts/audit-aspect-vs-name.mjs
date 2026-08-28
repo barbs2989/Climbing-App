@@ -103,6 +103,34 @@ export const limitFor = kind => (kind === "face" ? 90 : 180);
 
 // One route's verdict, extracted so it can be tested without a database. Returns null when the
 // route is not comparable at all.
+/* A ROW THAT NAMES BOTH DIRECTIONS IN `face` HAS ALREADY RECONCILED THEM, and is not a
+   disagreement. The commonest honest shape here is a route NAMED for the side you walk in from and
+   an ASPECT describing the plane you actually climb:
+
+     wa_tye_peak_e_route   name "East Slopes Scramble" (E) · aspect S
+     face: "South ridge, gained via a cross-country approach from the Skyline Lake basin (east side)"
+
+   Its beta, approach and descent all agree — you gain the SOUTH ridge from the EAST side — so the
+   aspect is right, the name is about the approach, and the row says so in as many words. Reporting
+   it tells an author to change a field that is correct.
+
+   THIS IS NOT THE `face` EXCLUSION THE HEADER WARNS ABOUT. That warning is against using `face` as
+   EVIDENCE for which direction is right, because face and aspect come from one enrichment pass and
+   agreeing proves nothing. This asks something different and safe: does the row explicitly name
+   BOTH sides? A face that names only the aspect's own direction (Himmelhorn's "Northwest Aspect")
+   corroborates nothing and is not suppressed — and one that names a THIRD direction (Cameron's
+   "West ridge", against a name of SE and an aspect of N) is a worse disagreement, not a better one.
+
+   Measured on the live catalog: suppresses 1 of 3, and the 2 that survive are both real. */
+export const faceReconciles = (face, nd, ad) => {
+  if (typeof face !== "string" || !face.trim()) return false;
+  /* Built from WORDS, the table dirInName already uses, rather than a second list — two spellings
+     of one vocabulary is the drift this repo keeps recording. dirInName cannot be reused directly
+     here: it returns only the EARLIEST direction, and a reconciliation needs BOTH to be present. */
+  const names = d => WORDS.some(([w, code]) => code === d && new RegExp(`\\b${w}\\b`, "i").test(face));
+  return names(nd) && names(ad);
+};
+
 export function judge(r) {
   const nd = dirInName(r.name);
   if (!nd) return { skip: "no direction in the name" };
@@ -110,7 +138,11 @@ export function judge(r) {
   if (!ad) return { skip: "no usable aspect" };
   const kind = landform(r.name);
   const d = sep(DEG[nd], DEG[ad]);
-  return { nd, ad, kind, d, hit: d >= limitFor(kind) };
+  const hit = d >= limitFor(kind);
+  if (hit && faceReconciles(r.face, nd, ad)) {
+    return { nd, ad, kind, d, hit: false, reconciled: true };
+  }
+  return { nd, ad, kind, d, hit };
 }
 
 /* THE ROW'S OWN PINS ARE A THIRD RECORD, and neither the name nor the aspect derives from them.

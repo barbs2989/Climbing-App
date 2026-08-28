@@ -1,6 +1,6 @@
 // Imports the REAL functions from the audit, not a copy — a mirrored copy of the logic would pass
 // whatever the audit does and prove nothing.
-import { judge, dirInName, dirOfAspect, landform, sep, DEG } from
+import { judge, dirInName, dirOfAspect, landform, sep, DEG, faceReconciles } from
   "../audit-aspect-vs-name.mjs";
 
 let fail = 0;
@@ -75,6 +75,41 @@ eq("  ...and classed as a face", la.kind, "face");
 // Overcoat: batch J reported aspect=SE against text describing the north/east side.
 eq("Overcoat SE route vs aspect SE agrees (no hit)",
   judge({ name: "Southeast Route", aspect: "SE" }).hit, false);
+
+console.log("\n— face reconciles both directions —");
+/* A row whose `face` names BOTH the name's direction and the aspect's has already explained itself,
+   and reporting it tells an author to change a field that is correct. wa_tye_peak_e_route is the
+   live case: "East Slopes Scramble" with aspect S, and a face reading "South ridge, gained via a
+   cross-country approach from the Skyline Lake basin (east side)" — the name is the approach, the
+   aspect is the climb, and its beta, approach and descent all agree.
+
+   THE NEGATIVE CASES ARE WHAT MAKE THIS SAFE, and they are the reason this is not the `face`
+   exclusion the audit's header warns against. That warning is against using `face` as EVIDENCE for
+   which direction is RIGHT — face and aspect come from one enrichment pass, so their agreeing is one
+   claim counted twice. This asks something different: does the row name BOTH sides? A face naming
+   only the aspect's own direction corroborates nothing, and a face naming a THIRD direction is a
+   worse disagreement rather than a resolved one. Both must still be reported. */
+const TYE = "South ridge, gained via a cross-country approach from the Skyline Lake basin (east side)";
+eq("face naming both directions reconciles", faceReconciles(TYE, "e", "s"), true);
+eq("  ...so the row is not a hit",
+  judge({ name: "East Slopes Scramble", aspect: "S", face: TYE }).hit, false);
+eq("  ...and is marked reconciled",
+  judge({ name: "East Slopes Scramble", aspect: "S", face: TYE }).reconciled, true);
+
+eq("face naming ONLY the aspect does not reconcile (Himmelhorn)",
+  faceReconciles("Northwest Aspect", "se", "nw"), false);
+eq("  ...so it is still a hit",
+  judge({ name: "Southeast Route", aspect: "NW", face: "Northwest Aspect" }).hit, true);
+
+eq("face naming a THIRD direction does not reconcile (Cameron)",
+  faceReconciles("West ridge / false-summit traverse from Cameron Pass", "se", "n"), false);
+eq("  ...so it is still a hit",
+  judge({ name: "Standard Route (Southeast Slopes)", aspect: "N",
+          face: "West ridge / false-summit traverse from Cameron Pass" }).hit, true);
+
+eq("no face at all does not reconcile", faceReconciles(null, "e", "s"), false);
+eq("empty face does not reconcile", faceReconciles("   ", "e", "s"), false);
+eq("face with no direction does not reconcile", faceReconciles("Broad talus slope", "e", "s"), false);
 
 console.log("\n— skips —");
 eq("no direction in name -> skip", judge({ name: "Beckey Route", aspect: "N" }).skip, "no direction in the name");
