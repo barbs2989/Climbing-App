@@ -5098,6 +5098,33 @@ the correction knows the screen is wrong, and they have no way to report it.
       carry. The repair, if anyone takes it, is to identify the gate by the **junction** rather than
       by a milepost — and that is prose research, so it belongs behind
       `fix-road-blocks-from-research.mjs`' weaker `researched` gate, never a bulk transform.
+    - **POSITIONS ARE COMPARED NUMERICALLY, NEVER AS STRINGS, and the first version was not.**
+      `"MP 3"` and `"MP 3.0"` are one position written two ways, and a `Set` of strings calls them a
+      disagreement — it printed *"2 positions (spread 0.0 mi)"* for Glacier Creek Road, where four
+      routes all say mile 3. **A spread of zero is the tell**, and the guard must never emit one.
+      Latent rather than live on the day it shipped: no live pair differed only in formatting, so
+      the count did not move when it was fixed. Injection case `samepoint` pins it and was proven
+      non-vacuous — it reports 1 against the string version and 0 against the numeric one.
+    - **A WIDER NEEDLE WAS BUILT, MEASURED AND REJECTED — do not re-derive it.** `MP_RE` requires
+      the word *milepost* (or *MP*), and much of this catalog writes *"closed at mile 3"* instead,
+      so the Dosewallips rows that gave one closure five positions were invisible to it. Widening
+      to a bare *"mile N"* is far too loose (~40% on a real sample: it matches a surface change
+      *"Paved to mile 10, then rough gravel"*, a junction *"turn right onto FR-5606 at about mile
+      32.3"*, and a destination *"Andrews Creek Trailhead is at roughly mile 22"*). Two narrowings
+      take it to ~92% — a **positional preposition** (at/beyond/past), since *"adds about 6.5
+      miles"* is a DISTANCE and reading it as a position manufactures the very drive-vs-walk
+      conflation it is meant to expose; and the gate word in the **same sentence**, since one
+      status can say *"Paved to mile 10 … closed at mile 20"*.
+      - **It still does not catch Dosewallips, which is why it was rejected.** Measured against a
+        fixture of the pre-repair rows: only ONE of the three yields a position (*"beyond
+        approximately mile 1"*), because the others say *"5.5-6.5 miles from Hwy 101"* and
+        *"~8.5 mi"* — no preposition, no *"mile N"*. One position is not a disagreement, so the
+        finding count stays 0.
+      - On the live catalog it took section 4 from 1 finding to 2, and **the new one was the
+        `MP 3`/`MP 3.0` artifact above** — noise, not a finding. So the widening's measured yield
+        is **zero real findings** while adding two regexes and a sentence splitter. *A detector for
+        a class of zero is the thing this repo keeps refusing to build.* What it did earn is the
+        numeric-comparison fix, which it exposed.
     - Injection-tested **5/5** (1 fires, 4 silent), and `tworoads` is the one that matters. **ROW
       ORDER is load-bearing there and the case was VACUOUS without it**: chaining merges into
       whichever cluster it meets first, so with the two-road row LAST nothing merges and the case
