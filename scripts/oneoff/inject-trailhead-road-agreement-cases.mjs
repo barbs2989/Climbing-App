@@ -185,6 +185,13 @@ const CASES4 = [
       mproute("b", { name: "Cascade River Road", seasonalGate: "Snow-gated each winter at milepost 20" }),
     ] },
 
+  { name: "samepoint", expect: 0,
+    why: "\"MP 3\" and \"MP 3.0\" are ONE position written two ways; a Set of strings called it a disagreement and printed \"2 positions (spread 0.0 mi)\". A spread of zero is the tell.",
+    rows: [
+      mproute("a", { name: "Glacier Creek Road", status: "Closed to vehicles at milepost 3 for washout repairs" }),
+      mproute("b", { name: "Glacier Creek Road", status: "Closed to all vehicles at milepost 3.0 (Glacier Creek bridge)" }),
+    ] },
+
   { name: "noname", expect: 0,
     why: "with no road.name the identity is a GUESS at which road the sentence is about, and a guess cannot support a claim that two routes contradict each other",
     rows: [

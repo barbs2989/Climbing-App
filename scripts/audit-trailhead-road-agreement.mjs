@@ -468,9 +468,14 @@ for (const c of roadClusters.values()) {
   const single = [...byRoute.entries()].filter(([, mps]) => mps.size === 1)
                                        .map(([id, mps]) => [id, [...mps][0]]);
   if (single.length < 2) continue;
-  const distinct = [...new Set(single.map(([, mp]) => mp))];
-  if (distinct.length < 2) continue;
-  const nums = distinct.map(Number).sort((a, b) => a - b);
+  // COMPARE NUMERICALLY, NEVER AS STRINGS. "MP 3" and "MP 3.0" are one position written two
+  // ways, and a Set of strings calls them a disagreement — reported as "2 positions (spread
+  // 0.0 mi)", which is self-evidently not a disagreement at all. Measured on the live catalog
+  // while testing a wider needle: Glacier Creek Road produced exactly that, four routes all
+  // saying mile 3. A spread of zero is the tell, and the guard must not emit one.
+  const nums = [...new Set(single.map(([, mp]) => Number(mp)))].filter((n) => Number.isFinite(n)).sort((a, b) => a - b);
+  if (nums.length < 2) continue;
+  const distinct = nums.map(String);
   posFindings.push({ c, single, distinct, spread: nums[nums.length - 1] - nums[0] });
 }
 posFindings.sort((a, b) => b.spread - a.spread);
