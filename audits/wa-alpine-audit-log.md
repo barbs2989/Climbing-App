@@ -11122,3 +11122,61 @@ checked against known real-world summit coordinates/elevations and are
 correctly placed; no bounding-box problems found.
 
 Next batch continues after `wa_ragged_edge` in the id-ordered scope.
+
+## Batch 161 — 2026-09-01
+
+Reviewed: `wa_rapple_grapple`, `wa_raven_ridge_southeast_ridge_crater_lake`,
+`wa_remmel_mountain_nw_ridge`, `wa_ridge_traverse_from_east_fury`,
+`wa_robinson_mountain_north_couloir`, `wa_rock_mountain_northeast_ridge`,
+`wa_ruth_icy_traverse`, `wa_ruth_mountain_south_slopes`.
+
+One confirmed error, fixed (`audits/sql/2026-09-01-batch-161.sql`):
+
+- **`wa_ridge_traverse_from_east_fury`** (Mount Fury, Picket Range, North
+  Cascades NP) — its `access._raw.special_requirements` and
+  `access._raw.seasonal_closure_dates`/`access.closures` named "Elk Lake and
+  Glacier Meadows basecamp" permits and "No camping between Glacier Meadows
+  and Blue Glacier." Those are Hoh River Trail campsites below Mount
+  Olympus's Blue Glacier, in Olympic National Park — confirmed via
+  NPS/WTA/Mountaineers sources on the Hoh River Trail (Elk Lake mile 14.8,
+  Glacier Meadows mile 17.1, both permit-limited). Mount Fury is ~150 miles
+  away in an unrelated park; this route's own waypoints describe Ross Lake,
+  Big Beaver Trail, Access Creek and Luna Camp instead. Same cross-region
+  prose-contamination shape already caught once on
+  `wa_ruth_mountain_south_slopes`'s `access.notes` (see that row's own
+  `corrections` field, an identical stray "Mount Tom area" Olympics clause).
+  Trimmed the contaminated clauses, left the rest (glacier-travel/crevasse-
+  rescue requirements, the 6-person group cap, bear canister rule) intact.
+  Separately, the same row's `access.fees` said "N/A" despite requiring an
+  overnight NPS backcountry permit for the Luna Camp stay — corrected to the
+  current NCNP fee (per NPS's own "backcountry permit fee structure change"
+  notice: $10/person + $6 non-refundable reservation fee, summer season
+  mid-May–early Oct, no charge outside that window, in effect since March
+  2024).
+
+Six clean on review, elevations/coordinates cross-checked against
+Wikipedia/PeakVisor/WTA and found correct or within normal ±2-10 ft survey
+tolerance: **`wa_rapple_grapple`** (Liberty Bell 7,720 ft; already carries a
+prior-session correction reconciling its length to theCrag's 120m/4
+pitches/5.8; FA "Bryan Burdo" not confirmable either way from available
+sources, left as-is); **`wa_raven_ridge_southeast_ridge_crater_lake`** (Raven
+Ridge/Corax Peak 8,572 ft, Lake Chelan-Sawtooth Wilderness, confirmed exactly
+against Wikipedia/PeakVisor); **`wa_remmel_mountain_nw_ridge`** (Remmel
+Mountain 8,685 ft confirmed exactly; its Andrews Creek vs. Thirtymile
+trailhead split is CLAUDE.md's own documented two-genuine-approaches case,
+not a bug); **`wa_robinson_mountain_north_couloir`** (Robinson Mountain
+8,729 ft on file vs. 8,731 ft found externally — 2 ft, within normal survey
+rounding, not flagged); **`wa_rock_mountain_northeast_ridge`** (already
+carries a prior-session `high_point_ft` correction to 6,841 ft; Mt. Mastiff
+and Mt. Howard confirmed as real named peaks on Nason Ridge alongside Rock
+Mountain, matching the described traverse); **`wa_ruth_icy_traverse`** /
+**`wa_ruth_mountain_south_slopes`** (Ruth Mountain 7,115 ft and Icy Peak
+7,073 ft both confirmed — Ruth is genuinely the higher of the two, so the
+traverse's `high_point_ft: 7115` is correct rather than a missed Icy-Peak
+figure as first suspected; Ruth's 1916 FA year independently confirmed via
+Wikipedia; the south_slopes route's name ("North Face / Ruth Glacier") vs.
+its `_south_slopes` id is already flagged and explained in its own
+`approach_variants` note from a prior pass — nothing further to do).
+
+Next batch continues after `wa_ruth_mountain_south_slopes` in the
+id-ordered scope.

@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_ragged_edge",
+    "last_processed_id": "wa_ruth_mountain_south_slopes",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3358,6 +3358,36 @@
             "clean": 3,
             "sql_file": null,
             "note": "No SQL fixes this batch. Top flag: wa_poltergeist_pinnacle (filed under wa_mount_challenger) appears to be a duplicate of the correctly-filed wa_poltergeist_pinnacle_north_route -- both describe the same 2004 Aylward/Murphy East Face FA with near-identical fa fields, but this audit is not permitted to delete/move rows, so it is flagged rather than acted on. Also flagged: Stuart Lake Trailhead elevation (3400 ft stored vs ~2930 ft from two secondary sources; WTA/USFS blocked) on der_sportsman and south_face_burgner_stanley; wa_prusik_peak_west_ridge has an internally contradictory Trailhead waypoint (named/coordinates say Stuart Lake TH but elevation 1300 ft and its own note say the GPS track starts at Snow Lakes TH -- gain_ft/loss_ft math supports a Snow-Lakes-in/Stuart-Lake-out traverse); wa_point_success_south_side wilderness camping fee (12 dollars/person/night stored vs 8-10 dollars/night from search sources, NPS page blocked); wa_primus_peak_south_ridge McAllister Glacier naming (low confidence, glacier sits in an interconnected icecap system spanning multiple peaks). Three clean: wa_ragged_edge, wa_prusik_peak_south_face_burgner_stanley, wa_prusik_peak_der_sportsman -- grade/pitches/FA all confirmed against multiple external sources."
+        },
+        {
+            "batch_number": 161,
+            "date": "2026-09-01",
+            "route_ids": [
+                "wa_rapple_grapple",
+                "wa_raven_ridge_southeast_ridge_crater_lake",
+                "wa_remmel_mountain_nw_ridge",
+                "wa_ridge_traverse_from_east_fury",
+                "wa_robinson_mountain_north_couloir",
+                "wa_rock_mountain_northeast_ridge",
+                "wa_ruth_icy_traverse",
+                "wa_ruth_mountain_south_slopes"
+            ],
+            "findings": [
+                {
+                    "route_id": "wa_ridge_traverse_from_east_fury",
+                    "summary": "access._raw.special_requirements/seasonal_closure_dates and access.closures named Olympic NP (Mount Olympus/Hoh River Trail) landmarks Elk Lake and Glacier Meadows on a North Cascades NP (Mount Fury) route; access.fees was stale 'N/A' despite requiring an NCNP overnight backcountry permit.",
+                    "sql_file": "audits/sql/2026-09-01-batch-161.sql"
+                }
+            ],
+            "clean": [
+                "wa_rapple_grapple",
+                "wa_raven_ridge_southeast_ridge_crater_lake",
+                "wa_remmel_mountain_nw_ridge",
+                "wa_robinson_mountain_north_couloir",
+                "wa_rock_mountain_northeast_ridge",
+                "wa_ruth_icy_traverse",
+                "wa_ruth_mountain_south_slopes"
+            ]
         }
     ]
 }
