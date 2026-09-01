@@ -11178,5 +11178,80 @@ Wikipedia; the south_slopes route's name ("North Face / Ruth Glacier") vs.
 its `_south_slopes` id is already flagged and explained in its own
 `approach_variants` note from a prior pass — nothing further to do).
 
-Next batch continues after `wa_ruth_mountain_south_slopes` in the
+## Batch 162 (2026-09-01, pass 3)
+
+Checked 8 routes across 7 peaks: Sahale Mountain (Quien Sabe Glacier,
+Sahale Arm/Sahale Glacier), Eagle Peak (Scramble Route), Mount Washington
+Olympic (SE Ridge AKA Shield Wall), Sentinel Peak (Standard Route), South
+Early Winter Spire (Southwest Rib), Sharkfin Tower (Southeast Ridge), and
+Sherman Peak/Baker (Crater Rim Scramble).
+
+7 confirmed errors fixed, all but one a repeat of the audit:camp-route-fit
+corridor-zone-file `bivy` contamination class CLAUDE.md documents from
+earlier batches:
+
+- **`wa_scramble_route`** (Eagle Peak): `bivy` held 6 entries entirely
+  about Tatoosh-Range camps for Unicorn Peak, Lane Peak, and Pinnacle,
+  each reached via Reflection Lakes/Stevens Canyon Road on the range's
+  east end. Eagle Peak is climbed entirely from Longmire on the west end
+  (confirmed via Wikipedia — "set on the west end of the Tatoosh Range...
+  immediately east of Longmire"), matching this route's own approach text
+  ("a single long day trip from Longmire"). Cleared to NULL, same as the
+  batch-148 Pilchuck precedent.
+- **`wa_scramble_route`**: `access._raw.permit_location` cited the
+  Longmire Wilderness Information Center's phone as "(360-569-6550)" —
+  transposed digits, disagreeing with this same row's own
+  `emergency.rangerStation` ("(360) 569-6650") and with the number found
+  via web search (Visit Rainier / NPS-sourced). Corrected to (360) 569-6650.
+- **`wa_se_ridge_aka_shield_wall`** (Mount Washington, Olympic): `bivy`
+  held 8 entries, 6 of them Hamma Hamma River corridor camps that
+  self-identify as serving The Brothers, Mount Stone, Mount Skokomish, or
+  Mount Pershing — a different drainage from this route's own FR-2419/Big
+  Creek trailhead. The remaining 2 name this route's own peaks outright
+  ("Big Creek Campground... the obvious roadside base for MOUNT ELLINOR
+  AND MOUNT WASHINGTON"). Pruned to those 2.
+- **`wa_sentinel_peak_standard`**: `bivy` held 7 entries, 5 of them camps
+  for Spider Mountain, Mount Formidable, Le Conte Mountain, and Elephant
+  Head (none named anywhere else in this row's own text). Pruned to the 2
+  entries naming Sentinel Peak itself (Cache Col; Sentinel Pass and Lizard
+  Col).
+- **`wa_sherman_peak_baker_route`**: `bivy` held 6 entries, 4 of them camps
+  for Colfax Peak's north-side ice routes and for Hadley Peak — one entry
+  states outright "this is the north-side approach to Hadley Peak and it
+  has nothing to do with the Black Buttes or the Coleman." Pruned to the 2
+  entries for Sherman's own Squak Glacier approach (Crag View; Upper Squak
+  benches).
+- **`wa_sahale_mountain_sahale_glacier`**: `bivy[0]` (Sahale Glacier Camp)
+  read elev 7,500 ft, contradicting this same row's own waypoints
+  (7,600 ft), itinerary ("~7,600 ft"), and pitch_detail ("camp (7,600
+  ft)") — the last of which a prior-pass correction already fixed from a
+  stale 7,400, but missed this third copy. Corrected to 7,600.
+- **`wa_sharkfin_tower_southeast_ridge`**: its own cross-referenced "Sahale
+  Glacier Camp" bivy entry carried the same stale 7,400 ft figure.
+  Corrected to 7,600 to match.
+
+Verified two first-ascent claims against external sources and found both
+already correct, no fix needed: South Early Winter Spire's Southwest Rib
+(Larry Scott and Don Anderson, August 1964 — stored as "Donald Anderson
+and Larry Scott, 1964", same people/year, order swapped only) and Sharkfin
+Tower's Southeast Ridge (Wesley Grande, Jay Todd, and Joseph Vance, August
+1947 — exact match).
+
+Considered and **rejected** a fix to `wa_sahale_mountain_sahale_glacier`'s
+`grade_num`/`grade_system` (stored `0`/`"yds"`, which looked inconsistent
+with its own "Class 3" grade text and with its sibling route's
+"class"/`3` convention). Read `lib/grade.js` directly before touching it:
+its own comment documents that a stored `grade_num` disagreeing with what
+the current parser (`gradeNumFrom`) would compute is a **known, accepted**
+artifact of four historical import pipelines (~1.9% of the catalog) and
+explicitly not something to bulk-correct — "the STORED COLUMN disagreeing
+with itself, not this parser." Left untouched rather than guessed at.
+
+Two routes clean on review: `wa_sahale_mountain_r1` (Quien Sabe Glacier —
+own bivy entries are genuinely Boston Basin camps, internally consistent
+throughout) and `wa_sews_sw_rib` (Southwest Rib — FA confirmed, bivy
+entries are genuine Washington Pass corridor options, no contradictions
+found).
+
+Next batch continues after `wa_sherman_peak_baker_route` in the
 id-ordered scope.

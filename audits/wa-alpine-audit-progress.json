@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_ruth_mountain_south_slopes",
+    "last_processed_id": "wa_sherman_peak_baker_route",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3388,6 +3388,25 @@
                 "wa_ruth_icy_traverse",
                 "wa_ruth_mountain_south_slopes"
             ]
+        },
+        {
+            "batch_number": 162,
+            "date": "2026-09-01",
+            "route_ids": [
+                "wa_sahale_mountain_r1",
+                "wa_sahale_mountain_sahale_glacier",
+                "wa_scramble_route",
+                "wa_se_ridge_aka_shield_wall",
+                "wa_sentinel_peak_standard",
+                "wa_sews_sw_rib",
+                "wa_sharkfin_tower_southeast_ridge",
+                "wa_sherman_peak_baker_route"
+            ],
+            "confirmed_errors_fixed": 7,
+            "flagged_for_human_review": 0,
+            "clean": 2,
+            "sql_file": "audits/sql/2026-09-01-batch-162.sql",
+            "note": "Fixed 7 confirmed errors across 4 routes, all but one the same audit:camp-route-fit corridor-zone-file bivy contamination class CLAUDE.md documents repeatedly: wa_scramble_route (Eagle Peak) carried a bivy array entirely about Tatoosh-Range camps for Unicorn Peak/Lane Peak/Pinnacle (east-end trailheads via Reflection Lakes) though Eagle Peak is climbed from Longmire on the west end (confirmed via Wikipedia) -- bivy cleared to NULL, matching the batch-148 Pilchuck precedent. wa_se_ridge_aka_shield_wall (Mount Washington, Olympic), wa_sentinel_peak_standard, and wa_sherman_peak_baker_route each carried a corridor zone file mostly describing OTHER peaks (The Brothers/Mount Stone/Mount Skokomish/Mount Pershing; Spider Mountain/Mount Formidable/Le Conte Mountain/Elephant Head; Colfax Peak/Hadley Peak respectively), each self-disclosed in the entries' own notes (e.g. Big Creek Campground states outright it serves MOUNT ELLINOR AND MOUNT WASHINGTON; Cougar Divide states it 'has nothing to do with the Black Buttes or the Coleman') -- pruned to keep only the entries naming this route's own peak. Also fixed a real cross-referenced elevation: Sahale Glacier Camp is 7,600 ft per wa_sahale_mountain_sahale_glacier's own waypoints/itinerary/pitch_detail (already corrected there once before, from 7,400), but bivy on that same row still read 7,500 and the cross-referenced bivy entry on wa_sharkfin_tower_southeast_ridge still read 7,400 -- both corrected to 7,600. Separately fixed a transposed phone number on wa_scramble_route: access._raw.permit_location cited the Longmire Wilderness Information Center as (360-569-6550), disagreeing with this same row's own emergency.rangerStation (360) 569-6650 and with the number confirmed via web search (Visit Rainier/NPS-sourced). Verified two FAs (South Early Winter Spire Southwest Rib: Anderson/Scott 1964; Sharkfin Tower Southeast Ridge: Grande/Todd/Vance 1947) against external sources -- both already correct, no fix needed. Considered and REJECTED a grade_num/grade_system fix on wa_sahale_mountain_sahale_glacier (stored yds/0 looked inconsistent with its own 'Class 3' grade text) after reading lib/grade.js directly: its own comment documents that stored grade_num values disagreeing with what the current parser would produce is a KNOWN, accepted artifact of four historical import paths (~1.9% of rows) and not something this audit should bulk-correct -- left untouched rather than guessed at. wa_sahale_mountain_r1 and wa_sews_sw_rib were clean on review."
         }
     ]
 }
