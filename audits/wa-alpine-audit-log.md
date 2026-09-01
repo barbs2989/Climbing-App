@@ -11255,3 +11255,57 @@ found).
 
 Next batch continues after `wa_sherman_peak_baker_route` in the
 id-ordered scope.
+
+## Batch 163 — 2026-09-01
+
+Routes: `wa_sherman_peak_baker_squak_glacier`, `wa_sherpa_balanced_rock_ne_couloir`,
+`wa_sherpa_glacier`, `wa_sherpa_peak_east_ridge`, `wa_sherpa_peak_north_ridge`,
+`wa_sherpa_peak_west_ridge`, `wa_silver_star_glacier`, `wa_silver_star_ne_ridge`.
+
+No SQL fixes this batch — 6 clean, 2 flagged for human review, 0 confirmed errors.
+
+Note on tooling this run: WebFetch was blocked by the network egress proxy for
+every climbing-specific domain tried (summitpost.org, mountainproject.com,
+alpinedave.com, lemkeclimbs.com, peakbagger.com, fs.usda.gov, en.wikipedia.org).
+All research below came from WebSearch's own synthesis rather than fetching
+primary pages directly, so anything attributed to Beckey's guide is a
+secondary summary of it, not the guide text itself.
+
+**Flagged for human review:**
+- `wa_sherpa_peak_north_ridge`: stored `fa` is "Rick La Belle and Pat Derr,
+  1971". Search turned up two other, better-corroborated first ascents for
+  this ridge and neither matches: the original upper North Ridge (a loose
+  5th-class gully to the North Ridge Notch) is credited to Fred Beckey and
+  Steve Marts, 1963; a more sustained, continuously-pitched "Direct North
+  Ridge" variation — which this row's own description (13 pitches, sustained
+  5.7–5.8, mostly simul-climbed) more closely resembles — is credited to Mead
+  Harris and Jay Ossiander, seven years later in 1970. No source found names
+  La Belle or Derr. Not confident which named variation this row represents,
+  and couldn't reach Beckey's guide text directly to settle it (see tooling
+  note above) — flagged rather than guessed at.
+- `wa_sherpa_peak_west_ridge`: stored `fa` is "Fred Dunham, Ray Lilleby, and
+  James Wick, August 13, 1961". The one secondary source found (Wenatchee
+  Outdoors) names only Dunham and gives 1962, with no mention of Lilleby or
+  Wick either way. Too partial a source to override a specific full-party,
+  exact-date claim, but the year conflict is real and unresolved.
+
+**Six clean**, each with at least one fact independently confirmed:
+- `wa_sherman_peak_baker_squak_glacier`: `gain_ft` (6,800) and the Schriebers
+  Meadow trailhead waypoint (48.7067849, -121.8129229) both matched exactly.
+  Sherman Peak's summit elevation (stored 10,133 ft) sits inside a genuine
+  spread of published figures (10,140 / 10,160 ft) for this eroding volcanic
+  crater-rim point — left alone as source disagreement, not a stored error.
+- `wa_sherpa_balanced_rock_ne_couloir`: the Balanced Rock area's own
+  coordinate sits ~93 m (~102 yards) from Sherpa Peak's summit coordinate,
+  matching independent sources' "about 100 yards" separation almost exactly.
+- `wa_sherpa_glacier`: `fa` ("Bill & Gene Prater, Don & Nelson Torrey, 1956")
+  confirmed verbatim.
+- `wa_sherpa_peak_east_ridge`: no contradicting source found for grade, gain,
+  or the descent-via-West-Ridge-rappels beta.
+- `wa_silver_star_glacier`: `fa` ("Lage Wernstedt, 1926") and the SR-20
+  Silver Star gate (MP 171) seasonal-closure detail both confirmed against
+  WSDOT-sourced reporting.
+- `wa_silver_star_ne_ridge`: `high_point_ft` (8,840, the west summit) confirmed
+  exactly.
+
+Next batch continues after `wa_silver_star_ne_ridge` in the id-ordered scope.
