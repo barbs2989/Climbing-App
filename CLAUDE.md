@@ -946,6 +946,27 @@ a build error, but a screen that renders wrong or not at all.
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
       - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
         — and no flag lives on them. Click one when a flag lands on it.
+      - **A FLAG HAS LANDED ON CONDITIONS, AND CLICKING IT IS HARDER THAN THIS NOTE IMPLIES.**
+        `<ConsensusPanel … reportsUnavailable={reportsUnavailable}/>` renders behind
+        `tab==="conditions"`, so the Overview walk proves the **flag** flips while that panel's own
+        copy (*"Couldn't load this route's reports — try again in a moment."*) stays unexercised.
+        Attempted 2026-09-02 and **reverted**; three things were learned, each caught by this
+        guard's own fail-closed paths rather than by a red CI run, and each worth having before the
+        next attempt:
+        - **THE SUB-TAB ID IS NOT ITS LABEL.** The bar is `[["conditions", cragOnly ? "Send
+          Reports" : "Reports"], …]`, so there is no control reading "Conditions" — clicking that
+          name matched nothing and reported `__navFail`, 0ch. The label is also **conditional on
+          the route's discipline**, so no single string is right for every fixture.
+        - **A CLICK THAT RETURNS TRUE IS NOT EVIDENCE IT NAVIGATED.** `tapByText` clicks `hit[0]`
+          of whatever matches; clicking "Reports" returned true and left the page on **Photos**, so
+          the capture came back **byte-identical at 678ch** — indistinguishable from a screen with
+          nothing wrong. This is the same failure the nav-click guard exists for, one level down,
+          and the reason to compare the capture against the PREVIOUS screen rather than trust the
+          return value.
+        - **Neither label changes the screen even when tried in turn**, and the buttons carry no
+          `textTransform`, so the innerText really is verbatim. Why the click does not take is
+          still unknown — start there, and consider clicking Conditions BEFORE Photos so the
+          comparison baseline is the Overview capture.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
