@@ -11661,3 +11661,70 @@ Mountain).
   ("Lloyd Anderson and Tom Campbell, September 21, 1940") confirmed exactly via search.
 
 Next batch continues after `wa_tenpeak_mountain_southeast` in the id-ordered scope.
+
+## Batch 170 (2026-09-02, pass 3)
+
+Eight routes, continuing after `wa_tenpeak_mountain_southeast` in the id-ordered scope:
+`wa_tepeh_towers` (Eldorado/Main Peak group), `wa_the_brothers_south_couloir` and
+`wa_the_brothers_traverse` (The Brothers, Olympics), `wa_the_cave_route` (Concord Tower,
+Washington Pass), `wa_the_chopping_block_south_route` (The Chopping Block, aka Pinnacle Peak,
+Southern Pickets), `wa_the_devils_club` (Southeast Mox Peak / "Hard Mox" East Face),
+`wa_the_direct_north_ridge_w_gendarme` (Mount Stuart), and `wa_the_hitchhiker` (South Early
+Winters Spire). Two candidate routes in this id range — `wa_the_chalice` (Silver Horn, a crag)
+and `wa_the_exorcism_of_mark_hanna` (M&M Wall, a crag) — were excluded per the standing
+`area_type = 'peak'` scope filter.
+
+**One confirmed error, fixed** (`audits/sql/2026-09-02-batch-170.sql`):
+
+- `wa_the_cave_route` (Concord Tower): stored `fa` credited "Ron Burgner & Don McPherson,
+  1968." That FA belongs to a different, neighboring route on the same tower — the Tunnel
+  Route (5.8, four pitches, described independently as starting "well west of the North Face
+  route"). Three separate searches (SummitPost's dedicated Cave Route page, Concord Tower's
+  own SummitPost overview, and Mountain Project's Cave Route listing) all attribute the Cave
+  Route itself — 5.8 R, three pitches, starting ~50 ft down the gully from the Liberty
+  Bell/Concord notch — to Fred Beckey and John Parrott, June 12, 1956, which matches this
+  row's own stored grade and pitch count exactly. Corrected.
+
+**Six clean**, each with at least one fact independently confirmed:
+- `wa_tepeh_towers`: Eldorado Creek trailhead at Cascade River Road mile 20 confirmed
+  (matches this row's `approach_logistics`); the row's own `corrections` field already
+  transparently documents that its 8,113 ft summit elevation is Tepeh Towers' own figure
+  (per Topozone/Peakbagger) and is distinct from Eldorado's true 8,868-8,873 ft summit — an
+  appropriate hedge, not an error.
+- `wa_the_brothers_south_couloir`: FA "1912 (south summit/Mt. Edward): I. Collier, O.
+  Corkenill, W. Dehn, W. Fish, E. Goldsmith, and H. Trumbull... north summit (Mt. Arthur)
+  climbed earlier, 1908, by C. Hill and W. Hill" confirmed exactly via search. The row's own
+  `data_quality.gaps` already flags the 6,842 ft vs 6,866-6,868 ft elevation-source conflict
+  honestly (both figures are independently attested — Wikipedia/older USGS-derived data give
+  6,842 ft, more recent sources give 6,866-6,868 ft) — correctly left unresolved rather than
+  silently picking one.
+- `wa_the_brothers_traverse`: shares The Brothers' summit elevation field with the South
+  Couloir row (6866 ft) and correctly carries no invented FA for the traverse itself.
+- `wa_the_chopping_block_south_route`: FA "William Degenhardt & Herbert (H.V.) Strandberg,
+  1932" confirmed exactly (multiple sources agree on the 1932 first ascent of Pinnacle
+  Peak/The Chopping Block by Degenhardt and Strandberg, approaching via Goodell Creek).
+  `high_point_ft` 6819 confirmed exactly (Wikipedia: "6,819-foot... officially named Pinnacle
+  Peak... hardly anyone calls it by that name").
+- `wa_the_devils_club`: FA "Mike Layton and Erik Wolfe, August 31-September 1, 2005"
+  confirmed (multiple sources: an 18-hour push completing September 1, 2005, after a bivy
+  partway up the face the day before). `high_point_ft` 8504 confirmed exactly against
+  Wikipedia's Mox Peaks figure for Southeast/"Hard" Mox.
+- `wa_the_direct_north_ridge_w_gendarme` (Mount Stuart): all three FA credits confirmed
+  independently — Don Claunch & John Rupley, Sept 9, 1956 (original line, Gendarme bypass);
+  Fred Beckey & Steve Marts, 1963 (first ascent climbing directly over the Great Gendarme);
+  Mead Hargis & Jay Ossiander, 1970 (direct lower-ridge start from the true toe). Summit
+  elevation 9,415 ft matches the well-documented figure exactly. The row's two recorded
+  trailheads (Esmeralda Basin via Longs Pass, and Stuart Lake via Mountaineer Creek) are the
+  same legitimate two-approach case this project's own CLAUDE.md already documents for this
+  exact route — not a disagreement to reconcile.
+- `wa_the_hitchhiker` (South Early Winters Spire): FA "Bryan Burdo and Scott Johnston, 2007"
+  confirmed exactly (established over three visits, July-September 2007). `high_point_ft`
+  7807 confirmed exactly against multiple sources for South Early Winters Spire's elevation.
+  Pitch count (9) matches the sourced pitch breakdown (one 5.9, six 5.10, two 5.11).
+
+One minor, sub-tolerance discrepancy noted but not flagged: `wa_the_cave_route`'s
+`high_point_ft` (7569) is 9 ft off an independently-sourced 7,560 ft for Concord Tower —
+well within the survey-variance tolerance this audit has already established (e.g. the
+Swiss Peak precedent, 5 ft/0.06% apart, left alone).
+
+Next batch continues after `wa_the_hitchhiker` in the id-ordered scope.
