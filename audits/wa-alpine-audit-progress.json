@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_south_arete",
+    "last_processed_id": "wa_south_face_3",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3445,6 +3445,25 @@
             "clean": 5,
             "sql_file": "audits/sql/2026-09-02-batch-164.sql",
             "note": "wa_sitkum_spire_standard flagged: high_point_ft/gain_ft arithmetic implies Glacier Peak's true summit (10,541 ft) rather than the stored 9,355 ft (Sitkum Spire's own elevation), matching this row's own corrections-log reasoning, but the DB already holds a separately-filed, correctly-scoped route for that exact climb (wa_glacier_peak_sitkum_glacier) -- setting high_point_ft to 10,541 here would create a near-duplicate rather than resolve the inconsistency. Structural/duplicate-resolution call, not a simple fact fix."
+        },
+        {
+            "batch_number": 165,
+            "date": "2026-09-02",
+            "route_ids": [
+                "wa_south_early_winter_spire_direct_east_buttress",
+                "wa_south_early_winter_spire_east_buttress",
+                "wa_south_early_winter_spire_passenger",
+                "wa_south_early_winter_spire_southwest_couloir",
+                "wa_south_face_10",
+                "wa_south_face_12",
+                "wa_south_face_2",
+                "wa_south_face_3"
+            ],
+            "confirmed_errors_fixed": 1,
+            "flagged_for_human_review": 2,
+            "clean": 5,
+            "sql_file": "audits/sql/2026-09-02-batch-165.sql",
+            "note": "wa_south_early_winter_spire_east_buttress: dist_km fixed 6.6 -> 2.4 to match two sibling routes sharing the identical Blue Lake basin/Spire Gully approach and buttress base, plus external corroboration of a ~1.5 mile approach. Flagged: wa_south_early_winter_spire_passenger (fa month conflict, 'October 1991' stored vs an AAC search snippet saying 'completed in August', year unconfirmed either way, primary source blocked by egress); wa_south_face_3 / Concord Tower (area.elevation_ft 7611 disagrees with all 6 of its own routes at high_point_ft 7569, and external sources split the same way -- Mountain Project ~7560 vs ListsOfJohn 7612 -- plus its stored fa names a 4th climber, Bruce Schuler, not found in two matching search results naming only 3)."
         }
     ]
 }

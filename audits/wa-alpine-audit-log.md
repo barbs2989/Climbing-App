@@ -11385,4 +11385,65 @@ SQL: `audits/sql/2026-09-02-batch-164.sql` (validated with `check:sql`).
   row omits but doesn't contradict; summit coordinate (48.635339,
   -121.138799) matches the published 48.63528, -121.13833 almost exactly.
 
-Next batch continues after `wa_south_arete` in the id-ordered scope.
+## Batch 165 (2026-09-02, pass 3)
+
+Routes checked: `wa_south_early_winter_spire_direct_east_buttress`,
+`wa_south_early_winter_spire_east_buttress`, `wa_south_early_winter_spire_passenger`,
+`wa_south_early_winter_spire_southwest_couloir`, `wa_south_face_10` (Cathedral Peak,
+Pasayten), `wa_south_face_12` (Argonaut Peak), `wa_south_face_2` (Pernod Spire),
+`wa_south_face_3` (Concord Tower).
+
+**Fixed (1):**
+- `wa_south_early_winter_spire_east_buttress`: `dist_km` was 6.6, a ~2.7x outlier on
+  its own peak. Two sibling routes sharing the identical Blue Lake basin / Spire Gully
+  approach to the NEWS-SEWS notch (`wa_south_early_winter_spire_direct_east_buttress`,
+  `wa_south_early_winter_spire_passenger`) both store 2.4 km, and this row's own
+  approach text is near-verbatim the same line to the same buttress base. External
+  corroboration (aggregated route-guide search results) describes "about one and a
+  half miles" to the climber's trail plus a short scramble to the base — consistent
+  with ~2.4-4 km, nowhere near 6.6. Set to 2.4 km to match the sibling it shares an
+  approach with.
+
+**Flagged for human review (2):**
+- `wa_south_early_winter_spire_passenger`: stored `fa` says "October 1991"; an AAC
+  Publications search result (page itself blocked by network egress, so only the
+  search snippet was available) describes the same three-person party (Burdo, Doorish,
+  White) but says the route was "completed in August," with no year given in the
+  snippet. Party matches, month conflicts and year is unconfirmed either way — could
+  not resolve without the primary AAC text, which WebFetch could not reach this run
+  (same summitpost/mountainproject/AAC egress block noted in batch 163).
+- `wa_south_face_3` (Concord Tower): two separate items. (1) `high_point_ft` (7,569)
+  matches all 5 other Concord Tower routes in the DB, but the parent area's own
+  `elevation_ft` is 7,611 — search results split the same way externally (Mountain
+  Project ≈7,560, ListsOfJohn 7,612), so this looks like a real two-source disagreement
+  on the summit's true elevation rather than a DB typo; flagging rather than picking a
+  side, and it's an `areas`-table field outside this batch's route-row scope regardless.
+  (2) stored `fa` credits four climbers ("Donald Cramer, Donald Anderson, Bruce Schuler
+  & Fred Stanley, 1965"); two independent search results for the matching 5.6-graded
+  South Face route name only three (Cramer, Anderson, Stanley) with no Schuler. Could
+  be an incomplete source rather than a DB error, so flagged rather than removing the
+  name.
+
+**Five clean**, each with at least one fact independently confirmed:
+- `wa_south_early_winter_spire_direct_east_buttress`: FA (Fred Beckey and Doug Leen,
+  1968) confirmed via search (AAC/climbing.com coverage of the route's history).
+  Elevation (7,807 ft) and area coordinates (48.512275, -120.655395) both match a
+  published 48.512171°N 120.655361°W almost exactly.
+- `wa_south_early_winter_spire_southwest_couloir`: FA (Kenneth Adam, Rafi/Raffi
+  Bedayn, and W. Kenneth Davis, July 20, 1937 — first ascent of the peak) confirmed
+  near-verbatim against a Wikipedia-sourced search result.
+- `wa_south_face_10` (Cathedral Peak, Pasayten): elevation (8,606 ft) confirmed
+  exactly. FA party (Beckey, Wagner, Brottem, Leen) and approximate date ("late
+  September," matching the stored "September 1968") both corroborated via AAC
+  Publications coverage.
+- `wa_south_face_12` (Argonaut Peak): elevation (8,457 ft) confirmed exactly, coords
+  match a published 47°28'12"N 120°51'41"W almost exactly. `gain_ft` (6,257) is
+  internally consistent with the route's own two-day approach text (2,000 ft day one
+  to a 4,200 ft camp + 4,257 ft day two to the 8,457 ft summit = 6,257). The stored
+  2025 Labor Mountain Fire closure of Beverly Creek Road is a real, currently-active
+  USFS closure, confirmed via search.
+- `wa_south_face_2` (Pernod Spire): no contradicting source found for FA or elevation
+  (8,507 ft); one search result independently confirms Pernod as the tallest of the
+  Wine Spires, consistent with it being taller than Burgundy's ~8,400 ft.
+
+Next batch continues after `wa_south_face_3` in the id-ordered scope.
