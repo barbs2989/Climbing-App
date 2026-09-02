@@ -206,6 +206,28 @@ a build error, but a screen that renders wrong or not at all.
     overview/planner/conditions/safety/partners/photos — so it spent a walk on an id the route page
     has no branch for and **never inspected Partners at all**, while its own header claimed six
     sub-tabs.
+  - **SECTION 4 READS CLAUDE.md's OWN ARCHITECTURE BULLET, because the rule above is scoped to
+    `scripts/` and the DOCS hold a hand-copy of the same vocabulary.** That is not hypothetical:
+    the Architecture bullet listed the route sub-tabs as
+    overview/conditions/planner/safety/photos/**`ranks`** — the identical wrong list recorded two
+    bullets up as costing `check:token-boxes` a whole walk, with `partners` missing the same way.
+    **The guard was fixed at the time and the sentence that seeded it was not**, so for months a
+    reader starting from Architecture would have copied it straight back out. A stated vocabulary
+    is a hand-copy wherever it lives.
+    - Scoped to that ONE bullet, deliberately — CLAUDE.md discusses these ids in prose throughout
+      (this entry does), so a document-wide scan fires on every correct mention. It reads the
+      bullet's own LINE, and the explanation naming the absent id lives on a sub-bullet beneath
+      it: a version that scanned the whole entry **failed on its own documentation**, the trap
+      `check:ci-cancel` records from the other side. Keep the list on one line.
+    - **An IGNORE list is how this check goes vacuous, and the first draft proved it**: it excused
+      `ranks` as "the NAV tab it names", which is precisely the id the defect consisted of — it
+      would have passed the original wrong bullet. The bullet's SUBJECT is stripped structurally
+      instead, and only genuine app-state names (`selRoute`, `tab`) are excused.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-architecture-subtab-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring byte-identically, and asserting the
+      failure came from section 4 rather than a script-list section above it. Case 1 is the real
+      bullet, restored verbatim. **Case 4 must PASS** — the sub-bullet names `Ranks` while
+      explaining it, and a guard flagging that would forbid its own explanation.
   - **Both vocabularies are READ from the app, never restated**: `NAV` from `ClimbMatch.jsx`, the
     sub-tab bar from `RouteDetail.jsx`, each with `ANCHOR LOST` if it moves. Any array of string
     literals under `scripts/` holding **three or more** members of one vocabulary is a list *of* that
@@ -1014,13 +1036,32 @@ a build error, but a screen that renders wrong or not at all.
           It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
           unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
           **absent** from the healthy one.
-        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
-          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
-          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
-          browser. That remains the best explanation for two differing 5,026-char captures and it
-          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
-          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
-          run to confirm.
+        - **SOLVED, AND IT WAS NEVER THE CLOCK: `tapByText` WAS CLICKING THE WRONG ELEMENT.**
+          Dumping every match on a quiet box settled it. **Two** elements have the exact text
+          `Reports` — the rating summary label (*"4.2 ★ 5 Reports"*, a **DIV**) and the sub-tab
+          **BUTTON** — and the DIV comes first in DOM order, so `hit[0]` clicked the label, which
+          does nothing, and returned **true**. The capture was 5,026 because it *was* Overview. The
+          clock hypothesis is **withdrawn**.
+        - **`check:overflow` HAS HAD THE SAME DEFECT SINCE #818**, which is the part worth keeping:
+          it calls `tapByText(page, "Reports")` for that sub-tab, gets `true`, and reports a
+          `route:Reports` row that is **Overview measured twice** — false coverage in a shipped
+          guard, invisible because the row is present and green. Fixed in the shared helper, which
+          fixes both callers: when several elements share the text it prefers a real control
+          (`BUTTON`/`A`/`role="button"`) over the first match. Verified on a quiet box (load 4.7)
+          — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
+          applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
+          5,026 and Photos' 678.
+        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
+          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
+          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
+          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
+          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
+          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
+          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
+          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
+          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
+          unverified fix alongside the walk would put main red. **Land the caveat first, then the
+          walk.**
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -7646,9 +7687,14 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (near the bottom, ~line 2208) holds **~100 `useState` hooks** and every screen. Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, recent condition reports, your crews, suggestions).
-- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `photos`, `ranks`.
-- `discover` — find partners or crews (`partnersMode` toggles `"partners"` / `"crews"`).
+- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `partners`, `photos`.
+  - **Six, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
+    which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
+    fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
+    reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
+    prose naming the absent id would fail on its own explanation.
+- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
 - `crew` — your crews and direct/crew messaging (`crewView`).
 - `logbook` — your objectives, completed climbs, trip reports.
 - `me` — profile, settings, verification, trust score.
