@@ -24,7 +24,7 @@ const AGREEMENTS = [
 export default function DbGuideApply({ onClose, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
-  const { data: existing } = useGuideProfile(uid);
+  const { data: existing, isError: existingError } = useGuideProfile(uid);
   const { data: certTrackRows } = useCertTrackDisciplines();
   const { data: existingCreds } = useGuideCredentials(uid);
   const tracks = Object.keys(CERT_TRACK_LABELS);
@@ -116,6 +116,31 @@ export default function DbGuideApply({ onClose, notify, C }) {
       <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 }}>
         <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
         <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to apply as a guide — this application creates a legally-relevant, timestamped record tied to your identity.</div>
+      </div>
+    ), document.body);
+  }
+
+  /* A FAILED READ MUST NOT OFFER THE FORM, and here that is a data-loss guard rather than an
+     honesty one. `existing` is undefined both when a climber has never applied AND when the read
+     failed, so the status branch below fell through and an approved guide was shown a BLANK
+     APPLICATION. submitGuideApplication() is an `upsert` on guide_profiles keyed by the user's own
+     id, so submitting that form would overwrite a live listing back to "submitted", replacing the
+     title, base location and everything else with whatever was typed into the empty form.
+
+     Blocking a first-time applicant during a transient error costs them a retry. Letting an
+     approved guide silently overwrite their own listing costs them the listing. So this refuses
+     rather than guesses, and says which of the two it is.
+
+     Deliberately placed ABOVE the status branch: that branch tests `existing`, which is exactly
+     the value we could not read. */
+  if (existingError) {
+    return createPortal((
+      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 }}>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"\u2190 Back"}</button>
+        <div style={{ marginTop: 24, fontSize: 14.5, fontWeight: 700, color: C.text }}>{"Couldn\u2019t check your application status"}</div>
+        <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>
+          {"The read failed, so this is not a claim that you have not applied. The form is not shown, because submitting a fresh application would replace one you may already have. Check your connection and try again."}
+        </div>
       </div>
     ), document.body);
   }

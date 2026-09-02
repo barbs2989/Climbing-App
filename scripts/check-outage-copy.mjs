@@ -332,7 +332,57 @@ try {
     }
   }
 
-  if (ran < 23) dead(`only ${ran} assertion(s) ran; expected at least 23`);
+  /* ---- THE SAME FAILED READ, ONE SCREEN OVER, WHERE IT COSTS DATA RATHER THAN TRUST ----
+
+     DbGuideApply reads the same guide profile to decide whether an application already exists:
+
+         if (existing && existing.status !== "draft" && existing.status !== "rejected") -> status screen
+         otherwise                                                                      -> the FORM
+
+     `existing` is undefined both when nobody has applied AND when the read failed, so a failed read
+     fell through and showed an approved guide a BLANK APPLICATION. submitGuideApplication() is an
+     `upsert` on guide_profiles keyed by the user's own id, so submitting it would overwrite a live
+     listing back to "submitted" -- title, base location and all -- with whatever was typed in.
+
+     That makes this a data-loss path rather than a false sentence, which is why the screen now
+     REFUSES instead of guessing. Blocking a first-time applicant during a transient error costs a
+     retry; letting an approved guide overwrite their own listing costs the listing.
+
+     ORDER IS THE INVARIANT AND IT IS ASSERTED, not just presence: the refusal must come BEFORE the
+     branch that tests `existing`, because `existing` is exactly the value that could not be read.
+     A guard placed after it is unreachable in the case it exists for -- the same ordering trap
+     check:clickable records, where a block placed after an exiting one never ran. */
+  const applySrc = fs.readFileSync(path.join(ROOT, "lib/DbGuideApply.jsx"), "utf8");
+
+  ran++;
+  if (applySrc.includes("isError: existingError } = useGuideProfile(uid);")) {
+    ok("guide application: the screen reads isError off the guide-profile query");
+  } else {
+    fail("guide application: no isError read off useGuideProfile — a failed read is indistinguishable from never having applied");
+  }
+
+  ran++;
+  const iErr = applySrc.indexOf("if (existingError) {");
+  if (iErr >= 0) ok("guide application: a failed read has its own branch");
+  else fail("guide application: no `if (existingError)` branch — a failed read falls through to the blank form");
+
+  ran++;
+  const iStatus = applySrc.indexOf('if (existing && existing.status !== "draft"');
+  if (iErr >= 0 && iStatus >= 0 && iErr < iStatus) {
+    ok("guide application: the failed-read branch precedes the branch that tests `existing`");
+  } else {
+    fail("guide application: the failed-read branch does NOT precede the `existing` test, so it is " +
+         "unreachable in exactly the case it exists for");
+  }
+
+  ran++;
+  if (/not a claim that you have not applied/i.test(applySrc)) {
+    ok("guide application: says the read failed rather than that you have not applied");
+  } else {
+    fail("guide application: the refusal does not say the state is unknown rather than absent");
+  }
+
+  if (ran < 27) dead(`only ${ran} assertion(s) ran; expected at least 27`);
 
   if (failures) {
     console.error(`\ncheck:outage-copy FAILED — ${failures} assertion(s).`);

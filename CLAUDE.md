@@ -1062,6 +1062,74 @@ a build error, but a screen that renders wrong or not at all.
     - Injection-tested: reverting the copy fails **3**; dropping the flag at the call site fails
       exactly **1**, naming the broken link. The three never-applied cases stay green in both — a
       climber who really has not applied must still be told where to.
+  - **THE SAME READ, ONE SCREEN OVER, COSTS DATA RATHER THAN TRUST — and that one is the reason to
+    finish a census rather than stop at the first finding.** `DbGuideApply` reads the same guide
+    profile to decide what to show:
+
+        if (existing && existing.status !== "draft" && existing.status !== "rejected") → status screen
+        otherwise                                                                     → the FORM
+
+    `existing` is undefined both when nobody has applied **and** when the read failed, so a failed
+    read fell through and showed an approved guide a **blank application**.
+    `submitGuideApplication()` is an **`upsert` on `guide_profiles` keyed by the user's own id**, so
+    submitting it would overwrite a live listing back to `"submitted"` — title, base location and
+    all — with whatever was typed into the empty form.
+    - So the screen **refuses** rather than guessing. Blocking a first-time applicant during a
+      transient error costs a retry; letting an approved guide overwrite their own listing costs
+      the listing. Not symmetric, so the safe branch is not the permissive one.
+    - **ORDER IS THE INVARIANT, and it is asserted rather than assumed.** The refusal must come
+      **before** the branch that tests `existing`, because `existing` is exactly the value that
+      could not be read — a guard placed after it is unreachable in the case it exists for. That is
+      the ordering trap `check:clickable` already records, where a block after an exiting one never
+      ran. Injection-tested by **moving the guard after** the status branch, leaving it present:
+      exactly **1** assertion fires, and the presence-only ones stay green, so the ordering check is
+      not redundant with them.
+  - **AND SO IS THE CLASS THE SECOND ONE BELONGS TO: a WRITE that destroys data after a failed
+    read. Measured across all 45 write functions in `lib/db.js`; the answer is ONE, and it is
+    fixed, so no detector is warranted.** A detector for a class of one is the thing this repo
+    keeps refusing to build.
+    - **Six `upsert`s, and five cannot destroy anything by construction**: `addVerification`,
+      `castHazardVote`, `giveVouch`, `markCrewRead` and `setCommentReaction` each build a small
+      self-contained row **entirely from their own arguments** and consult no existing data.
+      `submitGuideApplication` was the only one taking an opaque `fields` object that IS the whole
+      row — which is exactly why it could overwrite a live listing.
+    - **Of 24 `update`s, 17 name their own columns** (`{ status }`, `{ read: true }`,
+      `{ likes: next }`) and are deltas that cannot blank a neighbouring field. Of the 7 that take a
+      caller-supplied object, two build the patch internally, and the remaining five are safe for a
+      reason worth stating precisely: **their entry point is a ROW produced by the very read in
+      question**, so a failed read leaves no row to tap and the form is unreachable.
+    - **THAT is what made the guide application different, and it is the transferable rule.** Its
+      entry point is a Settings button offered **unconditionally**, so the form was reachable while
+      the read that would have blocked it had failed. When auditing this class, ask whether the
+      ENTRY POINT is gated on the read, not whether the form is.
+    - Incidental, recorded rather than acted on: `updateTopoLine` is imported by all three app
+      files and **called by none of them**. Dead wiring, not a defect.
+  - **THE MIRROR CLASS IS ALSO EMPTY: an OPTIMISTIC change that survives a failed write.** Every
+    `.catch` on a `lib/db.js` write call was read (69 write functions, 84 call sites). **29 restore
+    state** — a setter, a named undo handler, or a `refetch`. **Four are optimistic and say so**,
+    which is correct rather than a defect: `sendCrewMessage`/`sendDirectMessage` toast *"it's on
+    your screen but not saved"*, and `markCrewRead`/`markDmThreadRead` clear a read badge that a
+    reload restores from the server — a read marker is not the climber's content, and there is no
+    success message in front of it, so `check:writes`' rule is untouched.
+    - **The remaining candidates were PROXIMITY NOISE, and the cause is worth naming.** A first
+      scan reported eight, on the rule *"a `set*` call appears within 500 characters before the
+      write"*. On a file that packs a whole component's props onto one physical line, "before" is
+      not "in the same handler": `onInviteByEmail`'s catch was scored against `onInviteMember`'s
+      `setCrewInvite`, several props away. Both crew-invite sites in fact call their `done()`
+      callback **only inside `.then`**, so no optimistic mutation exists to revert.
+    - The first version of that scan also called five genuine reverts unguarded, because it looked
+      for `set[A-Z]` and the app writes `_setVis(_pv)`, `_setMods(cmod)`, `catch(_undoLeave)`,
+      `catch(cmFail)` and `_restore(setCondReports, …)`. **A too-narrow proxy manufactures
+      findings here rather than hiding them** — it would have sent somebody to "fix" five correct
+      handlers.
+  - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
+    and both defects were the guide pair above. The other seven are non-findings with reasons, so
+    nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
+    from `DEMO_FILLERS` — client state, no read to fail; **EditProfileScreen**'s *"No certifications
+    added yet"* / *"No skills added yet"* describe `editDraft`, a `useState(null)` seeded when the
+    climber taps Edit; **LegalView** asserts no absence at all; **AuthModal**'s *"no account to
+    federate yet"* is explanatory OAuth copy, not a claim about stored data; and **Inbox** was
+    already gated. *Ask what fills a list before treating its empty state as an outage lie.*
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
@@ -2803,6 +2871,20 @@ a build error, but a screen that renders wrong or not at all.
     whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
     (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
     **49** one-way or pitched rows keep their leg, **0** lost.
+  - **THREE SIBLING SUSPICIONS WERE MEASURED AND ARE NON-FINDINGS — read this before re-deriving
+    them.** The planner mixes conventions in several places and most of them turn out fine:
+    - **`relief` falls back to `highPointFt - 0`** when a route has no `elevPts`, which would be
+      the height above SEA LEVEL rather than the route's vertical extent. The *"Vertical relief"*
+      tile is gated on `hasElevPts`, so that branch is unreachable for display. Dead, not wrong.
+    - **`avgGrade` divides an ascent by `effDistKm`** without consulting `gainIsWholeOuting` or
+      `distIsWholeTrip`, both of which sit two lines away. Ambiguous rather than wrong — gain over a
+      ONE-WAY distance *is* the ascent's average grade — and the distribution is sane: **771 routes,
+      p50 12.2%, p90 25.1%, exactly ONE over 100%.** The steep tail (Johannesburg's NE Buttress at
+      90%, Big Four's Spindrift Couloir at 85%) is real alpine ground, not arithmetic.
+    - **`gain_ft` holding the CLIMB's height instead of the approach's** is **4 rows of 676** (plus
+      12 within 5%), so it is a handful of per-route judgements, not a class. `wa_liberty_traverse`
+      is one — gain 2,001 ft == its own `routeFt`, over 26 pitches — which is independent
+      corroboration of why `check:gain-floor-stated` must credit the climbing vertical first.
 - **`check:gain-floor-stated`** asserts that a `gain_ft` the route's **own pins** say is impossible
   is stated rather than quoted silently. A party on the summit that started at the trailhead has
   gained at least summit − trailhead, so a stored gain below that cannot be the trailhead-to-summit
@@ -3697,6 +3779,40 @@ the correction knows the screen is wrong, and they have no way to report it.
     could not resolve the app files — rather than silently measuring the wrong tree, which is how
     `measure-which-tab-renders-each-field.mjs` reported another branch's code for weeks. Check the
     root resolution of anything moved out of `scripts/oneoff/`.
+  - **THE OTHER INPUT TO THAT ESTIMATE IS ASSUMED ON EVERY DB ROUTE, AND HALF OF THEM STATE IT.**
+    The climbing leg is `techHrs(route.pitches, route.avgPitchLength || 35, gn(route.grade))`, and
+    `routes` has **no pitch-length column** — only `pitches` and `pitch_detail` — while
+    `avgPitchLength` is not produced by `dbRouteToCamel` and exists on **seed routes only**. So the
+    `|| 35` fires on all 205,492 DB routes. Measured by
+    `scripts/oneoff/measure-assumed-pitch-length.mjs` over 451 multi-pitch routes carrying
+    `pitch_detail`: **50.6% state a length on 2+ pitches**, p50 **36 m**, mean **39.9 m**.
+    - **35 is well chosen, not invented** — it sits on the median — so this is NOT the fabrication
+      class. The narrower finding is that on half these routes the app HAS the number and
+      substitutes a constant, on a value feeding Est. summit / Est. return.
+    - **The deciding measurement is WHERE the number comes from**, because this file's standing rule
+      is *do not read a fact out of English prose*, least of all a safety-adjacent one — the reason
+      the rappel counts and the camping permit verdict were both refused. Here **~85% is an explicit
+      numeric field** on the pitch object, not prose, so a fix could read those and ignore prose
+      entirely.
+    - **CORRECTED, AND THE CORRECTION KILLS THE CASE FOR CHANGING ANYTHING. A `pitch_detail` ENTRY
+      IS NOT ALWAYS ONE PITCH.** The figures above (50.6%, mean 39.9 m) counted **stage
+      aggregates** as pitch lengths: `pitch` is a string on many routes — *"1-13 (roped/simul-climbed
+      sections)"* at **396 m**, *"Approach (unroped)"* at **305 m**, *"Section 1: Beckey Route
+      (Liberty Bell)"* at **152 m** — and the `lengthM` beside it covers the whole stage. This file
+      already records that shape under `check:pitch-split`; the measurement did not apply it.
+      Counting only entries whose `pitch` is a NUMBER, and bounding to 10-100 m:
+
+          usable (2+ single-pitch entries)   152 of 451  (33.7%, not 50.6%)
+          implied average                    p10 26m   p50 35m   p90 53m
+          mean                               37.3m against the assumed 35m
+
+      **The default is now exactly the median.** The mean differs by 6.6%, on a third of
+      multi-pitch routes, in both directions.
+    - **So the change was NOT made, and that is the finding.** Reading each route's own lengths
+      would move a safety-adjacent estimate by a few percent, both ways, to replace a constant that
+      already sits on the median. The measurement is worth keeping; the fix is not worth the risk.
+      **A count is only as good as its tokeniser** — the same lesson `audit:approach-scope` records,
+      and the reason the first version of this note overstated by half.
 - **`check:logged-times`** asserts that a climber's logged time reaches the planner. Since #787
   a trip report carries approach / climb / descent minutes and a car-to-car total, and other
   climbers can read them — but the planner still answered "how long will this take?" with
@@ -3720,6 +3836,22 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Static SSR (no browser, no DB), so it sits in `npm run build`. Injection-tested, 5 cases at
     the bottom of the script; dropping the `activity` prop, counting non-completions, parsing the
     prose, and swapping the median for a mean each fail it by name.
+  - **THE WHOLE PATH IS BUILT AND CARRYING NO DATA, and that is a fact about USAGE, not a defect.**
+    Measured 2026-08-28 with the service key: `climb_logs` holds **1 row**, and **0** rows populate
+    any of `approach_minutes`, `climb_minutes`, `descent_minutes`, `car_to_car_minutes`. Every link
+    works — all four are in `syncLogToDb`'s write payload, in `TRIP_REPORT_COLS` on the read, and
+    this guard proves the render. There is simply nothing to render yet.
+  - **So a green run here does NOT mean the feature is delivering.** It means the reader is wired
+    ahead of the data — the `check:field-renders` `SENTINELS` situation, and the right state to be
+    in — but do not read it as evidence that climbers' times are reaching anyone.
+  - **It is the precondition for the two open modelling questions this file records**: the
+    `techHrs` grade cliff, and whether `scarfHrs`' base rate runs optimistic (see
+    `check:return-leg`). Both stop at the same wall — nothing measures how long parties actually
+    take — and both become answerable when this table fills, not before. **Do not answer either by
+    guessing a curve**; that is the fabrication these notes keep refusing.
+  - **An ANON count says 0 whatever the table holds**, so measure this with `requireServiceKey()`.
+    A future "is there data yet?" check run on the anon key would answer no, confidently and
+    wrongly.
 - **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
   a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
   `npm run build`.
@@ -5091,6 +5223,33 @@ the correction knows the screen is wrong, and they have no way to report it.
       carry. The repair, if anyone takes it, is to identify the gate by the **junction** rather than
       by a milepost — and that is prose research, so it belongs behind
       `fix-road-blocks-from-research.mjs`' weaker `researched` gate, never a bulk transform.
+    - **POSITIONS ARE COMPARED NUMERICALLY, NEVER AS STRINGS, and the first version was not.**
+      `"MP 3"` and `"MP 3.0"` are one position written two ways, and a `Set` of strings calls them a
+      disagreement — it printed *"2 positions (spread 0.0 mi)"* for Glacier Creek Road, where four
+      routes all say mile 3. **A spread of zero is the tell**, and the guard must never emit one.
+      Latent rather than live on the day it shipped: no live pair differed only in formatting, so
+      the count did not move when it was fixed. Injection case `samepoint` pins it and was proven
+      non-vacuous — it reports 1 against the string version and 0 against the numeric one.
+    - **A WIDER NEEDLE WAS BUILT, MEASURED AND REJECTED — do not re-derive it.** `MP_RE` requires
+      the word *milepost* (or *MP*), and much of this catalog writes *"closed at mile 3"* instead,
+      so the Dosewallips rows that gave one closure five positions were invisible to it. Widening
+      to a bare *"mile N"* is far too loose (~40% on a real sample: it matches a surface change
+      *"Paved to mile 10, then rough gravel"*, a junction *"turn right onto FR-5606 at about mile
+      32.3"*, and a destination *"Andrews Creek Trailhead is at roughly mile 22"*). Two narrowings
+      take it to ~92% — a **positional preposition** (at/beyond/past), since *"adds about 6.5
+      miles"* is a DISTANCE and reading it as a position manufactures the very drive-vs-walk
+      conflation it is meant to expose; and the gate word in the **same sentence**, since one
+      status can say *"Paved to mile 10 … closed at mile 20"*.
+      - **It still does not catch Dosewallips, which is why it was rejected.** Measured against a
+        fixture of the pre-repair rows: only ONE of the three yields a position (*"beyond
+        approximately mile 1"*), because the others say *"5.5-6.5 miles from Hwy 101"* and
+        *"~8.5 mi"* — no preposition, no *"mile N"*. One position is not a disagreement, so the
+        finding count stays 0.
+      - On the live catalog it took section 4 from 1 finding to 2, and **the new one was the
+        `MP 3`/`MP 3.0` artifact above** — noise, not a finding. So the widening's measured yield
+        is **zero real findings** while adding two regexes and a sentence splitter. *A detector for
+        a class of zero is the thing this repo keeps refusing to build.* What it did earn is the
+        numeric-comparison fix, which it exposed.
     - Injection-tested **5/5** (1 fires, 4 silent), and `tworoads` is the one that matters. **ROW
       ORDER is load-bearing there and the case was VACUOUS without it**: chaining merges into
       whichever cluster it meets first, so with the two-road row LAST nothing merges and the case
@@ -6515,6 +6674,22 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     place rather than clearing them; and **`policyQ` handles its own error inline**
     (`!policyQ.error` in `_needsPolicy`), correctly declining to nag about the terms when the read
     failed — the only handle that already did this.
+  - **RE-VERIFIED BY THE GATE AT THE RENDER SITE, not by the fallback at the call site**, which is
+    the method that catches the resumeLogsQ class. All 12 remaining unflagged handles are safe:
+    `policyQ` checks `!policyQ.error` inline; `hzVotesQ` early-returns leaving prior votes;
+    `myGuideInquiriesQ` yields a count of 0 and the badge hides; `dbBookmarkNamesQ` renders
+    `{nm||"Saved area"}`; `crewInviteRoutesQ` falls through `routeById` to null; `crewProfilesQ`
+    returns null by design; `dmUnreadProfilesQ` degrades to `{name:"Climber"}`; `myVerificationQ`
+    has the session fallback `check:verification-fallback` pins.
+    - **`myProfileRowQ` is the one worth knowing about, because its CALL SITE is wrong and only its
+      RENDER SITE saves it.** `discoverable` falls back to **`false`** on a failed read, and that
+      value drives *"You are not listed while others browse."* plus a switch announcing OFF — a
+      false claim about a PRIVACY setting, and `toggleDiscoverable` computes `!discoverable`, so it
+      would write from a state nobody chose. It is safe purely because the whole row is gated
+      `{(USE_DB&&uid&&myProfileRowQ.data)?…}`, so a failed read renders no row at all. The sibling
+      consumer four lines down does it properly with `:undefined` — the same value, handled two
+      ways in one component. **Ask whether a failed read can REACH the copy, never whether the
+      value has a sensible default.**
   - **NO DETECTOR FOR THE TWO-QUERY SHAPE, because the class is TWO and both are settled.** Every
     `useEffect` in the three app files that bails on more than one `X.data` was enumerated: exactly
     **2** exist — the catches one (now covered) and the vouches one (uncovered **by design**, since
