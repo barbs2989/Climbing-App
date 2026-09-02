@@ -17,7 +17,7 @@ npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
-npm run check:boot # index.html's boot placeholder still matches the real nav
+npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
@@ -153,6 +153,36 @@ a build error, but a screen that renders wrong or not at all.
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
   before React swaps it out, and nothing else would catch it. Gated by `npm run build`.
+  - **SECTION 2 COVERS A SECOND HAND-COPY OF `NAV`, and the guard's NAME is now narrower than its
+    contents** — the rename is deliberately not done in the same change, the precedent
+    `check:topo-outage-copy` records. The Help modal's `feats` array tours the tabs in prose under a
+    heading that read **"A quick tour of each tab"**, and it had drifted **three ways at once**:
+    **Home** — the tab a new climber lands on — had no entry at all; the tab labelled **`Crew`** was
+    called **"My Crew"**, so somebody scanning the nav bar for it would not find it; and three
+    entries named things that are not tabs (`Groups` is a `crewView` sub-view, `Guides` is outside
+    `NAV`, and **"Safety & Trust" appeared exactly ONCE in the whole codebase — inside that
+    modal**, so it named no surface). Help is the one screen somebody opens *because* they are
+    already lost.
+  - **The rule is a SUPERSET test, not section 1's equality**, and that distinction is what keeps it
+    honest: the tour may legitimately describe sections that are not tabs and may order them its own
+    way. What it may not do is omit a tab, or spell one differently from the nav bar the reader is
+    looking at while they read it. Injection case 5 pins that — **a new non-tab section must stay
+    SILENT**, or the guard would instruct authors to delete correct content.
+  - The repair added a **Home** entry written strictly from what that screen renders (the setup
+    checklist's own items, the *Jump back in* tiles, the alerts bell and *Unfinished business*), and
+    reworded the heading to *"A quick tour of the app"* / *"Tap a section to expand"* so the three
+    non-tab entries stop being described as tabs. **Nothing was invented** — the alternative, writing
+    plausible tour copy, is the fabrication class this file records everywhere else.
+  - **CASE 3 IS WHY THE HARNESS TAKES MULTI-FILE EDITS, and its first version was a FALSE CATCH.**
+    Renaming a tab in `NAV` also breaks the boot shell, so **section 1 fails first and exits** — the
+    case reported `guard=fail` while section 2 had never run. It renames the tab in `index.html` too,
+    leaving section 2 as the only thing that can fail, and every case now asserts the failure text
+    came from **section 2 specifically**. *An injection that produces a different failure is not a
+    catch* — this repo has read one as the other twice before.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-help-tour-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring every file it touched byte-identically. Fails
+    **closed** on a renamed `feats`, an array that does not close, or fewer than 5 entries parsed —
+    a tour the guard cannot read must never report as a tour with nothing missing.
 - **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
   has SEVEN tabs and five browser guards walked six.** `NAV` is
   today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
@@ -6148,10 +6178,42 @@ the correction knows the screen is wrong, and they have no way to report it.
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
     sweep found **33 values on 32 WA routes**, all repaired — the ROAD/ACCESS section reports **3**
     today, and those three are hedges (*"not documented in any source found"*), not attributions.
-    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: on
-      main 2026-08-26 it reports **611 values on 396 routes**, nearly all in `rappel_count_note`,
-      `rappel_detail` and `beta`. The road/access sweep closed road/access; the ROUTE PROSE section
-      is a standing reading list and always was. A per-section count is not the audit's verdict.
+    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: it
+      reported **611 values on 396 routes** on 2026-08-26 and **476** after the sweeps below,
+      nearly all in `rappel_count_note`, `rappel_detail` and `beta`. The road/access sweep closed
+      road/access; the ROUTE PROSE section is a standing reading list and always was. A per-section
+      count is not the audit's verdict, and neither is a stale headline — **re-run it rather than
+      quoting this line**, which has already been wrong once in a message to the user.
+  - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
+    DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
+    it would do damage. Sorting a value into one of these decides the repair before you write it:
+    1. **The fact is separable** — the publisher is a trailing tag (*"…higher up per Mountain
+       Project"*). Lift it off; the sentence is unchanged. The large majority.
+    2. **The METRIC is the source** — *"the most-documented line (more trip reports/route votes
+       than the alternatives)"*. Trip-report counts and page traffic are a publisher's figures
+       about its own website, not facts about the rock. Cut the metric; the qualitative claim
+       (*"the most commonly climbed line"*) survives on its own and is the part a climber wanted.
+    3. **The attribution IS the verb** — the publisher is the sentence's subject (*"Mountain
+       Project's area notes mention a cornice hazard there"*) or it speaks a quotation
+       (*"'could have fatal consequences' per Mountain Project"*). Re-make the clause around the
+       fact. **A quotation cannot survive its speaker**: leaving the quote marks behind cites
+       nobody and turns a report into scare quotes, which changes what the sentence means.
+    4. **A disagreement BETWEEN sources** — *"Solid granitic rock per the guidebook, but frequently
+       vegetated/mossy in practice"*. The contrast is the whole content. Keep the disagreement,
+       drop who disagreed (*"solid granitic rock on paper, but…"*).
+    5. **The source IS the only record** — *"essentially undocumented beyond a single AAJ note"*.
+       The scarcity **is** the warning, so deleting the reference deletes the warning. Reword to
+       the fact about the record (*"a single first-ascent note"*), never to nothing.
+  - **The `per <publisher>` family was the largest single shape and is CLOSED: 61 edits on 53
+    routes, 535 → 476** (`scripts/oneoff/redact-per-source-attributions.mjs`). Two traps in it:
+    **`per` is not always a citation** — *"1-2 pickets **per rope team**"* is a rate, and a regex
+    sweep would have eaten it; and a value can hold **two** flagged leaves in one column
+    (`pro_tips[0]` and `pro_tips[1]`), so an applier must accumulate per `(route, column)` or the
+    second edit rebuilds from the original and silently drops the first.
+  - **PRINT THE RESULTING SENTENCE, never just the find/repl pair.** A deletion leaves a dangling
+    connective or a doubled space that is invisible from the edit alone — an earlier batch stranded
+    an *"and that"* clause exactly so. The applier's dry run diffs the column's string leaves and
+    prints every one that changed, which is what caught the two orphaned quotations above.
   - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
     CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
     number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where
