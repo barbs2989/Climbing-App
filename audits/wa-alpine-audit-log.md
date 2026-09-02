@@ -11887,3 +11887,63 @@ elevations (6,600 ft / 6,400 ft) both match published East/Middle/West Three Que
 figures exactly.
 
 20 routes remain in pass 3.
+
+## Batch 174 — 2026-09-02 (pass 3)
+
+Routes: wa_trapper_mountain_north_couloir, wa_trapper_mountain_south_slopes,
+wa_traverse_of_mount_index, wa_tricouni_peak_southwest_slopes, wa_true_grit_2,
+wa_ultramega_ok, wa_upper_north_ridge_w_great_gendarme, wa_vasiliki_ridge_standard.
+
+**Fixed (3):**
+- `wa_trapper_mountain_south_slopes`: `dist_km` stored 30.58, which is the *round-trip*
+  distance in km (converts to an exact 19.0 mi). The app's convention is one-way,
+  doubled for display. The route's own waypoint chain gives ground truth directly —
+  cumulative `distMi` to the summit is 9.5 mi one-way — so corrected to 15.29 km.
+  This is the exact defect class CLAUDE.md's `audit:distances` entry describes
+  ("only the doubled figure lands on a whole number of miles"); fixed this one row
+  on its own internal corroboration rather than touching the column in bulk.
+- `wa_traverse_of_mount_index`: `access.permitZone` and `access._raw.land_manager`
+  both claimed North Cascades National Park jurisdiction "(presumed)", directly
+  contradicting the route's own correct sibling field (`access.landManager`: "Mount
+  Baker-Snoqualmie National Forest, Skykomish Ranger District") two keys away.
+  Confirmed via search (Mountaineers.org) that Mount Index near the town of Index is
+  USFS land — no NPS unit is anywhere nearby. Cleared the false claim rather than
+  guessing a permit process for the rest of `_raw` (see flag below).
+- `wa_ultramega_ok`: fa surname "Mark Allen" corrected to "Mark Allan" (two Ls),
+  corroborated by SummitPost, a CascadeClimbers.com trip report, and Mountain
+  Project's own listing for a climber of that name and route history.
+
+SQL in `audits/sql/2026-09-02-batch-174.sql`, verified with `npm run check:sql`.
+
+**Flagged for human review (2):**
+- `wa_traverse_of_mount_index`: beyond the corrected land-manager fields,
+  `access._raw` still carries a full North Cascades NP backcountry-permit cost/
+  contact block (fees, Recreation.gov reservation flow, Marblemount WIC) that is
+  inapplicable here. The row's own `_raw.note` already says "limited specific
+  information available." Search turned up no specific climbing permit requirement
+  for Mount Index itself beyond a Northwest Forest Pass, but a Weyerhaeuser permit
+  may apply to a related "Persis-Index traverse" and it isn't clear whether that's
+  the same objective as this 3-summit traverse via Lake Serene — left for a human
+  to settle rather than guessing.
+- `wa_upper_north_ridge_w_great_gendarme`: `fa` credits the Great Gendarme's 1956
+  first ascent to "John Rupley & Don Gordon"; one source instead names Rupley's
+  1956 North Ridge partner as "Don Claunch." Couldn't determine whether these
+  describe the same 1956 event (gendarme direct finish vs. the ridge as a whole) or
+  a genuine name conflict, so left as-is. Route's own waypoint note already flags
+  and appears to have already corrected an unrelated earlier trailhead mix-up
+  (Stuart Lake TH vs. Esmeralda Basin/Ingalls) — that part is internally consistent
+  with `approach_logistics` and left alone.
+
+**Clean / confirmed accurate (4):** `wa_trapper_mountain_north_couloir` (elevation
+7,530 ft, coordinates, and Trapper Lake's 4,170 ft basin elevation all match
+Wikipedia exactly); `wa_tricouni_peak_southwest_slopes` (elevation 8,102 ft and the
+Lucky Pass/Borealis Glacier route description both confirmed); `wa_true_grit_2`
+(Vesper Peak 6,214-6,221 ft and FA both confirmed — this is the already-correct twin
+of the contaminated `wa_true_grit` row CLAUDE.md documents as fixed); `wa_vasiliki_ridge_standard`
+(Ares Tower 8,190 ft and the Beckey/Staley May 31 1952 FA both confirmed exactly).
+
+Network egress worked for WebSearch this run (blocked for direct WebFetch of most
+climbing/reference sites — Wikipedia, SummitPost — but search-result summaries
+were sufficient to corroborate or refute every fact checked).
+
+Next batch continues after `wa_vasiliki_ridge_standard` in the id-ordered scope.
