@@ -6385,6 +6385,29 @@ the correction knows the screen is wrong, and they have no way to report it.
     the only actionable line in the value. Naming the **agency** that issues a permit or closes a
     road is operational too. A pattern that flags "names a third party" reports all 589, and
     whoever works that list down deletes 589 phone numbers.
+  - **AND SO IS THE WORD "PEAKBAGGER", WHICH IS BOTH A WEBSITE AND AN ORDINARY ENGLISH WORD.**
+    `Peakbagger` is a site; *"a known peakbagger objective"*, *"Bulger-list peakbaggers pairing it
+    with the summit"*, *"occasional peakbagger visits mid-July through August"* are the common
+    noun for a kind of climber and cite nobody. Measured 2026-09-02: **15 of 300 flagged leaves
+    were reachable ONLY through it**, and a sweep on them would have deleted true prose about who
+    climbs a peak. The site is **capitalised and singular** (`Peakbagger`, `Peakbagger's`), so
+    every other form is blanked before matching; 385 → 370. Same shape as the `Source Lake`
+    exclusion below, one word over, and **verified against the audit's own needle** rather than a
+    re-implementation of it — a first attempt at this finding accused the word *"mountaineers"*,
+    which the needle has never matched.
+    - Injection-tested as a **PAIR**, and the pair is the point: `--inject=commonnoun` must report
+      **0** and `--inject=thesite` must report **every** value. The precision case alone is
+      satisfied by a needle that matches nothing.
+  - **A WARNING THAT A MAPPING APP IS WRONG IS NOT A CITATION, AND CUTTING IT DESTROYS NAVIGATION
+    CONTENT.** *"Do not trust AllTrails/Gaia GPX tracks that keep the route on the ridge crest
+    between the first and second gendarme — there's a real gap"*, *"Don't trust the road line on
+    Gaia/CalTopo near Olney Creek Road"*, and `what_to_bring`'s *"Green Trails / CalTopo map and
+    compass"*, which names a map the climber is told to **carry**. These name a TOOL IN THE
+    CLIMBER'S HAND, and naming which app is wrong is the entire content — *"don't trust the road
+    line"* is useless without it. Same family as the 589 kept land-manager references and the
+    ranger district phone number in `wa_chianti_spire_lichen_bouquet`. They stay flagged, because
+    `EXEMPT` covers only the road/access scan and not the prose reading list; that is the
+    deny-list being blunt, not a defect.
   - **The word "source" on its own is useless here.** Waypoint notes say *"reliable water source"*
     and *"Source Lake"* — a real place in the Alpental valley — so a bare `/source/i` returns 45 WA
     notes of which **44** are water and place names. A citation is a **counted or qualified plural**
