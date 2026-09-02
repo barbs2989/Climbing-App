@@ -36,7 +36,18 @@ export async function tapByText(page, name) {
         return true;
       });
     if (!hit.length) return false;
-    hit[0].click();
+    // PREFER A REAL CONTROL WHEN SEVERAL ELEMENTS SHARE THE TEXT, and this is a measured defect
+    // rather than caution. On the route page TWO elements have the exact text "Reports": the
+    // rating summary label (a DIV, "4.2 star 5 Reports") and the sub-tab BUTTON -- and the DIV
+    // comes FIRST in DOM order. Taking hit[0] clicked the label, which does nothing, and returned
+    // TRUE. The caller then measured OVERVIEW believing it had navigated: check:overflow has
+    // reported a `route:Reports` row that way since #818 -- Overview counted twice under another
+    // tab name, invisible because the row is present and green -- and it is what defeated two
+    // attempts to add that sub-tab to check:outage (#1405, #1411; #1420 blamed a clock, wrongly).
+    // A click that returns true is not evidence it navigated.
+    const btn = hit.find((e) => e.tagName === "BUTTON" || e.tagName === "A"
+      || (e.getAttribute && e.getAttribute("role") === "button"));
+    (btn || hit[0]).click();
     return true;
   }, name);
 }

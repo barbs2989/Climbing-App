@@ -1036,13 +1036,32 @@ a build error, but a screen that renders wrong or not at all.
           It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
           unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
           **absent** from the healthy one.
-        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
-          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
-          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
-          browser. That remains the best explanation for two differing 5,026-char captures and it
-          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
-          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
-          run to confirm.
+        - **SOLVED, AND IT WAS NEVER THE CLOCK: `tapByText` WAS CLICKING THE WRONG ELEMENT.**
+          Dumping every match on a quiet box settled it. **Two** elements have the exact text
+          `Reports` — the rating summary label (*"4.2 ★ 5 Reports"*, a **DIV**) and the sub-tab
+          **BUTTON** — and the DIV comes first in DOM order, so `hit[0]` clicked the label, which
+          does nothing, and returned **true**. The capture was 5,026 because it *was* Overview. The
+          clock hypothesis is **withdrawn**.
+        - **`check:overflow` HAS HAD THE SAME DEFECT SINCE #818**, which is the part worth keeping:
+          it calls `tapByText(page, "Reports")` for that sub-tab, gets `true`, and reports a
+          `route:Reports` row that is **Overview measured twice** — false coverage in a shipped
+          guard, invisible because the row is present and green. Fixed in the shared helper, which
+          fixes both callers: when several elements share the text it prefers a real control
+          (`BUTTON`/`A`/`role="button"`) over the first match. Verified on a quiet box (load 4.7)
+          — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
+          applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
+          5,026 and Photos' 678.
+        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
+          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
+          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
+          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
+          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
+          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
+          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
+          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
+          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
+          unverified fix alongside the walk would put main red. **Land the caveat first, then the
+          walk.**
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
