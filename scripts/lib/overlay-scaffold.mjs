@@ -87,6 +87,20 @@ export const OVERLAY_PAYLOADS = {
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
   reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
+  // The group EVENT detail view, newly discovered once it gained role="dialog" (it is a
+  // `position:fixed; inset:0` full-screen view that renders over the app, so it is a modal to a
+  // climber; it simply announced as nothing before).
+  //
+  // It holds {groupId, id} and resolves an event out of `events[groupId]`, then reads
+  // `ev.date.split("-")`, `ev.hostId`, `ev.going` and `ev.capacity` — so an unresolvable payload
+  // does not render an empty view, it throws. `events` is client state seeded from DEMO_FILLERS
+  // (permanently false), so no fixture can seed it and a `prep` is the only way in — the same
+  // situation as postMenuFor/reactPickerFor above.
+  openEvent: {
+    prep: 'setEvents({__ov_group:[{id:"__ov_event",title:"Overlay probe event",date:"2026-01-01",hostId:0,going:[0],capacity:0}]});',
+    expr: '{groupId:"__ov_group",id:"__ov_event"}',
+  },
+
   // NOTE: a dialog state initialised to `false` needs no entry here — it is a flag whatever
   // it is called, and is opened with `true`. `confirmDelete` and `pastExpand` are the two
   // today. Only state that HOLDS something needs a payload.

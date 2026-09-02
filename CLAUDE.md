@@ -412,6 +412,33 @@ a build error, but a screen that renders wrong or not at all.
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
+- **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
+  ITSELF IS A SCREEN.** 13 opaque full-screen views exist (`position:fixed` + `inset:0` +
+  `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
+  rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
+  by a dialog role as the region's own first element — could not see them. That blind spot is what
+  hid the Manage areas outage defect (#1365).
+  - **The split is structural, not a taste call.** `App` returns five of them EARLY — Edit profile,
+    Guide dashboard, Calendar, Messages, Become a listed guide — so the rest of the app is not in
+    the DOM at all and there is nothing behind them to be modal over. Those are **screens** and a
+    dialog role would be wrong. The other seven render inside App's main return, over an app that
+    is still there, and are genuinely modal.
+  - **One of the seven was neither, and only reading inside the element caught it.** The `zIndex:3000`
+    match is the FireMap **`Suspense` fallback** (*"Loading fire map…"*), a loading state rather than
+    a dialog. It was mislabelled *"Trip recap"* by a scan that took the first capitalised text after
+    the tag and ran past the element's own end — the proximity trap this file records for dense
+    lines, arriving in a labeller instead of a detector. **Read what is INSIDE the element, not what
+    follows it.**
+  - Six therefore gained `role="dialog" aria-modal="true"` and an `aria-label` taken from their own
+    visible title. Overlay count went **54 → 57**, and exactly one newly-discovered state needed a
+    payload (`openEvent`) — far less than the whole set, because most were already discovered by
+    their boolean flag and only the role was missing.
+  - **`check:dialog-dismiss` then reported the full-screen route map as having no way out, and it
+    was WRONG in a way worth keeping.** That map's exit reads **`✕ Close`** — the clearest dismiss
+    control in the app. The guard allowed a BACK glyph as a prefix to a word (`>← Back<`) but
+    matched the CLOSE glyph only alone (`>✕<`), so a glyph-plus-word close button matched nothing.
+    Made symmetric. The widening was verified not to silence the real question: it cleared the map
+    and **kept** the other finding until that one was separately shown to be the Suspense fallback.
 - **`check:overlay-discovery`** asks whether every modal the app declares can still be
   *reached* by the three browser guards. They all walk "every overlay" and all get that list
   from `scripts/lib/overlay-scaffold.mjs`, which until 2026-08-09 discovered overlays by a
