@@ -550,6 +550,10 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // actually opened the thing. Setting it here would mean "App has navigated", which is
       // not the question any guard is asking.
       "var __rdOv=" + rdSet + ";" +
+      "var _zrpParam=new URLSearchParams(location.search).get('zrp');" +
+      "function __zrPick(){if(!_zrpParam)return ROUTES[0];" +
+      "for(var i=0;i<ROUTES.length;i++){var _pd=ROUTES[i].pitchDetail;if(Array.isArray(_pd)&&_pd.length&&_pd.some(function(x){return x&&x.crux;}))return ROUTES[i];}" +
+      "window.__zrNoPitched=true;return ROUTES[0];}" +
       "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(__zrPick());return;}var M={" + map + "};if(M[z])M[z]();};" +
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
@@ -566,10 +570,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // waits 900ms, so the guard read window.__routeOpen before it could exist and reported
       // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
       // run" — see the note below and #768.
-      "var _zr=p.get('zr');var _zrp=p.get('zrp');" +
-"function __zrPick(){if(!_zrp)return ROUTES[0];" +
-"for(var i=0;i<ROUTES.length;i++){var _pd=ROUTES[i].pitchDetail;if(Array.isArray(_pd)&&_pd.length&&_pd.some(function(x){return x&&x.crux;}))return ROUTES[i];}" +
-"window.__zrNoPitched=true;return ROUTES[0];}" +
+      "var _zr=p.get('zr');" +
 "if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
