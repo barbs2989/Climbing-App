@@ -129,8 +129,9 @@ function markup(extra, tab, disc) {
                   SL further down; both say "RAPPELS", so grep alone could not tell them apart.
      - gpx        alpine-gated, invisible to a `trad` fixture (the cragOnly trap).
      - waypoints  same.
-     - pitchDetail pitch_detail is split PER ENTRY — roped pitches to PITCH-BY-PITCH, travel
-                  legs to ROUTE BETA. Two headings, so two rows here.
+     - pitchDetail pitch_detail is classified PER ENTRY, and both kinds now render in one
+                  ordered ROUTE BREAKDOWN. One heading, but both fixtures stay: each is the
+                  minimum data for one of the two kinds, and either alone must still draw it.
      - climate    the "CLIMATE & SEASON" box is gated on route.climate, NOT route.season, so a
                   season-keyed chip rendered nothing. `season` is a different surface. */
 const LONG_BETA = "x".repeat(260) + " long beta prose for the block that needs >=220 chars.";
@@ -140,8 +141,8 @@ const MATRIX = [
   ["rappels", "RAPPELS", { rappels: "3", rappelDetail: [{ n: 1, lengthM: 30 }] }, "planner", "trad"],
   ["gpx", "ROUTE TRACK", { gpxPts: [{ lat: 40, lng: -105 }, { lat: 40.01, lng: -105.01 }] }, "planner", "mountaineering"],
   ["waypoints", "WAYPOINTS", { waypoints: [{ type: "Trailhead", name: "TH", lat: 40, lng: -105 }] }, "planner", "mountaineering"],
-  ["pitchDetail(table)", "PITCH-BY-PITCH", { pitchDetail: [{ n: 1, grade: "5.6", notes: "chimney" }] }, "planner", "trad"],
-  ["pitchDetail(stages)", "ROUTE BETA", { pitchDetail: [{ label: "Approach gully", class: "3rd", notes: "scramble" }] }, "planner", "trad"],
+  ["pitchDetail(pitches)", "ROUTE BREAKDOWN", { pitchDetail: [{ n: 1, grade: "5.6", notes: "chimney" }] }, "planner", "trad"],
+  ["pitchDetail(stages)", "ROUTE BREAKDOWN", { pitchDetail: [{ label: "Approach gully", class: "3rd", notes: "scramble" }] }, "planner", "trad"],
   ["beta", "BETA", { beta: [LONG_BETA] }, "overview", "trad"],
   /* gear is NOT here: #806's RACK caption owns that section, and asserting a chip on RACK
      would demand the double label this deliberately avoids. sectionProvenance("gear") is

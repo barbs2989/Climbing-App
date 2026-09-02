@@ -200,7 +200,7 @@ else fail("topoEmptyCopy's body does not appear in the rendered section — it r
    first to add beta for this exact pitch." to a climber whose pitch may already carry beta.
 
    NOTHING ELSE REACHES THIS BOX. check:outage walks the route page but only Overview and Photos,
-   and PitchComments renders inside an EXPANDED pitch -- PitchTable holds `useState(null)`, so no
+   and PitchComments renders inside an EXPANDED pitch -- RouteBreakdown holds `useState(null)`, so no
    pitch is open until somebody taps one, and no SSR guard can click. Rendering the COMPONENT
    directly steps around the expansion state entirely.
 
@@ -267,11 +267,11 @@ const CHAIN = [
   ["RouteDetail.jsx", "comments,commentsUnavailable,onCommentAdd,",
    "RouteDetail no longer accepts the flag"],
   ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd}",
-   "RouteDetail no longer hands the flag to PitchTable"],
-  ["RouteDetail.jsx", "function PitchTable({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){",
-   "PitchTable no longer accepts the flag"],
+   "RouteDetail no longer hands the flag to RouteBreakdown"],
+  ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){",
+   "RouteBreakdown no longer accepts the flag"],
   ["RouteDetail.jsx", "comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}",
-   "PitchTable no longer hands the flag to PitchComments"],
+   "RouteBreakdown no longer hands the flag to PitchComments"],
 ];
 const SRC = {};
 for (const [f] of CHAIN) if (!SRC[f]) SRC[f] = fs.readFileSync(path.join(ROOT, f), "utf8");

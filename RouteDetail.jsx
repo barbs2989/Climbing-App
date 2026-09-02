@@ -61,9 +61,11 @@ function isPitched(r){return !["mountaineering","scrambling","hiking","scramble"
 // whose entries are numbered pitches. Worse, 144 routes hold BOTH — wa_big_four_mountain_
 // tower_route is "Approach gully / First tower / Notch rappel / Second and third towers /
 // Summit snowfield" — so no per-route verdict can be right about it.
-// Split per entry instead: real pitches stay in PITCH-BY-PITCH, travel legs move to
-// ROUTE BETA beside the topo. Nothing is dropped; 2,181 entries read as pitches and
-// 1,388 as sections.
+// Classify per entry instead. Both kinds render in ROUTE BREAKDOWN, in the record's own
+// array order, because that order is the sequence of the climb and a mixed route interleaves
+// them; what the classification decides is how a row is DRAWN — a roped pitch gets the square
+// P-badge and the per-pitch detail, a travel leg gets a round badge and a terrain chip.
+// Nothing is dropped; 2,181 entries read as pitches and 1,388 as sections.
 const PITCH_NUM_RE=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$|^pitch(?:es)?\s*\d+/i;
 const TRAVEL_LBL_RE=/\b(approach|trailhead|trail\s?head|trail to|road|drive|parking|camp|bivy|bivouac|descent|descend|bushwhack|hike|walk|ford|shuttle|return)\b/i;
 const TECH_GRADE_RE=/\b5\.\d|\bV\d|\bAI\s?\d|\bWI\s?\d|\bM\d\b|\bA[0-5]\b|\bC[0-4]\b|\b(?:easy|low|mid|hard|moderate)\s+5th\b|\b5th\s+class\b/i;
@@ -78,12 +80,6 @@ function pitchEntryKind(p,route){
   if(p&&(p.bolts!=null||(p.anchor&&String(p.anchor).trim())))return "pitch";
   if(PITCH_NUM_RE.test(lbl))return isPitched(route)?"pitch":"stage";
   return "stage";
-}
-function splitPitchDetail(route){
-  const pd=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail:[];
-  const pitches=[],stages=[];
-  pd.forEach(function(p,i){(pitchEntryKind(p,route)==="pitch"?pitches:stages).push(Object.assign({},p,{_idx:i}));});
-  return {pitches:pitches,stages:stages};
 }
 const ENV_HAZ_RE=/raptor|nesting closure|nesting season|bear activity|black bear|grizzly|mountain goat|rattlesnake|tick season|poison oak|poison ivy|wasp nest|hornet|hunting season|elk rut/i;
 const TYPICAL={
@@ -775,8 +771,8 @@ function BetaDiff({route}){
    Note "5.9+" was already safe and "5.9" was not: the rule is a word character on BOTH sides, and
    `+` separates the two fragments on its own. Built from the row's own values so the announced
    name cannot drift from the visible one.
-   The STAGES row below carries the same markup and is NOT a control — no role, so nothing computes
-   a name for it — which puts it outside this class rather than fixed by it. */
+   THE STAGE ROW IS A CONTROL TOO NOW (it used to expand only from its own tiny ▸), so it carries
+   the same defence: its label and CRUX are also two spans held apart by a margin. */
 function pitchRowName(p,isOpen){
   const bits=["Pitch "+p._badge];
   if(p.grade)bits.push(String(p.grade));
@@ -784,86 +780,152 @@ function pitchRowName(p,isOpen){
   if(p._title)bits.push(String(p._title));
   return bits.join(", ")+(isOpen?", expanded":", collapsed");
 }
-function PitchTable({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
-  const [open,setOpen]=useState(null);useEffect(function(){if(focus!=null)setOpen(focus);},[focus]);
-  if(!route.pitchDetail||!route.pitchDetail.length)return null;
-  // Only the entries that are actually roped pitches. The travel legs render in RouteBeta.
-  const roped=splitPitchDetail(route).pitches;
-  if(!roped.length)return null;
-  // `_n` is the raw label and stays the comment key. `_badge` is what the 26px circle can
-  // actually hold and `_title` is the descriptive label — "Chimney pitch", "Gendarme" —
-  // which had no reader at all: the badge rendered "P"+label, i.e. "PChimney pitch".
-  const mapped=roped.map((p,i)=>{const raw=p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1);const num=/^p?\s*(\d+)/i.exec(String(raw));
-    return {...p,_n:raw,_badge:num?num[1]:String(i+1),_title:/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$/i.test(String(raw).trim())?"":String(raw).trim(),_note:p.note!=null?p.note:(p.notes||"")};});
-  // Sort only when every label is a number — descriptive labels ("Chimney pitch") are
-  // already in route order and `a._n-b._n` on them is NaN, which is not an ordering.
-  const allNum=mapped.every(p=>typeof p._n==="number"||(typeof p._n==="string"&&p._n.trim()!==""&&!isNaN(Number(p._n))));
-  const pitches=allNum?mapped.slice().sort((a,b)=>Number(a._n)-Number(b._n)):mapped;
-  const hasLengths=pitches.some(p=>p.lengthM!=null);
-  // Every entry here passed pitchEntryKind as a roped pitch, whatever the route's
-  // discipline says — an ice line filed as "mountaineering" still climbs pitches. There is
-  // no longer a "staged" mode: the stages have their own component.
-  const lbl="PITCH-BY-PITCH";
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8,gap:10,flexWrap:"wrap"}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.blue,whiteSpace:"nowrap"}}>{lbl+" · "+((route.pitches&&route.pitches>pitches.length)?(pitches.length+" of "+route.pitches):pitches.length)}</div><ProvChip prov={sectionProvenance(route,"pitchDetail")}/></div><div style={{display:"flex",alignItems:"center",gap:8,marginLeft:"auto"}}><div style={{fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"4px 9px",whiteSpace:"nowrap"}}>Tap for detail</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit pitch descriptions"/>:null}</div></div>
-    {pitches.map((p,idx)=>{const isOpen=open===idx;return <div key={p._n+"-"+idx} id={"pitch-"+idx} style={{border:"1px solid "+(focus===idx?C.blue:C.border),borderRadius:10,marginBottom:8,boxShadow:focus===idx?"0 0 0 1px "+C.blue:"none",scrollMarginTop:"80px"}}>
-      <div {...clickable(()=>setOpen(isOpen?null:idx))} aria-label={pitchRowName(p,isOpen)} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",cursor:"pointer"}}><div style={{width:26,height:26,borderRadius:7,background:p.crux?C.amberBg:C.surface,border:`1px solid ${p.crux?C.amber:C.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:p.crux?C.amber:C.textSub}}>{"P"+p._badge}</div><div style={{flex:1,minWidth:0}}>{p._title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p._title}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:4,gap:8,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.amber,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p.grade}{p.crux?<span style={{color:C.red,fontSize:12,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span><span style={{fontSize:12,color:C.textMuted,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",marginLeft:"auto"}}>{hasLengths?(p.lengthM!=null?uLen(p.lengthM):"—"):null}{hasLengths?<span style={{opacity:0.6}}> · {uLen(pitches.slice(0,idx+1).reduce((a,pp)=>a+(pp.lengthM||0),0))} up</span>:null} <span style={{color:C.blue,fontWeight:700,marginLeft:3}}>{isOpen?"▾":"▸ more"}</span></span></div>{p._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{p._note}</div>:null}</div></div>
-      {isOpen?<div style={{padding:"0 11px 11px"}}><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:9}}>{[["Length",p.lengthM!=null?uLen(p.lengthM):"—",C.blue],["Bolts (this pitch)",p.bolts!=null?String(p.bolts):"—",C.amber],["Anchor",p.anchor||"—",/bolt/i.test(p.anchor||"")?C.green:C.blue]].map(s=><div key={s[0]} style={{background:C.surface,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>)}</div><PitchConsensus p={p} onSuggestFix={onEdit}/><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:8,textTransform:"uppercase",letterSpacing:0.5,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Photos</div>{p.photos&&p.photos.length?<PhotoRow items={p.photos} w={160} h={108}/>:<div style={{background:C.surface,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+p._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></div>:null}
-    </div>;})}
-  </div>;
+function stageRowName(r,isOpen){
+  const bits=["Section "+r._seq,r._label];
+  if(r.crux)bits.push("crux");
+  if(r.grade)bits.push(String(r.grade));
+  return bits.filter(Boolean).join(", ")+(isOpen?", expanded":", collapsed");
 }
-// The other half of pitch_detail: the legs that are travel rather than roped climbing.
-// 1,388 such entries across 451 routes were being printed under a "PITCH-BY-PITCH" or
-// "ROUTE STAGES" heading that misdescribed them. The content is the most useful thing on
-// some of these pages — "Hidden cleft below the west ridge", "the step-across (crux)" —
-// so it moves rather than being dropped, and it sits beside the topo because it answers
-// the same question the topo does: where do I actually go.
-function RouteBeta({route,onEdit}){
+/* ONE SECTION, ONE SEQUENCE. `pitch_detail` was rendered as two boxes stacked on the Plan tab —
+   ROUTE BETA (the travel legs) and then PITCH-BY-PITCH (the roped pitches) — and on the 144 routes
+   that hold both kinds that ordering is a claim the record never made. wa_big_four_mountain_tower_
+   route is "Approach gully / First tower / Notch rappel / Second and third towers / Summit
+   snowfield": travel, climbing, descent, climbing, travel. Split into two boxes it read as three
+   walks followed by two pitches, which is not the climb. The record's own array ORDER is the
+   sequence, and the only way to show it is one list.
+   WHAT DOES NOT MERGE IS THE VOCABULARY, and that was the explicit ask: a roped pitch and a walk
+   are different kinds of ground and must stay distinguishable at a glance. So a pitch keeps its
+   square P-badge, its blue accent and its full detail (length, bolts, anchor, per-pitch consensus,
+   photos, beta comments); a section keeps a round badge, a terrain chip and its own three tiles.
+   The spine down the left is what carries the integration — it runs through both kinds, in order.
+   `data-kind` / `data-label` are on each row for check:pitch-split, which used to tell the two
+   apart by which HEADING an entry landed under. With one heading the classification is only
+   visible in the markup, and asserting it per row also lets that guard check the ORDER, which is
+   the property this change is about. */
+function breakdownRows(route){
+  const pd=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail:[];
+  let nP=0,nS=0,cum=0;
+  let rows=pd.map(function(p,i){
+    const kind=pitchEntryKind(p,route);
+    const raw=p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1);
+    const lbl=String(raw==null?"":raw).trim();
+    // `_n` is the raw label and stays the comment key. `_badge` is what the 26px badge can
+    // actually hold and `_title` is the descriptive label — "Chimney pitch", "Gendarme" —
+    // which had no reader at all: the badge rendered "P"+label, i.e. "PChimney pitch".
+    const num=/^p?\s*(\d+)/i.exec(lbl);
+    const bare=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$/i.test(lbl);
+    const row=Object.assign({},p,{_i:i,_kind:kind,_n:raw,
+      _note:p.note!=null?p.note:(p.notes||"")});
+    if(kind==="pitch"){row._pIdx=nP++;row._badge=num?num[1]:String(nP);row._title=bare?"":lbl;}
+    else {row._seq=++nS;row._label=lbl||("Section "+nS);}
+    return row;
+  });
+  // Sort only when every label is a number and nothing is interleaved with it — descriptive
+  // labels ("Chimney pitch") are already in route order and `a._n-b._n` on them is NaN, which
+  // is not an ordering, and a mixed route's two label spaces ("1" and "Approach gully") cannot
+  // be compared at all. On a pure-pitch route this is exactly the old behaviour.
+  if(!nS){
+    const allNum=rows.every(p=>typeof p._n==="number"||(typeof p._n==="string"&&p._n.trim()!==""&&!isNaN(Number(p._n))));
+    if(allNum)rows=rows.slice().sort((a,b)=>Number(a._n)-Number(b._n));
+  }
+  // Cumulative height gained is a CLIMBING figure: it counts roped pitches and steps over the
+  // walking between them, which is what "N ft up" has always meant on this row.
+  rows.forEach(function(r){if(r._kind==="pitch"){cum+=(r.lengthM||0);r._cum=cum;}});
+  return {rows:rows,pitchCount:nP,stageCount:nS};
+}
+function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
   const [open,setOpen]=useState(null);
-  const stages=splitPitchDetail(route).stages;
-  if(!stages.length)return null;
-  const rows=stages.map(function(s,i){return Object.assign({},s,{_label:String((s.pitch!=null?s.pitch:s.n)||"").trim()||("Section "+(i+1)),_note:s.note!=null?s.note:(s.notes||"")});});
-  const anyLen=rows.some(r=>r.lengthM!=null);
+  const {rows,pitchCount,stageCount}=breakdownRows(route);
+  useEffect(function(){if(focus==null)return;const hit=rows.filter(r=>r._kind==="pitch")[focus];if(hit)setOpen(hit._i);},[focus]);
+  if(!rows.length)return null;
+  const hasPitchLen=rows.some(r=>r._kind==="pitch"&&r.lengthM!=null);
+  const hasStageLen=rows.some(r=>r._kind==="stage"&&r.lengthM!=null);
+  // The route can claim more pitches than it describes, and saying so is the honest half of
+  // this heading — it used to live in "PITCH-BY-PITCH · 3 of 4".
+  const short=(route.pitches&&pitchCount&&route.pitches>pitchCount)?(" Only "+pitchCount+" of the "+route.pitches+" pitches this route lists are described."):"";
+  const intro=(pitchCount&&stageCount)
+    ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
+    :(pitchCount
+      ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
+      :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
   return <div style={{marginBottom:14}}>
     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:18,marginBottom:9,gap:10}}>
-      <SL prov={sectionProvenance(route,"pitchDetail")}>ROUTE BETA</SL>
-      {onEdit?<EditIconButton onClick={onEdit} title="Edit the route beta"/>:null}
+      <SL prov={sectionProvenance(route,"pitchDetail")}>ROUTE BREAKDOWN</SL>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginLeft:"auto"}}><div style={{fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"4px 9px",whiteSpace:"nowrap"}}>Tap for detail</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}</div>
     </div>
     <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>
-        {"How the route goes, section by section — "+rows.length+" leg"+(rows.length!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."}
-      </div>
-      {rows.map(function(r,i){const isOpen=open===i;const hasMore=!!(r.grade||r.lengthM!=null||r.anchor);
-        return <div key={i} style={{display:"flex",gap:10,marginBottom:i<rows.length-1?10:0}}>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{intro}</div>
+      {rows.map(function(r,idx){
+        const isOpen=open===r._i;
+        const isPitch=r._kind==="pitch";
+        const last=idx===rows.length-1;
+        const hasMore=isPitch||!!(r.grade||r.lengthM!=null||r.anchor);
+        const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
+        return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
-            <div style={{width:26,height:26,borderRadius:13,background:r.crux?C.amberBg:C.surface,border:"1px solid "+(r.crux?C.amber:C.border),display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:r.crux?C.amber:C.textSub}}>{i+1}</div>
-            {i<rows.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>:null}
+            <div aria-hidden="true" style={{width:26,height:26,borderRadius:isPitch?7:13,background:r.crux?C.amberBg:(isPitch?C.blueBg:C.surface),border:"1px solid "+(r.crux?C.amber:(isPitch?C.blueDim:C.border)),display:"flex",alignItems:"center",justifyContent:"center",fontSize:isPitch?11.5:12,fontWeight:700,color:r.crux?C.amber:(isPitch?C.blue:C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
+            {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
           </div>
-          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px"}}>
-            <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
-              <span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._label}{r.crux?<span style={{color:C.red,fontSize:11.5,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
-              {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
-                  live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
-                  ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
-                  nowrap chip in a flexShrink:0 group it measured 315px wide and put its own
-                  row's right edge at x=392 on a 390px phone, clipping the ▸ expander off
-                  screen. So this group SHRINKS and WRAPS, and only the ▸ is pinned. Do not
-                  restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
-                  stage is the other half of pitch_detail. */}
-              <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
-                {r.grade?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
-                {anyLen&&r.lengthM!=null?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{uLen(r.lengthM)}</span>:null}
-                {hasMore?<span role="button" tabIndex={0} aria-expanded={isOpen} aria-label={(isOpen?"Hide":"Show")+" detail for "+r._label} onClick={function(){setOpen(isOpen?null:i);}} onKeyDown={function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setOpen(isOpen?null:i);}}} style={{fontSize:11.5,color:C.blue,fontWeight:700,cursor:"pointer",whiteSpace:"nowrap"}}>{isOpen?"▾":"▸"}</span>:null}
-              </span>
+          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
+            <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-label={hasMore?(isPitch?pitchRowName(r,isOpen):stageRowName(r,isOpen)):undefined} style={{padding:"9px 11px",cursor:hasMore?"pointer":"default"}}>
+              {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
+                <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{color:C.red,fontSize:11.5,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
+                {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
+                    live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
+                    ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
+                    nowrap chip in a flexShrink:0 group it measured 315px wide and put its own
+                    row's right edge at x=392 on a 390px phone, clipping the ▸ expander off
+                    screen. So this group SHRINKS and WRAPS, and only the ▸ is pinned. Do not
+                    restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
+                    stage is the other half of pitch_detail. */}
+                <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
+                  {(!isPitch&&r.grade)?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
+                  {(isPitch?hasPitchLen:(hasStageLen&&r.lengthM!=null))?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span>:null}
+                  {(isPitch&&hasPitchLen&&r._cum)?<span style={{fontSize:11.5,color:C.textMuted,opacity:0.6,whiteSpace:"nowrap"}}>{uLen(r._cum)+" up"}</span>:null}
+                  {hasMore?<span aria-hidden="true" style={{fontSize:11.5,color:C.blue,fontWeight:700,whiteSpace:"nowrap"}}>{isOpen?"▾":"▸"}</span>:null}
+                </span>
+              </div>
+              {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>
-            {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
-            {isOpen?<div style={{marginTop:9,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7}}>
-              {[["Terrain",r.grade||"—",C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Anchor / belay",r.anchor||"—",C.blue]].map(function(s){
-                return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+            {isOpen?<div style={{padding:"0 11px 11px"}}>
+              <div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
+                {(isPitch
+                  ?[["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):"—",C.amber],["Anchor",r.anchor||"—",/bolt/i.test(r.anchor||"")?C.green:C.blue]]
+                  :[["Terrain",r.grade||"—",C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Anchor / belay",r.anchor||"—",C.blue]]
+                ).map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+              </div>
+              {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit}/><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:8,textTransform:"uppercase",letterSpacing:0.5,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Photos</div>{r.photos&&r.photos.length?<PhotoRow items={r.photos} w={160} h={108}/>:<div style={{background:C.card,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:null}
             </div>:null}
           </div>
         </div>;})}
     </div>
+  </div>;
+}
+/* ONE "drive to the trailhead" CONTROL PER PAGE, and the coordinates travel with it.
+   The Plan tab carried two: a full-width "Directions to trailhead (Google Maps)" button under
+   GETTING THERE, and a "Drive here" + coordinate pair inside TrailheadCard a few centimetres
+   below it — the same destination, resolved by the same trailheadPoint(), offered twice. The
+   road name and status were printed twice over as well. Two controls to one place is not a
+   choice a reader can make anything of; it just reads as the page repeating itself.
+   The survivor sits with GETTING THERE, where the rest of the drive already is, and the
+   coordinates come with it: they are what you read out over the radio or paste into a GPS, so
+   they belong beside the road they are at the end of rather than in the panel about the walk.
+   NOTHING IS INVENTED AND NOTHING IS LOST: the destination is still trailheadPoint(), the one
+   resolver the map and this button already shared (#1215/#1231 consolidated the third), and a
+   route with no coordinate on file renders neither control rather than a dead one. */
+function TrailheadDirections({route,dest}){
+  const [copied,setCopied]=useState(false);
+  const tp=trailheadPoint(route);
+  const lat=tp?Number(tp.lat):null,lng=tp?Number(tp.lng):null;
+  if(!tp||!Number.isFinite(lat)||!Number.isFinite(lng))return null;
+  const txt=lat.toFixed(5)+", "+lng.toFixed(5);
+  const copy=function(){
+    var _p;try{_p=navigator.clipboard&&navigator.clipboard.writeText(txt);}catch(e){}if(_p&&_p.then)_p.then(function(){setCopied(true);setTimeout(()=>setCopied(false),1600);}).catch(function(){});
+  };
+  return <div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:9}}>
+    <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"2 1 190px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none"}}>{"Directions to "+(dest||"trailhead")+" (Google Maps)"}</a>
+    <button onClick={copy} aria-label={copied?"Coordinates copied":("Copy the "+(dest||"trailhead")+" coordinates, "+txt)} style={{flex:"1 1 150px",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:copied?C.green:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer",fontVariantNumeric:"tabular-nums"}}>{copied?"Copied":txt}</button>
   </div>;
 }
 /* The trailhead was one line of text — `Trailhead: Killen Creek Trailhead (Trail #113,
@@ -887,7 +949,6 @@ function compass16(lat1,lng1,lat2,lng2){
   return ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"][Math.round(deg/22.5)%16];
 }
 function TrailheadCard({route,onEdit}){
-  const [copied,setCopied]=useState(false);
   const al=route.approachLogistics||{};
   const wp=(route.waypoints||[]).find(w=>wpIs(w,"Trailhead"))||null;
   /* THE DESTINATION COMES FROM trailheadPoint(), THE SAME FUNCTION THE MAP AND BOTH "Directions
@@ -943,11 +1004,6 @@ function TrailheadCard({route,onEdit}){
   if(toPeak)tiles.push(["To the peak",toPeak.dir+" "+uDistMi(Math.round(toPeak.mi*10)/10),C.orange]);
   const dir=al.trailheadDirection;
   const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
-  const gate=road.seasonalGate||null;
-  const copy=function(){
-    if(!hasCoord)return;
-    var _p;try{_p=navigator.clipboard&&navigator.clipboard.writeText(lat.toFixed(5)+", "+lng.toFixed(5));}catch(e){}if(_p&&_p.then)_p.then(function(){setCopied(true);setTimeout(()=>setCopied(false),1600);}).catch(function(){});
-  };
   return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginBottom:route.approach?10:0}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:tiles.length?9:6}}>
       <div style={{display:"flex",gap:8,minWidth:0,alignItems:"flex-start"}}>
@@ -961,11 +1017,7 @@ function TrailheadCard({route,onEdit}){
     </div>
     {tiles.length?<div style={{display:"grid",gridTemplateColumns:"repeat("+tiles.length+",1fr)",gap:7,marginBottom:9}}>{tiles.map(t=><div key={t[0]} style={{background:C.card,borderRadius:8,padding:"7px 8px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:t[2],overflowWrap:"anywhere"}}>{t[1]}</div><div style={{fontSize:10.5,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{t[0]}</div></div>)}</div>:null}
     {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:9}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
-    {(road.name||road.status||gate)?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.card,borderRadius:8,padding:"7px 9px",marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>{"Road · "}</span>{[road.name,road.status,gate].filter(Boolean).join(" — ")}</div>:null}
-    {hasCoord?<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none"}}>Drive here</a>
-      <button onClick={copy} style={{flex:"1 1 150px",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:copied?C.green:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer",fontVariantNumeric:"tabular-nums"}}>{copied?"Copied":lat.toFixed(5)+", "+lng.toFixed(5)}</button>
-    </div>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
+    {hasCoord?null:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet — GETTING THERE above has no destination to drive to.</div>}
   </div>;
 }
 function RappelTable({route,onEdit}){
@@ -2653,7 +2705,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
     writing the description could never clear the note, however many people answered it. The
     card above reads overview||desc and BETA is a separate section further down the page, so
     the two are different claims; the fix is to open the field the card actually reads. */}
-      {(route.overview||route.desc)?null:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{setFixOpenSection("overview");setFixOpen(true);}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:3,letterSpacing:0.3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?<div style={{marginBottom:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>} prov={sectionProvenance(route,"approach")}>GETTING THERE</SL>{(route.road&&(route.road.driveNote||route.road.name))?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Trailhead</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{route.road.driveNote||route.road.name}</div></div>:null}{route.approach?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Approach</div>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>:<GapNote what="No approach description" why="How you get from the car to the base of this climb is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}<div ref={mapWrapRef}><GPXMap pts={route.gpxPts} waypoints={route.waypoints} derivedTrailhead={(()=>{const _t=trailheadPoint(route);return _t&&_t.derived?_t:null;})()} peakCoord={mtn.lat!=null?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null} endpointLabels={["alpine","mountaineering"].includes(catOf(route))?{startLabel:"Trailhead",startColor:C.green,finishLabel:"Summit",finishColor:C.orange}:undefined} focusWp={wpFocus}/></div>{gapTrack(route)?<GapNote mt={10} what="No recorded GPS track" why="The map has no line to follow — only the waypoints below, if any. Recorded a GPX on this climb?" cta="Submit a track" onFix={()=>setShowGpsModal(true)}/>:null}{(()=>{const th=trailheadPoint(route);if(!th||th.lat==null)return null;return <button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+th.lat+","+th.lng,"_blank")} style={{marginTop:9,width:"100%",padding:"9px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Directions to crag (Google Maps)</button>;})()}</div>:null}{cragOnly?<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>} prov={sectionProvenance(route,"waypoints")}>WAYPOINTS</SL>{(function(){var _wpCav=waypointCaveat(route.id,route.waypoints);return _wpCav?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{_wpCav}</div>:null;})()}{<WaypointList waypoints={route.waypoints} onFocus={focusWaypoint} emptyCopy={"No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag."} onAdd={function(){setFixOpenSection("waypoints");setFixOpen(true);}}/>}</div>:null}{/* The Protection/Anchor card lived here; it is now <ProtectionCard/> on Plan, minus the
+      {(route.overview||route.desc)?null:<GapNote what="No route description yet" why="Nobody has written up what this line actually climbs or how it goes." cta="Write the description" onFix={()=>{setFixOpenSection("overview");setFixOpen(true);}}/>}{route.face?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 14px",marginBottom:12}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:3,letterSpacing:0.3}}>FACE / WHERE ON THE PEAK</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{route.face}</div></div>:null}{cragOnly?<div style={{marginBottom:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>} prov={sectionProvenance(route,"approach")}>GETTING THERE</SL>{(route.road&&(route.road.driveNote||route.road.name))?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Trailhead</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{route.road.driveNote||route.road.name}</div></div>:null}{route.approach?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>Approach</div>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div>:<GapNote what="No approach description" why="How you get from the car to the base of this climb is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}<div ref={mapWrapRef}><GPXMap pts={route.gpxPts} waypoints={route.waypoints} derivedTrailhead={(()=>{const _t=trailheadPoint(route);return _t&&_t.derived?_t:null;})()} peakCoord={mtn.lat!=null?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null} endpointLabels={["alpine","mountaineering"].includes(catOf(route))?{startLabel:"Trailhead",startColor:C.green,finishLabel:"Summit",finishColor:C.orange}:undefined} focusWp={wpFocus}/></div>{gapTrack(route)?<GapNote mt={10} what="No recorded GPS track" why="The map has no line to follow — only the waypoints below, if any. Recorded a GPX on this climb?" cta="Submit a track" onFix={()=>setShowGpsModal(true)}/>:null}<TrailheadDirections route={route} dest="crag"/></div>:null}{cragOnly?<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>} prov={sectionProvenance(route,"waypoints")}>WAYPOINTS</SL>{(function(){var _wpCav=waypointCaveat(route.id,route.waypoints);return _wpCav?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{_wpCav}</div>:null;})()}{<WaypointList waypoints={route.waypoints} onFocus={focusWaypoint} emptyCopy={"No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag."} onAdd={function(){setFixOpenSection("waypoints");setFixOpen(true);}}/>}</div>:null}{/* The Protection/Anchor card lived here; it is now <ProtectionCard/> on Plan, minus the
         Anchor column. See the note on that component for why the Anchor half was dead. */}{rkFlagged.length?<div {...clickable(()=>setTab("safety"))} style={{display:"flex",alignItems:"center",gap:9,background:C.amberBg,border:`1px solid ${C.amber}`,borderRadius:11,padding:"10px 13px",marginBottom:13,cursor:"pointer"}}><span style={{flexShrink:0}}><ActionIcon name="alert" size={17} color={C.amber}/></span><div style={{flex:1}}><div style={{fontSize:12.5,fontWeight:700,color:C.amber}}>Climbers are flagging hazards not in the official info</div><div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{rkFlagged.map(h=>h.label).slice(0,3).join(", ")+" — tap to open Safety."}</div></div><span style={{color:C.amber,fontSize:16,flexShrink:0}}>›</span></div>:null}
         {!cragOnly?techStatsEl:null}<VerifNote route={route}/><PeakMetadataPanel route={enrichRoute(route)} C={C} ActionIcon={ActionIcon}/>{/* DATA CONFIDENCE (ProvenancePanel) and DATA QUALITY (DataQualityPanel, mounted from
         ClimbMatch.jsx) both sat on Overview and both answered "how complete/trusted is this
@@ -2710,7 +2762,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
         {(()=>{const rc=OPEN_CREWS.filter(oc=>oc.routeId===route.id&&oc.spots>0);return rc.length?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:11,padding:"12px 13px",marginBottom:12}}><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:3}}>Crews on this climb</div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:10,lineHeight:1.5}}>Open crews forming for this route — request to join one.</div>{(crewsExpand?rc:rc.slice(0,3)).map(oc=>{const org=CLIMBERS.find(c=>c.id===oc.organizer)||{name:"Climber",avatar:FALLBACK_AV,trustScore:50};const req=(requested||[]).includes(oc.id);const sp=oc.spots;return <div key={oc.id} style={{display:"flex",alignItems:"center",gap:10,background:C.surface,border:"1px solid "+C.borderHi,borderRadius:10,padding:"9px 11px",marginBottom:11}}><Av src={org.avatar} size={32}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12.5,fontWeight:700,color:C.text}}>{org.name.split(" ")[0]+"’s crew"}</div><div style={{fontSize:12,color:C.textMuted}}>{sp+" spot"+(sp!==1?"s":"")+" open"+(oc.date?" · "+new Date(oc.date+"T12:00").toLocaleDateString(undefined,{month:"short",day:"numeric"}):"")}</div></div><button disabled={req} onClick={()=>onRequestJoin&&onRequestJoin(oc.id,route.name)} style={{flexShrink:0,padding:"7px 12px",borderRadius:9,border:"1px solid "+(req?C.border:C.blueDim),background:req?C.surface:C.blueBg,color:req?C.textMuted:C.blue,fontSize:12,fontWeight:700,cursor:req?"default":"pointer"}}>{req?"Requested":"Request join"}</button></div>;})}{rc.length>3?<button onClick={()=>setCrewsExpand(v=>!v)} style={{width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>{crewsExpand?"Show fewer":"Show all "+rc.length+" crews"}</button>:null}</div>:null;})()}<div style={{background:C.blueBg,borderRadius:11,padding:"11px 13px",marginBottom:12,border:`1px solid ${C.blueDim}`}}><div style={{fontSize:13,fontWeight:700,color:C.blue,marginBottom:3}}>Find a partner for this route</div><div style={{fontSize:12,color:C.textSub}}>These climbers marked this route as an objective. Connect to plan a trip together.</div></div>
         {partners.length===0?<div style={{textAlign:"center",padding:30,color:C.textMuted,fontSize:12}}>No partners listed yet for this route.</div>:(partnersExpand?partners:partners.slice(0,4)).map(c=>{const sc=compat(ME,c);return <div key={c.id} style={{background:C.card,borderRadius:14,padding:"12px 14px",marginBottom:9,border:`1px solid ${C.green}66`}}><div style={{display:"flex",gap:10,alignItems:"flex-start",marginBottom:8}}><Av src={c.avatar} size={46}/><div style={{flex:1}}><div style={{fontWeight:700,fontSize:14}}>{pubName(c)}</div><div style={{fontSize:12,color:C.textSub}}>{c.level} · {vScore(c)}{c.hikingSpeedFtHr?" · "+uRate(c.hikingSpeedFtHr):""}</div></div><div style={{textAlign:"center"}}><div style={{fontSize:17,fontWeight:700,color:sc>=70?C.green:C.blue}}>{sc}%</div><div style={{fontSize:12,color:C.textMuted}}>match</div></div></div><p style={{fontSize:13,color:C.textSub,lineHeight:1.5,margin:"0 0 9px",fontStyle:"italic"}}>"{c.bio}"</p><div style={{display:"flex",gap:7}}><button onClick={()=>onConnect(c)} style={{flex:1,padding:7,background:(friendState(c.id)==="friends"||friendState(c.id)==="in")?C.greenChip:friendState(c.id)==="out"?C.surface:C.blueChip,color:(friendState(c.id)==="friends"||friendState(c.id)==="in")?C.green:friendState(c.id)==="out"?C.textMuted:C.blue,border:`1px solid ${friendState(c.id)==="out"?C.border:"transparent"}`,borderRadius:8,fontSize:13,cursor:"pointer",fontWeight:700}}>{friendState(c.id)==="friends"?"✓ Friends":friendState(c.id)==="out"?"Requested":friendState(c.id)==="in"?"Accept":"+ Add friend"}</button><button onClick={()=>onViewProfile(c)} style={{flex:1,padding:7,background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:8,fontSize:13,cursor:"pointer"}}>Full Profile</button><button onClick={()=>onPlan(c)} style={{flex:1,padding:7,background:C.surface,color:C.amber,border:`1px solid ${C.amber}44`,borderRadius:8,fontSize:13,cursor:"pointer",fontWeight:600}}>Form crew</button></div></div>;})}{partners.length>4?<button onClick={()=>setPartnersExpand(v=>!v)} style={{width:"100%",marginTop:2,padding:"10px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>{partnersExpand?"Show fewer":"See "+(partners.length-4)+" more partner"+(partners.length-4!==1?"s":"")+" ▾"}</button>:null}{onFindPartners?<button onClick={onFindPartners} style={{width:"100%",marginTop:8,padding:"10px",borderRadius:10,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"Explore all partners in the finder ›"}</button>:null}
       </div>:null}
-      {tab==="planner"?<div>{(route.road||route.driveMinSLC)?(function(){var road=route.road||{};function row(label,val){return val?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>{label}</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{val}</div></div>:null;}var driveTxt=route.driveMinSLC?(route.driveMinSLC>=60?(Math.floor(route.driveMinSLC/60)+"h "+(route.driveMinSLC%60?route.driveMinSLC%60+"m ":"")+"from Salt Lake City"):(route.driveMinSLC+" min from Salt Lake City")):null;return <div style={{marginTop:12,background:C.card,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>GETTING THERE</div>{/* Points at `road`, not `approach`: every row in THIS panel comes from the road block (name / driveNote / status / seasonalGate), so the edit button used to open a form section that could not change a single line of what it sits beside. The overview panel above still opens `approach`, because that one mixes road and approach content. */}<EditIconButton onClick={()=>{setFixOpenSection("road");setFixOpen(true);}} title="Edit road and driving information"/></div>{row("Drive time",driveTxt)}{row("Road / access point",road.name)}{row("Drive notes",road.driveNote)}{road.status?row("Road status",road.status+(road.seasonalGate?" — "+road.seasonalGate:"")):null}{accessCheckedLine(route)?<div style={{marginTop:2,fontSize:11.5,color:C.textMuted,lineHeight:1.5}}>{accessCheckedLine(route)}</div>:null}</div>;})():null}{(()=>{const th=trailheadPoint(route);if(!th||th.lat==null)return null;return <button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+th.lat+","+th.lng,"_blank")} style={{marginTop:9,width:"100%",padding:"9px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Directions to trailhead (Google Maps)</button>;})()}{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
+      {tab==="planner"?<div>{(route.road||route.driveMinSLC)?(function(){var road=route.road||{};function row(label,val){return val?<div style={{marginBottom:9}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,marginBottom:2}}>{label}</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{val}</div></div>:null;}var driveTxt=route.driveMinSLC?(route.driveMinSLC>=60?(Math.floor(route.driveMinSLC/60)+"h "+(route.driveMinSLC%60?route.driveMinSLC%60+"m ":"")+"from Salt Lake City"):(route.driveMinSLC+" min from Salt Lake City")):null;return <div style={{marginTop:12,background:C.card,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>GETTING THERE</div>{/* Points at `road`, not `approach`: every row in THIS panel comes from the road block (name / driveNote / status / seasonalGate), so the edit button used to open a form section that could not change a single line of what it sits beside. The overview panel above still opens `approach`, because that one mixes road and approach content. */}<EditIconButton onClick={()=>{setFixOpenSection("road");setFixOpen(true);}} title="Edit road and driving information"/></div>{row("Drive time",driveTxt)}{row("Road / access point",road.name)}{row("Drive notes",road.driveNote)}{road.status?row("Road status",road.status+(road.seasonalGate?" — "+road.seasonalGate:"")):row("Seasonal gate",road.seasonalGate)}{accessCheckedLine(route)?<div style={{marginTop:2,fontSize:11.5,color:C.textMuted,lineHeight:1.5}}>{accessCheckedLine(route)}</div>:null}</div>;})():null}<TrailheadDirections route={route}/>{(()=>{const rx=rxOf(route.id);const dbA=route.access||{};const ac={...dbA,...rx.access};const passVal=ac.passRequired===true?"Yes":(typeof ac.passRequired==="string"?ac.passRequired:null);const feesVal=typeof ac.fees==="number"?("$"+ac.fees):ac.fees;/* DISPLAY prefers land_manager: it is the canonical field — 2,103 routes across just 80
    distinct values, "Agency (Ranger District) — Wilderness". landManager is legacy free prose:
    984 routes across 474 distinct values, a quarter of them over 110 chars, sometimes a whole
    sentence ("Most of the route ... lie within the ..."). 604 routes carry BOTH with different
@@ -2738,8 +2790,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     Overview, which left Plan describing how to reach the base and how to walk off but
     nothing about the climbing in between. */}
 {!cragOnly?<ProtectionCard route={route} myReports={myReports} onEdit={()=>{setFixOpenSection("rack");setFixOpen(true);}}/>:null}
-{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<RouteBeta route={route} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null}
-{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<div style={{marginBottom:14}}><PitchTable route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/></div>:(gapPitches(route)?<GapNote what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null)}
+{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:(gapPitches(route)?<GapNote what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null)}
 {/* The unpitched counterpart, in the SAME slot as PITCH-BY-PITCH. isPitched() is the
     switch, so exactly one of PITCH-BY-PITCH and CLIMBING ROUTE can appear on a route and
     neither can silently shadow the other. Moved here with the pitch table when Plan took

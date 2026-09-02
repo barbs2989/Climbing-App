@@ -40,6 +40,7 @@ npm run check:logged-times # a climber’s logged time reaches the planner (in b
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:trailhead-directions # ONE way to drive to the trailhead, and the coordinates with it (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
@@ -82,7 +83,7 @@ npm run check:overlays # every overlay inside #appscroll is portalled to documen
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
-npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
+npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
@@ -3527,8 +3528,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     `rappels` was wired to the wrong one of **two** surfaces that both render the text
     "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
     `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
-    `check:field-renders` already records; `pitch_detail` splits **per entry** across
-    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare; and the
+    `check:field-renders` already records; `pitch_detail` split **per entry** across
+    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare (they are one
+    ROUTE BREAKDOWN now, and both fixtures stay because either kind alone must still draw it);
+    and the
     "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
     season-keyed chip there rendered nothing at all.
   - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
@@ -4044,6 +4047,77 @@ the correction knows the screen is wrong, and they have no way to report it.
     (`scripts/oneoff/inject-access-checked-cases.mjs`), each case proving its edit landed **by
     checksum** and restoring the file byte-identically. **Case 4 must PASS** — a comment naming the
     render site is documentation, and a guard flagging it would forbid explaining itself.
+- **`check:trailhead-directions`** asserts the route page offers **exactly one way to drive to the
+  trailhead**, that it sits with GETTING THERE, and that the **coordinates** are beside it. Static
+  (one esbuild bundle, four SSR renders), so it sits in `npm run build`.
+  - **The Plan tab carried TWO, resolving to the same point.** A full-width *"Directions to
+    trailhead (Google Maps)"* button under GETTING THERE, and a *"Drive here"* button plus a
+    copy-the-coordinates button inside `TrailheadCard` a few centimetres below it. Both go through
+    `trailheadPoint()` — the resolver #1215/#1231 consolidated **precisely so the page could not
+    offer two destinations** — so the second was not a choice a reader could make anything of. The
+    road **name and status** were printed twice over in the same pair of boxes as well.
+  - **NOTHING EXISTING COULD SEE IT, and the near misses say why.** `check:dead-props` asks whether
+    a prop is read; both controls were read and both worked. `check:field-renders` asks whether a
+    column reaches a screen; these reach it *twice*, which is more than enough for that guard.
+    `check:waypoint-placement` asks whether a coordinate is DRAWABLE, not whether it is drawn once.
+    **A duplicate is invisible to every guard that asks "does this reach a screen" — the question
+    has to be "how many times".**
+  - **The coordinates moved rather than being dropped**, which is the half that decides whether
+    this is a deletion or a consolidation. They rendered in `TrailheadCard` and nowhere else, and
+    they are what you read out over the radio or paste into a GPS — so they belong at the end of
+    the road rather than in the panel about the walk. They now render on the **crag Overview** too,
+    which never had them.
+  - **COUNTED ON THE DESTINATION URL, NEVER ON THE LABEL.** A label test is a deny-list over
+    English, and this catalog writes prose into the very fields that render here: an
+    `approach_logistics.trailheadDirection` reading *"Drive here and park at the gate"* would make a
+    correct page report two controls. Only a control carries the maps URL. Injection case 5 pins
+    it and must stay **SILENT** — the
+    [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape, caught before shipping rather
+    than after.
+  - **"With GETTING THERE" is asserted as ORDER, not as a character window** — the control renders
+    as a sibling of the road card, so slicing N characters after the heading would encode a guess
+    about the panel's size, the trap the camping work and the Logbook badge both record. It must
+    fall between the GETTING THERE and APPROACH headings.
+  - **THE SEASONAL GATE NEARLY WENT WITH THE DUPLICATE, and that is why it has its own case.** It
+    had two render sites; the surviving one showed it only as a **suffix on the road STATUS row**,
+    so a route with a gate and no status would have lost it silently — the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape. GETTING THERE now
+    renders it as its own row when there is no status to hang it on.
+  - Fails **closed** four ways: a thin render, a GETTING THERE panel that never appeared, a missing
+    APPROACH heading, or a `TrailheadCard` that did not render are each a broken probe — **every
+    "exactly one" assertion here is satisfied by a page that rendered nothing at all.**
+  - Injection-tested **5/5** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
+    the duplication back one piece at a time so the guard cannot pass on the strength of its
+    neighbours. **Case 3's first version was `hidden` on the button and reported MISS while the
+    guard was innocent** — SSR still emits the text inside a hidden element, so the edit landed by
+    checksum and created no defect. *Checksum movement proves an edit happened, not that it was the
+    right one.*
+- **`check:pitch-split`** asserts that every `pitch_detail` entry is a row of **ROUTE BREAKDOWN**,
+  in the record's own order, drawn as the kind of ground it actually is. Static SSR, in the build.
+  - **IT USED TO READ THE VERDICT OFF THE HEADING**, because there were two: roped pitches under
+    PITCH-BY-PITCH and travel legs under ROUTE BETA, stacked on the Plan tab. **That stacking was
+    itself a claim the record never made.** 144 routes hold both kinds interleaved —
+    `wa_big_four_mountain_tower_route` is *"Approach gully / First tower / Notch rappel / Second and
+    third towers / Summit snowfield"*, i.e. travel, climbing, descent, climbing, travel — and split
+    into two boxes it reads as every walk first and then every pitch, which is not the climb. The
+    array **order** is the sequence, and the only way to show a sequence is one list.
+  - **What does NOT merge is the vocabulary.** A roped pitch and a walk are different kinds of
+    ground: a pitch keeps its square `P1` badge, its blue accent and its full detail (length,
+    bolts, anchor, per-pitch consensus, photos, beta comments); a section keeps a round badge, a
+    terrain chip and its own three tiles. The **spine** down the left runs through both, in order,
+    and that is what carries the integration.
+  - **So the assertion moved to the row's own `data-kind`**, and that is strictly stronger than the
+    heading test it replaces: per entry rather than per page, and it can check the **ORDER**, which
+    nothing did before. With one heading the classification is only visible in the markup — it is
+    the badge shape, the accent and the detail block, none of which survive tag-stripping.
+  - The **numeric sort is scoped to a route with no stages**, which is exactly the old behaviour for
+    a pure-pitch route. A mixed route's two label spaces (`"1"` and `"Approach gully"`) cannot be
+    compared at all, so sorting one is not an ordering — it is the two boxes rebuilt inside one.
+  - Injection-tested **4/4** (`scripts/oneoff/inject-route-breakdown-cases.mjs`). Cases 1-3 are the
+    original three re-run against the merged section — a guard that still catches everything it used
+    to is the claim being made. **Case 4 is the property the merge added**: reorder the rows into
+    stages-then-pitches (the old two boxes, merged) and *only* the ORDER assertion can see it.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -6009,7 +6083,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     check list from what was actually written — an earlier version omitted `climbing_route`, so
     a route setting only that column satisfied every remaining clause vacuously and printed
     "verified" having confirmed nothing.
-  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
