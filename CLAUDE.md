@@ -6209,14 +6209,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     Over 360 matched leaves: **148 guidebook, 54 Mountain Project, 41 WTA, 37 SummitPost, 20
     Wikipedia, 19 guidebooks, 19 Peakbagger**, then a long tail. Re-derive it before a batch; the
     composition moves with every sweep.
-    - **THE BIGGEST FAMILY IS NOT ONE SHAPE, AND SWEEPING IT ON THE WORD ALONE DELETES SAFETY
-      CONTENT.** Roughly **30 of the 167** `guidebook` hits are a **negative or a disagreement**
-      rather than an attribution — *"Anderson's Thumb has no dedicated guidebook route
-      description"*, *"the Snoqualmie Rock guidebook reportedly mis-locates this route"*.
-      `wa_mount_anderson_eel_glacier` is the case that shows the cost: **five** values say glacier
-      recession has steepened the Flypaper Pass finger to **40-45°**, *"well beyond older guidebook
+    - **THE BIGGEST FAMILY IS NOT A CITATION FAMILY AT ALL, AND SWEEPING IT ON THE WORD ALONE
+      DELETES SAFETY CONTENT.** A large share of the 167 `guidebook` hits do not attribute a claim
+      **to** a guidebook — they warn that the guidebook is **wrong, vague, or absent**, which is
+      the most useful thing you can tell a climber who owns that book. *"Guidebook route
+      description is notoriously vague"*, *"reportedly mis-locates this route"*, *"parties
+      consistently report needing more rappels than guidebook descriptions suggest"*, *"the
+      guidebook's 'Class 3' rating undersells two short sections that are genuinely Class 4-5"*.
+      `wa_mount_anderson_eel_glacier` shows the cost: **five** values say glacier recession has
+      steepened the Flypaper Pass finger to **40-45°**, *"well beyond older guidebook
       descriptions"*. Cut the attribution and the reader loses the warning that **the book will
-      tell them 30**. A number that invites a sweep makes this warning more necessary, not less.
+      tell them 30**.
+    - **DO NOT TRUST A NUMBER FOR THAT SPLIT, AND THE REASON IS THE WARNING.** Three separate
+      ad-hoc classifiers were written to size it and **all three were wrong**, each producing a
+      plausible figure rather than an error: one missed the token that actually fired and blamed
+      a neighbouring word, one was a cartesian join, and one put `\b` after an alternation of word
+      **stems** so `mis-?locat` could never match *"mis-locates"* — silently filing disagreements
+      as plain attributions. On a hand-read sample of 27, roughly two thirds were warnings about
+      the book. **A distinction that defeated three regexes is a distinction a sweep will get
+      wrong**, so this family is read, never transformed. A count here that invites a sweep makes
+      that warning more necessary, not less.
   - **TWO WAYS A MEASUREMENT OF THIS BACKLOG LIED, and both produced numbers rather than errors.**
     Recorded because they came within one step of filing a fix to a guard that was correct.
     - **A SECOND CLASSIFIER DISAGREEING WITH A GUARD IS FAR MORE LIKELY TO BE THE SECOND
