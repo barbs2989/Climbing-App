@@ -11500,3 +11500,50 @@ Tower "South Face Center"), South Gully/South Spur & South Rib (Guye Peak), Sout
   (8,975 ft) — treated as consistent, not a discrepancy worth fixing.
 
 Next batch continues after `wa_south_ridge_3` in the id-ordered scope.
+
+## 2026-09-02 — Pass 3, Batch 167
+
+Eight routes: South Ridge (Eldorado Peak), South Spur (Whatcom Peak), North Ridge/Olivine
+Scramble/West Ridge (South Twin Sister), Southeast Face (Sharkfin Tower), West Ridge/Beckey
+Route filed under an `_se_rib` id (Southeast Mox Peak "Hard Mox"), Southeast Ridge "SE Corner"
+(Mount Shuksan).
+
+**No SQL fixes this batch.**
+
+**One flagged for human review**:
+- `wa_southeast_mox_peak_se_rib`: the id implies a "Southeast Rib" route, but every stored
+  field — name ("West Ridge (Beckey Route)"), overview, `fa` ("Fred Beckey and Helmy Beckey,
+  June 21, 1941"), grade (5.5), and the December 2023 Gilbertson/Roy winter-FA detail —
+  describes the peak's real, well-documented standard West Ridge / Col of the Wild route.
+  All independently confirmed via search: elevation 8,504 ft, FA party and exact date, and
+  winter FA date/grade (Dec 29, 2023, M5 WI2, 5 pitches) all matched exactly. No route named
+  "Southeast Rib"/"SE Rib" turned up anywhere associated with this peak. Same shape as batch
+  3's `wa_big_kangaroo_southwest_rib`: the content is correct for the route it describes, but
+  the id needs a human rename decision (ids are referenced elsewhere in the app), not a field
+  patch.
+
+**Seven clean**, each with at least one fact independently confirmed:
+- `wa_south_ridge_4` (Eldorado Peak): `high_point_ft` 8,873 matches Wikipedia's 8,872.9 ft
+  almost exactly. The overview (crack system to a notch, then knife-edge ridge climbing over
+  several pitches, then broad mellow scrambling to the true summit) matches a Mountain Project
+  South Ridge route description near-verbatim (crack to a U-notch, knife-edge-crest pitches,
+  then loose/scree scrambling to the summit).
+- `wa_south_spur` (Whatcom Peak): `high_point_ft` 7,574 confirmed exactly via
+  Wikipedia/PeakVisor. Description (reached from Perfect Pass via the Easy Ridge traverse or a
+  lower "low orbit" line) matches known beta for the peak's standard south-side route.
+- `wa_south_twin_sister_north_ridge`, `wa_south_twin_sister_scramble`,
+  `wa_south_twin_sister_west_ridge` (South Twin Sister): shared `high_point_ft` 7,004 is a
+  commonly-cited survey elevation for the peak. The West Ridge description (sustained Class
+  3-4 scrambling with a short technical step some parties rope up for) is corroborated by
+  independent trip-report sources describing the same ridge as "4th class, easily getting into
+  5th" with a roped step near the top.
+- `wa_southeast_face` (Sharkfin Tower): `high_point_ft` 8,120 and `fa` ("Jim Nelson, Jim
+  Martin, Kit Lewis, Bill Liddell, and Dave Bale, 1990") both confirmed exactly via
+  independent search results (Wikipedia elevation; Mountain Project/Wikipedia FA party and
+  September 1990 date).
+- `wa_southeast_ridge_se_corner` (Mount Shuksan): `high_point_ft` 9,131 confirmed exactly.
+  Stored grade 5.3 matches the commonly-cited "III 5.3" grade for this specific named route
+  (Southeast Ridge / SE Corner), distinct from a harder ~5.6 rating some sources apply to a
+  different Southeast Ridge line/variation on the same peak.
+
+Next batch continues after `wa_southeast_ridge_se_corner` in the id-ordered scope.
