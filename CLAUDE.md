@@ -991,10 +991,19 @@ a build error, but a screen that renders wrong or not at all.
           nothing wrong. This is the same failure the nav-click guard exists for, one level down,
           and the reason to compare the capture against the PREVIOUS screen rather than trust the
           return value.
-        - **Neither label changes the screen even when tried in turn**, and the buttons carry no
-          `textTransform`, so the innerText really is verbatim. Why the click does not take is
-          still unknown — start there, and consider clicking Conditions BEFORE Photos so the
-          comparison baseline is the Overview capture.
+        - **Neither label changes the screen when clicked AFTER Photos**, and the buttons carry no
+          `textTransform`, so the innerText really is verbatim.
+        - **ORDER IS THE ANSWER TO HALF OF IT, AND `check:overflow` HAD IT ALL ALONG.** That guard
+          walks all six as `["Overview","Reports","Photos","Partners","Plan","Safety"]` and has
+          done since #818 — **from Overview, "Reports" clicks fine**; from Photos it does not.
+          Looking at the working sibling before writing a new walk would have skipped two runs.
+        - **It is still NOT shippable, and the remaining reason is the interesting one.** Reordered,
+          the click lands (no `__navFail`) — but the Conditions capture comes back **5026ch, exactly
+          Overview's**, in both the healthy and failing runs. The inequality assertion passes, so
+          the strings differ while the lengths match, and nothing available explains that. Coverage
+          that cannot be explained is the false-coverage defect this file exists to prevent, so it
+          was reverted a second time rather than shipped. **Next step: prove the capture is really
+          the Conditions tab** — assert on text only that panel renders, not on length.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
