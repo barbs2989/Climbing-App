@@ -11850,3 +11850,40 @@ willhiteweb.com for `WebFetch`; `WebSearch` synthesis was sufficient to
 corroborate or refute every fact checked this run.
 
 Next batch continues after `wa_three_fingers_r1` in the id-ordered scope.
+
+## Batch 173 — 2026-09-02 (pass 3)
+
+Routes: wa_three_fingers_r2, wa_three_fingers_south_peak_lookout, wa_three_queens_middle_peak,
+wa_three_queens_west_peak, wa_tomyhoi_peak_southeast_ridge, wa_tooth_and_claw,
+wa_tooth_chair_traverse, wa_tower_mountain_southwest_route.
+
+**Fixed (1):** `wa_three_fingers_south_peak_lookout`'s trailhead waypoint stored 2,650 ft.
+Its sibling route (`wa_three_fingers_r2`, Middle Peak) stores the *same* trailhead
+coordinates at 3,020 ft, and both a trail-info page and a WTA trip report for Trail #641
+independently corroborate ~3,020 ft. SQL in `audits/sql/2026-09-02-batch-173.sql`.
+
+**Flagged for human review (3):**
+- `wa_three_fingers_r2`: Middle Peak's stored `high_point_ft` (6,800) — sources disagree on
+  whether Middle Peak or the South Peak lookout (6,854-6,859 ft, confirmed) is Three
+  Fingers' true high point; some describe Middle Peak as slightly *higher* than the
+  lookout summit. Couldn't pin a reliable third-party number for Middle Peak specifically
+  (Peakbagger/Wikipedia pages for it are unreachable from this session), so not touched.
+- `wa_three_queens_middle_peak` / `wa_three_queens_west_peak`: both cite an active "Three
+  Queens Fire" closure through Oct 31, 2026, which is real and current (fire started
+  mid-July 2026, ~50 mi of PCT and the Cle Elum RD closed). The specific closure order
+  number they store (06-17-03-2026-25) doesn't match what's findable now
+  (06-17-03-2026-32, with a further -36 also referenced) — plausibly just an earlier
+  order superseded as the fire grew, but not confirmed either way.
+
+**Clean / confirmed accurate (4):** `wa_tomyhoi_peak_southeast_ridge` (elevation, gain,
+grade all match; a StephAbegg trip report with matching mileage/gain corroborates the
+route itself), `wa_tooth_and_claw` (FA — Steve Risse & Dave Tower, June 1989 — confirmed
+via AAC/SuperTopo), `wa_tooth_chair_traverse` (The Tooth 5,606 ft, Chair Peak 6,238 ft
+both confirmed exactly), `wa_tower_mountain_southwest_route` (8,444-8,445 ft confirmed;
+internally coherent waypoint chain).
+
+Also confirmed correct while checking: `wa_three_queens_middle_peak`/`west_peak`
+elevations (6,600 ft / 6,400 ft) both match published East/Middle/West Three Queens
+figures exactly.
+
+20 routes remain in pass 3.
