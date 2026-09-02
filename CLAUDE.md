@@ -49,6 +49,7 @@ npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a cr
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
+npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -6709,6 +6710,82 @@ their own Résumé showed an amber **"Unverified"** chip.
     `if(recs==null)return;`, which keeps the anchor intact and reproduces the defect exactly:
     **one** case fails and the other four stay green, so the probe is specific rather than firing
     on any change.
+
+- **`check:profile-edit-gate`** — **a failed profile read turned "Edit profile" into a WIPE, and the
+  class CLAUDE.md records as CLOSED AT ONE is therefore TWO.** Static (source + one executed
+  expression), so it sits in `npm run build`.
+  - **The chain, every link verified rather than assumed.** `lib/auth.js`'s `getProfile` returned
+    `(await …single()).data`, **discarding `error`** — so a failed read resolved to `null`, exactly
+    like a brand-new account with no row. The sign-in reset empties `profile` to `bio:""`,
+    `location:""`, `disciplines:[]`, grades `undefined`, and its own comment says why: *"Emptying the
+    draft first makes the DB the only source."* The hydration set `profileHydratedRef.current=true`
+    **before** awaiting, did `if(!p)return`, and ended `.catch(function(){})`. `openEdit()` was
+    offered unconditionally from Settings. `saveEdit` PATCHes that draft back **unconditionally**.
+  - **Measured, not argued: seven columns.** Executing the app's own draft literal and PATCH payload
+    against the post-reset state yields
+    `{bio:"",location:"",disciplines:[],sport_grade:null,trad_grade:null,boulder_grade:null,avatar:null}`
+    over a live `profiles` row. `name` and `username` are the only two guarded — which is itself
+    evidence somebody considered this for two fields and not the other seven.
+  - **One transient failure at boot was PERMANENT for the session**, because the latch was set before
+    the await and the rejection was swallowed. Same shape as the verification hydration one section
+    up, and it is what makes this reachable without a sustained outage.
+  - **THE CENSUS WAS RIGHT ABOUT ITS SCOPE AND THE SCOPE WAS WRONG.** *"a WRITE that destroys data
+    after a failed read … measured across all 45 write functions in `lib/db.js`; the answer is
+    ONE"* — and `getProfile`/`saveProfile` live in **`lib/auth.js`**. `check:read-failures` cannot
+    see it either, twice over: it scans `lib/db.js` only, **and** its predicate matches on the
+    `error` identifier, while this function never names `error` at all. *A class is closed only over
+    the files somebody actually looked at* — [[grep-the-app-not-just-the-db-layer]], applied to a
+    census rather than to a grep.
+  - **The fix is the guide-application precedent verbatim: REFUSE, and refuse BEFORE the branch that
+    needs the value.** Blocking an edit during a transient error costs a retry; the other way costs
+    the profile. Not symmetric, so the safe branch is not the permissive one. `PGRST116` is
+    excluded deliberately — `.single()` reporting zero rows is a real answer about the world, and
+    throwing on it would stop a brand-new account filling in its profile.
+  - **A build gate, not a probe**, for the reason `check:verification-fallback` records: the fix is a
+    guard clause and a latch position, so it changes **no identifier** and `audit:silent-reverts` is
+    blind to it by its own closing caveat.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-profile-edit-gate-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. Cases 1-4 take the real
+    defect apart one link at a time, so the guard cannot pass on the strength of its neighbours;
+    **case 5 must stay SILENT** — a comment naming the flag is documentation.
+  - What it does **not** prove: that the toast is legible, or that a climber ever meets the refusal.
+
+- **`check:overlay-absence` was CREDITING AN OVERLAY WITH ITS NEIGHBOUR'S FLAG**, and it had written
+  the reason down itself. Its closing note says *"an overlay rendered NEXT TO others picks up their
+  copy … the count is an upper bound"* — then fed that same 3000-char window to `gated`, and fed
+  `gated` to two verdicts.
+  - **The false pass is the serious half.** `ungatedAll = rows.filter(x => !x.gated.length)`, so an
+    overlay credited with somebody else's flag was dropped **before anything examined it**. Four
+    were: `editDraft`, `dashOpen`, `guideAppOpen` and `calOpen`, all carrying the **Inbox's**
+    `dmThreadsUnavailable`/`dmUnavailable`. `inboxOpen` was also credited with `statesUnavailable`,
+    whose owner is literally the next render site along.
+  - **The false accusation is the half that shows up in the output.** It reported `logPickOpen`
+    STALE against `resumeLogsUnavailable` — which belongs to the `resumeFor` overlay next door
+    (measured: render site at 298626, flag at 300094) — i.e. *"delete this CHECKED entry"* about an
+    entry that is **correct**, after which a genuinely ungated overlay would have passed as gated.
+    Reverting the fix shows the old behaviour would accuse **all five** current entries.
+  - **The boundary must be a RENDER site**, never a bare `name&&`: the loose form matches handlers
+    and inline conditionals, and truncating at one cuts a real region short — measured, it severed
+    the Inbox from its own component body. Brace-balancing was tried first and is worse here, because
+    the render-site regex often lands on a handler rather than the JSX.
+  - **The two scopings are deliberately ASYMMETRIC and both err toward examining MORE**: claims stay
+    on the wide window (documented upper bound), gating is scoped to the boundary. Narrowing the
+    claims too is the other false pass — an overlay whose own copy sits past a nested render site
+    would stop being reported at all.
+  - **A stale entry now FAILS**, like every other registry here; while the gating was contaminated it
+    could not, because its one accusation was wrong. The census line was also wrong in a way the fix
+    made glaring — it printed *"16 gated"* above a list of three, because it counted
+    `rows.length - ungated.length` and folded the CHECKED rows in. All three numbers now come from
+    one partition and sum to the total.
+  - **It found a real defect on its first run afterwards**: reading `editDraft` is what surfaced the
+    profile wipe above.
+  - **Stated scope, as a worklist rather than a boundary**: it scans `ClimbMatch.jsx` and
+    `ClimbMatchCore.jsx` only, so an overlay rendering a `lib/` component has its gating invisible.
+    `dashOpen` and `guideAppOpen` are the live cases and were read by hand (`DbGuideDashboard` gates
+    on `inqError`/`revError`/`profileError`; `DbGuideApply` on `existingError`). **Nothing has yet
+    asked this question of `lib/`.**
+  - Injection-tested 2/2 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
+    landed by checksum.
 
 **THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
 doing it.** `fetchMyDirectMessages` throws on a database error — `check:read-failures` made sure of
