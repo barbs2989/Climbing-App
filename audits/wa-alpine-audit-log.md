@@ -11795,3 +11795,58 @@ candidate") already flagging the FA-to-line link as uncertain.
 
 Next batch continues after `wa_the_pyramid_picket_south_route` in the
 id-ordered scope.
+
+## Batch 172 (2026-09-02)
+
+Checked: `wa_the_rake_traverse_route`, `wa_the_roof`, `wa_the_tooth_fairy`,
+`wa_the_tooth_r1`, `wa_the_tooth_south_face`, `wa_the_triad_east_peak`,
+`wa_the_west_face`, `wa_three_fingers_r1`.
+
+**Fixed (1):** `wa_the_west_face` (North Early Winters Spire, West Face III
+5.11-) — the FA partner's surname was misspelled "Beckstad" in both the `fa`
+and `overview` columns. Corrected to "Beckstead," confirmed by theCrag.com
+(which names the route "West Face (Beckey-Beckstead)") plus corroborating
+search results giving "Dave Beckstead" as Fred Beckey's partner on the first
+ascent, June 17, 1965. SQL in `audits/sql/2026-09-02-batch-172.sql`, verified
+with `npm run check:sql`. Left alone: the FA date (1965) and the FFA credit
+(Steve Risse and Dave Tower, 1985) — not independently verifiable this run
+(Mountain Project, SummitPost, and AAC Journal were blocked by network
+egress, same as recent prior batches).
+
+**Clean (7), each independently corroborated:**
+- `wa_the_rake_traverse_route` — FA July 26, 2003 by Mark Bunker, Colin
+  Haley, and Wayne Wallace during the "Walking the Fence" Southern Pickets
+  enchainment, IV 5.9, confirmed via AAC-sourced search results; elevation
+  7,869 ft matches listsofjohn.com exactly (peakbagger.com's differing 7,840
+  ft is a plausible alternate-survey figure, not evidence against the stored
+  value).
+- `wa_the_roof` (Unicorn Peak) — elevation 6,971 ft confirmed exactly.
+  Route-specific beta (gully/chimney left of the Classic Route, rappel off a
+  rock horn) could not be independently checked — Mountain Project,
+  SummitPost, and willhiteweb.com were all blocked by network egress.
+- `wa_the_tooth_fairy` — FA 2019 by Jim Nelson and David Whitelaw, 7-pitch
+  fully-bolted line on the west side of The Tooth, confirmed; elevation
+  5,606 ft confirmed.
+- `wa_the_tooth_r1` (Northeast Slabs) — route character strongly
+  corroborated (WI3 low-5th, hard-to-protect Pitch 2 on thin ice, low
+  5th/M3 pitch over the east face, South Face rappel descent); elevation
+  confirmed. The row's own beta explicitly debunks an alternate name
+  ("Catscratch Couloir") for this route — no source found uses that name
+  either, corroborating the existing correction.
+- `wa_the_tooth_south_face` — FA 1928 by Lloyd Anderson and Herman
+  Wunderling confirmed; elevation confirmed.
+- `wa_the_triad_east_peak` — the "Three Dicks" 1949 FA story (Dick
+  Eilertsen, Dick Lowery, Dick Scales, and Don Wilde) confirmed almost
+  verbatim; East Peak elevation 7,520 ft confirmed exactly.
+- `wa_three_fingers_r1` (North Peak) — the row's claim that the North Peak,
+  not the lookout-bearing South Peak, is the true high point was confirmed
+  with both elevations matching exactly: North Peak 6,870 ft, South Peak
+  6,854 ft (lowered ~15 ft when its summit was blasted for the 1930 lookout
+  cabin).
+
+No flags for human review this batch. Network egress continues to block
+Mountain Project, SummitPost, AAC Journal, Wikipedia direct-fetch, and
+willhiteweb.com for `WebFetch`; `WebSearch` synthesis was sufficient to
+corroborate or refute every fact checked this run.
+
+Next batch continues after `wa_three_fingers_r1` in the id-ordered scope.
