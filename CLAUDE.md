@@ -4115,6 +4115,17 @@ the correction knows the screen is wrong, and they have no way to report it.
     title) and is **proven non-vacuous**: restoring `nowrap` on the right-hand group reproduces the
     historical **394px** overflow and it catches it.
     `probe-route-breakdown-onscreen.mjs` prints the three shapes as read.
+  - **IT TOOK `check:ui`'s PITCH-EXPAND STEP WITH IT, AND THAT STEP WAS RIGHT TO GO RED.** That
+    walk found the pitch row by the text **`"▸ more"`** — a string only the old pitch row
+    rendered, so once both kinds of row got the same bare `▸` the needle matched nothing and the
+    step reported *"the pitch-expand render path went unchecked"*. It was not a stale assertion
+    about cosmetics: expanding a pitch is the render path that blanked in #359, and it carries the
+    photos, the comments and PitchConsensus. It clicks the row by `data-kind="pitch"` now — what
+    the step has always MEANT — and a travel section is deliberately not accepted, since expanding
+    one exercises a much smaller path. Verified non-vacuous by the capture growing: Plan 21,576
+    chars against pitch-expanded 21,820. **A guard keyed on a string that one component happens to
+    render is keyed on that component**, and it will go quiet rather than wrong the day the
+    component changes — this one failed loudly only because it counts a miss as a failure.
   - Injection-tested **6/6** (`scripts/oneoff/inject-route-breakdown-cases.mjs`). Cases 1-3 are the
     original three re-run against the merged section — *a guard that still catches everything it
     used to* is half the claim. **Case 4 is the property the merge added**: reorder the rows into

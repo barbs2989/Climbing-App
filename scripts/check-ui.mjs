@@ -614,23 +614,31 @@ try {
       await capture("route:" + sub);
     }
     // Expanding a pitch is its own render path, and the one that blanked in #359.
-    // PITCH-BY-PITCH lives on Plan, not Overview — it moved there with PROTECTION and the
-    // rappels so the tab that describes the approach and the descent also describes the
-    // climbing between them. Tapping the wrong tab here does not fail loudly on its own:
-    // it finds no "more" control and reports the render path as unchecked, which is the
-    // message that caught this. Plan is absent on a route with no plan content, so fall
-    // back to Overview rather than assuming the tab is there.
+    // ROUTE BREAKDOWN lives on Plan, not Overview — the pitches moved there with PROTECTION
+    // and the rappels so the tab that describes the approach and the descent also describes
+    // the climbing between them. Tapping the wrong tab here does not fail loudly on its own:
+    // it finds no pitch row and reports the render path as unchecked, which is the message
+    // that caught this. Plan is absent on a route with no plan content, so fall back to
+    // Overview rather than assuming the tab is there.
     if (!(await tap("Plan"))) await tap("Overview");
     await page.waitForTimeout(1500);
+    /* IT USED TO HUNT FOR THE TEXT "▸ more", which was the pitch row's expander and existed
+       nowhere else in the app. Merging PITCH-BY-PITCH and ROUTE BETA into one ordered list
+       gave both kinds of row the same bare "▸", so that needle stopped matching and this step
+       went red — correctly: the render path really had stopped being walked.
+       It clicks the ROW now, selected by the `data-kind` the rows carry for check:pitch-split.
+       That is what the step has always meant ("expand a PITCH"), and unlike a glyph it cannot
+       be satisfied by a "more" belonging to some other control. A travel section is
+       deliberately not accepted: it has no photos, no comments and no PitchConsensus, so
+       expanding one exercises a different and much smaller render path. */
     const expanded = await page.evaluate(() => {
-      let t = null;
-      document.querySelectorAll("div,span").forEach((e) => { if (!t && e.children.length === 0 && /^.?\s*more$/.test((e.textContent || "").trim())) t = e; });
-      if (!t) return false;
-      (t.parentElement || t).click();
+      const row = document.querySelector('[data-kind="pitch"]');
+      if (!row) return false;
+      (row.querySelector('[role="button"]') || row).click();
       return true;
     });
     if (expanded) { await page.waitForTimeout(2000); await capture("route:pitch-expanded"); }
-    else fail("route:pitch-expanded", `no expandable pitch found on ${JSON.stringify(ROUTE)} — the pitch-expand render path went unchecked`);
+    else fail("route:pitch-expanded", `no [data-kind="pitch"] row found on ${JSON.stringify(ROUTE)} — the pitch-expand render path went unchecked. Either this route describes no roped pitches, or ROUTE BREAKDOWN stopped tagging its rows.`);
   }
 
   // ---- named interaction flows -------------------------------------------
