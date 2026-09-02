@@ -9,13 +9,18 @@
 //     Peak summit" is not the townsite, "Aasgard Pass Gully Break" is not the pass. The match is
 //     therefore anchored, not a substring sweep.
 //   * Pins are clustered by position; the largest cluster is the donor, and it must hold at least 3
-//     pins on at least 3 routes or there is no consensus and the run refuses.
+//     pins on at least 3 routes or there is no consensus and the run refuses. IT MUST ALSO BEAT THE
+//     RUNNER-UP BY 2 — a tie is not a majority, and "Lake Ingalls" is exactly that shape (3 pins on
+//     3 routes at each of two points), where the sort would otherwise pick a winner arbitrarily.
 //   * ELEVATION IS THE DISCRIMINATOR. A pin that is genuinely a different point on a broad feature
 //     carries a different height; one that claims the majority's height at a different coordinate is a
 //     coordinate error. Only the latter is repaired, and only lat/lng is written — a pin's own
 //     elevation is left alone.
 //   * Nothing is typed. The replacement comes from a donor row read at run time, so a repair needing a
 //     coordinate the catalog does not hold cannot be expressed.
+//   * A row that ALREADY holds the feature at the consensus is left alone. Some rows store one place
+//     twice, once in the consensus and once displaced; moving the outlier onto the donor would replace
+//     a displacement with a duplication. Those rows want reading, not a coordinate copied.
 //
 // MEASURED for "Monte Cristo Townsite" (batch 84): 7 pins name Monte Cristo across the catalog. The
 // majority is 3 pins at 47.98556,-121.39389 @ ~2,762 ft — which matches the published townsite
@@ -74,6 +79,16 @@ if (maj.members.length < 3 || majRoutes < 3) {
   console.error(`majority is ${maj.members.length} pin(s) on ${majRoutes} route(s) — not a consensus, refusing`);
   process.exit(1);
 }
+// A TIE IS NOT A MAJORITY. "Lake Ingalls" has 3 pins on 3 routes at one point and 3 on 3 at another;
+// the sort then picks whichever happened to come first, and the script would confidently "repair" one
+// group into the other with nothing to say which is right. Require a strict margin over the runner-up.
+const runner = clusters[1];
+if (runner && maj.members.length - runner.members.length < 2) {
+  console.error(`majority is ${maj.members.length} pin(s) against a runner-up of ${runner.members.length} ` +
+    `at ${runner.lat},${runner.lng} — too close to call, refusing.\n` +
+    `  Settle it against a published coordinate before repairing either way.`);
+  process.exit(1);
+}
 const majElev = maj.members.map(m => m.p.elev).find(e => typeof e === "number");
 const donor = maj.members.find(m => m.p.elev === majElev) || maj.members[0];
 console.log(`majority: ${maj.members.length} pins on ${majRoutes} routes at ${donor.p.lat},${donor.p.lng} @ ${majElev} ft\n`);
@@ -88,6 +103,16 @@ for (const c of clusters.slice(1)) {
       : !sameish ? `LEFT ALONE — elevation ${m.p.elev} is far from the majority's ${majElev}, so it may be a different point`
       : "DISPLACED — claims the majority's height at a different coordinate";
     console.log(`  ${m.id.padEnd(42)} [${m.i}] ${m.p.lat},${m.p.lng} @ ${m.p.elev}  ${sep.toFixed(0)} m out — ${verdict}`);
+    // DO NOT CREATE A DUPLICATE. Some rows store the same feature TWICE — one copy in the consensus
+    // and one displaced (wa_le_conte_mountain_northern_aspect holds Cascade Pass at both). Moving the
+    // outlier onto the donor would put two identical pins on one row, turning a displacement into a
+    // duplication. That row needs its pin list read, not a coordinate copied.
+    const twin = pins.find(o => o.id === m.id && o.i !== m.i &&
+                                hav([donor.p.lat, donor.p.lng], [o.p.lat, o.p.lng]) < CLUSTER_M);
+    if (sep > WRONG_M && sameish && twin) {
+      console.log(`       ^ LEFT ALONE — this row already holds "${nameArg}" at the consensus (pin ${twin.i}); repairing would duplicate it`);
+      continue;
+    }
     if (sep > WRONG_M && sameish) plan.push({ ...m, sep });
   }
 }
