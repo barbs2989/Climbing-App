@@ -4298,6 +4298,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **NOT-COMPUTED IS NOT NOT-MISPLACED, and conflating them nearly wrote a WRONG number with a
+    measurement to justify it.** The five camps stored at two elevations were taken back to the
+    ground — the method that settled Skagit Queen — and the first pass "settled" Sahale Glacier
+    Camp: three pins read 7,376-7,380 ft, which admits the majority's 7,400 and refuses 7,500. Every
+    fabrication check passed: clean 4-decimal tails, not on any chord.
+    - **The gazetteer inverted it.** *"Sahale Glacier Camp, Sahale Arm Trail"* sits **458 m** from
+      those pins on ground of **7,612 ft** — which is what the pins THEMSELVES state (7,600). So the
+      pin's elevation is right, its COORDINATE is 458 m downhill, and both bivy values (7,400/7,500)
+      are low. Applying the "settled" repair would have moved the row FURTHER from the truth.
+    - Skagit Queen was decidable because its gazetteer feature was **7 metres** away. That distance
+      was the whole difference and it had not been made a rule. It is now: a pin may only speak for
+      a camp when an independent record of that camp is within **250 m** of it.
+    - **The gate caught a second one immediately.** Two *Boston Basin high camp* pins sit **1,051 m**
+      from *"Boston Basin High Camp, Boston Basin Trail"*, reading 5,395 ft where the real camp
+      stands on 6,248. The one pin that IS corroborated (0 m) reads 6,248 and admits BOTH stored
+      values, so that split honestly stands.
+    - **A SPREAD BELOW THE INSTRUMENT IS A CONSISTENCY DEFECT, NOT AN ACCURACY ONE.** Camp Schurman's
+      two values are **20 ft** apart and Thumb Rock's **15 ft**; 3DEP is a 10 m grid on steep ground.
+      Asking it to choose is asking a question finer than the instrument, and an answer would be
+      noise wearing a verdict's clothes. Those want one value used everywhere — a choice about the
+      record — not a measurement.
+    - **RESULT: 0 of 5 settled**, and two misplaced pins found as a by-product. The splits are
+      REPORTED and unrepaired; picking on the majority alone is the *ten agreeing records are one
+      claim counted ten times* trap this file already records.
   - **THE CROSS-CHECK WAS NOT REGION-BOUNDED WHILE THE DONOR INDEX BESIDE IT WAS, and that cost
     real answers.** `wpElev` was keyed by NAME ALONE; `wpByRegion` two lines down is keyed by
     name+region — same store, same identity function, two different scopes. So a namesake anywhere
