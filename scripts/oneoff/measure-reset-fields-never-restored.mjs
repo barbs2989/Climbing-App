@@ -30,6 +30,17 @@
 //                      VOUCH_BOOST[id] which trustFactors adds separately. Reporting 0 stored
 //                      vouches for an account with none is true.
 //
+// UPDATED after #1457. `hikingSpeedFtHr` WAS a second defect of exactly the catchLedger shape and
+// this file's first version missed it, because I read the fields I had guessed at rather than the
+// list. The script now prints ME-QUALIFIED reads and a SETTLED reason per field, so a re-run is a
+// diff against a known answer instead of a fresh investigation — and it FAILS on a settled entry
+// whose field is no longer unrestored, which is how `catchLedger` correctly dropped out once
+// meLive started carrying it.
+//
+// THE CLASS IS CLOSED: 0 fields with an ME-qualified read and no settled reason. Two were real
+// (catchLedger #1424, hikingSpeedFtHr #1457); the rest are not settable, gated at the read,
+// supplemented, or shadowed by App state that initialises from ME and then owns the value.
+//
 // A RAW READ COUNT IS THE WRONG INSTRUMENT and the first run showed why: `lat` scored 144 because
 // routes, areas and waypoints all have one. Counting only `ME.<field>` drops the whole list to
 // single digits (years 6, lat 4, everything else <= 2), which is small enough to read. Do that
@@ -68,6 +79,9 @@ const meLiveFields = new Set([...ml[0].matchAll(/([a-zA-Z_][a-zA-Z0-9_]*):/g)].m
 // ---- 3. is it read anywhere at all? ----
 const all = app + core + rd;
 const readCount = (f) => (all.match(new RegExp("\\.\\b" + f + "\\b", "g")) || []).length;
+// ME-QUALIFIED reads are the only ones that touch the blank object. The bare count is noise:
+// `lat` scores 144 because routes, areas and waypoints all have one.
+const meReads = (f) => (all.match(new RegExp("\\bME\\." + f + "\\b", "g")) || []).length;
 // trustFactors is the one function known to turn these into a number on screen
 const tf = /function trustFactors\(c\)\{[\s\S]*?\n\}/.exec(core) || [""];
 const inTrust = (f) => new RegExp("\\bc\\." + f + "\\b").test(tf[0]);
@@ -78,6 +92,7 @@ const rows = reset.map((f) => ({
   sync: syncWrites.has(f),
   meLive: meLiveFields.has(f),
   reads: readCount(f),
+  me: meReads(f),
   trust: inTrust(f),
 }));
 
@@ -86,11 +101,38 @@ console.log(`  restored by the sync hack: ${rows.filter((r) => r.sync).length}`)
 console.log(`  restored by meLive:        ${rows.filter((r) => r.meLive && !r.sync).length}`);
 console.log(`  NOT restored anywhere:     ${unrestored.length}\n`);
 
-console.log("  NOT RESTORED — sorted by how often the field is read:\n");
-for (const r of unrestored.sort((a, b) => b.reads - a.reads)) {
-  const flag = r.trust ? "  <-- READ BY trustFactors" : "";
-  console.log(`    ${r.f.padEnd(22)} ${String(r.reads).padStart(4)} read(s)${flag}`);
+// SETTLED, so a re-run is a diff against a known answer rather than a fresh investigation.
+// Each was read at its ME-qualified sites; the reason is what makes it a non-finding.
+const SETTLED = {
+  hikingSpeedFtHr: "FIXED #1457 — compat and \"Speed match\" read it; now via __set_MY_PACE/paceOf",
+  lat: "no App state holds coordinates at all, and the radius control SAYS \"Needs your location\"",
+  lng: "same as lat — an input the app never collects, not a broken wire",
+  riskTolerance: "supplemented at BOTH reads (meRisk || ME.riskTolerance)",
+  photos: "profilePhotos = useState(ME.photos||[]) initialises from it, then is the live source",
+  years: "never settable (EditProfileScreen does not collect it) and max:0 excludes it from the score",
+  communityVouches: "session-only; received vouches arrive via VOUCH_BOOST, added separately",
+  age: "not collected (no \\bage\\b in EditProfileScreen) and the hero gates it: ME.age ? name+age : name",
+  belayDevices: "not collected; both reads guard it (Object.keys(...||{}) and an empty-state test)",
+  philosophy: "not collected; the hero renders it only as ME.philosophy ? ... : null",
+  emergencyContact: "not collected; the float plan reads ((ME.emergencyContact||\"\")+\"\").trim()",
+  courses: "resumeCourses = useState(ME.courses||[]) initialises from it, then is the live source",
+  vouches: "supplemented at its one read (ME.vouches||[]); vouches are session state anyway",
+  stats: "Leaderboards spreads {...ME.stats} and then overrides every key from the real meStats",
+  ticks: "NOT A READ — the only ME.ticks occurrence is inside a comment. This count does not mask them.",
+};
+
+console.log("  NOT RESTORED — ME-qualified reads are what matter; the bare count is noise:\n");
+for (const r of unrestored.sort((a, b) => b.me - a.me || b.reads - a.reads)) {
+  const flag = r.trust ? "  [trustFactors]" : "";
+  console.log(`    ${r.f.padEnd(22)} ME.${r.f}: ${String(r.me).padStart(2)}   (${String(r.reads).padStart(3)} bare)${flag}`);
+  if (SETTLED[r.f]) console.log(`        settled: ${SETTLED[r.f]}`);
 }
+const openRows = unrestored.filter((r) => r.me > 0 && !SETTLED[r.f]);
+console.log(`\n  ${openRows.length} field(s) with ME-qualified reads and no settled reason` +
+  (openRows.length ? ": " + openRows.map((r) => r.f).join(", ") : " — the class is closed."));
+// A settled entry for a field that is now restored, or gone, is bookkeeping that has rotted.
+const stale = Object.keys(SETTLED).filter((f) => !unrestored.some((r) => r.f === f));
+if (stale.length) { console.error(`\n  STALE settled entries (now restored or gone): ${stale.join(", ")}`); process.exitCode = 1; }
 
 console.log(`\n  A read count is not a defect count. It counts every \`.field\` in three files, so a`);
 console.log(`  field named the same on another object inflates it. Read the sites before acting —`);
