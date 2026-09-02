@@ -3231,7 +3231,7 @@ const lbRowName=(rank,name,isMe,verified,location,value,suffix)=>[rank,name,isMe
    the board ever holds real climbers. A seed profile has a numeric id; a real one carries a uuid,
    and id 0 is you (see check:seed-history for why `0` cannot be tested as falsy). */
 const lbExampleCount=rows=>(rows||[]).filter(pp=>pp&&pp.id!==0&&typeof pp.id==="number").length;
-function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catchCredits,onMessage,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById,logsUnavailable,connectionsUnavailable}){
+function Leaderboards({meLive,onView,onClimb,logs,connections,friendState,onFriend,catchCredits,onMessage,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById,logsUnavailable,connectionsUnavailable}){
   const board=rankBoard,setBoard=setRankBoard;
   const [scope,setScope]=useState("overall");const [lbN,setLbN]=useState(15);
   const [areaId,setAreaId]=useState("usa");
@@ -3270,7 +3270,7 @@ function Leaderboards({onView,onClimb,logs,connections,friendState,onFriend,catc
     });
     return {vertYr,daysYr,onsights:{rock:onsightRock,bouldering:onsightBoulder,sport:onsightSplit.sport,trad:onsightSplit.trad},peaks,sends,classics,highpoints};
   })();
-  const me={...ME,routesLogged:logs.length,vertYr:meStats.vertYr,daysYr:meStats.daysYr,classics:meStats.classics,highpoints:meStats.highpoints,peaksListed:meStats.peaks.life,stats:{...ME.stats,onsights:meStats.onsights,peaks:meStats.peaks,sends:meStats.sends}};
+  /* Spread the SELF OBJECT, not a bare ME. ME's catchLedger is zeroed by the sign-in reset, so this row used to score a climber's belay catches at 0 while the Profile scored them in full -- one climber, two trust scores, on the metric this board is ABOUT. */const me={...(meLive||ME),routesLogged:logs.length,vertYr:meStats.vertYr,daysYr:meStats.daysYr,classics:meStats.classics,highpoints:meStats.highpoints,peaksListed:meStats.peaks.life,stats:{...ME.stats,onsights:meStats.onsights,peaks:meStats.peaks,sends:meStats.sends}};
   const ALL=[...CLIMBERS,...(showOnRanks?[me]:[]),...(DEMO_FILLERS?FILLER_CLIMBERS:[])].filter(pp=>!(blocked&&blocked.some(b=>b.id===pp.id)));
   const acount=id=>ROUTES.filter(r=>inArea(r.mountainId,id)).length;const aCur=MOUNTAINS.find(m=>m.id===areaId)||{};const aChain=(()=>{const out=[];let cur=MOUNTAINS.find(m=>m.id===areaId);let g=0;while(cur&&g++<10){out.unshift(cur);if(cur.id==="usa"||!cur.parentId||cur.parentId==="world")break;cur=MOUNTAINS.find(m=>m.id===cur.parentId);}return out;})();const aKids=MOUNTAINS.filter(m=>m.parentId===areaId&&acount(m.id)>0);
   const personInArea=(pp,aid)=>!!(pp.objectiveIds&&pp.objectiveIds.some(id=>{const r=ROUTES.find(x=>x.id===id);return r&&inArea(r.mountainId,aid);}));
