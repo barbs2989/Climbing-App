@@ -128,8 +128,10 @@ function vScore(c){if(!c)return 50;var tf=trustFactors(c);var sum=0,max=0;tf.for
    LARGEST-REMAINDER, not per-factor rounding. Rounding each share independently does not sum to
    the headline -- which is the entire point of the change -- so the shares are floored and the
    leftover units handed out by descending fractional remainder. That makes sum(share) === vScore
-   by construction rather than by luck, and check:trust-breakdown asserts it over a spread of
-   accounts. Ties break toward the EARLIER factor, so the order is stable rather than
+   by construction rather than by luck. check:trust-breakdown asserts it over a spread of accounts
+   AND renders the panel, because the sum holding says nothing about which number reaches a screen.
+   That guard was named here for a while before it existed, which is worse than no claim at all:
+   a reader looking for coverage found a sentence saying it was covered. Ties break toward the EARLIER factor, so the order is stable rather than
    engine-dependent. */
 function trustContributions(c){
   var tf=trustFactors(c);
