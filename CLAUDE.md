@@ -1053,9 +1053,26 @@ a build error, but a screen that renders wrong or not at all.
       `DbGuides` gates *"No guides listed yet."* and *"No reviews yet."* on `guidesError`/`revError`.
       Only the profile read was ungated.
     - **`isGuideVerified(credentials || [])` is deliberately NOT gated**: a failed credentials read
-      drops the ✓ badge, which is **under**-claiming rather than a false statement, and there is no
-      second source to fall back to (unlike `check:verification-fallback`, where the session carries
-      the answer). Recorded so it is not re-derived as a defect.
+      drops the ✓ badge, which is **under**-claiming rather than a false statement. `verified` is
+      consumed at exactly three places and every one is that badge and nothing else
+      (`DbGuideDashboard` once, `DbGuides` twice) — nothing downstream gates an action, a price, a
+      booking, or a claim in words. Recorded so it is not re-derived as a defect.
+    - **THE REASON FIRST RECORDED HERE WAS WRONG, and the wrong reason is the dangerous half.** It
+      said *"there is no second source to fall back to"*. There is: `guide_profiles.active_disciplines`
+      is maintained by the `sync_active_disciplines()` trigger whose WHERE clause is **exactly**
+      `isGuideVerified`'s predicate (`kind='primary_track'`, `status='verified'`, unexpired), and it
+      arrives on a **different query**, so a failed credentials read does not lose it.
+      - **Falling back to it would be a REGRESSION, which is why the conclusion survives the
+        correction.** `0021` says outright that it is a denormalised **cache** with **no cron** —
+        reconciliation is opportunistic, *"the cache is never more than one page-load stale"* — so a
+        credential that has quietly crossed `verified_expires_at` leaves `active_disciplines`
+        non-empty until `reconcile_guide_verification()` runs. `isGuideVerified` re-checks expiry at
+        render, which is precisely why the badge is honest. Substituting the cache would risk showing
+        **✓ for a lapsed credential**: over-claiming a safety credential, which is worse than the
+        under-claim it would cure.
+      - So the rule is **not** *"no second source exists"* but *"the second source cannot re-check
+        expiry"*. Written the old way, a future session that goes looking, finds `active_disciplines`
+        and "fixes" the badge with it would ship exactly the defect this bullet exists to prevent.
     - Executed rather than rendered, and here that is not convenience: the dashboard needs a session,
       a portal and four queries, and it lives in `lib/` so it is not in the core bundle. `lib/db.js`
       is ~164kB against core's ~1.1MB, so the second esbuild is cheap.
@@ -3159,15 +3176,39 @@ a build error, but a screen that renders wrong or not at all.
       aspect would manufacture findings with total confidence — the exact failure this audit's
       first run already produced from a different cause. Only pins within a kilometre are quoted;
       the rest are counted and **explicitly refused**.
-    - **THE FIRST ROW THE GEOMETRY ACTUALLY SETTLED IS REPAIRED**, and it is worth recording what
-      "decidable" had to mean before a field driving the sun/shade readout was touched.
-      `wa_spire_point_southwest_face` stored `aspect: "E"` — morning sun on a line that catches
-      afternoon sun. **FOUR independent records** said southwest: the route's own **name**; its
-      **beta** (*"The south face is accessed from Spire Col at 7,760 feet"*); its **descent_text**
-      (*"Descend the same southwest face line"*); and the **geometry**, where the *"Class 4 summit
-      chimney"* pin bears **240°** from the Summit pin at 92 m, with Spire Col at 231 m and every
-      approach pin WSW. Against them stood `aspect` and `face`, which are **one** claim — the same
-      enrichment — so their agreeing with each other is not corroboration.
+    - **THIS REPAIR WAS WRONG, AND BOTH HALVES OF ITS EVIDENCE FAILED DIFFERENTLY. READ THIS
+      BEFORE TRUSTING ANY VOTE-COUNT ARGUMENT IN THIS FILE.** `wa_spire_point_southwest_face`
+      stored `aspect: "E"`; it was changed to SW on **four claimed-independent records** — the
+      route's own **name**; its **beta**; its **descent_text** (*"Descend the same southwest face
+      line"*); and the **geometry**, where the *"Class 4 summit chimney"* pin bears **240°** from
+      the Summit pin at 92 m, with Spire Col at 231 m and every approach pin WSW. Neither the
+      count nor the geometry survives inspection.
+      - **The geometry is not independent — it is the APPROACH BEARING.** Measured 2026-08-27:
+        **four** pins bear *exactly* 240° from the summit — Downey Creek Trailhead (13,033 m),
+        Itswoot Ridge camp (1,844 m), Spire Col (231 m) and the chimney (92 m). They lie on **one
+        straight line** through the summit. Spire Col sits at exactly `0.921052631579` of the way
+        from Itswoot camp to the chimney — its own mileage fraction, 13.75 between 12 and 13.9 —
+        matching to 7e-15 of a degree; the chimney lies on the trailhead→summit line **0.09 m**
+        off; and the 14-15 decimal tails on those pins have reduced denominators 7, 56 and 140,
+        exactly those of 12/14, 13.75/14 and 13.9/14. The pins are **interpolated along the
+        approach chord**, so their shared 240° is the bearing you walk in on. It says nothing
+        about which way the face points.
+      - **The beta was MISQUOTED.** It was cited as *"The south face is accessed from Spire Col at
+        7,760 feet"* — which says **south**, not southwest — and the very next sentence of that
+        same field reads *"traverses class 3 ledges on the **southeast** face"*. A field that
+        contradicts the conclusion was counted as a vote for it.
+      - **`pitch_detail` was never opened, and it says SOUTHEAST twice** (*"base of southeast face
+        at 8,000 feet"*, *"Ledge traverse across southeast face"*). The honest tally inside the row
+        is southwest 3 (name, descent_text, rope_note) against southeast 3 (beta once, pitch_detail
+        twice), plus one bare "south" — **unsettled from the row alone**, which is precisely why
+        the geometry got reached for.
+      - Research (batch 59) finds the standard route climbs via the **Dana Glacier** — which this
+        row's own `overview` places **east** — to the southeast ridge. So the stored `aspect: SW`
+        and `face: "Southwest Face"` are reported **wrong**, and the row's `name` is wrong with
+        them.
+      - **The general rule: when a repair record enumerates N corroborating records, re-read every
+        one.** A vote count is only as good as the reading behind it, and the field nobody opened
+        is where the contradiction usually sits.
     - **The overview's "east" is about the DANA GLACIER, not the route**, which is the kind of
       thing a keyword scan over prose would have counted as a vote. Directions in prose have to be
       read for what they modify.
@@ -3175,9 +3216,13 @@ a build error, but a screen that renders wrong or not at all.
       THE PEAK rendering *"East Face"* beside a southwest sun readout — one screen, two answers.
       Both replacement values come from the row itself; nothing is researched.
     - The applier **re-measures the geometry leg** rather than quoting it, and refuses if the
-      chimney does not bear into the S/W half — so the argument has to still hold at apply time,
-      not merely when it was written. 4 findings → 3, and the two the geometry refuses to speak on
-      are untouched.
+      chimney does not bear into the S/W half. **That safeguard cannot fire**, and the entry above
+      says why: the chimney is interpolated onto the trailhead→summit line by construction, and the
+      trailhead is south-west of the summit, so the test asks a question whose answer it computed
+      itself. *A guard whose input is derived from the thing it checks is not a guard.*
+      The original intent — that the argument still hold at apply time and not merely when it was
+      written — is sound and needs a leg that is not computed from the pins. It reported 4 findings
+      → 3, and the two the geometry refuses to speak on are untouched.
     - Measured on the four live findings, it refuses on **two of four** — closest pins 6.0 km and
       1.8 km out — and speaks on the other two. `wa_spire_point_southwest_face` becomes decidable:
       its name says SW, its aspect says E, and *Spire Col* sits **138 m WSW** of the summit pin. It
