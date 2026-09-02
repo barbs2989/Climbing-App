@@ -2160,7 +2160,7 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      499 routes, not a phrase), and shows the label. Printing the raw code in the summary line
      would make the collapsed field read "solitude: 4". */
   const objLabel=function(k,v){if(k[3]!=="enum"||!k[4])return v;var hit=k[4].filter(function(o){return String(o[0])===String(v);})[0];return hit?hit[1]:v;};
-  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=_dget(o,k[0]);return (v==null||String(v).trim()==="")?null:k[1]+": "+v;}).filter(Boolean).join(" · ");};
+  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=_dget(o,k[0]);/* `String(v)` HERE PUT "[object Object]" ON EVERY ROUTE CARRYING seasonal_hazards. The dotted key specs are the real fix (see the note on SEASHAZ_KEYS), and this is the fail-safe: `crevasses` is a string on 453 rows and an OBJECT on 34, so no single key spec is right for it, and the next column to drift shape would reintroduce the defect. fmtSlingVal is the app's own leaf flattener — despite the name it is generic (string, number, array, keyed object) — so there is one flattener rather than two that drift. */var s=(v!=null&&typeof v==="object")?fmtSlingVal(v):v;return (s==null||String(s).trim()==="")?null:k[1]+": "+s;}).filter(Boolean).join(" · ");};
   const _clip=function(s){return s.length>44?s.slice(0,44)+"…":s;};
   /* `cur` drives three things, and "—" is load-bearing in all of them: the collapsed summary
      line, `wasEmpty` (which decides whether one climber can fill a blank or three must agree),
