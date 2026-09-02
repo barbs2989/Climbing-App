@@ -1014,13 +1014,23 @@ a build error, but a screen that renders wrong or not at all.
           It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
           unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
           **absent** from the healthy one.
-        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
-          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
-          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
-          browser. That remains the best explanation for two differing 5,026-char captures and it
-          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
-          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
-          run to confirm.
+        - **SOLVED, AND IT WAS NEVER THE CLOCK — `tapByText` WAS CLICKING THE WRONG ELEMENT.**
+          Dumping every match on a quiet box settled it: **two** elements have the exact text
+          `Reports` — the rating summary's label (*"4.2 ★ 5 Reports"*, a **DIV**) and the sub-tab
+          **BUTTON** — and the DIV comes first in DOM order. `tapByText` clicked `hit[0]`, the
+          label, which does nothing, and returned **true**. The caller then measured OVERVIEW,
+          which is why the capture was 5,026: it *was* Overview. The clock hypothesis is withdrawn.
+        - **`check:overflow` HAD THE SAME DEFECT AND HAS SINCE #818**, which is the part worth
+          keeping. It calls `tapByText(page, "Reports")` for that sub-tab, gets `true`, and reports
+          a `route:Reports` row that is **Overview measured twice** — false coverage in a shipped
+          guard, invisible because the row is present and green. Fixed in the shared helper rather
+          than per-caller: when several elements share the text it now prefers a real control
+          (`BUTTON`/`A`/`role="button"`) over the first match.
+        - **Verified both ways on a quiet box** (load 4.7): `check:outage` now captures
+          `RouteDetail:Conditions` at **3,388 chars** — distinct from Overview's 5,026 and Photos'
+          678, so the tab genuinely rendered — and `check:overflow` still passes, now reaching that
+          sub-tab for real. **A click that returns true is not evidence it navigated**, and the
+          helper picking the first match is how that stayed hidden for months.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
