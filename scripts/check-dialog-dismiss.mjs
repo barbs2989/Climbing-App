@@ -83,14 +83,23 @@ function elementRegion(src, at) {
 // crew, or being done for the day. With a word scan, stripping the picker's Back button AND
 // its X still passed. So a candidate only counts when it is the label of an actual BUTTON.
 const BACK_GLYPH = "←|‹|❮|&larr;|&lsaquo;";
+// The CLOSE glyph was matched ONLY on its own (`>✕<`), while the back glyph was already allowed
+// as a prefix to a word (`>← Back<`). That asymmetry reported a real, discoverable control as
+// missing: the full-screen route map's exit reads `✕ Close`, which is the clearest dismiss
+// control in the app and matched nothing here. Found when giving that view a dialog role pulled
+// it into this guard for the first time. Allowing the glyph as an optional PREFIX makes the two
+// symmetric and loosens nothing else -- the words still only count as a BUTTON's own label, which
+// is the property the injection in this file's header exists to protect.
+const CLOSE_GLYPH = "×|✕|✖|&times;";
 const WORDS = "Cancel|Done|Close|Back|Skip(?: for now)?|Not now|Maybe later|Dismiss";
+const GLYPH = `${BACK_GLYPH}|${CLOSE_GLYPH}`;
 const BUTTON_LABEL = [
-  new RegExp(`aria-label\\s*=\\s*"\\s*(?:${BACK_GLYPH})?\\s*(?:${WORDS})`, "i"),
-  new RegExp(`>\\s*(?:${BACK_GLYPH})?\\s*(?:${WORDS})\\s*<`),
-  new RegExp(`\\{\\s*"\\s*(?:${BACK_GLYPH})?\\s*(?:${WORDS})\\s*"\\s*\\}`),
+  new RegExp(`aria-label\\s*=\\s*"\\s*(?:${GLYPH})?\\s*(?:${WORDS})`, "i"),
+  new RegExp(`>\\s*(?:${GLYPH})?\\s*(?:${WORDS})\\s*<`),
+  new RegExp(`\\{\\s*"\\s*(?:${GLYPH})?\\s*(?:${WORDS})\\s*"\\s*\\}`),
   /aria-label\s*=\s*"[^"]*\b(?:close|back|cancel|dismiss)\b/i,
-  />\s*(?:×|✕|✖|&times;)\s*</,
-  /\{\s*"(?:×|✕|✖)"\s*\}/,
+  new RegExp(`>\\s*(?:${CLOSE_GLYPH})\\s*<`),
+  new RegExp(`\\{\\s*"(?:${CLOSE_GLYPH})"\\s*\\}`),
 ];
 
 // Every <button> in the region, as its own subtree, so a label is tested against the control

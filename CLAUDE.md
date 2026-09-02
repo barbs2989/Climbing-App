@@ -32,6 +32,7 @@ npm run check:approve-route-columns # nothing may fork approve_new_route again (
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
+npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
@@ -443,6 +444,33 @@ a build error, but a screen that renders wrong or not at all.
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
+- **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
+  ITSELF IS A SCREEN.** 13 opaque full-screen views exist (`position:fixed` + `inset:0` +
+  `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
+  rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
+  by a dialog role as the region's own first element — could not see them. That blind spot is what
+  hid the Manage areas outage defect (#1365).
+  - **The split is structural, not a taste call.** `App` returns five of them EARLY — Edit profile,
+    Guide dashboard, Calendar, Messages, Become a listed guide — so the rest of the app is not in
+    the DOM at all and there is nothing behind them to be modal over. Those are **screens** and a
+    dialog role would be wrong. The other seven render inside App's main return, over an app that
+    is still there, and are genuinely modal.
+  - **One of the seven was neither, and only reading inside the element caught it.** The `zIndex:3000`
+    match is the FireMap **`Suspense` fallback** (*"Loading fire map…"*), a loading state rather than
+    a dialog. It was mislabelled *"Trip recap"* by a scan that took the first capitalised text after
+    the tag and ran past the element's own end — the proximity trap this file records for dense
+    lines, arriving in a labeller instead of a detector. **Read what is INSIDE the element, not what
+    follows it.**
+  - Six therefore gained `role="dialog" aria-modal="true"` and an `aria-label` taken from their own
+    visible title. Overlay count went **54 → 57**, and exactly one newly-discovered state needed a
+    payload (`openEvent`) — far less than the whole set, because most were already discovered by
+    their boolean flag and only the role was missing.
+  - **`check:dialog-dismiss` then reported the full-screen route map as having no way out, and it
+    was WRONG in a way worth keeping.** That map's exit reads **`✕ Close`** — the clearest dismiss
+    control in the app. The guard allowed a BACK glyph as a prefix to a word (`>← Back<`) but
+    matched the CLOSE glyph only alone (`>✕<`), so a glyph-plus-word close button matched nothing.
+    Made symmetric. The widening was verified not to silence the real question: it cleared the map
+    and **kept** the other finding until that one was separately shown to be the Suspense fallback.
 - **`check:overlay-discovery`** asks whether every modal the app declares can still be
   *reached* by the three browser guards. They all walk "every overlay" and all get that list
   from `scripts/lib/overlay-scaffold.mjs`, which until 2026-08-09 discovered overlays by a
@@ -964,10 +992,19 @@ a build error, but a screen that renders wrong or not at all.
           nothing wrong. This is the same failure the nav-click guard exists for, one level down,
           and the reason to compare the capture against the PREVIOUS screen rather than trust the
           return value.
-        - **Neither label changes the screen even when tried in turn**, and the buttons carry no
-          `textTransform`, so the innerText really is verbatim. Why the click does not take is
-          still unknown — start there, and consider clicking Conditions BEFORE Photos so the
-          comparison baseline is the Overview capture.
+        - **Neither label changes the screen when clicked AFTER Photos**, and the buttons carry no
+          `textTransform`, so the innerText really is verbatim.
+        - **ORDER IS THE ANSWER TO HALF OF IT, AND `check:overflow` HAD IT ALL ALONG.** That guard
+          walks all six as `["Overview","Reports","Photos","Partners","Plan","Safety"]` and has
+          done since #818 — **from Overview, "Reports" clicks fine**; from Photos it does not.
+          Looking at the working sibling before writing a new walk would have skipped two runs.
+        - **It is still NOT shippable, and the remaining reason is the interesting one.** Reordered,
+          the click lands (no `__navFail`) — but the Conditions capture comes back **5026ch, exactly
+          Overview's**, in both the healthy and failing runs. The inequality assertion passes, so
+          the strings differ while the lengths match, and nothing available explains that. Coverage
+          that cannot be explained is the false-coverage defect this file exists to prevent, so it
+          was reverted a second time rather than shipped. **Next step: prove the capture is really
+          the Conditions tab** — assert on text only that panel renders, not on length.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -6273,6 +6310,70 @@ the correction knows the screen is wrong, and they have no way to report it.
     sweep would have eaten it; and a value can hold **two** flagged leaves in one column
     (`pro_tips[0]` and `pro_tips[1]`), so an applier must accumulate per `(route, column)` or the
     second edit rebuilds from the original and silently drops the first.
+  - **`crowds` WAS ONE MECHANISM, NOT 77 CITATIONS, and half of it is a defect the no-sources
+    rule would not have caught.** It was the largest remaining column, and the enrichment had
+    estimated how busy a route is from web research and left the working out in the value. Two
+    forms, 35 edits on 34 routes, **476 → 443**
+    (`cut-web-analytics-from-crowds.mjs`, `cut-research-method-from-crowds.mjs`).
+    - **PAGE VIEWS ARE NOT ASCENTS.** *"31,125 total Mountain Project page views / ~148 monthly"*,
+      *"3,400+ AllTrails reviews"*, *"only 1,043 total page views since being posted"*. Strip the
+      publisher and these **still** do not belong on screen: a figure that precise reads as a
+      measurement of the mountain when it measures a **website**. Precision borrowed from the
+      wrong subject — worth stating as its own defect rather than as a citation instance. The
+      repair keeps the qualitative verdict (*"Extremely low"*, *"High"*) and cuts the analytics.
+    - The second form is the **list of sites somebody searched** — *"(a few reports per year found
+      across TrailCatJim, WTA, NWHikers, One Hike A Week)"*. The research act narrated to the
+      climber, the tier `audit:expiring-closures` already flags.
+    - **What survives is NOT also a citation, and cutting it would make the value worse.** *"based
+      on a sparse trip-report record"* stays: *trip reports* is a category rather than a
+      publisher, and it says the number is **inferred rather than counted** — the difference
+      between an estimate and a measurement. Cut the hedge with the sites and a confident figure
+      is left standing on nothing.
+    - **A CLUB NAMED AS AN OPERATOR IS NOT A SOURCE.** *"the Mountaineers run it as an official
+      Alpine Scramble"*, *"Mountaineers club scramble outings"* are facts about **who climbs the
+      route**, the same distinction that keeps 589 land-manager references. Left alone, so they
+      stay flagged — that is the deny-list being blunt, and it is why 34 values edited moved the
+      report by 33.
+  - **`map-remaining-citations.mjs` SAYS WHAT KIND OF READING LIST THIS IS**, which is the
+    difference between *"500 values, budget fifteen batches"* and *"46% of it is one word"*.
+    Over 360 matched leaves: **148 guidebook, 54 Mountain Project, 41 WTA, 37 SummitPost, 20
+    Wikipedia, 19 guidebooks, 19 Peakbagger**, then a long tail. Re-derive it before a batch; the
+    composition moves with every sweep.
+    - **THE BIGGEST FAMILY IS NOT A CITATION FAMILY AT ALL, AND SWEEPING IT ON THE WORD ALONE
+      DELETES SAFETY CONTENT.** A large share of the 167 `guidebook` hits do not attribute a claim
+      **to** a guidebook — they warn that the guidebook is **wrong, vague, or absent**, which is
+      the most useful thing you can tell a climber who owns that book. *"Guidebook route
+      description is notoriously vague"*, *"reportedly mis-locates this route"*, *"parties
+      consistently report needing more rappels than guidebook descriptions suggest"*, *"the
+      guidebook's 'Class 3' rating undersells two short sections that are genuinely Class 4-5"*.
+      `wa_mount_anderson_eel_glacier` shows the cost: **five** values say glacier recession has
+      steepened the Flypaper Pass finger to **40-45°**, *"well beyond older guidebook
+      descriptions"*. Cut the attribution and the reader loses the warning that **the book will
+      tell them 30**.
+    - **DO NOT TRUST A NUMBER FOR THAT SPLIT, AND THE REASON IS THE WARNING.** Three separate
+      ad-hoc classifiers were written to size it and **all three were wrong**, each producing a
+      plausible figure rather than an error: one missed the token that actually fired and blamed
+      a neighbouring word, one was a cartesian join, and one put `\b` after an alternation of word
+      **stems** so `mis-?locat` could never match *"mis-locates"* — silently filing disagreements
+      as plain attributions. On a hand-read sample of 27, roughly two thirds were warnings about
+      the book. **A distinction that defeated three regexes is a distinction a sweep will get
+      wrong**, so this family is read, never transformed. A count here that invites a sweep makes
+      that warning more necessary, not less.
+  - **TWO WAYS A MEASUREMENT OF THIS BACKLOG LIED, and both produced numbers rather than errors.**
+    Recorded because they came within one step of filing a fix to a guard that was correct.
+    - **A SECOND CLASSIFIER DISAGREEING WITH A GUARD IS FAR MORE LIKELY TO BE THE SECOND
+      CLASSIFIER.** A first version of that map wrote its own publisher regex, disagreed with the
+      audit, and the disagreement read as an audit defect — *"10 values are the English word
+      'mountaineers', not the club"*, which is exactly the `Source Lake` / *"water source"* trap
+      this audit already records, one word over. **The audit does not flag any of them and never
+      did**: the second regex was missing the token that actually fired (`guidebook`, `Wikipedia`,
+      `Peakbagger`) and blamed the nearest word it recognised. `NAMED` is now lifted from the audit
+      source under `ANCHOR LOST`. Same principle as the grade-parser consolidation.
+    - **A CARTESIAN JOIN IS SILENT.** The same version collected the flagged routes and the
+      flagged columns and then fetched **every column for every route** — so it scanned
+      `wa_south_ridge.approach` because some *other* route had `approach` flagged. It turned a real
+      class of **4** into a confident **62**. Every number it emitted looked like a number. Scope
+      to the `(route, column)` pairs the audit actually named.
   - **PRINT THE RESULTING SENTENCE, never just the find/repl pair.** A deletion leaves a dangling
     connective or a doubled space that is invisible from the edit alone — an earlier batch stranded
     an *"and that"* clause exactly so. The applier's dry run diffs the column's string leaves and
@@ -6284,6 +6385,29 @@ the correction knows the screen is wrong, and they have no way to report it.
     the only actionable line in the value. Naming the **agency** that issues a permit or closes a
     road is operational too. A pattern that flags "names a third party" reports all 589, and
     whoever works that list down deletes 589 phone numbers.
+  - **AND SO IS THE WORD "PEAKBAGGER", WHICH IS BOTH A WEBSITE AND AN ORDINARY ENGLISH WORD.**
+    `Peakbagger` is a site; *"a known peakbagger objective"*, *"Bulger-list peakbaggers pairing it
+    with the summit"*, *"occasional peakbagger visits mid-July through August"* are the common
+    noun for a kind of climber and cite nobody. Measured 2026-09-02: **15 of 300 flagged leaves
+    were reachable ONLY through it**, and a sweep on them would have deleted true prose about who
+    climbs a peak. The site is **capitalised and singular** (`Peakbagger`, `Peakbagger's`), so
+    every other form is blanked before matching; 385 → 370. Same shape as the `Source Lake`
+    exclusion below, one word over, and **verified against the audit's own needle** rather than a
+    re-implementation of it — a first attempt at this finding accused the word *"mountaineers"*,
+    which the needle has never matched.
+    - Injection-tested as a **PAIR**, and the pair is the point: `--inject=commonnoun` must report
+      **0** and `--inject=thesite` must report **every** value. The precision case alone is
+      satisfied by a needle that matches nothing.
+  - **A WARNING THAT A MAPPING APP IS WRONG IS NOT A CITATION, AND CUTTING IT DESTROYS NAVIGATION
+    CONTENT.** *"Do not trust AllTrails/Gaia GPX tracks that keep the route on the ridge crest
+    between the first and second gendarme — there's a real gap"*, *"Don't trust the road line on
+    Gaia/CalTopo near Olney Creek Road"*, and `what_to_bring`'s *"Green Trails / CalTopo map and
+    compass"*, which names a map the climber is told to **carry**. These name a TOOL IN THE
+    CLIMBER'S HAND, and naming which app is wrong is the entire content — *"don't trust the road
+    line"* is useless without it. Same family as the 589 kept land-manager references and the
+    ranger district phone number in `wa_chianti_spire_lichen_bouquet`. They stay flagged, because
+    `EXEMPT` covers only the road/access scan and not the prose reading list; that is the
+    deny-list being blunt, not a defect.
   - **The word "source" on its own is useless here.** Waypoint notes say *"reliable water source"*
     and *"Source Lake"* — a real place in the Alpental valley — so a bare `/source/i` returns 45 WA
     notes of which **44** are water and place names. A citation is a **counted or qualified plural**
@@ -6457,6 +6581,49 @@ a semantic invariant in a comment rots, and this file records that lesson twice 
     the guard failed closed on the parse instead of naming the function. *An injection that
     produces a different failure is not a catch;* fix the case before doubting the check.
   - Case 4 must **PASS**: a comment describing the forbidden shape is documentation.
+  - **SECTION 2 — ONE `queryKey`, ONE IMPLEMENTATION**, because section 1 asks what a function
+    returns on an error and is blind to a read **whose body is not the one that runs**. React Query
+    keeps one Query object per key and executes the `queryFn` belonging to whichever observer
+    triggers the fetch, so two call sites sharing a constant key are interchangeable at runtime.
+    - **It was live.** `useMyHomeStatePath` — reached from the search box via `useRouteSearch` —
+      declared its own body on **`useStates`' key** `["area-children","roots"]`, with a comment
+      saying it shared that cache entry *"rather than adding a fetch"*: true about the **cache**,
+      false about the **body**. The two disagreed on both things that matter — `useStates` binds and
+      throws both errors and wraps in `orOffline(…, offlineStates)`; the copy discarded both errors,
+      returned `[]`, and had no offline fallback. They also disagreed on `staleTime`.
+    - **The consequence is a defect this file already documents at length, reached around the flag
+      that fixes it.** If the copy's body fetched, a failed read produced `[]` with `isError`
+      **false**, so `statesUnavailable` stayed false and **Manage areas told a climber 46 of 50
+      states have no catalog** — `check:outage-copy`'s founding case, re-armed. Being offline took
+      the same path and silently bypassed the downloaded catalog, which is the one screen whose
+      whole purpose is working without a signal.
+    - **NOT A NEW GUARD, and the measurement is why**: 12 constant keys in `lib/db.js`, exactly
+      **one** clash (`scripts/oneoff/measure-shared-query-keys.mjs`). A detector for a class of one
+      is what this repo keeps refusing to build, so it is an assertion inside the guard whose
+      subject it already is — a body that cannot throw *is* a failed read a caller reads as an empty
+      one — costing one traversal and no new file.
+    - **Only CONSTANT keys are compared.** A key holding a variable (`["route-search", qq, lim]`) is
+      per-call, so two such sites are different queries and flagging them would report correct code.
+    - **The repair is to COLLAPSE, never to make the two bodies match** — matching restarts the
+      drift, which is the whole lesson of the four grade parsers. `useMyHomeStatePath` now calls
+      `useStates()`. `enabled` was `!!loc` there and is unconditional in `useStates`, and App mounts
+      `useStates` already, so this adds no fetch.
+    - Fails **closed**: parsing no constant key at all would make every comparison vacuous.
+      Injection-tested 2/2 (`scripts/oneoff/inject-shared-query-key-cases.mjs`); **case 2 must stay
+      SILENT** — two call sites with an identical body are a legitimately shared query. Its first
+      version lifted `useStates`' body and balanced parens from `queryFn:`, which stops at the
+      arrow's own `()` and emitted `queryFn: ()`; the guard then failed on a **parse error** and the
+      case read as a miss. *An injection that produces a different failure is not a catch.*
+  - **A THIRD BLINDNESS IS STATED RATHER THAN CLOSED, so it reads as a worklist.** The predicate
+    needs a condition on an `error`/`err`/`e` identifier, so a read that **never binds `error` at
+    all** — `(await supabase…).data` — is invisible even inside this file. Measured: 15 such sites
+    in `lib/db.js`, of which the ones that also return an empty value are `useMyHomeStatePath`
+    (fixed above) and **`useMyFiledReports`**, whose `if(!uid) return []` after a discarded
+    `getSession()` hands back an empty list **without throwing** — so `filedReportsUnavailable`,
+    which keys on `isError`, cannot fire. Two more sit in `useCrewMessagesRealtime` /
+    `useDirectMessagesRealtime`, which are **imported by all three app files and called by none** —
+    dead wiring, like `updateTopoLine`. Nothing has yet asked this of `lib/auth.js`, where #1404's
+    `getProfile` lived.
 
 **The three that prompted it.** `check:writes` already forbids a success
 message in front of a write whose failure is unobservable; the read side had no such rule, and

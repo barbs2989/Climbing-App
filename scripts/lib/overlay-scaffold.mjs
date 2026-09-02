@@ -87,6 +87,20 @@ export const OVERLAY_PAYLOADS = {
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
   reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
+  // The group EVENT detail view, newly discovered once it gained role="dialog" (it is a
+  // `position:fixed; inset:0` full-screen view that renders over the app, so it is a modal to a
+  // climber; it simply announced as nothing before).
+  //
+  // It holds {groupId, id} and resolves an event out of `events[groupId]`, then reads
+  // `ev.date.split("-")`, `ev.hostId`, `ev.going` and `ev.capacity` — so an unresolvable payload
+  // does not render an empty view, it throws. `events` is client state seeded from DEMO_FILLERS
+  // (permanently false), so no fixture can seed it and a `prep` is the only way in — the same
+  // situation as postMenuFor/reactPickerFor above.
+  openEvent: {
+    prep: 'setEvents({__ov_group:[{id:"__ov_event",title:"Overlay probe event",date:"2026-01-01",hostId:0,going:[0],capacity:0}]});',
+    expr: '{groupId:"__ov_group",id:"__ov_event"}',
+  },
+
   // NOTE: a dialog state initialised to `false` needs no entry here — it is a flag whatever
   // it is called, and is opened with `true`. `confirmDelete` and `pastExpand` are the two
   // today. Only state that HOLDS something needs a payload.
@@ -550,7 +564,11 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // actually opened the thing. Setting it here would mean "App has navigated", which is
       // not the question any guard is asking.
       "var __rdOv=" + rdSet + ";" +
-      "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(ROUTES[0]);return;}var M={" + map + "};if(M[z])M[z]();};" +
+      "var _zrpParam=new URLSearchParams(location.search).get('zrp');" +
+      "function __zrPick(){if(!_zrpParam)return ROUTES[0];" +
+      "for(var i=0;i<ROUTES.length;i++){var _pd=ROUTES[i].pitchDetail;if(Array.isArray(_pd)&&_pd.length&&_pd.some(function(x){return x&&x.crux;}))return ROUTES[i];}" +
+      "window.__zrNoPitched=true;return ROUTES[0];}" +
+      "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(__zrPick());return;}var M={" + map + "};if(M[z])M[z]();};" +
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
@@ -567,7 +585,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
       // run" — see the note below and #768.
       "var _zr=p.get('zr');" +
-      "if(_zr){setTimeout(function(){openRoute(ROUTES[0]);window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
+"if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
       // opener fires 1200ms later meant they were asking before there was an answer. The
