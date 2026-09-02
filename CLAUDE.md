@@ -6557,6 +6557,49 @@ a semantic invariant in a comment rots, and this file records that lesson twice 
     the guard failed closed on the parse instead of naming the function. *An injection that
     produces a different failure is not a catch;* fix the case before doubting the check.
   - Case 4 must **PASS**: a comment describing the forbidden shape is documentation.
+  - **SECTION 2 — ONE `queryKey`, ONE IMPLEMENTATION**, because section 1 asks what a function
+    returns on an error and is blind to a read **whose body is not the one that runs**. React Query
+    keeps one Query object per key and executes the `queryFn` belonging to whichever observer
+    triggers the fetch, so two call sites sharing a constant key are interchangeable at runtime.
+    - **It was live.** `useMyHomeStatePath` — reached from the search box via `useRouteSearch` —
+      declared its own body on **`useStates`' key** `["area-children","roots"]`, with a comment
+      saying it shared that cache entry *"rather than adding a fetch"*: true about the **cache**,
+      false about the **body**. The two disagreed on both things that matter — `useStates` binds and
+      throws both errors and wraps in `orOffline(…, offlineStates)`; the copy discarded both errors,
+      returned `[]`, and had no offline fallback. They also disagreed on `staleTime`.
+    - **The consequence is a defect this file already documents at length, reached around the flag
+      that fixes it.** If the copy's body fetched, a failed read produced `[]` with `isError`
+      **false**, so `statesUnavailable` stayed false and **Manage areas told a climber 46 of 50
+      states have no catalog** — `check:outage-copy`'s founding case, re-armed. Being offline took
+      the same path and silently bypassed the downloaded catalog, which is the one screen whose
+      whole purpose is working without a signal.
+    - **NOT A NEW GUARD, and the measurement is why**: 12 constant keys in `lib/db.js`, exactly
+      **one** clash (`scripts/oneoff/measure-shared-query-keys.mjs`). A detector for a class of one
+      is what this repo keeps refusing to build, so it is an assertion inside the guard whose
+      subject it already is — a body that cannot throw *is* a failed read a caller reads as an empty
+      one — costing one traversal and no new file.
+    - **Only CONSTANT keys are compared.** A key holding a variable (`["route-search", qq, lim]`) is
+      per-call, so two such sites are different queries and flagging them would report correct code.
+    - **The repair is to COLLAPSE, never to make the two bodies match** — matching restarts the
+      drift, which is the whole lesson of the four grade parsers. `useMyHomeStatePath` now calls
+      `useStates()`. `enabled` was `!!loc` there and is unconditional in `useStates`, and App mounts
+      `useStates` already, so this adds no fetch.
+    - Fails **closed**: parsing no constant key at all would make every comparison vacuous.
+      Injection-tested 2/2 (`scripts/oneoff/inject-shared-query-key-cases.mjs`); **case 2 must stay
+      SILENT** — two call sites with an identical body are a legitimately shared query. Its first
+      version lifted `useStates`' body and balanced parens from `queryFn:`, which stops at the
+      arrow's own `()` and emitted `queryFn: ()`; the guard then failed on a **parse error** and the
+      case read as a miss. *An injection that produces a different failure is not a catch.*
+  - **A THIRD BLINDNESS IS STATED RATHER THAN CLOSED, so it reads as a worklist.** The predicate
+    needs a condition on an `error`/`err`/`e` identifier, so a read that **never binds `error` at
+    all** — `(await supabase…).data` — is invisible even inside this file. Measured: 15 such sites
+    in `lib/db.js`, of which the ones that also return an empty value are `useMyHomeStatePath`
+    (fixed above) and **`useMyFiledReports`**, whose `if(!uid) return []` after a discarded
+    `getSession()` hands back an empty list **without throwing** — so `filedReportsUnavailable`,
+    which keys on `isError`, cannot fire. Two more sit in `useCrewMessagesRealtime` /
+    `useDirectMessagesRealtime`, which are **imported by all three app files and called by none** —
+    dead wiring, like `updateTopoLine`. Nothing has yet asked this of `lib/auth.js`, where #1404's
+    `getProfile` lived.
 
 **The three that prompted it.** `check:writes` already forbids a success
 message in front of a write whose failure is unobservable; the read side had no such rule, and
