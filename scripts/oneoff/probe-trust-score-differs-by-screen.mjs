@@ -1,5 +1,15 @@
 // Does one climber's trust score differ between the Profile and the Ranks tab?
 //
+// CORRECTED 2026-09-02, AND THE FIRST VERSION OF THIS PROBE OVERSTATED THE DEFECT. It modelled
+// `routesLogged` as zero on the Profile. It is NOT: the legacy sync hack in App's render body
+// writes `ME.routesLogged = logs.length` on every render, so that field is real on EVERY surface
+// and always was. `ME.catchLedger` is written NOWHERE, so it alone stays zeroed by the sign-in
+// reset. One field, not two — and the Profile was the CORRECT screen, not one of the wrong ones.
+//
+// The lesson is the method: `ME.<field> =` writes are scattered through a 400kB render body, so
+// "the reset zeroes it" is only half the question. Ask what writes it BACK before concluding a
+// field is dead.
+//
 // vScore is rendered for the SIGNED-IN CLIMBER on two screens, from two different objects:
 //
 //   Profile      vScore(meLive)   where meLive = {...ME, catchLedger: meLedger}
@@ -39,23 +49,24 @@ const { vScore, trustFactors } = await import(out + "?t=" + Date.now());
 const RESET_ME = {
   id: 0, verified: true, communityVouches: 0, certifications: [],
   catchLedger: { totalCatches: 0, highFactorCatches: 0, lastCatch: "", partnersSigned: 0 },
-  routesLogged: 0, reliability: null, responseRate: null,
+  // NOT 0. The sync hack keeps this real on every surface; only catchLedger is actually lost.
+  routesLogged: 18, reliability: null, responseRate: null,
   partnerCount: null, conditionsReported: null, floatPlans: null, years: null,
 };
 
 const SCENARIOS = [
-  ["logs only (18 climbs, no catches)", 18, { totalCatches: 0, highFactorCatches: 0, lastCatch: "" }],
-  ["catches only (9 caught, 2 high-factor)", 0, { totalCatches: 9, highFactorCatches: 2, lastCatch: "2026-08-20" }],
-  ["both (18 climbs, 9 catches)", 18, { totalCatches: 9, highFactorCatches: 2, lastCatch: "2026-08-20" }],
-  ["neither", 0, { totalCatches: 0, highFactorCatches: 0, lastCatch: "" }],
+  ["9 catches, 2 high-factor", 18, { totalCatches: 9, highFactorCatches: 2, lastCatch: "2026-08-20" }],
+  ["1 catch", 18, { totalCatches: 1, highFactorCatches: 0, lastCatch: "2026-08-20" }],
+  ["20 catches, 8 high-factor", 18, { totalCatches: 20, highFactorCatches: 8, lastCatch: "2026-08-20" }],
+  ["no catches at all", 18, { totalCatches: 0, highFactorCatches: 0, lastCatch: "" }],
 ];
 
 let differ = 0;
-console.log("  Profile = vScore({...ME, catchLedger: meLedger})");
-console.log("  Ranks   = vScore({...ME, routesLogged: logs.length})\n");
+console.log("  Profile      = vScore({...ME, catchLedger: meLedger})   <- was already right");
+console.log("  Ranks/Share/Resume = vScore(bare ME)                    <- catchLedger zeroed\n");
 for (const [label, logCount, ledger] of SCENARIOS) {
-  const profile = { ...RESET_ME, catchLedger: ledger };            // real ledger, routesLogged 0
-  const ranks = { ...RESET_ME, routesLogged: logCount };            // real logs, empty ledger
+  const profile = { ...RESET_ME, catchLedger: ledger };   // meLive: the real ledger
+  const ranks = { ...RESET_ME, routesLogged: logCount };  // a bare ME: catchLedger still zeroed
   const p = vScore(profile), r = vScore(ranks);
   if (p !== r) differ++;
   console.log(`  ${p === r ? "agree " : "DIFFER"}  Profile ${String(p).padStart(3)}   Ranks ${String(r).padStart(3)}   ${label}`);
