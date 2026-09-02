@@ -6363,6 +6363,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
     the output path** — `--json` routes every report line through `say()`, so a mistake there is
     silent on stdout and invisible in the exit code.
+- **PROSE WRITTEN FOR THE PIPELINE IS A DIFFERENT CLASS FROM A CITATION, and every
+  publisher-keyed needle misses it.** `audit:prose-citations` finds a sentence NAMING a third
+  party. It cannot see a sentence about **our own record** that names nobody —
+  `measure-pipeline-voice-in-route-prose.mjs` asks that question of the same columns, and
+  `audit:note-voice` already asks it of waypoint NOTES while nothing asked it of route prose.
+  **13 values on 12 routes**, now 1.
+  - **The worst was an editor talking to the next editor, shipped to a climber**:
+    *"the claim that these bolts were 'replaced in 2001' is not supported by any source specific to
+    this Washington peak and should not be presented as fact"*. A climber learns nothing from it and
+    is told the app does not trust itself. The claim it argues with **is not in the app at all**.
+  - **THE REPAIR RULE IS "KEEP THE FACT AND KEEP THE UNCERTAINTY, DROP ONLY THE SOURCING."** A hedge
+    is CONTENT — *"the lengths are estimated"* warns a party not to rig to them — so *"Trip reports
+    vary 3-5 rappels"* becomes **"Expect 3-5 rappels"**, never *"4 rappels"*. Deleting the hedge
+    would make the record read as MORE certain than it is, which is worse than the leak.
+  - **THE OBJECT DECIDES, NOT THE PHRASE.** *"should not be treated as a casual scramble"* and
+    *"should not be treated as guaranteed snow-free"* are advice about the MOUNTAIN and are correct;
+    only an object naming the record (*as fact*, *as verified*, *as a repeated line*) is pipeline
+    voice. Requiring the object took that needle from **1 real of 3** to 2 of 2.
+  - **THE FIRST NEEDLE MANUFACTURED 27 FINDINGS ON CORRECT PROSE.** `(this|the) (record|entry|…)`
+    matches **"the entry gully"** and **"the entry hourglass"** — ordinary climbing terms. 42 → 13
+    once `entry` came out. The report now prints the **matched substring**, because a needle that
+    cannot show its own match is one nobody can audit.
+  - **THE EXACTLY-ONCE CONTRACT CAUGHT A PARALLEL SESSION MID-FLIGHT.** `wa_remmel_mountain_nw_ridge`
+    `pro_needs` was in the batch; another session landed the same repair while this was being
+    written, `find` matched **0 times**, and the run REFUSED rather than clobbering it. That is the
+    contract earning its place, not a near miss.
+  - **One value is deliberately left**: `wa_nooksack_tower_south_face` carries this defect AND a
+    named guidebook, which is what the open guidebook-citation batch is sweeping. *Two sessions
+    rewriting one value is how a merge silently drops half of it.*
+  - **`rope_note` AND THE RACK COLUMNS ARE A PARALLEL SESSION'S** (#1431,
+    `revoice-pipeline-notes-in-rope-note.mjs`), so the two sweeps are complementary rather than
+    rival: this one covers the other eight columns. Their needle and this one also miss different
+    shapes — *"No indexed route-specific gear list found online"* matches nothing here, because
+    `gear list` is not `source|record|reference`. **Neither sweep closes the class**; between them
+    they close what each could see.
+  - Confirmed on screen, **14 assertions across 4 routes, both directions** — and the KEEPS are the
+    load-bearing half here, since a rewrite that quietly dropped a hedge satisfies every removal
+    assertion.
 - **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
   third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
