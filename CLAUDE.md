@@ -6180,6 +6180,58 @@ the correction knows the screen is wrong, and they have no way to report it.
     sweep would have eaten it; and a value can hold **two** flagged leaves in one column
     (`pro_tips[0]` and `pro_tips[1]`), so an applier must accumulate per `(route, column)` or the
     second edit rebuilds from the original and silently drops the first.
+  - **`crowds` WAS ONE MECHANISM, NOT 77 CITATIONS, and half of it is a defect the no-sources
+    rule would not have caught.** It was the largest remaining column, and the enrichment had
+    estimated how busy a route is from web research and left the working out in the value. Two
+    forms, 35 edits on 34 routes, **476 → 443**
+    (`cut-web-analytics-from-crowds.mjs`, `cut-research-method-from-crowds.mjs`).
+    - **PAGE VIEWS ARE NOT ASCENTS.** *"31,125 total Mountain Project page views / ~148 monthly"*,
+      *"3,400+ AllTrails reviews"*, *"only 1,043 total page views since being posted"*. Strip the
+      publisher and these **still** do not belong on screen: a figure that precise reads as a
+      measurement of the mountain when it measures a **website**. Precision borrowed from the
+      wrong subject — worth stating as its own defect rather than as a citation instance. The
+      repair keeps the qualitative verdict (*"Extremely low"*, *"High"*) and cuts the analytics.
+    - The second form is the **list of sites somebody searched** — *"(a few reports per year found
+      across TrailCatJim, WTA, NWHikers, One Hike A Week)"*. The research act narrated to the
+      climber, the tier `audit:expiring-closures` already flags.
+    - **What survives is NOT also a citation, and cutting it would make the value worse.** *"based
+      on a sparse trip-report record"* stays: *trip reports* is a category rather than a
+      publisher, and it says the number is **inferred rather than counted** — the difference
+      between an estimate and a measurement. Cut the hedge with the sites and a confident figure
+      is left standing on nothing.
+    - **A CLUB NAMED AS AN OPERATOR IS NOT A SOURCE.** *"the Mountaineers run it as an official
+      Alpine Scramble"*, *"Mountaineers club scramble outings"* are facts about **who climbs the
+      route**, the same distinction that keeps 589 land-manager references. Left alone, so they
+      stay flagged — that is the deny-list being blunt, and it is why 34 values edited moved the
+      report by 33.
+  - **`map-remaining-citations.mjs` SAYS WHAT KIND OF READING LIST THIS IS**, which is the
+    difference between *"500 values, budget fifteen batches"* and *"46% of it is one word"*.
+    Over 360 matched leaves: **148 guidebook, 54 Mountain Project, 41 WTA, 37 SummitPost, 20
+    Wikipedia, 19 guidebooks, 19 Peakbagger**, then a long tail. Re-derive it before a batch; the
+    composition moves with every sweep.
+    - **THE BIGGEST FAMILY IS NOT ONE SHAPE, AND SWEEPING IT ON THE WORD ALONE DELETES SAFETY
+      CONTENT.** Roughly **30 of the 167** `guidebook` hits are a **negative or a disagreement**
+      rather than an attribution — *"Anderson's Thumb has no dedicated guidebook route
+      description"*, *"the Snoqualmie Rock guidebook reportedly mis-locates this route"*.
+      `wa_mount_anderson_eel_glacier` is the case that shows the cost: **five** values say glacier
+      recession has steepened the Flypaper Pass finger to **40-45°**, *"well beyond older guidebook
+      descriptions"*. Cut the attribution and the reader loses the warning that **the book will
+      tell them 30**. A number that invites a sweep makes this warning more necessary, not less.
+  - **TWO WAYS A MEASUREMENT OF THIS BACKLOG LIED, and both produced numbers rather than errors.**
+    Recorded because they came within one step of filing a fix to a guard that was correct.
+    - **A SECOND CLASSIFIER DISAGREEING WITH A GUARD IS FAR MORE LIKELY TO BE THE SECOND
+      CLASSIFIER.** A first version of that map wrote its own publisher regex, disagreed with the
+      audit, and the disagreement read as an audit defect — *"10 values are the English word
+      'mountaineers', not the club"*, which is exactly the `Source Lake` / *"water source"* trap
+      this audit already records, one word over. **The audit does not flag any of them and never
+      did**: the second regex was missing the token that actually fired (`guidebook`, `Wikipedia`,
+      `Peakbagger`) and blamed the nearest word it recognised. `NAMED` is now lifted from the audit
+      source under `ANCHOR LOST`. Same principle as the grade-parser consolidation.
+    - **A CARTESIAN JOIN IS SILENT.** The same version collected the flagged routes and the
+      flagged columns and then fetched **every column for every route** — so it scanned
+      `wa_south_ridge.approach` because some *other* route had `approach` flagged. It turned a real
+      class of **4** into a confident **62**. Every number it emitted looked like a number. Scope
+      to the `(route, column)` pairs the audit actually named.
   - **PRINT THE RESULTING SENTENCE, never just the find/repl pair.** A deletion leaves a dangling
     connective or a doubled space that is invisible from the edit alone — an earlier batch stranded
     an *"and that"* clause exactly so. The applier's dry run diffs the column's string leaves and
