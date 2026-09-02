@@ -1962,7 +1962,7 @@ export function TopoSection({route}){
         <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
         <div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:4}}>{topoCopy.head}</div>
         <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>{topoCopy.body}</div>
-        <button onClick={pickFile} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add a topo photo</button>
+        <button onClick={pickFile} disabled={busy} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.blueDim,background:busy?C.card:C.blueBg,color:busy?C.textMuted:C.blue,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"Add a topo photo"}</button>
       </div>
     :<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:2}}>
       {photos.map(function(p,i){
