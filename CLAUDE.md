@@ -7130,12 +7130,34 @@ their own Résumé showed an amber **"Unverified"** chip.
     one partition and sum to the total.
   - **It found a real defect on its first run afterwards**: reading `editDraft` is what surfaced the
     profile wipe above.
-  - **Stated scope, as a worklist rather than a boundary**: it scans `ClimbMatch.jsx` and
-    `ClimbMatchCore.jsx` only, so an overlay rendering a `lib/` component has its gating invisible.
-    `dashOpen` and `guideAppOpen` are the live cases and were read by hand (`DbGuideDashboard` gates
-    on `inqError`/`revError`/`profileError`; `DbGuideApply` on `existingError`). **Nothing has yet
-    asked this question of `lib/`.**
-  - Injection-tested 2/2 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
+  - **THE `lib/` SCOPE GAP IS CLOSED, and the note that stated it is replaced rather than left
+    standing.** It said the guard scanned the two app files only, that an overlay rendering a `lib/`
+    component had its gating invisible, and that nothing had yet asked the question of `lib/`. All
+    three are false now: the body lookup follows `lib/*.jsx`.
+    - **The answer is a NEGATIVE RESULT, measured before the widening**
+      (`scripts/oneoff/measure-lib-component-absence.mjs`): across 14 lib components, **7 assert
+      absence**, and every one of those claims is gated on an error, filter copy that stays TRUE
+      during an outage (*"No areas match."*), a fallback label, a statement about a row's own data,
+      or a comment. **No findings — and it still bought something**: `dashOpen` and `guideAppOpen`
+      no longer need hand-written CHECKED entries, because the guard reads their real gate. *A
+      declaration that exists because a guard cannot see something is not a reason; it is an excuse
+      with a shelf life.*
+    - **`lib/` SPELLS ITS GATE DIFFERENTLY, and following those bodies without knowing that would
+      have reported correctly-gated components as ungated** — the guard-flags-correct-work failure,
+      introduced by the very change meant to widen coverage. The app derives `xUnavailable` from
+      `isError`; lib destructures the binding off the hook (`{ data, isError: inqError }`). Detected
+      on the **followed body**, never on the window: adding `isError` to the global `FLAGS` list
+      would let any app-side window containing `.isError` read as gated, **weakening** the detection
+      this guard exists for.
+    - `maskComments`' comment floor became a **parameter**: 50 was calibrated for two 400kB files,
+      and a lib component is legitimately terse, so applying it there fails a correct file. A parse
+      error stays fatal for every file — that is the real fail-closed test.
+    - **The measurement's own first version accused the wrong line**, and it is the same attribution
+      defect this guard had: it took `indexOf(claim)`, so `"No areas"` resolved to
+      `DbAreaBrowser`'s *"No areas match."* filter copy while the row was really about line 1072 —
+      which is correctly gated, with `if (error)` returning **ahead of** the empty branch. *A weak
+      locator is not merely imprecise; it accuses code that is fine.*
+  - Injection-tested 3/3 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
     landed by checksum.
 
 **THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
