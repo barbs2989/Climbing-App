@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_southeast_ridge_se_corner",
+    "last_processed_id": "wa_spider_mountain_north_ridge",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3502,6 +3502,25 @@
             "clean": 7,
             "sql_file": null,
             "note": "No SQL fixes this batch. Flagged: wa_southeast_mox_peak_se_rib -- the id implies a \"Southeast Rib\" route on Southeast Mox Peak (\"Hard Mox\"), but every stored field (name \"West Ridge (Beckey Route)\", overview, fa \"Fred Beckey and Helmy Beckey, June 21, 1941\", grade 5.5, and the December 2023 Gilbertson/Roy winter-FA detail) describes the peak's real, well-documented standard West Ridge/Col of the Wild route -- all independently confirmed via search (elevation 8,504 ft, FA party/date, and winter FA date/grade M5 WI2 5-pitch all matched exactly). Web search found no route named \"Southeast Rib\" or \"SE Rib\" anywhere associated with Southeast Mox Peak. Same shape as batch 3's wa_big_kangaroo_southwest_rib: an id-vs-content mismatch, not a content error -- the row's facts are correct for the route they describe, but the id needs a human rename decision (ids are referenced elsewhere in the app) rather than a field patch. Seven clean, each with at least one fact independently confirmed: wa_south_ridge_4 (Eldorado Peak, South Ridge) -- high_point_ft 8,873 matches Wikipedia's 8,872.9 ft almost exactly, and the overview (crack to a notch, then knife-edge ridge climbing over several pitches, then broad mellow scrambling to the true summit) matches a Mountain Project South Ridge route description near-verbatim (crack to a U-notch, knife-edge crest pitches, then loose/scree scrambling to the summit); wa_south_spur (Whatcom Peak) -- high_point_ft 7,574 confirmed exactly via Wikipedia/PeakVisor; description (reached from Perfect Pass via Easy Ridge or a lower 'low orbit' traverse) matches known beta; wa_south_twin_sister_north_ridge and wa_south_twin_sister_scramble and wa_south_twin_sister_west_ridge (South Twin Sister) -- shared high_point_ft 7,004 is a commonly-cited survey elevation for the peak, and the West Ridge description (sustained Class 3-4 scrambling with a short technical step some parties rope up for) is corroborated by independent trip-report sources describing the same ridge as '4th class easily getting into 5th' with a roped step; wa_southeast_face (Sharkfin Tower) -- high_point_ft 8,120 and fa 'Jim Nelson, Jim Martin, Kit Lewis, Bill Liddell, and Dave Bale, 1990' both confirmed exactly via independent search results (Wikipedia elevation, Mountain Project/Wikipedia FA party and September 1990 date); wa_southeast_ridge_se_corner (Mount Shuksan) -- high_point_ft 9,131 confirmed exactly; stored grade 5.3 matches the commonly-cited 'III 5.3' grade for this specific named route (Southeast Ridge/SE Corner), distinct from a harder ~5.6 rating some sources apply to a different Southeast Ridge variation."
+        },
+        {
+            "batch_number": 168,
+            "date": "2026-09-02",
+            "route_ids": [
+                "wa_southern_man",
+                "wa_southwest_buttress",
+                "wa_southwest_face",
+                "wa_southwest_scramble",
+                "wa_soviet_route",
+                "wa_spectre_peak_south_route",
+                "wa_spider_mountain_north_face",
+                "wa_spider_mountain_north_ridge"
+            ],
+            "confirmed_errors_fixed": 0,
+            "flagged_for_human_review": 1,
+            "clean": 7,
+            "sql_file": null,
+            "note": "No SQL fixes. Flagged: wa_southern_man -- stored fa credits the FFA to 'Blake Matthews and Bryan Burdo (2010)' at 5.11d, but a search snippet (Blake Herrington blog) instead describes the FFA as Bryan Burdo plus a partner in September 2009 at 5.12a; the row's own overview already hedges this exact ambiguity as unconfirmed, but the fa field states the 2010/5.11d version as settled fact. Mountainproject and Supertopo (likely primary sources) both blocked by network egress; left unresolved for a human with access to those sites. Seven clean, each independently corroborated: elevations for The Tooth (5,606'), Pinnacle Peak (6,562'), Dorado Needle (8,440'+), Spider Mountain (8,317', both routes), and Bonanza's Southwest Peak specifically (9,320'/9,317', distinct from the main summit and West Peak); Soviet Route's full FA party/date/grade; Spirited Away's FA (Boyce/Manning, July 2022, IV 5.9) exact match; Spider Mountain North Face's Kloke-Tindall FA (1972) exact match; gain_ft internal-consistency checks for Southwest Scramble, Southwest Face, and Soviet Route. wa_southwest_rib_2 (Crystal Lake Tower) skipped as out-of-scope -- that area is area_type='crag', not 'peak'."
         }
     ]
 }

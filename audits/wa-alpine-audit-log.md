@@ -11547,3 +11547,54 @@ Route filed under an `_se_rib` id (Southeast Mox Peak "Hard Mox"), Southeast Rid
   different Southeast Ridge line/variation on the same peak.
 
 Next batch continues after `wa_southeast_ridge_se_corner` in the id-ordered scope.
+
+---
+
+## 2026-09-02 — Pass 3, Batch 168
+
+Eight routes: Southern Man (South Early Winters Spire); Southwest Buttress (Dorado Needle);
+Southwest Face (The Tooth); Southwest Scramble (Pinnacle Peak, Tatoosh); Soviet Route (Bonanza
+Peak, Southwest Peak); South Ridge "Spirited Away" (Spectre Peak); North Face (Kloke-Tindall
+Route) and Southeast Gully/East Ridge (Spider-Formidable Col), both Spider Mountain.
+(`wa_southwest_rib_2` on Crystal Lake Tower was skipped — that area is `area_type: crag`, out
+of scope per the audit's own scope definition.)
+
+**No confirmed errors / no SQL fixes this batch.**
+
+Elevations independently confirmed via peakbagger/listsofjohn/Wikipedia snippets for The Tooth
+(5,606 ft), Pinnacle Peak (6,562 ft), Dorado Needle (8,440+ ft), Spider Mountain (8,317 ft, both
+routes), and Bonanza Peak's Southwest Peak specifically (9,320 ft on peakbagger, 9,317 ft on
+listsofjohn — distinct from the main summit's 9,511/9,516 ft and the West Peak's 9,410 ft, which
+the row correctly does not conflate). Soviet Route's FA party (Onishchenko, Grakovich,
+Nepomnyashchy, Bershov, Bertulis), date (Sept 1975), and grade (V, 5.10a-ish) all corroborated
+independently via a StephAbegg trip-report title and an AAC search snippet. Spectre Peak's
+"Spirited Away" FA (Sam Boyce and Joe Manning, July 2022, IV 5.9, ~2,000 ft) confirmed exactly
+via an AAC publications listing. Spider Mountain North Face's Kloke-Tindall FA (Dallas Kloke and
+Reed Tindall, 1972) confirmed exactly via skisickness.com. Internal-consistency checks (approach
+elevation gain arithmetic implied by each route's own stored trailhead/pass/summit figures)
+matched stored `gain_ft` for Southwest Scramble (Pinnacle), Southwest Face (The Tooth), and the
+Soviet Route.
+
+Flagged for human review:
+- **wa_southern_man** (Southern Man, South Early Winters Spire) — the stored `fa` field credits
+  the first free ascent to "Blake Matthews and Bryan Burdo (2010)" at the route's stored grade
+  5.11d. A search snippet drawn from a Blake Herrington blog post instead describes the route as
+  freed by "Bryan Burdo and [a partner, garbled in the search extract] in September of 2009 at
+  5.12a." The row's own `overview` text already hedges this exact ambiguity ("a September 2009
+  ascent by Burdo at 5.12a has also been reported but is unconfirmed"), so the underlying
+  uncertainty is already flagged in prose — but the `fa` field itself states the 2010/5.11d
+  version as settled fact, which is inconsistent with that hedge. Mountainproject and Supertopo,
+  the two pages most likely to have the original, dated route description, are both blocked by
+  network egress from this environment, so the discrepancy could not be resolved either way.
+  Left as-is; a human with mountainproject access should settle which FFA (year/partner/grade)
+  is correct and reconcile the `fa` field with the `overview` hedge.
+
+Seven clean (each with at least one fact independently confirmed, listed above): Southwest
+Buttress, Southwest Face, Southwest Scramble, Soviet Route, "Spirited Away", and both Spider
+Mountain routes. The Tooth's Southwest Face `fa` ("Fred & Helmy Beckey and Louis Graham, October
+1942") is only partially corroborated — a search snippet confirms "Helmy Beckey put up a new
+route on The Tooth in 1942" but does not mention Fred Beckey, Louis Graham, or the specific
+month, and no conflicting claim was found either — so it's counted clean rather than flagged,
+per the "don't flag what merely can't be fully verified, only what conflicts" rule.
+
+Next batch continues after `wa_spider_mountain_north_ridge` in the id-ordered scope.
