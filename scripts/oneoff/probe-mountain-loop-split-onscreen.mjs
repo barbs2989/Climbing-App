@@ -1,12 +1,13 @@
-// A WRITTEN COLUMN IS NOT A RENDERED ONE. fix-goat-rocks-st-helens-camp-split.mjs verified its own
-// write by re-reading `routes.bivy`; that proves the table, not the page. CAMPING & BIVY renders
-// through dbRouteToCamel -> campSites(), which MERGES the bivy store with campsite waypoints and
-// dedupes on name — so a removed entry could still reach the screen from the other store, and the
-// repair would read as applied while the climber still sees a camp 59 km away.
+// A WRITTEN COLUMN IS NOT A RENDERED ONE. fix-mountain-loop-camp-split.mjs verified its own write
+// by re-reading `routes.bivy`; that proves the table, not the page. CAMPING & BIVY renders through
+// dbRouteToCamel -> campSites(), which MERGES the bivy store with campsite waypoints and dedupes
+// on name — so a removed entry could still reach the screen from the OTHER store, and the repair
+// would read as applied while the climber still sees a camp on somebody else's mountain.
 //
 // Renders the real RouteDetail over the real rows and asserts BOTH directions: the foreign camps
 // are gone, and the mountain's own camps survived. Asserting only the removal would go green on a
-// repair that emptied the section.
+// repair that emptied the section — and on these four peaks that is not hypothetical, since two of
+// them are left with a single camp.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
@@ -20,16 +21,27 @@ const q = async (p) => {
   return r.json();
 };
 
+// One case per peak, each asserting BOTH directions. The keeps matter more than the gone: a
+// repair that emptied the section would satisfy every removal assertion.
 const CASES = [
-  { route: "wa_mount_st_helens_monitor_ridge", gone: ["Snowgrass Flat", "Goat Lake", "Chambers Lake", "Conrad Meadows"], keeps: ["Climbers Bivouac", "Marble Mountain"] },
-  { route: "wa_old_snowy_mountain_r1", gone: ["Climbers Bivouac", "Marble Mountain"], keeps: ["Snowgrass Flat", "Goat Lake", "Chambers Lake", "Conrad Meadows"] },
-  { route: "wa_gilbert_peak_west_route", gone: ["Climbers Bivouac", "Marble Mountain"], keeps: ["Snowgrass Flat", "Goat Lake"] },
+  { route: "wa_mount_pilchuck_standard_route",
+    gone: ["Three Fingers Lookout", "Tin Can Gap", "Goat Flats", "Saddle Lake", "Whitehorse", "Big Four north-side"],
+    keeps: ["Bathtub Lakes"] },
+  { route: "wa_three_fingers_r1",
+    gone: ["Whitehorse", "Big Four north-side", "Bathtub Lakes"],
+    keeps: ["Three Fingers Lookout", "Tin Can Gap", "Goat Flats", "Saddle Lake"] },
+  { route: "wa_big_four_mountain_spindrift_couloir",
+    gone: ["Three Fingers Lookout", "Tin Can Gap", "Goat Flats", "Saddle Lake", "Whitehorse", "Bathtub Lakes"],
+    keeps: ["Big Four north-side"] },
+  { route: "wa_whitehorse_mountain_r1",
+    gone: ["Three Fingers Lookout", "Tin Can Gap", "Goat Flats", "Saddle Lake", "Big Four north-side", "Bathtub Lakes"],
+    keeps: ["Whitehorse high camp", "Whitehorse Community Park"] },
 ];
 const rows = await q(`routes?select=*&id=in.(${CASES.map((c) => `"${c.route}"`).join(",")})`);
 if (rows.length !== CASES.length) { console.log(`FAIL: read ${rows.length} of ${CASES.length} routes`); process.exit(1); }
 
-const out = path.join(ROOT, ".probe-goat-rocks.mjs");
-const html = path.join(ROOT, ".probe-goat-rocks.html");
+const out = path.join(ROOT, ".probe-mountain-loop.mjs");
+const html = path.join(ROOT, ".probe-mountain-loop.html");
 fs.writeFileSync(out, [
   'import fs from "fs";',
   'import React from "react";',
@@ -58,8 +70,8 @@ fs.writeFileSync(out, [
 execFileSync("npx", ["esbuild", out, "--bundle", "--platform=node", "--format=esm",
   "--jsx=automatic", "--loader:.jsx=jsx", "--external:react", "--external:react-dom",
   "--external:@tanstack/react-query", "--define:import.meta.env={}",
-  `--outfile=${path.join(ROOT, ".probe-goat-rocks.bundle.mjs")}`], { cwd: ROOT, stdio: "pipe" });
-execFileSync("node", [path.join(ROOT, ".probe-goat-rocks.bundle.mjs")], { cwd: ROOT, stdio: "pipe" });
+  `--outfile=${path.join(ROOT, ".probe-mountain-loop.bundle.mjs")}`], { cwd: ROOT, stdio: "pipe" });
+execFileSync("node", [path.join(ROOT, ".probe-mountain-loop.bundle.mjs")], { cwd: ROOT, stdio: "pipe" });
 
 const markup = fs.readFileSync(html, "utf8");
 let fail = 0, checks = 0;
@@ -85,6 +97,6 @@ for (const c of CASES) {
   for (const k of c.keeps) { checks++; if (!panel.includes(k)) { console.log(`FAIL ${c.route}: kept camp "${k}" does NOT render`); fail++; } }
   console.log(`   ${c.route}: panel ${panel.length} chars, ${c.gone.length} removed absent, ${c.keeps.length} kept present`);
 }
-for (const f of [out, html, path.join(ROOT, ".probe-goat-rocks.bundle.mjs")]) { try { fs.unlinkSync(f); } catch {} }
+for (const f of [out, html, path.join(ROOT, ".probe-mountain-loop.bundle.mjs")]) { try { fs.unlinkSync(f); } catch {} }
 console.log(fail ? `\nFAIL: ${fail} assertion(s) of ${checks}` : `\nok — ${checks} assertions across ${CASES.length} routes; the split reaches the screen in both directions`);
 process.exit(fail ? 1 : 0);

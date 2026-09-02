@@ -4265,6 +4265,47 @@ the correction knows the screen is wrong, and they have no way to report it.
       Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
       class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
 
+  - **THE CLASS IS CLOSED FOR THIS CORRIDOR: one 8-camp list on 7 routes across FOUR peaks, split
+    back** (`fix-mountain-loop-camp-split.mjs`). Mount Pilchuck, Three Fingers, Big Four Mountain
+    and Whitehorse Mountain each carried a byte-identical list in identical order — so *"Bathtub
+    Lakes basin, **east of Mount Pilchuck**"* was on three other mountains and *"Big Four
+    north-side staging"* was on Pilchuck. The audit could see **one** entry of the eight.
+    - **THE GOAT ROCKS METHOD DOES NOT TRANSFER, AND THAT IS THE POINT.** There the ranges were
+      59-69 km apart and the two-way separation (8x to 25x) decided it alone. These four peaks are
+      **14.9 to 20.5 km apart**, so **distance decides nothing** and a repair reasoned from it
+      would have been a coin flip. What decided it were four records sharing no input.
+    - **AN INDEPENDENT WITNESS IS THE STRONGEST OF THEM, and it is found by asking which route does
+      NOT carry the shared list.** `wa_three_fingers_south_peak_lookout` holds its OWN 4-camp list
+      — Saddle Lake, Goat Flats, Tin Can Gap, Three Fingers Lookout — and nothing else, naming them
+      in **shorter, differently-phrased** form than the shared list does, so it is another AUTHOR
+      rather than another copy. `wa_whitehorse_mountain_nw_shoulder` likewise carries 3 camps, all
+      Whitehorse places, none foreign. **Neither witness reaches for a neighbouring peak.**
+      The tell that pointed at them: two camps appeared on Three Fingers **x3** while the rest
+      appeared **x2**.
+    - **FOUR SEPARATE TRAILHEADS** — Mount Pilchuck / Pinnacle Lake, Tupso Pass / Goat Flats, Ice
+      Caves, Niederprum. **A camp serves a TRAILHEAD, not a map region**, so a camp on the Three
+      Fingers trail cannot serve a Big Four climb starting at the Ice Caves. That is the signal
+      this entry's own earlier note said the catalog does not record — it does, in
+      `approach_logistics.trailhead`.
+    - **PROSE SILENCE, and only the base rate makes it evidence**: 51.4% of (route, camp) pairs in
+      this catalog ARE named by their own route, and **none of the nine routes on these four peaks
+      mentions a neighbouring peak anywhere in its prose**.
+    - **NAME-MATCHING CATALOG AREAS INSIDE CAMP NAMES WAS TRIED FIRST AND IS UNUSABLE.** It put
+      *"Whitehorse Community Park **campground**, Darrington"* on a crag literally named
+      **"Campground"** 2,015 km away, and *"Bathtub **Lakes basin**, east of Mount Pilchuck"* on a
+      **"Lakes Basin"** region 469 km away — a camp whose own name says it belongs here. A generic
+      word is a FEATURE TYPE, not a proper noun; the same lesson `solve-camps.mjs` records from the
+      other direction. Ask the CATALOG which peaks carry a camp instead of asking the name.
+    - Every one of the 8 survives on its home peak — a split, not a deletion — under the same
+      declared-state contract the Goat Rocks fix uses: the exact 8 names and each row's resulting
+      count are declared, and the run **refuses** if any row has moved. Confirmed on screen,
+      **29 assertions across 4 routes, both directions**.
+    - **THE ON-SCREEN PROBE WAS SLICING THE PANEL WITH THE WRONG ANCHOR, and Goat Rocks had the
+      same bug latently.** The panel's own intro prose ends *"...is also a pin under ROUTE
+      TRACK."*, so a **stripped-text** end anchor terminates the slice INSIDE the panel — 667
+      chars, before a single camp renders. It only fires on a route that HAS a campsite waypoint,
+      which is why Goat Rocks passed. Match the heading in **raw html** as `>ROUTE TRACK<`; this is
+      `check:track-caveat`'s recorded two-surfaces trap arriving from the other side.
   - **THE DIAGNOSIS ABOVE IS HALF WRONG, AND THE CORRECTION MATTERS MORE THAN THE ORIGINAL.** The
     entry blames the peak-NAME requirement. Measured per camp on Pilchuck, that is not what
     dominates: **six of the seven foreign camps are at or BELOW Pilchuck's own summit**, so the
