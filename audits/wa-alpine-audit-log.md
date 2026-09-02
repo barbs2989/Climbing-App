@@ -11728,3 +11728,70 @@ well within the survey-variance tolerance this audit has already established (e.
 Swiss Peak precedent, 5 ft/0.06% apart, left alone).
 
 Next batch continues after `wa_the_hitchhiker` in the id-ordered scope.
+
+## Batch 171 (2026-09-02, pass 3)
+
+Routes: `wa_the_monk_le_gibet`, `wa_the_monk_odine`, `wa_the_monk_scabo`,
+`wa_the_monk_west_cracks_left_crack`, `wa_the_monk_west_cracks_right_crack`
+(all five routes on The Monk, a semi-detached tower on Cathedral Peak, Pasayten
+Wilderness), `wa_the_needle_neve_glacier`, `wa_the_pleiades_scramble`,
+`wa_the_pyramid_picket_south_route`.
+
+**Fixed (1):** `wa_the_monk_odine` — the row's own `grade` (5.9) and
+`pitch_detail` (crux pitch marked "5.9 (crux)") already carry the correct
+grade, but `watch_out` still opened "5.8 route in The Monk complex" and the
+row's own `corrections` note still described the 5.8-vs-5.9 discrepancy as
+unresolved. Both were stale relative to `grade`, which had already been
+corrected upstream. Pure internal-consistency fix — no external source
+needed, since the row already stated the right answer in two other fields.
+
+**Clean (6):**
+- `wa_the_monk_le_gibet`, `wa_the_monk_scabo`, `wa_the_monk_west_cracks_left_crack`,
+  `wa_the_monk_west_cracks_right_crack`: each row's own `corrections` field
+  already records a prior Mountain Project check (grade/star count verified,
+  or "fully confirmed"); a web search independently corroborated the Right
+  Crack's 5.7 grade. All five Monk routes share one trailhead/approach
+  (Andrews Creek Trail #504) and one descent (NE gully, three ~75-ft
+  rappels), which is internally consistent across all five rows and matches
+  the shared-tower structure described in each route's own `approach_variants`.
+- `wa_the_needle_neve_glacier` (Snowfield/Colonial group, North Cascades NP):
+  FA "William A. Degenhardt & Herbert V. Strandberg, August 1, 1931... the
+  same day as their first ascents of neighboring Snowfield Peak and Horsemans
+  Pack" confirmed on all three counts independently (SummitPost's Needle and
+  Horsemans Pack pages both give Aug 1, 1931 for the same climbing party;
+  Snowfield Peak's own first ascent is separately documented as the same
+  day). `high_point_ft` 8079 is consistent with SummitPost's description of
+  The Needle as "one of only about 200 peaks in Washington State which rises
+  above 8000 feet" (no exact-foot source found to check against further).
+- `wa_the_pleiades_scramble`: this row's own `corrections` field already
+  flags uncertainty over which Pleiades summit the route_id targets and over
+  the "Glacier/Scramble" naming (no glacier is actually crossed) — both
+  pre-existing, not new findings. Independently corroborated: search results
+  confirm the Pleiades are a 4-peak group on Mount Larrabee's east ridge with
+  "the 3rd from the west being considered the tallest," matching this row's
+  own waypoint naming ("The Pleiades (Peak 3, high point)"), and a SummitPost
+  route description (High Pass -> col -> basin traverse -> notch between
+  peaks 1/2) matches this row's waypoint chain closely. The "Glacier/Scramble"
+  route-name question is left as already flagged; no glacier was found on any
+  described approach to this side of Larrabee (an unnamed "Larrabee Glacier"
+  exists but sits under the peak's north face, off this route entirely).
+
+**Flagged for human review (1):** `wa_the_pyramid_picket_south_route` (The
+Pyramid, Southern Pickets) — internal aspect/name tension: the route is named
+"South Route," but its `aspect` (W), `face` ("West/connecting ridge to Mt.
+Degenhardt"), and `descent_text` ("Reverse the west-side Class 3 scramble
+down to the Degenhardt-Pyramid col") all describe a west-facing line, and an
+independent trip report of what appears to be the same ascent path (Terror
+Basin -> Barrier crossing -> Degenhardt-Pyramid col) titles it "Pyramid West
+Ridge." This is the same class of finding CLAUDE.md's `audit:aspect-name`
+entry documents elsewhere and deliberately leaves report-only, since which
+field is wrong isn't decidable from the columns alone. Mountain Project,
+SummitPost, and the AAC Journal article on Southern Pickets first ascents
+(which likely settles this and the row's already-hedged Don Gordon 1951 FA
+claim) were all blocked by network egress this run — left for a human with
+access to those sources, per this row's own hedge ("the exact line he used
+is not documented, though this standard ridge route is the most plausible
+candidate") already flagging the FA-to-line link as uncertain.
+
+Next batch continues after `wa_the_pyramid_picket_south_route` in the
+id-ordered scope.
