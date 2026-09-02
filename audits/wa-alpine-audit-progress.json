@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
     "pass": 3,
-    "last_processed_id": "wa_silver_star_ne_ridge",
+    "last_processed_id": "wa_south_arete",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3426,6 +3426,25 @@
             "clean": 6,
             "sql_file": null,
             "note": "No SQL fixes this batch. Flagged: wa_sherpa_peak_north_ridge -- stored fa (\"Rick La Belle and Pat Derr, 1971\") does not match either first-ascent party found via web search and attributed to Beckey's Cascade Alpine Guide for this ridge: the original upper North Ridge (loose 5th-class gully to the North Ridge Notch) is credited to Fred Beckey and Steve Marts, 1963, and the more sustained, continuously-pitched \"Direct North Ridge\" variation -- which this row's own description (13 pitches, sustained 5.7-5.8, simul-climbed) more closely resembles -- to Mead Harris and Jay Ossiander, 1970. Neither search-corroborated source names La Belle or Derr. Not confident enough which named variation this row represents to write a fix, and could not reach Beckey's guide text directly (WebFetch to summitpost.org/mountainproject.com/AAC publications all blocked by network egress proxy this run) -- flagged rather than guessed at. Also flagged: wa_sherpa_peak_west_ridge -- stored fa (\"Fred Dunham, Ray Lilleby, and James Wick, August 13, 1961\") vs a single secondary source (Wenatchee Outdoors) naming only Dunham and giving 1962; too weak/partial a source to override a specific full-party+exact-date claim, but the year conflict is real and unresolved. Six clean, each with at least one fact independently confirmed against search-corroborated sources: wa_sherman_peak_baker_squak_glacier (gain_ft 6,800 and Schriebers Meadow trailhead coordinates 48.7067849,-121.8129229 both matched exactly; Sherman Peak's summit elevation, stored 10,133 ft, sits within a genuine spread of published figures -- 10,140/10,160 ft -- for this eroding volcanic crater-rim point, so left alone as unresolvable ambiguity rather than a stored error); wa_sherpa_balanced_rock_ne_couloir (Balanced Rock area coordinate sits ~93m/~102 yards from Sherpa Peak's own summit coordinate, matching independent sources' \"about 100 yards\" separation almost exactly); wa_sherpa_glacier (fa \"Bill & Gene Prater, Don & Nelson Torrey, 1956\" confirmed verbatim); wa_sherpa_peak_east_ridge (no contradicting source found for grade/gain/descent-via-West-Ridge-rappels); wa_silver_star_glacier (fa \"Lage Wernstedt, 1926\" and the SR-20/Silver Star gate MP 171 seasonal closure detail both confirmed); wa_silver_star_ne_ridge (high_point_ft 8,840 for the west summit confirmed exactly)."
+        },
+        {
+            "batch_number": 164,
+            "date": "2026-09-02",
+            "route_ids": [
+                "wa_sinister_peak_north_face",
+                "wa_sinister_peak_southwest_route",
+                "wa_sitkum_spire_standard",
+                "wa_sloan_peak_corkscrew",
+                "wa_sloan_peak_r1",
+                "wa_snowfield_peak_neve_glacier",
+                "wa_snowking_mountain_standard",
+                "wa_south_arete"
+            ],
+            "confirmed_errors_fixed": 2,
+            "flagged_for_human_review": 1,
+            "clean": 5,
+            "sql_file": "audits/sql/2026-09-02-batch-164.sql",
+            "note": "wa_sitkum_spire_standard flagged: high_point_ft/gain_ft arithmetic implies Glacier Peak's true summit (10,541 ft) rather than the stored 9,355 ft (Sitkum Spire's own elevation), matching this row's own corrections-log reasoning, but the DB already holds a separately-filed, correctly-scoped route for that exact climb (wa_glacier_peak_sitkum_glacier) -- setting high_point_ft to 10,541 here would create a near-duplicate rather than resolve the inconsistency. Structural/duplicate-resolution call, not a simple fact fix."
         }
     ]
 }

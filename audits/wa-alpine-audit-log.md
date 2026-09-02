@@ -11309,3 +11309,80 @@ secondary summary of it, not the guide text itself.
   exactly.
 
 Next batch continues after `wa_silver_star_ne_ridge` in the id-ordered scope.
+
+## Batch 164 — 2026-09-02
+
+Routes: `wa_sinister_peak_north_face`, `wa_sinister_peak_southwest_route`,
+`wa_sitkum_spire_standard`, `wa_sloan_peak_corkscrew`, `wa_sloan_peak_r1`,
+`wa_snowfield_peak_neve_glacier`, `wa_snowking_mountain_standard`,
+`wa_south_arete`.
+
+2 confirmed errors fixed, 1 flagged for human review, 5 clean.
+SQL: `audits/sql/2026-09-02-batch-164.sql` (validated with `check:sql`).
+
+**Fixed:**
+- `wa_south_arete`: Blue Lake Trailhead was stored at 5,200 ft in both the
+  Trailhead waypoint and the approach prose. Multiple sources (AllTrails,
+  WTA-derived trailhead listings, 10Adventures) independently put it at
+  5,400 ft — a mile west of Washington Pass itself (5,477 ft). This row's
+  own `approach_logistics.trailheadDirection` already said "5,400 ft," and
+  its own `corrections` log shows gain_ft was fixed 2000→2407 in a prior
+  pass specifically to match "high_point_ft-minus-trailhead-elevation
+  arithmetic" (7,807 − 5,400 = 2,407 exactly; 7,807 − 5,200 = 2,607 does
+  not match). That earlier fix used the correct 5,400 ft figure for the
+  arithmetic but never propagated it to the waypoint or approach text —
+  now done.
+- `wa_snowking_mountain_standard`: `best_season` said "Mid-summer through
+  early fall once the approach is snow-free and the glacier is
+  well-covered" — backwards from every source found. The Snowking
+  Glacier/snowfield line this route describes (its own name) is the
+  spring/early-summer route: the glacier is best "well-covered" (bridged,
+  low crevasse hazard) early season, and opens to exposed blue ice and
+  crevasses by high summer, which is when the *separate* West Ridge
+  variant becomes the better late-season choice. The old text also
+  contradicted this same row's own `season` field ('May-Jul').
+
+**Flagged for human review:**
+- `wa_sitkum_spire_standard`: `high_point_ft` (9,355 ft — Sitkum Spire's
+  own summit) doesn't reconcile with `gain_ft` (8,500 ft) from the
+  2,300 ft trailhead — that gain only matches a summit around 10,500+ ft.
+  This row's own `corrections` log confirms the intent: a prior pass set
+  the *area's* elevationFt to 9,355 (Sitkum Spire, a subsidiary rock
+  finger) but explicitly argued the *route's* highPointFt/gainFt should
+  describe Glacier Peak's true summit (10,541 ft), since "no source
+  documents an independent technical ascent... for the spire as a
+  distinct objective" and parties "continue past it to Glacier Peak's
+  summit." That reasoning is externally corroborated (search sources
+  describe the Boulder Basin/Sitkum Glacier line topping out on Glacier
+  Peak's true summit, passing the ~9,500 ft saddle near the spire) — but
+  the DB already holds a separate, correctly-filed route for exactly that
+  climb: `wa_glacier_peak_sitkum_glacier` (area `wa_glacier_peak`,
+  high_point_ft 10,541), approached via North Fork Sauk rather than White
+  Chuck. Setting this row's high_point_ft to 10,541 would make it a near
+  duplicate of that route rather than resolve the inconsistency. Whether
+  `wa_sitkum_spire_standard` should be trimmed down to genuinely describe
+  a stand-alone Sitkum Spire objective (with gain_ft corrected downward to
+  match) or merged/retired as a duplicate of the Glacier Peak route is a
+  structural call, not a fact-check — flagged rather than guessed at.
+
+**Five clean**, each with at least one fact independently confirmed:
+- `wa_sinister_peak_north_face`: FA (Gordy Skoog, Carl Skoog, Gary Brill,
+  Aug 1, 1980) confirmed against an AAC Publications first-ascent note
+  describing the same party, date, and 45–50° névé/ice line off the
+  Chickamin Glacier. Summit coordinate (48.3, -121.0097) matches the
+  published 48°18'00"N 121°00'35"W almost exactly.
+- `wa_sinister_peak_southwest_route`: high_point_ft (8,440) matches the
+  peak's published "8,440+ ft" figure; the FR 26/Downey Creek closure
+  detail (MP 4.5, order 06-05-26-03) matches this project's own prior,
+  already-settled research on that exact closure order — deliberately not
+  re-litigated here (see CLAUDE.md's `audit:trailhead-road` entry on the
+  MP 4 vs MP 4.5 source ambiguity).
+- `wa_sloan_peak_corkscrew` / `wa_sloan_peak_r1`: FA (Harry Bedal & Nels
+  Skaar, July 30, 1921) and summit elevation (7,835 ft) both confirmed
+  verbatim/exactly against multiple independent sources.
+- `wa_snowfield_peak_neve_glacier`: FA (William Degenhardt & Herbert
+  Strandberg) confirmed, including the specific date (Aug 1, 1931) this
+  row omits but doesn't contradict; summit coordinate (48.635339,
+  -121.138799) matches the published 48.63528, -121.13833 almost exactly.
+
+Next batch continues after `wa_south_arete` in the id-ordered scope.
