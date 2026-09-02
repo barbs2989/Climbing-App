@@ -28,6 +28,7 @@ npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB render
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
@@ -2626,6 +2627,34 @@ a build error, but a screen that renders wrong or not at all.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+- **`audit:grade-num-drift`** asks whether the **stored** `grade_num` still agrees with what
+  `lib/grade.js` derives from the row's own `grade`. `check:grade-parser` asserts there is exactly
+  ONE parser in the CODE and structurally cannot see this: the column was populated by importers,
+  so a row written by an older parser stays wrong forever and every gate stays green. Nobody had
+  asked. Reads the DB, so **not** a build gate; report-only.
+  - **Measured first run: 113 of 8,014 readable WA grades disagree (1.4%).** It is not cosmetic —
+    `grade_num` is the sortable grade and both finder RPCs (`0018`/`0019`) rank and filter on it, so
+    a wrong value is invisible: the route simply sits in the wrong place in a list nobody
+    cross-checks.
+  - **MOST DISAGREEMENTS ARE NOT DEFECTS, which is why it must stay report-only.** `grade_num` is
+    **lossy across grade systems by construction**: `gradeNumFrom` maps `class 3` and `5.3` to the
+    same `3`, and a roman numeral — a **commitment** grade — to its own number, so a Grade V alpine
+    route and 5.5 share a slot. Sweeping the parser's answer over the column would file scrambles
+    among rock climbs. The six classes separate *"the row disagrees with its own system"* (E, F —
+    read these) from *"the column cannot express this"* (A, B, D — leave them).
+  - **ONE ROW WAS FIXED, and how it was cleared is the bar for the rest.**
+    `wa_shock_and_awe` stored **10** for `"V3"`, sorting a boulder problem among 5.10 routes. The
+    convention was then measured against the population that PASSES rather than reasoned about:
+    **2,277 of 2,278 V-graded WA rows store the V number**, none stores a YDS equivalent, and this
+    was the single exception. *A convention with one exception is a defect, not a convention.*
+    `scripts/oneoff/probe-v-grade-convention.mjs` is that measurement and
+    `fix-shock-and-awe-grade-num.mjs` the write, under the usual declared-state contract.
+  - **Compare a suspect against the rows in its own system that AGREE before calling it wrong.**
+    That step is what separated the one real defect from 113 rows where the column, not the row, is
+    the limitation — and it is the same step that stopped a "fix" being applied to correct data in
+    the camp-elevation and clickable-shield work.
+  - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
+    a broken scan rather than a clean catalog.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely

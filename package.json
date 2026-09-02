@@ -139,7 +139,8 @@
     "check:outage-flag-reach": "node scripts/check-outage-flag-reach.mjs",
     "check:pitch-discount": "node scripts/check-pitch-discount.mjs",
     "check:consensus-clustering": "node scripts/check-consensus-clustering.mjs",
-    "check:trust-breakdown": "node scripts/check-trust-breakdown.mjs"
+    "check:trust-breakdown": "node scripts/check-trust-breakdown.mjs",
+    "audit:grade-num-drift": "node scripts/audit-grade-num-drift.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
