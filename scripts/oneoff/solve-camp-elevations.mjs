@@ -126,7 +126,15 @@ const region = (id) => String((areaOf.get(id) || {}).path || "").split(".").slic
    "Luna Cirque floor"; "Whitehorse Ridge Camp" -> "whitehorse ridge" still does not equal
    "Whitehorse Community Park campground" -> "whitehorse community park". */
 
-const wpElev = new Map();     // core name -> [elevations]              (the CROSS-CHECK index)
+/* THE CROSS-CHECK MUST BE REGION-BOUNDED TOO, and it was not. It was keyed by NAME ALONE while
+   the DONOR index two lines down is keyed by name+region — same store, same identity function,
+   two different scopes. So a namesake anywhere in Washington could refuse a correct answer:
+   "Five Mile Camp, Park Creek trail" sits on nine NORTH CASCADES routes (Booker, Logan, Storm
+   King, Snowfield, The Needle) and was refused because a "Five Mile Camp" waypoint on a Mount La
+   Crosse route — usa.washington.wa_OLYMPICS, ~250 km away — states 1,350 ft against the
+   gazetteer's 3,921 ft. Neither is wrong; they are two places sharing a name.
+   This is the same lesson donorFor's own comment records, applied to its sibling. */
+const wpElev = new Map();     // core name + "|" + region -> [elevations]   (the CROSS-CHECK index)
 const wpByRegion = new Map(); // core name + "|" + region -> [{elev,from}]  (the DONOR index)
 for (const row of arr(wpRows)) {
   const reg = region(row.area_id);
@@ -135,9 +143,10 @@ for (const row of arr(wpRows)) {
     const e = ftOf(w);
     if (e == null || !has(w.name)) continue;
     const k = ident(String(w.name).split(/[,—–(]/)[0]);
-    if (!wpElev.has(k)) wpElev.set(k, []);
-    wpElev.get(k).push(e);
-    const rk = k + "|" + reg;
+    const ck = k + "|" + reg;
+    if (!wpElev.has(ck)) wpElev.set(ck, []);
+    wpElev.get(ck).push(e);
+    const rk = ck;
     if (!wpByRegion.has(rk)) wpByRegion.set(rk, []);
     wpByRegion.get(rk).push({ elev: e, from: row.id });
   }
@@ -272,7 +281,9 @@ for (const [, w] of [...work.entries()].sort((a, b) => b[1].sites.length - a[1].
     rej(`matched the SUMMIT (${pickType(withElev)}) for a name describing ground below it — a peak's height is not its basin's`);
     continue;
   }
-  const crossEarly = wpElev.get(norm(w.place)) || [];
+  // per recipient region, never state-wide — see the cross-check note above
+  const crossIn = (nm) => [...w.regions].flatMap((rg) => wpElev.get(nm + "|" + rg) || []);
+  const crossEarly = crossIn(norm(w.place));
   if (LINEAR.has(String(pickType(withElev)) ) && !crossEarly.some((e) => Math.abs(e - Math.round(withElev[0].g)) <= CROSS_FT)) {
     rej(`located only a ${pickType(withElev)} — a linear feature has no single height`);
     continue;
@@ -284,7 +295,7 @@ for (const [, w] of [...work.entries()].sort((a, b) => b[1].sites.length - a[1].
   const worst = hp.length ? Math.min(...hp) : null;
   if (worst != null && elev > worst + 200) { rej(`${elev} ft is above the lowest recipient route's high point (${worst} ft)`); continue; }
   // Cross-check against the independent waypoint record, where one exists.
-  const cross = wpElev.get(ident(usedPlace)) || wpElev.get(ident(w.place)) || [];
+  const cross = (() => { const a = crossIn(ident(usedPlace)); return a.length ? a : crossIn(ident(w.place)); })();
   const near = cross.filter((e) => Math.abs(e - elev) <= CROSS_FT);
   if (cross.length && !near.length) {
     rej(`DISAGREES with the catalog's own waypoint (${cross.map((x) => Math.round(x)).join("/")} ft vs DEM ${elev} ft) — one is wrong, not guessing`);
