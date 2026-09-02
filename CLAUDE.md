@@ -6392,6 +6392,12 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **One value is deliberately left**: `wa_nooksack_tower_south_face` carries this defect AND a
     named guidebook, which is what the open guidebook-citation batch is sweeping. *Two sessions
     rewriting one value is how a merge silently drops half of it.*
+  - **`rope_note` AND THE RACK COLUMNS ARE A PARALLEL SESSION'S** (#1431,
+    `revoice-pipeline-notes-in-rope-note.mjs`), so the two sweeps are complementary rather than
+    rival: this one covers the other eight columns. Their needle and this one also miss different
+    shapes — *"No indexed route-specific gear list found online"* matches nothing here, because
+    `gear list` is not `source|record|reference`. **Neither sweep closes the class**; between them
+    they close what each could see.
   - Confirmed on screen, **14 assertions across 4 routes, both directions** — and the KEEPS are the
     load-bearing half here, since a rewrite that quietly dropped a hedge satisfies every removal
     assertion.
