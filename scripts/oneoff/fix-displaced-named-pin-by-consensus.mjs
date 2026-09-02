@@ -97,8 +97,15 @@ const plan = [];
 for (const c of clusters.slice(1)) {
   const sep = hav([donor.p.lat, donor.p.lng], [c.lat, c.lng]);
   for (const m of c.members) {
-    // Within 200 ft of the majority's height reads as the same place; a bigger gap may be another point.
-    const sameish = typeof m.p.elev === "number" && typeof majElev === "number" && Math.abs(m.p.elev - majElev) <= 200;
+    // ELEVATION TOLERANCE IS 25 ft, AND 200 WAS NEARLY A DISASTER. Hozomeen Mountain has TWO summits
+    // 68 ft apart — North 8,071 and South 8,003, the South one 1.6 km southeast (Wikipedia). The
+    // 3-pin consensus sits exactly on the area record for the North Peak, and
+    // wa_hozomeen_mountain_southeast_face's pin is 1,609 m away at 8,003 ft — i.e. CORRECT, on the
+    // south summit its own name describes. A 200 ft tolerance called that "the majority's height" and
+    // would have moved a right pin onto the wrong peak. A displaced COORDINATE does not change a pin's
+    // stored elevation, so a genuine coordinate error matches the consensus height almost exactly;
+    // anything further is evidence of a different feature, not noise to absorb.
+    const sameish = typeof m.p.elev === "number" && typeof majElev === "number" && Math.abs(m.p.elev - majElev) <= 25;
     const verdict = sep <= WRONG_M ? "within tolerance — scatter, left alone"
       : !sameish ? `LEFT ALONE — elevation ${m.p.elev} is far from the majority's ${majElev}, so it may be a different point`
       : "DISPLACED — claims the majority's height at a different coordinate";
