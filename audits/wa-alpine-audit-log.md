@@ -11447,3 +11447,56 @@ Pasayten), `wa_south_face_12` (Argonaut Peak), `wa_south_face_2` (Pernod Spire),
   Wine Spires, consistent with it being taller than Burgundy's ~8,400 ft.
 
 Next batch continues after `wa_south_face_3` in the id-ordered scope.
+
+---
+
+## 2026-09-02 — Pass 3, Batch 166
+
+Eight routes across seven peaks: South Face (Kangaroo Temple, Inspiration Peak, Concord
+Tower "South Face Center"), South Gully/South Spur & South Rib (Guye Peak), South Headwall
+(Mount Stuart), South Ridge (Luna Peak, Black Peak).
+
+**One confirmed fix** (SQL in `audits/sql/2026-09-02-batch-166.sql`):
+- `wa_south_face_5` (Inspiration Peak, South Face): stored `fa` self-hedged the year
+  ("June 18 (year unconfirmed — likely 1969, not independently corroborated)"). Two
+  independent secondary sources (Wikipedia's Inspiration Peak article; an aggregated
+  Mountain Project/SummitPost search result) both give 1969 for Michael Heath and Bill
+  Sumner's South Face first ascent. Hedge removed; day/month unchanged.
+
+**One flagged for human review**:
+- `wa_south_headwall` (Mount Stuart): stored `grade` is "5.8", but a Mountain Project
+  route-guide search result for this same route ("South Headwall," Mount Stuart) states
+  the technical pitches "never exceed 5.7." Everything else about this row corroborated
+  strongly (FA "Paul Myhre & Darrell Sorenson, 1966" confirmed via an AAC Publications
+  search snippet giving the exact date May 30, 1966 and the same two-person party;
+  `high_point_ft` 9,415 matches Mount Stuart's well-established summit elevation
+  exactly), so this reads like a genuine grade discrepancy rather than a bad source
+  match — flagging the 5.7-vs-5.8 question rather than picking a side off one
+  secondary-source snippet.
+
+**Six clean**, each with at least one fact independently confirmed:
+- `wa_south_face_4` (Kangaroo Temple, South Face): area elevation (7,572 ft) confirmed
+  exactly via ListsOfJohn. `gain_ft` (2,400) is close to ListsOfJohn's own quoted
+  trailhead-to-summit range (5,160'–7,572' = 2,412 ft).
+- `wa_south_face_center` (Concord Tower): `high_point_ft` (7,569) is internally
+  consistent with the same area-vs-route elevation split already flagged for
+  `wa_south_face_3` in batch 165 (area `elevation_ft` 7,611 vs. routes' 7,569) — not a
+  new finding, not re-flagged separately.
+- `wa_south_gully_south_spur` (Guye Peak): route description independently confirmed
+  via a Mountaineers/trip-report search result naming the exact same features in the
+  exact same order — chockstone at ~4,500 ft, then a traverse onto "the south spur" to
+  the summit, matching this row's combined South Gully/South Spur name. `gain_ft`
+  (2,150) is consistent with the ~3,000–3,020 ft Commonwealth Basin trailhead to the
+  5,168 ft summit.
+- `wa_south_rib` (Guye Peak): no contradicting source found; FA is already
+  appropriately hedged in the DB ("Unrecorded; ... likely miners or other early
+  explorers").
+- `wa_south_ridge_2` (Luna Peak): elevation (8,311 ft) and FA (Bill Cox and Will F.
+  Thompson, September 1938) both confirmed via Wikipedia/PeakVisor. The DB's "South
+  Ridge" naming (vs. some sources' "Southwest Ridge") describes the same standard
+  Luna Col route per search results, not two distinct lines.
+- `wa_south_ridge_3` (Black Peak): FA (Lage Wernstedt, 1926) confirmed. Elevation
+  (8,970 ft) is within normal survey-datum variance of Wikipedia's NAVD88 figure
+  (8,975 ft) — treated as consistent, not a discrepancy worth fixing.
+
+Next batch continues after `wa_south_ridge_3` in the id-ordered scope.
