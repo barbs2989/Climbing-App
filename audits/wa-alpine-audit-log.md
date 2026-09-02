@@ -11598,3 +11598,66 @@ month, and no conflicting claim was found either — so it's counted clean rathe
 per the "don't flag what merely can't be fully verified, only what conflicts" rule.
 
 Next batch continues after `wa_spider_mountain_north_ridge` in the id-ordered scope.
+
+## 2026-09-02 — Pass 3, Batch 169
+
+Eight routes: Southeast Face (Spire Point, id says southwest_face); Stanley-Burgner (Prusik
+Peak); North Face and Southwest Scramble (Storm King, North Cascades — not the Olympic NP "Mount
+Storm King" hike); Southwest Ridge (Middle Peak, aka Middle Gunsight); Standard Route/Southwest
+Face (Swiss Peak, Northern Pickets); North Couloir and Southeast Route/Standard (Tenpeak
+Mountain).
+
+**No SQL fixes this batch.**
+
+**Two flagged for human review**:
+
+- `wa_spire_point_southwest_face`: a genuine three-way (arguably four-way) contradiction about
+  which face this route climbs. The id (`..._southwest_face`) and every prose field written for
+  this row — `overview` ("base of the southwest face"), `approach` ("the base of the southwest
+  face"), and `descent_text` ("Descend the same southwest face line") — consistently say
+  southwest. But the currently-stored `name` ("Southeast Face"), `aspect` ("SE"), and `face`
+  ("Southeast Face") all say southeast, and `beta` mixes both ("south face... southeast face").
+  An independent source found via search (SummitPost's Spire Point page, matched almost
+  word-for-word against this row's own waypoints/descent — 30 ft class 4 chimney, class 3 ledges
+  to a rappel anchor, final ~50 ft friction slab) describes the standard route from Spire Col as
+  going along the **southeast ridge** onto the **east face** — a fourth distinct answer, though
+  closer to the current SE-leaning fields than to "southwest." This exact row is already flagged
+  as a known, deliberately-unresolved case in the project's own CLAUDE.md (`audit:aspect-name`
+  entry): an internal geometry-based pass previously argued for southwest and explicitly declined
+  to write it, calling it report-only because the field drives the app's sun/shade readout. Given
+  three separate stored fields disagree with each other and no source cleanly matches any one of
+  them, this needs a human editorial call (and likely edits across `name`/`aspect`/`face` plus
+  reconciling the prose) rather than a mechanical patch.
+- `wa_stanley_burgner`: stored grade is `5.10a`. FA (1968, Fred Stanley and Ron Burgner, nearly
+  free save two aid points), Prusik Peak's 8,008 ft elevation, and the 6-pitch count all confirmed
+  exactly via search (matches mountainproject-sourced and Wikipedia summaries). But the
+  established/consensus grade in multiple independent, differently-authored sources (Climbing
+  magazine's route page, two separate StephAbegg trip reports, chossclimbers.com) is consistently
+  cited as "Grade III, 5.9+" — while two other sources (dashertonclimbs, climberkyle) do use
+  5.10a/5.10-. This is a real, if minor (one grade notch), disagreement across named sources for a
+  well-documented route, so it's left for a human to weigh rather than silently overwritten.
+
+**Six clean**, each with at least one fact independently confirmed:
+- `wa_storm_king_north_face` (Storm King, North Cascades NP core — not to be confused with the
+  Olympic NP "Mount Storm King" day hike near Lake Crescent, a name collision this route's own
+  area coordinates (48.49, -120.92) rule out): FA "Dick Emerson and Walt Grove, 1978" confirmed
+  via two independent searches.
+- `wa_storm_king_southwest_scramble`: FA "Forrest Farr and Art Winder, 1933" confirmed (The
+  Mountaineers' route page); the row's own careful hedge ("no source explicitly ties the 1933 FA
+  to this exact line") matches what search turned up too — appropriately cautious, not an error.
+- `wa_sw_ridge` (Middle Peak, filed as "Middle Peak" within The Gunsight Range — not the
+  same-named but geographically distinct Wikipedia "Middle Peak" near the Canadian border/Hanging
+  Lake, ruled out by this row's coordinates 48.31/-120.99 near Cascade Pass/Spider Mountain):
+  `high_point_ft` 8200 matches an AAC-sourced description of "Middle Gunsight" as "one of four
+  named summits at elevations between 8,000 and 8,200 feet" and "the highest of the Gunsight
+  peaks," with a described free route on "the southwest face of the central (middle) peak."
+- `wa_swiss_peak_standard_route`: `high_point_ft` 7988 vs an independently-sourced 7,993 ft
+  (5 ft/0.06% apart — within normal survey variance). The lengthy, well-hedged overview/approach
+  geography (Access Creek, Luna Camp, Big Beaver Trail, West Fury-Swiss col, Pickell Pass,
+  Porkbelly Ridge, Mystery Ridge, Jasper Pass, Pioneer Ridge, Mt. Crowder) is all real and
+  correctly relatively placed in the Northern Pickets.
+- `wa_tenpeak_mountain_north_couloir` and `wa_tenpeak_mountain_southeast` (Tenpeak Mountain):
+  `high_point_ft` 8312 confirmed exactly (Wikipedia). The Southeast Route's `fa`
+  ("Lloyd Anderson and Tom Campbell, September 21, 1940") confirmed exactly via search.
+
+Next batch continues after `wa_tenpeak_mountain_southeast` in the id-ordered scope.
