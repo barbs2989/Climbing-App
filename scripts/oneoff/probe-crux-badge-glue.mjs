@@ -27,6 +27,13 @@ await build({
 });
 const { ROUTES } = require_(out);
 
+const picked = ROUTES.find((rt)=>Array.isArray(rt.pitchDetail)&&rt.pitchDetail.length&&rt.pitchDetail.some((x)=>x&&x.crux));
+console.log("?zrp=1 picks:", picked ? picked.id : "(none)");
+if (picked) {
+  const cx = picked.pitchDetail.filter((x)=>x&&x.crux);
+  console.log("  its crux grades:", cx.map((x)=>JSON.stringify(x.grade)).join(", "));
+  console.log("  glue-capable (grade ends in a word char):", cx.some((x)=>/\w$/.test(String(x.grade||""))));
+}
 const r0 = ROUTES[0];
 console.log(`ROUTES[0] — the route ?zr=1 opens: ${r0.id} (${r0.name}), discipline ${r0.discipline}, pitches ${r0.pitches}`);
 console.log(`  pitchDetail: ${Array.isArray(r0.pitchDetail) ? r0.pitchDetail.length + " entries" : String(r0.pitchDetail)}`);
