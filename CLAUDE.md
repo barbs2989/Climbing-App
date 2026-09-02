@@ -6075,10 +6075,42 @@ the correction knows the screen is wrong, and they have no way to report it.
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
     sweep found **33 values on 32 WA routes**, all repaired — the ROAD/ACCESS section reports **3**
     today, and those three are hedges (*"not documented in any source found"*), not attributions.
-    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: on
-      main 2026-08-26 it reports **611 values on 396 routes**, nearly all in `rappel_count_note`,
-      `rappel_detail` and `beta`. The road/access sweep closed road/access; the ROUTE PROSE section
-      is a standing reading list and always was. A per-section count is not the audit's verdict.
+    - **DO NOT READ THAT AS "THE AUDIT REPORTS 0".** It never has for the catalog as a whole: it
+      reported **611 values on 396 routes** on 2026-08-26 and **476** after the sweeps below,
+      nearly all in `rappel_count_note`, `rappel_detail` and `beta`. The road/access sweep closed
+      road/access; the ROUTE PROSE section is a standing reading list and always was. A per-section
+      count is not the audit's verdict, and neither is a stale headline — **re-run it rather than
+      quoting this line**, which has already been wrong once in a message to the user.
+  - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
+    DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
+    it would do damage. Sorting a value into one of these decides the repair before you write it:
+    1. **The fact is separable** — the publisher is a trailing tag (*"…higher up per Mountain
+       Project"*). Lift it off; the sentence is unchanged. The large majority.
+    2. **The METRIC is the source** — *"the most-documented line (more trip reports/route votes
+       than the alternatives)"*. Trip-report counts and page traffic are a publisher's figures
+       about its own website, not facts about the rock. Cut the metric; the qualitative claim
+       (*"the most commonly climbed line"*) survives on its own and is the part a climber wanted.
+    3. **The attribution IS the verb** — the publisher is the sentence's subject (*"Mountain
+       Project's area notes mention a cornice hazard there"*) or it speaks a quotation
+       (*"'could have fatal consequences' per Mountain Project"*). Re-make the clause around the
+       fact. **A quotation cannot survive its speaker**: leaving the quote marks behind cites
+       nobody and turns a report into scare quotes, which changes what the sentence means.
+    4. **A disagreement BETWEEN sources** — *"Solid granitic rock per the guidebook, but frequently
+       vegetated/mossy in practice"*. The contrast is the whole content. Keep the disagreement,
+       drop who disagreed (*"solid granitic rock on paper, but…"*).
+    5. **The source IS the only record** — *"essentially undocumented beyond a single AAJ note"*.
+       The scarcity **is** the warning, so deleting the reference deletes the warning. Reword to
+       the fact about the record (*"a single first-ascent note"*), never to nothing.
+  - **The `per <publisher>` family was the largest single shape and is CLOSED: 61 edits on 53
+    routes, 535 → 476** (`scripts/oneoff/redact-per-source-attributions.mjs`). Two traps in it:
+    **`per` is not always a citation** — *"1-2 pickets **per rope team**"* is a rate, and a regex
+    sweep would have eaten it; and a value can hold **two** flagged leaves in one column
+    (`pro_tips[0]` and `pro_tips[1]`), so an applier must accumulate per `(route, column)` or the
+    second edit rebuilds from the original and silently drops the first.
+  - **PRINT THE RESULTING SENTENCE, never just the find/repl pair.** A deletion leaves a dangling
+    connective or a doubled space that is invisible from the edit alone — an earlier batch stranded
+    an *"and that"* clause exactly so. The applier's dry run diffs the column's string leaves and
+    prints every one that changed, which is what caught the two orphaned quotations above.
   - **The precision rule, and without it this audit is destructive: A LIVE REFERENCE IS NOT A
     CITATION.** 589 values on 416 routes carry a land-manager alert page or a ranger-district phone
     number (`fs.usda.gov/…/alerts`, `nps.gov`, `(509) 854-2553`). Those are not claims about where
