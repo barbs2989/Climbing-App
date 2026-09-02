@@ -83,7 +83,7 @@ npm run check:overlays # every overlay inside #appscroll is portalled to documen
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
-npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
+npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
@@ -3556,8 +3556,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     `rappels` was wired to the wrong one of **two** surfaces that both render the text
     "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
     `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
-    `check:field-renders` already records; `pitch_detail` splits **per entry** across
-    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare; and the
+    `check:field-renders` already records; `pitch_detail` split **per entry** across
+    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare (they are one
+    ROUTE BREAKDOWN now, and both fixtures stay because either kind alone must still draw it);
+    and the
     "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
     season-keyed chip there rendered nothing at all.
   - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
@@ -4073,6 +4075,54 @@ the correction knows the screen is wrong, and they have no way to report it.
     (`scripts/oneoff/inject-access-checked-cases.mjs`), each case proving its edit landed **by
     checksum** and restoring the file byte-identically. **Case 4 must PASS** — a comment naming the
     render site is documentation, and a guard flagging it would forbid explaining itself.
+- **`check:pitch-split`** asserts that every `pitch_detail` entry is a row of **ROUTE BREAKDOWN**,
+  in the record's own order, drawn as the kind of ground it actually is. Static SSR, in the build.
+  - **IT USED TO READ THE VERDICT OFF THE HEADING**, because there were two: roped pitches under
+    PITCH-BY-PITCH and travel legs under ROUTE BETA, stacked on the Plan tab. **That stacking was
+    itself a claim the record never made.** 144 routes hold both kinds interleaved —
+    `wa_big_four_mountain_tower_route` is *"Approach gully / First tower / Notch rappel / Second and
+    third towers / Summit snowfield"*, i.e. travel, climbing, descent, climbing, travel — and split
+    into two boxes it reads as every walk first and then every pitch, which is not the climb. The
+    array **order** is the sequence, and the only way to show a sequence is one list.
+  - **What does NOT merge is the vocabulary.** A roped pitch and a walk are different kinds of
+    ground: a pitch keeps its square `P1` badge, its blue accent and its full detail (length,
+    bolts, anchor, per-pitch consensus, photos, beta comments); a section keeps a round badge, a
+    terrain chip and its own three tiles. The **spine** down the left runs through both, in order,
+    and that is what carries the integration. On a pure-pitch or pure-stage route the section is
+    what it always was, renamed.
+  - **So the assertion moved to the row's own `data-kind`**, and that is strictly stronger than the
+    heading test it replaces: per entry rather than per page, and it can check the **ORDER**, which
+    nothing did before. With one heading the classification is only visible in the markup — it is
+    the badge shape, the accent and the detail block, none of which survive tag-stripping.
+  - The **numeric sort is scoped to a route with no stages**, which is exactly the old behaviour for
+    a pure-pitch route. A mixed route's two label spaces (`"1"` and `"Approach gully"`) cannot be
+    compared at all, so sorting one is not an ordering — it is the two boxes rebuilt inside one.
+  - **#1440's shortfall rule is unchanged and both its cases are kept.** Merging removes the
+    MECHANISM that produced the false claim — everything described is now in one list, so
+    `pitchShortfall(route, rows.length)` reduces to *"the route claims more pitches than the page
+    describes"* — but a route that genuinely climbs more than it describes must still say so, and a
+    rule that only ever suppresses is satisfied by deleting the feature.
+  - **The cumulative "N ft up" still counts roped pitches only**, stepping over the walking between
+    them. It is a climbing figure and always was; summing the approach into it would silently change
+    what that number means, which is the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **NO BROWSER GUARD SEES THIS SECTION, and the two probes beside it exist for that reason.**
+    `check:overflow` and `check:a11y-badges` reach the route page with `?zr=1`, which opens
+    `ROUTES[0]` — `kings_hf`, a scramble whose `pitchDetail` is null — so "0 offenders" there is a
+    statement about a page these rows were never on.
+    `scripts/oneoff/probe-route-breakdown-overflow.mjs` lays them out in Chrome at 390×844 over the
+    measured worst case (the 51-character terrain prose, a compound grade, a long descriptive
+    title) and is **proven non-vacuous**: restoring `nowrap` on the right-hand group reproduces the
+    historical **394px** overflow and it catches it.
+    `probe-route-breakdown-onscreen.mjs` prints the three shapes as read.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-route-breakdown-cases.mjs`). Cases 1-3 are the
+    original three re-run against the merged section — *a guard that still catches everything it
+    used to* is half the claim. **Case 4 is the property the merge added**: reorder the rows into
+    stages-then-pitches (the old two boxes, merged) and only the ORDER assertion can see it. **Case
+    5's first version reported MISS while the guard was innocent** — it called `pitchShortfall` with
+    a different `shown`, and the `> described` half of that predicate is *inside* the function, so
+    the edit landed by checksum and reproduced no defect. *Checksum movement proves an edit
+    happened, not that it was the right one.*
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -6062,7 +6112,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     check list from what was actually written — an earlier version omitted `climbing_route`, so
     a route setting only that column satisfied every remaining clause vacuously and printed
     "verified" having confirmed nothing.
-  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
