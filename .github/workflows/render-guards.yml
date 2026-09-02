@@ -478,7 +478,7 @@ jobs:
       # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
       # re-asserts that on every run rather than trusting the day it was set.
       - name: Walk a real signed-in account
-        run: npm run check:signed-in
+        run: npm run check:signed-in -- --dump signed-in-screens.json
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -487,3 +487,31 @@ jobs:
           CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
           CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
           CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
+
+      # THIS EXISTS TO SETTLE A RED THAT HAS TWICE BEEN BLAMED ON THE WRONG THING. The
+      # Group:detail assertions fail intermittently -- the member count in Aug, the "Owner"
+      # roster label on 2026-09-02 -- and both times a re-run of the SAME COMMIT passed, so
+      # nothing about the branch explains it. Every diagnosis so far is inference from source
+      # because the failing SCREEN has never been captured: the walk ran with no --dump and
+      # uploaded nothing, and a dump from a passing run cannot show what the failing one said.
+      #
+      # `if: always()` is the whole point. The dump is written BEFORE the guard exits non-zero
+      # (the `if (DUMP)` block precedes the `if (fails.length)` block in check-signed-in.mjs),
+      # so a FAILING run does produce one -- and that is the only run whose text is worth
+      # having. A default `if: success()` would upload exactly the screens nobody needs.
+      #
+      # A MISSING artifact is informative too, which is why if-no-files-found only warns.
+      # The guard's four early exits are all SETUP aborts -- no env, dead dev server, session
+      # rejected, signed in as the wrong account -- and every one of them fires before a single
+      # screen is walked, so there is nothing to dump. No artifact therefore means the walk
+      # never started; an artifact means it walked and then disagreed. Opposite repairs.
+      #
+      # It holds no secrets: the file is per-screen rendered TEXT from two fixture accounts
+      # whose profiles are discoverable=false, not sessions or keys.
+      - name: Upload per-screen text
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: signed-in-screens
+          path: signed-in-screens.json
+          if-no-files-found: warn
