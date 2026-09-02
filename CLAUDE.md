@@ -4275,6 +4275,33 @@ the correction knows the screen is wrong, and they have no way to report it.
       Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
       class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
 
+  - **THE CLASS IS 65 SHARED LISTS AND IT CANNOT BE RANKED — three signals tried, all three flag
+    known-correct data** (`measure-propagated-camp-lists.mjs`). 800 routes carry a bivy list across
+    149 distinct lists; **65 of those lists appear on more than one area**, 55 across three or more.
+    That is the fingerprint both repairs had, so the measurement is real — and it is **NOT a
+    backlog**, because most of it is genuine zone data: the Picket group shares ONE 15-area list off
+    **two** trailheads (all Goodell Creek), Boston Basin serves Forbidden / Torment / Sharkfin /
+    Boston / Sahale, the Enchantments share Colchuck Lake, the Holden peaks share Holden Village.
+    - **THE CONTROLS ARE WHAT KILLED EACH SIGNAL, not reading the code**, and the two repairs are
+      what supplied them: a split corridor is *correct* afterwards, so a detector ranking it high is
+      wrong by construction.
+    - **1. Distinct trailheads per group** — wrong measure. Trailheads are per-ROUTE, so ONE
+      mountain with many approaches scores highest: **Mount Rainier / Liberty Cap topped it at 2.50**.
+    - **2. Trailhead DISJOINTNESS between areas** — the signal that actually settled the Mountain
+      Loop repair, and it puts the **repaired Goat Rocks group** (Gilbert / Ives / Old Snowy, three
+      peaks **4.4 km** apart correctly sharing one basin) at **100%, inside the top ten**. Trailhead
+      wording varies per route even where peaks genuinely share a basin. **Without the control this
+      would have shipped as a worklist with known-good data near the top.**
+    - **3. Union-of-per-peak-camps** — *"does the list name the group's own peaks?"*, which is what
+      both repairs actually were. Defeated by **namesake features**: *"Boston Basin"* matches Boston
+      Peak, *"Burgundy Col"* matches Burgundy Spire, *"Agnes Creek"* matches Agnes Mountain. A basin,
+      a col and a creek sharing a proper noun with the peak beside them — the
+      [[a-name-is-not-an-identity]] failure this file already records as *Whatcom Pass is not
+      Whatcom Camp*, one level up.
+    - **What DOES work is manual**: look for the route on one of these areas that does **not** carry
+      the shared list. That author was not the propagation, so their list is an independent witness.
+      The tell for Mountain Loop was two camps appearing on Three Fingers **x3** while the rest
+      appeared **x2**.
   - **THE CLASS IS CLOSED FOR THIS CORRIDOR: one 8-camp list on 7 routes across FOUR peaks, split
     back** (`fix-mountain-loop-camp-split.mjs`). Mount Pilchuck, Three Fingers, Big Four Mountain
     and Whitehorse Mountain each carried a byte-identical list in identical order — so *"Bathtub
