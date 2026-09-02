@@ -213,6 +213,44 @@ for (const d of PARTIAL_ON_PURPOSE) {
 }
 
 console.log(`check:screen-lists: ${files.length} scripts, ${classified} screen list(s) classified against ${navIds.length} tabs and ${subIds.length} route sub-tabs, ${PARTIAL_ON_PURPOSE.length} declared subset(s).`);
+// ---- CLAUDE.md's Architecture section names these vocabularies too ---------------
+//
+// The rule above is scoped to `scripts/`, so a hand-copy of the same vocabulary in the
+// DOCS is invisible to it — and that is not hypothetical. CLAUDE.md's Architecture
+// bullet listed the route sub-tabs as overview/conditions/planner/safety/photos/`ranks`:
+// `ranks` is a top-level NAV tab and has never been a route sub-tab, and `partners` was
+// missing. That is the EXACT wrong list this guard's own header records as having cost
+// check:token-boxes a walk. The guard was fixed at the time; the sentence that seeded it
+// was not, so a reader starting from Architecture would reintroduce it.
+//
+// Scoped to the one bullet, deliberately. CLAUDE.md discusses these ids in prose
+// throughout (this file's own entry lists them), so a document-wide scan would fire on
+// every correct mention.
+const claude = readFileSync(path.join(ROOT, "CLAUDE.md"), "utf8");
+const archLine = claude.split("\n").find((l) => l.startsWith("- `routes` —") && l.includes("sub-`tab` state"));
+if (!archLine) {
+  console.error("check:screen-lists: ANCHOR LOST — CLAUDE.md's Architecture bullet for `routes` was renamed or removed.");
+  console.error("  It is the sentence beginning \"- `routes` —\" that names the route sub-tab state. Re-point this check at it.");
+  process.exit(1);
+}
+// Strip the bullet's SUBJECT ("- `routes` — …") before extracting, rather than putting
+// `routes` on an ignore list: an ignore list is how this check goes vacuous. A first
+// version also ignored `ranks`, which is precisely the id the defect consisted of — it
+// would have passed the original wrong bullet. Only genuine app-state names are excused.
+const body = archLine.replace(/^- `routes` —/, "");
+const IGNORE = new Set(["selRoute", "tab"]);            // app state, not sub-tab ids
+const named = [...body.matchAll(/`([a-z][a-z_]{2,20})`/g)].map((m) => m[1]).filter((x) => !IGNORE.has(x));
+const foreign = named.filter((x) => !subIds.includes(x));
+const missing = subIds.filter((x) => !named.includes(x));
+if (foreign.length || missing.length) {
+  fails.push("CLAUDE.md's Architecture bullet for `routes` does not match the real sub-tab bar."
+    + "\n      the app's bar : " + subIds.join(", ")
+    + "\n      the bullet    : " + (named.join(", ") || "(none parsed)")
+    + (foreign.length ? "\n      NOT a sub-tab : " + foreign.join(", ") : "")
+    + (missing.length ? "\n      MISSING       : " + missing.join(", ") : "")
+    + "\n      A reader starts from Architecture, so a wrong list here is copied into the next guard.");
+}
+
 if (fails.length) {
   console.error(`\ncheck:screen-lists: ${fails.length} screen list(s) do not match the app:\n`);
   for (const m of fails) console.error("  - " + m + "\n");
