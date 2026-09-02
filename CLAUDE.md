@@ -148,6 +148,31 @@ There is no unit test suite, linter, or type checker. The `check:` scripts are w
 stands in for one, and they target the failure mode this codebase actually ships: not
 a build error, but a screen that renders wrong or not at all.
 
+**WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
+**71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
+the total when deciding where a new guard belongs.
+- **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
+  between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
+  same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
+  files, 2.0 MB of JSX). Those 14 are ~104s, **65% of the chain**, and at least **41s of it is
+  per-process overhead** that one shared runner would pay once.
+- **That is a real prize and it is NOT free to collect.** Merging 14 guards into one process means
+  merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
+  a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
+  defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
+- **The cheap version has already been taken twice**, and is what to try first on any new guard:
+  `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors instead
+  of twice, and `check:overlay-absence` was kept out of the build chain entirely (a CI job instead)
+  once its ~10s proved to be almost all Babel.
+- **Measure it with `scripts/oneoff/measure-build-gate-cost.mjs`, on a quiet machine.** The number
+  above is CPU-ish rather than wall clock deliberately: this box routinely runs several sessions at
+  once, and a wall-clock profile taken at load average ~450 was off by 4x — recorded under
+  `check:waypoint-placement`, where it also blamed the wrong two suspects.
+- **Not every expensive guard is wasteful.** `check:flex-scroll` costs 7.4s with no Babel parse at
+  all: it resolves real JSX ancestry through `scripts/lib/jsx-ancestors.mjs`, because a fixed
+  character window missed 28 of 50 panes. Cost bought coverage there. Read what a guard is doing
+  before treating its position in this list as a defect.
+
 - **`check:refs`** parses with Babel and fails on any identifier with no binding in
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
