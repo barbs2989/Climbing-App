@@ -47,3 +47,4 @@ camp-elevation-proposals.json
 # check:waypoint-placement bundles its render probe INSIDE the project (node must resolve react
 # from the nearest node_modules). It removes the dir in a finally, but a killed run would leave one.
 .wpplace-*/
+.camp-geocode-cache.json
