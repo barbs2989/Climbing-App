@@ -171,12 +171,17 @@ belay_catches(user_id, partner_id, date, high_factor bool) -- trust ledger
 
 Reference tables: `condition_tags`, `hazard_tags` (today's `HAZARD_TAGS`, `COND_KW`).
 
-Auth/profile tables landed via `0009_auth_profiles.sql`; the social tables above (crews,
-messages, connections, vouches, etc.) are still simulated client-side and not yet migrated.
+Auth/profile tables landed via `0009_auth_profiles.sql`. **The social tables above are LIVE —
+this section described them as simulated until 2026-09-02, more than a month after they were
+migrated.** `crews` / `crew_members` / `crews_messages`, `messages` (direct), `connections`,
+`vouches`, `belay_catches`, `objectives`, `climb_logs`, `user_reports`, `groups` /
+`group_members` all exist in the live schema **and** are read or written by `lib/db.js`.
+Re-derive rather than trust this paragraph: `grep -o 'from("[a-z_]*")' lib/db.js | sort -u`
+returns **37** tables against 41 live.
 
 ### Hire-a-Guide (migrations `0020`-`0024`) — live, not a sketch
 
-Unlike the still-simulated social tables above, the guide-hire feature is fully migrated
+The guide-hire feature is fully migrated (as, now, are the social tables above)
 (directory/lead-gen only — no in-app payment; every guide listed free in this phase, a
 paid/featured tier is a separate later phase):
 
@@ -258,8 +263,8 @@ shape for endpoints not yet built:
 | `GET /routes/:id` | route detail | full route + server-computed **consensus** (trust-weighted, cached) |
 | `GET /search?q=` | `fuzzyMatch` | Postgres full-text + `pg_trgm` trigram = your fuzzy search |
 | `GET /route-finder?state=&type=&grade=&stars=&near=` | the Climbs filters | cross-tree filter; backed by indexes |
-| `GET /areas/:id/pack` | — | bundle (routes+topos+gpx+gear) for **offline download** (§6) — not started |
-| Social | crews/partners/messages/ticks/objectives/reports | still client-simulated; not migrated |
+| `GET /areas/:id/pack` | — | bundle (routes+topos+gpx+gear) for **offline download** (§7) — **built client-side** via `lib/offline.js`, not as an endpoint |
+| Social | crews/partners/messages/ticks/objectives/reports | **live** — see the note under §3; every one of these has a table and a `lib/db.js` reader |
 
 **Consensus** (`buildConsensus`): still computed client-side today; moving it server-side
 (materialized view or cached read) remains a future step.
@@ -274,12 +279,14 @@ everything the DB path doesn't cover yet, gated by the `USE_DB` flag (`lib/supab
 - **Done**: `lib/supabase.js` (client + flag), `lib/db.js` (`useAreaRoutes`,
   `submitContribution`, `dbRouteToCamel`), `lib/DbAreaBrowser.jsx` (area browsing wired into
   the Climbs tab), `lib/auth.js` + `lib/AuthModal.jsx` (real session, real login UI).
-- **Still simulated / not migrated**: crews, messages, connections, vouches, belay-catch
-  ledger, clubs — these still live in React state only.
-- **Realtime**: messages/crew chat over Supabase Realtime channels would replace the
-  simulated `aiTyping`/`setTimeout` chat — not started.
-- **Storage**: avatars, route photos, GPX in Supabase Storage (buckets + signed URLs) — not
-  started.
+- **Migrated since this list was written**: crews, messages, connections, vouches, the
+  belay-catch ledger and groups are all DB-backed. What still lives in React state is the
+  *seed* data behind `DEMO_FILLERS` and per-session UI state, not the feature.
+- **Realtime**: **started.** `lib/db.js` opens `crews-messages:<crewId>` and
+  `messages:<uid>:<partnerId>` channels, and `lib/presence.js` runs `route-presence:<routeId>`.
+- **Storage**: **partly started** — `guide-documents` and `topo-photos` buckets are live in
+  `lib/db.js`, with policies on `storage.objects` in the migrations. Avatars and GPX are still
+  not in Storage, so the original line was wrong about the state and right about those two.
 
 ---
 
@@ -296,7 +303,11 @@ contributions beyond OpenBeta's coverage (this is live via `submitContribution`)
 
 ---
 
-## 7. Offline (the "download a state" feature) — not started
+## 7. Offline (the "download a state" feature) — **BUILT**
+
+> Corrected 2026-09-02. `lib/offline.js` exports 7 helpers over IndexedDB/Cache Storage,
+> `ClimbMatch.jsx` holds `downloadedStates`, and the Profile carries an **Offline library**
+> panel plus a per-route *Save to offline* control on the route Overview tab.
 
 A caching layer **on top of** the API — build it last:
 - **PWA + Service Worker + IndexedDB** (web) or SQLite (if you wrap as a native app).
@@ -313,16 +324,28 @@ A caching layer **on top of** the API — build it last:
 - **Phase 0 — prove it. ✅ done.** Supabase + schema + the 3 DB triggers are live. WA data
   is in the tables (well beyond the original demo-data port). The area-browse → route-detail
   flow reads from the DB behind the `USE_DB` flag.
-- **Phase 1 — go DB-backed. 🟡 partial.** Reads for area-browse/route-detail/contributions
-  are migrated; auth is real (profiles + login). Social tables (crews, messages, connections,
-  vouches) are **not yet migrated** — still client-state only. Realtime + Storage not started.
-- **Phase 2 — go national. 🔲 not started.** Only WA is loaded. OpenBeta import for other
-  states, indexing/pagination, and fast search/route-finder at scale remain.
-- **Phase 3 — offline. 🔲 not started.** Area packs via PWA/IndexedDB.
+- **Phase 1 — go DB-backed. ✅ done** (corrected 2026-09-02; this said "partial" for over a
+  month after it stopped being true). Area-browse, route-detail and contributions are
+  migrated, auth is real, and the social tables — crews, messages, connections, vouches,
+  belay-catch, objectives, climb_logs, user_reports, groups — are all live. Realtime is
+  running on crew chat, DMs and route presence; Storage holds `guide-documents` and
+  `topo-photos`.
+- **Phase 2 — go national. 🟡 the CATALOG is national; the ENRICHMENT is not.** Measured
+  2026-09-02 against the live database: **205,543 routes across 52 state-type areas**
+  (Arkansas, Arizona, California, Colorado, Texas, Utah, Wyoming …), not "only WA". What is
+  still WA-shaped is the *enrichment* — approach/descent/gear/waypoint research — which is
+  why CLAUDE.md's scope note says to rank by WA-alpine coverage and never by a catalog-wide
+  percentage. Indexing/pagination and search at scale remain.
+- **Phase 3 — offline. ✅ done.** Area packs via IndexedDB/Cache Storage in `lib/offline.js`.
 - **Phase 4 — AI. 🔲 not started.** The trust-weighted conditions digest, now that some real
   report/enrichment data exists to work from.
 
-## 9. Topos (route-overlay photos) — not started
+## 9. Topos (route-overlay photos) — **BUILT**
+
+> Corrected 2026-09-02. `topos` and `topo_lines` are live and read by `lib/db.js`, photos sit
+> in the `topo-photos` Storage bucket, and `TopoSection` renders them on the route Overview
+> tab (with `toposUnavailable` distinguishing a failed read from a route with no topo —
+> `check:topo-outage-copy` guards that copy).
 
 A topo is **two separate things**, and conflating them is the usual mistake:
 1. a real **photo** of the wall, and
@@ -387,6 +410,6 @@ upload, the contributor affirms they own/are licensed for the photo (your Terms'
 content clause already covers this).
 
 ### Where it sits
-**Phase 2–3.** Depends on backend + route DB (done) → **Storage** (not started) → then the
-`topos`/`topo_lines` tables + the editor. Do **not** treat topos as static images to license
+**Phase 2–3, and DONE.** It depended on backend + route DB (done) → Storage (now live,
+`topo-photos`) → the `topos`/`topo_lines` tables + the editor, all of which exist. Do **not** treat topos as static images to license
 in bulk — grow them crag-by-crag from users, with verification on top.
